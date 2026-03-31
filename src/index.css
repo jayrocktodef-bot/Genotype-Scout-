@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --primary-bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --accent-blue: #0284c7;
+  --text-main: #1e293b;
+  --high-risk: #dc2626;
+  --medium-risk: #d97706;
+  --low-risk: #059669;
+}
+
+.dark {
+  --primary-bg: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --accent-blue: #38bdf8;
+  --text-main: #f1f5f9;
+  --high-risk: #f87171;
+  --medium-risk: #fbbf24;
+  --low-risk: #34d399;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-bg);
+  background-image: radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.05) 0px, transparent 50%),
+                    radial-gradient(at 50% 0%, rgba(2, 132, 199, 0.02) 0px, transparent 50%);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+}
+
+.app-container {
+  backdrop-filter: blur(10px);
+  min-height: 100vh;
+}
+
+header h1 {
+  font-weight: 800;
+  background: linear-gradient(to right, #0f172a, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trait-card {
+  background: var(--card-bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  backdrop-filter: blur(8px);
+}
+
+.trait-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-blue) !important;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+button {
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+/* Custom Scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Maintain some utility classes for the DNA visualization and animations */
+.nt {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pk 2s ease-in-out infinite;
+}
+.nA { border-color: #30D870; color: #30D870; }
+.nT { border-color: #E04040; color: #E04040; animation-delay: .2s; }
+.nG { border-color: #D0A020; color: #D0A020; animation-delay: .4s; }
+.nC { border-color: var(--accent-blue); color: var(--accent-blue); animation-delay: .6s; }
+
+@keyframes pk {
+  0%, 100% { opacity: .3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
