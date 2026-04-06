@@ -11,7 +11,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 import { jsPDF } from "jspdf";
-import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB } from "./genotypeData";
+import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 
@@ -89,6 +89,7 @@ const HaplogroupTreeView = ({ node, userPath, level = 0 }: { node: any, userPath
 };
 
 export default function App() {
+  const [snps, setSnps] = useState<SNP[]>(SNP_DB);
   const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
   const [statusFilter, setStatusFilter] = useState<'matched' | 'unmatched' | 'not_tested'>('matched');
@@ -217,7 +218,8 @@ export default function App() {
   const uniqueGenes = Array.from(new Set(results?.map(r => r.gene) || []));
 
   return (
-    <div className="app-container max-w-4xl mx-auto p-4 sm:p-6">
+    <div className="app-container relative max-w-4xl mx-auto p-4 sm:p-6">
+      <div className="absolute top-6 right-6 text-xs font-mono text-slate-400">v.2</div>
       <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           <img className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-slate-200" src={LOGO_URI} alt="Logo" />
@@ -272,7 +274,7 @@ export default function App() {
             <div className="flex gap-4 mb-4 text-xs text-slate-500 dark:text-slate-400 font-mono bg-slate-100 dark:bg-slate-800 p-2 rounded-lg inline-block">
               <span>Ancestry Oracle Aims: {ANCHOR_AIMS.length.toLocaleString()}</span>
               <span>|</span>
-              <span>Total Markers: {SNP_DB.length.toLocaleString()}</span>
+              <span>Total Markers: {snps.length.toLocaleString()}</span>
             </div>
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Welcome to Genotype Scout</h3>
@@ -451,100 +453,81 @@ export default function App() {
                   </div>
                 )}
 
-                {/* Category Tabs */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {availableCategories.map(category => {
-                    const catMeta = CATEGORY_META[category as keyof typeof CATEGORY_META] || { color: "#0284c7", icon: "🌐" };
-                    const isActive = currentCat === category;
-                    return (
-                      <button
-                        key={category}
-                        onClick={() => setActiveCategory(category)}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-sm transition-all ${isActive ? 'bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700' : 'bg-transparent text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        style={isActive ? { color: catMeta.color } : {}}
-                      >
-                        <span className="text-lg">{catMeta.icon}</span>
-                        <span>{category}</span>
-                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono ${isActive ? 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200' : 'bg-slate-200/50 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
-                          {groupedCategories[category].length}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
+                {/* Category Tabs removed */}
 
-                {/* Category Header/Summary */}
-                <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden mb-6">
-                  <div className="p-6 border-b border-slate-100 dark:border-slate-700/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/50">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shadow-sm bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600">
-                        {meta.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold" style={{ color: meta.color }}>{currentCat}</h3>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 font-mono">{total} marker{total !== 1 ? "s" : ""} analyzed</p>
-                      </div>
-                    </div>
-                    
-                    <div className="h-12 w-full sm:w-48">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart layout="vertical" data={[{ matched: matchedCount, unmatched: unmatchedCount, notTested: notTestedCount }]} stackOffset="expand">
-                          <XAxis type="number" hide />
-                          <YAxis type="category" dataKey="name" hide />
-                          <Tooltip cursor={false} content={<CustomTooltip />} shared={false} />
-                          <Bar dataKey="matched" name="Matched" stackId="a" fill="#10b981" radius={[4, 0, 0, 4]} />
-                          <Bar dataKey="unmatched" name="Unmatched" stackId="a" fill="#f59e0b" />
-                          <Bar dataKey="notTested" name="Not Tested" stackId="a" fill="#cbd5e1" radius={[0, 4, 4, 0]} />
-                        </BarChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
+                {availableCategories.map(category => {
+                  const allSnpsInCategory = groupedCategories[category];
+                  const meta = CATEGORY_META[category as keyof typeof CATEGORY_META] || { color: "#0284c7", icon: "🌐" };
+                  const isCollapsed = collapsedCategories.has(category);
                   
-                  <div className="p-6 space-y-4 bg-slate-50/30 dark:bg-slate-900/30">
-                    {currentCat === 'Ancestry' && (
-                      <div className="mb-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg text-xs text-amber-700 dark:text-amber-300 italic">
-                        <strong>Important Note on Native American Markers:</strong> DNA markers can show broad regions or language groups, but they cannot point to one specific modern tribe. Groups traded, moved, and mixed for thousands of years, meaning these genetic markers are shared widely across the Americas.
-                      </div>
-                    )}
-                    
-                    {allSnpsInCategory.map((snp: any) => (
-                      <div key={`${snp.markerId}-${snp.continent}`} className={`trait-card rounded-xl p-6 border border-slate-100 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-sm ${snp.status === 'matched' ? 'ring-2 ring-sky-500' : ''}`}>
-                        <div className="flex items-start justify-between gap-4 mb-3">
-                          <div className="flex items-center gap-3">
-                            <div className="font-mono text-xs text-sky-700 dark:text-sky-400 font-bold">{snp.rsid}</div>
-                            <div className="font-bold text-slate-900 dark:text-slate-100 text-lg">{snp.trait}</div>
+                  const total = allSnpsInCategory.length;
+                  const matchedCount = allSnpsInCategory.filter(s => s.status === 'matched').length;
+                  
+                  return (
+                    <div key={category} className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden mb-6">
+                      <button 
+                        onClick={() => toggleCategory(category)}
+                        className="w-full p-6 flex items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors text-left"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-lg flex items-center justify-center text-xl shadow-sm bg-white dark:bg-slate-700 border border-slate-100 dark:border-slate-600">
+                            {meta.icon}
                           </div>
-                          <div className="flex items-center gap-2">
-                            <div className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full font-bold" style={{ backgroundColor: `${SIG_COLOR[snp.significance as keyof typeof SIG_COLOR]}15`, color: SIG_COLOR[snp.significance as keyof typeof SIG_COLOR] }}>
-                              {snp.significance} significance
-                            </div>
-                            {snp.status === 'matched' && (
-                              <button onClick={() => toggleExpand(snp.rsid)} className="text-slate-400 hover:text-sky-600 dark:hover:text-sky-400">
-                                {expandedSnps.has(snp.rsid) ? '▲' : '▼'}
-                              </button>
-                            )}
+                          <div>
+                            <h3 className="text-lg font-bold" style={{ color: meta.color }}>{category}</h3>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                              {matchedCount} / {total} markers matched
+                            </p>
                           </div>
                         </div>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">{snp.description}</p>
-                        {snp.status !== 'not_tested' && expandedSnps.has(snp.rsid) && (
-                          <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 grid grid-cols-[auto,1fr] gap-x-6 gap-y-2 items-start border border-slate-100 dark:border-slate-800">
-                            <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Genotype</div>
-                            <div className="font-mono text-xl font-bold text-slate-900 dark:text-slate-100 tracking-widest">{snp.userGenotype}</div>
-                            <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">What this means for you</div>
-                            <div className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
-                              {snp.interpretation}
-                              {snp.referenceUrl && (
-                                <a href={snp.referenceUrl} target="_blank" rel="noopener noreferrer" className="block mt-2 text-sky-600 dark:text-sky-400 hover:underline text-xs font-mono">
-                                  Learn more about {snp.rsid}
-                                </a>
+                        <div className="text-slate-400">
+                          {isCollapsed ? '▼' : '▲'}
+                        </div>
+                      </button>
+                      
+                      {!isCollapsed && (
+                        <div className="p-6 space-y-4 bg-slate-50/30 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-700">
+                          {category === 'Ancestry' && (
+                            <div className="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg text-xs text-amber-700 dark:text-amber-300 italic">
+                              <strong>Important Note:</strong> DNA markers show broad regions, not specific tribes.
+                            </div>
+                          )}
+                          {allSnpsInCategory.map((snp: any) => (
+                            <div key={`${snp.markerId}-${snp.continent}`} className={`trait-card rounded-xl p-6 border border-slate-100 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-sm ${snp.status === 'matched' ? 'ring-2 ring-sky-500' : ''}`}>
+                              <div className="flex items-start justify-between gap-4 mb-3">
+                                <div className="flex items-center gap-3">
+                                  <div className="font-mono text-xs text-sky-700 dark:text-sky-400 font-bold">{snp.rsid}</div>
+                                  <div className="font-bold text-slate-900 dark:text-slate-100 text-lg">{snp.trait}</div>
+                                </div>
+                                {snp.status === 'matched' && (
+                                  <button onClick={() => toggleExpand(snp.rsid)} className="text-slate-400 hover:text-sky-600 dark:hover:text-sky-400">
+                                    {expandedSnps.has(snp.rsid) ? '▲' : '▼'}
+                                  </button>
+                                )}
+                              </div>
+                              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4 break-words">{snp.description}</p>
+                              {snp.status !== 'not_tested' && expandedSnps.has(snp.rsid) && (
+                                <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 grid grid-cols-[auto,1fr] gap-x-6 gap-y-2 items-start border border-slate-100 dark:border-slate-800">
+                                  <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Genotype</div>
+                                  <div className="font-mono text-xl font-bold text-slate-900 dark:text-slate-100 tracking-widest">{snp.userGenotype}</div>
+                                  <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Meaning</div>
+                                  <div className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
+                                    {snp.interpretation}
+                                    {snp.referenceUrl && (
+                                      <a href={snp.referenceUrl} target="_blank" rel="noopener noreferrer" className="block mt-2 text-sky-600 dark:text-sky-400 hover:underline text-xs font-mono">
+                                        Learn more about {snp.rsid}
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
                               )}
                             </div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             );
           })()}
