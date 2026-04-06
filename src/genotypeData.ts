@@ -20,7 +20,26 @@ export interface SNP {
 export const SNP_DB: SNP[] = [
   { markerId: "rs2862", rsid: "rs2862", gene: "FMO3", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["A"], description: "A variant found at higher frequencies in populations of African descent.", referenceUrl: "https://www.snpedia.com/index.php/Rs2862" },
   { markerId: "rs1129038", rsid: "rs1129038", gene: "SLC14A2", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A variant associated with African ancestry and kidney function adaptation.", referenceUrl: "https://www.snpedia.com/index.php/Rs1129038" },
-  { markerId: "rs4833103", rsid: "rs4833103", gene: "Unknown", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Low", alleles: ["A"], description: "A marker associated with African ancestry.", referenceUrl: "https://www.snpedia.com/index.php/Rs4833103" },
+  { markerId: "rs3827760", rsid: "rs3827760", gene: "EDAR", category: "Ancestry", trait: "Thick straight hair, shovel-shaped incisors, denser sweat glands, reduced chin protrusion", continent: "Native American", alleles: ["C"], significance: "High", description: "Near-absent in African and European populations. Pre-contact Native American frequency likely near 100%; modern AMR figures reflect European admixture. Strong positive selection signal — one of the highest FST values genome-wide.", frequencies: {"AFR":0.01,"EUR":0.00,"EAS":0.87,"AMR_admixed":0.65,"Native_American_unadmixed":0.95,"SAS":0.07}, referenceUrl: "https://www.biorxiv.org/content/10.1101/813063v1.full" },
+  { markerId: "rs75493593", rsid: "rs75493593", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — P443T", continent: "Native American", alleles: ["A"], significance: "High", description: "Each haplotype copy confers ~20% increased T2D risk. Risk stronger in lean individuals (BMI <35). Neanderthal introgression origin confirmed by archaic genome analysis.", frequencies: {"AFR":0.02,"EUR":0.02,"EAS":0.10,"AMR_admixed":0.30,"Native_American_unadmixed":0.50,"SAS":0.03}, referenceUrl: "https://www.nature.com/articles/nature12828" },
+  { markerId: "rs13342692", rsid: "rs13342692", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — D127G missense", continent: "Native American", alleles: ["A"], significance: "High", description: "Co-segregates on same haplotype as rs75493593; highest individual association signal in SIGMA GWAS", frequencies: {"AFR":0.02,"EUR":0.02,"EAS":0.10,"AMR_admixed":0.30,"Native_American_unadmixed":0.50,"SAS":0.03}, referenceUrl: "https://www.nature.com/articles/nature12828" },
+  { markerId: "rs117767867", rsid: "rs117767867", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — V113I missense", continent: "Native American", alleles: ["T"], significance: "High", description: "Part of the 4-missense-SNP SLC16A11 risk haplotype; rare outside Native American and East Asian populations", frequencies: {"AFR":0.01,"EUR":0.01,"EAS":0.09,"AMR_admixed":0.28,"Native_American_unadmixed":0.48,"SAS":0.02}, referenceUrl: "https://www.nature.com/articles/nature12828" },
+  { markerId: "rs75418188", rsid: "rs75418188", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — G40S missense", continent: "Native American", alleles: ["A"], significance: "High", description: "Third missense variant in the SLC16A11 haplotype block; functionally tolerated per SIFT", frequencies: {"AFR":0.02,"EUR":0.02,"EAS":0.10,"AMR_admixed":0.29,"Native_American_unadmixed":0.49,"SAS":0.03}, referenceUrl: "https://www.nature.com/articles/nature12828" },
+  { markerId: "rs13342232", rsid: "rs13342232", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — silent mutation", continent: "Native American", alleles: ["G"], significance: "High", description: "Silent variant but strongest GWAS signal due to LD with all four missense SNPs; used as primary tag in Mexican/Latin American studies", frequencies: {"AFR":0.02,"EUR":0.02,"EAS":0.10,"AMR_admixed":0.30,"Native_American_unadmixed":0.50,"SAS":0.03}, referenceUrl: "https://www.nature.com/articles/nature12828" },
+  { markerId: "rs9282541", rsid: "rs9282541", gene: "ABCA1", category: "Health", trait: "Low HDL cholesterol; type 2 diabetes and obesity risk", continent: "Native American", alleles: ["T"], significance: "High", description: "Non-synonymous variant; associated with impaired lipid transport and T2D in Native American and Latin American cohorts; nearly absent elsewhere", frequencies: {"AFR":0.01,"EUR":0.01,"EAS":0.00,"AMR_admixed":0.09,"Native_American_unadmixed":0.15,"SAS":0.01}, referenceUrl: "https://www.snpedia.com/index.php/Rs9282541" },
+  { markerId: "rs10811661", rsid: "rs10811661", gene: "CDKN2A/CDKN2B", category: "Health", trait: "Type 2 diabetes susceptibility", continent: "Native American", alleles: ["T"], significance: "Medium", description: "Risk allele is the common allele globally; confirmed in Maya population as T2D risk factor", frequencies: {"AFR":0.86,"EUR":0.82,"EAS":0.60,"AMR_admixed":0.75,"Native_American_unadmixed":0.80,"SAS":0.73}, referenceUrl: "https://www.snpedia.com/index.php/Rs10811661" },
+  { markerId: "rs5219", rsid: "rs5219", gene: "KCNJ11", category: "Health", trait: "Type 2 diabetes — E23K variant", continent: "Native American", alleles: ["T"], significance: "Medium", description: "Common globally but studied specifically in Maya and Latin American Native American cohorts for T2D association", frequencies: {"AFR":0.36,"EUR":0.47,"EAS":0.45,"AMR_admixed":0.44,"Native_American_unadmixed":0.46,"SAS":0.42}, referenceUrl: "https://www.snpedia.com/index.php/Rs5219" },
+  { markerId: "rs1111875", rsid: "rs1111875", gene: "HHEX", category: "Health", trait: "Type 2 diabetes — pancreatic development", continent: "Native American", alleles: ["C"], significance: "Medium", description: "Moderately differentiated; elevated risk allele frequency in East Asian and Native American populations", frequencies: {"AFR":0.54,"EUR":0.56,"EAS":0.68,"AMR_admixed":0.60,"Native_American_unadmixed":0.65,"SAS":0.63}, referenceUrl: "https://www.snpedia.com/index.php/Rs1111875" },
+  { markerId: "rs13266634", rsid: "rs13266634", gene: "SLC30A8", category: "Health", trait: "Type 2 diabetes — zinc transporter ZnT8", continent: "Native American", alleles: ["C"], significance: "Medium", description: "Risk allele elevated in East Asian and Native American populations vs. African", frequencies: {"AFR":0.25,"EUR":0.69,"EAS":0.75,"AMR_admixed":0.58,"Native_American_unadmixed":0.65,"SAS":0.60}, referenceUrl: "https://www.snpedia.com/index.php/Rs13266634" },
+  { markerId: "rs10954737", rsid: "rs10954737", gene: "IRF5", category: "Ancestry", trait: "Native American ancestry differentiation marker", continent: "Native American", alleles: ["A"], significance: "Medium", description: "The only SNP of 170 in the combined Kidd+Seldin panel missing from 1000 Genomes; noted as especially informative for distinguishing Native Americans from other populations including East Asians", frequencies: {"AFR":0.35,"EUR":0.62,"EAS":0.20,"AMR_admixed":0.55,"Native_American_unadmixed":0.80,"SAS":0.45}, referenceUrl: "https://www.snpedia.com/index.php/Rs10954737" },
+  { markerId: "rs1426654", rsid: "rs1426654", gene: "SLC24A5", category: "Ancestry", trait: "Skin lightening — inverse Native American marker", continent: "Native American", alleles: ["A"], significance: "High", description: "One of the highest FST SNPs between EUR and non-EUR. Native American frequency near 0% pre-contact; modern AMR elevation reflects European admixture. Useful inverse marker — presence signals European admixture.", frequencies: {"AFR":0.04,"EUR":0.99,"EAS":0.03,"AMR_admixed":0.55,"Native_American_unadmixed":0.02,"SAS":0.96}, referenceUrl: "https://www.snpedia.com/index.php/Rs1426654" },
+  { markerId: "rs16891982", rsid: "rs16891982", gene: "SLC45A2", category: "Ancestry", trait: "Lighter skin, hair, and eye pigmentation — European-specific", continent: "Native American", alleles: ["G"], significance: "High", description: "Near-absent in Native Americans; strong inverse AIM. Useful for detecting European admixture in Native American genomes.", frequencies: {"AFR":0.02,"EUR":0.93,"EAS":0.02,"AMR_admixed":0.30,"Native_American_unadmixed":0.01,"SAS":0.09}, referenceUrl: "https://www.snpedia.com/index.php/Rs16891982" },
+  { markerId: "rs1800404", rsid: "rs1800404", gene: "OCA2", category: "Ancestry", trait: "Pigmentation — European vs. East Asian/Native American differentiation", continent: "Native American", alleles: ["T"], significance: "Medium", description: "T allele elevated in East Asian and Native American populations; part of Seldin 93-AIM panel", frequencies: {"AFR":0.55,"EUR":0.30,"EAS":0.70,"AMR_admixed":0.58,"Native_American_unadmixed":0.72,"SAS":0.50}, referenceUrl: "https://www.snpedia.com/index.php/Rs1800404" },
+  { markerId: "rs1800562", rsid: "rs1800562", gene: "HFE", category: "Health", trait: "Hereditary hemochromatosis — C282Y; near-absent in Native Americans", continent: "Native American", alleles: ["A"], significance: "High", description: "Essentially absent in Native American populations; useful inverse marker. Presence of this allele is a strong signal of European ancestry in admixed individuals.", frequencies: {"AFR":0.00,"EUR":0.06,"EAS":0.00,"AMR_admixed":0.02,"Native_American_unadmixed":0.00,"SAS":0.00}, referenceUrl: "https://www.snpedia.com/index.php/Rs1800562" },
+  { markerId: "rs1800961", rsid: "rs1800961", gene: "HNF4A", category: "Health", trait: "Type 2 diabetes — MODY1-related hepatocyte nuclear factor", continent: "Native American", alleles: ["T"], significance: "Medium", description: "Low-frequency variant globally but modestly elevated in East Asian and Native American populations; affects hepatic glucose metabolism", frequencies: {"AFR":0.03,"EUR":0.03,"EAS":0.07,"AMR_admixed":0.05,"Native_American_unadmixed":0.08,"SAS":0.04}, referenceUrl: "https://www.snpedia.com/index.php/Rs1800961" },
+  { markerId: "rs12779790", rsid: "rs12779790", gene: "CDC123/CAMK1D", category: "Health", trait: "Type 2 diabetes susceptibility", continent: "Native American", alleles: ["G"], significance: "Medium", description: "Risk allele modestly elevated in East Asian and Native American populations", frequencies: {"AFR":0.12,"EUR":0.18,"EAS":0.28,"AMR_admixed":0.22,"Native_American_unadmixed":0.28,"SAS":0.22}, referenceUrl: "https://www.snpedia.com/index.php/Rs12779790" },
+  { markerId: "rs4833103", rsid: "rs4833103", gene: "intergenic", category: "Ancestry", trait: "Native American vs. African ancestry differentiation", continent: "Native American", alleles: ["A"], significance: "Medium", description: "High AFR frequency vs. low Native American frequency makes this useful for AFR vs. AMR discrimination in admixed individuals", frequencies: {"AFR":0.72,"EUR":0.20,"EAS":0.15,"AMR_admixed":0.25,"Native_American_unadmixed":0.12,"SAS":0.18}, referenceUrl: "https://www.snpedia.com/index.php/Rs4833103" },
+
   { markerId: "rs622682", rsid: "rs622682", gene: "Unknown", trait: "African Ancestry Marker", continent: "African", subpop: null, alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for general African ancestry.", frequencies: {"AFR":0.909,"EUR":0.347} },
   { markerId: "rs1545397_AF", rsid: "rs1545397", gene: "OCA2", trait: "African Ancestry Marker", continent: "African", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for African populations.", frequencies: {"AFR":0.9,"AMR":0.05,"EAS":0.02,"EUR":0.02,"SAS":0.05,"MENA":0.05} },
   { markerId: "rs1042602_AF", rsid: "rs1042602", gene: "TYR", trait: "African Ancestry Marker", continent: "African", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for African populations.", frequencies: {"AFR":0.95,"AMR":0.05,"EAS":0.05,"EUR":0.05,"SAS":0.1,"MENA":0.1} },
@@ -1696,6 +1715,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     return parts.includes(targetContinent);
   };
 
+  const subPopMarkers: Record<string, any[]> = {};
   // --- 5. Level 2: Sub-population Likelihoods (Refined) ---
   for (const continent of continentsToScore) {
     if (continentalScores[continent] < 0.01) continue;
@@ -1716,7 +1736,10 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     if (continentSubpops.length === 0) continue;
 
     const subLogL: Record<string, number> = {};
-    for (const sp of continentSubpops) subLogL[sp] = 0;
+    for (const sp of continentSubpops) {
+        subLogL[sp] = 0;
+        subPopMarkers[sp] = [];
+    }
 
     // Filter markers relevant to this continent
     const relevantMarkers = prunedSubpops.filter(m => matchesContinent(m.continent, continent));
@@ -1737,6 +1760,12 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
         let freq = 0.1; 
         if (isSubpopMatch(snp.subpop, targetSubpop)) {
           freq = 0.8; 
+          subPopMarkers[targetSubpop].push({
+            rsid: snp.rsid,
+            trait: snp.trait,
+            contribution: 'High',
+            genotype: snp.userGenotype
+          });
         } else {
           freq = 0.05;
         }
@@ -1754,6 +1783,15 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
         }
         
         let freq = 0.05;
+        if (aim.subFrequencies && aim.subFrequencies[targetSubpop]) {
+            freq = aim.subFrequencies[targetSubpop];
+            subPopMarkers[targetSubpop].push({
+                rsid: aim.rsid,
+                trait: aim.description,
+                contribution: (freq * (aim.weight || 1.0)).toFixed(2),
+                genotype: uGenotype
+            });
+        }
         if (aim.subFrequencies && aim.subFrequencies[targetSubpop] !== undefined) {
           freq = aim.subFrequencies[targetSubpop];
         }
@@ -1778,7 +1816,11 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
       subPopulations[continent] = subProbs
         .map(p => ({
           name: p.name,
-          percentage: (p.prob / totalSubProb) * 100
+          percentage: (p.prob / totalSubProb) * 100,
+          confidence: (p.prob / totalSubProb) * 100, // Confidence score
+          topMarkers: (subPopMarkers[p.name] || [])
+            .sort((a, b) => Number(b.contribution) - Number(a.contribution))
+            .slice(0, 3)
         }))
         .filter(p => p.percentage > 1)
         .sort((a, b) => b.percentage - a.percentage);
@@ -1800,6 +1842,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     deepScores,
     continents: oracleResults,
     subPopulations,
+    subPopMarkers,
     confidenceScore: Math.min(100, Math.round((testedAnchors.length / 50) * 60 + (prunedSubpops.length / 100) * 40))
   };
 }
@@ -1831,7 +1874,11 @@ export const Y_DNA_TREE: HaplogroupNode = {
         { branchName: "Haplogroup A3a", snp: ["M28"] },
         { branchName: "Haplogroup A3b", snp: ["M220"] },
         { branchName: "Haplogroup A3b1", snp: ["M51"] },
-        { branchName: "Haplogroup A3b2", snp: ["M13", "M171"] }
+        { branchName: "Haplogroup A3b2", snp: ["M13", "M171"] },
+        { 
+          branchName: "Haplogroup A00", 
+          snp: ["FGC25932", "FGC25805", "YP2737", "FGC27036", "YP3298", "FGC26901", "Y126645", "FGC26916", "YP3230", "A12220", "FGC26580", "L1149", "FGC25576", "A4982", "YP2683", "A4984", "YP2995", "A4985", "YP3292", "A3807", "FGC25522", "YP2561", "FGC27152", "YP3359"] 
+        }
       ]
     },
     {
@@ -2460,7 +2507,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
   branchName: "mtDNA Root (Mitochondrial Eve)",
   region: "Africa",
   description: "The common maternal ancestor of all living humans.",
-  mutations: ["A263G", "A750G", "A1438G", "A4769G", "A8860G", "A15326G"],
+  mutations: ["A263G", "A750G", "A1438G", "A4769G", "A8860G", "A15326G", "A1018G"],
   children: [
     {
       branchName: "Haplogroup L0",
@@ -2473,7 +2520,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
       branchName: "Haplogroup L1",
       region: "Central / West Africa",
       description: "A very old lineage common in Central and West Africa.",
-      mutations: ["C182T", "T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T"],
+      mutations: ["C182T", "T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A4104G"],
       children: [
         { branchName: "Haplogroup L1b", mutations: ["T16126C", "C16187T", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T"] },
         { branchName: "Haplogroup L1c", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G"] }
@@ -2491,7 +2538,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
           children: [
             {
               branchName: "Haplogroup L2a1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
+              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C4312T"],
               children: [
                 {
                   branchName: "Haplogroup L2a1a",
@@ -2537,7 +2584,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
       branchName: "Haplogroup L3",
       region: "East Africa / Global",
       description: "The ancestor of all non-African maternal lineages (M and N).",
-      mutations: ["A769G", "A1018G", "C16311T"],
+      mutations: ["A769G", "A1018G", "C16311T", "T16311C", "A10398G", "A16230G", "T16189C"],
       children: [
         {
           branchName: "Haplogroup L3b",
@@ -3104,6 +3151,16 @@ export const MT_DNA_TREE: HaplogroupNode = {
                         {
                           branchName: "Haplogroup H30",
                           mutations: ["A16129G", "T16187C"],
+                          children: []
+                        },
+                        {
+                          branchName: "Haplogroup H56",
+                          mutations: ["A263G", "A750G", "A1438G", "A4769G", "A8860G", "T11788T", "A15326G"],
+                          children: []
+                        },
+                        {
+                          branchName: "Haplogroup H87",
+                          mutations: ["A263G", "A750G", "A1438G", "A4769G", "G8188G", "A8860G", "A15326G"],
                           children: []
                         }
                       ]

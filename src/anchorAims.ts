@@ -619,6 +619,46 @@ export const ANCHOR_AIMS: AnchorAim[] = [
   },
   // --- NATIVE AMERICAN ---
   {
+    rsid: 'rs10954737',
+    region: 'Native American',
+    alleles: ['A'],
+    weight: 3.0,
+    frequencies: { AFR: 0.35, EUR: 0.62, EAS: 0.20, AMR: 0.55, SAS: 0.45 },
+    description: 'IRF5 - informative for distinguishing Native Americans from other populations.'
+  },
+  {
+    rsid: 'rs3827760',
+    region: 'Native American',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.01, EUR: 0.00, EAS: 0.87, AMR: 0.65, SAS: 0.07 },
+    description: 'EDAR - near-absent in African and European populations, high frequency in Native Americans.'
+  },
+  {
+    rsid: 'rs1426654',
+    region: 'Native American',
+    alleles: ['A'],
+    weight: 3.0,
+    frequencies: { AFR: 0.04, EUR: 0.99, EAS: 0.03, AMR: 0.55, SAS: 0.96 },
+    description: 'SLC24A5 - inverse marker, presence signals European admixture.'
+  },
+  {
+    rsid: 'rs16891982',
+    region: 'Native American',
+    alleles: ['G'],
+    weight: 3.0,
+    frequencies: { AFR: 0.02, EUR: 0.93, EAS: 0.02, AMR: 0.30, SAS: 0.09 },
+    description: 'SLC45A2 - inverse marker, presence signals European admixture.'
+  },
+  {
+    rsid: 'rs1800562',
+    region: 'Native American',
+    alleles: ['A'],
+    weight: 3.0,
+    frequencies: { AFR: 0.00, EUR: 0.06, EAS: 0.00, AMR: 0.02, SAS: 0.00 },
+    description: 'HFE - inverse marker, presence signals European ancestry.'
+  },
+  {
     rsid: 'rs9282541',
     region: 'Native American',
     alleles: ['A'],
