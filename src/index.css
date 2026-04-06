@@ -7,58 +7,60 @@
 }
 
 :root {
-  --primary-bg: #f8fafc;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --accent-blue: #0284c7;
-  --text-main: #1e293b;
-  --high-risk: #dc2626;
-  --medium-risk: #d97706;
-  --low-risk: #059669;
+  /* Facebook Light Mode Palette */
+  --bg-primary: #F0F2F5;     
+  --bg-secondary: #FFFFFF;   
+  --text-primary: #050505;   
+  --text-secondary: #65676B; 
+  --accent-blue: #0866FF;    
+  --status-high: #E41E3F;    
+  --status-medium: #F5A623;
+  --status-low: #31A24C;     
+  --card-bg: #FFFFFF;
+  --border-color: #CED0D4;
 }
 
 .dark {
-  --primary-bg: #0f172a;
-  --card-bg: rgba(30, 41, 59, 0.6);
-  --accent-blue: #38bdf8;
-  --text-main: #f1f5f9;
-  --high-risk: #f87171;
-  --medium-risk: #fbbf24;
-  --low-risk: #34d399;
+  /* Facebook Dark Mode Palette */
+  --bg-primary: #18191A;     
+  --bg-secondary: #242526;   
+  --text-primary: #E4E6EB;   
+  --text-secondary: #B0B3B8; 
+  --accent-blue: #2374E1;    
+  --status-high: #F02849;
+  --status-medium: #F5A623;
+  --status-low: #31A24C;
+  --card-bg: #242526;
+  --border-color: #3E4042;
 }
 
 body {
   margin: 0;
-  background-color: var(--primary-bg);
-  background-image: radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.05) 0px, transparent 50%),
-                    radial-gradient(at 50% 0%, rgba(2, 132, 199, 0.02) 0px, transparent 50%);
-  color: var(--text-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
+  line-height: 1.5;
 }
 
 .app-container {
-  backdrop-filter: blur(10px);
   min-height: 100vh;
 }
 
 header h1 {
   font-weight: 800;
-  background: linear-gradient(to right, #0f172a, #0284c7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-blue);
 }
 
 .trait-card {
-  background: var(--card-bg);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid rgba(226, 232, 240, 0.8) !important;
-  backdrop-filter: blur(8px);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.trait-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent-blue) !important;
+.dark .trait-card {
+  box-shadow: none; 
 }
 
 input[type="file"] {
@@ -67,7 +69,8 @@ input[type="file"] {
 
 button {
   transition: all 0.2s ease;
-  font-weight: 500;
+  font-weight: 600;
+  border-radius: 6px;
 }
 
 button:hover {
@@ -79,14 +82,14 @@ button:hover {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--border-color);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--text-secondary);
 }
 
 /* Maintain some utility classes for the DNA visualization and animations */
@@ -103,9 +106,9 @@ button:hover {
   justify-content: center;
   animation: pk 2s ease-in-out infinite;
 }
-.nA { border-color: #30D870; color: #30D870; }
-.nT { border-color: #E04040; color: #E04040; animation-delay: .2s; }
-.nG { border-color: #D0A020; color: #D0A020; animation-delay: .4s; }
+.nA { border-color: #31A24C; color: #31A24C; }
+.nT { border-color: #E41E3F; color: #E41E3F; animation-delay: .2s; }
+.nG { border-color: #F5A623; color: #F5A623; animation-delay: .4s; }
 .nC { border-color: var(--accent-blue); color: var(--accent-blue); animation-delay: .6s; }
 
 @keyframes pk {
@@ -113,8 +116,35 @@ button:hover {
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.5s ease-out forwards;
+.data-value {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card {
+  box-shadow: none;
+}
+
+.upload-blurb {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark .upload-blurb {
+  box-shadow: none;
 }
 
 @keyframes fadeUp {
