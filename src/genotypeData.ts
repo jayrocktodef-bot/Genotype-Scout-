@@ -1587,8 +1587,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   for (const continent of continentsToScore) scores[continent] = 0;
 
   let totalWeight = 0;
-  const subPopulations: Record<string, any[]> = {};
-
+  
   // --- 1. Autosomal AIMS (Averaged Scoring) ---
   const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid));
   const testedAnchors = results.filter(r => r.status !== 'not_tested' && anchorRsids.has(r.rsid));
@@ -1601,6 +1600,9 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
 
   const regionScores: Record<string, number> = {};
   const regionCounts: Record<string, number> = {};
+  const subRegionScores: Record<string, number> = {};
+  const subRegionCounts: Record<string, number> = {};
+  const subRegionToContinent: Record<string, string> = {};
 
   // Tally the frequencies AND count the markers
   ANCHOR_AIMS.forEach(aim => {
@@ -1609,20 +1611,28 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     // Check if the marker was tested
     if (genotype) {
       const hasAllele = aim.alleles.some(a => genotype.includes(a));
-      
+      const significanceWeight = aim.significance === 'High' ? 2.0 : aim.significance === 'Medium' ? 1.5 : 1.0;
+      const weight = (aim.weight || 1.0) * significanceWeight;
+
+      // Continental
       Object.entries(aim.frequencies).forEach(([code, freq]) => {
         const regionName = REGION_CODES[code];
-        
         if (regionName) {
-          // If they have the allele, add its frequency. 
-          // If they don't, they have the alternate allele, so add (1 - freq).
           const scoreToAdd = hasAllele ? freq : (1 - freq);
-          
-          const weight = aim.weight || 1.0;
           regionScores[regionName] = (regionScores[regionName] || 0) + (scoreToAdd * weight);
           regionCounts[regionName] = (regionCounts[regionName] || 0) + weight; 
         }
       });
+
+      // Sub-population
+      if (aim.subFrequencies) {
+        Object.entries(aim.subFrequencies).forEach(([subRegionName, freq]) => {
+          const scoreToAdd = hasAllele ? freq : (1 - freq);
+          subRegionScores[subRegionName] = (subRegionScores[subRegionName] || 0) + (scoreToAdd * weight);
+          subRegionCounts[subRegionName] = (subRegionCounts[subRegionName] || 0) + weight;
+          subRegionToContinent[subRegionName] = aim.region;
+        });
+      }
     }
   });
 
@@ -1668,20 +1678,24 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     }
   }
 
-  // --- 4. Mock Regional and Deep Scores for now (as requested by user's 3-tier structure) ---
-  // In a real implementation, this would be derived from more granular SNP data.
   const regionalScores: Record<string, number> = {};
-  const deepScores: Record<string, number> = {};
-  
-  // Mock data for demonstration
-  Object.keys(continentalScores).forEach(cont => {
-    regionalScores[`${cont} Region 1`] = continentalScores[cont] * 0.6;
-    regionalScores[`${cont} Region 2`] = continentalScores[cont] * 0.4;
-    deepScores[`${cont} Affinity 1`] = continentalScores[cont] * 0.3;
-    deepScores[`${cont} Affinity 2`] = continentalScores[cont] * 0.3;
-    deepScores[`${cont} Affinity 3`] = continentalScores[cont] * 0.4;
+  Object.keys(subRegionScores).forEach(subRegion => {
+    regionalScores[subRegion] = (subRegionScores[subRegion] / subRegionCounts[subRegion]) * 100;
   });
-
+  
+  const deepScores: Record<string, number> = { ...regionalScores };
+  const subPopulations: Record<string, any[]> = {};
+  // Populate subPopulations based on subRegionScores
+  Object.keys(subRegionScores).forEach(subRegion => {
+    let continent = subRegionToContinent[subRegion] || 'Unknown';
+    if (continent === 'Middle Eastern' || continent === 'North African') continent = 'Middle Eastern/North African';
+    
+    if (!subPopulations[continent]) subPopulations[continent] = [];
+    subPopulations[continent].push({ 
+      name: subRegion, 
+      percentage: (subRegionScores[subRegion] / subRegionCounts[subRegion]) * 100 
+    });
+  });
 
   const pruneMarkers = (markers: any[]) => {
     const pruned: any[] = [];
