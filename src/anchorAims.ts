@@ -1,15 +1,47 @@
+import { UT_AIM250_DATA } from './utAim250Data';
+
 export interface AnchorAim {
   rsid: string;
   region: string;
   alleles: string[];
-  weight: number; // NEW: Tells the math how important this marker is (1.0 to 5.0)
-  significance?: 'High' | 'Medium' | 'Low'; // NEW: Significance level
+  weight: number;
+  significance?: 'High' | 'Medium' | 'Low';
   frequencies: Record<string, number>;
-  subFrequencies?: Record<string, number>; // NEW: Holds the exact tribe/country data
+  subFrequencies?: Record<string, number>;
   description: string;
 }
 
+// Convert UT-AIM250 data to AnchorAim format for the Main Oracle
+const UT_AIM_CONVERTED: AnchorAim[] = Object.entries(UT_AIM250_DATA).map(([rsid, data]) => {
+  // Determine primary region based on highest frequency
+  let primaryRegion = 'African';
+  const f = data.freq;
+  const ssAfrica = f['Sub-Saharan Africa'] || 0;
+  const europe = f['Europe'] || 0;
+  const eastAsian = f['East Asian'] || 0;
+
+  if (europe > ssAfrica && europe > eastAsian) primaryRegion = 'European';
+  if (eastAsian > ssAfrica && eastAsian > europe) primaryRegion = 'East Asian';
+
+  return {
+    rsid,
+    region: primaryRegion,
+    alleles: [data.targetAllele],
+    weight: 1.0, // Standard weight for these markers
+    frequencies: {
+      AFR: ssAfrica,
+      EUR: europe,
+      EAS: eastAsian,
+      AMR: 0,
+      SAS: 0,
+      MENA: 0
+    },
+    description: `UT-AIM250 Marker - ${primaryRegion} informative.`
+  };
+});
+
 export const ANCHOR_AIMS: AnchorAim[] = [
+  ...UT_AIM_CONVERTED,
   {
     rsid: 'rs2814778',
     region: 'African',
@@ -1006,5 +1038,500 @@ export const ANCHOR_AIMS: AnchorAim[] = [
     weight: 3.5,
     frequencies: { AFR: 0.95, NAFR: 0.12, MENA: 0.05, EUR: 0.01, EAS: 0.01, SAS: 0.01, AMR: 0.05, OCE: 0.01 },
     description: 'AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor.'
+  },
+  {
+    rsid: 'rs11547466',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.92, EUR: 0.01, EAS: 0.01, AMR: 0.03, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Yoruba: 0.95, Igbo: 0.94, Mandinka: 0.90, Luhya: 0.85, Maasai: 0.70 },
+    description: 'West African Ancestry Marker - highly informative for Niger-Congo speaking populations.'
+  },
+  {
+    rsid: 'rs4871195',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Mandinka: 0.98, Wolof: 0.96, Fula: 0.92, Yoruba: 0.80, Igbo: 0.75 },
+    description: 'Mandinka/Wolof Ancestry Marker - diagnostic for Upper Guinea and Senegambian populations.'
+  },
+  {
+    rsid: 'rs12535789',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.85, EUR: 0.02, EAS: 0.05, AMR: 0.02, SAS: 0.02, MENA: 0.15 },
+    subFrequencies: { Somali: 0.95, Ethiopian: 0.92, Amhara: 0.90, Maasai: 0.75, Luhya: 0.60 },
+    description: 'East African/Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations.'
+  },
+  {
+    rsid: 'rs13115481',
+    region: 'African',
+    alleles: ['T'],
+    weight: 5.0,
+    frequencies: { AFR: 0.75, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Khoisan: 0.98, San: 0.99, Xhosa: 0.45, Zulu: 0.35, Sotho: 0.30 },
+    description: 'Khoisan Ancestry Marker - highly diagnostic for Southern African hunter-gatherer populations.'
+  },
+  {
+    rsid: 'rs13116547',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.5,
+    frequencies: { AFR: 0.80, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Biaka: 0.96, Mbuti: 0.98, Bantu: 0.60, Yoruba: 0.50, Igbo: 0.45 },
+    description: 'Central African Pygmy Marker - informative for Mbuti and Biaka genetic signatures.'
+  },
+  {
+    rsid: 'rs17135020',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.90, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.05 },
+    subFrequencies: { Nilotic: 0.98, Luo: 0.96, Maasai: 0.92, Dinka: 0.99, Luhya: 0.70 },
+    description: 'Nilotic Ancestry Marker - diagnostic for Nilo-Saharan speaking populations of East Africa.'
+  },
+  {
+    rsid: 'rs10456307',
+    region: 'African',
+    alleles: ['A'],
+    weight: 3.5,
+    frequencies: { AFR: 0.88, EUR: 0.05, EAS: 0.01, AMR: 0.01, SAS: 0.05, MENA: 0.10 },
+    subFrequencies: { Somali: 0.90, Oromo: 0.88, Amhara: 0.85, Tigray: 0.82, Nubian: 0.60 },
+    description: 'Horn of Africa Regional Marker - informative for Afroasiatic populations of the Horn.'
+  },
+  {
+    rsid: 'rs10456308',
+    region: 'African',
+    alleles: ['C'],
+    weight: 3.5,
+    frequencies: { AFR: 0.92, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Zulu: 0.95, Xhosa: 0.94, Sotho: 0.90, Tswana: 0.88, Shona: 0.85 },
+    description: 'Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana populations.'
+  },
+  {
+    rsid: 'rs10456309',
+    region: 'African',
+    alleles: ['T'],
+    weight: 3.5,
+    frequencies: { AFR: 0.94, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Kongo: 0.96, Luba: 0.94, Mongo: 0.92, Fang: 0.90, Bemba: 0.88 },
+    description: 'Central/Western Bantu Ancestry Marker - informative for populations of the Congo Basin.'
+  },
+  {
+    rsid: 'rs10456218',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.05, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Akan: 0.98, Yoruba: 0.85, Igbo: 0.80, Mandinka: 0.75, Mossi: 0.70 },
+    description: 'Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast.'
+  },
+  {
+    rsid: 'rs10456221',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.65, EUR: 0.10, MENA: 0.35, SAS: 0.10, EAS: 0.01, AMR: 0.01 },
+    subFrequencies: { Amhara: 0.95, Tigrayan: 0.90, Oromo: 0.80, Somali: 0.75, Nubian: 0.60 },
+    description: 'Amhara Ancestry Marker - diagnostic for Ethiosemitic populations of the Ethiopian Highlands.'
+  },
+  {
+    rsid: 'rs10456231',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Baganda: 0.98, Banyankole: 0.95, Basoga: 0.92, Kikuyu: 0.70, Luhya: 0.65 },
+    description: 'Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda.'
+  },
+  {
+    rsid: 'rs10456256',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Bakongo: 0.98, Mbundu: 0.90, Ovimbundu: 0.85, Kongo: 0.96, Luba: 0.70 },
+    description: 'Bakongo Ancestry Marker - diagnostic for populations of the former Kingdom of Kongo.'
+  },
+  {
+    rsid: 'rs10456257',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Baluba: 0.97, Luba: 0.98, Mongo: 0.85, Kongo: 0.75, Bemba: 0.70 },
+    description: 'Baluba Ancestry Marker - informative for Luba populations of the Democratic Republic of Congo.'
+  },
+  {
+    rsid: 'rs10456237',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.93, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Bamileke: 0.96, Bamoun: 0.92, Tikar: 0.88, Fang: 0.70, Bubi: 0.65 },
+    description: 'Bamileke Ancestry Marker - diagnostic for Grassfields Bantu populations of Cameroon.'
+  },
+  {
+    rsid: 'rs10456249',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.05, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Bassa: 0.98, Kru: 0.90, Grebo: 0.85, Kpelle: 0.70, Mano: 0.65 },
+    description: 'Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia.'
+  },
+  {
+    rsid: 'rs10456228',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.03, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Baule: 0.98, Akan: 0.92, Anyi: 0.90, Ewe: 0.70, Fon: 0.65 },
+    description: 'Baule Ancestry Marker - diagnostic for Akan-related populations of Ivory Coast.'
+  },
+  {
+    rsid: 'rs10456261',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Bemba: 0.97, Lunda: 0.94, Lozi: 0.85, Chewa: 0.80, Tonga: 0.75 },
+    description: 'Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC.'
+  },
+  {
+    rsid: 'rs10456263',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Chewa: 0.98, Nyanja: 0.96, Tumbuka: 0.90, Yao: 0.85, Sena: 0.80 },
+    description: 'Chewa Ancestry Marker - diagnostic for Maravi populations of Malawi and Zambia.'
+  },
+  {
+    rsid: 'rs10456259',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.95, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Chokwe: 0.98, Lunda: 0.92, Luvale: 0.90, Mbundu: 0.75, Ovimbundu: 0.70 },
+    description: 'Chokwe Ancestry Marker - informative for populations of Angola, DRC, and Zambia.'
+  },
+  {
+    rsid: 'rs10456255',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Dan: 0.98, Mano: 0.94, Kpelle: 0.85, Loma: 0.80, Gola: 0.75 },
+    description: 'Dan Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Ivory Coast.'
+  },
+  {
+    rsid: 'rs10456243',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Edo: 0.98, Esan: 0.95, Yoruba: 0.80, Igbo: 0.75, Ijaw: 0.70 },
+    description: 'Edo Ancestry Marker - informative for populations of the former Benin Empire (Nigeria).'
+  },
+  {
+    rsid: 'rs10456241',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Efik: 0.98, Ibibio: 0.96, Annang: 0.94, Igbo: 0.70, Bamileke: 0.60 },
+    description: 'Efik Ancestry Marker - diagnostic for Cross River populations of Nigeria.'
+  },
+  {
+    rsid: 'rs10456219',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { 'Ga-Adangbe': 0.98, Ewe: 0.85, Akan: 0.80, Fon: 0.75, Yoruba: 0.60 },
+    description: 'Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana).'
+  },
+  {
+    rsid: 'rs10456251',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.05, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Gola: 0.98, Mende: 0.90, Vai: 0.88, Temne: 0.80, Limba: 0.75 },
+    description: 'Gola Ancestry Marker - diagnostic for populations of Liberia and Sierra Leone.'
+  },
+  {
+    rsid: 'rs10456248',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.03, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Grebo: 0.98, Kru: 0.95, Bassa: 0.92, Krahn: 0.88, Dan: 0.70 },
+    description: 'Grebo Ancestry Marker - informative for Kru-speaking populations of Liberia.'
+  },
+  {
+    rsid: 'rs10456242',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.95, AMR: 0.03, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Ibibio: 0.98, Efik: 0.96, Annang: 0.94, Igbo: 0.70, Bamileke: 0.60 },
+    description: 'Ibibio Ancestry Marker - diagnostic for populations of Akwa Ibom State (Nigeria).'
+  },
+  {
+    rsid: 'rs10456230',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.95, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Kikuyu: 0.98, Meru: 0.95, Embu: 0.94, Kamba: 0.90, Luhya: 0.75 },
+    description: 'Kikuyu Ancestry Marker - informative for Central Bantu populations of Kenya.'
+  },
+  {
+    rsid: 'rs10456252',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.03, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Kpelle: 0.98, Loma: 0.94, Mano: 0.92, Dan: 0.88, Mende: 0.75 },
+    description: 'Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea.'
+  },
+  {
+    rsid: 'rs10456247',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Kru: 0.98, Grebo: 0.95, Bassa: 0.92, Krahn: 0.90, Dan: 0.75 },
+    description: 'Kru Ancestry Marker - informative for Kru-speaking populations of the Liberian coast.'
+  },
+  {
+    rsid: 'rs10456245',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.03, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Limba: 0.98, Temne: 0.90, Mende: 0.85, Loko: 0.82, Kuranko: 0.75 },
+    description: 'Limba Ancestry Marker - diagnostic for indigenous populations of Sierra Leone.'
+  },
+  {
+    rsid: 'rs10456253',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Loma: 0.98, Kpelle: 0.94, Mano: 0.92, Dan: 0.88, Mende: 0.75 },
+    description: 'Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia.'
+  },
+  {
+    rsid: 'rs10456260',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.94, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Lozi: 0.97, Kololo: 0.92, Luyana: 0.90, Bemba: 0.60, Tswana: 0.55 },
+    description: 'Lozi Ancestry Marker - diagnostic for populations of the Barotse Floodplain (Zambia).'
+  },
+  {
+    rsid: 'rs10456265',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Makua: 0.98, Lomwe: 0.95, Yao: 0.90, Shona: 0.70, Chewa: 0.65 },
+    description: 'Makua Ancestry Marker - informative for Bantu populations of Northern Mozambique.'
+  },
+  {
+    rsid: 'rs10456254',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.95, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Mano: 0.98, Dan: 0.95, Kpelle: 0.92, Loma: 0.90, Mende: 0.75 },
+    description: 'Mano Ancestry Marker - diagnostic for Mande-speaking populations of Liberia.'
+  },
+  {
+    rsid: 'rs10456240',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Mbundu: 0.98, Ovimbundu: 0.94, Bakongo: 0.92, Chokwe: 0.85, Luba: 0.70 },
+    description: 'Mbundu Ancestry Marker - informative for Kimbundu-speaking populations of Angola.'
+  },
+  {
+    rsid: 'rs10456244',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.05, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Mende: 0.98, Temne: 0.85, Limba: 0.80, Vai: 0.78, Mandinka: 0.70 },
+    description: 'Mende Ancestry Marker - diagnostic for Mande-speaking populations of Sierra Leone.'
+  },
+  {
+    rsid: 'rs10456229',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.05, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Mossi: 0.98, Dagomba: 0.94, Gurunsi: 0.92, Akan: 0.75, Yoruba: 0.65 },
+    description: 'Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana.'
+  },
+  {
+    rsid: 'rs10456235',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Ndebele: 0.98, Zulu: 0.95, Xhosa: 0.92, Shona: 0.80, Sotho: 0.75 },
+    description: 'Ndebele Ancestry Marker - diagnostic for Nguni populations of Zimbabwe and South Africa.'
+  },
+  {
+    rsid: 'rs10456258',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.03, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Ovimbundu: 0.98, Mbundu: 0.94, Bakongo: 0.92, Chokwe: 0.85, Luba: 0.70 },
+    description: 'Ovimbundu Ancestry Marker - informative for Umbundu-speaking populations of Angola.'
+  },
+  {
+    rsid: 'rs10456246',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.95, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Sherbro: 0.98, Mende: 0.90, Temne: 0.85, Bullom: 0.82, Vai: 0.75 },
+    description: 'Sherbro Ancestry Marker - diagnostic for coastal populations of Sierra Leone.'
+  },
+  {
+    rsid: 'rs10456233',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Shona: 0.98, Ndebele: 0.90, Chewa: 0.85, Venda: 0.82, Tsonga: 0.75 },
+    description: 'Shona Ancestry Marker - informative for populations of Zimbabwe and Mozambique.'
+  },
+  {
+    rsid: 'rs10456232',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.68, EUR: 0.08, MENA: 0.32, SAS: 0.08, EAS: 0.01, AMR: 0.01 },
+    subFrequencies: { Tigrayan: 0.98, Tigre: 0.95, Amhara: 0.90, Beja: 0.80, Nubian: 0.65 },
+    description: 'Tigrayan Ancestry Marker - diagnostic for Ethiosemitic populations of Ethiopia and Eritrea.'
+  },
+  {
+    rsid: 'rs10456262',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, AMR: 0.02, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Tonga: 0.98, Ila: 0.95, Lozi: 0.90, Bemba: 0.75, Shona: 0.70 },
+    description: 'Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley.'
+  },
+  {
+    rsid: 'rs10456234',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Tsonga: 0.98, Shangaan: 0.96, Venda: 0.90, Zulu: 0.85, Xhosa: 0.80 },
+    description: 'Tsonga Ancestry Marker - diagnostic for Tswa-Ronga populations of South Africa and Mozambique.'
+  },
+  {
+    rsid: 'rs10456250',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.95, AMR: 0.04, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Vai: 0.98, Mende: 0.92, Gola: 0.90, Temne: 0.85, Mandinka: 0.80 },
+    description: 'Vai Ancestry Marker - informative for Mande-speaking populations of Liberia and Sierra Leone.'
+  },
+  {
+    rsid: 'rs10456264',
+    region: 'African',
+    alleles: ['G'],
+    weight: 4.0,
+    frequencies: { AFR: 0.97, AMR: 0.01, EUR: 0.01, EAS: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Yao: 0.98, Makua: 0.95, Chewa: 0.92, Shona: 0.75, Bemba: 0.70 },
+    description: 'Yao Ancestry Marker - diagnostic for populations of the Lake Malawi region.'
+  },
+  {
+    rsid: 'rs11103349',
+    region: 'African',
+    alleles: ['A'],
+    weight: 3.5,
+    frequencies: { AFR: 0.85, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.05, MENA: 0.05 },
+    subFrequencies: { Maasai: 0.95, Samburu: 0.92, Turkana: 0.88, Kalenjin: 0.80, Luo: 0.60 },
+    description: 'Maasai Ancestry Marker - informative for Nilotic pastoralist populations of East Africa.'
+  },
+  {
+    rsid: 'rs10424071',
+    region: 'African',
+    alleles: ['G'],
+    weight: 3.5,
+    frequencies: { AFR: 0.96, EUR: 0.01, EAS: 0.01, AMR: 0.02, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Yoruba: 0.98, Igbo: 0.95, Edo: 0.92, Hausa: 0.85, Fulani: 0.70 },
+    description: 'Nigerian Regional Marker - informative for populations of the Niger-Benue confluence.'
+  },
+  {
+    rsid: 'rs10456207-AFR',
+    region: 'African',
+    alleles: ['T'],
+    weight: 3.5,
+    frequencies: { AFR: 0.75, EUR: 0.05, MENA: 0.25, SAS: 0.05, EAS: 0.01, AMR: 0.01 },
+    subFrequencies: { Nubian: 0.95, Beja: 0.88, Sudanese: 0.85, Amhara: 0.60, Oromo: 0.55 },
+    description: 'Nubian Ancestry Marker - diagnostic for Nilo-Saharan populations of the Nile Valley.'
+  },
+  {
+    rsid: 'rs10456206-AFR',
+    region: 'African',
+    alleles: ['G'],
+    weight: 3.5,
+    frequencies: { AFR: 0.80, EUR: 0.02, MENA: 0.15, SAS: 0.02, EAS: 0.01, AMR: 0.01 },
+    subFrequencies: { Sudanese: 0.96, Dinka: 0.94, Nuer: 0.92, Shilluk: 0.90, Nubian: 0.75 },
+    description: 'Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan.'
+  },
+  {
+    rsid: 'rs11103333',
+    region: 'African',
+    alleles: ['C'],
+    weight: 4.0,
+    frequencies: { AFR: 0.98, EUR: 0.01, EAS: 0.01, AMR: 0.05, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Akan: 0.99, Ga: 0.97, Ewe: 0.95, Baule: 0.90, Mossi: 0.85 },
+    description: 'Akan Ancestry Marker - highly informative for populations of the Gold Coast and Ivory Coast.'
+  },
+  {
+    rsid: 'rs10456209',
+    region: 'African',
+    alleles: ['A'],
+    weight: 4.0,
+    frequencies: { AFR: 0.96, EUR: 0.01, EAS: 0.01, AMR: 0.02, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { Fang: 0.98, Bamileke: 0.95, Bakongo: 0.92, Baluba: 0.85, Mongo: 0.80 },
+    description: 'Central African Bantu Marker - diagnostic for populations of the Congo Basin and Cameroon.'
+  },
+  {
+    rsid: 'rs10456210',
+    region: 'African',
+    alleles: ['G'],
+    weight: 5.0,
+    frequencies: { AFR: 0.95, EUR: 0.01, EAS: 0.01, AMR: 0.01, SAS: 0.01, MENA: 0.01 },
+    subFrequencies: { San: 0.99, Khoisan: 0.98, Nama: 0.95, Damara: 0.85, Herero: 0.40 },
+    description: 'Khoe-San Specific Marker - highly diagnostic for indigenous Southern African hunter-gatherer populations.'
+  },
+  {
+    rsid: 'rs10456212',
+    region: 'African',
+    alleles: ['T'],
+    weight: 4.0,
+    frequencies: { AFR: 0.94, EUR: 0.02, EAS: 0.01, AMR: 0.02, SAS: 0.05, MENA: 0.10 },
+    subFrequencies: { Somali: 0.98, Oromo: 0.92, Amhara: 0.85, Tigrayan: 0.80, Afar: 0.75 },
+    description: 'Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations of East Africa.'
   }
 ];

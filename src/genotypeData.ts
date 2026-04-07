@@ -106,7 +106,7 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs10456221_Amhara", rsid: "rs10456221", gene: "Unknown", trait: "Amhara Ancestry Marker", continent: "African", subpop: "Amhara", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Amhara populations (Ethiopia).", frequencies: {"AFR":0.65,"AMR":0.01,"EAS":0,"EUR":0.1,"SAS":0.1,"MENA":0.35} },
   { markerId: "rs1426657_Amhara", rsid: "rs1426657", gene: "SLC24A5", trait: "Amhara Ancestry Marker", continent: "African", subpop: "Amhara", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Amhara populations (Ethiopia).", frequencies: {"AFR":0.75,"AMR":0.05,"EAS":0.01,"EUR":0.1,"SAS":0.02,"MENA":0.07} },
   { markerId: "rs12203594_Amhara", rsid: "rs12203594", gene: "IRF4", trait: "Amhara Ancestry Marker", continent: "African", subpop: "Amhara", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Amhara populations (Ethiopia).", frequencies: {"AFR":0.78,"AMR":0.04,"EAS":0.01,"EUR":0.08,"SAS":0.02,"MENA":0.07} },
-  { markerId: "rs10456231_Baganda", rsid: "rs10456231_BAG", gene: "Unknown", trait: "Baganda Ancestry Marker", continent: "African", subpop: "Baganda", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baganda populations (Uganda).", frequencies: {"AFR":0.96,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs10456231_Baganda", rsid: "rs10456231", gene: "Unknown", trait: "Baganda Ancestry Marker", continent: "African", subpop: "Baganda", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baganda populations (Uganda).", frequencies: {"AFR":0.96,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs10456256_Bakongo", rsid: "rs10456256", gene: "Unknown", trait: "Bakongo Ancestry Marker", continent: "African", subpop: "Bakongo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bakongo populations (DRC/Angola/Congo).", frequencies: {"AFR":0.98,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456238_Bakongo", rsid: "rs10456238", gene: "Unknown", trait: "Bakongo Ancestry Marker", continent: "African", subpop: "Bakongo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bakongo populations (Congo/Angola).", frequencies: {"AFR":0.95,"AMR":0.02,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs10456257_Baluba", rsid: "rs10456257", gene: "Unknown", trait: "Baluba Ancestry Marker", continent: "African", subpop: "Baluba", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baluba populations (DRC).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
@@ -116,7 +116,7 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs10486574", rsid: "rs10486574", gene: "Unknown", trait: "Bantu Marker", continent: "African", subpop: "Bantu", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bantu populations." },
   { markerId: "rs10486575", rsid: "rs10486575", gene: "Unknown", trait: "Bantu Marker", continent: "African", subpop: "Bantu", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bantu populations." },
   { markerId: "rs10456249_Bassa", rsid: "rs10456249", gene: "Unknown", trait: "Bassa Ancestry Marker", continent: "African", subpop: "Bassa", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bassa populations (Liberia).", frequencies: {"AFR":0.96,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456228_Baule", rsid: "rs10456228_BA", gene: "Unknown", trait: "Baule Ancestry Marker", continent: "African", subpop: "Baule", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baule populations (Ivory Coast).", frequencies: {"AFR":0.98,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456228_Baule", rsid: "rs10456228", gene: "Unknown", trait: "Baule Ancestry Marker", continent: "African", subpop: "Baule", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baule populations (Ivory Coast).", frequencies: {"AFR":0.98,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456261_Bemba", rsid: "rs10456261", gene: "Unknown", trait: "Bemba Ancestry Marker", continent: "African", subpop: "Bemba", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bemba populations (Zambia/DRC).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs4242382", rsid: "rs4242382", gene: "Unknown", trait: "Cameroonian Marker", continent: "African", subpop: "Cameroon", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Cameroonian populations." },
   { markerId: "rs4242383", rsid: "rs4242383", gene: "Unknown", trait: "Cameroonian Marker", continent: "African", subpop: "Cameroon", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Cameroonian populations." },
@@ -145,7 +145,7 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs10456251_Gola", rsid: "rs10456251", gene: "Unknown", trait: "Gola Ancestry Marker", continent: "African", subpop: "Gola", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Gola populations (Liberia/Sierra Leone).", frequencies: {"AFR":0.98,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456248_Grebo", rsid: "rs10456248", gene: "Unknown", trait: "Grebo Ancestry Marker", continent: "African", subpop: "Grebo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Grebo populations (Liberia).", frequencies: {"AFR":0.97,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456205_Hausa", rsid: "rs10456205_H", gene: "Unknown", trait: "Hausa Ancestry Marker", continent: "African", subpop: "Hausa", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Hausa populations.", frequencies: {"AFR":0.92,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0.02,"MENA":0.05} },
-  { markerId: "rs11103349", rsid: "rs11103349", gene: "Unknown", trait: "East African (Maasai) Marker", continent: "African", subpop: "Horn", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Horn of Africa populations." },
+  { markerId: "rs11103349", rsid: "rs11103349", gene: "Unknown", trait: "Maasai Ancestry Marker", continent: "African", subpop: "Maasai", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Maasai populations.", frequencies: {"AFR":0.85,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.05,"MENA":0.05} },
   { markerId: "rs11103350", rsid: "rs11103350", gene: "Unknown", trait: "East African Marker", continent: "African", subpop: "Horn", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Horn of Africa populations." },
   { markerId: "rs11103351", rsid: "rs11103351", gene: "Unknown", trait: "East African Marker", continent: "African", subpop: "Horn", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Horn of Africa populations." },
   { markerId: "rs10456242_Ibibio", rsid: "rs10456242", gene: "Unknown", trait: "Ibibio Ancestry Marker", continent: "African", subpop: "Ibibio", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Ibibio populations (Nigeria).", frequencies: {"AFR":0.95,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
@@ -154,14 +154,14 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs1572318", rsid: "rs1572318", gene: "NFIA", trait: "Basal African Marker", continent: "African", subpop: "Khoe-San", alleles: ["A"], significance: "High", category: "Ancestry", description: "High frequency marker diagnostic for Southern African Khoe-San hunter-gatherer ancestry." },
   { markerId: "rs1572319", rsid: "rs1572319", gene: "Unknown", trait: "Khoe-San Marker", continent: "African", subpop: "Khoe-San", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Khoe-San populations." },
   { markerId: "rs10456204_Khoisan", rsid: "rs10456204", gene: "Unknown", trait: "Khoisan Ancestry Marker", continent: "African", subpop: "Khoisan", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Khoisan populations.", frequencies: {"AFR":0.99,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456230_Kikuyu", rsid: "rs10456230_KI", gene: "Unknown", trait: "Kikuyu Ancestry Marker", continent: "African", subpop: "Kikuyu", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kikuyu populations (Kenya).", frequencies: {"AFR":0.95,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0.01,"MENA":0.01} },
-  { markerId: "rs10456236_Kongo", rsid: "rs10456236_KO", gene: "Unknown", trait: "Kongo Ancestry Marker", continent: "African", subpop: "Kongo", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kongo populations (DRC/Angola/Congo).", frequencies: {"AFR":0.98,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456230_Kikuyu", rsid: "rs10456230", gene: "Unknown", trait: "Kikuyu Ancestry Marker", continent: "African", subpop: "Kikuyu", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kikuyu populations (Kenya).", frequencies: {"AFR":0.95,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs10456236_Kongo", rsid: "rs10456236", gene: "Unknown", trait: "Kongo Ancestry Marker", continent: "African", subpop: "Kongo", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kongo populations (DRC/Angola/Congo).", frequencies: {"AFR":0.98,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456252_Kpelle", rsid: "rs10456252", gene: "Unknown", trait: "Kpelle Ancestry Marker", continent: "African", subpop: "Kpelle", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kpelle populations (Liberia/Guinea).", frequencies: {"AFR":0.97,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456247_Kru", rsid: "rs10456247", gene: "Unknown", trait: "Kru Ancestry Marker", continent: "African", subpop: "Kru", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kru populations (Liberia/Ivory Coast).", frequencies: {"AFR":0.98,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456245_Limba", rsid: "rs10456245", gene: "Unknown", trait: "Limba Ancestry Marker", continent: "African", subpop: "Limba", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Limba populations (Sierra Leone).", frequencies: {"AFR":0.96,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456253_Loma", rsid: "rs10456253", gene: "Unknown", trait: "Loma Ancestry Marker", continent: "African", subpop: "Loma", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Loma populations (Liberia/Guinea).", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456260_Lozi", rsid: "rs10456260", gene: "Unknown", trait: "Lozi Ancestry Marker", continent: "African", subpop: "Lozi", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Lozi populations (Zambia/Namibia/Botswana).", frequencies: {"AFR":0.94,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456237_Luba", rsid: "rs10456237_LU", gene: "Unknown", trait: "Luba Ancestry Marker", continent: "African", subpop: "Luba", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Luba populations (DRC).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456237_Luba", rsid: "rs10456237", gene: "Unknown", trait: "Luba Ancestry Marker", continent: "African", subpop: "Luba", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Luba populations (DRC).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456200_Luhya", rsid: "rs10456200", gene: "Unknown", trait: "Luhya Ancestry Marker", continent: "African", subpop: "Luhya", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Luhya populations.", frequencies: {"AFR":0.92,"AMR":0.02,"EAS":0.01,"EUR":0.01,"SAS":0.05,"MENA":0.02} },
   { markerId: "rs10456223_Luo", rsid: "rs10456223", gene: "Unknown", trait: "Luo Ancestry Marker", continent: "African", subpop: "Luo", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Luo populations (Kenya/Tanzania/Uganda).", frequencies: {"AFR":0.94,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0.02,"MENA":0.02} },
   { markerId: "rs11547466_Luo", rsid: "rs11547466", gene: "Unknown", trait: "Luo Ancestry Marker", continent: "African", subpop: "Luo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Luo populations (Kenya).", frequencies: {"AFR":0.92,"AMR":0.03,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
@@ -182,15 +182,15 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs10456244_Mende", rsid: "rs10456244", gene: "Unknown", trait: "Mende Ancestry Marker", continent: "African", subpop: "Mende", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mende populations (Sierra Leone).", frequencies: {"AFR":0.97,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs1446585_Mende", rsid: "rs1446585", gene: "SLC24A4", trait: "Mende Ancestry Marker", continent: "African", subpop: "Mende", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mende populations (Sierra Leone).", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs2675348_Mende", rsid: "rs2675348", gene: "Unknown", trait: "Mende Ancestry Marker", continent: "African", subpop: "Mende", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mende populations (Sierra Leone).", frequencies: {"AFR":0.93,"AMR":0.04,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
-  { markerId: "rs10456238_Mongo", rsid: "rs10456238_MON", gene: "Unknown", trait: "Mongo Ancestry Marker", continent: "African", subpop: "Mongo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mongo populations (DRC).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456229_Mossi", rsid: "rs10456229_MO", gene: "Unknown", trait: "Mossi Ancestry Marker", continent: "African", subpop: "Mossi", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mossi populations (Burkina Faso).", frequencies: {"AFR":0.96,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456235_Ndebele", rsid: "rs10456235_ND", gene: "Unknown", trait: "Ndebele Ancestry Marker", continent: "African", subpop: "Ndebele", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Ndebele populations (South Africa/Zimbabwe).", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10424071", rsid: "rs10424071", gene: "Unknown", trait: "Nigerian Marker", continent: "African", subpop: "Nigeria", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nigerian populations." },
+  { markerId: "rs10456238_Mongo", rsid: "rs10456238", gene: "Unknown", trait: "Mongo Ancestry Marker", continent: "African", subpop: "Mongo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mongo populations (DRC).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456229_Mossi", rsid: "rs10456229", gene: "Unknown", trait: "Mossi Ancestry Marker", continent: "African", subpop: "Mossi", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mossi populations (Burkina Faso).", frequencies: {"AFR":0.96,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456235_Ndebele", rsid: "rs10456235", gene: "Unknown", trait: "Ndebele Ancestry Marker", continent: "African", subpop: "Ndebele", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Ndebele populations (South Africa/Zimbabwe).", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10424071", rsid: "rs10424071", gene: "Unknown", trait: "Nigerian Ancestry Marker", continent: "African", subpop: "Nigerian", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nigerian populations.", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs10424072", rsid: "rs10424072", gene: "Unknown", trait: "Nigerian Marker", continent: "African", subpop: "Nigeria", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nigerian populations." },
   { markerId: "rs10424073", rsid: "rs10424073", gene: "Unknown", trait: "Nigerian Marker", continent: "African", subpop: "Nigeria", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nigerian populations." },
   { markerId: "rs10424074", rsid: "rs10424074", gene: "Unknown", trait: "Nigerian Marker", continent: "African", subpop: "Nigeria", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nigerian populations." },
   { markerId: "rs10456205_Nubian", rsid: "rs10456205_NU", gene: "Unknown", trait: "Nubian Ancestry Marker", continent: "African", subpop: "Nubian", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nubian populations.", frequencies: {"AFR":0.7,"AMR":0.01,"EAS":0,"EUR":0.1,"SAS":0.1,"MENA":0.4} },
-  { markerId: "rs10456207", rsid: "rs10456207", gene: "Unknown", trait: "Nubian Marker", continent: "African", subpop: "Nubian", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nubian populations." },
+  { markerId: "rs10456207-AFR", rsid: "rs10456207-AFR", gene: "Unknown", trait: "Nubian Ancestry Marker", continent: "African", subpop: "Nubian", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nubian populations.", frequencies: {"AFR":0.75,"AMR":0.01,"EAS":0.01,"EUR":0.05,"SAS":0.05,"MENA":0.25} },
   { markerId: "rs10456210", rsid: "rs10456210", gene: "Unknown", trait: "Nubian Marker", continent: "African", subpop: "Nubian", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nubian populations." },
   { markerId: "rs10456213", rsid: "rs10456213", gene: "Unknown", trait: "Nubian Marker", continent: "African", subpop: "Nubian", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Nubian populations." },
   { markerId: "rs10456222_Oromo", rsid: "rs10456222", gene: "Unknown", trait: "Oromo Ancestry Marker", continent: "African", subpop: "Oromo", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Oromo populations (Ethiopia/Kenya).", frequencies: {"AFR":0.72,"AMR":0.01,"EAS":0,"EUR":0.05,"SAS":0.08,"MENA":0.25} },
@@ -206,19 +206,19 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs13136402", rsid: "rs13136402", gene: "Unknown", trait: "San Marker", continent: "African", subpop: "San", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for San populations." },
   { markerId: "rs13136403", rsid: "rs13136403", gene: "Unknown", trait: "San Marker", continent: "African", subpop: "San", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for San populations." },
   { markerId: "rs10456246_Sherbro", rsid: "rs10456246", gene: "Unknown", trait: "Sherbro Ancestry Marker", continent: "African", subpop: "Sherbro", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Sherbro populations (Sierra Leone).", frequencies: {"AFR":0.95,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456233_Shona", rsid: "rs10456233_SH", gene: "Unknown", trait: "Shona Ancestry Marker", continent: "African", subpop: "Shona", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Shona populations (Zimbabwe/Mozambique).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456233_Shona", rsid: "rs10456233", gene: "Unknown", trait: "Shona Ancestry Marker", continent: "African", subpop: "Shona", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Shona populations (Zimbabwe/Mozambique).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456240_Shona", rsid: "rs10456240", gene: "Unknown", trait: "Shona Ancestry Marker", continent: "African", subpop: "Shona", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Shona populations (Zimbabwe).", frequencies: {"AFR":0.92,"AMR":0.04,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs10456202_Somali", rsid: "rs10456202", gene: "Unknown", trait: "Somali Ancestry Marker", continent: "African", subpop: "Somali", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Somali populations.", frequencies: {"AFR":0.75,"AMR":0.01,"EAS":0.01,"EUR":0.05,"SAS":0.1,"MENA":0.25} },
   { markerId: "rs10456301_Somali", rsid: "rs10456301", gene: "Unknown", trait: "Somali Ancestry Marker", continent: "African", subpop: "Somali", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Somali populations.", frequencies: {"AFR":0.72,"AMR":0.01,"EAS":0.01,"EUR":0.06,"SAS":0.11,"MENA":0.28} },
   { markerId: "rs10456302_Somali", rsid: "rs10456302", gene: "Unknown", trait: "Somali Ancestry Marker", continent: "African", subpop: "Somali", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Somali populations.", frequencies: {"AFR":0.74,"AMR":0.01,"EAS":0.01,"EUR":0.05,"SAS":0.09,"MENA":0.26} },
   { markerId: "rs10456224_Sotho", rsid: "rs10456224", gene: "Unknown", trait: "Sotho Ancestry Marker", continent: "African", subpop: "Sotho", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Sotho populations (South Africa/Lesotho).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456206", rsid: "rs10456206", gene: "Unknown", trait: "Sudanese Marker", continent: "African", subpop: "Sudan", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Sudanese populations." },
+  { markerId: "rs10456206-AFR", rsid: "rs10456206-AFR", gene: "Unknown", trait: "Sudanese Ancestry Marker", continent: "African", subpop: "Sudanese", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Sudanese populations.", frequencies: {"AFR":0.80,"AMR":0.01,"EAS":0.01,"EUR":0.02,"SAS":0.02,"MENA":0.15} },
   { markerId: "rs10456209", rsid: "rs10456209", gene: "Unknown", trait: "Sudanese Marker", continent: "African", subpop: "Sudan", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Sudanese populations." },
   { markerId: "rs10456212", rsid: "rs10456212", gene: "Unknown", trait: "Sudanese Marker", continent: "African", subpop: "Sudan", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Sudanese populations." },
   { markerId: "rs10456239_Temne", rsid: "rs10456239", gene: "Unknown", trait: "Temne Ancestry Marker", continent: "African", subpop: "Temne", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Temne populations (Sierra Leone).", frequencies: {"AFR":0.98,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456232_Tigrayan", rsid: "rs10456232_TI", gene: "Unknown", trait: "Tigrayan Ancestry Marker", continent: "African", subpop: "Tigrayan", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).", frequencies: {"AFR":0.68,"AMR":0.01,"EAS":0,"EUR":0.08,"SAS":0.08,"MENA":0.32} },
+  { markerId: "rs10456232_Tigrayan", rsid: "rs10456232", gene: "Unknown", trait: "Tigrayan Ancestry Marker", continent: "African", subpop: "Tigrayan", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tigrayan populations (Ethiopia/Eritrea).", frequencies: {"AFR":0.68,"AMR":0.01,"EAS":0,"EUR":0.08,"SAS":0.08,"MENA":0.32} },
   { markerId: "rs10456262_Tonga", rsid: "rs10456262", gene: "Unknown", trait: "Tonga Ancestry Marker", continent: "African", subpop: "Tonga", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tonga populations (Zambia/Zimbabwe).", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
-  { markerId: "rs10456234_Tsonga", rsid: "rs10456234_TS", gene: "Unknown", trait: "Tsonga Ancestry Marker", continent: "African", subpop: "Tsonga", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tsonga populations (South Africa/Mozambique).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456234_Tsonga", rsid: "rs10456234", gene: "Unknown", trait: "Tsonga Ancestry Marker", continent: "African", subpop: "Tsonga", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tsonga populations (South Africa/Mozambique).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456225_Tswana", rsid: "rs10456225", gene: "Unknown", trait: "Tswana Ancestry Marker", continent: "African", subpop: "Tswana", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tswana populations (Botswana/South Africa).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456241_Tswana", rsid: "rs10456241", gene: "Unknown", trait: "Tswana Ancestry Marker", continent: "African", subpop: "Tswana", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tswana populations (Botswana).", frequencies: {"AFR":0.93,"AMR":0.03,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs10456250_Vai", rsid: "rs10456250", gene: "Unknown", trait: "Vai Ancestry Marker", continent: "African", subpop: "Vai", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Vai populations (Liberia/Sierra Leone).", frequencies: {"AFR":0.95,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
@@ -1305,7 +1305,73 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs121907998", rsid: "rs121907998", gene: "HEXA", trait: "Tay-Sachs Disease", continent: "Middle Eastern / European", subpop: "Ashkenazi Jewish", category: "Health", significance: "High", alleles: ["T"], description: "Associated with Tay-Sachs disease, a rare inherited disorder that progressively destroys nerve cells in the brain and spinal cord.", referenceUrl: "https://www.snpedia.com/index.php/Rs121907998" },
   { markerId: "rs421016", rsid: "rs421016", gene: "GBA", trait: "Gaucher Disease", continent: "Middle Eastern / European", subpop: "Ashkenazi Jewish", category: "Health", significance: "High", alleles: ["A"], description: "Associated with Gaucher disease, a genetic disorder where fatty substances build up in certain organs.", referenceUrl: "https://www.snpedia.com/index.php/Rs421016" },
   { markerId: "rs28933393", rsid: "rs28933393", gene: "ASPA", trait: "Canavan Disease", continent: "Middle Eastern / European", subpop: "Ashkenazi Jewish", category: "Health", significance: "High", alleles: ["C"], description: "Associated with Canavan disease, a rare genetic disorder that causes progressive damage to nerve cells in the brain.", referenceUrl: "https://www.snpedia.com/index.php/Rs28933393" },
-  { markerId: "rs80357906", rsid: "rs80357906", gene: "BRCA1", trait: "Breast/Ovarian Cancer Risk", continent: "Middle Eastern / European", subpop: "Ashkenazi Jewish", category: "Health", significance: "High", alleles: ["delAG"], description: "Associated with an increased risk of breast and ovarian cancer.", referenceUrl: "https://www.snpedia.com/index.php/Rs80357906" }
+  { markerId: "rs80357906", rsid: "rs80357906", gene: "BRCA1", trait: "Breast/Ovarian Cancer Risk", continent: "Middle Eastern / European", subpop: "Ashkenazi Jewish", category: "Health", significance: "High", alleles: ["delAG"], description: "Associated with an increased risk of breast and ovarian cancer.", referenceUrl: "https://www.snpedia.com/index.php/Rs80357906" },
+  { markerId: "L513", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2c1", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a2c1 (Atlantic/Celtic)." },
+  { markerId: "Z253", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2c1", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a2c1 (Atlantic/Celtic)." },
+  { markerId: "Z255", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2c1", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a2c1 (Atlantic/Celtic)." },
+  { markerId: "L1335", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2c1", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a2c1 (Pictish)." },
+  { markerId: "S68", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2c1", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a2c1 (Leinster)." },
+  { markerId: "Z36", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2b1", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup R1b1a1b1a2b1 (Alpine)." },
+  { markerId: "Z56", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2b1", continent: "European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup R1b1a1b1a2b1 (Alpine)." },
+  { markerId: "Z192", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a2b1", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a2b1 (Alpine)." },
+  { markerId: "L1", gene: "Y-DNA", trait: "Haplogroup R1b1a1b1a1a", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b1a1b1a1a (North Sea)." },
+  { markerId: "Z1936", gene: "Y-DNA", trait: "Haplogroup N1a1", continent: "European / Asian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup N1a1 (Finno-Ugric)." },
+  { markerId: "L1026", gene: "Y-DNA", trait: "Haplogroup N1a1", continent: "European / Asian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup N1a1 (Finno-Ugric)." },
+  { markerId: "M19", gene: "Y-DNA", trait: "Haplogroup Q-M3", continent: "Native American", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q-M3 (Native American)." },
+  { markerId: "M194", gene: "Y-DNA", trait: "Haplogroup Q-M3", continent: "Native American", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q-M3 (Native American)." },
+  { markerId: "M199", gene: "Y-DNA", trait: "Haplogroup Q-M3", continent: "Native American", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q-M3 (Native American)." },
+  { markerId: "Z7700", gene: "Y-DNA", trait: "Haplogroup J2a", continent: "Middle Eastern / European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup J2a." },
+  { markerId: "L13", gene: "Y-DNA", trait: "Haplogroup G2a", continent: "European / Middle Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup G2a." },
+  { markerId: "Z2022", gene: "Y-DNA", trait: "Haplogroup G2a", continent: "European / Middle Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup G2a." },
+  { markerId: "L829", gene: "Y-DNA", trait: "Haplogroup J1", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup J1." },
+  { markerId: "Z834", gene: "Y-DNA", trait: "Haplogroup E1b-Z834", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup E1b-Z834." },
+  { markerId: "L1259", gene: "Y-DNA", trait: "Haplogroup G2a-L1259", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup G2a-L1259." },
+  { markerId: "L497", gene: "Y-DNA", trait: "Haplogroup G2a-L497", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup G2a-L497." },
+  { markerId: "Z6552", gene: "Y-DNA", trait: "Haplogroup G2a-Z6552", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup G2a-Z6552." },
+  { markerId: "M82", gene: "Y-DNA", trait: "Haplogroup H-M82", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup H-M82." },
+  { markerId: "Z2539", gene: "Y-DNA", trait: "Haplogroup I1-Z2539", continent: "European", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup I1-Z2539." },
+  { markerId: "CTS10100", gene: "Y-DNA", trait: "Haplogroup I2a-CTS10100", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup I2a-CTS10100." },
+  { markerId: "CTS595", gene: "Y-DNA", trait: "Haplogroup I2a-CTS595", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup I2a-CTS595." },
+  { markerId: "BY4", gene: "Y-DNA", trait: "Haplogroup J1-BY4", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup J1-BY4." },
+  { markerId: "BY8", gene: "Y-DNA", trait: "Haplogroup J1-BY8", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J1-BY8." },
+  { markerId: "FGC1713", gene: "Y-DNA", trait: "Haplogroup J1-FGC1713", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup J1-FGC1713." },
+  { markerId: "FGC3723", gene: "Y-DNA", trait: "Haplogroup J1-FGC3723", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup J1-FGC3723." },
+  { markerId: "FGC4415", gene: "Y-DNA", trait: "Haplogroup J1-FGC4415", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup J1-FGC4415." },
+  { markerId: "FGC5", gene: "Y-DNA", trait: "Haplogroup J1-FGC5", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J1-FGC5." },
+  { markerId: "FGC7", gene: "Y-DNA", trait: "Haplogroup J1-FGC7", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup J1-FGC7." },
+  { markerId: "FGC7944", gene: "Y-DNA", trait: "Haplogroup J1-FGC7944", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup J1-FGC7944." },
+  { markerId: "L860", gene: "Y-DNA", trait: "Haplogroup J1-L860", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup J1-L860." },
+  { markerId: "S4924", gene: "Y-DNA", trait: "Haplogroup J1-S4924", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J1-S4924." },
+  { markerId: "YSC0000076", gene: "Y-DNA", trait: "Haplogroup J1-YSC0000076", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup J1-YSC0000076." },
+  { markerId: "Z640", gene: "Y-DNA", trait: "Haplogroup J1-Z640", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup J1-Z640." },
+  { markerId: "ZS1282", gene: "Y-DNA", trait: "Haplogroup J1-ZS1282", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup J1-ZS1282." },
+  { markerId: "PF5197", gene: "Y-DNA", trait: "Haplogroup J2a-PF5197", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J2a-PF5197." },
+  { markerId: "VL29", gene: "Y-DNA", trait: "Haplogroup N1a-VL29", continent: "Northern European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup N1a-VL29." },
+  { markerId: "F100", gene: "Y-DNA", trait: "Haplogroup O-F100", continent: "East Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup O-F100." },
+  { markerId: "F145", gene: "Y-DNA", trait: "Haplogroup O-F145", continent: "East Asian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup O-F145." },
+  { markerId: "L53", gene: "Y-DNA", trait: "Haplogroup Q1b-L53", continent: "Native American", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup Q1b-L53." },
+  { markerId: "L664", gene: "Y-DNA", trait: "Haplogroup R1a-L664", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1a-L664." },
+  { markerId: "Z284", gene: "Y-DNA", trait: "Haplogroup R1a-Z284", continent: "European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup R1a-Z284." },
+  { markerId: "Z2103", gene: "Y-DNA", trait: "Haplogroup R1b-Z2103", continent: "European", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup R1b-Z2103." },
+  { markerId: "DF19", gene: "Y-DNA", trait: "Haplogroup R1b-DF19", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup R1b-DF19." },
+  { markerId: "DF49", gene: "Y-DNA", trait: "Haplogroup R1b-DF49", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b-DF49." },
+  { markerId: "DF63", gene: "Y-DNA", trait: "Haplogroup R1b-DF63", continent: "European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup R1b-DF63." },
+  { markerId: "FGC11134", gene: "Y-DNA", trait: "Haplogroup R1b-FGC11134", continent: "European", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup R1b-FGC11134." },
+  { markerId: "FGC5494", gene: "Y-DNA", trait: "Haplogroup R1b-FGC5494", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup R1b-FGC5494." },
+  { markerId: "S1051", gene: "Y-DNA", trait: "Haplogroup R1b-S1051", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b-S1051." },
+  { markerId: "Z251", gene: "Y-DNA", trait: "Haplogroup R1b-Z251", continent: "European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup R1b-Z251." },
+  { markerId: "L131", gene: "Y-DNA", trait: "Haplogroup T-L131", continent: "Global", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup T-L131." },
+  { markerId: "P77", gene: "Y-DNA", trait: "Haplogroup T-P77", continent: "Global", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup T-P77." },
+  { markerId: "BY31586", gene: "Y-DNA", trait: "Haplogroup B", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup B." },
+  { markerId: "CTS10487", gene: "Y-DNA", trait: "Haplogroup B", continent: "African", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup B." },
+  { markerId: "M8862", gene: "Y-DNA", trait: "Haplogroup B", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup B." },
+  { markerId: "M8633", gene: "Y-DNA", trait: "Haplogroup B-M8633", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup B-M8633." },
+  { markerId: "V2342", gene: "Y-DNA", trait: "Haplogroup B-V2342", continent: "African", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup B-V2342." },
+  { markerId: "BY14680", gene: "Y-DNA", trait: "Haplogroup B-V2342", continent: "African", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup B-V2342." },
+  { markerId: "CTS11573", gene: "Y-DNA", trait: "Haplogroup B-M8633", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup B-M8633." },
+  { markerId: "CTS1388", gene: "Y-DNA", trait: "Haplogroup B-M8633", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup B-M8633." },
+  { markerId: "M8691", gene: "Y-DNA", trait: "Haplogroup B-M8633", continent: "African", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup B-M8633." },
+  { markerId: "L1453", gene: "Y-DNA", trait: "Haplogroup B-V2342", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup B-V2342." }
 ];
 
 export const CONTINENT_META = {
@@ -1384,7 +1450,7 @@ export function parseRawDNA(text: string) {
     const parts = trimmedLine.replace(/"/g, "").split(/[\t, ]+/);
     
     // Basic validation: markerId must be at index 0
-    if (parts.length < 4) continue;
+    if (parts.length < 4 || !parts[0]) continue;
     const markerId = parts[0].trim().toLowerCase();
     // Allow rsid or other marker names
     if (!markerId) continue; 
@@ -1583,14 +1649,16 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     'Middle Eastern', 'Native American', 'Oceanian', 'North African'
   ];
 
-  const scores: Record<string, number> = {};
-  for (const continent of continentsToScore) scores[continent] = 0;
+  const CONTINENT_TO_CODE: Record<string, string> = {
+    'African': 'AFR',
+    'European': 'EUR',
+    'East Asian': 'EAS',
+    'Native American': 'AMR',
+    'South Asian': 'SAS',
+    'Middle Eastern': 'MENA',
+    'North African': 'NAFR'
+  };
 
-  let totalWeight = 0;
-  
-  // --- 1. Autosomal AIMS (Averaged Scoring) ---
-  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid));
-  const testedAnchors = results.filter(r => r.status !== 'not_tested' && anchorRsids.has(r.rsid));
   const userGenotype: Record<string, string> = {};
   results.forEach(r => {
     if (r.userGenotype && r.userGenotype !== '--') {
@@ -1598,266 +1666,240 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     }
   });
 
-  const regionScores: Record<string, number> = {};
-  const regionCounts: Record<string, number> = {};
-  const subRegionScores: Record<string, number> = {};
-  const subRegionCounts: Record<string, number> = {};
-  const subRegionToContinent: Record<string, string> = {};
-
-  // Tally the frequencies AND count the markers
-  ANCHOR_AIMS.forEach(aim => {
-    const genotype = userGenotype[aim.rsid];
-
-    // Check if the marker was tested
-    if (genotype) {
-      const hasAllele = aim.alleles.some(a => genotype.includes(a));
-      const significanceWeight = aim.significance === 'High' ? 2.0 : aim.significance === 'Medium' ? 1.5 : 1.0;
-      const weight = (aim.weight || 1.0) * significanceWeight;
-
-      // Continental
-      Object.entries(aim.frequencies).forEach(([code, freq]) => {
-        const regionName = REGION_CODES[code];
-        if (regionName) {
-          const scoreToAdd = hasAllele ? freq : (1 - freq);
-          regionScores[regionName] = (regionScores[regionName] || 0) + (scoreToAdd * weight);
-          regionCounts[regionName] = (regionCounts[regionName] || 0) + weight; 
-        }
-      });
-
-      // Sub-population
-      if (aim.subFrequencies) {
-        Object.entries(aim.subFrequencies).forEach(([subRegionName, freq]) => {
-          const scoreToAdd = hasAllele ? freq : (1 - freq);
-          subRegionScores[subRegionName] = (subRegionScores[subRegionName] || 0) + (scoreToAdd * weight);
-          subRegionCounts[subRegionName] = (subRegionCounts[subRegionName] || 0) + weight;
-          subRegionToContinent[subRegionName] = aim.region;
-        });
-      }
-    }
-  });
-
-  // Average the scores to prevent marker-count inflation
-  Object.keys(regionScores).forEach(region => {
-    const averageWeight = regionScores[region] / regionCounts[region];
-    scores[region] = averageWeight;
-    totalWeight += averageWeight;
-  });
-
-  // --- 2. Haplogroup Weighting ---
-  const applyHaploWeight = (regionStr: string | null | undefined) => {
-    if (!regionStr) return;
-    
-    // Map descriptive region strings to our score keys
-    continentsToScore.forEach(continent => {
-      if (regionStr.includes(continent)) {
-        scores[continent] += HAPLO_WEIGHT;
-        totalWeight += HAPLO_WEIGHT;
-      }
-    });
-    
-    // Special cases
-    if (regionStr.includes("Asian") && !regionStr.includes("South Asian") && !regionStr.includes("East Asian")) {
-      scores["East Asian"] += HAPLO_WEIGHT / 2;
-      scores["South Asian"] += HAPLO_WEIGHT / 2;
-      totalWeight += HAPLO_WEIGHT;
-    }
-  };
-
-  applyHaploWeight(yHaploRegion);
-  applyHaploWeight(mtHaploRegion);
-
-  // --- 3. Convert to Percentages ---
-  const continentalScores: Record<string, number> = {};
-  if (totalWeight > 0) {
-    for (const continent of continentsToScore) {
-      continentalScores[continent] = (scores[continent] / totalWeight) * 100;
-    }
-  } else {
-    for (const continent of continentsToScore) {
-      continentalScores[continent] = (1 / continentsToScore.length) * 100;
-    }
-  }
-
-  const regionalScores: Record<string, number> = {};
-  Object.keys(subRegionScores).forEach(subRegion => {
-    regionalScores[subRegion] = (subRegionScores[subRegion] / subRegionCounts[subRegion]) * 100;
-  });
+  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid));
   
-  const deepScores: Record<string, number> = { ...regionalScores };
-  const subPopulations: Record<string, any[]> = {};
-  // Populate subPopulations based on subRegionScores
-  Object.keys(subRegionScores).forEach(subRegion => {
-    let continent = subRegionToContinent[subRegion] || 'Unknown';
-    if (continent === 'Middle Eastern' || continent === 'North African') continent = 'Middle Eastern/North African';
-    
-    if (!subPopulations[continent]) subPopulations[continent] = [];
-    subPopulations[continent].push({ 
-      name: subRegion, 
-      percentage: (subRegionScores[subRegion] / subRegionCounts[subRegion]) * 100 
-    });
-  });
-
-  const pruneMarkers = (markers: any[]) => {
-    const pruned: any[] = [];
-    let lastChrom = '';
-    let lastPos = -1;
-    const LD_WINDOW_BP = 500000;
-    for (const m of markers) {
-      if (!m.chrom || m.pos === undefined) {
-        pruned.push(m);
-        continue;
-      }
-      if (m.chrom !== lastChrom || (m.pos - lastPos) > LD_WINDOW_BP) {
-        pruned.push(m);
-        lastChrom = m.chrom;
-        lastPos = m.pos;
-      }
-    }
-    return pruned;
-  };
-
+  // 1. Collect all relevant markers with chrom/pos info
+  const testedAnchors = results.filter(r => r.status !== 'not_tested' && anchorRsids.has(r.rsid));
   const testedSubpops = results.filter(r => 
     r.status !== 'not_tested' && 
     r.category === 'Ancestry' && 
-    !anchorRsids.has(r.rsid) &&
-    r.subpop
+    !anchorRsids.has(r.rsid)
   );
-  const prunedSubpops = pruneMarkers(testedSubpops);
+
+  // Combine and sort by position
+  const allMarkers = [...testedAnchors, ...testedSubpops]
+    .filter(m => m.chrom && m.pos !== undefined)
+    .sort((a, b) => {
+      const chromA = a.chrom.replace('chr', '');
+      const chromB = b.chrom.replace('chr', '');
+      const nA = parseInt(chromA);
+      const nB = parseInt(chromB);
+      if (!isNaN(nA) && !isNaN(nB)) {
+        if (nA !== nB) return nA - nB;
+      } else if (chromA !== chromB) {
+        return chromA.localeCompare(chromB);
+      }
+      return a.pos - b.pos;
+    });
+
+  if (allMarkers.length === 0) {
+    return { continentalScores: {}, regionalScores: {}, deepScores: {}, continents: [], subPopulations: {}, subPopMarkers: {}, confidenceScore: 0 };
+  }
+
+  // 2. Segment-Based Continental Analysis (Windowing)
+  const WINDOW_SIZE = 40; // SNPs per window
+  const windowAssignments: string[] = [];
+  const continentalCounts: Record<string, number> = {};
+  continentsToScore.forEach(c => continentalCounts[c] = 0);
+
+  const windowMarkers: any[][] = [];
+  for (let i = 0; i < allMarkers.length; i += WINDOW_SIZE) {
+    windowMarkers.push(allMarkers.slice(i, i + WINDOW_SIZE));
+  }
 
   const matchesContinent = (markerContinent: string, targetContinent: string) => {
+    if (!markerContinent) return false;
     const parts = markerContinent.split('/').map(p => p.trim());
     return parts.includes(targetContinent);
   };
 
+  const subPopLogL: Record<string, Record<string, number>> = {}; // continent -> subpop -> logL
   const subPopMarkers: Record<string, any[]> = {};
-  // --- 5. Level 2: Sub-population Likelihoods (Refined) ---
-  for (const continent of continentsToScore) {
-    if (continentalScores[continent] < 0.01) continue;
-    
-    // Find all sub-populations for this continent in our database
+
+  // Pre-calculate sub-populations for each continent and initialize markers
+  const continentSubpopsMap: Record<string, string[]> = {};
+  continentsToScore.forEach(continent => {
     const continentSubpopsSet = new Set<string>();
     SNP_DB.filter(s => matchesContinent(s.continent, continent) && s.subpop).forEach(s => continentSubpopsSet.add(s.subpop as string));
-    
-    // Add sub-populations from ANCHOR_AIMS
-    const relevantAnchorAims = ANCHOR_AIMS.filter(a => matchesContinent(a.region, continent) && a.subFrequencies && userGenotype[a.rsid]);
-    relevantAnchorAims.forEach(a => {
-      if (a.subFrequencies) {
-        Object.keys(a.subFrequencies).forEach(sp => continentSubpopsSet.add(sp));
-      }
+    ANCHOR_AIMS.filter(a => matchesContinent(a.region, continent) && a.subFrequencies).forEach(a => {
+      if (a.subFrequencies) Object.keys(a.subFrequencies).forEach(sp => continentSubpopsSet.add(sp));
     });
-
-    const continentSubpops = Array.from(continentSubpopsSet);
-    if (continentSubpops.length === 0) continue;
-
-    const subLogL: Record<string, number> = {};
-    for (const sp of continentSubpops) {
-        subLogL[sp] = 0;
-        subPopMarkers[sp] = [];
-    }
-
-    // Filter markers relevant to this continent
-    const relevantMarkers = prunedSubpops.filter(m => matchesContinent(m.continent, continent));
-    if (relevantMarkers.length === 0 && relevantAnchorAims.length === 0) continue;
-
-    for (const targetSubpop of continentSubpops) {
-      // 1. Process standard markers
-      for (const snp of relevantMarkers) {
-        let matchCount = 0;
-        const uGenotype = snp.userGenotype || '';
-        for (const char of uGenotype) {
-          if (snp.alleles.includes(char)) matchCount++;
-        }
-
-        // If this marker is for the target sub-population, use high frequency
-        // Otherwise, use a background frequency
-        // Enhanced sub-population matching
-        let freq = 0.1; 
-        if (isSubpopMatch(snp.subpop, targetSubpop)) {
-          freq = 0.8; 
-          subPopMarkers[targetSubpop].push({
-            rsid: snp.rsid,
-            trait: snp.trait,
-            contribution: 'High',
-            genotype: snp.userGenotype
-          });
-        } else {
-          freq = 0.05;
-        }
-
-        const f = Math.max(0.001, Math.min(0.999, freq));
-        subLogL[targetSubpop] += matchCount * Math.log(f) + (2 - matchCount) * Math.log(1 - f);
-      }
-      
-      // 2. Process Anchor AIMS with subFrequencies
-      for (const aim of relevantAnchorAims) {
-        const uGenotype = userGenotype[aim.rsid];
-        let matchCount = 0;
-        for (const char of uGenotype) {
-          if (aim.alleles.includes(char)) matchCount++;
-        }
-        
-        let freq = 0.05;
-        if (aim.subFrequencies && aim.subFrequencies[targetSubpop]) {
-            freq = aim.subFrequencies[targetSubpop];
-            subPopMarkers[targetSubpop].push({
-                rsid: aim.rsid,
-                trait: aim.description,
-                contribution: (freq * (aim.weight || 1.0)).toFixed(2),
-                genotype: uGenotype
-            });
-        }
-        if (aim.subFrequencies && aim.subFrequencies[targetSubpop] !== undefined) {
-          freq = aim.subFrequencies[targetSubpop];
-        }
-        
-        const f = Math.max(0.001, Math.min(0.999, freq));
-        const weight = aim.weight || 1.0;
-        subLogL[targetSubpop] += weight * (matchCount * Math.log(f) + (2 - matchCount) * Math.log(1 - f));
-      }
-    }
-
-    let maxSubLog = -Infinity;
-    for (const l of Object.values(subLogL)) if (l > maxSubLog) maxSubLog = l;
-
-    const subProbs = Object.entries(subLogL)
-      .map(([name, l]) => ({
-        name,
-        prob: Math.exp(l - maxSubLog)
-      }));
+    continentSubpopsMap[continent] = Array.from(continentSubpopsSet);
     
-    const totalSubProb = subProbs.reduce((sum, p) => sum + p.prob, 0);
-    if (totalSubProb > 0) {
-      subPopulations[continent] = subProbs
-        .map(p => ({
-          name: p.name,
-          percentage: (p.prob / totalSubProb) * 100,
-          confidence: (p.prob / totalSubProb) * 100, // Confidence score
-          topMarkers: (subPopMarkers[p.name] || [])
-            .sort((a, b) => Number(b.contribution) - Number(a.contribution))
-            .slice(0, 3)
-        }))
-        .filter(p => p.percentage > 1)
-        .sort((a, b) => b.percentage - a.percentage);
+    continentSubpopsMap[continent].forEach(sp => {
+      if (!subPopMarkers[sp]) subPopMarkers[sp] = [];
+    });
+  });
+
+  for (const window of windowMarkers) {
+    const windowScores: Record<string, number> = {};
+    continentsToScore.forEach(c => windowScores[c] = 0);
+
+    for (const marker of window) {
+      const genotype = userGenotype[marker.rsid] || marker.userGenotype;
+      if (!genotype) continue;
+
+      const alleles = marker.alleles;
+      let matchCount = 0;
+      for (const char of genotype) {
+        if (alleles.includes(char)) matchCount++;
+      }
+
+      const aim = ANCHOR_AIMS.find(a => a.rsid === marker.rsid);
+
+      for (const continent of continentsToScore) {
+        let freq = 0.05;
+        if (aim && aim.frequencies) {
+          const code = CONTINENT_TO_CODE[continent];
+          if (code && aim.frequencies[code] !== undefined) {
+            freq = aim.frequencies[code];
+          }
+        } else if (marker.frequencies) {
+          const code = CONTINENT_TO_CODE[continent];
+          if (code && marker.frequencies[code] !== undefined) {
+            freq = marker.frequencies[code];
+          }
+        } else if (marker.continent === continent) {
+          freq = 0.8;
+        }
+        
+        const f = Math.max(0.001, Math.min(0.999, freq));
+        const significanceWeight = (marker.significance === 'High' ? 2.0 : marker.significance === 'Medium' ? 1.5 : 1.0);
+        const weight = (aim?.weight || 1.0) * significanceWeight;
+        windowScores[continent] += weight * (matchCount * Math.log(f) + (2 - matchCount) * Math.log(1 - f));
+      }
+    }
+
+    // Assign window to top continent
+    let topContinent = continentsToScore[0];
+    let maxScore = -Infinity;
+    for (const continent of continentsToScore) {
+      if (windowScores[continent] > maxScore) {
+        maxScore = windowScores[continent];
+        topContinent = continent;
+      }
+    }
+    windowAssignments.push(topContinent);
+    continentalCounts[topContinent]++;
+
+    // 3. Sub-population analysis - contribute to ALL continents
+    for (const continent of continentsToScore) {
+      if (!subPopLogL[continent]) subPopLogL[continent] = {};
+      
+      const continentSubpops = continentSubpopsMap[continent] || [];
+
+      for (const sp of continentSubpops) {
+        if (subPopLogL[continent][sp] === undefined) {
+          subPopLogL[continent][sp] = 0;
+        }
+
+        for (const marker of window) {
+          const genotype = userGenotype[marker.rsid] || marker.userGenotype;
+          if (!genotype) continue;
+          let matchCount = 0;
+          for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
+
+          const aim = ANCHOR_AIMS.find(a => a.rsid === marker.rsid);
+          let freq = 0.05;
+
+          if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
+            freq = aim.subFrequencies[sp];
+            subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0), genotype });
+          } else if (isSubpopMatch(marker.subpop, sp)) {
+            freq = 0.8;
+            subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0, genotype });
+          }
+
+          const f = Math.max(0.001, Math.min(0.999, freq));
+          const weight = (aim?.weight || 1.0);
+          subPopLogL[continent][sp] += weight * (matchCount * Math.log(f) + (2 - matchCount) * Math.log(1 - f));
+        }
+      }
     }
   }
 
-  // --- 6. Final Results Formatting ---
-  const oracleResults = Object.entries(continentalScores)
-    .map(([continent, prob]) => ({
-      continent,
-      percentage: prob
-    }))
-    .filter(r => r.percentage > 0.01)
+  // 4. Aggregate and Re-normalize Continental Scores
+  const applyHaploWeight = (regionStr: string | null | undefined) => {
+    if (!regionStr) return;
+    continentsToScore.forEach(continent => {
+      if (regionStr.includes(continent)) {
+        continentalCounts[continent] = (continentalCounts[continent] || 0) + 1.5; // Virtual segments for haplogroups
+      }
+    });
+  };
+  applyHaploWeight(yHaploRegion);
+  applyHaploWeight(mtHaploRegion);
+
+  const totalSegments = Object.values(continentalCounts).reduce((a, b) => a + b, 0);
+  const continentalScores: Record<string, number> = {};
+  if (totalSegments > 0) {
+    continentsToScore.forEach(c => {
+      continentalScores[c] = (continentalCounts[c] / totalSegments) * 100;
+    });
+  }
+
+  // 5. Aggregate Sub-populations
+  const subPopulations: Record<string, any[]> = {};
+  for (const continent of Object.keys(subPopLogL)) {
+    const subProbs = Object.entries(subPopLogL[continent])
+      .map(([name, l]) => ({ name, prob: l }));
+    
+    let maxLog = -Infinity;
+    for (const p of subProbs) if (p.prob > maxLog) maxLog = p.prob;
+    const probs = subProbs.map(p => ({ name: p.name, prob: Math.exp(p.prob - maxLog) }));
+    const totalProb = probs.reduce((s, p) => s + p.prob, 0);
+
+    if (totalProb > 0) {
+      const filtered = probs
+        .map(p => ({
+          name: p.name,
+          percentage: (p.prob / totalProb) * 100,
+          confidence: (p.prob / totalProb) * 100,
+          topMarkers: (subPopMarkers[p.name] || [])
+            .sort((a, b) => b.contribution - a.contribution)
+            .slice(0, 5)
+        }))
+        .filter(p => p.percentage > 0);
+      
+      const filteredTotal = filtered.reduce((s, p) => s + p.percentage, 0);
+      if (filteredTotal > 0) {
+        subPopulations[continent] = filtered.map(p => ({
+          ...p,
+          percentage: (p.percentage / filteredTotal) * 100,
+          confidence: (p.percentage / filteredTotal) * 100
+        })).sort((a, b) => b.percentage - a.percentage);
+      }
+    }
+  }
+
+  // 6. Final Filtering and Normalization
+  const filteredContinental = Object.entries(continentalScores).filter(([_, p]) => p > 0);
+  const totalFiltered = filteredContinental.reduce((s, [_, p]) => s + p, 0);
+  const normalizedContinental: Record<string, number> = {};
+  if (totalFiltered > 0) {
+    filteredContinental.forEach(([c, p]) => normalizedContinental[c] = (p / totalFiltered) * 100);
+  }
+
+  const oracleResults = Object.entries(normalizedContinental)
+    .map(([continent, percentage]) => ({ continent, percentage }))
     .sort((a, b) => b.percentage - a.percentage);
 
+  const regionalScores: Record<string, number> = {};
+  Object.entries(subPopulations).forEach(([continent, pops]) => {
+    const contProb = (normalizedContinental[continent] || 0) / 100;
+    pops.forEach(p => {
+      regionalScores[p.name] = (regionalScores[p.name] || 0) + (p.percentage * contProb);
+    });
+  });
+
   return {
-    continentalScores,
+    continentalScores: normalizedContinental,
     regionalScores,
-    deepScores,
+    deepScores: regionalScores,
     continents: oracleResults,
     subPopulations,
     subPopMarkers,
-    confidenceScore: Math.min(100, Math.round((testedAnchors.length / 50) * 60 + (prunedSubpops.length / 100) * 40))
+    confidenceScore: Math.min(100, Math.round((allMarkers.length / 400) * 100))
   };
 }
 
@@ -1897,10 +1939,20 @@ export const Y_DNA_TREE: HaplogroupNode = {
     },
     {
       branchName: "Haplogroup B",
-      snp: ["M60", "rs9786082", "rs3912903", "i4000006"],
+      snp: ["M60", "BY31586", "CTS10487", "M8862", "M181"],
       region: "Central/Southern Africa",
       description: "One of the oldest Y-DNA lineages, found primarily in Pygmy and San populations.",
       children: [
+        {
+          branchName: "B-M8633",
+          snp: ["M8633", "CTS11573", "CTS1388", "M8691"],
+          description: "A sub-branch of Haplogroup B defined by M8633."
+        },
+        {
+          branchName: "B-V2342",
+          snp: ["V2342", "BY14680", "L1453"],
+          description: "A sub-branch of Haplogroup B defined by V2342."
+        },
         {
           branchName: "Haplogroup B2",
           snp: ["M181", "rs9786208", "rs2032599"],
@@ -2025,13 +2077,14 @@ export const Y_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup E1b1b1a1",
                       snp: ["M78", "rs9305888", "i4000024"],
                       children: [
-                        { 
-                          branchName: "Haplogroup E1b1b1a1a", 
-                          snp: ["V12", "rs148064093"],
-                          children: [
-                            { branchName: "Haplogroup E1b1b1a1a1", snp: ["M224"] }
-                          ]
-                        },
+            { 
+              branchName: "Haplogroup E1b1b1a1a", 
+              snp: ["V12", "rs148064093"],
+              children: [
+                { branchName: "Haplogroup E1b1b1a1a1", snp: ["M224"] },
+                { branchName: "Haplogroup E1b-Z834", snp: ["Z834"] }
+              ]
+            },
                         { 
                           branchName: "Haplogroup E1b1b1a1b", 
                           snp: ["V13", "rs11800462"],
@@ -2102,8 +2155,14 @@ export const Y_DNA_TREE: HaplogroupNode = {
           snp: ["P287"],
           children: [
             { branchName: "Haplogroup G2a", snp: ["P15", "i4000049"], children: [
+              { branchName: "Haplogroup G2a-L1259", snp: ["L1259"] },
+              { branchName: "Haplogroup G2a-L497", snp: ["L497"] },
+              { branchName: "Haplogroup G2a-Z6552", snp: ["Z6552"] },
               { branchName: "Haplogroup G2a2b", snp: ["L140"], children: [
-                { branchName: "Haplogroup G2a2b1", snp: ["U1"] }
+                { branchName: "Haplogroup G2a2b1", snp: ["U1"], children: [
+                  { branchName: "Haplogroup G-L13", snp: ["L13"], region: "Europe", description: "A subclade of G2a common in Europe." },
+                  { branchName: "Haplogroup G-Z2022", snp: ["Z2022"], region: "Europe", description: "A subclade of G2a found in Western Europe." }
+                ] }
               ] }
             ] },
             { branchName: "Haplogroup G2b", snp: ["M377"] }
@@ -2116,7 +2175,9 @@ export const Y_DNA_TREE: HaplogroupNode = {
       snp: ["M69", "L901", "i4000021"],
       children: [
         { branchName: "Haplogroup H1", snp: ["M69"], children: [
-          { branchName: "Haplogroup H1a1", snp: ["M2826"] }
+          { branchName: "Haplogroup H1a1", snp: ["M2826"], children: [
+          { branchName: "Haplogroup H-M82", snp: ["M82"] }
+        ] },
         ] },
         { branchName: "Haplogroup H2", snp: ["P96"] },
         { branchName: "Haplogroup H3", snp: ["Z5857"] }
@@ -2130,6 +2191,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
           branchName: "Haplogroup I1",
           snp: ["M253"],
           children: [
+            { branchName: "Haplogroup I1-Z2539", snp: ["Z2539"] },
             { branchName: "Haplogroup I1a", snp: ["DF29"], children: [
               { branchName: "Haplogroup I1a1", snp: ["L22", "rs35033377"] },
               { branchName: "Haplogroup I1a2", snp: ["Z58"], children: [
@@ -2146,6 +2208,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
           snp: ["M438", "rs34833375"],
           children: [
             { branchName: "Haplogroup I2a", snp: ["L460", "P37.2"], children: [
+              { branchName: "Haplogroup I2a-CTS10100", snp: ["CTS10100"] },
+              { branchName: "Haplogroup I2a-CTS595", snp: ["CTS595"] },
               { branchName: "Haplogroup I2a1b", snp: ["M423"], children: [
                 { branchName: "Haplogroup I2a1b1", snp: ["L161"] },
                 { branchName: "Haplogroup I2a1b1a", snp: ["L621"] }
@@ -2168,6 +2232,19 @@ export const Y_DNA_TREE: HaplogroupNode = {
           region: "Middle East / Semitic",
           description: "Associated with the expansion of Semitic languages and the Neolithic transition in the Near East.",
           children: [
+            { branchName: "Haplogroup J1-BY4", snp: ["BY4"] },
+            { branchName: "Haplogroup J1-BY8", snp: ["BY8"] },
+            { branchName: "Haplogroup J1-FGC1713", snp: ["FGC1713"] },
+            { branchName: "Haplogroup J1-FGC3723", snp: ["FGC3723"] },
+            { branchName: "Haplogroup J1-FGC4415", snp: ["FGC4415"] },
+            { branchName: "Haplogroup J1-FGC5", snp: ["FGC5"] },
+            { branchName: "Haplogroup J1-FGC7", snp: ["FGC7"] },
+            { branchName: "Haplogroup J1-FGC7944", snp: ["FGC7944"] },
+            { branchName: "Haplogroup J1-L860", snp: ["L860"] },
+            { branchName: "Haplogroup J1-S4924", snp: ["S4924"] },
+            { branchName: "Haplogroup J1-YSC0000076", snp: ["YSC0000076"] },
+            { branchName: "Haplogroup J1-Z640", snp: ["Z640"] },
+            { branchName: "Haplogroup J1-ZS1282", snp: ["ZS1282"] },
             { 
               branchName: "Haplogroup J1a", 
               snp: ["P58", "Z2215"],
@@ -2182,7 +2259,9 @@ export const Y_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup J1-YSC0000234", 
                       snp: ["YSC0000234"],
                       children: [
-                        { branchName: "Haplogroup J1a1a1", snp: ["L858", "rs35268486"] },
+                        { branchName: "Haplogroup J1a1a1", snp: ["L858", "rs35268486"], children: [
+                          { branchName: "Haplogroup J-L829", snp: ["L829"], region: "Levant", description: "A subclade of J1 common in the Levant." }
+                        ] },
                         { branchName: "Haplogroup J1-Z1884", snp: ["Z1884"], region: "Levant", description: "Common in the Levant and Mesopotamia." }
                       ]
                     },
@@ -2208,7 +2287,10 @@ export const Y_DNA_TREE: HaplogroupNode = {
               branchName: "Haplogroup J2a", 
               snp: ["M410"],
               children: [
-                { branchName: "Haplogroup J2a1", snp: ["L26", "rs34459394"] },
+                { branchName: "Haplogroup J2a-PF5197", snp: ["PF5197"] },
+                { branchName: "Haplogroup J2a1", snp: ["L26", "rs34459394"], children: [
+                  { branchName: "Haplogroup J-Z7700", snp: ["Z7700"], region: "Mediterranean", description: "A subclade of J2a found in the Mediterranean region." }
+                ] },
                 { branchName: "Haplogroup J2a1a", snp: ["Z6046"] },
                 { branchName: "Haplogroup J2a1b1a", snp: ["L558"] },
                 { branchName: "Haplogroup J2a1h", snp: ["L24"], children: [
@@ -2247,10 +2329,16 @@ export const Y_DNA_TREE: HaplogroupNode = {
       { branchName: "Haplogroup M1b", snp: ["M104", "i4000015"] }
     ] },
     { branchName: "Haplogroup N", snp: ["M231", "rs2032630", "i4000035"], children: [
-      { branchName: "Haplogroup N1a1", snp: ["M46", "Tat", "i4000041"] },
+      { branchName: "Haplogroup N1a1", snp: ["M46", "Tat", "i4000041"], children: [
+        { branchName: "Haplogroup N1a-VL29", snp: ["VL29"] },
+        { branchName: "Haplogroup N-L1026", snp: ["L1026"], region: "Northern Europe", description: "A major subclade of N1a1 common in Finland and the Baltic region." },
+        { branchName: "Haplogroup N-Z1936", snp: ["Z1936"], region: "Northern Europe", description: "A subclade of N1a1 found in Northern Europe." }
+      ] },
       { branchName: "Haplogroup N1a2", snp: ["L666"] }
     ] },
     { branchName: "Haplogroup O", snp: ["M175", "rs2032631", "i4000011", "rs2032632"], children: [
+      { branchName: "Haplogroup O-F100", snp: ["F100"] },
+      { branchName: "Haplogroup O-F145", snp: ["F145"] },
       { branchName: "Haplogroup O1a", snp: ["M119", "i4000013"], children: [
         { branchName: "Haplogroup O1a1a", snp: ["M50"] }
       ] },
@@ -2263,8 +2351,14 @@ export const Y_DNA_TREE: HaplogroupNode = {
       { branchName: "Haplogroup Q1a", snp: ["MEH2"] },
       { branchName: "Haplogroup Q1a1", snp: ["M120"] },
       { branchName: "Haplogroup Q1a2", snp: ["M25"] },
-      { branchName: "Haplogroup Q1b", snp: ["L275"] },
-      { branchName: "Haplogroup Q-M3", snp: ["M3", "i4000055", "rs3894"] }
+      { branchName: "Haplogroup Q1b", snp: ["L275"], children: [
+        { branchName: "Haplogroup Q1b-L53", snp: ["L53"] }
+      ] },
+      { branchName: "Haplogroup Q-M3", snp: ["M3", "i4000055", "rs3894"], children: [
+        { branchName: "Haplogroup Q-M19", snp: ["M19"], region: "South America", description: "A subclade of Q-M3 common in South American indigenous populations." },
+        { branchName: "Haplogroup Q-M194", snp: ["M194"], region: "South America", description: "A subclade of Q-M3 found in South America." },
+        { branchName: "Haplogroup Q-M199", snp: ["M199"], region: "South America", description: "A subclade of Q-M3 found in South America." }
+      ] }
     ] },
     {
       branchName: "Haplogroup R",
@@ -2275,6 +2369,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
           snp: ["M173"],
           children: [
             { branchName: "Haplogroup R1a", snp: ["M17", "M417", "i4000028", "rs3908"], children: [
+              { branchName: "Haplogroup R1a-L664", snp: ["L664"] },
+              { branchName: "Haplogroup R1a-Z284", snp: ["Z284"] },
               { branchName: "Haplogroup R1a1a", snp: ["M417", "rs34633373"] },
               { branchName: "Haplogroup R1a1a1", snp: ["Z645"], children: [
                 { branchName: "Haplogroup R1a-Z283", snp: ["Z283"], children: [
@@ -2302,6 +2398,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
               region: "Western Europe",
               description: "The most common Y-DNA haplogroup in Western Europe, associated with the expansion of Indo-European speakers.",
               children: [
+                { branchName: "Haplogroup R1b-Z2103", snp: ["Z2103"] },
                 { branchName: "Haplogroup R1b1", snp: ["L278"] },
                 { branchName: "Haplogroup R1b1a", snp: ["L754"] },
                 { branchName: "Haplogroup R1b1a1b", snp: ["M269", "L23", "rs9786139", "rs9786714", "i400018", "rs9786153", "rs9786132", "rs34024838", "i4000064", "i4000062"], children: [
@@ -2315,7 +2412,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         children: [
                           { branchName: "Haplogroup R1b-L48", snp: ["L48"], region: "North Sea", description: "A major subclade of U106 found around the North Sea.", children: [
                             { branchName: "Haplogroup R1b-Z156", snp: ["Z156"] },
-                            { branchName: "Haplogroup R1b-Z18", snp: ["Z18"] }
+                            { branchName: "Haplogroup R1b-Z18", snp: ["Z18"] },
+                            { branchName: "Haplogroup R1b-L1", snp: ["L1"], region: "North Sea", description: "A subclade of L48 found in Northern Europe." }
                           ] },
                           { branchName: "Haplogroup R1b1a1b1a1a1", snp: ["L48", "rs34533372"] }
                         ]
@@ -2339,7 +2437,11 @@ export const Y_DNA_TREE: HaplogroupNode = {
                             snp: ["U152", "S28", "rs1236440", "i400039"],
                             region: "Alpine / Central Europe",
                             children: [
-                              { branchName: "Haplogroup R1b-L2", snp: ["L2"], region: "Alpine / Central Europe", description: "Common in the Alpine region and associated with the La Tène culture." },
+                              { branchName: "Haplogroup R1b-L2", snp: ["L2"], region: "Alpine / Central Europe", description: "Common in the Alpine region and associated with the La Tène culture.", children: [
+                                { branchName: "Haplogroup R1b-Z36", snp: ["Z36"] },
+                                { branchName: "Haplogroup R1b-Z56", snp: ["Z56"] },
+                                { branchName: "Haplogroup R1b-Z192", snp: ["Z192"] }
+                              ] },
                               { branchName: "Haplogroup R1b-L20", snp: ["L20"] },
                               { branchName: "Haplogroup R1b1a1b1a2b1", snp: ["L2", "rs34433371"] }
                             ]
@@ -2351,7 +2453,20 @@ export const Y_DNA_TREE: HaplogroupNode = {
                             description: "The dominant lineage in Ireland, Scotland, and Wales.",
                             children: [
                               { branchName: "Haplogroup R1b-M222", snp: ["M222"], region: "Northwest Ireland / Scotland", description: "Associated with the Ui Neill dynasties of Ireland." },
-                              { branchName: "Haplogroup R1b-DF13", snp: ["DF13"] },
+                              { branchName: "Haplogroup R1b-DF13", snp: ["DF13"], children: [
+                                { branchName: "Haplogroup R1b-DF19", snp: ["DF19"] },
+                                { branchName: "Haplogroup R1b-DF49", snp: ["DF49"] },
+                                { branchName: "Haplogroup R1b-DF63", snp: ["DF63"] },
+                                { branchName: "Haplogroup R1b-FGC11134", snp: ["FGC11134"] },
+                                { branchName: "Haplogroup R1b-FGC5494", snp: ["FGC5494"] },
+                                { branchName: "Haplogroup R1b-L513", snp: ["L513"] },
+                                { branchName: "Haplogroup R1b-S1051", snp: ["S1051"] },
+                                { branchName: "Haplogroup R1b-Z251", snp: ["Z251"] },
+                                { branchName: "Haplogroup R1b-Z253", snp: ["Z253"] },
+                                { branchName: "Haplogroup R1b-Z255", snp: ["Z255"] },
+                                { branchName: "Haplogroup R1b-L1335", snp: ["L1335"], region: "Scotland", description: "The 'Pictish' marker." },
+                                { branchName: "Haplogroup R1b-S68", snp: ["S68"], region: "Ireland", description: "The 'Leinster' marker." }
+                              ] },
                               { branchName: "Haplogroup R1b-DF21", snp: ["DF21"] },
                               { branchName: "Haplogroup R1b-DF41", snp: ["DF41"] },
                               { branchName: "Haplogroup R1b1a1b1a2c1a1", snp: ["M222"] }
@@ -2371,6 +2486,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
     },
     { branchName: "Haplogroup S", snp: ["M230", "i4000039"] },
     { branchName: "Haplogroup T", snp: ["M184", "i4000042"], children: [
+      { branchName: "Haplogroup T-L131", snp: ["L131"] },
+      { branchName: "Haplogroup T-P77", snp: ["P77"] },
       { branchName: "Haplogroup T1a", snp: ["M70"] }
     ] },
     { branchName: "Haplogroup CF", snp: ["P143", "rs2032625", "i4000003"] },
@@ -2403,10 +2520,18 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
     let total = 0;
     const markers: any[] = [];
 
+    // IUPAC ambiguity codes mapping to constituent alleles
+    const IUPAC_MAP: Record<string, string> = {
+      'R': 'AG', 'Y': 'CT', 'S': 'GC', 'W': 'AT', 'K': 'GT', 'M': 'AC',
+      'B': 'CGT', 'D': 'AGT', 'H': 'ACT', 'V': 'ACG', 'N': 'ACGT'
+    };
+
     if (node.snp) {
       for (const snpId of node.snp) {
-        const snpInfo = snpLookup.get(snpId.toLowerCase());
-        let genotype = yMap[snpId.toLowerCase()];
+        if (!snpId) continue;
+        const snpIdLower = snpId.toLowerCase();
+        const snpInfo = snpLookup.get(snpIdLower);
+        let genotype = yMap[snpIdLower];
         
         // If not found by primary ID, check all possible identifiers from snpInfo
         if (!genotype && snpInfo) {
@@ -2425,28 +2550,40 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
           }
         }
 
-        let normalizedAllele = genotype;
-        // If the DNA file reports a double letter (like 'AA'), shrink it to a single letter ('A')
-        if (genotype && genotype.length === 2 && genotype[0] === genotype[1]) {
-          normalizedAllele = genotype[0];
+        // Skip missing or invalid genotypes
+        if (!genotype || genotype === '--' || genotype === '00' || genotype === '??' || genotype === '.') {
+          continue;
+        }
+
+        // Normalize genotype: handle double letters (AA -> A), IUPAC codes (R -> AG), and case
+        let normalized = genotype.toUpperCase();
+        if (normalized.length === 2 && normalized[0] === normalized[1]) {
+          normalized = normalized[0];
+        } else if (normalized.length === 1 && IUPAC_MAP[normalized]) {
+          normalized = IUPAC_MAP[normalized];
         }
         
         let isDerived = false;
         let isTested = false;
 
-        if (normalizedAllele && normalizedAllele !== '--' && normalizedAllele !== '00') {
+        if (snpInfo) {
           isTested = true;
-          if (snpInfo) {
-            for (const allele of snpInfo.alleles) {
-              if (normalizedAllele.includes(allele)) {
-                isDerived = true;
-                break;
-              }
+          // Check if any of the user's alleles match any of the derived alleles.
+          // This handles both single letters and IUPAC/ambiguous genotypes (e.g., 'R' matches 'G' if 'G' is derived).
+          // For Y-DNA, we treat any presence of the derived allele as a positive (derived) state.
+          for (const derivedAllele of snpInfo.alleles) {
+            const da = derivedAllele.toUpperCase();
+            // Check if the normalized genotype contains the derived allele
+            // This handles both single letters and IUPAC/ambiguous genotypes
+            if (normalized.includes(da)) {
+              isDerived = true;
+              break;
             }
-          } else {
-            // Heuristic for Y-DNA: assume non-missing is derived if not in DB
-            isDerived = true;
           }
+        } else {
+          // Heuristic for Y-DNA: if we have a genotype for a marker in the tree but it's not in our DB,
+          // we can't reliably determine if it's derived. We'll skip it to maintain accuracy.
+          isTested = false;
         }
 
         if (isTested) {
@@ -2456,7 +2593,7 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
           
           markers.push({
             marker: snpId,
-            genotype: normalizedAllele,
+            genotype: genotype, // Keep original for display
             isDerived,
             trait: `Marker for ${node.branchName}`
           });
@@ -2516,6 +2653,21 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
     path: bestPath
   };
 }
+
+export const STR_MARKERS = [
+  "DYS391", "DYS389I", "DYS437", "DYS439", "DYS389II", "DYS438", "DYS426", "DYS393", "YCAII", "DYS390", 
+  "DYS385", "Y-GATA-H4", "DYS388", "DYS447", "DYS19", "DYS392", "DYS458", "DYS455", "DYS454", "DYS464", 
+  "DYS448", "DYS449", "DYS456", "DYS576", "CDY", "DYS460", "DYS459", "DYS570", "DYS607", "DYS442", 
+  "DYS728", "DYS723", "DYS711", "DYR76", "DYR33", "DYS727", "DYR157", "DYS713", "DYS531", "DYS578", 
+  "DYF395", "DYS590", "DYS537", "DYS641", "DYS472", "DYF406S1", "DYS511", "DYS557", "DYS490", "DYS446", 
+  "DYS481", "DYS413", "DYS534", "DYS450", "DYS425", "DYS594", "DYS444", "DYS520", "DYS436", "DYS565", 
+  "DYS572", "DYS617", "DYS568", "DYS487", "DYS640", "DYS492", "DYR112", "DYS518", "DYS614", "DYS626", 
+  "DYS644", "DYS684", "DYS710", "DYS485", "DYS632", "DYS495", "DYS540", "DYS714", "DYS716", "DYS717", 
+  "DYS505", "DYS556", "DYS549", "DYS589", "DYS522", "DYS494", "DYS533", "DYS636", "DYS575", "DYS638", 
+  "DYS462", "DYS452", "DYS445", "Y-GATA-A10", "DYS463", "DYS441", "Y-GGAAT-1B07", "DYS525", "DYS712", 
+  "DYS593", "DYS650", "DYS532", "DYS715", "DYS504", "DYS513", "DYS561", "DYS552", "DYS726", "DYS635", 
+  "DYS587", "DYS643", "DYS497", "DYS510", "DYS434", "DYS461", "DYS435"
+];
 
 export const MT_DNA_TREE: HaplogroupNode = {
   branchName: "mtDNA Root (Mitochondrial Eve)",

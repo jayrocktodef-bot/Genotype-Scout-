@@ -14,6 +14,7 @@ import { jsPDF } from "jspdf";
 import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
+import { fetchAIMWeights, calculateAncestry, AIMWeights } from "./services/aimService";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
@@ -90,12 +91,17 @@ const HaplogroupTreeView = ({ node, userPath, level = 0 }: { node: any, userPath
 
 export default function App() {
   const [snps, setSnps] = useState<SNP[]>(SNP_DB);
-  const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }[]>([]);
+  const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any, aimAncestry?: any }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
+  const [aimWeights, setAimWeights] = useState<AIMWeights | null>(null);
+  const [loadingWeights, setLoadingWeights] = useState(true);
+  const snpMaps = useRef<Record<number, Record<string, string>>>({});
   const [statusFilter, setStatusFilter] = useState<'matched' | 'unmatched' | 'not_tested'>('matched');
   const [significanceFilter, setSignificanceFilter] = useState<string>('all');
   const [continentFilter, setContinentFilter] = useState<string>('all');
   const [geneFilter, setGeneFilter] = useState<string>('all');
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [explorerSearch, setExplorerSearch] = useState<string>('');
   const [processing, setProcessing] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [selectedSubPop, setSelectedSubPop] = useState<string | null>(null);
@@ -106,6 +112,14 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'autosomal' | 'oracle' | 'y-dna' | 'mt-dna'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [collapsedCategories, setCollapsedCategories] = useState<Set<string>>(new Set());
+
+  const expandAll = (categories: string[]) => {
+    setCollapsedCategories(new Set());
+  };
+
+  const collapseAll = (categories: string[]) => {
+    setCollapsedCategories(new Set(categories));
+  };
 
   useEffect(() => {
     if (darkMode) {
@@ -143,9 +157,39 @@ export default function App() {
   useEffect(() => {
     const saved = loadResults();
     if (saved) setDatasets(saved);
+
+    // Fetch AIM weights on load
+    setLoadingWeights(true);
+    fetchAIMWeights()
+      .then(weights => {
+        setAimWeights(weights);
+        setLoadingWeights(false);
+      })
+      .catch(err => {
+        console.error("Failed to fetch AIM weights", err);
+        setLoadingWeights(false);
+      });
   }, []);
 
-  const updateDatasets = (newDataset: { name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }) => {
+  // Recalculate AIM ancestry if weights arrive after file processing
+  useEffect(() => {
+    if (aimWeights && datasets.length > 0) {
+      let changed = false;
+      const newDatasets = datasets.map((d, i) => {
+        if (!d.aimAncestry && snpMaps.current[i]) {
+          changed = true;
+          return { ...d, aimAncestry: calculateAncestry(snpMaps.current[i], aimWeights) };
+        }
+        return d;
+      });
+      if (changed) {
+        setDatasets(newDatasets);
+        saveResults(newDatasets);
+      }
+    }
+  }, [aimWeights, datasets.length]);
+
+  const updateDatasets = (newDataset: { name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any, aimAncestry?: any }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
     saveResults(newDatasets);
@@ -191,19 +235,27 @@ export default function App() {
       setTimeout(() => {
         const text = e.target?.result as string;
         const { snpMap, snpMetaMap, chip, snpCount, yMap, mtMap } = parseRawDNA(text);
+        
+        const aimAncestry = aimWeights ? calculateAncestry(snpMap, aimWeights) : null;
+        
+        // Store snpMap in ref for potential recalculation if weights arrive later
+        const newIndex = datasets.length;
+        snpMaps.current[newIndex] = snpMap;
+
         updateDatasets({ 
           name: file.name, 
           results: matchSNPs(snpMap, snpMetaMap),
           chip,
           snpCount,
           predictedYDNA: predictYDNAHaplogroup(yMap, Y_DNA_TREE),
-          predictedMtDNA: analyzeMtDNA(mtMap)
+          predictedMtDNA: analyzeMtDNA(mtMap),
+          aimAncestry
         });
         setProcessing(false);
       }, 100);
     };
     reader.readAsText(file);
-  }, [datasets]);
+  }, [datasets, aimWeights]);
 
   const results = datasets.length > 0 ? datasets[activeDatasetIndex].results : null;
 
@@ -211,7 +263,11 @@ export default function App() {
     r.status === statusFilter &&
     (significanceFilter === 'all' || r.significance === significanceFilter) &&
     (continentFilter === 'all' || r.continent === continentFilter) &&
-    (geneFilter === 'all' || r.gene === geneFilter)
+    (geneFilter === 'all' || r.gene === geneFilter) &&
+    (searchTerm === '' || 
+      (r.rsid?.toLowerCase() || '').includes(searchTerm.toLowerCase()) || 
+      (r.trait?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
+      (r.gene && r.gene.toLowerCase().includes(searchTerm.toLowerCase())))
   ) : [];
 
   const uniqueSignificances = Array.from(new Set(results?.map(r => r.significance) || []));
@@ -307,6 +363,65 @@ export default function App() {
             <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Drop your raw DNA file (CSV/TXT) here</div>
             <div className="text-slate-600 dark:text-slate-500 text-sm font-mono">or click to browse · analysis runs entirely in your browser</div>
           </div>
+
+          <div className="mt-12">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Marker Explorer</h3>
+              <div className="relative">
+                <input 
+                  type="text" 
+                  placeholder="Search rsid or trait..." 
+                  className="bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 pl-10 text-sm font-bold w-full sm:w-64 focus:ring-2 focus:ring-sky-500 outline-none border border-slate-200 dark:border-slate-700"
+                  value={explorerSearch}
+                  onChange={(e) => setExplorerSearch(e.target.value)}
+                />
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </div>
+              </div>
+            </div>
+            
+            {explorerSearch ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {snps.filter(s => 
+                  (s.rsid?.toLowerCase() || '').includes(explorerSearch.toLowerCase()) || 
+                  (s.trait?.toLowerCase() || '').includes(explorerSearch.toLowerCase())
+                ).slice(0, 6).map(s => (
+                  <div key={s.markerId} className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="font-mono text-[10px] font-bold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/30 px-1.5 py-0.5 rounded">{s.rsid}</span>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{s.category}</span>
+                    </div>
+                    <div className="font-bold text-sm text-slate-900 dark:text-slate-100 mb-1">{s.trait}</div>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2">{s.description}</p>
+                  </div>
+                ))}
+                {snps.filter(s => 
+                  (s.rsid?.toLowerCase() || '').includes(explorerSearch.toLowerCase()) || 
+                  (s.trait?.toLowerCase() || '').includes(explorerSearch.toLowerCase())
+                ).length === 0 && (
+                  <div className="col-span-full p-8 text-center text-slate-400 text-sm italic">
+                    No markers found matching "{explorerSearch}"
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                {['Health', 'Ancestry', 'Lifestyle', 'Nutrition', 'Performance'].map(cat => (
+                  <button 
+                    key={cat}
+                    onClick={() => setExplorerSearch(cat)}
+                    className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-sky-500 transition-all text-center group"
+                  >
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
+                      {CATEGORY_META[cat as keyof typeof CATEGORY_META]?.icon || '🧬'}
+                    </div>
+                    <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">{cat}</div>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
       {results && (
@@ -335,6 +450,20 @@ export default function App() {
                   {status.replace('_', ' ').toUpperCase()}
                 </button>
               ))}
+              <div className="flex gap-1 ml-2">
+                <button 
+                  onClick={() => expandAll(['Health', 'Ancestry', 'Lifestyle', 'Nutrition', 'Performance'])}
+                  className="px-3 py-2 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200"
+                >
+                  EXPAND ALL
+                </button>
+                <button 
+                  onClick={() => collapseAll(['Health', 'Ancestry', 'Lifestyle', 'Nutrition', 'Performance'])}
+                  className="px-3 py-2 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200"
+                >
+                  COLLAPSE ALL
+                </button>
+              </div>
             </div>
             <div className="flex flex-wrap gap-2">
               <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" value={significanceFilter} onChange={(e) => setSignificanceFilter(e.target.value)}>
@@ -349,6 +478,18 @@ export default function App() {
                 <option value="all">All Genes</option>
                 {uniqueGenes.map(g => <option key={g} value={g}>{g}</option>)}
               </select>
+              <div className="relative">
+                <input 
+                  type="text" 
+                  placeholder="Search rsid, trait, or gene..." 
+                  className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 pl-10 text-sm font-bold w-full sm:w-64 focus:ring-2 focus:ring-sky-500 outline-none"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </div>
+              </div>
             </div>
             <div className="flex gap-2">
               <button onClick={resetApp} className="px-4 py-2 rounded-full text-sm font-bold bg-rose-600 text-white">
@@ -483,21 +624,45 @@ export default function App() {
                           {allSnpsInCategory.map((snp: any) => (
                             <div key={`${snp.markerId}-${snp.continent}`} className={`trait-card rounded-xl p-6 border border-slate-100 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-sm ${snp.status === 'matched' ? 'ring-2 ring-sky-500' : ''}`}>
                               <div className="flex items-start justify-between gap-4 mb-3">
-                                <div className="flex items-center gap-3">
-                                  <div className="font-mono text-xs text-sky-700 dark:text-sky-400 font-bold">{snp.rsid}</div>
-                                  <div className="font-bold text-slate-900 dark:text-slate-100 text-lg">{snp.trait}</div>
+                                <div className="flex flex-col gap-1">
+                                  <div className="flex items-center gap-2">
+                                    <div className="font-mono text-xs text-sky-700 dark:text-sky-400 font-bold bg-sky-50 dark:bg-sky-900/30 px-2 py-0.5 rounded">{snp.rsid}</div>
+                                    {snp.gene && <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-wider">Gene: {snp.gene}</div>}
+                                    <div className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-tighter ${
+                                      snp.significance === 'High' ? 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400' :
+                                      snp.significance === 'Medium' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
+                                      'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400'
+                                    }`}>
+                                      {snp.significance}
+                                    </div>
+                                  </div>
+                                  <div className="font-bold text-slate-900 dark:text-slate-100 text-lg leading-tight">{snp.trait}</div>
                                 </div>
-                                {snp.status === 'matched' && (
-                                  <button onClick={() => toggleExpand(snp.rsid)} className="text-slate-400 hover:text-sky-600 dark:hover:text-sky-400">
-                                    {expandedSnps.has(snp.rsid) ? '▲' : '▼'}
+                                <div className="flex items-center gap-2">
+                                  <button 
+                                    onClick={() => {
+                                      navigator.clipboard.writeText(snp.rsid);
+                                      // Optional: add a toast or temporary state for "Copied!"
+                                    }}
+                                    className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 transition-colors"
+                                    title="Copy rsid"
+                                  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
                                   </button>
-                                )}
+                                  {snp.status === 'matched' && (
+                                    <button onClick={() => toggleExpand(snp.rsid)} className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 transition-colors">
+                                      {expandedSnps.has(snp.rsid) ? '▲' : '▼'}
+                                    </button>
+                                  )}
+                                </div>
                               </div>
                               <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4 break-words">{snp.description}</p>
                               {snp.status !== 'not_tested' && expandedSnps.has(snp.rsid) && (
                                 <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 grid grid-cols-[auto,1fr] gap-x-6 gap-y-2 items-start border border-slate-100 dark:border-slate-800">
                                   <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Genotype</div>
                                   <div className="font-mono text-xl font-bold text-slate-900 dark:text-slate-100 tracking-widest">{snp.userGenotype}</div>
+                                  <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Ref Alleles</div>
+                                  <div className="font-mono text-sm font-bold text-slate-600 dark:text-slate-400 tracking-widest">{snp.alleles?.join(', ') || 'N/A'}</div>
                                   <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Meaning</div>
                                   <div className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
                                     {snp.interpretation}
@@ -628,6 +793,61 @@ export default function App() {
                       </div>
                     )}
                   </div>
+
+                  {/* UT-AIM250 Analysis */}
+                  {loadingWeights ? (
+                    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm animate-pulse">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="h-4 w-48 bg-slate-200 dark:bg-slate-700 rounded"></div>
+                        <div className="h-4 w-24 bg-slate-200 dark:bg-slate-700 rounded"></div>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {[1, 2, 3].map(i => (
+                          <div key={i} className="h-24 bg-slate-100 dark:bg-slate-900/50 rounded-xl"></div>
+                        ))}
+                      </div>
+                      <p className="mt-4 text-[10px] text-slate-400 italic">Loading UT-AIM250 reference data...</p>
+                    </div>
+                  ) : datasets[activeDatasetIndex].aimAncestry ? (
+                    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider">UT-AIM250 Ancestry Oracle</h3>
+                        <span className={`text-[10px] font-mono px-2 py-1 rounded ${datasets[activeDatasetIndex].aimAncestry.markersFound > 0 ? 'text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900' : 'text-rose-500 bg-rose-50 dark:bg-rose-900/20'}`}>
+                          {datasets[activeDatasetIndex].aimAncestry.markersFound} Markers Found
+                        </span>
+                      </div>
+                      
+                      {datasets[activeDatasetIndex].aimAncestry.markersFound > 0 ? (
+                        <>
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            {Object.entries(datasets[activeDatasetIndex].aimAncestry.results).map(([pop, percentage]: [string, any]) => (
+                              <div key={pop} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest mb-1">{pop}</div>
+                                <div className="text-2xl font-black text-slate-900 dark:text-slate-100">{(percentage as number).toFixed(1)}%</div>
+                                <div className="mt-2 h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                                  <div 
+                                    className={`h-full ${pop === 'Sub-Saharan Africa' ? 'bg-emerald-500' : pop === 'Europe' ? 'bg-blue-500' : 'bg-amber-500'}`} 
+                                    style={{ width: `${percentage}%` }}
+                                  />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <p className="mt-4 text-[10px] text-slate-500 dark:text-slate-500 italic leading-tight">
+                            The UT-AIM250 dataset uses 250 highly informative markers to differentiate between Sub-Saharan African, European, and East Asian ancestries with high precision.
+                          </p>
+                        </>
+                      ) : (
+                        <div className="p-8 text-center bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-dashed border-slate-200 dark:border-slate-800">
+                          <div className="text-3xl mb-2">⚠️</div>
+                          <div className="text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">No UT-AIM250 Markers Found</div>
+                          <p className="text-xs text-slate-500 dark:text-slate-500 max-w-xs mx-auto">
+                            Your DNA file does not contain the specific markers used by the UT-AIM250 dataset. This can happen with older chips or low-coverage files.
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             );
