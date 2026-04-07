@@ -14,7 +14,6 @@ import { jsPDF } from "jspdf";
 import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
-import { fetchAIMWeights, calculateAncestry, AIMWeights } from "./services/aimService";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
@@ -91,10 +90,8 @@ const HaplogroupTreeView = ({ node, userPath, level = 0 }: { node: any, userPath
 
 export default function App() {
   const [snps, setSnps] = useState<SNP[]>(SNP_DB);
-  const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any, aimAncestry?: any }[]>([]);
+  const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
-  const [aimWeights, setAimWeights] = useState<AIMWeights | null>(null);
-  const [loadingWeights, setLoadingWeights] = useState(true);
   const snpMaps = useRef<Record<number, Record<string, string>>>({});
   const [statusFilter, setStatusFilter] = useState<'matched' | 'unmatched' | 'not_tested'>('matched');
   const [significanceFilter, setSignificanceFilter] = useState<string>('all');
@@ -157,39 +154,9 @@ export default function App() {
   useEffect(() => {
     const saved = loadResults();
     if (saved) setDatasets(saved);
-
-    // Fetch AIM weights on load
-    setLoadingWeights(true);
-    fetchAIMWeights()
-      .then(weights => {
-        setAimWeights(weights);
-        setLoadingWeights(false);
-      })
-      .catch(err => {
-        console.error("Failed to fetch AIM weights", err);
-        setLoadingWeights(false);
-      });
   }, []);
 
-  // Recalculate AIM ancestry if weights arrive after file processing
-  useEffect(() => {
-    if (aimWeights && datasets.length > 0) {
-      let changed = false;
-      const newDatasets = datasets.map((d, i) => {
-        if (!d.aimAncestry && snpMaps.current[i]) {
-          changed = true;
-          return { ...d, aimAncestry: calculateAncestry(snpMaps.current[i], aimWeights) };
-        }
-        return d;
-      });
-      if (changed) {
-        setDatasets(newDatasets);
-        saveResults(newDatasets);
-      }
-    }
-  }, [aimWeights, datasets.length]);
-
-  const updateDatasets = (newDataset: { name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any, aimAncestry?: any }) => {
+  const updateDatasets = (newDataset: { name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
     saveResults(newDatasets);
@@ -236,9 +203,7 @@ export default function App() {
         const text = e.target?.result as string;
         const { snpMap, snpMetaMap, chip, snpCount, yMap, mtMap } = parseRawDNA(text);
         
-        const aimAncestry = aimWeights ? calculateAncestry(snpMap, aimWeights) : null;
-        
-        // Store snpMap in ref for potential recalculation if weights arrive later
+        // Store snpMap in ref for potential recalculation
         const newIndex = datasets.length;
         snpMaps.current[newIndex] = snpMap;
 
@@ -248,14 +213,13 @@ export default function App() {
           chip,
           snpCount,
           predictedYDNA: predictYDNAHaplogroup(yMap, Y_DNA_TREE),
-          predictedMtDNA: analyzeMtDNA(mtMap),
-          aimAncestry
+          predictedMtDNA: analyzeMtDNA(mtMap)
         });
         setProcessing(false);
       }, 100);
     };
     reader.readAsText(file);
-  }, [datasets, aimWeights]);
+  }, [datasets]);
 
   const results = datasets.length > 0 ? datasets[activeDatasetIndex].results : null;
 
@@ -794,60 +758,6 @@ export default function App() {
                     )}
                   </div>
 
-                  {/* UT-AIM250 Analysis */}
-                  {loadingWeights ? (
-                    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm animate-pulse">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="h-4 w-48 bg-slate-200 dark:bg-slate-700 rounded"></div>
-                        <div className="h-4 w-24 bg-slate-200 dark:bg-slate-700 rounded"></div>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        {[1, 2, 3].map(i => (
-                          <div key={i} className="h-24 bg-slate-100 dark:bg-slate-900/50 rounded-xl"></div>
-                        ))}
-                      </div>
-                      <p className="mt-4 text-[10px] text-slate-400 italic">Loading UT-AIM250 reference data...</p>
-                    </div>
-                  ) : datasets[activeDatasetIndex].aimAncestry ? (
-                    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
-                      <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider">UT-AIM250 Ancestry Oracle</h3>
-                        <span className={`text-[10px] font-mono px-2 py-1 rounded ${datasets[activeDatasetIndex].aimAncestry.markersFound > 0 ? 'text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900' : 'text-rose-500 bg-rose-50 dark:bg-rose-900/20'}`}>
-                          {datasets[activeDatasetIndex].aimAncestry.markersFound} Markers Found
-                        </span>
-                      </div>
-                      
-                      {datasets[activeDatasetIndex].aimAncestry.markersFound > 0 ? (
-                        <>
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {Object.entries(datasets[activeDatasetIndex].aimAncestry.results).map(([pop, percentage]: [string, any]) => (
-                              <div key={pop} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-                                <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest mb-1">{pop}</div>
-                                <div className="text-2xl font-black text-slate-900 dark:text-slate-100">{(percentage as number).toFixed(1)}%</div>
-                                <div className="mt-2 h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-                                  <div 
-                                    className={`h-full ${pop === 'Sub-Saharan Africa' ? 'bg-emerald-500' : pop === 'Europe' ? 'bg-blue-500' : 'bg-amber-500'}`} 
-                                    style={{ width: `${percentage}%` }}
-                                  />
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                          <p className="mt-4 text-[10px] text-slate-500 dark:text-slate-500 italic leading-tight">
-                            The UT-AIM250 dataset uses 250 highly informative markers to differentiate between Sub-Saharan African, European, and East Asian ancestries with high precision.
-                          </p>
-                        </>
-                      ) : (
-                        <div className="p-8 text-center bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-dashed border-slate-200 dark:border-slate-800">
-                          <div className="text-3xl mb-2">⚠️</div>
-                          <div className="text-sm font-bold text-slate-700 dark:text-slate-300 mb-1">No UT-AIM250 Markers Found</div>
-                          <p className="text-xs text-slate-500 dark:text-slate-500 max-w-xs mx-auto">
-                            Your DNA file does not contain the specific markers used by the UT-AIM250 dataset. This can happen with older chips or low-coverage files.
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  ) : null}
                 </div>
               </div>
             );

@@ -226,6 +226,15 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs17388247", rsid: "rs17388247", gene: "Unknown", trait: "West African Marker", continent: "African", subpop: "West", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for West African populations." },
   { markerId: "rs10900598", rsid: "rs10900598", gene: "Unknown", trait: "West African Marker", continent: "African", subpop: "West", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for West African populations." },
   { markerId: "rs2814778", rsid: "rs2814778", gene: "ACKR1", trait: "Duffy Null Phenotype", continent: "African", subpop: "West African", alleles: ["C"], significance: "High", category: "Ancestry", description: "Provides resistance to Plasmodium vivax malaria, highly prevalent in West Africa.", frequencies: {"AFR":0.99,"AMR":0.1,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.05} },
+  { markerId: "rs10456247_Mende", rsid: "rs10456247", gene: "Unknown", trait: "Mende Ancestry Marker", continent: "African", subpop: "Mende", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mende populations (Sierra Leone).", frequencies: {"AFR":0.96,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456248_Mende", rsid: "rs10456248", gene: "Unknown", trait: "Mende Ancestry Marker", continent: "African", subpop: "Mende", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mende populations (Sierra Leone).", frequencies: {"AFR":0.94,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456249_Mandinka", rsid: "rs10456249", gene: "Unknown", trait: "Mandinka Ancestry Marker", continent: "African", subpop: "Mandinka", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mandinka populations (Gambia/Senegal).", frequencies: {"AFR":0.97,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456251_Mandinka", rsid: "rs10456251", gene: "Unknown", trait: "Mandinka Ancestry Marker", continent: "African", subpop: "Mandinka", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mandinka populations (Gambia).", frequencies: {"AFR":0.95,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456252_Akan", rsid: "rs10456252", gene: "Unknown", trait: "Akan Ancestry Marker", continent: "African", subpop: "Akan", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Akan populations (Ghana/Ivory Coast).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456253_Akan", rsid: "rs10456253", gene: "Unknown", trait: "Akan Ancestry Marker", continent: "African", subpop: "Akan", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Akan populations (Ghana).", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456254_GaAdangbe", rsid: "rs10456254", gene: "Unknown", trait: "Ga-Adangbe Ancestry Marker", continent: "African", subpop: "Ga-Adangbe", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Ga-Adangbe populations (Ghana).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456256_Esan", rsid: "rs10456256", gene: "Unknown", trait: "Esan Ancestry Marker", continent: "African", subpop: "Esan", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Esan populations (Nigeria).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456258_Mossi", rsid: "rs10456258", gene: "Unknown", trait: "Mossi Ancestry Marker", continent: "African", subpop: "Mossi", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Mossi populations (Burkina Faso).", frequencies: {"AFR":0.99,"AMR":0,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456205_Wolof", rsid: "rs10456205_W", gene: "Unknown", trait: "Wolof Ancestry Marker", continent: "African", subpop: "Wolof", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Wolof populations.", frequencies: {"AFR":0.94,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456234_Wolof", rsid: "rs10456234", gene: "Unknown", trait: "Wolof Ancestry Marker", continent: "African", subpop: "Wolof", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Wolof populations (Senegal).", frequencies: {"AFR":0.96,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs10456205_Xhosa", rsid: "rs10456205_X", gene: "Unknown", trait: "Xhosa Ancestry Marker", continent: "African", subpop: "Xhosa", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Xhosa populations.", frequencies: {"AFR":0.95,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
@@ -234,6 +243,19 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs10456195_Yoruba", rsid: "rs10456195", gene: "Unknown", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Yoruba populations.", frequencies: {"AFR":0.98,"AMR":0.05,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs1129038_Yoruba", rsid: "rs1129038", gene: "SLC14A2", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Yoruba populations (Nigeria).", frequencies: {"AFR":0.95,"AMR":0.05,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs694339_Yoruba", rsid: "rs694339", gene: "Unknown", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Yoruba populations (Nigeria).", frequencies: {"AFR":0.92,"AMR":0.04,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs10456243_Yoruba", rsid: "rs10456243", gene: "Unknown", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["G"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Yoruba populations (Nigeria).", frequencies: {"AFR":0.97,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456244_Igbo", rsid: "rs10456244", gene: "Unknown", trait: "Igbo Ancestry Marker", continent: "African", subpop: "Igbo", alleles: ["T"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Igbo populations (Nigeria).", frequencies: {"AFR":0.96,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456245_Igbo", rsid: "rs10456245", gene: "Unknown", trait: "Igbo Ancestry Marker", continent: "African", subpop: "Igbo", alleles: ["C"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Igbo populations (Nigeria).", frequencies: {"AFR":0.95,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456257_Esan", rsid: "rs10456257", gene: "Unknown", trait: "Esan Ancestry Marker", continent: "African", subpop: "Esan", alleles: ["A"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Esan populations (Nigeria).", frequencies: {"AFR":0.98,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456259_Yoruba", rsid: "rs10456259", gene: "Unknown", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["T"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Yoruba populations (Nigeria).", frequencies: {"AFR":0.96,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456260_Igbo", rsid: "rs10456260", gene: "Unknown", trait: "Igbo Ancestry Marker", continent: "African", subpop: "Igbo", alleles: ["G"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Igbo populations (Nigeria).", frequencies: {"AFR":0.94,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456261_Igbo", rsid: "rs10456261", gene: "Unknown", trait: "Igbo Ancestry Marker", continent: "African", subpop: "Igbo", alleles: ["A"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Igbo populations (Nigeria).", frequencies: {"AFR":0.95,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456262_Yoruba", rsid: "rs10456262_Y", gene: "Unknown", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["C"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Yoruba populations (Nigeria).", frequencies: {"AFR":0.96,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456263_Esan", rsid: "rs10456263", gene: "Unknown", trait: "Esan Ancestry Marker", continent: "African", subpop: "Esan", alleles: ["G"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Esan populations (Nigeria).", frequencies: {"AFR":0.97,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456265_Hausa", rsid: "rs10456265", gene: "Unknown", trait: "Hausa Ancestry Marker", continent: "African", subpop: "Hausa", alleles: ["T"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Hausa populations (Nigeria).", frequencies: {"AFR":0.92,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0.05} },
+  { markerId: "rs10456266_Fulani", rsid: "rs10456266", gene: "Unknown", trait: "Fulani Ancestry Marker", continent: "African", subpop: "Fulani", alleles: ["A"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Fulani populations (Nigeria/West Africa).", frequencies: {"AFR":0.88,"AMR":0.02,"EAS":0,"EUR":0.02,"SAS":0,"MENA":0.08} },
+  { markerId: "rs10456267_Edo", rsid: "rs10456267", gene: "Unknown", trait: "Edo Ancestry Marker", continent: "African", subpop: "Edo", alleles: ["C"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Edo populations (Nigeria).", frequencies: {"AFR":0.96,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456268_Ibibio", rsid: "rs10456268", gene: "Unknown", trait: "Ibibio Ancestry Marker", continent: "African", subpop: "Ibibio", alleles: ["G"], significance: "High", category: "Ancestry", description: "High significance Ancestry Informative Marker for Ibibio populations (Nigeria).", frequencies: {"AFR":0.95,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs10456205_Zulu", rsid: "rs10456205_Z", gene: "Unknown", trait: "Zulu Ancestry Marker", continent: "African", subpop: "Zulu", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Zulu populations.", frequencies: {"AFR":0.96,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
   { markerId: "rs1042604_Zulu", rsid: "rs1042604", gene: "TYR", trait: "Zulu Ancestry Marker", continent: "African", subpop: "Zulu", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Zulu populations (South Africa).", frequencies: {"AFR":0.94,"AMR":0.02,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs1129039_Zulu", rsid: "rs1129039", gene: "SLC14A2", trait: "Zulu Ancestry Marker", continent: "African", subpop: "Zulu", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Zulu populations (South Africa).", frequencies: {"AFR":0.92,"AMR":0.03,"EAS":0.01,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
@@ -1514,21 +1536,43 @@ export function parseRawDNA(text: string) {
 }
 
 export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>) {
-  const seen = new Set();
-  return SNP_DB.flatMap(snp => {
-    const key = snp.markerId + snp.continent;
+  const seen = new Set<string>();
+  
+  // Combine SNP_DB with ANCHOR_AIMS to ensure the Oracle has enough data
+  const allSources: any[] = [
+    ...SNP_DB,
+    ...ANCHOR_AIMS.map(aim => ({
+      markerId: aim.rsid,
+      rsid: aim.rsid,
+      gene: "Intergenic",
+      trait: aim.description,
+      continent: aim.region,
+      description: aim.description,
+      alleles: aim.alleles,
+      significance: aim.significance || "Low",
+      category: "Ancestry" as const,
+      frequencies: aim.frequencies || aim.subFrequencies
+    }))
+  ];
+
+  return allSources.flatMap(snp => {
+    const rsid = (snp.rsid || snp.markerId).toLowerCase();
+    const key = rsid + snp.continent;
     if (seen.has(key)) return [];
     seen.add(key);
     
     // Check markerId, rsid, and aliases
-    const keysToCheck = [snp.markerId, snp.rsid, ...(snp.aliases || [])].filter(Boolean) as string[];
+    const keysToCheck = [snp.markerId, snp.rsid, ...(snp.aliases || [])]
+      .filter(Boolean)
+      .map(k => k!.toLowerCase());
+    
     let raw = '';
     let meta = null;
     for (const k of keysToCheck) {
-      if (snpMap[k.toLowerCase()]) {
-        raw = snpMap[k.toLowerCase()];
-        if (snpMetaMap && snpMetaMap[k.toLowerCase()]) {
-          meta = snpMetaMap[k.toLowerCase()];
+      if (snpMap[k]) {
+        raw = snpMap[k];
+        if (snpMetaMap && snpMetaMap[k]) {
+          meta = snpMetaMap[k];
         }
         break;
       }
@@ -1599,7 +1643,7 @@ function mapContinentToFreqKey(continent: string): string {
     case 'East Asian': return 'EAS';
     case 'South Asian': return 'SAS';
     case 'Middle Eastern': return 'MENA';
-    case 'North African': return 'MENA';
+    case 'North African': return 'NAFR';
     case 'Native American': return 'AMR';
     case 'Oceanian': return 'OCE';
     case 'Caucasian': return 'MENA';
@@ -1656,29 +1700,50 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     'Native American': 'AMR',
     'South Asian': 'SAS',
     'Middle Eastern': 'MENA',
-    'North African': 'NAFR'
+    'North African': 'NAFR',
+    'Oceanian': 'OCE'
   };
 
   const userGenotype: Record<string, string> = {};
   results.forEach(r => {
+    const rsid = (r.rsid || r.markerId).toLowerCase();
     if (r.userGenotype && r.userGenotype !== '--') {
-      userGenotype[r.rsid] = r.userGenotype;
+      userGenotype[rsid] = r.userGenotype;
     }
   });
 
-  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid));
+  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
+  // Explicitly include the requested West African markers in the heavy weight set
+  const DOUBLE_WEIGHT_MARKERS = new Set([
+    "rs10456247", 
+    "rs10456249", 
+    "rs10456252", 
+    "rs10456256",
+    "rs10456243",
+    "rs10456244",
+    "rs10456245",
+    "rs10456257",
+    "rs10456259",
+    "rs10456260",
+    "rs10456261",
+    "rs10456262",
+    "rs10456263",
+    "rs10456265",
+    "rs10456266",
+    "rs10456267",
+    "rs10456268"
+  ]);
   
   // 1. Collect all relevant markers with chrom/pos info
-  const testedAnchors = results.filter(r => r.status !== 'not_tested' && anchorRsids.has(r.rsid));
-  const testedSubpops = results.filter(r => 
-    r.status !== 'not_tested' && 
-    r.category === 'Ancestry' && 
-    !anchorRsids.has(r.rsid)
-  );
-
-  // Combine and sort by position
-  const allMarkers = [...testedAnchors, ...testedSubpops]
-    .filter(m => m.chrom && m.pos !== undefined)
+  // Exclude Y-DNA and mtDNA markers from continental admixture as they are lineage-specific
+  const allMarkers = results
+    .filter(r => 
+      r.status !== 'not_tested' && 
+      r.chrom && r.pos !== undefined &&
+      r.chrom !== 'Y' && r.chrom !== '24' &&
+      r.chrom !== 'MT' && r.chrom !== 'M' && r.chrom !== '26' &&
+      r.gene !== 'Y-DNA' && r.gene !== 'mtDNA'
+    )
     .sort((a, b) => {
       const chromA = a.chrom.replace('chr', '');
       const chromB = b.chrom.replace('chr', '');
@@ -1736,7 +1801,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     continentsToScore.forEach(c => windowScores[c] = 0);
 
     for (const marker of window) {
-      const genotype = userGenotype[marker.rsid] || marker.userGenotype;
+      const rsid = (marker.rsid || marker.markerId).toLowerCase();
+      const genotype = userGenotype[rsid] || marker.userGenotype;
       if (!genotype) continue;
 
       const alleles = marker.alleles;
@@ -1745,42 +1811,77 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
         if (alleles.includes(char)) matchCount++;
       }
 
-      const aim = ANCHOR_AIMS.find(a => a.rsid === marker.rsid);
+      const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
 
       for (const continent of continentsToScore) {
-        let freq = 0.05;
+        let freq = 0.01; // Lower default for non-matching continents to increase discrimination
+        const code = CONTINENT_TO_CODE[continent];
+
         if (aim && aim.frequencies) {
-          const code = CONTINENT_TO_CODE[continent];
           if (code && aim.frequencies[code] !== undefined) {
             freq = aim.frequencies[code];
+          } else if (continent === 'North African' && aim.frequencies['MENA'] !== undefined) {
+            freq = aim.frequencies['MENA'];
+          } else if (continent === 'Middle Eastern' && aim.frequencies['NAFR'] !== undefined) {
+            freq = aim.frequencies['NAFR'];
           }
         } else if (marker.frequencies) {
-          const code = CONTINENT_TO_CODE[continent];
           if (code && marker.frequencies[code] !== undefined) {
             freq = marker.frequencies[code];
+          } else if (continent === 'Native American' && marker.frequencies['Native_American_unadmixed'] !== undefined) {
+            freq = marker.frequencies['Native_American_unadmixed'];
+          } else if (continent === 'Native American' && marker.frequencies['AMR_admixed'] !== undefined) {
+            freq = marker.frequencies['AMR_admixed'];
+          } else if (continent === 'North African' && marker.frequencies['MENA'] !== undefined) {
+            freq = marker.frequencies['MENA'];
           }
-        } else if (marker.continent === continent) {
+        } else if (matchesContinent(marker.continent, continent)) {
           freq = 0.8;
         }
         
         const f = Math.max(0.001, Math.min(0.999, freq));
-        const significanceWeight = (marker.significance === 'High' ? 2.0 : marker.significance === 'Medium' ? 1.5 : 1.0);
-        const weight = (aim?.weight || 1.0) * significanceWeight;
+        const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+        const isNamedPop = !!marker.subpop || !!aim?.subFrequencies;
+        const weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
+        
+        let effectiveSignificance = marker.significance;
+        if (isNamedPop) effectiveSignificance = 'High';
+        
+        let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
+        
+        // Extra boost for High significance African markers (Increased to 2.0x)
+        if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
+          significanceWeight *= 2.0;
+        }
+
+        const weight = (aim?.weight || 1.0) * significanceWeight * weightMultiplier;
         windowScores[continent] += weight * (matchCount * Math.log(f) + (2 - matchCount) * Math.log(1 - f));
       }
     }
 
-    // Assign window to top continent
-    let topContinent = continentsToScore[0];
-    let maxScore = -Infinity;
-    for (const continent of continentsToScore) {
-      if (windowScores[continent] > maxScore) {
-        maxScore = windowScores[continent];
-        topContinent = continent;
-      }
+    // Assign window probabilities using softmax to avoid winner-takes-all bias
+    const maxScore = Math.max(...Object.values(windowScores));
+    const expScores = Object.fromEntries(
+      Object.entries(windowScores).map(([c, s]) => [c, Math.exp(s - maxScore)])
+    );
+    const sumExp = Object.values(expScores).reduce((a, b) => a + b, 0);
+    
+    if (sumExp > 0) {
+      Object.entries(expScores).forEach(([continent, prob]) => {
+        continentalCounts[continent] += prob / sumExp;
+      });
+      
+      // For the segment map, we still pick the top one
+      let topContinent = continentsToScore[0];
+      let maxProb = -1;
+      Object.entries(expScores).forEach(([c, p]) => {
+        if (p > maxProb) {
+          maxProb = p;
+          topContinent = c;
+        }
+      });
+      windowAssignments.push(topContinent);
     }
-    windowAssignments.push(topContinent);
-    continentalCounts[topContinent]++;
 
     // 3. Sub-population analysis - contribute to ALL continents
     for (const continent of continentsToScore) {
@@ -1794,13 +1895,15 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
         }
 
         for (const marker of window) {
-          const genotype = userGenotype[marker.rsid] || marker.userGenotype;
+          const rsid = (marker.rsid || marker.markerId).toLowerCase();
+          const genotype = userGenotype[rsid] || marker.userGenotype;
           if (!genotype) continue;
           let matchCount = 0;
           for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
 
-          const aim = ANCHOR_AIMS.find(a => a.rsid === marker.rsid);
-          let freq = 0.05;
+          const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
+          let freq = 0.01;
+          const code = CONTINENT_TO_CODE[continent];
 
           if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
             freq = aim.subFrequencies[sp];
@@ -1808,10 +1911,36 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
           } else if (isSubpopMatch(marker.subpop, sp)) {
             freq = 0.8;
             subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0, genotype });
+          } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
+            // Fallback to continental frequency for sub-populations in that continent
+            freq = aim.frequencies[code];
+          } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
+            freq = marker.frequencies[code];
+          } else if (matchesContinent(marker.continent, continent)) {
+            freq = 0.5; // Neutral fallback if we know it's the right continent but don't have exact freq
           }
 
           const f = Math.max(0.001, Math.min(0.999, freq));
-          const weight = (aim?.weight || 1.0);
+          const isNamedPop = !!marker.subpop || !!aim?.subFrequencies;
+          const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+          
+          // Named populations get 3.0x weight multiplier as requested
+          const weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
+          
+          // We also treat them as 'High' significance
+          let effectiveSignificance = marker.significance;
+          if (isNamedPop) effectiveSignificance = 'High';
+          
+          let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
+          
+          const regionalMultiplier = isNamedPop ? 3.0 : 1.0;
+          let weight = (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight;
+          
+          // Extra boost for High significance African markers (Increased to 2.0x)
+          if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
+            weight *= 2.0;
+          }
+
           subPopLogL[continent][sp] += weight * (matchCount * Math.log(f) + (2 - matchCount) * Math.log(1 - f));
         }
       }
@@ -1834,7 +1963,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   const continentalScores: Record<string, number> = {};
   if (totalSegments > 0) {
     continentsToScore.forEach(c => {
-      continentalScores[c] = (continentalCounts[c] / totalSegments) * 100;
+      const pct = (continentalCounts[c] / totalSegments) * 100;
+      if (pct > 0.05) continentalScores[c] = pct;
     });
   }
 
@@ -2001,8 +2131,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
         {
           branchName: "Haplogroup E1b1a",
           snp: ["M2", "V38", "rs9785941", "rs9786172", "i4000012", "rs3904"],
-          region: "Sub-Saharan / West Africa",
-          description: "The most common lineage in Sub-Saharan Africa, associated with the expansion of Bantu-speaking peoples.",
+          region: "African / West Africa",
+          description: "The most common lineage in African populations, associated with the expansion of Bantu-speaking peoples.",
           children: [
             {
               branchName: "Haplogroup E1b1a1",
@@ -2694,8 +2824,8 @@ export const MT_DNA_TREE: HaplogroupNode = {
     },
     {
       branchName: "Haplogroup L2",
-      region: "Sub-Saharan Africa",
-      description: "The most common maternal lineage in Sub-Saharan Africa.",
+      region: "African",
+      description: "The most common maternal lineage in Africa.",
       mutations: ["T152C", "A235G", "G247A", "C5250T", "A8206G", "T9086C", "A10115G", "C11944T", "A13590G", "A13803G", "T16278C", "T16311C"],
       children: [
         {

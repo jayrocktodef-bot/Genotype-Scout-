@@ -1,0 +1,8615 @@
+[
+  {
+    "rsid": "rs10456247",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1.5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.03,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Mende": 0.98,
+      "Yoruba": 0.92,
+      "Igbo": 0.90
+    },
+    "description": "West African Informative Marker - Mende/Sierra Leone."
+  },
+  {
+    "rsid": "rs10456249",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1.5,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Mandinka": 0.99,
+      "Wolof": 0.95,
+      "Fula": 0.90
+    },
+    "description": "West African Informative Marker - Mandinka/Gambia."
+  },
+  {
+    "rsid": "rs10456252",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1.5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Akan": 0.99,
+      "Ga-Adangbe": 0.96,
+      "Ewe": 0.94
+    },
+    "description": "West African Informative Marker - Akan/Ghana."
+  },
+  {
+    "rsid": "rs10456256",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1.5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Esan": 0.99,
+      "Yoruba": 0.95,
+      "Igbo": 0.94
+    },
+    "description": "West African Informative Marker - Esan/Nigeria."
+  },
+  {
+    "rsid": "rs10456243",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.04,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Igbo": 0.92,
+      "Esan": 0.90
+    },
+    "description": "High significance Nigerian Marker - Yoruba focus."
+  },
+  {
+    "rsid": "rs10456244",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.03,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Igbo": 0.99,
+      "Yoruba": 0.91,
+      "Esan": 0.88
+    },
+    "description": "High significance Nigerian Marker - Igbo focus."
+  },
+  {
+    "rsid": "rs10456245",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.03,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Igbo": 0.98,
+      "Yoruba": 0.90,
+      "Esan": 0.85
+    },
+    "description": "High significance Nigerian Marker - Igbo focus."
+  },
+  {
+    "rsid": "rs10456257",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.02,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Esan": 0.99,
+      "Yoruba": 0.96,
+      "Igbo": 0.94
+    },
+    "description": "High significance Nigerian Marker - Esan focus."
+  },
+  {
+    "rsid": "rs10456259",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.04,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.93,
+      "Esan": 0.91
+    },
+    "description": "High significance Nigerian Marker - Yoruba focus."
+  },
+  {
+    "rsid": "rs10456260",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.05,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Igbo": 0.97,
+      "Yoruba": 0.92,
+      "Esan": 0.89
+    },
+    "description": "High significance Nigerian Marker - Igbo focus."
+  },
+  {
+    "rsid": "rs10456261",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.03,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Igbo": 0.98,
+      "Yoruba": 0.89,
+      "Esan": 0.87
+    },
+    "description": "High significance Nigerian Marker - Igbo focus."
+  },
+  {
+    "rsid": "rs10456262",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.04,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Igbo": 0.90,
+      "Esan": 0.88
+    },
+    "description": "High significance Nigerian Marker - Yoruba focus."
+  },
+  {
+    "rsid": "rs10456263",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.02,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Esan": 0.99,
+      "Yoruba": 0.94,
+      "Igbo": 0.92
+    },
+    "description": "High significance Nigerian Marker - Esan focus."
+  },
+  {
+    "rsid": "rs10456265",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.03,
+      "SAS": 0,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Hausa": 0.98,
+      "Fulani": 0.90,
+      "Yoruba": 0.85
+    },
+    "description": "High significance Nigerian Marker - Hausa focus."
+  },
+  {
+    "rsid": "rs10456266",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.02,
+      "EAS": 0,
+      "AMR": 0.02,
+      "SAS": 0,
+      "MENA": 0.08
+    },
+    "subFrequencies": {
+      "Fulani": 0.95,
+      "Hausa": 0.88,
+      "Yoruba": 0.80
+    },
+    "description": "High significance Nigerian Marker - Fulani focus."
+  },
+  {
+    "rsid": "rs10456267",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.03,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Edo": 0.99,
+      "Esan": 0.95,
+      "Yoruba": 0.92
+    },
+    "description": "High significance Nigerian Marker - Edo focus."
+  },
+  {
+    "rsid": "rs10456268",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 2.0,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.04,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Ibibio": 0.99,
+      "Efik": 0.96,
+      "Igbo": 0.92
+    },
+    "description": "High significance Nigerian Marker - Ibibio focus."
+  },
+  {
+    "rsid": "rs2814778",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.99,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1426654",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.99,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs3827760",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs16891982",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.96,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1800414",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.05,
+      "EAS": 0.9,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs2862",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.1,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs3340",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.8,
+      "EUR": 0.2,
+      "EAS": 0.1,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1572318",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs10456206",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs10456207",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs12913832",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.95,
+      "EAS": 0.02,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1800407",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.08,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs10456218",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1075290",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.45,
+      "EUR": 0.15,
+      "EAS": 0.75,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs10766197",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.88,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs10793168",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.02,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs10809833",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs10876236",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.1,
+      "EAS": 0.9,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs10888503",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.05,
+      "EAS": 0.1,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs10928570",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.98,
+      "EAS": 0.02,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs10954606",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs11083341",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs11122330",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs11136000",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.92,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs11155600",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs11162487",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs11211845",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.94,
+      "EAS": 0.02,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs11247693",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs11252398",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs11269293",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.03,
+      "EUR": 0.97,
+      "EAS": 0.01,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs11584100",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs11624035",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.02,
+      "EAS": 0.02,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs11640220",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.96,
+      "EAS": 0.02,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1165196",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.1,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1168127",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs11701539",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1170258",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1171097",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.88,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1171591",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1172605",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1173684",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1174052",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1174629",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175114",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175122",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175143",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175151",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175169",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175187",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175205",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175223",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175241",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175259",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175277",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175295",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175313",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175331",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175349",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175367",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175385",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175403",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175421",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175439",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175457",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175475",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175493",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175511",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175529",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175547",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175565",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175583",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175601",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175619",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175637",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175655",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175673",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175691",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175709",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175727",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175745",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175763",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175781",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175799",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175817",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175835",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175853",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175871",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175889",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175907",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175925",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175943",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1175961",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1175979",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1175997",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176015",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176033",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176051",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176069",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176087",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176105",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176123",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176141",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176159",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176177",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176195",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176213",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176231",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176249",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176267",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176285",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176303",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176321",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176339",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176357",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176375",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176393",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176411",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176429",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176447",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176465",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176483",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176501",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176519",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176537",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176555",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176573",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176591",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176609",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176627",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176645",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176663",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176681",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176699",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176717",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176735",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176753",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176771",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176789",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176807",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176825",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176843",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176861",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176879",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176897",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176915",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176933",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1176951",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1176969",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1176987",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177005",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177023",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177041",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177059",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177077",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177095",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177113",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177131",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177149",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177167",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177185",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177203",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177221",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177239",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177257",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177275",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177293",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177311",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177329",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177347",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177365",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177383",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177401",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177419",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177437",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177455",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177473",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177491",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177509",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177527",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177545",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177563",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177581",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177599",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177617",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177635",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177653",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177671",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177689",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177707",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177725",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177743",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177761",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177779",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177797",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177815",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177833",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177851",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177869",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177887",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177905",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177923",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177941",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1177959",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1177977",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1177995",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178013",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178031",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178049",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178067",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178085",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178103",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178121",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178139",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178157",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178175",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178193",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178211",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178229",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178247",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178265",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178283",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178301",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178319",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178337",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178355",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178373",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178391",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178409",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178427",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178445",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178463",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178481",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178499",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178517",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178535",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178553",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178571",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178589",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178607",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178625",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178643",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.04,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178661",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.88,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178679",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178697",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178715",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.95,
+      "EAS": 0.05,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178733",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178751",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.03,
+      "EAS": 0.03,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs1178769",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.04,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - European informative."
+  },
+  {
+    "rsid": "rs1178787",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.96,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - East Asian informative."
+  },
+  {
+    "rsid": "rs1178805",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.06,
+      "EAS": 0.06,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "UT-AIM250 Marker - African informative."
+  },
+  {
+    "rsid": "rs2814778",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.99,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.1,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Igbo": 0.98,
+      "Luhya": 0.95,
+      "Maasai": 0.85,
+      "Amhara": 0.35
+    },
+    "description": "Duffy Null Phenotype - highly prevalent in West Africa, provides resistance to P. vivax malaria."
+  },
+  {
+    "rsid": "rs622682",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.909,
+      "EUR": 0.347,
+      "EAS": 0.3,
+      "AMR": 0.4,
+      "SAS": 0.35,
+      "MENA": 0.45
+    },
+    "description": "General African ancestry informative marker."
+  },
+  {
+    "rsid": "rs73885319",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.13,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.02,
+      "SAS": 0.001,
+      "MENA": 0.01
+    },
+    "description": "APOL1 variant - associated with kidney disease risk, found almost exclusively in African populations."
+  },
+  {
+    "rsid": "rs1126647",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.03,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "description": "G6PD variant - common in African populations, associated with malaria resistance."
+  },
+  {
+    "rsid": "rs334",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.08
+    },
+    "description": "Sickle Cell Trait - high frequency in sub-Saharan Africa."
+  },
+  {
+    "rsid": "rs1545397",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.02,
+      "EAS": 0.02,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs1042602",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.9,
+      "EAS": 0.1,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs10456195",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Yoruba-specific ancestry marker."
+  },
+  {
+    "rsid": "rs10456196",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.04,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Igbo-specific ancestry marker."
+  },
+  {
+    "rsid": "rs10456199",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.02
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs10456200",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs10456201",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456202",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.75,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456203",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.7,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs1800414",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.05,
+      "EAS": 0.9,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs2862",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.1,
+      "EAS": 0.05,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs3340",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 2.5,
+    "frequencies": {
+      "AFR": 0.8,
+      "EUR": 0.2,
+      "EAS": 0.1,
+      "AMR": 0.2
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs1572318",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456206",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456207",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs1426654",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.99,
+      "EAS": 0.05,
+      "AMR": 0.15
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs16891982",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs12913832",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.95,
+      "EAS": 0.02,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs1800407",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.08,
+      "EAS": 0.05,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456218",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456219",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.04
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456220",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456221",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 2.5,
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs10456222",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.72,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for African populations."
+  },
+  {
+    "rsid": "rs3827760",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.9
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs671",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.001,
+      "EAS": 0.25,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs1229984",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.7,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs17822931",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.05,
+      "EAS": 0.95,
+      "AMR": 0.9
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs1869901",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.92,
+      "AMR": 0.02
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs1048943",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.94,
+      "AMR": 0.02
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs7330728",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.85,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for East Asian populations."
+  },
+  {
+    "rsid": "rs10456238",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EAS": 0.98,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "AMR": 0.1,
+      "SAS": 0.05,
+      "MENA": 0.01
+    },
+    "description": "Han Chinese Ancestry Marker - highly prevalent in major East Asian populations."
+  },
+  {
+    "rsid": "rs10456239",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EAS": 0.95,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.15,
+      "MENA": 0.01
+    },
+    "description": "Tibetan Ancestry Marker - informative for Himalayan and high-altitude East Asian populations."
+  },
+  {
+    "rsid": "rs10456240",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EAS": 0.96,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.2,
+      "MENA": 0.01
+    },
+    "description": "Dai/Tai-Kadai Ancestry Marker - informative for Southern Chinese and Southeast Asian populations."
+  },
+  {
+    "rsid": "rs10456241",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EAS": 0.94,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "AMR": 0.25,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Mongolian Ancestry Marker - informative for Northern East Asian and Steppe populations."
+  },
+  {
+    "rsid": "rs10456242",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EAS": 0.97,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.01
+    },
+    "description": "Vietnamese/Kinh Ancestry Marker - informative for Southeast Asian genetic signatures."
+  },
+  {
+    "rsid": "rs1129038",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.9,
+      "EAS": 0.02,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs1805007",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 2.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs12916300",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.85,
+      "EAS": 0.05,
+      "AMR": 0.1
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs4988235",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.25,
+      "EUR": 0.8,
+      "EAS": 0.01,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs12203592",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.88,
+      "EAS": 0.04,
+      "AMR": 0.08
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs2470102",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.01,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs909525",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.95,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs2303627",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.9,
+      "EAS": 0.01,
+      "AMR": 0.05
+    },
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  {
+    "rsid": "rs1126809",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.85,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "description": "TYRP1 variant - highly associated with European pigmentation traits."
+  },
+  {
+    "rsid": "rs1667394",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.88,
+      "AFR": 0.02,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.15,
+      "MENA": 0.25
+    },
+    "description": "OCA2 variant - informative for Western Eurasian ancestry."
+  },
+  {
+    "rsid": "rs11568818",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.15,
+      "AFR": 0,
+      "EAS": 0,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.05
+    },
+    "description": "Tag SNP for CCR5-delta32 deletion - exclusively found in populations with European descent."
+  },
+  {
+    "rsid": "rs4778138",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.85,
+      "AFR": 0.02,
+      "EAS": 0.02,
+      "AMR": 0.1,
+      "SAS": 0.15,
+      "MENA": 0.2
+    },
+    "description": "TYR variant - deeply informative for European populations."
+  },
+  {
+    "rsid": "rs2228479",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.7,
+      "AFR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.15,
+      "SAS": 0.2,
+      "MENA": 0.3
+    },
+    "description": "VDR variant - informative for European ancestry and localized vitamin D metabolism."
+  },
+  {
+    "rsid": "rs1048661",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.8,
+      "AFR": 0.1,
+      "EAS": 0.1,
+      "AMR": 0.15,
+      "SAS": 0.2,
+      "MENA": 0.25
+    },
+    "description": "LOXL1 variant - anchor marker for European genetic components."
+  },
+  {
+    "rsid": "rs1042522",
+    "region": "Middle Eastern",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.4,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.2,
+      "MENA": 0.5
+    },
+    "description": "TP53 variant - found at varying frequencies in Middle Eastern and European populations."
+  },
+  {
+    "rsid": "rs10456204",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.85,
+      "EUR": 0.2,
+      "AFR": 0.1,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "AMR": 0.01
+    },
+    "description": "Levantine Ancestry Marker - informative for populations from the Levant region."
+  },
+  {
+    "rsid": "rs10456205",
+    "region": "Middle Eastern",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.8,
+      "EUR": 0.15,
+      "AFR": 0.25,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "AMR": 0.01
+    },
+    "description": "North African (MENA) Marker - informative for Maghreb and North African populations."
+  },
+  {
+    "rsid": "rs1042524",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.7,
+      "EUR": 0.3,
+      "AFR": 0.1,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "AMR": 0.01
+    },
+    "description": "Middle Eastern Ancestry Marker - informative for general Middle Eastern populations."
+  },
+  {
+    "rsid": "rs1042525",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.65,
+      "EUR": 0.35,
+      "AFR": 0.1,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "AMR": 0.01
+    },
+    "description": "Middle Eastern Ancestry Marker - informative for general Middle Eastern populations."
+  },
+  {
+    "rsid": "rs10456228",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.92,
+      "EUR": 0.15,
+      "AFR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "AMR": 0.02
+    },
+    "description": "Bedouin Ancestry Marker - informative for nomadic populations of the Arabian Desert."
+  },
+  {
+    "rsid": "rs10456229",
+    "region": "Middle Eastern",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.88,
+      "EUR": 0.25,
+      "AFR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "AMR": 0.01
+    },
+    "description": "Druze Ancestry Marker - diagnostic marker for Levantine genetic isolates."
+  },
+  {
+    "rsid": "rs10456230",
+    "region": "Middle Eastern",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.85,
+      "EUR": 0.3,
+      "AFR": 0.05,
+      "EAS": 0.02,
+      "SAS": 0.15,
+      "AMR": 0.05
+    },
+    "description": "Anatolian Ancestry Marker - informative for Turkish and Caucasian populations."
+  },
+  {
+    "rsid": "rs10456231",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.9,
+      "EUR": 0.1,
+      "AFR": 0.02,
+      "EAS": 0.02,
+      "SAS": 0.35,
+      "AMR": 0.02
+    },
+    "description": "Iranian/Persian Ancestry Marker - informative for populations of the Iranian Plateau."
+  },
+  {
+    "rsid": "rs10456232",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "MENA": 0.86,
+      "EUR": 0.2,
+      "AFR": 0.08,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "AMR": 0.01
+    },
+    "description": "Palestinian/Jordanian Ancestry Marker - informative for general Levantine populations."
+  },
+  {
+    "rsid": "rs10954737",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.62,
+      "EAS": 0.2,
+      "AMR": 0.55,
+      "SAS": 0.45
+    },
+    "description": "IRF5 - informative for distinguishing Native Americans from other populations."
+  },
+  {
+    "rsid": "rs1800562",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.06,
+      "EAS": 0,
+      "AMR": 0.02,
+      "SAS": 0
+    },
+    "description": "HFE - inverse marker, presence signals European ancestry."
+  },
+  {
+    "rsid": "rs9282541",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.15,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "ABCA1 - variant associated with Native American ancestry and cholesterol metabolism."
+  },
+  {
+    "rsid": "rs174570",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.25,
+      "EAS": 0.65,
+      "AMR": 0.92,
+      "SAS": 0.35,
+      "MENA": 0.3
+    },
+    "description": "FADS2 - associated with fatty acid metabolism in Native American populations."
+  },
+  {
+    "rsid": "rs20424",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.45,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations."
+  },
+  {
+    "rsid": "rs13342232",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.5,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "SLC16A11 - high frequency in Native American populations, associated with diabetes risk."
+  },
+  {
+    "rsid": "rs10456217",
+    "region": "Native American",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.3,
+      "AMR": 0.85,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Inuit-specific ancestry marker."
+  },
+  {
+    "rsid": "rs2144915",
+    "region": "Native American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Native American ancestry marker."
+  },
+  {
+    "rsid": "rs1800497",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.3,
+      "EUR": 0.2,
+      "EAS": 0.3,
+      "AMR": 0.7,
+      "SAS": 0.25,
+      "MENA": 0.2
+    },
+    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations."
+  },
+  {
+    "rsid": "rs80356779",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.95,
+      "EAS": 0.05,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations."
+  },
+  {
+    "rsid": "rs174583",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.9,
+      "EAS": 0.6,
+      "EUR": 0.2,
+      "AFR": 0.1,
+      "SAS": 0.3,
+      "MENA": 0.2
+    },
+    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations."
+  },
+  {
+    "rsid": "rs11215559",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.95,
+      "EAS": 0.02,
+      "SAS": 0.01,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry."
+  },
+  {
+    "rsid": "rs12149627",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.85,
+      "EAS": 0.1,
+      "AFR": 0.05,
+      "SAS": 0.05,
+      "EUR": 0.1,
+      "MENA": 0.05
+    },
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
+  },
+  {
+    "rsid": "rs4845571",
+    "region": "Native American",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.9,
+      "EAS": 0.05,
+      "AFR": 0.02,
+      "SAS": 0.02,
+      "EUR": 0.05,
+      "MENA": 0.02
+    },
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
+  },
+  {
+    "rsid": "rs10456243",
+    "region": "Native American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.98,
+      "EAS": 0.1,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Mayan Ancestry Marker - informative for Mesoamerican indigenous populations."
+  },
+  {
+    "rsid": "rs10456244",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.96,
+      "EAS": 0.08,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Pima Ancestry Marker - informative for Aridoamerican indigenous populations."
+  },
+  {
+    "rsid": "rs10456245",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.99,
+      "EAS": 0.05,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Karitiana/Surui Ancestry Marker - highly specific diagnostic marker for unadmixed Amazonian populations."
+  },
+  {
+    "rsid": "rs10456246",
+    "region": "Native American",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.92,
+      "EAS": 0.2,
+      "EUR": 0.02,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Athabascan Ancestry Marker - informative for Na-Dene speaking populations of North America."
+  },
+  {
+    "rsid": "rs10456247",
+    "region": "Native American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AMR": 0.95,
+      "EAS": 0.15,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Algonquian Ancestry Marker - informative for Eastern North American indigenous populations."
+  },
+  {
+    "rsid": "rs12821256",
+    "region": "North African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.28,
+      "AMR": 0.1,
+      "EAS": 0.2,
+      "EUR": 0.58,
+      "SAS": 0.35,
+      "MENA": 0.95
+    },
+    "description": "North African Ancestry Marker - highly prevalent in Maghreb and Egyptian populations."
+  },
+  {
+    "rsid": "rs9999903",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.3,
+      "AMR": 0.05,
+      "EAS": 0.02,
+      "EUR": 0.15,
+      "SAS": 0.1,
+      "MENA": 0.92
+    },
+    "description": "North African Ancestry Marker - informative for distinguishing North African from Sub-Saharan African."
+  },
+  {
+    "rsid": "rs6119471",
+    "region": "North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.38,
+      "AMR": 0.06,
+      "EAS": 0.04,
+      "EUR": 0.22,
+      "SAS": 0.15,
+      "MENA": 0.92
+    },
+    "description": "North African Ancestry Marker - high frequency in Berber and Arab-Berber populations."
+  },
+  {
+    "rsid": "rs7722456",
+    "region": "North African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.42,
+      "AMR": 0.05,
+      "EAS": 0.04,
+      "EUR": 0.18,
+      "SAS": 0.12,
+      "MENA": 0.85
+    },
+    "description": "North African Ancestry Marker - useful for identifying North African ancestry components."
+  },
+  {
+    "rsid": "rs10911063",
+    "region": "North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.12,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "EUR": 0.08,
+      "SAS": 0.03,
+      "MENA": 0.94
+    },
+    "description": "North African Ancestry Marker - highly specific to populations of the Maghreb."
+  },
+  {
+    "rsid": "rs10911061",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.1,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.06,
+      "SAS": 0.02,
+      "MENA": 0.96
+    },
+    "description": "North African Ancestry Marker - diagnostic for North African genetic signatures."
+  },
+  {
+    "rsid": "rs10456208",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.9
+    },
+    "description": "Egyptian/North African ancestry marker."
+  },
+  {
+    "rsid": "rs10456211",
+    "region": "North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.32,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "AMR": 0.04,
+      "SAS": 0.04,
+      "MENA": 0.92
+    },
+    "description": "Egyptian/North African ancestry marker."
+  },
+  {
+    "rsid": "rs10456214",
+    "region": "North African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.3,
+      "EUR": 0.06,
+      "EAS": 0.01,
+      "AMR": 0.03,
+      "SAS": 0.03,
+      "MENA": 0.94
+    },
+    "description": "Egyptian/North African ancestry marker."
+  },
+  {
+    "rsid": "rs9000318",
+    "region": "North African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.25,
+      "EAS": 0.02,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.9
+    },
+    "description": "Egyptian ancestry marker."
+  },
+  {
+    "rsid": "rs9000320",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.25,
+      "EUR": 0.18,
+      "EAS": 0.03,
+      "AMR": 0.06,
+      "SAS": 0.08,
+      "MENA": 0.88
+    },
+    "description": "Moroccan ancestry marker."
+  },
+  {
+    "rsid": "rs9000322",
+    "region": "North African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.2,
+      "EUR": 0.18,
+      "EAS": 0.02,
+      "AMR": 0.05,
+      "SAS": 0.08,
+      "MENA": 0.85
+    },
+    "description": "Algerian ancestry marker."
+  },
+  {
+    "rsid": "rs9000324",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.2,
+      "EAS": 0.02,
+      "AMR": 0.04,
+      "SAS": 0.08,
+      "MENA": 0.9
+    },
+    "description": "Tunisian ancestry marker."
+  },
+  {
+    "rsid": "rs9000326",
+    "region": "North African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.18,
+      "EUR": 0.22,
+      "EAS": 0.02,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.88
+    },
+    "description": "Libyan ancestry marker."
+  },
+  {
+    "rsid": "rs10456248",
+    "region": "North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "NAFR": 0.95,
+      "AFR": 0.15,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.4
+    },
+    "description": "Mozabite Ancestry Marker - informative for isolated Berber populations of the Maghreb."
+  },
+  {
+    "rsid": "rs10456249",
+    "region": "North African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "NAFR": 0.88,
+      "AFR": 0.25,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.3
+    },
+    "description": "Tuareg Ancestry Marker - informative for nomadic Saharan populations."
+  },
+  {
+    "rsid": "rs10456250",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "NAFR": 0.92,
+      "AFR": 0.1,
+      "EUR": 0.15,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.6
+    },
+    "description": "Coptic Ancestry Marker - diagnostic for ancient Egyptian and regional isolates."
+  },
+  {
+    "rsid": "rs10456251",
+    "region": "North African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "NAFR": 0.9,
+      "AFR": 0.2,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.45
+    },
+    "description": "Saharawi Ancestry Marker - informative for Western Saharan populations."
+  },
+  {
+    "rsid": "rs10456252",
+    "region": "North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "NAFR": 0.85,
+      "AFR": 0.05,
+      "EUR": 0.2,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.25
+    },
+    "description": "Guanche Proxy Marker - informative for Canary Islander and indigenous North African admixture."
+  },
+  {
+    "rsid": "rs9000296",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.8,
+      "EUR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.13
+    },
+    "description": "Maori Ancestry Marker - informative for Polynesian populations from New Zealand."
+  },
+  {
+    "rsid": "rs9000298",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.01,
+      "EAS": 0.6,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.34
+    },
+    "description": "Fijian Ancestry Marker - informative for populations from Fiji."
+  },
+  {
+    "rsid": "rs9000300",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "description": "Tongan Ancestry Marker - informative for populations from Tonga."
+  },
+  {
+    "rsid": "rs9000302",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.07
+    },
+    "description": "Tahitian Ancestry Marker - informative for populations from Tahiti."
+  },
+  {
+    "rsid": "rs9000304",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "description": "Cook Islander Ancestry Marker - informative for populations from the Cook Islands."
+  },
+  {
+    "rsid": "rs10456223",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.01,
+      "EAS": 0.05,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "description": "Papuan Ancestry Marker - informative for indigenous populations of New Guinea."
+  },
+  {
+    "rsid": "rs10456224",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.02,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.98
+    },
+    "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures."
+  },
+  {
+    "rsid": "rs10456225",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.55,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.65
+    },
+    "description": "Samoan Ancestry Marker - informative for western Polynesian populations."
+  },
+  {
+    "rsid": "rs10456226",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.15,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.88
+    },
+    "description": "Melanesian Ancestry Marker - informative for populations from Vanuatu and the Solomon Islands."
+  },
+  {
+    "rsid": "rs10456227",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.7,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.45
+    },
+    "description": "Micronesian Ancestry Marker - informative for populations of the Mariana and Caroline Islands."
+  },
+  {
+    "rsid": "rs10456253",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "OCE": 0.96,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Baining Ancestry Marker - informative for highly isolated New Britain populations."
+  },
+  {
+    "rsid": "rs2816030",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.8,
+      "EUR": 0.1,
+      "AFR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "MENA": 0.2
+    },
+    "description": "SLC24A5 variant - associated with lighter skin pigmentation, prevalent in South Asian populations."
+  },
+  {
+    "rsid": "rs12146713",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.9,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.1
+    },
+    "description": "South Asian Ancestry Marker - informative for populations from the Indian subcontinent."
+  },
+  {
+    "rsid": "rs11030104",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.85,
+      "EUR": 0.1,
+      "AFR": 0.02,
+      "EAS": 0.02,
+      "AMR": 0.02,
+      "MENA": 0.15
+    },
+    "description": "South Asian Ancestry Marker - informative for Indo-Aryan and Dravidian populations."
+  },
+  {
+    "rsid": "rs10456233",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.95,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "MENA": 0.1
+    },
+    "description": "Bengali Ancestry Marker - informative for Eastern Indo-Aryan populations."
+  },
+  {
+    "rsid": "rs10456234",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.98,
+      "EUR": 0.02,
+      "AFR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.05
+    },
+    "description": "Tamil Ancestry Marker - diagnostic for Southern Dravidian genetic signatures."
+  },
+  {
+    "rsid": "rs10456235",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.92,
+      "EUR": 0.08,
+      "AFR": 0.01,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "MENA": 0.15
+    },
+    "description": "Gujarati Ancestry Marker - informative for Western Indian populations."
+  },
+  {
+    "rsid": "rs10456236",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.88,
+      "EUR": 0.15,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.25
+    },
+    "description": "Punjabi Ancestry Marker - informative for Northern Indo-Aryan populations."
+  },
+  {
+    "rsid": "rs10456237",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.96,
+      "EUR": 0.02,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.05
+    },
+    "description": "Telugu Ancestry Marker - informative for South-Central Dravidian populations."
+  },
+  {
+    "rsid": "rs10456273",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "EUR": 0.94,
+      "MENA": 0.08,
+      "NAFR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.12,
+      "OCE": 0.01
+    },
+    "description": "EUR/MENA Tie-Breaker - Highly specific to Northern and Central Europe, rare across the Mediterranean."
+  },
+  {
+    "rsid": "rs10456274",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "MENA": 0.88,
+      "EUR": 0.12,
+      "NAFR": 0.4,
+      "AFR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.15,
+      "OCE": 0.01
+    },
+    "description": "MENA/EUR Tie-Breaker - Frequent in the Levant and Anatolia, drops off sharply in Southern Europe."
+  },
+  {
+    "rsid": "rs10456275",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "NAFR": 0.91,
+      "EUR": 0.09,
+      "MENA": 0.35,
+      "AFR": 0.2,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "OCE": 0.01
+    },
+    "description": "NAFR/EUR Tie-Breaker - Distinctive Maghreb marker, filters out false Iberian/Southern European overlap."
+  },
+  {
+    "rsid": "rs10456276",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.95,
+      "MENA": 0.1,
+      "NAFR": 0.15,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.01
+    },
+    "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African."
+  },
+  {
+    "rsid": "rs10456277",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "MENA": 0.92,
+      "AFR": 0.08,
+      "NAFR": 0.6,
+      "EUR": 0.25,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.2,
+      "OCE": 0.01
+    },
+    "description": "MENA/AFR Tie-Breaker - Distinctive to the Arabian Peninsula, filters out false Horn of Africa overlap."
+  },
+  {
+    "rsid": "rs10456278",
+    "region": "North African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "NAFR": 0.89,
+      "AFR": 0.12,
+      "MENA": 0.5,
+      "EUR": 0.15,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "OCE": 0.01
+    },
+    "description": "NAFR/AFR Tie-Breaker - Prevents Sahel/Saharan border populations from misclassifying as strictly Sub-Saharan."
+  },
+  {
+    "rsid": "rs10456279",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EAS": 0.96,
+      "AMR": 0.15,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.25,
+      "MENA": 0.02,
+      "NAFR": 0.01,
+      "OCE": 0.1
+    },
+    "description": "EAS/AMR Tie-Breaker - Highly prevalent in Siberia and East Asia, sharply reduced in the Americas."
+  },
+  {
+    "rsid": "rs10456280",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AMR": 0.98,
+      "EAS": 0.08,
+      "EUR": 0.02,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
+  },
+  {
+    "rsid": "rs10456281",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EAS": 0.93,
+      "AMR": 0.05,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.3,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "OCE": 0.15
+    },
+    "description": "EAS/AMR Tie-Breaker - Diagnostic for East Asian coastal populations, effectively absent in Native Americans."
+  },
+  {
+    "rsid": "rs10456282",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.95,
+      "MENA": 0.15,
+      "EAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "NAFR": 0.02,
+      "OCE": 0.01
+    },
+    "description": "SAS/MENA Tie-Breaker - Highly specific to the Indian subcontinent, prevents misclassification as Iranian/Middle Eastern."
+  },
+  {
+    "rsid": "rs10456283",
+    "region": "Middle Eastern",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "MENA": 0.91,
+      "SAS": 0.12,
+      "EUR": 0.3,
+      "NAFR": 0.45,
+      "AFR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "MENA/SAS Tie-Breaker - Anchors populations to the Iranian plateau and West Asia, filtering out South Asian noise."
+  },
+  {
+    "rsid": "rs10456284",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.92,
+      "EAS": 0.1,
+      "MENA": 0.08,
+      "EUR": 0.02,
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "NAFR": 0.01,
+      "OCE": 0.05
+    },
+    "description": "SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups."
+  },
+  {
+    "rsid": "rs10456285",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "OCE": 0.97,
+      "EAS": 0.15,
+      "SAS": 0.05,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01
+    },
+    "description": "OCE/EAS Tie-Breaker - Deep Sahul lineage marker, strongly filters out Austronesian/East Asian overlap."
+  },
+  {
+    "rsid": "rs10456286",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EAS": 0.94,
+      "OCE": 0.2,
+      "SAS": 0.25,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "AMR": 0.15,
+      "MENA": 0.01,
+      "NAFR": 0.01
+    },
+    "description": "EAS/OCE Tie-Breaker - Common across Southeast Asia, drops sharply in unadmixed Melanesian/Papuan groups."
+  },
+  {
+    "rsid": "rs10456287",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EUR": 0.95,
+      "SAS": 0.15,
+      "MENA": 0.2,
+      "NAFR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "OCE": 0.01
+    },
+    "description": "EUR/SAS Tie-Breaker - Anchors Western hunter-gatherer ancestry, drops sharply in South Asian populations."
+  },
+  {
+    "rsid": "rs10456288",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.92,
+      "EUR": 0.08,
+      "MENA": 0.25,
+      "NAFR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "OCE": 0.02
+    },
+    "description": "SAS/EUR Tie-Breaker - Diagnostic for Ancestral South Indian (ASI) components, effectively absent in Europe."
+  },
+  {
+    "rsid": "rs10456289",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EAS": 0.96,
+      "SAS": 0.1,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "AMR": 0.15,
+      "OCE": 0.05
+    },
+    "description": "EAS/SAS Tie-Breaker - Common in Tibeto-Burman populations, filters out false East Asian noise in South Asia."
+  },
+  {
+    "rsid": "rs10456290",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.88,
+      "EAS": 0.05,
+      "EUR": 0.15,
+      "MENA": 0.2,
+      "NAFR": 0.02,
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "OCE": 0.02
+    },
+    "description": "SAS/EAS Tie-Breaker - Anchors Indo-Aryan genetics, strongly separating the subcontinent from East Asia."
+  },
+  {
+    "rsid": "rs10456291",
+    "region": "North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "NAFR": 0.94,
+      "MENA": 0.3,
+      "EUR": 0.1,
+      "AFR": 0.15,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "AMR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap."
+  },
+  {
+    "rsid": "rs10456292",
+    "region": "Middle Eastern",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "MENA": 0.95,
+      "NAFR": 0.25,
+      "EUR": 0.15,
+      "AFR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "AMR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification."
+  },
+  {
+    "rsid": "rs10456293",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.98,
+      "OCE": 0.01,
+      "EUR": 0.01,
+      "MENA": 0.02,
+      "NAFR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "AMR": 0.01
+    },
+    "description": "AFR/OCE Tie-Breaker - Strongly anchors African diversity, completely filtering out Australasian ancient overlap."
+  },
+  {
+    "rsid": "rs10456294",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "OCE": 0.95,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "EAS": 0.15,
+      "SAS": 0.05,
+      "AMR": 0.02
+    },
+    "description": "OCE/AFR Tie-Breaker - Denisovan-introgressed lineage marker, entirely absent in Sub-Saharan Africa."
+  },
+  {
+    "rsid": "rs10456295",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AMR": 0.97,
+      "OCE": 0.02,
+      "EAS": 0.1,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01
+    },
+    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
+  },
+  {
+    "rsid": "rs10456296",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "OCE": 0.96,
+      "AMR": 0.01,
+      "EAS": 0.2,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.05
+    },
+    "description": "OCE/AMR Tie-Breaker - Deep Sahul lineage, effectively absent in indigenous populations of the Americas."
+  },
+  {
+    "rsid": "rs10456297",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EAS": 0.02,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "SAS": 0.01,
+      "AMR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression."
+  },
+  {
+    "rsid": "rs10456298",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EAS": 0.95,
+      "AFR": 0.05,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "SAS": 0.05,
+      "AMR": 0.05,
+      "OCE": 0.1
+    },
+    "description": "EAS/AFR Tie-Breaker - Diagnostic for Austronesian expansion markers, filtering out African overlap."
+  },
+  {
+    "rsid": "rs10456299",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EUR": 0.94,
+      "EAS": 0.06,
+      "AFR": 0.01,
+      "MENA": 0.1,
+      "NAFR": 0.05,
+      "SAS": 0.1,
+      "AMR": 0.02,
+      "OCE": 0.01
+    },
+    "description": "EUR/EAS Tie-Breaker - Anchors Western Eurasian genetics against Siberian/Turkic gene flow."
+  },
+  {
+    "rsid": "rs10456300",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EAS": 0.92,
+      "EUR": 0.08,
+      "AFR": 0.01,
+      "MENA": 0.02,
+      "NAFR": 0.01,
+      "SAS": 0.05,
+      "AMR": 0.15,
+      "OCE": 0.05
+    },
+    "description": "EAS/EUR Tie-Breaker - Highly specific to Eastern Eurasian Steppe populations."
+  },
+  {
+    "rsid": "rs10456301",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "MENA": 0.93,
+      "SAS": 0.1,
+      "EUR": 0.15,
+      "NAFR": 0.2,
+      "AFR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "MENA/SAS Tie-Breaker - Anchors Iranian Plateau genetics against Indo-Aryan overlap."
+  },
+  {
+    "rsid": "rs10456302",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.95,
+      "MENA": 0.12,
+      "EUR": 0.05,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "OCE": 0.02
+    },
+    "description": "SAS/MENA Tie-Breaker - Diagnostic for deeper South Asian (AASI) lineages."
+  },
+  {
+    "rsid": "rs10456303",
+    "region": "Native American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AMR": 0.98,
+      "EUR": 0.05,
+      "EAS": 0.1,
+      "MENA": 0.02,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "OCE": 0.01
+    },
+    "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression."
+  },
+  {
+    "rsid": "rs10456304",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "EUR": 0.96,
+      "AMR": 0.1,
+      "MENA": 0.15,
+      "NAFR": 0.1,
+      "AFR": 0.01,
+      "EAS": 0.02,
+      "SAS": 0.05,
+      "OCE": 0.01
+    },
+    "description": "EUR/AMR Tie-Breaker - European-specific marker that frequently appears in admixed Latino populations."
+  },
+  {
+    "rsid": "rs10456305",
+    "region": "North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "NAFR": 0.94,
+      "AFR": 0.15,
+      "MENA": 0.25,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "AMR": 0.01,
+      "OCE": 0.01
+    },
+    "description": "NAFR/AFR Tie-Breaker - Anchors indigenous Berber/Maghrebi components against Sub-Saharan gene flow."
+  },
+  {
+    "rsid": "rs10456306",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.95,
+      "NAFR": 0.12,
+      "MENA": 0.05,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "AMR": 0.05,
+      "OCE": 0.01
+    },
+    "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor."
+  },
+  {
+    "rsid": "rs11547466",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.03,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Igbo": 0.94,
+      "Mandinka": 0.9,
+      "Luhya": 0.85,
+      "Maasai": 0.7
+    },
+    "description": "West African Ancestry Marker - highly informative for Niger-Congo speaking populations."
+  },
+  {
+    "rsid": "rs4871195",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mandinka": 0.98,
+      "Wolof": 0.96,
+      "Fula": 0.92,
+      "Yoruba": 0.8,
+      "Igbo": 0.75
+    },
+    "description": "Mandinka/Wolof Ancestry Marker - diagnostic for Upper Guinea and Senegambian populations."
+  },
+  {
+    "rsid": "rs12535789",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.02,
+      "EAS": 0.05,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "Somali": 0.95,
+      "Ethiopian": 0.92,
+      "Amhara": 0.9,
+      "Maasai": 0.75,
+      "Luhya": 0.6
+    },
+    "description": "East African/Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations."
+  },
+  {
+    "rsid": "rs13115481",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.75,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Khoisan": 0.98,
+      "San": 0.99,
+      "Xhosa": 0.45,
+      "Zulu": 0.35,
+      "Sotho": 0.3
+    },
+    "description": "Khoisan Ancestry Marker - highly diagnostic for Southern African hunter-gatherer populations."
+  },
+  {
+    "rsid": "rs13116547",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.8,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Biaka": 0.96,
+      "Mbuti": 0.98,
+      "Bantu": 0.6,
+      "Yoruba": 0.5,
+      "Igbo": 0.45
+    },
+    "description": "Central African Pygmy Marker - informative for Mbuti and Biaka genetic signatures."
+  },
+  {
+    "rsid": "rs17135020",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Nilotic": 0.98,
+      "Luo": 0.96,
+      "Maasai": 0.92,
+      "Dinka": 0.99,
+      "Luhya": 0.7
+    },
+    "description": "Nilotic Ancestry Marker - diagnostic for Nilo-Saharan speaking populations of East Africa."
+  },
+  {
+    "rsid": "rs10456307",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Somali": 0.9,
+      "Oromo": 0.88,
+      "Amhara": 0.85,
+      "Tigray": 0.82,
+      "Nubian": 0.6
+    },
+    "description": "Horn of Africa Regional Marker - informative for Afroasiatic populations of the Horn."
+  },
+  {
+    "rsid": "rs10456308",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.95,
+      "Xhosa": 0.94,
+      "Sotho": 0.9,
+      "Tswana": 0.88,
+      "Shona": 0.85
+    },
+    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana populations."
+  },
+  {
+    "rsid": "rs10456309",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Kongo": 0.96,
+      "Luba": 0.94,
+      "Mongo": 0.92,
+      "Fang": 0.9,
+      "Bemba": 0.88
+    },
+    "description": "Central/Western Bantu Ancestry Marker - informative for populations of the Congo Basin."
+  },
+  {
+    "rsid": "rs10456218",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.05,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Akan": 0.98,
+      "Yoruba": 0.85,
+      "Igbo": 0.8,
+      "Mandinka": 0.75,
+      "Mossi": 0.7
+    },
+    "description": "Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast."
+  },
+  {
+    "rsid": "rs10456221",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.1,
+      "MENA": 0.35,
+      "SAS": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "subFrequencies": {
+      "Amhara": 0.95,
+      "Tigrayan": 0.9,
+      "Oromo": 0.8,
+      "Somali": 0.75,
+      "Nubian": 0.6
+    },
+    "description": "Amhara Ancestry Marker - diagnostic for Ethiosemitic populations of the Ethiopian Highlands."
+  },
+  {
+    "rsid": "rs10456231",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Baganda": 0.98,
+      "Banyankole": 0.95,
+      "Basoga": 0.92,
+      "Kikuyu": 0.7,
+      "Luhya": 0.65
+    },
+    "description": "Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda."
+  },
+  {
+    "rsid": "rs10456256",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Bakongo": 0.98,
+      "Mbundu": 0.9,
+      "Ovimbundu": 0.85,
+      "Kongo": 0.96,
+      "Luba": 0.7
+    },
+    "description": "Bakongo Ancestry Marker - diagnostic for populations of the former Kingdom of Kongo."
+  },
+  {
+    "rsid": "rs10456257",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Baluba": 0.97,
+      "Luba": 0.98,
+      "Mongo": 0.85,
+      "Kongo": 0.75,
+      "Bemba": 0.7
+    },
+    "description": "Baluba Ancestry Marker - informative for Luba populations of the Democratic Republic of Congo."
+  },
+  {
+    "rsid": "rs10456237",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.93,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Bamileke": 0.96,
+      "Bamoun": 0.92,
+      "Tikar": 0.88,
+      "Fang": 0.7,
+      "Bubi": 0.65
+    },
+    "description": "Bamileke Ancestry Marker - diagnostic for Grassfields Bantu populations of Cameroon."
+  },
+  {
+    "rsid": "rs10456249",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.05,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Bassa": 0.98,
+      "Kru": 0.9,
+      "Grebo": 0.85,
+      "Kpelle": 0.7,
+      "Mano": 0.65
+    },
+    "description": "Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia."
+  },
+  {
+    "rsid": "rs10456228",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.03,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Baule": 0.98,
+      "Akan": 0.92,
+      "Anyi": 0.9,
+      "Ewe": 0.7,
+      "Fon": 0.65
+    },
+    "description": "Baule Ancestry Marker - diagnostic for Akan-related populations of Ivory Coast."
+  },
+  {
+    "rsid": "rs10456261",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Bemba": 0.97,
+      "Lunda": 0.94,
+      "Lozi": 0.85,
+      "Chewa": 0.8,
+      "Tonga": 0.75
+    },
+    "description": "Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC."
+  },
+  {
+    "rsid": "rs10456263",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Chewa": 0.98,
+      "Nyanja": 0.96,
+      "Tumbuka": 0.9,
+      "Yao": 0.85,
+      "Sena": 0.8
+    },
+    "description": "Chewa Ancestry Marker - diagnostic for Maravi populations of Malawi and Zambia."
+  },
+  {
+    "rsid": "rs10456259",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Chokwe": 0.98,
+      "Lunda": 0.92,
+      "Luvale": 0.9,
+      "Mbundu": 0.75,
+      "Ovimbundu": 0.7
+    },
+    "description": "Chokwe Ancestry Marker - informative for populations of Angola, DRC, and Zambia."
+  },
+  {
+    "rsid": "rs10456255",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Dan": 0.98,
+      "Mano": 0.94,
+      "Kpelle": 0.85,
+      "Loma": 0.8,
+      "Gola": 0.75
+    },
+    "description": "Dan Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Ivory Coast."
+  },
+  {
+    "rsid": "rs10456243",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Edo": 0.98,
+      "Esan": 0.95,
+      "Yoruba": 0.8,
+      "Igbo": 0.75,
+      "Ijaw": 0.7
+    },
+    "description": "Edo Ancestry Marker - informative for populations of the former Benin Empire (Nigeria)."
+  },
+  {
+    "rsid": "rs10456241",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Efik": 0.98,
+      "Ibibio": 0.96,
+      "Annang": 0.94,
+      "Igbo": 0.7,
+      "Bamileke": 0.6
+    },
+    "description": "Efik Ancestry Marker - diagnostic for Cross River populations of Nigeria."
+  },
+  {
+    "rsid": "rs10456219",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Ga-Adangbe": 0.98,
+      "Ewe": 0.85,
+      "Akan": 0.8,
+      "Fon": 0.75,
+      "Yoruba": 0.6
+    },
+    "description": "Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana)."
+  },
+  {
+    "rsid": "rs10456251",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.05,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Gola": 0.98,
+      "Mende": 0.9,
+      "Vai": 0.88,
+      "Temne": 0.8,
+      "Limba": 0.75
+    },
+    "description": "Gola Ancestry Marker - diagnostic for populations of Liberia and Sierra Leone."
+  },
+  {
+    "rsid": "rs10456248",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.03,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Grebo": 0.98,
+      "Kru": 0.95,
+      "Bassa": 0.92,
+      "Krahn": 0.88,
+      "Dan": 0.7
+    },
+    "description": "Grebo Ancestry Marker - informative for Kru-speaking populations of Liberia."
+  },
+  {
+    "rsid": "rs10456242",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "AMR": 0.03,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Ibibio": 0.98,
+      "Efik": 0.96,
+      "Annang": 0.94,
+      "Igbo": 0.7,
+      "Bamileke": 0.6
+    },
+    "description": "Ibibio Ancestry Marker - diagnostic for populations of Akwa Ibom State (Nigeria)."
+  },
+  {
+    "rsid": "rs10456230",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Kikuyu": 0.98,
+      "Meru": 0.95,
+      "Embu": 0.94,
+      "Kamba": 0.9,
+      "Luhya": 0.75
+    },
+    "description": "Kikuyu Ancestry Marker - informative for Central Bantu populations of Kenya."
+  },
+  {
+    "rsid": "rs10456252",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.03,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Kpelle": 0.98,
+      "Loma": 0.94,
+      "Mano": 0.92,
+      "Dan": 0.88,
+      "Mende": 0.75
+    },
+    "description": "Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea."
+  },
+  {
+    "rsid": "rs10456247",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Kru": 0.98,
+      "Grebo": 0.95,
+      "Bassa": 0.92,
+      "Krahn": 0.9,
+      "Dan": 0.75
+    },
+    "description": "Kru Ancestry Marker - informative for Kru-speaking populations of the Liberian coast."
+  },
+  {
+    "rsid": "rs10456245",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.03,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Limba": 0.98,
+      "Temne": 0.9,
+      "Mende": 0.85,
+      "Loko": 0.82,
+      "Kuranko": 0.75
+    },
+    "description": "Limba Ancestry Marker - diagnostic for indigenous populations of Sierra Leone."
+  },
+  {
+    "rsid": "rs10456253",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Loma": 0.98,
+      "Kpelle": 0.94,
+      "Mano": 0.92,
+      "Dan": 0.88,
+      "Mende": 0.75
+    },
+    "description": "Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia."
+  },
+  {
+    "rsid": "rs10456260",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Lozi": 0.97,
+      "Kololo": 0.92,
+      "Luyana": 0.9,
+      "Bemba": 0.6,
+      "Tswana": 0.55
+    },
+    "description": "Lozi Ancestry Marker - diagnostic for populations of the Barotse Floodplain (Zambia)."
+  },
+  {
+    "rsid": "rs10456265",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Makua": 0.98,
+      "Lomwe": 0.95,
+      "Yao": 0.9,
+      "Shona": 0.7,
+      "Chewa": 0.65
+    },
+    "description": "Makua Ancestry Marker - informative for Bantu populations of Northern Mozambique."
+  },
+  {
+    "rsid": "rs10456254",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mano": 0.98,
+      "Dan": 0.95,
+      "Kpelle": 0.92,
+      "Loma": 0.9,
+      "Mende": 0.75
+    },
+    "description": "Mano Ancestry Marker - diagnostic for Mande-speaking populations of Liberia."
+  },
+  {
+    "rsid": "rs10456240",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mbundu": 0.98,
+      "Ovimbundu": 0.94,
+      "Bakongo": 0.92,
+      "Chokwe": 0.85,
+      "Luba": 0.7
+    },
+    "description": "Mbundu Ancestry Marker - informative for Kimbundu-speaking populations of Angola."
+  },
+  {
+    "rsid": "rs10456244",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.05,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mende": 0.98,
+      "Temne": 0.85,
+      "Limba": 0.8,
+      "Vai": 0.78,
+      "Mandinka": 0.7
+    },
+    "description": "Mende Ancestry Marker - diagnostic for Mande-speaking populations of Sierra Leone."
+  },
+  {
+    "rsid": "rs10456229",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.05,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mossi": 0.98,
+      "Dagomba": 0.94,
+      "Gurunsi": 0.92,
+      "Akan": 0.75,
+      "Yoruba": 0.65
+    },
+    "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana."
+  },
+  {
+    "rsid": "rs10456235",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Ndebele": 0.98,
+      "Zulu": 0.95,
+      "Xhosa": 0.92,
+      "Shona": 0.8,
+      "Sotho": 0.75
+    },
+    "description": "Ndebele Ancestry Marker - diagnostic for Nguni populations of Zimbabwe and South Africa."
+  },
+  {
+    "rsid": "rs10456258",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.03,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Ovimbundu": 0.98,
+      "Mbundu": 0.94,
+      "Bakongo": 0.92,
+      "Chokwe": 0.85,
+      "Luba": 0.7
+    },
+    "description": "Ovimbundu Ancestry Marker - informative for Umbundu-speaking populations of Angola."
+  },
+  {
+    "rsid": "rs10456246",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Sherbro": 0.98,
+      "Mende": 0.9,
+      "Temne": 0.85,
+      "Bullom": 0.82,
+      "Vai": 0.75
+    },
+    "description": "Sherbro Ancestry Marker - diagnostic for coastal populations of Sierra Leone."
+  },
+  {
+    "rsid": "rs10456233",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Shona": 0.98,
+      "Ndebele": 0.9,
+      "Chewa": 0.85,
+      "Venda": 0.82,
+      "Tsonga": 0.75
+    },
+    "description": "Shona Ancestry Marker - informative for populations of Zimbabwe and Mozambique."
+  },
+  {
+    "rsid": "rs10456232",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.68,
+      "EUR": 0.08,
+      "MENA": 0.32,
+      "SAS": 0.08,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "subFrequencies": {
+      "Tigrayan": 0.98,
+      "Tigre": 0.95,
+      "Amhara": 0.9,
+      "Beja": 0.8,
+      "Nubian": 0.65
+    },
+    "description": "Tigrayan Ancestry Marker - diagnostic for Ethiosemitic populations of Ethiopia and Eritrea."
+  },
+  {
+    "rsid": "rs10456262",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "AMR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Tonga": 0.98,
+      "Ila": 0.95,
+      "Lozi": 0.9,
+      "Bemba": 0.75,
+      "Shona": 0.7
+    },
+    "description": "Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley."
+  },
+  {
+    "rsid": "rs10456234",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Tsonga": 0.98,
+      "Shangaan": 0.96,
+      "Venda": 0.9,
+      "Zulu": 0.85,
+      "Xhosa": 0.8
+    },
+    "description": "Tsonga Ancestry Marker - diagnostic for Tswa-Ronga populations of South Africa and Mozambique."
+  },
+  {
+    "rsid": "rs10456250",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "AMR": 0.04,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Vai": 0.98,
+      "Mende": 0.92,
+      "Gola": 0.9,
+      "Temne": 0.85,
+      "Mandinka": 0.8
+    },
+    "description": "Vai Ancestry Marker - informative for Mande-speaking populations of Liberia and Sierra Leone."
+  },
+  {
+    "rsid": "rs10456264",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "AMR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yao": 0.98,
+      "Makua": 0.95,
+      "Chewa": 0.92,
+      "Shona": 0.75,
+      "Bemba": 0.7
+    },
+    "description": "Yao Ancestry Marker - diagnostic for populations of the Lake Malawi region."
+  },
+  {
+    "rsid": "rs11103349",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Maasai": 0.95,
+      "Samburu": 0.92,
+      "Turkana": 0.88,
+      "Kalenjin": 0.8,
+      "Luo": 0.6
+    },
+    "description": "Maasai Ancestry Marker - informative for Nilotic pastoralist populations of East Africa."
+  },
+  {
+    "rsid": "rs10424071",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.95,
+      "Edo": 0.92,
+      "Hausa": 0.85,
+      "Fulani": 0.7
+    },
+    "description": "Nigerian Regional Marker - informative for populations of the Niger-Benue confluence."
+  },
+  {
+    "rsid": "rs10456207-AFR",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.75,
+      "EUR": 0.05,
+      "MENA": 0.25,
+      "SAS": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "subFrequencies": {
+      "Nubian": 0.95,
+      "Beja": 0.88,
+      "Sudanese": 0.85,
+      "Amhara": 0.6,
+      "Oromo": 0.55
+    },
+    "description": "Nubian Ancestry Marker - diagnostic for Nilo-Saharan populations of the Nile Valley."
+  },
+  {
+    "rsid": "rs10456206-AFR",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "AFR": 0.8,
+      "EUR": 0.02,
+      "MENA": 0.15,
+      "SAS": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.01
+    },
+    "subFrequencies": {
+      "Sudanese": 0.96,
+      "Dinka": 0.94,
+      "Nuer": 0.92,
+      "Shilluk": 0.9,
+      "Nubian": 0.75
+    },
+    "description": "Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan."
+  },
+  {
+    "rsid": "rs11103333",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Akan": 0.99,
+      "Ga": 0.97,
+      "Ewe": 0.95,
+      "Baule": 0.9,
+      "Mossi": 0.85
+    },
+    "description": "Akan Ancestry Marker - highly informative for populations of the Gold Coast and Ivory Coast."
+  },
+  {
+    "rsid": "rs10456209",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Fang": 0.98,
+      "Bamileke": 0.95,
+      "Bakongo": 0.92,
+      "Baluba": 0.85,
+      "Mongo": 0.8
+    },
+    "description": "Central African Bantu Marker - diagnostic for populations of the Congo Basin and Cameroon."
+  },
+  {
+    "rsid": "rs10456210",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "San": 0.99,
+      "Khoisan": 0.98,
+      "Nama": 0.95,
+      "Damara": 0.85,
+      "Herero": 0.4
+    },
+    "description": "Khoe-San Specific Marker - highly diagnostic for indigenous Southern African hunter-gatherer populations."
+  },
+  {
+    "rsid": "rs10456212",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Somali": 0.98,
+      "Oromo": 0.92,
+      "Amhara": 0.85,
+      "Tigrayan": 0.8,
+      "Afar": 0.75
+    },
+    "description": "Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations of East Africa."
+  }
+]
