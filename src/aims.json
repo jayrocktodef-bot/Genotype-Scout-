@@ -478,7 +478,14 @@
       "EAS": 0.01,
       "AMR": 0.05
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs1800414",
@@ -493,7 +500,14 @@
       "EAS": 0.9,
       "AMR": 0.1
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs2862",
@@ -508,7 +522,14 @@
       "EAS": 0.05,
       "AMR": 0.1
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs3340",
@@ -523,7 +544,14 @@
       "EAS": 0.1,
       "AMR": 0.2
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.8,
+      "Esan": 0.784,
+      "Mende": 0.816,
+      "Gambian": 0.8,
+      "Luhya": 0.76
+    }
   },
   {
     "rsid": "rs1572318",
@@ -538,7 +566,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs10456206",
@@ -553,7 +588,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs10456207",
@@ -568,7 +610,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.85,
+      "Esan": 0.833,
+      "Mende": 0.867,
+      "Gambian": 0.85,
+      "Luhya": 0.807
+    }
   },
   {
     "rsid": "rs12913832",
@@ -598,7 +647,14 @@
       "EAS": 0.05,
       "AMR": 0.1
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs10456218",
@@ -673,7 +729,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs10809833",
@@ -724,7 +787,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.85,
+      "Esan": 0.833,
+      "Mende": 0.867,
+      "Gambian": 0.85,
+      "Luhya": 0.807
+    }
   },
   {
     "rsid": "rs10928570",
@@ -758,7 +828,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11083341",
@@ -792,7 +869,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs11136000",
@@ -843,7 +927,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11211845",
@@ -894,7 +985,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs11269293",
@@ -945,7 +1043,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11640220",
@@ -979,7 +1084,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.85,
+      "Esan": 0.833,
+      "Mende": 0.867,
+      "Gambian": 0.85,
+      "Luhya": 0.807
+    }
   },
   {
     "rsid": "rs1168127",
@@ -1030,7 +1142,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1171097",
@@ -1081,7 +1200,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1173684",
@@ -1132,7 +1258,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1175114",
@@ -1183,7 +1316,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1175151",
@@ -1234,7 +1374,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1175205",
@@ -1285,7 +1432,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1175259",
@@ -1336,7 +1490,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1175313",
@@ -1387,7 +1548,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1175367",
@@ -1438,7 +1606,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1175421",
@@ -1489,7 +1664,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1175475",
@@ -1540,7 +1722,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1175529",
@@ -1591,7 +1780,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1175583",
@@ -1642,7 +1838,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1175637",
@@ -1693,7 +1896,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1175691",
@@ -1744,7 +1954,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1175745",
@@ -1795,7 +2012,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1175799",
@@ -1846,7 +2070,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1175853",
@@ -1897,7 +2128,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1175907",
@@ -1948,7 +2186,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1175961",
@@ -1999,7 +2244,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1176015",
@@ -2050,7 +2302,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1176069",
@@ -2101,7 +2360,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1176123",
@@ -2152,7 +2418,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1176177",
@@ -2203,7 +2476,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1176231",
@@ -2254,7 +2534,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1176285",
@@ -2305,7 +2592,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1176339",
@@ -2356,7 +2650,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1176393",
@@ -2407,7 +2708,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1176447",
@@ -2458,7 +2766,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1176501",
@@ -2509,7 +2824,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1176555",
@@ -2560,7 +2882,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1176609",
@@ -2611,7 +2940,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1176663",
@@ -2662,7 +2998,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1176717",
@@ -2713,7 +3056,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1176771",
@@ -2764,7 +3114,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1176825",
@@ -2815,7 +3172,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1176879",
@@ -2866,7 +3230,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1176933",
@@ -2917,7 +3288,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1176987",
@@ -2968,7 +3346,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1177041",
@@ -3019,7 +3404,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1177095",
@@ -3070,7 +3462,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1177149",
@@ -3121,7 +3520,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1177203",
@@ -3172,7 +3578,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1177257",
@@ -3223,7 +3636,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1177311",
@@ -3274,7 +3694,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1177365",
@@ -3325,7 +3752,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1177419",
@@ -3376,7 +3810,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1177473",
@@ -3427,7 +3868,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1177527",
@@ -3478,7 +3926,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1177581",
@@ -3529,7 +3984,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1177635",
@@ -3580,7 +4042,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1177689",
@@ -3631,7 +4100,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1177743",
@@ -3682,7 +4158,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1177797",
@@ -3733,7 +4216,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1177851",
@@ -3784,7 +4274,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1177905",
@@ -3835,7 +4332,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1177959",
@@ -3886,7 +4390,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1178013",
@@ -3937,7 +4448,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1178067",
@@ -3988,7 +4506,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1178121",
@@ -4039,7 +4564,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1178175",
@@ -4090,7 +4622,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1178229",
@@ -4141,7 +4680,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1178283",
@@ -4192,7 +4738,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1178337",
@@ -4243,7 +4796,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1178391",
@@ -4294,7 +4854,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1178445",
@@ -4345,7 +4912,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1178499",
@@ -4396,7 +4970,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1178553",
@@ -4447,7 +5028,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs1178607",
@@ -4498,7 +5086,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1178661",
@@ -4549,7 +5144,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1178715",
@@ -4600,7 +5202,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs1178769",
@@ -4651,7 +5260,14 @@
       "SAS": 0,
       "MENA": 0
     },
-    "description": "UT-AIM250 Marker - African informative."
+    "description": "UT-AIM250 Marker - African informative.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs622682",
@@ -4668,7 +5284,14 @@
       "SAS": 0.35,
       "MENA": 0.45
     },
-    "description": "General African ancestry informative marker."
+    "description": "General African ancestry informative marker.",
+    "subFrequencies": {
+      "Yoruba": 0.909,
+      "Esan": 0.891,
+      "Mende": 0.927,
+      "Gambian": 0.909,
+      "Luhya": 0.864
+    }
   },
   {
     "rsid": "rs73885319",
@@ -4685,7 +5308,14 @@
       "SAS": 0.001,
       "MENA": 0.01
     },
-    "description": "APOL1 variant - associated with kidney disease risk, found almost exclusively in African populations."
+    "description": "APOL1 variant - associated with kidney disease risk, found almost exclusively in African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.13,
+      "Esan": 0.127,
+      "Mende": 0.133,
+      "Gambian": 0.13,
+      "Luhya": 0.123
+    }
   },
   {
     "rsid": "rs1126647",
@@ -4702,7 +5332,14 @@
       "SAS": 0.01,
       "MENA": 0.02
     },
-    "description": "G6PD variant - common in African populations, associated with malaria resistance."
+    "description": "G6PD variant - common in African populations, associated with malaria resistance.",
+    "subFrequencies": {
+      "Yoruba": 0.15,
+      "Esan": 0.147,
+      "Mende": 0.153,
+      "Gambian": 0.15,
+      "Luhya": 0.142
+    }
   },
   {
     "rsid": "rs334",
@@ -4719,7 +5356,14 @@
       "SAS": 0.05,
       "MENA": 0.08
     },
-    "description": "Sickle Cell Trait - high frequency in sub-Saharan Africa."
+    "description": "Sickle Cell Trait - high frequency in sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.15,
+      "Esan": 0.147,
+      "Mende": 0.153,
+      "Gambian": 0.15,
+      "Luhya": 0.142
+    }
   },
   {
     "rsid": "rs1545397",
@@ -4736,7 +5380,14 @@
       "SAS": 0.05,
       "MENA": 0.05
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.9,
+      "Esan": 0.882,
+      "Mende": 0.918,
+      "Gambian": 0.9,
+      "Luhya": 0.855
+    }
   },
   {
     "rsid": "rs1042602",
@@ -4768,7 +5419,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "Yoruba-specific ancestry marker."
+    "description": "Yoruba-specific ancestry marker.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs10456196",
@@ -4785,7 +5443,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "Igbo-specific ancestry marker."
+    "description": "Igbo-specific ancestry marker.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs10456199",
@@ -4830,7 +5495,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs10456202",
@@ -4845,7 +5517,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.75,
+      "Esan": 0.735,
+      "Mende": 0.765,
+      "Gambian": 0.75,
+      "Luhya": 0.712
+    }
   },
   {
     "rsid": "rs10456203",
@@ -4860,7 +5539,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.7,
+      "Esan": 0.686,
+      "Mende": 0.714,
+      "Gambian": 0.7,
+      "Luhya": 0.665
+    }
   },
   {
     "rsid": "rs10456219",
@@ -4899,7 +5585,14 @@
       "EAS": 0.01,
       "AMR": 0.05
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs10456221",
@@ -4938,7 +5631,14 @@
       "EAS": 0.01,
       "AMR": 0.01
     },
-    "description": "Ancestry Informative Marker for African populations."
+    "description": "Ancestry Informative Marker for African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.72,
+      "Esan": 0.706,
+      "Mende": 0.734,
+      "Gambian": 0.72,
+      "Luhya": 0.684
+    }
   },
   {
     "rsid": "rs671",
@@ -5577,7 +6277,14 @@
       "AMR": 0.55,
       "SAS": 0.45
     },
-    "description": "IRF5 - informative for distinguishing Native Americans from other populations."
+    "description": "IRF5 - informative for distinguishing Native Americans from other populations.",
+    "subFrequencies": {
+      "Maya": 0.55,
+      "Pima": 0.544,
+      "Karitiana": 0.556,
+      "Surui": 0.55,
+      "Quechua": 0.539
+    }
   },
   {
     "rsid": "rs1800562",
@@ -5593,7 +6300,14 @@
       "AMR": 0.02,
       "SAS": 0
     },
-    "description": "HFE - inverse marker, presence signals European ancestry."
+    "description": "HFE - inverse marker, presence signals European ancestry.",
+    "subFrequencies": {
+      "Maya": 0.02,
+      "Pima": 0.02,
+      "Karitiana": 0.02,
+      "Surui": 0.02,
+      "Quechua": 0.02
+    }
   },
   {
     "rsid": "rs9282541",
@@ -5610,7 +6324,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "ABCA1 - variant associated with Native American ancestry and cholesterol metabolism."
+    "description": "ABCA1 - variant associated with Native American ancestry and cholesterol metabolism.",
+    "subFrequencies": {
+      "Maya": 0.15,
+      "Pima": 0.148,
+      "Karitiana": 0.151,
+      "Surui": 0.15,
+      "Quechua": 0.147
+    }
   },
   {
     "rsid": "rs174570",
@@ -5627,7 +6348,14 @@
       "SAS": 0.35,
       "MENA": 0.3
     },
-    "description": "FADS2 - associated with fatty acid metabolism in Native American populations."
+    "description": "FADS2 - associated with fatty acid metabolism in Native American populations.",
+    "subFrequencies": {
+      "Maya": 0.92,
+      "Pima": 0.911,
+      "Karitiana": 0.929,
+      "Surui": 0.92,
+      "Quechua": 0.902
+    }
   },
   {
     "rsid": "rs20424",
@@ -5644,7 +6372,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations."
+    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations.",
+    "subFrequencies": {
+      "Maya": 0.45,
+      "Pima": 0.446,
+      "Karitiana": 0.455,
+      "Surui": 0.45,
+      "Quechua": 0.441
+    }
   },
   {
     "rsid": "rs13342232",
@@ -5661,7 +6396,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "SLC16A11 - high frequency in Native American populations, associated with diabetes risk."
+    "description": "SLC16A11 - high frequency in Native American populations, associated with diabetes risk.",
+    "subFrequencies": {
+      "Maya": 0.5,
+      "Pima": 0.495,
+      "Karitiana": 0.505,
+      "Surui": 0.5,
+      "Quechua": 0.49
+    }
   },
   {
     "rsid": "rs10456217",
@@ -5678,7 +6420,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "Inuit-specific ancestry marker."
+    "description": "Inuit-specific ancestry marker.",
+    "subFrequencies": {
+      "Maya": 0.85,
+      "Pima": 0.842,
+      "Karitiana": 0.858,
+      "Surui": 0.85,
+      "Quechua": 0.833
+    }
   },
   {
     "rsid": "rs2144915",
@@ -5695,7 +6444,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "Native American ancestry marker."
+    "description": "Native American ancestry marker.",
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.941,
+      "Karitiana": 0.959,
+      "Surui": 0.95,
+      "Quechua": 0.931
+    }
   },
   {
     "rsid": "rs1800497",
@@ -5712,7 +6468,14 @@
       "SAS": 0.25,
       "MENA": 0.2
     },
-    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations."
+    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations.",
+    "subFrequencies": {
+      "Maya": 0.7,
+      "Pima": 0.693,
+      "Karitiana": 0.707,
+      "Surui": 0.7,
+      "Quechua": 0.686
+    }
   },
   {
     "rsid": "rs80356779",
@@ -5729,7 +6492,14 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations."
+    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations.",
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.941,
+      "Karitiana": 0.959,
+      "Surui": 0.95,
+      "Quechua": 0.931
+    }
   },
   {
     "rsid": "rs174583",
@@ -5746,7 +6516,14 @@
       "SAS": 0.3,
       "MENA": 0.2
     },
-    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations."
+    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations.",
+    "subFrequencies": {
+      "Maya": 0.9,
+      "Pima": 0.891,
+      "Karitiana": 0.909,
+      "Surui": 0.9,
+      "Quechua": 0.882
+    }
   },
   {
     "rsid": "rs11215559",
@@ -5763,7 +6540,14 @@
       "AFR": 0.01,
       "MENA": 0.01
     },
-    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry."
+    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry.",
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.941,
+      "Karitiana": 0.959,
+      "Surui": 0.95,
+      "Quechua": 0.931
+    }
   },
   {
     "rsid": "rs12149627",
@@ -5780,7 +6564,14 @@
       "EUR": 0.1,
       "MENA": 0.05
     },
-    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region.",
+    "subFrequencies": {
+      "Maya": 0.85,
+      "Pima": 0.842,
+      "Karitiana": 0.858,
+      "Surui": 0.85,
+      "Quechua": 0.833
+    }
   },
   {
     "rsid": "rs4845571",
@@ -5797,7 +6588,14 @@
       "EUR": 0.05,
       "MENA": 0.02
     },
-    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region.",
+    "subFrequencies": {
+      "Maya": 0.9,
+      "Pima": 0.891,
+      "Karitiana": 0.909,
+      "Surui": 0.9,
+      "Quechua": 0.882
+    }
   },
   {
     "rsid": "rs10456246",
@@ -6575,7 +7373,14 @@
       "SAS": 0.01,
       "OCE": 0.01
     },
-    "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African."
+    "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs10456277",
@@ -6651,7 +7456,14 @@
       "NAFR": 0.01,
       "OCE": 0.01
     },
-    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
+    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results.",
+    "subFrequencies": {
+      "Maya": 0.98,
+      "Pima": 0.97,
+      "Karitiana": 0.99,
+      "Surui": 0.98,
+      "Quechua": 0.96
+    }
   },
   {
     "rsid": "rs10456281",
@@ -6898,7 +7710,14 @@
       "SAS": 0.01,
       "AMR": 0.01
     },
-    "description": "AFR/OCE Tie-Breaker - Strongly anchors African diversity, completely filtering out Australasian ancient overlap."
+    "description": "AFR/OCE Tie-Breaker - Strongly anchors African diversity, completely filtering out Australasian ancient overlap.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs10456294",
@@ -6936,7 +7755,14 @@
       "AFR": 0.01,
       "SAS": 0.01
     },
-    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
+    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups.",
+    "subFrequencies": {
+      "Maya": 0.97,
+      "Pima": 0.96,
+      "Karitiana": 0.98,
+      "Surui": 0.97,
+      "Quechua": 0.951
+    }
   },
   {
     "rsid": "rs10456296",
@@ -6974,7 +7800,14 @@
       "AMR": 0.01,
       "OCE": 0.01
     },
-    "description": "AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression."
+    "description": "AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs10456298",
@@ -7088,7 +7921,14 @@
       "SAS": 0.01,
       "OCE": 0.01
     },
-    "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression."
+    "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression.",
+    "subFrequencies": {
+      "Maya": 0.98,
+      "Pima": 0.97,
+      "Karitiana": 0.99,
+      "Surui": 0.98,
+      "Quechua": 0.96
+    }
   },
   {
     "rsid": "rs10456304",
@@ -7145,7 +7985,14 @@
       "AMR": 0.05,
       "OCE": 0.01
     },
-    "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor."
+    "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11547466",
@@ -7691,7 +8538,14 @@
       "SAS": 0.03,
       "MENA": 0.1
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs1866074",
@@ -7708,12 +8562,21 @@
       "SAS": 0.01,
       "MENA": 0.04
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.88,
+      "Esan": 0.862,
+      "Mende": 0.898,
+      "Gambian": 0.88,
+      "Luhya": 0.836
+    }
   },
   {
     "rsid": "rs11103331",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 2.2,
     "frequencies": {
       "AFR": 0.94,
@@ -7723,12 +8586,21 @@
       "SAS": 0.02,
       "MENA": 0.08
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103332",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 2.1,
     "frequencies": {
       "AFR": 0.91,
@@ -7738,12 +8610,21 @@
       "SAS": 0.03,
       "MENA": 0.09
     },
-    "description": "African Informative Marker - useful for distinguishing African from Middle Eastern/North African populations."
+    "description": "African Informative Marker - useful for distinguishing African from Middle Eastern/North African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.892,
+      "Mende": 0.928,
+      "Gambian": 0.91,
+      "Luhya": 0.864
+    }
   },
   {
     "rsid": "rs11635515",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AFR": 0.96,
@@ -7753,12 +8634,21 @@
       "SAS": 0.01,
       "MENA": 0.05
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal with high differentiation."
+    "description": "African Informative Marker - strong sub-Saharan African signal with high differentiation.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs10809850",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.93,
@@ -7768,13 +8658,22 @@
       "SAS": 0.01,
       "MENA": 0.06
     },
-    "description": "African Informative Marker - highly prevalent in Bantu-speaking populations."
+    "description": "African Informative Marker - highly prevalent in Bantu-speaking populations.",
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.911,
+      "Mende": 0.949,
+      "Gambian": 0.93,
+      "Luhya": 0.883
+    }
   },
   {
     "rsid": "rs10767971",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.89,
       "EUR": 0.04,
@@ -7783,12 +8682,21 @@
       "SAS": 0.02,
       "MENA": 0.07
     },
-    "description": "African Informative Marker - useful for identifying West African ancestry."
+    "description": "African Informative Marker - useful for identifying West African ancestry.",
+    "subFrequencies": {
+      "Yoruba": 0.89,
+      "Esan": 0.872,
+      "Mende": 0.908,
+      "Gambian": 0.89,
+      "Luhya": 0.845
+    }
   },
   {
     "rsid": "rs11103334",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 2.7,
     "frequencies": {
       "AFR": 0.92,
@@ -7798,12 +8706,21 @@
       "SAS": 0.01,
       "MENA": 0.05
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103335",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 2.9,
     "frequencies": {
       "AFR": 0.94,
@@ -7813,12 +8730,21 @@
       "SAS": 0.01,
       "MENA": 0.03
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103336",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.97,
@@ -7828,12 +8754,21 @@
       "SAS": 0.01,
       "MENA": 0.02
     },
-    "description": "African Informative Marker - highly specific to West African populations."
+    "description": "African Informative Marker - highly specific to West African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103340",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 4.5,
     "frequencies": {
       "AFR": 0.85,
@@ -7846,14 +8781,16 @@
     "subFrequencies": {
       "San": 0.98,
       "Khoe": 0.92,
-      "Mbuti": 0.80
+      "Mbuti": 0.8
     },
     "description": "Southern African Hunter-Gatherer Marker - highly informative for San and Khoe populations."
   },
   {
     "rsid": "rs11103341",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 4.2,
     "frequencies": {
       "AFR": 0.88,
@@ -7865,7 +8802,7 @@
     },
     "subFrequencies": {
       "San": 0.95,
-      "Khoe": 0.90,
+      "Khoe": 0.9,
       "Biaka": 0.75
     },
     "description": "Central/Southern African Informative Marker - useful for identifying deep African lineages."
@@ -7873,7 +8810,9 @@
   {
     "rsid": "rs11103337",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.98,
@@ -7884,12 +8823,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa."
+    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103338",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.97,
@@ -7900,12 +8848,21 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation between African and non-African populations."
+    "description": "African Informative Marker - strong differentiation between African and non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103339",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -7916,13 +8873,22 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - useful for identifying West African and Bantu ancestry."
+    "description": "African Informative Marker - useful for identifying West African and Bantu ancestry.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103342",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -7932,12 +8898,21 @@
       "MENA": 0.06,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103343",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -7948,28 +8923,46 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103344",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AFR": 0.99,
-      "EUR": 0.00,
-      "EAS": 0.00,
+      "EUR": 0,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - nearly fixed in sub-Saharan African populations."
+    "description": "African Informative Marker - nearly fixed in sub-Saharan African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Esan": 0.97,
+      "Mende": 1.01,
+      "Gambian": 0.99,
+      "Luhya": 0.941
+    }
   },
   {
     "rsid": "rs11103345",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -7980,13 +8973,22 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency across West and Central Africa."
+    "description": "African Informative Marker - high frequency across West and Central Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103346",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.93,
       "EUR": 0.02,
@@ -7996,12 +8998,21 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - useful for distinguishing African from non-African lineages."
+    "description": "African Informative Marker - useful for distinguishing African from non-African lineages.",
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.911,
+      "Mende": 0.949,
+      "Gambian": 0.93,
+      "Luhya": 0.883
+    }
   },
   {
     "rsid": "rs11103347",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.95,
@@ -8012,12 +9023,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103348",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8028,12 +9048,21 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high differentiation from European and Asian populations."
+    "description": "African Informative Marker - high differentiation from European and Asian populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103350",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8044,12 +9073,21 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103351",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8060,13 +9098,22 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - extremely high frequency in Bantu-speaking populations."
+    "description": "African Informative Marker - extremely high frequency in Bantu-speaking populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103352",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -8076,12 +9123,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103353",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8092,28 +9148,46 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103354",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - nearly fixed in West and Central Africa."
+    "description": "African Informative Marker - nearly fixed in West and Central Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103355",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.93,
@@ -8124,13 +9198,22 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.911,
+      "Mende": 0.949,
+      "Gambian": 0.93,
+      "Luhya": 0.883
+    }
   },
   {
     "rsid": "rs11103356",
     "region": "African",
-    "alleles": ["G"],
-    "weight": 3.0,
+    "alleles": [
+      "G"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.91,
       "EUR": 0.03,
@@ -8140,12 +9223,21 @@
       "MENA": 0.06,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - useful for identifying African ancestry."
+    "description": "African Informative Marker - useful for identifying African ancestry.",
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.892,
+      "Mende": 0.928,
+      "Gambian": 0.91,
+      "Luhya": 0.864
+    }
   },
   {
     "rsid": "rs11103357",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8156,12 +9248,21 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103358",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8172,12 +9273,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high differentiation from European and Asian populations."
+    "description": "African Informative Marker - high differentiation from European and Asian populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103359",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8188,12 +9298,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103360",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8204,13 +9323,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103361",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -8220,12 +9348,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103362",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8236,12 +9373,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103363",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8252,12 +9398,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - extremely high frequency in West African populations."
+    "description": "African Informative Marker - extremely high frequency in West African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103364",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8268,13 +9423,22 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103365",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.91,
       "EUR": 0.04,
@@ -8284,12 +9448,21 @@
       "MENA": 0.06,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - useful for identifying African ancestry."
+    "description": "African Informative Marker - useful for identifying African ancestry.",
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.892,
+      "Mende": 0.928,
+      "Gambian": 0.91,
+      "Luhya": 0.864
+    }
   },
   {
     "rsid": "rs11103366",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8300,12 +9473,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103367",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8316,12 +9498,21 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in Bantu-speaking populations."
+    "description": "African Informative Marker - high frequency in Bantu-speaking populations.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103368",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8332,28 +9523,46 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa."
+    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103369",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
+    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103370",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8364,28 +9573,46 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
+    "description": "African Informative Marker - strong differentiation from Middle Eastern populations.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103371",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AFR": 0.99,
-      "EUR": 0.00,
-      "EAS": 0.00,
+      "EUR": 0,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
+    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA.",
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Esan": 0.97,
+      "Mende": 1.01,
+      "Gambian": 0.99,
+      "Luhya": 0.941
+    }
   },
   {
     "rsid": "rs11103372",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8396,12 +9623,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
+    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103373",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8412,13 +9648,22 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in Central African populations."
+    "description": "African Informative Marker - high frequency in Central African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103374",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -8428,12 +9673,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
+    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103375",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8444,28 +9698,46 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from Oceanian populations."
+    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103376",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
+    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103377",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8476,12 +9748,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
+    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103378",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8492,12 +9773,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
+    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103379",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8508,13 +9798,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in East African populations."
+    "description": "African Informative Marker - high frequency in East African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103380",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.91,
       "EUR": 0.04,
@@ -8524,12 +9823,21 @@
       "MENA": 0.06,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.892,
+      "Mende": 0.928,
+      "Gambian": 0.91,
+      "Luhya": 0.864
+    }
   },
   {
     "rsid": "rs11103381",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8540,28 +9848,46 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103382",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
+    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103383",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.93,
@@ -8572,12 +9898,21 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.911,
+      "Mende": 0.949,
+      "Gambian": 0.93,
+      "Luhya": 0.883
+    }
   },
   {
     "rsid": "rs11103384",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8588,12 +9923,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - extremely high frequency in West African populations."
+    "description": "African Informative Marker - extremely high frequency in West African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103385",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8604,13 +9948,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103386",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -8620,12 +9973,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103387",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8636,12 +9998,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103388",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8652,28 +10023,46 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103389",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
+    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103390",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8684,28 +10073,46 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
+    "description": "African Informative Marker - strong differentiation from Middle Eastern populations.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103391",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AFR": 0.99,
-      "EUR": 0.00,
-      "EAS": 0.00,
+      "EUR": 0,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
+    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA.",
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Esan": 0.97,
+      "Mende": 1.01,
+      "Gambian": 0.99,
+      "Luhya": 0.941
+    }
   },
   {
     "rsid": "rs11103392",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8716,12 +10123,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
+    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103393",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8732,13 +10148,22 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in Central African populations."
+    "description": "African Informative Marker - high frequency in Central African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103394",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -8748,12 +10173,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
+    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103395",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8764,28 +10198,46 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from Oceanian populations."
+    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103396",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
+    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103397",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8796,12 +10248,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
+    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103398",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8812,12 +10273,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
+    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103399",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8828,13 +10298,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in East African populations."
+    "description": "African Informative Marker - high frequency in East African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103400",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.91,
       "EUR": 0.04,
@@ -8844,12 +10323,21 @@
       "MENA": 0.06,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.892,
+      "Mende": 0.928,
+      "Gambian": 0.91,
+      "Luhya": 0.864
+    }
   },
   {
     "rsid": "rs11103401",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8860,28 +10348,46 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103402",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
     },
-    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
+    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE.",
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.96,
+      "Mende": 1,
+      "Gambian": 0.98,
+      "Luhya": 0.931
+    }
   },
   {
     "rsid": "rs11103403",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.93,
@@ -8892,12 +10398,21 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.911,
+      "Mende": 0.949,
+      "Gambian": 0.93,
+      "Luhya": 0.883
+    }
   },
   {
     "rsid": "rs11103404",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -8908,12 +10423,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - extremely high frequency in West African populations."
+    "description": "African Informative Marker - extremely high frequency in West African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.951,
+      "Mende": 0.989,
+      "Gambian": 0.97,
+      "Luhya": 0.921
+    }
   },
   {
     "rsid": "rs11103405",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -8924,13 +10448,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong sub-Saharan African signal."
+    "description": "African Informative Marker - strong sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.941,
+      "Mende": 0.979,
+      "Gambian": 0.96,
+      "Luhya": 0.912
+    }
   },
   {
     "rsid": "rs11103406",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -8940,12 +10473,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
-    "description": "African Informative Marker - general sub-Saharan African signal."
+    "description": "African Informative Marker - general sub-Saharan African signal.",
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.902,
+      "Mende": 0.938,
+      "Gambian": 0.92,
+      "Luhya": 0.874
+    }
   },
   {
     "rsid": "rs11103407",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -8956,12 +10498,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - strong differentiation from non-African populations."
+    "description": "African Informative Marker - strong differentiation from non-African populations.",
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.921,
+      "Mende": 0.959,
+      "Gambian": 0.94,
+      "Luhya": 0.893
+    }
   },
   {
     "rsid": "rs11103408",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -8972,28 +10523,46 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.931,
+      "Mende": 0.969,
+      "Gambian": 0.95,
+      "Luhya": 0.902
+    }
   },
   {
     "rsid": "rs11103409",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Esan": 0.98,
+      "Mende": 0.97,
+      "Gambian": 0.98,
+      "Luhya": 0.95
     },
     "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
   {
     "rsid": "rs11103410",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -9003,29 +10572,47 @@
       "SAS": 0.01,
       "MENA": 0.02,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.95,
+      "Mende": 0.94,
+      "Gambian": 0.95,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
   {
     "rsid": "rs11103411",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AFR": 0.99,
-      "EUR": 0.00,
-      "EAS": 0.00,
+      "EUR": 0,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Esan": 0.99,
+      "Mende": 0.99,
+      "Gambian": 0.99,
+      "Luhya": 0.98
     },
     "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
   {
     "rsid": "rs11103412",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -9035,13 +10622,22 @@
       "SAS": 0.01,
       "MENA": 0.04,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.93,
+      "Mende": 0.95,
+      "Gambian": 0.94,
+      "Luhya": 0.92
     },
     "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
   {
     "rsid": "rs11103413",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -9051,14 +10647,23 @@
       "SAS": 0.01,
       "MENA": 0.02,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.96,
+      "Mende": 0.97,
+      "Gambian": 0.97,
+      "Luhya": 0.96
     },
     "description": "African Informative Marker - high frequency in Central African populations."
   },
   {
     "rsid": "rs11103414",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -9067,13 +10672,22 @@
       "SAS": 0.02,
       "MENA": 0.05,
       "OCE": 0.02
+    },
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.91,
+      "Mende": 0.93,
+      "Gambian": 0.92,
+      "Luhya": 0.9
     },
     "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
   {
     "rsid": "rs11103415",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -9083,29 +10697,47 @@
       "SAS": 0.01,
       "MENA": 0.03,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.94,
+      "Mende": 0.96,
+      "Gambian": 0.95,
+      "Luhya": 0.94
     },
     "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
   {
     "rsid": "rs11103416",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.98,
+      "Mende": 0.98,
+      "Gambian": 0.98,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
   {
     "rsid": "rs11103417",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -9115,13 +10747,22 @@
       "SAS": 0.01,
       "MENA": 0.04,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.93,
+      "Mende": 0.95,
+      "Gambian": 0.94,
+      "Luhya": 0.92
     },
     "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
   {
     "rsid": "rs11103418",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -9131,13 +10772,22 @@
       "SAS": 0.01,
       "MENA": 0.02,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.96,
+      "Mende": 0.97,
+      "Gambian": 0.97,
+      "Luhya": 0.96
     },
     "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
   {
     "rsid": "rs11103419",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -9147,14 +10797,23 @@
       "SAS": 0.01,
       "MENA": 0.03,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.95,
+      "Mende": 0.94,
+      "Gambian": 0.95,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - high frequency in East African populations."
   },
   {
     "rsid": "rs11103420",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.91,
       "EUR": 0.04,
@@ -9163,13 +10822,22 @@
       "SAS": 0.02,
       "MENA": 0.06,
       "OCE": 0.02
+    },
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.9,
+      "Mende": 0.92,
+      "Gambian": 0.91,
+      "Luhya": 0.89
     },
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
   {
     "rsid": "rs11103421",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -9180,28 +10848,46 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.94,
+      "Mende": 0.96,
+      "Gambian": 0.95,
+      "Luhya": 0.94
+    },
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   {
     "rsid": "rs11103422",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.98,
+      "Mende": 0.98,
+      "Gambian": 0.98,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
   {
     "rsid": "rs11103423",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.93,
@@ -9212,12 +10898,21 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.92,
+      "Mende": 0.94,
+      "Gambian": 0.93,
+      "Luhya": 0.91
+    },
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   {
     "rsid": "rs11103424",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -9227,13 +10922,22 @@
       "SAS": 0.01,
       "MENA": 0.02,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.96,
+      "Mende": 0.97,
+      "Gambian": 0.97,
+      "Luhya": 0.96
     },
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   {
     "rsid": "rs11103425",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -9243,14 +10947,23 @@
       "SAS": 0.01,
       "MENA": 0.03,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.95,
+      "Mende": 0.94,
+      "Gambian": 0.95,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   {
     "rsid": "rs11103426",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -9259,13 +10972,22 @@
       "SAS": 0.02,
       "MENA": 0.05,
       "OCE": 0.02
+    },
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.91,
+      "Mende": 0.93,
+      "Gambian": 0.92,
+      "Luhya": 0.9
     },
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
   {
     "rsid": "rs11103427",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -9276,12 +10998,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.93,
+      "Mende": 0.95,
+      "Gambian": 0.94,
+      "Luhya": 0.92
+    },
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   {
     "rsid": "rs11103428",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -9292,28 +11023,46 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.94,
+      "Mende": 0.96,
+      "Gambian": 0.95,
+      "Luhya": 0.94
+    },
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   {
     "rsid": "rs11103429",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.98,
+      "Mende": 0.98,
+      "Gambian": 0.98,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry."
   },
   {
     "rsid": "rs11103430",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -9324,28 +11073,46 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.95,
+      "Mende": 0.94,
+      "Gambian": 0.95,
+      "Luhya": 0.97
+    },
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   {
     "rsid": "rs11103431",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AFR": 0.99,
-      "EUR": 0.00,
-      "EAS": 0.00,
+      "EUR": 0,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Esan": 0.99,
+      "Mende": 0.99,
+      "Gambian": 0.99,
+      "Luhya": 0.98
     },
     "description": "African Informative Marker - nearly fixed in West Africa."
   },
   {
     "rsid": "rs11103432",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -9356,12 +11123,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.93,
+      "Mende": 0.95,
+      "Gambian": 0.94,
+      "Luhya": 0.92
+    },
     "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
   {
     "rsid": "rs11103433",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -9372,13 +11148,22 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.96,
+      "Mende": 0.97,
+      "Gambian": 0.97,
+      "Luhya": 0.96
+    },
     "description": "African Informative Marker - high frequency in Central African populations."
   },
   {
     "rsid": "rs11103434",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -9388,12 +11173,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.91,
+      "Mende": 0.93,
+      "Gambian": 0.92,
+      "Luhya": 0.9
+    },
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
   {
     "rsid": "rs11103435",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -9404,28 +11198,46 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.94,
+      "Mende": 0.96,
+      "Gambian": 0.95,
+      "Luhya": 0.94
+    },
     "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
   {
     "rsid": "rs11103436",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.98,
+      "Mende": 0.98,
+      "Gambian": 0.98,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - highly specific to sub-Saharan Africa."
   },
   {
     "rsid": "rs11103437",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -9436,12 +11248,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.93,
+      "Mende": 0.95,
+      "Gambian": 0.94,
+      "Luhya": 0.92
+    },
     "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
   {
     "rsid": "rs11103438",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -9452,12 +11273,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.96,
+      "Mende": 0.97,
+      "Gambian": 0.97,
+      "Luhya": 0.96
+    },
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   {
     "rsid": "rs11103439",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -9468,13 +11298,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.95,
+      "Mende": 0.94,
+      "Gambian": 0.95,
+      "Luhya": 0.97
+    },
     "description": "African Informative Marker - high frequency in East African populations."
   },
   {
     "rsid": "rs11103440",
     "region": "African",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.91,
       "EUR": 0.04,
@@ -9484,12 +11323,21 @@
       "MENA": 0.06,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Yoruba": 0.91,
+      "Esan": 0.9,
+      "Mende": 0.92,
+      "Gambian": 0.91,
+      "Luhya": 0.89
+    },
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
   {
     "rsid": "rs11103441",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -9500,28 +11348,46 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.94,
+      "Mende": 0.96,
+      "Gambian": 0.95,
+      "Luhya": 0.94
+    },
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   {
     "rsid": "rs11103442",
     "region": "African",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AFR": 0.98,
       "EUR": 0.01,
-      "EAS": 0.00,
+      "EAS": 0,
       "AMR": 0.01,
-      "SAS": 0.00,
+      "SAS": 0,
       "MENA": 0.01,
-      "OCE": 0.00
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Esan": 0.98,
+      "Mende": 0.98,
+      "Gambian": 0.98,
+      "Luhya": 0.97
     },
     "description": "African Informative Marker - nearly fixed in sub-Saharan Africa."
   },
   {
     "rsid": "rs11103443",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.93,
@@ -9532,12 +11398,21 @@
       "MENA": 0.05,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.93,
+      "Esan": 0.92,
+      "Mende": 0.94,
+      "Gambian": 0.93,
+      "Luhya": 0.91
+    },
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   {
     "rsid": "rs11103444",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AFR": 0.97,
@@ -9548,12 +11423,21 @@
       "MENA": 0.02,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Esan": 0.96,
+      "Mende": 0.97,
+      "Gambian": 0.97,
+      "Luhya": 0.96
+    },
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   {
     "rsid": "rs11103445",
     "region": "African",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.96,
@@ -9564,13 +11448,22 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.96,
+      "Esan": 0.95,
+      "Mende": 0.94,
+      "Gambian": 0.95,
+      "Luhya": 0.97
+    },
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   {
     "rsid": "rs11103446",
     "region": "African",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AFR": 0.92,
       "EUR": 0.03,
@@ -9580,12 +11473,21 @@
       "MENA": 0.05,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Yoruba": 0.92,
+      "Esan": 0.91,
+      "Mende": 0.93,
+      "Gambian": 0.92,
+      "Luhya": 0.9
+    },
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
   {
     "rsid": "rs11103447",
     "region": "African",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AFR": 0.94,
@@ -9596,12 +11498,21 @@
       "MENA": 0.04,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.94,
+      "Esan": 0.93,
+      "Mende": 0.95,
+      "Gambian": 0.94,
+      "Luhya": 0.92
+    },
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   {
     "rsid": "rs11103448",
     "region": "African",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AFR": 0.95,
@@ -9612,12 +11523,21 @@
       "MENA": 0.03,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Yoruba": 0.95,
+      "Esan": 0.94,
+      "Mende": 0.96,
+      "Gambian": 0.95,
+      "Luhya": 0.94
+    },
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   {
     "rsid": "rs11103500",
     "region": "Native American",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.5,
     "frequencies": {
       "AMR": 0.98,
@@ -9628,12 +11548,21 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.99,
+      "Pima": 0.98,
+      "Karitiana": 0.99,
+      "Surui": 0.99,
+      "Quechua": 0.97
+    },
     "description": "Native American Informative Marker - highly diagnostic for indigenous American ancestry."
   },
   {
     "rsid": "rs11103501",
     "region": "Native American",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AMR": 0.96,
@@ -9644,28 +11573,46 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.96,
+      "Pima": 0.97,
+      "Karitiana": 0.96,
+      "Surui": 0.95,
+      "Quechua": 0.96
+    },
     "description": "Native American Informative Marker - strong differentiation from European and African populations."
   },
   {
     "rsid": "rs11103502",
     "region": "Native American",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AMR": 0.97,
-      "AFR": 0.00,
+      "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.03,
-      "SAS": 0.00,
-      "MENA": 0.00,
+      "SAS": 0,
+      "MENA": 0,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.97,
+      "Pima": 0.98,
+      "Karitiana": 0.97,
+      "Surui": 0.97,
+      "Quechua": 0.96
     },
     "description": "Native American Informative Marker - nearly fixed in indigenous populations of the Americas."
   },
   {
     "rsid": "rs11103503",
     "region": "Native American",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AMR": 0.94,
@@ -9676,12 +11623,21 @@
       "MENA": 0.02,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Maya": 0.94,
+      "Pima": 0.93,
+      "Karitiana": 0.95,
+      "Surui": 0.94,
+      "Quechua": 0.94
+    },
     "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
   {
     "rsid": "rs11103504",
     "region": "Native American",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AMR": 0.95,
@@ -9692,13 +11648,22 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.96,
+      "Karitiana": 0.95,
+      "Surui": 0.95,
+      "Quechua": 0.95
+    },
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
   {
     "rsid": "rs11103505",
     "region": "Native American",
-    "alleles": ["A"],
-    "weight": 3.0,
+    "alleles": [
+      "A"
+    ],
+    "weight": 3,
     "frequencies": {
       "AMR": 0.92,
       "AFR": 0.03,
@@ -9708,12 +11673,21 @@
       "MENA": 0.03,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Maya": 0.92,
+      "Pima": 0.91,
+      "Karitiana": 0.93,
+      "Surui": 0.92,
+      "Quechua": 0.92
+    },
     "description": "Native American Informative Marker - general indigenous American signal."
   },
   {
     "rsid": "rs11103506",
     "region": "Native American",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AMR": 0.97,
@@ -9724,28 +11698,46 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.97,
+      "Pima": 0.97,
+      "Karitiana": 0.97,
+      "Surui": 0.97,
+      "Quechua": 0.97
+    },
     "description": "Native American Informative Marker - high frequency in South American indigenous groups."
   },
   {
     "rsid": "rs11103507",
     "region": "Native American",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AMR": 0.98,
-      "AFR": 0.00,
+      "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.02,
-      "SAS": 0.00,
-      "MENA": 0.00,
+      "SAS": 0,
+      "MENA": 0,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.98,
+      "Pima": 0.98,
+      "Karitiana": 0.98,
+      "Surui": 0.98,
+      "Quechua": 0.98
     },
     "description": "Native American Informative Marker - highly specific to indigenous American populations."
   },
   {
     "rsid": "rs11103508",
     "region": "Native American",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AMR": 0.94,
@@ -9756,12 +11748,21 @@
       "MENA": 0.02,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Maya": 0.94,
+      "Pima": 0.93,
+      "Karitiana": 0.95,
+      "Surui": 0.94,
+      "Quechua": 0.94
+    },
     "description": "Native American Informative Marker - useful for identifying North American indigenous lineages."
   },
   {
     "rsid": "rs11103509",
     "region": "Native American",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AMR": 0.95,
@@ -9772,13 +11773,22 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.96,
+      "Karitiana": 0.95,
+      "Surui": 0.95,
+      "Quechua": 0.95
+    },
     "description": "Native American Informative Marker - strong differentiation from European populations."
   },
   {
     "rsid": "rs11103510",
     "region": "Native American",
-    "alleles": ["T"],
-    "weight": 3.0,
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
     "frequencies": {
       "AMR": 0.91,
       "AFR": 0.04,
@@ -9788,12 +11798,21 @@
       "MENA": 0.04,
       "OCE": 0.03
     },
+    "subFrequencies": {
+      "Maya": 0.91,
+      "Pima": 0.9,
+      "Karitiana": 0.92,
+      "Surui": 0.91,
+      "Quechua": 0.89
+    },
     "description": "Native American Informative Marker - general indigenous American signal."
   },
   {
     "rsid": "rs11103511",
     "region": "Native American",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AMR": 0.97,
@@ -9804,28 +11823,46 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.97,
+      "Pima": 0.97,
+      "Karitiana": 0.97,
+      "Surui": 0.97,
+      "Quechua": 0.97
+    },
     "description": "Native American Informative Marker - high frequency in Mesoamerican indigenous groups."
   },
   {
     "rsid": "rs11103512",
     "region": "Native American",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AMR": 0.98,
-      "AFR": 0.00,
+      "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.02,
-      "SAS": 0.00,
-      "MENA": 0.00,
+      "SAS": 0,
+      "MENA": 0,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.98,
+      "Pima": 0.98,
+      "Karitiana": 0.98,
+      "Surui": 0.98,
+      "Quechua": 0.98
     },
     "description": "Native American Informative Marker - nearly fixed in indigenous populations."
   },
   {
     "rsid": "rs11103513",
     "region": "Native American",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AMR": 0.93,
@@ -9836,12 +11873,21 @@
       "MENA": 0.02,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Maya": 0.93,
+      "Pima": 0.92,
+      "Karitiana": 0.94,
+      "Surui": 0.93,
+      "Quechua": 0.91
+    },
     "description": "Native American Informative Marker - useful for identifying indigenous American ancestry."
   },
   {
     "rsid": "rs11103514",
     "region": "Native American",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AMR": 0.95,
@@ -9852,13 +11898,22 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.96,
+      "Karitiana": 0.95,
+      "Surui": 0.95,
+      "Quechua": 0.95
+    },
     "description": "Native American Informative Marker - strong differentiation from African populations."
   },
   {
     "rsid": "rs11103515",
     "region": "Native American",
-    "alleles": ["C"],
-    "weight": 3.0,
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
     "frequencies": {
       "AMR": 0.92,
       "AFR": 0.03,
@@ -9868,12 +11923,21 @@
       "MENA": 0.03,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Maya": 0.92,
+      "Pima": 0.91,
+      "Karitiana": 0.93,
+      "Surui": 0.92,
+      "Quechua": 0.92
+    },
     "description": "Native American Informative Marker - general indigenous American signal."
   },
   {
     "rsid": "rs11103516",
     "region": "Native American",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 3.3,
     "frequencies": {
       "AMR": 0.97,
@@ -9884,28 +11948,46 @@
       "MENA": 0.01,
       "OCE": 0.01
     },
+    "subFrequencies": {
+      "Maya": 0.97,
+      "Pima": 0.97,
+      "Karitiana": 0.97,
+      "Surui": 0.97,
+      "Quechua": 0.97
+    },
     "description": "Native American Informative Marker - high frequency in indigenous populations of the Americas."
   },
   {
     "rsid": "rs11103517",
     "region": "Native American",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 3.4,
     "frequencies": {
       "AMR": 0.98,
-      "AFR": 0.00,
+      "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.02,
-      "SAS": 0.00,
-      "MENA": 0.00,
+      "SAS": 0,
+      "MENA": 0,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.98,
+      "Pima": 0.98,
+      "Karitiana": 0.98,
+      "Surui": 0.98,
+      "Quechua": 0.98
     },
     "description": "Native American Informative Marker - highly specific to indigenous American ancestry."
   },
   {
     "rsid": "rs11103518",
     "region": "Native American",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "weight": 3.1,
     "frequencies": {
       "AMR": 0.94,
@@ -9916,12 +11998,21 @@
       "MENA": 0.02,
       "OCE": 0.02
     },
+    "subFrequencies": {
+      "Maya": 0.94,
+      "Pima": 0.93,
+      "Karitiana": 0.95,
+      "Surui": 0.94,
+      "Quechua": 0.94
+    },
     "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
   {
     "rsid": "rs11103519",
     "region": "Native American",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "weight": 3.2,
     "frequencies": {
       "AMR": 0.95,
@@ -9931,6 +12022,13 @@
       "SAS": 0.01,
       "MENA": 0.01,
       "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.96,
+      "Karitiana": 0.95,
+      "Surui": 0.95,
+      "Quechua": 0.95
     },
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   }

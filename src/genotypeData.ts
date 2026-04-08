@@ -1396,27 +1396,26 @@ export const SNP_DB: SNP[] = [
   { markerId: "L1453", gene: "Y-DNA", trait: "Haplogroup B-V2342", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup B-V2342." }
 ];
 
-export const CONTINENT_META = {
-  "African":                      {color:"#E8A838",icon:"🌍"},
-  "East Asian":                   {color:"#E84B4B",icon:"🌏"},
-  "European":                     {color:"#4B8BE8",icon:"🌍"},
-  "Universal":                    {color:"#10b981",icon:"🌐"},
-  "Native American":              {color:"#C25C1A",icon:"🌎"},
-  "Global":                       {color:"#10b981",icon:"🌐"},
-  "East Asian / Native American": {color:"#C25C1A",icon:"🌎"},
-  "Middle Eastern":               {color:"#8b5cf6",icon:"🌍"},
-  "Caucasian":                    {color:"#4B8BE8",icon:"🌍"},
-  "European / Asian":             {color:"#4B8BE8",icon:"🌍"},
-  "Native American / Asian":      {color:"#C25C1A",icon:"🌎"},
-  "Asian / Oceanian":             {color:"#E84B4B",icon:"🌏"},
-  "South Asian":                  {color:"#06b6d4",icon:"🌍"},
-  "Oceanian":                     {color:"#14b8a6",icon:"🏝️"},
-  "North African":                {color:"#d97706",icon:"🌍"},
-  "Middle Eastern / African":     {color:"#8b5cf6",icon:"🌍"},
-  "Native American / Inuit":      {color:"#C25C1A",icon:"🌎"},
-  "Asian / European":             {color:"#4B8BE8",icon:"🌍"},
-  "Middle Eastern / European":    {color:"#8b5cf6",icon:"🌍"},
-  "African / Middle Eastern / South Asian": {color:"#E8A838",icon:"🌍"},
+export const CONTINENT_META: Record<string, {color: string, icon: string}> = {
+  "Africa":       {color:"#E8A838", icon:"🌍"},
+  "Europe":       {color:"#4B8BE8", icon:"🌍"},
+  "Asia":         {color:"#E84B4B", icon:"🌏"},
+  "Americas":     {color:"#C25C1A", icon:"🌎"},
+  "Oceania":      {color:"#14b8a6", icon:"🏝️"},
+  "Middle East":  {color:"#8b5cf6", icon:"🌍"},
+  "Global":       {color:"#10b981", icon:"🌐"}
+};
+
+export const mapToRegion = (continent: string): string => {
+  if (!continent) return "Global";
+  const c = continent.toLowerCase();
+  if (c.includes('african') || c.includes('africa')) return "Africa";
+  if (c.includes('european') || c.includes('europe') || c.includes('caucasian')) return "Europe";
+  if (c.includes('asian') || c.includes('asia')) return "Asia";
+  if (c.includes('native american') || c.includes('americas') || c.includes('inuit')) return "Americas";
+  if (c.includes('oceanian') || c.includes('oceania')) return "Oceania";
+  if (c.includes('middle eastern') || c.includes('middle east')) return "Middle East";
+  return "Global";
 };
 
 export const CATEGORY_META = {

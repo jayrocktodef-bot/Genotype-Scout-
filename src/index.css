@@ -21,17 +21,17 @@
 }
 
 .dark {
-  /* Facebook Dark Mode Palette */
-  --bg-primary: #18191A;     
-  --bg-secondary: #242526;   
-  --text-primary: #E4E6EB;   
-  --text-secondary: #B0B3B8; 
-  --accent-blue: #2374E1;    
-  --status-high: #F02849;
-  --status-medium: #F5A623;
-  --status-low: #31A24C;
-  --card-bg: #242526;
-  --border-color: #3E4042;
+  /* Improved Facebook Dark Mode Palette for higher contrast */
+  --bg-primary: #111213;     /* Slightly darker background */
+  --bg-secondary: #1C1D1E;   
+  --text-primary: #F5F6F7;   /* Brighter primary text */
+  --text-secondary: #E4E6EB; /* Brighter secondary text */
+  --accent-blue: #4599FF;    /* Brighter accent blue */
+  --status-high: #FF4D6D;    /* Brighter status colors */
+  --status-medium: #FFB347;
+  --status-low: #4ADE80;
+  --card-bg: #1C1D1E;
+  --border-color: #3F4142;   /* Slightly more visible borders */
 }
 
 body {

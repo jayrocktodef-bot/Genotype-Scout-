@@ -8,10 +8,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 import { jsPDF } from "jspdf";
-import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
+import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 
@@ -50,11 +50,11 @@ const HaplogroupTreeView = ({ node, userPath, level = 0 }: { node: any, userPath
         
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className={`text-sm font-bold truncate ${isMatch ? 'text-blue-700 dark:text-blue-300' : 'text-slate-600 dark:text-slate-400'}`}>
+            <span className={`text-sm font-bold truncate ${isMatch ? 'text-blue-700 dark:text-blue-300' : 'text-slate-600 dark:text-slate-300'}`}>
               {node.branchName}
             </span>
             {(node.snp || node.mutations) && (
-              <span className="text-[9px] font-mono text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-slate-900/50 px-1 rounded border border-slate-100 dark:border-slate-800">
+              <span className="text-[9px] font-mono text-slate-400 dark:text-slate-400 bg-slate-50 dark:bg-slate-900/50 px-1 rounded border border-slate-100 dark:border-slate-800">
                 {node.snp ? node.snp.join(', ') : node.mutations.slice(0, 2).join(', ') + (node.mutations.length > 2 ? '...' : '')}
               </span>
             )}
@@ -70,7 +70,7 @@ const HaplogroupTreeView = ({ node, userPath, level = 0 }: { node: any, userPath
             )}
           </div>
           {isExpanded && node.description && (
-            <p className="text-[10px] text-slate-500 dark:text-slate-500 mt-1 leading-tight max-w-md">
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1 leading-tight max-w-md">
               {node.description}
             </p>
           )}
@@ -98,6 +98,13 @@ export default function App() {
   const [continentFilter, setContinentFilter] = useState<string>('all');
   const [geneFilter, setGeneFilter] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedSearchTerm(searchTerm), 300);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
   const [explorerSearch, setExplorerSearch] = useState<string>('');
   const [processing, setProcessing] = useState(false);
   const [dragging, setDragging] = useState(false);
@@ -223,51 +230,128 @@ export default function App() {
 
   const results = datasets.length > 0 ? datasets[activeDatasetIndex].results : null;
 
-  const filteredResults = results ? results.filter(r => 
-    r.status === statusFilter &&
-    (significanceFilter === 'all' || r.significance === significanceFilter) &&
-    (continentFilter === 'all' || r.continent === continentFilter) &&
-    (geneFilter === 'all' || r.gene === geneFilter) &&
-    (searchTerm === '' || 
-      (r.rsid?.toLowerCase() || '').includes(searchTerm.toLowerCase()) || 
-      (r.trait?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
-      (r.gene && r.gene.toLowerCase().includes(searchTerm.toLowerCase())))
-  ) : [];
+  const filteredResults = useMemo(() => {
+    if (!results) return [];
+    return results.filter(r => 
+      r.status === statusFilter &&
+      (significanceFilter === 'all' || r.significance === significanceFilter) &&
+      (continentFilter === 'all' || mapToRegion(r.continent) === continentFilter) &&
+      (geneFilter === 'all' || r.gene === geneFilter) &&
+      (debouncedSearchTerm === '' || 
+        (r.rsid?.toLowerCase() || '').includes(debouncedSearchTerm.toLowerCase()) || 
+        (r.trait?.toLowerCase() || '').includes(debouncedSearchTerm.toLowerCase()) ||
+        (r.gene && r.gene.toLowerCase().includes(debouncedSearchTerm.toLowerCase())))
+    );
+  }, [results, statusFilter, significanceFilter, continentFilter, geneFilter, debouncedSearchTerm]);
 
-  const uniqueSignificances = Array.from(new Set(results?.map(r => r.significance) || []));
-  const uniqueContinents = Array.from(new Set(results?.map(r => r.continent) || []));
-  const uniqueGenes = Array.from(new Set(results?.map(r => r.gene) || []));
+  const uniqueSignificances = useMemo(() => Array.from(new Set(results?.map(r => r.significance) || [])), [results]);
+  const uniqueContinents = ["Africa", "Europe", "Asia", "Americas", "Oceania", "Middle East"];
+  const uniqueGenes = useMemo(() => Array.from(new Set(results?.map(r => r.gene) || [])), [results]);
+
+  const oracleResults = useMemo(() => {
+    if (!datasets[activeDatasetIndex]?.results) return null;
+    const ancestrySnps = datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry');
+    const oracle = calculateAncestryOracle(
+      ancestrySnps,
+      datasets[activeDatasetIndex].predictedYDNA?.predicted?.continent,
+      datasets[activeDatasetIndex].predictedMtDNA?.region
+    );
+    const { continentalScores: rawContinentalScores, regionalScores, deepScores, subPopulations } = oracle;
+    const continentalScores = Object.entries(rawContinentalScores).reduce((acc: Record<string, number>, [continent, score]) => {
+      const region = mapToRegion(continent);
+      acc[region] = (acc[region] || 0) + (score as number);
+      return acc;
+    }, {});
+    return { continentalScores, regionalScores, deepScores, subPopulations };
+  }, [datasets, activeDatasetIndex]);
+
+  const renderSNPCard = (snp: any) => (
+    <div key={`${snp.markerId}-${snp.continent}`} className={`trait-card rounded-xl p-6 border border-slate-100 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-sm ${snp.status === 'matched' ? 'ring-2 ring-sky-500' : ''}`}>
+      <div className="flex items-start justify-between gap-4 mb-3">
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2">
+            <div className="font-mono text-xs text-sky-700 dark:text-sky-400 font-bold bg-sky-50 dark:bg-sky-900/30 px-2 py-0.5 rounded">{snp.rsid}</div>
+            {snp.gene && <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Gene: {snp.gene}</div>}
+            <div className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-tighter ${
+              snp.significance === 'High' ? 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400' :
+              snp.significance === 'Medium' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
+              'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400'
+            }`}>
+              {snp.significance}
+            </div>
+          </div>
+          <div className="font-bold text-slate-900 dark:text-slate-100 text-lg leading-tight">{snp.trait}</div>
+        </div>
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={() => {
+              navigator.clipboard.writeText(snp.rsid);
+            }}
+            className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 transition-colors"
+            title="Copy rsid"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
+          {snp.status === 'matched' && (
+            <button onClick={() => toggleExpand(snp.rsid)} className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 transition-colors">
+              {expandedSnps.has(snp.rsid) ? '▲' : '▼'}
+            </button>
+          )}
+        </div>
+      </div>
+      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4 break-words">{snp.description}</p>
+      {snp.status !== 'not_tested' && expandedSnps.has(snp.rsid) && (
+        <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 grid grid-cols-[auto,1fr] gap-x-6 gap-y-2 items-start border border-slate-100 dark:border-slate-800">
+          <div className="font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase pt-1 font-bold">Genotype</div>
+          <div className="font-mono text-xl font-bold text-slate-900 dark:text-slate-100 tracking-widest">{snp.userGenotype}</div>
+          <div className="font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase pt-1 font-bold">Ref Alleles</div>
+          <div className="font-mono text-sm font-bold text-slate-600 dark:text-slate-400 tracking-widest">{snp.alleles?.join(', ') || 'N/A'}</div>
+          <div className="font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase pt-1 font-bold">Meaning</div>
+          <div className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
+            {snp.interpretation}
+            {snp.referenceUrl && (
+              <a href={snp.referenceUrl} target="_blank" rel="noopener noreferrer" className="block mt-2 text-sky-600 dark:text-sky-400 hover:underline text-xs font-mono">
+                Learn more about {snp.rsid}
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="app-container relative max-w-4xl mx-auto p-4 sm:p-6">
-      <div className="absolute top-6 right-6 text-xs font-mono text-slate-400">v.2</div>
+      <div className="absolute top-6 right-6 flex items-center gap-4 z-50">
+        <div className="text-xs font-mono text-slate-400 dark:text-slate-500">v.2</div>
+        <button onClick={toggleDarkMode} className="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-all hover:scale-110 shadow-sm border border-slate-300 dark:border-slate-600">
+          {darkMode ? '☀️' : '🌙'}
+        </button>
+      </div>
       <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           <img className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-slate-200" src={LOGO_URI} alt="Logo" />
           <div>
             <div className="text-sky-600 text-[10px] sm:text-xs tracking-widest uppercase font-bold mb-1">DNA Ancestry & Trait Analyzer</div>
             <h1 className="text-3xl sm:text-4xl tracking-tighter mb-2">
-              <span className="font-light text-slate-500 dark:text-slate-500">GENOTYPE</span> SCOUT
+              <span className="font-light text-slate-500 dark:text-slate-400">GENOTYPE</span> SCOUT
             </h1>
-            <div className="flex flex-wrap gap-4 sm:gap-6 font-bold text-sm">
-              <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sky-700 dark:text-sky-400 hover:text-sky-900 dark:hover:text-sky-200 transition-colors bg-sky-50 dark:bg-sky-900/30 px-3 py-1.5 rounded-lg border border-sky-100 dark:border-sky-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div className="flex flex-wrap gap-3 sm:gap-4 font-bold text-xs">
+              <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sky-700 dark:text-sky-400 hover:text-sky-900 dark:hover:text-sky-200 transition-colors bg-sky-50 dark:bg-sky-900/30 px-2 py-1 rounded-lg border border-sky-100 dark:border-sky-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 Facebook Group
               </a>
-              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                 Research Blog
               </a>
-              <a href="https://paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1.5 rounded-lg border border-emerald-100 dark:border-emerald-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <a href="https://paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-lg border border-emerald-100 dark:border-emerald-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                 Donate
               </a>
             </div>
           </div>
         </div>
-        <button onClick={toggleDarkMode} className="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 self-end sm:self-auto -mt-16 sm:mt-0">
-          {darkMode ? '☀️' : '🌙'}
-        </button>
       </header>
 
       {processing && (
@@ -279,11 +363,11 @@ export default function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
               <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Genetic Research</div>
-              <div className="text-xs text-slate-600 dark:text-slate-500">Read about the latest findings in African genetic history.</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Read about the latest findings in African genetic history.</div>
             </a>
             <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
               <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Community Forum</div>
-              <div className="text-xs text-slate-600 dark:text-slate-500">Connect with others exploring their transatlantic roots.</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Connect with others exploring their transatlantic roots.</div>
             </a>
           </div>
         </div>
@@ -325,7 +409,7 @@ export default function App() {
             <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" onChange={(e) => e.target.files && processFile(e.target.files[0])} />
             <div className="text-5xl mb-4">🧬</div>
             <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Drop your raw DNA file (CSV/TXT) here</div>
-            <div className="text-slate-600 dark:text-slate-500 text-sm font-mono">or click to browse · analysis runs entirely in your browser</div>
+            <div className="text-slate-600 dark:text-slate-400 text-sm font-mono">or click to browse · analysis runs entirely in your browser</div>
           </div>
 
           <div className="mt-12">
@@ -339,7 +423,7 @@ export default function App() {
                   value={explorerSearch}
                   onChange={(e) => setExplorerSearch(e.target.value)}
                 />
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </div>
               </div>
@@ -430,15 +514,15 @@ export default function App() {
               </div>
             </div>
             <div className="flex flex-wrap gap-2">
-              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" value={significanceFilter} onChange={(e) => setSignificanceFilter(e.target.value)}>
+              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#030303' }} value={significanceFilter} onChange={(e) => setSignificanceFilter(e.target.value)}>
                 <option value="all">All Significance</option>
                 {uniqueSignificances.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
-              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" value={continentFilter} onChange={(e) => setContinentFilter(e.target.value)}>
-                <option value="all">All Continents</option>
+              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#111214' }} value={continentFilter} onChange={(e) => setContinentFilter(e.target.value)}>
+                <option value="all">All Regions</option>
                 {uniqueContinents.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
-              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" value={geneFilter} onChange={(e) => setGeneFilter(e.target.value)}>
+              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#0d0e11' }} value={geneFilter} onChange={(e) => setGeneFilter(e.target.value)}>
                 <option value="all">All Genes</option>
                 {uniqueGenes.map(g => <option key={g} value={g}>{g}</option>)}
               </select>
@@ -447,10 +531,11 @@ export default function App() {
                   type="text" 
                   placeholder="Search rsid, trait, or gene..." 
                   className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 pl-10 text-sm font-bold w-full sm:w-64 focus:ring-2 focus:ring-sky-500 outline-none"
+                  style={{ color: '#060404' }}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </div>
               </div>
@@ -468,27 +553,27 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex border-b border-slate-200 dark:border-slate-700 mb-6 overflow-x-auto scrollbar-hide">
+          <div className="flex flex-wrap gap-2 mb-8 overflow-x-auto scrollbar-hide">
             <button 
-              className={`px-6 py-3 font-bold text-sm whitespace-nowrap border-b-2 transition-colors ${activeTab === 'autosomal' ? 'border-sky-500 text-sky-600 dark:text-sky-400' : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'autosomal' ? 'bg-sky-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
               onClick={() => setActiveTab('autosomal')}
             >
               🧬 Autosomal DNA
             </button>
             <button 
-              className={`px-6 py-3 font-bold text-sm whitespace-nowrap border-b-2 transition-colors ${activeTab === 'oracle' ? 'border-indigo-500 text-indigo-600 dark:text-indigo-400' : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'oracle' ? 'bg-indigo-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
               onClick={() => setActiveTab('oracle')}
             >
               🔮 Ancestry Oracle
             </button>
             <button 
-              className={`px-6 py-3 font-bold text-sm whitespace-nowrap border-b-2 transition-colors ${activeTab === 'y-dna' ? 'border-blue-500 text-blue-600 dark:text-blue-400' : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'y-dna' ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
               onClick={() => setActiveTab('y-dna')}
             >
               ♂️ Y-DNA
             </button>
             <button 
-              className={`px-6 py-3 font-bold text-sm whitespace-nowrap border-b-2 transition-colors ${activeTab === 'mt-dna' ? 'border-rose-500 text-rose-600 dark:text-rose-400' : 'border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'mt-dna' ? 'bg-rose-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
               onClick={() => setActiveTab('mt-dna')}
             >
               ♀️ mtDNA
@@ -585,61 +670,29 @@ export default function App() {
                               <strong>Important Note:</strong> DNA markers show broad regions, not specific tribes.
                             </div>
                           )}
-                          {allSnpsInCategory.map((snp: any) => (
-                            <div key={`${snp.markerId}-${snp.continent}`} className={`trait-card rounded-xl p-6 border border-slate-100 dark:border-slate-700/50 bg-white dark:bg-slate-800 shadow-sm ${snp.status === 'matched' ? 'ring-2 ring-sky-500' : ''}`}>
-                              <div className="flex items-start justify-between gap-4 mb-3">
-                                <div className="flex flex-col gap-1">
-                                  <div className="flex items-center gap-2">
-                                    <div className="font-mono text-xs text-sky-700 dark:text-sky-400 font-bold bg-sky-50 dark:bg-sky-900/30 px-2 py-0.5 rounded">{snp.rsid}</div>
-                                    {snp.gene && <div className="text-[10px] font-bold text-slate-500 dark:text-slate-500 uppercase tracking-wider">Gene: {snp.gene}</div>}
-                                    <div className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-tighter ${
-                                      snp.significance === 'High' ? 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400' :
-                                      snp.significance === 'Medium' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400' :
-                                      'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400'
-                                    }`}>
-                                      {snp.significance}
-                                    </div>
-                                  </div>
-                                  <div className="font-bold text-slate-900 dark:text-slate-100 text-lg leading-tight">{snp.trait}</div>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                  <button 
-                                    onClick={() => {
-                                      navigator.clipboard.writeText(snp.rsid);
-                                      // Optional: add a toast or temporary state for "Copied!"
-                                    }}
-                                    className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 transition-colors"
-                                    title="Copy rsid"
-                                  >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                                  </button>
-                                  {snp.status === 'matched' && (
-                                    <button onClick={() => toggleExpand(snp.rsid)} className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-400 transition-colors">
-                                      {expandedSnps.has(snp.rsid) ? '▲' : '▼'}
-                                    </button>
-                                  )}
+                          {category === 'Ancestry' ? (
+                            // Group Ancestry markers by continent/region
+                            Object.entries(
+                              allSnpsInCategory.reduce((acc: Record<string, any[]>, snp: any) => {
+                                const region = mapToRegion(snp.continent);
+                                if (!acc[region]) acc[region] = [];
+                                acc[region].push(snp);
+                                return acc;
+                              }, {})
+                            ).map(([region, snps]: [string, any[]]) => (
+                              <div key={region} className="space-y-4 mb-8 last:mb-0">
+                                <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] border-b border-slate-200 dark:border-slate-700 pb-2 mb-4 flex items-center gap-2">
+                                  <span className="w-2 h-2 rounded-full bg-sky-500"></span>
+                                  {region} Markers
+                                </h4>
+                                <div className="space-y-4">
+                                  {snps.map((snp: any) => renderSNPCard(snp))}
                                 </div>
                               </div>
-                              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4 break-words">{snp.description}</p>
-                              {snp.status !== 'not_tested' && expandedSnps.has(snp.rsid) && (
-                                <div className="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 grid grid-cols-[auto,1fr] gap-x-6 gap-y-2 items-start border border-slate-100 dark:border-slate-800">
-                                  <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Genotype</div>
-                                  <div className="font-mono text-xl font-bold text-slate-900 dark:text-slate-100 tracking-widest">{snp.userGenotype}</div>
-                                  <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Ref Alleles</div>
-                                  <div className="font-mono text-sm font-bold text-slate-600 dark:text-slate-400 tracking-widest">{snp.alleles?.join(', ') || 'N/A'}</div>
-                                  <div className="font-mono text-[10px] text-slate-500 dark:text-slate-500 uppercase pt-1 font-bold">Meaning</div>
-                                  <div className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
-                                    {snp.interpretation}
-                                    {snp.referenceUrl && (
-                                      <a href={snp.referenceUrl} target="_blank" rel="noopener noreferrer" className="block mt-2 text-sky-600 dark:text-sky-400 hover:underline text-xs font-mono">
-                                        Learn more about {snp.rsid}
-                                      </a>
-                                    )}
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          ))}
+                            ))
+                          ) : (
+                            allSnpsInCategory.map((snp: any) => renderSNPCard(snp))
+                          )}
                         </div>
                       )}
                     </div>
@@ -649,18 +702,22 @@ export default function App() {
             );
           })()}
           {activeTab === 'oracle' && (() => {
-            const ancestrySnps = datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry');
-            const oracle = calculateAncestryOracle(
-              ancestrySnps,
-              datasets[activeDatasetIndex].predictedYDNA?.predicted?.continent,
-              datasets[activeDatasetIndex].predictedMtDNA?.region
-            );
-            const { continentalScores, regionalScores, deepScores } = oracle;
+            if (!oracleResults) {
+              return (
+                <div className="mt-12 p-6 border-2 border-indigo-200 dark:border-indigo-800/50 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 shadow-sm">
+                  <div className="p-4 bg-white dark:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 text-center">
+                    Not enough data to generate an ancestry prediction.
+                  </div>
+                </div>
+              );
+            }
+            
+            const { continentalScores, regionalScores, deepScores } = oracleResults;
             
             if (Object.keys(continentalScores).length === 0) {
               return (
                 <div className="mt-12 p-6 border-2 border-indigo-200 dark:border-indigo-800/50 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 shadow-sm">
-                  <div className="p-4 bg-white dark:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-500 text-center">
+                  <div className="p-4 bg-white dark:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 text-center">
                     Not enough data to generate an ancestry prediction.
                   </div>
                 </div>
@@ -687,7 +744,7 @@ export default function App() {
                                   {payload.map((p: any) => (
                                     <div key={p.name} className="flex justify-between gap-4">
                                       <span style={{ color: p.fill }}>{p.name}:</span>
-                                      <span className="font-mono">{p.value.toFixed(1)}%</span>
+                                      <span className="font-mono">{(p.value as number).toFixed(1)}%</span>
                                     </div>
                                   ))}
                                 </div>
@@ -711,7 +768,7 @@ export default function App() {
                           <div key={continent} className="flex items-center gap-2 text-xs">
                             <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
                             <span className="font-bold text-slate-700 dark:text-slate-300">{continent}</span>
-                            <span className="font-mono text-slate-500">{percentage.toFixed(1)}%</span>
+                            <span className="font-mono text-slate-500">{(percentage as number).toFixed(1)}%</span>
                           </div>
                         );
                       })}
@@ -722,8 +779,8 @@ export default function App() {
                   <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
                     <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Sub-population Breakdown</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {Object.entries(oracle.subPopulations)
-                        .flatMap(([continent, subPops]) => subPops.map((sp: any) => ({ ...sp, continent })))
+                      {Object.entries(oracleResults.subPopulations)
+                        .flatMap(([continent, subPops]) => (subPops as any[]).map((sp: any) => ({ ...sp, continent })))
                         .sort((a: any, b: any) => b.percentage - a.percentage)
                         .slice(0, 5)
                         .map((subPop: any, idx: number) => (
@@ -733,10 +790,10 @@ export default function App() {
                             className={`p-3 rounded-lg border text-left transition-colors ${selectedSubPop === subPop.name ? 'bg-indigo-50 dark:bg-indigo-900/40 border-indigo-300 dark:border-indigo-700' : 'bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800'}`}
                           >
                             <div className="flex justify-between items-center">
-                              <span className="text-xs font-medium text-slate-700 dark:text-slate-400">{subPop.name}</span>
-                              <span className="text-[10px] font-mono text-indigo-600 dark:text-indigo-400">{subPop.confidence.toFixed(1)}% Conf.</span>
+                              <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{subPop.name}</span>
+                              <span className="text-[10px] font-mono text-indigo-600 dark:text-indigo-400">{(subPop.confidence as number).toFixed(1)}% Conf.</span>
                             </div>
-                            <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{subPop.percentage.toFixed(1)}%</div>
+                            <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{(subPop.percentage as number).toFixed(1)}%</div>
                           </button>
                         ))
                       }
@@ -746,10 +803,10 @@ export default function App() {
                       <div className="mt-6 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
                         <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4">Top 3 markers for {selectedSubPop}:</h4>
                         <div className="space-y-2">
-                          {Object.values(oracle.subPopulations).flat().find((s: any) => s.name === selectedSubPop)?.topMarkers.map((marker: any, i: number) => (
+                          {(Object.values(oracleResults.subPopulations).flat() as any[]).find((s: any) => s.name === selectedSubPop)?.topMarkers.map((marker: any, i: number) => (
                             <div key={i} className="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-800 rounded text-xs">
                                 <span className="font-mono font-bold text-sky-700 dark:text-sky-400">{marker.rsid}</span>
-                                <span className="text-slate-600 dark:text-slate-400 truncate flex-1 mx-2">{marker.trait}</span>
+                                <span className="text-slate-600 dark:text-slate-300 truncate flex-1 mx-2">{marker.trait}</span>
                                 <span className="font-mono text-slate-900 dark:text-slate-100">{Number(marker.contribution).toFixed(2)}</span>
                             </div>
                           ))}
@@ -791,7 +848,7 @@ export default function App() {
                   
                   {/* Description Card */}
                   <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">About this lineage</h4>
+                    <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">About this lineage</h4>
                     <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                       {yData.predicted?.description || "This lineage is not yet in our database or has limited marker coverage."}
                     </p>
@@ -822,11 +879,11 @@ export default function App() {
                         <div key={i} className={`p-4 rounded-xl border ${m.isDerived ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-200 dark:border-blue-800' : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800'}`}>
                           <div className="flex justify-between items-center mb-1">
                             <span className="text-sm font-bold text-slate-900 dark:text-slate-100">{m.marker}</span>
-                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${m.isDerived ? 'bg-blue-500 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400'}`}>
+                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${m.isDerived ? 'bg-blue-500 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'}`}>
                               {m.isDerived ? 'Derived' : 'Ancestral'}
                             </span>
                           </div>
-                          <div className="text-[10px] text-slate-500 font-mono uppercase mb-2">{m.trait}</div>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase mb-2">{m.trait}</div>
                           <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 inline-block">
                             Genotype: {m.genotype}
                           </div>
@@ -860,8 +917,8 @@ export default function App() {
                       </>
                     ) : (
                       <div className="py-8">
-                        <h2 className="text-2xl font-bold text-slate-400">No specific mtDNA haplogroup detected</h2>
-                        <p className="text-slate-500 text-sm mt-2">This may be due to limited marker coverage on your DNA chip or a lineage not yet in our database.</p>
+                        <h2 className="text-2xl font-bold text-slate-400 dark:text-slate-300">No specific mtDNA haplogroup detected</h2>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">This may be due to limited marker coverage on your DNA chip or a lineage not yet in our database.</p>
                       </div>
                     )}
                   </div>
@@ -889,10 +946,10 @@ export default function App() {
                           <div key={i} className={`p-4 border-b border-slate-100 dark:border-slate-700/50 flex justify-between items-center ${m.status === 'derived' ? 'bg-rose-50/30 dark:bg-rose-900/10' : ''}`}>
                             <div>
                               <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{m.mutation}</div>
-                              <div className="text-[10px] text-slate-500 font-mono uppercase tracking-tighter">Position: {m.pos} · {m.ancestral}→{m.derived}</div>
+                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-tighter">Position: {m.pos} · {m.ancestral}→{m.derived}</div>
                             </div>
                             <div className="flex items-center gap-3">
-                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${m.status === 'derived' ? 'bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500'}`}>
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${m.status === 'derived' ? 'bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'}`}>
                                 {m.status}
                               </span>
                             </div>
