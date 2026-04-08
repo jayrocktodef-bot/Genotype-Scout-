@@ -1476,7 +1476,9 @@ export function parseRawDNA(text: string) {
     // Allow rsid or other marker names
     if (!markerId) continue; 
     
-    const chrom = parts[1].trim().toUpperCase();
+    let chrom = parts[1].trim().toUpperCase();
+    if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
+    
     const posStr = parts[2].trim();
     const pos = parseInt(posStr, 10);
     
@@ -1612,7 +1614,7 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       }
     }
       
-    return [{ ...snp, userGenotype: raw, interpretation, status: isMatched ? 'matched' : 'unmatched', chrom: meta?.chrom, pos: meta?.pos }];
+    return [{ ...snp, genotype: raw, interpretation, status: isMatched ? 'matched' : 'unmatched', chrom: meta?.chrom, pos: meta?.pos }];
   });
 }
 
@@ -1757,8 +1759,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   const userGenotype: Record<string, string> = {};
   results.forEach(r => {
     const rsid = (r.rsid || r.markerId).toLowerCase();
-    if (r.userGenotype && r.userGenotype !== '--') {
-      userGenotype[rsid] = r.userGenotype;
+    if (r.genotype && r.genotype !== '--') {
+      userGenotype[rsid] = r.genotype;
     }
   });
 
@@ -1849,7 +1851,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
 
     for (const marker of window) {
       const rsid = (marker.rsid || marker.markerId).toLowerCase();
-      const genotype = userGenotype[rsid] || marker.userGenotype;
+      const genotype = userGenotype[rsid] || marker.genotype;
       if (!genotype) continue;
 
       const alleles = marker.alleles;
@@ -1945,7 +1947,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
 
         for (const marker of window) {
           const rsid = (marker.rsid || marker.markerId).toLowerCase();
-          const genotype = userGenotype[rsid] || marker.userGenotype;
+          const genotype = userGenotype[rsid] || marker.genotype;
           if (!genotype) continue;
           let matchCount = 0;
           for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
@@ -2096,7 +2098,7 @@ export interface HaplogroupNode {
 
 export const Y_DNA_TREE: HaplogroupNode = {
   branchName: "Y-DNA Root (Adam)",
-  snp: ["M168"],
+  snp: [],
   children: [
     {
       branchName: "Haplogroup A",
