@@ -379,7 +379,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 1,
+    "weight": 2,
     "frequencies": {
       "AFR": 0.99,
       "EUR": 0.01,
@@ -407,22 +407,29 @@
     },
     "description": "UT-AIM250 Marker - European informative."
   },
-  {
+{
     "rsid": "rs3827760",
-    "region": "East Asian",
-    "alleles": [
-      "G"
-    ],
-    "weight": 1,
+    "region": "Asian",
+    "alleles": ["C"],
+    "weight": 5.0,
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "AMR": 0,
-      "SAS": 0,
-      "MENA": 0
+      "EUR": 0.02,
+      "EAS": 0.94,
+      "AMR": 0.15,
+      "SAS": 0.10,
+      "MENA": 0.05
     },
-    "description": "UT-AIM250 Marker - East Asian informative."
+    "subFrequencies": {
+      "Banjar": 0.85,
+      "Ma'anyan": 0.88,
+      "Merina": 0.45,
+      "Betsileo": 0.38
+    },
+    "description": "EDAR gene variant. High frequency in Austronesian groups; key for identifying the 'Highlander' Malagasy component.",
+    "gene": "EDAR",
+    "trait": "Hair Thickness/Dental Morphology",
+    "category": "Appearance"
   },
   {
     "rsid": "rs16891982",
@@ -498,7 +505,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 1,
+    "weight": 2,
     "frequencies": {
       "AFR": 0.95,
       "EUR": 0.01,
@@ -3490,7 +3497,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 1,
+    "weight": 2,
     "frequencies": {
       "AFR": 0.9,
       "EUR": 0.05,
@@ -4626,26 +4633,25 @@
   {
     "rsid": "rs2814778",
     "region": "African",
-    "alleles": [
-      "C"
-    ],
-    "weight": 4,
+    "alleles": ["C"],
+    "weight": 8.0,
     "frequencies": {
-      "AFR": 0.99,
+      "AFR": 0.98,
       "EUR": 0.01,
       "EAS": 0.01,
-      "AMR": 0.1,
+      "AMR": 0.10,
       "SAS": 0.01,
       "MENA": 0.05
     },
     "subFrequencies": {
-      "Yoruba": 0.99,
-      "Igbo": 0.98,
-      "Luhya": 0.95,
-      "Maasai": 0.85,
-      "Amhara": 0.35
+      "Coastal_Malagasy": 0.75,
+      "Highland_Malagasy": 0.35,
+      "Bantu_SE": 0.98
     },
-    "description": "Duffy Null Phenotype - highly prevalent in West Africa, provides resistance to P. vivax malaria."
+    "description": "Duffy Null Phenotype. Essential for tracking the Bantu contribution to the Malagasy gene pool.",
+    "gene": "ACKR1",
+    "trait": "Malaria Resistance",
+    "category": "Health"
   },
   {
     "rsid": "rs622682",
@@ -4948,18 +4954,25 @@
   },
   {
     "rsid": "rs1426654",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 4.5,
+    "region": "Asian",
+    "alleles": ["A"],
+    "weight": 4.0,
     "frequencies": {
       "AFR": 0.05,
       "EUR": 0.99,
-      "EAS": 0.05,
-      "AMR": 0.15
+      "EAS": 0.02,
+      "AMR": 0.20,
+      "SAS": 0.70,
+      "MENA": 0.80
     },
-    "description": "Ancestry Informative Marker for European populations."
+    "subFrequencies": {
+      "Banjar": 0.05,
+      "Merina": 0.15
+    },
+    "description": "SLC24A5 variant. Used here to distinguish between the 'pure' African and the admixed Malagasy profiles.",
+    "gene": "SLC24A5",
+    "trait": "Skin Pigmentation",
+    "category": "Appearance"
   },
   {
     "rsid": "rs16891982",
