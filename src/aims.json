@@ -12031,5 +12031,1804 @@
       "Quechua": 0.95
     },
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
+  },
+   {
+    "rsid": "rs6684372",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2649578",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs4342826",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10442708",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7554884",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7418014",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7548736",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs56168930",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10801952",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10900423",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2788252",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs3007210",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs12065033",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs12066494",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2483328",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs290829",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6429390",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6657624",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1220399",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs59459799",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7551243",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2997748",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs9428863",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs3100865",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2246829",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1385120",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs4839518",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs11121639",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs12240271",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1036001",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2132407",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs4839456",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs591001",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10888286",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs35338133",
+    "region": "African",
+    "alleles": [
+      "AGAGAGA"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2073017",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7524748",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs602507",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2487568",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10737801",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs11580984",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2131633",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6704425",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs3125685",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2651924",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7555426",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs3737720",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs683602",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs70937179",
+    "region": "African",
+    "alleles": [
+      "-"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1272959",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs137856800",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10754487",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2045519",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6702454",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2500308",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1926881",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs12076468",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6687840",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10864470",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2196537",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10902667",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10888793",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs12095724",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs11206168",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10921525",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs59289285",
+    "region": "African",
+    "alleles": [
+      "CCCCC"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1211184",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10888590",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs10908401",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1268339",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs61210877",
+    "region": "African",
+    "alleles": [
+      "-"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs628928",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1006310",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs155291",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs57399863",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs11426822",
+    "region": "African",
+    "alleles": [
+      "TTTT"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs61314084",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs61554547",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs11121643",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6698938",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7554059",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1240709",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs12029589",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs4971072",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs856847",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "description": "Fox Chase African AIM panel marker (Chr 1).",
+    "gene": "Unknown",
+    "trait": "African Ancestry Marker",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs11103339",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.01, "EUR": 0.98, "EAS": 0.01, "SAS": 0.01, "AMR": 0.02, "MENA": 0.01},
+    "subFrequencies": {"English": 0.99, "British": 0.95, "Scottish": 0.92, "Irish": 0.90},
+    "description": "English Ancestry Marker - informative for Anglo-Saxon and Germanic components in Britain."
+  },
+  {
+    "rsid": "rs11103353",
+    "region": "European",
+    "alleles": ["C"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.01, "EUR": 0.97, "EAS": 0.01, "SAS": 0.01, "AMR": 0.01, "MENA": 0.01},
+    "subFrequencies": {"English": 0.98, "British": 0.94, "German": 0.85},
+    "description": "English Ancestry Marker - informative for English populations."
+  },
+  {
+    "rsid": "rs10456193",
+    "region": "European",
+    "alleles": ["C"],
+    "weight": 4.0,
+    "frequencies": {"AFR": 0.01, "EUR": 0.97, "EAS": 0.00, "SAS": 0.01, "AMR": 0.05, "MENA": 0.02},
+    "subFrequencies": {"Irish": 0.99, "Western Irish": 0.95, "Scottish": 0.85, "Welsh": 0.80},
+    "description": "Irish Ancestry Marker - highly informative for Insular Celtic populations."
+  },
+  {
+    "rsid": "rs11103340",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 3.8,
+    "frequencies": {"AFR": 0.01, "EUR": 0.99, "EAS": 0.01, "SAS": 0.01, "AMR": 0.01, "MENA": 0.01},
+    "subFrequencies": {"Irish": 0.98, "Scottish": 0.92, "English": 0.80},
+    "description": "Irish Ancestry Marker - informative for Irish populations."
+  },
+  {
+    "rsid": "rs11103342",
+    "region": "European",
+    "alleles": ["C"],
+    "weight": 3.8,
+    "frequencies": {"AFR": 0.01, "EUR": 0.99, "EAS": 0.01, "SAS": 0.01, "AMR": 0.01, "MENA": 0.01},
+    "subFrequencies": {"Scottish": 0.99, "Irish": 0.90, "English": 0.85},
+    "description": "Scottish Ancestry Marker - informative for Scottish populations."
+  },
+  {
+    "rsid": "rs10456192",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 4.5,
+    "frequencies": {"AFR": 0.00, "EUR": 0.99, "EAS": 0.00, "SAS": 0.00, "AMR": 0.01, "MENA": 0.00},
+    "subFrequencies": {"Scottish Highland": 0.98, "Scottish": 0.90, "Irish": 0.70},
+    "description": "Scottish Highland Ancestry Marker - diagnostic for Gaelic-speaking populations of the Highlands."
+  },
+  {
+    "rsid": "rs11103331",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.02, "EUR": 0.98, "EAS": 0.01, "SAS": 0.01, "AMR": 0.20, "MENA": 0.05},
+    "subFrequencies": {"Spanish": 0.95, "Portuguese": 0.92, "Southern Spanish": 0.85, "Basque": 0.70},
+    "description": "Spanish Ancestry Marker - informative for Iberian populations."
+  },
+  {
+    "rsid": "rs1042602",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 3.2,
+    "frequencies": {"AFR": 0.01, "EUR": 0.82, "EAS": 0.01, "SAS": 0.05, "AMR": 0.10, "MENA": 0.35},
+    "subFrequencies": {"Spanish": 0.85, "Italian": 0.60, "Greek": 0.55},
+    "description": "Spanish Ancestry Marker - informative for Mediterranean European populations."
+  },
+  {
+    "rsid": "rs9000282",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4.0,
+    "frequencies": {"AFR": 0.01, "EUR": 0.87, "EAS": 0.08, "SAS": 0.01, "AMR": 0.02, "MENA": 0.01},
+    "subFrequencies": {"Slavic": 0.95, "Polish": 0.92, "Russian": 0.90, "Ukrainian": 0.88},
+    "description": "Slavic Ancestry Marker - informative for Balto-Slavic populations."
+  },
+  {
+    "rsid": "rs1129038",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.01, "EUR": 0.88, "EAS": 0.05, "SAS": 0.10, "AMR": 0.05, "MENA": 0.15},
+    "subFrequencies": {"Polish": 0.95, "Eastern Polish": 0.90, "Russian": 0.70},
+    "description": "Polish Ancestry Marker - informative for West Slavic populations."
+  },
+  {
+    "rsid": "rs1426657",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.02, "EUR": 0.91, "EAS": 0.15, "SAS": 0.10, "AMR": 0.05, "MENA": 0.20},
+    "subFrequencies": {"Russian": 0.95, "Northern Russian": 0.90, "Finnish": 0.40},
+    "description": "Russian Ancestry Marker - informative for East Slavic populations."
   }
 ]

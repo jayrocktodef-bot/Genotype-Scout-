@@ -11,7 +11,7 @@
 import { useState, useCallback, useRef, useEffect, useMemo, memo } from "react";
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
 import { jsPDF } from "jspdf";
 import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
@@ -56,7 +56,7 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
   const meta = (CATEGORY_META as any)[snp.category] || { color: "#0284c7", icon: "🧬" };
   
   return (
-    <div className={`p-4 rounded-xl border transition-all ${isExpanded ? 'bg-white dark:bg-slate-800 border-sky-500 shadow-md' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 shadow-sm'}`}>
+    <div className={`p-4 rounded-xl border transition-all ${snp.status === 'partial' ? 'border-amber-400 bg-amber-50/10' : ''} ${isExpanded ? 'bg-white dark:bg-slate-800 border-sky-500 shadow-md' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 shadow-sm'}`}>
       <div className="flex items-center justify-between gap-4 mb-2">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
@@ -69,6 +69,9 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
                 {snp.significance}
               </span>
             </div>
+            {snp.status === 'partial' && (
+              <div className="text-[9px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-tighter">Partial Match</div>
+            )}
             <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{snp.trait}</h4>
           </div>
         </div>
@@ -131,7 +134,7 @@ const AutosomalView = memo(({
   if (availableCategories.length === 0) return null;
   
   const total = filteredResults.length;
-  const matchedCount = filteredResults.filter(s => s.status === 'matched').length;
+  const matchedCount = filteredResults.filter(s => s.status === 'matched' || s.status === 'partial').length;
 
   return (
     <div className="animate-fade-up">
@@ -139,7 +142,7 @@ const AutosomalView = memo(({
         <span className="text-sm font-bold text-slate-900 dark:text-slate-100 mr-2 self-center">Matches:</span>
         {availableCategories.map(category => {
           const allSnpsInCategory = groupedCategories[category];
-          const matchedCount = allSnpsInCategory.filter(s => s.status === 'matched').length;
+          const matchedCount = allSnpsInCategory.filter(s => s.status === 'matched' || s.status === 'partial').length;
           const meta = (CATEGORY_META as any)[category] || { color: "#0284c7", icon: "🧬" };
           return (
             <div key={category} className="px-3 py-1 rounded-full text-xs font-bold border" style={{ borderColor: meta.color, color: meta.color, backgroundColor: `${meta.color}10` }}>
@@ -170,7 +173,7 @@ const AutosomalView = memo(({
         const isCollapsed = collapsedCategories.has(category);
         
         const total = allSnpsInCategory.length;
-        const matchedCount = allSnpsInCategory.filter(s => s.status === 'matched').length;
+        const matchedCount = allSnpsInCategory.filter(s => s.status === 'matched' || s.status === 'partial').length;
         
         return (
           <div key={category} className="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden mb-6">
@@ -247,6 +250,8 @@ const AutosomalView = memo(({
 });
 
 const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: { oracleResults: any, selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
+  const [activeOracle, setActiveOracle] = useState<'primary' | 'secondary'>('primary');
+
   if (!oracleResults) {
     return (
       <div className="mt-12 p-6 border-2 border-indigo-200 dark:border-indigo-800/50 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 shadow-sm">
@@ -256,8 +261,9 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
       </div>
     );
   }
-  
-  const { continentalScores, regionalScores, deepScores, subPopulations } = oracleResults;
+
+  const currentData = activeOracle === 'primary' ? oracleResults.primary : oracleResults.secondary;
+  const { continentalScores, subPopulations } = currentData;
   
   if (Object.keys(continentalScores).length === 0) {
     return (
@@ -269,54 +275,109 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
     );
   }
 
+  const pieData = Object.entries(continentalScores).map(([name, value]) => ({
+    name,
+    value: Number(value)
+  })).sort((a, b) => b.value - a.value);
+
   return (
     <div className="mt-12 p-6 border-2 border-indigo-200 dark:border-indigo-800/50 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 shadow-sm">
-      <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-400 mb-6">Ancestry Oracle Prediction</h2>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+        <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-400">Ancestry Oracle Prediction</h2>
+        
+        <div className="flex p-1 bg-indigo-100 dark:bg-indigo-900/40 rounded-lg border border-indigo-200 dark:border-indigo-800">
+          <div className="relative group">
+            <button 
+              onClick={() => { setActiveOracle('primary'); setSelectedSubPop(null); }}
+              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'primary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
+            >
+              Primary (Matched)
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
+              Uses only RSIDs from matched ancestry traits for high-confidence inference.
+              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
+            </div>
+          </div>
+          <div className="relative group">
+            <button 
+              onClick={() => { setActiveOracle('secondary'); setSelectedSubPop(null); }}
+              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'secondary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
+            >
+              Secondary (All Markers)
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
+              Uses all available AIMs and markers for a broader, exploratory analysis.
+              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-6 p-4 bg-white/50 dark:bg-slate-800/30 rounded-lg border border-indigo-100 dark:border-indigo-800/30 text-xs text-indigo-800 dark:text-indigo-300 leading-relaxed">
+        {activeOracle === 'primary' ? (
+          <p><strong>Primary Mode:</strong> Uses only RSIDs from matched ancestry traits for high-confidence inference based on your specific trait matches.</p>
+        ) : (
+          <p><strong>Secondary Mode:</strong> Uses all available AIMs (Ancestry Informative Markers) and markers in the database for a broader, more exploratory analysis.</p>
+        )}
+      </div>
       
       <div className="space-y-8">
         {/* Continental Admixture */}
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
           <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Continental Admixture</h3>
-          <div className="h-16 w-full mb-4">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart layout="vertical" data={[continentalScores]} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                <XAxis type="number" domain={[0, 100]} hide />
-                <YAxis type="category" dataKey="name" hide />
-                <Tooltip cursor={false} content={({ payload }) => {
-                  if (payload && payload.length) {
-                    return (
-                      <div className="bg-slate-800 p-2 rounded text-xs text-white shadow-xl">
-                        {payload.map((p: any) => (
-                          <div key={p.name} className="flex justify-between gap-4">
-                            <span style={{ color: p.fill }}>{p.name}:</span>
-                            <span className="font-mono">{(p.value as number).toFixed(1)}%</span>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="h-64 w-full md:w-1/2">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={pieData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={80}
+                    paddingAngle={5}
+                    dataKey="value"
+                  >
+                    {pieData.map((entry, index) => {
+                      const meta = CONTINENT_META[entry.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
+                      return <Cell key={`cell-${index}`} fill={meta.color} />;
+                    })}
+                  </Pie>
+                  <Tooltip 
+                    content={({ active, payload }) => {
+                      if (active && payload && payload.length) {
+                        const data = payload[0].payload;
+                        const meta = CONTINENT_META[data.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
+                        return (
+                          <div className="bg-slate-800 p-3 rounded-lg text-xs text-white shadow-xl border border-slate-700">
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
+                              <span className="font-bold">{data.name}</span>
+                            </div>
+                            <div className="font-mono text-lg">{(data.value as number).toFixed(1)}%</div>
                           </div>
-                        ))}
-                      </div>
-                    );
-                  }
-                  return null;
-                }} />
-                {Object.entries(continentalScores).map(([continent, percentage]) => {
-                  const meta = CONTINENT_META[continent as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
-                  return (
-                    <Bar key={continent} dataKey={continent} stackId="a" fill={meta.color} />
-                  );
-                })}
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {Object.entries(continentalScores).map(([continent, percentage]) => {
-              const meta = CONTINENT_META[continent as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
-              return (
-                <div key={continent} className="flex items-center gap-2 text-xs">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
-                  <span className="font-bold text-slate-700 dark:text-slate-300">{continent}</span>
-                  <span className="font-mono text-slate-500">{(percentage as number).toFixed(1)}%</span>
-                </div>
-              );
-            })}
+                        );
+                      }
+                      return null;
+                    }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full md:w-1/2">
+              {pieData.map((entry) => {
+                const meta = CONTINENT_META[entry.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
+                return (
+                  <div key={entry.name} className="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
+                      <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{entry.name}</span>
+                    </div>
+                    <span className="text-xs font-mono font-bold text-slate-500">{(entry.value as number).toFixed(1)}%</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -671,7 +732,7 @@ export default function App() {
   const filteredResults = useMemo(() => {
     if (!results) return [];
     return results.filter(r => 
-      r.status === statusFilter &&
+      (r.status === statusFilter || (statusFilter === 'matched' && r.status === 'partial')) &&
       (significanceFilter === 'all' || r.significance === significanceFilter) &&
       (continentFilter === 'all' || mapToRegion(r.continent) === continentFilter) &&
       (geneFilter === 'all' || r.gene === geneFilter) &&
@@ -694,13 +755,21 @@ export default function App() {
       datasets[activeDatasetIndex].predictedYDNA?.predicted?.continent,
       datasets[activeDatasetIndex].predictedMtDNA?.region
     );
-    const { continentalScores: rawContinentalScores, regionalScores, deepScores, subPopulations } = oracle;
-    const continentalScores = Object.entries(rawContinentalScores).reduce((acc: Record<string, number>, [continent, score]) => {
-      const region = mapToRegion(continent);
-      acc[region] = (acc[region] || 0) + (score as number);
-      return acc;
-    }, {});
-    return { continentalScores, regionalScores, deepScores, subPopulations };
+
+    const processOracle = (data: any) => {
+      const { continentalScores: rawContinentalScores, regionalScores, deepScores, subPopulations } = data;
+      const continentalScores = Object.entries(rawContinentalScores).reduce((acc: Record<string, number>, [continent, score]) => {
+        const region = mapToRegion(continent);
+        acc[region] = (acc[region] || 0) + (score as number);
+        return acc;
+      }, {});
+      return { continentalScores, regionalScores, deepScores, subPopulations };
+    };
+
+    return {
+      primary: processOracle(oracle.primary),
+      secondary: processOracle(oracle.secondary)
+    };
   }, [datasets, activeDatasetIndex]);
 
   return (
@@ -857,6 +926,33 @@ export default function App() {
       )}
       {results && (
         <div className="space-y-8">
+          <div className="flex flex-wrap gap-2 mb-4 overflow-x-auto scrollbar-hide pb-2 border-b border-slate-100 dark:border-slate-800">
+            <button 
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'autosomal' ? 'bg-sky-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
+              onClick={() => setActiveTab('autosomal')}
+            >
+              🧬 Autosomal DNA
+            </button>
+            <button 
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'oracle' ? 'bg-indigo-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
+              onClick={() => setActiveTab('oracle')}
+            >
+              🔮 Ancestry Oracle
+            </button>
+            <button 
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'y-dna' ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
+              onClick={() => setActiveTab('y-dna')}
+            >
+              ♂️ Y-DNA
+            </button>
+            <button 
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'mt-dna' ? 'bg-rose-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
+              onClick={() => setActiveTab('mt-dna')}
+            >
+              ♀️ mtDNA
+            </button>
+          </div>
+
           {datasets.length > 1 && (
             <div className="flex gap-2 mb-4">
               {datasets.map((d, i) => (
@@ -934,33 +1030,6 @@ export default function App() {
                 Export PDF
               </button>
             </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-8 overflow-x-auto scrollbar-hide">
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'autosomal' ? 'bg-sky-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('autosomal')}
-            >
-              🧬 Autosomal DNA
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'oracle' ? 'bg-indigo-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('oracle')}
-            >
-              🔮 Ancestry Oracle
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'y-dna' ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('y-dna')}
-            >
-              ♂️ Y-DNA
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'mt-dna' ? 'bg-rose-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('mt-dna')}
-            >
-              ♀️ mtDNA
-            </button>
           </div>
 
           {activeTab === 'autosomal' && (

@@ -1582,6 +1582,52 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       return [{ ...snp, status: 'not_tested' }];
     }
     
+    // Hierarchical Key-Value Matching system
+    const getNuancedInterpretation = (genotype: string, interpretations?: Record<string, string>) => {
+      if (!interpretations) return null;
+      
+      const normalizedGenotype = genotype.toUpperCase();
+      const sortedGenotype = genotype.split('').sort().join('').toUpperCase();
+      
+      // Level 1: Exact Match (Case-insensitive)
+      for (const [key, value] of Object.entries(interpretations)) {
+        if (key.toUpperCase() === normalizedGenotype) return value;
+      }
+      
+      // Level 2: Normalized/Sorted Match (for heterozygous SNPs)
+      if (genotype.length === 2) {
+        for (const [key, value] of Object.entries(interpretations)) {
+          const sortedKey = key.split('').sort().join('').toUpperCase();
+          if (sortedKey === sortedGenotype) return value;
+        }
+      }
+      
+      // Level 3: Wildcard/Pattern Matching (e.g., "A*", "*G", "A?")
+      for (const [key, value] of Object.entries(interpretations)) {
+        if (key.includes('*') || key.includes('?')) {
+          const pattern = key.replace(/\*/g, '.*').replace(/\?/g, '.');
+          const regex = new RegExp(`^${pattern}$`, 'i');
+          if (regex.test(genotype)) return `[Nuanced Match] ${value}`;
+        }
+      }
+      
+      // Level 4: Partial/Ambiguous Match (e.g., "A" matches "AA" or "AG")
+      if (genotype.length === 1) {
+        for (const [key, value] of Object.entries(interpretations)) {
+          if (key.toUpperCase().includes(normalizedGenotype)) {
+            return `[Partial Match: ${genotype} in ${key}] ${value}`;
+          }
+        }
+      }
+      
+      // Level 5: Default/Catch-all
+      if (interpretations['*'] || interpretations['default']) {
+        return interpretations['*'] || interpretations['default'];
+      }
+      
+      return null;
+    };
+
     // Count matches for the alleles of interest
     let matchCount = 0;
     for (const allele of snp.alleles) {
@@ -1590,14 +1636,10 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       }
     }
     
-    // Check for direct interpretation or reversed allele interpretation
-    let interpretation = snp.interpretations?.[raw];
-    if (!interpretation && snp.interpretations && raw.length === 2) {
-      const reversedRaw = raw[1] + raw[0];
-      interpretation = snp.interpretations[reversedRaw];
-    }
+    let interpretation = getNuancedInterpretation(raw, snp.interpretations);
     
     const isMatched = matchCount > 0 || !!interpretation;
+    const isPartial = !interpretation && matchCount > 0 && matchCount < 2 && raw.length === 2;
     
     if (!interpretation) {
       if (matchCount === 2) {
@@ -1608,13 +1650,17 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
         interpretation = `You do not carry the ${snp.alleles.join('/')} variant associated with this trait.`;
       }
       
+      if (isPartial) {
+        interpretation = `[Partial Match] ${interpretation}`;
+      }
+      
       // Incorporate more detailed medical or ancestry information from SNP_DB
       if (snp.description) {
         interpretation += ` ${snp.description}`;
       }
     }
       
-    return [{ ...snp, genotype: raw, interpretation, status: isMatched ? 'matched' : 'unmatched', chrom: meta?.chrom, pos: meta?.pos }];
+    return [{ ...snp, genotype: raw, interpretation, status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', chrom: meta?.chrom, pos: meta?.pos }];
   });
 }
 
@@ -1659,7 +1705,7 @@ function isSubpopMatch(snpSubpop: string, target: string) {
     'Central African': ['Cameroon', 'Congo', 'Pygmy', 'Bamoun', 'Fang', 'Kongo', 'Luba', 'Mongo', 'Bakongo', 'Baluba', 'Ovimbundu', 'Chokwe', 'Central African', 'DRC', 'Angola', 'Bamileke'],
     'Southern African': ['San', 'Khoisan', 'Khoe-San', 'Zulu', 'Xhosa', 'Sotho', 'Shona', 'Tsonga', 'Ndebele', 'Tswana', 'Venda', 'Lozi', 'Bemba', 'Tonga', 'Chewa', 'Yao', 'Makua', 'Southern African', 'Botswana', 'Zimbabwe', 'Namibia', 'Mozambique', 'Malawi', 'Zambia'],
     'North African': ['Berber', 'Moroccan', 'Algerian', 'Tunisian', 'Libyan', 'Egyptian', 'Maghreb', 'North African', 'Tuareg', 'Sahrawi'],
-    'European': ['British', 'Irish', 'French', 'German', 'Scandinavian', 'Italian', 'Spanish', 'Greek', 'Ashkenazi', 'Finnish', 'Eastern European', 'European', 'Belgian', 'Austrian', 'Swiss', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian', 'Serbian', 'Croatian', 'Slovenian', 'Albanian'],
+    'European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Scandinavian', 'Italian', 'Spanish', 'Greek', 'Ashkenazi', 'Finnish', 'Eastern European', 'European', 'Belgian', 'Austrian', 'Swiss', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian', 'Serbian', 'Croatian', 'Slovenian', 'Albanian', 'Slavic', 'Russian', 'Polish', 'Ukrainian', 'Belarusian'],
     'Middle Eastern': ['Bedouin', 'Assyrian', 'Druze', 'Palestinian', 'Jewish', 'Turkish', 'Iranian', 'Arab', 'Middle Eastern', 'Levantine', 'Anatolian', 'Mizrahi', 'Kurdish', 'Persian'],
     'East Asian': ['Han', 'Japanese', 'Korean', 'Vietnamese', 'Thai', 'Filipino', 'Malay', 'Indonesian', 'East Asian', 'Mongolian', 'Tibetan'],
     'South Asian': ['Indian', 'Pakistani', 'Bengali', 'Sri Lankan', 'Tamil', 'Punjabi', 'Gujarati', 'South Asian', 'Nepalese', 'Marathi', 'Malayali'],
@@ -1695,7 +1741,8 @@ function solveLeastSquares(
   genotypes: number[], 
   frequencies: number[][], // [marker][continent]
   weights: number[], // [marker]
-  iterations = 100
+  iterations = 100,
+  damping: number[] = [] // Optional damping factors per continent
 ): number[] {
   const numMarkers = genotypes.length;
   if (numMarkers === 0) return [];
@@ -1724,6 +1771,12 @@ function solveLeastSquares(
     // Update with gradient descent
     for (let i = 0; i < numContinents; i++) {
       proportions[i] -= (learningRate * gradients[i]) / numMarkers;
+      
+      // Apply damping if provided
+      if (damping[i] !== undefined) {
+        proportions[i] *= damping[i];
+      }
+
       if (proportions[i] < 0) proportions[i] = 0;
     }
 
@@ -1739,7 +1792,12 @@ function solveLeastSquares(
   return proportions;
 }
 
-export function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null) {
+function runAncestryInference(
+  allMarkers: any[],
+  userGenotype: Record<string, string>,
+  yHaploRegion?: string | null,
+  mtHaploRegion?: string | null
+) {
   const continentsToScore = [
     'African', 'European', 'East Asian', 'South Asian', 
     'Middle Eastern', 'Native American', 'Oceanian', 'North African'
@@ -1756,54 +1814,13 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     'Oceanian': 'OCE'
   };
 
-  const userGenotype: Record<string, string> = {};
-  results.forEach(r => {
-    const rsid = (r.rsid || r.markerId).toLowerCase();
-    if (r.genotype && r.genotype !== '--') {
-      userGenotype[rsid] = r.genotype;
-    }
-  });
-
   const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
-  // Explicitly include the requested West African markers in the heavy weight set
   const DOUBLE_WEIGHT_MARKERS = new Set([
-    "rs10456247", 
-    "rs10456249", 
-    "rs10456252", 
-    "rs10456256",
-    "rs10456243",
-    "rs10456244",
-    "rs10456245",
-    "rs10456257",
-    "rs10456259",
-    "rs10456260",
-    "rs10456261",
-    "rs10456262",
-    "rs10456263",
-    "rs10456265",
-    "rs10456266",
-    "rs10456267",
-    "rs10456268"
+    "rs10456247", "rs10456249", "rs10456252", "rs10456256", "rs10456243", "rs10456244", "rs10456245",
+    "rs10456257", "rs10456259", "rs10456260", "rs10456261", "rs10456262", "rs10456263", "rs10456265",
+    "rs10456266", "rs10456267", "rs10456268", "rs3827760", "rs2285644", "rs2814778", "rs334",
+    "rs1426654", "rs16891982", "rs1042602", "rs1800407", "rs12913832"
   ]);
-  
-  // 1. Collect all relevant markers with chrom/pos info
-  // Exclude Y-DNA and mtDNA markers from continental admixture as they are lineage-specific
-  const allMarkers = results
-    .filter(r => {
-      if (r.status === 'not_tested' || !r.chrom || r.pos === undefined) return false;
-      if (r.gene === 'Y-DNA' || r.gene === 'mtDNA') return false;
-      
-      const chrom = r.chrom.replace('chr', '').toUpperCase();
-      const n = parseInt(chrom);
-      // Only use autosomal markers (1-22) for continental admixture
-      return !isNaN(n) && n >= 1 && n <= 22;
-    })
-    .sort((a, b) => {
-      const nA = parseInt(a.chrom.replace('chr', ''));
-      const nB = parseInt(b.chrom.replace('chr', ''));
-      if (nA !== nB) return nA - nB;
-      return a.pos - b.pos;
-    });
 
   if (allMarkers.length === 0) {
     return { continentalScores: {}, regionalScores: {}, deepScores: {}, continents: [], subPopulations: {}, subPopMarkers: {}, confidenceScore: 0 };
@@ -1811,7 +1828,6 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
 
   // 2. Segment-Based Continental Analysis (Windowing)
   const WINDOW_SIZE = 40; // SNPs per window
-  const windowAssignments: string[] = [];
   const continentalCounts: Record<string, number> = {};
   continentsToScore.forEach(c => continentalCounts[c] = 0);
 
@@ -1866,7 +1882,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
       const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
 
       for (const continent of continentsToScore) {
-        let freq = 0.01; // Lower default for non-matching continents to increase discrimination
+        let freq = 0.01; 
         const code = CONTINENT_TO_CODE[continent];
 
         if (aim && aim.frequencies) {
@@ -1896,15 +1912,25 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
       windowFrequencies.push(markerFreqs);
 
       const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-      const isNamedPop = !!marker.subpop || !!aim?.subFrequencies;
-      const weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
+      const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
+      let weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
+      
+      const oceFreq = aim?.frequencies?.OCE || marker.frequencies?.OCE || 0;
+      const easFreq = aim?.frequencies?.EAS || marker.frequencies?.EAS || 0;
+      
+      if (matchesContinent(marker.continent, 'Oceanian')) {
+        if (oceFreq > easFreq) {
+          weightMultiplier *= 0.01; 
+        } else {
+          weightMultiplier *= 1.0; 
+        }
+      }
       
       let effectiveSignificance = marker.significance;
       if (isNamedPop) effectiveSignificance = 'High';
       
       let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
       
-      // Extra boost for High significance African markers (Increased to 4.0x for total weight of 8.0)
       if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
         significanceWeight *= 4.0;
       }
@@ -1913,31 +1939,23 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
       windowWeights.push(weight);
     }
 
-    // Solve Least Squares for this window
-    const windowProportions = solveLeastSquares(windowGenotypes, windowFrequencies, windowWeights);
+    const damping = new Array(continentsToScore.length).fill(1.0);
+    const oceIndex = continentsToScore.indexOf('Oceanian');
+    if (oceIndex !== -1) {
+      damping[oceIndex] = 0.4; 
+    }
+
+    const windowProportions = solveLeastSquares(windowGenotypes, windowFrequencies, windowWeights, 100, damping);
     
     if (windowProportions.length > 0) {
       windowProportions.forEach((prob, i) => {
         const continent = continentsToScore[i];
         continentalCounts[continent] += prob;
       });
-      
-      // For the segment map, we pick the top one
-      let maxProb = -1;
-      let topContinent = continentsToScore[0];
-      windowProportions.forEach((p, i) => {
-        if (p > maxProb) {
-          maxProb = p;
-          topContinent = continentsToScore[i];
-        }
-      });
-      windowAssignments.push(topContinent);
     }
 
-    // 3. Sub-population analysis - contribute to ALL continents
     for (const continent of continentsToScore) {
       if (!subPopLogL[continent]) subPopLogL[continent] = {};
-      
       const continentSubpops = continentSubpopsMap[continent] || [];
 
       for (const sp of continentSubpops) {
@@ -1946,6 +1964,9 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
         }
 
         for (const marker of window) {
+          // Skip general phenotype markers for subpopulation calculations
+          if (marker.subpop?.toLowerCase() === 'general') continue;
+
           const rsid = (marker.rsid || marker.markerId).toLowerCase();
           const genotype = userGenotype[rsid] || marker.genotype;
           if (!genotype) continue;
@@ -1963,37 +1984,29 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
             freq = 0.8;
             subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0, genotype });
           } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
-            // Fallback to continental frequency for sub-populations in that continent
             freq = aim.frequencies[code];
           } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
             freq = marker.frequencies[code];
           } else if (matchesContinent(marker.continent, continent)) {
-            freq = 0.5; // Neutral fallback if we know it's the right continent but don't have exact freq
+            freq = 0.5;
           }
 
           const f = Math.max(0.001, Math.min(0.999, freq));
-          const isNamedPop = !!marker.subpop || !!aim?.subFrequencies;
+          const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
           const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-          
-          // Named populations get 3.0x weight multiplier as requested
           const weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
           
-          // We also treat them as 'High' significance
           let effectiveSignificance = marker.significance;
           if (isNamedPop) effectiveSignificance = 'High';
-          
           let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
           
           const regionalMultiplier = isNamedPop ? 3.0 : 1.0;
           let weight = (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight;
           
-          // Extra boost for High significance African markers (Increased to 4.0x for total weight of 8.0)
           if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
             weight *= 4.0;
           }
 
-          // Least Squares approach for sub-populations: minimize squared error
-          // We subtract the error to make it a score (higher is better)
           const error = (matchCount / 2) - f;
           subPopLogL[continent][sp] -= weight * (error * error);
         }
@@ -2001,12 +2014,11 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     }
   }
 
-  // 4. Aggregate and Re-normalize Continental Scores
   const applyHaploWeight = (regionStr: string | null | undefined) => {
     if (!regionStr) return;
     continentsToScore.forEach(continent => {
       if (regionStr.includes(continent)) {
-        continentalCounts[continent] = (continentalCounts[continent] || 0) + 1.5; // Virtual segments for haplogroups
+        continentalCounts[continent] = (continentalCounts[continent] || 0) + 1.5;
       }
     });
   };
@@ -2022,7 +2034,6 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     });
   }
 
-  // 5. Aggregate Sub-populations
   const subPopulations: Record<string, any[]> = {};
   for (const continent of Object.keys(subPopLogL)) {
     const subProbs = Object.entries(subPopLogL[continent])
@@ -2056,34 +2067,115 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     }
   }
 
-  // 6. Final Filtering and Normalization
   const filteredContinental = Object.entries(continentalScores).filter(([_, p]) => p > 0);
   const totalFiltered = filteredContinental.reduce((s, [_, p]) => s + p, 0);
   const normalizedContinental: Record<string, number> = {};
   if (totalFiltered > 0) {
-    filteredContinental.forEach(([c, p]) => normalizedContinental[c] = (p / totalFiltered) * 100);
+    filteredContinental.forEach(([c, p]) => {
+      normalizedContinental[c] = (p / totalFiltered) * 100;
+    });
   }
 
-  const oracleResults = Object.entries(normalizedContinental)
-    .map(([continent, percentage]) => ({ continent, percentage }))
-    .sort((a, b) => b.percentage - a.percentage);
+  return { 
+    continentalScores: normalizedContinental, 
+    regionalScores: {}, 
+    deepScores: {}, 
+    continents: Object.keys(normalizedContinental), 
+    subPopulations, 
+    subPopMarkers, 
+    confidenceScore: 0 
+  };
+}
 
-  const regionalScores: Record<string, number> = {};
-  Object.entries(subPopulations).forEach(([continent, pops]) => {
-    const contProb = (normalizedContinental[continent] || 0) / 100;
-    pops.forEach(p => {
-      regionalScores[p.name] = (regionalScores[p.name] || 0) + (p.percentage * contProb);
-    });
+export function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null) {
+  const continentsToScore = [
+    'African', 'European', 'East Asian', 'South Asian', 
+    'Middle Eastern', 'Native American', 'Oceanian', 'North African'
+  ];
+
+  const CONTINENT_TO_CODE: Record<string, string> = {
+    'African': 'AFR',
+    'European': 'EUR',
+    'East Asian': 'EAS',
+    'Native American': 'AMR',
+    'South Asian': 'SAS',
+    'Middle Eastern': 'MENA',
+    'North African': 'NAFR',
+    'Oceanian': 'OCE'
+  };
+
+  const userGenotype: Record<string, string> = {};
+  results.forEach(r => {
+    const rsid = (r.rsid || r.markerId).toLowerCase();
+    if (r.genotype && r.genotype !== '--') {
+      userGenotype[rsid] = r.genotype;
+    }
   });
 
+  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
+  // Explicitly include the requested West African markers in the heavy weight set
+  const DOUBLE_WEIGHT_MARKERS = new Set([
+    "rs10456247", 
+    "rs10456249", 
+    "rs10456252", 
+    "rs10456256",
+    "rs10456243",
+    "rs10456244",
+    "rs10456245",
+    "rs10456257",
+    "rs10456259",
+    "rs10456260",
+    "rs10456261",
+    "rs10456262",
+    "rs10456263",
+    "rs10456265",
+    "rs10456266",
+    "rs10456267",
+    "rs10456268",
+    "rs3827760",
+    "rs2285644",
+    "rs2814778",
+    "rs334",
+    "rs1426654",
+    "rs16891982",
+    "rs1042602",
+    "rs1800407",
+    "rs12913832"
+  ]);
+  
+  const isAutosomal = (r: any) => {
+    if (r.status === 'not_tested' || !r.chrom || r.pos === undefined) return false;
+    if (r.gene === 'Y-DNA' || r.gene === 'mtDNA') return false;
+    const chrom = r.chrom.replace('chr', '').toUpperCase();
+    const n = parseInt(chrom);
+    return !isNaN(n) && n >= 1 && n <= 22;
+  };
+
+  const sortMarkers = (markers: any[]) => {
+    return [...markers].sort((a, b) => {
+      const nA = parseInt(a.chrom.replace('chr', ''));
+      const nB = parseInt(b.chrom.replace('chr', ''));
+      if (nA !== nB) return nA - nB;
+      return a.pos - b.pos;
+    });
+  };
+
+  // Primary: Only use rsid from matched ancestry traits
+  const primaryMarkers = sortMarkers(results.filter(r => 
+    isAutosomal(r) && 
+    r.category === 'Ancestry' && 
+    r.status === 'matched'
+  ));
+
+  // Secondary: Use all aims and markers
+  const secondaryMarkers = sortMarkers(results.filter(r => 
+    isAutosomal(r) && 
+    (anchorRsids.has((r.rsid || r.markerId).toLowerCase()) || r.category === 'Ancestry' || r.category === 'Health')
+  ));
+
   return {
-    continentalScores: normalizedContinental,
-    regionalScores,
-    deepScores: regionalScores,
-    continents: oracleResults,
-    subPopulations,
-    subPopMarkers,
-    confidenceScore: Math.min(100, Math.round((allMarkers.length / 400) * 100))
+    primary: runAncestryInference(primaryMarkers, userGenotype, yHaploRegion, mtHaploRegion),
+    secondary: runAncestryInference(secondaryMarkers, userGenotype, yHaploRegion, mtHaploRegion)
   };
 }
 
