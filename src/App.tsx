@@ -752,30 +752,86 @@ export default function App() {
     setActiveDatasetIndex(0);
   };
 
-  const processFile = useCallback((file: File) => {
+  const processFiles = useCallback(async (files: FileList) => {
     setProcessing(true);
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      setTimeout(() => {
-        const text = e.target?.result as string;
-        const { snpMap, snpMetaMap, chip, snpCount, yMap, mtMap } = parseRawDNA(text);
-        
-        // Store snpMap in ref for potential recalculation
-        const newIndex = datasets.length;
-        snpMaps.current[newIndex] = snpMap;
+    
+    const parsedFiles = await Promise.all(Array.from(files).map(file => {
+      return new Promise<{ 
+        snpMap: Record<string, string>, 
+        snpMetaMap: Record<string, { chrom: string, pos: number }>, 
+        chip: string, 
+        snpCount: number, 
+        yMap: Record<string, string>, 
+        mtMap: Record<string, string>,
+        name: string
+      }>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const text = e.target?.result as string;
+          resolve({ ...parseRawDNA(text), name: file.name });
+        };
+        reader.readAsText(file);
+      });
+    }));
 
-        updateDatasets({ 
-          name: file.name, 
-          results: matchSNPs(snpMap, snpMetaMap),
-          chip,
-          snpCount,
-          predictedYDNA: predictYDNAHaplogroup(yMap, Y_DNA_TREE),
-          predictedMtDNA: analyzeMtDNA(mtMap)
-        });
-        setProcessing(false);
-      }, 100);
-    };
-    reader.readAsText(file);
+    if (parsedFiles.length === 0) {
+      setProcessing(false);
+      return;
+    }
+
+    let mergedSnpMap: Record<string, string> = {};
+    let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
+    let mergedYMap: Record<string, string> = {};
+    let mergedMtMap: Record<string, string> = {};
+    let chips: string[] = [];
+    let names: string[] = [];
+
+    parsedFiles.forEach(pf => {
+      names.push(pf.name);
+      if (pf.chip && pf.chip !== "Unknown Chip") {
+        chips.push(pf.chip);
+      }
+      
+      // Merge SNP Map
+      Object.entries(pf.snpMap).forEach(([rsid, genotype]) => {
+        // If we have a conflict, prefer the longer genotype (e.g. "AG" over "A")
+        // or just keep the first one if they are the same length
+        if (!mergedSnpMap[rsid] || mergedSnpMap[rsid].length < genotype.length) {
+          mergedSnpMap[rsid] = genotype;
+        }
+      });
+
+      // Merge Meta Map
+      Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
+      
+      // Merge Y Map
+      Object.entries(pf.yMap).forEach(([rsid, genotype]) => {
+        if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
+          mergedYMap[rsid] = genotype;
+        }
+      });
+
+      // Merge MT Map
+      Object.assign(mergedMtMap, pf.mtMap);
+    });
+
+    const uniqueSnps = Object.keys(mergedSnpMap).length;
+    const mergedName = parsedFiles.length > 1 ? `Merged Kit (${parsedFiles.length} files)` : parsedFiles[0].name;
+    const mergedChip = chips.length > 0 ? Array.from(new Set(chips)).join(" + ") : "Unknown Chip";
+
+    const newIndex = datasets.length;
+    snpMaps.current[newIndex] = mergedSnpMap;
+
+    updateDatasets({ 
+      name: mergedName, 
+      results: matchSNPs(mergedSnpMap, mergedSnpMetaMap),
+      chip: mergedChip,
+      snpCount: uniqueSnps,
+      predictedYDNA: predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE),
+      predictedMtDNA: analyzeMtDNA(mergedMtMap)
+    });
+    
+    setProcessing(false);
   }, [datasets]);
 
   const results = datasets.length > 0 ? datasets[activeDatasetIndex].results : null;
@@ -907,11 +963,11 @@ export default function App() {
             onClick={() => fileRef.current?.click()}
             onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
             onDragLeave={() => setDragging(false)}
-            onDrop={(e) => { e.preventDefault(); setDragging(false); processFile(e.dataTransfer.files[0]); }}
+            onDrop={(e) => { e.preventDefault(); setDragging(false); processFiles(e.dataTransfer.files); }}
           >
-            <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" onChange={(e) => e.target.files && processFile(e.target.files[0])} />
+            <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => e.target.files && processFiles(e.target.files)} />
             <div className="text-5xl mb-4">🧬</div>
-            <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Drop your raw DNA file (CSV/TXT) here</div>
+            <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Drop your raw DNA file(s) (CSV/TXT) here</div>
             <div className="text-slate-600 dark:text-slate-400 text-sm font-mono">or click to browse · analysis runs entirely in your browser</div>
           </div>
 
