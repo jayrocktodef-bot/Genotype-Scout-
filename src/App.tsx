@@ -960,20 +960,45 @@ export default function App() {
               <strong> Your data never leaves your computer; all processing happens locally in your browser.</strong>
             </p>
           </div>
-          <div
-            className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-16 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-sky-500 bg-sky-50 dark:bg-sky-900/20" : "hover:border-sky-500"}`}
-            onClick={() => fileRef.current?.click()}
-            onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
-            onDragLeave={() => setDragging(false)}
-            onDrop={(e) => { e.preventDefault(); setDragging(false); setPendingFiles(Array.from(e.dataTransfer.files)); }}
-          >
-            <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => e.target.files && setPendingFiles(Array.from(e.target.files))} />
-            <div className="text-5xl mb-4">🧬</div>
-            <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
-              {pendingFiles.length > 0 ? `${pendingFiles.length} file(s) selected` : "Drop your raw DNA file(s) (CSV/TXT) here"}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-sky-500 bg-sky-50 dark:bg-sky-900/20" : "hover:border-sky-500"}`}
+              onClick={() => fileRef.current?.click()}
+              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+              onDragLeave={() => setDragging(false)}
+              onDrop={(e) => { 
+                e.preventDefault(); 
+                setDragging(false); 
+                const newFiles = Array.from(e.dataTransfer.files);
+                setPendingFiles(prev => [...prev, ...newFiles]);
+              }}
+            >
+              <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => {
+                if (e.target.files) {
+                  const newFiles = Array.from(e.target.files);
+                  setPendingFiles(prev => [...prev, ...newFiles]);
+                }
+              }} />
+              <div className="text-4xl mb-3">🧬</div>
+              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Primary DNA Kit</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs">Drop your main file here or click to browse</div>
             </div>
-            <div className="text-slate-600 dark:text-slate-400 text-sm font-mono">
-              {pendingFiles.length > 0 ? "Click to change selection or use the button below to start" : "or click to browse · analysis runs entirely in your browser"}
+
+            <div
+              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20" : "hover:border-indigo-500"}`}
+              onClick={() => fileRef.current?.click()}
+              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+              onDragLeave={() => setDragging(false)}
+              onDrop={(e) => { 
+                e.preventDefault(); 
+                setDragging(false); 
+                const newFiles = Array.from(e.dataTransfer.files);
+                setPendingFiles(prev => [...prev, ...newFiles]);
+              }}
+            >
+              <div className="text-4xl mb-3">➕</div>
+              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Additional Kit</div>
+              <div className="text-slate-500 dark:text-slate-400 text-xs">Add another file to merge for better accuracy</div>
             </div>
           </div>
 
