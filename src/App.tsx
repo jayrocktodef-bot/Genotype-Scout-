@@ -658,6 +658,7 @@ export default function App() {
   const [explorerSearch, setExplorerSearch] = useState<string>('');
   const [processing, setProcessing] = useState(false);
   const [dragging, setDragging] = useState(false);
+  const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   const [selectedSubPop, setSelectedSubPop] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -752,10 +753,11 @@ export default function App() {
     setActiveDatasetIndex(0);
   };
 
-  const processFiles = useCallback(async (files: FileList) => {
+  const processFiles = useCallback(async (files: FileList | File[]) => {
     setProcessing(true);
+    const fileArray = Array.isArray(files) ? files : Array.from(files);
     
-    const parsedFiles = await Promise.all(Array.from(files).map(file => {
+    const parsedFiles = await Promise.all(fileArray.map(file => {
       return new Promise<{ 
         snpMap: Record<string, string>, 
         snpMetaMap: Record<string, { chrom: string, pos: number }>, 
@@ -963,13 +965,46 @@ export default function App() {
             onClick={() => fileRef.current?.click()}
             onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
             onDragLeave={() => setDragging(false)}
-            onDrop={(e) => { e.preventDefault(); setDragging(false); processFiles(e.dataTransfer.files); }}
+            onDrop={(e) => { e.preventDefault(); setDragging(false); setPendingFiles(Array.from(e.dataTransfer.files)); }}
           >
-            <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => e.target.files && processFiles(e.target.files)} />
+            <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => e.target.files && setPendingFiles(Array.from(e.target.files))} />
             <div className="text-5xl mb-4">🧬</div>
-            <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">Drop your raw DNA file(s) (CSV/TXT) here</div>
-            <div className="text-slate-600 dark:text-slate-400 text-sm font-mono">or click to browse · analysis runs entirely in your browser</div>
+            <div className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+              {pendingFiles.length > 0 ? `${pendingFiles.length} file(s) selected` : "Drop your raw DNA file(s) (CSV/TXT) here"}
+            </div>
+            <div className="text-slate-600 dark:text-slate-400 text-sm font-mono">
+              {pendingFiles.length > 0 ? "Click to change selection or use the button below to start" : "or click to browse · analysis runs entirely in your browser"}
+            </div>
           </div>
+
+          {pendingFiles.length > 0 && (
+            <div className="mt-6 flex flex-col items-center animate-fade-in">
+              <div className="flex flex-wrap gap-2 mb-4 justify-center">
+                {pendingFiles.map((f, i) => (
+                  <div key={i} className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+                    {f.name}
+                  </div>
+                ))}
+              </div>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  processFiles(pendingFiles);
+                  setPendingFiles([]);
+                }}
+                className="px-8 py-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold shadow-lg shadow-sky-200 dark:shadow-none transition-all hover:scale-105 active:scale-95 flex items-center gap-3"
+              >
+                <span className="text-xl">🚀</span>
+                Analyze {pendingFiles.length} Kit{pendingFiles.length > 1 ? 's' : ''}
+              </button>
+              <button 
+                onClick={() => setPendingFiles([])}
+                className="mt-4 text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+              >
+                Clear Selection
+              </button>
+            </div>
+          )}
 
           <div className="mt-12">
             <div className="flex items-center justify-between mb-4">
