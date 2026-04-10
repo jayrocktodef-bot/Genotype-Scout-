@@ -440,9 +440,24 @@ const YDNAView = memo(({ yData }: { yData: any }) => {
             {yData.predicted ? (
               <>
                 <h2 className="text-5xl font-black mb-4 tracking-tighter">Haplogroup {yData.predicted.name}</h2>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 mb-6">
                   <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Marker: {yData.predicted.marker}</span>
                   <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Region: {yData.predicted.continent}</span>
+                </div>
+                
+                {/* Lineage Path Highlight */}
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <h4 className="text-[10px] font-bold text-blue-200 uppercase tracking-widest mb-3">Predicted Paternal Path</h4>
+                  <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
+                    {yData.path.map((step: string, idx: number) => (
+                      <div key={idx} className="flex items-center gap-1">
+                        {idx > 0 && <span className="text-blue-300/50 text-[10px]">▶</span>}
+                        <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === yData.path.length - 1 ? 'bg-white text-blue-700 shadow-lg' : 'bg-white/10 text-white'}`}>
+                          {step.replace("Haplogroup ", "")}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </>
             ) : (
@@ -452,11 +467,31 @@ const YDNAView = memo(({ yData }: { yData: any }) => {
         </div>
         
         {/* Description Card */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-          <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">About this lineage</h4>
-          <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            {yData.predicted?.description || "This lineage is not yet in our database or has limited marker coverage."}
-          </p>
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+          <div>
+            <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">About this lineage</h4>
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              {yData.predicted?.description || "This lineage is not yet in our database or has limited marker coverage."}
+            </p>
+          </div>
+          
+          {yData.predicted && (
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/50">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-xl">🧬</span>
+                <div className="text-xs font-bold text-blue-900 dark:text-blue-300">Match Confidence</div>
+              </div>
+              <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-1.5 mb-1">
+                <div 
+                  className="bg-blue-600 h-1.5 rounded-full" 
+                  style={{ width: `${Math.min(100, (yData.testedMarkers.filter((m: any) => m.isDerived).length / 5) * 100)}%` }}
+                ></div>
+              </div>
+              <div className="text-[10px] text-blue-600 dark:text-blue-400 font-bold">
+                {yData.testedMarkers.filter((m: any) => m.isDerived).length} derived markers found
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -527,7 +562,23 @@ const MTDNAView = memo(({ mtData }: { mtData: any }) => {
                 <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-bold shadow-sm">Confidence Score: {mtData.score}</span>
                 <span className="px-3 py-1 bg-white dark:bg-slate-800 text-rose-700 dark:text-rose-300 rounded-full text-xs font-bold border border-rose-200 dark:border-rose-800 shadow-sm">Region: {mtData.region}</span>
               </div>
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">{mtData.description}</p>
+              
+              {/* Lineage Path Highlight */}
+              <div className="mt-6 pt-6 border-t border-rose-200 dark:border-rose-800/50">
+                <h4 className="text-[10px] font-bold text-rose-800 dark:text-rose-400 uppercase tracking-widest mb-3">Predicted Maternal Path</h4>
+                <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
+                  {mtData.path.map((step: string, idx: number) => (
+                    <div key={idx} className="flex items-center gap-1">
+                      {idx > 0 && <span className="text-rose-400/50 text-[10px]">▶</span>}
+                      <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === mtData.path.length - 1 ? 'bg-rose-600 text-white shadow-lg' : 'bg-rose-100 dark:bg-rose-900 text-rose-800 dark:text-rose-300'}`}>
+                        {step.replace("Haplogroup ", "")}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mt-6">{mtData.description}</p>
             </>
           ) : (
             <div className="py-8">
