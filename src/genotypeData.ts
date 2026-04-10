@@ -1558,6 +1558,14 @@ export function parseRawDNA(text: string) {
     else chip = `${format} Raw Data`;
   }
 
+  if (snpCount > 0 && Object.keys(snpMap).length === 0) {
+    throw new Error("No valid DNA data found in the file. Please ensure it's a supported raw DNA format (23andMe, AncestryDNA, MyHeritage, etc.).");
+  }
+
+  if (snpCount === 0) {
+    throw new Error("The file appears to be empty or not a supported text format.");
+  }
+
   return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };
 }
 

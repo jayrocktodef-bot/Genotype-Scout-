@@ -659,6 +659,7 @@ export default function App() {
   const [processing, setProcessing] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const [selectedSubPop, setSelectedSubPop] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -755,85 +756,96 @@ export default function App() {
 
   const processFiles = useCallback(async (files: FileList | File[]) => {
     setProcessing(true);
+    setError(null);
     const fileArray = Array.isArray(files) ? files : Array.from(files);
     
-    const parsedFiles = await Promise.all(fileArray.map(file => {
-      return new Promise<{ 
-        snpMap: Record<string, string>, 
-        snpMetaMap: Record<string, { chrom: string, pos: number }>, 
-        chip: string, 
-        snpCount: number, 
-        yMap: Record<string, string>, 
-        mtMap: Record<string, string>,
-        name: string
-      }>((resolve) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const text = e.target?.result as string;
-          resolve({ ...parseRawDNA(text), name: file.name });
-        };
-        reader.readAsText(file);
-      });
-    }));
+    try {
+      const parsedFiles = await Promise.all(fileArray.map(file => {
+        return new Promise<{ 
+          snpMap: Record<string, string>, 
+          snpMetaMap: Record<string, { chrom: string, pos: number }>, 
+          chip: string, 
+          snpCount: number, 
+          yMap: Record<string, string>, 
+          mtMap: Record<string, string>,
+          name: string
+        }>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const text = e.target?.result as string;
+              resolve({ ...parseRawDNA(text), name: file.name });
+            } catch (err) {
+              reject(new Error(`Error parsing ${file.name}: ${err instanceof Error ? err.message : 'Unknown error'}`));
+            }
+          };
+          reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
+          reader.readAsText(file);
+        });
+      }));
 
-    if (parsedFiles.length === 0) {
-      setProcessing(false);
-      return;
-    }
-
-    let mergedSnpMap: Record<string, string> = {};
-    let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
-    let mergedYMap: Record<string, string> = {};
-    let mergedMtMap: Record<string, string> = {};
-    let chips: string[] = [];
-    let names: string[] = [];
-
-    parsedFiles.forEach(pf => {
-      names.push(pf.name);
-      if (pf.chip && pf.chip !== "Unknown Chip") {
-        chips.push(pf.chip);
+      if (parsedFiles.length === 0) {
+        setProcessing(false);
+        return;
       }
-      
-      // Merge SNP Map
-      Object.entries(pf.snpMap).forEach(([rsid, genotype]) => {
-        // If we have a conflict, prefer the longer genotype (e.g. "AG" over "A")
-        // or just keep the first one if they are the same length
-        if (!mergedSnpMap[rsid] || mergedSnpMap[rsid].length < genotype.length) {
-          mergedSnpMap[rsid] = genotype;
+
+      let mergedSnpMap: Record<string, string> = {};
+      let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
+      let mergedYMap: Record<string, string> = {};
+      let mergedMtMap: Record<string, string> = {};
+      let chips: string[] = [];
+      let names: string[] = [];
+
+      parsedFiles.forEach(pf => {
+        names.push(pf.name);
+        if (pf.chip && pf.chip !== "Unknown Chip") {
+          chips.push(pf.chip);
         }
+        
+        // Merge SNP Map
+        Object.entries(pf.snpMap).forEach(([rsid, genotype]) => {
+          if (!mergedSnpMap[rsid] || mergedSnpMap[rsid].length < genotype.length) {
+            mergedSnpMap[rsid] = genotype;
+          }
+        });
+
+        // Merge Meta Map
+        Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
+        
+        // Merge Y Map
+        Object.entries(pf.yMap).forEach(([rsid, genotype]) => {
+          if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
+            mergedYMap[rsid] = genotype;
+          }
+        });
+
+        // Merge MT Map
+        Object.assign(mergedMtMap, pf.mtMap);
       });
 
-      // Merge Meta Map
-      Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
-      
-      // Merge Y Map
-      Object.entries(pf.yMap).forEach(([rsid, genotype]) => {
-        if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
-          mergedYMap[rsid] = genotype;
-        }
+      const uniqueSnps = Object.keys(mergedSnpMap).length;
+      const mergedName = parsedFiles.length > 1 ? `Merged Kit (${parsedFiles.length} files)` : parsedFiles[0].name;
+      const mergedChip = chips.length > 0 ? Array.from(new Set(chips)).join(" + ") : "Unknown Chip";
+
+      const newIndex = datasets.length;
+      snpMaps.current[newIndex] = mergedSnpMap;
+
+      updateDatasets({ 
+        name: mergedName, 
+        results: matchSNPs(mergedSnpMap, mergedSnpMetaMap),
+        chip: mergedChip,
+        snpCount: uniqueSnps,
+        predictedYDNA: predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE),
+        predictedMtDNA: analyzeMtDNA(mergedMtMap)
       });
-
-      // Merge MT Map
-      Object.assign(mergedMtMap, pf.mtMap);
-    });
-
-    const uniqueSnps = Object.keys(mergedSnpMap).length;
-    const mergedName = parsedFiles.length > 1 ? `Merged Kit (${parsedFiles.length} files)` : parsedFiles[0].name;
-    const mergedChip = chips.length > 0 ? Array.from(new Set(chips)).join(" + ") : "Unknown Chip";
-
-    const newIndex = datasets.length;
-    snpMaps.current[newIndex] = mergedSnpMap;
-
-    updateDatasets({ 
-      name: mergedName, 
-      results: matchSNPs(mergedSnpMap, mergedSnpMetaMap),
-      chip: mergedChip,
-      snpCount: uniqueSnps,
-      predictedYDNA: predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE),
-      predictedMtDNA: analyzeMtDNA(mergedMtMap)
-    });
-    
-    setProcessing(false);
+      
+      setPendingFiles([]);
+    } catch (err) {
+      console.error("Processing error:", err);
+      setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
+    } finally {
+      setProcessing(false);
+    }
   }, [datasets]);
 
   const results = datasets.length > 0 ? datasets[activeDatasetIndex].results : null;
@@ -960,45 +972,65 @@ export default function App() {
               <strong> Your data never leaves your computer; all processing happens locally in your browser.</strong>
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          {error && (
+            <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 flex items-start gap-3 animate-shake">
+              <div className="text-red-500 mt-0.5">⚠️</div>
+              <div className="flex-1 text-left">
+                <div className="text-sm font-bold text-red-800 dark:text-red-300">Analysis Error</div>
+                <div className="text-xs text-red-700 dark:text-red-400 mt-1">{error}</div>
+              </div>
+              <button 
+                onClick={() => setError(null)}
+                className="text-red-400 hover:text-red-600 dark:hover:text-red-200 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+
+          <div className="grid grid-cols-2 gap-4">
             <div
-              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-sky-500 bg-sky-50 dark:bg-sky-900/20" : "hover:border-sky-500"}`}
+              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-6 sm:p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-sky-500 bg-sky-50 dark:bg-sky-900/20" : "hover:border-sky-500"}`}
               onClick={() => fileRef.current?.click()}
               onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
               onDragLeave={() => setDragging(false)}
               onDrop={(e) => { 
                 e.preventDefault(); 
                 setDragging(false); 
+                setError(null);
                 const newFiles = Array.from(e.dataTransfer.files);
                 setPendingFiles(prev => [...prev, ...newFiles]);
               }}
             >
               <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => {
                 if (e.target.files) {
+                  setError(null);
                   const newFiles = Array.from(e.target.files);
                   setPendingFiles(prev => [...prev, ...newFiles]);
                 }
               }} />
-              <div className="text-4xl mb-3">🧬</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Primary DNA Kit</div>
-              <div className="text-slate-500 dark:text-slate-400 text-xs">Drop your main file here or click to browse</div>
+              <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🧬</div>
+              <div className="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Primary Kit</div>
+              <div className="text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">Drop main file or click</div>
             </div>
 
             <div
-              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20" : "hover:border-indigo-500"}`}
+              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-6 sm:p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20" : "hover:border-indigo-500"}`}
               onClick={() => fileRef.current?.click()}
               onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
               onDragLeave={() => setDragging(false)}
               onDrop={(e) => { 
                 e.preventDefault(); 
                 setDragging(false); 
+                setError(null);
                 const newFiles = Array.from(e.dataTransfer.files);
                 setPendingFiles(prev => [...prev, ...newFiles]);
               }}
             >
-              <div className="text-4xl mb-3">➕</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Additional Kit</div>
-              <div className="text-slate-500 dark:text-slate-400 text-xs">Add another file to merge for better accuracy</div>
+              <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">➕</div>
+              <div className="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Additional</div>
+              <div className="text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">Add file to merge</div>
             </div>
           </div>
 
