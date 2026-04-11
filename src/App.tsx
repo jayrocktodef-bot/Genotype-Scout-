@@ -759,6 +759,15 @@ export default function App() {
     setError(null);
     const fileArray = Array.isArray(files) ? files : Array.from(files);
     
+    // Check for large files
+    const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+    const largeFiles = fileArray.filter(f => f.size > MAX_FILE_SIZE);
+    if (largeFiles.length > 0) {
+      setError(`File(s) too large: ${largeFiles.map(f => f.name).join(', ')}. Max size is 50MB.`);
+      setProcessing(false);
+      return;
+    }
+
     try {
       const parsedFiles = await Promise.all(fileArray.map(file => {
         return new Promise<{ 
@@ -774,6 +783,9 @@ export default function App() {
           reader.onload = (e) => {
             try {
               const text = e.target?.result as string;
+              if (!text || text.trim().length === 0) {
+                throw new Error("File is empty.");
+              }
               resolve({ ...parseRawDNA(text), name: file.name });
             } catch (err) {
               reject(new Error(`Error parsing ${file.name}: ${err instanceof Error ? err.message : 'Unknown error'}`));
@@ -795,6 +807,9 @@ export default function App() {
       let mergedMtMap: Record<string, string> = {};
       let chips: string[] = [];
       let names: string[] = [];
+      
+      // Duplicate detection
+      const duplicateMarkers: Record<string, { count: number, files: string[], genotypes: Set<string> }> = {};
 
       parsedFiles.forEach(pf => {
         names.push(pf.name);
@@ -802,9 +817,25 @@ export default function App() {
           chips.push(pf.chip);
         }
         
-        // Merge SNP Map
+        // Merge SNP Map with duplicate detection
         Object.entries(pf.snpMap).forEach(([rsid, genotype]) => {
-          if (!mergedSnpMap[rsid] || mergedSnpMap[rsid].length < genotype.length) {
+          if (mergedSnpMap[rsid]) {
+            if (!duplicateMarkers[rsid]) {
+              duplicateMarkers[rsid] = { 
+                count: 1, 
+                files: [names[names.length - 2]], // Previous file
+                genotypes: new Set([mergedSnpMap[rsid]]) 
+              };
+            }
+            duplicateMarkers[rsid].count++;
+            duplicateMarkers[rsid].files.push(pf.name);
+            duplicateMarkers[rsid].genotypes.add(genotype);
+
+            // Strategy: Keep the longest genotype (e.g., "AG" over "A")
+            if (genotype.length > mergedSnpMap[rsid].length) {
+              mergedSnpMap[rsid] = genotype;
+            }
+          } else {
             mergedSnpMap[rsid] = genotype;
           }
         });
@@ -822,6 +853,11 @@ export default function App() {
         // Merge MT Map
         Object.assign(mergedMtMap, pf.mtMap);
       });
+
+      const inconsistentMarkers = Object.entries(duplicateMarkers).filter(([_, data]) => data.genotypes.size > 1);
+      if (inconsistentMarkers.length > 0) {
+        console.warn(`Found ${inconsistentMarkers.length} inconsistent markers across files. Using longest genotype for each.`);
+      }
 
       const uniqueSnps = Object.keys(mergedSnpMap).length;
       const mergedName = parsedFiles.length > 1 ? `Merged Kit (${parsedFiles.length} files)` : parsedFiles[0].name;
