@@ -98,6 +98,103 @@ export const SNP_DB: SNP[] = [
   { markerId: "M35.1", gene: "Y-DNA", trait: "Haplogroup E1c root", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "Congo Basin." },
   { markerId: "M75", aliases: ["rs9786142","i4000022"], gene: "Y-DNA", trait: "Haplogroup E2", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup E2." },
   { markerId: "M54", gene: "Y-DNA", trait: "Haplogroup E2a", continent: "African", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup E2a." },
+  { markerId: "Z381", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Major subclade of U106, common in Germanic populations." },
+  { markerId: "Z301", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of Z381." },
+  { markerId: "L47", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L48." },
+  { markerId: "Z9", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L48." },
+  { markerId: "Z30", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z9." },
+  { markerId: "Z2", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z30." },
+  { markerId: "Z7", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z2." },
+  { markerId: "Z1", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z7." },
+  { markerId: "DF98", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z304." },
+  { markerId: "DF96", gene: "Y-DNA", trait: "Haplogroup R1b-U106 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z304." },
+  { markerId: "L238", gene: "Y-DNA", trait: "Haplogroup R1b-P312 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of P312 common in Scandinavia." },
+  { markerId: "DF99", gene: "Y-DNA", trait: "Haplogroup R1b-P312 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of P312." },
+  { markerId: "P109", gene: "Y-DNA", trait: "Haplogroup I1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L22 common in Scandinavia." },
+  { markerId: "L205", gene: "Y-DNA", trait: "Haplogroup I1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of L22 common in the British Isles." },
+  { markerId: "L287", gene: "Y-DNA", trait: "Haplogroup I1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of L22 common in Finland." },
+  { markerId: "L300", gene: "Y-DNA", trait: "Haplogroup I1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of L22 common in Finland." },
+  { markerId: "L813", gene: "Y-DNA", trait: "Haplogroup I1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L22 common in Norway." },
+  { markerId: "Z59", gene: "Y-DNA", trait: "Haplogroup I1a2 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z58." },
+  { markerId: "Z60", gene: "Y-DNA", trait: "Haplogroup I1a2 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z59." },
+  { markerId: "Z73", gene: "Y-DNA", trait: "Haplogroup I1a2 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z60." },
+  { markerId: "L573", gene: "Y-DNA", trait: "Haplogroup I1a2 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of Z60." },
+  { markerId: "L803", gene: "Y-DNA", trait: "Haplogroup I1a2 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z60." },
+  { markerId: "BY151", gene: "Y-DNA", trait: "Haplogroup I1a3 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z63." },
+  { markerId: "L1498", gene: "Y-DNA", trait: "Haplogroup I2a1b1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L161." },
+  { markerId: "CTS10228", gene: "Y-DNA", trait: "Haplogroup I2a1b1a subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of L621 common in Eastern Europe." },
+  { markerId: "L701", gene: "Y-DNA", trait: "Haplogroup I2b subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Subclade of M223." },
+  { markerId: "Z161", gene: "Y-DNA", trait: "Haplogroup I2b subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of M223." },
+  { markerId: "CTS2488", gene: "Y-DNA", trait: "Haplogroup G2a-L497 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L497." },
+  { markerId: "PF3146", gene: "Y-DNA", trait: "Haplogroup G2a-L1259 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L1259." },
+  { markerId: "Z18271", gene: "Y-DNA", trait: "Haplogroup J1a1a1 subclade", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L858." },
+  { markerId: "Z1296", gene: "Y-DNA", trait: "Haplogroup J2b2a subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of L283 common in the Balkans." },
+  { markerId: "L682", gene: "Y-DNA", trait: "Haplogroup N1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z1936 common in Finland and Russia." },
+  { markerId: "Z1925", gene: "Y-DNA", trait: "Haplogroup N1a1 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Subclade of Z1936." },
+  { markerId: "M119", gene: "Y-DNA", trait: "Haplogroup O1", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup O1." },
+  { markerId: "M122", gene: "Y-DNA", trait: "Haplogroup O2", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup O2." },
+  { markerId: "M134", gene: "Y-DNA", trait: "Haplogroup O2a2b1", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup O2a2b1." },
+  { markerId: "M117", gene: "Y-DNA", trait: "Haplogroup O2a2b1a1", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup O2a2b1a1." },
+  { markerId: "M3", gene: "Y-DNA", trait: "Haplogroup Q1a2a1a1", continent: "Native American", category: "Ancestry", significance: "High", alleles: ["C"], description: "Major Native American Y-DNA marker." },
+  { markerId: "L54", gene: "Y-DNA", trait: "Haplogroup Q1a2", continent: "Native American / Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup Q1a2." },
+  { markerId: "M25", gene: "Y-DNA", trait: "Haplogroup Q1b1a", continent: "Asian / European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup Q1b1a." },
+  { markerId: "M70", gene: "Y-DNA", trait: "Haplogroup T1a", continent: "European / Middle Eastern", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup T1a." },
+  { markerId: "L131", gene: "Y-DNA", trait: "Haplogroup T1a1a", continent: "European / Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup T1a1a." },
+  { markerId: "M76", gene: "Y-DNA", trait: "Haplogroup L1a1", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup L1a1." },
+  { markerId: "M357", gene: "Y-DNA", trait: "Haplogroup L1a2", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup L1a2." },
+  { markerId: "M168", gene: "Y-DNA", trait: "Haplogroup CT", continent: "African / Global", category: "Ancestry", significance: "High", alleles: ["T"], description: "The common ancestor of all non-African haplogroups." },
+  { markerId: "M174", gene: "Y-DNA", trait: "Haplogroup D", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup D." },
+  { markerId: "M15", gene: "Y-DNA", trait: "Haplogroup D1a1", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup D1a1." },
+  { markerId: "P99", gene: "Y-DNA", trait: "Haplogroup D1a2", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup D1a2." },
+  { markerId: "M55", gene: "Y-DNA", trait: "Haplogroup D1a2a", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup D1a2a common in Japan." },
+  { markerId: "M130", gene: "Y-DNA", trait: "Haplogroup C", continent: "Asian / Oceanian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup C." },
+  { markerId: "M217", gene: "Y-DNA", trait: "Haplogroup C2", continent: "Asian / Native American", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup C2." },
+  { markerId: "M38", gene: "Y-DNA", trait: "Haplogroup C1b2a", continent: "Oceanian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup C1b2a common in Polynesia." },
+  { markerId: "M201", gene: "Y-DNA", trait: "Haplogroup G", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup G." },
+  { markerId: "M285", gene: "Y-DNA", trait: "Haplogroup G1", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup G1." },
+  { markerId: "P15", gene: "Y-DNA", trait: "Haplogroup G2a", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup G2a." },
+  { markerId: "L140", gene: "Y-DNA", trait: "Haplogroup G2a2b", continent: "European", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup G2a2b." },
+  { markerId: "M69", gene: "Y-DNA", trait: "Haplogroup H1", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup H1." },
+  { markerId: "M52", gene: "Y-DNA", trait: "Haplogroup H1a", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup H1a." },
+  { markerId: "M82", gene: "Y-DNA", trait: "Haplogroup H1a1", continent: "South Asian / Romani", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup H1a1 common in Romani populations." },
+  { markerId: "M253", gene: "Y-DNA", trait: "Haplogroup I1", continent: "European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup I1 common in Northern Europe." },
+  { markerId: "M170", gene: "Y-DNA", trait: "Haplogroup I", continent: "European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup I." },
+  { markerId: "M438", gene: "Y-DNA", trait: "Haplogroup I2", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup I2." },
+  { markerId: "P37.2", gene: "Y-DNA", trait: "Haplogroup I2a1", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup I2a1 common in the Balkans." },
+  { markerId: "M423", gene: "Y-DNA", trait: "Haplogroup I2a1b", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup I2a1b." },
+  { markerId: "M172", gene: "Y-DNA", trait: "Haplogroup J2", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J2." },
+  { markerId: "M410", gene: "Y-DNA", trait: "Haplogroup J2a", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J2a." },
+  { markerId: "M12", gene: "Y-DNA", trait: "Haplogroup J2b", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup J2b." },
+  { markerId: "M267", gene: "Y-DNA", trait: "Haplogroup J1", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup J1." },
+  { markerId: "M9", gene: "Y-DNA", trait: "Haplogroup K", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup K." },
+  { markerId: "M20", gene: "Y-DNA", trait: "Haplogroup L", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup L." },
+  { markerId: "M4", gene: "Y-DNA", trait: "Haplogroup M", continent: "Oceanian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup M." },
+  { markerId: "M231", gene: "Y-DNA", trait: "Haplogroup N", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup N." },
+  { markerId: "M175", gene: "Y-DNA", trait: "Haplogroup O", continent: "Asian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup O." },
+  { markerId: "M45", gene: "Y-DNA", trait: "Haplogroup P", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup P." },
+  { markerId: "M242", gene: "Y-DNA", trait: "Haplogroup Q", continent: "Eurasian / Native American", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q." },
+  { markerId: "M207", gene: "Y-DNA", trait: "Haplogroup R", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R." },
+  { markerId: "M173", gene: "Y-DNA", trait: "Haplogroup R1", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1." },
+  { markerId: "M198", gene: "Y-DNA", trait: "Haplogroup R1a1a", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup R1a1a." },
+  { markerId: "M343", gene: "Y-DNA", trait: "Haplogroup R1b", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup R1b." },
+  { markerId: "M269", gene: "Y-DNA", trait: "Haplogroup R1b1a1b", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup R1b1a1b." },
+  { markerId: "M184", gene: "Y-DNA", trait: "Haplogroup T", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup T." },
+  { markerId: "M20", gene: "Y-DNA", trait: "Haplogroup L", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup L." },
+  { markerId: "M11", gene: "Y-DNA", trait: "Haplogroup L", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup L." },
+  { markerId: "M61", gene: "Y-DNA", trait: "Haplogroup L1", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup L1." },
+  { markerId: "M317", gene: "Y-DNA", trait: "Haplogroup L1b", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup L1b." },
+  { markerId: "M349", gene: "Y-DNA", trait: "Haplogroup L1b1", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup L1b1." },
+  { markerId: "M25", gene: "Y-DNA", trait: "Haplogroup Q1b1a", continent: "Asian / European", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for Haplogroup Q1b1a." },
+  { markerId: "M346", gene: "Y-DNA", trait: "Haplogroup Q1", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q1." },
+  { markerId: "L232", gene: "Y-DNA", trait: "Haplogroup Q1", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q1." },
+  { markerId: "MEH2", gene: "Y-DNA", trait: "Haplogroup Q1a", continent: "Eurasian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q1a." },
+  { markerId: "M120", gene: "Y-DNA", trait: "Haplogroup Q1a1", continent: "East Asian", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for Haplogroup Q1a1." },
+  { markerId: "M215", gene: "Y-DNA", trait: "Haplogroup E1b1b", continent: "African / European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup E1b1b." },
+  { markerId: "M35", gene: "Y-DNA", trait: "Haplogroup E1b1b1", continent: "African / European", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup E1b1b1." },
+  { markerId: "M78", gene: "Y-DNA", trait: "Haplogroup E1b1b1a1", continent: "African / European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup E1b1b1a1." },
+  { markerId: "M81", gene: "Y-DNA", trait: "Haplogroup E1b1b1b1", continent: "North African", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup E1b1b1b1 common in Berbers." },
+  { markerId: "M123", gene: "Y-DNA", trait: "Haplogroup E1b1b1c", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup E1b1b1c." },
+  { markerId: "M34", gene: "Y-DNA", trait: "Haplogroup E1b1b1c1", continent: "Middle Eastern", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup E1b1b1c1." },
   { markerId: "rs73885319", rsid: "rs73885319", gene: "APOL1", trait: "APOL1 Kidney Disease Risk (G1)", continent: "African", category: "Health", significance: "High", alleles: ["G"], description: "Associated with an increased risk of chronic kidney disease in individuals of African ancestry.", referenceUrl: "https://www.snpedia.com/index.php/Rs73885319" },
   { markerId: "rs11887534", rsid: "rs11887534", gene: "BCL11A", trait: "Fetal Hemoglobin Levels", continent: "African", category: "Health", significance: "Medium", alleles: ["C"], description: "Associated with fetal hemoglobin levels; common in African populations and relevant for sickle cell disease severity.", referenceUrl: "https://www.snpedia.com/index.php/Rs11887534" },
   { markerId: "rs73885319", rsid: "rs73885319", gene: "APOL1", trait: "Kidney Disease Risk (G1)", continent: "African", category: "Health", significance: "High", alleles: ["G"], description: "Common in West African ancestry; provides protection against sleeping sickness but increases risk of chronic kidney disease.", interpretations: {"GG":"High risk: Two copies of the G1 risk variant.","AG":"Carrier: One copy of the G1 risk variant.","AA":"Normal risk: No copies of the G1 risk variant."}, referenceUrl: "https://www.snpedia.com/index.php/Rs73885319" },
@@ -1964,9 +2061,10 @@ function runAncestryInference(
       
       let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
       
-      if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
-        significanceWeight *= 4.0;
-      }
+      // Removed the 4.0x African bias multiplier as it causes false positives for European users
+      // if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
+      //   significanceWeight *= 4.0;
+      // }
 
       const weight = (aim?.weight || 1.0) * significanceWeight * weightMultiplier;
       windowWeights.push(weight);
@@ -1983,7 +2081,9 @@ function runAncestryInference(
     if (windowProportions.length > 0) {
       windowProportions.forEach((prob, i) => {
         const continent = continentsToScore[i];
-        continentalCounts[continent] += prob;
+        // Apply a small noise filter per window to prevent "bleeding" of small percentages
+        const filteredProb = prob < 0.05 ? 0 : prob;
+        continentalCounts[continent] += filteredProb;
       });
     }
 
@@ -2036,9 +2136,10 @@ function runAncestryInference(
           const regionalMultiplier = isNamedPop ? 3.0 : 1.0;
           let weight = (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight;
           
-          if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
-            weight *= 4.0;
-          }
+          // Removed the 4.0x African bias multiplier as it causes false positives for European users
+          // if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
+          //   weight *= 4.0;
+          // }
 
           const error = (matchCount / 2) - f;
           subPopLogL[continent][sp] -= weight * (error * error);
@@ -2063,8 +2164,15 @@ function runAncestryInference(
   if (totalSegments > 0) {
     continentsToScore.forEach(c => {
       const pct = (continentalCounts[c] / totalSegments) * 100;
-      if (pct > 0.05) continentalScores[c] = pct;
+      // Noise threshold: Zero out anything less than 1.5% to reduce false positives
+      if (pct >= 1.5) continentalScores[c] = pct;
     });
+
+    // Re-normalize after thresholding
+    const newTotal = Object.values(continentalScores).reduce((a, b) => a + b, 0);
+    if (newTotal > 0) {
+      Object.keys(continentalScores).forEach(c => continentalScores[c] = (continentalScores[c] / newTotal) * 100);
+    }
   }
 
   const subPopulations: Record<string, any[]> = {};
@@ -2477,8 +2585,12 @@ export const Y_DNA_TREE: HaplogroupNode = {
           snp: ["P287"],
           children: [
             { branchName: "Haplogroup G2a", snp: ["P15", "i4000049"], children: [
-              { branchName: "Haplogroup G2a-L1259", snp: ["L1259"] },
-              { branchName: "Haplogroup G2a-L497", snp: ["L497"] },
+              { branchName: "Haplogroup G2a-L497", snp: ["L497"], children: [
+                { branchName: "Haplogroup G-CTS2488", snp: ["CTS2488"] }
+              ] },
+              { branchName: "Haplogroup G2a-L1259", snp: ["L1259"], children: [
+                { branchName: "Haplogroup G-PF3146", snp: ["PF3146"] }
+              ] },
               { branchName: "Haplogroup G2a-Z6552", snp: ["Z6552"] },
               { branchName: "Haplogroup G2a2b", snp: ["L140"], children: [
                 { branchName: "Haplogroup G2a2b1", snp: ["U1"], children: [
@@ -2515,11 +2627,34 @@ export const Y_DNA_TREE: HaplogroupNode = {
           children: [
             { branchName: "Haplogroup I1-Z2539", snp: ["Z2539"] },
             { branchName: "Haplogroup I1a", snp: ["DF29"], children: [
-              { branchName: "Haplogroup I1a1", snp: ["L22", "rs35033377"] },
-              { branchName: "Haplogroup I1a2", snp: ["Z58"], children: [
-                { branchName: "Haplogroup I1a2a", snp: ["Z140"] }
+              { branchName: "Haplogroup I1a1", snp: ["L22", "rs35033377"], children: [
+                { branchName: "Haplogroup I1-P109", snp: ["P109"], region: "Scandinavia", description: "Common in Norway and Sweden." },
+                { branchName: "Haplogroup I1-L205", snp: ["L205"], region: "British Isles", description: "Common in the British Isles." },
+                { branchName: "Haplogroup I1-L287", snp: ["L287"], region: "Finland", description: "Common in Finland." },
+                { branchName: "Haplogroup I1-L300", snp: ["L300"], region: "Finland", description: "Common in Finland." },
+                { branchName: "Haplogroup I1-L813", snp: ["L813"], region: "Norway", description: "Common in Norway." }
               ] },
-              { branchName: "Haplogroup I1a3", snp: ["Z63"] }
+              { branchName: "Haplogroup I1a2", snp: ["Z58"], children: [
+                { 
+                  branchName: "Haplogroup I1-Z59", 
+                  snp: ["Z59"],
+                  children: [
+                    { 
+                      branchName: "Haplogroup I1-Z60", 
+                      snp: ["Z60"],
+                      children: [
+                        { branchName: "Haplogroup I1a2a", snp: ["Z140"] },
+                        { branchName: "Haplogroup I1-Z73", snp: ["Z73"] },
+                        { branchName: "Haplogroup I1-L573", snp: ["L573"] },
+                        { branchName: "Haplogroup I1-L803", snp: ["L803"] }
+                      ]
+                    }
+                  ]
+                }
+              ] },
+              { branchName: "Haplogroup I1a3", snp: ["Z63"], children: [
+                { branchName: "Haplogroup I1-BY151", snp: ["BY151"] }
+              ] }
             ] },
             { branchName: "Haplogroup I1b", snp: ["Z131"] },
             { branchName: "Haplogroup I1c", snp: ["Z17943"] }
@@ -2533,12 +2668,18 @@ export const Y_DNA_TREE: HaplogroupNode = {
               { branchName: "Haplogroup I2a-CTS10100", snp: ["CTS10100"] },
               { branchName: "Haplogroup I2a-CTS595", snp: ["CTS595"] },
               { branchName: "Haplogroup I2a1b", snp: ["M423"], children: [
-                { branchName: "Haplogroup I2a1b1", snp: ["L161"] },
-                { branchName: "Haplogroup I2a1b1a", snp: ["L621"] }
+                { branchName: "Haplogroup I2a1b1", snp: ["L161"], children: [
+                  { branchName: "Haplogroup I2-L1498", snp: ["L1498"] }
+                ] },
+                { branchName: "Haplogroup I2a1b1a", snp: ["L621"], children: [
+                  { branchName: "Haplogroup I2-CTS10228", snp: ["CTS10228"] }
+                ] }
               ] }
             ] },
             { branchName: "Haplogroup I2b", snp: ["M223", "M436", "rs34933376"], children: [
-              { branchName: "Haplogroup I2b1a", snp: ["M284"] }
+              { branchName: "Haplogroup I2b1a", snp: ["M284"] },
+              { branchName: "Haplogroup I2-L701", snp: ["L701"] },
+              { branchName: "Haplogroup I2-Z161", snp: ["Z161"] }
             ] }
           ]
         }
@@ -2582,7 +2723,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
                       snp: ["YSC0000234"],
                       children: [
                         { branchName: "Haplogroup J1a1a1", snp: ["L858", "rs35268486"], children: [
-                          { branchName: "Haplogroup J-L829", snp: ["L829"], region: "Levant", description: "A subclade of J1 common in the Levant." }
+                          { branchName: "Haplogroup J-L829", snp: ["L829"], region: "Levant", description: "A subclade of J1 common in the Levant." },
+                          { branchName: "Haplogroup J-Z18271", snp: ["Z18271"] }
                         ] },
                         { branchName: "Haplogroup J1-Z1884", snp: ["Z1884"], region: "Levant", description: "Common in the Levant and Mesopotamia." }
                       ]
@@ -2632,7 +2774,9 @@ export const Y_DNA_TREE: HaplogroupNode = {
             { branchName: "Haplogroup J2b", snp: ["M12", "M102"], children: [
               { branchName: "Haplogroup J2b1", snp: ["M205"] },
               { branchName: "Haplogroup J2b2", snp: ["M241"], children: [
-                { branchName: "Haplogroup J2b2a", snp: ["L283"] }
+                { branchName: "Haplogroup J2b2a", snp: ["L283"], children: [
+                  { branchName: "Haplogroup J-Z1296", snp: ["Z1296"] }
+                ] }
               ] }
             ] }
           ]
@@ -2641,9 +2785,11 @@ export const Y_DNA_TREE: HaplogroupNode = {
     },
     { branchName: "Haplogroup K", snp: ["M9", "i4000026"] },
     { branchName: "Haplogroup L", snp: ["M20"], children: [
-      { branchName: "Haplogroup L1a", snp: ["M27"] },
-      { branchName: "Haplogroup L1b", snp: ["M317"] },
-      { branchName: "Haplogroup L1c", snp: ["M357"] }
+      { branchName: "Haplogroup L1a", snp: ["M27"], children: [
+        { branchName: "Haplogroup L1a1", snp: ["M76"] },
+        { branchName: "Haplogroup L1a2", snp: ["M357"] }
+      ] },
+      { branchName: "Haplogroup L1b", snp: ["M317"] }
     ] },
     { branchName: "Haplogroup M", snp: ["P256", "M4", "rs9786195", "i4000031", "rs369726477", "i4000036"], children: [
       { branchName: "Haplogroup M subclade", snp: ["M5"] },
@@ -2654,7 +2800,10 @@ export const Y_DNA_TREE: HaplogroupNode = {
       { branchName: "Haplogroup N1a1", snp: ["M46", "Tat", "i4000041"], children: [
         { branchName: "Haplogroup N1a-VL29", snp: ["VL29"] },
         { branchName: "Haplogroup N-L1026", snp: ["L1026"], region: "Northern Europe", description: "A major subclade of N1a1 common in Finland and the Baltic region." },
-        { branchName: "Haplogroup N-Z1936", snp: ["Z1936"], region: "Northern Europe", description: "A subclade of N1a1 found in Northern Europe." }
+        { branchName: "Haplogroup N-Z1936", snp: ["Z1936"], region: "Northern Europe", description: "A subclade of N1a1 found in Northern Europe.", children: [
+          { branchName: "Haplogroup N-L682", snp: ["L682"] },
+          { branchName: "Haplogroup N-Z1925", snp: ["Z1925"] }
+        ] }
       ] },
       { branchName: "Haplogroup N1a2", snp: ["L666"] }
     ] },
@@ -2665,16 +2814,23 @@ export const Y_DNA_TREE: HaplogroupNode = {
         { branchName: "Haplogroup O1a1a", snp: ["M50"] }
       ] },
       { branchName: "Haplogroup O1b", snp: ["M268", "i4000017"] },
-      { branchName: "Haplogroup O2", snp: ["M122", "rs2032636", "i4000019"] }
+      { branchName: "Haplogroup O2", snp: ["M122", "rs2032636", "i4000019"], children: [
+        { branchName: "Haplogroup O2a2b1", snp: ["M134"], children: [
+          { branchName: "Haplogroup O2a2b1a1", snp: ["M117"] }
+        ] }
+      ] }
     ] },
     { branchName: "Haplogroup P", snp: ["M45", "i4000032"] },
     { branchName: "Haplogroup Q", snp: ["M242", "i4000054"], children: [
       { branchName: "Haplogroup Q1", snp: ["L232"] },
       { branchName: "Haplogroup Q1a", snp: ["MEH2"] },
       { branchName: "Haplogroup Q1a1", snp: ["M120"] },
-      { branchName: "Haplogroup Q1a2", snp: ["M25"] },
+      { branchName: "Haplogroup Q1a2", snp: ["L54"], children: [
+        { branchName: "Haplogroup Q1a2a1a1", snp: ["M3"] }
+      ] },
       { branchName: "Haplogroup Q1b", snp: ["L275"], children: [
-        { branchName: "Haplogroup Q1b-L53", snp: ["L53"] }
+        { branchName: "Haplogroup Q1b-L53", snp: ["L53"] },
+        { branchName: "Haplogroup Q1b1a", snp: ["M25"] }
       ] },
       { branchName: "Haplogroup Q-M3", snp: ["M3", "i4000055", "rs3894"], children: [
         { branchName: "Haplogroup Q-M19", snp: ["M19"], region: "South America", description: "A subclade of Q-M3 common in South American indigenous populations." },
@@ -2737,15 +2893,62 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         region: "North Sea / Germanic",
                         description: "Common in Germanic-speaking populations of Northern Europe.",
                         children: [
-                          { branchName: "Haplogroup R1b-L48", snp: ["L48"], region: "North Sea", description: "A major subclade of U106 found around the North Sea.", children: [
-                            { branchName: "Haplogroup R1b-Z156", snp: ["Z156"], children: [
-                              { branchName: "Haplogroup R1b-Z304", snp: ["Z304"] }
-                            ] },
-                            { branchName: "Haplogroup R1b-Z18", snp: ["Z18"], children: [
-                              { branchName: "Haplogroup R1b-Z19", snp: ["Z19"] }
-                            ] },
-                            { branchName: "Haplogroup R1b-L1", snp: ["L1"], region: "North Sea", description: "A subclade of L48 found in Northern Europe." }
-                          ] },
+                          { 
+                            branchName: "Haplogroup R1b-Z381", 
+                            snp: ["Z381"],
+                            children: [
+                              { 
+                                branchName: "Haplogroup R1b-Z301", 
+                                snp: ["Z301"],
+                                children: [
+                                  { 
+                                    branchName: "Haplogroup R1b-L48", 
+                                    snp: ["L48", "rs34533372"], 
+                                    region: "North Sea", 
+                                    description: "A major subclade of U106 found around the North Sea.", 
+                                    children: [
+                                      { branchName: "Haplogroup R1b-L47", snp: ["L47"] },
+                                      { 
+                                        branchName: "Haplogroup R1b-Z9", 
+                                        snp: ["Z9"],
+                                        children: [
+                                          { 
+                                            branchName: "Haplogroup R1b-Z30", 
+                                            snp: ["Z30"],
+                                            children: [
+                                              { 
+                                                branchName: "Haplogroup R1b-Z2", 
+                                                snp: ["Z2"],
+                                                children: [
+                                                  { 
+                                                    branchName: "Haplogroup R1b-Z7", 
+                                                    snp: ["Z7"],
+                                                    children: [
+                                                      { branchName: "Haplogroup R1b-Z1", snp: ["Z1"] }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      { branchName: "Haplogroup R1b-Z156", snp: ["Z156"], children: [
+                                        { branchName: "Haplogroup R1b-Z304", snp: ["Z304"], children: [
+                                          { branchName: "Haplogroup R1b-DF98", snp: ["DF98"] },
+                                          { branchName: "Haplogroup R1b-DF96", snp: ["DF96"] }
+                                        ] }
+                                      ] },
+                                      { branchName: "Haplogroup R1b-Z18", snp: ["Z18"], children: [
+                                        { branchName: "Haplogroup R1b-Z19", snp: ["Z19"] }
+                                      ] },
+                                      { branchName: "Haplogroup R1b-L1", snp: ["L1"], region: "North Sea", description: "A subclade of L48 found in Northern Europe." }
+                                    ] 
+                                  }
+                                ]
+                              }
+                            ]
+                          },
                           { branchName: "Haplogroup R1b1a1b1a1a1", snp: ["L48", "rs34533372"] }
                         ]
                       },
@@ -2755,6 +2958,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         region: "Atlantic / Italo-Celtic",
                         description: "Dominant in Western Europe, including the British Isles, France, and Iberia.",
                         children: [
+                          { branchName: "Haplogroup R1b-L238", snp: ["L238"], region: "Scandinavia", description: "A subclade of P312 common in Scandinavia." },
+                          { branchName: "Haplogroup R1b-DF99", snp: ["DF99"] },
                           { 
                             branchName: "Haplogroup R1b1a1b1a2a", 
                             snp: ["DF27"],
@@ -2931,7 +3136,9 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
             marker: snpId,
             genotype: genotype, // Keep original for display
             isDerived,
-            trait: `Marker for ${node.branchName}`
+            trait: `Marker for ${node.branchName}`,
+            branch: node.branchName,
+            region: node.region || "Global"
           });
         }
       }
@@ -3016,7 +3223,13 @@ export const MT_DNA_TREE: HaplogroupNode = {
       region: "Southern Africa",
       description: "One of the oldest maternal lineages, common among the Khoisan people.",
       mutations: ["T146C", "C182T", "A189G", "C195T", "T198C", "A247G", "A4312G", "G5460A", "G8251A", "A9123G", "A10115G", "T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T"],
-      children: []
+      children: [
+        { branchName: "Haplogroup L0a", mutations: ["G12771A", "C16111T"] },
+        { branchName: "Haplogroup L0b", mutations: ["G10115A"] },
+        { branchName: "Haplogroup L0d", mutations: ["T16187C", "C16189T", "A16265G"] },
+        { branchName: "Haplogroup L0f", mutations: ["G16230A"] },
+        { branchName: "Haplogroup L0k", mutations: ["T16187C", "C16189T", "T16223C"] }
+      ]
     },
     {
       branchName: "Haplogroup L1",
@@ -3024,7 +3237,19 @@ export const MT_DNA_TREE: HaplogroupNode = {
       description: "A very old lineage common in Central and West Africa.",
       mutations: ["C182T", "T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A4104G"],
       children: [
-        { branchName: "Haplogroup L1b", mutations: ["T16126C", "C16187T", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T"] },
+        {
+          branchName: "Haplogroup L1b",
+          mutations: ["T16126C", "C16187T", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "C16264T", "G16129A"],
+          children: [
+            {
+              branchName: "Haplogroup L1b1",
+              mutations: ["T16126C", "C16264T", "C16270T", "A16265G"],
+              children: [
+                { branchName: "Haplogroup L1b1a", mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C"] }
+              ]
+            }
+          ]
+        },
         { branchName: "Haplogroup L1c", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G"] }
       ]
     },
@@ -3058,6 +3283,16 @@ export const MT_DNA_TREE: HaplogroupNode = {
                 {
                   branchName: "Haplogroup L2a1c",
                   mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "G16129A"],
+                  children: []
+                },
+                {
+                  branchName: "Haplogroup L2a1l",
+                  mutations: ["T16189C", "A16265G"],
+                  children: []
+                },
+                {
+                  branchName: "Haplogroup L2a1f",
+                  mutations: ["T16209C"],
                   children: []
                 }
               ]
@@ -3136,8 +3371,19 @@ export const MT_DNA_TREE: HaplogroupNode = {
                     { branchName: "Haplogroup L3e2b1", mutations: ["C16124T"] },
                     { branchName: "Haplogroup L3e2b2", mutations: ["T16172C"] }
                   ]
-                }
+                },
+                { branchName: "Haplogroup L3e2a", mutations: ["T16172C"] }
               ]
+            },
+            {
+              branchName: "Haplogroup L3e3",
+              mutations: ["T16189C", "A16265G"],
+              children: []
+            },
+            {
+              branchName: "Haplogroup L3e4",
+              mutations: ["C16124T"],
+              children: []
             }
           ]
         },
@@ -3156,8 +3402,14 @@ export const MT_DNA_TREE: HaplogroupNode = {
                     { branchName: "Haplogroup L3f1b1", mutations: ["T16140C"] },
                     { branchName: "Haplogroup L3f1b2", mutations: ["C16168T"] }
                   ]
-                }
+                },
+                { branchName: "Haplogroup L3f1a", mutations: ["T16172C"] }
               ]
+            },
+            {
+              branchName: "Haplogroup L3f2",
+              mutations: ["T16172C", "A16265G"],
+              children: []
             }
           ]
         },
@@ -3177,21 +3429,6 @@ export const MT_DNA_TREE: HaplogroupNode = {
           children: []
         },
         {
-          branchName: "Haplogroup L4",
-          mutations: ["T16124C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
-          children: []
-        },
-        {
-          branchName: "Haplogroup L5",
-          mutations: ["T16124C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "C16187T"],
-          children: []
-        },
-        {
-          branchName: "Haplogroup L6",
-          mutations: ["T16124C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "G16129A"],
-          children: []
-        },
-        {
           branchName: "Haplogroup M",
           region: "Asian / Oceanian",
           description: "One of the two major macro-haplogroups that migrated out of Africa.",
@@ -3199,8 +3436,12 @@ export const MT_DNA_TREE: HaplogroupNode = {
           children: [
             {
               branchName: "Haplogroup M1",
+              region: "North Africa / Middle East",
+              description: "A branch of M that migrated back into Africa.",
               mutations: ["T16129C", "C16189T", "T16223C", "C16249T", "T16311C"],
-              children: []
+              children: [
+                { branchName: "Haplogroup M1a", mutations: ["T16129C", "C16189T", "T16223C", "C16249T", "T16311C", "G16129A"] }
+              ]
             },
             {
               branchName: "Haplogroup C",
@@ -3282,6 +3523,21 @@ export const MT_DNA_TREE: HaplogroupNode = {
           description: "One of the two major macro-haplogroups that migrated out of Africa; ancestor of most Eurasian lineages.",
           mutations: ["G8701A", "C9540T", "A10398G", "T10873C", "G15301A"],
           children: [
+            {
+              branchName: "Haplogroup N1",
+              mutations: ["G10238A", "G12501A"],
+              children: [
+                { branchName: "Haplogroup N1a", mutations: ["G16129A", "C16189T"] },
+                { branchName: "Haplogroup N1b", mutations: ["G16129A", "C16189T", "A16129G"] }
+              ]
+            },
+            {
+              branchName: "Haplogroup N2",
+              mutations: ["G15323A", "T16223C"],
+              children: [
+                { branchName: "Haplogroup N2a", mutations: ["G16129A"] }
+              ]
+            },
             {
               branchName: "Haplogroup A",
               region: "East Asian / Native American",
@@ -3394,7 +3650,10 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               children: [
                                 { branchName: "Haplogroup H1a", mutations: ["T73A", "C16162T"] },
                                 { branchName: "Haplogroup H1b", mutations: ["T16189C", "T16356C"] },
-                                { branchName: "Haplogroup H1c", mutations: ["T477C"] }
+                                { branchName: "Haplogroup H1c", mutations: ["T477C"] },
+                                { branchName: "Haplogroup H1e", mutations: ["G5460A"] },
+                                { branchName: "Haplogroup H1f", mutations: ["T16093C"] },
+                                { branchName: "Haplogroup H1g", mutations: ["A16209G"] }
                               ]
                             },
                             {
@@ -3516,45 +3775,86 @@ export const MT_DNA_TREE: HaplogroupNode = {
                     { branchName: "Haplogroup B5", mutations: ["A16183C"], children: [] }
                   ]
                 },
-                {
-                  branchName: "Haplogroup U",
-                  region: "European / West Asian / North African",
-                  description: "A large and diverse haplogroup found throughout Eurasia and North Africa.",
-                  mutations: ["A11467G", "A12308G", "G12372A"],
-                  children: [
+            {
+              branchName: "Haplogroup U",
+              region: "European / West Asian / North African",
+              description: "A large and diverse haplogroup found throughout Eurasia and North Africa.",
+              mutations: ["A11467G", "A12308G", "G12372A"],
+              children: [
                     {
                       branchName: "Haplogroup U5",
                       region: "European",
                       description: "One of the oldest European lineages, common among hunter-gatherers.",
                       mutations: ["C16270T", "G16129A"],
                       children: [
-                        { branchName: "Haplogroup U5a", mutations: ["C16256T", "T16189C"] },
-                        { branchName: "Haplogroup U5b", mutations: ["G16192A", "C16270T"] }
+                        {
+                          branchName: "Haplogroup U5a",
+                          mutations: ["C16256T", "T16189C"],
+                          children: [
+                            { 
+                              branchName: "Haplogroup U5a1", 
+                              mutations: ["A16129G"],
+                              children: [
+                                { branchName: "Haplogroup U5a1a", mutations: ["T16192C"] },
+                                { branchName: "Haplogroup U5a1b", mutations: ["A16189G"] }
+                              ]
+                            },
+                            { branchName: "Haplogroup U5a2", mutations: ["G16129A"] }
+                          ]
+                        },
+                        {
+                          branchName: "Haplogroup U5b",
+                          mutations: ["G16192A", "C16270T"],
+                          children: [
+                            { 
+                              branchName: "Haplogroup U5b1", 
+                              mutations: ["G16129A"],
+                              children: [
+                                { branchName: "Haplogroup U5b1b", mutations: ["T16189C"] },
+                                { branchName: "Haplogroup U5b1c", mutations: ["A16129G"] }
+                              ]
+                            },
+                            { branchName: "Haplogroup U5b2", mutations: ["A16129G"] },
+                            { branchName: "Haplogroup U5b3", mutations: ["T16189C"] }
+                          ]
+                        }
                       ]
                     },
-                    {
-                      branchName: "Haplogroup U2",
-                      mutations: ["A16129G", "C16189T"],
-                      children: [
-                        { branchName: "Haplogroup U2e", mutations: ["A16129G", "T16189C"] }
-                      ]
-                    },
-                    { branchName: "Haplogroup U4", mutations: ["T16356C"], children: [] },
-                    { branchName: "Haplogroup U8", mutations: ["G16129A"], children: [] },
-                    { branchName: "Haplogroup U1", mutations: ["A12870G"], children: [] },
-                    { branchName: "Haplogroup U3", mutations: ["A16343G"], children: [] },
-                    { branchName: "Haplogroup U7", mutations: ["A16318T"], children: [] },
-                    {
-                      branchName: "Haplogroup K",
-                      region: "European / West Asian",
-                      description: "Common in Europe and the Near East.",
-                      mutations: ["A1189C", "A3480G", "G9055A", "A10398G", "A10550G", "T11299C", "T14798C", "T16224C", "C16311T"],
-                      children: [
-                        { branchName: "Haplogroup K1a", mutations: ["T1189C"], children: [] }
-                      ]
-                    }
+                {
+                  branchName: "Haplogroup U6",
+                  region: "North African",
+                  description: "Found primarily in North Africa and the Canary Islands.",
+                  mutations: ["A16172C", "G16219A", "C16278T"],
+                  children: []
+                },
+                {
+                  branchName: "Haplogroup U2",
+                  mutations: ["A16129G", "C16189T"],
+                  children: [
+                    { branchName: "Haplogroup U2e", mutations: ["A16129G", "T16189C"] },
+                    { branchName: "Haplogroup U2a", mutations: ["C16129T"] },
+                    { branchName: "Haplogroup U2b", mutations: ["G16129A"] },
+                    { branchName: "Haplogroup U2c", mutations: ["T16129C"] }
                   ]
                 },
+                { branchName: "Haplogroup U4", mutations: ["T16356C"], children: [] },
+                { branchName: "Haplogroup U8", mutations: ["G16129A"], children: [] },
+                { branchName: "Haplogroup U1", mutations: ["A12870G"], children: [] },
+                { branchName: "Haplogroup U3", mutations: ["A16343G"], children: [] },
+                { branchName: "Haplogroup U7", mutations: ["A16318T"], children: [] },
+                { branchName: "Haplogroup U9", mutations: ["A16129G", "T16172C"], children: [] },
+                {
+                  branchName: "Haplogroup K",
+                  region: "European / West Asian",
+                  description: "Common in Europe and the Near East.",
+                  mutations: ["A1189C", "A3480G", "G9055A", "A10398G", "A10550G", "T11299C", "T14798C", "T16224C", "C16311T"],
+                  children: [
+                    { branchName: "Haplogroup K1a", mutations: ["T1189C"], children: [] },
+                    { branchName: "Haplogroup K2", mutations: ["G10550A"], children: [] }
+                  ]
+                }
+              ]
+            },
                 {
                   branchName: "Haplogroup JT",
                   mutations: ["T3394C", "T4216C", "G13708A", "G15452A", "T16126C"],
@@ -3570,7 +3870,20 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           mutations: ["T16126C"],
                           children: [
                             { branchName: "Haplogroup J1b", mutations: ["C16189T", "C16261T"] },
-                            { branchName: "Haplogroup J1c", mutations: ["C16069T", "G16129A"] }
+                            {
+                              branchName: "Haplogroup J1c",
+                              mutations: ["C16069T", "G16129A"],
+                              children: [
+                                { branchName: "Haplogroup J1c1", mutations: ["T146C"] },
+                                { branchName: "Haplogroup J1c2", mutations: ["C16261T"] },
+                                { branchName: "Haplogroup J1c3", mutations: ["T16192C"] },
+                                { branchName: "Haplogroup J1c4", mutations: ["C16222T"] },
+                                { branchName: "Haplogroup J1c5", mutations: ["G16145A"] },
+                                { branchName: "Haplogroup J1c7", mutations: ["A16265G"] },
+                                { branchName: "Haplogroup J1c8", mutations: ["A16265G"] }
+                              ]
+                            },
+                            { branchName: "Haplogroup J1d", mutations: ["T16126C", "G16129A"] }
                           ]
                         },
                         {
@@ -3593,17 +3906,28 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           branchName: "Haplogroup T1",
                           mutations: ["A16126G"],
                           children: [
-                            { branchName: "Haplogroup T1a", mutations: ["T16189C", "A16265G"] }
+                            { branchName: "Haplogroup T1a", mutations: ["T16189C", "A16265G"] },
+                            { branchName: "Haplogroup T1b", mutations: ["C16189T"] }
                           ]
                         },
                         {
                           branchName: "Haplogroup T2",
-                          mutations: ["A11812G"],
+                          mutations: ["C16126T", "C16294T", "A11812G"],
                           children: [
-                            { branchName: "Haplogroup T2a", mutations: ["C16189T"] },
-                            { branchName: "Haplogroup T2b", mutations: ["G16129A", "C16189T"] },
-                            { branchName: "Haplogroup T2c", mutations: ["T16187C"] },
-                            { branchName: "Haplogroup T2e", mutations: ["A16129G"] }
+                            { branchName: "Haplogroup T2a", mutations: ["A16129G", "C16189T"] },
+                            {
+                              branchName: "Haplogroup T2b",
+                              mutations: ["G16153A", "G16129A", "C16189T"],
+                              children: [
+                                { branchName: "Haplogroup T2b1", mutations: ["G16153A"] },
+                                { branchName: "Haplogroup T2b2", mutations: ["A16129G"] },
+                                { branchName: "Haplogroup T2b3", mutations: ["T16172C"] },
+                                { branchName: "Haplogroup T2b4", mutations: ["C16261T"] },
+                                { branchName: "Haplogroup T2b5", mutations: ["G16145A"] }
+                              ]
+                            },
+                            { branchName: "Haplogroup T2c", mutations: ["T146C", "T16187C"] },
+                            { branchName: "Haplogroup T2e", mutations: ["A16189G", "A16129G"] }
                           ]
                         }
                       ]
@@ -3618,16 +3942,25 @@ export const MT_DNA_TREE: HaplogroupNode = {
     },
     {
       branchName: "Haplogroup L4",
-      mutations: ["A16293G", "C16264T", "T195C"],
-      children: []
+      region: "East Africa",
+      description: "Common in East Africa, particularly among the Hadza and Sandawe people.",
+      mutations: ["C16223T", "T16278C", "C16311T", "A16362G", "T16391C", "A16293G", "C16264T", "T195C"],
+      children: [
+        { branchName: "Haplogroup L4a", mutations: ["T16093C", "T16223C", "C16264T", "T16311C", "T16189C"] },
+        { branchName: "Haplogroup L4b", mutations: ["T195C", "A16293G", "C16124T"] }
+      ]
     },
     {
       branchName: "Haplogroup L5",
+      region: "East / Central Africa",
+      description: "A rare lineage found in East and Central Africa, particularly among the Mbuti Pygmies.",
       mutations: ["C16222T", "T16286C", "A16293G"],
       children: []
     },
     {
       branchName: "Haplogroup L6",
+      region: "Ethiopia / Yemen",
+      description: "Primarily found in Ethiopia and Yemen.",
       mutations: ["G16213A", "C16222T", "A16293G"],
       children: []
     }

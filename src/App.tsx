@@ -19,32 +19,50 @@ import { saveResults, loadResults, clearResults } from "./services/storageServic
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
-const HaplogroupTreeView = memo(({ node, userPath, level = 0 }: { node: any, userPath: string[], level?: number }) => {
+const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }: { node: any, userPath: string[], level?: number, searchTerm?: string }) => {
   const isMatch = userPath.includes(node.branchName);
-  const [isExpanded, setIsExpanded] = useState(isMatch || level < 1);
+  const matchesSearch = searchTerm && node.branchName.toLowerCase().includes(searchTerm.toLowerCase());
+  const [isExpanded, setIsExpanded] = useState(isMatch || level < 1 || !!matchesSearch);
+
+  useEffect(() => {
+    if (matchesSearch) setIsExpanded(true);
+  }, [matchesSearch]);
+
+  const mutations = node.mutations || [];
 
   return (
-    <div className="ml-4 border-l border-slate-200 dark:border-slate-700 pl-4 my-1">
+    <div className={`ml-4 border-l border-slate-200 dark:border-slate-700 pl-4 my-1 ${matchesSearch ? 'ring-2 ring-sky-500/20 rounded-r' : ''}`}>
       <div 
-        className={`flex items-center gap-2 cursor-pointer group py-1 px-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${isMatch ? 'bg-blue-50 dark:bg-blue-900/20' : ''}`}
+        className={`flex items-center gap-2 cursor-pointer group py-1.5 px-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-all ${isMatch ? 'bg-blue-50 dark:bg-blue-900/20' : ''} ${matchesSearch ? 'bg-sky-50 dark:bg-sky-900/30' : ''}`}
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <span className="text-xs text-slate-400">
+        <span className="text-xs text-slate-400 w-4 flex justify-center">
           {node.children && node.children.length > 0 ? (isExpanded ? '▼' : '▶') : '•'}
         </span>
-        <span className={`text-sm font-bold ${isMatch ? 'text-blue-600 dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>
-          {node.branchName}
-        </span>
-        {(node.snp?.[0] || node.mutations?.[0]) && (
-          <span className="text-[10px] font-mono bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-slate-500">
-            {node.snp?.[0] || node.mutations?.[0]}
-          </span>
-        )}
+        <div className="flex flex-col">
+          <div className="flex items-center gap-2">
+            <span className={`text-sm font-bold ${isMatch ? 'text-blue-600 dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'} ${matchesSearch ? 'text-sky-600 dark:text-sky-400 underline decoration-sky-500/50 underline-offset-2' : ''}`}>
+              {node.branchName}
+            </span>
+            {node.region && (
+              <span className="text-[9px] text-slate-400 font-medium uppercase tracking-wider">{node.region}</span>
+            )}
+          </div>
+          {isExpanded && mutations.length > 0 && (
+            <div className="flex flex-wrap gap-1 mt-1">
+              {mutations.map((m: string, idx: number) => (
+                <span key={idx} className={`text-[9px] font-mono px-1 py-0.5 rounded ${userPath.includes(node.branchName) && mutations.slice(0, idx+1).every((mut: string) => mut) ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
+                  {m}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
       {isExpanded && node.children && (
         <div className="animate-fade-in">
           {node.children.map((child: any, i: number) => (
-            <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} />
+            <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} searchTerm={searchTerm} />
           ))}
         </div>
       )}
@@ -429,11 +447,51 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
 const YDNAView = memo(({ yData }: { yData: any }) => {
   if (!yData) return null;
 
+  const derivedMarkers = yData.testedMarkers.filter((m: any) => m.isDerived);
+  const markerPieData = derivedMarkers.map((m: any) => ({
+    name: m.marker,
+    branch: (m.branch || 'Unknown').replace("Haplogroup ", ""),
+    value: 1
+  }));
+
+  const HAPLO_COLORS: Record<string, string> = {
+    'R1b': '#7f1d1d', // Maroon
+    'R1a': '#be123c', // Crimson
+    'Q': '#991b1b',   // Red
+    'O3': '#ea580c',  // Orange
+    'J': '#65a30d',   // Green
+    'I': '#166534',   // Dark Green
+    'H': '#059669',   // Emerald
+    'G': '#0ea5e9',   // Sky Blue
+    'E3b': '#1e3a8a', // Navy
+    'E': '#2563eb',   // Blue
+    'A': '#4338ca',   // Indigo
+    'B': '#6d28d9',   // Violet
+    'C': '#7c3aed',   // Purple
+    'D': '#db2777',   // Pink
+    'L': '#ca8a04',   // Yellow/Gold
+    'T': '#0891b2',   // Cyan
+  };
+
+  const getHaploColor = (name: string) => {
+    // Try exact match first
+    if (HAPLO_COLORS[name]) return HAPLO_COLORS[name];
+    // Try prefix match (e.g. R1b1 -> R1b)
+    for (const key in HAPLO_COLORS) {
+      if (name.startsWith(key)) return HAPLO_COLORS[key];
+    }
+    // Fallback to a hash-based color or a default
+    const colors = ['#64748b', '#94a3b8', '#cbd5e1', '#475569'];
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    return colors[Math.abs(hash) % colors.length];
+  };
+
   return (
     <div className="animate-fade-up space-y-6">
       {/* Main Prediction Header */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="lg:col-span-2 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 opacity-20 text-9xl">♂️</div>
           <div className="relative z-10">
             <h3 className="text-blue-100 font-bold uppercase tracking-widest text-xs mb-2">Paternal Lineage</h3>
@@ -466,29 +524,93 @@ const YDNAView = memo(({ yData }: { yData: any }) => {
           </div>
         </div>
         
+        {/* Marker Distribution Pie Chart */}
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+          <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Y-Chromosome Haplogroups</h4>
+          {markerPieData.length > 0 ? (
+            <div className="flex-1 flex flex-col">
+              <div className="flex-1 min-h-[180px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={markerPieData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={40}
+                      outerRadius={70}
+                      paddingAngle={1}
+                      dataKey="value"
+                      label={false}
+                      labelLine={false}
+                    >
+                      {markerPieData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch)} />
+                      ))}
+                    </Pie>
+                    <Tooltip 
+                      content={({ active, payload }) => {
+                        if (active && payload && payload.length) {
+                          const data = payload[0].payload;
+                          return (
+                            <div className="bg-slate-800 p-2 rounded text-[10px] text-white shadow-xl border border-slate-700">
+                              <div className="flex items-center gap-1.5 mb-0.5">
+                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getHaploColor(data.branch) }}></div>
+                                <span className="font-bold">{data.name}</span>
+                              </div>
+                              <div className="text-slate-400">Branch: {data.branch}</div>
+                            </div>
+                          );
+                        }
+                        return null;
+                      }}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1">
+                <div className="col-span-2 text-[8px] text-slate-400 mb-1">
+                  Showing {markerPieData.length} derived markers
+                </div>
+                {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 6).map((branch) => (
+                  <div key={branch as string} className="flex items-center justify-between text-[9px]">
+                    <div className="flex items-center gap-1 truncate">
+                      <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: getHaploColor(branch as string) }}></div>
+                      <span className="text-slate-600 dark:text-slate-400 truncate">{branch as string}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex-1 flex items-center justify-center text-slate-400 text-[10px] italic">
+              No derived markers found
+            </div>
+          )}
+        </div>
+
         {/* Description Card */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
           <div>
-            <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">About this lineage</h4>
-            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">About this lineage</h4>
+            <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed line-clamp-4">
               {yData.predicted?.description || "This lineage is not yet in our database or has limited marker coverage."}
             </p>
           </div>
           
           {yData.predicted && (
-            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/50">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-xl">🧬</span>
-                <div className="text-xs font-bold text-blue-900 dark:text-blue-300">Match Confidence</div>
+            <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/50">
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-sm">🧬</span>
+                <div className="text-[10px] font-bold text-blue-900 dark:text-blue-300">Match Confidence</div>
               </div>
-              <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-1.5 mb-1">
+              <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-1 mb-1">
                 <div 
-                  className="bg-blue-600 h-1.5 rounded-full" 
-                  style={{ width: `${Math.min(100, (yData.testedMarkers.filter((m: any) => m.isDerived).length / 5) * 100)}%` }}
+                  className="bg-blue-600 h-1 rounded-full" 
+                  style={{ width: `${Math.min(100, (derivedMarkers.length / 5) * 100)}%` }}
                 ></div>
               </div>
-              <div className="text-[10px] text-blue-600 dark:text-blue-400 font-bold">
-                {yData.testedMarkers.filter((m: any) => m.isDerived).length} derived markers found
+              <div className="text-[9px] text-blue-600 dark:text-blue-400 font-bold">
+                {derivedMarkers.length} derived markers found
               </div>
             </div>
           )}
@@ -546,44 +668,166 @@ const YDNAView = memo(({ yData }: { yData: any }) => {
   );
 });
 
-const MTDNAView = memo(({ mtData }: { mtData: any }) => {
+const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData: any, treeSearchTerm: string, setTreeSearchTerm: (val: string) => void }) => {
   if (!mtData) return null;
+
+  const derivedMarkers = mtData.testedMarkers.filter((m: any) => m.status === 'derived');
+  const markerPieData = derivedMarkers.map((m: any) => {
+    // Try to find the branch name from the path if possible, or use the mutation
+    const branch = (mtData.path.find((p: string) => p.includes(m.mutation)) || mtData.predicted || 'Root').replace("Haplogroup ", "");
+    return {
+      name: m.mutation,
+      branch: branch,
+      value: 1
+    };
+  });
+
+  const MT_HAPLO_COLORS: Record<string, string> = {
+    'L0': '#991b1b', // Red
+    'L1': '#be123c', // Crimson
+    'L2': '#e11d48', // Rose
+    'L3': '#f43f5e', // Pink
+    'L4': '#fb7185', // Soft Pink
+    'L5': '#fda4af', // Very Soft Pink
+    'L6': '#fecdd3', // Pale Pink
+    'M': '#7c3aed',  // Purple
+    'N': '#2563eb',  // Blue
+    'R': '#0ea5e9',  // Sky
+    'H': '#0891b2',  // Cyan
+    'V': '#0d9488',  // Teal
+    'J': '#059669',  // Emerald
+    'T': '#16a34a',  // Green
+    'U': '#65a30d',  // Lime
+    'K': '#ca8a04',  // Gold
+    'I': '#d97706',  // Amber
+    'W': '#ea580c',  // Orange
+    'X': '#dc2626',  // Bright Red
+  };
+
+  const getMtHaploColor = (name: string) => {
+    if (MT_HAPLO_COLORS[name]) return MT_HAPLO_COLORS[name];
+    for (const key in MT_HAPLO_COLORS) {
+      if (name.startsWith(key)) return MT_HAPLO_COLORS[key];
+    }
+    const colors = ['#f43f5e', '#ec4899', '#d946ef', '#a855f7', '#8b5cf6'];
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    return colors[Math.abs(hash) % colors.length];
+  };
 
   return (
     <div className="animate-fade-up space-y-8">
-      <div className="bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-950/30 dark:to-pink-950/30 p-8 rounded-2xl border border-rose-100 dark:border-rose-800/50 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-8 opacity-10 text-8xl">♀️</div>
-        <div className="relative z-10">
-          <h3 className="text-rose-800 dark:text-rose-300 font-bold uppercase tracking-widest text-xs mb-2">Maternal Lineage Prediction</h3>
-          {mtData.predicted ? (
-            <>
-              <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter">Haplogroup {mtData.predicted}</h2>
-              <div className="flex flex-wrap gap-3 mb-6">
-                <span className="px-3 py-1 bg-rose-600 text-white rounded-full text-xs font-bold shadow-sm">Confidence Score: {mtData.score}</span>
-                <span className="px-3 py-1 bg-white dark:bg-slate-800 text-rose-700 dark:text-rose-300 rounded-full text-xs font-bold border border-rose-200 dark:border-rose-800 shadow-sm">Region: {mtData.region}</span>
-              </div>
-              
-              {/* Lineage Path Highlight */}
-              <div className="mt-6 pt-6 border-t border-rose-200 dark:border-rose-800/50">
-                <h4 className="text-[10px] font-bold text-rose-800 dark:text-rose-400 uppercase tracking-widest mb-3">Predicted Maternal Path</h4>
-                <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
-                  {mtData.path.map((step: string, idx: number) => (
-                    <div key={idx} className="flex items-center gap-1">
-                      {idx > 0 && <span className="text-rose-400/50 text-[10px]">▶</span>}
-                      <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === mtData.path.length - 1 ? 'bg-rose-600 text-white shadow-lg' : 'bg-rose-100 dark:bg-rose-900 text-rose-800 dark:text-rose-300'}`}>
-                        {step.replace("Haplogroup ", "")}
-                      </span>
-                    </div>
-                  ))}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="lg:col-span-2 bg-gradient-to-br from-rose-500 to-pink-600 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-8 opacity-20 text-9xl">♀️</div>
+          <div className="relative z-10">
+            <h3 className="text-rose-100 font-bold uppercase tracking-widest text-xs mb-2">Maternal Lineage Prediction</h3>
+            {mtData.predicted ? (
+              <>
+                <h2 className="text-5xl font-black mb-4 tracking-tighter">Haplogroup {mtData.predicted}</h2>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Confidence Score: {mtData.score}</span>
+                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Region: {mtData.region}</span>
                 </div>
+                
+                {/* Lineage Path Highlight */}
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <h4 className="text-[10px] font-bold text-rose-200 uppercase tracking-widest mb-3">Predicted Maternal Path</h4>
+                  <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
+                    {mtData.path.map((step: string, idx: number) => (
+                      <div key={idx} className="flex items-center gap-1">
+                        {idx > 0 && <span className="text-rose-300/50 text-[10px]">▶</span>}
+                        <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === mtData.path.length - 1 ? 'bg-white text-rose-700 shadow-lg' : 'bg-white/10 text-white'}`}>
+                          {step.replace("Haplogroup ", "")}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <h2 className="text-3xl font-bold">No haplogroup detected</h2>
+            )}
+          </div>
+        </div>
+
+        {/* mtDNA Marker Distribution Pie Chart */}
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+          <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">mtDNA Marker Distribution</h4>
+          {markerPieData.length > 0 ? (
+            <div className="flex-1 flex flex-col">
+              <div className="flex-1 min-h-[180px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={markerPieData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={40}
+                      outerRadius={70}
+                      paddingAngle={1}
+                      dataKey="value"
+                      label={false}
+                      labelLine={false}
+                    >
+                      {markerPieData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={getMtHaploColor(entry.branch)} />
+                      ))}
+                    </Pie>
+                    <Tooltip 
+                      content={({ active, payload }) => {
+                        if (active && payload && payload.length) {
+                          const data = payload[0].payload;
+                          return (
+                            <div className="bg-slate-800 p-2 rounded text-[10px] text-white shadow-xl border border-slate-700">
+                              <div className="flex items-center gap-1.5 mb-0.5">
+                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getMtHaploColor(data.branch) }}></div>
+                                <span className="font-bold">{data.name}</span>
+                              </div>
+                              <div className="text-slate-400">Branch: {data.branch}</div>
+                            </div>
+                          );
+                        }
+                        return null;
+                      }}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
               </div>
-              
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl mt-6">{mtData.description}</p>
-            </>
+              <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1">
+                <div className="col-span-2 text-[8px] text-slate-400 mb-1">
+                  Showing {markerPieData.length} derived markers
+                </div>
+                {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 6).map((branch) => (
+                  <div key={branch as string} className="flex items-center justify-between text-[9px]">
+                    <div className="flex items-center gap-1 truncate">
+                      <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: getMtHaploColor(branch as string) }}></div>
+                      <span className="text-slate-600 dark:text-slate-400 truncate">{branch as string}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           ) : (
-            <div className="py-8">
-              <h2 className="text-2xl font-bold text-slate-400 dark:text-slate-300">No specific mtDNA haplogroup detected</h2>
-              <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">This may be due to limited marker coverage on your DNA chip or a lineage not yet in our database.</p>
+            <div className="flex-1 flex items-center justify-center text-slate-400 text-[10px] italic">
+              No derived markers found
+            </div>
+          )}
+        </div>
+
+        {/* Description Card */}
+        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+          <div>
+            <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">About this lineage</h4>
+            <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed line-clamp-4">
+              {mtData.description || "This lineage is not yet in our database or has limited marker coverage."}
+            </p>
+          </div>
+          
+          {mtData.predicted && (
+            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+              <div className="text-[10px] font-bold text-rose-600 uppercase tracking-widest mb-1">Primary Region</div>
+              <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{mtData.region}</div>
             </div>
           )}
         </div>
@@ -591,12 +835,22 @@ const MTDNAView = memo(({ mtData }: { mtData: any }) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-6">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-rose-600">🌳</span>
-            Phylogenetic Tree
-          </h3>
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+              <span className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-rose-600">🌳</span>
+              Phylogenetic Tree
+            </h3>
+            <div className="relative">
+              <input 
+                type="text" 
+                placeholder="Search branches..." 
+                className="text-[10px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:ring-2 focus:ring-sky-500 outline-none w-40 transition-all"
+                onChange={(e) => setTreeSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
           <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-x-auto">
-            <HaplogroupTreeView node={MT_DNA_TREE} userPath={mtData.path} />
+            <HaplogroupTreeView node={MT_DNA_TREE} userPath={mtData.path} searchTerm={treeSearchTerm} />
           </div>
         </div>
 
@@ -667,6 +921,7 @@ export default function App() {
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<'autosomal' | 'oracle' | 'y-dna' | 'mt-dna'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
+  const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [collapsedCategories, setCollapsedCategories] = useState<Set<string>>(new Set());
 
   const expandAll = (categories: string[]) => {
@@ -1294,7 +1549,11 @@ export default function App() {
           )}
 
           {activeTab === 'mt-dna' && (
-            <MTDNAView mtData={datasets[activeDatasetIndex].predictedMtDNA} />
+            <MTDNAView 
+              mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+              treeSearchTerm={treeSearchTerm}
+              setTreeSearchTerm={setTreeSearchTerm}
+            />
           )}
 
         </div>

@@ -13878,5 +13878,86 @@
     "weight": 5.0,
     "frequencies": {"AFR": 0.00, "EUR": 0.00, "EAS": 0.00, "AMR": 0.15, "Native_American": 0.25, "SAS": 0.00},
     "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas."
+  },
+  {
+    "rsid": "rs671",
+    "region": "East Asian",
+    "alleles": ["A"],
+    "weight": 5.0,
+    "frequencies": {"AFR": 0.00, "EUR": 0.00, "EAS": 0.25, "AMR": 0.01, "SAS": 0.00},
+    "subFrequencies": {"Japanese": 0.45, "Han Chinese": 0.20, "Vietnamese": 0.15, "Korean": 0.30},
+    "description": "East Asian Alcohol Flush Marker - highly informative for Japanese and Han Chinese subpopulations."
+  },
+  {
+    "rsid": "rs12913832",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 4.0,
+    "frequencies": {"AFR": 0.01, "EUR": 0.80, "EAS": 0.01, "AMR": 0.10, "SAS": 0.05},
+    "subFrequencies": {"Scandinavian": 0.95, "Northern European": 0.90, "Southern European": 0.40, "Ashkenazi Jewish": 0.85},
+    "description": "European Eye Color/Ancestry Marker - highly frequent in Northern European and Ashkenazi populations."
+  },
+  {
+    "rsid": "rs1800407",
+    "region": "European",
+    "alleles": ["C"],
+    "weight": 4.5,
+    "frequencies": {"AFR": 0.01, "EUR": 0.75, "EAS": 0.01, "AMR": 0.05, "SAS": 0.02},
+    "subFrequencies": {"Ashkenazi Jewish": 0.98, "Northern European": 0.70, "Southern European": 0.60},
+    "description": "Ashkenazi Jewish Ancestry Marker - highly informative for Jewish populations of Eastern European descent."
+  },
+  {
+    "rsid": "rs3827760",
+    "region": "East Asian",
+    "alleles": ["C"],
+    "weight": 5.0,
+    "frequencies": {"AFR": 0.01, "EUR": 0.01, "EAS": 0.95, "AMR": 0.40, "SAS": 0.05},
+    "subFrequencies": {"Han Chinese": 0.99, "Japanese": 0.90, "Korean": 0.95, "Native American": 0.50},
+    "description": "EDAR Gene Marker - diagnostic for East Asian and Native American populations."
+  },
+  {
+    "rsid": "rs6730157",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.05, "EUR": 0.65, "EAS": 0.02, "AMR": 0.15, "SAS": 0.10},
+    "subFrequencies": {"Northern European": 0.85, "Southern European": 0.45, "Eastern European": 0.70},
+    "description": "European Regional Marker - informative for North-South gradient within Europe."
+  },
+  {
+    "rsid": "rs3829251",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 3.5,
+    "frequencies": {"AFR": 0.02, "EUR": 0.70, "EAS": 0.01, "AMR": 0.10, "SAS": 0.05},
+    "subFrequencies": {"Northern European": 0.90, "Southern European": 0.50, "Eastern European": 0.75},
+    "description": "European Regional Marker - useful for distinguishing Northern and Southern European ancestry."
+  },
+  {
+    "rsid": "rs12896399",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 3.0,
+    "frequencies": {"AFR": 0.01, "EUR": 0.55, "EAS": 0.01, "AMR": 0.08, "SAS": 0.03},
+    "subFrequencies": {"Northern European": 0.75, "Southern European": 0.35, "Eastern European": 0.60},
+    "description": "SLC24A4 Eye Color Marker - informative for European regional variation."
+  },
+  {
+    "rsid": "rs1393350",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 3.0,
+    "frequencies": {"AFR": 0.03, "EUR": 0.60, "EAS": 0.02, "AMR": 0.12, "SAS": 0.08},
+    "subFrequencies": {"Northern European": 0.80, "Southern European": 0.40, "Eastern European": 0.65},
+    "description": "TYRP1 Hair Color Marker - shows significant variation across European populations."
+  },
+  {
+    "rsid": "rs1129038",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4.0,
+    "frequencies": {"AFR": 0.01, "EUR": 0.78, "EAS": 0.01, "AMR": 0.09, "SAS": 0.04},
+    "subFrequencies": {"Northern European": 0.92, "Southern European": 0.65, "Eastern European": 0.85},
+    "description": "HERC2 Eye Color Marker - highly informative for European ancestry and pigmentation traits."
   }
 ]
