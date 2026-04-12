@@ -654,7 +654,12 @@ const YDNAView = memo(({ yData }: { yData: any }) => {
                       {m.isDerived ? 'Derived' : 'Ancestral'}
                     </span>
                   </div>
-                  <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase mb-2">{m.trait}</div>
+                  <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase mb-1">{m.trait}</div>
+                  {m.description && (
+                    <div className="text-[10px] text-slate-600 dark:text-slate-400 italic mb-2 leading-tight border-l-2 border-blue-200 dark:border-blue-800 pl-2">
+                      {m.description}
+                    </div>
+                  )}
                   <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 inline-block">
                     Genotype: {m.genotype}
                   </div>
@@ -874,7 +879,12 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
                   <div key={i} className={`p-4 border-b border-slate-100 dark:border-slate-700/50 flex justify-between items-center ${m.status === 'derived' ? 'bg-rose-50/30 dark:bg-rose-900/10' : ''}`}>
                     <div>
                       <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{m.mutation}</div>
-                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-tighter">Position: {m.pos} · {m.ancestral}→{m.derived}</div>
+                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-tighter mb-1">Position: {m.pos} · {m.ancestral}→{m.derived}</div>
+                      {m.description && (
+                        <div className="text-[10px] text-slate-600 dark:text-slate-400 italic leading-tight border-l-2 border-rose-200 dark:border-rose-800 pl-2 mt-1">
+                          {m.description}
+                        </div>
+                      )}
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${m.status === 'derived' ? 'bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'}`}>

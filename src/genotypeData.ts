@@ -17,6 +17,29 @@ export interface SNP {
   frequencies?: Record<string, number>;
 }
 
+/**
+ * Global lookup map for SNPs by markerId and rsid for efficient access.
+ */
+const SNP_LOOKUP = new Map<string, any>();
+
+/**
+ * Retrieves a brief explanation for a given marker ID or mutation.
+ */
+export function getMarkerDescription(markerId: string): string {
+  const snp = SNP_LOOKUP.get(markerId.toLowerCase());
+  if (snp) return snp.description;
+  
+  // Fallback for mtDNA mutations like "A769G"
+  if (/^[A-Z]\d+[A-Z]$/.test(markerId)) {
+    const pos = markerId.slice(1, -1);
+    const ancestral = markerId[0];
+    const derived = markerId.slice(-1);
+    return `Mitochondrial mutation at position ${pos}, changing ${ancestral} to ${derived}.`;
+  }
+  
+  return "Significance data not available for this specific marker.";
+}
+
 export const SNP_DB: SNP[] = [
   { markerId: "rs2862", rsid: "rs2862", gene: "FMO3", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["A"], description: "A variant found at higher frequencies in populations of African descent.", referenceUrl: "https://www.snpedia.com/index.php/Rs2862" },
   { markerId: "rs1129038", rsid: "rs1129038", gene: "SLC14A2", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A variant associated with African ancestry and kidney function adaptation.", referenceUrl: "https://www.snpedia.com/index.php/Rs1129038" },
@@ -1515,8 +1538,36 @@ export const SNP_DB: SNP[] = [
   { markerId: "L448", gene: "Y-DNA", trait: "Haplogroup R1a-Z284 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["A"], description: "Younger Scandinavian R1a branch." },
   { markerId: "CTS4179", gene: "Y-DNA", trait: "Haplogroup R1a-Z284 subclade", continent: "European", category: "Ancestry", significance: "High", alleles: ["T"], description: "Scottish/Viking R1a branch." },
   { markerId: "Y7", gene: "Y-DNA", trait: "Haplogroup R1a-Z93 subclade", continent: "South Asian", category: "Ancestry", significance: "High", alleles: ["G"], description: "Indo-Aryan R1a branch." },
-  { markerId: "L1453", gene: "Y-DNA", trait: "Haplogroup B-V2342", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup B-V2342." }
+  { markerId: "L1453", gene: "Y-DNA", trait: "Haplogroup B-V2342", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for Haplogroup B-V2342." },
+  { markerId: "A10398G", gene: "mtDNA", trait: "Macro-haplogroup N / L3", continent: "Global", category: "Ancestry", significance: "High", alleles: ["G"], description: "The primary 'Out of Africa' marker defining Macro-haplogroup N and several L3 branches." },
+  { markerId: "T10873C", gene: "mtDNA", trait: "Macro-haplogroup M", continent: "Asian / Oceanian", category: "Ancestry", significance: "High", alleles: ["C"], description: "The defining mutation for Macro-haplogroup M, encompassing most Asian and Oceanian lineages." },
+  { markerId: "T12705C", gene: "mtDNA", trait: "Haplogroup R backbone", continent: "European / South Asian", category: "Ancestry", significance: "High", alleles: ["C"], description: "A major backbone marker for Haplogroup R, the ancestor of most European and South Asian lineages." },
+  { markerId: "C14766T", gene: "mtDNA", trait: "Haplogroup HV", continent: "European / Near Eastern", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defines Haplogroup HV, the direct ancestor of Haplogroup H and V." },
+  { markerId: "A7028G", gene: "mtDNA", trait: "Haplogroup H", continent: "European", category: "Ancestry", significance: "High", alleles: ["G"], description: "The diagnostic mutation for Haplogroup H, the most common lineage in Europe." },
+  { markerId: "C195T", gene: "mtDNA", trait: "Haplogroup L1/L2", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "A defining marker for many L1 and L2 African lineages." },
+  { markerId: "G4104A", gene: "mtDNA", trait: "Haplogroup L2", continent: "African", category: "Ancestry", significance: "High", alleles: ["A"], description: "A core backbone marker for Haplogroup L2, the most common lineage in Africa." },
+  { markerId: "A663G", gene: "mtDNA", trait: "Haplogroup A", continent: "East Asian / Native American", category: "Ancestry", significance: "High", alleles: ["G"], description: "Major marker for Haplogroup A, common in East Asia and Native American populations." },
+  { markerId: "G13368A", gene: "mtDNA", trait: "Haplogroup T", continent: "European / Near Eastern", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for Haplogroup T, often found in European and Near Eastern populations." },
+  { markerId: "T16189C", gene: "mtDNA", trait: "Haplogroup L3 / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["C"], description: "A very common mutation found in many L3 branches and its descendants (M, N, R, etc.)." },
+  { markerId: "C16223T", gene: "mtDNA", trait: "Haplogroup L / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A basal mutation defining many African and non-African lineages." },
+  { markerId: "T16223C", gene: "mtDNA", trait: "Haplogroup L / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["C"], description: "A basal mutation defining many African and non-African lineages." },
+  { markerId: "G16230A", gene: "mtDNA", trait: "Haplogroup L0 / L1", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["A"], description: "A marker often found in basal African lineages like L0 and L1." },
+  { markerId: "T16278C", gene: "mtDNA", trait: "Haplogroup L", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["C"], description: "Common in many African L-haplogroups." },
+  { markerId: "C16311T", gene: "mtDNA", trait: "Haplogroup L / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A highly recurrent mutation found across many human haplogroups." }
 ];
+
+SNP_DB.forEach(snp => {
+  SNP_LOOKUP.set(snp.markerId.toLowerCase(), snp);
+  if (snp.rsid) SNP_LOOKUP.set(snp.rsid.toLowerCase(), snp);
+  if (snp.aliases) snp.aliases.forEach(alias => SNP_LOOKUP.set(alias.toLowerCase(), snp));
+});
+
+// Also include ANCHOR_AIMS in the lookup
+ANCHOR_AIMS.forEach(aim => {
+  if (!SNP_LOOKUP.has(aim.rsid.toLowerCase())) {
+    SNP_LOOKUP.set(aim.rsid.toLowerCase(), aim);
+  }
+});
 
 export const CONTINENT_META: Record<string, {color: string, icon: string}> = {
   "Africa":       {color:"#E8A838", icon:"🌍"},
@@ -2856,8 +2907,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
               { branchName: "Haplogroup R1a1a1", snp: ["Z645"], children: [
                 { branchName: "Haplogroup R1a-Z283", snp: ["Z283"], children: [
                   { branchName: "Haplogroup R1a-Z282", snp: ["Z282"], children: [
-                    { branchName: "Haplogroup R1a-Z280", snp: ["Z280"] },
-                    { branchName: "Haplogroup R1a-M458", snp: ["M458"] }
+                    { branchName: "Haplogroup R1a-Z280", snp: ["Z280"], children: [{ branchName: "Haplogroup R1a-CTS1211", snp: ["CTS1211"] }, { branchName: "Haplogroup R1a-L365", snp: ["L365"] }] },
+                    { branchName: "Haplogroup R1a-M458", snp: ["M458"], children: [{ branchName: "Haplogroup R1a-L260", snp: ["L260"] }] }
                   ] }
                 ] },
                 { branchName: "Haplogroup R1a1a1b1", snp: ["Z283", "Z282"] },
@@ -2881,7 +2932,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
               region: "Western Europe",
               description: "The most common Y-DNA haplogroup in Western Europe, associated with the expansion of Indo-European speakers.",
               children: [
-                { branchName: "Haplogroup R1b-Z2103", snp: ["Z2103"] },
+                { branchName: "Haplogroup R1b-Z2103", snp: ["Z2103"], children: [{ branchName: "Haplogroup R1b-L23", snp: ["L23"] }, { branchName: "Haplogroup R1b-Z2105", snp: ["Z2105"] }] },
                 { branchName: "Haplogroup R1b1", snp: ["L278"] },
                 { branchName: "Haplogroup R1b1a", snp: ["L754"] },
                 { branchName: "Haplogroup R1b1a1b", snp: ["M269", "L23", "rs9786139", "rs9786714", "i400018", "rs9786153", "rs9786132", "rs34024838", "i4000064", "i4000062"], children: [
@@ -3138,7 +3189,8 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
             isDerived,
             trait: `Marker for ${node.branchName}`,
             branch: node.branchName,
-            region: node.region || "Global"
+            region: node.region || "Global",
+            description: getMarkerDescription(snpId)
           });
         }
       }
@@ -3224,11 +3276,31 @@ export const MT_DNA_TREE: HaplogroupNode = {
       description: "One of the oldest maternal lineages, common among the Khoisan people.",
       mutations: ["T146C", "C182T", "A189G", "C195T", "T198C", "A247G", "A4312G", "G5460A", "G8251A", "A9123G", "A10115G", "T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T"],
       children: [
-        { branchName: "Haplogroup L0a", mutations: ["G12771A", "C16111T"] },
+        { 
+          branchName: "Haplogroup L0a", 
+          mutations: ["G12771A", "C16111T"],
+          children: [
+            { branchName: "Haplogroup L0a1", mutations: ["C16111T", "T16209C"] },
+            { branchName: "Haplogroup L0a2", mutations: ["G12771A", "C16111T", "T16189C"] }
+          ]
+        },
         { branchName: "Haplogroup L0b", mutations: ["G10115A"] },
-        { branchName: "Haplogroup L0d", mutations: ["T16187C", "C16189T", "A16265G"] },
+        { 
+          branchName: "Haplogroup L0d", 
+          mutations: ["T16187C", "C16189T", "A16265G"],
+          children: [
+            { branchName: "Haplogroup L0d1", mutations: ["T16187C", "C16189T", "A16265G", "T16311C"] },
+            { branchName: "Haplogroup L0d2", mutations: ["T16187C", "C16189T", "A16265G", "G16230A"] }
+          ]
+        },
         { branchName: "Haplogroup L0f", mutations: ["G16230A"] },
-        { branchName: "Haplogroup L0k", mutations: ["T16187C", "C16189T", "T16223C"] }
+        { 
+          branchName: "Haplogroup L0k", 
+          mutations: ["T16187C", "C16189T", "T16223C"],
+          children: [
+            { branchName: "Haplogroup L0k1", mutations: ["T16187C", "C16189T", "T16223C", "C16294T"] }
+          ]
+        }
       ]
     },
     {
@@ -3245,12 +3317,26 @@ export const MT_DNA_TREE: HaplogroupNode = {
               branchName: "Haplogroup L1b1",
               mutations: ["T16126C", "C16264T", "C16270T", "A16265G"],
               children: [
-                { branchName: "Haplogroup L1b1a", mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C"] }
+                { 
+                  branchName: "Haplogroup L1b1a", 
+                  mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C"],
+                  children: [
+                    { branchName: "Haplogroup L1b1a1", mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C", "T16189C"] }
+                  ]
+                }
               ]
             }
           ]
         },
-        { branchName: "Haplogroup L1c", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G"] }
+        { 
+          branchName: "Haplogroup L1c", 
+          mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G"],
+          children: [
+            { branchName: "Haplogroup L1c1", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "C16124T"] },
+            { branchName: "Haplogroup L1c2", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "T16189C"] },
+            { branchName: "Haplogroup L1c3", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "C16278T"] }
+          ]
+        }
       ]
     },
     {
@@ -3272,7 +3358,8 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
                   children: [
                     { branchName: "Haplogroup L2a1a1", mutations: ["C16166T"] },
-                    { branchName: "Haplogroup L2a1a2", mutations: ["G16213A"] }
+                    { branchName: "Haplogroup L2a1a2", mutations: ["G16213A"] },
+                    { branchName: "Haplogroup L2a1a3", mutations: ["T16189C"] }
                   ]
                 },
                 {
@@ -3306,15 +3393,21 @@ export const MT_DNA_TREE: HaplogroupNode = {
             {
               branchName: "Haplogroup L2b1",
               mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: []
+              children: [
+                { branchName: "Haplogroup L2b1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C16270T"] }
+              ]
             }
           ]
         },
         {
           branchName: "Haplogroup L2c",
           mutations: ["T16223C", "C16278T", "C16294T", "T16311C", "A16265G", "C16189T", "T16362C"],
-          children: []
-        }
+          children: [
+            { branchName: "Haplogroup L2c1", mutations: ["T16223C", "C16278T", "C16294T", "T16311C", "A16265G", "C16189T", "T16362C", "G16129A"] }
+          ]
+        },
+        { branchName: "Haplogroup L2d", mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "A16265G"] },
+        { branchName: "Haplogroup L2e", mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"] }
       ]
     },
     {
@@ -3347,7 +3440,9 @@ export const MT_DNA_TREE: HaplogroupNode = {
             {
               branchName: "Haplogroup L3d1",
               mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: []
+              children: [
+                { branchName: "Haplogroup L3d1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"] }
+              ]
             }
           ]
         },
@@ -3358,7 +3453,9 @@ export const MT_DNA_TREE: HaplogroupNode = {
             {
               branchName: "Haplogroup L3e1",
               mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: []
+              children: [
+                { branchName: "Haplogroup L3e1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C16124T"] }
+              ]
             },
             {
               branchName: "Haplogroup L3e2",
@@ -3399,7 +3496,13 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   branchName: "Haplogroup L3f1b",
                   mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
                   children: [
-                    { branchName: "Haplogroup L3f1b1", mutations: ["T16140C"] },
+                    { 
+                      branchName: "Haplogroup L3f1b1", 
+                      mutations: ["T16140C"],
+                      children: [
+                        { branchName: "Haplogroup L3f1b1a", mutations: ["T16140C", "C16189T", "T16311C"] }
+                      ]
+                    },
                     { branchName: "Haplogroup L3f1b2", mutations: ["C16168T"] }
                   ]
                 },
@@ -3502,14 +3605,20 @@ export const MT_DNA_TREE: HaplogroupNode = {
               mutations: ["A9824G"],
               children: [
                 { branchName: "Haplogroup M7a", mutations: ["C16297T"] },
-                { branchName: "Haplogroup M7b", mutations: ["T16297C"] }
+                { branchName: "Haplogroup M7b", mutations: ["T16297C"] },
+                { branchName: "Haplogroup M7c", mutations: ["A9824G", "T16297C", "C16129T"] }
               ]
             },
             {
               branchName: "Haplogroup M8",
               mutations: ["C4715T"],
-              children: []
+              children: [
+                { branchName: "Haplogroup M8a", mutations: ["C4715T", "T16189C", "C16291T"] }
+              ]
             },
+            { branchName: "Haplogroup M10", mutations: ["G10801A"] },
+            { branchName: "Haplogroup M11", mutations: ["G10946A"] },
+            { branchName: "Haplogroup M12", mutations: ["G10946A", "T16189C"] },
             {
               branchName: "Haplogroup M9",
               mutations: ["E3394C"],
@@ -3527,15 +3636,33 @@ export const MT_DNA_TREE: HaplogroupNode = {
               branchName: "Haplogroup N1",
               mutations: ["G10238A", "G12501A"],
               children: [
-                { branchName: "Haplogroup N1a", mutations: ["G16129A", "C16189T"] },
-                { branchName: "Haplogroup N1b", mutations: ["G16129A", "C16189T", "A16129G"] }
+                { 
+                  branchName: "Haplogroup N1a", 
+                  mutations: ["G16129A", "C16189T"],
+                  children: [
+                    { branchName: "Haplogroup N1a1", mutations: ["G16129A", "C16189T", "T16172C"] }
+                  ]
+                },
+                { 
+                  branchName: "Haplogroup N1b", 
+                  mutations: ["G16129A", "C16189T", "A16129G"],
+                  children: [
+                    { branchName: "Haplogroup N1b1", mutations: ["G16129A", "C16189T", "A16129G", "T16172C"] }
+                  ]
+                }
               ]
             },
             {
               branchName: "Haplogroup N2",
               mutations: ["G15323A", "T16223C"],
               children: [
-                { branchName: "Haplogroup N2a", mutations: ["G16129A"] }
+                { 
+                  branchName: "Haplogroup N2a", 
+                  mutations: ["G16129A"],
+                  children: [
+                    { branchName: "Haplogroup N2a1", mutations: ["G16129A", "T16172C"] }
+                  ]
+                }
               ]
             },
             {
@@ -3634,6 +3761,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   branchName: "Haplogroup R0",
                   mutations: ["G73A", "G11719A"],
                   children: [
+                    { branchName: "Haplogroup R0a", mutations: ["G73A", "G11719A", "T16126C"] },
                     {
                       branchName: "Haplogroup HV",
                       mutations: ["T14766C"],
@@ -3648,8 +3776,8 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               branchName: "Haplogroup H1",
                               mutations: ["G3010A"],
                               children: [
-                                { branchName: "Haplogroup H1a", mutations: ["T73A", "C16162T"] },
-                                { branchName: "Haplogroup H1b", mutations: ["T16189C", "T16356C"] },
+                                { branchName: "Haplogroup H1a", mutations: ["T73A", "C16162T"], children: [{ branchName: "Haplogroup H1a1", mutations: ["G3010A", "T73A", "C16162T", "G16129A"] }] },
+                                { branchName: "Haplogroup H1b", mutations: ["T16189C", "T16356C"], children: [{ branchName: "Haplogroup H1b1", mutations: ["G3010A", "T16189C", "T16356C", "G16129A"] }] },
                                 { branchName: "Haplogroup H1c", mutations: ["T477C"] },
                                 { branchName: "Haplogroup H1e", mutations: ["G5460A"] },
                                 { branchName: "Haplogroup H1f", mutations: ["T16093C"] },
@@ -3664,7 +3792,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                                   branchName: "Haplogroup H2a",
                                   mutations: ["A4769G"],
                                   children: [
-                                    { branchName: "Haplogroup H2a1", mutations: ["G16153A"] },
+                                    { branchName: "Haplogroup H2a1", mutations: ["G16153A"], children: [{ branchName: "Haplogroup H2a1a", mutations: ["A1438G", "A4769G", "G16153A", "T16189C"] }] },
                                     {
                                       branchName: "Haplogroup H2a2",
                                       mutations: ["C750T"],
@@ -3680,7 +3808,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               branchName: "Haplogroup H3",
                               mutations: ["T6776C"],
                               children: [
-                                { branchName: "Haplogroup H3a", mutations: ["A16129G"] },
+                                { branchName: "Haplogroup H3a", mutations: ["A16129G"], children: [{ branchName: "Haplogroup H3a1", mutations: ["T6776C", "A16129G", "T16189C"] }] },
                                 { branchName: "Haplogroup H3b", mutations: ["T16189C"] }
                               ]
                             },
@@ -3695,14 +3823,14 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               branchName: "Haplogroup H5",
                               mutations: ["T456C", "G16304A"],
                               children: [
-                                { branchName: "Haplogroup H5a", mutations: ["A4336G"] }
+                                { branchName: "Haplogroup H5a", mutations: ["A4336G"], children: [{ branchName: "Haplogroup H5a1", mutations: ["T456C", "G16304A", "A4336G", "T16189C"] }] }
                               ]
                             },
                             {
                               branchName: "Haplogroup H6",
                               mutations: ["G3915A", "A16298G"],
                               children: [
-                                { branchName: "Haplogroup H6a", mutations: ["T3394C"] }
+                                { branchName: "Haplogroup H6a", mutations: ["T3394C"], children: [{ branchName: "Haplogroup H6a1", mutations: ["G3915A", "A16298G", "T3394C", "T16189C"] }] }
                               ]
                             },
                             {
@@ -3722,10 +3850,16 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               branchName: "Haplogroup H13",
                               mutations: ["G14872A"],
                               children: [
-                                { branchName: "Haplogroup H13a", mutations: ["T2259C"] }
+                                { branchName: "Haplogroup H13a", mutations: ["T2259C"], children: [{ branchName: "Haplogroup H13a1", mutations: ["G14872A", "T2259C", "T16189C"] }] }
                               ]
                             },
                             { branchName: "Haplogroup H14", mutations: ["T7645C"] },
+                            { branchName: "Haplogroup H1a", mutations: ["G16129A"], children: [{ branchName: "Haplogroup H1a1", mutations: ["T16162G"] }] },
+                            { branchName: "Haplogroup H1b", mutations: ["G16356A"] },
+                            { branchName: "Haplogroup H1c", mutations: ["T16189C"] },
+                            { branchName: "Haplogroup H1e", mutations: ["G5460A"] },
+                            { branchName: "Haplogroup H1f", mutations: ["T16093C"] },
+                            { branchName: "Haplogroup H1g", mutations: ["A16209G"] },
                             { branchName: "Haplogroup H20", mutations: ["C16218T"] },
                             { branchName: "Haplogroup H21", mutations: ["G16129A", "T16187C"] },
                             { branchName: "Haplogroup H27", mutations: ["C16129T", "T16187C"] },
@@ -3750,8 +3884,23 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   branchName: "Haplogroup F",
                   mutations: ["T16304C", "C16223T"],
                   children: [
-                    { branchName: "Haplogroup F1", mutations: ["A16162G"] },
-                    { branchName: "Haplogroup F2", mutations: ["T16304C"] }
+                    { 
+                      branchName: "Haplogroup F1", 
+                      mutations: ["A16162G"],
+                      children: [
+                        { branchName: "Haplogroup F1a", mutations: ["A16162G", "T16172C"] },
+                        { branchName: "Haplogroup F1b", mutations: ["A16162G", "T16189C"] },
+                        { branchName: "Haplogroup F1c", mutations: ["A16162G", "C16129T"] }
+                      ]
+                    },
+                    { 
+                      branchName: "Haplogroup F2", 
+                      mutations: ["T16304C"],
+                      children: [
+                        { branchName: "Haplogroup F2a", mutations: ["T16304C", "G16129A"] },
+                        { branchName: "Haplogroup F2b", mutations: ["T16304C", "C16189T"] }
+                      ]
+                    }
                   ]
                 },
                 {
@@ -3769,10 +3918,13 @@ export const MT_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup B4",
                       mutations: ["T16217C"],
                       children: [
+                        { branchName: "Haplogroup B4a", mutations: ["T16189C", "T16217C"] },
+                        { branchName: "Haplogroup B4b", mutations: ["C16189T", "T16217C"] },
+                        { branchName: "Haplogroup B4c", mutations: ["G16129A", "T16217C"] },
                         { branchName: "Haplogroup B4a1a1a", mutations: ["A16189C", "T16217C", "C16223T", "C16261T", "T16278C"] }
                       ]
                     },
-                    { branchName: "Haplogroup B5", mutations: ["A16183C"], children: [] }
+                    { branchName: "Haplogroup B5", mutations: ["A16183C"], children: [{ branchName: "Haplogroup B5a", mutations: ["A16183C", "T16189C"] }, { branchName: "Haplogroup B5b", mutations: ["A16183C", "C16189T"] }] }
                   ]
                 },
             {
@@ -3795,7 +3947,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               branchName: "Haplogroup U5a1", 
                               mutations: ["A16129G"],
                               children: [
-                                { branchName: "Haplogroup U5a1a", mutations: ["T16192C"] },
+                                { branchName: "Haplogroup U5a1a", mutations: ["T16192C"], children: [{ branchName: "Haplogroup U5a1a1", mutations: ["A16247G"] }, { branchName: "Haplogroup U5a1a2", mutations: ["G16129A"] }] },
                                 { branchName: "Haplogroup U5a1b", mutations: ["A16189G"] }
                               ]
                             },
@@ -3810,7 +3962,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                               branchName: "Haplogroup U5b1", 
                               mutations: ["G16129A"],
                               children: [
-                                { branchName: "Haplogroup U5b1b", mutations: ["T16189C"] },
+                                { branchName: "Haplogroup U5b1b", mutations: ["T16189C"], children: [{ branchName: "Haplogroup U5b1b1", mutations: ["A16129G"] }] },
                                 { branchName: "Haplogroup U5b1c", mutations: ["A16129G"] }
                               ]
                             },
@@ -3831,26 +3983,28 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   branchName: "Haplogroup U2",
                   mutations: ["A16129G", "C16189T"],
                   children: [
-                    { branchName: "Haplogroup U2e", mutations: ["A16129G", "T16189C"] },
+                    { branchName: "Haplogroup U2e", mutations: ["A16129G", "T16189C"], children: [{ branchName: "Haplogroup U2e1", mutations: ["A16129G", "T16189C", "G16129A"] }] },
                     { branchName: "Haplogroup U2a", mutations: ["C16129T"] },
                     { branchName: "Haplogroup U2b", mutations: ["G16129A"] },
                     { branchName: "Haplogroup U2c", mutations: ["T16129C"] }
                   ]
                 },
-                { branchName: "Haplogroup U4", mutations: ["T16356C"], children: [] },
-                { branchName: "Haplogroup U8", mutations: ["G16129A"], children: [] },
-                { branchName: "Haplogroup U1", mutations: ["A12870G"], children: [] },
-                { branchName: "Haplogroup U3", mutations: ["A16343G"], children: [] },
-                { branchName: "Haplogroup U7", mutations: ["A16318T"], children: [] },
-                { branchName: "Haplogroup U9", mutations: ["A16129G", "T16172C"], children: [] },
+                { branchName: "Haplogroup U4", mutations: ["T16356C"], children: [{ branchName: "Haplogroup U4a", mutations: ["T16356C", "G16129A"] }] },
+                { branchName: "Haplogroup U8", mutations: ["G16129A"], children: [{ branchName: "Haplogroup U8a", mutations: ["G16129A", "T16189C"] }] },
+                { branchName: "Haplogroup U1", mutations: ["A12870G"], children: [{ branchName: "Haplogroup U1a", mutations: ["A12870G", "G16129A"] }, { branchName: "Haplogroup U1b", mutations: ["A12870G", "A16129G"] }] },
+                { branchName: "Haplogroup U3", mutations: ["A16343G"], children: [{ branchName: "Haplogroup U3a", mutations: ["A16343G", "T16189C"] }] },
+                { branchName: "Haplogroup U7", mutations: ["A16318T"], children: [{ branchName: "Haplogroup U7a", mutations: ["A16318T", "G16129A"] }] },
+                { branchName: "Haplogroup U9", mutations: ["A16129G", "T16172C"], children: [{ branchName: "Haplogroup U9a", mutations: ["A16129G", "T16172C", "G16129A"] }] },
                 {
                   branchName: "Haplogroup K",
                   region: "European / West Asian",
                   description: "Common in Europe and the Near East.",
                   mutations: ["A1189C", "A3480G", "G9055A", "A10398G", "A10550G", "T11299C", "T14798C", "T16224C", "C16311T"],
                   children: [
-                    { branchName: "Haplogroup K1a", mutations: ["T1189C"], children: [] },
-                    { branchName: "Haplogroup K2", mutations: ["G10550A"], children: [] }
+                    { branchName: "Haplogroup K1a", mutations: ["T1189C"], children: [{ branchName: "Haplogroup K1a1", mutations: ["T1189C", "T16189C"] }, { branchName: "Haplogroup K1a4", mutations: ["T1189C", "C16291T"] }] },
+                    { branchName: "Haplogroup K1b", mutations: ["T16189C"] },
+                    { branchName: "Haplogroup K1c", mutations: ["T16189C", "C16291T"] },
+                    { branchName: "Haplogroup K2", mutations: ["G10550A"], children: [{ branchName: "Haplogroup K2a", mutations: ["G10550A", "T16189C"] }, { branchName: "Haplogroup K2b", mutations: ["G10550A", "C16291T"] }] }
                   ]
                 }
               ]
@@ -3869,13 +4023,13 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           branchName: "Haplogroup J1",
                           mutations: ["T16126C"],
                           children: [
-                            { branchName: "Haplogroup J1b", mutations: ["C16189T", "C16261T"] },
+                            { branchName: "Haplogroup J1b", mutations: ["C16189T", "C16261T"], children: [{ branchName: "Haplogroup J1b1", mutations: ["C16189T", "C16261T", "G16129A"] }] },
                             {
                               branchName: "Haplogroup J1c",
                               mutations: ["C16069T", "G16129A"],
                               children: [
-                                { branchName: "Haplogroup J1c1", mutations: ["T146C"] },
-                                { branchName: "Haplogroup J1c2", mutations: ["C16261T"] },
+                                { branchName: "Haplogroup J1c1", mutations: ["T146C"], children: [{ branchName: "Haplogroup J1c1a", mutations: ["T146C", "T16189C"] }] },
+                                { branchName: "Haplogroup J1c2", mutations: ["C16261T"], children: [{ branchName: "Haplogroup J1c2a", mutations: ["T16189C"] }] },
                                 { branchName: "Haplogroup J1c3", mutations: ["T16192C"] },
                                 { branchName: "Haplogroup J1c4", mutations: ["C16222T"] },
                                 { branchName: "Haplogroup J1c5", mutations: ["G16145A"] },
@@ -3890,8 +4044,8 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           branchName: "Haplogroup J2",
                           mutations: ["T16069C"],
                           children: [
-                            { branchName: "Haplogroup J2a", mutations: ["A16129G"] },
-                            { branchName: "Haplogroup J2b", mutations: ["C16193T"] }
+                            { branchName: "Haplogroup J2a", mutations: ["A16129G"], children: [{ branchName: "Haplogroup J2a1", mutations: ["A16129G", "T16189C"] }] },
+                            { branchName: "Haplogroup J2b", mutations: ["C16193T"], children: [{ branchName: "Haplogroup J2b1", mutations: ["C16193T", "G16129A"] }] }
                           ]
                         }
                       ]
@@ -3906,7 +4060,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           branchName: "Haplogroup T1",
                           mutations: ["A16126G"],
                           children: [
-                            { branchName: "Haplogroup T1a", mutations: ["T16189C", "A16265G"] },
+                            { branchName: "Haplogroup T1a", mutations: ["T16189C", "A16265G"], children: [{ branchName: "Haplogroup T1a1", mutations: ["T16189C", "A16265G", "G16129A"] }] },
                             { branchName: "Haplogroup T1b", mutations: ["C16189T"] }
                           ]
                         },
@@ -3914,20 +4068,20 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           branchName: "Haplogroup T2",
                           mutations: ["C16126T", "C16294T", "A11812G"],
                           children: [
-                            { branchName: "Haplogroup T2a", mutations: ["A16129G", "C16189T"] },
+                            { branchName: "Haplogroup T2a", mutations: ["A16129G", "C16189T"], children: [{ branchName: "Haplogroup T2a1", mutations: ["A16129G", "C16189T", "G16129A"] }] },
                             {
                               branchName: "Haplogroup T2b",
                               mutations: ["G16153A", "G16129A", "C16189T"],
                               children: [
-                                { branchName: "Haplogroup T2b1", mutations: ["G16153A"] },
-                                { branchName: "Haplogroup T2b2", mutations: ["A16129G"] },
+                                { branchName: "Haplogroup T2b1", mutations: ["G16153A"], children: [{ branchName: "Haplogroup T2b1a", mutations: ["G16153A", "T16189C"] }] },
+                                { branchName: "Haplogroup T2b2", mutations: ["A16129G"], children: [{ branchName: "Haplogroup T2b2a", mutations: ["T16189C"] }] },
                                 { branchName: "Haplogroup T2b3", mutations: ["T16172C"] },
                                 { branchName: "Haplogroup T2b4", mutations: ["C16261T"] },
                                 { branchName: "Haplogroup T2b5", mutations: ["G16145A"] }
                               ]
                             },
-                            { branchName: "Haplogroup T2c", mutations: ["T146C", "T16187C"] },
-                            { branchName: "Haplogroup T2e", mutations: ["A16189G", "A16129G"] }
+                            { branchName: "Haplogroup T2c", mutations: ["T146C", "T16187C"], children: [{ branchName: "Haplogroup T2c1", mutations: ["T146C", "T16187C", "G16129A"] }] },
+                            { branchName: "Haplogroup T2e", mutations: ["A16189G", "A16129G"], children: [{ branchName: "Haplogroup T2e1", mutations: ["A16189G", "A16129G", "G16129A"] }] }
                           ]
                         }
                       ]
@@ -4029,7 +4183,7 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
 
   // Check which mutations the user has
   const userMutations: string[] = [];
-  const testedMarkers: { mutation: string, pos: string, derived: string, ancestral: string, status: 'derived' | 'ancestral' }[] = [];
+  const testedMarkers: { mutation: string, pos: string, derived: string, ancestral: string, status: 'derived' | 'ancestral', description?: string }[] = [];
   
   allMutations.forEach(mutation => {
     // Mutation format is like "A769G" (Ancestral + Pos + Derived)
@@ -4048,9 +4202,9 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     
     if (userAllele === derived) {
       userMutations.push(mutation);
-      testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived' });
+      testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
     } else if (userAllele === ancestral) {
-      testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral' });
+      testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
     }
   });
 
