@@ -865,32 +865,58 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
             Tested Markers
           </h3>
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
-            <div className="max-h-[500px] overflow-y-auto scrollbar-hide">
+            <div className="p-4 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+              <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Marker Details</div>
+              <div className="text-[10px] text-slate-400">{mtData.testedMarkers.length} markers tested</div>
+            </div>
+            <div className="max-h-[600px] overflow-y-auto scrollbar-hide divide-y divide-slate-100 dark:divide-slate-700/50">
               {mtData.testedMarkers.length === 0 ? (
                 <div className="p-8 text-center">
                   <div className="text-3xl mb-3">🔬</div>
                   <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">No mtDNA Markers Found</h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    We couldn't find any mitochondrial DNA markers in your file. This can happen with very small raw data files or non-standard formats.
+                    We couldn't find any mitochondrial DNA markers in your file.
                   </p>
                 </div>
               ) : (
-                mtData.testedMarkers.map((m: any, i: number) => (
-                  <div key={i} className={`p-4 border-b border-slate-100 dark:border-slate-700/50 flex justify-between items-center ${m.status === 'derived' ? 'bg-rose-50/30 dark:bg-rose-900/10' : ''}`}>
-                    <div>
-                      <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{m.mutation}</div>
-                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase tracking-tighter mb-1">Position: {m.pos} · {m.ancestral}→{m.derived}</div>
-                      {m.description && (
-                        <div className="text-[10px] text-slate-600 dark:text-slate-400 italic leading-tight border-l-2 border-rose-200 dark:border-rose-800 pl-2 mt-1">
-                          {m.description}
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${m.status === 'derived' ? 'bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'}`}>
+                [...mtData.testedMarkers]
+                  .sort((a: any, b: any) => {
+                    if (a.status === 'derived' && b.status !== 'derived') return -1;
+                    if (a.status !== 'derived' && b.status === 'derived') return 1;
+                    return parseInt(a.pos) - parseInt(b.pos);
+                  })
+                  .map((m: any, i: number) => (
+                  <div key={i} className={`p-4 transition-colors ${m.status === 'derived' ? 'bg-rose-50/40 dark:bg-rose-900/10' : 'hover:bg-slate-50 dark:hover:bg-slate-700/30'}`}>
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="flex items-center gap-2">
+                        <div className={`w-2 h-2 rounded-full ${m.status === 'derived' ? 'bg-rose-500 animate-pulse' : 'bg-slate-300 dark:bg-slate-600'}`}></div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{m.mutation}</div>
+                      </div>
+                      <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${m.status === 'derived' ? 'bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600'}`}>
                         {m.status}
                       </span>
                     </div>
+                    
+                    <div className="grid grid-cols-3 gap-2 mb-3">
+                      <div className="bg-white/50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
+                        <div className="text-[8px] text-slate-400 uppercase font-bold mb-0.5">Position</div>
+                        <div className="text-[11px] font-mono text-slate-700 dark:text-slate-300">{m.pos}</div>
+                      </div>
+                      <div className="bg-white/50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
+                        <div className="text-[8px] text-slate-400 uppercase font-bold mb-0.5">Ancestral</div>
+                        <div className="text-[11px] font-mono text-slate-700 dark:text-slate-300">{m.ancestral}</div>
+                      </div>
+                      <div className="bg-white/50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
+                        <div className="text-[8px] text-slate-400 uppercase font-bold mb-0.5">Derived</div>
+                        <div className="text-[11px] font-mono text-slate-700 dark:text-slate-300">{m.derived}</div>
+                      </div>
+                    </div>
+
+                    {m.description && (
+                      <div className="text-[10px] text-slate-600 dark:text-slate-400 leading-relaxed bg-slate-50/50 dark:bg-slate-900/30 p-2 rounded-lg border-l-2 border-rose-400 dark:border-rose-600">
+                        {m.description}
+                      </div>
+                    )}
                   </div>
                 ))
               )}

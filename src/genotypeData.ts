@@ -25,16 +25,99 @@ const SNP_LOOKUP = new Map<string, any>();
 /**
  * Retrieves a brief explanation for a given marker ID or mutation.
  */
+const MT_MARKER_DESCRIPTIONS: Record<string, string> = {
+  // Level 1-2
+  "C146T": "A foundational mutation for the L1'2'3'4'5'6 macro-haplogroup.",
+  "C182T": "A key mutation defining the ancient L1'2'3'4'5'6 lineage.",
+  "T4312C": "An ancestral marker for the broad L1'2'3'4'5'6 group.",
+  "T10664C": "Part of the ancient foundation of sub-Saharan African lineages.",
+  "C10915T": "A deep-rooted mutation in the human mitochondrial tree.",
+  "A11914G": "An ancient marker shared by many African lineages.",
+  "G13276A": "A foundational mutation for the L1'2'3'4'5'6 clade.",
+  "G16230A": "A very old mutation found in the earliest human branches.",
+  "G3666A": "Defines the broad Haplogroup L1, one of the oldest in human history.",
+  "A7055G": "A characteristic mutation for the L1 lineage.",
+  "T7389C": "A key marker for the ancient L1 haplogroup.",
+  "T13789C": "Part of the defining set of mutations for L1.",
+  "T14178C": "An ancestral mutation for the L1 branch.",
+  "G14560A": "A foundational marker for the L1 lineage.",
+  
+  // Level 3 (L1c)
+  "C151T": "Defining mutation for Haplogroup L1c, associated with Central African forest-dwellers.",
+  "C186a": "An insertion at position 186, characteristic of the L1c branch.",
+  "A189c": "An insertion at position 189, defining the L1c lineage.",
+  "G316A": "A key marker for the Central African L1c haplogroup.",
+  "A2395d": "A deletion at position 2395, specific to the L1c lineage.",
+  "A5951G": "Part of the L1c defining mutation set.",
+  "T6071C": "A characteristic mutation for the Central African L1c branch.",
+  "G8027A": "A marker identifying the L1c maternal lineage.",
+  "A9072G": "Found in the L1c branch of the mitochondrial tree.",
+  "G10586A": "A defining mutation for the L1c haplogroup.",
+  "A12810G": "Part of the ancestral foundation of the L1c lineage.",
+  "A13485G": "A key marker for the L1c haplogroup.",
+  "T14000a": "An insertion at position 14000, specific to L1c.",
+  "C14911T": "A mutation defining the L1c maternal line.",
+  "C16294T": "A characteristic marker for the Central African L1c branch.",
+  "C16360T": "Part of the defining set of mutations for L1c.",
+  
+  // Level 4-6 (L1c1)
+  "A297G": "Narrows the lineage further into the L1c1'2'4'5'6 subgroup.",
+  "C198T": "A mutation refining the lineage towards L1c1.",
+  "T10321C": "Part of the refining mutations for the L1c1 subgroup.",
+  "A3796t": "An insertion/variant at 3796, defining the L1c1 branch.",
+  "A3843G": "A key marker for the L1c1 maternal lineage.",
+  "A14148G": "Defining mutation for the L1c1 subgroup.",
+  "A16293G": "A characteristic marker for the L1c1 lineage.",
+  
+  // Level 7-10 (L1c1a1)
+  "G185A": "A mutation identifying the L1c1a'b'd subgroup.",
+  "T189C": "Part of the L1c1a'b'd defining mutation set.",
+  "G711A": "A key marker for the L1c1a'b'd and L1c1a1 lineages.",
+  "G7654A": "Found in the L1c1a'b'd branch of the tree.",
+  "G12406A": "A mutation defining the L1c1a'b'd subgroup.",
+  "T195C": "Refines the lineage to the L1c1a subgroup.",
+  "G13105A": "A key marker for the L1c1a maternal line.",
+  "T15289C": "Defining mutation for the L1c1a branch.",
+  "C186T": "A terminal mutation defining your specific L1c1a1 branch.",
+  "G188A": "Part of the specific terminal mutations for L1c1a1.",
+  "T7933C": "A key marker for the terminal L1c1a1 haplogroup.",
+  "T8468C": "Defining mutation for the specific L1c1a1 lineage.",
+  "G8655A": "A characteristic marker for the L1c1a1 branch.",
+  "G10685A": "Found in the terminal L1c1a1 branch of your tree.",
+  "G14905A": "A mutation specific to the L1c1a1 maternal line.",
+  "C15067T": "Part of the defining set for the terminal L1c1a1 branch.",
+  "T16189C": "A common but significant marker in the L1c1a1 lineage.",
+  "C16278T": "A key mutation for the terminal L1c1a1 haplogroup.",
+  "T16519C": "A terminal marker defining your specific L1c1a1 branch."
+};
+
 export function getMarkerDescription(markerId: string): string {
+  if (MT_MARKER_DESCRIPTIONS[markerId]) return MT_MARKER_DESCRIPTIONS[markerId];
+  
   const snp = SNP_LOOKUP.get(markerId.toLowerCase());
   if (snp) return snp.description;
   
-  // Fallback for mtDNA mutations like "A769G"
-  if (/^[A-Z]\d+[A-Z]$/.test(markerId)) {
-    const pos = markerId.slice(1, -1);
-    const ancestral = markerId[0];
-    const derived = markerId.slice(-1);
-    return `Mitochondrial mutation at position ${pos}, changing ${ancestral} to ${derived}.`;
+  // Fallback for mtDNA mutations like "A769G", "C186a", "A2395d"
+  const mtMatch = markerId.match(/^([A-Z])(\d+)([A-Za-z])$/);
+  if (mtMatch) {
+    const ancestral = mtMatch[1];
+    const pos = mtMatch[2];
+    const derived = mtMatch[3];
+    
+    if (derived.toLowerCase() === 'd') {
+      return `Mitochondrial deletion at position ${pos}. The ancestral allele ${ancestral} is missing.`;
+    }
+    
+    const baseNames: Record<string, string> = {
+      'A': 'Adenine', 'T': 'Thymine', 'C': 'Cytosine', 'G': 'Guanine',
+      'a': 'Adenine (insertion/variant)', 't': 'Thymine (insertion/variant)', 
+      'c': 'Cytosine (insertion/variant)', 'g': 'Guanine (insertion/variant)'
+    };
+    
+    const aName = baseNames[ancestral] || ancestral;
+    const dName = baseNames[derived] || derived;
+    
+    return `Mitochondrial mutation at position ${pos}, changing ${aName} (${ancestral}) to ${dName} (${derived}). This marker helps define specific maternal lineages.`;
   }
   
   return "Significance data not available for this specific marker.";
@@ -3304,200 +3387,239 @@ export const MT_DNA_TREE: HaplogroupNode = {
       ]
     },
     {
-      branchName: "Haplogroup L1",
-      region: "Central / West Africa",
-      description: "A very old lineage common in Central and West Africa.",
-      mutations: ["C182T", "T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A4104G"],
+      branchName: "Haplogroup L1'2'3'4'5'6",
+      region: "Africa",
+      description: "The ancestral lineage for the majority of human mitochondrial haplogroups.",
+      mutations: ["C146T", "C182T", "T4312C", "T10664C", "C10915T", "A11914G", "G13276A", "G16230A"],
       children: [
         {
-          branchName: "Haplogroup L1b",
-          mutations: ["T16126C", "C16187T", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "C16264T", "G16129A"],
+          branchName: "Haplogroup L1",
+          region: "Central / West Africa",
+          description: "A very old lineage common in Central and West Africa.",
+          mutations: ["G3666A", "A7055G", "T7389C", "T13789C", "T14178C", "G14560A"],
           children: [
             {
-              branchName: "Haplogroup L1b1",
-              mutations: ["T16126C", "C16264T", "C16270T", "A16265G"],
+              branchName: "Haplogroup L1b",
+              mutations: ["T16126C", "C16187T", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "C16264T", "G16129A"],
               children: [
-                { 
-                  branchName: "Haplogroup L1b1a", 
-                  mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C"],
+                {
+                  branchName: "Haplogroup L1b1",
+                  mutations: ["T16126C", "C16264T", "C16270T", "A16265G"],
                   children: [
-                    { branchName: "Haplogroup L1b1a1", mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C", "T16189C"] }
+                    { 
+                      branchName: "Haplogroup L1b1a", 
+                      mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C"],
+                      children: [
+                        { branchName: "Haplogroup L1b1a1", mutations: ["T16126C", "C16264T", "C16270T", "C16278T", "C16293T", "T16311C", "T16189C"] }
+                      ]
+                    }
                   ]
                 }
+              ]
+            },
+            { 
+              branchName: "Haplogroup L1c", 
+              mutations: ["C151T", "C186a", "A189c", "G316A", "A2395d", "A5951G", "T6071C", "G8027A", "A9072G", "G10586A", "A12810G", "A13485G", "T14000a", "C14911T", "C16294T", "C16360T"],
+              children: [
+                {
+                  branchName: "Haplogroup L1c1'2'4'5'6",
+                  mutations: ["A297G"],
+                  children: [
+                    {
+                      branchName: "Haplogroup L1c1'2'4'6",
+                      mutations: ["C198T", "T10321C"],
+                      children: [
+                        {
+                          branchName: "Haplogroup L1c1",
+                          mutations: ["A3796t", "A3843G", "A14148G", "A16293G"],
+                          children: [
+                            {
+                              branchName: "Haplogroup L1c1a'b'd",
+                              mutations: ["G185A", "T189C", "G711A", "G7654A", "G12406A"],
+                              children: [
+                                {
+                                  branchName: "Haplogroup L1c1a",
+                                  mutations: ["T195C", "G13105A", "T15289C"],
+                                  children: [
+                                    {
+                                      branchName: "Haplogroup L1c1a1",
+                                      mutations: ["C186T", "G188A", "C198T", "G711A", "T7933C", "T8468C", "G8655A", "G10685A", "G14905A", "C15067T", "T16189C", "C16278T", "T16519C"]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                { branchName: "Haplogroup L1c2", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "T16189C"] },
+                { branchName: "Haplogroup L1c3", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "C16278T"] }
               ]
             }
           ]
         },
-        { 
-          branchName: "Haplogroup L1c", 
-          mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G"],
-          children: [
-            { branchName: "Haplogroup L1c1", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "C16124T"] },
-            { branchName: "Haplogroup L1c2", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "T16189C"] },
-            { branchName: "Haplogroup L1c3", mutations: ["T16187C", "C16189T", "T16223C", "G16230A", "T16278C", "C16311T", "A16265G", "C16278T"] }
-          ]
-        }
-      ]
-    },
-    {
-      branchName: "Haplogroup L2",
-      region: "African",
-      description: "The most common maternal lineage in Africa.",
-      mutations: ["T152C", "A235G", "G247A", "C5250T", "A8206G", "T9086C", "A10115G", "C11944T", "A13590G", "A13803G", "T16278C", "T16311C"],
-      children: [
         {
-          branchName: "Haplogroup L2a",
-          mutations: ["T16223C", "C16278T", "C16294T", "T16309C", "T16390C", "C16189T", "T16311C", "T16362C"],
+          branchName: "Haplogroup L2",
+          region: "African",
+          description: "The most common maternal lineage in Africa.",
+          mutations: ["T152C", "A235G", "G247A", "C5250T", "A8206G", "T9086C", "A10115G", "C11944T", "A13590G", "A13803G", "T16278C", "T16311C"],
           children: [
             {
-              branchName: "Haplogroup L2a1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C4312T"],
+              branchName: "Haplogroup L2a",
+              mutations: ["T16223C", "C16278T", "C16294T", "T16309C", "T16390C", "C16189T", "T16311C", "T16362C"],
               children: [
                 {
-                  branchName: "Haplogroup L2a1a",
-                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+                  branchName: "Haplogroup L2a1",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C4312T"],
                   children: [
-                    { branchName: "Haplogroup L2a1a1", mutations: ["C16166T"] },
-                    { branchName: "Haplogroup L2a1a2", mutations: ["G16213A"] },
-                    { branchName: "Haplogroup L2a1a3", mutations: ["T16189C"] }
+                    {
+                      branchName: "Haplogroup L2a1a",
+                      mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+                      children: [
+                        { branchName: "Haplogroup L2a1a1", mutations: ["C16166T"] },
+                        { branchName: "Haplogroup L2a1a2", mutations: ["G16213A"] },
+                        { branchName: "Haplogroup L2a1a3", mutations: ["T16189C"] }
+                      ]
+                    },
+                    {
+                      branchName: "Haplogroup L2a1b",
+                      mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"],
+                      children: []
+                    },
+                    {
+                      branchName: "Haplogroup L2a1c",
+                      mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "G16129A"],
+                      children: []
+                    },
+                    {
+                      branchName: "Haplogroup L2a1l",
+                      mutations: ["T16189C", "A16265G"],
+                      children: []
+                    },
+                    {
+                      branchName: "Haplogroup L2a1f",
+                      mutations: ["T16209C"],
+                      children: []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              branchName: "Haplogroup L2b",
+              mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+              children: [
+                {
+                  branchName: "Haplogroup L2b1",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
+                  children: [
+                    { branchName: "Haplogroup L2b1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C16270T"] }
+                  ]
+                }
+              ]
+            },
+            {
+              branchName: "Haplogroup L2c",
+              mutations: ["T16223C", "C16278T", "C16294T", "T16311C", "A16265G", "C16189T", "T16362C"],
+              children: [
+                { branchName: "Haplogroup L2c1", mutations: ["T16223C", "C16278T", "C16294T", "T16311C", "A16265G", "C16189T", "T16362C", "G16129A"] }
+              ]
+            },
+            { branchName: "Haplogroup L2d", mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "A16265G"] },
+            { branchName: "Haplogroup L2e", mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"] }
+          ]
+        },
+        {
+          branchName: "Haplogroup L3",
+          region: "East Africa / Global",
+          description: "The ancestor of all non-African maternal lineages (M and N).",
+          mutations: ["A769G", "A1018G", "C16311T", "T16311C", "A10398G", "A16230G", "T16189C"],
+          children: [
+            {
+              branchName: "Haplogroup L3b",
+              mutations: ["T16223C", "C16278T", "C16311T", "T16124C", "C16189T", "C16294T", "T16362C"],
+              children: [
+                {
+                  branchName: "Haplogroup L3b1",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
+                  children: [
+                    {
+                      branchName: "Haplogroup L3b1a",
+                      mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+                      children: []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              branchName: "Haplogroup L3d",
+              mutations: ["T16223C", "C16278T", "C16311T", "C16124T", "C16189T", "C16294T", "T16362C"],
+              children: [
+                {
+                  branchName: "Haplogroup L3d1",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
+                  children: [
+                    { branchName: "Haplogroup L3d1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"] }
+                  ]
+                }
+              ]
+            },
+            {
+              branchName: "Haplogroup L3e",
+              mutations: ["T16223C", "C16278T", "C16327T", "T16223C", "C16189T", "C16294T", "T16311C", "T16362C"],
+              children: [
+                {
+                  branchName: "Haplogroup L3e1",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
+                  children: [
+                    { branchName: "Haplogroup L3e1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C16124T"] }
                   ]
                 },
                 {
-                  branchName: "Haplogroup L2a1b",
-                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"],
-                  children: []
+                  branchName: "Haplogroup L3e2",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+                  children: [
+                    {
+                      branchName: "Haplogroup L3e2b",
+                      mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"],
+                      children: [
+                        { branchName: "Haplogroup L3e2b1", mutations: ["C16124T"] },
+                        { branchName: "Haplogroup L3e2b2", mutations: ["T16172C"] }
+                      ]
+                    },
+                    { branchName: "Haplogroup L3e2a", mutations: ["T16172C"] }
+                  ]
                 },
                 {
-                  branchName: "Haplogroup L2a1c",
-                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "G16129A"],
-                  children: []
-                },
-                {
-                  branchName: "Haplogroup L2a1l",
+                  branchName: "Haplogroup L3e3",
                   mutations: ["T16189C", "A16265G"],
                   children: []
                 },
                 {
-                  branchName: "Haplogroup L2a1f",
-                  mutations: ["T16209C"],
+                  branchName: "Haplogroup L3e4",
+                  mutations: ["C16124T"],
                   children: []
                 }
               ]
-            }
-          ]
-        },
-        {
-          branchName: "Haplogroup L2b",
-          mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
-          children: [
-            {
-              branchName: "Haplogroup L2b1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: [
-                { branchName: "Haplogroup L2b1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C16270T"] }
-              ]
-            }
-          ]
-        },
-        {
-          branchName: "Haplogroup L2c",
-          mutations: ["T16223C", "C16278T", "C16294T", "T16311C", "A16265G", "C16189T", "T16362C"],
-          children: [
-            { branchName: "Haplogroup L2c1", mutations: ["T16223C", "C16278T", "C16294T", "T16311C", "A16265G", "C16189T", "T16362C", "G16129A"] }
-          ]
-        },
-        { branchName: "Haplogroup L2d", mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "A16265G"] },
-        { branchName: "Haplogroup L2e", mutations: ["C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"] }
-      ]
-    },
-    {
-      branchName: "Haplogroup L3",
-      region: "East Africa / Global",
-      description: "The ancestor of all non-African maternal lineages (M and N).",
-      mutations: ["A769G", "A1018G", "C16311T", "T16311C", "A10398G", "A16230G", "T16189C"],
-      children: [
-        {
-          branchName: "Haplogroup L3b",
-          mutations: ["T16223C", "C16278T", "C16311T", "T16124C", "C16189T", "C16294T", "T16362C"],
-          children: [
-            {
-              branchName: "Haplogroup L3b1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: [
-                {
-                  branchName: "Haplogroup L3b1a",
-                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
-                  children: []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          branchName: "Haplogroup L3d",
-          mutations: ["T16223C", "C16278T", "C16311T", "C16124T", "C16189T", "C16294T", "T16362C"],
-          children: [
-            {
-              branchName: "Haplogroup L3d1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: [
-                { branchName: "Haplogroup L3d1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"] }
-              ]
-            }
-          ]
-        },
-        {
-          branchName: "Haplogroup L3e",
-          mutations: ["T16223C", "C16278T", "C16327T", "T16223C", "C16189T", "C16294T", "T16311C", "T16362C"],
-          children: [
-            {
-              branchName: "Haplogroup L3e1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: [
-                { branchName: "Haplogroup L3e1a", mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "C16124T"] }
-              ]
             },
             {
-              branchName: "Haplogroup L3e2",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+              branchName: "Haplogroup L3f",
+              mutations: ["T16223C", "C16292T", "C16311T", "T16209C", "C16189T", "C16278T", "C16294T", "T16362C"],
               children: [
                 {
-                  branchName: "Haplogroup L3e2b",
-                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C", "A16265G"],
+                  branchName: "Haplogroup L3f1",
+                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
                   children: [
-                    { branchName: "Haplogroup L3e2b1", mutations: ["C16124T"] },
-                    { branchName: "Haplogroup L3e2b2", mutations: ["T16172C"] }
-                  ]
-                },
-                { branchName: "Haplogroup L3e2a", mutations: ["T16172C"] }
-              ]
-            },
-            {
-              branchName: "Haplogroup L3e3",
-              mutations: ["T16189C", "A16265G"],
-              children: []
-            },
-            {
-              branchName: "Haplogroup L3e4",
-              mutations: ["C16124T"],
-              children: []
-            }
-          ]
-        },
-        {
-          branchName: "Haplogroup L3f",
-          mutations: ["T16223C", "C16292T", "C16311T", "T16209C", "C16189T", "C16278T", "C16294T", "T16362C"],
-          children: [
-            {
-              branchName: "Haplogroup L3f1",
-              mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C"],
-              children: [
-                {
-                  branchName: "Haplogroup L3f1b",
-                  mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
-                  children: [
-                    { 
-                      branchName: "Haplogroup L3f1b1", 
+                    {
+                      branchName: "Haplogroup L3f1b",
+                      mutations: ["A16129G", "T16187C", "C16189T", "T16223C", "C16278T", "C16294T", "T16311C", "T16362C"],
+                      children: [
+                        { 
+                          branchName: "Haplogroup L3f1b1", 
                       mutations: ["T16140C"],
                       children: [
                         { branchName: "Haplogroup L3f1b1a", mutations: ["T16140C", "C16189T", "T16311C"] }
@@ -4119,6 +4241,8 @@ export const MT_DNA_TREE: HaplogroupNode = {
       children: []
     }
   ]
+}
+]
 };
 
 /**
@@ -4188,22 +4312,31 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   allMutations.forEach(mutation => {
     // Mutation format is like "A769G" (Ancestral + Pos + Derived)
     // Some mutations might be like "8281-8289d" (deletion)
-    if (mutation.includes('d')) {
-      // For deletions, we'll just check if the user has a dash or something
-      // This is a bit simplified for now
-      return;
-    }
+    const mtMatch = mutation.match(/^([A-Z])(\d+)([A-Za-z])$/);
+    if (!mtMatch) return;
 
-    const ancestral = mutation[0];
-    const derived = mutation.slice(-1);
-    const pos = mutation.slice(1, -1);
+    const ancestral = mtMatch[1];
+    const pos = mtMatch[2];
+    const derived = mtMatch[3];
     
     const userAllele = mtMap[pos];
     
-    if (userAllele === derived) {
+    // Handle deletions
+    if (derived.toLowerCase() === 'd') {
+      if (userAllele === '-' || userAllele === 'D' || !userAllele) {
+        userMutations.push(mutation);
+        testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
+      } else if (userAllele === ancestral) {
+        testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+      }
+      return;
+    }
+
+    // Handle normal mutations (case-insensitive for derived allele)
+    if (userAllele && userAllele.toUpperCase() === derived.toUpperCase()) {
       userMutations.push(mutation);
       testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
-    } else if (userAllele === ancestral) {
+    } else if (userAllele && userAllele.toUpperCase() === ancestral.toUpperCase()) {
       testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
     }
   });
