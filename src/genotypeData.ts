@@ -1636,7 +1636,123 @@ export const SNP_DB: SNP[] = [
   { markerId: "T16223C", gene: "mtDNA", trait: "Haplogroup L / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["C"], description: "A basal mutation defining many African and non-African lineages." },
   { markerId: "G16230A", gene: "mtDNA", trait: "Haplogroup L0 / L1", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["A"], description: "A marker often found in basal African lineages like L0 and L1." },
   { markerId: "T16278C", gene: "mtDNA", trait: "Haplogroup L", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["C"], description: "Common in many African L-haplogroups." },
-  { markerId: "C16311T", gene: "mtDNA", trait: "Haplogroup L / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A highly recurrent mutation found across many human haplogroups." }
+  { markerId: "C16311T", gene: "mtDNA", trait: "Haplogroup L / Global", continent: "Global", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A highly recurrent mutation found across many human haplogroups." },
+
+  // --- NEW SUB-POPULATION MARKERS ---
+  
+  // Ainu (East Asian)
+  { markerId: "rs9000314_Ainu", rsid: "rs9000314", gene: "Unknown", trait: "Ainu Ancestry Marker", continent: "East Asian", subpop: "Ainu", alleles: ["G"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Ainu populations (Japan).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.65,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000315_Ainu", rsid: "rs9000315", gene: "Unknown", trait: "Ainu Ancestry Marker", continent: "East Asian", subpop: "Ainu", alleles: ["A"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Ainu populations (Japan).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.62,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  
+  // Ryukyuan (East Asian)
+  { markerId: "rs9000316_Ryukyuan", rsid: "rs9000316", gene: "Unknown", trait: "Ryukyuan Ancestry Marker", continent: "East Asian", subpop: "Ryukyuan", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Ryukyuan populations (Okinawa).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.75,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000317_Ryukyuan", rsid: "rs9000317", gene: "Unknown", trait: "Ryukyuan Ancestry Marker", continent: "East Asian", subpop: "Ryukyuan", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Ryukyuan populations (Okinawa).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.72,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+
+  // Saami (European)
+  { markerId: "rs9000318_Saami", rsid: "rs9000318", gene: "Unknown", trait: "Saami Ancestry Marker", continent: "European", subpop: "Saami", alleles: ["A"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Saami populations (Sápmi).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.15,"EUR":0.78,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000319_Saami", rsid: "rs9000319", gene: "Unknown", trait: "Saami Ancestry Marker", continent: "European", subpop: "Saami", alleles: ["G"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Saami populations (Sápmi).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.12,"EUR":0.75,"SAS":0.01,"MENA":0.01} },
+
+  // Balanta (African)
+  { markerId: "rs9000320_Balanta", rsid: "rs9000320", gene: "Unknown", trait: "Balanta Ancestry Marker", continent: "African", subpop: "Balanta", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Balanta populations (Guinea-Bissau).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs9000321_Balanta", rsid: "rs9000321", gene: "Unknown", trait: "Balanta Ancestry Marker", continent: "African", subpop: "Balanta", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Balanta populations (Guinea-Bissau).", frequencies: {"AFR":0.96,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // Papel (African)
+  { markerId: "rs9000322_Papel", rsid: "rs9000322", gene: "Unknown", trait: "Papel Ancestry Marker", continent: "African", subpop: "Papel", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Papel populations (Guinea-Bissau).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs9000323_Papel", rsid: "rs9000323", gene: "Unknown", trait: "Papel Ancestry Marker", continent: "African", subpop: "Papel", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Papel populations (Guinea-Bissau).", frequencies: {"AFR":0.95,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // Bijago (African)
+  { markerId: "rs9000324_Bijago", rsid: "rs9000324", gene: "Unknown", trait: "Bijago Ancestry Marker", continent: "African", subpop: "Bijago", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bijago populations (Bissagos Islands).", frequencies: {"AFR":0.99,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs9000325_Bijago", rsid: "rs9000325", gene: "Unknown", trait: "Bijago Ancestry Marker", continent: "African", subpop: "Bijago", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bijago populations (Bissagos Islands).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // Orcadian (European)
+  { markerId: "rs9000326_Orcadian", rsid: "rs9000326", gene: "Unknown", trait: "Orcadian Ancestry Marker", continent: "European", subpop: "Orcadian", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Orcadian populations (Orkney Islands).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.88,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000327_Orcadian", rsid: "rs9000327", gene: "Unknown", trait: "Orcadian Ancestry Marker", continent: "European", subpop: "Orcadian", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Orcadian populations (Orkney Islands).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.86,"SAS":0.01,"MENA":0.01} },
+
+  // Icelandic (European)
+  { markerId: "rs9000328_Icelandic", rsid: "rs9000328", gene: "Unknown", trait: "Icelandic Ancestry Marker", continent: "European", subpop: "Icelandic", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Icelandic populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.9,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000329_Icelandic", rsid: "rs9000329", gene: "Unknown", trait: "Icelandic Ancestry Marker", continent: "European", subpop: "Icelandic", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Icelandic populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.89,"SAS":0.01,"MENA":0.01} },
+
+  // Maltese (European)
+  { markerId: "rs9000330_Maltese", rsid: "rs9000330", gene: "Unknown", trait: "Maltese Ancestry Marker", continent: "European", subpop: "Maltese", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Maltese populations.", frequencies: {"AFR":0.05,"AMR":0.01,"EAS":0.01,"EUR":0.75,"SAS":0.01,"MENA":0.18} },
+  { markerId: "rs9000331_Maltese", rsid: "rs9000331", gene: "Unknown", trait: "Maltese Ancestry Marker", continent: "European", subpop: "Maltese", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Maltese populations.", frequencies: {"AFR":0.04,"AMR":0.01,"EAS":0.01,"EUR":0.72,"SAS":0.01,"MENA":0.2} },
+
+  // Cypriot (European / Middle Eastern)
+  { markerId: "rs9000332_Cypriot", rsid: "rs9000332", gene: "Unknown", trait: "Cypriot Ancestry Marker", continent: "European / Middle Eastern", subpop: "Cypriot", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Cypriot populations.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.65,"SAS":0.01,"MENA":0.3} },
+  { markerId: "rs9000333_Cypriot", rsid: "rs9000333", gene: "Unknown", trait: "Cypriot Ancestry Marker", continent: "European / Middle Eastern", subpop: "Cypriot", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Cypriot populations.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.62,"SAS":0.01,"MENA":0.33} },
+
+  // Miao (East Asian)
+  { markerId: "rs9000334_Miao", rsid: "rs9000334", gene: "Unknown", trait: "Miao Ancestry Marker", continent: "East Asian", subpop: "Miao", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Miao populations (China).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.95,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000335_Miao", rsid: "rs9000335", gene: "Unknown", trait: "Miao Ancestry Marker", continent: "East Asian", subpop: "Miao", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Miao populations (China).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.93,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+
+  // Yi (East Asian)
+  { markerId: "rs9000336_Yi", rsid: "rs9000336", gene: "Unknown", trait: "Yi Ancestry Marker", continent: "East Asian", subpop: "Yi", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Yi populations (China).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.92,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000337_Yi", rsid: "rs9000337", gene: "Unknown", trait: "Yi Ancestry Marker", continent: "East Asian", subpop: "Yi", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Yi populations (China).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.90,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+
+  // Tujia (East Asian)
+  { markerId: "rs9000338_Tujia", rsid: "rs9000338", gene: "Unknown", trait: "Tujia Ancestry Marker", continent: "East Asian", subpop: "Tujia", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tujia populations (China).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.94,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000339_Tujia", rsid: "rs9000339", gene: "Unknown", trait: "Tujia Ancestry Marker", continent: "East Asian", subpop: "Tujia", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tujia populations (China).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.92,"EUR":0.01,"SAS":0.01,"MENA":0.01} },
+
+  // Dogon (African)
+  { markerId: "rs9000340_Dogon", rsid: "rs9000340", gene: "Unknown", trait: "Dogon Ancestry Marker", continent: "African", subpop: "Dogon", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dogon populations (Mali).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs9000341_Dogon", rsid: "rs9000341", gene: "Unknown", trait: "Dogon Ancestry Marker", continent: "African", subpop: "Dogon", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dogon populations (Mali).", frequencies: {"AFR":0.96,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // Bambara (African)
+  { markerId: "rs9000342_Bambara", rsid: "rs9000342", gene: "Unknown", trait: "Bambara Ancestry Marker", continent: "African", subpop: "Bambara", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bambara populations (Mali).", frequencies: {"AFR":0.97,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs9000343_Bambara", rsid: "rs9000343", gene: "Unknown", trait: "Bambara Ancestry Marker", continent: "African", subpop: "Bambara", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Bambara populations (Mali).", frequencies: {"AFR":0.95,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // Songhai (African)
+  { markerId: "rs9000344_Songhai", rsid: "rs9000344", gene: "Unknown", trait: "Songhai Ancestry Marker", continent: "African", subpop: "Songhai", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Songhai populations (Mali/Niger).", frequencies: {"AFR":0.98,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs9000345_Songhai", rsid: "rs9000345", gene: "Unknown", trait: "Songhai Ancestry Marker", continent: "African", subpop: "Songhai", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Songhai populations (Mali/Niger).", frequencies: {"AFR":0.96,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // Tuareg (African / North African)
+  { markerId: "rs9000346_Tuareg", rsid: "rs9000346", gene: "Unknown", trait: "Tuareg Ancestry Marker", continent: "African / North African", subpop: "Tuareg", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tuareg populations.", frequencies: {"AFR":0.4,"AMR":0.01,"EAS":0,"EUR":0.1,"SAS":0,"MENA":0.49} },
+  { markerId: "rs9000347_Tuareg", rsid: "rs9000347", gene: "Unknown", trait: "Tuareg Ancestry Marker", continent: "African / North African", subpop: "Tuareg", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Tuareg populations.", frequencies: {"AFR":0.38,"AMR":0.01,"EAS":0,"EUR":0.12,"SAS":0,"MENA":0.49} },
+
+  // --- MORE EUROPEAN AIMS ---
+
+  // Scandinavian (Northern European)
+  { markerId: "rs9000348_Scandinavian", rsid: "rs9000348", gene: "Unknown", trait: "Scandinavian Ancestry Marker", continent: "European", subpop: "Scandinavian", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Scandinavian populations (Norway/Sweden/Denmark).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.92,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000349_Scandinavian", rsid: "rs9000349", gene: "Unknown", trait: "Scandinavian Ancestry Marker", continent: "European", subpop: "Scandinavian", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Scandinavian populations (Norway/Sweden/Denmark).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.91,"SAS":0.01,"MENA":0.01} },
+
+  // Balkan (Southern European)
+  { markerId: "rs9000350_Balkan", rsid: "rs9000350", gene: "Unknown", trait: "Balkan Ancestry Marker", continent: "European", subpop: "Balkan", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Balkan populations (Albania/Greece/Bulgaria/Romania).", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.85,"SAS":0.01,"MENA":0.1} },
+  { markerId: "rs9000351_Balkan", rsid: "rs9000351", gene: "Unknown", trait: "Balkan Ancestry Marker", continent: "European", subpop: "Balkan", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Balkan populations (Albania/Greece/Bulgaria/Romania).", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.83,"SAS":0.01,"MENA":0.12} },
+
+  // Iberian (Southern European)
+  { markerId: "rs9000352_Iberian", rsid: "rs9000352", gene: "Unknown", trait: "Iberian Ancestry Marker", continent: "European", subpop: "Iberian", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Iberian populations (Portugal/Spain).", frequencies: {"AFR":0.05,"AMR":0.05,"EAS":0.01,"EUR":0.88,"SAS":0.01,"MENA":0.05} },
+  { markerId: "rs9000353_Iberian", rsid: "rs9000353", gene: "Unknown", trait: "Iberian Ancestry Marker", continent: "European", subpop: "Iberian", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Iberian populations (Portugal/Spain).", frequencies: {"AFR":0.04,"AMR":0.05,"EAS":0.01,"EUR":0.86,"SAS":0.01,"MENA":0.05} },
+
+  // Baltic (Eastern European)
+  { markerId: "rs9000354_Baltic", rsid: "rs9000354", gene: "Unknown", trait: "Baltic Ancestry Marker", continent: "European", subpop: "Baltic", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baltic populations (Lithuania/Latvia/Estonia).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.05,"EUR":0.93,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000355_Baltic", rsid: "rs9000355", gene: "Unknown", trait: "Baltic Ancestry Marker", continent: "European", subpop: "Baltic", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Baltic populations (Lithuania/Latvia/Estonia).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.04,"EUR":0.91,"SAS":0.01,"MENA":0.01} },
+
+  // Slavic (Eastern European)
+  { markerId: "rs9000356_Slavic", rsid: "rs9000356", gene: "Unknown", trait: "Slavic Ancestry Marker", continent: "European", subpop: "Slavic", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Slavic populations (Poland/Russia/Ukraine).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.03,"EUR":0.94,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000357_Slavic", rsid: "rs9000357", gene: "Unknown", trait: "Slavic Ancestry Marker", continent: "European", subpop: "Slavic", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Slavic populations (Poland/Russia/Ukraine).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.02,"EUR":0.92,"SAS":0.01,"MENA":0.01} },
+
+  // Celtic (Western European)
+  { markerId: "rs9000358_Celtic", rsid: "rs9000358", gene: "Unknown", trait: "Celtic Ancestry Marker", continent: "European", subpop: "Celtic", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Celtic populations (Ireland/Scotland/Wales).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.95,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000359_Celtic", rsid: "rs9000359", gene: "Unknown", trait: "Celtic Ancestry Marker", continent: "European", subpop: "Celtic", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Celtic populations (Ireland/Scotland/Wales).", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.93,"SAS":0.01,"MENA":0.01} },
+
+  // Finnish (Northern European)
+  { markerId: "rs9000360_Finnish", rsid: "rs9000360", gene: "Unknown", trait: "Finnish Ancestry Marker", continent: "European", subpop: "Finnish", alleles: ["C"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Finnish populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.1,"EUR":0.88,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000361_Finnish", rsid: "rs9000361", gene: "Unknown", trait: "Finnish Ancestry Marker", continent: "European", subpop: "Finnish", alleles: ["T"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Finnish populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.08,"EUR":0.86,"SAS":0.01,"MENA":0.01} },
+
+  // Italian (Southern European)
+  { markerId: "rs9000362_Italian", rsid: "rs9000362", gene: "Unknown", trait: "Italian Ancestry Marker", continent: "European", subpop: "Italian", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Italian populations.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.85,"SAS":0.01,"MENA":0.1} },
+  { markerId: "rs9000363_Italian", rsid: "rs9000363", gene: "Unknown", trait: "Italian Ancestry Marker", continent: "European", subpop: "Italian", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Italian populations.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.83,"SAS":0.01,"MENA":0.12} },
+
+  // Portuguese (Southern European)
+  { markerId: "rs9000364_Portuguese", rsid: "rs9000364", gene: "Unknown", trait: "Portuguese Ancestry Marker", continent: "European", subpop: "Portuguese", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Portuguese populations.", frequencies: {"AFR":0.06,"AMR":0.05,"EAS":0.01,"EUR":0.85,"SAS":0.01,"MENA":0.02} },
+  { markerId: "rs9000365_Portuguese", rsid: "rs9000365", gene: "Unknown", trait: "Portuguese Ancestry Marker", continent: "European", subpop: "Portuguese", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Portuguese populations.", frequencies: {"AFR":0.05,"AMR":0.05,"EAS":0.01,"EUR":0.83,"SAS":0.01,"MENA":0.02} },
+
+  // Greek (Southern European)
+  { markerId: "rs9000366_Greek", rsid: "rs9000366", gene: "Unknown", trait: "Greek Ancestry Marker", continent: "European", subpop: "Greek", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Greek populations.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.82,"SAS":0.01,"MENA":0.14} },
+  { markerId: "rs9000367_Greek", rsid: "rs9000367", gene: "Unknown", trait: "Greek Ancestry Marker", continent: "European", subpop: "Greek", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Greek populations.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.80,"SAS":0.01,"MENA":0.16} },
+
+  // Dutch (Western European)
+  { markerId: "rs9000368_Dutch", rsid: "rs9000368", gene: "Unknown", trait: "Dutch Ancestry Marker", continent: "European", subpop: "Dutch", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dutch populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.94,"SAS":0.01,"MENA":0.01} },
+  { markerId: "rs9000369_Dutch", rsid: "rs9000369", gene: "Unknown", trait: "Dutch Ancestry Marker", continent: "European", subpop: "Dutch", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dutch populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.92,"SAS":0.01,"MENA":0.01} },
 ];
 
 SNP_DB.forEach(snp => {
@@ -1964,14 +2080,18 @@ function mapContinentToFreqKey(continent: string): string {
 function isSubpopMatch(snpSubpop: string, target: string) {
   if (snpSubpop === target) return true;
   const groups: Record<string, string[]> = {
-    'West African': ['Yoruba', 'Igbo', 'Mandinka', 'Esan', 'Mende', 'Akan', 'Ga-Adangbe', 'Ewe', 'Fon', 'Baule', 'Mossi', 'Temne', 'Mbundu', 'Efik', 'Ibibio', 'Edo', 'Limba', 'Sherbro', 'Kru', 'Grebo', 'Bassa', 'Vai', 'Gola', 'Kpelle', 'Loma', 'Mano', 'Dan', 'Wolof', 'Hausa', 'Fulani', 'Nigerian', 'Cameroon', 'Congo', 'Benin', 'Ghana', 'Sierra Leone', 'Liberia', 'Ivory Coast', 'Cape Verdean', 'Senegal', 'Gambia', 'Guinea'],
+    'West African': ['Yoruba', 'Igbo', 'Mandinka', 'Esan', 'Mende', 'Akan', 'Ga-Adangbe', 'Ewe', 'Fon', 'Baule', 'Mossi', 'Temne', 'Mbundu', 'Efik', 'Ibibio', 'Edo', 'Limba', 'Sherbro', 'Kru', 'Grebo', 'Bassa', 'Vai', 'Gola', 'Kpelle', 'Loma', 'Mano', 'Dan', 'Wolof', 'Hausa', 'Fulani', 'Nigerian', 'Cameroon', 'Congo', 'Benin', 'Ghana', 'Sierra Leone', 'Liberia', 'Ivory Coast', 'Cape Verdean', 'Senegal', 'Gambia', 'Guinea', 'Balanta', 'Papel', 'Bijago', 'Dogon', 'Bambara', 'Songhai'],
     'East African': ['Luhya', 'Maasai', 'Somali', 'Ethiopian', 'Amhara', 'Kikuyu', 'Baganda', 'Tigrayan', 'Oromo', 'Luo', 'Sudan', 'Nubian', 'Horn', 'East African', 'Kenya', 'Tanzania', 'Uganda', 'Eritrea', 'Djibouti', 'South Sudan'],
     'Central African': ['Cameroon', 'Congo', 'Pygmy', 'Bamoun', 'Fang', 'Kongo', 'Luba', 'Mongo', 'Bakongo', 'Baluba', 'Ovimbundu', 'Chokwe', 'Central African', 'DRC', 'Angola', 'Bamileke'],
     'Southern African': ['San', 'Khoisan', 'Khoe-San', 'Zulu', 'Xhosa', 'Sotho', 'Shona', 'Tsonga', 'Ndebele', 'Tswana', 'Venda', 'Lozi', 'Bemba', 'Tonga', 'Chewa', 'Yao', 'Makua', 'Southern African', 'Botswana', 'Zimbabwe', 'Namibia', 'Mozambique', 'Malawi', 'Zambia'],
     'North African': ['Berber', 'Moroccan', 'Algerian', 'Tunisian', 'Libyan', 'Egyptian', 'Maghreb', 'North African', 'Tuareg', 'Sahrawi'],
-    'European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Scandinavian', 'Italian', 'Spanish', 'Greek', 'Ashkenazi', 'Finnish', 'Eastern European', 'European', 'Belgian', 'Austrian', 'Swiss', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian', 'Serbian', 'Croatian', 'Slovenian', 'Albanian', 'Slavic', 'Russian', 'Polish', 'Ukrainian', 'Belarusian'],
-    'Middle Eastern': ['Bedouin', 'Assyrian', 'Druze', 'Palestinian', 'Jewish', 'Turkish', 'Iranian', 'Arab', 'Middle Eastern', 'Levantine', 'Anatolian', 'Mizrahi', 'Kurdish', 'Persian'],
-    'East Asian': ['Han', 'Japanese', 'Korean', 'Vietnamese', 'Thai', 'Filipino', 'Malay', 'Indonesian', 'East Asian', 'Mongolian', 'Tibetan'],
+    'European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Scandinavian', 'Italian', 'Spanish', 'Greek', 'Ashkenazi', 'Finnish', 'Eastern European', 'European', 'Belgian', 'Austrian', 'Swiss', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian', 'Serbian', 'Croatian', 'Slovenian', 'Albanian', 'Slavic', 'Russian', 'Polish', 'Ukrainian', 'Belarusian', 'Saami', 'Orcadian', 'Icelandic', 'Maltese', 'Cypriot', 'Basque', 'Sardinian', 'Balkan', 'Iberian', 'Baltic', 'Celtic', 'Portuguese', 'Dutch'],
+    'Northern European': ['Scandinavian', 'Finnish', 'Icelandic', 'Saami', 'Norwegian', 'Swedish', 'Danish'],
+    'Southern European': ['Italian', 'Spanish', 'Portuguese', 'Greek', 'Balkan', 'Maltese', 'Sardinian', 'Iberian', 'Basque', 'Cypriot'],
+    'Eastern European': ['Slavic', 'Baltic', 'Eastern European', 'Russian', 'Polish', 'Ukrainian', 'Belarusian', 'Lithuanian', 'Latvian', 'Estonian', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian'],
+    'Western European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Belgian', 'Swiss', 'Austrian', 'Dutch', 'Celtic'],
+    'Middle Eastern': ['Bedouin', 'Assyrian', 'Druze', 'Palestinian', 'Jewish', 'Turkish', 'Iranian', 'Arab', 'Middle Eastern', 'Levantine', 'Anatolian', 'Mizrahi', 'Kurdish', 'Persian', 'Cypriot'],
+    'East Asian': ['Han', 'Japanese', 'Korean', 'Vietnamese', 'Thai', 'Filipino', 'Malay', 'Indonesian', 'East Asian', 'Mongolian', 'Tibetan', 'Ainu', 'Ryukyuan', 'Miao', 'Yi', 'Tujia'],
     'South Asian': ['Indian', 'Pakistani', 'Bengali', 'Sri Lankan', 'Tamil', 'Punjabi', 'Gujarati', 'South Asian', 'Nepalese', 'Marathi', 'Malayali'],
     'Native American': ['Mayan', 'Incan', 'Aztec', 'Pima', 'Karitiana', 'Surui', 'Quechua', 'Aymara', 'Native American', 'Andean', 'Central American', 'Amazonian', 'Eastern Woodland', 'Plains Indigenous', 'Southwest Indigenous', 'Arctic Indigenous', 'North American', 'Caribbean Indigenous', 'Taino', 'Navajo', 'Cherokee', 'Sioux', 'Ojibwe', 'Apache', 'Inuit', 'Iroquois', 'Cree', 'Metis', 'Yanomami', 'Nahua', 'Maya', 'Guarani', 'Mapuche', 'Indigenous', 'Beringian'],
     'Oceanian': ['Melanesian', 'Papuan', 'Australian Aboriginal', 'Polynesian', 'Micronesian', 'Hawaiian', 'Samoan', 'Chamorro', 'Oceanian', 'Fijian'],

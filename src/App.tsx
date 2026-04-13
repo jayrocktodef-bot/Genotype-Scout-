@@ -151,8 +151,9 @@ const AutosomalView = memo(({
 }) => {
   if (availableCategories.length === 0) return null;
   
-  const total = filteredResults.length;
-  const matchedCount = filteredResults.filter(s => s.status === 'matched' || s.status === 'partial').length;
+  const allResults = datasets[activeDatasetIndex]?.results || [];
+  const totalDatabaseMarkers = allResults.length || 1;
+  const totalMatchedCount = allResults.filter(s => s.status === 'matched' || s.status === 'partial').length;
 
   return (
     <div className="animate-fade-up">
@@ -178,7 +179,7 @@ const AutosomalView = memo(({
             <div className="text-right">
               <h4 className="text-[10px] font-bold text-sky-700 dark:text-sky-400 uppercase tracking-widest">Database Match</h4>
               <p className="text-sm font-mono font-bold text-sky-900 dark:text-sky-100">
-                {((matchedCount / total) * 100).toFixed(1)}%
+                {((totalMatchedCount / totalDatabaseMarkers) * 100).toFixed(1)}%
               </p>
             </div>
           </div>
