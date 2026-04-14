@@ -434,7 +434,7 @@ const AutosomalView = memo(({
 });
 
 const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: { oracleResults: any, selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
-  const [activeOracle, setActiveOracle] = useState<'primary' | 'secondary'>('primary');
+  const [activeOracle, setActiveOracle] = useState<'primary' | 'secondary' | 'commercial'>('primary');
 
   if (!oracleResults) {
     return (
@@ -446,7 +446,11 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
     );
   }
 
-  const currentData = activeOracle === 'primary' ? oracleResults.primary : oracleResults.secondary;
+  const currentData = activeOracle === 'primary' 
+    ? oracleResults.primary 
+    : activeOracle === 'secondary' 
+      ? oracleResults.secondary 
+      : oracleResults.commercial;
   const { continentalScores, subPopulations } = currentData;
   
   if (Object.keys(continentalScores).length === 0) {
@@ -487,10 +491,22 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
               onClick={() => { setActiveOracle('secondary'); setSelectedSubPop(null); }}
               className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'secondary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
             >
-              Secondary (All Markers)
+              Secondary (All)
             </button>
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
               Uses all available AIMs and markers for a broader, exploratory analysis.
+              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
+            </div>
+          </div>
+          <div className="relative group">
+            <button 
+              onClick={() => { setActiveOracle('commercial'); setSelectedSubPop(null); }}
+              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'commercial' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
+            >
+              Commercial (Ancestry)
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
+              Uses only RSIDs typically found on commercial DNA chips like Ancestry.com.
               <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
             </div>
           </div>
@@ -500,8 +516,10 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
       <div className="mb-6 p-4 bg-white/50 dark:bg-slate-800/30 rounded-lg border border-indigo-100 dark:border-indigo-800/30 text-xs text-indigo-800 dark:text-indigo-300 leading-relaxed">
         {activeOracle === 'primary' ? (
           <p><strong>Primary Mode:</strong> Uses only RSIDs from matched ancestry traits for high-confidence inference based on your specific trait matches.</p>
-        ) : (
+        ) : activeOracle === 'secondary' ? (
           <p><strong>Secondary Mode:</strong> Uses all available AIMs (Ancestry Informative Markers) and markers in the database for a broader, more exploratory analysis.</p>
+        ) : (
+          <p><strong>Commercial Mode:</strong> Uses only RSIDs typically found on commercial DNA chips (like Ancestry.com, 23andMe) for a breakdown comparable to consumer tests.</p>
         )}
       </div>
       
@@ -1408,7 +1426,8 @@ export default function App() {
 
     return {
       primary: processOracle(oracle.primary),
-      secondary: processOracle(oracle.secondary)
+      secondary: processOracle(oracle.secondary),
+      commercial: processOracle(oracle.commercial)
     };
   }, [datasets, activeDatasetIndex]);
 
@@ -1433,7 +1452,7 @@ export default function App() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 Facebook Group
               </a>
-              <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
+              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                 Research Blog
               </a>
@@ -1453,7 +1472,7 @@ export default function App() {
           <div className="text-sky-700 dark:text-sky-400 text-sm font-mono mb-8">Please wait while we analyze your markers</div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
+            <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
               <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Genetic Research</div>
               <div className="text-xs text-slate-600 dark:text-slate-400">Read about the latest findings in African genetic history.</div>
             </a>

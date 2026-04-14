@@ -126,6 +126,15 @@ export function getMarkerDescription(markerId: string): string {
 export const SNP_DB: SNP[] = [
   { markerId: "rs2862", rsid: "rs2862", gene: "FMO3", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["A"], description: "A variant found at higher frequencies in populations of African descent.", referenceUrl: "https://www.snpedia.com/index.php/Rs2862" },
   { markerId: "rs1129038", rsid: "rs1129038", gene: "SLC14A2", trait: "African Ancestry Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["T"], description: "A variant associated with African ancestry and kidney function adaptation.", referenceUrl: "https://www.snpedia.com/index.php/Rs1129038" },
+  { markerId: "rs2814778", rsid: "rs2814778", gene: "ACKR1", trait: "Duffy Null Allele (Malaria Resistance)", continent: "African", category: "Ancestry", significance: "High", alleles: ["C"], description: "The 'Duffy Null' allele is nearly fixed in sub-Saharan African populations and provides resistance to Plasmodium vivax malaria. It is a very strong Ancestry Informative Marker (AIM).", frequencies: {"AFR": 0.99, "EUR": 0.01, "EAS": 0.01, "AMR": 0.20}, referenceUrl: "https://www.snpedia.com/index.php/Rs2814778" },
+  { markerId: "rs334", rsid: "rs334", gene: "HBB", trait: "Sickle Cell Trait (HbS)", continent: "African", category: "Health", significance: "High", alleles: ["T"], description: "The sickle cell mutation (HbS) is common in West African populations as it provides protection against malaria in its heterozygous form (AS).", frequencies: {"AFR": 0.10, "EUR": 0.00, "EAS": 0.00, "AMR": 0.02}, referenceUrl: "https://www.snpedia.com/index.php/Rs334" },
+  { markerId: "rs12913832", rsid: "rs12913832", gene: "HERC2", trait: "Ancestral Pigmentation Marker", continent: "African", category: "Ancestry", significance: "High", alleles: ["A"], description: "The 'A' allele is the ancestral version found in Africa. The 'G' allele is the primary driver of blue eye color in Europeans.", frequencies: {"AFR": 0.99, "EUR": 0.20, "EAS": 0.98, "AMR": 0.70}, referenceUrl: "https://www.snpedia.com/index.php/Rs12913832" },
+  { markerId: "rs1800407", rsid: "rs1800407", gene: "OCA2", trait: "African Pigmentation Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["G"], description: "A pigmentation marker where the 'G' allele is highly prevalent in African populations.", frequencies: {"AFR": 0.95, "EUR": 0.40, "EAS": 0.80, "AMR": 0.65}, referenceUrl: "https://www.snpedia.com/index.php/Rs1800407" },
+  { markerId: "rs1042602", rsid: "rs1042602", gene: "TYR", trait: "African Pigmentation Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["A"], description: "A variant in the tyrosinase gene; the 'A' allele is the ancestral/African version.", frequencies: {"AFR": 0.98, "EUR": 0.60, "EAS": 0.95, "AMR": 0.80}, referenceUrl: "https://www.snpedia.com/index.php/Rs1042602" },
+  { markerId: "rs2032582", rsid: "rs2032582", gene: "ABCB1", trait: "Drug Metabolism Differentiation", continent: "African", category: "Health", significance: "Medium", alleles: ["T"], description: "A variant in the multi-drug resistance gene that shows high differentiation between African and non-African populations.", frequencies: {"AFR": 0.85, "EUR": 0.45, "EAS": 0.40, "AMR": 0.50}, referenceUrl: "https://www.snpedia.com/index.php/Rs2032582" },
+  { markerId: "rs1800414", rsid: "rs1800414", gene: "OCA2", trait: "African Pigmentation Marker", continent: "African", category: "Ancestry", significance: "Medium", alleles: ["G"], description: "A pigmentation marker where the 'G' allele is the ancestral version prevalent in African populations.", frequencies: {"AFR": 0.90, "EUR": 0.35, "EAS": 0.75, "AMR": 0.60}, referenceUrl: "https://www.snpedia.com/index.php/Rs1800414" },
+  { markerId: "rs1426654_AF", rsid: "rs1426654", gene: "SLC24A5", trait: "Ancestral Pigmentation Marker", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "The 'G' allele is the ancestral version found in Africa. The 'A' allele is the primary driver of skin lightening in West Eurasians.", frequencies: {"AFR": 0.96, "EUR": 0.01, "EAS": 0.97, "AMR": 0.45}, referenceUrl: "https://www.snpedia.com/index.php/Rs1426654" },
+  { markerId: "rs16891982_AF", rsid: "rs16891982", gene: "SLC45A2", trait: "Ancestral Pigmentation Marker", continent: "African", category: "Ancestry", significance: "High", alleles: ["C"], description: "The 'C' allele is the ancestral version found in Africa. The 'G' allele is associated with lighter pigmentation in Europeans.", frequencies: {"AFR": 0.98, "EUR": 0.07, "EAS": 0.98, "AMR": 0.70}, referenceUrl: "https://www.snpedia.com/index.php/Rs16891982" },
   { markerId: "rs3827760", rsid: "rs3827760", gene: "EDAR", category: "Ancestry", trait: "Thick straight hair, shovel-shaped incisors, denser sweat glands, reduced chin protrusion", continent: "Native American", alleles: ["C"], significance: "High", description: "Near-absent in African and European populations. Pre-contact Native American frequency likely near 100%; modern AMR figures reflect European admixture. Strong positive selection signal — one of the highest FST values genome-wide.", frequencies: {"AFR":0.01,"EUR":0.00,"EAS":0.87,"AMR_admixed":0.65,"Native_American_unadmixed":0.95,"SAS":0.07}, referenceUrl: "https://www.biorxiv.org/content/10.1101/813063v1.full" },
   { markerId: "rs75493593", rsid: "rs75493593", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — P443T", continent: "Native American", alleles: ["A"], significance: "High", description: "Each haplotype copy confers ~20% increased T2D risk. Risk stronger in lean individuals (BMI <35). Neanderthal introgression origin confirmed by archaic genome analysis.", frequencies: {"AFR":0.02,"EUR":0.02,"EAS":0.10,"AMR_admixed":0.30,"Native_American_unadmixed":0.50,"SAS":0.03}, referenceUrl: "https://www.nature.com/articles/nature12828" },
   { markerId: "rs13342692", rsid: "rs13342692", gene: "SLC16A11", category: "Health", trait: "Type 2 diabetes risk — D127G missense", continent: "Native American", alleles: ["A"], significance: "High", description: "Co-segregates on same haplotype as rs75493593; highest individual association signal in SIGMA GWAS", frequencies: {"AFR":0.02,"EUR":0.02,"EAS":0.10,"AMR_admixed":0.30,"Native_American_unadmixed":0.50,"SAS":0.03}, referenceUrl: "https://www.nature.com/articles/nature12828" },
@@ -2646,9 +2655,16 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     (anchorRsids.has((r.rsid || r.markerId).toLowerCase()) || r.category === 'Ancestry' || r.category === 'Health')
   ));
 
+  // Commercial: Only use Anchor AIMs (common in commercial tests like Ancestry)
+  const commercialMarkers = sortMarkers(results.filter(r => 
+    isAutosomal(r) && 
+    anchorRsids.has((r.rsid || r.markerId).toLowerCase())
+  ));
+
   return {
     primary: runAncestryInference(primaryMarkers, userGenotype, yHaploRegion, mtHaploRegion),
-    secondary: runAncestryInference(secondaryMarkers, userGenotype, yHaploRegion, mtHaploRegion)
+    secondary: runAncestryInference(secondaryMarkers, userGenotype, yHaploRegion, mtHaploRegion),
+    commercial: runAncestryInference(commercialMarkers, userGenotype, yHaploRegion, mtHaploRegion)
   };
 }
 
@@ -2668,27 +2684,92 @@ export const Y_DNA_TREE: HaplogroupNode = {
     {
       branchName: "Haplogroup A",
       snp: ["M91", "P97", "rs369315948", "rs2534636"],
+      region: "Sub-Saharan Africa",
+      description: "The oldest known Y-DNA lineage, representing the first major branch of the human paternal tree. It is found at its highest frequencies in Khoisan populations of Southern Africa and Nilotic populations in East Africa (Sudan, Ethiopia).",
       children: [
-        { branchName: "Haplogroup A0-T", snp: ["V168", "L1088", "M31", "rs369315948"] },
-        { branchName: "Haplogroup A0", snp: ["L991", "P97"] },
-        { branchName: "Haplogroup A1", snp: ["P305"] },
-        { branchName: "Haplogroup A1a", snp: ["M31", "rs9786088"] },
+        { 
+          branchName: "Haplogroup A0-T", 
+          snp: ["V168", "L1088", "M31", "rs369315948"],
+          region: "East/Central Africa",
+          description: "A very ancient lineage that is the ancestor to almost all living men outside of the deepest A00 and A0 branches."
+        },
+        { 
+          branchName: "Haplogroup A0", 
+          snp: ["L991", "P97"],
+          region: "West/Central Africa",
+          description: "A rare and ancient lineage found primarily in Cameroon and neighboring regions."
+        },
+        { 
+          branchName: "Haplogroup A1", 
+          snp: ["P305"],
+          region: "Central Africa",
+          description: "Found in Central African populations, particularly in the Congo Basin."
+        },
+        { 
+          branchName: "Haplogroup A1a", 
+          snp: ["M31", "rs9786088"],
+          region: "West Africa / Maghreb",
+          description: "Found in West Africa (Gambia, Senegal) and occasionally in Northwest Africa."
+        },
         { 
           branchName: "Haplogroup A1b", 
           snp: ["P108"],
+          region: "Southern Africa",
+          description: "Common among the Khoisan-speaking peoples of the Kalahari Desert.",
           children: [
-            { branchName: "Haplogroup A1b1", snp: ["L419"] }
+            { 
+              branchName: "Haplogroup A1b1", 
+              snp: ["L419"],
+              region: "Southern Africa",
+              description: "A major subclade within the Khoisan populations."
+            }
           ]
         },
-        { branchName: "Haplogroup A2", snp: ["M6", "rs9786112", "P28"] },
-        { branchName: "Haplogroup A3", snp: ["M32", "rs9786096"] },
-        { branchName: "Haplogroup A3a", snp: ["M28"] },
-        { branchName: "Haplogroup A3b", snp: ["M220"] },
-        { branchName: "Haplogroup A3b1", snp: ["M51"] },
-        { branchName: "Haplogroup A3b2", snp: ["M13", "M171"] },
+        { 
+          branchName: "Haplogroup A2", 
+          snp: ["M6", "rs9786112", "P28"],
+          region: "Southern Africa",
+          description: "Found almost exclusively among the San people of Southern Africa."
+        },
+        { 
+          branchName: "Haplogroup A3", 
+          snp: ["M32", "rs9786096"],
+          region: "East Africa",
+          description: "Common in East African Nilotic populations, such as those in South Sudan and Ethiopia.",
+          children: [
+            { 
+              branchName: "Haplogroup A3a", 
+              snp: ["M28"],
+              region: "East Africa",
+              description: "Found in Ethiopia and surrounding regions."
+            },
+            { 
+              branchName: "Haplogroup A3b", 
+              snp: ["M220"],
+              region: "East Africa",
+              description: "Widespread in the Horn of Africa.",
+              children: [
+                { 
+                  branchName: "Haplogroup A3b1", 
+                  snp: ["M51"],
+                  region: "East Africa",
+                  description: "Specific to populations in the Nile Valley."
+                },
+                { 
+                  branchName: "Haplogroup A3b2", 
+                  snp: ["M13", "M171"],
+                  region: "East Africa",
+                  description: "A common marker in Ethiopia and Sudan."
+                }
+              ]
+            }
+          ]
+        },
         { 
           branchName: "Haplogroup A00", 
-          snp: ["FGC25932", "FGC25805", "YP2737", "FGC27036", "YP3298", "FGC26901", "Y126645", "FGC26916", "YP3230", "A12220", "FGC26580", "L1149", "FGC25576", "A4982", "YP2683", "A4984", "YP2995", "A4985", "YP3292", "A3807", "FGC25522", "YP2561", "FGC27152", "YP3359", "L1284"] 
+          snp: ["FGC25932", "FGC25805", "YP2737", "FGC27036", "YP3298", "FGC26901", "Y126645", "FGC26916", "YP3230", "A12220", "FGC26580", "L1149", "FGC25576", "A4982", "YP2683", "A4984", "YP2995", "A4985", "YP3292", "A3807", "FGC25522", "YP2561", "FGC27152", "YP3359", "L1284"],
+          region: "West Africa (Cameroon)",
+          description: "The most basal known lineage of the human Y-chromosome, discovered in 2013. It diverged from all other known lineages over 300,000 years ago and is found primarily among the Mbo people of Cameroon."
         }
       ]
     },
@@ -2696,32 +2777,50 @@ export const Y_DNA_TREE: HaplogroupNode = {
       branchName: "Haplogroup B",
       snp: ["M60", "BY31586", "CTS10487", "M8862", "M181"],
       region: "Central/Southern Africa",
-      description: "One of the oldest Y-DNA lineages, found primarily in Pygmy and San populations.",
+      description: "One of the oldest Y-DNA lineages, found primarily in African hunter-gatherer populations such as the Pygmies of Central Africa and the Hadza of Tanzania. It represents a lineage that remained in Africa while others migrated out.",
       children: [
         {
           branchName: "B-M8633",
           snp: ["M8633", "CTS11573", "CTS1388", "M8691"],
-          description: "A sub-branch of Haplogroup B defined by M8633."
+          region: "Central Africa",
+          description: "A sub-branch of Haplogroup B common in the Congo Basin."
         },
         {
           branchName: "B-V2342",
           snp: ["V2342", "BY14680", "L1453"],
-          description: "A sub-branch of Haplogroup B defined by V2342."
+          region: "East Africa",
+          description: "A sub-branch found in East African populations."
         },
         {
           branchName: "Haplogroup B2",
           snp: ["M181", "rs9786208", "rs2032599"],
+          region: "Central/Southern Africa",
+          description: "The most widespread branch of Haplogroup B.",
           children: [
             {
               branchName: "Haplogroup B2a",
               snp: ["M112", "rs9786154", "i4000027"],
+              region: "Central Africa",
+              description: "Found among Central African Pygmy groups.",
               children: [
                 { 
                   branchName: "Haplogroup B2a1", 
                   snp: ["M115"],
+                  region: "Central Africa",
+                  description: "A common subclade in the rainforests of Central Africa.",
                   children: [
-                    { branchName: "Haplogroup B2a1a", snp: ["M109"] },
-                    { branchName: "Haplogroup B2a1b", snp: ["M150"] }
+                    { 
+                      branchName: "Haplogroup B2a1a", 
+                      snp: ["M109"],
+                      region: "Central Africa",
+                      description: "Specific to certain Pygmy populations."
+                    },
+                    { 
+                      branchName: "Haplogroup B2a1b", 
+                      snp: ["M150"],
+                      region: "Central Africa",
+                      description: "Found in the Congo region."
+                    }
                   ]
                 }
               ]
@@ -2729,9 +2828,21 @@ export const Y_DNA_TREE: HaplogroupNode = {
             {
               branchName: "Haplogroup B2b",
               snp: ["P85", "P90"],
+              region: "Southern Africa",
+              description: "Common among the Khoisan-speaking peoples of Southern Africa.",
               children: [
-                { branchName: "Haplogroup B2b1", snp: ["M150", "i4000009"] },
-                { branchName: "Haplogroup B2b2", snp: ["M152"] }
+                { 
+                  branchName: "Haplogroup B2b1", 
+                  snp: ["M150", "i4000009"],
+                  region: "Southern Africa",
+                  description: "A major marker for the San people."
+                },
+                { 
+                  branchName: "Haplogroup B2b2", 
+                  snp: ["M152"],
+                  region: "Southern Africa",
+                  description: "Found in Southern African hunter-gatherer groups."
+                }
               ]
             }
           ]
@@ -2741,12 +2852,63 @@ export const Y_DNA_TREE: HaplogroupNode = {
     {
       branchName: "Haplogroup C",
       snp: ["M130", "i4000008"],
+      region: "Asia / Oceania / North America",
+      description: "A major lineage that participated in the early coastal migration out of Africa. It is found at high frequencies in Mongolia, Siberia, Australia, and among some Native American groups.",
       children: [
-        { branchName: "Haplogroup C-P39", snp: ["P39"] },
-        { branchName: "Haplogroup C2", snp: ["M217", "rs2032621", "i4000043"] }
+        { 
+          branchName: "Haplogroup C-P39", 
+          snp: ["P39"],
+          region: "North America",
+          description: "Found among indigenous populations of North America, particularly Na-Dené speakers (Athabaskan)."
+        },
+        { 
+          branchName: "Haplogroup C2", 
+          snp: ["M217", "rs2032621", "i4000043"],
+          region: "Central/East Asia",
+          description: "The most common branch of Haplogroup C, widespread in Mongolia, Siberia, and Central Asia. Associated with the expansion of the Mongol Empire."
+        }
       ]
     },
-    { branchName: "Haplogroup D", snp: ["M174", "i4000010"] },
+    { 
+      branchName: "Haplogroup D", 
+      snp: ["M174", "i4000010"],
+      region: "East Asia / Andaman Islands",
+      description: "A unique lineage found at high frequencies in Tibet, Japan (Ainu), and the Andaman Islands. It represents an early migration into East Asia that was later largely replaced by other groups.",
+      children: [
+        {
+          branchName: "Haplogroup D1",
+          snp: ["CTS11577"],
+          region: "East Asia / Tibet",
+          description: "The primary branch of D found in Tibet and surrounding regions.",
+          children: [
+            {
+              branchName: "Haplogroup D1a1",
+              snp: ["M15"],
+              region: "Tibet / Southeast Asia",
+              description: "Common among Tibeto-Burman speakers and found at low frequencies in Southeast Asia."
+            },
+            {
+              branchName: "Haplogroup D1a2",
+              snp: ["P99"],
+              region: "Tibet / Central Asia",
+              description: "Found primarily in Tibet and among some Central Asian populations."
+            },
+            {
+              branchName: "Haplogroup D1b",
+              snp: ["M55", "rs2032622"],
+              region: "Japan",
+              description: "The 'Ainu' or 'Jomon' marker, found at high frequencies in Japan, particularly among the Ainu people and in Okinawa. It represents the indigenous hunter-gatherer lineage of the Japanese archipelago."
+            }
+          ]
+        },
+        {
+          branchName: "Haplogroup D2",
+          snp: ["L1378"],
+          region: "Andaman Islands / Philippines",
+          description: "Found among the Onge and Jarawa people of the Andaman Islands and the Mamanwa of the Philippines."
+        }
+      ]
+    },
     {
       branchName: "Haplogroup E",
       snp: ["M96", "P29", "rs9306841", "rs17306671", "rs9305854", "i4000014", "rs3900"],
@@ -2755,183 +2917,474 @@ export const Y_DNA_TREE: HaplogroupNode = {
           branchName: "Haplogroup E1a",
           snp: ["M33", "rs9786107", "i4000016"],
           region: "West Africa",
-          description: "Found primarily in West Africa, especially in Mali and neighboring regions.",
+          description: "Found primarily in West Africa, especially in Mali, Gambia, and among the Dogon people.",
           children: [
-            { branchName: "Haplogroup E1a1", snp: ["M132"] }
+            { 
+              branchName: "Haplogroup E1a1", 
+              snp: ["M132"],
+              region: "West Africa",
+              description: "A common subclade in the Sahel region."
+            }
           ]
         },
         {
           branchName: "Haplogroup E1b1a",
           snp: ["M2", "V38", "rs9785941", "rs9786172", "i4000012", "rs3904"],
-          region: "African / West Africa",
-          description: "The most common lineage in African populations, associated with the expansion of Bantu-speaking peoples.",
+          region: "Sub-Saharan Africa",
+          description: "The dominant lineage in Sub-Saharan Africa, strongly associated with the Bantu expansion that spread agriculture and iron-working across Central, Eastern, and Southern Africa over the last 3,000 years.",
           children: [
             {
               branchName: "Haplogroup E1b1a1",
               snp: ["M180", "rs9786207"],
+              region: "West/Central Africa",
+              description: "The core lineage of the Bantu expansion.",
               children: [
                 {
                   branchName: "Haplogroup E1b1a1a1",
                   snp: ["U175", "rs34195338"],
                   region: "West/Central Africa",
-                  description: "A major lineage across West and Central Africa.",
+                  description: "A major lineage across West and Central Africa, common in Nigeria and Ghana.",
                   children: [
                     {
                       branchName: "Haplogroup E1b1a1a1a",
                       snp: ["U174", "rs34166788"],
+                      region: "West Africa",
+                      description: "Highly prevalent in West African coastal populations.",
                       children: [
                         {
                           branchName: "Haplogroup E1b1a1a1a1",
                           snp: ["M191", "P86", "rs9786219", "i4000033"],
                           region: "West Africa",
-                          description: "Very common in West African populations like the Yoruba and Igbo.",
+                          description: "Extremely common in West African populations like the Yoruba, Igbo, and Akan. It is also the most frequent lineage among African Americans.",
                           children: [
                             { 
                               branchName: "Haplogroup E1b1a1a1a1a", 
                               snp: ["L485"],
+                              region: "West Africa",
+                              description: "A major subclade within the M191 branch.",
                               children: [
                                 { 
                                   branchName: "Haplogroup E1b1a1a1a1a1", 
                                   snp: ["U209"],
+                                  region: "West Africa",
+                                  description: "Found at high frequencies in the Bight of Benin region.",
                                   children: [
-                                    { branchName: "Haplogroup E1b1a1a1a1a1a", snp: ["M263.2"] }
+                                    { 
+                                      branchName: "Haplogroup E1b1a1a1a1a1a", 
+                                      snp: ["M263.2"],
+                                      region: "West Africa",
+                                      description: "A specific marker found in West African coastal groups."
+                                    }
                                   ]
                                 },
-                                { branchName: "Haplogroup E1b1a1a1a1a2", snp: ["L515"] },
-                                { branchName: "Haplogroup E1b1a1a1a1a3", snp: ["L516"] },
-                                { branchName: "Haplogroup E1b1a1a1a1a4", snp: ["L517"] }
+                                { 
+                                  branchName: "Haplogroup E1b1a1a1a1a2", 
+                                  snp: ["L515"],
+                                  region: "West Africa",
+                                  description: "Found in West African populations."
+                                },
+                                { 
+                                  branchName: "Haplogroup E1b1a1a1a1a3", 
+                                  snp: ["L516"],
+                                  region: "West Africa",
+                                  description: "Found in West African populations."
+                                },
+                                { 
+                                  branchName: "Haplogroup E1b1a1a1a1a4", 
+                                  snp: ["L517"],
+                                  region: "West Africa",
+                                  description: "Found in West African populations."
+                                }
                               ]
                             },
-                            { branchName: "Haplogroup E1b1a1a1a2", snp: ["U290"] },
-                            { branchName: "Haplogroup E1b1a1a1a3", snp: ["U181"] }
+                            { 
+                              branchName: "Haplogroup E1b1a1a1a2", 
+                              snp: ["U290"],
+                              region: "West/Central Africa",
+                              description: "Common in the Bight of Biafra and Central African regions."
+                            },
+                            { 
+                              branchName: "Haplogroup E1b1a1a1a3", 
+                              snp: ["U181"],
+                              region: "West Africa",
+                              description: "Found in West African populations."
+                            }
                           ]
                         }
                       ]
                     },
-                    { branchName: "Haplogroup E1b1a1a1b", snp: ["M154"] }
+                    { 
+                      branchName: "Haplogroup E1b1a1a1b", 
+                      snp: ["M154"],
+                      region: "Central Africa",
+                      description: "Found in Central African populations."
+                    }
                   ]
                 },
-                { branchName: "Haplogroup E1b1a1b", snp: ["M116.2"] },
-                { branchName: "Haplogroup E1b1a1a2", snp: ["M58"] },
-                { branchName: "Haplogroup E1b1a1a4", snp: ["M149"] },
-                { branchName: "Haplogroup E1b1a1a5", snp: ["M155"] },
-                { branchName: "Haplogroup E1b1a1a6", snp: ["M10"] },
-                { branchName: "Haplogroup E1b1a1a7", snp: ["M200"] }
+                { 
+                  branchName: "Haplogroup E1b1a1b", 
+                  snp: ["M116.2"],
+                  region: "East Africa",
+                  description: "Found in East African populations."
+                },
+                { 
+                  branchName: "Haplogroup E1b1a1a2", 
+                  snp: ["M58"],
+                  region: "West Africa",
+                  description: "Found in West Africa."
+                },
+                { 
+                  branchName: "Haplogroup E1b1a1a4", 
+                  snp: ["M149"],
+                  region: "East Africa",
+                  description: "Found in East Africa."
+                },
+                { 
+                  branchName: "Haplogroup E1b1a1a5", 
+                  snp: ["M155"],
+                  region: "East Africa",
+                  description: "Found in East Africa."
+                },
+                { 
+                  branchName: "Haplogroup E1b1a1a6", 
+                  snp: ["M10"],
+                  region: "Central Africa",
+                  description: "Found in Central Africa."
+                },
+                { 
+                  branchName: "Haplogroup E1b1a1a7", 
+                  snp: ["M200"],
+                  region: "Central Africa",
+                  description: "Found in Central Africa."
+                }
               ]
             },
-            { branchName: "Haplogroup E1b1a2", snp: ["V38", "rs372947788"] }
+            { 
+              branchName: "Haplogroup E1b1a2", 
+              snp: ["V38", "rs372947788"],
+              region: "West Africa",
+              description: "A basal branch of E-V38 found in West Africa."
+            }
           ]
         },
         {
           branchName: "Haplogroup E1b1b",
           snp: ["M215", "M35", "rs2032654", "rs375228668", "rs28357984"],
-          region: "North Africa / Horn of Africa",
+          region: "North Africa / Horn of Africa / Mediterranean",
+          description: "A major lineage in North Africa, the Horn of Africa, and the Mediterranean. It is associated with the spread of Afroasiatic languages and early farming movements into Europe.",
           children: [
             {
               branchName: "Haplogroup E1b1b1",
               snp: ["M35", "rs28357984", "i4000018", "rs9306842"],
+              region: "North Africa / Horn of Africa",
+              description: "The primary branch of E1b1b.",
               children: [
                 {
                   branchName: "Haplogroup E1b1b1a",
                   snp: ["V68", "rs147571223"],
+                  region: "North Africa / Mediterranean",
+                  description: "A major branch found across North Africa and Southern Europe.",
                   children: [
                     {
                       branchName: "Haplogroup E1b1b1a1",
                       snp: ["M78", "rs9305888", "i4000024"],
+                      region: "North Africa / Balkans",
+                      description: "Widespread in North Africa and the Balkans. It is believed to have originated in Northeast Africa.",
                       children: [
-            { 
-              branchName: "Haplogroup E1b1b1a1a", 
-              snp: ["V12", "rs148064093"],
-              children: [
-                { branchName: "Haplogroup E1b1b1a1a1", snp: ["M224"] },
-                { branchName: "Haplogroup E1b-Z834", snp: ["Z834"] }
-              ]
-            },
+                        { 
+                          branchName: "Haplogroup E1b1b1a1a", 
+                          snp: ["V12", "rs148064093"],
+                          region: "Egypt / Sudan",
+                          description: "The most common subclade in Southern Egypt and Sudan.",
+                          children: [
+                            { 
+                              branchName: "Haplogroup E1b1b1a1a1", 
+                              snp: ["M224"],
+                              region: "Near East",
+                              description: "A rare subclade found in the Near East."
+                            },
+                            { 
+                              branchName: "Haplogroup E1b-Z834", 
+                              snp: ["Z834"],
+                              region: "Northeast Africa",
+                              description: "Found in Northeast Africa."
+                            }
+                          ]
+                        },
                         { 
                           branchName: "Haplogroup E1b1b1a1b", 
                           snp: ["V13", "rs11800462"],
                           region: "Balkans / Europe",
-                          description: "Most common E1b1b branch in Europe, associated with the expansion of farming and later Bronze/Iron Age movements.",
+                          description: "The most common E1b1b branch in Europe, particularly in the Balkans (Albania, Greece, Kosovo). It is associated with the expansion of farming and later Bronze/Iron Age movements in Southeast Europe.",
                           children: [
-                            { branchName: "Haplogroup E1b1b1a1b1", snp: ["P177", "CTS5876"] },
-                            { branchName: "Haplogroup E-CTS5876", snp: ["CTS5876"], region: "Balkans", description: "A major subclade of V13 found primarily in the Balkan peninsula." }
+                            { 
+                              branchName: "Haplogroup E1b1b1a1b1", 
+                              snp: ["P177", "CTS5876"],
+                              region: "Balkans",
+                              description: "A common subclade in the Balkan region."
+                            },
+                            { 
+                              branchName: "Haplogroup E-CTS5876", 
+                              snp: ["CTS5876"], 
+                              region: "Balkans", 
+                              description: "A major subclade of V13 found primarily in the Balkan peninsula." 
+                            }
                           ]
                         },
-                        { branchName: "Haplogroup E1b1b1a1c", snp: ["V22", "rs149747468"] },
-                        { branchName: "Haplogroup E1b1b1a1d", snp: ["V65", "rs149501565"] }
+                        { 
+                          branchName: "Haplogroup E1b1b1a1c", 
+                          snp: ["V22", "rs149747468"],
+                          region: "Egypt / Levant",
+                          description: "Common in Egypt, the Levant, and the Arabian Peninsula."
+                        },
+                        { 
+                          branchName: "Haplogroup E1b1b1a1d", 
+                          snp: ["V65", "rs149501565"],
+                          region: "Northwest Africa (Maghreb)",
+                          description: "Found at high frequencies among Berbers in Libya, Tunisia, and Morocco."
+                        }
                       ]
                     },
-                    { branchName: "Haplogroup E1b1b1a2", snp: ["V32", "rs200867114"] },
-                    { branchName: "Haplogroup E1b1b1a3", snp: ["V264"] }
+                    { 
+                      branchName: "Haplogroup E1b1b1a2", 
+                      snp: ["V32", "rs200867114"],
+                      region: "Horn of Africa",
+                      description: "The dominant lineage in Somalia and among the Oromo of Ethiopia."
+                    },
+                    { 
+                      branchName: "Haplogroup E1b1b1a3", 
+                      snp: ["V264"],
+                      region: "East Africa",
+                      description: "Found in East African populations."
+                    }
                   ]
                 },
                 {
                   branchName: "Haplogroup E1b1b1b1",
                   snp: ["M81", "rs9305948", "i4000025"],
+                  region: "Northwest Africa (Maghreb)",
+                  description: "The 'Berber marker', found at extremely high frequencies (up to 80%) in Berber populations of Morocco, Algeria, and Tunisia.",
                   children: [
-                    { branchName: "Haplogroup E1b1b1b1a", snp: ["M107"] },
-                    { branchName: "Haplogroup E1b1b1b1a1", snp: ["M183"] },
-                    { branchName: "Haplogroup E1b1b1b2", snp: ["V257"] }
+                    { 
+                      branchName: "Haplogroup E1b1b1b1a", 
+                      snp: ["M107"],
+                      region: "Northwest Africa",
+                      description: "A subclade of M81."
+                    },
+                    { 
+                      branchName: "Haplogroup E1b1b1b1a1", 
+                      snp: ["M183"],
+                      region: "Northwest Africa",
+                      description: "The most common subclade of M81."
+                    },
+                    { 
+                      branchName: "Haplogroup E1b1b1b2", 
+                      snp: ["V257"],
+                      region: "Northwest Africa",
+                      description: "Found in Northwest Africa."
+                    }
                   ]
                 },
-                { branchName: "Haplogroup E1b1b1b", snp: ["L19"] },
+                { 
+                  branchName: "Haplogroup E1b1b1b", 
+                  snp: ["L19"],
+                  region: "Northwest Africa",
+                  description: "Found in Northwest Africa."
+                },
                 {
                   branchName: "Haplogroup E1b1b1c",
                   snp: ["M123", "rs13304168", "i4000007"],
                   region: "Levant / Near East",
-                  description: "Found at high frequencies in the Levant and among Jewish populations.",
+                  description: "Found at high frequencies in the Levant and among Jewish populations. It likely expanded during the Neolithic period.",
                   children: [
                     { 
                       branchName: "Haplogroup E1b1b1c1", 
                       snp: ["M34", "rs13304169"],
+                      region: "Levant / Europe",
+                      description: "The main subclade of M123.",
                       children: [
-                        { branchName: "Haplogroup E-L791", snp: ["L791"], region: "Levant / Europe", description: "Subclade common among Ashkenazi Jews and in the Levant." },
-                        { branchName: "Haplogroup E1b1b1c1a", snp: ["L791"] }
+                        { 
+                          branchName: "Haplogroup E-L791", 
+                          snp: ["L791"], 
+                          region: "Levant / Europe", 
+                          description: "Subclade common among Ashkenazi Jews and in the Levant." 
+                        },
+                        { 
+                          branchName: "Haplogroup E1b1b1c1a", 
+                          snp: ["L791"],
+                          region: "Levant / Europe",
+                          description: "Found in the Levant and among Jewish diaspora groups."
+                        }
                       ]
                     }
                   ]
                 },
-                { branchName: "Haplogroup E1b1b1d", snp: ["M293"] },
-                { branchName: "Haplogroup E1b1b1e", snp: ["M329"] },
-                { branchName: "Haplogroup E1b1b1f", snp: ["V68", "rs34523368"] },
-                { branchName: "Haplogroup E1b1b1g", snp: ["V257", "rs34623369"] }
+                { 
+                  branchName: "Haplogroup E1b1b1d", 
+                  snp: ["M293"],
+                  region: "East/Southern Africa",
+                  description: "Found in East Africa and among some Southern African Khoisan groups, representing an early migration of food producers."
+                },
+                { 
+                  branchName: "Haplogroup E1b1b1e", 
+                  snp: ["M329"],
+                  region: "East Africa (Ethiopia)",
+                  description: "Found primarily in Ethiopia."
+                },
+                { 
+                  branchName: "Haplogroup E1b1b1f", 
+                  snp: ["V68", "rs34523368"],
+                  region: "North Africa",
+                  description: "Found in North Africa."
+                },
+                { 
+                  branchName: "Haplogroup E1b1b1g", 
+                  snp: ["V257", "rs34623369"],
+                  region: "Northwest Africa",
+                  description: "Found in Northwest Africa."
+                }
               ]
             }
           ]
         },
-        { branchName: "Haplogroup E1c", snp: ["P72"] },
-        { branchName: "Haplogroup E1c root", snp: ["M35.1"] },
-        { branchName: "Haplogroup E2", snp: ["M75", "rs9786142", "i4000022"], children: [
-          { branchName: "Haplogroup E2a", snp: ["M54"] }
-        ] }
+        { 
+          branchName: "Haplogroup E1c", 
+          snp: ["P72"],
+          region: "West Africa",
+          description: "Found in West Africa."
+        },
+        { 
+          branchName: "Haplogroup E1c root", 
+          snp: ["M35.1"],
+          region: "East Africa",
+          description: "A basal branch found in East Africa."
+        },
+        { 
+          branchName: "Haplogroup E2", 
+          snp: ["M75", "rs9786142", "i4000022"], 
+          region: "East/Central Africa",
+          description: "Found in East and Central Africa.",
+          children: [
+            { 
+              branchName: "Haplogroup E2a", 
+              snp: ["M54"],
+              region: "East Africa",
+              description: "Found in East Africa."
+            }
+          ] 
+        }
       ]
     },
-    { branchName: "Haplogroup F", snp: ["M89", "rs2032626", "i4000004"] },
+    { 
+      branchName: "Haplogroup F", 
+      snp: ["M89", "rs2032626", "i4000004"],
+      region: "South Asia / Near East",
+      description: "A major macro-haplogroup that represents a primary migration out of Africa. It is the ancestor of most non-African paternal lineages (G through T).",
+      children: [
+        {
+          branchName: "Haplogroup F1",
+          snp: ["P91"],
+          region: "Southeast Asia",
+          description: "A rare branch found in Southeast Asia."
+        },
+        {
+          branchName: "Haplogroup F2",
+          snp: ["M427"],
+          region: "East Asia / Southeast Asia",
+          description: "Found at low frequencies in Southern China and Southeast Asia."
+        },
+        {
+          branchName: "Haplogroup F3",
+          snp: ["M481"],
+          region: "South Asia",
+          description: "Found among some tribal populations in India."
+        }
+      ]
+    },
     {
       branchName: "Haplogroup G",
       snp: ["M201", "rs2032633", "i4000034"],
+      region: "Caucasus / Near East",
+      description: "Associated with the spread of early Neolithic farmers from the Near East into Europe and the Caucasus.",
       children: [
-        { branchName: "Haplogroup G1", snp: ["M285", "i4000047"] },
+        { 
+          branchName: "Haplogroup G1", 
+          snp: ["M285", "i4000047"],
+          region: "Iran / Central Asia",
+          description: "Found at high frequencies in parts of Iran and among the Madyar tribe of Kazakhstan."
+        },
         {
           branchName: "Haplogroup G2",
           snp: ["P287"],
+          region: "Caucasus / Europe",
+          description: "The most common branch of Haplogroup G.",
           children: [
-            { branchName: "Haplogroup G2a", snp: ["P15", "i4000049"], children: [
-              { branchName: "Haplogroup G2a-L497", snp: ["L497"], children: [
-                { branchName: "Haplogroup G-CTS2488", snp: ["CTS2488"] }
-              ] },
-              { branchName: "Haplogroup G2a-L1259", snp: ["L1259"], children: [
-                { branchName: "Haplogroup G-PF3146", snp: ["PF3146"] }
-              ] },
-              { branchName: "Haplogroup G2a-Z6552", snp: ["Z6552"] },
-              { branchName: "Haplogroup G2a2b", snp: ["L140"], children: [
-                { branchName: "Haplogroup G2a2b1", snp: ["U1"], children: [
-                  { branchName: "Haplogroup G-L13", snp: ["L13"], region: "Europe", description: "A subclade of G2a common in Europe." },
-                  { branchName: "Haplogroup G-Z2022", snp: ["Z2022"], region: "Europe", description: "A subclade of G2a found in Western Europe." }
-                ] }
-              ] }
-            ] },
-            { branchName: "Haplogroup G2b", snp: ["M377"] }
+            { 
+              branchName: "Haplogroup G2a", 
+              snp: ["P15", "i4000049"], 
+              region: "Caucasus / Europe",
+              description: "A major lineage among early European farmers (EEF).",
+              children: [
+                { 
+                  branchName: "Haplogroup G2a-L497", 
+                  snp: ["L497"], 
+                  region: "Central Europe",
+                  description: "Associated with the Celtic-speaking peoples of Central Europe.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup G-CTS2488", 
+                      snp: ["CTS2488"],
+                      region: "Central Europe",
+                      description: "A subclade of L497 common in Central Europe."
+                    }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup G2a-L1259", 
+                  snp: ["L1259"], 
+                  region: "Europe",
+                  description: "A major European subclade of G2a.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup G-PF3146", 
+                      snp: ["PF3146"],
+                      region: "Europe",
+                      description: "Found across Europe."
+                    }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup G2a-Z6552", 
+                  snp: ["Z6552"],
+                  region: "Caucasus",
+                  description: "Found in the Caucasus region."
+                },
+                { 
+                  branchName: "Haplogroup G2a2b", 
+                  snp: ["L140"], 
+                  region: "Europe / Near East",
+                  description: "The most common G subclade in Europe.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup G2a2b1", 
+                      snp: ["U1"], 
+                      region: "Europe",
+                      description: "A major European branch.",
+                      children: [
+                        { branchName: "Haplogroup G-L13", snp: ["L13"], region: "Europe", description: "A subclade of G2a common in Central and Western Europe." },
+                        { branchName: "Haplogroup G-Z2022", snp: ["Z2022"], region: "Europe", description: "A subclade of G2a found in Western Europe, particularly in Britain and Iberia." }
+                      ] 
+                    }
+                  ] 
+                }
+              ] 
+            },
+            { 
+              branchName: "Haplogroup G2b", 
+              snp: ["M377"],
+              region: "Near East / South Asia",
+              description: "Found among Ashkenazi Jews and in parts of Afghanistan and Pakistan."
+            }
           ]
         }
       ]
@@ -2939,80 +3392,248 @@ export const Y_DNA_TREE: HaplogroupNode = {
     {
       branchName: "Haplogroup H",
       snp: ["M69", "L901", "i4000021"],
+      region: "South Asia",
+      description: "The primary paternal lineage of the Indian subcontinent, associated with the indigenous hunter-gatherer populations of South Asia.",
       children: [
-        { branchName: "Haplogroup H1", snp: ["M69"], children: [
-          { branchName: "Haplogroup H1a1", snp: ["M2826"], children: [
-          { branchName: "Haplogroup H-M82", snp: ["M82"] }
-        ] },
-        ] },
-        { branchName: "Haplogroup H2", snp: ["P96"] },
-        { branchName: "Haplogroup H3", snp: ["Z5857"] }
+        { 
+          branchName: "Haplogroup H1", 
+          snp: ["M69"], 
+          region: "South Asia",
+          description: "The most common branch of Haplogroup H.",
+          children: [
+            { 
+              branchName: "Haplogroup H1a1", 
+              snp: ["M2826"], 
+              region: "South Asia / Europe",
+              description: "Common in India and also found in Romani populations in Europe.",
+              children: [
+                { 
+                  branchName: "Haplogroup H-M82", 
+                  snp: ["M82"],
+                  region: "South Asia / Europe",
+                  description: "A major marker for Romani (Gypsy) populations, confirming their South Asian origin."
+                }
+              ] 
+            },
+          ] 
+        },
+        { 
+          branchName: "Haplogroup H2", 
+          snp: ["P96"],
+          region: "Europe / Near East",
+          description: "A rare branch found in Europe and the Near East, likely representing an early Neolithic migration."
+        },
+        { 
+          branchName: "Haplogroup H3", 
+          snp: ["Z5857"],
+          region: "South Asia",
+          description: "Found in South Asia."
+        }
       ]
     },
     {
       branchName: "Haplogroup I",
       snp: ["M170", "rs2032628", "i4000038"],
+      region: "Europe",
+      description: "One of the few haplogroups that originated in Europe. It is associated with the pre-Neolithic hunter-gatherer populations of the continent.",
       children: [
         {
           branchName: "Haplogroup I1",
           snp: ["M253"],
+          region: "Northern Europe / Scandinavia",
+          description: "The primary lineage of Northern Europe, associated with the Germanic and Viking expansions.",
           children: [
-            { branchName: "Haplogroup I1-Z2539", snp: ["Z2539"] },
-            { branchName: "Haplogroup I1a", snp: ["DF29"], children: [
-              { branchName: "Haplogroup I1a1", snp: ["L22", "rs35033377"], children: [
-                { branchName: "Haplogroup I1-P109", snp: ["P109"], region: "Scandinavia", description: "Common in Norway and Sweden." },
-                { branchName: "Haplogroup I1-L205", snp: ["L205"], region: "British Isles", description: "Common in the British Isles." },
-                { branchName: "Haplogroup I1-L287", snp: ["L287"], region: "Finland", description: "Common in Finland." },
-                { branchName: "Haplogroup I1-L300", snp: ["L300"], region: "Finland", description: "Common in Finland." },
-                { branchName: "Haplogroup I1-L813", snp: ["L813"], region: "Norway", description: "Common in Norway." }
-              ] },
-              { branchName: "Haplogroup I1a2", snp: ["Z58"], children: [
+            { 
+              branchName: "Haplogroup I1-Z2539", 
+              snp: ["Z2539"],
+              region: "Northern Europe",
+              description: "A major branch of I1."
+            },
+            { 
+              branchName: "Haplogroup I1a", 
+              snp: ["DF29"], 
+              region: "Northern Europe",
+              description: "The main branch of I1.",
+              children: [
                 { 
-                  branchName: "Haplogroup I1-Z59", 
-                  snp: ["Z59"],
+                  branchName: "Haplogroup I1a1", 
+                  snp: ["L22", "rs35033377"], 
+                  region: "Scandinavia",
+                  description: "The 'Nordic' branch of I1.",
+                  children: [
+                    { branchName: "Haplogroup I1-P109", snp: ["P109"], region: "Scandinavia", description: "Common in Norway and Sweden, often associated with Viking movements." },
+                    { branchName: "Haplogroup I1-L205", snp: ["L205"], region: "British Isles", description: "Common in the British Isles, likely brought by Scandinavian settlers." },
+                    { branchName: "Haplogroup I1-L287", snp: ["L287"], region: "Finland", description: "Common in Finland and Sweden." },
+                    { branchName: "Haplogroup I1-L300", snp: ["L300"], region: "Finland", description: "Found primarily in Finland." },
+                    { branchName: "Haplogroup I1-L813", snp: ["L813"], region: "Norway", description: "Common in Norway and parts of Sweden." }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup I1a2", 
+                  snp: ["Z58"], 
+                  region: "Central/Northern Europe",
+                  description: "Associated with the West Germanic tribes (Saxons, Franks).",
                   children: [
                     { 
-                      branchName: "Haplogroup I1-Z60", 
-                      snp: ["Z60"],
+                      branchName: "Haplogroup I1-Z59", 
+                      snp: ["Z59"],
+                      region: "Central/Northern Europe",
+                      description: "A major branch of Z58.",
                       children: [
-                        { branchName: "Haplogroup I1a2a", snp: ["Z140"] },
-                        { branchName: "Haplogroup I1-Z73", snp: ["Z73"] },
-                        { branchName: "Haplogroup I1-L573", snp: ["L573"] },
-                        { branchName: "Haplogroup I1-L803", snp: ["L803"] }
+                        { 
+                          branchName: "Haplogroup I1-Z60", 
+                          snp: ["Z60"],
+                          region: "Central/Northern Europe",
+                          description: "A major branch of Z59.",
+                          children: [
+                            { 
+                              branchName: "Haplogroup I1a2a", 
+                              snp: ["Z140"],
+                              region: "Western Europe",
+                              description: "Common in Germany, the Netherlands, and Britain."
+                            },
+                            { 
+                              branchName: "Haplogroup I1-Z73", 
+                              snp: ["Z73"],
+                              region: "Northern Europe",
+                              description: "Common in Scandinavia and Finland."
+                            },
+                            { 
+                              branchName: "Haplogroup I1-L573", 
+                              snp: ["L573"],
+                              region: "Eastern Europe",
+                              description: "Found in Eastern Europe."
+                            },
+                            { 
+                              branchName: "Haplogroup I1-L803", 
+                              snp: ["L803"],
+                              region: "Western Europe",
+                              description: "Found in Western Europe."
+                            }
+                          ]
+                        }
                       ]
                     }
-                  ]
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup I1a3", 
+                  snp: ["Z63"], 
+                  region: "Central/Eastern Europe",
+                  description: "Associated with the East Germanic tribes (Goths, Vandals).",
+                  children: [
+                    { 
+                      branchName: "Haplogroup I1-BY151", 
+                      snp: ["BY151"],
+                      region: "Central/Eastern Europe",
+                      description: "A subclade of Z63."
+                    }
+                  ] 
                 }
-              ] },
-              { branchName: "Haplogroup I1a3", snp: ["Z63"], children: [
-                { branchName: "Haplogroup I1-BY151", snp: ["BY151"] }
-              ] }
-            ] },
-            { branchName: "Haplogroup I1b", snp: ["Z131"] },
-            { branchName: "Haplogroup I1c", snp: ["Z17943"] }
+              ] 
+            },
+            { 
+              branchName: "Haplogroup I1b", 
+              snp: ["Z131"],
+              region: "Central Europe",
+              description: "A rare branch found in Central Europe."
+            },
+            { 
+              branchName: "Haplogroup I1c", 
+              snp: ["Z17943"],
+              region: "Western Europe",
+              description: "Found in Western Europe."
+            }
           ]
         },
         {
           branchName: "Haplogroup I2",
           snp: ["M438", "rs34833375"],
+          region: "Europe / Balkans",
+          description: "Associated with the Mesolithic hunter-gatherers of Europe. It was the most common lineage in Europe before the Neolithic transition.",
           children: [
-            { branchName: "Haplogroup I2a", snp: ["L460", "P37.2"], children: [
-              { branchName: "Haplogroup I2a-CTS10100", snp: ["CTS10100"] },
-              { branchName: "Haplogroup I2a-CTS595", snp: ["CTS595"] },
-              { branchName: "Haplogroup I2a1b", snp: ["M423"], children: [
-                { branchName: "Haplogroup I2a1b1", snp: ["L161"], children: [
-                  { branchName: "Haplogroup I2-L1498", snp: ["L1498"] }
-                ] },
-                { branchName: "Haplogroup I2a1b1a", snp: ["L621"], children: [
-                  { branchName: "Haplogroup I2-CTS10228", snp: ["CTS10228"] }
-                ] }
-              ] }
-            ] },
-            { branchName: "Haplogroup I2b", snp: ["M223", "M436", "rs34933376"], children: [
-              { branchName: "Haplogroup I2b1a", snp: ["M284"] },
-              { branchName: "Haplogroup I2-L701", snp: ["L701"] },
-              { branchName: "Haplogroup I2-Z161", snp: ["Z161"] }
-            ] }
+            { 
+              branchName: "Haplogroup I2a", 
+              snp: ["L460", "P37.2"], 
+              region: "Balkans / Sardinia",
+              description: "The most common branch of I2.",
+              children: [
+                { 
+                  branchName: "Haplogroup I2a-CTS10100", 
+                  snp: ["CTS10100"],
+                  region: "Balkans",
+                  description: "A major Balkan subclade."
+                },
+                { 
+                  branchName: "Haplogroup I2a-CTS595", 
+                  snp: ["CTS595"],
+                  region: "Western Europe",
+                  description: "Found in Western Europe."
+                },
+                { 
+                  branchName: "Haplogroup I2a1b", 
+                  snp: ["M423"], 
+                  region: "Balkans / Eastern Europe",
+                  description: "Associated with the Slavic expansion in the early Middle Ages.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup I2a1b1", 
+                      snp: ["L161"], 
+                      region: "British Isles",
+                      description: "The 'Isles' branch of I2a, common in Ireland and Britain.",
+                      children: [
+                        { 
+                          branchName: "Haplogroup I2-L1498", 
+                          snp: ["L1498"],
+                          region: "British Isles",
+                          description: "A subclade of L161."
+                        }
+                      ] 
+                    },
+                    { 
+                      branchName: "Haplogroup I2a1b1a", 
+                      snp: ["L621"], 
+                      region: "Balkans",
+                      description: "The 'Dinaric' branch, extremely common in the Balkans (Croatia, Bosnia, Serbia).",
+                      children: [
+                        { 
+                          branchName: "Haplogroup I2-CTS10228", 
+                          snp: ["CTS10228"],
+                          region: "Balkans",
+                          description: "A major subclade of L621."
+                        }
+                      ] 
+                    }
+                  ] 
+                }
+              ] 
+            },
+            { 
+              branchName: "Haplogroup I2b", 
+              snp: ["M223", "M436", "rs34933376"], 
+              region: "Western Europe / Germany",
+              description: "Associated with the Germanic tribes of Northwest Europe.",
+              children: [
+                { 
+                  branchName: "Haplogroup I2b1a", 
+                  snp: ["M284"],
+                  region: "British Isles",
+                  description: "Found almost exclusively in the British Isles."
+                },
+                { 
+                  branchName: "Haplogroup I2-L701", 
+                  snp: ["L701"],
+                  region: "Central Europe",
+                  description: "Found in Central Europe."
+                },
+                { 
+                  branchName: "Haplogroup I2-Z161", 
+                  snp: ["Z161"],
+                  region: "Western Europe",
+                  description: "Common in Germany and the Netherlands."
+                }
+              ] 
+            }
           ]
         }
       ]
@@ -3020,205 +3641,716 @@ export const Y_DNA_TREE: HaplogroupNode = {
     {
       branchName: "Haplogroup J",
       snp: ["M304", "rs2032602", "i4000023"],
+      region: "Middle East / Mediterranean",
+      description: "Associated with the Neolithic expansion of farmers from the Near East into Europe and North Africa.",
       children: [
         {
           branchName: "Haplogroup J1",
           snp: ["M267", "i4000029"],
           region: "Middle East / Semitic",
-          description: "Associated with the expansion of Semitic languages and the Neolithic transition in the Near East.",
+          description: "Associated with the expansion of Semitic languages and the Neolithic transition in the Near East. It is very common in the Arabian Peninsula.",
           children: [
-            { branchName: "Haplogroup J1-BY4", snp: ["BY4"] },
-            { branchName: "Haplogroup J1-BY8", snp: ["BY8"] },
-            { branchName: "Haplogroup J1-FGC1713", snp: ["FGC1713"] },
-            { branchName: "Haplogroup J1-FGC3723", snp: ["FGC3723"] },
-            { branchName: "Haplogroup J1-FGC4415", snp: ["FGC4415"] },
-            { branchName: "Haplogroup J1-FGC5", snp: ["FGC5"] },
-            { branchName: "Haplogroup J1-FGC7", snp: ["FGC7"] },
-            { branchName: "Haplogroup J1-FGC7944", snp: ["FGC7944"] },
-            { branchName: "Haplogroup J1-L860", snp: ["L860"] },
-            { branchName: "Haplogroup J1-S4924", snp: ["S4924"] },
-            { branchName: "Haplogroup J1-YSC0000076", snp: ["YSC0000076"] },
-            { branchName: "Haplogroup J1-Z640", snp: ["Z640"] },
-            { branchName: "Haplogroup J1-ZS1282", snp: ["ZS1282"] },
+            { branchName: "Haplogroup J1-BY4", snp: ["BY4"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-BY8", snp: ["BY8"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-FGC1713", snp: ["FGC1713"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-FGC3723", snp: ["FGC3723"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-FGC4415", snp: ["FGC4415"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-FGC5", snp: ["FGC5"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-FGC7", snp: ["FGC7"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-FGC7944", snp: ["FGC7944"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-L860", snp: ["L860"], region: "Caucasus", description: "Found in the Caucasus region." },
+            { branchName: "Haplogroup J1-S4924", snp: ["S4924"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-YSC0000076", snp: ["YSC0000076"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+            { branchName: "Haplogroup J1-Z640", snp: ["Z640"], region: "Levant", description: "Found in the Levant." },
+            { branchName: "Haplogroup J1-ZS1282", snp: ["ZS1282"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
             { 
               branchName: "Haplogroup J1a", 
               snp: ["P58", "Z2215"],
               region: "Arabian Peninsula / Levant",
-              description: "The most common J1 branch, often called the 'Semitic' clade.",
+              description: "The most common J1 branch, often called the 'Semitic' clade. It expanded rapidly with the spread of pastoralism in the Arabian desert.",
               children: [
                 {
                   branchName: "Haplogroup J1a2a1a",
                   snp: ["L147.1", "rs9306837", "P58", "i4000045", "rs34733374"],
+                  region: "Arabian Peninsula / Levant",
+                  description: "A major subclade of P58.",
                   children: [
                     { 
                       branchName: "Haplogroup J1-YSC0000234", 
                       snp: ["YSC0000234"],
+                      region: "Arabian Peninsula",
+                      description: "A common subclade in the Arabian Peninsula.",
                       children: [
-                        { branchName: "Haplogroup J1a1a1", snp: ["L858", "rs35268486"], children: [
-                          { branchName: "Haplogroup J-L829", snp: ["L829"], region: "Levant", description: "A subclade of J1 common in the Levant." },
-                          { branchName: "Haplogroup J-Z18271", snp: ["Z18271"] }
-                        ] },
+                        { 
+                          branchName: "Haplogroup J1a1a1", 
+                          snp: ["L858", "rs35268486"], 
+                          region: "Levant / Mesopotamia",
+                          description: "Common in the Levant and Mesopotamia.",
+                          children: [
+                            { branchName: "Haplogroup J-L829", snp: ["L829"], region: "Levant", description: "A subclade of J1 common in the Levant." },
+                            { branchName: "Haplogroup J-Z18271", snp: ["Z18271"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." }
+                          ] 
+                        },
                         { branchName: "Haplogroup J1-Z1884", snp: ["Z1884"], region: "Levant", description: "Common in the Levant and Mesopotamia." }
                       ]
                     },
-                    { branchName: "Haplogroup J1a2a1a1", snp: ["L147.1"] },
-                    { branchName: "Haplogroup J1a2a1a1a", snp: ["YSC0000234"] },
-                    { branchName: "Haplogroup J1a2a1a2", snp: ["Z1884", "YSC0000234"] },
-                    { branchName: "Haplogroup J1a2a1a2a1", snp: ["Z1884"] }
+                    { branchName: "Haplogroup J1a2a1a1", snp: ["L147.1"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+                    { branchName: "Haplogroup J1a2a1a1a", snp: ["YSC0000234"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+                    { branchName: "Haplogroup J1a2a1a2", snp: ["Z1884", "YSC0000234"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." },
+                    { branchName: "Haplogroup J1a2a1a2a1", snp: ["Z1884"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." }
                   ]
                 }
               ]
             },
-            { branchName: "Haplogroup J1b", snp: ["L136", "rs34313364", "Z2223"] },
-            { branchName: "Haplogroup J1c", snp: ["P56", "rs34433365"] }
+            { branchName: "Haplogroup J1b", snp: ["L136", "rs34313364", "Z2223"], region: "Caucasus / Turkey", description: "Found in the Caucasus and Turkey." },
+            { branchName: "Haplogroup J1c", snp: ["P56", "rs34433365"], region: "Arabian Peninsula", description: "Found in the Arabian Peninsula." }
           ]
         },
         {
           branchName: "Haplogroup J2",
           snp: ["M172", "rs2032604", "i4000030", "rs2032605"],
           region: "Mediterranean / Near East",
-          description: "Associated with the spread of agriculture and maritime trade in the Mediterranean basin.",
+          description: "Associated with the spread of Neolithic and Bronze Age civilizations in the Mediterranean basin, including the Minoans, Phoenicians, and Greeks. It is often linked to maritime trade and early urban centers.",
           children: [
             { 
               branchName: "Haplogroup J2a", 
               snp: ["M410"],
+              region: "Mediterranean / Near East",
+              description: "The most common branch of J2, widespread in the Mediterranean and the Caucasus.",
               children: [
-                { branchName: "Haplogroup J2a-PF5197", snp: ["PF5197"] },
-                { branchName: "Haplogroup J2a1", snp: ["L26", "rs34459394"], children: [
-                  { branchName: "Haplogroup J-Z7700", snp: ["Z7700"], region: "Mediterranean", description: "A subclade of J2a found in the Mediterranean region." }
-                ] },
-                { branchName: "Haplogroup J2a1a", snp: ["Z6046"] },
-                { branchName: "Haplogroup J2a1b1a", snp: ["L558"] },
-                { branchName: "Haplogroup J2a1h", snp: ["L24"], children: [
-                  { branchName: "Haplogroup J2a1h1", snp: ["L25"] }
-                ] },
-                { branchName: "Haplogroup J2-Z6046", snp: ["Z6046"], region: "Iran / Caucasus", description: "Found in the Iranian plateau and the Caucasus." },
+                { 
+                  branchName: "Haplogroup J2a-PF5197", 
+                  snp: ["PF5197"],
+                  region: "Mediterranean",
+                  description: "A major Mediterranean subclade."
+                },
+                { 
+                  branchName: "Haplogroup J2a1", 
+                  snp: ["L26", "rs34459394"], 
+                  region: "Mediterranean / Near East",
+                  description: "A major branch of J2a.",
+                  children: [
+                    { branchName: "Haplogroup J-Z7700", snp: ["Z7700"], region: "Mediterranean", description: "A subclade of J2a found in the Mediterranean region." }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup J2a1a", 
+                  snp: ["Z6046"],
+                  region: "Near East",
+                  description: "Found in the Near East."
+                },
+                { 
+                  branchName: "Haplogroup J2a1b1a", 
+                  snp: ["L558"],
+                  region: "Greece / Anatolia",
+                  description: "Common in the Aegean and Anatolia."
+                },
+                { 
+                  branchName: "Haplogroup J2a1h", 
+                  snp: ["L24"], 
+                  region: "Mediterranean / Near East",
+                  description: "A major Mediterranean branch.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup J2a1h1", 
+                      snp: ["L25"],
+                      region: "Mediterranean",
+                      description: "A common Mediterranean subclade."
+                    }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup J2-Z6046", 
+                  snp: ["Z6046"], 
+                  region: "Iran / Caucasus", 
+                  description: "Found in the Iranian plateau and the Caucasus." 
+                },
                 { 
                   branchName: "Haplogroup J2c", 
                   snp: ["M67", "rs34123366"],
+                  region: "Caucasus / Italy",
+                  description: "Associated with the expansion of the Etruscans and other Mediterranean peoples.",
                   children: [
                     { branchName: "Haplogroup J2-L558", snp: ["L558"], region: "Greece / Anatolia", description: "Subclade common in the Aegean and Anatolia." }
                   ]
                 },
-                { branchName: "Haplogroup J2d", snp: ["M92", "rs34223367"] }
+                { 
+                  branchName: "Haplogroup J2d", 
+                  snp: ["M92", "rs34223367"],
+                  region: "Mediterranean / Near East",
+                  description: "Found in the Mediterranean and Near East."
+                }
               ]
             },
-            { branchName: "Haplogroup J2b", snp: ["M12", "M102"], children: [
-              { branchName: "Haplogroup J2b1", snp: ["M205"] },
-              { branchName: "Haplogroup J2b2", snp: ["M241"], children: [
-                { branchName: "Haplogroup J2b2a", snp: ["L283"], children: [
-                  { branchName: "Haplogroup J-Z1296", snp: ["Z1296"] }
-                ] }
-              ] }
-            ] }
+            { 
+              branchName: "Haplogroup J2b", 
+              snp: ["M12", "M102"], 
+              region: "Balkans / India",
+              description: "Found at high frequencies in the Balkans and also in parts of India.",
+              children: [
+                { 
+                  branchName: "Haplogroup J2b1", 
+                  snp: ["M205"],
+                  region: "Balkans / Near East",
+                  description: "Common in the Balkans and the Near East."
+                },
+                { 
+                  branchName: "Haplogroup J2b2", 
+                  snp: ["M241"], 
+                  region: "Balkans / India",
+                  description: "Associated with the expansion of Indo-Aryan speakers into India and also common in the Balkans (Albania).",
+                  children: [
+                    { 
+                      branchName: "Haplogroup J2b2a", 
+                      snp: ["L283"], 
+                      region: "Balkans / Europe",
+                      description: "Common in the Balkans and parts of Europe.",
+                      children: [
+                        { 
+                          branchName: "Haplogroup J-Z1296", 
+                          snp: ["Z1296"],
+                          region: "Balkans",
+                          description: "A major Balkan subclade."
+                        }
+                      ] 
+                    }
+                  ] 
+                }
+              ] 
+            }
           ]
         }
       ]
     },
-    { branchName: "Haplogroup K", snp: ["M9", "i4000026"] },
-    { branchName: "Haplogroup L", snp: ["M20"], children: [
-      { branchName: "Haplogroup L1a", snp: ["M27"], children: [
-        { branchName: "Haplogroup L1a1", snp: ["M76"] },
-        { branchName: "Haplogroup L1a2", snp: ["M357"] }
-      ] },
-      { branchName: "Haplogroup L1b", snp: ["M317"] }
-    ] },
-    { branchName: "Haplogroup M", snp: ["P256", "M4", "rs9786195", "i4000031", "rs369726477", "i4000036"], children: [
-      { branchName: "Haplogroup M subclade", snp: ["M5"] },
-      { branchName: "Haplogroup M1", snp: ["M106", "M186", "M189"] },
-      { branchName: "Haplogroup M1b", snp: ["M104", "i4000015"] }
-    ] },
-    { branchName: "Haplogroup N", snp: ["M231", "rs2032630", "i4000035"], children: [
-      { branchName: "Haplogroup N1a1", snp: ["M46", "Tat", "i4000041"], children: [
-        { branchName: "Haplogroup N1a-VL29", snp: ["VL29"] },
-        { branchName: "Haplogroup N-L1026", snp: ["L1026"], region: "Northern Europe", description: "A major subclade of N1a1 common in Finland and the Baltic region." },
-        { branchName: "Haplogroup N-Z1936", snp: ["Z1936"], region: "Northern Europe", description: "A subclade of N1a1 found in Northern Europe.", children: [
-          { branchName: "Haplogroup N-L682", snp: ["L682"] },
-          { branchName: "Haplogroup N-Z1925", snp: ["Z1925"] }
-        ] }
-      ] },
-      { branchName: "Haplogroup N1a2", snp: ["L666"] }
-    ] },
-    { branchName: "Haplogroup O", snp: ["M175", "rs2032631", "i4000011", "rs2032632"], children: [
-      { branchName: "Haplogroup O-F100", snp: ["F100"] },
-      { branchName: "Haplogroup O-F145", snp: ["F145"] },
-      { branchName: "Haplogroup O1a", snp: ["M119", "i4000013"], children: [
-        { branchName: "Haplogroup O1a1a", snp: ["M50"] }
-      ] },
-      { branchName: "Haplogroup O1b", snp: ["M268", "i4000017"] },
-      { branchName: "Haplogroup O2", snp: ["M122", "rs2032636", "i4000019"], children: [
-        { branchName: "Haplogroup O2a2b1", snp: ["M134"], children: [
-          { branchName: "Haplogroup O2a2b1a1", snp: ["M117"] }
-        ] }
-      ] }
-    ] },
-    { branchName: "Haplogroup P", snp: ["M45", "i4000032"] },
-    { branchName: "Haplogroup Q", snp: ["M242", "i4000054"], children: [
-      { branchName: "Haplogroup Q1", snp: ["L232"] },
-      { branchName: "Haplogroup Q1a", snp: ["MEH2"] },
-      { branchName: "Haplogroup Q1a1", snp: ["M120"] },
-      { branchName: "Haplogroup Q1a2", snp: ["L54"], children: [
-        { branchName: "Haplogroup Q1a2a1a1", snp: ["M3"] }
-      ] },
-      { branchName: "Haplogroup Q1b", snp: ["L275"], children: [
-        { branchName: "Haplogroup Q1b-L53", snp: ["L53"] },
-        { branchName: "Haplogroup Q1b1a", snp: ["M25"] }
-      ] },
-      { branchName: "Haplogroup Q-M3", snp: ["M3", "i4000055", "rs3894"], children: [
-        { branchName: "Haplogroup Q-M19", snp: ["M19"], region: "South America", description: "A subclade of Q-M3 common in South American indigenous populations." },
-        { branchName: "Haplogroup Q-M194", snp: ["M194"], region: "South America", description: "A subclade of Q-M3 found in South America." },
-        { branchName: "Haplogroup Q-M199", snp: ["M199"], region: "South America", description: "A subclade of Q-M3 found in South America." }
-      ] }
-    ] },
+    { 
+      branchName: "Haplogroup K", 
+      snp: ["M9", "i4000026"],
+      region: "Eurasia",
+      description: "A major macro-haplogroup that originated in Eurasia and is the ancestor of haplogroups L through T.",
+      children: [
+        {
+          branchName: "Haplogroup K1",
+          snp: ["P60"],
+          region: "Oceania",
+          description: "Found in parts of Oceania."
+        },
+        {
+          branchName: "Haplogroup K2",
+          snp: ["M526"],
+          region: "Eurasia / Oceania",
+          description: "The most successful branch of K, ancestral to the majority of paternal lineages in Eurasia, Oceania, and the Americas (L, M, N, O, P, Q, R, S, T).",
+          children: [
+            {
+              branchName: "Haplogroup K2a",
+              snp: ["M2308"],
+              region: "Eurasia",
+              description: "Ancestral to Haplogroups N and O."
+            },
+            {
+              branchName: "Haplogroup K2b",
+              snp: ["P331"],
+              region: "Eurasia / Oceania",
+              description: "Ancestral to Haplogroups M, P, Q, R, and S."
+            }
+          ]
+        }
+      ]
+    },
+    { 
+      branchName: "Haplogroup L", 
+      snp: ["M20"], 
+      region: "South Asia / Near East",
+      description: "Found primarily in South Asia and the Near East, associated with the early Neolithic expansion in the Indus Valley.",
+      children: [
+        { 
+          branchName: "Haplogroup L1a", 
+          snp: ["M27"], 
+          region: "South Asia",
+          description: "Common in South Asia, particularly in India.",
+          children: [
+            { 
+              branchName: "Haplogroup L1a1", 
+              snp: ["M76"],
+              region: "South Asia",
+              description: "Found in South Asia."
+            },
+            { 
+              branchName: "Haplogroup L1a2", 
+              snp: ["M357"],
+              region: "South Asia / Central Asia",
+              description: "Found among the Pashtuns and in Central Asia."
+            }
+          ] 
+        },
+        { 
+          branchName: "Haplogroup L1b", 
+          snp: ["M317"],
+          region: "Caucasus / Turkey",
+          description: "Found in the Caucasus and Turkey."
+        },
+        {
+          branchName: "Haplogroup L2",
+          snp: ["L595"],
+          region: "Europe",
+          description: "A rare branch of Haplogroup L found primarily in Europe."
+        }
+      ] 
+    },
+    { 
+      branchName: "Haplogroup M", 
+      snp: ["P256", "M4", "rs9786195", "i4000031", "rs369726477", "i4000036"], 
+      region: "Oceania (Melanesia)",
+      description: "The primary paternal lineage of Melanesia, associated with the early settlement of New Guinea and neighboring islands.",
+      children: [
+        { 
+          branchName: "Haplogroup M1", 
+          snp: ["M106", "M186", "M189"],
+          region: "Melanesia",
+          description: "The main branch of Haplogroup M, widespread in Papua New Guinea.",
+          children: [
+            {
+              branchName: "Haplogroup M1a",
+              snp: ["P34"],
+              region: "Melanesia",
+              description: "Common in the highlands of Papua New Guinea."
+            },
+            {
+              branchName: "Haplogroup M1b",
+              snp: ["P35"],
+              region: "Melanesia",
+              description: "Found in the coastal regions of Papua New Guinea."
+            }
+          ]
+        },
+        { 
+          branchName: "Haplogroup M2", 
+          snp: ["M353"],
+          region: "Oceania (Solomon Islands)",
+          description: "Found in the Solomon Islands."
+        }
+      ] 
+    },
+    { 
+      branchName: "Haplogroup N", 
+      snp: ["M231", "rs2032630", "i4000035"], 
+      region: "Northern Eurasia / Siberia",
+      description: "Associated with the expansion of Uralic-speaking peoples across Northern Eurasia, from Siberia to Scandinavia.",
+      children: [
+        { 
+          branchName: "Haplogroup N1a1", 
+          snp: ["M46", "Tat", "i4000041"], 
+          region: "Northern Europe / Siberia",
+          description: "The most common branch of Haplogroup N, found at high frequencies in Finland, Estonia, and among the Sakha (Yakuts) of Siberia.",
+          children: [
+            { 
+              branchName: "Haplogroup N1a-VL29", 
+              snp: ["VL29"],
+              region: "Baltic / Scandinavia",
+              description: "Common in the Baltic region and Scandinavia."
+            },
+            { 
+              branchName: "Haplogroup N-L1026", 
+              snp: ["L1026"], 
+              region: "Northern Europe", 
+              description: "A major subclade of N1a1 common in Finland and the Baltic region." 
+            },
+            { 
+              branchName: "Haplogroup N-Z1936", 
+              snp: ["Z1936"], 
+              region: "Northern Europe", 
+              description: "A subclade of N1a1 found in Northern Europe, particularly in Finland.", 
+              children: [
+                { 
+                  branchName: "Haplogroup N-L682", 
+                  snp: ["L682"],
+                  region: "Eastern Europe",
+                  description: "Found in Eastern Europe."
+                },
+                { 
+                  branchName: "Haplogroup N-Z1925", 
+                  snp: ["Z1925"],
+                  region: "Northern Europe",
+                  description: "Found in Northern Europe."
+                }
+              ] 
+            }
+          ] 
+        },
+        { 
+          branchName: "Haplogroup N1a2", 
+          snp: ["L666"],
+          region: "Siberia",
+          description: "Found in Siberia."
+        }
+      ] 
+    },
+    { 
+      branchName: "Haplogroup O", 
+      snp: ["M175", "rs2032631", "i4000011", "rs2032632"], 
+      region: "East Asia / Southeast Asia",
+      description: "The dominant paternal lineage of East and Southeast Asia, associated with the expansion of rice-farming populations.",
+      children: [
+        { 
+          branchName: "Haplogroup O-F100", 
+          snp: ["F100"],
+          region: "East Asia",
+          description: "Found in East Asia."
+        },
+        { 
+          branchName: "Haplogroup O-F145", 
+          snp: ["F145"],
+          region: "East Asia",
+          description: "Found in East Asia."
+        },
+        { 
+          branchName: "Haplogroup O1a", 
+          snp: ["M119", "i4000013"], 
+          region: "Southeast China / Taiwan / Southeast Asia",
+          description: "Associated with the Austronesian expansion and found at high frequencies among indigenous Taiwanese and Southeast Asian islanders.",
+          children: [
+            { 
+              branchName: "Haplogroup O1a1a", 
+              snp: ["M50"],
+              region: "Southeast Asia",
+              description: "Found in Southeast Asia."
+            }
+          ] 
+        },
+        { 
+          branchName: "Haplogroup O1b", 
+          snp: ["M268", "i4000017"], 
+          region: "East Asia / Southeast Asia",
+          description: "Common in Southeast Asia and Japan (Yayoi period).",
+          children: [
+            {
+              branchName: "Haplogroup O1b1a1",
+              snp: ["M95"],
+              region: "Southeast Asia",
+              description: "Associated with Austroasiatic-speaking populations in Southeast Asia."
+            },
+            {
+              branchName: "Haplogroup O1b2",
+              snp: ["M176"],
+              region: "Japan / Korea",
+              description: "Common in Japan and Korea."
+            }
+          ]
+        },
+        { 
+          branchName: "Haplogroup O2", 
+          snp: ["M122", "rs2032636", "i4000019"], 
+          region: "East Asia",
+          description: "The most common haplogroup in China, associated with the expansion of Han Chinese populations.",
+          children: [
+            { 
+              branchName: "Haplogroup O2a2b1", 
+              snp: ["M134"], 
+              region: "East Asia",
+              description: "A major Han Chinese branch.",
+              children: [
+                { 
+                  branchName: "Haplogroup O2a2b1a1", 
+                  snp: ["M117"],
+                  region: "East Asia",
+                  description: "One of the most frequent lineages in China."
+                }
+              ] 
+            }
+          ] 
+        }
+      ] 
+    },
+    { 
+      branchName: "Haplogroup P", 
+      snp: ["M45", "i4000032"], 
+      region: "Central Asia",
+      description: "A major macro-haplogroup that originated in Central Asia and is the ancestor of haplogroups Q and R.",
+      children: [
+        {
+          branchName: "Haplogroup P1",
+          snp: ["M45"],
+          region: "Central Asia",
+          description: "The primary branch of P, ancestral to Haplogroups Q and R. It likely originated in the region of the Altai Mountains or Central Asia.",
+          children: [
+            {
+              branchName: "Haplogroup P-P295",
+              snp: ["P295"],
+              region: "Southeast Asia / Oceania",
+              description: "Found in Southeast Asia and Oceania."
+            }
+          ]
+        },
+        {
+          branchName: "Haplogroup P2",
+          snp: ["B253"],
+          region: "Oceania (Melanesia / Philippines)",
+          description: "Found in Melanesia and among the Aeta of the Philippines."
+        }
+      ]
+    },
+    { 
+      branchName: "Haplogroup Q", 
+      snp: ["M242", "i4000054"], 
+      region: "Siberia / Americas",
+      description: "Associated with the first human migration into the Americas. It is the dominant lineage among indigenous peoples of the Americas and also found in Siberia.",
+      children: [
+        { 
+          branchName: "Haplogroup Q1", 
+          snp: ["L232"],
+          region: "Siberia / Americas",
+          description: "The main branch of Haplogroup Q."
+        },
+        { 
+          branchName: "Haplogroup Q1a", 
+          snp: ["MEH2"],
+          region: "Siberia / Americas",
+          description: "Found in Siberia and the Americas."
+        },
+        { 
+          branchName: "Haplogroup Q1a1", 
+          snp: ["M120"],
+          region: "East Asia",
+          description: "Found in East Asia."
+        },
+        { 
+          branchName: "Haplogroup Q1a2", 
+          snp: ["L54"], 
+          region: "Americas",
+          description: "The primary lineage of Native Americans.",
+          children: [
+            { 
+              branchName: "Haplogroup Q1a2a1a1", 
+              snp: ["M3"],
+              region: "Americas",
+              description: "The most common subclade among indigenous peoples of North and South America."
+            }
+          ] 
+        },
+        { 
+          branchName: "Haplogroup Q1b", 
+          snp: ["L275"], 
+          region: "Central Asia / Near East",
+          description: "Found in Central Asia and the Near East.",
+          children: [
+            { 
+              branchName: "Haplogroup Q1b-L53", 
+              snp: ["L53"],
+              region: "Central Asia",
+              description: "Found in Central Asia."
+            },
+            { 
+              branchName: "Haplogroup Q1b1a", 
+              snp: ["M25"],
+              region: "Near East",
+              description: "Found in the Near East."
+            }
+          ] 
+        },
+        { 
+          branchName: "Haplogroup Q-M3", 
+          snp: ["M3", "i4000055", "rs3894"], 
+          region: "Americas",
+          description: "The defining marker for the majority of Native American paternal lineages.",
+          children: [
+            { branchName: "Haplogroup Q-M19", snp: ["M19"], region: "South America", description: "A subclade of Q-M3 common in South American indigenous populations, particularly in the Amazon." },
+            { branchName: "Haplogroup Q-M194", snp: ["M194"], region: "South America", description: "A subclade of Q-M3 found in South America." },
+            { branchName: "Haplogroup Q-M199", snp: ["M199"], region: "South America", description: "A subclade of Q-M3 found in South America." }
+          ] 
+        }
+      ] 
+    },
     {
       branchName: "Haplogroup R",
       snp: ["M207"],
+      region: "Eurasia",
+      description: "A major macro-haplogroup that originated in Eurasia and is the ancestor of the most common lineages in Europe and South Asia.",
       children: [
         {
           branchName: "Haplogroup R1",
           snp: ["M173"],
+          region: "Eurasia",
+          description: "The main branch of Haplogroup R, ancestral to R1a and R1b.",
           children: [
-            { branchName: "Haplogroup R1a", snp: ["M17", "M417", "i4000028", "rs3908"], children: [
-              { branchName: "Haplogroup R1a-L664", snp: ["L664"] },
-              { branchName: "Haplogroup R1a-Z284", snp: ["Z284"], children: [
-                { branchName: "Haplogroup R1a-L448", snp: ["L448"] },
-                { branchName: "Haplogroup R1a-CTS4179", snp: ["CTS4179"] }
-              ] },
-              { branchName: "Haplogroup R1a1a", snp: ["M417", "rs34633373"] },
-              { branchName: "Haplogroup R1a1a1", snp: ["Z645"], children: [
-                { branchName: "Haplogroup R1a-Z283", snp: ["Z283"], children: [
-                  { branchName: "Haplogroup R1a-Z282", snp: ["Z282"], children: [
-                    { branchName: "Haplogroup R1a-Z280", snp: ["Z280"], children: [{ branchName: "Haplogroup R1a-CTS1211", snp: ["CTS1211"] }, { branchName: "Haplogroup R1a-L365", snp: ["L365"] }] },
-                    { branchName: "Haplogroup R1a-M458", snp: ["M458"], children: [{ branchName: "Haplogroup R1a-L260", snp: ["L260"] }] }
-                  ] }
-                ] },
-                { branchName: "Haplogroup R1a1a1b1", snp: ["Z283", "Z282"] },
-                { branchName: "Haplogroup R1a1a1b1a", snp: ["Z280"] },
-                { branchName: "Haplogroup R1a1a1b1a1", snp: ["M458"] },
-                { branchName: "Haplogroup R1a-Z93", snp: ["Z93"], children: [
-                  { branchName: "Haplogroup R1a-Z94", snp: ["Z94"], children: [
-                    { branchName: "Haplogroup R1a-L657", snp: ["L657"], children: [
-                      { branchName: "Haplogroup R1a-Y7", snp: ["Y7"] }
-                    ] }
-                  ] }
-                ] },
-                { branchName: "Haplogroup R1a1a1b2", snp: ["Z93"] },
-                { branchName: "Haplogroup R1a1a1b2a", snp: ["Z94"] },
-                { branchName: "Haplogroup R1a1a1b2a1a", snp: ["L657"] }
-              ] }
-            ] },
+            { 
+              branchName: "Haplogroup R1a", 
+              snp: ["M17", "M417", "i4000028", "rs3908"], 
+              region: "Eurasia",
+              description: "Associated with the expansion of Indo-European speakers across Eurasia. It is found at high frequencies in Eastern Europe, Central Asia, and South Asia.",
+              children: [
+                { 
+                  branchName: "Haplogroup R1a-L664", 
+                  snp: ["L664"],
+                  region: "Northwest Europe",
+                  description: "Found primarily in Northwest Europe."
+                },
+                { 
+                  branchName: "Haplogroup R1a-Z284", 
+                  snp: ["Z284"], 
+                  region: "Scandinavia",
+                  description: "Common in Scandinavia, associated with Viking movements.",
+                  children: [
+                    { branchName: "Haplogroup R1a-L448", snp: ["L448"], region: "Scandinavia", description: "A major Scandinavian subclade." },
+                    { branchName: "Haplogroup R1a-CTS4179", snp: ["CTS4179"], region: "Scandinavia / British Isles", description: "Found in Scandinavia and the British Isles." }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup R1a1a", 
+                  snp: ["M417", "rs34633373"],
+                  region: "Eurasia",
+                  description: "The most common branch of R1a, linked to the Kurgan culture and the spread of Indo-European languages."
+                },
+                { 
+                  branchName: "Haplogroup R1a1a1", 
+                  snp: ["Z645"], 
+                  region: "Eurasia",
+                  description: "The main subclade of R1a1a.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup R1a-Z283", 
+                      snp: ["Z283"], 
+                      region: "Europe",
+                      description: "The 'European' branch of R1a.",
+                      children: [
+                        { 
+                          branchName: "Haplogroup R1a-Z282", 
+                          snp: ["Z282"], 
+                          region: "Eastern Europe",
+                          description: "Common in Eastern Europe.",
+                          children: [
+                            { 
+                              branchName: "Haplogroup R1a-Z280", 
+                              snp: ["Z280"], 
+                              region: "Eastern Europe",
+                              description: "Common in Eastern Europe, particularly among East Slavs.",
+                              children: [
+                                { branchName: "Haplogroup R1a-CTS1211", snp: ["CTS1211"], region: "Eastern Europe", description: "A major Eastern European subclade." }, 
+                                { branchName: "Haplogroup R1a-L365", snp: ["L365"], region: "Eastern Europe", description: "Found in Eastern Europe." }
+                              ] 
+                            },
+                            { 
+                              branchName: "Haplogroup R1a-M458", 
+                              snp: ["M458"], 
+                              region: "Central/Eastern Europe",
+                              description: "Common in Central and Eastern Europe, particularly among West Slavs.",
+                              children: [
+                                { branchName: "Haplogroup R1a-L260", snp: ["L260"], region: "Central Europe", description: "The 'West Slavic' branch." }
+                              ] 
+                            }
+                          ] 
+                        }
+                      ] 
+                    },
+                    { 
+                      branchName: "Haplogroup R1a1a1b1", 
+                      snp: ["Z283", "Z282"],
+                      region: "Europe",
+                      description: "A subclade of Z283."
+                    },
+                    { 
+                      branchName: "Haplogroup R1a1a1b1a", 
+                      snp: ["Z280"],
+                      region: "Eastern Europe",
+                      description: "A subclade of Z282."
+                    },
+                    { 
+                      branchName: "Haplogroup R1a1a1b1a1", 
+                      snp: ["M458"],
+                      region: "Central Europe",
+                      description: "A subclade of Z282."
+                    },
+                    { 
+                      branchName: "Haplogroup R1a-Z93", 
+                      snp: ["Z93"], 
+                      region: "Central Asia / South Asia",
+                      description: "The 'Asian' branch of R1a, associated with the Indo-Aryan expansion into India.",
+                      children: [
+                        { 
+                          branchName: "Haplogroup R1a-Z94", 
+                          snp: ["Z94"], 
+                          region: "Central Asia / South Asia",
+                          description: "A major subclade of Z93.",
+                          children: [
+                            { 
+                              branchName: "Haplogroup R1a-L657", 
+                              snp: ["L657"], 
+                              region: "South Asia",
+                              description: "Common in South Asia, particularly among Indo-Aryan speakers.",
+                              children: [
+                                { branchName: "Haplogroup R1a-Y7", snp: ["Y7"], region: "South Asia", description: "A major South Asian subclade." }
+                              ] 
+                            }
+                          ] 
+                        }
+                      ] 
+                    },
+                    { 
+                      branchName: "Haplogroup R1a1a1b2", 
+                      snp: ["Z93"],
+                      region: "Central Asia / South Asia",
+                      description: "A subclade of Z645."
+                    },
+                    { 
+                      branchName: "Haplogroup R1a1a1b2a", 
+                      snp: ["Z94"],
+                      region: "Central Asia / South Asia",
+                      description: "A subclade of Z93."
+                    },
+                    { 
+                      branchName: "Haplogroup R1a1a1b2a1a", 
+                      snp: ["L657"],
+                      region: "South Asia",
+                      description: "A subclade of Z94."
+                    }
+                  ] 
+                }
+              ] 
+            },
             { 
               branchName: "Haplogroup R1b", 
               snp: ["M343", "i4000063", "rs9786153"],
               region: "Western Europe",
-              description: "The most common Y-DNA haplogroup in Western Europe, associated with the expansion of Indo-European speakers.",
+              description: "The most common Y-DNA haplogroup in Western Europe, associated with the expansion of Indo-European speakers (Yamna culture) and the spread of the Bell Beaker culture.",
               children: [
-                { branchName: "Haplogroup R1b-Z2103", snp: ["Z2103"], children: [{ branchName: "Haplogroup R1b-L23", snp: ["L23"] }, { branchName: "Haplogroup R1b-Z2105", snp: ["Z2105"] }] },
-                { branchName: "Haplogroup R1b1", snp: ["L278"] },
-                { branchName: "Haplogroup R1b1a", snp: ["L754"] },
-                { branchName: "Haplogroup R1b1a1b", snp: ["M269", "L23", "rs9786139", "rs9786714", "i400018", "rs9786153", "rs9786132", "rs34024838", "i4000064", "i4000062"], children: [
-                  { branchName: "Haplogroup R1b1a1b1a", snp: ["L51", "M412", "rs9786064", "rs9786745"], children: [
-                    { branchName: "Haplogroup R1b1a1b1a1", snp: ["L11", "P310", "P311", "rs9786080", "rs9786076", "i400021", "rs34233370"], children: [
+                { 
+                  branchName: "Haplogroup R1b-Z2103", 
+                  snp: ["Z2103"], 
+                  region: "Eastern Europe / Near East",
+                  description: "The 'Eastern' branch of R1b, common in the Caucasus, Turkey, and the Balkans.",
+                  children: [
+                    { branchName: "Haplogroup R1b-L23", snp: ["L23"], region: "Eastern Europe", description: "A major subclade of Z2103." }, 
+                    { branchName: "Haplogroup R1b-Z2105", snp: ["Z2105"], region: "Eastern Europe", description: "Found in Eastern Europe." }
+                  ] 
+                },
+                { 
+                  branchName: "Haplogroup R1b1", 
+                  snp: ["L278"],
+                  region: "Eurasia",
+                  description: "A major branch of R1b."
+                },
+                { 
+                  branchName: "Haplogroup R1b1a", 
+                  snp: ["L754"],
+                  region: "Eurasia",
+                  description: "A major branch of R1b1."
+                },
+                { 
+                  branchName: "Haplogroup R1b1a1b", 
+                  snp: ["M269", "L23", "rs9786139", "rs9786714", "i400018", "rs9786153", "rs9786132", "rs34024838", "i4000064", "i4000062"], 
+                  region: "Western Europe",
+                  description: "The most common branch of R1b in Western Europe, representing the massive expansion of Indo-European lineages.",
+                  children: [
+                    { 
+                      branchName: "Haplogroup R1b1a1b1a", 
+                      snp: ["L51", "M412", "rs9786064", "rs9786745"], 
+                      region: "Western Europe",
+                      description: "The main branch of M269 in Western Europe.",
+                      children: [
+                        { 
+                          branchName: "Haplogroup R1b1a1b1a1", 
+                          snp: ["L11", "P310", "P311", "rs9786080", "rs9786076", "i400021", "rs34233370"], 
+                          region: "Western Europe",
+                          description: "The ancestor of the major Western European clades (U106 and P312).",
+                          children: [
                       { 
                         branchName: "Haplogroup R1b1a1b1a1a", 
                         snp: ["U106", "S21", "M405", "rs16981293", "i400035"],
@@ -3354,18 +4486,80 @@ export const Y_DNA_TREE: HaplogroupNode = {
             }
           ]
         },
-        { branchName: "Haplogroup R2", snp: ["M124"] }
+        { 
+          branchName: "Haplogroup R2", 
+          snp: ["M124"],
+          region: "South Asia / Central Asia",
+          description: "Primarily found in South Asia (India, Pakistan, Sri Lanka) and parts of Central Asia and the Caucasus. It is associated with the early agricultural populations of the Indian subcontinent.",
+          children: [
+            {
+              branchName: "Haplogroup R2a",
+              snp: ["M124"],
+              region: "South Asia",
+              description: "The main branch of R2 found in South Asia."
+            }
+          ]
+        }
       ]
     },
-    { branchName: "Haplogroup S", snp: ["M230", "i4000039"] },
-    { branchName: "Haplogroup T", snp: ["M184", "i4000042"], children: [
-      { branchName: "Haplogroup T-L131", snp: ["L131"] },
-      { branchName: "Haplogroup T-P77", snp: ["P77"] },
-      { branchName: "Haplogroup T1a", snp: ["M70"] }
-    ] },
-    { branchName: "Haplogroup CF", snp: ["P143", "rs2032625", "i4000003"] },
-    { branchName: "Haplogroup CT", snp: ["M168", "rs2032624", "i4000001"] },
-    { branchName: "Haplogroup DE", snp: ["M145", "rs2032623", "i4000002"] }
+    { 
+      branchName: "Haplogroup S", 
+      snp: ["M230", "i4000039"],
+      region: "Oceania (Melanesia / Micronesia)",
+      description: "A major paternal lineage of Oceania, found at high frequencies in Papua New Guinea and among the indigenous populations of Melanesia and Micronesia.",
+      children: [
+        {
+          branchName: "Haplogroup S1",
+          snp: ["B254"],
+          region: "Oceania",
+          description: "The main branch of Haplogroup S."
+        }
+      ]
+    },
+    { 
+      branchName: "Haplogroup T", 
+      snp: ["M184", "i4000042"], 
+      region: "Near East / Horn of Africa / Europe",
+      description: "A lineage found at low frequencies across the Near East, the Horn of Africa, and parts of Europe. It is associated with the spread of early farmers and maritime trade.",
+      children: [
+        { 
+          branchName: "Haplogroup T1", 
+          snp: ["L206"],
+          region: "Near East / Europe",
+          description: "The main branch of Haplogroup T.",
+          children: [
+            { 
+              branchName: "Haplogroup T1a", 
+              snp: ["M70"], 
+              region: "Near East / Europe / Africa",
+              description: "The most common subclade of T, found in the Near East, Southern Europe, and Northeast Africa.",
+              children: [
+                { branchName: "Haplogroup T-L131", snp: ["L131"], region: "Europe / Near East", description: "Found in Europe and the Near East." },
+                { branchName: "Haplogroup T-P77", snp: ["P77"], region: "Europe / Near East", description: "Found in Europe and the Near East." }
+              ]
+            }
+          ]
+        }
+      ] 
+    },
+    { 
+      branchName: "Haplogroup CF", 
+      snp: ["P143", "rs2032625", "i4000003"],
+      region: "Eurasia / Oceania",
+      description: "An ancient macro-haplogroup that represents one of the primary migrations out of Africa. It is the ancestor of Haplogroups C and F."
+    },
+    { 
+      branchName: "Haplogroup CT", 
+      snp: ["M168", "rs2032624", "i4000001"],
+      region: "Africa / Eurasia",
+      description: "A very ancient lineage that is the ancestor of all human paternal lineages outside of Haplogroups A and B. It represents the 'Out of Africa' migration."
+    },
+    { 
+      branchName: "Haplogroup DE", 
+      snp: ["M145", "rs2032623", "i4000002"],
+      region: "Africa / East Asia",
+      description: "An ancient macro-haplogroup that is the ancestor of Haplogroups D and E. It represents a lineage that split early in human history."
+    }
   ]
 };
 
