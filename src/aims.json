@@ -13959,5 +13959,1606 @@
     "frequencies": {"AFR": 0.01, "EUR": 0.78, "EAS": 0.01, "AMR": 0.09, "SAS": 0.04},
     "subFrequencies": {"Northern European": 0.92, "Southern European": 0.65, "Eastern European": 0.85},
     "description": "HERC2 Eye Color Marker - highly informative for European ancestry and pigmentation traits."
+  },
+  {
+    "rsid": "rs4988235",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.8,
+      "EAS": 0.01,
+      "SAS": 0.2,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "German": 0.75,
+      "British": 0.9,
+      "Scandinavian": 0.95,
+      "Italian": 0.4,
+      "Spanish": 0.5
+    },
+    "description": "Lactase Persistence Marker - highly prevalent in Northern and Central European populations (Germany/UK/Scandinavia)."
+  },
+  {
+    "rsid": "rs12124819",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.4,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Basque": 0.85,
+      "Spanish": 0.3,
+      "French": 0.2,
+      "Italian": 0.15
+    },
+    "description": "Basque/Iberian Ancestry Marker - informative for populations of the Iberian Peninsula and Southern France."
+  },
+  {
+    "rsid": "rs174537",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.55,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Sardinian": 0.9,
+      "Italian": 0.45,
+      "Greek": 0.4,
+      "Spanish": 0.35
+    },
+    "description": "Sardinian/Mediterranean Ancestry Marker - informative for Southern European and Mediterranean populations."
+  },
+  {
+    "rsid": "rs1126809",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.35,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.7,
+      "German": 0.25,
+      "Polish": 0.3,
+      "Russian": 0.2
+    },
+    "description": "Central/Eastern European Ancestry Marker - informative for Ashkenazi Jewish and Central European populations."
+  },
+  {
+    "rsid": "rs1229984",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.2,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Finnish": 0.8,
+      "Estonian": 0.6,
+      "Russian": 0.3,
+      "Swedish": 0.15
+    },
+    "description": "Finnish/Baltic Ancestry Marker - informative for Northern and Eastern European populations."
+  },
+  {
+    "rsid": "rs1042602",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.6,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "German": 0.65,
+      "Dutch": 0.7,
+      "British": 0.75,
+      "French": 0.55
+    },
+    "description": "Northwestern European Ancestry Marker - informative for populations of Germany, Benelux, and the British Isles."
+  },
+  {
+    "rsid": "rs1393350",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.45,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.25
+    },
+    "subFrequencies": {
+      "Italian": 0.5,
+      "Greek": 0.55,
+      "Spanish": 0.45,
+      "Balkan": 0.4
+    },
+    "description": "Southern European Ancestry Marker - informative for Mediterranean and Balkan populations."
+  },
+  {
+    "rsid": "rs12913832",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.8,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "German": 0.9,
+      "Scandinavian": 0.95,
+      "British": 0.85,
+      "Italian": 0.4,
+      "Spanish": 0.35,
+      "Russian": 0.8
+    },
+    "description": "HERC2 Eye Color Marker - Primary determinant of blue/brown eye color in Europeans."
+  },
+  {
+    "rsid": "rs1426654",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.99,
+      "EAS": 0.01,
+      "SAS": 0.8,
+      "MENA": 0.9
+    },
+    "subFrequencies": {
+      "German": 0.99,
+      "British": 0.99,
+      "Italian": 0.98,
+      "Spanish": 0.98,
+      "Polish": 0.99
+    },
+    "description": "SLC24A5 Skin Pigmentation Marker - Nearly fixed in European populations, key for light skin."
+  },
+  {
+    "rsid": "rs16891982",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.95,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.3
+    },
+    "subFrequencies": {
+      "German": 0.98,
+      "British": 0.97,
+      "Italian": 0.85,
+      "Spanish": 0.9,
+      "Russian": 0.95
+    },
+    "description": "SLC45A2 Skin Pigmentation Marker - Highly informative for European ancestry and light skin."
+  },
+  {
+    "rsid": "rs12203592",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.2,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "British": 0.35,
+      "Irish": 0.4,
+      "German": 0.2,
+      "Scandinavian": 0.15,
+      "Spanish": 0.05
+    },
+    "description": "IRF4 Hair/Skin Marker - Associated with freckling, brown hair, and blue eyes in Northern Europeans."
+  },
+  {
+    "rsid": "rs1805007",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.1,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Irish": 0.25,
+      "British": 0.15,
+      "German": 0.08,
+      "Scandinavian": 0.05,
+      "Italian": 0.01
+    },
+    "description": "MC1R Red Hair Marker - Highly specific to Northern and Western European populations."
+  },
+  {
+    "rsid": "rs12821256",
+    "region": "European",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.15,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Scandinavian": 0.3,
+      "German": 0.2,
+      "British": 0.15,
+      "Polish": 0.2,
+      "Italian": 0.02
+    },
+    "description": "KITLG Blond Hair Marker - Informative for Northern and Central European ancestry."
+  },
+  {
+    "rsid": "rs1800562",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.05,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Irish": 0.15,
+      "British": 0.1,
+      "German": 0.05,
+      "Scandinavian": 0.08,
+      "French": 0.04
+    },
+    "description": "HFE Hemochromatosis Marker - Highest frequency in Northwestern Europe (Celtic/Germanic populations)."
+  },
+  {
+    "rsid": "rs2395129",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.25,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "Italian": 0.3,
+      "Spanish": 0.25,
+      "German": 0.2,
+      "British": 0.2,
+      "Greek": 0.35
+    },
+    "description": "HLA-DQA1 Celiac Risk Marker - Informative for European and Mediterranean ancestry."
+  },
+  {
+    "rsid": "rs1129038",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.75,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "German": 0.8,
+      "British": 0.8,
+      "Scandinavian": 0.85,
+      "Italian": 0.45,
+      "Spanish": 0.4
+    },
+    "description": "HERC2 Eye Color Marker - Complementary to rs12913832 for European pigmentation."
+  },
+  {
+    "rsid": "rs12896399",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.4,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "German": 0.45,
+      "British": 0.5,
+      "Scandinavian": 0.55,
+      "Italian": 0.2,
+      "Spanish": 0.15
+    },
+    "description": "SLC24A4 Eye Color Marker - Informative for blue/green eye color in Europeans."
+  },
+  {
+    "rsid": "rs11614913",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.35,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "Italian": 0.45,
+      "Greek": 0.5,
+      "Spanish": 0.3,
+      "Balkan": 0.4
+    },
+    "description": "TTC39B Southern European Marker - Informative for Mediterranean populations."
+  },
+  {
+    "rsid": "rs2814778",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.99,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "description": "Duffy Null Tie-Breaker - Nearly fixed in Sub-Saharan Africa, diagnostic for African ancestry."
+  },
+  {
+    "rsid": "rs3827760",
+    "region": "East Asian",
+    "alleles": ["G"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "SAS": 0.05,
+      "AMR": 0.8
+    },
+    "description": "EDAR Tie-Breaker - Highly diagnostic for East Asian and Native American ancestry."
+  },
+  {
+    "rsid": "rs4988235",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.7,
+      "EAS": 0.01,
+      "SAS": 0.2,
+      "MENA": 0.15
+    },
+    "description": "LCT Tie-Breaker - Informative for European lactase persistence and ancestry."
+  },
+  {
+    "rsid": "rs10456265",
+    "region": "Oceanian",
+    "alleles": ["A"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.9
+    },
+    "description": "Oceanian Tie-Breaker - Highly specific to Melanesian and Papuan populations."
+  },
+  {
+    "rsid": "rs10456266",
+    "region": "Oceanian",
+    "alleles": ["G"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.85
+    },
+    "description": "Oceanian Tie-Breaker - Informative for Australasian genetic signatures."
+  },
+  {
+    "rsid": "rs1815739",
+    "region": "Global",
+    "alleles": ["C"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.8,
+      "EUR": 0.5,
+      "EAS": 0.2,
+      "SAS": 0.4,
+      "MENA": 0.5
+    },
+    "description": "ACTN3 Muscle Performance Marker - 'The Sprint Gene', common on commercial ancestry chips."
+  },
+  {
+    "rsid": "rs1801133",
+    "region": "Global",
+    "alleles": ["T"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.35,
+      "EAS": 0.25,
+      "SAS": 0.2,
+      "MENA": 0.3
+    },
+    "description": "MTHFR Folate Metabolism Marker - Highly common on commercial genotyping chips."
+  },
+  {
+    "rsid": "rs4680",
+    "region": "Global",
+    "alleles": ["A"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.2,
+      "EUR": 0.5,
+      "EAS": 0.3,
+      "SAS": 0.4,
+      "MENA": 0.45
+    },
+    "description": "COMT 'Warrior/Worrier' Marker - Informative for stress response and cognitive traits."
+  },
+  {
+    "rsid": "rs121913059",
+    "region": "East Asian",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.95,
+      "SAS": 0.1,
+      "AMR": 0.8
+    },
+    "description": "ABCC11 Earwax Type Marker - Diagnostic for East Asian and Native American ancestry (Dry earwax)."
+  },
+  {
+    "rsid": "rs1805008",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.08,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Irish": 0.2,
+      "British": 0.12,
+      "German": 0.05
+    },
+    "description": "MC1R Red Hair Variant (R151C) - Specific to Northern and Western European populations."
+  },
+  {
+    "rsid": "rs1805009",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.05,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Irish": 0.1,
+      "British": 0.08,
+      "German": 0.03
+    },
+    "description": "MC1R Red Hair Variant (D294H) - Informative for Northern European ancestry."
+  },
+  {
+    "rsid": "rs11547464",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.9,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.4
+    },
+    "subFrequencies": {
+      "German": 0.95,
+      "British": 0.95,
+      "Italian": 0.8,
+      "Spanish": 0.85
+    },
+    "description": "SLC45A2 Pigmentation Marker - Informative for European ancestry and light skin."
+  },
+  {
+    "rsid": "rs7495174",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.7,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "German": 0.75,
+      "British": 0.75,
+      "Scandinavian": 0.8,
+      "Italian": 0.4
+    },
+    "description": "OCA2 Eye Color Marker - Informative for blue/green eye color in Europeans."
+  },
+  {
+    "rsid": "rs1042522",
+    "region": "Global",
+    "alleles": ["G"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.2,
+      "EUR": 0.7,
+      "EAS": 0.6,
+      "SAS": 0.65,
+      "MENA": 0.7
+    },
+    "description": "TP53 Pro72Arg Marker - Common on chips, informative for latitude-based selection."
+  },
+  {
+    "rsid": "rs1229984",
+    "region": "East Asian",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.8,
+      "SAS": 0.1,
+      "MENA": 0.05
+    },
+    "description": "ADH1B Alcohol Metabolism Marker - Highly informative for East Asian ancestry."
+  },
+  {
+    "rsid": "rs671",
+    "region": "East Asian",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.25,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {
+      "Japanese": 0.45,
+      "Han Chinese": 0.2,
+      "Vietnamese": 0.15
+    },
+    "description": "ALDH2 Alcohol Flush Marker - Highly specific to East Asian populations."
+  },
+  {
+    "rsid": "rs17822931",
+    "region": "East Asian",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.9,
+      "SAS": 0.1,
+      "AMR": 0.8
+    },
+    "description": "ABCC11 Earwax/Body Odor Marker - Diagnostic for East Asian and Native American ancestry."
+  },
+  {
+    "rsid": "rs1800414",
+    "region": "Global",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.1,
+      "EAS": 0.8,
+      "SAS": 0.5,
+      "MENA": 0.3
+    },
+    "description": "OCA2 Pigmentation Marker - Informative for global ancestry and skin/eye color."
+  },
+  {
+    "rsid": "rs1545397",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.8,
+      "EAS": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "description": "OCA2 Pigmentation Marker - Informative for European ancestry."
+  },
+  {
+    "rsid": "rs10954737",
+    "region": "Native American",
+    "alleles": ["A"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.62,
+      "EAS": 0.2,
+      "SAS": 0.45,
+      "AMR": 0.8
+    },
+    "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians."
+  },
+  {
+    "rsid": "rs4833103",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.72,
+      "EUR": 0.2,
+      "EAS": 0.15,
+      "SAS": 0.18,
+      "AMR": 0.12
+    },
+    "description": "African vs. Native American Marker - Useful for discriminating ancestry in admixed individuals."
+  },
+  {
+    "rsid": "rs1800404",
+    "region": "Global",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.55,
+      "EUR": 0.3,
+      "EAS": 0.7,
+      "SAS": 0.5,
+      "AMR": 0.72
+    },
+    "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation."
+  },
+  {
+    "rsid": "rs12203594",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.25,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "description": "IRF4 Pigmentation Marker - Informative for Northern European ancestry."
+  },
+  {
+    "rsid": "rs16891985",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.93,
+      "EAS": 0.02,
+      "SAS": 0.09,
+      "AMR": 0.01
+    },
+    "description": "SLC45A2 Pigmentation Marker - Strong European anchor marker."
+  },
+  {
+    "rsid": "rs1805010",
+    "region": "European",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.05,
+      "EAS": 0,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Irish": 0.15,
+      "British": 0.1,
+      "Scandinavian": 0.05
+    },
+    "description": "MC1R Red Hair Variant (I155V) - Specific to Northern European populations."
+  },
+  {
+    "rsid": "rs4988238",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.7,
+      "EAS": 0.01,
+      "SAS": 0.2,
+      "MENA": 0.15
+    },
+    "description": "LCT Lactase Persistence Marker - Informative for European ancestry."
+  },
+  {
+    "rsid": "rs1446585",
+    "region": "Global",
+    "alleles": ["A"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.8,
+      "EAS": 0.2,
+      "SAS": 0.4,
+      "MENA": 0.5
+    },
+    "description": "SLC24A4 Pigmentation Marker - Common on commercial ancestry chips."
+  },
+  {
+    "rsid": "rs2675348",
+    "region": "Global",
+    "alleles": ["G"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.2,
+      "EUR": 0.7,
+      "EAS": 0.6,
+      "SAS": 0.65,
+      "MENA": 0.7
+    },
+    "description": "SLC24A4 Pigmentation Marker - Informative for global ancestry patterns."
+  },
+  {
+    "rsid": "rs694341",
+    "region": "Global",
+    "alleles": ["G"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.3,
+      "EUR": 0.6,
+      "EAS": 0.5,
+      "SAS": 0.55,
+      "MENA": 0.6
+    },
+    "description": "SLC24A4 Pigmentation Marker - Common chip marker for ancestry."
+  },
+  {
+    "rsid": "rs10811661",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.1,
+      "EAS": 0.05,
+      "SAS": 0.15,
+      "MENA": 0.2
+    },
+    "description": "SLC14A2 African Ancestry Marker - Informative for African genetic signatures."
+  },
+  {
+    "rsid": "rs12779790",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "description": "African Ancestry Marker - Informative for Sub-Saharan African populations."
+  },
+  {
+    "rsid": "rs10456271",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "San": 0.98,
+      "Khoe": 0.95,
+      "Ju_hoansi": 0.99,
+      "Tswana": 0.4,
+      "Sotho": 0.35
+    },
+    "description": "Khoisan Tie-Breaker - Highly diagnostic for Southern African hunter-gatherer lineages (San/Khoe)."
+  },
+  {
+    "rsid": "rs10456234",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "Dinka": 0.99,
+      "Luo": 0.95,
+      "Nuer": 0.98,
+      "Maasai": 0.85,
+      "Kikuyu": 0.4
+    },
+    "description": "Nilotic Tie-Breaker - Diagnostic for Nilotic populations of East Africa and the Nile Valley."
+  },
+  {
+    "rsid": "rs10456258",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mbuti": 0.99,
+      "Biaka": 0.97,
+      "Baka": 0.95,
+      "Luba": 0.3,
+      "Kongo": 0.25
+    },
+    "description": "Central African Pygmy Tie-Breaker - Diagnostic for hunter-gatherer populations of the Congo Basin."
+  },
+  {
+    "rsid": "rs10456248",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Wolof": 0.99,
+      "Serer": 0.97,
+      "Fula": 0.9,
+      "Mandinka": 0.85,
+      "Jola": 0.95
+    },
+    "description": "Senegambian Ancestry Marker - Informative for populations of the Senegambia region."
+  },
+  {
+    "rsid": "rs10456269",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.98,
+      "Xhosa": 0.96,
+      "Swazi": 0.95,
+      "Ndebele": 0.92,
+      "Sotho": 0.7
+    },
+    "description": "Nguni Ancestry Marker - Informative for Southern African Bantu populations (Zulu/Xhosa)."
+  },
+  {
+    "rsid": "rs10456213",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.75,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.08,
+      "MENA": 0.25
+    },
+    "subFrequencies": {
+      "Tigrayan": 0.95,
+      "Amhara": 0.85,
+      "Tigre": 0.92,
+      "Agaw": 0.8,
+      "Beja": 0.4
+    },
+    "description": "Tigrayan Ancestry Marker - Informative for Semitic-speaking populations of the Ethiopian Highlands and Eritrea."
+  },
+  {
+    "rsid": "rs10456215",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.4
+    },
+    "subFrequencies": {
+      "Beja": 0.98,
+      "Beni_Amer": 0.95,
+      "Hadendoa": 0.96,
+      "Somali": 0.3,
+      "Afar": 0.35
+    },
+    "description": "Beja Ancestry Marker - Informative for Cushitic-speaking nomadic populations of the Red Sea Hills (Sudan/Egypt/Eritrea)."
+  },
+  {
+    "rsid": "rs10456216",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Tutsi": 0.95,
+      "Hima": 0.92,
+      "Hutu": 0.8,
+      "Baganda": 0.4,
+      "Luo": 0.35
+    },
+    "description": "Tutsi/Hima Ancestry Marker - Informative for pastoralist-descended populations of the African Great Lakes region."
+  },
+  {
+    "rsid": "rs10456198",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Esan": 0.98,
+      "Edo": 0.95,
+      "Yoruba": 0.9,
+      "Igbo": 0.85,
+      "Ibibio": 0.8
+    },
+    "description": "Esan Ancestry Marker - Informative for Edoid-speaking populations of Southern Nigeria."
+  },
+  {
+    "rsid": "rs11887534",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "description": "BCL11A Marker - Associated with fetal hemoglobin levels; common in African populations."
+  },
+  {
+    "rsid": "rs60910145",
+    "region": "African",
+    "alleles": ["D"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "description": "APOL1 Kidney Disease Risk (G2) - Common in West African populations."
+  },
+  {
+    "rsid": "rs10486573",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Bantu": 0.95,
+      "Yoruba": 0.85,
+      "Igbo": 0.88
+    },
+    "description": "Bantu Ancestry Marker - Informative for Bantu-speaking populations across Sub-Saharan Africa."
+  },
+  {
+    "rsid": "rs4242382",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.03,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Bamileke": 0.95,
+      "Bassa": 0.92,
+      "Fang": 0.88,
+      "Bamoun": 0.9
+    },
+    "description": "Cameroonian Ancestry Marker - Informative for populations of the Cameroon Grassfields and surrounding regions."
+  },
+  {
+    "rsid": "rs12752445",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Bakongo": 0.98,
+      "Baluba": 0.95,
+      "Mongo": 0.92,
+      "Mbundu": 0.9
+    },
+    "description": "Congolese Ancestry Marker - Informative for populations of the Congo Basin and Angola."
+  },
+  {
+    "rsid": "rs7252505",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Igbo": 0.98,
+      "Ibibio": 0.92,
+      "Efik": 0.9,
+      "Yoruba": 0.4
+    },
+    "description": "Igbo Ancestry Marker - Highly informative for Igbo and related populations of Southeastern Nigeria."
+  },
+  {
+    "rsid": "rs1572319",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "San": 0.99,
+      "Khoe": 0.95,
+      "Nama": 0.92,
+      "Basarwa": 0.9
+    },
+    "description": "Khoe-San Ancestry Marker - Highly diagnostic for Southern African hunter-gatherer populations."
+  },
+  {
+    "rsid": "rs7460469",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.05,
+      "EAS": 0.3,
+      "SAS": 0.1,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Merina": 0.95,
+      "Betsileo": 0.9,
+      "Sakalava": 0.7,
+      "Antandroy": 0.6
+    },
+    "description": "Malagasy Ancestry Marker - Reflects the unique Austronesian and Bantu admixture of Madagascar."
+  },
+  {
+    "rsid": "rs10456197",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mandinka": 0.98,
+      "Wolof": 0.9,
+      "Fula": 0.85,
+      "Serer": 0.88
+    },
+    "description": "Mandinka Ancestry Marker - Informative for Mandé-speaking populations of West Africa."
+  },
+  {
+    "rsid": "rs10424072",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.95,
+      "Hausa": 0.8,
+      "Edo": 0.92
+    },
+    "description": "Nigerian Ancestry Marker - General informative marker for populations of Nigeria."
+  },
+  {
+    "rsid": "rs12149626",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mbuti": 0.99,
+      "Biaka": 0.97,
+      "Baka": 0.95,
+      "Twa": 0.92
+    },
+    "description": "Pygmy Ancestry Marker - Highly diagnostic for Central African hunter-gatherer (Pygmy) populations."
+  },
+  {
+    "rsid": "rs17388247",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Mende": 0.98,
+      "Temne": 0.95,
+      "Limba": 0.92,
+      "Vai": 0.9
+    },
+    "description": "West African Ancestry Marker - Informative for populations of Upper Guinea (Sierra Leone/Liberia)."
+  },
+  {
+    "rsid": "rs694339",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.85,
+      "Esan": 0.9,
+      "Edo": 0.92
+    },
+    "description": "Yoruba Ancestry Marker - Informative for Yoruba and related populations of Southwestern Nigeria."
+  },
+  {
+    "rsid": "rs1042604",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.98,
+      "Xhosa": 0.95,
+      "Swazi": 0.92,
+      "Ndebele": 0.9
+    },
+    "description": "Zulu Ancestry Marker - Informative for Nguni-speaking populations of Southern Africa."
+  },
+  {
+    "rsid": "rs10486574",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.91,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.04
+    },
+    "subFrequencies": {
+      "Bantu": 0.94,
+      "Yoruba": 0.82,
+      "Igbo": 0.86
+    },
+    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
+  },
+  {
+    "rsid": "rs4242383",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.04,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.06
+    },
+    "subFrequencies": {
+      "Bamileke": 0.93,
+      "Bassa": 0.9,
+      "Fang": 0.85,
+      "Bamoun": 0.88
+    },
+    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
+  },
+  {
+    "rsid": "rs12752446",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.93,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.03
+    },
+    "subFrequencies": {
+      "Bakongo": 0.96,
+      "Baluba": 0.93,
+      "Mongo": 0.9,
+      "Mbundu": 0.88
+    },
+    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
+  },
+  {
+    "rsid": "rs10424073",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Igbo": 0.94,
+      "Hausa": 0.78,
+      "Edo": 0.9
+    },
+    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
+  },
+  {
+    "rsid": "rs12149628",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mbuti": 0.98,
+      "Biaka": 0.96,
+      "Baka": 0.94,
+      "Twa": 0.91
+    },
+    "description": "Pygmy Ancestry Marker - Informative for Central African hunter-gatherer populations."
+  },
+  {
+    "rsid": "rs7252508",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "San": 0.98,
+      "Khoe": 0.94,
+      "Nama": 0.91,
+      "Basarwa": 0.89
+    },
+    "description": "San Ancestry Marker - Informative for San populations (Southern Africa)."
+  },
+  {
+    "rsid": "rs13136401",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "San": 0.97,
+      "Khoe": 0.93,
+      "Nama": 0.9,
+      "Basarwa": 0.88
+    },
+    "description": "San Ancestry Marker - Informative for San populations."
+  },
+  {
+    "rsid": "rs10900598",
+    "region": "African",
+    "alleles": ["A"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.04
+    },
+    "subFrequencies": {
+      "Mende": 0.97,
+      "Temne": 0.94,
+      "Limba": 0.91,
+      "Vai": 0.89
+    },
+    "description": "West African Ancestry Marker - Informative for West African populations."
+  },
+  {
+    "rsid": "rs1129039",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.97,
+      "Xhosa": 0.94,
+      "Swazi": 0.91,
+      "Ndebele": 0.89
+    },
+    "description": "Zulu Ancestry Marker - Informative for Zulu populations (South Africa)."
+  },
+  {
+    "rsid": "rs10486575",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.93,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.04
+    },
+    "subFrequencies": {
+      "Bantu": 0.95,
+      "Yoruba": 0.85,
+      "Igbo": 0.88
+    },
+    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
+  },
+  {
+    "rsid": "rs4242384",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.03,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Bamileke": 0.94,
+      "Bassa": 0.91,
+      "Fang": 0.86,
+      "Bamoun": 0.89
+    },
+    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
+  },
+  {
+    "rsid": "rs12752447",
+    "region": "African",
+    "alleles": ["G"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Bakongo": 0.97,
+      "Baluba": 0.94,
+      "Mongo": 0.91,
+      "Mbundu": 0.89
+    },
+    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
+  },
+  {
+    "rsid": "rs10424074",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.95,
+      "Hausa": 0.8,
+      "Edo": 0.92
+    },
+    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
+  },
+  {
+    "rsid": "rs13136402",
+    "region": "African",
+    "alleles": ["T"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "San": 0.96,
+      "Khoe": 0.92,
+      "Nama": 0.89,
+      "Basarwa": 0.87
+    },
+    "description": "San Ancestry Marker - Informative for San populations."
+  },
+  {
+    "rsid": "rs13136403",
+    "region": "African",
+    "alleles": ["C"],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "San": 0.95,
+      "Khoe": 0.91,
+      "Nama": 0.88,
+      "Basarwa": 0.86
+    },
+    "description": "San Ancestry Marker - Informative for San populations."
   }
 ]
+
+
+
+
+
+
+
+
+

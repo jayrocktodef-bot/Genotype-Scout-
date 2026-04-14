@@ -1753,6 +1753,59 @@ export const SNP_DB: SNP[] = [
   // Dutch (Western European)
   { markerId: "rs9000368_Dutch", rsid: "rs9000368", gene: "Unknown", trait: "Dutch Ancestry Marker", continent: "European", subpop: "Dutch", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dutch populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.94,"SAS":0.01,"MENA":0.01} },
   { markerId: "rs9000369_Dutch", rsid: "rs9000369", gene: "Unknown", trait: "Dutch Ancestry Marker", continent: "European", subpop: "Dutch", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dutch populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.92,"SAS":0.01,"MENA":0.01} },
+
+  // --- EXCLUSIVE EUROPEAN TRAITS & AIMS ---
+
+  // Lactase Persistence (rs4988235) - MCM6 gene
+  { markerId: "rs4988235_Lactase", rsid: "rs4988235", gene: "MCM6", trait: "Lactase Persistence", continent: "European", subpop: "Northern European", alleles: ["T"], significance: "High", category: "Nutrition", description: "The 'T' allele is strongly associated with the ability to digest milk into adulthood, a trait highly prevalent in Northern European populations.", frequencies: {"AFR":0.05,"AMR":0.1,"EAS":0.01,"EUR":0.8,"SAS":0.2,"MENA":0.15} },
+
+  // Blue Eyes (rs12913832) - HERC2 gene
+  { markerId: "rs12913832_BlueEyes", rsid: "rs12913832", gene: "HERC2", trait: "Blue Eye Color", continent: "European", subpop: "European", alleles: ["G"], significance: "High", category: "Ancestry", description: "The 'G' allele is the primary genetic determinant for blue eye color in European populations.", frequencies: {"AFR":0.01,"AMR":0.05,"EAS":0.01,"EUR":0.75,"SAS":0.05,"MENA":0.1} },
+
+  // Red Hair (rs1805007) - MC1R gene
+  { markerId: "rs1805007_RedHair", rsid: "rs1805007", gene: "MC1R", trait: "Red Hair", continent: "European", subpop: "Western European", alleles: ["T"], significance: "High", category: "Ancestry", description: "One of the primary variants in the MC1R gene responsible for red hair, most common in populations of Celtic and Northern European descent.", frequencies: {"AFR":0,"AMR":0.01,"EAS":0,"EUR":0.15,"SAS":0,"MENA":0.01} },
+
+  // Skin Pigmentation (rs1426654) - SLC24A5 gene
+  { markerId: "rs1426654_LightSkin", rsid: "rs1426654", gene: "SLC24A5", trait: "Light Skin Pigmentation", continent: "European", subpop: "European", alleles: ["A"], significance: "High", category: "Ancestry", description: "The 'A' allele is nearly fixed in European populations and is one of the strongest markers for light skin pigmentation.", frequencies: {"AFR":0.01,"AMR":0.1,"EAS":0.01,"EUR":0.99,"SAS":0.5,"MENA":0.9} },
+
+  // Hemochromatosis (rs1800562) - HFE gene
+  { markerId: "rs1800562_Hemochromatosis", rsid: "rs1800562", gene: "HFE", trait: "Hereditary Hemochromatosis Risk", continent: "European", subpop: "Northern European", alleles: ["A"], significance: "High", category: "Health", description: "Known as the 'Celtic Curse', the C282Y mutation is common in Northern Europe and increases the risk of iron overload.", frequencies: {"AFR":0,"AMR":0.01,"EAS":0,"EUR":0.12,"SAS":0,"MENA":0.01} },
+
+  // Celiac Disease Risk (rs2395129) - HLA-DQA1
+  { markerId: "rs2395129_Celiac", rsid: "rs2395129", gene: "HLA-DQA1", trait: "Celiac Disease Risk", continent: "European", subpop: "European", alleles: ["T"], significance: "Medium", category: "Health", description: "Associated with an increased risk of Celiac disease, with higher prevalence in European populations.", frequencies: {"AFR":0.05,"AMR":0.1,"EAS":0.01,"EUR":0.3,"SAS":0.1,"MENA":0.2} },
+
+  // Basque AIM (rs12124819)
+  { markerId: "rs12124819_Basque", rsid: "rs12124819", gene: "Unknown", trait: "Basque Ancestry Marker", continent: "European", subpop: "Basque", alleles: ["G"], significance: "High", category: "Ancestry", description: "A highly informative marker for Basque ancestry, reflecting the unique genetic isolate of the Basque people.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0,"EUR":0.4,"SAS":0,"MENA":0.05} },
+
+  // Sardinian AIM (rs174537)
+  { markerId: "rs174537_Sardinian", rsid: "rs174537", gene: "FADS1", trait: "Sardinian Ancestry Marker", continent: "European", subpop: "Sardinian", alleles: ["G"], significance: "High", category: "Ancestry", description: "Reflects the distinct genetic signature of Sardinian populations, often showing higher frequency of specific ancestral variants.", frequencies: {"AFR":0.02,"AMR":0.01,"EAS":0.01,"EUR":0.55,"SAS":0.01,"MENA":0.1} },
+
+  // Ashkenazi Jewish AIM (rs1126809) - TYR gene
+  { markerId: "rs1126809_Ashkenazi", rsid: "rs1126809", gene: "TYR", trait: "Ashkenazi Jewish Ancestry Marker", continent: "European", subpop: "Ashkenazi", alleles: ["A"], significance: "High", category: "Ancestry", description: "An informative marker for Ashkenazi Jewish ancestry, reflecting the historical bottleneck and endogamy of the population.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.35,"SAS":0.01,"MENA":0.15} },
+
+  // Finnish AIM (rs1229984) - ADH1B gene
+  { markerId: "rs1229984_Finnish", rsid: "rs1229984", gene: "ADH1B", trait: "Finnish Ancestry Marker", continent: "European", subpop: "Finnish", alleles: ["T"], significance: "High", category: "Ancestry", description: "A marker that helps distinguish Finnish ancestry from other Northern European populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.05,"EUR":0.2,"SAS":0.01,"MENA":0.01} },
+
+  // SLC45A2 (rs16891982) - Light Skin / European Ancestry
+  { markerId: "rs16891982_SLC45A2", rsid: "rs16891982", gene: "SLC45A2", trait: "European Skin Pigmentation", continent: "European", subpop: "European", alleles: ["G"], significance: "High", category: "Ancestry", description: "The 'G' allele is a major determinant of light skin in Europeans and is virtually absent in non-European populations.", frequencies: {"AFR":0,"AMR":0.01,"EAS":0,"EUR":0.98,"SAS":0.05,"MENA":0.15} },
+
+  // IRF4 (rs12203592) - Freckles / Light Skin / Blue Eyes
+  { markerId: "rs12203592_IRF4", rsid: "rs12203592", gene: "IRF4", trait: "Freckles and Light Skin", continent: "European", subpop: "Northern European", alleles: ["T"], significance: "High", category: "Ancestry", description: "Associated with freckling, light skin, and blue eyes, particularly in populations of Northern European descent.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.25,"SAS":0.01,"MENA":0.05} },
+
+  // KITLG (rs12821256) - Blond Hair
+  { markerId: "rs12821256_KITLG", rsid: "rs12821256", gene: "KITLG", trait: "Blond Hair", continent: "European", subpop: "Northern European", alleles: ["C"], significance: "High", category: "Ancestry", description: "A major genetic variant associated with blond hair in Europeans.", frequencies: {"AFR":0,"AMR":0.01,"EAS":0,"EUR":0.2,"SAS":0,"MENA":0.01} },
+
+  // TYR (rs1393350) - Skin/Eye Color
+  { markerId: "rs1393350_TYR", rsid: "rs1393350", gene: "TYR", trait: "European Pigmentation", continent: "European", subpop: "European", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Associated with lighter skin and eye color in European populations.", frequencies: {"AFR":0.01,"AMR":0.05,"EAS":0.01,"EUR":0.45,"SAS":0.1,"MENA":0.25} },
+
+  // Northwestern European AIM (rs1042602)
+  { markerId: "rs1042602_NW_Euro", rsid: "rs1042602", gene: "TYR", trait: "Northwestern European Marker", continent: "European", subpop: "Western European", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "An informative marker for Northwestern European ancestry.", frequencies: {"AFR":0.01,"AMR":0.05,"EAS":0.01,"EUR":0.6,"SAS":0.1,"MENA":0.2} },
+
+  // Central European AIM (rs1126809) - Already added as Ashkenazi, but can be used for Central Euro too
+  
+  // Irish/Scottish AIM (rs1805007) - Already added as Red Hair
+  
+  // French/German AIM (rs12913832) - Already added as Blue Eyes
 ];
 
 SNP_DB.forEach(snp => {
@@ -1838,15 +1891,17 @@ export function parseRawDNA(text: string) {
     const trimmedLine = line.trim();
     if (!trimmedLine || trimmedLine.startsWith("#")) continue;
     
-    snpCount++;
     // Split by tabs, commas, or multiple spaces, removing quotes for CSV
-    const parts = trimmedLine.replace(/"/g, "").split(/[\t, ]+/);
+    const parts = trimmedLine.replace(/"/g, "").split(/[\t,]+/);
     
     // Basic validation: markerId must be at index 0
     if (parts.length < 4 || !parts[0]) continue;
     const markerId = parts[0].trim().toLowerCase();
-    // Allow rsid or other marker names
-    if (!markerId) continue; 
+    
+    // Skip header lines
+    if (markerId === "rsid" || markerId === "snp" || markerId === "marker" || markerId === "rs_id") continue;
+    
+    snpCount++;
     
     let chrom = parts[1].trim().toUpperCase();
     if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
@@ -1888,7 +1943,7 @@ export function parseRawDNA(text: string) {
       }
       
       // Extract mtDNA mutations
-      if (chrom === "MT" || chrom === "M" || chrom === "26") {
+      if (chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25") {
         const allele = genotype[0];
         if (allele !== "-") {
           mtMap[posStr] = allele;
@@ -2200,10 +2255,31 @@ function runAncestryInference(
 
   const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
   const DOUBLE_WEIGHT_MARKERS = new Set([
-    "rs10456247", "rs10456249", "rs10456252", "rs10456256", "rs10456243", "rs10456244", "rs10456245",
-    "rs10456257", "rs10456259", "rs10456260", "rs10456261", "rs10456262", "rs10456263", "rs10456265",
-    "rs10456266", "rs10456267", "rs10456268", "rs3827760", "rs2285644", "rs2814778", "rs334",
-    "rs1426654", "rs16891982", "rs1042602", "rs1800407", "rs12913832"
+    "rs10456243", "rs10456244", "rs10456245",
+    "rs10456257", "rs10456259", "rs10456260", "rs10456261", "rs10456262", "rs10456263",
+    "rs10456267", "rs10456268", "rs2285644", "rs334",
+    "rs1426654", "rs16891982", "rs1042602", "rs1800407",
+    "rs12124819", "rs174537", "rs1126809", "rs1229984",
+    "rs1805007", "rs12821256", "rs1800562", "rs2395129",
+    "rs1129038", "rs12896399", "rs1805008", "rs1805009", "rs11547464",
+    "rs4833103", "rs1800404", "rs12203594", "rs16891985", "rs1805010", "rs4988238",
+    "rs10811661", "rs12779790",
+    "rs11887534", "rs60910145", "rs10486573", "rs4242382", "rs12752445",
+    "rs7460469", "rs10424072", "rs17388247", "rs694339", "rs1042604",
+    "rs10486574", "rs10486575", "rs4242383", "rs4242384", "rs12752446", "rs12752447",
+    "rs10424073", "rs10424074", "rs13136401", "rs13136402", "rs13136403",
+    "rs10900598", "rs1129039"
+  ]);
+
+  const QUADRUPLE_WEIGHT_MARKERS = new Set([
+    "rs2814778", "rs3827760", "rs4988235", "rs12913832", "rs10456265", "rs10456266",
+    "rs10456247", "rs10456249", "rs10456252", "rs10456256",
+    "rs10456213", "rs10456215", "rs10456216", "rs10456198",
+    "rs12203592", "rs1393350", "rs11614913", "rs121913059",
+    "rs1229984", "rs671", "rs17822931", "rs10954737",
+    "rs10456271", "rs10456234", "rs10456258", "rs10456248", "rs10456269",
+    "rs7252505", "rs1572319", "rs10456197", "rs12149626",
+    "rs12149628", "rs7252508"
   ]);
 
   if (allMarkers.length === 0) {
@@ -2296,8 +2372,9 @@ function runAncestryInference(
       windowFrequencies.push(markerFreqs);
 
       const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+      const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
       const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
-      let weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
+      let weightMultiplier = isTieBreaker ? 4.0 : (isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0));
       
       const oceFreq = aim?.frequencies?.OCE || marker.frequencies?.OCE || 0;
       const easFreq = aim?.frequencies?.EAS || marker.frequencies?.EAS || 0;
@@ -2381,7 +2458,8 @@ function runAncestryInference(
           const f = Math.max(0.001, Math.min(0.999, freq));
           const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
           const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-          const weightMultiplier = isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0);
+          const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
+          const weightMultiplier = isTieBreaker ? 4.0 : (isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0));
           
           let effectiveSignificance = marker.significance;
           if (isNamedPop) effectiveSignificance = 'High';
