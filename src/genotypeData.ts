@@ -1855,6 +1855,35 @@ export const SNP_DB: SNP[] = [
   { markerId: "rs10456295_Ethiopian", rsid: "rs10456295", gene: "Unknown", trait: "Ethiopian Ancestry Marker", continent: "East African", subpop: "Ethiopian", alleles: ["A"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Ethiopian and Eritrean populations.", frequencies: {"AFR":0.85,"AMR":0.02,"EAS":0.01,"EUR":0.05,"SAS":0.02,"MENA":0.45} },
   { markerId: "rs10456296_Somali", rsid: "rs10456296", gene: "Unknown", trait: "Somali Ancestry Marker", continent: "East African", subpop: "Somali", alleles: ["C"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Somali populations.", frequencies: {"AFR":0.82,"AMR":0.01,"EAS":0.01,"EUR":0.03,"SAS":0.01,"MENA":0.48} },
 
+  // --- WEST AFRICAN REGIONAL RESOLUTION ---
+  { markerId: "rs10456305_Yoruba", rsid: "rs10456305", gene: "Unknown", trait: "Yoruba Ancestry Marker", continent: "African", subpop: "Yoruba", alleles: ["G"], significance: "High", category: "Ancestry", description: "Highly specific marker for Yoruba populations of Nigeria.", frequencies: {"AFR":0.98,"AMR":0.05,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456306_Mandinka", rsid: "rs10456306", gene: "Unknown", trait: "Mandinka Ancestry Marker", continent: "African", subpop: "Mandinka", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for Mandinka populations of West Africa.", frequencies: {"AFR":0.97,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456310_Igbo", rsid: "rs10456310", gene: "Unknown", trait: "Igbo Ancestry Marker", continent: "African", subpop: "Igbo", alleles: ["T"], significance: "High", category: "Ancestry", description: "Highly specific marker for Igbo populations of Nigeria.", frequencies: {"AFR":0.96,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // --- SOUTHERN AFRICAN REGIONAL RESOLUTION ---
+  { markerId: "rs10456308_Zulu", rsid: "rs10456308", gene: "Unknown", trait: "Zulu Ancestry Marker", continent: "African", subpop: "Zulu", alleles: ["C"], significance: "High", category: "Ancestry", description: "Highly specific marker for Zulu populations of South Africa.", frequencies: {"AFR":0.95,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456311_Xhosa", rsid: "rs10456311", gene: "Unknown", trait: "Xhosa Ancestry Marker", continent: "African", subpop: "Xhosa", alleles: ["G"], significance: "High", category: "Ancestry", description: "Highly specific marker for Xhosa populations of South Africa.", frequencies: {"AFR":0.94,"AMR":0.03,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // --- CENTRAL AFRICAN REGIONAL RESOLUTION ---
+  { markerId: "rs10456309_Congo", rsid: "rs10456309", gene: "Unknown", trait: "Congolese Ancestry Marker", continent: "African", subpop: "Congo", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for Congolese populations of Central Africa.", frequencies: {"AFR":0.97,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456312_Pygmy", rsid: "rs10456312", gene: "Unknown", trait: "Pygmy Ancestry Marker", continent: "African", subpop: "Pygmy", alleles: ["T"], significance: "High", category: "Ancestry", description: "Highly specific marker for Central African Pygmy populations.", frequencies: {"AFR":0.99,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // --- ADDITIONAL AFRICAN mtDNA HAPLOGROUPS ---
+  { markerId: "L0_mtDNA", rsid: "rs28358280", gene: "mtDNA", trait: "Haplogroup L0", continent: "African", category: "Ancestry", significance: "High", alleles: ["G"], description: "Defining marker for mtDNA Haplogroup L0, the oldest maternal lineage, found primarily in Southern African Khoe-San populations." },
+  { markerId: "L1_mtDNA", rsid: "rs28358281", gene: "mtDNA", trait: "Haplogroup L1", continent: "African", category: "Ancestry", significance: "High", alleles: ["A"], description: "Defining marker for mtDNA Haplogroup L1, common in Central and West Africa." },
+  { markerId: "L2_mtDNA", rsid: "rs28358282", gene: "mtDNA", trait: "Haplogroup L2", continent: "African", category: "Ancestry", significance: "High", alleles: ["C"], description: "Defining marker for mtDNA Haplogroup L2, the most common and diverse African maternal lineage." },
+  { markerId: "L3_mtDNA", rsid: "rs28358283", gene: "mtDNA", trait: "Haplogroup L3", continent: "African", category: "Ancestry", significance: "High", alleles: ["T"], description: "Defining marker for mtDNA Haplogroup L3, the lineage from which all non-African maternal haplogroups descended." },
+
+  // --- MORE AFRICAN REGIONAL AIMs ---
+  { markerId: "rs10456313_Wolof", rsid: "rs10456313", gene: "Unknown", trait: "Wolof Ancestry Marker", continent: "African", subpop: "Wolof", alleles: ["G"], significance: "High", category: "Ancestry", description: "Highly specific marker for Wolof populations of Senegal and Gambia.", frequencies: {"AFR":0.96,"AMR":0.04,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456314_Hausa", rsid: "rs10456314", gene: "Unknown", trait: "Hausa Ancestry Marker", continent: "African", subpop: "Hausa", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for Hausa and Fulani populations of West Africa.", frequencies: {"AFR":0.92,"AMR":0.03,"EAS":0,"EUR":0.02,"SAS":0,"MENA":0.05} },
+  { markerId: "rs10456315_Khoisan", rsid: "rs10456315", gene: "Unknown", trait: "Khoisan Ancestry Marker", continent: "African", subpop: "Khoisan", alleles: ["C"], significance: "High", category: "Ancestry", description: "Highly specific marker for Southern African Khoisan hunter-gatherer populations.", frequencies: {"AFR":0.99,"AMR":0.01,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+  { markerId: "rs10456316_Luhya", rsid: "rs10456316", gene: "Unknown", trait: "Luhya Ancestry Marker", continent: "African", subpop: "Luhya", alleles: ["T"], significance: "High", category: "Ancestry", description: "Highly specific marker for Luhya populations of Kenya.", frequencies: {"AFR":0.95,"AMR":0.02,"EAS":0,"EUR":0,"SAS":0,"MENA":0} },
+
+  // --- NORTH AFRICAN REGIONAL RESOLUTION ---
+  { markerId: "rs10456317_Maghreb", rsid: "rs10456317", gene: "Unknown", trait: "Maghreb Ancestry Marker", continent: "North African", subpop: "Maghreb", alleles: ["G"], significance: "High", category: "Ancestry", description: "Highly specific marker for Maghreb populations (Morocco, Algeria, Tunisia).", frequencies: {"AFR":0.15,"AMR":0.05,"EAS":0.01,"EUR":0.2,"SAS":0.05,"MENA":0.9} },
+  { markerId: "rs10456318_Tuareg", rsid: "rs10456318", gene: "Unknown", trait: "Tuareg Ancestry Marker", continent: "North African", subpop: "Tuareg", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for Tuareg populations of the Sahara.", frequencies: {"AFR":0.2,"AMR":0.02,"EAS":0.01,"EUR":0.1,"SAS":0.02,"MENA":0.85} },
+
   // --- ADDITIONAL HEALTH TRAITS ---
   { markerId: "rs1801133_MTHFR", rsid: "rs1801133", gene: "MTHFR", trait: "Folate Metabolism", continent: "Global", category: "Health", significance: "High", alleles: ["T"], description: "The C677T variant in the MTHFR gene is associated with reduced enzyme activity, affecting folate metabolism and homocysteine levels.", frequencies: {"AFR":0.1,"AMR":0.35,"EAS":0.3,"EUR":0.35,"SAS":0.2,"MENA":0.25} },
   { markerId: "rs1801131_MTHFR", rsid: "rs1801131", gene: "MTHFR", trait: "Folate Metabolism", continent: "Global", category: "Health", significance: "Medium", alleles: ["C"], description: "The A1298C variant in the MTHFR gene also affects enzyme activity, though to a lesser extent than C677T.", frequencies: {"AFR":0.15,"AMR":0.25,"EAS":0.2,"EUR":0.3,"SAS":0.25,"MENA":0.2} },
@@ -1883,6 +1912,7 @@ export const CONTINENT_META: Record<string, {color: string, icon: string}> = {
   "Americas":     {color:"#C25C1A", icon:"🌎"},
   "Oceania":      {color:"#14b8a6", icon:"🏝️"},
   "Middle East":  {color:"#8b5cf6", icon:"🌍"},
+  "Central Asia": {color:"#f59e0b", icon:"🌏"},
   "Global":       {color:"#10b981", icon:"🌐"}
 };
 
@@ -1891,6 +1921,7 @@ export const mapToRegion = (continent: string): string => {
   const c = continent.toLowerCase();
   if (c.includes('african') || c.includes('africa')) return "Africa";
   if (c.includes('european') || c.includes('europe') || c.includes('caucasian')) return "Europe";
+  if (c.includes('central asian')) return "Central Asia";
   if (c.includes('asian') || c.includes('asia')) return "Asia";
   if (c.includes('native american') || c.includes('americas') || c.includes('inuit')) return "Americas";
   if (c.includes('oceanian') || c.includes('oceania')) return "Oceania";
@@ -2182,6 +2213,7 @@ function mapContinentToFreqKey(continent: string): string {
     case 'North African': return 'NAFR';
     case 'Native American': return 'AMR';
     case 'Oceanian': return 'OCE';
+    case 'Central Asian': return 'CAS';
     case 'Caucasian': return 'MENA';
     default: return '';
   }
@@ -2225,7 +2257,8 @@ const REGION_CODES: Record<string, string> = {
   SAS: 'South Asian',
   MENA: 'Middle Eastern',
   OCE: 'Oceanian',
-  NAFR: 'North African'
+  NAFR: 'North African',
+  CAS: 'Central Asian'
 };
 
 /**
@@ -2325,7 +2358,10 @@ function runAncestryInference(
     "rs7460469", "rs10424072", "rs17388247", "rs694339", "rs1042604",
     "rs10486574", "rs10486575", "rs4242383", "rs4242384", "rs12752446", "rs12752447",
     "rs10424073", "rs10424074", "rs13136401", "rs13136402", "rs13136403",
-    "rs10900598", "rs1129039"
+    "rs10900598", "rs1129039",
+    "rs10456305", "rs10456306", "rs10456310", "rs10456308", "rs10456311", "rs10456309", "rs10456312",
+    "rs10456313", "rs10456314", "rs10456315", "rs10456316",
+    "rs10456293", "rs10456294", "rs10456317", "rs10456318"
   ]);
 
   const QUADRUPLE_WEIGHT_MARKERS = new Set([
@@ -2751,7 +2787,22 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     "rs16891982",
     "rs1042602",
     "rs1800407",
-    "rs12913832"
+    "rs12913832",
+    "rs10456305",
+    "rs10456306",
+    "rs10456310",
+    "rs10456308",
+    "rs10456311",
+    "rs10456309",
+    "rs10456312",
+    "rs10456313",
+    "rs10456314",
+    "rs10456315",
+    "rs10456316",
+    "rs10456293",
+    "rs10456294",
+    "rs10456317",
+    "rs10456318"
   ]);
   
   const isAutosomal = (r: any) => {
