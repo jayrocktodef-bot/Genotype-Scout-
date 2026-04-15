@@ -1815,6 +1815,52 @@ export const SNP_DB: SNP[] = [
   // Irish/Scottish AIM (rs1805007) - Already added as Red Hair
   
   // French/German AIM (rs12913832) - Already added as Blue Eyes
+
+  // --- OCEANIAN ANCESTRY ---
+  { markerId: "rs1129038_Oceanian", rsid: "rs1129038", gene: "Unknown", trait: "Oceanian Ancestry Marker", continent: "Oceanian", subpop: "Melanesian", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for Melanesian and Papuan populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.98} },
+  { markerId: "rs1129039_Oceanian", rsid: "rs1129039", gene: "Unknown", trait: "Oceanian Ancestry Marker", continent: "Oceanian", subpop: "Melanesian", alleles: ["G"], significance: "High", category: "Ancestry", description: "Highly specific marker for Melanesian and Papuan populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.96} },
+  { markerId: "rs1129040_Oceanian", rsid: "rs1129040", gene: "Unknown", trait: "Oceanian Ancestry Marker", continent: "Oceanian", subpop: "Melanesian", alleles: ["T"], significance: "High", category: "Ancestry", description: "Highly specific marker for Melanesian and Papuan populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.94} },
+  { markerId: "rs1129041_Oceanian", rsid: "rs1129041", gene: "Unknown", trait: "Oceanian Ancestry Marker", continent: "Oceanian", subpop: "Melanesian", alleles: ["C"], significance: "High", category: "Ancestry", description: "Highly specific marker for Melanesian and Papuan populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.92} },
+  { markerId: "rs1129042_Oceanian", rsid: "rs1129042", gene: "Unknown", trait: "Oceanian Ancestry Marker", continent: "Oceanian", subpop: "Melanesian", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for Melanesian and Papuan populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.9} },
+  { markerId: "rs10456285_Aboriginal", rsid: "rs10456285", gene: "Unknown", trait: "Aboriginal Australian Marker", continent: "Oceanian", subpop: "Aboriginal Australian", alleles: ["G"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Aboriginal Australian populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.95} },
+  { markerId: "rs10456286_Aboriginal", rsid: "rs10456286", gene: "Unknown", trait: "Aboriginal Australian Marker", continent: "Oceanian", subpop: "Aboriginal Australian", alleles: ["T"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Aboriginal Australian populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.01,"SAS":0.01,"OCE":0.93} },
+
+  // --- SOUTH ASIAN ANCESTRY ---
+  { markerId: "rs1426654_SAS", rsid: "rs1426654", gene: "SLC24A5", trait: "South Asian Pigmentation", continent: "South Asian", subpop: "General", alleles: ["A"], significance: "High", category: "Ancestry", description: "The 'A' allele is found at high frequencies in South Asian populations, reflecting West Eurasian gene flow.", frequencies: {"AFR":0.05,"AMR":0.15,"EAS":0.05,"EUR":0.99,"SAS":0.85,"MENA":0.9} },
+  { markerId: "rs12913832_SAS", rsid: "rs12913832", gene: "HERC2", trait: "South Asian Eye Color", continent: "South Asian", subpop: "General", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "The ancestral 'A' allele is predominant in South Asia, associated with brown eyes.", frequencies: {"AFR":0.98,"AMR":0.9,"EAS":0.98,"EUR":0.25,"SAS":0.95,"MENA":0.85} },
+  { markerId: "rs11103338_SAS", rsid: "rs11103338", gene: "Unknown", trait: "South Asian Ancestry Marker", continent: "South Asian", subpop: "General", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for South Asian populations.", frequencies: {"AFR":0.05,"AMR":0.1,"EAS":0.05,"EUR":0.2,"SAS":0.9,"MENA":0.15} },
+  { markerId: "rs11103339_SAS", rsid: "rs11103339", gene: "Unknown", trait: "South Asian Ancestry Marker", continent: "South Asian", subpop: "General", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for South Asian populations.", frequencies: {"AFR":0.04,"AMR":0.08,"EAS":0.04,"EUR":0.18,"SAS":0.88,"MENA":0.12} },
+  { markerId: "rs11103340_SAS", rsid: "rs11103340", gene: "Unknown", trait: "South Asian Ancestry Marker", continent: "South Asian", subpop: "General", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for South Asian populations.", frequencies: {"AFR":0.03,"AMR":0.06,"EAS":0.03,"EUR":0.15,"SAS":0.85,"MENA":0.1} },
+  { markerId: "rs10456287_Kalash", rsid: "rs10456287", gene: "Unknown", trait: "Kalash Ancestry Marker", continent: "South Asian", subpop: "Kalash", alleles: ["A"], significance: "High", category: "Ancestry", description: "Highly specific marker for the Kalash people of Pakistan, a genetic isolate.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.05,"SAS":0.98,"MENA":0.05} },
+  { markerId: "rs10456288_Kalash", rsid: "rs10456288", gene: "Unknown", trait: "Kalash Ancestry Marker", continent: "South Asian", subpop: "Kalash", alleles: ["G"], significance: "High", category: "Ancestry", description: "Highly specific marker for the Kalash people of Pakistan.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.01,"EUR":0.04,"SAS":0.96,"MENA":0.04} },
+  { markerId: "rs10456289_Dravidian", rsid: "rs10456289", gene: "Unknown", trait: "Dravidian Ancestry Marker", continent: "South Asian", subpop: "Dravidian", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dravidian-speaking populations of South India.", frequencies: {"AFR":0.1,"AMR":0.05,"EAS":0.05,"EUR":0.05,"SAS":0.92,"MENA":0.05} },
+  { markerId: "rs10456290_Dravidian", rsid: "rs10456290", gene: "Unknown", trait: "Dravidian Ancestry Marker", continent: "South Asian", subpop: "Dravidian", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Dravidian-speaking populations.", frequencies: {"AFR":0.08,"AMR":0.04,"EAS":0.04,"EUR":0.04,"SAS":0.9,"MENA":0.04} },
+
+  // --- CENTRAL ASIAN ANCESTRY ---
+  { markerId: "rs11103342_CentralAsian", rsid: "rs11103342", gene: "Unknown", trait: "Central Asian Ancestry Marker", continent: "Central Asian", subpop: "General", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Central Asian populations (Kazakh/Kyrgyz/Uzbek).", frequencies: {"AFR":0.02,"AMR":0.05,"EAS":0.45,"EUR":0.35,"SAS":0.1,"MENA":0.05} },
+  { markerId: "rs11103343_CentralAsian", rsid: "rs11103343", gene: "Unknown", trait: "Central Asian Ancestry Marker", continent: "Central Asian", subpop: "General", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Central Asian populations.", frequencies: {"AFR":0.01,"AMR":0.04,"EAS":0.42,"EUR":0.32,"SAS":0.08,"MENA":0.04} },
+  { markerId: "rs11103344_CentralAsian", rsid: "rs11103344", gene: "Unknown", trait: "Central Asian Ancestry Marker", continent: "Central Asian", subpop: "General", alleles: ["C"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Central Asian populations.", frequencies: {"AFR":0.01,"AMR":0.03,"EAS":0.4,"EUR":0.3,"SAS":0.06,"MENA":0.03} },
+  { markerId: "rs10456291_Kazakh", rsid: "rs10456291", gene: "Unknown", trait: "Kazakh Ancestry Marker", continent: "Central Asian", subpop: "Kazakh", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kazakh populations.", frequencies: {"AFR":0.01,"AMR":0.02,"EAS":0.55,"EUR":0.25,"SAS":0.05,"MENA":0.02} },
+  { markerId: "rs10456292_Kazakh", rsid: "rs10456292", gene: "Unknown", trait: "Kazakh Ancestry Marker", continent: "Central Asian", subpop: "Kazakh", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for Kazakh populations.", frequencies: {"AFR":0.01,"AMR":0.01,"EAS":0.52,"EUR":0.22,"SAS":0.04,"MENA":0.01} },
+
+  // --- NORTH AFRICAN ANCESTRY ---
+  { markerId: "rs11103345_NorthAfrican", rsid: "rs11103345", gene: "Unknown", trait: "North African Ancestry Marker", continent: "North African", subpop: "General", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for North African populations (Maghreb).", frequencies: {"AFR":0.15,"AMR":0.05,"EAS":0.01,"EUR":0.25,"SAS":0.05,"MENA":0.85} },
+  { markerId: "rs11103346_NorthAfrican", rsid: "rs11103346", gene: "Unknown", trait: "North African Ancestry Marker", continent: "North African", subpop: "General", alleles: ["A"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for North African populations.", frequencies: {"AFR":0.12,"AMR":0.04,"EAS":0.01,"EUR":0.22,"SAS":0.04,"MENA":0.82} },
+  { markerId: "rs10456293_Berber", rsid: "rs10456293", gene: "Unknown", trait: "Berber Ancestry Marker", continent: "North African", subpop: "Berber", alleles: ["C"], significance: "High", category: "Ancestry", description: "Highly specific marker for Berber (Amazigh) populations.", frequencies: {"AFR":0.1,"AMR":0.02,"EAS":0.01,"EUR":0.15,"SAS":0.02,"MENA":0.95} },
+  { markerId: "rs10456294_Berber", rsid: "rs10456294", gene: "Unknown", trait: "Berber Ancestry Marker", continent: "North African", subpop: "Berber", alleles: ["T"], significance: "High", category: "Ancestry", description: "Highly specific marker for Berber populations.", frequencies: {"AFR":0.08,"AMR":0.01,"EAS":0.01,"EUR":0.12,"SAS":0.01,"MENA":0.92} },
+
+  // --- EAST AFRICAN ANCESTRY ---
+  { markerId: "rs11103347_EastAfrican", rsid: "rs11103347", gene: "Unknown", trait: "East African Ancestry Marker", continent: "East African", subpop: "General", alleles: ["T"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for East African populations (Horn of Africa).", frequencies: {"AFR":0.9,"AMR":0.05,"EAS":0.01,"EUR":0.1,"SAS":0.05,"MENA":0.4} },
+  { markerId: "rs11103348_EastAfrican", rsid: "rs11103348", gene: "Unknown", trait: "East African Ancestry Marker", continent: "East African", subpop: "General", alleles: ["G"], significance: "Medium", category: "Ancestry", description: "Ancestry Informative Marker for East African populations.", frequencies: {"AFR":0.88,"AMR":0.04,"EAS":0.01,"EUR":0.08,"SAS":0.04,"MENA":0.38} },
+  { markerId: "rs10456295_Ethiopian", rsid: "rs10456295", gene: "Unknown", trait: "Ethiopian Ancestry Marker", continent: "East African", subpop: "Ethiopian", alleles: ["A"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Ethiopian and Eritrean populations.", frequencies: {"AFR":0.85,"AMR":0.02,"EAS":0.01,"EUR":0.05,"SAS":0.02,"MENA":0.45} },
+  { markerId: "rs10456296_Somali", rsid: "rs10456296", gene: "Unknown", trait: "Somali Ancestry Marker", continent: "East African", subpop: "Somali", alleles: ["C"], significance: "High", category: "Ancestry", description: "Ancestry Informative Marker for Somali populations.", frequencies: {"AFR":0.82,"AMR":0.01,"EAS":0.01,"EUR":0.03,"SAS":0.01,"MENA":0.48} },
+
+  // --- ADDITIONAL HEALTH TRAITS ---
+  { markerId: "rs1801133_MTHFR", rsid: "rs1801133", gene: "MTHFR", trait: "Folate Metabolism", continent: "Global", category: "Health", significance: "High", alleles: ["T"], description: "The C677T variant in the MTHFR gene is associated with reduced enzyme activity, affecting folate metabolism and homocysteine levels.", frequencies: {"AFR":0.1,"AMR":0.35,"EAS":0.3,"EUR":0.35,"SAS":0.2,"MENA":0.25} },
+  { markerId: "rs1801131_MTHFR", rsid: "rs1801131", gene: "MTHFR", trait: "Folate Metabolism", continent: "Global", category: "Health", significance: "Medium", alleles: ["C"], description: "The A1298C variant in the MTHFR gene also affects enzyme activity, though to a lesser extent than C677T.", frequencies: {"AFR":0.15,"AMR":0.25,"EAS":0.2,"EUR":0.3,"SAS":0.25,"MENA":0.2} },
+  { markerId: "rs1799971_NOS3", rsid: "rs1799971", gene: "NOS3", trait: "Nitric Oxide Production", continent: "Global", category: "Health", significance: "Medium", alleles: ["T"], description: "Associated with reduced nitric oxide production, which can influence cardiovascular health and exercise performance.", frequencies: {"AFR":0.1,"AMR":0.2,"EAS":0.15,"EUR":0.3,"SAS":0.2,"MENA":0.25} },
+  { markerId: "rs1800795_IL6", rsid: "rs1800795", gene: "IL6", trait: "Inflammation Levels", continent: "Global", category: "Health", significance: "Medium", alleles: ["C"], description: "A marker for systemic inflammation and immune response, with the 'C' allele associated with higher IL-6 levels.", frequencies: {"AFR":0.2,"AMR":0.35,"EAS":0.15,"EUR":0.4,"SAS":0.3,"MENA":0.35} },
+  { markerId: "rs1801282_PPARG", rsid: "rs1801282", gene: "PPARG", trait: "Insulin Sensitivity", continent: "Global", category: "Health", significance: "Medium", alleles: ["G"], description: "The Pro12Ala variant in the PPARG gene affects insulin sensitivity and the risk of Type 2 Diabetes.", frequencies: {"AFR":0.05,"AMR":0.1,"EAS":0.05,"EUR":0.15,"SAS":0.1,"MENA":0.1} },
 ];
 
 SNP_DB.forEach(snp => {
@@ -2156,9 +2202,10 @@ function isSubpopMatch(snpSubpop: string, target: string) {
     'Western European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Belgian', 'Swiss', 'Austrian', 'Dutch', 'Celtic'],
     'Middle Eastern': ['Bedouin', 'Assyrian', 'Druze', 'Palestinian', 'Jewish', 'Turkish', 'Iranian', 'Arab', 'Middle Eastern', 'Levantine', 'Anatolian', 'Mizrahi', 'Kurdish', 'Persian', 'Cypriot'],
     'East Asian': ['Han', 'Japanese', 'Korean', 'Vietnamese', 'Thai', 'Filipino', 'Malay', 'Indonesian', 'East Asian', 'Mongolian', 'Tibetan', 'Ainu', 'Ryukyuan', 'Miao', 'Yi', 'Tujia'],
-    'South Asian': ['Indian', 'Pakistani', 'Bengali', 'Sri Lankan', 'Tamil', 'Punjabi', 'Gujarati', 'South Asian', 'Nepalese', 'Marathi', 'Malayali'],
+    'South Asian': ['Indian', 'Pakistani', 'Bengali', 'Sri Lankan', 'Tamil', 'Punjabi', 'Gujarati', 'South Asian', 'Nepalese', 'Marathi', 'Malayali', 'Dravidian', 'Kalash', 'Pathan', 'Sindhi', 'Balochi'],
+    'Central Asian': ['Kazakh', 'Kyrgyz', 'Uzbek', 'Turkmen', 'Tajik', 'Uyghur', 'Central Asian', 'Hazara'],
     'Native American': ['Mayan', 'Incan', 'Aztec', 'Pima', 'Karitiana', 'Surui', 'Quechua', 'Aymara', 'Native American', 'Andean', 'Central American', 'Amazonian', 'Eastern Woodland', 'Plains Indigenous', 'Southwest Indigenous', 'Arctic Indigenous', 'North American', 'Caribbean Indigenous', 'Taino', 'Navajo', 'Cherokee', 'Sioux', 'Ojibwe', 'Apache', 'Inuit', 'Iroquois', 'Cree', 'Metis', 'Yanomami', 'Nahua', 'Maya', 'Guarani', 'Mapuche', 'Indigenous', 'Beringian'],
-    'Oceanian': ['Melanesian', 'Papuan', 'Australian Aboriginal', 'Polynesian', 'Micronesian', 'Hawaiian', 'Samoan', 'Chamorro', 'Oceanian', 'Fijian'],
+    'Oceanian': ['Melanesian', 'Papuan', 'Australian Aboriginal', 'Polynesian', 'Micronesian', 'Hawaiian', 'Samoan', 'Chamorro', 'Oceanian', 'Fijian', 'Aboriginal Australian'],
   };
   for (const [group, members] of Object.entries(groups)) {
     if (group === target && members.includes(snpSubpop)) return true;
@@ -2248,7 +2295,7 @@ function runAncestryInference(
 ) {
   const continentsToScore = [
     'African', 'European', 'East Asian', 'South Asian', 
-    'Middle Eastern', 'Native American', 'Oceanian', 'North African'
+    'Middle Eastern', 'Native American', 'Oceanian', 'North African', 'Central Asian'
   ];
 
   const CONTINENT_TO_CODE: Record<string, string> = {
@@ -2259,7 +2306,8 @@ function runAncestryInference(
     'South Asian': 'SAS',
     'Middle Eastern': 'MENA',
     'North African': 'NAFR',
-    'Oceanian': 'OCE'
+    'Oceanian': 'OCE',
+    'Central Asian': 'CAS'
   };
 
   const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
@@ -2300,10 +2348,16 @@ function runAncestryInference(
   const continentalCounts: Record<string, number> = {};
   continentsToScore.forEach(c => continentalCounts[c] = 0);
 
-  const windowMarkers: any[][] = [];
-  for (let i = 0; i < allMarkers.length; i += WINDOW_SIZE) {
-    windowMarkers.push(allMarkers.slice(i, i + WINDOW_SIZE));
-  }
+  // Group markers by chromosome for Chromosome Painting
+  const markersByChrom: Record<string, any[]> = {};
+  allMarkers.forEach(m => {
+    const chrom = m.chrom.replace('chr', '').toUpperCase();
+    if (!markersByChrom[chrom]) markersByChrom[chrom] = [];
+    markersByChrom[chrom].push(m);
+  });
+
+  const chromosomeData: Record<string, Record<string, number>> = {};
+  const allWindowProportions: number[][] = []; // To calculate confidence intervals
 
   const matchesContinent = (markerContinent: string, targetContinent: string) => {
     if (!markerContinent) return false;
@@ -2329,163 +2383,214 @@ function runAncestryInference(
     });
   });
 
-  for (const window of windowMarkers) {
-    const windowGenotypes: number[] = [];
-    const windowFrequencies: number[][] = [];
-    const windowWeights: number[] = [];
+  for (const chrom of Object.keys(markersByChrom)) {
+    const chromMarkers = markersByChrom[chrom];
+    const chromCounts: Record<string, number> = {};
+    continentsToScore.forEach(c => chromCounts[c] = 0);
 
-    for (const marker of window) {
-      const rsid = (marker.rsid || marker.markerId).toLowerCase();
-      const genotype = userGenotype[rsid] || marker.genotype;
-      if (!genotype) continue;
+    const windowMarkers: any[][] = [];
+    const STEP_SIZE = 20; // Overlapping windows for smoother results
+    for (let i = 0; i < chromMarkers.length; i += STEP_SIZE) {
+      const end = Math.min(i + WINDOW_SIZE, chromMarkers.length);
+      windowMarkers.push(chromMarkers.slice(i, end));
+      if (end === chromMarkers.length) break;
+    }
 
-      const alleles = marker.alleles;
-      let matchCount = 0;
-      for (const char of genotype) {
-        if (alleles.includes(char)) matchCount++;
-      }
-      
-      windowGenotypes.push(matchCount);
-      
-      const markerFreqs: number[] = [];
-      const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
+    for (const window of windowMarkers) {
+      const windowGenotypes: number[] = [];
+      const windowFrequencies: number[][] = [];
+      const windowWeights: number[] = [];
 
-      for (const continent of continentsToScore) {
-        let freq = 0.01; 
-        const code = CONTINENT_TO_CODE[continent];
+      for (const marker of window) {
+        const rsid = (marker.rsid || marker.markerId).toLowerCase();
+        const genotype = userGenotype[rsid] || marker.genotype;
+        if (!genotype) continue;
 
-        if (aim && aim.frequencies) {
-          if (code && aim.frequencies[code] !== undefined) {
-            freq = aim.frequencies[code];
-          } else if (continent === 'North African' && aim.frequencies['MENA'] !== undefined) {
-            freq = aim.frequencies['MENA'];
-          } else if (continent === 'Middle Eastern' && aim.frequencies['NAFR'] !== undefined) {
-            freq = aim.frequencies['NAFR'];
-          }
-        } else if (marker.frequencies) {
-          if (code && marker.frequencies[code] !== undefined) {
-            freq = marker.frequencies[code];
-          } else if (continent === 'Native American' && marker.frequencies['Native_American_unadmixed'] !== undefined) {
-            freq = marker.frequencies['Native_American_unadmixed'];
-          } else if (continent === 'Native American' && marker.frequencies['AMR_admixed'] !== undefined) {
-            freq = marker.frequencies['AMR_admixed'];
-          } else if (continent === 'North African' && marker.frequencies['MENA'] !== undefined) {
-            freq = marker.frequencies['MENA'];
-          }
-        } else if (matchesContinent(marker.continent, continent)) {
-          freq = 0.8;
+        const alleles = marker.alleles;
+        let matchCount = 0;
+        for (const char of genotype) {
+          if (alleles.includes(char)) matchCount++;
         }
         
-        markerFreqs.push(Math.max(0.001, Math.min(0.999, freq)));
-      }
-      windowFrequencies.push(markerFreqs);
+        windowGenotypes.push(matchCount);
+        
+        const markerFreqs: number[] = [];
+        const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
 
-      const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-      const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
-      const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
-      let weightMultiplier = isTieBreaker ? 4.0 : (isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0));
-      
-      const oceFreq = aim?.frequencies?.OCE || marker.frequencies?.OCE || 0;
-      const easFreq = aim?.frequencies?.EAS || marker.frequencies?.EAS || 0;
-      
-      if (matchesContinent(marker.continent, 'Oceanian')) {
-        if (oceFreq > easFreq) {
-          weightMultiplier *= 0.01; 
-        } else {
-          weightMultiplier *= 1.0; 
-        }
-      }
-      
-      let effectiveSignificance = marker.significance;
-      if (isNamedPop) effectiveSignificance = 'High';
-      
-      let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
-      
-      // Removed the 4.0x African bias multiplier as it causes false positives for European users
-      // if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
-      //   significanceWeight *= 4.0;
-      // }
-
-      const weight = (aim?.weight || 1.0) * significanceWeight * weightMultiplier;
-      windowWeights.push(weight);
-    }
-
-    const damping = new Array(continentsToScore.length).fill(1.0);
-    const oceIndex = continentsToScore.indexOf('Oceanian');
-    if (oceIndex !== -1) {
-      damping[oceIndex] = 0.4; 
-    }
-
-    const windowProportions = solveLeastSquares(windowGenotypes, windowFrequencies, windowWeights, 100, damping);
-    
-    if (windowProportions.length > 0) {
-      windowProportions.forEach((prob, i) => {
-        const continent = continentsToScore[i];
-        // Apply a small noise filter per window to prevent "bleeding" of small percentages
-        const filteredProb = prob < 0.05 ? 0 : prob;
-        continentalCounts[continent] += filteredProb;
-      });
-    }
-
-    for (const continent of continentsToScore) {
-      if (!subPopLogL[continent]) subPopLogL[continent] = {};
-      const continentSubpops = continentSubpopsMap[continent] || [];
-
-      for (const sp of continentSubpops) {
-        if (subPopLogL[continent][sp] === undefined) {
-          subPopLogL[continent][sp] = 0;
-        }
-
-        for (const marker of window) {
-          // Skip general phenotype markers for subpopulation calculations
-          if (marker.subpop?.toLowerCase() === 'general') continue;
-
-          const rsid = (marker.rsid || marker.markerId).toLowerCase();
-          const genotype = userGenotype[rsid] || marker.genotype;
-          if (!genotype) continue;
-          let matchCount = 0;
-          for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
-
-          const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
-          let freq = 0.01;
+        for (const continent of continentsToScore) {
+          let freq = 0.01; 
           const code = CONTINENT_TO_CODE[continent];
 
-          if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
-            freq = aim.subFrequencies[sp];
-            subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0), genotype });
-          } else if (isSubpopMatch(marker.subpop, sp)) {
-            freq = 0.8;
-            subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0, genotype });
-          } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
-            freq = aim.frequencies[code];
-          } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
-            freq = marker.frequencies[code];
+          if (aim && aim.frequencies) {
+            if (code && aim.frequencies[code] !== undefined) {
+              freq = aim.frequencies[code];
+            } else if (continent === 'North African' && aim.frequencies['MENA'] !== undefined) {
+              freq = aim.frequencies['MENA'];
+            } else if (continent === 'Middle Eastern' && aim.frequencies['NAFR'] !== undefined) {
+              freq = aim.frequencies['NAFR'];
+            }
+          } else if (marker.frequencies) {
+            if (code && marker.frequencies[code] !== undefined) {
+              freq = marker.frequencies[code];
+            } else if (continent === 'Native American' && marker.frequencies['Native_American_unadmixed'] !== undefined) {
+              freq = marker.frequencies['Native_American_unadmixed'];
+            } else if (continent === 'Native American' && marker.frequencies['AMR_admixed'] !== undefined) {
+              freq = marker.frequencies['AMR_admixed'];
+            } else if (continent === 'North African' && marker.frequencies['MENA'] !== undefined) {
+              freq = marker.frequencies['MENA'];
+            }
           } else if (matchesContinent(marker.continent, continent)) {
-            freq = 0.5;
+            freq = 0.8;
+          }
+          
+          markerFreqs.push(Math.max(0.001, Math.min(0.999, freq)));
+        }
+        windowFrequencies.push(markerFreqs);
+
+        const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+        const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
+        const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
+        let weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
+        
+        const oceFreq = aim?.frequencies?.OCE || marker.frequencies?.OCE || 0;
+        const easFreq = aim?.frequencies?.EAS || marker.frequencies?.EAS || 0;
+        
+        if (matchesContinent(marker.continent, 'Oceanian')) {
+          if (oceFreq > easFreq) {
+            weightMultiplier *= 0.01; 
+          } else {
+            weightMultiplier *= 1.0; 
+          }
+        }
+        
+        let effectiveSignificance = marker.significance;
+        if (isNamedPop) effectiveSignificance = 'High';
+        
+        let significanceWeight = (effectiveSignificance === 'High' ? 3.0 : effectiveSignificance === 'Medium' ? 2.0 : 1.0);
+        
+        // Calculate distribution weight based on how much the frequencies vary across continents (Informativeness)
+        const maxFreq = Math.max(...markerFreqs);
+        const minFreq = Math.min(...markerFreqs);
+        const distributionWeight = 1.0 + (maxFreq - minFreq) * 4.0; 
+
+        // Continent-Specific Weight: High weight if nearly fixed in one continent and rare in others
+        let continentSpecificWeight = 1.0;
+        const sortedFreqs = [...markerFreqs].sort((a, b) => b - a);
+        if (sortedFreqs[0] > 0.7 && sortedFreqs[1] < 0.1) {
+          continentSpecificWeight = 5.0; // Very high weight for highly specific markers
+        }
+
+        const weight = (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight;
+        windowWeights.push(weight);
+      }
+
+      const damping = new Array(continentsToScore.length).fill(1.0);
+      const oceIndex = continentsToScore.indexOf('Oceanian');
+      if (oceIndex !== -1) {
+        damping[oceIndex] = 0.4; 
+      }
+      const casIndex = continentsToScore.indexOf('Central Asian');
+      if (casIndex !== -1) {
+        damping[casIndex] = 0.7; // Slight damping for Central Asian to prevent over-fitting
+      }
+
+      const windowProportions = solveLeastSquares(windowGenotypes, windowFrequencies, windowWeights, 100, damping);
+      
+      if (windowProportions.length > 0) {
+        allWindowProportions.push(windowProportions);
+        windowProportions.forEach((prob, i) => {
+          const continent = continentsToScore[i];
+          const filteredProb = prob < 0.05 ? 0 : prob;
+          continentalCounts[continent] += filteredProb;
+          chromCounts[continent] += filteredProb;
+        });
+      }
+
+      for (const continent of continentsToScore) {
+        if (!subPopLogL[continent]) subPopLogL[continent] = {};
+        const continentSubpops = continentSubpopsMap[continent] || [];
+
+        for (const sp of continentSubpops) {
+          if (subPopLogL[continent][sp] === undefined) {
+            subPopLogL[continent][sp] = 0;
           }
 
-          const f = Math.max(0.001, Math.min(0.999, freq));
-          const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
-          const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-          const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
-          const weightMultiplier = isTieBreaker ? 4.0 : (isNamedPop ? 3.0 : (isHeavy ? 2.0 : 1.0));
-          
-          let effectiveSignificance = marker.significance;
-          if (isNamedPop) effectiveSignificance = 'High';
-          let significanceWeight = (effectiveSignificance === 'High' ? 2.0 : effectiveSignificance === 'Medium' ? 1.5 : 1.0);
-          
-          const regionalMultiplier = isNamedPop ? 3.0 : 1.0;
-          let weight = (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight;
-          
-          // Removed the 4.0x African bias multiplier as it causes false positives for European users
-          // if (effectiveSignificance === 'High' && matchesContinent(marker.continent, 'African')) {
-          //   weight *= 4.0;
-          // }
+          for (const marker of window) {
+            if (marker.subpop?.toLowerCase() === 'general') continue;
 
-          const error = (matchCount / 2) - f;
-          subPopLogL[continent][sp] -= weight * (error * error);
+            const rsid = (marker.rsid || marker.markerId).toLowerCase();
+            const genotype = userGenotype[rsid] || marker.genotype;
+            if (!genotype) continue;
+            let matchCount = 0;
+            for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
+
+            const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
+            let freq = 0.01;
+            const code = CONTINENT_TO_CODE[continent];
+
+            if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
+              freq = aim.subFrequencies[sp];
+              subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0), genotype });
+            } else if (isSubpopMatch(marker.subpop, sp)) {
+              freq = 0.8;
+              subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0, genotype });
+            } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
+              freq = aim.frequencies[code];
+            } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
+              freq = marker.frequencies[code];
+            } else if (matchesContinent(marker.continent, continent)) {
+              freq = 0.5;
+            }
+
+            const f = Math.max(0.001, Math.min(0.999, freq));
+            const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
+            const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+            const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
+            const weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
+            
+            let effectiveSignificance = marker.significance;
+            if (isNamedPop) effectiveSignificance = 'High';
+            let significanceWeight = (effectiveSignificance === 'High' ? 3.0 : effectiveSignificance === 'Medium' ? 2.0 : 1.0);
+            
+            const regionalMultiplier = isNamedPop ? 4.0 : 1.0;
+            
+            // Re-calculate frequencies for distribution weight in subpop context
+            const subPopFreqs: number[] = [];
+            for (const c of continentsToScore) {
+              const cCode = CONTINENT_TO_CODE[c];
+              let f = 0.01;
+              if (aim && aim.frequencies && cCode && aim.frequencies[cCode] !== undefined) f = aim.frequencies[cCode];
+              else if (marker.frequencies && cCode && marker.frequencies[cCode] !== undefined) f = marker.frequencies[cCode];
+              subPopFreqs.push(f);
+            }
+            const maxF = Math.max(...subPopFreqs);
+            const minF = Math.min(...subPopFreqs);
+            const distributionWeight = 1.0 + (maxF - minF) * 4.0;
+
+            // Continent-Specific Weight
+            let continentSpecificWeight = 1.0;
+            const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
+            if (sortedSubFreqs[0] > 0.7 && sortedSubFreqs[1] < 0.1) {
+              continentSpecificWeight = 5.0;
+            }
+
+            let weight = (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
+            
+            const error = (matchCount / 2) - f;
+            subPopLogL[continent][sp] -= weight * (error * error);
+          }
         }
       }
+    }
+
+    // Normalize chromosome data
+    const chromTotal = Object.values(chromCounts).reduce((a, b) => a + b, 0);
+    if (chromTotal > 0) {
+      chromosomeData[chrom] = {};
+      continentsToScore.forEach(c => {
+        const pct = (chromCounts[c] / chromTotal) * 100;
+        if (pct >= 1.0) chromosomeData[chrom][c] = pct;
+      });
     }
   }
 
@@ -2558,6 +2663,27 @@ function runAncestryInference(
     });
   }
 
+  const confidenceIntervals: Record<string, { low: number, high: number }> = {};
+  if (allWindowProportions.length > 0) {
+    continentsToScore.forEach((continent, i) => {
+      const continentProportions = allWindowProportions.map(wp => wp[i]);
+      const mean = continentProportions.reduce((a, b) => a + b, 0) / continentProportions.length;
+      const variance = continentProportions.reduce((a, b) => a + (b - mean) ** 2, 0) / continentProportions.length;
+      const stdDev = Math.sqrt(variance);
+      
+      // 95% confidence interval (approx 1.96 * stdDev / sqrt(n))
+      const marginOfError = (1.96 * stdDev) / Math.sqrt(allWindowProportions.length);
+      const score = (continentalScores[continent] || 0);
+      
+      if (score > 0) {
+        confidenceIntervals[continent] = {
+          low: Math.max(0, score - marginOfError * 100),
+          high: Math.min(100, score + marginOfError * 100)
+        };
+      }
+    });
+  }
+
   return { 
     continentalScores: normalizedContinental, 
     regionalScores: {}, 
@@ -2565,14 +2691,16 @@ function runAncestryInference(
     continents: Object.keys(normalizedContinental), 
     subPopulations, 
     subPopMarkers, 
-    confidenceScore: 0 
+    confidenceScore: 0,
+    chromosomeData,
+    confidenceIntervals
   };
 }
 
 export function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null) {
   const continentsToScore = [
     'African', 'European', 'East Asian', 'South Asian', 
-    'Middle Eastern', 'Native American', 'Oceanian', 'North African'
+    'Middle Eastern', 'Native American', 'Oceanian', 'North African', 'Central Asian'
   ];
 
   const CONTINENT_TO_CODE: Record<string, string> = {
@@ -2583,7 +2711,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
     'South Asian': 'SAS',
     'Middle Eastern': 'MENA',
     'North African': 'NAFR',
-    'Oceanian': 'OCE'
+    'Oceanian': 'OCE',
+    'Central Asian': 'CAS'
   };
 
   const userGenotype: Record<string, string> = {};

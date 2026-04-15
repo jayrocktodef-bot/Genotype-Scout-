@@ -433,6 +433,58 @@ const AutosomalView = memo(({
   );
 });
 
+const ChromosomePainting = ({ data }: { data: Record<string, Record<string, number>> }) => {
+  const chroms = Array.from({ length: 22 }, (_, i) => (i + 1).toString());
+  
+  return (
+    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider">Chromosome Painting</h3>
+        <div className="text-[10px] text-slate-400 font-mono">Segment-based inference per chromosome</div>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-11 gap-2">
+        {chroms.map(chrom => {
+          const chromScores = data[chrom] || {};
+          const sortedScores = Object.entries(chromScores).sort((a, b) => b[1] - a[1]);
+          
+          return (
+            <div key={chrom} className="flex flex-col gap-1">
+              <div className="text-[10px] font-bold text-slate-500 text-center">Chr {chrom}</div>
+              <div className="h-16 w-full bg-slate-100 dark:bg-slate-900 rounded-sm overflow-hidden flex flex-col">
+                {sortedScores.length > 0 ? sortedScores.map(([continent, pct]) => {
+                  const meta = CONTINENT_META[continent] || { color: '#94a3b8' };
+                  return (
+                    <div 
+                      key={continent} 
+                      className="w-full" 
+                      style={{ 
+                        height: `${pct}%`, 
+                        backgroundColor: meta.color,
+                        opacity: 0.8
+                      }}
+                      title={`${continent}: ${pct.toFixed(1)}%`}
+                    />
+                  );
+                }) : (
+                  <div className="h-full w-full bg-slate-200 dark:bg-slate-800 opacity-30" />
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 justify-center border-t border-slate-100 dark:border-slate-800 pt-4">
+        {Object.entries(CONTINENT_META).map(([name, meta]) => (
+          <div key={name} className="flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
+            <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tighter">{name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: { oracleResults: any, selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
   const [activeOracle, setActiveOracle] = useState<'primary' | 'secondary' | 'commercial'>('primary');
 
@@ -451,7 +503,7 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
     : activeOracle === 'secondary' 
       ? oracleResults.secondary 
       : oracleResults.commercial;
-  const { continentalScores, subPopulations } = currentData;
+  const { continentalScores, subPopulations, chromosomeData, confidenceIntervals } = currentData;
   
   if (Object.keys(continentalScores).length === 0) {
     return (
@@ -569,19 +621,41 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full md:w-1/2">
               {pieData.map((entry) => {
                 const meta = CONTINENT_META[entry.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
+                const ci = confidenceIntervals?.[entry.name];
                 return (
-                  <div key={entry.name} className="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
-                      <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{entry.name}</span>
+                  <div key={entry.name} className="flex flex-col p-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                    <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
+                        <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{entry.name}</span>
+                      </div>
+                      <span className="text-xs font-mono font-bold text-slate-500">{(entry.value as number).toFixed(1)}%</span>
                     </div>
-                    <span className="text-xs font-mono font-bold text-slate-500">{(entry.value as number).toFixed(1)}%</span>
+                    {ci && (
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 h-1 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden relative">
+                          <div 
+                            className="absolute h-full bg-indigo-400 opacity-40" 
+                            style={{ 
+                              left: `${ci.low}%`, 
+                              width: `${Math.max(2, ci.high - ci.low)}%` 
+                            }}
+                          />
+                        </div>
+                        <span className="text-[9px] font-mono text-slate-400">
+                          {ci.low.toFixed(1)}—{ci.high.toFixed(1)}%
+                        </span>
+                      </div>
+                    )}
                   </div>
                 );
               })}
             </div>
           </div>
         </div>
+
+        {/* Chromosome Painting */}
+        {chromosomeData && <ChromosomePainting data={chromosomeData} />}
 
         {/* Sub-population Breakdown */}
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
@@ -1452,7 +1526,7 @@ export default function App() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 Facebook Group
               </a>
-              <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
+              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                 Research Blog
               </a>
@@ -1472,7 +1546,7 @@ export default function App() {
           <div className="text-sky-700 dark:text-sky-400 text-sm font-mono mb-8">Please wait while we analyze your markers</div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
+            <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
               <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Genetic Research</div>
               <div className="text-xs text-slate-600 dark:text-slate-400">Read about the latest findings in African genetic history.</div>
             </a>
