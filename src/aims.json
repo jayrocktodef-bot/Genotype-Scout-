@@ -1,5 +1,333 @@
 [
   {
+    "rsid": "rs10456364",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.2,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.3
+    },
+    "subFrequencies": {
+      "Filipino": 0.98,
+      "Indonesian": 0.9,
+      "Malay": 0.85,
+      "Polynesian": 0.5
+    },
+    "description": "Insular Southeast Asian Marker - diagnostic for Austronesian speaking populations of the Philippines and Indonesia."
+  },
+  {
+    "rsid": "rs10456365",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.92,
+      "AMR": 0.05,
+      "SAS": 0.15,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Thai": 0.95,
+      "Lao": 0.92,
+      "Vietnamese": 0.85,
+      "Khmer": 0.8
+    },
+    "description": "Mainland Southeast Asian Marker - informative for Tai-Kadai and Austroasiatic speaking populations."
+  },
+  {
+    "rsid": "rs10456366",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.9,
+      "AMR": 0.01,
+      "SAS": 0.35,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Burmese": 0.9,
+      "Karen": 0.85,
+      "Chin": 0.8,
+      "Naga": 0.75
+    },
+    "description": "Tibeto-Burman Border Marker - diagnostic for populations along the Himalayas and Indo-Burma border."
+  },
+  {
+    "rsid": "rs10456367",
+    "region": "Middle Eastern",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.35,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.1,
+      "MENA": 0.94
+    },
+    "subFrequencies": {
+      "Kurd": 0.98,
+      "Iraqi": 0.9,
+      "Syrian": 0.85,
+      "Armenian": 0.8
+    },
+    "description": "North Mesopotamian Marker - highly informative for Kurdish and Northern Fertile Crescent populations."
+  },
+  {
+    "rsid": "rs10456368",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.25,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "SAS": 0.15,
+      "MENA": 0.92
+    },
+    "subFrequencies": {
+      "Azeri": 0.95,
+      "Georgian": 0.9,
+      "Dagestani": 0.88,
+      "Turkish": 0.75
+    },
+    "description": "South Caucasus/Azeri Marker - diagnostic for populations of the Caucasus and Northwestern Iran."
+  },
+  {
+    "rsid": "rs10456369",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.2,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.96,
+      "MENA": 0.3
+    },
+    "subFrequencies": {
+      "Pashtun": 0.98,
+      "Baloch": 0.95,
+      "Sindhi": 0.85,
+      "Punjabi": 0.8
+    },
+    "description": "Indo-Iranian Border Marker - informative for populations of the Northwest Subcontinent and Eastern Plateau."
+  },
+  {
+    "rsid": "rs10456370",
+    "region": "Central Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.15,
+      "EAS": 0.45,
+      "AMR": 0.05,
+      "SAS": 0.2,
+      "MENA": 0.25,
+      "CAS": 0.95
+    },
+    "subFrequencies": {
+      "Hazara": 0.98,
+      "Mongol": 0.7,
+      "Uyghur": 0.85,
+      "Uzbek": 0.6
+    },
+    "description": "Hazaragi/Central Asian Marker - diagnostic for the unique admixed populations of central Afghanistan and the Silk Road."
+  },
+  {
+    "rsid": "rs671",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.45,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Han": 0.5,
+      "Japanese": 0.4,
+      "Korean": 0.35,
+      "Cantonese": 0.55
+    },
+    "description": "ALDH2 Alcohol Sensitivity Variant - globally unique to East Asian populations."
+  },
+  {
+    "rsid": "rs13430441",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.05,
+      "EAS": 0.85,
+      "AMR": 0.3,
+      "SAS": 0.1,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Vietnamese": 0.95,
+      "Thai": 0.9,
+      "Malay": 0.85,
+      "Filipino": 0.8,
+      "Indonesian": 0.82
+    },
+    "description": "Southeast Asian Informative Marker - highly prevalent in Austroasiatic and Austronesian speaking populations."
+  },
+  {
+    "rsid": "rs16139",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.15,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.88,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "Indo-Aryan": 0.92,
+      "Dravidian": 0.85,
+      "Munda": 0.75,
+      "Bengali": 0.88
+    },
+    "description": "South Asian Specific Marker - informative for distinguishing Indo-European speaking populations of the subcontinent."
+  },
+  {
+    "rsid": "rs10954737",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.3,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.92,
+      "MENA": 0.4
+    },
+    "subFrequencies": {
+      "Tamil": 0.95,
+      "Telugu": 0.93,
+      "Kannada": 0.9,
+      "Malayali": 0.92
+    },
+    "description": "Dravidian Ancestry Marker - highly diagnostic for Southern Indian and Sri Lankan populations."
+  },
+  {
+    "rsid": "rs1393350",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.6,
+      "EAS": 0.01,
+      "AMR": 0.1,
+      "SAS": 0.25,
+      "MENA": 0.9
+    },
+    "subFrequencies": {
+      "Arab": 0.95,
+      "Levantine": 0.92,
+      "Persian": 0.85,
+      "Kurdish": 0.88,
+      "Assyrian": 0.9
+    },
+    "description": "West Asian/Middle Eastern Informative Marker - diagnostic for Afroasiatic and Indo-Iranian speaking populations of the Near East."
+  },
+  {
+    "rsid": "rs4988238",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.3,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.2,
+      "MENA": 0.82
+    },
+    "subFrequencies": {
+      "Saudi": 0.95,
+      "Yemeni": 0.92,
+      "Omani": 0.9,
+      "Emirati": 0.88,
+      "Bedouin": 0.96
+    },
+    "description": "Peninsular Arabian Marker - highly informative for populations of the Arabian Peninsula."
+  },
+  {
+    "rsid": "rs60910145",
+    "region": "Middle Eastern",
+    "alleles": [
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.1,
+      "MENA": 0.98
+    },
+    "subFrequencies": {
+      "Samaritan": 1.0,
+      "Palestinian": 0.95,
+      "Druze": 0.98,
+      "Lebanese": 0.92,
+      "Mizrahi": 0.96
+    },
+    "description": "Levantine Endemic Marker - diagnostic for the indigenous populations of the Levant."
+  },
+  {
     "rsid": "rs10456197",
     "region": "African",
     "alleles": [
