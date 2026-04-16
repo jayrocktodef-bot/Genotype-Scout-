@@ -14,7 +14,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
 import { jsPDF } from "jspdf";
-import { parseRawDNA, matchSNPs, groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, predictYDNAHaplogroup, analyzeMtDNA, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
+import { groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 
@@ -563,51 +563,64 @@ const AutosomalView = memo(({
   );
 });
 
-const ChromosomePainting = ({ data }: { data: Record<string, Record<string, number>> }) => {
+const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<string, number>>, segments?: Record<string, any[]> }) => {
   const chroms = Array.from({ length: 22 }, (_, i) => (i + 1).toString());
   
   return (
-    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider">Chromosome Painting</h3>
-        <div className="text-[10px] text-slate-400 font-mono">Segment-based inference per chromosome</div>
+    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">🎨</div>
+          <div>
+            <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-tight">Chromosome Painting</h3>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Local Ancestry Inference</p>
+          </div>
+        </div>
+        <div className="text-[10px] text-slate-400 font-mono bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">Segment-based mapping</div>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-11 gap-2">
+
+      <div className="space-y-3">
         {chroms.map(chrom => {
-          const chromScores = data[chrom] || {};
-          const sortedScores = Object.entries(chromScores).sort((a, b) => b[1] - a[1]);
+          const chromSegments = segments?.[chrom] || [];
+          const maxPos = chromSegments.length > 0 ? Math.max(...chromSegments.map(s => s.end)) : 1;
           
           return (
-            <div key={chrom} className="flex flex-col gap-1">
-              <div className="text-[10px] font-bold text-slate-500 text-center">Chr {chrom}</div>
-              <div className="h-16 w-full bg-slate-100 dark:bg-slate-900 rounded-sm overflow-hidden flex flex-col">
-                {sortedScores.length > 0 ? sortedScores.map(([continent, pct]) => {
-                  const meta = CONTINENT_META[continent] || { color: '#94a3b8' };
+            <div key={chrom} className="flex items-center gap-3 group">
+              <div className="w-8 text-[10px] font-black text-slate-400 group-hover:text-indigo-500 transition-colors">CH{chrom}</div>
+              <div className="flex-1 h-4 bg-slate-100 dark:bg-slate-900/50 rounded-full overflow-hidden relative border border-slate-200 dark:border-slate-800 shadow-inner">
+                {chromSegments.length > 0 ? chromSegments.map((seg, idx) => {
+                  const meta = CONTINENT_META[seg.continent] || { color: '#94a3b8' };
+                  const width = Math.max(0.5, ((seg.end - seg.start) / maxPos) * 100);
+                  const left = (seg.start / maxPos) * 100;
+                  
                   return (
-                    <div 
-                      key={continent} 
-                      className="w-full" 
-                      style={{ 
-                        height: `${pct}%`, 
+                    <motion.div 
+                      key={idx}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.7 + (seg.confidence * 0.3) }}
+                      className="absolute top-0 h-full border-r border-black/5"
+                      style={{
+                        left: `${left}%`,
+                        width: `${width}%`,
                         backgroundColor: meta.color,
-                        opacity: 0.8
                       }}
-                      title={`${continent}: ${pct.toFixed(1)}%`}
+                      title={`${seg.continent}: ${Math.round(seg.confidence * 100)}% confidence`}
                     />
                   );
                 }) : (
-                  <div className="h-full w-full bg-slate-200 dark:bg-slate-800 opacity-30" />
+                  <div className="h-full w-full bg-slate-200/50 dark:bg-slate-800/50 animate-pulse" />
                 )}
               </div>
             </div>
           );
         })}
       </div>
-      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 justify-center border-t border-slate-100 dark:border-slate-800 pt-4">
+
+      <div className="mt-8 flex flex-wrap gap-x-4 gap-y-2 justify-center border-t border-slate-100 dark:border-slate-800 pt-6">
         {Object.entries(CONTINENT_META).map(([name, meta]) => (
-          <div key={name} className="flex items-center gap-1.5">
-            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
-            <span className="text-[9px] font-bold text-slate-500 uppercase tracking-tighter">{name}</span>
+          <div key={name} className="flex items-center gap-2">
+            <div className="w-2.5 h-2.5 rounded-full shadow-sm" style={{ backgroundColor: meta.color }}></div>
+            <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">{name}</span>
           </div>
         ))}
       </div>
@@ -633,7 +646,7 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
     : activeOracle === 'secondary' 
       ? oracleResults.secondary 
       : oracleResults.commercial;
-  const { continentalScores, subPopulations, chromosomeData, confidenceIntervals } = currentData;
+  const { continentalScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData;
   
   if (Object.keys(continentalScores).length === 0) {
     return (
@@ -785,7 +798,7 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
         </div>
 
         {/* Chromosome Painting */}
-        {chromosomeData && <ChromosomePainting data={chromosomeData} />}
+        {chromosomeData && <ChromosomePainting data={chromosomeData} segments={segments} />}
 
         {/* Sub-population Breakdown */}
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
@@ -1464,7 +1477,6 @@ export default function App() {
     setError(null);
     const fileArray = Array.isArray(files) ? files : Array.from(files);
     
-    // Check for large files
     const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
     const largeFiles = fileArray.filter(f => f.size > MAX_FILE_SIZE);
     if (largeFiles.length > 0) {
@@ -1474,26 +1486,15 @@ export default function App() {
     }
 
     try {
-      const parsedFiles = await Promise.all(fileArray.map(file => {
-        return new Promise<{ 
-          snpMap: Record<string, string>, 
-          snpMetaMap: Record<string, { chrom: string, pos: number }>, 
-          chip: string, 
-          snpCount: number, 
-          yMap: Record<string, string>, 
-          mtMap: Record<string, string>,
-          name: string
-        }>((resolve, reject) => {
+      const fileContents = await Promise.all(fileArray.map(file => {
+        return new Promise<{ text: string, name: string }>((resolve, reject) => {
           const reader = new FileReader();
           reader.onload = (e) => {
-            try {
-              const text = e.target?.result as string;
-              if (!text || text.trim().length === 0) {
-                throw new Error("File is empty.");
-              }
-              resolve({ ...parseRawDNA(text), name: file.name });
-            } catch (err) {
-              reject(new Error(`Error parsing ${file.name}: ${err instanceof Error ? err.message : 'Unknown error'}`));
+            const text = e.target?.result as string;
+            if (!text || text.trim().length === 0) {
+              reject(new Error(`File ${file.name} is empty.`));
+            } else {
+              resolve({ text, name: file.name });
             }
           };
           reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
@@ -1501,90 +1502,41 @@ export default function App() {
         });
       }));
 
-      if (parsedFiles.length === 0) {
-        setProcessing(false);
-        return;
-      }
-
-      let mergedSnpMap: Record<string, string> = {};
-      let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
-      let mergedYMap: Record<string, string> = {};
-      let mergedMtMap: Record<string, string> = {};
-      let chips: string[] = [];
-      let names: string[] = [];
+      const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
-      // Duplicate detection
-      const duplicateMarkers: Record<string, { count: number, files: string[], genotypes: Set<string> }> = {};
-
-      parsedFiles.forEach(pf => {
-        names.push(pf.name);
-        if (pf.chip && pf.chip !== "Unknown Chip") {
-          chips.push(pf.chip);
+      worker.onmessage = (e) => {
+        const { type, payload, error: workerError } = e.data;
+        if (type === 'SUCCESS') {
+          const newIndex = datasets.length;
+          snpMaps.current[newIndex] = payload.mergedSnpMap;
+          updateDatasets({ 
+            name: payload.name, 
+            results: payload.results,
+            chip: payload.chip,
+            snpCount: payload.snpCount,
+            predictedYDNA: payload.predictedYDNA,
+            predictedMtDNA: payload.predictedMtDNA
+          });
+          setPendingFiles([]);
+          setProcessing(false);
+          worker.terminate();
+        } else {
+          setError(workerError || "Processing failed in background worker.");
+          setProcessing(false);
+          worker.terminate();
         }
-        
-        // Merge SNP Map with duplicate detection
-        Object.entries(pf.snpMap).forEach(([rsid, genotype]) => {
-          if (mergedSnpMap[rsid]) {
-            if (!duplicateMarkers[rsid]) {
-              duplicateMarkers[rsid] = { 
-                count: 1, 
-                files: [names[names.length - 2]], // Previous file
-                genotypes: new Set([mergedSnpMap[rsid]]) 
-              };
-            }
-            duplicateMarkers[rsid].count++;
-            duplicateMarkers[rsid].files.push(pf.name);
-            duplicateMarkers[rsid].genotypes.add(genotype);
+      };
 
-            // Strategy: Keep the longest genotype (e.g., "AG" over "A")
-            if (genotype.length > mergedSnpMap[rsid].length) {
-              mergedSnpMap[rsid] = genotype;
-            }
-          } else {
-            mergedSnpMap[rsid] = genotype;
-          }
-        });
+      worker.onerror = (err) => {
+        setError(`Worker error: ${err.message}`);
+        setProcessing(false);
+        worker.terminate();
+      };
 
-        // Merge Meta Map
-        Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
-        
-        // Merge Y Map
-        Object.entries(pf.yMap).forEach(([rsid, genotype]) => {
-          if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
-            mergedYMap[rsid] = genotype;
-          }
-        });
-
-        // Merge MT Map
-        Object.assign(mergedMtMap, pf.mtMap);
-      });
-
-      const inconsistentMarkers = Object.entries(duplicateMarkers).filter(([_, data]) => data.genotypes.size > 1);
-      if (inconsistentMarkers.length > 0) {
-        console.warn(`Found ${inconsistentMarkers.length} inconsistent markers across files. Using longest genotype for each.`);
-      }
-
-      const uniqueSnps = Object.keys(mergedSnpMap).length;
-      const mergedName = parsedFiles.length > 1 ? `Merged Kit (${parsedFiles.length} files)` : parsedFiles[0].name;
-      const mergedChip = chips.length > 0 ? Array.from(new Set(chips)).join(" + ") : "Unknown Chip";
-
-      const newIndex = datasets.length;
-      snpMaps.current[newIndex] = mergedSnpMap;
-
-      updateDatasets({ 
-        name: mergedName, 
-        results: matchSNPs(mergedSnpMap, mergedSnpMetaMap),
-        chip: mergedChip,
-        snpCount: uniqueSnps,
-        predictedYDNA: predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE),
-        predictedMtDNA: analyzeMtDNA(mergedMtMap)
-      });
-      
-      setPendingFiles([]);
+      worker.postMessage({ files: fileContents });
     } catch (err) {
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
-    } finally {
       setProcessing(false);
     }
   }, [datasets]);

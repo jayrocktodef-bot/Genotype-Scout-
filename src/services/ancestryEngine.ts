@@ -136,6 +136,7 @@ export function runAncestryInference(
   });
 
   const chromosomeData: Record<string, Record<string, number>> = {};
+  const segments: Record<string, { continent: string, start: number, end: number, confidence: number }[]> = {};
   const allWindowProportions: number[][] = []; // To calculate confidence intervals
 
   const matchesContinent = (markerContinent: string, targetContinent: string) => {
@@ -169,6 +170,8 @@ export function runAncestryInference(
 
     const windowMarkers: any[][] = [];
     const STEP_SIZE = 20; // Overlapping windows for smoother results
+    segments[chrom] = [];
+
     for (let i = 0; i < chromMarkers.length; i += STEP_SIZE) {
       const end = Math.min(i + WINDOW_SIZE, chromMarkers.length);
       windowMarkers.push(chromMarkers.slice(i, end));
@@ -275,6 +278,21 @@ export function runAncestryInference(
       
       if (windowProportions.length > 0) {
         allWindowProportions.push(windowProportions);
+        
+        // Detailed segment tracking
+        const maxProb = Math.max(...windowProportions);
+        const topIndex = windowProportions.indexOf(maxProb);
+        const topContinent = continentsToScore[topIndex];
+        
+        if (maxProb > 0.3) { // Only record if there's a decent signal
+          segments[chrom].push({
+            continent: topContinent,
+            start: window[0].pos,
+            end: window[window.length - 1].pos,
+            confidence: maxProb
+          });
+        }
+
         windowProportions.forEach((prob, i) => {
           const continent = continentsToScore[i];
           const filteredProb = prob < 0.05 ? 0 : prob;
@@ -465,6 +483,7 @@ export function runAncestryInference(
     subPopMarkers, 
     confidenceScore: 0,
     chromosomeData,
+    segments,
     confidenceIntervals
   };
 }

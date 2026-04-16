@@ -44,5 +44,6 @@ export interface AncestryInferenceResult {
   subPopMarkers: Record<string, any[]>;
   confidenceScore: number;
   chromosomeData: Record<string, Record<string, number>>;
+  segments?: Record<string, { continent: string, start: number, end: number, confidence: number }[]>;
   confidenceIntervals: Record<string, { low: number, high: number }>;
 }
