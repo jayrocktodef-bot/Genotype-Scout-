@@ -9,6 +9,7 @@
  */
 
 import { useState, useCallback, useRef, useEffect, useMemo, memo } from "react";
+import { motion, AnimatePresence } from "motion/react";
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
@@ -29,6 +30,7 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }:
   }, [matchesSearch]);
 
   const mutations = node.mutations || [];
+  const hasChildren = node.children && node.children.length > 0;
 
   return (
     <div className={`ml-4 border-l border-slate-200 dark:border-slate-700 pl-4 my-1 ${matchesSearch ? 'ring-2 ring-sky-500/20 rounded-r' : ''}`}>
@@ -36,9 +38,12 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }:
         className={`flex items-center gap-2 cursor-pointer group py-1.5 px-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-all ${isMatch ? 'bg-blue-50 dark:bg-blue-900/20' : ''} ${matchesSearch ? 'bg-sky-50 dark:bg-sky-900/30' : ''}`}
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <span className="text-xs text-slate-400 w-4 flex justify-center">
-          {node.children && node.children.length > 0 ? (isExpanded ? '▼' : '▶') : '•'}
-        </span>
+        <motion.span 
+          animate={{ rotate: isExpanded ? 90 : 0 }}
+          className="text-xs text-slate-400 w-4 flex justify-center"
+        >
+          {hasChildren ? '▶' : '•'}
+        </motion.span>
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <span className={`text-sm font-bold ${isMatch ? 'text-blue-600 dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'} ${matchesSearch ? 'text-sky-600 dark:text-sky-400 underline decoration-sky-500/50 underline-offset-2' : ''}`}>
@@ -48,24 +53,38 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }:
               <span className="text-[9px] text-slate-400 font-medium uppercase tracking-wider">{node.region}</span>
             )}
           </div>
-          {isExpanded && mutations.length > 0 && (
-            <div className="flex flex-wrap gap-1 mt-1">
-              {mutations.map((m: string, idx: number) => (
-                <span key={idx} className={`text-[9px] font-mono px-1 py-0.5 rounded ${userPath.includes(node.branchName) && mutations.slice(0, idx+1).every((mut: string) => mut) ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
-                  {m}
-                </span>
-              ))}
-            </div>
-          )}
+          <AnimatePresence>
+            {isExpanded && mutations.length > 0 && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="flex flex-wrap gap-1 mt-1 overflow-hidden"
+              >
+                {mutations.map((m: string, idx: number) => (
+                  <span key={idx} className={`text-[9px] font-mono px-1 py-0.5 rounded ${userPath.includes(node.branchName) && mutations.slice(0, idx+1).every((mut: string) => mut) ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
+                    {m}
+                  </span>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-      {isExpanded && node.children && (
-        <div className="animate-fade-in">
-          {node.children.map((child: any, i: number) => (
-            <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} searchTerm={searchTerm} />
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {isExpanded && hasChildren && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="overflow-hidden"
+          >
+            {node.children.map((child: any, i: number) => (
+              <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} searchTerm={searchTerm} />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 });
@@ -111,127 +130,217 @@ const ProfileSummary = memo(({
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
   const topContinent = Object.entries(primaryAncestry).sort((a: any, b: any) => b[1] - a[1])[0];
   const topSubPops = Object.entries(oracleResults?.primary?.subPopulations || {})
-    .sort((a: any, b: any) => b[1] - a[1])
+    .flatMap(([continent, pops]: [string, any]) => pops.map((p: any) => ({ ...p, continent })))
+    .sort((a: any, b: any) => b.percentage - a.percentage)
     .slice(0, 5);
 
+  const ancestryChartData = Object.entries(primaryAncestry)
+    .map(([name, value]) => ({ name, value: Number(value) }))
+    .sort((a, b) => b.value - a.value);
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    show: { y: 0, opacity: 1 }
+  };
+
   return (
-    <div className="mb-8 space-y-4 animate-fade-up">
-      <div className="p-6 rounded-3xl bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-lg">
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-sky-600 flex items-center justify-center text-xl shadow-md shadow-sky-200 dark:shadow-none">📊</div>
-              <div>
-                <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Genetic Profile Overview</h3>
-                <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Key ancestral findings</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm">
-                <div className="text-[9px] font-bold text-sky-600 dark:text-sky-400 uppercase tracking-widest mb-1">Primary Ancestry</div>
-                <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tighter mb-0.5">
-                  {topContinent ? topContinent[0] : 'Analyzing...'}
-                </div>
-                <div className="text-[10px] font-bold text-slate-500">
-                  {topContinent ? `${Number(topContinent[1]).toFixed(1)}% Confidence` : ''}
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm">
-                <div className="text-[9px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-1">Paternal Lineage</div>
-                <div className="flex items-center gap-2 mb-0.5">
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: getHaploColor(yData?.predicted?.name || '') }}></div>
-                  <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tighter">
-                    {yData?.predicted?.name || 'Not Detected'}
-                  </div>
-                </div>
-                <div className="text-[10px] font-bold text-slate-500">
-                  {yData?.predicted?.marker ? `Marker: ${yData.predicted.marker}` : 'Limited Coverage'}
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm">
-                <div className="text-[9px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest mb-1">Maternal Lineage</div>
-                <div className="flex items-center gap-2 mb-0.5">
-                  <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: getHaploColor(mtData?.predicted || '', true) }}></div>
-                  <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tighter">
-                    {mtData?.predicted || 'Not Detected'}
-                  </div>
-                </div>
-                <div className="text-[10px] font-bold text-slate-500">
-                  {mtData?.region || 'Global Lineage'}
-                </div>
-              </div>
+    <motion.div 
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="mb-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-min"
+    >
+      {/* Main Ancestry Card - Large */}
+      <motion.div 
+        variants={item}
+        className="md:col-span-4 lg:col-span-4 row-span-2 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow flex flex-col"
+      >
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-xl">🌍</div>
+            <div>
+              <h3 className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Composition</h3>
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Continental Breakdown</p>
             </div>
           </div>
+          {topContinent && (
+            <div className="text-right">
+              <div className="text-[10px] font-bold text-sky-600 uppercase tracking-widest">Primary</div>
+              <div className="text-sm font-black text-slate-900 dark:text-slate-100">{topContinent[0]}</div>
+            </div>
+          )}
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {/* Top Sub-Populations */}
-        <div className="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
-          <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-widest mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 text-xs">🎯</span>
-            Top Genetic Affinities
-          </h4>
-          <div className="space-y-3">
-            {topSubPops.length > 0 ? topSubPops.map(([pop, score]: [string, any], idx) => (
-              <div key={pop} className="relative">
-                <div className="flex justify-between items-center mb-1">
-                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300">{pop}</span>
-                  <span className="text-[9px] font-mono font-bold text-slate-400">{Number(score).toFixed(1)}%</span>
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+          <div className="h-[200px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={ancestryChartData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={80}
+                  paddingAngle={5}
+                  dataKey="value"
+                >
+                  {ancestryChartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name]?.color || '#cbd5e1'} />
+                  ))}
+                </Pie>
+                <Tooltip 
+                  contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '10px' }}
+                  itemStyle={{ color: '#fff' }}
+                />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="space-y-2">
+            {ancestryChartData.slice(0, 5).map((entry) => (
+              <div key={entry.name} className="flex items-center justify-between group">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: CONTINENT_META[entry.name]?.color }}></div>
+                  <span className="text-xs font-medium text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">{entry.name}</span>
                 </div>
-                <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1 overflow-hidden">
-                  <div 
-                    className="bg-amber-500 h-full rounded-full transition-all duration-1000" 
-                    style={{ width: `${score}%`, transitionDelay: `${idx * 100}ms` }}
-                  ></div>
-                </div>
+                <span className="text-xs font-mono font-bold text-slate-900 dark:text-slate-100">{entry.value.toFixed(1)}%</span>
               </div>
-            )) : (
-              <div className="text-center py-4 text-slate-400 text-[10px] italic">
-                Insufficient markers for sub-population mapping
-              </div>
-            )}
+            ))}
           </div>
         </div>
+      </motion.div>
 
-        {/* Lineage Paths */}
+      {/* Paternal Lineage - Medium */}
+      <motion.div 
+        variants={item}
+        className="md:col-span-2 lg:col-span-2 p-6 rounded-3xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 shadow-sm hover:shadow-md transition-all group"
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">♂️</div>
+          <h4 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-widest">Paternal Lineage</h4>
+        </div>
+        <div className="flex items-baseline gap-2 mb-1">
+          <span className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter group-hover:scale-105 transition-transform origin-left inline-block">
+            {yData?.predicted?.name || 'Unknown'}
+          </span>
+        </div>
+        <div className="text-[10px] font-bold text-indigo-600/70 dark:text-indigo-400/70 uppercase mb-4">
+          {yData?.predicted?.marker ? `Haplogroup ${yData.predicted.name}` : 'No specific clade detected'}
+        </div>
+        <div className="p-3 rounded-xl bg-white/60 dark:bg-slate-900/40 border border-indigo-50 dark:border-indigo-800/20">
+          <div className="text-[9px] font-bold text-slate-400 uppercase mb-1">Defining Marker</div>
+          <div className="text-xs font-mono font-bold text-indigo-700 dark:text-indigo-300">{yData?.predicted?.marker || 'N/A'}</div>
+        </div>
+      </motion.div>
+
+      {/* Maternal Lineage - Medium */}
+      <motion.div 
+        variants={item}
+        className="md:col-span-2 lg:col-span-2 p-6 rounded-3xl bg-rose-50/50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-800/30 shadow-sm hover:shadow-md transition-all group"
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600">♀️</div>
+          <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300 uppercase tracking-widest">Maternal Lineage</h4>
+        </div>
+        <div className="flex items-baseline gap-2 mb-1">
+          <span className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter group-hover:scale-105 transition-transform origin-left inline-block">
+            {mtData?.predicted || 'Unknown'}
+          </span>
+        </div>
+        <div className="text-[10px] font-bold text-rose-600/70 dark:text-rose-400/70 uppercase mb-4">
+          {mtData?.region || 'Global Maternal Line'}
+        </div>
+        <div className="p-3 rounded-xl bg-white/60 dark:bg-slate-900/40 border border-rose-50 dark:border-rose-800/20">
+          <div className="text-[9px] font-bold text-slate-400 uppercase mb-1">Historical Region</div>
+          <div className="text-xs font-bold text-rose-700 dark:text-rose-300">{mtData?.region || 'N/A'}</div>
+        </div>
+      </motion.div>
+
+      {/* Top Affinities - Medium */}
+      <motion.div 
+        variants={item}
+        className="md:col-span-2 lg:col-span-2 row-span-2 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600">🎯</div>
+          <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-widest">Top Affinities</h4>
+        </div>
         <div className="space-y-4">
-          {yData?.path?.length > 0 && (
-            <div className="p-4 rounded-2xl bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/30">
-              <div className="text-[9px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-2">Paternal Migration Path</div>
-              <div className="flex flex-wrap items-center gap-1.5">
-                {yData.path.map((step: string, idx: number) => (
-                  <div key={idx} className="flex items-center gap-1">
-                    {idx > 0 && <span className="text-blue-300 text-[8px]">▶</span>}
-                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-bold ${idx === yData.path.length - 1 ? 'bg-blue-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 text-blue-800 dark:text-blue-200 border border-blue-100 dark:border-blue-800'}`}>
-                      {step.replace("Haplogroup ", "")}
-                    </span>
-                  </div>
-                ))}
+          {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
+            <div key={pop.name} className="space-y-1.5">
+              <div className="flex justify-between items-center">
+                <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300">{pop.name}</span>
+                <span className="text-[10px] font-mono font-bold text-amber-600">{pop.percentage.toFixed(1)}%</span>
+              </div>
+              <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: `${pop.percentage}%` }}
+                  transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
+                  className="bg-amber-500 h-full rounded-full"
+                />
               </div>
             </div>
-          )}
-          {mtData?.path?.length > 0 && (
-            <div className="p-4 rounded-2xl bg-rose-50/50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-800/30">
-              <div className="text-[9px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest mb-2">Maternal Migration Path</div>
-              <div className="flex flex-wrap items-center gap-1.5">
-                {mtData.path.map((step: string, idx: number) => (
-                  <div key={idx} className="flex items-center gap-1">
-                    {idx > 0 && <span className="text-rose-300 text-[8px]">▶</span>}
-                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-bold ${idx === mtData.path.length - 1 ? 'bg-rose-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 text-rose-800 dark:text-rose-200 border border-rose-100 dark:border-rose-800'}`}>
-                      {step.replace("Haplogroup ", "")}
-                    </span>
-                  </div>
-                ))}
-              </div>
+          )) : (
+            <div className="text-center py-8 text-slate-400 text-[10px] italic">
+              Insufficient data for sub-population mapping
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+
+      {/* Migration Paths - Wide */}
+      <motion.div 
+        variants={item}
+        className="md:col-span-4 lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white shadow-xl overflow-hidden relative"
+      >
+        <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
+        <div className="relative z-10">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sky-400">🗺️</div>
+            <h4 className="text-xs font-bold text-sky-400 uppercase tracking-widest">Historical Migration Paths</h4>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <div className="text-[9px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Paternal (Y-DNA)</div>
+              <div className="flex flex-wrap items-center gap-2">
+                {yData?.path?.map((step: string, idx: number) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    {idx > 0 && <span className="text-slate-600 text-[8px]">→</span>}
+                    <span className={`px-2 py-1 rounded-lg text-[10px] font-bold border ${idx === yData.path.length - 1 ? 'bg-sky-500 border-sky-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
+                      {step.replace("Haplogroup ", "")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="text-[9px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Maternal (mtDNA)</div>
+              <div className="flex flex-wrap items-center gap-2">
+                {mtData?.path?.map((step: string, idx: number) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    {idx > 0 && <span className="text-slate-600 text-[8px]">→</span>}
+                    <span className={`px-2 py-1 rounded-lg text-[10px] font-bold border ${idx === mtData.path.length - 1 ? 'bg-rose-500 border-rose-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
+                      {step.replace("Haplogroup ", "")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 });
 
@@ -239,12 +348,22 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
   const meta = (CATEGORY_META as any)[snp.category] || { color: "#0284c7", icon: "🧬" };
   
   return (
-    <div className={`p-4 rounded-xl border transition-all ${snp.status === 'partial' ? 'border-amber-400 bg-amber-50/10' : ''} ${isExpanded ? 'bg-white dark:bg-slate-800 border-sky-500 shadow-md' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 shadow-sm'}`}>
+    <motion.div 
+      layout
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -2, transition: { duration: 0.2 } }}
+      className={`p-4 rounded-xl border transition-all cursor-pointer group ${snp.status === 'partial' ? 'border-amber-400 bg-amber-50/10' : ''} ${isExpanded ? 'bg-white dark:bg-slate-800 border-sky-500 shadow-md' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 shadow-sm'}`}
+      onClick={() => onToggleExpand(snp.rsid)}
+    >
       <div className="flex items-center justify-between gap-4 mb-2">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+          <motion.div 
+            whileHover={{ rotate: 15 }}
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-sm bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 group-hover:bg-sky-50 dark:group-hover:bg-sky-900/30 transition-colors"
+          >
             {meta.icon}
-          </div>
+          </motion.div>
           <div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs font-bold text-sky-600 dark:text-sky-400">{snp.rsid}</span>
@@ -255,7 +374,7 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
             {snp.status === 'partial' && (
               <div className="text-[9px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-tighter">Partial Match</div>
             )}
-            <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">{snp.trait}</h4>
+            <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">{snp.trait}</h4>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -263,33 +382,44 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
             <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Genotype</div>
             <div className="text-sm font-mono font-bold text-slate-900 dark:text-slate-100">{snp.genotype || '--'}</div>
           </div>
-          <button 
-            onClick={() => onToggleExpand(snp.rsid)}
-            className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
-          >
-            {isExpanded ? '▲' : '▼'}
-          </button>
+          <div className={`p-2 rounded-full transition-colors ${isExpanded ? 'bg-sky-100 dark:bg-sky-900/50 text-sky-600' : 'text-slate-400 group-hover:text-sky-500'}`}>
+            <motion.span
+              animate={{ rotate: isExpanded ? 180 : 0 }}
+              className="inline-block text-[10px]"
+            >
+              ▼
+            </motion.span>
+          </div>
         </div>
       </div>
       
-      {isExpanded && (
-        <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 animate-fade-in">
-          <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-            {snp.description}
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Gene</div>
-              <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{snp.gene || 'N/A'}</div>
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                {snp.description}
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Gene</div>
+                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{snp.gene || 'N/A'}</div>
+                </div>
+                <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Region</div>
+                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{snp.continent}</div>
+                </div>
+              </div>
             </div>
-            <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Region</div>
-              <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{snp.continent}</div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 });
 
