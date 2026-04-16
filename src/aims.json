@@ -1,5 +1,623 @@
 [
   {
+    "rsid": "rs10456197",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.99,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "San": 0.98,
+      "Khoe": 0.95,
+      "Ju|'hoansi": 0.99,
+      "Nama": 0.92,
+      "Basarwa": 0.9
+    },
+    "description": "Khoisan Ancestry Marker - highly diagnostic for the indigenous Khoe-San populations of Southern Africa."
+  },
+  {
+    "rsid": "rs12149626",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Dinka": 0.98,
+      "Nuer": 0.97,
+      "Shilluk": 0.95,
+      "Luo": 0.85,
+      "Maasai": 0.7
+    },
+    "description": "Nilotic Ancestry Marker - diagnostic for Nilotic-speaking populations of the Nile Valley and East Africa."
+  },
+  {
+    "rsid": "rs12149628",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "Somali": 0.95,
+      "Oromo": 0.9,
+      "Amhara": 0.85,
+      "Tigray": 0.82,
+      "Afar": 0.88
+    },
+    "description": "Cushitic Ancestry Marker - informative for Afroasiatic-speaking populations of the Horn of Africa."
+  },
+  {
+    "rsid": "rs7252508",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Biaka": 0.99,
+      "Mbuti": 0.98,
+      "Twa": 0.95,
+      "Baka": 0.96
+    },
+    "description": "Central African Hunter-Gatherer Marker - diagnostic for Pygmy populations of the Congo Basin."
+  },
+  {
+    "rsid": "rs10456213",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mende": 0.98,
+      "Gambian": 0.95,
+      "Temne": 0.92,
+      "Limba": 0.9,
+      "Wolof": 0.85
+    },
+    "description": "Upper Guinea Ancestry Marker - informative for populations of the Senegambia and Sierra Leone region."
+  },
+  {
+    "rsid": "rs10456215",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.99,
+      "Igbo": 0.95,
+      "Edo": 0.92,
+      "Fon": 0.9,
+      "Ewe": 0.88
+    },
+    "description": "Bight of Benin Ancestry Marker - highly informative for Gbe and Yoruboid speaking populations."
+  },
+  {
+    "rsid": "rs10456216",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Luhya": 0.98,
+      "Baganda": 0.95,
+      "Kikuyu": 0.92,
+      "Chaga": 0.9,
+      "Sukuma": 0.88
+    },
+    "description": "East African Bantu Marker - informative for Bantu-speaking populations of the Great Lakes region."
+  },
+  {
+    "rsid": "rs10456198",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.98,
+      "Xhosa": 0.96,
+      "Sotho": 0.94,
+      "Tswana": 0.92,
+      "Shona": 0.9
+    },
+    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana speaking populations."
+  },
+  {
+    "rsid": "rs10456271",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.4,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.85
+    },
+    "subFrequencies": {
+      "Berber": 0.95,
+      "Kabyle": 0.92,
+      "Mozabite": 0.98,
+      "Tuareg": 0.75,
+      "Riffian": 0.88
+    },
+    "description": "Berber Ancestry Marker - highly informative for the indigenous Amazigh populations of North Africa."
+  },
+  {
+    "rsid": "rs10456234",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.85,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.3
+    },
+    "subFrequencies": {
+      "Tuareg": 0.9,
+      "Songhai": 0.85,
+      "Zarma": 0.82,
+      "Hausa": 0.7,
+      "Fulani": 0.65
+    },
+    "description": "Sahelian Ancestry Marker - informative for populations of the Sahel and Southern Sahara."
+  },
+  {
+    "rsid": "rs10456258",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Kanuri": 0.98,
+      "Bagirmi": 0.92,
+      "Fur": 0.9,
+      "Zaghawa": 0.88,
+      "Maba": 0.85
+    },
+    "description": "Nilo-Saharan Ancestry Marker - diagnostic for populations of the Lake Chad Basin and Darfur."
+  },
+  {
+    "rsid": "rs10456248",
+    "region": "African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Mossi": 0.98,
+      "Dagomba": 0.95,
+      "Gurma": 0.92,
+      "Senufo": 0.85,
+      "Lobi": 0.8
+    },
+    "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana)."
+  },
+  {
+    "rsid": "rs10456269",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.4
+    },
+    "subFrequencies": {
+      "Amhara": 0.95,
+      "Tigray": 0.92,
+      "Gurage": 0.88,
+      "Harari": 0.85,
+      "Argobba": 0.82
+    },
+    "description": "Ethiosemitic Ancestry Marker - informative for the Semitic-speaking populations of the Ethiopian Highlands."
+  },
+  {
+    "rsid": "rs1426654",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.99,
+      "EAS": 0.02,
+      "AMR": 0.15,
+      "SAS": 0.85,
+      "MENA": 0.8
+    },
+    "subFrequencies": {
+      "Brahmin": 0.95,
+      "Punjabi": 0.92,
+      "Bengali": 0.8,
+      "Tamil": 0.75,
+      "Sinhalese": 0.72
+    },
+    "description": "SLC24A5 variant - highly informative for West Eurasian and South Asian populations."
+  },
+  {
+    "rsid": "rs3827760",
+    "region": "Native American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.98,
+      "SAS": 0.05,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.99,
+      "Quechua": 0.98,
+      "Karitiana": 1.0,
+      "Pima": 0.97,
+      "Nahua": 0.95
+    },
+    "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits."
+  },
+  {
+    "rsid": "rs12913832",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.85,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.3,
+      "MENA": 0.75
+    },
+    "subFrequencies": {
+      "Levantine": 0.85,
+      "Bedouin": 0.7,
+      "Druze": 0.9,
+      "Palestinian": 0.8,
+      "Mizrahi": 0.88
+    },
+    "description": "HERC2 variant - informative for West Eurasian and Middle Eastern populations, associated with eye color."
+  },
+  {
+    "rsid": "rs17822931",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.8,
+      "AMR": 0.7,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "subFrequencies": {
+      "Papuan": 0.98,
+      "Melanesian": 0.96,
+      "Aboriginal": 0.92,
+      "Polynesian": 0.75,
+      "Micronesian": 0.7
+    },
+    "description": "ABCC11 variant - highly informative for East Asian, Native American, and Oceanian populations."
+  },
+  {
+    "rsid": "rs10456301",
+    "region": "Central Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.3,
+      "EAS": 0.4,
+      "AMR": 0.1,
+      "SAS": 0.2,
+      "MENA": 0.1,
+      "CAS": 0.9
+    },
+    "subFrequencies": {
+      "Uzbek": 0.85,
+      "Kazakh": 0.92,
+      "Kyrgyz": 0.9,
+      "Turkmen": 0.8,
+      "Tajik": 0.75
+    },
+    "description": "Central Asian Steppe Marker - diagnostic for the admixed populations of the Silk Road."
+  },
+  {
+    "rsid": "rs10456302",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.95,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Dravidian": 0.98,
+      "Indo-Aryan": 0.85,
+      "Munda": 0.9,
+      "Tibeto-Burman_SA": 0.4
+    },
+    "description": "Ancestral South Indian (ASI) Marker - diagnostic for the indigenous populations of the Indian subcontinent."
+  },
+  {
+    "rsid": "rs10456303",
+    "region": "Native American",
+    "alleles": [
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.99,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Amazonian": 0.99,
+      "Andean": 0.95,
+      "Mesoamerican": 0.9,
+      "North_American_Indigenous": 0.85
+    },
+    "description": "Pan-American Indigenous Marker - highly diagnostic for pre-Columbian populations of the Americas."
+  },
+  {
+    "rsid": "rs10456304",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.99
+    },
+    "subFrequencies": {
+      "Bougainville": 0.99,
+      "Solomon_Islands": 0.97,
+      "Fiji": 0.85,
+      "Samoa": 0.7
+    },
+    "description": "Melanesian Specific Marker - diagnostic for the unique genetic lineages of the Bismarck Archipelago and Solomon Islands."
+  },
+  {
+    "rsid": "rs12203592",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.95,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "Northern_European": 0.98,
+      "Southern_European": 0.85,
+      "Western_European": 0.92,
+      "Eastern_European": 0.9
+    },
+    "description": "IRF4 variant - highly informative for European populations, associated with skin and hair pigmentation."
+  },
+  {
+    "rsid": "rs16891982",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.99,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Celtic": 0.99,
+      "Germanic": 0.98,
+      "Slavic": 0.95,
+      "Italic": 0.9
+    },
+    "description": "SLC45A2 variant - diagnostic for European ancestry, specifically Northern and Western branches."
+  },
+  {
+    "rsid": "rs1129038",
+    "region": "Middle Eastern",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.4,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.15,
+      "MENA": 0.92
+    },
+    "subFrequencies": {
+      "Arabian": 0.98,
+      "Levantine": 0.85,
+      "Mesopotamian": 0.9,
+      "Anatolian": 0.75
+    },
+    "description": "HERC2/OCA2 region marker - highly informative for Middle Eastern and Mediterranean populations."
+  },
+  {
+    "rsid": "rs10456305",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.99,
+      "AMR": 0.8,
+      "SAS": 0.05,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Han_Chinese": 0.99,
+      "Japanese": 0.98,
+      "Korean": 0.97,
+      "Vietnamese": 0.9
+    },
+    "description": "East Asian Core Marker - highly diagnostic for Sinitic and Japonic populations."
+  },
+  {
+    "rsid": "rs10456306",
+    "region": "East Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.6,
+      "SAS": 0.1,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Tibetan": 0.98,
+      "Mongolian": 0.95,
+      "Manchu": 0.92,
+      "Uyghur": 0.4
+    },
+    "description": "High-Altitude Adaptation Marker - informative for Tibetan and Central Asian populations."
+  },
+  {
     "rsid": "rs10456247",
     "region": "African",
     "alleles": [

@@ -1355,6 +1355,111 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
   );
 });
 
+const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], activeDataset?: any }) => {
+  const regions = ['African', 'European', 'East Asian', 'South Asian', 'Native American', 'Middle Eastern', 'Oceanian'];
+  
+  const counts = regions.map(region => {
+    const markerCount = snps.filter(s => s.continent === region).length;
+    const aimCount = aims.filter(a => a.region === region).length;
+    return { region, markerCount, aimCount };
+  });
+
+  // Calculate coverage if a dataset is active
+  const coverage = activeDataset ? {
+    matched: activeDataset.snpCount || 0,
+    total: snps.length,
+    percent: ((activeDataset.snpCount || 0) / snps.length * 100).toFixed(1)
+  } : null;
+
+  return (
+    <div className="space-y-8 animate-fade-up">
+      {/* Database Overview */}
+      <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+        <div className="flex items-center gap-4 mb-8">
+          <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-2xl">📊</div>
+          <div>
+            <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Database Distribution</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400">Regional marker density in the reference panel</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {counts.map(c => (
+            <div key={c.region} className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 group hover:border-indigo-500 transition-colors">
+              <div className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">{c.region}</div>
+              <div className="flex justify-between items-end">
+                <div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-slate-100">{c.markerCount.toLocaleString()}</div>
+                  <div className="text-[10px] text-slate-500 uppercase font-bold">Markers</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{c.aimCount.toLocaleString()}</div>
+                  <div className="text-[10px] text-slate-500 uppercase font-bold">AIMs</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Analysis Coverage */}
+      {activeDataset && (
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <h4 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-widest mb-6">SNP Coverage</h4>
+          <div className="space-y-6">
+            <div className="flex justify-between items-end">
+              <span className="text-xs font-bold text-slate-500 uppercase">Matched SNPs</span>
+              <span className="text-2xl font-black text-slate-900 dark:text-slate-100">{coverage?.matched.toLocaleString()}</span>
+            </div>
+            <div className="w-full h-3 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-indigo-500 transition-all duration-1000" 
+                style={{ width: `${coverage?.percent}%` }}
+              />
+            </div>
+            <p className="text-[10px] text-slate-500 leading-relaxed">
+              Your file covers <span className="font-bold text-indigo-600 dark:text-indigo-400">{coverage?.percent}%</span> of the reference database. 
+              Higher coverage typically leads to more stable ancestry predictions.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* System Info */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="p-6 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/50">
+          <div className="flex justify-between items-center">
+            <div>
+              <div className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-widest mb-1">Total Database Size</div>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">{(snps.length + aims.length).toLocaleString()} Entries</div>
+            </div>
+            <div className="text-right">
+              <div className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-widest mb-1">System Status</div>
+              <div className="text-xs font-bold text-emerald-500 flex items-center gap-1 justify-end">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Operational
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+          <div className="flex justify-between items-center">
+            <div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Chip Detection</div>
+              <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{activeDataset?.chip || 'No file uploaded'}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Last Update</div>
+              <div className="text-xs font-mono text-slate-400">2026-04-16</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function App() {
   const [snps, setSnps] = useState<SNP[]>(SNP_DB);
   const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }[]>([]);
@@ -1382,7 +1487,7 @@ export default function App() {
 
   const [darkMode, setDarkMode] = useState(true);
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna'>('autosomal');
+  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [collapsedCategories, setCollapsedCategories] = useState<Set<string>>(new Set());
@@ -1850,6 +1955,12 @@ export default function App() {
             >
               📊 Profile Summary
             </button>
+            <button 
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'debug' ? 'bg-slate-800 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
+              onClick={() => setActiveTab('debug')}
+            >
+              🛠️ Debug
+            </button>
           </div>
 
           {datasets.length > 1 && (
@@ -1970,6 +2081,14 @@ export default function App() {
               mtData={datasets[activeDatasetIndex].predictedMtDNA} 
               treeSearchTerm={treeSearchTerm}
               setTreeSearchTerm={setTreeSearchTerm}
+            />
+          )}
+
+          {activeTab === 'debug' && (
+            <DebugView 
+              snps={snps} 
+              aims={ANCHOR_AIMS} 
+              activeDataset={datasets[activeDatasetIndex]} 
             />
           )}
 
