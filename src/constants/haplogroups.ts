@@ -857,6 +857,24 @@ export const MT_DNA_TREE: HaplogroupNode = {
       ]
     },
     {
+      branchName: "Haplogroup L4",
+      mutations: ["G16230A", "T16311C"],
+      region: "East Africa",
+      description: "A lineage primarily found in East Africa, particularly among Hadza and Sandawe populations."
+    },
+    {
+      branchName: "Haplogroup L5",
+      mutations: ["C16148T", "C16187T", "C16189T"],
+      region: "East Africa",
+      description: "Found in East Africa, especially among Mbuti Pygmies."
+    },
+    {
+      branchName: "Haplogroup L6",
+      mutations: ["T16223C", "C16311T"],
+      region: "Yemen / Ethiopia",
+      description: "A rare lineage found in Yemen and Ethiopia."
+    },
+    {
       branchName: "Haplogroup L3",
       mutations: ["G760A", "G1014A", "G3594A", "G4104A", "G7028A", "G7256A", "G7521A", "G8468A", "G8655A", "G9540A", "G10394A", "G10400A", "G10810A", "G10873A", "G12720A", "G13105A", "G13276A", "G13506A", "G13650A", "G14766A", "G15326A", "G16129A", "G16223A", "G16311A"],
       region: "East Africa / Global Ancestor",
@@ -872,6 +890,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
           region: "Asia / Oceania / Americas",
           description: "One of the two major lineages that migrated out of Africa. It is dominant in South and East Asia.",
           children: [
+            { branchName: "M1", mutations: ["T16129C", "C16189T", "T16223C", "G16249A", "T16311C"], region: "North Africa / Near East / East Africa", description: "The only branch of M that is common in Africa, specifically North and East Africa." },
             { branchName: "M7", mutations: ["G16297A"], region: "East Asia (Japan/China)" },
             { branchName: "M8", mutations: ["G16319A"], region: "East Asia", children: [
               { branchName: "CZ", mutations: ["G16298A"], children: [
@@ -883,7 +902,8 @@ export const MT_DNA_TREE: HaplogroupNode = {
             { branchName: "M10", mutations: ["G16129A"], region: "East Asia" },
             { branchName: "D", mutations: ["G16362A"], region: "East Asia / Americas" },
             { branchName: "G", mutations: ["G16223A"], region: "East Asia / Siberia" },
-            { branchName: "Q", mutations: ["G16129A", "G16223A"], region: "Oceania" }
+            { branchName: "Q", mutations: ["G16129A", "G16223A"], region: "Oceania" },
+            { branchName: "E", mutations: ["T16311C", "G16362A"], region: "Island Southeast Asia / Oceania" }
           ]
         },
         {
@@ -898,9 +918,34 @@ export const MT_DNA_TREE: HaplogroupNode = {
             { branchName: "N2", mutations: ["G16223A"], children: [
               { branchName: "W", mutations: ["G16223A", "G16292A"], region: "Europe / South Asia" }
             ]},
+            { branchName: "N9", mutations: ["T16223C", "G16311A"], region: "East Asia / Siberia / Japan", children: [
+              { branchName: "Y", mutations: ["G16126C", "G16231A"], region: "Siberia / East Asia" }
+            ]},
             { branchName: "A", mutations: ["G16223A", "G16290A", "G16319A"], region: "East Asia / Americas" },
             { branchName: "S", mutations: ["G16223A"], region: "Australia" },
-            { branchName: "Y", mutations: ["G16126C", "G16231A"], region: "Siberia / East Asia" },
+            { branchName: "O", mutations: ["T16093C", "C16261T"], region: "Oceania / Southeast Asia" },
+            {
+              branchName: "Haplogroup X",
+              mutations: ["A153G", "C6221T", "G14470A", "T16189C", "T16278C"],
+              region: "Middle East / Europe / North America",
+              description: "A rare but widely dispersed West Eurasian lineage. It is unique for being found in both Europe, the Near East, and among certain Native American groups (Algonquian speakers). It represents an ancient migration that reached the Americas independently of the main Beringian waves.",
+              children: [
+                { branchName: "X1", mutations: ["T146C", "T152C"], region: "North/East Africa / Near East" },
+                { 
+                  branchName: "X2", 
+                  mutations: ["C195T", "A247G"], 
+                  region: "Europe / Near East / North America",
+                  children: [
+                    { branchName: "X2a", mutations: ["A200G", "T16213C", "G16213A", "C16278T"], region: "North America (Native American)" },
+                    { branchName: "X2b", mutations: ["T226C", "G16189C"], region: "Europe / Near East" },
+                    { branchName: "X2c", mutations: ["T146C", "T152C", "T16223C", "G16248A"], region: "Europe" },
+                    { branchName: "X2d", mutations: ["T16223C", "G16391A", "A16248G"], region: "Europe / Middle East" },
+                    { branchName: "X2e", mutations: ["G15310A", "T16223C"], region: "Europe / Middle East" },
+                    { branchName: "X2f", mutations: ["G16390A"], region: "Caucasus / Middle East" }
+                  ]
+                }
+              ]
+            },
             {
               branchName: "Haplogroup R",
               mutations: ["G12705A", "G16223A"],
