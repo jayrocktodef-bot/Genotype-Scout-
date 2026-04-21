@@ -20,7 +20,13 @@ import { saveResults, loadResults, clearResults } from "./services/storageServic
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
-const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }: { node: any, userPath: string[], level?: number, searchTerm?: string }) => {
+const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', testedMarkers = [] }: { 
+  node: any, 
+  userPath: string[], 
+  level?: number, 
+  searchTerm?: string,
+  testedMarkers?: any[]
+}) => {
   const isMatch = userPath.includes(node.branchName);
   const matchesSearch = searchTerm && node.branchName.toLowerCase().includes(searchTerm.toLowerCase());
   const [isExpanded, setIsExpanded] = useState(isMatch || level < 1 || !!matchesSearch);
@@ -29,8 +35,15 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }:
     if (matchesSearch) setIsExpanded(true);
   }, [matchesSearch]);
 
-  const mutations = node.mutations || [];
+  const treeMarkers = node.snp || node.mutations || [];
   const hasChildren = node.children && node.children.length > 0;
+
+  // Optimized marker match check
+  const getMarkerStatus = (m: string) => {
+    const tested = testedMarkers.find(tm => (tm.marker === m || tm.mutation === m));
+    if (!tested) return 'untested';
+    return (tested.isDerived || tested.status === 'derived') ? 'derived' : 'ancestral';
+  };
 
   return (
     <div className={`ml-4 border-l border-slate-200 dark:border-slate-700 pl-4 my-1 ${matchesSearch ? 'ring-2 ring-sky-500/20 rounded-r' : ''}`}>
@@ -53,19 +66,34 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }:
               <span className="text-[9px] text-slate-400 font-medium uppercase tracking-wider">{node.region}</span>
             )}
           </div>
+          {node.description && (
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">{node.description}</p>
+          )}
           <AnimatePresence>
-            {isExpanded && mutations.length > 0 && (
+            {isExpanded && treeMarkers.length > 0 && (
               <motion.div 
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 className="flex flex-wrap gap-1 mt-1 overflow-hidden"
               >
-                {mutations.map((m: string, idx: number) => (
-                  <span key={idx} className={`text-[9px] font-mono px-1 py-0.5 rounded ${userPath.includes(node.branchName) && mutations.slice(0, idx+1).every((mut: string) => mut) ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
-                    {m}
-                  </span>
-                ))}
+                {treeMarkers.map((m: string, idx: number) => {
+                  const status = getMarkerStatus(m);
+                  return (
+                    <span 
+                      key={idx} 
+                      className={`text-[9px] font-mono px-1 py-0.5 rounded transition-colors ${
+                        status === 'derived' 
+                          ? 'bg-blue-600 text-white font-bold ring-1 ring-blue-400 shadow-sm' 
+                          : status === 'ancestral'
+                          ? 'bg-slate-200 dark:bg-slate-700 text-slate-500 border border-slate-300 dark:border-slate-600'
+                          : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
+                      }`}
+                    >
+                      {m}
+                    </span>
+                  );
+                })}
               </motion.div>
             )}
           </AnimatePresence>
@@ -80,7 +108,7 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '' }:
             className="overflow-hidden"
           >
             {node.children.map((child: any, i: number) => (
-              <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} searchTerm={searchTerm} />
+              <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} searchTerm={searchTerm} testedMarkers={testedMarkers} />
             ))}
           </motion.div>
         )}
@@ -173,6 +201,13 @@ const ProfileSummary = memo(({
               <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Continental Breakdown</p>
             </div>
           </div>
+          <button 
+            onClick={() => alert('Share functionality: Generating link/image...')}
+            className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-2"
+          >
+            <span>Share</span>
+            <span>📤</span>
+          </button>
           {topContinent && (
             <div className="text-right">
               <div className="text-[10px] font-bold text-sky-600 uppercase tracking-widest">Primary</div>
@@ -845,7 +880,7 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
   );
 });
 
-const YDNAView = memo(({ yData }: { yData: any }) => {
+const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: any, treeSearchTerm: string, setTreeSearchTerm: (v: string) => void }) => {
   if (!yData) return null;
 
   const derivedMarkers = yData.testedMarkers.filter((m: any) => m.isDerived);
@@ -1034,13 +1069,32 @@ const YDNAView = memo(({ yData }: { yData: any }) => {
       {/* Tree and Markers Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Phylogenetic Tree */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-3">
-            <span className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">🌳</span>
-            Phylogenetic Tree
-          </h3>
-          <div className="max-h-[500px] overflow-y-auto pr-2">
-              <HaplogroupTreeView node={Y_DNA_TREE} userPath={yData.path} />
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">🌳</span>
+              Phylogenetic Tree
+            </h3>
+            <div className="relative">
+              <input 
+                type="text" 
+                placeholder="Find branch or SNP..." 
+                className="bg-slate-100 dark:bg-slate-900 rounded-full px-4 py-1.5 pl-9 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none border border-slate-200 dark:border-slate-700 w-full sm:w-48 transition-all"
+                value={treeSearchTerm}
+                onChange={(e) => setTreeSearchTerm(e.target.value)}
+              />
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div className="max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+              <HaplogroupTreeView 
+                node={Y_DNA_TREE} 
+                userPath={yData.path} 
+                searchTerm={treeSearchTerm} 
+                testedMarkers={yData.testedMarkers}
+              />
           </div>
         </div>
 
@@ -1266,23 +1320,32 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-6">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-              <span className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-rose-600">🌳</span>
+        <div className="lg:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 dark:text-rose-400">🌳</span>
               Phylogenetic Tree
             </h3>
             <div className="relative">
               <input 
                 type="text" 
-                placeholder="Search branches..." 
-                className="text-[10px] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:ring-2 focus:ring-sky-500 outline-none w-40 transition-all"
+                placeholder="Find branch or mutation..." 
+                className="bg-slate-100 dark:bg-slate-900 rounded-full px-4 py-1.5 pl-9 text-xs font-bold focus:ring-2 focus:ring-rose-500 outline-none border border-slate-200 dark:border-slate-700 w-full sm:w-48 transition-all"
+                value={treeSearchTerm}
                 onChange={(e) => setTreeSearchTerm(e.target.value)}
               />
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </div>
             </div>
           </div>
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-x-auto">
-            <HaplogroupTreeView node={MT_DNA_TREE} userPath={mtData.path} searchTerm={treeSearchTerm} />
+          <div className="max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+            <HaplogroupTreeView 
+              node={MT_DNA_TREE} 
+              userPath={mtData.path} 
+              searchTerm={treeSearchTerm} 
+              testedMarkers={mtData.testedMarkers}
+            />
           </div>
         </div>
 
@@ -1459,6 +1522,7 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
     </div>
   );
 };
+
 
 export default function App() {
   const [snps, setSnps] = useState<SNP[]>(SNP_DB);
@@ -2072,8 +2136,18 @@ export default function App() {
             />
           )}
 
+          {activeTab === 'heatmap' && (
+            <HeatmapView 
+              filteredResults={filteredResults}
+            />
+          )}
+
           {activeTab === 'y-dna' && (
-            <YDNAView yData={datasets[activeDatasetIndex].predictedYDNA} />
+            <YDNAView 
+              yData={datasets[activeDatasetIndex].predictedYDNA} 
+              treeSearchTerm={treeSearchTerm}
+              setTreeSearchTerm={setTreeSearchTerm}
+            />
           )}
 
           {activeTab === 'mt-dna' && (

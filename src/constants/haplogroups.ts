@@ -98,51 +98,50 @@ export const Y_DNA_TREE: HaplogroupNode = {
     },
     {
       branchName: "Haplogroup B",
-      snp: ["M60", "BY31586", "CTS10487", "M8862", "M181"],
+      snp: ["M60", "BY31586", "CTS10487", "M8862"],
       region: "Central/Southern Africa",
-      description: "One of the oldest Y-DNA lineages, found primarily in African hunter-gatherer populations such as the Pygmies of Central Africa and the Hadza of Tanzania. It represents a lineage that remained in Africa while others migrated out.",
+      description: "One of the oldest Y-DNA lineages, found primarily in African hunter-gatherer populations such as the Pygmies of Central Africa and the Hadza of Tanzania.",
       children: [
         {
-          branchName: "B-M8633",
-          snp: ["M8633", "CTS11573", "CTS1388", "M8691"],
-          region: "Central Africa",
-          description: "A sub-branch of Haplogroup B common in the Congo Basin."
-        },
-        {
-          branchName: "B-V2342",
-          snp: ["V2342", "BY14680", "L1453"],
-          region: "East Africa",
-          description: "A sub-branch found in East African populations."
+          branchName: "Haplogroup B1",
+          snp: ["P1", "M236"],
+          region: "West Africa (Cameroon)",
+          description: "A rare and ancient branch of Haplogroup B found primarily in Cameroon."
         },
         {
           branchName: "Haplogroup B2",
-          snp: ["M181", "rs9786208", "rs2032599"],
-          region: "Central/Southern Africa",
-          description: "The most widespread branch of Haplogroup B.",
+          snp: ["M182", "M181"],
+          region: "Sub-Saharan Africa",
+          description: "The main ancestral branch for most modern Haplogroup B lineages.",
           children: [
             {
-              branchName: "Haplogroup B2a",
-              snp: ["M112", "rs9786154", "i4000027"],
+              branchName: "B-M8633",
+              snp: ["M8633", "CTS11573", "CTS1388", "M8691"],
               region: "Central Africa",
-              description: "Found among Central African Pygmy groups.",
+              description: "A sub-branch of Haplogroup B common in the Congo Basin."
+            },
+            {
+              branchName: "B-V2342",
+              snp: ["V2342", "BY14680", "L1453"],
+              region: "East Africa",
+              description: "A sub-branch found in East African populations like the Hadza."
+            },
+            {
+              branchName: "Haplogroup B2a",
+              snp: ["M150"],
+              region: "Central Africa",
+              description: "A major branch of Haplogroup B found among Bantu speakers and Pygmy groups.",
               children: [
                 { 
                   branchName: "Haplogroup B2a1", 
-                  snp: ["M115"],
+                  snp: ["M218", "M115"],
                   region: "Central Africa",
-                  description: "A common subclade in the rainforests of Central Africa.",
                   children: [
                     { 
                       branchName: "Haplogroup B2a1a", 
                       snp: ["M109"],
                       region: "Central Africa",
-                      description: "Specific to certain Pygmy populations."
-                    },
-                    { 
-                      branchName: "Haplogroup B2a1b", 
-                      snp: ["M150"],
-                      region: "Central Africa",
-                      description: "Found in the Congo region."
+                      description: "Found in Central African populations."
                     }
                   ]
                 }
@@ -150,21 +149,27 @@ export const Y_DNA_TREE: HaplogroupNode = {
             },
             {
               branchName: "Haplogroup B2b",
-              snp: ["P85", "P90"],
+              snp: ["M112", "M192", "M247"],
               region: "Southern Africa",
-              description: "Common among the Khoisan-speaking peoples of Southern Africa.",
+              description: "The most frequent branch of Haplogroup B among the Khoisan peoples of Southern Africa.",
               children: [
                 { 
                   branchName: "Haplogroup B2b1", 
-                  snp: ["M150", "i4000009"],
+                  snp: ["M116.1", "M211"],
                   region: "Southern Africa",
-                  description: "A major marker for the San people."
+                  description: "A major marker for certain San groups."
                 },
                 { 
                   branchName: "Haplogroup B2b2", 
-                  snp: ["M152"],
+                  snp: ["P85", "P90", "M152"],
                   region: "Southern Africa",
-                  description: "Found in Southern African hunter-gatherer groups."
+                  description: "Common among Khoisan hunter-gatherers."
+                },
+                { 
+                  branchName: "Haplogroup B2b3", 
+                  snp: ["rs17307044", "P7"],
+                  region: "Southern Africa",
+                  description: "Specific to South African indigenous populations."
                 }
               ]
             }
@@ -756,7 +761,15 @@ export const Y_DNA_TREE: HaplogroupNode = {
               branchName: "Haplogroup R1a1", 
               snp: ["SRY10831.2", "M17", "M198", "rs2032657", "i4000056"],
               region: "Eastern Europe / South Asia",
-              description: "The most common branch of R1a."
+              description: "The most common branch of R1a.",
+              children: [
+                {
+                  branchName: "Haplogroup R1a-Z93",
+                  snp: ["Z93", "Z94", "rs34614619"],
+                  region: "South Asia / Central Asia",
+                  description: "The 'Indo-Aryan' branch of R1a, dominant among Indo-European speaking populations of the Indian subcontinent and Central Asia."
+                }
+              ]
             }
           ]
         },
@@ -799,6 +812,48 @@ export const Y_DNA_TREE: HaplogroupNode = {
               description: "A unique branch of R1b found at high frequencies in the Lake Chad basin, representing an ancient back-migration to Africa."
             }
           ]
+        }
+      ]
+    },
+    {
+      branchName: "Haplogroup H",
+      snp: ["L901", "M2713"],
+      region: "South Asia (India/Pakistan)",
+      description: "Found at its highest frequencies in South Asia, particularly among Dravidian and tribal populations of India. It represents a major indigenous lineage of the subcontinent.",
+      children: [
+        {
+          branchName: "Haplogroup H1",
+          snp: ["M69", "rs2032629"],
+          region: "South Asia",
+          description: "The primary branch of H, very common across India.",
+          children: [
+            {
+              branchName: "Haplogroup H1a1",
+              snp: ["M52", "rs2032628"],
+              region: "India / Sri Lanka",
+              description: "A major subclade prevalent in the South subcontinent."
+            }
+          ]
+        },
+        {
+          branchName: "Haplogroup H3",
+          snp: ["Z5857"],
+          region: "South Asia / Romani",
+          description: "Found in India and at high frequencies among the Romani (Gypsy) people, confirming their Indian origins."
+        }
+      ]
+    },
+    {
+      branchName: "Haplogroup R2",
+      snp: ["M479", "L266"],
+      region: "South Asia / Central Asia",
+      description: "Found primarily in South Asia (India, Pakistan) and occasionally in Central Asia and the Caucasus.",
+      children: [
+        {
+          branchName: "Haplogroup R2a",
+          snp: ["M124"],
+          region: "South Asia",
+          description: "The most frequent branch of R2 in the Indian subcontinent."
         }
       ]
     },
@@ -891,6 +946,19 @@ export const MT_DNA_TREE: HaplogroupNode = {
           description: "One of the two major lineages that migrated out of Africa. It is dominant in South and East Asia.",
           children: [
             { branchName: "M1", mutations: ["T16129C", "C16189T", "T16223C", "G16249A", "T16311C"], region: "North Africa / Near East / East Africa", description: "The only branch of M that is common in Africa, specifically North and East Africa." },
+            { 
+              branchName: "M2-M6", 
+              mutations: ["C16223T"], 
+              region: "South Asia (India)", 
+              description: "A group of ancient branches largely endemic to the Indian subcontinent.",
+              children: [
+                { branchName: "M2", mutations: ["G447G", "C16223T"], region: "South Asia" },
+                { branchName: "M3", mutations: ["G482A", "C16223T"], region: "South Asia" },
+                { branchName: "M5", mutations: ["C16223T", "A16311G"], region: "South Asia" }
+              ]
+            },
+            { branchName: "M30", mutations: ["G16223A", "G16311A"], region: "South Asia", description: "A widespread South Asian branch." },
+            { branchName: "M33", mutations: ["G16223A"], region: "South Asia" },
             { branchName: "M7", mutations: ["G16297A"], region: "East Asia (Japan/China)" },
             { branchName: "M8", mutations: ["G16319A"], region: "East Asia", children: [
               { branchName: "CZ", mutations: ["G16298A"], children: [
@@ -918,6 +986,11 @@ export const MT_DNA_TREE: HaplogroupNode = {
             { branchName: "N2", mutations: ["G16223A"], children: [
               { branchName: "W", mutations: ["G16223A", "G16292A"], region: "Europe / South Asia" }
             ]},
+            { branchName: "U2", mutations: ["G16129A", "C16189T"], region: "South Asia / Central Asia / Europe", children: [
+              { branchName: "U2i", mutations: ["A16129G", "C16189T"], region: "South Asia" },
+              { branchName: "U2e", mutations: ["G16129A"], region: "Europe" }
+            ]},
+            { branchName: "U7", mutations: ["G16311A", "C16318T"], region: "South Asia / Middle East", description: "Found primarily in India, Iran, and the Caucasus." },
             { branchName: "N9", mutations: ["T16223C", "G16311A"], region: "East Asia / Siberia / Japan", children: [
               { branchName: "Y", mutations: ["G16126C", "G16231A"], region: "Siberia / East Asia" }
             ]},

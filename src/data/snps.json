@@ -903,6 +903,59 @@
     "description": "Defining marker for Haplogroup B2a."
   },
   {
+    "markerId": "M182",
+    "rsid": "rs2032599",
+    "gene": "Y-DNA",
+    "trait": "Haplogroup B2",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": ["G"],
+    "description": "Defining marker for Haplogroup B2."
+  },
+  {
+    "markerId": "M211",
+    "rsid": "rs17316499",
+    "gene": "Y-DNA",
+    "trait": "Haplogroup B2b1",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": ["A"],
+    "description": "Defining marker for Haplogroup B2b1."
+  },
+  {
+    "markerId": "M218",
+    "gene": "Y-DNA",
+    "trait": "Haplogroup B2a1",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": ["G"],
+    "description": "Defining marker for Haplogroup B2a1."
+  },
+  {
+    "markerId": "P1",
+    "aliases": ["M236"],
+    "gene": "Y-DNA",
+    "trait": "Haplogroup B1",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": ["G"],
+    "description": "Defining marker for Haplogroup B1."
+  },
+  {
+    "markerId": "P7",
+    "gene": "Y-DNA",
+    "trait": "Haplogroup B2b3",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": ["A"],
+    "description": "Subclade marker for Haplogroup B2b3 (Khoisan groups)."
+  },
+  {
     "markerId": "M115",
     "gene": "Y-DNA",
     "trait": "Haplogroup B2a1",

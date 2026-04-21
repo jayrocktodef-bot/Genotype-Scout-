@@ -52,69 +52,76 @@ const QUADRUPLE_WEIGHT_MARKERS = new Set([
   "rs1129038", "rs10456305", "rs10456306", "rs13430441",
   "rs16139", "rs4988238", "rs60910145", "rs10456364",
   "rs10456365", "rs10456366", "rs10456367", "rs10456368",
-  "rs10456369", "rs10456370"
+  "rs10456369", "rs10456370",
+  "rs6119471", "rs11190870", "rs7431289", "rs12224928", "rs9271160",
+  "rs16847050", "rs10456426", "rs12149627", "rs10456440", "rs13136405", "rs7252509", "rs11887534",
+  "rs12913832", "rs1426654", "rs11887534", "rs10456345",
+  "rs60910144", "rs16892766", "rs7712345", "rs11122334", "rs10456272", "rs5857297"
 ]);
 
-function solveLeastSquares(
-  genotypes: number[], 
+// Viterbi decoding for HMM
+function viterbi(
+  observations: number[],
   frequencies: number[][], // [marker][continent]
-  weights: number[], // [marker]
-  iterations = 100,
-  damping: number[] = [] // Optional damping factors per continent
+  numStates: number,
+  recombinationRate = 0.0001
 ): number[] {
-  const numMarkers = genotypes.length;
+  const numMarkers = observations.length;
   if (numMarkers === 0) return [];
-  const numContinents = frequencies[0].length;
-  
-  let proportions = new Array(numContinents).fill(1 / numContinents);
-  const learningRate = 0.2;
 
-  for (let iter = 0; iter < iterations; iter++) {
-    const gradients = new Array(numContinents).fill(0);
-    
-    for (let j = 0; j < numMarkers; j++) {
-      let prediction = 0;
-      for (let i = 0; i < numContinents; i++) {
-        prediction += proportions[i] * frequencies[j][i];
-      }
+  const viterbiTable = new Array(numStates).fill(0).map(() => new Array(numMarkers).fill(0));
+  const backpointer = new Array(numStates).fill(0).map(() => new Array(numMarkers).fill(0));
+
+  // Initialization
+  for (let i = 0; i < numStates; i++) {
+    const emission = frequencies[0][i];
+    viterbiTable[i][0] = Math.log(1 / numStates) + Math.log(Math.max(0.001, emission));
+  }
+
+  // Recursion
+  for (let t = 1; t < numMarkers; t++) {
+    for (let i = 0; i < numStates; i++) {
+      let maxProb = -Infinity;
+      let prevStateIndex = 0;
       
-      const error = prediction - genotypes[j] / 2;
-      const w = weights[j];
-      
-      for (let i = 0; i < numContinents; i++) {
-        gradients[i] += 2 * error * frequencies[j][i] * w;
+      const emission = Math.log(Math.max(0.001, frequencies[t][i]));
+
+      for (let j = 0; j < numStates; j++) {
+        const transition = Math.log((i === j) ? (1 - recombinationRate) : (recombinationRate / (numStates - 1)));
+        const prob = viterbiTable[j][t - 1] + transition + emission;
+        if (prob > maxProb) {
+          maxProb = prob;
+          prevStateIndex = j;
+        }
       }
-    }
-
-    // Update with gradient descent
-    for (let i = 0; i < numContinents; i++) {
-      proportions[i] -= (learningRate * gradients[i]) / numMarkers;
-      
-      // Apply damping if provided
-      if (damping[i] !== undefined) {
-        proportions[i] *= damping[i];
-      }
-
-      if (proportions[i] < 0) proportions[i] = 0;
-    }
-
-    // Project onto simplex (normalize)
-    const sum = proportions.reduce((a, b) => a + b, 0);
-    if (sum > 0) {
-      proportions = proportions.map(p => p / sum);
-    } else {
-      proportions = new Array(numContinents).fill(1 / numContinents);
+      viterbiTable[i][t] = maxProb;
+      backpointer[i][t] = prevStateIndex;
     }
   }
-  
-  return proportions;
+
+  // Backtracking
+  const path = new Array(numMarkers);
+  let maxFinalProb = -Infinity;
+  for (let i = 0; i < numStates; i++) {
+    if (viterbiTable[i][numMarkers - 1] > maxFinalProb) {
+      maxFinalProb = viterbiTable[i][numMarkers - 1];
+      path[numMarkers - 1] = i;
+    }
+  }
+
+  for (let t = numMarkers - 2; t >= 0; t--) {
+    path[t] = backpointer[path[t + 1]][t + 1];
+  }
+
+  return path;
 }
 
 export function runAncestryInference(
   allMarkers: any[],
   userGenotype: Record<string, string>,
   yHaploRegion?: string | null,
-  mtHaploRegion?: string | null
+  mtHaploRegion?: string | null,
+  isPrimary: boolean = false
 ): AncestryInferenceResult {
   const continentsToScore = [
     'African', 'European', 'East Asian', 'South Asian', 
@@ -138,6 +145,21 @@ export function runAncestryInference(
     const chrom = m.chrom.replace('chr', '').toUpperCase();
     if (!markersByChrom[chrom]) markersByChrom[chrom] = [];
     markersByChrom[chrom].push(m);
+  });
+
+  // LD Pruning: Remove markers within 100kb of each other to prevent LD bias
+  Object.keys(markersByChrom).forEach(chrom => {
+    const markers = markersByChrom[chrom].sort((a, b) => a.pos - b.pos);
+    const pruned: any[] = [];
+    let lastPos = -1000000;
+    
+    for (const m of markers) {
+      if (m.pos - lastPos > 100000) { // 100kb distance
+        pruned.push(m);
+        lastPos = m.pos;
+      }
+    }
+    markersByChrom[chrom] = pruned;
   });
 
   const chromosomeData: Record<string, Record<string, number>> = {};
@@ -265,38 +287,36 @@ export function runAncestryInference(
           continentSpecificWeight = 5.0; 
         }
 
-        const weight = (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight;
+        const weight = isPrimary ? 8.0 : (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight;
         windowWeights.push(weight);
       }
 
       const damping = new Array(continentsToScore.length).fill(1.0);
       const oceIndex = continentsToScore.indexOf('Oceanian');
-      if (oceIndex !== -1) {
-        damping[oceIndex] = 0.4; 
-      }
+      if (oceIndex !== -1) damping[oceIndex] = 0.25; 
+      const amerIndex = continentsToScore.indexOf('Native American');
+      if (amerIndex !== -1) damping[amerIndex] = 0.35; 
       const casIndex = continentsToScore.indexOf('Central Asian');
-      if (casIndex !== -1) {
-        damping[casIndex] = 0.7; 
-      }
+      if (casIndex !== -1) damping[casIndex] = 0.5;
 
-      const windowProportions = solveLeastSquares(windowGenotypes, windowFrequencies, windowWeights, 100, damping);
+      const pathIndices = viterbi(windowGenotypes, windowFrequencies, continentsToScore.length);
+      const windowProportions = new Array(continentsToScore.length).fill(0);
+      pathIndices.forEach(idx => windowProportions[idx] += 1 / pathIndices.length);
       
-      if (windowProportions.length > 0) {
+      if (pathIndices.length > 0) {
         allWindowProportions.push(windowProportions);
         
         // Detailed segment tracking
-        const maxProb = Math.max(...windowProportions);
-        const topIndex = windowProportions.indexOf(maxProb);
+        const topIndex = pathIndices[Math.floor(pathIndices.length / 2)];
         const topContinent = continentsToScore[topIndex];
         
-        if (maxProb > 0.3) { // Only record if there's a decent signal
-          segments[chrom].push({
-            continent: topContinent,
-            start: window[0].pos,
-            end: window[window.length - 1].pos,
-            confidence: maxProb
-          });
-        }
+        // HMM provides a direct assignment, which we treat as high confidence
+        segments[chrom].push({
+          continent: topContinent,
+          start: window[0].pos,
+          end: window[window.length - 1].pos,
+          confidence: 0.9 // High confidence for Viterbi decoding
+        });
 
         windowProportions.forEach((prob, i) => {
           const continent = continentsToScore[i];
@@ -450,6 +470,29 @@ export function runAncestryInference(
     }
   }
 
+  // Apply mtDNA Haplogroup Prior (ignoring ydna)
+  if (mtHaploRegion) {
+    const BIAS_FACTOR = 1.15; // 15% gentle bias
+    
+    // Mapping mtDNA haplogroups to continent keys
+    const regionToContinentMap: Record<string, string> = {
+      'African': 'African',
+      'European': 'European',
+      'East Asian': 'East Asian',
+      'South Asian': 'South Asian',
+      'Middle Eastern': 'Middle Eastern',
+      'Native American': 'Native American',
+      'Oceanian': 'Oceanian',
+      'North African': 'North African',
+      'Central Asian': 'Central Asian'
+    };
+
+    const targetContinent = regionToContinentMap[mtHaploRegion as string];
+    if (targetContinent && continentalScores[targetContinent] !== undefined) {
+       continentalScores[targetContinent] *= BIAS_FACTOR;
+    }
+  }
+
   const filteredContinental = Object.entries(continentalScores).filter(([_, p]) => p > 0);
   const totalFiltered = filteredContinental.reduce((s, [_, p]) => s + p, 0);
   const normalizedContinental: Record<string, number> = {};
@@ -524,7 +567,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   const primaryMarkers = sortMarkers(results.filter(r => 
     isAutosomal(r) && 
     r.category === 'Ancestry' && 
-    r.status === 'matched'
+    (r.status === 'matched' || r.status === 'partial')
   ));
 
   const secondaryMarkers = sortMarkers(results.filter(r => 
@@ -538,8 +581,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   ));
 
   return {
-    primary: runAncestryInference(primaryMarkers, userGenotype, yHaploRegion, mtHaploRegion),
-    secondary: runAncestryInference(secondaryMarkers, userGenotype, yHaploRegion, mtHaploRegion),
-    commercial: runAncestryInference(commercialMarkers, userGenotype, yHaploRegion, mtHaploRegion)
+    primary: runAncestryInference(primaryMarkers, userGenotype, yHaploRegion, mtHaploRegion, true),
+    secondary: runAncestryInference(secondaryMarkers, userGenotype, yHaploRegion, mtHaploRegion, false),
+    commercial: runAncestryInference(commercialMarkers, userGenotype, yHaploRegion, mtHaploRegion, false)
   };
 }
