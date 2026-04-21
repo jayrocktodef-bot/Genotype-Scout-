@@ -1,12 +1,14 @@
 export const CONTINENT_META: Record<string, {color: string, icon: string}> = {
-  "Africa":       {color:"#E8A838", icon:"🌍"},
-  "Europe":       {color:"#4B8BE8", icon:"🌍"},
-  "Asia":         {color:"#E84B4B", icon:"🌏"},
-  "Americas":     {color:"#C25C1A", icon:"🌎"},
-  "Oceania":      {color:"#14b8a6", icon:"🏝️"},
-  "Middle East":  {color:"#8b5cf6", icon:"🌍"},
-  "Central Asia": {color:"#f59e0b", icon:"🌏"},
-  "Global":       {color:"#10b981", icon:"🌐"}
+  "African":        {color:"#E8A838", icon:"🌍"},
+  "European":       {color:"#4B8BE8", icon:"🌍"},
+  "East Asian":     {color:"#E84B4B", icon:"🌏"},
+  "Native American":{color:"#C25C1A", icon:"🌎"},
+  "Oceanian":       {color:"#14b8a6", icon:"🏝️"},
+  "Middle Eastern": {color:"#8b5cf6", icon:"🌍"},
+  "Central Asian":  {color:"#f59e0b", icon:"🌏"},
+  "South Asian":    {color:"#f472b6", icon:"🇮🇳"},
+  "North African":  {color:"#c084fc", icon:"🏜️"},
+  "Global":         {color:"#10b981", icon:"🌐"}
 };
 
 export const CATEGORY_META = {

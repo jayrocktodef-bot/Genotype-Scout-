@@ -1,5 +1,9 @@
 import { ANCHOR_AIMS } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
+import aimsData from '../aims.cleaned.json' with { type: 'json' };
+
+const ANCHOR_AIMS_TYPE = ANCHOR_AIMS;
+// ... (The rest of the file stays mostly same, but I might need to replace ANCHOR_AIMS usage if needed... wait, ANCHOR_AIMS is imported globally.)
 import { CONTINENT_TO_CODE } from '../constants/genotypeConstants';
 import { isSubpopMatch } from '../utils/genotypeUtils';
 import { AncestryInferenceResult } from '../types/genotype';
@@ -577,7 +581,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
 
   const commercialMarkers = sortMarkers(results.filter(r => 
     isAutosomal(r) && 
-    anchorRsids.has((r.rsid || r.markerId).toLowerCase())
+    anchorRsids.has((r.rsid || r.markerId).toLowerCase().split('_')[0])
   ));
 
   return {

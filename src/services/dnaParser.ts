@@ -18,7 +18,8 @@ export function parseRawDNA(text: string) {
     else chip = "23andMe (Legacy)";
   } else if (header.includes("AncestryDNA")) {
     format = "AncestryDNA";
-    if (header.includes("v2")) chip = "AncestryDNA v2 (GSA)";
+    if (header.includes("v3")) chip = "AncestryDNA v3 (GSA)";
+    else if (header.includes("v2")) chip = "AncestryDNA v2 (GSA)";
     else if (header.includes("v1")) chip = "AncestryDNA v1 (OmniExpress)";
     else chip = "AncestryDNA";
   } else if (header.includes("MyHeritage")) {

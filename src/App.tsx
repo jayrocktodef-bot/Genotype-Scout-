@@ -728,28 +728,14 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
               <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
             </div>
           </div>
-          <div className="relative group">
-            <button 
-              onClick={() => { setActiveOracle('commercial'); setSelectedSubPop(null); }}
-              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'commercial' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
-            >
-              Commercial (Ancestry)
-            </button>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
-              Uses only RSIDs typically found on commercial DNA chips like Ancestry.com.
-              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
-            </div>
-          </div>
         </div>
       </div>
 
       <div className="mb-6 p-4 bg-white/50 dark:bg-slate-800/30 rounded-lg border border-indigo-100 dark:border-indigo-800/30 text-xs text-indigo-800 dark:text-indigo-300 leading-relaxed">
         {activeOracle === 'primary' ? (
           <p><strong>Primary Mode:</strong> Uses only RSIDs from matched ancestry traits for high-confidence inference based on your specific trait matches.</p>
-        ) : activeOracle === 'secondary' ? (
-          <p><strong>Secondary Mode:</strong> Uses all available AIMs (Ancestry Informative Markers) and markers in the database for a broader, more exploratory analysis.</p>
         ) : (
-          <p><strong>Commercial Mode:</strong> Uses only RSIDs typically found on commercial DNA chips (like Ancestry.com, 23andMe) for a breakdown comparable to consumer tests.</p>
+          <p><strong>Secondary Mode:</strong> Uses all available AIMs (Ancestry Informative Markers) and markers in the database for a broader, more exploratory analysis.</p>
         )}
       </div>
       
@@ -1727,7 +1713,7 @@ export default function App() {
   }, [results, statusFilter, significanceFilter, continentFilter, geneFilter, debouncedSearchTerm]);
 
   const uniqueSignificances = useMemo(() => Array.from(new Set(results?.map(r => r.significance) || [])), [results]);
-  const uniqueContinents = ["Africa", "Europe", "Asia", "Americas", "Oceania", "Middle East"];
+  const uniqueContinents = Object.keys(CONTINENT_META);
   const uniqueGenes = useMemo(() => Array.from(new Set(results?.map(r => r.gene) || [])), [results]);
 
   const oracleResults = useMemo(() => {

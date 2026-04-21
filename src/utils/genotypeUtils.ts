@@ -1,13 +1,15 @@
 export const mapToRegion = (continent: string): string => {
   if (!continent) return "Global";
   const c = continent.toLowerCase();
-  if (c.includes('african') || c.includes('africa')) return "Africa";
-  if (c.includes('european') || c.includes('europe') || c.includes('caucasian')) return "Europe";
-  if (c.includes('central asian')) return "Central Asia";
-  if (c.includes('asian') || c.includes('asia')) return "Asia";
-  if (c.includes('native american') || c.includes('americas') || c.includes('inuit')) return "Americas";
-  if (c.includes('oceanian') || c.includes('oceania')) return "Oceania";
-  if (c.includes('middle eastern') || c.includes('middle east')) return "Middle East";
+  if (c.includes('north african')) return "North African";
+  if (c.includes('central asian')) return "Central Asian";
+  if (c.includes('south asian')) return "South Asian";
+  if (c.includes('east asian')) return "East Asian";
+  if (c.includes('african') || c.includes('africa')) return "African";
+  if (c.includes('european') || c.includes('europe') || c.includes('caucasian')) return "European";
+  if (c.includes('native american') || c.includes('americas')) return "Native American";
+  if (c.includes('oceanian') || c.includes('oceania')) return "Oceanian";
+  if (c.includes('middle east')) return "Middle Eastern";
   return "Global";
 };
 

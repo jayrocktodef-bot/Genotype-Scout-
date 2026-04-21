@@ -1,24 +1,35 @@
-import aimsData from './aims.json';
+import aimsData from './aims.cleaned.json' with { type: 'json' };
 
 const findDuplicates = (aims: any[]) => {
-  const seen = new Set<string>();
-  const duplicates = new Set<string>();
+  const seenRsids = new Set<string>();
+  const duplicateRsids = new Set<string>();
+  const seenTraits = new Set<string>();
+  const duplicateTraits = new Set<string>();
 
   aims.forEach(aim => {
-    if (seen.has(aim.rsid)) {
-      duplicates.add(aim.rsid);
+    if (seenRsids.has(aim.rsid)) {
+      duplicateRsids.add(aim.rsid);
     } else {
-      seen.add(aim.rsid);
+      seenRsids.add(aim.rsid);
+    }
+    if (seenTraits.has(aim.trait)) {
+      duplicateTraits.add(aim.trait);
+    } else {
+      seenTraits.add(aim.trait);
     }
   });
 
-  return Array.from(duplicates);
+  return { duplicateRsids: Array.from(duplicateRsids), duplicateTraits: Array.from(duplicateTraits) };
 };
 
-const duplicateRsids = findDuplicates(aimsData);
+const { duplicateRsids, duplicateTraits } = findDuplicates(aimsData);
 
 if (duplicateRsids.length > 0) {
-  console.log("Duplicate markers found:", duplicateRsids);
-} else {
+  console.log("Duplicate RSIDs found:", duplicateRsids);
+}
+if (duplicateTraits.length > 0) {
+  console.log("Duplicate Trait names found (could be intentional if multiple markers define one trait):", duplicateTraits);
+}
+if (duplicateRsids.length === 0 && duplicateTraits.length === 0) {
   console.log("No duplicates found. The dataset is clean.");
 }

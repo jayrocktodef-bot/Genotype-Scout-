@@ -1,4 +1,4 @@
-import aimsData from './aims.json';
+import aimsData from './aims.cleaned.json' with { type: 'json' };
 
 export interface AnchorAim {
   rsid: string;
