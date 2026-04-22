@@ -112,9 +112,12 @@ export function isSubpopMatch(snpSubpop: string, target: string) {
     if (members.includes(snp) && members.includes(tgt)) return true;
   }
 
-  // Fuzzy match for plurals or minor text differences
+  // Improved fuzzy match for plurals or minor text differences
   const isFuzzyMatch = (s1: string, s2: string) => {
-    const clean = (s: string) => s.replace(/s$/i, '').replace(/-/g, ' '); // simple plural removal and dash to space
+    const clean = (s: string) => s.toLowerCase()
+      .replace(/[^a-z0-9]/g, '')
+      .replace(/es$/, '')
+      .replace(/s$/, '');
     return clean(s1) === clean(s2);
   };
 

@@ -11,7 +11,9 @@
       "A"
     ],
     "description": "A variant found at higher frequencies in populations of African descent.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs2862"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2862",
+    "subPopulation": "Yoruba",
+    "subRegion": "West Africa"
   },
   {
     "markerId": "rs1129038",
@@ -25,7 +27,9 @@
       "T"
     ],
     "description": "A variant associated with African ancestry and kidney function adaptation.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1129038"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1129038",
+    "subPopulation": "Bantu-speaking",
+    "subRegion": "Central/Southern Africa"
   },
   {
     "markerId": "rs2814778",
@@ -45,7 +49,9 @@
       "EAS": 0.01,
       "AMR": 0.2
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs2814778"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2814778",
+    "subPopulation": "West African",
+    "subRegion": "Sub-Saharan Africa"
   },
   {
     "markerId": "rs334",
@@ -65,7 +71,9 @@
       "EAS": 0,
       "AMR": 0.02
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs334"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs334",
+    "subPopulation": "West African",
+    "subRegion": "Sub-Saharan Africa"
   },
   {
     "markerId": "rs12913832",
@@ -85,7 +93,9 @@
       "EAS": 0.98,
       "AMR": 0.7
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs12913832"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs12913832",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1800407",
@@ -105,7 +115,9 @@
       "EAS": 0.8,
       "AMR": 0.65
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800407"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800407",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1042602",
@@ -125,7 +137,9 @@
       "EAS": 0.95,
       "AMR": 0.8
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1042602"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1042602",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs2032582",
@@ -145,7 +159,9 @@
       "EAS": 0.4,
       "AMR": 0.5
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs2032582"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2032582",
+    "subPopulation": "Bantu-speaking",
+    "subRegion": "Central Africa"
   },
   {
     "markerId": "rs1800414",
@@ -165,7 +181,9 @@
       "EAS": 0.75,
       "AMR": 0.6
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800414"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800414",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1426654_AF",
@@ -185,7 +203,9 @@
       "EAS": 0.97,
       "AMR": 0.45
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1426654"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1426654",
+    "subPopulation": "West African",
+    "subRegion": "Sub-Saharan Africa"
   },
   {
     "markerId": "rs16891982_AF",
@@ -205,7 +225,9 @@
       "EAS": 0.98,
       "AMR": 0.7
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs16891982"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs16891982",
+    "subPopulation": "Levantine",
+    "subRegion": "Eastern Mediterranean"
   },
   {
     "markerId": "rs3827760",
@@ -227,7 +249,9 @@
       "Native_American_unadmixed": 0.95,
       "SAS": 0.07
     },
-    "referenceUrl": "https://www.biorxiv.org/content/10.1101/813063v1.full"
+    "referenceUrl": "https://www.biorxiv.org/content/10.1101/813063v1.full",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Beringian/North America"
   },
   {
     "markerId": "rs75493593",
@@ -249,7 +273,9 @@
       "Native_American_unadmixed": 0.5,
       "SAS": 0.03
     },
-    "referenceUrl": "https://www.nature.com/articles/nature12828"
+    "referenceUrl": "https://www.nature.com/articles/nature12828",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Mesoamerica"
   },
   {
     "markerId": "rs13342692",
@@ -271,7 +297,9 @@
       "Native_American_unadmixed": 0.5,
       "SAS": 0.03
     },
-    "referenceUrl": "https://www.nature.com/articles/nature12828"
+    "referenceUrl": "https://www.nature.com/articles/nature12828",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Mesoamerica"
   },
   {
     "markerId": "rs117767867",
@@ -293,7 +321,9 @@
       "Native_American_unadmixed": 0.48,
       "SAS": 0.02
     },
-    "referenceUrl": "https://www.nature.com/articles/nature12828"
+    "referenceUrl": "https://www.nature.com/articles/nature12828",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Beringian/North America"
   },
   {
     "markerId": "rs75418188",
@@ -315,7 +345,9 @@
       "Native_American_unadmixed": 0.49,
       "SAS": 0.03
     },
-    "referenceUrl": "https://www.nature.com/articles/nature12828"
+    "referenceUrl": "https://www.nature.com/articles/nature12828",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Mesoamerica"
   },
   {
     "markerId": "rs13342232",
@@ -337,7 +369,9 @@
       "Native_American_unadmixed": 0.5,
       "SAS": 0.03
     },
-    "referenceUrl": "https://www.nature.com/articles/nature12828"
+    "referenceUrl": "https://www.nature.com/articles/nature12828",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Mesoamerica"
   },
   {
     "markerId": "rs9282541",
@@ -359,7 +393,9 @@
       "Native_American_unadmixed": 0.15,
       "SAS": 0.01
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs9282541"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs9282541",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Andean Region"
   },
   {
     "markerId": "rs10811661",
@@ -381,7 +417,9 @@
       "Native_American_unadmixed": 0.8,
       "SAS": 0.73
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs10811661"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs10811661",
+    "subPopulation": "Indigenous American",
+    "subRegion": "North America"
   },
   {
     "markerId": "rs5219",
@@ -597,7 +635,9 @@
     "frequencies": {
       "AFR": 0.909,
       "EUR": 0.347
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1545397_AF",
@@ -618,7 +658,9 @@
       "EUR": 0.02,
       "SAS": 0.05,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs3340",
@@ -632,7 +674,9 @@
       "A"
     ],
     "description": "A variant in the bitter taste receptor gene found at different frequencies in African populations.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs3340"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3340",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M91",
@@ -647,7 +691,9 @@
     "alleles": [
       "T"
     ],
-    "description": "One of the oldest paternal lineages, found primarily in Africa."
+    "description": "One of the oldest paternal lineages, found primarily in Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P97",
@@ -659,7 +705,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Cameroon; rare."
+    "description": "Cameroon; rare.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M31",
@@ -674,7 +722,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup A1a."
+    "description": "Defining marker for Haplogroup A1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P108",
@@ -686,7 +736,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A1b."
+    "description": "Defining marker for Haplogroup A1b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M6",
@@ -701,7 +753,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup A2."
+    "description": "Defining marker for Haplogroup A2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P28",
@@ -713,7 +767,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A2."
+    "description": "Defining marker for Haplogroup A2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M32",
@@ -728,7 +784,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A3."
+    "description": "Defining marker for Haplogroup A3.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M28",
@@ -740,7 +798,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A3a."
+    "description": "Defining marker for Haplogroup A3a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M220",
@@ -752,7 +812,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A3b."
+    "description": "Defining marker for Haplogroup A3b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M51",
@@ -764,7 +826,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A3b1."
+    "description": "Defining marker for Haplogroup A3b1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M13",
@@ -776,7 +840,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A3b2."
+    "description": "Defining marker for Haplogroup A3b2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M171",
@@ -788,7 +854,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A3b2."
+    "description": "Defining marker for Haplogroup A3b2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M60",
@@ -804,7 +872,9 @@
     "alleles": [
       "T"
     ],
-    "description": "One of the two deepest Y-DNA branches; found almost exclusively in African hunter-gatherer populations."
+    "description": "One of the two deepest Y-DNA branches; found almost exclusively in African hunter-gatherer populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M181",
@@ -819,7 +889,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup B2."
+    "description": "Defining marker for Haplogroup B2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M112",
@@ -835,7 +907,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup B2a."
+    "description": "Defining marker for Haplogroup B2a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M182",
@@ -848,7 +922,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B2."
+    "description": "Defining marker for Haplogroup B2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M211",
@@ -861,7 +937,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup B2b1."
+    "description": "Defining marker for Haplogroup B2b1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M218",
@@ -873,7 +951,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B2a1."
+    "description": "Defining marker for Haplogroup B2a1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P1",
@@ -888,7 +968,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B1."
+    "description": "Defining marker for Haplogroup B1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P7",
@@ -900,7 +982,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Subclade marker for Haplogroup B2b3 (Khoisan groups)."
+    "description": "Subclade marker for Haplogroup B2b3 (Khoisan groups).",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M115",
@@ -912,7 +996,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup B2a1."
+    "description": "Defining marker for Haplogroup B2a1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P85",
@@ -924,7 +1010,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup B2b."
+    "description": "Defining marker for Haplogroup B2b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P90",
@@ -936,7 +1024,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup B2b."
+    "description": "Defining marker for Haplogroup B2b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M150",
@@ -951,7 +1041,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup B2b1."
+    "description": "Defining marker for Haplogroup B2b1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M152",
@@ -963,7 +1055,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup B2b2."
+    "description": "Defining marker for Haplogroup B2b2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P29",
@@ -978,7 +1072,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E."
+    "description": "Defining marker for Haplogroup E.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M96",
@@ -996,7 +1092,9 @@
       "A",
       "C"
     ],
-    "description": "Largest and most diverse African haplogroup; subclades found across Africa, the Middle East, and Europe."
+    "description": "Largest and most diverse African haplogroup; subclades found across Africa, the Middle East, and Europe.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M33",
@@ -1012,7 +1110,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup E1a."
+    "description": "Defining marker for Haplogroup E1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M132",
@@ -1024,7 +1124,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1a1."
+    "description": "Defining marker for Haplogroup E1a1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M2",
@@ -1043,7 +1145,9 @@
       "C",
       "A"
     ],
-    "description": "Major West/Central African marker; well covered on all arrays."
+    "description": "Major West/Central African marker; well covered on all arrays.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M180",
@@ -1058,7 +1162,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1."
+    "description": "Defining marker for Haplogroup E1b1a1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "U175",
@@ -1073,7 +1179,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1."
+    "description": "Defining marker for Haplogroup E1b1a1a1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "U174",
@@ -1088,7 +1196,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a."
+    "description": "Defining marker for Haplogroup E1b1a1a1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M191",
@@ -1104,7 +1214,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Major West African; Yoruba, Igbo, etc."
+    "description": "Major West African; Yoruba, Igbo, etc.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P86",
@@ -1116,7 +1228,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Co-defines with M191."
+    "description": "Co-defines with M191.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L485",
@@ -1128,7 +1242,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a1a."
+    "description": "Defining marker for Haplogroup E1b1a1a1a1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "U290",
@@ -1140,7 +1256,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a2."
+    "description": "Defining marker for Haplogroup E1b1a1a1a2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "U181",
@@ -1152,7 +1270,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a3."
+    "description": "Defining marker for Haplogroup E1b1a1a1a3.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M154",
@@ -1164,7 +1284,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1b."
+    "description": "Defining marker for Haplogroup E1b1a1a1b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M58",
@@ -1176,7 +1298,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a2."
+    "description": "Defining marker for Haplogroup E1b1a1a2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M149",
@@ -1188,7 +1312,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a4."
+    "description": "Defining marker for Haplogroup E1b1a1a4.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M155",
@@ -1200,7 +1326,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a5."
+    "description": "Defining marker for Haplogroup E1b1a1a5.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M10",
@@ -1212,7 +1340,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a6."
+    "description": "Defining marker for Haplogroup E1b1a1a6.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M200",
@@ -1224,7 +1354,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a7."
+    "description": "Defining marker for Haplogroup E1b1a1a7.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V38",
@@ -1239,7 +1371,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Parallel root to U175 branch."
+    "description": "Parallel root to U175 branch.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M215",
@@ -1254,7 +1388,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup E1b1b."
+    "description": "Defining marker for Haplogroup E1b1b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M35",
@@ -1273,7 +1409,9 @@
       "T",
       "G"
     ],
-    "description": "Often co-listed with M215; same position in many databases."
+    "description": "Often co-listed with M215; same position in many databases.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V68",
@@ -1288,7 +1426,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup E1b1b1a."
+    "description": "Defining marker for Haplogroup E1b1b1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V12",
@@ -1303,7 +1443,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup E1b1b1a1a."
+    "description": "Defining marker for Haplogroup E1b1b1a1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V22",
@@ -1318,7 +1460,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup E1b1b1a1c."
+    "description": "Defining marker for Haplogroup E1b1b1a1c.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V32",
@@ -1333,7 +1477,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Ethiopia/Cushitic."
+    "description": "Ethiopia/Cushitic.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V264",
@@ -1345,7 +1491,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1b1a3."
+    "description": "Defining marker for Haplogroup E1b1b1a3.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L19",
@@ -1357,7 +1505,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1b1b."
+    "description": "Defining marker for Haplogroup E1b1b1b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M293",
@@ -1369,7 +1519,9 @@
     "alleles": [
       "T"
     ],
-    "description": "East African clade."
+    "description": "East African clade.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M329",
@@ -1381,7 +1533,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Ethiopian-specific."
+    "description": "Ethiopian-specific.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P72",
@@ -1393,7 +1547,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1c."
+    "description": "Defining marker for Haplogroup E1c.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M35.1",
@@ -1405,7 +1561,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Congo Basin."
+    "description": "Congo Basin.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M75",
@@ -1421,7 +1579,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup E2."
+    "description": "Defining marker for Haplogroup E2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M54",
@@ -1433,7 +1593,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup E2a."
+    "description": "Defining marker for Haplogroup E2a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "Z381",
@@ -2563,7 +2725,9 @@
       "G"
     ],
     "description": "Associated with an increased risk of chronic kidney disease in individuals of African ancestry.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs73885319"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs73885319",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs11887534",
@@ -2577,7 +2741,9 @@
       "C"
     ],
     "description": "Associated with fetal hemoglobin levels; common in African populations and relevant for sickle cell disease severity.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs11887534"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs11887534",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs60910145",
@@ -2595,7 +2761,9 @@
       "DD": "High risk: Two copies of the G2 deletion variant.",
       "ID": "Carrier: One copy of the G2 deletion variant.",
       "II": "Normal risk: No copies of the G2 deletion variant."
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456218_Akan",
@@ -2617,7 +2785,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456221_Amhara",
@@ -2639,7 +2809,9 @@
       "EUR": 0.1,
       "SAS": 0.1,
       "MENA": 0.35
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1426657_Amhara",
@@ -2661,7 +2833,9 @@
       "EUR": 0.1,
       "SAS": 0.02,
       "MENA": 0.07
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12203594_Amhara",
@@ -2683,7 +2857,9 @@
       "EUR": 0.08,
       "SAS": 0.02,
       "MENA": 0.07
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456231_Baganda",
@@ -2705,7 +2881,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456256_Bakongo",
@@ -2727,7 +2905,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456238_Bakongo",
@@ -2749,7 +2929,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456257_Baluba",
@@ -2771,7 +2953,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456237_Bamileke",
@@ -2793,7 +2977,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Bamoun",
@@ -2815,7 +3001,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10486573",
@@ -2829,7 +3017,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Bantu populations."
+    "description": "Ancestry Informative Marker for Bantu populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10486574",
@@ -2843,7 +3033,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Bantu populations."
+    "description": "Ancestry Informative Marker for Bantu populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10486575",
@@ -2857,7 +3049,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Bantu populations."
+    "description": "Ancestry Informative Marker for Bantu populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456249_Bassa",
@@ -2879,7 +3073,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456228_Baule",
@@ -2901,7 +3097,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456261_Bemba",
@@ -2923,7 +3121,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs4242382",
@@ -2937,7 +3137,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Cameroonian populations."
+    "description": "Ancestry Informative Marker for Cameroonian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs4242383",
@@ -2951,7 +3153,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Cameroonian populations."
+    "description": "Ancestry Informative Marker for Cameroonian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs4242384",
@@ -2965,7 +3169,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Cameroonian populations."
+    "description": "Ancestry Informative Marker for Cameroonian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456303_CapeVerdean",
@@ -2987,7 +3193,9 @@
       "EUR": 0.35,
       "SAS": 0.02,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456304_CapeVerdean",
@@ -3009,7 +3217,9 @@
       "EUR": 0.38,
       "SAS": 0.02,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456263_Chewa",
@@ -3031,7 +3241,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456259_Chokwe",
@@ -3053,7 +3265,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12752445",
@@ -3067,7 +3281,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Congolese populations."
+    "description": "Ancestry Informative Marker for Congolese populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12752446",
@@ -3081,7 +3297,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Congolese populations."
+    "description": "Ancestry Informative Marker for Congolese populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12752447",
@@ -3095,7 +3313,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Congolese populations."
+    "description": "Ancestry Informative Marker for Congolese populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456255_Dan",
@@ -3117,7 +3337,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456243_Edo",
@@ -3139,7 +3361,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456241_Efik",
@@ -3161,7 +3385,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456198_Esan",
@@ -3183,7 +3409,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456203_Ethiopian",
@@ -3205,7 +3433,9 @@
       "EUR": 0.08,
       "SAS": 0.12,
       "MENA": 0.3
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456300_Ethiopian",
@@ -3227,7 +3457,9 @@
       "EUR": 0.07,
       "SAS": 0.1,
       "MENA": 0.32
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456220_Ewe",
@@ -3249,7 +3481,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456236_Ewe",
@@ -3271,7 +3505,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Fang",
@@ -3293,7 +3529,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456227_Fon",
@@ -3315,7 +3553,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456235_Fon",
@@ -3337,7 +3577,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Fulani",
@@ -3359,7 +3601,9 @@
       "EUR": 0.05,
       "SAS": 0.03,
       "MENA": 0.15
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456233_Fulani",
@@ -3381,7 +3625,9 @@
       "EUR": 0.02,
       "SAS": 0.01,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456219_Ga",
@@ -3403,7 +3649,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456251_Gola",
@@ -3425,7 +3673,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456248_Grebo",
@@ -3447,7 +3697,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Hausa",
@@ -3469,7 +3721,9 @@
       "EUR": 0,
       "SAS": 0.02,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs11103349",
@@ -3491,7 +3745,9 @@
       "EUR": 0.01,
       "SAS": 0.05,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs11103350",
@@ -3505,7 +3761,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Horn of Africa populations."
+    "description": "Ancestry Informative Marker for Horn of Africa populations.",
+    "subPopulation": "East African",
+    "subRegion": "East Africa"
   },
   {
     "markerId": "rs11103351",
@@ -3519,7 +3777,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Horn of Africa populations."
+    "description": "Ancestry Informative Marker for Horn of Africa populations.",
+    "subPopulation": "East African",
+    "subRegion": "East Africa"
   },
   {
     "markerId": "rs10456242_Ibibio",
@@ -3541,7 +3801,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456196_Igbo",
@@ -3563,7 +3825,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs7252505_Igbo",
@@ -3585,7 +3849,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1572318",
@@ -3599,7 +3865,9 @@
     ],
     "significance": "High",
     "category": "Ancestry",
-    "description": "High frequency marker diagnostic for Southern African Khoe-San hunter-gatherer ancestry."
+    "description": "High frequency marker diagnostic for Southern African Khoe-San hunter-gatherer ancestry.",
+    "subPopulation": "Khoisan",
+    "subRegion": "Southern Africa"
   },
   {
     "markerId": "rs1572319",
@@ -3613,7 +3881,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Khoe-San populations."
+    "description": "Ancestry Informative Marker for Khoe-San populations.",
+    "subPopulation": "Khoisan",
+    "subRegion": "Southern Africa"
   },
   {
     "markerId": "rs10456204_Khoisan",
@@ -3635,7 +3905,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456230_Kikuyu",
@@ -3657,7 +3929,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456252_Kpelle",
@@ -3679,7 +3953,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456247_Kru",
@@ -3701,7 +3977,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456245_Limba",
@@ -3723,7 +4001,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456253_Loma",
@@ -3745,7 +4025,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456260_Lozi",
@@ -3767,7 +4049,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456200_Luhya",
@@ -3789,7 +4073,9 @@
       "EUR": 0.01,
       "SAS": 0.05,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456223_Luo",
@@ -3811,7 +4097,9 @@
       "EUR": 0,
       "SAS": 0.02,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs11547466_Luo",
@@ -3833,7 +4121,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs16891985_Luo",
@@ -3855,7 +4145,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456201_Maasai",
@@ -3877,7 +4169,9 @@
       "EUR": 0.02,
       "SAS": 0.08,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1805010_Maasai",
@@ -3899,7 +4193,9 @@
       "EUR": 0.03,
       "SAS": 0.01,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs4988238_Maasai",
@@ -3921,7 +4217,9 @@
       "EUR": 0.05,
       "SAS": 0.01,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456265_Makua",
@@ -3943,7 +4241,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs7460469",
@@ -3957,7 +4257,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Malagasy populations."
+    "description": "Ancestry Informative Marker for Malagasy populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs7460470",
@@ -3971,7 +4273,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Malagasy populations."
+    "description": "Ancestry Informative Marker for Malagasy populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs7460471",
@@ -3985,7 +4289,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Malagasy populations."
+    "description": "Ancestry Informative Marker for Malagasy populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456197_Mandinka",
@@ -4007,7 +4313,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs4871195_Mandinka",
@@ -4029,7 +4337,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1042524_Mandinka",
@@ -4051,7 +4361,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456254_Mano",
@@ -4073,7 +4385,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456240_Mbundu",
@@ -4095,7 +4409,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456199_Mende",
@@ -4117,7 +4433,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456244_Mende",
@@ -4139,7 +4457,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1446585_Mende",
@@ -4161,7 +4481,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs2675348_Mende",
@@ -4183,7 +4505,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456229_Mossi",
@@ -4205,7 +4529,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10424071",
@@ -4227,7 +4553,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10424072",
@@ -4241,7 +4569,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Nigerian populations."
+    "description": "Ancestry Informative Marker for Nigerian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10424073",
@@ -4255,7 +4585,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Nigerian populations."
+    "description": "Ancestry Informative Marker for Nigerian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10424074",
@@ -4269,7 +4601,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Nigerian populations."
+    "description": "Ancestry Informative Marker for Nigerian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Nubian",
@@ -4291,7 +4625,9 @@
       "EUR": 0.1,
       "SAS": 0.1,
       "MENA": 0.4
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456207-AFR",
@@ -4313,7 +4649,9 @@
       "EUR": 0.05,
       "SAS": 0.05,
       "MENA": 0.25
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456210",
@@ -4327,7 +4665,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Nubian populations."
+    "description": "Ancestry Informative Marker for Nubian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456213",
@@ -4341,7 +4681,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Nubian populations."
+    "description": "Ancestry Informative Marker for Nubian populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456222_Oromo",
@@ -4363,7 +4705,9 @@
       "EUR": 0.05,
       "SAS": 0.08,
       "MENA": 0.25
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456258_Ovimbundu",
@@ -4385,7 +4729,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456239_Ovimbundu",
@@ -4407,7 +4753,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Pygmy",
@@ -4429,7 +4777,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12149626",
@@ -4443,7 +4793,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Pygmy populations."
+    "description": "Ancestry Informative Marker for Pygmy populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12149627",
@@ -4457,7 +4809,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Pygmy populations."
+    "description": "Ancestry Informative Marker for Pygmy populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs12149628",
@@ -4471,7 +4825,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Pygmy populations."
+    "description": "Ancestry Informative Marker for Pygmy populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs694341_San",
@@ -4493,7 +4849,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs7252508_San",
@@ -4515,7 +4873,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs13136401",
@@ -4529,7 +4889,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for San populations."
+    "description": "Ancestry Informative Marker for San populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs13136402",
@@ -4543,7 +4905,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for San populations."
+    "description": "Ancestry Informative Marker for San populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs13136403",
@@ -4557,7 +4921,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for San populations."
+    "description": "Ancestry Informative Marker for San populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456246_Sherbro",
@@ -4579,7 +4945,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456202_Somali",
@@ -4601,7 +4969,9 @@
       "EUR": 0.05,
       "SAS": 0.1,
       "MENA": 0.25
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456301_Somali",
@@ -4623,7 +4993,9 @@
       "EUR": 0.06,
       "SAS": 0.11,
       "MENA": 0.28
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456302_Somali",
@@ -4645,7 +5017,9 @@
       "EUR": 0.05,
       "SAS": 0.09,
       "MENA": 0.26
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456224_Sotho",
@@ -4667,7 +5041,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456206-AFR",
@@ -4689,7 +5065,9 @@
       "EUR": 0.02,
       "SAS": 0.02,
       "MENA": 0.15
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456209",
@@ -4703,7 +5081,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Sudanese populations."
+    "description": "Ancestry Informative Marker for Sudanese populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456212",
@@ -4717,7 +5097,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Sudanese populations."
+    "description": "Ancestry Informative Marker for Sudanese populations.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456232_Tigrayan",
@@ -4739,7 +5121,9 @@
       "EUR": 0.08,
       "SAS": 0.08,
       "MENA": 0.32
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456262_Tonga",
@@ -4761,7 +5145,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456234_Tsonga",
@@ -4783,7 +5169,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456225_Tswana",
@@ -4805,7 +5193,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456250_Vai",
@@ -4827,7 +5217,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456226_Venda",
@@ -4849,7 +5241,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs17388247",
@@ -4863,7 +5257,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for West African populations."
+    "description": "Ancestry Informative Marker for West African populations.",
+    "subPopulation": "West African",
+    "subRegion": "West Africa"
   },
   {
     "markerId": "rs10900598",
@@ -4877,7 +5273,9 @@
     ],
     "significance": "Medium",
     "category": "Ancestry",
-    "description": "Ancestry Informative Marker for West African populations."
+    "description": "Ancestry Informative Marker for West African populations.",
+    "subPopulation": "West African",
+    "subRegion": "West Africa"
   },
   {
     "markerId": "rs10456205_Wolof",
@@ -4899,7 +5297,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Xhosa",
@@ -4921,7 +5321,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456264_Yao",
@@ -4943,7 +5345,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456195_Yoruba",
@@ -4965,7 +5369,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs694339_Yoruba",
@@ -4987,7 +5393,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456262_Yoruba",
@@ -5009,7 +5417,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456266_Fulani",
@@ -5031,7 +5441,9 @@
       "EUR": 0.02,
       "SAS": 0,
       "MENA": 0.08
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456267_Edo",
@@ -5053,7 +5465,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456268_Ibibio",
@@ -5075,7 +5489,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456205_Zulu",
@@ -5097,7 +5513,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1042604_Zulu",
@@ -5119,7 +5537,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1129039_Zulu",
@@ -5141,7 +5561,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs1126647",
@@ -20196,7 +20618,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b-Z834."
+    "description": "Defining marker for Haplogroup E1b-Z834.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L1259",
@@ -20628,7 +21052,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup B."
+    "description": "Defining marker for Haplogroup B.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "CTS10487",
@@ -20640,7 +21066,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup B."
+    "description": "Defining marker for Haplogroup B.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M8862",
@@ -20652,7 +21080,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B."
+    "description": "Defining marker for Haplogroup B.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M8633",
@@ -20664,7 +21094,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup B-M8633."
+    "description": "Defining marker for Haplogroup B-M8633.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "V2342",
@@ -20676,7 +21108,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup B-V2342."
+    "description": "Defining marker for Haplogroup B-V2342.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "BY14680",
@@ -20688,7 +21122,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for Haplogroup B-V2342."
+    "description": "Defining marker for Haplogroup B-V2342.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "CTS11573",
@@ -20700,7 +21136,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B-M8633."
+    "description": "Defining marker for Haplogroup B-M8633.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "CTS1388",
@@ -20712,7 +21150,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup B-M8633."
+    "description": "Defining marker for Haplogroup B-M8633.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M8691",
@@ -20724,7 +21164,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Haplogroup B-M8633."
+    "description": "Defining marker for Haplogroup B-M8633.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L419",
@@ -20739,7 +21181,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A1b1."
+    "description": "Defining marker for Haplogroup A1b1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M109",
@@ -20754,7 +21198,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B2a1a."
+    "description": "Defining marker for Haplogroup B2a1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L515",
@@ -20766,7 +21212,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a1a2."
+    "description": "Defining marker for Haplogroup E1b1a1a1a1a2.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L516",
@@ -20778,7 +21226,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a1a3."
+    "description": "Defining marker for Haplogroup E1b1a1a1a1a3.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L517",
@@ -20790,7 +21240,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a1a4."
+    "description": "Defining marker for Haplogroup E1b1a1a1a1a4.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "M263.2",
@@ -20802,7 +21254,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup E1b1a1a1a1a1a."
+    "description": "Defining marker for Haplogroup E1b1a1a1a1a1a.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L1284",
@@ -20814,7 +21268,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup A00."
+    "description": "Defining marker for Haplogroup A00.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "P6",
@@ -20826,7 +21282,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup B2b."
+    "description": "Defining marker for Haplogroup B2b.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "Z304",
@@ -20934,7 +21392,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup B-V2342."
+    "description": "Defining marker for Haplogroup B-V2342.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "A10398G",
@@ -21006,7 +21466,9 @@
     "alleles": [
       "T"
     ],
-    "description": "A defining marker for many L1 and L2 African lineages."
+    "description": "A defining marker for many L1 and L2 African lineages.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "G4104A",
@@ -21018,7 +21480,9 @@
     "alleles": [
       "A"
     ],
-    "description": "A core backbone marker for Haplogroup L2, the most common lineage in Africa."
+    "description": "A core backbone marker for Haplogroup L2, the most common lineage in Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "A663G",
@@ -21090,7 +21554,9 @@
     "alleles": [
       "A"
     ],
-    "description": "A marker often found in basal African lineages like L0 and L1."
+    "description": "A marker often found in basal African lineages like L0 and L1.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "T16278C",
@@ -21102,7 +21568,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Common in many African L-haplogroups."
+    "description": "Common in many African L-haplogroups.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "C16311T",
@@ -21136,7 +21604,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs9000345_Songhai",
@@ -21158,7 +21628,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs9000346_Tuareg",
@@ -21950,7 +22422,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456306_Mandinka",
@@ -21972,7 +22446,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456308_Zulu",
@@ -21994,7 +22470,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456309_Congo",
@@ -22016,7 +22494,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L0_mtDNA",
@@ -22029,7 +22509,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L0, the oldest maternal lineage, found primarily in Southern African Khoe-San populations."
+    "description": "Defining marker for mtDNA Haplogroup L0, the oldest maternal lineage, found primarily in Southern African Khoe-San populations.",
+    "subPopulation": "Khoisan",
+    "subRegion": "Southern Africa"
   },
   {
     "markerId": "L1_mtDNA",
@@ -22042,7 +22524,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L1, common in Central and West Africa."
+    "description": "Defining marker for mtDNA Haplogroup L1, common in Central and West Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L2_mtDNA",
@@ -22055,7 +22539,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L2, the most common and diverse African maternal lineage."
+    "description": "Defining marker for mtDNA Haplogroup L2, the most common and diverse African maternal lineage.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L3_mtDNA",
@@ -22068,7 +22554,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L3, the lineage from which all non-African maternal haplogroups descended."
+    "description": "Defining marker for mtDNA Haplogroup L3, the lineage from which all non-African maternal haplogroups descended.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456316_Luhya",
@@ -22090,7 +22578,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456317_Maghreb",
@@ -22244,7 +22734,9 @@
       "EUR": 0.05,
       "SAS": 0.05,
       "MENA": 0.35
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456324_Oromo",
@@ -22266,7 +22758,9 @@
       "EUR": 0.04,
       "SAS": 0.04,
       "MENA": 0.3
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456325_Kikuyu",
@@ -22288,7 +22782,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456326_Baganda",
@@ -22310,7 +22806,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456327_Akan",
@@ -22332,7 +22830,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456328_Mende",
@@ -22354,7 +22854,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456329_Fon",
@@ -22376,7 +22878,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456330_Ewe",
@@ -22398,7 +22902,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456338_GaAdangbe",
@@ -22420,7 +22926,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456339_Edo",
@@ -22442,7 +22950,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456331_Tswana",
@@ -22464,7 +22974,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456332_Sotho",
@@ -22486,7 +22998,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456333_Venda",
@@ -22508,7 +23022,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456334_Shona",
@@ -22530,7 +23046,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456335_Fang",
@@ -22552,7 +23070,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456336_Baluba",
@@ -22574,7 +23094,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456337_Mongo",
@@ -22596,7 +23118,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456340_Dinka",
@@ -22618,7 +23142,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456341_Dinka",
@@ -22640,7 +23166,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456342_Nuer",
@@ -22662,7 +23190,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456343_Malagasy",
@@ -22684,7 +23214,9 @@
       "EUR": 0.01,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456344_Malagasy",
@@ -22706,7 +23238,9 @@
       "EUR": 0.01,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456345_KhoeSan",
@@ -22728,7 +23262,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Khoisan",
+    "subRegion": "Southern Africa"
   },
   {
     "markerId": "rs10456346_Mbuti",
@@ -22750,7 +23286,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456347_Biaka",
@@ -22772,7 +23310,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456348_Somali",
@@ -22794,7 +23334,9 @@
       "EUR": 0.05,
       "SAS": 0.05,
       "MENA": 0.3
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456349_Amhara",
@@ -22816,7 +23358,9 @@
       "EUR": 0.1,
       "SAS": 0.05,
       "MENA": 0.35
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456350_Yoruba",
@@ -22838,7 +23382,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456351_Igbo",
@@ -22860,7 +23406,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456352_Mandinka",
@@ -22882,7 +23430,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456353_Wolof",
@@ -22904,7 +23454,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456354_Zulu",
@@ -22926,7 +23478,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456355_Xhosa",
@@ -22948,7 +23502,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456356_Berber",
@@ -22992,7 +23548,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456358_Biaka",
@@ -23014,7 +23572,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456359_San",
@@ -23036,7 +23596,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456360_Khoikhoi",
@@ -23058,7 +23620,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456361_Hadza",
@@ -23080,7 +23644,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456362_Sandawe",
@@ -23102,7 +23668,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456363_Beja",
@@ -23124,7 +23692,9 @@
       "EUR": 0.05,
       "SAS": 0.05,
       "MENA": 0.4
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456367_Songhai",
@@ -23146,7 +23716,9 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456368_Dogon",
@@ -23168,7 +23740,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456369_Bambara",
@@ -23190,7 +23764,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456370_Fante",
@@ -23212,7 +23788,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456371_Ga",
@@ -23234,7 +23812,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456388_Shilluk",
@@ -23256,7 +23836,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456389_Anuak",
@@ -23278,7 +23860,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456391_Kalenjin",
@@ -23300,7 +23884,9 @@
       "EUR": 0,
       "SAS": 0.02,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456393_Kamba",
@@ -23322,7 +23908,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456396_Banyankole",
@@ -23344,7 +23932,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456399_Banyarwanda",
@@ -23366,7 +23956,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L4_mtDNA",
@@ -23379,7 +23971,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L4, common in East Africa."
+    "description": "Defining marker for mtDNA Haplogroup L4, common in East Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L5_mtDNA",
@@ -23392,7 +23986,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L5, a rare basal lineage found in East Africa."
+    "description": "Defining marker for mtDNA Haplogroup L5, a rare basal lineage found in East Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L6_mtDNA",
@@ -23405,7 +24001,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L6, found primarily in Ethiopia and Yemen."
+    "description": "Defining marker for mtDNA Haplogroup L6, found primarily in Ethiopia and Yemen.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "A_YDNA",
@@ -23418,7 +24016,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Y-DNA Haplogroup A, the most basal human paternal lineage."
+    "description": "Defining marker for Y-DNA Haplogroup A, the most basal human paternal lineage.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "B_YDNA",
@@ -23431,7 +24031,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Y-DNA Haplogroup B, common in Pygmy and Khoe-San populations."
+    "description": "Defining marker for Y-DNA Haplogroup B, common in Pygmy and Khoe-San populations.",
+    "subPopulation": "Khoisan",
+    "subRegion": "Southern Africa"
   },
   {
     "markerId": "E1b1a_YDNA",
@@ -23444,7 +24046,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for Y-DNA Haplogroup E1b1a, the dominant paternal lineage in Sub-Saharan Africa."
+    "description": "Defining marker for Y-DNA Haplogroup E1b1a, the dominant paternal lineage in Sub-Saharan Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456401_Mbuti",
@@ -23466,7 +24070,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456402_Biaka",
@@ -23488,7 +24094,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456403_San",
@@ -23510,7 +24118,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456404_Khoikhoi",
@@ -23532,7 +24142,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456405_Hadza",
@@ -23554,7 +24166,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456408_Tuareg",
@@ -23598,7 +24212,9 @@
       "EUR": 0.05,
       "SAS": 0.02,
       "MENA": 0.12
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456410_Hausa",
@@ -23620,7 +24236,9 @@
       "EUR": 0,
       "SAS": 0.01,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456418_Yoruba",
@@ -23642,7 +24260,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456419_Igbo",
@@ -23664,7 +24284,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L0a_mtDNA",
@@ -23677,7 +24299,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L0a, common in East and Central Africa."
+    "description": "Defining marker for mtDNA Haplogroup L0a, common in East and Central Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L0d_mtDNA",
@@ -23690,7 +24314,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L0d, common in Southern African Khoe-San populations."
+    "description": "Defining marker for mtDNA Haplogroup L0d, common in Southern African Khoe-San populations.",
+    "subPopulation": "Khoisan",
+    "subRegion": "Southern Africa"
   },
   {
     "markerId": "L1b_mtDNA",
@@ -23703,7 +24329,9 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L1b, common in West Africa."
+    "description": "Defining marker for mtDNA Haplogroup L1b, common in West Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L2a_mtDNA",
@@ -23716,7 +24344,9 @@
     "alleles": [
       "C"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L2a, the most widespread maternal lineage in Africa."
+    "description": "Defining marker for mtDNA Haplogroup L2a, the most widespread maternal lineage in Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L3b_mtDNA",
@@ -23729,7 +24359,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L3b, common in West Africa."
+    "description": "Defining marker for mtDNA Haplogroup L3b, common in West Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "L3e_mtDNA",
@@ -23742,7 +24374,9 @@
     "alleles": [
       "A"
     ],
-    "description": "Defining marker for mtDNA Haplogroup L3e, common in Central and West Africa."
+    "description": "Defining marker for mtDNA Haplogroup L3e, common in Central and West Africa.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "E1b1a1_YDNA",
@@ -23755,7 +24389,9 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Y-DNA Haplogroup E1b1a1, the major Sub-Saharan paternal lineage."
+    "description": "Defining marker for Y-DNA Haplogroup E1b1a1, the major Sub-Saharan paternal lineage.",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "E1b1b1_YDNA",
@@ -23856,7 +24492,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456426_Igbo",
@@ -23878,7 +24516,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs4988233_Lactase",
@@ -24032,7 +24672,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456431_Hadza",
@@ -24054,7 +24696,9 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   },
   {
     "markerId": "rs10456432_Mbuti",
@@ -24076,6 +24720,8 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   }
 ]

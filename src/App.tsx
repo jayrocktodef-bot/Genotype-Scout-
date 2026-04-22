@@ -17,6 +17,7 @@ import { jsPDF } from "jspdf";
 import { groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
+import { REGION_METADATA } from "./constants/regionInfo";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
@@ -63,7 +64,15 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
               {node.branchName}
             </span>
             {node.region && (
-              <span className="text-[9px] text-slate-400 font-medium uppercase tracking-wider">{node.region}</span>
+              <span 
+                className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
+                style={{
+                  backgroundColor: `${(CONTINENT_META[node.region] || CONTINENT_META["Global"]).color}20`,
+                  color: (CONTINENT_META[node.region] || CONTINENT_META["Global"]).color
+                }}
+              >
+                {node.region}
+              </span>
             )}
           </div>
           {node.description && (
@@ -663,7 +672,7 @@ const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<st
   );
 };
 
-const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: { oracleResults: any, selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
+const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelectedSubPop }: { oracleResults: any, ancestrySnps: any[], selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
   const [activeOracle, setActiveOracle] = useState<'primary' | 'secondary' | 'commercial'>('primary');
 
   if (!oracleResults) {
@@ -786,8 +795,17 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
               {pieData.map((entry) => {
                 const meta = CONTINENT_META[entry.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
                 const ci = confidenceIntervals?.[entry.name];
+                const info = REGION_METADATA[entry.name];
                 return (
-                  <div key={entry.name} className="flex flex-col p-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                  <div key={entry.name} className="relative flex flex-col p-2 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 group">
+                    {info && (
+                      <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity z-20 w-64 p-3 bg-slate-800 text-white text-[10px] rounded-lg shadow-xl border border-slate-700 pointer-events-none">
+                        <p className="font-bold mb-1">Genetic Significance</p>
+                        <p className="mb-2">{info.significance}</p>
+                        <p className="font-bold mb-1">Migration Patterns</p>
+                        <p>{info.migration}</p>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-2">
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
@@ -825,23 +843,40 @@ const OracleView = memo(({ oracleResults, selectedSubPop, setSelectedSubPop }: {
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
           <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Sub-population Breakdown</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(subPopulations)
-              .flatMap(([continent, subPops]) => (subPops as any[]).map((sp: any) => ({ ...sp, continent })))
-              .sort((a: any, b: any) => b.percentage - a.percentage)
+            {Object.entries(
+              ancestrySnps.reduce((acc: any, snp: any) => {
+                if (snp.subPopulation) {
+                  acc[snp.subPopulation] = (acc[snp.subPopulation] || 0) + 1;
+                }
+                return acc;
+              }, {})
+            )
+              .map(([name, count]: [string, any]) => ({ name, count }))
+              .sort((a: any, b: any) => b.count - a.count)
               .slice(0, 5)
-              .map((subPop: any, idx: number) => (
-                <button 
-                  key={`${subPop.continent}-${idx}`} 
-                  onClick={() => setSelectedSubPop(subPop.name)}
-                  className={`p-3 rounded-lg border text-left transition-colors ${selectedSubPop === subPop.name ? 'bg-indigo-50 dark:bg-indigo-900/40 border-indigo-300 dark:border-indigo-700' : 'bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800'}`}
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{subPop.name}</span>
-                    <span className="text-[10px] font-mono text-indigo-600 dark:text-indigo-400">{(subPop.confidence as number).toFixed(1)}% Conf.</span>
-                  </div>
-                  <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{(subPop.percentage as number).toFixed(1)}%</div>
-                </button>
-              ))
+              .map((subPop: any, idx: number) => {
+                const info = REGION_METADATA[subPop.name];
+                return (
+                  <button 
+                    key={`${subPop.name}-${idx}`} 
+                    onClick={() => setSelectedSubPop(subPop.name)}
+                    className={`relative p-3 rounded-lg border text-left transition-colors group ${selectedSubPop === subPop.name ? 'bg-indigo-50 dark:bg-indigo-900/40 border-indigo-300 dark:border-indigo-700' : 'bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800'}`}
+                  >
+                    {info && (
+                      <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity z-20 w-64 p-3 bg-slate-800 text-white text-[10px] rounded-lg shadow-xl border border-slate-700 pointer-events-none">
+                        <p className="font-bold mb-1">Genetic Significance</p>
+                        <p className="mb-2">{info.significance}</p>
+                        <p className="font-bold mb-1">Migration Patterns</p>
+                        <p>{info.migration}</p>
+                      </div>
+                    )}
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{subPop.name}</span>
+                      <span className="text-[10px] font-mono text-indigo-600 dark:text-indigo-400">{subPop.count} markers</span>
+                    </div>
+                  </button>
+                );
+              })
             }
           </div>
           
@@ -2117,6 +2152,7 @@ export default function App() {
           {activeTab === 'oracle' && (
             <OracleView 
               oracleResults={oracleResults}
+              ancestrySnps={datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry')}
               selectedSubPop={selectedSubPop}
               setSelectedSubPop={setSelectedSubPop}
             />
