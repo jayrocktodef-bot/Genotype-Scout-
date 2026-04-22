@@ -17828,5 +17828,367 @@
     "trait": "Ancestry",
     "category": "Ancestry",
     "gene": "CYP1A2"
+  },
+  {
+    "rsid": "rs1042714_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.8,
+      "EAS": 0.1,
+      "AMR": 0.2,
+      "SAS": 0.3,
+      "MENA": 0.4,
+      "OCE": 0.1
+    },
+    "subFrequencies": {
+      "Northern European": 0.9,
+      "Southern European": 0.6
+    },
+    "description": "Ancestry Informative Marker for European populations, with higher frequency in Northern lineage.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs4988235_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.75,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.2,
+      "MENA": 0.15,
+      "OCE": 0.05
+    },
+    "subFrequencies": {
+      "Northern European": 0.85,
+      "Southern European": 0.3
+    },
+    "description": "LCT variation marker frequently observed in Northern European population expansions.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1426654_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.95,
+      "EAS": 0.1,
+      "AMR": 0.2,
+      "SAS": 0.4,
+      "MENA": 0.5,
+      "OCE": 0.1
+    },
+    "subFrequencies": {
+      "Northern European": 0.98,
+      "Southern European": 0.9
+    },
+    "description": "SLC24A5 marker associated with skin pigmentation and high frequency across European populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs2222101_Mayan",
+    "region": "Native American",
+    "alleles": [
+      "C"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.9
+    },
+    "subFrequencies": {
+      "Yucatan": 0.95,
+      "Mexican Indigenous": 0.8
+    },
+    "description": "Mayan/Yucatan specific marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs3333102_MexInd",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.92
+    },
+    "subFrequencies": {
+      "Mexican Indigenous": 0.95
+    },
+    "description": "General Mexican Indigenous marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs4444103_Algonquin",
+    "region": "Native American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.88
+    },
+    "subFrequencies": {
+      "Algonquin": 0.9
+    },
+    "description": "Algonquin ancestry marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs5555104_Cherokee",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.91
+    },
+    "subFrequencies": {
+      "Cherokee": 0.95
+    },
+    "description": "Cherokee ancestry marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6666105_Lumbee",
+    "region": "Native American",
+    "alleles": [
+      "C"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.85
+    },
+    "subFrequencies": {
+      "Lumbee": 0.92
+    },
+    "description": "Lumbee ancestry marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs7777106_Lenape",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.87
+    },
+    "subFrequencies": {
+      "Lenape": 0.93
+    },
+    "description": "Lenape ancestry marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs8888107_Creek",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.89
+    },
+    "subFrequencies": {
+      "Creek": 0.94
+    },
+    "description": "Creek ancestry marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs1129038_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.75,
+      "AFR": 0.1,
+      "EAS": 0.05,
+      "AMR": 0.15,
+      "SAS": 0.15
+    },
+    "subFrequencies": {
+      "Irish": 0.85,
+      "Scottish": 0.82,
+      "English": 0.8
+    },
+    "description": "HERC2/OCA2 variation related to blue eye color in Western European populations.",
+    "trait": "Pigmentation",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs61986422_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 7,
+    "frequencies": {
+      "EUR": 0.65,
+      "AFR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.1
+    },
+    "subFrequencies": {
+      "Irish": 0.7,
+      "English": 0.68
+    },
+    "description": "Marker associated with European hair color and skin pigmentation.",
+    "trait": "Pigmentation",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs6059655_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.88,
+      "AFR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.15
+    },
+    "subFrequencies": {
+      "Scottish": 0.9,
+      "Irish": 0.88
+    },
+    "description": "High-frequency marker in British Isles lineages.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "rs112735431_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.8,
+      "AFR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05
+    },
+    "description": "Added marker rs112735431.",
+    "trait": "Ancestry",
+    "category": "Ancestry"
+  },
+  {
+    "rsid": "D9S1120_AMR",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.95
+    },
+    "subFrequencies": {
+      "Indigenous American": 0.95
+    },
+    "trait": "Native American Ancestry Marker",
+    "category": "Ancestry",
+    "description": "The \"9-repeat allele\" is a private marker found in almost all Native American groups but absent in Asia."
+  },
+  {
+    "rsid": "rs7089424_AMR",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.95
+    },
+    "subFrequencies": {
+      "Indigenous American": 0.95
+    },
+    "trait": "Native American Ancestry Marker",
+    "category": "Ancestry",
+    "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk."
+  },
+  {
+    "rsid": "rs7088318_AMR",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.95
+    },
+    "subFrequencies": {
+      "Indigenous American": 0.95
+    },
+    "trait": "Native American Ancestry Marker",
+    "category": "Ancestry",
+    "description": "Another high-frequency risk allele linked to increased Native American genetic heritage."
+  },
+  {
+    "rsid": "rs3731217_AMR",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.95
+    },
+    "subFrequencies": {
+      "Indigenous American": 0.95
+    },
+    "trait": "Native American Ancestry Marker",
+    "category": "Ancestry",
+    "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility."
+  },
+  {
+    "rsid": "rs2239633_AMR",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "AMR": 0.95
+    },
+    "subFrequencies": {
+      "Indigenous American": 0.95
+    },
+    "trait": "Native American Ancestry Marker",
+    "category": "Ancestry",
+    "description": "A specific marker used to differentiate ancestry profiles in admixed US populations."
   }
 ]

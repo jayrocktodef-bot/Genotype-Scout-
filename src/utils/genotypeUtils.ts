@@ -125,3 +125,27 @@ export function isSubpopMatch(snpSubpop: string, target: string) {
 
   return false;
 }
+
+export function identifyEndogamy(segments: Record<string, any[]>) {
+  let endogamyScore = 0;
+  
+  // Weights for different segment lengths (in Mb): longer segments are stronger indicators of IBD
+  const getWeight = (lengthMb: number) => {
+    if (lengthMb >= 20) return 4;
+    if (lengthMb >= 15) return 2;
+    if (lengthMb >= 10) return 1;
+    return 0;
+  };
+
+  if (!segments) return 0;
+  
+  for (const chrom in segments) {
+    const chromSegments = segments[chrom];
+    for (const seg of chromSegments) {
+      const lengthMb = (seg.end - seg.start) / 1000000;
+      endogamyScore += getWeight(lengthMb) * lengthMb;
+    }
+  }
+  
+  return endogamyScore; // Now an abstract score reflecting length-weighted density
+}

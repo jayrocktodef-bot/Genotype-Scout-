@@ -14,10 +14,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
 import { jsPDF } from "jspdf";
-import { groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP } from "./genotypeData";
+import { groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { REGION_METADATA } from "./constants/regionInfo";
+import { BloodTypeView } from "./components/BloodTypeView";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
@@ -195,46 +196,38 @@ const ProfileSummary = memo(({
       variants={container}
       initial="hidden"
       animate="show"
-      className="mb-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-min"
+      className="mb-12 grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-min"
     >
-      {/* Main Ancestry Card - Large */}
+      {/* Ancestry & Affinities Consolidation - Large */}
       <motion.div 
         variants={item}
-        className="md:col-span-4 lg:col-span-4 row-span-2 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow flex flex-col"
+        className="lg:col-span-2 p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
       >
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-xl">🌍</div>
-            <div>
-              <h3 className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Composition</h3>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Continental Breakdown</p>
-            </div>
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Overview</h3>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Admixture & Top Affinities</p>
           </div>
           <button 
             onClick={() => alert('Share functionality: Generating link/image...')}
-            className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-2"
+            className="px-5 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-xl transition-colors flex items-center gap-2 print:hidden shadow-lg shadow-sky-500/20"
           >
             <span>Share</span>
             <span>📤</span>
           </button>
-          {topContinent && (
-            <div className="text-right">
-              <div className="text-[10px] font-bold text-sky-600 uppercase tracking-widest">Primary</div>
-              <div className="text-sm font-black text-slate-900 dark:text-slate-100">{topContinent[0]}</div>
-            </div>
-          )}
         </div>
-
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
-          <div className="h-[200px] w-full">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Pie Chart */}
+          <div className="h-[240px] flex items-center justify-center">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={ancestryChartData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={60}
-                  outerRadius={80}
+                  innerRadius={70}
+                  outerRadius={90}
                   paddingAngle={5}
                   dataKey="value"
                 >
@@ -243,143 +236,99 @@ const ProfileSummary = memo(({
                   ))}
                 </Pie>
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '8px', color: '#fff', fontSize: '10px' }}
+                  contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '12px', color: '#fff', fontSize: '11px' }}
                   itemStyle={{ color: '#fff' }}
                 />
               </PieChart>
             </ResponsiveContainer>
           </div>
-          <div className="space-y-2">
-            {ancestryChartData.slice(0, 5).map((entry) => (
-              <div key={entry.name} className="flex items-center justify-between group">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: CONTINENT_META[entry.name]?.color }}></div>
-                  <span className="text-xs font-medium text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-100 transition-colors">{entry.name}</span>
-                </div>
-                <span className="text-xs font-mono font-bold text-slate-900 dark:text-slate-100">{entry.value.toFixed(1)}%</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Paternal Lineage - Medium */}
-      <motion.div 
-        variants={item}
-        className="md:col-span-2 lg:col-span-2 p-6 rounded-3xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 shadow-sm hover:shadow-md transition-all group"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">♂️</div>
-          <h4 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-widest">Paternal Lineage</h4>
-        </div>
-        <div className="flex items-baseline gap-2 mb-1">
-          <span className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter group-hover:scale-105 transition-transform origin-left inline-block">
-            {yData?.predicted?.name || 'Unknown'}
-          </span>
-        </div>
-        <div className="text-[10px] font-bold text-indigo-600/70 dark:text-indigo-400/70 uppercase mb-4">
-          {yData?.predicted?.marker ? `Haplogroup ${yData.predicted.name}` : 'No specific clade detected'}
-        </div>
-        <div className="p-3 rounded-xl bg-white/60 dark:bg-slate-900/40 border border-indigo-50 dark:border-indigo-800/20">
-          <div className="text-[9px] font-bold text-slate-400 uppercase mb-1">Defining Marker</div>
-          <div className="text-xs font-mono font-bold text-indigo-700 dark:text-indigo-300">{yData?.predicted?.marker || 'N/A'}</div>
-        </div>
-      </motion.div>
-
-      {/* Maternal Lineage - Medium */}
-      <motion.div 
-        variants={item}
-        className="md:col-span-2 lg:col-span-2 p-6 rounded-3xl bg-rose-50/50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-800/30 shadow-sm hover:shadow-md transition-all group"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600">♀️</div>
-          <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300 uppercase tracking-widest">Maternal Lineage</h4>
-        </div>
-        <div className="flex items-baseline gap-2 mb-1">
-          <span className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter group-hover:scale-105 transition-transform origin-left inline-block">
-            {mtData?.predicted || 'Unknown'}
-          </span>
-        </div>
-        <div className="text-[10px] font-bold text-rose-600/70 dark:text-rose-400/70 uppercase mb-4">
-          {mtData?.region || 'Global Maternal Line'}
-        </div>
-        <div className="p-3 rounded-xl bg-white/60 dark:bg-slate-900/40 border border-rose-50 dark:border-rose-800/20">
-          <div className="text-[9px] font-bold text-slate-400 uppercase mb-1">Historical Region</div>
-          <div className="text-xs font-bold text-rose-700 dark:text-rose-300">{mtData?.region || 'N/A'}</div>
-        </div>
-      </motion.div>
-
-      {/* Top Affinities - Medium */}
-      <motion.div 
-        variants={item}
-        className="md:col-span-2 lg:col-span-2 row-span-2 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
-      >
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600">🎯</div>
-          <h4 className="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-widest">Top Affinities</h4>
-        </div>
-        <div className="space-y-4">
-          {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
-            <div key={pop.name} className="space-y-1.5">
-              <div className="flex justify-between items-center">
-                <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300">{pop.name}</span>
-                <span className="text-[10px] font-mono font-bold text-amber-600">{pop.percentage.toFixed(1)}%</span>
-              </div>
-              <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
-                <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: `${pop.percentage}%` }}
-                  transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
-                  className="bg-amber-500 h-full rounded-full"
-                />
-              </div>
-            </div>
-          )) : (
-            <div className="text-center py-8 text-slate-400 text-[10px] italic">
-              Insufficient data for sub-population mapping
-            </div>
-          )}
-        </div>
-      </motion.div>
-
-      {/* Migration Paths - Wide */}
-      <motion.div 
-        variants={item}
-        className="md:col-span-4 lg:col-span-4 p-6 rounded-3xl bg-slate-900 text-white shadow-xl overflow-hidden relative"
-      >
-        <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
-        <div className="relative z-10">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-sky-400">🗺️</div>
-            <h4 className="text-xs font-bold text-sky-400 uppercase tracking-widest">Historical Migration Paths</h4>
-          </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div>
-              <div className="text-[9px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Paternal (Y-DNA)</div>
-              <div className="flex flex-wrap items-center gap-2">
-                {yData?.path?.map((step: string, idx: number) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    {idx > 0 && <span className="text-slate-600 text-[8px]">→</span>}
-                    <span className={`px-2 py-1 rounded-lg text-[10px] font-bold border ${idx === yData.path.length - 1 ? 'bg-sky-500 border-sky-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
-                      {step.replace("Haplogroup ", "")}
-                    </span>
-                  </div>
-                ))}
+          {/* Top Affinities */}
+          <div className="space-y-4">
+            <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Top Regional Affinities</div>
+            {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
+              <div key={pop.name} className="space-y-1.5">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs font-bold text-slate-700 dark:text-slate-200">{pop.name}</span>
+                  <span className="text-[11px] font-mono font-bold text-sky-600">{pop.percentage.toFixed(1)}%</span>
+                </div>
+                <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2 overflow-hidden">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: `${pop.percentage}%` }}
+                    transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
+                    className="bg-sky-500 h-full rounded-full"
+                  />
+                </div>
               </div>
+            )) : <div className="text-slate-400 italic text-xs">Insufficient sub-population data.</div>}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Paternal & Maternal Lineage Grid */}
+      <div className="grid grid-rows-2 gap-6">
+        <motion.div variants={item} className="p-6 rounded-3xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 shadow-sm flex flex-col justify-center">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="text-indigo-500">♂️</div>
+            <h4 className="text-[10px] font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-widest">Paternal Lineage</h4>
+          </div>
+          <div className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter truncate">
+            {yData?.predicted?.name || 'Unknown'}
+          </div>
+          <div className="text-[10px] font-bold text-indigo-600/70 dark:text-indigo-400/70 uppercase">
+            Marker: {yData?.predicted?.marker || 'N/A'}
+          </div>
+        </motion.div>
+
+        <motion.div variants={item} className="p-6 rounded-3xl bg-rose-50/50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-800/30 shadow-sm flex flex-col justify-center">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="text-rose-500">♀️</div>
+            <h4 className="text-[10px] font-bold text-rose-900 dark:text-rose-300 uppercase tracking-widest">Maternal Lineage</h4>
+          </div>
+          <div className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter truncate">
+            {mtData?.predicted || 'Unknown'}
+          </div>
+          <div className="text-[10px] font-bold text-rose-600/70 dark:text-rose-400/70 uppercase">
+            Region: {mtData?.region || 'N/A'}
+          </div>
+        </motion.div>
+      </div>
+      
+      {/* Migration Paths - Full Width */}
+      <motion.div 
+        variants={item}
+        className="lg:col-span-3 p-8 rounded-3xl bg-slate-900 text-white shadow-2xl overflow-hidden relative"
+      >
+        <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 blur-3xl rounded-full -mr-32 -mt-32"></div>
+        <h4 className="text-xs font-bold text-sky-400 uppercase tracking-widest mb-8 flex items-center gap-3">
+          <span className="text-lg">🗺️</span> Historical Migration Paths
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <div className="text-[9px] font-bold text-slate-500 uppercase mb-4 tracking-widest">Paternal (Y-DNA)</div>
+            <div className="flex flex-wrap items-center gap-3">
+              {yData?.path?.map((step: string, idx: number) => (
+                <div key={idx} className="flex items-center gap-3">
+                  {idx > 0 && <span className="text-slate-600 text-[10px]">→</span>}
+                  <div className={`px-3 py-1.5 rounded-lg text-[11px] font-bold border ${idx === yData.path.length - 1 ? 'bg-sky-600 border-sky-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
+                    {step.replace("Haplogroup ", "")}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div>
-              <div className="text-[9px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Maternal (mtDNA)</div>
-              <div className="flex flex-wrap items-center gap-2">
-                {mtData?.path?.map((step: string, idx: number) => (
-                  <div key={idx} className="flex items-center gap-2">
-                    {idx > 0 && <span className="text-slate-600 text-[8px]">→</span>}
-                    <span className={`px-2 py-1 rounded-lg text-[10px] font-bold border ${idx === mtData.path.length - 1 ? 'bg-rose-500 border-rose-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
-                      {step.replace("Haplogroup ", "")}
-                    </span>
+          </div>
+          <div>
+            <div className="text-[9px] font-bold text-slate-500 uppercase mb-4 tracking-widest">Maternal (mtDNA)</div>
+            <div className="flex flex-wrap items-center gap-3">
+              {mtData?.path?.map((step: string, idx: number) => (
+                <div key={idx} className="flex items-center gap-3">
+                  {idx > 0 && <span className="text-slate-600 text-[10px]">→</span>}
+                  <div className={`px-3 py-1.5 rounded-lg text-[11px] font-bold border ${idx === mtData.path.length - 1 ? 'bg-rose-600 border-rose-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
+                    {step.replace("Haplogroup ", "")}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -648,7 +597,7 @@ const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<st
                         width: `${width}%`,
                         backgroundColor: meta.color,
                       }}
-                      title={`${seg.continent}: ${Math.round(seg.confidence * 100)}% confidence`}
+                      title={`${seg.continent}: ${Math.round(seg.confidence * 100)}% confidence | ${((seg.end - seg.start) / 1000000).toFixed(1)} Mb`}
                     />
                   );
                 }) : (
@@ -691,6 +640,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
       ? oracleResults.secondary 
       : oracleResults.commercial;
   const { continentalScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData;
+  const endogamyScore = useMemo(() => identifyEndogamy(segments), [segments]);
   
   if (Object.keys(continentalScores).length === 0) {
     return (
@@ -749,6 +699,20 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
       </div>
       
       <div className="space-y-8">
+        {/* Endogamy Indicator */}
+        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800/30 flex items-center justify-between">
+          <div>
+            <h3 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Endogamy Detection</h3>
+            <p className="text-[10px] text-indigo-600 dark:text-indigo-400 mt-1">Based on contiguous segment analysis</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className={`px-3 py-1 rounded-full text-xs font-black ${endogamyScore > 150 ? 'bg-red-500 text-white' : endogamyScore > 50 ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'}`}>
+              {endogamyScore > 150 ? 'High' : endogamyScore > 50 ? 'Moderate' : 'Low'}
+            </span>
+            <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">{endogamyScore.toFixed(0)} Index</span>
+          </div>
+        </div>
+
         {/* Continental Admixture */}
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
           <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Continental Admixture</h3>
@@ -1572,7 +1536,7 @@ export default function App() {
 
   const [darkMode, setDarkMode] = useState(true);
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'debug'>('autosomal');
+  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'blood' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [collapsedCategories, setCollapsedCategories] = useState<Set<string>>(new Set());
@@ -2035,6 +1999,12 @@ export default function App() {
               ♀️ mtDNA
             </button>
             <button 
+              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'blood' ? 'bg-rose-500 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
+              onClick={() => setActiveTab('blood')}
+            >
+              🩸 Blood Type
+            </button>
+            <button 
               className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'summary' ? 'bg-amber-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
               onClick={() => setActiveTab('summary')}
             >
@@ -2089,16 +2059,16 @@ export default function App() {
             </div>
             <div className="flex flex-wrap gap-2">
               <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#030303' }} value={significanceFilter} onChange={(e) => setSignificanceFilter(e.target.value)}>
-                <option value="all">All Significance</option>
-                {uniqueSignificances.map(s => <option key={s} value={s}>{s}</option>)}
+                <option key="opt-all-significance" value="all">All Significance</option>
+                {uniqueSignificances.map(s => <option key={`opt-${s}`} value={s}>{s}</option>)}
               </select>
               <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#111214' }} value={continentFilter} onChange={(e) => setContinentFilter(e.target.value)}>
-                <option value="all">All Regions</option>
-                {uniqueContinents.map(c => <option key={c} value={c}>{c}</option>)}
+                <option key="opt-all-regions" value="all">All Regions</option>
+                {uniqueContinents.map(c => <option key={`opt-${c}`} value={c}>{c}</option>)}
               </select>
               <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#0d0e11' }} value={geneFilter} onChange={(e) => setGeneFilter(e.target.value)}>
-                <option value="all">All Genes</option>
-                {uniqueGenes.map(g => <option key={g} value={g}>{g}</option>)}
+                <option key="opt-all-genes" value="all">All Genes</option>
+                {uniqueGenes.map(g => <option key={`opt-${g}`} value={g}>{g}</option>)}
               </select>
               <div className="relative">
                 <input 
@@ -2162,6 +2132,10 @@ export default function App() {
             <HeatmapView 
               filteredResults={filteredResults}
             />
+          )}
+
+          {activeTab === 'blood' && (
+            <BloodTypeView dataset={datasets[activeDatasetIndex]} />
           )}
 
           {activeTab === 'y-dna' && (

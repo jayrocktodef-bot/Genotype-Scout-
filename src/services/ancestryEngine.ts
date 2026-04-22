@@ -324,7 +324,7 @@ export function runAncestryInference(
 
         windowProportions.forEach((prob, i) => {
           const continent = continentsToScore[i];
-          const filteredProb = prob < 0.05 ? 0 : prob;
+          const filteredProb = prob < 0.01 ? 0 : prob; // Reduced threshold to allow trace amounts
           continentalCounts[continent] += filteredProb;
           chromCounts[continent] += filteredProb;
         });
@@ -420,7 +420,9 @@ export function runAncestryInference(
     if (!regionStr) return;
     continentsToScore.forEach(continent => {
       if (regionStr.includes(continent)) {
-        continentalCounts[continent] = (continentalCounts[continent] || 0) + 1.5;
+        // Boost European haplogroup signals for finer resolution
+        const boost = continent === 'European' ? 2.5 : 1.5;
+        continentalCounts[continent] = (continentalCounts[continent] || 0) + boost;
       }
     });
   };

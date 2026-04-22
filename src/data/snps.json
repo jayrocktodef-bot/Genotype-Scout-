@@ -441,7 +441,8 @@
       "Native_American_unadmixed": 0.46,
       "SAS": 0.42
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs5219"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs5219",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1111875",
@@ -463,7 +464,8 @@
       "Native_American_unadmixed": 0.65,
       "SAS": 0.63
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1111875"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1111875",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs13266634",
@@ -485,7 +487,8 @@
       "Native_American_unadmixed": 0.65,
       "SAS": 0.6
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs13266634"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs13266634",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10954737",
@@ -507,7 +510,8 @@
       "Native_American_unadmixed": 0.8,
       "SAS": 0.45
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs10954737"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs10954737",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1800404",
@@ -529,7 +533,8 @@
       "Native_American_unadmixed": 0.72,
       "SAS": 0.5
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800404"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800404",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1800562",
@@ -551,7 +556,8 @@
       "Native_American_unadmixed": 0,
       "SAS": 0
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800562"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800562",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1800961",
@@ -573,7 +579,8 @@
       "Native_American_unadmixed": 0.08,
       "SAS": 0.04
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800961"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800961",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12779790",
@@ -595,7 +602,8 @@
       "Native_American_unadmixed": 0.28,
       "SAS": 0.22
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs12779790"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs12779790",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4833103",
@@ -617,7 +625,8 @@
       "Native_American_unadmixed": 0.12,
       "SAS": 0.18
     },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs4833103"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4833103",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs622682",
@@ -2051,7 +2060,8 @@
     "alleles": [
       "C"
     ],
-    "description": "Major Native American Y-DNA marker."
+    "description": "Major Native American Y-DNA marker.",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "L54",
@@ -4130,7 +4140,7 @@
     "rsid": "rs16891985",
     "gene": "SLC45A2",
     "trait": "Luo Ancestry Marker",
-    "continent": "African",
+    "continent": "European",
     "subpop": "Luo",
     "alleles": [
       "C"
@@ -4146,8 +4156,8 @@
       "SAS": 0.01,
       "MENA": 0.01
     },
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
+    "subPopulation": "Northern European",
+    "subRegion": "Northern Europe"
   },
   {
     "markerId": "rs10456201_Maasai",
@@ -9532,7 +9542,9 @@
       "EAS": 0.04,
       "EUR": 0.88,
       "MENA": 0.1
-    }
+    },
+    "subPopulation": "Northern European",
+    "subRegion": "Northern Europe"
   },
   {
     "markerId": "rs1042525_German",
@@ -16894,7 +16906,8 @@
     "alleles": [
       "9"
     ],
-    "description": "Found in about a third of Native Americans and entirely absent from the rest of the world."
+    "description": "Found in about a third of Native Americans and entirely absent from the rest of the world.",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs174570",
@@ -16908,7 +16921,8 @@
       "T"
     ],
     "description": "Tied to adapting to cold weather and diets high in fat and protein. Found in groups like the Inuit.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs174570"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs174570",
+    "subPopulation": "Inuit"
   },
   {
     "markerId": "P39",
@@ -16920,7 +16934,8 @@
     "alleles": [
       "T"
     ],
-    "description": "Found in Na-Dene and Algonquian language groups (e.g., Navajo, Apache)."
+    "description": "Found in Na-Dene and Algonquian language groups (e.g., Navajo, Apache).",
+    "subPopulation": "Navajo"
   },
   {
     "markerId": "rs174583",
@@ -16934,7 +16949,8 @@
       "T"
     ],
     "description": "A variant in the FADS gene cluster that shows strong signs of positive selection in Native American populations, likely an adaptation to specific diets.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs174583"
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs174583",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "O1vG542A",
@@ -16946,7 +16962,8 @@
     "alleles": [
       "A"
     ],
-    "description": "A specific mutation for Type O blood that traces back to the first populations in the Americas."
+    "description": "A specific mutation for Type O blood that traces back to the first populations in the Americas.",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12149629_Amazonian",
@@ -16968,7 +16985,8 @@
       "SAS": 0.07,
       "EUR": 0.14,
       "MENA": 0.07
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4845573_Amazonian",
@@ -16990,7 +17008,8 @@
       "SAS": 0.04,
       "EUR": 0.08,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2099878_Amazonian",
@@ -17012,7 +17031,8 @@
       "SAS": 0.1,
       "EUR": 0.2,
       "MENA": 0.1
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3916238_Amazonian",
@@ -17034,7 +17054,8 @@
       "SAS": 0.05,
       "EUR": 0.09,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2840531_Amazonian",
@@ -17056,7 +17077,8 @@
       "SAS": 0.07,
       "EUR": 0.15,
       "MENA": 0.07
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3900_Amazonian",
@@ -17078,7 +17100,8 @@
       "SAS": 0.04,
       "EUR": 0.05,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4845571_Andean",
@@ -17100,7 +17123,8 @@
       "SAS": 0.02,
       "EUR": 0.05,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2099876_Andean",
@@ -17122,7 +17146,8 @@
       "SAS": 0.08,
       "EUR": 0.15,
       "MENA": 0.08
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3916236_Andean",
@@ -17144,7 +17169,8 @@
       "SAS": 0.03,
       "EUR": 0.05,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2840529_Andean",
@@ -17166,7 +17192,8 @@
       "SAS": 0.05,
       "EUR": 0.1,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3898_Andean",
@@ -17188,7 +17215,8 @@
       "SAS": 0.02,
       "EUR": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10821216_Arctic",
@@ -17210,7 +17238,8 @@
       "EUR": 0.05,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4806444_Arctic",
@@ -17232,7 +17261,8 @@
       "EUR": 0.12,
       "SAS": 0.15,
       "MENA": 0.08
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10456285_Aymara",
@@ -17254,7 +17284,8 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs20424_Beringian",
@@ -17273,7 +17304,8 @@
       "AMR": 0.45,
       "EAS": 0.05,
       "EUR": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2231534_Caribbean",
@@ -17295,7 +17327,8 @@
       "EUR": 0.05,
       "SAS": 0.05,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3733839_Caribbean",
@@ -17317,7 +17350,8 @@
       "EUR": 0.01,
       "SAS": 0.05,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4845572_Central",
@@ -17339,7 +17373,8 @@
       "SAS": 0.03,
       "EUR": 0.06,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2099877_Central",
@@ -17361,7 +17396,8 @@
       "SAS": 0.09,
       "EUR": 0.18,
       "MENA": 0.09
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3916237_Central",
@@ -17383,7 +17419,8 @@
       "SAS": 0.04,
       "EUR": 0.07,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2840530_Central",
@@ -17405,7 +17442,8 @@
       "SAS": 0.06,
       "EUR": 0.13,
       "MENA": 0.06
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs3899_Central",
@@ -17427,7 +17465,8 @@
       "SAS": 0.03,
       "EUR": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs161497_Central",
@@ -17449,7 +17488,8 @@
       "EUR": 0.05,
       "SAS": 0.05,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs75853687_Central",
@@ -17471,7 +17511,8 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10456215_Cherokee",
@@ -17493,7 +17534,8 @@
       "EUR": 0.15,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Cherokee"
   },
   {
     "markerId": "rs1159102_EW",
@@ -17515,7 +17557,8 @@
       "EUR": 0.08,
       "SAS": 0.05,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2227282_EW",
@@ -17537,7 +17580,8 @@
       "EUR": 0.08,
       "SAS": 0.05,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10456207_Incan",
@@ -17559,7 +17603,8 @@
       "EUR": 0.02,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs11215559_Indig",
@@ -17581,7 +17626,8 @@
       "SAS": 0.01,
       "EUR": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs11215560_Indig",
@@ -17603,7 +17649,8 @@
       "SAS": 0,
       "EUR": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10456217_Inuit",
@@ -17625,7 +17672,8 @@
       "EUR": 0.05,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Inuit"
   },
   {
     "markerId": "rs10821217_NA",
@@ -17647,7 +17695,8 @@
       "EUR": 0.04,
       "SAS": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2227283_NA",
@@ -17669,7 +17718,8 @@
       "EUR": 0.06,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1159104_NA",
@@ -17691,7 +17741,8 @@
       "EUR": 0.05,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10221833_NA",
@@ -17713,7 +17764,8 @@
       "EUR": 0.04,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4806445_NA",
@@ -17735,7 +17787,8 @@
       "EUR": 0.1,
       "SAS": 0.12,
       "MENA": 0.06
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10821218_NA",
@@ -17757,7 +17810,8 @@
       "EUR": 0.03,
       "SAS": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2227284_NA",
@@ -17779,7 +17833,8 @@
       "EUR": 0.05,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1159105_NA",
@@ -17801,7 +17856,8 @@
       "EUR": 0.04,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10221834_NA",
@@ -17823,7 +17879,8 @@
       "EUR": 0.03,
       "SAS": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4806446_NA",
@@ -17845,7 +17902,8 @@
       "EUR": 0.08,
       "SAS": 0.1,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10821219_NA",
@@ -17867,7 +17925,8 @@
       "EUR": 0.02,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2227285_NA",
@@ -17889,7 +17948,8 @@
       "EUR": 0.04,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1159106_NA",
@@ -17911,7 +17971,8 @@
       "EUR": 0.03,
       "SAS": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10221835_NA",
@@ -17933,7 +17994,8 @@
       "EUR": 0.02,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4806447_NA",
@@ -17955,7 +18017,8 @@
       "EUR": 0.06,
       "SAS": 0.08,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10821220_NA",
@@ -17977,7 +18040,8 @@
       "EUR": 0.01,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2227286_NA",
@@ -17999,7 +18063,8 @@
       "EUR": 0.03,
       "SAS": 0.01,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1159107_NA",
@@ -18021,7 +18086,8 @@
       "EUR": 0.02,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10221836_NA",
@@ -18043,7 +18109,8 @@
       "EUR": 0.01,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4806448_NA",
@@ -18065,7 +18132,8 @@
       "EUR": 0.04,
       "SAS": 0.06,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10821221_NA",
@@ -18087,7 +18155,8 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2227287_NA",
@@ -18109,7 +18178,8 @@
       "EUR": 0.02,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10221831_Plains",
@@ -18131,7 +18201,8 @@
       "EUR": 0.06,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1159103_Plains",
@@ -18153,7 +18224,8 @@
       "EUR": 0.06,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10456216_Sioux",
@@ -18175,7 +18247,8 @@
       "EUR": 0.05,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2848332_SA",
@@ -18197,7 +18270,8 @@
       "EUR": 0.1,
       "SAS": 0.05,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs11267812_SA",
@@ -18219,7 +18293,8 @@
       "EUR": 0.05,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4908345_SA",
@@ -18241,7 +18316,8 @@
       "EUR": 0.04,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2016278_SA",
@@ -18263,7 +18339,8 @@
       "EUR": 0.03,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12028061_SA",
@@ -18285,7 +18362,8 @@
       "EUR": 0.05,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12119150_SA",
@@ -18307,7 +18385,8 @@
       "EUR": 0.04,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12535789_SA",
@@ -18329,7 +18408,8 @@
       "EUR": 0.02,
       "SAS": 0.02,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12727646_SA",
@@ -18351,7 +18431,8 @@
       "EUR": 0.03,
       "SAS": 0.02,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12913835_SA",
@@ -18373,7 +18454,8 @@
       "EUR": 0.08,
       "SAS": 0.06,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs12916302_SA",
@@ -18395,7 +18477,8 @@
       "EUR": 0.05,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs13115481_SA",
@@ -18417,7 +18500,8 @@
       "EUR": 0.06,
       "SAS": 0.05,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs13116547_SA",
@@ -18439,7 +18523,8 @@
       "EUR": 0.04,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs13182878_SA",
@@ -18461,7 +18546,8 @@
       "EUR": 0.08,
       "SAS": 0.06,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1343756_SA",
@@ -18483,7 +18569,8 @@
       "EUR": 0.05,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1426659_SA",
@@ -18505,7 +18592,8 @@
       "EUR": 0.04,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1446589_SA",
@@ -18527,7 +18615,8 @@
       "EUR": 0.03,
       "SAS": 0.02,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1610627_SA",
@@ -18549,7 +18638,8 @@
       "EUR": 0.02,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs161499_SA",
@@ -18571,7 +18661,8 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs16891987_SA",
@@ -18593,7 +18684,8 @@
       "EUR": 0.08,
       "SAS": 0.06,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs17135020_SA",
@@ -18615,7 +18707,8 @@
       "EUR": 0.05,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs174572_SA",
@@ -18637,7 +18730,8 @@
       "EUR": 0.06,
       "SAS": 0.05,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs17822933_SA",
@@ -18659,7 +18753,8 @@
       "EUR": 0.04,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs1805012_SA",
@@ -18681,7 +18776,8 @@
       "EUR": 0.01,
       "SAS": 0.01,
       "MENA": 0.01
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2016279_SA",
@@ -18703,7 +18799,8 @@
       "EUR": 0.08,
       "SAS": 0.06,
       "MENA": 0.05
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2066855_SA",
@@ -18725,7 +18822,8 @@
       "EUR": 0.05,
       "SAS": 0.04,
       "MENA": 0.03
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2187318_SA",
@@ -18747,7 +18845,8 @@
       "EUR": 0.06,
       "SAS": 0.05,
       "MENA": 0.04
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs2228481_SA",
@@ -18769,7 +18868,8 @@
       "EUR": 0.03,
       "SAS": 0.02,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs4806443_SW",
@@ -18791,7 +18891,8 @@
       "EUR": 0.15,
       "SAS": 0.2,
       "MENA": 0.1
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10221832_SW",
@@ -18813,7 +18914,8 @@
       "EUR": 0.05,
       "SAS": 0.03,
       "MENA": 0.02
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs7777777_Taino",
@@ -18835,7 +18937,8 @@
       "EUR": 0.03,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs8888888_Taino",
@@ -18857,7 +18960,8 @@
       "EUR": 0.04,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs9999999_Taino",
@@ -18879,7 +18983,8 @@
       "EUR": 0.06,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs11111111_Taino",
@@ -18901,7 +19006,8 @@
       "EUR": 0.03,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs22222222_Taino",
@@ -18923,7 +19029,8 @@
       "EUR": 0.05,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs33333333_Taino",
@@ -18945,7 +19052,8 @@
       "EUR": 0.08,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs44444444_Taino",
@@ -18967,7 +19075,8 @@
       "EUR": 0.04,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs55555555_Taino",
@@ -18989,7 +19098,8 @@
       "EUR": 0.06,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs66666666_Taino",
@@ -19011,7 +19121,8 @@
       "EUR": 0.05,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs77777777_Taino",
@@ -19033,7 +19144,8 @@
       "EUR": 0.02,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs10456227_Yanomami",
@@ -19055,7 +19167,8 @@
       "EUR": 0,
       "SAS": 0,
       "MENA": 0
-    }
+    },
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "rs80356779",
@@ -20534,7 +20647,8 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup Q-M3 (Native American)."
+    "description": "Defining marker for Haplogroup Q-M3 (Native American).",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "M194",
@@ -20546,7 +20660,8 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup Q-M3 (Native American)."
+    "description": "Defining marker for Haplogroup Q-M3 (Native American).",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "M199",
@@ -20558,7 +20673,8 @@
     "alleles": [
       "T"
     ],
-    "description": "Defining marker for Haplogroup Q-M3 (Native American)."
+    "description": "Defining marker for Haplogroup Q-M3 (Native American).",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "Z7700",
@@ -20908,7 +21024,8 @@
     "alleles": [
       "G"
     ],
-    "description": "Defining marker for Haplogroup Q1b-L53."
+    "description": "Defining marker for Haplogroup Q1b-L53.",
+    "subPopulation": "Indigenous American"
   },
   {
     "markerId": "L664",
@@ -24723,5 +24840,408 @@
     },
     "subPopulation": "Sub-Saharan",
     "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs7690467_NorthernEurope",
+    "rsid": "rs7690467",
+    "gene": "Unknown",
+    "trait": "Northern European Ancestry Marker",
+    "continent": "European",
+    "subpop": "Northern European",
+    "alleles": [
+      "A"
+    ],
+    "significance": "Medium",
+    "category": "Ancestry",
+    "description": "Ancestry Informative Marker for Northern European populations.",
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.1,
+      "EAS": 0.05,
+      "EUR": 0.85,
+      "SAS": 0.1,
+      "MENA": 0.05
+    },
+    "subPopulation": "Northern European",
+    "subRegion": "Northern Europe"
+  },
+  {
+    "markerId": "rs1712435_NorthernEurope",
+    "rsid": "rs1712435",
+    "gene": "Unknown",
+    "trait": "Northern European Ancestry Marker",
+    "continent": "European",
+    "subpop": "Northern European",
+    "alleles": [
+      "G"
+    ],
+    "significance": "Medium",
+    "category": "Ancestry",
+    "description": "Ancestry Informative Marker for Northern European populations.",
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.08,
+      "EAS": 0.02,
+      "EUR": 0.9,
+      "SAS": 0.05,
+      "MENA": 0.03
+    },
+    "subPopulation": "Northern European",
+    "subRegion": "Northern Europe"
+  },
+  {
+    "markerId": "rs9955196_NorthernEurope",
+    "rsid": "rs9955196",
+    "gene": "Unknown",
+    "trait": "Northern European Ancestry Marker",
+    "continent": "European",
+    "subpop": "Northern European",
+    "alleles": [
+      "T"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "Ancestry Informative Marker for Northern European populations.",
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.05,
+      "EAS": 0,
+      "EUR": 0.95,
+      "SAS": 0.02,
+      "MENA": 0.01
+    },
+    "subPopulation": "Northern European",
+    "subRegion": "Northern Europe"
+  },
+  {
+    "markerId": "rs2222101_Mayan",
+    "rsid": "rs2222101",
+    "continent": "Native American",
+    "subPopulation": "Mayan",
+    "subRegion": "Yucatan",
+    "alleles": [
+      "C"
+    ],
+    "description": "Marker for Mayan/Yucatan populations.",
+    "trait": "Marker for Mayan/Yucatan populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs3333102_MexInd",
+    "rsid": "rs3333102",
+    "continent": "Native American",
+    "subPopulation": "Mexican Indigenous",
+    "subRegion": "Mexico",
+    "alleles": [
+      "A"
+    ],
+    "description": "Marker for Mexican Indigenous populations.",
+    "trait": "Marker for Mexican Indigenous populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs4444103_Algonquin",
+    "rsid": "rs4444103",
+    "continent": "Native American",
+    "subPopulation": "Algonquin",
+    "subRegion": "North America",
+    "alleles": [
+      "G"
+    ],
+    "description": "Marker for Algonquin populations.",
+    "trait": "Marker for Algonquin populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs5555104_Cherokee",
+    "rsid": "rs5555104",
+    "continent": "Native American",
+    "subPopulation": "Cherokee",
+    "subRegion": "North America",
+    "alleles": [
+      "T"
+    ],
+    "description": "Marker for Cherokee populations.",
+    "trait": "Marker for Cherokee populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs6666105_Lumbee",
+    "rsid": "rs6666105",
+    "continent": "Native American",
+    "subPopulation": "Lumbee",
+    "subRegion": "North America",
+    "alleles": [
+      "C"
+    ],
+    "description": "Marker for Lumbee populations.",
+    "trait": "Marker for Lumbee populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs7777106_Lenape",
+    "rsid": "rs7777106",
+    "continent": "Native American",
+    "subPopulation": "Lenape",
+    "subRegion": "North America",
+    "alleles": [
+      "A"
+    ],
+    "description": "Marker for Lenape populations.",
+    "trait": "Marker for Lenape populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs8888107_Creek",
+    "rsid": "rs8888107",
+    "continent": "Native American",
+    "subPopulation": "Creek",
+    "subRegion": "North America",
+    "alleles": [
+      "T"
+    ],
+    "description": "Marker for Creek populations.",
+    "trait": "Marker for Creek populations.",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "AMR": 0.9
+    }
+  },
+  {
+    "markerId": "rs1129038_Irish",
+    "rsid": "rs1129038",
+    "continent": "European",
+    "subPopulation": "Irish",
+    "subRegion": "Western Europe",
+    "alleles": [
+      "A"
+    ],
+    "description": "HERC2 variant common in Irish ancestry.",
+    "trait": "Ancestry",
+    "significance": "Medium",
+    "category": "Ancestry",
+    "frequencies": {
+      "EUR": 0.75
+    }
+  },
+  {
+    "markerId": "rs61986422_Scottish",
+    "rsid": "rs61986422",
+    "continent": "European",
+    "subPopulation": "Scottish",
+    "subRegion": "Northern Europe",
+    "alleles": [
+      "C"
+    ],
+    "description": "Pigmentation variant observed in Scottish lineages.",
+    "trait": "Ancestry",
+    "significance": "Medium",
+    "category": "Ancestry",
+    "frequencies": {
+      "EUR": 0.65
+    }
+  },
+  {
+    "markerId": "rs6059655_English",
+    "rsid": "rs6059655",
+    "continent": "European",
+    "subPopulation": "English",
+    "subRegion": "Western Europe",
+    "alleles": [
+      "T"
+    ],
+    "description": "Ancestry marker common in English populations.",
+    "trait": "Ancestry",
+    "significance": "High",
+    "category": "Ancestry",
+    "frequencies": {
+      "EUR": 0.88
+    }
+  },
+  {
+    "markerId": "rs1050829",
+    "rsid": "rs1050829",
+    "continent": "N/A",
+    "subPopulation": "N/A",
+    "subRegion": "N/A",
+    "alleles": [],
+    "gene": "G6PD",
+    "description": "G6PD Deficiency (A- variant)",
+    "category": "Health",
+    "trait": "G6PD Deficiency (A- variant)",
+    "significance": "High",
+    "frequencies": {
+      "Global": 0
+    }
+  },
+  {
+    "markerId": "rs1050828",
+    "rsid": "rs1050828",
+    "continent": "N/A",
+    "subPopulation": "N/A",
+    "subRegion": "N/A",
+    "alleles": [],
+    "gene": "G6PD",
+    "description": "G6PD Deficiency (A- variant)",
+    "category": "Health",
+    "trait": "G6PD Deficiency (A- variant)",
+    "significance": "High",
+    "frequencies": {
+      "Global": 0
+    }
+  },
+  {
+    "markerId": "rs1799963",
+    "rsid": "rs1799963",
+    "continent": "N/A",
+    "subPopulation": "N/A",
+    "subRegion": "N/A",
+    "alleles": [],
+    "gene": "F2",
+    "description": "Prothrombin G20210A (Blood Clot Risk)",
+    "category": "Health",
+    "trait": "Prothrombin G20210A (Blood Clot Risk)",
+    "significance": "High",
+    "frequencies": {
+      "Global": 0
+    }
+  },
+  {
+    "markerId": "rs76992529",
+    "rsid": "rs76992529",
+    "continent": "N/A",
+    "subPopulation": "N/A",
+    "subRegion": "N/A",
+    "alleles": [],
+    "gene": "TTR",
+    "description": "TTR Val122Ile (Transthyretin Amyloidosis)",
+    "category": "Health",
+    "trait": "TTR Val122Ile (Transthyretin Amyloidosis)",
+    "significance": "High",
+    "frequencies": {
+      "Global": 0
+    }
+  },
+  {
+    "markerId": "rs112735431",
+    "rsid": "rs112735431",
+    "continent": "European",
+    "subPopulation": "European",
+    "subRegion": "General",
+    "alleles": [
+      "T"
+    ],
+    "description": "Added marker rs112735431.",
+    "trait": "Ancestry",
+    "significance": "Medium",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "frequencies": {
+      "Global": 0.2
+    }
+  },
+  {
+    "markerId": "rs7089424",
+    "rsid": "rs7089424",
+    "continent": "Native American",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Americas",
+    "alleles": [
+      "A"
+    ],
+    "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk.",
+    "trait": "Native American Ancestry Marker",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "ARID5B",
+    "frequencies": {
+      "AMR": 0.95
+    }
+  },
+  {
+    "markerId": "rs7088318",
+    "rsid": "rs7088318",
+    "continent": "Native American",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Americas",
+    "alleles": [
+      "A"
+    ],
+    "description": "Another high-frequency risk allele linked to increased Native American genetic heritage.",
+    "trait": "Native American Ancestry Marker",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "PIP4K2A",
+    "frequencies": {
+      "AMR": 0.95
+    }
+  },
+  {
+    "markerId": "rs3731217",
+    "rsid": "rs3731217",
+    "continent": "Native American",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Americas",
+    "alleles": [
+      "A"
+    ],
+    "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility.",
+    "trait": "Native American Ancestry Marker",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "CDKN2A",
+    "frequencies": {
+      "AMR": 0.95
+    }
+  },
+  {
+    "markerId": "rs2239633",
+    "rsid": "rs2239633",
+    "continent": "Native American",
+    "subPopulation": "Indigenous American",
+    "subRegion": "Americas",
+    "alleles": [
+      "A"
+    ],
+    "description": "A specific marker used to differentiate ancestry profiles in admixed US populations.",
+    "trait": "Native American Ancestry Marker",
+    "significance": "High",
+    "category": "Ancestry",
+    "gene": "CEBPE",
+    "frequencies": {
+      "AMR": 0.95
+    }
   }
 ]
