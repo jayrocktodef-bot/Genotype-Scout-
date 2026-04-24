@@ -1,6 +1,6 @@
 import { ANCHOR_AIMS } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
-import aimsData from '../aims.cleaned.json' with { type: 'json' };
+import { ANCESTRY_MARKERS } from '../data/ancestry';
 
 const ANCHOR_AIMS_TYPE = ANCHOR_AIMS;
 // ... (The rest of the file stays mostly same, but I might need to replace ANCHOR_AIMS usage if needed... wait, ANCHOR_AIMS is imported globally.)
@@ -528,10 +528,31 @@ export function runAncestryInference(
     });
   }
 
+  const deepScores: Record<string, number> = {};
+  const regionalScores: Record<string, number> = {};
+
+  // Aggregate subPopulations into flat regional and deep scores for the new Aurora API structure
+  Object.entries(subPopulations).forEach(([continent, populations]) => {
+    const continentWeight = normalizedContinental[continent] || 0;
+    populations.forEach((pop: any) => {
+      const scaledPercentage = (pop.percentage / 100) * continentWeight;
+      
+      // Only keep regional scores that are statistically significant (match the 1.5% continental threshold)
+      if (scaledPercentage >= 0.5) {
+        regionalScores[pop.name] = scaledPercentage;
+      }
+      
+      // If the population is highly dominant within its continent OR has a strong overall presence
+      if (pop.percentage > 60 || scaledPercentage > 8) {
+        deepScores[pop.name] = scaledPercentage;
+      }
+    });
+  });
+
   return { 
     continentalScores: normalizedContinental, 
-    regionalScores: {}, 
-    deepScores: {}, 
+    regionalScores, 
+    deepScores, 
     continents: Object.keys(normalizedContinental), 
     subPopulations, 
     subPopMarkers, 

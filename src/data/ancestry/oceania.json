@@ -1,0 +1,3960 @@
+[
+  {
+    "rsid": "rs17822931_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.8,
+      "AMR": 0.7,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "subFrequencies": {
+      "Papuan": 0.98,
+      "Melanesian": 0.96,
+      "Aboriginal": 0.92,
+      "Polynesian": 0.75,
+      "Micronesian": 0.7
+    },
+    "description": "ABCC11 variant - highly informative for East Asian, Native American, and Oceanian populations.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456304_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.99
+    },
+    "subFrequencies": {
+      "Bougainville": 0.99,
+      "Solomon_Islands": 0.97,
+      "Fiji": 0.85,
+      "Samoa": 0.7
+    },
+    "description": "Melanesian Specific Marker - diagnostic for the unique genetic lineages of the Bismarck Archipelago and Solomon Islands.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000296_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.8,
+      "EUR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.13
+    },
+    "description": "Maori Ancestry Marker - informative for Polynesian populations from New Zealand.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000298_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.01,
+      "EAS": 0.6,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.34
+    },
+    "description": "Fijian Ancestry Marker - informative for populations from Fiji.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000300_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "description": "Tongan Ancestry Marker - informative for populations from Tonga.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000302_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.07
+    },
+    "description": "Tahitian Ancestry Marker - informative for populations from Tahiti.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000304_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "description": "Cook Islander Ancestry Marker - informative for populations from the Cook Islands.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456223_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.01,
+      "EAS": 0.05,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "description": "Papuan Ancestry Marker - informative for indigenous populations of New Guinea.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456224_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.02,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.98
+    },
+    "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456225_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.55,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.65
+    },
+    "description": "Samoan Ancestry Marker - informative for western Polynesian populations.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456226_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.15,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.88
+    },
+    "description": "Melanesian Ancestry Marker - informative for populations from Vanuatu and the Solomon Islands.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456227_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.7,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.45
+    },
+    "description": "Micronesian Ancestry Marker - informative for populations of the Mariana and Caroline Islands.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456285_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "OCE": 0.97,
+      "EAS": 0.15,
+      "SAS": 0.05,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01
+    },
+    "description": "OCE/EAS Tie-Breaker - Deep Sahul lineage marker, strongly filters out Austronesian/East Asian overlap.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456294_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "OCE": 0.95,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "EAS": 0.15,
+      "SAS": 0.05,
+      "AMR": 0.02
+    },
+    "description": "OCE/AFR Tie-Breaker - Denisovan-introgressed lineage marker, entirely absent in Sub-Saharan Africa.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456296_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "OCE": 0.96,
+      "AMR": 0.01,
+      "EAS": 0.2,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.05
+    },
+    "description": "OCE/AMR Tie-Breaker - Deep Sahul lineage, effectively absent in indigenous populations of the Americas.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456265_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.9
+    },
+    "description": "Oceanian Tie-Breaker - Highly specific to Melanesian and Papuan populations.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456266_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 6,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.85
+    },
+    "description": "Oceanian Tie-Breaker - Informative for Australasian genetic signatures.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11887534_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.1,
+      "OCE": 0.95
+    },
+    "subFrequencies": {
+      "Papuan": 0.98,
+      "Melanesian": 0.96,
+      "Aboriginal": 0.94
+    },
+    "description": "Oceanian Diagnostic Marker - highly informative for identifying indigenous ancestry in the Pacific.",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs12439433",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.9933,
+      "EAS": 0.9959,
+      "OCE": 1,
+      "SAS": 0.9819,
+      "AMR": 0.4445,
+      "EUR": 0.9646,
+      "SIB": 0.99
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs7844723",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.8338,
+      "EAS": 0.8958,
+      "OCE": 0.9667,
+      "SAS": 0.6946,
+      "AMR": 0.82,
+      "EUR": 0.4644,
+      "SIB": 0.8627
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs1871428",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.8129,
+      "EAS": 0.7896,
+      "OCE": 0.8556,
+      "SAS": 0.615,
+      "AMR": 0.8081,
+      "EUR": 0.3881,
+      "SIB": 0.4608
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs8113143",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.8358,
+      "EAS": 0.7746,
+      "OCE": 0.8944,
+      "SAS": 0.6079,
+      "AMR": 0.8034,
+      "EUR": 0.3761,
+      "SIB": 0.6471
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs316598",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.7686,
+      "EAS": 0.6274,
+      "OCE": 0.7778,
+      "SAS": 0.4965,
+      "AMR": 0.427,
+      "EUR": 0.2934,
+      "SIB": 0.2941
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs3118378",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.6237,
+      "EAS": 0.4321,
+      "OCE": 0.7556,
+      "SAS": 0.6433,
+      "AMR": 0.0675,
+      "EUR": 0.6884,
+      "SIB": 0.7549
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs948028",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.4382,
+      "EAS": 0.8554,
+      "OCE": 0.9444,
+      "SAS": 0.8232,
+      "AMR": 0.6913,
+      "EUR": 0.7997,
+      "SIB": 0.8137
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs798443",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.2992,
+      "EAS": 0.6588,
+      "OCE": 0.8631,
+      "SAS": 0.6694,
+      "AMR": 0.7672,
+      "EUR": 0.7968,
+      "SIB": 0.66
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs1325502",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.5281,
+      "EAS": 0.4323,
+      "OCE": 0.7,
+      "SAS": 0.2673,
+      "AMR": 0.0983,
+      "EUR": 0.1785,
+      "SIB": 0.2745
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs3737576",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.9871,
+      "EAS": 0.9329,
+      "OCE": 1,
+      "SAS": 0.9181,
+      "AMR": 0.346,
+      "EUR": 0.9374,
+      "SIB": 0.86
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs4891825",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.3776,
+      "EAS": 0.9937,
+      "OCE": 1,
+      "SAS": 0.9121,
+      "AMR": 0.8535,
+      "EUR": 0.8968,
+      "SIB": 0.9
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs12130799",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.9963,
+      "EAS": 0.9957,
+      "OCE": 1,
+      "SAS": 0.9813,
+      "AMR": 0.5562,
+      "EUR": 0.9428,
+      "SIB": 1
+    },
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456290",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.03,
+      "EAS": 0.4,
+      "EUR": 0.05,
+      "SAS": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.9
+    },
+    "description": "Ancestry Informative Marker for Chamorro (Guam) populations.",
+    "trait": "Chamorro Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456291",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.38,
+      "EUR": 0.04,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.88
+    },
+    "description": "Ancestry Informative Marker for Chamorro (Guam) populations.",
+    "trait": "Chamorro Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456286",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0.3,
+      "EUR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "description": "Ancestry Informative Marker for Native Hawaiian populations.",
+    "trait": "Hawaiian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456287",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.04,
+      "EAS": 0.28,
+      "EUR": 0.04,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.92
+    },
+    "description": "Ancestry Informative Marker for Native Hawaiian populations.",
+    "trait": "Hawaiian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103377",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Hawaiian populations.",
+    "trait": "Hawaiian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103381",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.89,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Hawaiian populations.",
+    "trait": "Hawaiian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103385",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Hawaiian populations.",
+    "trait": "Hawaiian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000004",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Melanesian populations.",
+    "trait": "Melanesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000005",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Melanesian populations.",
+    "trait": "Melanesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000006",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.91,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Melanesian populations.",
+    "trait": "Melanesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000010",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Melanesian populations.",
+    "trait": "Melanesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000011",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Melanesian populations.",
+    "trait": "Melanesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103375",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Micronesian populations.",
+    "trait": "Micronesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Micronesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103379",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.86,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Micronesian populations.",
+    "trait": "Micronesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Micronesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103383",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.87,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Micronesian populations.",
+    "trait": "Micronesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Micronesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000007",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.86,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Micronesian populations.",
+    "trait": "Micronesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Micronesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000008",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.89,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Micronesian populations.",
+    "trait": "Micronesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Micronesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000009",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.92,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Micronesian populations.",
+    "trait": "Micronesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Micronesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103374",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Polynesian populations.",
+    "trait": "Polynesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103378",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.91,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Polynesian populations.",
+    "trait": "Polynesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11103382",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.92,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Polynesian populations.",
+    "trait": "Polynesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000001",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Polynesian populations.",
+    "trait": "Polynesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000002",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Polynesian populations.",
+    "trait": "Polynesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs9000003",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "description": "Ancestry Informative Marker for Polynesian populations.",
+    "trait": "Polynesian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Polynesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456288",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.25,
+      "EUR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.96
+    },
+    "description": "Ancestry Informative Marker for Samoan populations.",
+    "trait": "Samoan Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs10456289",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.22,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.94
+    },
+    "description": "Ancestry Informative Marker for Samoan populations.",
+    "trait": "Samoan Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs1129040",
+    "region": "Oceanian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "OCE": 0.94
+    },
+    "description": "Highly specific marker for Melanesian and Papuan populations.",
+    "trait": "Oceanian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs1129041",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "OCE": 0.92
+    },
+    "description": "Highly specific marker for Melanesian and Papuan populations.",
+    "trait": "Oceanian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs1129042",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "OCE": 0.9
+    },
+    "description": "Highly specific marker for Melanesian and Papuan populations.",
+    "trait": "Oceanian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Melanesian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014200",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014201",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014202",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014203",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014204",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014205",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014206",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014207",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014208",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014209",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014210",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014211",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014212",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014213",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014214",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014215",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014216",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014217",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014218",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014219",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014220",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014221",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014222",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014223",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014224",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014225",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014226",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014227",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014228",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014229",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014230",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014231",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014232",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014233",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014234",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014235",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014236",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014237",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014238",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014239",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014240",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014241",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014242",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014243",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014244",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014245",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014246",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs11014247",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600000_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600001_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600002_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600003_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600004_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600005_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600006_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600007_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600008_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs600009_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000010_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000011_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000012_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000013_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000014_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000015_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000016_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000017_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000018_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000019_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000020_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000021_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000022_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000023_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000024_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000025_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000026_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000027_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000028_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000029_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000030_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000031_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000032_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000033_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000034_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000035_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000036_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000037_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000038_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000039_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000040_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000041_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000042_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000043_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000044_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000045_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000046_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000047_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000048_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000049_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000050_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000051_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000052_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000053_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000054_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000055_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000056_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000057_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000058_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000059_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000060_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000061_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000062_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000063_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000064_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000065_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000066_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000067_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000068_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000069_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000070_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000071_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000072_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000073_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000074_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000075_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000076_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000077_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000078_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000079_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000080_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000081_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000082_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000083_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000084_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000085_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000086_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000087_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000088_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000089_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000090_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000091_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000092_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000093_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000094_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000095_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000096_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000097_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000098_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  },
+  {
+    "rsid": "rs6000099_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "Oceanian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "Oceanian",
+    "subRegion": "Oceania"
+  }
+]

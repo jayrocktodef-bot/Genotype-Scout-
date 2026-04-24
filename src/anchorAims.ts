@@ -1,4 +1,4 @@
-import aimsData from './aims.cleaned.json' with { type: 'json' };
+import { ANCESTRY_MARKERS } from './data/ancestry';
 
 export interface AnchorAim {
   rsid: string;
@@ -11,4 +11,4 @@ export interface AnchorAim {
   description: string;
 }
 
-export const ANCHOR_AIMS: AnchorAim[] = aimsData as AnchorAim[];
+export const ANCHOR_AIMS: AnchorAim[] = ANCESTRY_MARKERS as AnchorAim[];

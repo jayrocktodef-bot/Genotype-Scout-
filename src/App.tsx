@@ -167,9 +167,10 @@ const ProfileSummary = memo(({
   const mtData = dataset.predictedMtDNA;
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
   const topContinent = Object.entries(primaryAncestry).sort((a: any, b: any) => b[1] - a[1])[0];
-  const topSubPops = Object.entries(oracleResults?.primary?.subPopulations || {})
-    .flatMap(([continent, pops]: [string, any]) => pops.map((p: any) => ({ ...p, continent })))
-    .sort((a: any, b: any) => b.percentage - a.percentage)
+  const regionalScores = oracleResults?.primary?.regionalScores || {};
+  const topSubPops = Object.entries(regionalScores)
+    .map(([name, percentage]) => ({ name, percentage: Number(percentage) }))
+    .sort((a, b) => b.percentage - a.percentage)
     .slice(0, 5);
 
   const ancestryChartData = Object.entries(primaryAncestry)
@@ -639,7 +640,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
     : activeOracle === 'secondary' 
       ? oracleResults.secondary 
       : oracleResults.commercial;
-  const { continentalScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData;
+  const { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData;
   const endogamyScore = useMemo(() => identifyEndogamy(segments), [segments]);
   
   if (Object.keys(continentalScores).length === 0) {
@@ -656,6 +657,11 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
     name,
     value: Number(value)
   })).sort((a, b) => b.value - a.value);
+
+  const topRegions = Object.entries(regionalScores || {})
+    .filter(([name, score]) => (score as number) > 0 && !Object.keys(CONTINENT_META).includes(name))
+    .sort((a, b) => (b[1] as number) - (a[1] as number))
+    .slice(0, 8);
 
   return (
     <div className="mt-12 p-6 border-2 border-indigo-200 dark:border-indigo-800/50 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 shadow-sm">
@@ -800,65 +806,33 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
           </div>
         </div>
 
+        {/* Regional Heritage - Granular Analysis */}
+        {topRegions.length > 0 && (
+          <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-lg">🗺️</span>
+              <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider">Regional Heritage (Granular)</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {topRegions.map(([name, score]) => (
+                <div key={name} className={`flex flex-col p-3 rounded-lg border transition-all ${deepScores[name] ? 'bg-indigo-100 dark:bg-indigo-800/40 border-indigo-300 dark:border-indigo-600 ring-1 ring-indigo-200 dark:ring-indigo-700' : 'bg-indigo-50/50 dark:bg-indigo-900/20 border-indigo-100 dark:border-indigo-800/20'}`}>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider line-clamp-1">{name}</span>
+                    {deepScores[name] && (
+                      <span className="flex h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse" title="Deep Ancestry Signal"></span>
+                    )}
+                  </div>
+                  <div className="flex items-end justify-between">
+                    <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(score as number).toFixed(1)}%</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Chromosome Painting */}
         {chromosomeData && <ChromosomePainting data={chromosomeData} segments={segments} />}
-
-        {/* Sub-population Breakdown */}
-        <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
-          <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Sub-population Breakdown</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {Object.entries(
-              ancestrySnps.reduce((acc: any, snp: any) => {
-                if (snp.subPopulation) {
-                  acc[snp.subPopulation] = (acc[snp.subPopulation] || 0) + 1;
-                }
-                return acc;
-              }, {})
-            )
-              .map(([name, count]: [string, any]) => ({ name, count }))
-              .sort((a: any, b: any) => b.count - a.count)
-              .slice(0, 5)
-              .map((subPop: any, idx: number) => {
-                const info = REGION_METADATA[subPop.name];
-                return (
-                  <button 
-                    key={`${subPop.name}-${idx}`} 
-                    onClick={() => setSelectedSubPop(subPop.name)}
-                    className={`relative p-3 rounded-lg border text-left transition-colors group ${selectedSubPop === subPop.name ? 'bg-indigo-50 dark:bg-indigo-900/40 border-indigo-300 dark:border-indigo-700' : 'bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800'}`}
-                  >
-                    {info && (
-                      <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity z-20 w-64 p-3 bg-slate-800 text-white text-[10px] rounded-lg shadow-xl border border-slate-700 pointer-events-none">
-                        <p className="font-bold mb-1">Genetic Significance</p>
-                        <p className="mb-2">{info.significance}</p>
-                        <p className="font-bold mb-1">Migration Patterns</p>
-                        <p>{info.migration}</p>
-                      </div>
-                    )}
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{subPop.name}</span>
-                      <span className="text-[10px] font-mono text-indigo-600 dark:text-indigo-400">{subPop.count} markers</span>
-                    </div>
-                  </button>
-                );
-              })
-            }
-          </div>
-          
-          {selectedSubPop && (
-            <div className="mt-6 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4">Top 3 markers for {selectedSubPop}:</h4>
-              <div className="space-y-2">
-                {(Object.values(subPopulations).flat() as any[]).find((s: any) => s.name === selectedSubPop)?.topMarkers.map((marker: any, i: number) => (
-                  <div key={i} className="flex justify-between items-center p-2 bg-slate-50 dark:bg-slate-800 rounded text-xs">
-                      <span className="font-mono font-bold text-sky-700 dark:text-sky-400">{marker.rsid}</span>
-                      <span className="text-slate-600 dark:text-slate-300 truncate flex-1 mx-2">{marker.trait}</span>
-                      <span className="font-mono text-slate-900 dark:text-slate-100">{Number(marker.contribution).toFixed(2)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
 
       </div>
     </div>
@@ -1762,7 +1736,7 @@ export default function App() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 Facebook Group
               </a>
-              <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
+              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                 Research Blog
               </a>
@@ -1782,7 +1756,7 @@ export default function App() {
           <div className="text-sky-700 dark:text-sky-400 text-sm font-mono mb-8">Please wait while we analyze your markers</div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
+            <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
               <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Genetic Research</div>
               <div className="text-xs text-slate-600 dark:text-slate-400">Read about the latest findings in African genetic history.</div>
             </a>
@@ -2125,12 +2099,6 @@ export default function App() {
               ancestrySnps={datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry')}
               selectedSubPop={selectedSubPop}
               setSelectedSubPop={setSelectedSubPop}
-            />
-          )}
-
-          {activeTab === 'heatmap' && (
-            <HeatmapView 
-              filteredResults={filteredResults}
             />
           )}
 

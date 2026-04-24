@@ -1,6 +1,7 @@
 import { SNP_DB, SNP_LOOKUP } from '../data/snpDatabase';
 import mtDescriptions from '../data/mtDescriptions.json';
 import { ANCHOR_AIMS } from '../anchorAims';
+import { ANCESTRY_MARKERS } from '../data/ancestry';
 import { SNP } from '../types/genotype';
 
 const MT_MARKER_DESCRIPTIONS: Record<string, string> = mtDescriptions;
@@ -40,7 +41,7 @@ export function getMarkerDescription(markerId: string): string {
 export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>) {
   const seen = new Set<string>();
   
-  // Combine SNP_DB with ANCHOR_AIMS to ensure the Oracle has enough data
+  // Combine SNP_DB with ANCHOR_AIMS and ANCESTRY_MARKERS to ensure the Oracle has enough data
   const allSources: any[] = [
     ...SNP_DB,
     ...ANCHOR_AIMS.map(aim => ({
@@ -54,6 +55,19 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       significance: aim.significance || "Low",
       category: "Ancestry" as const,
       frequencies: aim.frequencies || aim.subFrequencies
+    })),
+    ...(ANCESTRY_MARKERS as any[]).map((m: any) => ({
+      markerId: m.rsid,
+      rsid: m.rsid,
+      gene: m.gene || "Intergenic",
+      trait: m.trait || m.description,
+      continent: m.region, // Map region to continent field for compatibility
+      description: m.description,
+      alleles: m.alleles,
+      significance: m.significance || "Medium",
+      category: "Ancestry" as const,
+      frequencies: m.frequencies,
+      subPopulation: m.region // Preserve granular region as subPopulation
     }))
   ];
 
