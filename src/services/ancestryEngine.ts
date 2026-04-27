@@ -3,6 +3,8 @@ import { SNP_DB } from '../data/snpDatabase';
 import { ANCESTRY_MARKERS } from '../data/ancestry';
 
 const ANCHOR_AIMS_TYPE = ANCHOR_AIMS;
+const anchorMap = new Map(ANCHOR_AIMS.map(a => [a.rsid.toLowerCase(), a]));
+const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
 // ... (The rest of the file stays mostly same, but I might need to replace ANCHOR_AIMS usage if needed... wait, ANCHOR_AIMS is imported globally.)
 import { CONTINENT_TO_CODE } from '../constants/genotypeConstants';
 import { isSubpopMatch } from '../utils/genotypeUtils';
@@ -132,8 +134,6 @@ export function runAncestryInference(
     'Middle Eastern', 'Native American', 'Oceanian', 'North African', 'Central Asian'
   ];
 
-  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
-
   if (allMarkers.length === 0) {
     return { continentalScores: {}, regionalScores: {}, deepScores: {}, continents: [], subPopulations: {}, subPopMarkers: {}, confidenceScore: 0, chromosomeData: {}, confidenceIntervals: {} };
   }
@@ -228,7 +228,7 @@ export function runAncestryInference(
         windowGenotypes.push(matchCount);
         
         const markerFreqs: number[] = [];
-        const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
+        const aim = anchorMap.get(rsid);
 
         for (const continent of continentsToScore) {
           let freq = 0.01; 
@@ -287,11 +287,11 @@ export function runAncestryInference(
 
         let continentSpecificWeight = 1.0;
         const sortedFreqs = [...markerFreqs].sort((a, b) => b - a);
-        if (sortedFreqs[0] > 0.7 && sortedFreqs[1] < 0.1) {
+        if (sortedFreqs[0] > 0.75 && sortedFreqs[1] < 0.05) {
           continentSpecificWeight = 5.0; 
         }
 
-        const weight = isPrimary ? 8.0 : (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight;
+        const weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight;
         windowWeights.push(weight);
       }
 
@@ -348,7 +348,7 @@ export function runAncestryInference(
             let matchCount = 0;
             for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
 
-            const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
+            const aim = anchorMap.get(rsid);
             let freq = 0.01;
             const code = CONTINENT_TO_CODE[continent];
 
@@ -392,11 +392,11 @@ export function runAncestryInference(
 
             let continentSpecificWeight = 1.0;
             const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
-            if (sortedSubFreqs[0] > 0.7 && sortedSubFreqs[1] < 0.1) {
+            if (sortedSubFreqs[0] > 0.75 && sortedSubFreqs[1] < 0.05) {
               continentSpecificWeight = 5.0;
             }
 
-            let weight = (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
+            let weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
             
             const error = (matchCount / 2) - f;
             subPopLogL[continent][sp] -= weight * (error * error);
@@ -571,8 +571,6 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
       userGenotype[rsid] = r.genotype;
     }
   });
-
-  const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
   
   const isAutosomal = (r: any) => {
     if (r.status === 'not_tested' || !r.chrom || r.pos === undefined) return false;

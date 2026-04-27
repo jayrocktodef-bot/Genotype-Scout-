@@ -206,12 +206,12 @@ const ProfileSummary = memo(({
       >
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Overview</h3>
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Admixture & Top Affinities</p>
+            <h3 className="text-xl font-black text-white tracking-tight">Ancestry Overview</h3>
+            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Admixture & Top Affinities</p>
           </div>
           <button 
             onClick={() => alert('Share functionality: Generating link/image...')}
-            className="px-5 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-xl transition-colors flex items-center gap-2 print:hidden shadow-lg shadow-sky-500/20"
+            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-2 print:hidden shadow-lg shadow-blue-500/20"
           >
             <span>Share</span>
             <span>📤</span>
@@ -220,7 +220,7 @@ const ProfileSummary = memo(({
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Pie Chart */}
-          <div className="h-[240px] flex items-center justify-center">
+          <div className="h-[240px] flex items-center justify-center bg-slate-900/50 rounded-2xl border border-slate-700/50">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -233,12 +233,12 @@ const ProfileSummary = memo(({
                   dataKey="value"
                 >
                   {ancestryChartData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name]?.color || '#cbd5e1'} />
+                    <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name]?.color || '#4599FF'} />
                   ))}
                 </Pie>
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#1e293b', border: 'none', borderRadius: '12px', color: '#fff', fontSize: '11px' }}
-                  itemStyle={{ color: '#fff' }}
+                  contentStyle={{ backgroundColor: '#111213', border: '1px solid #334155', borderRadius: '12px', color: '#F5F6F7', fontSize: '11px' }}
+                  itemStyle={{ color: '#F5F6F7' }}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -250,15 +250,15 @@ const ProfileSummary = memo(({
             {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
               <div key={pop.name} className="space-y-1.5">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-bold text-slate-700 dark:text-slate-200">{pop.name}</span>
-                  <span className="text-[11px] font-mono font-bold text-sky-600">{pop.percentage.toFixed(1)}%</span>
+                  <span className="text-xs font-bold text-slate-200">{pop.name}</span>
+                  <span className="text-[11px] font-mono font-bold text-blue-400">{pop.percentage.toFixed(1)}%</span>
                 </div>
-                <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2 overflow-hidden">
+                <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${pop.percentage}%` }}
                     transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
-                    className="bg-sky-500 h-full rounded-full"
+                    className="bg-blue-500 h-full rounded-full"
                   />
                 </div>
               </div>
