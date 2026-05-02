@@ -79,6 +79,11 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
           {node.description && (
             <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">{node.description}</p>
           )}
+          {node.historicalContext && isExpanded && (
+            <p className="text-[9px] text-rose-600 dark:text-rose-400 mt-1 italic border-l border-rose-200 dark:border-rose-800 pl-2 leading-tight">
+              {node.historicalContext}
+            </p>
+          )}
           <AnimatePresence>
             {isExpanded && treeMarkers.length > 0 && (
               <motion.div 
@@ -174,6 +179,28 @@ const ProfileSummary = memo(({
   const ancestryChartData = Object.entries(primaryAncestry)
     .map(([name, value]) => ({ name, value: Number(value) }))
     .sort((a, b) => b.value - a.value);
+
+  const findHaplogroupNode = (name: string, node: any = MT_DNA_TREE): any | null => {
+    if (node.branchName === name) return node;
+    if (node.children) {
+      for (const child of node.children) {
+        const found = findHaplogroupNode(name, child);
+        if (found) return found;
+      }
+    }
+    return null;
+  };
+
+  const enrichedMtPath = useMemo(() => {
+    return mtData.path.map((step: string) => {
+      const node = findHaplogroupNode(step);
+      return {
+        name: step,
+        region: node?.region || "Unknown",
+        description: node?.description || ""
+      };
+    });
+  }, [mtData.path]);
 
   const container = {
     hidden: { opacity: 0 },
@@ -526,6 +553,14 @@ const AutosomalView = memo(({
   );
 });
 
+const CHROMOSOME_LENGTHS: Record<string, number> = {
+  "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259,
+  "6": 170805979, "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422,
+  "11": 135086622, "12": 133275309, "13": 114364328, "14": 107043718, "15": 101991189,
+  "16": 90338345, "17": 83257441, "18": 80373285, "19": 58617616, "20": 64444167,
+  "21": 46709983, "22": 50818468
+};
+
 const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<string, number>>, segments?: Record<string, any[]> }) => {
   const chroms = Array.from({ length: 22 }, (_, i) => (i + 1).toString());
   
@@ -545,12 +580,12 @@ const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<st
       <div className="space-y-3">
         {chroms.map(chrom => {
           const chromSegments = segments?.[chrom] || [];
-          const maxPos = chromSegments.length > 0 ? Math.max(...chromSegments.map(s => s.end)) : 1;
+          const maxPos = CHROMOSOME_LENGTHS[chrom] || 250000000;
           
           return (
             <div key={chrom} className="flex items-center gap-3 group">
               <div className="w-8 text-[10px] font-black text-slate-400 group-hover:text-indigo-500 transition-colors">CH{chrom}</div>
-              <div className="flex-1 h-4 bg-slate-100 dark:bg-slate-900/50 rounded-full overflow-hidden relative border border-slate-200 dark:border-slate-800 shadow-inner">
+              <div className="flex-1 h-3 bg-slate-100 dark:bg-slate-900/50 rounded-full overflow-hidden relative border border-slate-200 dark:border-slate-800 shadow-inner">
                 {chromSegments.length > 0 ? chromSegments.map((seg, idx) => {
                   const meta = CONTINENT_META[seg.continent] || { color: '#94a3b8' };
                   const width = Math.max(0.5, ((seg.end - seg.start) / maxPos) * 100);
@@ -560,7 +595,7 @@ const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<st
                     <motion.div 
                       key={idx}
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.7 + (seg.confidence * 0.3) }}
+                      animate={{ opacity: 0.8 }}
                       className="absolute top-0 h-full border-r border-black/5"
                       style={{
                         left: `${left}%`,
@@ -805,6 +840,25 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
     </div>
   );
 });
+
+const CustomTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    const data = payload[0].payload;
+    return (
+      <div className="bg-slate-900 border border-slate-700 p-3 rounded-xl shadow-2xl backdrop-blur-md">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: payload[0].color || payload[0].fill }}></div>
+          <p className="text-xs font-black text-white">{data.name || data.mutation}</p>
+        </div>
+        {data.branch && <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">{data.branch}</p>}
+        {data.value !== undefined && data.name !== data.mutation && (
+          <p className="text-[10px] text-slate-300 mt-1 italic">Contribution: {data.value}</p>
+        )}
+      </div>
+    );
+  }
+  return null;
+};
 
 const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: any, treeSearchTerm: string, setTreeSearchTerm: (v: string) => void }) => {
   if (!yData) return null;
@@ -1070,9 +1124,32 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
 const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData: any, treeSearchTerm: string, setTreeSearchTerm: (val: string) => void }) => {
   if (!mtData) return null;
 
+  const findNode = useCallback((name: string, node: any = MT_DNA_TREE): any | null => {
+    if (node.branchName === name) return node;
+    if (node.children) {
+      for (const child of node.children) {
+        const found = findNode(name, child);
+        if (found) return found;
+      }
+    }
+    return null;
+  }, []);
+
+  const enrichedPath = useMemo(() => {
+    return (mtData.path || []).map((step: string) => {
+      const node = findNode(step);
+      return {
+        name: step.replace("Haplogroup ", ""),
+        region: node?.region || "Unknown",
+        description: node?.description || "A pivotal point in the maternal migration history.",
+        historicalContext: node?.historicalContext,
+        mutations: node?.mutations || []
+      };
+    });
+  }, [mtData.path, findNode]);
+
   const derivedMarkers = mtData.testedMarkers.filter((m: any) => m.status === 'derived');
   const markerPieData = derivedMarkers.map((m: any) => {
-    // Try to find the branch name from the path if possible, or use the mutation
     const branch = (mtData.path.find((p: string) => p.includes(m.mutation)) || mtData.predicted || 'Root').replace("Haplogroup ", "");
     return {
       name: m.mutation,
@@ -1082,262 +1159,299 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
   });
 
   return (
-    <div className="animate-fade-up space-y-8">
+    <div className="animate-fade-up space-y-8 pb-12">
+      {/* Hero Prediction Section */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-2 bg-gradient-to-br from-rose-500 to-pink-600 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-8 opacity-20 text-9xl">♀️</div>
-          <div className="relative z-10">
-            <h3 className="text-rose-100 font-bold uppercase tracking-widest text-xs mb-2">Maternal Lineage Prediction</h3>
+        <div className="lg:col-span-2 bg-gradient-to-br from-rose-500 to-pink-700 p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden group">
+          <div className="absolute -top-10 -right-10 opacity-10 text-[12rem] select-none pointer-events-none group-hover:rotate-12 transition-transform duration-700">♀️</div>
+          <div className="relative z-10 h-full flex flex-col">
+            <h3 className="text-rose-100 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 opacity-80">Maternal Lineage (mtDNA)</h3>
             {mtData.predicted ? (
               <>
-                <h2 className="text-5xl font-black mb-4 tracking-tighter">{mtData.predicted}</h2>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Confidence Score: {mtData.score}</span>
-                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Region: {mtData.region}</span>
-                </div>
-                
-                {/* Lineage Path Highlight */}
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <h4 className="text-[10px] font-bold text-rose-200 uppercase tracking-widest mb-3">Predicted Maternal Path</h4>
-                  <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
-                    {mtData.path.map((step: string, idx: number) => (
-                      <div key={idx} className="flex items-center gap-1">
-                        {idx > 0 && <span className="text-rose-300/50 text-[10px]">▶</span>}
-                        <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === mtData.path.length - 1 ? 'bg-white text-rose-700 shadow-lg' : 'bg-white/10 text-white'}`}>
-                          {step.replace("Haplogroup ", "")}
-                        </span>
-                      </div>
-                    ))}
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-6xl sm:text-7xl font-black mb-6 tracking-tighter"
+                >
+                  {mtData.predicted}
+                </motion.h2>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <div className="px-5 py-2 bg-white/20 backdrop-blur-md rounded-2xl text-[11px] font-black shadow-sm flex items-center gap-2 border border-white/10 uppercase tracking-widest">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    Confidence: {mtData.score}
                   </div>
+                  <div className="px-5 py-2 bg-white/20 backdrop-blur-md rounded-2xl text-[11px] font-black shadow-sm border border-white/10 uppercase tracking-widest">
+                    {mtData.region}
+                  </div>
+                </div>
+                <div className="mt-auto">
+                  <p className="text-rose-50 text-sm leading-relaxed max-w-xl font-medium opacity-90 border-l-2 border-rose-300/30 pl-4 py-1 italic">
+                    {mtData.description || "Tracing the unbroken maternal line across civilizations and continents."}
+                  </p>
                 </div>
               </>
             ) : (
-              <h2 className="text-3xl font-bold">No haplogroup detected</h2>
+              <h2 className="text-3xl font-bold">Lineage Pending...</h2>
             )}
           </div>
         </div>
 
-        {/* mtDNA Marker Distribution Pie Chart */}
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
-          <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">mtDNA Marker Distribution</h4>
+        {/* Support Metrics and Distilled Charts */}
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col group">
+          <h4 className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-6">Lineage Markers</h4>
           {markerPieData.length > 0 ? (
-            <div className="flex-1 flex flex-col">
-              <div className="flex-1 min-h-[180px]">
+            <div className="flex-1 flex flex-col justify-center">
+              <div className="relative w-full aspect-square max-h-[160px] mx-auto">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
                       data={markerPieData}
                       cx="50%"
                       cy="50%"
-                      innerRadius={40}
-                      outerRadius={70}
-                      paddingAngle={1}
+                      innerRadius={55}
+                      outerRadius={75}
+                      paddingAngle={4}
                       dataKey="value"
-                      label={false}
-                      labelLine={false}
+                      stroke="none"
                     >
                       {markerPieData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} />
+                        <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
                       ))}
                     </Pie>
-                    <Tooltip 
-                      content={({ active, payload }) => {
-                        if (active && payload && payload.length) {
-                          const data = payload[0].payload;
-                          return (
-                            <div className="bg-slate-800 p-2 rounded text-[10px] text-white shadow-xl border border-slate-700">
-                              <div className="flex items-center gap-1.5 mb-0.5">
-                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getHaploColor(data.branch, true) }}></div>
-                                <span className="font-bold">{data.name}</span>
-                              </div>
-                              <div className="text-slate-400">Branch: {data.branch}</div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
+                    <Tooltip cursor={false} content={<CustomTooltip />} />
                   </PieChart>
                 </ResponsiveContainer>
-              </div>
-              <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1">
-                <div className="col-span-2 text-[8px] text-slate-400 mb-1">
-                  Showing {markerPieData.length} derived markers
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                  <span className="text-3xl font-black text-slate-900 dark:text-slate-100">{derivedMarkers.length}</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Matches</span>
                 </div>
-                {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 6).map((branch) => (
-                  <div key={branch as string} className="flex items-center justify-between text-[9px]">
-                    <div className="flex items-center gap-1 truncate">
-                      <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: getHaploColor(branch as string, true) }}></div>
-                      <span className="text-slate-600 dark:text-slate-400 truncate">{branch as string}</span>
-                    </div>
-                  </div>
-                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap justify-center gap-2">
+                 {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 3).map(b => (
+                   <span key={b} className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-[9px] font-bold text-slate-500">
+                     {b}
+                   </span>
+                 ))}
               </div>
             </div>
           ) : (
-            <div className="flex-1 flex items-center justify-center text-slate-400 text-[10px] italic">
-              No derived markers found
+            <div className="flex-1 flex items-center justify-center text-slate-400 text-xs italic text-center">
+              Insufficient marker data for visualization
             </div>
           )}
         </div>
 
-        {/* Description Card */}
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-          <div>
-            <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">About this lineage</h4>
-            <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed line-clamp-4">
-              {mtData.description || "This lineage is not yet in our database or has limited marker coverage."}
-            </p>
-          </div>
-          
-          {mtData.predicted && (
-            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
-              <div className="text-[10px] font-bold text-rose-600 uppercase tracking-widest mb-1">Primary Region</div>
-              <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{mtData.region}</div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* mtDNA Subclade Analysis Section */}
-      {mtData.predicted && (
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm animate-fade-up">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-2xl">🧬</div>
-            <div>
-              <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Maternal Subclade Analysis</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Detailed insights into your specific mitochondrial branch</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest mb-2">Terminal Branch</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">{mtData.predicted}</div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                This represents the most specific maternal lineage identified from your genetic markers.
-              </p>
-            </div>
-            
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest mb-2">Mutation Path</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">{mtData.path.length} Steps</div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                Your maternal line follows a path of {mtData.path.length} key mutations since Mitochondrial Eve.
-              </p>
-            </div>
-            
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-rose-600 dark:text-rose-400 uppercase tracking-widest mb-2">Core Region</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">{mtData.region}</div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                This maternal lineage is historically rooted in the {mtData.region} region.
-              </p>
-            </div>
-          </div>
-          
-          <div className="mt-6 p-6 rounded-2xl bg-rose-50 dark:bg-rose-900/20 border border-rose-100 dark:border-rose-800/50">
-            <h4 className="text-xs font-bold text-rose-900 dark:text-rose-300 mb-2 uppercase tracking-widest">Historical Context</h4>
-            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
-              {mtData.description || "Detailed historical data for this specific maternal subclade is currently being compiled. This branch represents a unique point in the human maternal migration story."}
-            </p>
-          </div>
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 dark:text-rose-400">🌳</span>
-              Phylogenetic Tree
-            </h3>
-            <div className="relative">
-              <input 
-                type="text" 
-                placeholder="Find branch or mutation..." 
-                className="bg-slate-100 dark:bg-slate-900 rounded-full px-4 py-1.5 pl-9 text-xs font-bold focus:ring-2 focus:ring-rose-500 outline-none border border-slate-200 dark:border-slate-700 w-full sm:w-48 transition-all"
-                value={treeSearchTerm}
-                onChange={(e) => setTreeSearchTerm(e.target.value)}
-              />
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <div className="bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+          <div className="absolute bottom-0 right-0 p-8 opacity-5 text-8xl pointer-events-none">🧬</div>
+          <div className="relative z-10">
+            <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-8">Evolutionary Pulse</h4>
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-rose-500/20 transition-colors">🧬</div>
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">SNP Resolution</div>
+                  <div className="text-lg font-black">{mtData.testedMarkers.length} Markers</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-indigo-500/20 transition-colors">🛣️</div>
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">Path Distance</div>
+                  <div className="text-lg font-black">{enrichedPath.length} Milestones</div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
-            <HaplogroupTreeView 
-              node={MT_DNA_TREE} 
-              userPath={mtData.path} 
-              searchTerm={treeSearchTerm} 
-              testedMarkers={mtData.testedMarkers}
-            />
+          <p className="text-[9px] text-slate-500 mt-8 leading-tight italic border-t border-white/5 pt-6">
+            Mitochondrial Eve is our direct common maternal ancestor who lived ~150,000 to 200,000 years ago in Africa.
+          </p>
+        </div>
+      </div>
+
+      {/* Migration Story and Marker Detail Layout */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+        <div className="xl:col-span-2 space-y-8">
+          {/* Main Migration Story Card */}
+          <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+            
+            <div className="flex items-center justify-between mb-12 relative z-10">
+              <div>
+                <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Your Maternal Odyssey</h3>
+                <p className="text-sm text-slate-400 font-medium mt-1">Tracing the geographic and genetic path of your ancestors</p>
+              </div>
+              <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
+                 <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                 <span className="text-[10px] font-black uppercase text-slate-500">Ancient to Modern</span>
+              </div>
+            </div>
+
+            <div className="relative pl-12 ml-4 space-y-16 before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-rose-500 before:via-pink-500 before:to-transparent">
+              {enrichedPath.map((step: any, idx: number) => {
+                const isFirst = idx === 0;
+                const isLast = idx === enrichedPath.length - 1;
+                
+                return (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="relative group cursor-default"
+                  >
+                    {/* Node Pin */}
+                    <div className={`absolute -left-[64px] top-0 w-12 h-12 rounded-2xl border-4 border-white dark:border-slate-800 shadow-lg flex items-center justify-center z-10 transition-all group-hover:rotate-12 ${
+                      isLast ? 'bg-rose-600 scale-110 rotate-12' : isFirst ? 'bg-indigo-600' : 'bg-slate-200 dark:bg-slate-700'
+                    }`}>
+                      <span className={`text-[11px] font-black ${isLast || isFirst ? 'text-white' : 'text-slate-500'}`}>{idx + 1}</span>
+                    </div>
+
+                    <div className="bg-slate-50/40 dark:bg-slate-900/40 p-6 sm:p-8 rounded-3xl border border-transparent group-hover:border-rose-200 dark:group-hover:border-rose-900/30 transition-all group-hover:shadow-xl group-hover:shadow-rose-100/50 dark:group-hover:shadow-none">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                        <div className="space-y-1">
+                          <h4 className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter leading-none group-hover:text-rose-600 transition-colors">
+                            {step.name === "mtDNA Root (Eve)" ? "Mitochondrial Eve" : step.name}
+                          </h4>
+                          <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-rose-300"></span>
+                            <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 tracking-[0.1em] uppercase">Originates in: {step.region}</span>
+                          </div>
+                        </div>
+                        <div className="shrink-0 flex items-center gap-3">
+                           {isFirst && <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg text-[9px] font-black text-indigo-600 tracking-widest border border-indigo-100 dark:border-indigo-800 uppercase">Ancestor</span>}
+                           {isLast && <span className="px-3 py-1 bg-rose-50 dark:bg-rose-900/30 rounded-lg text-[9px] font-black text-rose-600 tracking-widest border border-rose-100 dark:border-rose-800 uppercase">You Are Here</span>}
+                        </div>
+                      </div>
+                      
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+                        {step.description}
+                      </p>
+
+                      {step.historicalContext && (
+                        <div className="mb-6 p-4 bg-rose-50/50 dark:bg-rose-900/10 border-l-4 border-rose-400 rounded-r-xl">
+                          <div className="text-[10px] font-black text-rose-600 dark:text-rose-400 uppercase tracking-[0.2em] mb-1">Historical Context</div>
+                          <p className="text-xs text-slate-700 dark:text-slate-300 italic leading-relaxed">
+                            {step.historicalContext}
+                          </p>
+                        </div>
+                      )}
+
+                      {step.mutations.length > 0 && (
+                        <div className="relative pt-4 border-t border-slate-200 dark:border-slate-700/50">
+                          <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                             🧬 Genetic Markers at this step
+                          </div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {step.mutations.slice(0, 20).map((m: string) => (
+                              <span key={m} className={`px-2 py-0.5 text-[9px] font-mono font-bold rounded-md transition-colors ${
+                                mtData.userMutations.includes(m)
+                                  ? 'bg-rose-500 text-white shadow-sm'
+                                  : 'bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700'
+                              }`}>
+                                {m}
+                              </span>
+                            ))}
+                            {step.mutations.length > 20 && (
+                              <span className="text-[10px] text-slate-400 font-bold self-center">+{step.mutations.length - 20}</span>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <span className="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-rose-600">🔬</span>
-            Tested Markers
-          </h3>
-          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
-            <div className="p-4 bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
-              <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Marker Details</div>
-              <div className="text-[10px] text-slate-400">{mtData.testedMarkers.length} markers tested</div>
+        {/* Sidebar: Detailed Marker Grid */}
+        <div className="space-y-8">
+          <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-8 shadow-sm flex flex-col h-full max-h-[1000px]">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-100 dark:border-slate-700">
+               <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-widest">Molecular Report</h3>
+               <span className="text-[9px] font-bold px-3 py-1 bg-slate-100 dark:bg-slate-900 rounded-xl text-slate-500 uppercase tracking-widest">
+                 {mtData.testedMarkers.length} Found
+               </span>
             </div>
-            <div className="max-h-[600px] overflow-y-auto scrollbar-hide divide-y divide-slate-100 dark:divide-slate-700/50">
-              {mtData.testedMarkers.length === 0 ? (
-                <div className="p-8 text-center">
-                  <div className="text-3xl mb-3">🔬</div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">No mtDNA Markers Found</h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    We couldn't find any mitochondrial DNA markers in your file.
-                  </p>
-                </div>
-              ) : (
-                [...mtData.testedMarkers]
-                  .sort((a: any, b: any) => {
-                    if (a.status === 'derived' && b.status !== 'derived') return -1;
-                    if (a.status !== 'derived' && b.status === 'derived') return 1;
-                    return parseInt(a.pos) - parseInt(b.pos);
-                  })
-                  .map((m: any, i: number) => (
-                  <div key={i} className={`p-4 transition-colors ${m.status === 'derived' ? 'bg-rose-50/40 dark:bg-rose-900/10' : 'hover:bg-slate-50 dark:hover:bg-slate-700/30'}`}>
-                    <div className="flex justify-between items-start mb-2">
-                      <div className="flex items-center gap-2">
-                        <div className={`w-2 h-2 rounded-full ${m.status === 'derived' ? 'bg-rose-500 animate-pulse' : 'bg-slate-300 dark:bg-slate-600'}`}></div>
-                        <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{m.mutation}</div>
-                      </div>
-                      <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${m.status === 'derived' ? 'bg-rose-100 dark:bg-rose-900 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600'}`}>
-                        {m.status}
-                      </span>
-                    </div>
-                    
-                    <div className="grid grid-cols-3 gap-2 mb-3">
-                      <div className="bg-white/50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
-                        <div className="text-[8px] text-slate-400 uppercase font-bold mb-0.5">Position</div>
-                        <div className="text-[11px] font-mono text-slate-700 dark:text-slate-300">{m.pos}</div>
-                      </div>
-                      <div className="bg-white/50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
-                        <div className="text-[8px] text-slate-400 uppercase font-bold mb-0.5">Ancestral</div>
-                        <div className="text-[11px] font-mono text-slate-700 dark:text-slate-300">{m.ancestral}</div>
-                      </div>
-                      <div className="bg-white/50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700">
-                        <div className="text-[8px] text-slate-400 uppercase font-bold mb-0.5">Derived</div>
-                        <div className="text-[11px] font-mono text-slate-700 dark:text-slate-300">{m.derived}</div>
-                      </div>
-                    </div>
 
-                    {m.description && (
-                      <div className="text-[10px] text-slate-600 dark:text-slate-400 leading-relaxed bg-slate-50/50 dark:bg-slate-900/30 p-2 rounded-lg border-l-2 border-rose-400 dark:border-rose-600">
-                        {m.description}
-                      </div>
-                    )}
+            <div className="flex-1 overflow-y-auto pr-2 space-y-3 custom-scrollbar scroll-smooth">
+              {[...mtData.testedMarkers]
+                .sort((a, b) => (b.status === 'derived' ? 1 : -1))
+                .map((m: any, idx: number) => (
+                <div key={idx} className={`p-5 rounded-2xl border transition-all duration-300 group/marker ${
+                  m.status === 'derived' 
+                    ? 'bg-rose-50/30 dark:bg-rose-900/10 border-rose-100 dark:border-rose-900/30' 
+                    : 'bg-slate-50/50 dark:bg-slate-900/20 border-slate-100 dark:border-slate-800 opacity-60 hover:opacity-100'
+                }`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-base font-black text-slate-900 dark:text-slate-100 tracking-tight font-mono group-hover/marker:text-rose-600 transition-colors">
+                       {m.mutation}
+                    </span>
+                    <span className={`text-[8px] font-black uppercase px-2 py-0.5 rounded-lg border ${
+                      m.status === 'derived' 
+                        ? 'bg-rose-500 text-white border-rose-400 shadow-sm' 
+                        : 'bg-slate-200 dark:bg-slate-700 text-slate-500 border-slate-300 dark:border-slate-600'
+                    }`}>
+                      {m.status}
+                    </span>
                   </div>
-                ))
-              )}
+                  
+                  <div className="flex gap-4 mb-4">
+                     <div className="flex-1 p-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div className="text-[8px] text-slate-400 font-bold uppercase mb-0.5">Position</div>
+                        <div className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">{m.pos}</div>
+                     </div>
+                     <div className="flex-1 p-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div className="text-[8px] text-slate-400 font-bold uppercase mb-0.5">Shift</div>
+                        <div className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">{m.ancestral}<span className="text-rose-500 mx-1">→</span>{m.derived}</div>
+                     </div>
+                  </div>
+
+                  {m.description && (
+                    <p className="text-[10px] text-slate-500 leading-relaxed italic line-clamp-2 group-hover/marker:line-clamp-none transition-all">
+                       {m.description}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Full Tree Explorer */}
+      <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm overflow-hidden relative">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100 dark:border-slate-700">
+          <div>
+            <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Maternal Library</h3>
+            <p className="text-sm text-slate-400">Interactive mitochondrial phylogenetic navigator</p>
+          </div>
+          <div className="relative w-full max-w-sm">
+            <input 
+              type="text"
+              placeholder="Jump to Haplogroup (e.g., L3, R0, H)..."
+              className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-rose-500 outline-none transition-all"
+              value={treeSearchTerm}
+              onChange={(e) => setTreeSearchTerm(e.target.value)}
+            />
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 min-h-[500px] overflow-hidden">
+           <div className="overflow-x-auto">
+             <div className="min-w-[1000px]">
+               <HaplogroupTreeView 
+                 node={MT_DNA_TREE} 
+                 userPath={mtData.path} 
+                 searchTerm={treeSearchTerm} 
+                 testedMarkers={mtData.testedMarkers} 
+               />
+             </div>
+           </div>
         </div>
       </div>
     </div>
@@ -1354,10 +1468,11 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
   });
 
   // Calculate coverage if a dataset is active
+  const matched = activeDataset?.results?.filter((r: any) => r.status === 'matched' || r.status === 'partial').length || 0;
   const coverage = activeDataset ? {
-    matched: activeDataset.snpCount || 0,
+    matched: matched,
     total: snps.length,
-    percent: ((activeDataset.snpCount || 0) / snps.length * 100).toFixed(1)
+    percent: ((matched / snps.length) * 100).toFixed(1)
   } : null;
 
   return (

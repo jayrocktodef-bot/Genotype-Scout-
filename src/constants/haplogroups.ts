@@ -877,12 +877,14 @@ export const Y_DNA_TREE: HaplogroupNode = {
 export const MT_DNA_TREE: HaplogroupNode = {
   branchName: "mtDNA Root (Eve)",
   mutations: [],
+  historicalContext: "The common maternal ancestor of all living humans, estimated to have lived roughly 150,000 to 200,000 years ago in East Africa. Her lineage is the source of all mitochondrial DNA passed down from mother to child today.",
   children: [
     {
       branchName: "Haplogroup L0",
       mutations: ["T146C", "C182T", "A189G", "C195T", "T198C", "G200A", "T247C", "A523d", "C524d", "A769G", "A825t", "C1018T", "G2758A", "C3516A", "G3591A", "G4104A", "T4312C", "T5442C", "T7146C", "T7256C", "A7521G", "T8448C", "C8468T", "T8655C", "G9540A", "C10394T", "A10664G", "A10688G", "C10810T", "C10873T", "A10915G", "A11719G", "A11914G", "G12007A", "T12720C", "A13105G", "G13276A", "T13506C", "T13650C", "T14766C", "A15326G", "G16129A", "T16187C", "C16189T", "G16230A", "T16278C", "C16311T"],
       region: "Southern Africa",
       description: "The oldest branch of the human maternal tree, found at its highest frequencies among the Khoisan-speaking peoples of Southern Africa. It represents the most ancient surviving maternal lineage.",
+      historicalContext: "L0 emerged over 130,000 years ago. Its persistence in Southern African hunter-gatherer populations provides a direct link to some of the earliest chapters of human evolution in the Kalahari region.",
       children: [
         { branchName: "L0a", mutations: ["G16209A", "T16230A"], region: "East/Central Africa" },
         { branchName: "L0d", mutations: ["C16168T", "A16247G"], region: "Southern Africa (San)" },
@@ -894,6 +896,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
       mutations: ["G3666A", "G3915A", "G3992A", "G4025A", "G4312A", "G4820A", "T6366C", "C7028T", "G8697A", "G9380A", "G10394A", "G10400A", "G10873A", "G12007A", "G12720A", "G13105A", "G13276A", "G13506A", "G13650A", "G14766A", "G15326A", "G16129A", "G16187A", "G16189A", "G16223A", "G16230A", "G16278A", "G16311A"],
       region: "Central/West Africa",
       description: "An ancient African lineage found primarily in Central and West Africa, particularly among Pygmy populations.",
+      historicalContext: "Originating around 110,000 to 140,000 years ago, L1 is one of the foundational lineages of Central Africa, often associated with the early forest-dwelling ancestors of modern Pygmy groups.",
       children: [
         { branchName: "L1b", mutations: ["T16126C", "C16264T"], region: "West Africa" },
         { branchName: "L1c", mutations: ["T16187C", "C16189T"], region: "Central Africa" }
@@ -904,6 +907,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
       mutations: ["G143A", "G1189A", "G2416A", "G3915A", "G4104A", "G4820A", "G7028A", "G8206A", "G9221A", "G10115A", "G10394A", "G10400A", "G10873A", "G11914A", "G12007A", "G12720A", "G13105A", "G13506A", "G13708A", "G14766A", "G15301A", "G15326A", "G16129A", "G16189A", "G16223A", "G16278A", "G16311A", "G16390A"],
       region: "Sub-Saharan Africa",
       description: "The most common and diverse maternal lineage in Africa, found across the entire continent. It is strongly associated with the Bantu expansion.",
+      historicalContext: "L2 appeared around 70,000 to 90,000 years ago. Its massive distribution today is a direct result of the Bantu migrations starting 3,000 years ago, which carried agriculture and ironworking technology across much of sub-Saharan Africa.",
       children: [
         { branchName: "L2a", mutations: ["G16356A"], region: "West/Central/East Africa" },
         { branchName: "L2b", mutations: ["G16114A", "G16213A"], region: "West Africa" },
@@ -934,6 +938,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
       mutations: ["G760A", "G1014A", "G3594A", "G4104A", "G7028A", "G7256A", "G7521A", "G8468A", "G8655A", "G9540A", "G10394A", "G10400A", "G10810A", "G10873A", "G12720A", "G13105A", "G13276A", "G13506A", "G13650A", "G14766A", "G15326A", "G16129A", "G16223A", "G16311A"],
       region: "East Africa / Global Ancestor",
       description: "A pivotal lineage that originated in East Africa. It is the ancestor of all non-African maternal lineages (Haplogroups M and N).",
+      historicalContext: "L3 arose ~70,000 years ago in East Africa. Its most significant historical role is that it provided the founding populations for the 'Out of Africa' migration, giving rise to all modern non-African populations.",
       children: [
         { branchName: "L3b", mutations: ["G16124A", "G16278A"], region: "West Africa" },
         { branchName: "L3d", mutations: ["G16124A", "G16223A"], region: "West/Central Africa" },
@@ -944,6 +949,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
           mutations: ["G489A", "G10400A", "G14783A", "G15043A"],
           region: "Asia / Oceania / Americas",
           description: "One of the two major lineages that migrated out of Africa. It is dominant in South and East Asia.",
+          historicalContext: "M is one of the two main branches that left Africa ~65,000 years ago. It followed a rapid coastal route across South Asia and into Oceania, becoming a cornerstone of Asian genetic diversity.",
           children: [
             { branchName: "M1", mutations: ["T16129C", "C16189T", "T16223C", "G16249A", "T16311C"], region: "North Africa / Near East / East Africa", description: "The only branch of M that is common in Africa, specifically North and East Africa." },
             { 
@@ -968,8 +974,18 @@ export const MT_DNA_TREE: HaplogroupNode = {
             ]},
             { branchName: "M9", mutations: ["G16223A", "G16311A"], region: "East Asia" },
             { branchName: "M10", mutations: ["G16129A"], region: "East Asia" },
-            { branchName: "D", mutations: ["G16362A"], region: "East Asia / Americas" },
-            { branchName: "G", mutations: ["G16223A"], region: "East Asia / Siberia" },
+            { 
+              branchName: "Haplogroup D", 
+              mutations: ["G16362A"], 
+              region: "East Asia / Americas",
+              historicalContext: "D is a widespread East Asian lineage and another founding member of the Native American gene pool. It is especially common in Siberia and East Asia."
+            },
+            { 
+              branchName: "Haplogroup G", 
+              mutations: ["G16223A"], 
+              region: "East Asia / Siberia",
+              historicalContext: "G originated in East Asia and is common among populations in the Altai region and Northern China."
+            },
             { branchName: "Q", mutations: ["G16129A", "G16223A"], region: "Oceania" },
             { branchName: "E", mutations: ["T16311C", "G16362A"], region: "Island Southeast Asia / Oceania" }
           ]
@@ -979,6 +995,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
           mutations: ["G8701A", "G9540A", "G10398A", "G10873A", "G15301A"],
           region: "Eurasia / Oceania / Americas",
           description: "The other major lineage that migrated out of Africa. It is the ancestor of almost all European and many Asian lineages.",
+          historicalContext: "N likely branched early from L3 after the exit from Africa. It moved into Southwest Asia and then radiated into Europe and Northern Asia, serving as the common maternal ancestor for nearly all West Eurasians.",
           children: [
             { branchName: "N1", mutations: ["G16147A", "G16223A"], children: [
               { branchName: "I", mutations: ["G16129A", "G16223A"], region: "Europe / Near East" }
@@ -994,14 +1011,25 @@ export const MT_DNA_TREE: HaplogroupNode = {
             { branchName: "N9", mutations: ["T16223C", "G16311A"], region: "East Asia / Siberia / Japan", children: [
               { branchName: "Y", mutations: ["G16126C", "G16231A"], region: "Siberia / East Asia" }
             ]},
-            { branchName: "A", mutations: ["G16223A", "G16290A", "G16319A"], region: "East Asia / Americas" },
-            { branchName: "S", mutations: ["G16223A"], region: "Australia" },
+            { 
+              branchName: "Haplogroup A", 
+              mutations: ["G16223A", "G16290A", "G16319A"], 
+              region: "East Asia / Americas",
+              historicalContext: "A is one of the founding lineages of the Americas. It is found across North and Central Asia and reached high frequencies among the indigenous peoples of North America."
+            },
+            { 
+              branchName: "Haplogroup S", 
+              mutations: ["G16223A"], 
+              region: "Australia",
+              historicalContext: "S is a lineage found exclusively among Indigenous Australians, representing an ancient isolation of over 50,000 years."
+            },
             { branchName: "O", mutations: ["T16093C", "C16261T"], region: "Oceania / Southeast Asia" },
             {
               branchName: "Haplogroup X",
               mutations: ["A153G", "C6221T", "G14470A", "T16189C", "T16278C"],
               region: "Middle East / Europe / North America",
               description: "A rare but widely dispersed West Eurasian lineage. It is unique for being found in both Europe, the Near East, and among certain Native American groups (Algonquian speakers). It represents an ancient migration that reached the Americas independently of the main Beringian waves.",
+              historicalContext: "X is one of the most enigmatic haplogroups. It likely originated in the Near East ~30,000 years ago. Its presence in pre-Columbian North America (X2a) has sparked many theories about ancient transatlantic migrations, though genetic evidence points to a Siberian route for its American branch.",
               children: [
                 { branchName: "X1", mutations: ["T146C", "T152C"], region: "North/East Africa / Near East" },
                 { 
@@ -1024,22 +1052,70 @@ export const MT_DNA_TREE: HaplogroupNode = {
               mutations: ["G12705A", "G16223A"],
               region: "Eurasia",
               description: "A major sub-branch of N that gave rise to many of the most common European and South Asian lineages.",
+              historicalContext: "Haplogroup R is essentially the 'grandparent' of most European maternal lines. It emerged over 50,000 years ago in Southwest Asia and gave rise to major subclades like H, V, J, and T, which successfully colonized the European continent during and after the Ice Age.",
               children: [
                 { branchName: "R0", mutations: ["G16129A"], children: [
                   { branchName: "HV", mutations: ["G16129A"], children: [
-                    { branchName: "H", mutations: ["G2706A", "G7028A"], region: "Europe / Near East", description: "The most common maternal lineage in Europe." },
-                    { branchName: "V", mutations: ["G4580A", "G16298A"], region: "Northern Europe" }
+                    { 
+                      branchName: "Haplogroup H", 
+                      mutations: ["G2706A", "G7028A"], 
+                      region: "Europe / Near East", 
+                      description: "The most common maternal lineage in Europe.",
+                      historicalContext: "H is the dominant maternal lineage in Europe, found in nearly half of all native Europeans. It expanded rapidly across the continent following the Last Glacial Maximum (around 15,000 years ago) as humans re-colonized Northern Europe from southern refugia like the Franco-Cantabrian region."
+                    },
+                    { 
+                      branchName: "Haplogroup V", 
+                      mutations: ["G4580A", "G16298A"], 
+                      region: "Northern Europe",
+                      historicalContext: "Haplogroup V is often called the 'Saami marker' because it occurs at very high frequencies among the Saami people of Northern Scandinavia. It is believed to have expanded from a refuge in Southwest Europe after the last Ice Age."
+                    }
                   ]}
                 ]},
-                { branchName: "B", mutations: ["G16189A", "G16217A"], region: "East Asia / Americas" },
-                { branchName: "F", mutations: ["G16304A"], region: "East Asia" },
-                { branchName: "JT", mutations: ["G16126C"], children: [
-                  { branchName: "J", mutations: ["G16069A", "G16126C"], region: "Europe / Near East" },
-                  { branchName: "T", mutations: ["G16126C", "G16294A"], region: "Europe / Near East" }
-                ]},
+                { 
+                  branchName: "Haplogroup B", 
+                  mutations: ["G16189A", "G16217A"], 
+                  region: "East Asia / Americas",
+                  historicalContext: "B is one of the four founding maternal lineages of the Native American populations. It originated in East Asia and traveled across Beringia, though it is the only one of the 'Big Four' American haplogroups that has not been found in ancient remains from Northern Siberia as frequently as others."
+                },
+                { 
+                  branchName: "Haplogroup F", 
+                  mutations: ["G16304A"], 
+                  region: "East Asia",
+                  historicalContext: "F is a major lineage in Southeast Asia and Southern China. It is particularly associated with the expansion of rice-farming populations in East Asia."
+                },
+                { 
+                  branchName: "JT", 
+                  mutations: ["G16126C"], 
+                  children: [
+                    { 
+                      branchName: "Haplogroup J", 
+                      mutations: ["G16069A", "G16126C"], 
+                      region: "Europe / Near East",
+                      historicalContext: "J is one of the major lineages that arrived in Europe with the first Neolithic farmers from the Near East. It is often linked to the transition from hunter-gathering to agriculture."
+                    },
+                    { 
+                      branchName: "Haplogroup T", 
+                      mutations: ["G16126C", "G16294A"], 
+                      region: "Europe / Near East",
+                      historicalContext: "Similar to J, Haplogroup T is closely associated with the Neolithic revolution and the spread of pastoralism from the Fertile Crescent into Europe and North Africa."
+                    }
+                  ]
+                },
                 { branchName: "P", mutations: ["G16129A"], region: "Oceania" },
-                { branchName: "U", mutations: ["G11467A", "G12308A", "G16270A"], region: "Europe / Near East / North Africa", children: [
-                  { branchName: "K", mutations: ["G10550A", "G12308A"], region: "Europe / Near East" }
+                { 
+                  branchName: "Haplogroup U", 
+                  mutations: ["G11467A", "G12308A", "G16270A"], 
+                  region: "Europe / Near East / North Africa", 
+                  description: "One of the oldest and most diverse lineages in Western Eurasia, originating over 50,000 years ago.",
+                  historicalContext: "Haplogroup U originated in Western Asia and was among the first major lineages to settle in Europe. It diversified into several distinct branches (U1-U9). Most notably, U5 is considered the 'signature' lineage of European hunter-gatherers, having survived the Last Glacial Maximum in southern refugia before repopulating the north.",
+                  children: [
+                  { 
+                    branchName: "Haplogroup K", 
+                    mutations: ["G10550A", "G12308A"], 
+                    region: "Europe / Near East",
+                    description: "A major sub-branch of U8 that expanded significantly during the Neolithic period.",
+                    historicalContext: "Haplogroup K (technically U8b) emerged in the Near East roughly 30,000 years ago. It is famous for its association with the spread of farming into Europe and its strong presence in Ashkenazi Jewish populations, where it reached high frequencies due to a major founder effect in the Middle Ages."
+                  }
                 ]}
               ]
             }

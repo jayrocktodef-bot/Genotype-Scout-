@@ -32,6 +32,7 @@ export interface HaplogroupNode {
   mutations?: string[];
   region?: string;
   description?: string;
+  historicalContext?: string;
   children?: HaplogroupNode[];
 }
 
