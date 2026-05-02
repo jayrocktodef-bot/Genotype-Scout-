@@ -3,40 +3,62 @@ import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 
 const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
-  ABO: ["rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741"],
-  Rh: ["rs590787", "rs676785", "rs28362459"],
-  Duffy: ["rs2814778", "rs12075"],
-  Kidd: ["rs1058396"],
-  MNS: ["rs7683365", "rs11273308"],
-  Kell: ["rs8176058"],
-  Secretor: ["rs601338", "rs602662"],
-  Lewis: ["rs3894326", "rs3745635"],
-  P1PK: ["rs5751348"],
-  Diego: ["rs2285644"],
+  ABO: ["rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666"],
+  Rh: ["rs590787", "rs676785", "rs28362459", "rs609320", "rs6762788", "rs118204008", "rs606429", "rs11124803", "rs118204007", "rs676185"],
+  Duffy: ["rs2814778", "rs12075", "rs34599049"],
+  Kidd: ["rs1058396", "rs10755968"],
+  MNS: ["rs7683365", "rs11273308", "rs2250101"],
+  Kell: ["rs8176058", "rs12046423"],
+  Secretor: ["rs601338", "rs602662", "rs1047781"],
+  Lewis: ["rs3894326", "rs3745635", "rs28362491"],
+  Colton: ["rs2836269"],
+  Lutheran: ["rs2298661"],
+  Cartwright: ["rs11551124"],
+  Dombrock: ["rs11276"],
+  Knops: ["rs1145322"],
+  H_Antigen: ["rs1047781"],
 };
 
 const MARKER_METADATA: Record<string, any> = {
   "rs8176719": { effect: "c.261delG frameshift", antigen: "O" },
-  "rs8176746": { effect: "p.Leu266Met", antigen: "A1/A2" },
-  "rs8176747": { effect: "p.Gly268Ala", antigen: "A/B" },
-  "rs8176750": { effect: "p.Pro234Ser", antigen: "A/B" },
+  "rs8176746": { effect: "p.Leu266Met (A1/A2)", antigen: "A1/A2" },
+  "rs8176747": { effect: "p.Gly268Ala (B-specific)", antigen: "A/B" },
+  "rs8176750": { effect: "p.Pro234Ser (A/B differentiation)", antigen: "A/B" },
   "rs8176745": { effect: "p.Arg176Gly", antigen: "A/B" },
   "rs8176741": { effect: "p.Met266Leu", antigen: "A" },
+  "rs505922": { effect: "Associated with ABO group levels", antigen: "ABO" },
+  "rs507666": { effect: "Regulatory variant for ABO levels", antigen: "ABO" },
   "rs590787": { effect: "Weak D / partial D", antigen: "D" },
-  "rs676785": { effect: "C/c antigen", antigen: "C/c" },
-  "rs28362459": { effect: "E/e antigen", antigen: "E/e" },
-  "rs2814778": { effect: "FY*0 — Duffy-null", antigen: "Fy(null)" },
-  "rs12075": { effect: "p.Gly42Asp", antigen: "Fya/Fyb" },
-  "rs1058396": { effect: "p.Asp280Asn", antigen: "Jka/Jkb" },
-  "rs7683365": { effect: "M vs N antigen", antigen: "M/N" },
-  "rs11273308": { effect: "S vs s antigen", antigen: "S/s" },
-  "rs8176058": { effect: "p.Thr193Met", antigen: "K/k" },
-  "rs601338": { effect: "p.Trp143Ter", antigen: "Se/se" },
-  "rs602662": { effect: "p.Ala385Thr", antigen: "Se/se" },
-  "rs3894326": { effect: "Lea/Leb phenotype", antigen: "Lea/Leb" },
-  "rs3745635": { effect: "Lewis null", antigen: "Le(null)" },
-  "rs5751348": { effect: "P1 vs P2 phenotype", antigen: "P1/P2" },
-  "rs2285644": { effect: "Dia vs Dib antigen", antigen: "Dia/Dib" },
+  "rs676785": { effect: "C/c antigen polymorphism", antigen: "C/c" },
+  "rs28362459": { effect: "E/e antigen polymorphism", antigen: "E/e" },
+  "rs609320": { effect: "Rh system regulator", antigen: "Rh" },
+  "rs6762788": { effect: "Rh factor D antigen", antigen: "D" },
+  "rs118204008": { effect: "RHCE variation", antigen: "C/c E/e" },
+  "rs606429": { effect: "RHCE variation (associated with E antigen)", antigen: "E/e" },
+  "rs11124803": { effect: "RHD/RHCE variation", antigen: "Rh" },
+  "rs118204007": { effect: "Rh factor marker", antigen: "Rh" },
+  "rs676185": { effect: "Rh C/c variation", antigen: "C/c" },
+  "rs2814778": { effect: "FY*0 — Duffy-null (Malaria resistance)", antigen: "Fy(null)" },
+  "rs12075": { effect: "p.Gly42Asp (Fya vs Fyb)", antigen: "Fya/Fyb" },
+  "rs34599049": { effect: "FY*X allele", antigen: "Fyx" },
+  "rs1058396": { effect: "p.Asp280Asn (Jka vs Jkb)", antigen: "Jka/Jkb" },
+  "rs10755968": { effect: "Kidd system regulator", antigen: "Kidd" },
+  "rs7683365": { effect: "M vs N antigen (GYPA)", antigen: "M/N" },
+  "rs11273308": { effect: "S vs s antigen (GYPB)", antigen: "S/s" },
+  "rs2250101": { effect: "U antigen variation", antigen: "U" },
+  "rs8176058": { effect: "p.Thr193Met (K vs k)", antigen: "K/k" },
+  "rs12046423": { effect: "Kell system regulation", antigen: "Kell" },
+  "rs601338": { effect: "p.Trp143Ter (Secretor/Non-secretor)", antigen: "Se/se" },
+  "rs602662": { effect: "p.Ala385Thr (Weak secretor)", antigen: "Se/se" },
+  "rs3894326": { effect: "Lea/Leb phenotype expression", antigen: "Lea/Leb" },
+  "rs3745635": { effect: "Lewis system null allele", antigen: "Le(null)" },
+  "rs28362491": { effect: "FUT3 variation", antigen: "Lewis" },
+  "rs1047781": { effect: "FUT1 (H-antigen) variation", antigen: "H" },
+  "rs2836269": { effect: "Colton blood group polymorphism", antigen: "Co" },
+  "rs2298661": { effect: "Lutheran blood group polymorphism", antigen: "Lu" },
+  "rs11551124": { effect: "Cartwright blood group polymorphism", antigen: "Yt" },
+  "rs11276": { effect: "Dombrock blood group polymorphism", antigen: "Do" },
+  "rs1145322": { effect: "Knops blood group polymorphism", antigen: "Kn" },
 };
 
 export const BloodTypeView = ({ dataset }: { dataset: any }) => {
@@ -47,31 +69,82 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
     const getGenotype = (rsid: string) => overrides[rsid] || rawResults.find((r: any) => r.rsid === rsid)?.genotype || "--";
 
     // ABO Logic
-    const r719 = getGenotype("rs8176719");
-    const r746 = getGenotype("rs8176746");
-    const r747 = getGenotype("rs8176747");
-    const r750 = getGenotype("rs8176750");
+    const r719 = getGenotype("rs8176719"); // G = A, - = O
+    const r746 = getGenotype("rs8176746"); // G = A1, A = A2
+    const r747 = getGenotype("rs8176747"); // G = A, C = B
+    const r750 = getGenotype("rs8176750"); // G = B, A = A
 
     let predicted = "Uncertain";
-    if (r719 !== "--" && r746 !== "--" && r747 !== "--" && r750 !== "--") {
-      const isO = r719.includes('del') || r719 === 'D' || r719 === 'II';
-      const hasA = r746.includes('A') || r750.includes('A');
-      const hasB = r747.includes('G') || r750.includes('G');
-      if (isO) predicted = "Type O";
-      else if (hasA && hasB) predicted = "Type AB";
+    
+    // Check for Type O (Homozygous deletion at rs8176719)
+    // Common formats: DD, II, --, del/del, -/-, O/O
+    const isHomozygousO = ["DD", "II", "--", "O/O"].includes(r719) || r719.split('').every(c => c === '-' || c === 'I' || c === 'D');
+    
+    // Check for A and B alleles
+    const hasA = r747.includes('G') || r750.includes('A') || r746.includes('G');
+    const hasB = r747.includes('C') || r750.includes('G');
+    
+    if (r719 !== "--") {
+      if (isHomozygousO) {
+        predicted = "Type O";
+      } else {
+        // Heterozygous or homozygous for G (A/B)
+        if (hasA && hasB) predicted = "Type AB";
+        else if (hasA) predicted = "Type A";
+        else if (hasB) predicted = "Type B";
+        else predicted = "Type O (Likely)"; // Should have matched A or B if G is present
+      }
+    } else if (hasA || hasB) {
+      // If 719 is missing but others aren't
+      if (hasA && hasB) predicted = "Type AB";
       else if (hasA) predicted = "Type A";
       else if (hasB) predicted = "Type B";
-      else predicted = "Type O (Carrier)";
     }
 
     // Rh Logic
     const r590 = getGenotype("rs590787"); // D
-    const r676 = getGenotype("rs676785"); // Cc
-    const r283 = getGenotype("rs28362459"); // Ee
-    const dType = r590 !== "--" ? (r590.includes('A') ? "Positive (+)" : "Negative (-)") : "Unknown";
-    const ccType = r676 !== "--" ? (r676.includes('C') ? "C" : "c") : "";
-    const eeType = r283 !== "--" ? (r283.includes('E') ? "E" : "e") : "";
-    const rh = `${dType} ${ccType}${eeType}`;
+    const r6762 = getGenotype("rs6762788"); // D
+    const r111 = getGenotype("rs11124803"); // D/Rh
+    const r118 = getGenotype("rs118204008"); // RHCE
+    const r676 = getGenotype("rs676785"); // C/c
+    const r6761 = getGenotype("rs676185"); // C/c
+    const r283 = getGenotype("rs28362459"); // E/e
+    const r606 = getGenotype("rs606429"); // E/e
+
+    const isRhPos = r590.includes('G') || r590.includes('A') || 
+                    r6762.includes('G') || r6762.includes('A') ||
+                    r111.includes('G') || r111.includes('A');
+                    
+    const isRhNeg = (r590 !== "--" || r6762 !== "--" || r111 !== "--") && !isRhPos;
+    
+    const dType = isRhPos ? "Positive (+)" : (isRhNeg ? "Negative (-)" : "Unknown");
+    
+    // Sub-antigen detection
+    // rs676785: C (G), c (A)
+    // rs28362459: E (C), e (T)
+    let ccType = "";
+    if (r676 !== "--") {
+      if (r676 === "GG") ccType = "CC";
+      else if (r676 === "GA" || r676 === "AG") ccType = "Cc";
+      else if (r676 === "AA") ccType = "cc";
+    } else if (r6761 !== "--") {
+      if (r6761 === "CC") ccType = "CC";
+      else if (r6761 === "CT" || r6761 === "TC") ccType = "Cc";
+      else if (r6761 === "TT") ccType = "cc";
+    }
+
+    let eeType = "";
+    if (r283 !== "--") {
+      if (r283 === "CC") eeType = "EE";
+      else if (r283 === "CT" || r283 === "TC") eeType = "Ee";
+      else if (r283 === "TT") eeType = "ee";
+    } else if (r606 !== "--") {
+      if (r606 === "CC") eeType = "EE";
+      else if (r606 === "CT" || r606 === "TC") eeType = "Ee";
+      else if (r606 === "TT") eeType = "ee";
+    }
+
+    const rh = `${dType}${ccType || eeType ? ' (' + ccType + eeType + ')' : ''}`;
 
     const allMarkers = Object.entries(BLOOD_TYPE_SYSTEMS).flatMap(([system, rsids]) => 
       rsids.map(rsid => ({
@@ -81,7 +154,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
         rawGenotype: rawResults.find((r: any) => r.rsid === rsid)?.genotype || "--",
         ...(MARKER_METADATA[rsid] || { effect: "Unknown", antigen: "Unknown" })
       }))
-    );
+    ).filter(m => m.genotype !== "--");
 
     const identifiedCount = allMarkers.filter(m => m.genotype !== "--").length;
 

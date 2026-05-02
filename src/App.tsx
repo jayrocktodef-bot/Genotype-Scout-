@@ -31,7 +31,7 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
 }) => {
   const isMatch = userPath.includes(node.branchName);
   const matchesSearch = searchTerm && node.branchName.toLowerCase().includes(searchTerm.toLowerCase());
-  const [isExpanded, setIsExpanded] = useState(isMatch || level < 1 || !!matchesSearch);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   useEffect(() => {
     if (matchesSearch) setIsExpanded(true);
@@ -173,7 +173,7 @@ const ProfileSummary = memo(({
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
   const subPopulations = oracleResults?.primary?.subPopulations || {};
   const topSubPops = Object.values(subPopulations).flat()
-    .sort((a,b) => b.percentage - a.percentage)
+    .sort((a: any, b: any) => b.percentage - a.percentage)
     .slice(0, 3);
   
   const ancestryChartData = Object.entries(primaryAncestry)
@@ -417,7 +417,7 @@ const AutosomalView = memo(({
   filteredResults, 
   groupedCategories, 
   availableCategories, 
-  collapsedCategories, 
+  expandedCategories, 
   toggleCategory, 
   expandedSnps, 
   toggleExpand,
@@ -427,18 +427,31 @@ const AutosomalView = memo(({
   filteredResults: any[], 
   groupedCategories: Record<string, any[]>, 
   availableCategories: string[], 
-  collapsedCategories: Set<string>, 
+  expandedCategories: Set<string>, 
   toggleCategory: (cat: string) => void, 
   expandedSnps: Set<string>, 
   toggleExpand: (rsid: string) => void,
   datasets: any[],
   activeDatasetIndex: number
 }) => {
+  const [expandedRegions, setExpandedRegions] = useState<Set<string>>(new Set());
+
   if (availableCategories.length === 0) return null;
   
   const allResults = datasets[activeDatasetIndex]?.results || [];
   const totalDatabaseMarkers = allResults.length || 1;
   const totalMatchedCount = allResults.filter(s => s.status === 'matched' || s.status === 'partial').length;
+
+  const toggleRegion = (region: string) => {
+    setExpandedRegions(prev => {
+      const next = new Set(prev);
+      if (next.has(region)) next.delete(region);
+      else next.add(region);
+      return next;
+    });
+  };
+
+  const isRegionExpanded = (region: string) => expandedRegions.has(region);
 
   return (
     <div className="animate-fade-up">
@@ -474,7 +487,7 @@ const AutosomalView = memo(({
       {availableCategories.map(category => {
         const allSnpsInCategory = groupedCategories[category];
         const meta = (CATEGORY_META as any)[category] || { color: "#0284c7", icon: "🌐" };
-        const isCollapsed = collapsedCategories.has(category);
+        const isExpanded = expandedCategories.has(category);
         
         const total = allSnpsInCategory.length;
         const matchedCount = allSnpsInCategory.filter(s => s.status === 'matched' || s.status === 'partial').length;
@@ -497,11 +510,11 @@ const AutosomalView = memo(({
                 </div>
               </div>
               <div className="text-slate-400">
-                {isCollapsed ? '▼' : '▲'}
+                {isExpanded ? '▲' : '▼'}
               </div>
             </button>
             
-            {!isCollapsed && (
+            {isExpanded && (
               <div className="p-6 space-y-4 bg-slate-50/30 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-700">
                 {category === 'Ancestry' && (
                   <div className="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg text-xs text-amber-700 dark:text-amber-300 italic">
@@ -516,24 +529,63 @@ const AutosomalView = memo(({
                       acc[region].push(snp);
                       return acc;
                     }, {})
-                  ).map(([region, snps]: [string, any[]]) => (
-                    <div key={region} className="space-y-4 mb-8 last:mb-0">
-                      <h4 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] border-b border-slate-200 dark:border-slate-700 pb-2 mb-4 flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-sky-500"></span>
-                        {region} Markers
-                      </h4>
-                      <div className="space-y-4">
-                        {snps.map((snp: any) => (
-                          <SNPCard 
-                            key={`${snp.markerId}-${snp.continent}`} 
-                            snp={snp} 
-                            isExpanded={expandedSnps.has(snp.rsid)} 
-                            onToggleExpand={toggleExpand} 
-                          />
-                        ))}
+                  ).sort((a: any, b: any) => {
+                    // Sort by matched count descending
+                    const aMatched = a[1].filter((s: any) => s.status === 'matched' || s.status === 'partial').length;
+                    const bMatched = b[1].filter((s: any) => s.status === 'matched' || s.status === 'partial').length;
+                    return bMatched - aMatched;
+                  }).map(([region, snps]: [string, any[]]) => {
+                    const matchedInRegion = snps.filter((s: any) => s.status === 'matched' || s.status === 'partial').length;
+                    const regionExpanded = isRegionExpanded(region);
+                    const regionMeta = (CONTINENT_META as any)[region] || { color: '#64748b' };
+
+                    return (
+                      <div key={region} className="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-white dark:bg-slate-800 mb-4 shadow-sm">
+                        <button 
+                          onClick={() => toggleRegion(region)}
+                          className="w-full flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-black" style={{ backgroundColor: regionMeta.color }}>
+                              {region[0]}
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-slate-900 dark:text-slate-100">{region}</h4>
+                              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                                {matchedInRegion} / {snps.length} Identifiers
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-4">
+                            <div className="hidden sm:flex -space-x-1 overflow-hidden">
+                              {snps.slice(0, 5).map((s: any, i: number) => (
+                                <div key={i} className={`w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 flex items-center justify-center text-[7px] font-bold ${s.status === 'matched' ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-500'}`}>
+                                  {s.genotype[0]}
+                                </div>
+                              ))}
+                              {snps.length > 5 && <div className="w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[7px] font-bold text-slate-400">+{snps.length - 5}</div>}
+                            </div>
+                            <span className="text-slate-400">{regionExpanded ? '－' : '＋'}</span>
+                          </div>
+                        </button>
+                        
+                        {regionExpanded && (
+                          <div className="p-4 pt-0 space-y-4 border-t border-slate-50 dark:border-slate-700/50 mt-2">
+                            <div className="grid grid-cols-1 gap-4 mt-2">
+                              {snps.map((snp: any) => (
+                                <SNPCard 
+                                  key={`${snp.markerId}-${snp.continent}`} 
+                                  snp={snp} 
+                                  isExpanded={expandedSnps.has(snp.rsid)} 
+                                  onToggleExpand={toggleExpand} 
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  ))
+                    );
+                  })
                 ) : (
                   allSnpsInCategory.map((snp: any) => (
                     <SNPCard 
@@ -663,7 +715,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
   })).sort((a, b) => b.value - a.value), [continentalScores]);
 
   const topGranular = useMemo(() => Object.values(subPopulations).flat()
-    .sort((a, b) => b.percentage - a.percentage)
+    .sort((a: any, b: any) => b.percentage - a.percentage)
     .slice(0, 3), [subPopulations]);
 
   return (
@@ -872,9 +924,8 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
 
   return (
     <div className="animate-fade-up space-y-6">
-      {/* Main Prediction Header */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-2 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
+      <div className="grid grid-cols-1 gap-6">
+        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 opacity-20 text-9xl">♂️</div>
           <div className="relative z-10">
             <h3 className="text-blue-100 font-bold uppercase tracking-widest text-xs mb-2">Paternal Lineage</h3>
@@ -907,144 +958,83 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
           </div>
         </div>
         
-        {/* Marker Distribution Pie Chart */}
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
-          <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Y-Chromosome Haplogroups</h4>
-          {markerPieData.length > 0 ? (
-            <div className="flex-1 flex flex-col">
-              <div className="flex-1 min-h-[180px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={markerPieData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={40}
-                      outerRadius={70}
-                      paddingAngle={1}
-                      dataKey="value"
-                      label={false}
-                      labelLine={false}
-                    >
-                      {markerPieData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch)} />
-                      ))}
-                    </Pie>
-                    <Tooltip 
-                      content={({ active, payload }) => {
-                        if (active && payload && payload.length) {
-                          const data = payload[0].payload;
-                          return (
-                            <div className="bg-slate-800 p-2 rounded text-[10px] text-white shadow-xl border border-slate-700">
-                              <div className="flex items-center gap-1.5 mb-0.5">
-                                <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getHaploColor(data.branch) }}></div>
-                                <span className="font-bold">{data.name}</span>
-                              </div>
-                              <div className="text-slate-400">Branch: {data.branch}</div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-              <div className="mt-2 grid grid-cols-2 gap-x-2 gap-y-1">
-                <div className="col-span-2 text-[8px] text-slate-400 mb-1">
-                  Showing {markerPieData.length} derived markers
-                </div>
-                {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 6).map((branch) => (
-                  <div key={branch as string} className="flex items-center justify-between text-[9px]">
-                    <div className="flex items-center gap-1 truncate">
-                      <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: getHaploColor(branch as string) }}></div>
-                      <span className="text-slate-600 dark:text-slate-400 truncate">{branch as string}</span>
-                    </div>
-                  </div>
+        {/* Combined Paternal Heritage Card */}
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+           <div className="md:col-span-5 lg:col-span-4">
+             <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Haplogroup Distribution</h4>
+             {markerPieData.length > 0 ? (
+               <div className="h-[220px]">
+                 <ResponsiveContainer width="100%" height="100%">
+                   <PieChart>
+                     <Pie
+                       data={markerPieData}
+                       cx="50%"
+                       cy="50%"
+                       innerRadius={45}
+                       outerRadius={75}
+                       paddingAngle={1}
+                       dataKey="value"
+                     >
+                       {markerPieData.map((entry, index) => (
+                         <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch)} />
+                       ))}
+                     </Pie>
+                     <Tooltip 
+                       content={({ active, payload }) => {
+                         if (active && payload && payload.length) {
+                           const data = payload[0].payload;
+                           return (
+                             <div className="bg-slate-800 p-2 rounded text-[10px] text-white shadow-xl border border-slate-700">
+                               <div className="flex items-center gap-1.5 mb-0.5">
+                                 <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getHaploColor(data.branch) }}></div>
+                                 <span className="font-bold">{data.name}</span>
+                               </div>
+                               <div className="text-slate-400">Branch: {data.branch}</div>
+                             </div>
+                           );
+                         }
+                         return null;
+                       }}
+                     />
+                   </PieChart>
+                 </ResponsiveContainer>
+               </div>
+             ) : (
+               <div className="h-[220px] flex items-center justify-center text-slate-400 italic text-xs">No markers</div>
+             )}
+             <div className="mt-4 flex flex-wrap gap-2">
+                {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 4).map((branch) => (
+                   <span key={branch as string} className="px-2 py-1 bg-slate-50 dark:bg-slate-900 rounded-lg text-[9px] font-bold border border-slate-100 dark:border-slate-800">
+                     {branch as string}
+                   </span>
                 ))}
-              </div>
-            </div>
-          ) : (
-            <div className="flex-1 flex items-center justify-center text-slate-400 text-[10px] italic">
-              No derived markers found
-            </div>
-          )}
-        </div>
+             </div>
+           </div>
 
-        {/* Description Card */}
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
-          <div>
-            <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3">About this lineage</h4>
-            <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed line-clamp-4">
-              {yData.predicted?.description || "This lineage is not yet in our database or has limited marker coverage."}
-            </p>
-          </div>
-          
-          {yData.predicted && (
-            <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800/50">
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className="text-sm">🧬</span>
-                <div className="text-[10px] font-bold text-blue-900 dark:text-blue-300">Match Confidence</div>
-              </div>
-              <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-1 mb-1">
-                <div 
-                  className="bg-blue-600 h-1 rounded-full" 
-                  style={{ width: `${Math.min(100, (derivedMarkers.length / 5) * 100)}%` }}
-                ></div>
-              </div>
-              <div className="text-[9px] text-blue-600 dark:text-blue-400 font-bold">
-                {derivedMarkers.length} derived markers found
-              </div>
-            </div>
-          )}
+           <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center h-full space-y-8">
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
+                   <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Defining SNP</div>
+                   <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.predicted?.marker}</div>
+                </div>
+                <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
+                   <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Path Depth</div>
+                   <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.path.length} Steps</div>
+                </div>
+             </div>
+
+             <div className="p-6 rounded-2xl bg-blue-50/30 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/20 flex items-center justify-between">
+                <div className="flex items-center gap-3 text-[12px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+                   <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                   Lineage Support Confidence
+                </div>
+                <div className="text-lg font-black text-blue-700 dark:text-blue-300">
+                  {derivedMarkers.length} Derived Markers
+                </div>
+             </div>
+           </div>
         </div>
       </div>
-      
-      {/* Subclade Analysis Section */}
-      {yData.predicted && (
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm animate-fade-up">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-2xl">🧬</div>
-            <div>
-              <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Subclade Analysis</h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Detailed insights into your specific paternal branch</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2">Defining Marker</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">{yData.predicted.marker}</div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                This SNP (Single Nucleotide Polymorphism) defines the terminal branch of your detected lineage.
-              </p>
-            </div>
-            
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2">Lineage Depth</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">{yData.path.length} Levels</div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                Your lineage has been traced through {yData.path.length} distinct phylogenetic branching points.
-              </p>
-            </div>
-            
-            <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-              <div className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2">Regional Association</div>
-              <div className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">{yData.predicted.continent}</div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed">
-                This subclade is most frequently observed in populations from {yData.predicted.continent}.
-              </p>
-            </div>
-          </div>
-          
-          <div className="mt-6 p-6 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/50">
-            <h4 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 mb-2 uppercase tracking-widest">Historical Context</h4>
-            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
-              {yData.predicted.description || "Detailed historical data for this specific subclade is currently being compiled. This branch represents a unique point in the human paternal migration story."}
-            </p>
-          </div>
-        </div>
-      )}
       
       {/* Tree and Markers Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -1171,7 +1161,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
                 <motion.h2 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-6xl sm:text-7xl font-black mb-6 tracking-tighter"
+                  className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 tracking-tighter"
                 >
                   {mtData.predicted}
                 </motion.h2>
@@ -1196,81 +1186,71 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
           </div>
         </div>
 
-        {/* Support Metrics and Distilled Charts */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col group">
-          <h4 className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-6">Lineage Markers</h4>
-          {markerPieData.length > 0 ? (
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="relative w-full aspect-square max-h-[160px] mx-auto">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={markerPieData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={55}
-                      outerRadius={75}
-                      paddingAngle={4}
-                      dataKey="value"
-                      stroke="none"
-                    >
-                      {markerPieData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
-                      ))}
-                    </Pie>
-                    <Tooltip cursor={false} content={<CustomTooltip />} />
-                  </PieChart>
-                </ResponsiveContainer>
-                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                  <span className="text-3xl font-black text-slate-900 dark:text-slate-100">{derivedMarkers.length}</span>
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Matches</span>
+        <div className="lg:col-span-2 bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col shadow-2xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-8 opacity-5 text-8xl pointer-events-none">🧬</div>
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+            <div>
+              <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-6">Evolutionary Pulse</h4>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-rose-500/20 transition-colors">🧬</div>
+                  <div>
+                    <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">SNP Resolution</div>
+                    <div className="text-lg font-black">{mtData.testedMarkers.length} Markers</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-indigo-500/20 transition-colors">🛣️</div>
+                  <div>
+                    <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">Path Distance</div>
+                    <div className="text-lg font-black">{enrichedPath.length} Milestones</div>
+                  </div>
                 </div>
               </div>
-              <div className="mt-6 flex flex-wrap justify-center gap-2">
-                 {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 3).map(b => (
-                   <span key={b} className="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-[9px] font-bold text-slate-500">
-                     {b}
-                   </span>
-                 ))}
-              </div>
+              <p className="text-[9px] text-slate-500 mt-8 leading-tight italic border-t border-white/5 pt-6">
+                Mitochondrial Eve is our direct common maternal ancestor who lived ~150,000 to 200,000 years ago in Africa.
+              </p>
             </div>
-          ) : (
-            <div className="flex-1 flex items-center justify-center text-slate-400 text-xs italic text-center">
-              Insufficient marker data for visualization
-            </div>
-          )}
-        </div>
-
-        <div className="bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
-          <div className="absolute bottom-0 right-0 p-8 opacity-5 text-8xl pointer-events-none">🧬</div>
-          <div className="relative z-10">
-            <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-8">Evolutionary Pulse</h4>
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-rose-500/20 transition-colors">🧬</div>
-                <div>
-                  <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">SNP Resolution</div>
-                  <div className="text-lg font-black">{mtData.testedMarkers.length} Markers</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-indigo-500/20 transition-colors">🛣️</div>
-                <div>
-                  <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">Path Distance</div>
-                  <div className="text-lg font-black">{enrichedPath.length} Milestones</div>
-                </div>
-              </div>
+            
+            <div className="flex flex-col justify-center items-center border-l border-white/5 pl-8">
+               <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 w-full text-center">Marker Distribution</h4>
+               {markerPieData.length > 0 ? (
+                 <div className="relative w-full aspect-square max-h-[180px]">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie
+                          data={markerPieData}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={55}
+                          outerRadius={75}
+                          paddingAngle={4}
+                          dataKey="value"
+                          stroke="none"
+                        >
+                          {markerPieData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
+                          ))}
+                        </Pie>
+                        <Tooltip cursor={false} content={<CustomTooltip />} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                      <span className="text-3xl font-black text-white">{derivedMarkers.length}</span>
+                      <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Matches</span>
+                    </div>
+                 </div>
+               ) : (
+                 <div className="text-slate-500 text-xs italic">Insufficient data</div>
+               )}
             </div>
           </div>
-          <p className="text-[9px] text-slate-500 mt-8 leading-tight italic border-t border-white/5 pt-6">
-            Mitochondrial Eve is our direct common maternal ancestor who lived ~150,000 to 200,000 years ago in Africa.
-          </p>
         </div>
       </div>
 
       {/* Migration Story and Marker Detail Layout */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-        <div className="xl:col-span-2 space-y-8">
+      <div className="grid grid-cols-1 gap-8">
+        <div className="space-y-8">
           {/* Main Migration Story Card */}
           <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
@@ -1363,95 +1343,41 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
               })}
             </div>
           </div>
-        </div>
-
-        {/* Sidebar: Detailed Marker Grid */}
-        <div className="space-y-8">
-          <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-8 shadow-sm flex flex-col h-full max-h-[1000px]">
-            <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-100 dark:border-slate-700">
-               <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-widest">Molecular Report</h3>
-               <span className="text-[9px] font-bold px-3 py-1 bg-slate-100 dark:bg-slate-900 rounded-xl text-slate-500 uppercase tracking-widest">
-                 {mtData.testedMarkers.length} Found
-               </span>
-            </div>
-
-            <div className="flex-1 overflow-y-auto pr-2 space-y-3 custom-scrollbar scroll-smooth">
-              {[...mtData.testedMarkers]
-                .sort((a, b) => (b.status === 'derived' ? 1 : -1))
-                .map((m: any, idx: number) => (
-                <div key={idx} className={`p-5 rounded-2xl border transition-all duration-300 group/marker ${
-                  m.status === 'derived' 
-                    ? 'bg-rose-50/30 dark:bg-rose-900/10 border-rose-100 dark:border-rose-900/30' 
-                    : 'bg-slate-50/50 dark:bg-slate-900/20 border-slate-100 dark:border-slate-800 opacity-60 hover:opacity-100'
-                }`}>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-base font-black text-slate-900 dark:text-slate-100 tracking-tight font-mono group-hover/marker:text-rose-600 transition-colors">
-                       {m.mutation}
-                    </span>
-                    <span className={`text-[8px] font-black uppercase px-2 py-0.5 rounded-lg border ${
-                      m.status === 'derived' 
-                        ? 'bg-rose-500 text-white border-rose-400 shadow-sm' 
-                        : 'bg-slate-200 dark:bg-slate-700 text-slate-500 border-slate-300 dark:border-slate-600'
-                    }`}>
-                      {m.status}
-                    </span>
-                  </div>
-                  
-                  <div className="flex gap-4 mb-4">
-                     <div className="flex-1 p-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-                        <div className="text-[8px] text-slate-400 font-bold uppercase mb-0.5">Position</div>
-                        <div className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">{m.pos}</div>
-                     </div>
-                     <div className="flex-1 p-2 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-                        <div className="text-[8px] text-slate-400 font-bold uppercase mb-0.5">Shift</div>
-                        <div className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200">{m.ancestral}<span className="text-rose-500 mx-1">→</span>{m.derived}</div>
-                     </div>
-                  </div>
-
-                  {m.description && (
-                    <p className="text-[10px] text-slate-500 leading-relaxed italic line-clamp-2 group-hover/marker:line-clamp-none transition-all">
-                       {m.description}
-                    </p>
-                  )}
+          
+          {/* Maternal Library Card */}
+          <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm overflow-hidden relative">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100 dark:border-slate-700">
+              <div>
+                <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Maternal Library</h3>
+                <p className="text-sm text-slate-400">Interactive mitochondrial phylogenetic navigator</p>
+              </div>
+              <div className="relative w-full max-w-sm">
+                <input 
+                  type="text"
+                  placeholder="Jump to Haplogroup (e.g., L3, R0, H)..."
+                  className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-rose-500 outline-none transition-all"
+                  value={treeSearchTerm}
+                  onChange={(e) => setTreeSearchTerm(e.target.value)}
+                />
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </div>
-              ))}
+              </div>
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 min-h-[600px] overflow-hidden">
+               <div className="overflow-x-auto">
+                 <div className="min-w-[1000px]">
+                   <HaplogroupTreeView 
+                     node={MT_DNA_TREE} 
+                     userPath={mtData.path} 
+                     searchTerm={treeSearchTerm} 
+                     testedMarkers={mtData.testedMarkers} 
+                   />
+                 </div>
+               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Full Tree Explorer */}
-      <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm overflow-hidden relative">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100 dark:border-slate-700">
-          <div>
-            <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Maternal Library</h3>
-            <p className="text-sm text-slate-400">Interactive mitochondrial phylogenetic navigator</p>
-          </div>
-          <div className="relative w-full max-w-sm">
-            <input 
-              type="text"
-              placeholder="Jump to Haplogroup (e.g., L3, R0, H)..."
-              className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-rose-500 outline-none transition-all"
-              value={treeSearchTerm}
-              onChange={(e) => setTreeSearchTerm(e.target.value)}
-            />
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 min-h-[500px] overflow-hidden">
-           <div className="overflow-x-auto">
-             <div className="min-w-[1000px]">
-               <HaplogroupTreeView 
-                 node={MT_DNA_TREE} 
-                 userPath={mtData.path} 
-                 searchTerm={treeSearchTerm} 
-                 testedMarkers={mtData.testedMarkers} 
-               />
-             </div>
-           </div>
         </div>
       </div>
     </div>
@@ -1595,14 +1521,14 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'blood' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
-  const [collapsedCategories, setCollapsedCategories] = useState<Set<string>>(new Set());
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   const expandAll = (categories: string[]) => {
-    setCollapsedCategories(new Set());
+    setExpandedCategories(new Set(categories));
   };
 
   const collapseAll = (categories: string[]) => {
-    setCollapsedCategories(new Set(categories));
+    setExpandedCategories(new Set());
   };
 
   useEffect(() => {
@@ -1614,7 +1540,7 @@ export default function App() {
   }, [darkMode]);
 
   const toggleCategory = (category: string) => {
-    setCollapsedCategories(prev => {
+    setExpandedCategories(prev => {
       const next = new Set(prev);
       if (next.has(category)) {
         next.delete(category);
@@ -2162,7 +2088,7 @@ export default function App() {
           )}
 
           {activeTab === 'autosomal' && (() => {
-            const privateSNPs = getPrivateSNPs(datasets[activeDatasetIndex].snpMap).map(rsid => ({
+            const privateSNPs = getPrivateSNPs((datasets[activeDatasetIndex] as any).snpMap).map(rsid => ({
               rsid,
               markerId: rsid,
               category: 'Private',
@@ -2181,7 +2107,7 @@ export default function App() {
                 filteredResults={[...filteredResults, ...privateSNPs]}
                 groupedCategories={grouped}
                 availableCategories={available}
-                collapsedCategories={collapsedCategories}
+                expandedCategories={expandedCategories}
                 toggleCategory={toggleCategory}
                 expandedSnps={expandedSnps}
                 toggleExpand={toggleExpand}

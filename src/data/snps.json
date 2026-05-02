@@ -25265,5 +25265,227 @@
     "significance": "High",
     "alleles": ["G"],
     "continent": "Global"
+  },
+  {
+    "markerId": "rs8176719",
+    "rsid": "rs8176719",
+    "gene": "ABO",
+    "category": "Blood Type",
+    "trait": "ABO Blood Group (Type O)",
+    "description": "The critical marker for Type O blood. A deletion (del) at this position results in a non-functional enzyme, characteristic of Type O.",
+    "significance": "High",
+    "alleles": ["del"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs8176747",
+    "rsid": "rs8176747",
+    "gene": "ABO",
+    "category": "Blood Type",
+    "trait": "ABO Blood Group (Type B)",
+    "description": "A key variant that distinguishes between Type A and Type B alleles. 'G' is associated with Type A, while 'C' is associated with Type B.",
+    "significance": "High",
+    "alleles": ["C", "G"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs8176741",
+    "rsid": "rs8176741",
+    "gene": "ABO",
+    "category": "Blood Type",
+    "trait": "ABO Blood Group (Type A)",
+    "description": "Influences the expression of A antigens.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs8176750",
+    "rsid": "rs8176750",
+    "gene": "ABO",
+    "category": "Blood Type",
+    "trait": "ABO Blood Group (A/B differentiation)",
+    "description": "Helps differentiate between A and B alleles.",
+    "significance": "High",
+    "alleles": ["G", "A"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs590787",
+    "rsid": "rs590787",
+    "gene": "RHD",
+    "category": "Blood Type",
+    "trait": "Rh Blood Group (Rh Factor)",
+    "description": "Determines the Rhesus D positive or negative status. Absence or variation here results in Rh-negative status.",
+    "significance": "High",
+    "alleles": ["A", "G"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs12075",
+    "rsid": "rs12075",
+    "gene": "ACKR1",
+    "category": "Blood Type",
+    "trait": "Duffy Antigen (Fya/Fyb)",
+    "description": "Determines the Fya and Fyb antigens of the Duffy blood group system.",
+    "significance": "High",
+    "alleles": ["A", "G"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs1058396",
+    "rsid": "rs1058396",
+    "gene": "SLC14A1",
+    "category": "Blood Type",
+    "trait": "Kidd Antigen (Jka/Jkb)",
+    "description": "Determines the Jka and Jkb antigens of the Kidd blood group system.",
+    "significance": "High",
+    "alleles": ["A", "G"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs8176058",
+    "rsid": "rs8176058",
+    "gene": "KEL",
+    "category": "Blood Type",
+    "trait": "Kell Antigen (K/k)",
+    "description": "Determines the Kell (K) and Cellano (k) antigens. The 'A' allele is rare and responsible for the K-positive phenotype.",
+    "significance": "High",
+    "alleles": ["T", "C"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs601338",
+    "rsid": "rs601338",
+    "gene": "FUT2",
+    "category": "Blood Type",
+    "trait": "Secretor Status",
+    "description": "Determines whether blood group antigens are secreted into saliva and other body fluids. 'AA' results in non-secretor status.",
+    "significance": "High",
+    "alleles": ["A", "G"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs3894326",
+    "rsid": "rs3894326",
+    "gene": "FUT3",
+    "category": "Blood Type",
+    "trait": "Lewis Blood Group",
+    "description": "Determines the Lewis blood group antigens (Lea and Leb).",
+    "significance": "High",
+    "alleles": ["T", "C"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs7683365",
+    "rsid": "rs7683365",
+    "gene": "GYPA",
+    "category": "Blood Type",
+    "trait": "MNS Blood Group (M/N)",
+    "description": "Determines the M and N antigens of the MNS blood group system.",
+    "significance": "High",
+    "alleles": ["T", "C"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs11273308",
+    "rsid": "rs11273308",
+    "gene": "GYPB",
+    "category": "Blood Type",
+    "trait": "MNS Blood Group (S/s)",
+    "description": "Determines the S and s antigens of the MNS blood group system.",
+    "significance": "High",
+    "alleles": ["T", "C"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs17306941",
+    "rsid": "rs17306941",
+    "category": "Ancestry",
+    "trait": "Haplogroup B1 Marker",
+    "description": "Marker for paternal lineage B1, found in West/Central Africa.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs9785934",
+    "rsid": "rs9785934",
+    "category": "Ancestry",
+    "trait": "Haplogroup B2a Marker",
+    "description": "Marker for paternal lineage B2a, associated with Central African populations.",
+    "significance": "High",
+    "alleles": ["A"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17307018",
+    "rsid": "rs17307018",
+    "category": "Ancestry",
+    "trait": "Haplogroup B2a1 Marker",
+    "description": "Subclade marker for B2a1.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17307019",
+    "rsid": "rs17307019",
+    "category": "Ancestry",
+    "trait": "Haplogroup B2a1a Marker",
+    "description": "Marker for B2a1a.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17307047",
+    "rsid": "rs17307047",
+    "category": "Ancestry",
+    "trait": "Haplogroup B2b1 Marker",
+    "description": "Marker for San group B2b1.",
+    "significance": "High",
+    "alleles": ["A"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17306815",
+    "rsid": "rs17306815",
+    "category": "Ancestry",
+    "trait": "Haplogroup E1b1a Subclade Marker",
+    "description": "Refines E-M2 lineages in Sub-Saharan Africa.",
+    "significance": "High",
+    "alleles": ["T"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17306816",
+    "rsid": "rs17306816",
+    "category": "Ancestry",
+    "trait": "Haplogroup E1b1a subclade",
+    "description": "Common in West/Central African regions.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17306817",
+    "rsid": "rs17306817",
+    "category": "Ancestry",
+    "trait": "Haplogroup E1b1a subclade",
+    "description": "Found in West African populations.",
+    "significance": "High",
+    "alleles": ["A"],
+    "continent": "African"
+  },
+  {
+    "markerId": "rs17306818",
+    "rsid": "rs17306818",
+    "category": "Ancestry",
+    "trait": "Haplogroup E1b1b Subclade Marker",
+    "description": "Balkan specific E1b1b marker.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "European"
   }
 ]

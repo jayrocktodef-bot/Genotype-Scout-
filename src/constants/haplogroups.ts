@@ -98,19 +98,19 @@ export const Y_DNA_TREE: HaplogroupNode = {
     },
     {
       branchName: "Haplogroup B",
-      snp: ["M60", "BY31586", "CTS10487", "M8862"],
+      snp: ["M60", "BY31586", "CTS10487", "M8862", "rs17307044", "rs34436531"],
       region: "Central/Southern Africa",
       description: "One of the oldest Y-DNA lineages, found primarily in African hunter-gatherer populations such as the Pygmies of Central Africa and the Hadza of Tanzania.",
       children: [
         {
           branchName: "Haplogroup B1",
-          snp: ["P1", "M236"],
+          snp: ["P1", "M236", "rs17306941"],
           region: "West Africa (Cameroon)",
           description: "A rare and ancient branch of Haplogroup B found primarily in Cameroon."
         },
         {
           branchName: "Haplogroup B2",
-          snp: ["M182", "M181"],
+          snp: ["M182", "M181", "V2342", "rs9786088"],
           region: "Sub-Saharan Africa",
           description: "The main ancestral branch for most modern Haplogroup B lineages.",
           children: [
@@ -128,18 +128,18 @@ export const Y_DNA_TREE: HaplogroupNode = {
             },
             {
               branchName: "Haplogroup B2a",
-              snp: ["M150"],
+              snp: ["M150", "rs9785934", "V1047"],
               region: "Central Africa",
               description: "A major branch of Haplogroup B found among Bantu speakers and Pygmy groups.",
               children: [
                 { 
                   branchName: "Haplogroup B2a1", 
-                  snp: ["M218", "M115"],
+                  snp: ["M218", "M115", "rs17307018"],
                   region: "Central Africa",
                   children: [
                     { 
                       branchName: "Haplogroup B2a1a", 
-                      snp: ["M109"],
+                      snp: ["M109", "rs17307019", "rs9786196"],
                       region: "Central Africa",
                       description: "Found in Central African populations."
                     }
@@ -149,19 +149,19 @@ export const Y_DNA_TREE: HaplogroupNode = {
             },
             {
               branchName: "Haplogroup B2b",
-              snp: ["M112", "M192", "M247"],
+              snp: ["M112", "M192", "M247", "rs17307044", "P6"],
               region: "Southern Africa",
               description: "The most frequent branch of Haplogroup B among the Khoisan peoples of Southern Africa.",
               children: [
                 { 
                   branchName: "Haplogroup B2b1", 
-                  snp: ["M116.1", "M211"],
+                  snp: ["M116.1", "M211", "rs17307047"],
                   region: "Southern Africa",
                   description: "A major marker for certain San groups."
                 },
                 { 
                   branchName: "Haplogroup B2b2", 
-                  snp: ["P85", "P90", "M152"],
+                  snp: ["P85", "P90", "M152", "rs17307052"],
                   region: "Southern Africa",
                   description: "Common among Khoisan hunter-gatherers."
                 },
@@ -243,7 +243,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
       children: [
         {
           branchName: "Haplogroup E1a",
-          snp: ["M33", "rs9786107", "i4000016"],
+          snp: ["M33", "rs9786107", "i4000016", "M132", "rs35191570"],
           region: "West Africa",
           description: "Found primarily in West Africa, especially in Mali, Gambia, and among the Dogon people.",
           children: [
@@ -257,7 +257,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
         },
         {
           branchName: "Haplogroup E1b1a",
-          snp: ["M2", "V38", "rs9785941", "rs9786172", "i4000012", "rs3904"],
+          snp: ["M2", "V38", "rs9785941", "rs9786172", "i4000012", "rs3904", "rs144365313", "rs34767228", "rs2032653"],
           region: "Sub-Saharan Africa",
           description: "The dominant lineage in Sub-Saharan Africa, strongly associated with the Bantu expansion that spread agriculture and iron-working across Central, Eastern, and Southern Africa over the last 3,000 years.",
           children: [
@@ -281,13 +281,13 @@ export const Y_DNA_TREE: HaplogroupNode = {
                       children: [
                         {
                           branchName: "Haplogroup E1b1a1a1a1",
-                          snp: ["M191", "P86", "rs9786219", "i4000033"],
+                          snp: ["M191", "P86", "rs9786219", "i4000033", "rs35817812", "rs35191570"],
                           region: "West Africa",
                           description: "Extremely common in West African populations like the Yoruba, Igbo, and Akan. It is also the most frequent lineage among African Americans.",
                           children: [
                             { 
                               branchName: "Haplogroup E1b1a1a1a1a", 
-                              snp: ["L485"],
+                              snp: ["L485", "rs13306283", "rs149021271"],
                               region: "West Africa",
                               description: "A major subclade within the M191 branch.",
                               children: [
@@ -327,13 +327,13 @@ export const Y_DNA_TREE: HaplogroupNode = {
                             },
                             { 
                               branchName: "Haplogroup E1b1a1a1a2", 
-                              snp: ["U290"],
+                              snp: ["U290", "rs17306816"],
                               region: "West/Central Africa",
                               description: "Common in the Bight of Biafra and Central African regions."
                             },
                             { 
                               branchName: "Haplogroup E1b1a1a1a3", 
-                              snp: ["U181"],
+                              snp: ["U181", "rs17306817"],
                               region: "West Africa",
                               description: "Found in West African populations."
                             }
@@ -343,7 +343,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                     },
                     { 
                       branchName: "Haplogroup E1b1a1a1b", 
-                      snp: ["M154"],
+                      snp: ["M154", "rs17306815"],
                       region: "Central Africa",
                       description: "Found in Central African populations."
                     }
@@ -397,7 +397,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
         },
         {
           branchName: "Haplogroup E1b1b",
-          snp: ["M215", "M35", "rs2032654", "rs375228668", "rs28357984"],
+          snp: ["M215", "M35", "rs2032654", "rs375228668", "rs28357984", "L539", "PF2431"],
           region: "North Africa / Horn of Africa / Mediterranean",
           description: "A major lineage in North Africa, the Horn of Africa, and the Mediterranean. It is associated with the spread of Afroasiatic languages and early farming movements into Europe.",
           children: [
@@ -415,7 +415,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                   children: [
                     {
                       branchName: "Haplogroup E1b1b1a1",
-                      snp: ["M78", "rs9305888", "i4000024"],
+                      snp: ["M78", "rs9305888", "i4000024", "V12", "V13", "V22", "V65"],
                       region: "North Africa / Balkans",
                       description: "Widespread in North Africa and the Balkans. It is believed to have originated in Northeast Africa.",
                       children: [
@@ -441,16 +441,16 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         },
                         { 
                           branchName: "Haplogroup E1b1b1a1b", 
-                          snp: ["V13", "rs11800462"],
+                          snp: ["V13", "rs11800462", "rs144618774"],
                           region: "Balkans / Europe",
                           description: "The most common E1b1b branch in Europe, particularly in the Balkans (Albania, Greece, Kosovo). It is associated with the expansion of farming and later Bronze/Iron Age movements in Southeast Europe.",
                           children: [
-                            { 
-                              branchName: "Haplogroup E1b1b1a1b1", 
-                              snp: ["P177", "CTS5876"],
-                              region: "Balkans",
-                              description: "A common subclade in the Balkan region."
-                            },
+                    { 
+                      branchName: "Haplogroup E1b1b1a1b1", 
+                      snp: ["P177", "CTS5876", "rs17306818"],
+                      region: "Balkans",
+                      description: "A common subclade in the Balkan region."
+                    },
                             { 
                               branchName: "Haplogroup E-CTS5876", 
                               snp: ["CTS5876"], 
@@ -461,13 +461,13 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         },
                         { 
                           branchName: "Haplogroup E1b1b1a1c", 
-                          snp: ["V22", "rs149747468"],
+                          snp: ["V22", "rs149747468", "rs17306812"],
                           region: "Egypt / Levant",
                           description: "Common in Egypt, the Levant, and the Arabian Peninsula."
                         },
                         { 
                           branchName: "Haplogroup E1b1b1a1d", 
-                          snp: ["V65", "rs149501565"],
+                          snp: ["V65", "rs149501565", "rs17306821"],
                           region: "Northwest Africa (Maghreb)",
                           description: "Found at high frequencies among Berbers in Libya, Tunisia, and Morocco."
                         }
@@ -489,7 +489,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                 },
                 {
                   branchName: "Haplogroup E1b1b1b1",
-                  snp: ["M81", "rs9786119", "i4000019"],
+                  snp: ["M81", "rs9786119", "i4000019", "M183", "L19"],
                   region: "Northwest Africa (Maghreb)",
                   description: "The 'Berber' marker, found at very high frequencies among Berber-speaking populations in Morocco, Algeria, and Tunisia. It is almost entirely restricted to Northwest Africa.",
                   children: [
