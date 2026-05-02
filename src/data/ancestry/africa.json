@@ -20003,41 +20003,5 @@
     "gene": "Unknown",
     "subPopulation": "African American",
     "subRegion": "North America"
-  },
-  {
-    "rsid": "rs7000098_AFRAM",
-    "region": "African American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 9,
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "description": "African American ancestry informative marker.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "African American",
-    "subRegion": "North America"
-  },
-  {
-    "rsid": "rs7000099_AFRAM",
-    "region": "African American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 9,
-    "frequencies": {
-      "AFR": 0.95,
-      "GLOBAL": 0.1
-    },
-    "description": "African American ancestry informative marker.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "African American",
-    "subRegion": "North America"
   }
 ]

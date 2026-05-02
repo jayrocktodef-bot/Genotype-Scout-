@@ -1,6 +1,7 @@
 import { ANCHOR_AIMS } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
 import { ANCESTRY_MARKERS } from '../data/ancestry';
+import { imputeTargetedGenotypes } from './imputationService';
 
 const ANCHOR_AIMS_TYPE = ANCHOR_AIMS;
 const anchorMap = new Map(ANCHOR_AIMS.map(a => [a.rsid.toLowerCase(), a]));
@@ -176,7 +177,7 @@ export function runAncestryInference(
     return parts.includes(targetContinent);
   };
 
-  const subPopLogL: Record<string, Record<string, number>> = {}; // continent -> subpop -> logL
+  const subPopDistances: Record<string, Record<string, number>> = {}; // continent -> subpop -> distance
   const subPopMarkers: Record<string, any[]> = {};
 
   // Pre-calculate sub-populations for each continent and initialize markers
@@ -224,6 +225,10 @@ export function runAncestryInference(
         for (const char of genotype) {
           if (alleles.includes(char)) matchCount++;
         }
+        
+        // Partial match logic: half weight if only one allele matches
+        const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
+        if (weightFactor === 0) continue;
         
         windowGenotypes.push(matchCount);
         
@@ -291,7 +296,7 @@ export function runAncestryInference(
           continentSpecificWeight = 5.0; 
         }
 
-        const weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight;
+        const weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight * weightFactor;
         windowWeights.push(weight);
       }
 
@@ -331,12 +336,12 @@ export function runAncestryInference(
       }
 
       for (const continent of continentsToScore) {
-        if (!subPopLogL[continent]) subPopLogL[continent] = {};
+        if (!subPopDistances[continent]) subPopDistances[continent] = {};
         const continentSubpops = continentSubpopsMap[continent] || [];
 
         for (const sp of continentSubpops) {
-          if (subPopLogL[continent][sp] === undefined) {
-            subPopLogL[continent][sp] = 0;
+          if (subPopDistances[continent][sp] === undefined) {
+            subPopDistances[continent][sp] = 0;
           }
 
           for (const marker of window) {
@@ -348,16 +353,20 @@ export function runAncestryInference(
             let matchCount = 0;
             for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
 
+            // Partial match logic: half weight if only one allele matches
+            const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
+            if (weightFactor === 0) continue;
+
             const aim = anchorMap.get(rsid);
             let freq = 0.01;
             const code = CONTINENT_TO_CODE[continent];
 
             if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
               freq = aim.subFrequencies[sp];
-              subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0), genotype });
+              subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
             } else if (isSubpopMatch(marker.subpop, sp)) {
               freq = 0.8;
-              subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0, genotype });
+              subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
             } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
               freq = aim.frequencies[code];
             } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
@@ -388,18 +397,18 @@ export function runAncestryInference(
             }
             const maxF = Math.max(...subPopFreqs);
             const minF = Math.min(...subPopFreqs);
-            const distributionWeight = 1.0 + (maxF - minF) * 4.0;
+            const distributionWeight = 1.0 + (maxF - minF) * 6.0;
 
             let continentSpecificWeight = 1.0;
             const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
-            if (sortedSubFreqs[0] > 0.75 && sortedSubFreqs[1] < 0.05) {
-              continentSpecificWeight = 5.0;
+            if (sortedSubFreqs[0] > 0.65 && sortedSubFreqs[1] < 0.1) {
+              continentSpecificWeight = 8.0;
             }
 
-            let weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
+            let weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight * weightFactor;
             
             const error = (matchCount / 2) - f;
-            subPopLogL[continent][sp] -= weight * (error * error);
+            subPopDistances[continent][sp] += weight * (error * error);
           }
         }
       }
@@ -444,19 +453,20 @@ export function runAncestryInference(
   }
 
   const subPopulations: Record<string, any[]> = {};
-  for (const continent of Object.keys(subPopLogL)) {
-    const subProbs = Object.entries(subPopLogL[continent])
-      .map(([name, l]) => ({ name, prob: l }));
+  for (const continent of Object.keys(subPopDistances)) {
+    const subProbs = Object.entries(subPopDistances[continent])
+      .map(([name, d]) => ({ name, dist: d }));
     
-    let maxLog = -Infinity;
-    for (const p of subProbs) if (p.prob > maxLog) maxLog = p.prob;
-    const probs = subProbs.map(p => ({ name: p.name, prob: Math.exp(p.prob - maxLog) }));
+    let minDist = Infinity;
+    for (const p of subProbs) if (p.dist < minDist) minDist = p.dist;
+    const probs = subProbs.map(p => ({ name: p.name, prob: Math.exp(-(p.dist - minDist)) }));
     const totalProb = probs.reduce((s, p) => s + p.prob, 0);
 
     if (totalProb > 0) {
       const filtered = probs
         .map(p => ({
           name: p.name,
+          dist: subProbs.find(sp => sp.name === p.name)?.dist || 0,
           percentage: (p.prob / totalProb) * 100,
           confidence: (p.prob / totalProb) * 100,
           topMarkers: (subPopMarkers[p.name] || [])
@@ -571,6 +581,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
       userGenotype[rsid] = r.genotype;
     }
   });
+
+  const imputedGenotype = imputeTargetedGenotypes(userGenotype, results);
   
   const isAutosomal = (r: any) => {
     if (r.status === 'not_tested' || !r.chrom || r.pos === undefined) return false;
@@ -606,8 +618,8 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   ));
 
   return {
-    primary: runAncestryInference(primaryMarkers, userGenotype, yHaploRegion, mtHaploRegion, true),
-    secondary: runAncestryInference(secondaryMarkers, userGenotype, yHaploRegion, mtHaploRegion, false),
-    commercial: runAncestryInference(commercialMarkers, userGenotype, yHaploRegion, mtHaploRegion, false)
+    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true),
+    secondary: runAncestryInference(secondaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false),
+    commercial: runAncestryInference(commercialMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false)
   };
 }

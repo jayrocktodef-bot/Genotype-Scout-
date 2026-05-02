@@ -38,6 +38,38 @@ export function getMarkerDescription(markerId: string): string {
   return "Significance data not available for this specific marker.";
 }
 
+export function getPrivateSNPs(snpMap: Record<string, string>) {
+  // Combine all known source IDs into a single Set for efficient lookup
+  const knownSNPs = new Set<string>();
+  
+  // Need to include all sources defined in matchSNPs
+  const allSources: any[] = [
+    ...SNP_DB,
+    ...ANCHOR_AIMS,
+    ...ANCESTRY_MARKERS
+  ];
+  
+  for (const snp of allSources) {
+    if (snp.markerId) knownSNPs.add(snp.markerId.toLowerCase());
+    if (snp.rsid) knownSNPs.add(snp.rsid.toLowerCase());
+    if (snp.aliases) {
+      for (const alias of snp.aliases) {
+        knownSNPs.add(alias.toLowerCase());
+      }
+    }
+  }
+
+  // Find SNPs in the user map that are not in the known set
+  const privateSNPs: string[] = [];
+  for (const markerId in snpMap) {
+    if (!knownSNPs.has(markerId.toLowerCase())) {
+      privateSNPs.push(markerId);
+    }
+  }
+  
+  return privateSNPs;
+}
+
 export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>) {
   const seen = new Set<string>();
   

@@ -17,6 +17,7 @@ export const CATEGORY_META = {
   "Lifestyle":  { color: "#4B8BE8", icon: "🧘" },
   "Nutrition":  { color: "#E8A838", icon: "🥗" },
   "Performance": { color: "#4BE8B8", icon: "⚡" },
+  "Private":     { color: "#8b5cf6", icon: "🔒" },
 };
 
 export const SIG_COLOR = { High: "#E84B4B", Medium: "#E8A838", Low: "#4BE8B8" };

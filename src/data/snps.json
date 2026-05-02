@@ -25243,5 +25243,27 @@
     "frequencies": {
       "AMR": 0.95
     }
+  },
+  {
+    "markerId": "rs8176746",
+    "rsid": "rs8176746",
+    "gene": "ABO",
+    "category": "Blood Type",
+    "trait": "ABO Blood Group",
+    "description": "Variant defining the O blood type allele.",
+    "significance": "High",
+    "alleles": ["T"],
+    "continent": "Global"
+  },
+  {
+    "markerId": "rs6762788",
+    "rsid": "rs6762788",
+    "gene": "RHD",
+    "category": "Blood Type",
+    "trait": "Rh Blood Group",
+    "description": "Variant influencing the Rhesus D antigen status.",
+    "significance": "High",
+    "alleles": ["G"],
+    "continent": "Global"
   }
 ]
