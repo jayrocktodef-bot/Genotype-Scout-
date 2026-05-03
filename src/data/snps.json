@@ -25285,7 +25285,7 @@
     "trait": "ABO Blood Group (Type O/A/B)",
     "description": "A major determinant for ABO blood group. The 'G' allele is associated with Type A, the 'C' allele with Type B, and a deletion at this locus is a key indicator for Type O.",
     "significance": "High",
-    "alleles": ["C", "G", "del"],
+    "alleles": ["C", "G"],
     "continent": "Global"
   },
   {
