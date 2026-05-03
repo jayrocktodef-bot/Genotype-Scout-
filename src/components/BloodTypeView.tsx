@@ -175,19 +175,19 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
            <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Predicted ABO Type</p>
-           <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedABO}</h3>
+           <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedABO}</h3>
         </div>
         <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
            <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Predicted Rh Factor</p>
-           <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedRh}</h3>
+           <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedRh}</h3>
         </div>
         <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
            <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Marker Coverage</p>
-           <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-1">{coverage.identified} / {coverage.total}</h3>
+           <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">{coverage.identified} / {coverage.total}</h3>
         </div>
       </div>
 
-      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto shadow-sm">
         <table className="w-full text-left text-xs">
           <thead>
             <tr className="bg-slate-50 dark:bg-slate-900 text-slate-500 uppercase">
