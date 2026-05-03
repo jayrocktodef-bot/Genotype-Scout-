@@ -19,8 +19,11 @@ import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { BloodTypeView } from "./components/BloodTypeView";
+import { HealthTraitsTab } from "./components/HealthTraitsTab";
+import mitoTraits from "./data/mito_traits.json";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
+const VERSION = "3.4.0-BETA";
 
 const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', testedMarkers = [] }: { 
   node: any, 
@@ -168,8 +171,8 @@ const ProfileSummary = memo(({
   const dataset = datasets[activeDatasetIndex];
   if (!dataset) return null;
 
-  const yData = dataset.predictedYDNA;
-  const mtData = dataset.predictedMtDNA;
+  const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
+  const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
   const subPopulations = oracleResults?.primary?.subPopulations || {};
   const topSubPops = Object.values(subPopulations).flat()
@@ -222,108 +225,210 @@ const ProfileSummary = memo(({
       variants={container}
       initial="hidden"
       animate="show"
-      className="mb-12 grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-min"
+      className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6"
     >
-      {/* Ancestry & Affinities Consolidation - Large */}
+      {/* Ancestry & Affinities Consolidation - Bento Large */}
       <motion.div 
         variants={item}
-        className="lg:col-span-2 p-8 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
+        className="lg:col-span-8 p-6 sm:p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
       >
-        <div className="flex items-center justify-between mb-8">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+        <div className="flex items-center justify-between mb-8 relative z-10">
           <div>
             <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Overview</h3>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Continental Admixture & Top Affinities</p>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1 italic">Continental Admixture & Regional Affinities</p>
           </div>
           <button 
             onClick={() => alert('Share functionality: Generating link/image...')}
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-2 print:hidden shadow-lg shadow-blue-500/20"
+            className="p-2 sm:px-5 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 print:hidden shadow-lg shadow-blue-500/20 hover:scale-105 active:scale-95"
           >
-            <span>Share</span>
-            <span>📤</span>
+            <span className="hidden sm:inline">Share Profile</span>
+            <span className="text-sm">📤</span>
           </button>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
           {/* Pie Chart */}
-          <div className="h-[240px] flex items-center justify-center bg-slate-100/50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-700/50">
+          <div className="h-[260px] flex items-center justify-center bg-slate-50/80 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800/50 relative group">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="text-center">
+                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Top Result</div>
+                <div className="text-lg font-black text-slate-800 dark:text-slate-200">{ancestryChartData[0]?.name || '---'}</div>
+              </div>
+            </div>
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={ancestryChartData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={70}
-                  outerRadius={90}
-                  paddingAngle={5}
+                  innerRadius={75}
+                  outerRadius={95}
+                  paddingAngle={4}
                   dataKey="value"
+                  stroke="none"
                 >
                   {ancestryChartData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name]?.color || '#4599FF'} />
                   ))}
                 </Pie>
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#1C1D1E', border: '1px solid #3F4142', borderRadius: '12px', color: '#F5F6F7', fontSize: '11px' }}
-                  itemStyle={{ color: '#E4E6EB' }}
+                  contentStyle={{ backgroundColor: '#ffffff', border: 'none', borderRadius: '16px', color: '#0f172a', fontSize: '12px', fontWeight: 'bold', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
+                  itemStyle={{ color: '#0f172a' }}
                 />
               </PieChart>
             </ResponsiveContainer>
           </div>
           
           {/* Top Affinities */}
-          <div className="space-y-4">
-            <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Top Regional Affinities</div>
+          <div className="flex flex-col justify-center space-y-5">
+            <div className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
+              <div className="w-4 h-px bg-slate-200 dark:bg-slate-800"></div>
+              Top Regional Affinities
+            </div>
             {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
-              <div key={pop.name} className="space-y-1.5">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs font-bold text-slate-900 dark:text-slate-100">{pop.name}</span>
-                  <span className="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400">{pop.percentage.toFixed(1)}%</span>
+              <div key={pop.name} className="space-y-2">
+                <div className="flex justify-between items-end">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-tight">Pop. {idx + 1}</span>
+                    <span className="text-sm font-black text-slate-900 dark:text-slate-100">{pop.name}</span>
+                  </div>
+                  <span className="text-sm font-mono font-black text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-lg">{pop.percentage.toFixed(1)}%</span>
                 </div>
-                <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+                <div className="w-full bg-slate-100 dark:bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${pop.percentage}%` }}
-                    transition={{ duration: 1, delay: 0.5 + idx * 0.1 }}
-                    className="bg-blue-500 h-full rounded-full"
+                    transition={{ duration: 1.2, ease: "circOut", delay: 0.3 + idx * 0.1 }}
+                    className="bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full"
                   />
                 </div>
               </div>
-            )) : <div className="text-slate-500 italic text-xs">Insufficient sub-population data.</div>}
+            )) : <div className="text-slate-500 italic text-xs text-center py-8">Insufficient deep-ancestry markers detected.</div>}
           </div>
         </div>
       </motion.div>
 
-      {/* Migration Paths - Full Width */}
+      {/* Haplogroup Quick Cards */}
       <motion.div 
         variants={item}
-        className="lg:col-span-3 p-8 rounded-3xl bg-slate-900 text-white shadow-2xl overflow-hidden relative"
+        className="lg:col-span-4 grid grid-cols-1 gap-6"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 blur-3xl rounded-full -mr-32 -mt-32"></div>
-        <h4 className="text-xs font-bold text-sky-400 uppercase tracking-widest mb-8 flex items-center gap-3">
-          <span className="text-lg">🗺️</span> Historical Migration Paths
-        </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="p-6 rounded-[2rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between group overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.05),transparent_70%)] pointer-events-none"></div>
+          <div className="flex justify-between items-start relative z-10">
+            <div>
+              <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-1">Paternal Lineage</p>
+              <h4 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Y-DNA</h4>
+            </div>
+            <div className="text-2xl opacity-50 group-hover:opacity-100 transition-opacity">♂️</div>
+          </div>
+          <div className="mt-4 relative z-10 flex items-end justify-between">
+            <div>
+              <div className="text-3xl font-black text-blue-600 dark:text-blue-400 tracking-tight mb-1">
+                {yData?.predicted?.name || 'Unknown'}
+              </div>
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">{yData?.predicted?.continent || 'Global'}</p>
+            </div>
+            {yData?.predicted?.name && (
+              <div className="text-5xl font-black opacity-10 select-none pointer-events-none transform translate-y-2">
+                {yData.predicted.name[0]}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="p-6 rounded-[2rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between group overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.05),transparent_70%)] pointer-events-none"></div>
+          <div className="flex justify-between items-start relative z-10">
+            <div>
+              <p className="text-[10px] font-black text-rose-500 uppercase tracking-widest mb-1">Maternal Lineage</p>
+              <h4 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">mtDNA</h4>
+            </div>
+            <div className="text-2xl opacity-50 group-hover:opacity-100 transition-opacity">♀️</div>
+          </div>
+          <div className="mt-4 relative z-10 flex items-end justify-between">
+            <div>
+              <div className="text-3xl font-black text-rose-600 dark:text-rose-400 tracking-tight mb-1">
+                {mtData?.predicted || 'Unknown'}
+              </div>
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">{mtData?.region || 'Global'}</p>
+            </div>
+            {mtData?.predicted && (
+              <div className="text-5xl font-black opacity-10 select-none pointer-events-none transform translate-y-2">
+                {mtData.predicted[0]}
+              </div>
+            )}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Migration Paths - Full Width Modernized */}
+      <motion.div 
+        variants={item}
+        className="lg:col-span-12 p-8 sm:p-10 rounded-[2.5rem] bg-slate-950 text-white shadow-2xl overflow-hidden relative border border-slate-800"
+      >
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full -mr-64 -mt-64"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rose-600/5 blur-[120px] rounded-full -ml-64 -mb-64"></div>
+        
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-12 relative z-10 gap-4">
           <div>
-            <div className="text-[9px] font-bold text-slate-500 uppercase mb-4 tracking-widest">Paternal (Y-DNA)</div>
-            <div className="flex flex-wrap items-center gap-3">
+            <h4 className="text-xl font-black tracking-tight flex items-center gap-3">
+              <span className="p-2.5 bg-slate-900 rounded-xl border border-slate-800 shadow-inner">🗺️</span>
+              Historical Migration Trajectories
+            </h4>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em] mt-2 ml-14">Deep Ancestry Step-wise Analysis</p>
+          </div>
+          <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 px-4 py-2 bg-slate-900/50 rounded-full border border-slate-800/50">
+            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+            LIVE LINEAGE TRACKING
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-xs font-black text-blue-400">♂</div>
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Paternal Timeline</div>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-6">
               {yData?.path?.map((step: string, idx: number) => (
-                <div key={idx} className="flex items-center gap-3">
-                  {idx > 0 && <span className="text-slate-600 text-[10px]">→</span>}
-                  <div className={`px-3 py-1.5 rounded-lg text-[11px] font-bold border ${idx === yData.path.length - 1 ? 'bg-sky-600 border-sky-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
-                    {step.replace("Haplogroup ", "")}
+                <div key={idx} className="flex items-center gap-4 group">
+                  <div className="flex flex-col items-center">
+                    <motion.div 
+                      whileHover={{ scale: 1.1, backgroundColor: '#3b82f6' }}
+                      className={`px-4 py-2 rounded-xl text-xs font-black border transition-all ${idx === yData.path.length - 1 ? 'bg-blue-600 border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 'bg-slate-900 border-slate-800 text-slate-400'}`}
+                    >
+                      {step.replace("Haplogroup ", "")}
+                    </motion.div>
                   </div>
+                  {idx < yData.path.length - 1 && (
+                    <div className="w-4 h-px bg-slate-800 group-hover:bg-blue-500/50 transition-colors"></div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
-          <div>
-            <div className="text-[9px] font-bold text-slate-500 uppercase mb-4 tracking-widest">Maternal (mtDNA)</div>
-            <div className="flex flex-wrap items-center gap-3">
+
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-xs font-black text-rose-400">♀</div>
+              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Maternal Timeline</div>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-6">
               {mtData?.path?.map((step: string, idx: number) => (
-                <div key={idx} className="flex items-center gap-3">
-                  {idx > 0 && <span className="text-slate-600 text-[10px]">→</span>}
-                  <div className={`px-3 py-1.5 rounded-lg text-[11px] font-bold border ${idx === mtData.path.length - 1 ? 'bg-rose-600 border-rose-400 text-white' : 'bg-white/5 border-white/10 text-slate-300'}`}>
-                    {step.replace("Haplogroup ", "")}
+                <div key={idx} className="flex items-center gap-4 group">
+                  <div className="flex flex-col items-center">
+                    <motion.div 
+                      whileHover={{ scale: 1.1, backgroundColor: '#f43f5e' }}
+                      className={`px-4 py-2 rounded-xl text-xs font-black border transition-all ${idx === mtData.path.length - 1 ? 'bg-rose-600 border-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.3)]' : 'bg-slate-900 border-slate-800 text-slate-400'}`}
+                    >
+                      {step.replace("Haplogroup ", "")}
+                    </motion.div>
                   </div>
+                  {idx < mtData.path.length - 1 && (
+                    <div className="w-4 h-px bg-slate-800 group-hover:bg-rose-500/50 transition-colors"></div>
+                  )}
                 </div>
               ))}
             </div>
@@ -613,66 +718,78 @@ const CHROMOSOME_LENGTHS: Record<string, number> = {
   "21": 46709983, "22": 50818468
 };
 
-const ChromosomePainting = ({ data, segments }: { data: Record<string, Record<string, number>>, segments?: Record<string, any[]> }) => {
-  const chroms = Array.from({ length: 22 }, (_, i) => (i + 1).toString());
+const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
+  const subPopulations = oracleResults?.primary?.subPopulations || {};
+  const allPops = Object.values(subPopulations).flat()
+    .sort((a: any, b: any) => a.distance - b.distance) // Sort by distance ascending (closer first)
+    .slice(0, 5);
   
   return (
     <div className="bg-white dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">🎨</div>
+          <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">🧬</div>
           <div>
-            <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-tight">Chromosome Painting</h3>
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Local Ancestry Inference</p>
+            <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-tight">Subpopulation Affinity</h3>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Similarity to reference populations</p>
           </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-mono bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">Segment-based mapping</div>
+        <div className="text-[10px] text-slate-400 font-mono bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">Euclidean Distance Analysis</div>
       </div>
 
-      <div className="space-y-3">
-        {chroms.map(chrom => {
-          const chromSegments = segments?.[chrom] || [];
-          const maxPos = CHROMOSOME_LENGTHS[chrom] || 250000000;
+      <div className="space-y-6">
+        {allPops.length > 0 ? allPops.map((pop: any, idx) => {
+          // Calculate a "Closeness" percentage for the progress bar based on distance
+          // Distance < 2 is very close, > 10 is far.
+          const maxDistance = 20;
+          const closeness = Math.max(0, 100 - (pop.distance / maxDistance) * 100);
           
           return (
-            <div key={chrom} className="flex items-center gap-3 group">
-              <div className="w-8 text-[10px] font-black text-slate-400 group-hover:text-indigo-500 transition-colors">CH{chrom}</div>
-              <div className="flex-1 h-3 bg-slate-100 dark:bg-slate-900/50 rounded-full overflow-hidden relative border border-slate-200 dark:border-slate-800 shadow-inner">
-                {chromSegments.length > 0 ? chromSegments.map((seg, idx) => {
-                  const meta = CONTINENT_META[seg.continent] || { color: '#94a3b8' };
-                  const width = Math.max(0.5, ((seg.end - seg.start) / maxPos) * 100);
-                  const left = (seg.start / maxPos) * 100;
-                  
-                  return (
-                    <motion.div 
-                      key={idx}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.8 }}
-                      className="absolute top-0 h-full border-r border-black/5"
-                      style={{
-                        left: `${left}%`,
-                        width: `${width}%`,
-                        backgroundColor: meta.color,
-                      }}
-                      title={`${seg.continent}: ${Math.round(seg.confidence * 100)}% confidence | ${((seg.end - seg.start) / 1000000).toFixed(1)} Mb`}
-                    />
-                  );
-                }) : (
-                  <div className="h-full w-full bg-slate-200/50 dark:bg-slate-800/50 animate-pulse" />
-                )}
+            <motion.div 
+              key={pop.name}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              className="space-y-2 group"
+            >
+              <div className="flex justify-between items-end">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 w-4">{idx + 1}</span>
+                  <span className="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">{pop.name}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="text-right">
+                    <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Distance</div>
+                    <div className="text-sm font-mono font-black text-slate-700 dark:text-slate-300">{(pop.distance || 0).toFixed(3)}</div>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div className="relative h-2 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden border border-slate-200 dark:border-slate-800">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: `${closeness}%` }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.5 + idx * 0.1 }}
+                  className={`absolute top-0 left-0 h-full rounded-full ${
+                    pop.distance < 3 ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]' : 
+                    pop.distance < 6 ? 'bg-blue-500' : 'bg-slate-400'
+                  }`}
+                />
+              </div>
+            </motion.div>
           );
-        })}
+        }) : (
+          <div className="py-12 text-center">
+            <div className="text-4xl mb-4 opacity-20">📡</div>
+            <p className="text-sm text-slate-400 font-medium">Insufficient informative markers to calculate affinities.</p>
+          </div>
+        )}
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-x-4 gap-y-2 justify-center border-t border-slate-100 dark:border-slate-800 pt-6">
-        {Object.entries(CONTINENT_META).map(([name, meta]) => (
-          <div key={name} className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full shadow-sm" style={{ backgroundColor: meta.color }}></div>
-            <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-tighter">{name}</span>
-          </div>
-        ))}
+      <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
+        <p className="text-[9px] text-slate-500 dark:text-slate-400 leading-relaxed italic">
+          * Euclidean distance measures the statistical gap between your profile and reference population datasets. 
+          Values under <strong>3.0</strong> indicate very close affinity, while values above <strong>8.0</strong> suggest more distant matching.
+        </p>
       </div>
     </div>
   );
@@ -760,20 +877,6 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
       </div>
       
       <div className="space-y-8">
-        {/* Endogamy Indicator */}
-        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800/30 flex items-center justify-between">
-          <div>
-            <h3 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Endogamy Detection</h3>
-            <p className="text-[10px] text-indigo-600 dark:text-indigo-400 mt-1">Based on contiguous segment analysis</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className={`px-3 py-1 rounded-full text-xs font-black ${endogamyScore > 150 ? 'bg-red-500 text-white' : endogamyScore > 50 ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'}`}>
-              {endogamyScore > 150 ? 'High' : endogamyScore > 50 ? 'Moderate' : 'Low'}
-            </span>
-            <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">{endogamyScore.toFixed(0)} Index</span>
-          </div>
-        </div>
-
         {/* Continental Admixture */}
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
           <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Continental Admixture</h3>
@@ -805,7 +908,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
                               <span className="font-bold">{data.name}</span>
                             </div>
-                            <div className="font-mono text-lg">{(data.value as number).toFixed(1)}%</div>
+                  <div className="font-mono text-lg">{((data.value as number) || 0).toFixed(1)}%</div>
                           </div>
                         );
                       }
@@ -835,7 +938,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
                         <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{entry.name}</span>
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-500">{(entry.value as number).toFixed(1)}%</span>
+                      <span className="text-xs font-mono font-bold text-slate-500">{((entry.value as number) || 0).toFixed(1)}%</span>
                     </div>
                     {ci && (
                       <div className="flex items-center gap-2">
@@ -849,7 +952,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                           />
                         </div>
                         <span className="text-[9px] font-mono text-slate-400">
-                          {ci.low.toFixed(1)}—{ci.high.toFixed(1)}%
+                          {(ci.low || 0).toFixed(1)}—{(ci.high || 0).toFixed(1)}%
                         </span>
                       </div>
                     )}
@@ -876,8 +979,8 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                     <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider line-clamp-1">{pop.name}</span>
                   </div>
                   <div className="flex items-end justify-between">
-                    <span className="text-lg font-black text-slate-900 dark:text-slate-100">{pop.percentage.toFixed(1)}%</span>
-                     <span className="text-[9px] font-mono font-bold text-slate-500" title="Euclidean Distance">{pop.dist.toFixed(2)} D</span>
+                    <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(1)}%</span>
+                     <span className="text-[9px] font-mono font-bold text-slate-500" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(2)} D</span>
                   </div>
                 </div>
               ))}
@@ -885,9 +988,22 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
           </div>
         )}
 
-        {/* Chromosome Painting */}
-        {chromosomeData && <ChromosomePainting data={chromosomeData} segments={segments} />}
+        {/* Subpopulation Affinity */}
+        <SubpopulationAffinity oracleResults={oracleResults} />
 
+        {/* Endogamy Indicator */}
+        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800/30 flex items-center justify-between">
+          <div>
+            <h3 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Endogamy Detection</h3>
+            <p className="text-[10px] text-indigo-600 dark:text-indigo-400 mt-1">Based on contiguous segment analysis</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className={`px-3 py-1 rounded-full text-xs font-black ${endogamyScore > 150 ? 'bg-red-500 text-white' : endogamyScore > 50 ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'}`}>
+              {endogamyScore > 150 ? 'High' : endogamyScore > 50 ? 'Moderate' : 'Low'}
+            </span>
+            <span className="text-xs font-mono font-bold text-slate-600 dark:text-slate-300">{(endogamyScore || 0).toFixed(0)} Index</span>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -1068,6 +1184,44 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
           </div>
         </div>
 
+        {/* ISOGG Analysis */}
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col h-full relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3 mb-6 relative z-10">
+            <span className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">🧬</span>
+            ISOGG Database Analysis
+          </h3>
+          
+          <div className="flex-1 overflow-y-auto max-h-[500px] space-y-3 relative z-10 pr-2 custom-scrollbar">
+            {yData.isoggMatches && yData.isoggMatches.length > 0 ? (
+              yData.isoggMatches.map((match: any, idx: number) => (
+                <div key={idx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
+                   <div className="flex justify-between items-start mb-2">
+                     <span className="text-sm font-black text-slate-900 dark:text-white tracking-tight">{match.branch.branchName}</span>
+                     <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 rounded-lg">
+                       {match.matches.length} Match{match.matches.length > 1 ? 'es' : ''}
+                     </span>
+                   </div>
+                   <div className="flex flex-wrap gap-1.5 leading-none">
+                     {match.matches.slice(0, 10).map((m: string) => (
+                       <span key={m} className="px-1.5 py-1 bg-white dark:bg-slate-800 rounded text-[9px] font-mono text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700">
+                         {m}
+                       </span>
+                     ))}
+                     {match.matches.length > 10 && <span className="text-[9px] text-slate-400 font-bold">+{match.matches.length - 10} more</span>}
+                   </div>
+                </div>
+              ))
+            ) : (
+              <div className="h-full flex flex-col items-center justify-center text-center py-12 px-6">
+                <div className="text-4xl mb-4 opacity-20">🔍</div>
+                <p className="text-slate-500 dark:text-slate-400 text-sm font-bold">No deep ISOGG matches detected.</p>
+                <p className="text-[10px] text-slate-400 mt-2 max-w-[200px]">Requires specific Y-chromosome markers not found in this dataset.</p>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Tested Markers */}
         <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-3">
@@ -1126,17 +1280,19 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
   }, []);
 
   const enrichedPath = useMemo(() => {
-    return (mtData.path || []).map((step: string) => {
+    return (mtData.path || []).map((step: string, idx: number) => {
       const node = findNode(step);
+      // Fallback for nodes not in our primary tree (e.g., deep subclades)
+      const isLast = idx === (mtData.path || []).length - 1;
       return {
         name: step.replace("Haplogroup ", ""),
-        region: node?.region || "Unknown",
-        description: node?.description || "A pivotal point in the maternal migration history.",
+        region: node?.region || (isLast ? mtData.region : "Global"),
+        description: node?.description || (isLast ? `Your most specific maternal lineage branch: ${step.replace("Haplogroup ", "")}.` : "A transitional point in the maternal migration history."),
         historicalContext: node?.historicalContext,
         mutations: node?.mutations || []
       };
     });
-  }, [mtData.path, findNode]);
+  }, [mtData.path, mtData.region, findNode]);
 
   const derivedMarkers = mtData.testedMarkers.filter((m: any) => m.status === 'derived');
   const markerPieData = derivedMarkers.map((m: any) => {
@@ -1379,6 +1535,49 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm }: { mtData:
             </div>
           </div>
         </div>
+
+        {/* PhyloTree Deep Analysis */}
+        <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-rose-500/5 blur-[80px] -mr-24 -mt-24 group-hover:bg-rose-500/10 transition-colors duration-1000"></div>
+          <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 flex items-center gap-4 mb-8 relative z-10">
+            <span className="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 dark:text-rose-400 shadow-sm">🔬</span>
+            PhyloTree Deep Analysis
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
+            {mtData.deepMatches && mtData.deepMatches.length > 0 ? (
+              mtData.deepMatches.slice(0, 15).map((match: any, idx: number) => (
+                <div key={idx} className="p-5 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-rose-300 dark:hover:border-rose-900/30 transition-all hover:shadow-lg group/item">
+                   <div className="flex justify-between items-start mb-3">
+                     <span className="text-lg font-black text-slate-900 dark:text-white tracking-tighter group-hover/item:text-rose-600 transition-colors">{match.branch.branchName}</span>
+                     <span className="text-[10px] font-black text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/40 px-3 py-1 rounded-xl border border-rose-100 dark:border-rose-800/50 shadow-sm">
+                       {match.matches.length} Mutations
+                     </span>
+                   </div>
+                   <div className="flex flex-wrap gap-1.5 line-clamp-2">
+                     {match.matches.map((m: string) => (
+                       <span key={m} className="px-2 py-0.5 bg-white dark:bg-slate-800 rounded-lg text-[10px] font-mono text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700 shadow-sm">
+                         {m}
+                       </span>
+                     ))}
+                   </div>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full py-16 text-center">
+                <div className="text-6xl mb-6 grayscale opacity-20">🧬</div>
+                <h4 className="text-lg font-black text-slate-900 dark:text-slate-100 mb-2">Reference Refinement In Progress</h4>
+                <p className="text-sm text-slate-500 dark:text-slate-400 max-w-sm mx-auto">Requires specific deep-branch mutations not identified in current coverage.</p>
+              </div>
+            )}
+          </div>
+          
+          {mtData.deepMatches && mtData.deepMatches.length > 15 && (
+            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700/50 text-center">
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Showing top 15 of {mtData.deepMatches.length} specific subclade matches</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -1493,7 +1692,15 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
 
 export default function App() {
   const [snps, setSnps] = useState<SNP[]>(SNP_DB);
-  const [datasets, setDatasets] = useState<{ name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }[]>([]);
+  const [datasets, setDatasets] = useState<{ 
+    name: string, 
+    results: any[], 
+    chip?: string, 
+    snpCount?: number, 
+    predictedYDNA?: any, 
+    predictedMtDNA?: any,
+    mergedMtMap?: Record<string, string>
+  }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
   const snpMaps = useRef<Record<number, Record<string, string>>>({});
   const [statusFilter, setStatusFilter] = useState<'matched' | 'unmatched' | 'not_tested'>('matched');
@@ -1518,7 +1725,7 @@ export default function App() {
 
   const [darkMode, setDarkMode] = useState(true);
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'blood' | 'debug'>('autosomal');
+  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'health' | 'blood' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
@@ -1569,7 +1776,15 @@ export default function App() {
     if (saved) setDatasets(saved);
   }, []);
 
-  const updateDatasets = (newDataset: { name: string, results: any[], chip?: string, snpCount?: number, predictedYDNA?: any, predictedMtDNA?: any }) => {
+  const updateDatasets = (newDataset: { 
+    name: string, 
+    results: any[], 
+    chip?: string, 
+    snpCount?: number, 
+    predictedYDNA?: any, 
+    predictedMtDNA?: any,
+    mergedMtMap?: Record<string, string>
+  }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
     saveResults(newDatasets);
@@ -1651,7 +1866,8 @@ export default function App() {
             chip: payload.chip,
             snpCount: payload.snpCount,
             predictedYDNA: payload.predictedYDNA,
-            predictedMtDNA: payload.predictedMtDNA
+            predictedMtDNA: payload.predictedMtDNA,
+            mergedMtMap: payload.mergedMtMap
           });
           setPendingFiles([]);
           setProcessing(false);
@@ -1723,34 +1939,66 @@ export default function App() {
     };
   }, [datasets, activeDatasetIndex]);
 
+  const userMatchedMitoTraits = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (!dataset || !dataset.mergedMtMap) return [];
+    
+    const mtMap = dataset.mergedMtMap;
+    return (mitoTraits as any[]).filter(trait => {
+        const userAllele = mtMap[trait.position];
+        if (!userAllele) return false;
+        
+        // trait.allele is like "G>A" or "A583G" or just "A"
+        // Most common format in our parser is "G>A"
+        if (trait.allele.includes('>')) {
+          const [ancestral, derived] = trait.allele.split('>');
+          return userAllele.toUpperCase() === derived.trim().toUpperCase();
+        }
+        
+        // Sometimes it's just the derived allele
+        return userAllele.toUpperCase() === trait.allele.trim().toUpperCase();
+    });
+  }, [datasets, activeDatasetIndex]);
+
   return (
-    <div className="app-container relative max-w-4xl mx-auto p-4 sm:p-6">
+    <div className="app-container relative max-w-5xl mx-auto p-4 sm:p-8 min-h-screen">
       <div className="absolute top-6 right-6 flex items-center gap-4 z-50">
-        <div className="text-xs font-mono text-slate-400 dark:text-slate-500">v.2</div>
-        <button onClick={toggleDarkMode} className="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 transition-all hover:scale-110 shadow-sm border border-slate-300 dark:border-slate-600">
+        <div className="text-[9px] font-black font-mono text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm transition-all hover:border-sky-500 cursor-default">v.3</div>
+        <button 
+          onClick={toggleDarkMode} 
+          className="p-2.5 rounded-full bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 transition-all hover:scale-110 active:scale-95 shadow-sm border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500"
+        >
           {darkMode ? '☀️' : '🌙'}
         </button>
       </div>
-      <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-          <img className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-slate-200" src={LOGO_URI} alt="Logo" />
+      
+      <header className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 mb-12 sm:mb-16 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-6">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative"
+          >
+            <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full scale-125"></div>
+            <img className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-2xl relative z-10" src={LOGO_URI} alt="Genotype Scout Logo" />
+          </motion.div>
           <div>
-            <div className="text-sky-600 text-[10px] sm:text-xs tracking-widest uppercase font-bold mb-1">DNA Ancestry & Trait Analyzer</div>
-            <h1 className="text-3xl sm:text-4xl tracking-tighter mb-2">
-              <span className="font-light text-slate-500 dark:text-slate-400">GENOTYPE</span> SCOUT
+            <div className="text-blue-600 dark:text-blue-400 text-xs tracking-[0.4em] uppercase font-black mb-2 opacity-80">Genetics Reimagined</div>
+            <h1 className="text-4xl sm:text-5xl tracking-tighter mb-4 leading-none">
+              <span className="font-light text-slate-500 dark:text-slate-400 italic">GENOTYPE</span><br className="sm:hidden" /><span className="font-black" style={{ color: '#2450c3' }}>SCOUT</span>
             </h1>
-            <div className="flex flex-wrap gap-3 sm:gap-4 font-bold text-xs">
-              <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-sky-700 dark:text-sky-400 hover:text-sky-900 dark:hover:text-sky-200 transition-colors bg-sky-50 dark:bg-sky-900/30 px-2 py-1 rounded-lg border border-sky-100 dark:border-sky-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                Facebook Group
+            <div className="flex flex-wrap justify-center sm:justify-start gap-3 font-bold text-[10px] uppercase tracking-widest">
+              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+                <span className="w-6 h-px bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors"></span>
+                Research
               </a>
-              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                Research Blog
+              <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+                <span className="w-6 h-px bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors"></span>
+                Community
               </a>
-              <a href="https://paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 hover:text-emerald-900 dark:hover:text-emerald-200 transition-colors bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-lg border border-emerald-100 dark:border-emerald-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                Donate
+              <a href="https://paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 transition-colors">
+                <span className="w-6 h-px bg-emerald-200 dark:bg-emerald-900/50 group-hover:bg-emerald-500 transition-colors"></span>
+                Support
               </a>
             </div>
           </div>
@@ -1758,49 +2006,73 @@ export default function App() {
       </header>
 
       {processing && (
-        <div className="border-2 border-dashed border-sky-300 rounded-xl p-16 text-center bg-sky-50 dark:bg-sky-950/30">
-          <div className="text-5xl mb-4 animate-spin">🧬</div>
-          <div className="text-xl font-bold text-sky-900 dark:text-sky-200 mb-2">Processing your DNA file...</div>
-          <div className="text-sky-700 dark:text-sky-400 text-sm font-mono mb-8">Please wait while we analyze your markers</div>
+        <div className="border-2 border-dashed border-sky-300 dark:border-sky-800 rounded-[2.5rem] p-12 sm:p-24 text-center bg-white dark:bg-slate-900/50 shadow-inner">
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+            className="text-6xl mb-8 inline-block"
+          >
+            🧬
+          </motion.div>
+          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100 mb-2">Analyzing Genomic Markers</h2>
+          <p className="text-slate-500 dark:text-slate-400 text-sm font-medium max-w-md mx-auto mb-12">
+            Sit tight while we process your SNPs and reconstruct your Ancestry Oracle profile. This takes a few moments.
+          </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
-              <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Genetic Research</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400">Read about the latest findings in African genetic history.</div>
-            </a>
-            <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-sky-100 dark:border-sky-800 hover:border-sky-500 transition-all text-left group">
-              <div className="font-bold text-sky-900 dark:text-sky-200 mb-1 group-hover:text-sky-600">Community Forum</div>
-              <div className="text-xs text-slate-600 dark:text-slate-400">Connect with others exploring their transatlantic roots.</div>
-            </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-left">
+              <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4">📚</div>
+              <div className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-1 line-clamp-1">Did you know?</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed italic">Genotype Scout analyzes over {ANCHOR_AIMS.length.toLocaleString()} diagnostic markers for ancestry.</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-left">
+              <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-500 mb-4">🛡️</div>
+              <div className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-1 line-clamp-1">Privacy First</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed italic">Your raw DNA data never leaves your device. All computation is local.</div>
+            </div>
           </div>
         </div>
       )}
 
       {!results && !processing && (
         <div className="animate-fade-up">
-          <div className="upload-blurb mb-8">
-            <div className="flex gap-4 mb-4 text-xs text-slate-500 dark:text-slate-400 font-mono bg-slate-100 dark:bg-slate-800 p-2 rounded-lg inline-block">
-              <span>Ancestry Oracle Aims: {ANCHOR_AIMS.length.toLocaleString()}</span>
-              <span>|</span>
-              <span>Total Markers: {snps.length.toLocaleString()}</span>
+          <div className="mb-16">
+            <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8 animate-fade-in">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Browser-Based Analysis Node Active
             </div>
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Welcome to Genotype Scout</h3>
-              {datasets.length > 0 && (
-                <button 
-                  onClick={() => setActiveDatasetIndex(0)} 
-                  className="text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1"
-                >
-                  View Previous Results <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                </button>
-              )}
-            </div>
-            <p className="text-sm text-slate-700 dark:text-slate-400 leading-relaxed">
-              Genotype Scout is a privacy-first, browser-based DNA analyzer designed to help you explore your genetic heritage and health traits. 
-              By analyzing your raw DNA file from services like 23andMe, AncestryDNA, or MyHeritage, we provide detailed insights into your 
-              autosomal markers and a sophisticated Ancestry Oracle prediction. 
-              <strong> Your data never leaves your computer; all processing happens locally in your browser.</strong>
+            <h2 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-slate-50 tracking-tighter mb-6 leading-none">
+              Explore the history <br className="hidden sm:block" /> locked in your <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400">Genetics.</span>
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mb-10">
+              Unpack your 23andMe, AncestryDNA, or MyHeritage raw data. 
+              Discover deep ancestry, health markers, and paternal lineages through our 
+              <span className="font-black text-slate-900 dark:text-slate-100"> High-Precision Oracle.</span>
             </p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🔒</div>
+                <div>
+                  <div className="text-[10px] font-black uppercase text-slate-400">Privacy First</div>
+                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Local processing</div>
+                </div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🧬</div>
+                <div>
+                  <div className="text-[10px] font-black uppercase text-slate-400">1.2M+ AIMS</div>
+                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Deep search logic</div>
+                </div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">⚡</div>
+                <div>
+                  <div className="text-[10px] font-black uppercase text-slate-400">Fast Analysis</div>
+                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Under 10 seconds</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {error && (
@@ -1819,10 +2091,11 @@ export default function App() {
             </div>
           )}
 
-          <div className="grid grid-cols-2 gap-4">
-            <div
-              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-6 sm:p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-sky-500 bg-sky-50 dark:bg-sky-900/20" : "hover:border-sky-500"}`}
+          <div className="flex justify-center mb-16">
+            <motion.div
+              whileHover={{ y: -5 }}
               onClick={() => fileRef.current?.click()}
+              className={`group relative p-6 sm:p-10 w-full max-w-2xl rounded-[2.5rem] sm:rounded-[3rem] bg-white dark:bg-slate-900 border-2 border-dashed border-slate-200 dark:border-slate-800 cursor-pointer transition-all hover:border-sky-500 hover:shadow-2xl hover:shadow-sky-500/10 ${dragging ? "border-sky-500 shadow-2xl shadow-sky-500/20 ring-4 ring-sky-500/10" : ""}`}
               onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
               onDragLeave={() => setDragging(false)}
               onDrop={(e) => { 
@@ -1840,28 +2113,34 @@ export default function App() {
                   setPendingFiles(prev => [...prev, ...newFiles]);
                 }
               }} />
-              <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🧬</div>
-              <div className="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Primary Kit</div>
-              <div className="text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">Drop main file or click</div>
-            </div>
+              <div className="relative">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl bg-sky-50 dark:bg-sky-900/20 flex items-center justify-center text-4xl sm:text-5xl mb-6 sm:mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">🧬</div>
+                <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-emerald-500 border-2 sm:border-4 border-white dark:border-slate-900 shadow-sm flex items-center justify-center text-white text-[8px] sm:text-[10px] font-black">AI</div>
+              </div>
+              
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 mb-2 sm:mb-3 tracking-tight">Initialize Analysis</h3>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8 max-w-sm">
+                Securely drop your raw DNA file (.txt or .csv) from 23andMe, Ancestry, or MyHeritage. All data stays local and private.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                <div className="w-full sm:w-auto text-center px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black uppercase tracking-widest group-hover:bg-sky-600 dark:group-hover:bg-sky-400 dark:group-hover:text-white transition-colors">
+                  Select Kit
+                </div>
+                <div className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-tighter">or drag & drop here</div>
+              </div>
 
-            <div
-              className={`border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-6 sm:p-10 text-center cursor-pointer bg-white/50 dark:bg-slate-800/50 transition-all ${dragging ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20" : "hover:border-indigo-500"}`}
-              onClick={() => fileRef.current?.click()}
-              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
-              onDragLeave={() => setDragging(false)}
-              onDrop={(e) => { 
-                e.preventDefault(); 
-                setDragging(false); 
-                setError(null);
-                const newFiles = Array.from(e.dataTransfer.files);
-                setPendingFiles(prev => [...prev, ...newFiles]);
-              }}
-            >
-              <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">➕</div>
-              <div className="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Additional</div>
-              <div className="text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">Add file to merge</div>
-            </div>
+              {dragging && (
+                 <motion.div 
+                   initial={{ opacity: 0, scale: 0.9 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   className="absolute inset-4 rounded-[2.5rem] bg-sky-500/90 backdrop-blur-sm flex flex-col items-center justify-center text-white z-50 pointer-events-none"
+                 >
+                    <div className="text-6xl mb-4">📥</div>
+                    <div className="text-lg font-black uppercase tracking-widest">Release to Analyze</div>
+                 </motion.div>
+              )}
+            </motion.div>
           </div>
 
           {pendingFiles.length > 0 && (
@@ -1892,268 +2171,189 @@ export default function App() {
               </button>
             </div>
           )}
-
-          <div className="mt-12">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Marker Explorer</h3>
-              <div className="relative">
-                <input 
-                  type="text" 
-                  placeholder="Search rsid or trait..." 
-                  className="bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-2 pl-10 text-sm font-bold w-full sm:w-64 focus:ring-2 focus:ring-sky-500 outline-none border border-slate-200 dark:border-slate-700"
-                  value={explorerSearch}
-                  onChange={(e) => setExplorerSearch(e.target.value)}
-                />
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                </div>
-              </div>
-            </div>
-            
-            {explorerSearch ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {snps.filter(s => 
-                  (s.rsid?.toLowerCase() || '').includes(explorerSearch.toLowerCase()) || 
-                  (s.trait?.toLowerCase() || '').includes(explorerSearch.toLowerCase())
-                ).slice(0, 6).map(s => (
-                  <div key={s.markerId} className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="font-mono text-[10px] font-bold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-900/30 px-1.5 py-0.5 rounded">{s.rsid}</span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{s.category}</span>
-                    </div>
-                    <div className="font-bold text-sm text-slate-900 dark:text-slate-100 mb-1">{s.trait}</div>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2">{s.description}</p>
-                  </div>
-                ))}
-                {snps.filter(s => 
-                  (s.rsid?.toLowerCase() || '').includes(explorerSearch.toLowerCase()) || 
-                  (s.trait?.toLowerCase() || '').includes(explorerSearch.toLowerCase())
-                ).length === 0 && (
-                  <div className="col-span-full p-8 text-center text-slate-400 text-sm italic">
-                    No markers found matching "{explorerSearch}"
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-                {['Health', 'Ancestry', 'Lifestyle', 'Nutrition', 'Performance'].map(cat => (
-                  <button 
-                    key={cat}
-                    onClick={() => setExplorerSearch(cat)}
-                    className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-sky-500 transition-all text-center group"
-                  >
-                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
-                      {CATEGORY_META[cat as keyof typeof CATEGORY_META]?.icon || '🧬'}
-                    </div>
-                    <div className="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">{cat}</div>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
         </div>
       )}
       {results && (
-        <div className="space-y-8">
-          <div className="flex flex-wrap gap-2 mb-4 overflow-x-auto scrollbar-hide pb-2 border-b border-slate-100 dark:border-slate-800">
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'autosomal' ? 'bg-sky-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('autosomal')}
-            >
-              🧬 Autosomal DNA
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'oracle' ? 'bg-indigo-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('oracle')}
-            >
-              🔮 Ancestry Oracle
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'y-dna' ? 'bg-blue-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('y-dna')}
-            >
-              ♂️ Y-DNA
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'mt-dna' ? 'bg-rose-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('mt-dna')}
-            >
-              ♀️ mtDNA
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'blood' ? 'bg-rose-500 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('blood')}
-            >
-              🩸 Blood Type
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'summary' ? 'bg-amber-600 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('summary')}
-            >
-              📊 Profile Summary
-            </button>
-            <button 
-              className={`px-5 py-2.5 rounded-full font-bold text-sm whitespace-nowrap transition-all ${activeTab === 'debug' ? 'bg-slate-800 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}
-              onClick={() => setActiveTab('debug')}
-            >
-              🛠️ Debug
-            </button>
+        <div className="space-y-8 animate-fade-in">
+          {/* Main Navigation Dock */}
+          <div className="sticky top-0 z-40 -mx-4 sm:mx-0 px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/20 dark:border-slate-800 transition-all">
+            <div className="grid grid-cols-4 sm:flex sm:flex-wrap gap-1.5 pb-0.5">
+              {[
+                { id: 'summary', label: 'Summary', icon: '📊', color: 'amber' },
+                { id: 'autosomal', label: 'Traits', icon: '🧬', color: 'sky' },
+                { id: 'oracle', label: 'Oracle', icon: '🔮', color: 'indigo' },
+                { id: 'y-dna', label: 'Y-DNA', icon: '♂️', color: 'blue' },
+                { id: 'mt-dna', label: 'mtDNA', icon: '♀️', color: 'rose' },
+                { id: 'health', label: 'Health', icon: '📊', color: 'red' },
+                { id: 'blood', label: 'Blood', icon: '🩸', color: 'red' },
+                { id: 'debug', label: 'System', icon: '🛠️', color: 'slate' }
+              ].map(tab => (
+                <button 
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id as any)}
+                  className={`relative flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-1 sm:px-4 py-2 rounded-xl sm:rounded-full text-[9px] sm:text-xs font-black transition-all active:scale-95 ${
+                    activeTab === tab.id 
+                      ? `bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg` 
+                      : `text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800`
+                  }`}
+                >
+                  <span className="text-sm">{tab.icon}</span>
+                  {tab.label}
+                  {activeTab === tab.id && (
+                    <motion.div 
+                      layoutId="tab-highlight"
+                      className="absolute inset-0 rounded-xl sm:rounded-full bg-slate-900 dark:bg-white -z-10"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {datasets.length > 1 && (
-            <div className="flex gap-2 mb-4">
-              {datasets.map((d, i) => (
-                <button
-                  key={i}
-                  className={`px-3 py-1 rounded-full text-xs font-bold ${activeDatasetIndex === i ? 'bg-sky-600 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-400'}`}
-                  onClick={() => setActiveDatasetIndex(i)}
-                >
-                  {d.name}
-                </button>
-              ))}
-            </div>
-          )}
-          <div className="flex flex-wrap gap-4 mb-4 justify-between items-center">
-            <div className="flex flex-wrap gap-2">
-              {(['matched', 'unmatched', 'not_tested'] as const).map(status => (
-                <button 
-                  key={status}
-                  className={`px-4 py-2 rounded-full text-sm font-bold ${statusFilter === status ? 'bg-sky-600 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-400'}`}
-                  onClick={() => setStatusFilter(status)}
-                >
-                  {status.replace('_', ' ').toUpperCase()}
-                </button>
-              ))}
-              <div className="flex gap-1 ml-2">
-                <button 
-                  onClick={() => expandAll(['Health', 'Ancestry', 'Lifestyle', 'Nutrition', 'Performance'])}
-                  className="px-3 py-2 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200"
-                >
-                  EXPAND ALL
-                </button>
-                <button 
-                  onClick={() => collapseAll(['Health', 'Ancestry', 'Lifestyle', 'Nutrition', 'Performance'])}
-                  className="px-3 py-2 rounded-full text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200"
-                >
-                  COLLAPSE ALL
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#030303' }} value={significanceFilter} onChange={(e) => setSignificanceFilter(e.target.value)}>
-                <option key="opt-all-significance" value="all">All Significance</option>
-                {uniqueSignificances.map(s => <option key={`opt-${s}`} value={s}>{s}</option>)}
-              </select>
-              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#111214' }} value={continentFilter} onChange={(e) => setContinentFilter(e.target.value)}>
-                <option key="opt-all-regions" value="all">All Regions</option>
-                {uniqueContinents.map(c => <option key={`opt-${c}`} value={c}>{c}</option>)}
-              </select>
-              <select className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 text-sm font-bold" style={{ color: '#0d0e11' }} value={geneFilter} onChange={(e) => setGeneFilter(e.target.value)}>
-                <option key="opt-all-genes" value="all">All Genes</option>
-                {uniqueGenes.map(g => <option key={`opt-${g}`} value={g}>{g}</option>)}
-              </select>
-              <div className="relative">
-                <input 
-                  type="text" 
-                  placeholder="Search rsid, trait, or gene..." 
-                  className="bg-slate-200 dark:bg-slate-700 rounded-full px-4 py-2 pl-10 text-sm font-bold w-full sm:w-64 focus:ring-2 focus:ring-sky-500 outline-none"
-                  style={{ color: '#060404' }}
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab + activeDatasetIndex}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+            >
+              {datasets.length > 1 && (
+                <div className="flex flex-wrap gap-2 mb-6 px-1">
+                  {datasets.map((d, i) => (
+                    <button
+                      key={i}
+                      className={`px-4 py-1.5 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all ${
+                        activeDatasetIndex === i 
+                          ? 'bg-sky-600 text-white shadow-md' 
+                          : 'bg-white dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700 hover:border-sky-500'
+                      }`}
+                      onClick={() => setActiveDatasetIndex(i)}
+                    >
+                      {d.name.split('.')[0]}
+                    </button>
+                  ))}
+                </div>
+              )}
+              
+              <div className="flex flex-wrap gap-4 mb-8 justify-between items-center bg-white dark:bg-slate-900 p-4 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div className="flex flex-wrap gap-2">
+                  {(['matched', 'unmatched', 'not_tested'] as const).map(status => (
+                    <button 
+                      key={status}
+                      className={`px-4 py-2 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all ${statusFilter === status ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-sm' : 'bg-slate-50 dark:bg-slate-800 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700'}`}
+                      onClick={() => setStatusFilter(status)}
+                    >
+                      {status.replace('_', ' ')}
+                    </button>
+                  ))}
+                </div>
+                
+                <div className="flex flex-wrap gap-2 items-center">
+                  <div className="relative group/search">
+                    <input 
+                      type="text" 
+                      placeholder="Search markers..." 
+                      className="bg-slate-50 dark:bg-slate-800 rounded-xl px-4 py-2 pl-10 text-xs font-bold w-full sm:w-48 focus:w-64 transition-all focus:ring-2 focus:ring-sky-500 outline-none border border-slate-100 dark:border-slate-700"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/search:text-sky-500 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-1">
+                    <button onClick={resetApp} className="p-2 rounded-xl bg-rose-50 dark:bg-rose-900/20 text-rose-600 hover:bg-rose-100 dark:hover:bg-rose-900/40 border border-rose-100 dark:border-rose-900/40 transition-all active:scale-90" title="Reset Session">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                    </button>
+                    <button onClick={exportPDF} className="p-2 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all active:scale-90" title="Export PDF">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex gap-2">
-              <button onClick={resetApp} className="px-4 py-2 rounded-full text-sm font-bold bg-rose-600 text-white">
-                Reset
-              </button>
-              <button onClick={exportJSON} className="px-4 py-2 rounded-full text-sm font-bold bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900">
-                Export JSON
-              </button>
-              <button onClick={exportPDF} className="px-4 py-2 rounded-full text-sm font-bold bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900">
-                Export PDF
-              </button>
-            </div>
-          </div>
 
-          {activeTab === 'summary' && (
-            <ProfileSummary 
-              datasets={datasets} 
-              activeDatasetIndex={activeDatasetIndex} 
-              oracleResults={oracleResults} 
-            />
-          )}
+              {activeTab === 'summary' && (
+                <ProfileSummary 
+                  datasets={datasets} 
+                  activeDatasetIndex={activeDatasetIndex} 
+                  oracleResults={oracleResults} 
+                />
+              )}
 
-          {activeTab === 'autosomal' && (() => {
-            const privateSNPs = getPrivateSNPs((datasets[activeDatasetIndex] as any).snpMap).map(rsid => ({
-              rsid,
-              markerId: rsid,
-              category: 'Private',
-              trait: 'Unrecognized Marker',
-              description: 'This marker was found in your raw data but is not present in the standard reference databases.',
-              significance: 'Low',
-              status: 'not_tested',
-              continent: 'Global'
-            }));
-            const grouped = groupByCategory(filteredResults || []);
-            grouped['Private'] = privateSNPs;
-            const available = Object.keys(grouped);
+              {activeTab === 'autosomal' && (
+                <AutosomalView 
+                  filteredResults={filteredResults}
+                  groupedCategories={groupByCategory(filteredResults || [])}
+                  availableCategories={Object.keys(groupByCategory(filteredResults || []))}
+                  expandedCategories={expandedCategories}
+                  toggleCategory={toggleCategory}
+                  expandedSnps={expandedSnps}
+                  toggleExpand={toggleExpand}
+                  datasets={datasets}
+                  activeDatasetIndex={activeDatasetIndex}
+                />
+              )}
 
-            return (
-              <AutosomalView 
-                filteredResults={[...filteredResults, ...privateSNPs]}
-                groupedCategories={grouped}
-                availableCategories={available}
-                expandedCategories={expandedCategories}
-                toggleCategory={toggleCategory}
-                expandedSnps={expandedSnps}
-                toggleExpand={toggleExpand}
-                datasets={datasets}
-                activeDatasetIndex={activeDatasetIndex}
-              />
-            );
-          })()}
+              {activeTab === 'oracle' && (
+                <OracleView 
+                  oracleResults={oracleResults}
+                  ancestrySnps={datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry')}
+                  selectedSubPop={selectedSubPop}
+                  setSelectedSubPop={setSelectedSubPop}
+                />
+              )}
 
-          {activeTab === 'oracle' && (
-            <OracleView 
-              oracleResults={oracleResults}
-              ancestrySnps={datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry')}
-              selectedSubPop={selectedSubPop}
-              setSelectedSubPop={setSelectedSubPop}
-            />
-          )}
+              {activeTab === 'blood' && (
+                <BloodTypeView dataset={datasets[activeDatasetIndex]} />
+              )}
 
-          {activeTab === 'blood' && (
-            <BloodTypeView dataset={datasets[activeDatasetIndex]} />
-          )}
+              {activeTab === 'y-dna' && (
+                <YDNAView 
+                  yData={datasets[activeDatasetIndex].predictedYDNA} 
+                  treeSearchTerm={treeSearchTerm}
+                  setTreeSearchTerm={setTreeSearchTerm}
+                />
+              )}
 
-          {activeTab === 'y-dna' && (
-            <YDNAView 
-              yData={datasets[activeDatasetIndex].predictedYDNA} 
-              treeSearchTerm={treeSearchTerm}
-              setTreeSearchTerm={setTreeSearchTerm}
-            />
-          )}
+              {activeTab === 'mt-dna' && (
+                <MTDNAView 
+                  mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                  treeSearchTerm={treeSearchTerm}
+                  setTreeSearchTerm={setTreeSearchTerm}
+                />
+              )}
 
-          {activeTab === 'mt-dna' && (
-            <MTDNAView 
-              mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-              treeSearchTerm={treeSearchTerm}
-              setTreeSearchTerm={setTreeSearchTerm}
-            />
-          )}
+              {activeTab === 'health' && (
+                <HealthTraitsTab 
+                  matchedTraits={userMatchedMitoTraits} 
+                  autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
+                />
+              )}
 
-          {activeTab === 'debug' && (
-            <DebugView 
-              snps={snps} 
-              aims={ANCHOR_AIMS} 
-              activeDataset={datasets[activeDatasetIndex]} 
-            />
-          )}
-
+              {activeTab === 'debug' && (
+                <div className="p-8 rounded-[2rem] bg-slate-900 border border-slate-800 text-slate-400 font-mono text-xs overflow-auto max-h-[800px] shadow-2xl">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                    <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Active Kernel State</h3>
+                  </div>
+                  <pre className="p-4 bg-black/40 rounded-xl overflow-auto custom-scrollbar whitespace-pre-wrap">
+                    {JSON.stringify({ 
+                      version: VERSION,
+                      activeTab, 
+                      statusFilter, 
+                      activeDatasetIndex, 
+                      chip: datasets[activeDatasetIndex].chip,
+                      snps: datasets[activeDatasetIndex].snpCount,
+                      datasetMeta: datasets.map(d => ({ name: d.name, count: d.results.length }))
+                    }, null, 2)}
+                  </pre>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       )}
     </div>

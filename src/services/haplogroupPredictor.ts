@@ -2,12 +2,28 @@ import { HaplogroupNode } from '../types/genotype';
 import { SNP_LOOKUP } from '../data/snpDatabase';
 import { Y_DNA_TREE, MT_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerDescription } from './snpMatcher';
+import { findMatchesInHaplogroups } from './haplogroupService';
+import { findMatchesInMtHaplogroups } from './mtHaplogroupService';
 
 export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: HaplogroupNode = Y_DNA_TREE) {
   const testedMarkers: any[] = [];
   let bestNode: any = null;
   let bestPath: string[] = [];
   let maxDerivedCount = -1;
+
+  // Deep ISOGG matches
+  const isoggMatches = findMatchesInHaplogroups(yMap);
+  
+  // Sort ISOGG matches by specificity (branch name length as proxy for depth)
+  // and match count
+  const sortedIsogg = [...isoggMatches].sort((a, b) => {
+    if (b.matches.length !== a.matches.length) {
+      return b.matches.length - a.matches.length;
+    }
+    return b.branch.branchName.length - a.branch.branchName.length;
+  });
+
+  const topIsogg = sortedIsogg[0];
 
   function getNodeStats(node: HaplogroupNode) {
     let pos = 0;
@@ -119,15 +135,34 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
 
   const uniqueMarkers = Array.from(new Map(testedMarkers.map(m => [m.marker, m])).values());
 
+  let prediction = bestNode && bestNode.branchName !== "Y-DNA Root (Adam)" ? {
+    name: bestNode.branchName.replace("Haplogroup ", ""),
+    marker: bestNode.snp ? bestNode.snp[0] : "Unknown",
+    continent: bestNode.region || "Global",
+    description: bestNode.description || `A paternal lineage characterized by the ${bestNode.snp?.[0] || 'specific'} marker.`
+  } : null;
+
+  // If we have a very specific ISOGG match that is deeper than our basic tree prediction
+  // or if we have no basic tree prediction, use ISOGG.
+  let finalPath = bestPath;
+  if (topIsogg && (!prediction || topIsogg.branch.branchName.length > (prediction.name.length + 5))) {
+    prediction = {
+      name: topIsogg.branch.branchName,
+      marker: topIsogg.branch.definingSNPs[0] || topIsogg.branch.rsids[0] || "Unknown",
+      continent: "Global", // ISOGG doesn't provide regions in this flat format easily
+      description: `Deep subclade identified via ISOGG markers: ${topIsogg.matches.join(', ')}.`
+    };
+    // Ensure the final predicted branch is in the path
+    if (!finalPath.includes(prediction.name) && !finalPath.includes("Haplogroup " + prediction.name)) {
+      finalPath = [...finalPath, prediction.name];
+    }
+  }
+
   return {
-    predicted: bestNode && bestNode.branchName !== "Y-DNA Root (Adam)" ? {
-      name: bestNode.branchName.replace("Haplogroup ", ""),
-      marker: bestNode.snp ? bestNode.snp[0] : "Unknown",
-      continent: bestNode.region || "Global",
-      description: bestNode.description || `A paternal lineage characterized by the ${bestNode.snp?.[0] || 'specific'} marker.`
-    } : null,
+    predicted: prediction,
+    isoggMatches: sortedIsogg.slice(0, 100), // Cap at 100 deep matches
     testedMarkers: uniqueMarkers.sort((a, b) => (b.isDerived ? 1 : 0) - (a.isDerived ? 1 : 0)),
-    path: bestPath
+    path: finalPath
   };
 }
 
@@ -220,16 +255,45 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     return b.path.length - a.path.length;
   });
 
+  // Deep search in the large mtHaplogroup database
+  const deepMatches = findMatchesInMtHaplogroups(userMutations);
+  const sortedDeep = [...deepMatches].sort((a, b) => {
+    // Sort by number of matches primarily, then by branch name length (specificity)
+    if (b.matches.length !== a.matches.length) {
+      return b.matches.length - a.matches.length;
+    }
+    return b.branch.branchName.length - a.branch.branchName.length;
+  });
+
   const bestMatch = allResults[0];
-  const predictedHaplogroup = bestMatch.name;
+  let predictedHaplogroup = bestMatch.name;
+  let region = bestMatch.region || "Global";
+  let description = bestMatch.description || "";
+  let finalPath = bestMatch.path;
+
+  // If we found a more specific deep match with significant overlap
+  if (sortedDeep.length > 0) {
+    const topDeep = sortedDeep[0];
+    // Improved logic: if deep match has equal or more matches than tree match, prefer deep
+    if (topDeep.matches.length >= bestMatch.matchCount) {
+      predictedHaplogroup = topDeep.branch.branchName;
+      description = `Specific lineage identified via PhyloTree markers: ${topDeep.matches.join(', ')}.`;
+      
+      // Ensure the deep match is at the end of the path if it's not already there
+      if (!finalPath.includes(predictedHaplogroup) && !finalPath.includes("Haplogroup " + predictedHaplogroup)) {
+        finalPath = [...finalPath, predictedHaplogroup];
+      }
+    }
+  }
   
   return {
     predicted: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? predictedHaplogroup : null,
-    path: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? bestMatch.path : [],
-    region: bestMatch.region || "Global",
-    description: bestMatch.description || "",
+    path: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? finalPath : [],
+    region,
+    description,
     testedMarkers,
     userMutations,
-    score: bestMatch.score
+    score: bestMatch.score,
+    deepMatches: sortedDeep.slice(0, 50)
   };
 }

@@ -195,6 +195,12 @@ export function runAncestryInference(
     });
   });
 
+  const duffyGenotype = userGenotype["rs2814778"];
+  const hasDuffyNullVariant = !!duffyGenotype && duffyGenotype.includes('C');
+  const dNullTested = !!duffyGenotype && duffyGenotype !== '--';
+  const afrBaseReduction = (dNullTested && !hasDuffyNullVariant) ? 0.25 : 1.0;
+  const afrEastReduction = (dNullTested && !hasDuffyNullVariant) ? 0.75 : 1.0; // Milder reduction for East Africa
+
   for (const chrom of Object.keys(markersByChrom)) {
     const chromMarkers = markersByChrom[chrom];
     const chromCounts: Record<string, number> = {};
@@ -296,7 +302,15 @@ export function runAncestryInference(
           continentSpecificWeight = 5.0; 
         }
 
-        const weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight * weightFactor;
+        let weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight * weightFactor;
+        
+        // Duffy-Null logic: Regional specific balancing
+        if (matchesContinent(marker.continent, 'African')) {
+          const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
+          const isEastAfr = subpopSearch.includes("east") || subpopSearch.includes("horn") || subpopSearch.includes("ethiopia") || subpopSearch.includes("somali") || subpopSearch.includes("nilotic");
+          weight *= isEastAfr ? afrEastReduction : afrBaseReduction;
+        }
+
         windowWeights.push(weight);
       }
 
@@ -329,7 +343,13 @@ export function runAncestryInference(
 
         windowProportions.forEach((prob, i) => {
           const continent = continentsToScore[i];
-          const filteredProb = prob < 0.01 ? 0 : prob; // Reduced threshold to allow trace amounts
+          let filteredProb = prob < 0.01 ? 0 : prob; // Reduced threshold to allow trace amounts
+          
+          if (continent === 'African') {
+             // Use base reduction for continental probability scaling
+             filteredProb *= afrBaseReduction;
+          }
+
           continentalCounts[continent] += filteredProb;
           chromCounts[continent] += filteredProb;
         });
@@ -407,8 +427,15 @@ export function runAncestryInference(
 
             let weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight * weightFactor;
             
+            if (continent === 'African') {
+              const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
+              const isEastAfr = subpopSearch.includes("east") || subpopSearch.includes("horn") || subpopSearch.includes("ethiopia") || subpopSearch.includes("somali") || subpopSearch.includes("nilotic");
+              weight *= isEastAfr ? afrEastReduction : afrBaseReduction;
+            }
+
             const error = (matchCount / 2) - f;
-            subPopDistances[continent][sp] += weight * (error * error);
+            const distSq = weight * (error * error);
+            subPopDistances[continent][sp] += distSq;
           }
         }
       }
@@ -464,15 +491,22 @@ export function runAncestryInference(
 
     if (totalProb > 0) {
       const filtered = probs
-        .map(p => ({
-          name: p.name,
-          dist: subProbs.find(sp => sp.name === p.name)?.dist || 0,
-          percentage: (p.prob / totalProb) * 100,
-          confidence: (p.prob / totalProb) * 100,
-          topMarkers: (subPopMarkers[p.name] || [])
-            .sort((a, b) => b.contribution - a.contribution)
-            .slice(0, 5)
-        }))
+        .map(p => {
+          const rawDist = subProbs.find(sp => sp.name === p.name)?.dist || 0;
+          // Normalize distance: sqrt(sum of weighted squares) / normalization factor
+          // We use a constant to scale it to the familiar 1-10 range where < 3 is good
+          const normalizedDist = Math.sqrt(rawDist) / 10; 
+          
+          return {
+            name: p.name,
+            distance: normalizedDist,
+            percentage: (p.prob / totalProb) * 100,
+            confidence: (p.prob / totalProb) * 100,
+            topMarkers: (subPopMarkers[p.name] || [])
+              .sort((a, b) => b.contribution - a.contribution)
+              .slice(0, 5)
+          };
+        })
         .filter(p => p.percentage > 0);
       
       const filteredTotal = filtered.reduce((s, p) => s + p.percentage, 0);

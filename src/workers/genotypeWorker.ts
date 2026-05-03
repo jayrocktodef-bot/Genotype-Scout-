@@ -80,7 +80,8 @@ self.onmessage = async (e: MessageEvent) => {
         snpCount: uniqueSnps,
         predictedYDNA,
         predictedMtDNA,
-        mergedSnpMap
+        mergedSnpMap,
+        mergedMtMap
       }
     });
   } catch (err) {

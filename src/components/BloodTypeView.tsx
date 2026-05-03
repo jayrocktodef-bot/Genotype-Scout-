@@ -172,46 +172,66 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-           <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Predicted ABO Type</p>
-           <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedABO}</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative">
+           <div className="absolute top-0 right-0 p-6 opacity-5 text-6xl pointer-events-none group-hover:rotate-12 transition-transform">🩸</div>
+           <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]">ABO Grouping</p>
+           <h3 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2 tracking-tighter leading-none">{predictedABO}</h3>
         </div>
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-           <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Predicted Rh Factor</p>
-           <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedRh}</h3>
+        <div className="p-6 sm:p-8 bg-slate-900 text-white rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative">
+           <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl pointer-events-none group-hover:rotate-45 transition-transform duration-1000">🧬</div>
+           <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Rhesus Factor</p>
+           <h3 className="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tighter leading-none">{predictedRh}</h3>
         </div>
-        <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-           <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Marker Coverage</p>
-           <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">{coverage.identified} / {coverage.total}</h3>
+        <div className="p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative sm:col-span-2 lg:col-span-1">
+           <div className="absolute top-0 right-0 p-6 opacity-5 text-6xl pointer-events-none">🔬</div>
+           <p className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em]">Sequencing Depth</p>
+           <h3 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2 tracking-tighter leading-none">
+             {coverage.identified} 
+             <span className="text-sm font-bold text-slate-400 ml-2">/ {coverage.total}</span>
+           </h3>
         </div>
       </div>
 
-      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-x-auto shadow-sm">
-        <table className="w-full text-left text-xs">
-          <thead>
-            <tr className="bg-slate-50 dark:bg-slate-900 text-slate-500 uppercase">
-              <th className="p-4">System</th>
-              <th className="p-4">RSID</th>
-              <th className="p-4 text-right">Raw</th>
-              <th className="p-4">Override</th>
-              <th className="p-4">Trait/Effect</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100 dark:divide-slate-700 text-slate-700 dark:text-slate-200">
-            {markerResults.map((m, i) => (
-              <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-700/30">
-                <td className="p-4 font-bold">{m.system}</td>
-                <td className="p-4 font-mono">{m.rsid}</td>
-                <td className="p-4 font-mono text-slate-500 dark:text-slate-400 text-right">{m.rawGenotype}</td>
-                <td className="p-3">
-                  <input type="text" placeholder={m.rawGenotype} className="w-20 px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded font-mono text-[10px] outline-none focus:border-blue-500" value={overrides[m.rsid] || ''} onChange={(e) => handleOverride(m.rsid, e.target.value)} />
-                </td>
-                <td className="p-4 text-slate-500 dark:text-slate-400">{m.effect}</td>
+      <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+          <h4 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-widest">Molecular Breakdown</h4>
+          <span className="text-[10px] font-mono text-slate-400 uppercase">Interactive Sequence Map</span>
+        </div>
+        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-200 dark:scroll-thumb-slate-700">
+          <table className="w-full text-left min-w-[600px]">
+            <thead>
+              <tr className="bg-slate-50/50 dark:bg-slate-800/50 text-slate-500 text-[10px] font-black uppercase tracking-widest">
+                <th className="px-6 py-4">System</th>
+                <th className="px-6 py-4">Marker</th>
+                <th className="px-6 py-4 text-center">Reference</th>
+                <th className="px-6 py-4">Modification</th>
+                <th className="px-6 py-4">Trait phenotype</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-[11px] font-medium text-slate-700 dark:text-slate-300">
+              {markerResults.map((m, i) => (
+                <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                  <td className="px-6 py-4 font-black">{m.system}</td>
+                  <td className="px-6 py-4">
+                    <span className="font-mono text-sky-600 dark:text-sky-400">{m.rsid}</span>
+                  </td>
+                  <td className="px-6 py-4 text-center font-mono opacity-60">{m.rawGenotype}</td>
+                  <td className="px-6 py-4">
+                    <input 
+                      type="text" 
+                      placeholder={m.rawGenotype} 
+                      className="w-16 px-2 py-1 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg font-mono text-[10px] outline-none focus:ring-1 focus:ring-sky-500 transition-all" 
+                      value={overrides[m.rsid] || ''} 
+                      onChange={(e) => handleOverride(m.rsid, e.target.value)} 
+                    />
+                  </td>
+                  <td className="px-6 py-4 italic opacity-70">{m.effect}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </motion.div>
   );
