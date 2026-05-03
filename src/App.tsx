@@ -19,7 +19,6 @@ import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { BloodTypeView } from "./components/BloodTypeView";
-import { GeneticDistanceView } from "./components/GeneticDistanceView";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
@@ -232,8 +231,8 @@ const ProfileSummary = memo(({
       >
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h3 className="text-xl font-black text-white tracking-tight">Ancestry Overview</h3>
-            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Admixture & Top Affinities</p>
+            <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Overview</h3>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Continental Admixture & Top Affinities</p>
           </div>
           <button 
             onClick={() => alert('Share functionality: Generating link/image...')}
@@ -246,7 +245,7 @@ const ProfileSummary = memo(({
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Pie Chart */}
-          <div className="h-[240px] flex items-center justify-center bg-slate-900/50 rounded-2xl border border-slate-700/50">
+          <div className="h-[240px] flex items-center justify-center bg-slate-100/50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-700/50">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -263,8 +262,8 @@ const ProfileSummary = memo(({
                   ))}
                 </Pie>
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#111213', border: '1px solid #334155', borderRadius: '12px', color: '#F5F6F7', fontSize: '11px' }}
-                  itemStyle={{ color: '#F5F6F7' }}
+                  contentStyle={{ backgroundColor: '#1C1D1E', border: '1px solid #3F4142', borderRadius: '12px', color: '#F5F6F7', fontSize: '11px' }}
+                  itemStyle={{ color: '#E4E6EB' }}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -272,14 +271,14 @@ const ProfileSummary = memo(({
           
           {/* Top Affinities */}
           <div className="space-y-4">
-            <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Top Regional Affinities</div>
+            <div className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Top Regional Affinities</div>
             {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
               <div key={pop.name} className="space-y-1.5">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-bold text-slate-200">{pop.name}</span>
-                  <span className="text-[11px] font-mono font-bold text-blue-400">{pop.percentage.toFixed(1)}%</span>
+                  <span className="text-xs font-bold text-slate-900 dark:text-slate-100">{pop.name}</span>
+                  <span className="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400">{pop.percentage.toFixed(1)}%</span>
                 </div>
-                <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${pop.percentage}%` }}
@@ -288,7 +287,7 @@ const ProfileSummary = memo(({
                   />
                 </div>
               </div>
-            )) : <div className="text-slate-400 italic text-xs">Insufficient sub-population data.</div>}
+            )) : <div className="text-slate-500 italic text-xs">Insufficient sub-population data.</div>}
           </div>
         </div>
       </motion.div>
@@ -2081,14 +2080,11 @@ export default function App() {
           </div>
 
           {activeTab === 'summary' && (
-            <>
-              <ProfileSummary 
-                datasets={datasets} 
-                activeDatasetIndex={activeDatasetIndex} 
-                oracleResults={oracleResults} 
-              />
-              <GeneticDistanceView dataset={datasets[activeDatasetIndex]} />
-            </>
+            <ProfileSummary 
+              datasets={datasets} 
+              activeDatasetIndex={activeDatasetIndex} 
+              oracleResults={oracleResults} 
+            />
           )}
 
           {activeTab === 'autosomal' && (() => {

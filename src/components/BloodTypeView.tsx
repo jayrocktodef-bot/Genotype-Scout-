@@ -173,41 +173,41 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="p-6 bg-slate-900 rounded-3xl border border-slate-700">
-           <p className="text-sm text-slate-400">Predicted ABO Type</p>
-           <h3 className="text-4xl font-black text-white">{predictedABO}</h3>
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+           <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Predicted ABO Type</p>
+           <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedABO}</h3>
         </div>
-        <div className="p-6 bg-slate-900 rounded-3xl border border-slate-700">
-           <p className="text-sm text-slate-400">Predicted Rh Factor</p>
-           <h3 className="text-4xl font-black text-white">{predictedRh}</h3>
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+           <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Predicted Rh Factor</p>
+           <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-1">{predictedRh}</h3>
         </div>
-        <div className="p-6 bg-slate-900 rounded-3xl border border-slate-700">
-           <p className="text-sm text-slate-400">Marker Coverage</p>
-           <h3 className="text-4xl font-black text-white">{coverage.identified} / {coverage.total}</h3>
+        <div className="p-6 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+           <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Marker Coverage</p>
+           <h3 className="text-3xl font-black text-slate-900 dark:text-white mt-1">{coverage.identified} / {coverage.total}</h3>
         </div>
       </div>
 
-      <div className="bg-slate-800 rounded-3xl border border-slate-700 overflow-hidden">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
         <table className="w-full text-left text-xs">
           <thead>
-            <tr className="bg-slate-900 text-slate-500 uppercase">
+            <tr className="bg-slate-50 dark:bg-slate-900 text-slate-500 uppercase">
               <th className="p-4">System</th>
               <th className="p-4">RSID</th>
-              <th className="p-4">Raw</th>
+              <th className="p-4 text-right">Raw</th>
               <th className="p-4">Override</th>
               <th className="p-4">Trait/Effect</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-700 text-slate-200">
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-700 text-slate-700 dark:text-slate-200">
             {markerResults.map((m, i) => (
-              <tr key={i} className="hover:bg-slate-700/30">
+              <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-700/30">
                 <td className="p-4 font-bold">{m.system}</td>
                 <td className="p-4 font-mono">{m.rsid}</td>
-                <td className="p-4 font-mono text-slate-400">{m.rawGenotype}</td>
+                <td className="p-4 font-mono text-slate-500 dark:text-slate-400 text-right">{m.rawGenotype}</td>
                 <td className="p-3">
-                  <input type="text" placeholder={m.rawGenotype} className="w-24 px-2 py-1 bg-slate-950 border border-slate-700 rounded font-mono text-xs outline-none focus:border-sky-500" value={overrides[m.rsid] || ''} onChange={(e) => handleOverride(m.rsid, e.target.value)} />
+                  <input type="text" placeholder={m.rawGenotype} className="w-20 px-2 py-1 bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded font-mono text-[10px] outline-none focus:border-blue-500" value={overrides[m.rsid] || ''} onChange={(e) => handleOverride(m.rsid, e.target.value)} />
                 </td>
-                <td className="p-4 text-slate-400">{m.effect}</td>
+                <td className="p-4 text-slate-500 dark:text-slate-400">{m.effect}</td>
               </tr>
             ))}
           </tbody>
