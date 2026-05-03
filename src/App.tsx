@@ -19,6 +19,7 @@ import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { BloodTypeView } from "./components/BloodTypeView";
+import { GeneticDistanceView } from "./components/GeneticDistanceView";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 
@@ -2080,11 +2081,14 @@ export default function App() {
           </div>
 
           {activeTab === 'summary' && (
-            <ProfileSummary 
-              datasets={datasets} 
-              activeDatasetIndex={activeDatasetIndex} 
-              oracleResults={oracleResults} 
-            />
+            <>
+              <ProfileSummary 
+                datasets={datasets} 
+                activeDatasetIndex={activeDatasetIndex} 
+                oracleResults={oracleResults} 
+              />
+              <GeneticDistanceView dataset={datasets[activeDatasetIndex]} />
+            </>
           )}
 
           {activeTab === 'autosomal' && (() => {

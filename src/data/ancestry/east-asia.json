@@ -2254,7 +2254,7 @@
       "EUR": 0.6033,
       "SIB": 0.6275
     },
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
+    "description": "Seldin 128 Ancestry Informative Marker, informative for East Asian populations such as Han Chinese, Japanese, and Korean groups.",
     "trait": "Ancestry",
     "category": "Ancestry",
     "gene": "Unknown",
