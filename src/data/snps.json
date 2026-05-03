@@ -25282,10 +25282,10 @@
     "rsid": "rs8176747",
     "gene": "ABO",
     "category": "Blood Type",
-    "trait": "ABO Blood Group (Type B)",
-    "description": "A key variant that distinguishes between Type A and Type B alleles. 'G' is associated with Type A, while 'C' is associated with Type B.",
+    "trait": "ABO Blood Group (Type O/A/B)",
+    "description": "A major determinant for ABO blood group. The 'G' allele is associated with Type A, the 'C' allele with Type B, and a deletion at this locus is a key indicator for Type O.",
     "significance": "High",
-    "alleles": ["C", "G"],
+    "alleles": ["C", "G", "del"],
     "continent": "Global"
   },
   {

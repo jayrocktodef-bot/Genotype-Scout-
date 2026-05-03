@@ -15,7 +15,10 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
   const [activeSubTab, setActiveSubTab] = useState<'maternal' | 'autosomal'>('autosomal');
 
-  const healthMarkers = autosomalMarkers.filter(m => m.category === 'Health' || m.category === 'Nutrition' || m.category === 'Lifestyle');
+  const healthMarkers = autosomalMarkers.filter(m => 
+    (m.category === 'Health' || m.category === 'Nutrition' || m.category === 'Lifestyle') &&
+    (m.status === 'matched' || m.status === 'partial')
+  );
 
   if (!acceptedDisclaimer) {
     return (
@@ -127,47 +130,55 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
         </div>
       ) : (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-           <div className="mb-8 flex items-center justify-between">
+          <div className="mb-8 flex items-center justify-between">
             <h3 className="text-xl font-black text-slate-900 dark:text-white">SNP Health Markers</h3>
             <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-full text-[10px] font-black text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30">
               {healthMarkers.length} Markers Matched
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {healthMarkers.map((marker, index) => (
-               <motion.div 
-               key={index} 
-               initial={{ opacity: 0, y: 10 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: index * 0.05 }}
-               className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-900/50 transition-all hover:shadow-2xl hover:shadow-blue-500/5 group"
-             >
-                <div className="flex justify-between items-start mb-6">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{marker.rsid}</span>
-                    <span className="text-lg font-black text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 transition-colors">
-                      {marker.trait}
-                    </span>
+          {healthMarkers.length === 0 ? (
+            <div className="p-20 bg-slate-50 dark:bg-slate-900/50 rounded-[3rem] border border-dashed border-slate-200 dark:border-slate-800 text-center">
+              <div className="text-6xl mb-6 opacity-20 grayscale">🥗</div>
+              <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-2">No Health Markers Detected</h3>
+              <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto font-medium">Your current genetic file does not contain any specific variants associated with the health traits in our database.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {healthMarkers.map((marker, index) => (
+                <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05 }}
+                className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-900/50 transition-all hover:shadow-2xl hover:shadow-blue-500/5 group"
+              >
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{marker.rsid}</span>
+                      <span className="text-lg font-black text-slate-900 dark:text-white tracking-tight group-hover:text-blue-600 transition-colors">
+                        {marker.trait}
+                      </span>
+                    </div>
+                    <div className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
+                      {marker.category}
+                    </div>
                   </div>
-                  <div className="px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
-                    {marker.category}
-                  </div>
-                </div>
 
-                <div className="mb-6 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800">
-                  <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Calculated Genetic Outcome</div>
-                  <div className="text-sm font-bold text-blue-600 dark:text-blue-400">
-                    {marker.outcome}
+                  <div className="mb-6 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                    <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">Calculated Genetic Outcome</div>
+                    <div className="text-sm font-bold text-blue-600 dark:text-blue-400 whitespace-pre-wrap">
+                      {marker.interpretation || "No specific outcome recorded."}
+                    </div>
                   </div>
-                </div>
 
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                  {marker.description}
-                </p>
-             </motion.div>
-            ))}
-          </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                    {marker.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

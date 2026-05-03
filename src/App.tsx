@@ -1984,8 +1984,11 @@ export default function App() {
           </motion.div>
           <div>
             <div className="text-blue-600 dark:text-blue-400 text-xs tracking-[0.4em] uppercase font-black mb-2 opacity-80">Genetics Reimagined</div>
-            <h1 className="text-4xl sm:text-5xl tracking-tighter mb-4 leading-none">
-              <span className="font-light text-slate-500 dark:text-slate-400 italic">GENOTYPE</span><br className="sm:hidden" /><span className="font-black" style={{ color: '#2450c3' }}>SCOUT</span>
+            <h1 className="text-4xl sm:text-5xl tracking-tighter mb-4 leading-none flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+              <div>
+                <span className="font-light text-slate-500 dark:text-slate-400 italic">GENOTYPE</span><br className="sm:hidden" /><span className="font-black" style={{ color: '#2450c3' }}>SCOUT</span>
+              </div>
+              <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] whitespace-nowrap">A Written In The Genome Tool</span>
             </h1>
             <div className="flex flex-wrap justify-center sm:justify-start gap-3 font-bold text-[10px] uppercase tracking-widest">
               <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">

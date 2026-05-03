@@ -12,25 +12,22 @@ export const MT_HAPLOGROUP_DB = mtHaploData as MtHaplogroupBranch[];
  * Unlike Y-DNA which uses SNPs, mtDNA primarily uses mutations relative to a reference.
  */
 export function findMatchesInMtHaplogroups(userMutations: string[]) {
-  const matches: { branch: MtHaplogroupBranch, matches: string[] }[] = [];
+  const matches: { branch: MtHaplogroupBranch, matches: string[], similarity: number }[] = [];
   
   for (const branch of MT_HAPLOGROUP_DB) {
-    const branchMatches: string[] = [];
+    const branchMatches = branch.mutations.filter(m => userMutations.includes(m));
     
-    for (const mutation of branch.mutations) {
-      if (userMutations.includes(mutation)) {
-        branchMatches.push(mutation);
-      }
-    }
-    
-    // We expect a significant number of matches for a branch to be considered a match
-    // especially for deeper branches
     if (branchMatches.length > 0) {
-      matches.push({ branch, matches: branchMatches });
+      // Calculate Jaccard similarity to improve accuracy
+      const unionSize = new Set([...userMutations, ...branch.mutations]).size;
+      const similarity = branchMatches.length / Math.max(userMutations.length, branch.mutations.length); // Use a modified Jaccard to reward branch coverage
+      
+      matches.push({ branch, matches: branchMatches, similarity });
     }
   }
   
-  return matches;
+  // Sort matches by similarity score descending
+  return matches.sort((a,b) => b.similarity - a.similarity);
 }
 
 export function searchMtHaplogroupTree(term: string) {
