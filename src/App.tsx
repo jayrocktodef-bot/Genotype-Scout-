@@ -2094,7 +2094,7 @@ export default function App() {
             </div>
           )}
 
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-16 -mt-8">
             <motion.div
               whileHover={{ y: -5 }}
               onClick={() => fileRef.current?.click()}

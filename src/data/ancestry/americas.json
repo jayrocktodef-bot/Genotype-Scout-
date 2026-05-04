@@ -1541,7 +1541,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.7074,
       "EAS": 0.8321,
@@ -1564,7 +1564,7 @@
     "alleles": [
       "T"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0776,
       "EAS": 0.4182,
@@ -1587,7 +1587,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0558,
       "EAS": 0.4077,
@@ -1610,7 +1610,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1346,
       "EAS": 0.4891,
@@ -1633,7 +1633,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0882,
       "EAS": 0.3663,
@@ -1656,7 +1656,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0835,
       "EAS": 0.1755,
@@ -1679,7 +1679,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0779,
       "EAS": 0.1752,
@@ -1702,7 +1702,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.3359,
       "EAS": 0.3078,
@@ -1725,7 +1725,7 @@
     "alleles": [
       "G"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.384,
       "EAS": 0.3827,
@@ -1748,7 +1748,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0924,
       "EAS": 0.4331,
@@ -1771,7 +1771,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0508,
       "EAS": 0.432,
@@ -1794,7 +1794,7 @@
     "alleles": [
       "G"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.22,
       "EAS": 0.2327,
@@ -1817,7 +1817,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2616,
       "EAS": 0.5317,
@@ -1840,7 +1840,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1884,
       "EAS": 0.5293,
@@ -1863,7 +1863,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.5282,
       "EAS": 0.1786,
@@ -1886,7 +1886,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2524,
       "EAS": 0.7489,
@@ -1909,7 +1909,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0174,
       "EAS": 0.5208,
@@ -1932,7 +1932,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0303,
       "EAS": 0.3103,
@@ -1955,7 +1955,7 @@
     "alleles": [
       "G"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.4329,
       "EAS": 0.3749,
@@ -1978,7 +1978,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.36,
       "EAS": 0.2227,
@@ -2001,7 +2001,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.3434,
       "EAS": 0.4508,
@@ -2024,7 +2024,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2267,
       "EAS": 0.4326,
@@ -2047,7 +2047,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1936,
       "EAS": 0.297,
@@ -2070,7 +2070,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0567,
       "EAS": 0.0855,
@@ -2093,7 +2093,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.3888,
       "EAS": 0.1311,
@@ -2116,7 +2116,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0682,
       "EAS": 0.3701,
@@ -2139,7 +2139,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.3015,
       "EAS": 0.1391,
@@ -2162,7 +2162,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2291,
       "EAS": 0.2737,
@@ -2185,7 +2185,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.3101,
       "EAS": 0.7651,
@@ -2208,7 +2208,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0275,
       "EAS": 0.5371,
@@ -2231,7 +2231,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2672,
       "EAS": 0.395,
@@ -2254,7 +2254,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0179,
       "EAS": 0.2671,
@@ -2277,7 +2277,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1199,
       "EAS": 0.21,
@@ -2300,7 +2300,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1572,
       "EAS": 0.6745,
@@ -2323,7 +2323,7 @@
     "alleles": [
       "G"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1664,
       "EAS": 0.5337,
@@ -2346,7 +2346,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1667,
       "EAS": 0.5694,
@@ -2369,7 +2369,7 @@
     "alleles": [
       "T"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.0273,
       "EAS": 0.0031,
@@ -2392,7 +2392,7 @@
     "alleles": [
       "G"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.1037,
       "EAS": 0.2291,

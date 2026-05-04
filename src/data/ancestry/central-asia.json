@@ -80,7 +80,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2617,
       "EAS": 0.833,
@@ -103,7 +103,7 @@
     "alleles": [
       "C"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2942,
       "EAS": 0.8287,
@@ -126,7 +126,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2929,
       "EAS": 0.5757,
@@ -149,7 +149,7 @@
     "alleles": [
       "T"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.4322,
       "EAS": 0.7457,
@@ -172,7 +172,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.2586,
       "EAS": 0.4365,
@@ -195,7 +195,7 @@
     "alleles": [
       "T"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.3819,
       "EAS": 0.5456,
@@ -218,7 +218,7 @@
     "alleles": [
       "A"
     ],
-    "weight": 8,
+    "weight": 10,
     "frequencies": {
       "AFR": 0.9301,
       "EAS": 0.8943,
