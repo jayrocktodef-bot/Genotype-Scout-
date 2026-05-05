@@ -271,6 +271,13 @@ export function runAncestryInference(
         }
         windowFrequencies.push(markerFreqs);
 
+        // Shannon Entropy to measure informative value: lower entropy = higher informativity
+        const markerEntropy = markerFreqs.reduce((sum, f) => {
+          if (f <= 0 || f >= 1) return sum;
+          return sum - f * Math.log2(f);
+        }, 0);
+        const markerInformativeValue = Math.max(0.1, 1 / (markerEntropy + 0.1));
+
         const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
         const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
         const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
@@ -302,8 +309,23 @@ export function runAncestryInference(
           continentSpecificWeight = 5.0; 
         }
 
-        let weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight * weightFactor;
+        let weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight * weightFactor * markerInformativeValue;
         
+        // Option 1: Context-aware marker reliability adjustment
+        // Penalize markers where frequencies are too similar across all sampled continental populations
+        const freqMean = markerFreqs.reduce((a, b) => a + b, 0) / markerFreqs.length;
+        const freqVar = markerFreqs.reduce((a, b) => a + (b - freqMean) ** 2, 0) / markerFreqs.length;
+        const reliabilityFactor = Math.max(0.5, Math.min(1.0, freqVar * 5.0)); // Uninformative markers (low var) get penalized
+        weight *= reliabilityFactor;
+        
+        // Option 2: Population-Specific Relative Uniqueness Adjustment 
+        // Dampen markers that have high frequencies in nearly all populations (pan-continental)
+        const sortedFreqsOption2 = [...markerFreqs].sort((a, b) => b - a);
+        const ratio = sortedFreqsOption2[0] / (sortedFreqsOption2[1] || 0.01);
+        if (sortedFreqsOption2[0] > 0.7 && ratio < 1.5) {
+          weight *= 0.7; // Pan-continental markers are less informative
+        }
+
         // Duffy-Null logic: Regional specific balancing
         if (matchesContinent(marker.continent, 'African')) {
           const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
@@ -636,9 +658,7 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   };
 
   const primaryMarkers = sortMarkers(results.filter(r => 
-    isAutosomal(r) && 
-    r.category === 'Ancestry' && 
-    (r.status === 'matched' || r.status === 'partial')
+    isAutosomal(r) && (r.genotype || r.status === 'matched' || r.status === 'partial')
   ));
 
   const secondaryMarkers = sortMarkers(results.filter(r => 

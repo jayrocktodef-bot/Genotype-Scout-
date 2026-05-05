@@ -25,17 +25,17 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-3xl mx-auto flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-800 rounded-[3rem] border border-red-200 dark:border-red-900/30 text-center shadow-xl shadow-red-500/5"
+        className="max-w-3xl mx-auto flex flex-col items-center justify-center p-12 frosted-glass border-red-500/20 text-center shadow-xl shadow-red-500/5"
       >
-        <div className="w-20 h-20 bg-red-50 dark:bg-red-900/20 rounded-3xl flex items-center justify-center text-4xl mb-8 shadow-inner">
+        <div className="w-20 h-20 bg-red-500/10 rounded-3xl flex items-center justify-center text-4xl mb-8 shadow-inner">
           ⚠️
         </div>
-        <h2 className="text-3xl font-black text-slate-900 dark:text-red-400 mb-6 tracking-tight">Health & Trait Disclosure</h2>
-        <div className="space-y-4 text-slate-600 dark:text-slate-300 mb-10 leading-relaxed font-medium">
+        <h2 className="text-3xl font-black text-[#F5F6F7] mb-6 tracking-tight">Health & Trait Disclosure</h2>
+        <div className="space-y-4 text-slate-300 mb-10 leading-relaxed font-medium">
           <p>
             The information in this section is sourced from public databases like <strong>MITOMAP</strong> and <strong>SNPedia</strong> for educational and research purposes only.
           </p>
-          <p className="p-6 bg-red-50/50 dark:bg-red-900/10 rounded-2xl border border-red-100 dark:border-red-900/20 text-red-700 dark:text-red-300 text-sm">
+          <p className="p-6 bg-red-500/10 rounded-2xl border border-red-500/20 text-red-300 text-sm">
             <strong>Medical Disclaimer:</strong> This is NOT a diagnostic tool. It is not intended to treat, cure, or prevent any disease. Always consult a qualified healthcare professional regarding genetic data or health concerns.
           </p>
         </div>
@@ -95,7 +95,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-red-400 dark:hover:border-red-900/50 transition-all hover:shadow-2xl hover:shadow-red-500/5 group"
+                  className="frosted-glass p-8 rounded-[2.5rem] border border-white/5 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-500/5 group"
                 >
                   <div className="flex justify-between items-start mb-6">
                     <div className="flex flex-col">
@@ -151,7 +151,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-900/50 transition-all hover:shadow-2xl hover:shadow-blue-500/5 group"
+                className="frosted-glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all hover:shadow-2xl hover:shadow-blue-500/5 group"
               >
                   <div className="flex justify-between items-start mb-6">
                     <div className="flex flex-col">

@@ -20,6 +20,8 @@ import { saveResults, loadResults, clearResults } from "./services/storageServic
 import { REGION_METADATA } from "./constants/regionInfo";
 import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
+import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
+import { Chromosome1Oracle } from "./components/Chromosome1Oracle";
 import mitoTraits from "./data/mito_traits.json";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
@@ -1923,13 +1925,13 @@ export default function App() {
     );
 
     const processOracle = (data: any) => {
-      const { continentalScores: rawContinentalScores, regionalScores, deepScores, subPopulations } = data;
+      const { continentalScores: rawContinentalScores, regionalScores, deepScores, subPopulations, chromosomeData } = data;
       const continentalScores = Object.entries(rawContinentalScores).reduce((acc: Record<string, number>, [continent, score]) => {
         const region = mapToRegion(continent);
         acc[region] = (acc[region] || 0) + (score as number);
         return acc;
       }, {});
-      return { continentalScores, regionalScores, deepScores, subPopulations };
+      return { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData };
     };
 
     return {
@@ -2301,12 +2303,7 @@ export default function App() {
               )}
 
               {activeTab === 'oracle' && (
-                <OracleView 
-                  oracleResults={oracleResults}
-                  ancestrySnps={datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry')}
-                  selectedSubPop={selectedSubPop}
-                  setSelectedSubPop={setSelectedSubPop}
-                />
+                <ModernAncestryOracle results={oracleResults} />
               )}
 
               {activeTab === 'blood' && (

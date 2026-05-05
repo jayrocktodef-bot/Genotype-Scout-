@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
 import { SNP } from '../types/genotype';
 import { CONTINENT_META } from '../constants/genotypeConstants';
@@ -11,11 +11,21 @@ interface SNPDetailViewProps {
 export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
   const continentMeta = CONTINENT_META[snp.continent] || { color: '#94a3b8' };
 
+  const isRare = useMemo(() => {
+    if (!snp.frequencies) return false;
+    const freqs = Object.values(snp.frequencies);
+    return freqs.length > 0 && freqs.every(f => f < 0.05);
+  }, [snp.frequencies]);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-6 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4"
+      className={`p-6 bg-white dark:bg-slate-800 rounded-3xl border shadow-sm space-y-4 ${
+        isRare 
+          ? 'border-yellow-500 shadow-[0_0_20px_rgba(234,179,8,0.3)]' 
+          : 'border-slate-200 dark:border-slate-700'
+      }`}
     >
       <div className="flex justify-between items-start">
         <div>

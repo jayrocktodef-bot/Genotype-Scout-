@@ -17,7 +17,8 @@
     "description": "EDAR V370A variant common in East Asian populations.",
     "trait": "Ancestry",
     "category": "Ancestry",
-    "gene": "EDAR"
+    "gene": "EDAR",
+    "subpop": "East Eurasian"
   },
   {
     "rsid": "rs16891982_MENA",

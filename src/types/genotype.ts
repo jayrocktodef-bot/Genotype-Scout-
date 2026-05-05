@@ -23,6 +23,7 @@ export interface AnchorAim {
   significance?: 'High' | 'Medium' | 'Low';
   frequencies: Record<string, number>;
   subFrequencies?: Record<string, number>;
+  subpop?: string;
   description: string;
 }
 

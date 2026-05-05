@@ -27,12 +27,14 @@ export function imputeTargetedGenotypes(
     // Calculate simple average frequency
     const avgFreq = freqs.reduce((a, b) => a + b, 0) / freqs.length;
 
-    // If allele is highly prevalent across populations (>0.85), impute to homozygote
-    if (avgFreq > 0.85) {
-        // Assuming first allele in aim.alleles is the primary one, which is common.
-        // This is a rough heuristic.
-        imputedGenotype[rsid] = aim.alleles[0] + aim.alleles[0];
-    }
+    // Probabilistic simulation based on frequency for both alleles
+    // This simulates the uncertainty inherent in genotype imputation
+    const freq1 = avgFreq;
+    const freq2 = avgFreq;
+    const allele1 = Math.random() < freq1 ? aim.alleles[0] : aim.alleles[1];
+    const allele2 = Math.random() < freq2 ? aim.alleles[0] : aim.alleles[1];
+    
+    imputedGenotype[rsid] = allele1 + allele2;
   }
 
   return imputedGenotype;
