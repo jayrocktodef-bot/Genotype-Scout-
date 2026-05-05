@@ -981,8 +981,8 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                     <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider line-clamp-1">{pop.name}</span>
                   </div>
                   <div className="flex items-end justify-between">
-                    <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(1)}%</span>
-                     <span className="text-[9px] font-mono font-bold text-slate-500" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(2)} D</span>
+                    <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(2)}%</span>
+                     <span className="text-[9px] font-mono font-bold text-slate-500" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(3)} D</span>
                   </div>
                 </div>
               ))}

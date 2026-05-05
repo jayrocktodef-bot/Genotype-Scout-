@@ -603,8 +603,8 @@ export function runAncestryInference(
     populations.forEach((pop: any) => {
       const scaledPercentage = (pop.percentage / 100) * continentWeight;
       
-      // Only keep regional scores that are statistically significant (match the 1.5% continental threshold)
-      if (scaledPercentage >= 0.5) {
+      // Only keep regional scores that are statistically significant
+      if (scaledPercentage >= 0.75) {
         regionalScores[pop.name] = scaledPercentage;
       }
       
