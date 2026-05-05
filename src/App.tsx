@@ -10,6 +10,7 @@
 
 import { useState, useCallback, useRef, useEffect, useMemo, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
@@ -1729,6 +1730,7 @@ export default function App() {
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'health' | 'blood' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
+  const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
@@ -2056,12 +2058,24 @@ export default function App() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🔒</div>
-                <div>
-                  <div className="text-[10px] font-black uppercase text-slate-400">Privacy First</div>
-                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Local processing</div>
-                </div>
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+                <button onClick={() => setIsPrivacyExpanded(!isPrivacyExpanded)} className="flex items-center gap-3 w-full text-left">
+                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🔒</div>
+                  <div className="flex-grow">
+                    <div className="text-[10px] font-black uppercase text-indigo-500">Privacy First</div>
+                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Local computation</div>
+                  </div>
+                  {isPrivacyExpanded ? <ChevronUp className="w-5 h-5 text-slate-400"/> : <ChevronDown className="w-5 h-5 text-slate-400"/>}
+                </button>
+                <motion.div
+                  initial={false}
+                  animate={{ height: isPrivacyExpanded ? 'auto' : 0, opacity: isPrivacyExpanded ? 1 : 0 }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Your DNA data never leaves your browser. All analysis happens locally on your device. We use raw text processing and Web Worker threads to perform complex admixture calculations directly within your browser's isolated JavaScript engine. Because absolutely no data transmission occurs, your genetic information is never uploaded, stored, or processed on our backend servers, ensuring your most personal data remains exclusively under your control.
+                  </p>
+                </motion.div>
               </div>
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🧬</div>
