@@ -40,6 +40,12 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts })
               <span className="font-bold text-blue-400">Experimental Algorithm:</span> This tool uses open-source clinical databases and experimental matching algorithms. False positives and negatives are possible.
             </p>
           </div>
+
+          <div className="p-4 bg-slate-800/50 rounded-2xl border border-rose-500/30 ring-1 ring-rose-500/10">
+            <p className="text-slate-300 text-sm leading-relaxed italic">
+              <span className="font-bold text-rose-400">Strict Prohibitions:</span> Do NOT use this information to self-diagnose or change medication dosages. Any action taken based on this report is at your own risk.
+            </p>
+          </div>
         </div>
 
         <p className="text-slate-500 mb-8 text-[11px] leading-relaxed px-8">

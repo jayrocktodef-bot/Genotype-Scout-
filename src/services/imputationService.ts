@@ -1,4 +1,5 @@
 import { ANCHOR_AIMS } from '../anchorAims';
+import { SNP_PROXY_MAP } from '../utils/genotypeUtils';
 
 /**
  * Targeted imputation using allele frequencies from reference population data.
@@ -17,6 +18,20 @@ export function imputeTargetedGenotypes(
     // If the marker is already present, skip
     if (imputedGenotype[rsid]) continue;
 
+    // Check if we have a proxy match in the user data
+    const proxies = SNP_PROXY_MAP[rsid];
+    let foundProxy = false;
+    if (proxies) {
+      for (const proxy of proxies) {
+        if (imputedGenotype[proxy.toLowerCase()]) {
+          imputedGenotype[rsid] = imputedGenotype[proxy.toLowerCase()];
+          foundProxy = true;
+          break;
+        }
+      }
+    }
+    if (foundProxy) continue;
+
     // Only impute high-value markers defined in the anchor database
     const aim = ANCHOR_AIMS.find(a => a.rsid.toLowerCase() === rsid);
     if (!aim || !aim.frequencies || !aim.alleles || aim.alleles.length === 0) continue;
@@ -27,12 +42,10 @@ export function imputeTargetedGenotypes(
     // Calculate simple average frequency
     const avgFreq = freqs.reduce((a, b) => a + b, 0) / freqs.length;
 
-    // Probabilistic simulation based on frequency for both alleles
-    // This simulates the uncertainty inherent in genotype imputation
-    const freq1 = avgFreq;
-    const freq2 = avgFreq;
-    const allele1 = Math.random() < freq1 ? aim.alleles[0] : aim.alleles[1];
-    const allele2 = Math.random() < freq2 ? aim.alleles[0] : aim.alleles[1];
+    // Deterministic imputation based on most likely allele (Mode)
+    // This improves accuracy over random guessing when sample sizes are small
+    const allele1 = avgFreq >= 0.5 ? aim.alleles[0] : (aim.alleles[1] || aim.alleles[0]);
+    const allele2 = avgFreq >= 0.5 ? aim.alleles[0] : (aim.alleles[1] || aim.alleles[0]);
     
     imputedGenotype[rsid] = allele1 + allele2;
   }

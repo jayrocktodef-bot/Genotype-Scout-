@@ -2,7 +2,9 @@ import { SNP_DB, SNP_LOOKUP } from '../data/snpDatabase';
 import mtDescriptions from '../data/mitochondrial/mtDescriptions.json';
 import { ANCHOR_AIMS } from '../anchorAims';
 import { ANCESTRY_MARKERS } from '../data/ancestry';
+import v5MarkersMaster from '../data/v5_markers_master.json' with { type: 'json' };
 import { SNP } from '../types/genotype';
+import { SNP_PROXY_MAP } from '../utils/genotypeUtils';
 
 const MT_MARKER_DESCRIPTIONS: Record<string, string> = mtDescriptions;
 
@@ -100,6 +102,18 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       category: "Ancestry" as const,
       frequencies: m.frequencies,
       subPopulation: m.region // Preserve granular region as subPopulation
+    })),
+    ...v5MarkersMaster.filter((m: any) => m.frequency && Object.keys(m.frequency).length > 0).map((m: any) => ({
+      markerId: m.rsid,
+      rsid: m.rsid,
+      gene: m.gene || "Intergenic",
+      trait: m.clinical_impact_short || m.variant || m.rsid,
+      continent: Object.keys(m.frequency).join('/'),
+      description: m.clinical_impact || m.clinical_impact_short,
+      alleles: [m.risk_allele].filter(Boolean),
+      significance: m.actionable?.priority === 'HIGH' ? "High" : "Medium",
+      category: "Ancestry" as const,
+      frequencies: m.frequency
     }))
   ];
 
@@ -122,6 +136,24 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
           meta = snpMetaMap[k];
         }
         break;
+      }
+    }
+
+    // Proxy Lookup logic to increase matched markers for the Oracle
+    if (!raw && snp.rsid) {
+      const proxies = SNP_PROXY_MAP[snp.rsid.toLowerCase()];
+      if (proxies) {
+        for (const proxy of proxies) {
+          if (snpMap[proxy.toLowerCase()]) {
+            raw = snpMap[proxy.toLowerCase()];
+            if (snpMetaMap && snpMetaMap[proxy.toLowerCase()]) {
+              meta = snpMetaMap[proxy.toLowerCase()];
+            }
+            // Add a flag or note that this is a proxy match
+            snp.description = (snp.description || "") + ` [Proxy matched via ${proxy}]`;
+            break;
+          }
+        }
       }
     }
 

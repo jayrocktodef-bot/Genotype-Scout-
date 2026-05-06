@@ -180,11 +180,13 @@ const getHaploColor = (name: string, isMt: boolean = false) => {
 const ProfileSummary = memo(({ 
   datasets, 
   activeDatasetIndex, 
-  oracleResults 
+  oracleResults,
+  healthImpacts = []
 }: { 
   datasets: any[], 
   activeDatasetIndex: number, 
-  oracleResults: any 
+  oracleResults: any,
+  healthImpacts?: any[]
 }) => {
   const dataset = datasets[activeDatasetIndex];
   if (!dataset) return null;
@@ -197,6 +199,8 @@ const ProfileSummary = memo(({
     .sort((a: any, b: any) => b.percentage - a.percentage)
     .slice(0, 3);
   
+  const highImpactHealth = healthImpacts.filter(h => h.impact === 'high').slice(0, 3);
+
   const ancestryChartData = Object.entries(primaryAncestry)
     .map(([name, value]) => ({ name, value: Number(value) }))
     .sort((a, b) => b.value - a.value);
@@ -316,7 +320,7 @@ const ProfileSummary = memo(({
           </div>
           
           {/* Top Affinities */}
-          <div className="flex flex-col justify-center space-y-5">
+            <div className="flex flex-col justify-center space-y-5">
             <div className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
               <div className="w-4 h-px bg-slate-200 dark:bg-slate-800"></div>
               Top Regional Affinities
@@ -340,6 +344,26 @@ const ProfileSummary = memo(({
                 </div>
               </div>
             )) : <div className="text-slate-500 italic text-xs text-center py-8">Insufficient deep-ancestry markers detected.</div>}
+
+            {highImpactHealth.length > 0 && (
+              <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
+                <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                  <div className="w-4 h-px bg-red-200 dark:bg-red-900/50"></div>
+                  Health Highlights
+                </div>
+                <div className="space-y-3">
+                  {highImpactHealth.map((h, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-red-50/50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
+                      <div className="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600">🧬</div>
+                      <div>
+                        <div className="text-[10px] font-black text-slate-900 dark:text-slate-100 uppercase tracking-tighter">{h.trait}</div>
+                        <div className="text-[9px] text-red-600 dark:text-red-400 font-bold uppercase">{h.interpretation}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
@@ -2222,41 +2246,57 @@ export default function App() {
               <span className="font-black text-slate-900 dark:text-slate-100"> High-Precision Oracle.</span>
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex flex-col gap-3">
-                <button onClick={() => setIsPrivacyExpanded(!isPrivacyExpanded)} className="flex items-center gap-3 w-full text-left">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🔒</div>
-                  <div className="flex-grow">
-                    <div className="text-[10px] font-black uppercase text-indigo-500">Privacy First</div>
-                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Local computation</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+                  <button onClick={() => setIsPrivacyExpanded(!isPrivacyExpanded)} className="flex items-center gap-3 w-full text-left">
+                    <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🔒</div>
+                    <div className="flex-grow">
+                      <div className="text-[10px] font-black uppercase text-indigo-500">Privacy First</div>
+                      <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Local computation</div>
+                    </div>
+                    {isPrivacyExpanded ? <ChevronUp className="w-5 h-5 text-slate-400"/> : <ChevronDown className="w-5 h-5 text-slate-400"/>}
+                  </button>
+                  <motion.div
+                    initial={false}
+                    animate={{ height: isPrivacyExpanded ? 'auto' : 0, opacity: isPrivacyExpanded ? 1 : 0 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                      Your DNA data is processed entirely in-browser. We scan over 11,000+ Ancestry Informative Markers (AIMs) and 100,000+ health/trait variants using high-performance local processing.
+                    </p>
+                  </motion.div>
+                </div>
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🧪</div>
+                  <div>
+                    <div className="text-[10px] font-black uppercase text-slate-400">Forensic Integrity</div>
+                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">11,000+ Verified AIMs</div>
                   </div>
-                  {isPrivacyExpanded ? <ChevronUp className="w-5 h-5 text-slate-400"/> : <ChevronDown className="w-5 h-5 text-slate-400"/>}
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{ height: isPrivacyExpanded ? 'auto' : 0, opacity: isPrivacyExpanded ? 1 : 0 }}
-                  className="overflow-hidden"
-                >
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                    Your DNA data never leaves your browser. All analysis happens locally on your device. We use raw text processing and Web Worker threads to perform complex admixture calculations directly within your browser's isolated JavaScript engine. Because absolutely no data transmission occurs, your genetic information is never uploaded, stored, or processed on our backend servers, ensuring your most personal data remains exclusively under your control.
-                  </p>
-                </motion.div>
-              </div>
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🧪</div>
-                <div>
-                  <div className="text-[10px] font-black uppercase text-slate-400">Forensic Integrity</div>
-                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">11,000+ Verified AIMs</div>
+                </div>
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">⚡</div>
+                  <div>
+                    <div className="text-[10px] font-black uppercase text-slate-400">Fast Analysis</div>
+                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Under 30 seconds</div>
+                  </div>
+                </div>
+                <div className="p-4 rounded-2xl bg-blue-600/10 border border-blue-500/20 flex flex-col gap-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-xl shadow-sm">🔎</div>
+                    <div>
+                      <div className="text-[10px] font-black uppercase text-blue-500">Deep Search Logic</div>
+                      <div className="text-xs font-black text-slate-900 dark:text-white">Active Kernels</div>
+                    </div>
+                  </div>
+                  <div className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter space-y-1">
+                    <div>• 10k GRAF-10k Panels</div>
+                    <div>• 180 Forensic markers</div>
+                    <div>• 111 Regional Markers</div>
+                    <div>• Proxy-Match Kernel: Active</div>
+                    <div>• v5 Extended DB: Unified</div>
+                  </div>
                 </div>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">⚡</div>
-                <div>
-                  <div className="text-[10px] font-black uppercase text-slate-400">Fast Analysis</div>
-                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Under 30 seconds</div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {error && (
@@ -2367,12 +2407,12 @@ export default function App() {
                 { id: 'ancient-cultures', label: 'Origins', icon: '🏛️', color: 'emerald' },
                 { id: 'oracle', label: 'Oracle', icon: '🔮', color: 'indigo' },
                 { id: 'compare', label: 'Compare', icon: '🌍', color: 'blue' },
-                { id: 'autosomal', label: 'Traits', icon: '🧬', color: 'sky' },
                 { id: 'ancient', label: 'Ancient', icon: '🏺', color: 'amber' },
+                { id: 'wellness', label: 'Health', icon: '🧬', color: 'teal' },
+                { id: 'autosomal', label: 'Traits', icon: '🧬', color: 'sky' },
                 { id: 'y-dna', label: 'Y-DNA', icon: '♂️', color: 'blue' },
                 { id: 'mt-dna', label: 'mtDNA', icon: '♀️', color: 'rose' },
                 { id: 'markers', label: 'Panels', icon: '📋', color: 'indigo' },
-                { id: 'wellness', label: 'Wellness', icon: '🧬', color: 'teal' },
                 { id: 'blood', label: 'Blood', icon: '🩸', color: 'red' },
                 { id: 'debug', label: 'System', icon: '🛠️', color: 'slate' }
               ].map(tab => (
@@ -2468,6 +2508,7 @@ export default function App() {
                   datasets={datasets} 
                   activeDatasetIndex={activeDatasetIndex} 
                   oracleResults={oracleResults} 
+                  healthImpacts={healthWellnessMatches}
                 />
               )}
 

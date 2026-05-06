@@ -160,15 +160,24 @@ export function runAncestryInference(
     markersByChrom[chrom].push(m);
   });
 
-  // LD Pruning: Remove markers within 100kb of each other to prevent LD bias
+  // LD Pruning: Remove markers within 50kb of each other to prevent LD bias, 
+  // but be less aggressive for AIMs which are often pre-selected for independence.
   Object.keys(markersByChrom).forEach(chrom => {
     const markers = markersByChrom[chrom].sort((a, b) => a.pos - b.pos);
     const pruned: any[] = [];
     let lastPos = -1000000;
     
     for (const m of markers) {
-      if (m.pos - lastPos > 100000) { // 100kb distance
+      // If a marker is explicitly an anchor AIM, we prefer to keep it even if slightly close
+      const isAnchor = anchorRsids.has((m.rsid || m.markerId).toLowerCase());
+      const pruneDist = isAnchor ? 25000 : 50000; // 25kb for AIMs, 50kb for others
+      
+      if (m.pos - lastPos > pruneDist) {
         pruned.push(m);
+        lastPos = m.pos;
+      } else if (isAnchor && !anchorRsids.has((pruned[pruned.length - 1]?.rsid || pruned[pruned.length - 1]?.markerId)?.toLowerCase())) {
+        // If current is anchor and previous wasn't, swap them to prioritize anchor
+        pruned[pruned.length - 1] = m;
         lastPos = m.pos;
       }
     }

@@ -16,6 +16,16 @@ export interface HealthImpact {
   actionable?: any;
 }
 
+function ensureString(val: any): string {
+  if (val === null || val === undefined) return '';
+  if (typeof val === 'string') return val;
+  if (typeof val === 'object') {
+    // If it's a genotype-indexed object, we shouldn't be here, but if we are:
+    return JSON.stringify(val);
+  }
+  return String(val);
+}
+
 export function matchHealthAndWellness(userSnps: Record<string, string>): HealthImpact[] {
   const impacts: HealthImpact[] = [];
   const normalizedSnps = Object.fromEntries(
@@ -36,17 +46,51 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
     if (targetAllele) {
       const count = (userGenotype.match(new RegExp(targetAllele, 'g')) || []).length;
       if (count > 0) {
+        // Resolve interpretation: could be string or object mapping genotypes
+        let interpretation = marker.clinical_impact || marker.effect;
+        if (typeof interpretation === 'object' && interpretation !== null) {
+          interpretation = (interpretation as any)[userGenotype] || (interpretation as any)[userGenotype.split('').reverse().join('')] || Object.values(interpretation)[0];
+        }
+        
+        if (!interpretation || typeof interpretation !== 'string') {
+          interpretation = count === 2 ? `High impact (${targetAllele}${targetAllele})` : `Moderate impact (${targetAllele})`;
+        }
+
+        // Resolve actionable: could be string, array, or object mapping genotypes
+        let actionable = marker.actionable;
+        if (actionable && typeof actionable === 'object' && !Array.isArray(actionable.recommendations)) {
+          // Check if actionable is mapped by genotype
+          const genotypeData = actionable[userGenotype];
+          if (genotypeData) {
+            let recommendations: string[] = [];
+            if (Array.isArray(genotypeData)) {
+              recommendations = genotypeData.map(r => typeof r === 'object' ? JSON.stringify(r) : String(r));
+            } else if (typeof genotypeData === 'object') {
+              // Handle nutrient objects like {"iron": "CAUTION"}
+              recommendations = Object.entries(genotypeData).map(([key, val]) => {
+                const label = key.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                return `${label}: ${val}`;
+              });
+            } else {
+              recommendations = [String(genotypeData)];
+            }
+            actionable = { recommendations };
+          } else if (actionable.general || actionable.summary) {
+            actionable = { recommendations: [actionable.general || actionable.summary] };
+          }
+        }
+
         impacts.push({
-          rsid: marker.rsid,
-          name: marker.name || marker.clinical_impact || `${marker.gene} ${marker.variant}`,
-          category: marker.categories[0].charAt(0).toUpperCase() + marker.categories[0].slice(1),
-          trait: marker.condition || marker.gene || marker.categories[0],
+          rsid: ensureString(marker.rsid),
+          name: ensureString(marker.name || marker.clinical_impact_short || `${marker.gene} ${marker.variant}`),
+          category: ensureString(marker.categories?.[0]?.charAt(0).toUpperCase() + marker.categories?.[0]?.slice(1) || 'Health'),
+          trait: ensureString(marker.condition || marker.gene || marker.categories?.[0] || 'Unknown'),
           genotype: userGenotype,
-          interpretation: marker.clinical_impact || marker.effect || (count === 2 ? `High impact (${targetAllele}${targetAllele})` : `Moderate impact (${targetAllele})`),
-          impact: marker.clinical_impact_level?.toLowerCase() || marker.priority?.toLowerCase() || (count === 2 ? 'high' : 'moderate'),
+          interpretation: ensureString(interpretation),
+          impact: marker.clinical_impact_level?.toLowerCase() || marker.priority?.toLowerCase() || (count === 2 ? 'high' : 'moderate') as any,
           drugs: marker.drugs_affected || marker.drugs,
-          evidence: marker.evidence,
-          actionable: marker.actionable
+          evidence: ensureString(marker.evidence),
+          actionable
         });
         processedRsids.add(marker.rsid.toLowerCase());
       }
@@ -66,12 +110,12 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
 
       if (hasVariant) {
         impacts.push({
-          rsid,
-          name: (data as any).name,
+          rsid: ensureString(rsid),
+          name: ensureString((data as any).name),
           category: 'Pharmacogenomics',
-          trait: category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' '),
+          trait: ensureString(category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' ')),
           genotype: userGenotype,
-          interpretation: (data as any).effect,
+          interpretation: ensureString((data as any).effect),
           impact: 'moderate',
           drugs: (data as any).drugs
         });
@@ -93,14 +137,14 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
 
       if (count > 0) {
         impacts.push({
-          rsid,
-          name: (data as any).name,
+          rsid: ensureString(rsid),
+          name: ensureString((data as any).name),
           category: 'Clinical Health',
-          trait: category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' '),
+          trait: ensureString(category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' ')),
           genotype: userGenotype,
-          interpretation: count === 2 ? `Increased risk (${riskAllele}${riskAllele})` : `Partial risk (${riskAllele})`,
+          interpretation: ensureString(count === 2 ? `Increased risk (${riskAllele}${riskAllele})` : `Partial risk (${riskAllele})`),
           impact: (data as any).impact || 'moderate',
-          evidence: (data as any).description
+          evidence: ensureString((data as any).description)
         });
         processedRsids.add(rsid.toLowerCase());
       }
@@ -130,14 +174,14 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
 
     if (matchedInterpretation) {
       impacts.push({
-        rsid: marker.rsid,
-        name: marker.interpretation.name || marker.interpretation.trait || 'Trait Marker',
-        category: marker.category,
-        trait: marker.interpretation.trait || marker.category,
+        rsid: ensureString(marker.rsid),
+        name: ensureString(marker.interpretation.name || marker.interpretation.trait || 'Trait Marker'),
+        category: ensureString(marker.category),
+        trait: ensureString(marker.interpretation.trait || marker.category),
         genotype: userGenotype,
-        interpretation: matchedInterpretation,
+        interpretation: ensureString(matchedInterpretation),
         impact: 'neutral',
-        evidence: marker.interpretation.evidence ? `Evidence: ${marker.interpretation.evidence}` : undefined
+        evidence: marker.interpretation.evidence ? `Evidence: ${ensureString(marker.interpretation.evidence)}` : undefined
       });
       processedRsids.add(marker.rsid.toLowerCase());
     }
