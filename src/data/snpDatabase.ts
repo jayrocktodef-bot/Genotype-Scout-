@@ -1,5 +1,5 @@
 import { ANCHOR_AIMS } from '../anchorAims';
-import snps from './snps.json';
+import snps from './reference/snps.json';
 import { SNP } from '../types/genotype';
 
 export const SNP_DB: SNP[] = snps as any as SNP[];

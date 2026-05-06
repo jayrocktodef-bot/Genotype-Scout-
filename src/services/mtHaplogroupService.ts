@@ -1,4 +1,4 @@
-import mtHaploData from '../data/mt_haplogroups.json';
+import mtHaploData from '../data/haplogroups/mt_haplogroups.json';
 
 export interface MtHaplogroupBranch {
   branchName: string;

@@ -1,6 +1,6 @@
-import ancientMarkers from './ancient_dna_markers.json';
-import popFrequencies from './1000genomes_frequencies.json';
-import aimsAndTraits from './aims_and_traits.json';
+import ancientMarkers from './reference/ancient_dna_markers.json';
+import popFrequencies from './reference/1000genomes_frequencies.json';
+import aimsAndTraits from './reference/aims_and_traits.json';
 
 export interface PopFrequencyEntry {
   gene?: string;

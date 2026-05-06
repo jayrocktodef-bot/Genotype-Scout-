@@ -1,4 +1,4 @@
-export function parseDNAFile(content: string): Record<string, string> {
+export function parseDNAFile(content: string, allowlist?: Set<string>): Record<string, string> {
   const lines = content.split(/\r?\n/);
   const genotypes: Record<string, string> = {};
 
@@ -14,10 +14,15 @@ export function parseDNAFile(content: string): Record<string, string> {
     if (parts.length < 4) continue;
 
     const markerId = parts[0].trim();
+    const lowerMarker = markerId.toLowerCase();
     
     // Skip header lines commonly found in FTDNA or other formats
-    const lowerMarker = markerId.toLowerCase();
     if (lowerMarker === 'rsid' || lowerMarker === 'snp' || lowerMarker === 'marker') continue;
+
+    // Stream Filter: If allowlist is provided, skip unknown markers
+    // Note: This simple version doesn't check chrom for MT/Y, but the service version does.
+    // For consistency, we filter by allowlist if it exists.
+    if (allowlist && !allowlist.has(lowerMarker)) continue;
 
     let genotype = "";
 
@@ -36,7 +41,7 @@ export function parseDNAFile(content: string): Record<string, string> {
 
     // Basic validation for genotype
     if (genotype && genotype !== '--' && genotype !== '00' && /^[ACTG]{1,2}$/i.test(genotype)) {
-      genotypes[markerId] = genotype.toUpperCase();
+      genotypes[markerId.toLowerCase()] = genotype.toUpperCase();
     }
   }
 

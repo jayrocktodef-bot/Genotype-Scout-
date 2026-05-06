@@ -2,13 +2,16 @@ import { parseRawDNA } from '../services/dnaParser';
 import { matchSNPs } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
 import { Y_DNA_TREE } from '../constants/haplogroups';
+import { getMarkerAllowlist } from '../utils/markerAllowlist';
 
 self.onmessage = async (e: MessageEvent) => {
   const { files } = e.data;
   
   try {
+    const allowlist = getMarkerAllowlist();
+
     const parsedFiles = files.map((file: { text: string, name: string }) => {
-      return { ...parseRawDNA(file.text), name: file.name };
+      return { ...parseRawDNA(file.text, allowlist), name: file.name };
     });
 
     if (parsedFiles.length === 0) {

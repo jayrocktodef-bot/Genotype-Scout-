@@ -1,4 +1,4 @@
-export function parseRawDNA(text: string) {
+export function parseRawDNA(text: string, allowlist?: Set<string>) {
   const lines = text.split(/\r?\n/);
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
@@ -47,10 +47,17 @@ export function parseRawDNA(text: string) {
     // Skip header lines
     if (markerId === "rsid" || markerId === "snp" || markerId === "marker" || markerId === "rs_id") continue;
     
-    snpCount++;
-    
     let chrom = parts[1].trim().toUpperCase();
     if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
+    
+    const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
+    
+    // Stream Filter: If allowlist is provided, skip unknown markers unless they are Y or MT
+    if (allowlist && !isYorMT && !allowlist.has(markerId)) {
+      continue;
+    }
+
+    snpCount++;
     
     const posStr = parts[2].trim();
     const pos = parseInt(posStr, 10);
@@ -97,6 +104,7 @@ export function parseRawDNA(text: string) {
       }
     }
   }
+
 
   // Refine chip detection based on SNP count if still unknown
   if (chip === "Unknown Chip") {

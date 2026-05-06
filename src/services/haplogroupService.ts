@@ -1,4 +1,4 @@
-import haploData from '../data/parsed_haplogroups.json';
+import haploData from '../data/haplogroups/parsed_haplogroups.json';
 
 export interface IsoggBranch {
   branchName: string;

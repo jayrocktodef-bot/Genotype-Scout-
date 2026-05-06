@@ -88,7 +88,7 @@ export const ModernAncestryOracle = memo(({ results }: { results: any }) => {
             {viewMode === 'standard' ? (
               "The Ancestry Oracle is not a classic \"ethnicity calculator.\" While mainstream services use imputation to fill in genetic gaps based on statistical models, this engine processes your raw, exact genome data. By directly analyzing specific, high-precision Ancestry Informative Markers (AIMs), we produce results that reflect your unique genotype, providing a granular look at your genetic lineage without relying on probabilistic data smoothing."
             ) : (
-              `The statistical model uses a Naive Bayes approach with Softmax normalization to compare your genome against the 1000 Genomes Project phase 3 reference database. This method calculates the maximum likelihood of your ancestry across super-populations using ${statsMetadata.markersAnalyzed || 0} high-quality markers. Confidence: ${statsMetadata.confidence || 'N/A'}.`
+              `The statistical model uses a Naive Bayes approach with Softmax normalization to compare your genome against the 1000 Genomes Project phase 3 reference database. This method calculates the maximum likelihood of your ancestry across super-populations using ${statsMetadata.markersUsed || 0} high-quality markers from professional panels (NCBI GRAF, VISAGE Forensic, and SGDP Precision AIMs). Precision: ${statsMetadata.precision || 'Standard'}.`
             )}
           </p>
         </motion.div>

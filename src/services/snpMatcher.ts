@@ -1,5 +1,5 @@
 import { SNP_DB, SNP_LOOKUP } from '../data/snpDatabase';
-import mtDescriptions from '../data/mtDescriptions.json';
+import mtDescriptions from '../data/mitochondrial/mtDescriptions.json';
 import { ANCHOR_AIMS } from '../anchorAims';
 import { ANCESTRY_MARKERS } from '../data/ancestry';
 import { SNP } from '../types/genotype';

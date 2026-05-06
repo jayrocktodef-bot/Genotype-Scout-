@@ -1,4 +1,4 @@
-import mtDescriptions from './data/mtDescriptions.json';
+import mtDescriptions from './data/mitochondrial/mtDescriptions.json';
 
 /**
  * Retrieves a brief explanation for a given marker ID or mutation.
