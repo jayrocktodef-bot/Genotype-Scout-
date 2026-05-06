@@ -1,0 +1,128 @@
+{
+  "_metadata": {
+    "description": "Ancient individual genomes for genetic matching - EXPANDED v2.0",
+    "version": "2.0.0",
+    "last_updated": "2026-02-07",
+    "sources": [
+      "Allen Ancient DNA Resource (AADR)",
+      "Mathieson et al. 2015 (PMID 26595274)",
+      "Haak et al. 2015 (PMID 25731166)",
+      "Olalde et al. 2018 (PMID 29466337)",
+      "Margaryan et al. 2020 (PMID 32939061)",
+      "Brace et al. 2019 (PMID 30867560)",
+      "Lazaridis et al. 2014 (PMID 25230663)"
+    ]
+  },
+
+  "cheddar_man": {
+    "id": "cheddar_man",
+    "name": "Cheddar Man",
+    "site": "Gough's Cave, Somerset, England",
+    "country": "United Kingdom",
+    "age_bp": 10000,
+    "period": "Mesolithic",
+    "culture": "WHG",
+    "culture_name": "Western Hunter-Gatherer",
+    "sex": "Male",
+    "description": "Britain's oldest complete human skeleton. Had dark skin and blue eyes.",
+    "significance": "Challenged assumptions about ancient European phenotypes.",
+    "region": "Northern Europe",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CG",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC",
+      "rs1393350": "GG"
+    }
+  },
+
+  "loschbour": {
+    "id": "loschbour",
+    "name": "Loschbour Man",
+    "site": "Luxembourg",
+    "country": "Luxembourg",
+    "age_bp": 8000,
+    "period": "Mesolithic",
+    "culture": "WHG",
+    "culture_name": "Western Hunter-Gatherer",
+    "sex": "Male",
+    "description": "Complete Mesolithic genome from continental Europe. Dark skin, blue eyes.",
+    "region": "Central Europe",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    }
+  },
+
+  "otzi": {
+    "id": "otzi",
+    "name": "Ötzi the Iceman",
+    "site": "Ötztal Alps",
+    "country": "Italy",
+    "age_bp": 5300,
+    "period": "Copper Age",
+    "culture": "EEF",
+    "culture_name": "Neolithic Farmer",
+    "sex": "Male",
+    "description": "Natural mummy preserved in ice. Neolithic farmer with brown eyes and light skin.",
+    "region": "Alpine Europe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "CG",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "yamnaya_samara": {
+    "id": "yamnaya_samara",
+    "name": "Yamnaya Steppe Warrior",
+    "site": "Samara, Russia",
+    "country": "Russia",
+    "age_bp": 5000,
+    "period": "Bronze Age",
+    "culture": "Yamnaya",
+    "culture_name": "Steppe Pastoralist",
+    "sex": "Male",
+    "description": "Bronze Age herder from the Pontic-Caspian steppe. Tall and light-skinned.",
+    "region": "Eurasian Steppe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GA",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "viking_denmark": {
+    "id": "viking_denmark",
+    "name": "Viking Warrior (Galgedil)",
+    "site": "Galgedil, Denmark",
+    "country": "Denmark",
+    "age_bp": 1100,
+    "period": "Viking Age",
+    "culture": "Viking",
+    "culture_name": "Scandinavian Viking",
+    "sex": "Male",
+    "description": "Viking Age warrior showing typical Scandinavian profile and lactase persistence.",
+    "region": "Scandinavia",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  }
+}

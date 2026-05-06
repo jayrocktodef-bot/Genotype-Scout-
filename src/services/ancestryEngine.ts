@@ -2,11 +2,19 @@ import { ANCHOR_AIMS } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
 import { ANCESTRY_MARKERS } from '../data/ancestry';
 import { imputeTargetedGenotypes } from './imputationService';
+import { getPopFrequencies, PopFrequencyEntry, findFrequency } from '../data/GenomicDataService';
 
 const ANCHOR_AIMS_TYPE = ANCHOR_AIMS;
 const anchorMap = new Map(ANCHOR_AIMS.map(a => [a.rsid.toLowerCase(), a]));
 const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
-// ... (The rest of the file stays mostly same, but I might need to replace ANCHOR_AIMS usage if needed... wait, ANCHOR_AIMS is imported globally.)
+
+const POP_CODE_TO_REGION: Record<string, string> = {
+  'GBR': 'EUR', 'CEU': 'EUR', 'FIN': 'EUR', 'IBS': 'EUR', 'TSI': 'EUR',
+  'YRI': 'AFR', 'LWK': 'AFR', 'GWD': 'AFR', 'MSL': 'AFR', 'ESN': 'AFR', 'ASW': 'AFR', 'ACB': 'AFR',
+  'CHB': 'EAS', 'CHS': 'EAS', 'CDX': 'EAS', 'KHV': 'EAS', 'JPT': 'EAS',
+  'GIH': 'SAS', 'PJL': 'SAS', 'BEB': 'SAS', 'STU': 'SAS', 'ITU': 'SAS',
+  'PUR': 'AMR', 'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR'
+};
 import { CONTINENT_TO_CODE } from '../constants/genotypeConstants';
 import { isSubpopMatch } from '../utils/genotypeUtils';
 import { AncestryInferenceResult } from '../types/genotype';
@@ -16,7 +24,7 @@ const DOUBLE_WEIGHT_MARKERS = new Set([
   "rs10456257", "rs10456259", "rs10456260", "rs10456261", "rs10456262", "rs10456263",
   "rs10456267", "rs10456268", "rs2285644", "rs334",
   "rs1426654", "rs16891982", "rs1042602", "rs1800407",
-  "rs12124819", "rs174537", "rs1126809", "rs1229984",
+  "rs12124819", "rs174537", "rs1126809", "rs1229984", "rs7388531",
   "rs1805007", "rs12821256", "rs1800562", "rs2395129",
   "rs1129038", "rs12896399", "rs1805008", "rs1805009", "rs11547464",
   "rs4833103", "rs1800404", "rs12203594", "rs16891985", "rs1805010", "rs4988238",
@@ -51,7 +59,7 @@ const QUADRUPLE_WEIGHT_MARKERS = new Set([
   "rs10456247", "rs10456249", "rs10456252", "rs10456256",
   "rs10456213", "rs10456215", "rs10456216", "rs10456198",
   "rs12203592", "rs1393350", "rs11614913", "rs121913059",
-  "rs1229984", "rs671", "rs17822931", "rs10954737",
+  "rs1229984", "rs671", "rs7388531", "rs17822931", "rs10954737",
   "rs10456271", "rs10456234", "rs10456258", "rs10456248", "rs10456269",
   "rs7252505", "rs1572319", "rs10456197", "rs12149626",
   "rs12149628", "rs7252508", "rs1426654", "rs10456301",
@@ -200,6 +208,8 @@ export function runAncestryInference(
   const dNullTested = !!duffyGenotype && duffyGenotype !== '--';
   const afrBaseReduction = (dNullTested && !hasDuffyNullVariant) ? 0.25 : 1.0;
   const afrEastReduction = (dNullTested && !hasDuffyNullVariant) ? 0.75 : 1.0; // Milder reduction for East Africa
+  
+  const popFreqs = getPopFrequencies();
 
   for (const chrom of Object.keys(markersByChrom)) {
     const chromMarkers = markersByChrom[chrom];
@@ -265,6 +275,23 @@ export function runAncestryInference(
             }
           } else if (matchesContinent(marker.continent, continent)) {
             freq = 0.8;
+          }
+          
+          if (code) {
+            const relevantPops = Object.keys(POP_CODE_TO_REGION).filter(p => POP_CODE_TO_REGION[p] === code);
+            let totalPopFreq = 0;
+            let popEntries = 0;
+            const normGenotype = genotype.split('').sort().join('');
+            for (const popCode of relevantPops) {
+              const f = findFrequency(rsid, normGenotype, popCode);
+              if (f !== null) {
+                totalPopFreq += f;
+                popEntries++;
+              }
+            }
+            if (popEntries > 0) {
+              freq = (totalPopFreq / popEntries);
+            }
           }
           
           markerFreqs.push(Math.max(0.001, Math.min(0.999, freq)));

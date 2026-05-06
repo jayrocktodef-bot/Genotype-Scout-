@@ -13,6 +13,9 @@ export interface SNP {
   interpretations?: Record<string, string>;
   referenceUrl?: string;
   frequencies?: Record<string, number>;
+  genotype?: string;
+  status?: 'matched' | 'unmatched' | 'not_tested' | 'partial';
+  userGenotype?: string;
 }
 
 export interface AnchorAim {

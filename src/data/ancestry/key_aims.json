@@ -1,0 +1,103 @@
+
+[
+  {
+    "rsid": "rs1426654",
+    "region": "European",
+    "alleles": ["A"],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.99,
+      "EAS": 0.01,
+      "AMR": 0.1,
+      "SAS": 0.7,
+      "MENA": 0.9,
+      "OCE": 0.01
+    },
+    "gene": "SLC24A5",
+    "significance": "High",
+    "population_anchor": "European",
+    "description": "One of the strongest known AIMs. The 'A' allele is nearly 100% fixed in European populations, while the 'G' allele is nearly 100% fixed in Sub-Saharan African populations.",
+    "trait": "Ancestry"
+  },
+  {
+    "rsid": "rs3827760",
+    "region": "East Asian",
+    "alleles": ["G"],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.98,
+      "AMR": 0.9,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "gene": "EDAR",
+    "significance": "High",
+    "population_anchor": "East Asian / Native American",
+    "description": "The 'G' allele is highly specific to East Asian and Indigenous American populations. It influences hair thickness, sweat gland density, and dental morphology.",
+    "trait": "Ancestry"
+  },
+  {
+    "rsid": "rs16891982",
+    "region": "European",
+    "alleles": ["G"],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.98,
+      "EAS": 0.01,
+      "AMR": 0.15,
+      "SAS": 0.3,
+      "MENA": 0.6,
+      "OCE": 0.01
+    },
+    "gene": "SLC45A2",
+    "significance": "High",
+    "population_anchor": "European",
+    "description": "The 'G' allele is predominantly found in European populations and is heavily involved in light skin pigmentation.",
+    "trait": "Ancestry"
+  },
+  {
+    "rsid": "rs7388531",
+    "region": "East Asian",
+    "alleles": ["A"],
+    "weight": 10,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.1,
+      "EAS": 0.9,
+      "AMR": 0.8,
+      "SAS": 0.2,
+      "MENA": 0.1,
+      "OCE": 0.2
+    },
+    "gene": "ABCC11",
+    "significance": "High",
+    "population_anchor": "East Asian",
+    "description": "The 'A' allele (associated with dry earwax and reduced body odor) is extremely common in East Asian populations and rare in African and European populations.",
+    "trait": "Ancestry"
+  },
+  {
+    "rsid": "rs671",
+    "region": "East Asian",
+    "alleles": ["A"],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.001,
+      "EAS": 0.4,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.001,
+      "OCE": 0.01
+    },
+    "gene": "ALDH2",
+    "significance": "Medium",
+    "population_anchor": "East Asian",
+    "description": "The 'A' allele (associated with the 'Asian flush' reaction to alcohol) is highly concentrated in East Asian populations.",
+    "trait": "Ancestry"
+  }
+]

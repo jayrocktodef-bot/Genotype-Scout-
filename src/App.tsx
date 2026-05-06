@@ -24,6 +24,8 @@ import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
 import { Chromosome1Oracle } from "./components/Chromosome1Oracle";
+import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
+import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
 import mitoTraits from "./data/mito_traits.json";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
@@ -1729,7 +1731,7 @@ export default function App() {
 
   const [darkMode, setDarkMode] = useState(true);
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'health' | 'blood' | 'debug'>('autosomal');
+  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'ancient' | 'health' | 'blood' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
@@ -1964,6 +1966,18 @@ export default function App() {
       secondary: processOracle(oracle.secondary),
       commercial: processOracle(oracle.commercial)
     };
+  }, [datasets, activeDatasetIndex]);
+
+  const ancientAdmixture = useMemo(() => {
+    const snpMap = snpMaps.current[activeDatasetIndex];
+    if (!snpMap) return [];
+    return calculateAncientAdmixture(snpMap);
+  }, [datasets, activeDatasetIndex]);
+
+  const individualMatches = useMemo(() => {
+    const snpMap = snpMaps.current[activeDatasetIndex];
+    if (!snpMap) return [];
+    return calculateIndividualMatches(snpMap);
   }, [datasets, activeDatasetIndex]);
 
   const userMatchedMitoTraits = useMemo(() => {
@@ -2226,6 +2240,7 @@ export default function App() {
                 { id: 'oracle', label: 'Oracle', icon: '🔮', color: 'indigo' },
                 { id: 'y-dna', label: 'Y-DNA', icon: '♂️', color: 'blue' },
                 { id: 'mt-dna', label: 'mtDNA', icon: '♀️', color: 'rose' },
+                { id: 'ancient', label: 'Ancient', icon: '🏺', color: 'amber' },
                 { id: 'health', label: 'Health', icon: '📊', color: 'red' },
                 { id: 'blood', label: 'Blood', icon: '🩸', color: 'red' },
                 { id: 'debug', label: 'System', icon: '🛠️', color: 'slate' }
@@ -2341,6 +2356,23 @@ export default function App() {
 
               {activeTab === 'oracle' && (
                 <ModernAncestryOracle results={oracleResults} />
+              )}
+
+              {activeTab === 'ancient' && (
+                <div className="space-y-8">
+                  <AncientAncestryOracle 
+                    results={individualMatches} 
+                    title="Ancient Relative Matches" 
+                    subtitle="Genetic similarity to specific ancient individuals"
+                    type="matches"
+                  />
+                  <AncientAncestryOracle 
+                    results={ancientAdmixture} 
+                    title="Deep Time Admixture" 
+                    subtitle="Paleolithic and Mesolithic affinity by population group"
+                    type="admixture"
+                  />
+                </div>
               )}
 
               {activeTab === 'blood' && (
