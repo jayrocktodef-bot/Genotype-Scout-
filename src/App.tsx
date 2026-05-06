@@ -9,6 +9,7 @@
  */
 
 import { useState, useCallback, useRef, useEffect, useMemo, memo } from "react";
+import JSZip from 'jszip';
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown, ChevronUp } from 'lucide-react';
 // @ts-ignore
@@ -1830,7 +1831,29 @@ export default function App() {
   const processFiles = useCallback(async (files: FileList | File[]) => {
     setProcessing(true);
     setError(null);
-    const fileArray = Array.isArray(files) ? files : Array.from(files);
+    let fileArray = Array.isArray(files) ? files : Array.from(files);
+
+    try {
+      const expandedFiles: File[] = [];
+      for (const file of fileArray) {
+        if (file.name.toLowerCase().endsWith('.zip')) {
+          const zip = await JSZip.loadAsync(file);
+          for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
+            if (!zipEntry.dir) {
+              const content = await zipEntry.async('blob');
+              expandedFiles.push(new File([content], relativePath, { type: 'text/plain' }));
+            }
+          }
+        } else {
+          expandedFiles.push(file);
+        }
+      }
+      fileArray = expandedFiles;
+    } catch (e) {
+      setError(`Failed to process zip file: ${e instanceof Error ? e.message : String(e)}`);
+      setProcessing(false);
+      return;
+    }
     
     const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
     const largeFiles = fileArray.filter(f => f.size > MAX_FILE_SIZE);
@@ -2052,7 +2075,7 @@ export default function App() {
               Explore the history <br className="hidden sm:block" /> locked in your <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400">Genetics.</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mb-10">
-              Unpack your 23andMe, AncestryDNA, or MyHeritage raw data. 
+              Unpack your 23andMe, AncestryDNA, MyHeritage, or Family Tree DNA (FTDNA) raw data. 
               Discover deep ancestry, health markers, and paternal lineages through our 
               <span className="font-black text-slate-900 dark:text-slate-100"> High-Precision Oracle.</span>
             </p>
@@ -2088,7 +2111,7 @@ export default function App() {
                 <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">⚡</div>
                 <div>
                   <div className="text-[10px] font-black uppercase text-slate-400">Fast Analysis</div>
-                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Under 10 seconds</div>
+                  <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Under 30 seconds</div>
                 </div>
               </div>
             </div>
@@ -2125,7 +2148,7 @@ export default function App() {
                 setPendingFiles(prev => [...prev, ...newFiles]);
               }}
             >
-              <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt" multiple onChange={(e) => {
+              <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt,.zip" multiple onChange={(e) => {
                 if (e.target.files) {
                   setError(null);
                   const newFiles = Array.from(e.target.files);
@@ -2139,7 +2162,7 @@ export default function App() {
               
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 mb-2 sm:mb-3 tracking-tight">Initialize Analysis</h3>
               <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8 max-w-sm">
-                Securely drop your raw DNA file (.txt or .csv) from 23andMe, Ancestry, or MyHeritage. All data stays local and private.
+                Securely drop your raw DNA file (.txt or .csv) from 23andMe, Ancestry, MyHeritage, or FTDNA. All data stays local and private.
               </p>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
