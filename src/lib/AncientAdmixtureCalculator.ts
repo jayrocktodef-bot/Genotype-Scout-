@@ -63,30 +63,48 @@ export const calculateAncientAdmixture = (userGenotypes: Record<string, string>)
 export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
   const samples = Object.values(ancientSamples).filter(s => (s as any).id);
   
+  // Weights for importance of specific markers
+  const markerImportance: Record<string, number> = {
+    "rs1426654": 5.0, // SLC24A5
+    "rs16891982": 4.0, // SLC45A2
+    "rs12913832": 4.0, // HERC2
+    "rs1042602": 3.0,
+    "rs1800414": 3.0
+  };
+
   const results = samples.map((sample: any) => {
-    let matchCount = 0;
-    let totalCompared = 0;
+    let weightedMatch = 0;
+    let totalWeight = 0;
     
     Object.entries(sample.snps).forEach(([rsid, sampleGenotype]) => {
       const userGenotype = userGenotypes[rsid];
       if (userGenotype) {
-        totalCompared++;
-        if (userGenotype === sampleGenotype) {
-          matchCount++;
+        const weight = markerImportance[rsid] || 1.0;
+        totalWeight += weight;
+        
+        // Simple distance instead of binary match
+        // 0 match = 0, 1 match = 0.5, 2 matches = 1.0
+        let matchScore = 0;
+        let hits = 0;
+        for (const char of userGenotype) {
+          if ((sampleGenotype as string).includes(char)) hits++;
         }
+        matchScore = hits / 2;
+                
+        weightedMatch += matchScore * weight;
       }
     });
     
-    const score = totalCompared > 0 ? (matchCount / totalCompared) * 100 : 0;
+    const affinity = totalWeight > 0 ? (weightedMatch / totalWeight) * 100 : 0;
     
     return {
       popCode: sample.id,
       popName: sample.name,
-      score: score,
+      score: affinity,
       description: sample.description,
       period: sample.period,
       region: sample.region,
-      matchingMarkers: matchCount,
+      matchingMarkers: Object.keys(sample.snps).filter(rsid => userGenotypes[rsid] && userGenotypes[rsid] === sample.snps[rsid]).length,
       culture: sample.culture_name,
       age_bp: sample.age_bp
     } as AncientSampleMatch;
