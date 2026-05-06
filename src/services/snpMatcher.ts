@@ -177,9 +177,11 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
 
     // Count matches for the alleles of interest
     let matchCount = 0;
-    for (const allele of snp.alleles) {
-      for (const char of raw) {
-        if (char === allele) matchCount++;
+    if (Array.isArray(snp.alleles)) {
+      for (const allele of snp.alleles) {
+        for (const char of raw) {
+          if (char === allele) matchCount++;
+        }
       }
     }
     
@@ -189,12 +191,13 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     const isPartial = !interpretation && matchCount > 0 && matchCount < 2 && raw.length === 2;
     
     if (!interpretation) {
+      const alleleStr = Array.isArray(snp.alleles) ? snp.alleles.join('/') : 'N/A';
       if (matchCount === 2) {
-        interpretation = `Homozygous for the ${snp.alleles.join('/')} allele. You carry two copies of the variant associated with this trait.`;
+        interpretation = `Homozygous for the ${alleleStr} allele. You carry two copies of the variant associated with this trait.`;
       } else if (matchCount === 1) {
-        interpretation = `Heterozygous for the ${snp.alleles.join('/')} allele. You carry one copy of the variant associated with this trait.`;
+        interpretation = `Heterozygous for the ${alleleStr} allele. You carry one copy of the variant associated with this trait.`;
       } else {
-        interpretation = `You do not carry the ${snp.alleles.join('/')} variant associated with this trait.`;
+        interpretation = `You do not carry the ${alleleStr} variant associated with this trait.`;
       }
       
       if (isPartial) {

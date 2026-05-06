@@ -26,6 +26,8 @@ import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
 import { Chromosome1Oracle } from "./components/Chromosome1Oracle";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
+import { calculateEthnicity } from "./utils/admixtureCalculator";
+import { getPopFrequencies } from "./data/GenomicDataService";
 import mitoTraits from "./data/mito_traits.json";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
@@ -1961,10 +1963,14 @@ export default function App() {
       return { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData };
     };
 
+    const snpMap = snpMaps.current[activeDatasetIndex] || {};
+    const statisticalResults = calculateEthnicity(snpMap, getPopFrequencies());
+
     return {
       primary: processOracle(oracle.primary),
       secondary: processOracle(oracle.secondary),
-      commercial: processOracle(oracle.commercial)
+      commercial: processOracle(oracle.commercial),
+      statistical: statisticalResults
     };
   }, [datasets, activeDatasetIndex]);
 

@@ -13,12 +13,20 @@ interface HealthTraitsTabProps {
 
 export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits, autosomalMarkers }) => {
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
-  const [activeSubTab, setActiveSubTab] = useState<'maternal' | 'autosomal'>('autosomal');
-
+  const [activeCategory, setActiveCategory] = useState<'Maternal' | 'Health' | 'Nutrition' | 'Lifestyle' | 'Appearance' | 'Methylation'>('Health');
+  
   const healthMarkers = autosomalMarkers.filter(m => 
-    (m.category === 'Health' || m.category === 'Nutrition' || m.category === 'Lifestyle') &&
+    (m.category === 'Health' || m.category === 'Nutrition' || m.category === 'Lifestyle' || m.category === 'Appearance' || m.category === 'Methylation') &&
     (m.status === 'matched' || m.status === 'partial')
   );
+
+  const categories = [
+    { id: 'Health', label: 'Health' },
+    { id: 'Nutrition', label: 'Nutrition' },
+    { id: 'Lifestyle', label: 'Lifestyle' },
+    { id: 'Appearance', label: 'Appearance' },
+    { id: 'Methylation', label: 'Methylation' }
+  ];
 
   if (!acceptedDisclaimer) {
     return (
@@ -56,23 +64,27 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
           <div className="text-red-600 dark:text-red-400 text-xs tracking-[0.4em] uppercase font-black mb-3 text-center md:text-left">Genomic Wellness Profile</div>
           <h2 className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter text-center md:text-left">Health & Trait Insights</h2>
         </div>
-        <div className="flex bg-slate-100 dark:bg-slate-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800">
+        <div className="flex flex-wrap gap-2 justify-center bg-slate-100 dark:bg-slate-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800">
           <button 
-            onClick={() => setActiveSubTab('autosomal')}
-            className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeSubTab === 'autosomal' ? 'bg-white dark:bg-slate-800 text-red-600 dark:text-red-400 shadow-sm' : 'text-slate-500'}`}
+            onClick={() => setActiveCategory('Maternal')}
+            className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeCategory === 'Maternal' ? 'bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-slate-500'}`}
           >
-            Autosomal markers
+            Maternal
           </button>
-          <button 
-            onClick={() => setActiveSubTab('maternal')}
-            className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeSubTab === 'maternal' ? 'bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-slate-500'}`}
-          >
-            Maternal Traits
-          </button>
+          
+          {categories.map(cat => (
+            <button 
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id as any)}
+              className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeCategory === cat.id ? 'bg-white dark:bg-slate-800 text-red-600 dark:text-red-400 shadow-sm' : 'text-slate-500'}`}
+            >
+              {cat.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      {activeSubTab === 'maternal' ? (
+      {activeCategory === 'Maternal' ? (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div className="mb-8 flex items-center justify-between">
             <h3 className="text-xl font-black text-slate-900 dark:text-white">Mitochondrial Variants</h3>
@@ -131,21 +143,21 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
       ) : (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div className="mb-8 flex items-center justify-between">
-            <h3 className="text-xl font-black text-slate-900 dark:text-white">SNP Health Markers</h3>
+            <h3 className="text-xl font-black text-slate-900 dark:text-white">{activeCategory} Markers</h3>
             <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-full text-[10px] font-black text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30">
-              {healthMarkers.length} Markers Matched
+              {healthMarkers.filter(m => m.category === activeCategory).length} Markers Matched
             </span>
           </div>
 
-          {healthMarkers.length === 0 ? (
+          {healthMarkers.filter(m => m.category === activeCategory).length === 0 ? (
             <div className="p-20 bg-slate-50 dark:bg-slate-900/50 rounded-[3rem] border border-dashed border-slate-200 dark:border-slate-800 text-center">
               <div className="text-6xl mb-6 opacity-20 grayscale">🥗</div>
-              <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-2">No Health Markers Detected</h3>
-              <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto font-medium">Your current genetic file does not contain any specific variants associated with the health traits in our database.</p>
+              <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-2">No {activeCategory} Markers Detected</h3>
+              <p className="text-slate-500 dark:text-slate-400 max-w-sm mx-auto font-medium">Your current genetic file does not contain any specific variants associated with {activeCategory.toLowerCase()} traits in our database.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {healthMarkers.map((marker, index) => (
+              {healthMarkers.filter(m => m.category === activeCategory).map((marker, index) => (
                 <motion.div 
                 key={index} 
                 initial={{ opacity: 0, y: 10 }}

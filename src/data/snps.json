@@ -3,12 +3,12 @@
     "markerId": "rs12913832",
     "rsid": "rs12913832",
     "gene": "HERC2",
-    "trait": "Eye Color (Blue/Brown)",
+    "trait": "Eye Color",
     "continent": "European",
     "category": "Appearance",
     "significance": "High",
     "alleles": ["G"],
-    "description": "Primary predictor of blue vs brown eye color. The 'G' allele is strongly associated with blue eyes in European populations.",
+    "description": "The primary determinant for blue versus brown eyes. The 'G' allele is highly informative for European ancestry.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs12913832"
   },
   {
@@ -38,13 +38,13 @@
   {
     "markerId": "rs1805007",
     "rsid": "rs1805007",
-    "gene": "MC1R",
-    "trait": "Red Hair / Fair Skin",
+    "gene": "MC1R (R151C)",
+    "trait": "Red Hair / Pigmentation",
     "continent": "European",
     "category": "Appearance",
     "significance": "Medium",
     "alleles": ["T"],
-    "description": "One of the 'big three' red hair mutations (R151C).",
+    "description": "A well-known pigmentation marker. The 'T' allele is highly stratified and points strongly to Northwestern European lineage.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1805007"
   },
   {
@@ -6267,15 +6267,10 @@
   {
     "markerId": "rs1805008",
     "rsid": "rs1805008",
-    "gene": "MC1R",
-    "trait": "European Red Hair",
-    "continent": "European",
-    "category": "Ancestry",
-    "significance": "Medium",
-    "alleles": [
-      "T"
-    ],
-    "description": "Associated with red hair and fair skin in European populations.",
+    "gene": "MC1R (R160W)",
+    "trait": "Red Hair / Pigmentation",
+    "category": "Appearance",
+    "description": "Another core MC1R variant responsible for the red hair phenotype and pale skin.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1805008"
   },
   {
@@ -9659,15 +9654,9 @@
     "markerId": "rs12203592",
     "rsid": "rs12203592",
     "gene": "IRF4",
-    "trait": "Eye/Hair Color",
-    "continent": "European",
-    "subpop": "General",
-    "alleles": [
-      "C"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for European populations.",
+    "trait": "Hair & Skin Pigmentation",
+    "category": "Appearance",
+    "description": "Associated with light hair color, freckles, and pale skin, functioning as a strong geographic indicator.",
     "frequencies": {
       "AFR": 0.04,
       "AMR": 0.08,
@@ -14808,30 +14797,19 @@
   {
     "markerId": "rs1801133",
     "rsid": "rs1801133",
-    "gene": "MTHFR",
-    "trait": "Folate Metabolism",
-    "continent": "Global",
-    "category": "Nutrition",
-    "significance": "Medium",
-    "alleles": [
-      "T"
-    ],
-    "description": "Affects the bodys ability to process folate, important for DNA repair and methylation.",
+    "gene": "MTHFR (C677T)",
+    "trait": "Methylation",
+    "category": "Methylation",
+    "description": "A critical enzyme marker that varies heavily by population. Used heavily in both functional health and genetic anthropology.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1801133"
   },
   {
     "markerId": "rs1801131",
     "rsid": "rs1801131",
-    "gene": "MTHFR",
-    "trait": "Folate/homocysteine levels",
-    "continent": "Global",
-    "category": "Nutrition",
-    "significance": "Low",
-    "alleles": [
-      "C",
-      "T"
-    ],
-    "description": "",
+    "gene": "MTHFR (A1298C)",
+    "trait": "Methylation",
+    "category": "Methylation",
+    "description": "A secondary MTHFR marker that, alongside C677T, provides a clear picture of folate metabolism efficiency.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1801131"
   },
   {
