@@ -2,6 +2,7 @@ import pharmacogenomics from '../data/pharmacogenomics.json';
 import clinicalHealth from '../data/clinical_health.json';
 import appearanceTraits from '../data/appearance_traits.json';
 import v5MarkersMaster from '../data/v5_markers_master.json';
+import autoimmuneHlaPanel from '../data/autoimmune_hla_panel.json';
 
 export interface HealthImpact {
   rsid: string;
@@ -184,6 +185,45 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
         evidence: marker.interpretation.evidence ? `Evidence: ${ensureString(marker.interpretation.evidence)}` : undefined
       });
       processedRsids.add(marker.rsid.toLowerCase());
+    }
+  }
+
+  // 5. Process HLA Autoimmune Markers
+  for (const [rsid, data] of Object.entries(autoimmuneHlaPanel)) {
+    if (processedRsids.has(rsid.toLowerCase())) continue;
+
+    const userGenotype = normalizedSnps[rsid.toLowerCase()];
+    if (!userGenotype) continue;
+
+    const riskAllele = (data as any).risk_allele;
+    const count = (userGenotype.match(new RegExp(riskAllele, 'g')) || []).length;
+
+    if (count > 0) {
+      const isProtective = (data as any).is_protective;
+      const oddsRatio = (data as any).odds_ratio;
+      
+      let impact: 'high' | 'moderate' | 'low' | 'neutral' = 'neutral';
+      if (!isProtective) {
+        if (oddsRatio > 5 || count === 2) impact = 'high';
+        else if (oddsRatio > 2) impact = 'moderate';
+        else impact = 'low';
+      } else {
+        impact = 'low';
+      }
+
+      impacts.push({
+        rsid: ensureString(rsid),
+        name: ensureString(`${(data as any).gene} (${(data as any).hla_type})`),
+        category: 'Autoimmune/HLA',
+        trait: ensureString((data as any).condition),
+        genotype: userGenotype,
+        interpretation: isProtective 
+          ? `Protective factor detected against ${(data as any).condition}.` 
+          : `Increased susceptibility detected (${userGenotype}). Odds Ratio: ${oddsRatio}.`,
+        impact,
+        evidence: `HLA Type: ${(data as any).hla_type}. Risk Allele: ${riskAllele}.`
+      });
+      processedRsids.add(rsid.toLowerCase());
     }
   }
 

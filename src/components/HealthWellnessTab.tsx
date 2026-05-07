@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { HealthImpact } from '../utils/healthMatching';
+import { calculateMedicationSafety, MedicationReport } from '../utils/pgxCalculator';
+import { dietLogic } from '../utils/dietaryCalculator';
+import { PGxCard } from './PGxCard';
 
 interface HealthWellnessTabProps {
   impacts: HealthImpact[];
@@ -11,10 +14,44 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
 
-  const categories = ['All', ...new Set((impacts || []).map(i => i.category))];
+  const medicationReports = useMemo(() => calculateMedicationSafety(userSnps || {}), [userSnps]);
+
+  const dietaryInsights = useMemo(() => {
+    const insights = [];
+    if (userSnps) {
+      if (userSnps[dietLogic.caffeine.rsid]) {
+        insights.push({
+          trait: 'Caffeine Metabolism',
+          ...dietLogic.caffeine.interpret(userSnps[dietLogic.caffeine.rsid])
+        });
+      }
+      if (userSnps[dietLogic.saturatedFat.rsid]) {
+        insights.push({
+          trait: 'Saturated Fat Sensitivity',
+          ...dietLogic.saturatedFat.interpret(userSnps[dietLogic.saturatedFat.rsid])
+        });
+      }
+    }
+    return insights;
+  }, [userSnps]);
+
+  const categories = useMemo(() => {
+    const cats = ['All', ...new Set((impacts || []).map(i => i.category))];
+    if (medicationReports.length > 0) {
+      cats.push('Pharmacogenomics');
+    }
+    if (dietaryInsights.length > 0) {
+      cats.push('Dietary');
+    }
+    return cats;
+  }, [impacts, medicationReports, dietaryInsights]);
+
   const filteredImpacts = (activeCategory === 'All' 
     ? impacts 
     : impacts.filter(i => i.category === activeCategory)) || [];
+
+  const showPgx = activeCategory === 'All' || activeCategory === 'Pharmacogenomics';
+  const showDiet = activeCategory === 'All' || activeCategory === 'Dietary';
 
   if (!acceptedDisclaimer) {
     return (
@@ -88,7 +125,75 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       </header>
 
 
-      {filteredImpacts.length === 0 ? (
+      {showPgx && medicationReports.length > 0 && (
+        <section className="space-y-6">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+            <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Pharmacogenomic Alerts</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {medicationReports.map((report, idx) => (
+              <motion.div
+                key={`${report.drug}-${idx}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <PGxCard 
+                  report={{
+                    severity: report.severity || 'Low',
+                    drug: report.drug,
+                    message: report.insight,
+                    gene: report.gene || 'Unknown'
+                  }} 
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="h-px bg-slate-800 my-8"></div>
+        </section>
+      )}
+
+      {showDiet && dietaryInsights.length > 0 && (
+        <section className="space-y-6">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+            <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Dietary Insights</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {dietaryInsights.map((insight, idx) => (
+              <motion.div
+                key={`${insight.trait}-${idx}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.05 }}
+                className="p-6 rounded-[2rem] bg-slate-900 border border-slate-800 hover:border-emerald-500/30 transition-all group"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Nutrition</span>
+                    <h4 className="text-xl font-black text-white">{insight.trait}</h4>
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
+                    🥗
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-[10px] font-black uppercase ring-1 ring-white/5">
+                    {insight.desc}
+                  </div>
+                  <p className="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">
+                    {insight.advice}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="h-px bg-slate-800 my-8"></div>
+        </section>
+      )}
+
+      {filteredImpacts.length === 0 && (!showPgx || medicationReports.length === 0) && (!showDiet || dietaryInsights.length === 0) ? (
         <div className="p-12 text-center bg-slate-900/50 border border-dashed border-slate-800 rounded-2xl text-slate-500">
           No matches found for the selected category in this dataset.
         </div>
