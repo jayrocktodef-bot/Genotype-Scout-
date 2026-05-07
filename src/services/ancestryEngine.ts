@@ -341,8 +341,10 @@ export function runAncestryInference(
 
         let continentSpecificWeight = 1.0;
         const sortedFreqs = [...markerFreqs].sort((a, b) => b - a);
-        if (sortedFreqs[0] > 0.75 && sortedFreqs[1] < 0.05) {
-          continentSpecificWeight = 5.0; 
+        if (sortedFreqs[0] > 0.90 && sortedFreqs[1] < 0.01) {
+          continentSpecificWeight = 10.0; // Very high resolution
+        } else if (sortedFreqs[0] > 0.75 && sortedFreqs[1] < 0.05) {
+          continentSpecificWeight = 5.0; // Medium resolution
         }
 
         let weight = (isPrimary ? 6.0 : 1.0) * (aim?.weight || 1.0) * significanceWeight * weightMultiplier * distributionWeight * continentSpecificWeight * weightFactor * markerInformativeValue;
@@ -505,7 +507,7 @@ export function runAncestryInference(
       chromosomeData[chrom] = {};
       continentsToScore.forEach(c => {
         const pct = (chromCounts[c] / chromTotal) * 100;
-        if (pct >= 1.0) chromosomeData[chrom][c] = pct;
+        if (pct >= 0.5) chromosomeData[chrom][c] = pct;
       });
     }
   }
@@ -528,7 +530,7 @@ export function runAncestryInference(
   if (totalSegments > 0) {
     continentsToScore.forEach(c => {
       const pct = (continentalCounts[c] / totalSegments) * 100;
-      if (pct >= 1.5) continentalScores[c] = pct;
+      if (pct >= 0.75) continentalScores[c] = pct;
     });
 
     const newTotal = Object.values(continentalScores).reduce((a, b) => a + b, 0);
