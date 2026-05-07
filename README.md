@@ -1,20 +1,81 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+<div align="center"><img width="1200" height="475" alt="Banner" src="https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
-# Run and deploy your AI Studio app
+# Genotype Scout
 
-This contains everything you need to run your app locally.
+**Genotype Scout** is a professional-grade, privacy-first genomic analysis suite created by Jequan Davis. Designed for precision, this platform allows users to process their raw DNA files locally, ensuring sensitive genetic data never leaves the user's browser or device unnecessarily. 
 
-View your app in AI Studio: https://ai.studio/apps/2a15b0e4-6007-4f77-8299-5e570bd52229
+[Access the hosted application here](https://ai.studio/apps/2a15b0e4-6007-4f77-8299-5e570bd52229)
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## 🔒 Commitment to Privacy & Security
+The core philosophy of Genotype Scout is binary-level privacy. By leveraging high-performance **Web Workers** for local processing, we ensure that raw genetic data is parsed, analyzed, and visualized securely within the client environment. No raw data is transmitted to third-party servers for standard analysis.
 
+## ⚙️ Technical Architecture
+Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing tasks without compromising the user experience.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+*   **Runtime:** React 18+ with Vite.
+*   **Infrastructure:** TypeScript for mission-critical type safety across all genetic calculations.
+*   **Performance:** Offloads heavy string parsing and matrix calculations to Web Workers to ensure a responsive UI during data heavy-lifting.
+*   **AI Integration:** Optional AI-powered features for trait analysis (requires API key).
+
+## 🧬 Forensic & High-Resolution Analysis
+We utilize specialized, industry-recognized forensic panels to maximize the accuracy of our reports.
+
+| Forensic Panel | Purpose |
+| :--- | :--- |
+| **10k GRAF** | High-resolution genomic ancestry refinement. |
+| **VISAGE** | Phenotypic and appearance-related marker identification. |
+| **EUROFORGEN NAME** | High-sensitivity forensic biogeographical ancestry markers. |
+
+---
+
+## 📋 Feature Breakdown
+
+### 🌍 High-Precision Ancestry
+Calculate complex admixture percentages using advanced Least Squares Methods. Compare your unique genotype against dense population frequency datasets to interpret your ancestral origins with high dimensionality.
+
+### 🏛️ Ancient DNA Oracle
+Utilize weighted Ancient DNA matching. Our engine applies specific weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing high-confidence matches to ancestral populations.
+
+### 🧠 Haplogroup Classification
+Hierarchical matching systems identify your Terminal SNP. Navigate complex paternal and maternal lineages with advanced classification logic, prioritizing the highest hierarchical rank for maximum specificity.
+
+### 🩺 Health & Wellness Reports
+Actionable insights based on your genotype:
+*   **ABO Blood Type:** AI-assisted inference.
+*   **Secretor Status:** FUT2 and matching markers analysis.
+*   **APOE Risk:** Genetic marker analysis for health-related metrics.
+
+---
+
+## 🚀 Installation
+
+Ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/genotype-scout.git
+   cd genotype-scout
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment:**
+   You will need a Gemini API Key to enable advanced AI-powered trait interpretation. Create a `.env` file in the root directory:
+   ```env
+   GEMINI_API_KEY=your_actual_key_here
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🏗️ License
+This project is proprietary software created by Jequan Davis. Unauthorized distribution or commercial use is prohibited without express written permission.
