@@ -1,9 +1,10 @@
-
 [
   {
     "rsid": "rs1426654",
     "region": "European",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 10,
     "frequencies": {
       "AFR": 0.01,
@@ -18,12 +19,15 @@
     "significance": "High",
     "population_anchor": "European",
     "description": "One of the strongest known AIMs. The 'A' allele is nearly 100% fixed in European populations, while the 'G' allele is nearly 100% fixed in Sub-Saharan African populations.",
-    "trait": "Ancestry"
+    "trait": "Ancestry",
+    "subRegion": "KEY_AIMS"
   },
   {
     "rsid": "rs3827760",
     "region": "East Asian",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 10,
     "frequencies": {
       "AFR": 0.01,
@@ -38,12 +42,15 @@
     "significance": "High",
     "population_anchor": "East Asian / Native American",
     "description": "The 'G' allele is highly specific to East Asian and Indigenous American populations. It influences hair thickness, sweat gland density, and dental morphology.",
-    "trait": "Ancestry"
+    "trait": "Ancestry",
+    "subRegion": "KEY_AIMS"
   },
   {
     "rsid": "rs16891982",
     "region": "European",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "weight": 10,
     "frequencies": {
       "AFR": 0.05,
@@ -58,12 +65,15 @@
     "significance": "High",
     "population_anchor": "European",
     "description": "The 'G' allele is predominantly found in European populations and is heavily involved in light skin pigmentation.",
-    "trait": "Ancestry"
+    "trait": "Ancestry",
+    "subRegion": "KEY_AIMS"
   },
   {
     "rsid": "rs7388531",
     "region": "East Asian",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 10,
     "frequencies": {
       "AFR": 0.01,
@@ -78,12 +88,15 @@
     "significance": "High",
     "population_anchor": "East Asian",
     "description": "The 'A' allele (associated with dry earwax and reduced body odor) is extremely common in East Asian populations and rare in African and European populations.",
-    "trait": "Ancestry"
+    "trait": "Ancestry",
+    "subRegion": "KEY_AIMS"
   },
   {
     "rsid": "rs671",
     "region": "East Asian",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "weight": 8,
     "frequencies": {
       "AFR": 0.001,
@@ -98,6 +111,7 @@
     "significance": "Medium",
     "population_anchor": "East Asian",
     "description": "The 'A' allele (associated with the 'Asian flush' reaction to alcohol) is highly concentrated in East Asian populations.",
-    "trait": "Ancestry"
+    "trait": "Ancestry",
+    "subRegion": "KEY_AIMS"
   }
 ]

@@ -5090,5 +5090,24 @@
     "gene": "CDC123/CAMK1D",
     "subPopulation": "Indigenous American",
     "subRegion": "Americas"
+  },
+  {
+    "rsid": "rs1800404_AMR",
+    "region": "Native American",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.55,
+      "EUR": 0.3,
+      "EAS": 0.7,
+      "SAS": 0.5,
+      "AMR": 0.72
+    },
+    "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "subRegion": "AMERICAS"
   }
 ]

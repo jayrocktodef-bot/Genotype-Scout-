@@ -4,16 +4,17 @@ import { HealthImpact } from '../utils/healthMatching';
 
 interface HealthWellnessTabProps {
   impacts: HealthImpact[];
+  userSnps: Record<string, string>;
 }
 
-export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts }) => {
+export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = [], userSnps }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
 
-  const categories = ['All', ...new Set(impacts.map(i => i.category))];
-  const filteredImpacts = activeCategory === 'All' 
+  const categories = ['All', ...new Set((impacts || []).map(i => i.category))];
+  const filteredImpacts = (activeCategory === 'All' 
     ? impacts 
-    : impacts.filter(i => i.category === activeCategory);
+    : impacts.filter(i => i.category === activeCategory)) || [];
 
   if (!acceptedDisclaimer) {
     return (
@@ -85,6 +86,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts })
           ))}
         </div>
       </header>
+
 
       {filteredImpacts.length === 0 ? (
         <div className="p-12 text-center bg-slate-900/50 border border-dashed border-slate-800 rounded-2xl text-slate-500">

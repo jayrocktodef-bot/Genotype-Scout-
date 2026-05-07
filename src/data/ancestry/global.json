@@ -90,42 +90,6 @@
     "subRegion": "Global"
   },
   {
-    "rsid": "rs1800404_GLO",
-    "region": "Global",
-    "alleles": [
-      "T"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.55,
-      "EUR": 0.3,
-      "EAS": 0.7,
-      "SAS": 0.5,
-      "AMR": 0.72
-    },
-    "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation.",
-    "subPopulation": "Global",
-    "subRegion": "Global"
-  },
-  {
-    "rsid": "rs1446585_GLO",
-    "region": "Global",
-    "alleles": [
-      "A"
-    ],
-    "weight": 3,
-    "frequencies": {
-      "AFR": 0.1,
-      "EUR": 0.8,
-      "EAS": 0.2,
-      "SAS": 0.4,
-      "MENA": 0.5
-    },
-    "description": "SLC24A4 Pigmentation Marker - Common on commercial ancestry chips.",
-    "subPopulation": "Global",
-    "subRegion": "Global"
-  },
-  {
     "rsid": "rs2675348_GLO",
     "region": "Global",
     "alleles": [

@@ -30,6 +30,7 @@ import { FamousMatches } from "./components/FamousMatches";
 import { HealthWellnessTab } from "./components/HealthWellnessTab";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
 import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
+
 import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
@@ -181,11 +182,13 @@ const ProfileSummary = memo(({
   datasets, 
   activeDatasetIndex, 
   oracleResults,
+  populationProximity,
   healthImpacts = []
 }: { 
   datasets: any[], 
   activeDatasetIndex: number, 
   oracleResults: any,
+  populationProximity: any[],
   healthImpacts?: any[]
 }) => {
   const dataset = datasets[activeDatasetIndex];
@@ -195,12 +198,8 @@ const ProfileSummary = memo(({
   const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
   const subPopulations = oracleResults?.primary?.subPopulations || {};
-  const topSubPops = Object.values(subPopulations).flat()
-    .sort((a: any, b: any) => b.percentage - a.percentage)
-    .slice(0, 3);
+  const topProximity = populationProximity.slice(0, 3);
   
-  const highImpactHealth = healthImpacts.filter(h => h.impact === 'high').slice(0, 3);
-
   const ancestryChartData = Object.entries(primaryAncestry)
     .map(([name, value]) => ({ name, value: Number(value) }))
     .sort((a, b) => b.value - a.value);
@@ -287,83 +286,54 @@ const ProfileSummary = memo(({
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-          {/* Pie Chart */}
+          {/* Radar Chart */}
           <div className="h-[260px] flex items-center justify-center bg-slate-50/80 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800/50 relative group">
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="text-center">
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Top Result</div>
-                <div className="text-lg font-black text-slate-800 dark:text-slate-200">{ancestryChartData[0]?.name || '---'}</div>
-              </div>
-            </div>
             <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={ancestryChartData}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={75}
-                  outerRadius={95}
-                  paddingAngle={4}
+              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={ancestryChartData}>
+                <PolarGrid stroke="#e2e8f0" strokeOpacity={0.5} />
+                <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 700 }} />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                <Radar
+                  name="Ancestry"
                   dataKey="value"
-                  stroke="none"
-                >
-                  {ancestryChartData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name]?.color || '#4599FF'} />
-                  ))}
-                </Pie>
+                  stroke="#4599FF"
+                  fill="#4599FF"
+                  fillOpacity={0.3}
+                />
                 <Tooltip 
                   contentStyle={{ backgroundColor: '#ffffff', border: 'none', borderRadius: '16px', color: '#0f172a', fontSize: '12px', fontWeight: 'bold', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
                   itemStyle={{ color: '#0f172a' }}
                 />
-              </PieChart>
+              </RadarChart>
             </ResponsiveContainer>
           </div>
           
           {/* Top Affinities */}
-            <div className="flex flex-col justify-center space-y-5">
+          <div className="flex flex-col justify-center space-y-5">
             <div className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
               <div className="w-4 h-px bg-slate-200 dark:bg-slate-800"></div>
               Top Regional Affinities
             </div>
-            {topSubPops.length > 0 ? topSubPops.map((pop: any, idx) => (
-              <div key={pop.name} className="space-y-2">
+            {topProximity.length > 0 ? topProximity.map((pop: any, idx) => (
+              <div key={pop.code} className="space-y-2">
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
                     <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-tight">Pop. {idx + 1}</span>
                     <span className="text-sm font-black text-slate-900 dark:text-slate-100">{pop.name}</span>
                   </div>
-                  <span className="text-sm font-mono font-black text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-lg">{pop.percentage.toFixed(1)}%</span>
+                  <span className="text-sm font-mono font-black text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-lg">{pop.similarity.toFixed(1)}%</span>
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
-                    animate={{ width: `${pop.percentage}%` }}
+                    animate={{ width: `${pop.similarity}%` }}
                     transition={{ duration: 1.2, ease: "circOut", delay: 0.3 + idx * 0.1 }}
                     className="bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full"
                   />
                 </div>
               </div>
             )) : <div className="text-slate-500 italic text-xs text-center py-8">Insufficient deep-ancestry markers detected.</div>}
-
-            {highImpactHealth.length > 0 && (
-              <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
-                <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-                  <div className="w-4 h-px bg-red-200 dark:bg-red-900/50"></div>
-                  Health Highlights
-                </div>
-                <div className="space-y-3">
-                  {highImpactHealth.map((h, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-2xl bg-red-50/50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
-                      <div className="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600">🧬</div>
-                      <div>
-                        <div className="text-[10px] font-black text-slate-900 dark:text-slate-100 uppercase tracking-tighter">{h.trait}</div>
-                        <div className="text-[9px] text-red-600 dark:text-red-400 font-bold uppercase">{h.interpretation}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            
           </div>
         </div>
       </motion.div>
@@ -499,33 +469,6 @@ const ProfileSummary = memo(({
         </div>
       </motion.div>
 
-      {/* Genomic Integrity Panel */}
-      <motion.div 
-        variants={item}
-        className="lg:col-span-12 p-6 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-wrap items-center justify-between gap-6"
-      >
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-2xl shadow-inner">💎</div>
-          <div>
-            <h4 className="text-sm font-black text-slate-900 dark:text-slate-100 tracking-tight">Genomic Integrity Report</h4>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">High-Precision Marker Overlap</p>
-          </div>
-        </div>
-        
-        <div className="flex flex-wrap gap-4">
-          {markerSummary.map((p, i) => (
-            <div key={i} className="px-4 py-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex flex-col">
-              <span className="text-[9px] font-black text-slate-400 uppercase tracking-tighter">{p.name}</span>
-              <span className="text-xs font-black text-slate-900 dark:text-slate-100">{p.detected}/{p.count} <span className="text-[10px] text-emerald-500 ml-1">Matched</span></span>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-emerald-500 rounded-xl text-white dark:text-emerald-950 text-[10px] font-black uppercase tracking-widest shadow-lg shadow-emerald-500/20">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          Oracle Verified
-        </div>
-      </motion.div>
     </motion.div>
   );
 });
@@ -2413,7 +2356,6 @@ export default function App() {
                 { id: 'y-dna', label: 'Y-DNA', icon: '♂️', color: 'blue' },
                 { id: 'mt-dna', label: 'mtDNA', icon: '♀️', color: 'rose' },
                 { id: 'markers', label: 'Panels', icon: '📋', color: 'indigo' },
-                { id: 'blood', label: 'Blood', icon: '🩸', color: 'red' },
                 { id: 'debug', label: 'System', icon: '🛠️', color: 'slate' }
               ].map(tab => (
                 <button 
@@ -2508,6 +2450,7 @@ export default function App() {
                   datasets={datasets} 
                   activeDatasetIndex={activeDatasetIndex} 
                   oracleResults={oracleResults} 
+                  populationProximity={populationProximity}
                   healthImpacts={healthWellnessMatches}
                 />
               )}
@@ -2562,11 +2505,7 @@ export default function App() {
               )}
 
               {activeTab === 'wellness' && (
-                <HealthWellnessTab impacts={healthWellnessMatches} />
-              )}
-
-              {activeTab === 'blood' && (
-                <BloodTypeView dataset={datasets[activeDatasetIndex]} />
+                <HealthWellnessTab impacts={healthWellnessMatches} userSnps={snpMaps.current[activeDatasetIndex]} />
               )}
 
               {activeTab === 'y-dna' && (
@@ -2595,22 +2534,25 @@ export default function App() {
               )}
 
               {activeTab === 'debug' && (
-                <div className="p-8 rounded-[2rem] bg-slate-900 border border-slate-800 text-slate-400 font-mono text-xs overflow-auto max-h-[800px] shadow-2xl">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Active Kernel State</h3>
+                <div className="space-y-8">
+                  <GenomicIntegrityReport />
+                  <div className="p-8 rounded-[2rem] bg-slate-900 border border-slate-800 text-slate-400 font-mono text-xs overflow-auto max-h-[800px] shadow-2xl">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                      <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Active Kernel State</h3>
+                    </div>
+                    <pre className="p-4 bg-black/40 rounded-xl overflow-auto custom-scrollbar whitespace-pre-wrap">
+                      {JSON.stringify({ 
+                        version: VERSION,
+                        activeTab, 
+                        statusFilter, 
+                        activeDatasetIndex, 
+                        chip: datasets[activeDatasetIndex].chip,
+                        snps: datasets[activeDatasetIndex].snpCount,
+                        datasetMeta: datasets.map(d => ({ name: d.name, count: d.results.length }))
+                      }, null, 2)}
+                    </pre>
                   </div>
-                  <pre className="p-4 bg-black/40 rounded-xl overflow-auto custom-scrollbar whitespace-pre-wrap">
-                    {JSON.stringify({ 
-                      version: VERSION,
-                      activeTab, 
-                      statusFilter, 
-                      activeDatasetIndex, 
-                      chip: datasets[activeDatasetIndex].chip,
-                      snps: datasets[activeDatasetIndex].snpCount,
-                      datasetMeta: datasets.map(d => ({ name: d.name, count: d.results.length }))
-                    }, null, 2)}
-                  </pre>
                 </div>
               )}
             </motion.div>

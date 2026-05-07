@@ -474,7 +474,7 @@
     },
     "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana).",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456269_AFR",
@@ -1181,7 +1181,7 @@
     },
     "description": "Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast.",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10793168_AFR",
@@ -3541,7 +3541,7 @@
     },
     "description": "Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana).",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456220_AFR",
@@ -3745,7 +3745,7 @@
     },
     "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana.",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456230_AFR",
@@ -11930,7 +11930,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456221",
@@ -12589,7 +12589,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456236",
@@ -12611,7 +12611,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456205_F",
@@ -12743,7 +12743,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456251",
@@ -14857,7 +14857,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456328",
@@ -14923,7 +14923,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456338",
@@ -14945,7 +14945,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456339",
@@ -15715,7 +15715,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456371",
@@ -15737,7 +15737,7 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
+    "subRegion": "AFRICA"
   },
   {
     "rsid": "rs10456388",

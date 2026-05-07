@@ -8,6 +8,9 @@ import oceania from './oceania.json' with { type: 'json' };
 import centralAsia from './central-asia.json' with { type: 'json' };
 import globalMarkers from './global.json' with { type: 'json' };
 import keyAims from './key_aims.json' with { type: 'json' };
+import forensicAims from '../forensic_aims_master.json' with { type: 'json' };
+import deepResolutionAims from '../deep_resolution_aims.json' with { type: 'json' };
+import { formatProfessionalMarkers } from '../professionalPanels';
 
 export const ANCESTRY_MARKERS = [
   ...africa,
@@ -19,5 +22,7 @@ export const ANCESTRY_MARKERS = [
   ...oceania,
   ...centralAsia,
   ...globalMarkers,
-  ...keyAims
+  ...keyAims,
+  ...formatProfessionalMarkers(forensicAims),
+  ...formatProfessionalMarkers(deepResolutionAims)
 ];

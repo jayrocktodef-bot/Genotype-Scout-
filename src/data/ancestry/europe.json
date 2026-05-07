@@ -11889,5 +11889,24 @@
     "gene": "CLN5",
     "subPopulation": "Northern European",
     "subRegion": "Northern Europe"
+  },
+  {
+    "rsid": "rs1446585_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.8,
+      "EAS": 0.2,
+      "SAS": 0.4,
+      "MENA": 0.5
+    },
+    "description": "SLC24A4 Pigmentation Marker - Common on commercial ancestry chips.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "subRegion": "EUROPE"
   }
 ]

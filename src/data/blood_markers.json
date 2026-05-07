@@ -1,0 +1,45 @@
+[
+  {
+    "rsid": "rs8176719",
+    "gene": "ABO",
+    "trait": "ABO Type O Marker",
+    "alleles": {
+      "II": "Non-O (Possible A or B)",
+      "DI": "Non-O (Carrying O recessive)",
+      "DD": "Type O"
+    },
+    "description": "The 261G deletion. 'D' represents the deletion (O allele), 'I' represents the insertion (A/B allele)."
+  },
+  {
+    "rsid": "rs8176746",
+    "gene": "ABO",
+    "trait": "A vs B Selection",
+    "alleles": {
+      "GG": "Likely Type A",
+      "GA": "Likely Type AB",
+      "AA": "Likely Type B"
+    }
+  },
+  {
+    "rsid": "rs8176747",
+    "gene": "ABO",
+    "trait": "B-Allele Marker",
+    "alleles": {
+      "GG": "No B-Antigen",
+      "GC": "Carrier of B-Antigen",
+      "CC": "B-Antigen Present"
+    },
+    "description": "The 803G>C mutation. The 'C' allele is specific to the B blood group."
+  },
+  {
+    "rsid": "rs590787",
+    "gene": "RHD",
+    "trait": "Rh Factor (Positive/Negative)",
+    "alleles": {
+      "CC": "Rh Negative (-)",
+      "CT": "Rh Positive (+)",
+      "TT": "Rh Positive (+)"
+    },
+    "description": "A proxy marker for the RHD gene deletion. Rh-negative status is recessive."
+  }
+]
