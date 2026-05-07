@@ -4,7 +4,7 @@
 
 **Genotype Scout** is a professional-grade, privacy-first genomic analysis suite created by Jequan Davis. Designed for precision, this platform allows users to process their raw DNA files locally, ensuring sensitive genetic data never leaves the user's browser or device unnecessarily. 
 
-[Access the hosted application here](https://ai.studio/apps/2a15b0e4-6007-4f77-8299-5e570bd52229)
+[Access the hosted application here](https://witg-genotype-scout.vercel.app/)
 
 ---
 
