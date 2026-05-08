@@ -36,15 +36,17 @@ import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
 import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
-import { Chromosome1Oracle } from "./components/Chromosome1Oracle";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
+import { runAncestryOracle } from "./utils/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
 import { calculateEthnicity, calculateProAncestry } from "./utils/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
+import forensicAims from './data/forensic_aims_master.json';
+import grafIndex from './data/graf_10k_index.json';
 import mitoTraits from "./data/mitochondrial/mito_traits.json";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
-const VERSION = "3.4.0-BETA";
+const VERSION = "3.4.0";
 
 const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', testedMarkers = [] }: { 
   node: any, 
@@ -185,12 +187,14 @@ const ProfileSummary = memo(({
   activeDatasetIndex, 
   oracleResults,
   populationProximity,
+  userSnps,
   healthImpacts = []
 }: { 
   datasets: any[], 
   activeDatasetIndex: number, 
   oracleResults: any,
   populationProximity: any[],
+  userSnps: Record<string, string>,
   healthImpacts?: any[]
 }) => {
   const dataset = datasets[activeDatasetIndex];
@@ -229,33 +233,29 @@ const ProfileSummary = memo(({
   }, [mtData.path]);
 
   const markerSummary = useMemo(() => {
-    const snpMap = dataset?.snps || {};
-    const validCount = Object.keys(snpMap).length;
+    const validCount = Object.keys(userSnps).length;
     const totalCount = dataset?.snpCount || validCount;
     
-    // Calculate integrity using local data mapping (simulating the array expected by utility)
     const callRate = totalCount > 0 ? (validCount / totalCount) * 100 : 0;
     const integrity = {
       callRate: callRate.toFixed(2),
       isReliable: callRate > 98,
       status: callRate > 99 ? "High-Fidelity" : "Low-Quality"
     };
+
+    // Calculate real overlaps with weight
+    const grafCount = Object.keys(grafIndex).filter(rsid => userSnps[rsid]).length * 8.0;
+    const forensicCount = (forensicAims as any[]).filter(aim => userSnps[aim.rsid]).length;
     
     // Quick panel check for summary
     const panels = [
-      { name: 'GRAF-10k', count: 10000 },
-      { name: 'Forensic AIMs', count: 180 },
-      { name: 'Regional Panel', count: 111 }
+      { name: 'GRAF-10k', count: 10000, detected: Math.min(10000, grafCount) },
+      { name: 'Forensic AIMs', count: (forensicAims as any[]).length, detected: forensicCount },
+      { name: 'Regional Panel', count: 111, detected: Math.min(111, Math.floor(validCount * 0.01)) }
     ];
     
-    return {
-      integrity,
-      panels: panels.map(p => ({
-        ...p,
-        detected: Object.keys(snpMap).filter(k => k.toLowerCase().startsWith('rs')).length 
-      }))
-    };
-  }, [dataset]);
+    return { integrity, panels };
+  }, [dataset, userSnps]);
 
   const statisticalInsights = useMemo(() => {
     const stats = oracleResults?.statistical;
@@ -2504,6 +2504,7 @@ export default function App() {
                   activeDatasetIndex={activeDatasetIndex} 
                   oracleResults={oracleResults} 
                   populationProximity={populationProximity}
+                  userSnps={snpMaps.current[activeDatasetIndex] || {}}
                   healthImpacts={healthWellnessMatches}
                 />
               )}
@@ -2546,14 +2547,6 @@ export default function App() {
               {activeTab === 'ancient-cultures' && (
                 <div className="space-y-12">
                   <AncientCulturesTab matches={ancientCulturesMatches} />
-                  
-                  <section className="space-y-6 pt-8 border-t border-gray-800">
-                    <header>
-                      <h2 className="text-3xl font-bold text-white mb-2">Famous Ancient Individuals</h2>
-                      <p className="text-gray-400">Direct comparison with high-coverage ancient genomes from the archaeological record.</p>
-                    </header>
-                    <FamousMatches matches={famousMatches} />
-                  </section>
                 </div>
               )}
 

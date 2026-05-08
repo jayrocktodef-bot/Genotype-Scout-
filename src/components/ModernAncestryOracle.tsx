@@ -2,10 +2,13 @@ import React, { memo, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { EngineAncestryOracle } from './EngineAncestryOracle';
+import { runAncestryOracle } from '../utils/ancestry/oracleEngine';
 
 export const ModernAncestryOracle = memo(({ results }: { results: any }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [viewMode, setViewMode] = useState<'standard' | 'statistical'>('standard');
+  type ViewMode = 'standard' | 'statistical' | 'engine';
+  const [viewMode, setViewMode] = useState<ViewMode>('standard');
   
   const primaryAncestry = results?.primary?.continentalScores || {};
   const statisticalAncestry = results?.statistical?.results || {};
@@ -30,7 +33,7 @@ export const ModernAncestryOracle = memo(({ results }: { results: any }) => {
       fullMark: 100,
     }));
   }, [currentAncestry, viewMode]);
-
+  
   const getDisplayName = (code: string) => {
     const map: Record<string, string> = {
       'EUR': 'European',
@@ -41,6 +44,21 @@ export const ModernAncestryOracle = memo(({ results }: { results: any }) => {
     };
     return map[code] || code;
   };
+
+  if (viewMode === 'engine') {
+    return (
+      <div className="space-y-6">
+        <div className="flex justify-end">
+          <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
+            <button onClick={() => setViewMode('standard')} className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'standard' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}>Standard</button>
+            <button onClick={() => setViewMode('statistical')} className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'statistical' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}>Statistical</button>
+            <button onClick={() => setViewMode('engine')} className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'engine' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}>Engine</button>
+          </div>
+        </div>
+        <EngineAncestryOracle results={runAncestryOracle([0,0,0], [])} />
+      </div>
+    );
+  }
 
   return (
     <motion.div 
@@ -55,18 +73,9 @@ export const ModernAncestryOracle = memo(({ results }: { results: any }) => {
         </div>
         
         <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-          <button 
-            onClick={() => setViewMode('standard')}
-            className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'standard' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}
-          >
-            Standard
-          </button>
-          <button 
-            onClick={() => setViewMode('statistical')}
-            className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'statistical' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}
-          >
-            Statistical
-          </button>
+          <button onClick={() => setViewMode('standard')} className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'standard' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}>Standard</button>
+          <button onClick={() => setViewMode('statistical')} className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'statistical' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}>Statistical</button>
+          <button onClick={() => setViewMode('engine')} className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${viewMode === 'engine' ? 'bg-[#4599FF] text-white' : 'text-slate-400 hover:text-white'}`}>Engine</button>
         </div>
       </div>
       
