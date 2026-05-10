@@ -13,13 +13,13 @@ export function calculateWeightedAffinity(
   userSnps: Record<string, string>,
   cultureData: any
 ) {
+  let weightedDistance = 0;
   let totalWeight = 0;
-  let userScore = 0;
 
   const markers = cultureData.genetic_profile?.key_markers;
   const weights = cultureData.genetic_profile?.marker_weights || {};
 
-  if (!markers) return 0;
+  if (!markers) return { score: 0, distance: 999 };
 
   for (const [rsid, expected] of Object.entries(markers)) {
     const userGenotype = userSnps[rsid.toLowerCase()];
@@ -28,18 +28,37 @@ export function calculateWeightedAffinity(
     const weight = (weights as any)[rsid] || 1;
     totalWeight += weight;
 
-    const isMatch = Array.isArray(expected) 
-      ? (expected as string[]).includes(userGenotype) 
-      : expected === userGenotype;
-
-    if (isMatch) {
-      userScore += weight;
+    // Use Allelic Distance (IBS)
+    let distance = 2; // Default to mismatch
+    
+    const u = (userGenotype as string).split('');
+    const e = Array.isArray(expected) ? (expected[0] as string) : (expected as string);
+    const esp = e.split('');
+    
+    if (userGenotype === e) {
+      distance = 0;
     } else {
-      userScore -= (weight * 0.5); 
+      // Check shared alleles
+      const uArr = [...u];
+      const eArr = [...esp];
+      let shared = 0;
+      uArr.forEach(a => {
+        const idx = eArr.indexOf(a);
+        if (idx !== -1) {
+          shared++;
+          eArr.splice(idx, 1);
+        }
+      });
+      distance = 2 - shared;
     }
+
+    weightedDistance += distance * weight;
   }
 
-  return totalWeight > 0 ? Math.max(0, Math.round((userScore / totalWeight) * 100)) : 0;
+  const maxDist = totalWeight * 2;
+  const score = maxDist > 0 ? Math.max(0, 100 * (1 - (weightedDistance / maxDist))) : 0;
+
+  return { score, distance: weightedDistance };
 }
 
 export function calculateAncientAffinity(userSnps: Record<string, string>): CultureMatch[] {
@@ -48,20 +67,22 @@ export function calculateAncientAffinity(userSnps: Record<string, string>): Cult
   for (const [id, data] of Object.entries(ancientCultures)) {
     if (id === "_metadata") continue;
 
-    const score = calculateWeightedAffinity(userSnps, data);
+    const { score, distance } = calculateWeightedAffinity(userSnps, data);
     
     // Only show cultures where the user has a significant affinity
-    if (score >= 40) {
+    if (score >= 35) {
       matches.push({
         id,
         name: (data as any).name,
-        matchScore: score,
+        matchScore: Math.round(score),
         description: (data as any).description,
         icon: (data as any).icon,
-        color: (data as any).color
-      });
+        color: (data as any).color,
+        distance: distance
+      } as any);
     }
   }
 
-  return matches.sort((a, b) => b.matchScore - a.matchScore);
+  // Sort by genetic distance (closest to furthest)
+  return matches.sort((a: any, b: any) => a.distance - b.distance);
 }

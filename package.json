@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
+    "sync-pgx": "tsx src/scripts/cannibalizeOpenPGx.ts",
+    "sync-graf": "tsx src/scripts/fetchGrafWeights.ts",
+    "sync-all": "tsx src/scripts/sync-scout.ts && npm run build",
     "test": "vitest run"
   },
   "dependencies": {

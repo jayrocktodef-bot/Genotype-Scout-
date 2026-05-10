@@ -15,13 +15,25 @@ export interface HealthImpact {
   drugs?: string[];
   evidence?: string;
   actionable?: any;
+  masked?: boolean;
 }
+
+const SENSITIVE_TRAITS = [
+    'Alzheimer',
+    'Breast Cancer',
+    'BRCA1',
+    'BRCA2',
+    'APOE',
+    'Huntington',
+    'Parkinson',
+    'Lynch Syndrome',
+    'Macular Degeneration'
+];
 
 function ensureString(val: any): string {
   if (val === null || val === undefined) return '';
   if (typeof val === 'string') return val;
   if (typeof val === 'object') {
-    // If it's a genotype-indexed object, we shouldn't be here, but if we are:
     return JSON.stringify(val);
   }
   return String(val);
@@ -47,7 +59,6 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
     if (targetAllele) {
       const count = (userGenotype.match(new RegExp(targetAllele, 'g')) || []).length;
       if (count > 0) {
-        // Resolve interpretation: could be string or object mapping genotypes
         let interpretation = marker.clinical_impact || marker.effect;
         if (typeof interpretation === 'object' && interpretation !== null) {
           interpretation = (interpretation as any)[userGenotype] || (interpretation as any)[userGenotype.split('').reverse().join('')] || Object.values(interpretation)[0];
@@ -57,17 +68,14 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
           interpretation = count === 2 ? `High impact (${targetAllele}${targetAllele})` : `Moderate impact (${targetAllele})`;
         }
 
-        // Resolve actionable: could be string, array, or object mapping genotypes
         let actionable = marker.actionable;
         if (actionable && typeof actionable === 'object' && !Array.isArray(actionable.recommendations)) {
-          // Check if actionable is mapped by genotype
           const genotypeData = actionable[userGenotype];
           if (genotypeData) {
             let recommendations: string[] = [];
             if (Array.isArray(genotypeData)) {
               recommendations = genotypeData.map(r => typeof r === 'object' ? JSON.stringify(r) : String(r));
             } else if (typeof genotypeData === 'object') {
-              // Handle nutrient objects like {"iron": "CAUTION"}
               recommendations = Object.entries(genotypeData).map(([key, val]) => {
                 const label = key.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
                 return `${label}: ${val}`;
@@ -81,17 +89,24 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
           }
         }
 
+        const trait = ensureString(marker.condition || marker.gene || marker.categories?.[0] || 'Unknown');
+        const name = ensureString(marker.name || marker.clinical_impact_short || `${marker.gene} ${marker.variant}`);
+        const impact = marker.clinical_impact_level?.toLowerCase() || marker.priority?.toLowerCase() || (count === 2 ? 'high' : 'moderate') as any;
+
+        const isSensitive = SENSITIVE_TRAITS.some(t => trait.includes(t) || name.includes(t));
+
         impacts.push({
           rsid: ensureString(marker.rsid),
-          name: ensureString(marker.name || marker.clinical_impact_short || `${marker.gene} ${marker.variant}`),
+          name,
           category: ensureString(marker.categories?.[0]?.charAt(0).toUpperCase() + marker.categories?.[0]?.slice(1) || 'Health'),
-          trait: ensureString(marker.condition || marker.gene || marker.categories?.[0] || 'Unknown'),
+          trait,
           genotype: userGenotype,
           interpretation: ensureString(interpretation),
-          impact: marker.clinical_impact_level?.toLowerCase() || marker.priority?.toLowerCase() || (count === 2 ? 'high' : 'moderate') as any,
+          impact,
           drugs: marker.drugs_affected || marker.drugs,
           evidence: ensureString(marker.evidence),
-          actionable
+          actionable,
+          masked: isSensitive && (impact === 'high' || impact === 'moderate')
         });
         processedRsids.add(marker.rsid.toLowerCase());
       }

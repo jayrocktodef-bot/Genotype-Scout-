@@ -1,0 +1,99 @@
+[
+  {
+    "id": "Mota-Ethiopia",
+    "name": "Mota Man",
+    "region": "Ethiopia (Gamo Highlands)",
+    "period": "Stone Age (4,500 BP)",
+    "description": "A hunter-gatherer from the Mota Cave. His genome predates the massive migration of Eurasian farmers into East Africa.",
+    "ancestry_group": "East African / Nilotic",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG"
+    },
+    "culture": "Stone Age Hunter-Gatherer",
+    "age_bp": 4500
+  },
+  {
+    "id": "Shum-Laka-Cameroon",
+    "name": "Shum Laka Boy",
+    "region": "Cameroon (Grassfields)",
+    "period": "Holocene (8,000 BP)",
+    "description": "Key for understanding the origins of Bantu-speaking populations and West African hunter-gatherers.",
+    "ancestry_group": "West/Central African",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs2814778"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs2814778": "CC"
+    },
+    "culture": "Late Stone Age",
+    "age_bp": 8000
+  },
+  {
+    "id": "I8088-Catoctin",
+    "name": "Catoctin Ancestor (I8088)",
+    "region": "Maryland (Enslaved Ironworker)",
+    "period": "Colonial/Antebellum (1774–1850)",
+    "description": "Part of an enslaved community at a Maryland iron furnace. Shows mixed Wolof, Kongo, and British Isles ancestry. A direct link to African American ancestral history.",
+    "ancestry_group": "Upper South Colonial",
+    "diagnostic_markers": ["rs1426654", "rs12913832", "rs16891982"],
+    "genotypes": {
+      "rs1426654": "AG",
+      "rs12913832": "AG",
+      "rs16891982": "CG"
+    },
+    "culture": "African Diaspora",
+    "age_bp": 200
+  },
+  {
+    "id": "GHK-Sudan",
+    "name": "Kulubnarti Nubian",
+    "region": "Sudan (Nile Valley)",
+    "period": "Christian Era (1,500 BP)",
+    "description": "Nubian samples that show the complex mix of Nilotic and Near Eastern lineages in the Nile Valley.",
+    "ancestry_group": "Nilo-Saharan / Nilotic",
+    "diagnostic_markers": ["rs1426654", "rs16139", "rs1065852"],
+    "genotypes": {
+      "rs1426654": "AG",
+      "rs16139": "GG",
+      "rs1065852": "AA"
+    },
+    "culture": "Nubian",
+    "age_bp": 1500
+  },
+  {
+    "id": "Taforalt-Morocco",
+    "name": "Taforalt Individual",
+    "region": "Morocco (Rif)",
+    "period": "Epipaleolithic (15,000 BP)",
+    "description": "The oldest Iberomaurusian genome. Shows a link between Near Eastern and Sub-Saharan African lineages.",
+    "ancestry_group": "North African / Iberomaurusian",
+    "diagnostic_markers": ["rs1426654", "rs12913832", "rs16891982"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs12913832": "AA",
+      "rs16891982": "CC"
+    },
+    "culture": "Iberomaurusian",
+    "age_bp": 15000
+  },
+  {
+    "id": "Nama-San-Deep",
+    "name": "Deep San Ancestor",
+    "region": "Southern Africa (Namibia/Botswana)",
+    "period": "Late Pleistocene (10,200 BP)",
+    "description": "Represents the world's oldest genetic lineages. This individual shows continuity with modern Nama and San groups, with signatures that have remained stable for over 10,000 years.",
+    "ancestry_group": "Khoe-San / Southern Hunter-Gatherer",
+    "diagnostic_markers": ["rs11568828", "rs13097409", "rs885479"],
+    "genotypes": {
+      "rs11568828": "AA",
+      "rs13097409": "GG",
+      "rs885479": "AA"
+    },
+    "culture": "Wilton / Oakhurst",
+    "age_bp": 10200
+  }
+]

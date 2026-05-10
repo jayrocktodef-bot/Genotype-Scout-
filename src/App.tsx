@@ -39,7 +39,8 @@ import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
 import { runAncestryOracle } from "./utils/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
-import { calculateEthnicity, calculateProAncestry } from "./utils/admixtureCalculator";
+import { calculateHistoricalClusterMatches } from "./utils/ancestry/historicalClusterEngine";
+import { calculateProAncestry } from "./utils/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
 import forensicAims from './data/forensic_aims_master.json';
 import grafIndex from './data/graf_10k_index.json';
@@ -1849,7 +1850,22 @@ export default function App() {
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+  const [grafResults, setGrafResults] = useState<any[]>([]);
 
+  // Calculate GRAF Engine results when dataset changes
+  useEffect(() => {
+    const calculateGraf = async () => {
+      const snpMap = snpMaps.current[activeDatasetIndex];
+      if (snpMap) {
+        const { calculateRegionalScores } = await import("./utils/ancestry/grafAncEngine");
+        const scores = await calculateRegionalScores(snpMap);
+        setGrafResults(scores);
+      } else {
+        setGrafResults([]);
+      }
+    };
+    calculateGraf();
+  }, [activeDatasetIndex, datasets]);
   const expandAll = (categories: string[]) => {
     setExpandedCategories(new Set(categories));
   };
@@ -2082,9 +2098,10 @@ export default function App() {
       primary: processOracle(oracle.primary),
       secondary: processOracle(oracle.secondary),
       commercial: processOracle(oracle.commercial),
-      statistical: statisticalResults
+      wholePanel: statisticalResults,
+      engine: grafResults
     };
-  }, [datasets, activeDatasetIndex]);
+  }, [datasets, activeDatasetIndex, grafResults]);
 
   const ancientAdmixture = useMemo(() => {
     const snpMap = snpMaps.current[activeDatasetIndex];
@@ -2126,6 +2143,16 @@ export default function App() {
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculateMarkerBenchmarks(snpMap);
+  }, [datasets, activeDatasetIndex]);
+
+  const historicalClusterMatches = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (!dataset) return [];
+    
+    const mtHaplo = dataset.predictedMtDNA?.predicted;
+    const yHaplo = dataset.predictedYDNA?.predicted?.name;
+    
+    return calculateHistoricalClusterMatches(mtHaplo, yHaplo);
   }, [datasets, activeDatasetIndex]);
 
   const userMatchedMitoTraits = useMemo(() => {
@@ -2180,7 +2207,7 @@ export default function App() {
               <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] whitespace-nowrap">A Written In The Genome Tool</span>
             </h1>
             <div className="flex flex-wrap justify-center sm:justify-start gap-3 font-bold text-[10px] uppercase tracking-widest">
-              <a href="https://jequandavis.wpcomstaging.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
                 <span className="w-6 h-px bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors"></span>
                 Research
               </a>
@@ -2524,7 +2551,9 @@ export default function App() {
               )}
 
               {activeTab === 'oracle' && (
-                <ModernAncestryOracle results={oracleResults} />
+                <ModernAncestryOracle 
+                  results={oracleResults} 
+                />
               )}
 
               {activeTab === 'ancient' && (

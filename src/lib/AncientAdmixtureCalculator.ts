@@ -1,5 +1,6 @@
 import { getAncientMarkers } from '../data/GenomicDataService';
 import ancientSamples from '../data/reference/ancient_samples.json';
+import ancientMatches from '../data/ancientMatches.json';
 
 export interface AncientSampleMatch {
   popCode: string;
@@ -61,54 +62,90 @@ export const calculateAncientAdmixture = (userGenotypes: Record<string, string>)
 };
 
 export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
-  const samples = Object.values(ancientSamples).filter(s => (s as any).id);
+  const samples = [
+    ...Object.values(ancientSamples).filter(s => (s as any).id),
+    ...ancientMatches
+  ];
   
-  // Weights for importance of specific markers
-  const markerImportance: Record<string, number> = {
-    "rs1426654": 5.0, // SLC24A5
-    "rs16891982": 4.0, // SLC45A2
-    "rs12913832": 4.0, // HERC2
-    "rs1042602": 3.0,
-    "rs1800414": 3.0
-  };
+    // Weights for importance of specific markers (Deep Ancestry Diagnostic Weights)
+    const markerImportance: Record<string, number> = {
+      "rs1426654": 20.0, // SLC24A5 (Critically diagnostic for West Eurasian vs African)
+      "rs16891982": 18.0, // SLC45A2 
+      "rs12913832": 15.0, // HERC2
+      "rs3827760": 20.0,  // EDAR (East Asian specific)
+      "rs16139": 18.0,    // African diagnostic
+      "rs2814778": 20.0,  // Duffy Null (Sub-Saharan African fixated)
+      "rs1042531": 10.0,
+      "rs1042602": 10.0,
+      "rs1800414": 12.0,  // OCA2
+      "rs4988235": 10.0,  // MCM6 (Lactase)
+      "rs334": 25.0       // HBB (Extreme forensic weight for Diaspora migration)
+    };
 
   const results = samples.map((sample: any) => {
-    let weightedMatch = 0;
-    let totalWeight = 0;
+    let totalDistance = 0;
+    let markersCompared = 0;
+    let weightedDistance = 0;
+    let maxPossibleWeightedDistance = 0;
     
-    Object.entries(sample.snps).forEach(([rsid, sampleGenotype]) => {
+    const sampleSnps = sample.snps || sample.genotypes || {};
+    
+    Object.entries(sampleSnps).forEach(([rsid, sampleGenotype]) => {
       const userGenotype = userGenotypes[rsid];
-      if (userGenotype) {
+      if (userGenotype && sampleGenotype) {
+        markersCompared++;
         const weight = markerImportance[rsid] || 1.0;
-        totalWeight += weight;
         
-        // Simple distance instead of binary match
-        // 0 match = 0, 1 match = 0.5, 2 matches = 1.0
-        let matchScore = 0;
-        let hits = 0;
-        for (const char of userGenotype) {
-          if ((sampleGenotype as string).includes(char)) hits++;
+        // Calculate Allelic Distance (IBS)
+        // 0: Identical, 1: Half-match (Heg/Hom), 2: Complete Mismatch
+        let distance = 0;
+        const u = (userGenotype as string).split('');
+        const s = (sampleGenotype as string).split('');
+        
+        // Perfect match
+        if (userGenotype === sampleGenotype) {
+          distance = 0;
+        } else {
+          // Check shared alleles
+          const shared = u.filter((allele, index) => {
+            const matchIndex = s.indexOf(allele);
+            if (matchIndex !== -1) {
+              s.splice(matchIndex, 1);
+              return true;
+            }
+            return false;
+          });
+          
+          distance = 2 - shared.length;
         }
-        matchScore = hits / 2;
-                
-        weightedMatch += matchScore * weight;
+        
+        weightedDistance += distance * weight;
+        maxPossibleWeightedDistance += 2 * weight;
+        totalDistance += distance;
       }
     });
     
-    const affinity = totalWeight > 0 ? (weightedMatch / totalWeight) * 100 : 0;
+    // Affinity Score: 100% - normalized weighted distance
+    const affinity = maxPossibleWeightedDistance > 0 
+      ? Math.max(0, 100 * (1 - (weightedDistance / maxPossibleWeightedDistance))) 
+      : 0;
     
     return {
       popCode: sample.id,
       popName: sample.name,
       score: affinity,
+      distance: weightedDistance, // Low = closer
       description: sample.description,
       period: sample.period,
       region: sample.region,
-      matchingMarkers: Object.keys(sample.snps).filter(rsid => userGenotypes[rsid] && userGenotypes[rsid] === sample.snps[rsid]).length,
-      culture: sample.culture_name,
+      matchingMarkers: Object.keys(sampleSnps).filter(rsid => userGenotypes[rsid] && userGenotypes[rsid] === sampleSnps[rsid]).length,
+      culture: sample.culture_name || sample.culture,
       age_bp: sample.age_bp
-    } as AncientSampleMatch;
+    } as AncientSampleMatch & { distance: number };
   });
   
-  return results.sort((a, b) => b.score - a.score);
+  // Order from closest (lowest weighted distance) to furthest
+  return results
+    .filter(r => r.matchingMarkers > 0)
+    .sort((a, b) => a.distance - b.distance);
 };

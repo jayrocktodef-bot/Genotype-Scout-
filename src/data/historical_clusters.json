@@ -1,0 +1,43 @@
+{
+  "clusters": [
+    {
+      "id": "NYABG-Manhattan",
+      "name": "New York African Burial Ground (NYABG)",
+      "period": "1640–1794 AD",
+      "location": "Lower Manhattan, NYC",
+      "signatures": [
+        { "haplogroup": "L2a1", "frequency": 0.35, "origin": "West/Central Africa (Bantu)" },
+        { "haplogroup": "L1b", "frequency": 0.20, "origin": "West Africa (Senegambia)" },
+        { "haplogroup": "L3b", "frequency": 0.15, "origin": "West Africa (Nigeria/Cameroon)" },
+        { "haplogroup": "L3d", "frequency": 0.10, "origin": "West Africa" },
+        { "haplogroup": "M7", "frequency": 0.02, "origin": "Madagascar / East Africa" }
+      ],
+      "description": "An estimated 15,000 individuals were interred here. These lineages represent the founding African community of New Amsterdam/New York."
+    },
+    {
+      "id": "St-Helena-Liberated",
+      "name": "St. Helena 'Liberated Africans'",
+      "period": "1840–1867 AD",
+      "location": "Rupert's Valley, St. Helena",
+      "signatures": [
+        { "haplogroup": "L2a1f", "frequency": 0.25, "origin": "West-Central Africa (Gabon/Angola)" },
+        { "haplogroup": "L2b", "frequency": 0.15, "origin": "West-Central Africa" },
+        { "haplogroup": "L1c3a", "frequency": 0.12, "origin": "Central African Republic" },
+        { "haplogroup": "L3f1b1a", "frequency": 0.10, "origin": "Angola" }
+      ],
+      "description": "Intercepted by the Royal Navy during the final phase of the slave trade, these 27,000 individuals represent a direct genomic fingerprint of 19th-century West-Central Africa."
+    },
+    {
+      "id": "Takarkori-Saharan-Ghost",
+      "name": "Takarkori 'Green Sahara' Ghost",
+      "period": "7,000 BP",
+      "location": "Libya (Messak Settafet)",
+      "signatures": [
+        { "haplogroup": "L3", "frequency": 0.60, "origin": "Divergent North/Central African" },
+        { "haplogroup": "L2", "frequency": 0.30, "origin": "Ancient Saharan" }
+      ],
+      "tags": ["Ghost Lineage", "Ancient Saharan"],
+      "description": "A deeply divergent lineage from the 'Green Sahara' that remained isolated for millennia. Represents a 'Ghost Population' distinct from modern groups."
+    }
+  ]
+}
