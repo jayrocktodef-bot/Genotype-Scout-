@@ -1,23 +1,30 @@
-const SALT = "genotype-scout-salt";
+import { get, set, del } from 'idb-keyval';
 
-export const saveResults = (results: any[]) => {
-  const data = JSON.stringify(results);
-  const encrypted = btoa(unescape(encodeURIComponent(data + SALT)));
-  sessionStorage.setItem("genotype_results", encrypted);
+const STORAGE_KEY = "genotype_scout_results";
+
+export const saveResults = async (results: any[]) => {
+  try {
+    // We save the raw results to IndexedDB. 
+    // Encryption not needed for local-only binary store, but keeping it simple.
+    await set(STORAGE_KEY, results);
+  } catch (e) {
+    console.error("Failed to save results to IndexedDB", e);
+  }
 };
 
-export const loadResults = () => {
-  const encrypted = sessionStorage.getItem("genotype_results");
-  if (!encrypted) return null;
+export const loadResults = async () => {
   try {
-    const decrypted = decodeURIComponent(escape(atob(encrypted))).replace(SALT, "");
-    return JSON.parse(decrypted);
+    return await get(STORAGE_KEY);
   } catch (e) {
-    console.error("Failed to load results", e);
+    console.error("Failed to load results from IndexedDB", e);
     return null;
   }
 };
 
-export const clearResults = () => {
-  sessionStorage.removeItem("genotype_results");
+export const clearResults = async () => {
+  try {
+    await del(STORAGE_KEY);
+  } catch (e) {
+    console.error("Failed to clear IndexedDB", e);
+  }
 };

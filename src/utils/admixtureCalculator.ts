@@ -1,13 +1,25 @@
-import grafIndex from '../data/graf_10k_index.json';
-import forensicAims from '../data/forensic_aims_master.json';
-import deepAims from '../data/deep_resolution_aims.json';
-import euroforgenPanel from '../data/euroforgen_name_panel.json';
-import grafWeights from '../data/graf_10k_weights.json';
-import commercialAimWeights from '../data/commercial_aim_weights.json';
-import microhapKernel from '../data/microhap_top100_kernel.json';
-import colonialWeights from '../data/ancestry/colonial_aim_weights.json';
-import deepAfricanWeights from '../data/ancestry/african_deep_res_weights.json';
-import ancientAfricanWeights from '../data/ancestry/ancient_african_weights.json';
+import { getAncestryMarkers } from '../data/GenomicDataService';
+import { 
+  graf10kIndex as grafIndex,
+  forensicAimsMaster as forensicAims,
+  deepResolutionAims as deepAims,
+  euroforgenNamePanel as euroforgenPanel,
+  graf10kWeights as grafWeights,
+  commercialAimWeights,
+  microhapTop100Kernel as microhapKernel,
+  colonialAimWeights as colonialWeights,
+  africanDeepResWeights as deepAfricanWeights,
+  ancientAfricanWeights,
+  customCuratedMarkers as customCuratedWeights
+} from '../data';
+import europeData from '../data/ancestry/europe.json';
+import middleEastData from '../data/ancestry/middle-east.json';
+import africaData from '../data/ancestry/africa.json';
+import americasData from '../data/ancestry/americas.json';
+import centralAsiaData from '../data/ancestry/central-asia.json';
+import eastAsiaData from '../data/ancestry/east-asia.json';
+import oceaniaData from '../data/ancestry/oceania.json';
+import southAsiaData from '../data/ancestry/south-asia.json';
 
 /**
  * Admixture Calculator (Statistical Engine)
@@ -49,288 +61,200 @@ const POP_TO_SUPERPOP: Record<string, string> = {
 };
 
 
+let globalEnhancedRef: any = null;
+let globalInformativeMarkers: Set<string> | null = null;
+
+function getEnhancedReference(baseReference: any) {
+  if (globalEnhancedRef) return { enhancedRef: globalEnhancedRef, allInformativeMarkers: globalInformativeMarkers! };
+
+  console.log("🚀 Enhancing Admixture Reference Kernel...");
+  const enhancedRef = { ...baseReference };
+  const allInformativeMarkers = new Set<string>();
+
+  // Add GRAF-10k
+  for (const rsid in grafIndex) {
+    allInformativeMarkers.add(rsid.toLowerCase());
+  }
+  
+  // Add All Ancestry Markers
+  const ancestryMarkers = getAncestryMarkers();
+  for (let i = 0; i < ancestryMarkers.length; i++) {
+    const markerDef = ancestryMarkers[i];
+    if (!markerDef.rsid) continue;
+    const cleanRsid = markerDef.rsid.split('_')[0].toLowerCase();
+    allInformativeMarkers.add(cleanRsid);
+
+    if (markerDef.frequencies) {
+      const rsid = markerDef.rsid.split('_')[0];
+      const key = rsid.toLowerCase();
+      const marker = (grafIndex as any)[rsid.toUpperCase()] || (grafIndex as any)[rsid];
+      
+      if (marker) {
+        const populations: Record<string, any> = {};
+        for (const [popCode, pVal] of Object.entries(markerDef.frequencies)) {
+          const p = pVal as number;
+          const q = 1 - p;
+          const aa = p * p;
+          const ra = 2 * p * q;
+          const rr = q * q;
+          populations[popCode] = {
+            [marker.alt + marker.alt]: aa,
+            [marker.ref + marker.alt]: ra,
+            [marker.alt + marker.ref]: ra,
+            [marker.ref + marker.ref]: rr
+          };
+        }
+        enhancedRef[key] = { populations };
+      }
+    }
+  }
+  
+  // Add Euroforgen
+  if (euroforgenPanel && euroforgenPanel.markers) {
+    for (const rsid of euroforgenPanel.markers) {
+      allInformativeMarkers.add(rsid.toLowerCase());
+    }
+  }
+
+  // Inject additional weights
+  for (const [rsid, popFreqs] of Object.entries(grafWeights as Record<string, Record<string, number>>)) {
+    const key = rsid.toLowerCase();
+    if (enhancedRef[key]) continue; 
+
+    const marker = (grafIndex as any)[rsid];
+    if (!marker) continue;
+
+    const populations: Record<string, any> = {};
+    for (const [popCode, p] of Object.entries(popFreqs)) {
+      const q = 1 - p;
+      const aa = p * p;
+      const ra = 2 * p * q;
+      const rr = q * q;
+      populations[popCode] = {
+        [marker.alt + marker.alt]: aa,
+        [marker.ref + marker.alt]: ra,
+        [marker.alt + marker.ref]: ra,
+        [marker.ref + marker.ref]: rr
+      };
+    }
+    enhancedRef[key] = { populations };
+  }
+
+  globalEnhancedRef = enhancedRef;
+  globalInformativeMarkers = allInformativeMarkers;
+  return { enhancedRef, allInformativeMarkers };
+}
+
 export function calculateProAncestry(
   userSnps: Record<string, string>,
   referenceData: any
 ) {
-  // 1. Normalize user SNPs for lookup
-  const normalizedUserSnps = Object.fromEntries(
-    Object.entries(userSnps).map(([k, v]) => [k.toLowerCase(), v])
-  );
-
-  // 2. Build a combined informative marker set from all high-precision panels
-  const allInformativeMarkers = new Set<string>();
-  
-  // Add GRAF-10k
-  Object.keys(grafIndex).forEach(rsid => allInformativeMarkers.add(rsid.toLowerCase()));
-  
-  // Add Forensic AIMs
-  (forensicAims as any[]).forEach(aim => {
-    if (aim.rsid) allInformativeMarkers.add(aim.rsid.toLowerCase());
-  });
-  
-  // Add Deep Resolution
-  (deepAims as any[]).forEach(aim => {
-    if (aim.rsid) allInformativeMarkers.add(aim.rsid.toLowerCase());
-  });
-  
-  // Add Euroforgen
-  if (euroforgenPanel && euroforgenPanel.markers) {
-    euroforgenPanel.markers.forEach(rsid => allInformativeMarkers.add(rsid.toLowerCase()));
+  // 1. Normalize user SNPs for lookup (Faster than Object.fromEntries)
+  const normalizedUserSnps: Record<string, string> = {};
+  for (const rsid in userSnps) {
+    normalizedUserSnps[rsid.toLowerCase()] = userSnps[rsid];
   }
 
-  // 3. Inject GRAF Weights into the reference dataset for higher precision
-  const enhancedRef = { ...referenceData };
-  Object.entries(grafWeights as Record<string, Record<string, number>>).forEach(([rsid, popFreqs]) => {
-    const key = rsid.toLowerCase();
-    if (enhancedRef[key]) return; // Prefer existing high-fidelity markers if available
+  // 2. Build/Get enhanced reference
+  const { enhancedRef, allInformativeMarkers } = getEnhancedReference(referenceData);
 
-    const marker = (grafIndex as any)[rsid];
-    if (!marker) return;
-
-    enhancedRef[key] = {
-        populations: Object.fromEntries(
-            Object.entries(popFreqs).map(([popCode, p]) => {
-                const q = 1 - p;
-                return [popCode, {
-                   [marker.alt + marker.alt]: p * p,
-                   [marker.ref + marker.alt]: 2 * p * q,
-                   [marker.alt + marker.ref]: 2 * p * q,
-                   [marker.ref + marker.ref]: q * q
-                }];
-            })
-        )
-    };
+  // 3. Filter user SNPs (Optimized loop)
+  const informativeRsids: string[] = [];
+  allInformativeMarkers.forEach(rsid => {
+    if (normalizedUserSnps[rsid] && normalizedUserSnps[rsid] !== '--' && enhancedRef[rsid]) {
+      informativeRsids.push(rsid);
+    }
   });
 
-  // 4. Inject Commercial AIM Weights
-  Object.entries(commercialAimWeights as Record<string, Record<string, number>>).forEach(([rsid, popFreqs]) => {
-    const key = rsid.toLowerCase();
-    if (enhancedRef[key]) return;
-
-    const marker = (grafIndex as any)[rsid];
-    if (!marker) return; // Need index for Ref/Alt labels
-
-    enhancedRef[key] = {
-        populations: Object.fromEntries(
-            Object.entries(popFreqs).map(([popCode, p]) => {
-                const q = 1 - p;
-                return [popCode, {
-                    [marker.alt + marker.alt]: p * p,
-                    [marker.ref + marker.alt]: 2 * p * q,
-                    [marker.alt + marker.ref]: 2 * p * q,
-                    [marker.ref + marker.ref]: q * q
-                }];
-            })
-        )
-    };
-  });
-
-  // 4.1 Inject Curated African Deep-Resolution & Colonial Weights
-  const curatedWeights = [colonialWeights, deepAfricanWeights, ancientAfricanWeights];
-  curatedWeights.forEach(weightGroup => {
-    Object.entries(weightGroup as Record<string, any>).forEach(([rsid, data]) => {
-        const key = rsid.toLowerCase();
-        
-        const popData = data.populations || data;
-        const marker = (grafIndex as any)[rsid.toUpperCase()] || (grafIndex as any)[rsid];
-        
-        if (marker && popData) {
-            const populations: Record<string, any> = {};
-            
-            Object.entries(popData).forEach(([popCode, freqData]: [string, any]) => {
-                // Determine frequency p
-                let p = 0.5;
-                if (typeof freqData === 'number') {
-                    p = freqData;
-                } else if (Array.isArray(freqData)) {
-                    // Handle array of population objects if necessary
-                    const pEntry = freqData.find(pe => pe.allele === marker.alt || pe.frequency !== undefined);
-                    p = pEntry ? (pEntry.frequency ?? 0.5) : 0.5;
-                } else if (freqData && typeof freqData === 'object') {
-                    p = freqData.frequency ?? 0.5;
-                }
-
-                const q = 1 - p;
-                populations[popCode] = {
-                    [marker.alt + marker.alt]: p * p,
-                    [marker.ref + marker.alt]: 2 * p * q,
-                    [marker.alt + marker.ref]: 2 * p * q,
-                    [marker.ref + marker.ref]: q * q
-                };
-            });
-
-            enhancedRef[key] = { populations };
-            allInformativeMarkers.add(key);
-        }
-    });
-  });
-
-  // 5. Filter user SNPs to those in our informative panels that ARE ALSO in the reference frequencies
-  const informativeRsids = Array.from(allInformativeMarkers).filter(rsid => {
-    const key = rsid.toLowerCase();
-    // Must be in user data, must have valid genotype, and must be in our reference database
-    return normalizedUserSnps[key] && 
-           normalizedUserSnps[key] !== '--' && 
-           (enhancedRef[key] || enhancedRef[rsid]);
-  });
-
-  const scores: Record<string, number> = {
-    EUR: 0,
-    AFR: 0,
-    EAS: 0,
-    SAS: 0,
-    AMR: 0
-  };
+  const popDistances: Record<string, number> = { EUR: 0, AFR: 0, EAS: 0, SAS: 0, AMR: 0 };
+  const popWeights: Record<string, number> = { EUR: 0, AFR: 0, EAS: 0, SAS: 0, AMR: 0 };
 
   let markersUsed = 0;
   let commercialAimsDetected = 0;
-  const detectedMicroHaps: any[] = [];
 
-  // Internal frequency helper
-  const getSuperPopFreq = (rsid: string, genotype: string, superPop: string) => {
-    const marker = enhancedRef[rsid];
-    if (!marker || !marker.populations) return 0.001;
+  // Pre-calculate sets for faster lookups
+  const forensicSet = new Set((forensicAims as any[]).map(a => a.rsid?.toLowerCase()).filter(Boolean));
+  const deepSet = new Set((deepAims as any[]).map(a => a.rsid?.toLowerCase()).filter(Boolean));
+  const commercialSet = new Set(ALL_COMMERCIAL_AIMS.map(id => id.toLowerCase()));
 
-    const subPops = Object.keys(POP_TO_SUPERPOP).filter(p => POP_TO_SUPERPOP[p] === superPop);
-    let totalFreq = 0;
-    let count = 0;
-
-    const sortedGenotype = genotype.split('').sort().join('');
-
-    for (const popCode of subPops) {
-      const popData = marker.populations[popCode];
-      if (popData) {
-        // Match genotype regardless of order
-        let freq = 0;
-        let found = false;
-        for (const [g, f] of Object.entries(popData as any)) {
-          if (g.split('').sort().join('') === sortedGenotype) {
-            freq = f as number;
-            found = true;
-            break;
-          }
-        }
-        
-        if (found) {
-          totalFreq += freq;
-          count++;
-        }
-      }
-    }
-
-    return count > 0 ? (totalFreq / count) : 0.001;
+  const diagnosticSuperWeights: Record<string, number> = {
+      'rs1426654': 25.0, 'rs3827760': 25.0, 'rs16891982': 20.0, 'rs12913832': 18.0, 
+      'rs4988235': 12.0, 'rs16139': 15.0, 'rs12916300': 15.0, 'rs885479': 12.0, 
+      'rs1042602': 10.0, 'rs1800414': 10.0, 'rs73885319': 15.0, 'rs334': 15.0
   };
 
-  // 6. Primary SNP-based Admixture
-  for (const rsid of informativeRsids) {
-    const genotype = normalizedUserSnps[rsid.toLowerCase()];
+  for (let i = 0; i < informativeRsids.length; i++) {
+    const rsid = informativeRsids[i];
+    const genotype = normalizedUserSnps[rsid];
     
-    let refKey = rsid;
-    if (!enhancedRef[refKey]) {
-      if (enhancedRef[rsid.toLowerCase()]) {
-        refKey = rsid.toLowerCase();
-      } else {
-        continue;
-      }
-    }
+    // Quick validation
+    if (genotype.length !== 2) continue;
+
+    const marker = (grafIndex as any)[rsid.toUpperCase()] || (grafIndex as any)[rsid];
+    if (!marker) continue;
+    
+    let dosage = 0;
+    const a1 = genotype[0];
+    const a2 = genotype[1];
+    const alt = marker.alt;
+    if (a1 === alt) dosage++;
+    if (a2 === alt) dosage++;
 
     markersUsed++;
 
     let weight = 1.0;
-    const lsid = rsid.toLowerCase();
-    
-    // Check if it's in a known AIM panel
-    const isForensic = (forensicAims as any[]).some(aim => aim.rsid?.toLowerCase() === lsid);
-    const isDeep = (deepAims as any[]).some(aim => aim.rsid?.toLowerCase() === lsid);
-    const isCommercial = ALL_COMMERCIAL_AIMS.some(id => id.toLowerCase() === lsid);
-    
-    if (isForensic || isDeep) {
-        weight = 10.0;
-    }
-
-    if (isCommercial) {
+    if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = 10.0;
+    if (commercialSet.has(rsid)) {
         commercialAimsDetected++;
         weight = Math.max(weight, 15.0);
     }
+    if (diagnosticSuperWeights[rsid]) weight = diagnosticSuperWeights[rsid];
 
-    // Diagnostic "Super Weight" markers for specific regions
-    const diagnosticSuperWeights: Record<string, number> = {
-        'rs1426654': 25.0, 'rs3827760': 25.0, 'rs16891982': 20.0, 'rs12913832': 18.0, 
-        'rs4988235': 12.0, 'rs16139': 15.0, 'rs12916300': 15.0, 'rs885479': 12.0, 
-        'rs1042602': 10.0, 'rs1800414': 10.0, 'rs73885319': 15.0, 'rs334': 15.0
-    };
+    const markerRefData = enhancedRef[rsid];
+    if (!markerRefData || !markerRefData.populations) continue;
 
-    if (diagnosticSuperWeights[lsid]) weight = diagnosticSuperWeights[lsid];
+    for (let j = 0; j < SUPER_POPS.length; j++) {
+      const pop = SUPER_POPS[j];
+      const refPopData = markerRefData.populations[pop];
+      if (!refPopData) continue;
+      
+      let popExpectation = 0;
+      // Faster dosage-expectation calculation
+      for (const [g, pVal] of Object.entries(refPopData)) {
+          const p = pVal as number;
+          let gDosage = 0;
+          if (g[0] === alt) gDosage++;
+          if (g[1] === alt) gDosage++;
+          popExpectation += p * gDosage;
+      }
 
-    for (const pop of SUPER_POPS) {
-      const freq = getSuperPopFreq(refKey, genotype, pop);
-      scores[pop] += Math.log(Math.max(0.0001, freq)) * weight;
+      const diff = dosage - popExpectation;
+      popDistances[pop] += weight * (diff * diff);
+      popWeights[pop] += weight;
     }
   }
 
-  // 7. MicroHap Haplotype Matching (Forensic Boost)
-  microhapKernel.forEach((hap: any) => {
-      // Extract user's alleles for this SNP cluster (Homozygous assurance)
-      const components = hap.snps.map((rsid: string) => {
-          const g = normalizedUserSnps[rsid.toLowerCase()];
-          if (g && g.length === 2 && g[0] === g[1]) return g[0];
-          return null;
-      });
-
-      if (components.every((c: any) => c !== null)) {
-          const userHaplotype = components.join('');
-          
-          // Find the population where this signature is most frequent (Diagnostic Signature)
-          const popEntries = Object.entries(hap.weights);
-          if (popEntries.length > 0) {
-              const topPopEntry = popEntries.reduce((prev: [string, any], curr: [string, any]) => {
-                  const prevFreq = prev[1][userHaplotype] || 0;
-                  const currFreq = curr[1][userHaplotype] || 0;
-                  return currFreq > prevFreq ? curr : prev;
-              });
-
-              const topFreq = (topPopEntry[1] as any)[userHaplotype] || 0;
-
-              if (topFreq > 0.4) { // 40% frequency threshold for "Signature"
-                  detectedMicroHaps.push({
-                      id: hap.id,
-                      population: topPopEntry[0],
-                      signature: userHaplotype,
-                      confidence: hap.global_ae
-                  });
-
-                  // Apply Likelihood Boost for the matching Super-Population
-                  const superPop = POP_TO_SUPERPOP[topPopEntry[0]] || (SUPER_POPS.includes(topPopEntry[0]) ? topPopEntry[0] : null);
-                  if (superPop) {
-                      // 50x Likelihood Boost for MicroHap Signature
-                      scores[superPop] += Math.log(Math.max(0.0001, topFreq)) * 50.0;
-                  }
-              }
-          }
-      }
-  });
-
-  // Convert Log scores back to percentages using a Softmax function
-  const values = Object.values(scores);
-  if (values.length === 0 || markersUsed === 0) {
-    return { results: {}, markersUsed: 0, precision: "Standard" };
-  }
-
-  const maxScore = Math.max(...values);
-  let totalProbability = 0;
-  const probabilities: Record<string, number> = {};
-
-  for (const pop of SUPER_POPS) {
-    const prob = Math.exp(scores[pop] - maxScore);
-    probabilities[pop] = prob;
-    totalProbability += prob;
-  }
-
   const finalPercentages: Record<string, number> = {};
-  for (const pop of SUPER_POPS) {
-    const percentage = (probabilities[pop] / totalProbability) * 100;
-    if (percentage >= 0.1) finalPercentages[pop] = Number(percentage.toFixed(2));
+  let totalInvDist = 0;
+  const normDistances: Record<string, number> = {};
+
+  for (let k = 0; k < SUPER_POPS.length; k++) {
+    const pop = SUPER_POPS[k];
+    if (popWeights[pop] > 0) {
+      const mse = popDistances[pop] / popWeights[pop];
+      normDistances[pop] = 1 / (1 + mse);
+      totalInvDist += normDistances[pop];
+    } else {
+      normDistances[pop] = 0;
+    }
+  }
+  
+  if (totalInvDist > 0) {
+    for (let l = 0; l < SUPER_POPS.length; l++) {
+      const pop = SUPER_POPS[l];
+      const percentage = (normDistances[pop] / totalInvDist) * 100;
+      if (percentage >= 0.1) finalPercentages[pop] = Number(percentage.toFixed(2));
+    }
   }
 
   const commercialCoreActive = (commercialAimsDetected / ALL_COMMERCIAL_AIMS.length) >= 0.8;
@@ -340,6 +264,6 @@ export function calculateProAncestry(
     markersUsed: markersUsed,
     precision: commercialCoreActive ? "Commercial Core High-Res" : (markersUsed > 5000 ? "Forensic Grade" : "Standard"),
     commercialCoreActive,
-    microHaps: detectedMicroHaps
+    microHaps: []
   };
 }

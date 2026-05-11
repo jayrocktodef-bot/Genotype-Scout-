@@ -93,11 +93,11 @@ export async function syncMicroHapDB() {
             };
         });
 
-        const dataDir = path.join(process.cwd(), 'src', 'data');
+        const dataDir = path.join(process.cwd(), 'src', 'data', 'phenotype_forensic');
         if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
         fs.writeFileSync(path.join(dataDir, 'microhap_top100_kernel.json'), JSON.stringify(kernel, null, 2));
-        console.log(`✅ Success: Generated Forensic Kernel with ${kernel.length} markers at src/data/microhap_top100_kernel.json`);
+        console.log(`✅ Success: Generated Forensic Kernel with ${kernel.length} markers at src/data/phenotype_forensic/microhap_top100_kernel.json`);
     } catch (err) {
         console.error("❌ Failed to sync MicroHapDB:", err);
     }

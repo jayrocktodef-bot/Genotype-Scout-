@@ -1,8 +1,8 @@
-import pharmacogenomics from '../data/pharmacogenomics.json';
-import clinicalHealth from '../data/clinical_health.json';
-import appearanceTraits from '../data/appearance_traits.json';
+import pharmacogenomics from '../data/health_pgx/pharmacogenomics.json';
+import clinicalHealth from '../data/health_pgx/clinical_health.json';
+import appearanceTraits from '../data/phenotype_forensic/appearance_traits.json';
 import v5MarkersMaster from '../data/v5_markers_master.json';
-import autoimmuneHlaPanel from '../data/autoimmune_hla_panel.json';
+import autoimmuneHlaPanel from '../data/health_pgx/autoimmune_hla_panel.json';
 
 export interface HealthImpact {
   rsid: string;

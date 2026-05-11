@@ -14,6 +14,12 @@ export function auditAndPatch() {
     const filePath = path.join(ANCESTRY_DIR, file);
     const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     
+    // Safety check: Only process files that are arrays (markers list)
+    if (!Array.isArray(data)) {
+      console.log(`Skipping non-marker file: ${file}`);
+      return;
+    }
+    
     // Infer subRegion from filename if missing or incorrect
     const inferredRegion = file.replace('.json', '').toUpperCase();
     

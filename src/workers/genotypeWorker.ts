@@ -3,15 +3,40 @@ import { matchSNPs } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
 import { Y_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerAllowlist } from '../utils/markerAllowlist';
+import { calculateAncestryOracle } from '../services/ancestryEngine';
+import { calculateMarkerBenchmarks } from "../utils/markerBenchmarks";
+import { calculateAncientAdmixture, calculateIndividualMatches } from "../lib/AncientAdmixtureCalculator";
+import { calculateFamousMatches } from "../utils/individualMatching";
+import { matchHealthAndWellness } from "../utils/healthMatching";
+import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../utils/ancestry/fastMatrixEngine';
+
+// Pre-compile the matrix the moment the worker boots up in the background
+compileReferenceKernel();
 
 self.onmessage = async (e: MessageEvent) => {
-  const { files } = e.data;
+  const { type, files, payload } = e.data;
   
-  try {
-    const allowlist = getMarkerAllowlist();
+  if (type !== 'PROCESS_GENOME' && !files) return;
 
-    const parsedFiles = files.map((file: { text: string, name: string }) => {
-      return { ...parseRawDNA(file.text, allowlist), name: file.name };
+  try {
+    // 🚨 Ensure the kernel is loaded from the DB before doing math!
+    await compileReferenceKernel();
+
+    const allowlist = getMarkerAllowlist();
+    const decoder = new TextDecoder();
+
+    // Support both multiple files or a single payload buffer
+    const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
+
+    if (filesToProcess.length === 0) {
+      self.postMessage({ type: 'ERROR', error: "No files provided for processing." });
+      return;
+    }
+
+    let parsedFiles = filesToProcess.map((file: { buffer: ArrayBuffer, name: string }) => {
+      const text = decoder.decode(file.buffer);
+      const parsed = parseRawDNA(text, allowlist);
+      return { ...parsed, name: file.name };
     });
 
     if (parsedFiles.length === 0) {
@@ -26,53 +51,76 @@ self.onmessage = async (e: MessageEvent) => {
     let chips: string[] = [];
     let names: string[] = [];
     
-    const duplicateMarkers: Record<string, { count: number, files: string[], genotypes: Set<string> }> = {};
-
-    parsedFiles.forEach((pf: any) => {
+    for (const pf of parsedFiles) {
       names.push(pf.name);
       if (pf.chip && pf.chip !== "Unknown Chip") {
         chips.push(pf.chip);
       }
       
-      Object.entries(pf.snpMap).forEach(([rsid, genotype]: [string, any]) => {
-        if (mergedSnpMap[rsid]) {
-          if (!duplicateMarkers[rsid]) {
-            duplicateMarkers[rsid] = { 
-              count: 1, 
-              files: [names[names.length - 2]], 
-              genotypes: new Set([mergedSnpMap[rsid]]) 
-            };
-          }
-          duplicateMarkers[rsid].count++;
-          duplicateMarkers[rsid].files.push(pf.name);
-          duplicateMarkers[rsid].genotypes.add(genotype);
-
-          if (genotype.length > mergedSnpMap[rsid].length) {
-            mergedSnpMap[rsid] = genotype;
-          }
-        } else {
+      const snpMap = pf.snpMap;
+      for (const rsid in snpMap) {
+        const genotype = snpMap[rsid];
+        if (!mergedSnpMap[rsid] || genotype.length > mergedSnpMap[rsid].length) {
           mergedSnpMap[rsid] = genotype;
         }
-      });
+      }
 
       Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
       
-      Object.entries(pf.yMap).forEach(([rsid, genotype]: [string, any]) => {
+      const yMap = pf.yMap;
+      for (const rsid in yMap) {
+        const genotype = yMap[rsid];
         if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
           mergedYMap[rsid] = genotype;
         }
-      });
+      }
 
       Object.assign(mergedMtMap, pf.mtMap);
-    });
+    }
+
+    // MEMORY PRUNING: Clear large intermediate results
+    (parsedFiles as any) = null;
 
     const uniqueSnps = Object.keys(mergedSnpMap).length;
-    const mergedName = parsedFiles.length > 1 ? `Merged Kit (${parsedFiles.length} files)` : parsedFiles[0].name;
+    const mergedName = names.length > 1 ? `Merged Kit (${names.length} files)` : names[0];
     const mergedChip = chips.length > 0 ? Array.from(new Set(chips)).join(" + ") : "Unknown Chip";
 
+    // CORE ANALYSIS
     const results = matchSNPs(mergedSnpMap, mergedSnpMetaMap);
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
     const predictedMtDNA = analyzeMtDNA(mergedMtMap);
+
+    // ADVANCED CALCULATIONS (Heavy Lifting in Worker)
+    
+    const snpMapForEngine = new Map(Object.entries(mergedSnpMap));
+
+    // Run independent heavy lifting in parallel
+    const [
+      ancientAdmixture,
+      individualMatches,
+      famousMatches,
+      healthWellness,
+      populationProximity,
+      markerBenchmarks,
+      k27Results_raw,
+      oracleResults
+    ] = await Promise.all([
+      calculateAncientAdmixture(mergedSnpMap),
+      calculateIndividualMatches(mergedSnpMap),
+      calculateFamousMatches(mergedSnpMap),
+      matchHealthAndWellness(mergedSnpMap),
+      calculatePopulationProximityOptimized(snpMapForEngine),
+      calculateMarkerBenchmarks(mergedSnpMap),
+      (async () => {
+        const { calculateK27Scores } = await import("../utils/ancestry/k27AncEngine");
+        return calculateK27Scores(mergedSnpMap);
+      })(),
+      calculateAncestryOracle(
+        results.filter(r => r.category === 'Ancestry'),
+        predictedYDNA?.predicted?.continent,
+        predictedMtDNA?.region
+      )
+    ]);
 
     self.postMessage({
       type: 'SUCCESS',
@@ -84,7 +132,17 @@ self.onmessage = async (e: MessageEvent) => {
         predictedYDNA,
         predictedMtDNA,
         mergedSnpMap,
-        mergedMtMap
+        mergedMtMap,
+        analysis: {
+          ancientAdmixture,
+          individualMatches,
+          famousMatches,
+          healthWellness,
+          populationProximity,
+          markerBenchmarks,
+          k27Results: k27Results_raw,
+          oracleResults
+        }
       }
     });
   } catch (err) {

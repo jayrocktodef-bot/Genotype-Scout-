@@ -1,5 +1,4 @@
 export function parseRawDNA(text: string, allowlist?: Set<string>) {
-  const lines = text.split(/\r?\n/);
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
   const yMap: Record<string, string> = {};
@@ -33,23 +32,28 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
     chip = "Living DNA (GSA)";
   }
 
-  for (const line of lines) {
-    const trimmedLine = line.trim();
-    if (!trimmedLine || trimmedLine.startsWith("#")) continue;
-    
-    // Split by tabs, commas, or multiple spaces, removing quotes for CSV
-    const parts = trimmedLine.replace(/"/g, "").split(/[\t,]+/);
-    
-    // Basic validation: markerId must be at index 0
-    if (parts.length < 4 || !parts[0]) continue;
-    const markerId = parts[0].trim().toLowerCase();
-    
-    // Skip header lines
-    if (markerId === "rsid" || markerId === "snp" || markerId === "marker" || markerId === "rs_id") continue;
-    
-    let chrom = parts[1].trim().toUpperCase();
+  // Hyper-optimized Regex Parsing Loop
+  // Match: [rsID] [spaces/tabs] [chrom] [spaces/tabs] [pos] [spaces/tabs] [genotype]
+  // Note: Handles space/tab separation and AncestryDNA multi-column genotypes
+  const rowRegex = /^(rs\d+|i\d+)[ \t,]+((?:chr)?[\w]+)[ \t,]+(\d+)[ \t,]+([ACGTDI-]{1,2})([ \t,]+([ACGTDI-]))?/gmi;
+  
+  let match;
+  while ((match = rowRegex.exec(text)) !== null) {
+    const markerId = match[1].toLowerCase();
+    let chrom = match[2].toUpperCase();
     if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
+    const posStr = match[3];
+    const pos = parseInt(posStr, 10);
     
+    // Support multi-column genotype (AncestryDNA style: "A G" -> "AG")
+    let genotype = match[4].toUpperCase();
+    if (match[6]) {
+      genotype += match[6].toUpperCase();
+    }
+    genotype = genotype.replace(/0/g, ""); // Ancestry specific cleaning
+
+    if (!genotype || genotype === "--" || genotype === "__" || genotype === "00") continue;
+
     const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
     
     // Stream Filter: If allowlist is provided, skip unknown markers unless they are Y or MT
@@ -59,52 +63,25 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
 
     snpCount++;
     
-    const posStr = parts[2].trim();
-    const pos = parseInt(posStr, 10);
-    
-    let genotype = "";
-    
-    // Heuristic to detect format if not already detected from header
-    if (format === "Unknown") {
-      if (parts.length >= 5 && parts[3].length === 1 && parts[4].length === 1) {
-        genotype = (parts[3] + parts[4]).toUpperCase();
-        format = "AncestryDNA";
-      } else if (parts.length >= 4) {
-        genotype = parts[3].toUpperCase().replace(/\s/g, "");
-        format = line.includes(",") ? "MyHeritage" : "23andMe";
-      }
-    } else {
-      if (format === "AncestryDNA" && parts.length >= 5) {
-        genotype = (parts[3] + parts[4]).toUpperCase().replace(/0/g, "");
-      } else if (parts.length >= 4) {
-        genotype = parts[3].toUpperCase().replace(/\s/g, "");
-      }
+    // Store regular SNPs
+    snpMap[markerId] = genotype;
+    if (!isNaN(pos)) {
+      snpMetaMap[markerId] = { chrom, pos };
     }
-
-    if (!genotype) continue;
     
-    // Validate genotype: must be A, C, T, G, or -
-    if (/^[ACTG-]{1,2}$/.test(genotype) && genotype !== "--" && genotype !== "00") {
-      snpMap[markerId] = genotype;
-      if (!isNaN(pos)) {
-        snpMetaMap[markerId] = { chrom, pos };
-      }
-      
-      // Extract Y-DNA mutations
-      if (chrom === "Y" || chrom === "24") {
-        yMap[markerId] = genotype;
-      }
-      
-      // Extract mtDNA mutations
-      if (chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25") {
-        const allele = genotype[0];
-        if (allele !== "-") {
-          mtMap[posStr] = allele;
-        }
+    // Extract Y-DNA mutations
+    if (chrom === "Y" || chrom === "24") {
+      yMap[markerId] = genotype;
+    }
+    
+    // Extract mtDNA mutations
+    if (chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25") {
+      const allele = genotype[0];
+      if (allele !== "-") {
+        mtMap[posStr] = allele;
       }
     }
   }
-
 
   // Refine chip detection based on SNP count if still unknown
   if (chip === "Unknown Chip") {
@@ -114,12 +91,8 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
     else chip = `${format} Raw Data`;
   }
 
-  if (snpCount > 0 && Object.keys(snpMap).length === 0) {
-    throw new Error("No valid DNA data found in the file. Please ensure it's a supported raw DNA format (23andMe, AncestryDNA, MyHeritage, etc.).");
-  }
-
   if (snpCount === 0) {
-    throw new Error("The file appears to be empty or not a supported text format.");
+    throw new Error("The file appears to be empty or not in a supported raw DNA format (23andMe, AncestryDNA, MyHeritage, etc.).");
   }
 
   return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };

@@ -16,18 +16,16 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
 import { jsPDF } from "jspdf";
-import { groupByCategory, CATEGORY_META, SIG_COLOR, calculateAncestryOracle, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
+import { groupByCategory, CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { REGION_METADATA } from "./constants/regionInfo";
-import { calculateAncientAffinity } from "./utils/ancientMatching";
 import { calculateFamousMatches } from "./utils/individualMatching";
 import { matchHealthAndWellness } from "./utils/healthMatching";
-import { calculatePopulationProximity } from "./utils/populationComparison";
+import { calculatePopulationProximity } from "./utils/ancestry/populationComparison";
 import { calculateMarkerBenchmarks } from "./utils/markerBenchmarks";
 import { calculateFileIntegrity } from "./utils/statistics/qualityControl";
 import { applyConfidenceIntervals } from "./utils/statistics/admixtureRigor";
-import { AncientCulturesTab } from "./components/AncientCulturesTab";
 import { FamousMatches } from "./components/FamousMatches";
 import { HealthWellnessTab } from "./components/HealthWellnessTab";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
@@ -42,8 +40,7 @@ import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/Anc
 import { calculateHistoricalClusterMatches } from "./utils/ancestry/historicalClusterEngine";
 import { calculateProAncestry } from "./utils/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
-import forensicAims from './data/forensic_aims_master.json';
-import grafIndex from './data/graf_10k_index.json';
+import { forensicAimsMaster as forensicAims, graf10kIndex as grafIndex } from './data';
 import mitoTraits from "./data/mitochondrial/mito_traits.json";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
@@ -345,7 +342,7 @@ const ProfileSummary = memo(({
                 <div className="flex justify-between items-end">
                   <div className="flex flex-col">
                     <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-tight">Pop. {idx + 1}</span>
-                    <span className="text-sm font-black text-slate-900 dark:text-slate-100">{pop.name}</span>
+                    <span className="text-sm font-black text-slate-900 dark:text-slate-100">{formatPopName(pop.name)}</span>
                   </div>
                   <span className="text-sm font-mono font-black text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-lg">{pop.similarity.toFixed(1)}%</span>
                 </div>
@@ -370,7 +367,7 @@ const ProfileSummary = memo(({
                   {statisticalInsights.slice(0, 4).map((insight: any, i: number) => (
                     <div key={i} className="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
                       <div className="flex justify-between text-[9px] font-bold text-slate-500 mb-1">
-                        <span>{insight.pop}</span>
+                        <span>{formatPopName(insight.pop)}</span>
                         <span className="text-blue-500">{insight.percentage}%</span>
                       </div>
                       <div className="text-[8px] text-slate-400 font-medium">Range: {insight.low}% – {insight.high}%</div>
@@ -806,6 +803,40 @@ const CHROMOSOME_LENGTHS: Record<string, number> = {
   "21": 46709983, "22": 50818468
 };
 
+const MODERN_POP_NAMES: Record<string, string> = {
+  'Nilotic-Omotic': 'East African (Nilotic)',
+  'Ancestral-South-Indian': 'South Asian (Dravidian)',
+  'North-European-Baltic': 'North European & Baltic',
+  'Uralic': 'Siberian & Uralic',
+  'Australo-Melanesian': 'Australo-Melanesian',
+  'East-Siberean': 'East Siberian',
+  'Ancestral-Yayoi': 'Japanese (Yayoi)',
+  'Caucasian-Near-Eastern': 'Caucasus & Near East',
+  'Tibeto-Burman': 'Tibeto-Burman',
+  'Austronesian': 'Southeast Asian (Austronesian)',
+  'Central-African-Pygmean': 'Central African (Pygmy)',
+  'Central-African-Hunter-Catherers': 'Central African Hunter-Gatherers',
+  'Nilo-Sahrian': 'Nilo-Saharan',
+  'North-African': 'North African',
+  'Gedrosia-Caucasian': 'Caucasus & West Asian',
+  'Cushitic': 'East African (Cushitic)',
+  'Congo-Pygmean': 'Congo Basin (Pygmy)',
+  'Bushmen': 'South African (Khoisan)',
+  'South-Meso-Amerindian': 'Mesoamerican & South Amerindian',
+  'South-West-European': 'Southwest European',
+  'North-Amerindian': 'North Amerindian',
+  'Arabic': 'Arabian',
+  'North-Circumpolar': 'Arctic & Circumpolar',
+  'Kalash': 'Hindukush (Kalash)',
+  'Papuan-Australian': 'Papuan & Australian',
+  'Baltic-Finnic': 'Baltic Finnic',
+  'Bantu': 'West/Central African (Bantu)'
+};
+
+const formatPopName = (name: string) => {
+  return MODERN_POP_NAMES[name] || name.replace(/-/g, ' ');
+};
+
 const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
   const subPopulations = oracleResults?.primary?.subPopulations || {};
   const allPops = Object.values(subPopulations).flat()
@@ -843,7 +874,7 @@ const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
               <div className="flex justify-between items-end">
                 <div className="flex items-baseline gap-2">
                   <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 w-4">{idx + 1}</span>
-                  <span className="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">{pop.name}</span>
+                  <span className="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">{formatPopName(pop.name)}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="text-right">
@@ -1062,11 +1093,11 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {topGranular.map((pop: any) => (
-                <div key={pop.name} className='flex flex-col p-3 rounded-lg border bg-indigo-50/50 dark:bg-indigo-900/20 border-indigo-100 dark:border-indigo-800/20'>
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider line-clamp-1">{pop.name}</span>
-                  </div>
-                  <div className="flex items-end justify-between">
+                    <div key={pop.name} className='flex flex-col p-3 rounded-lg border bg-indigo-50/50 dark:bg-indigo-900/20 border-indigo-100 dark:border-indigo-800/20'>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider line-clamp-1">{formatPopName(pop.name)}</span>
+                      </div>
+                      <div className="flex items-end justify-between">
                     <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(2)}%</span>
                      <span className="text-[9px] font-mono font-bold text-slate-500" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(3)} D</span>
                   </div>
@@ -1165,6 +1196,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
         {/* Combined Paternal Heritage Card */}
         <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
            <div className="md:col-span-5 lg:col-span-4">
+{/* Archive: Haplogroup Distribution
              <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Haplogroup Distribution</h4>
              {markerPieData.length > 0 ? (
                <div className="h-[220px]">
@@ -1213,6 +1245,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                    </span>
                 ))}
              </div>
+             */}
            </div>
 
            <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center h-full space-y-8">
@@ -1267,46 +1300,8 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                 node={Y_DNA_TREE} 
                 userPath={yData.path} 
                 searchTerm={treeSearchTerm} 
-                testedMarkers={yData.testedMarkers}
+                testedMarkers={yData.testedMarkers} 
               />
-          </div>
-        </div>
-
-        {/* ISOGG Analysis */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col h-full relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full -mr-16 -mt-16"></div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3 mb-6 relative z-10">
-            <span className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">🧬</span>
-            ISOGG Database Analysis
-          </h3>
-          
-          <div className="flex-1 overflow-y-auto max-h-[500px] space-y-3 relative z-10 pr-2 custom-scrollbar">
-            {yData.isoggMatches && yData.isoggMatches.length > 0 ? (
-              yData.isoggMatches.map((match: any, idx: number) => (
-                <div key={idx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
-                   <div className="flex justify-between items-start mb-2">
-                     <span className="text-sm font-black text-slate-900 dark:text-white tracking-tight">{match.branch.branchName}</span>
-                     <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-0.5 rounded-lg">
-                       {match.matches.length} Match{match.matches.length > 1 ? 'es' : ''}
-                     </span>
-                   </div>
-                   <div className="flex flex-wrap gap-1.5 leading-none">
-                     {match.matches.slice(0, 10).map((m: string) => (
-                       <span key={m} className="px-1.5 py-1 bg-white dark:bg-slate-800 rounded text-[9px] font-mono text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700">
-                         {m}
-                       </span>
-                     ))}
-                     {match.matches.length > 10 && <span className="text-[9px] text-slate-400 font-bold">+{match.matches.length - 10} more</span>}
-                   </div>
-                </div>
-              ))
-            ) : (
-              <div className="h-full flex flex-col items-center justify-center text-center py-12 px-6">
-                <div className="text-4xl mb-4 opacity-20">🔍</div>
-                <p className="text-slate-500 dark:text-slate-400 text-sm font-bold">No deep ISOGG matches detected.</p>
-                <p className="text-[10px] text-slate-400 mt-2 max-w-[200px]">Requires specific Y-chromosome markers not found in this dataset.</p>
-              </div>
-            )}
           </div>
         </div>
 
@@ -1593,7 +1588,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
             </div>
           </div>
           
-          {/* Maternal Library Card */}
+          {/* Archive: Maternal Library Card
           <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm overflow-hidden relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100 dark:border-slate-700">
               <div>
@@ -1627,9 +1622,10 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                </div>
             </div>
           </div>
+          */}
         </div>
 
-        {/* PhyloTree Deep Analysis */}
+        {/* Archive: PhyloTree Deep Analysis
         <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-48 h-48 bg-rose-500/5 blur-[80px] -mr-24 -mt-24 group-hover:bg-rose-500/10 transition-colors duration-1000"></div>
           <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 flex items-center gap-4 mb-8 relative z-10">
@@ -1671,6 +1667,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
             </div>
           )}
         </div>
+        */}
 
         {/* Maternal Health Traits Section */}
         {matchedTraits && matchedTraits.length > 0 && (
@@ -1819,7 +1816,8 @@ export default function App() {
     snpCount?: number, 
     predictedYDNA?: any, 
     predictedMtDNA?: any,
-    mergedMtMap?: Record<string, string>
+    mergedMtMap?: Record<string, string>,
+    analysis?: any
   }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
   const snpMaps = useRef<Record<number, Record<string, string>>>({});
@@ -1845,27 +1843,16 @@ export default function App() {
 
   const [darkMode, setDarkMode] = useState(true);
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'y-dna' | 'mt-dna' | 'ancient' | 'ancient-cultures' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('autosomal');
+  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('autosomal');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
+  const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
-  const [grafResults, setGrafResults] = useState<any[]>([]);
+  const [k27Results, setK27Results] = useState<any[]>([]);
 
-  // Calculate GRAF Engine results when dataset changes
-  useEffect(() => {
-    const calculateGraf = async () => {
-      const snpMap = snpMaps.current[activeDatasetIndex];
-      if (snpMap) {
-        const { calculateRegionalScores } = await import("./utils/ancestry/grafAncEngine");
-        const scores = await calculateRegionalScores(snpMap);
-        setGrafResults(scores);
-      } else {
-        setGrafResults([]);
-      }
-    };
-    calculateGraf();
-  }, [activeDatasetIndex, datasets]);
+  // Removed main-thread GRAF calculation useEffect
+
   const expandAll = (categories: string[]) => {
     setExpandedCategories(new Set(categories));
   };
@@ -1908,24 +1895,40 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const saved = loadResults();
-    if (saved) setDatasets(saved);
+    const init = async () => {
+      const saved = await loadResults();
+      if (saved) setDatasets(saved);
+    };
+    init();
   }, []);
 
-  const updateDatasets = (newDataset: { 
+  const updateDatasets = async (newDataset: { 
     name: string, 
     results: any[], 
     chip?: string, 
     snpCount?: number, 
     predictedYDNA?: any, 
     predictedMtDNA?: any,
-    mergedMtMap?: Record<string, string>
+    mergedMtMap?: Record<string, string>,
+    analysis?: any
   }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
-    saveResults(newDatasets);
+    
+    // Update local GRAF results state if available in the newest dataset
+    if (newDataset.analysis?.k27Results) {
+      setK27Results(newDataset.analysis.k27Results);
+    }
+
+    await saveResults(newDatasets);
     setActiveDatasetIndex(newDatasets.length - 1);
   };
+
+  useEffect(() => {
+    if (datasets[activeDatasetIndex]?.analysis?.k27Results) {
+      setK27Results(datasets[activeDatasetIndex].analysis.k27Results);
+    }
+  }, [activeDatasetIndex, datasets]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -1953,8 +1956,8 @@ export default function App() {
     doc.save("genotype_results.pdf");
   };
 
-  const resetApp = () => {
-    clearResults();
+  const resetApp = async () => {
+    await clearResults();
     setDatasets([]);
     setActiveDatasetIndex(0);
   };
@@ -1996,18 +1999,18 @@ export default function App() {
 
     try {
       const fileContents = await Promise.all(fileArray.map(file => {
-        return new Promise<{ text: string, name: string }>((resolve, reject) => {
+        return new Promise<{ buffer: ArrayBuffer, name: string }>((resolve, reject) => {
           const reader = new FileReader();
           reader.onload = (e) => {
-            const text = e.target?.result as string;
-            if (!text || text.trim().length === 0) {
+            const buffer = e.target?.result as ArrayBuffer;
+            if (!buffer || buffer.byteLength === 0) {
               reject(new Error(`File ${file.name} is empty.`));
             } else {
-              resolve({ text, name: file.name });
+              resolve({ buffer, name: file.name });
             }
           };
           reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
-          reader.readAsText(file);
+          reader.readAsArrayBuffer(file);
         });
       }));
 
@@ -2025,7 +2028,8 @@ export default function App() {
             snpCount: payload.snpCount,
             predictedYDNA: payload.predictedYDNA,
             predictedMtDNA: payload.predictedMtDNA,
-            mergedMtMap: payload.mergedMtMap
+            mergedMtMap: payload.mergedMtMap,
+            analysis: payload.analysis
           });
           setPendingFiles([]);
           setProcessing(false);
@@ -2043,7 +2047,8 @@ export default function App() {
         worker.terminate();
       };
 
-      worker.postMessage({ files: fileContents });
+      const transferList = fileContents.map(f => f.buffer);
+      worker.postMessage({ type: 'PROCESS_GENOME', files: fileContents }, transferList);
     } catch (err) {
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
@@ -2072,13 +2077,9 @@ export default function App() {
   const uniqueGenes = useMemo(() => Array.from(new Set(results?.map(r => r.gene) || [])), [results]);
 
   const oracleResults = useMemo(() => {
-    if (!datasets[activeDatasetIndex]?.results) return null;
-    const ancestrySnps = datasets[activeDatasetIndex].results.filter(r => r.category === 'Ancestry');
-    const oracle = calculateAncestryOracle(
-      ancestrySnps,
-      datasets[activeDatasetIndex].predictedYDNA?.predicted?.continent,
-      datasets[activeDatasetIndex].predictedMtDNA?.region
-    );
+    const dataset = datasets[activeDatasetIndex];
+    if (!dataset?.analysis?.oracleResults) return null;
+    const oracle = dataset.analysis.oracleResults;
 
     const processOracle = (data: any) => {
       const { continentalScores: rawContinentalScores, regionalScores, deepScores, subPopulations, chromosomeData } = data;
@@ -2090,56 +2091,57 @@ export default function App() {
       return { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData };
     };
 
-    const snpMap = snpMaps.current[activeDatasetIndex] || {};
-    const popFreqs = getPopFrequencies();
-    const statisticalResults = calculateProAncestry(snpMap, popFreqs);
-
     return {
       primary: processOracle(oracle.primary),
       secondary: processOracle(oracle.secondary),
       commercial: processOracle(oracle.commercial),
-      wholePanel: statisticalResults,
-      engine: grafResults
+      engine: k27Results
     };
-  }, [datasets, activeDatasetIndex, grafResults]);
+  }, [datasets, activeDatasetIndex, k27Results]);
 
   const ancientAdmixture = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.ancientAdmixture) return dataset.analysis.ancientAdmixture;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculateAncientAdmixture(snpMap);
   }, [datasets, activeDatasetIndex]);
 
   const individualMatches = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.individualMatches) return dataset.analysis.individualMatches;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculateIndividualMatches(snpMap);
   }, [datasets, activeDatasetIndex]);
 
-  const ancientCulturesMatches = useMemo(() => {
-    const snpMap = snpMaps.current[activeDatasetIndex];
-    if (!snpMap) return [];
-    return calculateAncientAffinity(snpMap);
-  }, [datasets, activeDatasetIndex]);
-
   const famousMatches = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.famousMatches) return dataset.analysis.famousMatches;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculateFamousMatches(snpMap);
   }, [datasets, activeDatasetIndex]);
 
   const healthWellnessMatches = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.healthWellness) return dataset.analysis.healthWellness;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return matchHealthAndWellness(snpMap);
   }, [datasets, activeDatasetIndex]);
 
   const populationProximity = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.populationProximity) return dataset.analysis.populationProximity;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculatePopulationProximity(snpMap);
   }, [datasets, activeDatasetIndex]);
 
   const markerBenchmarks = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.markerBenchmarks) return dataset.analysis.markerBenchmarks;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculateMarkerBenchmarks(snpMap);
@@ -2427,14 +2429,12 @@ export default function App() {
             <div className="grid grid-cols-4 sm:flex sm:flex-wrap gap-1.5 pb-0.5">
               {[
                 { id: 'summary', label: 'Summary', icon: '📊', color: 'amber' },
-                { id: 'ancient-cultures', label: 'Origins', icon: '🏛️', color: 'emerald' },
                 { id: 'oracle', label: 'Oracle', icon: '🔮', color: 'indigo' },
-                { id: 'compare', label: 'Compare', icon: '🌍', color: 'blue' },
+                { id: 'haplogroups', label: 'Haplogroups', icon: '🧬', color: 'teal' },
+                { id: 'compare', label: 'Populations', icon: '🌍', color: 'blue' },
                 { id: 'ancient', label: 'Ancient', icon: '🏺', color: 'amber' },
                 { id: 'wellness', label: 'Health', icon: '🧬', color: 'teal' },
                 { id: 'autosomal', label: 'Traits', icon: '🧬', color: 'sky' },
-                { id: 'y-dna', label: 'Y-DNA', icon: '♂️', color: 'blue' },
-                { id: 'mt-dna', label: 'mtDNA', icon: '♀️', color: 'rose' },
                 { id: 'markers', label: 'Panels', icon: '📋', color: 'indigo' },
                 { id: 'debug', label: 'System', icon: '🛠️', color: 'slate' }
               ].map(tab => (
@@ -2573,35 +2573,51 @@ export default function App() {
                 </div>
               )}
 
-              {activeTab === 'ancient-cultures' && (
-                <div className="space-y-12">
-                  <AncientCulturesTab matches={ancientCulturesMatches} />
-                </div>
-              )}
-
               {activeTab === 'wellness' && (
                 <HealthWellnessTab impacts={healthWellnessMatches} userSnps={snpMaps.current[activeDatasetIndex]} />
               )}
 
-              {activeTab === 'y-dna' && (
-                <YDNAView 
-                  yData={datasets[activeDatasetIndex].predictedYDNA} 
-                  treeSearchTerm={treeSearchTerm}
-                  setTreeSearchTerm={setTreeSearchTerm}
-                />
-              )}
+              {activeTab === 'haplogroups' && (
+                <div className="space-y-8 pb-12">
+                  <div className="flex justify-center mb-8">
+                    <div className="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                      <button 
+                        onClick={() => setActiveHaploType('paternal')}
+                        className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-md transform scale-105' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+                      >
+                        ♂️ Paternal Lineage
+                      </button>
+                      <button 
+                        onClick={() => setActiveHaploType('maternal')}
+                        className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-white dark:bg-slate-700 text-rose-600 dark:text-rose-400 shadow-md transform scale-105' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+                      >
+                        ♀️ Maternal Lineage
+                      </button>
+                    </div>
+                  </div>
 
-              {activeTab === 'mt-dna' && (
-                <MTDNAView 
-                  mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                  treeSearchTerm={treeSearchTerm}
-                  setTreeSearchTerm={setTreeSearchTerm}
-                  matchedTraits={userMatchedMitoTraits}
-                />
+                  {activeHaploType === 'paternal' ? (
+                    <YDNAView 
+                      yData={datasets[activeDatasetIndex].predictedYDNA} 
+                      treeSearchTerm={treeSearchTerm}
+                      setTreeSearchTerm={setTreeSearchTerm}
+                    />
+                  ) : (
+                    <MTDNAView 
+                      mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                      treeSearchTerm={treeSearchTerm}
+                      setTreeSearchTerm={setTreeSearchTerm}
+                      matchedTraits={userMatchedMitoTraits}
+                    />
+                  )}
+                </div>
               )}
 
               {activeTab === 'compare' && (
-                <PopulationComparisonTab proximityData={populationProximity} />
+                <PopulationComparisonTab 
+                  userSnps={snpMaps.current[activeDatasetIndex] || {}} 
+                  populationProximity={populationProximity}
+                />
               )}
 
               {activeTab === 'markers' && (

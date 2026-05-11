@@ -1,4 +1,4 @@
-import ancientSamples from '../data/reference/ancient_samples.json';
+import ancientSamples from '../data/ancient_historical/ancient_samples.json';
 
 export interface IndividualMatch {
   sampleId: string;

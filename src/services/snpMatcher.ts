@@ -72,11 +72,12 @@ export function getPrivateSNPs(snpMap: Record<string, string>) {
   return privateSNPs;
 }
 
-export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>) {
-  const seen = new Set<string>();
-  
-  // Combine SNP_DB with ANCHOR_AIMS and ANCESTRY_MARKERS to ensure the Oracle has enough data
-  const allSources: any[] = [
+let cachedAllSources: any[] | null = null;
+
+function getAllSources() {
+  if (cachedAllSources) return cachedAllSources;
+
+  const sources: any[] = [
     ...SNP_DB,
     ...ANCHOR_AIMS.map(aim => ({
       markerId: aim.rsid,
@@ -95,13 +96,13 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       rsid: m.rsid,
       gene: m.gene || "Intergenic",
       trait: m.trait || m.description,
-      continent: m.region, // Map region to continent field for compatibility
+      continent: m.region,
       description: m.description,
       alleles: m.alleles,
       significance: m.significance || "Medium",
       category: "Ancestry" as const,
       frequencies: m.frequencies,
-      subPopulation: m.region // Preserve granular region as subPopulation
+      subPopulation: m.region
     })),
     ...v5MarkersMaster.filter((m: any) => m.frequency && Object.keys(m.frequency).length > 0).map((m: any) => ({
       markerId: m.rsid,
@@ -117,39 +118,58 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     }))
   ];
 
-  return allSources.flatMap(snp => {
-    const markerId = snp.markerId.toLowerCase();
-    if (seen.has(markerId)) return [];
-    seen.add(markerId);
+  cachedAllSources = sources;
+  return sources;
+}
+
+export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>) {
+  const seen = new Set<string>();
+  const allSources = getAllSources();
+  const results: any[] = [];
+  
+  const sourcesCount = allSources.length;
+  for (let i = 0; i < sourcesCount; i++) {
+    const snp = allSources[i];
+    const markerIdLower = snp.markerId.toLowerCase();
     
-    // Check markerId, rsid, and aliases
-    const keysToCheck = [snp.markerId, snp.rsid, ...(snp.aliases || [])]
-      .filter(Boolean)
-      .map(k => k!.toLowerCase());
+    if (seen.has(markerIdLower)) continue;
+    seen.add(markerIdLower);
     
     let raw = '';
     let meta = null;
-    for (const k of keysToCheck) {
-      if (snpMap[k]) {
-        raw = snpMap[k];
-        if (snpMetaMap && snpMetaMap[k]) {
-          meta = snpMetaMap[k];
+    
+    // Check markerId
+    if (snpMap[markerIdLower]) {
+      raw = snpMap[markerIdLower];
+      if (snpMetaMap?.[markerIdLower]) meta = snpMetaMap[markerIdLower];
+    } 
+    // Check rsid
+    else if (snp.rsid && snpMap[snp.rsid.toLowerCase()]) {
+      const k = snp.rsid.toLowerCase();
+      raw = snpMap[k];
+      if (snpMetaMap?.[k]) meta = snpMetaMap[k];
+    }
+    // Check aliases
+    else if (snp.aliases) {
+      for (const alias of snp.aliases) {
+        const k = alias.toLowerCase();
+        if (snpMap[k]) {
+          raw = snpMap[k];
+          if (snpMetaMap?.[k]) meta = snpMetaMap[k];
+          break;
         }
-        break;
       }
     }
 
-    // Proxy Lookup logic to increase matched markers for the Oracle
+    // Proxy Lookup
     if (!raw && snp.rsid) {
       const proxies = SNP_PROXY_MAP[snp.rsid.toLowerCase()];
       if (proxies) {
         for (const proxy of proxies) {
-          if (snpMap[proxy.toLowerCase()]) {
-            raw = snpMap[proxy.toLowerCase()];
-            if (snpMetaMap && snpMetaMap[proxy.toLowerCase()]) {
-              meta = snpMetaMap[proxy.toLowerCase()];
-            }
-            // Add a flag or note that this is a proxy match
+          const k = proxy.toLowerCase();
+          if (snpMap[k]) {
+            raw = snpMap[k];
+            if (snpMetaMap?.[k]) meta = snpMetaMap[k];
             snp.description = (snp.description || "") + ` [Proxy matched via ${proxy}]`;
             break;
           }
@@ -158,66 +178,55 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     }
 
     if (!raw) {
-      return [{ ...snp, status: 'not_tested' }];
+      results.push({ ...snp, status: 'not_tested' });
+      continue;
     }
     
-    // Hierarchical Key-Value Matching system
-    const getNuancedInterpretation = (genotype: string, interpretations?: Record<string, string>) => {
-      if (!interpretations) return null;
-      
-      const normalizedGenotype = genotype.toUpperCase();
-      const sortedGenotype = genotype.split('').sort().join('').toUpperCase();
-      
-      // Level 1: Exact Match (Case-insensitive)
-      for (const [key, value] of Object.entries(interpretations)) {
-        if (key.toUpperCase() === normalizedGenotype) return value;
-      }
-      
-      // Level 2: Normalized/Sorted Match (for heterozygous SNPs)
-      if (genotype.length === 2) {
-        for (const [key, value] of Object.entries(interpretations)) {
-          const sortedKey = key.split('').sort().join('').toUpperCase();
-          if (sortedKey === sortedGenotype) return value;
+    const normalizedGenotype = raw.toUpperCase();
+    const sortedGenotype = raw.length === 2 ? (raw[0] > raw[1] ? raw[1] + raw[0] : raw).toUpperCase() : normalizedGenotype;
+    
+    let interpretation = null;
+    const interpretations = snp.interpretations;
+    
+    if (interpretations) {
+      for (const key in interpretations) {
+        const upperKey = key.toUpperCase();
+        if (upperKey === normalizedGenotype) {
+          interpretation = interpretations[key];
+          break;
+        }
+        if (raw.length === 2) {
+           const sortedKey = key.length === 2 ? (key[0] > key[1] ? key[1] + key[0] : key).toUpperCase() : upperKey;
+           if (sortedKey === sortedGenotype) {
+             interpretation = interpretations[key];
+             break;
+           }
         }
       }
       
-      // Level 3: Wildcard/Pattern Matching (e.g., "A*", "*G", "A?")
-      for (const [key, value] of Object.entries(interpretations)) {
-        if (key.includes('*') || key.includes('?')) {
-          const pattern = key.replace(/\*/g, '.*').replace(/\?/g, '.');
-          const regex = new RegExp(`^${pattern}$`, 'i');
-          if (regex.test(genotype)) return `[Nuanced Match] ${value}`;
-        }
-      }
-      
-      // Level 4: Partial/Ambiguous Match (e.g., "A" matches "AA" or "AG")
-      if (genotype.length === 1) {
-        for (const [key, value] of Object.entries(interpretations)) {
-          if (key.toUpperCase().includes(normalizedGenotype)) {
-            return `[Partial Match: ${genotype} in ${key}] ${value}`;
+      if (!interpretation) {
+        for (const key in interpretations) {
+          if (key.includes('*') || key.includes('?')) {
+            const pattern = key.replace(/\*/g, '.*').replace(/\?/g, '.');
+            const regex = new RegExp(`^${pattern}$`, 'i');
+            if (regex.test(raw)) {
+              interpretation = `[Nuanced Match] ${interpretations[key]}`;
+              break;
+            }
           }
         }
       }
       
-      // Level 5: Default/Catch-all
-      if (interpretations['*'] || interpretations['default']) {
-        return interpretations['*'] || interpretations['default'];
-      }
-      
-      return null;
-    };
+      if (!interpretation && interpretations['*']) interpretation = interpretations['*'];
+    }
 
-    // Count matches for the alleles of interest
     let matchCount = 0;
     if (Array.isArray(snp.alleles)) {
       for (const allele of snp.alleles) {
-        for (const char of raw) {
-          if (char === allele) matchCount++;
-        }
+        if (raw[0] === allele) matchCount++;
+        if (raw[1] === allele) matchCount++;
       }
     }
-    
-    let interpretation = getNuancedInterpretation(raw, snp.interpretations);
     
     const isMatched = matchCount > 0 || !!interpretation;
     const isPartial = !interpretation && matchCount > 0 && matchCount < 2 && raw.length === 2;
@@ -225,23 +234,17 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     if (!interpretation) {
       const alleleStr = Array.isArray(snp.alleles) ? snp.alleles.join('/') : 'N/A';
       if (matchCount === 2) {
-        interpretation = `Homozygous for the ${alleleStr} allele. You carry two copies of the variant associated with this trait.`;
+        interpretation = `Homozygous for the ${alleleStr} allele. Carry two copies.`;
       } else if (matchCount === 1) {
-        interpretation = `Heterozygous for the ${alleleStr} allele. You carry one copy of the variant associated with this trait.`;
+        interpretation = `Heterozygous for the ${alleleStr} allele. Carry one copy.`;
       } else {
-        interpretation = `You do not carry the ${alleleStr} variant associated with this trait.`;
+        interpretation = `No ${alleleStr} variant detected.`;
       }
-      
-      if (isPartial) {
-        interpretation = `[Partial Match] ${interpretation}`;
-      }
-      
-      // Incorporate more detailed medical or ancestry information from SNP_DB
-      if (snp.description) {
-        interpretation += ` ${snp.description}`;
-      }
+      if (isPartial) interpretation = `[Partial Match] ${interpretation}`;
+      if (snp.description) interpretation += ` ${snp.description}`;
     }
       
-    return [{ ...snp, genotype: raw, interpretation, status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', chrom: meta?.chrom, pos: meta?.pos }];
-  });
+    results.push({ ...snp, genotype: raw, interpretation, status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', chrom: meta?.chrom, pos: meta?.pos });
+  }
+  return results;
 }

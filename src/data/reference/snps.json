@@ -7,7 +7,9 @@
     "continent": "European",
     "category": "Appearance",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "description": "The primary determinant for blue versus brown eyes. The 'G' allele is highly informative for European ancestry.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs12913832"
   },
@@ -19,7 +21,9 @@
     "continent": "European",
     "category": "Appearance",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "description": "Works with HERC2 to determine eye color intensity and shade.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1800407"
   },
@@ -31,7 +35,9 @@
     "continent": "European",
     "category": "Diet",
     "significance": "High",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "description": "The primary marker for lactase persistence in Europeans. 'T' allele allows for digestion of milk into adulthood.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs4988235"
   },
@@ -43,7 +49,9 @@
     "continent": "European",
     "category": "Appearance",
     "significance": "Medium",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "description": "A well-known pigmentation marker. The 'T' allele is highly stratified and points strongly to Northwestern European lineage.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1805007"
   },
@@ -55,7 +63,9 @@
     "continent": "East Asian",
     "category": "Traits",
     "significance": "High",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "description": "Determines earwax consistency (wet vs dry) and underarm odor levels.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs17822931"
   },
@@ -64,10 +74,12 @@
     "rsid": "rs429358",
     "gene": "APOE",
     "trait": "Alzheimer's Risk / Longevity",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "High",
-    "alleles": ["C"],
+    "alleles": [
+      "C"
+    ],
     "description": "Component of the APOE-ε4 allele, a major genetic risk factor for late-onset Alzheimer's.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs429358"
   },
@@ -79,7 +91,9 @@
     "continent": "European",
     "category": "Ancestry",
     "significance": "High",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "description": "One of the strongest known AIMs. The 'A' allele is nearly 100% fixed in European populations, while the 'G' allele is nearly 100% fixed in Sub-Saharan African populations.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1426654"
   },
@@ -91,7 +105,9 @@
     "continent": "East Asian",
     "category": "Ancestry",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "description": "The 'G' allele is highly specific to East Asian and Indigenous American populations. It influences hair thickness, sweat gland density, and dental morphology.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs3827760"
   },
@@ -103,7 +119,9 @@
     "continent": "European",
     "category": "Ancestry",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "description": "The 'G' allele is predominantly found in European populations and is heavily involved in light skin pigmentation.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs16891982"
   },
@@ -115,7 +133,9 @@
     "continent": "East Asian",
     "category": "Ancestry",
     "significance": "High",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "description": "The 'A' allele (associated with dry earwax and reduced body odor) is extremely common in East Asian populations and rare in African and European populations.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs7388531"
   },
@@ -127,7 +147,9 @@
     "continent": "East Asian",
     "category": "Ancestry",
     "significance": "Medium",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "description": "The 'A' allele (associated with the 'Asian flush' reaction to alcohol) is highly concentrated in East Asian populations.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs671"
   },
@@ -13952,7 +13974,7 @@
     "rsid": "rs12821256",
     "gene": "KITLG",
     "trait": "Blond hair",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -13967,7 +13989,7 @@
     "rsid": "rs1667394",
     "gene": "OCA2",
     "trait": "Eye color",
-    "continent": "Global",
+    "continent": "African",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -13982,7 +14004,7 @@
     "rsid": "rs17646946",
     "gene": "FRAS1",
     "trait": "Hair color",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -13997,7 +14019,7 @@
     "rsid": "rs4959270",
     "gene": "EXOC2",
     "trait": "Hair color",
-    "continent": "Global",
+    "continent": "African",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14012,7 +14034,7 @@
     "rsid": "rs2378249",
     "gene": "PRSS53",
     "trait": "Hair curl",
-    "continent": "Global",
+    "continent": "American",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14027,7 +14049,7 @@
     "rsid": "rs11803731",
     "gene": "TCHH",
     "trait": "Hair straightness",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14042,7 +14064,7 @@
     "rsid": "rs6119471",
     "gene": "ASIP",
     "trait": "Hair/skin color",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14078,7 +14100,7 @@
     ],
     "gene": "Y-DNA",
     "trait": "Haplogroup CT (root)",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -14112,7 +14134,7 @@
     ],
     "gene": "Y-DNA",
     "trait": "Haplogroup F (root)",
-    "continent": "Global",
+    "continent": "African",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -14137,7 +14159,7 @@
     "rsid": "rs885479",
     "gene": "MC1R",
     "trait": "Red hair",
-    "continent": "Global",
+    "continent": "African",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14152,7 +14174,7 @@
     "rsid": "rs2816030",
     "gene": "SLC24A5",
     "trait": "South Asian ancestry",
-    "continent": "Global",
+    "continent": "European",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14167,7 +14189,7 @@
     "rsid": "rs1556547",
     "gene": "WNT10A",
     "trait": "Sparse/patterned hair",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Ancestry",
     "significance": "Low",
     "alleles": [
@@ -14182,7 +14204,7 @@
     "rsid": "rs1049353",
     "gene": "ARMS2",
     "trait": "Age-related macular degeneration",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14196,7 +14218,7 @@
     "rsid": "rs429358",
     "gene": "APOE",
     "trait": "Alzheimer's Risk (E4)",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "High",
     "alleles": [
@@ -14215,7 +14237,7 @@
     "rsid": "rs2476601",
     "gene": "PTPN22",
     "trait": "Autoimmune disease",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14245,7 +14267,7 @@
     "rsid": "rs1799983",
     "gene": "NOS3",
     "trait": "Cardiovascular risk",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14259,7 +14281,7 @@
     "rsid": "rs2187668",
     "gene": "HLA-DQA1",
     "trait": "Celiac disease",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14274,7 +14296,7 @@
     "rsid": "rs2228671",
     "gene": "LDLR",
     "trait": "Cholesterol Levels",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14288,7 +14310,7 @@
     "rsid": "rs4244285",
     "gene": "CYP2C19",
     "trait": "Clopidogrel/PPI metabolism",
-    "continent": "Global",
+    "continent": "American",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14303,7 +14325,7 @@
     "rsid": "rs3892097",
     "gene": "CYP2D6",
     "trait": "Codeine/antidepressant metabolism",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14318,7 +14340,7 @@
     "rsid": "rs1333049",
     "gene": "9p21",
     "trait": "Coronary Artery Disease Risk",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "High",
     "alleles": [
@@ -14337,7 +14359,7 @@
     "rsid": "rs1800497",
     "gene": "ANKK1/DRD2",
     "trait": "Dopamine signaling, cardiovascular risk",
-    "continent": "Global",
+    "continent": "European",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14352,7 +14374,7 @@
     "rsid": "rs1065852",
     "gene": "CYP2D6",
     "trait": "Drug metabolism",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14367,7 +14389,7 @@
     "rsid": "rs1042713",
     "gene": "ADRB2",
     "trait": "Exercise Response",
-    "continent": "Global",
+    "continent": "European",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14381,7 +14403,7 @@
     "rsid": "rs1799945",
     "gene": "HFE",
     "trait": "Hemochromatosis (H63D)",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14396,7 +14418,7 @@
     "rsid": "rs5186",
     "gene": "AGTR1",
     "trait": "Hypertension risk",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14411,7 +14433,7 @@
     "rsid": "rs1800795",
     "gene": "IL6",
     "trait": "Inflammation Levels",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14425,7 +14447,7 @@
     "rsid": "rs1801282",
     "gene": "PPARG",
     "trait": "Insulin Sensitivity",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14439,7 +14461,7 @@
     "rsid": "rs7412",
     "gene": "APOE",
     "trait": "Lipid Metabolism (E2)",
-    "continent": "Global",
+    "continent": "South Asian",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14458,7 +14480,7 @@
     "rsid": "rs10455872",
     "gene": "LPA",
     "trait": "Lipoprotein(a) Levels",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "High",
     "alleles": [
@@ -14477,7 +14499,7 @@
     "rsid": "rs2802292",
     "gene": "FOXO3",
     "trait": "Longevity",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "High",
     "alleles": [
@@ -14496,7 +14518,7 @@
     "rsid": "rs11572353",
     "gene": "TERT",
     "trait": "Longevity (Telomere Length)",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -14524,7 +14546,7 @@
     "rsid": "rs34637584",
     "gene": "LRRK2",
     "trait": "Parkinson's Disease Risk (G2019S)",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "High",
     "alleles": [
@@ -14543,7 +14565,7 @@
     "rsid": "rs4986893",
     "gene": "CYP2C19",
     "trait": "Poor metabolizer",
-    "continent": "Global",
+    "continent": "American",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14558,7 +14580,7 @@
     "rsid": "rs7775228",
     "gene": "HLA-C",
     "trait": "Psoriasis",
-    "continent": "Global",
+    "continent": "European",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14587,7 +14609,7 @@
     "rsid": "rs28399504",
     "gene": "CYP2C19",
     "trait": "Ultra-rapid metabolizer",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14602,7 +14624,7 @@
     "rsid": "rs9923231",
     "gene": "VKORC1",
     "trait": "Warfarin dosing",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14617,7 +14639,7 @@
     "rsid": "rs1799853",
     "gene": "CYP2C9",
     "trait": "Warfarin metabolism",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14632,7 +14654,7 @@
     "rsid": "rs1057910",
     "gene": "CYP2C9",
     "trait": "Warfarin sensitivity",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14647,7 +14669,7 @@
     "rsid": "rs762551",
     "gene": "CYP1A2",
     "trait": "Caffeine Metabolism",
-    "continent": "Global",
+    "continent": "American",
     "category": "Lifestyle",
     "significance": "Medium",
     "alleles": [
@@ -14666,7 +14688,7 @@
     "rsid": "rs767649",
     "gene": "ADORA2A",
     "trait": "Caffeine Sensitivity",
-    "continent": "Global",
+    "continent": "African",
     "category": "Lifestyle",
     "significance": "Medium",
     "alleles": [
@@ -14680,7 +14702,7 @@
     "rsid": "rs1801260",
     "gene": "CLOCK",
     "trait": "Circadian Rhythm",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Lifestyle",
     "significance": "Low",
     "alleles": [
@@ -14694,7 +14716,7 @@
     "rsid": "rs4680",
     "gene": "COMT",
     "trait": "Cognitive Function (Worrier/Warrior)",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Lifestyle",
     "significance": "Medium",
     "alleles": [
@@ -14708,7 +14730,7 @@
     "rsid": "rs6265",
     "gene": "BDNF",
     "trait": "Cognitive Function / Neuroplasticity",
-    "continent": "Global",
+    "continent": "African",
     "category": "Lifestyle",
     "significance": "Medium",
     "alleles": [
@@ -14726,7 +14748,7 @@
     "rsid": "rs53576",
     "gene": "OXTR",
     "trait": "Empathy and Stress Response",
-    "continent": "Global",
+    "continent": "African",
     "category": "Lifestyle",
     "significance": "Medium",
     "alleles": [
@@ -14740,7 +14762,7 @@
     "rsid": "rs1800955",
     "gene": "DRD4",
     "trait": "Novelty Seeking",
-    "continent": "Global",
+    "continent": "American",
     "category": "Lifestyle",
     "significance": "Medium",
     "alleles": [
@@ -14754,7 +14776,7 @@
     "rsid": "rs10246939",
     "gene": "TAS2R38",
     "trait": "Bitter taste",
-    "continent": "Global",
+    "continent": "American",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14769,7 +14791,7 @@
     "rsid": "rs713598",
     "gene": "TAS2R38",
     "trait": "Bitter taste perception (PTC)",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14784,7 +14806,7 @@
     "rsid": "rs1761667",
     "gene": "CD36",
     "trait": "Fat taste sensitivity",
-    "continent": "Global",
+    "continent": "South Asian",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14817,7 +14839,7 @@
     "rsid": "rs182549",
     "gene": "MCM6",
     "trait": "Lactose tolerance",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14832,7 +14854,7 @@
     "rsid": "rs9939609",
     "gene": "FTO",
     "trait": "Obesity / BMI",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14847,7 +14869,7 @@
     "rsid": "rs7903146",
     "gene": "TCF7L2",
     "trait": "Type 2 diabetes",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14862,7 +14884,7 @@
     "rsid": "rs7501331",
     "gene": "BCMO1",
     "trait": "Vitamin A Conversion",
-    "continent": "Global",
+    "continent": "African",
     "category": "Nutrition",
     "significance": "Medium",
     "alleles": [
@@ -14876,7 +14898,7 @@
     "rsid": "rs602662",
     "gene": "FUT2",
     "trait": "Vitamin B12 Absorption",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14904,7 +14926,7 @@
     "rsid": "rs2282679",
     "gene": "GC",
     "trait": "Vitamin D Levels",
-    "continent": "Global",
+    "continent": "African",
     "category": "Nutrition",
     "significance": "Medium",
     "alleles": [
@@ -14936,7 +14958,7 @@
     "rsid": "rs1815739",
     "gene": "ACTN3",
     "trait": "Muscle Fiber Type",
-    "continent": "Global",
+    "continent": "African",
     "category": "Performance",
     "significance": "High",
     "alleles": [
@@ -14950,7 +14972,7 @@
     "rsid": "rs1799971",
     "gene": "NOS3",
     "trait": "Nitric Oxide Production",
-    "continent": "Global",
+    "continent": "African",
     "category": "Performance",
     "significance": "Medium",
     "alleles": [
@@ -20490,7 +20512,7 @@
     "rsid": "rs662799",
     "gene": "APOB",
     "trait": "Cardiovascular Disease Risk",
-    "continent": "Global",
+    "continent": "European",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -20504,7 +20526,7 @@
     "rsid": "rs1800629",
     "gene": "TNF",
     "trait": "Inflammation/Cardiovascular Risk",
-    "continent": "Global",
+    "continent": "South Asian",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -20518,7 +20540,7 @@
     "rsid": "rs1042714",
     "gene": "ADRB2",
     "trait": "Cardiovascular Risk",
-    "continent": "Global",
+    "continent": "East Asian",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -20532,7 +20554,7 @@
     "rsid": "rs10830963",
     "gene": "MTNR1B",
     "trait": "Type 2 Diabetes Risk",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -20546,7 +20568,7 @@
     "rsid": "rs10505477",
     "gene": "HFE",
     "trait": "Cancer Predisposition",
-    "continent": "Global",
+    "continent": "African",
     "category": "Health",
     "significance": "Medium",
     "alleles": [
@@ -25362,8 +25384,10 @@
     "trait": "ABO Blood Group",
     "description": "Variant defining the O blood type allele.",
     "significance": "High",
-    "alleles": ["T"],
-    "continent": "Global"
+    "alleles": [
+      "T"
+    ],
+    "continent": "American"
   },
   {
     "markerId": "rs6762788",
@@ -25373,8 +25397,10 @@
     "trait": "Rh Blood Group",
     "description": "Variant influencing the Rhesus D antigen status.",
     "significance": "High",
-    "alleles": ["G"],
-    "continent": "Global"
+    "alleles": [
+      "G"
+    ],
+    "continent": "East Asian"
   },
   {
     "markerId": "rs8176719",
@@ -25384,8 +25410,10 @@
     "trait": "ABO Blood Group (Type O)",
     "description": "The critical marker for Type O blood. A deletion (del) at this position results in a non-functional enzyme, characteristic of Type O.",
     "significance": "High",
-    "alleles": ["del"],
-    "continent": "Global"
+    "alleles": [
+      "del"
+    ],
+    "continent": "American"
   },
   {
     "markerId": "rs8176747",
@@ -25395,8 +25423,12 @@
     "trait": "ABO Blood Group (Type O/A/B)",
     "description": "A major determinant for ABO blood group. The 'G' allele is associated with Type A, the 'C' allele with Type B, and a deletion at this locus is a key indicator for Type O.",
     "significance": "High",
-    "alleles": ["C", "G", "del"],
-    "continent": "Global"
+    "alleles": [
+      "C",
+      "G",
+      "del"
+    ],
+    "continent": "American"
   },
   {
     "markerId": "rs8176741",
@@ -25406,8 +25438,10 @@
     "trait": "ABO Blood Group (Type A)",
     "description": "Influences the expression of A antigens.",
     "significance": "High",
-    "alleles": ["G"],
-    "continent": "Global"
+    "alleles": [
+      "G"
+    ],
+    "continent": "American"
   },
   {
     "markerId": "rs8176750",
@@ -25417,8 +25451,11 @@
     "trait": "ABO Blood Group (A/B differentiation)",
     "description": "Helps differentiate between A and B alleles.",
     "significance": "High",
-    "alleles": ["G", "A"],
-    "continent": "Global"
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "continent": "East Asian"
   },
   {
     "markerId": "rs590787",
@@ -25428,8 +25465,11 @@
     "trait": "Rh Blood Group (Rh Factor)",
     "description": "Determines the Rhesus D positive or negative status. Absence or variation here results in Rh-negative status.",
     "significance": "High",
-    "alleles": ["A", "G"],
-    "continent": "Global"
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "continent": "South Asian"
   },
   {
     "markerId": "rs12075",
@@ -25439,8 +25479,11 @@
     "trait": "Duffy Antigen (Fya/Fyb)",
     "description": "Determines the Fya and Fyb antigens of the Duffy blood group system.",
     "significance": "High",
-    "alleles": ["A", "G"],
-    "continent": "Global"
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "continent": "African"
   },
   {
     "markerId": "rs1058396",
@@ -25450,8 +25493,11 @@
     "trait": "Kidd Antigen (Jka/Jkb)",
     "description": "Determines the Jka and Jkb antigens of the Kidd blood group system.",
     "significance": "High",
-    "alleles": ["A", "G"],
-    "continent": "Global"
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "continent": "African"
   },
   {
     "markerId": "rs8176058",
@@ -25461,8 +25507,11 @@
     "trait": "Kell Antigen (K/k)",
     "description": "Determines the Kell (K) and Cellano (k) antigens. The 'A' allele is rare and responsible for the K-positive phenotype.",
     "significance": "High",
-    "alleles": ["T", "C"],
-    "continent": "Global"
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "continent": "East Asian"
   },
   {
     "markerId": "rs601338",
@@ -25472,8 +25521,11 @@
     "trait": "Secretor Status",
     "description": "Determines whether blood group antigens are secreted into saliva and other body fluids. 'AA' results in non-secretor status.",
     "significance": "High",
-    "alleles": ["A", "G"],
-    "continent": "Global"
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "continent": "East Asian"
   },
   {
     "markerId": "rs3894326",
@@ -25483,8 +25535,11 @@
     "trait": "Lewis Blood Group",
     "description": "Determines the Lewis blood group antigens (Lea and Leb).",
     "significance": "High",
-    "alleles": ["T", "C"],
-    "continent": "Global"
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "continent": "African"
   },
   {
     "markerId": "rs7683365",
@@ -25494,8 +25549,11 @@
     "trait": "MNS Blood Group (M/N)",
     "description": "Determines the M and N antigens of the MNS blood group system.",
     "significance": "High",
-    "alleles": ["T", "C"],
-    "continent": "Global"
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "continent": "East Asian"
   },
   {
     "markerId": "rs11273308",
@@ -25505,7 +25563,10 @@
     "trait": "MNS Blood Group (S/s)",
     "description": "Determines the S and s antigens of the MNS blood group system.",
     "significance": "High",
-    "alleles": ["T", "C"],
+    "alleles": [
+      "T",
+      "C"
+    ],
     "continent": "Global"
   },
   {
@@ -25515,7 +25576,9 @@
     "trait": "Haplogroup B1 Marker",
     "description": "Marker for paternal lineage B1, found in West/Central Africa.",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "continent": "African"
   },
   {
@@ -25525,7 +25588,9 @@
     "trait": "Haplogroup B2a Marker",
     "description": "Marker for paternal lineage B2a, associated with Central African populations.",
     "significance": "High",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "continent": "African"
   },
   {
@@ -25535,7 +25600,9 @@
     "trait": "Haplogroup B2a1 Marker",
     "description": "Subclade marker for B2a1.",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "continent": "African"
   },
   {
@@ -25545,7 +25612,9 @@
     "trait": "Haplogroup B2a1a Marker",
     "description": "Marker for B2a1a.",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "continent": "African"
   },
   {
@@ -25555,7 +25624,9 @@
     "trait": "Haplogroup B2b1 Marker",
     "description": "Marker for San group B2b1.",
     "significance": "High",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "continent": "African"
   },
   {
@@ -25565,7 +25636,9 @@
     "trait": "Haplogroup E1b1a Subclade Marker",
     "description": "Refines E-M2 lineages in Sub-Saharan Africa.",
     "significance": "High",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "continent": "African"
   },
   {
@@ -25575,7 +25648,9 @@
     "trait": "Haplogroup E1b1a subclade",
     "description": "Common in West/Central African regions.",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "continent": "African"
   },
   {
@@ -25585,7 +25660,9 @@
     "trait": "Haplogroup E1b1a subclade",
     "description": "Found in West African populations.",
     "significance": "High",
-    "alleles": ["A"],
+    "alleles": [
+      "A"
+    ],
     "continent": "African"
   },
   {
@@ -25595,7 +25672,9 @@
     "trait": "Haplogroup E1b1b Subclade Marker",
     "description": "Balkan specific E1b1b marker.",
     "significance": "High",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "continent": "European"
   }
 ]

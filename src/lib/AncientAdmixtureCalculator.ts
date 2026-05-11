@@ -1,6 +1,6 @@
 import { getAncientMarkers } from '../data/GenomicDataService';
-import ancientSamples from '../data/reference/ancient_samples.json';
-import ancientMatches from '../data/ancientMatches.json';
+import ancientSamples from '../data/ancient_historical/ancient_samples.json';
+import ancientMatches from '../data/ancient_historical/ancientMatches.json';
 
 export interface AncientSampleMatch {
   popCode: string;

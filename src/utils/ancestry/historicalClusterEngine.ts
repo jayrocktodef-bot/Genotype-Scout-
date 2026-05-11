@@ -1,4 +1,4 @@
-import historicalClusters from '../../data/historical_clusters.json';
+import historicalClusters from '../../data/ancient_historical/historical_clusters.json';
 
 export interface ClusterMatch {
   clusterId: string;

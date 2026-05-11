@@ -1,0 +1,226 @@
+[
+  {
+    "population": "ACB",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.9944626360600262,
+    "pc2": -0.09430773880646304
+  },
+  {
+    "population": "AFR",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.6135870806062276,
+    "pc2": 0.29771583360079906
+  },
+  {
+    "population": "ALL",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.2757669358227182,
+    "pc2": 0.5015815230505719
+  },
+  {
+    "population": "AMR",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.8819760864769611,
+    "pc2": 1.2443825250360834
+  },
+  {
+    "population": "ASW",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.550362820650473,
+    "pc2": 0.27711620147733673
+  },
+  {
+    "population": "BEB",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.0428580100058387,
+    "pc2": 0.6425342686527884
+  },
+  {
+    "population": "CDX",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -0.8945679359561188,
+    "pc2": -1.5278654589486473
+  },
+  {
+    "population": "CEU",
+    "region": "Europe",
+    "color": "#3b82f6",
+    "pc1": -1.0145984508646237,
+    "pc2": 0.4444597221273351
+  },
+  {
+    "population": "CHB",
+    "region": "Asia",
+    "color": "#ef4444",
+    "pc1": -1.471249986650892,
+    "pc2": -0.2280797557950287
+  },
+  {
+    "population": "CHS",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.4675092365065576,
+    "pc2": -0.7449475297536078
+  },
+  {
+    "population": "CLM",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.035396125497156386,
+    "pc2": 0.4498450266980014
+  },
+  {
+    "population": "EAS",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.4675707788359353,
+    "pc2": 1.0073023554680347
+  },
+  {
+    "population": "ESN",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.7018764679910102,
+    "pc2": -2.425581787180686
+  },
+  {
+    "population": "EUR",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.0315164545563433,
+    "pc2": 0.4384890124603179
+  },
+  {
+    "population": "FIN",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -0.36913585543290506,
+    "pc2": 0.4660694656043913
+  },
+  {
+    "population": "GBR",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.0514957462697643,
+    "pc2": 0.9603250096469786
+  },
+  {
+    "population": "GIH",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.07826498301832,
+    "pc2": -0.1726246205962725
+  },
+  {
+    "population": "GWD",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.545387586319493,
+    "pc2": -0.14068992570208516
+  },
+  {
+    "population": "IBS",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.5922555211776102,
+    "pc2": 0.36895824492027274
+  },
+  {
+    "population": "ITU",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -0.4903701961871433,
+    "pc2": 0.1769191639767072
+  },
+  {
+    "population": "JPT",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.7918778348073767,
+    "pc2": -0.7677172717807498
+  },
+  {
+    "population": "KHV",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -1.3226047445498867,
+    "pc2": -1.143816240853728
+  },
+  {
+    "population": "LWK",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.6602264265473656,
+    "pc2": -0.9463508425755089
+  },
+  {
+    "population": "MSL",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.1598182874950012,
+    "pc2": -1.0537985034895394
+  },
+  {
+    "population": "MXL",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.017085829636310473,
+    "pc2": 1.1687497756507836
+  },
+  {
+    "population": "PEL",
+    "region": "Americas",
+    "color": "#a855f7",
+    "pc1": 0.600170993712918,
+    "pc2": -0.025546934973893334
+  },
+  {
+    "population": "PJL",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -0.7423459884733101,
+    "pc2": -0.37890587466277587
+  },
+  {
+    "population": "PUR",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 1.135533536182132,
+    "pc2": 0.8667360975632484
+  },
+  {
+    "population": "SAS",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -0.10116657136974994,
+    "pc2": 1.7362155686596867
+  },
+  {
+    "population": "STU",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": -0.4387666613425481,
+    "pc2": 0.28535386780353295
+  },
+  {
+    "population": "TSI",
+    "region": "Global",
+    "color": "#94a3b8",
+    "pc1": 0.33409639122090984,
+    "pc2": 0.7581042253803841
+  },
+  {
+    "population": "YRI",
+    "region": "Africa",
+    "color": "#10b981",
+    "pc1": 0.614863800318316,
+    "pc2": -2.440625402658266
+  }
+]

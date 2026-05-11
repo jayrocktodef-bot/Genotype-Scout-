@@ -43,11 +43,11 @@ export async function syncAncientAfricanWeights() {
     }
   }
 
-  const dataDir = path.join(process.cwd(), 'src', 'data', 'ancestry');
+  const dataDir = path.join(process.cwd(), 'src', 'data', 'ancient_historical');
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
   fs.writeFileSync(path.join(dataDir, 'ancient_african_weights.json'), JSON.stringify(weights, null, 2));
-  console.log("✅ Success: src/data/ancestry/ancient_african_weights.json generated.");
+  console.log("✅ Success: src/data/ancient_historical/ancient_african_weights.json generated.");
 }
 
 // If run directly

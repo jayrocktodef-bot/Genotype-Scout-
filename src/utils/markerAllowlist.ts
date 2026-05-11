@@ -1,11 +1,11 @@
-import grafIndex from '../data/graf_10k_index.json';
-import forensicAims from '../data/forensic_aims_master.json';
-import deepAims from '../data/deep_resolution_aims.json';
-import euroforgenPanel from '../data/euroforgen_name_panel.json';
+import grafIndex from '../data/ancestry/graf_10k_index.json';
+import forensicAims from '../data/phenotype_forensic/forensic_aims_master.json';
+import deepAims from '../data/phenotype_forensic/deep_resolution_aims.json';
+import euroforgenPanel from '../data/phenotype_forensic/euroforgen_name_panel.json';
 import { SNP_DB } from '../data/snpDatabase';
 import { ANCHOR_AIMS } from '../anchorAims';
 import { ANCESTRY_MARKERS } from '../data/ancestry';
-import ancientSamples from '../data/reference/ancient_samples.json';
+import ancientSamples from '../data/ancient_historical/ancient_samples.json';
 
 export function getMarkerAllowlist(): Set<string> {
   const allowlist = new Set<string>();

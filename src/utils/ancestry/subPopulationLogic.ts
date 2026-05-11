@@ -1,6 +1,6 @@
 // src/utils/ancestry/subPopulationLogic.ts
-import regionalWeights from '../../data/graf_10k_weights.json';
-import grafIndex from '../../data/graf_10k_index.json';
+import regionalWeights from '../../data/ancestry/graf_10k_weights.json';
+import grafIndex from '../../data/ancestry/graf_10k_index.json';
 
 /**
  * Calculates the resonance (likelihood) of 26 sub-populations.

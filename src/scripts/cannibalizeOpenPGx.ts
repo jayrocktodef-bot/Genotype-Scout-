@@ -24,11 +24,12 @@ export async function syncOpenPGx() {
     }
 
     // Ensure data directory exists
-    if (!fs.existsSync('./src/data')) {
-      fs.mkdirSync('./src/data', { recursive: true });
+    const outDir = './src/data/health_pgx';
+    if (!fs.existsSync(outDir)) {
+      fs.mkdirSync(outDir, { recursive: true });
     }
 
-    fs.writeFileSync('./src/data/openpgx_unified.json', JSON.stringify(fullLibrary, null, 2));
+    fs.writeFileSync(`${outDir}/pharmacogenomics.json`, JSON.stringify(fullLibrary, null, 2));
     console.log(`✅ Success! Imported ${fullLibrary.length} clinical studies.`);
   } catch (error) {
     console.error('❌ Failed to sync OpenPGx:', error);

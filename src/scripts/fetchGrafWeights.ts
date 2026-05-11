@@ -2,8 +2,8 @@ import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 
-const INDEX_FILE = './src/data/graf_10k_index.json';
-const OUTPUT_FILE = './src/data/graf_10k_weights.json';
+const INDEX_FILE = './src/data/ancestry/graf_10k_index.json';
+const OUTPUT_FILE = './src/data/ancestry/graf_10k_weights.json';
 
 // 26 Sub-populations from 1000 Genomes Project
 const TARGET_POPS = [

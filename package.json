@@ -11,7 +11,10 @@
     "lint": "tsc --noEmit",
     "sync-pgx": "tsx src/scripts/cannibalizeOpenPGx.ts",
     "sync-graf": "tsx src/scripts/fetchGrafWeights.ts",
+    "sync-pca": "tsx src/scripts/sync-hgdp-pca.ts",
+    "sync-admixture": "tsx scripts/parse-open-admixture.ts",
     "sync-all": "tsx src/scripts/sync-scout.ts && npm run build",
+    "enrich-markers": "tsx scripts/enrich-marker-metadata.ts",
     "test": "vitest run"
   },
   "dependencies": {
@@ -21,9 +24,11 @@
     "axios": "^1.16.0",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
+    "idb-keyval": "^6.2.2",
     "jspdf": "^4.2.1",
     "jszip": "^3.10.1",
     "lucide-react": "^0.546.0",
+    "ml-pca": "^4.1.1",
     "motion": "^12.23.24",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

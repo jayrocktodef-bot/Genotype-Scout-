@@ -32,11 +32,11 @@ export async function syncCommercialAims() {
         }
     }
 
-    const dataDir = path.join(process.cwd(), 'src', 'data');
+    const dataDir = path.join(process.cwd(), 'src', 'data', 'ancestry');
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
     
     fs.writeFileSync(path.join(dataDir, 'commercial_aim_weights.json'), JSON.stringify(db, null, 2));
-    console.log("\n✅ Commercial AIMs synced to src/data/commercial_aim_weights.json");
+    console.log("\n✅ Commercial AIMs synced to src/data/ancestry/commercial_aim_weights.json");
 }
 
 // If run directly
