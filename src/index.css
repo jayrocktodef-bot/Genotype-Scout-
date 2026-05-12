@@ -6,248 +6,63 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-.frosted-glass {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10;
-}
-
-.dark .frosted-glass {
-  @apply bg-black/30 backdrop-blur-lg border border-white/5;
-}
-
 :root {
-  /* Facebook Light Mode Palette */
-  --bg-primary: #F0F2F5;     
-  --bg-secondary: #FFFFFF;   
-  --text-primary: #050505;   
-  --text-secondary: #65676B; 
-  --accent-blue: #0866FF;    
-  --status-high: #E41E3F;    
-  --status-medium: #F5A623;
-  --status-low: #31A24C;     
-  --card-bg: #FFFFFF;
-  --border-color: #CED0D4;
-}
-
-.dark {
-  /* Improved Facebook Dark Mode Palette for higher contrast */
-  --bg-primary: #111213;     /* Slightly darker background */
-  --bg-secondary: #1C1D1E;   
-  --text-primary: #F5F6F7;   /* Brighter primary text */
-  --text-secondary: #E4E6EB; /* Brighter secondary text */
-  --accent-blue: #4599FF;    /* Brighter accent blue */
-  --status-high: #FF4D6D;    /* Brighter status colors */
-  --status-medium: #FFB347;
-  --status-low: #4ADE80;
-  --card-bg: #1C1D1E;
-  --border-color: #3F4142;   /* Slightly more visible borders */
+  --bg-main: #f8fafc; /* bg-slate-50 */
+  --bg-card: #ffffff;
+  --text-primary: #1e293b; /* text-slate-800 */
+  --text-secondary: #64748b; /* text-slate-500 */
+  --accent: #0d9488; /* teal-600 */
+  --accent-soft: #f0fdfa; /* teal-50 */
+  --border-soft: #f1f5f9; /* slate-100 */
 }
 
 body {
   margin: 0;
-  background-color: var(--bg-primary);
-  background-image: radial-gradient(circle at 1px 1px, var(--border-color) 1px, transparent 0);
-  background-size: 40px 40px;
+  background-color: var(--bg-main);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
   line-height: 1.5;
 }
 
-.app-container {
-  min-height: 100vh;
+@layer base {
+  button {
+    @apply transition-all active:scale-95 cursor-pointer;
+  }
 }
 
-header h1 {
-  font-weight: 800;
-  color: var(--accent-blue);
+.premium-card {
+  @apply bg-white rounded-[2rem] border border-slate-100 shadow-sm transition-all hover:shadow-md;
 }
 
-.trait-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600;
 }
 
-.dark .trait-card {
-  box-shadow: none; 
-}
-
-input[type="file"] {
-  display: none;
-}
-
-button {
-  transition: all 0.2s ease;
-  font-weight: 600;
-  border-radius: 6px;
-}
-
-button:hover {
-  filter: brightness(0.95);
-}
-
-/* Custom Scrollbar for a cleaner look */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  @apply bg-slate-200 rounded-full hover:bg-slate-300;
 }
 
-/* Maintain some utility classes for the DNA visualization and animations */
-.nt {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  border: 1.5px solid;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pk 2s ease-in-out infinite;
-}
-.nA { border-color: #31A24C; color: #31A24C; }
-.nT { border-color: #E41E3F; color: #E41E3F; animation-delay: .2s; }
-.nG { border-color: #F5A623; color: #F5A623; animation-delay: .4s; }
-.nC { border-color: var(--accent-blue); color: var(--accent-blue); animation-delay: .6s; }
-
-@keyframes pk {
-  0%, 100% { opacity: .3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-.data-value {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.dark .card {
-  box-shadow: none;
-}
-
-.upload-blurb {
-  background-color: var(--card-bg);
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  margin-bottom: 2rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.dark .upload-blurb {
-  box-shadow: none;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 .animate-fade-up {
-  animation: fadeUp 0.5s ease-out forwards;
+  animation: fade-up 0.5s ease-out forwards;
 }
 
-.animate-shake {
-  animation: shake 0.4s ease-in-out;
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
-}
-/* -----------------------------------------
-   UI Polish: Drop Zones, Badges & Buttons 
------------------------------------------ */
-
-/* 1. File Drop Zones (Dashed & Interactive) */
-.drop-zone {
-  border: 2px dashed var(--border-color) !important;
-  background-color: var(--bg-primary);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.drop-zone:hover, .drop-zone.active-drag {
-  border-color: var(--accent-blue) !important;
-  background-color: rgba(69, 153, 255, 0.05); /* Slight blue tint on hover */
-}
-
-/* 2. Stats Badge (Pill shape for the marker counts) */
-.stats-badge {
-  display: inline-flex;
-  align-items: center;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 9999px; /* Creates the perfect pill shape */
-  padding: 0.35rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.dark .stats-badge {
-  box-shadow: none;
-}
-
-/* 3. Category Buttons (Bottom Filters) */
-.category-btn {
-  background-color: var(--bg-secondary);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-color);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.category-btn:hover {
-  background-color: var(--border-color);
-  color: var(--text-primary);
-}
-
-/* Active state for when a category is selected */
-.category-btn.active {
-  background-color: rgba(69, 153, 255, 0.1);
-  color: var(--accent-blue);
-  border-color: var(--accent-blue);
-}
-
-.dark .category-btn {
-  background-color: #1f2937; /* Deep gray so it isn't pure white */
-  border-color: #374151;
-}
-
-.dark .category-btn:hover {
-  background-color: #374151;
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
 }

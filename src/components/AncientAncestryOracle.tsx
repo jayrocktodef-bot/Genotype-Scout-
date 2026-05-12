@@ -60,32 +60,32 @@ export const AncientAncestryOracle = memo(({
                 </div>
               </div>
 
-              <h3 className="text-lg font-black text-[#F5F6F7] mb-1">{pop.popName}</h3>
-              <div className="flex flex-wrap items-center gap-2 mb-3">
-                <div className="flex items-center gap-1 text-[10px] font-bold text-slate-500 uppercase">
+              <h3 className="text-lg font-black text-[#F5F6F7] mb-1 truncate" title={pop.popName}>{pop.popName}</h3>
+              <div className="flex flex-wrap items-center gap-1.5 mb-3">
+                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 uppercase truncate">
                   <MapPin size={10} /> {pop.region}
                 </div>
                 <span className="text-slate-700">•</span>
-                <div className="text-[10px] font-bold text-slate-500 uppercase">
+                <div className="text-[9px] font-bold text-slate-500 uppercase truncate">
                   {pop.period}
                 </div>
                 {pop.age_bp && (
                   <>
                     <span className="text-slate-700">•</span>
-                    <div className="text-[10px] font-bold text-amber-500/80 uppercase">
+                    <div className="text-[9px] font-bold text-amber-500/80 uppercase truncate">
                       {pop.age_bp.toLocaleString()} BP
                     </div>
                   </>
                 )}
               </div>
 
-              <p className="text-xs text-slate-400 leading-relaxed mb-4 line-clamp-3 italic">
+              <p className="text-[10px] text-slate-400 leading-relaxed mb-4 line-clamp-3 italic">
                 "{pop.description}"
               </p>
 
               <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-500">
-                   <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 truncate">
+                   <div className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
                    {pop.culture || 'Archaeological Sample'}
                 </div>
                 <div className="flex items-center gap-1.5">

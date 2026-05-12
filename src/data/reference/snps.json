@@ -785,7 +785,7 @@
   {
     "markerId": "rs622682",
     "rsid": "rs622682",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "African Ancestry Marker",
     "continent": "African",
     "subpop": null,
@@ -2932,7 +2932,7 @@
   {
     "markerId": "rs10456218_Akan",
     "rsid": "rs10456218",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Akan Ancestry Marker",
     "continent": "African",
     "subpop": "Akan",
@@ -2956,7 +2956,7 @@
   {
     "markerId": "rs10456221_Amhara",
     "rsid": "rs10456221",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amhara Ancestry Marker",
     "continent": "African",
     "subpop": "Amhara",
@@ -3028,7 +3028,7 @@
   {
     "markerId": "rs10456231_Baganda",
     "rsid": "rs10456231",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baganda Ancestry Marker",
     "continent": "African",
     "subpop": "Baganda",
@@ -3052,7 +3052,7 @@
   {
     "markerId": "rs10456256_Bakongo",
     "rsid": "rs10456256",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bakongo Ancestry Marker",
     "continent": "African",
     "subpop": "Bakongo",
@@ -3076,7 +3076,7 @@
   {
     "markerId": "rs10456238_Bakongo",
     "rsid": "rs10456238",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bakongo Ancestry Marker",
     "continent": "African",
     "subpop": "Bakongo",
@@ -3100,7 +3100,7 @@
   {
     "markerId": "rs10456257_Baluba",
     "rsid": "rs10456257",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baluba Ancestry Marker",
     "continent": "African",
     "subpop": "Baluba",
@@ -3124,7 +3124,7 @@
   {
     "markerId": "rs10456237_Bamileke",
     "rsid": "rs10456237",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bamileke Ancestry Marker",
     "continent": "African",
     "subpop": "Bamileke",
@@ -3148,7 +3148,7 @@
   {
     "markerId": "rs10456205_Bamoun",
     "rsid": "rs10456205_B",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bamoun Ancestry Marker",
     "continent": "African",
     "subpop": "Bamoun",
@@ -3172,7 +3172,7 @@
   {
     "markerId": "rs10486573",
     "rsid": "rs10486573",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bantu Marker",
     "continent": "African",
     "subpop": "Bantu",
@@ -3188,7 +3188,7 @@
   {
     "markerId": "rs10486574",
     "rsid": "rs10486574",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bantu Marker",
     "continent": "African",
     "subpop": "Bantu",
@@ -3204,7 +3204,7 @@
   {
     "markerId": "rs10486575",
     "rsid": "rs10486575",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bantu Marker",
     "continent": "African",
     "subpop": "Bantu",
@@ -3220,7 +3220,7 @@
   {
     "markerId": "rs10456249_Bassa",
     "rsid": "rs10456249",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bassa Ancestry Marker",
     "continent": "African",
     "subpop": "Bassa",
@@ -3244,7 +3244,7 @@
   {
     "markerId": "rs10456228_Baule",
     "rsid": "rs10456228",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baule Ancestry Marker",
     "continent": "African",
     "subpop": "Baule",
@@ -3268,7 +3268,7 @@
   {
     "markerId": "rs10456261_Bemba",
     "rsid": "rs10456261",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bemba Ancestry Marker",
     "continent": "African",
     "subpop": "Bemba",
@@ -3292,7 +3292,7 @@
   {
     "markerId": "rs4242382",
     "rsid": "rs4242382",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cameroonian Marker",
     "continent": "African",
     "subpop": "Cameroon",
@@ -3308,7 +3308,7 @@
   {
     "markerId": "rs4242383",
     "rsid": "rs4242383",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cameroonian Marker",
     "continent": "African",
     "subpop": "Cameroon",
@@ -3324,7 +3324,7 @@
   {
     "markerId": "rs4242384",
     "rsid": "rs4242384",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cameroonian Marker",
     "continent": "African",
     "subpop": "Cameroon",
@@ -3340,7 +3340,7 @@
   {
     "markerId": "rs10456303_CapeVerdean",
     "rsid": "rs10456303",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cape Verdean Ancestry Marker",
     "continent": "African",
     "subpop": "Cape Verdean",
@@ -3364,7 +3364,7 @@
   {
     "markerId": "rs10456304_CapeVerdean",
     "rsid": "rs10456304",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cape Verdean Ancestry Marker",
     "continent": "African",
     "subpop": "Cape Verdean",
@@ -3388,7 +3388,7 @@
   {
     "markerId": "rs10456263_Chewa",
     "rsid": "rs10456263",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Chewa Ancestry Marker",
     "continent": "African",
     "subpop": "Chewa",
@@ -3412,7 +3412,7 @@
   {
     "markerId": "rs10456259_Chokwe",
     "rsid": "rs10456259",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Chokwe Ancestry Marker",
     "continent": "African",
     "subpop": "Chokwe",
@@ -3436,7 +3436,7 @@
   {
     "markerId": "rs12752445",
     "rsid": "rs12752445",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Congolese Marker",
     "continent": "African",
     "subpop": "Congo",
@@ -3452,7 +3452,7 @@
   {
     "markerId": "rs12752446",
     "rsid": "rs12752446",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Congolese Marker",
     "continent": "African",
     "subpop": "Congo",
@@ -3468,7 +3468,7 @@
   {
     "markerId": "rs12752447",
     "rsid": "rs12752447",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Congolese Marker",
     "continent": "African",
     "subpop": "Congo",
@@ -3484,7 +3484,7 @@
   {
     "markerId": "rs10456255_Dan",
     "rsid": "rs10456255",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dan Ancestry Marker",
     "continent": "African",
     "subpop": "Dan",
@@ -3508,7 +3508,7 @@
   {
     "markerId": "rs10456243_Edo",
     "rsid": "rs10456243",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Edo Ancestry Marker",
     "continent": "African",
     "subpop": "Edo",
@@ -3532,7 +3532,7 @@
   {
     "markerId": "rs10456241_Efik",
     "rsid": "rs10456241",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Efik Ancestry Marker",
     "continent": "African",
     "subpop": "Efik",
@@ -3556,7 +3556,7 @@
   {
     "markerId": "rs10456198_Esan",
     "rsid": "rs10456198",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Esan Ancestry Marker",
     "continent": "African",
     "subpop": "Esan",
@@ -3580,7 +3580,7 @@
   {
     "markerId": "rs10456203_Ethiopian",
     "rsid": "rs10456203",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ethiopian Ancestry Marker",
     "continent": "African",
     "subpop": "Ethiopian",
@@ -3604,7 +3604,7 @@
   {
     "markerId": "rs10456300_Ethiopian",
     "rsid": "rs10456300",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ethiopian Ancestry Marker",
     "continent": "African",
     "subpop": "Ethiopian",
@@ -3628,7 +3628,7 @@
   {
     "markerId": "rs10456220_Ewe",
     "rsid": "rs10456220",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ewe Ancestry Marker",
     "continent": "African",
     "subpop": "Ewe",
@@ -3652,7 +3652,7 @@
   {
     "markerId": "rs10456236_Ewe",
     "rsid": "rs10456236",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ewe Ancestry Marker",
     "continent": "African",
     "subpop": "Ewe",
@@ -3676,7 +3676,7 @@
   {
     "markerId": "rs10456205_Fang",
     "rsid": "rs10456205_F",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fang Ancestry Marker",
     "continent": "African",
     "subpop": "Fang",
@@ -3700,7 +3700,7 @@
   {
     "markerId": "rs10456227_Fon",
     "rsid": "rs10456227_FO",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fon Ancestry Marker",
     "continent": "African",
     "subpop": "Fon",
@@ -3724,7 +3724,7 @@
   {
     "markerId": "rs10456235_Fon",
     "rsid": "rs10456235",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fon Ancestry Marker",
     "continent": "African",
     "subpop": "Fon",
@@ -3748,7 +3748,7 @@
   {
     "markerId": "rs10456205_Fulani",
     "rsid": "rs10456205_FU",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fulani Ancestry Marker",
     "continent": "African",
     "subpop": "Fulani",
@@ -3772,7 +3772,7 @@
   {
     "markerId": "rs10456233_Fulani",
     "rsid": "rs10456233",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fulani Ancestry Marker",
     "continent": "African",
     "subpop": "Fulani",
@@ -3796,7 +3796,7 @@
   {
     "markerId": "rs10456219_Ga",
     "rsid": "rs10456219",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ga-Adangbe Ancestry Marker",
     "continent": "African",
     "subpop": "Ga-Adangbe",
@@ -3820,7 +3820,7 @@
   {
     "markerId": "rs10456251_Gola",
     "rsid": "rs10456251",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Gola Ancestry Marker",
     "continent": "African",
     "subpop": "Gola",
@@ -3844,7 +3844,7 @@
   {
     "markerId": "rs10456248_Grebo",
     "rsid": "rs10456248",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Grebo Ancestry Marker",
     "continent": "African",
     "subpop": "Grebo",
@@ -3868,7 +3868,7 @@
   {
     "markerId": "rs10456205_Hausa",
     "rsid": "rs10456205_H",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hausa Ancestry Marker",
     "continent": "African",
     "subpop": "Hausa",
@@ -3892,7 +3892,7 @@
   {
     "markerId": "rs11103349",
     "rsid": "rs11103349",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Maasai Ancestry Marker",
     "continent": "African",
     "subpop": "Maasai",
@@ -3916,7 +3916,7 @@
   {
     "markerId": "rs11103350",
     "rsid": "rs11103350",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "East African Marker",
     "continent": "African",
     "subpop": "Horn",
@@ -3932,7 +3932,7 @@
   {
     "markerId": "rs11103351",
     "rsid": "rs11103351",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "East African Marker",
     "continent": "African",
     "subpop": "Horn",
@@ -3948,7 +3948,7 @@
   {
     "markerId": "rs10456242_Ibibio",
     "rsid": "rs10456242",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ibibio Ancestry Marker",
     "continent": "African",
     "subpop": "Ibibio",
@@ -3972,7 +3972,7 @@
   {
     "markerId": "rs10456196_Igbo",
     "rsid": "rs10456196",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "continent": "African",
     "subpop": "Igbo",
@@ -3996,7 +3996,7 @@
   {
     "markerId": "rs7252505_Igbo",
     "rsid": "rs7252505",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "continent": "African",
     "subpop": "Igbo",
@@ -4036,7 +4036,7 @@
   {
     "markerId": "rs1572319",
     "rsid": "rs1572319",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khoe-San Marker",
     "continent": "African",
     "subpop": "Khoe-San",
@@ -4052,7 +4052,7 @@
   {
     "markerId": "rs10456204_Khoisan",
     "rsid": "rs10456204",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khoisan Ancestry Marker",
     "continent": "African",
     "subpop": "Khoisan",
@@ -4076,7 +4076,7 @@
   {
     "markerId": "rs10456230_Kikuyu",
     "rsid": "rs10456230",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kikuyu Ancestry Marker",
     "continent": "African",
     "subpop": "Kikuyu",
@@ -4100,7 +4100,7 @@
   {
     "markerId": "rs10456252_Kpelle",
     "rsid": "rs10456252",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kpelle Ancestry Marker",
     "continent": "African",
     "subpop": "Kpelle",
@@ -4124,7 +4124,7 @@
   {
     "markerId": "rs10456247_Kru",
     "rsid": "rs10456247",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kru Ancestry Marker",
     "continent": "African",
     "subpop": "Kru",
@@ -4148,7 +4148,7 @@
   {
     "markerId": "rs10456245_Limba",
     "rsid": "rs10456245",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Limba Ancestry Marker",
     "continent": "African",
     "subpop": "Limba",
@@ -4172,7 +4172,7 @@
   {
     "markerId": "rs10456253_Loma",
     "rsid": "rs10456253",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Loma Ancestry Marker",
     "continent": "African",
     "subpop": "Loma",
@@ -4196,7 +4196,7 @@
   {
     "markerId": "rs10456260_Lozi",
     "rsid": "rs10456260",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lozi Ancestry Marker",
     "continent": "African",
     "subpop": "Lozi",
@@ -4220,7 +4220,7 @@
   {
     "markerId": "rs10456200_Luhya",
     "rsid": "rs10456200",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Luhya Ancestry Marker",
     "continent": "African",
     "subpop": "Luhya",
@@ -4244,7 +4244,7 @@
   {
     "markerId": "rs10456223_Luo",
     "rsid": "rs10456223",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Luo Ancestry Marker",
     "continent": "African",
     "subpop": "Luo",
@@ -4268,7 +4268,7 @@
   {
     "markerId": "rs11547466_Luo",
     "rsid": "rs11547466",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Luo Ancestry Marker",
     "continent": "African",
     "subpop": "Luo",
@@ -4316,7 +4316,7 @@
   {
     "markerId": "rs10456201_Maasai",
     "rsid": "rs10456201",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Maasai Ancestry Marker",
     "continent": "African",
     "subpop": "Maasai",
@@ -4388,7 +4388,7 @@
   {
     "markerId": "rs10456265_Makua",
     "rsid": "rs10456265",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Makua Ancestry Marker",
     "continent": "African",
     "subpop": "Makua",
@@ -4412,7 +4412,7 @@
   {
     "markerId": "rs7460469",
     "rsid": "rs7460469",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Malagasy Marker",
     "continent": "African",
     "subpop": "Malagasy",
@@ -4428,7 +4428,7 @@
   {
     "markerId": "rs7460470",
     "rsid": "rs7460470",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Malagasy Marker",
     "continent": "African",
     "subpop": "Malagasy",
@@ -4444,7 +4444,7 @@
   {
     "markerId": "rs7460471",
     "rsid": "rs7460471",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Malagasy Marker",
     "continent": "African",
     "subpop": "Malagasy",
@@ -4460,7 +4460,7 @@
   {
     "markerId": "rs10456197_Mandinka",
     "rsid": "rs10456197",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "continent": "African",
     "subpop": "Mandinka",
@@ -4484,7 +4484,7 @@
   {
     "markerId": "rs4871195_Mandinka",
     "rsid": "rs4871195",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "continent": "African",
     "subpop": "Mandinka",
@@ -4508,7 +4508,7 @@
   {
     "markerId": "rs1042524_Mandinka",
     "rsid": "rs1042524",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "continent": "African",
     "subpop": "Mandinka",
@@ -4532,7 +4532,7 @@
   {
     "markerId": "rs10456254_Mano",
     "rsid": "rs10456254",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mano Ancestry Marker",
     "continent": "African",
     "subpop": "Mano",
@@ -4556,7 +4556,7 @@
   {
     "markerId": "rs10456240_Mbundu",
     "rsid": "rs10456240",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mbundu Ancestry Marker",
     "continent": "African",
     "subpop": "Mbundu",
@@ -4580,7 +4580,7 @@
   {
     "markerId": "rs10456199_Mende",
     "rsid": "rs10456199",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mende Ancestry Marker",
     "continent": "African",
     "subpop": "Mende",
@@ -4604,7 +4604,7 @@
   {
     "markerId": "rs10456244_Mende",
     "rsid": "rs10456244",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mende Ancestry Marker",
     "continent": "African",
     "subpop": "Mende",
@@ -4652,7 +4652,7 @@
   {
     "markerId": "rs2675348_Mende",
     "rsid": "rs2675348",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mende Ancestry Marker",
     "continent": "African",
     "subpop": "Mende",
@@ -4676,7 +4676,7 @@
   {
     "markerId": "rs10456229_Mossi",
     "rsid": "rs10456229",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mossi Ancestry Marker",
     "continent": "African",
     "subpop": "Mossi",
@@ -4700,7 +4700,7 @@
   {
     "markerId": "rs10424071",
     "rsid": "rs10424071",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nigerian Ancestry Marker",
     "continent": "African",
     "subpop": "Nigerian",
@@ -4724,7 +4724,7 @@
   {
     "markerId": "rs10424072",
     "rsid": "rs10424072",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nigerian Marker",
     "continent": "African",
     "subpop": "Nigeria",
@@ -4740,7 +4740,7 @@
   {
     "markerId": "rs10424073",
     "rsid": "rs10424073",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nigerian Marker",
     "continent": "African",
     "subpop": "Nigeria",
@@ -4756,7 +4756,7 @@
   {
     "markerId": "rs10424074",
     "rsid": "rs10424074",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nigerian Marker",
     "continent": "African",
     "subpop": "Nigeria",
@@ -4772,7 +4772,7 @@
   {
     "markerId": "rs10456205_Nubian",
     "rsid": "rs10456205_NU",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nubian Ancestry Marker",
     "continent": "African",
     "subpop": "Nubian",
@@ -4796,7 +4796,7 @@
   {
     "markerId": "rs10456207-AFR",
     "rsid": "rs10456207-AFR",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nubian Ancestry Marker",
     "continent": "African",
     "subpop": "Nubian",
@@ -4820,7 +4820,7 @@
   {
     "markerId": "rs10456210",
     "rsid": "rs10456210",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nubian Marker",
     "continent": "African",
     "subpop": "Nubian",
@@ -4836,7 +4836,7 @@
   {
     "markerId": "rs10456213",
     "rsid": "rs10456213",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nubian Marker",
     "continent": "African",
     "subpop": "Nubian",
@@ -4852,7 +4852,7 @@
   {
     "markerId": "rs10456222_Oromo",
     "rsid": "rs10456222",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Oromo Ancestry Marker",
     "continent": "African",
     "subpop": "Oromo",
@@ -4876,7 +4876,7 @@
   {
     "markerId": "rs10456258_Ovimbundu",
     "rsid": "rs10456258",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ovimbundu Ancestry Marker",
     "continent": "African",
     "subpop": "Ovimbundu",
@@ -4900,7 +4900,7 @@
   {
     "markerId": "rs10456239_Ovimbundu",
     "rsid": "rs10456239",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ovimbundu Ancestry Marker",
     "continent": "African",
     "subpop": "Ovimbundu",
@@ -4924,7 +4924,7 @@
   {
     "markerId": "rs10456205_Pygmy",
     "rsid": "rs10456205",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Pygmy Ancestry Marker",
     "continent": "African",
     "subpop": "Pygmy",
@@ -4948,7 +4948,7 @@
   {
     "markerId": "rs12149626",
     "rsid": "rs12149626",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Pygmy Marker",
     "continent": "African",
     "subpop": "Pygmy",
@@ -4964,7 +4964,7 @@
   {
     "markerId": "rs12149627",
     "rsid": "rs12149627",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Pygmy Marker",
     "continent": "African",
     "subpop": "Pygmy",
@@ -4980,7 +4980,7 @@
   {
     "markerId": "rs12149628",
     "rsid": "rs12149628",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Pygmy Marker",
     "continent": "African",
     "subpop": "Pygmy",
@@ -4996,7 +4996,7 @@
   {
     "markerId": "rs694341_San",
     "rsid": "rs694341",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Ancestry Marker",
     "continent": "African",
     "subpop": "San",
@@ -5020,7 +5020,7 @@
   {
     "markerId": "rs7252508_San",
     "rsid": "rs7252508",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Ancestry Marker",
     "continent": "African",
     "subpop": "San",
@@ -5044,7 +5044,7 @@
   {
     "markerId": "rs13136401",
     "rsid": "rs13136401",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Marker",
     "continent": "African",
     "subpop": "San",
@@ -5060,7 +5060,7 @@
   {
     "markerId": "rs13136402",
     "rsid": "rs13136402",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Marker",
     "continent": "African",
     "subpop": "San",
@@ -5076,7 +5076,7 @@
   {
     "markerId": "rs13136403",
     "rsid": "rs13136403",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Marker",
     "continent": "African",
     "subpop": "San",
@@ -5092,7 +5092,7 @@
   {
     "markerId": "rs10456246_Sherbro",
     "rsid": "rs10456246",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sherbro Ancestry Marker",
     "continent": "African",
     "subpop": "Sherbro",
@@ -5116,7 +5116,7 @@
   {
     "markerId": "rs10456202_Somali",
     "rsid": "rs10456202",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Somali Ancestry Marker",
     "continent": "African",
     "subpop": "Somali",
@@ -5140,7 +5140,7 @@
   {
     "markerId": "rs10456301_Somali",
     "rsid": "rs10456301",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Somali Ancestry Marker",
     "continent": "African",
     "subpop": "Somali",
@@ -5164,7 +5164,7 @@
   {
     "markerId": "rs10456302_Somali",
     "rsid": "rs10456302",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Somali Ancestry Marker",
     "continent": "African",
     "subpop": "Somali",
@@ -5188,7 +5188,7 @@
   {
     "markerId": "rs10456224_Sotho",
     "rsid": "rs10456224",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sotho Ancestry Marker",
     "continent": "African",
     "subpop": "Sotho",
@@ -5212,7 +5212,7 @@
   {
     "markerId": "rs10456206-AFR",
     "rsid": "rs10456206-AFR",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sudanese Ancestry Marker",
     "continent": "African",
     "subpop": "Sudanese",
@@ -5236,7 +5236,7 @@
   {
     "markerId": "rs10456209",
     "rsid": "rs10456209",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sudanese Marker",
     "continent": "African",
     "subpop": "Sudan",
@@ -5252,7 +5252,7 @@
   {
     "markerId": "rs10456212",
     "rsid": "rs10456212",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sudanese Marker",
     "continent": "African",
     "subpop": "Sudan",
@@ -5268,7 +5268,7 @@
   {
     "markerId": "rs10456232_Tigrayan",
     "rsid": "rs10456232",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tigrayan Ancestry Marker",
     "continent": "African",
     "subpop": "Tigrayan",
@@ -5292,7 +5292,7 @@
   {
     "markerId": "rs10456262_Tonga",
     "rsid": "rs10456262",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tonga Ancestry Marker",
     "continent": "African",
     "subpop": "Tonga",
@@ -5316,7 +5316,7 @@
   {
     "markerId": "rs10456234_Tsonga",
     "rsid": "rs10456234",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tsonga Ancestry Marker",
     "continent": "African",
     "subpop": "Tsonga",
@@ -5340,7 +5340,7 @@
   {
     "markerId": "rs10456225_Tswana",
     "rsid": "rs10456225",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tswana Ancestry Marker",
     "continent": "African",
     "subpop": "Tswana",
@@ -5364,7 +5364,7 @@
   {
     "markerId": "rs10456250_Vai",
     "rsid": "rs10456250",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Vai Ancestry Marker",
     "continent": "African",
     "subpop": "Vai",
@@ -5388,7 +5388,7 @@
   {
     "markerId": "rs10456226_Venda",
     "rsid": "rs10456226",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Venda Ancestry Marker",
     "continent": "African",
     "subpop": "Venda",
@@ -5412,7 +5412,7 @@
   {
     "markerId": "rs17388247",
     "rsid": "rs17388247",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "West African Marker",
     "continent": "African",
     "subpop": "West",
@@ -5428,7 +5428,7 @@
   {
     "markerId": "rs10900598",
     "rsid": "rs10900598",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "West African Marker",
     "continent": "African",
     "subpop": "West",
@@ -5444,7 +5444,7 @@
   {
     "markerId": "rs10456205_Wolof",
     "rsid": "rs10456205_W",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Wolof Ancestry Marker",
     "continent": "African",
     "subpop": "Wolof",
@@ -5468,7 +5468,7 @@
   {
     "markerId": "rs10456205_Xhosa",
     "rsid": "rs10456205_X",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Xhosa Ancestry Marker",
     "continent": "African",
     "subpop": "Xhosa",
@@ -5492,7 +5492,7 @@
   {
     "markerId": "rs10456264_Yao",
     "rsid": "rs10456264",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yao Ancestry Marker",
     "continent": "African",
     "subpop": "Yao",
@@ -5516,7 +5516,7 @@
   {
     "markerId": "rs10456195_Yoruba",
     "rsid": "rs10456195",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -5540,7 +5540,7 @@
   {
     "markerId": "rs694339_Yoruba",
     "rsid": "rs694339",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -5564,7 +5564,7 @@
   {
     "markerId": "rs10456262_Yoruba",
     "rsid": "rs10456262_Y",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -5588,7 +5588,7 @@
   {
     "markerId": "rs10456266_Fulani",
     "rsid": "rs10456266",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fulani Ancestry Marker",
     "continent": "African",
     "subpop": "Fulani",
@@ -5612,7 +5612,7 @@
   {
     "markerId": "rs10456267_Edo",
     "rsid": "rs10456267",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Edo Ancestry Marker",
     "continent": "African",
     "subpop": "Edo",
@@ -5636,7 +5636,7 @@
   {
     "markerId": "rs10456268_Ibibio",
     "rsid": "rs10456268",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ibibio Ancestry Marker",
     "continent": "African",
     "subpop": "Ibibio",
@@ -5660,7 +5660,7 @@
   {
     "markerId": "rs10456205_Zulu",
     "rsid": "rs10456205_Z",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Zulu Ancestry Marker",
     "continent": "African",
     "subpop": "Zulu",
@@ -5850,7 +5850,7 @@
   {
     "markerId": "rs10456275_Armenian",
     "rsid": "rs10456275",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Armenian Ancestry Marker",
     "continent": "Caucasian",
     "subpop": "Armenian",
@@ -5872,7 +5872,7 @@
   {
     "markerId": "rs10456276_Azeri",
     "rsid": "rs10456276",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Azeri Ancestry Marker",
     "continent": "Caucasian",
     "subpop": "Azeri",
@@ -5894,7 +5894,7 @@
   {
     "markerId": "rs10456281_Caucasian_3",
     "rsid": "rs10456281",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Caucasian Ancestry Marker",
     "continent": "Caucasian",
     "subpop": "Caucasian",
@@ -5916,7 +5916,7 @@
   {
     "markerId": "rs10456283_Caucasian_4",
     "rsid": "rs10456283",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Caucasian Ancestry Marker",
     "continent": "Caucasian",
     "subpop": "Caucasian",
@@ -6059,7 +6059,7 @@
   {
     "markerId": "rs10456292_Hmong",
     "rsid": "rs10456292",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hmong Ancestry Marker",
     "continent": "East Asian",
     "subpop": "Hmong",
@@ -6081,7 +6081,7 @@
   {
     "markerId": "rs10456293_Hmong",
     "rsid": "rs10456293",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hmong Ancestry Marker",
     "continent": "East Asian",
     "subpop": "Hmong",
@@ -6103,7 +6103,7 @@
   {
     "markerId": "rs10456294_Khmer",
     "rsid": "rs10456294",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khmer Ancestry Marker",
     "continent": "East Asian",
     "subpop": "Khmer",
@@ -6125,7 +6125,7 @@
   {
     "markerId": "rs10456295_Khmer",
     "rsid": "rs10456295",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khmer Ancestry Marker",
     "continent": "East Asian",
     "subpop": "Khmer",
@@ -6147,7 +6147,7 @@
   {
     "markerId": "rs10456296_Lao",
     "rsid": "rs10456296",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lao Ancestry Marker",
     "continent": "East Asian",
     "subpop": "Lao",
@@ -6169,7 +6169,7 @@
   {
     "markerId": "rs10456297_Lao",
     "rsid": "rs10456297",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lao Ancestry Marker",
     "continent": "East Asian",
     "subpop": "Lao",
@@ -6903,7 +6903,7 @@
   {
     "markerId": "rs10456310_Acadian",
     "rsid": "rs10456310",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Acadian Ancestry Marker",
     "continent": "European",
     "subpop": "Acadian",
@@ -6925,7 +6925,7 @@
   {
     "markerId": "rs10456311_Acadian",
     "rsid": "rs10456311",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Acadian Ancestry Marker",
     "continent": "European",
     "subpop": "Acadian",
@@ -6947,7 +6947,7 @@
   {
     "markerId": "rs11103359_Afrikaner",
     "rsid": "rs11103359",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Afrikaner Ancestry Marker",
     "continent": "European",
     "subpop": "Afrikaner",
@@ -6969,7 +6969,7 @@
   {
     "markerId": "rs11103373_Afrikaner",
     "rsid": "rs11103373",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Afrikaner Ancestry Marker",
     "continent": "European",
     "subpop": "Afrikaner",
@@ -6991,7 +6991,7 @@
   {
     "markerId": "rs9000172_Afrikaner",
     "rsid": "rs9000172",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Afrikaner Ancestry Marker",
     "continent": "European",
     "subpop": "Afrikaner",
@@ -7013,7 +7013,7 @@
   {
     "markerId": "rs9000173_Afrikaner",
     "rsid": "rs9000173",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Afrikaner Ancestry Marker",
     "continent": "European",
     "subpop": "Afrikaner",
@@ -7035,7 +7035,7 @@
   {
     "markerId": "rs9000216_Albanian",
     "rsid": "rs9000216",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Albanian Ancestry Marker",
     "continent": "European",
     "subpop": "Albanian",
@@ -7057,7 +7057,7 @@
   {
     "markerId": "rs9000217_Albanian",
     "rsid": "rs9000217",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Albanian Ancestry Marker",
     "continent": "European",
     "subpop": "Albanian",
@@ -7079,7 +7079,7 @@
   {
     "markerId": "rs9000200_Albanian",
     "rsid": "rs9000200",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Albanian Ancestry Marker",
     "continent": "European",
     "subpop": "Albanian",
@@ -7101,7 +7101,7 @@
   {
     "markerId": "rs9000290_Alpine",
     "rsid": "rs9000290",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Alpine Ancestry Marker",
     "continent": "European",
     "subpop": "Alpine",
@@ -7123,7 +7123,7 @@
   {
     "markerId": "rs9000291_Alpine",
     "rsid": "rs9000291",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Alpine Ancestry Marker",
     "continent": "European",
     "subpop": "Alpine",
@@ -7145,7 +7145,7 @@
   {
     "markerId": "rs9000302_Anatolian",
     "rsid": "rs9000302",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "European",
     "subpop": "Anatolian",
@@ -7167,7 +7167,7 @@
   {
     "markerId": "rs9000303_Anatolian",
     "rsid": "rs9000303",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "European",
     "subpop": "Anatolian",
@@ -7189,7 +7189,7 @@
   {
     "markerId": "rs9000286_AngloSaxon",
     "rsid": "rs9000286",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anglo-Saxon Ancestry Marker",
     "continent": "European",
     "subpop": "Anglo-Saxon",
@@ -7211,7 +7211,7 @@
   {
     "markerId": "rs9000287_AngloSaxon",
     "rsid": "rs9000287",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anglo-Saxon Ancestry Marker",
     "continent": "European",
     "subpop": "Anglo-Saxon",
@@ -7233,7 +7233,7 @@
   {
     "markerId": "rs9000324_Aromanian",
     "rsid": "rs9000324",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Aromanian Ancestry Marker",
     "continent": "European",
     "subpop": "Aromanian",
@@ -7255,7 +7255,7 @@
   {
     "markerId": "rs9000325_Aromanian",
     "rsid": "rs9000325",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Aromanian Ancestry Marker",
     "continent": "European",
     "subpop": "Aromanian",
@@ -7277,7 +7277,7 @@
   {
     "markerId": "rs9000122_Ashke",
     "rsid": "rs9000122",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ashkenazi Ancestry Marker",
     "continent": "European",
     "subpop": "Ashkenazi",
@@ -7299,7 +7299,7 @@
   {
     "markerId": "rs9000123_Ashke",
     "rsid": "rs9000123",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ashkenazi Ancestry Marker",
     "continent": "European",
     "subpop": "Ashkenazi",
@@ -7321,7 +7321,7 @@
   {
     "markerId": "rs9000124_Ashke",
     "rsid": "rs9000124",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ashkenazi Ancestry Marker",
     "continent": "European",
     "subpop": "Ashkenazi",
@@ -7343,7 +7343,7 @@
   {
     "markerId": "rs9000246_Ashkenazi",
     "rsid": "rs9000246",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ashkenazi Ancestry Marker",
     "continent": "European",
     "subpop": "Ashkenazi",
@@ -7365,7 +7365,7 @@
   {
     "markerId": "rs9000247_Ashkenazi",
     "rsid": "rs9000247",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ashkenazi Ancestry Marker",
     "continent": "European",
     "subpop": "Ashkenazi",
@@ -7387,7 +7387,7 @@
   {
     "markerId": "rs9000105_Austrian",
     "rsid": "rs9000105",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Austrian Ancestry Marker",
     "continent": "European",
     "subpop": "Austrian",
@@ -7409,7 +7409,7 @@
   {
     "markerId": "rs9000106_Austrian",
     "rsid": "rs9000106",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Austrian Ancestry Marker",
     "continent": "European",
     "subpop": "Austrian",
@@ -7431,7 +7431,7 @@
   {
     "markerId": "rs9000107_Austrian",
     "rsid": "rs9000107",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Austrian Ancestry Marker",
     "continent": "European",
     "subpop": "Austrian",
@@ -7453,7 +7453,7 @@
   {
     "markerId": "rs9000108_Austrian",
     "rsid": "rs9000108",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Austrian Ancestry Marker",
     "continent": "European",
     "subpop": "Austrian",
@@ -7475,7 +7475,7 @@
   {
     "markerId": "rs9000223_Austrian",
     "rsid": "rs9000223",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Austrian Ancestry Marker",
     "continent": "European",
     "subpop": "Austrian",
@@ -7497,7 +7497,7 @@
   {
     "markerId": "rs9000144_Balkans",
     "rsid": "rs9000144",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkans Ancestry Marker",
     "continent": "European",
     "subpop": "Balkans",
@@ -7519,7 +7519,7 @@
   {
     "markerId": "rs9000145_Balkans",
     "rsid": "rs9000145",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkans Ancestry Marker",
     "continent": "European",
     "subpop": "Balkans",
@@ -7541,7 +7541,7 @@
   {
     "markerId": "rs9000146_Balkans",
     "rsid": "rs9000146",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkans Ancestry Marker",
     "continent": "European",
     "subpop": "Balkans",
@@ -7563,7 +7563,7 @@
   {
     "markerId": "rs9000147_Balkans",
     "rsid": "rs9000147",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkans Ancestry Marker",
     "continent": "European",
     "subpop": "Balkans",
@@ -7585,7 +7585,7 @@
   {
     "markerId": "rs9000256_Balkans",
     "rsid": "rs9000256",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkans Ancestry Marker",
     "continent": "European",
     "subpop": "Balkans",
@@ -7607,7 +7607,7 @@
   {
     "markerId": "rs9000257_Balkans",
     "rsid": "rs9000257",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkans Ancestry Marker",
     "continent": "European",
     "subpop": "Balkans",
@@ -7629,7 +7629,7 @@
   {
     "markerId": "rs9000294_Baltic",
     "rsid": "rs9000294",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baltic Ancestry Marker",
     "continent": "European",
     "subpop": "Baltic",
@@ -7651,7 +7651,7 @@
   {
     "markerId": "rs9000295_Baltic",
     "rsid": "rs9000295",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baltic Ancestry Marker",
     "continent": "European",
     "subpop": "Baltic",
@@ -7673,7 +7673,7 @@
   {
     "markerId": "rs9000119_Basque",
     "rsid": "rs9000119",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Basque Ancestry Marker",
     "continent": "European",
     "subpop": "Basque",
@@ -7695,7 +7695,7 @@
   {
     "markerId": "rs9000120_Basque",
     "rsid": "rs9000120",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Basque Ancestry Marker",
     "continent": "European",
     "subpop": "Basque",
@@ -7717,7 +7717,7 @@
   {
     "markerId": "rs9000121_Basque",
     "rsid": "rs9000121",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Basque Ancestry Marker",
     "continent": "European",
     "subpop": "Basque",
@@ -7739,7 +7739,7 @@
   {
     "markerId": "rs9000240_Basque",
     "rsid": "rs9000240",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Basque Ancestry Marker",
     "continent": "European",
     "subpop": "Basque",
@@ -7761,7 +7761,7 @@
   {
     "markerId": "rs9000241_Basque",
     "rsid": "rs9000241",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Basque Ancestry Marker",
     "continent": "European",
     "subpop": "Basque",
@@ -7783,7 +7783,7 @@
   {
     "markerId": "rs9000334_Boyko",
     "rsid": "rs9000334",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Boyko Ancestry Marker",
     "continent": "European",
     "subpop": "Boyko",
@@ -7805,7 +7805,7 @@
   {
     "markerId": "rs9000335_Boyko",
     "rsid": "rs9000335",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Boyko Ancestry Marker",
     "continent": "European",
     "subpop": "Boyko",
@@ -7827,7 +7827,7 @@
   {
     "markerId": "rs9000310_Breton",
     "rsid": "rs9000310",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Breton Ancestry Marker",
     "continent": "European",
     "subpop": "Breton",
@@ -7849,7 +7849,7 @@
   {
     "markerId": "rs9000311_Breton",
     "rsid": "rs9000311",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Breton Ancestry Marker",
     "continent": "European",
     "subpop": "Breton",
@@ -7871,7 +7871,7 @@
   {
     "markerId": "rs9000188_Breton",
     "rsid": "rs9000188",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Breton Ancestry Marker",
     "continent": "European",
     "subpop": "Breton",
@@ -7893,7 +7893,7 @@
   {
     "markerId": "rs10456192_British",
     "rsid": "rs10456192",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -7915,7 +7915,7 @@
   {
     "markerId": "rs9000091_British",
     "rsid": "rs9000091",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -7937,7 +7937,7 @@
   {
     "markerId": "rs9000092_British",
     "rsid": "rs9000092",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -7959,7 +7959,7 @@
   {
     "markerId": "rs9000093_British",
     "rsid": "rs9000093",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -7981,7 +7981,7 @@
   {
     "markerId": "rs9000094_British",
     "rsid": "rs9000094",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -8003,7 +8003,7 @@
   {
     "markerId": "rs9000276_British",
     "rsid": "rs9000276",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -8025,7 +8025,7 @@
   {
     "markerId": "rs9000277_British",
     "rsid": "rs9000277",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Ancestry Marker",
     "continent": "European",
     "subpop": "British",
@@ -8047,7 +8047,7 @@
   {
     "markerId": "rs9000260_BritIsles",
     "rsid": "rs9000260",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Isles Ancestry Marker",
     "continent": "European",
     "subpop": "British Isles",
@@ -8069,7 +8069,7 @@
   {
     "markerId": "rs9000261_BritIsles",
     "rsid": "rs9000261",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Isles Ancestry Marker",
     "continent": "European",
     "subpop": "British Isles",
@@ -8091,7 +8091,7 @@
   {
     "markerId": "rs9000136_BritIsles",
     "rsid": "rs9000136",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Isles Ancestry Marker",
     "continent": "European",
     "subpop": "BritishIsles",
@@ -8113,7 +8113,7 @@
   {
     "markerId": "rs9000137_BritIsles",
     "rsid": "rs9000137",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Isles Ancestry Marker",
     "continent": "European",
     "subpop": "BritishIsles",
@@ -8135,7 +8135,7 @@
   {
     "markerId": "rs9000138_BritIsles",
     "rsid": "rs9000138",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Isles Ancestry Marker",
     "continent": "European",
     "subpop": "BritishIsles",
@@ -8157,7 +8157,7 @@
   {
     "markerId": "rs9000139_BritIsles",
     "rsid": "rs9000139",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "British Isles Ancestry Marker",
     "continent": "European",
     "subpop": "BritishIsles",
@@ -8179,7 +8179,7 @@
   {
     "markerId": "rs9000214_Bulgarian",
     "rsid": "rs9000214",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bulgarian Ancestry Marker",
     "continent": "European",
     "subpop": "Bulgarian",
@@ -8201,7 +8201,7 @@
   {
     "markerId": "rs9000215_Bulgarian",
     "rsid": "rs9000215",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bulgarian Ancestry Marker",
     "continent": "European",
     "subpop": "Bulgarian",
@@ -8223,7 +8223,7 @@
   {
     "markerId": "rs9000300_Caucasian",
     "rsid": "rs9000300",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Caucasian (Caucasus) Ancestry Marker",
     "continent": "European",
     "subpop": "Caucasian",
@@ -8245,7 +8245,7 @@
   {
     "markerId": "rs9000301_Caucasian",
     "rsid": "rs9000301",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Caucasian (Caucasus) Ancestry Marker",
     "continent": "European",
     "subpop": "Caucasian",
@@ -8267,7 +8267,7 @@
   {
     "markerId": "rs9000284_Celtic",
     "rsid": "rs9000284",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Celtic Ancestry Marker",
     "continent": "European",
     "subpop": "Celtic",
@@ -8289,7 +8289,7 @@
   {
     "markerId": "rs9000285_Celtic",
     "rsid": "rs9000285",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Celtic Ancestry Marker",
     "continent": "European",
     "subpop": "Celtic",
@@ -8311,7 +8311,7 @@
   {
     "markerId": "rs9000266_C_Euro",
     "rsid": "rs9000266",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central European Ancestry Marker",
     "continent": "European",
     "subpop": "Central European",
@@ -8333,7 +8333,7 @@
   {
     "markerId": "rs9000267_C_Euro",
     "rsid": "rs9000267",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central European Ancestry Marker",
     "continent": "European",
     "subpop": "Central European",
@@ -8355,7 +8355,7 @@
   {
     "markerId": "rs9000312_Cornish",
     "rsid": "rs9000312",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cornish Ancestry Marker",
     "continent": "European",
     "subpop": "Cornish",
@@ -8377,7 +8377,7 @@
   {
     "markerId": "rs9000313_Cornish",
     "rsid": "rs9000313",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cornish Ancestry Marker",
     "continent": "European",
     "subpop": "Cornish",
@@ -8399,7 +8399,7 @@
   {
     "markerId": "rs9000166_Cornish",
     "rsid": "rs9000166",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cornish Ancestry Marker",
     "continent": "European",
     "subpop": "Cornish",
@@ -8421,7 +8421,7 @@
   {
     "markerId": "rs9000308_Corsican",
     "rsid": "rs9000308",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Corsican Ancestry Marker",
     "continent": "European",
     "subpop": "Corsican",
@@ -8443,7 +8443,7 @@
   {
     "markerId": "rs9000309_Corsican",
     "rsid": "rs9000309",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Corsican Ancestry Marker",
     "continent": "European",
     "subpop": "Corsican",
@@ -8465,7 +8465,7 @@
   {
     "markerId": "rs9000220_Croatian",
     "rsid": "rs9000220",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Croatian Ancestry Marker",
     "continent": "European",
     "subpop": "Croatian",
@@ -8487,7 +8487,7 @@
   {
     "markerId": "rs9000221_Croatian",
     "rsid": "rs9000221",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Croatian Ancestry Marker",
     "continent": "European",
     "subpop": "Croatian",
@@ -8509,7 +8509,7 @@
   {
     "markerId": "rs9000328_Csango",
     "rsid": "rs9000328",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Csango Ancestry Marker",
     "continent": "European",
     "subpop": "Csango",
@@ -8531,7 +8531,7 @@
   {
     "markerId": "rs9000329_Csango",
     "rsid": "rs9000329",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Csango Ancestry Marker",
     "continent": "European",
     "subpop": "Csango",
@@ -8553,7 +8553,7 @@
   {
     "markerId": "rs9000236_Cypriot",
     "rsid": "rs9000236",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cypriot Ancestry Marker",
     "continent": "European",
     "subpop": "Cypriot",
@@ -8575,7 +8575,7 @@
   {
     "markerId": "rs9000237_Cypriot",
     "rsid": "rs9000237",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cypriot Ancestry Marker",
     "continent": "European",
     "subpop": "Cypriot",
@@ -8597,7 +8597,7 @@
   {
     "markerId": "rs9000113_Czech",
     "rsid": "rs9000113",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Czech Ancestry Marker",
     "continent": "European",
     "subpop": "Czech",
@@ -8619,7 +8619,7 @@
   {
     "markerId": "rs9000114_Czech",
     "rsid": "rs9000114",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Czech Ancestry Marker",
     "continent": "European",
     "subpop": "Czech",
@@ -8641,7 +8641,7 @@
   {
     "markerId": "rs9000115_Czech",
     "rsid": "rs9000115",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Czech Ancestry Marker",
     "continent": "European",
     "subpop": "Czech",
@@ -8663,7 +8663,7 @@
   {
     "markerId": "rs9000116_Czech",
     "rsid": "rs9000116",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Czech Ancestry Marker",
     "continent": "European",
     "subpop": "Czech",
@@ -8685,7 +8685,7 @@
   {
     "markerId": "rs9000210_Czech",
     "rsid": "rs9000210",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Czech Ancestry Marker",
     "continent": "European",
     "subpop": "Czech",
@@ -8707,7 +8707,7 @@
   {
     "markerId": "rs9000211_Czech",
     "rsid": "rs9000211",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Czech Ancestry Marker",
     "continent": "European",
     "subpop": "Czech",
@@ -8729,7 +8729,7 @@
   {
     "markerId": "rs9000184_Danish",
     "rsid": "rs9000184",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Danish Ancestry Marker",
     "continent": "European",
     "subpop": "Danish",
@@ -8751,7 +8751,7 @@
   {
     "markerId": "rs9000185_Danish",
     "rsid": "rs9000185",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Danish Ancestry Marker",
     "continent": "European",
     "subpop": "Danish",
@@ -8773,7 +8773,7 @@
   {
     "markerId": "rs9000292_Dinaric",
     "rsid": "rs9000292",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dinaric Ancestry Marker",
     "continent": "European",
     "subpop": "Dinaric",
@@ -8795,7 +8795,7 @@
   {
     "markerId": "rs9000293_Dinaric",
     "rsid": "rs9000293",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dinaric Ancestry Marker",
     "continent": "European",
     "subpop": "Dinaric",
@@ -8817,7 +8817,7 @@
   {
     "markerId": "rs11103344_Dutch",
     "rsid": "rs11103344",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8839,7 +8839,7 @@
   {
     "markerId": "rs11103358_Dutch",
     "rsid": "rs11103358",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8861,7 +8861,7 @@
   {
     "markerId": "rs11103372_Dutch",
     "rsid": "rs11103372",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8883,7 +8883,7 @@
   {
     "markerId": "rs9000099_Dutch",
     "rsid": "rs9000099",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8905,7 +8905,7 @@
   {
     "markerId": "rs9000100_Dutch",
     "rsid": "rs9000100",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8927,7 +8927,7 @@
   {
     "markerId": "rs9000192_Dutch",
     "rsid": "rs9000192",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8949,7 +8949,7 @@
   {
     "markerId": "rs9000193_Dutch",
     "rsid": "rs9000193",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -8971,7 +8971,7 @@
   {
     "markerId": "rs9000160_EastEuro_Spaced",
     "rsid": "rs9000160",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Eastern European",
@@ -8993,7 +8993,7 @@
   {
     "markerId": "rs9000161_EastEuro_Spaced",
     "rsid": "rs9000161",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Eastern European",
@@ -9015,7 +9015,7 @@
   {
     "markerId": "rs9000162_EastEuro_Spaced",
     "rsid": "rs9000162",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Eastern European",
@@ -9037,7 +9037,7 @@
   {
     "markerId": "rs9000163_EastEuro_Spaced",
     "rsid": "rs9000163",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Eastern European",
@@ -9059,7 +9059,7 @@
   {
     "markerId": "rs9000254_E_Euro",
     "rsid": "rs9000254",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Eastern European",
@@ -9081,7 +9081,7 @@
   {
     "markerId": "rs9000255_E_Euro",
     "rsid": "rs9000255",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Eastern European",
@@ -9103,7 +9103,7 @@
   {
     "markerId": "rs9000140_EastEuro",
     "rsid": "rs9000140",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "EasternEuropean",
@@ -9125,7 +9125,7 @@
   {
     "markerId": "rs9000141_EastEuro",
     "rsid": "rs9000141",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "EasternEuropean",
@@ -9147,7 +9147,7 @@
   {
     "markerId": "rs9000142_EastEuro",
     "rsid": "rs9000142",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "EasternEuropean",
@@ -9169,7 +9169,7 @@
   {
     "markerId": "rs9000143_EastEuro",
     "rsid": "rs9000143",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern European Ancestry Marker",
     "continent": "European",
     "subpop": "EasternEuropean",
@@ -9191,7 +9191,7 @@
   {
     "markerId": "rs11103339_English",
     "rsid": "rs11103339",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "English Ancestry Marker",
     "continent": "European",
     "subpop": "English",
@@ -9213,7 +9213,7 @@
   {
     "markerId": "rs11103353_English",
     "rsid": "rs11103353",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "English Ancestry Marker",
     "continent": "European",
     "subpop": "English",
@@ -9235,7 +9235,7 @@
   {
     "markerId": "rs11103367_English",
     "rsid": "rs11103367",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "English Ancestry Marker",
     "continent": "European",
     "subpop": "English",
@@ -9257,7 +9257,7 @@
   {
     "markerId": "rs9000164_English",
     "rsid": "rs9000164",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "English Ancestry Marker",
     "continent": "European",
     "subpop": "English",
@@ -9279,7 +9279,7 @@
   {
     "markerId": "rs9000165_English",
     "rsid": "rs9000165",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "English Ancestry Marker",
     "continent": "European",
     "subpop": "English",
@@ -9301,7 +9301,7 @@
   {
     "markerId": "rs9000232_Estonian",
     "rsid": "rs9000232",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Estonian Ancestry Marker",
     "continent": "European",
     "subpop": "Estonian",
@@ -9323,7 +9323,7 @@
   {
     "markerId": "rs9000233_Estonian",
     "rsid": "rs9000233",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Estonian Ancestry Marker",
     "continent": "European",
     "subpop": "Estonian",
@@ -9345,7 +9345,7 @@
   {
     "markerId": "rs9000186_Estonian",
     "rsid": "rs9000186",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Estonian Ancestry Marker",
     "continent": "European",
     "subpop": "Estonian",
@@ -9367,7 +9367,7 @@
   {
     "markerId": "rs9000117_Finnish",
     "rsid": "rs9000117",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finnish Ancestry Marker",
     "continent": "European",
     "subpop": "Finnish",
@@ -9389,7 +9389,7 @@
   {
     "markerId": "rs9000118_Finnish",
     "rsid": "rs9000118",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finnish Ancestry Marker",
     "continent": "European",
     "subpop": "Finnish",
@@ -9411,7 +9411,7 @@
   {
     "markerId": "rs9000187_Finnish",
     "rsid": "rs9000187",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finnish Ancestry Marker",
     "continent": "European",
     "subpop": "Finnish",
@@ -9433,7 +9433,7 @@
   {
     "markerId": "rs9000296_FinnoUgric",
     "rsid": "rs9000296",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finno-Ugric Ancestry Marker",
     "continent": "European",
     "subpop": "Finno-Ugric",
@@ -9455,7 +9455,7 @@
   {
     "markerId": "rs9000297_FinnoUgric",
     "rsid": "rs9000297",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finno-Ugric Ancestry Marker",
     "continent": "European",
     "subpop": "Finno-Ugric",
@@ -9499,7 +9499,7 @@
   {
     "markerId": "rs17135023_French",
     "rsid": "rs17135023",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "French Ancestry Marker",
     "continent": "European",
     "subpop": "French",
@@ -9521,7 +9521,7 @@
   {
     "markerId": "rs6510765_French",
     "rsid": "rs6510765",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "French Ancestry Marker",
     "continent": "European",
     "subpop": "French",
@@ -9543,7 +9543,7 @@
   {
     "markerId": "rs9000189_French",
     "rsid": "rs9000189",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "French Ancestry Marker",
     "continent": "European",
     "subpop": "French",
@@ -9565,7 +9565,7 @@
   {
     "markerId": "rs9000316_Frisian",
     "rsid": "rs9000316",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Frisian Ancestry Marker",
     "continent": "European",
     "subpop": "Frisian",
@@ -9587,7 +9587,7 @@
   {
     "markerId": "rs9000317_Frisian",
     "rsid": "rs9000317",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Frisian Ancestry Marker",
     "continent": "European",
     "subpop": "Frisian",
@@ -9609,7 +9609,7 @@
   {
     "markerId": "rs9000340_Gagauz",
     "rsid": "rs9000340",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Gagauz Ancestry Marker",
     "continent": "European",
     "subpop": "Gagauz",
@@ -9631,7 +9631,7 @@
   {
     "markerId": "rs9000341_Gagauz",
     "rsid": "rs9000341",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Gagauz Ancestry Marker",
     "continent": "European",
     "subpop": "Gagauz",
@@ -9692,7 +9692,7 @@
   {
     "markerId": "rs1042525_German",
     "rsid": "rs1042525",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9714,7 +9714,7 @@
   {
     "markerId": "rs10486571_German",
     "rsid": "rs10486571",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9736,7 +9736,7 @@
   {
     "markerId": "rs1114097_German",
     "rsid": "rs1114097",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9758,7 +9758,7 @@
   {
     "markerId": "rs11103343_German",
     "rsid": "rs11103343",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9780,7 +9780,7 @@
   {
     "markerId": "rs11103357_German",
     "rsid": "rs11103357",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9802,7 +9802,7 @@
   {
     "markerId": "rs11103371_German",
     "rsid": "rs11103371",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9824,7 +9824,7 @@
   {
     "markerId": "rs9000190_German",
     "rsid": "rs9000190",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9846,7 +9846,7 @@
   {
     "markerId": "rs9000191_German",
     "rsid": "rs9000191",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "German Ancestry Marker",
     "continent": "European",
     "subpop": "German",
@@ -9868,7 +9868,7 @@
   {
     "markerId": "rs9000280_Germanic",
     "rsid": "rs9000280",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Germanic Ancestry Marker",
     "continent": "European",
     "subpop": "Germanic",
@@ -9890,7 +9890,7 @@
   {
     "markerId": "rs9000281_Germanic",
     "rsid": "rs9000281",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Germanic Ancestry Marker",
     "continent": "European",
     "subpop": "Germanic",
@@ -9934,7 +9934,7 @@
   {
     "markerId": "rs13182881_Greek",
     "rsid": "rs13182881",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Greek Ancestry Marker",
     "continent": "European",
     "subpop": "Greek",
@@ -9956,7 +9956,7 @@
   {
     "markerId": "rs7948627_Greek",
     "rsid": "rs7948627",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Greek Ancestry Marker",
     "continent": "European",
     "subpop": "Greek",
@@ -9978,7 +9978,7 @@
   {
     "markerId": "rs9000201_Greek",
     "rsid": "rs9000201",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Greek Ancestry Marker",
     "continent": "European",
     "subpop": "Greek",
@@ -10000,7 +10000,7 @@
   {
     "markerId": "rs9000109_Hungarian",
     "rsid": "rs9000109",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hungarian Ancestry Marker",
     "continent": "European",
     "subpop": "Hungarian",
@@ -10022,7 +10022,7 @@
   {
     "markerId": "rs9000110_Hungarian",
     "rsid": "rs9000110",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hungarian Ancestry Marker",
     "continent": "European",
     "subpop": "Hungarian",
@@ -10044,7 +10044,7 @@
   {
     "markerId": "rs9000111_Hungarian",
     "rsid": "rs9000111",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hungarian Ancestry Marker",
     "continent": "European",
     "subpop": "Hungarian",
@@ -10066,7 +10066,7 @@
   {
     "markerId": "rs9000112_Hungarian",
     "rsid": "rs9000112",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hungarian Ancestry Marker",
     "continent": "European",
     "subpop": "Hungarian",
@@ -10088,7 +10088,7 @@
   {
     "markerId": "rs9000208_Hungarian",
     "rsid": "rs9000208",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hungarian Ancestry Marker",
     "continent": "European",
     "subpop": "Hungarian",
@@ -10110,7 +10110,7 @@
   {
     "markerId": "rs9000209_Hungarian",
     "rsid": "rs9000209",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hungarian Ancestry Marker",
     "continent": "European",
     "subpop": "Hungarian",
@@ -10132,7 +10132,7 @@
   {
     "markerId": "rs9000336_Hutsul",
     "rsid": "rs9000336",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hutsul Ancestry Marker",
     "continent": "European",
     "subpop": "Hutsul",
@@ -10154,7 +10154,7 @@
   {
     "markerId": "rs9000337_Hutsul",
     "rsid": "rs9000337",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hutsul Ancestry Marker",
     "continent": "European",
     "subpop": "Hutsul",
@@ -10176,7 +10176,7 @@
   {
     "markerId": "rs9000148_Iberian",
     "rsid": "rs9000148",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -10198,7 +10198,7 @@
   {
     "markerId": "rs9000149_Iberian",
     "rsid": "rs9000149",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -10220,7 +10220,7 @@
   {
     "markerId": "rs9000150_Iberian",
     "rsid": "rs9000150",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -10242,7 +10242,7 @@
   {
     "markerId": "rs9000151_Iberian",
     "rsid": "rs9000151",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -10264,7 +10264,7 @@
   {
     "markerId": "rs9000258_Iberian",
     "rsid": "rs9000258",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -10286,7 +10286,7 @@
   {
     "markerId": "rs9000259_Iberian",
     "rsid": "rs9000259",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -10308,7 +10308,7 @@
   {
     "markerId": "rs9000238_Icelandic",
     "rsid": "rs9000238",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Icelandic Ancestry Marker",
     "continent": "European",
     "subpop": "Icelandic",
@@ -10330,7 +10330,7 @@
   {
     "markerId": "rs9000239_Icelandic",
     "rsid": "rs9000239",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Icelandic Ancestry Marker",
     "continent": "European",
     "subpop": "Icelandic",
@@ -10352,7 +10352,7 @@
   {
     "markerId": "rs10456193_Irish",
     "rsid": "rs10456193",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10374,7 +10374,7 @@
   {
     "markerId": "rs11103340_Irish",
     "rsid": "rs11103340",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10396,7 +10396,7 @@
   {
     "markerId": "rs11103354_Irish",
     "rsid": "rs11103354",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10418,7 +10418,7 @@
   {
     "markerId": "rs11103368_Irish",
     "rsid": "rs11103368",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10440,7 +10440,7 @@
   {
     "markerId": "rs9000095_Irish",
     "rsid": "rs9000095",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10462,7 +10462,7 @@
   {
     "markerId": "rs9000174_Irish",
     "rsid": "rs9000174",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10484,7 +10484,7 @@
   {
     "markerId": "rs9000175_Irish",
     "rsid": "rs9000175",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10506,7 +10506,7 @@
   {
     "markerId": "rs9000278_Irish",
     "rsid": "rs9000278",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10528,7 +10528,7 @@
   {
     "markerId": "rs9000279_Irish",
     "rsid": "rs9000279",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Irish Ancestry Marker",
     "continent": "European",
     "subpop": "Irish",
@@ -10550,7 +10550,7 @@
   {
     "markerId": "rs10456194_Italian",
     "rsid": "rs10456194",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -10572,7 +10572,7 @@
   {
     "markerId": "rs9000096_Italian",
     "rsid": "rs9000096",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -10594,7 +10594,7 @@
   {
     "markerId": "rs9000097_Italian",
     "rsid": "rs9000097",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -10616,7 +10616,7 @@
   {
     "markerId": "rs9000098_Italian",
     "rsid": "rs9000098",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -10638,7 +10638,7 @@
   {
     "markerId": "rs9000194_Italian",
     "rsid": "rs9000194",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -10660,7 +10660,7 @@
   {
     "markerId": "rs9000195_Italian",
     "rsid": "rs9000195",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -10682,7 +10682,7 @@
   {
     "markerId": "rs9000320_Kashubian",
     "rsid": "rs9000320",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kashubian Ancestry Marker",
     "continent": "European",
     "subpop": "Kashubian",
@@ -10704,7 +10704,7 @@
   {
     "markerId": "rs9000321_Kashubian",
     "rsid": "rs9000321",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kashubian Ancestry Marker",
     "continent": "European",
     "subpop": "Kashubian",
@@ -10726,7 +10726,7 @@
   {
     "markerId": "rs9000230_Latvian",
     "rsid": "rs9000230",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Latvian Ancestry Marker",
     "continent": "European",
     "subpop": "Latvian",
@@ -10748,7 +10748,7 @@
   {
     "markerId": "rs9000231_Latvian",
     "rsid": "rs9000231",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Latvian Ancestry Marker",
     "continent": "European",
     "subpop": "Latvian",
@@ -10770,7 +10770,7 @@
   {
     "markerId": "rs9000332_Lemko",
     "rsid": "rs9000332",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lemko Ancestry Marker",
     "continent": "European",
     "subpop": "Lemko",
@@ -10792,7 +10792,7 @@
   {
     "markerId": "rs9000333_Lemko",
     "rsid": "rs9000333",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lemko Ancestry Marker",
     "continent": "European",
     "subpop": "Lemko",
@@ -10814,7 +10814,7 @@
   {
     "markerId": "rs9000338_Lipovan",
     "rsid": "rs9000338",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lipovan Ancestry Marker",
     "continent": "European",
     "subpop": "Lipovan",
@@ -10836,7 +10836,7 @@
   {
     "markerId": "rs9000339_Lipovan",
     "rsid": "rs9000339",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lipovan Ancestry Marker",
     "continent": "European",
     "subpop": "Lipovan",
@@ -10858,7 +10858,7 @@
   {
     "markerId": "rs9000228_Lithuan",
     "rsid": "rs9000228",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lithuanian Ancestry Marker",
     "continent": "European",
     "subpop": "Lithuanian",
@@ -10880,7 +10880,7 @@
   {
     "markerId": "rs9000229_Lithuan",
     "rsid": "rs9000229",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Lithuanian Ancestry Marker",
     "continent": "European",
     "subpop": "Lithuanian",
@@ -10902,7 +10902,7 @@
   {
     "markerId": "rs9000234_Maltese",
     "rsid": "rs9000234",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Maltese Ancestry Marker",
     "continent": "European",
     "subpop": "Maltese",
@@ -10924,7 +10924,7 @@
   {
     "markerId": "rs9000235_Maltese",
     "rsid": "rs9000235",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Maltese Ancestry Marker",
     "continent": "European",
     "subpop": "Maltese",
@@ -10946,7 +10946,7 @@
   {
     "markerId": "rs9000314_Manx",
     "rsid": "rs9000314",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Manx Ancestry Marker",
     "continent": "European",
     "subpop": "Manx",
@@ -10968,7 +10968,7 @@
   {
     "markerId": "rs9000315_Manx",
     "rsid": "rs9000315",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Manx Ancestry Marker",
     "continent": "European",
     "subpop": "Manx",
@@ -10990,7 +10990,7 @@
   {
     "markerId": "rs9000288_Mediterranean",
     "rsid": "rs9000288",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mediterranean Ancestry Marker",
     "continent": "European",
     "subpop": "Mediterranean",
@@ -11012,7 +11012,7 @@
   {
     "markerId": "rs9000289_Mediterranean",
     "rsid": "rs9000289",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mediterranean Ancestry Marker",
     "continent": "European",
     "subpop": "Mediterranean",
@@ -11034,7 +11034,7 @@
   {
     "markerId": "rs10456314_Melungeon",
     "rsid": "rs10456314",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melungeon Ancestry Marker",
     "continent": "European",
     "subpop": "Melungeon",
@@ -11056,7 +11056,7 @@
   {
     "markerId": "rs10456315_Melungeon",
     "rsid": "rs10456315",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melungeon Ancestry Marker",
     "continent": "European",
     "subpop": "Melungeon",
@@ -11078,7 +11078,7 @@
   {
     "markerId": "rs9000274_NE_Euro",
     "rsid": "rs9000274",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northeastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northeastern European",
@@ -11100,7 +11100,7 @@
   {
     "markerId": "rs9000275_NE_Euro",
     "rsid": "rs9000275",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northeastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northeastern European",
@@ -11122,7 +11122,7 @@
   {
     "markerId": "rs9000268_N_Euro",
     "rsid": "rs9000268",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northern European",
@@ -11144,7 +11144,7 @@
   {
     "markerId": "rs9000269_N_Euro",
     "rsid": "rs9000269",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northern European",
@@ -11166,7 +11166,7 @@
   {
     "markerId": "rs11103341_Welsh_North",
     "rsid": "rs11103341",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northern Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Northern Welsh",
@@ -11188,7 +11188,7 @@
   {
     "markerId": "rs9000152_NWEuro_Spaced",
     "rsid": "rs9000152",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northwestern European",
@@ -11210,7 +11210,7 @@
   {
     "markerId": "rs9000153_NWEuro_Spaced",
     "rsid": "rs9000153",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northwestern European",
@@ -11232,7 +11232,7 @@
   {
     "markerId": "rs9000154_NWEuro_Spaced",
     "rsid": "rs9000154",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northwestern European",
@@ -11254,7 +11254,7 @@
   {
     "markerId": "rs9000155_NWEuro_Spaced",
     "rsid": "rs9000155",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northwestern European",
@@ -11276,7 +11276,7 @@
   {
     "markerId": "rs9000250_NW_Euro",
     "rsid": "rs9000250",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northwestern European",
@@ -11298,7 +11298,7 @@
   {
     "markerId": "rs9000251_NW_Euro",
     "rsid": "rs9000251",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northwestern European",
@@ -11320,7 +11320,7 @@
   {
     "markerId": "rs9000132_NWEuro",
     "rsid": "rs9000132",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern Europe Ancestry Marker",
     "continent": "European",
     "subpop": "NorthwesternEurope",
@@ -11342,7 +11342,7 @@
   {
     "markerId": "rs9000133_NWEuro",
     "rsid": "rs9000133",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern Europe Ancestry Marker",
     "continent": "European",
     "subpop": "NorthwesternEurope",
@@ -11364,7 +11364,7 @@
   {
     "markerId": "rs9000134_NWEuro",
     "rsid": "rs9000134",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern Europe Ancestry Marker",
     "continent": "European",
     "subpop": "NorthwesternEurope",
@@ -11386,7 +11386,7 @@
   {
     "markerId": "rs9000135_NWEuro",
     "rsid": "rs9000135",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northwestern Europe Ancestry Marker",
     "continent": "European",
     "subpop": "NorthwesternEurope",
@@ -11408,7 +11408,7 @@
   {
     "markerId": "rs9000180_Norwegian",
     "rsid": "rs9000180",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Norwegian Ancestry Marker",
     "continent": "European",
     "subpop": "Norwegian",
@@ -11430,7 +11430,7 @@
   {
     "markerId": "rs9000181_Norwegian",
     "rsid": "rs9000181",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Norwegian Ancestry Marker",
     "continent": "European",
     "subpop": "Norwegian",
@@ -11452,7 +11452,7 @@
   {
     "markerId": "rs10456312_PennDutch",
     "rsid": "rs10456312",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Pennsylvania Dutch Marker",
     "continent": "European",
     "subpop": "Pennsylvania Dutch",
@@ -11474,7 +11474,7 @@
   {
     "markerId": "rs10456313_PennDutch",
     "rsid": "rs10456313",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Pennsylvania Dutch Marker",
     "continent": "European",
     "subpop": "Pennsylvania Dutch",
@@ -11496,7 +11496,7 @@
   {
     "markerId": "rs2675349_Polish",
     "rsid": "rs2675349",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polish Ancestry Marker",
     "continent": "European",
     "subpop": "Polish",
@@ -11540,7 +11540,7 @@
   {
     "markerId": "rs1343759_Polish",
     "rsid": "rs1343759",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polish Ancestry Marker",
     "continent": "European",
     "subpop": "Polish",
@@ -11562,7 +11562,7 @@
   {
     "markerId": "rs9000204_Polish",
     "rsid": "rs9000204",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polish Ancestry Marker",
     "continent": "European",
     "subpop": "Polish",
@@ -11584,7 +11584,7 @@
   {
     "markerId": "rs9000205_Polish",
     "rsid": "rs9000205",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polish Ancestry Marker",
     "continent": "European",
     "subpop": "Polish",
@@ -11628,7 +11628,7 @@
   {
     "markerId": "rs12727651_Portu",
     "rsid": "rs12727651",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -11650,7 +11650,7 @@
   {
     "markerId": "rs56203819_Portu",
     "rsid": "rs56203819",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -11672,7 +11672,7 @@
   {
     "markerId": "rs10488629_Portu",
     "rsid": "rs10488629",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -11694,7 +11694,7 @@
   {
     "markerId": "rs9000198_Portu",
     "rsid": "rs9000198",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -11716,7 +11716,7 @@
   {
     "markerId": "rs9000199_Portu",
     "rsid": "rs9000199",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -11738,7 +11738,7 @@
   {
     "markerId": "rs9000128_Roma",
     "rsid": "rs9000128",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Roma Ancestry Marker",
     "continent": "European",
     "subpop": "Roma",
@@ -11760,7 +11760,7 @@
   {
     "markerId": "rs9000129_Roma",
     "rsid": "rs9000129",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Roma Ancestry Marker",
     "continent": "European",
     "subpop": "Roma",
@@ -11782,7 +11782,7 @@
   {
     "markerId": "rs9000130_Roma",
     "rsid": "rs9000130",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Roma Ancestry Marker",
     "continent": "European",
     "subpop": "Roma",
@@ -11804,7 +11804,7 @@
   {
     "markerId": "rs9000131_Roma",
     "rsid": "rs9000131",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Roma Ancestry Marker",
     "continent": "European",
     "subpop": "Roma",
@@ -11826,7 +11826,7 @@
   {
     "markerId": "rs9000244_Roma",
     "rsid": "rs9000244",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Roma Ancestry Marker",
     "continent": "European",
     "subpop": "Roma",
@@ -11848,7 +11848,7 @@
   {
     "markerId": "rs9000245_Roma",
     "rsid": "rs9000245",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Roma Ancestry Marker",
     "continent": "European",
     "subpop": "Roma",
@@ -11870,7 +11870,7 @@
   {
     "markerId": "rs9000212_Romanian",
     "rsid": "rs9000212",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Romanian Ancestry Marker",
     "continent": "European",
     "subpop": "Romanian",
@@ -11892,7 +11892,7 @@
   {
     "markerId": "rs9000213_Romanian",
     "rsid": "rs9000213",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Romanian Ancestry Marker",
     "continent": "European",
     "subpop": "Romanian",
@@ -11958,7 +11958,7 @@
   {
     "markerId": "rs13116550_Russian",
     "rsid": "rs13116550",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Russian Ancestry Marker",
     "continent": "European",
     "subpop": "Russian",
@@ -11980,7 +11980,7 @@
   {
     "markerId": "rs11230668_Russian",
     "rsid": "rs11230668",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Russian Ancestry Marker",
     "continent": "European",
     "subpop": "Russian",
@@ -12002,7 +12002,7 @@
   {
     "markerId": "rs9000202_Russian",
     "rsid": "rs9000202",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Russian Ancestry Marker",
     "continent": "European",
     "subpop": "Russian",
@@ -12024,7 +12024,7 @@
   {
     "markerId": "rs9000203_Russian",
     "rsid": "rs9000203",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Russian Ancestry Marker",
     "continent": "European",
     "subpop": "Russian",
@@ -12046,7 +12046,7 @@
   {
     "markerId": "rs9000330_Rusyn",
     "rsid": "rs9000330",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Rusyn Ancestry Marker",
     "continent": "European",
     "subpop": "Rusyn",
@@ -12068,7 +12068,7 @@
   {
     "markerId": "rs9000331_Rusyn",
     "rsid": "rs9000331",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Rusyn Ancestry Marker",
     "continent": "European",
     "subpop": "Rusyn",
@@ -12090,7 +12090,7 @@
   {
     "markerId": "rs12727652_Sami",
     "rsid": "rs12727652",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12112,7 +12112,7 @@
   {
     "markerId": "rs17135024_Sami",
     "rsid": "rs17135024",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12134,7 +12134,7 @@
   {
     "markerId": "rs13182882_Sami",
     "rsid": "rs13182882",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12156,7 +12156,7 @@
   {
     "markerId": "rs13116551_Sami",
     "rsid": "rs13116551",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12178,7 +12178,7 @@
   {
     "markerId": "rs1343760_Sami",
     "rsid": "rs1343760",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12200,7 +12200,7 @@
   {
     "markerId": "rs9000242_Sami",
     "rsid": "rs9000242",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12222,7 +12222,7 @@
   {
     "markerId": "rs9000243_Sami",
     "rsid": "rs9000243",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sami Ancestry Marker",
     "continent": "European",
     "subpop": "Sami",
@@ -12244,7 +12244,7 @@
   {
     "markerId": "rs9000304_Sardinian",
     "rsid": "rs9000304",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sardinian Ancestry Marker",
     "continent": "European",
     "subpop": "Sardinian",
@@ -12266,7 +12266,7 @@
   {
     "markerId": "rs9000305_Sardinian",
     "rsid": "rs9000305",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sardinian Ancestry Marker",
     "continent": "European",
     "subpop": "Sardinian",
@@ -12332,7 +12332,7 @@
   {
     "markerId": "rs11580127_Scand",
     "rsid": "rs11580127",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scandinavian Ancestry Marker",
     "continent": "European",
     "subpop": "Scandinavian",
@@ -12354,7 +12354,7 @@
   {
     "markerId": "rs10424069_Scand",
     "rsid": "rs10424069",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scandinavian Ancestry Marker",
     "continent": "European",
     "subpop": "Scandinavian",
@@ -12376,7 +12376,7 @@
   {
     "markerId": "rs9000262_Scand",
     "rsid": "rs9000262",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scandinavian Ancestry Marker",
     "continent": "European",
     "subpop": "Scandinavian",
@@ -12398,7 +12398,7 @@
   {
     "markerId": "rs9000263_Scand",
     "rsid": "rs9000263",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scandinavian Ancestry Marker",
     "continent": "European",
     "subpop": "Scandinavian",
@@ -12420,7 +12420,7 @@
   {
     "markerId": "rs11103342_Scottish",
     "rsid": "rs11103342",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12442,7 +12442,7 @@
   {
     "markerId": "rs11103356_Scottish",
     "rsid": "rs11103356",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12464,7 +12464,7 @@
   {
     "markerId": "rs11103370_Scottish",
     "rsid": "rs11103370",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12486,7 +12486,7 @@
   {
     "markerId": "rs9000169_Scottish",
     "rsid": "rs9000169",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12508,7 +12508,7 @@
   {
     "markerId": "rs9000170_Scottish",
     "rsid": "rs9000170",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12530,7 +12530,7 @@
   {
     "markerId": "rs9000171_Scottish",
     "rsid": "rs9000171",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12552,7 +12552,7 @@
   {
     "markerId": "rs9000176_Scottish",
     "rsid": "rs9000176",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12574,7 +12574,7 @@
   {
     "markerId": "rs9000177_Scottish",
     "rsid": "rs9000177",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scottish Ancestry Marker",
     "continent": "European",
     "subpop": "Scottish",
@@ -12596,7 +12596,7 @@
   {
     "markerId": "rs9000125_Seph",
     "rsid": "rs9000125",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sephardic Ancestry Marker",
     "continent": "European",
     "subpop": "Sephardic",
@@ -12618,7 +12618,7 @@
   {
     "markerId": "rs9000126_Seph",
     "rsid": "rs9000126",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sephardic Ancestry Marker",
     "continent": "European",
     "subpop": "Sephardic",
@@ -12640,7 +12640,7 @@
   {
     "markerId": "rs9000127_Seph",
     "rsid": "rs9000127",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sephardic Ancestry Marker",
     "continent": "European",
     "subpop": "Sephardic",
@@ -12662,7 +12662,7 @@
   {
     "markerId": "rs9000248_Sephardic",
     "rsid": "rs9000248",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sephardic Ancestry Marker",
     "continent": "European",
     "subpop": "Sephardic",
@@ -12684,7 +12684,7 @@
   {
     "markerId": "rs9000249_Sephardic",
     "rsid": "rs9000249",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sephardic Ancestry Marker",
     "continent": "European",
     "subpop": "Sephardic",
@@ -12706,7 +12706,7 @@
   {
     "markerId": "rs10456270_Sephardic",
     "rsid": "rs10456270",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sephardic Ancestry Marker",
     "continent": "European",
     "subpop": "Sephardic",
@@ -12728,7 +12728,7 @@
   {
     "markerId": "rs9000218_Serbian",
     "rsid": "rs9000218",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Serbian Ancestry Marker",
     "continent": "European",
     "subpop": "Serbian",
@@ -12750,7 +12750,7 @@
   {
     "markerId": "rs9000219_Serbian",
     "rsid": "rs9000219",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Serbian Ancestry Marker",
     "continent": "European",
     "subpop": "Serbian",
@@ -12772,7 +12772,7 @@
   {
     "markerId": "rs9000306_Sicilian",
     "rsid": "rs9000306",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sicilian Ancestry Marker",
     "continent": "European",
     "subpop": "Sicilian",
@@ -12794,7 +12794,7 @@
   {
     "markerId": "rs9000307_Sicilian",
     "rsid": "rs9000307",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sicilian Ancestry Marker",
     "continent": "European",
     "subpop": "Sicilian",
@@ -12816,7 +12816,7 @@
   {
     "markerId": "rs9000282_Slavic",
     "rsid": "rs9000282",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slavic Ancestry Marker",
     "continent": "European",
     "subpop": "Slavic",
@@ -12838,7 +12838,7 @@
   {
     "markerId": "rs9000283_Slavic",
     "rsid": "rs9000283",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slavic Ancestry Marker",
     "continent": "European",
     "subpop": "Slavic",
@@ -12860,7 +12860,7 @@
   {
     "markerId": "rs9000224_Slovak",
     "rsid": "rs9000224",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slovak Ancestry Marker",
     "continent": "European",
     "subpop": "Slovak",
@@ -12882,7 +12882,7 @@
   {
     "markerId": "rs9000225_Slovak",
     "rsid": "rs9000225",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slovak Ancestry Marker",
     "continent": "European",
     "subpop": "Slovak",
@@ -12904,7 +12904,7 @@
   {
     "markerId": "rs9000226_Slovenian",
     "rsid": "rs9000226",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slovenian Ancestry Marker",
     "continent": "European",
     "subpop": "Slovenian",
@@ -12926,7 +12926,7 @@
   {
     "markerId": "rs9000227_Slovenian",
     "rsid": "rs9000227",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slovenian Ancestry Marker",
     "continent": "European",
     "subpop": "Slovenian",
@@ -12948,7 +12948,7 @@
   {
     "markerId": "rs9000318_Sorbian",
     "rsid": "rs9000318",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sorbian Ancestry Marker",
     "continent": "European",
     "subpop": "Sorbian",
@@ -12970,7 +12970,7 @@
   {
     "markerId": "rs9000319_Sorbian",
     "rsid": "rs9000319",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sorbian Ancestry Marker",
     "continent": "European",
     "subpop": "Sorbian",
@@ -12992,7 +12992,7 @@
   {
     "markerId": "rs9000272_SE_Euro",
     "rsid": "rs9000272",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southeastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southeastern European",
@@ -13014,7 +13014,7 @@
   {
     "markerId": "rs9000273_SE_Euro",
     "rsid": "rs9000273",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southeastern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southeastern European",
@@ -13036,7 +13036,7 @@
   {
     "markerId": "rs9000156_SouthEuro",
     "rsid": "rs9000156",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southern European",
@@ -13058,7 +13058,7 @@
   {
     "markerId": "rs9000157_SouthEuro",
     "rsid": "rs9000157",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southern European",
@@ -13080,7 +13080,7 @@
   {
     "markerId": "rs9000158_SouthEuro",
     "rsid": "rs9000158",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southern European",
@@ -13102,7 +13102,7 @@
   {
     "markerId": "rs9000159_SouthEuro",
     "rsid": "rs9000159",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southern European",
@@ -13124,7 +13124,7 @@
   {
     "markerId": "rs9000252_S_Euro",
     "rsid": "rs9000252",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southern European",
@@ -13146,7 +13146,7 @@
   {
     "markerId": "rs9000253_S_Euro",
     "rsid": "rs9000253",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southern European",
@@ -13168,7 +13168,7 @@
   {
     "markerId": "rs10456269_SouthRussian",
     "rsid": "rs10456269",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern Russian Ancestry Marker",
     "continent": "European",
     "subpop": "Southern Russian",
@@ -13190,7 +13190,7 @@
   {
     "markerId": "rs11103331_Spanish_South",
     "rsid": "rs11103331",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southern Spanish Ancestry Marker",
     "continent": "European",
     "subpop": "Southern Spanish",
@@ -13212,7 +13212,7 @@
   {
     "markerId": "rs9000270_SW_Euro",
     "rsid": "rs9000270",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southwestern European",
@@ -13234,7 +13234,7 @@
   {
     "markerId": "rs9000271_SW_Euro",
     "rsid": "rs9000271",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southwestern European Ancestry Marker",
     "continent": "European",
     "subpop": "Southwestern European",
@@ -13256,7 +13256,7 @@
   {
     "markerId": "rs4871197_Spanish",
     "rsid": "rs4871197",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Spanish Ancestry Marker",
     "continent": "European",
     "subpop": "Spanish",
@@ -13278,7 +13278,7 @@
   {
     "markerId": "rs13115484_Spanish",
     "rsid": "rs13115484",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Spanish Ancestry Marker",
     "continent": "European",
     "subpop": "Spanish",
@@ -13300,7 +13300,7 @@
   {
     "markerId": "rs9000196_Spanish",
     "rsid": "rs9000196",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Spanish Ancestry Marker",
     "continent": "European",
     "subpop": "Spanish",
@@ -13322,7 +13322,7 @@
   {
     "markerId": "rs9000197_Spanish",
     "rsid": "rs9000197",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Spanish Ancestry Marker",
     "continent": "European",
     "subpop": "Spanish",
@@ -13344,7 +13344,7 @@
   {
     "markerId": "rs9000182_Swedish",
     "rsid": "rs9000182",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swedish Ancestry Marker",
     "continent": "European",
     "subpop": "Swedish",
@@ -13366,7 +13366,7 @@
   {
     "markerId": "rs9000183_Swedish",
     "rsid": "rs9000183",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swedish Ancestry Marker",
     "continent": "European",
     "subpop": "Swedish",
@@ -13388,7 +13388,7 @@
   {
     "markerId": "rs9000101_Swiss",
     "rsid": "rs9000101",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swiss Ancestry Marker",
     "continent": "European",
     "subpop": "Swiss",
@@ -13410,7 +13410,7 @@
   {
     "markerId": "rs9000102_Swiss",
     "rsid": "rs9000102",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swiss Ancestry Marker",
     "continent": "European",
     "subpop": "Swiss",
@@ -13432,7 +13432,7 @@
   {
     "markerId": "rs9000103_Swiss",
     "rsid": "rs9000103",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swiss Ancestry Marker",
     "continent": "European",
     "subpop": "Swiss",
@@ -13454,7 +13454,7 @@
   {
     "markerId": "rs9000104_Swiss",
     "rsid": "rs9000104",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swiss Ancestry Marker",
     "continent": "European",
     "subpop": "Swiss",
@@ -13476,7 +13476,7 @@
   {
     "markerId": "rs9000222_Swiss",
     "rsid": "rs9000222",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Swiss Ancestry Marker",
     "continent": "European",
     "subpop": "Swiss",
@@ -13498,7 +13498,7 @@
   {
     "markerId": "rs9000326_Szekely",
     "rsid": "rs9000326",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Szekely Ancestry Marker",
     "continent": "European",
     "subpop": "Szekely",
@@ -13520,7 +13520,7 @@
   {
     "markerId": "rs9000327_Szekely",
     "rsid": "rs9000327",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Szekely Ancestry Marker",
     "continent": "European",
     "subpop": "Szekely",
@@ -13542,7 +13542,7 @@
   {
     "markerId": "rs9000342_Tatar",
     "rsid": "rs9000342",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tatar Ancestry Marker",
     "continent": "European",
     "subpop": "Tatar",
@@ -13564,7 +13564,7 @@
   {
     "markerId": "rs9000343_Tatar",
     "rsid": "rs9000343",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tatar Ancestry Marker",
     "continent": "European",
     "subpop": "Tatar",
@@ -13586,7 +13586,7 @@
   {
     "markerId": "rs9000206_Ukrain",
     "rsid": "rs9000206",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ukrainian Ancestry Marker",
     "continent": "European",
     "subpop": "Ukrainian",
@@ -13608,7 +13608,7 @@
   {
     "markerId": "rs9000207_Ukrain",
     "rsid": "rs9000207",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ukrainian Ancestry Marker",
     "continent": "European",
     "subpop": "Ukrainian",
@@ -13630,7 +13630,7 @@
   {
     "markerId": "rs9000298_Uralic",
     "rsid": "rs9000298",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Uralic Ancestry Marker",
     "continent": "European",
     "subpop": "Uralic",
@@ -13652,7 +13652,7 @@
   {
     "markerId": "rs9000299_Uralic",
     "rsid": "rs9000299",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Uralic Ancestry Marker",
     "continent": "European",
     "subpop": "Uralic",
@@ -13674,7 +13674,7 @@
   {
     "markerId": "rs9000322_Vlach",
     "rsid": "rs9000322",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Vlach Ancestry Marker",
     "continent": "European",
     "subpop": "Vlach",
@@ -13696,7 +13696,7 @@
   {
     "markerId": "rs9000323_Vlach",
     "rsid": "rs9000323",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Vlach Ancestry Marker",
     "continent": "European",
     "subpop": "Vlach",
@@ -13718,7 +13718,7 @@
   {
     "markerId": "rs11103355_Welsh",
     "rsid": "rs11103355",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Welsh",
@@ -13740,7 +13740,7 @@
   {
     "markerId": "rs11103369_Welsh",
     "rsid": "rs11103369",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Welsh",
@@ -13762,7 +13762,7 @@
   {
     "markerId": "rs9000167_Welsh",
     "rsid": "rs9000167",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Welsh",
@@ -13784,7 +13784,7 @@
   {
     "markerId": "rs9000168_Welsh",
     "rsid": "rs9000168",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Welsh",
@@ -13806,7 +13806,7 @@
   {
     "markerId": "rs9000178_Welsh",
     "rsid": "rs9000178",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Welsh",
@@ -13828,7 +13828,7 @@
   {
     "markerId": "rs9000179_Welsh",
     "rsid": "rs9000179",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Welsh Ancestry Marker",
     "continent": "European",
     "subpop": "Welsh",
@@ -13850,7 +13850,7 @@
   {
     "markerId": "rs9000264_W_Euro",
     "rsid": "rs9000264",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Western European Ancestry Marker",
     "continent": "European",
     "subpop": "Western European",
@@ -13872,7 +13872,7 @@
   {
     "markerId": "rs9000265_W_Euro",
     "rsid": "rs9000265",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Western European Ancestry Marker",
     "continent": "European",
     "subpop": "Western European",
@@ -14083,7 +14083,7 @@
     ],
     "gene": "Y-DNA",
     "trait": "Haplogroup CF (root)",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -14117,7 +14117,7 @@
     ],
     "gene": "Y-DNA",
     "trait": "Haplogroup DE (root)",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -14146,7 +14146,7 @@
     "markerId": "L275",
     "gene": "Y-DNA",
     "trait": "Haplogroup Q1b",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -14252,7 +14252,7 @@
     "rsid": "rs121912172",
     "gene": "BRCA2",
     "trait": "Breast/ovarian cancer risk",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14532,7 +14532,7 @@
     "rsid": "rs1045587",
     "gene": "ABCB1",
     "trait": "P-glycoprotein function",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Health",
     "significance": "Low",
     "alleles": [
@@ -14595,7 +14595,7 @@
     "rsid": "rs121913277",
     "gene": "HEXA",
     "trait": "Tay-Sachs Disease (Ashkenazi Jewish Marker)",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Health",
     "significance": "High",
     "alleles": [
@@ -14912,7 +14912,7 @@
     "rsid": "rs113866424",
     "gene": "SLC23A1",
     "trait": "Vitamin C Transport",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Nutrition",
     "significance": "Low",
     "alleles": [
@@ -14940,7 +14940,7 @@
     "rsid": "rs4646994",
     "gene": "ACE",
     "trait": "Endurance Performance",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Performance",
     "significance": "Medium",
     "alleles": [
@@ -15267,7 +15267,7 @@
   {
     "markerId": "rs1540623_ME",
     "rsid": "rs1540623",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Middle Eastern Ancestry Marker",
     "continent": "Middle Eastern",
     "alleles": [
@@ -15288,7 +15288,7 @@
   {
     "markerId": "rs10488631_Anatolian",
     "rsid": "rs10488631",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15310,7 +15310,7 @@
   {
     "markerId": "rs10488632_Anatolian",
     "rsid": "rs10488632",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15332,7 +15332,7 @@
   {
     "markerId": "rs10488633_Anatolian",
     "rsid": "rs10488633",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15354,7 +15354,7 @@
   {
     "markerId": "rs10488634_Anatolian",
     "rsid": "rs10488634",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15376,7 +15376,7 @@
   {
     "markerId": "rs10488635_Anatolian",
     "rsid": "rs10488635",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15398,7 +15398,7 @@
   {
     "markerId": "rs10456272_Anatolian",
     "rsid": "rs10456272",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15420,7 +15420,7 @@
   {
     "markerId": "rs10456279_Anatolian_2",
     "rsid": "rs10456279",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anatolian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Anatolian",
@@ -15442,7 +15442,7 @@
   {
     "markerId": "rs9999901_Arabian",
     "rsid": "rs9999901",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15464,7 +15464,7 @@
   {
     "markerId": "rs9999904_Arabian",
     "rsid": "rs9999904",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15486,7 +15486,7 @@
   {
     "markerId": "rs10407228_Arabian",
     "rsid": "rs10407228",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15508,7 +15508,7 @@
   {
     "markerId": "rs1393350_Arabian",
     "rsid": "rs1393350",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15530,7 +15530,7 @@
   {
     "markerId": "rs1393351_Arabian",
     "rsid": "rs1393351",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15552,7 +15552,7 @@
   {
     "markerId": "rs10407229_Arabian",
     "rsid": "rs10407229",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15574,7 +15574,7 @@
   {
     "markerId": "rs1393352_Arabian",
     "rsid": "rs1393352",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15596,7 +15596,7 @@
   {
     "markerId": "rs10407230_Arabian",
     "rsid": "rs10407230",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15618,7 +15618,7 @@
   {
     "markerId": "rs1393358_Arabian",
     "rsid": "rs1393358",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15640,7 +15640,7 @@
   {
     "markerId": "rs10407235_Arabian",
     "rsid": "rs10407235",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15662,7 +15662,7 @@
   {
     "markerId": "rs1393359_Arabian",
     "rsid": "rs1393359",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15684,7 +15684,7 @@
   {
     "markerId": "rs10407236_Arabian",
     "rsid": "rs10407236",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15706,7 +15706,7 @@
   {
     "markerId": "rs1393360_Arabian",
     "rsid": "rs1393360",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15728,7 +15728,7 @@
   {
     "markerId": "rs10407237_Arabian",
     "rsid": "rs10407237",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15750,7 +15750,7 @@
   {
     "markerId": "rs1393361_Arabian",
     "rsid": "rs1393361",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15772,7 +15772,7 @@
   {
     "markerId": "rs10407238_Arabian",
     "rsid": "rs10407238",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15794,7 +15794,7 @@
   {
     "markerId": "rs1393362_Arabian",
     "rsid": "rs1393362",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15816,7 +15816,7 @@
   {
     "markerId": "rs10407239_Arabian",
     "rsid": "rs10407239",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15838,7 +15838,7 @@
   {
     "markerId": "rs1393353_Arabian",
     "rsid": "rs1393353",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15860,7 +15860,7 @@
   {
     "markerId": "rs10407231_Arabian",
     "rsid": "rs10407231",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15882,7 +15882,7 @@
   {
     "markerId": "rs1393355_Arabian",
     "rsid": "rs1393355",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15904,7 +15904,7 @@
   {
     "markerId": "rs1333047_Arabian",
     "rsid": "rs1333047",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15926,7 +15926,7 @@
   {
     "markerId": "rs6601495_Arabian",
     "rsid": "rs6601495",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arabian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Arabian",
@@ -15962,7 +15962,7 @@
   {
     "markerId": "rs1333048_Armenian",
     "rsid": "rs1333048",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Armenian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Armenian",
@@ -15984,7 +15984,7 @@
   {
     "markerId": "rs10456206_Assyrian",
     "rsid": "rs10456206",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Assyrian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Assyrian",
@@ -16006,7 +16006,7 @@
   {
     "markerId": "rs10456208_Druze",
     "rsid": "rs10456208",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Druze Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Druze",
@@ -16028,7 +16028,7 @@
   {
     "markerId": "rs10456211_Druze",
     "rsid": "rs10456211",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Druze Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Druze",
@@ -16050,7 +16050,7 @@
   {
     "markerId": "rs10456214_Druze",
     "rsid": "rs10456214",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Druze Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Druze",
@@ -16072,7 +16072,7 @@
   {
     "markerId": "rs11103332_Georgian",
     "rsid": "rs11103332",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Georgian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Georgian",
@@ -16094,7 +16094,7 @@
   {
     "markerId": "rs11103333_Iranian",
     "rsid": "rs11103333",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iranian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Iranian",
@@ -16116,7 +16116,7 @@
   {
     "markerId": "rs10456274_Iranian",
     "rsid": "rs10456274",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iranian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Iranian",
@@ -16138,7 +16138,7 @@
   {
     "markerId": "rs10456282_Iranian_3",
     "rsid": "rs10456282",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iranian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Iranian",
@@ -16160,7 +16160,7 @@
   {
     "markerId": "rs10757279_Jordanian",
     "rsid": "rs10757279",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Jordanian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Jordanian",
@@ -16182,7 +16182,7 @@
   {
     "markerId": "rs10757274_Kurdish",
     "rsid": "rs10757274",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kurdish Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Kurdish",
@@ -16204,7 +16204,7 @@
   {
     "markerId": "rs10456277_Kurdish",
     "rsid": "rs10456277",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kurdish Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Kurdish",
@@ -16240,7 +16240,7 @@
   {
     "markerId": "rs9999902_Levantine",
     "rsid": "rs9999902",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16262,7 +16262,7 @@
   {
     "markerId": "rs9999905_Levantine",
     "rsid": "rs9999905",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16284,7 +16284,7 @@
   {
     "markerId": "rs11215545_Levantine",
     "rsid": "rs11215545",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16306,7 +16306,7 @@
   {
     "markerId": "rs11215546_Levantine",
     "rsid": "rs11215546",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16328,7 +16328,7 @@
   {
     "markerId": "rs1800409_Levantine",
     "rsid": "rs1800409",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16350,7 +16350,7 @@
   {
     "markerId": "rs11215547_Levantine",
     "rsid": "rs11215547",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16372,7 +16372,7 @@
   {
     "markerId": "rs1800415_Levantine",
     "rsid": "rs1800415",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16394,7 +16394,7 @@
   {
     "markerId": "rs11215554_Levantine",
     "rsid": "rs11215554",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16416,7 +16416,7 @@
   {
     "markerId": "rs1800416_Levantine",
     "rsid": "rs1800416",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16438,7 +16438,7 @@
   {
     "markerId": "rs11215555_Levantine",
     "rsid": "rs11215555",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16460,7 +16460,7 @@
   {
     "markerId": "rs1800417_Levantine",
     "rsid": "rs1800417",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16482,7 +16482,7 @@
   {
     "markerId": "rs11215556_Levantine",
     "rsid": "rs11215556",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16504,7 +16504,7 @@
   {
     "markerId": "rs1800418_Levantine",
     "rsid": "rs1800418",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16526,7 +16526,7 @@
   {
     "markerId": "rs11215557_Levantine",
     "rsid": "rs11215557",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16548,7 +16548,7 @@
   {
     "markerId": "rs1800419_Levantine",
     "rsid": "rs1800419",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16570,7 +16570,7 @@
   {
     "markerId": "rs11215558_Levantine",
     "rsid": "rs11215558",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16592,7 +16592,7 @@
   {
     "markerId": "rs1800410_Levantine",
     "rsid": "rs1800410",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16614,7 +16614,7 @@
   {
     "markerId": "rs1800411_Levantine",
     "rsid": "rs1800411",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16636,7 +16636,7 @@
   {
     "markerId": "rs11215550_Levantine",
     "rsid": "rs11215550",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16658,7 +16658,7 @@
   {
     "markerId": "rs10757278_Levantine",
     "rsid": "rs10757278",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16680,7 +16680,7 @@
   {
     "markerId": "rs12186491_Levantine",
     "rsid": "rs12186491",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16702,7 +16702,7 @@
   {
     "markerId": "rs10456273_Levantine",
     "rsid": "rs10456273",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16724,7 +16724,7 @@
   {
     "markerId": "rs10456280_Levantine_2",
     "rsid": "rs10456280",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Levantine Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Levantine",
@@ -16746,7 +16746,7 @@
   {
     "markerId": "rs10456271_Mizrahi",
     "rsid": "rs10456271",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mizrahi Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Mizrahi",
@@ -16768,7 +16768,7 @@
   {
     "markerId": "rs11103334_Persian",
     "rsid": "rs11103334",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Persian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Persian",
@@ -16790,7 +16790,7 @@
   {
     "markerId": "rs11103335_Persian",
     "rsid": "rs11103335",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Persian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Persian",
@@ -16812,7 +16812,7 @@
   {
     "markerId": "rs11103336_Persian",
     "rsid": "rs11103336",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Persian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Persian",
@@ -16834,7 +16834,7 @@
   {
     "markerId": "rs11103337_Persian",
     "rsid": "rs11103337",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Persian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Persian",
@@ -16856,7 +16856,7 @@
   {
     "markerId": "rs10456278_Persian_2",
     "rsid": "rs10456278",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Persian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "Persian",
@@ -16878,7 +16878,7 @@
   {
     "markerId": "rs10757275_WestAsian",
     "rsid": "rs10757275",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "West Asian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "West Asian",
@@ -16900,7 +16900,7 @@
   {
     "markerId": "rs10757276_WestAsian",
     "rsid": "rs10757276",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "West Asian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "West Asian",
@@ -16922,7 +16922,7 @@
   {
     "markerId": "rs10456284_West_Asian_4",
     "rsid": "rs10456284",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "West Asian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "West Asian",
@@ -16944,7 +16944,7 @@
   {
     "markerId": "rs1426644_WestEurasian",
     "rsid": "rs1426644",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "West Eurasian Ancestry Marker",
     "continent": "Middle Eastern",
     "subpop": "West Eurasian",
@@ -17100,7 +17100,7 @@
   {
     "markerId": "rs12149629_Amazonian",
     "rsid": "rs12149629",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amazonian Marker",
     "continent": "Native American",
     "subpop": "Amazonian",
@@ -17123,7 +17123,7 @@
   {
     "markerId": "rs4845573_Amazonian",
     "rsid": "rs4845573",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amazonian Marker",
     "continent": "Native American",
     "subpop": "Amazonian",
@@ -17146,7 +17146,7 @@
   {
     "markerId": "rs2099878_Amazonian",
     "rsid": "rs2099878",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amazonian Marker",
     "continent": "Native American",
     "subpop": "Amazonian",
@@ -17169,7 +17169,7 @@
   {
     "markerId": "rs3916238_Amazonian",
     "rsid": "rs3916238",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amazonian Marker",
     "continent": "Native American",
     "subpop": "Amazonian",
@@ -17192,7 +17192,7 @@
   {
     "markerId": "rs2840531_Amazonian",
     "rsid": "rs2840531",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amazonian Marker",
     "continent": "Native American",
     "subpop": "Amazonian",
@@ -17215,7 +17215,7 @@
   {
     "markerId": "rs3900_Amazonian",
     "rsid": "rs3900",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amazonian Marker",
     "continent": "Native American",
     "subpop": "Amazonian",
@@ -17238,7 +17238,7 @@
   {
     "markerId": "rs4845571_Andean",
     "rsid": "rs4845571",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Andean Marker",
     "continent": "Native American",
     "subpop": "Andean",
@@ -17261,7 +17261,7 @@
   {
     "markerId": "rs2099876_Andean",
     "rsid": "rs2099876",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Andean Marker",
     "continent": "Native American",
     "subpop": "Andean",
@@ -17284,7 +17284,7 @@
   {
     "markerId": "rs3916236_Andean",
     "rsid": "rs3916236",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Andean Marker",
     "continent": "Native American",
     "subpop": "Andean",
@@ -17307,7 +17307,7 @@
   {
     "markerId": "rs2840529_Andean",
     "rsid": "rs2840529",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Andean Marker",
     "continent": "Native American",
     "subpop": "Andean",
@@ -17330,7 +17330,7 @@
   {
     "markerId": "rs3898_Andean",
     "rsid": "rs3898",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Andean Marker",
     "continent": "Native American",
     "subpop": "Andean",
@@ -17353,7 +17353,7 @@
   {
     "markerId": "rs10821216_Arctic",
     "rsid": "rs10821216",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arctic Indigenous Marker",
     "continent": "Native American",
     "subpop": "Arctic Indigenous",
@@ -17376,7 +17376,7 @@
   {
     "markerId": "rs4806444_Arctic",
     "rsid": "rs4806444",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Arctic Indigenous Marker",
     "continent": "Native American",
     "subpop": "Arctic Indigenous",
@@ -17399,7 +17399,7 @@
   {
     "markerId": "rs10456285_Aymara",
     "rsid": "rs10456285",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Aymara Ancestry Marker",
     "continent": "Native American",
     "subpop": "Aymara",
@@ -17422,7 +17422,7 @@
   {
     "markerId": "rs20424_Beringian",
     "rsid": "rs20424",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Beringian Standstill Proxy",
     "continent": "Native American",
     "subpop": "Beringian",
@@ -17442,7 +17442,7 @@
   {
     "markerId": "rs2231534_Caribbean",
     "rsid": "rs2231534",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Caribbean Indigenous Marker",
     "continent": "Native American",
     "subpop": "Caribbean Indigenous",
@@ -17465,7 +17465,7 @@
   {
     "markerId": "rs3733839_Caribbean",
     "rsid": "rs3733839",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Caribbean Indigenous Marker",
     "continent": "Native American",
     "subpop": "Caribbean Indigenous",
@@ -17488,7 +17488,7 @@
   {
     "markerId": "rs4845572_Central",
     "rsid": "rs4845572",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central",
@@ -17511,7 +17511,7 @@
   {
     "markerId": "rs2099877_Central",
     "rsid": "rs2099877",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central",
@@ -17534,7 +17534,7 @@
   {
     "markerId": "rs3916237_Central",
     "rsid": "rs3916237",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central",
@@ -17557,7 +17557,7 @@
   {
     "markerId": "rs2840530_Central",
     "rsid": "rs2840530",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central",
@@ -17580,7 +17580,7 @@
   {
     "markerId": "rs3899_Central",
     "rsid": "rs3899",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central",
@@ -17603,7 +17603,7 @@
   {
     "markerId": "rs161497_Central",
     "rsid": "rs161497",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central American",
@@ -17626,7 +17626,7 @@
   {
     "markerId": "rs75853687_Central",
     "rsid": "rs75853687",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Central American Marker",
     "continent": "Native American",
     "subpop": "Central American",
@@ -17649,7 +17649,7 @@
   {
     "markerId": "rs10456215_Cherokee",
     "rsid": "rs10456215",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Cherokee Ancestry Marker",
     "continent": "Native American",
     "subpop": "Cherokee",
@@ -17672,7 +17672,7 @@
   {
     "markerId": "rs1159102_EW",
     "rsid": "rs1159102",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern Woodland Marker",
     "continent": "Native American",
     "subpop": "Eastern Woodland",
@@ -17695,7 +17695,7 @@
   {
     "markerId": "rs2227282_EW",
     "rsid": "rs2227282",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Eastern Woodland Marker",
     "continent": "Native American",
     "subpop": "Eastern Woodland",
@@ -17718,7 +17718,7 @@
   {
     "markerId": "rs10456207_Incan",
     "rsid": "rs10456207",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Incan Ancestry Marker",
     "continent": "Native American",
     "subpop": "Incan",
@@ -17741,7 +17741,7 @@
   {
     "markerId": "rs11215559_Indig",
     "rsid": "rs11215559",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Indigenous Marker",
     "continent": "Native American",
     "subpop": "Indigenous",
@@ -17764,7 +17764,7 @@
   {
     "markerId": "rs11215560_Indig",
     "rsid": "rs11215560",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Indigenous Marker",
     "continent": "Native American",
     "subpop": "Indigenous",
@@ -17787,7 +17787,7 @@
   {
     "markerId": "rs10456217_Inuit",
     "rsid": "rs10456217",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Inuit Ancestry Marker",
     "continent": "Native American",
     "subpop": "Inuit",
@@ -17810,7 +17810,7 @@
   {
     "markerId": "rs10821217_NA",
     "rsid": "rs10821217",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17833,7 +17833,7 @@
   {
     "markerId": "rs2227283_NA",
     "rsid": "rs2227283",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17856,7 +17856,7 @@
   {
     "markerId": "rs1159104_NA",
     "rsid": "rs1159104",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17879,7 +17879,7 @@
   {
     "markerId": "rs10221833_NA",
     "rsid": "rs10221833",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17902,7 +17902,7 @@
   {
     "markerId": "rs4806445_NA",
     "rsid": "rs4806445",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17925,7 +17925,7 @@
   {
     "markerId": "rs10821218_NA",
     "rsid": "rs10821218",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17948,7 +17948,7 @@
   {
     "markerId": "rs2227284_NA",
     "rsid": "rs2227284",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17971,7 +17971,7 @@
   {
     "markerId": "rs1159105_NA",
     "rsid": "rs1159105",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -17994,7 +17994,7 @@
   {
     "markerId": "rs10221834_NA",
     "rsid": "rs10221834",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18017,7 +18017,7 @@
   {
     "markerId": "rs4806446_NA",
     "rsid": "rs4806446",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18040,7 +18040,7 @@
   {
     "markerId": "rs10821219_NA",
     "rsid": "rs10821219",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18063,7 +18063,7 @@
   {
     "markerId": "rs2227285_NA",
     "rsid": "rs2227285",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18086,7 +18086,7 @@
   {
     "markerId": "rs1159106_NA",
     "rsid": "rs1159106",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18109,7 +18109,7 @@
   {
     "markerId": "rs10221835_NA",
     "rsid": "rs10221835",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18132,7 +18132,7 @@
   {
     "markerId": "rs4806447_NA",
     "rsid": "rs4806447",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18155,7 +18155,7 @@
   {
     "markerId": "rs10821220_NA",
     "rsid": "rs10821220",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18178,7 +18178,7 @@
   {
     "markerId": "rs2227286_NA",
     "rsid": "rs2227286",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18201,7 +18201,7 @@
   {
     "markerId": "rs1159107_NA",
     "rsid": "rs1159107",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18224,7 +18224,7 @@
   {
     "markerId": "rs10221836_NA",
     "rsid": "rs10221836",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18247,7 +18247,7 @@
   {
     "markerId": "rs4806448_NA",
     "rsid": "rs4806448",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18270,7 +18270,7 @@
   {
     "markerId": "rs10821221_NA",
     "rsid": "rs10821221",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18293,7 +18293,7 @@
   {
     "markerId": "rs2227287_NA",
     "rsid": "rs2227287",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North American Marker",
     "continent": "Native American",
     "subpop": "North American",
@@ -18316,7 +18316,7 @@
   {
     "markerId": "rs10221831_Plains",
     "rsid": "rs10221831",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Plains Indigenous Marker",
     "continent": "Native American",
     "subpop": "Plains Indigenous",
@@ -18339,7 +18339,7 @@
   {
     "markerId": "rs1159103_Plains",
     "rsid": "rs1159103",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Plains Indigenous Marker",
     "continent": "Native American",
     "subpop": "Plains Indigenous",
@@ -18362,7 +18362,7 @@
   {
     "markerId": "rs10456216_Sioux",
     "rsid": "rs10456216",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sioux Ancestry Marker",
     "continent": "Native American",
     "subpop": "Sioux",
@@ -18385,7 +18385,7 @@
   {
     "markerId": "rs2848332_SA",
     "rsid": "rs2848332",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18408,7 +18408,7 @@
   {
     "markerId": "rs11267812_SA",
     "rsid": "rs11267812",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18431,7 +18431,7 @@
   {
     "markerId": "rs4908345_SA",
     "rsid": "rs4908345",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18454,7 +18454,7 @@
   {
     "markerId": "rs2016278_SA",
     "rsid": "rs2016278",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18477,7 +18477,7 @@
   {
     "markerId": "rs12028061_SA",
     "rsid": "rs12028061",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18500,7 +18500,7 @@
   {
     "markerId": "rs12119150_SA",
     "rsid": "rs12119150",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18523,7 +18523,7 @@
   {
     "markerId": "rs12535789_SA",
     "rsid": "rs12535789",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18546,7 +18546,7 @@
   {
     "markerId": "rs12727646_SA",
     "rsid": "rs12727646",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18569,7 +18569,7 @@
   {
     "markerId": "rs12913835_SA",
     "rsid": "rs12913835",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18592,7 +18592,7 @@
   {
     "markerId": "rs12916302_SA",
     "rsid": "rs12916302",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18615,7 +18615,7 @@
   {
     "markerId": "rs13115481_SA",
     "rsid": "rs13115481",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18638,7 +18638,7 @@
   {
     "markerId": "rs13116547_SA",
     "rsid": "rs13116547",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18661,7 +18661,7 @@
   {
     "markerId": "rs13182878_SA",
     "rsid": "rs13182878",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18684,7 +18684,7 @@
   {
     "markerId": "rs1343756_SA",
     "rsid": "rs1343756",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18707,7 +18707,7 @@
   {
     "markerId": "rs1426659_SA",
     "rsid": "rs1426659",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18730,7 +18730,7 @@
   {
     "markerId": "rs1446589_SA",
     "rsid": "rs1446589",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18753,7 +18753,7 @@
   {
     "markerId": "rs1610627_SA",
     "rsid": "rs1610627",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18776,7 +18776,7 @@
   {
     "markerId": "rs161499_SA",
     "rsid": "rs161499",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18799,7 +18799,7 @@
   {
     "markerId": "rs16891987_SA",
     "rsid": "rs16891987",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18822,7 +18822,7 @@
   {
     "markerId": "rs17135020_SA",
     "rsid": "rs17135020",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18845,7 +18845,7 @@
   {
     "markerId": "rs174572_SA",
     "rsid": "rs174572",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18868,7 +18868,7 @@
   {
     "markerId": "rs17822933_SA",
     "rsid": "rs17822933",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18891,7 +18891,7 @@
   {
     "markerId": "rs1805012_SA",
     "rsid": "rs1805012",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18914,7 +18914,7 @@
   {
     "markerId": "rs2016279_SA",
     "rsid": "rs2016279",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18937,7 +18937,7 @@
   {
     "markerId": "rs2066855_SA",
     "rsid": "rs2066855",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18960,7 +18960,7 @@
   {
     "markerId": "rs2187318_SA",
     "rsid": "rs2187318",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -18983,7 +18983,7 @@
   {
     "markerId": "rs2228481_SA",
     "rsid": "rs2228481",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South American Marker",
     "continent": "Native American",
     "subpop": "South American",
@@ -19006,7 +19006,7 @@
   {
     "markerId": "rs4806443_SW",
     "rsid": "rs4806443",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southwest Indigenous Marker",
     "continent": "Native American",
     "subpop": "Southwest Indigenous",
@@ -19029,7 +19029,7 @@
   {
     "markerId": "rs10221832_SW",
     "rsid": "rs10221832",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Southwest Indigenous Marker",
     "continent": "Native American",
     "subpop": "Southwest Indigenous",
@@ -19052,7 +19052,7 @@
   {
     "markerId": "rs7777777_Taino",
     "rsid": "rs7777777",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19075,7 +19075,7 @@
   {
     "markerId": "rs8888888_Taino",
     "rsid": "rs8888888",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19098,7 +19098,7 @@
   {
     "markerId": "rs9999999_Taino",
     "rsid": "rs9999999",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19121,7 +19121,7 @@
   {
     "markerId": "rs11111111_Taino",
     "rsid": "rs11111111",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19144,7 +19144,7 @@
   {
     "markerId": "rs22222222_Taino",
     "rsid": "rs22222222",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19167,7 +19167,7 @@
   {
     "markerId": "rs33333333_Taino",
     "rsid": "rs33333333",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19190,7 +19190,7 @@
   {
     "markerId": "rs44444444_Taino",
     "rsid": "rs44444444",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19213,7 +19213,7 @@
   {
     "markerId": "rs55555555_Taino",
     "rsid": "rs55555555",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19236,7 +19236,7 @@
   {
     "markerId": "rs66666666_Taino",
     "rsid": "rs66666666",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19259,7 +19259,7 @@
   {
     "markerId": "rs77777777_Taino",
     "rsid": "rs77777777",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Taino Marker",
     "continent": "Native American",
     "subpop": "Taino",
@@ -19282,7 +19282,7 @@
   {
     "markerId": "rs10456227_Yanomami",
     "rsid": "rs10456227",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yanomami Ancestry Marker",
     "continent": "Native American",
     "subpop": "Yanomami",
@@ -19372,7 +19372,7 @@
   {
     "markerId": "rs10456205_Berber",
     "rsid": "rs10456205_BE",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Berber Ancestry Marker",
     "continent": "North African",
     "subpop": "Berber",
@@ -19394,7 +19394,7 @@
   {
     "markerId": "rs9999903_NorthAfrican",
     "rsid": "rs9999903",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19416,7 +19416,7 @@
   {
     "markerId": "rs7722456_NorthAfrican",
     "rsid": "rs7722456",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19438,7 +19438,7 @@
   {
     "markerId": "rs6119472_NorthAfrican",
     "rsid": "rs6119472",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19460,7 +19460,7 @@
   {
     "markerId": "rs7722457_NorthAfrican",
     "rsid": "rs7722457",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19482,7 +19482,7 @@
   {
     "markerId": "rs12821257_NorthAfrican",
     "rsid": "rs12821257",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19504,7 +19504,7 @@
   {
     "markerId": "rs6119473_NorthAfrican",
     "rsid": "rs6119473",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19526,7 +19526,7 @@
   {
     "markerId": "rs7722458_NorthAfrican",
     "rsid": "rs7722458",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19548,7 +19548,7 @@
   {
     "markerId": "rs12821258_NorthAfrican",
     "rsid": "rs12821258",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19570,7 +19570,7 @@
   {
     "markerId": "rs6119478_NorthAfrican",
     "rsid": "rs6119478",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19592,7 +19592,7 @@
   {
     "markerId": "rs6119479_NorthAfrican",
     "rsid": "rs6119479",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19614,7 +19614,7 @@
   {
     "markerId": "rs6119480_NorthAfrican",
     "rsid": "rs6119480",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19636,7 +19636,7 @@
   {
     "markerId": "rs6119481_NorthAfrican",
     "rsid": "rs6119481",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19658,7 +19658,7 @@
   {
     "markerId": "rs6119474_NorthAfrican",
     "rsid": "rs6119474",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19680,7 +19680,7 @@
   {
     "markerId": "rs7722459_NorthAfrican",
     "rsid": "rs7722459",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19702,7 +19702,7 @@
   {
     "markerId": "rs12821259_NorthAfrican",
     "rsid": "rs12821259",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19724,7 +19724,7 @@
   {
     "markerId": "rs10911063_NorthAfrican",
     "rsid": "rs10911063",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19746,7 +19746,7 @@
   {
     "markerId": "rs10911061_NorthAfrican",
     "rsid": "rs10911061",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "North African",
@@ -19768,7 +19768,7 @@
   {
     "markerId": "rs10456205_Tuareg",
     "rsid": "rs10456205_TU",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tuareg Ancestry Marker",
     "continent": "North African",
     "subpop": "Tuareg",
@@ -19884,7 +19884,7 @@
   {
     "markerId": "rs10456290_Chamorro",
     "rsid": "rs10456290",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Chamorro Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Chamorro",
@@ -19907,7 +19907,7 @@
   {
     "markerId": "rs10456291_Chamorro",
     "rsid": "rs10456291",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Chamorro Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Chamorro",
@@ -19930,7 +19930,7 @@
   {
     "markerId": "rs10456286_Hawaiian",
     "rsid": "rs10456286",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hawaiian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Hawaiian",
@@ -19953,7 +19953,7 @@
   {
     "markerId": "rs10456287_Hawaiian",
     "rsid": "rs10456287",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hawaiian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Hawaiian",
@@ -19976,7 +19976,7 @@
   {
     "markerId": "rs11103377_Hawaiian",
     "rsid": "rs11103377",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hawaiian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Hawaiian",
@@ -19998,7 +19998,7 @@
   {
     "markerId": "rs11103381_Hawaiian",
     "rsid": "rs11103381",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hawaiian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Hawaiian",
@@ -20020,7 +20020,7 @@
   {
     "markerId": "rs11103385_Hawaiian",
     "rsid": "rs11103385",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hawaiian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Hawaiian",
@@ -20042,7 +20042,7 @@
   {
     "markerId": "rs9000004_Melanesian",
     "rsid": "rs9000004",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melanesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -20064,7 +20064,7 @@
   {
     "markerId": "rs9000005_Melanesian",
     "rsid": "rs9000005",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melanesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -20086,7 +20086,7 @@
   {
     "markerId": "rs9000006_Melanesian",
     "rsid": "rs9000006",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melanesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -20108,7 +20108,7 @@
   {
     "markerId": "rs9000010_Melanesian",
     "rsid": "rs9000010",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melanesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -20130,7 +20130,7 @@
   {
     "markerId": "rs9000011_Melanesian",
     "rsid": "rs9000011",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Melanesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -20152,7 +20152,7 @@
   {
     "markerId": "rs11103375_Micronesian",
     "rsid": "rs11103375",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Micronesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Micronesian",
@@ -20174,7 +20174,7 @@
   {
     "markerId": "rs11103379_Micronesian",
     "rsid": "rs11103379",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Micronesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Micronesian",
@@ -20196,7 +20196,7 @@
   {
     "markerId": "rs11103383_Micronesian",
     "rsid": "rs11103383",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Micronesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Micronesian",
@@ -20218,7 +20218,7 @@
   {
     "markerId": "rs9000007_Micronesian",
     "rsid": "rs9000007",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Micronesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Micronesian",
@@ -20240,7 +20240,7 @@
   {
     "markerId": "rs9000008_Micronesian",
     "rsid": "rs9000008",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Micronesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Micronesian",
@@ -20262,7 +20262,7 @@
   {
     "markerId": "rs9000009_Micronesian",
     "rsid": "rs9000009",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Micronesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Micronesian",
@@ -20284,7 +20284,7 @@
   {
     "markerId": "rs11103374_Polynesian",
     "rsid": "rs11103374",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polynesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Polynesian",
@@ -20306,7 +20306,7 @@
   {
     "markerId": "rs11103378_Polynesian",
     "rsid": "rs11103378",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polynesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Polynesian",
@@ -20328,7 +20328,7 @@
   {
     "markerId": "rs11103382_Polynesian",
     "rsid": "rs11103382",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polynesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Polynesian",
@@ -20350,7 +20350,7 @@
   {
     "markerId": "rs9000001_Polynesian",
     "rsid": "rs9000001",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polynesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Polynesian",
@@ -20372,7 +20372,7 @@
   {
     "markerId": "rs9000002_Polynesian",
     "rsid": "rs9000002",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polynesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Polynesian",
@@ -20394,7 +20394,7 @@
   {
     "markerId": "rs9000003_Polynesian",
     "rsid": "rs9000003",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Polynesian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Polynesian",
@@ -20416,7 +20416,7 @@
   {
     "markerId": "rs10456288_Samoan",
     "rsid": "rs10456288",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Samoan Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Samoan",
@@ -20439,7 +20439,7 @@
   {
     "markerId": "rs10456289_Samoan",
     "rsid": "rs10456289",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Samoan Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Samoan",
@@ -21283,7 +21283,7 @@
     "markerId": "P77",
     "gene": "Y-DNA",
     "trait": "Haplogroup T-P77",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -21649,7 +21649,7 @@
     "markerId": "A10398G",
     "gene": "mtDNA",
     "trait": "Macro-haplogroup N / L3",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "High",
     "alleles": [
@@ -21761,7 +21761,7 @@
     "markerId": "T16189C",
     "gene": "mtDNA",
     "trait": "Haplogroup L3 / Global",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "Medium",
     "alleles": [
@@ -21773,7 +21773,7 @@
     "markerId": "C16223T",
     "gene": "mtDNA",
     "trait": "Haplogroup L / Global",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "Medium",
     "alleles": [
@@ -21785,7 +21785,7 @@
     "markerId": "T16223C",
     "gene": "mtDNA",
     "trait": "Haplogroup L / Global",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "Medium",
     "alleles": [
@@ -21825,7 +21825,7 @@
     "markerId": "C16311T",
     "gene": "mtDNA",
     "trait": "Haplogroup L / Global",
-    "continent": "Global",
+    "continent": "Other",
     "category": "Ancestry",
     "significance": "Medium",
     "alleles": [
@@ -21836,7 +21836,7 @@
   {
     "markerId": "rs9000344_Songhai",
     "rsid": "rs9000344",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Songhai Ancestry Marker",
     "continent": "African",
     "subpop": "Songhai",
@@ -21860,7 +21860,7 @@
   {
     "markerId": "rs9000345_Songhai",
     "rsid": "rs9000345",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Songhai Ancestry Marker",
     "continent": "African",
     "subpop": "Songhai",
@@ -21884,7 +21884,7 @@
   {
     "markerId": "rs9000346_Tuareg",
     "rsid": "rs9000346",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tuareg Ancestry Marker",
     "continent": "African / North African",
     "subpop": "Tuareg",
@@ -21906,7 +21906,7 @@
   {
     "markerId": "rs9000347_Tuareg",
     "rsid": "rs9000347",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tuareg Ancestry Marker",
     "continent": "African / North African",
     "subpop": "Tuareg",
@@ -21928,7 +21928,7 @@
   {
     "markerId": "rs9000348_Scandinavian",
     "rsid": "rs9000348",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scandinavian Ancestry Marker",
     "continent": "European",
     "subpop": "Scandinavian",
@@ -21950,7 +21950,7 @@
   {
     "markerId": "rs9000349_Scandinavian",
     "rsid": "rs9000349",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Scandinavian Ancestry Marker",
     "continent": "European",
     "subpop": "Scandinavian",
@@ -21972,7 +21972,7 @@
   {
     "markerId": "rs9000350_Balkan",
     "rsid": "rs9000350",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkan Ancestry Marker",
     "continent": "European",
     "subpop": "Balkan",
@@ -21994,7 +21994,7 @@
   {
     "markerId": "rs9000351_Balkan",
     "rsid": "rs9000351",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Balkan Ancestry Marker",
     "continent": "European",
     "subpop": "Balkan",
@@ -22016,7 +22016,7 @@
   {
     "markerId": "rs9000352_Iberian",
     "rsid": "rs9000352",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -22038,7 +22038,7 @@
   {
     "markerId": "rs9000353_Iberian",
     "rsid": "rs9000353",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Iberian Ancestry Marker",
     "continent": "European",
     "subpop": "Iberian",
@@ -22060,7 +22060,7 @@
   {
     "markerId": "rs9000354_Baltic",
     "rsid": "rs9000354",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baltic Ancestry Marker",
     "continent": "European",
     "subpop": "Baltic",
@@ -22082,7 +22082,7 @@
   {
     "markerId": "rs9000355_Baltic",
     "rsid": "rs9000355",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baltic Ancestry Marker",
     "continent": "European",
     "subpop": "Baltic",
@@ -22104,7 +22104,7 @@
   {
     "markerId": "rs9000356_Slavic",
     "rsid": "rs9000356",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slavic Ancestry Marker",
     "continent": "European",
     "subpop": "Slavic",
@@ -22126,7 +22126,7 @@
   {
     "markerId": "rs9000357_Slavic",
     "rsid": "rs9000357",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Slavic Ancestry Marker",
     "continent": "European",
     "subpop": "Slavic",
@@ -22148,7 +22148,7 @@
   {
     "markerId": "rs9000358_Celtic",
     "rsid": "rs9000358",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Celtic Ancestry Marker",
     "continent": "European",
     "subpop": "Celtic",
@@ -22170,7 +22170,7 @@
   {
     "markerId": "rs9000359_Celtic",
     "rsid": "rs9000359",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Celtic Ancestry Marker",
     "continent": "European",
     "subpop": "Celtic",
@@ -22192,7 +22192,7 @@
   {
     "markerId": "rs9000360_Finnish",
     "rsid": "rs9000360",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finnish Ancestry Marker",
     "continent": "European",
     "subpop": "Finnish",
@@ -22214,7 +22214,7 @@
   {
     "markerId": "rs9000361_Finnish",
     "rsid": "rs9000361",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Finnish Ancestry Marker",
     "continent": "European",
     "subpop": "Finnish",
@@ -22236,7 +22236,7 @@
   {
     "markerId": "rs9000362_Italian",
     "rsid": "rs9000362",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -22258,7 +22258,7 @@
   {
     "markerId": "rs9000363_Italian",
     "rsid": "rs9000363",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Italian Ancestry Marker",
     "continent": "European",
     "subpop": "Italian",
@@ -22280,7 +22280,7 @@
   {
     "markerId": "rs9000364_Portuguese",
     "rsid": "rs9000364",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -22302,7 +22302,7 @@
   {
     "markerId": "rs9000365_Portuguese",
     "rsid": "rs9000365",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Portuguese Ancestry Marker",
     "continent": "European",
     "subpop": "Portuguese",
@@ -22324,7 +22324,7 @@
   {
     "markerId": "rs9000366_Greek",
     "rsid": "rs9000366",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Greek Ancestry Marker",
     "continent": "European",
     "subpop": "Greek",
@@ -22346,7 +22346,7 @@
   {
     "markerId": "rs9000367_Greek",
     "rsid": "rs9000367",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Greek Ancestry Marker",
     "continent": "European",
     "subpop": "Greek",
@@ -22368,7 +22368,7 @@
   {
     "markerId": "rs9000368_Dutch",
     "rsid": "rs9000368",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -22390,7 +22390,7 @@
   {
     "markerId": "rs9000369_Dutch",
     "rsid": "rs9000369",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dutch Ancestry Marker",
     "continent": "European",
     "subpop": "Dutch",
@@ -22434,7 +22434,7 @@
   {
     "markerId": "rs12124819_Basque",
     "rsid": "rs12124819",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Basque Ancestry Marker",
     "continent": "European",
     "subpop": "Basque",
@@ -22478,7 +22478,7 @@
   {
     "markerId": "rs1129040_Oceanian",
     "rsid": "rs1129040",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Oceanian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -22500,7 +22500,7 @@
   {
     "markerId": "rs1129041_Oceanian",
     "rsid": "rs1129041",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Oceanian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -22522,7 +22522,7 @@
   {
     "markerId": "rs1129042_Oceanian",
     "rsid": "rs1129042",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Oceanian Ancestry Marker",
     "continent": "Oceanian",
     "subpop": "Melanesian",
@@ -22544,7 +22544,7 @@
   {
     "markerId": "rs11103338_SAS",
     "rsid": "rs11103338",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "South Asian Ancestry Marker",
     "continent": "South Asian",
     "subpop": "General",
@@ -22566,7 +22566,7 @@
   {
     "markerId": "rs11103345_NorthAfrican",
     "rsid": "rs11103345",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "General",
@@ -22588,7 +22588,7 @@
   {
     "markerId": "rs11103346_NorthAfrican",
     "rsid": "rs11103346",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "North African Ancestry Marker",
     "continent": "North African",
     "subpop": "General",
@@ -22610,7 +22610,7 @@
   {
     "markerId": "rs11103347_EastAfrican",
     "rsid": "rs11103347",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "East African Ancestry Marker",
     "continent": "East African",
     "subpop": "General",
@@ -22632,7 +22632,7 @@
   {
     "markerId": "rs11103348_EastAfrican",
     "rsid": "rs11103348",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "East African Ancestry Marker",
     "continent": "East African",
     "subpop": "General",
@@ -22654,7 +22654,7 @@
   {
     "markerId": "rs10456305_Yoruba",
     "rsid": "rs10456305",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -22678,7 +22678,7 @@
   {
     "markerId": "rs10456306_Mandinka",
     "rsid": "rs10456306",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "continent": "African",
     "subpop": "Mandinka",
@@ -22702,7 +22702,7 @@
   {
     "markerId": "rs10456308_Zulu",
     "rsid": "rs10456308",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Zulu Ancestry Marker",
     "continent": "African",
     "subpop": "Zulu",
@@ -22726,7 +22726,7 @@
   {
     "markerId": "rs10456309_Congo",
     "rsid": "rs10456309",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Congolese Ancestry Marker",
     "continent": "African",
     "subpop": "Congo",
@@ -22810,7 +22810,7 @@
   {
     "markerId": "rs10456316_Luhya",
     "rsid": "rs10456316",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Luhya Ancestry Marker",
     "continent": "African",
     "subpop": "Luhya",
@@ -22834,7 +22834,7 @@
   {
     "markerId": "rs10456317_Maghreb",
     "rsid": "rs10456317",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Maghreb Ancestry Marker",
     "continent": "North African",
     "subpop": "Maghreb",
@@ -22856,7 +22856,7 @@
   {
     "markerId": "rs10456318_Tuareg",
     "rsid": "rs10456318",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tuareg Ancestry Marker",
     "continent": "North African",
     "subpop": "Tuareg",
@@ -22878,7 +22878,7 @@
   {
     "markerId": "rs10456319_Egyptian",
     "rsid": "rs10456319",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Egyptian Ancestry Marker",
     "continent": "North African",
     "subpop": "Egyptian",
@@ -22900,7 +22900,7 @@
   {
     "markerId": "rs10456320_Egyptian",
     "rsid": "rs10456320",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Egyptian Ancestry Marker",
     "continent": "North African",
     "subpop": "Egyptian",
@@ -22922,7 +22922,7 @@
   {
     "markerId": "rs10456321_Libyan",
     "rsid": "rs10456321",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Libyan Ancestry Marker",
     "continent": "North African",
     "subpop": "Libyan",
@@ -22944,7 +22944,7 @@
   {
     "markerId": "rs10456322_Sahrawi",
     "rsid": "rs10456322",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sahrawi Ancestry Marker",
     "continent": "North African",
     "subpop": "Sahrawi",
@@ -22966,7 +22966,7 @@
   {
     "markerId": "rs10456323_Tigrayan",
     "rsid": "rs10456323",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tigrayan Ancestry Marker",
     "continent": "African",
     "subpop": "Tigrayan",
@@ -22990,7 +22990,7 @@
   {
     "markerId": "rs10456324_Oromo",
     "rsid": "rs10456324",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Oromo Ancestry Marker",
     "continent": "African",
     "subpop": "Oromo",
@@ -23014,7 +23014,7 @@
   {
     "markerId": "rs10456325_Kikuyu",
     "rsid": "rs10456325",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kikuyu Ancestry Marker",
     "continent": "African",
     "subpop": "Kikuyu",
@@ -23038,7 +23038,7 @@
   {
     "markerId": "rs10456326_Baganda",
     "rsid": "rs10456326",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baganda Ancestry Marker",
     "continent": "African",
     "subpop": "Baganda",
@@ -23062,7 +23062,7 @@
   {
     "markerId": "rs10456327_Akan",
     "rsid": "rs10456327",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Akan Ancestry Marker",
     "continent": "African",
     "subpop": "Akan",
@@ -23086,7 +23086,7 @@
   {
     "markerId": "rs10456328_Mende",
     "rsid": "rs10456328",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mende Ancestry Marker",
     "continent": "African",
     "subpop": "Mende",
@@ -23110,7 +23110,7 @@
   {
     "markerId": "rs10456329_Fon",
     "rsid": "rs10456329",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fon Ancestry Marker",
     "continent": "African",
     "subpop": "Fon",
@@ -23134,7 +23134,7 @@
   {
     "markerId": "rs10456330_Ewe",
     "rsid": "rs10456330",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ewe Ancestry Marker",
     "continent": "African",
     "subpop": "Ewe",
@@ -23158,7 +23158,7 @@
   {
     "markerId": "rs10456338_GaAdangbe",
     "rsid": "rs10456338",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ga-Adangbe Ancestry Marker",
     "continent": "African",
     "subpop": "Ga-Adangbe",
@@ -23182,7 +23182,7 @@
   {
     "markerId": "rs10456339_Edo",
     "rsid": "rs10456339",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Edo Ancestry Marker",
     "continent": "African",
     "subpop": "Edo",
@@ -23206,7 +23206,7 @@
   {
     "markerId": "rs10456331_Tswana",
     "rsid": "rs10456331",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tswana Ancestry Marker",
     "continent": "African",
     "subpop": "Tswana",
@@ -23230,7 +23230,7 @@
   {
     "markerId": "rs10456332_Sotho",
     "rsid": "rs10456332",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sotho Ancestry Marker",
     "continent": "African",
     "subpop": "Sotho",
@@ -23254,7 +23254,7 @@
   {
     "markerId": "rs10456333_Venda",
     "rsid": "rs10456333",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Venda Ancestry Marker",
     "continent": "African",
     "subpop": "Venda",
@@ -23278,7 +23278,7 @@
   {
     "markerId": "rs10456334_Shona",
     "rsid": "rs10456334",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Shona Ancestry Marker",
     "continent": "African",
     "subpop": "Shona",
@@ -23302,7 +23302,7 @@
   {
     "markerId": "rs10456335_Fang",
     "rsid": "rs10456335",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fang Ancestry Marker",
     "continent": "African",
     "subpop": "Fang",
@@ -23326,7 +23326,7 @@
   {
     "markerId": "rs10456336_Baluba",
     "rsid": "rs10456336",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Baluba Ancestry Marker",
     "continent": "African",
     "subpop": "Baluba",
@@ -23350,7 +23350,7 @@
   {
     "markerId": "rs10456337_Mongo",
     "rsid": "rs10456337",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mongo Ancestry Marker",
     "continent": "African",
     "subpop": "Mongo",
@@ -23374,7 +23374,7 @@
   {
     "markerId": "rs10456340_Dinka",
     "rsid": "rs10456340",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dinka Ancestry Marker",
     "continent": "African",
     "subpop": "Dinka",
@@ -23398,7 +23398,7 @@
   {
     "markerId": "rs10456341_Dinka",
     "rsid": "rs10456341",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dinka Ancestry Marker",
     "continent": "African",
     "subpop": "Dinka",
@@ -23422,7 +23422,7 @@
   {
     "markerId": "rs10456342_Nuer",
     "rsid": "rs10456342",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Nuer Ancestry Marker",
     "continent": "African",
     "subpop": "Nuer",
@@ -23446,7 +23446,7 @@
   {
     "markerId": "rs10456343_Malagasy",
     "rsid": "rs10456343",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Malagasy Austronesian Marker",
     "continent": "African",
     "subpop": "Malagasy",
@@ -23470,7 +23470,7 @@
   {
     "markerId": "rs10456344_Malagasy",
     "rsid": "rs10456344",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Malagasy Austronesian Marker",
     "continent": "African",
     "subpop": "Malagasy",
@@ -23494,7 +23494,7 @@
   {
     "markerId": "rs10456345_KhoeSan",
     "rsid": "rs10456345",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khoe-San Ancestry Marker",
     "continent": "African",
     "subpop": "Khoe-San",
@@ -23518,7 +23518,7 @@
   {
     "markerId": "rs10456346_Mbuti",
     "rsid": "rs10456346",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mbuti Pygmy Marker",
     "continent": "African",
     "subpop": "Mbuti",
@@ -23542,7 +23542,7 @@
   {
     "markerId": "rs10456347_Biaka",
     "rsid": "rs10456347",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Biaka Pygmy Marker",
     "continent": "African",
     "subpop": "Biaka",
@@ -23566,7 +23566,7 @@
   {
     "markerId": "rs10456348_Somali",
     "rsid": "rs10456348",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Somali Ancestry Marker",
     "continent": "African",
     "subpop": "Somali",
@@ -23590,7 +23590,7 @@
   {
     "markerId": "rs10456349_Amhara",
     "rsid": "rs10456349",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Amhara Ancestry Marker",
     "continent": "African",
     "subpop": "Amhara",
@@ -23614,7 +23614,7 @@
   {
     "markerId": "rs10456350_Yoruba",
     "rsid": "rs10456350",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -23638,7 +23638,7 @@
   {
     "markerId": "rs10456351_Igbo",
     "rsid": "rs10456351",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "continent": "African",
     "subpop": "Igbo",
@@ -23662,7 +23662,7 @@
   {
     "markerId": "rs10456352_Mandinka",
     "rsid": "rs10456352",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mandinka Ancestry Marker",
     "continent": "African",
     "subpop": "Mandinka",
@@ -23686,7 +23686,7 @@
   {
     "markerId": "rs10456353_Wolof",
     "rsid": "rs10456353",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Wolof Ancestry Marker",
     "continent": "African",
     "subpop": "Wolof",
@@ -23710,7 +23710,7 @@
   {
     "markerId": "rs10456354_Zulu",
     "rsid": "rs10456354",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Zulu Ancestry Marker",
     "continent": "African",
     "subpop": "Zulu",
@@ -23734,7 +23734,7 @@
   {
     "markerId": "rs10456355_Xhosa",
     "rsid": "rs10456355",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Xhosa Ancestry Marker",
     "continent": "African",
     "subpop": "Xhosa",
@@ -23758,7 +23758,7 @@
   {
     "markerId": "rs10456356_Berber",
     "rsid": "rs10456356",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Berber Ancestry Marker",
     "continent": "North African",
     "subpop": "Berber",
@@ -23780,7 +23780,7 @@
   {
     "markerId": "rs10456357_Mbuti",
     "rsid": "rs10456357",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mbuti Pygmy Marker",
     "continent": "African",
     "subpop": "Mbuti",
@@ -23804,7 +23804,7 @@
   {
     "markerId": "rs10456358_Biaka",
     "rsid": "rs10456358",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Biaka Pygmy Marker",
     "continent": "African",
     "subpop": "Biaka",
@@ -23828,7 +23828,7 @@
   {
     "markerId": "rs10456359_San",
     "rsid": "rs10456359",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Ancestry Marker",
     "continent": "African",
     "subpop": "San",
@@ -23852,7 +23852,7 @@
   {
     "markerId": "rs10456360_Khoikhoi",
     "rsid": "rs10456360",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khoikhoi Ancestry Marker",
     "continent": "African",
     "subpop": "Khoikhoi",
@@ -23876,7 +23876,7 @@
   {
     "markerId": "rs10456361_Hadza",
     "rsid": "rs10456361",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hadza Ancestry Marker",
     "continent": "African",
     "subpop": "Hadza",
@@ -23900,7 +23900,7 @@
   {
     "markerId": "rs10456362_Sandawe",
     "rsid": "rs10456362",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Sandawe Ancestry Marker",
     "continent": "African",
     "subpop": "Sandawe",
@@ -23924,7 +23924,7 @@
   {
     "markerId": "rs10456363_Beja",
     "rsid": "rs10456363",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Beja Ancestry Marker",
     "continent": "African",
     "subpop": "Beja",
@@ -23948,7 +23948,7 @@
   {
     "markerId": "rs10456367_Songhai",
     "rsid": "rs10456367",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Songhai Ancestry Marker",
     "continent": "African",
     "subpop": "Songhai",
@@ -23972,7 +23972,7 @@
   {
     "markerId": "rs10456368_Dogon",
     "rsid": "rs10456368",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Dogon Ancestry Marker",
     "continent": "African",
     "subpop": "Dogon",
@@ -23996,7 +23996,7 @@
   {
     "markerId": "rs10456369_Bambara",
     "rsid": "rs10456369",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Bambara Ancestry Marker",
     "continent": "African",
     "subpop": "Bambara",
@@ -24020,7 +24020,7 @@
   {
     "markerId": "rs10456370_Fante",
     "rsid": "rs10456370",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fante Ancestry Marker",
     "continent": "African",
     "subpop": "Fante",
@@ -24044,7 +24044,7 @@
   {
     "markerId": "rs10456371_Ga",
     "rsid": "rs10456371",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Ga Ancestry Marker",
     "continent": "African",
     "subpop": "Ga",
@@ -24068,7 +24068,7 @@
   {
     "markerId": "rs10456388_Shilluk",
     "rsid": "rs10456388",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Shilluk Ancestry Marker",
     "continent": "African",
     "subpop": "Shilluk",
@@ -24092,7 +24092,7 @@
   {
     "markerId": "rs10456389_Anuak",
     "rsid": "rs10456389",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Anuak Ancestry Marker",
     "continent": "African",
     "subpop": "Anuak",
@@ -24116,7 +24116,7 @@
   {
     "markerId": "rs10456391_Kalenjin",
     "rsid": "rs10456391",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kalenjin Ancestry Marker",
     "continent": "African",
     "subpop": "Kalenjin",
@@ -24140,7 +24140,7 @@
   {
     "markerId": "rs10456393_Kamba",
     "rsid": "rs10456393",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Kamba Ancestry Marker",
     "continent": "African",
     "subpop": "Kamba",
@@ -24164,7 +24164,7 @@
   {
     "markerId": "rs10456396_Banyankole",
     "rsid": "rs10456396",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Banyankole Ancestry Marker",
     "continent": "African",
     "subpop": "Banyankole",
@@ -24188,7 +24188,7 @@
   {
     "markerId": "rs10456399_Banyarwanda",
     "rsid": "rs10456399",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Banyarwanda Ancestry Marker",
     "continent": "African",
     "subpop": "Banyarwanda",
@@ -24302,7 +24302,7 @@
   {
     "markerId": "rs10456401_Mbuti",
     "rsid": "rs10456401",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mbuti Pygmy Marker",
     "continent": "African",
     "subpop": "Mbuti",
@@ -24326,7 +24326,7 @@
   {
     "markerId": "rs10456402_Biaka",
     "rsid": "rs10456402",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Biaka Pygmy Marker",
     "continent": "African",
     "subpop": "Biaka",
@@ -24350,7 +24350,7 @@
   {
     "markerId": "rs10456403_San",
     "rsid": "rs10456403",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Ancestry Marker",
     "continent": "African",
     "subpop": "San",
@@ -24374,7 +24374,7 @@
   {
     "markerId": "rs10456404_Khoikhoi",
     "rsid": "rs10456404",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Khoikhoi Ancestry Marker",
     "continent": "African",
     "subpop": "Khoikhoi",
@@ -24398,7 +24398,7 @@
   {
     "markerId": "rs10456405_Hadza",
     "rsid": "rs10456405",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hadza Ancestry Marker",
     "continent": "African",
     "subpop": "Hadza",
@@ -24422,7 +24422,7 @@
   {
     "markerId": "rs10456408_Tuareg",
     "rsid": "rs10456408",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tuareg Ancestry Marker",
     "continent": "North African",
     "subpop": "Tuareg",
@@ -24444,7 +24444,7 @@
   {
     "markerId": "rs10456409_Fulani",
     "rsid": "rs10456409",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Fulani Ancestry Marker",
     "continent": "African",
     "subpop": "Fulani",
@@ -24468,7 +24468,7 @@
   {
     "markerId": "rs10456410_Hausa",
     "rsid": "rs10456410",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hausa Ancestry Marker",
     "continent": "African",
     "subpop": "Hausa",
@@ -24492,7 +24492,7 @@
   {
     "markerId": "rs10456418_Yoruba",
     "rsid": "rs10456418",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -24516,7 +24516,7 @@
   {
     "markerId": "rs10456419_Igbo",
     "rsid": "rs10456419",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "continent": "African",
     "subpop": "Igbo",
@@ -24658,7 +24658,7 @@
   {
     "markerId": "rs10456421_Moroccan",
     "rsid": "rs10456421",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Moroccan Ancestry Marker",
     "continent": "North African",
     "subpop": "Moroccan",
@@ -24680,7 +24680,7 @@
   {
     "markerId": "rs10456422_Algerian",
     "rsid": "rs10456422",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Algerian Ancestry Marker",
     "continent": "North African",
     "subpop": "Algerian",
@@ -24702,7 +24702,7 @@
   {
     "markerId": "rs10456423_Tunisian",
     "rsid": "rs10456423",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Tunisian Ancestry Marker",
     "continent": "North African",
     "subpop": "Tunisian",
@@ -24724,7 +24724,7 @@
   {
     "markerId": "rs10456425_Yoruba",
     "rsid": "rs10456425",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Yoruba Ancestry Marker",
     "continent": "African",
     "subpop": "Yoruba",
@@ -24748,7 +24748,7 @@
   {
     "markerId": "rs10456426_Igbo",
     "rsid": "rs10456426",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Igbo Ancestry Marker",
     "continent": "African",
     "subpop": "Igbo",
@@ -24904,7 +24904,7 @@
   {
     "markerId": "rs10456430_San",
     "rsid": "rs10456430",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "San Ancestry Marker",
     "continent": "African",
     "subpop": "San",
@@ -24928,7 +24928,7 @@
   {
     "markerId": "rs10456431_Hadza",
     "rsid": "rs10456431",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Hadza Ancestry Marker",
     "continent": "African",
     "subpop": "Hadza",
@@ -24952,7 +24952,7 @@
   {
     "markerId": "rs10456432_Mbuti",
     "rsid": "rs10456432",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Mbuti Pygmy Marker",
     "continent": "African",
     "subpop": "Mbuti",
@@ -24976,7 +24976,7 @@
   {
     "markerId": "rs7690467_NorthernEurope",
     "rsid": "rs7690467",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northern European",
@@ -25000,7 +25000,7 @@
   {
     "markerId": "rs1712435_NorthernEurope",
     "rsid": "rs1712435",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northern European",
@@ -25024,7 +25024,7 @@
   {
     "markerId": "rs9955196_NorthernEurope",
     "rsid": "rs9955196",
-    "gene": "Unknown",
+    "gene": "N/A",
     "trait": "Northern European Ancestry Marker",
     "continent": "European",
     "subpop": "Northern European",
@@ -25058,7 +25058,7 @@
     "trait": "Marker for Mayan/Yucatan populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25076,7 +25076,7 @@
     "trait": "Marker for Mexican Indigenous populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25094,7 +25094,7 @@
     "trait": "Marker for Algonquin populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25112,7 +25112,7 @@
     "trait": "Marker for Cherokee populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25130,7 +25130,7 @@
     "trait": "Marker for Lumbee populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25148,7 +25148,7 @@
     "trait": "Marker for Lenape populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25166,7 +25166,7 @@
     "trait": "Marker for Creek populations.",
     "significance": "High",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "AMR": 0.9
     }
@@ -25299,7 +25299,7 @@
     "trait": "Ancestry",
     "significance": "Medium",
     "category": "Ancestry",
-    "gene": "Unknown",
+    "gene": "N/A",
     "frequencies": {
       "Global": 0.2
     }
@@ -25567,7 +25567,7 @@
       "T",
       "C"
     ],
-    "continent": "Global"
+    "continent": "Other"
   },
   {
     "markerId": "rs17306941",

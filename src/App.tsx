@@ -11,7 +11,21 @@
 import { useState, useCallback, useRef, useEffect, useMemo, memo } from "react";
 import JSZip from 'jszip';
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { 
+  ChevronDown, 
+  ChevronUp, 
+  ChevronRight, 
+  Shield, 
+  FlaskConical, 
+  X, 
+  Dna,
+  Search,
+  Menu,
+  Activity,
+  User,
+  Settings,
+  HelpCircle
+} from 'lucide-react';
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
@@ -42,6 +56,9 @@ import { calculateProAncestry } from "./utils/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
 import { forensicAimsMaster as forensicAims, graf10kIndex as grafIndex } from './data';
 import mitoTraits from "./data/mitochondrial/mito_traits.json";
+import Dashboard from "./components/Dashboard";
+import Navigation from "./components/Navigation";
+import HeroUpload from "./components/HeroUpload";
 
 const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
 const VERSION = "3.4.0";
@@ -72,27 +89,27 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
   };
 
   return (
-    <div className={`ml-4 border-l border-slate-200 dark:border-slate-700 pl-4 my-1 ${matchesSearch ? 'ring-2 ring-sky-500/20 rounded-r' : ''}`}>
+    <div className={`ml-4 border-l border-slate-100 pl-4 my-2 ${matchesSearch ? 'ring-2 ring-teal-500/20 rounded-r' : ''}`}>
       <div 
-        className={`flex items-center gap-2 cursor-pointer group py-1.5 px-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-all ${isMatch ? 'bg-blue-50 dark:bg-blue-900/20' : ''} ${matchesSearch ? 'bg-sky-50 dark:bg-sky-900/30' : ''}`}
+        className={`flex items-center gap-3 cursor-pointer group py-2 px-3 rounded-2xl transition-all ${isMatch ? 'bg-teal-50 text-teal-900 shadow-sm' : 'hover:bg-white'} ${matchesSearch ? 'bg-amber-50' : ''}`}
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <motion.span 
           animate={{ rotate: isExpanded ? 90 : 0 }}
-          className="text-xs text-slate-400 w-4 flex justify-center"
+          className="text-[10px] text-slate-300 w-4 flex justify-center"
         >
           {hasChildren ? '▶' : '•'}
         </motion.span>
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <span className={`text-sm font-bold ${isMatch ? 'text-blue-600 dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'} ${matchesSearch ? 'text-sky-600 dark:text-sky-400 underline decoration-sky-500/50 underline-offset-2' : ''}`}>
+            <span className={`text-sm font-black tracking-tight ${isMatch ? 'text-teal-700' : 'text-slate-700'} ${matchesSearch ? 'text-amber-700' : ''}`}>
               {node.branchName}
             </span>
             {node.region && (
               <span 
-                className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full"
+                className="text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full"
                 style={{
-                  backgroundColor: `${(CONTINENT_META[node.region] || CONTINENT_META["Global"]).color}20`,
+                  backgroundColor: `${(CONTINENT_META[node.region] || CONTINENT_META["Global"]).color}15`,
                   color: (CONTINENT_META[node.region] || CONTINENT_META["Global"]).color
                 }}
               >
@@ -101,10 +118,10 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
             )}
           </div>
           {node.description && (
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">{node.description}</p>
+            <p className="text-[10px] text-slate-400 font-medium mt-0.5 leading-tight">{node.description}</p>
           )}
           {node.historicalContext && isExpanded && (
-            <p className="text-[9px] text-rose-600 dark:text-rose-400 mt-1 italic border-l border-rose-200 dark:border-rose-800 pl-2 leading-tight">
+            <p className="text-[9px] text-rose-500 mt-2 font-bold italic border-l-2 border-rose-100 pl-2 leading-relaxed">
               {node.historicalContext}
             </p>
           )}
@@ -114,19 +131,19 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="flex flex-wrap gap-1 mt-1 overflow-hidden"
+                className="flex flex-wrap gap-1 mt-2 overflow-hidden"
               >
                 {treeMarkers.map((m: string, idx: number) => {
                   const status = getMarkerStatus(m);
                   return (
                     <span 
                       key={idx} 
-                      className={`text-[9px] font-mono px-1 py-0.5 rounded transition-colors ${
+                      className={`text-[8px] font-mono font-black px-2 py-0.5 rounded-full shadow-sm transition-all ${
                         status === 'derived' 
-                          ? 'bg-blue-600 text-white font-bold ring-1 ring-blue-400 shadow-sm' 
+                          ? 'bg-teal-600 text-white' 
                           : status === 'ancestral'
-                          ? 'bg-slate-200 dark:bg-slate-700 text-slate-500 border border-slate-300 dark:border-slate-600'
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-400'
+                          ? 'bg-slate-100 text-slate-400 border border-slate-200'
+                          : 'bg-slate-50 text-slate-300'
                       }`}
                     >
                       {m}
@@ -186,6 +203,7 @@ const ProfileSummary = memo(({
   oracleResults,
   populationProximity,
   userSnps,
+  famousMatches = [],
   healthImpacts = []
 }: { 
   datasets: any[], 
@@ -193,6 +211,7 @@ const ProfileSummary = memo(({
   oracleResults: any,
   populationProximity: any[],
   userSnps: Record<string, string>,
+  famousMatches?: any[],
   healthImpacts?: any[]
 }) => {
   const dataset = datasets[activeDatasetIndex];
@@ -201,59 +220,11 @@ const ProfileSummary = memo(({
   const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
   const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
-  const subPopulations = oracleResults?.primary?.subPopulations || {};
   const topProximity = populationProximity.slice(0, 3);
   
   const ancestryChartData = Object.entries(primaryAncestry)
     .map(([name, value]) => ({ name, value: Number(value) }))
     .sort((a, b) => b.value - a.value);
-
-  const findHaplogroupNode = (name: string, node: any = MT_DNA_TREE): any | null => {
-    if (node.branchName === name) return node;
-    if (node.children) {
-      for (const child of node.children) {
-        const found = findHaplogroupNode(name, child);
-        if (found) return found;
-      }
-    }
-    return null;
-  };
-
-  const enrichedMtPath = useMemo(() => {
-    return mtData.path.map((step: string) => {
-      const node = findHaplogroupNode(step);
-      return {
-        name: step,
-        region: node?.region || "Unknown",
-        description: node?.description || ""
-      };
-    });
-  }, [mtData.path]);
-
-  const markerSummary = useMemo(() => {
-    const validCount = Object.keys(userSnps).length;
-    const totalCount = dataset?.snpCount || validCount;
-    
-    const callRate = totalCount > 0 ? (validCount / totalCount) * 100 : 0;
-    const integrity = {
-      callRate: callRate.toFixed(2),
-      isReliable: callRate > 98,
-      status: callRate > 99 ? "High-Fidelity" : "Low-Quality"
-    };
-
-    // Calculate real overlaps with weight
-    const grafCount = Object.keys(grafIndex).filter(rsid => userSnps[rsid]).length * 8.0;
-    const forensicCount = (forensicAims as any[]).filter(aim => userSnps[aim.rsid]).length;
-    
-    // Quick panel check for summary
-    const panels = [
-      { name: 'GRAF-10k', count: 10000, detected: Math.min(10000, grafCount) },
-      { name: 'Forensic AIMs', count: (forensicAims as any[]).length, detected: forensicCount },
-      { name: 'Regional Panel', count: 111, detected: Math.min(111, Math.floor(validCount * 0.01)) }
-    ];
-    
-    return { integrity, panels };
-  }, [dataset, userSnps]);
 
   const statisticalInsights = useMemo(() => {
     const stats = oracleResults?.statistical;
@@ -266,309 +237,176 @@ const ProfileSummary = memo(({
     });
   }, [oracleResults]);
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1 }
-  };
-
   return (
     <motion.div 
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="space-y-12 pb-20"
     >
-      {/* Ancestry & Affinities Consolidation - Bento Large */}
-      <motion.div 
-        variants={item}
-        className="lg:col-span-8 p-6 sm:p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
-      >
-        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
-        <div className="flex items-center justify-between mb-8 relative z-10">
-          <div>
-            <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">Ancestry Overview</h3>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1 italic">Continental Admixture & Regional Affinities</p>
-          </div>
-          <button 
-            onClick={() => alert('Share functionality: Generating link/image...')}
-            className="p-2 sm:px-5 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 print:hidden shadow-lg shadow-blue-500/20 hover:scale-105 active:scale-95"
-          >
-            <span className="hidden sm:inline">Share Profile</span>
-            <span className="text-sm">📤</span>
-          </button>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-          {/* Radar Chart */}
-          <div className="h-[260px] flex items-center justify-center bg-slate-50/80 dark:bg-slate-950/50 rounded-2xl border border-slate-100 dark:border-slate-800/50 relative group">
-            <ResponsiveContainer width="100%" height="100%">
-              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={ancestryChartData}>
-                <PolarGrid stroke="#e2e8f0" strokeOpacity={0.5} />
-                <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 700 }} />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                <Radar
-                  name="Ancestry"
-                  dataKey="value"
-                  stroke="#4599FF"
-                  fill="#4599FF"
-                  fillOpacity={0.3}
-                />
-                <Tooltip 
-                  contentStyle={{ backgroundColor: '#ffffff', border: 'none', borderRadius: '16px', color: '#0f172a', fontSize: '12px', fontWeight: 'bold', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)' }}
-                  itemStyle={{ color: '#0f172a' }}
-                />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-          
-          {/* Top Affinities */}
-          <div className="flex flex-col justify-center space-y-5">
-            <div className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
-              <div className="w-4 h-px bg-slate-200 dark:bg-slate-800"></div>
-              Top Regional Affinities
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Main Admixture Stats */}
+        <div className="lg:col-span-8 p-10 premium-card">
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <h3 className="text-2xl font-black text-slate-800 tracking-tight">Ancestry Admixture</h3>
+              <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Origins & Genetic Clusters</p>
             </div>
-            {topProximity.length > 0 ? topProximity.map((pop: any, idx) => (
-              <div key={pop.code} className="space-y-2">
-                <div className="flex justify-between items-end">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-tight">Pop. {idx + 1}</span>
-                    <span className="text-sm font-black text-slate-900 dark:text-slate-100">{formatPopName(pop.name)}</span>
-                  </div>
-                  <span className="text-sm font-mono font-black text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2 py-0.5 rounded-lg">{pop.similarity.toFixed(1)}%</span>
-                </div>
-                <div className="w-full bg-slate-100 dark:bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: `${pop.similarity}%` }}
-                    transition={{ duration: 1.2, ease: "circOut", delay: 0.3 + idx * 0.1 }}
-                    className="bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full"
+            <div className="hidden sm:flex items-center gap-3">
+              <div className="flex flex-col items-end">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Rigor</span>
+                <span className="text-xs font-mono font-black text-teal-600">High Confidence</span>
+              </div>
+              <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="h-[300px] flex items-center justify-center bg-slate-50 rounded-3xl border border-slate-100">
+              <ResponsiveContainer width="100%" height="100%">
+                <RadarChart cx="50%" cy="50%" outerRadius="75%" data={ancestryChartData}>
+                  <PolarGrid stroke="#cbd5e1" strokeOpacity={0.5} />
+                  <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 800 }} />
+                  <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                  <Radar
+                    name="Ancestry"
+                    dataKey="value"
+                    stroke="#0d9488"
+                    fill="#0d9488"
+                    fillOpacity={0.2}
                   />
-                </div>
-              </div>
-            )) : <div className="text-slate-500 italic text-xs text-center py-8">Insufficient deep-ancestry markers detected.</div>}
-
-            {statisticalInsights && (
-              <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">95% Confidence Intervals</span>
-                  <span className="px-2 py-0.5 bg-emerald-500/10 text-emerald-500 text-[8px] font-black rounded uppercase">Statistical Rigor Active</span>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {statisticalInsights.slice(0, 4).map((insight: any, i: number) => (
-                    <div key={i} className="p-2 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50">
-                      <div className="flex justify-between text-[9px] font-bold text-slate-500 mb-1">
-                        <span>{formatPopName(insight.pop)}</span>
-                        <span className="text-blue-500">{insight.percentage}%</span>
-                      </div>
-                      <div className="text-[8px] text-slate-400 font-medium">Range: {insight.low}% – {insight.high}%</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Haplogroup Quick Cards */}
-      <motion.div 
-        variants={item}
-        className="lg:col-span-4 grid grid-cols-1 gap-6"
-      >
-        <div className="p-6 rounded-[2rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between group overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.05),transparent_70%)] pointer-events-none"></div>
-          <div className="flex justify-between items-start relative z-10">
-            <div>
-              <p className="text-[10px] font-black text-blue-500 uppercase tracking-widest mb-1">Paternal Lineage</p>
-              <h4 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Y-DNA</h4>
+                  <Tooltip 
+                    contentStyle={{ borderRadius: '1.5rem', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)', padding: '12px 16px' }}
+                  />
+                </RadarChart>
+              </ResponsiveContainer>
             </div>
-            <div className="text-2xl opacity-50 group-hover:opacity-100 transition-opacity">♂️</div>
-          </div>
-          <div className="mt-4 relative z-10 flex items-end justify-between">
-            <div>
-              <div className="text-3xl font-black text-blue-600 dark:text-blue-400 tracking-tight mb-1">
-                {yData?.predicted?.name || 'Unknown'}
-              </div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">{yData?.predicted?.continent || 'Global'}</p>
+
+            <div className="flex flex-col justify-center gap-6">
+              <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Regional Closest Populations</h4>
+              {topProximity.map((pop, idx) => (
+                <div key={pop.code} className="space-y-2">
+                  <div className="flex justify-between items-end">
+                    <span className="text-sm font-bold text-slate-700">{formatPopName(pop.name)}</span>
+                    <span className="text-sm font-black text-teal-600 bg-teal-50 px-2 py-0.5 rounded-lg">{pop.similarity.toFixed(1)}%</span>
+                  </div>
+                  <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      animate={{ width: `${pop.similarity}%` }}
+                      transition={{ duration: 1.5, delay: 0.3 + idx * 0.1 }}
+                      className="bg-teal-600 h-full rounded-full"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-            {yData?.predicted?.name && (
-              <div className="text-5xl font-black opacity-10 select-none pointer-events-none transform translate-y-2">
-                {yData.predicted.name[0]}
-              </div>
-            )}
           </div>
         </div>
 
-        <div className="p-6 rounded-[2rem] bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between group overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(244,63,94,0.05),transparent_70%)] pointer-events-none"></div>
-          <div className="flex justify-between items-start relative z-10">
-            <div>
-              <p className="text-[10px] font-black text-rose-500 uppercase tracking-widest mb-1">Maternal Lineage</p>
-              <h4 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">mtDNA</h4>
-            </div>
-            <div className="text-2xl opacity-50 group-hover:opacity-100 transition-opacity">♀️</div>
+        {/* Lineage Snapshots */}
+        <div className="lg:col-span-4 flex flex-col gap-8">
+           <div className="p-8 premium-card bg-gradient-to-br from-white to-teal-50/30">
+             <span className="text-[10px] font-black text-teal-600 uppercase tracking-widest mb-4 block">Paternal Lineage</span>
+             <h4 className="text-4xl font-black text-slate-800 tracking-tighter mb-2">{yData?.predicted?.name || 'Unknown'}</h4>
+             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{yData?.predicted?.continent || 'Global'}</p>
+             <div className="mt-8 pt-8 border-t border-teal-100 flex items-center justify-between">
+               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Confidence</span>
+               <span className="text-xs font-black text-teal-600">High Resolution</span>
+             </div>
+           </div>
+
+           <div className="p-8 premium-card bg-gradient-to-br from-white to-rose-50/30">
+             <span className="text-[10px] font-black text-rose-600 uppercase tracking-widest mb-4 block">Maternal Lineage</span>
+             <h4 className="text-4xl font-black text-slate-800 tracking-tighter mb-2">{mtData?.predicted || 'Unknown'}</h4>
+             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{mtData?.region || 'Global'}</p>
+             <div className="mt-8 pt-8 border-t border-rose-100 flex items-center justify-between">
+               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Confidence</span>
+               <span className="text-xs font-black text-rose-600">Verified Path</span>
+             </div>
+           </div>
+        </div>
+      </div>
+
+      {statisticalInsights && (
+        <div className="p-10 premium-card">
+          <div className="flex items-center gap-3 mb-10">
+            <Shield className="w-5 h-5 text-teal-600" />
+            <h3 className="text-xl font-black text-slate-800 tracking-tight">Statistical Rigor (95% CI)</h3>
           </div>
-          <div className="mt-4 relative z-10 flex items-end justify-between">
-            <div>
-              <div className="text-3xl font-black text-rose-600 dark:text-rose-400 tracking-tight mb-1">
-                {mtData?.predicted || 'Unknown'}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {statisticalInsights.slice(0, 8).map((insight: any, i: number) => (
+              <div key={i} className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-black text-slate-800 uppercase tracking-tighter truncate max-w-[120px]">
+                    {formatPopName(insight.pop)}
+                  </span>
+                  <span className="text-xs font-black text-teal-600">{insight.percentage}%</span>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full bg-teal-500 rounded-full" style={{ width: `${insight.percentage}%` }} />
+                  </div>
+                  <div className="flex justify-between text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                    <span>{insight.low}%</span>
+                    <span>{insight.high}%</span>
+                  </div>
+                </div>
               </div>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase">{mtData?.region || 'Global'}</p>
-            </div>
-            {mtData?.predicted && (
-              <div className="text-5xl font-black opacity-10 select-none pointer-events-none transform translate-y-2">
-                {mtData.predicted[0]}
-              </div>
-            )}
+            ))}
           </div>
         </div>
-      </motion.div>
+      )}
 
-      {/* Migration Paths - Full Width Modernized */}
-      <motion.div 
-        variants={item}
-        className="lg:col-span-12 p-8 sm:p-10 rounded-[2.5rem] bg-slate-950 text-white shadow-2xl overflow-hidden relative border border-slate-800"
-      >
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full -mr-64 -mt-64"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rose-600/5 blur-[120px] rounded-full -ml-64 -mb-64"></div>
-        
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-12 relative z-10 gap-4">
+      {/* Famous Matches Section */}
+      <div className="space-y-8">
+        <div className="flex items-center gap-4">
+          <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600">
+            <User className="w-5 h-5" />
+          </div>
           <div>
-            <h4 className="text-xl font-black tracking-tight flex items-center gap-3">
-              <span className="p-2.5 bg-slate-900 rounded-xl border border-slate-800 shadow-inner">🗺️</span>
-              Historical Migration Trajectories
-            </h4>
-            <div className="flex items-center gap-4 mt-2 ml-14">
-              <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.3em]">Deep Ancestry Analysis</p>
-              <div className="h-1 w-1 rounded-full bg-slate-700"></div>
-              <p className="text-[10px] text-sky-500 font-bold uppercase tracking-[0.2em]">Validated by {markerSummary.panels[0].detected}+ Marker Overlap</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="flex flex-col items-end">
-              <span className="text-[8px] font-black text-slate-500 uppercase tracking-widest leading-none mb-1">Call Rate</span>
-              <span className={`text-xs font-mono font-black ${markerSummary.integrity.isReliable ? 'text-emerald-400' : 'text-amber-400'}`}>
-                {markerSummary.integrity.callRate}%
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-500 px-4 py-2 bg-slate-900/50 rounded-full border border-slate-800/50">
-              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-              LIVE LINEAGE TRACKING
-            </div>
+            <h3 className="text-2xl font-black text-slate-800 tracking-tight">Historical Individual Matches</h3>
+            <p className="text-as text-slate-400 font-bold uppercase tracking-widest mt-1">Direct Genotype Comparisons with Ancient Remains</p>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-xs font-black text-blue-400">♂</div>
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Paternal Timeline</div>
-            </div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-6">
-              {yData?.path?.map((step: string, idx: number) => (
-                <div key={idx} className="flex items-center gap-4 group">
-                  <div className="flex flex-col items-center">
-                    <motion.div 
-                      whileHover={{ scale: 1.1, backgroundColor: '#3b82f6' }}
-                      className={`px-4 py-2 rounded-xl text-xs font-black border transition-all ${idx === yData.path.length - 1 ? 'bg-blue-600 border-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 'bg-slate-900 border-slate-800 text-slate-400'}`}
-                    >
-                      {step.replace("Haplogroup ", "")}
-                    </motion.div>
-                  </div>
-                  {idx < yData.path.length - 1 && (
-                    <div className="w-4 h-px bg-slate-800 group-hover:bg-blue-500/50 transition-colors"></div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-xs font-black text-rose-400">♀</div>
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Maternal Timeline</div>
-            </div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-6">
-              {mtData?.path?.map((step: string, idx: number) => (
-                <div key={idx} className="flex items-center gap-4 group">
-                  <div className="flex flex-col items-center">
-                    <motion.div 
-                      whileHover={{ scale: 1.1, backgroundColor: '#f43f5e' }}
-                      className={`px-4 py-2 rounded-xl text-xs font-black border transition-all ${idx === mtData.path.length - 1 ? 'bg-rose-600 border-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.3)]' : 'bg-slate-900 border-slate-800 text-slate-400'}`}
-                    >
-                      {step.replace("Haplogroup ", "")}
-                    </motion.div>
-                  </div>
-                  {idx < mtData.path.length - 1 && (
-                    <div className="w-4 h-px bg-slate-800 group-hover:bg-rose-500/50 transition-colors"></div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
+        <FamousMatches matches={famousMatches} />
+      </div>
     </motion.div>
   );
 });
 
 const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpanded: boolean, onToggleExpand: (rsid: string) => void }) => {
-  const meta = (CATEGORY_META as any)[snp.category] || { color: "#0284c7", icon: "🧬" };
+  const meta = (CATEGORY_META as any)[snp.category] || { color: "#0d9488", icon: "🧬" };
   
   return (
     <motion.div 
       layout
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -2, transition: { duration: 0.2 } }}
-      className={`p-4 rounded-xl border transition-all cursor-pointer group ${snp.status === 'partial' ? 'border-amber-400 bg-amber-50/10' : ''} ${isExpanded ? 'bg-white dark:bg-slate-800 border-sky-500 shadow-md' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 shadow-sm'}`}
+      className={`premium-card p-6 cursor-pointer group ${isExpanded ? 'ring-2 ring-teal-500 shadow-lg' : ''}`}
       onClick={() => onToggleExpand(snp.rsid)}
     >
       <div className="flex items-center justify-between gap-4 mb-2">
-        <div className="flex items-center gap-3">
-          <motion.div 
-            whileHover={{ rotate: 15 }}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-sm bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 group-hover:bg-sky-50 dark:group-hover:bg-sky-900/30 transition-colors"
-          >
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-lg bg-slate-50 border border-slate-100 group-hover:bg-teal-50 transition-colors">
             {meta.icon}
-          </motion.div>
+          </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-bold text-sky-600 dark:text-sky-400">{snp.rsid}</span>
-              <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ${SIG_COLOR[snp.significance as keyof typeof SIG_COLOR] || 'bg-slate-100 text-slate-600'}`}>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{snp.rsid}</span>
+              <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter ${SIG_COLOR[snp.significance as keyof typeof SIG_COLOR] || 'bg-slate-100 text-slate-500'}`}>
                 {snp.significance}
               </span>
             </div>
-            {snp.status === 'partial' && (
-              <div className="text-[9px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-tighter">Partial Match</div>
-            )}
-            <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">{snp.trait}</h4>
+            <h4 className="text-base font-bold text-slate-800 group-hover:text-teal-600 transition-colors leading-tight">{snp.trait}</h4>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <div className="text-right">
-            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Genotype</div>
-            <div className="text-sm font-mono font-bold text-slate-900 dark:text-slate-100">{snp.genotype || '--'}</div>
+            <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Genotype</div>
+            <div className="text-sm font-mono font-bold text-slate-800">{snp.genotype || '--'}</div>
           </div>
-          <div className={`p-2 rounded-full transition-colors ${isExpanded ? 'bg-sky-100 dark:bg-sky-900/50 text-sky-600' : 'text-slate-400 group-hover:text-sky-500'}`}>
-            <motion.span
-              animate={{ rotate: isExpanded ? 180 : 0 }}
-              className="inline-block text-[10px]"
-            >
-              ▼
-            </motion.span>
+          <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isExpanded ? 'bg-teal-500 text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:text-teal-500'}`}>
+            <ChevronDown className="w-4 h-4" />
           </div>
         </div>
       </div>
@@ -581,18 +419,18 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            <div className="mt-6 pt-6 border-t border-slate-100">
+              <p className="text-sm text-slate-500 leading-relaxed mb-6">
                 {snp.description}
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Gene</div>
-                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{snp.gene || 'N/A'}</div>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Gene</div>
+                  <div className="text-xs font-bold text-slate-800">{snp.gene || 'N/A'}</div>
                 </div>
-                <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Region</div>
-                  <div className="text-xs font-bold text-slate-900 dark:text-slate-100">{snp.continent}</div>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                  <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Region</div>
+                  <div className="text-xs font-bold text-slate-800">{snp.continent}</div>
                 </div>
               </div>
             </div>
@@ -1841,9 +1679,8 @@ export default function App() {
   const [selectedSubPop, setSelectedSubPop] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const [darkMode, setDarkMode] = useState(true);
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'summary' | 'autosomal' | 'oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('autosomal');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('dashboard');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
@@ -1860,14 +1697,6 @@ export default function App() {
   const collapseAll = (categories: string[]) => {
     setExpandedCategories(new Set());
   };
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   const toggleCategory = (category: string) => {
     setExpandedCategories(prev => {
@@ -1929,10 +1758,6 @@ export default function App() {
       setK27Results(datasets[activeDatasetIndex].analysis.k27Results);
     }
   }, [activeDatasetIndex, datasets]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   const exportJSON = () => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(datasets[activeDatasetIndex].results));
@@ -2179,476 +2004,281 @@ export default function App() {
   }, [datasets, activeDatasetIndex]);
 
   return (
-    <div className="app-container relative max-w-5xl mx-auto p-4 sm:p-8 min-h-screen">
-      <div className="absolute top-6 right-6 flex items-center gap-4 z-50">
-        <div className="text-[9px] font-black font-mono text-slate-500 dark:text-slate-400 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm transition-all hover:border-sky-500 cursor-default">v.3</div>
-        <button 
-          onClick={toggleDarkMode} 
-          className="p-2.5 rounded-full bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 transition-all hover:scale-110 active:scale-95 shadow-sm border border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500"
-        >
-          {darkMode ? '☀️' : '🌙'}
-        </button>
-      </div>
-      
-      <header className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 mb-12 sm:mb-16 text-center sm:text-left">
-        <div className="flex flex-col sm:flex-row items-center gap-6">
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full scale-125"></div>
-            <img className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white dark:border-slate-800 shadow-2xl relative z-10" src={LOGO_URI} alt="Genotype Scout Logo" />
-          </motion.div>
-          <div>
-            <div className="text-blue-600 dark:text-blue-400 text-xs tracking-[0.4em] uppercase font-black mb-2 opacity-80">Genetics Reimagined</div>
-            <h1 className="text-4xl sm:text-5xl tracking-tighter mb-4 leading-none flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
-              <div>
-                <span className="font-light text-slate-500 dark:text-slate-400 italic">GENOTYPE</span><br className="sm:hidden" /><span className="font-black" style={{ color: '#2450c3' }}>SCOUT</span>
-              </div>
-              <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] whitespace-nowrap">A Written In The Genome Tool</span>
-            </h1>
-            <div className="flex flex-wrap justify-center sm:justify-start gap-3 font-bold text-[10px] uppercase tracking-widest">
-              <a href="https://jequandavis.wordpress.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
-                <span className="w-6 h-px bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors"></span>
-                Research
-              </a>
-              <a href="https://www.facebook.com/share/g/1H4NqczNgK/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
-                <span className="w-6 h-px bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors"></span>
-                Community
-              </a>
-              <a href="https://paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 transition-colors">
-                <span className="w-6 h-px bg-emerald-200 dark:bg-emerald-900/50 group-hover:bg-emerald-500 transition-colors"></span>
-                Support
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="bg-slate-50 min-h-screen font-sans selection:bg-teal-100 selection:text-teal-900">
+      <Navigation 
+        activeTab={activeTab} 
+        onTabChange={setActiveTab} 
+        onUploadNew={() => fileRef.current?.click()}
+        hasResults={!!results}
+      />
 
-      {processing && (
-        <div className="border-2 border-dashed border-sky-300 dark:border-sky-800 rounded-[2.5rem] p-12 sm:p-24 text-center bg-white dark:bg-slate-900/50 shadow-inner">
-          <motion.div 
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-            className="text-6xl mb-8 inline-block"
-          >
-            🧬
-          </motion.div>
-          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100 mb-2">Analyzing Genomic Markers</h2>
-          <p className="text-slate-500 dark:text-slate-400 text-sm font-medium max-w-md mx-auto mb-12">
-            Sit tight while we process your SNPs and reconstruct your Ancestry Oracle profile. This takes a few moments.
-          </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-left">
-              <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4">📚</div>
-              <div className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-1 line-clamp-1">Did you know?</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed italic">Genotype Scout analyzes over {ANCHOR_AIMS.length.toLocaleString()} diagnostic markers for ancestry.</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 text-left">
-              <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-500 mb-4">🛡️</div>
-              <div className="font-bold text-slate-900 dark:text-slate-100 text-sm mb-1 line-clamp-1">Privacy First</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed italic">Your raw DNA data never leaves your device. All computation is local.</div>
-            </div>
-          </div>
-        </div>
-      )}
+      <input 
+        ref={fileRef} 
+        type="file" 
+        className="hidden" 
+        accept=".csv,.txt,.zip" 
+        multiple 
+        onChange={(e) => {
+          if (e.target.files) {
+            setError(null);
+            const newFiles = Array.from(e.target.files);
+            setPendingFiles(prev => [...prev, ...newFiles]);
+          }
+        }} 
+      />
 
-      {!results && !processing && (
-        <div className="animate-fade-up">
-          <div className="mb-16">
-            <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Browser-Based Analysis Node Active
-            </div>
-            <h2 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-slate-50 tracking-tighter mb-6 leading-none">
-              Explore the history <br className="hidden sm:block" /> locked in your <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400">Genetics.</span>
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mb-10">
-              Unpack your 23andMe, AncestryDNA, MyHeritage, or Family Tree DNA (FTDNA) raw data. 
-              Discover deep ancestry, health markers, and paternal lineages through our 
-              <span className="font-black text-slate-900 dark:text-slate-100"> High-Precision Oracle.</span>
-            </p>
-            
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex flex-col gap-3">
-                  <button onClick={() => setIsPrivacyExpanded(!isPrivacyExpanded)} className="flex items-center gap-3 w-full text-left">
-                    <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🔒</div>
-                    <div className="flex-grow">
-                      <div className="text-[10px] font-black uppercase text-indigo-500">Privacy First</div>
-                      <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Local computation</div>
-                    </div>
-                    {isPrivacyExpanded ? <ChevronUp className="w-5 h-5 text-slate-400"/> : <ChevronDown className="w-5 h-5 text-slate-400"/>}
-                  </button>
-                  <motion.div
-                    initial={false}
-                    animate={{ height: isPrivacyExpanded ? 'auto' : 0, opacity: isPrivacyExpanded ? 1 : 0 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                      Your DNA data is processed entirely in-browser. We scan over 11,000+ Ancestry Informative Markers (AIMs) and 100,000+ health/trait variants using high-performance local processing.
-                    </p>
-                  </motion.div>
-                </div>
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">🧪</div>
-                  <div>
-                    <div className="text-[10px] font-black uppercase text-slate-400">Forensic Integrity</div>
-                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">11,000+ Verified AIMs</div>
-                  </div>
-                </div>
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/20 border border-slate-100 dark:border-slate-800 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center text-xl shadow-sm">⚡</div>
-                  <div>
-                    <div className="text-[10px] font-black uppercase text-slate-400">Fast Analysis</div>
-                    <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Under 30 seconds</div>
-                  </div>
-                </div>
-                <div className="p-4 rounded-2xl bg-blue-600/10 border border-blue-500/20 flex flex-col gap-2">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-xl shadow-sm">🔎</div>
-                    <div>
-                      <div className="text-[10px] font-black uppercase text-blue-500">Deep Search Logic</div>
-                      <div className="text-xs font-black text-slate-900 dark:text-white">Active Kernels</div>
-                    </div>
-                  </div>
-                  <div className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter space-y-1">
-                    <div>• 10k GRAF-10k Panels</div>
-                    <div>• 180 Forensic markers</div>
-                    <div>• 111 Regional Markers</div>
-                    <div>• Proxy-Match Kernel: Active</div>
-                    <div>• v5 Extended DB: Unified</div>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          {error && (
-            <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 flex items-start gap-3 animate-shake">
-              <div className="text-red-500 mt-0.5">⚠️</div>
-              <div className="flex-1 text-left">
-                <div className="text-sm font-bold text-red-800 dark:text-red-300">Analysis Error</div>
-                <div className="text-xs text-red-700 dark:text-red-400 mt-1">{error}</div>
-              </div>
-              <button 
-                onClick={() => setError(null)}
-                className="text-red-400 hover:text-red-600 dark:hover:text-red-200 transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-          )}
-
-          <div className="flex justify-center mb-16 -mt-8">
-            <motion.div
-              whileHover={{ y: -5 }}
-              onClick={() => fileRef.current?.click()}
-              className={`group relative p-6 sm:p-10 w-full max-w-2xl rounded-[2.5rem] sm:rounded-[3rem] bg-white dark:bg-slate-900 border-2 border-dashed border-slate-200 dark:border-slate-800 cursor-pointer transition-all hover:border-sky-500 hover:shadow-2xl hover:shadow-sky-500/10 ${dragging ? "border-sky-500 shadow-2xl shadow-sky-500/20 ring-4 ring-sky-500/10" : ""}`}
-              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
-              onDragLeave={() => setDragging(false)}
-              onDrop={(e) => { 
-                e.preventDefault(); 
-                setDragging(false); 
-                setError(null);
-                const newFiles = Array.from(e.dataTransfer.files);
-                setPendingFiles(prev => [...prev, ...newFiles]);
-              }}
+      <main className="max-w-7xl mx-auto px-6 pt-28">
+        {processing && (
+          <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up">
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+              className="w-20 h-20 bg-teal-50 rounded-3xl flex items-center justify-center text-5xl mb-8 shadow-inner"
             >
-              <input ref={fileRef} type="file" className="hidden" accept=".csv,.txt,.zip" multiple onChange={(e) => {
-                if (e.target.files) {
-                  setError(null);
-                  const newFiles = Array.from(e.target.files);
-                  setPendingFiles(prev => [...prev, ...newFiles]);
-                }
-              }} />
-              <div className="relative">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl bg-sky-50 dark:bg-sky-900/20 flex items-center justify-center text-4xl sm:text-5xl mb-6 sm:mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">🧬</div>
-                <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-emerald-500 border-2 sm:border-4 border-white dark:border-slate-900 shadow-sm flex items-center justify-center text-white text-[8px] sm:text-[10px] font-black">AI</div>
-              </div>
-              
-              <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 mb-2 sm:mb-3 tracking-tight">Initialize Analysis</h3>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6 sm:mb-8 max-w-sm">
-                Securely drop your raw DNA file (.txt or .csv) from 23andMe, Ancestry, MyHeritage, or FTDNA. All data stays local and private.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-                <div className="w-full sm:w-auto text-center px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black uppercase tracking-widest group-hover:bg-sky-600 dark:group-hover:bg-sky-400 dark:group-hover:text-white transition-colors">
-                  Select Kit
-                </div>
-                <div className="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-tighter">or drag & drop here</div>
-              </div>
-
-              {dragging && (
-                 <motion.div 
-                   initial={{ opacity: 0, scale: 0.9 }}
-                   animate={{ opacity: 1, scale: 1 }}
-                   className="absolute inset-4 rounded-[2.5rem] bg-sky-500/90 backdrop-blur-sm flex flex-col items-center justify-center text-white z-50 pointer-events-none"
-                 >
-                    <div className="text-6xl mb-4">📥</div>
-                    <div className="text-lg font-black uppercase tracking-widest">Release to Analyze</div>
-                 </motion.div>
-              )}
+              🧬
             </motion.div>
+            <h2 className="text-3xl font-black text-slate-800 mb-4 tracking-tight">Decrypting your genome...</h2>
+            <p className="text-slate-500 max-w-md mx-auto leading-relaxed">
+              We're analyzing over 11,000 markers to reconstruct your genetic story. 
+              This happens locally and securely.
+            </p>
           </div>
+        )}
 
-          {pendingFiles.length > 0 && (
-            <div className="mt-6 flex flex-col items-center animate-fade-in">
-              <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                {pendingFiles.map((f, i) => (
-                  <div key={i} className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
-                    {f.name}
+        {!results && !processing && (
+          <HeroUpload 
+            onFiles={(files) => processFiles(files)} 
+            processing={processing} 
+            onReset={resetApp}
+          />
+        )}
+
+        {results && (
+          <div className="space-y-12 animate-fade-in">
+            {error && (
+              <div className="p-6 rounded-[2rem] bg-red-50 border border-red-100 text-red-600 flex items-center justify-between shadow-sm">
+                <p className="font-bold text-sm">⚠️ {error}</p>
+                <button onClick={() => setError(null)} className="p-2 hover:bg-red-100 rounded-full transition-colors">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+
+            {pendingFiles.length > 0 && (
+              <div className="p-8 premium-card flex flex-col sm:flex-row items-center justify-between gap-6 bg-teal-50/30 border-teal-100">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600">
+                    <FlaskConical className="w-6 h-6" />
                   </div>
+                  <div>
+                    <h3 className="font-bold text-slate-800">{pendingFiles.length} Kit(s) Ready</h3>
+                    <p className="text-xs text-slate-500">{pendingFiles.map(f => f.name).join(', ')}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 w-full sm:w-auto">
+                  <button 
+                    onClick={() => setPendingFiles([])}
+                    className="flex-1 sm:flex-none px-6 py-3 border border-slate-200 rounded-2xl text-xs font-black text-slate-500 hover:bg-white"
+                  >
+                    Cancel
+                  </button>
+                  <button 
+                    onClick={() => {
+                      processFiles(pendingFiles);
+                      setPendingFiles([]);
+                    }}
+                    className="flex-1 sm:flex-none px-8 py-3 bg-teal-600 text-white rounded-2xl text-xs font-black shadow-lg shadow-teal-100 hover:bg-teal-700"
+                  >
+                    Start Analysis
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Sub-Dataset Picker */}
+            {datasets.length > 1 && (
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar no-scrollbar">
+                {datasets.map((d, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveDatasetIndex(i)}
+                    className={`shrink-0 px-6 py-2.5 rounded-full text-xs font-bold transition-all ${
+                      activeDatasetIndex === i 
+                        ? 'bg-slate-900 text-white shadow-xl translate-y-[-2px]' 
+                        : 'text-slate-500 bg-white border border-slate-100 hover:bg-slate-50'
+                    }`}
+                  >
+                    {d.name.split('.')[0]}
+                  </button>
                 ))}
               </div>
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  processFiles(pendingFiles);
-                  setPendingFiles([]);
-                }}
-                className="px-8 py-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold shadow-lg shadow-sky-200 dark:shadow-none transition-all hover:scale-105 active:scale-95 flex items-center gap-3"
+            )}
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab + activeDatasetIndex}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
               >
-                <span className="text-xl">🚀</span>
-                Analyze {pendingFiles.length} Kit{pendingFiles.length > 1 ? 's' : ''}
-              </button>
-              <button 
-                onClick={() => setPendingFiles([])}
-                className="mt-4 text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
-              >
-                Clear Selection
-              </button>
-            </div>
-          )}
-        </div>
-      )}
-      {results && (
-        <div className="space-y-8 animate-fade-in">
-          {/* Main Navigation Dock */}
-          <div className="sticky top-0 z-40 -mx-4 sm:mx-0 px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-white/20 dark:border-slate-800 transition-all">
-            <div className="grid grid-cols-4 sm:flex sm:flex-wrap gap-1.5 pb-0.5">
-              {[
-                { id: 'summary', label: 'Summary', icon: '📊', color: 'amber' },
-                { id: 'oracle', label: 'Oracle', icon: '🔮', color: 'indigo' },
-                { id: 'haplogroups', label: 'Haplogroups', icon: '🧬', color: 'teal' },
-                { id: 'compare', label: 'Populations', icon: '🌍', color: 'blue' },
-                { id: 'ancient', label: 'Ancient', icon: '🏺', color: 'amber' },
-                { id: 'wellness', label: 'Health', icon: '🧬', color: 'teal' },
-                { id: 'autosomal', label: 'Traits', icon: '🧬', color: 'sky' },
-                { id: 'markers', label: 'Panels', icon: '📋', color: 'indigo' },
-                { id: 'debug', label: 'System', icon: '🛠️', color: 'slate' }
-              ].map(tab => (
-                <button 
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
-                  className={`relative flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-1 sm:px-4 py-2 rounded-xl sm:rounded-full text-[9px] sm:text-xs font-black transition-all active:scale-95 ${
-                    activeTab === tab.id 
-                      ? `bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-lg` 
-                      : `text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800`
-                  }`}
-                >
-                  <span className="text-sm">{tab.icon}</span>
-                  {tab.label}
-                  {activeTab === tab.id && (
-                    <motion.div 
-                      layoutId="tab-highlight"
-                      className="absolute inset-0 rounded-xl sm:rounded-full bg-slate-900 dark:bg-white -z-10"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab + activeDatasetIndex}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              {datasets.length > 1 && (
-                <div className="flex flex-wrap gap-2 mb-6 px-1">
-                  {datasets.map((d, i) => (
-                    <button
-                      key={i}
-                      className={`px-4 py-1.5 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all ${
-                        activeDatasetIndex === i 
-                          ? 'bg-sky-600 text-white shadow-md' 
-                          : 'bg-white dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700 hover:border-sky-500'
-                      }`}
-                      onClick={() => setActiveDatasetIndex(i)}
-                    >
-                      {d.name.split('.')[0]}
-                    </button>
-                  ))}
-                </div>
-              )}
-              
-              <div className="flex flex-wrap gap-4 mb-8 justify-between items-center bg-white dark:bg-slate-900 p-4 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm">
-                <div className="flex flex-wrap gap-2">
-                  {(['matched', 'unmatched', 'not_tested'] as const).map(status => (
-                    <button 
-                      key={status}
-                      className={`px-4 py-2 rounded-xl text-[10px] font-black tracking-widest uppercase transition-all ${statusFilter === status ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-sm' : 'bg-slate-50 dark:bg-slate-800 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-100 dark:border-slate-700'}`}
-                      onClick={() => setStatusFilter(status)}
-                    >
-                      {status.replace('_', ' ')}
-                    </button>
-                  ))}
-                </div>
-                
-                <div className="flex flex-wrap gap-2 items-center">
-                  <div className="relative group/search">
-                    <input 
-                      type="text" 
-                      placeholder="Search markers..." 
-                      className="bg-slate-50 dark:bg-slate-800 rounded-xl px-4 py-2 pl-10 text-xs font-bold w-full sm:w-48 focus:w-64 transition-all focus:ring-2 focus:ring-sky-500 outline-none border border-slate-100 dark:border-slate-700"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                    <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within/search:text-sky-500 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-1">
-                    <button onClick={resetApp} className="p-2 rounded-xl bg-rose-50 dark:bg-rose-900/20 text-rose-600 hover:bg-rose-100 dark:hover:bg-rose-900/40 border border-rose-100 dark:border-rose-900/40 transition-all active:scale-90" title="Reset Session">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                    </button>
-                    <button onClick={exportPDF} className="p-2 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all active:scale-90" title="Export PDF">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {activeTab === 'summary' && (
-                <ProfileSummary 
-                  datasets={datasets} 
-                  activeDatasetIndex={activeDatasetIndex} 
-                  oracleResults={oracleResults} 
-                  populationProximity={populationProximity}
-                  userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                  healthImpacts={healthWellnessMatches}
-                />
-              )}
-
-              {activeTab === 'autosomal' && (
-                <AutosomalView 
-                  filteredResults={filteredResults}
-                  groupedCategories={groupByCategory(filteredResults || [])}
-                  availableCategories={Object.keys(groupByCategory(filteredResults || []))}
-                  expandedCategories={expandedCategories}
-                  toggleCategory={toggleCategory}
-                  expandedSnps={expandedSnps}
-                  toggleExpand={toggleExpand}
-                  datasets={datasets}
-                  activeDatasetIndex={activeDatasetIndex}
-                />
-              )}
-
-              {activeTab === 'oracle' && (
-                <ModernAncestryOracle 
-                  results={oracleResults} 
-                />
-              )}
-
-              {activeTab === 'ancient' && (
-                <div className="space-y-8">
-                  <AncientAncestryOracle 
-                    results={individualMatches} 
-                    title="Ancient Relative Matches" 
-                    subtitle="Genetic similarity to specific ancient individuals"
-                    type="matches"
+                {activeTab === 'dashboard' && (
+                  <Dashboard 
+                    oracleResults={oracleResults}
+                    populationProximity={populationProximity}
+                    dataset={datasets[activeDatasetIndex]}
+                    userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                    onNavigateToTab={setActiveTab}
+                    onReset={resetApp}
                   />
-                  <AncientAncestryOracle 
-                    results={ancientAdmixture} 
-                    title="Deep Time Admixture" 
-                    subtitle="Paleolithic and Mesolithic affinity by population group"
-                    type="admixture"
+                )}
+
+                {activeTab === 'summary' && (
+                  <ProfileSummary 
+                    datasets={datasets} 
+                    activeDatasetIndex={activeDatasetIndex} 
+                    oracleResults={oracleResults} 
+                    populationProximity={populationProximity}
+                    userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                    famousMatches={famousMatches}
+                    healthImpacts={healthWellnessMatches}
                   />
-                </div>
-              )}
+                )}
 
-              {activeTab === 'wellness' && (
-                <HealthWellnessTab impacts={healthWellnessMatches} userSnps={snpMaps.current[activeDatasetIndex]} />
-              )}
-
-              {activeTab === 'haplogroups' && (
-                <div className="space-y-8 pb-12">
-                  <div className="flex justify-center mb-8">
-                    <div className="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                      <button 
-                        onClick={() => setActiveHaploType('paternal')}
-                        className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-md transform scale-105' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
-                      >
-                        ♂️ Paternal Lineage
-                      </button>
-                      <button 
-                        onClick={() => setActiveHaploType('maternal')}
-                        className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-white dark:bg-slate-700 text-rose-600 dark:text-rose-400 shadow-md transform scale-105' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
-                      >
-                        ♀️ Maternal Lineage
-                      </button>
+                {activeTab === 'autosomal' && (
+                  <div className="space-y-8 pb-20">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+                      <div>
+                        <h2 className="text-3xl font-black text-slate-800 tracking-tight">Genetic Markers</h2>
+                        <p className="text-slate-500">Filtered view of your autosomal variants.</p>
+                      </div>
+                      <div className="flex items-center gap-2 bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
+                        {(['matched', 'unmatched'] as const).map(status => (
+                          <button 
+                            key={status}
+                            onClick={() => setStatusFilter(status)}
+                            className={`px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${statusFilter === status ? 'bg-teal-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
+                          >
+                            {status}
+                          </button>
+                        ))}
+                      </div>
                     </div>
+                    
+                    <AutosomalView 
+                      filteredResults={filteredResults}
+                      groupedCategories={groupByCategory(filteredResults || [])}
+                      availableCategories={Object.keys(groupByCategory(filteredResults || []))}
+                      expandedCategories={expandedCategories}
+                      toggleCategory={toggleCategory}
+                      expandedSnps={expandedSnps}
+                      toggleExpand={toggleExpand}
+                      datasets={datasets}
+                      activeDatasetIndex={activeDatasetIndex}
+                    />
                   </div>
+                )}
 
-                  {activeHaploType === 'paternal' ? (
-                    <YDNAView 
-                      yData={datasets[activeDatasetIndex].predictedYDNA} 
-                      treeSearchTerm={treeSearchTerm}
-                      setTreeSearchTerm={setTreeSearchTerm}
+                {activeTab === 'oracle' && (
+                  <div className="pb-20">
+                     <ModernAncestryOracle results={oracleResults} />
+                  </div>
+                )}
+
+                {activeTab === 'wellness' && (
+                  <div className="pb-20">
+                    <HealthWellnessTab 
+                      impacts={healthWellnessMatches} 
+                      userSnps={snpMaps.current[activeDatasetIndex]} 
                     />
-                  ) : (
-                    <MTDNAView 
-                      mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                      treeSearchTerm={treeSearchTerm}
-                      setTreeSearchTerm={setTreeSearchTerm}
-                      matchedTraits={userMatchedMitoTraits}
-                    />
-                  )}
-                </div>
-              )}
+                  </div>
+                )}
 
-              {activeTab === 'compare' && (
-                <PopulationComparisonTab 
-                  userSnps={snpMaps.current[activeDatasetIndex] || {}} 
-                  populationProximity={populationProximity}
-                />
-              )}
-
-              {activeTab === 'markers' && (
-                <MarkerBenchmarks benchmarks={markerBenchmarks} />
-              )}
-
-              {activeTab === 'debug' && (
-                <div className="space-y-8">
-                  <div className="p-8 rounded-[2rem] bg-slate-900 border border-slate-800 text-slate-400 font-mono text-xs overflow-auto max-h-[800px] shadow-2xl">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                      <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Active Kernel State</h3>
+                {activeTab === 'haplogroups' && (
+                  <div className="space-y-8 pb-20">
+                    <div className="flex justify-center mb-8">
+                      <div className="inline-flex bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
+                        <button 
+                          onClick={() => setActiveHaploType('paternal')}
+                          className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                        >
+                          ♂️ Paternal
+                        </button>
+                        <button 
+                          onClick={() => setActiveHaploType('maternal')}
+                          className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                        >
+                          ♀️ Maternal
+                        </button>
+                      </div>
                     </div>
-                    <pre className="p-4 bg-black/40 rounded-xl overflow-auto custom-scrollbar whitespace-pre-wrap">
-                      {JSON.stringify({ 
+
+                    {activeHaploType === 'paternal' ? (
+                      <YDNAView 
+                        yData={datasets[activeDatasetIndex].predictedYDNA} 
+                        treeSearchTerm={treeSearchTerm}
+                        setTreeSearchTerm={setTreeSearchTerm}
+                      />
+                    ) : (
+                      <MTDNAView 
+                        mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                        treeSearchTerm={treeSearchTerm}
+                        setTreeSearchTerm={setTreeSearchTerm}
+                        matchedTraits={userMatchedMitoTraits}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {activeTab === 'ancient' && (
+                  <div className="pb-20">
+                    <AncientAncestryOracle results={oracleResults?.engine || []} />
+                  </div>
+                )}
+
+                {activeTab === 'compare' && (
+                  <div className="pb-20">
+                    <PopulationComparisonTab 
+                      userSnps={snpMaps.current[activeDatasetIndex] || {}} 
+                      populationProximity={populationProximity} 
+                    />
+                  </div>
+                )}
+
+                {activeTab === 'blood' && (
+                  <div className="pb-20">
+                    <BloodTypeView 
+                      dataset={datasets[activeDatasetIndex]} 
+                    />
+                  </div>
+                )}
+
+                {activeTab === 'markers' && (
+                  <div className="pb-20">
+                    <MarkerBenchmarks benchmarks={markerBenchmarks} />
+                  </div>
+                )}
+
+                {activeTab === 'debug' && (
+                  <div className="p-8 premium-card">
+                    <h3 className="text-xl font-black mb-4">Diagnostic Tool</h3>
+                    <pre className="text-[10px] font-mono bg-slate-50 p-4 rounded-xl overflow-auto max-h-[400px]">
+                      {JSON.stringify({
                         version: VERSION,
-                        activeTab, 
-                        statusFilter, 
-                        activeDatasetIndex, 
-                        chip: datasets[activeDatasetIndex].chip,
-                        snps: datasets[activeDatasetIndex].snpCount,
-                        datasetMeta: datasets.map(d => ({ name: d.name, count: d.results.length }))
+                        dataset: datasets[activeDatasetIndex]?.name,
+                        snpCount: datasets[activeDatasetIndex]?.snpCount,
+                        validSnps: Object.keys(snpMaps.current[activeDatasetIndex] || {}).length,
+                        activeTab
                       }, null, 2)}
                     </pre>
                   </div>
-                </div>
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      )}
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        )}
+      </main>
     </div>
   );
 }
+

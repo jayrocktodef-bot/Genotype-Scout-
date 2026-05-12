@@ -70,5 +70,5 @@ export function calculateFamousMatches(userSnps: Record<string, string>): Indivi
   }
 
   // Sort by affinity, then confidence
-  return matches.sort((a, b) => b.affinity - a.affinity || b.confidence - a.confidence);
+  return matches.sort((a, b) => b.affinity - a.affinity || b.confidence - a.confidence).slice(0, 5);
 }

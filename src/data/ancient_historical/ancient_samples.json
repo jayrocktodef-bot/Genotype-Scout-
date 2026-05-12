@@ -124,5 +124,71 @@
       "rs1800414": "AA",
       "rs1042602": "CA"
     }
+  },
+
+  "catoctin_iron_workers": {
+    "id": "catoctin_iron_workers",
+    "name": "Catoctin Iron Workers",
+    "site": "Catoctin Furnace, Maryland, USA",
+    "country": "United States",
+    "age_bp": 250,
+    "period": "18th Century",
+    "culture": "Iron Industry",
+    "culture_name": "Industrial Period",
+    "sex": "Various",
+    "description": "Genetic markers associated with enslaved individuals from Catoctin Furnace, Maryland.",
+    "region": "North America",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CC"
+    }
+  },
+
+  "western_hunter_gatherer": {
+    "id": "western_hunter_gatherer",
+    "name": "Western Hunter-Gatherer (WHG)",
+    "site": "Various, Europe",
+    "country": "Europe",
+    "age_bp": 10000,
+    "period": "Mesolithic",
+    "culture": "Various",
+    "culture_name": "Mesolithic",
+    "sex": "Various",
+    "description": "Representative markers for West European Hunter-Gatherer ancestry.",
+    "region": "Europe",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "AA",
+      "rs12913832": "AA",
+      "rs4988235": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    }
+  },
+
+  "early_european_farmer": {
+    "id": "early_european_farmer",
+    "name": "Early European Farmer (EEF)",
+    "site": "Various, Anatolia/Europe",
+    "country": "Anatolia/Europe",
+    "age_bp": 7000,
+    "period": "Neolithic",
+    "culture": "LBK/Various",
+    "culture_name": "Neolithic Farmer",
+    "sex": "Various",
+    "description": "Representative markers for Early European Farmer ancestry.",
+    "region": "West Asia/Europe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "CC",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs1800414": "AG",
+      "rs1042602": "TT"
+    }
   }
 }

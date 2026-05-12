@@ -106,8 +106,8 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       <SafetyDisclaimer />
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-bold text-white mb-1">Health, Wellness & Traits</h2>
-          <p className="text-gray-400 text-sm">Automated matching of clinical and appearance markers.</p>
+          <h2 className="text-3xl font-black text-slate-900 mb-1">Health, Wellness & Traits</h2>
+          <p className="text-slate-600 text-sm">Automated matching of clinical and appearance markers.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {categories.map(cat => (
@@ -117,7 +117,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
                 activeCategory === cat 
                   ? 'bg-blue-600 text-white' 
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
               }`}
             >
               {cat}
@@ -131,7 +131,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
         <section className="space-y-6">
           <div className="flex items-center gap-2 mb-2">
             <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-            <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Pharmacogenomic Alerts</h3>
+            <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px]">Pharmacogenomic Alerts</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {medicationReports.map((report, idx) => (
@@ -152,7 +152,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
               </motion.div>
             ))}
           </div>
-          <div className="h-px bg-slate-800 my-8"></div>
+          <div className="h-px bg-slate-200 my-8"></div>
         </section>
       )}
 
@@ -160,7 +160,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
         <section className="space-y-6">
           <div className="flex items-center gap-2 mb-2">
             <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-            <h3 className="text-white font-black uppercase tracking-widest text-[10px]">Dietary Insights</h3>
+            <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px]">Dietary Insights</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {dietaryInsights.map((insight, idx) => (
@@ -169,34 +169,34 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
-                className="p-6 rounded-[2rem] bg-slate-900 border border-slate-800 hover:border-emerald-500/30 transition-all group"
+                className="p-6 rounded-[2rem] bg-white border border-slate-100 hover:border-emerald-500/30 transition-all group shadow-sm"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">Nutrition</span>
-                    <h4 className="text-xl font-black text-white">{insight.trait}</h4>
+                    <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Nutrition</span>
+                    <h4 className="text-xl font-black text-slate-900">{insight.trait}</h4>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
                     🥗
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div className="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-[10px] font-black uppercase ring-1 ring-white/5">
+                  <div className="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase ring-1 ring-slate-200">
                     {insight.desc}
                   </div>
-                  <p className="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">
+                  <p className="text-sm font-medium text-slate-600 group-hover:text-slate-800 transition-colors">
                     {insight.advice}
                   </p>
                 </div>
               </motion.div>
             ))}
           </div>
-          <div className="h-px bg-slate-800 my-8"></div>
+          <div className="h-px bg-slate-200 my-8"></div>
         </section>
       )}
 
       {filteredImpacts.length === 0 && (!showPgx || medicationReports.length === 0) && (!showDiet || dietaryInsights.length === 0) ? (
-        <div className="p-12 text-center bg-slate-900/50 border border-dashed border-slate-800 rounded-2xl text-slate-500">
+        <div className="p-12 text-center bg-white border border-dashed border-slate-200 rounded-2xl text-slate-500">
           No matches found for the selected category in this dataset.
         </div>
       ) : (
@@ -205,98 +205,99 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
               <HealthItemCard key={`${item.rsid}-${idx}`} item={item} idx={idx} />
             ))}
           </div>
+        )
+      }
+    </div>
+  );
+};
+
+const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, idx }) => {
+  const [revealed, setRevealed] = useState(!item.masked);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: idx * 0.03 }}
+      className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-slate-300 transition-all flex flex-col relative shadow-sm"
+    >
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <span className="text-[10px] font-bold text-blue-600 tracking-widest uppercase mb-1 block">
+            {item.category}
+          </span>
+          <h3 className="text-lg font-black text-slate-900 leading-tight">{item.trait}</h3>
+          <p className="text-xs text-slate-500 mt-1">{item.name}</p>
+        </div>
+        <div className={`px-2 py-1 rounded text-[9px] font-bold uppercase ${
+          item.impact === 'high' ? 'bg-red-100 text-red-700' :
+          item.impact === 'moderate' ? 'bg-orange-100 text-orange-700' :
+          'bg-green-100 text-green-700'
+        }`}>
+          {item.impact} {item.impact !== 'neutral' ? 'impact' : ''}
+        </div>
+      </div>
+
+      <div className="mb-4 flex-1">
+        {revealed ? (
+          <>
+            <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 mb-3">
+              <div className="text-[9px] font-bold text-slate-500 uppercase mb-1">Your Genotype: {item.genotype}</div>
+              <p className="text-sm font-medium text-slate-800 leading-snug">
+                {item.interpretation}
+              </p>
+            </div>
+            {item.drugs && Array.isArray(item.drugs) && item.drugs.length > 0 && (
+              <div className="space-y-1 mb-3">
+                <span className="text-[9px] font-bold text-slate-500 uppercase">Affected Medications:</span>
+                <div className="flex flex-wrap gap-1">
+                  {item.drugs.map(drug => (
+                    <span key={drug} className="px-2 py-0.5 bg-slate-100 text-[10px] text-slate-600 rounded">
+                      {drug}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {item.actionable && Array.isArray(item.actionable.recommendations) && (
+              <div className="space-y-1 mt-3">
+                <span className="text-[9px] font-bold text-emerald-600 uppercase">Recommendations:</span>
+                <ul className="space-y-1">
+                  {item.actionable.recommendations.map((rec: string, i: number) => (
+                    <li key={i} className="text-[10px] text-slate-700 leading-tight flex items-start gap-1">
+                      <span className="text-emerald-500">•</span>
+                      {rec}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="p-6 bg-slate-50 rounded-xl border border-dashed border-slate-200 flex flex-col items-center justify-center text-center space-y-4">
+            <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+              🔒
+            </div>
+            <p className="text-[10px] text-slate-500 font-medium">Sensitive Health Info Masked</p>
+            <button 
+              onClick={() => setRevealed(true)}
+              className="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest"
+            >
+              Reveal Analysis
+            </button>
+          </div>
+        )}
+        {item.evidence && (
+          <p className="text-[10px] text-slate-400 italic mt-3">{item.evidence}</p>
         )}
       </div>
-    );
-  };
-  
-  const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, idx }) => {
-    const [revealed, setRevealed] = useState(!item.masked);
-  
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: idx * 0.03 }}
-        className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-600 transition-all flex flex-col relative"
-      >
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <span className="text-[10px] font-bold text-blue-400 tracking-widest uppercase mb-1 block">
-              {item.category}
-            </span>
-            <h3 className="text-lg font-bold text-white leading-tight">{item.trait}</h3>
-            <p className="text-xs text-slate-500 mt-1">{item.name}</p>
-          </div>
-          <div className={`px-2 py-1 rounded text-[9px] font-bold uppercase ${
-            item.impact === 'high' ? 'bg-red-500/20 text-red-400' :
-            item.impact === 'moderate' ? 'bg-orange-500/20 text-orange-400' :
-            'bg-green-500/20 text-green-400'
-          }`}>
-            {item.impact} {item.impact !== 'neutral' ? 'impact' : ''}
-          </div>
-        </div>
-  
-        <div className="mb-4 flex-1">
-          {revealed ? (
-            <>
-              <div className="p-3 bg-slate-800/50 rounded-xl border border-slate-700/50 mb-3">
-                <div className="text-[9px] font-bold text-slate-500 uppercase mb-1">Your Genotype: {item.genotype}</div>
-                <p className="text-sm font-medium text-slate-200 leading-snug">
-                  {item.interpretation}
-                </p>
-              </div>
-              {item.drugs && Array.isArray(item.drugs) && item.drugs.length > 0 && (
-                <div className="space-y-1 mb-3">
-                  <span className="text-[9px] font-bold text-slate-500 uppercase">Affected Medications:</span>
-                  <div className="flex flex-wrap gap-1">
-                    {item.drugs.map(drug => (
-                      <span key={drug} className="px-2 py-0.5 bg-slate-800 text-[10px] text-slate-400 rounded">
-                        {drug}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {item.actionable && Array.isArray(item.actionable.recommendations) && (
-                <div className="space-y-1 mt-3">
-                  <span className="text-[9px] font-bold text-emerald-500 uppercase">Recommendations:</span>
-                  <ul className="space-y-1">
-                    {item.actionable.recommendations.map((rec: string, i: number) => (
-                      <li key={i} className="text-[10px] text-slate-300 leading-tight flex items-start gap-1">
-                        <span className="text-emerald-500">•</span>
-                        {rec}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="p-6 bg-slate-950/50 rounded-xl border border-dashed border-red-500/30 flex flex-col items-center justify-center text-center space-y-4">
-              <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
-                🔒
-              </div>
-              <p className="text-[10px] text-slate-400 font-medium">Sensitive Health Info Masked</p>
-              <button 
-                onClick={() => setRevealed(true)}
-                className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest"
-              >
-                Reveal Analysis
-              </button>
-            </div>
-          )}
-          {item.evidence && (
-            <p className="text-[10px] text-slate-500 italic mt-3">{item.evidence}</p>
-          )}
-        </div>
-  
-        <div className="pt-4 border-t border-slate-800 flex justify-between items-center">
-          <span className="text-xs font-mono text-slate-600">{item.rsid}</span>
-          <button className="text-[10px] font-bold text-blue-500 hover:underline">
-            Source: SNPpedia
-          </button>
-        </div>
-      </motion.div>
-    );
+
+      <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
+        <span className="text-xs font-mono text-slate-400">{item.rsid}</span>
+        <button className="text-[10px] font-bold text-blue-600 hover:underline">
+          Source: SNPpedia
+        </button>
+      </div>
+    </motion.div>
+  );
 };

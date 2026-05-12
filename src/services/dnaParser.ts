@@ -32,10 +32,10 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
     chip = "Living DNA (GSA)";
   }
 
-  // Hyper-optimized Regex Parsing Loop
-  // Match: [rsID] [spaces/tabs] [chrom] [spaces/tabs] [pos] [spaces/tabs] [genotype]
-  // Note: Handles space/tab separation and AncestryDNA multi-column genotypes
-  const rowRegex = /^(rs\d+|i\d+)[ \t,]+((?:chr)?[\w]+)[ \t,]+(\d+)[ \t,]+([ACGTDI-]{1,2})([ \t,]+([ACGTDI-]))?/gmi;
+  // Hyper-optimized Regex Parsing Loop with optional quote support for MyHeritage/CSV formats
+  // Match: ["]rsID["] [sep] ["]chrom["] [sep] ["]pos["] [sep] ["]genotype["]
+  // Note: Handles space/tab/comma separation and AncestryDNA multi-column genotypes
+  const rowRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDI-]{1,2})"?([\t, ]+"?([ACGTDI-]))?"?/gmi;
   
   let match;
   while ((match = rowRegex.exec(text)) !== null) {

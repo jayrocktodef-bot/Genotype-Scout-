@@ -2,8 +2,6 @@ import React, { memo, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, ChevronUp, Dna, History, User, MapPin } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
-import { EngineAncestryOracle } from './EngineAncestryOracle';
-import { runAncestryOracle } from '../utils/ancestry/oracleEngine';
 import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
 
 export const ModernAncestryOracle = memo(({ 
@@ -12,18 +10,13 @@ export const ModernAncestryOracle = memo(({
   results: any
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  type ViewMode = 'standard' | 'engine';
-  const [viewMode, setViewMode] = useState<ViewMode>('standard');
   
   const primaryAncestry = results?.primary?.continentalScores || {};
-  const engineAncestry = results?.engine || [];
   
   const hbbMigration = useMemo(() => {
     return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
   }, [results.userSnps]);
 
-  const hasEngineData = engineAncestry && engineAncestry.length > 0;
-  
   const hasData = Object.keys(primaryAncestry).length > 0;
   
   if (!hasData) {
@@ -120,10 +113,6 @@ export const ModernAncestryOracle = memo(({
         </div>
       </div>
 
-      {/* Engine Section - GRAF Engine */}
-      {hasEngineData && (
-        <EngineAncestryOracle results={engineAncestry} />
-      )}
 
       {/* Forensic Detail Section */}
       {/* Whole panel details removed */}

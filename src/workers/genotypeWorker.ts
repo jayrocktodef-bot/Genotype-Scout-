@@ -1,4 +1,5 @@
 import { parseRawDNA } from '../services/dnaParser';
+import { applyLightImputation } from '../utils/ancestry/lightImputation'; // Added
 import { matchSNPs } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
 import { Y_DNA_TREE } from '../constants/haplogroups';
@@ -84,15 +85,18 @@ self.onmessage = async (e: MessageEvent) => {
     const uniqueSnps = Object.keys(mergedSnpMap).length;
     const mergedName = names.length > 1 ? `Merged Kit (${names.length} files)` : names[0];
     const mergedChip = chips.length > 0 ? Array.from(new Set(chips)).join(" + ") : "Unknown Chip";
+    
+    // LIGHT IMPUTATION
+    const imputedSnpMap = applyLightImputation(mergedSnpMap); 
 
     // CORE ANALYSIS
-    const results = matchSNPs(mergedSnpMap, mergedSnpMetaMap);
+    const results = matchSNPs(imputedSnpMap, mergedSnpMetaMap);
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
     const predictedMtDNA = analyzeMtDNA(mergedMtMap);
 
     // ADVANCED CALCULATIONS (Heavy Lifting in Worker)
     
-    const snpMapForEngine = new Map(Object.entries(mergedSnpMap));
+    const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
 
     // Run independent heavy lifting in parallel
     const [
@@ -105,15 +109,15 @@ self.onmessage = async (e: MessageEvent) => {
       k27Results_raw,
       oracleResults
     ] = await Promise.all([
-      calculateAncientAdmixture(mergedSnpMap),
-      calculateIndividualMatches(mergedSnpMap),
-      calculateFamousMatches(mergedSnpMap),
-      matchHealthAndWellness(mergedSnpMap),
+      calculateAncientAdmixture(imputedSnpMap),
+      calculateIndividualMatches(imputedSnpMap),
+      calculateFamousMatches(imputedSnpMap),
+      matchHealthAndWellness(imputedSnpMap),
       calculatePopulationProximityOptimized(snpMapForEngine),
-      calculateMarkerBenchmarks(mergedSnpMap),
+      calculateMarkerBenchmarks(imputedSnpMap),
       (async () => {
         const { calculateK27Scores } = await import("../utils/ancestry/k27AncEngine");
-        return calculateK27Scores(mergedSnpMap);
+        return calculateK27Scores(imputedSnpMap);
       })(),
       calculateAncestryOracle(
         results.filter(r => r.category === 'Ancestry'),
