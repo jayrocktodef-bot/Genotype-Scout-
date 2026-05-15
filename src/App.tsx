@@ -32,8 +32,8 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, 
 import { jsPDF } from "jspdf";
 import { groupByCategory, CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
-import { saveResults, loadResults, clearResults } from "./services/storageService";
-import { saveParsedDNA, getParsedDNA } from "./utils/dnaStorage";
+import { saveResults, loadResults, clearResults } from "./services/storage/results";
+import { saveParsedDNA, getParsedDNA } from "./services/storage/encrypted";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { calculateFamousMatches } from "./utils/individualMatching";
 import { matchHealthAndWellness } from "./utils/healthMatching";
