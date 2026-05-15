@@ -36,11 +36,11 @@ export async function syncAfricanDeepRes() {
     }
   }
 
-  const dataDir = path.join(process.cwd(), 'src', 'data', 'ancestry');
+  const dataDir = path.join(process.cwd(), 'src', 'data', 'raw_aims');
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
   fs.writeFileSync(path.join(dataDir, 'african_deep_res_weights.json'), JSON.stringify(weights, null, 2));
-  console.log("✅ Success: src/data/ancestry/african_deep_res_weights.json generated.");
+  console.log("✅ Success: src/data/raw_aims/african_deep_res_weights.json generated.");
 }
 
 // If run directly

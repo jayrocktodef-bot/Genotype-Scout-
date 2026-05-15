@@ -1,4 +1,4 @@
-import hoReferenceKernel from '../../data/ancestry/ho_modern_reference_kernel.json';
+import hoReferenceKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
 
 export interface AdmixtureComponent {
   population: string;

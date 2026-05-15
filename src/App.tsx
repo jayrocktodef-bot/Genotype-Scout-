@@ -33,6 +33,7 @@ import { jsPDF } from "jspdf";
 import { groupByCategory, CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
+import { saveParsedDNA, getParsedDNA } from "./utils/dnaStorage";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { calculateFamousMatches } from "./utils/individualMatching";
 import { matchHealthAndWellness } from "./utils/healthMatching";
@@ -49,10 +50,10 @@ import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
-import { runAncestryOracle } from "./utils/ancestry/oracleEngine";
+import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
-import { calculateHistoricalClusterMatches } from "./utils/ancestry/historicalClusterEngine";
-import { calculateProAncestry } from "./utils/admixtureCalculator";
+import { calculateHistoricalClusterMatches } from "./engines/ancestry/historicalClusterEngine";
+import { calculateProAncestry } from "./engines/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
 import { forensicAimsMaster as forensicAims, graf10kIndex as grafIndex } from './data';
 import mitoTraits from "./data/mitochondrial/mito_traits.json";
@@ -214,17 +215,8 @@ const ProfileSummary = memo(({
   famousMatches?: any[],
   healthImpacts?: any[]
 }) => {
+  const [oracleMode, setOracleMode] = useState<'primary' | 'comprehensive'>('primary');
   const dataset = datasets[activeDatasetIndex];
-  if (!dataset) return null;
-
-  const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
-  const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
-  const primaryAncestry = oracleResults?.primary?.continentalScores || {};
-  const topProximity = populationProximity.slice(0, 3);
-  
-  const ancestryChartData = Object.entries(primaryAncestry)
-    .map(([name, value]) => ({ name, value: Number(value) }))
-    .sort((a, b) => b.value - a.value);
 
   const statisticalInsights = useMemo(() => {
     const stats = oracleResults?.statistical;
@@ -237,6 +229,19 @@ const ProfileSummary = memo(({
     });
   }, [oracleResults]);
 
+  if (!dataset) return null;
+
+  const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
+  const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
+  
+  const currentOracle = oracleMode === 'primary' ? oracleResults?.primary : oracleResults?.comprehensive;
+  const ancestryScores = currentOracle?.continentalScores || {};
+  const topProximity = populationProximity.slice(0, 3);
+  
+  const ancestryChartData = Object.entries(ancestryScores)
+    .map(([name, value]) => ({ name, value: Number(value) }))
+    .sort((a, b) => b.value - a.value);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -246,17 +251,33 @@ const ProfileSummary = memo(({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Main Admixture Stats */}
         <div className="lg:col-span-8 p-10 premium-card">
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
             <div>
               <h3 className="text-2xl font-black text-slate-800 tracking-tight">Ancestry Admixture</h3>
               <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Origins & Genetic Clusters</p>
             </div>
-            <div className="hidden sm:flex items-center gap-3">
-              <div className="flex flex-col items-end">
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Rigor</span>
-                <span className="text-xs font-mono font-black text-teal-600">High Confidence</span>
+            <div className="flex items-center gap-4">
+              <div className="flex p-1 bg-slate-100 rounded-lg border border-slate-200">
+                <button
+                  onClick={() => setOracleMode('primary')}
+                  className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-md transition-all ${oracleMode === 'primary' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                  Primary
+                </button>
+                <button
+                  onClick={() => setOracleMode('comprehensive')}
+                  className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-md transition-all ${oracleMode === 'comprehensive' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-500 hover:text-slate-700'}`}
+                >
+                  Comp
+                </button>
               </div>
-              <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></div>
+              <div className="hidden sm:flex items-center gap-3">
+                <div className="flex flex-col items-end">
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Rigor</span>
+                  <span className="text-xs font-mono font-black text-teal-600">High Confidence</span>
+                </div>
+                <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></div>
+              </div>
             </div>
           </div>
 
@@ -753,7 +774,23 @@ const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
 };
 
 const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelectedSubPop }: { oracleResults: any, ancestrySnps: any[], selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
-  const [activeOracle, setActiveOracle] = useState<'primary' | 'secondary' | 'commercial'>('primary');
+  const [activeOracle, setActiveOracle] = useState<'primary' | 'comprehensive' | 'secondary' | 'commercial'>('primary');
+
+  const currentData = useMemo(() => {
+    if (!oracleResults) return null;
+    return activeOracle === 'primary' 
+      ? oracleResults.primary 
+      : activeOracle === 'comprehensive'
+        ? oracleResults.comprehensive
+        : activeOracle === 'secondary' 
+          ? oracleResults.secondary 
+          : oracleResults.commercial;
+  }, [oracleResults, activeOracle]);
+
+  const endogamyScore = useMemo(() => {
+    if (!currentData?.segments) return 0;
+    return identifyEndogamy(currentData.segments);
+  }, [currentData?.segments]);
 
   if (!oracleResults) {
     return (
@@ -765,13 +802,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
     );
   }
 
-  const currentData = activeOracle === 'primary' 
-    ? oracleResults.primary 
-    : activeOracle === 'secondary' 
-      ? oracleResults.secondary 
-      : oracleResults.commercial;
-  const { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData;
-  const endogamyScore = useMemo(() => identifyEndogamy(segments), [segments]);
+  const { continentalScores, regionalScores, deepScores, subPopulations, chromosomeData, segments, confidenceIntervals } = currentData || { continentalScores: {}, regionalScores: {}, deepScores: {}, subPopulations: {}, chromosomeData: {}, segments: [], confidenceIntervals: {} };
   
   if (Object.keys(continentalScores).length === 0) {
     return (
@@ -803,10 +834,22 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
               onClick={() => { setActiveOracle('primary'); setSelectedSubPop(null); }}
               className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'primary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
             >
-              Primary (Matched)
+              Primary
             </button>
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
-              Uses only RSIDs from matched ancestry traits for high-confidence inference.
+              High-confidence anchors only.
+              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
+            </div>
+          </div>
+          <div className="relative group">
+            <button 
+              onClick={() => { setActiveOracle('comprehensive'); setSelectedSubPop(null); }}
+              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'comprehensive' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
+            >
+              Comprehensive
+            </button>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
+              Uses the full 10,000+ SNP global AIMs database.
               <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
             </div>
           </div>
@@ -815,10 +858,10 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
               onClick={() => { setActiveOracle('secondary'); setSelectedSubPop(null); }}
               className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'secondary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
             >
-              Secondary (All)
+              Secondary
             </button>
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
-              Uses all available AIMs and markers for a broader, exploratory analysis.
+              Broad markers & traits.
               <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
             </div>
           </div>
@@ -827,9 +870,11 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
 
       <div className="mb-6 p-4 bg-white/50 dark:bg-slate-800/30 rounded-lg border border-indigo-100 dark:border-indigo-800/30 text-xs text-indigo-800 dark:text-indigo-300 leading-relaxed">
         {activeOracle === 'primary' ? (
-          <p><strong>Primary Mode:</strong> Uses only RSIDs from matched ancestry traits for high-confidence inference based on your specific trait matches.</p>
+          <p><strong>Primary Mode:</strong> Uses only high-quality anchor AIMs for the most stable, conservative prediction.</p>
+        ) : activeOracle === 'comprehensive' ? (
+          <p><strong>Comprehensive Mode:</strong> Leverages the full 10,000+ marker master database, including microhaplotypes, for ultra-fine-grained detection.</p>
         ) : (
-          <p><strong>Secondary Mode:</strong> Uses all available AIMs (Ancestry Informative Markers) and markers in the database for a broader, more exploratory analysis.</p>
+          <p><strong>Secondary Mode:</strong> Uses broader markers and associated traits for an exploratory overview.</p>
         )}
       </div>
       
@@ -1192,8 +1237,6 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   setTreeSearchTerm: (val: string) => void,
   matchedTraits: any[]
 }) => {
-  if (!mtData) return null;
-
   const findNode = useCallback((name: string, node: any = MT_DNA_TREE): any | null => {
     if (node.branchName === name) return node;
     if (node.children) {
@@ -1206,6 +1249,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   }, []);
 
   const enrichedPath = useMemo(() => {
+    if (!mtData) return [];
     return (mtData.path || []).map((step: string, idx: number) => {
       const node = findNode(step);
       // Fallback for nodes not in our primary tree (e.g., deep subclades)
@@ -1218,7 +1262,9 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
         mutations: node?.mutations || []
       };
     });
-  }, [mtData.path, mtData.region, findNode]);
+  }, [mtData, findNode]);
+
+  if (!mtData) return null;
 
   const derivedMarkers = mtData.testedMarkers.filter((m: any) => m.status === 'derived');
   const markerPieData = derivedMarkers.map((m: any) => {
@@ -1673,6 +1719,7 @@ export default function App() {
 
   const [explorerSearch, setExplorerSearch] = useState<string>('');
   const [processing, setProcessing] = useState(false);
+  const [isParsing, setIsParsing] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1687,6 +1734,8 @@ export default function App() {
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
   const [k27Results, setK27Results] = useState<any[]>([]);
+  const [grafResults, setGrafResults] = useState<any[]>([]);
+  const [microHapResults, setMicroHapResults] = useState<any[]>([]);
 
   // Removed main-thread GRAF calculation useEffect
 
@@ -1726,7 +1775,14 @@ export default function App() {
   useEffect(() => {
     const init = async () => {
       const saved = await loadResults();
-      if (saved) setDatasets(saved);
+      if (saved) {
+        setDatasets(saved);
+        // Load encrypted DNA maps for all datasets
+        for (let i = 0; i < saved.length; i++) {
+          const map = await getParsedDNA(`dna_map_${i}`);
+          if (map) snpMaps.current[i] = map;
+        }
+      }
     };
     init();
   }, []);
@@ -1740,13 +1796,25 @@ export default function App() {
     predictedMtDNA?: any,
     mergedMtMap?: Record<string, string>,
     analysis?: any
-  }) => {
+  }, snpMap?: any) => {
+    const newIndex = datasets.length;
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
+    
+    // Save the DNA map with encryption
+    if (snpMap) {
+      await saveParsedDNA(`dna_map_${newIndex}`, snpMap);
+    }
     
     // Update local GRAF results state if available in the newest dataset
     if (newDataset.analysis?.k27Results) {
       setK27Results(newDataset.analysis.k27Results);
+    }
+    if (newDataset.analysis?.grafResults) {
+      setGrafResults(newDataset.analysis.grafResults);
+    }
+    if (newDataset.analysis?.microHapResults) {
+      setMicroHapResults(newDataset.analysis.microHapResults);
     }
 
     await saveResults(newDatasets);
@@ -1756,6 +1824,12 @@ export default function App() {
   useEffect(() => {
     if (datasets[activeDatasetIndex]?.analysis?.k27Results) {
       setK27Results(datasets[activeDatasetIndex].analysis.k27Results);
+    }
+    if (datasets[activeDatasetIndex]?.analysis?.grafResults) {
+      setGrafResults(datasets[activeDatasetIndex].analysis.grafResults);
+    }
+    if (datasets[activeDatasetIndex]?.analysis?.microHapResults) {
+      setMicroHapResults(datasets[activeDatasetIndex].analysis.microHapResults);
     }
   }, [activeDatasetIndex, datasets]);
 
@@ -1823,22 +1897,51 @@ export default function App() {
     }
 
     try {
-      const fileContents = await Promise.all(fileArray.map(file => {
-        return new Promise<{ buffer: ArrayBuffer, name: string }>((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            const buffer = e.target?.result as ArrayBuffer;
-            if (!buffer || buffer.byteLength === 0) {
-              reject(new Error(`File ${file.name} is empty.`));
-            } else {
-              resolve({ buffer, name: file.name });
+      setError(null);
+      
+      // Handle ZIP files
+      const finalFiles: (File | Blob)[] = [];
+      const { default: JSZip } = await import('jszip');
+      
+      for (const file of fileArray) {
+        if (file.name.toLowerCase().endsWith('.zip')) {
+          const zip = await JSZip.loadAsync(file);
+          const zipFiles = Object.keys(zip.files).filter(name => !zip.files[name].dir && !name.includes('MACOSX'));
+          for (const zipFileName of zipFiles) {
+            const content = await zip.files[zipFileName].async('blob');
+            (content as any).name = zipFileName;
+            finalFiles.push(content);
+          }
+        } else {
+          finalFiles.push(file);
+        }
+      }
+
+      if (finalFiles.length === 0) throw new Error("No valid files found.");
+
+      setIsParsing(true);
+      const parsedResults = await Promise.all(finalFiles.map(file => {
+        return new Promise<any>((resolve, reject) => {
+          const parser = new Worker(new URL('./workers/parserWorker.ts', import.meta.url), { type: 'module' });
+          parser.onmessage = (e) => {
+            if (e.data.type === 'SUCCESS') {
+              parser.terminate();
+              resolve(e.data);
+            } else if (e.data.type === 'ERROR') {
+              parser.terminate();
+              reject(new Error(e.data.error || "Parsing failed"));
             }
           };
-          reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
-          reader.readAsArrayBuffer(file);
+          parser.onerror = (err) => {
+            parser.terminate();
+            reject(err);
+          };
+          parser.postMessage({ type: 'PARSE_FILE', file });
         });
       }));
+      setIsParsing(false);
 
+      setProcessing(true);
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
       worker.onmessage = (e) => {
@@ -1855,7 +1958,7 @@ export default function App() {
             predictedMtDNA: payload.predictedMtDNA,
             mergedMtMap: payload.mergedMtMap,
             analysis: payload.analysis
-          });
+          }, payload.mergedSnpMap);
           setPendingFiles([]);
           setProcessing(false);
           worker.terminate();
@@ -1872,12 +1975,12 @@ export default function App() {
         worker.terminate();
       };
 
-      const transferList = fileContents.map(f => f.buffer);
-      worker.postMessage({ type: 'PROCESS_GENOME', files: fileContents }, transferList);
+      worker.postMessage({ type: 'PROCESS_PARSED_DATA', data: parsedResults });
     } catch (err) {
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
       setProcessing(false);
+      setIsParsing(false);
     }
   }, [datasets]);
 
@@ -1918,6 +2021,7 @@ export default function App() {
 
     return {
       primary: processOracle(oracle.primary),
+      comprehensive: processOracle(oracle.comprehensive),
       secondary: processOracle(oracle.secondary),
       commercial: processOracle(oracle.commercial),
       engine: k27Results
@@ -2028,7 +2132,7 @@ export default function App() {
       />
 
       <main className="max-w-7xl mx-auto px-6 pt-28">
-        {processing && (
+        {(processing || isParsing) && !results && (
           <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up">
             <motion.div 
               animate={{ rotate: 360 }}
@@ -2037,18 +2141,22 @@ export default function App() {
             >
               🧬
             </motion.div>
-            <h2 className="text-3xl font-black text-slate-800 mb-4 tracking-tight">Decrypting your genome...</h2>
+            <h2 className="text-3xl font-black text-slate-800 mb-4 tracking-tight">
+              {isParsing ? 'Parsing DNA File...' : 'Decrypting your genome...'}
+            </h2>
             <p className="text-slate-500 max-w-md mx-auto leading-relaxed">
-              We're analyzing over 11,000 markers to reconstruct your genetic story. 
-              This happens locally and securely.
+              {isParsing 
+                ? "Reading and normalizing genomic markers in a dedicated background worker..." 
+                : "We're analyzing over 11,000 markers to reconstruct your genetic story. This happens locally and securely."}
             </p>
           </div>
         )}
 
-        {!results && !processing && (
+        {!results && !processing && !isParsing && (
           <HeroUpload 
             onFiles={(files) => processFiles(files)} 
             processing={processing} 
+            isParsing={isParsing}
             onReset={resetApp}
           />
         )}

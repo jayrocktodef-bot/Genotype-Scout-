@@ -5,7 +5,8 @@ import { runAncestryInference, calculateAncestryOracle } from './ancestryEngine'
 vi.mock('../anchorAims', () => ({
   ANCHOR_AIMS: [
     { rsid: 'rs1', region: 'Europe', alleles: ['A'], frequencies: { EUR: 0.9, AFR: 0.1 } }
-  ]
+  ],
+  loadGlobalAnchors: vi.fn().mockResolvedValue({})
 }));
 
 vi.mock('../data/snpDatabase', () => ({
@@ -46,13 +47,14 @@ describe('runAncestryInference', () => {
 });
 
 describe('calculateAncestryOracle', () => {
-  it('should run inference for different marker sets', () => {
+  it('should run inference for different marker sets', async () => {
     const results = [
       { markerId: 'rs1', rsid: 'rs1', chrom: '1', pos: 100, alleles: ['A'], genotype: 'AA', status: 'matched', category: 'Ancestry' }
     ];
-    const oracle = calculateAncestryOracle(results);
+    const oracle = await calculateAncestryOracle(results);
     
     expect(oracle.primary).toBeDefined();
+    expect(oracle.comprehensive).toBeDefined();
     expect(oracle.secondary).toBeDefined();
     expect(oracle.commercial).toBeDefined();
   });

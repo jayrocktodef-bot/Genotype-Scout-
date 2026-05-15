@@ -9,7 +9,7 @@ import { calculateMarkerBenchmarks } from "../utils/markerBenchmarks";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "../lib/AncientAdmixtureCalculator";
 import { calculateFamousMatches } from "../utils/individualMatching";
 import { matchHealthAndWellness } from "../utils/healthMatching";
-import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../utils/ancestry/fastMatrixEngine';
+import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../engines/ancestry/fastMatrixEngine';
 
 // Pre-compile the matrix the moment the worker boots up in the background
 compileReferenceKernel();
@@ -17,70 +17,104 @@ compileReferenceKernel();
 self.onmessage = async (e: MessageEvent) => {
   const { type, files, payload } = e.data;
   
-  if (type !== 'PROCESS_GENOME' && !files) return;
+  if (type !== 'PROCESS_GENOME' && type !== 'PROCESS_PARSED_DATA' && !files && !e.data.data) return;
 
   try {
     // 🚨 Ensure the kernel is loaded from the DB before doing math!
     await compileReferenceKernel();
 
     const allowlist = getMarkerAllowlist();
-    const decoder = new TextDecoder();
-
-    // Support both multiple files or a single payload buffer
-    const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
-
-    if (filesToProcess.length === 0) {
-      self.postMessage({ type: 'ERROR', error: "No files provided for processing." });
-      return;
-    }
-
-    let parsedFiles = filesToProcess.map((file: { buffer: ArrayBuffer, name: string }) => {
-      const text = decoder.decode(file.buffer);
-      const parsed = parseRawDNA(text, allowlist);
-      return { ...parsed, name: file.name };
-    });
-
-    if (parsedFiles.length === 0) {
-      self.postMessage({ type: 'ERROR', error: "No files parsed" });
-      return;
-    }
-
     let mergedSnpMap: Record<string, string> = {};
     let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
     let mergedYMap: Record<string, string> = {};
     let mergedMtMap: Record<string, string> = {};
     let chips: string[] = [];
     let names: string[] = [];
-    
-    for (const pf of parsedFiles) {
-      names.push(pf.name);
-      if (pf.chip && pf.chip !== "Unknown Chip") {
-        chips.push(pf.chip);
-      }
-      
-      const snpMap = pf.snpMap;
-      for (const rsid in snpMap) {
-        const genotype = snpMap[rsid];
-        if (!mergedSnpMap[rsid] || genotype.length > mergedSnpMap[rsid].length) {
-          mergedSnpMap[rsid] = genotype;
+
+    if (type === 'PROCESS_PARSED_DATA') {
+      const parsedResults = e.data.data;
+      for (const pr of parsedResults) {
+        names.push(pr.fileName);
+        if (pr.chip && pr.chip !== "Unknown Chip") {
+          chips.push(pr.chip);
+        }
+        const markers = pr.result;
+        for (const m of markers) {
+          const { rsid, chromosome, position, genotype } = m;
+          
+          if (!mergedSnpMap[rsid] || genotype.length > mergedSnpMap[rsid].length) {
+            mergedSnpMap[rsid] = genotype;
+          }
+          
+          mergedSnpMetaMap[rsid] = { chrom: chromosome, pos: position };
+          
+          // Coordinate ID
+          const coordId = `chr${chromosome}_${position}`.toLowerCase();
+          if (!mergedSnpMap[coordId]) {
+            mergedSnpMap[coordId] = genotype;
+          }
+
+          // Y-DNA
+          if (chromosome === "Y" || chromosome === "24") {
+            mergedYMap[rsid] = genotype;
+          }
+
+          // mtDNA
+          if (chromosome === "MT" || chromosome === "M" || chromosome === "26" || chromosome === "25") {
+            mergedMtMap[position.toString()] = genotype[0];
+          }
         }
       }
+    } else {
+      const decoder = new TextDecoder();
+      // Support both multiple files or a single payload buffer
+      const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
 
-      Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
-      
-      const yMap = pf.yMap;
-      for (const rsid in yMap) {
-        const genotype = yMap[rsid];
-        if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
-          mergedYMap[rsid] = genotype;
-        }
+      if (filesToProcess.length === 0) {
+        self.postMessage({ type: 'ERROR', error: "No files provided for processing." });
+        return;
       }
 
-      Object.assign(mergedMtMap, pf.mtMap);
+      let parsedFiles = filesToProcess.map((file: { buffer: ArrayBuffer, name: string }) => {
+        const text = decoder.decode(file.buffer);
+        const parsed = parseRawDNA(text, allowlist);
+        return { ...parsed, name: file.name };
+      });
+
+      if (parsedFiles.length === 0) {
+        self.postMessage({ type: 'ERROR', error: "No files parsed" });
+        return;
+      }
+      
+      for (const pf of parsedFiles) {
+        names.push(pf.name);
+        if (pf.chip && pf.chip !== "Unknown Chip") {
+          chips.push(pf.chip);
+        }
+        
+        const snpMap = pf.snpMap;
+        for (const rsid in snpMap) {
+          const genotype = snpMap[rsid];
+          if (!mergedSnpMap[rsid] || genotype.length > mergedSnpMap[rsid].length) {
+            mergedSnpMap[rsid] = genotype;
+          }
+        }
+
+        Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
+        
+        const yMap = pf.yMap;
+        for (const rsid in yMap) {
+          const genotype = yMap[rsid];
+          if (!mergedYMap[rsid] || mergedYMap[rsid].length < genotype.length) {
+            mergedYMap[rsid] = genotype;
+          }
+        }
+
+        Object.assign(mergedMtMap, pf.mtMap);
+      }
+      // MEMORY PRUNING: Clear large intermediate results
+      (parsedFiles as any) = null;
     }
-
-    // MEMORY PRUNING: Clear large intermediate results
-    (parsedFiles as any) = null;
 
     const uniqueSnps = Object.keys(mergedSnpMap).length;
     const mergedName = names.length > 1 ? `Merged Kit (${names.length} files)` : names[0];
@@ -98,7 +132,7 @@ self.onmessage = async (e: MessageEvent) => {
     
     const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
 
-    // Run independent heavy lifting in parallel
+    // Run heavy lifting in parallel
     const [
       ancientAdmixture,
       individualMatches,
@@ -107,7 +141,9 @@ self.onmessage = async (e: MessageEvent) => {
       populationProximity,
       markerBenchmarks,
       k27Results_raw,
-      oracleResults
+      grafResults_raw,
+      microHapResults,
+      comprehensiveResults
     ] = await Promise.all([
       calculateAncientAdmixture(imputedSnpMap),
       calculateIndividualMatches(imputedSnpMap),
@@ -116,15 +152,32 @@ self.onmessage = async (e: MessageEvent) => {
       calculatePopulationProximityOptimized(snpMapForEngine),
       calculateMarkerBenchmarks(imputedSnpMap),
       (async () => {
-        const { calculateK27Scores } = await import("../utils/ancestry/k27AncEngine");
+        const { calculateK27Scores } = await import("../engines/ancestry/k27AncEngine");
         return calculateK27Scores(imputedSnpMap);
       })(),
-      calculateAncestryOracle(
+      (async () => {
+        const { calculateRegionalScores } = await import("../engines/ancestry/grafAncEngine");
+        return calculateRegionalScores(imputedSnpMap);
+      })(),
+      (async () => {
+        const { identifyMicroHapSignatures } = await import("../engines/ancestry/microHapEngine");
+        return identifyMicroHapSignatures(imputedSnpMap);
+      })(),
+      (async () => {
+        const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine");
+        return calculateComprehensiveScores(imputedSnpMap);
+      })()
+    ]);
+
+    // Oracle now runs AFTER GraF and K27 calculations have finished
+    const oracleResults = await calculateAncestryOracle(
         results.filter(r => r.category === 'Ancestry'),
         predictedYDNA?.predicted?.continent,
-        predictedMtDNA?.region
-      )
-    ]);
+        predictedMtDNA?.region,
+        grafResults_raw,
+        k27Results_raw,
+        comprehensiveResults
+      );
 
     self.postMessage({
       type: 'SUCCESS',
@@ -145,6 +198,8 @@ self.onmessage = async (e: MessageEvent) => {
           populationProximity,
           markerBenchmarks,
           k27Results: k27Results_raw,
+          grafResults: grafResults_raw,
+          microHapResults: microHapResults,
           oracleResults
         }
       }

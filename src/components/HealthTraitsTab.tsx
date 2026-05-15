@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { Loader2 } from 'lucide-react';
 
 interface HealthTraitsTabProps {
   matchedTraits: Array<{
@@ -9,11 +10,37 @@ interface HealthTraitsTabProps {
     status: string;
   }>;
   autosomalMarkers: any[];
+  userSnps: Record<string, string>;
 }
 
-export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits, autosomalMarkers }) => {
+export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits, autosomalMarkers, userSnps }) => {
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'Maternal' | 'Health' | 'Nutrition' | 'Lifestyle' | 'Appearance' | 'Methylation'>('Health');
+  const [activeCategory, setActiveCategory] = useState<'Maternal' | 'Health' | 'Nutrition' | 'Lifestyle' | 'Appearance' | 'Methylation' | 'Identity'>('Health');
+  const [healthResults, setHealthResults] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (userSnps && Object.keys(userSnps).length > 0) {
+      setLoading(true);
+      const worker = new Worker(new URL('../workers/healthWorker.ts', import.meta.url), { type: 'module' });
+      
+      worker.onmessage = (e) => {
+        const { type, payload } = e.data;
+        if (type === 'HEALTH_RESULTS') {
+          setHealthResults(payload);
+          setLoading(false);
+          worker.terminate();
+        }
+      };
+
+      worker.onerror = () => {
+        setLoading(false);
+        worker.terminate();
+      };
+
+      worker.postMessage({ type: 'ANALYZE_HEALTH', payload: { userSnps } });
+    }
+  }, [userSnps]);
   
   const healthMarkers = autosomalMarkers.filter(m => 
     (m.category === 'Health' || m.category === 'Nutrition' || m.category === 'Lifestyle' || m.category === 'Appearance' || m.category === 'Methylation') &&
@@ -25,8 +52,18 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
     { id: 'Nutrition', label: 'Nutrition' },
     { id: 'Lifestyle', label: 'Lifestyle' },
     { id: 'Appearance', label: 'Appearance' },
-    { id: 'Methylation', label: 'Methylation' }
+    { id: 'Methylation', label: 'Methylation' },
+    { id: 'Identity', label: 'Identity' }
   ];
+
+  if (loading && acceptedDisclaimer) {
+    return (
+      <div className="flex flex-col items-center justify-center py-32 space-y-4">
+        <Loader2 className="w-12 h-12 text-red-600 animate-spin" />
+        <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Phasing Genomic Traits...</p>
+      </div>
+    );
+  }
 
   if (!acceptedDisclaimer) {
     return (
@@ -145,11 +182,56 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
           <div className="mb-8 flex items-center justify-between">
             <h3 className="text-xl font-black text-slate-900 dark:text-white">{activeCategory} Markers</h3>
             <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-full text-[10px] font-black text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30">
-              {healthMarkers.filter(m => m.category === activeCategory).length} Markers Matched
+              {activeCategory === 'Identity' ? 2 : healthMarkers.filter(m => m.category === activeCategory).length} Markers Matched
             </span>
           </div>
 
-          {healthMarkers.filter(m => m.category === activeCategory).length === 0 ? (
+          {activeCategory === 'Identity' && healthResults ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="frosted-glass p-8 rounded-[2.5rem] border border-red-500/10"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Blood Type</span>
+                    <h4 className="text-2xl font-black text-slate-900 dark:text-white">Phenotype Prediction</h4>
+                  </div>
+                  <div className="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center text-2xl">🩸</div>
+                </div>
+                <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 mb-4">
+                  <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Predicted Blood Group</div>
+                  <div className="text-4xl font-black text-red-600 dark:text-red-400">{healthResults.bloodType.bloodType}</div>
+                </div>
+                <p className="text-xs text-slate-500 font-medium">Confidence: {healthResults.bloodType.confidence}</p>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="frosted-glass p-8 rounded-[2.5rem] border border-blue-500/10"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">FUT2 Secreter</span>
+                    <h4 className="text-2xl font-black text-slate-900 dark:text-white">Secretor Status</h4>
+                  </div>
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-2xl">🛡️</div>
+                </div>
+                <div className="p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 mb-4">
+                  <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Secretor Phenotype</div>
+                  <div className="text-2xl font-black text-blue-600 dark:text-blue-400">{healthResults.secretorStatus.status}</div>
+                </div>
+                <ul className="space-y-2">
+                  {healthResults.secretorStatus.traits.map((trait: string, i: number) => (
+                    <li key={i} className="text-xs text-slate-500 font-medium border-l-2 border-blue-200 dark:border-blue-800 pl-3">{trait}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          ) : healthMarkers.filter(m => m.category === activeCategory).length === 0 ? (
             <div className="p-20 bg-slate-50 dark:bg-slate-900/50 rounded-[3rem] border border-dashed border-slate-200 dark:border-slate-800 text-center">
               <div className="text-6xl mb-6 opacity-20 grayscale">🥗</div>
               <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-2">No {activeCategory} Markers Detected</h3>

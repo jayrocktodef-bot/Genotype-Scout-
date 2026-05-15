@@ -42,11 +42,11 @@ export async function syncColonialAIMs() {
     }
   }
 
-  const dataDir = path.join(process.cwd(), 'src', 'data', 'ancestry');
+  const dataDir = path.join(process.cwd(), 'src', 'data', 'raw_aims');
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
   fs.writeFileSync(path.join(dataDir, 'colonial_aim_weights.json'), JSON.stringify(weights, null, 2));
-  console.log("✅ Success: src/data/ancestry/colonial_aim_weights.json generated.");
+  console.log("✅ Success: src/data/raw_aims/colonial_aim_weights.json generated.");
 }
 
 // If run directly

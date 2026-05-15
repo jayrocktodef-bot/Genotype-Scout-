@@ -1,6 +1,5 @@
 import { getAncientMarkers } from '../data/GenomicDataService';
-import ancientSamples from '../data/ancient_historical/ancient_samples.json';
-import ancientMatches from '../data/ancient_historical/ancientMatches.json';
+import masterAncient from '../data/master_ancient_profiles.json';
 
 export interface AncientSampleMatch {
   popCode: string;
@@ -63,8 +62,8 @@ export const calculateAncientAdmixture = (userGenotypes: Record<string, string>)
 
 export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
   const samples = [
-    ...Object.values(ancientSamples).filter(s => (s as any).id),
-    ...ancientMatches
+    ...Object.values(masterAncient.samples).filter(s => (s as any).id),
+    ...(masterAncient as any).matches
   ];
   
     // Weights for importance of specific markers (Deep Ancestry Diagnostic Weights)

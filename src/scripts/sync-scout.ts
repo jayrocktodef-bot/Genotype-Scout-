@@ -59,11 +59,11 @@ async function runAutomation() {
       // Weights sourced from HIrisPlex-S published AUC metrics and forensic standards
     };
     
-    const dataDir = path.join(process.cwd(), 'src', 'data', 'phenotype_forensic');
+    const dataDir = path.join(process.cwd(), 'src', 'data', 'raw_aims');
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
     
     fs.writeFileSync(path.join(dataDir, 'appearance_weights.json'), JSON.stringify(avatarWeights, null, 2));
-    console.log("✅ Avatar metadata generated: src/data/phenotype_forensic/appearance_weights.json");
+    console.log("✅ Avatar metadata generated: src/data/raw_aims/appearance_weights.json");
 
     console.log("\n✨ All genomic kernels updated and optimized.");
   } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import pcaData from '../data/ancestry/pca_reference_data.json';
+import pcaData from '../data/raw_aims/pca_reference_data.json';
 
 interface PCAMapProps {
   userCoordinates: { pc1: number; pc2: number } | null;

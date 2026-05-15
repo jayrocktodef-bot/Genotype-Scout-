@@ -1,7 +1,7 @@
-import grafIndex from '../data/ancestry/graf_10k_index.json';
-import forensicAims from '../data/phenotype_forensic/forensic_aims_master.json';
-import deepAims from '../data/phenotype_forensic/deep_resolution_aims.json';
-import euroforgenPanel from '../data/phenotype_forensic/euroforgen_name_panel.json';
+import grafIndex from '../data/raw_aims/graf_10k_index.json';
+import forensicAims from '../data/raw_aims/forensic_aims_master.json';
+import deepAims from '../data/raw_aims/deep_resolution_aims.json';
+import euroforgenPanel from '../data/raw_aims/euroforgen_name_panel.json';
 
 export interface MarkerSetBenchmark {
   name: string;

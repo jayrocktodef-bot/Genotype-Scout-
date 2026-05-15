@@ -67,6 +67,11 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
     snpMap[markerId] = genotype;
     if (!isNaN(pos)) {
       snpMetaMap[markerId] = { chrom, pos };
+      // Also index by coordinate-based ID for engines that need fallback lookup
+      const coordId = `chr${chrom}_${pos}`.toLowerCase();
+      if (!snpMap[coordId]) {
+        snpMap[coordId] = genotype;
+      }
     }
     
     // Extract Y-DNA mutations

@@ -1,10 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { HealthImpact } from '../utils/healthMatching';
-import { calculateMedicationSafety, MedicationReport } from '../utils/pgxCalculator';
-import { dietLogic } from '../utils/dietaryCalculator';
 import { PGxCard } from './PGxCard';
 import { SafetyDisclaimer } from './SafetyDisclaimer';
+import { Loader2 } from 'lucide-react';
 
 interface HealthWellnessTabProps {
   impacts: HealthImpact[];
@@ -14,27 +13,40 @@ interface HealthWellnessTabProps {
 export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = [], userSnps }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
+  const [healthResults, setHealthResults] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
-  const medicationReports = useMemo(() => calculateMedicationSafety(userSnps || {}), [userSnps]);
+  useEffect(() => {
+    if (userSnps && Object.keys(userSnps).length > 0) {
+      setLoading(true);
+      const worker = new Worker(new URL('../workers/healthWorker.ts', import.meta.url), { type: 'module' });
+      
+      worker.onmessage = (e) => {
+        const { type, payload } = e.data;
+        if (type === 'HEALTH_RESULTS') {
+          setHealthResults(payload);
+          setLoading(false);
+          worker.terminate();
+        } else if (type === 'ERROR') {
+          console.error("Health Worker Error:", payload);
+          setLoading(false);
+          worker.terminate();
+        }
+      };
 
-  const dietaryInsights = useMemo(() => {
-    const insights = [];
-    if (userSnps) {
-      if (userSnps[dietLogic.caffeine.rsid]) {
-        insights.push({
-          trait: 'Caffeine Metabolism',
-          ...dietLogic.caffeine.interpret(userSnps[dietLogic.caffeine.rsid])
-        });
-      }
-      if (userSnps[dietLogic.saturatedFat.rsid]) {
-        insights.push({
-          trait: 'Saturated Fat Sensitivity',
-          ...dietLogic.saturatedFat.interpret(userSnps[dietLogic.saturatedFat.rsid])
-        });
-      }
+      worker.onerror = (err) => {
+        console.error("Health Worker Fatal Error:", err);
+        setLoading(false);
+        worker.terminate();
+      };
+
+      worker.postMessage({ type: 'ANALYZE_HEALTH', payload: { userSnps } });
     }
-    return insights;
   }, [userSnps]);
+
+  const medicationReports = useMemo(() => healthResults?.clinicalRisks || [], [healthResults]);
+
+  const dietaryInsights = useMemo(() => healthResults?.dietaryTraits || [], [healthResults]);
 
   const categories = useMemo(() => {
     const cats = ['All', ...new Set((impacts || []).map(i => i.category))];
@@ -53,6 +65,15 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
 
   const showPgx = activeCategory === 'All' || activeCategory === 'Pharmacogenomics';
   const showDiet = activeCategory === 'All' || activeCategory === 'Dietary';
+
+  if (loading && acceptedDisclaimer) {
+    return (
+      <div className="flex flex-col items-center justify-center py-32 space-y-4">
+        <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
+        <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Analyzing Genomic Markers...</p>
+      </div>
+    );
+  }
 
   if (!acceptedDisclaimer) {
     return (

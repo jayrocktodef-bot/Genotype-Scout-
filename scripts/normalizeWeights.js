@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const dir = './src/data/ancestry';
+const dir = './src/data/raw_aims';
 const files = fs.readdirSync(dir);
 
 files.forEach(file => {

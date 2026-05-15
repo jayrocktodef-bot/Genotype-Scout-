@@ -14,6 +14,8 @@
     "sync-pca": "tsx src/scripts/sync-hgdp-pca.ts",
     "sync-admixture": "tsx scripts/parse-open-admixture.ts",
     "sync-all": "tsx src/scripts/sync-scout.ts && npm run build",
+    "build-health": "tsx scripts/build-master-health.ts",
+    "build-ancient": "tsx scripts/build-master-ancient.ts",
     "enrich-markers": "tsx scripts/enrich-marker-metadata.ts",
     "test": "vitest run"
   },

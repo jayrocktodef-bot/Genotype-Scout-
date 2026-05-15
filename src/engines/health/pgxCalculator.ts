@@ -1,5 +1,5 @@
 
-import { calculateCYP2D6Status, MetabolizerStatus } from './pgxAdvanced';
+import { calculateCYP2D6Status, MetabolizerStatus } from '../../utils/pgxAdvanced';
 
 export interface MedicationReport {
   drug: string;

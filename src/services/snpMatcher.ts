@@ -1,7 +1,7 @@
 import { SNP_DB, SNP_LOOKUP } from '../data/snpDatabase';
 import mtDescriptions from '../data/mitochondrial/mtDescriptions.json';
 import { ANCHOR_AIMS } from '../anchorAims';
-import { ANCESTRY_MARKERS } from '../data/ancestry';
+import masterAims from '../data/master_aims_normalized.json' with { type: 'json' };
 import v5MarkersMaster from '../data/v5_markers_master.json' with { type: 'json' };
 import { SNP } from '../types/genotype';
 import { SNP_PROXY_MAP } from '../utils/genotypeUtils';
@@ -45,11 +45,7 @@ export function getPrivateSNPs(snpMap: Record<string, string>) {
   const knownSNPs = new Set<string>();
   
   // Need to include all sources defined in matchSNPs
-  const allSources: any[] = [
-    ...SNP_DB,
-    ...ANCHOR_AIMS,
-    ...ANCESTRY_MARKERS
-  ];
+  const allSources: any[] = ([] as any[]).concat(SNP_DB, ANCHOR_AIMS, Object.values(masterAims));
   
   for (const snp of allSources) {
     if (snp.markerId) knownSNPs.add(snp.markerId.toLowerCase());
@@ -91,7 +87,7 @@ function getAllSources() {
       category: "Ancestry" as const,
       frequencies: aim.frequencies || aim.subFrequencies
     })),
-    ...(ANCESTRY_MARKERS as any[]).map((m: any) => ({
+    ...Object.values(masterAims).map((m: any) => ({
       markerId: m.rsid,
       rsid: m.rsid,
       gene: m.gene || "Intergenic",

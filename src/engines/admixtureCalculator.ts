@@ -9,17 +9,8 @@ import {
   microhapTop100Kernel as microhapKernel,
   colonialAimWeights as colonialWeights,
   africanDeepResWeights as deepAfricanWeights,
-  ancientAfricanWeights,
   customCuratedMarkers as customCuratedWeights
 } from '../data';
-import europeData from '../data/ancestry/europe.json';
-import middleEastData from '../data/ancestry/middle-east.json';
-import africaData from '../data/ancestry/africa.json';
-import americasData from '../data/ancestry/americas.json';
-import centralAsiaData from '../data/ancestry/central-asia.json';
-import eastAsiaData from '../data/ancestry/east-asia.json';
-import oceaniaData from '../data/ancestry/oceania.json';
-import southAsiaData from '../data/ancestry/south-asia.json';
 
 /**
  * Admixture Calculator (Statistical Engine)
@@ -84,14 +75,14 @@ function getEnhancedReference(baseReference: any) {
     const cleanRsid = markerDef.rsid.split('_')[0].toLowerCase();
     allInformativeMarkers.add(cleanRsid);
 
-    if (markerDef.frequencies) {
+    if ((markerDef as any).frequencies) {
       const rsid = markerDef.rsid.split('_')[0];
       const key = rsid.toLowerCase();
       const marker = (grafIndex as any)[rsid.toUpperCase()] || (grafIndex as any)[rsid];
       
       if (marker) {
         const populations: Record<string, any> = {};
-        for (const [popCode, pVal] of Object.entries(markerDef.frequencies)) {
+        for (const [popCode, pVal] of Object.entries((markerDef as any).frequencies)) {
           const p = pVal as number;
           const q = 1 - p;
           const aa = p * p;

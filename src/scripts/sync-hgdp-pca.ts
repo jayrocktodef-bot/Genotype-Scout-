@@ -23,7 +23,7 @@ async function generateHybridPCA() {
 
   // 1. Load the Commercial AIMs we synced earlier (e.g., Kidd 55, Seldin 128)
   // We use these highly informative markers to build the PCA space
-  const weightsFile = './src/data/ancestry/commercial_aim_weights.json';
+  const weightsFile = './src/data/raw_aims/commercial_aim_weights.json';
   if (!fs.existsSync(weightsFile)) {
     console.error("❌ commercial_aim_weights.json not found. Run sync-commercial-aims first.");
     return;
@@ -88,15 +88,15 @@ async function generateHybridPCA() {
   }));
 
   // 6. Save the outputs
-  fs.writeFileSync('./src/data/ancestry/pca_reference_data.json', JSON.stringify(pcaMapData, null, 2));
-  fs.writeFileSync('./src/data/ancestry/ho_modern_reference_kernel.json', JSON.stringify(referenceKernel, null, 2));
+  fs.writeFileSync('./src/data/raw_aims/pca_reference_data.json', JSON.stringify(pcaMapData, null, 2));
+  fs.writeFileSync('./src/data/raw_aims/ho_modern_reference_kernel.json', JSON.stringify(referenceKernel, null, 2));
   
   // Also save the PCA model and the rsIDs used (order is critical)
   const pcaModel = {
     rsIDs,
     model: pca.toJSON()
   };
-  fs.writeFileSync('./src/data/ancestry/pca_model.json', JSON.stringify(pcaModel, null, 2));
+  fs.writeFileSync('./src/data/raw_aims/pca_model.json', JSON.stringify(pcaModel, null, 2));
 
   console.log("✅ Success! HGDP expansion integrated and PCA space calculated.");
 }

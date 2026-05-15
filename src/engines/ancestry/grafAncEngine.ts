@@ -1,5 +1,5 @@
 // src/utils/ancestry/grafAncEngine.ts
-import { calculateSubPopResonance } from './subPopulationLogic';
+import { calculateSubPopResonance } from '../../utils/ancestry/subPopulationLogic';
 
 const POP_NAME_MAP: Record<string, string> = {
   'GBR': 'British (England & Scotland)',

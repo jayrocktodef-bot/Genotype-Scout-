@@ -12,13 +12,18 @@ export interface RawProfessionalMarker {
 export const formatProfessionalMarkers = (markers: any[] | Record<string, any>): any[] => {
   const markerArray = Array.isArray(markers) 
     ? markers 
-    : Object.entries(markers).map(([rsid, freqs]) => ({ rsid, frequencies: freqs }));
+    : Object.entries(markers).map(([rsid, data]) => {
+        if (typeof data === 'object' && data !== null) {
+          return { rsid, ...data };
+        }
+        return { rsid, frequencies: data };
+      });
 
   return markerArray.map(m => ({
     rsid: m.rsid,
-    region: 'Global',
-    alleles: ['A', 'C', 'G', 'T'],
-    weight: 10.0,
+    region: m.region || 'Global',
+    alleles: m.alleles || ['A', 'C', 'G', 'T'],
+    weight: m.weight || 10.0,
     significance: 'High',
     frequencies: m.frequencies || { 'EUR': 0.5, 'AFR': 0.5, 'EAS': 0.5, 'SAS': 0.5, 'AMR': 0.5 },
     description: `Professional panel marker: ${m.panel || 'Unknown'} from ${m.source || 'Unknown'}`

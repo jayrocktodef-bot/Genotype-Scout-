@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const ANCESTRY_DIR = 'src/data/ancestry/';
+const ANCESTRY_DIR = 'src/data/raw_aims/';
 
 /**
  * Audit and patch ancestry data files.

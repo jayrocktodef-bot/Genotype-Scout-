@@ -1,4 +1,4 @@
-import historicalClusters from '../../data/ancient_historical/historical_clusters.json';
+import masterAncient from '../../data/master_ancient_profiles.json';
 
 export interface ClusterMatch {
   clusterId: string;
@@ -20,10 +20,10 @@ export function calculateHistoricalClusterMatches(userMtDna?: string, userYdna?:
 
   if (!userMtDna && !userYdna) return matches;
 
-  historicalClusters.clusters.forEach(cluster => {
+  (masterAncient as any).clusters.forEach((cluster: any) => {
     // Maternal (mtDNA) matching
     if (userMtDna) {
-      const mtMatch = cluster.signatures.find(sig => 
+      const mtMatch = cluster.signatures.find((sig: any) => 
         userMtDna === sig.haplogroup || userMtDna.startsWith(sig.haplogroup + '.') || userMtDna.startsWith(sig.haplogroup + '-')
       );
 

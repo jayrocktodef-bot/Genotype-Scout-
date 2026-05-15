@@ -3,55 +3,56 @@
 // ==========================================
 // 1. ANCIENT & HISTORICAL KERNELS
 // ==========================================
-import ancientMatches from './ancient_historical/ancientMatches.json';
-import ancientAfricanWeights from './ancient_historical/ancient_african_weights.json';
-import historicalClusters from './ancient_historical/historical_clusters.json';
-import ancientDnaMarkers from './ancient_historical/ancient_dna_markers.json';
-import ancientSamples from './ancient_historical/ancient_samples.json';
+import masterAncientRaw from './master_ancient_profiles.json?raw';
+const masterAncient = JSON.parse(masterAncientRaw);
 
 // ==========================================
 // 2. HEALTH & PHARMACOGENOMICS
 // ==========================================
-import pharmacogenomics from './health_pgx/pharmacogenomics.json';
-import autoimmuneHlaPanel from './health_pgx/autoimmune_hla_panel.json';
-import bloodMarkers from './health_pgx/blood_markers.json';
-import clinicalHealth from './health_pgx/clinical_health.json';
+import masterHealthRaw from './master_health_pgx.json?raw';
+const masterHealth = JSON.parse(masterHealthRaw);
 
 // ==========================================
 // 3. PHENOTYPE & FORENSIC
 // ==========================================
-import appearanceTraits from './phenotype_forensic/appearance_traits.json';
-import appearanceWeights from './phenotype_forensic/appearance_weights.json';
-import forensicAimsMaster from './phenotype_forensic/forensic_aims_master.json';
-import microhapTop100Kernel from './phenotype_forensic/microhap_top100_kernel.json';
-import deepResolutionAims from './phenotype_forensic/deep_resolution_aims.json';
-import euroforgenNamePanel from './phenotype_forensic/euroforgen_name_panel.json';
+import appearanceTraitsRaw from './raw_aims/appearance_traits.json?raw';
+const appearanceTraits = JSON.parse(appearanceTraitsRaw);
+import appearanceWeightsRaw from './raw_aims/appearance_weights.json?raw';
+const appearanceWeights = JSON.parse(appearanceWeightsRaw);
+import forensicAimsMasterRaw from './raw_aims/forensic_aims_master.json?raw';
+const forensicAimsMaster = JSON.parse(forensicAimsMasterRaw);
+import microhapTop100KernelRaw from './raw_aims/microhap_top100_kernel.json?raw';
+const microhapTop100Kernel = JSON.parse(microhapTop100KernelRaw);
+import deepResolutionAimsRaw from './raw_aims/deep_resolution_aims.json?raw';
+const deepResolutionAims = JSON.parse(deepResolutionAimsRaw);
+import euroforgenNamePanelRaw from './raw_aims/euroforgen_name_panel.json?raw';
+const euroforgenNamePanel = JSON.parse(euroforgenNamePanelRaw);
 
 // ==========================================
 // 4. ANCESTRY & ADMIXTURE
 // ==========================================
-import commercialAimWeights from './ancestry/commercial_aim_weights.json';
-import colonialAimWeights from './ancestry/colonial_aim_weights.json';
-import africanDeepResWeights from './ancestry/african_deep_res_weights.json';
-import graf10kWeights from './ancestry/graf_10k_weights.json';
-import graf10kIndex from './ancestry/graf_10k_index.json';
-import customCuratedMarkers from './ancestry/custom_curated_markers.json';
-import keyAims from './ancestry/key_aims.json';
+import commercialAimWeightsRaw from './raw_aims/commercial_aim_weights.json?raw';
+const commercialAimWeights = JSON.parse(commercialAimWeightsRaw);
+import colonialAimWeightsRaw from './raw_aims/colonial_aim_weights.json?raw';
+const colonialAimWeights = JSON.parse(colonialAimWeightsRaw);
+import africanDeepResWeightsRaw from './raw_aims/african_deep_res_weights.json?raw';
+const africanDeepResWeights = JSON.parse(africanDeepResWeightsRaw);
+import graf10kWeightsRaw from './raw_aims/graf_10k_weights.json?raw';
+const graf10kWeights = JSON.parse(graf10kWeightsRaw);
+import graf10kIndexRaw from './raw_aims/graf_10k_index.json?raw';
+const graf10kIndex = JSON.parse(graf10kIndexRaw);
+import customCuratedMarkersRaw from './raw_aims/custom_curated_markers.json?raw';
+const customCuratedMarkers = JSON.parse(customCuratedMarkersRaw);
+import keyAimsRaw from './raw_aims/key_aims.json?raw';
+const keyAims = JSON.parse(keyAimsRaw);
 
 // Export everything as a clean module
 export {
   // Ancient & Historical
-  ancientMatches,
-  ancientAfricanWeights,
-  historicalClusters,
-  ancientDnaMarkers,
-  ancientSamples,
+  masterAncient,
 
   // Health & PGx
-  pharmacogenomics,
-  autoimmuneHlaPanel,
-  bloodMarkers,
-  clinicalHealth,
+  masterHealth,
 
   // Phenotype & Forensic
   appearanceTraits,

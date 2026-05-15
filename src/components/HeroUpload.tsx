@@ -3,13 +3,16 @@ import { motion } from 'motion/react';
 import { Upload, Shield, Zap, Lock, Database } from 'lucide-react';
 
 interface HeroUploadProps {
-  onFiles: (files: FileList) => void;
+  onFiles: (files: FileList | File[]) => void;
   processing: boolean;
+  isParsing?: boolean;
   onReset: () => void;
 }
 
-const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset }) => {
+const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, isParsing, onReset }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const isActuallyProcessing = processing || isParsing;
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center py-20 px-6 text-center animate-fade-up">
@@ -35,12 +38,12 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
           <button 
-            disabled={processing}
+            disabled={isActuallyProcessing}
             onClick={() => fileInputRef.current?.click()}
             className="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-[2rem] font-black text-lg shadow-2xl shadow-slate-300 hover:bg-slate-800 transition-all flex items-center justify-center gap-4 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Upload className="w-6 h-6" />
-            {processing ? 'Analyzing...' : 'Upload Raw DNA'}
+            {isParsing ? 'Parsing DNA File...' : processing ? 'Analyzing...' : 'Upload Raw DNA'}
           </button>
           
           <button 

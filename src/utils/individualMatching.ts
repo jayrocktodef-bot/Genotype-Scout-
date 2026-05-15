@@ -1,4 +1,4 @@
-import ancientSamples from '../data/ancient_historical/ancient_samples.json';
+import masterAncient from '../data/master_ancient_profiles.json';
 
 export interface IndividualMatch {
   sampleId: string;
@@ -57,7 +57,7 @@ export function matchToAncientIndividual(
 export function calculateFamousMatches(userSnps: Record<string, string>): IndividualMatch[] {
   const matches: IndividualMatch[] = [];
 
-  for (const [id, data] of Object.entries(ancientSamples)) {
+  for (const [id, data] of Object.entries(masterAncient.samples)) {
     if (id === "_metadata") continue;
 
     const match = matchToAncientIndividual(userSnps, data);

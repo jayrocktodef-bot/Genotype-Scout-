@@ -1,8 +1,6 @@
-import pharmacogenomics from '../data/health_pgx/pharmacogenomics.json';
-import clinicalHealth from '../data/health_pgx/clinical_health.json';
-import appearanceTraits from '../data/phenotype_forensic/appearance_traits.json';
+import masterHealth from '../data/master_health_pgx.json';
+import appearanceTraits from '../data/raw_aims/appearance_traits.json';
 import v5MarkersMaster from '../data/v5_markers_master.json';
-import autoimmuneHlaPanel from '../data/health_pgx/autoimmune_hla_panel.json';
 
 export interface HealthImpact {
   rsid: string;
@@ -113,23 +111,24 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
     }
   }
 
-  // 2. Process Pharmacogenomics (if not already handled)
-  for (const [category, markers] of Object.entries(pharmacogenomics)) {
-    for (const [rsid, data] of Object.entries(markers as any)) {
-      if (processedRsids.has(rsid.toLowerCase())) continue;
-      
-      const userGenotype = normalizedSnps[rsid.toLowerCase()];
-      if (!userGenotype) continue;
+  // 2. Process Unified Master Health & PGx
+  for (const [rsid, data] of Object.entries(masterHealth as any)) {
+    if (processedRsids.has(rsid.toLowerCase())) continue;
 
+    const userGenotype = normalizedSnps[rsid.toLowerCase()];
+    if (!userGenotype) continue;
+
+    const source = (data as any)._source;
+    const group = (data as any)._group || '';
+
+    if (source === 'pharmacogenomics.json') {
       const variantAllele = (data as any).variant_allele;
-      const hasVariant = userGenotype.includes(variantAllele);
-
-      if (hasVariant) {
+      if (variantAllele && userGenotype.includes(variantAllele)) {
         impacts.push({
           rsid: ensureString(rsid),
           name: ensureString((data as any).name),
           category: 'Pharmacogenomics',
-          trait: ensureString(category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' ')),
+          trait: ensureString(group.charAt(0).toUpperCase() + group.slice(1).replace('_', ' ')),
           genotype: userGenotype,
           interpretation: ensureString((data as any).effect),
           impact: 'moderate',
@@ -137,41 +136,61 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
         });
         processedRsids.add(rsid.toLowerCase());
       }
-    }
-  }
-
-  // 3. Process Clinical Health
-  for (const [category, markers] of Object.entries(clinicalHealth)) {
-    for (const [rsid, data] of Object.entries(markers as any)) {
-      if (processedRsids.has(rsid.toLowerCase())) continue;
-
-      const userGenotype = normalizedSnps[rsid.toLowerCase()];
-      if (!userGenotype) continue;
-
+    } else if (source === 'clinical_health.json') {
       const riskAllele = (data as any).risk_allele;
-      const count = (userGenotype.match(new RegExp(riskAllele, 'g')) || []).length;
+      if (riskAllele) {
+        const count = (userGenotype.match(new RegExp(riskAllele, 'g')) || []).length;
+        if (count > 0) {
+          impacts.push({
+            rsid: ensureString(rsid),
+            name: ensureString((data as any).name),
+            category: 'Clinical Health',
+            trait: ensureString(group.charAt(0).toUpperCase() + group.slice(1).replace('_', ' ')),
+            genotype: userGenotype,
+            interpretation: ensureString(count === 2 ? `Increased risk (${riskAllele}${riskAllele})` : `Partial risk (${riskAllele})`),
+            impact: (data as any).impact || 'moderate',
+            evidence: ensureString((data as any).description)
+          });
+          processedRsids.add(rsid.toLowerCase());
+        }
+      }
+    } else if (source === 'autoimmune_hla_panel.json') {
+      const riskAllele = (data as any).risk_allele;
+      if (riskAllele) {
+        const count = (userGenotype.match(new RegExp(riskAllele, 'g')) || []).length;
+        if (count > 0) {
+          const isProtective = (data as any).is_protective;
+          const oddsRatio = (data as any).odds_ratio;
+          
+          let impact: 'high' | 'moderate' | 'low' | 'neutral' = 'neutral';
+          if (!isProtective) {
+            if (oddsRatio > 5 || count === 2) impact = 'high';
+            else if (oddsRatio > 2) impact = 'moderate';
+            else impact = 'low';
+          } else {
+            impact = 'low';
+          }
 
-      if (count > 0) {
-        impacts.push({
-          rsid: ensureString(rsid),
-          name: ensureString((data as any).name),
-          category: 'Clinical Health',
-          trait: ensureString(category.charAt(0).toUpperCase() + category.slice(1).replace('_', ' ')),
-          genotype: userGenotype,
-          interpretation: ensureString(count === 2 ? `Increased risk (${riskAllele}${riskAllele})` : `Partial risk (${riskAllele})`),
-          impact: (data as any).impact || 'moderate',
-          evidence: ensureString((data as any).description)
-        });
-        processedRsids.add(rsid.toLowerCase());
+          impacts.push({
+            rsid: ensureString(rsid),
+            name: ensureString(`${(data as any).gene} (${(data as any).hla_type})`),
+            category: 'Autoimmune/HLA',
+            trait: ensureString((data as any).condition),
+            genotype: userGenotype,
+            interpretation: isProtective 
+              ? `Protective factor detected against ${(data as any).condition}.` 
+              : `Increased susceptibility detected (${userGenotype}). Odds Ratio: ${oddsRatio}.`,
+            impact,
+            evidence: `HLA Type: ${(data as any).hla_type}. Risk Allele: ${riskAllele}.`
+          });
+          processedRsids.add(rsid.toLowerCase());
+        }
       }
     }
   }
 
   // 4. Process Appearance Traits
   for (const marker of appearanceTraits as any[]) {
-    // Appearance markers often have multi-allele interpretations, so we process them even if RSID exists 
-    // because v5 might not have the specific phenotype text if it was extracted differently.
-    // But for now let's just stick to processedRsids to avoid duplicates.
     if (processedRsids.has(marker.rsid.toLowerCase())) continue;
 
     const userGenotype = normalizedSnps[marker.rsid.toLowerCase()];
@@ -200,45 +219,6 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
         evidence: marker.interpretation.evidence ? `Evidence: ${ensureString(marker.interpretation.evidence)}` : undefined
       });
       processedRsids.add(marker.rsid.toLowerCase());
-    }
-  }
-
-  // 5. Process HLA Autoimmune Markers
-  for (const [rsid, data] of Object.entries(autoimmuneHlaPanel)) {
-    if (processedRsids.has(rsid.toLowerCase())) continue;
-
-    const userGenotype = normalizedSnps[rsid.toLowerCase()];
-    if (!userGenotype) continue;
-
-    const riskAllele = (data as any).risk_allele;
-    const count = (userGenotype.match(new RegExp(riskAllele, 'g')) || []).length;
-
-    if (count > 0) {
-      const isProtective = (data as any).is_protective;
-      const oddsRatio = (data as any).odds_ratio;
-      
-      let impact: 'high' | 'moderate' | 'low' | 'neutral' = 'neutral';
-      if (!isProtective) {
-        if (oddsRatio > 5 || count === 2) impact = 'high';
-        else if (oddsRatio > 2) impact = 'moderate';
-        else impact = 'low';
-      } else {
-        impact = 'low';
-      }
-
-      impacts.push({
-        rsid: ensureString(rsid),
-        name: ensureString(`${(data as any).gene} (${(data as any).hla_type})`),
-        category: 'Autoimmune/HLA',
-        trait: ensureString((data as any).condition),
-        genotype: userGenotype,
-        interpretation: isProtective 
-          ? `Protective factor detected against ${(data as any).condition}.` 
-          : `Increased susceptibility detected (${userGenotype}). Odds Ratio: ${oddsRatio}.`,
-        impact,
-        evidence: `HLA Type: ${(data as any).hla_type}. Risk Allele: ${riskAllele}.`
-      });
-      processedRsids.add(rsid.toLowerCase());
     }
   }
 

@@ -1,0 +1,557 @@
+{
+  "rs2187668": {
+    "gene": "HLA-DQA1*05",
+    "hla_type": "DQ2.5 (DQA1*05:01/DQB1*02:01)",
+    "risk_allele": "T",
+    "condition": "Celiac disease",
+    "odds_ratio": 7,
+    "is_protective": false,
+    "_source": "clinical_health.json",
+    "name": "HLA-DQ2.5",
+    "description": "Primary celiac disease risk haplotype",
+    "impact": "high",
+    "_group": "celiac"
+  },
+  "rs7454108": {
+    "gene": "HLA-DQB1",
+    "hla_type": "DQ2/DQ8 tag",
+    "risk_allele": "C",
+    "condition": "Type 1 Diabetes",
+    "odds_ratio": 3.5,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs7775228": {
+    "gene": "HLA-DQB1*03:02",
+    "hla_type": "DQ8",
+    "risk_allele": "C",
+    "condition": "Celiac disease",
+    "odds_ratio": 3,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2395182": {
+    "gene": "HLA-DRB1",
+    "hla_type": "DR3-DQ2 haplotype tag",
+    "risk_allele": "T",
+    "condition": "Celiac disease",
+    "odds_ratio": 1,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs9273363": {
+    "gene": "HLA-DQB1",
+    "hla_type": "DQB1*06:02 protective",
+    "risk_allele": "C",
+    "condition": "Type 1 Diabetes",
+    "odds_ratio": 0.15,
+    "is_protective": true,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2647044": {
+    "gene": "HLA-DRB1",
+    "hla_type": "DR4-DQ8",
+    "risk_allele": "G",
+    "condition": "Type 1 Diabetes",
+    "odds_ratio": 4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs3104413": {
+    "gene": "HLA-DRB1",
+    "hla_type": "DR3-DQ2",
+    "risk_allele": "C",
+    "condition": "Type 1 Diabetes",
+    "odds_ratio": 3,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2476601": {
+    "gene": "PTPN22",
+    "hla_type": "Non-HLA",
+    "risk_allele": "A",
+    "condition": "Systemic lupus erythematosus",
+    "odds_ratio": 1.5,
+    "is_protective": false,
+    "_source": "clinical_health.json",
+    "name": "PTPN22",
+    "description": "Associated with multiple autoimmune conditions",
+    "impact": "moderate",
+    "_group": "autoimmune"
+  },
+  "rs4349859": {
+    "gene": "HLA-B",
+    "hla_type": "HLA-B*27",
+    "risk_allele": "A",
+    "condition": "Ankylosing spondylitis",
+    "odds_ratio": 69,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs13202464": {
+    "gene": "HLA-B",
+    "hla_type": "B27 tag SNP 2",
+    "risk_allele": "G",
+    "condition": "Ankylosing spondylitis",
+    "odds_ratio": 1,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs30187": {
+    "gene": "ERAP1",
+    "hla_type": "Non-HLA",
+    "risk_allele": "T",
+    "condition": "Ankylosing spondylitis",
+    "odds_ratio": 1.4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs6910071": {
+    "gene": "HLA-DRB1",
+    "hla_type": "Shared Epitope tag",
+    "risk_allele": "G",
+    "condition": "Rheumatoid arthritis",
+    "odds_ratio": 2.8,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs660895": {
+    "gene": "HLA-DRB1",
+    "hla_type": "DR4 tag",
+    "risk_allele": "G",
+    "condition": "Rheumatoid arthritis",
+    "odds_ratio": 2.5,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs3087243": {
+    "gene": "CTLA4",
+    "hla_type": "Non-HLA",
+    "risk_allele": "G",
+    "condition": "Graves disease",
+    "odds_ratio": 1.5,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs1270942": {
+    "gene": "HLA-DRB1",
+    "hla_type": "DR3 tag",
+    "risk_allele": "A",
+    "condition": "Systemic lupus erythematosus",
+    "odds_ratio": 2.5,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs7574865": {
+    "gene": "STAT4",
+    "hla_type": "Non-HLA",
+    "risk_allele": "T",
+    "condition": "Systemic lupus erythematosus",
+    "odds_ratio": 1.6,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2205960": {
+    "gene": "TNFSF4",
+    "hla_type": "Non-HLA",
+    "risk_allele": "T",
+    "condition": "Systemic lupus erythematosus",
+    "odds_ratio": 1.4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs10488631": {
+    "gene": "IRF5",
+    "hla_type": "Non-HLA",
+    "risk_allele": "C",
+    "condition": "Systemic lupus erythematosus",
+    "odds_ratio": 1.8,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs1143679": {
+    "gene": "ITGAM",
+    "hla_type": "Non-HLA",
+    "risk_allele": "A",
+    "condition": "Systemic lupus erythematosus",
+    "odds_ratio": 1.6,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs3135388": {
+    "gene": "HLA-DRB1",
+    "hla_type": "DRB1*15:01 tag",
+    "risk_allele": "A",
+    "condition": "Multiple sclerosis",
+    "odds_ratio": 3,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2104286": {
+    "gene": "IL2RA",
+    "hla_type": "Non-HLA",
+    "risk_allele": "A",
+    "condition": "Multiple sclerosis",
+    "odds_ratio": 1.3,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs179247": {
+    "gene": "TSHR",
+    "hla_type": "Non-HLA",
+    "risk_allele": "A",
+    "condition": "Graves disease",
+    "odds_ratio": 1.4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs3184504": {
+    "gene": "SH2B3",
+    "hla_type": "Non-HLA",
+    "risk_allele": "T",
+    "condition": "Hashimoto thyroiditis",
+    "odds_ratio": 1.3,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs10484554": {
+    "gene": "HLA-C",
+    "hla_type": "HLA-C*06:02",
+    "risk_allele": "A",
+    "condition": "Psoriasis",
+    "odds_ratio": 4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs12191877": {
+    "gene": "HLA-C",
+    "hla_type": "HLA-C*06:02 tag 2",
+    "risk_allele": "T",
+    "condition": "Psoriasis",
+    "odds_ratio": 3.5,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs11209026": {
+    "gene": "IL23R",
+    "hla_type": "Non-HLA",
+    "risk_allele": "A",
+    "condition": "Crohn disease",
+    "odds_ratio": 0.4,
+    "is_protective": true,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2066844": {
+    "gene": "NOD2",
+    "hla_type": "Non-HLA",
+    "risk_allele": "T",
+    "condition": "Crohn disease",
+    "odds_ratio": 2.4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2066845": {
+    "gene": "NOD2",
+    "hla_type": "Non-HLA",
+    "risk_allele": "C",
+    "condition": "Crohn disease",
+    "odds_ratio": 2.8,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs2066847": {
+    "gene": "NOD2",
+    "hla_type": "Non-HLA",
+    "risk_allele": "C",
+    "condition": "Crohn disease",
+    "odds_ratio": 4,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs1393350": {
+    "gene": "TYR",
+    "hla_type": "Non-HLA",
+    "risk_allele": "A",
+    "condition": "Vitiligo",
+    "odds_ratio": 1.5,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs9275572": {
+    "gene": "HLA-DQB1",
+    "hla_type": "HLA-DQB1 tag",
+    "risk_allele": "A",
+    "condition": "Alopecia areata",
+    "odds_ratio": 2,
+    "is_protective": false,
+    "_source": "autoimmune_hla_panel.json"
+  },
+  "rs8176719": {
+    "rsid": "rs8176719",
+    "gene": "ABO",
+    "trait": "ABO Type O Marker",
+    "alleles": {
+      "II": "Non-O (Possible A or B)",
+      "DI": "Non-O (Carrying O recessive)",
+      "DD": "Type O"
+    },
+    "description": "The 261G deletion. 'D' represents the deletion (O allele), 'I' represents the insertion (A/B allele).",
+    "_source": "blood_markers.json"
+  },
+  "rs8176746": {
+    "rsid": "rs8176746",
+    "gene": "ABO",
+    "trait": "A vs B Selection",
+    "alleles": {
+      "GG": "Likely Type A",
+      "GA": "Likely Type AB",
+      "AA": "Likely Type B"
+    },
+    "_source": "blood_markers.json"
+  },
+  "rs8176747": {
+    "rsid": "rs8176747",
+    "gene": "ABO",
+    "trait": "B-Allele Marker",
+    "alleles": {
+      "GG": "No B-Antigen",
+      "GC": "Carrier of B-Antigen",
+      "CC": "B-Antigen Present"
+    },
+    "description": "The 803G>C mutation. The 'C' allele is specific to the B blood group.",
+    "_source": "blood_markers.json"
+  },
+  "rs590787": {
+    "rsid": "rs590787",
+    "gene": "RHD",
+    "trait": "Rh Factor (Positive/Negative)",
+    "alleles": {
+      "CC": "Rh Negative (-)",
+      "CT": "Rh Positive (+)",
+      "TT": "Rh Positive (+)"
+    },
+    "description": "A proxy marker for the RHD gene deletion. Rh-negative status is recessive.",
+    "_source": "blood_markers.json"
+  },
+  "rs429358": {
+    "name": "APOE ε4 marker 1",
+    "risk_allele": "C",
+    "description": "APOE gene variant associated with Alzheimer's risk",
+    "impact": "high",
+    "_group": "alzheimers_apoe",
+    "_source": "clinical_health.json"
+  },
+  "rs7412": {
+    "name": "APOE ε4 marker 2",
+    "risk_allele": "C",
+    "description": "Second APOE variant - combined with rs429358 determines ε2/ε3/ε4 status",
+    "impact": "high",
+    "_group": "alzheimers_apoe",
+    "_source": "clinical_health.json"
+  },
+  "rs1333049": {
+    "name": "9p21 CAD risk",
+    "risk_allele": "C",
+    "description": "Coronary artery disease risk variant on chromosome 9",
+    "impact": "moderate",
+    "_group": "cardiovascular",
+    "_source": "clinical_health.json"
+  },
+  "rs10757278": {
+    "name": "Heart attack risk",
+    "risk_allele": "G",
+    "description": "Associated with myocardial infarction risk",
+    "impact": "moderate",
+    "_group": "cardiovascular",
+    "_source": "clinical_health.json"
+  },
+  "rs1801133": {
+    "name": "MTHFR C677T",
+    "risk_allele": "A",
+    "description": "Affects folate metabolism, homocysteine levels",
+    "impact": "moderate",
+    "_group": "cardiovascular",
+    "_source": "clinical_health.json"
+  },
+  "rs1042522": {
+    "name": "TP53 codon 72",
+    "risk_allele": "C",
+    "description": "p53 tumor suppressor variant",
+    "impact": "low",
+    "_group": "cancer_risk",
+    "_source": "clinical_health.json"
+  },
+  "rs6983267": {
+    "name": "Colorectal cancer risk",
+    "risk_allele": "G",
+    "description": "8q24 region associated with colorectal cancer",
+    "impact": "moderate",
+    "_group": "cancer_risk",
+    "_source": "clinical_health.json"
+  },
+  "rs7903146": {
+    "name": "TCF7L2",
+    "risk_allele": "T",
+    "description": "Strongest known genetic risk factor for Type 2 diabetes",
+    "impact": "high",
+    "_group": "diabetes",
+    "_source": "clinical_health.json"
+  },
+  "rs1801282": {
+    "name": "PPARG Pro12Ala",
+    "risk_allele": "C",
+    "description": "Associated with insulin sensitivity",
+    "impact": "moderate",
+    "_group": "diabetes",
+    "_source": "clinical_health.json"
+  },
+  "rs6025": {
+    "name": "Factor V Leiden",
+    "risk_allele": "A",
+    "description": "Increased risk of blood clots (DVT, PE)",
+    "impact": "high",
+    "_group": "clotting",
+    "_source": "clinical_health.json"
+  },
+  "rs1799963": {
+    "name": "Prothrombin G20210A",
+    "risk_allele": "A",
+    "description": "Increased clotting risk",
+    "impact": "high",
+    "_group": "clotting",
+    "_source": "clinical_health.json"
+  },
+  "rs1061170": {
+    "name": "CFH Y402H",
+    "risk_allele": "C",
+    "description": "Age-related macular degeneration risk",
+    "impact": "high",
+    "_group": "macular_degeneration",
+    "_source": "clinical_health.json"
+  },
+  "rs1799853": {
+    "name": "CYP2C9*2",
+    "variant_allele": "T",
+    "effect": "Reduced warfarin metabolism - lower dose needed",
+    "drugs": [
+      "warfarin",
+      "phenytoin"
+    ],
+    "_group": "warfarin",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs1057910": {
+    "name": "CYP2C9*3",
+    "variant_allele": "C",
+    "effect": "Significantly reduced warfarin metabolism",
+    "drugs": [
+      "warfarin",
+      "losartan"
+    ],
+    "_group": "warfarin",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs9923231": {
+    "name": "VKORC1",
+    "variant_allele": "T",
+    "effect": "Increased warfarin sensitivity",
+    "drugs": [
+      "warfarin"
+    ],
+    "_group": "warfarin",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs4244285": {
+    "name": "CYP2C19*2",
+    "variant_allele": "A",
+    "effect": "Poor metabolizer - clopidogrel less effective",
+    "drugs": [
+      "clopidogrel",
+      "omeprazole",
+      "citalopram"
+    ],
+    "_group": "clopidogrel",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs4986893": {
+    "name": "CYP2C19*3",
+    "variant_allele": "A",
+    "effect": "Poor metabolizer",
+    "drugs": [
+      "clopidogrel",
+      "proton pump inhibitors"
+    ],
+    "_group": "clopidogrel",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs3892097": {
+    "name": "CYP2D6*4",
+    "variant_allele": "A",
+    "effect": "Poor metabolizer - codeine ineffective, tramadol reduced",
+    "drugs": [
+      "codeine",
+      "tramadol",
+      "oxycodone",
+      "hydrocodone"
+    ],
+    "_group": "codeine_opioids",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs1065852": {
+    "name": "CYP2D6*10",
+    "variant_allele": "A",
+    "effect": "Reduced metabolism of many drugs",
+    "drugs": [
+      "codeine",
+      "tamoxifen",
+      "antidepressants"
+    ],
+    "_group": "codeine_opioids",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs4149056": {
+    "name": "SLCO1B1*5",
+    "variant_allele": "C",
+    "effect": "Increased risk of statin-induced myopathy",
+    "drugs": [
+      "simvastatin",
+      "atorvastatin",
+      "pravastatin"
+    ],
+    "_group": "statins",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs762551": {
+    "name": "CYP1A2",
+    "variant_allele": "C",
+    "effect": "Slow caffeine metabolizer - caffeine lasts longer",
+    "drugs": [
+      "caffeine",
+      "theophylline"
+    ],
+    "_group": "caffeine",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs671": {
+    "name": "ALDH2*2",
+    "variant_allele": "A",
+    "effect": "Alcohol flush reaction, acetaldehyde buildup",
+    "drugs": [
+      "alcohol",
+      "nitroglycerin"
+    ],
+    "_group": "alcohol",
+    "_source": "pharmacogenomics.json"
+  },
+  "rs1800497": {
+    "name": "ANKK1/DRD2 Taq1A",
+    "variant_allele": "T",
+    "effect": "May affect anesthesia/pain medication response",
+    "drugs": [
+      "anesthetics",
+      "opioids"
+    ],
+    "_group": "anesthesia",
+    "_source": "pharmacogenomics.json"
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import pcaModel from '../data/ancestry/pca_model.json';
+import pcaModel from '../data/raw_aims/pca_model.json';
 import { calculatePopulationProximity } from '../utils/ancestry/populationComparison';
 import { PCAMap } from './PCAMap';
 

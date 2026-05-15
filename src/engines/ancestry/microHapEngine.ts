@@ -1,5 +1,5 @@
 // src/utils/ancestry/microHapEngine.ts
-import microHapKernel from '../../data/phenotype_forensic/microhap_top100_kernel.json';
+import microHapKernel from '../../data/raw_aims/microhap_top100_kernel.json';
 
 export interface MicroHapSignature {
   id: string;

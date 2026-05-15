@@ -24,7 +24,7 @@ export async function syncOpenPGx() {
     }
 
     // Ensure data directory exists
-    const outDir = './src/data/health_pgx';
+    const outDir = './src/data/raw_health';
     if (!fs.existsSync(outDir)) {
       fs.mkdirSync(outDir, { recursive: true });
     }

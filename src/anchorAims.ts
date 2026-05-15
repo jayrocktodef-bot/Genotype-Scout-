@@ -1,14 +1,22 @@
-import { ANCESTRY_MARKERS } from './data/ancestry';
+import masterAims from './data/master_aims_normalized.json';
+import { AnchorAim } from './types/genotype';
 
-export interface AnchorAim {
-  rsid: string;
-  region: string;
-  alleles: string[];
-  weight: number;
-  significance?: 'High' | 'Medium' | 'Low';
-  frequencies: Record<string, number>;
-  subFrequencies?: Record<string, number>;
-  description: string;
-}
+export type { AnchorAim };
 
-export const ANCHOR_AIMS: AnchorAim[] = ANCESTRY_MARKERS as AnchorAim[];
+export const ANCHOR_AIMS: AnchorAim[] = Object.values(masterAims) as AnchorAim[];
+
+let globalAnchors: Record<string, AnchorAim> | null = null;
+
+export const loadGlobalAnchors = async (): Promise<Record<string, AnchorAim>> => {
+  if (globalAnchors) return globalAnchors;
+  
+  try {
+    const response = await fetch('/data/1kgp_global_anchors.json');
+    if (!response.ok) throw new Error('Failed to load global anchors');
+    globalAnchors = await response.json();
+    return globalAnchors!;
+  } catch (error) {
+    console.error('Error loading global anchors:', error);
+    return {};
+  }
+};

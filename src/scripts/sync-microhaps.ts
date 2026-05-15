@@ -1,109 +1,95 @@
-// src/scripts/sync-microhaps.ts
-import axios from 'axios';
-import fs from 'fs';
-import path from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as zlib from 'zlib';
 
-const BASE_URL = "https://raw.githubusercontent.com/bioforensics/microhapdb/master/microhapdb/data/";
+// MicroHapDB Raw URLs (Verified via GitHub API)
+const MARKERS_URL = 'https://raw.githubusercontent.com/bioforensics/microhapdb/master/microhapdb/data/marker.csv';
+const FREQS_URL = 'https://raw.githubusercontent.com/bioforensics/microhapdb/master/microhapdb/data/frequency.csv.gz';
 
-function parseCSV(content: string) {
-    const lines = content.trim().split('\n');
-    if (lines.length === 0) return [];
-    
-    // Simple CSV parser (doesn't handle quotes perfectly but usually enough for these files)
-    const headers = lines[0].split(',').map(h => h.trim());
-    return lines.slice(1).map(line => {
-        const values = line.split(',');
-        const obj: any = {};
-        headers.forEach((header, i) => {
-            obj[header] = values[i]?.trim();
-        });
-        return obj;
-    });
+interface StandardAim {
+  rsid: string;
+  region: string;
+  alleles: string[];
+  frequencies: Record<string, number>;
+  weight: number;
+  trait?: string;
+}
+
+async function fetchCsv(url: string): Promise<string[]> {
+  console.log(`Fetching: ${url}`);
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+  
+  let textContent: string;
+  if (url.endsWith('.gz')) {
+    const buffer = Buffer.from(await response.arrayBuffer());
+    textContent = zlib.gunzipSync(buffer).toString();
+  } else {
+    textContent = await response.text();
+  }
+  
+  return textContent.split('\n').map(line => line.trim()).filter(line => line.length > 0);
 }
 
 export async function syncMicroHapDB() {
-    console.log("🧬 Cannibalizing MicroHapDB for Forensic-grade resolution...");
+  try {
+    console.log('🧬 Starting MicroHapDB Extraction (with Gzip decompression)...');
 
-    try {
-        console.log("📡 Fetching marker definitions...");
-        const markersResp = await axios.get(`${BASE_URL}marker.csv`);
-        console.log("📡 Fetching population frequencies...");
-        const freqsResp = await axios.get(`${BASE_URL}frequency.csv`);
+    const markersCsv = await fetchCsv(MARKERS_URL);
+    const freqsCsv = await fetchCsv(FREQS_URL);
 
-        const markers = parseCSV(markersResp.data);
-        const freqs = parseCSV(freqsResp.data);
+    const microHaps: Record<string, StandardAim> = {};
 
-        console.log(`📊 Processing ${markers.length} markers and ${freqs.length} frequency records...`);
+    // Parse Markers (ID, Chromosome, Start, End, etc.)
+    // Note: MicroHapDB CSVs use comma separation. Header: ID,Chrom,Start,End,Core,Flank
+    markersCsv.slice(1).forEach(line => {
+      const cols = line.split(',');
+      if (cols.length < 4) return;
+      
+      const id = cols[0];
+      microHaps[id] = {
+        rsid: id,
+        region: 'GLOBAL',
+        alleles: [],
+        frequencies: {},
+        weight: 1.5,
+        trait: 'Forensic Microhaplotype'
+      };
+    });
 
-        // Calculate Ae per marker per population
-        const markerPopFreqs: Record<string, Record<string, number[]>> = {};
+    // Parse Frequencies (MarkerID, Population, Haplotype, Frequency)
+    // Note: Headers are MarkerID,Population,Haplotype,Frequency
+    freqsCsv.slice(1).forEach(line => {
+      const cols = line.split(',');
+      if (cols.length < 4) return;
 
-        freqs.forEach((f: any) => {
-            const mId = f.MarkerID;
-            const pop = f.Population;
-            const freq = parseFloat(f.Frequency);
-            if (isNaN(freq)) return;
-            
-            if (!markerPopFreqs[mId]) markerPopFreqs[mId] = {};
-            if (!markerPopFreqs[mId][pop]) markerPopFreqs[mId][pop] = [];
-            markerPopFreqs[mId][pop].push(freq);
-        });
+      const id = cols[0];
+      const pop = cols[1];
+      const allele = cols[2];
+      const freq = parseFloat(cols[3]);
 
-        const markerAis: Record<string, number> = {};
+      if (microHaps[id]) {
+        if (!microHaps[id].alleles.includes(allele)) {
+          microHaps[id].alleles.push(allele);
+        }
+        microHaps[id].frequencies[pop] = freq;
+      }
+    });
 
-        Object.entries(markerPopFreqs).forEach(([mId, pops]) => {
-            let totalAe = 0;
-            let popCount = 0;
-
-            Object.entries(pops).forEach(([pop, fs]) => {
-                const sumSq = fs.reduce((sum, p) => sum + p * p, 0);
-                if (sumSq === 0) return;
-                const ae = 1 / sumSq;
-                totalAe += ae;
-                popCount++;
-            });
-
-            if (popCount > 0) {
-                markerAis[mId] = totalAe / popCount;
-            }
-        });
-
-        // Sort by Global Mean Ae and take top 100
-        const sortedIds = Object.keys(markerAis)
-            .sort((a, b) => markerAis[b] - markerAis[a])
-            .slice(0, 100);
-
-        const kernel = sortedIds.map(mId => {
-            const markerDef = markers.find((m: any) => m.ID === mId);
-            const mFreqs = freqs.filter((f: any) => f.MarkerID === mId);
-            
-            const popWeights: Record<string, Record<string, number>> = {};
-            mFreqs.forEach((f: any) => {
-                if (!popWeights[f.Population]) popWeights[f.Population] = {};
-                popWeights[f.Population][f.Haplotype] = parseFloat(f.Frequency);
-            });
-
-            return {
-                id: mId,
-                chrom: markerDef.Chrom,
-                pos: markerDef.Start,
-                snps: markerDef.SNPs.split(',').map((s: string) => s.trim()),
-                global_ae: markerAis[mId],
-                weights: popWeights
-            };
-        });
-
-        const dataDir = path.join(process.cwd(), 'src', 'data', 'phenotype_forensic');
-        if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-
-        fs.writeFileSync(path.join(dataDir, 'microhap_top100_kernel.json'), JSON.stringify(kernel, null, 2));
-        console.log(`✅ Success: Generated Forensic Kernel with ${kernel.length} markers at src/data/phenotype_forensic/microhap_top100_kernel.json`);
-    } catch (err) {
-        console.error("❌ Failed to sync MicroHapDB:", err);
+    // Save to the raw_aims folder
+    const outputPath = path.resolve(process.cwd(), 'src/data/raw_aims/microhap_db.json');
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
     }
+    fs.writeFileSync(outputPath, JSON.stringify(microHaps, null, 2));
+
+    console.log(`✅ Successfully extracted ${Object.keys(microHaps).length} Microhaplotypes!`);
+    console.log(`Output saved to: ${outputPath}`);
+
+  } catch (error) {
+    console.error('❌ Extraction Failed:', error);
+  }
 }
 
-// Check if run directly (ESM compatible check)
-if (import.meta.url.includes(path.basename(process.argv[1] || ''))) {
-    syncMicroHapDB();
-}
+syncMicroHapDB();

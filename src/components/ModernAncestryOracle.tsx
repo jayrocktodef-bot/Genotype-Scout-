@@ -1,8 +1,13 @@
-import React, { memo, useMemo, useState } from 'react';
+import React, { memo, useMemo, useState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown, ChevronUp, Dna, History, User, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Dna, History, User, MapPin, Download, Share2, FileImage, Loader2, Sparkles } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
+import { ChromosomePainter, ChromosomePainterRef } from './ChromosomePainter';
+import { workerPoolEngine } from '../engines/ancestry/workerPoolEngine';
+import { POPULATION_MAP } from '../utils/populationMapper';
+import masterAims from '../data/master_aims_normalized.json';
+import jsPDF from 'jspdf';
 
 export const ModernAncestryOracle = memo(({ 
   results
@@ -10,14 +15,95 @@ export const ModernAncestryOracle = memo(({
   results: any
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [viewMode, setViewMode] = useState<'primary' | 'comprehensive' | 'painter'>('primary');
+  const painterRef = useRef<ChromosomePainterRef>(null);
+  const [exporting, setExporting] = useState(false);
+  const [calculatingLAI, setCalculatingLAI] = useState(false);
+  const [localSegments, setLocalSegments] = useState<any>(null);
+
+  useEffect(() => {
+    return () => {
+      workerPoolEngine.terminateAll();
+    };
+  }, []);
+
+  const runHighResAnalysis = async () => {
+    if (!results.allMarkers) return;
+    setCalculatingLAI(true);
+    try {
+      const populations = Object.keys(POPULATION_MAP);
+      const segments = await workerPoolEngine.runParallelAncestry(
+        results.allMarkers,
+        masterAims,
+        populations
+      );
+      setLocalSegments(segments);
+    } catch (err) {
+      console.error("LAI Analysis Failed:", err);
+    } finally {
+      setCalculatingLAI(false);
+    }
+  };
+
+  const segmentsToPainter = localSegments || results.segments || {};
+
+  const exportAncestryReport = async () => {
+    setExporting(true);
+    try {
+      const doc = new jsPDF({
+        orientation: 'p',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      // Background
+      doc.setFillColor(15, 23, 42);
+      doc.rect(0, 0, 210, 297, 'F');
+
+      // Header
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(28);
+      doc.setFont('helvetica', 'bold');
+      doc.text('GENOTYPE SCOUT', 105, 30, { align: 'center' });
+      doc.setFontSize(10);
+      doc.setTextColor(71, 85, 105);
+      doc.text('PREMIUM GENOMIC ANCESTRY REPORT', 105, 38, { align: 'center' });
+
+      // Add Snapshot
+      if (painterRef.current) {
+        const snapshot = painterRef.current.getSnapshot(3);
+        doc.addImage(snapshot, 'PNG', 15, 50, 180, 220);
+      }
+
+      // Footer
+      doc.setFontSize(8);
+      doc.setTextColor(51, 65, 85);
+      doc.text('© 2026 Genotype Scout Architect - Privacy-First Local Analysis', 105, 285, { align: 'center' });
+
+      doc.save('GenotypeScout_Ancestry_Profile.pdf');
+    } catch (err) {
+      console.error("Export failed:", err);
+    } finally {
+      setExporting(false);
+    }
+  };
   
-  const primaryAncestry = results?.primary?.continentalScores || {};
+  const resultsToDisplay = viewMode === 'primary' ? results?.primary : results?.comprehensive;
+  const continentalScores = resultsToDisplay?.continentalScores || {};
   
   const hbbMigration = useMemo(() => {
     return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
   }, [results.userSnps]);
 
-  const hasData = Object.keys(primaryAncestry).length > 0;
+  const chartData = useMemo(() => {
+    return Object.entries(continentalScores).map(([key, value]) => ({
+      subject: key === 'AMR' ? 'American' : (key === 'EAS' ? 'East Asian' : (key === 'SAS' ? 'South Asian' : (key === 'AFR' ? 'African' : (key === 'EUR' ? 'European' : key)))),
+      A: Number(value),
+      fullMark: 100,
+    }));
+  }, [continentalScores]);
+
+  const hasData = Object.keys(continentalScores).length > 0;
   
   if (!hasData) {
     return (
@@ -26,14 +112,6 @@ export const ModernAncestryOracle = memo(({
       </div>
     );
   }
-  
-  const chartData = useMemo(() => {
-    return Object.entries(primaryAncestry).map(([key, value]) => ({
-      subject: key === 'AMR' ? 'American' : (key === 'EAS' ? 'East Asian' : (key === 'SAS' ? 'South Asian' : (key === 'AFR' ? 'African' : (key === 'EUR' ? 'European' : key)))),
-      A: Number(value),
-      fullMark: 100,
-    }));
-  }, [primaryAncestry]);
   
   const getDisplayName = (code: string) => {
     const map: Record<string, string> = {
@@ -61,9 +139,73 @@ export const ModernAncestryOracle = memo(({
               <p className="text-xs sm:text-sm font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
             </div>
           </div>
+          <div className="flex rounded-lg bg-black/40 p-1">
+            <button
+              onClick={() => setViewMode('primary')}
+              className={`px-4 py-2 text-xs font-black uppercase tracking-widest rounded-md transition-colors ${viewMode === 'primary' ? 'bg-[#4599FF] text-white' : 'text-slate-500 hover:text-slate-300'}`}
+            >
+              Admixture
+            </button>
+            <button
+              onClick={() => setViewMode('comprehensive')}
+              className={`px-4 py-2 text-xs font-black uppercase tracking-widest rounded-md transition-colors ${viewMode === 'comprehensive' ? 'bg-[#4599FF] text-white' : 'text-slate-500 hover:text-slate-300'}`}
+            >
+              High-Res
+            </button>
+            <button
+              onClick={() => setViewMode('painter')}
+              className={`px-4 py-2 text-xs font-black uppercase tracking-widest rounded-md transition-colors ${viewMode === 'painter' ? 'bg-[#4599FF] text-white' : 'text-slate-500 hover:text-slate-300'}`}
+            >
+              Painter
+            </button>
+          </div>
         </div>
-        
-        <div className="mb-10 rounded-2xl frosted-glass border border-white/5 text-[#F5F6F7]">
+
+        {viewMode === 'painter' ? (
+          <div className="space-y-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+               <div>
+                  <h4 className="text-xl font-black text-white">Chromosome Painting</h4>
+                  <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Local Ancestry Inference (LAI) visualization</p>
+               </div>
+               <div className="flex items-center gap-4">
+                 {!localSegments && !results.segments && (
+                   <button 
+                    onClick={runHighResAnalysis}
+                    disabled={calculatingLAI}
+                    className="flex items-center gap-2 px-6 py-4 bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-900 text-white rounded-2xl text-xs font-bold uppercase tracking-widest transition-all shadow-xl shadow-emerald-500/20"
+                   >
+                     {calculatingLAI ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                     {calculatingLAI ? 'Synthesizing...' : 'Run Parallel High-Res LAI'}
+                   </button>
+                 )}
+                 <button 
+                  onClick={exportAncestryReport}
+                  disabled={exporting}
+                  className="flex items-center gap-2 px-6 py-4 bg-[#4599FF] hover:bg-blue-500 disabled:bg-blue-900 text-white rounded-2xl text-xs font-bold uppercase tracking-widest transition-all shadow-xl shadow-blue-500/20"
+                 >
+                   {exporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+                   {exporting ? 'Generating PDF...' : 'Download High-Res Report'}
+                 </button>
+               </div>
+            </div>
+            <div className="min-h-[800px] relative">
+              {calculatingLAI && (
+                <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm rounded-[2rem]">
+                  <div className="w-20 h-20 relative">
+                    <Loader2 className="w-20 h-20 text-emerald-500 animate-spin" />
+                    <Dna className="w-10 h-10 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+                  </div>
+                  <h5 className="text-xl font-black text-white mt-8 tracking-tight">Crunching 22 Chromosomes</h5>
+                  <p className="text-xs text-slate-400 font-bold uppercase tracking-[0.2em] mt-2 italic">Multi-Threaded Worker Pool Active</p>
+                </div>
+              )}
+              <ChromosomePainter ref={painterRef} segments={segmentsToPainter} />
+            </div>
+          </div>
+        ) : (
+          <>
+            <div className="mb-10 rounded-2xl frosted-glass border border-white/5 text-[#F5F6F7]">
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex justify-between items-center p-6 text-left font-bold"
@@ -103,7 +245,7 @@ export const ModernAncestryOracle = memo(({
           </div>
           
           <div className="space-y-4 sm:space-y-6 lg:col-span-1">
-            {Object.entries(primaryAncestry).map(([name, value]) => (
+            {Object.entries(continentalScores).map(([name, value]) => (
               <div key={name} className="flex items-center justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
                 <span className="font-bold text-base sm:text-lg text-[#F5F6F7]">{getDisplayName(name)}</span>
                 <span className="font-mono font-black text-lg sm:text-xl text-[#4599FF]">{Number(value).toFixed(1)}%</span>
@@ -111,7 +253,9 @@ export const ModernAncestryOracle = memo(({
             ))}
           </div>
         </div>
-      </div>
+        </>
+      )}
+    </div>
 
 
       {/* Forensic Detail Section */}

@@ -1,7 +1,7 @@
-import ancientMarkers from './ancient_historical/ancient_dna_markers.json';
+import masterAncient from './master_ancient_profiles.json';
 import popFrequencies from './reference/1000genomes_frequencies.json';
 import aimsAndTraits from './reference/aims_and_traits.json';
-import { ANCESTRY_MARKERS } from './ancestry';
+import masterAims from './master_aims_normalized.json' with { type: 'json' };
 
 export interface PopFrequencyEntry {
   gene?: string;
@@ -30,10 +30,19 @@ export interface AncientMarker {
   }
 }
 
-export const getAncientMarkers = () => ancientMarkers as unknown as Record<string, AncientMarker>;
+export const getAncientMarkers = () => {
+  const data = (masterAncient as any).markers;
+  // Inject metadata for compatibility if expected
+  if ((masterAncient as any).metadata?.ancient_populations) {
+    (data as any)._metadata = { 
+      ancient_populations: (masterAncient as any).metadata.ancient_populations 
+    };
+  }
+  return data as Record<string, AncientMarker>;
+};
 export const getPopFrequencies = () => popFrequencies as Record<string, PopFrequencyEntry | any>;
 export const getAimsAndTraits = () => aimsAndTraits as any;
-export const getAncestryMarkers = () => ANCESTRY_MARKERS;
+export const getAncestryMarkers = () => Object.values(masterAims);
 
 export const findFrequency = (rsid: string, genotype: string, popCode: string) => {
   const entry = (popFrequencies as any)[rsid] as PopFrequencyEntry;

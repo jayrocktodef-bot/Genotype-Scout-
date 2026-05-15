@@ -1,12 +1,23 @@
-import { ANCHOR_AIMS } from '../anchorAims';
+import { ANCHOR_AIMS, loadGlobalAnchors } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
-import { ANCESTRY_MARKERS } from '../data/ancestry';
 import { imputeTargetedGenotypes } from './imputationService';
 import { getPopFrequencies, PopFrequencyEntry, findFrequency } from '../data/GenomicDataService';
 
-const ANCHOR_AIMS_TYPE = ANCHOR_AIMS;
 const anchorMap = new Map(ANCHOR_AIMS.map(a => [a.rsid.toLowerCase(), a]));
 const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
+
+// We'll populate these dynamically if global anchors are loaded
+let extendedAnchorMap = new Map(anchorMap);
+let extendedAnchorRsids = new Set(anchorRsids);
+
+export async function initializeGlobalAnchors() {
+  const global = await loadGlobalAnchors();
+  Object.entries(global).forEach(([id, aim]) => {
+    extendedAnchorMap.set(id.toLowerCase(), aim);
+    extendedAnchorRsids.add(id.toLowerCase());
+  });
+  console.log(`📡 Ancestry Engine: Integrated ${Object.keys(global).length} Global Anchors`);
+}
 
 const POP_CODE_TO_REGION: Record<string, string> = {
   'GBR': 'EUR', 'CEU': 'EUR', 'FIN': 'EUR', 'IBS': 'EUR', 'TSI': 'EUR',
@@ -136,7 +147,8 @@ export function runAncestryInference(
   userGenotype: Record<string, string>,
   yHaploRegion?: string | null,
   mtHaploRegion?: string | null,
-  isPrimary: boolean = false
+  isPrimary: boolean = false,
+  priorResults?: { graf?: any, k27?: any }
 ): AncestryInferenceResult {
   const continentsToScore = [
     'African', 'European', 'East Asian', 'South Asian', 
@@ -146,6 +158,28 @@ export function runAncestryInference(
   if (allMarkers.length === 0) {
     return { continentalScores: {}, regionalScores: {}, deepScores: {}, continents: [], subPopulations: {}, subPopMarkers: {}, confidenceScore: 0, chromosomeData: {}, confidenceIntervals: {} };
   }
+
+  // Helper: Marker QC
+  const isReliable = (m: any) => {
+    // Basic QC: Filter markers with extremely low or missing significance
+    return m.significance !== 'Low';
+  };
+
+  // Helper: Consensus Weighting
+  const getPriorAdjustment = (m: any, continent: string) => {
+    if (!priorResults) return 1.0;
+    
+    let boost = 1.0;
+    // Simple consensus: boost if continent matches top results from engines
+    const checkEngine = (res: any) => {
+      if (res && res.continentalScores && res.continentalScores[continent] > 30) {
+        boost += 0.5;
+      }
+    };
+    checkEngine(priorResults.graf);
+    checkEngine(priorResults.k27);
+    return boost;
+  };
 
   // 2. Segment-Based Continental Analysis (Windowing)
   const WINDOW_SIZE = 40; // SNPs per window
@@ -169,13 +203,14 @@ export function runAncestryInference(
     
     for (const m of markers) {
       // If a marker is explicitly an anchor AIM, we prefer to keep it even if slightly close
-      const isAnchor = anchorRsids.has((m.rsid || m.markerId).toLowerCase());
+      const rsidKey = (m.rsid || m.markerId).toLowerCase();
+      const isAnchor = extendedAnchorRsids.has(rsidKey);
       const pruneDist = isAnchor ? 25000 : 50000; // 25kb for AIMs, 50kb for others
       
       if (m.pos - lastPos > pruneDist) {
         pruned.push(m);
         lastPos = m.pos;
-      } else if (isAnchor && !anchorRsids.has((pruned[pruned.length - 1]?.rsid || pruned[pruned.length - 1]?.markerId)?.toLowerCase())) {
+      } else if (isAnchor && !extendedAnchorRsids.has((pruned[pruned.length - 1]?.rsid || pruned[pruned.length - 1]?.markerId)?.toLowerCase())) {
         // If current is anchor and previous wasn't, swap them to prioritize anchor
         pruned[pruned.length - 1] = m;
         lastPos = m.pos;
@@ -241,6 +276,7 @@ export function runAncestryInference(
       const windowWeights: number[] = [];
 
       for (const marker of window) {
+        if (!isReliable(marker)) continue;
         const rsid = (marker.rsid || marker.markerId).toLowerCase();
         const genotype = userGenotype[rsid] || marker.genotype;
         if (!genotype) continue;
@@ -258,7 +294,7 @@ export function runAncestryInference(
         windowGenotypes.push(matchCount);
         
         const markerFreqs: number[] = [];
-        const aim = anchorMap.get(rsid);
+        const aim = extendedAnchorMap.get(rsid);
 
         for (const continent of continentsToScore) {
           let freq = 0.01; 
@@ -314,7 +350,7 @@ export function runAncestryInference(
         }, 0);
         const markerInformativeValue = Math.max(0.1, 1 / (markerEntropy + 0.1));
 
-        const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+        const isHeavy = extendedAnchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
         const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
         const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
         let weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
@@ -437,7 +473,7 @@ export function runAncestryInference(
             const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
             if (weightFactor === 0) continue;
 
-            const aim = anchorMap.get(rsid);
+            const aim = extendedAnchorMap.get(rsid);
             let freq = 0.01;
             const code = CONTINENT_TO_CODE[continent];
 
@@ -457,7 +493,7 @@ export function runAncestryInference(
 
             const f = Math.max(0.001, Math.min(0.999, freq));
             const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
-            const isHeavy = anchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+            const isHeavy = extendedAnchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
             const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
             const weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
             
@@ -522,8 +558,9 @@ export function runAncestryInference(
       }
     });
   };
-  applyHaploWeight(yHaploRegion);
-  applyHaploWeight(mtHaploRegion);
+  // Removed haplogroup weighing
+  // applyHaploWeight(yHaploRegion);
+  // applyHaploWeight(mtHaploRegion);
 
   const totalSegments = Object.values(continentalCounts).reduce((a, b) => a + b, 0);
   const continentalScores: Record<string, number> = {};
@@ -581,6 +618,7 @@ export function runAncestryInference(
   }
 
   // Apply mtDNA Haplogroup Prior (ignoring ydna)
+  /*
   if (mtHaploRegion) {
     const BIAS_FACTOR = 1.15; // 15% gentle bias
     
@@ -602,6 +640,7 @@ export function runAncestryInference(
        continentalScores[targetContinent] *= BIAS_FACTOR;
     }
   }
+  */
 
   const filteredContinental = Object.entries(continentalScores).filter(([_, p]) => p > 0);
   const totalFiltered = filteredContinental.reduce((s, [_, p]) => s + p, 0);
@@ -667,7 +706,10 @@ export function runAncestryInference(
   };
 }
 
-export function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null) {
+export async function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null, grafResults?: any, k27Results?: any, comprehensiveResults?: any) {
+  // Ensure global anchors are loaded
+  await initializeGlobalAnchors();
+
   const userGenotype: Record<string, string> = {};
   results.forEach(r => {
     const rsid = (r.rsid || r.markerId).toLowerCase();
@@ -696,22 +738,27 @@ export function calculateAncestryOracle(results: any[], yHaploRegion?: string | 
   };
 
   const primaryMarkers = sortMarkers(results.filter(r => 
+    isAutosomal(r) && extendedAnchorRsids.has((r.rsid || r.markerId).toLowerCase())
+  ));
+
+  const comprehensiveMarkers = sortMarkers(results.filter(r => 
     isAutosomal(r) && (r.genotype || r.status === 'matched' || r.status === 'partial')
   ));
 
   const secondaryMarkers = sortMarkers(results.filter(r => 
     isAutosomal(r) && 
-    (anchorRsids.has((r.rsid || r.markerId).toLowerCase()) || r.category === 'Ancestry' || r.category === 'Health')
+    (extendedAnchorRsids.has((r.rsid || r.markerId).toLowerCase()) || r.category === 'Ancestry' || r.category === 'Health')
   ));
 
   const commercialMarkers = sortMarkers(results.filter(r => 
     isAutosomal(r) && 
-    anchorRsids.has((r.rsid || r.markerId).toLowerCase().split('_')[0])
+    extendedAnchorRsids.has((r.rsid || r.markerId).toLowerCase().split('_')[0])
   ));
 
   return {
-    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true),
-    secondary: runAncestryInference(secondaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false),
-    commercial: runAncestryInference(commercialMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false)
+    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, k27: k27Results }),
+    comprehensive: comprehensiveResults ? { continentalScores: comprehensiveResults, regionalScores: {}, deepScores: {}, continents: Object.keys(comprehensiveResults), subPopulations: {}, subPopMarkers: {}, confidenceScore: 0, chromosomeData: {}, confidenceIntervals: {} } : runAncestryInference(comprehensiveMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false, { graf: grafResults, k27: k27Results }),
+    secondary: runAncestryInference(secondaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false, { graf: grafResults, k27: k27Results }),
+    commercial: runAncestryInference(commercialMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false, { graf: grafResults, k27: k27Results })
   };
 }
