@@ -11,7 +11,8 @@ const POP_COLORS: Record<string, string> = {
   SAS: '#f59e0b',
   AMR: '#a855f7',
   OCE: '#06b6d4',
-  MID: '#f97316'
+  MID: '#f97316',
+  OTHER: '#64748b'
 };
 
 interface Segment {
@@ -78,7 +79,7 @@ export const ChromosomePainter = forwardRef<ChromosomePainterRef, ChromosomePain
       chromSegments.forEach(seg => {
         const segY = y + (seg.start / maxLen) * usableHeight;
         const segH = ((seg.end - seg.start) / maxLen) * usableHeight;
-        ctx.fillStyle = POP_COLORS[seg.continent] || '#475569';
+        ctx.fillStyle = POP_COLORS[seg.continent] || POP_COLORS['OTHER'];
         ctx.beginPath();
         ctx.roundRect(x, segY, chromWidth, Math.max(2 * scale, segH), 2 * scale);
         ctx.fill();
@@ -126,7 +127,7 @@ export const ChromosomePainter = forwardRef<ChromosomePainterRef, ChromosomePain
         className="max-w-full h-auto rounded-xl"
       />
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        {Object.entries(POP_COLORS).map(([pop, color]) => (
+        {Object.entries(POP_COLORS).filter(([pop]) => pop !== 'OTHER').map(([pop, color]) => (
             <div key={pop} className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }}></div>
                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{pop}</span>
