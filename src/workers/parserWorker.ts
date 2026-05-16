@@ -16,8 +16,9 @@ self.onmessage = async (e: MessageEvent) => {
 
       let format = "Unknown";
       let chip = "Unknown Chip";
-      const header = text.slice(0, 5000);
       
+      // Determine format without scanning the entire file
+      const header = text.slice(0, 5000);
       if (header.includes("23andMe")) {
         format = "23andMe";
         if (header.includes("v5")) chip = "23andMe v5 (GSA)";
@@ -38,17 +39,26 @@ self.onmessage = async (e: MessageEvent) => {
       }
 
       const isVCF = format === "VCF";
-      const lines = text.split(/\r?\n/);
       const parsedData: any[] = [];
+      const textLen = text.length;
+      let startIdx = 0;
+      let lineCount = 0;
 
-      for (let i = 0; i < lines.length; i++) {
-        let line = lines[i].trim();
-        if (!line || line.startsWith('#')) continue;
+      // Efficient line-by-line scanning without creating a massive array
+      while (startIdx < textLen) {
+        let endIdx = text.indexOf('\n', startIdx);
+        if (endIdx === -1) endIdx = textLen;
         
-        let rsid: string = "";
-        let chromosome: string = "";
-        let position: number = NaN;
-        let genotype: string = "";
+        const line = text.substring(startIdx, endIdx).trim();
+        startIdx = endIdx + 1;
+        
+        if (!line || line.startsWith('#')) continue;
+        lineCount++;
+        
+        let rsid = "";
+        let chromosome = "";
+        let position = NaN;
+        let genotype = "";
 
         if (isVCF) {
           const parts = line.split('\t');
@@ -68,8 +78,8 @@ self.onmessage = async (e: MessageEvent) => {
             else if (gt === '1/1') genotype = alt + alt;
           }
         } else {
-          const lowerLine = line.toLowerCase();
-          if (lowerLine.startsWith('rsid') || lowerLine.startsWith('snp') || lowerLine.startsWith('marker')) continue;
+          // Fast skip for header lines
+          if (lineCount === 1 && (line.toLowerCase().startsWith('rsid') || line.toLowerCase().startsWith('snp') || line.toLowerCase().startsWith('marker'))) continue;
 
           const parts = line.replace(/"/g, "").split(/[\t, ]+/);
           if (parts.length < 3) continue;
@@ -83,21 +93,22 @@ self.onmessage = async (e: MessageEvent) => {
              if (isNaN(position)) continue;
           }
           
-          if (parts.length >= 5 && parts[3] && parts[4] && parts[3].length === 1 && parts[4].length === 1) {
-            const a1 = parts[3].toUpperCase();
-            const a2 = parts[4].toUpperCase();
-            if (a1 !== '0' && a1 !== '-' && a2 !== '0' && a2 !== '-') genotype = a1 + a2;
-          } else if (parts.length >= 4) {
-            genotype = parts[3].toUpperCase();
+          // Optimized genotype extraction
+          const col3 = parts[3];
+          const col4 = parts[4];
+          if (col3 && col4 && col3.length === 1 && col4.length === 1) {
+             if (col3 !== '0' && col3 !== '-' && col4 !== '0' && col4 !== '-') genotype = col3.toUpperCase() + col4.toUpperCase();
+          } else if (col3) {
+            genotype = col3.toUpperCase();
           }
         }
 
-        if (genotype && genotype !== "--" && genotype !== "00" && /^[ACTGDI]{1,2}$/i.test(genotype)) {
+        if (genotype && genotype !== "--" && genotype !== "00" && genotype.length <= 2) {
           parsedData.push({ rsid, chromosome, position, genotype });
         }
 
-        if (i % 50000 === 0 && i > 0) {
-          self.postMessage({ type: 'PROGRESS', current: i, total: lines.length });
+        if (lineCount % 50000 === 0) {
+          self.postMessage({ type: 'PROGRESS', current: lineCount, total: 0 }); // Total lines unknown
         }
       }
 
