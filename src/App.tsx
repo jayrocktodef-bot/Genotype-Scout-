@@ -214,7 +214,6 @@ const ProfileSummary = memo(({
   famousMatches?: any[],
   healthImpacts?: any[]
 }) => {
-  const [oracleMode, setOracleMode] = useState<'primary' | 'comprehensive'>('primary');
   const dataset = datasets[activeDatasetIndex];
 
   const statisticalInsights = useMemo(() => {
@@ -233,7 +232,7 @@ const ProfileSummary = memo(({
   const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
   const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
   
-  const currentOracle = oracleMode === 'primary' ? oracleResults?.primary : oracleResults?.comprehensive;
+  const currentOracle = oracleResults?.primary;
   const ancestryScores = currentOracle?.continentalScores || {};
   const topProximity = populationProximity.slice(0, 3);
   
@@ -256,20 +255,6 @@ const ProfileSummary = memo(({
               <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Origins & Genetic Clusters</p>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex p-1 bg-slate-100 rounded-lg border border-slate-200">
-                <button
-                  onClick={() => setOracleMode('primary')}
-                  className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-md transition-all ${oracleMode === 'primary' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-500 hover:text-slate-700'}`}
-                >
-                  Primary
-                </button>
-                <button
-                  onClick={() => setOracleMode('comprehensive')}
-                  className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-md transition-all ${oracleMode === 'comprehensive' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-500 hover:text-slate-700'}`}
-                >
-                  Comp
-                </button>
-              </div>
               <div className="hidden sm:flex items-center gap-3">
                 <div className="flex flex-col items-end">
                   <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Rigor</span>
@@ -773,18 +758,10 @@ const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
 };
 
 const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelectedSubPop }: { oracleResults: any, ancestrySnps: any[], selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
-  const [activeOracle, setActiveOracle] = useState<'primary' | 'comprehensive' | 'secondary' | 'commercial'>('primary');
-
   const currentData = useMemo(() => {
     if (!oracleResults) return null;
-    return activeOracle === 'primary' 
-      ? oracleResults.primary 
-      : activeOracle === 'comprehensive'
-        ? oracleResults.comprehensive
-        : activeOracle === 'secondary' 
-          ? oracleResults.secondary 
-          : oracleResults.commercial;
-  }, [oracleResults, activeOracle]);
+    return oracleResults.primary;
+  }, [oracleResults]);
 
   const endogamyScore = useMemo(() => {
     if (!currentData?.segments) return 0;
@@ -826,55 +803,10 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
     <div className="mt-12 p-6 border-2 border-indigo-200 dark:border-indigo-800/50 rounded-xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 shadow-sm">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
         <h2 className="text-xl font-bold text-indigo-900 dark:text-indigo-400">Ancestry Oracle Prediction</h2>
-        
-        <div className="flex p-1 bg-indigo-100 dark:bg-indigo-900/40 rounded-lg border border-indigo-200 dark:border-indigo-800">
-          <div className="relative group">
-            <button 
-              onClick={() => { setActiveOracle('primary'); setSelectedSubPop(null); }}
-              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'primary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
-            >
-              Primary
-            </button>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
-              High-confidence anchors only.
-              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
-            </div>
-          </div>
-          <div className="relative group">
-            <button 
-              onClick={() => { setActiveOracle('comprehensive'); setSelectedSubPop(null); }}
-              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'comprehensive' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
-            >
-              Comprehensive
-            </button>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
-              Uses the full 10,000+ SNP global AIMs database.
-              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
-            </div>
-          </div>
-          <div className="relative group">
-            <button 
-              onClick={() => { setActiveOracle('secondary'); setSelectedSubPop(null); }}
-              className={`px-4 py-1.5 text-xs font-bold rounded-md transition-all ${activeOracle === 'secondary' ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-sm' : 'text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300'}`}
-            >
-              Secondary
-            </button>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-slate-800 dark:bg-slate-700 text-white text-[10px] rounded-lg shadow-xl z-50 pointer-events-none border border-slate-700 dark:border-slate-600">
-              Broad markers & traits.
-              <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800 dark:border-t-slate-700"></div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div className="mb-6 p-4 bg-white/50 dark:bg-slate-800/30 rounded-lg border border-indigo-100 dark:border-indigo-800/30 text-xs text-indigo-800 dark:text-indigo-300 leading-relaxed">
-        {activeOracle === 'primary' ? (
-          <p><strong>Primary Mode:</strong> Uses only high-quality anchor AIMs for the most stable, conservative prediction.</p>
-        ) : activeOracle === 'comprehensive' ? (
-          <p><strong>Comprehensive Mode:</strong> Leverages the full 10,000+ marker master database, including microhaplotypes, for ultra-fine-grained detection.</p>
-        ) : (
-          <p><strong>Secondary Mode:</strong> Uses broader markers and associated traits for an exploratory overview.</p>
-        )}
+        <p><strong>Primary Mode:</strong> Uses only high-quality anchor AIMs for the most stable, conservative prediction.</p>
       </div>
       
       <div className="space-y-8">
@@ -1977,9 +1909,6 @@ export default function App() {
 
     return {
       primary: processOracle(oracle.primary),
-      comprehensive: processOracle(oracle.comprehensive),
-      secondary: processOracle(oracle.secondary),
-      commercial: processOracle(oracle.commercial),
       engine: k27Results
     };
   }, [datasets, activeDatasetIndex, k27Results]);

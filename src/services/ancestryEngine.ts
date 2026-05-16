@@ -756,9 +756,6 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
   ));
 
   return {
-    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, k27: k27Results }),
-    comprehensive: comprehensiveResults ? { continentalScores: comprehensiveResults, regionalScores: {}, deepScores: {}, continents: Object.keys(comprehensiveResults), subPopulations: {}, subPopMarkers: {}, confidenceScore: 0, chromosomeData: {}, confidenceIntervals: {} } : runAncestryInference(comprehensiveMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false, { graf: grafResults, k27: k27Results }),
-    secondary: runAncestryInference(secondaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false, { graf: grafResults, k27: k27Results }),
-    commercial: runAncestryInference(commercialMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, false, { graf: grafResults, k27: k27Results })
+    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, k27: k27Results })
   };
 }

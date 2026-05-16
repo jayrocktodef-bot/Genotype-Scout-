@@ -54,8 +54,5 @@ describe('calculateAncestryOracle', () => {
     const oracle = await calculateAncestryOracle(results);
     
     expect(oracle.primary).toBeDefined();
-    expect(oracle.comprehensive).toBeDefined();
-    expect(oracle.secondary).toBeDefined();
-    expect(oracle.commercial).toBeDefined();
   });
 });
