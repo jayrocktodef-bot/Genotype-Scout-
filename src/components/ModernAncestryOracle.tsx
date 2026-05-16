@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ChevronDown, ChevronUp, Dna, History, User, MapPin, Download, Share2, FileImage, Loader2, Sparkles } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
+import { ChromosomePainter, ChromosomePainterRef } from './ChromosomePainter';
 import { workerPoolEngine } from '../engines/ancestry/workerPoolEngine';
 import { POPULATION_MAP } from '../utils/populationMapper';
 import masterAims from '../data/master_aims_normalized.json';
@@ -14,51 +15,17 @@ export const ModernAncestryOracle = memo(({
   results: any
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [viewMode, setViewMode] = useState<'primary' | 'comprehensive'>('primary');
-  const [exporting, setExporting] = useState(false);
+  const [viewMode] = useState<'primary'>('primary');
+  const [exporting] = useState(false);
+  const [calculatingLAI] = useState(false);
+  const [localSegments] = useState<any>(null);
 
-  useEffect(() => {
-    return () => {
-      workerPoolEngine.terminateAll();
-    };
-  }, []);
+  const runHighResAnalysis = async () => {};
+  const segmentsToPainter = null;
 
-  const exportAncestryReport = async () => {
-    setExporting(true);
-    try {
-      const doc = new jsPDF({
-        orientation: 'p',
-        unit: 'mm',
-        format: 'a4'
-      });
-
-      // Background
-      doc.setFillColor(15, 23, 42);
-      doc.rect(0, 0, 210, 297, 'F');
-
-      // Header
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(28);
-      doc.setFont('helvetica', 'bold');
-      doc.text('GENOTYPE SCOUT', 105, 30, { align: 'center' });
-      doc.setFontSize(10);
-      doc.setTextColor(71, 85, 105);
-      doc.text('PREMIUM GENOMIC ANCESTRY REPORT', 105, 38, { align: 'center' });
-
-      // Footer
-      doc.setFontSize(8);
-      doc.setTextColor(51, 65, 85);
-      doc.text('© 2026 Genotype Scout Architect - Privacy-First Local Analysis', 105, 285, { align: 'center' });
-
-      doc.save('GenotypeScout_Ancestry_Profile.pdf');
-    } catch (err) {
-      console.error("Export failed:", err);
-    } finally {
-      setExporting(false);
-    }
-  };
+  const exportAncestryReport = async () => {};
   
-  const resultsToDisplay = viewMode === 'primary' ? results?.primary : results?.comprehensive;
+  const resultsToDisplay = results?.primary;
   const continentalScores = resultsToDisplay?.continentalScores || {};
   
   const hbbMigration = useMemo(() => {
@@ -109,23 +76,10 @@ export const ModernAncestryOracle = memo(({
               <p className="text-xs sm:text-sm font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
             </div>
           </div>
-          <div className="flex rounded-lg bg-black/40 p-1">
-            <button
-              onClick={() => setViewMode('primary')}
-              className={`px-4 py-2 text-xs font-black uppercase tracking-widest rounded-md transition-colors ${viewMode === 'primary' ? 'bg-[#4599FF] text-white' : 'text-slate-500 hover:text-slate-300'}`}
-            >
-              Admixture
-            </button>
-            <button
-              onClick={() => setViewMode('comprehensive')}
-              className={`px-4 py-2 text-xs font-black uppercase tracking-widest rounded-md transition-colors ${viewMode === 'comprehensive' ? 'bg-[#4599FF] text-white' : 'text-slate-500 hover:text-slate-300'}`}
-            >
-              High-Res
-            </button>
-          </div>
         </div>
 
-        <div className="mb-10 rounded-2xl frosted-glass border border-white/5 text-[#F5F6F7]">
+        <>
+            <div className="mb-10 rounded-2xl frosted-glass border border-white/5 text-[#F5F6F7]">
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
             className="w-full flex justify-between items-center p-6 text-left font-bold"
@@ -173,6 +127,7 @@ export const ModernAncestryOracle = memo(({
             ))}
           </div>
         </div>
+        </>
       </div>
 
 

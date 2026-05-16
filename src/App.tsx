@@ -32,8 +32,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, 
 import { jsPDF } from "jspdf";
 import { groupByCategory, CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
 import { ANCHOR_AIMS } from "./anchorAims";
-import { saveResults, loadResults, clearResults } from "./services/storage/results";
-import { saveParsedDNA, getParsedDNA } from "./services/storage/encrypted";
+import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { calculateFamousMatches } from "./utils/individualMatching";
 import { matchHealthAndWellness } from "./utils/healthMatching";
@@ -1719,7 +1718,6 @@ export default function App() {
 
   const [explorerSearch, setExplorerSearch] = useState<string>('');
   const [processing, setProcessing] = useState(false);
-  const [isParsing, setIsParsing] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1775,14 +1773,7 @@ export default function App() {
   useEffect(() => {
     const init = async () => {
       const saved = await loadResults();
-      if (saved) {
-        setDatasets(saved);
-        // Load encrypted DNA maps for all datasets
-        for (let i = 0; i < saved.length; i++) {
-          const map = await getParsedDNA(`dna_map_${i}`);
-          if (map) snpMaps.current[i] = map;
-        }
-      }
+      if (saved) setDatasets(saved);
     };
     init();
   }, []);
@@ -1796,15 +1787,9 @@ export default function App() {
     predictedMtDNA?: any,
     mergedMtMap?: Record<string, string>,
     analysis?: any
-  }, snpMap?: any) => {
-    const newIndex = datasets.length;
+  }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
-    
-    // Save the DNA map with encryption
-    if (snpMap) {
-      await saveParsedDNA(`dna_map_${newIndex}`, snpMap);
-    }
     
     // Update local GRAF results state if available in the newest dataset
     if (newDataset.analysis?.k27Results) {
@@ -1897,51 +1882,22 @@ export default function App() {
     }
 
     try {
-      setError(null);
-      
-      // Handle ZIP files
-      const finalFiles: (File | Blob)[] = [];
-      const { default: JSZip } = await import('jszip');
-      
-      for (const file of fileArray) {
-        if (file.name.toLowerCase().endsWith('.zip')) {
-          const zip = await JSZip.loadAsync(file);
-          const zipFiles = Object.keys(zip.files).filter(name => !zip.files[name].dir && !name.includes('MACOSX'));
-          for (const zipFileName of zipFiles) {
-            const content = await zip.files[zipFileName].async('blob');
-            (content as any).name = zipFileName;
-            finalFiles.push(content);
-          }
-        } else {
-          finalFiles.push(file);
-        }
-      }
-
-      if (finalFiles.length === 0) throw new Error("No valid files found.");
-
-      setIsParsing(true);
-      const parsedResults = await Promise.all(finalFiles.map(file => {
-        return new Promise<any>((resolve, reject) => {
-          const parser = new Worker(new URL('./workers/parserWorker.ts', import.meta.url), { type: 'module' });
-          parser.onmessage = (e) => {
-            if (e.data.type === 'SUCCESS') {
-              parser.terminate();
-              resolve(e.data);
-            } else if (e.data.type === 'ERROR') {
-              parser.terminate();
-              reject(new Error(e.data.error || "Parsing failed"));
+      const fileContents = await Promise.all(fileArray.map(file => {
+        return new Promise<{ buffer: ArrayBuffer, name: string }>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const buffer = e.target?.result as ArrayBuffer;
+            if (!buffer || buffer.byteLength === 0) {
+              reject(new Error(`File ${file.name} is empty.`));
+            } else {
+              resolve({ buffer, name: file.name });
             }
           };
-          parser.onerror = (err) => {
-            parser.terminate();
-            reject(err);
-          };
-          parser.postMessage({ type: 'PARSE_FILE', file });
+          reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
+          reader.readAsArrayBuffer(file);
         });
       }));
-      setIsParsing(false);
 
-      setProcessing(true);
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
       worker.onmessage = (e) => {
@@ -1958,7 +1914,7 @@ export default function App() {
             predictedMtDNA: payload.predictedMtDNA,
             mergedMtMap: payload.mergedMtMap,
             analysis: payload.analysis
-          }, payload.mergedSnpMap);
+          });
           setPendingFiles([]);
           setProcessing(false);
           worker.terminate();
@@ -1975,12 +1931,12 @@ export default function App() {
         worker.terminate();
       };
 
-      worker.postMessage({ type: 'PROCESS_PARSED_DATA', data: parsedResults });
+      const transferList = fileContents.map(f => f.buffer);
+      worker.postMessage({ type: 'PROCESS_GENOME', files: fileContents }, transferList);
     } catch (err) {
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
       setProcessing(false);
-      setIsParsing(false);
     }
   }, [datasets]);
 
@@ -2132,7 +2088,7 @@ export default function App() {
       />
 
       <main className="max-w-7xl mx-auto px-6 pt-28">
-        {(processing || isParsing) && !results && (
+        {processing && (
           <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up">
             <motion.div 
               animate={{ rotate: 360 }}
@@ -2141,22 +2097,18 @@ export default function App() {
             >
               🧬
             </motion.div>
-            <h2 className="text-3xl font-black text-slate-800 mb-4 tracking-tight">
-              {isParsing ? 'Parsing DNA File...' : 'Decrypting your genome...'}
-            </h2>
+            <h2 className="text-3xl font-black text-slate-800 mb-4 tracking-tight">Decrypting your genome...</h2>
             <p className="text-slate-500 max-w-md mx-auto leading-relaxed">
-              {isParsing 
-                ? "Reading and normalizing genomic markers in a dedicated background worker..." 
-                : "We're analyzing over 11,000 markers to reconstruct your genetic story. This happens locally and securely."}
+              We're analyzing over 11,000 markers to reconstruct your genetic story. 
+              This happens locally and securely.
             </p>
           </div>
         )}
 
-        {!results && !processing && !isParsing && (
+        {!results && !processing && (
           <HeroUpload 
             onFiles={(files) => processFiles(files)} 
             processing={processing} 
-            isParsing={isParsing}
             onReset={resetApp}
           />
         )}

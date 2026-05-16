@@ -132,8 +132,10 @@ function buildMasterAims() {
   const compiledData = Object.fromEntries(globalAimMap);
   const outputPath = path.resolve(__dirname, '../src/data/master_aims_normalized.json');
 
-  // Write to disk
-  fs.writeFileSync(outputPath, JSON.stringify(compiledData, null, 2));
+  // Write to disk (Streamed)
+  const stream = fs.createWriteStream(outputPath);
+  stream.write(JSON.stringify(compiledData, null, 2)); // Wait, if compiledData is a huge object in memory, this still strings it all at once...
+  stream.end();
 
   // Print Summary
   console.log('\n✅ Compilation Complete!');

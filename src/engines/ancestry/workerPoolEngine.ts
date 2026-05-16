@@ -15,33 +15,11 @@ export class WorkerPoolEngine {
     this.maxWorkers = navigator.hardwareConcurrency || 4;
   }
 
-  private async initPool(aimsDatabase: any, populations: string[]) {
-    const poolSize = navigator.hardwareConcurrency || 4;
-    
-    // Always update database for existing workers, or create them
-    const initPromises = [];
-    for (let i = 0; i < poolSize; i++) {
-      let worker;
-      if (this.workers[i]) {
-        worker = this.workers[i];
-      } else {
-        worker = new Worker(new URL('../../workers/rfmixWorker.ts', import.meta.url), { type: 'module' });
-        this.workers.push(worker);
-      }
-      
-      const p = new Promise<void>((resolve) => {
-        const onMsg = (e: MessageEvent) => {
-          if (e.data.type === 'DATABASE_SET') {
-            worker.removeEventListener('message', onMsg);
-            resolve();
-          }
-        };
-        worker.addEventListener('message', onMsg);
-        worker.postMessage({ type: 'SET_DATABASE', payload: { aimsDatabase, populations }});
-      });
-      initPromises.push(p);
+  private initPool() {
+    if (this.workers.length > 0) return;
+    for (let i = 0; i < this.maxWorkers; i++) {
+      this.workers.push(new Worker(new URL('../../workers/rfmixWorker.ts', import.meta.url), { type: 'module' }));
     }
-    await Promise.all(initPromises);
   }
 
   public async runParallelAncestry(
@@ -51,8 +29,8 @@ export class WorkerPoolEngine {
     smoothness: number = 20,
     windowSize: number = 40,
     stepSize: number = 20
-  ): Promise<Record<string, { A: LAISegment[], B: LAISegment[] }>> {
-    await this.initPool(aimsDatabase, populations);
+  ): Promise<Record<string, LAISegment[]>> {
+    this.initPool();
 
     // Group snps by chromosome
     const chromTasks: Record<string, any[]> = {};
@@ -142,19 +120,20 @@ export class WorkerPoolEngine {
 
   private reassemble(
     workerResults: any[],
-    _populations: string[],
-    _chromTasks: Record<string, any[]>
-  ): Record<string, { A: LAISegment[], B: LAISegment[] }> {
-    const finalSegments: Record<string, { A: LAISegment[], B: LAISegment[] }> = {};
+    populations: string[],
+    chromTasks: Record<string, any[]>
+  ): Record<string, LAISegment[]> {
+    const finalSegments: Record<string, LAISegment[]> = {};
 
     workerResults.forEach(res => {
-      const { chromosome, resultStrandA, resultStrandB, isCompressed } = res;
+      const { chromosome, resultStrandA, resultStrandB, nWindows, nPopulations } = res;
+      const chromSnps = chromTasks[chromosome].sort((a, b) => a.pos - b.pos);
       
-      if (isCompressed) {
-        const decodedA = JSON.parse(new TextDecoder().decode(resultStrandA));
-        const decodedB = JSON.parse(new TextDecoder().decode(resultStrandB));
-        finalSegments[chromosome] = { A: decodedA, B: decodedB };
-      }
+      // Extract segments from Strand A (Primary)
+      finalSegments[chromosome] = this.extractTracts(resultStrandA, nWindows, nPopulations, populations, chromSnps);
+      
+      // Optionally combine with Strand B or keep as separate tracks if UI supports it.
+      // For standard ChromosomePainter, we'll merge them or just use Strand A for now.
     });
 
     return finalSegments;
