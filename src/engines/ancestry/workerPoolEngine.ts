@@ -15,11 +15,33 @@ export class WorkerPoolEngine {
     this.maxWorkers = navigator.hardwareConcurrency || 4;
   }
 
-  private initPool() {
-    if (this.workers.length > 0) return;
-    for (let i = 0; i < this.maxWorkers; i++) {
-      this.workers.push(new Worker(new URL('../../workers/rfmixWorker.ts', import.meta.url), { type: 'module' }));
+  private async initPool(aimsDatabase: any, populations: string[]) {
+    const poolSize = navigator.hardwareConcurrency || 4;
+    
+    // Always update database for existing workers, or create them
+    const initPromises = [];
+    for (let i = 0; i < poolSize; i++) {
+      let worker;
+      if (this.workers[i]) {
+        worker = this.workers[i];
+      } else {
+        worker = new Worker(new URL('../../workers/rfmixWorker.ts', import.meta.url), { type: 'module' });
+        this.workers.push(worker);
+      }
+      
+      const p = new Promise<void>((resolve) => {
+        const onMsg = (e: MessageEvent) => {
+          if (e.data.type === 'DATABASE_SET') {
+            worker.removeEventListener('message', onMsg);
+            resolve();
+          }
+        };
+        worker.addEventListener('message', onMsg);
+        worker.postMessage({ type: 'SET_DATABASE', payload: { aimsDatabase, populations }});
+      });
+      initPromises.push(p);
     }
+    await Promise.all(initPromises);
   }
 
   public async runParallelAncestry(
@@ -29,8 +51,8 @@ export class WorkerPoolEngine {
     smoothness: number = 20,
     windowSize: number = 40,
     stepSize: number = 20
-  ): Promise<Record<string, LAISegment[]>> {
-    this.initPool();
+  ): Promise<Record<string, { A: LAISegment[], B: LAISegment[] }>> {
+    await this.initPool(aimsDatabase, populations);
 
     // Group snps by chromosome
     const chromTasks: Record<string, any[]> = {};
@@ -122,21 +144,16 @@ export class WorkerPoolEngine {
     workerResults: any[],
     _populations: string[],
     _chromTasks: Record<string, any[]>
-  ): Record<string, LAISegment[]> {
-    const finalSegments: Record<string, LAISegment[]> = {};
+  ): Record<string, { A: LAISegment[], B: LAISegment[] }> {
+    const finalSegments: Record<string, { A: LAISegment[], B: LAISegment[] }> = {};
 
     workerResults.forEach(res => {
-      const { chromosome, resultStrandA, isCompressed } = res;
+      const { chromosome, resultStrandA, resultStrandB, isCompressed } = res;
       
       if (isCompressed) {
         const decodedA = JSON.parse(new TextDecoder().decode(resultStrandA));
-        finalSegments[chromosome] = decodedA;
-      } else {
-        // Fallback for non-compressed results if any
-        const { resultStrandA: rawA, nWindows, nPopulations, populations, chromSnps } = res;
-        if (rawA && nWindows) {
-           finalSegments[chromosome] = this.extractTracts(rawA, nWindows, nPopulations, populations, chromSnps);
-        }
+        const decodedB = JSON.parse(new TextDecoder().decode(resultStrandB));
+        finalSegments[chromosome] = { A: decodedA, B: decodedB };
       }
     });
 

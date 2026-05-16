@@ -28,6 +28,8 @@ interface RFMixTask {
 }
 
 let wasmEngine: any = null;
+let globalAimsDatabase: Record<string, any> | null = null;
+let globalPopulations: string[] | null = null;
 
 /**
  * Attempt to load the Wasm module if available
@@ -139,8 +141,21 @@ function calculateRawProbs(
     return { rawProbs, nWindows, markerToWindow, windowIndices };
 }
 
-self.onmessage = async (e: MessageEvent<RFMixTask>) => {
+self.onmessage = async (e: MessageEvent<any>) => {
     const { type, payload } = e.data;
+
+    if (type === 'SET_DATABASE') {
+        const { aimsDatabase, populations } = payload;
+        // 0. Sanitize Aims Database to handle RSID suffixes (e.g., _AFR)
+        globalAimsDatabase = {};
+        for (const [key, value] of Object.entries(aimsDatabase)) {
+            const baseKey = key.split('_')[0].toLowerCase();
+            globalAimsDatabase[baseKey] = value;
+        }
+        globalPopulations = populations;
+        (self as any).postMessage({ type: 'DATABASE_SET' });
+        return;
+    }
 
     if (type === 'RUN_INFERENCE' || type === 'RUN_FULL_PIPELINE' || type === 'PROCESS_CHROMOSOME') {
         try {
@@ -165,14 +180,13 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
             } else {
                 // RUN_FULL_PIPELINE or PROCESS_CHROMOSOME
                 const { snps, aimsDatabase, populations, smoothness, windowSize, stepSize, chromosome = "1" } = payload;
-                if (!snps || !aimsDatabase || !populations) throw new Error("Missing data for full pipeline");
+                const db = globalAimsDatabase || aimsDatabase;
+                const pops = globalPopulations || populations;
+                
+                if (!snps || !db || !pops) throw new Error("Missing data for full pipeline");
 
-                // 0. Sanitize Aims Database to handle RSID suffixes (e.g., _AFR)
-                const sanitizedDatabase: Record<string, any> = {};
-                for (const [key, value] of Object.entries(aimsDatabase)) {
-                    const baseKey = key.split('_')[0].toLowerCase();
-                    sanitizedDatabase[baseKey] = value;
-                }
+                // 0. Sanitize Aims Database (fallback if not SET_DATABASE used)
+                const sanitizedDatabase = db; 
 
                 const rsids = snps.map(s => s.rsid);
                 
@@ -180,18 +194,18 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
                 let { strandA, strandB } = microPhase(snps, sanitizedDatabase);
 
                 // Pre-calculate transition probabilities
-                const { windowIndices, markerToWindow } = calculateRawProbs(strandA, rsids, sanitizedDatabase, populations, windowSize, stepSize);
+                const { windowIndices, markerToWindow } = calculateRawProbs(strandA, rsids, sanitizedDatabase, pops, windowSize, stepSize);
                 const transitionProbs = getWindowTransitionProbs(windowIndices, snps, chromosome, smoothness);
 
                 const executeLAIForStrand = async (strand: string[]) => {
-                    let { rawProbs, nWindows } = calculateRawProbs(strand, rsids, sanitizedDatabase, populations, windowSize, stepSize);
+                    let { rawProbs, nWindows } = calculateRawProbs(strand, rsids, sanitizedDatabase, pops, windowSize, stepSize);
                     let result: Float32Array;
 
                     if (wasmEngine || await initWasmEngine()) {
-                        const resultView = wasmEngine.processChromosome(rawProbs, new Float32Array(populations.length).fill(1/populations.length), nWindows, populations.length);
+                        const resultView = wasmEngine.processChromosome(rawProbs, new Float32Array(pops.length).fill(1/pops.length), nWindows, pops.length);
                         result = new Float32Array(resultView).slice();
                     } else {
-                        result = RFMixTypeScript.smooth(rawProbs, nWindows, populations.length, transitionProbs);
+                        result = RFMixTypeScript.smooth(rawProbs, nWindows, pops.length, transitionProbs);
                     }
                     
                     // Memory Cleanup: clear rawProbs after smoothing
@@ -200,15 +214,17 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
                 };
 
                 // Pass 1: Baseline Ancestry
-                const laiA1 = await executeLAIForStrand(strandA);
-                const laiB1 = await executeLAIForStrand(strandB);
+                const [laiA1, laiB1] = await Promise.all([
+                    executeLAIForStrand(strandA),
+                    executeLAIForStrand(strandB)
+                ]);
 
                 // STEP 2: Phasing Correction
                 const corrected = correctPhasingErrors(
                     strandA, strandB, 
-                    { smoothedProbs: laiA1.result, nWindows: laiA1.nWindows, nPopulations: populations.length },
-                    { smoothedProbs: laiB1.result, nWindows: laiB1.nWindows, nPopulations: populations.length },
-                    sanitizedDatabase, rsids, markerToWindow, populations
+                    { smoothedProbs: laiA1.result, nWindows: laiA1.nWindows, nPopulations: pops.length },
+                    { smoothedProbs: laiB1.result, nWindows: laiB1.nWindows, nPopulations: pops.length },
+                    sanitizedDatabase, rsids, markerToWindow, pops
                 );
                 
                 // Explicit Memory Cleanup for Pass 1
@@ -216,8 +232,10 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
                 (laiB1.result as any) = null;
 
                 // Pass 2: Polished Output
-                const laiA2 = await executeLAIForStrand(corrected.strandA);
-                const laiB2 = await executeLAIForStrand(corrected.strandB);
+                const [laiA2, laiB2] = await Promise.all([
+                    executeLAIForStrand(corrected.strandA),
+                    executeLAIForStrand(corrected.strandB)
+                ]);
 
                 const resultStrandA = laiA2.result;
                 const resultStrandB = laiB2.result;
@@ -229,14 +247,14 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
                     for (let i = 0; i < nWins; i++) {
                         let maxProb = -1;
                         let maxPopIdx = 0;
-                        for (let p = 0; p < populations.length; p++) {
-                            const pr = probs[i * populations.length + p];
+                        for (let p = 0; p < pops.length; p++) {
+                            const pr = probs[i * pops.length + p];
                             if (pr > maxProb) { maxProb = pr; maxPopIdx = p; }
                         }
                         const sIdx = i * winSize;
                         const eIdx = Math.min((i + 1) * winSize, rsids.length - 1);
                         intervals.push({
-                            continent: populations[maxPopIdx],
+                            continent: pops[maxPopIdx],
                             start: snps[sIdx].pos || 0,
                             end: snps[eIdx].pos || 0,
                             confidence: maxProb,
@@ -257,7 +275,7 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
                     resultStrandA: bufferA,
                     resultStrandB: bufferB,
                     nWindows: laiA2.nWindows,
-                    nPopulations: populations.length,
+                    nPopulations: pops.length,
                     correctedStrands: { strandA: corrected.strandA, strandB: corrected.strandB },
                     isCompressed: true
                 }, [bufferA, bufferB]);
