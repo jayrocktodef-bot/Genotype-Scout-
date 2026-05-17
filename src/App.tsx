@@ -8,9 +8,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useCallback, useRef, useEffect, useMemo, memo } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo, memo, Suspense, lazy } from "react";
 import JSZip from 'jszip';
 import { motion, AnimatePresence } from "motion/react";
+// ...
+const HealthWellnessTab = lazy(() => import("./components/HealthWellnessTab").then(m => ({ default: m.HealthWellnessTab })));
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -41,7 +43,6 @@ import { calculateMarkerBenchmarks } from "./utils/markerBenchmarks";
 import { calculateFileIntegrity } from "./utils/statistics/qualityControl";
 import { applyConfidenceIntervals } from "./utils/statistics/admixtureRigor";
 import { FamousMatches } from "./components/FamousMatches";
-import { HealthWellnessTab } from "./components/HealthWellnessTab";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
 import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
 
@@ -2176,10 +2177,12 @@ export default function App() {
 
                 {activeTab === 'wellness' && (
                   <div className="pb-20">
-                    <HealthWellnessTab 
-                      impacts={healthWellnessMatches} 
-                      userSnps={snpMaps.current[activeDatasetIndex]} 
-                    />
+                    <Suspense fallback={<div className="text-center p-12 text-slate-400">Loading Wellness Analysis...</div>}>
+                      <HealthWellnessTab 
+                        impacts={healthWellnessMatches} 
+                        userSnps={snpMaps.current[activeDatasetIndex]} 
+                      />
+                    </Suspense>
                   </div>
                 )}
 
