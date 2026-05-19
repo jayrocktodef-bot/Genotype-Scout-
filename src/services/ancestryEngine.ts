@@ -422,6 +422,9 @@ export function runAncestryInference(
       const windowProportions = new Array(continentsToScore.length).fill(0);
       pathIndices.forEach(idx => windowProportions[idx] += 1 / pathIndices.length);
       
+      // Apply damping to adjust proportions
+      windowProportions.forEach((_, i) => windowProportions[i] *= damping[i]);
+      
       if (pathIndices.length > 0) {
         allWindowProportions.push(windowProportions);
         
@@ -439,7 +442,7 @@ export function runAncestryInference(
 
         windowProportions.forEach((prob, i) => {
           const continent = continentsToScore[i];
-          let filteredProb = prob < 0.005 ? 0 : prob; // Further reduced threshold to allow trace amounts
+          let filteredProb = prob < 0.001 ? 0 : prob; // Even lower threshold to allow trace amounts
           
           if (continent === 'African') {
              // Use base reduction for continental probability scaling
@@ -543,31 +546,51 @@ export function runAncestryInference(
       chromosomeData[chrom] = {};
       continentsToScore.forEach(c => {
         const pct = (chromCounts[c] / chromTotal) * 100;
-        if (pct >= 0.1) chromosomeData[chrom][c] = pct; // Reduced threshold
+        if (pct >= 0.01) chromosomeData[chrom][c] = pct; // Even lower threshold
       });
     }
   }
 
   const applyHaploWeight = (regionStr: string | null | undefined) => {
     if (!regionStr) return;
-    continentsToScore.forEach(continent => {
-      if (regionStr.includes(continent)) {
-        // Boost European haplogroup signals for finer resolution
-        const boost = continent === 'European' ? 2.5 : 1.5;
-        continentalCounts[continent] = (continentalCounts[continent] || 0) + boost;
-      }
-    });
+    
+    // Map common high-level haplogroup regions detected to continental priors
+    const HAPLO_PRIOR_MAP: Record<string, string> = {
+      'African': 'African',
+      'European': 'European',
+      'East Asian': 'East Asian',
+      'South Asian': 'South Asian',
+      'Middle Eastern': 'Middle Eastern',
+      'Native American': 'Native American',
+      'Oceanian': 'Oceanian',
+      'North African': 'North African',
+      'Central Asian': 'Central Asian'
+    };
+
+    const targetContinent = HAPLO_PRIOR_MAP[regionStr];
+    if (targetContinent && continentalCounts[targetContinent] !== undefined) {
+      // Prioritization based on lineage
+      const BOOST_MAP: Record<string, number> = {
+        'African': 5.0,
+        'European': 4.0,
+        'Native American': 0.1, // Dampen
+        'East Asian': 2.0,
+        'South Asian': 2.0,
+      };
+      const boost = BOOST_MAP[targetContinent] || 1.5; 
+      continentalCounts[targetContinent] = (continentalCounts[targetContinent] || 0) + boost;
+    }
   };
-  // Removed haplogroup weighing
-  // applyHaploWeight(yHaploRegion);
-  // applyHaploWeight(mtHaploRegion);
+
+  applyHaploWeight(yHaploRegion);
+  applyHaploWeight(mtHaploRegion);
 
   const totalSegments = Object.values(continentalCounts).reduce((a, b) => a + b, 0);
   const continentalScores: Record<string, number> = {};
   if (totalSegments > 0) {
     continentsToScore.forEach(c => {
       const pct = (continentalCounts[c] / totalSegments) * 100;
-      if (pct >= 0.1) continentalScores[c] = pct; // Reduced threshold
+      if (pct >= 0.01) continentalScores[c] = pct; // Even lower threshold
     });
 
     const newTotal = Object.values(continentalScores).reduce((a, b) => a + b, 0);
@@ -681,12 +704,12 @@ export function runAncestryInference(
       const scaledPercentage = (pop.percentage / 100) * continentWeight;
       
       // Only keep regional scores that are statistically significant
-      if (scaledPercentage >= 0.1) { // Reduced threshold
+      if (scaledPercentage >= 0.01) { // Even lower threshold
         regionalScores[pop.name] = scaledPercentage;
       }
       
       // If the population is highly dominant within its continent OR has a strong overall presence
-      if (pop.percentage > 40 || scaledPercentage > 5) { // Reduced thresholds for deepScores
+      if (pop.percentage > 20 || scaledPercentage > 1) { // Lower thresholds for deepScores
         deepScores[pop.name] = scaledPercentage;
       }
     });
