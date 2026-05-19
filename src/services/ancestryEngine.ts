@@ -412,11 +412,15 @@ export function runAncestryInference(
 
       const damping = new Array(continentsToScore.length).fill(1.0);
       const oceIndex = continentsToScore.indexOf('Oceanian');
-      if (oceIndex !== -1) damping[oceIndex] = 0.25; 
+      if (oceIndex !== -1) damping[oceIndex] = 0.1; // More damping
       const amerIndex = continentsToScore.indexOf('Native American');
-      if (amerIndex !== -1) damping[amerIndex] = 0.35; 
+      if (amerIndex !== -1) damping[amerIndex] = 0.1; // Reduced from 0.35
       const casIndex = continentsToScore.indexOf('Central Asian');
-      if (casIndex !== -1) damping[casIndex] = 0.5;
+      if (casIndex !== -1) damping[casIndex] = 0.2; // More damping
+      const afrIndex = continentsToScore.indexOf('African');
+      if (afrIndex !== -1) damping[afrIndex] = 1.5; // Boost
+      const eurIndex = continentsToScore.indexOf('European');
+      if (eurIndex !== -1) damping[eurIndex] = 1.5; // Boost
 
       const pathIndices = viterbi(windowGenotypes, windowFrequencies, continentsToScore.length);
       const windowProportions = new Array(continentsToScore.length).fill(0);
