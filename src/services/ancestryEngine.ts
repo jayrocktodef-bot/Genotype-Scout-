@@ -439,7 +439,7 @@ export function runAncestryInference(
 
         windowProportions.forEach((prob, i) => {
           const continent = continentsToScore[i];
-          let filteredProb = prob < 0.01 ? 0 : prob; // Reduced threshold to allow trace amounts
+          let filteredProb = prob < 0.005 ? 0 : prob; // Further reduced threshold to allow trace amounts
           
           if (continent === 'African') {
              // Use base reduction for continental probability scaling
@@ -543,7 +543,7 @@ export function runAncestryInference(
       chromosomeData[chrom] = {};
       continentsToScore.forEach(c => {
         const pct = (chromCounts[c] / chromTotal) * 100;
-        if (pct >= 0.5) chromosomeData[chrom][c] = pct;
+        if (pct >= 0.1) chromosomeData[chrom][c] = pct; // Reduced threshold
       });
     }
   }
@@ -567,7 +567,7 @@ export function runAncestryInference(
   if (totalSegments > 0) {
     continentsToScore.forEach(c => {
       const pct = (continentalCounts[c] / totalSegments) * 100;
-      if (pct >= 0.75) continentalScores[c] = pct;
+      if (pct >= 0.1) continentalScores[c] = pct; // Reduced threshold
     });
 
     const newTotal = Object.values(continentalScores).reduce((a, b) => a + b, 0);
@@ -681,12 +681,12 @@ export function runAncestryInference(
       const scaledPercentage = (pop.percentage / 100) * continentWeight;
       
       // Only keep regional scores that are statistically significant
-      if (scaledPercentage >= 0.75) {
+      if (scaledPercentage >= 0.1) { // Reduced threshold
         regionalScores[pop.name] = scaledPercentage;
       }
       
       // If the population is highly dominant within its continent OR has a strong overall presence
-      if (pop.percentage > 60 || scaledPercentage > 8) {
+      if (pop.percentage > 40 || scaledPercentage > 5) { // Reduced thresholds for deepScores
         deepScores[pop.name] = scaledPercentage;
       }
     });

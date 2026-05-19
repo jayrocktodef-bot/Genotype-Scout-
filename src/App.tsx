@@ -45,6 +45,8 @@ import { applyConfidenceIntervals } from "./utils/statistics/admixtureRigor";
 import { FamousMatches } from "./components/FamousMatches";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
 import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
+import SubpopulationBento from "./components/SubpopulationBento";
+import { masterAims } from './data';
 
 import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
@@ -2124,15 +2126,27 @@ export default function App() {
                 )}
 
                 {activeTab === 'summary' && (
-                  <ProfileSummary 
-                    datasets={datasets} 
-                    activeDatasetIndex={activeDatasetIndex} 
-                    oracleResults={oracleResults} 
-                    populationProximity={populationProximity}
-                    userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                    famousMatches={famousMatches}
-                    healthImpacts={healthWellnessMatches}
-                  />
+                  <div className="space-y-8">
+                    <ProfileSummary 
+                      datasets={datasets} 
+                      activeDatasetIndex={activeDatasetIndex} 
+                      oracleResults={oracleResults} 
+                      populationProximity={populationProximity}
+                      userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                      famousMatches={famousMatches}
+                      healthImpacts={healthWellnessMatches}
+                    />
+                    <SubpopulationBento 
+                      userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
+                      aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
+                        rsid: aim.rsid,
+                        chromosome: aim.chromosome || 'Unknown',
+                        subpop: aim.region, // Assuming region maps to subpop
+                        continent: aim.region || 'Unknown',
+                        alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
+                      }))}
+                    />
+                  </div>
                 )}
 
                 {activeTab === 'autosomal' && (

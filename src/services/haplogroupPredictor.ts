@@ -15,11 +15,13 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
   const isoggMatches = findMatchesInHaplogroups(yMap);
   
   // Sort ISOGG matches by specificity (branch name length as proxy for depth)
-  // and match count
+  // and match count, prioritizing deeper subclades
   const sortedIsogg = [...isoggMatches].sort((a, b) => {
+    // 1. More matches are better
     if (b.matches.length !== a.matches.length) {
       return b.matches.length - a.matches.length;
     }
+    // 2. Longer branch name as proxy for hierarchical rank (more specific)
     return b.branch.branchName.length - a.branch.branchName.length;
   });
 

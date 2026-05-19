@@ -30,6 +30,7 @@ import graf10kWeights from './raw_aims/graf_10k_weights.json';
 import graf10kIndex from './raw_aims/graf_10k_index.json';
 import customCuratedMarkers from './raw_aims/custom_curated_markers.json';
 import keyAims from './raw_aims/key_aims.json';
+import masterAims from './master_aims_normalized.json';
 
 // Export everything as a clean module
 export {
@@ -54,5 +55,6 @@ export {
   graf10kWeights,
   graf10kIndex,
   customCuratedMarkers,
-  keyAims
+  keyAims,
+  masterAims
 };

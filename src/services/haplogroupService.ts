@@ -14,10 +14,15 @@ export function findMatchesInHaplogroups(userSnpMap: Record<string, string>) {
   for (const branch of HAPLOGROUP_DB) {
     const branchMatches: string[] = [];
     
-    // Check rsids
+    // Check rsids, treating rsid_SUFFIX as a variant of rsid
     for (const rsid of branch.rsids) {
+      const baseRsid = rsid.split('_')[0].toLowerCase();
+      // Check for exact match or suffix match
       if (userSnpMap[rsid.toLowerCase()]) {
         branchMatches.push(rsid);
+      } else if (userSnpMap[baseRsid]) {
+        // This is a fuzzy match, maybe lower weight?
+        branchMatches.push(baseRsid);
       }
     }
     
