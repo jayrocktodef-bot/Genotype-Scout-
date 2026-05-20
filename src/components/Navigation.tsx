@@ -21,6 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
     { id: 'summary', label: 'Profile', icon: User },
     { id: 'oracle', label: 'Ancestry', icon: Globe },
+    { id: 'naive_oracle', label: 'Scout Score', icon: FlaskConical },
     { id: 'wellness', label: 'Wellness', icon: HeartPulse },
     { id: 'haplogroups', label: 'Lineages', icon: History },
     { id: 'autosomal', label: 'Markers', icon: FlaskConical },
