@@ -53,7 +53,13 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           <input 
             type="file" 
             ref={fileInputRef} 
-            onChange={(e) => e.target.files && onFiles(e.target.files)}
+            onChange={(e) => {
+              if (e.target.files && e.target.files.length > 0) {
+                onFiles(e.target.files);
+              } else {
+                // Optionally handle cancel here, e.g. onReset()
+              }
+            }}
             className="hidden" 
             accept=".txt,.csv,.zip"
           />
