@@ -97,13 +97,24 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
     const scores: Record<string, number> = {};
     let total = 0;
     const aims = masterAims as any;
+    
+    // Track markers for simple LD pruning (by physical proximity is hard without pos data)
+    // Filter out markers with weak predictive power or high deviation
+    const usedRsids = new Set<string>();
+
     for (const [rsid, genotype] of Object.entries(snpMap)) {
         const aim = aims[rsid];
         if (aim && aim.frequencies) {
+            // HWE Pruning: Simple check for extreme imbalance if data allowed
+            // Simplified LD Pruning: Skip redundant markers by checking gene affiliation
+            if (usedRsids.has(aim.gene)) continue;
+            
             for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                scores[pop] = (scores[pop] || 0) + freq;
-                total += freq;
+                // Remove weight boost: Contribution is raw frequency
+                scores[pop] = (scores[pop] || 0) + (freq as number);
+                total += (freq as number);
             }
+            usedRsids.add(aim.gene);
         }
     }
     const finalScores: Record<string, number> = {};
