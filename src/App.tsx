@@ -51,6 +51,7 @@ import { masterAims } from './data';
 import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
+import { ResultsPassportExporter } from "./components/ResultsPassportExporter";
 import { NaiveAncestryOracle } from "./components/NaiveAncestryOracle";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
@@ -1661,7 +1662,7 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug' | 'passport'>('dashboard');
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
@@ -2240,6 +2241,12 @@ export default function App() {
                         matchedTraits={userMatchedMitoTraits}
                       />
                     )}
+                  </div>
+                )}
+
+                {activeTab === 'passport' && (
+                  <div className="pb-20">
+                    <ResultsPassportExporter dataset={datasets[activeDatasetIndex]} />
                   </div>
                 )}
 

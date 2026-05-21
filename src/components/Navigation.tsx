@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Search, Menu, X, User } from 'lucide-react';
+import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Search, Menu, X, User, Compass } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -24,6 +24,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'naive_oracle', label: 'Scout Score', icon: FlaskConical },
     { id: 'wellness', label: 'Wellness', icon: HeartPulse },
     { id: 'haplogroups', label: 'Lineages', icon: History },
+    { id: 'passport', label: 'Passport', icon: Compass },
     { id: 'autosomal', label: 'Markers', icon: FlaskConical },
   ];
 

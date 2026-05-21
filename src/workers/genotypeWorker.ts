@@ -28,6 +28,7 @@ self.onmessage = async (e: MessageEvent) => {
     let mergedMtMap: Record<string, string> = {};
     let chips: string[] = [];
     let names: string[] = [];
+    let totalSnps = 0;
 
     if (type === 'PLINK_PROCESS_GENOME') {
         const { bedBuffer, bimEntries } = payload;
@@ -38,6 +39,8 @@ self.onmessage = async (e: MessageEvent) => {
             if (rowIdx !== undefined) imputedSnpMap[allowedRsid] = extractPlinkGenotype(bedBuffer, rowIdx);
         }
         names = ['PLINK Data'];
+        chips = ['PLINK Dataset'];
+        totalSnps = bimEntries.length;
     } else {
         const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
         const decoder = new TextDecoder();
@@ -49,6 +52,8 @@ self.onmessage = async (e: MessageEvent) => {
         let mergedSnpMap: Record<string, string> = {};
         for (const pf of parsedFiles) {
           names.push(pf.name);
+          chips.push(pf.chip);
+          totalSnps += pf.snpCount;
           Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
           Object.assign(mergedYMap, pf.yMap);
           Object.assign(mergedMtMap, pf.mtMap);
@@ -86,7 +91,32 @@ self.onmessage = async (e: MessageEvent) => {
     // Simple naive calculation
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
     
-    self.postMessage({ type: 'SUCCESS', payload: { name: names[0], results, analysis: { ancientAdmixture, individualMatches, famousMatches, healthWellness, populationProximity, markerBenchmarks, k27Results: k27Results_raw, grafResults: grafResults_raw, microHapResults, oracleResults, naiveEstimates } } });
+    self.postMessage({ 
+      type: 'SUCCESS', 
+      payload: { 
+        name: names[0], 
+        results, 
+        chip: chips[0] || "Unknown Chip",
+        snpCount: totalSnps,
+        predictedYDNA,
+        predictedMtDNA,
+        mergedMtMap,
+        mergedSnpMap: imputedSnpMap,
+        analysis: { 
+          ancientAdmixture, 
+          individualMatches, 
+          famousMatches, 
+          healthWellness, 
+          populationProximity, 
+          markerBenchmarks, 
+          k27Results: k27Results_raw, 
+          grafResults: grafResults_raw, 
+          microHapResults, 
+          oracleResults, 
+          naiveEstimates 
+        } 
+      } 
+    });
   } catch (err) {
     self.postMessage({ type: 'ERROR', error: err instanceof Error ? err.message : "Failure" });
   }

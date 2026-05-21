@@ -42,7 +42,7 @@ export const getAncientMarkers = () => {
 };
 export const getPopFrequencies = () => popFrequencies as Record<string, PopFrequencyEntry | any>;
 export const getAimsAndTraits = () => aimsAndTraits as any;
-export const getAncestryMarkers = () => Object.values(masterAims);
+export const getAncestryMarkers = () => Object.values(masterAims) as any[];
 
 export const findFrequency = (rsid: string, genotype: string, popCode: string) => {
   const entry = (popFrequencies as any)[rsid] as PopFrequencyEntry;
