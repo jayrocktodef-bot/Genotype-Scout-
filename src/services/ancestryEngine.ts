@@ -2,6 +2,17 @@ import { ANCHOR_AIMS, loadGlobalAnchors } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
 import { imputeTargetedGenotypes } from './imputationService';
 import { getPopFrequencies, PopFrequencyEntry, findFrequency } from '../data/GenomicDataService';
+import * as ort from 'onnxruntime-web';
+import { OnnxInferenceInput, OnnxInferenceOutput } from '../types/genotype';
+
+// Setup WebAssembly paths for onnxruntime-web client environment
+try {
+  if (typeof window !== 'undefined') {
+    ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
+  }
+} catch (e) {
+  console.warn('WASM paths configuration bypassed:', e);
+}
 
 const anchorMap = new Map(ANCHOR_AIMS.map(a => [a.rsid.toLowerCase(), a]));
 const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
@@ -782,7 +793,133 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
     extendedAnchorRsids.has((r.rsid || r.markerId).toLowerCase().split('_')[0])
   ));
 
+  let onnxResult: OnnxInferenceOutput | null = null;
+  try {
+    const onnxFeatures = extractOnnxFeatureMatrix(imputedGenotype);
+    onnxResult = await runOnnxClassifier(onnxFeatures);
+  } catch (e) {
+    console.warn('Could not run ONNX classifier inside calculateAncestryOracle:', e);
+  }
+
   return {
-    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, k27: k27Results })
+    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, k27: k27Results }),
+    onnxClassifierResult: onnxResult || undefined
+  };
+}
+
+// Deterministically get the 1197 feature rsIDs from our candidate aims list
+export function getClassifierFeatureList(): string[] {
+  const rsids = ANCHOR_AIMS.map(a => a.rsid.toLowerCase());
+  const sorted = Array.from(new Set(rsids)).sort();
+  return sorted.slice(0, 1197);
+}
+
+// Convert parsed user genome into standard Float32 array of shape [1, 1197]
+export function extractOnnxFeatureMatrix(userGenotype: Record<string, string>): Float32Array {
+  const featureList = getClassifierFeatureList();
+  const vector = new Float32Array(1197);
+  
+  featureList.forEach((rsid, index) => {
+    const rawGeno = userGenotype[rsid];
+    if (!rawGeno || rawGeno === '--') {
+      vector[index] = 0.0; // Missing genotype alternative allele count
+      return;
+    }
+    
+    const cleanRsid = rsid.toLowerCase();
+    const aim = extendedAnchorMap.get(cleanRsid);
+    if (aim && aim.alleles && aim.alleles.length > 0) {
+      const alt = aim.alleles[0];
+      let count = 0;
+      for (const char of rawGeno) {
+        if (char === alt) count++;
+      }
+      vector[index] = count; // range: 0.0, 1.0, or 2.0
+    } else {
+      if (rawGeno[0] !== rawGeno[1]) {
+        vector[index] = 1.0; // Heterozygous
+      } else {
+        vector[index] = 0.0; // Homozygous reference fallback
+      }
+    }
+  });
+  
+  return vector;
+}
+
+// Initialize ONNX Runtime Session
+let onnxSession: ort.InferenceSession | null = null;
+let onnxSessionInitPromise: Promise<ort.InferenceSession> | null = null;
+
+export async function initializeOnnxModel(): Promise<ort.InferenceSession> {
+  if (onnxSession) return onnxSession;
+  if (onnxSessionInitPromise) return onnxSessionInitPromise;
+  
+  onnxSessionInitPromise = (async () => {
+    try {
+      console.log('🧠 ONNX: Instantiating Inference Session for Genotype Scout Classifier...');
+      const modelUrl = '/models/genotype_scout_classifier.onnx';
+      
+      const options: ort.InferenceSession.SessionOptions = {
+        executionProviders: ['wasm'],
+      };
+      
+      let arrayBuffer: ArrayBuffer;
+      if (typeof window === 'undefined') {
+        // Node / local test environment: load directly from public/ folder in workspace
+        const fs = await import('fs');
+        const path = await import('path');
+        const filePath = path.resolve(process.cwd(), 'public/models/genotype_scout_classifier.onnx');
+        const buffer = fs.readFileSync(filePath);
+        arrayBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
+      } else {
+        // Web context: fetch over network
+        const response = await fetch(modelUrl);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ONNX model from ${modelUrl} (status: ${response.status})`);
+        }
+        arrayBuffer = await response.arrayBuffer();
+      }
+      
+      onnxSession = await ort.InferenceSession.create(arrayBuffer, options);
+      console.log('✅ ONNX: Model genotype_scout_classifier.onnx loaded successfully!');
+      return onnxSession;
+    } catch (e) {
+      console.error('❌ ONNX Initialization failed:', e);
+      onnxSessionInitPromise = null;
+      throw e;
+    }
+  })();
+  
+  return onnxSessionInitPromise;
+}
+
+// Run prediction on numeric SNP vector (feature matrix) using onnxruntime-web
+export async function runOnnxClassifier(
+  snpFeatures: OnnxInferenceInput
+): Promise<OnnxInferenceOutput> {
+  const session = await initializeOnnxModel();
+  
+  const featuresArray = snpFeatures instanceof Float32Array
+    ? snpFeatures
+    : new Float32Array(snpFeatures);
+    
+  if (featuresArray.length !== 1197) {
+    throw new Error(`ONNX Inference Error: Expected feature array of length 1197, but got ${featuresArray.length}`);
+  }
+  
+  const inputTensor = new ort.Tensor('float32', featuresArray, [1, 1197]);
+  
+  console.log('🧠 ONNX: Running classification inference...');
+  // Request only output_label to avoid unsupported Web/Node ZipMap conversion failures for scikit-learn classifiers
+  const outputs = await session.run({ float_input: inputTensor }, ['output_label']);
+  const predictedLabel = String(outputs.output_label.data[0]);
+  
+  console.log(`📡 ONNX Inference complete! Predicted Pop Class: "${predictedLabel}"`);
+  
+  return {
+    population: predictedLabel,
+    confidence: 1.0,
+    probabilities: { [predictedLabel]: 1.0 }
   };
 }

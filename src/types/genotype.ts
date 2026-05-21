@@ -52,3 +52,12 @@ export interface AncestryInferenceResult {
   segments?: Record<string, { continent: string, start: number, end: number, confidence: number }[]>;
   confidenceIntervals: Record<string, { low: number, high: number }>;
 }
+
+export type OnnxInferenceInput = number[] | Float32Array;
+
+export interface OnnxInferenceOutput {
+  population: string;
+  confidence: number;
+  probabilities?: Record<string, number>;
+}
+
