@@ -1,6 +1,6 @@
 import React, { memo, useMemo, useState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown, ChevronUp, Dna, History, User, MapPin, Download, Share2, FileImage, Loader2, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronUp, Dna, History, User, MapPin, Download, Share2, FileImage, Loader2, Sparkles, HelpCircle } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
 import { ChromosomePainter, ChromosomePainterRef } from './ChromosomePainter';
@@ -10,11 +10,12 @@ import masterAims from '../data/master_aims_normalized.json';
 import jsPDF from 'jspdf';
 
 export const ModernAncestryOracle = memo(({ 
-  results
+  results,
+  onOpenMethodology
 }: { 
-  results: any
+  results: any;
+  onOpenMethodology?: () => void;
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const [viewMode] = useState<'primary'>('primary');
   const [exporting] = useState(false);
   const [calculatingLAI] = useState(false);
@@ -79,29 +80,28 @@ export const ModernAncestryOracle = memo(({
         </div>
 
         <>
-            <div className="mb-10 rounded-2xl frosted-glass border border-white/5 text-[#F5F6F7]">
-          <button 
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="w-full flex justify-between items-center p-6 text-left font-bold"
+        <div className="mb-10 p-6 rounded-2xl bg-teal-500/5 border border-teal-500/10 flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-teal-500/25 transition-all">
+          <div className="flex gap-4 items-start text-[#F5F6F7]">
+            <Dna className="w-8 h-8 text-teal-400 mt-1 shrink-0" />
+            <div>
+              <h4 className="font-extrabold text-base tracking-tight mb-1">Euclidean Distance High Resolution Oracle</h4>
+              <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
+                The Ancestry Oracle is not a classic "ethnicity calculator." It directly analyzes your exact Ancestry Informative Markers (AIMs) database against modern 1000 Genomes references using raw genetic dosages.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={onOpenMethodology}
+            className="w-full sm:w-auto shrink-0 px-6 py-3 bg-teal-600/20 hover:bg-teal-600/35 border border-teal-500/30 text-teal-300 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
           >
-            <h4>How this works</h4>
-            {isExpanded ? <ChevronUp className="w-5 h-5"/> : <ChevronDown className="w-5 h-5"/>}
+            <HelpCircle className="w-4 h-4 text-teal-400" />
+            Methodology
           </button>
-
-          <motion.div
-            initial={false}
-            animate={{ height: isExpanded ? 'auto' : 0, opacity: isExpanded ? 1 : 0 }}
-            className="overflow-hidden"
-          >
-            <p className="p-6 pt-0 text-sm text-slate-400 leading-relaxed">
-              The Ancestry Oracle is not a classic "ethnicity calculator." While mainstream services use imputation to fill in genetic gaps based on statistical models, this engine processes your raw, exact genome data. By directly analyzing specific, high-precision Ancestry Informative Markers (AIMs), we produce results that reflect your unique genotype, providing a granular look at your genetic lineage without relying on probabilistic data smoothing.
-            </p>
-          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-center">
-          <div className="h-[300px] sm:h-[450px] lg:col-span-2 w-full">
-            <ResponsiveContainer width="100%" height="100%">
+          <div className="h-[300px] sm:h-[450px] lg:col-span-2 w-full min-w-0 relative">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
               <RadarChart cx="50%" cy="50%" outerRadius="65%" data={chartData} margin={{ top: 30, right: 30, bottom: 30, left: 30 }}>
                 <PolarGrid stroke="#334155" />
                 <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11 }} />

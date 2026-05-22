@@ -292,7 +292,7 @@ export function runAncestryInference(
         const genotype = userGenotype[rsid] || marker.genotype;
         if (!genotype) continue;
 
-        const alleles = marker.alleles;
+        const alleles = marker.alleles || [];
         let matchCount = 0;
         for (const char of genotype) {
           if (alleles.includes(char)) matchCount++;
@@ -485,7 +485,7 @@ export function runAncestryInference(
             const genotype = userGenotype[rsid] || marker.genotype;
             if (!genotype) continue;
             let matchCount = 0;
-            for (const char of genotype) if (marker.alleles.includes(char)) matchCount++;
+            for (const char of genotype) if ((marker.alleles || []).includes(char)) matchCount++;
 
             // Partial match logic: half weight if only one allele matches
             const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);

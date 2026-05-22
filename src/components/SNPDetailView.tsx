@@ -79,8 +79,8 @@ export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
       {frequencyData && frequencyData.length > 0 && (
         <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
           <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Genotype Prevalence (1000 Genomes)</h4>
-          <div className="h-40 w-full">
-            <ResponsiveContainer width="100%" height="100%">
+          <div className="h-40 w-full min-w-0 relative">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={160} debounce={1}>
               <BarChart data={frequencyData} layout="vertical" margin={{ left: -20 }}>
                 <XAxis type="number" hide domain={[0, 100]} />
                 <YAxis 

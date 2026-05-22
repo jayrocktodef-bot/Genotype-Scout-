@@ -1,3 +1,99 @@
+export interface GenomicsParseErrorDetails {
+  format?: string;
+  chip?: string;
+  bytesTotal?: number;
+  linesTotal?: number;
+  linesCommented?: number;
+  linesMalformed?: number;
+  headerPreview?: string;
+  errorCategory?: string;
+  suggestedSolution?: string;
+}
+
+export class GenomicsParseError extends Error {
+  details: GenomicsParseErrorDetails;
+
+  constructor(message: string, details: GenomicsParseErrorDetails) {
+    super(message);
+    this.name = "GenomicsParseError";
+    this.details = details;
+  }
+}
+
+export function checkFileFormatHealth(text: string): { healthy: boolean; reason?: string; category?: string; solution?: string } {
+  if (!text || text.trim().length === 0) {
+    return {
+      healthy: false,
+      category: "Empty Document",
+      reason: "This file is completely empty.",
+      solution: "Please check your DNA data export; it should be between 5MB and 45MB in size."
+    };
+  }
+  
+  const header = text.slice(0, 5000);
+
+  // 1. Check for PDF
+  if (header.startsWith("%PDF")) {
+    return {
+      healthy: false,
+      category: "PDF Binary Document",
+      reason: "The file is an Adobe PDF format report, not raw DNA text data.",
+      solution: "Please upload the original raw data text download from your provider. Visual reports or PDFs cannot be processed by bioinformatics tools."
+    };
+  }
+
+  // 2. Check for zip signature that bypassed client extract
+  if (header.startsWith("PK\x03\x04") || header.includes("PK\u0003\u0004") || header.startsWith("PK\x05\x06") || header.startsWith("PK\x07\x08")) {
+    return {
+      healthy: false,
+      category: "Direct Binary ZIP Archive",
+      reason: "This file is a zipped archive. Although Genotype Scout unpacks standard ZIP files, this archive appears to be encrypted, corrupted, or nested in unreadable sub-directories.",
+      solution: "Try unzipping the archive manually on your desktop first, and upload the enclosed plain text file (.txt or .csv)."
+    };
+  }
+
+  // 3. Check for HTML
+  if (header.trim().toLowerCase().startsWith("<!doctype html") || header.includes("<html") || header.includes("<head") || header.includes("schema.org")) {
+    return {
+      healthy: false,
+      category: "HTML Webpage Page",
+      reason: "The file is an HTML webpage, not raw DNA text data.",
+      solution: "It look like you may have saved the vendor dashboard page using 'Save Page As'. Go back to your DNA provider, navigate to 'Settings / Download Raw Data', and request the real data download."
+    };
+  }
+
+  // 4. Check for Excel or formats
+  if (header.includes("workbook") || header.includes("<workbook") || header.includes("xmlns:o=\"urn:schemas-microsoft-com:office")) {
+    return {
+      healthy: false,
+      category: "Excel Spreadsheet Format",
+      reason: "The file is an Excel document or Microsoft Office XML representation.",
+      solution: "Please export your spreadsheet or workbook into an ASCII/UTF-8 Tab-delimited plain text file (.txt or .csv) and try uploading again."
+    };
+  }
+
+  // 5. Binary scan - excessive non-printable characters or null bytes
+  let binaryCharCount = 0;
+  const testLimit = Math.min(text.length, 1000);
+  for (let i = 0; i < testLimit; i++) {
+    const charCode = text.charCodeAt(i);
+    // Null byte or strange unprintable characters indicating binary format (e.g. BAM, CRAM, BCF)
+    if (charCode === 0 || (charCode < 32 && charCode !== 9 && charCode !== 10 && charCode !== 13)) {
+      binaryCharCount++;
+    }
+  }
+  if (binaryCharCount > 15) {
+    return {
+      healthy: false,
+      category: "Non-Text Binary Format (BAM/CRAM/BCF)",
+      reason: "The file contains non-text binary characters. Our browser-side consumer engine expects processed 23andMe standard text representation.",
+      solution: "Please convert your BAM or FastQ sequence alignment data into 23andMe or AncestryDNA tab-delimited SNP format before analysis."
+    };
+  }
+
+  return { healthy: true };
+}
+
 export function parseRawDNA(text: string, allowlist?: Set<string>) {
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
@@ -7,8 +103,20 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
   let chip = "Unknown Chip";
   let snpCount = 0;
   
-  // Try to detect chip from header
+  // Try to detect format/chip early from header
   const header = text.slice(0, 1000);
+  
+  // Enforce file health check
+  const health = checkFileFormatHealth(text);
+  if (!health.healthy) {
+    throw new GenomicsParseError(health.reason || "Invalid file format", {
+      headerPreview: header.slice(0, 300),
+      errorCategory: health.category,
+      suggestedSolution: health.solution,
+      bytesTotal: text.length
+    });
+  }
+
   if (header.includes("23andMe")) {
     format = "23andMe";
     if (header.includes("v5")) chip = "23andMe v5 (GSA)";
@@ -33,10 +141,18 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
   }
 
   // Hyper-optimized Regex Parsing Loop with optional quote support for MyHeritage/CSV formats
-  // Match: ["]rsID["] [sep] ["]chrom["] [sep] ["]pos["] [sep] ["]genotype["]
-  // Note: Handles space/tab/comma separation and AncestryDNA multi-column genotypes
   const rowRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDI-]{1,2})"?([\t, ]+"?([ACGTDI-]))?"?/gmi;
   
+  let linesTotal = 0;
+  let linesCommented = 0;
+  let linesMalformed = 0;
+
+  const linesSplit = text.slice(0, 10000).split(/\r?\n/);
+  linesSplit.forEach(line => {
+    if (!line) return;
+    if (line.startsWith("#") || line.startsWith("//")) linesCommented++;
+  });
+
   let match;
   while ((match = rowRegex.exec(text)) !== null) {
     const markerId = match[1].toLowerCase();
@@ -97,7 +213,20 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
   }
 
   if (snpCount === 0) {
-    throw new Error("The file appears to be empty or not in a supported raw DNA format (23andMe, AncestryDNA, MyHeritage, etc.).");
+    throw new GenomicsParseError(
+      "The file contains no parseable genetic markers (SNPs). Please verify that the column layout matches our requirements.",
+      {
+        format,
+        chip,
+        bytesTotal: text.length,
+        linesTotal: text.split(/\r?\n/).length,
+        linesCommented,
+        linesMalformed: text.split(/\r?\n/).length - linesCommented,
+        headerPreview: header.slice(0, 300),
+        errorCategory: "No Valid Genetic Markers Found",
+        suggestedSolution: "Make sure that the file lists SNPs in the standard layout: rsID, chromosome, physical position, and allele genotype letters (e.g. AA, CT, GG)."
+      }
+    );
   }
 
   return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };
@@ -123,6 +252,17 @@ export async function parseRawDNAStream(
   const firstSlice = file.slice(0, Math.min(50000, file.size));
   const firstChunkText = await firstSlice.text();
   const header = firstChunkText.slice(0, 1000);
+
+  // Enforce format health diagnostics early on stream
+  const health = checkFileFormatHealth(firstChunkText);
+  if (!health.healthy) {
+    throw new GenomicsParseError(health.reason || "Invalid file format", {
+      headerPreview: header.slice(0, 300),
+      errorCategory: health.category,
+      suggestedSolution: health.solution,
+      bytesTotal: file.size
+    });
+  }
 
   if (header.includes("23andMe")) {
     format = "23andMe";
@@ -156,6 +296,10 @@ export async function parseRawDNAStream(
   // Single-line regex representing standard 23andMe / vcf / map lines
   const lineRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDI-]{1,2})"?([\t, ]+"?([ACGTDI-]))?"?/i;
 
+  let linesTotal = 0;
+  let linesCommented = 0;
+  let linesMalformed = 0;
+
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
@@ -174,8 +318,13 @@ export async function parseRawDNAStream(
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
+      linesTotal++;
       // Skip commented or empty lines
-      if (!line || line.startsWith("#") || line.startsWith("//")) continue;
+      if (!line) continue;
+      if (line.startsWith("#") || line.startsWith("//")) {
+        linesCommented++;
+        continue;
+      }
 
       const match = lineRegex.exec(line);
       if (match) {
@@ -220,6 +369,8 @@ export async function parseRawDNAStream(
             mtMap[posStr] = allele;
           }
         }
+      } else {
+        linesMalformed++;
       }
     }
 
@@ -231,6 +382,7 @@ export async function parseRawDNAStream(
   // Handle remaining text if any
   if (remainder) {
     const line = remainder;
+    linesTotal++;
     if (line && !line.startsWith("#") && !line.startsWith("//")) {
       const match = lineRegex.exec(line);
       if (match) {
@@ -270,6 +422,8 @@ export async function parseRawDNAStream(
             }
           }
         }
+      } else {
+        linesMalformed++;
       }
     }
   }
@@ -283,9 +437,21 @@ export async function parseRawDNAStream(
   }
 
   if (snpCount === 0) {
-    throw new Error("The file appears to be empty or not in a supported raw DNA format.");
+    throw new GenomicsParseError(
+      "The file contains no parseable genetic markers (SNPs). Please verify that the file represents local genome SNPs.",
+      {
+        format,
+        chip,
+        bytesTotal: file.size,
+        linesTotal,
+        linesCommented,
+        linesMalformed,
+        headerPreview: header.slice(0, 300),
+        errorCategory: "Empty Ingestion Spectrum",
+        suggestedSolution: "Make sure you downloaded 'all SNPs' or 'raw data text' rather than mitochondrial-only sequences or visual screenshots. The file should contain rsIDs and genotypes."
+      }
+    );
   }
 
   return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };
 }
-

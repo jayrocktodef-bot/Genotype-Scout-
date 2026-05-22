@@ -52,7 +52,7 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
       const continent = CONTINENT_MAP[popCode];
       if (!continent) continue;
 
-      const p = Math.max(0.001, Math.min(0.999, frequencies[popCode] || 0.01));
+      const p = Math.max(0.001, Math.min(0.999, frequencies?.[popCode] || 0.01));
       const q = 1 - p;
 
       let prob = 1e-6; // Laplacian smoothing

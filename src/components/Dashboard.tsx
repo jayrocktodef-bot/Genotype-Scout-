@@ -81,8 +81,8 @@ const Dashboard: React.FC<DashboardProps> = ({
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-50/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="h-[350px] relative">
-            <ResponsiveContainer width="100%" height="100%">
+          <div className="h-[350px] relative min-w-0">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={350} debounce={1}>
               <PieChart>
                 <Pie
                   data={chartData}

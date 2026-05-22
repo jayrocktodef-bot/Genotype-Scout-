@@ -26,8 +26,10 @@ import {
   Activity,
   User,
   Settings,
-  HelpCircle
+  HelpCircle,
+  BookOpen
 } from 'lucide-react';
+import { MethodologyModal } from "./components/MethodologyModal";
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
@@ -65,17 +67,18 @@ import Dashboard from "./components/Dashboard";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
 
-const LOGO_URI = "https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.png";
+const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "3.4.0";
 
-const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', testedMarkers = [] }: { 
+const HaplogroupTreeView = memo(({ node, userPath = [], level = 0, searchTerm = '', testedMarkers = [] }: { 
   node: any, 
-  userPath: string[], 
+  userPath?: string[], 
   level?: number, 
   searchTerm?: string,
   testedMarkers?: any[]
 }) => {
-  const isMatch = userPath.includes(node.branchName);
+  const safeUserPath = userPath || [];
+  const isMatch = safeUserPath.includes(node.branchName);
   const matchesSearch = searchTerm && node.branchName.toLowerCase().includes(searchTerm.toLowerCase());
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -169,7 +172,7 @@ const HaplogroupTreeView = memo(({ node, userPath, level = 0, searchTerm = '', t
             className="overflow-hidden"
           >
             {node.children.map((child: any, i: number) => (
-              <HaplogroupTreeView key={i} node={child} userPath={userPath} level={level + 1} searchTerm={searchTerm} testedMarkers={testedMarkers} />
+              <HaplogroupTreeView key={i} node={child} userPath={safeUserPath} level={level + 1} searchTerm={searchTerm} testedMarkers={testedMarkers} />
             ))}
           </motion.div>
         )}
@@ -271,8 +274,8 @@ const ProfileSummary = memo(({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="h-[300px] flex items-center justify-center bg-slate-50 rounded-3xl border border-slate-100">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className="relative w-full h-[300px] bg-slate-50 rounded-3xl border border-slate-100">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
                 <RadarChart cx="50%" cy="50%" outerRadius="75%" data={ancestryChartData}>
                   <PolarGrid stroke="#cbd5e1" strokeOpacity={0.5} />
                   <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 800 }} />
@@ -682,6 +685,7 @@ const MODERN_POP_NAMES: Record<string, string> = {
 };
 
 const formatPopName = (name: string) => {
+  if (!name) return 'Unknown';
   return MODERN_POP_NAMES[name] || name.replace(/-/g, ' ');
 };
 
@@ -819,8 +823,8 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
         <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
           <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Continental Admixture</h3>
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="h-64 w-full md:w-1/2">
-              <ResponsiveContainer width="100%" height="100%">
+            <div className="h-64 w-full md:w-1/2 relative min-w-0">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={256} debounce={1}>
                 <PieChart>
                   <Pie
                     data={pieData}
@@ -999,7 +1003,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                       <div key={idx} className="flex items-center gap-1">
                         {idx > 0 && <span className="text-blue-300/50 text-[10px]">▶</span>}
                         <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === yData.path.length - 1 ? 'bg-white text-blue-700 shadow-lg' : 'bg-white/10 text-white'}`}>
-                          {step.replace("Haplogroup ", "")}
+                          {(step || '').replace("Haplogroup ", "")}
                         </span>
                       </div>
                     ))}
@@ -1191,9 +1195,9 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
       // Fallback for nodes not in our primary tree (e.g., deep subclades)
       const isLast = idx === (mtData.path || []).length - 1;
       return {
-        name: step.replace("Haplogroup ", ""),
+        name: (step || '').replace("Haplogroup ", ""),
         region: node?.region || (isLast ? mtData.region : "Global"),
-        description: node?.description || (isLast ? `Your most specific maternal lineage branch: ${step.replace("Haplogroup ", "")}.` : "A transitional point in the maternal migration history."),
+        description: node?.description || (isLast ? `Your most specific maternal lineage branch: ${(step || '').replace("Haplogroup ", "")}.` : "A transitional point in the maternal migration history."),
         historicalContext: node?.historicalContext,
         mutations: node?.mutations || []
       };
@@ -1204,7 +1208,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
 
   const derivedMarkers = mtData.testedMarkers.filter((m: any) => m.status === 'derived');
   const markerPieData = derivedMarkers.map((m: any) => {
-    const branch = (mtData.path.find((p: string) => p.includes(m.mutation)) || mtData.predicted || 'Root').replace("Haplogroup ", "");
+    const branch = ((mtData.path || []).find((p: string) => p && typeof p === 'string' && p.includes(m.mutation)) || mtData.predicted || 'Root').replace("Haplogroup ", "");
     return {
       name: m.mutation,
       branch: branch,
@@ -1216,7 +1220,10 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
     <div className="animate-fade-up space-y-8 pb-12">
       {/* Hero Prediction Section */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-2 bg-gradient-to-br from-rose-500 to-pink-700 p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden group">
+        <div 
+          style={{ width: '486px' }}
+          className="lg:col-span-2 bg-gradient-to-br from-rose-500 to-pink-700 p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden group"
+        >
           <div className="absolute -top-10 -right-10 opacity-10 text-[12rem] select-none pointer-events-none group-hover:rotate-12 transition-transform duration-700">♀️</div>
           <div className="relative z-10 h-full flex flex-col">
             <h3 className="text-rose-100 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 opacity-80">Maternal Lineage (mtDNA)</h3>
@@ -1250,7 +1257,10 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
           </div>
         </div>
 
-        <div className="lg:col-span-2 bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col shadow-2xl relative overflow-hidden group">
+        <div 
+          style={{ width: '500px' }}
+          className="lg:col-span-2 bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col shadow-2xl relative overflow-hidden group"
+        >
           <div className="absolute top-0 right-0 p-8 opacity-5 text-8xl pointer-events-none">🧬</div>
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
             <div>
@@ -1279,9 +1289,8 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
             <div className="flex flex-col justify-center items-center border-l border-white/5 pl-8">
                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 w-full text-center">Marker Distribution</h4>
                {markerPieData.length > 0 ? (
-                 <div className="relative w-full aspect-square max-h-[180px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
+                 <div className="relative w-[180px] h-[180px] mx-auto flex items-center justify-center">
+                      <PieChart width={180} height={180}>
                         <Pie
                           data={markerPieData}
                           cx="50%"
@@ -1293,12 +1302,11 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                           stroke="none"
                         >
                           {markerPieData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
+                             <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
                           ))}
                         </Pie>
                         <Tooltip cursor={false} content={<CustomTooltip />} />
                       </PieChart>
-                    </ResponsiveContainer>
                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                       <span className="text-3xl font-black text-white">{derivedMarkers.length}</span>
                       <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Matches</span>
@@ -1388,7 +1396,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                           <div className="flex flex-wrap gap-1.5">
                             {step.mutations.slice(0, 20).map((m: string) => (
                               <span key={m} className={`px-2 py-0.5 text-[9px] font-mono font-bold rounded-md transition-colors ${
-                                mtData.userMutations.includes(m)
+                                (mtData.userMutations || []).includes(m)
                                   ? 'bg-rose-500 text-white shadow-sm'
                                   : 'bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700'
                               }`}>
@@ -1663,12 +1671,13 @@ export default function App() {
   }>({ processed: 0, total: 0, snps: 0, step: "Ready" });
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<any | null>(null);
   const [selectedSubPop, setSelectedSubPop] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug' | 'passport'>('dashboard');
+  const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
@@ -2040,13 +2049,14 @@ export default function App() {
         
         // trait.allele is like "G>A" or "A583G" or just "A"
         // Most common format in our parser is "G>A"
-        if (trait.allele.includes('>')) {
-          const [ancestral, derived] = trait.allele.split('>');
+        const alleleStr = trait.allele || '';
+        if (alleleStr.includes('>')) {
+          const [ancestral, derived] = alleleStr.split('>');
           return userAllele.toUpperCase() === derived.trim().toUpperCase();
         }
         
         // Sometimes it's just the derived allele
-        return userAllele.toUpperCase() === trait.allele.trim().toUpperCase();
+        return userAllele.toUpperCase() === alleleStr.trim().toUpperCase();
     });
   }, [datasets, activeDatasetIndex]);
 
@@ -2075,6 +2085,121 @@ export default function App() {
       />
 
       <main className="max-w-7xl mx-auto px-6 pt-28">
+        {error && (
+          (() => {
+            const isDetailed = typeof error === 'object' && error !== null;
+            const errMsg = isDetailed ? (error.message || "An unexpected error occurred during processing.") : error;
+            const details = isDetailed ? error.details : null;
+            const category = isDetailed ? (details?.errorCategory || error.name || "Analytical Mismatch") : "Process Aborted";
+
+            return (
+              <div className="mb-12 p-8 rounded-[2.5rem] bg-white border border-rose-100 shadow-xl shadow-rose-100/40 animate-fade-in relative overflow-hidden z-50">
+                {/* Visual border gradient accent */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-450 via-pink-400 to-amber-400" />
+                
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  {/* Decorative Amber Warning Circle */}
+                  <div className="p-4 bg-rose-50 rounded-2xl text-rose-500 flex items-center justify-center shrink-0 w-14 h-14">
+                    <span className="text-2xl">⚠️</span>
+                  </div>
+
+                  <div className="flex-1">
+                    <span className="px-3 py-1 bg-rose-50 text-rose-600 text-[9px] font-black uppercase tracking-widest rounded-full border border-rose-100">
+                      {category}
+                    </span>
+                    
+                    <h3 className="text-xl font-extrabold text-slate-800 mt-3 mb-2">
+                      Genomic Analysis Blocked
+                    </h3>
+                    
+                    <p className="text-slate-650 font-semibold text-sm leading-relaxed mb-6">
+                      {errMsg}
+                    </p>
+
+                    {details?.suggestedSolution && (
+                      <div className="mb-6 p-5 bg-teal-50/50 rounded-2xl border border-teal-100/60">
+                        <h4 className="text-teal-800 font-extrabold text-xs uppercase tracking-widest mb-1.5">
+                          🟢 Recommended Peer Action:
+                        </h4>
+                        <p className="text-slate-700 text-xs font-semibold leading-relaxed">
+                          {details.suggestedSolution}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Troubleshooting suggestions list */}
+                    <div className="mb-6">
+                      <h4 className="text-slate-500 font-bold text-xs uppercase tracking-widest mb-3">
+                        Troubleshooting Guidelines:
+                      </h4>
+                      <ul className="space-y-3 text-xs font-semibold text-slate-600">
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-teal-500 shrink-0">📎</span>
+                          <span><strong>Format:</strong> Tab-delimited (.txt) or comma-separated (.csv) raw genome file.</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-teal-500 shrink-0">📎</span>
+                          <span><strong>Encoding:</strong> ASCII or UTF-8 text representation (not zipped with passwords, and not PDF/raw image).</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-teal-500 shrink-0">📎</span>
+                          <span><strong>Content:</strong> Must align with standard SNP templates including rsIDs (e.g. <code>rs3094315</code>) and allele combinations.</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Collapsible Technical Diagnostics */}
+                    {isDetailed && (
+                      <details className="group border-t border-slate-100 pt-6">
+                        <summary className="list-none flex items-center justify-between text-xs font-bold text-slate-400 hover:text-slate-600 cursor-pointer select-none">
+                          <span className="flex items-center gap-1.5">
+                            ⚙️ Technical Telemetry Diagnostics Log
+                          </span>
+                          <span className="transition-transform group-open:rotate-180">
+                            ▼
+                          </span>
+                        </summary>
+                        
+                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-150/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto">
+                          <div><strong className="text-slate-700">Error Category:</strong> {details?.errorCategory || category}</div>
+                          {details?.bytesTotal !== undefined && (
+                            <div><strong className="text-slate-700">File Ingestion Size:</strong> {(details.bytesTotal / (1024 * 1024)).toFixed(2)} MB ({details.bytesTotal.toLocaleString()} bytes)</div>
+                          )}
+                          {details?.linesTotal !== undefined && (
+                            <div><strong className="text-slate-700">Total Rows Read:</strong> {details.linesTotal.toLocaleString()}</div>
+                          )}
+                          {details?.linesCommented !== undefined && (
+                            <div><strong className="text-slate-700">Comment Headers Found:</strong> {details.linesCommented.toLocaleString()}</div>
+                          )}
+                          {details?.linesMalformed !== undefined && (
+                            <div><strong className="text-slate-700">Malformed/Unrecognized Rows:</strong> {details.linesMalformed.toLocaleString()}</div>
+                          )}
+                          {details?.headerPreview && (
+                            <div className="pt-3 border-t border-slate-200 mt-3">
+                              <strong className="text-slate-750 block mb-1.5">Raw File Header Preview:</strong>
+                              <pre className="p-3 bg-slate-900 border border-slate-850 text-slate-300 rounded-xl overflow-x-auto select-all max-h-32 text-[10px] leading-normal font-mono">
+                                {details.headerPreview}
+                              </pre>
+                            </div>
+                          )}
+                        </div>
+                      </details>
+                    )}
+                  </div>
+
+                  <button 
+                    onClick={() => setError(null)} 
+                    className="p-2 hover:bg-slate-100 active:bg-slate-200 rounded-full transition-all text-slate-400 hover:text-slate-600 self-end md:self-start md:mt-2 cursor-pointer"
+                    title="Close"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            );
+          })()
+        )}
+
         {processing && (
           <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up max-w-lg mx-auto py-12">
             <motion.div 
@@ -2141,14 +2266,6 @@ export default function App() {
 
         {results && (
           <div className="space-y-12 animate-fade-in">
-            {error && (
-              <div className="p-6 rounded-[2rem] bg-red-50 border border-red-100 text-red-600 flex items-center justify-between shadow-sm">
-                <p className="font-bold text-sm">⚠️ {error}</p>
-                <button onClick={() => setError(null)} className="p-2 hover:bg-red-100 rounded-full transition-colors">
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-            )}
 
             {pendingFiles.length > 0 && (
               <div className="p-8 premium-card flex flex-col sm:flex-row items-center justify-between gap-6 bg-teal-50/30 border-teal-100">
@@ -2181,24 +2298,54 @@ export default function App() {
               </div>
             )}
 
-            {/* Sub-Dataset Picker */}
-            {datasets.length > 1 && (
-              <div className="flex items-center gap-2 overflow-x-auto pb-2 custom-scrollbar no-scrollbar">
-                {datasets.map((d, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveDatasetIndex(i)}
-                    className={`shrink-0 px-6 py-2.5 rounded-full text-xs font-bold transition-all ${
-                      activeDatasetIndex === i 
-                        ? 'bg-slate-900 text-white shadow-xl translate-y-[-2px]' 
-                        : 'text-slate-500 bg-white border border-slate-100 hover:bg-slate-50'
-                    }`}
-                  >
-                    {d.name.split('.')[0]}
-                  </button>
-                ))}
+            {/* Top Analysis Header Action Bar */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-black">
+                  <FlaskConical className="w-5 h-5 text-teal-400" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-black text-slate-850 tracking-tight capitalize select-none">
+                    {activeTab === 'naive_oracle' ? 'Scout Score' : activeTab === 'haplogroups' ? 'Lineages' : activeTab === 'autosomal' ? 'Markers' : activeTab === 'oracle' ? 'Ancestry Oracle' : activeTab === 'blood' ? 'Blood Predictor' : activeTab === 'compare' ? 'Population Matcher' : activeTab}
+                  </h2>
+                  <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                    Analyzing dataset: <span className="text-slate-600 font-mono font-black">{datasets[activeDatasetIndex]?.name}</span>
+                  </p>
+                </div>
               </div>
-            )}
+              
+              <div className="flex flex-wrap items-center gap-3">
+                {/* Dataset Picker Inline */}
+                {datasets.length > 1 && (
+                  <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-slate-100 shadow-sm">
+                    {datasets.map((d, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveDatasetIndex(i)}
+                        className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider transition-all ${
+                          activeDatasetIndex === i 
+                            ? 'bg-slate-900 text-white shadow-sm' 
+                            : 'text-slate-500 hover:bg-slate-50'
+                        }`}
+                      >
+                        {d.name.split('.')[0]}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Methodology Button (Except Wellness) */}
+                {activeTab !== 'wellness' && (
+                  <button
+                    onClick={() => setIsMethodologyOpen(true)}
+                    className="flex items-center gap-1.5 px-4 py-2 bg-teal-50 hover:bg-teal-100/90 border border-teal-150/40 text-teal-700 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-sm"
+                  >
+                    <BookOpen className="w-3.5 h-3.5 text-teal-500" />
+                    Methodology
+                  </button>
+                )}
+              </div>
+            </div>
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -2229,16 +2376,6 @@ export default function App() {
                       userSnps={snpMaps.current[activeDatasetIndex] || {}}
                       famousMatches={famousMatches}
                       healthImpacts={healthWellnessMatches}
-                    />
-                    <SubpopulationBento 
-                      userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
-                      aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
-                        rsid: aim.rsid,
-                        chromosome: aim.chromosome || 'Unknown',
-                        subpop: aim.region, // Assuming region maps to subpop
-                        continent: aim.region || 'Unknown',
-                        alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
-                      }))}
                     />
                   </div>
                 )}
@@ -2278,14 +2415,25 @@ export default function App() {
                 )}
 
                 {activeTab === 'oracle' && (
-                  <div className="pb-20">
-                     <ModernAncestryOracle results={oracleResults} />
+                  <div className="pb-20 space-y-8">
+                     <SubpopulationBento 
+                       precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
+                       userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
+                       aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
+                         rsid: aim.rsid,
+                         chromosome: aim.chromosome || 'Unknown',
+                         subpop: aim.region, // Assuming region maps to subpop
+                         continent: aim.region || 'Unknown',
+                         alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
+                       }))}
+                     />
+                     <ModernAncestryOracle results={oracleResults} onOpenMethodology={() => setIsMethodologyOpen(true)} />
                   </div>
                 )}
 
                 {activeTab === 'naive_oracle' && (
                   <div className="pb-20">
-                     <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} />
+                     <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
                   </div>
                 )}
 
@@ -2344,7 +2492,7 @@ export default function App() {
 
                 {activeTab === 'ancient' && (
                   <div className="pb-20">
-                    <AncientAncestryOracle results={oracleResults?.engine || []} />
+                    <AncientAncestryOracle results={oracleResults?.engine || []} onOpenMethodology={() => setIsMethodologyOpen(true)} />
                   </div>
                 )}
 
@@ -2390,6 +2538,12 @@ export default function App() {
           </div>
         )}
       </main>
+
+      <MethodologyModal
+        isOpen={isMethodologyOpen}
+        onClose={() => setIsMethodologyOpen(false)}
+        activeTab={activeTab}
+      />
     </div>
   );
 }

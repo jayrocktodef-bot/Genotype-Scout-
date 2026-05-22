@@ -6,12 +6,14 @@ export const AncientAncestryOracle = memo(({
   results, 
   title = "Deep Time Oracle", 
   subtitle = "Ancient Admixture & Paleolithic Affinity",
-  type = "admixture"
+  type = "admixture",
+  onOpenMethodology
 }: { 
   results: any[], 
   title?: string, 
   subtitle?: string,
-  type?: 'admixture' | 'matches'
+  type?: 'admixture' | 'matches',
+  onOpenMethodology?: () => void;
 }) => {
   if (!results || results.length === 0) return null;
 
@@ -32,8 +34,18 @@ export const AncientAncestryOracle = memo(({
             <h2 className="text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">{title}</h2>
             <p className="text-xs sm:text-sm font-bold text-amber-500 uppercase tracking-widest">{subtitle}</p>
           </div>
-          <div className="px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold font-mono">
-            ENGINE V5.0
+          <div className="flex items-center gap-2">
+            {onOpenMethodology && (
+              <button
+                onClick={onOpenMethodology}
+                className="px-4 py-2 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-500 text-xs font-bold transition-all flex items-center gap-1.5"
+              >
+                <Microscope size={12} /> Methodology
+              </button>
+            )}
+            <div className="px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold font-mono">
+              ENGINE V5.0
+            </div>
           </div>
         </div>
 

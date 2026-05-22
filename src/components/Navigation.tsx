@@ -33,7 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => onTabChange('dashboard')}>
           <img 
-            src="https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/03/1000055020-e1773637919503.webp" 
+            src="https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png" 
             alt="Genotype Scout Logo"
             className="w-10 h-10 rounded-xl shadow-lg ring-4 ring-slate-100"
           />

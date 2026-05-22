@@ -29,60 +29,68 @@ export class YDnaPredictor {
     }
 
     /**
-     * Flawless prediction requires validating the phylogenetic path.
-     * We start at the root and traverse down.
+     * Hierarchy-aware prediction.
+     * Traverses the phylogenetic tree and selects the deepest haplogroup
+     * with the highest confidence based on marker evidence.
      */
     public predict(rawDna: RawSnp[]): PredictionResult {
         const dnaMap = new Map(rawDna.map(s => [s.rsid, s.allele]));
-        let bestHaplogroup = "A"; // Theoretical root
+        
+        let bestTerminalHaplogroup = "A";
+        let bestConfidence = 0;
+        let bestPath: string[] = [];
         let maxDepth = 0;
-        let confirmedPath: string[] = [];
 
-        // DFS Traversal of the Haplogroup Tree
-        const traverse = (currentHaplo: string, currentDepth: number, path: string[]) => {
+        const traverse = (currentHaplo: string, currentDepth: number, path: string[], cumulativeDerived: number, cumulativeAncestral: number) => {
             const snps = this.tree.get(currentHaplo) || [];
             
-            let derivedCount = 0;
-            let ancestralCount = 0;
+            let localDerived = 0;
+            let localAncestral = 0;
 
             for (const snp of snps) {
                 const userAllele = dnaMap.get(snp.name);
-                if (!userAllele || userAllele === '--' || userAllele === '00') continue; // No-call
+                if (!userAllele || userAllele === '--' || userAllele === '00' || userAllele === 'II') continue;
 
-                // Some raw DNA formats double the allele for hemizygous Y (e.g., 'GG' instead of 'G')
-                const normalizedAllele = userAllele[0]; 
+                const normalizedAllele = userAllele[0];
 
                 if (normalizedAllele === snp.derived) {
-                    derivedCount++;
+                    localDerived++;
                 } else if (normalizedAllele === snp.ancestral) {
-                    ancestralCount++;
+                    localAncestral++;
                 }
             }
 
-            // Logic: To proceed down a branch, we must have supporting evidence (derived SNPs)
-            // AND a lack of contradicting evidence (ancestral SNPs).
-            if (derivedCount > 0 && ancestralCount === 0) {
-                if (currentDepth > maxDepth) {
+            const totalDerived = cumulativeDerived + localDerived;
+            const totalAncestral = cumulativeAncestral + localAncestral;
+            
+            // Confidence calculation: derived markers / (derived + ancestral markers)
+            const confidence = totalDerived > 0 ? (totalDerived / (totalDerived + totalAncestral)) * 100 : 0;
+
+            // Only proceed if we have at least one derived marker
+            if (totalDerived > 0) {
+                // If we are deeper or more confident, update our terminal haplogroup candidate
+                if (currentDepth >= maxDepth && confidence >= bestConfidence) {
                     maxDepth = currentDepth;
-                    bestHaplogroup = currentHaplo;
-                    confirmedPath = [...path, currentHaplo];
+                    bestTerminalHaplogroup = currentHaplo;
+                    bestConfidence = confidence;
+                    bestPath = [...path, currentHaplo];
                 }
 
-                // Check children
+                // Recursively check children
                 const children = this.hierarchy.get(currentHaplo) || [];
                 for (const child of children) {
-                    traverse(child, currentDepth + 1, [...path, currentHaplo]);
+                    traverse(child, currentDepth + 1, [...path, currentHaplo], totalDerived, totalAncestral);
                 }
             }
         };
 
         // Assume 'A' is the theoretical root of the human Y-DNA tree
-        traverse('A', 1, []);
+        traverse('A', 1, [], 0, 0);
 
         return {
-            terminalHaplogroup: bestHaplogroup,
-            confidence: 99.9,
-            path: confirmedPath
+            terminalHaplogroup: bestTerminalHaplogroup,
+            confidence: Math.round(bestConfidence * 100) / 100,
+            path: bestPath
         };
     }
 }

@@ -66,23 +66,26 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
 
   const { predictedABO, predictedRh, markerResults, coverage } = useMemo(() => {
     const rawResults = dataset?.results || [];
-    const getGenotype = (rsid: string) => overrides[rsid] || rawResults.find((r: any) => r.rsid === rsid)?.genotype || "--";
+    const getGenotype = (rsid: string): string => {
+      const val = overrides[rsid] || rawResults.find((r: any) => r.rsid === rsid)?.genotype;
+      return val || "--";
+    };
 
     // ABO Logic
-    const r719 = getGenotype("rs8176719"); // G = A, - = O
-    const r746 = getGenotype("rs8176746"); // G = A1, A = A2
-    const r747 = getGenotype("rs8176747"); // G = A, C = B
-    const r750 = getGenotype("rs8176750"); // G = B, A = A
+    const r719 = getGenotype("rs8176719") || "--"; // G = A, - = O
+    const r746 = getGenotype("rs8176746") || "--"; // G = A1, A = A2
+    const r747 = getGenotype("rs8176747") || "--"; // G = A, C = B
+    const r750 = getGenotype("rs8176750") || "--"; // G = B, A = A
 
     let predicted = "Uncertain";
     
     // Check for Type O (Homozygous deletion at rs8176719)
     // Common formats: DD, II, --, del/del, -/-, O/O
-    const isHomozygousO = ["DD", "II", "--", "O/O"].includes(r719) || r719.split('').every(c => c === '-' || c === 'I' || c === 'D');
+    const isHomozygousO = ["DD", "II", "--", "O/O"].includes(r719) || (r719 || "").split('').every(c => c === '-' || c === 'I' || c === 'D');
     
     // Check for A and B alleles
-    const hasA = r747.includes('G') || r750.includes('A') || r746.includes('G');
-    const hasB = r747.includes('C') || r750.includes('G');
+    const hasA = (r747 || "").includes('G') || (r750 || "").includes('A') || (r746 || "").includes('G');
+    const hasB = (r747 || "").includes('C') || (r750 || "").includes('G');
     
     if (r719 !== "--") {
       if (isHomozygousO) {
@@ -102,18 +105,18 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
     }
 
     // Rh Logic
-    const r590 = getGenotype("rs590787"); // D
-    const r6762 = getGenotype("rs6762788"); // D
-    const r111 = getGenotype("rs11124803"); // D/Rh
-    const r118 = getGenotype("rs118204008"); // RHCE
-    const r676 = getGenotype("rs676785"); // C/c
-    const r6761 = getGenotype("rs676185"); // C/c
-    const r283 = getGenotype("rs28362459"); // E/e
-    const r606 = getGenotype("rs606429"); // E/e
+    const r590 = getGenotype("rs590787") || "--"; // D
+    const r6762 = getGenotype("rs6762788") || "--"; // D
+    const r111 = getGenotype("rs11124803") || "--"; // D/Rh
+    const r118 = getGenotype("rs118204008") || "--"; // RHCE
+    const r676 = getGenotype("rs676785") || "--"; // C/c
+    const r6761 = getGenotype("rs676185") || "--"; // C/c
+    const r283 = getGenotype("rs28362459") || "--"; // E/e
+    const r606 = getGenotype("rs606429") || "--"; // E/e
 
-    const isRhPos = r590.includes('G') || r590.includes('A') || 
-                    r6762.includes('G') || r6762.includes('A') ||
-                    r111.includes('G') || r111.includes('A');
+    const isRhPos = (r590 || "").includes('G') || (r590 || "").includes('A') || 
+                    (r6762 || "").includes('G') || (r6762 || "").includes('A') ||
+                    (r111 || "").includes('G') || (r111 || "").includes('A');
                     
     const isRhNeg = (r590 !== "--" || r6762 !== "--" || r111 !== "--") && !isRhPos;
     

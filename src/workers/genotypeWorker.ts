@@ -11,6 +11,7 @@ import { calculateFamousMatches } from "../utils/individualMatching";
 import { matchHealthAndWellness } from "../utils/healthMatching";
 import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../engines/ancestry/fastMatrixEngine';
 import { extractPlinkGenotype } from '../utils/plinkUtils';
+import { processSubpopulations } from '../components/ancestryOracleLogic';
 
 compileReferenceKernel();
 
@@ -53,10 +54,30 @@ self.onmessage = async (e: MessageEvent) => {
         let parsedFiles = [];
         for (const fileObj of filesToProcess) {
           let parsed;
-          const actualFile = fileObj instanceof File ? fileObj : fileObj.file;
-          const fileName = fileObj instanceof File ? fileObj.name : fileObj.name;
           
-          if (actualFile instanceof File) {
+          // Robust file/blob retrieval across environments and iframe/worker sandboxing guidelines
+          const getStreamableFileOfObj = (obj: any): any => {
+            if (!obj) return null;
+            if (typeof obj.stream === 'function' || typeof obj.slice === 'function') {
+              return obj;
+            }
+            if (obj.file && (typeof obj.file.stream === 'function' || typeof obj.file.slice === 'function')) {
+              return obj.file;
+            }
+            return null;
+          };
+
+          const getFileNameOfObj = (obj: any): string => {
+            if (!obj) return 'Unknown';
+            if (obj.name) return obj.name;
+            if (obj.file && obj.file.name) return obj.file.name;
+            return 'Uploaded Kit';
+          };
+
+          const actualFile = getStreamableFileOfObj(fileObj);
+          const fileName = getFileNameOfObj(fileObj);
+          
+          if (actualFile && typeof actualFile.stream === 'function') {
             // Stream based ingestion for high volume genotypes without blocking / high RAM
             parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
               if (sab) {
@@ -74,9 +95,15 @@ self.onmessage = async (e: MessageEvent) => {
                 }
               }
             });
-          } else {
+          } else if (fileObj && fileObj.buffer) {
             // Standard synchronous fallback for smaller array buffers
             parsed = parseRawDNA(decoder.decode(fileObj.buffer), allowlist);
+          } else if (actualFile) {
+            // Fallback for file/blob without .stream support
+            const arrayBuffer = await actualFile.arrayBuffer();
+            parsed = parseRawDNA(decoder.decode(arrayBuffer), allowlist);
+          } else {
+            throw new Error(`Invalid or unparseable DNA upload asset: ${fileName}`);
           }
           parsedFiles.push({ ...parsed, name: fileName });
         }
@@ -127,6 +154,10 @@ self.onmessage = async (e: MessageEvent) => {
 
     const oracleResults = await calculateAncestryOracle(results.filter(r => r.category === 'Ancestry'), predictedYDNA?.predicted?.continent, predictedMtDNA?.region, grafResults_raw, k27Results_raw, comprehensiveResults);
 
+    // Calculate the high-performance, webworked subpopulation Oracle v3
+    const userGenotypes = Object.entries(imputedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
+    const subpopulationOracle = processSubpopulations(userGenotypes, []);
+
     // Simple naive calculation
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
     
@@ -157,7 +188,8 @@ self.onmessage = async (e: MessageEvent) => {
           grafResults: grafResults_raw, 
           microHapResults, 
           oracleResults, 
-          naiveEstimates 
+          naiveEstimates,
+          subpopulationOracle
         } 
       } 
     });
@@ -166,7 +198,20 @@ self.onmessage = async (e: MessageEvent) => {
       const progressArray = new Int32Array(sab);
       Atomics.store(progressArray, 3, 4); // 4 = error
     }
-    self.postMessage({ type: 'ERROR', error: err instanceof Error ? err.message : "Failure" });
+    let errorPayload: any = { message: "An unexpected error occurred during genomic calculation." };
+    if (err instanceof Error) {
+      errorPayload = {
+        message: err.message,
+        name: err.name,
+        details: (err as any).details || null,
+        stack: err.stack
+      };
+    } else if (typeof err === 'string') {
+      errorPayload = { message: err };
+    } else {
+      errorPayload = { message: String(err) };
+    }
+    self.postMessage({ type: 'ERROR', error: errorPayload });
   }
 };
 
