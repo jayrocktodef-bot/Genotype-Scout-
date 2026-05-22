@@ -75,7 +75,7 @@ export async function createGoogleSlidesPassport(
       pageProperties: {
         pageBackgroundFill: {
           solidFill: {
-            color: { opaqueColor: { rgbColor: { red: 0.08, green: 0.11, blue: 0.17 } } },
+            color: { rgbColor: { red: 0.08, green: 0.11, blue: 0.17 } },
           },
         },
       },
@@ -89,7 +89,7 @@ export async function createGoogleSlidesPassport(
       objectId: "cover_title_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_cover",
+        pageObjectId: "slide_cover",
         size: {
           width: { magnitude: 620, unit: "PT" },
           height: { magnitude: 120, unit: "PT" },
@@ -128,7 +128,7 @@ export async function createGoogleSlidesPassport(
       objectId: "cover_meta_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_cover",
+        pageObjectId: "slide_cover",
         size: {
           width: { magnitude: 620, unit: "PT" },
           height: { magnitude: 130, unit: "PT" },
@@ -184,7 +184,7 @@ export async function createGoogleSlidesPassport(
       pageProperties: {
         pageBackgroundFill: {
           solidFill: {
-            color: { opaqueColor: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } } },
+            color: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } },
           },
         },
       },
@@ -198,7 +198,7 @@ export async function createGoogleSlidesPassport(
       objectId: "admixture_title_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_admixture",
+        pageObjectId: "slide_admixture",
         size: { width: { magnitude: 620, unit: "PT" }, height: { magnitude: 50, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 40, unit: "PT" },
       },
@@ -232,7 +232,7 @@ export async function createGoogleSlidesPassport(
       objectId: "admixture_desc_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_admixture",
+        pageObjectId: "slide_admixture",
         size: { width: { magnitude: 260, unit: "PT" }, height: { magnitude: 250, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 110, unit: "PT" },
       },
@@ -281,7 +281,7 @@ export async function createGoogleSlidesPassport(
         objectId: textId,
         shapeType: "RECTANGLE",
         elementProperties: {
-          pageId: "slide_admixture",
+          pageObjectId: "slide_admixture",
           size: { width: { magnitude: 140, unit: "PT" }, height: { magnitude: 30, unit: "PT" } },
           transform: { scaleX: 1, scaleY: 1, translateX: 340, translateY: yShift, unit: "PT" },
         },
@@ -315,7 +315,7 @@ export async function createGoogleSlidesPassport(
         objectId: baseId,
         shapeType: "RECTANGLE",
         elementProperties: {
-          pageId: "slide_admixture",
+          pageObjectId: "slide_admixture",
           size: { width: { magnitude: 180, unit: "PT" }, height: { magnitude: 12, unit: "PT" } },
           transform: { scaleX: 1, scaleY: 1, translateX: 490, translateY: yShift + 6, unit: "PT" },
         },
@@ -327,11 +327,11 @@ export async function createGoogleSlidesPassport(
         objectId: baseId,
         shapeProperties: {
           shapeBackgroundFill: {
-            solidFill: { color: { opaqueColor: { rgbColor: { red: 0.91, green: 0.92, blue: 0.94 } } } },
+            solidFill: { color: { rgbColor: { red: 0.91, green: 0.92, blue: 0.94 } } },
           },
           outline: {
             outlineFill: {
-              solidFill: { color: { opaqueColor: { rgbColor: { red: 0.85, green: 0.86, blue: 0.88 } } } },
+              solidFill: { color: { rgbColor: { red: 0.85, green: 0.86, blue: 0.88 } } },
             },
             weight: { magnitude: 1, unit: "PT" },
           },
@@ -347,7 +347,7 @@ export async function createGoogleSlidesPassport(
         objectId: fillId,
         shapeType: "RECTANGLE",
         elementProperties: {
-          pageId: "slide_admixture",
+          pageObjectId: "slide_admixture",
           size: { width: { magnitude: fillWidth, unit: "PT" }, height: { magnitude: 12, unit: "PT" } },
           transform: { scaleX: 1, scaleY: 1, translateX: 490, translateY: yShift + 6, unit: "PT" },
         },
@@ -359,11 +359,11 @@ export async function createGoogleSlidesPassport(
         objectId: fillId,
         shapeProperties: {
           shapeBackgroundFill: {
-            solidFill: { color: { opaqueColor: { rgbColor: { red: 0.11, green: 0.54, blue: 0.51 } } } },
+            solidFill: { color: { rgbColor: { red: 0.11, green: 0.54, blue: 0.51 } } },
           },
           outline: {
             outlineFill: {
-              solidFill: { color: { opaqueColor: { rgbColor: { red: 0.08, green: 0.44, blue: 0.41 } } } },
+              solidFill: { color: { rgbColor: { red: 0.08, green: 0.44, blue: 0.41 } } },
             },
             weight: { magnitude: 1, unit: "PT" },
           },
@@ -390,7 +390,7 @@ export async function createGoogleSlidesPassport(
       pageProperties: {
         pageBackgroundFill: {
           solidFill: {
-            color: { opaqueColor: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } } },
+            color: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } },
           },
         },
       },
@@ -404,7 +404,7 @@ export async function createGoogleSlidesPassport(
       objectId: "lineages_title_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_lineages",
+        pageObjectId: "slide_lineages",
         size: { width: { magnitude: 620, unit: "PT" }, height: { magnitude: 50, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 40, unit: "PT" },
       },
@@ -438,7 +438,7 @@ export async function createGoogleSlidesPassport(
       objectId: "lineages_pat_card",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_lineages",
+        pageObjectId: "slide_lineages",
         size: { width: { magnitude: 290, unit: "PT" }, height: { magnitude: 240, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 110, unit: "PT" },
       },
@@ -450,11 +450,11 @@ export async function createGoogleSlidesPassport(
       objectId: "lineages_pat_card",
       shapeProperties: {
         shapeBackgroundFill: {
-          solidFill: { color: { opaqueColor: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } } },
+          solidFill: { color: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } },
         },
         outline: {
           outlineFill: {
-            solidFill: { color: { opaqueColor: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } } },
+            solidFill: { color: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } },
           },
           weight: { magnitude: 1, unit: "PT" },
         },
@@ -494,7 +494,7 @@ export async function createGoogleSlidesPassport(
       objectId: "lineages_mat_card",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_lineages",
+        pageObjectId: "slide_lineages",
         size: { width: { magnitude: 290, unit: "PT" }, height: { magnitude: 240, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 380, translateY: 110, unit: "PT" },
       },
@@ -506,11 +506,11 @@ export async function createGoogleSlidesPassport(
       objectId: "lineages_mat_card",
       shapeProperties: {
         shapeBackgroundFill: {
-          solidFill: { color: { opaqueColor: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } } },
+          solidFill: { color: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } },
         },
         outline: {
           outlineFill: {
-            solidFill: { color: { opaqueColor: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } } },
+            solidFill: { color: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } },
           },
           weight: { magnitude: 1, unit: "PT" },
         },
@@ -561,7 +561,7 @@ export async function createGoogleSlidesPassport(
       pageProperties: {
         pageBackgroundFill: {
           solidFill: {
-            color: { opaqueColor: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } } },
+            color: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } },
           },
         },
       },
@@ -575,7 +575,7 @@ export async function createGoogleSlidesPassport(
       objectId: "proximity_title_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_proximity",
+        pageObjectId: "slide_proximity",
         size: { width: { magnitude: 620, unit: "PT" }, height: { magnitude: 50, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 40, unit: "PT" },
       },
@@ -620,7 +620,7 @@ export async function createGoogleSlidesPassport(
         objectId: popCardId,
         shapeType: "RECTANGLE",
         elementProperties: {
-          pageId: "slide_proximity",
+          pageObjectId: "slide_proximity",
           size: { width: { magnitude: 290, unit: "PT" }, height: { magnitude: 100, unit: "PT" } },
           transform: { scaleX: 1, scaleY: 1, translateX: xShift, translateY: yShift, unit: "PT" },
         },
@@ -632,11 +632,11 @@ export async function createGoogleSlidesPassport(
         objectId: popCardId,
         shapeProperties: {
           shapeBackgroundFill: {
-            solidFill: { color: { opaqueColor: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } } },
+            solidFill: { color: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } },
           },
           outline: {
             outlineFill: {
-              solidFill: { color: { opaqueColor: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } } },
+              solidFill: { color: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } },
             },
             weight: { magnitude: 1, unit: "PT" },
           },
@@ -686,7 +686,7 @@ export async function createGoogleSlidesPassport(
       pageProperties: {
         pageBackgroundFill: {
           solidFill: {
-            color: { opaqueColor: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } } },
+            color: { rgbColor: { red: 0.97, green: 0.98, blue: 0.99 } },
           },
         },
       },
@@ -700,7 +700,7 @@ export async function createGoogleSlidesPassport(
       objectId: "ancient_title_box",
       shapeType: "RECTANGLE",
       elementProperties: {
-        pageId: "slide_ancient",
+        pageObjectId: "slide_ancient",
         size: { width: { magnitude: 620, unit: "PT" }, height: { magnitude: 50, unit: "PT" } },
         transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 40, unit: "PT" },
       },
@@ -741,7 +741,7 @@ export async function createGoogleSlidesPassport(
         objectId: cardId,
         shapeType: "RECTANGLE",
         elementProperties: {
-          pageId: "slide_ancient",
+          pageObjectId: "slide_ancient",
           size: { width: { magnitude: 620, unit: "PT" }, height: { magnitude: 70, unit: "PT" } },
           transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: yShift, unit: "PT" },
         },
@@ -753,11 +753,11 @@ export async function createGoogleSlidesPassport(
         objectId: cardId,
         shapeProperties: {
           shapeBackgroundFill: {
-            solidFill: { color: { opaqueColor: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } } },
+            solidFill: { color: { rgbColor: { red: 1.0, green: 1.0, blue: 1.0 } } },
           },
           outline: {
             outlineFill: {
-              solidFill: { color: { opaqueColor: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } } },
+              solidFill: { color: { rgbColor: { red: 0.88, green: 0.89, blue: 0.91 } } },
             },
             weight: { magnitude: 1, unit: "PT" },
           },
@@ -797,7 +797,7 @@ export async function createGoogleSlidesPassport(
         objectId: "ancient_fallback_box",
         shapeType: "RECTANGLE",
         elementProperties: {
-          pageId: "slide_ancient",
+          pageObjectId: "slide_ancient",
           size: { width: { magnitude: 620, unit: "PT" }, height: { magnitude: 200, unit: "PT" } },
           transform: { scaleX: 1, scaleY: 1, translateX: 50, translateY: 110, unit: "PT" },
         },

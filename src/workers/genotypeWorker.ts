@@ -1,4 +1,4 @@
-import { parseRawDNA } from '../services/dnaParser';
+import { parseRawDNA, parseRawDNAStream } from '../services/dnaParser';
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
 import { matchSNPs } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
@@ -15,9 +15,14 @@ import { extractPlinkGenotype } from '../utils/plinkUtils';
 compileReferenceKernel();
 
 self.onmessage = async (e: MessageEvent) => {
-  const { type, files, payload } = e.data;
+  const { type, files, payload, sab } = e.data;
   
   if (type !== 'PROCESS_GENOME' && type !== 'PLINK_PROCESS_GENOME' && !files) return;
+
+  if (sab) {
+    const progressArray = new Int32Array(sab);
+    Atomics.store(progressArray, 3, 1); // 1 = parsing
+  }
 
   try {
     await compileReferenceKernel();
@@ -44,10 +49,37 @@ self.onmessage = async (e: MessageEvent) => {
     } else {
         const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
         const decoder = new TextDecoder();
-        let parsedFiles = filesToProcess.map((file: { buffer: ArrayBuffer, name: string }) => {
-          const parsed = parseRawDNA(decoder.decode(file.buffer), allowlist);
-          return { ...parsed, name: file.name };
-        });
+        
+        let parsedFiles = [];
+        for (const fileObj of filesToProcess) {
+          let parsed;
+          const actualFile = fileObj instanceof File ? fileObj : fileObj.file;
+          const fileName = fileObj instanceof File ? fileObj.name : fileObj.name;
+          
+          if (actualFile instanceof File) {
+            // Stream based ingestion for high volume genotypes without blocking / high RAM
+            parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
+              if (sab) {
+                const progressArray = new Int32Array(sab);
+                Atomics.store(progressArray, 0, processed);
+                Atomics.store(progressArray, 1, total);
+                Atomics.store(progressArray, 2, snps);
+              } else {
+                // Throttle progress events slightly to keep communication noise-free
+                if (processed === total || snps % 20000 === 0) {
+                  self.postMessage({ 
+                    type: 'PROGRESS', 
+                    payload: { name: fileName, processed, total, snps } 
+                  });
+                }
+              }
+            });
+          } else {
+            // Standard synchronous fallback for smaller array buffers
+            parsed = parseRawDNA(decoder.decode(fileObj.buffer), allowlist);
+          }
+          parsedFiles.push({ ...parsed, name: fileName });
+        }
         
         let mergedSnpMap: Record<string, string> = {};
         for (const pf of parsedFiles) {
@@ -58,10 +90,17 @@ self.onmessage = async (e: MessageEvent) => {
           Object.assign(mergedYMap, pf.yMap);
           Object.assign(mergedMtMap, pf.mtMap);
           for (const rsid in pf.snpMap) {
-            if (!mergedSnpMap[rsid] || pf.snpMap[rsid].length > mergedSnpMap[rsid].length) mergedSnpMap[rsid] = pf.snpMap[rsid];
+            if (!mergedSnpMap[rsid] || pf.snpMap[rsid].length > mergedSnpMap[rsid].length) {
+              mergedSnpMap[rsid] = pf.snpMap[rsid];
+            }
           }
         }
         imputedSnpMap = applyLightImputation(mergedSnpMap);
+    }
+
+    if (sab) {
+      const progressArray = new Int32Array(sab);
+      Atomics.store(progressArray, 3, 2); // 2 = executing analysis
     }
 
     const results = matchSNPs(imputedSnpMap, mergedSnpMetaMap);
@@ -91,6 +130,11 @@ self.onmessage = async (e: MessageEvent) => {
     // Simple naive calculation
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
     
+    if (sab) {
+      const progressArray = new Int32Array(sab);
+      Atomics.store(progressArray, 3, 3); // 3 = finished
+    }
+
     self.postMessage({ 
       type: 'SUCCESS', 
       payload: { 
@@ -118,6 +162,10 @@ self.onmessage = async (e: MessageEvent) => {
       } 
     });
   } catch (err) {
+    if (sab) {
+      const progressArray = new Int32Array(sab);
+      Atomics.store(progressArray, 3, 4); // 4 = error
+    }
     self.postMessage({ type: 'ERROR', error: err instanceof Error ? err.message : "Failure" });
   }
 };

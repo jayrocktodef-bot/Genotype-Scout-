@@ -1655,6 +1655,12 @@ export default function App() {
 
   const [explorerSearch, setExplorerSearch] = useState<string>('');
   const [processing, setProcessing] = useState(false);
+  const [streamProgress, setStreamProgress] = useState<{
+    processed: number;
+    total: number;
+    snps: number;
+    step: string;
+  }>({ processed: 0, total: 0, snps: 0, step: "Ready" });
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -1810,36 +1816,77 @@ export default function App() {
       return;
     }
     
-    const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+    const MAX_FILE_SIZE = 2000 * 1024 * 1024; // 2GB
     const largeFiles = fileArray.filter(f => f.size > MAX_FILE_SIZE);
     if (largeFiles.length > 0) {
-      setError(`File(s) too large: ${largeFiles.map(f => f.name).join(', ')}. Max size is 50MB.`);
+      setError(`File(s) too large: ${largeFiles.map(f => f.name).join(', ')}. Max size is 2GB.`);
       setProcessing(false);
       return;
     }
 
+    setStreamProgress({
+      processed: 0,
+      total: fileArray.reduce((acc, f) => acc + f.size, 0),
+      snps: 0,
+      step: "Ingesting DNA stream..."
+    });
+
     try {
-      const fileContents = await Promise.all(fileArray.map(file => {
-        return new Promise<{ buffer: ArrayBuffer, name: string }>((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-            const buffer = e.target?.result as ArrayBuffer;
-            if (!buffer || buffer.byteLength === 0) {
-              reject(new Error(`File ${file.name} is empty.`));
-            } else {
-              resolve({ buffer, name: file.name });
-            }
-          };
-          reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
-          reader.readAsArrayBuffer(file);
-        });
+      // Instead of reading giant array buffers into the main thread, 
+      // we pass the raw cloneable File objects directly!
+      const fileContents = fileArray.map(file => ({
+        file: file,
+        name: file.name
       }));
 
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
+      let sab: SharedArrayBuffer | null = null;
+      let progressArray: Int32Array | null = null;
+      let intervalId: any = null;
+
+      if (typeof SharedArrayBuffer !== 'undefined') {
+        try {
+          sab = new SharedArrayBuffer(16);
+          progressArray = new Int32Array(sab);
+          progressArray[0] = 0; // bytes processed
+          progressArray[1] = fileArray.reduce((acc, f) => acc + f.size, 0); // total bytes
+          progressArray[2] = 0; // matches found
+          progressArray[3] = 1; // status (1 = parsing, 2 = analyzing, 3 = finished, 4 = error)
+
+          intervalId = setInterval(() => {
+            if (progressArray) {
+              const processed = Atomics.load(progressArray, 0);
+              const total = Atomics.load(progressArray, 1);
+              const snps = Atomics.load(progressArray, 2);
+              const statusVal = Atomics.load(progressArray, 3);
+
+              let step = "Ingesting DNA stream...";
+              if (statusVal === 2) step = "Engaging Bayesian Ancestry Engine...";
+              else if (statusVal === 3) step = "Completing Profiler...";
+              else if (statusVal === 4) step = "Ingestion failed.";
+
+              setStreamProgress({ processed, total, snps, step });
+            }
+          }, 60);
+        } catch (e) {
+          console.warn("SharedArrayBuffer restriction active: Falling back to direct worker message passing.", e);
+        }
+      }
+
       worker.onmessage = (e) => {
         const { type, payload, error: workerError } = e.data;
-        if (type === 'SUCCESS') {
+        if (type === 'PROGRESS') {
+          const { processed, total, snps } = payload;
+          setStreamProgress(prev => ({
+            ...prev,
+            processed,
+            total,
+            snps,
+            step: "Ingesting DNA stream..."
+          }));
+        } else if (type === 'SUCCESS') {
+          if (intervalId) clearInterval(intervalId);
           const newIndex = datasets.length;
           snpMaps.current[newIndex] = payload.mergedSnpMap;
           updateDatasets({ 
@@ -1855,7 +1902,8 @@ export default function App() {
           setPendingFiles([]);
           setProcessing(false);
           worker.terminate();
-        } else {
+        } else if (type === 'ERROR') {
+          if (intervalId) clearInterval(intervalId);
           setError(workerError || "Processing failed in background worker.");
           setProcessing(false);
           worker.terminate();
@@ -1863,13 +1911,18 @@ export default function App() {
       };
 
       worker.onerror = (err) => {
+        if (intervalId) clearInterval(intervalId);
         setError(`Worker error: ${err.message}`);
         setProcessing(false);
         worker.terminate();
       };
 
-      const transferList = fileContents.map(f => f.buffer);
-      worker.postMessage({ type: 'PROCESS_GENOME', files: fileContents }, transferList);
+      // Ship the processing request to the worker with the option of a SharedArrayBuffer
+      worker.postMessage({ 
+        type: 'PROCESS_GENOME', 
+        files: fileContents,
+        sab
+      });
     } catch (err) {
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
@@ -2023,18 +2076,57 @@ export default function App() {
 
       <main className="max-w-7xl mx-auto px-6 pt-28">
         {processing && (
-          <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up">
+          <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up max-w-lg mx-auto py-12">
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-              className="w-20 h-20 bg-teal-50 rounded-3xl flex items-center justify-center text-5xl mb-8 shadow-inner"
+              className="w-20 h-20 overflow-hidden rounded-3xl flex items-center justify-center mb-8 shadow-inner"
             >
-              🧬
+              <img 
+                src="https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png" 
+                alt="DNA Processing" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
-            <h2 className="text-3xl font-black text-slate-800 mb-4 tracking-tight">Decrypting your genome...</h2>
-            <p className="text-slate-500 max-w-md mx-auto leading-relaxed">
-              We're analyzing over 11,000 markers to reconstruct your genetic story. 
-              This happens locally and securely.
+            <h2 className="text-3xl font-black text-slate-800 mb-2 tracking-tight">Decrypting genome...</h2>
+            <div className="text-xs font-mono font-black text-teal-600 uppercase tracking-widest mb-6">
+              {streamProgress.step}
+            </div>
+
+            {streamProgress.total > 0 && (
+              <div className="w-full bg-slate-100 rounded-full h-3 mb-6 overflow-hidden p-0.5 border border-slate-200">
+                <motion.div 
+                  className="bg-gradient-to-r from-teal-500 to-emerald-500 h-full rounded-full"
+                  style={{ width: `${Math.min(100, (streamProgress.processed / streamProgress.total) * 100)}%` }}
+                  layout
+                />
+              </div>
+            )}
+
+            <div className="grid grid-cols-3 gap-6 w-full text-center text-slate-500 text-xs font-bold uppercase tracking-wider mb-8">
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
+                <span className="text-slate-400 block mb-1 text-[10px]">Processed</span>
+                <span className="text-slate-800 font-extrabold font-mono text-base">
+                  {(streamProgress.processed / (1024 * 1024)).toFixed(1)} MB
+                </span>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
+                <span className="text-slate-400 block mb-1 text-[10px]">Total size</span>
+                <span className="text-slate-800 font-extrabold font-mono text-base">
+                  {(streamProgress.total / (1024 * 1024)).toFixed(1)} MB
+                </span>
+              </div>
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
+                <span className="text-slate-400 block mb-1 text-[10px]">Markers Matched</span>
+                <span className="text-teal-600 font-extrabold font-mono text-base font-black">
+                  {streamProgress.snps.toLocaleString()}
+                </span>
+              </div>
+            </div>
+
+            <p className="text-slate-500 max-w-sm mx-auto leading-relaxed text-xs">
+              Streaming dataset chunk-by-chunk using background Web Workers and SharedArrayBuffer memory models. Analyzing locally inside your sandbox browser context.
             </p>
           </div>
         )}

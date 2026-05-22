@@ -120,29 +120,45 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             </p>
           </div>
         </div>
-
-        {/* Gemini share case study link / Action section at the bottom */}
-        <div className="mt-16 p-8 bg-slate-900 text-white rounded-[2.5rem] text-left relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl shadow-slate-950/20">
-          <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1.5px,transparent_1.5px)] [background-size:24px_24px] opacity-10"></div>
-          <div className="relative z-10 max-w-xl space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-500/10 border border-teal-500/20 text-teal-400 rounded-full text-[10px] font-black uppercase tracking-widest">
-              Gemini Integration Showcase
-            </span>
-            <h3 className="text-2xl font-black text-slate-100 tracking-tight leading-snug">
-              Interactive AI-Assisted Architecture Case Study
-            </h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Explore how we leveraged Gemini's advanced semantic modeling to develop Genotype Scout's privacy-centric, zero-footprint personal genetic kernels and local ancestry algorithm architectures. See the complete system blueprint on Google AI Studio.
+        
+        {/* Bento Card: African American DNA */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left w-full mt-8">
+          <div className="p-8 premium-card hover:border-blue-100 transition-colors md:col-span-2 bg-gradient-to-br from-white to-blue-50/10">
+            <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+              <Dna className="w-6 h-6" />
+            </div>
+            <h3 className="font-extrabold text-slate-800 text-lg mb-2">Deconvolving African American Admixture</h3>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              African American ancestry is often highly complex due to centuries of structural admixture. Our algorithms specifically untangle these threads by isolating West African, European, and indigenous sub-components through high-resolution, phased marker analysis, ensuring greater precision in identifying your specific, nuanced regional heritage.
             </p>
           </div>
-          <a
-            href="https://gemini.google.com/share/f95978efdaa8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10 w-full md:w-auto shrink-0 px-8 py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs uppercase tracking-widest rounded-2xl text-center shadow-lg transition-transform hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-2"
+        </div>
+
+        {/* Genotype Scout Character Artwork */}
+        <div className="mt-16 w-full max-w-3xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="group relative overflow-hidden bg-slate-50 rounded-3xl border border-slate-100 p-4 sm:p-6 shadow-xl shadow-slate-100 hover:shadow-2xl transition-all hover:border-teal-50"
           >
-            Review AI Case Study <ArrowRight className="w-3.5 h-3.5" />
-          </a>
+            <div className="aspect-[2.1/1] w-full overflow-hidden rounded-2xl border border-slate-200 relative bg-slate-900 shadow-inner">
+              <img 
+                src="https://writteninthegenome.blog/wp-content/uploads/2026/05/17794109956991097490157538819964.png" 
+                alt="Genotype Scout - Scout Boy Mascot Logo" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <span className="text-[10px] font-black tracking-[0.2em] text-teal-650 uppercase bg-teal-50/50 px-3 py-1 rounded-full border border-teal-100">
+                Official Mascot & Companion
+              </span>
+              <p className="mt-2 text-xs text-slate-400 font-mono font-medium">
+                GENOTYPE SCOUT™ — Your privacy-first local genomic analysis suite.
+              </p>
+            </div>
+          </motion.div>
         </div>
 
       </motion.div>
