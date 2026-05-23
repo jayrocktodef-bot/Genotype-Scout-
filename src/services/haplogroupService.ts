@@ -12,22 +12,30 @@ export function findMatchesInHaplogroups(userSnpMap: Record<string, string>) {
   const matches: { branch: IsoggBranch, matches: string[] }[] = [];
   
   for (const branch of HAPLOGROUP_DB) {
-    const branchMatches: string[] = [];
+    const branchMatches: Set<string> = new Set();
     
-    // Check rsids, treating rsid_SUFFIX as a variant of rsid
+    // Check rsids
     for (const rsid of branch.rsids) {
-      const baseRsid = rsid.split('_')[0].toLowerCase();
-      // Check for exact match or suffix match
-      if (userSnpMap[rsid.toLowerCase()]) {
-        branchMatches.push(rsid);
+      const rsidLower = rsid.toLowerCase();
+      const baseRsid = rsidLower.split('_')[0];
+      
+      if (userSnpMap[rsidLower]) {
+        branchMatches.add(rsidLower);
       } else if (userSnpMap[baseRsid]) {
-        // This is a fuzzy match, maybe lower weight?
-        branchMatches.push(baseRsid);
+        branchMatches.add(baseRsid);
+      }
+    }
+
+    // Check definingSNPs
+    for (const snp of branch.definingSNPs) {
+      const snpLower = snp.toLowerCase();
+      if (userSnpMap[snpLower]) {
+        branchMatches.add(snpLower);
       }
     }
     
-    if (branchMatches.length > 0) {
-      matches.push({ branch, matches: branchMatches });
+    if (branchMatches.size > 0) {
+      matches.push({ branch, matches: Array.from(branchMatches) });
     }
   }
   
