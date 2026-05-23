@@ -1478,7 +1478,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
             </div>
           </div>
           
-          {/* Archive: Maternal Library Card
+          {/* Maternal Library Card */}
           <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm overflow-hidden relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100 dark:border-slate-700">
               <div>
@@ -1503,7 +1503,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                <div className="overflow-x-auto">
                  <div className="min-w-[1000px]">
                    <HaplogroupTreeView 
-                     node={MT_DNA_TREE} 
+                     node={enrichedMtTree} 
                      userPath={mtData.path} 
                      searchTerm={treeSearchTerm} 
                      testedMarkers={mtData.testedMarkers} 
@@ -1512,7 +1512,6 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                </div>
             </div>
           </div>
-          */}
         </div>
 
         {/* Archive: PhyloTree Deep Analysis
