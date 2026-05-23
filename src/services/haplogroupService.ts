@@ -1,4 +1,4 @@
-import haploData from '../data/haplogroups/parsed_haplogroups.json';
+import masterYdna from '../data/master_ydna.json';
 
 export interface IsoggBranch {
   branchName: string;
@@ -6,7 +6,7 @@ export interface IsoggBranch {
   rsids: string[];
 }
 
-export const HAPLOGROUP_DB = haploData as IsoggBranch[];
+export const HAPLOGROUP_DB = masterYdna.isoggTree as IsoggBranch[];
 
 export function findMatchesInHaplogroups(userSnpMap: Record<string, string>) {
   const matches: { branch: IsoggBranch, matches: string[] }[] = [];

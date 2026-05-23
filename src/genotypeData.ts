@@ -1,9 +1,9 @@
-import mtDescriptions from './data/mitochondrial/mtDescriptions.json';
+import masterMtdna from './data/master_mtdna.json';
 
 /**
  * Retrieves a brief explanation for a given marker ID or mutation.
  */
-export const MT_MARKER_DESCRIPTIONS: Record<string, string> = mtDescriptions;
+export const MT_MARKER_DESCRIPTIONS: Record<string, string> = masterMtdna.descriptions;
 
 // Re-export data from snpDatabase
 export * from './data/snpDatabase';

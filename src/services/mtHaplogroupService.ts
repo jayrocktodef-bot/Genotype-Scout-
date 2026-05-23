@@ -1,11 +1,11 @@
-import mtHaploData from '../data/haplogroups/mt_haplogroups.json';
+import masterMtdna from '../data/master_mtdna.json';
 
 export interface MtHaplogroupBranch {
   branchName: string;
   mutations: string[];
 }
 
-export const MT_HAPLOGROUP_DB = mtHaploData as MtHaplogroupBranch[];
+export const MT_HAPLOGROUP_DB = masterMtdna.haplogroups as MtHaplogroupBranch[];
 
 /**
  * Finds mtDNA haplogroup matches based on user mutations.

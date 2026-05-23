@@ -95,5 +95,120 @@
     },
     "culture": "Wilton / Oakhurst",
     "age_bp": 10200
+  },
+  {
+    "id": "anzick_1",
+    "name": "Anzick-1 (Clovis Boy)",
+    "region": "Wilsall, Montana, USA",
+    "period": "Late Pleistocene (12,600 BP)",
+    "description": "Skeletal remains of an infant boy buried with Clovis stone tools in Montana. His genome confirms the Siberian migration origin of Native Americans and shows direct lineage continuity with modern Indigenous Central and South Americans.",
+    "ancestry_group": "Indigenous American / Paleo-Indian",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    },
+    "culture": "Clovis Paleo-Indian",
+    "age_bp": 12600
+  },
+  {
+    "id": "kennewick_man",
+    "name": "Kennewick Man (Ancient One)",
+    "region": "Columbia River, Washington, USA",
+    "period": "Early Holocene (8,900 BP)",
+    "description": "Found along the Columbia River. A landmark legal and genetic case that proved close genetic continuity to the modern Colville and other Pacific Northwest Native American tribes.",
+    "ancestry_group": "Indigenous American",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Early Cascade",
+    "age_bp": 8900
+  },
+  {
+    "id": "gyamfi_single",
+    "name": "Gyamfi Single",
+    "region": "Gyamfi-Sade, Ghana",
+    "period": "Iron Age (2,500 BP)",
+    "description": "An ancient West African genome from Ghana predating the major Bantu migration events, providing a key baseline of historic West African genetic variation.",
+    "ancestry_group": "West African",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs2814778"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs2814778": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CC"
+    },
+    "culture": "Kintampo Culture",
+    "age_bp": 2500
+  },
+  {
+    "id": "luxor_ancestor",
+    "name": "Luxor Ancient Egyptian",
+    "region": "Abusir el-Meleq, Egypt",
+    "period": "Ptolemaic Period (2,200 BP)",
+    "description": "Ancient Egyptian from a mummified community. Shows high genetic affinity to historical Near Eastern and Anatolian populations with smaller Sub-Saharan African components.",
+    "ancestry_group": "North African / Near Eastern",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs1042602"],
+    "genotypes": {
+      "rs1426654": "AG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CA"
+    },
+    "culture": "Ancient Egyptian",
+    "age_bp": 2200
+  },
+  {
+    "id": "rameses_iii",
+    "name": "Rameses III",
+    "region": "Thebes, Egypt",
+    "period": "New Kingdom (3,150 BP)",
+    "description": "Famous pharaoh of the 20th Dynasty, known for repelling the Sea Peoples during the Late Bronze Age collapse.",
+    "ancestry_group": "North African Pharaoh",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1042602": "CC"
+    },
+    "culture": "Ancient Egyptian",
+    "age_bp": 3150
+  },
+  {
+    "id": "richard_iii",
+    "name": "King Richard III",
+    "region": "Leicester, England",
+    "period": "Late Medieval (540 BP)",
+    "description": "The last English monarch of South-Western Europe descent to die in battle, found buried under a car park in Leicester.",
+    "ancestry_group": "Late Medieval English",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832"],
+    "genotypes": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "AA",
+      "rs1042602": "CA"
+    },
+    "culture": "Plantagenet English",
+    "age_bp": 540
   }
 ]

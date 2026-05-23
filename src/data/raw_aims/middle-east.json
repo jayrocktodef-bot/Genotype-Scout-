@@ -7011,5 +7011,28 @@
     "gene": "Unknown",
     "subPopulation": "North African",
     "subRegion": "North Africa"
+  },
+  {
+    "rsid": "rs16891982_MENA",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.2,
+      "EAS": 0.02,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.85,
+      "OCE": 0.02
+    },
+    "description": "SLC45A2 variant associated with West Asian/MENA depigmentation.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC45A2",
+    "subPopulation": "Middle Eastern",
+    "subRegion": "Middle East"
   }
 ]

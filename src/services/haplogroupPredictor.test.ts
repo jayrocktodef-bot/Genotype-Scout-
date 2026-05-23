@@ -38,6 +38,11 @@ vi.mock('./snpMatcher', () => ({
   getMarkerDescription: vi.fn(() => 'Description')
 }));
 
+vi.mock('./mtHaplogroupService', () => ({
+  findMatchesInMtHaplogroups: vi.fn(() => []),
+  searchMtHaplogroupTree: vi.fn(() => [])
+}));
+
 describe('predictYDNAHaplogroup', () => {
   it('should predict Y-DNA haplogroup correctly', () => {
     const yMap = { 'rs1': 'A', 'rs2': 'G' };

@@ -34,11 +34,11 @@ rs789	MT	300	C	0
   });
 
   it('should throw error for empty file', () => {
-    expect(() => parseRawDNA('')).toThrow('The file appears to be empty');
+    expect(() => parseRawDNA('')).toThrow('This file is completely empty.');
   });
 
   it('should throw error for invalid data', () => {
     const rawData = 'invalid data';
-    expect(() => parseRawDNA(rawData)).toThrow('The file appears to be empty');
+    expect(() => parseRawDNA(rawData)).toThrow('The file contains no parseable genetic markers (SNPs).');
   });
 });

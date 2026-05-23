@@ -1,12 +1,12 @@
 import { SNP_DB, SNP_LOOKUP } from '../data/snpDatabase';
-import mtDescriptions from '../data/mitochondrial/mtDescriptions.json';
+import masterMtdna from '../data/master_mtdna.json';
 import { ANCHOR_AIMS } from '../anchorAims';
 import masterAims from '../data/master_aims_normalized.json' with { type: 'json' };
 import v5MarkersMaster from '../data/v5_markers_master.json' with { type: 'json' };
 import { SNP } from '../types/genotype';
 import { SNP_PROXY_MAP } from '../utils/genotypeUtils';
 
-const MT_MARKER_DESCRIPTIONS: Record<string, string> = mtDescriptions;
+const MT_MARKER_DESCRIPTIONS: Record<string, string> = masterMtdna.descriptions;
 
 export function getMarkerDescription(markerId: string): string {
   if (MT_MARKER_DESCRIPTIONS[markerId]) return MT_MARKER_DESCRIPTIONS[markerId];

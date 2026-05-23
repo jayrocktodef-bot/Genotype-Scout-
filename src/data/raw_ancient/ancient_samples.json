@@ -190,5 +190,138 @@
       "rs1800414": "AG",
       "rs1042602": "TT"
     }
+  },
+
+  "anzick_1": {
+    "id": "anzick_1",
+    "name": "Anzick-1 (Clovis Boy)",
+    "site": "Wilsall, Montana, USA",
+    "country": "United States",
+    "age_bp": 12600,
+    "period": "Late Pleistocene",
+    "culture": "Clovis",
+    "culture_name": "Paleo-clovis",
+    "sex": "Male",
+    "description": "Skeletal remains of an infant boy buried with Clovis stone tools in Montana. His genome confirms the Siberian migration origin of Native Americans and shows direct lineage continuity with modern Indigenous Central and South Americans.",
+    "region": "Americas (Indigenous)",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "kennewick_man": {
+    "id": "kennewick_man",
+    "name": "Kennewick Man (Ancient One)",
+    "site": "Columbia River, Washington, USA",
+    "country": "United States",
+    "age_bp": 8900,
+    "period": "Early Holocene",
+    "culture": "Early Cascade",
+    "culture_name": "Early Cascade",
+    "sex": "Male",
+    "description": "Found along the Columbia River. A landmark legal and genetic case that proved close genetic continuity to the modern Colville and other Pacific Northwest Native American tribes.",
+    "region": "Americas (Indigenous)",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    }
+  },
+
+  "gyamfi_single": {
+    "id": "gyamfi_single",
+    "name": "Gyamfi Single",
+    "site": "Gyamfi-Sade, Ghana",
+    "country": "Ghana",
+    "age_bp": 2500,
+    "period": "Iron Age",
+    "culture": "Kintampo Culture",
+    "culture_name": "Kintampo Culture",
+    "sex": "Male",
+    "description": "An ancient West African genome from Ghana predating the major Bantu migration events, providing a key baseline of historic West African genetic variation.",
+    "region": "West Africa",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs2814778": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CC"
+    }
+  },
+
+  "luxor_ancestor": {
+    "id": "luxor_ancestor",
+    "name": "Luxor Ancient Egyptian",
+    "site": "Abusir el-Meleq, Egypt",
+    "country": "Egypt",
+    "age_bp": 2200,
+    "period": "Ptolemaic Period",
+    "culture": "Ancient Egyptian",
+    "culture_name": "Ancient Egyptian",
+    "sex": "Male",
+    "description": "Ancient Egyptian from a mummified community. Shows high genetic affinity to historical Near Eastern and Anatolian populations with smaller Sub-Saharan African components.",
+    "region": "North Africa / Near Eastern",
+    "snps": {
+      "rs1426654": "AG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CA"
+    }
+  },
+
+  "rameses_iii": {
+    "id": "rameses_iii",
+    "name": "Rameses III",
+    "site": "Thebes, Egypt",
+    "country": "Egypt",
+    "age_bp": 3150,
+    "period": "New Kingdom",
+    "culture": "Ancient Egyptian",
+    "culture_name": "New Kingdom Pharaoh",
+    "sex": "Male",
+    "description": "Famous pharaoh of the 20th Dynasty, known for repelling the Sea Peoples during the Late Bronze Age collapse.",
+    "region": "North Africa",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1042602": "CC"
+    }
+  },
+
+  "richard_iii": {
+    "id": "richard_iii",
+    "name": "King Richard III",
+    "site": "Leicester, England",
+    "country": "United Kingdom",
+    "age_bp": 540,
+    "period": "Late Medieval",
+    "culture": "Plantagenet English",
+    "culture_name": "Plantagenet English",
+    "sex": "Male",
+    "description": "The last English monarch of South-Western Europe descent to die in battle, found buried under a car park in Leicester.",
+    "region": "Western Europe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "AA",
+      "rs1042602": "CA"
+    }
   }
 }

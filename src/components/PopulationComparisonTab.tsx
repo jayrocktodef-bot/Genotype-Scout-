@@ -98,7 +98,7 @@ export const PopulationComparisonTab: React.FC<PopulationComparisonTabProps> = (
                         {match.region}
                       </span>
                     </span>
-                    <span className="text-emerald-400 font-mono">{match.similarityScore.toFixed(1)}%</span>
+                    <span className="text-emerald-400 font-mono">{(match.similarityScore || 0).toFixed(1)}%</span>
                   </div>
                   <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
                     <div 

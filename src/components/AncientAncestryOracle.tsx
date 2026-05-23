@@ -64,7 +64,7 @@ export const AncientAncestryOracle = memo(({
                 </div>
                 <div className="text-right">
                   <span className="block text-2xl font-black text-[#F5F6F7] leading-none mb-1">
-                    {pop.score.toFixed(1)}%
+                    {(pop.score || 0).toFixed(1)}%
                   </span>
                   <span className="text-[10px] uppercase font-bold tracking-tighter text-amber-500/70">
                     {type === 'matches' ? 'Genetic Match' : 'Affinity Score'}

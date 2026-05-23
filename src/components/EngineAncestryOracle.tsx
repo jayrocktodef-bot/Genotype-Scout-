@@ -47,7 +47,7 @@ export const EngineAncestryOracle = memo(({ results }: { results: any[] }) => {
             </div>
             <div className="flex justify-between text-[9px] font-bold text-slate-500 uppercase tracking-widest">
               <span>Fit Confidence</span>
-              <span className="font-mono">Dist: {r.distance.toFixed(3)}</span>
+              <span className="font-mono">Dist: {(r.distance || 0).toFixed(3)}</span>
             </div>
           </div>
         ))}

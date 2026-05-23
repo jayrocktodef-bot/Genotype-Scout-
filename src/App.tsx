@@ -62,7 +62,8 @@ import { calculateHistoricalClusterMatches } from "./engines/ancestry/historical
 import { calculateProAncestry } from "./engines/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
 import { forensicAimsMaster as forensicAims, graf10kIndex as grafIndex } from './data';
-import mitoTraits from "./data/mitochondrial/mito_traits.json";
+import masterMtdna from "./data/master_mtdna.json";
+const mitoTraits = masterMtdna.traits;
 import Dashboard from "./components/Dashboard";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";

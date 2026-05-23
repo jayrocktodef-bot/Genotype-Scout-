@@ -5109,5 +5109,28 @@
     "trait": "Ancestry",
     "category": "Ancestry",
     "subRegion": "AMERICAS"
+  },
+  {
+    "rsid": "rs762551_AMR",
+    "region": "Native American",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.1,
+      "EAS": 0.3,
+      "AMR": 0.8,
+      "SAS": 0.1,
+      "MENA": 0.1,
+      "OCE": 0.05
+    },
+    "description": "Marker identified in North American ancestral lineages.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "CYP1A2",
+    "subPopulation": "Native American",
+    "subRegion": "AMERICAS"
   }
 ]

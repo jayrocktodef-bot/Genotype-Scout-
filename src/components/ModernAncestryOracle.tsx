@@ -66,15 +66,15 @@ export const ModernAncestryOracle = memo(({
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="space-y-12"
+      className="space-y-6 sm:space-y-12"
     >
       {/* Standard Oracle Section */}
-      <div className="p-8 sm:p-12 rounded-[2rem] sm:rounded-[3rem] bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
+      <div className="p-4 sm:p-8 md:p-12 rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Ancestry Oracle V2</h2>
+            <h2 className="text-2xl sm:text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Ancestry Oracle V2</h2>
             <div className="flex flex-wrap items-center gap-3">
-              <p className="text-xs sm:text-sm font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
+              <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
             </div>
           </div>
         </div>

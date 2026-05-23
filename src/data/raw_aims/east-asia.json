@@ -2644,5 +2644,29 @@
     "gene": "Unknown",
     "subPopulation": "East Asian",
     "subRegion": "East Asia"
+  },
+  {
+    "rsid": "rs3827760_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.05,
+      "EAS": 0.9,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.02,
+      "OCE": 0.1
+    },
+    "description": "EDAR V370A variant common in East Asian populations.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "EDAR",
+    "subpop": "East Eurasian",
+    "subPopulation": "East Eurasian",
+    "subRegion": "East Asia"
   }
 ]
