@@ -70,6 +70,59 @@ import HeroUpload from "./components/HeroUpload";
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "3.4.0";
 
+const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace("haplogroup ", "").trim();
+
+function enrichHaplogroupTree(tree: any, userPath: string[], testedMarkers: any[]) {
+  if (!tree) return null;
+  const cloned = JSON.parse(JSON.stringify(tree));
+  if (!userPath || userPath.length <= 1) return cloned;
+  
+  function findNodeInCloned(root: any, normalizedName: string): any | null {
+    if (normalizeBranchName(root.branchName) === normalizedName) return root;
+    if (root.children) {
+      for (const child of root.children) {
+        const found = findNodeInCloned(child, normalizedName);
+        if (found) return found;
+      }
+    }
+    return null;
+  }
+  
+  for (let i = 1; i < userPath.length; i++) {
+    const step = userPath[i];
+    if (!step) continue;
+    const normalizedStep = normalizeBranchName(step);
+    
+    const existing = findNodeInCloned(cloned, normalizedStep);
+    if (!existing) {
+      const parentStep = userPath[i - 1];
+      const normalizedParent = normalizeBranchName(parentStep);
+      const parentNode = findNodeInCloned(cloned, normalizedParent);
+      
+      if (parentNode) {
+        if (!parentNode.children) parentNode.children = [];
+        
+        const snpsForNode = (testedMarkers || [])
+          .filter((tm: any) => {
+            const tmBranch = tm.branch || tm.mutation || "";
+            const tmTrait = tm.trait || tm.description || "";
+            return normalizeBranchName(tmBranch) === normalizedStep || normalizeBranchName(tmTrait).includes(normalizedStep);
+          })
+          .map((tm: any) => tm.marker || tm.mutation);
+
+        parentNode.children.push({
+          branchName: step.startsWith("Haplogroup ") ? step : `Haplogroup ${step}`,
+          snp: snpsForNode.length > 0 ? snpsForNode : [],
+          region: parentNode.region || "Global",
+          description: `Precise sub-lineage identified via genotyping markers.`,
+          children: []
+        });
+      }
+    }
+  }
+  return cloned;
+}
+
 const HaplogroupTreeView = memo(({ node, userPath = [], level = 0, searchTerm = '', testedMarkers = [] }: { 
   node: any, 
   userPath?: string[], 
@@ -78,7 +131,8 @@ const HaplogroupTreeView = memo(({ node, userPath = [], level = 0, searchTerm = 
   testedMarkers?: any[]
 }) => {
   const safeUserPath = userPath || [];
-  const isMatch = safeUserPath.includes(node.branchName);
+  const normalizedUserPath = safeUserPath.map(p => normalizeBranchName(p));
+  const isMatch = normalizedUserPath.includes(normalizeBranchName(node.branchName));
   const matchesSearch = searchTerm && node.branchName.toLowerCase().includes(searchTerm.toLowerCase());
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -973,6 +1027,10 @@ const CustomTooltip = ({ active, payload }: any) => {
 const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: any, treeSearchTerm: string, setTreeSearchTerm: (v: string) => void }) => {
   if (!yData) return null;
 
+  const enrichedYTree = useMemo(() => {
+    return enrichHaplogroupTree(Y_DNA_TREE, yData.path, yData.testedMarkers);
+  }, [yData.path, yData.testedMarkers]);
+
   const derivedMarkers = yData.testedMarkers.filter((m: any) => m.isDerived);
   const markerPieData = derivedMarkers.map((m: any) => ({
     name: m.marker,
@@ -1120,7 +1178,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
           </div>
           <div className="max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
               <HaplogroupTreeView 
-                node={Y_DNA_TREE} 
+                node={enrichedYTree} 
                 userPath={yData.path} 
                 searchTerm={treeSearchTerm} 
                 testedMarkers={yData.testedMarkers} 
@@ -1177,7 +1235,11 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   setTreeSearchTerm: (val: string) => void,
   matchedTraits: any[]
 }) => {
-  const findNode = useCallback((name: string, node: any = MT_DNA_TREE): any | null => {
+  const enrichedMtTree = useMemo(() => {
+    return enrichHaplogroupTree(MT_DNA_TREE, mtData.path, mtData.testedMarkers);
+  }, [mtData.path, mtData.testedMarkers]);
+
+  const findNode = useCallback((name: string, node: any = enrichedMtTree): any | null => {
     if (node.branchName === name) return node;
     if (node.children) {
       for (const child of node.children) {
