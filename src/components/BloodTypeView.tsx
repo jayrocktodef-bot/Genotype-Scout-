@@ -1,6 +1,8 @@
 
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
+import rhData from '../data/blood_markers.json';
+import { inferRhFactor } from '../services/bloodPredictorService';
 
 const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
   ABO: ["rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666"],
@@ -104,24 +106,35 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
       else if (hasB) predicted = "Type B";
     }
 
-    // Rh Logic
-    const r590 = getGenotype("rs590787") || "--"; // D
-    const r6762 = getGenotype("rs6762788") || "--"; // D
-    const r111 = getGenotype("rs11124803") || "--"; // D/Rh
-    const r118 = getGenotype("rs118204008") || "--"; // RHCE
+    // Rh Logic leveraging surrogate inferRhFactor predictor
+    const genotypeMapForRh = new Map<string, string>();
+    ["rs590787", "rs609320"].forEach(rsid => {
+      const g = getGenotype(rsid);
+      if (g && g !== "--") {
+        genotypeMapForRh.set(rsid, g);
+      }
+    });
+
+    const rhInference = inferRhFactor(genotypeMapForRh);
+
+    let dType = "Unknown";
+    if (rhInference.phenotype !== "Unknown") {
+      const isPositive = rhInference.phenotype === "Positive";
+      const conf = rhInference.confidence;
+      if (conf >= 0.8) {
+        dType = isPositive ? "Rh+ (High Confidence)" : "Rh- (High Confidence)";
+      } else if (conf >= 0.5) {
+        dType = isPositive ? "Likely Rh+ (Moderate Confidence)" : "Likely Rh- (Moderate Confidence)";
+      } else {
+        dType = "Unknown (Low Confidence)";
+      }
+    }
+
     const r676 = getGenotype("rs676785") || "--"; // C/c
     const r6761 = getGenotype("rs676185") || "--"; // C/c
     const r283 = getGenotype("rs28362459") || "--"; // E/e
     const r606 = getGenotype("rs606429") || "--"; // E/e
 
-    const isRhPos = (r590 || "").includes('G') || (r590 || "").includes('A') || 
-                    (r6762 || "").includes('G') || (r6762 || "").includes('A') ||
-                    (r111 || "").includes('G') || (r111 || "").includes('A');
-                    
-    const isRhNeg = (r590 !== "--" || r6762 !== "--" || r111 !== "--") && !isRhPos;
-    
-    const dType = isRhPos ? "Positive (+)" : (isRhNeg ? "Negative (-)" : "Unknown");
-    
     // Sub-antigen detection
     // rs676785: C (G), c (A)
     // rs28362459: E (C), e (T)
@@ -150,13 +163,31 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
     const rh = `${dType}${ccType || eeType ? ' (' + ccType + eeType + ')' : ''}`;
 
     const allMarkers = Object.entries(BLOOD_TYPE_SYSTEMS).flatMap(([system, rsids]) => 
-      rsids.map(rsid => ({
-        system,
-        rsid,
-        genotype: getGenotype(rsid),
-        rawGenotype: rawResults.find((r: any) => r.rsid === rsid)?.genotype || "--",
-        ...(MARKER_METADATA[rsid] || { effect: "Unknown", antigen: "Unknown" })
-      }))
+      rsids.map(rsid => {
+        const genotype = getGenotype(rsid);
+        const rawGenotype = rawResults.find((r: any) => r.rsid === rsid)?.genotype || "--";
+        let meta = { ...(MARKER_METADATA[rsid] || { effect: "Unknown", antigen: "Unknown" }) };
+        
+        // Enrich from our new advanced rhSystem config
+        const rhConfig = (rhData.rhSystem as any)[rsid];
+        if (rhConfig && genotype !== "--") {
+          const alleleInfo = rhConfig.alleles[genotype];
+          if (alleleInfo) {
+            meta = {
+              ...meta,
+              effect: `${alleleInfo.traitPhenotype} (Confidence: ${(alleleInfo.confidence * 100).toFixed(0)}%) — surrogate marker for RHD/RHCE`
+            };
+          }
+        }
+        
+        return {
+          system,
+          rsid,
+          genotype,
+          rawGenotype,
+          ...meta
+        };
+      })
     ).filter(m => m.genotype !== "--");
 
     const identifiedCount = allMarkers.filter(m => m.genotype !== "--").length;

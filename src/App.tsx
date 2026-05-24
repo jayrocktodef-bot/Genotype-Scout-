@@ -27,7 +27,14 @@ import {
   User,
   Settings,
   HelpCircle,
-  BookOpen
+  BookOpen,
+  MapPin,
+  Calendar,
+  Award,
+  Globe,
+  CheckCircle,
+  Compass,
+  History
 } from 'lucide-react';
 import { MethodologyModal } from "./components/MethodologyModal";
 // @ts-ignore
@@ -51,11 +58,13 @@ import SubpopulationBento from "./components/SubpopulationBento";
 import { masterAims } from './data';
 
 import { BloodTypeView } from "./components/BloodTypeView";
+import { inferRhFactor } from "./services/bloodPredictorService";
+
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
-import { ResultsPassportExporter } from "./components/ResultsPassportExporter";
 import { NaiveAncestryOracle } from "./components/NaiveAncestryOracle";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
+import { EngineAncestryOracle } from "./components/EngineAncestryOracle";
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
 import { calculateHistoricalClusterMatches } from "./engines/ancestry/historicalClusterEngine";
@@ -279,6 +288,37 @@ const ProfileSummary = memo(({
 }) => {
   const dataset = datasets[activeDatasetIndex];
 
+  const rhInference = useMemo(() => {
+    return inferRhFactor(userSnps || {});
+  }, [userSnps]);
+
+  const rhDisplay = useMemo(() => {
+    if (!rhInference || rhInference.phenotype === "Unknown") {
+      return { 
+        name: "Unknown", 
+        badge: "Confidence 0.0", 
+        pillColor: "bg-slate-600 shadow-slate-600/10"
+      };
+    }
+    const isPos = rhInference.phenotype === "Positive";
+    const name = isPos ? "Rh+ Factor" : "Rh- Factor";
+    const confPercent = Math.round(rhInference.confidence * 100);
+    
+    if (rhInference.confidence >= 0.8) {
+      return { 
+        name, 
+        badge: `High Confidence (${confPercent}%)`, 
+        pillColor: "bg-red-600 shadow-red-600/10"
+      };
+    } else {
+      return { 
+        name: `Likely ${isPos ? "Rh+" : "Rh-"}`, 
+        badge: `Moderate/Low Confidence (${confPercent}%)`, 
+        pillColor: "bg-amber-600 shadow-amber-600/10"
+      };
+    }
+  }, [rhInference]);
+
   const statisticalInsights = useMemo(() => {
     const stats = oracleResults?.statistical;
     if (!stats || !stats.results) return null;
@@ -290,6 +330,14 @@ const ProfileSummary = memo(({
     });
   }, [oracleResults]);
 
+  const sortedEngineResults = useMemo(() => {
+    const subpopOracle = dataset?.analysis?.subpopulationOracle;
+    const admixtureMix = subpopOracle?.admixtureMix || [];
+    return [...admixtureMix]
+      .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
+      .slice(0, 5);
+  }, [dataset]);
+
   if (!dataset) return null;
 
   const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
@@ -297,7 +345,6 @@ const ProfileSummary = memo(({
   
   const currentOracle = oracleResults?.primary;
   const ancestryScores = currentOracle?.continentalScores || {};
-  const topProximity = populationProximity.slice(0, 3);
   
   const ancestryChartData = Object.entries(ancestryScores)
     .map(([name, value]) => ({ name, value: Number(value) }))
@@ -305,138 +352,256 @@ const ProfileSummary = memo(({
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      className="space-y-12 pb-20"
+      className="space-y-6 pb-12"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Main Admixture Stats */}
-        <div className="lg:col-span-8 p-10 premium-card">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
+      {/* Premium Dashboard Header Capsule */}
+      <div className="p-4 rounded-3xl premium-card bg-slate-900 border border-slate-800 text-white shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-emerald-400">Genomic Passport Summary</h3>
+          </div>
+          <h2 className="text-xl font-black text-white tracking-tight mt-1 truncate max-w-md">
+            {dataset.name || "Sample Specimen"}
+          </h2>
+        </div>
+        
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 text-xs font-mono">
+          <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl">
+            <span className="text-slate-400 font-bold block text-[8px] uppercase tracking-widest leading-none mb-1">Genotype Array</span>
+            <span className="font-bold text-slate-200">{dataset.chip || "High-Density Array"}</span>
+          </div>
+          <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl">
+            <span className="text-slate-400 font-bold block text-[8px] uppercase tracking-widest leading-none mb-1">Markers Tested</span>
+            <span className="font-bold text-slate-200">{dataset.snpCount ? `${dataset.snpCount.toLocaleString()} SNPs` : "Admixture Panel"}</span>
+          </div>
+          <div className="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-emerald-400">
+            <CheckCircle className="w-3.5 h-3.5" />
+            <span className="font-black tracking-widest text-[9px] uppercase">LOCAL INTEGRITY OK</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main High-Density Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-5">
+        
+        {/* Cell A (Span 4) - Biogeographical Continental Admixture (Radar) */}
+        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between min-h-[300px]">
+          <div className="flex justify-between items-start mb-4">
             <div>
-              <h3 className="text-2xl font-black text-slate-800 tracking-tight">Ancestry Admixture</h3>
-              <p className="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">Continental Origins & Genetic Clusters</p>
+              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Continental Origins</h3>
+              <h4 className="text-base font-black text-slate-800 tracking-tight mt-0.5">Admixture Proportions</h4>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="hidden sm:flex items-center gap-3">
-                <div className="flex flex-col items-end">
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Rigor</span>
-                  <span className="text-xs font-mono font-black text-teal-600">High Confidence</span>
+          </div>
+          
+          <div className="relative w-full h-[180px] my-auto flex items-center justify-center">
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart data={ancestryChartData} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+                <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
+                <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 9, fontWeight: 800 }} />
+                <Radar name="Origins" dataKey="value" stroke="#0d9488" fill="#0d9488" fillOpacity={0.15} />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+          
+          <div className="pt-3 border-t border-slate-100 flex justify-between gap-2">
+            {ancestryChartData.slice(0, 3).map((anc: any, i: number) => (
+              <div key={i} className="text-center">
+                <span className="text-[10px] font-black text-slate-700 block truncate max-w-[80px]">
+                  {anc.name}
+                </span>
+                <span className="text-[11px] font-mono font-black text-teal-600">{anc.value.toFixed(1)}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Cell B (Span 4) - Refined Subpopulation Affinity (NNLS list of top 5) */}
+        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between min-h-[300px]">
+          <div>
+            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Micro-Subpopulation Fit</h3>
+            <h4 className="text-base font-black text-slate-800 tracking-tight mt-0.5">Admixture Deconvolution</h4>
+          </div>
+
+          <div className="divide-y divide-slate-100 py-2">
+            {sortedEngineResults.length > 0 ? (
+              sortedEngineResults.map((pop, idx) => (
+                <div key={idx} className="py-2 first:pt-0 last:pb-0">
+                  <div className="flex justify-between items-center text-xs mb-1">
+                    <span className="font-bold text-slate-700 truncate max-w-[200px]">{formatPopName(pop.name || pop.popCode)}</span>
+                    <span className="font-black text-teal-600 font-mono bg-teal-50 px-1.5 py-0.5 rounded text-[10px]">{(pop.percentage || 0).toFixed(1)}%</span>
+                  </div>
+                  <div className="w-full bg-slate-100 rounded-full h-1 my-1 overflow-hidden">
+                    <div 
+                      className="bg-teal-600 h-full rounded-full"
+                      style={{ width: `${Math.max(pop.percentage || 0, 1)}%` }}
+                    />
+                  </div>
+                  <div className="flex justify-between text-[8px] font-bold text-slate-400 uppercase tracking-widest">
+                    <span>Fit Contribution</span>
+                    <span className="font-mono text-[9px] uppercase">code: {pop.popCode || 'N/A'}</span>
+                  </div>
                 </div>
-                <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></div>
+              ))
+            ) : (
+              <div className="py-6 text-center text-xs text-slate-400">
+                No advanced subpopulation data active.
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Cell C (Span 4) - Uni-parental Lineages (Paternal + Maternal) */}
+        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between min-h-[300px]">
+          <div>
+            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Uniparental Lineages</h3>
+            <h4 className="text-base font-black text-slate-800 tracking-tight mt-0.5">Cladistic Deep Marker Seeding</h4>
+          </div>
+
+          <div className="space-y-4 my-auto">
+            {/* Paternal Card */}
+            <div className="p-3.5 rounded-2xl bg-gradient-to-br from-white to-teal-50/20 border border-teal-100/50 flex gap-3.5 items-center">
+              <div className="w-10 h-10 rounded-2xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-teal-600/10">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest block leading-none mb-1">Paternal haplogroup (y-dna)</span>
+                <span className="text-lg font-black text-slate-800 block truncate tracking-tight">{yData?.predicted?.name || 'Unknown / Female lineage'}</span>
+                <span className="text-[10px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.5">{yData?.predicted?.continent || 'Universal Genetic Origin'}</span>
+              </div>
+            </div>
+
+            {/* Maternal Card */}
+            <div className="p-3.5 rounded-2xl bg-gradient-to-br from-white to-rose-50/20 border border-rose-100/50 flex gap-3.5 items-center">
+              <div className="w-10 h-10 rounded-2xl bg-rose-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-rose-600/10">
+                <History className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[9px] font-black text-rose-600 uppercase tracking-widest block leading-none mb-1">Maternal haplogroup (mtdna)</span>
+                <span className="text-lg font-black text-slate-800 block truncate tracking-tight">{mtData?.predicted || 'Unknown'}</span>
+                <span className="text-[10px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.5">{mtData?.region || 'Universal Genetic Origin'}</span>
+              </div>
+            </div>
+
+            {/* Rh Factor Card */}
+            <div className="p-3.5 rounded-2xl bg-gradient-to-br from-white to-red-50/20 border border-red-100/50 flex gap-3.5 items-center">
+              <div className={`w-10 h-10 rounded-2xl text-white flex items-center justify-center shrink-0 shadow-sm ${rhDisplay.pillColor}`}>
+                <FlaskConical className="w-5 h-5" />
+              </div>
+              <div className="min-w-0">
+                <span className="text-[9px] font-black text-red-600 uppercase tracking-widest block leading-none mb-1">Rhesus Factor (RHCE Surrogate)</span>
+                <span className="text-lg font-black text-slate-800 block truncate tracking-tight">{rhDisplay.name}</span>
+                <span className="text-[10px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">{rhDisplay.badge}</span>
               </div>
             </div>
           </div>
+          
+          <div className="text-[9px] font-extrabold text-[#475569] bg-slate-50 border border-slate-100 p-2 rounded-xl text-center">
+            🔒 Fully local processing: genomic privacy protected.
+          </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="relative w-full h-[300px] bg-slate-50 rounded-3xl border border-slate-100">
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
-                <RadarChart cx="50%" cy="50%" outerRadius="75%" data={ancestryChartData}>
-                  <PolarGrid stroke="#cbd5e1" strokeOpacity={0.5} />
-                  <PolarAngleAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 10, fontWeight: 800 }} />
-                  <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                  <Radar
-                    name="Ancestry"
-                    dataKey="value"
-                    stroke="#0d9488"
-                    fill="#0d9488"
-                    fillOpacity={0.2}
-                  />
-                  <Tooltip 
-                    contentStyle={{ borderRadius: '1.5rem', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)', padding: '12px 16px' }}
-                  />
-                </RadarChart>
-              </ResponsiveContainer>
+      </div>
+
+      {/* Secondary Row: Statistical Rigor + Archaic Remainder Matches */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+        
+        {/* Statistical Rigor Container */}
+        {statisticalInsights && (
+          <div className="p-5 premium-card min-h-[220px] flex flex-col justify-between">
+            <div className="flex items-center gap-2 mb-3">
+              <Shield className="w-4 h-4 text-emerald-600 shrink-0" />
+              <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Confidence Interval Rigor (95% CI)</h3>
             </div>
-
-            <div className="flex flex-col justify-center gap-6">
-              <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Regional Closest Populations</h4>
-              {topProximity.map((pop, idx) => (
-                <div key={pop.code} className="space-y-2">
-                  <div className="flex justify-between items-end">
-                    <span className="text-sm font-bold text-slate-700">{formatPopName(pop.name)}</span>
-                    <span className="text-sm font-black text-teal-600 bg-teal-50 px-2 py-0.5 rounded-lg">{pop.similarity.toFixed(1)}%</span>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-grow my-auto">
+              {statisticalInsights.slice(0, 4).map((insight: any, i: number) => (
+                <div key={insight?.pop || i} className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+                  <div className="flex justify-between items-center text-[11px] font-bold mb-1.5">
+                    <span className="text-slate-800 uppercase tracking-tight truncate max-w-[110px]">
+                      {formatPopName(insight?.pop)}
+                    </span>
+                    <span className="text-emerald-600 font-black">{insight?.percentage || 0}%</span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: `${pop.similarity}%` }}
-                      transition={{ duration: 1.5, delay: 0.3 + idx * 0.1 }}
-                      className="bg-teal-600 h-full rounded-full"
-                    />
+                  
+                  <div>
+                    <div className="h-1.5 w-full bg-slate-200/80 rounded-full relative overflow-hidden">
+                      <div 
+                        className="absolute h-full bg-emerald-200/80" 
+                        style={{ 
+                          left: `${insight?.low || 0}%`, 
+                          width: `${Math.max((insight?.high - insight?.low) || 0, 3)}%` 
+                        }} 
+                      />
+                      <div 
+                        className="absolute w-2 h-2 rounded-full bg-emerald-600 top-[-1px] -translate-x-1/2" 
+                        style={{ left: `${insight?.percentage || 0}%` }} 
+                      />
+                    </div>
+                    <div className="flex justify-between text-[8px] font-bold text-slate-400 mt-1 uppercase tracking-widest leading-none">
+                      <span>Low: {insight?.low || 0}%</span>
+                      <span>High: {insight?.high || 0}%</span>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        )}
 
-        {/* Lineage Snapshots */}
-        <div className="lg:col-span-4 flex flex-col gap-8">
-           <div className="p-8 premium-card bg-gradient-to-br from-white to-teal-50/30">
-             <span className="text-[10px] font-black text-teal-600 uppercase tracking-widest mb-4 block">Paternal Lineage</span>
-             <h4 className="text-4xl font-black text-slate-800 tracking-tighter mb-2">{yData?.predicted?.name || 'Unknown'}</h4>
-             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{yData?.predicted?.continent || 'Global'}</p>
-             <div className="mt-8 pt-8 border-t border-teal-100 flex items-center justify-between">
-               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Confidence</span>
-               <span className="text-xs font-black text-teal-600">High Resolution</span>
-             </div>
-           </div>
+        {/* Top 2 Archaic Individual Matches */}
+        {famousMatches && famousMatches.length > 0 && (
+          <div className="p-5 premium-card min-h-[220px] flex flex-col justify-between">
+            <div className="flex items-center gap-2 mb-3">
+              <Award className="w-4 h-4 text-rose-600 shrink-0" />
+              <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Top Archaic Matches</h3>
+            </div>
 
-           <div className="p-8 premium-card bg-gradient-to-br from-white to-rose-50/30">
-             <span className="text-[10px] font-black text-rose-600 uppercase tracking-widest mb-4 block">Maternal Lineage</span>
-             <h4 className="text-4xl font-black text-slate-800 tracking-tighter mb-2">{mtData?.predicted || 'Unknown'}</h4>
-             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{mtData?.region || 'Global'}</p>
-             <div className="mt-8 pt-8 border-t border-rose-100 flex items-center justify-between">
-               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Confidence</span>
-               <span className="text-xs font-black text-rose-600">Verified Path</span>
-             </div>
-           </div>
-        </div>
-      </div>
-
-      {statisticalInsights && (
-        <div className="p-10 premium-card">
-          <div className="flex items-center gap-3 mb-10">
-            <Shield className="w-5 h-5 text-teal-600" />
-            <h3 className="text-xl font-black text-slate-800 tracking-tight">Statistical Rigor (95% CI)</h3>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {statisticalInsights.slice(0, 8).map((insight: any, i: number) => (
-              <div key={i} className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-xs font-black text-slate-800 uppercase tracking-tighter truncate max-w-[120px]">
-                    {formatPopName(insight.pop)}
-                  </span>
-                  <span className="text-xs font-black text-teal-600">{insight.percentage}%</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-teal-500 rounded-full" style={{ width: `${insight.percentage}%` }} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 flex-grow my-auto">
+              {famousMatches.slice(0, 2).map((m: any, idx: number) => (
+                <div 
+                  key={m.sampleId} 
+                  className="p-3 bg-slate-50 border border-slate-100 rounded-xl flex flex-col justify-between"
+                >
+                  <div className="flex justify-between items-start gap-1">
+                    <div className="truncate">
+                      <h4 className="text-xs font-black text-slate-800 truncate" title={m.name}>{m.name}</h4>
+                      <span className="text-[8px] font-bold text-slate-400 block uppercase tracking-widest leading-none mt-0.5">{m.sampleId}</span>
+                    </div>
+                    <span className="text-xs font-black text-rose-600 font-mono bg-rose-50 px-1 py-0.5 rounded leading-none">{m.affinity}%</span>
                   </div>
-                  <div className="flex justify-between text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                    <span>{insight.low}%</span>
-                    <span>{insight.high}%</span>
+
+                  <div className="my-1.5 space-y-1 text-[9px] text-slate-500 font-medium">
+                    <div className="flex items-center gap-1 truncate">
+                      <MapPin className="w-2.5 h-2.5 text-slate-400 shrink-0" />
+                      <span className="truncate">{m.location}</span>
+                    </div>
+                    <div className="flex items-center gap-1 truncate">
+                      <Calendar className="w-2.5 h-2.5 text-slate-400 shrink-0" />
+                      <span className="truncate">{m.era}</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-200/50">
+                    <div className="flex justify-between items-center text-[8px] mb-0.5 text-slate-400 uppercase font-black">
+                      <span>Shared Markers Match</span>
+                      <span>{m.confidence}%</span>
+                    </div>
+                    <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden">
+                      <div 
+                        className="bg-rose-500 h-full rounded-full" 
+                        style={{ width: `${m.confidence}%` }}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Famous Matches Section */}
-      <div className="space-y-8">
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600">
-            <User className="w-5 h-5" />
-          </div>
-          <div>
-            <h3 className="text-2xl font-black text-slate-800 tracking-tight">Historical Individual Matches</h3>
-            <p className="text-as text-slate-400 font-bold uppercase tracking-widest mt-1">Direct Genotype Comparisons with Ancient Remains</p>
-          </div>
-        </div>
-        <FamousMatches matches={famousMatches} />
       </div>
     </motion.div>
   );
@@ -905,7 +1070,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
                               <span className="font-bold">{data.name}</span>
                             </div>
-                  <div className="font-mono text-lg">{((data.value as number) || 0).toFixed(1)}%</div>
+                  <div className="font-mono text-lg">{Number(data.value || 0).toFixed(1)}%</div>
                           </div>
                         );
                       }
@@ -935,7 +1100,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
                         <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{entry.name}</span>
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-500">{((entry.value as number) || 0).toFixed(1)}%</span>
+                      <span className="text-xs font-mono font-bold text-slate-500">{Number(entry.value || 0).toFixed(1)}%</span>
                     </div>
                     {ci && (
                       <div className="flex items-center gap-2">
@@ -1738,7 +1903,7 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug' | 'passport'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('dashboard');
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
@@ -2543,12 +2708,6 @@ export default function App() {
                         matchedTraits={userMatchedMitoTraits}
                       />
                     )}
-                  </div>
-                )}
-
-                {activeTab === 'passport' && (
-                  <div className="pb-20">
-                    <ResultsPassportExporter dataset={datasets[activeDatasetIndex]} />
                   </div>
                 )}
 

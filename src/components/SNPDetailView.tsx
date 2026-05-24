@@ -94,7 +94,7 @@ export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
                 <Tooltip 
                   cursor={{ fill: 'transparent' }}
                   contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', fontSize: '10px', color: '#fff' }}
-                  formatter={(value: number) => [`${value.toFixed(1)}%`, 'Prevalence']}
+                  formatter={(value: number) => [`${(value || 0).toFixed(1)}%`, 'Prevalence']}
                 />
                 <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={12}>
                   {frequencyData.map((entry, index) => (

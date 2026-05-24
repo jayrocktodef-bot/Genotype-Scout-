@@ -137,7 +137,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             <div className="flex flex-col justify-center items-start sm:items-end gap-2 sm:self-center">
               <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Euclidean Distance Fit</span>
               <div className="text-2xl font-black font-mono text-teal-400">
-                d = {(topMatchDistance ?? 0).toFixed(4)}
+                d = {Number(topMatchDistance ?? 0).toFixed(4)}
               </div>
               <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-md border ${topMatchLabel.color}`}>
                 {topMatchLabel.text}
@@ -184,7 +184,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                           {item?.subpop}
                         </span>
                         <div className="flex items-center gap-3 font-mono">
-                          <span className="text-teal-400 text-xs">d = {(item?.distance ?? 0).toFixed(4)}</span>
+                <span className="text-teal-400 text-xs">d = {Number(item?.distance ?? 0).toFixed(4)}</span>
                           <span className="text-[10px] text-slate-500">({item?.markersCompared ?? 0} AIMs mapped)</span>
                           <span className={`text-[9px] px-1.5 py-0.5 rounded border leading-none scale-95 ${label.color}`}>
                             {label.text.split(' ')[0]} Match
@@ -222,7 +222,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                   <div key={comp.popCode} className="space-y-2 p-4 rounded-xl bg-white/[0.01] hover:bg-white/[0.02] border border-white/[0.02] transition-colors">
                     <div className="flex justify-between items-center text-xs font-bold">
                       <span className="text-slate-200 truncate">{comp?.name ?? 'Unknown'}</span>
-                      <span className="font-mono text-emerald-400 font-extrabold">{(comp?.percentage ?? 0).toFixed(1)}%</span>
+                <span className="font-mono text-emerald-400 font-extrabold">{Number(comp?.percentage ?? 0).toFixed(1)}%</span>
                     </div>
                     <div className="w-full bg-white/[0.03] h-2 rounded-full overflow-hidden p-px border border-white/5">
                       <motion.div 

@@ -151,28 +151,6 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onCl
           ]
         };
 
-      case 'passport':
-        return {
-          title: 'Genotype Passport Cryptographic Ledger',
-          algName: 'Cryptographic Genomic Verification System',
-          description: 'Ensures absolute privacy and validity of reported genomic variables by sealing outputs in a secure record featuring unique digital signature validations.',
-          formulas: [
-            {
-              label: 'Data Integrity Seal (SHA-256)',
-              equation: 'Integrity_Seal = SHA256(Raw_Data || Dataset_Metadata)',
-              explanation: 'Guarantees that your passport findings cannot be forged or tampered with by verifying the digital hash matching your original upload.'
-            }
-          ],
-          references: [
-            'W3C Verifiable Credentials Data Model v1.1',
-            'FIPS PUB 180-4 Secure Hash Standard'
-          ],
-          metrics: [
-            { label: 'Ledger Model', value: 'Local-only privacy-enclosing storage' },
-            { label: 'Encryption Standard', value: 'Industry Grade SHA-256 Hash' }
-          ]
-        };
-
       case 'ancient':
         return {
           title: 'Archaeological Coordinate Projection',

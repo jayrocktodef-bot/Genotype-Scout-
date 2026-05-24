@@ -74,7 +74,7 @@ export const GranularAncestryView: React.FC<GranularAncestryViewProps> = ({ pred
           >
             <div className="p-5 bg-white/[0.02] border-b border-white/5 flex justify-between items-center">
               <span className="font-black text-slate-200 tracking-wider uppercase text-xs">{continent.name}</span>
-              <span className="font-mono font-black text-[#4599FF]">{continent.total.toFixed(1)}%</span>
+              <span className="font-mono font-black text-[#4599FF]">{(continent.total || 0).toFixed(1)}%</span>
             </div>
             
             <div className="p-5 space-y-4">
@@ -82,7 +82,7 @@ export const GranularAncestryView: React.FC<GranularAncestryViewProps> = ({ pred
                 <div key={subPop.code} className="space-y-1.5">
                   <div className="flex justify-between text-[11px] font-bold text-slate-400">
                     <span>{subPop.name} ({subPop.code})</span>
-                    <span className="font-mono text-slate-300">{subPop.score.toFixed(1)}%</span>
+                    <span className="font-mono text-slate-300">{(subPop.score || 0).toFixed(1)}%</span>
                   </div>
                   <div className="h-1.5 w-full bg-black/40 rounded-full overflow-hidden">
                     <motion.div 

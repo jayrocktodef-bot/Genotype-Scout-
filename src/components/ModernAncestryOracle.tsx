@@ -122,7 +122,7 @@ export const ModernAncestryOracle = memo(({
             {Object.entries(continentalScores).map(([name, value]) => (
               <div key={name} className="flex items-center justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
                 <span className="font-bold text-base sm:text-lg text-[#F5F6F7]">{getDisplayName(name)}</span>
-                <span className="font-mono font-black text-lg sm:text-xl text-[#4599FF]">{Number(value).toFixed(1)}%</span>
+                <span className="font-mono font-black text-lg sm:text-xl text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>
               </div>
             ))}
           </div>
@@ -158,7 +158,7 @@ export const ModernAncestryOracle = memo(({
                  <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4">Migration Path</div>
                  <div className="space-y-4">
                     {hbbMigration.path.split('→').map((node, i, arr) => (
-                      <div key={node} className="flex items-center gap-3">
+                      <div key={i} className="flex items-center gap-3">
                         <div className="flex flex-col items-center">
                           <div className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-red-500' : 'bg-slate-700'}`}></div>
                           {i < arr.length - 1 && <div className="w-[1px] h-4 bg-slate-800"></div>}

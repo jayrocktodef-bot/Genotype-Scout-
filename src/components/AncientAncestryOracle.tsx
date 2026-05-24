@@ -50,9 +50,9 @@ export const AncientAncestryOracle = memo(({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {results.slice(0, 9).map((pop, index) => (
+          {results.filter(x => x).slice(0, 9).map((pop, index) => (
             <motion.div
-              key={pop.popCode}
+              key={pop.popCode || index}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}

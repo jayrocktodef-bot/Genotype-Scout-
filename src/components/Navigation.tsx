@@ -24,7 +24,6 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'naive_oracle', label: 'Scout Score', icon: FlaskConical },
     { id: 'wellness', label: 'Wellness', icon: HeartPulse },
     { id: 'haplogroups', label: 'Lineages', icon: History },
-    { id: 'passport', label: 'Passport', icon: Compass },
     { id: 'autosomal', label: 'Markers', icon: FlaskConical },
   ];
 

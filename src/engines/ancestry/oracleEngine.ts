@@ -1,12 +1,19 @@
+import { solveAdmixtureProportions } from '../../components/ancestryOracleLogic';
+
 export function runAncestryOracle(userCoords: number[], refDataset: any[]) {
-  // Logic: Find the 'K' populations with the smallest Euclidean distance
-  const distances = refDataset.map(ref => {
-    const dist = Math.sqrt(
-      ref.coords.reduce((sum: number, val: number, i: number) => sum + Math.pow(val - userCoords[i], 2), 0)
-    );
-    return { population: ref.name, distance: dist };
+  // Logic: Use NNLS to calculate ancestry proportions
+  const userDosages = new Float32Array(userCoords);
+  const popExpectedDosages: Record<string, Float32Array> = {};
+  
+  refDataset.forEach(ref => {
+    popExpectedDosages[ref.name] = new Float32Array(ref.coords);
   });
 
-  // Sort by closest genetic match
-  return distances.sort((a: any, b: any) => a.distance - b.distance).slice(0, 10);
+  const aimWeights = new Float32Array(userCoords.length).fill(1.0); // Default weights
+
+  const admixtureProportions = solveAdmixtureProportions(userDosages, popExpectedDosages, aimWeights);
+  
+  return Object.entries(admixtureProportions)
+    .map(([population, percentage]) => ({ population, percentage }))
+    .sort((a: any, b: any) => b.percentage - a.percentage);
 }

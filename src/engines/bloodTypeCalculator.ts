@@ -1,3 +1,5 @@
+import { inferRhFactor } from '../services/bloodPredictorService';
+
 export function calculateBloodType(userSnps: Record<string, string> | undefined) {
   if (!userSnps) {
     return {
@@ -8,14 +10,17 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
   }
   const oMarker = userSnps['rs8176719']; // O vs non-O
   const bMarker = userSnps['rs8176747']; // B-specific variant
-  const rhMarker = userSnps['rs590787']; // Rh Factor
 
   let phenotype = "Unknown";
+  
+  // Predict Rh using our advanced multi-marker inferRhFactor function
+  const rhInference = inferRhFactor(userSnps);
   let rhFactor = "Unknown";
-
-  // 1. Determine Rh Factor
-  if (rhMarker === 'CC') rhFactor = "-";
-  else if (rhMarker === 'CT' || rhMarker === 'TT') rhFactor = "+";
+  if (rhInference.phenotype === "Positive") {
+    rhFactor = "+";
+  } else if (rhInference.phenotype === "Negative") {
+    rhFactor = "-";
+  }
 
   // 2. Determine ABO Phenotype
   // Note: 'D' = Deletion (O), 'I' = Insertion (A or B)
@@ -37,11 +42,15 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
   }
 
   return {
-    bloodType: `${phenotype}${rhFactor}`,
-    confidence: (oMarker && rhMarker) ? "High" : "Low",
+    bloodType: `${phenotype}${rhFactor === "Unknown" ? "?" : rhFactor}`,
+    confidence: (oMarker && rhInference.phenotype !== "Unknown") ? "High" : "Low",
     details: {
       abo: phenotype,
-      rh: rhFactor
+      rh: rhFactor,
+      rhConfidence: rhInference.confidence,
+      rhPhenotype: rhInference.phenotype,
+      rhResults: rhInference.results
     }
   };
 }
+

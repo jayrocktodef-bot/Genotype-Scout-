@@ -89,7 +89,7 @@ export const NaiveAncestryOracle = memo(({
         {chartData.map((data) => (
           <div key={data.name} className="flex justify-between items-center p-4 rounded-xl bg-[#1a1b1d] border border-white/5">
             <span className="font-bold text-slate-400">{data.name}</span>
-            <span className="font-mono font-black text-[#4599FF]">{data.value.toFixed(1)}%</span>
+            <span className="font-mono font-black text-[#4599FF]">{(data.value || 0).toFixed(1)}%</span>
           </div>
         ))}
       </div>
