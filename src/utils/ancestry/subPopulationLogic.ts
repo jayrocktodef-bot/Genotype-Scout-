@@ -2,6 +2,9 @@
 import regionalWeights from '../../data/raw_aims/graf_10k_weights.json';
 import grafIndex from '../../data/raw_aims/graf_10k_index.json';
 
+const EUROPEAN_POPS = ["CEU", "GBR", "FIN", "IBS", "TSI"];
+const EUROPEAN_BOOST = 1.05; // 5% boost for European fine-mapping
+
 /**
  * Calculates the resonance (likelihood) of 26 sub-populations.
  * This is the core of the "Engine" mode for high-precision ethnicity.
@@ -50,8 +53,10 @@ export function calculateSubPopResonance(userGenotypes: Record<string, string>) 
            prob = 2 * p * q;
         }
       }
-
-      popScores[pop] += Math.log(prob);
+      
+      // Apply boost for European AIMs
+      const boost = EUROPEAN_POPS.includes(pop) ? EUROPEAN_BOOST : 1.0;
+      popScores[pop] += Math.log(prob) * boost;
     });
   });
 
@@ -61,4 +66,5 @@ export function calculateSubPopResonance(userGenotypes: Record<string, string>) 
     .sort((a, b) => b.score - a.score)
     .slice(0, 10); // Return top 10 ethnic signatures for a broader look
 }
+
 

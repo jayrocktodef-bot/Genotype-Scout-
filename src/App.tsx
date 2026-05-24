@@ -1449,8 +1449,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
       {/* Hero Prediction Section */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <div 
-          style={{ width: '486px' }}
-          className="lg:col-span-2 bg-gradient-to-br from-rose-500 to-pink-700 p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden group"
+          className="lg:col-span-1 bg-gradient-to-br from-rose-500 to-pink-700 p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden group"
         >
           <div className="absolute -top-10 -right-10 opacity-10 text-[12rem] select-none pointer-events-none group-hover:rotate-12 transition-transform duration-700">♀️</div>
           <div className="relative z-10 h-full flex flex-col">
@@ -1644,40 +1643,6 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
             </div>
           </div>
           
-          {/* Maternal Library Card */}
-          <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm overflow-hidden relative">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-6 border-b border-slate-100 dark:border-slate-700">
-              <div>
-                <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Maternal Library</h3>
-                <p className="text-sm text-slate-400">Interactive mitochondrial phylogenetic navigator</p>
-              </div>
-              <div className="relative w-full max-w-sm">
-                <input 
-                  type="text"
-                  placeholder="Jump to Haplogroup (e.g., L3, R0, H)..."
-                  className="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl text-sm font-bold focus:ring-2 focus:ring-rose-500 outline-none transition-all"
-                  value={treeSearchTerm}
-                  onChange={(e) => setTreeSearchTerm(e.target.value)}
-                />
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 min-h-[600px] overflow-hidden">
-               <div className="overflow-x-auto">
-                 <div className="min-w-[1000px]">
-                   <HaplogroupTreeView 
-                     node={enrichedMtTree} 
-                     userPath={mtData.path} 
-                     searchTerm={treeSearchTerm} 
-                     testedMarkers={mtData.testedMarkers} 
-                   />
-                 </div>
-               </div>
-            </div>
-          </div>
         </div>
 
         {/* Archive: PhyloTree Deep Analysis
