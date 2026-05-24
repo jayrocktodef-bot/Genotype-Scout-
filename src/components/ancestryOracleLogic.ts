@@ -38,11 +38,11 @@ export interface OracleResult {
 
 // Map of 1000 Genomes population codes to detailed, scientific, and readable names
 const POPULATION_NAMES_MAP: Record<string, string> = {
-  'CEU': 'Northern & Western European (CEU)',
-  'GBR': 'British / Anglo-Saxon (GBR)',
-  'FIN': 'Finnish / Northeast European (FIN)',
-  'TSI': 'Tuscan / Southern European (TSI)',
-  'IBS': 'Iberian / Spanish-Portuguese (IBS)',
+  'CEU': 'Central European (CEU)',
+  'GBR': 'British Isles (GBR)',
+  'FIN': 'Uralic & North-East European (FIN)',
+  'TSI': 'Central Mediterranean / Tuscan (TSI)',
+  'IBS': 'Iberian Peninsula (IBS)',
   'YRI': 'Yoruba / West African (YRI)',
   'ESN': 'Esan / West African (ESN)',
   'GWD': 'Gambian / West African (GWD)',
@@ -397,8 +397,13 @@ export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabas
       const meanW = totalW / M;
       const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
 
-      // Scale penalties for ancestral allele/cladistic conflicts
-      const adjustedDistance = baseDistance * (1.0 + 0.18 * violations);
+      // Scale penalties for ancestral allele/cladistic conflicts.
+      // Apply a reduced penalty for European populations, as they are highly admixed.
+      let penaltyFactor = 0.18;
+      if (MACRO_GROUPS['EUR'].includes(popCode)) {
+        penaltyFactor = 0.12;
+      }
+      const adjustedDistance = baseDistance * (1.0 + penaltyFactor * violations);
       popDistances.set(popCode, adjustedDistance);
     } else {
       popDistances.set(popCode, 1.0); // Insufficient markers fallback
