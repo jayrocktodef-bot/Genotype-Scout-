@@ -134,6 +134,50 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           </div>
         </div>
 
+        {/* Privacy Commitment Section */}
+        <div className="mt-20 border-t border-slate-100 pt-16">
+          <h2 className="text-3xl font-black text-slate-800 mb-8 tracking-tight">Our Comprehensive Privacy Commitment</h2>
+          <div className="bg-slate-900 rounded-3xl p-10 text-left text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-12 opacity-10">
+              <Lock size={200} />
+            </div>
+            <div className="relative z-10 grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3 text-teal-400">
+                  <Shield size={24} /> Your Data, Locally Processed
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  Genotype Scout operates on a fundamental principle: <strong>your genetic data should never leave your possession</strong>. When you upload your DNA file, it is processed entirely within your computer’s local memory using high-performance browser sandboxing technology.
+                </p>
+                <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                  <h4 className="font-bold text-white mb-2 underline decoration-teal-500 underline-offset-4">What we do:</h4>
+                  <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                    <li>Analyze your file locally.</li>
+                    <li>Use volatile RAM for calculation.</li>
+                    <li>Discard all results on tab closure/refresh.</li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3 text-rose-400">
+                  <Database size={24} /> What we never do
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  We maintain a strict "Zero-Footprint" philosophy. We have no infrastructure to store, index, sell, or map your genetic marker identifiers to personal identities.
+                </p>
+                <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                  <h4 className="font-bold text-white mb-2 underline decoration-rose-500 underline-offset-4">What we never do:</h4>
+                  <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                    <li>Never upload your data to a server.</li>
+                    <li>Never store your raw DNA sequence.</li>
+                    <li>Never share or monetize genetic insights.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Genotype Scout Character Artwork */}
         <div className="mt-16 w-full max-w-3xl mx-auto">
           <motion.div 
