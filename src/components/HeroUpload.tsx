@@ -141,39 +141,61 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             <div className="absolute top-0 right-0 p-12 opacity-10">
               <Lock size={200} />
             </div>
-            <div className="relative z-10 grid md:grid-cols-2 gap-12">
+            <div className="relative z-10 grid md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-3 text-teal-400">
-                  <Shield size={24} /> Your Data, Locally Processed
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-teal-400">
+                  <Shield size={20} /> 100% Local Execution
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  Genotype Scout operates on a fundamental principle: <strong>your genetic data should never leave your possession</strong>. When you upload your DNA file, it is processed entirely within your computer’s local memory using high-performance browser sandboxing technology.
+                <p className="text-slate-300 text-xs leading-relaxed mb-4">
+                  Genotype Scout operates on a fundamental principle: your genetic data should never leave your possession. When you upload, analysis happens entirely in your computer’s RAM using sandboxed browser worker threads.
                 </p>
-                <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                  <h4 className="font-bold text-white mb-2 underline decoration-teal-500 underline-offset-4">What we do:</h4>
-                  <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
-                    <li>Analyze your file locally.</li>
-                    <li>Use volatile RAM for calculation.</li>
-                    <li>Discard all results on tab closure/refresh.</li>
+                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                    <li>No file uploads to servers.</li>
+                    <li>Volatile processing RAM.</li>
+                    <li>No server-side logging.</li>
                   </ul>
                 </div>
               </div>
+              
               <div>
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-3 text-rose-400">
-                  <Database size={24} /> What we never do
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-amber-400">
+                  <Database size={20} /> Local Persistence
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                  We maintain a strict "Zero-Footprint" philosophy. We have no infrastructure to store, index, sell, or map your genetic marker identifiers to personal identities.
+                <p className="text-slate-300 text-xs leading-relaxed mb-4">
+                  We may use browser-native storage (like IndexedDB) to save <strong className="text-white">only</strong> your processed results locally. This prevents you from needing to re-upload files on refreshes.
                 </p>
-                <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                  <h4 className="font-bold text-white mb-2 underline decoration-rose-500 underline-offset-4">What we never do:</h4>
-                  <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
-                    <li>Never upload your data to a server.</li>
-                    <li>Never store your raw DNA sequence.</li>
-                    <li>Never share or monetize genetic insights.</li>
+                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                    <li>Database IS on your machine.</li>
+                    <li>Stores results, not raw data.</li>
+                    <li>Fully sandboxed by browser.</li>
                   </ul>
                 </div>
               </div>
+
+              <div>
+                <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-rose-400">
+                  <Lock size={20} /> Total User Control
+                </h3>
+                <p className="text-slate-300 text-xs leading-relaxed mb-4">
+                  Everything we store is managed by your browser. You have absolute, final authority. Clear your site data, or use our "Clear Cache" button to instantly destroy all local analysis state.
+                </p>
+                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
+                    <li>No data ever leaves you.</li>
+                    <li>Data has no identity link.</li>
+                    <li>Immediate total deletion.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            {/* Disclaimer Footer */}
+            <div className="mt-8 pt-6 border-t border-slate-800 text-center">
+              <p className="text-[10px] text-slate-500 uppercase tracking-widest">
+                Our "Zero-Footprint" philosophy ensures we have no mechanisms to sell, index, or map your results.
+              </p>
             </div>
           </div>
         </div>
