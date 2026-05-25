@@ -141,7 +141,7 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
   }
 
   // Hyper-optimized Regex Parsing Loop with optional quote support for MyHeritage/CSV formats
-  const rowRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDI-]{1,2})"?([\t, ]+"?([ACGTDI-]))?"?/gmi;
+  const rowRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDIN-]{1,2})"?([\t, ]+"?([ACGTDIN-]))?"?/gmi;
   
   let linesTotal = 0;
   let linesCommented = 0;
@@ -294,7 +294,7 @@ export async function parseRawDNAStream(
 
   let remainder = "";
   // Single-line regex representing standard 23andMe / vcf / map lines
-  const lineRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDI-]{1,2})"?([\t, ]+"?([ACGTDI-]))?"?/i;
+  const lineRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDIN-]{1,2})"?([\t, ]+"?([ACGTDIN-]))?"?/i;
 
   let linesTotal = 0;
   let linesCommented = 0;

@@ -40,7 +40,8 @@ export function parseDNAFile(content: string, allowlist?: Set<string>): Record<s
     }
 
     // Basic validation for genotype
-    if (genotype && genotype !== '--' && genotype !== '00' && /^[ACTG]{1,2}$/i.test(genotype)) {
+    // Added 'I', 'D', 'N', '-' to support insertions, deletions, and missing data commonly found in modern 23andMe exports
+    if (genotype && genotype !== '--' && genotype !== '00' && /^[ACGTDIN-]{1,2}$/i.test(genotype)) {
       genotypes[markerId.toLowerCase()] = genotype.toUpperCase();
     }
   }

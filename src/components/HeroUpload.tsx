@@ -136,66 +136,92 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
 
         {/* Privacy Commitment Section */}
         <div className="mt-20 border-t border-slate-100 pt-16">
-          <h2 className="text-3xl font-black text-slate-800 mb-8 tracking-tight">Our Comprehensive Privacy Commitment</h2>
+          <h2 className="text-3xl font-black text-slate-800 mb-8 tracking-tight">Technical Data Privacy: How it works</h2>
           <div className="bg-slate-900 rounded-3xl p-10 text-left text-white shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-10">
               <Lock size={200} />
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
+              {/* Pillar 1: Local Execution */}
               <div>
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-teal-400">
                   <Shield size={20} /> 100% Local Execution
                 </h3>
                 <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  Genotype Scout operates on a fundamental principle: your genetic data should never leave your possession. When you upload, analysis happens entirely in your computer’s RAM using sandboxed browser worker threads.
+                  Genotype Scout uses your browser's <strong className="text-white">FileReader API</strong> to load your file into isolated RAM. Analysis happens within a sandboxed <strong className="text-white">Web Worker</strong>, completely separate from the main application thread.
                 </p>
                 <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
                   <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                    <li>No file uploads to servers.</li>
-                    <li>Volatile processing RAM.</li>
-                    <li>No server-side logging.</li>
+                    <li>Zero server uploads.</li>
+                    <li>CPU/RAM bound, not Network bound.</li>
+                    <li>Isolated thread execution.</li>
                   </ul>
                 </div>
               </div>
               
+              {/* Pillar 2: Local Persistence */}
               <div>
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-amber-400">
-                  <Database size={20} /> Local Persistence
+                  <Database size={20} /> Browser Isolation
                 </h3>
                 <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  We may use browser-native storage (like IndexedDB) to save <strong className="text-white">only</strong> your processed results locally. This prevents you from needing to re-upload files on refreshes.
+                  If you choose to "Save," we use <strong className="text-white">IndexedDB</strong>—a browser-native storage engine. This is a secure database residing physically on your hard drive, NOT at our servers. It is scoped exclusively to this domain.
                 </p>
                 <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
                   <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                    <li>Database IS on your machine.</li>
-                    <li>Stores results, not raw data.</li>
-                    <li>Fully sandboxed by browser.</li>
+                    <li>Database = local file on your disk.</li>
+                    <li>Stores result-only.</li>
+                    <li>Sandboxed origin access.</li>
                   </ul>
                 </div>
               </div>
 
+              {/* Pillar 3: Verification */}
               <div>
                 <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-rose-400">
-                  <Lock size={20} /> Total User Control
+                  <Lock size={20} /> Absolute Verifiability
                 </h3>
                 <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  Everything we store is managed by your browser. You have absolute, final authority. Clear your site data, or use our "Clear Cache" button to instantly destroy all local analysis state.
+                  Privacy isn't just a claim—it's verifiable. Open your browser's Developer Tools (F12) and watch the <strong className="text-white">Network tab</strong> during analysis. You will see <strong className="text-white">zero traffic</strong> related to your DNA data.
                 </p>
                 <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
                   <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                    <li>No data ever leaves you.</li>
-                    <li>Data has no identity link.</li>
-                    <li>Immediate total deletion.</li>
+                    <li>Verify with your own eyes.</li>
+                    <li>Zero network calls for data.</li>
+                    <li>Total control over cache.</li>
                   </ul>
                 </div>
               </div>
             </div>
             
-            {/* Disclaimer Footer */}
-            <div className="mt-8 pt-6 border-t border-slate-800 text-center">
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest">
-                Our "Zero-Footprint" philosophy ensures we have no mechanisms to sell, index, or map your results.
-              </p>
+            {/* Technical Pipeline Visualization */}
+            <div className="mt-10 p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-bold text-white">Your File</span>
+                <div className="p-3 bg-slate-800 rounded-lg">DNA File</div>
+              </div>
+              <ArrowRight size={24} className="text-slate-600" />
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-bold text-white">Browser Core</span>
+                <div className="p-3 bg-teal-900/30 border border-teal-800 rounded-lg text-teal-300">沙 Sandboxed Worker</div>
+              </div>
+              <ArrowRight size={24} className="text-slate-600" />
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-bold text-white">Results</span>
+                <div className="p-3 bg-amber-900/30 border border-amber-800 rounded-lg text-amber-300">Local IndexedDB</div>
+              </div>
+            </div>
+
+            {/* Privacy Policy Link */}
+            <div className="mt-6 text-center text-xs text-slate-500">
+              <a 
+                href="https://writteninthegenome.blog/writteninthegenome-privacy-policy/your-dna-your-device-the-engineering-behind-genotype-scouts-zero-footprint-privacy/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-teal-400 hover:text-teal-300 underline font-semibold transition-colors"
+              >
+                View our detailed privacy policy and zero-footprint engineering.
+              </a>
             </div>
           </div>
         </div>
