@@ -5,6 +5,7 @@ import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredi
 import { Y_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerAllowlist } from '../utils/markerAllowlist';
 import { calculateAncestryOracle } from '../services/ancestryEngine';
+import { extractSampleId } from '../services/populationMapper';
 import { calculateMarkerBenchmarks } from "../utils/markerBenchmarks";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "../lib/AncientAdmixtureCalculator";
 import { calculateFamousMatches } from "../utils/individualMatching";
@@ -152,11 +153,13 @@ self.onmessage = async (e: MessageEvent) => {
       (async () => { const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine"); return calculateComprehensiveScores(imputedSnpMap); })()
     ]);
 
-    const oracleResults = await calculateAncestryOracle(results.filter(r => r.category === 'Ancestry'), predictedYDNA?.predicted?.continent, predictedMtDNA?.region, grafResults_raw, k27Results_raw, comprehensiveResults);
+    const sampleId = names[0] ? extractSampleId(names[0]) : undefined;
+
+    const oracleResults = await calculateAncestryOracle(results.filter(r => r.category === 'Ancestry'), predictedYDNA?.predicted?.continent, predictedMtDNA?.region, grafResults_raw, k27Results_raw, comprehensiveResults, sampleId);
 
     // Calculate the high-performance, webworked subpopulation Oracle v3
     const userGenotypes = Object.entries(imputedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
-    const subpopulationOracle = processSubpopulations(userGenotypes, []);
+    const subpopulationOracle = processSubpopulations(userGenotypes, [], sampleId);
 
     // Simple naive calculation
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 

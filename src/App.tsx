@@ -73,6 +73,7 @@ import { getPopFrequencies } from "./data/GenomicDataService";
 import { forensicAimsMaster as forensicAims, graf10kIndex as grafIndex } from './data';
 import masterMtdna from "./data/master_mtdna.json";
 const mitoTraits = masterMtdna.traits;
+import { MethodologyPage } from "./components/MethodologyPage";
 import Dashboard from "./components/Dashboard";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
@@ -1868,7 +1869,7 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug' | 'methodology'>('dashboard');
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
@@ -2556,6 +2557,10 @@ export default function App() {
                     onNavigateToTab={setActiveTab}
                     onReset={resetApp}
                   />
+                )}
+
+                {activeTab === 'methodology' && (
+                  <MethodologyPage activeTab={activeTab} />
                 )}
 
                 {activeTab === 'summary' && (

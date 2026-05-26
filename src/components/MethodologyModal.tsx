@@ -17,9 +17,7 @@ interface MethodologyContent {
   metrics: { label: string; value: string }[];
 }
 
-export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onClose, activeTab }) => {
-  
-  const getMethodologyData = (tabId: string): MethodologyContent => {
+export const getMethodologyData = (tabId: string): MethodologyContent => {
     switch (tabId) {
       case 'dashboard':
         return {
@@ -249,6 +247,8 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onCl
     }
   };
 
+export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onClose, activeTab }) => {
+  
   const data = getMethodologyData(activeTab);
 
   return (

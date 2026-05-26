@@ -1,0 +1,377 @@
+[
+  {
+    "rsid": "rs4897268",
+    "chromosome": "6",
+    "position": 129042949,
+    "averageMaf": 0.057,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.057
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 6.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4788805",
+    "chromosome": "16",
+    "position": 70072139,
+    "averageMaf": 0.060,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.060
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 16.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17498828",
+    "chromosome": "4",
+    "position": 180852651,
+    "averageMaf": 0.053,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.053
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 4.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs8049837",
+    "chromosome": "16",
+    "position": 29996939,
+    "averageMaf": 0.082,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.082
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 16.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11861842",
+    "chromosome": "16",
+    "position": 30001681,
+    "averageMaf": 0.082,
+    "region": "European Substructure",
+    "alleles": ["G", "A"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.082
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 16.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17717875",
+    "chromosome": "2",
+    "position": 137234086,
+    "averageMaf": 0.062,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.062
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 2.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17741142",
+    "chromosome": "8",
+    "position": 86403771,
+    "averageMaf": 0.064,
+    "region": "European Substructure",
+    "alleles": ["G", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.064
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 8.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs9912036",
+    "chromosome": "17",
+    "position": 11991031,
+    "averageMaf": 0.054,
+    "region": "European Substructure",
+    "alleles": ["A", "C"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.054
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 17.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1839191",
+    "chromosome": "2",
+    "position": 168227203,
+    "averageMaf": 0.048,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.048
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 2.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10981818",
+    "chromosome": "9",
+    "position": 115348530,
+    "averageMaf": 0.057,
+    "region": "European Substructure",
+    "alleles": ["G", "A"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.057
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 9.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11653979",
+    "chromosome": "17",
+    "position": 47350526,
+    "averageMaf": 0.055,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.055
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 17.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6456963",
+    "chromosome": "6",
+    "position": 11285675,
+    "averageMaf": 0.056,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.056
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 6.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs169774",
+    "chromosome": "16",
+    "position": 12533127,
+    "averageMaf": 0.049,
+    "region": "European Substructure",
+    "alleles": ["G", "A"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.049
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 16.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1317636",
+    "chromosome": "17",
+    "position": 44906126,
+    "averageMaf": 0.048,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.048
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 17.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1604805",
+    "chromosome": "4",
+    "position": 21180185,
+    "averageMaf": 0.075,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.075
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 4.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6809092",
+    "chromosome": "3",
+    "position": 97118452,
+    "averageMaf": 0.061,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.061
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 3.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7110543",
+    "chromosome": "11",
+    "position": 113029250,
+    "averageMaf": 0.065,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.065
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 11.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1877294",
+    "chromosome": "15",
+    "position": 75705371,
+    "averageMaf": 0.045,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.045
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 15.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs9450829",
+    "chromosome": "6",
+    "position": 88681156,
+    "averageMaf": 0.051,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.051
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 6.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs943008",
+    "chromosome": "6",
+    "position": 11328158,
+    "averageMaf": 0.053,
+    "region": "European Substructure",
+    "alleles": ["G", "A"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.053
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 6.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1122905",
+    "chromosome": "22",
+    "position": 32324229,
+    "averageMaf": 0.064,
+    "region": "European Substructure",
+    "alleles": ["A", "C"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.064
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 22.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs8124792",
+    "chromosome": "20",
+    "position": 52200214,
+    "averageMaf": 0.058,
+    "region": "European Substructure",
+    "alleles": ["C", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.058
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 20.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2236601",
+    "chromosome": "1",
+    "position": 154896061,
+    "averageMaf": 0.044,
+    "region": "European Substructure",
+    "alleles": ["A", "G"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.044
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 1.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11576066",
+    "chromosome": "1",
+    "position": 161150292,
+    "averageMaf": 0.046,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.046
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 1.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12464185",
+    "chromosome": "2",
+    "position": 107014744,
+    "averageMaf": 0.046,
+    "region": "European Substructure",
+    "alleles": ["C", "T"],
+    "weight": 2.0,
+    "frequencies": {
+      "EUR": 0.046
+    },
+    "description": "European substructure Ancestry Informative Marker on chromosome 2.",
+    "subPopulation": "European Substructure",
+    "subRegion": "Europe"
+  }
+]

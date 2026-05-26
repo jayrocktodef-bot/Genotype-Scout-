@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Search, Menu, X, User, Compass } from 'lucide-react';
+import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Search, Menu, X, User, Compass, BookOpen } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -25,6 +25,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'wellness', label: 'Wellness', icon: HeartPulse },
     { id: 'haplogroups', label: 'Lineages', icon: History },
     { id: 'autosomal', label: 'Markers', icon: FlaskConical },
+    { id: 'methodology', label: 'Methodology', icon: BookOpen }
   ];
 
   return (

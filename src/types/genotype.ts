@@ -51,6 +51,11 @@ export interface AncestryInferenceResult {
   chromosomeData: Record<string, Record<string, number>>;
   segments?: Record<string, { continent: string, start: number, end: number, confidence: number }[]>;
   confidenceIntervals: Record<string, { low: number, high: number }>;
+  matchedSample?: {
+    sampleId: string;
+    population_code: string;
+    super_population_code: string;
+  };
 }
 
 export type OnnxInferenceInput = number[] | Float32Array;

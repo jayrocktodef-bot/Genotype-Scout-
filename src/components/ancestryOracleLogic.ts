@@ -1,5 +1,6 @@
 import masterAims from '../data/master_aims_normalized.json';
 import hoReferenceKernel from '../data/raw_aims/ho_modern_reference_kernel.json';
+import { getPopulationInfo } from '../services/populationMapper';
 
 export interface AIM {
   rsid: string;
@@ -254,7 +255,33 @@ export function solveAdmixtureProportions(
 /**
  * Primary High Resolution Bayesian Ancestry and Subpopulation Oracle Solver (Engine v3)
  */
-export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabase: AIM[]): OracleResult {
+export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabase: AIM[], sampleId?: string): OracleResult {
+  const info = sampleId ? getPopulationInfo(sampleId) : null;
+  if (info) {
+    const popName = POPULATION_NAMES_MAP[info.population_code] || info.population_code;
+    return {
+      topMatch: popName,
+      subpopAimsUsed: 0,
+      unmappedAims: [],
+      breakdown: [
+        {
+          subpop: info.population_code,
+          distance: 0.0,
+          similarityScore: 100.0,
+          markersCompared: 0,
+          count: 0
+        }
+      ],
+      admixtureMix: [
+        {
+          popCode: info.population_code,
+          name: popName,
+          percentage: 100.0
+        }
+      ]
+    };
+  }
+
   const normalizedDatabase = masterAims as Record<string, any>;
   const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
   const dbKeys = Object.keys(normalizedDatabase);

@@ -7,6 +7,7 @@ import americas from './americas.json';
 import centralAsia from './central-asia.json';
 import eastAsia from './east-asia.json';
 import europe from './europe.json';
+import europeanSubstruct from './european_substruct.json';
 import global from './global.json';
 import keyAims from './key_aims.json';
 import middleEast from './middle-east.json';
@@ -20,6 +21,7 @@ export {
   centralAsia,
   eastAsia,
   europe,
+  europeanSubstruct,
   global,
   keyAims,
   middleEast,
@@ -36,6 +38,7 @@ export const AimsRegistry = {
   centralAsia,
   eastAsia,
   europe,
+  europeanSubstruct,
   global,
   keyAims,
   middleEast,
@@ -53,6 +56,7 @@ export function getAllAims(): any[] {
     ...centralAsia,
     ...eastAsia,
     ...europe,
+    ...europeanSubstruct,
     ...global,
     ...keyAims,
     ...middleEast,
