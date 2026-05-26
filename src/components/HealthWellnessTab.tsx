@@ -314,10 +314,17 @@ const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, i
       </div>
 
       <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
-        <span className="text-xs font-mono text-slate-400">{item.rsid}</span>
-        <button className="text-[10px] font-bold text-blue-600 hover:underline">
-          Source: SNPpedia
-        </button>
+        <a 
+          href={`https://www.snpedia.com/index.php/${item.rsid}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-xs font-mono text-blue-600 hover:underline"
+        >
+          {item.rsid}
+        </a>
+        <span className="text-[10px] font-bold text-slate-400">
+          SNPpedia
+        </span>
       </div>
     </motion.div>
   );

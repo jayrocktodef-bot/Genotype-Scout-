@@ -30,7 +30,10 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-4 cursor-pointer" onClick={() => onTabChange('dashboard')}>
+        <div className="flex items-center gap-4 cursor-pointer" onClick={() => {
+          onTabChange('dashboard');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}>
           <img 
             src="https://writteninthegenome.blog/wp-content/uploads/2026/03/cropped-1000055020-e1773637919503.webp" 
             alt="Genotype Scout Logo"
@@ -48,7 +51,11 @@ const Navigation: React.FC<NavigationProps> = ({
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => onTabChange(tab.id)}
+                onClick={() => {
+                  onTabChange(tab.id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
                   activeTab === tab.id 
                     ? 'bg-slate-900 text-white shadow-xl shadow-slate-200 scale-105' 
@@ -92,6 +99,7 @@ const Navigation: React.FC<NavigationProps> = ({
               onClick={() => {
                 onTabChange(tab.id);
                 setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className={`flex items-center gap-4 w-full p-4 rounded-2xl text-base font-bold transition-all ${
                 activeTab === tab.id 
