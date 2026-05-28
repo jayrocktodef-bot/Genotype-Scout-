@@ -38,6 +38,8 @@ Privacy is not a feature — it's the architecture. Genotype Scout implements a 
 | **Verification** | Open DevTools → Network tab during analysis. Zero outbound traffic for DNA data. |
 
 > **No uploads. No server-side processing. No telemetry on genetic data. Verifiable by design.**
+>
+> 📖 **[Read the full privacy deep-dive: "Your DNA, Your Device" →](https://writteninthegenome.blog/writteninthegenome-privacy-policy/your-dna-your-device-the-engineering-behind-genotype-scouts-zero-footprint-privacy/)**
 
 ---
 
@@ -346,5 +348,5 @@ This project is proprietary software created by Jequan Davis. Unauthorized distr
 <div align="center">
   <strong>GENOTYPE SCOUT™</strong> — Your privacy-first local genomic analysis suite.
   <br /><br />
-  <a href="https://writteninthegenome.blog">Blog</a> · <a href="https://witg-genotype-scout.vercel.app/">Live App</a>
+  <a href="https://writteninthegenome.blog">Blog</a> · <a href="https://witg-genotype-scout.vercel.app/">Live App</a> · <a href="https://writteninthegenome.blog/writteninthegenome-privacy-policy/">Privacy Policy</a>
 </div>
