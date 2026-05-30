@@ -8,15 +8,16 @@
     ],
     "frequencies": {
       "AFR": 0.15,
-      "AMR": 0.05,
-      "EAS": 0.01,
       "EUR": 0.25,
+      "EAS": 0.01,
       "SAS": 0.05,
-      "MENA": 0.85
+      "AMR": 0.05,
+      "MENA": 0.85,
+      "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
     "description": "Ancestry Informative Marker for North African populations (Maghreb)."
@@ -30,15 +31,16 @@
     ],
     "frequencies": {
       "AFR": 0.12,
-      "AMR": 0.04,
-      "EAS": 0.01,
       "EUR": 0.22,
+      "EAS": 0.01,
       "SAS": 0.04,
-      "MENA": 0.82
+      "AMR": 0.04,
+      "MENA": 0.82,
+      "OCE": 0.025
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
     "description": "Ancestry Informative Marker for North African populations."

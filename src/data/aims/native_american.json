@@ -7,13 +7,12 @@
       "G"
     ],
     "frequencies": {
-      "AMR": 0.98,
+      "AFR": 0.01,
       "EUR": 0.05,
       "EAS": 0.1,
-      "MENA": 0.02,
-      "NAFR": 0.01,
-      "AFR": 0.01,
       "SAS": 0.01,
+      "AMR": 0.98,
+      "MENA": 0.02,
       "OCE": 0.01
     },
     "subFrequencies": {
@@ -24,7 +23,7 @@
       "Quechua": 0.96
     },
     "deepFrequencies": {},
-    "weight": 3.5,
+    "weight": 10,
     "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression."
   },
   "rs12149627": {
@@ -35,12 +34,13 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.85,
-      "EAS": 0.1,
       "AFR": 0.05,
-      "SAS": 0.05,
       "EUR": 0.1,
-      "MENA": 0.05
+      "EAS": 0.1,
+      "SAS": 0.05,
+      "AMR": 0.85,
+      "MENA": 0.05,
+      "OCE": 0.075
     },
     "subFrequencies": {
       "Maya": 0.85,
@@ -50,7 +50,7 @@
       "Quechua": 0.833
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 8,
     "description": "Andean Ancestry Marker - informative for populations from the Andes region."
   },
   "rs6726715": {
@@ -64,8 +64,8 @@
       "AFR": 0.05,
       "EUR": 0.1,
       "EAS": 0.2,
-      "AMR": 0.85,
       "SAS": 0.05,
+      "AMR": 0.85,
       "MENA": 0.05,
       "OCE": 0.1
     },
@@ -87,14 +87,14 @@
       "AFR": 0.02,
       "EUR": 0.05,
       "EAS": 0.1,
-      "AMR": 0.9,
       "SAS": 0.02,
+      "AMR": 0.9,
       "MENA": 0.01,
       "OCE": 0.05
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "GPR15",
     "trait": "Ancestry",
     "description": "Marker linked to South American Indigenous groups."
@@ -110,14 +110,14 @@
       "AFR": 0.05,
       "EUR": 0.08,
       "EAS": 0.15,
-      "AMR": 0.92,
       "SAS": 0.02,
+      "AMR": 0.92,
       "MENA": 0.01,
       "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "GPR15",
     "trait": "Ancestry",
     "description": "Marker associated with Central American Indigenous populations, particularly in Mexico and Guatemala."
@@ -133,14 +133,14 @@
       "AFR": 0.01,
       "EUR": 0.02,
       "EAS": 0.05,
-      "AMR": 0.95,
       "SAS": 0.01,
+      "AMR": 0.95,
       "MENA": 0.01,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8.5,
+    "weight": 10,
     "gene": "GPR15",
     "trait": "Ancestry",
     "description": "Marker deeply connected to Amazonian Indigenous lineages."
@@ -156,14 +156,14 @@
       "AFR": 0.01,
       "EUR": 0.05,
       "EAS": 0.3,
-      "AMR": 0.9,
       "SAS": 0.05,
+      "AMR": 0.9,
       "MENA": 0.01,
       "OCE": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "ABCC11",
     "trait": "Ancestry",
     "description": "Marker associated with elevated frequency in Indigenous American populations."
@@ -179,9 +179,10 @@
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.95,
-      "AMR": 0.98,
       "SAS": 0.05,
-      "MENA": 0.01
+      "AMR": 0.98,
+      "MENA": 0.01,
+      "OCE": 0.5
     },
     "subFrequencies": {
       "Maya": 0.99,
@@ -191,7 +192,7 @@
       "Nahua": 0.95
     },
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 10,
     "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits."
   },
   "rs10954737": {
@@ -206,11 +207,13 @@
       "EUR": 0.62,
       "EAS": 0.2,
       "SAS": 0.45,
-      "AMR": 0.8
+      "AMR": 0.8,
+      "MENA": 0.535,
+      "OCE": 0.325
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 6,
+    "weight": 8,
     "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians."
   },
   "rs1800562": {
@@ -224,8 +227,10 @@
       "AFR": 0,
       "EUR": 0.06,
       "EAS": 0,
+      "SAS": 0,
       "AMR": 0.02,
-      "SAS": 0
+      "MENA": 0.03,
+      "OCE": 0.004
     },
     "subFrequencies": {
       "Maya": 0.02,
@@ -235,7 +240,7 @@
       "Quechua": 0.02
     },
     "deepFrequencies": {},
-    "weight": 3,
+    "weight": 2,
     "description": "HFE - inverse marker, presence signals European ancestry."
   },
   "rs9282541": {
@@ -249,13 +254,14 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
+      "SAS": 0,
       "AMR": 0.15,
-      "Native_American": 0.25,
-      "SAS": 0
+      "MENA": 0.001,
+      "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 2,
     "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas."
   },
   "rs174570": {
@@ -269,9 +275,10 @@
       "AFR": 0.12,
       "EUR": 0.25,
       "EAS": 0.65,
-      "AMR": 0.92,
       "SAS": 0.35,
-      "MENA": 0.3
+      "AMR": 0.92,
+      "MENA": 0.3,
+      "OCE": 0.5
     },
     "subFrequencies": {
       "Maya": 0.92,
@@ -281,7 +288,7 @@
       "Quechua": 0.902
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "FADS2 - associated with fatty acid metabolism in Native American populations."
   },
   "rs20424": {
@@ -295,9 +302,10 @@
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.05,
-      "AMR": 0.45,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.45,
+      "MENA": 0.01,
+      "OCE": 0.03
     },
     "subFrequencies": {
       "Maya": 0.45,
@@ -307,7 +315,7 @@
       "Quechua": 0.441
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 6,
     "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations."
   },
   "rs13342232": {
@@ -321,13 +329,14 @@
       "AFR": 0.02,
       "EUR": 0.02,
       "EAS": 0.1,
+      "SAS": 0.03,
       "AMR": 0.3,
-      "Native_American": 0.5,
-      "SAS": 0.03
+      "MENA": 0.025,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 4,
     "description": "Native American T2D Risk Marker - strongest GWAS signal in Mexican cohorts."
   },
   "rs10456217": {
@@ -341,9 +350,10 @@
       "AFR": 0.01,
       "EUR": 0.05,
       "EAS": 0.3,
-      "AMR": 0.85,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.85,
+      "MENA": 0.01,
+      "OCE": 0.155
     },
     "subFrequencies": {
       "Maya": 0.85,
@@ -353,7 +363,7 @@
       "Quechua": 0.833
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "Inuit-specific ancestry marker."
   },
   "rs2144915": {
@@ -367,9 +377,10 @@
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.05,
-      "AMR": 0.95,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.95,
+      "MENA": 0.01,
+      "OCE": 0.03
     },
     "subFrequencies": {
       "Maya": 0.95,
@@ -379,7 +390,7 @@
       "Quechua": 0.931
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "Native American ancestry marker."
   },
   "rs1800497": {
@@ -393,9 +404,10 @@
       "AFR": 0.3,
       "EUR": 0.2,
       "EAS": 0.3,
-      "AMR": 0.7,
       "SAS": 0.25,
-      "MENA": 0.2
+      "AMR": 0.7,
+      "MENA": 0.2,
+      "OCE": 0.275
     },
     "subFrequencies": {
       "Maya": 0.7,
@@ -405,7 +417,7 @@
       "Quechua": 0.686
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 6,
     "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations."
   },
   "rs80356779": {
@@ -416,12 +428,13 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.95,
-      "EAS": 0.05,
-      "EUR": 0.01,
       "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.95,
+      "MENA": 0.01,
+      "OCE": 0.03
     },
     "subFrequencies": {
       "Maya": 0.95,
@@ -431,7 +444,7 @@
       "Quechua": 0.931
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations."
   },
   "rs174583": {
@@ -442,12 +455,13 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.9,
-      "EAS": 0.6,
-      "EUR": 0.2,
       "AFR": 0.1,
+      "EUR": 0.2,
+      "EAS": 0.6,
       "SAS": 0.3,
-      "MENA": 0.2
+      "AMR": 0.9,
+      "MENA": 0.2,
+      "OCE": 0.45
     },
     "subFrequencies": {
       "Maya": 0.9,
@@ -457,7 +471,7 @@
       "Quechua": 0.882
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "FADS2 variant - shows strong signs of positive selection in Native American populations."
   },
   "rs11215559": {
@@ -468,12 +482,13 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95,
+      "AFR": 0.01,
+      "EUR": 0.01,
       "EAS": 0.02,
       "SAS": 0.01,
-      "EUR": 0.01,
-      "AFR": 0.01,
-      "MENA": 0.01
+      "AMR": 0.95,
+      "MENA": 0.01,
+      "OCE": 0.015
     },
     "subFrequencies": {
       "Maya": 0.95,
@@ -483,7 +498,7 @@
       "Quechua": 0.931
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry."
   },
   "rs4845571": {
@@ -494,12 +509,13 @@
       "C"
     ],
     "frequencies": {
-      "AMR": 0.9,
-      "EAS": 0.05,
       "AFR": 0.02,
-      "SAS": 0.02,
       "EUR": 0.05,
-      "MENA": 0.02
+      "EAS": 0.05,
+      "SAS": 0.02,
+      "AMR": 0.9,
+      "MENA": 0.02,
+      "OCE": 0.035
     },
     "subFrequencies": {
       "Maya": 0.9,
@@ -509,7 +525,7 @@
       "Quechua": 0.882
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 10,
     "description": "Andean Ancestry Marker - informative for populations from the Andes region."
   },
   "rs10456280": {
@@ -520,13 +536,12 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.98,
-      "EAS": 0.08,
-      "EUR": 0.02,
       "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.08,
       "SAS": 0.01,
+      "AMR": 0.98,
       "MENA": 0.01,
-      "NAFR": 0.01,
       "OCE": 0.01
     },
     "subFrequencies": {
@@ -537,7 +552,7 @@
       "Quechua": 0.96
     },
     "deepFrequencies": {},
-    "weight": 3.5,
+    "weight": 10,
     "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
   },
   "rs10456295": {
@@ -548,14 +563,13 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.97,
-      "OCE": 0.02,
-      "EAS": 0.1,
-      "EUR": 0.01,
-      "MENA": 0.01,
-      "NAFR": 0.01,
       "AFR": 0.01,
-      "SAS": 0.01
+      "EUR": 0.01,
+      "EAS": 0.1,
+      "SAS": 0.01,
+      "AMR": 0.97,
+      "MENA": 0.01,
+      "OCE": 0.02
     },
     "subFrequencies": {
       "Maya": 0.97,
@@ -565,7 +579,7 @@
       "Quechua": 0.951
     },
     "deepFrequencies": {},
-    "weight": 3.5,
+    "weight": 10,
     "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
   },
   "rs11103500": {
@@ -576,11 +590,11 @@
       "G"
     ],
     "frequencies": {
-      "AMR": 0.98,
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.05,
       "SAS": 0.01,
+      "AMR": 0.98,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -592,7 +606,7 @@
       "Quechua": 0.97
     },
     "deepFrequencies": {},
-    "weight": 3.5,
+    "weight": 10,
     "description": "Native American Informative Marker - highly diagnostic for indigenous American ancestry."
   },
   "rs11103501": {
@@ -603,11 +617,11 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.96,
       "AFR": 0.01,
       "EUR": 0.02,
       "EAS": 0.04,
       "SAS": 0.01,
+      "AMR": 0.96,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -619,7 +633,7 @@
       "Quechua": 0.96
     },
     "deepFrequencies": {},
-    "weight": 3.3,
+    "weight": 10,
     "description": "Native American Informative Marker - strong differentiation from European and African populations."
   },
   "rs11103502": {
@@ -630,12 +644,12 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.97,
       "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.03,
       "SAS": 0,
-      "MENA": 0,
+      "AMR": 0.97,
+      "MENA": 0.005,
       "OCE": 0.01
     },
     "subFrequencies": {
@@ -646,7 +660,7 @@
       "Quechua": 0.96
     },
     "deepFrequencies": {},
-    "weight": 3.4,
+    "weight": 10,
     "description": "Native American Informative Marker - nearly fixed in indigenous populations of the Americas."
   },
   "rs11103503": {
@@ -657,11 +671,11 @@
       "C"
     ],
     "frequencies": {
-      "AMR": 0.94,
       "AFR": 0.02,
       "EUR": 0.03,
       "EAS": 0.06,
       "SAS": 0.02,
+      "AMR": 0.94,
       "MENA": 0.02,
       "OCE": 0.02
     },
@@ -673,7 +687,7 @@
       "Quechua": 0.94
     },
     "deepFrequencies": {},
-    "weight": 3.1,
+    "weight": 10,
     "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
   "rs11103504": {
@@ -684,11 +698,11 @@
       "G"
     ],
     "frequencies": {
-      "AMR": 0.95,
       "AFR": 0.01,
       "EUR": 0.02,
       "EAS": 0.04,
       "SAS": 0.01,
+      "AMR": 0.95,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -700,7 +714,7 @@
       "Quechua": 0.95
     },
     "deepFrequencies": {},
-    "weight": 3.2,
+    "weight": 10,
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
   "rs11103505": {
@@ -711,11 +725,11 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.92,
       "AFR": 0.03,
       "EUR": 0.04,
       "EAS": 0.07,
       "SAS": 0.02,
+      "AMR": 0.92,
       "MENA": 0.03,
       "OCE": 0.02
     },
@@ -727,7 +741,7 @@
       "Quechua": 0.92
     },
     "deepFrequencies": {},
-    "weight": 3,
+    "weight": 10,
     "description": "Native American Informative Marker - general indigenous American signal."
   },
   "rs11103506": {
@@ -738,11 +752,11 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.97,
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.03,
       "SAS": 0.01,
+      "AMR": 0.97,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -754,7 +768,7 @@
       "Quechua": 0.97
     },
     "deepFrequencies": {},
-    "weight": 3.3,
+    "weight": 10,
     "description": "Native American Informative Marker - high frequency in South American indigenous groups."
   },
   "rs11103507": {
@@ -765,12 +779,12 @@
       "C"
     ],
     "frequencies": {
-      "AMR": 0.98,
       "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.02,
       "SAS": 0,
-      "MENA": 0,
+      "AMR": 0.98,
+      "MENA": 0.005,
       "OCE": 0.01
     },
     "subFrequencies": {
@@ -781,7 +795,7 @@
       "Quechua": 0.98
     },
     "deepFrequencies": {},
-    "weight": 3.4,
+    "weight": 10,
     "description": "Native American Informative Marker - highly specific to indigenous American populations."
   },
   "rs11103508": {
@@ -792,11 +806,11 @@
       "G"
     ],
     "frequencies": {
-      "AMR": 0.94,
       "AFR": 0.02,
       "EUR": 0.03,
       "EAS": 0.05,
       "SAS": 0.02,
+      "AMR": 0.94,
       "MENA": 0.02,
       "OCE": 0.02
     },
@@ -808,7 +822,7 @@
       "Quechua": 0.94
     },
     "deepFrequencies": {},
-    "weight": 3.1,
+    "weight": 10,
     "description": "Native American Informative Marker - useful for identifying North American indigenous lineages."
   },
   "rs11103509": {
@@ -819,11 +833,11 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95,
       "AFR": 0.01,
       "EUR": 0.02,
       "EAS": 0.04,
       "SAS": 0.01,
+      "AMR": 0.95,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -835,7 +849,7 @@
       "Quechua": 0.95
     },
     "deepFrequencies": {},
-    "weight": 3.2,
+    "weight": 10,
     "description": "Native American Informative Marker - strong differentiation from European populations."
   },
   "rs11103510": {
@@ -846,11 +860,11 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.91,
       "AFR": 0.04,
       "EUR": 0.05,
       "EAS": 0.08,
       "SAS": 0.03,
+      "AMR": 0.91,
       "MENA": 0.04,
       "OCE": 0.03
     },
@@ -862,7 +876,7 @@
       "Quechua": 0.89
     },
     "deepFrequencies": {},
-    "weight": 3,
+    "weight": 10,
     "description": "Native American Informative Marker - general indigenous American signal."
   },
   "rs11103511": {
@@ -873,11 +887,11 @@
       "C"
     ],
     "frequencies": {
-      "AMR": 0.97,
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.03,
       "SAS": 0.01,
+      "AMR": 0.97,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -889,7 +903,7 @@
       "Quechua": 0.97
     },
     "deepFrequencies": {},
-    "weight": 3.3,
+    "weight": 10,
     "description": "Native American Informative Marker - high frequency in Mesoamerican indigenous groups."
   },
   "rs11103512": {
@@ -900,12 +914,12 @@
       "G"
     ],
     "frequencies": {
-      "AMR": 0.98,
       "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.02,
       "SAS": 0,
-      "MENA": 0,
+      "AMR": 0.98,
+      "MENA": 0.005,
       "OCE": 0.01
     },
     "subFrequencies": {
@@ -916,7 +930,7 @@
       "Quechua": 0.98
     },
     "deepFrequencies": {},
-    "weight": 3.4,
+    "weight": 10,
     "description": "Native American Informative Marker - nearly fixed in indigenous populations."
   },
   "rs11103513": {
@@ -927,11 +941,11 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.93,
       "AFR": 0.02,
       "EUR": 0.03,
       "EAS": 0.06,
       "SAS": 0.02,
+      "AMR": 0.93,
       "MENA": 0.02,
       "OCE": 0.02
     },
@@ -943,7 +957,7 @@
       "Quechua": 0.91
     },
     "deepFrequencies": {},
-    "weight": 3.1,
+    "weight": 10,
     "description": "Native American Informative Marker - useful for identifying indigenous American ancestry."
   },
   "rs11103514": {
@@ -954,11 +968,11 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.95,
       "AFR": 0.01,
       "EUR": 0.02,
       "EAS": 0.04,
       "SAS": 0.01,
+      "AMR": 0.95,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -970,7 +984,7 @@
       "Quechua": 0.95
     },
     "deepFrequencies": {},
-    "weight": 3.2,
+    "weight": 10,
     "description": "Native American Informative Marker - strong differentiation from African populations."
   },
   "rs11103515": {
@@ -981,11 +995,11 @@
       "C"
     ],
     "frequencies": {
-      "AMR": 0.92,
       "AFR": 0.03,
       "EUR": 0.04,
       "EAS": 0.07,
       "SAS": 0.02,
+      "AMR": 0.92,
       "MENA": 0.03,
       "OCE": 0.02
     },
@@ -997,7 +1011,7 @@
       "Quechua": 0.92
     },
     "deepFrequencies": {},
-    "weight": 3,
+    "weight": 10,
     "description": "Native American Informative Marker - general indigenous American signal."
   },
   "rs11103516": {
@@ -1008,11 +1022,11 @@
       "G"
     ],
     "frequencies": {
-      "AMR": 0.97,
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.03,
       "SAS": 0.01,
+      "AMR": 0.97,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -1024,7 +1038,7 @@
       "Quechua": 0.97
     },
     "deepFrequencies": {},
-    "weight": 3.3,
+    "weight": 10,
     "description": "Native American Informative Marker - high frequency in indigenous populations of the Americas."
   },
   "rs11103517": {
@@ -1035,12 +1049,12 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.98,
       "AFR": 0,
       "EUR": 0.01,
       "EAS": 0.02,
       "SAS": 0,
-      "MENA": 0,
+      "AMR": 0.98,
+      "MENA": 0.005,
       "OCE": 0.01
     },
     "subFrequencies": {
@@ -1051,7 +1065,7 @@
       "Quechua": 0.98
     },
     "deepFrequencies": {},
-    "weight": 3.4,
+    "weight": 10,
     "description": "Native American Informative Marker - highly specific to indigenous American ancestry."
   },
   "rs11103518": {
@@ -1062,11 +1076,11 @@
       "T"
     ],
     "frequencies": {
-      "AMR": 0.94,
       "AFR": 0.02,
       "EUR": 0.03,
       "EAS": 0.05,
       "SAS": 0.02,
+      "AMR": 0.94,
       "MENA": 0.02,
       "OCE": 0.02
     },
@@ -1078,7 +1092,7 @@
       "Quechua": 0.94
     },
     "deepFrequencies": {},
-    "weight": 3.1,
+    "weight": 10,
     "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
   "rs11103519": {
@@ -1089,11 +1103,11 @@
       "C"
     ],
     "frequencies": {
-      "AMR": 0.95,
       "AFR": 0.01,
       "EUR": 0.02,
       "EAS": 0.04,
       "SAS": 0.01,
+      "AMR": 0.95,
       "MENA": 0.01,
       "OCE": 0.01
     },
@@ -1105,7 +1119,7 @@
       "Quechua": 0.95
     },
     "deepFrequencies": {},
-    "weight": 3.2,
+    "weight": 10,
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
   "rs75493593": {
@@ -1119,13 +1133,14 @@
       "AFR": 0.02,
       "EUR": 0.02,
       "EAS": 0.1,
+      "SAS": 0.03,
       "AMR": 0.3,
-      "Native_American": 0.5,
-      "SAS": 0.03
+      "MENA": 0.025,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 4,
     "description": "Native American T2D Risk Marker - confirmed Neanderthal introgression origin."
   },
   "rs13342692": {
@@ -1139,13 +1154,14 @@
       "AFR": 0.02,
       "EUR": 0.02,
       "EAS": 0.1,
+      "SAS": 0.03,
       "AMR": 0.3,
-      "Native_American": 0.5,
-      "SAS": 0.03
+      "MENA": 0.025,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 4,
     "description": "Native American T2D Risk Marker - co-segregates with rs75493593."
   },
   "rs117767867": {
@@ -1159,13 +1175,14 @@
       "AFR": 0.01,
       "EUR": 0.01,
       "EAS": 0.09,
+      "SAS": 0.02,
       "AMR": 0.28,
-      "Native_American": 0.48,
-      "SAS": 0.02
+      "MENA": 0.015,
+      "OCE": 0.055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 4,
     "description": "Native American T2D Risk Marker - rare outside Native American populations."
   },
   "rs75418188": {
@@ -1179,13 +1196,14 @@
       "AFR": 0.02,
       "EUR": 0.02,
       "EAS": 0.1,
+      "SAS": 0.03,
       "AMR": 0.29,
-      "Native_American": 0.49,
-      "SAS": 0.03
+      "MENA": 0.025,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
+    "weight": 4,
     "description": "Native American T2D Risk Marker - part of the SLC16A11 haplotype."
   },
   "rs762551": {
@@ -1199,8 +1217,8 @@
       "AFR": 0.1,
       "EUR": 0.1,
       "EAS": 0.3,
-      "AMR": 0.8,
       "SAS": 0.1,
+      "AMR": 0.8,
       "MENA": 0.1,
       "OCE": 0.05
     },
@@ -1219,13 +1237,19 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0.95,
+      "MENA": 0.001,
+      "OCE": 0.19
     },
     "subFrequencies": {
       "Indigenous American": 0.95
     },
     "deepFrequencies": {},
-    "weight": 9,
+    "weight": 10,
     "trait": "Native American Ancestry Marker",
     "description": "The \"9-repeat allele\" is a private marker found in almost all Native American groups but absent in Asia."
   },
@@ -1237,13 +1261,19 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0.95,
+      "MENA": 0.001,
+      "OCE": 0.19
     },
     "subFrequencies": {
       "Indigenous American": 0.95
     },
     "deepFrequencies": {},
-    "weight": 9,
+    "weight": 10,
     "trait": "Native American Ancestry Marker",
     "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk."
   },
@@ -1255,13 +1285,19 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0.95,
+      "MENA": 0.001,
+      "OCE": 0.19
     },
     "subFrequencies": {
       "Indigenous American": 0.95
     },
     "deepFrequencies": {},
-    "weight": 9,
+    "weight": 10,
     "trait": "Native American Ancestry Marker",
     "description": "Another high-frequency risk allele linked to increased Native American genetic heritage."
   },
@@ -1273,13 +1309,19 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0.95,
+      "MENA": 0.001,
+      "OCE": 0.19
     },
     "subFrequencies": {
       "Indigenous American": 0.95
     },
     "deepFrequencies": {},
-    "weight": 9,
+    "weight": 10,
     "trait": "Native American Ancestry Marker",
     "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility."
   },
@@ -1291,13 +1333,19 @@
       "A"
     ],
     "frequencies": {
-      "AMR": 0.95
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0.95,
+      "MENA": 0.001,
+      "OCE": 0.19
     },
     "subFrequencies": {
       "Indigenous American": 0.95
     },
     "deepFrequencies": {},
-    "weight": 9,
+    "weight": 10,
     "trait": "Native American Ancestry Marker",
     "description": "A specific marker used to differentiate ancestry profiles in admixed US populations."
   },
@@ -1313,11 +1361,13 @@
       "EUR": 0.3,
       "EAS": 0.7,
       "SAS": 0.5,
-      "AMR": 0.72
+      "AMR": 0.72,
+      "MENA": 0.4,
+      "OCE": 0.6
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
+    "weight": 6,
     "trait": "Ancestry",
     "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation."
   },
@@ -1334,10 +1384,10 @@
       "AFR": 0.4588,
       "EUR": 0.4665,
       "EAS": 0.2645,
-      "AMR": 0.7449,
       "SAS": 0.5717,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7449,
+      "MENA": 0.5191,
+      "OCE": 0.4181
     },
     "subFrequencies": {
       "African Caribbean": 0.1979,
@@ -1388,10 +1438,10 @@
       "AFR": 0.4907,
       "EUR": 0.4672,
       "EAS": 0.4889,
-      "AMR": 0.59,
       "SAS": 0.3973,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.59,
+      "MENA": 0.4323,
+      "OCE": 0.4431
     },
     "subFrequencies": {
       "African Caribbean": 0.401,
@@ -1442,10 +1492,10 @@
       "AFR": 0.4582,
       "EUR": 0.451,
       "EAS": 0.5141,
-      "AMR": 0.5327,
       "SAS": 0.4677,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5327,
+      "MENA": 0.4594,
+      "OCE": 0.4909
     },
     "subFrequencies": {
       "African Caribbean": 0.8177,
@@ -1496,10 +1546,10 @@
       "AFR": 0.5276,
       "EUR": 0.4998,
       "EAS": 0.5549,
-      "AMR": 0.6655,
       "SAS": 0.5286,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6655,
+      "MENA": 0.5142,
+      "OCE": 0.5417
     },
     "subFrequencies": {
       "African Caribbean": 0.2552,
@@ -1550,10 +1600,10 @@
       "AFR": 0.526,
       "EUR": 0.3495,
       "EAS": 0.3982,
-      "AMR": 0.597,
       "SAS": 0.4081,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.597,
+      "MENA": 0.3788,
+      "OCE": 0.4032
     },
     "subFrequencies": {
       "African Caribbean": 0.7969,
@@ -1604,10 +1654,10 @@
       "AFR": 1,
       "EUR": 1,
       "EAS": 1,
-      "AMR": 0.7524,
       "SAS": 0.9988,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7524,
+      "MENA": 0.9994,
+      "OCE": 0.9994
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -1658,10 +1708,10 @@
       "AFR": 0.5505,
       "EUR": 0.5164,
       "EAS": 0.4775,
-      "AMR": 0.4118,
       "SAS": 0.4524,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4118,
+      "MENA": 0.4844,
+      "OCE": 0.4649
     },
     "subFrequencies": {
       "African Caribbean": 0.2135,
@@ -1712,10 +1762,10 @@
       "AFR": 0.5264,
       "EUR": 0.4835,
       "EAS": 0.4789,
-      "AMR": 0.5677,
       "SAS": 0.4906,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5677,
+      "MENA": 0.487,
+      "OCE": 0.4848
     },
     "subFrequencies": {
       "African Caribbean": 0.526,
@@ -1766,10 +1816,10 @@
       "AFR": 0.4736,
       "EUR": 0.4188,
       "EAS": 0.4641,
-      "AMR": 0.5961,
       "SAS": 0.4139,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5961,
+      "MENA": 0.4163,
+      "OCE": 0.439
     },
     "subFrequencies": {
       "African Caribbean": 0.7708,
@@ -1820,10 +1870,10 @@
       "AFR": 0.4397,
       "EUR": 0.4088,
       "EAS": 0.5473,
-      "AMR": 0.2718,
       "SAS": 0.4256,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.2718,
+      "MENA": 0.4172,
+      "OCE": 0.4864
     },
     "subFrequencies": {
       "African Caribbean": 0.026,
@@ -1874,10 +1924,10 @@
       "AFR": 0.5761,
       "EUR": 1,
       "EAS": 1,
-      "AMR": 0.5039,
       "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5039,
+      "MENA": 1,
+      "OCE": 1
     },
     "subFrequencies": {
       "African Caribbean": 0.974,
@@ -1928,10 +1978,10 @@
       "AFR": 0.5203,
       "EUR": 0.5592,
       "EAS": 0.5985,
-      "AMR": 0.4906,
       "SAS": 0.5642,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4906,
+      "MENA": 0.5617,
+      "OCE": 0.5814
     },
     "subFrequencies": {
       "African Caribbean": 0.5885,
@@ -1982,10 +2032,10 @@
       "AFR": 0.5445,
       "EUR": 0.8019,
       "EAS": 1,
-      "AMR": 0.5137,
       "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5137,
+      "MENA": 0.9009,
+      "OCE": 1
     },
     "subFrequencies": {
       "African Caribbean": 0.7604,
@@ -2036,10 +2086,10 @@
       "AFR": 0.4612,
       "EUR": 0.4505,
       "EAS": 0.4643,
-      "AMR": 0.683,
       "SAS": 0.5796,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.683,
+      "MENA": 0.5151,
+      "OCE": 0.522
     },
     "subFrequencies": {
       "African Caribbean": 0.2865,
@@ -2090,10 +2140,10 @@
       "AFR": 0.5921,
       "EUR": 0.4524,
       "EAS": 0.5371,
-      "AMR": 0.4154,
       "SAS": 0.5223,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4154,
+      "MENA": 0.4874,
+      "OCE": 0.5297
     },
     "subFrequencies": {
       "African Caribbean": 0.349,
@@ -2144,10 +2194,10 @@
       "AFR": 0.5375,
       "EUR": 0.7266,
       "EAS": 0.4493,
-      "AMR": 0.2201,
       "SAS": 0.5612,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.2201,
+      "MENA": 0.6439,
+      "OCE": 0.5052
     },
     "subFrequencies": {
       "African Caribbean": 0.75,
@@ -2198,10 +2248,10 @@
       "AFR": 0.3467,
       "EUR": 0.2194,
       "EAS": 0.5692,
-      "AMR": 0.7997,
       "SAS": 0.4098,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7997,
+      "MENA": 0.3146,
+      "OCE": 0.4895
     },
     "subFrequencies": {
       "African Caribbean": 0.9219,
@@ -2252,10 +2302,10 @@
       "AFR": 0.4607,
       "EUR": 0.5626,
       "EAS": 0.5873,
-      "AMR": 0.8129,
       "SAS": 0.5952,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.8129,
+      "MENA": 0.5789,
+      "OCE": 0.5913
     },
     "subFrequencies": {
       "African Caribbean": 0.2344,
@@ -2306,10 +2356,10 @@
       "AFR": 0.6211,
       "EUR": 0.4893,
       "EAS": 0.4584,
-      "AMR": 0.3425,
       "SAS": 0.6282,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3425,
+      "MENA": 0.5587,
+      "OCE": 0.5433
     },
     "subFrequencies": {
       "African Caribbean": 0.1771,
@@ -2360,10 +2410,10 @@
       "AFR": 1,
       "EUR": 0.5983,
       "EAS": 1,
-      "AMR": 0.2567,
       "SAS": 0.6031,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.2567,
+      "MENA": 0.6007,
+      "OCE": 0.8015
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -2414,10 +2464,10 @@
       "AFR": 0.3723,
       "EUR": 0.8009,
       "EAS": 1,
-      "AMR": 0.248,
       "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.248,
+      "MENA": 0.9004,
+      "OCE": 1
     },
     "subFrequencies": {
       "African Caribbean": 0.1771,

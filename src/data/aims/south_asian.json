@@ -14,8 +14,8 @@
       "AFR": 0.05,
       "EUR": 0.35,
       "EAS": 0.02,
-      "AMR": 0.1,
       "SAS": 0.72,
+      "AMR": 0.1,
       "MENA": 0.45,
       "OCE": 0.01
     },
@@ -25,7 +25,7 @@
       "Telugu": 0.69
     },
     "deepFrequencies": {},
-    "weight": 6,
+    "weight": 8,
     "gene": "OCA2",
     "trait": "Ancestry",
     "description": "OCA2 pigmentation modifier, highly differentiated between South Asian regional and European populations."
@@ -45,8 +45,8 @@
       "AFR": 0.02,
       "EUR": 0.99,
       "EAS": 0.01,
-      "AMR": 0.22,
       "SAS": 0.88,
+      "AMR": 0.22,
       "MENA": 0.92,
       "OCE": 0.01
     },
@@ -57,7 +57,7 @@
       "Tamil": 0.78
     },
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SLC24A5",
     "trait": "Ancestry",
     "description": "SLC24A5 pigmentary variant - highly diagnostic for West Eurasian, Middle Eastern, and South Asian genetic structure."
@@ -75,10 +75,10 @@
       "AFR": 0.4446,
       "EUR": 0.5483,
       "EAS": 0.5884,
-      "AMR": 0.5616,
       "SAS": 0.3268,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5616,
+      "MENA": 0.4375,
+      "OCE": 0.4576
     },
     "subFrequencies": {
       "African Caribbean": 0.4635,
@@ -131,10 +131,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -156,10 +156,10 @@
       "AFR": 0.5542,
       "EUR": 0.5831,
       "EAS": 0.5618,
-      "AMR": 0.5163,
       "SAS": 0.368,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5163,
+      "MENA": 0.4755,
+      "OCE": 0.4649
     },
     "subFrequencies": {
       "African Caribbean": 0.2865,
@@ -210,10 +210,10 @@
       "AFR": 0.5351,
       "EUR": 0.4946,
       "EAS": 0.5353,
-      "AMR": 0.5831,
       "SAS": 0.6495,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5831,
+      "MENA": 0.572,
+      "OCE": 0.5924
     },
     "subFrequencies": {
       "African Caribbean": 0.5677,
@@ -264,10 +264,10 @@
       "AFR": 0.3903,
       "EUR": 0.4761,
       "EAS": 0.6013,
-      "AMR": 0.372,
       "SAS": 0.6265,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.372,
+      "MENA": 0.5513,
+      "OCE": 0.6139
     },
     "subFrequencies": {
       "African Caribbean": 0.3281,
@@ -318,10 +318,10 @@
       "AFR": 0.4277,
       "EUR": 0.4684,
       "EAS": 0.4502,
-      "AMR": 0.4692,
       "SAS": 0.5162,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4692,
+      "MENA": 0.4923,
+      "OCE": 0.4832
     },
     "subFrequencies": {
       "African Caribbean": 0.151,
@@ -372,10 +372,10 @@
       "AFR": 0.5216,
       "EUR": 0.5177,
       "EAS": 0.4996,
-      "AMR": 0.6007,
       "SAS": 0.3324,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6007,
+      "MENA": 0.4251,
+      "OCE": 0.416
     },
     "subFrequencies": {
       "African Caribbean": 0.401,
@@ -426,10 +426,10 @@
       "AFR": 0.5554,
       "EUR": 0.5206,
       "EAS": 0.5506,
-      "AMR": 0.5043,
       "SAS": 0.465,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5043,
+      "MENA": 0.4928,
+      "OCE": 0.5078
     },
     "subFrequencies": {
       "African Caribbean": 0.3229,
@@ -480,10 +480,10 @@
       "AFR": 0.3376,
       "EUR": 0.4758,
       "EAS": 0.4273,
-      "AMR": 0.368,
       "SAS": 0.5243,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.368,
+      "MENA": 0.5,
+      "OCE": 0.4758
     },
     "subFrequencies": {
       "African Caribbean": 0.2813,
@@ -534,10 +534,10 @@
       "AFR": 0.4627,
       "EUR": 0.489,
       "EAS": 0.4703,
-      "AMR": 0.4688,
       "SAS": 0.6578,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4688,
+      "MENA": 0.5734,
+      "OCE": 0.5641
     },
     "subFrequencies": {
       "African Caribbean": 0.3698,
@@ -588,10 +588,10 @@
       "AFR": 0.4412,
       "EUR": 0.4274,
       "EAS": 0.414,
-      "AMR": 0.4257,
       "SAS": 0.6714,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4257,
+      "MENA": 0.5494,
+      "OCE": 0.5427
     },
     "subFrequencies": {
       "African Caribbean": 0.8958,
@@ -642,10 +642,10 @@
       "AFR": 0.593,
       "EUR": 0.5597,
       "EAS": 0.6029,
-      "AMR": 0.4254,
       "SAS": 0.237,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4254,
+      "MENA": 0.3983,
+      "OCE": 0.4199
     },
     "subFrequencies": {
       "African Caribbean": 0.0521,
@@ -696,10 +696,10 @@
       "AFR": 1,
       "EUR": 0.997,
       "EAS": 1,
-      "AMR": 0.9988,
       "SAS": 0.801,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.9988,
+      "MENA": 0.899,
+      "OCE": 0.9005
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -750,10 +750,10 @@
       "AFR": 0.5336,
       "EUR": 0.4354,
       "EAS": 0.4093,
-      "AMR": 0.2991,
       "SAS": 0.2215,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.2991,
+      "MENA": 0.3285,
+      "OCE": 0.3154
     },
     "subFrequencies": {
       "African Caribbean": 0.9115,
@@ -804,10 +804,10 @@
       "AFR": 0.533,
       "EUR": 0.6018,
       "EAS": 0.6042,
-      "AMR": 0.7309,
       "SAS": 0.7843,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7309,
+      "MENA": 0.693,
+      "OCE": 0.6943
     },
     "subFrequencies": {
       "African Caribbean": 0.776,
@@ -858,10 +858,10 @@
       "AFR": 0.3616,
       "EUR": 0.2356,
       "EAS": 0.5809,
-      "AMR": 0.502,
       "SAS": 0.9623,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.502,
+      "MENA": 0.5989,
+      "OCE": 0.7716
     },
     "subFrequencies": {
       "African Caribbean": 0.1927,
@@ -912,10 +912,10 @@
       "AFR": 0.6056,
       "EUR": 0.3955,
       "EAS": 0.4993,
-      "AMR": 0.4857,
       "SAS": 0.7429,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4857,
+      "MENA": 0.5692,
+      "OCE": 0.6211
     },
     "subFrequencies": {
       "African Caribbean": 0.625,
@@ -966,10 +966,10 @@
       "AFR": 0.4587,
       "EUR": 0.5047,
       "EAS": 0.4986,
-      "AMR": 0.4399,
       "SAS": 0.7495,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4399,
+      "MENA": 0.6271,
+      "OCE": 0.624
     },
     "subFrequencies": {
       "African Caribbean": 0.8281,
@@ -1020,10 +1020,10 @@
       "AFR": 0.5295,
       "EUR": 0.5916,
       "EAS": 0.5894,
-      "AMR": 0.5136,
       "SAS": 0.3931,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5136,
+      "MENA": 0.4924,
+      "OCE": 0.4913
     },
     "subFrequencies": {
       "African Caribbean": 0.6094,
@@ -1074,10 +1074,10 @@
       "AFR": 0.5659,
       "EUR": 0.2621,
       "EAS": 0.3085,
-      "AMR": 0.4788,
       "SAS": 0.757,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4788,
+      "MENA": 0.5095,
+      "OCE": 0.5328
     },
     "subFrequencies": {
       "African Caribbean": 0.099,
@@ -1128,10 +1128,10 @@
       "AFR": 0.5746,
       "EUR": 0.5766,
       "EAS": 0.4468,
-      "AMR": 0.4835,
       "SAS": 0.2875,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4835,
+      "MENA": 0.432,
+      "OCE": 0.3671
     },
     "subFrequencies": {
       "African Caribbean": 0.9792,
@@ -1182,10 +1182,10 @@
       "AFR": 0.5644,
       "EUR": 0.6782,
       "EAS": 0.5899,
-      "AMR": 0.6909,
       "SAS": 0.4492,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6909,
+      "MENA": 0.5637,
+      "OCE": 0.5195
     },
     "subFrequencies": {
       "African Caribbean": 0.9517,
@@ -1236,10 +1236,10 @@
       "AFR": 0.4688,
       "EUR": 0.5509,
       "EAS": 0.5403,
-      "AMR": 0.5478,
       "SAS": 0.444,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5478,
+      "MENA": 0.4974,
+      "OCE": 0.4921
     },
     "subFrequencies": {
       "African Caribbean": 0.6771,
@@ -1290,10 +1290,10 @@
       "AFR": 0.483,
       "EUR": 0.5954,
       "EAS": 0.6065,
-      "AMR": 0.502,
       "SAS": 0.4033,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.502,
+      "MENA": 0.4994,
+      "OCE": 0.5049
     },
     "subFrequencies": {
       "African Caribbean": 0.349,
@@ -1346,10 +1346,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1366,12 +1366,17 @@
       "A"
     ],
     "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
       "SAS": 0.95,
-      "GLOBAL": 0.1
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 9,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
@@ -1391,10 +1396,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1418,10 +1423,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1445,10 +1450,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1472,10 +1477,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1499,10 +1504,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1526,10 +1531,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1553,10 +1558,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1580,10 +1585,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1607,10 +1612,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1634,10 +1639,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1661,10 +1666,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1688,10 +1693,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1715,10 +1720,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1742,10 +1747,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1769,10 +1774,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1796,10 +1801,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1823,10 +1828,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1850,10 +1855,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1877,10 +1882,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1904,10 +1909,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1931,10 +1936,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1958,10 +1963,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1985,10 +1990,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2012,10 +2017,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2033,15 +2038,16 @@
     ],
     "frequencies": {
       "AFR": 0.05,
-      "AMR": 0.1,
-      "EAS": 0.05,
       "EUR": 0.2,
+      "EAS": 0.05,
       "SAS": 0.9,
-      "MENA": 0.15
+      "AMR": 0.1,
+      "MENA": 0.15,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "South Asian Ancestry Marker",
     "description": "Ancestry Informative Marker for South Asian populations."
@@ -2061,10 +2067,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2088,10 +2094,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2115,8 +2121,8 @@
       "AFR": 0.01,
       "EUR": 0.1,
       "EAS": 0.3,
-      "AMR": 0.08,
       "SAS": 0.62,
+      "AMR": 0.08,
       "MENA": 0.15,
       "OCE": 0.02
     },
@@ -2126,7 +2132,7 @@
       "Bengali": 0.58
     },
     "deepFrequencies": {},
-    "weight": 6,
+    "weight": 8,
     "gene": "ABCG2",
     "trait": "Urate Transport",
     "description": "ABCG2 transporter variant, highly differentiated in South Asia and associated with physiological uric acid handling."
@@ -2146,10 +2152,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2173,10 +2179,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2200,10 +2206,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2227,10 +2233,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2254,10 +2260,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2281,10 +2287,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2308,10 +2314,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2335,10 +2341,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2362,10 +2368,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2389,10 +2395,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2416,10 +2422,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2443,10 +2449,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2470,10 +2476,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2497,10 +2503,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2524,10 +2530,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2551,10 +2557,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2578,10 +2584,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2605,10 +2611,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2632,10 +2638,10 @@
       "AFR": 0,
       "EUR": 0,
       "EAS": 0,
-      "AMR": 0,
       "SAS": 0.95,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0,
+      "MENA": 0.475,
+      "OCE": 0.475
     },
     "subFrequencies": {},
     "deepFrequencies": {},

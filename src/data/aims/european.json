@@ -12,10 +12,10 @@
       "AFR": 0.9658,
       "EUR": 0.4286,
       "EAS": 0.999,
-      "AMR": 0.6873,
       "SAS": 0.6018,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6873,
+      "MENA": 0.5152,
+      "OCE": 0.8004
     },
     "subFrequencies": {
       "African Caribbean": 0.9219,
@@ -57,11 +57,19 @@
     "rsid": "rs12913832",
     "region": "European",
     "color": "#95A5A6",
-    "alleles": ["G"],
+    "alleles": [
+      "G"
+    ],
     "frequencies": {
-      "AFR": 0.027, "EUR": 0.751, "EAS": 0.002, "AMR": 0.609, "SAS": 0.419, "MENA": 0.55, "OCE": 0.01
+      "AFR": 0.027,
+      "EUR": 0.751,
+      "EAS": 0.002,
+      "SAS": 0.419,
+      "AMR": 0.609,
+      "MENA": 0.55,
+      "OCE": 0.01
     },
-    "weight": 10,
+    "weight": 8,
     "description": "A chief HERC2 enhancer variant and strong European pigmentary marker driving light-pigment hair and blue eyes.",
     "chromosome": "15",
     "position": 28120472,
@@ -76,9 +84,17 @@
     "position": 27985172,
     "region": "European",
     "color": "#95A5A6",
-    "alleles": ["T"],
+    "alleles": [
+      "T"
+    ],
     "frequencies": {
-      "AFR": 0.1414, "EUR": 0.0748, "EAS": 0.001, "AMR": 0.7194, "SAS": 0.5975, "MENA": 0, "OCE": 0
+      "AFR": 0.1414,
+      "EUR": 0.0748,
+      "EAS": 0.001,
+      "SAS": 0.5975,
+      "AMR": 0.7194,
+      "MENA": 0.3362,
+      "OCE": 0.2993
     },
     "weight": 8,
     "description": "An OCA2 pigmentation marker whose ancestral alleles are primarily found in sub-Saharan populations.",
@@ -101,8 +117,10 @@
       "AFR": 0.04,
       "EUR": 0.31,
       "EAS": 0.017,
+      "SAS": 0.183,
       "AMR": 0.154,
-      "SAS": 0.183
+      "MENA": 0.2465,
+      "OCE": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -123,8 +141,8 @@
       "AFR": 0.05,
       "EUR": 0.98,
       "EAS": 0.01,
-      "AMR": 0.15,
       "SAS": 0.3,
+      "AMR": 0.15,
       "MENA": 0.6,
       "OCE": 0.01
     },
@@ -144,11 +162,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "MC1R",
     "trait": "European Red Hair",
     "description": "Associated with red hair and fair skin in European populations."
@@ -161,11 +185,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "MC1R",
     "trait": "European Red Hair",
     "description": "Associated with red hair and fair skin in European populations."
@@ -183,8 +213,10 @@
       "AFR": 0,
       "EUR": 0.025,
       "EAS": 0,
+      "SAS": 0,
       "AMR": 0.001,
-      "SAS": 0
+      "MENA": 0.0125,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -204,14 +236,16 @@
     ],
     "frequencies": {
       "AFR": 0.04,
-      "AMR": 0.08,
-      "EAS": 0.04,
       "EUR": 0.88,
-      "MENA": 0.1
+      "EAS": 0.04,
+      "SAS": 0,
+      "AMR": 0.08,
+      "MENA": 0.1,
+      "OCE": 0.02
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "IRF4",
     "trait": "Eye/Hair Color",
     "description": "Ancestry Informative Marker for European populations."
@@ -225,15 +259,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0,
       "EUR": 0.35,
+      "EAS": 0,
       "SAS": 0.01,
-      "MENA": 0.02
+      "AMR": 0.01,
+      "MENA": 0.02,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 4,
     "gene": "MC1R",
     "trait": "Scandinavian Ancestry Marker",
     "description": "Ancestry Informative Marker for Scandinavian populations."
@@ -246,11 +281,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "MC1R",
     "trait": "European Red Hair",
     "description": "Associated with red hair and fair skin in European populations."
@@ -264,15 +305,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
       "EUR": 0.35,
+      "EAS": 0.01,
       "SAS": 0.01,
-      "MENA": 0.15
+      "AMR": 0.01,
+      "MENA": 0.15,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 4,
     "gene": "TYR",
     "trait": "Ashkenazi Jewish Ancestry Marker",
     "description": "An informative marker for Ashkenazi Jewish ancestry, reflecting the historical bottleneck and endogamy of the population."
@@ -290,8 +332,10 @@
       "AFR": 0,
       "EUR": 0.15,
       "EAS": 0,
+      "SAS": 0.001,
       "AMR": 0.024,
-      "SAS": 0.001
+      "MENA": 0.0755,
+      "OCE": 0.0005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -315,10 +359,10 @@
       "AFR": 0.4844,
       "EUR": 0.4332,
       "EAS": 0.5679,
-      "AMR": 0.5874,
       "SAS": 0.4966,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5874,
+      "MENA": 0.4649,
+      "OCE": 0.5323
     },
     "subFrequencies": {
       "African Caribbean": 0.8125,
@@ -369,10 +413,10 @@
       "AFR": 0.5434,
       "EUR": 0.3524,
       "EAS": 0.6556,
-      "AMR": 0.7202,
       "SAS": 0.5606,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7202,
+      "MENA": 0.4565,
+      "OCE": 0.6081
     },
     "subFrequencies": {
       "African Caribbean": 0.6927,
@@ -423,10 +467,10 @@
       "AFR": 0.604,
       "EUR": 0.365,
       "EAS": 0.4841,
-      "AMR": 0.5268,
       "SAS": 0.5368,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5268,
+      "MENA": 0.4509,
+      "OCE": 0.5105
     },
     "subFrequencies": {
       "African Caribbean": 0.5885,
@@ -477,10 +521,10 @@
       "AFR": 0.9947,
       "EUR": 0.281,
       "EAS": 1,
-      "AMR": 0.9327,
       "SAS": 0.6002,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.9327,
+      "MENA": 0.4406,
+      "OCE": 0.8001
     },
     "subFrequencies": {
       "African Caribbean": 0.9896,
@@ -531,10 +575,10 @@
       "AFR": 0.4451,
       "EUR": 0.7052,
       "EAS": 0.6191,
-      "AMR": 0.3797,
       "SAS": 0.528,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3797,
+      "MENA": 0.6166,
+      "OCE": 0.5736
     },
     "subFrequencies": {
       "African Caribbean": 0.2188,
@@ -585,10 +629,10 @@
       "AFR": 0.4341,
       "EUR": 0.654,
       "EAS": 0.4643,
-      "AMR": 0.3501,
       "SAS": 0.5661,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3501,
+      "MENA": 0.61,
+      "OCE": 0.5152
     },
     "subFrequencies": {
       "African Caribbean": 0.125,
@@ -639,10 +683,10 @@
       "AFR": 0.5563,
       "EUR": 0.4439,
       "EAS": 0.5156,
-      "AMR": 0.5105,
       "SAS": 0.5336,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5105,
+      "MENA": 0.4888,
+      "OCE": 0.5246
     },
     "subFrequencies": {
       "African Caribbean": 0.7917,
@@ -693,10 +737,10 @@
       "AFR": 0.6598,
       "EUR": 0.9991,
       "EAS": 0.8018,
-      "AMR": 0.7489,
       "SAS": 0.801,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7489,
+      "MENA": 0.9001,
+      "OCE": 0.8014
     },
     "subFrequencies": {
       "African Caribbean": 0.849,
@@ -747,10 +791,10 @@
       "AFR": 0.3331,
       "EUR": 0.736,
       "EAS": 0.4099,
-      "AMR": 0.3125,
       "SAS": 0.4203,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3125,
+      "MENA": 0.5781,
+      "OCE": 0.4151
     },
     "subFrequencies": {
       "African Caribbean": 0.0729,
@@ -801,10 +845,10 @@
       "AFR": 0.3636,
       "EUR": 0.745,
       "EAS": 0.4338,
-      "AMR": 0.4883,
       "SAS": 0.5412,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4883,
+      "MENA": 0.6431,
+      "OCE": 0.4875
     },
     "subFrequencies": {
       "African Caribbean": 0.2188,
@@ -855,10 +899,10 @@
       "AFR": 0.5396,
       "EUR": 0.7479,
       "EAS": 0.4598,
-      "AMR": 0.6418,
       "SAS": 0.5746,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6418,
+      "MENA": 0.6613,
+      "OCE": 0.5172
     },
     "subFrequencies": {
       "African Caribbean": 0.8073,
@@ -909,10 +953,10 @@
       "AFR": 0.4965,
       "EUR": 0.3261,
       "EAS": 0.5642,
-      "AMR": 0.4245,
       "SAS": 0.4605,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4245,
+      "MENA": 0.3933,
+      "OCE": 0.5124
     },
     "subFrequencies": {
       "African Caribbean": 0.3281,
@@ -963,10 +1007,10 @@
       "AFR": 0.602,
       "EUR": 0.2195,
       "EAS": 0.6311,
-      "AMR": 0.53,
       "SAS": 0.3099,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.53,
+      "MENA": 0.2647,
+      "OCE": 0.4705
     },
     "subFrequencies": {
       "African Caribbean": 0.6927,
@@ -1017,10 +1061,10 @@
       "AFR": 0.6848,
       "EUR": 0.3697,
       "EAS": 0.6143,
-      "AMR": 0.634,
       "SAS": 0.5084,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.634,
+      "MENA": 0.439,
+      "OCE": 0.5614
     },
     "subFrequencies": {
       "African Caribbean": 0.901,
@@ -1071,10 +1115,10 @@
       "AFR": 0.5719,
       "EUR": 0.3068,
       "EAS": 0.5167,
-      "AMR": 0.7106,
       "SAS": 0.6915,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7106,
+      "MENA": 0.4991,
+      "OCE": 0.6041
     },
     "subFrequencies": {
       "African Caribbean": 0.0313,
@@ -1125,10 +1169,10 @@
       "AFR": 0.5084,
       "EUR": 0.5393,
       "EAS": 0.4869,
-      "AMR": 0.4693,
       "SAS": 0.4905,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4693,
+      "MENA": 0.5149,
+      "OCE": 0.4887
     },
     "subFrequencies": {
       "African Caribbean": 0.4531,
@@ -1179,10 +1223,10 @@
       "AFR": 1,
       "EUR": 0.802,
       "EAS": 1,
-      "AMR": 0.9936,
       "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.9936,
+      "MENA": 0.901,
+      "OCE": 1
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -1233,10 +1277,10 @@
       "AFR": 0.5195,
       "EUR": 0.5406,
       "EAS": 0.467,
-      "AMR": 0.4797,
       "SAS": 0.5022,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4797,
+      "MENA": 0.5214,
+      "OCE": 0.4846
     },
     "subFrequencies": {
       "African Caribbean": 0.5313,
@@ -1287,10 +1331,10 @@
       "AFR": 0.6861,
       "EUR": 0.2518,
       "EAS": 0.5915,
-      "AMR": 0.4576,
       "SAS": 0.5493,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4576,
+      "MENA": 0.4006,
+      "OCE": 0.5704
     },
     "subFrequencies": {
       "African Caribbean": 0.9427,
@@ -1341,10 +1385,10 @@
       "AFR": 0.6445,
       "EUR": 0.413,
       "EAS": 0.6543,
-      "AMR": 0.6859,
       "SAS": 0.4197,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6859,
+      "MENA": 0.4163,
+      "OCE": 0.537
     },
     "subFrequencies": {
       "African Caribbean": 0.8281,
@@ -1395,10 +1439,10 @@
       "AFR": 0.6409,
       "EUR": 0.8003,
       "EAS": 0.5741,
-      "AMR": 0.7014,
       "SAS": 0.5849,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.7014,
+      "MENA": 0.6926,
+      "OCE": 0.5795
     },
     "subFrequencies": {
       "African Caribbean": 0.8229,
@@ -1449,10 +1493,10 @@
       "AFR": 0.5101,
       "EUR": 0.4599,
       "EAS": 0.5514,
-      "AMR": 0.5336,
       "SAS": 0.4849,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5336,
+      "MENA": 0.4724,
+      "OCE": 0.5181
     },
     "subFrequencies": {
       "African Caribbean": 0.4427,
@@ -1503,10 +1547,10 @@
       "AFR": 0.4668,
       "EUR": 0.2723,
       "EAS": 0.5373,
-      "AMR": 0.2866,
       "SAS": 0.5402,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.2866,
+      "MENA": 0.4063,
+      "OCE": 0.5388
     },
     "subFrequencies": {
       "African Caribbean": 0.2552,
@@ -1557,10 +1601,10 @@
       "AFR": 0.4805,
       "EUR": 0.572,
       "EAS": 0.4319,
-      "AMR": 0.3326,
       "SAS": 0.4057,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3326,
+      "MENA": 0.4889,
+      "OCE": 0.4188
     },
     "subFrequencies": {
       "African Caribbean": 0.5677,
@@ -1611,10 +1655,10 @@
       "AFR": 0.4485,
       "EUR": 0.1472,
       "EAS": 0.4659,
-      "AMR": 0.6734,
       "SAS": 0.5587,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6734,
+      "MENA": 0.3529,
+      "OCE": 0.5123
     },
     "subFrequencies": {
       "African Caribbean": 0.6302,
@@ -1665,10 +1709,10 @@
       "AFR": 0.4024,
       "EUR": 0.6106,
       "EAS": 0.4205,
-      "AMR": 0.5085,
       "SAS": 0.494,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5085,
+      "MENA": 0.5523,
+      "OCE": 0.4572
     },
     "subFrequencies": {
       "African Caribbean": 0.2969,
@@ -1719,10 +1763,10 @@
       "AFR": 0.8567,
       "EUR": 0.4042,
       "EAS": 0.5454,
-      "AMR": 0.582,
       "SAS": 0.7995,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.582,
+      "MENA": 0.6018,
+      "OCE": 0.6724
     },
     "subFrequencies": {
       "African Caribbean": 0.0052,
@@ -1773,10 +1817,10 @@
       "AFR": 0.4206,
       "EUR": 0.6472,
       "EAS": 0.5801,
-      "AMR": 0.3832,
       "SAS": 0.4646,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3832,
+      "MENA": 0.5559,
+      "OCE": 0.5223
     },
     "subFrequencies": {
       "African Caribbean": 0.2276,
@@ -1827,10 +1871,10 @@
       "AFR": 0.807,
       "EUR": 0.4097,
       "EAS": 0.7809,
-      "AMR": 0.497,
       "SAS": 0.5876,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.497,
+      "MENA": 0.4987,
+      "OCE": 0.6843
     },
     "subFrequencies": {
       "African Caribbean": 0.9323,
@@ -1881,10 +1925,10 @@
       "AFR": 0.4746,
       "EUR": 0.2976,
       "EAS": 0.5759,
-      "AMR": 0.4993,
       "SAS": 0.5508,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4993,
+      "MENA": 0.4242,
+      "OCE": 0.5634
     },
     "subFrequencies": {
       "African Caribbean": 0.5729,
@@ -1935,10 +1979,10 @@
       "AFR": 0.4591,
       "EUR": 0.6015,
       "EAS": 0.5821,
-      "AMR": 0.4884,
       "SAS": 0.4802,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4884,
+      "MENA": 0.5409,
+      "OCE": 0.5312
     },
     "subFrequencies": {
       "African Caribbean": 0.3906,
@@ -1989,10 +2033,10 @@
       "AFR": 1,
       "EUR": 0.8001,
       "EAS": 1,
-      "AMR": 1,
       "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 1,
+      "MENA": 0.9001,
+      "OCE": 1
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -2039,11 +2083,12 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.04,
-      "EAS": 0.05,
       "EUR": 0.82,
+      "EAS": 0.05,
       "SAS": 0.04,
-      "MENA": 0.03
+      "AMR": 0.04,
+      "MENA": 0.03,
+      "OCE": 0.045
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2061,15 +2106,16 @@
     ],
     "frequencies": {
       "AFR": 0.08,
-      "AMR": 0.15,
-      "EAS": 0.01,
       "EUR": 0.82,
+      "EAS": 0.01,
       "SAS": 0.02,
-      "MENA": 0.35
+      "AMR": 0.15,
+      "MENA": 0.35,
+      "OCE": 0.015
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Southern Spanish Ancestry Marker",
     "description": "Ancestry Informative Marker for Southern Spanish populations."
@@ -2083,15 +2129,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.99,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.99,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Irish Ancestry Marker",
     "description": "Ancestry Informative Marker for Irish populations."
@@ -2105,15 +2152,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0,
       "EUR": 0.99,
+      "EAS": 0,
       "SAS": 0,
-      "MENA": 0
+      "AMR": 0.01,
+      "MENA": 0.495,
+      "OCE": 0.002
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Northern Welsh Ancestry Marker",
     "description": "Ancestry Informative Marker for Northern Welsh populations."
@@ -2127,15 +2175,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.02,
+      "EUR": 0.98,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.98,
-      "MENA": 0.01
+      "AMR": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "English Ancestry Marker",
     "description": "Ancestry Informative Marker for English populations."
@@ -2149,15 +2198,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.99,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.99,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Scottish Ancestry Marker",
     "description": "Ancestry Informative Marker for Scottish populations."
@@ -2171,15 +2221,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.02,
+      "EUR": 0.97,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.02
+      "AMR": 0.02,
+      "MENA": 0.02,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "German Ancestry Marker",
     "description": "Ancestry Informative Marker for German populations."
@@ -2193,15 +2244,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.02,
+      "EUR": 0.98,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.98,
-      "MENA": 0.01
+      "AMR": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Dutch Ancestry Marker",
     "description": "Ancestry Informative Marker for Dutch populations."
@@ -2215,15 +2267,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.97,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "English Ancestry Marker",
     "description": "Ancestry Informative Marker for English populations."
@@ -2237,15 +2290,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.98,
       "EAS": 0,
       "SAS": 0.01,
-      "EUR": 0.98,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Irish Ancestry Marker",
     "description": "Ancestry Informative Marker for Irish populations."
@@ -2259,15 +2313,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.98,
       "EAS": 0,
       "SAS": 0.01,
-      "EUR": 0.98,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Welsh Ancestry Marker",
     "description": "Ancestry Informative Marker for Welsh populations."
@@ -2281,15 +2336,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.98,
       "EAS": 0,
       "SAS": 0.01,
-      "EUR": 0.98,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Scottish Ancestry Marker",
     "description": "Ancestry Informative Marker for Scottish populations."
@@ -2303,15 +2359,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.02,
+      "EUR": 0.96,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.96,
-      "MENA": 0.02
+      "AMR": 0.02,
+      "MENA": 0.02,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "German Ancestry Marker",
     "description": "Ancestry Informative Marker for German populations."
@@ -2325,15 +2382,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.02,
+      "EUR": 0.97,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.01
+      "AMR": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Dutch Ancestry Marker",
     "description": "Ancestry Informative Marker for Dutch populations."
@@ -2347,15 +2405,16 @@
     ],
     "frequencies": {
       "AFR": 0.06,
-      "AMR": 0.02,
+      "EUR": 0.88,
       "EAS": 0.02,
       "SAS": 0.02,
-      "EUR": 0.88,
-      "MENA": 0.03
+      "AMR": 0.02,
+      "MENA": 0.03,
+      "OCE": 0.02
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Afrikaner Ancestry Marker",
     "description": "Ancestry Informative Marker for Afrikaner populations."
@@ -2369,15 +2428,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.96,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.96,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "English Ancestry Marker",
     "description": "Ancestry Informative Marker for English populations."
@@ -2391,15 +2451,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.97,
       "EAS": 0,
       "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Irish Ancestry Marker",
     "description": "Ancestry Informative Marker for Irish populations."
@@ -2413,15 +2474,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.97,
       "EAS": 0,
       "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Welsh Ancestry Marker",
     "description": "Ancestry Informative Marker for Welsh populations."
@@ -2435,15 +2497,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.97,
       "EAS": 0,
       "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Scottish Ancestry Marker",
     "description": "Ancestry Informative Marker for Scottish populations."
@@ -2457,15 +2520,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.02,
+      "EUR": 0.95,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.95,
-      "MENA": 0.02
+      "AMR": 0.02,
+      "MENA": 0.02,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "German Ancestry Marker",
     "description": "Ancestry Informative Marker for German populations."
@@ -2479,15 +2543,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.02,
+      "EUR": 0.96,
       "EAS": 0.01,
       "SAS": 0.01,
-      "EUR": 0.96,
-      "MENA": 0.01
+      "AMR": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Dutch Ancestry Marker",
     "description": "Ancestry Informative Marker for Dutch populations."
@@ -2501,15 +2566,16 @@
     ],
     "frequencies": {
       "AFR": 0.07,
-      "AMR": 0.02,
+      "EUR": 0.87,
       "EAS": 0.02,
       "SAS": 0.02,
-      "EUR": 0.87,
-      "MENA": 0.03
+      "AMR": 0.02,
+      "MENA": 0.03,
+      "OCE": 0.02
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Afrikaner Ancestry Marker",
     "description": "Ancestry Informative Marker for Afrikaner populations."
@@ -2523,15 +2589,16 @@
     ],
     "frequencies": {
       "AFR": 0.05,
-      "AMR": 0.1,
-      "EAS": 0.05,
       "EUR": 0.85,
+      "EAS": 0.05,
       "SAS": 0.2,
-      "MENA": 0.8
+      "AMR": 0.1,
+      "MENA": 0.8,
+      "OCE": 0.125
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "HERC2",
     "trait": "Eye Color",
     "description": "The primary determinant of blue vs. brown eye color in Europeans."
@@ -2544,11 +2611,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SLC22A4",
     "trait": "European Ancestry Marker",
     "description": "A variant associated with European ancestry and ergothioneine transport."
@@ -2561,11 +2634,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "PTCHD3",
     "trait": "European Ancestry Marker",
     "description": "A variant found almost exclusively in populations of European descent."
@@ -2578,11 +2657,17 @@
       "A"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SPATA13",
     "trait": "European Ancestry Marker",
     "description": "A variant found at higher frequencies in European populations."
@@ -2596,15 +2681,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0,
       "EUR": 0.97,
+      "EAS": 0,
       "SAS": 0.01,
-      "MENA": 0.02
+      "AMR": 0.05,
+      "MENA": 0.02,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Irish Ancestry Marker",
     "description": "Ancestry Informative Marker for Irish populations."
@@ -2618,15 +2704,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0,
       "EUR": 0.98,
+      "EAS": 0,
       "SAS": 0.01,
-      "MENA": 0.02
+      "AMR": 0.05,
+      "MENA": 0.02,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "British Ancestry Marker",
     "description": "Ancestry Informative Marker for British populations."
@@ -2640,15 +2727,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0.01,
       "EUR": 0.45,
+      "EAS": 0.01,
       "SAS": 0.1,
-      "MENA": 0.2
+      "AMR": 0.05,
+      "MENA": 0.2,
+      "OCE": 0.055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 6,
     "gene": "SLC24A4",
     "trait": "Hair Color (European)",
     "description": "Associated with lighter hair color (blond/brown) in European populations."
@@ -2662,15 +2750,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0,
       "EUR": 0.4,
+      "EAS": 0,
       "SAS": 0,
-      "MENA": 0.05
+      "AMR": 0.01,
+      "MENA": 0.05,
+      "OCE": 0.002
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Basque Ancestry Marker",
     "description": "A highly informative marker for Basque ancestry, reflecting the unique genetic isolate of the Basque people."
@@ -2684,15 +2773,16 @@
     ],
     "frequencies": {
       "AFR": 0.05,
-      "AMR": 0.1,
-      "EAS": 0.01,
       "EUR": 0.3,
+      "EAS": 0.01,
       "SAS": 0.1,
-      "MENA": 0.2
+      "AMR": 0.1,
+      "MENA": 0.2,
+      "OCE": 0.055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 4,
     "gene": "HLA-DQA1",
     "trait": "Celiac Disease Risk",
     "description": "Associated with an increased risk of Celiac disease, with higher prevalence in European populations."
@@ -2705,7 +2795,13 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.88
+      "AFR": 0,
+      "EUR": 0.88,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.44,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -2722,11 +2818,17 @@
       "T"
     ],
     "frequencies": {
-      "Global": 0.2
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.001,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 2,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Added marker rs112735431."
@@ -2740,16 +2842,16 @@
     ],
     "frequencies": {
       "AFR": 0.4889,
+      "EUR": 0.78,
       "EAS": 0.5305,
-      "OCE": 0.5944,
       "SAS": 0.7163,
       "AMR": 0.0767,
-      "EUR": 0.78,
-      "SIB": 0.7353
+      "MENA": 0.7482,
+      "OCE": 0.5944
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2763,16 +2865,16 @@
     ],
     "frequencies": {
       "AFR": 0.7039,
+      "EUR": 0.8836,
       "EAS": 0.3759,
-      "OCE": 0.6785,
       "SAS": 0.6444,
       "AMR": 0.3821,
-      "EUR": 0.8836,
-      "SIB": 0.3
+      "MENA": 0.764,
+      "OCE": 0.6785
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2786,16 +2888,16 @@
     ],
     "frequencies": {
       "AFR": 0.2214,
+      "EUR": 0.6777,
       "EAS": 0.4555,
-      "OCE": 0.1834,
       "SAS": 0.4462,
       "AMR": 0.1271,
-      "EUR": 0.6777,
-      "SIB": 0.5
+      "MENA": 0.5619,
+      "OCE": 0.1834
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2809,16 +2911,16 @@
     ],
     "frequencies": {
       "AFR": 0.4458,
+      "EUR": 0.8425,
       "EAS": 0.5011,
-      "OCE": 0.5444,
       "SAS": 0.6862,
       "AMR": 0.4737,
-      "EUR": 0.8425,
-      "SIB": 0.6275
+      "MENA": 0.7644,
+      "OCE": 0.5444
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2832,16 +2934,16 @@
     ],
     "frequencies": {
       "AFR": 0.635,
+      "EUR": 0.8789,
       "EAS": 0.2721,
-      "OCE": 0.2389,
       "SAS": 0.5417,
       "AMR": 0.2106,
-      "EUR": 0.8789,
-      "SIB": 0.3137
+      "MENA": 0.7103,
+      "OCE": 0.2389
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2855,16 +2957,16 @@
     ],
     "frequencies": {
       "AFR": 0.2352,
+      "EUR": 0.6901,
       "EAS": 0.1032,
-      "OCE": 0.0333,
       "SAS": 0.3626,
       "AMR": 0.1397,
-      "EUR": 0.6901,
-      "SIB": 0.1569
+      "MENA": 0.5263,
+      "OCE": 0.0333
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2878,16 +2980,16 @@
     ],
     "frequencies": {
       "AFR": 0.2879,
+      "EUR": 0.5363,
       "EAS": 0.1673,
-      "OCE": 0.1611,
       "SAS": 0.3259,
       "AMR": 0.0393,
-      "EUR": 0.5363,
-      "SIB": 0.08
+      "MENA": 0.4311,
+      "OCE": 0.1611
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2901,16 +3003,16 @@
     ],
     "frequencies": {
       "AFR": 0.4183,
+      "EUR": 0.8179,
       "EAS": 0.7091,
-      "OCE": 0.6778,
       "SAS": 0.7373,
       "AMR": 0.731,
-      "EUR": 0.8179,
-      "SIB": 0.6667
+      "MENA": 0.7776,
+      "OCE": 0.6778
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 4,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2924,16 +3026,16 @@
     ],
     "frequencies": {
       "AFR": 0.2231,
+      "EUR": 0.6244,
       "EAS": 0.159,
-      "OCE": 0.1348,
       "SAS": 0.4705,
       "AMR": 0.2501,
-      "EUR": 0.6244,
-      "SIB": 0.5196
+      "MENA": 0.5474,
+      "OCE": 0.1348
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2947,16 +3049,16 @@
     ],
     "frequencies": {
       "AFR": 0.8585,
+      "EUR": 0.8971,
       "EAS": 0.7525,
-      "OCE": 0.8444,
       "SAS": 0.8009,
       "AMR": 0.4254,
-      "EUR": 0.8971,
-      "SIB": 0.8039
+      "MENA": 0.849,
+      "OCE": 0.8444
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2970,16 +3072,16 @@
     ],
     "frequencies": {
       "AFR": 0.668,
+      "EUR": 0.9361,
       "EAS": 0.6304,
-      "OCE": 0.6944,
       "SAS": 0.7817,
       "AMR": 0.4405,
-      "EUR": 0.9361,
-      "SIB": 0.4608
+      "MENA": 0.8589,
+      "OCE": 0.6944
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -2993,16 +3095,16 @@
     ],
     "frequencies": {
       "AFR": 0.5071,
+      "EUR": 0.9443,
       "EAS": 0.8478,
-      "OCE": 0.7333,
       "SAS": 0.8271,
       "AMR": 0.8195,
-      "EUR": 0.9443,
-      "SIB": 0.6863
+      "MENA": 0.8857,
+      "OCE": 0.7333
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3016,16 +3118,16 @@
     ],
     "frequencies": {
       "AFR": 0.9048,
+      "EUR": 0.9247,
       "EAS": 0.6502,
-      "OCE": 0.7167,
       "SAS": 0.8142,
       "AMR": 0.4285,
-      "EUR": 0.9247,
-      "SIB": 0.7353
+      "MENA": 0.8695,
+      "OCE": 0.7167
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3039,16 +3141,16 @@
     ],
     "frequencies": {
       "AFR": 0.3543,
+      "EUR": 0.6924,
       "EAS": 0.3104,
-      "OCE": 0.4278,
       "SAS": 0.4954,
       "AMR": 0.1176,
-      "EUR": 0.6924,
-      "SIB": 0.2745
+      "MENA": 0.5939,
+      "OCE": 0.4278
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3062,16 +3164,16 @@
     ],
     "frequencies": {
       "AFR": 0.57,
+      "EUR": 0.7044,
       "EAS": 0.148,
-      "OCE": 0.3722,
       "SAS": 0.4777,
       "AMR": 0.1103,
-      "EUR": 0.7044,
-      "SIB": 0.2941
+      "MENA": 0.5911,
+      "OCE": 0.3722
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3085,16 +3187,16 @@
     ],
     "frequencies": {
       "AFR": 0.7625,
+      "EUR": 0.9152,
       "EAS": 0.4101,
-      "OCE": 0.6444,
       "SAS": 0.6966,
       "AMR": 0.1991,
-      "EUR": 0.9152,
-      "SIB": 0.6471
+      "MENA": 0.8059,
+      "OCE": 0.6444
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3108,16 +3210,16 @@
     ],
     "frequencies": {
       "AFR": 0.6934,
+      "EUR": 0.9115,
       "EAS": 0.5189,
-      "OCE": 0.2865,
       "SAS": 0.6632,
       "AMR": 0.2509,
-      "EUR": 0.9115,
-      "SIB": 0.5
+      "MENA": 0.7873,
+      "OCE": 0.2865
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3131,16 +3233,16 @@
     ],
     "frequencies": {
       "AFR": 0.8159,
+      "EUR": 0.8531,
       "EAS": 0.3178,
-      "OCE": 0.6778,
       "SAS": 0.5987,
       "AMR": 0.2794,
-      "EUR": 0.8531,
-      "SIB": 0.52
+      "MENA": 0.7259,
+      "OCE": 0.6778
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3154,16 +3256,16 @@
     ],
     "frequencies": {
       "AFR": 0.3863,
+      "EUR": 0.8597,
       "EAS": 0.6528,
-      "OCE": 0.6167,
       "SAS": 0.7325,
       "AMR": 0.736,
-      "EUR": 0.8597,
-      "SIB": 0.6765
+      "MENA": 0.7961,
+      "OCE": 0.6167
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3177,16 +3279,16 @@
     ],
     "frequencies": {
       "AFR": 0.3947,
+      "EUR": 0.7086,
       "EAS": 0.2376,
-      "OCE": 0.0667,
       "SAS": 0.5111,
       "AMR": 0.28,
-      "EUR": 0.7086,
-      "SIB": 0.2843
+      "MENA": 0.6099,
+      "OCE": 0.0667
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3200,16 +3302,16 @@
     ],
     "frequencies": {
       "AFR": 0.7972,
+      "EUR": 0.8923,
       "EAS": 0.7202,
-      "OCE": 0.8202,
       "SAS": 0.7936,
       "AMR": 0.3084,
-      "EUR": 0.8923,
-      "SIB": 0.6275
+      "MENA": 0.8429,
+      "OCE": 0.8202
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3223,16 +3325,16 @@
     ],
     "frequencies": {
       "AFR": 0.3333,
+      "EUR": 0.7199,
       "EAS": 0.0132,
-      "OCE": 0.0119,
       "SAS": 0.3365,
       "AMR": 0.0438,
-      "EUR": 0.7199,
-      "SIB": 0.12
+      "MENA": 0.5282,
+      "OCE": 0.0119
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3246,16 +3348,16 @@
     ],
     "frequencies": {
       "AFR": 0.22,
+      "EUR": 0.6687,
       "EAS": 0.435,
-      "OCE": 0.4611,
       "SAS": 0.5718,
       "AMR": 0.4354,
-      "EUR": 0.6687,
-      "SIB": 0.59
+      "MENA": 0.6202,
+      "OCE": 0.4611
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -3268,11 +3370,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SLC24A4",
     "trait": "European Hair Color Marker",
     "description": "A variant associated with lighter hair color in European populations."
@@ -3285,11 +3393,17 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SLC24A4",
     "trait": "European Hair Color Marker",
     "description": "A variant associated with lighter hair color in European populations."
@@ -3302,7 +3416,13 @@
       "C"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -3319,7 +3439,13 @@
       "T"
     ],
     "frequencies": {
-      "EUR": 0.8
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.4,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -3337,15 +3463,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
       "EUR": 0.95,
+      "EAS": 0.01,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Acadian Ancestry Marker",
     "description": "Ancestry Informative Marker for Acadian/Cajun populations."
@@ -3359,15 +3486,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
       "EUR": 0.94,
+      "EAS": 0.01,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Acadian Ancestry Marker",
     "description": "Ancestry Informative Marker for Acadian/Cajun populations."
@@ -3381,15 +3509,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.1,
-      "EAS": 0.01,
       "EUR": 0.92,
+      "EAS": 0.01,
       "SAS": 0.02,
-      "MENA": 0.15
+      "AMR": 0.1,
+      "MENA": 0.15,
+      "OCE": 0.015
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "French Ancestry Marker",
     "description": "Ancestry Informative Marker for French populations."
@@ -3403,15 +3532,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.1,
-      "EAS": 0.01,
       "EUR": 0.92,
+      "EAS": 0.01,
       "SAS": 0.02,
-      "MENA": 0.15
+      "AMR": 0.1,
+      "MENA": 0.15,
+      "OCE": 0.015
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "French Ancestry Marker",
     "description": "Ancestry Informative Marker for French populations."
@@ -3425,15 +3555,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0,
       "EUR": 0.92,
+      "EAS": 0,
       "SAS": 0.02,
-      "MENA": 0.08
+      "AMR": 0.05,
+      "MENA": 0.08,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "German Ancestry Marker",
     "description": "Ancestry Informative Marker for German populations."
@@ -3447,15 +3578,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0,
       "EUR": 0.92,
+      "EAS": 0,
       "SAS": 0.02,
-      "MENA": 0.08
+      "AMR": 0.05,
+      "MENA": 0.08,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "German Ancestry Marker",
     "description": "Ancestry Informative Marker for German populations."
@@ -3469,15 +3601,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.1,
-      "EAS": 0.02,
       "EUR": 0.88,
+      "EAS": 0.02,
       "SAS": 0.2,
-      "MENA": 0.7
+      "AMR": 0.1,
+      "MENA": 0.7,
+      "OCE": 0.11
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "MC1R",
     "trait": "Greek Ancestry Marker",
     "description": "Ancestry Informative Marker for Greek populations."
@@ -3491,15 +3624,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.1,
-      "EAS": 0.02,
       "EUR": 0.88,
+      "EAS": 0.02,
       "SAS": 0.2,
-      "MENA": 0.7
+      "AMR": 0.1,
+      "MENA": 0.7,
+      "OCE": 0.11
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Greek Ancestry Marker",
     "description": "Ancestry Informative Marker for Greek populations."
@@ -3513,15 +3647,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.1,
-      "EAS": 0.02,
       "EUR": 0.88,
+      "EAS": 0.02,
       "SAS": 0.2,
-      "MENA": 0.7
+      "AMR": 0.1,
+      "MENA": 0.7,
+      "OCE": 0.11
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Greek Ancestry Marker",
     "description": "Ancestry Informative Marker for Greek populations."
@@ -3535,11 +3670,12 @@
     ],
     "frequencies": {
       "AFR": 0.15,
-      "AMR": 0.05,
-      "EAS": 0.01,
       "EUR": 0.75,
+      "EAS": 0.01,
       "SAS": 0.02,
-      "MENA": 0.02
+      "AMR": 0.05,
+      "MENA": 0.02,
+      "OCE": 0.015
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -3557,15 +3693,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
       "EUR": 0.97,
+      "EAS": 0.01,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Pennsylvania Dutch Marker",
     "description": "Ancestry Informative Marker for Pennsylvania Dutch (German) populations."
@@ -3579,15 +3716,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
       "EUR": 0.96,
+      "EAS": 0.01,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Pennsylvania Dutch Marker",
     "description": "Ancestry Informative Marker for Pennsylvania Dutch (German) populations."
@@ -3601,15 +3739,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.04,
-      "EAS": 0.08,
       "EUR": 0.89,
+      "EAS": 0.08,
       "SAS": 0.05,
-      "MENA": 0.12
+      "AMR": 0.04,
+      "MENA": 0.12,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Polish Ancestry Marker",
     "description": "Ancestry Informative Marker for Polish populations."
@@ -3623,15 +3762,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.04,
-      "EAS": 0.08,
       "EUR": 0.89,
+      "EAS": 0.08,
       "SAS": 0.05,
-      "MENA": 0.12
+      "AMR": 0.04,
+      "MENA": 0.12,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SLC24A5",
     "trait": "Polish Ancestry Marker",
     "description": "Ancestry Informative Marker for Polish populations."
@@ -3645,15 +3785,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.04,
-      "EAS": 0.08,
       "EUR": 0.89,
+      "EAS": 0.08,
       "SAS": 0.05,
-      "MENA": 0.12
+      "AMR": 0.04,
+      "MENA": 0.12,
+      "OCE": 0.065
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Polish Ancestry Marker",
     "description": "Ancestry Informative Marker for Polish populations."
@@ -3667,15 +3808,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.15,
-      "EAS": 0.01,
       "EUR": 0.95,
+      "EAS": 0.01,
       "SAS": 0.1,
-      "MENA": 0.55
+      "AMR": 0.15,
+      "MENA": 0.55,
+      "OCE": 0.055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "HERC2",
     "trait": "Portuguese Ancestry Marker",
     "description": "Ancestry Informative Marker for Portuguese populations."
@@ -3689,15 +3831,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.15,
-      "EAS": 0.01,
       "EUR": 0.95,
+      "EAS": 0.01,
       "SAS": 0.1,
-      "MENA": 0.55
+      "AMR": 0.15,
+      "MENA": 0.55,
+      "OCE": 0.055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Portuguese Ancestry Marker",
     "description": "Ancestry Informative Marker for Portuguese populations."
@@ -3711,15 +3854,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.15,
-      "EAS": 0.01,
       "EUR": 0.95,
+      "EAS": 0.01,
       "SAS": 0.1,
-      "MENA": 0.55
+      "AMR": 0.15,
+      "MENA": 0.55,
+      "OCE": 0.055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Portuguese Ancestry Marker",
     "description": "Ancestry Informative Marker for Portuguese populations."
@@ -3733,15 +3877,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.05,
-      "EAS": 0.15,
       "EUR": 0.91,
+      "EAS": 0.15,
       "SAS": 0.1,
-      "MENA": 0.2
+      "AMR": 0.05,
+      "MENA": 0.2,
+      "OCE": 0.125
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "SLC24A4",
     "trait": "Russian Ancestry Marker",
     "description": "Ancestry Informative Marker for Russian populations."
@@ -3755,15 +3900,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.05,
-      "EAS": 0.15,
       "EUR": 0.91,
+      "EAS": 0.15,
       "SAS": 0.1,
-      "MENA": 0.2
+      "AMR": 0.05,
+      "MENA": 0.2,
+      "OCE": 0.125
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Russian Ancestry Marker",
     "description": "Ancestry Informative Marker for Russian populations."
@@ -3777,15 +3923,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.05,
-      "EAS": 0.15,
       "EUR": 0.91,
+      "EAS": 0.15,
       "SAS": 0.1,
-      "MENA": 0.2
+      "AMR": 0.05,
+      "MENA": 0.2,
+      "OCE": 0.125
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Russian Ancestry Marker",
     "description": "Ancestry Informative Marker for Russian populations."
@@ -3799,15 +3946,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0.05,
       "EUR": 0.95,
+      "EAS": 0.05,
       "SAS": 0.01,
-      "MENA": 0
+      "AMR": 0.01,
+      "MENA": 0.48,
+      "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Sami Ancestry Marker",
     "description": "Ancestry Informative Marker for Sami populations."
@@ -3821,15 +3969,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.02,
-      "EAS": 0.08,
       "EUR": 0.92,
+      "EAS": 0.08,
       "SAS": 0.02,
-      "MENA": 0
+      "AMR": 0.02,
+      "MENA": 0.47,
+      "OCE": 0.05
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Sami Ancestry Marker",
     "description": "Ancestry Informative Marker for Sami populations."
@@ -3843,15 +3992,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0.04,
       "EUR": 0.96,
+      "EAS": 0.04,
       "SAS": 0.01,
-      "MENA": 0
+      "AMR": 0.01,
+      "MENA": 0.485,
+      "OCE": 0.025
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Sami Ancestry Marker",
     "description": "Ancestry Informative Marker for Sami populations."
@@ -3865,15 +4015,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0.05,
       "EUR": 0.95,
+      "EAS": 0.05,
       "SAS": 0.01,
-      "MENA": 0
+      "AMR": 0.01,
+      "MENA": 0.48,
+      "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Sami Ancestry Marker",
     "description": "Ancestry Informative Marker for Sami populations."
@@ -3887,15 +4038,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.02,
-      "EAS": 0,
       "EUR": 0.96,
+      "EAS": 0,
       "SAS": 0.01,
-      "MENA": 0.03
+      "AMR": 0.02,
+      "MENA": 0.03,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "MC1R",
     "trait": "Scandinavian Ancestry Marker",
     "description": "Ancestry Informative Marker for Scandinavian populations."
@@ -3909,15 +4061,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.02,
-      "EAS": 0,
       "EUR": 0.96,
+      "EAS": 0,
       "SAS": 0.01,
-      "MENA": 0.03
+      "AMR": 0.02,
+      "MENA": 0.03,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Scandinavian Ancestry Marker",
     "description": "Ancestry Informative Marker for Scandinavian populations."
@@ -3931,15 +4084,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.02,
-      "EAS": 0,
       "EUR": 0.96,
+      "EAS": 0,
       "SAS": 0.01,
-      "MENA": 0.03
+      "AMR": 0.02,
+      "MENA": 0.03,
+      "OCE": 0.005
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Scandinavian Ancestry Marker",
     "description": "Ancestry Informative Marker for Scandinavian populations."
@@ -3953,15 +4107,16 @@
     ],
     "frequencies": {
       "AFR": 0.05,
-      "AMR": 0.05,
-      "EAS": 0.01,
       "EUR": 0.55,
+      "EAS": 0.01,
       "SAS": 0.04,
-      "MENA": 0.3
+      "AMR": 0.05,
+      "MENA": 0.3,
+      "OCE": 0.025
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Sephardic Ancestry Marker",
     "description": "Ancestry Informative Marker for Sephardic Jewish populations."
@@ -3975,15 +4130,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.1,
-      "EAS": 0.01,
       "EUR": 0.94,
+      "EAS": 0.01,
       "SAS": 0.05,
-      "MENA": 0.35
+      "AMR": 0.1,
+      "MENA": 0.35,
+      "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Spanish Ancestry Marker",
     "description": "Ancestry Informative Marker for Spanish populations."
@@ -3997,15 +4153,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.1,
-      "EAS": 0.01,
       "EUR": 0.94,
+      "EAS": 0.01,
       "SAS": 0.05,
-      "MENA": 0.35
+      "AMR": 0.1,
+      "MENA": 0.35,
+      "OCE": 0.03
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Spanish Ancestry Marker",
     "description": "Ancestry Informative Marker for Spanish populations."
@@ -4019,15 +4176,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.1,
-      "EAS": 0.05,
       "EUR": 0.85,
+      "EAS": 0.05,
       "SAS": 0.1,
-      "MENA": 0.05
+      "AMR": 0.1,
+      "MENA": 0.05,
+      "OCE": 0.075
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Northern European Ancestry Marker",
     "description": "Ancestry Informative Marker for Northern European populations."
@@ -4041,15 +4199,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.08,
-      "EAS": 0.02,
       "EUR": 0.9,
+      "EAS": 0.02,
       "SAS": 0.05,
-      "MENA": 0.03
+      "AMR": 0.08,
+      "MENA": 0.03,
+      "OCE": 0.035
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Northern European Ancestry Marker",
     "description": "Ancestry Informative Marker for Northern European populations."
@@ -4063,11 +4222,12 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.05,
-      "EAS": 0,
       "EUR": 0.95,
+      "EAS": 0,
       "SAS": 0.02,
-      "MENA": 0.01
+      "AMR": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -4085,11 +4245,12 @@
     ],
     "frequencies": {
       "AFR": 0.05,
-      "AMR": 0.15,
-      "EAS": 0.01,
       "EUR": 0.85,
+      "EAS": 0.01,
       "SAS": 0.25,
-      "MENA": 0.2
+      "AMR": 0.15,
+      "MENA": 0.2,
+      "OCE": 0.13
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -4107,15 +4268,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0,
       "EUR": 0.1,
+      "EAS": 0,
       "SAS": 0,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.002
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 2,
     "gene": "CCR5",
     "trait": "HIV Resistance (CCR5-delta32)",
     "description": "The delta32 deletion (represented here as 'D') provides resistance to HIV infection and is most common in Northern European populations."
@@ -4129,15 +4291,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0,
-      "EAS": 0,
       "EUR": 0.06,
+      "EAS": 0,
       "SAS": 0,
-      "MENA": 0
+      "AMR": 0,
+      "MENA": 0.03,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 2,
     "gene": "GBA",
     "trait": "Gaucher Disease Risk (Ashkenazi)",
     "description": "The N370S mutation in the GBA gene is a common risk factor for Gaucher disease in the Ashkenazi Jewish population."
@@ -4151,15 +4314,16 @@
     ],
     "frequencies": {
       "AFR": 0,
-      "AMR": 0,
-      "EAS": 0,
       "EUR": 0.02,
+      "EAS": 0,
       "SAS": 0,
-      "MENA": 0
+      "AMR": 0,
+      "MENA": 0.01,
+      "OCE": 0.001
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 2,
     "gene": "CLN5",
     "trait": "Finnish Heritage Marker",
     "description": "A marker associated with Finnish Heritage Diseases, reflecting the unique genetic history of the Finnish population."

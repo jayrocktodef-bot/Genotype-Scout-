@@ -12,10 +12,10 @@
       "AFR": 0.5497,
       "EUR": 0.5654,
       "EAS": 0.4571,
-      "AMR": 0.5731,
       "SAS": 0.564,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5731,
+      "MENA": 0.5647,
+      "OCE": 0.5105
     },
     "subFrequencies": {
       "African Caribbean": 0.7604,
@@ -66,10 +66,10 @@
       "AFR": 0.2999,
       "EUR": 0.3898,
       "EAS": 0.4572,
-      "AMR": 0.3458,
       "SAS": 0.2394,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.3458,
+      "MENA": 0.3146,
+      "OCE": 0.3483
     },
     "subFrequencies": {
       "African Caribbean": 0.2813,
@@ -120,10 +120,10 @@
       "AFR": 0.5258,
       "EUR": 0.5564,
       "EAS": 0.3522,
-      "AMR": 0.4311,
       "SAS": 0.426,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4311,
+      "MENA": 0.4912,
+      "OCE": 0.3891
     },
     "subFrequencies": {
       "African Caribbean": 0.8906,
@@ -174,10 +174,10 @@
       "AFR": 0.4448,
       "EUR": 0.4463,
       "EAS": 0.5481,
-      "AMR": 0.4772,
       "SAS": 0.5007,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4772,
+      "MENA": 0.4735,
+      "OCE": 0.5244
     },
     "subFrequencies": {
       "African Caribbean": 0.1719,
@@ -228,10 +228,10 @@
       "AFR": 0.4735,
       "EUR": 0.6709,
       "EAS": 0.3002,
-      "AMR": 0.5345,
       "SAS": 0.472,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5345,
+      "MENA": 0.5715,
+      "OCE": 0.3861
     },
     "subFrequencies": {
       "African Caribbean": 0.6771,
@@ -282,10 +282,10 @@
       "AFR": 0.5534,
       "EUR": 0.4938,
       "EAS": 0.7978,
-      "AMR": 0.4807,
       "SAS": 0.5232,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4807,
+      "MENA": 0.5085,
+      "OCE": 0.6605
     },
     "subFrequencies": {
       "African Caribbean": 0.5938,
@@ -336,10 +336,10 @@
       "AFR": 0.4923,
       "EUR": 0.5408,
       "EAS": 0.4573,
-      "AMR": 0.5097,
       "SAS": 0.5465,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5097,
+      "MENA": 0.5436,
+      "OCE": 0.5019
     },
     "subFrequencies": {
       "African Caribbean": 0.5573,
@@ -390,10 +390,10 @@
       "AFR": 1,
       "EUR": 1,
       "EAS": 0.799,
-      "AMR": 1,
       "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 1,
+      "MENA": 1,
+      "OCE": 0.8995
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -444,10 +444,10 @@
       "AFR": 0.5807,
       "EUR": 0.692,
       "EAS": 1,
-      "AMR": 0.8912,
       "SAS": 0.4607,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.8912,
+      "MENA": 0.5763,
+      "OCE": 0.7304
     },
     "subFrequencies": {
       "African Caribbean": 0.7344,
@@ -498,10 +498,10 @@
       "AFR": 0.4662,
       "EUR": 0.3974,
       "EAS": 0.3617,
-      "AMR": 0.5038,
       "SAS": 0.4908,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5038,
+      "MENA": 0.4441,
+      "OCE": 0.4263
     },
     "subFrequencies": {
       "African Caribbean": 0.4531,
@@ -552,10 +552,10 @@
       "AFR": 0.4973,
       "EUR": 0.5071,
       "EAS": 0.4779,
-      "AMR": 0.4921,
       "SAS": 0.5123,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4921,
+      "MENA": 0.5097,
+      "OCE": 0.4951
     },
     "subFrequencies": {
       "African Caribbean": 0.5156,
@@ -606,10 +606,10 @@
       "AFR": 0.5436,
       "EUR": 0.5211,
       "EAS": 0.2213,
-      "AMR": 0.504,
       "SAS": 0.6623,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.504,
+      "MENA": 0.5917,
+      "OCE": 0.4418
     },
     "subFrequencies": {
       "African Caribbean": 0.7708,
@@ -660,10 +660,10 @@
       "AFR": 1,
       "EUR": 0.7989,
       "EAS": 0.2036,
-      "AMR": 1,
       "SAS": 0.6028,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 1,
+      "MENA": 0.7008,
+      "OCE": 0.4032
     },
     "subFrequencies": {
       "African Caribbean": 1,
@@ -714,10 +714,10 @@
       "AFR": 0.4776,
       "EUR": 0.3762,
       "EAS": 0.368,
-      "AMR": 0.5011,
       "SAS": 0.5094,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5011,
+      "MENA": 0.4428,
+      "OCE": 0.4387
     },
     "subFrequencies": {
       "African Caribbean": 0.5313,
@@ -768,10 +768,10 @@
       "AFR": 0.4494,
       "EUR": 0.5835,
       "EAS": 0.999,
-      "AMR": 0.2866,
       "SAS": 0.4099,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.2866,
+      "MENA": 0.4967,
+      "OCE": 0.7045
     },
     "subFrequencies": {
       "African Caribbean": 0.8229,
@@ -822,10 +822,10 @@
       "AFR": 0.743,
       "EUR": 0.461,
       "EAS": 0.7999,
-      "AMR": 0.4942,
       "SAS": 0.4346,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4942,
+      "MENA": 0.4478,
+      "OCE": 0.6173
     },
     "subFrequencies": {
       "African Caribbean": 0.8385,
@@ -876,10 +876,10 @@
       "AFR": 0.5124,
       "EUR": 0.5712,
       "EAS": 0.4767,
-      "AMR": 0.5957,
       "SAS": 0.5566,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5957,
+      "MENA": 0.5639,
+      "OCE": 0.5167
     },
     "subFrequencies": {
       "African Caribbean": 0.6042,
@@ -930,10 +930,10 @@
       "AFR": 0.4769,
       "EUR": 0.4812,
       "EAS": 0.5526,
-      "AMR": 0.4676,
       "SAS": 0.5224,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4676,
+      "MENA": 0.5018,
+      "OCE": 0.5375
     },
     "subFrequencies": {
       "African Caribbean": 0.5885,
@@ -984,10 +984,10 @@
       "AFR": 0.3567,
       "EUR": 0.3924,
       "EAS": 0.2998,
-      "AMR": 0.5429,
       "SAS": 0.5361,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5429,
+      "MENA": 0.4643,
+      "OCE": 0.418
     },
     "subFrequencies": {
       "African Caribbean": 0.2865,
@@ -1038,10 +1038,10 @@
       "AFR": 0.519,
       "EUR": 0.7737,
       "EAS": 0.9989,
-      "AMR": 0.4827,
       "SAS": 0.5943,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.4827,
+      "MENA": 0.684,
+      "OCE": 0.7966
     },
     "subFrequencies": {
       "African Caribbean": 0.4375,
@@ -1092,10 +1092,10 @@
       "AFR": 0.5651,
       "EUR": 0.5619,
       "EAS": 0.2132,
-      "AMR": 0.5288,
       "SAS": 0.5697,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.5288,
+      "MENA": 0.5658,
+      "OCE": 0.3914
     },
     "subFrequencies": {
       "African Caribbean": 0.9583,
@@ -1146,10 +1146,10 @@
       "AFR": 0.5771,
       "EUR": 0.5634,
       "EAS": 0.3099,
-      "AMR": 0.6988,
       "SAS": 0.4052,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6988,
+      "MENA": 0.4843,
+      "OCE": 0.3576
     },
     "subFrequencies": {
       "African Caribbean": 0.9583,
@@ -1200,10 +1200,10 @@
       "AFR": 0.5032,
       "EUR": 0.4204,
       "EAS": 0.3382,
-      "AMR": 0.6407,
       "SAS": 0.546,
-      "MENA": 0,
-      "OCE": 0
+      "AMR": 0.6407,
+      "MENA": 0.4832,
+      "OCE": 0.4421
     },
     "subFrequencies": {
       "African Caribbean": 0.2031,
@@ -1250,16 +1250,16 @@
     ],
     "frequencies": {
       "AFR": 0.1015,
+      "EUR": 0.0962,
       "EAS": 0.7709,
-      "OCE": 0.6056,
       "SAS": 0.3751,
       "AMR": 0.4703,
-      "EUR": 0.0962,
-      "SIB": 0.4118
+      "MENA": 0.2356,
+      "OCE": 0.6056
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -1273,16 +1273,16 @@
     ],
     "frequencies": {
       "AFR": 0.6445,
+      "EUR": 0.2907,
       "EAS": 0.7665,
-      "OCE": 0.6591,
       "SAS": 0.5164,
       "AMR": 0.3034,
-      "EUR": 0.2907,
-      "SIB": 0.6471
+      "MENA": 0.4035,
+      "OCE": 0.6591
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -1296,15 +1296,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.98,
       "EUR": 0.01,
+      "EAS": 0.98,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.495
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Hmong Ancestry Marker",
     "description": "Ancestry Informative Marker for Hmong populations."
@@ -1318,15 +1319,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.97,
       "EUR": 0.01,
+      "EAS": 0.97,
       "SAS": 0.01,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.49
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Hmong Ancestry Marker",
     "description": "Ancestry Informative Marker for Hmong populations."
@@ -1340,15 +1342,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.01,
-      "EAS": 0.92,
       "EUR": 0.01,
+      "EAS": 0.92,
       "SAS": 0.1,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.51
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Lao Ancestry Marker",
     "description": "Ancestry Informative Marker for Lao populations."
@@ -1362,15 +1365,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.01,
-      "EAS": 0.9,
       "EUR": 0.01,
+      "EAS": 0.9,
       "SAS": 0.12,
-      "MENA": 0.01
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.51
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Khmer Ancestry Marker",
     "description": "Ancestry Informative Marker for Khmer (Cambodian) populations."
@@ -1386,14 +1390,14 @@
       "AFR": 0.001,
       "EUR": 0.001,
       "EAS": 0.4,
-      "AMR": 0.01,
       "SAS": 0.01,
+      "AMR": 0.01,
       "MENA": 0.001,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 4,
     "gene": "ALDH2",
     "trait": "Ancestry",
     "description": "The 'A' allele (associated with the 'Asian flush' reaction to alcohol) is highly concentrated in East Asian populations.",
@@ -1407,11 +1411,17 @@
       "G"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.8,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.001,
+      "OCE": 0.4
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "FAS",
     "trait": "East Asian Ancestry Marker",
     "description": "A variant found at higher frequencies in East Asian populations."
@@ -1424,11 +1434,17 @@
       "G"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.8,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.001,
+      "OCE": 0.4
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "CYP1A1",
     "trait": "East Asian Ancestry Marker",
     "description": "A variant in the CYP1A1 gene found predominantly in East Asian populations."
@@ -1442,16 +1458,16 @@
     ],
     "frequencies": {
       "AFR": 0.2412,
+      "EUR": 0.6033,
       "EAS": 0.7191,
-      "OCE": 0.6778,
       "SAS": 0.6237,
       "AMR": 0.2262,
-      "EUR": 0.6033,
-      "SIB": 0.6275
+      "MENA": 0.6135,
+      "OCE": 0.6778
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker, informative for East Asian populations such as Han Chinese, Japanese, and Korean groups."
@@ -1465,16 +1481,16 @@
     ],
     "frequencies": {
       "AFR": 0.0985,
+      "EUR": 0.0677,
       "EAS": 0.7203,
-      "OCE": 0.5055,
       "SAS": 0.3128,
       "AMR": 0.7127,
-      "EUR": 0.0677,
-      "SIB": 0.3529
+      "MENA": 0.1903,
+      "OCE": 0.5055
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -1488,16 +1504,16 @@
     ],
     "frequencies": {
       "AFR": 0.3359,
+      "EUR": 0.135,
       "EAS": 0.7555,
-      "OCE": 0.1722,
       "SAS": 0.4412,
       "AMR": 0.627,
-      "EUR": 0.135,
-      "SIB": 0.7157
+      "MENA": 0.2881,
+      "OCE": 0.1722
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
@@ -1510,11 +1526,17 @@
       "C"
     ],
     "frequencies": {
-      "ASI": 0.8
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.4,
+      "SAS": 0.4,
+      "AMR": 0,
+      "MENA": 0.2,
+      "OCE": 0.4
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 6,
     "gene": "Y-DNA",
     "trait": "Haplogroup C2",
     "description": "Defining marker for Haplogroup C2, common in Mongols, Kazakhs, and indigenous Siberians."
@@ -1528,7 +1550,13 @@
       "C"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.8,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.001,
+      "OCE": 0.4
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1545,7 +1573,13 @@
       "C"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.8,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0.001,
+      "OCE": 0.4
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1563,15 +1597,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.92,
       "EUR": 0.01,
+      "EAS": 0.92,
       "SAS": 0.1,
-      "MENA": 0.01
+      "AMR": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.51
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Khmer Ancestry Marker",
     "description": "Ancestry Informative Marker for Khmer (Cambodian) populations."
@@ -1585,15 +1620,16 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.94,
       "EUR": 0.01,
+      "EAS": 0.94,
       "SAS": 0.08,
-      "MENA": 0.01
+      "AMR": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.51
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
+    "weight": 10,
     "gene": "Unknown",
     "trait": "Lao Ancestry Marker",
     "description": "Ancestry Informative Marker for Lao populations."
