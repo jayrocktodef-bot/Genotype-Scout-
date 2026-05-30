@@ -1230,19 +1230,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs694341": {
-    "rsid": "rs694341",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456301": {
     "rsid": "rs10456301",
     "chromosome": "6",
@@ -1318,32 +1305,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs9000344": {
-    "rsid": "rs9000344",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9000345": {
-    "rsid": "rs9000345",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456305": {
     "rsid": "rs10456305",
     "chromosome": "6",
@@ -1368,58 +1329,6 @@
     "gene": "GPLD1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs28358280": {
-    "rsid": "rs28358280",
-    "chromosome": "MT",
-    "position": 10550,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358281": {
-    "rsid": "rs28358281",
-    "chromosome": "MT",
-    "position": 10586,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358282": {
-    "rsid": "rs28358282",
-    "chromosome": "MT",
-    "position": 10810,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358283": {
-    "rsid": "rs28358283",
-    "chromosome": "MT",
-    "position": 10819,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10456316": {
     "rsid": "rs10456316",
@@ -1545,19 +1454,6 @@
     "gene": "SLC17A2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs10456327": {
-    "rsid": "rs10456327",
-    "chromosome": "6",
-    "position": 26327969,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10456328": {
     "rsid": "rs10456328",
@@ -1808,19 +1704,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs10456336": {
-    "rsid": "rs10456336",
-    "chromosome": "HG27_PATCH",
-    "position": 26695960,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10456337": {
     "rsid": "rs10456337",
@@ -2198,19 +2081,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs10456354": {
-    "rsid": "rs10456354",
-    "chromosome": "6",
-    "position": 27167655,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456355": {
     "rsid": "rs10456355",
     "chromosome": "6",
@@ -2313,19 +2183,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs10456360": {
-    "rsid": "rs10456360",
-    "chromosome": "6",
-    "position": 28048346,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456361": {
     "rsid": "rs10456361",
     "chromosome": "6",
@@ -2403,71 +2260,6 @@
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
   },
-  "rs10456367": {
-    "rsid": "rs10456367",
-    "chromosome": "6",
-    "position": 28683804,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456368": {
-    "rsid": "rs10456368",
-    "chromosome": "6",
-    "position": 28692896,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456369": {
-    "rsid": "rs10456369",
-    "chromosome": "6",
-    "position": 29201115,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456370": {
-    "rsid": "rs10456370",
-    "chromosome": "6",
-    "position": 29280736,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456371": {
-    "rsid": "rs10456371",
-    "chromosome": "6",
-    "position": 29335925,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456388": {
     "rsid": "rs10456388",
     "chromosome": "6",
@@ -2492,110 +2284,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs10456389": {
-    "rsid": "rs10456389",
-    "chromosome": "6",
-    "position": 31012180,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456391": {
-    "rsid": "rs10456391",
-    "chromosome": "6",
-    "position": 31102377,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456393": {
-    "rsid": "rs10456393",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456396": {
-    "rsid": "rs10456396",
-    "chromosome": "6",
-    "position": 31504546,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456399": {
-    "rsid": "rs10456399",
-    "chromosome": "6",
-    "position": 31977789,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358284": {
-    "rsid": "rs28358284",
-    "chromosome": "MT",
-    "position": 11177,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358285": {
-    "rsid": "rs28358285",
-    "chromosome": "MT",
-    "position": 11299,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358286": {
-    "rsid": "rs28358286",
-    "chromosome": "MT",
-    "position": 11674,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2032597": {
     "rsid": "rs2032597",
@@ -2673,71 +2361,6 @@
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
   },
-  "rs10456401": {
-    "rsid": "rs10456401",
-    "chromosome": "6",
-    "position": 32200110,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456402": {
-    "rsid": "rs10456402",
-    "chromosome": "6",
-    "position": 32200112,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456403": {
-    "rsid": "rs10456403",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456404": {
-    "rsid": "rs10456404",
-    "chromosome": "6",
-    "position": 32212857,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456405": {
-    "rsid": "rs10456405",
-    "chromosome": "6",
-    "position": 32212867,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456409": {
     "rsid": "rs10456409",
     "chromosome": "6",
@@ -2762,123 +2385,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs10456410": {
-    "rsid": "rs10456410",
-    "chromosome": "6",
-    "position": 32615865,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456418": {
-    "rsid": "rs10456418",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456419": {
-    "rsid": "rs10456419",
-    "chromosome": "6",
-    "position": 33214857,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358287": {
-    "rsid": "rs28358287",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358288": {
-    "rsid": "rs28358288",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358289": {
-    "rsid": "rs28358289",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358290": {
-    "rsid": "rs28358290",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358291": {
-    "rsid": "rs28358291",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs28358292": {
-    "rsid": "rs28358292",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2032605": {
     "rsid": "rs2032605",
@@ -3080,19 +2586,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs3333102": {
-    "rsid": "rs3333102",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs4444103": {
     "rsid": "rs4444103",
     "chromosome": "Unknown",
@@ -3117,19 +2610,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs5555104": {
-    "rsid": "rs5555104",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs6666105": {
     "rsid": "rs6666105",
@@ -3180,19 +2660,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs8888107": {
-    "rsid": "rs8888107",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs4463276": {
     "rsid": "rs4463276",
@@ -4194,19 +3661,6 @@
     "trait": "Ancestry",
     "description": "Marker associated with South Asian ancestry."
   },
-  "rs3916238": {
-    "rsid": "rs3916238",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2840531": {
     "rsid": "rs2840531",
     "chromosome": "1",
@@ -4607,19 +4061,6 @@
     "trait": "Ancestry",
     "description": "Marker associated with Middle Eastern ancestry."
   },
-  "rs161497": {
-    "rsid": "rs161497",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs75853687": {
     "rsid": "rs75853687",
     "chromosome": "5",
@@ -4820,19 +4261,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs4806445": {
-    "rsid": "rs4806445",
-    "chromosome": "HSCHR19LRC_COX1_CTG1",
-    "position": 55209173,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10821218": {
     "rsid": "rs10821218",
     "chromosome": "Unknown",
@@ -4932,19 +4360,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs4806446": {
-    "rsid": "rs4806446",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10821219": {
     "rsid": "rs10821219",
@@ -5046,19 +4461,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs4806447": {
-    "rsid": "rs4806447",
-    "chromosome": "HSCHR19LRC_COX2_CTG1",
-    "position": 54953636,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10821220": {
     "rsid": "rs10821220",
     "chromosome": "Unknown",
@@ -5083,19 +4485,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs2227286": {
-    "rsid": "rs2227286",
-    "chromosome": "19",
-    "position": 10197759,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1159107": {
     "rsid": "rs1159107",
@@ -5146,19 +4535,6 @@
     "gene": "SNTG2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs4806448": {
-    "rsid": "rs4806448",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10821221": {
     "rsid": "rs10821221",
@@ -5285,32 +4661,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
-  },
-  "rs11267812": {
-    "rsid": "rs11267812",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4908345": {
-    "rsid": "rs4908345",
-    "chromosome": "1",
-    "position": 28690572,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2016278": {
     "rsid": "rs2016278",
@@ -5487,19 +4837,6 @@
     "trait": "Ancestry",
     "description": "Marker associated with East Asian ancestry."
   },
-  "rs1343756": {
-    "rsid": "rs1343756",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1426659": {
     "rsid": "rs1426659",
     "chromosome": "4",
@@ -5549,32 +4886,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Marker associated with South Asian ancestry."
-  },
-  "rs1610627": {
-    "rsid": "rs1610627",
-    "chromosome": "HG1322_PATCH",
-    "position": 29728022,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs161499": {
-    "rsid": "rs161499",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs16891987": {
     "rsid": "rs16891987",
@@ -5726,19 +5037,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs2187318": {
-    "rsid": "rs2187318",
-    "chromosome": "11",
-    "position": 89872686,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2228481": {
     "rsid": "rs2228481",
     "chromosome": "14",
@@ -5764,19 +5062,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations.",
     "low_delta": true
-  },
-  "rs4806443": {
-    "rsid": "rs4806443",
-    "chromosome": "HSCHR19LRC_COX1_CTG1",
-    "position": 55196528,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10221832": {
     "rsid": "rs10221832",
@@ -5828,32 +5113,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
   },
-  "rs8888888": {
-    "rsid": "rs8888888",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9999999": {
-    "rsid": "rs9999999",
-    "chromosome": "4",
-    "position": 61807951,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs11111111": {
     "rsid": "rs11111111",
     "chromosome": "12",
@@ -5878,71 +5137,6 @@
     "gene": "DRAM1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs22222222": {
-    "rsid": "rs22222222",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs33333333": {
-    "rsid": "rs33333333",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs44444444": {
-    "rsid": "rs44444444",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs55555555": {
-    "rsid": "rs55555555",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs66666666": {
-    "rsid": "rs66666666",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs77777777": {
     "rsid": "rs77777777",
@@ -6070,19 +5264,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
   },
-  "rs1800401": {
-    "rsid": "rs1800401",
-    "chromosome": "15",
-    "position": 28230318,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1805005": {
     "rsid": "rs1805005",
     "chromosome": "16",
@@ -6132,43 +5313,6 @@
     "gene": "PIGU",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs401681": {
-    "rsid": "rs401681",
-    "chromosome": "5",
-    "position": 1322087,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13191343": {
-    "rsid": "rs13191343",
-    "chromosome": "6",
-    "position": 31241109,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10484554": {
-    "rsid": "rs10484554",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs6677595": {
     "rsid": "rs6677595",
@@ -6446,45 +5590,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
   },
-  "rs4959053": {
-    "rsid": "rs4959053",
-    "chromosome": "6",
-    "position": 31099577,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12206499": {
-    "rsid": "rs12206499",
-    "chromosome": "6",
-    "position": 29937127,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1063635": {
-    "rsid": "rs1063635",
-    "chromosome": "6",
-    "position": 31379931,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs11803731": {
     "rsid": "rs11803731",
     "chromosome": "1",
@@ -6534,19 +5639,6 @@
     "gene": "TCHHL1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs4778138": {
-    "rsid": "rs4778138",
-    "chromosome": "15",
-    "position": 28335820,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2180439": {
     "rsid": "rs2180439",
@@ -6748,19 +5840,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs763035": {
-    "rsid": "rs763035",
-    "chromosome": "6",
-    "position": 32394845,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2282458": {
     "rsid": "rs2282458",
     "chromosome": "4",
@@ -6785,17 +5864,6 @@
     "gene": "IRF2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
-  },
-  "rs28777": {
-    "rsid": "rs28777",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs6152": {
     "rsid": "rs6152",
@@ -7903,19 +6971,6 @@
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
   },
-  "rs3000028": {
-    "rsid": "rs3000028",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs3000029": {
     "rsid": "rs3000029",
     "chromosome": "Unknown",
@@ -8198,19 +7253,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations.",
     "low_delta": true
-  },
-  "rs3000040": {
-    "rsid": "rs3000040",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs3000041": {
     "rsid": "rs3000041",
@@ -9470,32 +8512,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
   },
-  "rs3000091": {
-    "rsid": "rs3000091",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3000092": {
-    "rsid": "rs3000092",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs3000093": {
     "rsid": "rs3000093",
     "chromosome": "Unknown",
@@ -10030,19 +9046,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations.",
     "low_delta": true
-  },
-  "rs8000014": {
-    "rsid": "rs8000014",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs8000015": {
     "rsid": "rs8000015",
@@ -10903,19 +9906,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs8000049": {
-    "rsid": "rs8000049",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs8000050": {
     "rsid": "rs8000050",
     "chromosome": "Unknown",
@@ -10966,32 +9956,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs8000052": {
-    "rsid": "rs8000052",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs8000053": {
-    "rsid": "rs8000053",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs8000054": {
     "rsid": "rs8000054",
     "chromosome": "Unknown",
@@ -11017,19 +9981,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations.",
     "low_delta": true
-  },
-  "rs8000055": {
-    "rsid": "rs8000055",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs8000056": {
     "rsid": "rs8000056",
@@ -11255,19 +10206,6 @@
     "gene": "TEX26",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs8000065": {
-    "rsid": "rs8000065",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs8000066": {
     "rsid": "rs8000066",
@@ -11522,19 +10460,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
-  },
-  "rs8000076": {
-    "rsid": "rs8000076",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs8000077": {
     "rsid": "rs8000077",
@@ -12338,17 +11263,6 @@
     "gene": "MORN1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs3890745": {
-    "rsid": "rs3890745",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1181875": {
     "rsid": "rs1181875",
@@ -13650,17 +12564,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs6683201": {
-    "rsid": "rs6683201",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1408953": {
     "rsid": "rs1408953",
     "chromosome": "1",
@@ -14261,28 +13164,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
   },
-  "rs2298632": {
-    "rsid": "rs2298632",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2038027": {
-    "rsid": "rs2038027",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2076346": {
     "rsid": "rs2076346",
     "chromosome": "1",
@@ -14707,17 +13588,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
-  },
-  "rs744528": {
-    "rsid": "rs744528",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs4551635": {
     "rsid": "rs4551635",
@@ -15568,17 +14438,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs4660527": {
-    "rsid": "rs4660527",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2475839": {
     "rsid": "rs2475839",
@@ -20229,28 +19088,6 @@
     "gene": "VAV3",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs1781050": {
-    "rsid": "rs1781050",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2000260": {
-    "rsid": "rs2000260",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10494092": {
     "rsid": "rs10494092",
@@ -26803,28 +25640,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs2050187": {
-    "rsid": "rs2050187",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12217125": {
-    "rsid": "rs12217125",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs6540664": {
     "rsid": "rs6540664",
     "chromosome": "1",
@@ -28850,17 +27665,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs291353": {
-    "rsid": "rs291353",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs3213190": {
     "rsid": "rs3213190",
     "chromosome": "1",
@@ -29861,28 +28665,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs676292": {
-    "rsid": "rs676292",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1538467": {
-    "rsid": "rs1538467",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2791390": {
     "rsid": "rs2791390",
     "chromosome": "1",
@@ -30208,28 +28990,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs4971418": {
-    "rsid": "rs4971418",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2071402": {
-    "rsid": "rs2071402",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs9752743": {
     "rsid": "rs9752743",
     "chromosome": "2",
@@ -30379,17 +29139,6 @@
     "gene": "LINC01250",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs6548164": {
-    "rsid": "rs6548164",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs11682163": {
     "rsid": "rs11682163",
@@ -33665,17 +32414,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs6704972": {
-    "rsid": "rs6704972",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs3770945": {
     "rsid": "rs3770945",
@@ -46077,17 +44815,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs10932150": {
-    "rsid": "rs10932150",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1025077": {
     "rsid": "rs1025077",
     "chromosome": "2",
@@ -48388,28 +47115,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs4356648": {
-    "rsid": "rs4356648",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs14243": {
-    "rsid": "rs14243",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2269352": {
     "rsid": "rs2269352",
     "chromosome": "2",
@@ -49059,17 +47764,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs13402622": {
-    "rsid": "rs13402622",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1009283": {
     "rsid": "rs1009283",
@@ -50921,17 +49615,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs10510465": {
-    "rsid": "rs10510465",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10510480": {
     "rsid": "rs10510480",
     "chromosome": "3",
@@ -51106,17 +49789,6 @@
     "gene": "PP2D1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs9871864": {
-    "rsid": "rs9871864",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs4482681": {
     "rsid": "rs4482681",
@@ -53093,28 +51765,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs3804583": {
-    "rsid": "rs3804583",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1995641": {
-    "rsid": "rs1995641",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs17639812": {
     "rsid": "rs17639812",
     "chromosome": "3",
@@ -54865,17 +53515,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs10510953": {
-    "rsid": "rs10510953",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs783511": {
     "rsid": "rs783511",
     "chromosome": "3",
@@ -55550,28 +54189,6 @@
     "gene": "LINC00877",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs9849164": {
-    "rsid": "rs9849164",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4676882": {
-    "rsid": "rs4676882",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs3821561": {
     "rsid": "rs3821561",
@@ -57598,17 +56215,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs9288938": {
-    "rsid": "rs9288938",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2895395": {
     "rsid": "rs2895395",
     "chromosome": "3",
@@ -59083,17 +57689,6 @@
     "gene": "PRR20G",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs10934853": {
-    "rsid": "rs10934853",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs7635061": {
     "rsid": "rs7635061",
@@ -62395,17 +60990,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
   },
-  "rs4894505": {
-    "rsid": "rs4894505",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1156688": {
     "rsid": "rs1156688",
     "chromosome": "3",
@@ -62905,17 +61489,6 @@
     "gene": "HTR3E",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs7429010": {
-    "rsid": "rs7429010",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs4687478": {
     "rsid": "rs4687478",
@@ -64192,17 +62765,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs1549830": {
-    "rsid": "rs1549830",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs3205525": {
     "rsid": "rs3205525",
     "chromosome": "3",
@@ -64302,17 +62864,6 @@
     "gene": "TMEM175",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs11947258": {
-    "rsid": "rs11947258",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs3117813": {
     "rsid": "rs3117813",
@@ -66114,17 +64665,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
   },
-  "rs1503976": {
-    "rsid": "rs1503976",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1500463": {
     "rsid": "rs1500463",
     "chromosome": "4",
@@ -66849,17 +65389,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs6849320": {
-    "rsid": "rs6849320",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs921853": {
     "rsid": "rs921853",
@@ -74437,28 +72966,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs11935573": {
-    "rsid": "rs11935573",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10857274": {
-    "rsid": "rs10857274",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1317400": {
     "rsid": "rs1317400",
     "chromosome": "4",
@@ -74508,17 +73015,6 @@
     "gene": "GUCY1A1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs7684248": {
-    "rsid": "rs7684248",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10517634": {
     "rsid": "rs10517634",
@@ -77096,20 +75592,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs1158815": {
-    "rsid": "rs1158815",
-    "chromosome": "4",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2029259": {
     "rsid": "rs2029259",
     "chromosome": "4",
@@ -77285,34 +75767,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs2292433": {
-    "rsid": "rs2292433",
-    "chromosome": "4",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1395612": {
-    "rsid": "rs1395612",
-    "chromosome": "4",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs6837842": {
     "rsid": "rs6837842",
     "chromosome": "4",
@@ -77363,20 +75817,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs7684487": {
-    "rsid": "rs7684487",
-    "chromosome": "4",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs4956993": {
     "rsid": "rs4956993",
     "chromosome": "5",
@@ -77401,62 +75841,6 @@
     "gene": "PLEKHG4B",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs11739663": {
-    "rsid": "rs11739663",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4975533": {
-    "rsid": "rs4975533",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs27061": {
-    "rsid": "rs27061",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs36987": {
-    "rsid": "rs36987",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10512645": {
     "rsid": "rs10512645",
@@ -79259,20 +77643,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs4701222": {
-    "rsid": "rs4701222",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs9292995": {
     "rsid": "rs9292995",
     "chromosome": "5",
@@ -80172,20 +78542,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs2548032": {
-    "rsid": "rs2548032",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs962435": {
     "rsid": "rs962435",
@@ -82537,20 +80893,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
   },
-  "rs3761966": {
-    "rsid": "rs3761966",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1217744": {
     "rsid": "rs1217744",
     "chromosome": "5",
@@ -84450,20 +82792,6 @@
     "gene": "MCTP1",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
-  },
-  "rs385225": {
-    "rsid": "rs385225",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs34896": {
     "rsid": "rs34896",
@@ -91440,76 +89768,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs166031": {
-    "rsid": "rs166031",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1026985": {
-    "rsid": "rs1026985",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9329079": {
-    "rsid": "rs9329079",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6895902": {
-    "rsid": "rs6895902",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10277": {
-    "rsid": "rs10277",
-    "chromosome": "5",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs42414": {
     "rsid": "rs42414",
     "chromosome": "5",
@@ -94335,300 +92593,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
   },
-  "rs451774": {
-    "rsid": "rs451774",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9295775": {
-    "rsid": "rs9295775",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1884123": {
-    "rsid": "rs1884123",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9295805": {
-    "rsid": "rs9295805",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1233487": {
-    "rsid": "rs1233487",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2523399": {
-    "rsid": "rs2523399",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs259940": {
-    "rsid": "rs259940",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2523990": {
-    "rsid": "rs2523990",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1264432": {
-    "rsid": "rs1264432",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12660883": {
-    "rsid": "rs12660883",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs753725": {
-    "rsid": "rs753725",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2535315": {
-    "rsid": "rs2535315",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3130501": {
-    "rsid": "rs3130501",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2248372": {
-    "rsid": "rs2248372",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1046089": {
-    "rsid": "rs1046089",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs805294": {
-    "rsid": "rs805294",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs204991": {
-    "rsid": "rs204991",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9268542": {
-    "rsid": "rs9268542",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7453920": {
-    "rsid": "rs7453920",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3077": {
-    "rsid": "rs3077",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1003979": {
-    "rsid": "rs1003979",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs210138": {
     "rsid": "rs210138",
     "chromosome": "6",
@@ -96829,20 +94793,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
   },
-  "rs767069": {
-    "rsid": "rs767069",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1567793": {
     "rsid": "rs1567793",
     "chromosome": "6",
@@ -96992,20 +94942,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs1907149": {
-    "rsid": "rs1907149",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10484791": {
     "rsid": "rs10484791",
@@ -97707,34 +95643,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs7740673": {
-    "rsid": "rs7740673",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3846739": {
-    "rsid": "rs3846739",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs4601089": {
     "rsid": "rs4601089",
     "chromosome": "6",
@@ -98334,20 +96242,6 @@
     "gene": "ANKRD6",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs292240": {
-    "rsid": "rs292240",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs790595": {
     "rsid": "rs790595",
@@ -100848,20 +98742,6 @@
     "gene": "C6orf58",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs1012049": {
-    "rsid": "rs1012049",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs7766548": {
     "rsid": "rs7766548",
@@ -104488,34 +102368,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs909473": {
-    "rsid": "rs909473",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4916935": {
-    "rsid": "rs4916935",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2690262": {
     "rsid": "rs2690262",
     "chromosome": "7",
@@ -105040,20 +102892,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
-  },
-  "rs2189869": {
-    "rsid": "rs2189869",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2141531": {
     "rsid": "rs2141531",
@@ -110582,19 +108420,6 @@
     "description": "Ancestry marker associated with African populations.",
     "low_delta": true
   },
-  "rs5000033": {
-    "rsid": "rs5000033",
-    "chromosome": "HG1257_PATCH",
-    "position": 75009348,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs5000035": {
     "rsid": "rs5000035",
     "chromosome": "5",
@@ -111176,19 +109001,6 @@
     "description": "Ancestry marker associated with African populations.",
     "low_delta": true
   },
-  "rs5000091": {
-    "rsid": "rs5000091",
-    "chromosome": "13",
-    "position": 38495250,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs5000096": {
     "rsid": "rs5000096",
     "chromosome": "3",
@@ -111264,17 +109076,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs1667394": {
-    "rsid": "rs1667394",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2378249": {
     "rsid": "rs2378249",
     "chromosome": "20",
@@ -111299,72 +109100,6 @@
     "gene": "PIGU",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
-  },
-  "rs7454108": {
-    "rsid": "rs7454108",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2395182": {
-    "rsid": "rs2395182",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9273363": {
-    "rsid": "rs9273363",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3104413": {
-    "rsid": "rs3104413",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4349859": {
-    "rsid": "rs4349859",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13202464": {
-    "rsid": "rs13202464",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs30187": {
     "rsid": "rs30187",
@@ -111391,39 +109126,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs6910071": {
-    "rsid": "rs6910071",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs660895": {
-    "rsid": "rs660895",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1270942": {
-    "rsid": "rs1270942",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1143679": {
     "rsid": "rs1143679",
     "chromosome": "16",
@@ -111448,17 +109150,6 @@
     "gene": "ITGAM",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
-  },
-  "rs3135388": {
-    "rsid": "rs3135388",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2104286": {
     "rsid": "rs2104286",
@@ -111534,17 +109225,6 @@
     "gene": "SH2B3",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs12191877": {
-    "rsid": "rs12191877",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs11209026": {
     "rsid": "rs11209026",
@@ -111622,17 +109302,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations.",
     "low_delta": true
-  },
-  "rs9275572": {
-    "rsid": "rs9275572",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs9786076": {
     "rsid": "rs9786076",
@@ -111934,61 +109603,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs66650371": {
-    "rsid": "rs66650371",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2187668": {
-    "rsid": "rs2187668",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7775228": {
-    "rsid": "rs7775228",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2647044": {
-    "rsid": "rs2647044",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2066847": {
-    "rsid": "rs2066847",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs34276300": {
     "rsid": "rs34276300",
     "chromosome": "Y",
@@ -112063,45 +109677,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs10456364": {
-    "rsid": "rs10456364",
-    "chromosome": "6",
-    "position": 28681444,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456365": {
-    "rsid": "rs10456365",
-    "chromosome": "6",
-    "position": 28681804,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456366": {
-    "rsid": "rs10456366",
-    "chromosome": "6",
-    "position": 28683771,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs13430441": {
     "rsid": "rs13430441",
@@ -112808,19 +110383,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with South Asian populations."
   },
-  "rs1176951": {
-    "rsid": "rs1176951",
-    "chromosome": "1",
-    "position": 104680729,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1177005": {
     "rsid": "rs1177005",
     "chromosome": "7",
@@ -112845,19 +110407,6 @@
     "gene": "CNTNAP2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
-  },
-  "rs1177167": {
-    "rsid": "rs1177167",
-    "chromosome": "2",
-    "position": 61003585,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1177275": {
     "rsid": "rs1177275",
@@ -112884,32 +110433,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs1177329": {
-    "rsid": "rs1177329",
-    "chromosome": "11",
-    "position": 129646787,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177491": {
-    "rsid": "rs1177491",
-    "chromosome": "3",
-    "position": 76442234,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1177545": {
     "rsid": "rs1177545",
     "chromosome": "12",
@@ -112935,19 +110458,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
-  },
-  "rs1177653": {
-    "rsid": "rs1177653",
-    "chromosome": "3",
-    "position": 145566691,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1177707": {
     "rsid": "rs1177707",
@@ -112999,19 +110509,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
-  },
-  "rs1177923": {
-    "rsid": "rs1177923",
-    "chromosome": "7",
-    "position": 148042071,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1177977": {
     "rsid": "rs1177977",
@@ -113267,19 +110764,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Oceanian populations.",
     "low_delta": true
-  },
-  "rs9271160": {
-    "rsid": "rs9271160",
-    "chromosome": "6",
-    "position": 32577646,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs9530435": {
     "rsid": "rs9530435",
@@ -115009,20 +112493,6 @@
     "gene": "NPTX2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs10499947": {
-    "rsid": "rs10499947",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs4236541": {
     "rsid": "rs4236541",
@@ -118299,34 +115769,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs10215277": {
-    "rsid": "rs10215277",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3134906": {
-    "rsid": "rs3134906",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1994497": {
     "rsid": "rs1994497",
     "chromosome": "7",
@@ -118351,34 +115793,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs1525107": {
-    "rsid": "rs1525107",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs17280674": {
-    "rsid": "rs17280674",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs228578": {
     "rsid": "rs228578",
@@ -118679,20 +116093,6 @@
     "gene": "CNTNAP2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs17170936": {
-    "rsid": "rs17170936",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs6464907": {
     "rsid": "rs6464907",
@@ -119194,20 +116594,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
   },
-  "rs7791484": {
-    "rsid": "rs7791484",
-    "chromosome": "7",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs747561": {
     "rsid": "rs747561",
     "chromosome": "7",
@@ -119657,146 +117043,6 @@
     "gene": "TDRP",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
-  },
-  "rs6559181": {
-    "rsid": "rs6559181",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1393703": {
-    "rsid": "rs1393703",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6983944": {
-    "rsid": "rs6983944",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2336695": {
-    "rsid": "rs2336695",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs717406": {
-    "rsid": "rs717406",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs17754335": {
-    "rsid": "rs17754335",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1990126": {
-    "rsid": "rs1990126",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7836020": {
-    "rsid": "rs7836020",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7004405": {
-    "rsid": "rs7004405",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6558578": {
-    "rsid": "rs6558578",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2627272": {
     "rsid": "rs2627272",
@@ -120322,313 +117568,6 @@
     "gene": "ANGPT2",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs2959799": {
-    "rsid": "rs2959799",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6559176": {
-    "rsid": "rs6559176",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2928579": {
-    "rsid": "rs2928579",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7825750": {
-    "rsid": "rs7825750",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13274039": {
-    "rsid": "rs13274039",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2945861": {
-    "rsid": "rs2945861",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs950721": {
-    "rsid": "rs950721",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2979269": {
-    "rsid": "rs2979269",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2929470": {
-    "rsid": "rs2929470",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs17150066": {
-    "rsid": "rs17150066",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10100760": {
-    "rsid": "rs10100760",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs17734290": {
-    "rsid": "rs17734290",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs471480": {
-    "rsid": "rs471480",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4260896": {
-    "rsid": "rs4260896",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10086950": {
-    "rsid": "rs10086950",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4841458": {
-    "rsid": "rs4841458",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2736340": {
-    "rsid": "rs2736340",
-    "chromosome": "8",
-    "position": 11381382,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2740434": {
-    "rsid": "rs2740434",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1736058": {
-    "rsid": "rs1736058",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7814546": {
-    "rsid": "rs7814546",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2947384": {
-    "rsid": "rs2947384",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs532841": {
-    "rsid": "rs532841",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs1188306": {
     "rsid": "rs1188306",
@@ -123130,20 +120069,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs673382": {
-    "rsid": "rs673382",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10958604": {
     "rsid": "rs10958604",
     "chromosome": "8",
@@ -124043,20 +120968,6 @@
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs1561785": {
-    "rsid": "rs1561785",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs10504231": {
     "rsid": "rs10504231",
@@ -129433,20 +126344,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with European populations."
   },
-  "rs1347001": {
-    "rsid": "rs1347001",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs4339605": {
     "rsid": "rs4339605",
     "chromosome": "8",
@@ -129521,20 +126418,6 @@
     "gene": "CCDC26",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with African populations."
-  },
-  "rs4285452": {
-    "rsid": "rs4285452",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs2060984": {
     "rsid": "rs2060984",
@@ -130861,62 +127744,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Native American populations."
   },
-  "rs4246828": {
-    "rsid": "rs4246828",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2382962": {
-    "rsid": "rs2382962",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4873815": {
-    "rsid": "rs4873815",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7828303": {
-    "rsid": "rs7828303",
-    "chromosome": "8",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "T",
-    "alt": "C",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs913703": {
     "rsid": "rs913703",
     "chromosome": "9",
@@ -131742,20 +128569,6 @@
     "trait": "Ancestry",
     "description": "Ancestry marker associated with Middle Eastern populations."
   },
-  "rs1986733": {
-    "rsid": "rs1986733",
-    "chromosome": "9",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs842301": {
     "rsid": "rs842301",
     "chromosome": "9",
@@ -131855,34 +128668,6 @@
     "gene": "PTPRD",
     "trait": "Ancestry",
     "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs440238": {
-    "rsid": "rs440238",
-    "chromosome": "9",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "A",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs324542": {
-    "rsid": "rs324542",
-    "chromosome": "9",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
   },
   "rs968079": {
     "rsid": "rs968079",
