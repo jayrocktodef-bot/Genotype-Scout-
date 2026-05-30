@@ -1,0 +1,52 @@
+{
+ "rs2269793": {
+  "rsid": "rs2269793",
+  "chromosome": "16",
+  "position": 19261586,
+  "region": "South Asian",
+  "color": "#95A5A6",
+  "alleles": [
+   "G"
+  ],
+  "frequencies": {
+   "AFR": 0.5494,
+   "EUR": 0.11,
+   "EAS": 0.6211,
+   "SAS": 0.7425,
+   "AMR": 0.303,
+   "MENA": 0.3876,
+   "OCE": 0.606
+  },
+  "subFrequencies": {},
+  "deepFrequencies": {},
+  "weight": 8,
+  "gene": "Intergenic",
+  "trait": "Ancestry",
+  "description": "Marker associated with South Asian ancestry."
+ },
+ "rs10513300": {
+  "rsid": "rs10513300",
+  "chromosome": "9",
+  "position": 117367927,
+  "region": "African",
+  "color": "#95A5A6",
+  "alleles": [
+   "C"
+  ],
+  "frequencies": {
+   "AFR": 0.9852,
+   "EUR": 0.9502,
+   "EAS": 0.2646,
+   "SAS": 0.1262,
+   "AMR": 0.7537,
+   "MENA": 0.71,
+   "OCE": 0.3071
+  },
+  "subFrequencies": {},
+  "deepFrequencies": {},
+  "weight": 10,
+  "gene": "Intergenic",
+  "trait": "Ancestry",
+  "description": "Marker associated with African ancestry."
+ }
+}
