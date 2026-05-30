@@ -1,0 +1,1633 @@
+{
+  "rs10456304": {
+    "rsid": "rs10456304",
+    "chromosome": "6",
+    "position": 24319478,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.99
+    },
+    "subFrequencies": {
+      "Bougainville": 0.99,
+      "Solomon_Islands": 0.97,
+      "Fiji": 0.85,
+      "Samoa": 0.7
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs10456224": {
+    "rsid": "rs10456224",
+    "chromosome": "6",
+    "position": 19666843,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.98
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs11568828": {
+    "rsid": "rs11568828",
+    "chromosome": "17",
+    "position": 63918913,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "ref": "C",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.78
+    },
+    "subFrequencies": {
+      "Melanesian": 0.85,
+      "Papuan": 0.76,
+      "Aboriginal": 0.72
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "KRT25",
+    "trait": "Hair Morphology",
+    "description": "KRT25 structural variant highly specific to Oceania, strongly associated with unique hair texture/curl modifications."
+  },
+  "rs3827760": {
+    "rsid": "rs3827760",
+    "chromosome": "2",
+    "position": 108897145,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.85,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.52
+    },
+    "subFrequencies": {
+      "Polynesian": 0.65,
+      "Micronesian": 0.6,
+      "Papuan": 0.4
+    },
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "EDAR",
+    "trait": "Hair/Dental Morphology",
+    "description": "EDAR hair and dental morphology variant, displaying a distinctive intermediate frequency in Oceania compared to pure East Asian and European lineages."
+  },
+  "rs10456291": {
+    "rsid": "rs10456291",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.38,
+      "EUR": 0.04,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.88
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Chamorro Ancestry Marker",
+    "description": "Ancestry Informative Marker for Chamorro (Guam) populations."
+  },
+  "rs11103374": {
+    "rsid": "rs11103374",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Polynesian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Polynesian populations."
+  },
+  "rs11103375": {
+    "rsid": "rs11103375",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Micronesian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Micronesian populations."
+  },
+  "rs11103377": {
+    "rsid": "rs11103377",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Hawaiian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Hawaiian populations."
+  },
+  "rs11103378": {
+    "rsid": "rs11103378",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.91,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Polynesian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Polynesian populations."
+  },
+  "rs11103379": {
+    "rsid": "rs11103379",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.86,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Micronesian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Micronesian populations."
+  },
+  "rs11103381": {
+    "rsid": "rs11103381",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.89,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Hawaiian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Hawaiian populations."
+  },
+  "rs11103383": {
+    "rsid": "rs11103383",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.87,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Micronesian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Micronesian populations."
+  },
+  "rs11103385": {
+    "rsid": "rs11103385",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Hawaiian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Hawaiian populations."
+  },
+  "rs10456286": {
+    "rsid": "rs10456286",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0.3,
+      "EUR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Hawaiian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Native Hawaiian populations."
+  },
+  "rs10456289": {
+    "rsid": "rs10456289",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.22,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.94
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Samoan Ancestry Marker",
+    "description": "Ancestry Informative Marker for Samoan populations."
+  },
+  "rs10456287": {
+    "rsid": "rs10456287",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.04,
+      "EAS": 0.28,
+      "EUR": 0.04,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.92
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Hawaiian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Native Hawaiian populations."
+  },
+  "rs600000": {
+    "rsid": "rs600000",
+    "chromosome": "18",
+    "position": 71409883,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600001": {
+    "rsid": "rs600001",
+    "chromosome": "7",
+    "position": 56859885,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600002": {
+    "rsid": "rs600002",
+    "chromosome": "20",
+    "position": 73518525,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600003": {
+    "rsid": "rs600003",
+    "chromosome": "6",
+    "position": 44724629,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600004": {
+    "rsid": "rs600004",
+    "chromosome": "22",
+    "position": 75627167,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600005": {
+    "rsid": "rs600005",
+    "chromosome": "6",
+    "position": 44724627,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600006": {
+    "rsid": "rs600006",
+    "chromosome": "2",
+    "position": 77735809,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600007": {
+    "rsid": "rs600007",
+    "chromosome": "3",
+    "position": 78790130,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600008": {
+    "rsid": "rs600008",
+    "chromosome": "4",
+    "position": 79844451,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs600009": {
+    "rsid": "rs600009",
+    "chromosome": "13",
+    "position": 38296923,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000010": {
+    "rsid": "rs6000010",
+    "chromosome": "22",
+    "position": 35826422,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000011": {
+    "rsid": "rs6000011",
+    "chromosome": "22",
+    "position": 35830543,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000012": {
+    "rsid": "rs6000012",
+    "chromosome": "22",
+    "position": 35842705,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000013": {
+    "rsid": "rs6000013",
+    "chromosome": "22",
+    "position": 35845342,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000014": {
+    "rsid": "rs6000014",
+    "chromosome": "22",
+    "position": 35852090,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000015": {
+    "rsid": "rs6000015",
+    "chromosome": "22",
+    "position": 35857115,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000016": {
+    "rsid": "rs6000016",
+    "chromosome": "22",
+    "position": 35857174,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000017": {
+    "rsid": "rs6000017",
+    "chromosome": "22",
+    "position": 35858499,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000018": {
+    "rsid": "rs6000018",
+    "chromosome": "22",
+    "position": 35860012,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000019": {
+    "rsid": "rs6000019",
+    "chromosome": "22",
+    "position": 35860780,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000020": {
+    "rsid": "rs6000020",
+    "chromosome": "22",
+    "position": 35862219,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000021": {
+    "rsid": "rs6000021",
+    "chromosome": "22",
+    "position": 35869357,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000022": {
+    "rsid": "rs6000022",
+    "chromosome": "22",
+    "position": 35874145,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000023": {
+    "rsid": "rs6000023",
+    "chromosome": "22",
+    "position": 35874674,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000024": {
+    "rsid": "rs6000024",
+    "chromosome": "22",
+    "position": 35878929,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000025": {
+    "rsid": "rs6000025",
+    "chromosome": "22",
+    "position": 21899704,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000026": {
+    "rsid": "rs6000026",
+    "chromosome": "22",
+    "position": 35892273,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000027": {
+    "rsid": "rs6000027",
+    "chromosome": "22",
+    "position": 35892879,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000028": {
+    "rsid": "rs6000028",
+    "chromosome": "22",
+    "position": 35897391,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000029": {
+    "rsid": "rs6000029",
+    "chromosome": "22",
+    "position": 35900199,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000030": {
+    "rsid": "rs6000030",
+    "chromosome": "22",
+    "position": 35902112,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000031": {
+    "rsid": "rs6000031",
+    "chromosome": "22",
+    "position": 35909704,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000032": {
+    "rsid": "rs6000032",
+    "chromosome": "22",
+    "position": 35910218,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000033": {
+    "rsid": "rs6000033",
+    "chromosome": "22",
+    "position": 35916878,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000034": {
+    "rsid": "rs6000034",
+    "chromosome": "22",
+    "position": 35916938,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000035": {
+    "rsid": "rs6000035",
+    "chromosome": "22",
+    "position": 35922397,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000036": {
+    "rsid": "rs6000036",
+    "chromosome": "22",
+    "position": 35924692,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000037": {
+    "rsid": "rs6000037",
+    "chromosome": "22",
+    "position": 35925222,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "A",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000038": {
+    "rsid": "rs6000038",
+    "chromosome": "22",
+    "position": 35929938,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "G",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000039": {
+    "rsid": "rs6000039",
+    "chromosome": "22",
+    "position": 35931903,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000040": {
+    "rsid": "rs6000040",
+    "chromosome": "22",
+    "position": 35938213,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000041": {
+    "rsid": "rs6000041",
+    "chromosome": "22",
+    "position": 35943783,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000042": {
+    "rsid": "rs6000042",
+    "chromosome": "22",
+    "position": 35947274,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "C",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000043": {
+    "rsid": "rs6000043",
+    "chromosome": "22",
+    "position": 21906101,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "T",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000044": {
+    "rsid": "rs6000044",
+    "chromosome": "22",
+    "position": 35955462,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "T",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  },
+  "rs6000045": {
+    "rsid": "rs6000045",
+    "chromosome": "22",
+    "position": 35957826,
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "G",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+  }
+}

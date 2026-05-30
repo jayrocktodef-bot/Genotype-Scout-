@@ -1,7 +1,7 @@
 import { SNP_DB, SNP_LOOKUP } from '../data/snpDatabase';
 import masterMtdna from '../data/master_mtdna.json';
 import { ANCHOR_AIMS } from '../anchorAims';
-import masterAims from '../data/master_aims_normalized.json' with { type: 'json' };
+import { getAncestryIndex } from '../data/index';
 import v5MarkersMaster from '../data/v5_markers_master.json' with { type: 'json' };
 import { SNP } from '../types/genotype';
 import { SNP_PROXY_MAP } from '../utils/genotypeUtils';
@@ -45,16 +45,12 @@ export function getPrivateSNPs(snpMap: Record<string, string>) {
   const knownSNPs = new Set<string>();
   
   // Need to include all sources defined in matchSNPs
-  const allSources: any[] = ([] as any[]).concat(SNP_DB, ANCHOR_AIMS, Object.values(masterAims));
+  const allSources: any[] = ([] as any[]).concat(SNP_DB, ANCHOR_AIMS, getAncestryIndex().getAllMarkers());
   
   for (const snp of allSources) {
     if (snp.markerId) knownSNPs.add(snp.markerId.toLowerCase());
     if (snp.rsid) knownSNPs.add(snp.rsid.toLowerCase());
-    if (snp.aliases) {
-      for (const alias of snp.aliases) {
-        knownSNPs.add(alias.toLowerCase());
-      }
-    }
+    // ... aliases would be added here if defined in all sources
   }
 
   // Find SNPs in the user map that are not in the known set
@@ -70,7 +66,7 @@ export function getPrivateSNPs(snpMap: Record<string, string>) {
 
 let cachedAllSources: any[] | null = null;
 
-function getAllSources() {
+export function getAllSources() {
   if (cachedAllSources) return cachedAllSources;
 
   const sources: any[] = [
@@ -87,7 +83,7 @@ function getAllSources() {
       category: "Ancestry" as const,
       frequencies: aim.frequencies || aim.subFrequencies
     })),
-    ...Object.values(masterAims).map((m: any) => ({
+    ...getAncestryIndex().getAllMarkers().map((m: any) => ({
       markerId: m.rsid,
       rsid: m.rsid,
       gene: m.gene || "Intergenic",
@@ -114,13 +110,18 @@ function getAllSources() {
     }))
   ];
 
+  console.log("SNP_DB count:", SNP_DB.length);
+  console.log("ANCHOR_AIMS count:", ANCHOR_AIMS.length);
+  console.log("AncestryIndex count:", getAncestryIndex().getAllMarkers().length);
+  console.log("v5MarkersMaster count:", v5MarkersMaster.filter((m: any) => m.frequency && Object.keys(m.frequency).length > 0).length);
+  console.log("Total sources length:", sources.length);
   cachedAllSources = sources;
   return sources;
 }
 
-export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>) {
+export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>, markersChunk?: any[]) {
   const seen = new Set<string>();
-  const allSources = getAllSources();
+  const allSources = markersChunk || getAllSources();
   const results: any[] = [];
   
   const sourcesCount = allSources.length;

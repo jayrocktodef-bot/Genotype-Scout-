@@ -1,7 +1,36 @@
 import masterAncient from './master_ancient_profiles.json';
 import popFrequencies from './reference/1000genomes_frequencies.json';
 import aimsAndTraits from './reference/aims_and_traits.json';
-import masterAims from './master_aims_normalized.json' with { type: 'json' };
+import { loadMasterAims } from './index';
+import { getAllAims } from './raw_aims/index';
+
+// Initialize on first use or cache
+let masterAimsCache: any = null;
+const getMasterAims = () => {
+  if (!masterAimsCache) {
+      masterAimsCache = {
+          ...loadMasterAims(),
+          ...getAllAims().reduce((acc, aim) => {
+              const normalizedRsid = aim.rsid.toLowerCase();
+              acc[normalizedRsid] = {
+                  rsid: normalizedRsid,
+                  region: aim.region || "Unknown",
+                  color: aim.color || "#95A5A6",
+                  alleles: aim.alleles || [],
+                  frequencies: aim.frequencies || {},
+                  subFrequencies: aim.subFrequencies || {},
+                  deepFrequencies: aim.deepFrequencies || {},
+                  weight: aim.weight || 1,
+                  gene: aim.gene || "N/A",
+                  trait: aim.trait || "Ancestry",
+                  description: aim.description || "N/A"
+              };
+              return acc;
+          }, {} as Record<string, any>)
+      };
+  }
+  return masterAimsCache;
+};
 
 export interface PopFrequencyEntry {
   gene?: string;
@@ -42,7 +71,7 @@ export const getAncientMarkers = () => {
 };
 export const getPopFrequencies = () => popFrequencies as Record<string, PopFrequencyEntry | any>;
 export const getAimsAndTraits = () => aimsAndTraits as any;
-export const getAncestryMarkers = () => Object.values(masterAims) as any[];
+export const getAncestryMarkers = () => Object.values(getMasterAims()) as any[];
 
 export const findFrequency = (rsid: string, genotype: string, popCode: string) => {
   const entry = (popFrequencies as any)[rsid] as PopFrequencyEntry;

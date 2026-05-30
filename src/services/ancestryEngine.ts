@@ -160,11 +160,41 @@ export function runAncestryInference(
   yHaploRegion?: string | null,
   mtHaploRegion?: string | null,
   isPrimary: boolean = false,
-  priorResults?: { graf?: any, k27?: any },
+  priorResults?: { graf?: any, mdlp?: any },
   sampleId?: string
 ): AncestryInferenceResult {
   // Check if we can directly map this known reference sample ID to a subpopulation
-  const info = sampleId ? getPopulationInfo(sampleId) : null;
+  let info = sampleId ? getPopulationInfo(sampleId) : null;
+  if (!info && sampleId) {
+    const sUpper = sampleId.toUpperCase().trim();
+    const superPops = ['AMR', 'AFR', 'EAS', 'EUR', 'SAS'];
+    const codes = ['ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI', 'CEU', 'FIN', 'GBR', 'IBS', 'TSI', 'CDX', 'CHB', 'CHS', 'JPT', 'KHV', 'BEB', 'GIH', 'ITU', 'PJL', 'STU', 'CLM', 'MXL', 'PEL', 'PUR'];
+    
+    // Check if the sampleId is or contains a known sub-population code
+    const foundSubPop = codes.find(code => sUpper === code || sUpper.includes(code));
+    // Check if the sampleId is or contains a known super-population code
+    const foundSuperPop = superPops.find(pop => sUpper === pop || sUpper.includes(pop));
+
+    if (foundSubPop) {
+      const parents: Record<string, string> = {
+        'ACB': 'AFR', 'ASW': 'AFR', 'ESN': 'AFR', 'GWD': 'AFR', 'LWK': 'AFR', 'MSL': 'AFR', 'YRI': 'AFR',
+        'CEU': 'EUR', 'FIN': 'EUR', 'GBR': 'EUR', 'IBS': 'EUR', 'TSI': 'EUR',
+        'CDX': 'EAS', 'CHB': 'EAS', 'CHS': 'EAS', 'JPT': 'EAS', 'KHV': 'EAS',
+        'BEB': 'SAS', 'GIH': 'SAS', 'ITU': 'SAS', 'PJL': 'SAS', 'STU': 'SAS',
+        'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR', 'PUR': 'AMR'
+      };
+      info = {
+        population_code: foundSubPop,
+        super_population_code: parents[foundSubPop] || 'EUR'
+      };
+    } else if (foundSuperPop) {
+      info = {
+        population_code: foundSuperPop,
+        super_population_code: foundSuperPop
+      };
+    }
+  }
+
   if (info) {
     const SUPER_POP_TO_CONTINENT: Record<string, string> = {
       'EUR': 'European',
@@ -239,7 +269,7 @@ export function runAncestryInference(
       }
     };
     checkEngine(priorResults.graf);
-    checkEngine(priorResults.k27);
+    checkEngine(priorResults.mdlp);
     return boost;
   };
 
@@ -482,7 +512,7 @@ export function runAncestryInference(
       const afrIndex = continentsToScore.indexOf('African');
       if (afrIndex !== -1) damping[afrIndex] = 1.5; // Boost
       const eurIndex = continentsToScore.indexOf('European');
-      if (eurIndex !== -1) damping[eurIndex] = 1.5; // Boost
+      if (eurIndex !== -1) damping[eurIndex] = 1.0; // Standard weight (reduced from 1.5 boost to resolve European overscoring bias)
 
       const pathIndices = viterbi(windowGenotypes, windowFrequencies, continentsToScore.length);
       const windowProportions = new Array(continentsToScore.length).fill(0);
@@ -518,90 +548,91 @@ export function runAncestryInference(
           continentalCounts[continent] += filteredProb;
           chromCounts[continent] += filteredProb;
         });
-      }
+        
+        // --- Hierarchical Clustering: Only calculate subpop distances for the topContinent ---
+        if (topContinent) {
+            const continentSubpops = continentSubpopsMap[topContinent] || [];
+            if (!subPopDistances[topContinent]) subPopDistances[topContinent] = {};
 
-      for (const continent of continentsToScore) {
-        if (!subPopDistances[continent]) subPopDistances[continent] = {};
-        const continentSubpops = continentSubpopsMap[continent] || [];
+            for (const sp of continentSubpops) {
+                if (subPopDistances[topContinent][sp] === undefined) {
+                    subPopDistances[topContinent][sp] = 0;
+                }
 
-        for (const sp of continentSubpops) {
-          if (subPopDistances[continent][sp] === undefined) {
-            subPopDistances[continent][sp] = 0;
-          }
+                for (const marker of window) {
+                    if (marker.subpop?.toLowerCase() === 'general') continue;
 
-          for (const marker of window) {
-            if (marker.subpop?.toLowerCase() === 'general') continue;
+                    const rsid = (marker.rsid || marker.markerId).toLowerCase();
+                    const genotype = userGenotype[rsid] || marker.genotype;
+                    if (!genotype) continue;
+                    let matchCount = 0;
+                    for (const char of genotype) if ((marker.alleles || []).includes(char)) matchCount++;
 
-            const rsid = (marker.rsid || marker.markerId).toLowerCase();
-            const genotype = userGenotype[rsid] || marker.genotype;
-            if (!genotype) continue;
-            let matchCount = 0;
-            for (const char of genotype) if ((marker.alleles || []).includes(char)) matchCount++;
+                    // Partial match logic: half weight if only one allele matches
+                    const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
+                    if (weightFactor === 0) continue;
 
-            // Partial match logic: half weight if only one allele matches
-            const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
-            if (weightFactor === 0) continue;
+                    const aim = extendedAnchorMap.get(rsid);
+                    let freq = 0.01;
+                    const code = CONTINENT_TO_CODE[topContinent];
 
-            const aim = extendedAnchorMap.get(rsid);
-            let freq = 0.01;
-            const code = CONTINENT_TO_CODE[continent];
+                    if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
+                      freq = aim.subFrequencies[sp];
+                      subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
+                    } else if (isSubpopMatch(marker.subpop, sp)) {
+                      freq = 0.8;
+                      subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
+                    } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
+                      freq = aim.frequencies[code];
+                    } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
+                      freq = marker.frequencies[code];
+                    } else if (matchesContinent(marker.continent, topContinent)) {
+                      freq = 0.5;
+                    }
 
-            if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
-              freq = aim.subFrequencies[sp];
-              subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
-            } else if (isSubpopMatch(marker.subpop, sp)) {
-              freq = 0.8;
-              subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
-            } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
-              freq = aim.frequencies[code];
-            } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
-              freq = marker.frequencies[code];
-            } else if (matchesContinent(marker.continent, continent)) {
-              freq = 0.5;
+                    const f = Math.max(0.001, Math.min(0.999, freq));
+                    const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
+                    const isHeavy = extendedAnchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+                    const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
+                    const weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
+                    
+                    let effectiveSignificance = marker.significance;
+                    if (isNamedPop) effectiveSignificance = 'High';
+                    let significanceWeight = (effectiveSignificance === 'High' ? 3.0 : effectiveSignificance === 'Medium' ? 2.0 : 1.0);
+                    
+                    const regionalMultiplier = isNamedPop ? 4.0 : 1.0;
+                    
+                    const subPopFreqs: number[] = [];
+                    for (const c of continentsToScore) {
+                      const cCode = CONTINENT_TO_CODE[c];
+                      let f = 0.01;
+                      if (aim && aim.frequencies && cCode && aim.frequencies[cCode] !== undefined) f = aim.frequencies[cCode];
+                      else if (marker.frequencies && cCode && marker.frequencies[cCode] !== undefined) f = marker.frequencies[cCode];
+                      subPopFreqs.push(f);
+                    }
+                    const maxF = Math.max(...subPopFreqs);
+                    const minF = Math.min(...subPopFreqs);
+                    const distributionWeight = 1.0 + (maxF - minF) * 6.0;
+
+                    let continentSpecificWeight = 1.0;
+                    const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
+                    if (sortedSubFreqs[0] > 0.65 && sortedSubFreqs[1] < 0.1) {
+                      continentSpecificWeight = 8.0;
+                    }
+
+                    let weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight * weightFactor;
+                    
+                    if (topContinent === 'African') {
+                      const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
+                      const isEastAfr = subpopSearch.includes("east") || subpopSearch.includes("horn") || subpopSearch.includes("ethiopia") || subpopSearch.includes("somali") || subpopSearch.includes("nilotic");
+                      weight *= isEastAfr ? afrEastReduction : afrBaseReduction;
+                    }
+
+                    const error = (matchCount / 2) - f;
+                    const distSq = weight * (error * error);
+                    subPopDistances[topContinent][sp] += distSq;
+                }
             }
-
-            const f = Math.max(0.001, Math.min(0.999, freq));
-            const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
-            const isHeavy = extendedAnchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-            const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
-            const weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
-            
-            let effectiveSignificance = marker.significance;
-            if (isNamedPop) effectiveSignificance = 'High';
-            let significanceWeight = (effectiveSignificance === 'High' ? 3.0 : effectiveSignificance === 'Medium' ? 2.0 : 1.0);
-            
-            const regionalMultiplier = isNamedPop ? 4.0 : 1.0;
-            
-            const subPopFreqs: number[] = [];
-            for (const c of continentsToScore) {
-              const cCode = CONTINENT_TO_CODE[c];
-              let f = 0.01;
-              if (aim && aim.frequencies && cCode && aim.frequencies[cCode] !== undefined) f = aim.frequencies[cCode];
-              else if (marker.frequencies && cCode && marker.frequencies[cCode] !== undefined) f = marker.frequencies[cCode];
-              subPopFreqs.push(f);
-            }
-            const maxF = Math.max(...subPopFreqs);
-            const minF = Math.min(...subPopFreqs);
-            const distributionWeight = 1.0 + (maxF - minF) * 6.0;
-
-            let continentSpecificWeight = 1.0;
-            const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
-            if (sortedSubFreqs[0] > 0.65 && sortedSubFreqs[1] < 0.1) {
-              continentSpecificWeight = 8.0;
-            }
-
-            let weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight * weightFactor;
-            
-            if (continent === 'African') {
-              const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
-              const isEastAfr = subpopSearch.includes("east") || subpopSearch.includes("horn") || subpopSearch.includes("ethiopia") || subpopSearch.includes("somali") || subpopSearch.includes("nilotic");
-              weight *= isEastAfr ? afrEastReduction : afrBaseReduction;
-            }
-
-            const error = (matchCount / 2) - f;
-            const distSq = weight * (error * error);
-            subPopDistances[continent][sp] += distSq;
-          }
         }
       }
     }
@@ -638,7 +669,7 @@ export function runAncestryInference(
       // Prioritization based on lineage
       const BOOST_MAP: Record<string, number> = {
         'African': 5.0,
-        'European': 4.0,
+        'European': 1.0, // Reduced from 4.0 boost to resolve European overscoring bias while maintaining standard line representation
         'Native American': 0.1, // Dampen
         'East Asian': 2.0,
         'South Asian': 2.0,
@@ -795,7 +826,7 @@ export function runAncestryInference(
   };
 }
 
-export async function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null, grafResults?: any, k27Results?: any, comprehensiveResults?: any, sampleId?: string) {
+export async function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null, grafResults?: any, mdlpResults?: any, comprehensiveResults?: any, sampleId?: string) {
   // Ensure global anchors are loaded
   await initializeGlobalAnchors();
 
@@ -853,7 +884,7 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
   }
 
   return {
-    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, k27: k27Results }, sampleId),
+    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, mdlp: mdlpResults }, sampleId),
     onnxClassifierResult: onnxResult || undefined
   };
 }

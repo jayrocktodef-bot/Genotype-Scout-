@@ -67,13 +67,25 @@ function getEnhancedReference(baseReference: any) {
     allInformativeMarkers.add(rsid.toLowerCase());
   }
   
+  // Create a map for quick weight lookup
+  const markerWeightMap: Record<string, number> = {};
+
   // Add All Ancestry Markers
   const ancestryMarkers = getAncestryMarkers();
   for (let i = 0; i < ancestryMarkers.length; i++) {
     const markerDef = ancestryMarkers[i];
     if (!markerDef.rsid) continue;
+    
+    // Regional boost logic
+    let baseWeight = markerDef.weight || 1.0;
+    if (markerDef.region && markerDef.region !== "Unknown") {
+        baseWeight *= 8.0;
+    }
     const cleanRsid = markerDef.rsid.split('_')[0].toLowerCase();
     allInformativeMarkers.add(cleanRsid);
+    
+    // Store weight
+    markerWeightMap[cleanRsid] = baseWeight;
 
     if ((markerDef as any).frequencies) {
       const rsid = markerDef.rsid.split('_')[0];
@@ -133,7 +145,7 @@ function getEnhancedReference(baseReference: any) {
 
   globalEnhancedRef = enhancedRef;
   globalInformativeMarkers = allInformativeMarkers;
-  return { enhancedRef, allInformativeMarkers };
+  return { enhancedRef, allInformativeMarkers, markerWeightMap };
 }
 
 export function calculateProAncestry(
@@ -147,7 +159,7 @@ export function calculateProAncestry(
   }
 
   // 2. Build/Get enhanced reference
-  const { enhancedRef, allInformativeMarkers } = getEnhancedReference(referenceData);
+  const { enhancedRef, allInformativeMarkers, markerWeightMap } = getEnhancedReference(referenceData);
 
   // 3. Filter user SNPs (Optimized loop)
   const informativeRsids: string[] = [];
@@ -193,8 +205,8 @@ export function calculateProAncestry(
 
     markersUsed++;
 
-    let weight = 1.0;
-    if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = 10.0;
+    let weight = markerWeightMap[rsid] || 1.0;
+    if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = Math.max(weight, 10.0);
     if (commercialSet.has(rsid)) {
         commercialAimsDetected++;
         weight = Math.max(weight, 15.0);

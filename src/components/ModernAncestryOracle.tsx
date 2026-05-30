@@ -6,7 +6,6 @@ import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
 import { ChromosomePainter, ChromosomePainterRef } from './ChromosomePainter';
 import { workerPoolEngine } from '../engines/ancestry/workerPoolEngine';
 import { POPULATION_MAP } from '../utils/populationMapper';
-import masterAims from '../data/master_aims_normalized.json';
 import jsPDF from 'jspdf';
 
 export const ModernAncestryOracle = memo(({ 

@@ -26,6 +26,13 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
     return <div className="text-slate-400 p-8 text-center">Processing genomic oracle...</div>;
   }
 
+  // Check if a subpopulation matches a broad continental macro group
+  const isContinentalMatch = (name: string) => {
+    if (!name) return false;
+    const n = name.toUpperCase();
+    return n.includes('CONTINENTAL') || n.includes('SUPER POPULATION') || n.includes('(AFR)') || n.includes('(EUR)') || n.includes('(EAS)') || n.includes('(SAS)') || n.includes('(AMR)');
+  };
+
   // Determine a classification label based on the shortest distance
   const getProximityLabel = (distance: number) => {
     if (distance < 0.12) return { text: 'Exceptional Genetic Affinity', color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' };
@@ -124,7 +131,9 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
       {modelType === 'euclidean' && (
         <div className="p-6 bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 rounded-2xl flex flex-col sm:flex-row items-stretch justify-between gap-6 shadow-inner">
           <div className="space-y-2">
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest animate-pulse">Closest Genomic Subpopulation</p>
+            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest animate-pulse">
+              {isContinentalMatch(results.topMatch) ? 'Continental / Super Population Match' : 'Closest Genomic Subpopulation'}
+            </p>
             <h1 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400 tracking-tight">
               {results.topMatch !== 'Unknown' ? results.topMatch : 'Establishing genotype...'}
             </h1>
@@ -135,12 +144,14 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
           
           {results.topMatch !== 'Unknown' && (
             <div className="flex flex-col justify-center items-start sm:items-end gap-2 sm:self-center">
-              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Euclidean Distance Fit</span>
+              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                {isContinentalMatch(results.topMatch) ? 'Continental Classification' : 'Euclidean Distance Fit'}
+              </span>
               <div className="text-2xl font-black font-mono text-teal-400">
                 d = {Number(topMatchDistance ?? 0).toFixed(4)}
               </div>
-              <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-md border ${topMatchLabel.color}`}>
-                {topMatchLabel.text}
+              <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-md border ${isContinentalMatch(results.topMatch) ? 'text-teal-400 bg-teal-500/10 border-teal-500/20' : topMatchLabel.color}`}>
+                {isContinentalMatch(results.topMatch) ? 'Continental / Super Population' : topMatchLabel.text}
               </span>
             </div>
           )}
@@ -176,6 +187,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               <div className="space-y-4">
                 {results.breakdown.slice(0, 8).map((item, idx) => {
                   const label = getProximityLabel(item.distance);
+                  const isContinental = isContinentalMatch(item?.subpop);
                   return (
                     <div key={item.subpop} className="space-y-1.5 p-4 rounded-xl bg-white/[0.01] hover:bg-white/[0.02] border border-white/[0.02] transition-colors">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-xs font-bold">
@@ -184,10 +196,10 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                           {item?.subpop}
                         </span>
                         <div className="flex items-center gap-3 font-mono">
-                <span className="text-teal-400 text-xs">d = {Number(item?.distance ?? 0).toFixed(4)}</span>
+                          <span className="text-teal-400 text-xs">d = {Number(item?.distance ?? 0).toFixed(4)}</span>
                           <span className="text-[10px] text-slate-500">({item?.markersCompared ?? 0} AIMs mapped)</span>
-                          <span className={`text-[9px] px-1.5 py-0.5 rounded border leading-none scale-95 ${label.color}`}>
-                            {label.text.split(' ')[0]} Match
+                          <span className={`text-[9px] px-1.5 py-0.5 rounded border leading-none scale-95 ${isContinental ? 'text-teal-400 bg-teal-500/10 border-teal-500/20' : label.color}`}>
+                            {isContinental ? 'Continental Match' : `${label.text.split(' ')[0]} Match`}
                           </span>
                         </div>
                       </div>

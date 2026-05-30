@@ -1,0 +1,4133 @@
+{
+  "rs1129038": {
+    "rsid": "rs1129038",
+    "chromosome": "15",
+    "position": 28111713,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.9658,
+      "EUR": 0.4286,
+      "EAS": 0.999,
+      "AMR": 0.6873,
+      "SAS": 0.6018,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.9219,
+      "African Ancestry SW US": 0.8607,
+      "Bengali": 0.9012,
+      "Chinese Dai": 1,
+      "NW European": 0.7677,
+      "Han Chinese": 1,
+      "Southern Han": 0.9952,
+      "Colombian": 0.2713,
+      "Esan": 1,
+      "Finnish": 0.096,
+      "British": 0.1813,
+      "Gujarati Indian": 0.0825,
+      "Gambian": 0.9779,
+      "Iberian": 0.6776,
+      "Indian Telugu": 0.9559,
+      "Japanese": 1,
+      "Kinh Vietnamese": 1,
+      "Luhya": 1,
+      "Mende": 1,
+      "Mexican Ancestry": 0.8203,
+      "Peruvian": 0.8882,
+      "Punjabi": 0.099,
+      "Puerto Rican": 0.7692,
+      "Sri Lankan Tamil": 0.9706,
+      "Tuscan": 0.4206,
+      "Yoruba": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "A variant common in West African ancestry and linked to physiological adaptation.",
+    "ref": "C",
+    "alt": "T",
+    "gene": "SLC14A2",
+    "trait": "African Ancestry Marker"
+  },
+  "rs1042602": {
+    "rsid": "rs1042602",
+    "chromosome": "11",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.31,
+      "EAS": 0.017,
+      "AMR": 0.154,
+      "SAS": 0.183
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "A well-characterized missense variant (Gly323Asp) in the tyrosinase (TYR) gene. The A allele is associated with lighter skin pigmentation and is most prominent in European populations.",
+    "position": 88911696,
+    "gene": "TYR",
+    "trait": "Ancestry"
+  },
+  "rs16891982": {
+    "rsid": "rs16891982",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.98,
+      "EAS": 0.01,
+      "AMR": 0.15,
+      "SAS": 0.3,
+      "MENA": 0.6,
+      "OCE": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "SLC45A2",
+    "trait": "Ancestry",
+    "description": "The 'G' allele is predominantly found in European populations and is heavily involved in light skin pigmentation.",
+    "significance": "High"
+  },
+  "rs1805007": {
+    "rsid": "rs1805007",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "European Red Hair",
+    "description": "Associated with red hair and fair skin in European populations."
+  },
+  "rs1805008": {
+    "rsid": "rs1805008",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "European Red Hair",
+    "description": "Associated with red hair and fair skin in European populations."
+  },
+  "rs1805009": {
+    "rsid": "rs1805009",
+    "chromosome": "16",
+    "position": 89986546,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.025,
+      "EAS": 0,
+      "AMR": 0.001,
+      "SAS": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "The Asp294His mutation in MC1R is a moderate-to-strong red hair and fair skin allele. Found almost exclusively in European populations, it significantly contributes to UV-induced pigmentation phenotype.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "MC1R",
+    "trait": "Ancestry"
+  },
+  "rs12203592": {
+    "rsid": "rs12203592",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.04,
+      "AMR": 0.08,
+      "EAS": 0.04,
+      "EUR": 0.88,
+      "MENA": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "IRF4",
+    "trait": "Eye/Hair Color",
+    "description": "Ancestry Informative Marker for European populations."
+  },
+  "rs2228479": {
+    "rsid": "rs2228479",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.01,
+      "EAS": 0,
+      "EUR": 0.35,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "Scandinavian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scandinavian populations."
+  },
+  "rs11547464": {
+    "rsid": "rs11547464",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "European Red Hair",
+    "description": "Associated with red hair and fair skin in European populations."
+  },
+  "rs1126809": {
+    "rsid": "rs1126809",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.35,
+      "SAS": 0.01,
+      "MENA": 0.15
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "TYR",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "description": "An informative marker for Ashkenazi Jewish ancestry, reflecting the historical bottleneck and endogamy of the population."
+  },
+  "rs12821256": {
+    "rsid": "rs12821256",
+    "chromosome": "12",
+    "position": 87830803,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.15,
+      "EAS": 0,
+      "AMR": 0.024,
+      "SAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "A well-known regulatory variant in the KITLG gene (hair color modulator). The C allele represents the classic blond hair variant in European populations and is extremely rare outside Europe.",
+    "ref": "T",
+    "alt": "C",
+    "gene": "KITLG",
+    "trait": "Ancestry"
+  },
+  "rs1927914": {
+    "rsid": "rs1927914",
+    "chromosome": "9",
+    "position": 117702447,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4844,
+      "EUR": 0.4332,
+      "EAS": 0.5679,
+      "AMR": 0.5874,
+      "SAS": 0.4966,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.8125,
+      "African Ancestry SW US": 0.3361,
+      "Bengali": 0.3953,
+      "Chinese Dai": 0.6344,
+      "NW European": 0.6566,
+      "Han Chinese": 0.5825,
+      "Southern Han": 0.6095,
+      "Colombian": 0.633,
+      "Esan": 0.1364,
+      "Finnish": 0.601,
+      "British": 0.3242,
+      "Gujarati Indian": 0.665,
+      "Gambian": 0.9115,
+      "Iberian": 0.2757,
+      "Indian Telugu": 0.3627,
+      "Japanese": 0.3462,
+      "Kinh Vietnamese": 0.6667,
+      "Luhya": 0.2172,
+      "Mende": 0.1118,
+      "Mexican Ancestry": 0.6719,
+      "Peruvian": 0.4294,
+      "Punjabi": 0.6042,
+      "Puerto Rican": 0.6154,
+      "Sri Lankan Tamil": 0.4559,
+      "Tuscan": 0.3084,
+      "Yoruba": 0.8657
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Kidd-55 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2104511": {
+    "rsid": "rs2104511",
+    "chromosome": "10",
+    "position": 127391382,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.5434,
+      "EUR": 0.3524,
+      "EAS": 0.6556,
+      "AMR": 0.7202,
+      "SAS": 0.5606,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.6927,
+      "African Ancestry SW US": 0.2541,
+      "Bengali": 0.3198,
+      "Chinese Dai": 0.7796,
+      "NW European": 0.6869,
+      "Han Chinese": 0.7039,
+      "Southern Han": 0.7429,
+      "Colombian": 0.8191,
+      "Esan": 0.2374,
+      "Finnish": 0.298,
+      "British": 0.2912,
+      "Gujarati Indian": 0.7184,
+      "Gambian": 0.7301,
+      "Iberian": 0.2757,
+      "Indian Telugu": 0.7745,
+      "Japanese": 0.774,
+      "Kinh Vietnamese": 0.2778,
+      "Luhya": 0.8131,
+      "Mende": 0.2941,
+      "Mexican Ancestry": 0.8438,
+      "Peruvian": 0.9294,
+      "Punjabi": 0.3333,
+      "Puerto Rican": 0.2885,
+      "Sri Lankan Tamil": 0.6569,
+      "Tuscan": 0.2103,
+      "Yoruba": 0.7824
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Kidd-55 genomic panel, facilitating regional substructure refinement.",
+    "ref": "C",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2315024": {
+    "rsid": "rs2315024",
+    "chromosome": "19",
+    "position": 19313008,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.604,
+      "EUR": 0.365,
+      "EAS": 0.4841,
+      "AMR": 0.5268,
+      "SAS": 0.5368,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.5885,
+      "African Ancestry SW US": 0.6311,
+      "Bengali": 0.5058,
+      "Chinese Dai": 0.328,
+      "NW European": 0.6313,
+      "Han Chinese": 0.7379,
+      "Southern Han": 0.3905,
+      "Colombian": 0.5106,
+      "Esan": 0.3838,
+      "Finnish": 0.1919,
+      "British": 0.3242,
+      "Gujarati Indian": 0.5243,
+      "Gambian": 0.6681,
+      "Iberian": 0.3551,
+      "Indian Telugu": 0.5392,
+      "Japanese": 0.7115,
+      "Kinh Vietnamese": 0.2525,
+      "Luhya": 0.697,
+      "Mende": 0.6529,
+      "Mexican Ancestry": 0.4609,
+      "Peruvian": 0.5588,
+      "Punjabi": 0.6198,
+      "Puerto Rican": 0.5769,
+      "Sri Lankan Tamil": 0.4951,
+      "Tuscan": 0.3224,
+      "Yoruba": 0.6065
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Kidd-55 genomic panel, facilitating regional substructure refinement.",
+    "ref": "T",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2395858": {
+    "rsid": "rs2395858",
+    "chromosome": "7",
+    "position": 107323988,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.9947,
+      "EUR": 0.281,
+      "EAS": 1,
+      "AMR": 0.9327,
+      "SAS": 0.6002,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.9896,
+      "African Ancestry SW US": 0.9836,
+      "Bengali": 0.0058,
+      "Chinese Dai": 1,
+      "NW European": 0.1162,
+      "Han Chinese": 1,
+      "Southern Han": 1,
+      "Colombian": 0.9096,
+      "Esan": 1,
+      "Finnish": 0.1515,
+      "British": 0.1044,
+      "Gujarati Indian": 0.9854,
+      "Gambian": 1,
+      "Iberian": 0.0935,
+      "Indian Telugu": 1,
+      "Japanese": 1,
+      "Kinh Vietnamese": 1,
+      "Luhya": 0.9899,
+      "Mende": 1,
+      "Mexican Ancestry": 0.9219,
+      "Peruvian": 0.9765,
+      "Punjabi": 1,
+      "Puerto Rican": 0.9231,
+      "Sri Lankan Tamil": 0.0098,
+      "Tuscan": 0.9393,
+      "Yoruba": 1
+    },
+    "deepFrequencies": {},
+    "weight": 8,
+    "description": "Ancestry Informative Marker (AIM) from the Kidd-55 genomic panel, facilitating regional substructure refinement.",
+    "ref": "T",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs6133167": {
+    "rsid": "rs6133167",
+    "chromosome": "20",
+    "position": 4840282,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4451,
+      "EUR": 0.7052,
+      "EAS": 0.6191,
+      "AMR": 0.3797,
+      "SAS": 0.528,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.2188,
+      "African Ancestry SW US": 0.2459,
+      "Bengali": 0.25,
+      "Chinese Dai": 0.629,
+      "NW European": 0.8586,
+      "Han Chinese": 0.7282,
+      "Southern Han": 0.6857,
+      "Colombian": 0.3032,
+      "Esan": 0.2273,
+      "Finnish": 0.2222,
+      "British": 0.8516,
+      "Gujarati Indian": 0.7136,
+      "Gambian": 0.2655,
+      "Iberian": 0.771,
+      "Indian Telugu": 0.7353,
+      "Japanese": 0.6635,
+      "Kinh Vietnamese": 0.3889,
+      "Luhya": 0.702,
+      "Mende": 0.7294,
+      "Mexican Ancestry": 0.2734,
+      "Peruvian": 0.5529,
+      "Punjabi": 0.2448,
+      "Puerto Rican": 0.3894,
+      "Sri Lankan Tamil": 0.6961,
+      "Tuscan": 0.8224,
+      "Yoruba": 0.7269
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Kidd-55 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs7495174": {
+    "rsid": "rs7495174",
+    "chromosome": "15",
+    "position": 28099092,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4341,
+      "EUR": 0.654,
+      "EAS": 0.4643,
+      "AMR": 0.3501,
+      "SAS": 0.5661,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.125,
+      "African Ancestry SW US": 0.123,
+      "Bengali": 0.7733,
+      "Chinese Dai": 0.586,
+      "NW European": 0.9394,
+      "Han Chinese": 0.3544,
+      "Southern Han": 0.3952,
+      "Colombian": 0.883,
+      "Esan": 0.8586,
+      "Finnish": 0.9949,
+      "British": 0.9945,
+      "Gujarati Indian": 0.301,
+      "Gambian": 0.885,
+      "Iberian": 0.1776,
+      "Indian Telugu": 0.8088,
+      "Japanese": 0.6779,
+      "Kinh Vietnamese": 0.3081,
+      "Luhya": 0.7828,
+      "Mende": 0.0882,
+      "Mexican Ancestry": 0.1953,
+      "Peruvian": 0.1588,
+      "Punjabi": 0.1927,
+      "Puerto Rican": 0.1635,
+      "Sri Lankan Tamil": 0.7549,
+      "Tuscan": 0.1636,
+      "Yoruba": 0.1759
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Pigmentary lineage modifier variant in the OCA2 gene.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "OCA2",
+    "trait": "Pimentation Variant"
+  },
+  "rs8038629": {
+    "rsid": "rs8038629",
+    "chromosome": "15",
+    "position": 94662311,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.5563,
+      "EUR": 0.4439,
+      "EAS": 0.5156,
+      "AMR": 0.5105,
+      "SAS": 0.5336,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.7917,
+      "African Ancestry SW US": 0.2623,
+      "Bengali": 0.6686,
+      "Chinese Dai": 0.7097,
+      "NW European": 0.3283,
+      "Han Chinese": 0.2476,
+      "Southern Han": 0.7,
+      "Colombian": 0.367,
+      "Esan": 0.2778,
+      "Finnish": 0.6364,
+      "British": 0.6099,
+      "Gujarati Indian": 0.6456,
+      "Gambian": 0.8009,
+      "Iberian": 0.3411,
+      "Indian Telugu": 0.3382,
+      "Japanese": 0.274,
+      "Kinh Vietnamese": 0.6465,
+      "Luhya": 0.803,
+      "Mende": 0.2412,
+      "Mexican Ancestry": 0.2734,
+      "Peruvian": 0.6706,
+      "Punjabi": 0.6823,
+      "Puerto Rican": 0.7308,
+      "Sri Lankan Tamil": 0.3333,
+      "Tuscan": 0.3037,
+      "Yoruba": 0.7176
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Kidd-55 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs10129215": {
+    "rsid": "rs10129215",
+    "chromosome": "14",
+    "position": 40645549,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.6598,
+      "EUR": 0.9991,
+      "EAS": 0.8018,
+      "AMR": 0.7489,
+      "SAS": 0.801,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.849,
+      "African Ancestry SW US": 0.9016,
+      "Bengali": 1,
+      "Chinese Dai": 0.9946,
+      "NW European": 1,
+      "Han Chinese": 0.0146,
+      "Southern Han": 1,
+      "Colombian": 0.016,
+      "Esan": 0.1313,
+      "Finnish": 1,
+      "British": 1,
+      "Gujarati Indian": 1,
+      "Gambian": 0.8805,
+      "Iberian": 1,
+      "Indian Telugu": 0.0049,
+      "Japanese": 1,
+      "Kinh Vietnamese": 1,
+      "Luhya": 0.8333,
+      "Mende": 0.8471,
+      "Mexican Ancestry": 1,
+      "Peruvian": 0.9941,
+      "Punjabi": 1,
+      "Puerto Rican": 0.9856,
+      "Sri Lankan Tamil": 1,
+      "Tuscan": 0.9953,
+      "Yoruba": 0.1759
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs11083324": {
+    "rsid": "rs11083324",
+    "chromosome": "18",
+    "position": 29155446,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.3331,
+      "EUR": 0.736,
+      "EAS": 0.4099,
+      "AMR": 0.3125,
+      "SAS": 0.4203,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.0729,
+      "African Ancestry SW US": 0.0738,
+      "Bengali": 0.0698,
+      "Chinese Dai": 0.9785,
+      "NW European": 0.1818,
+      "Han Chinese": 0.0146,
+      "Southern Han": 0.0333,
+      "Colombian": 0.1809,
+      "Esan": 0.9394,
+      "Finnish": 0.8333,
+      "British": 0.8846,
+      "Gujarati Indian": 0.932,
+      "Gambian": 0.0973,
+      "Iberian": 0.8925,
+      "Indian Telugu": 0.1078,
+      "Japanese": 0.0385,
+      "Kinh Vietnamese": 0.9848,
+      "Luhya": 0.1162,
+      "Mende": 0.1059,
+      "Mexican Ancestry": 0.8125,
+      "Peruvian": 0.1941,
+      "Punjabi": 0.1146,
+      "Puerto Rican": 0.0625,
+      "Sri Lankan Tamil": 0.8775,
+      "Tuscan": 0.8879,
+      "Yoruba": 0.9259
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs11646276": {
+    "rsid": "rs11646276",
+    "chromosome": "16",
+    "position": 26815192,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.3636,
+      "EUR": 0.745,
+      "EAS": 0.4338,
+      "AMR": 0.4883,
+      "SAS": 0.5412,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.2188,
+      "African Ancestry SW US": 0.1721,
+      "Bengali": 0.7965,
+      "Chinese Dai": 0.4516,
+      "NW European": 0.7273,
+      "Han Chinese": 0.2913,
+      "Southern Han": 0.6571,
+      "Colombian": 0.75,
+      "Esan": 0.1919,
+      "Finnish": 0.8182,
+      "British": 0.7637,
+      "Gujarati Indian": 0.1262,
+      "Gambian": 0.7566,
+      "Iberian": 0.7103,
+      "Indian Telugu": 0.7745,
+      "Japanese": 0.2788,
+      "Kinh Vietnamese": 0.4899,
+      "Luhya": 0.2071,
+      "Mende": 0.1882,
+      "Mexican Ancestry": 0.7266,
+      "Peruvian": 0.1882,
+      "Punjabi": 0.2292,
+      "Puerto Rican": 0.2885,
+      "Sri Lankan Tamil": 0.7794,
+      "Tuscan": 0.7056,
+      "Yoruba": 0.8102
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs12048995": {
+    "rsid": "rs12048995",
+    "chromosome": "1",
+    "position": 245863548,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.5396,
+      "EUR": 0.7479,
+      "EAS": 0.4598,
+      "AMR": 0.6418,
+      "SAS": 0.5746,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.8073,
+      "African Ancestry SW US": 0.8197,
+      "Bengali": 0.75,
+      "Chinese Dai": 0.6022,
+      "NW European": 0.9343,
+      "Han Chinese": 0.5097,
+      "Southern Han": 0.4571,
+      "Colombian": 0.8617,
+      "Esan": 0.7273,
+      "Finnish": 0.8939,
+      "British": 0.8736,
+      "Gujarati Indian": 0.7767,
+      "Gambian": 0.7699,
+      "Iberian": 0.1121,
+      "Indian Telugu": 0.299,
+      "Japanese": 0.3462,
+      "Kinh Vietnamese": 0.3838,
+      "Luhya": 0.2071,
+      "Mende": 0.2235,
+      "Mexican Ancestry": 0.2813,
+      "Peruvian": 0.6118,
+      "Punjabi": 0.8021,
+      "Puerto Rican": 0.8125,
+      "Sri Lankan Tamil": 0.2451,
+      "Tuscan": 0.9252,
+      "Yoruba": 0.2222
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs12521575": {
+    "rsid": "rs12521575",
+    "chromosome": "5",
+    "position": 18152068,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.4965,
+      "EUR": 0.3261,
+      "EAS": 0.5642,
+      "AMR": 0.4245,
+      "SAS": 0.4605,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.3281,
+      "African Ancestry SW US": 0.6475,
+      "Bengali": 0.7849,
+      "Chinese Dai": 0.6022,
+      "NW European": 0.1616,
+      "Han Chinese": 0.5971,
+      "Southern Han": 0.6048,
+      "Colombian": 0.2979,
+      "Esan": 0.4343,
+      "Finnish": 0.7576,
+      "British": 0.2582,
+      "Gujarati Indian": 0.2816,
+      "Gambian": 0.3805,
+      "Iberian": 0.215,
+      "Indian Telugu": 0.7696,
+      "Japanese": 0.5673,
+      "Kinh Vietnamese": 0.4495,
+      "Luhya": 0.7071,
+      "Mende": 0.5706,
+      "Mexican Ancestry": 0.7188,
+      "Peruvian": 0.4412,
+      "Punjabi": 0.1771,
+      "Puerto Rican": 0.2404,
+      "Sri Lankan Tamil": 0.2892,
+      "Tuscan": 0.2383,
+      "Yoruba": 0.4074
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs12543329": {
+    "rsid": "rs12543329",
+    "chromosome": "8",
+    "position": 104519521,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.602,
+      "EUR": 0.2195,
+      "EAS": 0.6311,
+      "AMR": 0.53,
+      "SAS": 0.3099,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.6927,
+      "African Ancestry SW US": 0.6393,
+      "Bengali": 0.2093,
+      "Chinese Dai": 0.7151,
+      "NW European": 0.1919,
+      "Han Chinese": 0.2718,
+      "Southern Han": 0.7429,
+      "Colombian": 0.8298,
+      "Esan": 0.399,
+      "Finnish": 0.2576,
+      "British": 0.2088,
+      "Gujarati Indian": 0.1942,
+      "Gambian": 0.677,
+      "Iberian": 0.2103,
+      "Indian Telugu": 0.1618,
+      "Japanese": 0.6683,
+      "Kinh Vietnamese": 0.7576,
+      "Luhya": 0.7475,
+      "Mende": 0.7529,
+      "Mexican Ancestry": 0.75,
+      "Peruvian": 0.2471,
+      "Punjabi": 0.151,
+      "Puerto Rican": 0.2933,
+      "Sri Lankan Tamil": 0.8333,
+      "Tuscan": 0.229,
+      "Yoruba": 0.3056
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "T",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs13115450": {
+    "rsid": "rs13115450",
+    "chromosome": "4",
+    "position": 62476199,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.6848,
+      "EUR": 0.3697,
+      "EAS": 0.6143,
+      "AMR": 0.634,
+      "SAS": 0.5084,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.901,
+      "African Ancestry SW US": 0.8934,
+      "Bengali": 0.6744,
+      "Chinese Dai": 0.9946,
+      "NW European": 0.2778,
+      "Han Chinese": 0.0243,
+      "Southern Han": 0.9905,
+      "Colombian": 0.8138,
+      "Esan": 0.9444,
+      "Finnish": 0.2424,
+      "British": 0.7253,
+      "Gujarati Indian": 0.6214,
+      "Gambian": 0.9469,
+      "Iberian": 0.2897,
+      "Indian Telugu": 0.3186,
+      "Japanese": 0.0721,
+      "Kinh Vietnamese": 0.9899,
+      "Luhya": 0.0707,
+      "Mende": 0.0647,
+      "Mexican Ancestry": 0.1641,
+      "Peruvian": 0.8706,
+      "Punjabi": 0.2656,
+      "Puerto Rican": 0.6875,
+      "Sri Lankan Tamil": 0.6618,
+      "Tuscan": 0.3131,
+      "Yoruba": 0.9722
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs1380629": {
+    "rsid": "rs1380629",
+    "chromosome": "4",
+    "position": 136771003,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.5719,
+      "EUR": 0.3068,
+      "EAS": 0.5167,
+      "AMR": 0.7106,
+      "SAS": 0.6915,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.0313,
+      "African Ancestry SW US": 0.0574,
+      "Bengali": 0.7558,
+      "Chinese Dai": 0.5753,
+      "NW European": 0.1313,
+      "Han Chinese": 0.4612,
+      "Southern Han": 0.5714,
+      "Colombian": 0.8564,
+      "Esan": 0.0101,
+      "Finnish": 0.197,
+      "British": 0.1868,
+      "Gujarati Indian": 0.165,
+      "Gambian": 0.9823,
+      "Iberian": 0.1495,
+      "Indian Telugu": 0.8431,
+      "Japanese": 0.4808,
+      "Kinh Vietnamese": 0.4949,
+      "Luhya": 0.9747,
+      "Mende": 0.9706,
+      "Mexican Ancestry": 0.7109,
+      "Peruvian": 0.4,
+      "Punjabi": 0.8698,
+      "Puerto Rican": 0.875,
+      "Sri Lankan Tamil": 0.8235,
+      "Tuscan": 0.8692,
+      "Yoruba": 0.9769
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs1418385": {
+    "rsid": "rs1418385",
+    "chromosome": "9",
+    "position": 6226295,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.5084,
+      "EUR": 0.5393,
+      "EAS": 0.4869,
+      "AMR": 0.4693,
+      "SAS": 0.4905,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.4531,
+      "African Ancestry SW US": 0.4344,
+      "Bengali": 0.3663,
+      "Chinese Dai": 0.4677,
+      "NW European": 0.7121,
+      "Han Chinese": 0.5291,
+      "Southern Han": 0.4476,
+      "Colombian": 0.6809,
+      "Esan": 0.6566,
+      "Finnish": 0.2828,
+      "British": 0.6923,
+      "Gujarati Indian": 0.3204,
+      "Gambian": 0.6195,
+      "Iberian": 0.8037,
+      "Indian Telugu": 0.3039,
+      "Japanese": 0.5,
+      "Kinh Vietnamese": 0.4899,
+      "Luhya": 0.3788,
+      "Mende": 0.3824,
+      "Mexican Ancestry": 0.2109,
+      "Peruvian": 0.7353,
+      "Punjabi": 0.7656,
+      "Puerto Rican": 0.25,
+      "Sri Lankan Tamil": 0.6961,
+      "Tuscan": 0.2056,
+      "Yoruba": 0.6343
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "C",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs1459424": {
+    "rsid": "rs1459424",
+    "chromosome": "4",
+    "position": 66219912,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 1,
+      "EUR": 0.802,
+      "EAS": 1,
+      "AMR": 0.9936,
+      "SAS": 1,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 1,
+      "African Ancestry SW US": 1,
+      "Bengali": 1,
+      "Chinese Dai": 1,
+      "NW European": 1,
+      "Han Chinese": 1,
+      "Southern Han": 1,
+      "Colombian": 0.9947,
+      "Esan": 1,
+      "Finnish": 0.0101,
+      "British": 1,
+      "Gujarati Indian": 1,
+      "Gambian": 1,
+      "Iberian": 1,
+      "Indian Telugu": 1,
+      "Japanese": 1,
+      "Kinh Vietnamese": 1,
+      "Luhya": 1,
+      "Mende": 1,
+      "Mexican Ancestry": 1,
+      "Peruvian": 0.9941,
+      "Punjabi": 1,
+      "Puerto Rican": 0.9856,
+      "Sri Lankan Tamil": 1,
+      "Tuscan": 1,
+      "Yoruba": 1
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs1600277": {
+    "rsid": "rs1600277",
+    "chromosome": "5",
+    "position": 101759614,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.5195,
+      "EUR": 0.5406,
+      "EAS": 0.467,
+      "AMR": 0.4797,
+      "SAS": 0.5022,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.5313,
+      "African Ancestry SW US": 0.5902,
+      "Bengali": 0.5291,
+      "Chinese Dai": 0.3226,
+      "NW European": 0.6364,
+      "Han Chinese": 0.335,
+      "Southern Han": 0.6905,
+      "Colombian": 0.484,
+      "Esan": 0.6061,
+      "Finnish": 0.4343,
+      "British": 0.3846,
+      "Gujarati Indian": 0.4417,
+      "Gambian": 0.5044,
+      "Iberian": 0.6262,
+      "Indian Telugu": 0.6078,
+      "Japanese": 0.3558,
+      "Kinh Vietnamese": 0.6313,
+      "Luhya": 0.4444,
+      "Mende": 0.4,
+      "Mexican Ancestry": 0.5,
+      "Peruvian": 0.3529,
+      "Punjabi": 0.5156,
+      "Puerto Rican": 0.5817,
+      "Sri Lankan Tamil": 0.4167,
+      "Tuscan": 0.6215,
+      "Yoruba": 0.5602
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "T",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs1617757": {
+    "rsid": "rs1617757",
+    "chromosome": "8",
+    "position": 16659628,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.6861,
+      "EUR": 0.2518,
+      "EAS": 0.5915,
+      "AMR": 0.4576,
+      "SAS": 0.5493,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.9427,
+      "African Ancestry SW US": 0.0738,
+      "Bengali": 0.7965,
+      "Chinese Dai": 0.7043,
+      "NW European": 0.9646,
+      "Han Chinese": 0.5728,
+      "Southern Han": 0.6429,
+      "Colombian": 0.7872,
+      "Esan": 0.0808,
+      "Finnish": 0.0758,
+      "British": 0.0879,
+      "Gujarati Indian": 0.1699,
+      "Gambian": 0.9469,
+      "Iberian": 0.0748,
+      "Indian Telugu": 0.7451,
+      "Japanese": 0.3606,
+      "Kinh Vietnamese": 0.6768,
+      "Luhya": 0.8889,
+      "Mende": 0.9529,
+      "Mexican Ancestry": 0.3672,
+      "Peruvian": 0.5412,
+      "Punjabi": 0.8438,
+      "Puerto Rican": 0.1346,
+      "Sri Lankan Tamil": 0.1912,
+      "Tuscan": 0.0561,
+      "Yoruba": 0.9167
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs167527": {
+    "rsid": "rs167527",
+    "chromosome": "5",
+    "position": 3136115,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.6445,
+      "EUR": 0.413,
+      "EAS": 0.6543,
+      "AMR": 0.6859,
+      "SAS": 0.4197,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.8281,
+      "African Ancestry SW US": 0.8279,
+      "Bengali": 0.1279,
+      "Chinese Dai": 0.4839,
+      "NW European": 0.9343,
+      "Han Chinese": 0.7184,
+      "Southern Han": 0.6095,
+      "Colombian": 0.9415,
+      "Esan": 0.7677,
+      "Finnish": 0.0657,
+      "British": 0.0604,
+      "Gujarati Indian": 0.9563,
+      "Gambian": 0.1327,
+      "Iberian": 0.9439,
+      "Indian Telugu": 0.049,
+      "Japanese": 0.8029,
+      "Kinh Vietnamese": 0.6566,
+      "Luhya": 0.8434,
+      "Mende": 0.8941,
+      "Mexican Ancestry": 0.0391,
+      "Peruvian": 0.8353,
+      "Punjabi": 0.0729,
+      "Puerto Rican": 0.9279,
+      "Sri Lankan Tamil": 0.8922,
+      "Tuscan": 0.0607,
+      "Yoruba": 0.2176
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "C",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs17132398": {
+    "rsid": "rs17132398",
+    "chromosome": "4",
+    "position": 2282183,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.6409,
+      "EUR": 0.8003,
+      "EAS": 0.5741,
+      "AMR": 0.7014,
+      "SAS": 0.5849,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.8229,
+      "African Ancestry SW US": 0.8852,
+      "Bengali": 0.8372,
+      "Chinese Dai": 0.1882,
+      "NW European": 0.9949,
+      "Han Chinese": 0.8641,
+      "Southern Han": 0.1714,
+      "Colombian": 0.9149,
+      "Esan": 0.9091,
+      "Finnish": 1,
+      "British": 0.011,
+      "Gujarati Indian": 0.8592,
+      "Gambian": 0.1504,
+      "Iberian": 0.9953,
+      "Indian Telugu": 0.1618,
+      "Japanese": 0.7933,
+      "Kinh Vietnamese": 0.8535,
+      "Luhya": 0.7576,
+      "Mende": 0.8176,
+      "Mexican Ancestry": 0.9531,
+      "Peruvian": 0.8941,
+      "Punjabi": 0.8802,
+      "Puerto Rican": 0.0433,
+      "Sri Lankan Tamil": 0.1863,
+      "Tuscan": 1,
+      "Yoruba": 0.1435
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "C",
+    "alt": "T",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs17205166": {
+    "rsid": "rs17205166",
+    "chromosome": "3",
+    "position": 175352875,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.5101,
+      "EUR": 0.4599,
+      "EAS": 0.5514,
+      "AMR": 0.5336,
+      "SAS": 0.4849,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.4427,
+      "African Ancestry SW US": 0.5328,
+      "Bengali": 0.4826,
+      "Chinese Dai": 0.3226,
+      "NW European": 0.6111,
+      "Han Chinese": 0.3592,
+      "Southern Han": 0.6762,
+      "Colombian": 0.4043,
+      "Esan": 0.4646,
+      "Finnish": 0.3232,
+      "British": 0.3791,
+      "Gujarati Indian": 0.4709,
+      "Gambian": 0.4513,
+      "Iberian": 0.4159,
+      "Indian Telugu": 0.5294,
+      "Japanese": 0.7019,
+      "Kinh Vietnamese": 0.697,
+      "Luhya": 0.5101,
+      "Mende": 0.5765,
+      "Mexican Ancestry": 0.3359,
+      "Peruvian": 0.8412,
+      "Punjabi": 0.5104,
+      "Puerto Rican": 0.5529,
+      "Sri Lankan Tamil": 0.4314,
+      "Tuscan": 0.5701,
+      "Yoruba": 0.5926
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs17441589": {
+    "rsid": "rs17441589",
+    "chromosome": "9",
+    "position": 129394254,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.4668,
+      "EUR": 0.2723,
+      "EAS": 0.5373,
+      "AMR": 0.2866,
+      "SAS": 0.5402,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.2552,
+      "African Ancestry SW US": 0.7541,
+      "Bengali": 0.7151,
+      "Chinese Dai": 0.7527,
+      "NW European": 0.1061,
+      "Han Chinese": 0.1748,
+      "Southern Han": 0.8333,
+      "Colombian": 0.1117,
+      "Esan": 0.2929,
+      "Finnish": 0.101,
+      "British": 0.1264,
+      "Gujarati Indian": 0.8204,
+      "Gambian": 0.3009,
+      "Iberian": 0.9393,
+      "Indian Telugu": 0.2451,
+      "Japanese": 0.1731,
+      "Kinh Vietnamese": 0.7525,
+      "Luhya": 0.6919,
+      "Mende": 0.7176,
+      "Mexican Ancestry": 0.1172,
+      "Peruvian": 0.8118,
+      "Punjabi": 0.1458,
+      "Puerto Rican": 0.1058,
+      "Sri Lankan Tamil": 0.7745,
+      "Tuscan": 0.0888,
+      "Yoruba": 0.2546
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs17457788": {
+    "rsid": "rs17457788",
+    "chromosome": "9",
+    "position": 129398079,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4805,
+      "EUR": 0.572,
+      "EAS": 0.4319,
+      "AMR": 0.3326,
+      "SAS": 0.4057,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.5677,
+      "African Ancestry SW US": 0.4672,
+      "Bengali": 0.7267,
+      "Chinese Dai": 0.2581,
+      "NW European": 0.8939,
+      "Han Chinese": 0.1602,
+      "Southern Han": 0.1571,
+      "Colombian": 0.8511,
+      "Esan": 0.6061,
+      "Finnish": 0.101,
+      "British": 0.8791,
+      "Gujarati Indian": 0.1699,
+      "Gambian": 0.3407,
+      "Iberian": 0.0748,
+      "Indian Telugu": 0.7402,
+      "Japanese": 0.8317,
+      "Kinh Vietnamese": 0.7525,
+      "Luhya": 0.5455,
+      "Mende": 0.3824,
+      "Mexican Ancestry": 0.1016,
+      "Peruvian": 0.2,
+      "Punjabi": 0.1563,
+      "Puerto Rican": 0.1779,
+      "Sri Lankan Tamil": 0.2353,
+      "Tuscan": 0.9112,
+      "Yoruba": 0.4537
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs1819777": {
+    "rsid": "rs1819777",
+    "chromosome": "7",
+    "position": 126183086,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.4485,
+      "EUR": 0.1472,
+      "EAS": 0.4659,
+      "AMR": 0.6734,
+      "SAS": 0.5587,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.6302,
+      "African Ancestry SW US": 0.2459,
+      "Bengali": 0.7442,
+      "Chinese Dai": 0.2688,
+      "NW European": 0.1162,
+      "Han Chinese": 0.3155,
+      "Southern Han": 0.7333,
+      "Colombian": 0.8617,
+      "Esan": 0.5505,
+      "Finnish": 0.197,
+      "British": 0.1703,
+      "Gujarati Indian": 0.7573,
+      "Gambian": 0.6283,
+      "Iberian": 0.1402,
+      "Indian Telugu": 0.2745,
+      "Japanese": 0.6635,
+      "Kinh Vietnamese": 0.3485,
+      "Luhya": 0.399,
+      "Mende": 0.3059,
+      "Mexican Ancestry": 0.8359,
+      "Peruvian": 0.1353,
+      "Punjabi": 0.7969,
+      "Puerto Rican": 0.8606,
+      "Sri Lankan Tamil": 0.2206,
+      "Tuscan": 0.1121,
+      "Yoruba": 0.3796
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "C",
+    "alt": "T",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2120610": {
+    "rsid": "rs2120610",
+    "chromosome": "3",
+    "position": 3930781,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.4024,
+      "EUR": 0.6106,
+      "EAS": 0.4205,
+      "AMR": 0.5085,
+      "SAS": 0.494,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.2969,
+      "African Ancestry SW US": 0.3443,
+      "Bengali": 0.3488,
+      "Chinese Dai": 0.1452,
+      "NW European": 0.6667,
+      "Han Chinese": 0.1748,
+      "Southern Han": 0.8381,
+      "Colombian": 0.4681,
+      "Esan": 0.7071,
+      "Finnish": 0.7323,
+      "British": 0.6868,
+      "Gujarati Indian": 0.6456,
+      "Gambian": 0.2743,
+      "Iberian": 0.6028,
+      "Indian Telugu": 0.4265,
+      "Japanese": 0.8029,
+      "Kinh Vietnamese": 0.1414,
+      "Luhya": 0.1869,
+      "Mende": 0.7529,
+      "Mexican Ancestry": 0.6016,
+      "Peruvian": 0.3059,
+      "Punjabi": 0.5,
+      "Puerto Rican": 0.6587,
+      "Sri Lankan Tamil": 0.549,
+      "Tuscan": 0.3645,
+      "Yoruba": 0.2546
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "T",
+    "alt": "C",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2240751": {
+    "rsid": "rs2240751",
+    "chromosome": "19",
+    "position": 3548233,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.8567,
+      "EUR": 0.4042,
+      "EAS": 0.5454,
+      "AMR": 0.582,
+      "SAS": 0.7995,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.0052,
+      "African Ancestry SW US": 0.9918,
+      "Bengali": 0.0174,
+      "Chinese Dai": 0.129,
+      "NW European": 0.9949,
+      "Han Chinese": 0.3981,
+      "Southern Han": 0.7619,
+      "Colombian": 0.9681,
+      "Esan": 1,
+      "Finnish": 0.0253,
+      "British": 0.0055,
+      "Gujarati Indian": 1,
+      "Gambian": 1,
+      "Iberian": 0.0047,
+      "Indian Telugu": 0.9853,
+      "Japanese": 0.6298,
+      "Kinh Vietnamese": 0.8081,
+      "Luhya": 1,
+      "Mende": 1,
+      "Mexican Ancestry": 0.8125,
+      "Peruvian": 0.5235,
+      "Punjabi": 0.9948,
+      "Puerto Rican": 0.024,
+      "Sri Lankan Tamil": 1,
+      "Tuscan": 0.9907,
+      "Yoruba": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2294101": {
+    "rsid": "rs2294101",
+    "chromosome": "X",
+    "position": 151672753,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4206,
+      "EUR": 0.6472,
+      "EAS": 0.5801,
+      "AMR": 0.3832,
+      "SAS": 0.4646,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.2276,
+      "African Ancestry SW US": 0.3542,
+      "Bengali": 0.7154,
+      "Chinese Dai": 0.0775,
+      "NW European": 0.8121,
+      "Han Chinese": 0.075,
+      "Southern Han": 0.8861,
+      "Colombian": 0.2138,
+      "Esan": 0.731,
+      "Finnish": 0.2562,
+      "British": 0.7279,
+      "Gujarati Indian": 0.2933,
+      "Gambian": 0.7953,
+      "Iberian": 0.7688,
+      "Indian Telugu": 0.3103,
+      "Japanese": 0.9276,
+      "Kinh Vietnamese": 0.9342,
+      "Luhya": 0.2987,
+      "Mende": 0.2813,
+      "Mexican Ancestry": 0.6042,
+      "Peruvian": 0.4031,
+      "Punjabi": 0.7222,
+      "Puerto Rican": 0.3117,
+      "Sri Lankan Tamil": 0.2819,
+      "Tuscan": 0.6708,
+      "Yoruba": 0.2561
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "G",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2432968": {
+    "rsid": "rs2432968",
+    "chromosome": "8",
+    "position": 119292687,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.807,
+      "EUR": 0.4097,
+      "EAS": 0.7809,
+      "AMR": 0.497,
+      "SAS": 0.5876,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.9323,
+      "African Ancestry SW US": 0.9098,
+      "Bengali": 0.9535,
+      "Chinese Dai": 1,
+      "NW European": 0.0556,
+      "Han Chinese": 0.9903,
+      "Southern Han": 0.9857,
+      "Colombian": 0.9521,
+      "Esan": 0.9293,
+      "Finnish": 0.0152,
+      "British": 0.978,
+      "Gujarati Indian": 0.0728,
+      "Gambian": 0.9204,
+      "Iberian": 0.9579,
+      "Indian Telugu": 0.0637,
+      "Japanese": 0.9183,
+      "Kinh Vietnamese": 0.0101,
+      "Luhya": 0.9747,
+      "Mende": 0.9176,
+      "Mexican Ancestry": 0.9531,
+      "Peruvian": 0.0059,
+      "Punjabi": 0.9167,
+      "Puerto Rican": 0.0769,
+      "Sri Lankan Tamil": 0.9314,
+      "Tuscan": 0.0421,
+      "Yoruba": 0.0648
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "T",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2615462": {
+    "rsid": "rs2615462",
+    "chromosome": "14",
+    "position": 84064898,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.4746,
+      "EUR": 0.2976,
+      "EAS": 0.5759,
+      "AMR": 0.4993,
+      "SAS": 0.5508,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.5729,
+      "African Ancestry SW US": 0.5246,
+      "Bengali": 0.2035,
+      "Chinese Dai": 0.8817,
+      "NW European": 0.1616,
+      "Han Chinese": 0.9126,
+      "Southern Han": 0.0857,
+      "Colombian": 0.1649,
+      "Esan": 0.3838,
+      "Finnish": 0.202,
+      "British": 0.1429,
+      "Gujarati Indian": 0.767,
+      "Gambian": 0.4027,
+      "Iberian": 0.8318,
+      "Indian Telugu": 0.1569,
+      "Japanese": 0.1154,
+      "Kinh Vietnamese": 0.8838,
+      "Luhya": 0.5657,
+      "Mende": 0.4882,
+      "Mexican Ancestry": 0.2031,
+      "Peruvian": 0.8647,
+      "Punjabi": 0.8177,
+      "Puerto Rican": 0.7644,
+      "Sri Lankan Tamil": 0.8088,
+      "Tuscan": 0.1495,
+      "Yoruba": 0.3843
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs2814800": {
+    "rsid": "rs2814800",
+    "chromosome": "9",
+    "position": 32062659,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.4591,
+      "EUR": 0.6015,
+      "EAS": 0.5821,
+      "AMR": 0.4884,
+      "SAS": 0.4802,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 0.3906,
+      "African Ancestry SW US": 0.3689,
+      "Bengali": 0.5407,
+      "Chinese Dai": 0.6452,
+      "NW European": 0.6111,
+      "Han Chinese": 0.6553,
+      "Southern Han": 0.5952,
+      "Colombian": 0.6223,
+      "Esan": 0.3889,
+      "Finnish": 0.6667,
+      "British": 0.5989,
+      "Gujarati Indian": 0.5194,
+      "Gambian": 0.5973,
+      "Iberian": 0.5187,
+      "Indian Telugu": 0.4216,
+      "Japanese": 0.6106,
+      "Kinh Vietnamese": 0.404,
+      "Luhya": 0.5909,
+      "Mende": 0.3353,
+      "Mexican Ancestry": 0.5391,
+      "Peruvian": 0.3353,
+      "Punjabi": 0.5417,
+      "Puerto Rican": 0.4567,
+      "Sri Lankan Tamil": 0.3775,
+      "Tuscan": 0.6121,
+      "Yoruba": 0.5417
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "C",
+    "alt": "A",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs346853": {
+    "rsid": "rs346853",
+    "chromosome": "5",
+    "position": 101358931,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 1,
+      "EUR": 0.8001,
+      "EAS": 1,
+      "AMR": 1,
+      "SAS": 1,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "subFrequencies": {
+      "African Caribbean": 1,
+      "African Ancestry SW US": 1,
+      "Bengali": 1,
+      "Chinese Dai": 1,
+      "NW European": 0.0051,
+      "Han Chinese": 1,
+      "Southern Han": 1,
+      "Colombian": 1,
+      "Esan": 1,
+      "Finnish": 1,
+      "British": 1,
+      "Gujarati Indian": 1,
+      "Gambian": 1,
+      "Iberian": 0.9953,
+      "Indian Telugu": 1,
+      "Japanese": 1,
+      "Kinh Vietnamese": 1,
+      "Luhya": 1,
+      "Mende": 1,
+      "Mexican Ancestry": 1,
+      "Peruvian": 1,
+      "Punjabi": 1,
+      "Puerto Rican": 1,
+      "Sri Lankan Tamil": 1,
+      "Tuscan": 1,
+      "Yoruba": 1
+    },
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Ancestry Informative Marker (AIM) from the Seldin-128 genomic panel, facilitating regional substructure refinement.",
+    "ref": "A",
+    "alt": "G",
+    "gene": "",
+    "trait": "Ancestry"
+  },
+  "rs10456269": {
+    "rsid": "rs10456269",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.04,
+      "EAS": 0.05,
+      "EUR": 0.82,
+      "SAS": 0.04,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Southern Russian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Southern Russian populations."
+  },
+  "rs11103331": {
+    "rsid": "rs11103331",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.08,
+      "AMR": 0.15,
+      "EAS": 0.01,
+      "EUR": 0.82,
+      "SAS": 0.02,
+      "MENA": 0.35
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Southern Spanish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Southern Spanish populations."
+  },
+  "rs11103340": {
+    "rsid": "rs11103340",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.99,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Irish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Irish populations."
+  },
+  "rs11103341": {
+    "rsid": "rs11103341",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.01,
+      "EAS": 0,
+      "EUR": 0.99,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Northern Welsh Ancestry Marker",
+    "description": "Ancestry Informative Marker for Northern Welsh populations."
+  },
+  "rs11103339": {
+    "rsid": "rs11103339",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.98,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "English Ancestry Marker",
+    "description": "Ancestry Informative Marker for English populations."
+  },
+  "rs11103342": {
+    "rsid": "rs11103342",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.99,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Scottish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scottish populations."
+  },
+  "rs11103343": {
+    "rsid": "rs11103343",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.97,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "German Ancestry Marker",
+    "description": "Ancestry Informative Marker for German populations."
+  },
+  "rs11103344": {
+    "rsid": "rs11103344",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.98,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Dutch Ancestry Marker",
+    "description": "Ancestry Informative Marker for Dutch populations."
+  },
+  "rs11103353": {
+    "rsid": "rs11103353",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.97,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "English Ancestry Marker",
+    "description": "Ancestry Informative Marker for English populations."
+  },
+  "rs11103354": {
+    "rsid": "rs11103354",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "SAS": 0.01,
+      "EUR": 0.98,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Irish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Irish populations."
+  },
+  "rs11103355": {
+    "rsid": "rs11103355",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "SAS": 0.01,
+      "EUR": 0.98,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Welsh Ancestry Marker",
+    "description": "Ancestry Informative Marker for Welsh populations."
+  },
+  "rs11103356": {
+    "rsid": "rs11103356",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "SAS": 0.01,
+      "EUR": 0.98,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Scottish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scottish populations."
+  },
+  "rs11103357": {
+    "rsid": "rs11103357",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.96,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "German Ancestry Marker",
+    "description": "Ancestry Informative Marker for German populations."
+  },
+  "rs11103358": {
+    "rsid": "rs11103358",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.97,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Dutch Ancestry Marker",
+    "description": "Ancestry Informative Marker for Dutch populations."
+  },
+  "rs11103359": {
+    "rsid": "rs11103359",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.06,
+      "AMR": 0.02,
+      "EAS": 0.02,
+      "SAS": 0.02,
+      "EUR": 0.88,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Afrikaner Ancestry Marker",
+    "description": "Ancestry Informative Marker for Afrikaner populations."
+  },
+  "rs11103367": {
+    "rsid": "rs11103367",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.96,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "English Ancestry Marker",
+    "description": "Ancestry Informative Marker for English populations."
+  },
+  "rs11103368": {
+    "rsid": "rs11103368",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "SAS": 0.01,
+      "EUR": 0.97,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Irish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Irish populations."
+  },
+  "rs11103369": {
+    "rsid": "rs11103369",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "SAS": 0.01,
+      "EUR": 0.97,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Welsh Ancestry Marker",
+    "description": "Ancestry Informative Marker for Welsh populations."
+  },
+  "rs11103370": {
+    "rsid": "rs11103370",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "SAS": 0.01,
+      "EUR": 0.97,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Scottish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scottish populations."
+  },
+  "rs11103371": {
+    "rsid": "rs11103371",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.95,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "German Ancestry Marker",
+    "description": "Ancestry Informative Marker for German populations."
+  },
+  "rs11103372": {
+    "rsid": "rs11103372",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "EUR": 0.96,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Dutch Ancestry Marker",
+    "description": "Ancestry Informative Marker for Dutch populations."
+  },
+  "rs11103373": {
+    "rsid": "rs11103373",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.07,
+      "AMR": 0.02,
+      "EAS": 0.02,
+      "SAS": 0.02,
+      "EUR": 0.87,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Afrikaner Ancestry Marker",
+    "description": "Ancestry Informative Marker for Afrikaner populations."
+  },
+  "rs12916300": {
+    "rsid": "rs12916300",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.1,
+      "EAS": 0.05,
+      "EUR": 0.85,
+      "SAS": 0.2,
+      "MENA": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "HERC2",
+    "trait": "Eye Color",
+    "description": "The primary determinant of blue vs. brown eye color in Europeans."
+  },
+  "rs2470102": {
+    "rsid": "rs2470102",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC22A4",
+    "trait": "European Ancestry Marker",
+    "description": "A variant associated with European ancestry and ergothioneine transport."
+  },
+  "rs909525": {
+    "rsid": "rs909525",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "PTCHD3",
+    "trait": "European Ancestry Marker",
+    "description": "A variant found almost exclusively in populations of European descent."
+  },
+  "rs2303627": {
+    "rsid": "rs2303627",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SPATA13",
+    "trait": "European Ancestry Marker",
+    "description": "A variant found at higher frequencies in European populations."
+  },
+  "rs10456193": {
+    "rsid": "rs10456193",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0,
+      "EUR": 0.97,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Irish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Irish populations."
+  },
+  "rs10456192": {
+    "rsid": "rs10456192",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0,
+      "EUR": 0.98,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "British Ancestry Marker",
+    "description": "Ancestry Informative Marker for British populations."
+  },
+  "rs12896399": {
+    "rsid": "rs12896399",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.45,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A4",
+    "trait": "Hair Color (European)",
+    "description": "Associated with lighter hair color (blond/brown) in European populations."
+  },
+  "rs12124819": {
+    "rsid": "rs12124819",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0,
+      "EUR": 0.4,
+      "SAS": 0,
+      "MENA": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Basque Ancestry Marker",
+    "description": "A highly informative marker for Basque ancestry, reflecting the unique genetic isolate of the Basque people."
+  },
+  "rs2395129": {
+    "rsid": "rs2395129",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.1,
+      "EAS": 0.01,
+      "EUR": 0.3,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "HLA-DQA1",
+    "trait": "Celiac Disease Risk",
+    "description": "Associated with an increased risk of Celiac disease, with higher prevalence in European populations."
+  },
+  "rs6059655": {
+    "rsid": "rs6059655",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.88
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Ancestry marker common in English populations."
+  },
+  "rs112735431": {
+    "rsid": "rs112735431",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "Global": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Added marker rs112735431."
+  },
+  "rs647325": {
+    "rsid": "rs647325",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.4889,
+      "EAS": 0.5305,
+      "OCE": 0.5944,
+      "SAS": 0.7163,
+      "AMR": 0.0767,
+      "EUR": 0.78,
+      "SIB": 0.7353
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs192655": {
+    "rsid": "rs192655",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.7039,
+      "EAS": 0.3759,
+      "OCE": 0.6785,
+      "SAS": 0.6444,
+      "AMR": 0.3821,
+      "EUR": 0.8836,
+      "SIB": 0.3
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs385194": {
+    "rsid": "rs385194",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.2214,
+      "EAS": 0.4555,
+      "OCE": 0.1834,
+      "SAS": 0.4462,
+      "AMR": 0.1271,
+      "EUR": 0.6777,
+      "SIB": 0.5
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs1503767": {
+    "rsid": "rs1503767",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.4458,
+      "EAS": 0.5011,
+      "OCE": 0.5444,
+      "SAS": 0.6862,
+      "AMR": 0.4737,
+      "EUR": 0.8425,
+      "SIB": 0.6275
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs1408801": {
+    "rsid": "rs1408801",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.635,
+      "EAS": 0.2721,
+      "OCE": 0.2389,
+      "SAS": 0.5417,
+      "AMR": 0.2106,
+      "EUR": 0.8789,
+      "SIB": 0.3137
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs7803075": {
+    "rsid": "rs7803075",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.2352,
+      "EAS": 0.1032,
+      "OCE": 0.0333,
+      "SAS": 0.3626,
+      "AMR": 0.1397,
+      "EUR": 0.6901,
+      "SIB": 0.1569
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs705308": {
+    "rsid": "rs705308",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.2879,
+      "EAS": 0.1673,
+      "OCE": 0.1611,
+      "SAS": 0.3259,
+      "AMR": 0.0393,
+      "EUR": 0.5363,
+      "SIB": 0.08
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs6464211": {
+    "rsid": "rs6464211",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.4183,
+      "EAS": 0.7091,
+      "OCE": 0.6778,
+      "SAS": 0.7373,
+      "AMR": 0.731,
+      "EUR": 0.8179,
+      "SIB": 0.6667
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs1950993": {
+    "rsid": "rs1950993",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.2231,
+      "EAS": 0.159,
+      "OCE": 0.1348,
+      "SAS": 0.4705,
+      "AMR": 0.2501,
+      "EUR": 0.6244,
+      "SIB": 0.5196
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs881728": {
+    "rsid": "rs881728",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.8585,
+      "EAS": 0.7525,
+      "OCE": 0.8444,
+      "SAS": 0.8009,
+      "AMR": 0.4254,
+      "EUR": 0.8971,
+      "SIB": 0.8039
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs1500127": {
+    "rsid": "rs1500127",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.668,
+      "EAS": 0.6304,
+      "OCE": 0.6944,
+      "SAS": 0.7817,
+      "AMR": 0.4405,
+      "EUR": 0.9361,
+      "SIB": 0.4608
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs1760921": {
+    "rsid": "rs1760921",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.5071,
+      "EAS": 0.8478,
+      "OCE": 0.7333,
+      "SAS": 0.8271,
+      "AMR": 0.8195,
+      "EUR": 0.9443,
+      "SIB": 0.6863
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs10510228": {
+    "rsid": "rs10510228",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.9048,
+      "EAS": 0.6502,
+      "OCE": 0.7167,
+      "SAS": 0.8142,
+      "AMR": 0.4285,
+      "EUR": 0.9247,
+      "SIB": 0.7353
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs874299": {
+    "rsid": "rs874299",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.3543,
+      "EAS": 0.3104,
+      "OCE": 0.4278,
+      "SAS": 0.4954,
+      "AMR": 0.1176,
+      "EUR": 0.6924,
+      "SIB": 0.2745
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs4781011": {
+    "rsid": "rs4781011",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.57,
+      "EAS": 0.148,
+      "OCE": 0.3722,
+      "SAS": 0.4777,
+      "AMR": 0.1103,
+      "EUR": 0.7044,
+      "SIB": 0.2941
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs3943253": {
+    "rsid": "rs3943253",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.7625,
+      "EAS": 0.4101,
+      "OCE": 0.6444,
+      "SAS": 0.6966,
+      "AMR": 0.1991,
+      "EUR": 0.9152,
+      "SIB": 0.6471
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs2899826": {
+    "rsid": "rs2899826",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.6934,
+      "EAS": 0.5189,
+      "OCE": 0.2865,
+      "SAS": 0.6632,
+      "AMR": 0.2509,
+      "EUR": 0.9115,
+      "SIB": 0.5
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs2357442": {
+    "rsid": "rs2357442",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.8159,
+      "EAS": 0.3178,
+      "OCE": 0.6778,
+      "SAS": 0.5987,
+      "AMR": 0.2794,
+      "EUR": 0.8531,
+      "SIB": 0.52
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs3745099": {
+    "rsid": "rs3745099",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.3863,
+      "EAS": 0.6528,
+      "OCE": 0.6167,
+      "SAS": 0.7325,
+      "AMR": 0.736,
+      "EUR": 0.8597,
+      "SIB": 0.6765
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs4984913": {
+    "rsid": "rs4984913",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.3947,
+      "EAS": 0.2376,
+      "OCE": 0.0667,
+      "SAS": 0.5111,
+      "AMR": 0.28,
+      "EUR": 0.7086,
+      "SIB": 0.2843
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs4800105": {
+    "rsid": "rs4800105",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.7972,
+      "EAS": 0.7202,
+      "OCE": 0.8202,
+      "SAS": 0.7936,
+      "AMR": 0.3084,
+      "EUR": 0.8923,
+      "SIB": 0.6275
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs9522149": {
+    "rsid": "rs9522149",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.3333,
+      "EAS": 0.0132,
+      "OCE": 0.0119,
+      "SAS": 0.3365,
+      "AMR": 0.0438,
+      "EUR": 0.7199,
+      "SIB": 0.12
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs6556352": {
+    "rsid": "rs6556352",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.22,
+      "EAS": 0.435,
+      "OCE": 0.4611,
+      "SAS": 0.5718,
+      "AMR": 0.4354,
+      "EUR": 0.6687,
+      "SIB": 0.59
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
+  },
+  "rs11246020": {
+    "rsid": "rs11246020",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A4",
+    "trait": "European Hair Color Marker",
+    "description": "A variant associated with lighter hair color in European populations."
+  },
+  "rs12891399": {
+    "rsid": "rs12891399",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A4",
+    "trait": "European Hair Color Marker",
+    "description": "A variant associated with lighter hair color in European populations."
+  },
+  "rs2032628": {
+    "rsid": "rs2032628",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Y-DNA",
+    "trait": "Haplogroup I",
+    "description": "Defining marker for Haplogroup I, common in Europe."
+  },
+  "rs9786132": {
+    "rsid": "rs9786132",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "EUR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Y-DNA",
+    "trait": "Haplogroup R1b1a1b",
+    "description": "Defining marker for Haplogroup R1b1a1b, extremely common in Western Europe."
+  },
+  "rs10456310": {
+    "rsid": "rs10456310",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Acadian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Acadian/Cajun populations."
+  },
+  "rs10456311": {
+    "rsid": "rs10456311",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.94,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Acadian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Acadian/Cajun populations."
+  },
+  "rs17135023": {
+    "rsid": "rs17135023",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.1,
+      "EAS": 0.01,
+      "EUR": 0.92,
+      "SAS": 0.02,
+      "MENA": 0.15
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "French Ancestry Marker",
+    "description": "Ancestry Informative Marker for French populations."
+  },
+  "rs6510765": {
+    "rsid": "rs6510765",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.1,
+      "EAS": 0.01,
+      "EUR": 0.92,
+      "SAS": 0.02,
+      "MENA": 0.15
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "French Ancestry Marker",
+    "description": "Ancestry Informative Marker for French populations."
+  },
+  "rs1042525": {
+    "rsid": "rs1042525",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0,
+      "EUR": 0.92,
+      "SAS": 0.02,
+      "MENA": 0.08
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "German Ancestry Marker",
+    "description": "Ancestry Informative Marker for German populations."
+  },
+  "rs1114097": {
+    "rsid": "rs1114097",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0,
+      "EUR": 0.92,
+      "SAS": 0.02,
+      "MENA": 0.08
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "German Ancestry Marker",
+    "description": "Ancestry Informative Marker for German populations."
+  },
+  "rs1805011": {
+    "rsid": "rs1805011",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.1,
+      "EAS": 0.02,
+      "EUR": 0.88,
+      "SAS": 0.2,
+      "MENA": 0.7
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "Greek Ancestry Marker",
+    "description": "Ancestry Informative Marker for Greek populations."
+  },
+  "rs13182881": {
+    "rsid": "rs13182881",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.1,
+      "EAS": 0.02,
+      "EUR": 0.88,
+      "SAS": 0.2,
+      "MENA": 0.7
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Greek Ancestry Marker",
+    "description": "Ancestry Informative Marker for Greek populations."
+  },
+  "rs7948627": {
+    "rsid": "rs7948627",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.1,
+      "EAS": 0.02,
+      "EUR": 0.88,
+      "SAS": 0.2,
+      "MENA": 0.7
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Greek Ancestry Marker",
+    "description": "Ancestry Informative Marker for Greek populations."
+  },
+  "rs10456314": {
+    "rsid": "rs10456314",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.15,
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.75,
+      "SAS": 0.02,
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Melungeon Ancestry Marker",
+    "description": "Ancestry Informative Marker for Melungeon populations (Appalachian Admixture)."
+  },
+  "rs10456312": {
+    "rsid": "rs10456312",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.97,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Pennsylvania Dutch Marker",
+    "description": "Ancestry Informative Marker for Pennsylvania Dutch (German) populations."
+  },
+  "rs10456313": {
+    "rsid": "rs10456313",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Pennsylvania Dutch Marker",
+    "description": "Ancestry Informative Marker for Pennsylvania Dutch (German) populations."
+  },
+  "rs2675349": {
+    "rsid": "rs2675349",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.04,
+      "EAS": 0.08,
+      "EUR": 0.89,
+      "SAS": 0.05,
+      "MENA": 0.12
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Polish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Polish populations."
+  },
+  "rs1426658": {
+    "rsid": "rs1426658",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.04,
+      "EAS": 0.08,
+      "EUR": 0.89,
+      "SAS": 0.05,
+      "MENA": 0.12
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A5",
+    "trait": "Polish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Polish populations."
+  },
+  "rs1343759": {
+    "rsid": "rs1343759",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.04,
+      "EAS": 0.08,
+      "EUR": 0.89,
+      "SAS": 0.05,
+      "MENA": 0.12
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Polish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Polish populations."
+  },
+  "rs12913836": {
+    "rsid": "rs12913836",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.15,
+      "EAS": 0.01,
+      "EUR": 0.95,
+      "SAS": 0.1,
+      "MENA": 0.55
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "HERC2",
+    "trait": "Portuguese Ancestry Marker",
+    "description": "Ancestry Informative Marker for Portuguese populations."
+  },
+  "rs12727651": {
+    "rsid": "rs12727651",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.15,
+      "EAS": 0.01,
+      "EUR": 0.95,
+      "SAS": 0.1,
+      "MENA": 0.55
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Portuguese Ancestry Marker",
+    "description": "Ancestry Informative Marker for Portuguese populations."
+  },
+  "rs56203819": {
+    "rsid": "rs56203819",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.15,
+      "EAS": 0.01,
+      "EUR": 0.95,
+      "SAS": 0.1,
+      "MENA": 0.55
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Portuguese Ancestry Marker",
+    "description": "Ancestry Informative Marker for Portuguese populations."
+  },
+  "rs1446588": {
+    "rsid": "rs1446588",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.05,
+      "EAS": 0.15,
+      "EUR": 0.91,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A4",
+    "trait": "Russian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Russian populations."
+  },
+  "rs13116550": {
+    "rsid": "rs13116550",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.05,
+      "EAS": 0.15,
+      "EUR": 0.91,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Russian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Russian populations."
+  },
+  "rs11230668": {
+    "rsid": "rs11230668",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.05,
+      "EAS": 0.15,
+      "EUR": 0.91,
+      "SAS": 0.1,
+      "MENA": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Russian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Russian populations."
+  },
+  "rs12727652": {
+    "rsid": "rs12727652",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.01,
+      "EAS": 0.05,
+      "EUR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Sami Ancestry Marker",
+    "description": "Ancestry Informative Marker for Sami populations."
+  },
+  "rs13182882": {
+    "rsid": "rs13182882",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.02,
+      "EAS": 0.08,
+      "EUR": 0.92,
+      "SAS": 0.02,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Sami Ancestry Marker",
+    "description": "Ancestry Informative Marker for Sami populations."
+  },
+  "rs13116551": {
+    "rsid": "rs13116551",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.01,
+      "EAS": 0.04,
+      "EUR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Sami Ancestry Marker",
+    "description": "Ancestry Informative Marker for Sami populations."
+  },
+  "rs1343760": {
+    "rsid": "rs1343760",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.01,
+      "EAS": 0.05,
+      "EUR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Sami Ancestry Marker",
+    "description": "Ancestry Informative Marker for Sami populations."
+  },
+  "rs11547467": {
+    "rsid": "rs11547467",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.02,
+      "EAS": 0,
+      "EUR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "Scandinavian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scandinavian populations."
+  },
+  "rs11580127": {
+    "rsid": "rs11580127",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.02,
+      "EAS": 0,
+      "EUR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Scandinavian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scandinavian populations."
+  },
+  "rs10424069": {
+    "rsid": "rs10424069",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.02,
+      "EAS": 0,
+      "EUR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Scandinavian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Scandinavian populations."
+  },
+  "rs10456270": {
+    "rsid": "rs10456270",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.55,
+      "SAS": 0.04,
+      "MENA": 0.3
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Sephardic Ancestry Marker",
+    "description": "Ancestry Informative Marker for Sephardic Jewish populations."
+  },
+  "rs4871197": {
+    "rsid": "rs4871197",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.1,
+      "EAS": 0.01,
+      "EUR": 0.94,
+      "SAS": 0.05,
+      "MENA": 0.35
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Spanish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Spanish populations."
+  },
+  "rs13115484": {
+    "rsid": "rs13115484",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.1,
+      "EAS": 0.01,
+      "EUR": 0.94,
+      "SAS": 0.05,
+      "MENA": 0.35
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Spanish Ancestry Marker",
+    "description": "Ancestry Informative Marker for Spanish populations."
+  },
+  "rs7690467": {
+    "rsid": "rs7690467",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.1,
+      "EAS": 0.05,
+      "EUR": 0.85,
+      "SAS": 0.1,
+      "MENA": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Northern European Ancestry Marker",
+    "description": "Ancestry Informative Marker for Northern European populations."
+  },
+  "rs1712435": {
+    "rsid": "rs1712435",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.08,
+      "EAS": 0.02,
+      "EUR": 0.9,
+      "SAS": 0.05,
+      "MENA": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "Northern European Ancestry Marker",
+    "description": "Ancestry Informative Marker for Northern European populations."
+  },
+  "rs9955196": {
+    "rsid": "rs9955196",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.05,
+      "EAS": 0,
+      "EUR": 0.95,
+      "SAS": 0.02,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Northern European Ancestry Marker",
+    "description": "Ancestry Informative Marker for Northern European populations."
+  },
+  "rs4988233": {
+    "rsid": "rs4988233",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.15,
+      "EAS": 0.01,
+      "EUR": 0.85,
+      "SAS": 0.25,
+      "MENA": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "MCM6",
+    "trait": "Lactase Persistence (European)",
+    "description": "The primary European variant for lactase persistence, allowing for the digestion of dairy into adulthood. Extremely high frequency in Northern Europe."
+  },
+  "rs333": {
+    "rsid": "rs333",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "D"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0.01,
+      "EAS": 0,
+      "EUR": 0.1,
+      "SAS": 0,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "CCR5",
+    "trait": "HIV Resistance (CCR5-delta32)",
+    "description": "The delta32 deletion (represented here as 'D') provides resistance to HIV infection and is most common in Northern European populations."
+  },
+  "rs121908120": {
+    "rsid": "rs121908120",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0,
+      "EAS": 0,
+      "EUR": 0.06,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "GBA",
+    "trait": "Gaucher Disease Risk (Ashkenazi)",
+    "description": "The N370S mutation in the GBA gene is a common risk factor for Gaucher disease in the Ashkenazi Jewish population."
+  },
+  "rs80356776": {
+    "rsid": "rs80356776",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "AMR": 0,
+      "EAS": 0,
+      "EUR": 0.02,
+      "SAS": 0,
+      "MENA": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "CLN5",
+    "trait": "Finnish Heritage Marker",
+    "description": "A marker associated with Finnish Heritage Diseases, reflecting the unique genetic history of the Finnish population."
+  }
+}

@@ -55,7 +55,8 @@ import { FamousMatches } from "./components/FamousMatches";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
 import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
 import SubpopulationBento from "./components/SubpopulationBento";
-import { masterAims } from './data';
+import { loadMasterAims } from './data';
+const masterAims = loadMasterAims();
 
 import { BloodTypeView } from "./components/BloodTypeView";
 import { inferRhFactor } from "./services/bloodPredictorService";
@@ -398,7 +399,7 @@ const ProfileSummary = memo(({
           </div>
           
           <div className="relative w-full h-[180px] my-auto flex items-center justify-center">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={180} debounce={1}>
               <RadarChart data={ancestryChartData} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
                 <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
                 <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 9, fontWeight: 800 }} />
@@ -836,7 +837,7 @@ const AutosomalView = memo(({
                             <div className="grid grid-cols-1 gap-4 mt-2">
                               {snps.map((snp: any) => (
                                 <SNPCard 
-                                  key={`${snp.markerId}-${snp.continent}`} 
+                                  key={`${snp.rsid}-${snp.continent}-${snp.gene || 'none'}`} 
                                   snp={snp} 
                                   isExpanded={expandedSnps.has(snp.rsid)} 
                                   onToggleExpand={toggleExpand} 
@@ -851,7 +852,7 @@ const AutosomalView = memo(({
                 ) : (
                   allSnpsInCategory.map((snp: any) => (
                     <SNPCard 
-                      key={`${snp.markerId}-${snp.continent}`} 
+                      key={`${snp.rsid}-${snp.continent}-${snp.gene || 'none'}`} 
                       snp={snp} 
                       isExpanded={expandedSnps.has(snp.rsid)} 
                       onToggleExpand={toggleExpand} 
@@ -1876,7 +1877,7 @@ export default function App() {
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
-  const [k27Results, setK27Results] = useState<any[]>([]);
+  const [mdlpK16Results, setMdlpK16Results] = useState<any[]>([]);
   const [grafResults, setGrafResults] = useState<any[]>([]);
   const [microHapResults, setMicroHapResults] = useState<any[]>([]);
 
@@ -1937,8 +1938,8 @@ export default function App() {
     setDatasets(newDatasets);
     
     // Update local GRAF results state if available in the newest dataset
-    if (newDataset.analysis?.k27Results) {
-      setK27Results(newDataset.analysis.k27Results);
+    if (newDataset.analysis?.mdlpResults_raw) {
+      setMdlpK16Results(newDataset.analysis.mdlpResults_raw);
     }
     if (newDataset.analysis?.grafResults) {
       setGrafResults(newDataset.analysis.grafResults);
@@ -1952,8 +1953,8 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (datasets[activeDatasetIndex]?.analysis?.k27Results) {
-      setK27Results(datasets[activeDatasetIndex].analysis.k27Results);
+    if (datasets[activeDatasetIndex]?.analysis?.mdlpResults_raw) {
+      setMdlpK16Results(datasets[activeDatasetIndex].analysis.mdlpResults_raw);
     }
     if (datasets[activeDatasetIndex]?.analysis?.grafResults) {
       setGrafResults(datasets[activeDatasetIndex].analysis.grafResults);
@@ -2169,9 +2170,9 @@ export default function App() {
 
     return {
       primary: processOracle(oracle.primary),
-      engine: k27Results
+      engine: mdlpK16Results
     };
-  }, [datasets, activeDatasetIndex, k27Results]);
+  }, [datasets, activeDatasetIndex, mdlpK16Results]);
 
   const ancientAdmixture = useMemo(() => {
     const dataset = datasets[activeDatasetIndex];

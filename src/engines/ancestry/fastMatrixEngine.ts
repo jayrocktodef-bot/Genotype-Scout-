@@ -18,8 +18,9 @@ let globalRsIDs: string[] = [];
 let popNames: string[] = [];
 let popRegions: string[] = [];
 let popFrequencies: Float32Array[] = []; // Array of binary arrays
+let rsidToIndexMap: Map<string, number> = new Map();
 
-const CACHE_KEY = 'genotype_scout_matrix_cache_v2';
+const CACHE_KEY = 'genotype_scout_matrix_cache_v4_46pop';
 
 export async function compileReferenceKernel() {
   if (isCompiled || isCompiling) return;
@@ -40,6 +41,7 @@ export async function compileReferenceKernel() {
     popNames = cachedData.popNames;
     popRegions = cachedData.popRegions;
     popFrequencies = cachedData.popFrequencies;
+    rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
     isCompiled = true;
     isCompiling = false;
     console.log(`⚡ BOOTSTRAP FAST: Loaded ${popNames.length} populations from IndexedDB.`);
@@ -60,6 +62,7 @@ export async function compileReferenceKernel() {
       }
     }
     globalRsIDs = Array.from(rsIDSet);
+    rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
     const numMarkers = globalRsIDs.length;
 
     // 2. Build the contiguous binary arrays
@@ -109,42 +112,33 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
     await compileReferenceKernel();
   }
 
-  const numMarkers = globalRsIDs.length;
   const numPops = popNames.length;
   
-  // Pre-process user calls to match the Float32Array index
-  // 0.5 = Heterozygous, 1.0 = Homozygous, -1.0 = Missing
-  const userCalls = new Float32Array(numMarkers);
+  // Pre-process only user markers present in the reference
+  const activeMarkers: { index: number, dosage: number }[] = [];
   
-  for (let i = 0; i < numMarkers; i++) {
-    const call = userSnps.get(globalRsIDs[i]);
-    if (!call || call.length !== 2) {
-      userCalls[i] = -1.0; 
-      continue;
-    }
+  for (const [rsid, call] of userSnps.entries()) {
+    const index = rsidToIndexMap.get(rsid);
+    if (index === undefined || call.length !== 2) continue;
     
-    // Check if Heterozygous (e.g. "AG")
-    if (call[0] !== call[1]) {
-      userCalls[i] = 0.5;
-    } else {
-      userCalls[i] = 1.0; // Mark as Homozygous, dosage finalized in loop below
-    }
+    // Determine base dosage (0.5=Het, 1.0=Hom to be finalized later)
+    const dosage = call[0] !== call[1] ? 0.5 : 1.0;
+    activeMarkers.push({ index, dosage });
   }
 
   const results: PopulationProximity[] = [];
 
-  // Loop through populations by pure integer index (incredibly fast)
+  // Loop through populations
   for (let p = 0; p < numPops; p++) {
     const refArray = popFrequencies[p];
     let totalEuclideanDistance = 0.0;
     let validMarkers = 0;
 
-    for (let i = 0; i < numMarkers; i++) {
-      const refFreq = refArray[i];
-      const uCall = userCalls[i];
+    for (const { index, dosage: uCall } of activeMarkers) {
+      const refFreq = refArray[index];
 
-      // Skip if user or reference is missing this marker
-      if (uCall === -1.0 || refFreq === -1.0) continue;
+      // Skip if reference is missing this marker
+      if (refFreq === -1.0) continue;
 
       // Finalize Homozygous dosage based on the reference frequency
       let dosage = uCall;

@@ -8,10 +8,10 @@ export interface AdmixtureComponent {
 }
 
 /**
- * K27 Modern Ancestry Engine
- * Uses 27 MDLP components to estimate high-resolution ancestry proportions.
+ * MDLP K16 Modern Ancestry Engine
+ * Uses 16 MDLP components to estimate high-resolution ancestry proportions.
  */
-export async function calculateK27Scores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
+export async function calculateMDLPK16Scores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
   const components: AdmixtureComponent[] = [];
   
   // Normalize user SNPs keys

@@ -1,10 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
-const MT_HAPLOGROUPS_PATH = path.join(process.cwd(), 'src/data/temp/mt_haplogroups.json');
-const MITO_TRAITS_PATH = path.join(process.cwd(), 'src/data/temp/mito_traits.json');
-const MT_DESCRIPTIONS_PATH = path.join(process.cwd(), 'src/data/temp/mtDescriptions.json');
-const Y_HAPLOGROUPS_PATH = path.join(process.cwd(), 'src/data/temp/parsed_haplogroups.json');
+const MT_HAPLOGROUPS_PATH = path.join(process.cwd(), 'src/data/mitochondrial/mt_haplogroups.json');
+const MITO_TRAITS_PATH = path.join(process.cwd(), 'src/data/mitochondrial/mito_traits.json');
+const MT_DESCRIPTIONS_PATH = path.join(process.cwd(), 'src/data/mitochondrial/mtDescriptions.json');
+const Y_HAPLOGROUPS_PATH = path.join(process.cwd(), 'src/data/haplogroups/parsed_haplogroups.json');
 
 const MASTER_MTDNA_PATH = path.join(process.cwd(), 'src/data/master_mtdna.json');
 const MASTER_YDNA_PATH = path.join(process.cwd(), 'src/data/master_ydna.json');

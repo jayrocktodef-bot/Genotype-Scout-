@@ -1,4 +1,11 @@
-import masterAims from '../../data/master_aims_normalized.json';
+import { loadMasterAims } from '../../data/index';
+
+// Initialize on first use or cache
+let masterAimsCache: any = null;
+const getMasterAims = () => {
+  if (!masterAimsCache) masterAimsCache = loadMasterAims();
+  return masterAimsCache;
+};
 
 const CONTINENT_MAP: Record<string, string> = {
   'AFR': 'African',
@@ -28,7 +35,7 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
 
   let markersUsed = 0;
 
-  for (const [key, marker] of Object.entries(masterAims as Record<string, any>)) {
+  for (const [key, marker] of Object.entries(getMasterAims() as Record<string, any>)) {
     // Two-step fallback lookup: Primary (rsid), Secondary (coordinate-based)
     let genotype = userGenotypes[marker.rsid.toLowerCase()];
     

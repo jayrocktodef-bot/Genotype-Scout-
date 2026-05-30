@@ -1,4 +1,11 @@
-import masterAims from '../data/master_aims_normalized.json';
+import { loadMasterAims } from '../data/index';
+
+// Initialize on first use or cache
+let masterAimsCache: any = null;
+const getMasterAims = () => {
+  if (!masterAimsCache) masterAimsCache = loadMasterAims();
+  return masterAimsCache;
+};
 import hoReferenceKernel from '../data/raw_aims/ho_modern_reference_kernel.json';
 import { getPopulationInfo } from '../services/populationMapper';
 
@@ -64,16 +71,55 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'CLM': 'Colombian / Indigenous-Admixed (CLM)',
   'PEL': 'Peruvian / Indigenous American (PEL)',
   'ASW': 'African-American / SW US (ASW)',
-  'ACB': 'African Caribbean / Barbados (ACB)'
+  'ACB': 'African Caribbean / Barbados (ACB)',
+  // gnomAD populations
+  'AFR_gnomAD': 'African (gnomAD)',
+  'AMI_gnomAD': 'Amish (gnomAD)',
+  'AMR_gnomAD': 'Latino / Admixed American (gnomAD)',
+  'ASJ_gnomAD': 'Ashkenazi Jewish (gnomAD)',
+  'EAS_gnomAD': 'East Asian (gnomAD)',
+  'FIN_gnomAD': 'Finnish (gnomAD)',
+  'MID_gnomAD': 'Middle Eastern (gnomAD)',
+  'NFE_gnomAD': 'Non-Finnish European (gnomAD)',
+  'SAS_gnomAD': 'South Asian (gnomAD)',
+  // ALFA populations
+  'ALFA_AfAm': 'African-American (ALFA)',
+  'ALFA_African': 'African (ALFA)',
+  'ALFA_EAS': 'East Asian (ALFA)',
+  'ALFA_EUR': 'European (ALFA)',
+  'ALFA_LatAm1': 'Latin American 1 (ALFA)',
+  'ALFA_LatAm2': 'Latin American 2 (ALFA)',
+  'ALFA_SAS': 'South Asian (ALFA)',
+  // Forensic and regional additions
+  'GWF_Fula': 'Fula / West African (GWF)',
+  'GWJ_Jola': 'Jola / West African (GWJ)',
+  'GWW_Wolof': 'Wolof / West African (GWW)',
+  'GEMJ_Japan': 'Japanese (GEM-J)'
 };
 
 // Macro-continental Group Classifications for Hierarchy-Aware Matching
 const MACRO_GROUPS: Record<string, string[]> = {
-  'AFR': ['ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI'],
-  'EUR': ['CEU', 'FIN', 'GBR', 'IBS', 'TSI'],
-  'EAS': ['CDX', 'CHB', 'CHS', 'JPT', 'KHV'],
-  'SAS': ['BEB', 'GIH', 'ITU', 'PJL', 'STU'],
-  'AMR': ['CLM', 'MXL', 'PEL', 'PUR']
+  'AFR': [
+    'ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI',
+    'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_AfAm', 'ALFA_African', 'AFR_gnomAD'
+  ],
+  'EUR': [
+    'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
+    'AMI_gnomAD', 'NFE_gnomAD', 'FIN_gnomAD', 'ALFA_EUR',
+    'ASJ_gnomAD', 'MID_gnomAD'
+  ],
+  'EAS': [
+    'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
+    'GEMJ_Japan', 'EAS_gnomAD', 'ALFA_EAS'
+  ],
+  'SAS': [
+    'BEB', 'GIH', 'ITU', 'PJL', 'STU',
+    'SAS_gnomAD', 'ALFA_SAS'
+  ],
+  'AMR': [
+    'CLM', 'MXL', 'PEL', 'PUR',
+    'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD'
+  ]
 };
 
 /**
@@ -255,17 +301,59 @@ export function solveAdmixtureProportions(
 /**
  * Primary High Resolution Bayesian Ancestry and Subpopulation Oracle Solver (Engine v3)
  */
-export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabase: AIM[], sampleId?: string): OracleResult {
-  const info = sampleId ? getPopulationInfo(sampleId) : null;
+export function processSubpopulations(
+  userGenotypes: UserGenotype[],
+  aimsDatabase: AIM[],
+  sampleId?: string,
+  snpMetaMap?: Record<string, { chrom: string; pos: number }>
+): OracleResult {
+  let info = sampleId ? getPopulationInfo(sampleId) : null;
+  if (!info && sampleId) {
+    const sUpper = sampleId.toUpperCase().trim();
+    const superPops = ['AMR', 'AFR', 'EAS', 'EUR', 'SAS'];
+    const codes = ['ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI', 'CEU', 'FIN', 'GBR', 'IBS', 'TSI', 'CDX', 'CHB', 'CHS', 'JPT', 'KHV', 'BEB', 'GIH', 'ITU', 'PJL', 'STU', 'CLM', 'MXL', 'PEL', 'PUR'];
+    
+    // Check if the sampleId is or contains a known sub-population code
+    const foundSubPop = codes.find(code => sUpper === code || sUpper.includes(code));
+    // Check if the sampleId is or contains a known super-population code
+    const foundSuperPop = superPops.find(pop => sUpper === pop || sUpper.includes(pop));
+
+    if (foundSubPop) {
+      const parents: Record<string, string> = {
+        'ACB': 'AFR', 'ASW': 'AFR', 'ESN': 'AFR', 'GWD': 'AFR', 'LWK': 'AFR', 'MSL': 'AFR', 'YRI': 'AFR',
+        'CEU': 'EUR', 'FIN': 'EUR', 'GBR': 'EUR', 'IBS': 'EUR', 'TSI': 'EUR',
+        'CDX': 'EAS', 'CHB': 'EAS', 'CHS': 'EAS', 'JPT': 'EAS', 'KHV': 'EAS',
+        'BEB': 'SAS', 'GIH': 'SAS', 'ITU': 'SAS', 'PJL': 'SAS', 'STU': 'SAS',
+        'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR', 'PUR': 'AMR'
+      };
+      info = {
+        population_code: foundSubPop,
+        super_population_code: parents[foundSubPop] || 'EUR'
+      };
+    } else if (foundSuperPop) {
+      info = {
+        population_code: foundSuperPop,
+        super_population_code: foundSuperPop
+      };
+    }
+  }
+
   if (info) {
-    const popName = POPULATION_NAMES_MAP[info.population_code] || info.population_code;
+    const SUPER_POP_LABELS: Record<string, string> = {
+      'AFR': 'African (AFR)',
+      'EUR': 'European (EUR)',
+      'EAS': 'East Asian (EAS)',
+      'SAS': 'South Asian (SAS)',
+      'AMR': 'Indigenous American (AMR)'
+    };
+    const popName = POPULATION_NAMES_MAP[info.population_code] || SUPER_POP_LABELS[info.population_code] || info.population_code;
     return {
       topMatch: popName,
       subpopAimsUsed: 0,
       unmappedAims: [],
       breakdown: [
         {
-          subpop: info.population_code,
+          subpop: popName,
           distance: 0.0,
           similarityScore: 100.0,
           markersCompared: 0,
@@ -282,7 +370,7 @@ export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabas
     };
   }
 
-  const normalizedDatabase = masterAims as Record<string, any>;
+  const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
   const dbKeys = Object.keys(normalizedDatabase);
 
@@ -490,7 +578,28 @@ export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabas
 
   // Sort breakdown list so closest proximity matches are first
   breakdown.sort((a, b) => a.distance - b.distance);
-  const topMatch = breakdown.length > 0 ? breakdown[0].subpop : 'Unknown';
+  
+  let topMatch = 'Unknown';
+  if (breakdown.length > 0) {
+    topMatch = breakdown[0].subpop;
+  } else {
+    const SUPER_POP_LABELS: Record<string, string> = {
+      'AFR': 'African (AFR)',
+      'EUR': 'European (EUR)',
+      'EAS': 'East Asian (EAS)',
+      'SAS': 'South Asian (SAS)',
+      'AMR': 'Indigenous American (AMR)'
+    };
+    const macroName = SUPER_POP_LABELS[dominantMacro] || 'European (EUR)';
+    topMatch = macroName;
+    breakdown.push({
+      subpop: macroName,
+      distance: macroDistances[dominantMacro] ?? 0.5,
+      similarityScore: Math.max(50.0, (1.0 - ((macroDistances[dominantMacro] ?? 0.5) * 2.2)) * 100),
+      markersCompared: usedAimsSet.size,
+      count: usedAimsSet.size
+    });
+  }
 
   // --- COMPONENT 4: Deconvolution Admixture Modeling (NNLS Solver) ---
   // Compile the collective list of reference alleles and user genotypes
@@ -553,15 +662,60 @@ export function processSubpopulations(userGenotypes: UserGenotype[], aimsDatabas
       .sort((a, b) => b.percentage - a.percentage);
   }
 
+  if (admixtureMix.length === 0) {
+    const SUPER_POP_LABELS: Record<string, string> = {
+      'AFR': 'African (AFR)',
+      'EUR': 'European (EUR)',
+      'EAS': 'East Asian (EAS)',
+      'SAS': 'South Asian (SAS)',
+      'AMR': 'Indigenous American (AMR)'
+    };
+    admixtureMix.push({
+      popCode: dominantMacro,
+      name: SUPER_POP_LABELS[dominantMacro] || 'European (EUR)',
+      percentage: 100.0
+    });
+  }
+
   // Map unmapped broad regional segments for metrics
   for (const [rsidLower, genotype] of genotypeMap.entries()) {
     if (!usedAimsSet.has(rsidLower)) {
       const aim = normalizedDatabase[rsidLower];
       if (aim) {
+        let chrom = 'Unknown';
+        if (snpMetaMap && snpMetaMap[rsidLower.toLowerCase()]) {
+          chrom = snpMetaMap[rsidLower.toLowerCase()].chrom;
+        } else if (aim.chromosome) {
+          chrom = aim.chromosome;
+        }
+        let continentVal = aim.region || 'Unknown';
+        if (continentVal === 'Unknown' || !continentVal) {
+          if (aim.frequencies) {
+            let maxFreq = -1;
+            let maxPop = '';
+            for (const [pop, freq] of Object.entries(aim.frequencies)) {
+              if (typeof freq === 'number' && freq > maxFreq) {
+                maxFreq = freq;
+                maxPop = pop;
+              }
+            }
+            const SUPER_POP_LABELS: Record<string, string> = {
+              'AFR': 'African',
+              'EUR': 'European',
+              'EAS': 'East Asian',
+              'SAS': 'South Asian',
+              'AMR': 'Native American'
+            };
+            if (maxPop && SUPER_POP_LABELS[maxPop]) {
+              continentVal = SUPER_POP_LABELS[maxPop];
+            }
+          }
+        }
+
         unmappedAims.push({
           rsid: aim.rsid,
-          chromosome: aim.chromosome || 'Unknown',
-          continent: aim.region || 'Unknown'
+          chromosome: chrom,
+          continent: continentVal
         });
       }
     }

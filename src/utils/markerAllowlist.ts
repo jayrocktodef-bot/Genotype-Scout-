@@ -1,15 +1,42 @@
-import masterAims from '../data/master_aims_normalized.json' with { type: 'json' };
+import { loadMasterAims } from '../data/index';
+
+// Initialize on first use or cache
+let masterAimsCache: any = null;
+const getMasterAims = () => {
+  if (!masterAimsCache) masterAimsCache = loadMasterAims();
+  return masterAimsCache;
+};
 import { SNP_DB } from '../data/snpDatabase';
 import { ANCHOR_AIMS } from '../anchorAims';
 import masterAncient from '../data/master_ancient_profiles.json';
+import v5MarkersMaster from '../data/v5_markers_master.json' with { type: 'json' };
+import masterHealth from '../data/master_health_pgx.json' with { type: 'json' };
+import bloodMarkers from '../data/blood_markers.json' with { type: 'json' };
 
 export function getMarkerAllowlist(): Set<string> {
   const allowlist = new Set<string>();
 
   // 1. Master Normalized Aims (includes GRAF, Forensic, Deep, Euroforgen, etc.)
-  Object.values(masterAims).forEach((m: any) => {
+  Object.values(getMasterAims()).forEach((m: any) => {
     if (m.rsid) allowlist.add(m.rsid.toLowerCase());
   });
+
+  // 1.1 Health, Wellness & PGx (v5MarkersMaster)
+  v5MarkersMaster.forEach((m: any) => {
+    if (m.rsid) allowlist.add(m.rsid.toLowerCase());
+  });
+
+  // 1.2 Master Health PGx Table
+  Object.keys(masterHealth).forEach((rsid: string) => {
+    allowlist.add(rsid.toLowerCase());
+  });
+
+  // 1.3 Blood Type Markers
+  if (bloodMarkers && (bloodMarkers as any).rhSystem) {
+    Object.keys((bloodMarkers as any).rhSystem).forEach((rsid: string) => {
+      allowlist.add(rsid.toLowerCase());
+    });
+  }
 
   // 5. SNP_DB (Health, Traits, etc.)
   SNP_DB.forEach(snp => {

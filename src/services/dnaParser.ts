@@ -1,3 +1,12 @@
+export function isValidGenotype(genotype: string): boolean {
+  if (!genotype || genotype.length > 2) return false;
+  const validBases = new Set(['A', 'C', 'G', 'T', 'D', 'I', 'N', '-']);
+  for (const base of genotype) {
+    if (!validBases.has(base)) return false;
+  }
+  return true;
+}
+
 export interface GenomicsParseErrorDetails {
   format?: string;
   chip?: string;
@@ -168,7 +177,7 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
     }
     genotype = genotype.replace(/0/g, ""); // Ancestry specific cleaning
 
-    if (!genotype || genotype === "--" || genotype === "__" || genotype === "00") continue;
+    if (!isValidGenotype(genotype)) continue;
 
     const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
     
@@ -340,7 +349,7 @@ export async function parseRawDNAStream(
         }
         genotype = genotype.replace(/0/g, ""); // Ancestry specific cleaning
 
-        if (!genotype || genotype === "--" || genotype === "__" || genotype === "00") continue;
+        if (!isValidGenotype(genotype)) continue;
 
         const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
         
@@ -398,7 +407,7 @@ export async function parseRawDNAStream(
         }
         genotype = genotype.replace(/0/g, "");
 
-        if (genotype && genotype !== "--" && genotype !== "__" && genotype !== "00") {
+        if (isValidGenotype(genotype)) {
           const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
           
           if (!allowlist || isYorMT || allowlist.has(markerId)) {

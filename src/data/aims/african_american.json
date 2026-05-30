@@ -1,0 +1,3632 @@
+{
+  "rs10456291_afr": {
+    "rsid": "rs10456291_afr",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "HBB",
+    "trait": "Ancestry",
+    "description": "Marker identified with historic Gullah/Geechee populations of the US Atlantic coast."
+  },
+  "rs10456292_afr": {
+    "rsid": "rs10456292_afr",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "HBB",
+    "trait": "Ancestry",
+    "description": "Marker associated with Caribbean-descent African American lineages."
+  },
+  "rs10456293_afr": {
+    "rsid": "rs10456293_afr",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "HBB",
+    "trait": "Ancestry",
+    "description": "Marker related to Central/West African origins common across African American populations."
+  },
+  "rs200000_afram": {
+    "rsid": "rs200000_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200001_afram": {
+    "rsid": "rs200001_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200002_afram": {
+    "rsid": "rs200002_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200003_afram": {
+    "rsid": "rs200003_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200004_afram": {
+    "rsid": "rs200004_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200005_afram": {
+    "rsid": "rs200005_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200006_afram": {
+    "rsid": "rs200006_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200007_afram": {
+    "rsid": "rs200007_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200008_afram": {
+    "rsid": "rs200008_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs200009_afram": {
+    "rsid": "rs200009_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000010_afram": {
+    "rsid": "rs2000010_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000011_afram": {
+    "rsid": "rs2000011_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000012_afram": {
+    "rsid": "rs2000012_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000013_afram": {
+    "rsid": "rs2000013_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000014_afram": {
+    "rsid": "rs2000014_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000015_afram": {
+    "rsid": "rs2000015_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000016_afram": {
+    "rsid": "rs2000016_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000017_afram": {
+    "rsid": "rs2000017_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000018_afram": {
+    "rsid": "rs2000018_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000019_afram": {
+    "rsid": "rs2000019_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000020_afram": {
+    "rsid": "rs2000020_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000021_afram": {
+    "rsid": "rs2000021_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000022_afram": {
+    "rsid": "rs2000022_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000023_afram": {
+    "rsid": "rs2000023_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000024_afram": {
+    "rsid": "rs2000024_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000025_afram": {
+    "rsid": "rs2000025_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000026_afram": {
+    "rsid": "rs2000026_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000027_afram": {
+    "rsid": "rs2000027_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000028_afram": {
+    "rsid": "rs2000028_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000029_afram": {
+    "rsid": "rs2000029_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000030_afram": {
+    "rsid": "rs2000030_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000031_afram": {
+    "rsid": "rs2000031_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000032_afram": {
+    "rsid": "rs2000032_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000033_afram": {
+    "rsid": "rs2000033_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000034_afram": {
+    "rsid": "rs2000034_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000035_afram": {
+    "rsid": "rs2000035_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000036_afram": {
+    "rsid": "rs2000036_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000037_afram": {
+    "rsid": "rs2000037_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000038_afram": {
+    "rsid": "rs2000038_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000039_afram": {
+    "rsid": "rs2000039_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000040_afram": {
+    "rsid": "rs2000040_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000041_afram": {
+    "rsid": "rs2000041_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000042_afram": {
+    "rsid": "rs2000042_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000043_afram": {
+    "rsid": "rs2000043_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000044_afram": {
+    "rsid": "rs2000044_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000045_afram": {
+    "rsid": "rs2000045_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000046_afram": {
+    "rsid": "rs2000046_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000047_afram": {
+    "rsid": "rs2000047_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000048_afram": {
+    "rsid": "rs2000048_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000049_afram": {
+    "rsid": "rs2000049_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000050_afram": {
+    "rsid": "rs2000050_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000051_afram": {
+    "rsid": "rs2000051_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000052_afram": {
+    "rsid": "rs2000052_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000053_afram": {
+    "rsid": "rs2000053_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000054_afram": {
+    "rsid": "rs2000054_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000055_afram": {
+    "rsid": "rs2000055_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000056_afram": {
+    "rsid": "rs2000056_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000057_afram": {
+    "rsid": "rs2000057_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000058_afram": {
+    "rsid": "rs2000058_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000059_afram": {
+    "rsid": "rs2000059_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000060_afram": {
+    "rsid": "rs2000060_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000061_afram": {
+    "rsid": "rs2000061_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000062_afram": {
+    "rsid": "rs2000062_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000063_afram": {
+    "rsid": "rs2000063_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000064_afram": {
+    "rsid": "rs2000064_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000065_afram": {
+    "rsid": "rs2000065_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000066_afram": {
+    "rsid": "rs2000066_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000067_afram": {
+    "rsid": "rs2000067_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000068_afram": {
+    "rsid": "rs2000068_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000069_afram": {
+    "rsid": "rs2000069_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000070_afram": {
+    "rsid": "rs2000070_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000071_afram": {
+    "rsid": "rs2000071_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000072_afram": {
+    "rsid": "rs2000072_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000073_afram": {
+    "rsid": "rs2000073_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000074_afram": {
+    "rsid": "rs2000074_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000075_afram": {
+    "rsid": "rs2000075_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000076_afram": {
+    "rsid": "rs2000076_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000077_afram": {
+    "rsid": "rs2000077_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000078_afram": {
+    "rsid": "rs2000078_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000079_afram": {
+    "rsid": "rs2000079_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000080_afram": {
+    "rsid": "rs2000080_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000081_afram": {
+    "rsid": "rs2000081_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000082_afram": {
+    "rsid": "rs2000082_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000083_afram": {
+    "rsid": "rs2000083_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000084_afram": {
+    "rsid": "rs2000084_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000085_afram": {
+    "rsid": "rs2000085_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000086_afram": {
+    "rsid": "rs2000086_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000087_afram": {
+    "rsid": "rs2000087_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000088_afram": {
+    "rsid": "rs2000088_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000089_afram": {
+    "rsid": "rs2000089_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000090_afram": {
+    "rsid": "rs2000090_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000091_afram": {
+    "rsid": "rs2000091_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000092_afram": {
+    "rsid": "rs2000092_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000093_afram": {
+    "rsid": "rs2000093_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000094_afram": {
+    "rsid": "rs2000094_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000095_afram": {
+    "rsid": "rs2000095_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000096_afram": {
+    "rsid": "rs2000096_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000097_afram": {
+    "rsid": "rs2000097_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000098_afram": {
+    "rsid": "rs2000098_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs2000099_afram": {
+    "rsid": "rs2000099_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700000_afram": {
+    "rsid": "rs700000_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700001_afram": {
+    "rsid": "rs700001_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700002_afram": {
+    "rsid": "rs700002_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700003_afram": {
+    "rsid": "rs700003_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700004_afram": {
+    "rsid": "rs700004_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700005_afram": {
+    "rsid": "rs700005_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700006_afram": {
+    "rsid": "rs700006_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700007_afram": {
+    "rsid": "rs700007_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700008_afram": {
+    "rsid": "rs700008_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs700009_afram": {
+    "rsid": "rs700009_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000010_afram": {
+    "rsid": "rs7000010_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000011_afram": {
+    "rsid": "rs7000011_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000012_afram": {
+    "rsid": "rs7000012_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000013_afram": {
+    "rsid": "rs7000013_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000014_afram": {
+    "rsid": "rs7000014_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000015_afram": {
+    "rsid": "rs7000015_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000016_afram": {
+    "rsid": "rs7000016_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000017_afram": {
+    "rsid": "rs7000017_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000018_afram": {
+    "rsid": "rs7000018_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000019_afram": {
+    "rsid": "rs7000019_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000020_afram": {
+    "rsid": "rs7000020_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000021_afram": {
+    "rsid": "rs7000021_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000022_afram": {
+    "rsid": "rs7000022_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000023_afram": {
+    "rsid": "rs7000023_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000024_afram": {
+    "rsid": "rs7000024_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000025_afram": {
+    "rsid": "rs7000025_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000026_afram": {
+    "rsid": "rs7000026_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000027_afram": {
+    "rsid": "rs7000027_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000028_afram": {
+    "rsid": "rs7000028_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000029_afram": {
+    "rsid": "rs7000029_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000030_afram": {
+    "rsid": "rs7000030_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000031_afram": {
+    "rsid": "rs7000031_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000032_afram": {
+    "rsid": "rs7000032_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000033_afram": {
+    "rsid": "rs7000033_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000034_afram": {
+    "rsid": "rs7000034_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000035_afram": {
+    "rsid": "rs7000035_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000036_afram": {
+    "rsid": "rs7000036_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000037_afram": {
+    "rsid": "rs7000037_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000038_afram": {
+    "rsid": "rs7000038_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000039_afram": {
+    "rsid": "rs7000039_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000040_afram": {
+    "rsid": "rs7000040_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000041_afram": {
+    "rsid": "rs7000041_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000042_afram": {
+    "rsid": "rs7000042_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000043_afram": {
+    "rsid": "rs7000043_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000044_afram": {
+    "rsid": "rs7000044_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000045_afram": {
+    "rsid": "rs7000045_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000046_afram": {
+    "rsid": "rs7000046_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000047_afram": {
+    "rsid": "rs7000047_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000048_afram": {
+    "rsid": "rs7000048_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000049_afram": {
+    "rsid": "rs7000049_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000050_afram": {
+    "rsid": "rs7000050_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000051_afram": {
+    "rsid": "rs7000051_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000052_afram": {
+    "rsid": "rs7000052_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000053_afram": {
+    "rsid": "rs7000053_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000054_afram": {
+    "rsid": "rs7000054_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000055_afram": {
+    "rsid": "rs7000055_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000056_afram": {
+    "rsid": "rs7000056_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000057_afram": {
+    "rsid": "rs7000057_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000058_afram": {
+    "rsid": "rs7000058_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000059_afram": {
+    "rsid": "rs7000059_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000060_afram": {
+    "rsid": "rs7000060_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000061_afram": {
+    "rsid": "rs7000061_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000062_afram": {
+    "rsid": "rs7000062_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000063_afram": {
+    "rsid": "rs7000063_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000064_afram": {
+    "rsid": "rs7000064_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000065_afram": {
+    "rsid": "rs7000065_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000066_afram": {
+    "rsid": "rs7000066_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000067_afram": {
+    "rsid": "rs7000067_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000068_afram": {
+    "rsid": "rs7000068_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000069_afram": {
+    "rsid": "rs7000069_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000070_afram": {
+    "rsid": "rs7000070_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000071_afram": {
+    "rsid": "rs7000071_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000072_afram": {
+    "rsid": "rs7000072_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000073_afram": {
+    "rsid": "rs7000073_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000074_afram": {
+    "rsid": "rs7000074_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000075_afram": {
+    "rsid": "rs7000075_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000076_afram": {
+    "rsid": "rs7000076_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000077_afram": {
+    "rsid": "rs7000077_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000078_afram": {
+    "rsid": "rs7000078_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000079_afram": {
+    "rsid": "rs7000079_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000080_afram": {
+    "rsid": "rs7000080_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000081_afram": {
+    "rsid": "rs7000081_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000082_afram": {
+    "rsid": "rs7000082_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000083_afram": {
+    "rsid": "rs7000083_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000084_afram": {
+    "rsid": "rs7000084_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000085_afram": {
+    "rsid": "rs7000085_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000086_afram": {
+    "rsid": "rs7000086_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000087_afram": {
+    "rsid": "rs7000087_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000088_afram": {
+    "rsid": "rs7000088_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000089_afram": {
+    "rsid": "rs7000089_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000090_afram": {
+    "rsid": "rs7000090_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000091_afram": {
+    "rsid": "rs7000091_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000092_afram": {
+    "rsid": "rs7000092_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000093_afram": {
+    "rsid": "rs7000093_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000094_afram": {
+    "rsid": "rs7000094_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000095_afram": {
+    "rsid": "rs7000095_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000096_afram": {
+    "rsid": "rs7000096_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  },
+  "rs7000097_afram": {
+    "rsid": "rs7000097_afram",
+    "region": "African American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "African American ancestry informative marker."
+  }
+}

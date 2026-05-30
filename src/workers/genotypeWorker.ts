@@ -1,6 +1,6 @@
 import { parseRawDNA, parseRawDNAStream } from '../services/dnaParser';
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
-import { matchSNPs } from '../services/snpMatcher';
+import { matchSNPs, getAllSources } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
 import { Y_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerAllowlist } from '../utils/markerAllowlist';
@@ -13,18 +13,69 @@ import { matchHealthAndWellness } from "../utils/healthMatching";
 import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../engines/ancestry/fastMatrixEngine';
 import { extractPlinkGenotype } from '../utils/plinkUtils';
 import { processSubpopulations } from '../components/ancestryOracleLogic';
+import { loadMasterAims } from '../data/index';
 
 compileReferenceKernel();
 
+async function runGenotypeScout(
+    imputedSnpMap: Record<string, string>,
+    mergedSnpMetaMap: Record<string, { chrom: string, pos: number }>,
+    names: string[],
+    sab: any
+) {
+    const allSources = getAllSources();
+    console.log("Total sources length in worker:", allSources.length);
+    const numWorkers = navigator.hardwareConcurrency || 4;
+    const chunkSize = Math.ceil(allSources.length / numWorkers);
+    const workerPromises = [];
+    
+    for (let i = 0; i < allSources.length; i += chunkSize) {
+      const chunk = allSources.slice(i, i + chunkSize);
+      workerPromises.push(new Promise((resolve, reject) => {
+        const worker = new Worker(new URL('../workers/markerProcessingWorker.ts', import.meta.url), { type: 'module' });
+        worker.postMessage({ markers: chunk, imputedSnpMap, snpMetaMap: mergedSnpMetaMap });
+        worker.onmessage = (e) => { resolve(e.data.payload); worker.terminate(); };
+        worker.onerror = (e) => { reject(e); worker.terminate(); };
+      }));
+    }
+    
+    const [ancestryResult, bloodResult] = await Promise.all([
+      (async () => {
+        const workerResults = await Promise.all(workerPromises);
+        return ([] as any[]).concat(...workerResults);
+      })(),
+      (async () => {
+         const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
+         const [
+          ancientAdmixture, individualMatches, famousMatches, healthWellness,
+          populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw,
+          microHapResults, comprehensiveResults
+        ] = await Promise.all([
+          calculateAncientAdmixture(imputedSnpMap),
+          calculateIndividualMatches(imputedSnpMap),
+          calculateFamousMatches(imputedSnpMap),
+          matchHealthAndWellness(imputedSnpMap),
+          calculatePopulationProximityOptimized(snpMapForEngine),
+          calculateMarkerBenchmarks(imputedSnpMap),
+          (async () => { const { calculateMDLPK16Scores } = await import("../engines/ancestry/mdlpAncEngine"); return calculateMDLPK16Scores(imputedSnpMap); })(),
+          (async () => { const { calculateRegionalScores } = await import("../engines/ancestry/grafAncEngine"); return calculateRegionalScores(imputedSnpMap); })(),
+          (async () => { const { identifyMicroHapSignatures } = await import("../engines/ancestry/microHapEngine"); return identifyMicroHapSignatures(imputedSnpMap); })(),
+          (async () => { const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine"); return calculateComprehensiveScores(imputedSnpMap); })()
+        ]);
+        return { ancientAdmixture, individualMatches, famousMatches, healthWellness, populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw, microHapResults, comprehensiveResults };
+      })()
+    ]);
+
+    const sampleId = names[0] ? extractSampleId(names[0]) : undefined;
+    const oracleResults = await calculateAncestryOracle(ancestryResult.filter(r => r.category === 'Ancestry'), undefined, undefined, bloodResult.grafResults_raw, bloodResult.mdlpResults_raw, bloodResult.comprehensiveResults, sampleId);
+    
+    return { ancestryResult, bloodResult, oracleResults };
+}
+
 self.onmessage = async (e: MessageEvent) => {
   const { type, files, payload, sab } = e.data;
-  
   if (type !== 'PROCESS_GENOME' && type !== 'PLINK_PROCESS_GENOME' && !files) return;
-
-  if (sab) {
-    const progressArray = new Int32Array(sab);
-    Atomics.store(progressArray, 3, 1); // 1 = parsing
-  }
+  if (sab) { new Int32Array(sab)[3] = 1; }
 
   try {
     await compileReferenceKernel();
@@ -45,151 +96,71 @@ self.onmessage = async (e: MessageEvent) => {
             const rowIdx = bimLookup.get(allowedRsid);
             if (rowIdx !== undefined) imputedSnpMap[allowedRsid] = extractPlinkGenotype(bedBuffer, rowIdx);
         }
-        names = ['PLINK Data'];
-        chips = ['PLINK Dataset'];
-        totalSnps = bimEntries.length;
+        names = ['PLINK Data']; chips = ['PLINK Dataset']; totalSnps = bimEntries.length;
     } else {
         const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
         const decoder = new TextDecoder();
-        
         let parsedFiles = [];
+        
         for (const fileObj of filesToProcess) {
+          const actualFile = (obj: any): any => obj.stream ? obj : (obj.file ? obj.file : null);
+          const getFileName = (obj: any): string => obj.name || (obj.file ? obj.file.name : 'Uploaded Kit');
+          const file = actualFile(fileObj);
+          const fileName = getFileName(fileObj);
+          
           let parsed;
-          
-          // Robust file/blob retrieval across environments and iframe/worker sandboxing guidelines
-          const getStreamableFileOfObj = (obj: any): any => {
-            if (!obj) return null;
-            if (typeof obj.stream === 'function' || typeof obj.slice === 'function') {
-              return obj;
-            }
-            if (obj.file && (typeof obj.file.stream === 'function' || typeof obj.file.slice === 'function')) {
-              return obj.file;
-            }
-            return null;
-          };
-
-          const getFileNameOfObj = (obj: any): string => {
-            if (!obj) return 'Unknown';
-            if (obj.name) return obj.name;
-            if (obj.file && obj.file.name) return obj.file.name;
-            return 'Uploaded Kit';
-          };
-
-          const actualFile = getStreamableFileOfObj(fileObj);
-          const fileName = getFileNameOfObj(fileObj);
-          
-          if (actualFile && typeof actualFile.stream === 'function') {
-            // Stream based ingestion for high volume genotypes without blocking / high RAM
-            parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
-              if (sab) {
-                const progressArray = new Int32Array(sab);
-                Atomics.store(progressArray, 0, processed);
-                Atomics.store(progressArray, 1, total);
-                Atomics.store(progressArray, 2, snps);
-              } else {
-                // Throttle progress events slightly to keep communication noise-free
-                if (processed === total || snps % 20000 === 0) {
-                  self.postMessage({ 
-                    type: 'PROGRESS', 
-                    payload: { name: fileName, processed, total, snps } 
-                  });
+          if (file && typeof file.stream === 'function') {
+            parsed = await parseRawDNAStream(file, allowlist, (processed, total, snps) => {
+                if (sab) {
+                    const progressArray = new Int32Array(sab);
+                    Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
                 }
-              }
             });
-          } else if (fileObj && fileObj.buffer) {
-            // Standard synchronous fallback for smaller array buffers
+          } else if (fileObj.buffer) {
             parsed = parseRawDNA(decoder.decode(fileObj.buffer), allowlist);
-          } else if (actualFile) {
-            // Fallback for file/blob without .stream support
-            const arrayBuffer = await actualFile.arrayBuffer();
-            parsed = parseRawDNA(decoder.decode(arrayBuffer), allowlist);
           } else {
-            throw new Error(`Invalid or unparseable DNA upload asset: ${fileName}`);
+            parsed = parseRawDNA(decoder.decode(await file.arrayBuffer()), allowlist);
           }
           parsedFiles.push({ ...parsed, name: fileName });
         }
         
         let mergedSnpMap: Record<string, string> = {};
         for (const pf of parsedFiles) {
-          names.push(pf.name);
-          chips.push(pf.chip);
-          totalSnps += pf.snpCount;
-          Object.assign(mergedSnpMetaMap, pf.snpMetaMap);
-          Object.assign(mergedYMap, pf.yMap);
-          Object.assign(mergedMtMap, pf.mtMap);
+          names.push(pf.name); chips.push(pf.chip); totalSnps += pf.snpCount;
+          Object.assign(mergedSnpMetaMap, pf.snpMetaMap); Object.assign(mergedYMap, pf.yMap); Object.assign(mergedMtMap, pf.mtMap);
           for (const rsid in pf.snpMap) {
-            if (!mergedSnpMap[rsid] || pf.snpMap[rsid].length > mergedSnpMap[rsid].length) {
-              mergedSnpMap[rsid] = pf.snpMap[rsid];
-            }
+            if (!mergedSnpMap[rsid] || pf.snpMap[rsid].length > mergedSnpMap[rsid].length) mergedSnpMap[rsid] = pf.snpMap[rsid];
           }
         }
         imputedSnpMap = applyLightImputation(mergedSnpMap);
     }
 
-    if (sab) {
-      const progressArray = new Int32Array(sab);
-      Atomics.store(progressArray, 3, 2); // 2 = executing analysis
-    }
-
-    const results = matchSNPs(imputedSnpMap, mergedSnpMetaMap);
+    if (sab) { Atomics.store(new Int32Array(sab), 3, 2); }
+    
+    // Orchestration
+    const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, names, sab);
+    
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
     const predictedMtDNA = analyzeMtDNA(mergedMtMap);
-    const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
-
-    const [
-      ancientAdmixture, individualMatches, famousMatches, healthWellness,
-      populationProximity, markerBenchmarks, k27Results_raw, grafResults_raw,
-      microHapResults, comprehensiveResults
-    ] = await Promise.all([
-      calculateAncientAdmixture(imputedSnpMap),
-      calculateIndividualMatches(imputedSnpMap),
-      calculateFamousMatches(imputedSnpMap),
-      matchHealthAndWellness(imputedSnpMap),
-      calculatePopulationProximityOptimized(snpMapForEngine),
-      calculateMarkerBenchmarks(imputedSnpMap),
-      (async () => { const { calculateK27Scores } = await import("../engines/ancestry/k27AncEngine"); return calculateK27Scores(imputedSnpMap); })(),
-      (async () => { const { calculateRegionalScores } = await import("../engines/ancestry/grafAncEngine"); return calculateRegionalScores(imputedSnpMap); })(),
-      (async () => { const { identifyMicroHapSignatures } = await import("../engines/ancestry/microHapEngine"); return identifyMicroHapSignatures(imputedSnpMap); })(),
-      (async () => { const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine"); return calculateComprehensiveScores(imputedSnpMap); })()
-    ]);
-
-    const sampleId = names[0] ? extractSampleId(names[0]) : undefined;
-
-    const oracleResults = await calculateAncestryOracle(results.filter(r => r.category === 'Ancestry'), predictedYDNA?.predicted?.continent, predictedMtDNA?.region, grafResults_raw, k27Results_raw, comprehensiveResults, sampleId);
-
-    // Calculate the high-performance, webworked subpopulation Oracle v3
+    
     const userGenotypes = Object.entries(imputedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
-    const subpopulationOracle = processSubpopulations(userGenotypes, [], sampleId);
-
-    // Simple naive calculation
+    const sampleId = names[0] ? extractSampleId(names[0]) : undefined;
+    const subpopulationOracle = processSubpopulations(userGenotypes, [], sampleId, mergedSnpMetaMap);
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
     
-    if (sab) {
-      const progressArray = new Int32Array(sab);
-      Atomics.store(progressArray, 3, 3); // 3 = finished
-    }
+    if (sab) { Atomics.store(new Int32Array(sab), 3, 3); }
 
     self.postMessage({ 
       type: 'SUCCESS', 
       payload: { 
         name: names[0], 
-        results, 
+        results: ancestryResult, 
         chip: chips[0] || "Unknown Chip",
         snpCount: totalSnps,
-        predictedYDNA,
-        predictedMtDNA,
-        mergedMtMap,
+        predictedYDNA, predictedMtDNA, mergedMtMap,
         mergedSnpMap: imputedSnpMap,
         analysis: { 
-          ancientAdmixture, 
-          individualMatches, 
-          famousMatches, 
-          healthWellness, 
-          populationProximity, 
-          markerBenchmarks, 
-          k27Results: k27Results_raw, 
-          grafResults: grafResults_raw, 
-          microHapResults, 
+          ...bloodResult,
           oracleResults, 
           naiveEstimates,
           subpopulationOracle
@@ -197,53 +168,90 @@ self.onmessage = async (e: MessageEvent) => {
       } 
     });
   } catch (err) {
-    if (sab) {
-      const progressArray = new Int32Array(sab);
-      Atomics.store(progressArray, 3, 4); // 4 = error
-    }
-    let errorPayload: any = { message: "An unexpected error occurred during genomic calculation." };
-    if (err instanceof Error) {
-      errorPayload = {
-        message: err.message,
-        name: err.name,
-        details: (err as any).details || null,
-        stack: err.stack
-      };
-    } else if (typeof err === 'string') {
-      errorPayload = { message: err };
-    } else {
-      errorPayload = { message: String(err) };
-    }
-    self.postMessage({ type: 'ERROR', error: errorPayload });
+    if (sab) { Atomics.store(new Int32Array(sab), 3, 4); }
+    self.postMessage({ type: 'ERROR', error: { message: err instanceof Error ? err.message : String(err) } });
   }
 };
 
-import masterAims from '../data/master_aims_normalized.json';
+let masterAimsCache: any = null;
+const getMasterAims = () => {
+  if (!masterAimsCache) masterAimsCache = loadMasterAims();
+  return masterAimsCache;
+};
+
 function calculateNaiveEthnicity(snpMap: Record<string, string>) {
-    const scores: Record<string, number> = {};
-    let total = 0;
-    const aims = masterAims as any;
-    
-    // Track markers for simple LD pruning (by physical proximity is hard without pos data)
-    // Filter out markers with weak predictive power or high deviation
+    const totalSim: Record<string, number> = {};
+    const counts: Record<string, number> = {};
+    const aims = getMasterAims() as any;
     const usedRsids = new Set<string>();
 
     for (const [rsid, genotype] of Object.entries(snpMap)) {
         const aim = aims[rsid];
         if (aim && aim.frequencies) {
-            // HWE Pruning: Simple check for extreme imbalance if data allowed
-            // Simplified LD Pruning: Skip redundant markers by checking gene affiliation
             if (usedRsids.has(aim.gene)) continue;
-            
-            for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                // Remove weight boost: Contribution is raw frequency
-                scores[pop] = (scores[pop] || 0) + (freq as number);
-                total += (freq as number);
+
+            const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
+            if (!cleanGenotype || cleanGenotype.length < 1 || cleanGenotype.includes('-') || cleanGenotype.includes('N')) {
+                continue;
             }
+
+            const effectAlleles = aim.alleles || [];
+            if (effectAlleles.length === 0) continue;
+            const effectAllele = effectAlleles[0].toUpperCase();
+
+            let k = 0;
+            let validLength = 0;
+            for (const char of cleanGenotype) {
+                if (['A', 'C', 'G', 'T', 'I', 'D'].includes(char)) {
+                    validLength++;
+                    if (char === effectAllele) {
+                        k++;
+                    }
+                }
+            }
+
+            if (validLength === 0) continue;
+
+            let dosage = k;
+            if (validLength === 1) {
+                dosage = k * 2;
+            }
+
+            const userFreq = dosage / 2; // 0.0, 0.5, or 1.0
+
+            for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
+                const p = freq as number;
+                const distance = (userFreq - p) * (userFreq - p);
+                const sim = 1.0 - distance;
+                totalSim[pop] = (totalSim[pop] || 0) + sim;
+                counts[pop] = (counts[pop] || 0) + 1;
+            }
+
             usedRsids.add(aim.gene);
         }
     }
+
+    const avgSim: Record<string, number> = {};
+    for (const pop in totalSim) {
+        if (counts[pop] > 5) { // Require a baseline of comparison SNPs
+            avgSim[pop] = totalSim[pop] / counts[pop];
+        }
+    }
+
+    // Power transformation to boost contrast and resolve distinct ancestral profiles cleanly
+    const transformed: Record<string, number> = {};
+    let totalTransformed = 0;
+    for (const pop in avgSim) {
+        const val = Math.pow(avgSim[pop], 5);
+        transformed[pop] = val;
+        totalTransformed += val;
+    }
+
     const finalScores: Record<string, number> = {};
-    for (const pop in scores) finalScores[pop] = (scores[pop] / total) * 100;
+    if (totalTransformed > 0) {
+        for (const pop in transformed) {
+            finalScores[pop] = (transformed[pop] / totalTransformed) * 100;
+        }
+    }
     return finalScores;
 }

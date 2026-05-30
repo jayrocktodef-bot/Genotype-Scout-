@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 const files = [
-  { name: 'parsed_haplogroups.json', path: './src/data/temp/parsed_haplogroups.json' },
-  { name: 'mt_haplogroups.json', path: './src/data/temp/mt_haplogroups.json' },
+  { name: 'parsed_haplogroups.json', path: './src/data/haplogroups/parsed_haplogroups.json' },
+  { name: 'mt_haplogroups.json', path: './src/data/mitochondrial/mt_haplogroups.json' },
   { name: 'master_aims_normalized.json', path: './src/data/master_aims_normalized.json' },
   { name: 'master_ydna.json', path: './src/data/master_ydna.json' }
 ];

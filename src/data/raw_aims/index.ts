@@ -1,5 +1,5 @@
 // ==========================================================================
-// Generated dynamically via scripts/consolidate-markers.ts. DO NOT HAND EDIT.
+// Exposes the consolidated global markers registry in raw_aims folder.
 // ==========================================================================
 
 import africa from './africa.json';
@@ -11,8 +11,11 @@ import europeanSubstruct from './european_substruct.json';
 import global from './global.json';
 import keyAims from './key_aims.json';
 import middleEast from './middle-east.json';
+import newWorldAims from './new_world_aims.json';
 import oceania from './oceania.json';
 import southAsia from './south-asia.json';
+import cosmopolitanAims from './cosmopolitan_aims.json';
+import unmappedMarkers from './unmapped_markers.json';
 
 // Export individual collections for fine-grained engine access
 export {
@@ -25,8 +28,11 @@ export {
   global,
   keyAims,
   middleEast,
+  newWorldAims,
   oceania,
-  southAsia
+  southAsia,
+  cosmopolitanAims,
+  unmappedMarkers
 };
 
 /**
@@ -42,8 +48,11 @@ export const AimsRegistry = {
   global,
   keyAims,
   middleEast,
+  newWorldAims,
   oceania,
   southAsia,
+  cosmopolitanAims,
+  unmappedMarkers
 };
 
 /**
@@ -60,7 +69,10 @@ export function getAllAims(): any[] {
     ...global,
     ...keyAims,
     ...middleEast,
+    ...newWorldAims,
     ...oceania,
     ...southAsia,
+    ...cosmopolitanAims,
+    ...unmappedMarkers
   ];
 }
