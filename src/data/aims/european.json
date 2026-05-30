@@ -50,8 +50,42 @@
     "description": "A variant common in West African ancestry and linked to physiological adaptation.",
     "ref": "C",
     "alt": "T",
-    "gene": "SLC14A2",
+    "gene": "HERC2",
     "trait": "African Ancestry Marker"
+  },
+  "rs12913832": {
+    "rsid": "rs12913832",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": ["G"],
+    "frequencies": {
+      "AFR": 0.027, "EUR": 0.751, "EAS": 0.002, "AMR": 0.609, "SAS": 0.419, "MENA": 0.55, "OCE": 0.01
+    },
+    "weight": 10,
+    "description": "A chief HERC2 enhancer variant and strong European pigmentary marker driving light-pigment hair and blue eyes.",
+    "chromosome": "15",
+    "position": 28120472,
+    "ref": "A",
+    "alt": "C",
+    "gene": "HERC2",
+    "trait": "Ancestral Pigmentation Marker"
+  },
+  "rs1800407": {
+    "rsid": "rs1800407",
+    "chromosome": "15",
+    "position": 27985172,
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": ["T"],
+    "frequencies": {
+      "AFR": 0.1414, "EUR": 0.0748, "EAS": 0.001, "AMR": 0.7194, "SAS": 0.5975, "MENA": 0, "OCE": 0
+    },
+    "weight": 8,
+    "description": "An OCA2 pigmentation marker whose ancestral alleles are primarily found in sub-Saharan populations.",
+    "ref": "C",
+    "alt": "T",
+    "gene": "OCA2",
+    "trait": "European Pigmentation Marker"
   },
   "rs1042602": {
     "rsid": "rs1042602",

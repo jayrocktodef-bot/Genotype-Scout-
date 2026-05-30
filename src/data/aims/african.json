@@ -1,6 +1,31 @@
 {
-  "rs10456302_afr": {
-    "rsid": "rs10456302_afr",
+  "rs2814778": {
+    "rsid": "rs2814778",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.006,
+      "EAS": 0,
+      "AMR": 0.072,
+      "SAS": 0,
+      "MENA": 0.01,
+      "OCE": 0
+    },
+    "weight": 10,
+    "description": "The Duffy Null variant provides high-resistance adaptation against vivax malaria; it is nearly fixed in African lineages compared to others.",
+    "chromosome": "1",
+    "position": 159204893,
+    "ref": "T",
+    "alt": "C",
+    "gene": "ACKR1",
+    "trait": "Duffy Null Allele (Malaria Resistance)"
+  },
+  "rs10456302": {
+    "rsid": "rs10456302",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -26,8 +51,8 @@
     "trait": "Phenotype",
     "description": "Variant associated with hair texture common in diverse West African populations."
   },
-  "rs9990001_afr": {
-    "rsid": "rs9990001_afr",
+  "rs9990001": {
+    "rsid": "rs9990001",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -52,30 +77,8 @@
     "trait": "Ancestry",
     "description": "Bantu diagnostic SNP - informative for West-Central and Eastern African Bantu-speaking populations."
   },
-  "rs10456303_afr": {
-    "rsid": "rs10456303_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "gene": "HBB",
-    "trait": "Phenotype",
-    "description": "Marker identified with phenotypic variation in East African Bantu populations."
-  },
-  "rs334_afr": {
-    "rsid": "rs334_afr",
+  "rs334": {
+    "rsid": "rs334",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -97,8 +100,8 @@
     "trait": "Ancestry",
     "description": "Sickle Cell Trait marker, highly informative for West African ancestry."
   },
-  "rs10456197_afr": {
-    "rsid": "rs10456197_afr",
+  "rs10456197": {
+    "rsid": "rs10456197",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -123,8 +126,8 @@
     "weight": 5,
     "description": "Khoisan Ancestry Marker - highly diagnostic for the indigenous Khoe-San populations of Southern Africa."
   },
-  "rs12149626_afr": {
-    "rsid": "rs12149626_afr",
+  "rs12149626": {
+    "rsid": "rs12149626",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -149,8 +152,8 @@
     "weight": 4.5,
     "description": "Nilotic Ancestry Marker - diagnostic for Nilotic-speaking populations of the Nile Valley and East Africa."
   },
-  "rs12149628_afr": {
-    "rsid": "rs12149628_afr",
+  "rs12149628": {
+    "rsid": "rs12149628",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -175,8 +178,8 @@
     "weight": 4,
     "description": "Cushitic Ancestry Marker - informative for Afroasiatic-speaking populations of the Horn of Africa."
   },
-  "rs7252508_afr": {
-    "rsid": "rs7252508_afr",
+  "rs7252508": {
+    "rsid": "rs7252508",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -200,8 +203,8 @@
     "weight": 5,
     "description": "Central African Hunter-Gatherer Marker - diagnostic for Pygmy populations of the Congo Basin."
   },
-  "rs10456213_afr": {
-    "rsid": "rs10456213_afr",
+  "rs10456213": {
+    "rsid": "rs10456213",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -226,8 +229,8 @@
     "weight": 4,
     "description": "Upper Guinea Ancestry Marker - informative for populations of the Senegambia and Sierra Leone region."
   },
-  "rs10456215_afr": {
-    "rsid": "rs10456215_afr",
+  "rs10456215": {
+    "rsid": "rs10456215",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -252,8 +255,8 @@
     "weight": 4,
     "description": "Bight of Benin Ancestry Marker - highly informative for Gbe and Yoruboid speaking populations."
   },
-  "rs10456216_afr": {
-    "rsid": "rs10456216_afr",
+  "rs10456216": {
+    "rsid": "rs10456216",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -278,8 +281,8 @@
     "weight": 4,
     "description": "East African Bantu Marker - informative for Bantu-speaking populations of the Great Lakes region."
   },
-  "rs10456198_afr": {
-    "rsid": "rs10456198_afr",
+  "rs10456198": {
+    "rsid": "rs10456198",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -304,8 +307,8 @@
     "weight": 4,
     "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana speaking populations."
   },
-  "rs10456271_afr": {
-    "rsid": "rs10456271_afr",
+  "rs10456271": {
+    "rsid": "rs10456271",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -330,8 +333,8 @@
     "weight": 4,
     "description": "Berber Ancestry Marker - highly informative for the indigenous Amazigh populations of North Africa."
   },
-  "rs10456234_afr": {
-    "rsid": "rs10456234_afr",
+  "rs10456234": {
+    "rsid": "rs10456234",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -356,8 +359,8 @@
     "weight": 4,
     "description": "Sahelian Ancestry Marker - informative for populations of the Sahel and Southern Sahara."
   },
-  "rs10456258_afr": {
-    "rsid": "rs10456258_afr",
+  "rs10456258": {
+    "rsid": "rs10456258",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -382,8 +385,8 @@
     "weight": 4,
     "description": "Nilo-Saharan Ancestry Marker - diagnostic for populations of the Lake Chad Basin and Darfur."
   },
-  "rs10456248_afr": {
-    "rsid": "rs10456248_afr",
+  "rs10456248": {
+    "rsid": "rs10456248",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -408,8 +411,8 @@
     "weight": 4,
     "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana)."
   },
-  "rs10456269_afr": {
-    "rsid": "rs10456269_afr",
+  "rs10456269": {
+    "rsid": "rs10456269",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -434,8 +437,8 @@
     "weight": 4,
     "description": "Ethiosemitic Ancestry Marker - informative for the Semitic-speaking populations of the Ethiopian Highlands."
   },
-  "rs10456247_afr": {
-    "rsid": "rs10456247_afr",
+  "rs10456247": {
+    "rsid": "rs10456247",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -460,8 +463,8 @@
     "weight": 4,
     "description": "Kru Ancestry Marker - informative for Kru-speaking populations of the Liberian coast."
   },
-  "rs10456249_afr": {
-    "rsid": "rs10456249_afr",
+  "rs10456249": {
+    "rsid": "rs10456249",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -486,8 +489,8 @@
     "weight": 4,
     "description": "Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia."
   },
-  "rs10456252_afr": {
-    "rsid": "rs10456252_afr",
+  "rs10456252": {
+    "rsid": "rs10456252",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -512,8 +515,8 @@
     "weight": 4,
     "description": "Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea."
   },
-  "rs10456256_afr": {
-    "rsid": "rs10456256_afr",
+  "rs10456256": {
+    "rsid": "rs10456256",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -538,8 +541,8 @@
     "weight": 4,
     "description": "Bakongo Ancestry Marker - diagnostic for populations of the former Kingdom of Kongo."
   },
-  "rs10456243_afr": {
-    "rsid": "rs10456243_afr",
+  "rs10456243": {
+    "rsid": "rs10456243",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -564,8 +567,8 @@
     "weight": 4,
     "description": "Edo Ancestry Marker - informative for populations of the former Benin Empire (Nigeria)."
   },
-  "rs10456244_afr": {
-    "rsid": "rs10456244_afr",
+  "rs10456244": {
+    "rsid": "rs10456244",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -590,8 +593,8 @@
     "weight": 4,
     "description": "Mende Ancestry Marker - diagnostic for Mande-speaking populations of Sierra Leone."
   },
-  "rs10456245_afr": {
-    "rsid": "rs10456245_afr",
+  "rs10456245": {
+    "rsid": "rs10456245",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -616,8 +619,8 @@
     "weight": 4,
     "description": "Limba Ancestry Marker - diagnostic for indigenous populations of Sierra Leone."
   },
-  "rs10456257_afr": {
-    "rsid": "rs10456257_afr",
+  "rs10456257": {
+    "rsid": "rs10456257",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -642,8 +645,8 @@
     "weight": 4,
     "description": "Baluba Ancestry Marker - informative for Luba populations of the Democratic Republic of Congo."
   },
-  "rs10456259_afr": {
-    "rsid": "rs10456259_afr",
+  "rs10456259": {
+    "rsid": "rs10456259",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -668,8 +671,8 @@
     "weight": 4,
     "description": "Chokwe Ancestry Marker - informative for populations of Angola, DRC, and Zambia."
   },
-  "rs10456260_afr": {
-    "rsid": "rs10456260_afr",
+  "rs10456260": {
+    "rsid": "rs10456260",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -694,8 +697,8 @@
     "weight": 4,
     "description": "Lozi Ancestry Marker - diagnostic for populations of the Barotse Floodplain (Zambia)."
   },
-  "rs10456261_afr": {
-    "rsid": "rs10456261_afr",
+  "rs10456261": {
+    "rsid": "rs10456261",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -720,8 +723,8 @@
     "weight": 4,
     "description": "Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC."
   },
-  "rs10456262_afr": {
-    "rsid": "rs10456262_afr",
+  "rs10456262": {
+    "rsid": "rs10456262",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -746,8 +749,8 @@
     "weight": 4,
     "description": "Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley."
   },
-  "rs10456263_afr": {
-    "rsid": "rs10456263_afr",
+  "rs10456263": {
+    "rsid": "rs10456263",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -772,8 +775,8 @@
     "weight": 4,
     "description": "Chewa Ancestry Marker - diagnostic for Maravi populations of Malawi and Zambia."
   },
-  "rs10456265_afr": {
-    "rsid": "rs10456265_afr",
+  "rs10456265": {
+    "rsid": "rs10456265",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -798,8 +801,8 @@
     "weight": 4,
     "description": "Makua Ancestry Marker - informative for Bantu populations of Northern Mozambique."
   },
-  "rs10456266_afr": {
-    "rsid": "rs10456266_afr",
+  "rs10456266": {
+    "rsid": "rs10456266",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -822,8 +825,8 @@
     "weight": 2,
     "description": "High significance Nigerian Marker - Fulani focus."
   },
-  "rs10456267_afr": {
-    "rsid": "rs10456267_afr",
+  "rs10456267": {
+    "rsid": "rs10456267",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -846,8 +849,8 @@
     "weight": 2,
     "description": "High significance Nigerian Marker - Edo focus."
   },
-  "rs10456268_afr": {
-    "rsid": "rs10456268_afr",
+  "rs10456268": {
+    "rsid": "rs10456268",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -870,34 +873,8 @@
     "weight": 2,
     "description": "High significance Nigerian Marker - Ibibio focus."
   },
-  "rs2814778_afr": {
-    "rsid": "rs2814778_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.1,
-      "SAS": 0.01,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Coastal_Malagasy": 0.75,
-      "Highland_Malagasy": 0.35,
-      "Bantu_SE": 0.98
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "ACKR1",
-    "trait": "Malaria Resistance",
-    "description": "Duffy Null Phenotype. Essential for tracking the Bantu contribution to the Malagasy gene pool."
-  },
-  "rs16891982_afr": {
-    "rsid": "rs16891982_afr",
+  "rs16891982": {
+    "rsid": "rs16891982",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -920,8 +897,8 @@
     "weight": 4.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs1800414_afr": {
-    "rsid": "rs1800414_afr",
+  "rs1800414": {
+    "rsid": "rs1800414",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -944,8 +921,8 @@
     "weight": 4,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs2862_afr": {
-    "rsid": "rs2862_afr",
+  "rs2862": {
+    "rsid": "rs2862",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -968,8 +945,8 @@
     "weight": 3.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs3340_afr": {
-    "rsid": "rs3340_afr",
+  "rs3340": {
+    "rsid": "rs3340",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -992,8 +969,8 @@
     "weight": 2.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs1572318_afr": {
-    "rsid": "rs1572318_afr",
+  "rs1572318": {
+    "rsid": "rs1572318",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1016,8 +993,8 @@
     "weight": 4.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456206_afr": {
-    "rsid": "rs10456206_afr",
+  "rs10456206": {
+    "rsid": "rs10456206",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1040,8 +1017,8 @@
     "weight": 4,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456207_afr": {
-    "rsid": "rs10456207_afr",
+  "rs10456207": {
+    "rsid": "rs10456207",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1064,8 +1041,8 @@
     "weight": 3.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs1800407_afr": {
-    "rsid": "rs1800407_afr",
+  "rs1800407": {
+    "rsid": "rs1800407",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1088,8 +1065,8 @@
     "weight": 4,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456218_afr": {
-    "rsid": "rs10456218_afr",
+  "rs10456218": {
+    "rsid": "rs10456218",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1114,8 +1091,8 @@
     "weight": 4,
     "description": "Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast."
   },
-  "rs10793168_afr": {
-    "rsid": "rs10793168_afr",
+  "rs10793168": {
+    "rsid": "rs10793168",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1140,8 +1117,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs10888503_afr": {
-    "rsid": "rs10888503_afr",
+  "rs10888503": {
+    "rsid": "rs10888503",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1166,8 +1143,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs10954606_afr": {
-    "rsid": "rs10954606_afr",
+  "rs10954606": {
+    "rsid": "rs10954606",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1192,8 +1169,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs11122330_afr": {
-    "rsid": "rs11122330_afr",
+  "rs11122330": {
+    "rsid": "rs11122330",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1218,8 +1195,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs11162487_afr": {
-    "rsid": "rs11162487_afr",
+  "rs11162487": {
+    "rsid": "rs11162487",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1244,8 +1221,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs11252398_afr": {
-    "rsid": "rs11252398_afr",
+  "rs11252398": {
+    "rsid": "rs11252398",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1270,8 +1247,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs11624035_afr": {
-    "rsid": "rs11624035_afr",
+  "rs11624035": {
+    "rsid": "rs11624035",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1296,8 +1273,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1165196_afr": {
-    "rsid": "rs1165196_afr",
+  "rs1165196": {
+    "rsid": "rs1165196",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1322,8 +1299,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1170258_afr": {
-    "rsid": "rs1170258_afr",
+  "rs1170258": {
+    "rsid": "rs1170258",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1348,8 +1325,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1172605_afr": {
-    "rsid": "rs1172605_afr",
+  "rs1172605": {
+    "rsid": "rs1172605",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1374,8 +1351,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1174629_afr": {
-    "rsid": "rs1174629_afr",
+  "rs1174629": {
+    "rsid": "rs1174629",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1400,8 +1377,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175143_afr": {
-    "rsid": "rs1175143_afr",
+  "rs1175143": {
+    "rsid": "rs1175143",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1426,8 +1403,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175187_afr": {
-    "rsid": "rs1175187_afr",
+  "rs1175187": {
+    "rsid": "rs1175187",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1452,8 +1429,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175241_afr": {
-    "rsid": "rs1175241_afr",
+  "rs1175241": {
+    "rsid": "rs1175241",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1478,8 +1455,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175295_afr": {
-    "rsid": "rs1175295_afr",
+  "rs1175295": {
+    "rsid": "rs1175295",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1504,8 +1481,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175349_afr": {
-    "rsid": "rs1175349_afr",
+  "rs1175349": {
+    "rsid": "rs1175349",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1530,8 +1507,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175403_afr": {
-    "rsid": "rs1175403_afr",
+  "rs1175403": {
+    "rsid": "rs1175403",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1556,8 +1533,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175457_afr": {
-    "rsid": "rs1175457_afr",
+  "rs1175457": {
+    "rsid": "rs1175457",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1582,8 +1559,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175511_afr": {
-    "rsid": "rs1175511_afr",
+  "rs1175511": {
+    "rsid": "rs1175511",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1608,8 +1585,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175565_afr": {
-    "rsid": "rs1175565_afr",
+  "rs1175565": {
+    "rsid": "rs1175565",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1634,8 +1611,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175619_afr": {
-    "rsid": "rs1175619_afr",
+  "rs1175619": {
+    "rsid": "rs1175619",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1660,8 +1637,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175673_afr": {
-    "rsid": "rs1175673_afr",
+  "rs1175673": {
+    "rsid": "rs1175673",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1686,8 +1663,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175727_afr": {
-    "rsid": "rs1175727_afr",
+  "rs1175727": {
+    "rsid": "rs1175727",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1712,8 +1689,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175781_afr": {
-    "rsid": "rs1175781_afr",
+  "rs1175781": {
+    "rsid": "rs1175781",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1738,8 +1715,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175835_afr": {
-    "rsid": "rs1175835_afr",
+  "rs1175835": {
+    "rsid": "rs1175835",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1764,8 +1741,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175889_afr": {
-    "rsid": "rs1175889_afr",
+  "rs1175889": {
+    "rsid": "rs1175889",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1790,8 +1767,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175943_afr": {
-    "rsid": "rs1175943_afr",
+  "rs1175943": {
+    "rsid": "rs1175943",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1816,8 +1793,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1175997_afr": {
-    "rsid": "rs1175997_afr",
+  "rs1175997": {
+    "rsid": "rs1175997",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1842,8 +1819,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176051_afr": {
-    "rsid": "rs1176051_afr",
+  "rs1176051": {
+    "rsid": "rs1176051",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1868,8 +1845,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176105_afr": {
-    "rsid": "rs1176105_afr",
+  "rs1176105": {
+    "rsid": "rs1176105",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1894,8 +1871,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176159_afr": {
-    "rsid": "rs1176159_afr",
+  "rs1176159": {
+    "rsid": "rs1176159",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1920,8 +1897,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176213_afr": {
-    "rsid": "rs1176213_afr",
+  "rs1176213": {
+    "rsid": "rs1176213",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1946,8 +1923,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176267_afr": {
-    "rsid": "rs1176267_afr",
+  "rs1176267": {
+    "rsid": "rs1176267",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1972,8 +1949,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176321_afr": {
-    "rsid": "rs1176321_afr",
+  "rs1176321": {
+    "rsid": "rs1176321",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -1998,8 +1975,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176375_afr": {
-    "rsid": "rs1176375_afr",
+  "rs1176375": {
+    "rsid": "rs1176375",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2024,8 +2001,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176429_afr": {
-    "rsid": "rs1176429_afr",
+  "rs1176429": {
+    "rsid": "rs1176429",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2050,8 +2027,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176483_afr": {
-    "rsid": "rs1176483_afr",
+  "rs1176483": {
+    "rsid": "rs1176483",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2076,8 +2053,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176537_afr": {
-    "rsid": "rs1176537_afr",
+  "rs1176537": {
+    "rsid": "rs1176537",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2102,8 +2079,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176591_afr": {
-    "rsid": "rs1176591_afr",
+  "rs1176591": {
+    "rsid": "rs1176591",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2128,8 +2105,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176645_afr": {
-    "rsid": "rs1176645_afr",
+  "rs1176645": {
+    "rsid": "rs1176645",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2154,8 +2131,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176699_afr": {
-    "rsid": "rs1176699_afr",
+  "rs1176699": {
+    "rsid": "rs1176699",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2180,8 +2157,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176753_afr": {
-    "rsid": "rs1176753_afr",
+  "rs1176753": {
+    "rsid": "rs1176753",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2206,8 +2183,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176807_afr": {
-    "rsid": "rs1176807_afr",
+  "rs1176807": {
+    "rsid": "rs1176807",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2232,8 +2209,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176861_afr": {
-    "rsid": "rs1176861_afr",
+  "rs1176861": {
+    "rsid": "rs1176861",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2258,8 +2235,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176915_afr": {
-    "rsid": "rs1176915_afr",
+  "rs1176915": {
+    "rsid": "rs1176915",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2284,8 +2261,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1176969_afr": {
-    "rsid": "rs1176969_afr",
+  "rs1176969": {
+    "rsid": "rs1176969",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2310,8 +2287,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177023_afr": {
-    "rsid": "rs1177023_afr",
+  "rs1177023": {
+    "rsid": "rs1177023",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2336,8 +2313,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177077_afr": {
-    "rsid": "rs1177077_afr",
+  "rs1177077": {
+    "rsid": "rs1177077",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2362,8 +2339,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177131_afr": {
-    "rsid": "rs1177131_afr",
+  "rs1177131": {
+    "rsid": "rs1177131",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2388,8 +2365,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177185_afr": {
-    "rsid": "rs1177185_afr",
+  "rs1177185": {
+    "rsid": "rs1177185",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2414,8 +2391,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177239_afr": {
-    "rsid": "rs1177239_afr",
+  "rs1177239": {
+    "rsid": "rs1177239",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2440,8 +2417,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177293_afr": {
-    "rsid": "rs1177293_afr",
+  "rs1177293": {
+    "rsid": "rs1177293",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2466,8 +2443,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177347_afr": {
-    "rsid": "rs1177347_afr",
+  "rs1177347": {
+    "rsid": "rs1177347",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2492,8 +2469,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177401_afr": {
-    "rsid": "rs1177401_afr",
+  "rs1177401": {
+    "rsid": "rs1177401",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2518,8 +2495,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177455_afr": {
-    "rsid": "rs1177455_afr",
+  "rs1177455": {
+    "rsid": "rs1177455",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2544,8 +2521,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177509_afr": {
-    "rsid": "rs1177509_afr",
+  "rs1177509": {
+    "rsid": "rs1177509",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2570,8 +2547,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177563_afr": {
-    "rsid": "rs1177563_afr",
+  "rs1177563": {
+    "rsid": "rs1177563",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2596,8 +2573,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177617_afr": {
-    "rsid": "rs1177617_afr",
+  "rs1177617": {
+    "rsid": "rs1177617",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2622,8 +2599,8 @@
     "weight": 2,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177671_afr": {
-    "rsid": "rs1177671_afr",
+  "rs1177671": {
+    "rsid": "rs1177671",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2648,8 +2625,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177725_afr": {
-    "rsid": "rs1177725_afr",
+  "rs1177725": {
+    "rsid": "rs1177725",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2674,8 +2651,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177779_afr": {
-    "rsid": "rs1177779_afr",
+  "rs1177779": {
+    "rsid": "rs1177779",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2700,8 +2677,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177833_afr": {
-    "rsid": "rs1177833_afr",
+  "rs1177833": {
+    "rsid": "rs1177833",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2726,8 +2703,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177887_afr": {
-    "rsid": "rs1177887_afr",
+  "rs1177887": {
+    "rsid": "rs1177887",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2752,8 +2729,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177941_afr": {
-    "rsid": "rs1177941_afr",
+  "rs1177941": {
+    "rsid": "rs1177941",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2778,8 +2755,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1177995_afr": {
-    "rsid": "rs1177995_afr",
+  "rs1177995": {
+    "rsid": "rs1177995",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2804,8 +2781,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178049_afr": {
-    "rsid": "rs1178049_afr",
+  "rs1178049": {
+    "rsid": "rs1178049",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2830,8 +2807,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178103_afr": {
-    "rsid": "rs1178103_afr",
+  "rs1178103": {
+    "rsid": "rs1178103",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2856,8 +2833,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178157_afr": {
-    "rsid": "rs1178157_afr",
+  "rs1178157": {
+    "rsid": "rs1178157",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2882,8 +2859,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178211_afr": {
-    "rsid": "rs1178211_afr",
+  "rs1178211": {
+    "rsid": "rs1178211",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2908,8 +2885,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178265_afr": {
-    "rsid": "rs1178265_afr",
+  "rs1178265": {
+    "rsid": "rs1178265",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2934,8 +2911,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178319_afr": {
-    "rsid": "rs1178319_afr",
+  "rs1178319": {
+    "rsid": "rs1178319",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2960,8 +2937,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178373_afr": {
-    "rsid": "rs1178373_afr",
+  "rs1178373": {
+    "rsid": "rs1178373",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -2986,8 +2963,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178427_afr": {
-    "rsid": "rs1178427_afr",
+  "rs1178427": {
+    "rsid": "rs1178427",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3012,8 +2989,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178481_afr": {
-    "rsid": "rs1178481_afr",
+  "rs1178481": {
+    "rsid": "rs1178481",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3038,8 +3015,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178535_afr": {
-    "rsid": "rs1178535_afr",
+  "rs1178535": {
+    "rsid": "rs1178535",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3064,8 +3041,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178589_afr": {
-    "rsid": "rs1178589_afr",
+  "rs1178589": {
+    "rsid": "rs1178589",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3090,8 +3067,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178643_afr": {
-    "rsid": "rs1178643_afr",
+  "rs1178643": {
+    "rsid": "rs1178643",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3116,8 +3093,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178697_afr": {
-    "rsid": "rs1178697_afr",
+  "rs1178697": {
+    "rsid": "rs1178697",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3142,8 +3119,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178751_afr": {
-    "rsid": "rs1178751_afr",
+  "rs1178751": {
+    "rsid": "rs1178751",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3168,8 +3145,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs1178805_afr": {
-    "rsid": "rs1178805_afr",
+  "rs1178805": {
+    "rsid": "rs1178805",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3194,8 +3171,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - African informative."
   },
-  "rs622682_afr": {
-    "rsid": "rs622682_afr",
+  "rs622682": {
+    "rsid": "rs622682",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3220,8 +3197,8 @@
     "weight": 1,
     "description": "General African ancestry informative marker."
   },
-  "rs73885319_afr": {
-    "rsid": "rs73885319_afr",
+  "rs73885319": {
+    "rsid": "rs73885319",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3246,8 +3223,8 @@
     "weight": 1,
     "description": "APOL1 variant - associated with kidney disease risk, found almost exclusively in African populations."
   },
-  "rs1126647_afr": {
-    "rsid": "rs1126647_afr",
+  "rs1126647": {
+    "rsid": "rs1126647",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3272,34 +3249,8 @@
     "weight": 1,
     "description": "G6PD variant - common in African populations, associated with malaria resistance."
   },
-  "rs334_afr_2": {
-    "rsid": "rs334_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.15,
-      "EUR": 0.01,
-      "EAS": 0,
-      "AMR": 0.05,
-      "SAS": 0.05,
-      "MENA": 0.08
-    },
-    "subFrequencies": {
-      "Yoruba": 0.15,
-      "Esan": 0.147,
-      "Mende": 0.153,
-      "Gambian": 0.15,
-      "Luhya": 0.142
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Sickle Cell Trait - high frequency in sub-Saharan Africa."
-  },
-  "rs1545397_afr": {
-    "rsid": "rs1545397_afr",
+  "rs1545397": {
+    "rsid": "rs1545397",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3324,8 +3275,8 @@
     "weight": 1,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456195_afr": {
-    "rsid": "rs10456195_afr",
+  "rs10456195": {
+    "rsid": "rs10456195",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3350,8 +3301,8 @@
     "weight": 1,
     "description": "Yoruba-specific ancestry marker."
   },
-  "rs10456196_afr": {
-    "rsid": "rs10456196_afr",
+  "rs10456196": {
+    "rsid": "rs10456196",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3376,8 +3327,8 @@
     "weight": 1,
     "description": "Igbo-specific ancestry marker."
   },
-  "rs10456201_afr": {
-    "rsid": "rs10456201_afr",
+  "rs10456201": {
+    "rsid": "rs10456201",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3400,8 +3351,8 @@
     "weight": 4,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456202_afr": {
-    "rsid": "rs10456202_afr",
+  "rs10456202": {
+    "rsid": "rs10456202",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3424,8 +3375,8 @@
     "weight": 3.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456203_afr": {
-    "rsid": "rs10456203_afr",
+  "rs10456203": {
+    "rsid": "rs10456203",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3448,8 +3399,8 @@
     "weight": 3,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456219_afr": {
-    "rsid": "rs10456219_afr",
+  "rs10456219": {
+    "rsid": "rs10456219",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3474,8 +3425,8 @@
     "weight": 4,
     "description": "Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana)."
   },
-  "rs10456220_afr": {
-    "rsid": "rs10456220_afr",
+  "rs10456220": {
+    "rsid": "rs10456220",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3498,8 +3449,8 @@
     "weight": 4.5,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456221_afr": {
-    "rsid": "rs10456221_afr",
+  "rs10456221": {
+    "rsid": "rs10456221",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3524,8 +3475,8 @@
     "weight": 4,
     "description": "Amhara Ancestry Marker - diagnostic for Ethiosemitic populations of the Ethiopian Highlands."
   },
-  "rs10456222_afr": {
-    "rsid": "rs10456222_afr",
+  "rs10456222": {
+    "rsid": "rs10456222",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3548,8 +3499,8 @@
     "weight": 3,
     "description": "Ancestry Informative Marker for African populations."
   },
-  "rs10456240_afr": {
-    "rsid": "rs10456240_afr",
+  "rs10456240": {
+    "rsid": "rs10456240",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3574,8 +3525,8 @@
     "weight": 4,
     "description": "Mbundu Ancestry Marker - informative for Kimbundu-speaking populations of Angola."
   },
-  "rs10456241_afr": {
-    "rsid": "rs10456241_afr",
+  "rs10456241": {
+    "rsid": "rs10456241",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3600,8 +3551,8 @@
     "weight": 4,
     "description": "Efik Ancestry Marker - diagnostic for Cross River populations of Nigeria."
   },
-  "rs10456242_afr": {
-    "rsid": "rs10456242_afr",
+  "rs10456242": {
+    "rsid": "rs10456242",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3626,8 +3577,8 @@
     "weight": 4,
     "description": "Ibibio Ancestry Marker - diagnostic for populations of Akwa Ibom State (Nigeria)."
   },
-  "rs10456228_afr": {
-    "rsid": "rs10456228_afr",
+  "rs10456228": {
+    "rsid": "rs10456228",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3652,8 +3603,8 @@
     "weight": 4,
     "description": "Baule Ancestry Marker - diagnostic for Akan-related populations of Ivory Coast."
   },
-  "rs10456229_afr": {
-    "rsid": "rs10456229_afr",
+  "rs10456229": {
+    "rsid": "rs10456229",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3678,8 +3629,8 @@
     "weight": 4,
     "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana."
   },
-  "rs10456230_afr": {
-    "rsid": "rs10456230_afr",
+  "rs10456230": {
+    "rsid": "rs10456230",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3704,8 +3655,8 @@
     "weight": 4,
     "description": "Kikuyu Ancestry Marker - informative for Central Bantu populations of Kenya."
   },
-  "rs10456231_afr": {
-    "rsid": "rs10456231_afr",
+  "rs10456231": {
+    "rsid": "rs10456231",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3730,8 +3681,8 @@
     "weight": 4,
     "description": "Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda."
   },
-  "rs10456232_afr": {
-    "rsid": "rs10456232_afr",
+  "rs10456232": {
+    "rsid": "rs10456232",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3756,8 +3707,8 @@
     "weight": 4,
     "description": "Tigrayan Ancestry Marker - diagnostic for Ethiosemitic populations of Ethiopia and Eritrea."
   },
-  "rs10456246_afr": {
-    "rsid": "rs10456246_afr",
+  "rs10456246": {
+    "rsid": "rs10456246",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3782,34 +3733,8 @@
     "weight": 4,
     "description": "Sherbro Ancestry Marker - diagnostic for coastal populations of Sierra Leone."
   },
-  "rs10456248_afr_2": {
-    "rsid": "rs10456248_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.97,
-      "AMR": 0.03,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Grebo": 0.98,
-      "Kru": 0.95,
-      "Bassa": 0.92,
-      "Krahn": 0.88,
-      "Dan": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Grebo Ancestry Marker - informative for Kru-speaking populations of Liberia."
-  },
-  "rs10456250_afr": {
-    "rsid": "rs10456250_afr",
+  "rs10456250": {
+    "rsid": "rs10456250",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3834,8 +3759,8 @@
     "weight": 4,
     "description": "Vai Ancestry Marker - informative for Mande-speaking populations of Liberia and Sierra Leone."
   },
-  "rs10456251_afr": {
-    "rsid": "rs10456251_afr",
+  "rs10456251": {
+    "rsid": "rs10456251",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3860,8 +3785,8 @@
     "weight": 4,
     "description": "Gola Ancestry Marker - diagnostic for populations of Liberia and Sierra Leone."
   },
-  "rs10456253_afr": {
-    "rsid": "rs10456253_afr",
+  "rs10456253": {
+    "rsid": "rs10456253",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3886,8 +3811,8 @@
     "weight": 4,
     "description": "Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia."
   },
-  "rs10456233_afr": {
-    "rsid": "rs10456233_afr",
+  "rs10456233": {
+    "rsid": "rs10456233",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3912,34 +3837,8 @@
     "weight": 4,
     "description": "Shona Ancestry Marker - informative for populations of Zimbabwe and Mozambique."
   },
-  "rs10456234_afr_2": {
-    "rsid": "rs10456234_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.97,
-      "AMR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Tsonga": 0.98,
-      "Shangaan": 0.96,
-      "Venda": 0.9,
-      "Zulu": 0.85,
-      "Xhosa": 0.8
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Tsonga Ancestry Marker - diagnostic for Tswa-Ronga populations of South Africa and Mozambique."
-  },
-  "rs10456235_afr": {
-    "rsid": "rs10456235_afr",
+  "rs10456235": {
+    "rsid": "rs10456235",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3964,8 +3863,8 @@
     "weight": 4,
     "description": "Ndebele Ancestry Marker - diagnostic for Nguni populations of Zimbabwe and South Africa."
   },
-  "rs10456237_afr": {
-    "rsid": "rs10456237_afr",
+  "rs10456237": {
+    "rsid": "rs10456237",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -3990,8 +3889,8 @@
     "weight": 4,
     "description": "Bamileke Ancestry Marker - diagnostic for Grassfields Bantu populations of Cameroon."
   },
-  "rs10456276_afr": {
-    "rsid": "rs10456276_afr",
+  "rs10456276": {
+    "rsid": "rs10456276",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4018,8 +3917,8 @@
     "weight": 3.5,
     "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African."
   },
-  "rs10456297_afr": {
-    "rsid": "rs10456297_afr",
+  "rs10456297": {
+    "rsid": "rs10456297",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4046,8 +3945,8 @@
     "weight": 3.5,
     "description": "AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression."
   },
-  "rs10456306_afr": {
-    "rsid": "rs10456306_afr",
+  "rs10456306": {
+    "rsid": "rs10456306",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4074,8 +3973,8 @@
     "weight": 3.5,
     "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor."
   },
-  "rs11547466_afr": {
-    "rsid": "rs11547466_afr",
+  "rs11547466": {
+    "rsid": "rs11547466",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4100,8 +3999,8 @@
     "weight": 4,
     "description": "West African Ancestry Marker - highly informative for Niger-Congo speaking populations."
   },
-  "rs4871195_afr": {
-    "rsid": "rs4871195_afr",
+  "rs4871195": {
+    "rsid": "rs4871195",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4126,8 +4025,8 @@
     "weight": 4,
     "description": "Mandinka/Wolof Ancestry Marker - diagnostic for Upper Guinea and Senegambian populations."
   },
-  "rs12535789_afr": {
-    "rsid": "rs12535789_afr",
+  "rs12535789": {
+    "rsid": "rs12535789",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4152,8 +4051,8 @@
     "weight": 4,
     "description": "East African/Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations."
   },
-  "rs13115481_afr": {
-    "rsid": "rs13115481_afr",
+  "rs13115481": {
+    "rsid": "rs13115481",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4178,8 +4077,8 @@
     "weight": 5,
     "description": "Khoisan Ancestry Marker - highly diagnostic for Southern African hunter-gatherer populations."
   },
-  "rs13116547_afr": {
-    "rsid": "rs13116547_afr",
+  "rs13116547": {
+    "rsid": "rs13116547",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4204,8 +4103,8 @@
     "weight": 4.5,
     "description": "Central African Pygmy Marker - informative for Mbuti and Biaka genetic signatures."
   },
-  "rs17135020_afr": {
-    "rsid": "rs17135020_afr",
+  "rs17135020": {
+    "rsid": "rs17135020",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4230,8 +4129,8 @@
     "weight": 4,
     "description": "Nilotic Ancestry Marker - diagnostic for Nilo-Saharan speaking populations of East Africa."
   },
-  "rs10456307_afr": {
-    "rsid": "rs10456307_afr",
+  "rs10456307": {
+    "rsid": "rs10456307",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4256,8 +4155,8 @@
     "weight": 3.5,
     "description": "Horn of Africa Regional Marker - informative for Afroasiatic populations of the Horn."
   },
-  "rs10456308_afr": {
-    "rsid": "rs10456308_afr",
+  "rs10456308": {
+    "rsid": "rs10456308",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4282,8 +4181,8 @@
     "weight": 3.5,
     "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana populations."
   },
-  "rs10456309_afr": {
-    "rsid": "rs10456309_afr",
+  "rs10456309": {
+    "rsid": "rs10456309",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4308,8 +4207,8 @@
     "weight": 3.5,
     "description": "Central/Western Bantu Ancestry Marker - informative for populations of the Congo Basin."
   },
-  "rs10456255_afr": {
-    "rsid": "rs10456255_afr",
+  "rs10456255": {
+    "rsid": "rs10456255",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4334,8 +4233,8 @@
     "weight": 4,
     "description": "Dan Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Ivory Coast."
   },
-  "rs10456254_afr": {
-    "rsid": "rs10456254_afr",
+  "rs10456254": {
+    "rsid": "rs10456254",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4360,34 +4259,8 @@
     "weight": 4,
     "description": "Mano Ancestry Marker - diagnostic for Mande-speaking populations of Liberia."
   },
-  "rs10456258_afr_2": {
-    "rsid": "rs10456258_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.03,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Ovimbundu": 0.98,
-      "Mbundu": 0.94,
-      "Bakongo": 0.92,
-      "Chokwe": 0.85,
-      "Luba": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Ovimbundu Ancestry Marker - informative for Umbundu-speaking populations of Angola."
-  },
-  "rs10456264_afr": {
-    "rsid": "rs10456264_afr",
+  "rs10456264": {
+    "rsid": "rs10456264",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4412,8 +4285,8 @@
     "weight": 4,
     "description": "Yao Ancestry Marker - diagnostic for populations of the Lake Malawi region."
   },
-  "rs11103349_afr": {
-    "rsid": "rs11103349_afr",
+  "rs11103349": {
+    "rsid": "rs11103349",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4438,8 +4311,8 @@
     "weight": 3.5,
     "description": "Maasai Ancestry Marker - informative for Nilotic pastoralist populations of East Africa."
   },
-  "rs10424071_afr": {
-    "rsid": "rs10424071_afr",
+  "rs10424071": {
+    "rsid": "rs10424071",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4464,8 +4337,8 @@
     "weight": 3.5,
     "description": "Nigerian Regional Marker - informative for populations of the Niger-Benue confluence."
   },
-  "rs10456207-afr_afr": {
-    "rsid": "rs10456207-afr_afr",
+  "rs10456207-afr": {
+    "rsid": "rs10456207-afr",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4490,8 +4363,8 @@
     "weight": 3.5,
     "description": "Nubian Ancestry Marker - diagnostic for Nilo-Saharan populations of the Nile Valley."
   },
-  "rs10456206-afr_afr": {
-    "rsid": "rs10456206-afr_afr",
+  "rs10456206-afr": {
+    "rsid": "rs10456206-afr",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4516,8 +4389,8 @@
     "weight": 3.5,
     "description": "Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan."
   },
-  "rs11103333_afr": {
-    "rsid": "rs11103333_afr",
+  "rs11103333": {
+    "rsid": "rs11103333",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4542,8 +4415,8 @@
     "weight": 4,
     "description": "Akan Ancestry Marker - highly informative for populations of the Gold Coast and Ivory Coast."
   },
-  "rs10456209_afr": {
-    "rsid": "rs10456209_afr",
+  "rs10456209": {
+    "rsid": "rs10456209",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4568,8 +4441,8 @@
     "weight": 4,
     "description": "Central African Bantu Marker - diagnostic for populations of the Congo Basin and Cameroon."
   },
-  "rs10456210_afr": {
-    "rsid": "rs10456210_afr",
+  "rs10456210": {
+    "rsid": "rs10456210",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4594,8 +4467,8 @@
     "weight": 5,
     "description": "Khoe-San Specific Marker - highly diagnostic for indigenous Southern African hunter-gatherer populations."
   },
-  "rs10456212_afr": {
-    "rsid": "rs10456212_afr",
+  "rs10456212": {
+    "rsid": "rs10456212",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4620,8 +4493,8 @@
     "weight": 4,
     "description": "Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations of East Africa."
   },
-  "rs7388531_afr": {
-    "rsid": "rs7388531_afr",
+  "rs7388531": {
+    "rsid": "rs7388531",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4646,8 +4519,8 @@
     "trait": "Kidney Health / Parasite Resistance",
     "description": "APOL1 gene variant - highly prevalent in West African populations, associated with kidney disease risk and trypanosomiasis resistance."
   },
-  "rs6071022_afr": {
-    "rsid": "rs6071022_afr",
+  "rs6071022": {
+    "rsid": "rs6071022",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4672,8 +4545,8 @@
     "weight": 2,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs1866074_afr": {
-    "rsid": "rs1866074_afr",
+  "rs1866074": {
+    "rsid": "rs1866074",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4698,8 +4571,8 @@
     "weight": 2.5,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103331_afr": {
-    "rsid": "rs11103331_afr",
+  "rs11103331": {
+    "rsid": "rs11103331",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4724,8 +4597,8 @@
     "weight": 2.2,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103332_afr": {
-    "rsid": "rs11103332_afr",
+  "rs11103332": {
+    "rsid": "rs11103332",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4750,8 +4623,8 @@
     "weight": 2.1,
     "description": "African Informative Marker - useful for distinguishing African from Middle Eastern/North African populations."
   },
-  "rs11635515_afr": {
-    "rsid": "rs11635515_afr",
+  "rs11635515": {
+    "rsid": "rs11635515",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4776,8 +4649,8 @@
     "weight": 3.5,
     "description": "African Informative Marker - strong sub-Saharan African signal with high differentiation."
   },
-  "rs10809850_afr": {
-    "rsid": "rs10809850_afr",
+  "rs10809850": {
+    "rsid": "rs10809850",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4802,8 +4675,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - highly prevalent in Bantu-speaking populations."
   },
-  "rs10767971_afr": {
-    "rsid": "rs10767971_afr",
+  "rs10767971": {
+    "rsid": "rs10767971",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4828,8 +4701,8 @@
     "weight": 3,
     "description": "African Informative Marker - useful for identifying West African ancestry."
   },
-  "rs11103334_afr": {
-    "rsid": "rs11103334_afr",
+  "rs11103334": {
+    "rsid": "rs11103334",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4854,8 +4727,8 @@
     "weight": 2.7,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103335_afr": {
-    "rsid": "rs11103335_afr",
+  "rs11103335": {
+    "rsid": "rs11103335",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4880,8 +4753,8 @@
     "weight": 2.9,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103336_afr": {
-    "rsid": "rs11103336_afr",
+  "rs11103336": {
+    "rsid": "rs11103336",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4906,8 +4779,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - highly specific to West African populations."
   },
-  "rs11103340_afr": {
-    "rsid": "rs11103340_afr",
+  "rs11103340": {
+    "rsid": "rs11103340",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4930,8 +4803,8 @@
     "weight": 4.5,
     "description": "Southern African Hunter-Gatherer Marker - highly informative for San and Khoe populations."
   },
-  "rs11103341_afr": {
-    "rsid": "rs11103341_afr",
+  "rs11103341": {
+    "rsid": "rs11103341",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4954,8 +4827,8 @@
     "weight": 4.2,
     "description": "Central/Southern African Informative Marker - useful for identifying deep African lineages."
   },
-  "rs11103337_afr": {
-    "rsid": "rs11103337_afr",
+  "rs11103337": {
+    "rsid": "rs11103337",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -4981,8 +4854,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa."
   },
-  "rs11103338_afr": {
-    "rsid": "rs11103338_afr",
+  "rs11103338": {
+    "rsid": "rs11103338",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5008,8 +4881,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - strong differentiation between African and non-African populations."
   },
-  "rs11103339_afr": {
-    "rsid": "rs11103339_afr",
+  "rs11103339": {
+    "rsid": "rs11103339",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5035,8 +4908,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - useful for identifying West African and Bantu ancestry."
   },
-  "rs11103342_afr": {
-    "rsid": "rs11103342_afr",
+  "rs11103342": {
+    "rsid": "rs11103342",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5062,8 +4935,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103343_afr": {
-    "rsid": "rs11103343_afr",
+  "rs11103343": {
+    "rsid": "rs11103343",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5089,8 +4962,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103344_afr": {
-    "rsid": "rs11103344_afr",
+  "rs11103344": {
+    "rsid": "rs11103344",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5116,8 +4989,8 @@
     "weight": 3.5,
     "description": "African Informative Marker - nearly fixed in sub-Saharan African populations."
   },
-  "rs11103345_afr": {
-    "rsid": "rs11103345_afr",
+  "rs11103345": {
+    "rsid": "rs11103345",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5143,8 +5016,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency across West and Central Africa."
   },
-  "rs11103346_afr": {
-    "rsid": "rs11103346_afr",
+  "rs11103346": {
+    "rsid": "rs11103346",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5170,8 +5043,8 @@
     "weight": 3,
     "description": "African Informative Marker - useful for distinguishing African from non-African lineages."
   },
-  "rs11103347_afr": {
-    "rsid": "rs11103347_afr",
+  "rs11103347": {
+    "rsid": "rs11103347",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5197,8 +5070,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103348_afr": {
-    "rsid": "rs11103348_afr",
+  "rs11103348": {
+    "rsid": "rs11103348",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5224,8 +5097,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - high differentiation from European and Asian populations."
   },
-  "rs11103350_afr": {
-    "rsid": "rs11103350_afr",
+  "rs11103350": {
+    "rsid": "rs11103350",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5251,8 +5124,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103351_afr": {
-    "rsid": "rs11103351_afr",
+  "rs11103351": {
+    "rsid": "rs11103351",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5278,8 +5151,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in Bantu-speaking populations."
   },
-  "rs11103352_afr": {
-    "rsid": "rs11103352_afr",
+  "rs11103352": {
+    "rsid": "rs11103352",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5305,8 +5178,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103353_afr": {
-    "rsid": "rs11103353_afr",
+  "rs11103353": {
+    "rsid": "rs11103353",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5332,8 +5205,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103354_afr": {
-    "rsid": "rs11103354_afr",
+  "rs11103354": {
+    "rsid": "rs11103354",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5359,8 +5232,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - nearly fixed in West and Central Africa."
   },
-  "rs11103355_afr": {
-    "rsid": "rs11103355_afr",
+  "rs11103355": {
+    "rsid": "rs11103355",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5386,8 +5259,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
-  "rs11103356_afr": {
-    "rsid": "rs11103356_afr",
+  "rs11103356": {
+    "rsid": "rs11103356",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5413,8 +5286,8 @@
     "weight": 3,
     "description": "African Informative Marker - useful for identifying African ancestry."
   },
-  "rs11103357_afr": {
-    "rsid": "rs11103357_afr",
+  "rs11103357": {
+    "rsid": "rs11103357",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5440,8 +5313,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103358_afr": {
-    "rsid": "rs11103358_afr",
+  "rs11103358": {
+    "rsid": "rs11103358",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5467,8 +5340,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - high differentiation from European and Asian populations."
   },
-  "rs11103359_afr": {
-    "rsid": "rs11103359_afr",
+  "rs11103359": {
+    "rsid": "rs11103359",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5494,8 +5367,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103360_afr": {
-    "rsid": "rs11103360_afr",
+  "rs11103360": {
+    "rsid": "rs11103360",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5521,8 +5394,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
-  "rs11103361_afr": {
-    "rsid": "rs11103361_afr",
+  "rs11103361": {
+    "rsid": "rs11103361",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5548,8 +5421,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103362_afr": {
-    "rsid": "rs11103362_afr",
+  "rs11103362": {
+    "rsid": "rs11103362",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5575,8 +5448,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103363_afr": {
-    "rsid": "rs11103363_afr",
+  "rs11103363": {
+    "rsid": "rs11103363",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5602,8 +5475,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
-  "rs11103364_afr": {
-    "rsid": "rs11103364_afr",
+  "rs11103364": {
+    "rsid": "rs11103364",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5629,8 +5502,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103365_afr": {
-    "rsid": "rs11103365_afr",
+  "rs11103365": {
+    "rsid": "rs11103365",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5656,8 +5529,8 @@
     "weight": 3,
     "description": "African Informative Marker - useful for identifying African ancestry."
   },
-  "rs11103366_afr": {
-    "rsid": "rs11103366_afr",
+  "rs11103366": {
+    "rsid": "rs11103366",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5683,8 +5556,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103367_afr": {
-    "rsid": "rs11103367_afr",
+  "rs11103367": {
+    "rsid": "rs11103367",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5710,8 +5583,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in Bantu-speaking populations."
   },
-  "rs11103368_afr": {
-    "rsid": "rs11103368_afr",
+  "rs11103368": {
+    "rsid": "rs11103368",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5737,8 +5610,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa."
   },
-  "rs11103369_afr": {
-    "rsid": "rs11103369_afr",
+  "rs11103369": {
+    "rsid": "rs11103369",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5764,8 +5637,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
-  "rs11103370_afr": {
-    "rsid": "rs11103370_afr",
+  "rs11103370": {
+    "rsid": "rs11103370",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5791,8 +5664,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
-  "rs11103371_afr": {
-    "rsid": "rs11103371_afr",
+  "rs11103371": {
+    "rsid": "rs11103371",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5818,8 +5691,8 @@
     "weight": 3.5,
     "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
-  "rs11103372_afr": {
-    "rsid": "rs11103372_afr",
+  "rs11103372": {
+    "rsid": "rs11103372",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5845,8 +5718,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
-  "rs11103373_afr": {
-    "rsid": "rs11103373_afr",
+  "rs11103373": {
+    "rsid": "rs11103373",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5872,8 +5745,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - high frequency in Central African populations."
   },
-  "rs11103374_afr": {
-    "rsid": "rs11103374_afr",
+  "rs11103374": {
+    "rsid": "rs11103374",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5899,8 +5772,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
-  "rs11103375_afr": {
-    "rsid": "rs11103375_afr",
+  "rs11103375": {
+    "rsid": "rs11103375",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5926,8 +5799,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
-  "rs11103376_afr": {
-    "rsid": "rs11103376_afr",
+  "rs11103376": {
+    "rsid": "rs11103376",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5953,8 +5826,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
-  "rs11103377_afr": {
-    "rsid": "rs11103377_afr",
+  "rs11103377": {
+    "rsid": "rs11103377",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -5980,8 +5853,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
-  "rs11103378_afr": {
-    "rsid": "rs11103378_afr",
+  "rs11103378": {
+    "rsid": "rs11103378",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6007,8 +5880,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
-  "rs11103379_afr": {
-    "rsid": "rs11103379_afr",
+  "rs11103379": {
+    "rsid": "rs11103379",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6034,8 +5907,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in East African populations."
   },
-  "rs11103380_afr": {
-    "rsid": "rs11103380_afr",
+  "rs11103380": {
+    "rsid": "rs11103380",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6061,8 +5934,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103381_afr": {
-    "rsid": "rs11103381_afr",
+  "rs11103381": {
+    "rsid": "rs11103381",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6088,8 +5961,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103382_afr": {
-    "rsid": "rs11103382_afr",
+  "rs11103382": {
+    "rsid": "rs11103382",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6115,8 +5988,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
-  "rs11103383_afr": {
-    "rsid": "rs11103383_afr",
+  "rs11103383": {
+    "rsid": "rs11103383",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6142,8 +6015,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
-  "rs11103384_afr": {
-    "rsid": "rs11103384_afr",
+  "rs11103384": {
+    "rsid": "rs11103384",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6169,8 +6042,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
-  "rs11103385_afr": {
-    "rsid": "rs11103385_afr",
+  "rs11103385": {
+    "rsid": "rs11103385",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6196,8 +6069,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103386_afr": {
-    "rsid": "rs11103386_afr",
+  "rs11103386": {
+    "rsid": "rs11103386",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6223,8 +6096,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103387_afr": {
-    "rsid": "rs11103387_afr",
+  "rs11103387": {
+    "rsid": "rs11103387",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6250,8 +6123,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103388_afr": {
-    "rsid": "rs11103388_afr",
+  "rs11103388": {
+    "rsid": "rs11103388",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6277,8 +6150,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
-  "rs11103389_afr": {
-    "rsid": "rs11103389_afr",
+  "rs11103389": {
+    "rsid": "rs11103389",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6304,8 +6177,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
-  "rs11103390_afr": {
-    "rsid": "rs11103390_afr",
+  "rs11103390": {
+    "rsid": "rs11103390",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6331,8 +6204,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
-  "rs11103391_afr": {
-    "rsid": "rs11103391_afr",
+  "rs11103391": {
+    "rsid": "rs11103391",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6358,8 +6231,8 @@
     "weight": 3.5,
     "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
-  "rs11103392_afr": {
-    "rsid": "rs11103392_afr",
+  "rs11103392": {
+    "rsid": "rs11103392",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6385,8 +6258,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
-  "rs11103393_afr": {
-    "rsid": "rs11103393_afr",
+  "rs11103393": {
+    "rsid": "rs11103393",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6412,8 +6285,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - high frequency in Central African populations."
   },
-  "rs11103394_afr": {
-    "rsid": "rs11103394_afr",
+  "rs11103394": {
+    "rsid": "rs11103394",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6439,8 +6312,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
-  "rs11103395_afr": {
-    "rsid": "rs11103395_afr",
+  "rs11103395": {
+    "rsid": "rs11103395",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6466,8 +6339,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
-  "rs11103396_afr": {
-    "rsid": "rs11103396_afr",
+  "rs11103396": {
+    "rsid": "rs11103396",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6493,8 +6366,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
-  "rs11103397_afr": {
-    "rsid": "rs11103397_afr",
+  "rs11103397": {
+    "rsid": "rs11103397",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6520,8 +6393,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
-  "rs11103398_afr": {
-    "rsid": "rs11103398_afr",
+  "rs11103398": {
+    "rsid": "rs11103398",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6547,8 +6420,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
-  "rs11103399_afr": {
-    "rsid": "rs11103399_afr",
+  "rs11103399": {
+    "rsid": "rs11103399",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6574,8 +6447,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in East African populations."
   },
-  "rs11103400_afr": {
-    "rsid": "rs11103400_afr",
+  "rs11103400": {
+    "rsid": "rs11103400",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6601,8 +6474,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103401_afr": {
-    "rsid": "rs11103401_afr",
+  "rs11103401": {
+    "rsid": "rs11103401",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6628,8 +6501,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103402_afr": {
-    "rsid": "rs11103402_afr",
+  "rs11103402": {
+    "rsid": "rs11103402",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6655,8 +6528,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
-  "rs11103403_afr": {
-    "rsid": "rs11103403_afr",
+  "rs11103403": {
+    "rsid": "rs11103403",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6682,8 +6555,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
-  "rs11103404_afr": {
-    "rsid": "rs11103404_afr",
+  "rs11103404": {
+    "rsid": "rs11103404",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6709,8 +6582,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
-  "rs11103405_afr": {
-    "rsid": "rs11103405_afr",
+  "rs11103405": {
+    "rsid": "rs11103405",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6736,8 +6609,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103406_afr": {
-    "rsid": "rs11103406_afr",
+  "rs11103406": {
+    "rsid": "rs11103406",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6763,8 +6636,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103407_afr": {
-    "rsid": "rs11103407_afr",
+  "rs11103407": {
+    "rsid": "rs11103407",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6790,8 +6663,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103408_afr": {
-    "rsid": "rs11103408_afr",
+  "rs11103408": {
+    "rsid": "rs11103408",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6817,8 +6690,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
-  "rs11103409_afr": {
-    "rsid": "rs11103409_afr",
+  "rs11103409": {
+    "rsid": "rs11103409",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6844,8 +6717,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
-  "rs11103410_afr": {
-    "rsid": "rs11103410_afr",
+  "rs11103410": {
+    "rsid": "rs11103410",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6871,8 +6744,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
-  "rs11103411_afr": {
-    "rsid": "rs11103411_afr",
+  "rs11103411": {
+    "rsid": "rs11103411",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6898,8 +6771,8 @@
     "weight": 3.5,
     "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
-  "rs11103412_afr": {
-    "rsid": "rs11103412_afr",
+  "rs11103412": {
+    "rsid": "rs11103412",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6925,8 +6798,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
-  "rs11103413_afr": {
-    "rsid": "rs11103413_afr",
+  "rs11103413": {
+    "rsid": "rs11103413",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6952,8 +6825,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - high frequency in Central African populations."
   },
-  "rs11103414_afr": {
-    "rsid": "rs11103414_afr",
+  "rs11103414": {
+    "rsid": "rs11103414",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -6979,8 +6852,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
-  "rs11103415_afr": {
-    "rsid": "rs11103415_afr",
+  "rs11103415": {
+    "rsid": "rs11103415",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7006,8 +6879,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
-  "rs11103416_afr": {
-    "rsid": "rs11103416_afr",
+  "rs11103416": {
+    "rsid": "rs11103416",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7033,8 +6906,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
-  "rs11103417_afr": {
-    "rsid": "rs11103417_afr",
+  "rs11103417": {
+    "rsid": "rs11103417",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7060,8 +6933,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
-  "rs11103418_afr": {
-    "rsid": "rs11103418_afr",
+  "rs11103418": {
+    "rsid": "rs11103418",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7087,8 +6960,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
-  "rs11103419_afr": {
-    "rsid": "rs11103419_afr",
+  "rs11103419": {
+    "rsid": "rs11103419",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7114,8 +6987,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in East African populations."
   },
-  "rs11103420_afr": {
-    "rsid": "rs11103420_afr",
+  "rs11103420": {
+    "rsid": "rs11103420",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7141,8 +7014,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103421_afr": {
-    "rsid": "rs11103421_afr",
+  "rs11103421": {
+    "rsid": "rs11103421",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7168,8 +7041,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103422_afr": {
-    "rsid": "rs11103422_afr",
+  "rs11103422": {
+    "rsid": "rs11103422",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7195,8 +7068,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
-  "rs11103423_afr": {
-    "rsid": "rs11103423_afr",
+  "rs11103423": {
+    "rsid": "rs11103423",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7222,8 +7095,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
-  "rs11103424_afr": {
-    "rsid": "rs11103424_afr",
+  "rs11103424": {
+    "rsid": "rs11103424",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7249,8 +7122,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
-  "rs11103425_afr": {
-    "rsid": "rs11103425_afr",
+  "rs11103425": {
+    "rsid": "rs11103425",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7276,8 +7149,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103426_afr": {
-    "rsid": "rs11103426_afr",
+  "rs11103426": {
+    "rsid": "rs11103426",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7303,8 +7176,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103427_afr": {
-    "rsid": "rs11103427_afr",
+  "rs11103427": {
+    "rsid": "rs11103427",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7330,8 +7203,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103428_afr": {
-    "rsid": "rs11103428_afr",
+  "rs11103428": {
+    "rsid": "rs11103428",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7357,8 +7230,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
-  "rs11103429_afr": {
-    "rsid": "rs11103429_afr",
+  "rs11103429": {
+    "rsid": "rs11103429",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7384,8 +7257,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry."
   },
-  "rs11103430_afr": {
-    "rsid": "rs11103430_afr",
+  "rs11103430": {
+    "rsid": "rs11103430",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7411,8 +7284,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103431_afr": {
-    "rsid": "rs11103431_afr",
+  "rs11103431": {
+    "rsid": "rs11103431",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7438,8 +7311,8 @@
     "weight": 3.5,
     "description": "African Informative Marker - nearly fixed in West Africa."
   },
-  "rs11103432_afr": {
-    "rsid": "rs11103432_afr",
+  "rs11103432": {
+    "rsid": "rs11103432",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7465,8 +7338,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
-  "rs11103433_afr": {
-    "rsid": "rs11103433_afr",
+  "rs11103433": {
+    "rsid": "rs11103433",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7492,8 +7365,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - high frequency in Central African populations."
   },
-  "rs11103434_afr": {
-    "rsid": "rs11103434_afr",
+  "rs11103434": {
+    "rsid": "rs11103434",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7519,8 +7392,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103435_afr": {
-    "rsid": "rs11103435_afr",
+  "rs11103435": {
+    "rsid": "rs11103435",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7546,8 +7419,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
-  "rs11103436_afr": {
-    "rsid": "rs11103436_afr",
+  "rs11103436": {
+    "rsid": "rs11103436",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7573,8 +7446,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - highly specific to sub-Saharan Africa."
   },
-  "rs11103437_afr": {
-    "rsid": "rs11103437_afr",
+  "rs11103437": {
+    "rsid": "rs11103437",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7600,8 +7473,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
-  "rs11103438_afr": {
-    "rsid": "rs11103438_afr",
+  "rs11103438": {
+    "rsid": "rs11103438",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7627,8 +7500,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103439_afr": {
-    "rsid": "rs11103439_afr",
+  "rs11103439": {
+    "rsid": "rs11103439",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7654,8 +7527,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in East African populations."
   },
-  "rs11103440_afr": {
-    "rsid": "rs11103440_afr",
+  "rs11103440": {
+    "rsid": "rs11103440",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7681,8 +7554,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103441_afr": {
-    "rsid": "rs11103441_afr",
+  "rs11103441": {
+    "rsid": "rs11103441",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7708,8 +7581,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103442_afr": {
-    "rsid": "rs11103442_afr",
+  "rs11103442": {
+    "rsid": "rs11103442",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7735,8 +7608,8 @@
     "weight": 3.4,
     "description": "African Informative Marker - nearly fixed in sub-Saharan Africa."
   },
-  "rs11103443_afr": {
-    "rsid": "rs11103443_afr",
+  "rs11103443": {
+    "rsid": "rs11103443",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7762,8 +7635,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
-  "rs11103444_afr": {
-    "rsid": "rs11103444_afr",
+  "rs11103444": {
+    "rsid": "rs11103444",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7789,8 +7662,8 @@
     "weight": 3.3,
     "description": "African Informative Marker - extremely high frequency in West African populations."
   },
-  "rs11103445_afr": {
-    "rsid": "rs11103445_afr",
+  "rs11103445": {
+    "rsid": "rs11103445",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7816,8 +7689,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - strong sub-Saharan African signal."
   },
-  "rs11103446_afr": {
-    "rsid": "rs11103446_afr",
+  "rs11103446": {
+    "rsid": "rs11103446",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7843,8 +7716,8 @@
     "weight": 3,
     "description": "African Informative Marker - general sub-Saharan African signal."
   },
-  "rs11103447_afr": {
-    "rsid": "rs11103447_afr",
+  "rs11103447": {
+    "rsid": "rs11103447",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7870,8 +7743,8 @@
     "weight": 3.1,
     "description": "African Informative Marker - strong differentiation from non-African populations."
   },
-  "rs11103448_afr": {
-    "rsid": "rs11103448_afr",
+  "rs11103448": {
+    "rsid": "rs11103448",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7897,8 +7770,8 @@
     "weight": 3.2,
     "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
-  "rs6684372_afr": {
-    "rsid": "rs6684372_afr",
+  "rs6684372": {
+    "rsid": "rs6684372",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7919,8 +7792,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2649578_afr": {
-    "rsid": "rs2649578_afr",
+  "rs2649578": {
+    "rsid": "rs2649578",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7941,8 +7814,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs4342826_afr": {
-    "rsid": "rs4342826_afr",
+  "rs4342826": {
+    "rsid": "rs4342826",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7963,8 +7836,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10442708_afr": {
-    "rsid": "rs10442708_afr",
+  "rs10442708": {
+    "rsid": "rs10442708",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -7985,8 +7858,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7554884_afr": {
-    "rsid": "rs7554884_afr",
+  "rs7554884": {
+    "rsid": "rs7554884",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8007,8 +7880,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7418014_afr": {
-    "rsid": "rs7418014_afr",
+  "rs7418014": {
+    "rsid": "rs7418014",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8029,8 +7902,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7548736_afr": {
-    "rsid": "rs7548736_afr",
+  "rs7548736": {
+    "rsid": "rs7548736",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8051,8 +7924,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs56168930_afr": {
-    "rsid": "rs56168930_afr",
+  "rs56168930": {
+    "rsid": "rs56168930",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8073,8 +7946,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10801952_afr": {
-    "rsid": "rs10801952_afr",
+  "rs10801952": {
+    "rsid": "rs10801952",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8095,8 +7968,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10900423_afr": {
-    "rsid": "rs10900423_afr",
+  "rs10900423": {
+    "rsid": "rs10900423",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8117,8 +7990,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2788252_afr": {
-    "rsid": "rs2788252_afr",
+  "rs2788252": {
+    "rsid": "rs2788252",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8139,8 +8012,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs3007210_afr": {
-    "rsid": "rs3007210_afr",
+  "rs3007210": {
+    "rsid": "rs3007210",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8161,8 +8034,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs12065033_afr": {
-    "rsid": "rs12065033_afr",
+  "rs12065033": {
+    "rsid": "rs12065033",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8183,8 +8056,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs12066494_afr": {
-    "rsid": "rs12066494_afr",
+  "rs12066494": {
+    "rsid": "rs12066494",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8205,8 +8078,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2483328_afr": {
-    "rsid": "rs2483328_afr",
+  "rs2483328": {
+    "rsid": "rs2483328",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8227,8 +8100,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs290829_afr": {
-    "rsid": "rs290829_afr",
+  "rs290829": {
+    "rsid": "rs290829",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8249,8 +8122,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs6429390_afr": {
-    "rsid": "rs6429390_afr",
+  "rs6429390": {
+    "rsid": "rs6429390",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8271,8 +8144,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs6657624_afr": {
-    "rsid": "rs6657624_afr",
+  "rs6657624": {
+    "rsid": "rs6657624",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8293,8 +8166,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1220399_afr": {
-    "rsid": "rs1220399_afr",
+  "rs1220399": {
+    "rsid": "rs1220399",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8315,8 +8188,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs59459799_afr": {
-    "rsid": "rs59459799_afr",
+  "rs59459799": {
+    "rsid": "rs59459799",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8337,8 +8210,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7551243_afr": {
-    "rsid": "rs7551243_afr",
+  "rs7551243": {
+    "rsid": "rs7551243",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8359,8 +8232,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2997748_afr": {
-    "rsid": "rs2997748_afr",
+  "rs2997748": {
+    "rsid": "rs2997748",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8381,8 +8254,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs9428863_afr": {
-    "rsid": "rs9428863_afr",
+  "rs9428863": {
+    "rsid": "rs9428863",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8403,8 +8276,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs3100865_afr": {
-    "rsid": "rs3100865_afr",
+  "rs3100865": {
+    "rsid": "rs3100865",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8425,8 +8298,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2246829_afr": {
-    "rsid": "rs2246829_afr",
+  "rs2246829": {
+    "rsid": "rs2246829",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8447,8 +8320,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1385120_afr": {
-    "rsid": "rs1385120_afr",
+  "rs1385120": {
+    "rsid": "rs1385120",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8469,8 +8342,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs4839518_afr": {
-    "rsid": "rs4839518_afr",
+  "rs4839518": {
+    "rsid": "rs4839518",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8491,8 +8364,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs11121639_afr": {
-    "rsid": "rs11121639_afr",
+  "rs11121639": {
+    "rsid": "rs11121639",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8513,8 +8386,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs12240271_afr": {
-    "rsid": "rs12240271_afr",
+  "rs12240271": {
+    "rsid": "rs12240271",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8535,8 +8408,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1036001_afr": {
-    "rsid": "rs1036001_afr",
+  "rs1036001": {
+    "rsid": "rs1036001",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8557,8 +8430,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2132407_afr": {
-    "rsid": "rs2132407_afr",
+  "rs2132407": {
+    "rsid": "rs2132407",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8579,8 +8452,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs4839456_afr": {
-    "rsid": "rs4839456_afr",
+  "rs4839456": {
+    "rsid": "rs4839456",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8601,8 +8474,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs591001_afr": {
-    "rsid": "rs591001_afr",
+  "rs591001": {
+    "rsid": "rs591001",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8623,8 +8496,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10888286_afr": {
-    "rsid": "rs10888286_afr",
+  "rs10888286": {
+    "rsid": "rs10888286",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8645,8 +8518,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs35338133_afr": {
-    "rsid": "rs35338133_afr",
+  "rs35338133": {
+    "rsid": "rs35338133",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8667,8 +8540,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2073017_afr": {
-    "rsid": "rs2073017_afr",
+  "rs2073017": {
+    "rsid": "rs2073017",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8689,8 +8562,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7524748_afr": {
-    "rsid": "rs7524748_afr",
+  "rs7524748": {
+    "rsid": "rs7524748",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8711,8 +8584,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs602507_afr": {
-    "rsid": "rs602507_afr",
+  "rs602507": {
+    "rsid": "rs602507",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8733,8 +8606,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2487568_afr": {
-    "rsid": "rs2487568_afr",
+  "rs2487568": {
+    "rsid": "rs2487568",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8755,8 +8628,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10737801_afr": {
-    "rsid": "rs10737801_afr",
+  "rs10737801": {
+    "rsid": "rs10737801",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8777,8 +8650,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs11580984_afr": {
-    "rsid": "rs11580984_afr",
+  "rs11580984": {
+    "rsid": "rs11580984",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8799,8 +8672,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2131633_afr": {
-    "rsid": "rs2131633_afr",
+  "rs2131633": {
+    "rsid": "rs2131633",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8821,8 +8694,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs6704425_afr": {
-    "rsid": "rs6704425_afr",
+  "rs6704425": {
+    "rsid": "rs6704425",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8843,8 +8716,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs3125685_afr": {
-    "rsid": "rs3125685_afr",
+  "rs3125685": {
+    "rsid": "rs3125685",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8865,8 +8738,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2651924_afr": {
-    "rsid": "rs2651924_afr",
+  "rs2651924": {
+    "rsid": "rs2651924",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8887,8 +8760,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7555426_afr": {
-    "rsid": "rs7555426_afr",
+  "rs7555426": {
+    "rsid": "rs7555426",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8909,8 +8782,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs3737720_afr": {
-    "rsid": "rs3737720_afr",
+  "rs3737720": {
+    "rsid": "rs3737720",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8931,8 +8804,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs683602_afr": {
-    "rsid": "rs683602_afr",
+  "rs683602": {
+    "rsid": "rs683602",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8953,8 +8826,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs70937179_afr": {
-    "rsid": "rs70937179_afr",
+  "rs70937179": {
+    "rsid": "rs70937179",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8975,8 +8848,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1272959_afr": {
-    "rsid": "rs1272959_afr",
+  "rs1272959": {
+    "rsid": "rs1272959",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -8997,8 +8870,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs137856800_afr": {
-    "rsid": "rs137856800_afr",
+  "rs137856800": {
+    "rsid": "rs137856800",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9019,8 +8892,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10754487_afr": {
-    "rsid": "rs10754487_afr",
+  "rs10754487": {
+    "rsid": "rs10754487",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9041,8 +8914,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2045519_afr": {
-    "rsid": "rs2045519_afr",
+  "rs2045519": {
+    "rsid": "rs2045519",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9063,8 +8936,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs6702454_afr": {
-    "rsid": "rs6702454_afr",
+  "rs6702454": {
+    "rsid": "rs6702454",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9085,8 +8958,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2500308_afr": {
-    "rsid": "rs2500308_afr",
+  "rs2500308": {
+    "rsid": "rs2500308",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9107,8 +8980,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1926881_afr": {
-    "rsid": "rs1926881_afr",
+  "rs1926881": {
+    "rsid": "rs1926881",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9129,8 +9002,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs12076468_afr": {
-    "rsid": "rs12076468_afr",
+  "rs12076468": {
+    "rsid": "rs12076468",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9151,8 +9024,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs6687840_afr": {
-    "rsid": "rs6687840_afr",
+  "rs6687840": {
+    "rsid": "rs6687840",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9173,8 +9046,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10864470_afr": {
-    "rsid": "rs10864470_afr",
+  "rs10864470": {
+    "rsid": "rs10864470",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9195,8 +9068,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2196537_afr": {
-    "rsid": "rs2196537_afr",
+  "rs2196537": {
+    "rsid": "rs2196537",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9217,8 +9090,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10902667_afr": {
-    "rsid": "rs10902667_afr",
+  "rs10902667": {
+    "rsid": "rs10902667",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9239,8 +9112,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10888793_afr": {
-    "rsid": "rs10888793_afr",
+  "rs10888793": {
+    "rsid": "rs10888793",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9261,8 +9134,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs12095724_afr": {
-    "rsid": "rs12095724_afr",
+  "rs12095724": {
+    "rsid": "rs12095724",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9283,8 +9156,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs11206168_afr": {
-    "rsid": "rs11206168_afr",
+  "rs11206168": {
+    "rsid": "rs11206168",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9305,8 +9178,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10921525_afr": {
-    "rsid": "rs10921525_afr",
+  "rs10921525": {
+    "rsid": "rs10921525",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9327,8 +9200,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs59289285_afr": {
-    "rsid": "rs59289285_afr",
+  "rs59289285": {
+    "rsid": "rs59289285",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9349,8 +9222,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1211184_afr": {
-    "rsid": "rs1211184_afr",
+  "rs1211184": {
+    "rsid": "rs1211184",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9371,8 +9244,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10888590_afr": {
-    "rsid": "rs10888590_afr",
+  "rs10888590": {
+    "rsid": "rs10888590",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9393,8 +9266,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs10908401_afr": {
-    "rsid": "rs10908401_afr",
+  "rs10908401": {
+    "rsid": "rs10908401",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9415,8 +9288,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1268339_afr": {
-    "rsid": "rs1268339_afr",
+  "rs1268339": {
+    "rsid": "rs1268339",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9437,8 +9310,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs61210877_afr": {
-    "rsid": "rs61210877_afr",
+  "rs61210877": {
+    "rsid": "rs61210877",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9459,8 +9332,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs628928_afr": {
-    "rsid": "rs628928_afr",
+  "rs628928": {
+    "rsid": "rs628928",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9481,8 +9354,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1006310_afr": {
-    "rsid": "rs1006310_afr",
+  "rs1006310": {
+    "rsid": "rs1006310",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9503,8 +9376,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs155291_afr": {
-    "rsid": "rs155291_afr",
+  "rs155291": {
+    "rsid": "rs155291",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9525,8 +9398,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs57399863_afr": {
-    "rsid": "rs57399863_afr",
+  "rs57399863": {
+    "rsid": "rs57399863",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9547,8 +9420,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs11426822_afr": {
-    "rsid": "rs11426822_afr",
+  "rs11426822": {
+    "rsid": "rs11426822",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9569,8 +9442,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs61314084_afr": {
-    "rsid": "rs61314084_afr",
+  "rs61314084": {
+    "rsid": "rs61314084",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9591,8 +9464,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs61554547_afr": {
-    "rsid": "rs61554547_afr",
+  "rs61554547": {
+    "rsid": "rs61554547",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9613,8 +9486,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs11121643_afr": {
-    "rsid": "rs11121643_afr",
+  "rs11121643": {
+    "rsid": "rs11121643",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9635,8 +9508,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs6698938_afr": {
-    "rsid": "rs6698938_afr",
+  "rs6698938": {
+    "rsid": "rs6698938",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9657,8 +9530,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs7554059_afr": {
-    "rsid": "rs7554059_afr",
+  "rs7554059": {
+    "rsid": "rs7554059",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9679,8 +9552,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs1240709_afr": {
-    "rsid": "rs1240709_afr",
+  "rs1240709": {
+    "rsid": "rs1240709",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9701,8 +9574,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs12029589_afr": {
-    "rsid": "rs12029589_afr",
+  "rs12029589": {
+    "rsid": "rs12029589",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9723,8 +9596,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs4971072_afr": {
-    "rsid": "rs4971072_afr",
+  "rs4971072": {
+    "rsid": "rs4971072",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9745,8 +9618,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs856847_afr": {
-    "rsid": "rs856847_afr",
+  "rs856847": {
+    "rsid": "rs856847",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9767,27 +9640,8 @@
     "trait": "African Ancestry Marker",
     "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
-  "rs2814778_afr_2": {
-    "rsid": "rs2814778_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.99,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "description": "Duffy Null Tie-Breaker - Nearly fixed in Sub-Saharan Africa, diagnostic for African ancestry."
-  },
-  "rs4833103_afr": {
-    "rsid": "rs4833103_afr",
+  "rs4833103": {
+    "rsid": "rs4833103",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9805,8 +9659,8 @@
     "weight": 4,
     "description": "African vs. Native American Marker - Useful for discriminating ancestry in admixed individuals."
   },
-  "rs10811661_afr": {
-    "rsid": "rs10811661_afr",
+  "rs10811661": {
+    "rsid": "rs10811661",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9824,8 +9678,8 @@
     "weight": 4,
     "description": "SLC14A2 African Ancestry Marker - Informative for African genetic signatures."
   },
-  "rs12779790_afr": {
-    "rsid": "rs12779790_afr",
+  "rs12779790": {
+    "rsid": "rs12779790",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -9843,1055 +9697,8 @@
     "weight": 4,
     "description": "African Ancestry Marker - Informative for Sub-Saharan African populations."
   },
-  "rs10456271_afr_2": {
-    "rsid": "rs10456271_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "San": 0.98,
-      "Khoe": 0.95,
-      "Ju_hoansi": 0.99,
-      "Tswana": 0.4,
-      "Sotho": 0.35
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "description": "Khoisan Tie-Breaker - Highly diagnostic for Southern African hunter-gatherer lineages (San/Khoe)."
-  },
-  "rs10456234_afr_3": {
-    "rsid": "rs10456234_afr_3",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.15
-    },
-    "subFrequencies": {
-      "Dinka": 0.99,
-      "Luo": 0.95,
-      "Nuer": 0.98,
-      "Maasai": 0.85,
-      "Kikuyu": 0.4
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "description": "Nilotic Tie-Breaker - Diagnostic for Nilotic populations of East Africa and the Nile Valley."
-  },
-  "rs10456258_afr_3": {
-    "rsid": "rs10456258_afr_3",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Mbuti": 0.99,
-      "Biaka": 0.97,
-      "Baka": 0.95,
-      "Luba": 0.3,
-      "Kongo": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "description": "Central African Pygmy Tie-Breaker - Diagnostic for hunter-gatherer populations of the Congo Basin."
-  },
-  "rs10456248_afr_3": {
-    "rsid": "rs10456248_afr_3",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Wolof": 0.99,
-      "Serer": 0.97,
-      "Fula": 0.9,
-      "Mandinka": 0.85,
-      "Jola": 0.95
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "description": "Senegambian Ancestry Marker - Informative for populations of the Senegambia region."
-  },
-  "rs10456269_afr_2": {
-    "rsid": "rs10456269_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.97,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Zulu": 0.98,
-      "Xhosa": 0.96,
-      "Swazi": 0.95,
-      "Ndebele": 0.92,
-      "Sotho": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "description": "Nguni Ancestry Marker - Informative for Southern African Bantu populations (Zulu/Xhosa)."
-  },
-  "rs10456213_afr_2": {
-    "rsid": "rs10456213_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.75,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "SAS": 0.08,
-      "MENA": 0.25
-    },
-    "subFrequencies": {
-      "Tigrayan": 0.95,
-      "Amhara": 0.85,
-      "Tigre": 0.92,
-      "Agaw": 0.8,
-      "Beja": 0.4
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Tigrayan Ancestry Marker - Informative for Semitic-speaking populations of the Ethiopian Highlands and Eritrea."
-  },
-  "rs10456215_afr_2": {
-    "rsid": "rs10456215_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.65,
-      "EUR": 0.08,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.4
-    },
-    "subFrequencies": {
-      "Beja": 0.98,
-      "Beni_Amer": 0.95,
-      "Hadendoa": 0.96,
-      "Somali": 0.3,
-      "Afar": 0.35
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Beja Ancestry Marker - Informative for Cushitic-speaking nomadic populations of the Red Sea Hills (Sudan/Egypt/Eritrea)."
-  },
-  "rs10456216_afr_2": {
-    "rsid": "rs10456216_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.88,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.02,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Tutsi": 0.95,
-      "Hima": 0.92,
-      "Hutu": 0.8,
-      "Baganda": 0.4,
-      "Luo": 0.35
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Tutsi/Hima Ancestry Marker - Informative for pastoralist-descended populations of the African Great Lakes region."
-  },
-  "rs10456198_afr_2": {
-    "rsid": "rs10456198_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.97,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Esan": 0.98,
-      "Edo": 0.95,
-      "Yoruba": 0.9,
-      "Igbo": 0.85,
-      "Ibibio": 0.8
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Esan Ancestry Marker - Informative for Edoid-speaking populations of Southern Nigeria."
-  },
-  "rs11887534_afr": {
-    "rsid": "rs11887534_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.85,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 3,
-    "description": "BCL11A Marker - Associated with fetal hemoglobin levels; common in African populations."
-  },
-  "rs60910145_afr": {
-    "rsid": "rs60910145_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "D"
-    ],
-    "frequencies": {
-      "AFR": 0.35,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "APOL1 Kidney Disease Risk (G2) - Common in West African populations."
-  },
-  "rs10486573_afr": {
-    "rsid": "rs10486573_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.02,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Bantu": 0.95,
-      "Yoruba": 0.85,
-      "Igbo": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bantu Ancestry Marker - Informative for Bantu-speaking populations across Sub-Saharan Africa."
-  },
-  "rs4242382_afr": {
-    "rsid": "rs4242382_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.9,
-      "EUR": 0.03,
-      "EAS": 0.01,
-      "SAS": 0.02,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Bamileke": 0.95,
-      "Bassa": 0.92,
-      "Fang": 0.88,
-      "Bamoun": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Cameroonian Ancestry Marker - Informative for populations of the Cameroon Grassfields and surrounding regions."
-  },
-  "rs12752445_afr": {
-    "rsid": "rs12752445_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "Bakongo": 0.98,
-      "Baluba": 0.95,
-      "Mongo": 0.92,
-      "Mbundu": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Congolese Ancestry Marker - Informative for populations of the Congo Basin and Angola."
-  },
-  "rs7252505_afr": {
-    "rsid": "rs7252505_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Igbo": 0.98,
-      "Ibibio": 0.92,
-      "Efik": 0.9,
-      "Yoruba": 0.4
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Igbo Ancestry Marker - Highly informative for Igbo and related populations of Southeastern Nigeria."
-  },
-  "rs1572319_afr": {
-    "rsid": "rs1572319_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "San": 0.99,
-      "Khoe": 0.95,
-      "Nama": 0.92,
-      "Basarwa": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Khoe-San Ancestry Marker - Highly diagnostic for Southern African hunter-gatherer populations."
-  },
-  "rs7460469_afr": {
-    "rsid": "rs7460469_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.65,
-      "EUR": 0.05,
-      "EAS": 0.3,
-      "SAS": 0.1,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Merina": 0.95,
-      "Betsileo": 0.9,
-      "Sakalava": 0.7,
-      "Antandroy": 0.6
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Malagasy Ancestry Marker - Reflects the unique Austronesian and Bantu admixture of Madagascar."
-  },
-  "rs10456197_afr_2": {
-    "rsid": "rs10456197_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Mandinka": 0.98,
-      "Wolof": 0.9,
-      "Fula": 0.85,
-      "Serer": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Mandinka Ancestry Marker - Informative for Mandé-speaking populations of West Africa."
-  },
-  "rs10424072_afr": {
-    "rsid": "rs10424072_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.98,
-      "Igbo": 0.95,
-      "Hausa": 0.8,
-      "Edo": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Nigerian Ancestry Marker - General informative marker for populations of Nigeria."
-  },
-  "rs12149626_afr_2": {
-    "rsid": "rs12149626_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Mbuti": 0.99,
-      "Biaka": 0.97,
-      "Baka": 0.95,
-      "Twa": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Pygmy Ancestry Marker - Highly diagnostic for Central African hunter-gatherer (Pygmy) populations."
-  },
-  "rs17388247_afr": {
-    "rsid": "rs17388247_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Mende": 0.98,
-      "Temne": 0.95,
-      "Limba": 0.92,
-      "Vai": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "West African Ancestry Marker - Informative for populations of Upper Guinea (Sierra Leone/Liberia)."
-  },
-  "rs694339_afr": {
-    "rsid": "rs694339_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.98,
-      "Igbo": 0.85,
-      "Esan": 0.9,
-      "Edo": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Yoruba Ancestry Marker - Informative for Yoruba and related populations of Southwestern Nigeria."
-  },
-  "rs1042604_afr": {
-    "rsid": "rs1042604_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Zulu": 0.98,
-      "Xhosa": 0.95,
-      "Swazi": 0.92,
-      "Ndebele": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Zulu Ancestry Marker - Informative for Nguni-speaking populations of Southern Africa."
-  },
-  "rs10486574_afr": {
-    "rsid": "rs10486574_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.91,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.02,
-      "MENA": 0.04
-    },
-    "subFrequencies": {
-      "Bantu": 0.94,
-      "Yoruba": 0.82,
-      "Igbo": 0.86
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
-  },
-  "rs4242383_afr": {
-    "rsid": "rs4242383_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.88,
-      "EUR": 0.04,
-      "EAS": 0.01,
-      "SAS": 0.02,
-      "MENA": 0.06
-    },
-    "subFrequencies": {
-      "Bamileke": 0.93,
-      "Bassa": 0.9,
-      "Fang": 0.85,
-      "Bamoun": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
-  },
-  "rs12752446_afr": {
-    "rsid": "rs12752446_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.93,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.03
-    },
-    "subFrequencies": {
-      "Bakongo": 0.96,
-      "Baluba": 0.93,
-      "Mongo": 0.9,
-      "Mbundu": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
-  },
-  "rs10424073_afr": {
-    "rsid": "rs10424073_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "Yoruba": 0.97,
-      "Igbo": 0.94,
-      "Hausa": 0.78,
-      "Edo": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
-  },
-  "rs12149628_afr_2": {
-    "rsid": "rs12149628_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.97,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Mbuti": 0.98,
-      "Biaka": 0.96,
-      "Baka": 0.94,
-      "Twa": 0.91
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Pygmy Ancestry Marker - Informative for Central African hunter-gatherer populations."
-  },
-  "rs7252508_afr_2": {
-    "rsid": "rs7252508_afr_2",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.97,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "San": 0.98,
-      "Khoe": 0.94,
-      "Nama": 0.91,
-      "Basarwa": 0.89
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "San Ancestry Marker - Informative for San populations (Southern Africa)."
-  },
-  "rs13136401_afr": {
-    "rsid": "rs13136401_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "San": 0.97,
-      "Khoe": 0.93,
-      "Nama": 0.9,
-      "Basarwa": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "San Ancestry Marker - Informative for San populations."
-  },
-  "rs10900598_afr": {
-    "rsid": "rs10900598_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.04
-    },
-    "subFrequencies": {
-      "Mende": 0.97,
-      "Temne": 0.94,
-      "Limba": 0.91,
-      "Vai": 0.89
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "West African Ancestry Marker - Informative for West African populations."
-  },
-  "rs1129039_afr": {
-    "rsid": "rs1129039_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Zulu": 0.97,
-      "Xhosa": 0.94,
-      "Swazi": 0.91,
-      "Ndebele": 0.89
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Zulu Ancestry Marker - Informative for Zulu populations (South Africa)."
-  },
-  "rs10486575_afr": {
-    "rsid": "rs10486575_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.93,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.04
-    },
-    "subFrequencies": {
-      "Bantu": 0.95,
-      "Yoruba": 0.85,
-      "Igbo": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
-  },
-  "rs4242384_afr": {
-    "rsid": "rs4242384_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.9,
-      "EUR": 0.03,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Bamileke": 0.94,
-      "Bassa": 0.91,
-      "Fang": 0.86,
-      "Bamoun": 0.89
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
-  },
-  "rs12752447_afr": {
-    "rsid": "rs12752447_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "Bakongo": 0.97,
-      "Baluba": 0.94,
-      "Mongo": 0.91,
-      "Mbundu": 0.89
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
-  },
-  "rs10424074_afr": {
-    "rsid": "rs10424074_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.98,
-      "Igbo": 0.95,
-      "Hausa": 0.8,
-      "Edo": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
-  },
-  "rs13136402_afr": {
-    "rsid": "rs13136402_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "San": 0.96,
-      "Khoe": 0.92,
-      "Nama": 0.89,
-      "Basarwa": 0.87
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "San Ancestry Marker - Informative for San populations."
-  },
-  "rs13136403_afr": {
-    "rsid": "rs13136403_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "San": 0.95,
-      "Khoe": 0.91,
-      "Nama": 0.88,
-      "Basarwa": 0.86
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "San Ancestry Marker - Informative for San populations."
-  },
-  "rs16847050_afr": {
-    "rsid": "rs16847050_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01
-    },
-    "subFrequencies": {
-      "Luhya": 0.98,
-      "Kikuyu": 0.95,
-      "Baganda": 0.92,
-      "Chaga": 0.88
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "East African Bantu Marker - highly diagnostic for Bantu-speaking populations of the Great Lakes."
-  },
-  "rs10456426_afr": {
-    "rsid": "rs10456426_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01
-    },
-    "subFrequencies": {
-      "Mende": 0.99,
-      "Temne": 0.96,
-      "Limba": 0.94,
-      "Sherbro": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Upper Guinea Coast Marker - diagnostic for populations of Sierra Leone and Liberia."
-  },
-  "rs12149627_afr": {
-    "rsid": "rs12149627_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "SAS": 0.02
-    },
-    "subFrequencies": {
-      "Somali": 0.98,
-      "Oromo": 0.92,
-      "Afar": 0.9,
-      "Beja": 0.85
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Lowland East Cushitic Marker - highly informative for populations of the Horn of Africa."
-  },
-  "rs10456440_afr": {
-    "rsid": "rs10456440_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01
-    },
-    "subFrequencies": {
-      "Dinka": 0.99,
-      "Nuer": 0.97,
-      "Shilluk": 0.95,
-      "Anyuak": 0.9
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Upper Nile Nilotic Marker - highly diagnostic for the Nilotic heartland."
-  },
-  "rs13136405_afr": {
-    "rsid": "rs13136405_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.99,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01
-    },
-    "subFrequencies": {
-      "Biaka": 0.98,
-      "Mbuti": 0.99,
-      "Baka": 0.95,
-      "Twa": 0.92
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Central African Pygmy Marker - diagnostic for the hunter-gatherer populations of the Congo Basin."
-  },
-  "rs7252509_afr": {
-    "rsid": "rs7252509_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.08,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.35
-    },
-    "subFrequencies": {
-      "Berber": 0.95,
-      "Kabyle": 0.9,
-      "Chaoui": 0.88,
-      "Siwi": 0.82
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "North African Amazigh Marker - diagnostic for the indigenous Berber populations."
-  },
-  "rs11887534_afr_2": {
-    "rsid": "rs11887534_afr_2",
+  "rs11887534": {
+    "rsid": "rs11887534",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
@@ -10914,53 +9721,689 @@
     "weight": 4,
     "description": "APOL1 G1 variant - highly informative for West African populations and their descendants."
   },
-  "rs2814778_afr_3": {
-    "rsid": "rs2814778_afr_3",
+  "rs60910145": {
+    "rsid": "rs60910145",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "D"
     ],
     "frequencies": {
-      "AFR": 0.99,
+      "AFR": 0.35,
       "EUR": 0.01,
       "EAS": 0.01,
       "SAS": 0.01,
-      "AMR": 0.4
+      "MENA": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "APOL1 Kidney Disease Risk (G2) - Common in West African populations."
+  },
+  "rs10486573": {
+    "rsid": "rs10486573",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.05
     },
     "subFrequencies": {
-      "Sub-Saharan": 1,
-      "African_American": 0.85,
-      "Caribbean": 0.9
+      "Bantu": 0.95,
+      "Yoruba": 0.85,
+      "Igbo": 0.88
     },
     "deepFrequencies": {},
-    "weight": 5,
-    "description": "Duffy Null Variant - the most diagnostic marker for Sub-Saharan African ancestry globally."
+    "weight": 4,
+    "description": "Bantu Ancestry Marker - Informative for Bantu-speaking populations across Sub-Saharan Africa."
   },
-  "rs334": {
-    "rsid": "rs334",
-    "chromosome": "11",
-    "position": 5248232,
+  "rs4242382": {
+    "rsid": "rs4242382",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.03,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Bamileke": 0.95,
+      "Bassa": 0.92,
+      "Fang": 0.88,
+      "Bamoun": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Cameroonian Ancestry Marker - Informative for populations of the Cameroon Grassfields and surrounding regions."
+  },
+  "rs12752445": {
+    "rsid": "rs12752445",
     "region": "African",
     "color": "#95A5A6",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "AFR": 0.09,
-      "EUR": 0,
-      "EAS": 0,
-      "AMR": 0.02,
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Bakongo": 0.98,
+      "Baluba": 0.95,
+      "Mongo": 0.92,
+      "Mbundu": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Congolese Ancestry Marker - Informative for populations of the Congo Basin and Angola."
+  },
+  "rs7252505": {
+    "rsid": "rs7252505",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Igbo": 0.98,
+      "Ibibio": 0.92,
+      "Efik": 0.9,
+      "Yoruba": 0.4
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Igbo Ancestry Marker - Highly informative for Igbo and related populations of Southeastern Nigeria."
+  },
+  "rs1572319": {
+    "rsid": "rs1572319",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "San": 0.99,
+      "Khoe": 0.95,
+      "Nama": 0.92,
+      "Basarwa": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Khoe-San Ancestry Marker - Highly diagnostic for Southern African hunter-gatherer populations."
+  },
+  "rs7460469": {
+    "rsid": "rs7460469",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.05,
+      "EAS": 0.3,
+      "SAS": 0.1,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Merina": 0.95,
+      "Betsileo": 0.9,
+      "Sakalava": 0.7,
+      "Antandroy": 0.6
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Malagasy Ancestry Marker - Reflects the unique Austronesian and Bantu admixture of Madagascar."
+  },
+  "rs10424072": {
+    "rsid": "rs10424072",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.95,
+      "Hausa": 0.8,
+      "Edo": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Nigerian Ancestry Marker - General informative marker for populations of Nigeria."
+  },
+  "rs17388247": {
+    "rsid": "rs17388247",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Mende": 0.98,
+      "Temne": 0.95,
+      "Limba": 0.92,
+      "Vai": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "West African Ancestry Marker - Informative for populations of Upper Guinea (Sierra Leone/Liberia)."
+  },
+  "rs694339": {
+    "rsid": "rs694339",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.85,
+      "Esan": 0.9,
+      "Edo": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Yoruba Ancestry Marker - Informative for Yoruba and related populations of Southwestern Nigeria."
+  },
+  "rs1042604": {
+    "rsid": "rs1042604",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.98,
+      "Xhosa": 0.95,
+      "Swazi": 0.92,
+      "Ndebele": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Zulu Ancestry Marker - Informative for Nguni-speaking populations of Southern Africa."
+  },
+  "rs10486574": {
+    "rsid": "rs10486574",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.91,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.04
+    },
+    "subFrequencies": {
+      "Bantu": 0.94,
+      "Yoruba": 0.82,
+      "Igbo": 0.86
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
+  },
+  "rs4242383": {
+    "rsid": "rs4242383",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.04,
+      "EAS": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.06
+    },
+    "subFrequencies": {
+      "Bamileke": 0.93,
+      "Bassa": 0.9,
+      "Fang": 0.85,
+      "Bamoun": 0.88
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
+  },
+  "rs12752446": {
+    "rsid": "rs12752446",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.93,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.03
+    },
+    "subFrequencies": {
+      "Bakongo": 0.96,
+      "Baluba": 0.93,
+      "Mongo": 0.9,
+      "Mbundu": 0.88
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
+  },
+  "rs10424073": {
+    "rsid": "rs10424073",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Yoruba": 0.97,
+      "Igbo": 0.94,
+      "Hausa": 0.78,
+      "Edo": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
+  },
+  "rs13136401": {
+    "rsid": "rs13136401",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "San": 0.97,
+      "Khoe": 0.93,
+      "Nama": 0.9,
+      "Basarwa": 0.88
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "San Ancestry Marker - Informative for San populations."
+  },
+  "rs10900598": {
+    "rsid": "rs10900598",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.04
+    },
+    "subFrequencies": {
+      "Mende": 0.97,
+      "Temne": 0.94,
+      "Limba": 0.91,
+      "Vai": 0.89
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "West African Ancestry Marker - Informative for West African populations."
+  },
+  "rs1129039": {
+    "rsid": "rs1129039",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Zulu": 0.97,
+      "Xhosa": 0.94,
+      "Swazi": 0.91,
+      "Ndebele": 0.89
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Zulu Ancestry Marker - Informative for Zulu populations (South Africa)."
+  },
+  "rs10486575": {
+    "rsid": "rs10486575",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.93,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.04
+    },
+    "subFrequencies": {
+      "Bantu": 0.95,
+      "Yoruba": 0.85,
+      "Igbo": 0.88
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
+  },
+  "rs4242384": {
+    "rsid": "rs4242384",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.03,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Bamileke": 0.94,
+      "Bassa": 0.91,
+      "Fang": 0.86,
+      "Bamoun": 0.89
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
+  },
+  "rs12752447": {
+    "rsid": "rs12752447",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Bakongo": 0.97,
+      "Baluba": 0.94,
+      "Mongo": 0.91,
+      "Mbundu": 0.89
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
+  },
+  "rs10424074": {
+    "rsid": "rs10424074",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.98,
+      "Igbo": 0.95,
+      "Hausa": 0.8,
+      "Edo": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
+  },
+  "rs13136402": {
+    "rsid": "rs13136402",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "San": 0.96,
+      "Khoe": 0.92,
+      "Nama": 0.89,
+      "Basarwa": 0.87
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "San Ancestry Marker - Informative for San populations."
+  },
+  "rs13136403": {
+    "rsid": "rs13136403",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "San": 0.95,
+      "Khoe": 0.91,
+      "Nama": 0.88,
+      "Basarwa": 0.86
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "San Ancestry Marker - Informative for San populations."
+  },
+  "rs16847050": {
+    "rsid": "rs16847050",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
       "SAS": 0.01
     },
-    "subFrequencies": {},
+    "subFrequencies": {
+      "Luhya": 0.98,
+      "Kikuyu": 0.95,
+      "Baganda": 0.92,
+      "Chaga": 0.88
+    },
     "deepFrequencies": {},
-    "weight": 2,
-    "description": "The classic HbS mutation (Glu6Val) in the HBB gene causing Sickle Cell Anemia. Heterozygosity provides malaria protection, resulting in strong evolutionary selection and high enrichment in West African lineages.",
-    "ref": "A",
-    "alt": "T",
-    "gene": "HBB",
-    "trait": "Ancestry"
+    "weight": 4,
+    "description": "East African Bantu Marker - highly diagnostic for Bantu-speaking populations of the Great Lakes."
+  },
+  "rs10456426": {
+    "rsid": "rs10456426",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01
+    },
+    "subFrequencies": {
+      "Mende": 0.99,
+      "Temne": 0.96,
+      "Limba": 0.94,
+      "Sherbro": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 4.5,
+    "description": "Upper Guinea Coast Marker - diagnostic for populations of Sierra Leone and Liberia."
+  },
+  "rs10456440": {
+    "rsid": "rs10456440",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01
+    },
+    "subFrequencies": {
+      "Dinka": 0.99,
+      "Nuer": 0.97,
+      "Shilluk": 0.95,
+      "Anyuak": 0.9
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Upper Nile Nilotic Marker - highly diagnostic for the Nilotic heartland."
+  },
+  "rs13136405": {
+    "rsid": "rs13136405",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.99,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.01
+    },
+    "subFrequencies": {
+      "Biaka": 0.98,
+      "Mbuti": 0.99,
+      "Baka": 0.95,
+      "Twa": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Central African Pygmy Marker - diagnostic for the hunter-gatherer populations of the Congo Basin."
+  },
+  "rs7252509": {
+    "rsid": "rs7252509",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "SAS": 0.05,
+      "MENA": 0.35
+    },
+    "subFrequencies": {
+      "Berber": 0.95,
+      "Kabyle": 0.9,
+      "Chaoui": 0.88,
+      "Siwi": 0.82
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "North African Amazigh Marker - diagnostic for the indigenous Berber populations."
   },
   "rs10756819": {
     "rsid": "rs10756819",

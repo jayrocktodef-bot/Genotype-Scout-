@@ -363,58 +363,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs2862": {
-    "rsid": "rs2862",
-    "chromosome": "15",
-    "position": 35145553,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs622682": {
-    "rsid": "rs622682",
-    "chromosome": "1",
-    "position": 5344779,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1545397": {
-    "rsid": "rs1545397",
-    "chromosome": "15",
-    "position": 28187772,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3340": {
-    "rsid": "rs3340",
-    "chromosome": "5",
-    "position": 153831867,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2032599": {
     "rsid": "rs2032599",
     "chromosome": "Y",
@@ -432,32 +380,6 @@
     "rsid": "rs17316499",
     "chromosome": "Unknown",
     "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456218": {
-    "rsid": "rs10456218",
-    "chromosome": "6",
-    "position": 18780759,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456221": {
-    "rsid": "rs10456221",
-    "chromosome": "6",
-    "position": 10131177,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -493,32 +415,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456231": {
-    "rsid": "rs10456231",
-    "chromosome": "6",
-    "position": 10230534,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456256": {
-    "rsid": "rs10456256",
-    "chromosome": "6",
-    "position": 22446285,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456238": {
     "rsid": "rs10456238",
     "chromosome": "6",
@@ -532,296 +428,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456257": {
-    "rsid": "rs10456257",
-    "chromosome": "6",
-    "position": 22478911,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456237": {
-    "rsid": "rs10456237",
-    "chromosome": "6",
-    "position": 21081906,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_b": {
-    "rsid": "rs10456205_b",
+  "rs10456205": {
+    "rsid": "rs10456205",
     "chromosome": "Unknown",
     "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10486573": {
-    "rsid": "rs10486573",
-    "chromosome": "7",
-    "position": 28080493,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10486574": {
-    "rsid": "rs10486574",
-    "chromosome": "7",
-    "position": 28080754,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10486575": {
-    "rsid": "rs10486575",
-    "chromosome": "7",
-    "position": 28107380,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456249": {
-    "rsid": "rs10456249",
-    "chromosome": "6",
-    "position": 21967290,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456228": {
-    "rsid": "rs10456228",
-    "chromosome": "6",
-    "position": 10228120,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456261": {
-    "rsid": "rs10456261",
-    "chromosome": "6",
-    "position": 22623471,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4242382": {
-    "rsid": "rs4242382",
-    "chromosome": "8",
-    "position": 128517573,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4242383": {
-    "rsid": "rs4242383",
-    "chromosome": "8",
-    "position": 128517760,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4242384": {
-    "rsid": "rs4242384",
-    "chromosome": "8",
-    "position": 128518554,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456303": {
-    "rsid": "rs10456303",
-    "chromosome": "6",
-    "position": 24317399,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456263": {
-    "rsid": "rs10456263",
-    "chromosome": "6",
-    "position": 22685851,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456259": {
-    "rsid": "rs10456259",
-    "chromosome": "6",
-    "position": 22558999,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12752445": {
-    "rsid": "rs12752445",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12752446": {
-    "rsid": "rs12752446",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12752447": {
-    "rsid": "rs12752447",
-    "chromosome": "1",
-    "position": 47634560,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456255": {
-    "rsid": "rs10456255",
-    "chromosome": "6",
-    "position": 22436086,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456243": {
-    "rsid": "rs10456243",
-    "chromosome": "6",
-    "position": 21205479,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456241": {
-    "rsid": "rs10456241",
-    "chromosome": "6",
-    "position": 21205350,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456198": {
-    "rsid": "rs10456198",
-    "chromosome": "6",
-    "position": 14904669,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456203": {
-    "rsid": "rs10456203",
-    "chromosome": "6",
-    "position": 16435066,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -844,19 +454,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456220": {
-    "rsid": "rs10456220",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456236": {
     "rsid": "rs10456236",
     "chromosome": "6",
@@ -870,218 +467,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456205_f": {
-    "rsid": "rs10456205_f",
+  "rs10456227": {
+    "rsid": "rs10456227",
     "chromosome": "Unknown",
     "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456227_fo": {
-    "rsid": "rs10456227_fo",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456235": {
-    "rsid": "rs10456235",
-    "chromosome": "6",
-    "position": 10301579,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_fu": {
-    "rsid": "rs10456205_fu",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456233": {
-    "rsid": "rs10456233",
-    "chromosome": "6",
-    "position": 20581793,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456219": {
-    "rsid": "rs10456219",
-    "chromosome": "6",
-    "position": 18780770,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456251": {
-    "rsid": "rs10456251",
-    "chromosome": "6",
-    "position": 22101853,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456248": {
-    "rsid": "rs10456248",
-    "chromosome": "6",
-    "position": 21850260,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_h": {
-    "rsid": "rs10456205_h",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103349": {
-    "rsid": "rs11103349",
-    "chromosome": "9",
-    "position": 139033949,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103350": {
-    "rsid": "rs11103350",
-    "chromosome": "9",
-    "position": 139035609,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103351": {
-    "rsid": "rs11103351",
-    "chromosome": "9",
-    "position": 139035762,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456242": {
-    "rsid": "rs10456242",
-    "chromosome": "6",
-    "position": 21205388,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456196": {
-    "rsid": "rs10456196",
-    "chromosome": "6",
-    "position": 9690715,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7252505": {
-    "rsid": "rs7252505",
-    "chromosome": "19",
-    "position": 33575064,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1572318": {
-    "rsid": "rs1572318",
-    "chromosome": "1",
-    "position": 42912066,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1572319": {
-    "rsid": "rs1572319",
-    "chromosome": "13",
-    "position": 102076838,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -1095,84 +484,6 @@
     "rsid": "rs10456204",
     "chromosome": "6",
     "position": 9924551,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456230": {
-    "rsid": "rs10456230",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456252": {
-    "rsid": "rs10456252",
-    "chromosome": "6",
-    "position": 22106979,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456247": {
-    "rsid": "rs10456247",
-    "chromosome": "6",
-    "position": 21537518,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456245": {
-    "rsid": "rs10456245",
-    "chromosome": "6",
-    "position": 10360701,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456253": {
-    "rsid": "rs10456253",
-    "chromosome": "6",
-    "position": 22222589,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456260": {
-    "rsid": "rs10456260",
-    "chromosome": "6",
-    "position": 22559036,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -1208,32 +519,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs11547466": {
-    "rsid": "rs11547466",
-    "chromosome": "13",
-    "position": 113890109,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456201": {
-    "rsid": "rs10456201",
-    "chromosome": "6",
-    "position": 15557636,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1805010": {
     "rsid": "rs1805010",
     "chromosome": "16",
@@ -1251,32 +536,6 @@
     "rsid": "rs4988238",
     "chromosome": "2",
     "position": 136607994,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456265": {
-    "rsid": "rs10456265",
-    "chromosome": "6",
-    "position": 22783328,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7460469": {
-    "rsid": "rs7460469",
-    "chromosome": "8",
-    "position": 11027441,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -1312,32 +571,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456197": {
-    "rsid": "rs10456197",
-    "chromosome": "6",
-    "position": 14888270,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4871195": {
-    "rsid": "rs4871195",
-    "chromosome": "8",
-    "position": 122567434,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1042524": {
     "rsid": "rs1042524",
     "chromosome": "15",
@@ -1351,49 +584,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456254": {
-    "rsid": "rs10456254",
-    "chromosome": "6",
-    "position": 22236945,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456240": {
-    "rsid": "rs10456240",
-    "chromosome": "6",
-    "position": 21205221,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456199": {
     "rsid": "rs10456199",
     "chromosome": "6",
     "position": 9723026,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456244": {
-    "rsid": "rs10456244",
-    "chromosome": "6",
-    "position": 10360682,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -1429,205 +623,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456229": {
-    "rsid": "rs10456229",
-    "chromosome": "6",
-    "position": 10228129,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10424071": {
-    "rsid": "rs10424071",
-    "chromosome": "19",
-    "position": 15015059,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10424072": {
-    "rsid": "rs10424072",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10424073": {
-    "rsid": "rs10424073",
-    "chromosome": "19",
-    "position": 38947366,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10424074": {
-    "rsid": "rs10424074",
-    "chromosome": "19",
-    "position": 43362301,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_nu": {
-    "rsid": "rs10456205_nu",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456207-afr": {
-    "rsid": "rs10456207-afr",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456210": {
-    "rsid": "rs10456210",
-    "chromosome": "6",
-    "position": 17752101,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456213": {
-    "rsid": "rs10456213",
-    "chromosome": "6",
-    "position": 18119112,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456222": {
-    "rsid": "rs10456222",
-    "chromosome": "6",
-    "position": 19137158,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456258": {
-    "rsid": "rs10456258",
-    "chromosome": "6",
-    "position": 22481561,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456239": {
     "rsid": "rs10456239",
     "chromosome": "6",
     "position": 10344564,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205": {
-    "rsid": "rs10456205",
-    "chromosome": "6",
-    "position": 17035875,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12149626": {
-    "rsid": "rs12149626",
-    "chromosome": "16",
-    "position": 75555780,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12149627": {
-    "rsid": "rs12149627",
-    "chromosome": "16",
-    "position": 70977546,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12149628": {
-    "rsid": "rs12149628",
-    "chromosome": "16",
-    "position": 60913519,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -1650,179 +649,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs7252508": {
-    "rsid": "rs7252508",
-    "chromosome": "19",
-    "position": 52334783,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13136401": {
-    "rsid": "rs13136401",
-    "chromosome": "4",
-    "position": 186594384,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13136402": {
-    "rsid": "rs13136402",
-    "chromosome": "4",
-    "position": 1627490,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13136403": {
-    "rsid": "rs13136403",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456246": {
-    "rsid": "rs10456246",
-    "chromosome": "6",
-    "position": 10360801,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456202": {
-    "rsid": "rs10456202",
-    "chromosome": "6",
-    "position": 16004552,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456301": {
     "rsid": "rs10456301",
     "chromosome": "6",
     "position": 24308355,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456302": {
-    "rsid": "rs10456302",
-    "chromosome": "6",
-    "position": 24308444,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456206-afr": {
-    "rsid": "rs10456206-afr",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456209": {
-    "rsid": "rs10456209",
-    "chromosome": "6",
-    "position": 17744573,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456212": {
-    "rsid": "rs10456212",
-    "chromosome": "6",
-    "position": 17951669,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456232": {
-    "rsid": "rs10456232",
-    "chromosome": "6",
-    "position": 20579123,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456262": {
-    "rsid": "rs10456262",
-    "chromosome": "6",
-    "position": 22627198,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456234": {
-    "rsid": "rs10456234",
-    "chromosome": "6",
-    "position": 20598774,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -1845,205 +675,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456250": {
-    "rsid": "rs10456250",
-    "chromosome": "6",
-    "position": 22061048,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456226": {
     "rsid": "rs10456226",
     "chromosome": "6",
     "position": 19850819,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs17388247": {
-    "rsid": "rs17388247",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10900598": {
-    "rsid": "rs10900598",
-    "chromosome": "1",
-    "position": 204525568,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_w": {
-    "rsid": "rs10456205_w",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_x": {
-    "rsid": "rs10456205_x",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456264": {
-    "rsid": "rs10456264",
-    "chromosome": "6",
-    "position": 22724823,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456195": {
-    "rsid": "rs10456195",
-    "chromosome": "6",
-    "position": 14457965,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs694339": {
-    "rsid": "rs694339",
-    "chromosome": "18",
-    "position": 70221980,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456262_y": {
-    "rsid": "rs10456262_y",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456266": {
-    "rsid": "rs10456266",
-    "chromosome": "6",
-    "position": 22785416,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456267": {
-    "rsid": "rs10456267",
-    "chromosome": "6",
-    "position": 22961259,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456268": {
-    "rsid": "rs10456268",
-    "chromosome": "6",
-    "position": 23033529,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456205_z": {
-    "rsid": "rs10456205_z",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1042604": {
-    "rsid": "rs1042604",
-    "chromosome": "X",
-    "position": 24232095,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1129039": {
-    "rsid": "rs1129039",
-    "chromosome": "Unknown",
-    "position": 0,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -2083,45 +718,6 @@
     "rsid": "rs10456305",
     "chromosome": "6",
     "position": 24491341,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456306": {
-    "rsid": "rs10456306",
-    "chromosome": "6",
-    "position": 24550041,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456308": {
-    "rsid": "rs10456308",
-    "chromosome": "6",
-    "position": 24580408,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456309": {
-    "rsid": "rs10456309",
-    "chromosome": "6",
-    "position": 24589562,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -3158,19 +1754,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456426": {
-    "rsid": "rs10456426",
-    "chromosome": "6",
-    "position": 34164468,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs10456430": {
     "rsid": "rs10456430",
     "chromosome": "6",
@@ -3236,8 +1819,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs2222101_mayan": {
-    "rsid": "rs2222101_mayan",
+  "rs2222101": {
+    "rsid": "rs2222101",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3249,8 +1832,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3333102_mexind": {
-    "rsid": "rs3333102_mexind",
+  "rs3333102": {
+    "rsid": "rs3333102",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3262,8 +1845,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs4444103_algonquin": {
-    "rsid": "rs4444103_algonquin",
+  "rs4444103": {
+    "rsid": "rs4444103",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3275,8 +1858,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs5555104_cherokee": {
-    "rsid": "rs5555104_cherokee",
+  "rs5555104": {
+    "rsid": "rs5555104",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3288,8 +1871,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs6666105_lumbee": {
-    "rsid": "rs6666105_lumbee",
+  "rs6666105": {
+    "rsid": "rs6666105",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3301,8 +1884,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs7777106_lenape": {
-    "rsid": "rs7777106_lenape",
+  "rs7777106": {
+    "rsid": "rs7777106",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3314,8 +1897,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8888107_creek": {
-    "rsid": "rs8888107_creek",
+  "rs8888107": {
+    "rsid": "rs8888107",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -3626,19 +2209,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10954737": {
-    "rsid": "rs10954737",
-    "chromosome": "7",
-    "position": 83533047,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs11227699": {
     "rsid": "rs11227699",
     "chromosome": "11",
@@ -3821,58 +2391,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs1800404": {
-    "rsid": "rs1800404",
-    "chromosome": "15",
-    "position": 28235773,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4833103": {
-    "rsid": "rs4833103",
-    "chromosome": "4",
-    "position": 38815502,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs174570": {
-    "rsid": "rs174570",
-    "chromosome": "11",
-    "position": 61353788,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs174583": {
-    "rsid": "rs174583",
-    "chromosome": "11",
-    "position": 61609750,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs12149629": {
     "rsid": "rs12149629",
     "chromosome": "16",
@@ -3942,19 +2460,6 @@
     "rsid": "rs3900",
     "chromosome": "Y",
     "position": 21730257,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4845571": {
-    "rsid": "rs4845571",
-    "chromosome": "HSCHR1_1_CTG31",
-    "position": 153755786,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -4046,19 +2551,6 @@
     "rsid": "rs10456285",
     "chromosome": "6",
     "position": 23765890,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs20424": {
-    "rsid": "rs20424",
-    "chromosome": "1",
-    "position": 186649618,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -4185,19 +2677,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456215": {
-    "rsid": "rs10456215",
-    "chromosome": "6",
-    "position": 18452654,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1159102": {
     "rsid": "rs1159102",
     "chromosome": "13",
@@ -4224,49 +2703,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456207": {
-    "rsid": "rs10456207",
-    "chromosome": "6",
-    "position": 17563814,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11215559": {
-    "rsid": "rs11215559",
-    "chromosome": "11",
-    "position": 115309455,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs11215560": {
     "rsid": "rs11215560",
     "chromosome": "11",
     "position": 115313360,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456217": {
-    "rsid": "rs10456217",
-    "chromosome": "6",
-    "position": 18767479,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -4588,19 +3028,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456216": {
-    "rsid": "rs10456216",
-    "chromosome": "6",
-    "position": 18684443,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2848332": {
     "rsid": "rs2848332",
     "chromosome": "2",
@@ -4679,19 +3106,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs12535789": {
-    "rsid": "rs12535789",
-    "chromosome": "HG115_PATCH",
-    "position": 101969315,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs12727646": {
     "rsid": "rs12727646",
     "chromosome": "5",
@@ -4722,32 +3136,6 @@
     "rsid": "rs12916302",
     "chromosome": "Unknown",
     "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13115481": {
-    "rsid": "rs13115481",
-    "chromosome": "4",
-    "position": 92334242,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13116547": {
-    "rsid": "rs13116547",
-    "chromosome": "4",
-    "position": 131012359,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -4839,19 +3227,6 @@
     "rsid": "rs16891987",
     "chromosome": "8",
     "position": 120101938,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs17135020": {
-    "rsid": "rs17135020",
-    "chromosome": "7",
-    "position": 52495570,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -5108,251 +3483,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456227": {
-    "rsid": "rs10456227",
-    "chromosome": "6",
-    "position": 19921581,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2222101": {
-    "rsid": "rs2222101",
-    "chromosome": "3",
-    "position": 6068742,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3333102": {
-    "rsid": "rs3333102",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4444103": {
-    "rsid": "rs4444103",
-    "chromosome": "11",
-    "position": 80939573,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs5555104": {
-    "rsid": "rs5555104",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6666105": {
-    "rsid": "rs6666105",
-    "chromosome": "1",
-    "position": 66225370,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7777106": {
-    "rsid": "rs7777106",
-    "chromosome": "7",
-    "position": 125842046,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs8888107": {
-    "rsid": "rs8888107",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7089424": {
-    "rsid": "rs7089424",
-    "chromosome": "10",
-    "position": 63752159,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7088318": {
-    "rsid": "rs7088318",
-    "chromosome": "10",
-    "position": 22852948,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3731217": {
-    "rsid": "rs3731217",
-    "chromosome": "9",
-    "position": 21984661,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2239633": {
-    "rsid": "rs2239633",
-    "chromosome": "14",
-    "position": 23589057,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs75493593": {
-    "rsid": "rs75493593",
-    "chromosome": "17",
-    "position": 6945087,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13342692": {
-    "rsid": "rs13342692",
-    "chromosome": "17",
-    "position": 6946287,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs117767867": {
-    "rsid": "rs117767867",
-    "chromosome": "17",
-    "position": 6946330,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs75418188": {
-    "rsid": "rs75418188",
-    "chromosome": "17",
-    "position": 6945483,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs13342232": {
-    "rsid": "rs13342232",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9282541": {
-    "rsid": "rs9282541",
-    "chromosome": "9",
-    "position": 107620835,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10811661": {
-    "rsid": "rs10811661",
-    "chromosome": "9",
-    "position": 22134094,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs5219": {
     "rsid": "rs5219",
     "chromosome": "11",
@@ -5392,36 +3522,10 @@
     "weight": 1,
     "description": ""
   },
-  "rs1800562": {
-    "rsid": "rs1800562",
-    "chromosome": "6",
-    "position": 26093141,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs1800961": {
     "rsid": "rs1800961",
     "chromosome": "20",
     "position": 43042364,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12779790": {
-    "rsid": "rs12779790",
-    "chromosome": "10",
-    "position": 12328010,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
@@ -5727,19 +3831,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs17822931": {
-    "rsid": "rs17822931",
-    "chromosome": "16",
-    "position": 48258198,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs2180439": {
     "rsid": "rs2180439",
     "chromosome": "20",
@@ -6011,45 +4102,6 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456370_cen": {
-    "rsid": "rs10456370_cen",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456301_cen": {
-    "rsid": "rs10456301_cen",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456345_cen": {
-    "rsid": "rs10456345_cen",
-    "chromosome": "Unknown",
-    "position": 0,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
   "rs9845457": {
     "rsid": "rs9845457",
     "chromosome": "11",
@@ -6139,8 +4191,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300000_cas": {
-    "rsid": "rs300000_cas",
+  "rs300000": {
+    "rsid": "rs300000",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6152,8 +4204,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300001_cas": {
-    "rsid": "rs300001_cas",
+  "rs300001": {
+    "rsid": "rs300001",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6165,8 +4217,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300002_cas": {
-    "rsid": "rs300002_cas",
+  "rs300002": {
+    "rsid": "rs300002",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6178,8 +4230,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300003_cas": {
-    "rsid": "rs300003_cas",
+  "rs300003": {
+    "rsid": "rs300003",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6191,8 +4243,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300004_cas": {
-    "rsid": "rs300004_cas",
+  "rs300004": {
+    "rsid": "rs300004",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6204,8 +4256,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300005_cas": {
-    "rsid": "rs300005_cas",
+  "rs300005": {
+    "rsid": "rs300005",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6217,8 +4269,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300006_cas": {
-    "rsid": "rs300006_cas",
+  "rs300006": {
+    "rsid": "rs300006",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6230,8 +4282,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300007_cas": {
-    "rsid": "rs300007_cas",
+  "rs300007": {
+    "rsid": "rs300007",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6243,8 +4295,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300008_cas": {
-    "rsid": "rs300008_cas",
+  "rs300008": {
+    "rsid": "rs300008",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6256,8 +4308,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs300009_cas": {
-    "rsid": "rs300009_cas",
+  "rs300009": {
+    "rsid": "rs300009",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6269,8 +4321,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000010_cas": {
-    "rsid": "rs3000010_cas",
+  "rs3000010": {
+    "rsid": "rs3000010",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6282,8 +4334,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000011_cas": {
-    "rsid": "rs3000011_cas",
+  "rs3000011": {
+    "rsid": "rs3000011",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6295,8 +4347,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000012_cas": {
-    "rsid": "rs3000012_cas",
+  "rs3000012": {
+    "rsid": "rs3000012",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6308,8 +4360,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000013_cas": {
-    "rsid": "rs3000013_cas",
+  "rs3000013": {
+    "rsid": "rs3000013",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6321,8 +4373,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000014_cas": {
-    "rsid": "rs3000014_cas",
+  "rs3000014": {
+    "rsid": "rs3000014",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6334,8 +4386,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000015_cas": {
-    "rsid": "rs3000015_cas",
+  "rs3000015": {
+    "rsid": "rs3000015",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6347,8 +4399,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000016_cas": {
-    "rsid": "rs3000016_cas",
+  "rs3000016": {
+    "rsid": "rs3000016",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6360,8 +4412,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000017_cas": {
-    "rsid": "rs3000017_cas",
+  "rs3000017": {
+    "rsid": "rs3000017",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6373,8 +4425,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000018_cas": {
-    "rsid": "rs3000018_cas",
+  "rs3000018": {
+    "rsid": "rs3000018",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6386,8 +4438,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000019_cas": {
-    "rsid": "rs3000019_cas",
+  "rs3000019": {
+    "rsid": "rs3000019",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6399,8 +4451,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000020_cas": {
-    "rsid": "rs3000020_cas",
+  "rs3000020": {
+    "rsid": "rs3000020",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6412,8 +4464,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000021_cas": {
-    "rsid": "rs3000021_cas",
+  "rs3000021": {
+    "rsid": "rs3000021",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6425,8 +4477,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000022_cas": {
-    "rsid": "rs3000022_cas",
+  "rs3000022": {
+    "rsid": "rs3000022",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6438,8 +4490,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000023_cas": {
-    "rsid": "rs3000023_cas",
+  "rs3000023": {
+    "rsid": "rs3000023",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6451,8 +4503,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000024_cas": {
-    "rsid": "rs3000024_cas",
+  "rs3000024": {
+    "rsid": "rs3000024",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6464,8 +4516,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000025_cas": {
-    "rsid": "rs3000025_cas",
+  "rs3000025": {
+    "rsid": "rs3000025",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6477,8 +4529,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000026_cas": {
-    "rsid": "rs3000026_cas",
+  "rs3000026": {
+    "rsid": "rs3000026",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6490,8 +4542,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000027_cas": {
-    "rsid": "rs3000027_cas",
+  "rs3000027": {
+    "rsid": "rs3000027",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6503,8 +4555,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000028_cas": {
-    "rsid": "rs3000028_cas",
+  "rs3000028": {
+    "rsid": "rs3000028",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6516,8 +4568,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000029_cas": {
-    "rsid": "rs3000029_cas",
+  "rs3000029": {
+    "rsid": "rs3000029",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6529,8 +4581,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000030_cas": {
-    "rsid": "rs3000030_cas",
+  "rs3000030": {
+    "rsid": "rs3000030",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6542,8 +4594,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000031_cas": {
-    "rsid": "rs3000031_cas",
+  "rs3000031": {
+    "rsid": "rs3000031",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6555,8 +4607,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000032_cas": {
-    "rsid": "rs3000032_cas",
+  "rs3000032": {
+    "rsid": "rs3000032",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6568,8 +4620,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000033_cas": {
-    "rsid": "rs3000033_cas",
+  "rs3000033": {
+    "rsid": "rs3000033",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6581,8 +4633,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000034_cas": {
-    "rsid": "rs3000034_cas",
+  "rs3000034": {
+    "rsid": "rs3000034",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6594,8 +4646,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000035_cas": {
-    "rsid": "rs3000035_cas",
+  "rs3000035": {
+    "rsid": "rs3000035",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6607,8 +4659,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000036_cas": {
-    "rsid": "rs3000036_cas",
+  "rs3000036": {
+    "rsid": "rs3000036",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6620,8 +4672,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000037_cas": {
-    "rsid": "rs3000037_cas",
+  "rs3000037": {
+    "rsid": "rs3000037",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6633,8 +4685,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000038_cas": {
-    "rsid": "rs3000038_cas",
+  "rs3000038": {
+    "rsid": "rs3000038",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6646,8 +4698,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000039_cas": {
-    "rsid": "rs3000039_cas",
+  "rs3000039": {
+    "rsid": "rs3000039",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6659,8 +4711,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000040_cas": {
-    "rsid": "rs3000040_cas",
+  "rs3000040": {
+    "rsid": "rs3000040",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6672,8 +4724,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000041_cas": {
-    "rsid": "rs3000041_cas",
+  "rs3000041": {
+    "rsid": "rs3000041",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6685,8 +4737,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000042_cas": {
-    "rsid": "rs3000042_cas",
+  "rs3000042": {
+    "rsid": "rs3000042",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6698,8 +4750,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000043_cas": {
-    "rsid": "rs3000043_cas",
+  "rs3000043": {
+    "rsid": "rs3000043",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6711,8 +4763,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000044_cas": {
-    "rsid": "rs3000044_cas",
+  "rs3000044": {
+    "rsid": "rs3000044",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6724,8 +4776,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000045_cas": {
-    "rsid": "rs3000045_cas",
+  "rs3000045": {
+    "rsid": "rs3000045",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6737,8 +4789,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000046_cas": {
-    "rsid": "rs3000046_cas",
+  "rs3000046": {
+    "rsid": "rs3000046",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6750,8 +4802,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000047_cas": {
-    "rsid": "rs3000047_cas",
+  "rs3000047": {
+    "rsid": "rs3000047",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6763,8 +4815,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000048_cas": {
-    "rsid": "rs3000048_cas",
+  "rs3000048": {
+    "rsid": "rs3000048",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6776,8 +4828,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000049_cas": {
-    "rsid": "rs3000049_cas",
+  "rs3000049": {
+    "rsid": "rs3000049",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6789,8 +4841,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000050_cas": {
-    "rsid": "rs3000050_cas",
+  "rs3000050": {
+    "rsid": "rs3000050",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6802,8 +4854,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000051_cas": {
-    "rsid": "rs3000051_cas",
+  "rs3000051": {
+    "rsid": "rs3000051",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6815,8 +4867,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000052_cas": {
-    "rsid": "rs3000052_cas",
+  "rs3000052": {
+    "rsid": "rs3000052",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6828,8 +4880,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000053_cas": {
-    "rsid": "rs3000053_cas",
+  "rs3000053": {
+    "rsid": "rs3000053",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6841,8 +4893,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000054_cas": {
-    "rsid": "rs3000054_cas",
+  "rs3000054": {
+    "rsid": "rs3000054",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6854,8 +4906,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000055_cas": {
-    "rsid": "rs3000055_cas",
+  "rs3000055": {
+    "rsid": "rs3000055",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6867,8 +4919,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000056_cas": {
-    "rsid": "rs3000056_cas",
+  "rs3000056": {
+    "rsid": "rs3000056",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6880,8 +4932,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000057_cas": {
-    "rsid": "rs3000057_cas",
+  "rs3000057": {
+    "rsid": "rs3000057",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6893,8 +4945,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000058_cas": {
-    "rsid": "rs3000058_cas",
+  "rs3000058": {
+    "rsid": "rs3000058",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6906,8 +4958,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000059_cas": {
-    "rsid": "rs3000059_cas",
+  "rs3000059": {
+    "rsid": "rs3000059",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6919,8 +4971,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000060_cas": {
-    "rsid": "rs3000060_cas",
+  "rs3000060": {
+    "rsid": "rs3000060",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6932,8 +4984,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000061_cas": {
-    "rsid": "rs3000061_cas",
+  "rs3000061": {
+    "rsid": "rs3000061",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6945,8 +4997,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000062_cas": {
-    "rsid": "rs3000062_cas",
+  "rs3000062": {
+    "rsid": "rs3000062",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6958,8 +5010,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000063_cas": {
-    "rsid": "rs3000063_cas",
+  "rs3000063": {
+    "rsid": "rs3000063",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6971,8 +5023,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000064_cas": {
-    "rsid": "rs3000064_cas",
+  "rs3000064": {
+    "rsid": "rs3000064",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6984,8 +5036,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000065_cas": {
-    "rsid": "rs3000065_cas",
+  "rs3000065": {
+    "rsid": "rs3000065",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -6997,8 +5049,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000066_cas": {
-    "rsid": "rs3000066_cas",
+  "rs3000066": {
+    "rsid": "rs3000066",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7010,8 +5062,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000067_cas": {
-    "rsid": "rs3000067_cas",
+  "rs3000067": {
+    "rsid": "rs3000067",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7023,8 +5075,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000068_cas": {
-    "rsid": "rs3000068_cas",
+  "rs3000068": {
+    "rsid": "rs3000068",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7036,8 +5088,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000069_cas": {
-    "rsid": "rs3000069_cas",
+  "rs3000069": {
+    "rsid": "rs3000069",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7049,8 +5101,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000070_cas": {
-    "rsid": "rs3000070_cas",
+  "rs3000070": {
+    "rsid": "rs3000070",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7062,8 +5114,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000071_cas": {
-    "rsid": "rs3000071_cas",
+  "rs3000071": {
+    "rsid": "rs3000071",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7075,8 +5127,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000072_cas": {
-    "rsid": "rs3000072_cas",
+  "rs3000072": {
+    "rsid": "rs3000072",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7088,8 +5140,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000073_cas": {
-    "rsid": "rs3000073_cas",
+  "rs3000073": {
+    "rsid": "rs3000073",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7101,8 +5153,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000074_cas": {
-    "rsid": "rs3000074_cas",
+  "rs3000074": {
+    "rsid": "rs3000074",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7114,8 +5166,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000075_cas": {
-    "rsid": "rs3000075_cas",
+  "rs3000075": {
+    "rsid": "rs3000075",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7127,8 +5179,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000076_cas": {
-    "rsid": "rs3000076_cas",
+  "rs3000076": {
+    "rsid": "rs3000076",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7140,8 +5192,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000077_cas": {
-    "rsid": "rs3000077_cas",
+  "rs3000077": {
+    "rsid": "rs3000077",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7153,8 +5205,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000078_cas": {
-    "rsid": "rs3000078_cas",
+  "rs3000078": {
+    "rsid": "rs3000078",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7166,8 +5218,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000079_cas": {
-    "rsid": "rs3000079_cas",
+  "rs3000079": {
+    "rsid": "rs3000079",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7179,8 +5231,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000080_cas": {
-    "rsid": "rs3000080_cas",
+  "rs3000080": {
+    "rsid": "rs3000080",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7192,8 +5244,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000081_cas": {
-    "rsid": "rs3000081_cas",
+  "rs3000081": {
+    "rsid": "rs3000081",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7205,8 +5257,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000082_cas": {
-    "rsid": "rs3000082_cas",
+  "rs3000082": {
+    "rsid": "rs3000082",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7218,8 +5270,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000083_cas": {
-    "rsid": "rs3000083_cas",
+  "rs3000083": {
+    "rsid": "rs3000083",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7231,8 +5283,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000084_cas": {
-    "rsid": "rs3000084_cas",
+  "rs3000084": {
+    "rsid": "rs3000084",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7244,8 +5296,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000085_cas": {
-    "rsid": "rs3000085_cas",
+  "rs3000085": {
+    "rsid": "rs3000085",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7257,8 +5309,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000086_cas": {
-    "rsid": "rs3000086_cas",
+  "rs3000086": {
+    "rsid": "rs3000086",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7270,8 +5322,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000087_cas": {
-    "rsid": "rs3000087_cas",
+  "rs3000087": {
+    "rsid": "rs3000087",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7283,8 +5335,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000088_cas": {
-    "rsid": "rs3000088_cas",
+  "rs3000088": {
+    "rsid": "rs3000088",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7296,8 +5348,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000089_cas": {
-    "rsid": "rs3000089_cas",
+  "rs3000089": {
+    "rsid": "rs3000089",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7309,8 +5361,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000090_cas": {
-    "rsid": "rs3000090_cas",
+  "rs3000090": {
+    "rsid": "rs3000090",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7322,8 +5374,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000091_cas": {
-    "rsid": "rs3000091_cas",
+  "rs3000091": {
+    "rsid": "rs3000091",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7335,8 +5387,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000092_cas": {
-    "rsid": "rs3000092_cas",
+  "rs3000092": {
+    "rsid": "rs3000092",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7348,8 +5400,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000093_cas": {
-    "rsid": "rs3000093_cas",
+  "rs3000093": {
+    "rsid": "rs3000093",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7361,8 +5413,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000094_cas": {
-    "rsid": "rs3000094_cas",
+  "rs3000094": {
+    "rsid": "rs3000094",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7374,8 +5426,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000095_cas": {
-    "rsid": "rs3000095_cas",
+  "rs3000095": {
+    "rsid": "rs3000095",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7387,8 +5439,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000096_cas": {
-    "rsid": "rs3000096_cas",
+  "rs3000096": {
+    "rsid": "rs3000096",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7400,8 +5452,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000097_cas": {
-    "rsid": "rs3000097_cas",
+  "rs3000097": {
+    "rsid": "rs3000097",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7413,8 +5465,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000098_cas": {
-    "rsid": "rs3000098_cas",
+  "rs3000098": {
+    "rsid": "rs3000098",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7426,8 +5478,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs3000099_cas": {
-    "rsid": "rs3000099_cas",
+  "rs3000099": {
+    "rsid": "rs3000099",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7439,8 +5491,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800000_cas": {
-    "rsid": "rs800000_cas",
+  "rs800000": {
+    "rsid": "rs800000",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7452,8 +5504,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800001_cas": {
-    "rsid": "rs800001_cas",
+  "rs800001": {
+    "rsid": "rs800001",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7465,8 +5517,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800002_cas": {
-    "rsid": "rs800002_cas",
+  "rs800002": {
+    "rsid": "rs800002",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7478,8 +5530,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800003_cas": {
-    "rsid": "rs800003_cas",
+  "rs800003": {
+    "rsid": "rs800003",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7491,8 +5543,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800004_cas": {
-    "rsid": "rs800004_cas",
+  "rs800004": {
+    "rsid": "rs800004",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7504,8 +5556,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800005_cas": {
-    "rsid": "rs800005_cas",
+  "rs800005": {
+    "rsid": "rs800005",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7517,8 +5569,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800006_cas": {
-    "rsid": "rs800006_cas",
+  "rs800006": {
+    "rsid": "rs800006",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7530,8 +5582,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800007_cas": {
-    "rsid": "rs800007_cas",
+  "rs800007": {
+    "rsid": "rs800007",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7543,8 +5595,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800008_cas": {
-    "rsid": "rs800008_cas",
+  "rs800008": {
+    "rsid": "rs800008",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7556,8 +5608,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs800009_cas": {
-    "rsid": "rs800009_cas",
+  "rs800009": {
+    "rsid": "rs800009",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7569,8 +5621,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000010_cas": {
-    "rsid": "rs8000010_cas",
+  "rs8000010": {
+    "rsid": "rs8000010",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7582,8 +5634,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000011_cas": {
-    "rsid": "rs8000011_cas",
+  "rs8000011": {
+    "rsid": "rs8000011",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7595,8 +5647,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000012_cas": {
-    "rsid": "rs8000012_cas",
+  "rs8000012": {
+    "rsid": "rs8000012",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7608,8 +5660,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000013_cas": {
-    "rsid": "rs8000013_cas",
+  "rs8000013": {
+    "rsid": "rs8000013",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7621,8 +5673,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000014_cas": {
-    "rsid": "rs8000014_cas",
+  "rs8000014": {
+    "rsid": "rs8000014",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7634,8 +5686,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000015_cas": {
-    "rsid": "rs8000015_cas",
+  "rs8000015": {
+    "rsid": "rs8000015",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7647,8 +5699,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000016_cas": {
-    "rsid": "rs8000016_cas",
+  "rs8000016": {
+    "rsid": "rs8000016",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7660,8 +5712,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000017_cas": {
-    "rsid": "rs8000017_cas",
+  "rs8000017": {
+    "rsid": "rs8000017",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7673,8 +5725,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000018_cas": {
-    "rsid": "rs8000018_cas",
+  "rs8000018": {
+    "rsid": "rs8000018",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7686,8 +5738,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000019_cas": {
-    "rsid": "rs8000019_cas",
+  "rs8000019": {
+    "rsid": "rs8000019",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7699,8 +5751,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000020_cas": {
-    "rsid": "rs8000020_cas",
+  "rs8000020": {
+    "rsid": "rs8000020",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7712,8 +5764,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000021_cas": {
-    "rsid": "rs8000021_cas",
+  "rs8000021": {
+    "rsid": "rs8000021",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7725,8 +5777,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000022_cas": {
-    "rsid": "rs8000022_cas",
+  "rs8000022": {
+    "rsid": "rs8000022",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7738,8 +5790,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000023_cas": {
-    "rsid": "rs8000023_cas",
+  "rs8000023": {
+    "rsid": "rs8000023",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7751,8 +5803,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000024_cas": {
-    "rsid": "rs8000024_cas",
+  "rs8000024": {
+    "rsid": "rs8000024",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7764,8 +5816,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000025_cas": {
-    "rsid": "rs8000025_cas",
+  "rs8000025": {
+    "rsid": "rs8000025",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7777,8 +5829,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000026_cas": {
-    "rsid": "rs8000026_cas",
+  "rs8000026": {
+    "rsid": "rs8000026",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7790,8 +5842,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000027_cas": {
-    "rsid": "rs8000027_cas",
+  "rs8000027": {
+    "rsid": "rs8000027",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7803,8 +5855,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000028_cas": {
-    "rsid": "rs8000028_cas",
+  "rs8000028": {
+    "rsid": "rs8000028",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7816,8 +5868,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000029_cas": {
-    "rsid": "rs8000029_cas",
+  "rs8000029": {
+    "rsid": "rs8000029",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7829,8 +5881,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000030_cas": {
-    "rsid": "rs8000030_cas",
+  "rs8000030": {
+    "rsid": "rs8000030",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7842,8 +5894,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000031_cas": {
-    "rsid": "rs8000031_cas",
+  "rs8000031": {
+    "rsid": "rs8000031",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7855,8 +5907,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000032_cas": {
-    "rsid": "rs8000032_cas",
+  "rs8000032": {
+    "rsid": "rs8000032",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7868,8 +5920,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000033_cas": {
-    "rsid": "rs8000033_cas",
+  "rs8000033": {
+    "rsid": "rs8000033",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7881,8 +5933,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000034_cas": {
-    "rsid": "rs8000034_cas",
+  "rs8000034": {
+    "rsid": "rs8000034",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7894,8 +5946,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000035_cas": {
-    "rsid": "rs8000035_cas",
+  "rs8000035": {
+    "rsid": "rs8000035",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7907,8 +5959,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000036_cas": {
-    "rsid": "rs8000036_cas",
+  "rs8000036": {
+    "rsid": "rs8000036",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7920,8 +5972,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000037_cas": {
-    "rsid": "rs8000037_cas",
+  "rs8000037": {
+    "rsid": "rs8000037",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7933,8 +5985,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000038_cas": {
-    "rsid": "rs8000038_cas",
+  "rs8000038": {
+    "rsid": "rs8000038",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7946,8 +5998,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000039_cas": {
-    "rsid": "rs8000039_cas",
+  "rs8000039": {
+    "rsid": "rs8000039",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7959,8 +6011,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000040_cas": {
-    "rsid": "rs8000040_cas",
+  "rs8000040": {
+    "rsid": "rs8000040",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7972,8 +6024,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000041_cas": {
-    "rsid": "rs8000041_cas",
+  "rs8000041": {
+    "rsid": "rs8000041",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7985,8 +6037,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000042_cas": {
-    "rsid": "rs8000042_cas",
+  "rs8000042": {
+    "rsid": "rs8000042",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -7998,8 +6050,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000043_cas": {
-    "rsid": "rs8000043_cas",
+  "rs8000043": {
+    "rsid": "rs8000043",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8011,8 +6063,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000044_cas": {
-    "rsid": "rs8000044_cas",
+  "rs8000044": {
+    "rsid": "rs8000044",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8024,8 +6076,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000045_cas": {
-    "rsid": "rs8000045_cas",
+  "rs8000045": {
+    "rsid": "rs8000045",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8037,8 +6089,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000046_cas": {
-    "rsid": "rs8000046_cas",
+  "rs8000046": {
+    "rsid": "rs8000046",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8050,8 +6102,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000047_cas": {
-    "rsid": "rs8000047_cas",
+  "rs8000047": {
+    "rsid": "rs8000047",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8063,8 +6115,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000048_cas": {
-    "rsid": "rs8000048_cas",
+  "rs8000048": {
+    "rsid": "rs8000048",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8076,8 +6128,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000049_cas": {
-    "rsid": "rs8000049_cas",
+  "rs8000049": {
+    "rsid": "rs8000049",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8089,8 +6141,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000050_cas": {
-    "rsid": "rs8000050_cas",
+  "rs8000050": {
+    "rsid": "rs8000050",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8102,8 +6154,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000051_cas": {
-    "rsid": "rs8000051_cas",
+  "rs8000051": {
+    "rsid": "rs8000051",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8115,8 +6167,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000052_cas": {
-    "rsid": "rs8000052_cas",
+  "rs8000052": {
+    "rsid": "rs8000052",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8128,8 +6180,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000053_cas": {
-    "rsid": "rs8000053_cas",
+  "rs8000053": {
+    "rsid": "rs8000053",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8141,8 +6193,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000054_cas": {
-    "rsid": "rs8000054_cas",
+  "rs8000054": {
+    "rsid": "rs8000054",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8154,8 +6206,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000055_cas": {
-    "rsid": "rs8000055_cas",
+  "rs8000055": {
+    "rsid": "rs8000055",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8167,8 +6219,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000056_cas": {
-    "rsid": "rs8000056_cas",
+  "rs8000056": {
+    "rsid": "rs8000056",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8180,8 +6232,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000057_cas": {
-    "rsid": "rs8000057_cas",
+  "rs8000057": {
+    "rsid": "rs8000057",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8193,8 +6245,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000058_cas": {
-    "rsid": "rs8000058_cas",
+  "rs8000058": {
+    "rsid": "rs8000058",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8206,8 +6258,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000059_cas": {
-    "rsid": "rs8000059_cas",
+  "rs8000059": {
+    "rsid": "rs8000059",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8219,8 +6271,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000060_cas": {
-    "rsid": "rs8000060_cas",
+  "rs8000060": {
+    "rsid": "rs8000060",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8232,8 +6284,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000061_cas": {
-    "rsid": "rs8000061_cas",
+  "rs8000061": {
+    "rsid": "rs8000061",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8245,8 +6297,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000062_cas": {
-    "rsid": "rs8000062_cas",
+  "rs8000062": {
+    "rsid": "rs8000062",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8258,8 +6310,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000063_cas": {
-    "rsid": "rs8000063_cas",
+  "rs8000063": {
+    "rsid": "rs8000063",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8271,8 +6323,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000064_cas": {
-    "rsid": "rs8000064_cas",
+  "rs8000064": {
+    "rsid": "rs8000064",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8284,8 +6336,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000065_cas": {
-    "rsid": "rs8000065_cas",
+  "rs8000065": {
+    "rsid": "rs8000065",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8297,8 +6349,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000066_cas": {
-    "rsid": "rs8000066_cas",
+  "rs8000066": {
+    "rsid": "rs8000066",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8310,8 +6362,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000067_cas": {
-    "rsid": "rs8000067_cas",
+  "rs8000067": {
+    "rsid": "rs8000067",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8323,8 +6375,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000068_cas": {
-    "rsid": "rs8000068_cas",
+  "rs8000068": {
+    "rsid": "rs8000068",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8336,8 +6388,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000069_cas": {
-    "rsid": "rs8000069_cas",
+  "rs8000069": {
+    "rsid": "rs8000069",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8349,8 +6401,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000070_cas": {
-    "rsid": "rs8000070_cas",
+  "rs8000070": {
+    "rsid": "rs8000070",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8362,8 +6414,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000071_cas": {
-    "rsid": "rs8000071_cas",
+  "rs8000071": {
+    "rsid": "rs8000071",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8375,8 +6427,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000072_cas": {
-    "rsid": "rs8000072_cas",
+  "rs8000072": {
+    "rsid": "rs8000072",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8388,8 +6440,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000073_cas": {
-    "rsid": "rs8000073_cas",
+  "rs8000073": {
+    "rsid": "rs8000073",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8401,8 +6453,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000074_cas": {
-    "rsid": "rs8000074_cas",
+  "rs8000074": {
+    "rsid": "rs8000074",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8414,8 +6466,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000075_cas": {
-    "rsid": "rs8000075_cas",
+  "rs8000075": {
+    "rsid": "rs8000075",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8427,8 +6479,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000076_cas": {
-    "rsid": "rs8000076_cas",
+  "rs8000076": {
+    "rsid": "rs8000076",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8440,8 +6492,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000077_cas": {
-    "rsid": "rs8000077_cas",
+  "rs8000077": {
+    "rsid": "rs8000077",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8453,8 +6505,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000078_cas": {
-    "rsid": "rs8000078_cas",
+  "rs8000078": {
+    "rsid": "rs8000078",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8466,8 +6518,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000079_cas": {
-    "rsid": "rs8000079_cas",
+  "rs8000079": {
+    "rsid": "rs8000079",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8479,8 +6531,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000080_cas": {
-    "rsid": "rs8000080_cas",
+  "rs8000080": {
+    "rsid": "rs8000080",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8492,8 +6544,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000081_cas": {
-    "rsid": "rs8000081_cas",
+  "rs8000081": {
+    "rsid": "rs8000081",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8505,8 +6557,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000082_cas": {
-    "rsid": "rs8000082_cas",
+  "rs8000082": {
+    "rsid": "rs8000082",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8518,8 +6570,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000083_cas": {
-    "rsid": "rs8000083_cas",
+  "rs8000083": {
+    "rsid": "rs8000083",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8531,8 +6583,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000084_cas": {
-    "rsid": "rs8000084_cas",
+  "rs8000084": {
+    "rsid": "rs8000084",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8544,8 +6596,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000085_cas": {
-    "rsid": "rs8000085_cas",
+  "rs8000085": {
+    "rsid": "rs8000085",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8557,8 +6609,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000086_cas": {
-    "rsid": "rs8000086_cas",
+  "rs8000086": {
+    "rsid": "rs8000086",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8570,8 +6622,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000087_cas": {
-    "rsid": "rs8000087_cas",
+  "rs8000087": {
+    "rsid": "rs8000087",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8583,8 +6635,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000088_cas": {
-    "rsid": "rs8000088_cas",
+  "rs8000088": {
+    "rsid": "rs8000088",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8596,8 +6648,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000089_cas": {
-    "rsid": "rs8000089_cas",
+  "rs8000089": {
+    "rsid": "rs8000089",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8609,8 +6661,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000090_cas": {
-    "rsid": "rs8000090_cas",
+  "rs8000090": {
+    "rsid": "rs8000090",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8622,8 +6674,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000091_cas": {
-    "rsid": "rs8000091_cas",
+  "rs8000091": {
+    "rsid": "rs8000091",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8635,8 +6687,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000092_cas": {
-    "rsid": "rs8000092_cas",
+  "rs8000092": {
+    "rsid": "rs8000092",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8648,8 +6700,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000093_cas": {
-    "rsid": "rs8000093_cas",
+  "rs8000093": {
+    "rsid": "rs8000093",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8661,8 +6713,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000094_cas": {
-    "rsid": "rs8000094_cas",
+  "rs8000094": {
+    "rsid": "rs8000094",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8674,8 +6726,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000095_cas": {
-    "rsid": "rs8000095_cas",
+  "rs8000095": {
+    "rsid": "rs8000095",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8687,8 +6739,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000096_cas": {
-    "rsid": "rs8000096_cas",
+  "rs8000096": {
+    "rsid": "rs8000096",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8700,8 +6752,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000097_cas": {
-    "rsid": "rs8000097_cas",
+  "rs8000097": {
+    "rsid": "rs8000097",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8713,8 +6765,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000098_cas": {
-    "rsid": "rs8000098_cas",
+  "rs8000098": {
+    "rsid": "rs8000098",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
@@ -8726,27 +6778,13 @@
     "weight": 1,
     "description": ""
   },
-  "rs8000099_cas": {
-    "rsid": "rs8000099_cas",
+  "rs8000099": {
+    "rsid": "rs8000099",
     "chromosome": "Unknown",
     "position": 0,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1165196": {
-    "rsid": "rs1165196",
-    "chromosome": "6",
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {},
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -57116,3074 +55154,6 @@
     "rsid": "rs5000099",
     "chromosome": "18",
     "position": 65242699,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9990001": {
-    "rsid": "rs9990001",
-    "chromosome": "3",
-    "position": 22706518,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10793168": {
-    "rsid": "rs10793168",
-    "chromosome": "11",
-    "position": 76158636,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10954606": {
-    "rsid": "rs10954606",
-    "chromosome": "7",
-    "position": 137847598,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11122330": {
-    "rsid": "rs11122330",
-    "chromosome": "1",
-    "position": 231898591,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11162487": {
-    "rsid": "rs11162487",
-    "chromosome": "1",
-    "position": 78879237,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11252398": {
-    "rsid": "rs11252398",
-    "chromosome": "10",
-    "position": 4267047,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11624035": {
-    "rsid": "rs11624035",
-    "chromosome": "14",
-    "position": 93123142,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1175143": {
-    "rsid": "rs1175143",
-    "chromosome": "1",
-    "position": 192217230,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1175187": {
-    "rsid": "rs1175187",
-    "chromosome": "5",
-    "position": 125500092,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1175241": {
-    "rsid": "rs1175241",
-    "chromosome": "13",
-    "position": 45068636,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1175295": {
-    "rsid": "rs1175295",
-    "chromosome": "13",
-    "position": 45373456,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1175457": {
-    "rsid": "rs1175457",
-    "chromosome": "9",
-    "position": 107637064,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1175997": {
-    "rsid": "rs1175997",
-    "chromosome": "1",
-    "position": 247846153,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1176051": {
-    "rsid": "rs1176051",
-    "chromosome": "1",
-    "position": 247812583,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1176321": {
-    "rsid": "rs1176321",
-    "chromosome": "13",
-    "position": 81227243,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1176483": {
-    "rsid": "rs1176483",
-    "chromosome": "10",
-    "position": 132472351,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1176537": {
-    "rsid": "rs1176537",
-    "chromosome": "1",
-    "position": 157062696,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1176753": {
-    "rsid": "rs1176753",
-    "chromosome": "11",
-    "position": 113840627,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1176969": {
-    "rsid": "rs1176969",
-    "chromosome": "14",
-    "position": 41435329,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177077": {
-    "rsid": "rs1177077",
-    "chromosome": "1",
-    "position": 93057472,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177239": {
-    "rsid": "rs1177239",
-    "chromosome": "5",
-    "position": 33573492,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177293": {
-    "rsid": "rs1177293",
-    "chromosome": "2",
-    "position": 61348080,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177401": {
-    "rsid": "rs1177401",
-    "chromosome": "13",
-    "position": 112173067,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177509": {
-    "rsid": "rs1177509",
-    "chromosome": "6",
-    "position": 75330995,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177563": {
-    "rsid": "rs1177563",
-    "chromosome": "HG299_PATCH",
-    "position": 118949082,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177617": {
-    "rsid": "rs1177617",
-    "chromosome": "11",
-    "position": 22615770,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177725": {
-    "rsid": "rs1177725",
-    "chromosome": "3",
-    "position": 103595531,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177941": {
-    "rsid": "rs1177941",
-    "chromosome": "7",
-    "position": 148060659,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1177995": {
-    "rsid": "rs1177995",
-    "chromosome": "17",
-    "position": 70544030,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178049": {
-    "rsid": "rs1178049",
-    "chromosome": "20",
-    "position": 2933613,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178103": {
-    "rsid": "rs1178103",
-    "chromosome": "7",
-    "position": 18741367,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178157": {
-    "rsid": "rs1178157",
-    "chromosome": "7",
-    "position": 18783661,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178211": {
-    "rsid": "rs1178211",
-    "chromosome": "2",
-    "position": 15207738,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178319": {
-    "rsid": "rs1178319",
-    "chromosome": "7",
-    "position": 18239627,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178373": {
-    "rsid": "rs1178373",
-    "chromosome": "7",
-    "position": 18169266,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1178535": {
-    "rsid": "rs1178535",
-    "chromosome": "3",
-    "position": 2375485,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs73885319": {
-    "rsid": "rs73885319",
-    "chromosome": "22",
-    "position": 36661906,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1126647": {
-    "rsid": "rs1126647",
-    "chromosome": "4",
-    "position": 74609045,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6071022": {
-    "rsid": "rs6071022",
-    "chromosome": "20",
-    "position": 58483198,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1866074": {
-    "rsid": "rs1866074",
-    "chromosome": "12",
-    "position": 104374442,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11635515": {
-    "rsid": "rs11635515",
-    "chromosome": "15",
-    "position": 24323115,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10809850": {
-    "rsid": "rs10809850",
-    "chromosome": "9",
-    "position": 1295602,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10767971": {
-    "rsid": "rs10767971",
-    "chromosome": "11",
-    "position": 32895664,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103347": {
-    "rsid": "rs11103347",
-    "chromosome": "9",
-    "position": 137458897,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103348": {
-    "rsid": "rs11103348",
-    "chromosome": "9",
-    "position": 139030044,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103352": {
-    "rsid": "rs11103352",
-    "chromosome": "9",
-    "position": 139037560,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103360": {
-    "rsid": "rs11103360",
-    "chromosome": "9",
-    "position": 139057780,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103361": {
-    "rsid": "rs11103361",
-    "chromosome": "9",
-    "position": 139057910,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103362": {
-    "rsid": "rs11103362",
-    "chromosome": "9",
-    "position": 139058209,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103363": {
-    "rsid": "rs11103363",
-    "chromosome": "9",
-    "position": 139058361,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103364": {
-    "rsid": "rs11103364",
-    "chromosome": "9",
-    "position": 139065393,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103365": {
-    "rsid": "rs11103365",
-    "chromosome": "9",
-    "position": 139069214,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103366": {
-    "rsid": "rs11103366",
-    "chromosome": "9",
-    "position": 139069713,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103376": {
-    "rsid": "rs11103376",
-    "chromosome": "9",
-    "position": 139094740,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103380": {
-    "rsid": "rs11103380",
-    "chromosome": "9",
-    "position": 139097496,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103384": {
-    "rsid": "rs11103384",
-    "chromosome": "9",
-    "position": 137466723,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103386": {
-    "rsid": "rs11103386",
-    "chromosome": "9",
-    "position": 137466833,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103387": {
-    "rsid": "rs11103387",
-    "chromosome": "9",
-    "position": 139107879,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103388": {
-    "rsid": "rs11103388",
-    "chromosome": "9",
-    "position": 139107925,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103389": {
-    "rsid": "rs11103389",
-    "chromosome": "9",
-    "position": 139117099,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103390": {
-    "rsid": "rs11103390",
-    "chromosome": "9",
-    "position": 139120828,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103391": {
-    "rsid": "rs11103391",
-    "chromosome": "9",
-    "position": 137468339,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103392": {
-    "rsid": "rs11103392",
-    "chromosome": "9",
-    "position": 139124781,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103393": {
-    "rsid": "rs11103393",
-    "chromosome": "9",
-    "position": 139124789,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103394": {
-    "rsid": "rs11103394",
-    "chromosome": "9",
-    "position": 139124796,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103395": {
-    "rsid": "rs11103395",
-    "chromosome": "9",
-    "position": 139125549,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103396": {
-    "rsid": "rs11103396",
-    "chromosome": "9",
-    "position": 137469494,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103397": {
-    "rsid": "rs11103397",
-    "chromosome": "9",
-    "position": 137469503,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103398": {
-    "rsid": "rs11103398",
-    "chromosome": "9",
-    "position": 139134474,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103399": {
-    "rsid": "rs11103399",
-    "chromosome": "9",
-    "position": 137469807,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103400": {
-    "rsid": "rs11103400",
-    "chromosome": "9",
-    "position": 137471529,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103401": {
-    "rsid": "rs11103401",
-    "chromosome": "9",
-    "position": 137471532,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103402": {
-    "rsid": "rs11103402",
-    "chromosome": "9",
-    "position": 137472537,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103403": {
-    "rsid": "rs11103403",
-    "chromosome": "9",
-    "position": 137473115,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103404": {
-    "rsid": "rs11103404",
-    "chromosome": "9",
-    "position": 137476593,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103405": {
-    "rsid": "rs11103405",
-    "chromosome": "9",
-    "position": 137477197,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103406": {
-    "rsid": "rs11103406",
-    "chromosome": "9",
-    "position": 137477369,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103407": {
-    "rsid": "rs11103407",
-    "chromosome": "9",
-    "position": 137477402,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103408": {
-    "rsid": "rs11103408",
-    "chromosome": "9",
-    "position": 137484947,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103409": {
-    "rsid": "rs11103409",
-    "chromosome": "9",
-    "position": 137488517,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103410": {
-    "rsid": "rs11103410",
-    "chromosome": "9",
-    "position": 137491241,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103411": {
-    "rsid": "rs11103411",
-    "chromosome": "9",
-    "position": 137491247,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103412": {
-    "rsid": "rs11103412",
-    "chromosome": "9",
-    "position": 137491269,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103413": {
-    "rsid": "rs11103413",
-    "chromosome": "9",
-    "position": 137491378,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103414": {
-    "rsid": "rs11103414",
-    "chromosome": "9",
-    "position": 137491435,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103415": {
-    "rsid": "rs11103415",
-    "chromosome": "9",
-    "position": 137305477,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103416": {
-    "rsid": "rs11103416",
-    "chromosome": "9",
-    "position": 137305479,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103417": {
-    "rsid": "rs11103417",
-    "chromosome": "9",
-    "position": 137494787,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103418": {
-    "rsid": "rs11103418",
-    "chromosome": "9",
-    "position": 137495164,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103419": {
-    "rsid": "rs11103419",
-    "chromosome": "9",
-    "position": 137496159,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103420": {
-    "rsid": "rs11103420",
-    "chromosome": "9",
-    "position": 137497133,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103421": {
-    "rsid": "rs11103421",
-    "chromosome": "9",
-    "position": 137497293,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103422": {
-    "rsid": "rs11103422",
-    "chromosome": "9",
-    "position": 137498393,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103423": {
-    "rsid": "rs11103423",
-    "chromosome": "9",
-    "position": 137498513,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103424": {
-    "rsid": "rs11103424",
-    "chromosome": "9",
-    "position": 137498664,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103425": {
-    "rsid": "rs11103425",
-    "chromosome": "9",
-    "position": 137498969,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103426": {
-    "rsid": "rs11103426",
-    "chromosome": "9",
-    "position": 137500742,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103427": {
-    "rsid": "rs11103427",
-    "chromosome": "9",
-    "position": 137500750,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103428": {
-    "rsid": "rs11103428",
-    "chromosome": "9",
-    "position": 137505527,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103429": {
-    "rsid": "rs11103429",
-    "chromosome": "9",
-    "position": 137506578,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103430": {
-    "rsid": "rs11103430",
-    "chromosome": "9",
-    "position": 137507003,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103431": {
-    "rsid": "rs11103431",
-    "chromosome": "9",
-    "position": 137507359,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103432": {
-    "rsid": "rs11103432",
-    "chromosome": "9",
-    "position": 137507483,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103433": {
-    "rsid": "rs11103433",
-    "chromosome": "9",
-    "position": 137510144,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103434": {
-    "rsid": "rs11103434",
-    "chromosome": "9",
-    "position": 137512034,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103435": {
-    "rsid": "rs11103435",
-    "chromosome": "9",
-    "position": 137513309,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103436": {
-    "rsid": "rs11103436",
-    "chromosome": "9",
-    "position": 137513917,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103437": {
-    "rsid": "rs11103437",
-    "chromosome": "9",
-    "position": 137514117,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103438": {
-    "rsid": "rs11103438",
-    "chromosome": "9",
-    "position": 137520070,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103439": {
-    "rsid": "rs11103439",
-    "chromosome": "9",
-    "position": 137520289,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103440": {
-    "rsid": "rs11103440",
-    "chromosome": "9",
-    "position": 137521140,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103441": {
-    "rsid": "rs11103441",
-    "chromosome": "9",
-    "position": 137521141,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103442": {
-    "rsid": "rs11103442",
-    "chromosome": "9",
-    "position": 137524163,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103443": {
-    "rsid": "rs11103443",
-    "chromosome": "9",
-    "position": 137524233,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103444": {
-    "rsid": "rs11103444",
-    "chromosome": "9",
-    "position": 137524254,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103445": {
-    "rsid": "rs11103445",
-    "chromosome": "9",
-    "position": 137524286,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103446": {
-    "rsid": "rs11103446",
-    "chromosome": "9",
-    "position": 137524520,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103447": {
-    "rsid": "rs11103447",
-    "chromosome": "9",
-    "position": 137524529,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103448": {
-    "rsid": "rs11103448",
-    "chromosome": "9",
-    "position": 137524637,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6684372": {
-    "rsid": "rs6684372",
-    "chromosome": "1",
-    "position": 116158051,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2649578": {
-    "rsid": "rs2649578",
-    "chromosome": "1",
-    "position": 1425407,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4342826": {
-    "rsid": "rs4342826",
-    "chromosome": "1",
-    "position": 166302197,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10442708": {
-    "rsid": "rs10442708",
-    "chromosome": "1",
-    "position": 230082552,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7554884": {
-    "rsid": "rs7554884",
-    "chromosome": "1",
-    "position": 192551196,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7418014": {
-    "rsid": "rs7418014",
-    "chromosome": "1",
-    "position": 116784301,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7548736": {
-    "rsid": "rs7548736",
-    "chromosome": "1",
-    "position": 159340686,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs56168930": {
-    "rsid": "rs56168930",
-    "chromosome": "1",
-    "position": 11037447,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10801952": {
-    "rsid": "rs10801952",
-    "chromosome": "1",
-    "position": 117781885,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10900423": {
-    "rsid": "rs10900423",
-    "chromosome": "1",
-    "position": 204678203,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2788252": {
-    "rsid": "rs2788252",
-    "chromosome": "1",
-    "position": 113745455,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3007210": {
-    "rsid": "rs3007210",
-    "chromosome": "1",
-    "position": 36856573,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12065033": {
-    "rsid": "rs12065033",
-    "chromosome": "1",
-    "position": 173579034,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12066494": {
-    "rsid": "rs12066494",
-    "chromosome": "1",
-    "position": 173579970,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2483328": {
-    "rsid": "rs2483328",
-    "chromosome": "1",
-    "position": 112960192,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs290829": {
-    "rsid": "rs290829",
-    "chromosome": "1",
-    "position": 97451677,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6429390": {
-    "rsid": "rs6429390",
-    "chromosome": "1",
-    "position": 243064156,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6657624": {
-    "rsid": "rs6657624",
-    "chromosome": "1",
-    "position": 117002489,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1220399": {
-    "rsid": "rs1220399",
-    "chromosome": "1",
-    "position": 9995254,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs59459799": {
-    "rsid": "rs59459799",
-    "chromosome": "1",
-    "position": 57627960,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7551243": {
-    "rsid": "rs7551243",
-    "chromosome": "1",
-    "position": 100209959,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2997748": {
-    "rsid": "rs2997748",
-    "chromosome": "1",
-    "position": 116181829,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs9428863": {
-    "rsid": "rs9428863",
-    "chromosome": "1",
-    "position": 241271227,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3100865": {
-    "rsid": "rs3100865",
-    "chromosome": "1",
-    "position": 2806107,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2246829": {
-    "rsid": "rs2246829",
-    "chromosome": "1",
-    "position": 192547074,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1385120": {
-    "rsid": "rs1385120",
-    "chromosome": "1",
-    "position": 102177800,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4839518": {
-    "rsid": "rs4839518",
-    "chromosome": "1",
-    "position": 116745951,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11121639": {
-    "rsid": "rs11121639",
-    "chromosome": "1",
-    "position": 10937920,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12240271": {
-    "rsid": "rs12240271",
-    "chromosome": "1",
-    "position": 230207462,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1036001": {
-    "rsid": "rs1036001",
-    "chromosome": "1",
-    "position": 236837395,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2132407": {
-    "rsid": "rs2132407",
-    "chromosome": "1",
-    "position": 232986191,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4839456": {
-    "rsid": "rs4839456",
-    "chromosome": "1",
-    "position": 116100909,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs591001": {
-    "rsid": "rs591001",
-    "chromosome": "1",
-    "position": 36154485,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10888286": {
-    "rsid": "rs10888286",
-    "chromosome": "1",
-    "position": 248116335,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs35338133": {
-    "rsid": "rs35338133",
-    "chromosome": "1",
-    "position": 248780821,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2073017": {
-    "rsid": "rs2073017",
-    "chromosome": "1",
-    "position": 10822808,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7524748": {
-    "rsid": "rs7524748",
-    "chromosome": "1",
-    "position": 117708477,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs602507": {
-    "rsid": "rs602507",
-    "chromosome": "1",
-    "position": 32369008,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2487568": {
-    "rsid": "rs2487568",
-    "chromosome": "1",
-    "position": 120441998,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10737801": {
-    "rsid": "rs10737801",
-    "chromosome": "1",
-    "position": 247530238,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11580984": {
-    "rsid": "rs11580984",
-    "chromosome": "1",
-    "position": 36182139,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2131633": {
-    "rsid": "rs2131633",
-    "chromosome": "1",
-    "position": 100220891,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6704425": {
-    "rsid": "rs6704425",
-    "chromosome": "1",
-    "position": 38875991,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3125685": {
-    "rsid": "rs3125685",
-    "chromosome": "1",
-    "position": 107805682,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2651924": {
-    "rsid": "rs2651924",
-    "chromosome": "1",
-    "position": 3147251,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7555426": {
-    "rsid": "rs7555426",
-    "chromosome": "1",
-    "position": 905160,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs3737720": {
-    "rsid": "rs3737720",
-    "chromosome": "1",
-    "position": 1241800,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs683602": {
-    "rsid": "rs683602",
-    "chromosome": "1",
-    "position": 43570543,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs70937179": {
-    "rsid": "rs70937179",
-    "chromosome": "1",
-    "position": 1647650,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1272959": {
-    "rsid": "rs1272959",
-    "chromosome": "1",
-    "position": 1230419,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10754487": {
-    "rsid": "rs10754487",
-    "chromosome": "1",
-    "position": 246090194,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2045519": {
-    "rsid": "rs2045519",
-    "chromosome": "1",
-    "position": 234304145,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6702454": {
-    "rsid": "rs6702454",
-    "chromosome": "1",
-    "position": 173968982,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2500308": {
-    "rsid": "rs2500308",
-    "chromosome": "1",
-    "position": 3188079,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1926881": {
-    "rsid": "rs1926881",
-    "chromosome": "1",
-    "position": 183977703,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12076468": {
-    "rsid": "rs12076468",
-    "chromosome": "1",
-    "position": 241817912,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6687840": {
-    "rsid": "rs6687840",
-    "chromosome": "1",
-    "position": 159342439,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10864470": {
-    "rsid": "rs10864470",
-    "chromosome": "1",
-    "position": 10831408,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2196537": {
-    "rsid": "rs2196537",
-    "chromosome": "1",
-    "position": 65014651,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10902667": {
-    "rsid": "rs10902667",
-    "chromosome": "1",
-    "position": 28062107,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10888793": {
-    "rsid": "rs10888793",
-    "chromosome": "1",
-    "position": 53964385,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12095724": {
-    "rsid": "rs12095724",
-    "chromosome": "1",
-    "position": 28143168,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11206168": {
-    "rsid": "rs11206168",
-    "chromosome": "1",
-    "position": 53972764,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10921525": {
-    "rsid": "rs10921525",
-    "chromosome": "1",
-    "position": 194239725,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs59289285": {
-    "rsid": "rs59289285",
-    "chromosome": "1",
-    "position": 1428000,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1211184": {
-    "rsid": "rs1211184",
-    "chromosome": "1",
-    "position": 35888147,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10888590": {
-    "rsid": "rs10888590",
-    "chromosome": "1",
-    "position": 249109034,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10908401": {
-    "rsid": "rs10908401",
-    "chromosome": "1",
-    "position": 36082395,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1268339": {
-    "rsid": "rs1268339",
-    "chromosome": "1",
-    "position": 1215424,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs61210877": {
-    "rsid": "rs61210877",
-    "chromosome": "1",
-    "position": 229984977,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs628928": {
-    "rsid": "rs628928",
-    "chromosome": "HG1287_PATCH",
-    "position": 148270893,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1006310": {
-    "rsid": "rs1006310",
-    "chromosome": "1",
-    "position": 161811555,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs155291": {
-    "rsid": "rs155291",
-    "chromosome": "1",
-    "position": 57634356,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs57399863": {
-    "rsid": "rs57399863",
-    "chromosome": "1",
-    "position": 173558473,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11426822": {
-    "rsid": "rs11426822",
-    "chromosome": "1",
-    "position": 76933515,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs61314084": {
-    "rsid": "rs61314084",
-    "chromosome": "1",
-    "position": 53499512,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs61554547": {
-    "rsid": "rs61554547",
-    "chromosome": "1",
-    "position": 173544872,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11121643": {
-    "rsid": "rs11121643",
-    "chromosome": "1",
-    "position": 10941670,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6698938": {
-    "rsid": "rs6698938",
-    "chromosome": "1",
-    "position": 229985356,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7554059": {
-    "rsid": "rs7554059",
-    "chromosome": "1",
-    "position": 244460826,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1240709": {
-    "rsid": "rs1240709",
-    "chromosome": "1",
-    "position": 1337837,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs12029589": {
-    "rsid": "rs12029589",
-    "chromosome": "1",
-    "position": 54066402,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs4971072": {
-    "rsid": "rs4971072",
-    "chromosome": "HSCHR1_2_CTG31",
-    "position": 155289273,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs856847": {
-    "rsid": "rs856847",
-    "chromosome": "1",
-    "position": 57351488,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11887534": {
-    "rsid": "rs11887534",
-    "chromosome": "2",
-    "position": 44066247,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs60910145": {
-    "rsid": "rs60910145",
-    "chromosome": "22",
-    "position": 36662034,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs16847050": {
-    "rsid": "rs16847050",
-    "chromosome": "4",
-    "position": 72667331,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs10456440": {
-    "rsid": "rs10456440",
-    "chromosome": "6",
-    "position": 36543367,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs7252509": {
-    "rsid": "rs7252509",
-    "chromosome": "19",
-    "position": 28841617,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs6726715": {
-    "rsid": "rs6726715",
-    "chromosome": "2",
-    "position": 107396524,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11612028": {
-    "rsid": "rs11612028",
-    "chromosome": "12",
-    "position": 122387872,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11612029": {
-    "rsid": "rs11612029",
-    "chromosome": "12",
-    "position": 104979604,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11612030": {
-    "rsid": "rs11612030",
-    "chromosome": "12",
-    "position": 124188064,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs2144915": {
-    "rsid": "rs2144915",
-    "chromosome": "14",
-    "position": 50519948,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs1800497": {
-    "rsid": "rs1800497",
-    "chromosome": "11",
-    "position": 113270828,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs80356779": {
-    "rsid": "rs80356779",
-    "chromosome": "11",
-    "position": 68548130,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103500": {
-    "rsid": "rs11103500",
-    "chromosome": "9",
-    "position": 137643733,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103501": {
-    "rsid": "rs11103501",
-    "chromosome": "9",
-    "position": 137646046,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103502": {
-    "rsid": "rs11103502",
-    "chromosome": "9",
-    "position": 137646217,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103503": {
-    "rsid": "rs11103503",
-    "chromosome": "9",
-    "position": 137647993,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103504": {
-    "rsid": "rs11103504",
-    "chromosome": "9",
-    "position": 137653544,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103505": {
-    "rsid": "rs11103505",
-    "chromosome": "9",
-    "position": 137653625,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103506": {
-    "rsid": "rs11103506",
-    "chromosome": "9",
-    "position": 137653652,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103507": {
-    "rsid": "rs11103507",
-    "chromosome": "9",
-    "position": 137653663,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103508": {
-    "rsid": "rs11103508",
-    "chromosome": "9",
-    "position": 137653717,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103509": {
-    "rsid": "rs11103509",
-    "chromosome": "9",
-    "position": 137654103,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103510": {
-    "rsid": "rs11103510",
-    "chromosome": "9",
-    "position": 137655320,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103511": {
-    "rsid": "rs11103511",
-    "chromosome": "9",
-    "position": 137656096,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103512": {
-    "rsid": "rs11103512",
-    "chromosome": "9",
-    "position": 137656637,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103513": {
-    "rsid": "rs11103513",
-    "chromosome": "9",
-    "position": 137656942,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103514": {
-    "rsid": "rs11103514",
-    "chromosome": "9",
-    "position": 137656951,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103515": {
-    "rsid": "rs11103515",
-    "chromosome": "9",
-    "position": 137657110,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103516": {
-    "rsid": "rs11103516",
-    "chromosome": "9",
-    "position": 137657111,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103517": {
-    "rsid": "rs11103517",
-    "chromosome": "9",
-    "position": 137661778,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103518": {
-    "rsid": "rs11103518",
-    "chromosome": "9",
-    "position": 137662064,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs11103519": {
-    "rsid": "rs11103519",
-    "chromosome": "9",
-    "position": 137662883,
-    "region": "GLOBAL",
-    "color": "#95A5A6",
-    "alleles": [],
-    "frequencies": {},
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": ""
-  },
-  "rs762551": {
-    "rsid": "rs762551",
-    "chromosome": "15",
-    "position": 75041917,
     "region": "GLOBAL",
     "color": "#95A5A6",
     "alleles": [],

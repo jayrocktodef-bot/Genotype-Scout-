@@ -1,698 +1,6 @@
 {
-  "rs2814778": {
-    "rsid": "rs2814778",
-    "chromosome": "1",
-    "position": 159204893,
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.9537,
-      "EUR": 0.9944,
-      "EAS": 1,
-      "AMR": 0.9284,
-      "SAS": 1,
-      "MENA": 0,
-      "OCE": 0
-    },
-    "subFrequencies": {
-      "African Caribbean": 0.8854,
-      "African Ancestry SW US": 0.7951,
-      "Bengali": 1,
-      "Chinese Dai": 1,
-      "NW European": 1,
-      "Han Chinese": 1,
-      "Southern Han": 1,
-      "Colombian": 0.9255,
-      "Esan": 1,
-      "Finnish": 1,
-      "British": 1,
-      "Gujarati Indian": 1,
-      "Gambian": 1,
-      "Iberian": 0.9813,
-      "Indian Telugu": 1,
-      "Japanese": 1,
-      "Kinh Vietnamese": 1,
-      "Luhya": 1,
-      "Mende": 1,
-      "Mexican Ancestry": 0.9688,
-      "Peruvian": 0.9588,
-      "Punjabi": 1,
-      "Puerto Rican": 0.8606,
-      "Sri Lankan Tamil": 1,
-      "Tuscan": 0.9907,
-      "Yoruba": 0.9954
-    },
-    "deepFrequencies": {},
-    "weight": 2,
-    "description": "The Duffy Null variant provides high-resistance adaptation against vivax malaria; it is nearly fixed in African lineages compared to others.",
-    "ref": "T",
-    "alt": "C",
-    "gene": "ACKR1",
-    "trait": "Duffy Null Allele (Malaria Resistance)"
-  },
-  "rs1800407": {
-    "rsid": "rs1800407",
-    "chromosome": "15",
-    "position": 27985172,
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.8586,
-      "EUR": 0.9252,
-      "EAS": 0.999,
-      "AMR": 0.2806,
-      "SAS": 0.4025,
-      "MENA": 0,
-      "OCE": 0
-    },
-    "subFrequencies": {
-      "African Caribbean": 0.0104,
-      "African Ancestry SW US": 1,
-      "Bengali": 0.0349,
-      "Chinese Dai": 1,
-      "NW European": 0.9192,
-      "Han Chinese": 0.9951,
-      "Southern Han": 1,
-      "Colombian": 0.0479,
-      "Esan": 1,
-      "Finnish": 0.9747,
-      "British": 0.9286,
-      "Gujarati Indian": 0.0146,
-      "Gambian": 1,
-      "Iberian": 0.9019,
-      "Indian Telugu": 0.0245,
-      "Japanese": 1,
-      "Kinh Vietnamese": 1,
-      "Luhya": 1,
-      "Mende": 1,
-      "Mexican Ancestry": 0.0313,
-      "Peruvian": 1,
-      "Punjabi": 0.9583,
-      "Puerto Rican": 0.0433,
-      "Sri Lankan Tamil": 0.9804,
-      "Tuscan": 0.9019,
-      "Yoruba": 1
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "description": "An OCA2 pigmentation marker whose ancestral alleles are primarily found in sub-Saharan populations.",
-    "ref": "C",
-    "alt": "T",
-    "gene": "OCA2",
-    "trait": "African Pigmentation Marker"
-  },
-  "rs6726715_amr": {
-    "rsid": "rs6726715_amr",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.1,
-      "EAS": 0.2,
-      "AMR": 0.85,
-      "SAS": 0.05,
-      "MENA": 0.05,
-      "OCE": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "SLC24A5",
-    "trait": "Ancestry",
-    "description": "Marker identified in North American Indigenous lineages."
-  },
-  "rs11612028_amr": {
-    "rsid": "rs11612028_amr",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.05,
-      "EAS": 0.1,
-      "AMR": 0.9,
-      "SAS": 0.02,
-      "MENA": 0.01,
-      "OCE": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "GPR15",
-    "trait": "Ancestry",
-    "description": "Marker linked to South American Indigenous groups."
-  },
-  "rs11612029_amr": {
-    "rsid": "rs11612029_amr",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.08,
-      "EAS": 0.15,
-      "AMR": 0.92,
-      "SAS": 0.02,
-      "MENA": 0.01,
-      "OCE": 0.03
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "GPR15",
-    "trait": "Ancestry",
-    "description": "Marker associated with Central American Indigenous populations, particularly in Mexico and Guatemala."
-  },
-  "rs11612030_amr": {
-    "rsid": "rs11612030_amr",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.02,
-      "EAS": 0.05,
-      "AMR": 0.95,
-      "SAS": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.01
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8.5,
-    "gene": "GPR15",
-    "trait": "Ancestry",
-    "description": "Marker deeply connected to Amazonian Indigenous lineages."
-  },
-  "rs17822931_amr": {
-    "rsid": "rs17822931_amr",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.3,
-      "AMR": 0.9,
-      "SAS": 0.05,
-      "MENA": 0.01,
-      "OCE": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "ABCC11",
-    "trait": "Ancestry",
-    "description": "Marker associated with elevated frequency in Indigenous American populations."
-  },
-  "rs3827760_nat": {
-    "rsid": "rs3827760_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "AMR": 0.98,
-      "SAS": 0.05,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.99,
-      "Quechua": 0.98,
-      "Karitiana": 1,
-      "Pima": 0.97,
-      "Nahua": 0.95
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits."
-  },
-  "rs10456303_nat": {
-    "rsid": "rs10456303_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.05,
-      "AMR": 0.99,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Amazonian": 0.99,
-      "Andean": 0.95,
-      "Mesoamerican": 0.9,
-      "North_American_Indigenous": 0.85
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Pan-American Indigenous Marker - highly diagnostic for pre-Columbian populations of the Americas."
-  },
-  "rs10954737_nat": {
-    "rsid": "rs10954737_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.35,
-      "EUR": 0.62,
-      "EAS": 0.2,
-      "AMR": 0.55,
-      "SAS": 0.45
-    },
-    "subFrequencies": {
-      "Maya": 0.55,
-      "Pima": 0.544,
-      "Karitiana": 0.556,
-      "Surui": 0.55,
-      "Quechua": 0.539
-    },
-    "deepFrequencies": {},
-    "weight": 3,
-    "description": "IRF5 - informative for distinguishing Native Americans from other populations."
-  },
-  "rs1800562_nat": {
-    "rsid": "rs1800562_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0.06,
-      "EAS": 0,
-      "AMR": 0.02,
-      "SAS": 0
-    },
-    "subFrequencies": {
-      "Maya": 0.02,
-      "Pima": 0.02,
-      "Karitiana": 0.02,
-      "Surui": 0.02,
-      "Quechua": 0.02
-    },
-    "deepFrequencies": {},
-    "weight": 3,
-    "description": "HFE - inverse marker, presence signals European ancestry."
-  },
-  "rs9282541_nat": {
-    "rsid": "rs9282541_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.15,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.15,
-      "Pima": 0.148,
-      "Karitiana": 0.151,
-      "Surui": 0.15,
-      "Quechua": 0.147
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "ABCA1 - variant associated with Native American ancestry and cholesterol metabolism."
-  },
-  "rs174570_nat": {
-    "rsid": "rs174570_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.12,
-      "EUR": 0.25,
-      "EAS": 0.65,
-      "AMR": 0.92,
-      "SAS": 0.35,
-      "MENA": 0.3
-    },
-    "subFrequencies": {
-      "Maya": 0.92,
-      "Pima": 0.911,
-      "Karitiana": 0.929,
-      "Surui": 0.92,
-      "Quechua": 0.902
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "FADS2 - associated with fatty acid metabolism in Native American populations."
-  },
-  "rs20424_nat": {
-    "rsid": "rs20424_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.05,
-      "AMR": 0.45,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.45,
-      "Pima": 0.446,
-      "Karitiana": 0.455,
-      "Surui": 0.45,
-      "Quechua": 0.441
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations."
-  },
-  "rs13342232_nat": {
-    "rsid": "rs13342232_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.5,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.5,
-      "Pima": 0.495,
-      "Karitiana": 0.505,
-      "Surui": 0.5,
-      "Quechua": 0.49
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "SLC16A11 - high frequency in Native American populations, associated with diabetes risk."
-  },
-  "rs10456217_nat": {
-    "rsid": "rs10456217_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.3,
-      "AMR": 0.85,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.85,
-      "Pima": 0.842,
-      "Karitiana": 0.858,
-      "Surui": 0.85,
-      "Quechua": 0.833
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Inuit-specific ancestry marker."
-  },
-  "rs2144915_nat": {
-    "rsid": "rs2144915_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.05,
-      "AMR": 0.95,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.95,
-      "Pima": 0.941,
-      "Karitiana": 0.959,
-      "Surui": 0.95,
-      "Quechua": 0.931
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Native American ancestry marker."
-  },
-  "rs1800497_nat": {
-    "rsid": "rs1800497_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.3,
-      "EUR": 0.2,
-      "EAS": 0.3,
-      "AMR": 0.7,
-      "SAS": 0.25,
-      "MENA": 0.2
-    },
-    "subFrequencies": {
-      "Maya": 0.7,
-      "Pima": 0.693,
-      "Karitiana": 0.707,
-      "Surui": 0.7,
-      "Quechua": 0.686
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations."
-  },
-  "rs80356779_nat": {
-    "rsid": "rs80356779_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AMR": 0.95,
-      "EAS": 0.05,
-      "EUR": 0.01,
-      "AFR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.95,
-      "Pima": 0.941,
-      "Karitiana": 0.959,
-      "Surui": 0.95,
-      "Quechua": 0.931
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations."
-  },
-  "rs174583_nat": {
-    "rsid": "rs174583_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AMR": 0.9,
-      "EAS": 0.6,
-      "EUR": 0.2,
-      "AFR": 0.1,
-      "SAS": 0.3,
-      "MENA": 0.2
-    },
-    "subFrequencies": {
-      "Maya": 0.9,
-      "Pima": 0.891,
-      "Karitiana": 0.909,
-      "Surui": 0.9,
-      "Quechua": 0.882
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations."
-  },
-  "rs11215559_nat": {
-    "rsid": "rs11215559_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AMR": 0.95,
-      "EAS": 0.02,
-      "SAS": 0.01,
-      "EUR": 0.01,
-      "AFR": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.95,
-      "Pima": 0.941,
-      "Karitiana": 0.959,
-      "Surui": 0.95,
-      "Quechua": 0.931
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry."
-  },
-  "rs12149627_nat": {
-    "rsid": "rs12149627_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AMR": 0.85,
-      "EAS": 0.1,
-      "AFR": 0.05,
-      "SAS": 0.05,
-      "EUR": 0.1,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "Maya": 0.85,
-      "Pima": 0.842,
-      "Karitiana": 0.858,
-      "Surui": 0.85,
-      "Quechua": 0.833
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
-  },
-  "rs4845571_nat": {
-    "rsid": "rs4845571_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AMR": 0.9,
-      "EAS": 0.05,
-      "AFR": 0.02,
-      "SAS": 0.02,
-      "EUR": 0.05,
-      "MENA": 0.02
-    },
-    "subFrequencies": {
-      "Maya": 0.9,
-      "Pima": 0.891,
-      "Karitiana": 0.909,
-      "Surui": 0.9,
-      "Quechua": 0.882
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
-  },
-  "rs10456280_nat": {
-    "rsid": "rs10456280_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AMR": 0.98,
-      "EAS": 0.08,
-      "EUR": 0.02,
-      "AFR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01,
-      "NAFR": 0.01,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.98,
-      "Pima": 0.97,
-      "Karitiana": 0.99,
-      "Surui": 0.98,
-      "Quechua": 0.96
-    },
-    "deepFrequencies": {},
-    "weight": 3.5,
-    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
-  },
-  "rs10456295_nat": {
-    "rsid": "rs10456295_nat",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AMR": 0.97,
-      "OCE": 0.02,
-      "EAS": 0.1,
-      "EUR": 0.01,
-      "MENA": 0.01,
-      "NAFR": 0.01,
-      "AFR": 0.01,
-      "SAS": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.97,
-      "Pima": 0.96,
-      "Karitiana": 0.98,
-      "Surui": 0.97,
-      "Quechua": 0.951
-    },
-    "deepFrequencies": {},
-    "weight": 3.5,
-    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
-  },
-  "rs10456303_nat_2": {
-    "rsid": "rs10456303_nat_2",
+  "rs10456303": {
+    "rsid": "rs10456303",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -719,8 +27,549 @@
     "weight": 3.5,
     "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression."
   },
-  "rs11103500_nat": {
-    "rsid": "rs11103500_nat",
+  "rs12149627": {
+    "rsid": "rs12149627",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AMR": 0.85,
+      "EAS": 0.1,
+      "AFR": 0.05,
+      "SAS": 0.05,
+      "EUR": 0.1,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Maya": 0.85,
+      "Pima": 0.842,
+      "Karitiana": 0.858,
+      "Surui": 0.85,
+      "Quechua": 0.833
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
+  },
+  "rs6726715": {
+    "rsid": "rs6726715",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.1,
+      "EAS": 0.2,
+      "AMR": 0.85,
+      "SAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A5",
+    "trait": "Ancestry",
+    "description": "Marker identified in North American Indigenous lineages."
+  },
+  "rs11612028": {
+    "rsid": "rs11612028",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.05,
+      "EAS": 0.1,
+      "AMR": 0.9,
+      "SAS": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "GPR15",
+    "trait": "Ancestry",
+    "description": "Marker linked to South American Indigenous groups."
+  },
+  "rs11612029": {
+    "rsid": "rs11612029",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.08,
+      "EAS": 0.15,
+      "AMR": 0.92,
+      "SAS": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "GPR15",
+    "trait": "Ancestry",
+    "description": "Marker associated with Central American Indigenous populations, particularly in Mexico and Guatemala."
+  },
+  "rs11612030": {
+    "rsid": "rs11612030",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.05,
+      "AMR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8.5,
+    "gene": "GPR15",
+    "trait": "Ancestry",
+    "description": "Marker deeply connected to Amazonian Indigenous lineages."
+  },
+  "rs17822931": {
+    "rsid": "rs17822931",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.3,
+      "AMR": 0.9,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "ABCC11",
+    "trait": "Ancestry",
+    "description": "Marker associated with elevated frequency in Indigenous American populations."
+  },
+  "rs3827760": {
+    "rsid": "rs3827760",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.98,
+      "SAS": 0.05,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.99,
+      "Quechua": 0.98,
+      "Karitiana": 1,
+      "Pima": 0.97,
+      "Nahua": 0.95
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits."
+  },
+  "rs10954737": {
+    "rsid": "rs10954737",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.62,
+      "EAS": 0.2,
+      "SAS": 0.45,
+      "AMR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians."
+  },
+  "rs1800562": {
+    "rsid": "rs1800562",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.06,
+      "EAS": 0,
+      "AMR": 0.02,
+      "SAS": 0
+    },
+    "subFrequencies": {
+      "Maya": 0.02,
+      "Pima": 0.02,
+      "Karitiana": 0.02,
+      "Surui": 0.02,
+      "Quechua": 0.02
+    },
+    "deepFrequencies": {},
+    "weight": 3,
+    "description": "HFE - inverse marker, presence signals European ancestry."
+  },
+  "rs9282541": {
+    "rsid": "rs9282541",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0.15,
+      "Native_American": 0.25,
+      "SAS": 0
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas."
+  },
+  "rs174570": {
+    "rsid": "rs174570",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.25,
+      "EAS": 0.65,
+      "AMR": 0.92,
+      "SAS": 0.35,
+      "MENA": 0.3
+    },
+    "subFrequencies": {
+      "Maya": 0.92,
+      "Pima": 0.911,
+      "Karitiana": 0.929,
+      "Surui": 0.92,
+      "Quechua": 0.902
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "FADS2 - associated with fatty acid metabolism in Native American populations."
+  },
+  "rs20424": {
+    "rsid": "rs20424",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.45,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.45,
+      "Pima": 0.446,
+      "Karitiana": 0.455,
+      "Surui": 0.45,
+      "Quechua": 0.441
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations."
+  },
+  "rs13342232": {
+    "rsid": "rs13342232",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.1,
+      "AMR": 0.3,
+      "Native_American": 0.5,
+      "SAS": 0.03
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Native American T2D Risk Marker - strongest GWAS signal in Mexican cohorts."
+  },
+  "rs10456217": {
+    "rsid": "rs10456217",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.3,
+      "AMR": 0.85,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.85,
+      "Pima": 0.842,
+      "Karitiana": 0.858,
+      "Surui": 0.85,
+      "Quechua": 0.833
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Inuit-specific ancestry marker."
+  },
+  "rs2144915": {
+    "rsid": "rs2144915",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.941,
+      "Karitiana": 0.959,
+      "Surui": 0.95,
+      "Quechua": 0.931
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Native American ancestry marker."
+  },
+  "rs1800497": {
+    "rsid": "rs1800497",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.3,
+      "EUR": 0.2,
+      "EAS": 0.3,
+      "AMR": 0.7,
+      "SAS": 0.25,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "Maya": 0.7,
+      "Pima": 0.693,
+      "Karitiana": 0.707,
+      "Surui": 0.7,
+      "Quechua": 0.686
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations."
+  },
+  "rs80356779": {
+    "rsid": "rs80356779",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AMR": 0.95,
+      "EAS": 0.05,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.941,
+      "Karitiana": 0.959,
+      "Surui": 0.95,
+      "Quechua": 0.931
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations."
+  },
+  "rs174583": {
+    "rsid": "rs174583",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AMR": 0.9,
+      "EAS": 0.6,
+      "EUR": 0.2,
+      "AFR": 0.1,
+      "SAS": 0.3,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "Maya": 0.9,
+      "Pima": 0.891,
+      "Karitiana": 0.909,
+      "Surui": 0.9,
+      "Quechua": 0.882
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations."
+  },
+  "rs11215559": {
+    "rsid": "rs11215559",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AMR": 0.95,
+      "EAS": 0.02,
+      "SAS": 0.01,
+      "EUR": 0.01,
+      "AFR": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.95,
+      "Pima": 0.941,
+      "Karitiana": 0.959,
+      "Surui": 0.95,
+      "Quechua": 0.931
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry."
+  },
+  "rs4845571": {
+    "rsid": "rs4845571",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AMR": 0.9,
+      "EAS": 0.05,
+      "AFR": 0.02,
+      "SAS": 0.02,
+      "EUR": 0.05,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Maya": 0.9,
+      "Pima": 0.891,
+      "Karitiana": 0.909,
+      "Surui": 0.9,
+      "Quechua": 0.882
+    },
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
+  },
+  "rs10456280": {
+    "rsid": "rs10456280",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AMR": 0.98,
+      "EAS": 0.08,
+      "EUR": 0.02,
+      "AFR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "OCE": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.98,
+      "Pima": 0.97,
+      "Karitiana": 0.99,
+      "Surui": 0.98,
+      "Quechua": 0.96
+    },
+    "deepFrequencies": {},
+    "weight": 3.5,
+    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
+  },
+  "rs10456295": {
+    "rsid": "rs10456295",
+    "region": "Native American",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AMR": 0.97,
+      "OCE": 0.02,
+      "EAS": 0.1,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.01
+    },
+    "subFrequencies": {
+      "Maya": 0.97,
+      "Pima": 0.96,
+      "Karitiana": 0.98,
+      "Surui": 0.97,
+      "Quechua": 0.951
+    },
+    "deepFrequencies": {},
+    "weight": 3.5,
+    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
+  },
+  "rs11103500": {
+    "rsid": "rs11103500",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -746,8 +595,8 @@
     "weight": 3.5,
     "description": "Native American Informative Marker - highly diagnostic for indigenous American ancestry."
   },
-  "rs11103501_nat": {
-    "rsid": "rs11103501_nat",
+  "rs11103501": {
+    "rsid": "rs11103501",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -773,8 +622,8 @@
     "weight": 3.3,
     "description": "Native American Informative Marker - strong differentiation from European and African populations."
   },
-  "rs11103502_nat": {
-    "rsid": "rs11103502_nat",
+  "rs11103502": {
+    "rsid": "rs11103502",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -800,8 +649,8 @@
     "weight": 3.4,
     "description": "Native American Informative Marker - nearly fixed in indigenous populations of the Americas."
   },
-  "rs11103503_nat": {
-    "rsid": "rs11103503_nat",
+  "rs11103503": {
+    "rsid": "rs11103503",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -827,8 +676,8 @@
     "weight": 3.1,
     "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
-  "rs11103504_nat": {
-    "rsid": "rs11103504_nat",
+  "rs11103504": {
+    "rsid": "rs11103504",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -854,8 +703,8 @@
     "weight": 3.2,
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
-  "rs11103505_nat": {
-    "rsid": "rs11103505_nat",
+  "rs11103505": {
+    "rsid": "rs11103505",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -881,8 +730,8 @@
     "weight": 3,
     "description": "Native American Informative Marker - general indigenous American signal."
   },
-  "rs11103506_nat": {
-    "rsid": "rs11103506_nat",
+  "rs11103506": {
+    "rsid": "rs11103506",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -908,8 +757,8 @@
     "weight": 3.3,
     "description": "Native American Informative Marker - high frequency in South American indigenous groups."
   },
-  "rs11103507_nat": {
-    "rsid": "rs11103507_nat",
+  "rs11103507": {
+    "rsid": "rs11103507",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -935,8 +784,8 @@
     "weight": 3.4,
     "description": "Native American Informative Marker - highly specific to indigenous American populations."
   },
-  "rs11103508_nat": {
-    "rsid": "rs11103508_nat",
+  "rs11103508": {
+    "rsid": "rs11103508",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -962,8 +811,8 @@
     "weight": 3.1,
     "description": "Native American Informative Marker - useful for identifying North American indigenous lineages."
   },
-  "rs11103509_nat": {
-    "rsid": "rs11103509_nat",
+  "rs11103509": {
+    "rsid": "rs11103509",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -989,8 +838,8 @@
     "weight": 3.2,
     "description": "Native American Informative Marker - strong differentiation from European populations."
   },
-  "rs11103510_nat": {
-    "rsid": "rs11103510_nat",
+  "rs11103510": {
+    "rsid": "rs11103510",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1016,8 +865,8 @@
     "weight": 3,
     "description": "Native American Informative Marker - general indigenous American signal."
   },
-  "rs11103511_nat": {
-    "rsid": "rs11103511_nat",
+  "rs11103511": {
+    "rsid": "rs11103511",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1043,8 +892,8 @@
     "weight": 3.3,
     "description": "Native American Informative Marker - high frequency in Mesoamerican indigenous groups."
   },
-  "rs11103512_nat": {
-    "rsid": "rs11103512_nat",
+  "rs11103512": {
+    "rsid": "rs11103512",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1070,8 +919,8 @@
     "weight": 3.4,
     "description": "Native American Informative Marker - nearly fixed in indigenous populations."
   },
-  "rs11103513_nat": {
-    "rsid": "rs11103513_nat",
+  "rs11103513": {
+    "rsid": "rs11103513",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1097,8 +946,8 @@
     "weight": 3.1,
     "description": "Native American Informative Marker - useful for identifying indigenous American ancestry."
   },
-  "rs11103514_nat": {
-    "rsid": "rs11103514_nat",
+  "rs11103514": {
+    "rsid": "rs11103514",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1124,8 +973,8 @@
     "weight": 3.2,
     "description": "Native American Informative Marker - strong differentiation from African populations."
   },
-  "rs11103515_nat": {
-    "rsid": "rs11103515_nat",
+  "rs11103515": {
+    "rsid": "rs11103515",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1151,8 +1000,8 @@
     "weight": 3,
     "description": "Native American Informative Marker - general indigenous American signal."
   },
-  "rs11103516_nat": {
-    "rsid": "rs11103516_nat",
+  "rs11103516": {
+    "rsid": "rs11103516",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1178,8 +1027,8 @@
     "weight": 3.3,
     "description": "Native American Informative Marker - high frequency in indigenous populations of the Americas."
   },
-  "rs11103517_nat": {
-    "rsid": "rs11103517_nat",
+  "rs11103517": {
+    "rsid": "rs11103517",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1205,8 +1054,8 @@
     "weight": 3.4,
     "description": "Native American Informative Marker - highly specific to indigenous American ancestry."
   },
-  "rs11103518_nat": {
-    "rsid": "rs11103518_nat",
+  "rs11103518": {
+    "rsid": "rs11103518",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1232,8 +1081,8 @@
     "weight": 3.1,
     "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
-  "rs11103519_nat": {
-    "rsid": "rs11103519_nat",
+  "rs11103519": {
+    "rsid": "rs11103519",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1259,8 +1108,8 @@
     "weight": 3.2,
     "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
-  "rs75493593_nat": {
-    "rsid": "rs75493593_nat",
+  "rs75493593": {
+    "rsid": "rs75493593",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1279,8 +1128,8 @@
     "weight": 5,
     "description": "Native American T2D Risk Marker - confirmed Neanderthal introgression origin."
   },
-  "rs13342692_nat": {
-    "rsid": "rs13342692_nat",
+  "rs13342692": {
+    "rsid": "rs13342692",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1299,8 +1148,8 @@
     "weight": 5,
     "description": "Native American T2D Risk Marker - co-segregates with rs75493593."
   },
-  "rs117767867_nat": {
-    "rsid": "rs117767867_nat",
+  "rs117767867": {
+    "rsid": "rs117767867",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1319,8 +1168,8 @@
     "weight": 5,
     "description": "Native American T2D Risk Marker - rare outside Native American populations."
   },
-  "rs75418188_nat": {
-    "rsid": "rs75418188_nat",
+  "rs75418188": {
+    "rsid": "rs75418188",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1339,67 +1188,8 @@
     "weight": 5,
     "description": "Native American T2D Risk Marker - part of the SLC16A11 haplotype."
   },
-  "rs13342232_nat_2": {
-    "rsid": "rs13342232_nat_2",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR": 0.3,
-      "Native_American": 0.5,
-      "SAS": 0.03
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Native American T2D Risk Marker - strongest GWAS signal in Mexican cohorts."
-  },
-  "rs9282541_nat_2": {
-    "rsid": "rs9282541_nat_2",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "AMR": 0.15,
-      "Native_American": 0.25,
-      "SAS": 0
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas."
-  },
-  "rs10954737_nat_2": {
-    "rsid": "rs10954737_nat_2",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.35,
-      "EUR": 0.62,
-      "EAS": 0.2,
-      "SAS": 0.45,
-      "AMR": 0.8
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians."
-  },
-  "rs762551_amr": {
-    "rsid": "rs762551_amr",
+  "rs762551": {
+    "rsid": "rs762551",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1421,8 +1211,8 @@
     "trait": "Ancestry",
     "description": "Marker identified in North American ancestral lineages."
   },
-  "d9s1120_amr": {
-    "rsid": "d9s1120_amr",
+  "d9s1120": {
+    "rsid": "d9s1120",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1439,8 +1229,8 @@
     "trait": "Native American Ancestry Marker",
     "description": "The \"9-repeat allele\" is a private marker found in almost all Native American groups but absent in Asia."
   },
-  "rs7089424_amr": {
-    "rsid": "rs7089424_amr",
+  "rs7089424": {
+    "rsid": "rs7089424",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1457,8 +1247,8 @@
     "trait": "Native American Ancestry Marker",
     "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk."
   },
-  "rs7088318_amr": {
-    "rsid": "rs7088318_amr",
+  "rs7088318": {
+    "rsid": "rs7088318",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1475,8 +1265,8 @@
     "trait": "Native American Ancestry Marker",
     "description": "Another high-frequency risk allele linked to increased Native American genetic heritage."
   },
-  "rs3731217_amr": {
-    "rsid": "rs3731217_amr",
+  "rs3731217": {
+    "rsid": "rs3731217",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1493,8 +1283,8 @@
     "trait": "Native American Ancestry Marker",
     "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility."
   },
-  "rs2239633_amr": {
-    "rsid": "rs2239633_amr",
+  "rs2239633": {
+    "rsid": "rs2239633",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [
@@ -1511,8 +1301,8 @@
     "trait": "Native American Ancestry Marker",
     "description": "A specific marker used to differentiate ancestry profiles in admixed US populations."
   },
-  "rs1800404_amr": {
-    "rsid": "rs1800404_amr",
+  "rs1800404": {
+    "rsid": "rs1800404",
     "region": "Native American",
     "color": "#95A5A6",
     "alleles": [

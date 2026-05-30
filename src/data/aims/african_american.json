@@ -1,6 +1,6 @@
 {
-  "rs10456291_afr": {
-    "rsid": "rs10456291_afr",
+  "rs10456291": {
+    "rsid": "rs10456291",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -21,8 +21,8 @@
     "trait": "Ancestry",
     "description": "Marker identified with historic Gullah/Geechee populations of the US Atlantic coast."
   },
-  "rs10456292_afr": {
-    "rsid": "rs10456292_afr",
+  "rs10456292": {
+    "rsid": "rs10456292",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -43,8 +43,8 @@
     "trait": "Ancestry",
     "description": "Marker associated with Caribbean-descent African American lineages."
   },
-  "rs10456293_afr": {
-    "rsid": "rs10456293_afr",
+  "rs10456293": {
+    "rsid": "rs10456293",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -65,8 +65,8 @@
     "trait": "Ancestry",
     "description": "Marker related to Central/West African origins common across African American populations."
   },
-  "rs200000_afram": {
-    "rsid": "rs200000_afram",
+  "rs200000": {
+    "rsid": "rs200000",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -83,8 +83,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200001_afram": {
-    "rsid": "rs200001_afram",
+  "rs200001": {
+    "rsid": "rs200001",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -101,8 +101,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200002_afram": {
-    "rsid": "rs200002_afram",
+  "rs200002": {
+    "rsid": "rs200002",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -119,8 +119,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200003_afram": {
-    "rsid": "rs200003_afram",
+  "rs200003": {
+    "rsid": "rs200003",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -137,8 +137,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200004_afram": {
-    "rsid": "rs200004_afram",
+  "rs200004": {
+    "rsid": "rs200004",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -155,8 +155,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200005_afram": {
-    "rsid": "rs200005_afram",
+  "rs200005": {
+    "rsid": "rs200005",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -173,8 +173,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200006_afram": {
-    "rsid": "rs200006_afram",
+  "rs200006": {
+    "rsid": "rs200006",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -191,8 +191,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200007_afram": {
-    "rsid": "rs200007_afram",
+  "rs200007": {
+    "rsid": "rs200007",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -209,8 +209,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200008_afram": {
-    "rsid": "rs200008_afram",
+  "rs200008": {
+    "rsid": "rs200008",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -227,8 +227,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs200009_afram": {
-    "rsid": "rs200009_afram",
+  "rs200009": {
+    "rsid": "rs200009",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -245,8 +245,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000010_afram": {
-    "rsid": "rs2000010_afram",
+  "rs2000010": {
+    "rsid": "rs2000010",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -263,8 +263,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000011_afram": {
-    "rsid": "rs2000011_afram",
+  "rs2000011": {
+    "rsid": "rs2000011",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -281,8 +281,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000012_afram": {
-    "rsid": "rs2000012_afram",
+  "rs2000012": {
+    "rsid": "rs2000012",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -299,8 +299,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000013_afram": {
-    "rsid": "rs2000013_afram",
+  "rs2000013": {
+    "rsid": "rs2000013",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -317,8 +317,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000014_afram": {
-    "rsid": "rs2000014_afram",
+  "rs2000014": {
+    "rsid": "rs2000014",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -335,8 +335,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000015_afram": {
-    "rsid": "rs2000015_afram",
+  "rs2000015": {
+    "rsid": "rs2000015",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -353,8 +353,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000016_afram": {
-    "rsid": "rs2000016_afram",
+  "rs2000016": {
+    "rsid": "rs2000016",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -371,8 +371,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000017_afram": {
-    "rsid": "rs2000017_afram",
+  "rs2000017": {
+    "rsid": "rs2000017",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -389,8 +389,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000018_afram": {
-    "rsid": "rs2000018_afram",
+  "rs2000018": {
+    "rsid": "rs2000018",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -407,8 +407,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000019_afram": {
-    "rsid": "rs2000019_afram",
+  "rs2000019": {
+    "rsid": "rs2000019",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -425,8 +425,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000020_afram": {
-    "rsid": "rs2000020_afram",
+  "rs2000020": {
+    "rsid": "rs2000020",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -443,8 +443,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000021_afram": {
-    "rsid": "rs2000021_afram",
+  "rs2000021": {
+    "rsid": "rs2000021",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -461,8 +461,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000022_afram": {
-    "rsid": "rs2000022_afram",
+  "rs2000022": {
+    "rsid": "rs2000022",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -479,8 +479,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000023_afram": {
-    "rsid": "rs2000023_afram",
+  "rs2000023": {
+    "rsid": "rs2000023",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -497,8 +497,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000024_afram": {
-    "rsid": "rs2000024_afram",
+  "rs2000024": {
+    "rsid": "rs2000024",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -515,8 +515,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000025_afram": {
-    "rsid": "rs2000025_afram",
+  "rs2000025": {
+    "rsid": "rs2000025",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -533,8 +533,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000026_afram": {
-    "rsid": "rs2000026_afram",
+  "rs2000026": {
+    "rsid": "rs2000026",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -551,8 +551,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000027_afram": {
-    "rsid": "rs2000027_afram",
+  "rs2000027": {
+    "rsid": "rs2000027",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -569,8 +569,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000028_afram": {
-    "rsid": "rs2000028_afram",
+  "rs2000028": {
+    "rsid": "rs2000028",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -587,8 +587,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000029_afram": {
-    "rsid": "rs2000029_afram",
+  "rs2000029": {
+    "rsid": "rs2000029",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -605,8 +605,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000030_afram": {
-    "rsid": "rs2000030_afram",
+  "rs2000030": {
+    "rsid": "rs2000030",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -623,8 +623,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000031_afram": {
-    "rsid": "rs2000031_afram",
+  "rs2000031": {
+    "rsid": "rs2000031",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -641,8 +641,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000032_afram": {
-    "rsid": "rs2000032_afram",
+  "rs2000032": {
+    "rsid": "rs2000032",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -659,8 +659,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000033_afram": {
-    "rsid": "rs2000033_afram",
+  "rs2000033": {
+    "rsid": "rs2000033",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -677,8 +677,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000034_afram": {
-    "rsid": "rs2000034_afram",
+  "rs2000034": {
+    "rsid": "rs2000034",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -695,8 +695,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000035_afram": {
-    "rsid": "rs2000035_afram",
+  "rs2000035": {
+    "rsid": "rs2000035",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -713,8 +713,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000036_afram": {
-    "rsid": "rs2000036_afram",
+  "rs2000036": {
+    "rsid": "rs2000036",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -731,8 +731,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000037_afram": {
-    "rsid": "rs2000037_afram",
+  "rs2000037": {
+    "rsid": "rs2000037",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -749,8 +749,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000038_afram": {
-    "rsid": "rs2000038_afram",
+  "rs2000038": {
+    "rsid": "rs2000038",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -767,8 +767,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000039_afram": {
-    "rsid": "rs2000039_afram",
+  "rs2000039": {
+    "rsid": "rs2000039",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -785,8 +785,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000040_afram": {
-    "rsid": "rs2000040_afram",
+  "rs2000040": {
+    "rsid": "rs2000040",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -803,8 +803,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000041_afram": {
-    "rsid": "rs2000041_afram",
+  "rs2000041": {
+    "rsid": "rs2000041",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -821,8 +821,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000042_afram": {
-    "rsid": "rs2000042_afram",
+  "rs2000042": {
+    "rsid": "rs2000042",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -839,8 +839,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000043_afram": {
-    "rsid": "rs2000043_afram",
+  "rs2000043": {
+    "rsid": "rs2000043",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -857,8 +857,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000044_afram": {
-    "rsid": "rs2000044_afram",
+  "rs2000044": {
+    "rsid": "rs2000044",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -875,8 +875,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000045_afram": {
-    "rsid": "rs2000045_afram",
+  "rs2000045": {
+    "rsid": "rs2000045",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -893,8 +893,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000046_afram": {
-    "rsid": "rs2000046_afram",
+  "rs2000046": {
+    "rsid": "rs2000046",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -911,8 +911,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000047_afram": {
-    "rsid": "rs2000047_afram",
+  "rs2000047": {
+    "rsid": "rs2000047",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -929,8 +929,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000048_afram": {
-    "rsid": "rs2000048_afram",
+  "rs2000048": {
+    "rsid": "rs2000048",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -947,8 +947,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000049_afram": {
-    "rsid": "rs2000049_afram",
+  "rs2000049": {
+    "rsid": "rs2000049",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -965,8 +965,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000050_afram": {
-    "rsid": "rs2000050_afram",
+  "rs2000050": {
+    "rsid": "rs2000050",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -983,8 +983,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000051_afram": {
-    "rsid": "rs2000051_afram",
+  "rs2000051": {
+    "rsid": "rs2000051",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1001,8 +1001,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000052_afram": {
-    "rsid": "rs2000052_afram",
+  "rs2000052": {
+    "rsid": "rs2000052",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1019,8 +1019,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000053_afram": {
-    "rsid": "rs2000053_afram",
+  "rs2000053": {
+    "rsid": "rs2000053",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1037,8 +1037,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000054_afram": {
-    "rsid": "rs2000054_afram",
+  "rs2000054": {
+    "rsid": "rs2000054",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1055,8 +1055,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000055_afram": {
-    "rsid": "rs2000055_afram",
+  "rs2000055": {
+    "rsid": "rs2000055",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1073,8 +1073,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000056_afram": {
-    "rsid": "rs2000056_afram",
+  "rs2000056": {
+    "rsid": "rs2000056",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1091,8 +1091,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000057_afram": {
-    "rsid": "rs2000057_afram",
+  "rs2000057": {
+    "rsid": "rs2000057",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1109,8 +1109,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000058_afram": {
-    "rsid": "rs2000058_afram",
+  "rs2000058": {
+    "rsid": "rs2000058",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1127,8 +1127,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000059_afram": {
-    "rsid": "rs2000059_afram",
+  "rs2000059": {
+    "rsid": "rs2000059",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1145,8 +1145,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000060_afram": {
-    "rsid": "rs2000060_afram",
+  "rs2000060": {
+    "rsid": "rs2000060",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1163,8 +1163,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000061_afram": {
-    "rsid": "rs2000061_afram",
+  "rs2000061": {
+    "rsid": "rs2000061",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1181,8 +1181,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000062_afram": {
-    "rsid": "rs2000062_afram",
+  "rs2000062": {
+    "rsid": "rs2000062",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1199,8 +1199,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000063_afram": {
-    "rsid": "rs2000063_afram",
+  "rs2000063": {
+    "rsid": "rs2000063",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1217,8 +1217,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000064_afram": {
-    "rsid": "rs2000064_afram",
+  "rs2000064": {
+    "rsid": "rs2000064",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1235,8 +1235,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000065_afram": {
-    "rsid": "rs2000065_afram",
+  "rs2000065": {
+    "rsid": "rs2000065",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1253,8 +1253,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000066_afram": {
-    "rsid": "rs2000066_afram",
+  "rs2000066": {
+    "rsid": "rs2000066",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1271,8 +1271,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000067_afram": {
-    "rsid": "rs2000067_afram",
+  "rs2000067": {
+    "rsid": "rs2000067",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1289,8 +1289,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000068_afram": {
-    "rsid": "rs2000068_afram",
+  "rs2000068": {
+    "rsid": "rs2000068",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1307,8 +1307,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000069_afram": {
-    "rsid": "rs2000069_afram",
+  "rs2000069": {
+    "rsid": "rs2000069",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1325,8 +1325,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000070_afram": {
-    "rsid": "rs2000070_afram",
+  "rs2000070": {
+    "rsid": "rs2000070",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1343,8 +1343,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000071_afram": {
-    "rsid": "rs2000071_afram",
+  "rs2000071": {
+    "rsid": "rs2000071",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1361,8 +1361,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000072_afram": {
-    "rsid": "rs2000072_afram",
+  "rs2000072": {
+    "rsid": "rs2000072",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1379,8 +1379,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000073_afram": {
-    "rsid": "rs2000073_afram",
+  "rs2000073": {
+    "rsid": "rs2000073",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1397,8 +1397,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000074_afram": {
-    "rsid": "rs2000074_afram",
+  "rs2000074": {
+    "rsid": "rs2000074",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1415,8 +1415,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000075_afram": {
-    "rsid": "rs2000075_afram",
+  "rs2000075": {
+    "rsid": "rs2000075",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1433,8 +1433,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000076_afram": {
-    "rsid": "rs2000076_afram",
+  "rs2000076": {
+    "rsid": "rs2000076",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1451,8 +1451,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000077_afram": {
-    "rsid": "rs2000077_afram",
+  "rs2000077": {
+    "rsid": "rs2000077",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1469,8 +1469,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000078_afram": {
-    "rsid": "rs2000078_afram",
+  "rs2000078": {
+    "rsid": "rs2000078",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1487,8 +1487,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000079_afram": {
-    "rsid": "rs2000079_afram",
+  "rs2000079": {
+    "rsid": "rs2000079",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1505,8 +1505,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000080_afram": {
-    "rsid": "rs2000080_afram",
+  "rs2000080": {
+    "rsid": "rs2000080",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1523,8 +1523,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000081_afram": {
-    "rsid": "rs2000081_afram",
+  "rs2000081": {
+    "rsid": "rs2000081",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1541,8 +1541,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000082_afram": {
-    "rsid": "rs2000082_afram",
+  "rs2000082": {
+    "rsid": "rs2000082",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1559,8 +1559,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000083_afram": {
-    "rsid": "rs2000083_afram",
+  "rs2000083": {
+    "rsid": "rs2000083",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1577,8 +1577,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000084_afram": {
-    "rsid": "rs2000084_afram",
+  "rs2000084": {
+    "rsid": "rs2000084",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1595,8 +1595,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000085_afram": {
-    "rsid": "rs2000085_afram",
+  "rs2000085": {
+    "rsid": "rs2000085",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1613,8 +1613,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000086_afram": {
-    "rsid": "rs2000086_afram",
+  "rs2000086": {
+    "rsid": "rs2000086",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1631,8 +1631,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000087_afram": {
-    "rsid": "rs2000087_afram",
+  "rs2000087": {
+    "rsid": "rs2000087",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1649,8 +1649,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000088_afram": {
-    "rsid": "rs2000088_afram",
+  "rs2000088": {
+    "rsid": "rs2000088",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1667,8 +1667,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000089_afram": {
-    "rsid": "rs2000089_afram",
+  "rs2000089": {
+    "rsid": "rs2000089",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1685,8 +1685,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000090_afram": {
-    "rsid": "rs2000090_afram",
+  "rs2000090": {
+    "rsid": "rs2000090",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1703,8 +1703,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000091_afram": {
-    "rsid": "rs2000091_afram",
+  "rs2000091": {
+    "rsid": "rs2000091",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1721,8 +1721,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000092_afram": {
-    "rsid": "rs2000092_afram",
+  "rs2000092": {
+    "rsid": "rs2000092",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1739,8 +1739,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000093_afram": {
-    "rsid": "rs2000093_afram",
+  "rs2000093": {
+    "rsid": "rs2000093",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1757,8 +1757,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000094_afram": {
-    "rsid": "rs2000094_afram",
+  "rs2000094": {
+    "rsid": "rs2000094",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1775,8 +1775,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000095_afram": {
-    "rsid": "rs2000095_afram",
+  "rs2000095": {
+    "rsid": "rs2000095",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1793,8 +1793,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000096_afram": {
-    "rsid": "rs2000096_afram",
+  "rs2000096": {
+    "rsid": "rs2000096",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1811,8 +1811,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000097_afram": {
-    "rsid": "rs2000097_afram",
+  "rs2000097": {
+    "rsid": "rs2000097",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1829,8 +1829,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000098_afram": {
-    "rsid": "rs2000098_afram",
+  "rs2000098": {
+    "rsid": "rs2000098",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1847,8 +1847,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000099_afram": {
-    "rsid": "rs2000099_afram",
+  "rs2000099": {
+    "rsid": "rs2000099",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1865,8 +1865,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700000_afram": {
-    "rsid": "rs700000_afram",
+  "rs700000": {
+    "rsid": "rs700000",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1883,8 +1883,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700001_afram": {
-    "rsid": "rs700001_afram",
+  "rs700001": {
+    "rsid": "rs700001",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1901,8 +1901,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700002_afram": {
-    "rsid": "rs700002_afram",
+  "rs700002": {
+    "rsid": "rs700002",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1919,8 +1919,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700003_afram": {
-    "rsid": "rs700003_afram",
+  "rs700003": {
+    "rsid": "rs700003",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1937,8 +1937,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700004_afram": {
-    "rsid": "rs700004_afram",
+  "rs700004": {
+    "rsid": "rs700004",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1955,8 +1955,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700005_afram": {
-    "rsid": "rs700005_afram",
+  "rs700005": {
+    "rsid": "rs700005",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1973,8 +1973,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700006_afram": {
-    "rsid": "rs700006_afram",
+  "rs700006": {
+    "rsid": "rs700006",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1991,8 +1991,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700007_afram": {
-    "rsid": "rs700007_afram",
+  "rs700007": {
+    "rsid": "rs700007",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2009,8 +2009,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700008_afram": {
-    "rsid": "rs700008_afram",
+  "rs700008": {
+    "rsid": "rs700008",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2027,8 +2027,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700009_afram": {
-    "rsid": "rs700009_afram",
+  "rs700009": {
+    "rsid": "rs700009",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2045,8 +2045,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000010_afram": {
-    "rsid": "rs7000010_afram",
+  "rs7000010": {
+    "rsid": "rs7000010",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2063,8 +2063,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000011_afram": {
-    "rsid": "rs7000011_afram",
+  "rs7000011": {
+    "rsid": "rs7000011",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2081,8 +2081,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000012_afram": {
-    "rsid": "rs7000012_afram",
+  "rs7000012": {
+    "rsid": "rs7000012",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2099,8 +2099,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000013_afram": {
-    "rsid": "rs7000013_afram",
+  "rs7000013": {
+    "rsid": "rs7000013",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2117,8 +2117,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000014_afram": {
-    "rsid": "rs7000014_afram",
+  "rs7000014": {
+    "rsid": "rs7000014",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2135,8 +2135,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000015_afram": {
-    "rsid": "rs7000015_afram",
+  "rs7000015": {
+    "rsid": "rs7000015",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2153,8 +2153,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000016_afram": {
-    "rsid": "rs7000016_afram",
+  "rs7000016": {
+    "rsid": "rs7000016",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2171,8 +2171,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000017_afram": {
-    "rsid": "rs7000017_afram",
+  "rs7000017": {
+    "rsid": "rs7000017",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2189,8 +2189,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000018_afram": {
-    "rsid": "rs7000018_afram",
+  "rs7000018": {
+    "rsid": "rs7000018",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2207,8 +2207,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000019_afram": {
-    "rsid": "rs7000019_afram",
+  "rs7000019": {
+    "rsid": "rs7000019",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2225,8 +2225,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000020_afram": {
-    "rsid": "rs7000020_afram",
+  "rs7000020": {
+    "rsid": "rs7000020",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2243,8 +2243,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000021_afram": {
-    "rsid": "rs7000021_afram",
+  "rs7000021": {
+    "rsid": "rs7000021",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2261,8 +2261,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000022_afram": {
-    "rsid": "rs7000022_afram",
+  "rs7000022": {
+    "rsid": "rs7000022",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2279,8 +2279,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000023_afram": {
-    "rsid": "rs7000023_afram",
+  "rs7000023": {
+    "rsid": "rs7000023",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2297,8 +2297,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000024_afram": {
-    "rsid": "rs7000024_afram",
+  "rs7000024": {
+    "rsid": "rs7000024",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2315,8 +2315,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000025_afram": {
-    "rsid": "rs7000025_afram",
+  "rs7000025": {
+    "rsid": "rs7000025",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2333,8 +2333,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000026_afram": {
-    "rsid": "rs7000026_afram",
+  "rs7000026": {
+    "rsid": "rs7000026",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2351,8 +2351,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000027_afram": {
-    "rsid": "rs7000027_afram",
+  "rs7000027": {
+    "rsid": "rs7000027",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2369,8 +2369,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000028_afram": {
-    "rsid": "rs7000028_afram",
+  "rs7000028": {
+    "rsid": "rs7000028",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2387,8 +2387,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000029_afram": {
-    "rsid": "rs7000029_afram",
+  "rs7000029": {
+    "rsid": "rs7000029",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2405,8 +2405,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000030_afram": {
-    "rsid": "rs7000030_afram",
+  "rs7000030": {
+    "rsid": "rs7000030",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2423,8 +2423,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000031_afram": {
-    "rsid": "rs7000031_afram",
+  "rs7000031": {
+    "rsid": "rs7000031",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2441,8 +2441,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000032_afram": {
-    "rsid": "rs7000032_afram",
+  "rs7000032": {
+    "rsid": "rs7000032",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2459,8 +2459,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000033_afram": {
-    "rsid": "rs7000033_afram",
+  "rs7000033": {
+    "rsid": "rs7000033",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2477,8 +2477,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000034_afram": {
-    "rsid": "rs7000034_afram",
+  "rs7000034": {
+    "rsid": "rs7000034",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2495,8 +2495,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000035_afram": {
-    "rsid": "rs7000035_afram",
+  "rs7000035": {
+    "rsid": "rs7000035",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2513,8 +2513,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000036_afram": {
-    "rsid": "rs7000036_afram",
+  "rs7000036": {
+    "rsid": "rs7000036",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2531,8 +2531,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000037_afram": {
-    "rsid": "rs7000037_afram",
+  "rs7000037": {
+    "rsid": "rs7000037",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2549,8 +2549,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000038_afram": {
-    "rsid": "rs7000038_afram",
+  "rs7000038": {
+    "rsid": "rs7000038",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2567,8 +2567,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000039_afram": {
-    "rsid": "rs7000039_afram",
+  "rs7000039": {
+    "rsid": "rs7000039",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2585,8 +2585,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000040_afram": {
-    "rsid": "rs7000040_afram",
+  "rs7000040": {
+    "rsid": "rs7000040",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2603,8 +2603,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000041_afram": {
-    "rsid": "rs7000041_afram",
+  "rs7000041": {
+    "rsid": "rs7000041",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2621,8 +2621,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000042_afram": {
-    "rsid": "rs7000042_afram",
+  "rs7000042": {
+    "rsid": "rs7000042",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2639,8 +2639,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000043_afram": {
-    "rsid": "rs7000043_afram",
+  "rs7000043": {
+    "rsid": "rs7000043",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2657,8 +2657,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000044_afram": {
-    "rsid": "rs7000044_afram",
+  "rs7000044": {
+    "rsid": "rs7000044",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2675,8 +2675,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000045_afram": {
-    "rsid": "rs7000045_afram",
+  "rs7000045": {
+    "rsid": "rs7000045",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2693,8 +2693,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000046_afram": {
-    "rsid": "rs7000046_afram",
+  "rs7000046": {
+    "rsid": "rs7000046",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2711,8 +2711,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000047_afram": {
-    "rsid": "rs7000047_afram",
+  "rs7000047": {
+    "rsid": "rs7000047",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2729,8 +2729,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000048_afram": {
-    "rsid": "rs7000048_afram",
+  "rs7000048": {
+    "rsid": "rs7000048",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2747,8 +2747,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000049_afram": {
-    "rsid": "rs7000049_afram",
+  "rs7000049": {
+    "rsid": "rs7000049",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2765,8 +2765,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000050_afram": {
-    "rsid": "rs7000050_afram",
+  "rs7000050": {
+    "rsid": "rs7000050",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2783,8 +2783,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000051_afram": {
-    "rsid": "rs7000051_afram",
+  "rs7000051": {
+    "rsid": "rs7000051",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2801,8 +2801,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000052_afram": {
-    "rsid": "rs7000052_afram",
+  "rs7000052": {
+    "rsid": "rs7000052",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2819,8 +2819,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000053_afram": {
-    "rsid": "rs7000053_afram",
+  "rs7000053": {
+    "rsid": "rs7000053",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2837,8 +2837,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000054_afram": {
-    "rsid": "rs7000054_afram",
+  "rs7000054": {
+    "rsid": "rs7000054",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2855,8 +2855,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000055_afram": {
-    "rsid": "rs7000055_afram",
+  "rs7000055": {
+    "rsid": "rs7000055",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2873,8 +2873,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000056_afram": {
-    "rsid": "rs7000056_afram",
+  "rs7000056": {
+    "rsid": "rs7000056",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2891,8 +2891,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000057_afram": {
-    "rsid": "rs7000057_afram",
+  "rs7000057": {
+    "rsid": "rs7000057",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2909,8 +2909,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000058_afram": {
-    "rsid": "rs7000058_afram",
+  "rs7000058": {
+    "rsid": "rs7000058",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2927,8 +2927,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000059_afram": {
-    "rsid": "rs7000059_afram",
+  "rs7000059": {
+    "rsid": "rs7000059",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2945,8 +2945,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000060_afram": {
-    "rsid": "rs7000060_afram",
+  "rs7000060": {
+    "rsid": "rs7000060",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2963,8 +2963,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000061_afram": {
-    "rsid": "rs7000061_afram",
+  "rs7000061": {
+    "rsid": "rs7000061",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2981,8 +2981,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000062_afram": {
-    "rsid": "rs7000062_afram",
+  "rs7000062": {
+    "rsid": "rs7000062",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2999,8 +2999,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000063_afram": {
-    "rsid": "rs7000063_afram",
+  "rs7000063": {
+    "rsid": "rs7000063",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3017,8 +3017,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000064_afram": {
-    "rsid": "rs7000064_afram",
+  "rs7000064": {
+    "rsid": "rs7000064",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3035,8 +3035,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000065_afram": {
-    "rsid": "rs7000065_afram",
+  "rs7000065": {
+    "rsid": "rs7000065",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3053,8 +3053,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000066_afram": {
-    "rsid": "rs7000066_afram",
+  "rs7000066": {
+    "rsid": "rs7000066",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3071,8 +3071,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000067_afram": {
-    "rsid": "rs7000067_afram",
+  "rs7000067": {
+    "rsid": "rs7000067",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3089,8 +3089,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000068_afram": {
-    "rsid": "rs7000068_afram",
+  "rs7000068": {
+    "rsid": "rs7000068",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3107,8 +3107,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000069_afram": {
-    "rsid": "rs7000069_afram",
+  "rs7000069": {
+    "rsid": "rs7000069",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3125,8 +3125,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000070_afram": {
-    "rsid": "rs7000070_afram",
+  "rs7000070": {
+    "rsid": "rs7000070",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3143,8 +3143,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000071_afram": {
-    "rsid": "rs7000071_afram",
+  "rs7000071": {
+    "rsid": "rs7000071",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3161,8 +3161,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000072_afram": {
-    "rsid": "rs7000072_afram",
+  "rs7000072": {
+    "rsid": "rs7000072",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3179,8 +3179,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000073_afram": {
-    "rsid": "rs7000073_afram",
+  "rs7000073": {
+    "rsid": "rs7000073",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3197,8 +3197,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000074_afram": {
-    "rsid": "rs7000074_afram",
+  "rs7000074": {
+    "rsid": "rs7000074",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3215,8 +3215,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000075_afram": {
-    "rsid": "rs7000075_afram",
+  "rs7000075": {
+    "rsid": "rs7000075",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3233,8 +3233,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000076_afram": {
-    "rsid": "rs7000076_afram",
+  "rs7000076": {
+    "rsid": "rs7000076",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3251,8 +3251,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000077_afram": {
-    "rsid": "rs7000077_afram",
+  "rs7000077": {
+    "rsid": "rs7000077",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3269,8 +3269,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000078_afram": {
-    "rsid": "rs7000078_afram",
+  "rs7000078": {
+    "rsid": "rs7000078",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3287,8 +3287,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000079_afram": {
-    "rsid": "rs7000079_afram",
+  "rs7000079": {
+    "rsid": "rs7000079",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3305,8 +3305,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000080_afram": {
-    "rsid": "rs7000080_afram",
+  "rs7000080": {
+    "rsid": "rs7000080",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3323,8 +3323,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000081_afram": {
-    "rsid": "rs7000081_afram",
+  "rs7000081": {
+    "rsid": "rs7000081",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3341,8 +3341,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000082_afram": {
-    "rsid": "rs7000082_afram",
+  "rs7000082": {
+    "rsid": "rs7000082",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3359,8 +3359,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000083_afram": {
-    "rsid": "rs7000083_afram",
+  "rs7000083": {
+    "rsid": "rs7000083",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3377,8 +3377,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000084_afram": {
-    "rsid": "rs7000084_afram",
+  "rs7000084": {
+    "rsid": "rs7000084",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3395,8 +3395,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000085_afram": {
-    "rsid": "rs7000085_afram",
+  "rs7000085": {
+    "rsid": "rs7000085",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3413,8 +3413,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000086_afram": {
-    "rsid": "rs7000086_afram",
+  "rs7000086": {
+    "rsid": "rs7000086",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3431,8 +3431,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000087_afram": {
-    "rsid": "rs7000087_afram",
+  "rs7000087": {
+    "rsid": "rs7000087",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3449,8 +3449,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000088_afram": {
-    "rsid": "rs7000088_afram",
+  "rs7000088": {
+    "rsid": "rs7000088",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3467,8 +3467,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000089_afram": {
-    "rsid": "rs7000089_afram",
+  "rs7000089": {
+    "rsid": "rs7000089",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3485,8 +3485,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000090_afram": {
-    "rsid": "rs7000090_afram",
+  "rs7000090": {
+    "rsid": "rs7000090",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3503,8 +3503,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000091_afram": {
-    "rsid": "rs7000091_afram",
+  "rs7000091": {
+    "rsid": "rs7000091",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3521,8 +3521,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000092_afram": {
-    "rsid": "rs7000092_afram",
+  "rs7000092": {
+    "rsid": "rs7000092",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3539,8 +3539,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000093_afram": {
-    "rsid": "rs7000093_afram",
+  "rs7000093": {
+    "rsid": "rs7000093",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3557,8 +3557,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000094_afram": {
-    "rsid": "rs7000094_afram",
+  "rs7000094": {
+    "rsid": "rs7000094",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3575,8 +3575,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000095_afram": {
-    "rsid": "rs7000095_afram",
+  "rs7000095": {
+    "rsid": "rs7000095",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3593,8 +3593,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000096_afram": {
-    "rsid": "rs7000096_afram",
+  "rs7000096": {
+    "rsid": "rs7000096",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3611,8 +3611,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000097_afram": {
-    "rsid": "rs7000097_afram",
+  "rs7000097": {
+    "rsid": "rs7000097",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [

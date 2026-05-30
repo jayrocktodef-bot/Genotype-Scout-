@@ -14,7 +14,7 @@ const CONTINENT_MAP: Record<string, string> = {
   'SAS': 'South Asian',
   'AMR': 'Native American',
   'MENA': 'Middle Eastern',
-  'OCN': 'Oceanian',
+  'OCE': 'Oceanian',
   'NAFR': 'North African',
   'CAS': 'Central Asian'
 };
