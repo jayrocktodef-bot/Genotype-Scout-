@@ -2,203 +2,80 @@
 
 # Genotype Scout
 
-**Genotype Scout** is a professional-grade, privacy-first genomic analysis suite created by [Jequan Davis](https://jequandavis.wpcomstaging.com). It processes raw DNA files entirely in the browser — no uploads, no servers, no tracking. Your genetic data never leaves your device.
+**Genotype Scout** is a professional-grade, privacy-first genomic analysis suite created by Jequan Davis. Designed for precision, this platform allows users to process their raw DNA files locally, ensuring sensitive genetic data never leaves the user's browser or device unnecessarily. 
 
-[![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-black?logo=vercel)](https://witg-genotype-scout.vercel.app)
-[![License](https://img.shields.io/badge/License-Proprietary-blue)](#license)
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Key Features](#key-features)
-- [Privacy Architecture](#privacy-architecture)
-- [Ancestry Analysis Engines](#ancestry-analysis-engines)
-- [Health & Pharmacogenomics](#health--pharmacogenomics)
-- [Marker Database](#marker-database)
-- [Supported Formats](#supported-formats)
-- [Project Structure](#project-structure)
-- [Build & Development](#build--development)
-- [Deployment](#deployment)
-- [License](#license)
+[Access the hosted application here](https://witg-genotype-scout.vercel.app/)
 
 ---
 
-## Overview
+## 🔒 Commitment to Privacy & Security
+The core philosophy of Genotype Scout is binary-level privacy. By leveraging high-performance **Web Workers** for local processing, we ensure that raw genetic data is parsed, analyzed, and visualized securely within the client environment. No raw data is transmitted to third-party servers for standard analysis.
 
-Genotype Scout is a client-side genomic analysis application built with React, TypeScript, and Vite. It accepts raw DNA files from major testing providers (23andMe, AncestryDNA, MyHeritage, FamilyTreeDNA, etc.) and runs ancestry estimation, haplogroup prediction, health trait analysis, and pharmacogenomics — all locally in Web Workers.
+## ⚙️ Technical Architecture
+Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing tasks without compromising the user experience.
 
-**Live app:** [witg-genotype-scout.vercel.app](https://witg-genotype-scout.vercel.app)
+*   **Runtime:** React 18+ with Vite.
+*   **Infrastructure:** TypeScript for mission-critical type safety across all genetic calculations.
+*   **Performance:** Offloads heavy string parsing and matrix calculations to Web Workers to ensure a responsive UI during data heavy-lifting.
+*   **AI Integration:** Optional AI-powered features for trait analysis (requires API key).
 
----
+## 🧬 Forensic & High-Resolution Analysis
+We utilize specialized, industry-recognized forensic panels to maximize the accuracy of our reports.
 
-## Key Features
-
-| Category | Capability |
-|---|---|
-| **Ancestry** | Continental + regional + deep sub-population breakdown |
-| **Haplogroups** | Y-DNA and mtDNA haplogroup prediction with phylogenetic tree traversal |
-| **Health** | Trait analysis, carrier status, wellness markers |
-| **Pharmacogenomics** | Drug metabolism predictions via PGx star-allele calling |
-| **Blood Type** | ABO and Rh factor determination |
-| **Oracle** | Multi-engine consensus scoring with confidence intervals |
-| **Ancient DNA** | Admixture estimates from ancient reference populations |
-| **Forensic** | Eye/hair/skin pigmentation prediction panels |
-
----
-
-## Privacy Architecture
-
-- **Zero-upload design** — all processing runs in browser Web Workers
-- **No server calls** — DNA data is never transmitted over the network
-- **No analytics on genetic data** — Firebase Auth for login only
-- **Session-only storage** — results are not persisted after tab close
-- **Open analysis pipeline** — all engines and reference data ship client-side
+| Forensic Panel | Purpose |
+| :--- | :--- |
+| **10k GRAF** | High-resolution genomic ancestry refinement. |
+| **VISAGE** | Phenotypic and appearance-related marker identification. |
+| **EUROFORGEN NAME** | High-sensitivity forensic biogeographical ancestry markers. |
 
 ---
 
-## Ancestry Analysis Engines
+## 📋 Feature Breakdown
 
-Genotype Scout runs **12 ancestry engines** in parallel, combining results through an Oracle consensus system:
+### 🌍 High-Precision Ancestry
+Calculate complex admixture percentages using advanced Least Squares Methods. Compare your unique genotype against dense population frequency datasets to interpret your ancestral origins with high dimensionality.
 
-| Engine | File | Method |
-|---|---|---|
-| **Oracle** | `oracleEngine.ts` | Multi-engine weighted consensus with confidence intervals |
-| **Comprehensive** | `comprehensiveEngine.ts` | Bayesian posterior on 6,300+ AIMs with 7-population priors |
-| **GRAF** | `grafAncEngine.ts` | Sub-population resonance scoring against GRAF 10K panel |
-| **MDLP K16** | `mdlpAncEngine.ts` | 16-component admixture model |
-| **Fast Matrix** | `fastMatrixEngine.ts` | Float32 binary kernel for rapid batch scoring |
-| **MicroHap** | `microHapEngine.ts` | Microhaplotype signature identification |
-| **Historical Cluster** | `historicalClusterEngine.ts` | Ancient/medieval population cluster matching |
-| **RFMix-TS** | `rfmixTypeScript.ts` | Local ancestry inference (TypeScript implementation) |
-| **MicroPhaser** | `microPhaser.ts` | Statistical phasing for haplotype block analysis |
-| **Phasing Corrector** | `phasingCorrector.ts` | Post-phasing error correction |
-| **Genetic Map Interpolator** | `geneticMapInterpolator.ts` | Recombination rate interpolation |
-| **Worker Pool** | `workerPoolEngine.ts` | Parallel engine orchestration |
+### 🏛️ Ancient DNA Oracle
+Utilize weighted Ancient DNA matching. Our engine applies specific weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing high-confidence matches to ancestral populations.
+
+### 🧠 Haplogroup Classification
+Hierarchical matching systems identify your Terminal SNP. Navigate complex paternal and maternal lineages with advanced classification logic, prioritizing the highest hierarchical rank for maximum specificity.
+
+### 🩺 Health & Wellness Reports
+Actionable insights based on your genotype:
+*   **ABO Blood Type:** AI-assisted inference.
+*   **Secretor Status:** FUT2 and matching markers analysis.
+*   **APOE Risk:** Genetic marker analysis for health-related metrics.
 
 ---
 
-## Health & Pharmacogenomics
+## 🚀 Installation
 
-| Engine | File | Purpose |
-|---|---|---|
-| **Health Engine** | `comprehensiveHealthEngine.ts` | Trait analysis and carrier status |
-| **PGx Calculator** | `pgxCalculator.ts` | CYP450 star-allele calling and drug metabolism |
-| **PyPGx Engine** | `pypgxEngine.ts` | Extended pharmacogenomic predictions |
-| **Secretor Calculator** | `secretorCalculator.ts` | FUT2 secretor status determination |
+Ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
 
----
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/genotype-scout.git
+   cd genotype-scout
+   ```
 
-## Marker Database
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-The analysis pipeline draws from **6,320 functional ancestry-informative markers** across 10 regional panels:
+3. **Configure Environment:**
+   You will need a Gemini API Key to enable advanced AI-powered trait interpretation. Create a `.env` file in the root directory:
+   ```env
+   GEMINI_API_KEY=your_actual_key_here
+   ```
 
-| Panel | File | Functional Markers |
-|---|---|---|
-| Global | `global.json` | 5,247 |
-| African | `african.json` | 417 |
-| African American | `african_american.json` | 198 |
-| European | `european.json` | 143 |
-| South Asian | `south_asian.json` | 75 |
-| Native American | `native_american.json` | 71 |
-| Middle Eastern | `middle_eastern.json` | 66 |
-| Oceanian | `oceanian.json` | 62 |
-| East Asian | `east_asian.json` | 39 |
-| North African | `north_african.json` | 2 |
-
-**Population coverage:** All functional markers include frequencies for 7 standardized populations: AFR, EUR, EAS, SAS, AMR, MENA, OCE.
-
-Additional reference data:
-- `reference/snps.json` — 1,352 curated SNP entries (including 337 Y-DNA/mtDNA markers)
-- `reference/1000genomes_frequencies.json` — 1000 Genomes Project frequencies
-- `raw_aims/` — 33 raw panel files for GRAF, appearance traits, and specialized analyses
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
-## Supported Formats
-
-| Provider | Format |
-|---|---|
-| 23andMe | v3, v4, v5 |
-| AncestryDNA | v1, v2 |
-| MyHeritage | Raw export |
-| FamilyTreeDNA (FTDNA) | Build 36/37 |
-| LivingDNA | Raw export |
-| Genes for Good | Raw export |
-| PLINK | .bed/.bim/.fam |
-| VCF | .vcf, .vcf.gz |
-
----
-
-## Project Structure
-
-```
-src/
-├── App.tsx                     # Main application component
-├── anchorAims.ts               # Anchor AIM definitions
-├── components/                 # React UI components
-├── data/
-│   ├── aims/                   # 10 regional AIM panel files
-│   ├── reference/              # Reference databases (snps, 1000G)
-│   └── raw_aims/               # 33 raw panel files
-├── engines/
-│   ├── ancestry/               # 12 ancestry engines + WASM bridge
-│   └── health/                 # 4 health/PGx engines
-├── services/
-│   ├── snpMatcher.ts           # Marker matching and source aggregation
-│   ├── fileParser.ts           # Multi-format DNA file parser
-│   └── ...
-├── workers/
-│   ├── genotypeWorker.ts       # Main processing orchestrator
-│   ├── healthWorker.ts         # Health analysis worker
-│   ├── markerProcessingWorker.ts # Parallel marker processing
-│   ├── plinkWorker.ts          # PLINK format handler
-│   └── rfmixWorker.ts         # RFMix worker
-├── scripts/                    # Build and data processing scripts
-├── types/                      # TypeScript type definitions
-└── utils/                      # Shared utilities
-```
-
----
-
-## Build & Development
-
-```bash
-# Install dependencies
-npm install
-
-# Development server
-npm run dev
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-**Tech stack:** React 18 · TypeScript · Vite · Tailwind CSS · Firebase Auth · Web Workers · WASM
-
----
-
-## Deployment
-
-Hosted on [Vercel](https://vercel.com). Pushes to `main` auto-deploy to production.
-
-**Live URL:** [witg-genotype-scout.vercel.app](https://witg-genotype-scout.vercel.app)
-
----
-
-## License
-
-Copyright © 2024–2026 Jequan Davis / Written In The Genome. All rights reserved.
-
-This software is proprietary. Unauthorized copying, distribution, or modification is prohibited without express written permission from the author.
-
----
-
-<div align="center">
-  <strong>Built by <a href="https://jequandavis.wpcomstaging.com">Jequan Davis</a></strong><br>
-  <em>Written In The Genome</em>
-</div>
+## 🏗️ License
+This project is proprietary software created by Jequan Davis. Unauthorized distribution or commercial use is prohibited without express written permission.

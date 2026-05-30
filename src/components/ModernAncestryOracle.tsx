@@ -15,6 +15,12 @@ export const ModernAncestryOracle = memo(({
   results: any;
   onOpenMethodology?: () => void;
 }) => {
+  const [isChartReady, setIsChartReady] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsChartReady(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
+
   const [viewMode] = useState<'primary'>('primary');
   const [exporting] = useState(false);
   const [calculatingLAI] = useState(false);
@@ -100,21 +106,25 @@ export const ModernAncestryOracle = memo(({
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-center">
           <div className="h-[300px] sm:h-[450px] lg:col-span-2 w-full min-w-0 relative">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
-              <RadarChart cx="50%" cy="50%" outerRadius="65%" data={chartData} margin={{ top: 30, right: 30, bottom: 30, left: 30 }}>
-                <PolarGrid stroke="#334155" />
-                <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11 }} />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                <Radar
-                  name="Ancestry"
-                  dataKey="A"
-                  stroke="#4599FF"
-                  fill="#4599FF"
-                  fillOpacity={0.3}
-                />
-                <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#f8fafc', borderRadius: '1rem', backdropFilter: 'blur(8px)' }} />
-              </RadarChart>
-            </ResponsiveContainer>
+            {isChartReady ? (
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
+                <RadarChart cx="50%" cy="50%" outerRadius="65%" data={chartData} margin={{ top: 30, right: 30, bottom: 30, left: 30 }}>
+                  <PolarGrid stroke="#334155" />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11 }} />
+                  <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+                  <Radar
+                    name="Ancestry"
+                    dataKey="A"
+                    stroke="#4599FF"
+                    fill="#4599FF"
+                    fillOpacity={0.3}
+                  />
+                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#f8fafc', borderRadius: '1rem', backdropFilter: 'blur(8px)' }} />
+                </RadarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="w-full h-full bg-[#1e293b]/50 rounded-2xl animate-pulse" />
+            )}
           </div>
           
           <div className="space-y-4 sm:space-y-6 lg:col-span-1">

@@ -1,5 +1,5 @@
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { SNP } from '../types/genotype';
 import { CONTINENT_META } from '../constants/genotypeConstants';
@@ -11,6 +11,12 @@ interface SNPDetailViewProps {
 }
 
 export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
+  const [isChartReady, setIsChartReady] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsChartReady(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
+
   const continentMeta = CONTINENT_META[snp.continent] || { color: '#94a3b8' };
 
   const frequencyData = useMemo(() => {
@@ -80,29 +86,33 @@ export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
         <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
           <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Genotype Prevalence (1000 Genomes)</h4>
           <div className="h-40 w-full min-w-0 relative">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={160} debounce={1}>
-              <BarChart data={frequencyData} layout="vertical" margin={{ left: -20 }}>
-                <XAxis type="number" hide domain={[0, 100]} />
-                <YAxis 
-                  dataKey="pop" 
-                  type="category" 
-                  tick={{ fontSize: 10, fill: '#64748b', fontWeight: 'bold' }} 
-                  width={70}
-                  axisLine={false}
-                  tickLine={false}
-                />
-                <Tooltip 
-                  cursor={{ fill: 'transparent' }}
-                  contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', fontSize: '10px', color: '#fff' }}
-                  formatter={(value: number) => [`${(value || 0).toFixed(1)}%`, 'Prevalence']}
-                />
-                <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={12}>
-                  {frequencyData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.popCode === 'GBR' ? '#4599FF' : entry.popCode === 'YRI' ? '#10b981' : '#f59e0b'} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            {isChartReady ? (
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={160} debounce={1}>
+                <BarChart data={frequencyData} layout="vertical" margin={{ left: -20 }}>
+                  <XAxis type="number" hide domain={[0, 100]} />
+                  <YAxis 
+                    dataKey="pop" 
+                    type="category" 
+                    tick={{ fontSize: 10, fill: '#64748b', fontWeight: 'bold' }} 
+                    width={70}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <Tooltip 
+                    cursor={{ fill: 'transparent' }}
+                    contentStyle={{ backgroundColor: '#0f172a', border: 'none', borderRadius: '8px', fontSize: '10px', color: '#fff' }}
+                    formatter={(value: number) => [`${(value || 0).toFixed(1)}%`, 'Prevalence']}
+                  />
+                  <Bar dataKey="value" radius={[0, 4, 4, 0]} barSize={12}>
+                    {frequencyData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.popCode === 'GBR' ? '#4599FF' : entry.popCode === 'YRI' ? '#10b981' : '#f59e0b'} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="w-full h-full bg-slate-50/50 dark:bg-slate-900/50 rounded-xl animate-pulse" />
+            )}
           </div>
         </div>
       )}

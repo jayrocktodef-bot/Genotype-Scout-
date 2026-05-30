@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { 
   PieChart, Pie, Cell, ResponsiveContainer, Tooltip, 
@@ -26,6 +26,12 @@ const Dashboard: React.FC<DashboardProps> = ({
   onNavigateToTab,
   onReset
 }) => {
+  const [isChartReady, setIsChartReady] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsChartReady(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
+
   const primaryAncestry = oracleResults?.primary?.continentalScores || {};
   
   const chartData = useMemo(() => {
@@ -76,41 +82,45 @@ const Dashboard: React.FC<DashboardProps> = ({
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="premium-card p-8 sm:p-12 overflow-hidden relative"
+        className="premium-card p-5 sm:p-12 overflow-hidden relative"
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-50/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="h-[350px] relative min-w-0">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={350} debounce={1}>
-              <PieChart>
-                <Pie
-                  data={chartData}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={80}
-                  outerRadius={120}
-                  paddingAngle={5}
-                  dataKey="value"
-                  animationBegin={500}
-                  animationDuration={1500}
-                  stroke="none"
-                >
-                  {chartData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip 
-                  contentStyle={{ 
-                    borderRadius: '1.5rem', 
-                    border: 'none', 
-                    boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-                    padding: '12px 16px'
-                  }}
-                  itemStyle={{ fontWeight: 'bold' }}
-                />
-              </PieChart>
-            </ResponsiveContainer>
+            {isChartReady ? (
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={350} debounce={1}>
+                <PieChart>
+                  <Pie
+                    data={chartData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={80}
+                    outerRadius={120}
+                    paddingAngle={5}
+                    dataKey="value"
+                    animationBegin={500}
+                    animationDuration={1500}
+                    stroke="none"
+                  >
+                    {chartData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip 
+                    contentStyle={{ 
+                      borderRadius: '1.5rem', 
+                      border: 'none', 
+                      boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
+                      padding: '12px 16px'
+                    }}
+                    itemStyle={{ fontWeight: 'bold' }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="w-full h-full bg-slate-50/50 rounded-2xl animate-pulse" />
+            )}
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
               <span className="text-[10px] uppercase font-black text-slate-400 tracking-widest">Global Roots</span>
               <span className="text-4xl font-black text-slate-800">{chartData[0]?.value || 0}%</span>
@@ -163,7 +173,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="premium-card p-8 group cursor-pointer"
+          className="premium-card p-6 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600 mb-6 transition-transform group-hover:scale-110">
             <Activity className="w-7 h-7" />
@@ -183,7 +193,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="premium-card p-8 group cursor-pointer"
+          className="premium-card p-6 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6 transition-transform group-hover:scale-110">
             <Eye className="w-7 h-7" />
@@ -203,7 +213,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="premium-card p-8 group cursor-pointer"
+          className="premium-card p-6 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-600 mb-6 transition-transform group-hover:scale-110">
             <Map className="w-7 h-7" />
@@ -223,7 +233,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="premium-card p-8 group cursor-pointer"
+          className="premium-card p-6 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-red-600 mb-6 transition-transform group-hover:scale-110">
             <Droplet className="w-7 h-7" />
@@ -243,7 +253,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="premium-card p-8 group cursor-pointer"
+          className="premium-card p-6 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 transition-transform group-hover:scale-110">
             <Shield className="w-7 h-7" />
@@ -263,7 +273,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="premium-card p-8 group cursor-pointer"
+          className="premium-card p-6 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 transition-transform group-hover:scale-110">
             <Fingerprint className="w-7 h-7" />

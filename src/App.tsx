@@ -163,7 +163,7 @@ const HaplogroupTreeView = memo(({ node, userPath = [], level = 0, searchTerm = 
   };
 
   return (
-    <div className={`ml-4 border-l border-slate-100 pl-4 my-2 ${matchesSearch ? 'ring-2 ring-teal-500/20 rounded-r' : ''}`}>
+    <div className={`ml-2 sm:ml-4 border-l border-slate-100 pl-2 sm:pl-4 my-2 ${matchesSearch ? 'ring-2 ring-teal-500/20 rounded-r' : ''}`}>
       <div 
         className={`flex items-center gap-3 cursor-pointer group py-2 px-3 rounded-2xl transition-all ${isMatch ? 'bg-teal-50 text-teal-900 shadow-sm' : 'hover:bg-white'} ${matchesSearch ? 'bg-amber-50' : ''}`}
         onClick={() => setIsExpanded(!isExpanded)}
@@ -288,6 +288,13 @@ const ProfileSummary = memo(({
   famousMatches?: any[],
   healthImpacts?: any[]
 }) => {
+  const [isChartReady, setIsChartReady] = useState(false);
+  useEffect(() => {
+    setIsChartReady(false);
+    const timer = setTimeout(() => setIsChartReady(true), 150);
+    return () => clearTimeout(timer);
+  }, [activeDatasetIndex]);
+
   const dataset = datasets[activeDatasetIndex];
 
   const rhInference = useMemo(() => {
@@ -399,13 +406,17 @@ const ProfileSummary = memo(({
           </div>
           
           <div className="relative w-full h-[180px] my-auto flex items-center justify-center">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={180} debounce={1}>
-              <RadarChart data={ancestryChartData} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
-                <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
-                <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 9, fontWeight: 800 }} />
-                <Radar name="Origins" dataKey="value" stroke="#0d9488" fill="#0d9488" fillOpacity={0.15} />
-              </RadarChart>
-            </ResponsiveContainer>
+            {isChartReady ? (
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={180} debounce={1}>
+                <RadarChart data={ancestryChartData} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+                  <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
+                  <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 9, fontWeight: 800 }} />
+                  <Radar name="Origins" dataKey="value" stroke="#0d9488" fill="#0d9488" fillOpacity={0.15} />
+                </RadarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="w-full h-full bg-slate-50/50 rounded-2xl animate-pulse" />
+            )}
           </div>
           
           <div className="pt-3 border-t border-slate-100 flex justify-between gap-2">
@@ -989,6 +1000,13 @@ const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
 };
 
 const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelectedSubPop }: { oracleResults: any, ancestrySnps: any[], selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
+  const [isChartReady, setIsChartReady] = useState(false);
+  useEffect(() => {
+    setIsChartReady(false);
+    const timer = setTimeout(() => setIsChartReady(true), 150);
+    return () => clearTimeout(timer);
+  }, [oracleResults]);
+
   const currentData = useMemo(() => {
     if (!oracleResults) return null;
     return oracleResults.primary;
@@ -1046,41 +1064,45 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
           <h3 className="text-sm font-bold text-indigo-900 dark:text-indigo-400 uppercase tracking-wider mb-4">Continental Admixture</h3>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="h-64 w-full md:w-1/2 relative min-w-0">
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={256} debounce={1}>
-                <PieChart>
-                  <Pie
-                    data={pieData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={60}
-                    outerRadius={80}
-                    paddingAngle={5}
-                    dataKey="value"
-                  >
-                    {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name as keyof typeof CONTINENT_META]?.color || '#4599FF'} />
-                  ))}
-                  </Pie>
-                  <Tooltip 
-                    content={({ active, payload }) => {
-                      if (active && payload && payload.length) {
-                        const data = payload[0].payload;
-                        const meta = CONTINENT_META[data.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
-                        return (
-                          <div className="bg-slate-800 p-3 rounded-lg text-xs text-white shadow-xl border border-slate-700">
-                            <div className="flex items-center gap-2 mb-1">
-                              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
-                              <span className="font-bold">{data.name}</span>
+              {isChartReady ? (
+                <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={256} debounce={1}>
+                  <PieChart>
+                    <Pie
+                      data={pieData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={60}
+                      outerRadius={80}
+                      paddingAngle={5}
+                      dataKey="value"
+                    >
+                      {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={CONTINENT_META[entry.name as keyof typeof CONTINENT_META]?.color || '#4599FF'} />
+                    ))}
+                    </Pie>
+                    <Tooltip 
+                      content={({ active, payload }) => {
+                        if (active && payload && payload.length) {
+                          const data = payload[0].payload;
+                          const meta = CONTINENT_META[data.name as keyof typeof CONTINENT_META] || { color: '#94a3b8' };
+                          return (
+                            <div className="bg-slate-800 p-3 rounded-lg text-xs text-white shadow-xl border border-slate-700">
+                              <div className="flex items-center gap-2 mb-1">
+                                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: meta.color }}></div>
+                                <span className="font-bold">{data.name}</span>
+                              </div>
+                    <div className="font-mono text-lg">{Number(data.value || 0).toFixed(1)}%</div>
                             </div>
-                  <div className="font-mono text-lg">{Number(data.value || 0).toFixed(1)}%</div>
-                          </div>
-                        );
-                      }
-                      return null;
-                    }}
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+                          );
+                        }
+                        return null;
+                      }}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              ) : (
+                <div className="w-full h-full bg-slate-50/50 dark:bg-slate-900/50 rounded-2xl animate-pulse" />
+              )}
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full md:w-1/2">
               {pieData.map((entry) => {
@@ -1567,7 +1589,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
               </div>
             </div>
 
-            <div className="relative pl-12 ml-4 space-y-16 before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-rose-500 before:via-pink-500 before:to-transparent">
+            <div className="relative pl-8 md:pl-12 ml-2 md:ml-4 space-y-12 md:space-y-16 before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-rose-500 before:via-pink-500 before:to-transparent">
               {enrichedPath.map((step: any, idx: number) => {
                 const isFirst = idx === 0;
                 const isLast = idx === enrichedPath.length - 1;
@@ -1581,13 +1603,13 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                     className="relative group cursor-default"
                   >
                     {/* Node Pin */}
-                    <div className={`absolute -left-[64px] top-0 w-12 h-12 rounded-2xl border-4 border-white dark:border-slate-800 shadow-lg flex items-center justify-center z-10 transition-all group-hover:rotate-12 ${
+                    <div className={`absolute -left-[44px] md:-left-[64px] top-0 w-9 h-9 md:w-12 md:h-12 rounded-xl md:rounded-2xl border-4 border-white dark:border-slate-800 shadow-lg flex items-center justify-center z-10 transition-all group-hover:rotate-12 ${
                       isLast ? 'bg-rose-600 scale-110 rotate-12' : isFirst ? 'bg-indigo-600' : 'bg-slate-200 dark:bg-slate-700'
                     }`}>
-                      <span className={`text-[11px] font-black ${isLast || isFirst ? 'text-white' : 'text-slate-500'}`}>{idx + 1}</span>
+                      <span className={`text-[10px] md:text-[11px] font-black ${isLast || isFirst ? 'text-white' : 'text-slate-500'}`}>{idx + 1}</span>
                     </div>
 
-                    <div className="bg-slate-50/40 dark:bg-slate-900/40 p-6 sm:p-8 rounded-3xl border border-transparent group-hover:border-rose-200 dark:group-hover:border-rose-900/30 transition-all group-hover:shadow-xl group-hover:shadow-rose-100/50 dark:group-hover:shadow-none">
+                    <div className="bg-slate-50/40 dark:bg-slate-900/40 p-4 sm:p-8 rounded-3xl border border-transparent group-hover:border-rose-200 dark:group-hover:border-rose-900/30 transition-all group-hover:shadow-xl group-hover:shadow-rose-100/50 dark:group-hover:shadow-none">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                         <div className="space-y-1">
                           <h4 className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter leading-none group-hover:text-rose-600 transition-colors">
@@ -1871,9 +1893,11 @@ export default function App() {
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug' | 'methodology'>('dashboard');
+
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
+  const [activeAncientSubTab, setActiveAncientSubTab] = useState<'admixture' | 'matches'>('admixture');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
@@ -2080,13 +2104,12 @@ export default function App() {
       worker.onmessage = (e) => {
         const { type, payload, error: workerError } = e.data;
         if (type === 'PROGRESS') {
-          const { processed, total, snps } = payload;
+          const { processed, total, snps, step } = payload;
           setStreamProgress(prev => ({
-            ...prev,
-            processed,
-            total,
-            snps,
-            step: "Ingesting DNA stream..."
+            processed: processed !== undefined ? processed : prev.processed,
+            total: total !== undefined ? total : prev.total,
+            snps: snps !== undefined ? snps : prev.snps,
+            step: step || prev.step || "Ingesting DNA stream..."
           }));
         } else if (type === 'SUCCESS') {
           if (intervalId) clearInterval(intervalId);
@@ -2278,7 +2301,7 @@ export default function App() {
         }} 
       />
 
-      <main className="max-w-7xl mx-auto px-6 pt-28">
+      <main className="max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-28">
         {error && (
           (() => {
             const isDetailed = typeof error === 'object' && error !== null;
@@ -2683,17 +2706,49 @@ export default function App() {
                 )}
 
                 {activeTab === 'ancient' && (
-                  <div className="pb-20">
-                    <AncientAncestryOracle results={oracleResults?.engine || []} onOpenMethodology={() => setIsMethodologyOpen(true)} />
-                  </div>
-                )}
+                  <div className="pb-20 space-y-8 animate-fade-in">
+                    <div className="flex justify-center">
+                      <div className="p-1.5 bg-slate-100 rounded-2xl inline-flex border border-slate-200 shadow-inner">
+                        <button
+                          onClick={() => setActiveAncientSubTab('admixture')}
+                          className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                            activeAncientSubTab === 'admixture' 
+                              ? 'bg-slate-900 text-white shadow-md scale-105' 
+                              : 'text-slate-500 hover:text-slate-800'
+                          }`}
+                        >
+                          <History size={14} /> Ancient Admixture
+                        </button>
+                        <button
+                          onClick={() => setActiveAncientSubTab('matches')}
+                          className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                            activeAncientSubTab === 'matches' 
+                              ? 'bg-slate-900 text-white shadow-md scale-105' 
+                              : 'text-slate-500 hover:text-slate-800'
+                          }`}
+                        >
+                          <User size={14} /> Sample Matches
+                        </button>
+                      </div>
+                    </div>
 
-                {activeTab === 'compare' && (
-                  <div className="pb-20">
-                    <PopulationComparisonTab 
-                      userSnps={snpMaps.current[activeDatasetIndex] || {}} 
-                      populationProximity={populationProximity} 
-                    />
+                    {activeAncientSubTab === 'admixture' ? (
+                      <AncientAncestryOracle 
+                        results={ancientAdmixture} 
+                        title="Deep Time Oracle" 
+                        subtitle="Ancient Admixture & Paleolithic Affinity"
+                        type="admixture"
+                        onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                      />
+                    ) : (
+                      <AncientAncestryOracle 
+                        results={individualMatches} 
+                        title="Fossil Specimen Matches" 
+                        subtitle="Direct Genetic Affinity to Ancient Individuals"
+                        type="matches"
+                        onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                      />
+                    )}
                   </div>
                 )}
 

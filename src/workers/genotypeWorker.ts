@@ -114,6 +114,8 @@ self.onmessage = async (e: MessageEvent) => {
                 if (sab) {
                     const progressArray = new Int32Array(sab);
                     Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
+                } else {
+                    self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
                 }
             });
           } else if (fileObj.buffer) {
@@ -135,7 +137,11 @@ self.onmessage = async (e: MessageEvent) => {
         imputedSnpMap = applyLightImputation(mergedSnpMap);
     }
 
-    if (sab) { Atomics.store(new Int32Array(sab), 3, 2); }
+    if (sab) { 
+      Atomics.store(new Int32Array(sab), 3, 2); 
+    } else {
+      self.postMessage({ type: 'PROGRESS', payload: { step: "Engaging Bayesian Ancestry Engine..." } });
+    }
     
     // Orchestration
     const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, names, sab);
@@ -148,7 +154,11 @@ self.onmessage = async (e: MessageEvent) => {
     const subpopulationOracle = processSubpopulations(userGenotypes, [], sampleId, mergedSnpMetaMap);
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
     
-    if (sab) { Atomics.store(new Int32Array(sab), 3, 3); }
+    if (sab) { 
+      Atomics.store(new Int32Array(sab), 3, 3); 
+    } else {
+      self.postMessage({ type: 'PROGRESS', payload: { step: "Completing Profiler..." } });
+    }
 
     self.postMessage({ 
       type: 'SUCCESS', 
@@ -168,7 +178,11 @@ self.onmessage = async (e: MessageEvent) => {
       } 
     });
   } catch (err) {
-    if (sab) { Atomics.store(new Int32Array(sab), 3, 4); }
+    if (sab) { 
+      Atomics.store(new Int32Array(sab), 3, 4); 
+    } else {
+      self.postMessage({ type: 'PROGRESS', payload: { step: "Ingestion failed." } });
+    }
     self.postMessage({ type: 'ERROR', error: { message: err instanceof Error ? err.message : String(err) } });
   }
 };

@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, useMemo, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 import { HelpCircle } from 'lucide-react';
@@ -30,6 +30,12 @@ export const NaiveAncestryOracle = memo(({
   results: any;
   onOpenMethodology?: () => void;
 }) => {
+  const [isChartReady, setIsChartReady] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsChartReady(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
+
   const naiveEstimates = results?.naiveEstimates || {};
   const hasData = Object.keys(naiveEstimates).length > 0;
 
@@ -80,18 +86,22 @@ export const NaiveAncestryOracle = memo(({
       </div>
 
       <div className="h-[400px] w-full min-w-0 relative bg-black/20 rounded-3xl p-4 border border-white/5">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
-          <BarChart data={chartData} layout="vertical" margin={{ left: 10 }}>
-            <XAxis type="number" hide />
-            <YAxis dataKey="name" type="category" width={180} tick={{ fill: '#e2e8f0', fontSize: 13, fontWeight: 600 }} />
-            <Tooltip contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '1rem' }} />
-            <Bar dataKey="value" fill="#4ECDC4" radius={[0, 8, 8, 0]}>
-              {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#4ECDC4' : '#FF6B6B'} />
-              ))}
-            </Bar>
-          </BarChart>
-        </ResponsiveContainer>
+        {isChartReady ? (
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
+            <BarChart data={chartData} layout="vertical" margin={{ left: 10 }}>
+              <XAxis type="number" hide />
+              <YAxis dataKey="name" type="category" width={180} tick={{ fill: '#e2e8f0', fontSize: 13, fontWeight: 600 }} />
+              <Tooltip contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '1rem' }} />
+              <Bar dataKey="value" fill="#4ECDC4" radius={[0, 8, 8, 0]}>
+                {chartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#4ECDC4' : '#FF6B6B'} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        ) : (
+          <div className="w-full h-full bg-slate-900/40 rounded-2xl animate-pulse" />
+        )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

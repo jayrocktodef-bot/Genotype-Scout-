@@ -27,13 +27,12 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'autosomal', label: 'Markers', icon: Database },
     { id: 'blood', label: 'Blood Type', icon: Droplet },
     { id: 'ancient', label: 'Ancient DNA', icon: Compass },
-    { id: 'compare', label: 'Pop. Compare', icon: Microscope },
     { id: 'methodology', label: 'Methodology', icon: BookOpen }
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 h-20 flex items-center justify-between">
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => {
           onTabChange('dashboard');
           window.scrollTo({ top: 0, behavior: 'smooth' });

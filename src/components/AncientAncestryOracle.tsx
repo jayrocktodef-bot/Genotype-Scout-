@@ -21,7 +21,7 @@ export const AncientAncestryOracle = memo(({
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-8 sm:p-12 rounded-[2rem] sm:rounded-[3rem] bg-[#1a1b1d]/80 backdrop-blur-xl border border-amber-900/20 shadow-2xl relative overflow-hidden"
+      className="p-5 sm:p-12 rounded-2xl sm:rounded-[3rem] bg-[#1a1b1d]/80 backdrop-blur-xl border border-amber-900/20 shadow-2xl relative overflow-hidden"
     >
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 opacity-5">
