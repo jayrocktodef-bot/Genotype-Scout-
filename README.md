@@ -5,6 +5,7 @@
 **Genotype Scout** is a professional-grade, privacy-first genomic analysis suite built by [Jequan Davis](https://writteninthegenome.blog). Every computation — from ancestry admixture to pharmacogenomics — runs entirely inside your browser. Your raw DNA never touches a server.
 
 [![Live App](https://img.shields.io/badge/Launch-Genotype_Scout-0d9488?style=for-the-badge&logo=vercel&logoColor=white)](https://witg-genotype-scout.vercel.app/)
+[![Blog](https://img.shields.io/badge/Blog-Written_In_The_Genome-8B5CF6?style=for-the-badge&logo=wordpress&logoColor=white)](https://writteninthegenome.blog)
 
 ---
 
@@ -13,15 +14,16 @@
 - [Privacy Architecture](#-privacy-architecture)
 - [Feature Overview](#-feature-overview)
 - [Ancestry Analysis](#-ancestry-analysis)
+- [Marker Database](#-marker-database)
 - [Forensic Marker Panels](#-forensic-marker-panels)
 - [Ancient DNA Analysis](#-ancient-dna-analysis)
 - [Haplogroup Classification](#-haplogroup-classification)
 - [Health & Wellness](#-health--wellness)
 - [Blood Type Systems](#-blood-type-systems)
 - [Phenotype Prediction](#-phenotype-prediction)
+- [Local Ancestry Inference](#-local-ancestry-inference)
 - [Supported File Formats](#-supported-file-formats)
 - [Technical Architecture](#-technical-architecture)
-- [Installation](#-installation)
 - [License](#-license)
 
 ---
@@ -48,8 +50,11 @@ Privacy is not a feature — it's the architecture. Genotype Scout implements a 
 | Module | What It Does |
 | :--- | :--- |
 | **Dashboard** | At-a-glance admixture chart, top regions, health marker summary, and navigation hub |
-| **Ancestry Oracle** | Continental + sub-population admixture via 10,000 SNP GRAF panel and Bayesian likelihood |
-| **Scout Score** | Naive ethnicity estimation with custom Ancestry Informative Markers (AIMs) |
+| **Ancestry Oracle** | Continental + sub-population admixture via multi-engine ensemble analysis |
+| **Scout Score** | Naive ethnicity estimation with Ancestry Informative Markers (AIMs) |
+| **Engine Oracle** | Ensemble ancestry combining all engines for maximum accuracy |
+| **Modern Oracle** | MDLP K16 population model for modern population matching |
+| **Granular Ancestry** | Fine-grained sub-population analysis with detailed regional breakdowns |
 | **Ancient DNA Oracle** | Weighted matching against ancient genome samples and historical population clusters |
 | **Haplogroups / Lineages** | Terminal SNP identification for Y-DNA and mtDNA with phylogenetic tree visualization |
 | **Blood Type** | Full ABO, Rh, and 12+ extended blood group system predictions |
@@ -57,6 +62,8 @@ Privacy is not a feature — it's the architecture. Genotype Scout implements a 
 | **Phenotype** | Eye, hair, and skin color prediction via the HIrisPlex-S 41-SNP panel |
 | **Chromosome Painter** | Canvas-rendered ideogram showing continental ancestry assignments across all 23 chromosomes |
 | **PCA Map** | Interactive SVG scatter plot projecting your genome into HGDP + 1000 Genomes PC1×PC2 space |
+| **Population Comparison** | Head-to-head proximity analysis against all reference populations |
+| **Famous Matches** | Compare your genotype against famous historical figures |
 | **Methodology** | Full transparency into the algorithms, solvers, and reference data behind every result |
 | **Passport Export** | One-click PDF export of your complete results profile |
 
@@ -64,10 +71,22 @@ Privacy is not a feature — it's the architecture. Genotype Scout implements a 
 
 ## 🌍 Ancestry Analysis
 
-### Continental Admixture (Oracle Engine)
-The primary ancestry engine uses a **10,000 SNP GRAF-pop reference panel** across **26 sub-populations** from the 1000 Genomes Project. Admixture proportions are solved using **Non-Negative Least Squares (NNLS)** with Bayesian likelihood scoring.
+### Multi-Engine Architecture
+Genotype Scout uses an ensemble of 8 specialized ancestry engines, each optimized for different aspects of genomic ancestry:
 
-- **5 super-populations**: EUR, AFR, EAS, SAS, AMR
+| Engine | Method |
+| :--- | :--- |
+| **Oracle** | Primary NNLS solver — Non-Negative Least Squares against 26 sub-populations |
+| **Comprehensive** | Bayesian likelihood across 7-population AIM database |
+| **GRAF** | 10,000 SNP GRAF-pop panel with sub-population resonance scoring |
+| **MDLP K16** | 16-population model using Human Origins reference kernel |
+| **Fast Matrix** | Float32Array optimized population proximity calculations |
+| **MicroHaplotype** | Multi-allelic microhaplotype-based fine-scale ancestry |
+| **Historical Cluster** | Ancient population cluster matching |
+| **LAI Worker Pool** | RFMix-style local ancestry inference for chromosome-level deconvolution |
+
+### Continental Admixture
+- **7 super-populations**: AFR, EUR, EAS, SAS, AMR, MENA, OCE
 - **26 sub-populations**: GBR, CEU, FIN, TSI, IBS, YRI, LWK, GWD, MSL, ESN, ASW, ACB, CHB, CHS, CDX, KHV, JPT, GIH, PJL, BEB, STU, ITU, CLM, MXL, PEL, PUR
 - **Exclusive Native cohorts**: Curated Amerind AIMs optimized to isolate high-precision indigenous North, Central, and South American genomic profiles
 - Confidence intervals via bootstrap resampling
@@ -80,10 +99,32 @@ Goes beyond continental labels to identify your closest sub-population affinity 
 Your genome is projected into principal component space alongside HGDP and 1000 Genomes reference samples. Interactive SVG visualization shows exactly where you cluster relative to global populations.
 
 ### Chromosome Painting
-A canvas-rendered ideogram colors each chromosome segment by inferred continental ancestry. Visual, immediate, and exportable.
+A canvas-rendered ideogram colors each chromosome segment by inferred continental ancestry using local ancestry inference. Visual, immediate, and exportable.
 
-### Population Comparison
-Head-to-head proximity analysis against all reference populations with ranked affinity scores.
+---
+
+## 📊 Marker Database
+
+Genotype Scout maintains a curated database of **6,600+ Ancestry Informative Markers** organized into 10 region-specific panels:
+
+| Region | Markers | Purpose |
+| :--- | :--- | :--- |
+| **Global** | 5,496 | General ancestry-informative markers sourced from gnomAD v4 |
+| **African** | 464 | High-resolution West African sub-structure differentiation |
+| **African American** | 201 | Admixed population optimization |
+| **European** | 143 | European sub-structure markers |
+| **South Asian** | 75 | South Asian population differentiation |
+| **Native American** | 74 | Indigenous American ancestry markers |
+| **Middle Eastern** | 66 | MENA region markers |
+| **Oceanian** | 62 | Oceanian and Melanesian markers |
+| **East Asian** | 40 | East Asian sub-structure markers |
+| **North African** | 2 | North African differentiation |
+
+### Population Frequency Coverage
+Every marker carries standardized allele frequencies across **7 global populations** — African, European, East Asian, South Asian, Native American, Middle Eastern, and Oceanian — sourced from gnomAD v4 genomes and the Ensembl VEP API.
+
+### Informativeness Weighting
+Markers are dynamically weighted by their ancestry-informativeness (maximum allele frequency delta across populations), ranging from w=2 (low differentiation) to w=10 (highly informative, delta ≥ 0.8).
 
 ---
 
@@ -185,6 +226,18 @@ Leverages the **HIrisPlex-S 41-SNP panel** — the forensic standard for externa
 
 ---
 
+## 🧩 Local Ancestry Inference
+
+Genotype Scout includes chromosome-level ancestry deconvolution via a TypeScript Local Ancestry Inference (LAI) pipeline:
+
+- **RFMix-style smoothing** — High-throughput LAI across genomic windows
+- **Pseudo-phasing** — Lightweight phasing of commercial DTC data for LAI compatibility
+- **Genetic map interpolation** — Recombination-aware cM position mapping
+- **Optional WASM acceleration** — WebAssembly bridge for computationally intensive steps
+- **Chromosome Painter output** — Canvas-rendered ideogram showing per-segment continental assignments
+
+---
+
 ## 📂 Supported File Formats
 
 | Provider / Format | Extension | Support |
@@ -202,38 +255,39 @@ The streaming DNA parser handles files up to 45 MB with support for non-standard
 ## ⚙️ Technical Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│  Browser (Client-Side Only)                         │
-│                                                     │
-│  ┌──────────┐    ┌──────────────────────────────┐   │
-│  │ React 19 │◄──►│   Web Workers (Sandboxed)    │   │
-│  │ + Vite   │    │                              │   │
-│  │ + TS     │    │  ┌─ genotypeWorker ────────┐ │   │
-│  │          │    │  │  DNA parsing             │ │   │
-│  │          │    │  │  SNP matching            │ │   │
-│  │          │    │  │  Ancestry calculation    │ │   │
-│  │          │    │  │  Haplogroup prediction   │ │   │
-│  │          │    │  └─────────────────────────┘ │   │
-│  │          │    │  ┌─ healthWorker ──────────┐ │   │
-│  │          │    │  │  PGx star-allele calling│ │   │
-│  │          │    │  │  Blood type prediction  │ │   │
-│  │          │    │  │  Dietary trait analysis  │ │   │
-│  │          │    │  └─────────────────────────┘ │   │
-│  │          │    │  ┌─ plinkWorker ──────────┐  │   │
-│  │          │    │  │  PLINK binary parsing   │  │   │
-│  │          │    │  └─────────────────────────┘  │   │
-│  └──────────┘    └──────────────────────────────┘   │
-│       │                                             │
-│  ┌────┴──────────────────────────────────────────┐  │
-│  │  ONNX Runtime (In-Browser ML)                 │  │
-│  │  → Ancestry classification model              │  │
-│  └───────────────────────────────────────────────┘  │
-│       │                                             │
-│  ┌────┴──────────────────────────────────────────┐  │
-│  │  IndexedDB (Optional Local Persistence)       │  │
-│  │  → Results only. Raw data never stored.       │  │
-│  └───────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│  Browser (Client-Side Only)                                     │
+│                                                                 │
+│  ┌──────────┐    ┌──────────────────────────────────────────┐   │
+│  │ React 19 │◄──►│   Web Workers (Sandboxed)                │   │
+│  │ + Vite 6 │    │                                          │   │
+│  │ + TS     │    │  ┌─ genotypeWorker ───────────────────┐  │   │
+│  │ +Tailwind│    │  │  DNA parsing & SNP matching         │  │   │
+│  │          │    │  │  Multi-engine ancestry ensemble     │  │   │
+│  │          │    │  │  Haplogroup prediction              │  │   │
+│  │          │    │  └────────────────────────────────────┘  │   │
+│  │          │    │  ┌─ healthWorker ──────────────────────┐ │   │
+│  │          │    │  │  PGx star-allele calling            │ │   │
+│  │          │    │  │  Blood type + dietary traits        │ │   │
+│  │          │    │  └────────────────────────────────────┘  │   │
+│  │          │    │  ┌─ plinkWorker ──────────────────────┐  │   │
+│  │          │    │  │  PLINK binary format parsing        │  │   │
+│  │          │    │  └────────────────────────────────────┘  │   │
+│  │          │    │  ┌─ rfmixWorker ──────────────────────┐  │   │
+│  │          │    │  │  Local Ancestry Inference (LAI)     │  │   │
+│  │          │    │  └────────────────────────────────────┘  │   │
+│  └──────────┘    └──────────────────────────────────────────┘   │
+│       │                                                         │
+│  ┌────┴──────────────────────────────────────────────────────┐  │
+│  │  ONNX Runtime (In-Browser ML)                             │  │
+│  │  → Ancestry classification model                          │  │
+│  └───────────────────────────────────────────────────────────┘  │
+│       │                                                         │
+│  ┌────┴──────────────────────────────────────────────────────┐  │
+│  │  IndexedDB (Optional Local Persistence)                   │  │
+│  │  → Results only. Raw data never stored.                   │  │
+│  └───────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
          ▲
          │ Zero outbound DNA traffic
          ▼
@@ -256,86 +310,6 @@ The streaming DNA parser handles files up to 45 MB with support for non-standard
 | **ML Inference** | ONNX Runtime Web |
 | **Hosting** | Vercel |
 | **Analytics** | Vercel Analytics + Speed Insights |
-
-### Engine Architecture
-
-| Engine | File | Purpose |
-| :--- | :--- | :--- |
-| `oracleEngine` | `src/engines/ancestry/oracleEngine.ts` | Primary NNLS ancestry solver |
-| `fastMatrixEngine` | `src/engines/ancestry/fastMatrixEngine.ts` | Optimized Float32Array population proximity |
-| `comprehensiveEngine` | `src/engines/ancestry/comprehensiveEngine.ts` | Multi-panel ensemble ancestry |
-| `grafAncEngine` | `src/engines/ancestry/grafAncEngine.ts` | GRAF-specific ancestry refinement |
-| `k27AncEngine` | `src/engines/ancestry/k27AncEngine.ts` | K=27 population model |
-| `microHapEngine` | `src/engines/ancestry/microHapEngine.ts` | Microhaplotype-based fine ancestry |
-| `historicalClusterEngine` | `src/engines/ancestry/historicalClusterEngine.ts` | Ancient population cluster matching |
-| `admixtureCalculator` | `src/engines/admixtureCalculator.ts` | Statistical admixture estimation |
-| `bloodTypeCalculator` | `src/engines/bloodTypeCalculator.ts` | ABO + extended blood group inference |
-| `dietaryCalculator` | `src/engines/dietaryCalculator.ts` | Genotype-driven dietary trait logic |
-| `comprehensiveHealthEngine` | `src/engines/health/comprehensiveHealthEngine.ts` | Orchestrates all health analyses |
-| `pgxCalculator` | `src/engines/health/pgxCalculator.ts` | Clinical medication safety reports |
-| `pypgxEngine` | `src/engines/health/pypgxEngine.ts` | Star-allele calling (CYP2D6, CYP2C19, DPYD) |
-
-### Reference Data
-
-| Dataset | File | Records |
-| :--- | :--- | :--- |
-| Master AIMs (normalized) | `src/data/master_aims_normalized.json` | 10,000+ markers |
-| GRAF 10K index | `src/data/raw_aims/graf_10k_index.json` | GRAF panel reference |
-| Ancient profiles | `src/data/master_ancient_profiles.json` | Curated ancient genomes |
-| Y-DNA tree | `src/constants/haplogroups.ts` | Full Y-chromosome phylogeny |
-| mtDNA tree | `src/constants/haplogroups.ts` | Mitochondrial phylogeny |
-| PhyloTree Build 17 | `src/data/haplogroups/PhyloTreeBuild17.csv` | ISOGG haplogroup definitions |
-| MITOMAP confirmed | `src/data/mitochondrial/mitomap_confirmed.csv` | Confirmed mtDNA variants |
-| Health & PGx | `src/data/master_health_pgx.json` | Clinical + pharmacogenomic markers |
-| 1000 Genomes frequencies | `src/data/reference/1000genomes_frequencies.json` | Population allele frequencies |
-| PCA reference | `src/data/raw_aims/pca_reference_data.json` | HGDP + 1kGP PCA coordinates |
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) 18+
-- npm 9+
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/jayrocktodef-bot/WITG-Genotype-Scout.git
-cd WITG-Genotype-Scout
-
-# Install dependencies
-npm install
-
-# Configure environment (optional — for AI-powered trait interpretation)
-cp .env.example .env
-# Edit .env and add your Gemini API key
-
-# Start development server
-npm run dev
-```
-
-The app will be available at `http://localhost:3000`.
-
-### Build for Production
-
-```bash
-npm run build
-npm run preview
-```
-
-### Data Sync Scripts
-
-```bash
-npm run sync-all      # Rebuild all reference data and compile
-npm run sync-pgx      # Update pharmacogenomics data
-npm run sync-graf     # Refresh GRAF weights
-npm run sync-pca      # Refresh PCA reference data
-npm run build-health  # Rebuild health marker database
-npm run build-ancient # Rebuild ancient DNA profiles
-npm run test          # Run test suite (Vitest)
-```
 
 ---
 
