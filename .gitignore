@@ -6,3 +6,10 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Temp/working files
+hydrated.json
+result.json
+markers.txt
+my_aims.txt
+my_regions.txt
