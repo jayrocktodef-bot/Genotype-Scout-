@@ -80,7 +80,7 @@ import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
-const VERSION = "3.4.0";
+const VERSION = "4.0.0-beta";
 
 const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace("haplogroup ", "").trim();
 

@@ -45,7 +45,10 @@ const Navigation: React.FC<NavigationProps> = ({
           />
           <div className="hidden sm:block">
             <h2 className="text-lg font-black tracking-tighter text-slate-800 leading-none">Genotype Scout</h2>
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">v3.4 Premium</p>
+            <p className="text-[10px] font-bold text-teal-600 uppercase tracking-widest mt-1 flex items-center gap-1.5">
+              V4.0 BETA
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
+            </p>
           </div>
         </div>
 
