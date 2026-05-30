@@ -835,9 +835,9 @@ const AutosomalView = memo(({
                         {regionExpanded && (
                           <div className="p-4 pt-0 space-y-4 border-t border-slate-50 dark:border-slate-700/50 mt-2">
                             <div className="grid grid-cols-1 gap-4 mt-2">
-                              {snps.map((snp: any) => (
+                              {snps.map((snp: any, index: number) => (
                                 <SNPCard 
-                                  key={`${snp.rsid}-${snp.continent}-${snp.gene || 'none'}`} 
+                                  key={`${snp.rsid || snp.markerId || index}-${snp.continent}-${snp.gene || 'none'}-${index}`} 
                                   snp={snp} 
                                   isExpanded={expandedSnps.has(snp.rsid)} 
                                   onToggleExpand={toggleExpand} 
@@ -850,9 +850,9 @@ const AutosomalView = memo(({
                     );
                   })
                 ) : (
-                  allSnpsInCategory.map((snp: any) => (
+                  allSnpsInCategory.map((snp: any, index: number) => (
                     <SNPCard 
-                      key={`${snp.rsid}-${snp.continent}-${snp.gene || 'none'}`} 
+                      key={`${snp.rsid || snp.markerId || index}-${snp.continent}-${snp.gene || 'none'}-${index}`} 
                       snp={snp} 
                       isExpanded={expandedSnps.has(snp.rsid)} 
                       onToggleExpand={toggleExpand} 

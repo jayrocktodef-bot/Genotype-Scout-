@@ -168,33 +168,6 @@
     "trait": "Ancestry",
     "description": "Marker associated with elevated frequency in Indigenous American populations."
   },
-  "rs3827760": {
-    "rsid": "rs3827760",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "SAS": 0.05,
-      "AMR": 0.98,
-      "MENA": 0.01,
-      "OCE": 0.5
-    },
-    "subFrequencies": {
-      "Maya": 0.99,
-      "Quechua": 0.98,
-      "Karitiana": 1,
-      "Pima": 0.97,
-      "Nahua": 0.95
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits."
-  },
   "rs10954737": {
     "rsid": "rs10954737",
     "region": "Native American",
@@ -527,60 +500,6 @@
     "deepFrequencies": {},
     "weight": 10,
     "description": "Andean Ancestry Marker - informative for populations from the Andes region."
-  },
-  "rs10456280": {
-    "rsid": "rs10456280",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.02,
-      "EAS": 0.08,
-      "SAS": 0.01,
-      "AMR": 0.98,
-      "MENA": 0.01,
-      "OCE": 0.01
-    },
-    "subFrequencies": {
-      "Maya": 0.98,
-      "Pima": 0.97,
-      "Karitiana": 0.99,
-      "Surui": 0.98,
-      "Quechua": 0.96
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
-  },
-  "rs10456295": {
-    "rsid": "rs10456295",
-    "region": "Native American",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.1,
-      "SAS": 0.01,
-      "AMR": 0.97,
-      "MENA": 0.01,
-      "OCE": 0.02
-    },
-    "subFrequencies": {
-      "Maya": 0.97,
-      "Pima": 0.96,
-      "Karitiana": 0.98,
-      "Surui": 0.97,
-      "Quechua": 0.951
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
   },
   "rs11103500": {
     "rsid": "rs11103500",

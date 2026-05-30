@@ -115,8 +115,18 @@ export function getAllSources() {
   console.log("AncestryIndex count:", getAncestryIndex().getAllMarkers().length);
   console.log("v5MarkersMaster count:", v5MarkersMaster.filter((m: any) => m.frequency && Object.keys(m.frequency).length > 0).length);
   console.log("Total sources length:", sources.length);
-  cachedAllSources = sources;
-  return sources;
+  // Deduplicate by rsid/markerId before caching
+  const seen = new Set<string>();
+  const deduped: any[] = [];
+  for (const s of sources) {
+    const id = (s.rsid || s.markerId || '').toLowerCase();
+    if (!id || !seen.has(id)) {
+      if (id) seen.add(id);
+      deduped.push(s);
+    }
+  }
+  cachedAllSources = deduped;
+  return cachedAllSources;
 }
 
 export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>, markersChunk?: any[]) {
