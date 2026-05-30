@@ -1,144 +1,141 @@
 {
   "rs10456291_afr": {
     "rsid": "rs10456291_afr",
-    "region": "African American",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "AMR": 0.02,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9999,
+      "EUR": 1,
+      "EAS": 1,
+      "SAS": 1,
+      "AMR": 1,
+      "MENA": 1,
+      "OCE": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
-    "gene": "HBB",
+    "weight": 10,
+    "gene": "intergenic_variant",
     "trait": "Ancestry",
-    "description": "Marker identified with historic Gullah/Geechee populations of the US Atlantic coast."
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456292_afr": {
     "rsid": "rs10456292_afr",
-    "region": "African American",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.08,
-      "EAS": 0.01,
-      "AMR": 0.05,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.857,
+      "EUR": 0.7142,
+      "EAS": 0.8073,
+      "SAS": 0.1622,
+      "AMR": 0.222,
+      "MENA": 0.3163,
+      "OCE": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "HBB",
+    "gene": "intergenic_variant",
     "trait": "Ancestry",
-    "description": "Marker associated with Caribbean-descent African American lineages."
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456293_afr": {
     "rsid": "rs10456293_afr",
-    "region": "African American",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9107,
+      "EUR": 0.1223,
+      "EAS": 0.688,
+      "SAS": 0.2158,
+      "AMR": 0.9032,
+      "MENA": 0.1054,
+      "OCE": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
-    "gene": "HBB",
+    "weight": 10,
+    "gene": "intron_variant",
     "trait": "Ancestry",
-    "description": "Marker related to Central/West African origins common across African American populations."
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456302_afr": {
     "rsid": "rs10456302_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.94,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "AMR": 0.02,
-      "SAS": 0.01,
-      "MENA": 0.02
+      "AFR": 0.0009139,
+      "EUR": 0.006454,
+      "EAS": 1,
+      "SAS": 1,
+      "AMR": 0.0003921,
+      "MENA": 1,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.92,
-      "Gambian": 0.93,
-      "Mende": 0.94
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
-    "gene": "EDAR",
-    "trait": "Phenotype",
-    "description": "Variant associated with hair texture common in diverse West African populations."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs9990001_afr": {
     "rsid": "rs9990001_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.001,
-      "AMR": 0.001,
-      "SAS": 0.001,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Bantu_East": 0.97,
-      "Bantu_South": 0.96,
-      "Bantu_West": 0.98
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "HBB",
-    "trait": "Ancestry",
-    "description": "Bantu diagnostic SNP - informative for West-Central and Eastern African Bantu-speaking populations."
-  },
-  "rs10456303_afr": {
-    "rsid": "rs10456303_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.8113,
+      "EUR": 0.3134,
+      "EAS": 0.5019,
+      "SAS": 0.5041,
+      "AMR": 0.3947,
+      "MENA": 0.6199,
+      "OCE": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "gene": "HBB",
-    "trait": "Phenotype",
-    "description": "Marker identified with phenotypic variation in East African Bantu populations."
+    "weight": 8,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10456303_afr": {
+    "rsid": "rs10456303_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.2357,
+      "EUR": 0.8421,
+      "EAS": 0.1907,
+      "SAS": 0.2224,
+      "AMR": 0.1612,
+      "MENA": 0.2109,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs334_afr": {
     "rsid": "rs334_afr",
@@ -165,1124 +162,1015 @@
   },
   "rs10456197_afr": {
     "rsid": "rs10456197_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "C"
     ],
     "frequencies": {
-      "AFR": 0.99,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9187,
+      "EUR": 0.9942,
+      "EAS": 1,
+      "SAS": 0.001449,
+      "AMR": 0.01793,
+      "MENA": 0.0102,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "San": 0.98,
-      "Khoe": 0.95,
-      "Ju|'hoansi": 0.99,
-      "Nama": 0.92,
-      "Basarwa": 0.9
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
-    "description": "Khoisan Ancestry Marker - highly diagnostic for the indigenous Khoe-San populations of Southern Africa."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs12149626_afr": {
     "rsid": "rs12149626_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.1645,
+      "EUR": 0.2036,
+      "EAS": 0.7954,
+      "SAS": 0.909,
+      "AMR": 0.8473,
+      "MENA": 0.7755,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Dinka": 0.98,
-      "Nuer": 0.97,
-      "Shilluk": 0.95,
-      "Luo": 0.85,
-      "Maasai": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Nilotic Ancestry Marker - diagnostic for Nilotic-speaking populations of the Nile Valley and East Africa."
+    "weight": 10,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs12149628_afr": {
     "rsid": "rs12149628_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "T"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.15
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Somali": 0.95,
-      "Oromo": 0.9,
-      "Amhara": 0.85,
-      "Tigray": 0.82,
-      "Afar": 0.88
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Cushitic Ancestry Marker - informative for Afroasiatic-speaking populations of the Horn of Africa."
+    "weight": 2,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs7252508_afr": {
     "rsid": "rs7252508_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.4486,
+      "EUR": 0.6,
+      "EAS": 0.5422,
+      "SAS": 0.5806,
+      "AMR": 0.4508,
+      "MENA": 0.5102,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Biaka": 0.99,
-      "Mbuti": 0.98,
-      "Twa": 0.95,
-      "Baka": 0.96
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 5,
-    "description": "Central African Hunter-Gatherer Marker - diagnostic for Pygmy populations of the Congo Basin."
+    "weight": 6,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456213_afr": {
     "rsid": "rs10456213_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.97,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.362,
+      "EUR": 0.4706,
+      "EAS": 0.6111,
+      "SAS": 0.5611,
+      "AMR": 0.4151,
+      "MENA": 0.4524,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Mende": 0.98,
-      "Gambian": 0.95,
-      "Temne": 0.92,
-      "Limba": 0.9,
-      "Wolof": 0.85
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Upper Guinea Ancestry Marker - informative for populations of the Senegambia and Sierra Leone region."
+    "weight": 6,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456215_afr": {
     "rsid": "rs10456215_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9312,
+      "EUR": 0.1551,
+      "EAS": 0.01928,
+      "SAS": 0.07051,
+      "AMR": 0.1936,
+      "MENA": 0.08219,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.99,
-      "Igbo": 0.95,
-      "Edo": 0.92,
-      "Fon": 0.9,
-      "Ewe": 0.88
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bight of Benin Ancestry Marker - highly informative for Gbe and Yoruboid speaking populations."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456216_afr": {
     "rsid": "rs10456216_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.3759,
+      "EUR": 0.4139,
+      "EAS": 0.3645,
+      "SAS": 0.3758,
+      "AMR": 0.3792,
+      "MENA": 0.363,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Luhya": 0.98,
-      "Baganda": 0.95,
-      "Kikuyu": 0.92,
-      "Chaga": 0.9,
-      "Sukuma": 0.88
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "East African Bantu Marker - informative for Bantu-speaking populations of the Great Lakes region."
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456198_afr": {
     "rsid": "rs10456198_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "T"
+      "G"
     ],
     "frequencies": {
-      "AFR": 0.97,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.0008421,
+      "EUR": 0.004542,
+      "EAS": 1,
+      "SAS": 0.0004151,
+      "AMR": 0.004639,
+      "MENA": 0.9932,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Zulu": 0.98,
-      "Xhosa": 0.96,
-      "Sotho": 0.94,
-      "Tswana": 0.92,
-      "Shona": 0.9
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana speaking populations."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456271_afr": {
     "rsid": "rs10456271_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.4,
-      "EUR": 0.1,
-      "EAS": 0.01,
-      "AMR": 0.05,
-      "SAS": 0.05,
-      "MENA": 0.85
+      "AFR": 0.9982,
+      "EUR": 0.9891,
+      "EAS": 1,
+      "SAS": 0.0002076,
+      "AMR": 0.994,
+      "MENA": 0.003425,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Berber": 0.95,
-      "Kabyle": 0.92,
-      "Mozabite": 0.98,
-      "Tuareg": 0.75,
-      "Riffian": 0.88
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Berber Ancestry Marker - highly informative for the indigenous Amazigh populations of North Africa."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456234_afr": {
     "rsid": "rs10456234_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.85,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "AMR": 0.02,
-      "SAS": 0.02,
-      "MENA": 0.3
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Tuareg": 0.9,
-      "Songhai": 0.85,
-      "Zarma": 0.82,
-      "Hausa": 0.7,
-      "Fulani": 0.65
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Sahelian Ancestry Marker - informative for populations of the Sahel and Southern Sahara."
+    "weight": 2,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456258_afr": {
     "rsid": "rs10456258_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.05
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Kanuri": 0.98,
-      "Bagirmi": 0.92,
-      "Fur": 0.9,
-      "Zaghawa": 0.88,
-      "Maba": 0.85
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Nilo-Saharan Ancestry Marker - diagnostic for populations of the Lake Chad Basin and Darfur."
+    "weight": 2,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456248_afr": {
     "rsid": "rs10456248_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.02,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9216,
+      "EUR": 0.8377,
+      "EAS": 0.6148,
+      "SAS": 0.2654,
+      "AMR": 0.1751,
+      "MENA": 0.1293,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Mossi": 0.98,
-      "Dagomba": 0.95,
-      "Gurma": 0.92,
-      "Senufo": 0.85,
-      "Lobi": 0.8
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana)."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456269_afr": {
     "rsid": "rs10456269_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.88,
-      "EUR": 0.08,
-      "EAS": 0.01,
-      "AMR": 0.02,
-      "SAS": 0.05,
-      "MENA": 0.4
+      "AFR": 0.1277,
+      "EUR": 0.8336,
+      "EAS": 0.9034,
+      "SAS": 0.6925,
+      "AMR": 0.8182,
+      "MENA": 0.1667,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Amhara": 0.95,
-      "Tigray": 0.92,
-      "Gurage": 0.88,
-      "Harari": 0.85,
-      "Argobba": 0.82
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Ethiosemitic Ancestry Marker - informative for the Semitic-speaking populations of the Ethiopian Highlands."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456247_afr": {
     "rsid": "rs10456247_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.04,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9992,
+      "EUR": 0.0009206,
+      "EAS": 0.0002524,
+      "SAS": 0.9997,
+      "AMR": 0.999,
+      "MENA": 1,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Kru": 0.98,
-      "Grebo": 0.95,
-      "Bassa": 0.92,
-      "Krahn": 0.9,
-      "Dan": 0.75
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Kru Ancestry Marker - informative for Kru-speaking populations of the Liberian coast."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456249_afr": {
     "rsid": "rs10456249_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.05,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.2114,
+      "EUR": 0.7439,
+      "EAS": 0.9747,
+      "SAS": 0.7858,
+      "AMR": 0.8371,
+      "MENA": 0.7177,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Bassa": 0.98,
-      "Kru": 0.9,
-      "Grebo": 0.85,
-      "Kpelle": 0.7,
-      "Mano": 0.65
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456252_afr": {
     "rsid": "rs10456252_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.97,
-      "AMR": 0.03,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.02729,
+      "EUR": 0.177,
+      "EAS": 0.004059,
+      "SAS": 0.9564,
+      "AMR": 0.9291,
+      "MENA": 0.02721,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Kpelle": 0.98,
-      "Loma": 0.94,
-      "Mano": 0.92,
-      "Dan": 0.88,
-      "Mende": 0.75
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456256_afr": {
     "rsid": "rs10456256_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.02,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.8634,
+      "EUR": 0.0000147,
+      "EAS": 0.05002,
+      "SAS": 0.1027,
+      "AMR": 0.09737,
+      "MENA": 0.9146,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Bakongo": 0.98,
-      "Mbundu": 0.9,
-      "Ovimbundu": 0.85,
-      "Kongo": 0.96,
-      "Luba": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bakongo Ancestry Marker - diagnostic for populations of the former Kingdom of Kongo."
+    "weight": 10,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456243_afr": {
     "rsid": "rs10456243_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "G"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.04,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.3822,
+      "EUR": 0.4174,
+      "EAS": 0.309,
+      "SAS": 0.6812,
+      "AMR": 0.5047,
+      "MENA": 0.4218,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Edo": 0.98,
-      "Esan": 0.95,
-      "Yoruba": 0.8,
-      "Igbo": 0.75,
-      "Ijaw": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Edo Ancestry Marker - informative for populations of the former Benin Empire (Nigeria)."
+    "weight": 6,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456244_afr": {
     "rsid": "rs10456244_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "C"
     ],
     "frequencies": {
-      "AFR": 0.97,
-      "AMR": 0.05,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.00007278,
+      "EUR": 0.2476,
+      "EAS": 0.9738,
+      "SAS": 0.8692,
+      "AMR": 0.8193,
+      "MENA": 0.2551,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Mende": 0.98,
-      "Temne": 0.85,
-      "Limba": 0.8,
-      "Vai": 0.78,
-      "Mandinka": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Mende Ancestry Marker - diagnostic for Mande-speaking populations of Sierra Leone."
+    "weight": 10,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456245_afr": {
     "rsid": "rs10456245_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.03,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.7838,
+      "EUR": 0.7529,
+      "EAS": 0.02638,
+      "SAS": 0.8701,
+      "AMR": 0.1602,
+      "MENA": 0.7619,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Limba": 0.98,
-      "Temne": 0.9,
-      "Mende": 0.85,
-      "Loko": 0.82,
-      "Kuranko": 0.75
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Limba Ancestry Marker - diagnostic for indigenous populations of Sierra Leone."
+    "weight": 10,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456257_afr": {
     "rsid": "rs10456257_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.97,
-      "AMR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.00151285930408472,
+      "EUR": 1,
+      "EAS": 1,
+      "SAS": 1,
+      "AMR": 1,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Baluba": 0.97,
-      "Luba": 0.98,
-      "Mongo": 0.85,
-      "Kongo": 0.75,
-      "Bemba": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Baluba Ancestry Marker - informative for Luba populations of the Democratic Republic of Congo."
+    "weight": 10,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456259_afr": {
     "rsid": "rs10456259_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.95,
-      "AMR": 0.02,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Chokwe": 0.98,
-      "Lunda": 0.92,
-      "Luvale": 0.9,
-      "Mbundu": 0.75,
-      "Ovimbundu": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Chokwe Ancestry Marker - informative for populations of Angola, DRC, and Zambia."
+    "weight": 2,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456260_afr": {
     "rsid": "rs10456260_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.94,
-      "AMR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "SAS": 0,
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Lozi": 0.97,
-      "Kololo": 0.92,
-      "Luyana": 0.9,
-      "Bemba": 0.6,
-      "Tswana": 0.55
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Lozi Ancestry Marker - diagnostic for populations of the Barotse Floodplain (Zambia)."
+    "weight": 2,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456261_afr": {
     "rsid": "rs10456261_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.97,
-      "AMR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.9107,
+      "EUR": 0.9306,
+      "EAS": 0.6671,
+      "SAS": 0.1786,
+      "AMR": 0.2135,
+      "MENA": 0.8027,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Bemba": 0.97,
-      "Lunda": 0.94,
-      "Lozi": 0.85,
-      "Chewa": 0.8,
-      "Tonga": 0.75
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456262_afr": {
     "rsid": "rs10456262_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "T"
+      "C"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.02,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.108,
+      "EUR": 0.1331,
+      "EAS": 0.3512,
+      "SAS": 0.2472,
+      "AMR": 0.7338,
+      "MENA": 0.2415,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Tonga": 0.98,
-      "Ila": 0.95,
-      "Lozi": 0.9,
-      "Bemba": 0.75,
-      "Shona": 0.7
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley."
+    "weight": 8,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456263_afr": {
     "rsid": "rs10456263_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.00004813,
+      "EUR": 0.9968,
+      "EAS": 1,
+      "SAS": 0.9928,
+      "AMR": 0.9995,
+      "MENA": 1,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Chewa": 0.98,
-      "Nyanja": 0.96,
-      "Tumbuka": 0.9,
-      "Yao": 0.85,
-      "Sena": 0.8
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Chewa Ancestry Marker - diagnostic for Maravi populations of Malawi and Zambia."
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456265_afr": {
     "rsid": "rs10456265_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "G"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "AMR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
+      "AFR": 0.2686,
+      "EUR": 0.8327,
+      "EAS": 0.6779,
+      "SAS": 0.7301,
+      "AMR": 0.8332,
+      "MENA": 0.8946,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Makua": 0.98,
-      "Lomwe": 0.95,
-      "Yao": 0.9,
-      "Shona": 0.7,
-      "Chewa": 0.65
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Makua Ancestry Marker - informative for Bantu populations of Northern Mozambique."
+    "weight": 8,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456266_afr": {
     "rsid": "rs10456266_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.88,
-      "EUR": 0.02,
-      "EAS": 0,
-      "AMR": 0.02,
-      "SAS": 0,
-      "MENA": 0.08
+      "AFR": 0.1275,
+      "EUR": 0.01785,
+      "EAS": 0.003284,
+      "SAS": 0.03959,
+      "AMR": 0.9718,
+      "MENA": 0.983,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Fulani": 0.95,
-      "Hausa": 0.88,
-      "Yoruba": 0.8
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 2,
-    "description": "High significance Nigerian Marker - Fulani focus."
+    "weight": 10,
+    "gene": "regulatory_region_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456267_afr": {
     "rsid": "rs10456267_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
+      "AFR": 0,
+      "EUR": 0,
       "EAS": 0,
-      "AMR": 0.03,
       "SAS": 0,
-      "MENA": 0
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Edo": 0.99,
-      "Esan": 0.95,
-      "Yoruba": 0.92
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "description": "High significance Nigerian Marker - Edo focus."
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs10456268_afr": {
     "rsid": "rs10456268_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "G"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
+      "AFR": 0,
+      "EUR": 0,
       "EAS": 0,
-      "AMR": 0.04,
       "SAS": 0,
-      "MENA": 0
+      "AMR": 0,
+      "MENA": 0,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Ibibio": 0.99,
-      "Efik": 0.96,
-      "Igbo": 0.92
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "description": "High significance Nigerian Marker - Ibibio focus."
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs2814778_afr": {
     "rsid": "rs2814778_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.1,
-      "SAS": 0.01,
-      "MENA": 0.05
+      "AFR": 0.8577,
+      "EUR": 0.002127,
+      "EAS": 1,
+      "SAS": 0.006077,
+      "AMR": 0.0504,
+      "MENA": 0.7872,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Coastal_Malagasy": 0.75,
-      "Highland_Malagasy": 0.35,
-      "Bantu_SE": 0.98
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 8,
-    "gene": "ACKR1",
-    "trait": "Malaria Resistance",
-    "description": "Duffy Null Phenotype. Essential for tracking the Bantu contribution to the Malagasy gene pool."
+    "weight": 10,
+    "gene": "5_prime_UTR_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs16891982_afr": {
     "rsid": "rs16891982_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "AMR": 0.05
+      "AFR": 0.8705,
+      "EUR": 0.0305,
+      "EAS": 0.9987,
+      "SAS": 0.1035,
+      "AMR": 0.4019,
+      "MENA": 0.3907,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.98,
-      "Esan": 0.96,
-      "Mende": 1,
-      "Gambian": 0.98,
-      "Luhya": 0.931
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Ancestry Informative Marker for African populations."
+    "weight": 10,
+    "gene": "missense_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs1800414_afr": {
     "rsid": "rs1800414_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
-      "C"
+      "A"
     ],
     "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.05,
-      "EAS": 0.9,
-      "AMR": 0.1
+      "AFR": 0.9992,
+      "EUR": 0.0001791,
+      "EAS": 0.5816,
+      "SAS": 0.9959,
+      "AMR": 0.0008274,
+      "MENA": 0.9976,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 4,
-    "description": "Ancestry Informative Marker for African populations."
+    "weight": 10,
+    "gene": "missense_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs2862_afr": {
     "rsid": "rs2862_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.9,
-      "EUR": 0.1,
-      "EAS": 0.05,
-      "AMR": 0.1
-    },
-    "subFrequencies": {
-      "Yoruba": 0.9,
-      "Esan": 0.882,
-      "Mende": 0.918,
-      "Gambian": 0.9,
-      "Luhya": 0.855
-    },
-    "deepFrequencies": {},
-    "weight": 3.5,
-    "description": "Ancestry Informative Marker for African populations."
-  },
-  "rs3340_afr": {
-    "rsid": "rs3340_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.8,
-      "EUR": 0.2,
-      "EAS": 0.1,
-      "AMR": 0.2
-    },
-    "subFrequencies": {
-      "Yoruba": 0.8,
-      "Esan": 0.784,
-      "Mende": 0.816,
-      "Gambian": 0.8,
-      "Luhya": 0.76
-    },
-    "deepFrequencies": {},
-    "weight": 2.5,
-    "description": "Ancestry Informative Marker for African populations."
-  },
-  "rs1572318_afr": {
-    "rsid": "rs1572318_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
-    "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Ancestry Informative Marker for African populations."
-  },
-  "rs10456206_afr": {
-    "rsid": "rs10456206_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.9,
-      "EUR": 0.05,
-      "EAS": 0.01,
-      "AMR": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.9,
-      "Esan": 0.882,
-      "Mende": 0.918,
-      "Gambian": 0.9,
-      "Luhya": 0.855
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Ancestry Informative Marker for African populations."
-  },
-  "rs10456207_afr": {
-    "rsid": "rs10456207_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.85,
-      "EUR": 0.1,
-      "EAS": 0.01,
-      "AMR": 0.01
-    },
-    "subFrequencies": {
-      "Yoruba": 0.85,
-      "Esan": 0.833,
-      "Mende": 0.867,
-      "Gambian": 0.85,
-      "Luhya": 0.807
-    },
-    "deepFrequencies": {},
-    "weight": 3.5,
-    "description": "Ancestry Informative Marker for African populations."
-  },
-  "rs1800407_afr": {
-    "rsid": "rs1800407_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.08,
-      "EAS": 0.05,
-      "AMR": 0.1
-    },
-    "subFrequencies": {
-      "Yoruba": 0.92,
-      "Esan": 0.902,
-      "Mende": 0.938,
-      "Gambian": 0.92,
-      "Luhya": 0.874
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Ancestry Informative Marker for African populations."
-  },
-  "rs10456218_afr": {
-    "rsid": "rs10456218_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.98,
-      "AMR": 0.05,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Akan": 0.98,
-      "Yoruba": 0.85,
-      "Igbo": 0.8,
-      "Mandinka": 0.75,
-      "Mossi": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast."
-  },
-  "rs10793168_afr": {
-    "rsid": "rs10793168_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.92,
-      "EUR": 0.04,
-      "EAS": 0.02,
-      "AMR": 0,
-      "SAS": 0,
-      "MENA": 0
+      "AFR": 0.666,
+      "EUR": 0.25,
+      "EAS": 0.4581,
+      "SAS": 0.7657,
+      "AMR": 0.3795,
+      "MENA": 0.7993,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.92,
-      "Esan": 0.902,
-      "Mende": 0.938,
-      "Gambian": 0.92,
-      "Luhya": 0.874
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 1,
-    "description": "UT-AIM250 Marker - African informative."
+    "weight": 8,
+    "gene": "3_prime_UTR_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
-  "rs10888503_afr": {
-    "rsid": "rs10888503_afr",
-    "region": "African",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.85,
-      "EUR": 0.05,
-      "EAS": 0.1,
-      "AMR": 0,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "Yoruba": 0.85,
-      "Esan": 0.833,
-      "Mende": 0.867,
-      "Gambian": 0.85,
-      "Luhya": 0.807
-    },
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "UT-AIM250 Marker - African informative."
-  },
-  "rs10954606_afr": {
-    "rsid": "rs10954606_afr",
-    "region": "African",
+  "rs3340_afr": {
+    "rsid": "rs3340_afr",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.02,
-      "EAS": 0.01,
-      "AMR": 0,
-      "SAS": 0,
-      "MENA": 0
+      "AFR": 0.0846,
+      "EUR": 0.7801,
+      "EAS": 0.2304,
+      "SAS": 0.2662,
+      "AMR": 0.4333,
+      "MENA": 0.7538,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.95,
-      "Esan": 0.931,
-      "Mende": 0.969,
-      "Gambian": 0.95,
-      "Luhya": 0.902
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 1,
-    "description": "UT-AIM250 Marker - African informative."
+    "weight": 8,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs1572318_afr": {
+    "rsid": "rs1572318_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.4401,
+      "EUR": 0.6393,
+      "EAS": 0.5944,
+      "SAS": 0.5388,
+      "AMR": 0.3419,
+      "MENA": 0.3878,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10456206_afr": {
+    "rsid": "rs10456206_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.002515,
+      "EUR": 0.0185,
+      "EAS": 1,
+      "SAS": 0.00315,
+      "AMR": 0.9888,
+      "MENA": 0.9945,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "3_prime_UTR_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10456207_afr": {
+    "rsid": "rs10456207_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.04693,
+      "EUR": 0.7428,
+      "EAS": 0.01394,
+      "SAS": 0.1132,
+      "AMR": 0.2212,
+      "MENA": 0.9422,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs1800407_afr": {
+    "rsid": "rs1800407_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01102,
+      "EUR": 0.08027,
+      "EAS": 0.9996,
+      "SAS": 0.9687,
+      "AMR": 0.04569,
+      "MENA": 0.03363,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "missense_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10456218_afr": {
+    "rsid": "rs10456218_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.2807,
+      "EUR": 0.5831,
+      "EAS": 0.2944,
+      "SAS": 0.342,
+      "AMR": 0.5191,
+      "MENA": 0.4966,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10793168_afr": {
+    "rsid": "rs10793168_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.9957,
+      "EUR": 0.01179,
+      "EAS": 0.09348,
+      "SAS": 0.06131,
+      "AMR": 0.01006,
+      "MENA": 0.02381,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10888503_afr": {
+    "rsid": "rs10888503_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.5257,
+      "EUR": 0.3549,
+      "EAS": 0.6151,
+      "SAS": 0.3687,
+      "AMR": 0.6278,
+      "MENA": 0.6327,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "intergenic_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
+  },
+  "rs10954606_afr": {
+    "rsid": "rs10954606_afr",
+    "region": "Ancestry Informative",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.8939,
+      "EUR": 0.1823,
+      "EAS": 0.9594,
+      "SAS": 0.1776,
+      "AMR": 0.1239,
+      "MENA": 0.1828,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs11122330_afr": {
     "rsid": "rs11122330_afr",
-    "region": "African",
+    "region": "Ancestry Informative",
     "color": "#95A5A6",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.88,
-      "EUR": 0.06,
-      "EAS": 0.04,
-      "AMR": 0,
-      "SAS": 0,
-      "MENA": 0
+      "AFR": 0.1592,
+      "EUR": 0.134,
+      "EAS": 0.1168,
+      "SAS": 0.8074,
+      "AMR": 0.1535,
+      "MENA": 0.8095,
+      "OCE": 0.1
     },
-    "subFrequencies": {
-      "Yoruba": 0.88,
-      "Esan": 0.862,
-      "Mende": 0.898,
-      "Gambian": 0.88,
-      "Luhya": 0.836
-    },
+    "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 1,
-    "description": "UT-AIM250 Marker - African informative."
+    "weight": 8,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Enriched Ancestry Informative Marker"
   },
   "rs11162487_afr": {
     "rsid": "rs11162487_afr",
@@ -21241,7 +21129,7 @@
   },
   "rs13097409": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs6726715_amr": {
     "rsid": "rs6726715_amr",
@@ -26950,11 +26838,11 @@
   },
   "rs1800401": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1805005": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1805007": {
     "rsid": "rs1805007",
@@ -27017,11 +26905,11 @@
   },
   "rs910873": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs401681": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs12203592": {
     "rsid": "rs12203592",
@@ -27046,47 +26934,47 @@
   },
   "rs13191343": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs10484554": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs6677595": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs20541": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2228145": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2897442": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs61816761": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs10927670": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs4133274": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs7531806": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1159268": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs12785878": {
     "rsid": "rs12785878",
@@ -27121,31 +27009,31 @@
   },
   "rs7997012": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs322458": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs4959053": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs12206499": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1063635": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs11803731": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs17646946": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs4778138": {
     "rsid": "rs4778138",
@@ -27205,23 +27093,23 @@
   },
   "rs2180439": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1385699": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs6625163": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs9321460": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs873549": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2228479": {
     "rsid": "rs2228479",
@@ -27286,23 +27174,23 @@
   },
   "rs1799750": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1800012": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2660753": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs763035": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2282458": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs12821256": {
     "rsid": "rs12821256",
@@ -27331,47 +27219,47 @@
   },
   "rs28777": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs6152": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1160312": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs700518": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs35264875": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1110400": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2282679": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs10741657": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "eyecolor": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "haircolor": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "skintone": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs10456370_cen": {
     "rsid": "rs10456370_cen",
@@ -40258,27 +40146,27 @@
   },
   "rs3087243": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs7574865": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2205960": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2066853": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs240736": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs2476601": {
     "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "reason": "API error: timeout of 45000ms exceeded"
   },
   "rs1393350": {
     "rsid": "rs1393350",
@@ -48269,8 +48157,28 @@
     "trait": "Ancestry"
   },
   "rs495959": {
-    "SKIP": true,
-    "reason": "Ensembl API failure: timeout of 10000ms exceeded"
+    "rsid": "rs495959",
+    "chromosome": "1",
+    "region": "East Asian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "ref": "C",
+    "alt": "A",
+    "frequencies": {
+      "AFR": 0.1923,
+      "EUR": 0.2195,
+      "EAS": 0.3935,
+      "AMR": 0.3104,
+      "SAS": 0.2288
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "intron_variant",
+    "trait": "Ancestry",
+    "description": "Validated Ancestry Informative Marker (AIM) for East Asian lineages, resolving regional allele distributions."
   },
   "rs1323723": {
     "rsid": "rs1323723",
@@ -85420,4 +85328,94 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2,
-    "description": "Validated Ancestry Informative Marker (AIM) for East Asian lineages, resolving r
+    "description": "Validated Ancestry Informative Marker (AIM) for East Asian lineages, resolving regional allele distributions.",
+    "chromosome": "3",
+    "ref": "G",
+    "alt": "A",
+    "gene": "Intergenic",
+    "trait": "Ancestry"
+  },
+  "rs651630": {
+    "rsid": "rs651630",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.6232,
+      "EUR": 0.5097,
+      "EAS": 0.5464,
+      "AMR": 0.4504,
+      "SAS": 0.4412
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Validated Ancestry Informative Marker (AIM) for African lineages, resolving regional allele distributions.",
+    "chromosome": "3",
+    "ref": "G",
+    "alt": "A",
+    "gene": "Intergenic",
+    "trait": "Ancestry"
+  },
+  "rs7640441": {
+    "rsid": "rs7640441",
+    "region": "African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.6394,
+      "EUR": 0.4381,
+      "EAS": 0.5589,
+      "AMR": 0.3397,
+      "SAS": 0.5938
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 4,
+    "description": "Validated Ancestry Informative Marker (AIM) for African lineages, resolving regional allele distributions.",
+    "chromosome": "3",
+    "ref": "C",
+    "alt": "A",
+    "gene": "Intergenic",
+    "trait": "Ancestry"
+  },
+  "rs7610077": {
+    "rsid": "rs7610077",
+    "region": "European",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.4238,
+      "EUR": 0.5797,
+      "EAS": 0.4905,
+      "AMR": 0.5026,
+      "SAS": 0.4983
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 2,
+    "description": "Validated Ancestry Informative Marker (AIM) for European lineages, resolving regional allele distributions.",
+    "chromosome": "3",
+    "ref": "G",
+    "alt": "A",
+    "gene": "Intergenic",
+    "trait": "Ancestry"
+  },
+  "rs4679115": {
+    "rsid": "rs4679115",
+    "region": "East Asian",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.3521,
+      "EUR": 0.4995,
+      "EAS": 0.5337,
+      "AMR":
