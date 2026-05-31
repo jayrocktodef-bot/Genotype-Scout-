@@ -714,7 +714,7 @@ const AutosomalView = memo(({
   
   const allResults = datasets[activeDatasetIndex]?.results || [];
   const totalDatabaseMarkers = allResults.length || 1;
-  const totalMatchedCount = allResults.filter(s => s.status === 'matched' || s.status === 'partial').length;
+  const totalMatchedCount = allResults.filter((s: any) => s.status === 'matched' || s.status === 'partial').length;
 
   const toggleRegion = (region: string) => {
     setExpandedRegions(prev => {
@@ -1282,7 +1282,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                        paddingAngle={1}
                        dataKey="value"
                      >
-                       {markerPieData.map((entry, index) => (
+                       {markerPieData.map((entry: any, index: number) => (
                          <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch)} />
                        ))}
                      </Pie>

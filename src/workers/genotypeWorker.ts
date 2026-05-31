@@ -66,7 +66,7 @@ async function runGenotypeScout(
       })()
     ]);
 
-    const sampleId = names[0] ? extractSampleId(names[0]) : undefined;
+    const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
     const oracleResults = await calculateAncestryOracle(ancestryResult.filter(r => r.category === 'Ancestry'), undefined, undefined, bloodResult.grafResults_raw, bloodResult.mdlpResults_raw, bloodResult.comprehensiveResults, sampleId);
     
     return { ancestryResult, bloodResult, oracleResults };
@@ -150,7 +150,7 @@ self.onmessage = async (e: MessageEvent) => {
     const predictedMtDNA = analyzeMtDNA(mergedMtMap);
     
     const userGenotypes = Object.entries(imputedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
-    const sampleId = names[0] ? extractSampleId(names[0]) : undefined;
+    const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
     const subpopulationOracle = processSubpopulations(userGenotypes, [], sampleId, mergedSnpMetaMap);
     const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
     

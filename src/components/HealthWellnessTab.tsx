@@ -155,7 +155,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
             <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px]">Pharmacogenomic Alerts</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {medicationReports.map((report, idx) => (
+            {medicationReports.map((report: any, idx: number) => (
               <motion.div
                 key={`${report.drug}-${idx}`}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -184,7 +184,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
             <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px]">Dietary Insights</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {dietaryInsights.map((insight, idx) => (
+            {dietaryInsights.map((insight: any, idx: number) => (
               <motion.div
                 key={`${insight.trait}-${idx}`}
                 initial={{ opacity: 0, y: 10 }}

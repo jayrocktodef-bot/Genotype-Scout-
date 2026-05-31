@@ -235,7 +235,7 @@ export function runAncestryInference(
         [matchedContinent]: { low: 100.0, high: 100.0 }
       },
       matchedSample: {
-        sampleId,
+        sampleId: sampleId!,
         population_code: info.population_code,
         super_population_code: info.super_population_code
       }

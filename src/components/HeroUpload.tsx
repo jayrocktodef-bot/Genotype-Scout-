@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'motion/react';
-import { Upload, Shield, Zap, Lock, Database, Dna, ArrowRight } from 'lucide-react';
+import { Upload, Shield, Zap, Lock, Database, Dna, ArrowRight, Info } from 'lucide-react';
 
 interface HeroUploadProps {
   onFiles: (files: FileList) => void;
@@ -33,7 +33,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           Your privacy is our core architecture.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 max-w-md mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 max-w-md mx-auto">
           <button 
             disabled={processing}
             onClick={() => fileInputRef.current?.click()}
@@ -63,6 +63,25 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             className="hidden" 
             accept=".txt,.csv,.zip"
           />
+        </div>
+
+
+        {/* Beta + scope disclaimer */}
+        <div className="max-w-2xl mx-auto mb-20 rounded-2xl border border-amber-200 bg-amber-50/70 px-5 py-4 text-left">
+          <div className="flex items-start gap-3">
+            <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-700 mb-1">
+                Beta — Research &amp; Educational Tool
+              </p>
+              <p className="text-sm text-amber-900/90 leading-relaxed">
+                Genotype Scout is in active <span className="font-bold">beta</span> and is <span className="font-bold">not an ethnicity calculator</span>.
+                It is a research and educational tool for exploring your raw genotype data, and its results are
+                <span className="font-bold"> not directly comparable</span> to the ethnicity estimates from commercial tests
+                like 23andMe or AncestryDNA. Findings are exploratory and are not medical or diagnostic advice.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Informational Bento Grid */}

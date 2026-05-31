@@ -212,7 +212,7 @@ export function calculateProAncestry(
     markersUsed++;
     b[i] = dosage;
 
-    let weight = markerWeightMap[rsid] || 1.0;
+    let weight = markerWeightMap?.[rsid] || 1.0;
     if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = Math.max(weight, 10.0);
     if (commercialSet.has(rsid)) {
         commercialAimsDetected++;

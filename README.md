@@ -9,7 +9,15 @@
 ---
 
 ## 🔒 Commitment to Privacy & Security
-The core philosophy of Genotype Scout is binary-level privacy. By leveraging high-performance **Web Workers** for local processing, we ensure that raw genetic data is parsed, analyzed, and visualized securely within the client environment. No raw data is transmitted to third-party servers for standard analysis.
+The core philosophy of Genotype Scout is binary-level privacy. Your raw DNA file is parsed, analyzed, and visualized **entirely in your browser** using high-performance Web Workers. Your raw genetic data is never uploaded to or processed by any server.
+
+To be fully transparent about what stays on your device and what (optionally) leaves it:
+
+- **Core analysis is 100% local.** Raw DNA parsing, ancestry, haplogroups, and health/trait analysis run client-side. No raw data is transmitted anywhere.
+- **Results are saved on your device.** Computed results are stored locally in your browser's IndexedDB so your session persists between visits. They remain on this device until you use the in-app **Clear** action (or clear your browser storage), and are not encrypted at rest — avoid running the tool on a shared/public computer, or clear your data when finished.
+- **Optional, opt-in features that involve third parties:**
+  - *Anonymous usage analytics* (Vercel Analytics & Speed Insights) collect aggregate page/performance metrics. No genetic data is included.
+  - *Export to Google Slides* requires you to sign in with Google and sends an ancestry summary (health markers excluded) to **your own** Google account. It runs only when you explicitly trigger an export.
 
 ## ⚙️ Technical Architecture
 Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing tasks without compromising the user experience.

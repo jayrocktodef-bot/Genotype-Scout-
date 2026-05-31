@@ -9,7 +9,7 @@ export function calculateSecretorStatus(userSnps: Record<string, string> | undef
   const fut2_asian = userSnps['rs1047781']; // The primary East Asian marker
 
   let status = "Unknown";
-  let traits = [];
+  let traits: string[] = [];
 
   // Logic for rs601338
   if (fut2 === 'AA') {

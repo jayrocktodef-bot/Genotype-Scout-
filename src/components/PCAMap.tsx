@@ -13,8 +13,8 @@ export const PCAMap: React.FC<PCAMapProps> = ({ userCoordinates }) => {
 
   // Find min/max dynamically to ensure all populations fit on screen
   const extents = useMemo(() => {
-    const pc1s = pcaData.map(d => d.pc1);
-    const pc2s = pcaData.map(d => d.pc2);
+    const pc1s = pcaData.map((d: any) => d.pc1);
+    const pc2s = pcaData.map((d: any) => d.pc2);
     if (userCoordinates) {
       pc1s.push(userCoordinates.pc1);
       pc2s.push(userCoordinates.pc2);
@@ -50,7 +50,7 @@ export const PCAMap: React.FC<PCAMapProps> = ({ userCoordinates }) => {
           <line x1={width / 2} y1={padding} x2={width / 2} y2={height - padding} stroke="#1e293b" strokeWidth="1" strokeDasharray="4 4" />
 
           {/* Reference Populations */}
-          {pcaData.map((pop, idx) => {
+          {pcaData.map((pop: any, idx: number) => {
             const cx = scaleX(pop.pc1);
             const cy = height - scaleY(pop.pc2); // Invert Y
             

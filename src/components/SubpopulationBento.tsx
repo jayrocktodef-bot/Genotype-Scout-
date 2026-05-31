@@ -185,7 +185,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               <p className="text-sm text-slate-400 italic">No specific subpopulation markers detected.</p>
             ) : (
               <div className="space-y-4">
-                {results.breakdown.slice(0, 8).map((item, idx) => {
+                {results.breakdown.slice(0, 8).map((item: any, idx: number) => {
                   const label = getProximityLabel(item.distance);
                   const isContinental = isContinentalMatch(item?.subpop);
                   return (
