@@ -1,8 +1,10 @@
-<div align="center"><img width="1200" height="475" alt="Banner" src="https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
+<div align="center"><img width="1200" height="475" alt="Genotype Scout banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
 # Genotype Scout
 
-**Genotype Scout** is a professional-grade, privacy-first genomic analysis suite created by Jequan Davis. Designed for precision, this platform allows users to process their raw DNA files locally, ensuring sensitive genetic data never leaves the user's browser or device unnecessarily. 
+> ⚠️ **Beta — research & educational tool.** Genotype Scout is in active beta and is **not an ethnicity calculator**. Its results are exploratory, are **not directly comparable** to the ethnicity estimates from commercial tests (23andMe, AncestryDNA), and are **not medical or diagnostic advice**.
+
+**Genotype Scout** is a privacy-first genomic analysis suite created by Jequan Davis. It lets you process your raw DNA files **entirely in your browser**, so sensitive genetic data never leaves your device for standard analysis.
 
 [Access the hosted application here](https://witg-genotype-scout.vercel.app/)
 
@@ -20,12 +22,12 @@ To be fully transparent about what stays on your device and what (optionally) le
   - *Export to Google Slides* requires you to sign in with Google and sends an ancestry summary (health markers excluded) to **your own** Google account. It runs only when you explicitly trigger an export.
 
 ## ⚙️ Technical Architecture
-Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing tasks without compromising the user experience.
+Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing without compromising the user experience.
 
-*   **Runtime:** React 18+ with Vite.
-*   **Infrastructure:** TypeScript for mission-critical type safety across all genetic calculations.
-*   **Performance:** Offloads heavy string parsing and matrix calculations to Web Workers to ensure a responsive UI during data heavy-lifting.
-*   **AI Integration:** Optional AI-powered features for trait analysis (requires API key).
+*   **Runtime:** React 19 with Vite.
+*   **Language:** TypeScript in `strict` mode for type safety across all genetic calculations.
+*   **Performance:** Heavy string parsing and matrix calculations are offloaded to Web Workers to keep the UI responsive. The production bundle is code-split (large genomic datasets and the ML runtime load on demand) so the app shell loads fast.
+*   **On-device ML:** A local ONNX model runs **in the browser** via `onnxruntime-web` — no cloud calls and no API key required.
 
 ## 🧬 Forensic & High-Resolution Analysis
 We utilize specialized, industry-recognized forensic panels to maximize the accuracy of our reports.
@@ -41,30 +43,30 @@ We utilize specialized, industry-recognized forensic panels to maximize the accu
 ## 📋 Feature Breakdown
 
 ### 🌍 High-Precision Ancestry
-Calculate complex admixture percentages using advanced Least Squares Methods. Compare your unique genotype against dense population frequency datasets to interpret your ancestral origins with high dimensionality.
+Calculate complex admixture percentages using advanced Least Squares (NNLS) methods. Your genotype is compared against dense population frequency datasets to interpret ancestral origins with high dimensionality.
 
 ### 🏛️ Ancient DNA Oracle
-Utilize weighted Ancient DNA matching. Our engine applies specific weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing high-confidence matches to ancestral populations.
+Weighted Ancient DNA matching. The engine applies weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing higher-confidence matches to ancestral populations.
 
 ### 🧠 Haplogroup Classification
-Hierarchical matching systems identify your Terminal SNP. Navigate complex paternal and maternal lineages with advanced classification logic, prioritizing the highest hierarchical rank for maximum specificity.
+Hierarchical matching identifies your terminal SNP. Navigate paternal (Y-DNA) and maternal (mtDNA) lineages with classification logic that prioritizes the highest hierarchical rank for maximum specificity.
 
 ### 🩺 Health & Wellness Reports
-Actionable insights based on your genotype:
-*   **ABO Blood Type:** AI-assisted inference.
-*   **Secretor Status:** FUT2 and matching markers analysis.
-*   **APOE Risk:** Genetic marker analysis for health-related metrics.
+Educational, genotype-based insights (not medical advice):
+*   **ABO & Rh Blood Type:** inferred from genotype markers.
+*   **Secretor Status:** FUT2 and related marker analysis.
+*   **APOE & other risk markers:** genetic marker analysis for health-related context.
 
 ---
 
-## 🚀 Installation
+## 🚀 Local Development
 
-Ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
+Ensure you have [Node.js](https://nodejs.org/) (v20+) installed, then:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/genotype-scout.git
-   cd genotype-scout
+   git clone https://github.com/jayrocktodef-bot/WITG-Genotype-Scout.git
+   cd WITG-Genotype-Scout
    ```
 
 2. **Install dependencies:**
@@ -72,16 +74,18 @@ Ensure you have [Node.js](https://nodejs.org/) installed, then follow these step
    npm install
    ```
 
-3. **Configure Environment:**
-   You will need a Gemini API Key to enable advanced AI-powered trait interpretation. Create a `.env` file in the root directory:
-   ```env
-   GEMINI_API_KEY=your_actual_key_here
-   ```
-
-4. **Start the development server:**
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
+
+### Useful scripts
+```bash
+npm run build          # production build (runs the data-JSON validation guard first)
+npm test               # run the vitest suite
+npm run lint           # type-check (tsc --noEmit, strict)
+npm run validate:json  # verify all data JSON files parse (guards against truncation)
+```
 
 ---
 
