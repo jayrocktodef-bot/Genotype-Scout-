@@ -18,7 +18,9 @@
     "build-ancient": "tsx scripts/build-master-ancient.ts",
     "enrich-markers": "tsx scripts/enrich-marker-metadata.ts",
     "test": "vitest run",
-    "validate:data": "tsx src/utils/dataValidator.ts"
+    "validate:data": "tsx src/utils/dataValidator.ts",
+    "validate:json": "node scripts/validate-data-json.mjs",
+    "prebuild": "node scripts/validate-data-json.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
