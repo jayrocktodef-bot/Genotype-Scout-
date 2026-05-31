@@ -89,9 +89,9 @@ export const ModernAncestryOracle = memo(({
           <div className="flex gap-4 items-start text-[#F5F6F7]">
             <Dna className="w-8 h-8 text-teal-400 mt-1 shrink-0" />
             <div>
-              <h4 className="font-extrabold text-base tracking-tight mb-1">Euclidean Distance High Resolution Oracle</h4>
+              <h4 className="font-extrabold text-base tracking-tight mb-1">Non-Negative Least Squares (NNLS) Optimization Oracle</h4>
               <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
-                The Ancestry Oracle is not a classic "ethnicity calculator." It directly analyzes your exact Ancestry Informative Markers (AIMs) database against modern 1000 Genomes references using raw genetic dosages.
+                The Ancestry Oracle is not a classic "ethnicity calculator." It directly analyzes your exact Ancestry Informative Markers (AIMs) database against modern 1000 Genomes references using raw genetic dosages through Non-Negative Least Squares optimization.
               </p>
             </div>
           </div>

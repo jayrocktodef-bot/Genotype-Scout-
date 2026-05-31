@@ -81,18 +81,13 @@ export const getMethodologyData = (tabId: string): MethodologyContent => {
       case 'oracle':
         return {
           title: 'Deep Regional Match Matching',
-          algName: 'High-Resolution Euclidean Ancestry Allocation (Oracle v3)',
-          description: 'Instead of relying on broad, imputed percentages that smear regional boundaries, this oracle computes direct multi-locus Euclidean distances between your observed genotypes and reference-kernel subpopulations. Evaluates actual allelic dosages directly across 2,576 high-resolution AIMs in the HO reference panel.',
+          algName: 'Non-Negative Least Squares (NNLS) Ancestry Allocation (Oracle v3)',
+          description: 'Instead of relying on broad, imputed percentages that smear regional boundaries, this oracle computes direct multi-locus Non-Negative Least Squares (NNLS) optimization between your observed genotypes and reference-kernel subpopulations. This rigorous approach ensures ancestral admixtures sum precisely to 100% while eliminating negative probability artifacts often found in simpler distance models.',
           formulas: [
             {
-              label: 'Multi-Locus Euclidean Distance (d)',
-              equation: 'd = √ [ Σ ( user_dosage_i - pop_freq_i )² / N ]',
-              explanation: 'Measures genetic proximity across N mapped loci. A lower distance (d) signifies higher genetic affinity. Typical high-affinity values fall under 0.15.'
-            },
-            {
-              label: 'Sensitivity Similarity Score',
-              equation: 'Similarity = Max(5.0, Min(99.8, (1.0 - (d × 2.2)) × 100))',
-              explanation: 'Translates geographical Euclidean distances into intuitive, yet biologically realistic affinity scales.'
+              label: 'NNLS Optimization',
+              equation: 'min || A x - b ||² subject to x ≥ 0',
+              explanation: 'Optimizes the admixture weights (x) for each reference population (A) to best fit the observed user genotype dosage (b), ensuring all ancestry proportions are non-negative.'
             }
           ],
           references: [

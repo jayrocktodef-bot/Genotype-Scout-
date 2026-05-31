@@ -6052,7 +6052,9 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "Marker panel for eye color prediction.",
+    "gene": "OCA2/HERC2",
+    "trait": "Phenotypic"
   },
   "haircolor": {
     "rsid": "haircolor",
@@ -6065,7 +6067,9 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "Marker panel for hair color prediction.",
+    "gene": "MC1R",
+    "trait": "Phenotypic"
   },
   "skintone": {
     "rsid": "skintone",
@@ -6078,7 +6082,9 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "Marker panel for skin tone prediction.",
+    "gene": "SLC24A5",
+    "trait": "Phenotypic"
   },
   "rs9845457": {
     "rsid": "rs9845457",
@@ -90758,15 +90764,4 @@
       "EAS": 0.8712,
       "SAS": 0.6796,
       "AMR": 0.8426,
-      "MENA": 0.7959,
-      "OCE": 0.7888
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 2,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Ancestry marker associated with East Asian populations."
-  },
-  "rs11755724": {
-    "rsid
+      "MENA": 

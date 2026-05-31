@@ -938,7 +938,7 @@ const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
             <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Similarity to reference populations</p>
           </div>
         </div>
-        <div className="text-[10px] text-slate-400 font-mono bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">Euclidean Distance Analysis</div>
+        <div className="text-[10px] text-slate-400 font-mono bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">Ancestry Analysis</div>
       </div>
 
       <div className="space-y-6">

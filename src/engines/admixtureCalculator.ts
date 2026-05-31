@@ -1,4 +1,5 @@
 import { getAncestryMarkers } from '../data/GenomicDataService';
+import { solveNNLS } from '../utils/nnls';
 import { 
   graf10kIndex as grafIndex,
   forensicAimsMaster as forensicAims,
@@ -169,8 +170,13 @@ export function calculateProAncestry(
     }
   });
 
-  const popDistances: Record<string, number> = { EUR: 0, AFR: 0, EAS: 0, SAS: 0, AMR: 0 };
-  const popWeights: Record<string, number> = { EUR: 0, AFR: 0, EAS: 0, SAS: 0, AMR: 0 };
+  // PREPARE MATRICES FOR NNLS
+  const numMarkers = informativeRsids.length;
+  const numPops = SUPER_POPS.length;
+  
+  const A: number[][] = Array(numMarkers).fill(0).map(() => Array(numPops).fill(0));
+  const b: number[] = Array(numMarkers).fill(0);
+  const weights: number[] = Array(numMarkers).fill(0);
 
   let markersUsed = 0;
   let commercialAimsDetected = 0;
@@ -204,6 +210,7 @@ export function calculateProAncestry(
     if (a2 === alt) dosage++;
 
     markersUsed++;
+    b[i] = dosage;
 
     let weight = markerWeightMap[rsid] || 1.0;
     if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = Math.max(weight, 10.0);
@@ -212,11 +219,12 @@ export function calculateProAncestry(
         weight = Math.max(weight, 15.0);
     }
     if (diagnosticSuperWeights[rsid]) weight = diagnosticSuperWeights[rsid];
+    weights[i] = weight;
 
     const markerRefData = enhancedRef[rsid];
     if (!markerRefData || !markerRefData.populations) continue;
 
-    for (let j = 0; j < SUPER_POPS.length; j++) {
+    for (let j = 0; j < numPops; j++) {
       const pop = SUPER_POPS[j];
       const refPopData = markerRefData.populations[pop];
       if (!refPopData) continue;
@@ -230,32 +238,20 @@ export function calculateProAncestry(
           if (g[1] === alt) gDosage++;
           popExpectation += p * gDosage;
       }
-
-      const diff = dosage - popExpectation;
-      popDistances[pop] += weight * (diff * diff);
-      popWeights[pop] += weight;
+      A[i][j] = popExpectation;
     }
   }
+
+  // NNLS CALCULATION
+  const proportions = solveNNLS(A, b, weights);
 
   const finalPercentages: Record<string, number> = {};
-  let totalInvDist = 0;
-  const normDistances: Record<string, number> = {};
+  const totalWeight = proportions.reduce((sum, val) => sum + val, 0);
 
-  for (let k = 0; k < SUPER_POPS.length; k++) {
-    const pop = SUPER_POPS[k];
-    if (popWeights[pop] > 0) {
-      const mse = popDistances[pop] / popWeights[pop];
-      normDistances[pop] = 1 / (1 + mse);
-      totalInvDist += normDistances[pop];
-    } else {
-      normDistances[pop] = 0;
-    }
-  }
-  
-  if (totalInvDist > 0) {
+  if (totalWeight > 0) {
     for (let l = 0; l < SUPER_POPS.length; l++) {
       const pop = SUPER_POPS[l];
-      const percentage = (normDistances[pop] / totalInvDist) * 100;
+      const percentage = (proportions[l] / totalWeight) * 100;
       if (percentage >= 0.1) finalPercentages[pop] = Number(percentage.toFixed(2));
     }
   }
