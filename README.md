@@ -1,4 +1,4 @@
-<div align="center"><img width="1200" height="475" alt="Banner" src="https://jequandavis.wpcomstaging.com/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
+<div align="center"><img width="1200" height="475" alt="Banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
 # Genotype Scout
 
@@ -6,6 +6,8 @@
 
 [![Live App](https://img.shields.io/badge/Launch-Genotype_Scout-0d9488?style=for-the-badge&logo=vercel&logoColor=white)](https://witg-genotype-scout.vercel.app/)
 [![Blog](https://img.shields.io/badge/Blog-Written_In_The_Genome-8B5CF6?style=for-the-badge&logo=wordpress&logoColor=white)](https://writteninthegenome.blog)
+
+> ⚠️ **Beta — research & educational tool.** Genotype Scout is in active beta and is **not an ethnicity calculator**. Its results are exploratory, are **not directly comparable** to the ethnicity estimates from commercial tests (23andMe, AncestryDNA), and are **not medical or diagnostic advice**.
 
 ---
 
