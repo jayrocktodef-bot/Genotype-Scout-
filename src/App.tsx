@@ -78,6 +78,8 @@ import { MethodologyPage } from "./components/MethodologyPage";
 import Dashboard from "./components/Dashboard";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
+import { Phase2Badge } from "./components/Phase2Badge";
+import { Phase2Panel } from "./components/Phase2Panel";
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "4.0.0-beta";
@@ -1241,6 +1243,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                 <div className="flex flex-wrap gap-3 mb-6">
                   <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Marker: {yData.predicted.marker}</span>
                   <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Region: {yData.predicted.continent}</span>
+                  <Phase2Badge phase2={yData.phase2} />
                 </div>
                 
                 {/* Lineage Path Highlight */}
@@ -1415,6 +1418,12 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
           </div>
         </div>
       </div>
+
+      {/* Phase 2 Analysis Panel */}
+      <Phase2Panel
+        phase2={yData.phase2}
+        phase1Haplogroup={yData.predicted?.name ?? null}
+      />
     </div>
   );
 });
@@ -1552,7 +1561,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
                           dataKey="value"
                           stroke="none"
                         >
-                          {markerPieData.map((entry, index) => (
+                          {markerPieData.map((entry: any, index: number) => (
                              <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
                           ))}
                         </Pie>
