@@ -149,8 +149,9 @@ describe('YDnaPredictorV2', () => {
       const dataset = buildTestDataset();
       const predictor = new YDnaPredictorV2(dataset);
 
-      // User has M96 (G) — derived for E
+      // User has M168 (T) derived for CT + M96 (G) derived for E
       const result = predictor.predict([
+        { name: 'M168', rsid: 'rs1', allele: 'T' },
         { name: 'M96', rsid: 'rs5678', allele: 'G' },
       ]);
 
@@ -178,15 +179,16 @@ describe('YDnaPredictorV2', () => {
       const dataset = buildTestDataset();
       const predictor = new YDnaPredictorV2(dataset);
 
-      // User has M96 (G) — derived for E, AND M168 (C) — ancestral for CT
-      // Should accept E path, reject CT path
+      // User has M168 (C) — ancestral for CT → reject CT and all its children.
+      // User has M92 (G) — derived for T, a *sibling* of CT under A.
+      // Should accept T path, reject CT path.
       const result = predictor.predict([
         { name: 'M168', rsid: 'rs1', allele: 'C' },  // ancestral → reject CT
-        { name: 'M96', rsid: 'rs3', allele: 'G' },   // derived → accept E
+        { name: 'M92', rsid: 'rs6', allele: 'G' },   // derived → accept T
       ]);
 
       expect(result.rejectedBranches).toContain('CT');
-      expect(result.terminalHaplogroup).toBe('E');
+      expect(result.terminalHaplogroup).toBe('T');
     });
   });
 
@@ -195,15 +197,15 @@ describe('YDnaPredictorV2', () => {
       const dataset = buildTestDataset();
       const predictor = new YDnaPredictorV2(dataset);
 
-      // E1b1 is defined by 2 SNPs (M96 + M2); both are at depth 4 max in test tree
-      // but if it were deeper, we should require both
+      // E1b1 is defined by 2 SNPs (M96 + M2); need M168 derived to reach CT→E→E1b1
       const result = predictor.predict([
+        { name: 'M168', rsid: 'rs1', allele: 'T' }, // derived → pass through CT
         { name: 'M96', rsid: 'rs3', allele: 'G' },  // derived
         { name: 'M2', rsid: 'rs4', allele: 'G' },   // derived
       ]);
 
       expect(result.terminalHaplogroup).toBe('E1b1');
-      expect(result.derivedSnpCount).toBe(2);
+      expect(result.derivedSnpCount).toBe(3); // M168 + M96 + M2
     });
 
     it('accepts shallow terminals with 1 derived SNP', () => {
@@ -238,12 +240,13 @@ describe('YDnaPredictorV2', () => {
       const dataset = buildTestDataset();
       const predictor = new YDnaPredictorV2(dataset);
 
-      // User has M96 derived + ancestral alleles for two branches
+      // User has M168 derived for CT + M96 derived for E
       const result = predictor.predict([
+        { name: 'M168', rsid: 'rs1', allele: 'T' },
         { name: 'M96', rsid: 'rs3', allele: 'G' },  // derived for E
       ]);
 
-      expect(result.confidence).toBe(100); // 1 / (1 + 0) * 100
+      expect(result.confidence).toBe(100); // 2 / (2 + 0) * 100
     });
 
     it('includes derived/ancestral SNP counts', () => {
@@ -293,8 +296,9 @@ describe('YDnaPredictorV2', () => {
       const predictor = new YDnaPredictorV2(dataset);
 
       const result = predictor.predict([
-        { name: 'M168', rsid: 'rs1', allele: '--' },  // invalid
-        { name: 'M96', rsid: 'rs3', allele: 'G' },    // valid
+        { name: 'M168', rsid: 'rs1', allele: 'T' },   // derived → pass through CT
+        { name: 'M174', rsid: 'rs2', allele: '--' },  // invalid → skipped
+        { name: 'M96', rsid: 'rs3', allele: 'G' },    // derived → accept E
       ]);
 
       expect(result.terminalHaplogroup).toBe('E');

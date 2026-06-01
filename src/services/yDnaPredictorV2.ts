@@ -70,8 +70,8 @@ export class YDnaPredictorV2 {
       branchName: string,
       depth: number,
       path: string[],
-      parentDerivedCount: number,
-      parentAncestralCount: number,
+      derivedSnps: Set<string>,
+      ancestralSnps: Set<string>,
     ) => {
       const branch = this.branchMap.get(branchName);
       if (!branch) return;
@@ -79,24 +79,33 @@ export class YDnaPredictorV2 {
       let localDerived = 0;
       let localAncestral = 0;
       let localCovered = 0;
+      let newLocalDerived = 0;
+
+      const newDerivedSnps = new Set(derivedSnps);
+      const newAncestralSnps = new Set(ancestralSnps);
 
       // Scan this branch's defining SNPs
       for (const snp of branch.definingSNPs) {
         const userAllele = dnaMap.get(snp.name);
-        if (!userAllele || userAllele === '--' || userAllele === '00') continue;
+        if (!userAllele || userAllele === '--' || userAllele === '00' || userAllele === 'II') continue;
 
         localCovered++;
         const normalizedAllele = userAllele[0].toUpperCase();
 
         if (normalizedAllele === snp.derived.toUpperCase()) {
           localDerived++;
+          if (!derivedSnps.has(snp.name)) {
+            newLocalDerived++;
+            newDerivedSnps.add(snp.name);
+          }
         } else if (normalizedAllele === snp.ancestral.toUpperCase()) {
           localAncestral++;
+          newAncestralSnps.add(snp.name);
         }
       }
 
-      const totalDerived = parentDerivedCount + localDerived;
-      const totalAncestral = parentAncestralCount + localAncestral;
+      const totalDerived = newDerivedSnps.size;
+      const totalAncestral = newAncestralSnps.size;
 
       // Rule 2: Reject if ANY defining SNP is ancestral
       if (localAncestral > 0) {
@@ -104,45 +113,59 @@ export class YDnaPredictorV2 {
         return;
       }
 
-      // Rule 1: Only proceed if we have at least 1 derived SNP
-      if (totalDerived === 0) return;
-
-      // Rule 3: For deep terminals (depth >= 5), require ≥2 derived SNPs
       const children = this.childrenMap.get(branchName) || [];
-      const isDeepTerminal = depth >= 5 && children.length === 0;
-      if (isDeepTerminal && totalDerived < 2) return;
 
-      // Calculate confidence: derived / (derived + ancestral) where seen
-      const totalSeen = totalDerived + totalAncestral;
-      const confidence = totalSeen > 0 ? (totalDerived / totalSeen) * 100 : 100;
+      // A branch with no defining SNPs (e.g. root 'A') is a passthrough —
+      // it can't confirm or reject, so always recurse into children.
+      const isPassthrough = branch.definingSNPs.length === 0;
 
-      // Calculate coverage: % of this branch's defining SNPs we have data for
-      const branchCoverage = branch.definingSNPs.length > 0
-        ? (localCovered / branch.definingSNPs.length) * 100
-        : 0;
+      // Rule 1: Only accept this node as a candidate if it has derived evidence.
+      // Passthrough nodes still recurse but are not recorded as "best".
+      if (totalDerived > 0 || isPassthrough) {
+        // Rule 3: For deep terminals (depth >= 5), require ≥2 derived SNPs
+        const isDeepTerminal = depth >= 5 && children.length === 0;
+        if (isDeepTerminal && totalDerived < 2) return;
 
-      // Update best if deeper or equally deep but more confident
-      if (
-        depth > bestDepth ||
-        (depth === bestDepth && confidence > bestConfidence)
-      ) {
-        bestDepth = depth;
-        bestTerminal = branchName;
-        bestConfidence = confidence;
-        bestCoverage = branchCoverage;
-        bestDerived = totalDerived;
-        bestAncestral = totalAncestral;
-        bestPath = [...path, branchName];
-      }
+        // Calculate confidence: derived / (derived + ancestral) where seen
+        const totalSeen = totalDerived + totalAncestral;
+        const confidence = totalSeen > 0 ? (totalDerived / totalSeen) * 100 : 0;
 
-      // Recurse into children
-      for (const child of children) {
-        traverse(child.branchName, depth + 1, [...path, branchName], totalDerived, totalAncestral);
+        // Calculate coverage: % of this branch's defining SNPs we have data for
+        const branchCoverage = branch.definingSNPs.length > 0
+          ? (localCovered / branch.definingSNPs.length) * 100
+          : 0;
+
+        // Update best if we have new local derived evidence and are deeper or more confident
+        if (
+          newLocalDerived > 0 && (
+            depth > bestDepth ||
+            (depth === bestDepth && confidence > bestConfidence)
+          )
+        ) {
+          bestDepth = depth;
+          bestTerminal = branchName;
+          bestConfidence = confidence;
+          bestCoverage = branchCoverage;
+          bestDerived = totalDerived;
+          bestAncestral = totalAncestral;
+          bestPath = [...path, branchName];
+        }
+
+        // Recurse into children
+        for (const child of children) {
+          traverse(
+            child.branchName,
+            depth + 1,
+            [...path, branchName],
+            newDerivedSnps,
+            newAncestralSnps
+          );
+        }
       }
     };
 
     // Root of the Y-DNA tree is 'A'
-    traverse('A', 1, [], 0, 0);
+    traverse('A', 1, [], new Set<string>(), new Set<string>());
 
     return {
       terminalHaplogroup: bestTerminal,
