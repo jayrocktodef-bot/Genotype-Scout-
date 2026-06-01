@@ -1,0 +1,157 @@
+import { RawSnp, PredictionResult } from '../types/haplogroup';
+import { YPhylotreeDataset, YPhylotreeBranch, YSnpRecord } from '../utils/yPhylotree';
+
+export interface YDnaPredictionDetails {
+  terminalHaplogroup: string;
+  confidence: number;
+  coverage: number;            // % of defining SNPs with allele data in user sample
+  derivedSnpCount: number;     // number of derived-state defining SNPs matched
+  ancestralSnpCount: number;   // number of ancestral-state defining SNPs matched
+  path: string[];              // traversal path from root to terminal
+  rejectedBranches: string[];  // branches rejected due to ancestral defining SNPs
+}
+
+/**
+ * Phase 2: Y-DNA predictor powered by y_phylotree.json.
+ *
+ * Rules:
+ * 1. Confirm derived-only: only accept a branch if ALL its defining SNPs that
+ *    are present in the user sample are in derived state.
+ * 2. Reject ancestral: skip any branch where any defining SNP is ancestral.
+ * 3. Require ≥2 SNPs: for deep terminals (depth > 5), require at least 2
+ *    confirming derived SNPs.
+ * 4. Report coverage/confidence: track what % of the branch's defining SNPs
+ *    the user has data for.
+ */
+export class YDnaPredictorV2 {
+  private dataset: YPhylotreeDataset;
+  private branchMap: Map<string, YPhylotreeBranch>;
+  private childrenMap: Map<string, YPhylotreeBranch[]>;
+
+  constructor(dataset: YPhylotreeDataset) {
+    this.dataset = dataset;
+    this.branchMap = new Map();
+    this.childrenMap = new Map();
+
+    // Index branches by name and build parent→children map
+    for (const branch of dataset.branches) {
+      this.branchMap.set(branch.branchName, branch);
+      const parentKey = branch.parent || 'root';
+      if (!this.childrenMap.has(parentKey)) {
+        this.childrenMap.set(parentKey, []);
+      }
+      this.childrenMap.get(parentKey)!.push(branch);
+    }
+  }
+
+  /**
+   * Predict the most specific Y-haplogroup based on user SNP data.
+   * Returns allele direction validation results + coverage metrics.
+   */
+  public predict(rawDna: RawSnp[]): YDnaPredictionDetails {
+    const dnaMap = new Map(rawDna.map(s => [s.name || s.rsid, s.allele]));
+
+    let bestTerminal = 'A';
+    let bestConfidence = 0;
+    let bestCoverage = 0;
+    let bestDerived = 0;
+    let bestAncestral = 0;
+    let bestPath: string[] = [];
+    const rejectedBranches: string[] = [];
+    let bestDepth = 0;
+
+    /**
+     * Recursively traverse the tree. Only descend into a branch if:
+     * - No defining SNPs are ancestral (rule 2)
+     * - All known defining SNPs are derived (rule 1)
+     * - Deep terminals have ≥2 derived SNPs (rule 3)
+     */
+    const traverse = (
+      branchName: string,
+      depth: number,
+      path: string[],
+      parentDerivedCount: number,
+      parentAncestralCount: number,
+    ) => {
+      const branch = this.branchMap.get(branchName);
+      if (!branch) return;
+
+      let localDerived = 0;
+      let localAncestral = 0;
+      let localCovered = 0;
+
+      // Scan this branch's defining SNPs
+      for (const snp of branch.definingSNPs) {
+        const userAllele = dnaMap.get(snp.name);
+        if (!userAllele || userAllele === '--' || userAllele === '00') continue;
+
+        localCovered++;
+        const normalizedAllele = userAllele[0].toUpperCase();
+
+        if (normalizedAllele === snp.derived.toUpperCase()) {
+          localDerived++;
+        } else if (normalizedAllele === snp.ancestral.toUpperCase()) {
+          localAncestral++;
+        }
+      }
+
+      const totalDerived = parentDerivedCount + localDerived;
+      const totalAncestral = parentAncestralCount + localAncestral;
+
+      // Rule 2: Reject if ANY defining SNP is ancestral
+      if (localAncestral > 0) {
+        rejectedBranches.push(branchName);
+        return;
+      }
+
+      // Rule 1: Only proceed if we have at least 1 derived SNP
+      if (totalDerived === 0) return;
+
+      // Rule 3: For deep terminals (depth >= 5), require ≥2 derived SNPs
+      const children = this.childrenMap.get(branchName) || [];
+      const isDeepTerminal = depth >= 5 && children.length === 0;
+      if (isDeepTerminal && totalDerived < 2) return;
+
+      // Calculate confidence: derived / (derived + ancestral) where seen
+      const totalSeen = totalDerived + totalAncestral;
+      const confidence = totalSeen > 0 ? (totalDerived / totalSeen) * 100 : 100;
+
+      // Calculate coverage: % of this branch's defining SNPs we have data for
+      const branchCoverage = branch.definingSNPs.length > 0
+        ? (localCovered / branch.definingSNPs.length) * 100
+        : 0;
+
+      // Update best if deeper or equally deep but more confident
+      if (
+        depth > bestDepth ||
+        (depth === bestDepth && confidence > bestConfidence)
+      ) {
+        bestDepth = depth;
+        bestTerminal = branchName;
+        bestConfidence = confidence;
+        bestCoverage = branchCoverage;
+        bestDerived = totalDerived;
+        bestAncestral = totalAncestral;
+        bestPath = [...path, branchName];
+      }
+
+      // Recurse into children
+      for (const child of children) {
+        traverse(child.branchName, depth + 1, [...path, branchName], totalDerived, totalAncestral);
+      }
+    };
+
+    // Root of the Y-DNA tree is 'A'
+    traverse('A', 1, [], 0, 0);
+
+    return {
+      terminalHaplogroup: bestTerminal,
+      confidence: Math.round(bestConfidence * 100) / 100,
+      coverage: Math.round(bestCoverage * 100) / 100,
+      derivedSnpCount: bestDerived,
+      ancestralSnpCount: bestAncestral,
+      path: bestPath,
+      rejectedBranches,
+    };
+  }
+}
