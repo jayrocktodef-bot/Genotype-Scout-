@@ -4,8 +4,24 @@ import { Y_DNA_TREE, MT_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerDescription } from './snpMatcher';
 import { findMatchesInHaplogroups } from './haplogroupService';
 import { findMatchesInMtHaplogroups } from './mtHaplogroupService';
+import { analyzePhase2YDna, formatPhase2Result } from './phase2YDnaAdapter';
 
-export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: HaplogroupNode = Y_DNA_TREE) {
+export interface YDnaAnalysisResult {
+  predicted: { name: string; marker: string; continent: string; description: string } | null;
+  isoggMatches: any[];
+  testedMarkers: any[];
+  path: string[];
+  phase2?: {
+    haplogroup: string;
+    confidence: number;
+    coverage: number;
+    derivedMarkers: number;
+    ancestralMarkers: number;
+    rejectedBranches: string[];
+  };
+}
+
+export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: HaplogroupNode = Y_DNA_TREE): YDnaAnalysisResult {
   const testedMarkers: any[] = [];
   let bestNode: any = null;
   let bestPath: string[] = [];
@@ -179,11 +195,29 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
     }
   }
 
+  // === PHASE 2: Run enriched Y-phylotree analysis ===
+  let phase2Result: any = null;
+  try {
+    const phase2Analysis = analyzePhase2YDna(yMap);
+    if (phase2Analysis) {
+      phase2Result = formatPhase2Result(phase2Analysis);
+      
+      // Log Phase 2 findings
+      console.log(`[Phase 2] Haplogroup: ${phase2Result.haplogroup}, Confidence: ${phase2Result.confidence}%, Coverage: ${phase2Result.coverage}%`);
+      if (phase2Result.rejectedBranches.length > 0) {
+        console.log(`[Phase 2] Rejected branches (ancestral SNPs): ${phase2Result.rejectedBranches.join(', ')}`);
+      }
+    }
+  } catch (e) {
+    console.warn('[Phase 2] Analysis failed, continuing with Phase 1 results:', e);
+  }
+
   return {
     predicted: prediction,
     isoggMatches: sortedIsogg.slice(0, 100), // Cap at 100 deep matches
     testedMarkers: uniqueMarkers.sort((a, b) => (b.isDerived ? 1 : 0) - (a.isDerived ? 1 : 0)),
-    path: finalPath
+    path: finalPath,
+    phase2: phase2Result
   };
 }
 
