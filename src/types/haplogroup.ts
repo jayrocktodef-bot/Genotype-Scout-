@@ -1,5 +1,6 @@
 export interface RawSnp {
-  rsid: string; // Could be RSID or SNP name
+  rsid?: string; // dbSNP id or rsid alias
+  name?: string; // SNP name (e.g., 'M269', 'M2')
   allele: string; // The observed genotype (e.g., 'A', 'T')
 }
 
@@ -46,4 +47,3 @@ export interface MasterYdna {
   isoggTree: IsoggBranch[];
   lastUpdated: string;
 }
-
