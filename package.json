@@ -20,7 +20,8 @@
     "test": "vitest run",
     "validate:data": "tsx src/utils/dataValidator.ts",
     "validate:json": "node scripts/validate-data-json.mjs",
-    "prebuild": "node scripts/validate-data-json.mjs"
+    "prebuild": "node scripts/validate-data-json.mjs",
+    "build:yphylo": "tsx scripts/build-y-phylotree.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
