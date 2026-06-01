@@ -56,6 +56,12 @@ describe('predictYDNAHaplogroup', () => {
     const result = predictYDNAHaplogroup(yMap);
     expect(result.predicted).toBeNull();
   });
+
+  it('should ignore heterozygous Y calls (haploid no-call)', () => {
+    // rs1 derived allele is A; a het 'AG' call must NOT be counted as derived.
+    const result = predictYDNAHaplogroup({ 'rs1': 'AG' });
+    expect(result.predicted).toBeNull();
+  });
 });
 
 describe('analyzeMtDNA', () => {

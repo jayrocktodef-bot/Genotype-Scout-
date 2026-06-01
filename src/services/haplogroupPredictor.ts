@@ -17,12 +17,17 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
   // Sort ISOGG matches by specificity (branch name length as proxy for depth)
   // and match count, prioritizing deeper subclades
   const sortedIsogg = [...isoggMatches].sort((a, b) => {
-    // 1. More matches are better
-    if (b.matches.length !== a.matches.length) {
-      return b.matches.length - a.matches.length;
+    // 1. More allele-CONFIRMED derived markers is better (true evidence, not mere presence).
+    if (b.derivedCount !== a.derivedCount) {
+      return b.derivedCount - a.derivedCount;
     }
-    // 2. Longer branch name as proxy for hierarchical rank (more specific)
-    return b.branch.branchName.length - a.branch.branchName.length;
+    // 2. Fewer contradicting ancestral calls is better.
+    if (a.ancestralCount !== b.ancestralCount) {
+      return a.ancestralCount - b.ancestralCount;
+    }
+    // 3. Tie-break on branch depth (dot-count) rather than raw name length.
+    const depth = (n: string) => (n.match(/\d|[a-z]/g) || []).length;
+    return depth(b.branch.branchName) - depth(a.branch.branchName);
   });
 
   const topIsogg = sortedIsogg[0];
@@ -70,6 +75,11 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
           normalized = normalized[0];
         } else if (normalized.length === 1 && IUPAC_MAP[normalized]) {
           normalized = IUPAC_MAP[normalized];
+        }
+
+        // Y-DNA is haploid: a heterozygous call is an unreliable no-call, skip it.
+        if (normalized.length === 2 && normalized[0] !== normalized[1]) {
+          continue;
         }
         
         let isDerived = false;
@@ -147,12 +157,21 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
   // If we have a very specific ISOGG match that is deeper than our basic tree prediction
   // or if we have no basic tree prediction, use ISOGG.
   let finalPath = bestPath;
-  if (topIsogg && (!prediction || topIsogg.branch.branchName.length > (prediction.name.length + 5))) {
+  // Only let an ISOGG deep-match become the terminal call when it is ALLELE-CONFIRMED
+  // (>=2 derived markers) AND carries more confirmed-derived evidence than the curated
+  // tree path. The old logic overrode on mere SNP *presence* + branch-name length, which
+  // produced false, over-deep haplogroups.
+  const ISOGG_MIN_DERIVED = 2;
+  if (
+    topIsogg &&
+    topIsogg.derivedCount >= ISOGG_MIN_DERIVED &&
+    topIsogg.derivedCount > Math.max(0, maxDerivedCount)
+  ) {
     prediction = {
       name: topIsogg.branch.branchName,
-      marker: topIsogg.branch.definingSNPs[0] || topIsogg.branch.rsids[0] || "Unknown",
-      continent: "Global", // ISOGG doesn't provide regions in this flat format easily
-      description: `Deep subclade identified via ISOGG markers: ${topIsogg.matches.join(', ')}.`
+      marker: topIsogg.derivedMatches[0] || topIsogg.branch.definingSNPs[0] || topIsogg.branch.rsids[0] || "Unknown",
+      continent: "Global", // ISOGG flat format doesn't carry regions
+      description: `Deep subclade confirmed via ${topIsogg.derivedCount} derived ISOGG markers: ${topIsogg.derivedMatches.join(', ')}.`
     };
     // Ensure the final predicted branch is in the path
     if (!finalPath.includes(prediction.name) && !finalPath.includes("Haplogroup " + prediction.name)) {
@@ -276,8 +295,9 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   // If we found a more specific deep match with significant overlap
   if (sortedDeep.length > 0) {
     const topDeep = sortedDeep[0];
-    // Improved logic: if deep match has equal or more matches than tree match, prefer deep
-    if (topDeep.matches.length >= bestMatch.matchCount) {
+    // Require at least 2 shared mutations before a PhyloTree deep-match can override the
+    // curated tree call (a single shared mutation is too weak / noise-prone).
+    if (topDeep.matches.length >= 2 && topDeep.matches.length >= bestMatch.matchCount) {
       predictedHaplogroup = topDeep.branch.branchName;
       description = `Specific lineage identified via PhyloTree markers: ${topDeep.matches.join(', ')}.`;
       
