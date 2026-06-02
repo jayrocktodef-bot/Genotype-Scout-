@@ -19,17 +19,17 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
         transition={{ duration: 0.8 }}
         className="max-w-4xl w-full"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 text-teal-650 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 ring-1 ring-teal-100 animate-pulse-soft">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 dark:bg-teal-950/50 text-teal-650 dark:text-teal-400 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 ring-1 ring-teal-100 dark:ring-teal-800 animate-pulse-soft">
           <Database className="w-3 h-3" /> 10,000+ Genomic Markers Reference
         </div>
         
-        <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-slate-800 mb-8 leading-[1.1]">
-          The most private way to <br /> explore your <span className="text-teal-600">DNA heritage.</span>
+        <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-slate-800 dark:text-slate-100 mb-8 leading-[1.1]">
+          The most private way to <br /> explore your <span className="text-teal-600 dark:text-teal-400">DNA heritage.</span>
         </h1>
         
-        <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-16 leading-relaxed">
+        <p className="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed">
           Upload your raw data from 23andMe, AncestryDNA, or MyHeritage. 
-          All analysis happens <span className="text-slate-800 font-bold underline decoration-teal-300 underline-offset-4">locally in your browser</span>. 
+          All analysis happens <span className="text-slate-800 dark:text-slate-200 font-bold underline decoration-teal-300 dark:decoration-teal-600 underline-offset-4">locally in your browser</span>. 
           Your privacy is our core architecture.
         </p>
 
@@ -37,7 +37,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           <button 
             disabled={processing}
             onClick={() => fileInputRef.current?.click()}
-            className="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white rounded-[2rem] font-black text-lg shadow-2xl shadow-slate-300 hover:bg-slate-800 transition-all flex items-center justify-center gap-4 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full sm:w-auto px-10 py-5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-[2rem] font-black text-lg shadow-2xl shadow-slate-300 dark:shadow-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 transition-all flex items-center justify-center gap-4 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Upload className="w-6 h-6" />
             {processing ? 'Analyzing...' : 'Upload Raw DNA'}
@@ -67,7 +67,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
 
 
         {/* Beta + scope disclaimer */}
-        <div className="max-w-2xl mx-auto mb-20 rounded-2xl border border-amber-200 bg-amber-50/70 px-5 py-4 text-left">
+        <div className="max-w-2xl mx-auto mb-20 rounded-2xl border border-amber-200 dark:border-amber-800 bg-amber-50/70 dark:bg-amber-950/30 px-5 py-4 text-left">
           <div className="flex items-start gap-3">
             <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
             <div>
@@ -97,7 +97,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
               <Dna className="w-6 h-6" />
             </div>
-            <h3 className="font-extrabold text-slate-800 text-lg mb-2">Curated Amerind & Distinct Global AIMs</h3>
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-lg mb-2">Curated Amerind & Distinct Global AIMs</h3>
             <p className="text-sm text-slate-500 leading-relaxed mb-4">
               To represent the complex demographics of America more accurately, we have integrated a hand-curated panel of Ancestry Informative Markers (AIMs). These are optimized specifically to isolate high-precision Native American (North, Central, and South American indigenous cohorts) genomic profiles from modern European and African components.
             </p>
@@ -111,7 +111,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             <div className="w-12 h-12 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 mb-6">
               <Lock className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-slate-800 mb-2">Zero-Footprint Sandbox</h3>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">Zero-Footprint Sandbox</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               We never save, upload, or index your raw genetic data. Your DNA file is processed exclusively inside local client memory using active browser sandboxing and disappears upon closing the tab.
             </p>
@@ -122,7 +122,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
               <Zap className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-slate-800 mb-2">Bayesian Likelihood Models</h3>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">Bayesian Likelihood Models</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               Our calculations match your genotypes with a broad 10,000 SNP reference dataset representing 26 distinct global sub-populations for high-fidelity regional clustering.
             </p>
@@ -133,7 +133,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             <div className="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 mb-6">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-slate-800 mb-2">Verified Research DB References</h3>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">Verified Research DB References</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               All ancestry predictions, star-allele pgx associations, and physiological traits are cross-referenced directly with peer-reviewed scientific literature data and standard index datasets.
             </p>
@@ -146,7 +146,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
               <Dna className="w-6 h-6" />
             </div>
-            <h3 className="font-extrabold text-slate-800 text-lg mb-2">Deconvolving African American Admixture</h3>
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-lg mb-2">Deconvolving African American Admixture</h3>
             <p className="text-sm text-slate-500 leading-relaxed">
               African American ancestry is often highly complex due to centuries of structural admixture. Our algorithms specifically untangle these threads by isolating West African, European, and indigenous sub-components through high-resolution, phased marker analysis, ensuring greater precision in identifying your specific, nuanced regional heritage.
             </p>
@@ -155,7 +155,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
 
         {/* Privacy Commitment Section */}
         <div className="mt-20 border-t border-slate-100 pt-16">
-          <h2 className="text-3xl font-black text-slate-800 mb-8 tracking-tight">Technical Data Privacy: How it works</h2>
+          <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 mb-8 tracking-tight">Technical Data Privacy: How it works</h2>
           <div className="bg-slate-900 rounded-3xl p-10 text-left text-white shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-10">
               <Lock size={200} />

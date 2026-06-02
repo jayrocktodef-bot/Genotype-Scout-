@@ -1799,7 +1799,7 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
 
 
 export default function App() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
 
   useEffect(() => {
     if (theme === 'dark') {
