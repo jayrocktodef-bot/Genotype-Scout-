@@ -61,6 +61,13 @@ export function getMarkerAllowlist(): Set<string> {
   allowlist.add('rs601338');
   allowlist.add('rs1047781');
 
+  // 1.7 Additional Blood Group Markers (Diego, Scianna, LW, Gerbich, Xg)
+  allowlist.add('rs2285603');
+  allowlist.add('rs1018780');
+  allowlist.add('rs11545624');
+  allowlist.add('rs2075592');
+  allowlist.add('rs311103');
+
   // 5. SNP_DB (Health, Traits, etc.)
   SNP_DB.forEach(snp => {
     if (snp.markerId) allowlist.add(snp.markerId.toLowerCase());
