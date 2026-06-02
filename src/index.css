@@ -71,3 +71,65 @@ div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-
   color: #8b1c1c;
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    margin: 1.5cm;
+  }
+  
+  /* Hide standard UI elements during print */
+  nav, button, header, aside, .print-hidden, .print\:hidden, input, select, .scrollbar-none {
+    display: none !important;
+  }
+  
+  /* Full width for print layouts */
+  main, .container, #root {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  /* Clinical-friendly card borders and spacing */
+  .premium-card, .border-l-4 {
+    border: 1px solid #94a3b8 !important;
+    border-left: 5px solid #1e293b !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin-bottom: 1.5em !important;
+    padding: 1.5em !important;
+    border-radius: 6px !important;
+  }
+  
+  /* Clean contrast for badges */
+  span.bg-red-950\/20, span.bg-amber-950\/20, span.bg-blue-950\/20 {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  /* Prevent awkward page-breaks */
+  section, tr, blockquote, table, svg {
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+}
+
+

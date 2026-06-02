@@ -2657,7 +2657,7 @@ export default function App() {
                          alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
                        }))}
                      />
-                     <ModernAncestryOracle results={oracleResults} onOpenMethodology={() => setIsMethodologyOpen(true)} />
+                     <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
                   </div>
                 )}
 
@@ -2673,6 +2673,7 @@ export default function App() {
                       <HealthWellnessTab 
                         impacts={healthWellnessMatches} 
                         userSnps={snpMaps.current[activeDatasetIndex]} 
+                        mode="analyst"
                       />
                     </Suspense>
                   </div>
