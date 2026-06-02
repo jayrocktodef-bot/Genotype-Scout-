@@ -1,16 +1,29 @@
 <div align="center"><img width="1200" height="475" alt="Genotype Scout banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
-# Genotype Scout
+# Genotype Scout — V4.5 Beta
 
 > ⚠️ **Beta — research & educational tool.** Genotype Scout is in active beta and is **not an ethnicity calculator**. Its results are exploratory, are **not directly comparable** to the ethnicity estimates from commercial tests (23andMe, AncestryDNA), and are **not medical or diagnostic advice**.
 
-**Genotype Scout** is a privacy-first genomic analysis suite created by Jequan Davis. It lets you process your raw DNA files **entirely in your browser**, so sensitive genetic data never leaves your device for standard analysis.
+**Genotype Scout** is a privacy-first genomic analysis suite created by Jequan Davis. It lets you process your raw DNA files **entirely in your browser**, so sensitive genetic data never leaves your device for standard analysis. Installable as a **Progressive Web App (PWA)** for offline access on any device.
 
-[Access the hosted application here](https://witg-genotype-scout.vercel.app/)
+[🚀 Launch the app](https://witg-genotype-scout.vercel.app/) · [📖 Blog](https://WrittenInTheGenome.blog) · [💬 Facebook Group](https://www.facebook.com/share/g/1EFyWD35tB/)
+
+---
+
+## ✨ What's New in V4.5
+
+- **Dark / Light Mode Toggle** — Switch freely between themes via the navbar Sun/Moon button. Light mode is the default.
+- **PWA Support** — Install Genotype Scout to your home screen (Android, iOS, desktop). Works offline after the first load.
+- **NNLS Admixture Solver** — Replaced least-squares with a Lawson-Hanson Non-Negative Least Squares engine for more accurate population mixing proportions.
+- **Dynamic Strand Alignment** — Automatic complement-based flip correction ensures markers on the reverse strand are matched correctly.
+- **LD Pruning** — 250 kb sliding-window linkage disequilibrium pruning removes redundant markers for cleaner ancestry signals.
+- **Haplogroup Consensus Validation** — Flanking SNP checks allow bypassing ancestral rejection when sufficient descendant evidence exists.
+- **Tactile UI Micro-interactions** — Hover lifts, press scaling, and smooth transitions across all tabs and buttons.
 
 ---
 
 ## 🔒 Commitment to Privacy & Security
+
 The core philosophy of Genotype Scout is binary-level privacy. Your raw DNA file is parsed, analyzed, and visualized **entirely in your browser** using high-performance Web Workers. Your raw genetic data is never uploaded to or processed by any server.
 
 To be fully transparent about what stays on your device and what (optionally) leaves it:
@@ -21,15 +34,27 @@ To be fully transparent about what stays on your device and what (optionally) le
   - *Anonymous usage analytics* (Vercel Analytics & Speed Insights) collect aggregate page/performance metrics. No genetic data is included.
   - *Export to Google Slides* requires you to sign in with Google and sends an ancestry summary (health markers excluded) to **your own** Google account. It runs only when you explicitly trigger an export.
 
+---
+
 ## ⚙️ Technical Architecture
+
 Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing without compromising the user experience.
 
-*   **Runtime:** React 19 with Vite.
-*   **Language:** TypeScript in `strict` mode for type safety across all genetic calculations.
-*   **Performance:** Heavy string parsing and matrix calculations are offloaded to Web Workers to keep the UI responsive. The production bundle is code-split (large genomic datasets and the ML runtime load on demand) so the app shell loads fast.
-*   **On-device ML:** A local ONNX model runs **in the browser** via `onnxruntime-web` — no cloud calls and no API key required.
+| Component | Technology |
+| :--- | :--- |
+| **Runtime** | React 19 + Vite |
+| **Language** | TypeScript (`strict` mode) |
+| **Styling** | Tailwind CSS v4 with custom design tokens |
+| **Performance** | Web Workers for heavy parsing & matrix ops; code-split chunks for fast app-shell load |
+| **On-device ML** | ONNX model via `onnxruntime-web` — no cloud calls, no API key |
+| **Admixture Engine** | MDLP K16 with Lawson-Hanson NNLS solver |
+| **PWA** | `vite-plugin-pwa` with Workbox service worker, offline precaching, runtime font/asset caching |
+| **Theme** | Light (default) / Dark mode toggle with CSS custom properties |
+
+---
 
 ## 🧬 Forensic & High-Resolution Analysis
+
 We utilize specialized, industry-recognized forensic panels to maximize the accuracy of our reports.
 
 | Forensic Panel | Purpose |
@@ -43,19 +68,22 @@ We utilize specialized, industry-recognized forensic panels to maximize the accu
 ## 📋 Feature Breakdown
 
 ### 🌍 High-Precision Ancestry
-Calculate complex admixture percentages using advanced Least Squares (NNLS) methods. Your genotype is compared against dense population frequency datasets to interpret ancestral origins with high dimensionality.
+Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) methods with MDLP K16 reference populations. Your genotype is compared against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation. 95% confidence intervals are computed per population.
 
 ### 🏛️ Ancient DNA Oracle
 Weighted Ancient DNA matching. The engine applies weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing higher-confidence matches to ancestral populations.
 
 ### 🧠 Haplogroup Classification
-Hierarchical matching identifies your terminal SNP. Navigate paternal (Y-DNA) and maternal (mtDNA) lineages with classification logic that prioritizes the highest hierarchical rank for maximum specificity.
+Hierarchical matching identifies your terminal SNP. Navigate paternal (Y-DNA) and maternal (mtDNA) lineages with classification logic that prioritizes the highest hierarchical rank for maximum specificity. Flanking branch consensus validation improves accuracy for deep subclades.
 
 ### 🩺 Health & Wellness Reports
 Educational, genotype-based insights (not medical advice):
 *   **ABO & Rh Blood Type:** inferred from genotype markers.
 *   **Secretor Status:** FUT2 and related marker analysis.
 *   **APOE & other risk markers:** genetic marker analysis for health-related context.
+
+### 📱 Progressive Web App
+Install Genotype Scout directly to your home screen on Android, iOS, or desktop. After the first visit, the app shell and core assets are cached for offline access — your DNA analysis works even without an internet connection.
 
 ---
 
@@ -81,7 +109,8 @@ Ensure you have [Node.js](https://nodejs.org/) (v20+) installed, then:
 
 ### Useful scripts
 ```bash
-npm run build          # production build (runs the data-JSON validation guard first)
+npm run build          # production build with PWA service worker generation
+npm run preview        # preview the production build locally
 npm test               # run the vitest suite
 npm run lint           # type-check (tsc --noEmit, strict)
 npm run validate:json  # verify all data JSON files parse (guards against truncation)
