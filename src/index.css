@@ -167,4 +167,27 @@ div#root:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-
   }
 }
 
+/* Tactile button, tag and tab transition states */
+button, 
+[role="tab"], 
+.tab-btn,
+nav button,
+.category-btn,
+a.btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button:hover,
+[role="tab"]:hover,
+nav button:hover {
+  transform: translateY(-1.5px);
+  filter: brightness(1.05);
+}
+
+button:active,
+[role="tab"]:active,
+nav button:active {
+  transform: translateY(1px) scale(0.96) !important;
+}
+
 
