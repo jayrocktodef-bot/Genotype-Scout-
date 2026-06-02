@@ -244,34 +244,6 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
             </div>
           </div>
         </div>
-
-        {/* Genotype Scout Character Artwork */}
-        <div className="mt-16 w-full max-w-3xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="group relative overflow-hidden bg-slate-50 rounded-3xl border border-slate-100 p-4 sm:p-6 shadow-xl shadow-slate-100 hover:shadow-2xl transition-all hover:border-teal-50"
-          >
-            <div className="aspect-[2.1/1] w-full overflow-hidden rounded-2xl border border-slate-200 relative bg-slate-900 shadow-inner">
-              <img 
-                src="https://writteninthegenome.blog/wp-content/uploads/2026/05/17794109956991097490157538819964.png" 
-                alt="Genotype Scout - Scout Boy Mascot Logo" 
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <span className="text-[10px] font-black tracking-[0.2em] text-teal-650 uppercase bg-teal-50/50 px-3 py-1 rounded-full border border-teal-100">
-                Official Mascot & Companion
-              </span>
-              <p className="mt-2 text-xs text-slate-400 font-mono font-medium">
-                GENOTYPE SCOUT™ — Your privacy-first local genomic analysis suite.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-
       </motion.div>
     </div>
   );

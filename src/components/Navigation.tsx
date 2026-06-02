@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, Menu, X, User, Compass, BookOpen, Droplet, Microscope, ChevronDown } from 'lucide-react';
+import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, Menu, X, User, Compass, BookOpen, Droplet } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -16,6 +16,17 @@ const Navigation: React.FC<NavigationProps> = ({
   hasResults
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
@@ -53,7 +64,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
         {/* Desktop Tabs */}
         {hasResults && (
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -61,69 +72,93 @@ const Navigation: React.FC<NavigationProps> = ({
                   onTabChange(tab.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-[11px] font-black uppercase tracking-wider transition-all ${
                   activeTab === tab.id 
-                    ? 'bg-slate-900 text-white shadow-xl shadow-slate-200 scale-105' 
+                    ? 'bg-slate-900 text-white shadow-md scale-105' 
                     : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800'
                 }`}
               >
-                <tab.icon className={`w-4 h-4 ${activeTab === tab.id ? 'text-teal-400' : ''}`} />
+                <tab.icon className={`w-3.5 h-3.5 ${activeTab === tab.id ? 'text-teal-400' : ''}`} />
                 {tab.label}
               </button>
             ))}
           </div>
         )}
 
-        <div className="flex items-center gap-4">
-          <button 
-            onClick={onUploadNew}
-            className="px-6 py-2.5 bg-teal-600 text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg shadow-teal-100 hover:bg-teal-700 hover:shadow-xl transition-all"
-          >
-            {hasResults ? 'New Analysis' : 'Get Started'}
-          </button>
+        <div className="flex items-center gap-3">
+          {hasResults && (
+            <button 
+              onClick={onUploadNew}
+              className="hidden sm:inline-flex px-5 py-2.5 bg-teal-600 text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg shadow-teal-100 hover:bg-teal-700 hover:shadow-xl transition-all"
+            >
+              New Analysis
+            </button>
+          )}
           
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-500 rounded-full hover:bg-slate-100"
+            className="xl:hidden p-2.5 text-slate-650 rounded-xl hover:bg-slate-100 transition-colors"
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden bg-white border-b border-slate-100 p-6 space-y-4"
-        >
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                onTabChange(tab.id);
-                setMobileMenuOpen(false);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className={`flex items-center gap-4 w-full p-4 rounded-2xl text-base font-bold transition-all ${
-                activeTab === tab.id 
-                  ? 'bg-slate-900 text-white' 
-                  : 'text-slate-500 bg-slate-50'
-              }`}
-            >
-              <tab.icon className={`w-5 h-5 ${activeTab === tab.id ? 'text-teal-400' : ''}`} />
-              {tab.label}
-            </button>
-          ))}
-          
-          <div className="pt-6 border-t border-slate-100 space-y-2">
-            <a href="https://WrittenInTheGenome.blog" target="_blank" rel="noopener noreferrer" className="block p-3 text-sm font-bold text-slate-600 hover:text-teal-600">Blog</a>
-            <a href="https://www.facebook.com/share/g/1EFyWD35tB/" target="_blank" rel="noopener noreferrer" className="block p-3 text-sm font-bold text-slate-600 hover:text-teal-600">Facebook Group</a>
-            <a href="https://www.paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="block p-3 text-sm font-bold text-slate-600 hover:text-teal-600">Support / Donate</a>
-          </div>
-        </motion.div>
+        <>
+          {/* Backdrop */}
+          <div 
+            className="xl:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-30"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="xl:hidden fixed top-20 left-0 right-0 bottom-0 bg-white border-t border-slate-100 z-40 flex flex-col"
+          >
+            <div className="flex-1 overflow-y-auto p-4 pb-6 space-y-2">
+              {hasResults && tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    onTabChange(tab.id);
+                    setMobileMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`flex items-center gap-4 w-full p-4 rounded-2xl text-base font-bold transition-all ${
+                    activeTab === tab.id 
+                      ? 'bg-slate-900 text-white shadow-md' 
+                      : 'text-slate-600 bg-slate-50 hover:bg-slate-100'
+                  }`}
+                >
+                  <tab.icon className={`w-5 h-5 ${activeTab === tab.id ? 'text-teal-400' : ''}`} />
+                  {tab.label}
+                </button>
+              ))}
+
+              {hasResults && (
+                <button
+                  onClick={() => {
+                    onUploadNew();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex items-center gap-4 w-full p-4 rounded-2xl text-base font-bold bg-teal-50 text-teal-700 hover:bg-teal-100 transition-all mt-2"
+                >
+                  <FlaskConical className="w-5 h-5" />
+                  New Analysis
+                </button>
+              )}
+            </div>
+
+            <div className="p-4 pt-3 border-t border-slate-100 space-y-1 shrink-0 bg-white">
+              <a href="https://WrittenInTheGenome.blog" target="_blank" rel="noopener noreferrer" className="block p-3 text-sm font-bold text-slate-650 hover:text-teal-600 transition-colors rounded-xl hover:bg-slate-50">Blog</a>
+              <a href="https://www.facebook.com/share/g/1EFyWD35tB/" target="_blank" rel="noopener noreferrer" className="block p-3 text-sm font-bold text-slate-650 hover:text-teal-600 transition-colors rounded-xl hover:bg-slate-50">Facebook Group</a>
+              <a href="https://www.paypal.me/jequandavis" target="_blank" rel="noopener noreferrer" className="block p-3 text-sm font-bold text-slate-650 hover:text-teal-600 transition-colors rounded-xl hover:bg-slate-50">Support / Donate</a>
+            </div>
+          </motion.div>
+        </>
       )}
     </nav>
   );

@@ -884,7 +884,7 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
   }
 
   return {
-    primary: runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, mdlp: mdlpResults }, sampleId),
+    primary: await runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, mdlp: mdlpResults }, sampleId),
     onnxClassifierResult: onnxResult || undefined
   };
 }

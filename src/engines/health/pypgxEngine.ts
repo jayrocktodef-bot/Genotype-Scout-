@@ -52,13 +52,14 @@ export function callStarAlleles(gene: string, userSnps: Record<string, string>):
   };
 }
 
+export const PGX_MARKERS_MAP: Record<string, string[]> = {
+    'CYP2D6': ['rs3892097', 'rs1065852', 'rs28371725'],
+    'CYP2C19': ['rs12248560', 'rs28399504'],
+    'DPYD': ['rs3918290', 'rs55886062']
+};
+
 function getMarkersForGene(gene: string): string[] {
-    const map: Record<string, string[]> = {
-        'CYP2D6': ['rs3892097', 'rs1065852', 'rs28371725'],
-        'CYP2C19': ['rs12248560', 'rs28399504'],
-        'DPYD': ['rs3918290', 'rs55886062']
-    };
-    return map[gene] || [];
+    return PGX_MARKERS_MAP[gene] || [];
 }
 
 function getAlleleValue(gene: string, allele: string): number {

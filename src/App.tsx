@@ -2139,7 +2139,7 @@ export default function App() {
           worker.terminate();
         } else if (type === 'ERROR') {
           if (intervalId) clearInterval(intervalId);
-          setError(workerError || "Processing failed in background worker.");
+          setError(workerError?.message || workerError || "Processing failed in background worker.");
           setProcessing(false);
           worker.terminate();
         }

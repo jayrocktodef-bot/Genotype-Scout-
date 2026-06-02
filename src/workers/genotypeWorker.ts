@@ -160,22 +160,27 @@ self.onmessage = async (e: MessageEvent) => {
       self.postMessage({ type: 'PROGRESS', payload: { step: "Completing Profiler..." } });
     }
 
+    // Force-sanitize payload: JSON round-trip strips Promises, functions, Maps,
+    // Sets, and any other non-structured-cloneable values that would crash postMessage.
+    const rawPayload = { 
+      name: names[0], 
+      results: ancestryResult, 
+      chip: chips[0] || "Unknown Chip",
+      snpCount: totalSnps,
+      predictedYDNA, predictedMtDNA, mergedMtMap,
+      mergedSnpMap: imputedSnpMap,
+      analysis: { 
+        ...bloodResult,
+        oracleResults, 
+        naiveEstimates,
+        subpopulationOracle
+      } 
+    };
+    const safePayload = JSON.parse(JSON.stringify(rawPayload));
+
     self.postMessage({ 
       type: 'SUCCESS', 
-      payload: { 
-        name: names[0], 
-        results: ancestryResult, 
-        chip: chips[0] || "Unknown Chip",
-        snpCount: totalSnps,
-        predictedYDNA, predictedMtDNA, mergedMtMap,
-        mergedSnpMap: imputedSnpMap,
-        analysis: { 
-          ...bloodResult,
-          oracleResults, 
-          naiveEstimates,
-          subpopulationOracle
-        } 
-      } 
+      payload: safePayload 
     });
   } catch (err) {
     if (sab) { 
