@@ -31,13 +31,10 @@ const Navigation: React.FC<NavigationProps> = ({
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
     { id: 'summary', label: 'Profile', icon: User },
-    { id: 'oracle', label: 'Ancestry', icon: Globe },
-    { id: 'naive_oracle', label: 'Scout Score', icon: FlaskConical },
-    { id: 'wellness', label: 'Wellness', icon: HeartPulse },
-    { id: 'haplogroups', label: 'Lineages', icon: History },
+    { id: 'ancestry', label: 'Ancestry & Pop', icon: Globe },
+    { id: 'history', label: 'Lineages & History', icon: History },
+    { id: 'health_traits', label: 'Health & Traits', icon: HeartPulse },
     { id: 'autosomal', label: 'Markers', icon: Database },
-    { id: 'blood', label: 'Blood Type', icon: Droplet },
-    { id: 'ancient', label: 'Ancient DNA', icon: Compass },
     { id: 'methodology', label: 'Methodology', icon: BookOpen }
   ];
 

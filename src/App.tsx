@@ -1901,7 +1901,11 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'oracle' | 'naive_oracle' | 'haplogroups' | 'ancient' | 'compare' | 'markers' | 'wellness' | 'blood' | 'debug' | 'methodology'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology'>('dashboard');
+
+  const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'scout'>('oracle');
+  const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'blood'>('wellness');
+  const [activeHistorySubTab, setActiveHistorySubTab] = useState<'modern' | 'ancient'>('modern');
 
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>('Health');
@@ -2532,7 +2536,7 @@ export default function App() {
                 </div>
                 <div>
                   <h2 className="text-xl font-black text-slate-850 tracking-tight capitalize select-none">
-                    {activeTab === 'naive_oracle' ? 'Scout Score' : activeTab === 'haplogroups' ? 'Lineages' : activeTab === 'autosomal' ? 'Markers' : activeTab === 'oracle' ? 'Ancestry Oracle' : activeTab === 'blood' ? 'Blood Predictor' : activeTab === 'compare' ? 'Population Matcher' : activeTab}
+                    {activeTab === 'ancestry' ? 'Ancestry & Populations' : activeTab === 'history' ? 'Lineages & History' : activeTab === 'health_traits' ? 'Health & Traits' : activeTab === 'autosomal' ? 'Markers' : activeTab}
                   </h2>
                   <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
                     Analyzing dataset: <span className="text-slate-600 font-mono font-black">{datasets[activeDatasetIndex]?.name}</span>
@@ -2644,129 +2648,184 @@ export default function App() {
                   </div>
                 )}
 
-                {activeTab === 'oracle' && (
+                {activeTab === 'ancestry' && (
                   <div className="pb-20 space-y-8">
-                     <SubpopulationBento 
-                       precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
-                       userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
-                       aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
-                         rsid: aim.rsid,
-                         chromosome: aim.chromosome || 'Unknown',
-                         subpop: aim.region, // Assuming region maps to subpop
-                         continent: aim.region || 'Unknown',
-                         alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
-                       }))}
-                     />
-                     <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
-                  </div>
-                )}
-
-                {activeTab === 'naive_oracle' && (
-                  <div className="pb-20">
-                     <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
-                  </div>
-                )}
-
-                {activeTab === 'wellness' && (
-                  <div className="pb-20">
-                    <Suspense fallback={<div className="text-center p-12 text-slate-400">Loading Wellness Analysis...</div>}>
-                      <HealthWellnessTab 
-                        impacts={healthWellnessMatches} 
-                        userSnps={snpMaps.current[activeDatasetIndex]} 
-                        mode="analyst"
-                      />
-                    </Suspense>
-                  </div>
-                )}
-
-                {activeTab === 'haplogroups' && (
-                  <div className="space-y-8 pb-20">
-                    <div className="flex justify-center mb-8">
-                      <div className="inline-flex bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
+                    <div className="flex justify-center mb-4">
+                      <div className="inline-flex bg-[#111213]/40 p-1.5 rounded-2xl border border-white/5 shadow-inner">
                         <button 
-                          onClick={() => setActiveHaploType('paternal')}
-                          className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                          onClick={() => setActiveAncestrySubTab('oracle')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'oracle' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
                         >
-                          ♂️ Paternal
+                          🔬 High-Res Oracle
                         </button>
                         <button 
-                          onClick={() => setActiveHaploType('maternal')}
-                          className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                          onClick={() => setActiveAncestrySubTab('scout')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'scout' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
                         >
-                          ♀️ Maternal
+                          ⚡ Scout Score
                         </button>
                       </div>
                     </div>
 
-                    {activeHaploType === 'paternal' ? (
-                      <YDNAView 
-                        yData={datasets[activeDatasetIndex].predictedYDNA} 
-                        treeSearchTerm={treeSearchTerm}
-                        setTreeSearchTerm={setTreeSearchTerm}
-                      />
+                    {activeAncestrySubTab === 'oracle' ? (
+                      <div className="space-y-8">
+                         <SubpopulationBento 
+                           precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
+                           userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
+                           aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
+                             rsid: aim.rsid,
+                             chromosome: aim.chromosome || 'Unknown',
+                             subpop: aim.region, // Assuming region maps to subpop
+                             continent: aim.region || 'Unknown',
+                             alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
+                           }))}
+                         />
+                         <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
+                      </div>
                     ) : (
-                      <MTDNAView 
-                        mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                        treeSearchTerm={treeSearchTerm}
-                        setTreeSearchTerm={setTreeSearchTerm}
-                        matchedTraits={userMatchedMitoTraits}
-                      />
+                      <div className="animate-fade-in">
+                         <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
+                      </div>
                     )}
                   </div>
                 )}
 
-                {activeTab === 'ancient' && (
-                  <div className="pb-20 space-y-8 animate-fade-in">
-                    <div className="flex justify-center">
-                      <div className="p-1.5 bg-slate-100 rounded-2xl inline-flex border border-slate-200 shadow-inner">
-                        <button
-                          onClick={() => setActiveAncientSubTab('admixture')}
-                          className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
-                            activeAncientSubTab === 'admixture' 
-                              ? 'bg-slate-900 text-white shadow-md scale-105' 
-                              : 'text-slate-500 hover:text-slate-800'
-                          }`}
+                {activeTab === 'health_traits' && (
+                  <div className="pb-20 space-y-8">
+                    <div className="flex justify-center mb-4">
+                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner">
+                        <button 
+                          onClick={() => setActiveHealthSubTab('wellness')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'wellness' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-550 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
-                          <History size={14} /> Ancient Admixture
+                          🩺 Wellness & Risk
                         </button>
-                        <button
-                          onClick={() => setActiveAncientSubTab('matches')}
-                          className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
-                            activeAncientSubTab === 'matches' 
-                              ? 'bg-slate-900 text-white shadow-md scale-105' 
-                              : 'text-slate-500 hover:text-slate-800'
-                          }`}
+                        <button 
+                          onClick={() => setActiveHealthSubTab('blood')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-550 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
-                          <User size={14} /> Sample Matches
+                          🩸 Blood Type Predictor
                         </button>
                       </div>
                     </div>
 
-                    {activeAncientSubTab === 'admixture' ? (
-                      <AncientAncestryOracle 
-                        results={ancientAdmixture} 
-                        title="Deep Time Oracle" 
-                        subtitle="Ancient Admixture & Paleolithic Affinity"
-                        type="admixture"
-                        onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                      />
+                    {activeHealthSubTab === 'wellness' ? (
+                      <Suspense fallback={<div className="text-center p-12 text-slate-400">Loading Wellness Analysis...</div>}>
+                        <HealthWellnessTab 
+                          impacts={healthWellnessMatches} 
+                          userSnps={snpMaps.current[activeDatasetIndex]} 
+                          mode="analyst"
+                        />
+                      </Suspense>
                     ) : (
-                      <AncientAncestryOracle 
-                        results={individualMatches} 
-                        title="Fossil Specimen Matches" 
-                        subtitle="Direct Genetic Affinity to Ancient Individuals"
-                        type="matches"
-                        onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                      />
+                      <div className="animate-fade-in">
+                        <BloodTypeView 
+                          dataset={datasets[activeDatasetIndex]} 
+                        />
+                      </div>
                     )}
                   </div>
                 )}
 
-                {activeTab === 'blood' && (
-                  <div className="pb-20">
-                    <BloodTypeView 
-                      dataset={datasets[activeDatasetIndex]} 
-                    />
+                {activeTab === 'history' && (
+                  <div className="pb-20 space-y-8">
+                    <div className="flex justify-center mb-4">
+                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner">
+                        <button 
+                          onClick={() => setActiveHistorySubTab('modern')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'modern' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-555 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                        >
+                          🧬 Modern Lineages
+                        </button>
+                        <button 
+                          onClick={() => setActiveHistorySubTab('ancient')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'ancient' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-555 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                        >
+                          💀 Ancient DNA Matches
+                        </button>
+                      </div>
+                    </div>
+
+                    {activeHistorySubTab === 'modern' ? (
+                      <div className="space-y-8 animate-fade-in">
+                        <div className="flex justify-center mb-8">
+                          <div className="inline-flex bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
+                            <button 
+                              onClick={() => setActiveHaploType('paternal')}
+                              className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                            >
+                              ♂️ Paternal
+                            </button>
+                            <button 
+                              onClick={() => setActiveHaploType('maternal')}
+                              className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                            >
+                              ♀️ Maternal
+                            </button>
+                          </div>
+                        </div>
+
+                        {activeHaploType === 'paternal' ? (
+                          <YDNAView 
+                            yData={datasets[activeDatasetIndex].predictedYDNA} 
+                            treeSearchTerm={treeSearchTerm}
+                            setTreeSearchTerm={setTreeSearchTerm}
+                          />
+                        ) : (
+                          <MTDNAView 
+                            mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                            treeSearchTerm={treeSearchTerm}
+                            setTreeSearchTerm={setTreeSearchTerm}
+                            matchedTraits={userMatchedMitoTraits}
+                          />
+                        )}
+                      </div>
+                    ) : (
+                      <div className="space-y-8 animate-fade-in">
+                        <div className="flex justify-center">
+                          <div className="p-1.5 bg-slate-100 rounded-2xl inline-flex border border-slate-200 shadow-inner">
+                            <button
+                              onClick={() => setActiveAncientSubTab('admixture')}
+                              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                                activeAncientSubTab === 'admixture' 
+                                  ? 'bg-slate-900 text-white shadow-md scale-105' 
+                                  : 'text-slate-500 hover:text-slate-800'
+                              }`}
+                            >
+                              <History size={14} /> Ancient Admixture
+                            </button>
+                            <button
+                              onClick={() => setActiveAncientSubTab('matches')}
+                              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                                activeAncientSubTab === 'matches' 
+                                  ? 'bg-slate-900 text-white shadow-md scale-105' 
+                                  : 'text-slate-500 hover:text-slate-800'
+                              }`}
+                            >
+                              <User size={14} /> Sample Matches
+                            </button>
+                          </div>
+                        </div>
+
+                        {activeAncientSubTab === 'admixture' ? (
+                          <AncientAncestryOracle 
+                            results={ancientAdmixture} 
+                            title="Deep Time Oracle" 
+                            subtitle="Ancient Admixture & Paleolithic Affinity"
+                            type="admixture"
+                            onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                          />
+                        ) : (
+                          <AncientAncestryOracle 
+                            results={individualMatches} 
+                            title="Fossil Specimen Matches" 
+                            subtitle="Direct Genetic Affinity to Ancient Individuals"
+                            type="matches"
+                            onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                          />
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
 
