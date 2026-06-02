@@ -23,8 +23,13 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
   }
 
   // 2. Determine ABO Phenotype
-  // Note: 'D' = Deletion (O), 'I' = Insertion (A or B)
-  if (oMarker === 'DD' || oMarker === 'O/O') {
+  // Note: 'D' = Deletion (O), 'I' = Insertion (A or B), '-' = Deletion
+  const isHomozygousO = oMarker && (
+    ["DD", "--", "O/O", "-/-", "D/D"].includes(oMarker) ||
+    oMarker.split('').every(c => c === '-' || c === 'D' || c === 'O')
+  );
+
+  if (isHomozygousO) {
     phenotype = "O";
   } else {
     // If not O, check if B markers are present
@@ -33,9 +38,7 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
     
     if (hasB) {
       // If they have B and are not Type O, they are either B or AB
-      // A truly robust app would check A-specific SNPs too, but B is the most distinct
       phenotype = (oMarker === 'II' && isHomozygousB) ? "B" : "AB"; 
-      // Simplification: most non-O carriers with B variants are B or AB
     } else {
       phenotype = "A";
     }

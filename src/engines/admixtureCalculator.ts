@@ -171,12 +171,11 @@ export function calculateProAncestry(
   });
 
   // PREPARE MATRICES FOR NNLS
-  const numMarkers = informativeRsids.length;
   const numPops = SUPER_POPS.length;
   
-  const A: number[][] = Array(numMarkers).fill(0).map(() => Array(numPops).fill(0));
-  const b: number[] = Array(numMarkers).fill(0);
-  const weights: number[] = Array(numMarkers).fill(0);
+  const A: number[][] = [];
+  const b: number[] = [];
+  const weights: number[] = [];
 
   let markersUsed = 0;
   let commercialAimsDetected = 0;
@@ -201,6 +200,9 @@ export function calculateProAncestry(
 
     const marker = (grafIndex as any)[rsid.toUpperCase()] || (grafIndex as any)[rsid];
     if (!marker) continue;
+
+    const markerRefData = enhancedRef[rsid];
+    if (!markerRefData || !markerRefData.populations) continue;
     
     let dosage = 0;
     const a1 = genotype[0];
@@ -209,26 +211,15 @@ export function calculateProAncestry(
     if (a1 === alt) dosage++;
     if (a2 === alt) dosage++;
 
-    markersUsed++;
-    b[i] = dosage;
-
-    let weight = markerWeightMap?.[rsid] || 1.0;
-    if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = Math.max(weight, 10.0);
-    if (commercialSet.has(rsid)) {
-        commercialAimsDetected++;
-        weight = Math.max(weight, 15.0);
-    }
-    if (diagnosticSuperWeights[rsid]) weight = diagnosticSuperWeights[rsid];
-    weights[i] = weight;
-
-    const markerRefData = enhancedRef[rsid];
-    if (!markerRefData || !markerRefData.populations) continue;
-
+    // Calculate pop expectations for this marker
+    const popExpectations: number[] = Array(numPops).fill(0);
+    let hasRefPopData = false;
     for (let j = 0; j < numPops; j++) {
       const pop = SUPER_POPS[j];
       const refPopData = markerRefData.populations[pop];
       if (!refPopData) continue;
       
+      hasRefPopData = true;
       let popExpectation = 0;
       // Faster dosage-expectation calculation
       for (const [g, pVal] of Object.entries(refPopData)) {
@@ -238,12 +229,27 @@ export function calculateProAncestry(
           if (g[1] === alt) gDosage++;
           popExpectation += p * gDosage;
       }
-      A[i][j] = popExpectation;
+      popExpectations[j] = popExpectation;
     }
+
+    if (!hasRefPopData) continue;
+
+    markersUsed++;
+    b.push(dosage);
+    A.push(popExpectations);
+
+    let weight = markerWeightMap?.[rsid] || 1.0;
+    if (forensicSet.has(rsid) || deepSet.has(rsid)) weight = Math.max(weight, 10.0);
+    if (commercialSet.has(rsid)) {
+        commercialAimsDetected++;
+        weight = Math.max(weight, 15.0);
+    }
+    if (diagnosticSuperWeights[rsid]) weight = diagnosticSuperWeights[rsid];
+    weights.push(weight);
   }
 
   // NNLS CALCULATION
-  const proportions = solveNNLS(A, b, weights);
+  const proportions = markersUsed > 0 ? solveNNLS(A, b, weights) : new Array(numPops).fill(0);
 
   const finalPercentages: Record<string, number> = {};
   const totalWeight = proportions.reduce((sum, val) => sum + val, 0);

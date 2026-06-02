@@ -7,6 +7,7 @@ const getMasterAims = () => {
   return masterAimsCache;
 };
 import hoReferenceKernel from '../data/raw_aims/ho_modern_reference_kernel.json';
+import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
 import { getPopulationInfo } from '../services/populationMapper';
 
 export interface AIM {
@@ -448,7 +449,17 @@ export function processSubpopulations(
       const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
       let userDosageDiscrete = 1; // Default to heterozygous (1 copy)
 
-      if (aim && aim.alleles && aim.alleles.length > 0) {
+      const marker = (graf10kIndex as any)[rsidLower] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid];
+      if (marker) {
+        const alt = marker.alt.toUpperCase();
+        let matchCount = 0;
+        for (const char of genotype.toUpperCase()) {
+          if (char === alt) {
+            matchCount++;
+          }
+        }
+        userDosageDiscrete = matchCount; // Will yield 0, 1, or 2
+      } else if (aim && aim.alleles && aim.alleles.length > 0) {
         const testAllele = aim.alleles[0];
         let matchCount = 0;
         for (const char of genotype) {
@@ -614,7 +625,15 @@ export function processSubpopulations(
     const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
     let uDosage = 1;
 
-    if (aim && aim.alleles && aim.alleles.length > 0) {
+    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()];
+    if (marker) {
+      const alt = marker.alt.toUpperCase();
+      let matchCount = 0;
+      for (const char of meta.genotype.toUpperCase()) {
+        if (char === alt) matchCount++;
+      }
+      uDosage = matchCount;
+    } else if (aim && aim.alleles && aim.alleles.length > 0) {
       const testAllele = aim.alleles[0];
       let matchCount = 0;
       for (const char of meta.genotype) {

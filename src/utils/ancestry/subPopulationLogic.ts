@@ -24,8 +24,16 @@ export function calculateSubPopResonance(userGenotypes: Record<string, string>) 
     const marker = (grafIndex as any)[rsid];
     if (!marker) return;
 
-    const ref = marker.ref;
-    const alt = marker.alt;
+    const ref = marker.ref.toUpperCase();
+    const alt = marker.alt.toUpperCase();
+
+    const getComplement = (b: string) => {
+      const map: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+      return map[b] || b;
+    };
+
+    const compRef = getComplement(ref);
+    const compAlt = getComplement(alt);
 
     populations.forEach(pop => {
       // Clamp p to [0.0001, 0.9999] to prevent log(0) and extreme likelihoods
@@ -34,20 +42,23 @@ export function calculateSubPopResonance(userGenotypes: Record<string, string>) 
       
       let prob = 1e-6; // Laplacian smoothing
       
-      // Determine if genotype matches ref/alt
-      const isAltAlt = genotype === (alt + alt);
-      const isRefRef = genotype === (ref + ref);
-      const isHetero = genotype.length === 2 && 
-                      ((genotype[0] === ref && genotype[1] === alt) || 
-                       (genotype[0] === alt && genotype[1] === ref));
+      // Determine if genotype matches ref/alt on forward or complement strand
+      const gUpper = genotype.toUpperCase();
+      const isAltAlt = gUpper === (alt + alt) || gUpper === (compAlt + compAlt);
+      const isRefRef = gUpper === (ref + ref) || gUpper === (compRef + compRef);
+      const isHetero = gUpper.length === 2 && 
+                      ((gUpper[0] === ref && gUpper[1] === alt) || 
+                       (gUpper[0] === alt && gUpper[1] === ref) ||
+                       (gUpper[0] === compRef && gUpper[1] === compAlt) || 
+                       (gUpper[0] === compAlt && gUpper[1] === compRef));
 
       if (isAltAlt) prob = p * p;
       else if (isHetero) prob = 2 * p * q;
       else if (isRefRef) prob = q * q;
       else {
-        // Fallback for strand flips or mismatched data:
+        // Fallback for strand flips or mismatched data (rarely hit now due to complement checks):
         // Try simple homozygous vs heterozygous check as a heuristic if strict base matching fails
-        if (genotype.length === 2 && genotype[0] === genotype[1]) {
+        if (gUpper.length === 2 && gUpper[0] === gUpper[1]) {
            prob = Math.max(p * p, q * q); 
         } else {
            prob = 2 * p * q;

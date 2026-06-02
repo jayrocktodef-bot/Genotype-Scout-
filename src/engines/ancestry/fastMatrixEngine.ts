@@ -1,5 +1,6 @@
 import { get, set } from 'idb-keyval';
 import hoReferenceKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
+import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
 
 export interface PopulationProximity {
   population: string;
@@ -121,8 +122,17 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
     const index = rsidToIndexMap.get(rsid);
     if (index === undefined || call.length !== 2) continue;
     
-    // Determine base dosage (0.5=Het, 1.0=Hom to be finalized later)
-    const dosage = call[0] !== call[1] ? 0.5 : 1.0;
+    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+    if (!marker) continue;
+
+    // Determine exact user dosage of the alternative allele
+    let dosage = 0.0;
+    const a1 = call[0].toUpperCase();
+    const a2 = call[1].toUpperCase();
+    const alt = marker.alt.toUpperCase();
+    if (a1 === alt) dosage += 0.5;
+    if (a2 === alt) dosage += 0.5;
+    
     activeMarkers.push({ index, dosage });
   }
 
@@ -134,17 +144,11 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
     let totalEuclideanDistance = 0.0;
     let validMarkers = 0;
 
-    for (const { index, dosage: uCall } of activeMarkers) {
+    for (const { index, dosage } of activeMarkers) {
       const refFreq = refArray[index];
 
       // Skip if reference is missing this marker
       if (refFreq === -1.0) continue;
-
-      // Finalize Homozygous dosage based on the reference frequency
-      let dosage = uCall;
-      if (dosage === 1.0) {
-        dosage = refFreq > 0.5 ? 1.0 : 0.0;
-      }
 
       // Calculate distance
       const diff = dosage - refFreq;

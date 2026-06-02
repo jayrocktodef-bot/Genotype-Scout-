@@ -82,8 +82,8 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
     let predicted = "Uncertain";
     
     // Check for Type O (Homozygous deletion at rs8176719)
-    // Common formats: DD, II, --, del/del, -/-, O/O
-    const isHomozygousO = ["DD", "II", "--", "O/O"].includes(r719) || (r719 || "").split('').every(c => c === '-' || c === 'I' || c === 'D');
+    // Common formats: DD, --, del/del, -/-, O/O, D/D
+    const isHomozygousO = ["DD", "--", "O/O", "-/-", "D/D"].includes(r719) || (r719 || "").split('').every(c => c === '-' || c === 'D' || c === 'O');
     
     // Check for A and B alleles
     const hasA = (r747 || "").includes('G') || (r750 || "").includes('A') || (r746 || "").includes('G');
