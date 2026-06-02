@@ -365,16 +365,16 @@ const ProfileSummary = memo(({
     <motion.div 
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      className="space-y-6 pb-12"
+      className="space-y-5 pb-8"
     >
       {/* Premium Dashboard Header Capsule */}
       <div className="p-4 rounded-3xl premium-card bg-slate-900 border border-slate-800 text-white shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <h3 className="text-sm font-black uppercase tracking-[0.2em] text-emerald-400">Genomic Passport Summary</h3>
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-400">Genomic Passport Summary</h3>
           </div>
-          <h2 className="text-xl font-black text-white tracking-tight mt-1 truncate max-w-md">
+          <h2 className="text-lg font-black text-white tracking-tight mt-1 truncate max-w-md">
             {dataset.name || "Sample Specimen"}
           </h2>
         </div>
@@ -396,145 +396,134 @@ const ProfileSummary = memo(({
       </div>
 
       {/* Main High-Density Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-5">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
         
-        {/* Cell A (Span 4) - Biogeographical Continental Admixture (Radar) */}
-        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between min-h-[300px]">
-          <div className="flex justify-between items-start mb-4">
+        {/* Cell A (Span 8) - Biogeographical Admixture & Subpopulation Deconvolution */}
+        <div className="xl:col-span-8 p-5 premium-card flex flex-col justify-between">
+          <div className="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
             <div>
-              <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Continental Origins</h3>
-              <h4 className="text-base font-black text-slate-800 tracking-tight mt-0.5">Admixture Proportions</h4>
+              <h3 className="text-xs font-black text-slate-450 uppercase tracking-[0.15em]">Biogeographical Origins & Deconvolution</h3>
+              <p className="text-[10px] text-slate-500 font-medium">Continental admixture proportions and refined subpopulation estimates.</p>
             </div>
           </div>
           
-          <div className="relative w-full h-[180px] my-auto flex items-center justify-center">
-            {isChartReady ? (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={180} debounce={1}>
-                <RadarChart data={ancestryChartData} margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
-                  <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
-                  <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 9, fontWeight: 800 }} />
-                  <Radar name="Origins" dataKey="value" stroke="#0d9488" fill="#0d9488" fillOpacity={0.15} />
-                </RadarChart>
-              </ResponsiveContainer>
-            ) : (
-              <div className="w-full h-full bg-slate-50/50 rounded-2xl animate-pulse" />
-            )}
-          </div>
-          
-          <div className="pt-3 border-t border-slate-100 flex justify-between gap-2">
-            {ancestryChartData.slice(0, 3).map((anc: any, i: number) => (
-              <div key={i} className="text-center">
-                <span className="text-[10px] font-black text-slate-700 block truncate max-w-[80px]">
-                  {anc.name}
-                </span>
-                <span className="text-[11px] font-mono font-black text-teal-600">{anc.value.toFixed(1)}%</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            {/* Radar chart - span 5 */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-slate-100/50 pr-0 lg:pr-4">
+              <div className="relative w-full h-[150px] flex items-center justify-center">
+                {isChartReady ? (
+                  <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={150} debounce={1}>
+                    <RadarChart data={ancestryChartData} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
+                      <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
+                      <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 8, fontWeight: 800 }} />
+                      <Radar name="Origins" dataKey="value" stroke="#0d9488" fill="#0d9488" fillOpacity={0.12} />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="w-full h-full bg-slate-50/50 rounded-2xl animate-pulse" />
+                )}
               </div>
-            ))}
-          </div>
-        </div>
+              <div className="flex justify-center gap-3 mt-1 flex-wrap text-[9px] font-mono">
+                {ancestryChartData.slice(0, 3).map((anc: any, i: number) => (
+                  <span key={i} className="text-slate-600 bg-slate-50 px-2 py-0.5 rounded-lg border border-slate-100">
+                    <strong>{anc.name}:</strong> {anc.value.toFixed(0)}%
+                  </span>
+                ))}
+              </div>
+            </div>
 
-        {/* Cell B (Span 4) - Refined Subpopulation Affinity (NNLS list of top 5) */}
-        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between min-h-[300px]">
-          <div>
-            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Micro-Subpopulation Fit</h3>
-            <h4 className="text-base font-black text-slate-800 tracking-tight mt-0.5">Admixture Deconvolution</h4>
-          </div>
-
-          <div className="divide-y divide-slate-100 py-2">
-            {sortedEngineResults.length > 0 ? (
-              sortedEngineResults.map((pop, idx) => (
-                <div key={idx} className="py-2 first:pt-0 last:pb-0">
-                  <div className="flex justify-between items-center text-xs mb-1">
-                    <span className="font-bold text-slate-700 truncate max-w-[200px]">{formatPopName(pop.name || pop.popCode)}</span>
-                    <span className="font-black text-teal-600 font-mono bg-teal-50 px-1.5 py-0.5 rounded text-[10px]">{(pop.percentage || 0).toFixed(1)}%</span>
+            {/* Subpopulations fit list - span 7 */}
+            <div className="lg:col-span-7 space-y-2">
+              <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Top Subpopulation Contributions</span>
+              {sortedEngineResults.length > 0 ? (
+                sortedEngineResults.slice(0, 4).map((pop, idx) => (
+                  <div key={idx} className="p-2 rounded-xl bg-slate-50/70 border border-slate-100 flex flex-col justify-between">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-bold text-slate-700 truncate max-w-[200px]">{formatPopName(pop.name || pop.popCode)}</span>
+                      <span className="font-mono font-black text-teal-600 bg-teal-50 px-1.5 py-0.2 rounded text-[9px]">{(pop.percentage || 0).toFixed(1)}%</span>
+                    </div>
+                    <div className="w-full bg-slate-200 rounded-full h-1 my-1 overflow-hidden">
+                      <div 
+                        className="bg-teal-600 h-full rounded-full"
+                        style={{ width: `${Math.max(pop.percentage || 0, 1)}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-full h-1 my-1 overflow-hidden">
-                    <div 
-                      className="bg-teal-600 h-full rounded-full"
-                      style={{ width: `${Math.max(pop.percentage || 0, 1)}%` }}
-                    />
-                  </div>
-                  <div className="flex justify-between text-[8px] font-bold text-slate-400 uppercase tracking-widest">
-                    <span>Fit Contribution</span>
-                    <span className="font-mono text-[9px] uppercase">code: {pop.popCode || 'N/A'}</span>
-                  </div>
+                ))
+              ) : (
+                <div className="py-6 text-center text-xs text-slate-400">
+                  No advanced subpopulation data active.
                 </div>
-              ))
-            ) : (
-              <div className="py-6 text-center text-xs text-slate-400">
-                No advanced subpopulation data active.
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Cell C (Span 4) - Uni-parental Lineages (Paternal + Maternal) */}
-        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between min-h-[300px]">
-          <div>
-            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Uniparental Lineages</h3>
-            <h4 className="text-base font-black text-slate-800 tracking-tight mt-0.5">Cladistic Deep Marker Seeding</h4>
+        {/* Cell B (Span 4) - Uni-parental Lineages (Maternal + Paternal + Rh) */}
+        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between">
+          <div className="border-b border-slate-100 pb-3 mb-3">
+            <h3 className="text-xs font-black text-slate-455 uppercase tracking-[0.15em]">Uniparental Lineages</h3>
+            <p className="text-[10px] text-slate-500 font-medium">Cladistic deep maternal & paternal marker sets.</p>
           </div>
 
-          <div className="space-y-4 my-auto">
+          <div className="space-y-2 my-auto">
             {/* Paternal Card */}
-            <div className="p-3.5 rounded-2xl bg-gradient-to-br from-white to-teal-50/20 border border-teal-100/50 flex gap-3.5 items-center">
-              <div className="w-10 h-10 rounded-2xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-teal-600/10">
-                <Compass className="w-5 h-5" />
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-teal-50/10 border border-teal-100/30 flex gap-3 items-center">
+              <div className="w-8 h-8 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-teal-600/10">
+                <Compass className="w-4 h-4" />
               </div>
               <div className="min-w-0">
-                <span className="text-[9px] font-black text-teal-600 uppercase tracking-widest block leading-none mb-1">Paternal haplogroup (y-dna)</span>
-                <span className="text-lg font-black text-slate-800 block truncate tracking-tight">{yData?.predicted?.name || 'Unknown / Female lineage'}</span>
-                <span className="text-[10px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.5">{yData?.predicted?.continent || 'Universal Genetic Origin'}</span>
+                <span className="text-[8px] font-black text-teal-600 uppercase tracking-widest block leading-none mb-0.5">Paternal haplogroup (y-dna)</span>
+                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{yData?.predicted?.name || 'Unknown / Female lineage'}</span>
+                <span className="text-[9px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.2">{yData?.predicted?.continent || 'Universal Genetic Origin'}</span>
               </div>
             </div>
 
             {/* Maternal Card */}
-            <div className="p-3.5 rounded-2xl bg-gradient-to-br from-white to-rose-50/20 border border-rose-100/50 flex gap-3.5 items-center">
-              <div className="w-10 h-10 rounded-2xl bg-rose-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-rose-600/10">
-                <History className="w-5 h-5" />
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-rose-50/10 border border-rose-100/30 flex gap-3 items-center">
+              <div className="w-8 h-8 rounded-xl bg-rose-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-rose-600/10">
+                <History className="w-4 h-4" />
               </div>
               <div className="min-w-0">
-                <span className="text-[9px] font-black text-rose-600 uppercase tracking-widest block leading-none mb-1">Maternal haplogroup (mtdna)</span>
-                <span className="text-lg font-black text-slate-800 block truncate tracking-tight">{mtData?.predicted || 'Unknown'}</span>
-                <span className="text-[10px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.5">{mtData?.region || 'Universal Genetic Origin'}</span>
+                <span className="text-[8px] font-black text-rose-600 uppercase tracking-widest block leading-none mb-0.5">Maternal haplogroup (mtdna)</span>
+                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{mtData?.predicted || 'Unknown'}</span>
+                <span className="text-[9px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.2">{mtData?.region || 'Universal Genetic Origin'}</span>
               </div>
             </div>
 
             {/* Rh Factor Card */}
-            <div className="p-3.5 rounded-2xl bg-gradient-to-br from-white to-red-50/20 border border-red-100/50 flex gap-3.5 items-center">
-              <div className={`w-10 h-10 rounded-2xl text-white flex items-center justify-center shrink-0 shadow-sm ${rhDisplay.pillColor}`}>
-                <FlaskConical className="w-5 h-5" />
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-red-50/10 border border-red-100/30 flex gap-3 items-center">
+              <div className={`w-8 h-8 rounded-xl text-white flex items-center justify-center shrink-0 shadow-sm ${rhDisplay.pillColor}`}>
+                <FlaskConical className="w-4 h-4" />
               </div>
               <div className="min-w-0">
-                <span className="text-[9px] font-black text-red-600 uppercase tracking-widest block leading-none mb-1">Rhesus Factor (RHCE Surrogate)</span>
-                <span className="text-lg font-black text-slate-800 block truncate tracking-tight">{rhDisplay.name}</span>
-                <span className="text-[10px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">{rhDisplay.badge}</span>
+                <span className="text-[8px] font-black text-red-600 uppercase tracking-widest block leading-none mb-0.5">Rhesus Factor (RHCE Surrogate)</span>
+                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{rhDisplay.name}</span>
+                <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.2">{rhDisplay.badge}</span>
               </div>
             </div>
           </div>
           
-          <div className="text-[9px] font-extrabold text-[#475569] bg-slate-50 border border-slate-100 p-2 rounded-xl text-center">
+          <div className="text-[8px] font-extrabold text-[#475569] bg-slate-50 border border-slate-100 p-1.5 rounded-lg text-center mt-3 select-none">
             🔒 Fully local processing: genomic privacy protected.
           </div>
         </div>
 
-      </div>
-
-      {/* Secondary Row: Statistical Rigor + Archaic Remainder Matches */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
-        
-        {/* Statistical Rigor Container */}
+        {/* Statistical Rigor Container (Span 12) */}
         {statisticalInsights && (
-          <div className="p-5 premium-card min-h-[220px] flex flex-col justify-between">
-            <div className="flex items-center gap-2 mb-3">
-              <Shield className="w-4 h-4 text-emerald-600 shrink-0" />
-              <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Confidence Interval Rigor (95% CI)</h3>
+          <div className="xl:col-span-12 p-4 premium-card">
+            <div className="flex items-center gap-2 mb-3 border-b border-slate-100 pb-2">
+              <Shield className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+              <div>
+                <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Confidence Interval Rigor (95% CI)</h3>
+                <p className="text-[9px] text-slate-550">Statistical error bounds based on total AIM markers parsed.</p>
+              </div>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-grow my-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {statisticalInsights.slice(0, 4).map((insight: any, i: number) => (
                 <div key={insight?.pop || i} className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-[11px] font-bold mb-1.5">
+                  <div className="flex justify-between items-center text-[10px] font-bold mb-1.5">
                     <span className="text-slate-800 uppercase tracking-tight truncate max-w-[110px]">
                       {formatPopName(insight?.pop)}
                     </span>
@@ -558,57 +547,6 @@ const ProfileSummary = memo(({
                     <div className="flex justify-between text-[8px] font-bold text-slate-400 mt-1 uppercase tracking-widest leading-none">
                       <span>Low: {insight?.low || 0}%</span>
                       <span>High: {insight?.high || 0}%</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Top 2 Archaic Individual Matches */}
-        {famousMatches && famousMatches.length > 0 && (
-          <div className="p-5 premium-card min-h-[220px] flex flex-col justify-between">
-            <div className="flex items-center gap-2 mb-3">
-              <Award className="w-4 h-4 text-rose-600 shrink-0" />
-              <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Top Archaic Matches</h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 flex-grow my-auto">
-              {famousMatches.slice(0, 2).map((m: any, idx: number) => (
-                <div 
-                  key={m.sampleId} 
-                  className="p-3 bg-slate-50 border border-slate-100 rounded-xl flex flex-col justify-between"
-                >
-                  <div className="flex justify-between items-start gap-1">
-                    <div className="truncate">
-                      <h4 className="text-xs font-black text-slate-800 truncate" title={m.name}>{m.name}</h4>
-                      <span className="text-[8px] font-bold text-slate-400 block uppercase tracking-widest leading-none mt-0.5">{m.sampleId}</span>
-                    </div>
-                    <span className="text-xs font-black text-rose-600 font-mono bg-rose-50 px-1 py-0.5 rounded leading-none">{m.affinity}%</span>
-                  </div>
-
-                  <div className="my-1.5 space-y-1 text-[9px] text-slate-500 font-medium">
-                    <div className="flex items-center gap-1 truncate">
-                      <MapPin className="w-2.5 h-2.5 text-slate-400 shrink-0" />
-                      <span className="truncate">{m.location}</span>
-                    </div>
-                    <div className="flex items-center gap-1 truncate">
-                      <Calendar className="w-2.5 h-2.5 text-slate-400 shrink-0" />
-                      <span className="truncate">{m.era}</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 border-t border-slate-200/50">
-                    <div className="flex justify-between items-center text-[8px] mb-0.5 text-slate-400 uppercase font-black">
-                      <span>Shared Markers Match</span>
-                      <span>{m.confidence}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden">
-                      <div 
-                        className="bg-rose-500 h-full rounded-full" 
-                        style={{ width: `${m.confidence}%` }}
-                      />
                     </div>
                   </div>
                 </div>
