@@ -400,28 +400,68 @@ export function processSubpopulations(
   // --- COMPONENT 1: Spatial Gene-Locus Mapping (All Available Markers) ---
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
 
+  // Group matched AIMS by chromosome to apply physical distance-based LD pruning (density filter)
+  const chromGroups: Record<string, Array<{ rsid: string; position: number; genotype: string; aim: any }>> = {};
+  
   for (const [rsid, genotype] of genotypeMap.entries()) {
     const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
     if (aim) {
-      const gene = aim.gene;
+      // Find chromosome and position from metadata or database entry
+      const meta = snpMetaMap?.[rsid] || snpMetaMap?.[rsid.toUpperCase()];
+      const chrom = meta?.chrom || aim.chromosome;
+      const position = meta?.pos || aim.position;
       
-      // Calculate dynamic global pop variance to prioritize highly polymorphic/diverse markers
-      let popVarianceWeight = 1.5;
-      if (aim.frequencies) {
-        const freqs = Object.values(aim.frequencies) as number[];
-        if (freqs.length > 1) {
-          const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
-          const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
-          // Scale weight proportionally to global Fst allelic spread (max variance = 0.25)
-          popVarianceWeight = 0.5 + (variance * 4.0); // ranges from 0.5 up to 1.5
+      if (chrom && typeof position === 'number' && !isNaN(position)) {
+        const chromStr = String(chrom).toUpperCase();
+        if (!chromGroups[chromStr]) chromGroups[chromStr] = [];
+        chromGroups[chromStr].push({ rsid, position, genotype, aim });
+      } else {
+        // If coordinate metadata is missing, fallback to including it directly
+        let popVarianceWeight = 1.5;
+        if (aim.frequencies) {
+          const freqs = Object.values(aim.frequencies) as number[];
+          if (freqs.length > 1) {
+            const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
+            const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
+            popVarianceWeight = 0.5 + (variance * 4.0);
+          }
         }
+        prunedGenotypesMap.set(rsid, {
+          genotype,
+          gene: aim.gene,
+          weight: (aim.weight || 1.0) * popVarianceWeight
+        });
       }
+    }
+  }
 
-      prunedGenotypesMap.set(rsid, {
-        genotype,
-        gene,
-        weight: (aim.weight || 1.0) * popVarianceWeight
-      });
+  // Apply 250kb sliding window LD Pruning for each chromosome
+  const LD_WINDOW_BP = 250000;
+  for (const chrom in chromGroups) {
+    const sortedMarkers = chromGroups[chrom].sort((a, b) => a.position - b.position);
+    let lastPosition = -1;
+    
+    for (const marker of sortedMarkers) {
+      if (lastPosition === -1 || (marker.position - lastPosition) >= LD_WINDOW_BP) {
+        lastPosition = marker.position;
+        
+        let popVarianceWeight = 1.5;
+        const aim = marker.aim;
+        if (aim.frequencies) {
+          const freqs = Object.values(aim.frequencies) as number[];
+          if (freqs.length > 1) {
+            const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
+            const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
+            popVarianceWeight = 0.5 + (variance * 4.0);
+          }
+        }
+        
+        prunedGenotypesMap.set(marker.rsid, {
+          genotype: marker.genotype,
+          gene: aim.gene,
+          weight: (aim.weight || 1.0) * popVarianceWeight
+        });
+      }
     }
   }
 

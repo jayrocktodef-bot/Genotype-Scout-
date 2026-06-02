@@ -235,7 +235,47 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       }
     }
     
-    const isMatched = matchCount > 0 || !!interpretation;
+    let isMatched = matchCount > 0 || !!interpretation;
+
+    // Complement Alignment Flip check if direct match fails
+    if (!isMatched && raw && raw !== '--') {
+      const complementMap: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+      const complementGenotype = raw.split('').map(b => complementMap[b.toUpperCase()] || b).join('').toUpperCase();
+      
+      let compMatchCount = 0;
+      if (Array.isArray(snp.alleles)) {
+        for (const allele of snp.alleles) {
+          if (complementGenotype[0] === allele) compMatchCount++;
+          if (complementGenotype[1] === allele) compMatchCount++;
+        }
+      }
+      
+      let compInterpretation = null;
+      if (interpretations) {
+        const sortedComp = complementGenotype.length === 2 ? (complementGenotype[0] > complementGenotype[1] ? complementGenotype[1] + complementGenotype[0] : complementGenotype).toUpperCase() : complementGenotype;
+        for (const key in interpretations) {
+          const upperKey = key.toUpperCase();
+          if (upperKey === complementGenotype) {
+            compInterpretation = interpretations[key];
+            break;
+          }
+          if (complementGenotype.length === 2) {
+             const sortedKey = key.length === 2 ? (key[0] > key[1] ? key[1] + key[0] : key).toUpperCase() : upperKey;
+             if (sortedKey === sortedComp) {
+               compInterpretation = interpretations[key];
+               break;
+             }
+          }
+        }
+      }
+
+      if (compMatchCount > 0 || compInterpretation) {
+        raw = complementGenotype;
+        matchCount = compMatchCount;
+        interpretation = compInterpretation;
+        isMatched = true;
+      }
+    }
     const isPartial = !interpretation && matchCount > 0 && matchCount < 2 && raw.length === 2;
     
     if (!interpretation) {

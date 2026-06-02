@@ -107,8 +107,31 @@ export class YDnaPredictorV2 {
       const totalDerived = newDerivedSnps.size;
       const totalAncestral = newAncestralSnps.size;
 
-      // Rule 2: Reject if ANY defining SNP is ancestral
+      // Consensus Check: if there are ancestral SNPs, check if any descendant branch has active derived markers.
+      // If there are child branches with >=2 derived markers total, we bypass the ancestral rejection.
+      let bypassRejection = false;
       if (localAncestral > 0) {
+        let descendantDerivedCount = 0;
+        const checkDescendants = (nodeName: string) => {
+          const childBranches = this.childrenMap.get(nodeName) || [];
+          for (const child of childBranches) {
+            for (const snp of child.definingSNPs) {
+              const userAllele = dnaMap.get(snp.name);
+              if (userAllele && userAllele !== '--' && userAllele[0].toUpperCase() === snp.derived.toUpperCase()) {
+                descendantDerivedCount++;
+              }
+            }
+            checkDescendants(child.branchName);
+          }
+        };
+        checkDescendants(branchName);
+        if (descendantDerivedCount >= 2) {
+          bypassRejection = true;
+        }
+      }
+
+      // Rule 2: Reject if ANY defining SNP is ancestral (unless bypassed by consensus check)
+      if (localAncestral > 0 && !bypassRejection) {
         rejectedBranches.push(branchName);
         return;
       }

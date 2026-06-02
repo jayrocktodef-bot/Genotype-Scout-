@@ -1,4 +1,5 @@
 import hoReferenceKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
+import { solveNNLS } from '../../utils/nnls';
 
 export interface AdmixtureComponent {
   population: string;
@@ -9,72 +10,79 @@ export interface AdmixtureComponent {
 
 /**
  * MDLP K16 Modern Ancestry Engine
- * Uses 16 MDLP components to estimate high-resolution ancestry proportions.
+ * Uses a Non-Negative Least Squares (NNLS) solver to estimate optimal population mixture proportions.
  */
 export async function calculateMDLPK16Scores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
-  const components: AdmixtureComponent[] = [];
-  
   // Normalize user SNPs keys
   const normalizedUserSnps: Record<string, string> = {};
   for (const rsid in userSnps) {
     normalizedUserSnps[rsid.toLowerCase()] = userSnps[rsid];
   }
 
-  const affinities: Record<string, number> = {};
-  let totalAffinity = 0;
+  const pops = Object.keys(hoReferenceKernel);
+  const N = pops.length;
+  
+  // Find all rsids that are common across the kernel and present in user SNPs
+  const firstPop = pops[0];
+  const allRsids = Object.keys((hoReferenceKernel as any)[firstPop].frequencies);
+  const matchedRsids = allRsids.filter(rsid => {
+    const userCall = normalizedUserSnps[rsid.toLowerCase()];
+    return userCall && userCall.length === 2 && userCall !== '--';
+  });
 
-  for (const popName in hoReferenceKernel) {
-    const popData = (hoReferenceKernel as any)[popName];
-    let score = 0;
-    let markersMatched = 0;
-    const frequencies = popData.frequencies;
+  const M = matchedRsids.length;
+  if (M < 5) {
+    // Fallback if too few markers matched
+    return [];
+  }
 
-    for (const rsid in frequencies) {
-      const refFreq = frequencies[rsid];
-      const userCall = normalizedUserSnps[rsid.toLowerCase()];
-      
-      if (!userCall || userCall.length !== 2) continue;
+  // Build A (M x N) and b (M)
+  const A: number[][] = Array.from({ length: M }, () => new Array(N).fill(0));
+  const b: number[] = new Array(M).fill(0);
 
-      // Numerical genotype (0, 1, or 2 alleles of a certain type)
-      // Since we don't have the exact allele orientation for every kernel, 
-      // we'll assume the frequency corresponds to a consistent 'secondary' allele.
-      // A more robust way is to check the proximity.
-      
-      let userVal = 0;
-      if (userCall[0] === userCall[1]) {
-        // Homozygous: could be 0 or 1 dosage.
-        // We look at which is more likely given the population frequency.
-        // This is a heuristic for when we don't have the full allele map.
-        userVal = refFreq > 0.5 ? 1.0 : 0.0;
-      } else {
-        // Heterozygous
-        userVal = 0.5;
-      }
+  for (let i = 0; i < M; i++) {
+    const rsid = matchedRsids[i];
+    
+    // Determine the average frequency across all populations to resolve dosage direction consistently
+    let sumFreq = 0;
+    for (let j = 0; j < N; j++) {
+      const popName = pops[j];
+      const popData = (hoReferenceKernel as any)[popName];
+      sumFreq += popData.frequencies[rsid] || 0;
+    }
+    const avgFreq = sumFreq / N;
 
-      // Log-likelihood or simpler similarity
-      const diff = 1.0 - Math.abs(userVal - refFreq);
-      score += Math.log(diff + 0.01); // avoid log(0)
-      markersMatched++;
+    // Calculate user call value based on average frequency direction
+    const userCall = normalizedUserSnps[rsid.toLowerCase()];
+    let userVal = 0.5; // Heterozygous
+    if (userCall[0] === userCall[1]) {
+      userVal = avgFreq > 0.5 ? 1.0 : 0.0;
     }
 
-    if (markersMatched > 0) {
-      // Normalize score by markers matched
-      const normalizedScore = Math.exp(score / markersMatched);
-      affinities[popName] = normalizedScore;
-      totalAffinity += normalizedScore;
+    b[i] = userVal;
+
+    for (let j = 0; j < N; j++) {
+      const popName = pops[j];
+      const popData = (hoReferenceKernel as any)[popName];
+      A[i][j] = popData.frequencies[rsid] || 0;
     }
   }
 
-  // Convert to percentages
-  if (totalAffinity > 0) {
-    for (const popName in affinities) {
-      const percentage = (affinities[popName] / totalAffinity) * 100;
-      if (percentage > 0.5) { // Filter small noise
+  // Solve NNLS: Minimizes ||Ax - b|| subject to x >= 0
+  const weights = solveNNLS(A, b);
+  const sumWeights = weights.reduce((sum, w) => sum + w, 0);
+
+  const components: AdmixtureComponent[] = [];
+  if (sumWeights > 0) {
+    for (let j = 0; j < N; j++) {
+      const popName = pops[j];
+      const rawPercentage = (weights[j] / sumWeights) * 100;
+      if (rawPercentage > 0.5) {
         components.push({
           population: popName.replace(/-/g, ' '),
           region: (hoReferenceKernel as any)[popName].region,
-          percentage: Number(percentage.toFixed(2)),
-          distance: 1.0 - (affinities[popName] / totalAffinity) // Placeholder for 'distance' UI
+          percentage: Number(rawPercentage.toFixed(2)),
+          distance: 0.0 // NNLS computes a direct linear mix fit
         });
       }
     }
