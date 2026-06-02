@@ -112,17 +112,29 @@ function viterbi(
 
   // Initialization
   for (let i = 0; i < numStates; i++) {
-    const emission = frequencies[0][i];
-    viterbiTable[i][0] = Math.log(1 / numStates) + Math.log(Math.max(0.001, emission));
+    const p = frequencies[0][i];
+    const obs = observations[0];
+    let probOfObs = 0.01;
+    if (obs === 2) probOfObs = p * p;
+    else if (obs === 1) probOfObs = 2 * p * (1 - p);
+    else if (obs === 0) probOfObs = (1 - p) * (1 - p);
+    viterbiTable[i][0] = Math.log(1 / numStates) + Math.log(Math.max(0.001, probOfObs));
   }
 
   // Recursion
   for (let t = 1; t < numMarkers; t++) {
+    const obs = observations[t];
     for (let i = 0; i < numStates; i++) {
       let maxProb = -Infinity;
       let prevStateIndex = 0;
       
-      const emission = Math.log(Math.max(0.001, frequencies[t][i]));
+      const p = frequencies[t][i];
+      let probOfObs = 0.01;
+      if (obs === 2) probOfObs = p * p;
+      else if (obs === 1) probOfObs = 2 * p * (1 - p);
+      else if (obs === 0) probOfObs = (1 - p) * (1 - p);
+      
+      const emission = Math.log(Math.max(0.001, probOfObs));
 
       for (let j = 0; j < numStates; j++) {
         const transition = Math.log((i === j) ? (1 - recombinationRate) : (recombinationRate / (numStates - 1)));

@@ -396,21 +396,13 @@ export function processSubpopulations(
   const popMarkerCounts = new Map<string, number>();
   const negativeViolations = new Map<string, number>();
 
-  // --- COMPONENT 1: Spatial Gene-Locus LD-Pruning ---
-  const seenGenes = new Set<string>();
+  // --- COMPONENT 1: Spatial Gene-Locus Mapping (All Available Markers) ---
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
 
   for (const [rsid, genotype] of genotypeMap.entries()) {
     const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
     if (aim) {
       const gene = aim.gene;
-      if (gene && gene !== "Unknown") {
-        if (seenGenes.has(gene)) {
-          // Relieve spatial clump bias: skip duplicate SNPs belonging to already active locus blocks
-          continue;
-        }
-        seenGenes.add(gene);
-      }
       
       // Calculate dynamic global pop variance to prioritize highly polymorphic/diverse markers
       let popVarianceWeight = 1.5;
