@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { calculateCYP2D6Status, MetabolizerStatus } from '../utils/pgxAdvanced';
 import { callStarAlleles } from '../engines/health/pypgxEngine';
+import { inferRhFactor } from './bloodPredictorService';
 
 describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
   describe('calculateCYP2D6Status (pgxAdvanced)', () => {
@@ -132,6 +133,40 @@ describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
         expect(result.activityScore).toBe(2.0);
         expect(result.phenotype).toBe('Normal Metabolizer');
       });
+    });
+  });
+
+  describe('inferRhFactor (bloodPredictorService)', () => {
+    it('correctly predicts Rh phenotype with standard forward strand genotypes', () => {
+      const genotypes = {
+        'rs590787': 'TT', // Likely Rh-
+        'rs609320': 'AA'  // Likely Rh-
+      };
+
+      const result = inferRhFactor(genotypes);
+      expect(result.phenotype).toBe('Negative');
+      expect(result.confidence).toBeGreaterThanOrEqual(0.8);
+    });
+
+    it('correctly predicts Rh phenotype when alleles are flipped/reverse strand (complement)', () => {
+      const genotypes = {
+        'rs590787': 'AA', // Complement of TT (Negative)
+        'rs609320': 'TT'  // Complement of AA (Negative)
+      };
+
+      const result = inferRhFactor(genotypes);
+      expect(result.phenotype).toBe('Negative');
+      expect(result.confidence).toBeGreaterThanOrEqual(0.8);
+    });
+
+    it('correctly predicts Rh positive with heterozygous or homozygous carriers', () => {
+      const genotypes = {
+        'rs590787': 'CC', // Likely Rh+
+        'rs609320': 'GG'  // Likely Rh+
+      };
+
+      const result = inferRhFactor(genotypes);
+      expect(result.phenotype).toBe('Positive');
     });
   });
 });

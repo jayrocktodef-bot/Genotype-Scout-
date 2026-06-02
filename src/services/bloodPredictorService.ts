@@ -1,6 +1,17 @@
 import rhData from '../data/blood_markers.json';
 import { RhPrediction, RhMarkerResult } from '../types/blood';
 
+function getComplement(allele: string): string {
+  const complements: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+  return complements[allele] || allele;
+}
+
+function normalizeAndComplement(genotype: string): { original: string, complement: string } {
+  const sortedOriginal = genotype.split('').sort().join('');
+  const complement = genotype.split('').map(getComplement).sort().join('');
+  return { original: sortedOriginal, complement };
+}
+
 /**
  * Infers Rh Factor based on surrogate RHCE markers.
  * @param genotypeMap - A Map or record of SNP -> Allele pairs extracted from raw genotype data
@@ -31,23 +42,29 @@ export function inferRhFactor(genotypeMap: Map<string, string> | Record<string, 
       : rawGenotype;
 
     const snpConfig = (rhData.rhSystem as any)[snp];
-    if (genotype && snpConfig && snpConfig.alleles[genotype]) {
-      const markerInfo = snpConfig.alleles[genotype];
+    if (genotype && snpConfig) {
+      const { original, complement } = normalizeAndComplement(genotype);
+      const markerInfo = snpConfig.alleles[original] || snpConfig.alleles[complement];
       
-      results.push({
-        snp,
-        genotype,
-        prediction: markerInfo.prediction as RhPrediction,
-        confidence: markerInfo.confidence
-      });
+      if (markerInfo) {
+        results.push({
+          snp,
+          genotype,
+          prediction: markerInfo.prediction as RhPrediction,
+          confidence: markerInfo.confidence
+        });
 
-      // Weight the scores by the statistical confidence of the surrogate
-      if (markerInfo.prediction === "Negative") {
-        negativeScore += markerInfo.confidence;
-      } else if (markerInfo.prediction === "Positive") {
-        positiveScore += markerInfo.confidence;
+        // Weight the scores by the statistical confidence of the surrogate
+        if (markerInfo.prediction === "Negative") {
+          negativeScore += markerInfo.confidence;
+        } else if (markerInfo.prediction === "Positive") {
+          positiveScore += markerInfo.confidence;
+        }
+        totalConfidence += markerInfo.confidence;
+      } else {
+         // Push "Unknown" for UI rendering in the molecular breakdown table
+         results.push({ snp, genotype: genotype || "No Call", prediction: "Unknown", confidence: 0 });
       }
-      totalConfidence += markerInfo.confidence;
     } else {
        // Push "Unknown" for UI rendering in the molecular breakdown table
        results.push({ snp, genotype: genotype || "No Call", prediction: "Unknown", confidence: 0 });
