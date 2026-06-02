@@ -6,7 +6,19 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
+  --bg-main: #0b0f19; /* dark slate-950 */
+  --bg-card: #151d30; /* dark slate-900 */
+  --text-primary: #f8fafc; /* slate-50 */
+  --text-secondary: #94a3b8; /* slate-400 */
+  --accent: #0d9488; /* teal-600 */
+  --accent-soft: #042f2e; /* dark teal-950 */
+  --border-soft: #1e293b; /* slate-800 */
+}
+
+html.light {
   --bg-main: #f8fafc; /* bg-slate-50 */
   --bg-card: #ffffff;
   --text-primary: #1e293b; /* text-slate-800 */
@@ -14,6 +26,29 @@
   --accent: #0d9488; /* teal-600 */
   --accent-soft: #f0fdfa; /* teal-50 */
   --border-soft: #f1f5f9; /* slate-100 */
+}
+
+/* Safety contrast rules: If the box is white, the text must be dark in dark mode */
+.dark .bg-white,
+.dark .bg-white\/80,
+.dark .bg-white\/90,
+.dark [class*="bg-white"] {
+  color: #1e293b !important;
+}
+
+.dark .bg-white h1,
+.dark .bg-white h2,
+.dark .bg-white h3,
+.dark .bg-white h4,
+.dark .bg-white h5,
+.dark .bg-white h6,
+.dark .bg-white p,
+.dark .bg-white span,
+.dark .bg-white div,
+.dark .bg-white li,
+.dark .bg-white td,
+.dark .bg-white th {
+  color: #1e293b !important;
 }
 
 body {

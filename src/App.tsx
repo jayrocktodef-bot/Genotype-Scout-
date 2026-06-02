@@ -1799,6 +1799,18 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
 
 
 export default function App() {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
   const [snps, setSnps] = useState<SNP[]>(SNP_DB);
   const [datasets, setDatasets] = useState<{ 
     name: string, 
@@ -2229,12 +2241,14 @@ export default function App() {
   }, [datasets, activeDatasetIndex]);
 
   return (
-    <div className="bg-slate-50 min-h-screen font-sans selection:bg-teal-100 selection:text-teal-900">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-800 dark:text-slate-100 font-sans selection:bg-teal-100 dark:selection:bg-teal-900 selection:text-teal-900 dark:selection:text-teal-100 transition-colors duration-300">
       <Navigation 
         activeTab={activeTab} 
         onTabChange={setActiveTab} 
         onUploadNew={() => fileRef.current?.click()}
         hasResults={!!results}
+        theme={theme}
+        onThemeToggle={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
       />
 
       <input 
