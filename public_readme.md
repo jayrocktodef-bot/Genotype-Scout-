@@ -1,12 +1,12 @@
 <div align="center"><img width="1200" height="475" alt="Genotype Scout banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
-# Genotype Scout — V4.5 Beta
+# Genotype Scout
 
 > ⚠️ **Beta — research & educational tool.** Genotype Scout is in active beta and is **not an ethnicity calculator**. Its results are exploratory, are **not directly comparable** to the ethnicity estimates from commercial tests (23andMe, AncestryDNA), and are **not medical or diagnostic advice**.
 
-**Genotype Scout** is a privacy-first genomic analysis suite created by Jequan Davis. It lets you process your raw DNA files **entirely in your browser**, so sensitive genetic data never leaves your device for standard analysis. Installable as a **Progressive Web App (PWA)** for offline access on any device.
+**Genotype Scout** is a privacy-first genomic analysis suite created by Jequan Davis. It lets you process your raw DNA files **entirely in your browser**, so sensitive genetic data never leaves your device for standard analysis.
 
-[🚀 Launch the app](https://witg-genotype-scout.vercel.app/) · [📖 Blog](https://WrittenInTheGenome.blog) · [💬 Facebook Group](https://www.facebook.com/share/g/1EFyWD35tB/)
+[Access the hosted application here](https://witg-genotype-scout.vercel.app/)
 
 ---
 
@@ -26,7 +26,6 @@
 ---
 
 ## 🔒 Commitment to Privacy & Security
-
 The core philosophy of Genotype Scout is binary-level privacy. Your raw DNA file is parsed, analyzed, and visualized **entirely in your browser** using high-performance Web Workers. Your raw genetic data is never uploaded to or processed by any server.
 
 To be fully transparent about what stays on your device and what (optionally) leaves it:
@@ -37,27 +36,17 @@ To be fully transparent about what stays on your device and what (optionally) le
   - *Anonymous usage analytics* (Vercel Analytics & Speed Insights) collect aggregate page/performance metrics. No genetic data is included.
   - *Export to Google Slides* requires you to sign in with Google and sends an ancestry summary (health markers excluded) to **your own** Google account. It runs only when you explicitly trigger an export.
 
----
-
 ## ⚙️ Technical Architecture
-
 Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing without compromising the user experience.
 
-| Component | Technology |
-| :--- | :--- |
-| **Runtime** | React 19 + Vite |
-| **Language** | TypeScript (`strict` mode) |
-| **Styling** | Tailwind CSS v4 with custom design tokens |
-| **Performance** | Web Workers for heavy parsing & matrix ops; code-split chunks for fast app-shell load |
-| **On-device ML** | ONNX model via `onnxruntime-web` — no cloud calls, no API key |
-| **Admixture Engine** | MDLP K16 with Lawson-Hanson NNLS solver |
-| **PWA** | `vite-plugin-pwa` with Workbox service worker, offline precaching, runtime font/asset caching |
-| **Theme** | Light (default) / Dark mode toggle with CSS custom properties |
-
----
+*   **Runtime:** React 19 with Vite.
+*   **Language:** TypeScript in `strict` mode for type safety across all genetic calculations.
+*   **Performance:** Heavy string parsing and matrix calculations are offloaded to Web Workers to keep the UI responsive. The engine features on-device streaming file parsing to support processing large raw files without locking the browser thread.
+*   **On-device ML:** A local ONNX model runs **in the browser** via `onnxruntime-web` — no cloud calls and no API key required.
+*   **Mobile-First UI/UX:** Responsive bento-grid layouts, mobile-drawer navigation height constraints, and touch-swipeable tab scroll carousels to optimize rendering on small screens.
+*   **PWA Integrations:** Precached application shell assets with fallback offline routing strategies using standard service workers.
 
 ## 🧬 Forensic & High-Resolution Analysis
-
 We utilize specialized, industry-recognized forensic panels to maximize the accuracy of our reports.
 
 | Forensic Panel | Purpose |
@@ -70,23 +59,24 @@ We utilize specialized, industry-recognized forensic panels to maximize the accu
 
 ## 📋 Feature Breakdown
 
+### 📂 Universal & Streaming DNA Parsing
+Stream-based or chunked parsing of major consumer file formats (23andMe, AncestryDNA, MyHeritage, FamilyTreeDNA, LivingDNA) and standard VCF (Variant Call Format) files, using regex cleanups and genotype verification directly in the browser.
+
 ### 🌍 High-Precision Ancestry
-Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) methods with MDLP K16 reference populations. Your genotype is compared against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation. 95% confidence intervals are computed per population.
+Calculate complex admixture percentages using advanced Least Squares (NNLS) methods constrained to the probability simplex ($\sum x_i \approx 1$). Your genotype is compared against dense population frequency datasets with robust complement-strand matching for flipped alleles (palindromic SNPs excluded), phenotypic override weight normalization, and a 1.5% trace noise floor filter to resolve over-scoring skews.
 
 ### 🏛️ Ancient DNA Oracle
 Weighted Ancient DNA matching. The engine applies weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing higher-confidence matches to ancestral populations.
 
 ### 🧠 Haplogroup Classification
-Hierarchical matching identifies your terminal SNP. Navigate paternal (Y-DNA) and maternal (mtDNA) lineages with classification logic that prioritizes the highest hierarchical rank for maximum specificity. Flanking branch consensus validation improves accuracy for deep subclades.
+Hierarchical matching identifies your terminal SNP. Navigate paternal (Y-DNA) and maternal (mtDNA) lineages with classification logic that prioritizes the highest hierarchical rank for maximum specificity.
 
 ### 🩺 Health & Wellness Reports
 Educational, genotype-based insights (not medical advice):
-*   **ABO & Rh Blood Type:** inferred from genotype markers.
+*   **Pharmacogenomics (PGx):** Mutated-allele counting and diplotype-assembly algorithm for key drug-metabolizing genes (`CYP2D6`, `CYP2C19`, and `DPYD`). Activity scores and phenotype classifications are calculated directly from active star alleles to correctly resolve complex carriers.
+*   **ABO & Rh Blood Type:** Inferred from primary deletion markers (`rs8176719`, `rs8176750`) and sequence-specific checks, with linkage disequilibrium (LD) proxy fallbacks (`rs657152`, `rs505922`, `rs8176722`) to handle missing data. Unified parsing and prediction are shared between worker and UI threads for absolute consistency.
 *   **Secretor Status:** FUT2 and related marker analysis.
 *   **APOE & other risk markers:** genetic marker analysis for health-related context.
-
-### 📱 Progressive Web App
-Install Genotype Scout directly to your home screen on Android, iOS, or desktop. After the first visit, the app shell and core assets are cached for offline access — your DNA analysis works even without an internet connection.
 
 ---
 
