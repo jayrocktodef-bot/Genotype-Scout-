@@ -155,7 +155,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             </div>
 
             <button 
-              onClick={() => onNavigateToTab('oracle')}
+              onClick={() => onNavigateToTab('summary')}
               className="group flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-sm transition-all hover:bg-slate-800 hover:shadow-xl shadow-slate-200"
             >
               Dive into Regional Genetics
