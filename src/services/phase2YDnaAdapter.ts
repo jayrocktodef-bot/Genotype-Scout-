@@ -3,6 +3,7 @@ import { YDnaPredictorV2, YDnaPredictionDetails } from './yDnaPredictorV2';
 import { YPhylotreeDataset } from '../utils/yPhylotree';
 // @ts-ignore - y_phylotree.json import
 import yPhylotreeDataset from '../data/y_phylotree.json' assert { type: 'json' };
+import { getHaplogroupDetails } from '../utils/haplogroupDetails';
 
 /**
  * Phase 2 Y-DNA Analysis Bridge
@@ -84,7 +85,10 @@ export function formatPhase2Result(result: YDnaPredictionDetails): {
   ancestralMarkers: number;
   path: string[];
   rejectedBranches: string[];
+  region: string;
+  description: string;
 } {
+  const details = getHaplogroupDetails(result.terminalHaplogroup, false);
   return {
     haplogroup: result.terminalHaplogroup,
     confidence: result.confidence,
@@ -93,5 +97,7 @@ export function formatPhase2Result(result: YDnaPredictionDetails): {
     ancestralMarkers: result.ancestralSnpCount,
     path: result.path,
     rejectedBranches: result.rejectedBranches,
+    region: details.region,
+    description: details.description,
   };
 }

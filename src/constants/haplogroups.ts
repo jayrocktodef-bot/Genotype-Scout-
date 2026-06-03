@@ -240,6 +240,8 @@ export const Y_DNA_TREE: HaplogroupNode = {
     {
       branchName: "Haplogroup E",
       snp: ["M96", "P29", "rs9306841", "rs17306671", "rs9305854", "i4000014", "rs3900"],
+      region: "Africa",
+      description: "One of the most widespread Y-DNA lineages in the world, originating in Africa. It is the dominant lineage across the African continent, particularly in Sub-Saharan Africa, North Africa, and the Horn of Africa, with significant historical subclades also spreading into Europe and the Middle East.",
       children: [
         {
           branchName: "Haplogroup E1a",

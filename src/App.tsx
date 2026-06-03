@@ -11,6 +11,7 @@
 import { useState, useCallback, useRef, useEffect, useMemo, memo, Suspense, lazy } from "react";
 import JSZip from 'jszip';
 import { motion, AnimatePresence } from "motion/react";
+import { useRegisterSW } from 'virtual:pwa-register/react';
 // ...
 const HealthWellnessTab = lazy(() => import("./components/HealthWellnessTab").then(m => ({ default: m.HealthWellnessTab })));
 import { 
@@ -48,6 +49,7 @@ import { REGION_METADATA } from "./constants/regionInfo";
 import { calculateFamousMatches } from "./utils/individualMatching";
 import { matchHealthAndWellness } from "./utils/healthMatching";
 import { calculatePopulationProximity } from "./utils/ancestry/populationComparison";
+import { getHaplogroupDetails } from "./utils/haplogroupDetails";
 import { calculateMarkerBenchmarks } from "./utils/markerBenchmarks";
 import { calculateFileIntegrity } from "./utils/statistics/qualityControl";
 import { applyConfidenceIntervals } from "./utils/statistics/admixtureRigor";
@@ -516,7 +518,7 @@ const ProfileSummary = memo(({
               <Shield className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
               <div>
                 <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Confidence Interval Rigor (95% CI)</h3>
-                <p className="text-[9px] text-slate-550">Statistical error bounds based on total AIM markers parsed.</p>
+                <p className="text-[9px] text-slate-500 dark:text-slate-400">Statistical error bounds based on total AIM markers parsed.</p>
               </div>
             </div>
             
@@ -1161,6 +1163,20 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
     return enrichHaplogroupTree(Y_DNA_TREE, yData.path, yData.testedMarkers);
   }, [yData.path, yData.testedMarkers]);
 
+  const enrichedYPath = useMemo(() => {
+    if (!yData) return [];
+    return (yData.path || []).map((step: string, idx: number) => {
+      const details = getHaplogroupDetails(step, false);
+      const isLast = idx === (yData.path || []).length - 1;
+      return {
+        name: (step || '').replace("Haplogroup ", ""),
+        region: details.region,
+        description: details.description || (isLast ? yData.predicted?.description : "A transitional point in the paternal migration history."),
+        historicalContext: details.historicalContext
+      };
+    });
+  }, [yData]);
+
   const derivedMarkers = yData.testedMarkers.filter((m: any) => m.isDerived);
   const markerPieData = derivedMarkers.map((m: any) => ({
     name: m.marker,
@@ -1183,6 +1199,9 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                   <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Region: {yData.predicted.continent}</span>
                   <Phase2Badge phase2={yData.phase2} />
                 </div>
+                <p className="text-blue-50 text-sm leading-relaxed max-w-xl font-medium opacity-90 border-l-2 border-blue-300/30 pl-4 py-1 italic mb-6">
+                  {yData.predicted.description || "Tracing the unbroken paternal line across civilizations and continents."}
+                </p>
                 
                 {/* Lineage Path Highlight */}
                 <div className="mt-6 pt-6 border-t border-white/10">
@@ -1356,6 +1375,83 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
           </div>
         </div>
       </div>
+
+      {/* Paternal Odyssey Migration Story */}
+      {enrichedYPath.length > 0 && (
+        <div className="grid grid-cols-1 gap-8">
+          <div className="space-y-8">
+            <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 p-10 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+              
+              <div className="flex items-center justify-between mb-12 relative z-10">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tighter">Your Paternal Odyssey</h3>
+                  <p className="text-sm text-slate-400 font-medium mt-1">Tracing the geographic and genetic path of your ancestors</p>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
+                   <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                   <span className="text-[10px] font-black uppercase text-slate-500">Ancient to Modern</span>
+                </div>
+              </div>
+
+              <div className="relative pl-8 md:pl-12 ml-2 md:ml-4 space-y-12 md:space-y-16 before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-blue-50 before:via-indigo-500 before:to-transparent">
+                {enrichedYPath.map((step: any, idx: number) => {
+                  const isFirst = idx === 0;
+                  const isLast = idx === enrichedYPath.length - 1;
+                  
+                  return (
+                    <motion.div 
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="relative group cursor-default"
+                    >
+                      {/* Node Pin */}
+                      <div className={`absolute -left-[44px] md:-left-[64px] top-0 w-9 h-9 md:w-12 md:h-12 rounded-xl md:rounded-2xl border-4 border-white dark:border-slate-800 shadow-lg flex items-center justify-center z-10 transition-all group-hover:rotate-12 ${
+                        isLast ? 'bg-blue-600 scale-110 rotate-12' : isFirst ? 'bg-indigo-600' : 'bg-slate-200 dark:bg-slate-700'
+                      }`}>
+                        <span className={`text-[10px] md:text-[11px] font-black ${isLast || isFirst ? 'text-white' : 'text-slate-500'}`}>{idx + 1}</span>
+                      </div>
+
+                      <div className="bg-slate-50/40 dark:bg-slate-900/40 p-4 sm:p-8 rounded-3xl border border-transparent group-hover:border-blue-200 dark:group-hover:border-blue-900/30 transition-all group-hover:shadow-xl group-hover:shadow-blue-100/50 dark:group-hover:shadow-none">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                          <div className="space-y-1">
+                            <h4 className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tighter leading-none group-hover:text-blue-600 transition-colors">
+                              {step.name === "Y-DNA Root (Adam)" ? "Y-Chromosomal Adam" : step.name}
+                            </h4>
+                            <div className="flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 rounded-full bg-blue-300"></span>
+                              <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 tracking-[0.1em] uppercase">Originates in: {step.region}</span>
+                            </div>
+                          </div>
+                          <div className="shrink-0 flex items-center gap-3">
+                             {isFirst && <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg text-[9px] font-black text-indigo-600 tracking-widest border border-indigo-100 dark:border-indigo-800 uppercase">Ancestor</span>}
+                             {isLast && <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 rounded-lg text-[9px] font-black text-blue-600 tracking-widest border border-blue-100 dark:border-blue-800 uppercase">You Are Here</span>}
+                          </div>
+                        </div>
+                        
+                        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+                          {step.description}
+                        </p>
+
+                        {step.historicalContext && (
+                          <div className="mb-6 p-4 bg-blue-50/50 dark:bg-blue-900/10 border-l-4 border-blue-400 rounded-r-xl">
+                            <div className="text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-[0.2em] mb-1">Historical Context</div>
+                            <p className="text-xs text-slate-700 dark:text-slate-300 italic leading-relaxed">
+                              {step.historicalContext}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Phase 2 Analysis Panel */}
       <Phase2Panel
@@ -1800,6 +1896,42 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
 
 export default function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>('light');
+
+  // PWA Register service worker hooks
+  const {
+    needRefresh: [needRefresh, setNeedRefresh],
+    offlineReady: [offlineReady, setOfflineReady],
+    updateServiceWorker,
+  } = useRegisterSW({
+    onRegistered(r) {
+      console.log('SW Registered: ', r);
+    },
+    onRegisterError(error) {
+      console.log('SW registration error: ', error);
+    },
+  });
+
+  // PWA Custom Installation trigger
+  const [installPromptEvent, setInstallPromptEvent] = useState<any>(null);
+
+  useEffect(() => {
+    const handler = (e: any) => {
+      e.preventDefault();
+      setInstallPromptEvent(e);
+    };
+    window.addEventListener('beforeinstallprompt', handler);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handler);
+    };
+  }, []);
+
+  const handleInstallApp = async () => {
+    if (!installPromptEvent) return;
+    installPromptEvent.prompt();
+    const { outcome } = await installPromptEvent.userChoice;
+    console.log(`User installation choice outcome: ${outcome}`);
+    setInstallPromptEvent(null);
+  };
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -2249,6 +2381,8 @@ export default function App() {
         hasResults={!!results}
         theme={theme}
         onThemeToggle={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
+        isInstallable={!!installPromptEvent}
+        onInstallApp={handleInstallApp}
       />
 
       <input 
@@ -2357,9 +2491,9 @@ export default function App() {
                             <div><strong className="text-slate-700">Malformed/Unrecognized Rows:</strong> {details.linesMalformed.toLocaleString()}</div>
                           )}
                           {details?.headerPreview && (
-                            <div className="pt-3 border-t border-slate-200 mt-3">
-                              <strong className="text-slate-750 block mb-1.5">Raw File Header Preview:</strong>
-                              <pre className="p-3 bg-slate-900 border border-slate-850 text-slate-300 rounded-xl overflow-x-auto select-all max-h-32 text-[10px] leading-normal font-mono">
+                            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 mt-3">
+                              <strong className="text-slate-700 dark:text-slate-300 block mb-1.5">Raw File Header Preview:</strong>
+                              <pre className="p-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl overflow-x-auto select-all max-h-32 text-[10px] leading-normal font-mono">
                                 {details.headerPreview}
                               </pre>
                             </div>
@@ -2487,7 +2621,7 @@ export default function App() {
                   <FlaskConical className="w-5 h-5 text-teal-400" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-black text-slate-850 tracking-tight capitalize select-none">
+                  <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 tracking-tight capitalize select-none">
                     {activeTab === 'ancestry' ? 'Ancestry & Populations' : activeTab === 'history' ? 'Lineages & History' : activeTab === 'health_traits' ? 'Health & Traits' : activeTab === 'autosomal' ? 'Markers' : activeTab}
                   </h2>
                   <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
@@ -2517,7 +2651,7 @@ export default function App() {
                 )}
                 
                 {/* Methodology Button (Except Wellness) */}
-                {activeTab !== 'wellness' && (
+                {!(activeTab === 'health_traits' && activeHealthSubTab === 'wellness') && (
                   <button
                     onClick={() => setIsMethodologyOpen(true)}
                     className="flex items-center gap-1.5 px-4 py-2 bg-teal-50 hover:bg-teal-100/90 border border-teal-150/40 text-teal-700 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-sm"
@@ -2547,8 +2681,17 @@ export default function App() {
                       if (tab === 'ancient_dna') {
                         setActiveTab('history');
                         setActiveHistorySubTab('ancient');
+                      } else if (tab === 'haplogroups') {
+                        setActiveTab('history');
+                        setActiveHistorySubTab('modern');
+                      } else if (tab === 'wellness') {
+                        setActiveTab('health_traits');
+                        setActiveHealthSubTab('wellness');
+                      } else if (tab === 'blood') {
+                        setActiveTab('health_traits');
+                        setActiveHealthSubTab('blood');
                       } else {
-                        setActiveTab(tab);
+                        setActiveTab(tab as any);
                       }
                     }}
                     onReset={resetApp}
@@ -2655,13 +2798,13 @@ export default function App() {
                       <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner">
                         <button 
                           onClick={() => setActiveHealthSubTab('wellness')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'wellness' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-550 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'wellness' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           🩺 Wellness & Risk
                         </button>
                         <button 
                           onClick={() => setActiveHealthSubTab('blood')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-550 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           🩸 Blood Type Predictor
                         </button>
@@ -2692,13 +2835,13 @@ export default function App() {
                       <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner">
                         <button 
                           onClick={() => setActiveHistorySubTab('modern')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'modern' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-555 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'modern' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           🧬 Modern Lineages
                         </button>
                         <button 
                           onClick={() => setActiveHistorySubTab('ancient')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'ancient' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-555 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'ancient' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           💀 Ancient DNA Matches
                         </button>
@@ -2819,6 +2962,75 @@ export default function App() {
         onClose={() => setIsMethodologyOpen(false)}
         activeTab={activeTab}
       />
+
+      {/* PWA Toast Alerts */}
+      <AnimatePresence>
+        {needRefresh && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="fixed bottom-6 right-6 z-[100] max-w-sm w-full bg-white dark:bg-slate-900 border border-teal-500/25 dark:border-teal-500/25 p-5 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col gap-3 animate-fade-up"
+            role="alert"
+          >
+            <div className="flex items-start gap-3 text-left">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/20 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
+                <FlaskConical className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-wider">Update Available</h4>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-normal font-medium">
+                  A new version of Genotype Scout is ready. Please save any active analysis before reloading.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 justify-end mt-1">
+              <button
+                onClick={() => setNeedRefresh(false)}
+                className="px-3.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              >
+                Later
+              </button>
+              <button
+                onClick={() => updateServiceWorker(true)}
+                className="px-4 py-1.5 bg-teal-600 dark:bg-teal-500 text-white dark:text-slate-950 hover:bg-teal-700 dark:hover:bg-teal-400 rounded-lg text-[10px] font-black uppercase tracking-wider transition-colors shadow-lg shadow-teal-500/20"
+              >
+                Update Now
+              </button>
+            </div>
+          </motion.div>
+        )}
+
+        {offlineReady && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="fixed bottom-6 right-6 z-[100] max-w-sm w-full bg-white dark:bg-slate-900 border border-teal-500/25 dark:border-teal-500/25 p-5 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col gap-3 animate-fade-up"
+            role="alert"
+          >
+            <div className="flex items-start gap-3 text-left">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/20 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
+                <CheckCircle className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-wider">Ready Offline</h4>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-normal font-medium">
+                  App has been cached successfully and is fully ready for 100% offline-only genomic analysis.
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-end mt-1">
+              <button
+                onClick={() => setOfflineReady(false)}
+                className="px-4 py-1.5 bg-teal-600 dark:bg-teal-500 text-white dark:text-slate-950 hover:bg-teal-700 dark:hover:bg-teal-400 rounded-lg text-[10px] font-black uppercase tracking-wider transition-colors shadow-lg shadow-teal-500/20"
+              >
+                Dismiss
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

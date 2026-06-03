@@ -5,6 +5,7 @@ import { getMarkerDescription } from './snpMatcher';
 import { findMatchesInHaplogroups } from './haplogroupService';
 import { findMatchesInMtHaplogroups } from './mtHaplogroupService';
 import { analyzePhase2YDna, formatPhase2Result } from './phase2YDnaAdapter';
+import { getHaplogroupDetails } from '../utils/haplogroupDetails';
 
 export interface YDnaAnalysisResult {
   predicted: { name: string; marker: string; continent: string; description: string } | null;
@@ -18,6 +19,8 @@ export interface YDnaAnalysisResult {
     derivedMarkers: number;
     ancestralMarkers: number;
     rejectedBranches: string[];
+    region?: string;
+    description?: string;
   };
 }
 
@@ -163,12 +166,16 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
 
   const uniqueMarkers = Array.from(new Map(testedMarkers.map(m => [m.marker, m])).values());
 
-  let prediction = bestNode && bestNode.branchName !== "Y-DNA Root (Adam)" ? {
-    name: bestNode.branchName.replace("Haplogroup ", ""),
-    marker: bestNode.snp ? bestNode.snp[0] : "Unknown",
-    continent: bestNode.region || "Global",
-    description: bestNode.description || `A paternal lineage characterized by the ${bestNode.snp?.[0] || 'specific'} marker.`
-  } : null;
+  let prediction = null;
+  if (bestNode && bestNode.branchName !== "Y-DNA Root (Adam)") {
+    const details = getHaplogroupDetails(bestNode.branchName, false);
+    prediction = {
+      name: bestNode.branchName.replace("Haplogroup ", ""),
+      marker: bestNode.snp ? bestNode.snp[0] : "Unknown",
+      continent: details.region,
+      description: details.description
+    };
+  }
 
   // If we have a very specific ISOGG match that is deeper than our basic tree prediction
   // or if we have no basic tree prediction, use ISOGG.
@@ -183,11 +190,12 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
     topIsogg.derivedCount >= ISOGG_MIN_DERIVED &&
     topIsogg.derivedCount > Math.max(0, maxDerivedCount)
   ) {
+    const details = getHaplogroupDetails(topIsogg.branch.branchName, false);
     prediction = {
       name: topIsogg.branch.branchName,
       marker: topIsogg.derivedMatches[0] || topIsogg.branch.definingSNPs[0] || topIsogg.branch.rsids[0] || "Unknown",
-      continent: "Global", // ISOGG flat format doesn't carry regions
-      description: `Deep subclade confirmed via ${topIsogg.derivedCount} derived ISOGG markers: ${topIsogg.derivedMatches.join(', ')}.`
+      continent: details.region,
+      description: details.description || `Deep subclade confirmed via ${topIsogg.derivedCount} derived ISOGG markers: ${topIsogg.derivedMatches.join(', ')}.`
     };
     // Ensure the final predicted branch is in the path
     if (!finalPath.includes(prediction.name) && !finalPath.includes("Haplogroup " + prediction.name)) {
@@ -322,8 +330,6 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
 
   const bestMatch = allResults[0];
   let predictedHaplogroup = bestMatch.name;
-  let region = bestMatch.region || "Global";
-  let description = bestMatch.description || "";
   let finalPath = bestMatch.path;
 
   // If we found a more specific deep match with significant overlap
@@ -333,7 +339,6 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     // curated tree call (a single shared mutation is too weak / noise-prone).
     if (topDeep.matches.length >= 2 && topDeep.matches.length >= bestMatch.matchCount) {
       predictedHaplogroup = topDeep.branch.branchName;
-      description = `Specific lineage identified via PhyloTree markers: ${topDeep.matches.join(', ')}.`;
       
       // Ensure the deep match is at the end of the path if it's not already there
       if (!finalPath.includes(predictedHaplogroup) && !finalPath.includes("Haplogroup " + predictedHaplogroup)) {
@@ -341,6 +346,11 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
       }
     }
   }
+
+  // Resolve details dynamically using the tree walk-up logic
+  const details = getHaplogroupDetails(predictedHaplogroup, true);
+  let region = details.region;
+  let description = details.description;
   
   return {
     predicted: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? predictedHaplogroup : null,

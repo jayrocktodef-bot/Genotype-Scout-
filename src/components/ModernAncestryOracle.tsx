@@ -321,14 +321,14 @@ export const ModernAncestryOracle = memo(({
                             <span className="text-[10px] text-slate-500 italic block">No call SNPs in this segment window</span>
                           )}
                           {snpsInSegment.length > 30 && (
-                            <span className="text-[9px] text-slate-550 text-center block pt-1">...and {snpsInSegment.length - 30} more SNPs</span>
+                            <span className="text-[9px] text-slate-500 text-center block pt-1">...and {snpsInSegment.length - 30} more SNPs</span>
                           )}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-550 text-center uppercase tracking-widest">
+                  <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-500 text-center uppercase tracking-widest">
                     Interactive Segment Inspector
                   </div>
                 </motion.div>

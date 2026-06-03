@@ -11,7 +11,7 @@ export default defineConfig(({mode}) => {
       react(),
       tailwindcss(),
       VitePWA({
-        registerType: 'autoUpdate',
+        registerType: 'prompt',
         includeAssets: ['icon-192.png', 'icon-512.png'],
         manifest: {
           name: 'Genotype Scout — Privacy-First DNA Analysis',
