@@ -247,9 +247,9 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </motion.div>
 
-        {/* Famous Matches */}
+        {/* Ancient Matches */}
         <motion.div 
-          onClick={() => onNavigateToTab('summary')}
+          onClick={() => onNavigateToTab('ancient_dna')}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
@@ -258,9 +258,9 @@ const Dashboard: React.FC<DashboardProps> = ({
           <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 transition-transform group-hover:scale-110">
             <Shield className="w-7 h-7" />
           </div>
-          <h3 className="text-xl font-bold text-slate-800 mb-2">Famous Comparisons</h3>
+          <h3 className="text-xl font-bold text-slate-800 mb-2">Ancient Matches</h3>
           <p className="text-sm text-slate-500 leading-relaxed mb-6">
-            See how your genetic profile compares against historical figures and ancient genomic samples.
+            Discover your genetic affinity to ancient DNA samples from archaeological sites across the globe.
           </p>
           <div className="flex items-center text-amber-600 text-xs font-black uppercase tracking-widest gap-2">
             View Matches <ArrowRight className="w-3 h-3" />

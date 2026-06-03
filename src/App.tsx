@@ -2543,7 +2543,14 @@ export default function App() {
                     populationProximity={populationProximity}
                     dataset={datasets[activeDatasetIndex]}
                     userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                    onNavigateToTab={setActiveTab}
+                    onNavigateToTab={(tab: string) => {
+                      if (tab === 'ancient_dna') {
+                        setActiveTab('history');
+                        setActiveHistorySubTab('ancient');
+                      } else {
+                        setActiveTab(tab);
+                      }
+                    }}
                     onReset={resetApp}
                   />
                 )}
