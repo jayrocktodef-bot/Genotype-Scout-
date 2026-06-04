@@ -8,6 +8,7 @@ const allSections = [
   { tabId: 'summary', emoji: '🧬' },
   { tabId: 'autosomal', emoji: '🧩' },
   { tabId: 'oracle', emoji: '🎯' },
+  { tabId: 'painter', emoji: '🎨' },
   { tabId: 'naive_oracle', emoji: '⚡' },
   { tabId: 'haplogroups', emoji: '🌳' },
   { tabId: 'ancient', emoji: '💀' },
@@ -33,6 +34,9 @@ const getPlainEnglish = (tabId: string): string => {
 
     case 'oracle':
       return 'Imagine you have a smoothie and you\'re trying to figure out exactly what fruits went into it. That\'s what NNLS does with your DNA — it looks at thousands of genetic markers and mathematically figures out the best combination of reference populations that, when mixed together, would produce a genetic profile like yours. The math guarantees that no population gets a negative percentage (you can\'t have -10% of something), and all percentages add up to exactly 100%.';
+
+    case 'painter':
+      return 'Chromosome Painting looks at your 22 autosomes (the chromosomes you inherited from both parents) and colors each section based on which continental population it most closely matches. We use a math model called a Hidden Markov Model (HMM) that reads along your DNA strands and estimates the most likely transition points between different ancestries. This lets us paint a visual map showing maternal vs. paternal ancestry for each of your chromosomes.';
 
     case 'naive_oracle':
       return 'This is a faster, simpler version of the ancestry calculation. Instead of trying to figure out the whole "smoothie recipe" at once, it looks at each genetic marker one at a time and asks: "Which population is this single marker most common in?" Then it averages all those answers together. It\'s quicker but less precise than the full NNLS approach — think of it as a quick sketch vs. a detailed painting.';

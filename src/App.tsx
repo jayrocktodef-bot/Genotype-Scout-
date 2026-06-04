@@ -64,9 +64,9 @@ import AndroidDesktop from "./components/AndroidDesktop";
 import { BloodTypeView } from "./components/BloodTypeView";
 import { inferRhFactor } from "./services/bloodPredictorService";
 
-import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
 import { NaiveAncestryOracle } from "./components/NaiveAncestryOracle";
+import { ChromosomePainterView } from "./components/ChromosomePainterView";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
 import { EngineAncestryOracle } from "./components/EngineAncestryOracle";
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
@@ -1988,7 +1988,7 @@ export default function App() {
   const [uiMode, setUiMode] = useState<'desktop' | 'classic'>('desktop');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
-  const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'scout'>('oracle');
+  const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
   const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'blood'>('wellness');
   const [activeHistorySubTab, setActiveHistorySubTab] = useState<'modern' | 'ancient'>('modern');
 
@@ -2771,6 +2771,12 @@ export default function App() {
                           🔬 High-Res Oracle
                         </button>
                         <button 
+                          onClick={() => setActiveAncestrySubTab('painter')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'painter' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
+                        >
+                          🎨 Chromosome Painting
+                        </button>
+                        <button 
                           onClick={() => setActiveAncestrySubTab('scout')}
                           className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'scout' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
                         >
@@ -2779,7 +2785,7 @@ export default function App() {
                       </div>
                     </div>
 
-                    {activeAncestrySubTab === 'oracle' ? (
+                    {activeAncestrySubTab === 'oracle' && (
                       <div className="space-y-8">
                          <SubpopulationBento 
                            precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
@@ -2794,7 +2800,15 @@ export default function App() {
                          />
                          <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
                       </div>
-                    ) : (
+                    )}
+
+                    {activeAncestrySubTab === 'painter' && (
+                      <div className="animate-fade-in">
+                         <ChromosomePainterView dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} />
+                      </div>
+                    )}
+
+                    {activeAncestrySubTab === 'scout' && (
                       <div className="animate-fade-in">
                          <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
                       </div>
@@ -3014,6 +3028,15 @@ export default function App() {
                   }))}
                 />
                 <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
+              </div>
+            )}
+
+            {currentApp === 'chromosome_painter' && (
+              <div className="animate-fade-in">
+                <ChromosomePainterView 
+                  dataset={datasets[activeDatasetIndex]}
+                  onOpenMethodology={() => setIsMethodologyOpen(true)}
+                />
               </div>
             )}
 

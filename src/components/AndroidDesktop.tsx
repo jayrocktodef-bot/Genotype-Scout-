@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   User, Globe, History, HeartPulse, Database, BookOpen, 
   Zap, Droplet, Wifi, BatteryCharging, ArrowLeft, 
-  Circle, Square, Search, Mic, Settings, Play, X
+  Circle, Square, Search, Mic, Settings, Play, X, Dna
 } from 'lucide-react';
 
 interface AndroidDesktopProps {
@@ -88,13 +88,23 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
     },
     {
       id: 'ancestry_oracle',
-      name: 'High-Res Oracle',
+      name: 'Ancestry Oracle',
       icon: Globe,
       gradient: 'from-teal-400 to-emerald-600',
       glowColor: 'rgba(20, 184, 166, 0.45)',
       targetTab: 'ancestry',
       targetSubTab: 'oracle',
-      description: 'Run deep subpopulation queries and chromosome painter analysis.',
+      description: 'Run deep subpopulation queries and NNLS admixture optimization.',
+    },
+    {
+      id: 'chromosome_painter',
+      name: 'Chromosome Painter',
+      icon: Dna,
+      gradient: 'from-sky-400 to-indigo-500',
+      glowColor: 'rgba(56, 189, 248, 0.45)',
+      targetTab: 'ancestry',
+      targetSubTab: 'painter',
+      description: 'Maternal vs. Paternal segment-by-segment ancestral origin mapping of your 22 autosomes.',
     },
     {
       id: 'ancestry_scout',

@@ -100,6 +100,33 @@ export const getMethodologyData = (tabId: string): MethodologyContent => {
           ]
         };
 
+      case 'painter':
+        return {
+          title: 'Chromosome Painting Map',
+          algName: 'Hidden Markov Model (HMM) Segment Phasing',
+          description: 'Uses a multi-state Hidden Markov Model (HMM) running parallel on Web Workers to phase maternal vs. paternal chromatid segments. The algorithm computes transition and emission probabilities of observed alleles across sliding physical genomic blocks, attributing segments to ancestral populations (AFR, EUR, EAS, SAS, AMR) with high confidence.',
+          formulas: [
+            {
+              label: 'Emission Probability',
+              equation: 'P(O_t | S_i) = P(Genotype | Population_i)',
+              explanation: 'Calculates the likelihood of observing your genotype at position t given local ancestry state i, based on reference allele frequencies.'
+            },
+            {
+              label: 'Transition Probability',
+              equation: 'P(S_t = j | S_{t-1} = i) = (1 - e^{-r d})',
+              explanation: 'Models recombination rate (r) over distance (d) to estimate the probability of switching from ancestry state i to j between adjacent markers.'
+            }
+          ],
+          references: [
+            'Patterson et al. (Genetics) on Population Structure and Eigenanalysis',
+            'Sankararaman et al. (Genome Research) on Local Ancestry Estimation'
+          ],
+          metrics: [
+            { label: 'Calculated Chromosomes', value: '22 Autosomes (Strands A & B)' },
+            { label: 'Calculation Target', value: 'Segment-by-segment Local Phasing' }
+          ]
+        };
+
       case 'naive_oracle':
         return {
           title: 'Scout Score (Raw Allele Frequency Matrix)',
