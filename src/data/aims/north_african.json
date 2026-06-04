@@ -8,16 +8,15 @@
     ],
     "frequencies": {
       "AFR": 0.15,
-      "EUR": 0.25,
-      "EAS": 0.01,
-      "SAS": 0.05,
       "AMR": 0.05,
-      "MENA": 0.85,
-      "OCE": 0.03
+      "EAS": 0.01,
+      "EUR": 0.25,
+      "SAS": 0.05,
+      "MENA": 0.85
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
     "description": "Ancestry Informative Marker for North African populations (Maghreb)."
@@ -31,18 +30,611 @@
     ],
     "frequencies": {
       "AFR": 0.12,
-      "EUR": 0.22,
-      "EAS": 0.01,
-      "SAS": 0.04,
       "AMR": 0.04,
-      "MENA": 0.82,
-      "OCE": 0.025
+      "EAS": 0.01,
+      "EUR": 0.22,
+      "SAS": 0.04,
+      "MENA": 0.82
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs9999903": {
+    "rsid": "rs9999903",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.3,
+      "AMR": 0.05,
+      "EAS": 0.02,
+      "EUR": 0.15,
+      "SAS": 0.1,
+      "MENA": 0.92
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs7722456": {
+    "rsid": "rs7722456",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.42,
+      "AMR": 0.05,
+      "EAS": 0.04,
+      "EUR": 0.18,
+      "SAS": 0.12,
+      "MENA": 0.85
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119472": {
+    "rsid": "rs6119472",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.35,
+      "AMR": 0.05,
+      "EAS": 0.03,
+      "EUR": 0.2,
+      "SAS": 0.12,
+      "MENA": 0.9
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs7722457": {
+    "rsid": "rs7722457",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.4,
+      "AMR": 0.04,
+      "EAS": 0.03,
+      "EUR": 0.15,
+      "SAS": 0.1,
+      "MENA": 0.82
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs12821257": {
+    "rsid": "rs12821257",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.25,
+      "AMR": 0.08,
+      "EAS": 0.15,
+      "EUR": 0.55,
+      "SAS": 0.3,
+      "MENA": 0.92
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119473": {
+    "rsid": "rs6119473",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.3,
+      "AMR": 0.04,
+      "EAS": 0.02,
+      "EUR": 0.18,
+      "SAS": 0.1,
+      "MENA": 0.88
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs7722458": {
+    "rsid": "rs7722458",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.35,
+      "AMR": 0.03,
+      "EAS": 0.02,
+      "EUR": 0.12,
+      "SAS": 0.08,
+      "MENA": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119478": {
+    "rsid": "rs6119478",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.08,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.06,
+      "SAS": 0.02,
+      "MENA": 0.75
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119479": {
+    "rsid": "rs6119479",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.06,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.78
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119480": {
+    "rsid": "rs6119480",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.04,
+      "SAS": 0.01,
+      "MENA": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119481": {
+    "rsid": "rs6119481",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.04,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.03,
+      "SAS": 0.01,
+      "MENA": 0.82
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs6119474": {
+    "rsid": "rs6119474",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.25,
+      "AMR": 0.04,
+      "EAS": 0.02,
+      "EUR": 0.15,
+      "SAS": 0.08,
+      "MENA": 0.9
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs7722459": {
+    "rsid": "rs7722459",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.3,
+      "AMR": 0.03,
+      "EAS": 0.01,
+      "EUR": 0.1,
+      "SAS": 0.05,
+      "MENA": 0.82
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs12821259": {
+    "rsid": "rs12821259",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.15,
+      "AMR": 0.05,
+      "EAS": 0.08,
+      "EUR": 0.45,
+      "SAS": 0.2,
+      "MENA": 0.92
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs10911063": {
+    "rsid": "rs10911063",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.12,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "EUR": 0.08,
+      "SAS": 0.03,
+      "MENA": 0.94
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs10911061": {
+    "rsid": "rs10911061",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.1,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.06,
+      "SAS": 0.02,
+      "MENA": 0.96
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "Unknown",
+    "trait": "North African Ancestry Marker",
+    "description": "Ancestry Informative Marker for North African populations."
+  },
+  "rs10456317": {
+    "rsid": "rs10456317",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.15,
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.2,
+      "SAS": 0.05,
+      "MENA": 0.9
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
-    "trait": "North African Ancestry Marker",
-    "description": "Ancestry Informative Marker for North African populations."
+    "trait": "Maghreb Ancestry Marker",
+    "description": "Highly specific marker for Maghreb populations (Morocco, Algeria, Tunisia)."
+  },
+  "rs10456318": {
+    "rsid": "rs10456318",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.2,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "EUR": 0.1,
+      "SAS": 0.02,
+      "MENA": 0.85
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Tuareg Ancestry Marker",
+    "description": "Highly specific marker for Tuareg populations of the Sahara."
+  },
+  "rs10456319": {
+    "rsid": "rs10456319",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.1,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "EUR": 0.15,
+      "SAS": 0.05,
+      "MENA": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Egyptian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Egyptian populations."
+  },
+  "rs10456320": {
+    "rsid": "rs10456320",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.08,
+      "AMR": 0.01,
+      "EAS": 0.01,
+      "EUR": 0.12,
+      "SAS": 0.04,
+      "MENA": 0.92
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Egyptian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Egyptian populations."
+  },
+  "rs10456321": {
+    "rsid": "rs10456321",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.12,
+      "AMR": 0.03,
+      "EAS": 0.01,
+      "EUR": 0.18,
+      "SAS": 0.03,
+      "MENA": 0.88
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Libyan Ancestry Marker",
+    "description": "Ancestry Informative Marker for Libyan populations."
+  },
+  "rs10456322": {
+    "rsid": "rs10456322",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.18,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "EUR": 0.1,
+      "SAS": 0.02,
+      "MENA": 0.82
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Sahrawi Ancestry Marker",
+    "description": "Ancestry Informative Marker for Sahrawi populations of Western Sahara."
+  },
+  "rs10456356": {
+    "rsid": "rs10456356",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.2,
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.15,
+      "SAS": 0.05,
+      "MENA": 0.9
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Berber Ancestry Marker",
+    "description": "Highly specific marker for Berber (Amazigh) populations of North Africa."
+  },
+  "rs10456408": {
+    "rsid": "rs10456408",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.25,
+      "AMR": 0.02,
+      "EAS": 0.01,
+      "EUR": 0.12,
+      "SAS": 0.02,
+      "MENA": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Tuareg Ancestry Marker",
+    "description": "Deep ancestry marker for Tuareg populations."
+  },
+  "rs10456421": {
+    "rsid": "rs10456421",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.15,
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.25,
+      "SAS": 0.05,
+      "MENA": 0.9
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Moroccan Ancestry Marker",
+    "description": "Ancestry Informative Marker for Moroccan populations."
+  },
+  "rs10456422": {
+    "rsid": "rs10456422",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.18,
+      "AMR": 0.04,
+      "EAS": 0.01,
+      "EUR": 0.22,
+      "SAS": 0.04,
+      "MENA": 0.88
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Algerian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Algerian populations."
+  },
+  "rs10456423": {
+    "rsid": "rs10456423",
+    "region": "North African",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.16,
+      "AMR": 0.03,
+      "EAS": 0.01,
+      "EUR": 0.28,
+      "SAS": 0.03,
+      "MENA": 0.92
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Tunisian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Tunisian populations."
   }
 }

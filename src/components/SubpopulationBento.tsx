@@ -134,7 +134,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest animate-pulse">
               {isContinentalMatch(results.topMatch) ? 'Continental / Super Population Match' : 'Closest Genomic Subpopulation'}
             </p>
-            <h1 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400 tracking-tight break-words">
               {results.topMatch !== 'Unknown' ? results.topMatch : 'Establishing genotype...'}
             </h1>
             <p className="text-xs text-slate-400 font-mono">
@@ -190,16 +190,16 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                   const isContinental = isContinentalMatch(item?.subpop);
                   return (
                     <div key={item.subpop} className="space-y-1.5 p-4 rounded-xl bg-white/[0.01] hover:bg-white/[0.02] border border-white/[0.02] transition-colors">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-xs font-bold">
-                        <span className="flex items-center gap-2 text-slate-200">
-                          <span className="font-mono text-slate-500 text-[10px]">0{idx + 1}.</span>
-                          {item?.subpop}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-xs font-bold min-w-0">
+                        <span className="flex items-center gap-2 text-slate-200 min-w-0 truncate">
+                          <span className="font-mono text-slate-500 text-[10px] shrink-0">0{idx + 1}.</span>
+                          <span className="truncate">{item?.subpop}</span>
                         </span>
-                        <div className="flex items-center gap-3 font-mono">
+                        <div className="flex items-center gap-2 font-mono shrink-0 flex-wrap">
                           <span className="text-teal-400 text-xs">d = {Number(item?.distance ?? 0).toFixed(4)}</span>
-                          <span className="text-[10px] text-slate-500">({item?.markersCompared ?? 0} AIMs mapped)</span>
-                          <span className={`text-[9px] px-1.5 py-0.5 rounded border leading-none scale-95 ${isContinental ? 'text-teal-400 bg-teal-500/10 border-teal-500/20' : label.color}`}>
-                            {isContinental ? 'Continental Match' : `${label.text.split(' ')[0]} Match`}
+                          <span className="text-[10px] text-slate-500">({item?.markersCompared ?? 0} AIMs)</span>
+                          <span className={`text-[9px] px-1.5 py-0.5 rounded border leading-none ${isContinental ? 'text-teal-400 bg-teal-500/10 border-teal-500/20' : label.color}`}>
+                            {isContinental ? 'Continental' : `${label.text.split(' ')[0]}`}
                           </span>
                         </div>
                       </div>
@@ -232,9 +232,9 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {admixtureList.map((comp: any, idx: number) => (
                   <div key={comp.popCode} className="space-y-2 p-4 rounded-xl bg-white/[0.01] hover:bg-white/[0.02] border border-white/[0.02] transition-colors">
-                    <div className="flex justify-between items-center text-xs font-bold">
-                      <span className="text-slate-200 truncate">{comp?.name ?? 'Unknown'}</span>
-                <span className="font-mono text-emerald-400 font-extrabold">{Number(comp?.percentage ?? 0).toFixed(1)}%</span>
+                    <div className="flex justify-between items-center text-xs font-bold min-w-0 gap-2">
+                      <span className="text-slate-200 truncate min-w-0">{comp?.name ?? 'Unknown'}</span>
+                      <span className="font-mono text-emerald-400 font-extrabold shrink-0">{Number(comp?.percentage ?? 0).toFixed(1)}%</span>
                     </div>
                     <div className="w-full bg-white/[0.03] h-2 rounded-full overflow-hidden p-px border border-white/5">
                       <motion.div 

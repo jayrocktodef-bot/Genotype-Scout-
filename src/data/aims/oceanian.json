@@ -1,125 +1,4 @@
 {
-  "rs10456304": {
-    "rsid": "rs10456304",
-    "chromosome": "6",
-    "position": 24319478,
-    "region": "Oceanian",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.99
-    },
-    "subFrequencies": {
-      "Bougainville": 0.99,
-      "Solomon_Islands": 0.97,
-      "Fiji": 0.85,
-      "Samoa": 0.7
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
-  },
-  "rs10456224": {
-    "rsid": "rs10456224",
-    "chromosome": "6",
-    "position": 19666843,
-    "region": "Oceanian",
-    "color": "#95A5A6",
-    "alleles": [
-      "A"
-    ],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.02,
-      "SAS": 0.01,
-      "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.98
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
-  },
-  "rs11568828": {
-    "rsid": "rs11568828",
-    "chromosome": "17",
-    "position": 63918913,
-    "region": "Oceanian",
-    "color": "#95A5A6",
-    "alleles": [
-      "T"
-    ],
-    "ref": "C",
-    "alt": "T",
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.02,
-      "SAS": 0.01,
-      "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.78
-    },
-    "subFrequencies": {
-      "Melanesian": 0.85,
-      "Papuan": 0.76,
-      "Aboriginal": 0.72
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "KRT25",
-    "trait": "Hair Morphology",
-    "description": "KRT25 structural variant highly specific to Oceania, strongly associated with unique hair texture/curl modifications."
-  },
-  "rs3827760": {
-    "rsid": "rs3827760",
-    "chromosome": "2",
-    "position": 108897145,
-    "region": "Oceanian",
-    "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
-    "ref": "A",
-    "alt": "G",
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "SAS": 0.05,
-      "AMR": 0.85,
-      "MENA": 0.01,
-      "OCE": 0.52
-    },
-    "subFrequencies": {
-      "Polynesian": 0.65,
-      "Micronesian": 0.6,
-      "Papuan": 0.4
-    },
-    "deepFrequencies": {},
-    "weight": 10,
-    "gene": "EDAR",
-    "trait": "Hair/Dental Morphology",
-    "description": "EDAR hair and dental morphology variant, displaying a distinctive intermediate frequency in Oceania compared to pure East Asian and European lineages."
-  },
   "rs10456291": {
     "rsid": "rs10456291",
     "region": "Oceanian",
@@ -129,16 +8,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.04,
-      "EAS": 0.38,
-      "SAS": 0.01,
       "AMR": 0.02,
+      "EAS": 0.38,
+      "EUR": 0.04,
+      "SAS": 0.01,
       "MENA": 0.01,
       "OCE": 0.88
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Chamorro Ancestry Marker",
     "description": "Ancestry Informative Marker for Chamorro (Guam) populations."
@@ -152,16 +31,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.9,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.455
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Polynesian Ancestry Marker",
     "description": "Ancestry Informative Marker for Polynesian populations."
@@ -175,16 +53,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.85,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.43
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Micronesian Ancestry Marker",
     "description": "Ancestry Informative Marker for Micronesian populations."
@@ -198,16 +75,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.88,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.445
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Hawaiian Ancestry Marker",
     "description": "Ancestry Informative Marker for Hawaiian populations."
@@ -221,16 +97,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.91,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.46
+      "EAS": 0.91,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Polynesian Ancestry Marker",
     "description": "Ancestry Informative Marker for Polynesian populations."
@@ -244,16 +119,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.86,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.435
+      "EAS": 0.86,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Micronesian Ancestry Marker",
     "description": "Ancestry Informative Marker for Micronesian populations."
@@ -267,16 +141,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.89,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.45
+      "EAS": 0.89,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Hawaiian Ancestry Marker",
     "description": "Ancestry Informative Marker for Hawaiian populations."
@@ -290,16 +163,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.87,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.44
+      "EAS": 0.87,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Micronesian Ancestry Marker",
     "description": "Ancestry Informative Marker for Micronesian populations."
@@ -313,16 +185,15 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.9,
-      "SAS": 0.01,
       "AMR": 0.01,
-      "MENA": 0.01,
-      "OCE": 0.455
+      "EAS": 0.9,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Hawaiian Ancestry Marker",
     "description": "Ancestry Informative Marker for Hawaiian populations."
@@ -336,16 +207,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.3,
-      "SAS": 0.01,
       "AMR": 0.05,
+      "EAS": 0.3,
+      "EUR": 0.05,
+      "SAS": 0.01,
       "MENA": 0.01,
       "OCE": 0.95
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Hawaiian Ancestry Marker",
     "description": "Ancestry Informative Marker for Native Hawaiian populations."
@@ -359,16 +230,16 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.22,
-      "SAS": 0.01,
       "AMR": 0.01,
+      "EAS": 0.22,
+      "EUR": 0.01,
+      "SAS": 0.01,
       "MENA": 0.01,
       "OCE": 0.94
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Samoan Ancestry Marker",
     "description": "Ancestry Informative Marker for Samoan populations."
@@ -382,1260 +253,3393 @@
     ],
     "frequencies": {
       "AFR": 0.01,
-      "EUR": 0.04,
-      "EAS": 0.28,
-      "SAS": 0.01,
       "AMR": 0.04,
+      "EAS": 0.28,
+      "EUR": 0.04,
+      "SAS": 0.01,
       "MENA": 0.01,
       "OCE": 0.92
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
     "trait": "Hawaiian Ancestry Marker",
     "description": "Ancestry Informative Marker for Native Hawaiian populations."
   },
-  "rs600000": {
-    "rsid": "rs600000",
-    "chromosome": "18",
-    "position": 71409883,
+  "rs12439433": {
+    "rsid": "rs12439433",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.9933,
+      "EAS": 0.9959,
+      "OCE": 1,
+      "SAS": 0.9819,
+      "AMR": 0.4445,
+      "EUR": 0.9646,
+      "SIB": 0.99
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker, informative for the Oceanian population."
   },
-  "rs600001": {
-    "rsid": "rs600001",
-    "chromosome": "7",
-    "position": 56859885,
+  "rs7844723": {
+    "rsid": "rs7844723",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "C"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.8338,
+      "EAS": 0.8958,
+      "OCE": 0.9667,
+      "SAS": 0.6946,
+      "AMR": 0.82,
+      "EUR": 0.4644,
+      "SIB": 0.8627
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker, informative for the Oceanian population."
   },
-  "rs600002": {
-    "rsid": "rs600002",
-    "chromosome": "20",
-    "position": 73518525,
+  "rs1871428": {
+    "rsid": "rs1871428",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.8129,
+      "EAS": 0.7896,
+      "OCE": 0.8556,
+      "SAS": 0.615,
+      "AMR": 0.8081,
+      "EUR": 0.3881,
+      "SIB": 0.4608
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker, informative for the Oceanian population."
   },
-  "rs600003": {
-    "rsid": "rs600003",
-    "chromosome": "6",
-    "position": 44724629,
+  "rs8113143": {
+    "rsid": "rs8113143",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.8358,
+      "EAS": 0.7746,
+      "OCE": 0.8944,
+      "SAS": 0.6079,
+      "AMR": 0.8034,
+      "EUR": 0.3761,
+      "SIB": 0.6471
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker, informative for the Oceanian population."
   },
-  "rs600004": {
-    "rsid": "rs600004",
-    "chromosome": "22",
-    "position": 75627167,
+  "rs316598": {
+    "rsid": "rs316598",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "C"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.7686,
+      "EAS": 0.6274,
+      "OCE": 0.7778,
+      "SAS": 0.4965,
+      "AMR": 0.427,
+      "EUR": 0.2934,
+      "SIB": 0.2941
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs600005": {
-    "rsid": "rs600005",
-    "chromosome": "6",
-    "position": 44724627,
+  "rs3118378": {
+    "rsid": "rs3118378",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.6237,
+      "EAS": 0.4321,
+      "OCE": 0.7556,
+      "SAS": 0.6433,
+      "AMR": 0.0675,
+      "EUR": 0.6884,
+      "SIB": 0.7549
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs600006": {
-    "rsid": "rs600006",
-    "chromosome": "2",
-    "position": 77735809,
+  "rs948028": {
+    "rsid": "rs948028",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.4382,
+      "EAS": 0.8554,
+      "OCE": 0.9444,
+      "SAS": 0.8232,
+      "AMR": 0.6913,
+      "EUR": 0.7997,
+      "SIB": 0.8137
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs600007": {
-    "rsid": "rs600007",
-    "chromosome": "3",
-    "position": 78790130,
+  "rs798443": {
+    "rsid": "rs798443",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.2992,
+      "EAS": 0.6588,
+      "OCE": 0.8631,
+      "SAS": 0.6694,
+      "AMR": 0.7672,
+      "EUR": 0.7968,
+      "SIB": 0.66
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs600008": {
-    "rsid": "rs600008",
-    "chromosome": "4",
-    "position": 79844451,
+  "rs1325502": {
+    "rsid": "rs1325502",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.5281,
+      "EAS": 0.4323,
+      "OCE": 0.7,
+      "SAS": 0.2673,
+      "AMR": 0.0983,
+      "EUR": 0.1785,
+      "SIB": 0.2745
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs600009": {
-    "rsid": "rs600009",
-    "chromosome": "13",
-    "position": 38296923,
+  "rs3737576": {
+    "rsid": "rs3737576",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "T"
     ],
-    "ref": "C",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.9871,
+      "EAS": 0.9329,
+      "OCE": 1,
+      "SAS": 0.9181,
+      "AMR": 0.346,
+      "EUR": 0.9374,
+      "SIB": 0.86
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs6000010": {
-    "rsid": "rs6000010",
-    "chromosome": "22",
-    "position": 35826422,
+  "rs4891825": {
+    "rsid": "rs4891825",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.3776,
+      "EAS": 0.9937,
+      "OCE": 1,
+      "SAS": 0.9121,
+      "AMR": 0.8535,
+      "EUR": 0.8968,
+      "SIB": 0.9
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs6000011": {
-    "rsid": "rs6000011",
-    "chromosome": "22",
-    "position": 35830543,
+  "rs12130799": {
+    "rsid": "rs12130799",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.9963,
+      "EAS": 0.9957,
+      "OCE": 1,
+      "SAS": 0.9813,
+      "AMR": 0.5562,
+      "EUR": 0.9428,
+      "SIB": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 10,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs6000012": {
-    "rsid": "rs6000012",
-    "chromosome": "22",
-    "position": 35842705,
+  "rs10456290": {
+    "rsid": "rs10456290",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.01,
+      "AMR": 0.03,
+      "EAS": 0.4,
+      "EUR": 0.05,
+      "SAS": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.9
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "trait": "Chamorro Ancestry Marker",
+    "description": "Ancestry Informative Marker for Chamorro (Guam) populations."
   },
-  "rs6000013": {
-    "rsid": "rs6000013",
-    "chromosome": "22",
-    "position": 35845342,
+  "rs10456288": {
+    "rsid": "rs10456288",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "C"
     ],
-    "ref": "A",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.25,
+      "EUR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.96
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 8,
     "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "trait": "Samoan Ancestry Marker",
+    "description": "Ancestry Informative Marker for Samoan populations."
   },
-  "rs6000014": {
-    "rsid": "rs6000014",
-    "chromosome": "22",
-    "position": 35852090,
+  "rs11014200": {
+    "rsid": "rs11014200",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000015": {
-    "rsid": "rs6000015",
-    "chromosome": "22",
-    "position": 35857115,
+  "rs11014201": {
+    "rsid": "rs11014201",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000016": {
-    "rsid": "rs6000016",
-    "chromosome": "22",
-    "position": 35857174,
+  "rs11014202": {
+    "rsid": "rs11014202",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000017": {
-    "rsid": "rs6000017",
-    "chromosome": "22",
-    "position": 35858499,
+  "rs11014203": {
+    "rsid": "rs11014203",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000018": {
-    "rsid": "rs6000018",
-    "chromosome": "22",
-    "position": 35860012,
+  "rs11014204": {
+    "rsid": "rs11014204",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000019": {
-    "rsid": "rs6000019",
-    "chromosome": "22",
-    "position": 35860780,
+  "rs11014205": {
+    "rsid": "rs11014205",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000020": {
-    "rsid": "rs6000020",
-    "chromosome": "22",
-    "position": 35862219,
+  "rs11014206": {
+    "rsid": "rs11014206",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000021": {
-    "rsid": "rs6000021",
-    "chromosome": "22",
-    "position": 35869357,
+  "rs11014207": {
+    "rsid": "rs11014207",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000022": {
-    "rsid": "rs6000022",
-    "chromosome": "22",
-    "position": 35874145,
+  "rs11014208": {
+    "rsid": "rs11014208",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000023": {
-    "rsid": "rs6000023",
-    "chromosome": "22",
-    "position": 35874674,
+  "rs11014209": {
+    "rsid": "rs11014209",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000024": {
-    "rsid": "rs6000024",
-    "chromosome": "22",
-    "position": 35878929,
+  "rs11014210": {
+    "rsid": "rs11014210",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000025": {
-    "rsid": "rs6000025",
-    "chromosome": "22",
-    "position": 21899704,
+  "rs11014211": {
+    "rsid": "rs11014211",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000026": {
-    "rsid": "rs6000026",
-    "chromosome": "22",
-    "position": 35892273,
+  "rs11014212": {
+    "rsid": "rs11014212",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000027": {
-    "rsid": "rs6000027",
-    "chromosome": "22",
-    "position": 35892879,
+  "rs11014213": {
+    "rsid": "rs11014213",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000028": {
-    "rsid": "rs6000028",
-    "chromosome": "22",
-    "position": 35897391,
+  "rs11014214": {
+    "rsid": "rs11014214",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000029": {
-    "rsid": "rs6000029",
-    "chromosome": "22",
-    "position": 35900199,
+  "rs11014215": {
+    "rsid": "rs11014215",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000030": {
-    "rsid": "rs6000030",
-    "chromosome": "22",
-    "position": 35902112,
+  "rs11014216": {
+    "rsid": "rs11014216",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000031": {
-    "rsid": "rs6000031",
-    "chromosome": "22",
-    "position": 35909704,
+  "rs11014217": {
+    "rsid": "rs11014217",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000032": {
-    "rsid": "rs6000032",
-    "chromosome": "22",
-    "position": 35910218,
+  "rs11014218": {
+    "rsid": "rs11014218",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000033": {
-    "rsid": "rs6000033",
-    "chromosome": "22",
-    "position": 35916878,
+  "rs11014219": {
+    "rsid": "rs11014219",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000034": {
-    "rsid": "rs6000034",
-    "chromosome": "22",
-    "position": 35916938,
+  "rs11014220": {
+    "rsid": "rs11014220",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000035": {
-    "rsid": "rs6000035",
-    "chromosome": "22",
-    "position": 35922397,
+  "rs11014221": {
+    "rsid": "rs11014221",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000036": {
-    "rsid": "rs6000036",
-    "chromosome": "22",
-    "position": 35924692,
+  "rs11014222": {
+    "rsid": "rs11014222",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000037": {
-    "rsid": "rs6000037",
-    "chromosome": "22",
-    "position": 35925222,
+  "rs11014223": {
+    "rsid": "rs11014223",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "A",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000038": {
-    "rsid": "rs6000038",
-    "chromosome": "22",
-    "position": 35929938,
+  "rs11014224": {
+    "rsid": "rs11014224",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "G",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000039": {
-    "rsid": "rs6000039",
-    "chromosome": "22",
-    "position": 35931903,
+  "rs11014225": {
+    "rsid": "rs11014225",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000040": {
-    "rsid": "rs6000040",
-    "chromosome": "22",
-    "position": 35938213,
+  "rs11014226": {
+    "rsid": "rs11014226",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000041": {
-    "rsid": "rs6000041",
-    "chromosome": "22",
-    "position": 35943783,
+  "rs11014227": {
+    "rsid": "rs11014227",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000042": {
-    "rsid": "rs6000042",
-    "chromosome": "22",
-    "position": 35947274,
+  "rs11014228": {
+    "rsid": "rs11014228",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "C",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000043": {
-    "rsid": "rs6000043",
-    "chromosome": "22",
-    "position": 21906101,
+  "rs11014229": {
+    "rsid": "rs11014229",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "C",
-    "alt": "T",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000044": {
-    "rsid": "rs6000044",
-    "chromosome": "22",
-    "position": 35955462,
+  "rs11014230": {
+    "rsid": "rs11014230",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "T",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
-      "OCE": 0.95
+      "OCE": 0.95,
+      "GLOBAL": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
   },
-  "rs6000045": {
-    "rsid": "rs6000045",
-    "chromosome": "22",
-    "position": 35957826,
+  "rs11014231": {
+    "rsid": "rs11014231",
     "region": "Oceanian",
     "color": "#95A5A6",
     "alleles": [
       "A"
     ],
-    "ref": "G",
-    "alt": "A",
     "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "SAS": 0,
-      "AMR": 0,
-      "MENA": 0.001,
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014232": {
+    "rsid": "rs11014232",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014233": {
+    "rsid": "rs11014233",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014234": {
+    "rsid": "rs11014234",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014235": {
+    "rsid": "rs11014235",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014236": {
+    "rsid": "rs11014236",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014237": {
+    "rsid": "rs11014237",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014238": {
+    "rsid": "rs11014238",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014239": {
+    "rsid": "rs11014239",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014240": {
+    "rsid": "rs11014240",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014241": {
+    "rsid": "rs11014241",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014242": {
+    "rsid": "rs11014242",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014243": {
+    "rsid": "rs11014243",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014244": {
+    "rsid": "rs11014244",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014245": {
+    "rsid": "rs11014245",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014246": {
+    "rsid": "rs11014246",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs11014247": {
+    "rsid": "rs11014247",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs17822931_oce": {
+    "rsid": "rs17822931_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.8,
+      "AMR": 0.7,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "subFrequencies": {
+      "Papuan": 0.98,
+      "Melanesian": 0.96,
+      "Aboriginal": 0.92,
+      "Polynesian": 0.75,
+      "Micronesian": 0.7
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "ABCC11 variant - highly informative for East Asian, Native American, and Oceanian populations."
+  },
+  "rs10456304_oce": {
+    "rsid": "rs10456304_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.99
+    },
+    "subFrequencies": {
+      "Bougainville": 0.99,
+      "Solomon_Islands": 0.97,
+      "Fiji": 0.85,
+      "Samoa": 0.7
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Melanesian Specific Marker - diagnostic for the unique genetic lineages of the Bismarck Archipelago and Solomon Islands."
+  },
+  "rs9000296_oce": {
+    "rsid": "rs9000296_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.02,
+      "EAS": 0.8,
+      "EUR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.13
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Maori Ancestry Marker - informative for Polynesian populations from New Zealand."
+  },
+  "rs9000298_oce": {
+    "rsid": "rs9000298_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.01,
+      "EAS": 0.6,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.34
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Fijian Ancestry Marker - informative for populations from Fiji."
+  },
+  "rs9000300_oce": {
+    "rsid": "rs9000300_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Tongan Ancestry Marker - informative for populations from Tonga."
+  },
+  "rs9000302_oce": {
+    "rsid": "rs9000302_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.88,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.07
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Tahitian Ancestry Marker - informative for populations from Tahiti."
+  },
+  "rs9000304_oce": {
+    "rsid": "rs9000304_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.85,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Cook Islander Ancestry Marker - informative for populations from the Cook Islands."
+  },
+  "rs10456223_oce": {
+    "rsid": "rs10456223_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.02,
+      "AMR": 0.01,
+      "EAS": 0.05,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
       "OCE": 0.95
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 10,
+    "weight": 1,
+    "description": "Papuan Ancestry Marker - informative for indigenous populations of New Guinea."
+  },
+  "rs10456224_oce": {
+    "rsid": "rs10456224_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.02,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.98
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures."
+  },
+  "rs10456225_oce": {
+    "rsid": "rs10456225_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.55,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.65
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Samoan Ancestry Marker - informative for western Polynesian populations."
+  },
+  "rs10456226_oce": {
+    "rsid": "rs10456226_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.15,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.88
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Melanesian Ancestry Marker - informative for populations from Vanuatu and the Solomon Islands."
+  },
+  "rs10456227_oce": {
+    "rsid": "rs10456227_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "EAS": 0.7,
+      "EUR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.45
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "description": "Micronesian Ancestry Marker - informative for populations of the Mariana and Caroline Islands."
+  },
+  "rs10456285_oce": {
+    "rsid": "rs10456285_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "OCE": 0.97,
+      "EAS": 0.15,
+      "SAS": 0.05,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 3.5,
+    "description": "OCE/EAS Tie-Breaker - Deep Sahul lineage marker, strongly filters out Austronesian/East Asian overlap."
+  },
+  "rs10456294_oce": {
+    "rsid": "rs10456294_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "EAS": 0.15,
+      "SAS": 0.05,
+      "AMR": 0.02
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 3.5,
+    "description": "OCE/AFR Tie-Breaker - Denisovan-introgressed lineage marker, entirely absent in Sub-Saharan Africa."
+  },
+  "rs10456296_oce": {
+    "rsid": "rs10456296_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "OCE": 0.96,
+      "AMR": 0.01,
+      "EAS": 0.2,
+      "EUR": 0.01,
+      "MENA": 0.01,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "SAS": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 3.5,
+    "description": "OCE/AMR Tie-Breaker - Deep Sahul lineage, effectively absent in indigenous populations of the Americas."
+  },
+  "rs10456265_oce": {
+    "rsid": "rs10456265_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.9
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Oceanian Tie-Breaker - Highly specific to Melanesian and Papuan populations."
+  },
+  "rs10456266_oce": {
+    "rsid": "rs10456266_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "SAS": 0.01,
+      "OCE": 0.85
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "description": "Oceanian Tie-Breaker - Informative for Australasian genetic signatures."
+  },
+  "rs11887534_oce": {
+    "rsid": "rs11887534_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.1,
+      "OCE": 0.95
+    },
+    "subFrequencies": {
+      "Papuan": 0.98,
+      "Melanesian": 0.96,
+      "Aboriginal": 0.94
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "description": "Oceanian Diagnostic Marker - highly informative for identifying indigenous ancestry in the Pacific."
+  },
+  "rs600000_oce": {
+    "rsid": "rs600000_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestral lineage diagnostic Marker, crucial for distinguishing Melanesian, Papuan, and Micronesian-Polynesian components."
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600001_oce": {
+    "rsid": "rs600001_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600002_oce": {
+    "rsid": "rs600002_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600003_oce": {
+    "rsid": "rs600003_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600004_oce": {
+    "rsid": "rs600004_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600005_oce": {
+    "rsid": "rs600005_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600006_oce": {
+    "rsid": "rs600006_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600007_oce": {
+    "rsid": "rs600007_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600008_oce": {
+    "rsid": "rs600008_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs600009_oce": {
+    "rsid": "rs600009_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000010_oce": {
+    "rsid": "rs6000010_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000011_oce": {
+    "rsid": "rs6000011_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000012_oce": {
+    "rsid": "rs6000012_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000013_oce": {
+    "rsid": "rs6000013_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000014_oce": {
+    "rsid": "rs6000014_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000015_oce": {
+    "rsid": "rs6000015_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000016_oce": {
+    "rsid": "rs6000016_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000017_oce": {
+    "rsid": "rs6000017_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000018_oce": {
+    "rsid": "rs6000018_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000019_oce": {
+    "rsid": "rs6000019_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000020_oce": {
+    "rsid": "rs6000020_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000021_oce": {
+    "rsid": "rs6000021_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000022_oce": {
+    "rsid": "rs6000022_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000023_oce": {
+    "rsid": "rs6000023_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000024_oce": {
+    "rsid": "rs6000024_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000025_oce": {
+    "rsid": "rs6000025_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000026_oce": {
+    "rsid": "rs6000026_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000027_oce": {
+    "rsid": "rs6000027_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000028_oce": {
+    "rsid": "rs6000028_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000029_oce": {
+    "rsid": "rs6000029_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000030_oce": {
+    "rsid": "rs6000030_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000031_oce": {
+    "rsid": "rs6000031_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000032_oce": {
+    "rsid": "rs6000032_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000033_oce": {
+    "rsid": "rs6000033_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000034_oce": {
+    "rsid": "rs6000034_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000035_oce": {
+    "rsid": "rs6000035_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000036_oce": {
+    "rsid": "rs6000036_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000037_oce": {
+    "rsid": "rs6000037_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000038_oce": {
+    "rsid": "rs6000038_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000039_oce": {
+    "rsid": "rs6000039_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000040_oce": {
+    "rsid": "rs6000040_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000041_oce": {
+    "rsid": "rs6000041_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000042_oce": {
+    "rsid": "rs6000042_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000043_oce": {
+    "rsid": "rs6000043_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000044_oce": {
+    "rsid": "rs6000044_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000045_oce": {
+    "rsid": "rs6000045_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000046_oce": {
+    "rsid": "rs6000046_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000047_oce": {
+    "rsid": "rs6000047_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000048_oce": {
+    "rsid": "rs6000048_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000049_oce": {
+    "rsid": "rs6000049_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000050_oce": {
+    "rsid": "rs6000050_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000051_oce": {
+    "rsid": "rs6000051_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000052_oce": {
+    "rsid": "rs6000052_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000053_oce": {
+    "rsid": "rs6000053_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000054_oce": {
+    "rsid": "rs6000054_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000055_oce": {
+    "rsid": "rs6000055_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000056_oce": {
+    "rsid": "rs6000056_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000057_oce": {
+    "rsid": "rs6000057_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000058_oce": {
+    "rsid": "rs6000058_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000059_oce": {
+    "rsid": "rs6000059_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000060_oce": {
+    "rsid": "rs6000060_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000061_oce": {
+    "rsid": "rs6000061_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000062_oce": {
+    "rsid": "rs6000062_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000063_oce": {
+    "rsid": "rs6000063_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000064_oce": {
+    "rsid": "rs6000064_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000065_oce": {
+    "rsid": "rs6000065_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000066_oce": {
+    "rsid": "rs6000066_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000067_oce": {
+    "rsid": "rs6000067_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000068_oce": {
+    "rsid": "rs6000068_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000069_oce": {
+    "rsid": "rs6000069_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000070_oce": {
+    "rsid": "rs6000070_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000071_oce": {
+    "rsid": "rs6000071_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000072_oce": {
+    "rsid": "rs6000072_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000073_oce": {
+    "rsid": "rs6000073_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000074_oce": {
+    "rsid": "rs6000074_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000075_oce": {
+    "rsid": "rs6000075_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000076_oce": {
+    "rsid": "rs6000076_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000077_oce": {
+    "rsid": "rs6000077_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000078_oce": {
+    "rsid": "rs6000078_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000079_oce": {
+    "rsid": "rs6000079_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000080_oce": {
+    "rsid": "rs6000080_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000081_oce": {
+    "rsid": "rs6000081_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000082_oce": {
+    "rsid": "rs6000082_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000083_oce": {
+    "rsid": "rs6000083_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000084_oce": {
+    "rsid": "rs6000084_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000085_oce": {
+    "rsid": "rs6000085_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000086_oce": {
+    "rsid": "rs6000086_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000087_oce": {
+    "rsid": "rs6000087_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000088_oce": {
+    "rsid": "rs6000088_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000089_oce": {
+    "rsid": "rs6000089_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000090_oce": {
+    "rsid": "rs6000090_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000091_oce": {
+    "rsid": "rs6000091_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000092_oce": {
+    "rsid": "rs6000092_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000093_oce": {
+    "rsid": "rs6000093_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000094_oce": {
+    "rsid": "rs6000094_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000095_oce": {
+    "rsid": "rs6000095_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000096_oce": {
+    "rsid": "rs6000096_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000097_oce": {
+    "rsid": "rs6000097_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000098_oce": {
+    "rsid": "rs6000098_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
+  },
+  "rs6000099_oce": {
+    "rsid": "rs6000099_oce",
+    "region": "Oceanian",
+    "color": "#95A5A6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.95,
+      "GLOBAL": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "Unknown",
+    "trait": "Ancestry",
+    "description": "Oceanian ancestry informative marker."
   }
 }
