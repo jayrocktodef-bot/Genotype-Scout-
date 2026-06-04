@@ -20003,5 +20003,96 @@
     "gene": "Unknown",
     "subPopulation": "African American",
     "subRegion": "North America"
+  },
+  {
+    "rsid": "rs41525747_AFR",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.25,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Maasai": 0.62,
+      "Somali": 0.55,
+      "Oromo": 0.48,
+      "Dinka": 0.08,
+      "Nuer": 0.06,
+      "Yoruba": 0.01
+    },
+    "description": "Lactase Persistence G-14010 Variant - associated with pastoralist heritage in East Africa (Maasai, Cushitic populations).",
+    "trait": "Lactase Persistence",
+    "category": "Ancestry",
+    "gene": "MCM6/LCT",
+    "subPopulation": "East African",
+    "subRegion": "East Africa"
+  },
+  {
+    "rsid": "rs12149629_AFR",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.90,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Somali": 0.97,
+      "Oromo": 0.93,
+      "Amhara": 0.88,
+      "Dinka": 0.05,
+      "Nuer": 0.04,
+      "Maasai": 0.40
+    },
+    "description": "Horn of Africa Ancestry Marker - diagnostic for Cushitic and Semitic-speaking populations of East Africa.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "East African",
+    "subRegion": "East Africa"
+  },
+  {
+    "rsid": "rs12149630_AFR",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.95,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Dinka": 0.99,
+      "Nuer": 0.98,
+      "Shilluk": 0.96,
+      "Maasai": 0.90,
+      "Luo": 0.82,
+      "Somali": 0.08,
+      "Oromo": 0.12
+    },
+    "description": "Nilotic Core Marker - highly diagnostic for Nilo-Saharan speaking populations of the Upper Nile and East Africa.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "East African",
+    "subRegion": "East Africa"
   }
 ]

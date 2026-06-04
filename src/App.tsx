@@ -442,8 +442,8 @@ const ProfileSummary = memo(({
               {sortedEngineResults.length > 0 ? (
                 sortedEngineResults.slice(0, 4).map((pop, idx) => (
                   <div key={idx} className="p-2 rounded-xl bg-slate-50/70 border border-slate-100 flex flex-col justify-between">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="font-bold text-slate-700 truncate max-w-[200px]">{formatPopName(pop.name || pop.popCode)}</span>
+                    <div className="flex justify-between items-center text-xs min-w-0 gap-2">
+                      <span className="font-bold text-slate-700 truncate min-w-0">{formatPopName(pop.name || pop.popCode)}</span>
                       <span className="font-mono font-black text-teal-600 bg-teal-50 px-1.5 py-0.2 rounded text-[9px]">{(pop.percentage || 0).toFixed(1)}%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-1 my-1 overflow-hidden">
@@ -527,11 +527,11 @@ const ProfileSummary = memo(({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {statisticalInsights.slice(0, 4).map((insight: any, i: number) => (
                 <div key={insight?.pop || i} className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-[10px] font-bold mb-1.5">
-                    <span className="text-slate-800 uppercase tracking-tight truncate max-w-[110px]">
+                  <div className="flex justify-between items-center text-[10px] font-bold mb-1.5 min-w-0 gap-2">
+                    <span className="text-slate-800 uppercase tracking-tight truncate min-w-0 flex-1">
                       {formatPopName(insight?.pop)}
                     </span>
-                    <span className="text-emerald-600 font-black">{insight?.percentage || 0}%</span>
+                    <span className="text-emerald-600 font-black shrink-0">{insight?.percentage || 0}%</span>
                   </div>
                   
                   <div>
@@ -1554,8 +1554,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
         </div>
 
         <div 
-          style={{ width: '500px' }}
-          className="lg:col-span-2 bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col shadow-2xl relative overflow-hidden group"
+          className="lg:col-span-2 bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col shadow-2xl relative overflow-hidden group min-w-0"
         >
           <div className="absolute top-0 right-0 p-8 opacity-5 text-8xl pointer-events-none">🧬</div>
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
