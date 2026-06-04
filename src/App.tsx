@@ -2408,7 +2408,7 @@ export default function App() {
         }} 
       />
 
-      <main className="max-w-[1360px] mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-28">
+      <main className="max-w-[1360px] mx-auto px-2 sm:px-6 md:px-8 pt-24 sm:pt-28">
         {error && (
           (() => {
             const isDetailed = typeof error === 'object' && error !== null;
