@@ -146,13 +146,21 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     let meta = null;
     
     // Check markerId
+    const baseMarkerId = markerIdLower.split('_')[0];
     if (snpMap[markerIdLower]) {
       raw = snpMap[markerIdLower];
       if (snpMetaMap?.[markerIdLower]) meta = snpMetaMap[markerIdLower];
-    } 
+    } else if (snpMap[baseMarkerId]) {
+      raw = snpMap[baseMarkerId];
+      if (snpMetaMap?.[baseMarkerId]) meta = snpMetaMap[baseMarkerId];
+    }
     // Check rsid
     else if (snp.rsid && snpMap[snp.rsid.toLowerCase()]) {
       const k = snp.rsid.toLowerCase();
+      raw = snpMap[k];
+      if (snpMetaMap?.[k]) meta = snpMetaMap[k];
+    } else if (snp.rsid && snpMap[snp.rsid.toLowerCase().split('_')[0]]) {
+      const k = snp.rsid.toLowerCase().split('_')[0];
       raw = snpMap[k];
       if (snpMetaMap?.[k]) meta = snpMetaMap[k];
     }

@@ -375,7 +375,16 @@ export function processSubpopulations(
   const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
   const dbKeys = Object.keys(normalizedDatabase);
 
-  // Pre-index user genotypes with lazy fuzzy-mismatch correction
+  // Build a fast lookup mapping from base rsid to the database key
+  const dbBaseMap = new Map<string, string>();
+  for (const key of dbKeys) {
+    const base = key.split('_')[0].toLowerCase();
+    if (!dbBaseMap.has(base)) {
+      dbBaseMap.set(base, key);
+    }
+  }
+
+  // Pre-index user genotypes by their standard base RSID
   const genotypeMap = new Map<string, string>();
   for (const g of userGenotypes) {
     if (g.genotype && g.genotype !== '--') {
@@ -383,7 +392,8 @@ export function processSubpopulations(
       if (resolved) {
         genotypeMap.set(resolved.toLowerCase(), g.genotype);
       } else {
-        genotypeMap.set(g.rsid.toLowerCase(), g.genotype);
+        const base = g.rsid.split('_')[0].toLowerCase();
+        genotypeMap.set(base, g.genotype);
       }
     }
   }
@@ -401,36 +411,41 @@ export function processSubpopulations(
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
 
   // Group matched AIMS by chromosome to apply physical distance-based LD pruning (density filter)
-  const chromGroups: Record<string, Array<{ rsid: string; position: number; genotype: string; aim: any }>> = {};
+  const chromGroups: Record<string, Array<{ rsid: string; dbKey: string; position: number; genotype: string; aim: any }>> = {};
   
   for (const [rsid, genotype] of genotypeMap.entries()) {
-    const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
+    const dbKey = dbBaseMap.get(rsid) || rsid;
+    const aim = normalizedDatabase[dbKey] || normalizedDatabase[dbKey.toUpperCase()] || normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
     if (aim) {
       // Find chromosome and position from metadata or database entry
-      const meta = snpMetaMap?.[rsid] || snpMetaMap?.[rsid.toUpperCase()];
+      const meta = snpMetaMap?.[rsid] || snpMetaMap?.[rsid.toUpperCase()] || snpMetaMap?.[dbKey] || snpMetaMap?.[dbKey.toUpperCase()];
       const chrom = meta?.chrom || aim.chromosome;
       const position = meta?.pos || aim.position;
       
+      let popVarianceWeight = 1.5;
+      if (aim.frequencies) {
+        const freqs = Object.values(aim.frequencies) as number[];
+        if (freqs.length > 1) {
+          const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
+          const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
+          popVarianceWeight = 0.5 + (variance * 4.0);
+        }
+      }
+      
+      const entry = {
+        genotype,
+        gene: aim.gene,
+        weight: (aim.weight || 1.0) * popVarianceWeight
+      };
+
       if (chrom && typeof position === 'number' && !isNaN(position)) {
         const chromStr = String(chrom).toUpperCase();
         if (!chromGroups[chromStr]) chromGroups[chromStr] = [];
-        chromGroups[chromStr].push({ rsid, position, genotype, aim });
+        chromGroups[chromStr].push({ rsid, dbKey: dbKey.toLowerCase(), position, genotype, aim });
       } else {
         // If coordinate metadata is missing, fallback to including it directly
-        let popVarianceWeight = 1.5;
-        if (aim.frequencies) {
-          const freqs = Object.values(aim.frequencies) as number[];
-          if (freqs.length > 1) {
-            const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
-            const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
-            popVarianceWeight = 0.5 + (variance * 4.0);
-          }
-        }
-        prunedGenotypesMap.set(rsid, {
-          genotype,
-          gene: aim.gene,
-          weight: (aim.weight || 1.0) * popVarianceWeight
-        });
+        prunedGenotypesMap.set(rsid, entry);
+        prunedGenotypesMap.set(dbKey.toLowerCase(), entry);
       }
     }
   }
@@ -456,11 +471,13 @@ export function processSubpopulations(
           }
         }
         
-        prunedGenotypesMap.set(marker.rsid, {
+        const entry = {
           genotype: marker.genotype,
           gene: aim.gene,
           weight: (aim.weight || 1.0) * popVarianceWeight
-        });
+        };
+        prunedGenotypesMap.set(marker.rsid, entry);
+        prunedGenotypesMap.set(marker.dbKey, entry);
       }
     }
   }

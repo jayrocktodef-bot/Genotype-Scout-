@@ -15,18 +15,35 @@ try {
   console.warn('WASM paths configuration bypassed:', e);
 }
 
-const anchorMap = new Map(ANCHOR_AIMS.map(a => [a.rsid.toLowerCase(), a]));
-const anchorRsids = new Set(ANCHOR_AIMS.map(a => a.rsid.toLowerCase()));
+const anchorMap = new Map<string, any>();
+ANCHOR_AIMS.forEach(a => {
+  const lower = a.rsid.toLowerCase();
+  const base = lower.split('_')[0];
+  anchorMap.set(lower, a);
+  anchorMap.set(base, a);
+});
+const anchorRsids = new Set<string>(Array.from(anchorMap.keys()));
 
 // We'll populate these dynamically if global anchors are loaded
-let extendedAnchorMap = new Map(anchorMap);
-let extendedAnchorRsids = new Set(anchorRsids);
+let extendedAnchorMap = new Map<string, any>(anchorMap);
+let extendedAnchorRsids = new Set<string>(anchorRsids);
 
 export async function initializeGlobalAnchors() {
   const global = await loadGlobalAnchors();
   Object.entries(global).forEach(([id, aim]) => {
-    extendedAnchorMap.set(id.toLowerCase(), aim);
-    extendedAnchorRsids.add(id.toLowerCase());
+    const lowerId = id.toLowerCase();
+    const baseId = lowerId.split('_')[0];
+    extendedAnchorMap.set(lowerId, aim);
+    extendedAnchorMap.set(baseId, aim);
+    extendedAnchorRsids.add(lowerId);
+    extendedAnchorRsids.add(baseId);
+  });
+  // Ensure existing anchors also have their base keys registered
+  ANCHOR_AIMS.forEach(aim => {
+    const lowerId = aim.rsid.toLowerCase();
+    const baseId = lowerId.split('_')[0];
+    extendedAnchorMap.set(baseId, aim);
+    extendedAnchorRsids.add(baseId);
   });
   console.log(`📡 Ancestry Engine: Integrated ${Object.keys(global).length} Global Anchors`);
 }

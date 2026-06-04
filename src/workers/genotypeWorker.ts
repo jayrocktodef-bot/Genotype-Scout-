@@ -204,49 +204,61 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
     const aims = getMasterAims() as any;
     const usedRsids = new Set<string>();
 
+    // Pre-map the database by base rsid (without regional suffix)
+    const aimBaseMap = new Map<string, any[]>();
+    for (const [key, value] of Object.entries(aims)) {
+        const base = key.split('_')[0].toLowerCase();
+        if (!aimBaseMap.has(base)) aimBaseMap.set(base, []);
+        aimBaseMap.get(base)!.push(value);
+    }
+
     for (const [rsid, genotype] of Object.entries(snpMap)) {
-        const aim = aims[rsid];
-        if (aim && aim.frequencies) {
-            if (usedRsids.has(aim.gene)) continue;
+        const matchedAims = aimBaseMap.get(rsid.toLowerCase());
+        if (matchedAims) {
+            for (const aim of matchedAims) {
+                if (aim && aim.frequencies) {
+                    if (usedRsids.has(aim.gene)) continue;
 
-            const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
-            if (!cleanGenotype || cleanGenotype.length < 1 || cleanGenotype.includes('-') || cleanGenotype.includes('N')) {
-                continue;
-            }
-
-            const effectAlleles = aim.alleles || [];
-            if (effectAlleles.length === 0) continue;
-            const effectAllele = effectAlleles[0].toUpperCase();
-
-            let k = 0;
-            let validLength = 0;
-            for (const char of cleanGenotype) {
-                if (['A', 'C', 'G', 'T', 'I', 'D'].includes(char)) {
-                    validLength++;
-                    if (char === effectAllele) {
-                        k++;
+                    const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
+                    if (!cleanGenotype || cleanGenotype.length < 1 || cleanGenotype.includes('-') || cleanGenotype.includes('N')) {
+                        continue;
                     }
+
+                    const effectAlleles = aim.alleles || [];
+                    if (effectAlleles.length === 0) continue;
+                    const effectAllele = effectAlleles[0].toUpperCase();
+
+                    let k = 0;
+                    let validLength = 0;
+                    for (const char of cleanGenotype) {
+                        if (['A', 'C', 'G', 'T', 'I', 'D'].includes(char)) {
+                            validLength++;
+                            if (char === effectAllele) {
+                                k++;
+                            }
+                        }
+                    }
+
+                    if (validLength === 0) continue;
+
+                    let dosage = k;
+                    if (validLength === 1) {
+                        dosage = k * 2;
+                    }
+
+                    const userFreq = dosage / 2; // 0.0, 0.5, or 1.0
+
+                    for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
+                        const p = freq as number;
+                        const distance = (userFreq - p) * (userFreq - p);
+                        const sim = 1.0 - distance;
+                        totalSim[pop] = (totalSim[pop] || 0) + sim;
+                        counts[pop] = (counts[pop] || 0) + 1;
+                    }
+
+                    if (aim.gene) usedRsids.add(aim.gene);
                 }
             }
-
-            if (validLength === 0) continue;
-
-            let dosage = k;
-            if (validLength === 1) {
-                dosage = k * 2;
-            }
-
-            const userFreq = dosage / 2; // 0.0, 0.5, or 1.0
-
-            for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                const p = freq as number;
-                const distance = (userFreq - p) * (userFreq - p);
-                const sim = 1.0 - distance;
-                totalSim[pop] = (totalSim[pop] || 0) + sim;
-                counts[pop] = (counts[pop] || 0) + 1;
-            }
-
-            usedRsids.add(aim.gene);
         }
     }
 
