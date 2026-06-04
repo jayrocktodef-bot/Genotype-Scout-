@@ -59,7 +59,16 @@ export function correctPhasingErrors(
     // If both strands are predicted as the same ancestry, swapping doesn't help based on ancestry alone
     if (popIdxA === popIdxB) continue;
 
-    const markerData = aimsDatabase[rsid];
+    let markerData = aimsDatabase[rsid];
+    if (!markerData) {
+      const possibleSuffixes = ['_afr', '_eur', '_eas', '_sas', '_nat', '_global', '_mena', '_safr'];
+      for (const suffix of possibleSuffixes) {
+        if (aimsDatabase[rsid + suffix]) {
+          markerData = aimsDatabase[rsid + suffix];
+          break;
+        }
+      }
+    }
     if (!markerData || !markerData.frequencies) continue;
 
     const alleleA = correctedA[i];

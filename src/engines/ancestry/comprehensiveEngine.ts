@@ -37,7 +37,8 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
 
   for (const [key, marker] of Object.entries(getMasterAims() as Record<string, any>)) {
     // Two-step fallback lookup: Primary (rsid), Secondary (coordinate-based)
-    let genotype = userGenotypes[marker.rsid.toLowerCase()];
+    const baseRsid = marker.rsid.toLowerCase().split('_')[0];
+    let genotype = userGenotypes[baseRsid] || userGenotypes[marker.rsid.toLowerCase()];
     
     if (!genotype && marker.chromosome && marker.position) {
       const coordId = `chr${marker.chromosome}_${marker.position}`.toLowerCase();

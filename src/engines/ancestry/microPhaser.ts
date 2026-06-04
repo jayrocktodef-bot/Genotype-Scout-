@@ -47,7 +47,16 @@ export function microPhase(
     } else {
       // Case 2: Heterozygous - perform greedy frequency-based assignment
       heteroCount++;
-      const reference = aimsDatabase[rsid];
+      let reference = aimsDatabase[rsid];
+      if (!reference) {
+        const possibleSuffixes = ['_afr', '_eur', '_eas', '_sas', '_nat', '_global', '_mena', '_safr'];
+        for (const suffix of possibleSuffixes) {
+          if (aimsDatabase[rsid + suffix]) {
+            reference = aimsDatabase[rsid + suffix];
+            break;
+          }
+        }
+      }
 
       if (reference && reference.frequencies) {
         anchoredCount++;
