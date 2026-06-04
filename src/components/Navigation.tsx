@@ -11,6 +11,8 @@ interface NavigationProps {
   onThemeToggle?: () => void;
   onInstallApp?: () => void;
   isInstallable?: boolean;
+  uiMode?: 'desktop' | 'classic';
+  onChangeUiMode?: (mode: 'desktop' | 'classic') => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ 
@@ -21,7 +23,9 @@ const Navigation: React.FC<NavigationProps> = ({
   theme = 'light',
   onThemeToggle,
   onInstallApp,
-  isInstallable = false
+  isInstallable = false,
+  uiMode = 'desktop',
+  onChangeUiMode
 }) => {
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
@@ -55,7 +59,7 @@ const Navigation: React.FC<NavigationProps> = ({
         </div>
 
         {/* Desktop Tabs */}
-        {hasResults && (
+        {hasResults && uiMode === 'classic' && (
           <div className="hidden xl:flex items-center gap-1">
             {tabs.map((tab) => (
               <button
@@ -111,7 +115,7 @@ const Navigation: React.FC<NavigationProps> = ({
       </div>
 
       {/* Streaming Mobile Tabs */}
-      {hasResults && (
+      {hasResults && uiMode === 'classic' && (
         <div className="xl:hidden border-t border-slate-100 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md">
           <div className="overflow-x-auto scrollbar-none py-3">
             <div className="flex gap-2 px-4 w-max">

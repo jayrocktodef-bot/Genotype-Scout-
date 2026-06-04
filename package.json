@@ -7,6 +7,9 @@
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
+    "cap:build": "CAPACITOR=true vite build && npx cap sync",
+    "cap:open": "npx cap open android",
+    "cap:run": "npx cap run android",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "sync-pgx": "tsx src/scripts/cannibalizeOpenPGx.ts",
@@ -24,6 +27,9 @@
     "build:yphylo": "tsx scripts/build-y-phylotree.ts"
   },
   "dependencies": {
+    "@capacitor/android": "^8.4.0",
+    "@capacitor/cli": "^8.4.0",
+    "@capacitor/core": "^8.4.0",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react-window": "^1.8.8",
     "@vercel/analytics": "^2.0.1",

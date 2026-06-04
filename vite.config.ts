@@ -6,7 +6,9 @@ import {VitePWA} from 'vite-plugin-pwa';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
+  const isCapacitor = process.env.CAPACITOR === 'true';
   return {
+    base: isCapacitor ? '' : '/',
     plugins: [
       react(),
       tailwindcss(),

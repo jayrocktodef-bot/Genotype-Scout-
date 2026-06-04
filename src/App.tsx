@@ -60,6 +60,7 @@ import SubpopulationBento from "./components/SubpopulationBento";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
 
+import AndroidDesktop from "./components/AndroidDesktop";
 import { BloodTypeView } from "./components/BloodTypeView";
 import { inferRhFactor } from "./services/bloodPredictorService";
 
@@ -1983,7 +1984,9 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology' | 'desktop'>('dashboard');
+  const [uiMode, setUiMode] = useState<'desktop' | 'classic'>('desktop');
+  const [currentApp, setCurrentApp] = useState<string | null>(null);
 
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'scout'>('oracle');
   const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'blood'>('wellness');
@@ -2376,13 +2379,18 @@ export default function App() {
     <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-800 dark:text-slate-100 font-sans selection:bg-teal-100 dark:selection:bg-teal-900 selection:text-teal-900 dark:selection:text-teal-100 transition-colors duration-300">
       <Navigation 
         activeTab={activeTab} 
-        onTabChange={setActiveTab} 
+        onTabChange={(tab) => {
+          setActiveTab(tab);
+          setCurrentApp(null);
+        }} 
         onUploadNew={() => fileRef.current?.click()}
         hasResults={!!results}
         theme={theme}
         onThemeToggle={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
         isInstallable={!!installPromptEvent}
         onInstallApp={handleInstallApp}
+        uiMode={uiMode}
+        onChangeUiMode={setUiMode}
       />
 
       <input 
@@ -2614,9 +2622,11 @@ export default function App() {
               </div>
             )}
 
-            {/* Top Analysis Header Action Bar */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-8">
-              <div className="flex items-center gap-3">
+            {uiMode === 'classic' ? (
+              <>
+                {/* Top Analysis Header Action Bar */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-8">
+                  <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-black">
                   <FlaskConical className="w-5 h-5 text-teal-400" />
                 </div>
@@ -2953,7 +2963,209 @@ export default function App() {
                 )}
               </motion.div>
             </AnimatePresence>
-          </div>
+          </>
+        ) : (
+          <AndroidDesktop
+            oracleResults={oracleResults}
+            populationProximity={populationProximity}
+            dataset={datasets[activeDatasetIndex]}
+            userSnps={snpMaps.current[activeDatasetIndex] || {}}
+            onNavigateToTab={(tab: string, subTab?: string) => {
+              setActiveTab(tab as any);
+              if (tab === 'ancestry' && subTab) {
+                setActiveAncestrySubTab(subTab as any);
+              } else if (tab === 'health_traits' && subTab) {
+                setActiveHealthSubTab(subTab as any);
+              } else if (tab === 'history' && subTab) {
+                setActiveHistorySubTab(subTab as any);
+              }
+            }}
+            onReset={resetApp}
+            uiMode={uiMode}
+            onChangeUiMode={setUiMode}
+            currentApp={currentApp}
+            onOpenApp={setCurrentApp}
+          >
+            {currentApp === 'profile' && (
+              <div className="space-y-8 animate-fade-in">
+                <ProfileSummary 
+                  datasets={datasets} 
+                  activeDatasetIndex={activeDatasetIndex} 
+                  oracleResults={oracleResults} 
+                  populationProximity={populationProximity}
+                  userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                  famousMatches={famousMatches}
+                  healthImpacts={healthWellnessMatches}
+                />
+              </div>
+            )}
+
+            {currentApp === 'ancestry_oracle' && (
+              <div className="space-y-8 animate-fade-in">
+                <SubpopulationBento 
+                  precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
+                  userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
+                  aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
+                    rsid: aim.rsid,
+                    chromosome: aim.chromosome || 'Unknown',
+                    subpop: aim.region,
+                    continent: aim.region || 'Unknown',
+                    alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
+                  }))}
+                />
+                <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
+              </div>
+            )}
+
+            {currentApp === 'ancestry_scout' && (
+              <div className="animate-fade-in">
+                <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
+              </div>
+            )}
+
+            {currentApp === 'haplogroups' && (
+              <div className="space-y-8 animate-fade-in">
+                <div className="flex justify-center mb-8">
+                  <div className="inline-flex bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-250 dark:border-slate-700 shadow-sm">
+                    <button 
+                      onClick={() => setActiveHaploType('paternal')}
+                      className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 dark:text-slate-400'}`}
+                    >
+                      ♂️ Paternal
+                    </button>
+                    <button 
+                      onClick={() => setActiveHaploType('maternal')}
+                      className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 dark:text-slate-400'}`}
+                    >
+                      ♀️ Maternal
+                    </button>
+                  </div>
+                </div>
+
+                {activeHaploType === 'paternal' ? (
+                  <YDNAView 
+                    yData={datasets[activeDatasetIndex].predictedYDNA} 
+                    treeSearchTerm={treeSearchTerm}
+                    setTreeSearchTerm={setTreeSearchTerm}
+                  />
+                ) : (
+                  <MTDNAView 
+                    mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                    treeSearchTerm={treeSearchTerm}
+                    setTreeSearchTerm={setTreeSearchTerm}
+                    matchedTraits={userMatchedMitoTraits}
+                  />
+                )}
+              </div>
+            )}
+
+            {currentApp === 'ancient_dna' && (
+              <div className="space-y-8 animate-fade-in">
+                <div className="flex justify-center">
+                  <div className="p-1.5 bg-slate-100 dark:bg-[#111213]/40 rounded-2xl inline-flex border border-slate-200 dark:border-white/5 shadow-inner">
+                    <button
+                      onClick={() => setActiveAncientSubTab('admixture')}
+                      className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                        activeAncientSubTab === 'admixture' 
+                          ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-md scale-105' 
+                          : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                      }`}
+                    >
+                      <History size={14} /> Ancient Admixture
+                    </button>
+                    <button
+                      onClick={() => setActiveAncientSubTab('matches')}
+                      className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                        activeAncientSubTab === 'matches' 
+                          ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-md scale-105' 
+                          : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                      }`}
+                    >
+                      <User size={14} /> Sample Matches
+                    </button>
+                  </div>
+                </div>
+
+                {activeAncientSubTab === 'admixture' ? (
+                  <AncientAncestryOracle 
+                    results={ancientAdmixture} 
+                    title="Deep Time Oracle" 
+                    subtitle="Ancient Admixture & Paleolithic Affinity"
+                    type="admixture"
+                    onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                  />
+                ) : (
+                  <AncientAncestryOracle 
+                    results={individualMatches} 
+                    title="Fossil Specimen Matches" 
+                    subtitle="Direct Genetic Affinity to Ancient Individuals"
+                    type="matches"
+                    onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                  />
+                )}
+              </div>
+            )}
+
+            {currentApp === 'health' && (
+              <div className="space-y-8 animate-fade-in">
+                <Suspense fallback={<div className="text-center p-12 text-slate-400">Loading Wellness Analysis...</div>}>
+                  <HealthWellnessTab 
+                    impacts={healthWellnessMatches} 
+                    userSnps={snpMaps.current[activeDatasetIndex]} 
+                    mode="analyst"
+                  />
+                </Suspense>
+              </div>
+            )}
+
+            {currentApp === 'blood' && (
+              <div className="animate-fade-in">
+                <BloodTypeView 
+                  dataset={datasets[activeDatasetIndex]} 
+                />
+              </div>
+            )}
+
+            {currentApp === 'markers' && (
+              <div className="space-y-8 animate-fade-in">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+                  <div>
+                    <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 tracking-tight">Genetic Markers</h2>
+                    <p className="text-slate-500">Filtered view of your autosomal variants.</p>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    {(['matched', 'unmatched'] as const).map(status => (
+                      <button 
+                        key={status}
+                        onClick={() => setStatusFilter(status)}
+                        className={`px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${statusFilter === status ? 'bg-teal-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700'}`}
+                      >
+                        {status}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                
+                <AutosomalView 
+                  filteredResults={filteredResults}
+                  groupedCategories={groupByCategory(filteredResults || [])}
+                  availableCategories={Object.keys(groupByCategory(filteredResults || []))}
+                  expandedCategories={expandedCategories}
+                  toggleCategory={toggleCategory}
+                  expandedSnps={expandedSnps}
+                  toggleExpand={toggleExpand}
+                  datasets={datasets}
+                  activeDatasetIndex={activeDatasetIndex}
+                />
+              </div>
+            )}
+
+            {currentApp === 'methodology' && (
+              <MethodologyPage activeTab={activeTab} />
+            )}
+          </AndroidDesktop>
+        )}
+      </div>
         )}
       </main>
 
