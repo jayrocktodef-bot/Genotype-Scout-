@@ -82,6 +82,30 @@ const Navigation: React.FC<NavigationProps> = ({
         )}
 
         <div className="flex items-center gap-3">
+          {hasResults && onChangeUiMode && (
+            <div className="flex items-center bg-slate-100 dark:bg-slate-800/80 p-0.5 rounded-xl border border-slate-200/50 dark:border-slate-700/50 shadow-inner mr-1 select-none">
+              <button
+                onClick={() => onChangeUiMode('desktop')}
+                className={`px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  uiMode === 'desktop'
+                    ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-sm scale-105'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                }`}
+              >
+                Scout Mode
+              </button>
+              <button
+                onClick={() => onChangeUiMode('classic')}
+                className={`px-3 py-1.5 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  uiMode === 'classic'
+                    ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-sm scale-105'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                }`}
+              >
+                Tab Mode
+              </button>
+            </div>
+          )}
           {isInstallable && onInstallApp && (
             <button
               onClick={onInstallApp}

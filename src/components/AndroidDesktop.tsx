@@ -377,13 +377,13 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                     whileHover={{ scale: 1.1, y: -4 }}
                     whileTap={{ scale: 0.93 }}
                     className="flex flex-col items-center gap-1 group relative cursor-pointer"
-                    title="Classic Tabs Mode"
+                    title="Tab Mode"
                   >
                     <div className="w-12 h-12 rounded-2xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-350 flex items-center justify-center border border-slate-300/40 dark:border-white/5 shadow-sm">
                       <Settings className="w-5.5 h-5.5" />
                     </div>
                     <span className="absolute -top-8 bg-slate-900 text-white text-[9px] font-black tracking-widest px-2 py-0.5 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity uppercase pointer-events-none whitespace-nowrap">
-                      Classic Tabs
+                      Tab Mode
                     </span>
                   </motion.button>
                 </div>
