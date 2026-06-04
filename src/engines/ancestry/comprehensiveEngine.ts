@@ -33,28 +33,39 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
     if (continent) continentalLogLikelihoods[continent] = 0;
   });
 
-  let markersUsed = 0;
+  // Pre-index user genotypes to lower case keys for O(1) matching in loops
+  const lowerUserGenotypes = new Map<string, string>();
+  for (const k in userGenotypes) {
+    const genotype = userGenotypes[k];
+    if (genotype && genotype !== '--') {
+      lowerUserGenotypes.set(k.toLowerCase(), genotype);
+    }
+  }
 
-  for (const [key, marker] of Object.entries(getMasterAims() as Record<string, any>)) {
-    // Two-step fallback lookup: Primary (rsid), Secondary (coordinate-based)
+  let markersUsed = 0;
+  const aims = getMasterAims() as Record<string, any>;
+
+  for (const key in aims) {
+    const marker = aims[key];
     const baseRsid = marker.rsid.toLowerCase().split('_')[0];
-    let genotype = userGenotypes[baseRsid] || userGenotypes[marker.rsid.toLowerCase()];
+    
+    // O(1) Map matching
+    let genotype = lowerUserGenotypes.get(baseRsid) || lowerUserGenotypes.get(marker.rsid.toLowerCase());
     
     if (!genotype && marker.chromosome && marker.position) {
       const coordId = `chr${marker.chromosome}_${marker.position}`.toLowerCase();
-      genotype = userGenotypes[coordId];
+      genotype = lowerUserGenotypes.get(coordId);
     }
 
-    if (!genotype || genotype === '--') continue;
+    if (!genotype) continue;
 
     const frequencies = marker.frequencies;
     const alleles = marker.alleles || [];
     
-    // Simple frequency approach: assume the 'alleles' list in masterAims 
-    // corresponds to the frequencies provided.
-    // If multiple alleles are provided, we sum their frequencies for the check.
-    
     markersUsed++;
+
+    // Pre-extract genotype string length and content
+    const matchCount = (alleles.includes(genotype[0]) ? 1 : 0) + (genotype[1] && alleles.includes(genotype[1]) ? 1 : 0);
 
     for (const popCode of populations) {
       const continent = CONTINENT_MAP[popCode];
@@ -64,13 +75,6 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
       const q = 1 - p;
 
       let prob = 1e-6; // Laplacian smoothing
-
-      // Check user genotype for the targeted alleles
-      let matchCount = 0;
-      for (const char of genotype) {
-        if (alleles.includes(char)) matchCount++;
-      }
-
       if (matchCount === 2) prob = p * p;
       else if (matchCount === 1) prob = 2 * p * q;
       else prob = q * q;
@@ -79,7 +83,6 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
     }
   }
 
-  // Convert log-likelihoods to relative percentages
   const continents = Object.keys(continentalLogLikelihoods);
   if (continents.length === 0 || markersUsed === 0) return {};
 
@@ -103,3 +106,4 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
 
   return finalScores;
 }
+
