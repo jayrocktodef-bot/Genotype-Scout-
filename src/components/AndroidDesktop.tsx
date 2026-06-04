@@ -276,20 +276,17 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
             >
               {/* Widgets & Header Panel */}
               <div className="text-center pt-4 sm:pt-6 space-y-4">
-                {/* Simulated Widget */}
+                {/* Welcome Title & Status Widget */}
                 <motion.div 
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
-                  className="inline-block px-8 py-6 rounded-[2rem] bg-white/40 dark:bg-slate-900/35 backdrop-blur-xl border border-white/20 dark:border-white/5 shadow-xl shadow-slate-200/10 dark:shadow-none"
+                  className="inline-block px-8 py-4 rounded-[2rem] bg-white/40 dark:bg-slate-900/35 backdrop-blur-xl border border-white/20 dark:border-white/5 shadow-xl shadow-slate-200/10 dark:shadow-none"
                 >
-                  <h1 className="text-4xl sm:text-5xl font-black text-slate-850 dark:text-slate-100 tracking-tighter leading-none">
-                    {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })}
+                  <h1 className="text-3xl font-black text-slate-850 dark:text-slate-100 tracking-tighter">
+                    Genotype Scout
                   </h1>
-                  <p className="text-xs sm:text-sm font-black text-slate-500 dark:text-slate-400 mt-2 tracking-tight uppercase">
-                    {formatDate(time)}
-                  </p>
-                  <div className="flex items-center justify-center gap-2 mt-3 pt-3 border-t border-slate-200/40 dark:border-white/5">
+                  <div className="flex items-center justify-center gap-2 mt-2 pt-2 border-t border-slate-200/40 dark:border-white/5">
                     <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
                     <span className="text-[10px] font-bold text-slate-650 dark:text-slate-350 tracking-wider uppercase">🧬 Core Synced • 100% Offline Ready</span>
                   </div>
