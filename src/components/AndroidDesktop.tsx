@@ -29,6 +29,7 @@ export interface AppConfig {
   targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology';
   targetSubTab?: string;
   description: string;
+  imageUrl?: string;
 }
 
 const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
@@ -85,6 +86,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       glowColor: 'rgba(245, 158, 11, 0.45)',
       targetTab: 'summary',
       description: 'Comprehensive overview of your genetic origins and breakdown.',
+      imageUrl: '/assets/profile_icon.png',
     },
     {
       id: 'ancestry_oracle',
@@ -95,6 +97,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'ancestry',
       targetSubTab: 'oracle',
       description: 'Run deep subpopulation queries and NNLS admixture optimization.',
+      imageUrl: '/assets/oracle_icon.png',
     },
     {
       id: 'chromosome_painter',
@@ -115,6 +118,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'ancestry',
       targetSubTab: 'scout',
       description: 'Analyze global admixture using ancestral score matrices.',
+      imageUrl: '/assets/score_icon.png',
     },
     {
       id: 'haplogroups',
@@ -125,6 +129,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'history',
       targetSubTab: 'modern',
       description: 'Discover your paternal and maternal terminal haplogroups.',
+      imageUrl: '/assets/haplogroups_icon.png',
     },
     {
       id: 'ancient_dna',
@@ -135,6 +140,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'history',
       targetSubTab: 'ancient',
       description: 'Compare your DNA to historical and ancient tribes matches.',
+      imageUrl: '/assets/ancient_icon.png',
     },
     {
       id: 'health',
@@ -145,6 +151,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'health_traits',
       targetSubTab: 'wellness',
       description: 'Explore drug response metabolism (PGx) and polygenic risk reports.',
+      imageUrl: '/assets/health_icon.png',
     },
     {
       id: 'traits',
@@ -155,6 +162,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'health_traits',
       targetSubTab: 'traits',
       description: 'Explore physical appearance, lifestyle, and nutrition traits.',
+      imageUrl: '/assets/health_icon.png',
     },
     {
       id: 'blood',
@@ -174,6 +182,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       glowColor: 'rgba(6, 182, 212, 0.45)',
       targetTab: 'autosomal',
       description: 'Search, filter, and inspect your parsed autosomal variants.',
+      imageUrl: '/assets/markers_icon.png',
     },
     {
       id: 'methodology',
@@ -183,6 +192,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       glowColor: 'rgba(139, 92, 246, 0.45)',
       targetTab: 'methodology',
       description: 'Learn the underlying math, science, and calculation engines.',
+      imageUrl: '/assets/methodology_icon.png',
     }
   ], []);
 
@@ -347,7 +357,15 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                           boxShadow: `0 10px 25px -5px ${app.glowColor}`
                         }}
                       >
-                        <app.icon className="w-7 h-7 sm:w-9 sm:h-9 text-white group-hover:rotate-6 transition-transform duration-300" />
+                        {app.imageUrl ? (
+                          <img 
+                            src={app.imageUrl} 
+                            alt={app.name} 
+                            className="w-full h-full object-cover rounded-[1.75rem] group-hover:scale-105 transition-transform duration-300" 
+                          />
+                        ) : (
+                          <app.icon className="w-7 h-7 sm:w-9 sm:h-9 text-white group-hover:rotate-6 transition-transform duration-300" />
+                        )}
                         <div className="absolute inset-0 rounded-[1.75rem] border border-white/20 z-10" />
                         <div className="absolute inset-0 rounded-[1.75rem] bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                       </div>
@@ -382,7 +400,15 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                           boxShadow: `0 8px 18px -4px ${app.glowColor}`
                         }}
                       >
-                        <app.icon className="w-5.5 h-5.5 text-white" />
+                        {app.imageUrl ? (
+                          <img 
+                            src={app.imageUrl} 
+                            alt={app.name} 
+                            className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300" 
+                          />
+                        ) : (
+                          <app.icon className="w-5.5 h-5.5 text-white" />
+                        )}
                         <div className="absolute inset-0 rounded-2xl border border-white/15" />
                       </div>
                       <span className="absolute -top-8 bg-slate-900 text-white text-[9px] font-black tracking-widest px-2 py-0.5 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity uppercase pointer-events-none whitespace-nowrap">
@@ -493,8 +519,14 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                         {/* Header preview inside recent card */}
                         <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-850 pb-3 select-none">
                           <div className="flex items-center gap-2">
-                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-tr ${app.gradient} flex items-center justify-center text-white`}>
-                              <app.icon className="w-4 h-4" />
+                            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center relative shrink-0">
+                              {app.imageUrl ? (
+                                <img src={app.imageUrl} alt={app.name} className="w-full h-full object-cover rounded-lg" />
+                              ) : (
+                                <div className={`w-full h-full bg-gradient-to-tr ${app.gradient} flex items-center justify-center text-white`}>
+                                  <app.icon className="w-4 h-4" />
+                                </div>
+                              )}
                             </div>
                             <span className="text-[10px] font-black tracking-tight text-slate-800 dark:text-slate-200 uppercase line-clamp-1">
                               {app.name}
@@ -511,7 +543,11 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
 
                         {/* Simulated snapshot body */}
                         <div className="flex-1 flex flex-col items-center justify-center p-3 text-center bg-slate-50/50 dark:bg-slate-950/20 my-3 rounded-2xl border border-slate-100 dark:border-slate-850">
-                          <app.icon className="w-10 h-10 text-slate-400 mb-2 opacity-50" />
+                          {app.imageUrl ? (
+                            <img src={app.imageUrl} alt={app.name} className="w-14 h-14 rounded-xl object-cover mb-2 shadow" />
+                          ) : (
+                            <app.icon className="w-10 h-10 text-slate-400 mb-2 opacity-50" />
+                          )}
                           <p className="text-[9px] text-slate-500 dark:text-slate-400 leading-normal font-semibold">
                             {app.description}
                           </p>
