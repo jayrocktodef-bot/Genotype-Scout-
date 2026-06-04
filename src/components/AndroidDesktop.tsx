@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   User, Globe, History, HeartPulse, Database, BookOpen, 
   Zap, Droplet, Wifi, BatteryCharging, ArrowLeft, 
-  Circle, Square, Search, Mic, Settings, Play, X, Dna, Sparkles
+  Circle, Square, Search, Mic, Settings, Play, X, Dna, Sparkles,
+  Trash2
 } from 'lucide-react';
 
 interface AndroidDesktopProps {
@@ -416,6 +417,22 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                       </span>
                     </motion.button>
                   ))}
+
+                  {/* Clear Cache button */}
+                  <motion.button
+                    onClick={onReset}
+                    whileHover={{ scale: 1.1, y: -4 }}
+                    whileTap={{ scale: 0.93 }}
+                    className="flex flex-col items-center gap-1 group relative cursor-pointer"
+                    title="Clear Cache"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/20 text-rose-600 dark:text-rose-455 flex items-center justify-center border border-rose-100 dark:border-rose-900/30 shadow-sm">
+                      <Trash2 className="w-5.5 h-5.5" />
+                    </div>
+                    <span className="absolute -top-8 bg-slate-900 text-white text-[9px] font-black tracking-widest px-2 py-0.5 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity uppercase pointer-events-none whitespace-nowrap">
+                      Clear Cache
+                    </span>
+                  </motion.button>
 
                   {/* Launcher settings widget icon */}
                   <motion.button
