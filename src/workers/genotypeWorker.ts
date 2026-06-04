@@ -249,6 +249,12 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
                     const userFreq = dosage / 2; // 0.0, 0.5, or 1.0
 
                     for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
+                        // Skip system, global, or compound reference tags
+                        const cleanPop = pop.toUpperCase().trim();
+                        if (cleanPop === 'GLOBAL' || cleanPop === 'ASI') {
+                            continue;
+                        }
+
                         const p = freq as number;
                         const distance = (userFreq - p) * (userFreq - p);
                         const sim = 1.0 - distance;
@@ -266,7 +272,10 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
 
     const avgSim: Record<string, number> = {};
     for (const pop in totalSim) {
-        if (counts[pop] > 5) { // Require a baseline of comparison SNPs
+        // Enforce a higher baseline threshold (e.g., 20) for naive estimates to prevent
+        // thin reference panel components (e.g., Siberian, Oceanian) from getting inflated
+        // averages due to a handful of matched SNPs.
+        if (counts[pop] >= 20) {
             avgSim[pop] = totalSim[pop] / counts[pop];
         }
     }
@@ -275,7 +284,7 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
     const transformed: Record<string, number> = {};
     let totalTransformed = 0;
     for (const pop in avgSim) {
-        const val = Math.pow(avgSim[pop], 5);
+        const val = Math.pow(avgSim[pop], 8); // Slightly higher exponent for cleaner resolution
         transformed[pop] = val;
         totalTransformed += val;
     }
