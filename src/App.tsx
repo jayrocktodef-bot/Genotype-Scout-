@@ -2157,12 +2157,16 @@ export default function App() {
     });
 
     try {
-      // Instead of reading giant array buffers into the main thread, 
-      // we pass the raw cloneable File objects directly!
-      const fileContents = fileArray.map(file => ({
-        file: file,
-        name: file.name
-      }));
+      // Ingest DNA using zero-copy Transferable ArrayBuffers to bypass main-thread cloning latency
+      const fileContents = await Promise.all(
+        fileArray.map(async (file) => {
+          const buffer = await file.arrayBuffer();
+          return {
+            buffer,
+            name: file.name
+          };
+        })
+      );
 
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
@@ -2241,12 +2245,15 @@ export default function App() {
         worker.terminate();
       };
 
-      // Ship the processing request to the worker with the option of a SharedArrayBuffer
+      // Extract ArrayBuffer instances for zero-copy Transferable list
+      const transferables = fileContents.map(fc => fc.buffer);
+
+      // Ship the processing request to the worker transferring ownership of ArrayBuffers
       worker.postMessage({ 
         type: 'PROCESS_GENOME', 
         files: fileContents,
         sab
-      });
+      }, transferables);
     } catch (err) {
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
