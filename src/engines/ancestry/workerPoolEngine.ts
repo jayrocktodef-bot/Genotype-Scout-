@@ -122,18 +122,17 @@ export class WorkerPoolEngine {
     workerResults: any[],
     populations: string[],
     chromTasks: Record<string, any[]>
-  ): Record<string, LAISegment[]> {
-    const finalSegments: Record<string, LAISegment[]> = {};
+  ): Record<string, { strandA: LAISegment[]; strandB: LAISegment[] }> {
+    const finalSegments: Record<string, { strandA: LAISegment[]; strandB: LAISegment[] }> = {};
 
     workerResults.forEach(res => {
       const { chromosome, resultStrandA, resultStrandB, nWindows, nPopulations } = res;
       const chromSnps = chromTasks[chromosome].sort((a, b) => a.pos - b.pos);
       
-      // Extract segments from Strand A (Primary)
-      finalSegments[chromosome] = this.extractTracts(resultStrandA, nWindows, nPopulations, populations, chromSnps);
-      
-      // Optionally combine with Strand B or keep as separate tracks if UI supports it.
-      // For standard ChromosomePainter, we'll merge them or just use Strand A for now.
+      finalSegments[chromosome] = {
+        strandA: this.extractTracts(resultStrandA, nWindows, nPopulations, populations, chromSnps),
+        strandB: this.extractTracts(resultStrandB, nWindows, nPopulations, populations, chromSnps)
+      };
     });
 
     return finalSegments;

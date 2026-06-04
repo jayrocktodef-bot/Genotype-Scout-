@@ -1,7 +1,7 @@
 // src/services/dbHydrator.ts
 
 const DB_NAME = 'genotype-scout-db';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const STORE_NAME = 'aims';
 
 let dbInstance: IDBDatabase | null = null;
@@ -19,9 +19,10 @@ function getDB(): Promise<IDBDatabase> {
 
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        db.createObjectStore(STORE_NAME);
+      if (db.objectStoreNames.contains(STORE_NAME)) {
+        db.deleteObjectStore(STORE_NAME);
       }
+      db.createObjectStore(STORE_NAME);
     };
 
     request.onsuccess = (event) => {
@@ -71,9 +72,12 @@ export async function hydrateReferenceDatabase(): Promise<void> {
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
 
-    // Batch write markers
+    // Batch write markers (write both the suffixed key and standard base key)
     for (const [rsid, markerData] of Object.entries(masterAims)) {
-      store.put(markerData, rsid.toLowerCase());
+      const lower = rsid.toLowerCase();
+      const base = lower.split('_')[0];
+      store.put(markerData, lower);
+      store.put(markerData, base);
     }
     
     // Set seed complete flag
@@ -147,11 +151,20 @@ export async function getAimsByRsids(rsids: string[]): Promise<Record<string, an
   if (typeof indexedDB === 'undefined') {
     // Node.js/Vitest environment fallback
     const { loadMasterAims } = await import('../data/index');
-    const masterAims = loadMasterAims();
+    const masterAims = loadMasterAims() as Record<string, any>;
+    
+    // Create base mapping
+    const baseMap = new Map<string, any>();
+    for (const [key, val] of Object.entries(masterAims)) {
+      baseMap.set(key.toLowerCase().split('_')[0], val);
+      baseMap.set(key.toLowerCase(), val);
+    }
+
     for (const rsid of rsids) {
       const cleanRsid = rsid.toLowerCase();
-      if (masterAims[cleanRsid]) {
-        results[cleanRsid] = masterAims[cleanRsid];
+      const match = baseMap.get(cleanRsid);
+      if (match) {
+        results[cleanRsid] = match;
       }
     }
     return results;
@@ -196,11 +209,20 @@ export async function getAimsByRsids(rsids: string[]): Promise<Record<string, an
     console.error('Error in getAimsByRsids:', err);
     // Dynamic fallback
     const { loadMasterAims } = await import('../data/index');
-    const masterAims = loadMasterAims();
+    const masterAims = loadMasterAims() as Record<string, any>;
+    
+    // Create base mapping
+    const baseMap = new Map<string, any>();
+    for (const [key, val] of Object.entries(masterAims)) {
+      baseMap.set(key.toLowerCase().split('_')[0], val);
+      baseMap.set(key.toLowerCase(), val);
+    }
+
     for (const rsid of rsids) {
       const cleanRsid = rsid.toLowerCase();
-      if (masterAims[cleanRsid]) {
-        results[cleanRsid] = masterAims[cleanRsid];
+      const match = baseMap.get(cleanRsid);
+      if (match) {
+        results[cleanRsid] = match;
       }
     }
     return results;
