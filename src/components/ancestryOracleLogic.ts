@@ -107,7 +107,8 @@ const MACRO_GROUPS: Record<string, string[]> = {
   'EUR': [
     'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
     'AMI_gnomAD', 'NFE_gnomAD', 'FIN_gnomAD', 'ALFA_EUR',
-    'ASJ_gnomAD', 'MID_gnomAD'
+    'ASJ_gnomAD'
+    // NOTE: MID_gnomAD moved to MENA — Middle Eastern is NOT European
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
@@ -120,6 +121,10 @@ const MACRO_GROUPS: Record<string, string[]> = {
   'AMR': [
     'CLM', 'MXL', 'PEL', 'PUR',
     'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD'
+  ],
+  'MENA': [
+    'MID_gnomAD'
+    // Middle Eastern / North African — distinct from European
   ]
 };
 
@@ -231,7 +236,7 @@ export function solveAdmixtureProportions(
   userDosages: Float32Array,
   popExpectedDosages: Record<string, Float32Array>,
   aimWeights: Float32Array,
-  numIterations = 50
+  numIterations = 200
 ): Record<string, number> {
   const popCodes = Object.keys(popExpectedDosages);
   if (popCodes.length === 0 || userDosages.length === 0) return {};
@@ -256,8 +261,9 @@ export function solveAdmixtureProportions(
     weightedPopSelfDot[p] = sum || 1.0;
   }
 
-  // Iterative coordinate descent with active state projection
+  // Iterative coordinate descent with active state projection + convergence check
   for (let iter = 0; iter < numIterations; iter++) {
+    let maxDelta = 0;
     for (let p = 0; p < P; p++) {
       const popCode = popCodes[p];
       const pExp = popExpectedDosages[popCode];
@@ -276,7 +282,9 @@ export function solveAdmixtureProportions(
       }
 
       const optimalW = sumNumerator / pSelf;
-      weights[p] = Math.max(0, optimalW);
+      const newW = Math.max(0, optimalW);
+      maxDelta = Math.max(maxDelta, Math.abs(newW - weights[p]));
+      weights[p] = newW;
     }
 
     // Projects weights onto the standard probability simplex
@@ -287,6 +295,9 @@ export function solveAdmixtureProportions(
     } else {
       for (let p = 0; p < P; p++) weights[p] = 1.0 / P;
     }
+
+    // Early convergence exit: stop when max weight change < 0.001
+    if (maxDelta < 0.001) break;
   }
 
   const result: Record<string, number> = {};
@@ -450,8 +461,10 @@ export function processSubpopulations(
     }
   }
 
-  // Apply 250kb sliding window LD Pruning for each chromosome
-  const LD_WINDOW_BP = 250000;
+  // Apply 50kb sliding window LD Pruning for each chromosome.
+  // 50kb is more appropriate than 250kb: African populations have shorter LD blocks (~5-20kb)
+  // and a coarser window discards too many informative African markers.
+  const LD_WINDOW_BP = 50000;
   for (const chrom in chromGroups) {
     const sortedMarkers = chromGroups[chrom].sort((a, b) => a.position - b.position);
     let lastPosition = -1;
@@ -526,11 +539,14 @@ export function processSubpopulations(
         }
         userDosageDiscrete = matchCount; // Will yield 0, 1, or 2
       } else {
-        // Fallback dosage calculation
+        // Fallback dosage calculation when allele identity is unknown.
+        // For homozygous calls we default to 1 (het equivalent) rather than
+        // guessing 0 or 2 based on frequency, which was producing systematic errors
+        // (homozygous REF was being scored as dosage 2 when it should be 0).
         if (genotype[0] === genotype[1]) {
-          userDosageDiscrete = refFreq > 0.5 ? 2 : 0;
+          userDosageDiscrete = 1; // Uncertain homozygous: use middle ground
         } else {
-          userDosageDiscrete = 1;
+          userDosageDiscrete = 1; // Heterozygous
         }
       }
 
@@ -573,11 +589,9 @@ export function processSubpopulations(
       const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
 
       // Scale penalties for ancestral allele/cladistic conflicts.
-      // Apply a reduced penalty for European populations, as they are highly admixed.
-      let penaltyFactor = 0.18;
-      if (MACRO_GROUPS['EUR'].includes(popCode)) {
-        penaltyFactor = 0.12;
-      }
+      // Uniform penalty across all populations — previously EUR had a lower penalty (0.12)
+      // which gave European populations a systematic scoring advantage over all others.
+      const penaltyFactor = 0.18;
       const adjustedDistance = baseDistance * (1.0 + penaltyFactor * violations);
       popDistances.set(popCode, adjustedDistance);
     } else {
@@ -600,8 +614,10 @@ export function processSubpopulations(
     macroDistances[macro] = validCount > 0 ? sumDist / validCount : 1.0;
   }
 
-  // Identify dominant continental macro cluster
-  let dominantMacro = 'EUR';
+  // Identify dominant continental macro cluster.
+  // Default is 'UNKNOWN' (not 'EUR') to prevent false European assignments
+  // when marker coverage is insufficient.
+  let dominantMacro = 'UNKNOWN';
   let minMacroDist = Infinity;
   for (const [macro, dist] of Object.entries(macroDistances)) {
     if (dist < minMacroDist) {
@@ -610,19 +626,18 @@ export function processSubpopulations(
     }
   }
 
-  // Final continental prioritization adjustments
+  // Final continental prioritization — raw distances only, no circular boost.
+  // Previously the dominant macro's populations received a 0.90× discount while
+  // all others received a 1.08× penalty AFTER the winner was already chosen,
+  // creating a positive-feedback loop that obliterated realistic admixture proportions.
+  // NNLS (Component 4 below) handles admixture proportions; the breakdown list
+  // is now sorted purely by distance with no post-hoc adjustments.
+  const MIN_MARKERS = 5; // Lower from 10 to improve coverage for underrepresented populations
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
-    let finalDistance = popDistances.get(popCode) ?? 1.0;
+    const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
-    if (markersCompared >= 10) {
-      const isResidentInMacro = MACRO_GROUPS[dominantMacro]?.includes(popCode);
-      if (isResidentInMacro) {
-        finalDistance *= 0.90; // Apply macro continental residency weight boost
-      } else {
-        finalDistance *= 1.08; // Apply distance penalty for non-continent macro matches
-      }
-
+    if (markersCompared >= MIN_MARKERS) {
       const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (finalDistance * 2.2)) * 100));
       const popName = POPULATION_NAMES_MAP[popCode] || popCode;
 
@@ -648,14 +663,17 @@ export function processSubpopulations(
       'EUR': 'European (EUR)',
       'EAS': 'East Asian (EAS)',
       'SAS': 'South Asian (SAS)',
-      'AMR': 'Indigenous American (AMR)'
+      'AMR': 'Indigenous American (AMR)',
+      'MENA': 'Middle Eastern / North African (MENA)'
     };
-    const macroName = SUPER_POP_LABELS[dominantMacro] || 'European (EUR)';
+    // Use the detected dominant macro — 'UNKNOWN' is surfaced as 'Undetermined'
+    // rather than silently defaulting to European.
+    const macroName = SUPER_POP_LABELS[dominantMacro] ?? 'Undetermined (Insufficient Markers)';
     topMatch = macroName;
     breakdown.push({
       subpop: macroName,
       distance: macroDistances[dominantMacro] ?? 0.5,
-      similarityScore: Math.max(50.0, (1.0 - ((macroDistances[dominantMacro] ?? 0.5) * 2.2)) * 100),
+      similarityScore: Math.max(30.0, (1.0 - ((macroDistances[dominantMacro] ?? 0.5) * 2.2)) * 100),
       markersCompared: usedAimsSet.size,
       count: usedAimsSet.size
     });
@@ -698,7 +716,8 @@ export function processSubpopulations(
       }
       uDosage = matchCount;
     } else {
-      uDosage = meta.genotype[0] === meta.genotype[1] ? 2 : 1; 
+      // Fallback: dosage 1 (middle ground) avoids incorrect REF/ALT homozygous assignment
+      uDosage = 1;
     }
     
     nnlsUserDosages[idx] = uDosage;
@@ -708,9 +727,12 @@ export function processSubpopulations(
       let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
       
       if (freq === undefined) {
-        // Soft Bayesian Prior Imputation fallback
-        const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'EUR';
-        freq = aim?.frequencies?.[macroCode] ?? 0.5;
+        // Soft Bayesian Prior Imputation fallback:
+        // Use the macro-group continental frequency from the AIM database.
+        // Previously this fell back to 'EUR' when the pop code was unrecognized,
+        // causing missing-data imputation to use European allele frequencies for non-EUR pops.
+        const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
+        freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
       }
       
       nnlsPopExpectedDosages[popCode][idx] = freq * 2.0; // continuous expected dosage
@@ -718,8 +740,9 @@ export function processSubpopulations(
   });
 
   // Calculate the Multi-source Admixture profile with NNLS
+  // Lower the threshold from 10 to 5 to help underrepresented populations
   let admixtureMix: AdmixtureComponent[] = [];
-  if (activeM >= 10) {
+  if (activeM >= 5) {
     const mixProportions = solveAdmixtureProportions(nnlsUserDosages, nnlsPopExpectedDosages, nnlsWeights);
     admixtureMix = Object.entries(mixProportions)
       .map(([popCode, percentage]) => ({
@@ -736,11 +759,13 @@ export function processSubpopulations(
       'EUR': 'European (EUR)',
       'EAS': 'East Asian (EAS)',
       'SAS': 'South Asian (SAS)',
-      'AMR': 'Indigenous American (AMR)'
+      'AMR': 'Indigenous American (AMR)',
+      'MENA': 'Middle Eastern / North African (MENA)'
     };
+    // Use the actual dominant macro rather than defaulting to EUR
     admixtureMix.push({
       popCode: dominantMacro,
-      name: SUPER_POP_LABELS[dominantMacro] || 'European (EUR)',
+      name: SUPER_POP_LABELS[dominantMacro] ?? 'Undetermined',
       percentage: 100.0
     });
   }

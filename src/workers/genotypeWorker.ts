@@ -217,7 +217,7 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
         if (matchedAims) {
             for (const aim of matchedAims) {
                 if (aim && aim.frequencies) {
-                    if (usedRsids.has(aim.gene)) continue;
+                    if (usedRsids.has(rsid)) continue;
 
                     const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
                     if (!cleanGenotype || cleanGenotype.length < 1 || cleanGenotype.includes('-') || cleanGenotype.includes('N')) {
@@ -256,7 +256,9 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
                         counts[pop] = (counts[pop] || 0) + 1;
                     }
 
-                    if (aim.gene) usedRsids.add(aim.gene);
+                    // Deduplicate by rsid (not gene name) so that multiple distinct markers
+                    // on the same gene (e.g., multiple HBB sickle-cell markers) are all scored.
+                    usedRsids.add(rsid);
                 }
             }
         }

@@ -11,6 +11,17 @@ export interface PhasedStrands {
 }
 
 /**
+ * Compute a global reference allele frequency from per-population frequency data.
+ * The AIM database stores frequencies keyed by population code (AFR, EUR, EAS, …),
+ * NOT a global "AF" key.  Averaging across populations is a reasonable proxy.
+ */
+function computeGlobalFreq(frequencies: Record<string, number>): number {
+  const vals = Object.values(frequencies).filter(f => typeof f === 'number' && f >= 0 && f <= 1);
+  if (vals.length === 0) return 0.5;
+  return vals.reduce((sum, f) => sum + f, 0) / vals.length;
+}
+
+/**
  * microPhase
  * Performs a greedy, frequency-based phasing of unphased SNPs.
  * 
@@ -58,35 +69,59 @@ export function microPhase(
         }
       }
 
-      if (reference && reference.frequencies) {
+      if (reference && reference.frequencies && Object.keys(reference.frequencies).length > 0) {
         anchoredCount++;
-        // Identify which allele is "Major" globally or in reference sets
-        // We look for the frequency of the reference 'ref' allele
-        const refAllele = reference.ref;
-        const refFreq = reference.frequencies.AF || 0.5; // Default to balanced if missing
 
-        // If allele1 matches the reference allele and its frequency is high,
-        // we assign the "major" allele to Strand A.
-        if (allele1 === refAllele) {
-          if (refFreq > 0.5) {
+        // Compute a global allele frequency by averaging across all available populations.
+        // Previously this read `frequencies.AF` which does not exist in the AIM schema,
+        // causing every heterozygous site to use the 0.5 fallback (random assignment).
+        const globalFreq = computeGlobalFreq(reference.frequencies);
+
+        // The "effect allele" tracked in the AIM is the first listed allele (reference.alleles[0]).
+        // We assign it to strandA when it is the major (more common) allele, else strandB.
+        const effectAllele: string | undefined = reference.alleles?.[0]?.toUpperCase();
+
+        if (effectAllele) {
+          const a1Up = allele1.toUpperCase();
+          const a2Up = allele2.toUpperCase();
+
+          if (a1Up === effectAllele) {
+            // allele1 is the effect allele
+            if (globalFreq > 0.5) {
+              // Effect allele is major → put it on strandA
+              strandA.push(allele1);
+              strandB.push(allele2);
+            } else {
+              // Effect allele is minor → put it on strandB
+              strandA.push(allele2);
+              strandB.push(allele1);
+            }
+          } else if (a2Up === effectAllele) {
+            // allele2 is the effect allele
+            if (globalFreq > 0.5) {
+              strandA.push(allele2);
+              strandB.push(allele1);
+            } else {
+              strandA.push(allele1);
+              strandB.push(allele2);
+            }
+          } else {
+            // Neither allele matches effect allele — consistent default assignment
             strandA.push(allele1);
             strandB.push(allele2);
-          } else {
-            strandA.push(allele2);
-            strandB.push(allele1);
           }
         } else {
-          // If allele2 is the reference allele
-          if (refFreq > 0.5) {
-            strandA.push(allele2);
-            strandB.push(allele1);
-          } else {
+          // No effect allele info; use frequency to determine major strand
+          if (globalFreq > 0.5) {
             strandA.push(allele1);
             strandB.push(allele2);
+          } else {
+            strandA.push(allele2);
+            strandB.push(allele1);
           }
         }
       } else {
-        // Fallback for unknown heterozygous: random/consistent assignment
+        // Fallback for unknown heterozygous: consistent assignment (allele order preserved)
         strandA.push(allele1);
         strandB.push(allele2);
       }

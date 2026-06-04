@@ -368,11 +368,11 @@ export function runAncestryInference(
     });
   });
 
-  const duffyGenotype = userGenotype["rs2814778"];
-  const hasDuffyNullVariant = !!duffyGenotype && duffyGenotype.includes('C');
-  const dNullTested = !!duffyGenotype && duffyGenotype !== '--';
-  const afrBaseReduction = (dNullTested && !hasDuffyNullVariant) ? 0.25 : 1.0;
-  const afrEastReduction = (dNullTested && !hasDuffyNullVariant) ? 0.75 : 1.0; // Milder reduction for East Africa
+  // NOTE: Duffy-null (rs2814778) is treated as one informative marker like any other.
+  // Removing the previous global 0.25× reduction for West African markers when Duffy-null
+  // was absent — that heuristic incorrectly suppressed African ancestry for East Africans,
+  // Ethiopians, Somalis, and many African Americans who carry the ancestral Duffy allele
+  // despite having genuine 100% African ancestry.
   
   const popFreqs = getPopFrequencies();
 
@@ -521,27 +521,20 @@ export function runAncestryInference(
           weight *= 0.7; // Pan-continental markers are less informative
         }
 
-        // Duffy-Null logic: Regional specific balancing
-        if (matchesContinent(marker.continent, 'African')) {
-          const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
-          const isEastAfr = subpopSearch.includes("east") || subpopSearch.includes("horn") || subpopSearch.includes("ethiopia") || subpopSearch.includes("somali") || subpopSearch.includes("nilotic");
-          weight *= isEastAfr ? afrEastReduction : afrBaseReduction;
-        }
 
         windowWeights.push(weight);
       }
 
+      // Apply continental dampings for groups with thin marker coverage.
+      // Oceanian and Native American dampings have been removed — damping to 0.1
+      // would suppress up to 90% of a genuine Pacific Islander or Indigenous American
+      // individual's true ancestry signal. Central Asian retains a mild correction
+      // only because the reference panel for CAS is extremely thin.
       const damping = new Array(continentsToScore.length).fill(1.0);
-      const oceIndex = continentsToScore.indexOf('Oceanian');
-      if (oceIndex !== -1) damping[oceIndex] = 0.1; // More damping
-      const amerIndex = continentsToScore.indexOf('Native American');
-      if (amerIndex !== -1) damping[amerIndex] = 0.1; // Reduced from 0.35
       const casIndex = continentsToScore.indexOf('Central Asian');
-      if (casIndex !== -1) damping[casIndex] = 0.2; // More damping
+      if (casIndex !== -1) damping[casIndex] = 0.5; // Mild correction for thin CAS reference panel
       const afrIndex = continentsToScore.indexOf('African');
-      if (afrIndex !== -1) damping[afrIndex] = 1.5; // Boost
-      const eurIndex = continentsToScore.indexOf('European');
-      if (eurIndex !== -1) damping[eurIndex] = 1.0; // Standard weight (reduced from 1.5 boost to resolve European overscoring bias)
+      if (afrIndex !== -1) damping[afrIndex] = 1.3; // Moderate uplift for African (was 1.5)
 
       const pathIndices = viterbi(windowGenotypes, windowFrequencies, continentsToScore.length);
       const windowProportions = new Array(continentsToScore.length).fill(0);
@@ -569,10 +562,7 @@ export function runAncestryInference(
           const continent = continentsToScore[i];
           let filteredProb = prob < 0.001 ? 0 : prob; // Even lower threshold to allow trace amounts
           
-          if (continent === 'African') {
-             // Use base reduction for continental probability scaling
-             filteredProb *= afrBaseReduction;
-          }
+
 
           continentalCounts[continent] += filteredProb;
           chromCounts[continent] += filteredProb;
@@ -651,11 +641,7 @@ export function runAncestryInference(
 
                     let weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight * weightFactor;
                     
-                    if (topContinent === 'African') {
-                      const subpopSearch = ((marker.subpop || "") + " " + (marker.trait || "") + " " + (aim?.description || "")).toLowerCase();
-                      const isEastAfr = subpopSearch.includes("east") || subpopSearch.includes("horn") || subpopSearch.includes("ethiopia") || subpopSearch.includes("somali") || subpopSearch.includes("nilotic");
-                      weight *= isEastAfr ? afrEastReduction : afrBaseReduction;
-                    }
+
 
                     const error = (matchCount / 2) - f;
                     const distSq = weight * (error * error);
