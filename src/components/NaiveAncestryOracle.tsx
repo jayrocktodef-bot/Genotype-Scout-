@@ -23,6 +23,23 @@ const mapCodeToName = (code: string): string => {
   return mapping[code] || code;
 };
 
+const REGION_COLORS: Record<string, string> = {
+  EUR: '#3b82f6', // European -> Blue
+  AFR: '#10b981', // African -> Green
+  EAS: '#ef4444', // East Asian -> Red
+  SAS: '#f59e0b', // South Asian -> Yellow
+  AMR: '#a855f7', // Native/Mixed American -> Purple
+  NAT: '#ec4899', // Native American -> Pink
+  Native_American_unadmixed: '#ec4899',
+  AMR_admixed: '#db2777',
+  OCE: '#06b6d4', // Oceanian -> Cyan
+  MENA: '#f97316', // Middle Eastern / North African -> Orange
+  MID: '#d97706', // Middle Eastern -> Amber
+  SIB: '#14b8a6', // Siberian -> Teal
+  ASI: '#6366f1', // Asian -> Indigo
+  GLOBAL: '#64748b' // Global Reference -> Slate
+};
+
 export const NaiveAncestryOracle = memo(({ 
   results,
   onOpenMethodology
@@ -40,8 +57,9 @@ export const NaiveAncestryOracle = memo(({
   const hasData = Object.keys(naiveEstimates).length > 0;
 
   const chartData = useMemo(() => {
-    return Object.entries(naiveEstimates).map(([name, value]) => ({
-      name: mapCodeToName(name),
+    return Object.entries(naiveEstimates).map(([code, value]) => ({
+      code,
+      name: mapCodeToName(code),
       value: Number(value),
     })).sort((a, b) => b.value - a.value);
   }, [naiveEstimates]);
@@ -58,7 +76,7 @@ export const NaiveAncestryOracle = memo(({
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-8 rounded-[2rem] bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl space-y-8"
+      className="p-3 sm:p-8 rounded-2xl sm:rounded-[2rem] bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl space-y-8"
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div className="flex items-center gap-4">
@@ -85,17 +103,18 @@ export const NaiveAncestryOracle = memo(({
         )}
       </div>
 
-      <div className="h-[400px] w-full min-w-0 relative bg-black/20 rounded-3xl p-4 border border-white/5">
+      <div className="h-[400px] w-full min-w-0 relative bg-black/20 rounded-3xl p-2 sm:p-4 border border-white/5">
         {isChartReady ? (
           <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
-            <BarChart data={chartData} layout="vertical" margin={{ left: 10 }}>
+            <BarChart data={chartData} layout="vertical" margin={{ left: 5, right: 10 }}>
               <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" width={180} tick={{ fill: '#e2e8f0', fontSize: 13, fontWeight: 600 }} />
+              <YAxis dataKey="name" type="category" width={150} tick={{ fill: '#e2e8f0', fontSize: 12, fontWeight: 600 }} />
               <Tooltip contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '1rem' }} />
               <Bar dataKey="value" fill="#4ECDC4" radius={[0, 8, 8, 0]}>
-                {chartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#4ECDC4' : '#FF6B6B'} />
-                ))}
+                {chartData.map((entry, index) => {
+                  const color = REGION_COLORS[entry.code] || '#4ECDC4';
+                  return <Cell key={`cell-${index}`} fill={color} />;
+                })}
               </Bar>
             </BarChart>
           </ResponsiveContainer>
@@ -105,13 +124,20 @@ export const NaiveAncestryOracle = memo(({
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {chartData.map((data) => (
-          <div key={data.name} className="flex justify-between items-center p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-[#4ECDC4]/50 transition-colors">
-            <span className="font-bold text-slate-100">{data.name}</span>
-            <span className="font-mono font-black text-[#FFE66D] text-lg">{(data.value || 0).toFixed(1)}%</span>
-          </div>
-        ))}
+        {chartData.map((data) => {
+          const color = REGION_COLORS[data.code] || '#FFE66D';
+          return (
+            <div key={data.name} className="flex justify-between items-center p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-[#4ECDC4]/50 transition-colors">
+              <span className="font-bold text-slate-100 flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: color }} />
+                {data.name}
+              </span>
+              <span className="font-mono font-black text-lg" style={{ color }}>{(data.value || 0).toFixed(1)}%</span>
+            </div>
+          );
+        })}
       </div>
     </motion.div>
   );
 });
+

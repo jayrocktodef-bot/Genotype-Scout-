@@ -217,17 +217,17 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-slate-900 backdrop-blur-xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative">
+        <div className="p-3.5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-slate-900 backdrop-blur-xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative">
            <div className="absolute top-0 right-0 p-6 opacity-30 text-6xl pointer-events-none group-hover:rotate-12 transition-transform">🩸</div>
            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">ABO Grouping</p>
            <h3 className="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tighter leading-none">{predictedABO}</h3>
         </div>
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-[#1a1b1d] backdrop-blur-xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative">
+        <div className="p-3.5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-[#1a1b1d] backdrop-blur-xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative">
            <div className="absolute top-0 right-0 p-6 opacity-30 text-6xl pointer-events-none group-hover:rotate-45 transition-transform duration-1000">🧬</div>
            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Rhesus Factor</p>
            <h3 className="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tighter leading-none">{predictedRh}</h3>
         </div>
-        <div className="p-6 sm:p-8 rounded-[2.5rem] bg-slate-100 border border-slate-200 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative sm:col-span-2 lg:col-span-1">
+        <div className="p-3.5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-slate-100 border border-slate-200 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative sm:col-span-2 lg:col-span-1">
            <div className="absolute top-0 right-0 p-6 opacity-20 text-6xl pointer-events-none">🔬</div>
            <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Sequencing Depth</p>
            <h3 className="text-3xl sm:text-5xl font-black text-slate-900 mt-2 tracking-tighter leading-none">
@@ -237,8 +237,8 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
         </div>
       </div>
 
-      <div className="rounded-[2rem] frosted-glass border border-white/5 overflow-hidden shadow-sm">
-        <div className="p-6 border-b border-white/5 flex justify-between items-center">
+      <div className="rounded-2xl sm:rounded-[2rem] frosted-glass border border-white/5 overflow-hidden shadow-sm">
+        <div className="p-4 sm:p-6 border-b border-white/5 flex justify-between items-center">
           <h4 className="text-sm font-black text-[#F5F6F7] uppercase tracking-widest">Molecular Breakdown</h4>
           <span className="text-[10px] font-mono text-slate-400 uppercase">Interactive Sequence Map</span>
         </div>

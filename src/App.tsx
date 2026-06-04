@@ -2408,7 +2408,7 @@ export default function App() {
         }} 
       />
 
-      <main className="max-w-[1360px] mx-auto px-2 sm:px-6 md:px-8 pt-24 sm:pt-28">
+      <main className="max-w-[1360px] mx-auto px-1 sm:px-6 md:px-8 pt-24 sm:pt-28">
         {error && (
           (() => {
             const isDetailed = typeof error === 'object' && error !== null;
@@ -2762,23 +2762,23 @@ export default function App() {
 
                 {activeTab === 'ancestry' && (
                   <div className="pb-20 space-y-8">
-                    <div className="flex justify-center mb-4">
-                      <div className="inline-flex bg-[#111213]/40 p-1.5 rounded-2xl border border-white/5 shadow-inner">
+                    <div className="flex justify-center mb-4 overflow-x-auto pb-0.5">
+                      <div className="inline-flex bg-[#111213]/40 p-1.5 rounded-2xl border border-white/5 shadow-inner shrink-0">
                         <button 
                           onClick={() => setActiveAncestrySubTab('oracle')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'oracle' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeAncestrySubTab === 'oracle' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
                         >
                           🔬 High-Res Oracle
                         </button>
                         <button 
                           onClick={() => setActiveAncestrySubTab('painter')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'painter' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeAncestrySubTab === 'painter' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
                         >
                           🎨 Chromosome Painting
                         </button>
                         <button 
                           onClick={() => setActiveAncestrySubTab('scout')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeAncestrySubTab === 'scout' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeAncestrySubTab === 'scout' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
                         >
                           ⚡ Scout Score
                         </button>
@@ -2818,23 +2818,23 @@ export default function App() {
 
                 {activeTab === 'health_traits' && (
                   <div className="pb-20 space-y-8">
-                    <div className="flex justify-center mb-4">
-                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner">
+                    <div className="flex justify-center mb-4 overflow-x-auto pb-0.5">
+                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner shrink-0">
                         <button 
                           onClick={() => setActiveHealthSubTab('wellness')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'wellness' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'wellness' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           🩺 Wellness & Risk
                         </button>
                         <button 
                           onClick={() => setActiveHealthSubTab('traits')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'traits' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'traits' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           ✨ Personal Traits
                         </button>
                         <button 
                           onClick={() => setActiveHealthSubTab('blood')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           🩸 Blood Type Predictor
                         </button>
@@ -2873,17 +2873,17 @@ export default function App() {
 
                 {activeTab === 'history' && (
                   <div className="pb-20 space-y-8">
-                    <div className="flex justify-center mb-4">
-                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner">
+                    <div className="flex justify-center mb-4 overflow-x-auto pb-0.5">
+                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner shrink-0">
                         <button 
                           onClick={() => setActiveHistorySubTab('modern')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'modern' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHistorySubTab === 'modern' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           🧬 Modern Lineages
                         </button>
                         <button 
                           onClick={() => setActiveHistorySubTab('ancient')}
-                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHistorySubTab === 'ancient' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHistorySubTab === 'ancient' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
                           💀 Ancient DNA Matches
                         </button>
@@ -2892,17 +2892,17 @@ export default function App() {
 
                     {activeHistorySubTab === 'modern' ? (
                       <div className="space-y-8 animate-fade-in">
-                        <div className="flex justify-center mb-8">
-                          <div className="inline-flex bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
+                        <div className="flex justify-center mb-8 overflow-x-auto pb-0.5">
+                          <div className="inline-flex bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm shrink-0">
                             <button 
                               onClick={() => setActiveHaploType('paternal')}
-                              className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                              className={`px-5 sm:px-8 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
                             >
                               ♂️ Paternal
                             </button>
                             <button 
                               onClick={() => setActiveHaploType('maternal')}
-                              className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
+                              className={`px-5 sm:px-8 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
                             >
                               ♀️ Maternal
                             </button>
@@ -2926,11 +2926,11 @@ export default function App() {
                       </div>
                     ) : (
                       <div className="space-y-8 animate-fade-in">
-                        <div className="flex justify-center">
-                          <div className="p-1.5 bg-slate-100 rounded-2xl inline-flex border border-slate-200 shadow-inner">
+                        <div className="flex justify-center overflow-x-auto pb-0.5">
+                          <div className="p-1.5 bg-slate-100 rounded-2xl inline-flex border border-slate-200 shadow-inner shrink-0">
                             <button
                               onClick={() => setActiveAncientSubTab('admixture')}
-                              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                              className={`flex items-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${
                                 activeAncientSubTab === 'admixture' 
                                   ? 'bg-slate-900 text-white shadow-md scale-105' 
                                   : 'text-slate-500 hover:text-slate-800'
@@ -2940,7 +2940,7 @@ export default function App() {
                             </button>
                             <button
                               onClick={() => setActiveAncientSubTab('matches')}
-                              className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                              className={`flex items-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${
                                 activeAncientSubTab === 'matches' 
                                   ? 'bg-slate-900 text-white shadow-md scale-105' 
                                   : 'text-slate-500 hover:text-slate-800'

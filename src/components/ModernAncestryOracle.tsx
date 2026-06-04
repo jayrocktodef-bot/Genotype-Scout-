@@ -89,7 +89,7 @@ export const ModernAncestryOracle = memo(({
       className="space-y-6 sm:space-y-12"
     >
       {/* Standard Oracle Section */}
-      <div className="p-4 sm:p-8 md:p-12 rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
+      <div className="p-2.5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Ancestry Oracle V2</h2>
@@ -157,7 +157,7 @@ export const ModernAncestryOracle = memo(({
 
       {/* Historical Haplotype Tracking for Sickle Cell / HBB */}
       {hbbMigration && (
-        <div className="mt-12 p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-red-500/5 border border-red-500/10 overflow-hidden relative group">
+        <div className="mt-12 p-2.5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-red-500/5 border border-red-500/10 overflow-hidden relative group">
            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <MapPin size={120} />
            </div>

@@ -144,7 +144,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="frosted-glass p-8 rounded-[2.5rem] border border-white/5 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-500/5 group"
+                  className="frosted-glass p-4 sm:p-8 rounded-2xl sm:rounded-[2.5rem] border border-white/5 hover:border-red-500/50 transition-all hover:shadow-2xl hover:shadow-red-500/5 group"
                 >
                   <div className="flex justify-between items-start mb-6">
                     <div className="flex flex-col">
@@ -191,7 +191,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="frosted-glass p-8 rounded-[2.5rem] border border-red-500/10"
+                className="frosted-glass p-4 sm:p-8 rounded-2xl sm:rounded-[2.5rem] border border-red-500/10"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -211,7 +211,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="frosted-glass p-8 rounded-[2.5rem] border border-blue-500/10"
+                className="frosted-glass p-4 sm:p-8 rounded-2xl sm:rounded-[2.5rem] border border-blue-500/10"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div>
@@ -245,7 +245,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="frosted-glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all hover:shadow-2xl hover:shadow-blue-500/5 group"
+                className="frosted-glass p-4 sm:p-8 rounded-2xl sm:rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all hover:shadow-2xl hover:shadow-blue-500/5 group"
               >
                   <div className="flex justify-between items-start mb-6">
                     <div className="flex flex-col">

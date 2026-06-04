@@ -82,7 +82,7 @@ const Dashboard: React.FC<DashboardProps> = ({
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="premium-card p-5 sm:p-12 overflow-hidden relative"
+        className="premium-card p-3 sm:p-12 overflow-hidden relative"
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-50/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
@@ -173,7 +173,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="premium-card p-6 sm:p-8 group cursor-pointer"
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center text-teal-600 mb-6 transition-transform group-hover:scale-110">
             <Activity className="w-7 h-7" />
@@ -193,7 +193,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="premium-card p-6 sm:p-8 group cursor-pointer"
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6 transition-transform group-hover:scale-110">
             <Eye className="w-7 h-7" />
@@ -213,7 +213,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="premium-card p-6 sm:p-8 group cursor-pointer"
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-600 mb-6 transition-transform group-hover:scale-110">
             <Map className="w-7 h-7" />
@@ -233,7 +233,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="premium-card p-6 sm:p-8 group cursor-pointer"
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center text-red-600 mb-6 transition-transform group-hover:scale-110">
             <Droplet className="w-7 h-7" />
@@ -253,7 +253,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="premium-card p-6 sm:p-8 group cursor-pointer"
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 mb-6 transition-transform group-hover:scale-110">
             <Shield className="w-7 h-7" />
@@ -273,7 +273,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="premium-card p-6 sm:p-8 group cursor-pointer"
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
         >
           <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 transition-transform group-hover:scale-110">
             <Fingerprint className="w-7 h-7" />

@@ -214,7 +214,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="p-6 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 hover:border-blue-500/30 dark:hover:border-blue-500/30 transition-all shadow-sm flex flex-col justify-between"
+                  className="p-3.5 sm:p-6 rounded-xl sm:rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 hover:border-blue-500/30 dark:hover:border-blue-500/30 transition-all shadow-sm flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-start justify-between mb-4">
@@ -507,7 +507,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
-                className="p-6 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all group shadow-sm"
+                className="p-3.5 sm:p-6 rounded-xl sm:rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all group shadow-sm"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -557,7 +557,7 @@ const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, i
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: idx * 0.03 }}
-      className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl p-6 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col relative shadow-sm"
+      className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-xl sm:rounded-2xl p-3.5 sm:p-6 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col relative shadow-sm"
     >
       <div className="flex items-start justify-between mb-4">
         <div>

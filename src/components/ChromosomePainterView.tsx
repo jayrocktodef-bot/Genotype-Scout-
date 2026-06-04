@@ -102,7 +102,7 @@ export const ChromosomePainterView = ({
       animate={{ opacity: 1, y: 0 }}
       className="space-y-6 sm:space-y-12"
     >
-      <div className="p-4 sm:p-8 md:p-12 rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
+      <div className="p-2.5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
           <div className="flex items-start gap-4 text-[#F5F6F7]">
             <Dna className="w-8 h-8 text-[#4599FF] shrink-0 mt-1" />
