@@ -109,6 +109,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'ancestry',
       targetSubTab: 'painter',
       description: 'Maternal vs. Paternal segment-by-segment ancestral origin mapping of your 22 autosomes.',
+      imageUrl: '/assets/painter_icon.png',
     },
     {
       id: 'ancestry_scout',
@@ -174,6 +175,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'health_traits',
       targetSubTab: 'blood',
       description: 'Predict ABO and Rhesus Factor blood groups from genetic data.',
+      imageUrl: '/assets/blood_icon.png',
     },
     {
       id: 'markers',
