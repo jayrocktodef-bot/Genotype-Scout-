@@ -193,6 +193,50 @@ export const getMethodologyData = (tabId: string): MethodologyContent => {
           ]
         };
 
+      case 'health':
+        return {
+          title: 'Health & Clinical Risk Screening',
+          algName: 'Polygenic Risk Score (PRS) & CPIC Pharmacogenomic Panel',
+          description: 'Calculates overall risk estimates across major wellness reports using multi-locus polygenic risk summation (PRS) normalized against reference standard populations, and cross-references CPIC guideline databases to flag metabolizer statuses for standard medications.',
+          formulas: [
+            {
+              label: 'Polygenic Risk Score',
+              equation: 'PRS = ∑ ( w_i × x_i )',
+              explanation: 'Sums the product of the effect size weight (w_i) and the dosage of the risk allele (x_i, which is 0, 1, or 2) across all evaluated markers.'
+            }
+          ],
+          references: [
+            'CPIC (Clinical Pharmacogenetics Implementation Consortium) Guidelines',
+            'PharmGKB (Pharmacogenomics Knowledgebase) Standards'
+          ],
+          metrics: [
+            { label: 'Calculated PRS Risks', value: 'Polygenic Risk Profiles' },
+            { label: 'Medication Database', value: '40+ PGx Drugs' }
+          ]
+        };
+
+      case 'traits':
+        return {
+          title: 'Physical & Personal Traits Profile',
+          algName: 'SNPedia Phenotype Association Mapping',
+          description: 'Maps observed user genotypes at target variants to determine phenotypic likelihoods (e.g. eye color, skin pigmentation, caffeine sensitivity, muscle traits) based on association studies in public genomic research databases.',
+          formulas: [
+            {
+              label: 'Phenotypic Likelihood',
+              equation: 'P(Trait) = f(Genotype_Observed)',
+              explanation: 'Finds the statistically correlated physical output or trait characteristics matching the specific letters at a tested genetic position.'
+            }
+          ],
+          references: [
+            'SNPedia Encyclopedia of Genomic Variants',
+            'MITOMAP Database for Mitochondrial Traits'
+          ],
+          metrics: [
+            { label: 'Phenotypic Traits', value: '25+ Physical Indicators' },
+            { label: 'Lineage Markers', value: 'Maternal Haplotype Traits' }
+          ]
+        };
+
       case 'compare':
         return {
           title: 'Global Population Proximity Comparison',

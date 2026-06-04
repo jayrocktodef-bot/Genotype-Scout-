@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   User, Globe, History, HeartPulse, Database, BookOpen, 
   Zap, Droplet, Wifi, BatteryCharging, ArrowLeft, 
-  Circle, Square, Search, Mic, Settings, Play, X, Dna
+  Circle, Square, Search, Mic, Settings, Play, X, Dna, Sparkles
 } from 'lucide-react';
 
 interface AndroidDesktopProps {
@@ -138,13 +138,23 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
     },
     {
       id: 'health',
-      name: 'Health & Traits',
+      name: 'Health',
       icon: HeartPulse,
       gradient: 'from-emerald-400 to-teal-600',
       glowColor: 'rgba(16, 185, 129, 0.45)',
       targetTab: 'health_traits',
       targetSubTab: 'wellness',
-      description: 'Explore drug response metabolism (PGx) and risk reports.',
+      description: 'Explore drug response metabolism (PGx) and polygenic risk reports.',
+    },
+    {
+      id: 'traits',
+      name: 'Traits',
+      icon: Sparkles,
+      gradient: 'from-pink-400 to-rose-500',
+      glowColor: 'rgba(244, 63, 94, 0.45)',
+      targetTab: 'health_traits',
+      targetSubTab: 'traits',
+      description: 'Explore physical appearance, lifestyle, and nutrition traits.',
     },
     {
       id: 'blood',

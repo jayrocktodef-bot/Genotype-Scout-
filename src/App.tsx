@@ -62,6 +62,7 @@ const masterAims = loadMasterAims();
 
 import AndroidDesktop from "./components/AndroidDesktop";
 import { BloodTypeView } from "./components/BloodTypeView";
+import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { inferRhFactor } from "./services/bloodPredictorService";
 
 import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
@@ -1989,7 +1990,7 @@ export default function App() {
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
-  const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'blood'>('wellness');
+  const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'traits' | 'blood'>('wellness');
   const [activeHistorySubTab, setActiveHistorySubTab] = useState<'modern' | 'ancient'>('modern');
 
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
@@ -2827,6 +2828,12 @@ export default function App() {
                           🩺 Wellness & Risk
                         </button>
                         <button 
+                          onClick={() => setActiveHealthSubTab('traits')}
+                          className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'traits' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                        >
+                          ✨ Personal Traits
+                        </button>
+                        <button 
                           onClick={() => setActiveHealthSubTab('blood')}
                           className={`px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
                         >
@@ -2835,7 +2842,7 @@ export default function App() {
                       </div>
                     </div>
 
-                    {activeHealthSubTab === 'wellness' ? (
+                    {activeHealthSubTab === 'wellness' && (
                       <Suspense fallback={<div className="text-center p-12 text-slate-400">Loading Wellness Analysis...</div>}>
                         <HealthWellnessTab 
                           impacts={healthWellnessMatches} 
@@ -2843,7 +2850,19 @@ export default function App() {
                           mode="analyst"
                         />
                       </Suspense>
-                    ) : (
+                    )}
+
+                    {activeHealthSubTab === 'traits' && (
+                      <div className="animate-fade-in">
+                        <HealthTraitsTab 
+                          matchedTraits={userMatchedMitoTraits}
+                          autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
+                          userSnps={snpMaps.current[activeDatasetIndex]}
+                        />
+                      </div>
+                    )}
+
+                    {activeHealthSubTab === 'blood' && (
                       <div className="animate-fade-in">
                         <BloodTypeView 
                           dataset={datasets[activeDatasetIndex]} 
@@ -3138,6 +3157,16 @@ export default function App() {
                     mode="analyst"
                   />
                 </Suspense>
+              </div>
+            )}
+
+            {currentApp === 'traits' && (
+              <div className="space-y-8 animate-fade-in">
+                <HealthTraitsTab 
+                  matchedTraits={userMatchedMitoTraits}
+                  autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
+                  userSnps={snpMaps.current[activeDatasetIndex]}
+                />
               </div>
             )}
 

@@ -12,6 +12,8 @@ const allSections = [
   { tabId: 'naive_oracle', emoji: '⚡' },
   { tabId: 'haplogroups', emoji: '🌳' },
   { tabId: 'ancient', emoji: '💀' },
+  { tabId: 'health', emoji: '🩺' },
+  { tabId: 'traits', emoji: '✨' },
   { tabId: 'compare', emoji: '🗺️' },
   { tabId: 'blood', emoji: '🩸' },
   { tabId: 'markers', emoji: '🔬' },
@@ -46,6 +48,12 @@ const getPlainEnglish = (tabId: string): string => {
 
     case 'ancient':
       return 'Scientists have extracted DNA from ancient skeletons found at archaeological sites — farmers from Turkey 9,000 years ago, hunters from Ice Age Europe, nomads from the Central Asian steppe. We compare your DNA to these ancient people to see which groups you\'re genetically closest to. It\'s like finding out which ancient "tribes" contributed most to your modern DNA makeup.';
+
+    case 'health':
+      return 'We calculate your relative risk for various health and wellness conditions by summing up the weights of multiple risk markers in your DNA (your Polygenic Risk Score). Additionally, we screen your genetic file against standard guidelines to predict how your body metabolizes common medications, alerting you to potential medication sensitivities.';
+
+    case 'traits':
+      return 'Our Traits page decodes physical attributes like eye and hair color, lactose tolerance, diet behaviors, and environmental responses. We match your letter variants to SNPedia databases to show what traits you are genetically predisposed to.';
 
     case 'compare':
       return 'Your DNA contains hundreds of thousands of data points — way too many to visualize at once. We use a technique that compresses all that information down into just a few coordinates, like squishing a 3D globe onto a flat map. This lets us plot you alongside global populations to show visually which groups you cluster closest to. Think of it as a "you are here" dot on a map of world genetics.';
