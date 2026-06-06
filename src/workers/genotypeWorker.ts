@@ -103,25 +103,28 @@ self.onmessage = async (e: MessageEvent) => {
         let parsedFiles = [];
         
         for (const fileObj of filesToProcess) {
-          const actualFile = (obj: any): any => obj.stream ? obj : (obj.file ? obj.file : null);
-          const getFileName = (obj: any): string => obj.name || (obj.file ? obj.file.name : 'Uploaded Kit');
-          const file = actualFile(fileObj);
-          const fileName = getFileName(fileObj);
+          const fileName = fileObj.name || 'Uploaded Kit';
           
           let parsed;
-          if (file && typeof file.stream === 'function') {
-            parsed = await parseRawDNAStream(file, allowlist, (processed, total, snps) => {
-                if (sab) {
-                    const progressArray = new Int32Array(sab);
-                    Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
-                } else {
-                    self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
-                }
-            });
-          } else if (fileObj.buffer) {
+          if (fileObj.buffer) {
             parsed = parseRawDNA(decoder.decode(fileObj.buffer), allowlist);
           } else {
-            parsed = parseRawDNA(decoder.decode(await file.arrayBuffer()), allowlist);
+            // Fallback for standard non-transferred File/Blob object
+            const actualFile = fileObj.stream ? fileObj : (fileObj.file ? fileObj.file : null);
+            if (actualFile && typeof actualFile.stream === 'function') {
+              parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
+                  if (sab) {
+                      const progressArray = new Int32Array(sab);
+                      Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
+                  } else {
+                      self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+                  }
+              });
+            } else if (actualFile) {
+              parsed = parseRawDNA(decoder.decode(await actualFile.arrayBuffer()), allowlist);
+            } else {
+              throw new Error("Invalid file object structure passed to worker");
+            }
           }
           parsedFiles.push({ ...parsed, name: fileName });
         }
