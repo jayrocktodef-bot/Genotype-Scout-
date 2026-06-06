@@ -578,8 +578,12 @@ export function processSubpopulations(
       // rs1426654 (SLC24A5) and rs16891982 (SLC45A2): Nearly 100% fixated for European alleles
       if (rsidLower === 'rs1426654' || rsidLower === 'rs16891982') {
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 2) {
           // User has homozygous European-derived allele: penalize African clades
+          violations += 1.5;
+        } else if (isEuropeanPop && userDosageDiscrete === 0) {
+          // User has homozygous African ancestral allele (0 copies of European allele): penalize European clades
           violations += 1.5;
         }
       }
