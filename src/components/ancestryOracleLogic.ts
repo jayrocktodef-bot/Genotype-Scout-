@@ -588,16 +588,17 @@ export function processSubpopulations(
         }
       }
 
-      // rs3827760 (EDAR): East Asian (EAS) specific diagnostic marker. High frequency in EAS, absent in EUR/AFR
+      // rs3827760 (EDAR): East Asian (EAS) and Native American (AMR) diagnostic marker. High frequency in EAS/AMR, absent in EUR/AFR
       if (rsidLower === 'rs3827760') {
         const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
+        const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
-        if (isEastAsianPop && userDosageDiscrete === 0) {
-          // Non-East Asian carrying ancestral allele: penalize East Asian clades
+        if ((isEastAsianPop || isAmrPop) && userDosageDiscrete === 0) {
+          // Lacks EDAR derived allele: penalize EAS and AMR clades
           violations += 2.0;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          // East Asian carrying homozygous derived allele: penalize European/African clades
+          // Has homozygous derived allele: penalize European/African clades
           violations += 2.0;
         }
       }
@@ -613,6 +614,61 @@ export function processSubpopulations(
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
           // User is homozygous AMR-allele: penalize European and African reference populations
           violations += 1.5;
+        }
+      }
+
+      // rs16139 and rs2229765: African (AFR) vs Non-African diagnostic variants (highly fixated in AFR, rare/absent elsewhere)
+      if (rsidLower === 'rs16139' || rsidLower === 'rs2229765') {
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
+        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
+        if (isAfricanPop && userDosageDiscrete === 0) {
+          // User lacks African-fixated variant: penalize African reference clades
+          violations += 1.5;
+        } else if ((isEuropeanPop || isEastAsianPop) && userDosageDiscrete === 2) {
+          // User has homozygous African variant: penalize European/East Asian clades
+          violations += 1.5;
+        }
+      }
+
+      // rs7388531 (ABCC11) and rs671 (ALDH2): Specific East Asian (EAS) diagnostic variants
+      if (rsidLower === 'rs7388531' || rsidLower === 'rs671') {
+        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        if (isEastAsianPop && userDosageDiscrete === 0) {
+          // Lacks EAS variants: penalize EAS clades
+          violations += 1.5;
+        } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
+          // Homozygous for EAS variants: penalize European and African clades
+          violations += 1.5;
+        }
+      }
+
+      // rs12203592 (IRF4): South Asian (SAS) diagnostic variant
+      if (rsidLower === 'rs12203592') {
+        const isSouthAsianPop = MACRO_GROUPS['SAS'].includes(popCode);
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
+        if (isSouthAsianPop && userDosageDiscrete === 0) {
+          // Lacks South Asian variant: penalize SAS reference clades
+          violations += 1.0;
+        } else if ((isAfricanPop || isEastAsianPop) && userDosageDiscrete === 2) {
+          // Homozygous for SAS variant: penalize African/East Asian clades
+          violations += 1.0;
+        }
+      }
+
+      // rs1042602 (TYR): Diagnostic Native American/European vs East Asian/African variant
+      if (rsidLower === 'rs1042602') {
+        const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
+        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        if ((isAmrPop || isEuropeanPop) && userDosageDiscrete === 0) {
+          violations += 1.0;
+        } else if ((isEastAsianPop || isAfricanPop) && userDosageDiscrete === 2) {
+          violations += 1.0;
         }
       }
     }
