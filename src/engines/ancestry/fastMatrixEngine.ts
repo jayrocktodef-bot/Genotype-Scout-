@@ -29,12 +29,18 @@ export async function compileReferenceKernel() {
 
   let cachedData = null;
 
-  // 1. SAFELY CHECK CACHE (Ignores iframe security blocks)
+  // 1. SAFELY CHECK CACHE (Ignores iframe security blocks, wrapped in timeout to prevent indefinite stalls)
   try {
     console.log("🔍 Checking IndexedDB for cached binary kernel...");
-    cachedData = await get(CACHE_KEY);
+    const getWithTimeout = (key: string, timeoutMs = 500) => {
+      return Promise.race([
+        get(key),
+        new Promise<any>((_, reject) => setTimeout(() => reject(new Error("IndexedDB get timeout")), timeoutMs))
+      ]);
+    };
+    cachedData = await getWithTimeout(CACHE_KEY);
   } catch (e) {
-    console.warn("⚠️ IndexedDB access blocked (iframe environment). Skipping cache read.");
+    console.warn("⚠️ IndexedDB access blocked or timed out. Skipping cache read.", e);
   }
 
   if (cachedData) {
@@ -83,9 +89,15 @@ export async function compileReferenceKernel() {
       popFrequencies.push(freqArray);
     }
 
-    // 3. SAFELY SAVE CACHE (Ignores iframe security blocks)
+    // 3. SAFELY SAVE CACHE (Ignores iframe security blocks, wrapped in timeout to prevent indefinite stalls)
     try {
-      await set(CACHE_KEY, {
+      const setWithTimeout = (key: string, val: any, timeoutMs = 500) => {
+        return Promise.race([
+          set(key, val),
+          new Promise<void>((_, reject) => setTimeout(() => reject(new Error("IndexedDB set timeout")), timeoutMs))
+        ]);
+      };
+      await setWithTimeout(CACHE_KEY, {
         globalRsIDs,
         popNames,
         popRegions,
@@ -93,7 +105,7 @@ export async function compileReferenceKernel() {
       });
       console.log(`✅ Cache Saved. Mapped ${popNames.length} populations.`);
     } catch (e) {
-      console.warn("⚠️ IndexedDB save blocked. Running purely in RAM for this session.");
+      console.warn("⚠️ IndexedDB save blocked or timed out. Running purely in RAM for this session.", e);
     }
 
     isCompiled = true;

@@ -23,48 +23,26 @@ async function runGenotypeScout(
     names: string[],
     sab: any
 ) {
-    const allSources = getAllSources();
-    console.log("Total sources length in worker:", allSources.length);
-    const numWorkers = navigator.hardwareConcurrency || 4;
-    const chunkSize = Math.ceil(allSources.length / numWorkers);
-    const workerPromises = [];
+    const ancestryResult = matchSNPs(imputedSnpMap, mergedSnpMetaMap);
     
-    for (let i = 0; i < allSources.length; i += chunkSize) {
-      const chunk = allSources.slice(i, i + chunkSize);
-      workerPromises.push(new Promise((resolve, reject) => {
-        const worker = new Worker(new URL('../workers/markerProcessingWorker.ts', import.meta.url), { type: 'module' });
-        worker.postMessage({ markers: chunk, imputedSnpMap, snpMetaMap: mergedSnpMetaMap });
-        worker.onmessage = (e) => { resolve(e.data.payload); worker.terminate(); };
-        worker.onerror = (e) => { reject(e); worker.terminate(); };
-      }));
-    }
-    
-    const [ancestryResult, bloodResult] = await Promise.all([
-      (async () => {
-        const workerResults = await Promise.all(workerPromises);
-        return ([] as any[]).concat(...workerResults);
-      })(),
-      (async () => {
-         const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
-         const [
-          ancientAdmixture, individualMatches, famousMatches, healthWellness,
-          populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw,
-          microHapResults, comprehensiveResults
-        ] = await Promise.all([
-          calculateAncientAdmixture(imputedSnpMap),
-          calculateIndividualMatches(imputedSnpMap),
-          calculateFamousMatches(imputedSnpMap),
-          matchHealthAndWellness(imputedSnpMap),
-          calculatePopulationProximityOptimized(snpMapForEngine),
-          calculateMarkerBenchmarks(imputedSnpMap),
-          (async () => { const { calculateMDLPK16Scores } = await import("../engines/ancestry/mdlpAncEngine"); return calculateMDLPK16Scores(imputedSnpMap); })(),
-          (async () => { const { calculateRegionalScores } = await import("../engines/ancestry/grafAncEngine"); return calculateRegionalScores(imputedSnpMap); })(),
-          (async () => { const { identifyMicroHapSignatures } = await import("../engines/ancestry/microHapEngine"); return identifyMicroHapSignatures(imputedSnpMap); })(),
-          (async () => { const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine"); return calculateComprehensiveScores(imputedSnpMap); })()
-        ]);
-        return { ancientAdmixture, individualMatches, famousMatches, healthWellness, populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw, microHapResults, comprehensiveResults };
-      })()
+    const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
+    const [
+      ancientAdmixture, individualMatches, famousMatches, healthWellness,
+      populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw,
+      microHapResults, comprehensiveResults
+    ] = await Promise.all([
+      calculateAncientAdmixture(imputedSnpMap),
+      calculateIndividualMatches(imputedSnpMap),
+      calculateFamousMatches(imputedSnpMap),
+      matchHealthAndWellness(imputedSnpMap),
+      calculatePopulationProximityOptimized(snpMapForEngine),
+      calculateMarkerBenchmarks(imputedSnpMap),
+      (async () => { const { calculateMDLPK16Scores } = await import("../engines/ancestry/mdlpAncEngine"); return calculateMDLPK16Scores(imputedSnpMap); })(),
+      (async () => { const { calculateRegionalScores } = await import("../engines/ancestry/grafAncEngine"); return calculateRegionalScores(imputedSnpMap); })(),
+      (async () => { const { identifyMicroHapSignatures } = await import("../engines/ancestry/microHapEngine"); return identifyMicroHapSignatures(imputedSnpMap); })(),
+      (async () => { const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine"); return calculateComprehensiveScores(imputedSnpMap); })()
     ]);
+    const bloodResult = { ancientAdmixture, individualMatches, famousMatches, healthWellness, populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw, microHapResults, comprehensiveResults };
 
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
     const oracleResults = await calculateAncestryOracle(ancestryResult.filter(r => r.category === 'Ancestry'), undefined, undefined, bloodResult.grafResults_raw, bloodResult.mdlpResults_raw, bloodResult.comprehensiveResults, sampleId);

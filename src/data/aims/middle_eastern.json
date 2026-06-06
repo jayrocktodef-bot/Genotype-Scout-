@@ -1,6 +1,8 @@
 {
   "rs1393350": {
     "rsid": "rs1393350",
+    "chromosome": "11",
+    "position": 89011046,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -23,6 +25,8 @@
   },
   "rs10456271": {
     "rsid": "rs10456271",
+    "chromosome": "6",
+    "position": 23108417,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -45,6 +49,8 @@
   },
   "rs10456206": {
     "rsid": "rs10456206",
+    "chromosome": "6",
+    "position": 17556708,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -67,6 +73,8 @@
   },
   "rs10456276": {
     "rsid": "rs10456276",
+    "chromosome": "6",
+    "position": 23668148,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -89,6 +97,8 @@
   },
   "rs11103333": {
     "rsid": "rs11103333",
+    "chromosome": "9",
+    "position": 138998890,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -111,6 +121,8 @@
   },
   "rs11103332": {
     "rsid": "rs11103332",
+    "chromosome": "9",
+    "position": 138995478,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -133,6 +145,8 @@
   },
   "rs11103334": {
     "rsid": "rs11103334",
+    "chromosome": "9",
+    "position": 138999801,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -155,6 +169,8 @@
   },
   "rs11103335": {
     "rsid": "rs11103335",
+    "chromosome": "9",
+    "position": 139001143,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -177,6 +193,8 @@
   },
   "rs11103336": {
     "rsid": "rs11103336",
+    "chromosome": "9",
+    "position": 139001254,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -199,6 +217,8 @@
   },
   "rs11103337": {
     "rsid": "rs11103337",
+    "chromosome": "9",
+    "position": 139001270,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -221,6 +241,8 @@
   },
   "rs10456280": {
     "rsid": "rs10456280",
+    "chromosome": "6",
+    "position": 23686432,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -243,6 +265,8 @@
   },
   "rs10488631": {
     "rsid": "rs10488631",
+    "chromosome": "7",
+    "position": 128594183,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -265,6 +289,8 @@
   },
   "rs2032604": {
     "rsid": "rs2032604",
+    "chromosome": "Y",
+    "position": 14969634,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -283,6 +309,8 @@
   },
   "rs10456279": {
     "rsid": "rs10456279",
+    "chromosome": "6",
+    "position": 23683443,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -305,6 +333,8 @@
   },
   "rs10456281": {
     "rsid": "rs10456281",
+    "chromosome": "6",
+    "position": 23688720,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -327,6 +357,8 @@
   },
   "rs10456273": {
     "rsid": "rs10456273",
+    "chromosome": "6",
+    "position": 10552574,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -349,6 +381,8 @@
   },
   "rs2032633": {
     "rsid": "rs2032633",
+    "chromosome": "Y",
+    "position": 21868726,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -367,6 +401,8 @@
   },
   "rs10456275": {
     "rsid": "rs10456275",
+    "chromosome": "6",
+    "position": 23511760,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -389,6 +425,8 @@
   },
   "rs10456283": {
     "rsid": "rs10456283",
+    "chromosome": "6",
+    "position": 23715906,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -411,6 +449,8 @@
   },
   "rs2032602": {
     "rsid": "rs2032602",
+    "chromosome": "Y",
+    "position": 14954280,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -428,6 +468,8 @@
   },
   "rs9306837": {
     "rsid": "rs9306837",
+    "chromosome": "Y",
+    "position": 15480547,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -446,6 +488,8 @@
   },
   "rs1540623": {
     "rsid": "rs1540623",
+    "chromosome": "16",
+    "position": 50440514,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -468,6 +512,8 @@
   },
   "rs10488635": {
     "rsid": "rs10488635",
+    "chromosome": "7",
+    "position": 155380704,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -490,6 +536,8 @@
   },
   "rs10456272": {
     "rsid": "rs10456272",
+    "chromosome": "6",
+    "position": 23154345,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -512,6 +560,8 @@
   },
   "rs9999901": {
     "rsid": "rs9999901",
+    "chromosome": "4",
+    "position": 179693472,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -534,6 +584,8 @@
   },
   "rs9999904": {
     "rsid": "rs9999904",
+    "chromosome": "4",
+    "position": 182120573,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -556,6 +608,8 @@
   },
   "rs10407228": {
     "rsid": "rs10407228",
+    "chromosome": "19",
+    "position": 11952934,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -578,6 +632,8 @@
   },
   "rs10407229": {
     "rsid": "rs10407229",
+    "chromosome": "19",
+    "position": 57479482,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -600,6 +656,8 @@
   },
   "rs10407230": {
     "rsid": "rs10407230",
+    "chromosome": "19",
+    "position": 38610670,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -622,6 +680,8 @@
   },
   "rs1393358": {
     "rsid": "rs1393358",
+    "chromosome": "3",
+    "position": 79848057,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -644,6 +704,8 @@
   },
   "rs10407235": {
     "rsid": "rs10407235",
+    "chromosome": "19",
+    "position": 7421609,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -666,6 +728,8 @@
   },
   "rs1393359": {
     "rsid": "rs1393359",
+    "chromosome": "3",
+    "position": 79848470,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -688,6 +752,8 @@
   },
   "rs10407236": {
     "rsid": "rs10407236",
+    "chromosome": "19",
+    "position": 11247423,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -710,6 +776,8 @@
   },
   "rs1393360": {
     "rsid": "rs1393360",
+    "chromosome": "3",
+    "position": 79848925,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -732,6 +800,8 @@
   },
   "rs1393361": {
     "rsid": "rs1393361",
+    "chromosome": "3",
+    "position": 79877121,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -754,6 +824,8 @@
   },
   "rs10407238": {
     "rsid": "rs10407238",
+    "chromosome": "19",
+    "position": 12499390,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -776,6 +848,8 @@
   },
   "rs1393362": {
     "rsid": "rs1393362",
+    "chromosome": "3",
+    "position": 79872440,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -798,6 +872,8 @@
   },
   "rs10407239": {
     "rsid": "rs10407239",
+    "chromosome": "19",
+    "position": 4534070,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -820,6 +896,8 @@
   },
   "rs1393353": {
     "rsid": "rs1393353",
+    "chromosome": "11",
+    "position": 100431162,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -842,6 +920,8 @@
   },
   "rs10407231": {
     "rsid": "rs10407231",
+    "chromosome": "19",
+    "position": 13685689,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -864,6 +944,8 @@
   },
   "rs1393355": {
     "rsid": "rs1393355",
+    "chromosome": "11",
+    "position": 100498804,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -886,6 +968,8 @@
   },
   "rs1333047": {
     "rsid": "rs1333047",
+    "chromosome": "9",
+    "position": 22124504,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -908,6 +992,8 @@
   },
   "rs6601495": {
     "rsid": "rs6601495",
+    "chromosome": "8",
+    "position": 10480377,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -930,6 +1016,8 @@
   },
   "rs1333048": {
     "rsid": "rs1333048",
+    "chromosome": "9",
+    "position": 22125347,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -952,6 +1040,8 @@
   },
   "rs10456208": {
     "rsid": "rs10456208",
+    "chromosome": "6",
+    "position": 17678584,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -974,6 +1064,8 @@
   },
   "rs10456211": {
     "rsid": "rs10456211",
+    "chromosome": "6",
+    "position": 10006520,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -996,6 +1088,8 @@
   },
   "rs10456214": {
     "rsid": "rs10456214",
+    "chromosome": "6",
+    "position": 18288173,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1018,6 +1112,8 @@
   },
   "rs10456274": {
     "rsid": "rs10456274",
+    "chromosome": "6",
+    "position": 23469680,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1040,6 +1136,8 @@
   },
   "rs10757279": {
     "rsid": "rs10757279",
+    "chromosome": "9",
+    "position": 22124630,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1062,6 +1160,8 @@
   },
   "rs10757274": {
     "rsid": "rs10757274",
+    "chromosome": "9",
+    "position": 22096055,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1084,6 +1184,8 @@
   },
   "rs10456277": {
     "rsid": "rs10456277",
+    "chromosome": "6",
+    "position": 23683255,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1106,6 +1208,8 @@
   },
   "rs34459394": {
     "rsid": "rs34459394",
+    "chromosome": "16",
+    "position": 75287869,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1123,6 +1227,8 @@
   },
   "rs9999902": {
     "rsid": "rs9999902",
+    "chromosome": "4",
+    "position": 70953579,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1145,6 +1251,8 @@
   },
   "rs9999905": {
     "rsid": "rs9999905",
+    "chromosome": "4",
+    "position": 180561091,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1167,6 +1275,8 @@
   },
   "rs11215545": {
     "rsid": "rs11215545",
+    "chromosome": "11",
+    "position": 115286750,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1189,6 +1299,8 @@
   },
   "rs11215546": {
     "rsid": "rs11215546",
+    "chromosome": "11",
+    "position": 115290422,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1211,6 +1323,8 @@
   },
   "rs1800409": {
     "rsid": "rs1800409",
+    "chromosome": "15",
+    "position": 28230206,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1233,6 +1347,8 @@
   },
   "rs11215547": {
     "rsid": "rs11215547",
+    "chromosome": "11",
+    "position": 115292878,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1255,6 +1371,8 @@
   },
   "rs1800415": {
     "rsid": "rs1800415",
+    "chromosome": "15",
+    "position": 28196994,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1277,6 +1395,8 @@
   },
   "rs11215554": {
     "rsid": "rs11215554",
+    "chromosome": "11",
+    "position": 96644634,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1299,6 +1419,8 @@
   },
   "rs1800416": {
     "rsid": "rs1800416",
+    "chromosome": "15",
+    "position": 28171294,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1321,6 +1443,8 @@
   },
   "rs11215555": {
     "rsid": "rs11215555",
+    "chromosome": "11",
+    "position": 115305582,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1343,6 +1467,8 @@
   },
   "rs1800417": {
     "rsid": "rs1800417",
+    "chromosome": "15",
+    "position": 28116379,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1365,6 +1491,8 @@
   },
   "rs11215556": {
     "rsid": "rs11215556",
+    "chromosome": "11",
+    "position": 115307016,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1387,6 +1515,8 @@
   },
   "rs1800418": {
     "rsid": "rs1800418",
+    "chromosome": "15",
+    "position": 28116336,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1409,6 +1539,8 @@
   },
   "rs11215557": {
     "rsid": "rs11215557",
+    "chromosome": "11",
+    "position": 115307384,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1431,6 +1563,8 @@
   },
   "rs1800419": {
     "rsid": "rs1800419",
+    "chromosome": "15",
+    "position": 28096538,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1453,6 +1587,8 @@
   },
   "rs11215558": {
     "rsid": "rs11215558",
+    "chromosome": "11",
+    "position": 115308919,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1475,6 +1611,8 @@
   },
   "rs1800410": {
     "rsid": "rs1800410",
+    "chromosome": "15",
+    "position": 28230184,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1497,6 +1635,8 @@
   },
   "rs1800411": {
     "rsid": "rs1800411",
+    "chromosome": "15",
+    "position": 28211921,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1519,6 +1659,8 @@
   },
   "rs11215550": {
     "rsid": "rs11215550",
+    "chromosome": "11",
+    "position": 98340421,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1541,6 +1683,8 @@
   },
   "rs10757278": {
     "rsid": "rs10757278",
+    "chromosome": "9",
+    "position": 22124477,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1563,6 +1707,8 @@
   },
   "rs12186491": {
     "rsid": "rs12186491",
+    "chromosome": "5",
+    "position": 147593497,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1585,6 +1731,8 @@
   },
   "rs10456278": {
     "rsid": "rs10456278",
+    "chromosome": "6",
+    "position": 23683390,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1607,6 +1755,8 @@
   },
   "rs10757275": {
     "rsid": "rs10757275",
+    "chromosome": "9",
+    "position": 22106225,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1629,6 +1779,8 @@
   },
   "rs10757276": {
     "rsid": "rs10757276",
+    "chromosome": "9",
+    "position": 2220915,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1651,6 +1803,8 @@
   },
   "rs10456284": {
     "rsid": "rs10456284",
+    "chromosome": "6",
+    "position": 23731776,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1673,6 +1827,8 @@
   },
   "rs1426644": {
     "rsid": "rs1426644",
+    "chromosome": "11",
+    "position": 97219338,
     "region": "Middle Eastern",
     "color": "#95A5A6",
     "alleles": [
@@ -1697,7 +1853,9 @@
     "rsid": "asj_gnomad",
     "region": "Middle Eastern",
     "color": "#95A5A6",
-    "alleles": [],
+    "alleles": [
+      "G"
+    ],
     "frequencies": {
       "rs2887286": 0.1639,
       "rs2840528": 0.72,
@@ -4279,13 +4437,21 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "",
+    "chromosome": "10",
+    "position": 139656803,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "mid_gnomad": {
     "rsid": "mid_gnomad",
     "region": "Middle Eastern",
     "color": "#95A5A6",
-    "alleles": [],
+    "alleles": [
+      "G"
+    ],
     "frequencies": {
       "rs2887286": 0.1599,
       "rs2840528": 0.6769,
@@ -6867,6 +7033,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "",
+    "chromosome": "6",
+    "position": 135439519,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   }
 }

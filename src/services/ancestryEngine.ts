@@ -964,8 +964,10 @@ export async function initializeOnnxModel(): Promise<ort.InferenceSession> {
       let arrayBuffer: ArrayBuffer;
       if (typeof window === 'undefined') {
         // Node / local test environment: load directly from public/ folder in workspace
-        const fs = await import('fs');
-        const path = await import('path');
+        const fsLib = 'fs';
+        const pathLib = 'path';
+        const fs = await import(/* @vite-ignore */ fsLib);
+        const path = await import(/* @vite-ignore */ pathLib);
         const filePath = path.resolve(process.cwd(), 'public/models/genotype_scout_classifier.onnx');
         const buffer = fs.readFileSync(filePath);
         arrayBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);

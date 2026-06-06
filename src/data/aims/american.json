@@ -3,7 +3,9 @@
     "rsid": "alfa_latam1",
     "region": "American",
     "color": "#95A5A6",
-    "alleles": [],
+    "alleles": [
+      "G"
+    ],
     "frequencies": {
       "rs2887286": 0.46,
       "rs2840528": 0.7327,
@@ -2585,6 +2587,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "",
+    "chromosome": "20",
+    "position": 173395075,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   }
 }

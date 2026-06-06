@@ -118,12 +118,26 @@ function buildMasterAims() {
         };
 
         // Track collisions/duplicates
+        let mergedAim = standardAim;
         if (globalAimMap.has(normalizedRsid)) {
-          console.warn(`[COLLISION] rsID ${normalizedRsid} found in ${file}. Overwriting older entry.`);
+          const existing = globalAimMap.get(normalizedRsid)!;
           duplicateCount++;
+          mergedAim = {
+            ...existing,
+            ...standardAim,
+            chromosome: standardAim.chromosome || existing.chromosome,
+            position: standardAim.position || existing.position,
+            frequencies: { ...existing.frequencies, ...standardAim.frequencies },
+            subFrequencies: { ...existing.subFrequencies, ...standardAim.subFrequencies },
+            deepFrequencies: { ...existing.deepFrequencies, ...standardAim.deepFrequencies },
+            gene: standardAim.gene || existing.gene,
+            trait: standardAim.trait || existing.trait,
+            description: standardAim.description || existing.description,
+            alleles: standardAim.alleles.length > 0 ? standardAim.alleles : existing.alleles,
+          };
         }
 
-        globalAimMap.set(normalizedRsid, standardAim);
+        globalAimMap.set(normalizedRsid, mergedAim);
       });
     });
   });

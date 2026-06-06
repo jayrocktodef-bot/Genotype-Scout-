@@ -1,6 +1,8 @@
 {
   "rs3811801": {
     "rsid": "rs3811801",
+    "chromosome": "4",
+    "position": 100244319,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -19,6 +21,8 @@
   },
   "rs6788448": {
     "rsid": "rs6788448",
+    "chromosome": "3",
+    "position": 193491389,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -37,6 +41,8 @@
   },
   "rs11014166": {
     "rsid": "rs11014166",
+    "chromosome": "10",
+    "position": 18708798,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -55,6 +61,8 @@
   },
   "rs6060373": {
     "rsid": "rs6060373",
+    "chromosome": "20",
+    "position": 33914208,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -73,6 +81,8 @@
   },
   "rs2071060": {
     "rsid": "rs2071060",
+    "chromosome": "HG344_PATCH",
+    "position": 6973637,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -91,6 +101,8 @@
   },
   "rs1443425": {
     "rsid": "rs1443425",
+    "chromosome": "17",
+    "position": 2920207,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -109,6 +121,8 @@
   },
   "rs1322073": {
     "rsid": "rs1322073",
+    "chromosome": "10",
+    "position": 111549021,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -127,6 +141,8 @@
   },
   "rs4951471": {
     "rsid": "rs4951471",
+    "chromosome": "1",
+    "position": 213075404,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -145,6 +161,8 @@
   },
   "rs1029047": {
     "rsid": "rs1029047",
+    "chromosome": "6",
+    "position": 1135939,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -163,6 +181,8 @@
   },
   "rs1614397": {
     "rsid": "rs1614397",
+    "chromosome": "HG281_PATCH",
+    "position": 49913384,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -181,6 +201,8 @@
   },
   "rs10456307": {
     "rsid": "rs10456307",
+    "chromosome": "6",
+    "position": 24566639,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -199,6 +221,8 @@
   },
   "rs11103338": {
     "rsid": "rs11103338",
+    "chromosome": "9",
+    "position": 139005138,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -221,6 +245,8 @@
   },
   "rs10456298": {
     "rsid": "rs10456298",
+    "chromosome": "6",
+    "position": 23995857,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -239,6 +265,8 @@
   },
   "rs10456299": {
     "rsid": "rs10456299",
+    "chromosome": "6",
+    "position": 24059779,
     "region": "South Asian",
     "color": "#95A5A6",
     "alleles": [
@@ -271,7 +299,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 102465957
   },
   "rs500001_sas": {
     "rsid": "rs500001_sas",
@@ -289,7 +319,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "1",
+    "position": 4554762,
+    "ref": "T",
+    "alt": "C"
   },
   "rs500002_sas": {
     "rsid": "rs500002_sas",
@@ -307,7 +341,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "15",
+    "position": 53388013
   },
   "rs500003_sas": {
     "rsid": "rs500003_sas",
@@ -325,7 +361,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 120947948
   },
   "rs500004_sas": {
     "rsid": "rs500004_sas",
@@ -343,7 +381,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "HG1459_PATCH",
+    "position": 144261149
   },
   "rs500005_sas": {
     "rsid": "rs500005_sas",
@@ -361,7 +401,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 34545752
   },
   "rs500006_sas": {
     "rsid": "rs500006_sas",
@@ -379,7 +421,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 306724
   },
   "rs500007_sas": {
     "rsid": "rs500007_sas",
@@ -397,7 +441,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 80316428
   },
   "rs500008_sas": {
     "rsid": "rs500008_sas",
@@ -415,7 +461,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "6",
+    "position": 131436400
   },
   "rs500009_sas": {
     "rsid": "rs500009_sas",
@@ -433,7 +481,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 131041918
   },
   "rs5000010_sas": {
     "rsid": "rs5000010_sas",
@@ -451,7 +501,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 86096976
   },
   "rs5000011_sas": {
     "rsid": "rs5000011_sas",
@@ -469,7 +521,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 86096986
   },
   "rs5000012_sas": {
     "rsid": "rs5000012_sas",
@@ -487,7 +541,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 86096996
   },
   "rs5000013_sas": {
     "rsid": "rs5000013_sas",
@@ -505,7 +561,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 90103716,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000014_sas": {
     "rsid": "rs5000014_sas",
@@ -523,7 +583,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 91158037,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000015_sas": {
     "rsid": "rs5000015_sas",
@@ -541,7 +605,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 92212358,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000016_sas": {
     "rsid": "rs5000016_sas",
@@ -559,7 +627,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 93266679,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000017_sas": {
     "rsid": "rs5000017_sas",
@@ -577,7 +649,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 29379321
   },
   "rs5000018_sas": {
     "rsid": "rs5000018_sas",
@@ -595,7 +669,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 29379325
   },
   "rs5000019_sas": {
     "rsid": "rs5000019_sas",
@@ -613,7 +689,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 29379327
   },
   "rs5000020_sas": {
     "rsid": "rs5000020_sas",
@@ -631,7 +709,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "11",
+    "position": 9049762
   },
   "rs5000021_sas": {
     "rsid": "rs5000021_sas",
@@ -649,7 +729,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "6",
+    "position": 43957093,
+    "ref": "G",
+    "alt": "T"
   },
   "rs5000022_sas": {
     "rsid": "rs5000022_sas",
@@ -667,7 +751,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 120440135,
+    "ref": "C",
+    "alt": "G"
   },
   "rs5000023_sas": {
     "rsid": "rs5000023_sas",
@@ -685,7 +773,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 91158037,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000024_sas": {
     "rsid": "rs5000024_sas",
@@ -703,7 +795,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 92212358,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000025_sas": {
     "rsid": "rs5000025_sas",
@@ -721,7 +817,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 93266679,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000026_sas": {
     "rsid": "rs5000026_sas",
@@ -739,7 +839,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "11",
+    "position": 94321000,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000027_sas": {
     "rsid": "rs5000027_sas",
@@ -757,7 +861,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 95375321,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000028_sas": {
     "rsid": "rs5000028_sas",
@@ -775,7 +883,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "13",
+    "position": 96429642,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000029_sas": {
     "rsid": "rs5000029_sas",
@@ -793,7 +905,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "14",
+    "position": 97483963,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000030_sas": {
     "rsid": "rs5000030_sas",
@@ -811,7 +927,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "6",
+    "position": 89049395,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000031_sas": {
     "rsid": "rs5000031_sas",
@@ -829,7 +949,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 90103716,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000032_sas": {
     "rsid": "rs5000032_sas",
@@ -847,7 +971,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 91158037,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000033_sas": {
     "rsid": "rs5000033_sas",
@@ -865,7 +993,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "HG1257_PATCH",
+    "position": 75009348
   },
   "rs5000034_sas": {
     "rsid": "rs5000034_sas",
@@ -883,7 +1013,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358775,
+    "ref": "G",
+    "alt": "A"
   },
   "rs5000035_sas": {
     "rsid": "rs5000035_sas",
@@ -901,7 +1035,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358886
   },
   "rs5000036_sas": {
     "rsid": "rs5000036_sas",
@@ -919,7 +1055,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358890
   },
   "rs5000037_sas": {
     "rsid": "rs5000037_sas",
@@ -937,7 +1075,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358902
   },
   "rs5000038_sas": {
     "rsid": "rs5000038_sas",
@@ -955,7 +1095,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358933
   },
   "rs5000039_sas": {
     "rsid": "rs5000039_sas",
@@ -973,7 +1115,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "15",
+    "position": 98538284,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000040_sas": {
     "rsid": "rs5000040_sas",
@@ -991,7 +1137,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 133664237
   },
   "rs5000041_sas": {
     "rsid": "rs5000041_sas",
@@ -1009,7 +1157,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "14",
+    "position": 104564440
   },
   "rs5000042_sas": {
     "rsid": "rs5000042_sas",
@@ -1027,7 +1177,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "14",
+    "position": 104564438
   },
   "rs5000043_sas": {
     "rsid": "rs5000043_sas",
@@ -1045,7 +1197,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "1",
+    "position": 1664865,
+    "ref": "A",
+    "alt": "C"
   },
   "rs5000044_sas": {
     "rsid": "rs5000044_sas",
@@ -1063,7 +1219,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 94684763
   },
   "rs5000045_sas": {
     "rsid": "rs5000045_sas",
@@ -1081,7 +1239,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 94684762
   },
   "rs5000046_sas": {
     "rsid": "rs5000046_sas",
@@ -1099,7 +1259,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 94684747
   },
   "rs5000047_sas": {
     "rsid": "rs5000047_sas",
@@ -1117,7 +1279,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 91922418,
+    "ref": "A",
+    "alt": "C"
   },
   "rs5000048_sas": {
     "rsid": "rs5000048_sas",
@@ -1135,7 +1301,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 124529174
   },
   "rs5000049_sas": {
     "rsid": "rs5000049_sas",
@@ -1153,7 +1321,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "13",
+    "position": 19803581
   },
   "rs5000050_sas": {
     "rsid": "rs5000050_sas",
@@ -1171,7 +1341,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "4",
+    "position": 69509342,
+    "ref": "T",
+    "alt": "A"
   },
   "rs5000051_sas": {
     "rsid": "rs5000051_sas",
@@ -1189,7 +1363,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "4",
+    "position": 69509309,
+    "ref": "T",
+    "alt": "C"
   },
   "rs5000052_sas": {
     "rsid": "rs5000052_sas",
@@ -1207,7 +1385,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "4",
+    "position": 69509275,
+    "ref": "G",
+    "alt": "A"
   },
   "rs5000053_sas": {
     "rsid": "rs5000053_sas",
@@ -1225,7 +1407,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 63776180,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000054_sas": {
     "rsid": "rs5000054_sas",
@@ -1243,7 +1429,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "X",
+    "position": 129581563
   },
   "rs5000055_sas": {
     "rsid": "rs5000055_sas",
@@ -1261,7 +1449,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "X",
+    "position": 129581633
   },
   "rs5000056_sas": {
     "rsid": "rs5000056_sas",
@@ -1279,7 +1469,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 35175314
   },
   "rs5000057_sas": {
     "rsid": "rs5000057_sas",
@@ -1297,7 +1489,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 660898
   },
   "rs5000058_sas": {
     "rsid": "rs5000058_sas",
@@ -1315,7 +1509,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "15",
+    "position": 86543262,
+    "ref": "A",
+    "alt": "C"
   },
   "rs5000059_sas": {
     "rsid": "rs5000059_sas",
@@ -1333,7 +1531,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 54442335,
+    "ref": "T",
+    "alt": "C"
   },
   "rs5000060_sas": {
     "rsid": "rs5000060_sas",
@@ -1351,7 +1553,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 54442337,
+    "ref": "G",
+    "alt": "A"
   },
   "rs5000061_sas": {
     "rsid": "rs5000061_sas",
@@ -1369,7 +1575,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 130656221,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000062_sas": {
     "rsid": "rs5000062_sas",
@@ -1387,7 +1597,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 117747100
   },
   "rs5000063_sas": {
     "rsid": "rs5000063_sas",
@@ -1405,7 +1617,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 95375321,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000064_sas": {
     "rsid": "rs5000064_sas",
@@ -1423,7 +1639,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "22",
+    "position": 32301767,
+    "ref": "C",
+    "alt": "A"
   },
   "rs5000065_sas": {
     "rsid": "rs5000065_sas",
@@ -1441,7 +1661,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "22",
+    "position": 32301854,
+    "ref": "A",
+    "alt": "C"
   },
   "rs5000066_sas": {
     "rsid": "rs5000066_sas",
@@ -1459,7 +1683,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "15",
+    "position": 98538284,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000067_sas": {
     "rsid": "rs5000067_sas",
@@ -1477,7 +1705,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 99592605,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000068_sas": {
     "rsid": "rs5000068_sas",
@@ -1495,7 +1727,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "17",
+    "position": 100646926,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000069_sas": {
     "rsid": "rs5000069_sas",
@@ -1513,7 +1749,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 101701247,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000070_sas": {
     "rsid": "rs5000070_sas",
@@ -1531,7 +1771,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 93266679,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000071_sas": {
     "rsid": "rs5000071_sas",
@@ -1549,7 +1793,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "1",
+    "position": 51996487,
+    "ref": "G",
+    "alt": "A"
   },
   "rs5000072_sas": {
     "rsid": "rs5000072_sas",
@@ -1567,7 +1815,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 95375321,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000073_sas": {
     "rsid": "rs5000073_sas",
@@ -1585,7 +1837,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 131267030
   },
   "rs5000074_sas": {
     "rsid": "rs5000074_sas",
@@ -1603,7 +1857,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 131267026
   },
   "rs5000075_sas": {
     "rsid": "rs5000075_sas",
@@ -1621,7 +1877,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 131266970
   },
   "rs5000076_sas": {
     "rsid": "rs5000076_sas",
@@ -1639,7 +1897,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 131266942
   },
   "rs5000077_sas": {
     "rsid": "rs5000077_sas",
@@ -1657,7 +1917,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "1",
+    "position": 14440000,
+    "ref": "C",
+    "alt": "T"
   },
   "rs5000078_sas": {
     "rsid": "rs5000078_sas",
@@ -1675,7 +1939,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 101701247,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000079_sas": {
     "rsid": "rs5000079_sas",
@@ -1693,7 +1961,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 102755568,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000080_sas": {
     "rsid": "rs5000080_sas",
@@ -1711,7 +1983,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "1",
+    "position": 160345281
   },
   "rs5000081_sas": {
     "rsid": "rs5000081_sas",
@@ -1729,7 +2003,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 95375321,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000082_sas": {
     "rsid": "rs5000082_sas",
@@ -1747,7 +2025,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "13",
+    "position": 96429642,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000083_sas": {
     "rsid": "rs5000083_sas",
@@ -1765,7 +2047,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "14",
+    "position": 97483963,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000084_sas": {
     "rsid": "rs5000084_sas",
@@ -1783,7 +2069,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "15",
+    "position": 98538284,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000085_sas": {
     "rsid": "rs5000085_sas",
@@ -1801,7 +2091,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 172420261
   },
   "rs5000086_sas": {
     "rsid": "rs5000086_sas",
@@ -1819,7 +2111,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "17",
+    "position": 100646926,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000087_sas": {
     "rsid": "rs5000087_sas",
@@ -1837,7 +2133,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 101701247,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000088_sas": {
     "rsid": "rs5000088_sas",
@@ -1855,7 +2155,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 102755568,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000089_sas": {
     "rsid": "rs5000089_sas",
@@ -1873,7 +2177,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "11",
+    "position": 23961921,
+    "ref": "A",
+    "alt": "C"
   },
   "rs5000090_sas": {
     "rsid": "rs5000090_sas",
@@ -1891,7 +2199,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 139971748,
+    "ref": "C",
+    "alt": "T"
   },
   "rs5000091_sas": {
     "rsid": "rs5000091_sas",
@@ -1909,7 +2221,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "13",
+    "position": 38495250
   },
   "rs5000092_sas": {
     "rsid": "rs5000092_sas",
@@ -1927,7 +2241,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 122566291,
+    "ref": "C",
+    "alt": "G"
   },
   "rs5000093_sas": {
     "rsid": "rs5000093_sas",
@@ -1945,7 +2263,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 122566335,
+    "ref": "T",
+    "alt": "A"
   },
   "rs5000094_sas": {
     "rsid": "rs5000094_sas",
@@ -1963,7 +2285,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 122566461,
+    "ref": "G",
+    "alt": "A"
   },
   "rs5000095_sas": {
     "rsid": "rs5000095_sas",
@@ -1981,7 +2307,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 122566487,
+    "ref": "T",
+    "alt": "A"
   },
   "rs5000096_sas": {
     "rsid": "rs5000096_sas",
@@ -1999,7 +2329,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 34321388
   },
   "rs5000097_sas": {
     "rsid": "rs5000097_sas",
@@ -2017,7 +2349,11 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 102755568,
+    "ref": "A",
+    "alt": "G"
   },
   "rs5000098_sas": {
     "rsid": "rs5000098_sas",
@@ -2035,7 +2371,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "6",
+    "position": 33519231
   },
   "rs5000099_sas": {
     "rsid": "rs5000099_sas",
@@ -2053,6 +2391,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 65242699
   }
 }

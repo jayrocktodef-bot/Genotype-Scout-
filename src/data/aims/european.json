@@ -1,6 +1,8 @@
 {
   "rs1426654": {
     "rsid": "rs1426654",
+    "chromosome": "15",
+    "position": 48426484,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -25,6 +27,8 @@
   },
   "rs16891982": {
     "rsid": "rs16891982",
+    "chromosome": "5",
+    "position": 33951693,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -49,6 +53,8 @@
   },
   "rs1805007": {
     "rsid": "rs1805007",
+    "chromosome": "16",
+    "position": 89986117,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -66,6 +72,8 @@
   },
   "rs1805008": {
     "rsid": "rs1805008",
+    "chromosome": "16",
+    "position": 89986154,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -83,6 +91,8 @@
   },
   "rs12203592": {
     "rsid": "rs12203592",
+    "chromosome": "6",
+    "position": 396321,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -104,6 +114,8 @@
   },
   "rs2228479": {
     "rsid": "rs2228479",
+    "chromosome": "16",
+    "position": 89985940,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -126,6 +138,8 @@
   },
   "rs11547464": {
     "rsid": "rs11547464",
+    "chromosome": "16",
+    "position": 89986091,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -143,6 +157,8 @@
   },
   "rs1126809": {
     "rsid": "rs1126809",
+    "chromosome": "11",
+    "position": 89017961,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -165,6 +181,8 @@
   },
   "rs10456269": {
     "rsid": "rs10456269",
+    "chromosome": "6",
+    "position": 23098186,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -187,6 +205,8 @@
   },
   "rs11103331": {
     "rsid": "rs11103331",
+    "chromosome": "9",
+    "position": 138992901,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -209,6 +229,8 @@
   },
   "rs11103340": {
     "rsid": "rs11103340",
+    "chromosome": "9",
+    "position": 139016504,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -231,6 +253,8 @@
   },
   "rs11103341": {
     "rsid": "rs11103341",
+    "chromosome": "9",
+    "position": 139021480,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -253,6 +277,8 @@
   },
   "rs11103339": {
     "rsid": "rs11103339",
+    "chromosome": "9",
+    "position": 139007684,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -275,6 +301,8 @@
   },
   "rs11103342": {
     "rsid": "rs11103342",
+    "chromosome": "9",
+    "position": 139021644,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -297,6 +325,8 @@
   },
   "rs11103343": {
     "rsid": "rs11103343",
+    "chromosome": "9",
+    "position": 139023017,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -319,6 +349,8 @@
   },
   "rs11103344": {
     "rsid": "rs11103344",
+    "chromosome": "9",
+    "position": 139023138,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -341,6 +373,8 @@
   },
   "rs11103353": {
     "rsid": "rs11103353",
+    "chromosome": "9",
+    "position": 139038107,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -363,6 +397,8 @@
   },
   "rs11103354": {
     "rsid": "rs11103354",
+    "chromosome": "9",
+    "position": 139041820,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -385,6 +421,8 @@
   },
   "rs11103355": {
     "rsid": "rs11103355",
+    "chromosome": "9",
+    "position": 139043669,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -407,6 +445,8 @@
   },
   "rs11103356": {
     "rsid": "rs11103356",
+    "chromosome": "9",
+    "position": 139048479,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -429,6 +469,8 @@
   },
   "rs11103357": {
     "rsid": "rs11103357",
+    "chromosome": "9",
+    "position": 139052549,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -451,6 +493,8 @@
   },
   "rs11103358": {
     "rsid": "rs11103358",
+    "chromosome": "9",
+    "position": 139053278,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -473,6 +517,8 @@
   },
   "rs11103359": {
     "rsid": "rs11103359",
+    "chromosome": "9",
+    "position": 139053930,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -495,6 +541,8 @@
   },
   "rs11103367": {
     "rsid": "rs11103367",
+    "chromosome": "9",
+    "position": 139071555,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -517,6 +565,8 @@
   },
   "rs11103368": {
     "rsid": "rs11103368",
+    "chromosome": "9",
+    "position": 139071689,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -539,6 +589,8 @@
   },
   "rs11103369": {
     "rsid": "rs11103369",
+    "chromosome": "9",
+    "position": 139078849,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -561,6 +613,8 @@
   },
   "rs11103370": {
     "rsid": "rs11103370",
+    "chromosome": "9",
+    "position": 139078853,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -583,6 +637,8 @@
   },
   "rs11103371": {
     "rsid": "rs11103371",
+    "chromosome": "9",
+    "position": 137464244,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -605,6 +661,8 @@
   },
   "rs11103372": {
     "rsid": "rs11103372",
+    "chromosome": "9",
+    "position": 139083019,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -627,6 +685,8 @@
   },
   "rs11103373": {
     "rsid": "rs11103373",
+    "chromosome": "9",
+    "position": 139085865,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -649,6 +709,8 @@
   },
   "rs12916300": {
     "rsid": "rs12916300",
+    "chromosome": "15",
+    "position": 28410491,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -671,6 +733,8 @@
   },
   "rs2470102": {
     "rsid": "rs2470102",
+    "chromosome": "15",
+    "position": 48433494,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -688,6 +752,8 @@
   },
   "rs909525": {
     "rsid": "rs909525",
+    "chromosome": "X",
+    "position": 43553202,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -705,6 +771,8 @@
   },
   "rs2303627": {
     "rsid": "rs2303627",
+    "chromosome": "12",
+    "position": 102110613,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -722,6 +790,8 @@
   },
   "rs10456193": {
     "rsid": "rs10456193",
+    "chromosome": "6",
+    "position": 14010156,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -744,6 +814,8 @@
   },
   "rs10456192": {
     "rsid": "rs10456192",
+    "chromosome": "6",
+    "position": 56928274,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -766,6 +838,8 @@
   },
   "rs12896399": {
     "rsid": "rs12896399",
+    "chromosome": "14",
+    "position": 92773663,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -788,6 +862,8 @@
   },
   "rs12124819": {
     "rsid": "rs12124819",
+    "chromosome": "1",
+    "position": 776546,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -810,6 +886,8 @@
   },
   "rs2395129": {
     "rsid": "rs2395129",
+    "chromosome": "10",
+    "position": 76812741,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -832,6 +910,8 @@
   },
   "rs6059655": {
     "rsid": "rs6059655",
+    "chromosome": "20",
+    "position": 32665748,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -849,6 +929,8 @@
   },
   "rs112735431": {
     "rsid": "rs112735431",
+    "chromosome": "17",
+    "position": 78358945,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -866,6 +948,8 @@
   },
   "rs647325": {
     "rsid": "rs647325",
+    "chromosome": "1",
+    "position": 18170886,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -889,6 +973,8 @@
   },
   "rs192655": {
     "rsid": "rs192655",
+    "chromosome": "6",
+    "position": 90518278,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -912,6 +998,8 @@
   },
   "rs385194": {
     "rsid": "rs385194",
+    "chromosome": "4",
+    "position": 85309078,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -935,6 +1023,8 @@
   },
   "rs1503767": {
     "rsid": "rs1503767",
+    "chromosome": "12",
+    "position": 118889488,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -958,6 +1048,8 @@
   },
   "rs1408801": {
     "rsid": "rs1408801",
+    "chromosome": "9",
+    "position": 12672320,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -981,6 +1073,8 @@
   },
   "rs7803075": {
     "rsid": "rs7803075",
+    "chromosome": "7",
+    "position": 130742066,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1004,6 +1098,8 @@
   },
   "rs705308": {
     "rsid": "rs705308",
+    "chromosome": "7",
+    "position": 97695363,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1027,6 +1123,8 @@
   },
   "rs6464211": {
     "rsid": "rs6464211",
+    "chromosome": "7",
+    "position": 151873853,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1050,6 +1148,8 @@
   },
   "rs1950993": {
     "rsid": "rs1950993",
+    "chromosome": "14",
+    "position": 58238687,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1073,6 +1173,8 @@
   },
   "rs881728": {
     "rsid": "rs881728",
+    "chromosome": "18",
+    "position": 59333108,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1096,6 +1198,8 @@
   },
   "rs1500127": {
     "rsid": "rs1500127",
+    "chromosome": "5",
+    "position": 165739982,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1119,6 +1223,8 @@
   },
   "rs1760921": {
     "rsid": "rs1760921",
+    "chromosome": "14",
+    "position": 20818131,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1142,6 +1248,8 @@
   },
   "rs10510228": {
     "rsid": "rs10510228",
+    "chromosome": "3",
+    "position": 2208832,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1165,6 +1273,8 @@
   },
   "rs874299": {
     "rsid": "rs874299",
+    "chromosome": "18",
+    "position": 75056284,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1188,6 +1298,8 @@
   },
   "rs4781011": {
     "rsid": "rs4781011",
+    "chromosome": "16",
+    "position": 10975311,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1211,6 +1323,8 @@
   },
   "rs3943253": {
     "rsid": "rs3943253",
+    "chromosome": "8",
+    "position": 13359500,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1234,6 +1348,8 @@
   },
   "rs2899826": {
     "rsid": "rs2899826",
+    "chromosome": "15",
+    "position": 74734500,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1257,6 +1373,8 @@
   },
   "rs2357442": {
     "rsid": "rs2357442",
+    "chromosome": "14",
+    "position": 52607967,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1280,6 +1398,8 @@
   },
   "rs3745099": {
     "rsid": "rs3745099",
+    "chromosome": "19",
+    "position": 52901905,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1303,6 +1423,8 @@
   },
   "rs4984913": {
     "rsid": "rs4984913",
+    "chromosome": "16",
+    "position": 740466,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1326,6 +1448,8 @@
   },
   "rs4800105": {
     "rsid": "rs4800105",
+    "chromosome": "18",
+    "position": 19651982,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1349,6 +1473,8 @@
   },
   "rs9522149": {
     "rsid": "rs9522149",
+    "chromosome": "13",
+    "position": 111827167,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1372,6 +1498,8 @@
   },
   "rs6556352": {
     "rsid": "rs6556352",
+    "chromosome": "5",
+    "position": 155471714,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1395,6 +1523,8 @@
   },
   "rs11246020": {
     "rsid": "rs11246020",
+    "chromosome": "11",
+    "position": 233067,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1412,6 +1542,8 @@
   },
   "rs12891399": {
     "rsid": "rs12891399",
+    "chromosome": "14",
+    "position": 104293533,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1429,6 +1561,8 @@
   },
   "rs2032628": {
     "rsid": "rs2032628",
+    "chromosome": "Y",
+    "position": 21878809,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1446,6 +1580,8 @@
   },
   "rs9786132": {
     "rsid": "rs9786132",
+    "chromosome": "Y",
+    "position": 6022977,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1463,6 +1599,8 @@
   },
   "rs10456310": {
     "rsid": "rs10456310",
+    "chromosome": "6",
+    "position": 24624454,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1485,6 +1623,8 @@
   },
   "rs10456311": {
     "rsid": "rs10456311",
+    "chromosome": "6",
+    "position": 24624456,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1507,6 +1647,8 @@
   },
   "rs17135023": {
     "rsid": "rs17135023",
+    "chromosome": "10",
+    "position": 3333553,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1529,6 +1671,8 @@
   },
   "rs6510765": {
     "rsid": "rs6510765",
+    "chromosome": "19",
+    "position": 3618579,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1551,6 +1695,8 @@
   },
   "rs1042525": {
     "rsid": "rs1042525",
+    "chromosome": "5",
+    "position": 256619,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1573,6 +1719,8 @@
   },
   "rs1114097": {
     "rsid": "rs1114097",
+    "chromosome": "HG1257_PATCH",
+    "position": 73347103,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1595,6 +1743,8 @@
   },
   "rs1805011": {
     "rsid": "rs1805011",
+    "chromosome": "16",
+    "position": 27373872,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1617,6 +1767,8 @@
   },
   "rs13182881": {
     "rsid": "rs13182881",
+    "chromosome": "5",
+    "position": 122450451,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1639,6 +1791,8 @@
   },
   "rs7948627": {
     "rsid": "rs7948627",
+    "chromosome": "11",
+    "position": 26491262,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1661,6 +1815,8 @@
   },
   "rs10456314": {
     "rsid": "rs10456314",
+    "chromosome": "6",
+    "position": 24676176,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1683,6 +1839,8 @@
   },
   "rs10456312": {
     "rsid": "rs10456312",
+    "chromosome": "6",
+    "position": 24631442,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1705,6 +1863,8 @@
   },
   "rs10456313": {
     "rsid": "rs10456313",
+    "chromosome": "6",
+    "position": 24642886,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1727,6 +1887,8 @@
   },
   "rs2675349": {
     "rsid": "rs2675349",
+    "chromosome": "15",
+    "position": 48445387,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1749,6 +1911,8 @@
   },
   "rs1426658": {
     "rsid": "rs1426658",
+    "chromosome": "15",
+    "position": 44338919,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1771,6 +1935,8 @@
   },
   "rs1343759": {
     "rsid": "rs1343759",
+    "chromosome": "3",
+    "position": 103400634,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1793,6 +1959,8 @@
   },
   "rs12913836": {
     "rsid": "rs12913836",
+    "chromosome": "15",
+    "position": 60561321,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1815,6 +1983,8 @@
   },
   "rs12727651": {
     "rsid": "rs12727651",
+    "chromosome": "1",
+    "position": 233050122,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1837,6 +2007,8 @@
   },
   "rs56203819": {
     "rsid": "rs56203819",
+    "chromosome": "X",
+    "position": 86918023,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1859,6 +2031,8 @@
   },
   "rs1446588": {
     "rsid": "rs1446588",
+    "chromosome": "2",
+    "position": 210256170,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1881,6 +2055,8 @@
   },
   "rs13116550": {
     "rsid": "rs13116550",
+    "chromosome": "4",
+    "position": 1673860,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1903,6 +2079,8 @@
   },
   "rs11230668": {
     "rsid": "rs11230668",
+    "chromosome": "11",
+    "position": 55452834,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1925,6 +2103,8 @@
   },
   "rs12727652": {
     "rsid": "rs12727652",
+    "chromosome": "1",
+    "position": 106414272,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1947,6 +2127,8 @@
   },
   "rs13182882": {
     "rsid": "rs13182882",
+    "chromosome": "5",
+    "position": 134568444,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1969,6 +2151,8 @@
   },
   "rs13116551": {
     "rsid": "rs13116551",
+    "chromosome": "4",
+    "position": 149258890,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -1991,6 +2175,8 @@
   },
   "rs1343760": {
     "rsid": "rs1343760",
+    "chromosome": "21",
+    "position": 20221195,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2013,6 +2199,8 @@
   },
   "rs11547467": {
     "rsid": "rs11547467",
+    "chromosome": "12",
+    "position": 18891485,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2035,6 +2223,8 @@
   },
   "rs11580127": {
     "rsid": "rs11580127",
+    "chromosome": "1",
+    "position": 241889361,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2057,6 +2247,8 @@
   },
   "rs10424069": {
     "rsid": "rs10424069",
+    "chromosome": "19",
+    "position": 48803532,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2079,6 +2271,8 @@
   },
   "rs10456270": {
     "rsid": "rs10456270",
+    "chromosome": "6",
+    "position": 23105455,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2101,6 +2295,8 @@
   },
   "rs4871197": {
     "rsid": "rs4871197",
+    "chromosome": "8",
+    "position": 122501540,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2123,6 +2319,8 @@
   },
   "rs13115484": {
     "rsid": "rs13115484",
+    "chromosome": "4",
+    "position": 130997940,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2145,6 +2343,8 @@
   },
   "rs7690467": {
     "rsid": "rs7690467",
+    "chromosome": "4",
+    "position": 133326395,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2167,6 +2367,8 @@
   },
   "rs1712435": {
     "rsid": "rs1712435",
+    "chromosome": "15",
+    "position": 42336018,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2189,6 +2391,8 @@
   },
   "rs9955196": {
     "rsid": "rs9955196",
+    "chromosome": "18",
+    "position": 75344197,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2211,6 +2415,8 @@
   },
   "rs4988233": {
     "rsid": "rs4988233",
+    "chromosome": "2",
+    "position": 136608747,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2233,6 +2439,8 @@
   },
   "rs333": {
     "rsid": "rs333",
+    "chromosome": "3",
+    "position": 46414944,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2255,6 +2463,8 @@
   },
   "rs121908120": {
     "rsid": "rs121908120",
+    "chromosome": "2",
+    "position": 219755011,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2277,6 +2487,8 @@
   },
   "rs80356776": {
     "rsid": "rs80356776",
+    "chromosome": "11",
+    "position": 68560809,
     "region": "European",
     "color": "#95A5A6",
     "alleles": [
@@ -2320,7 +2532,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "IRF4 variant - highly informative for European populations, associated with skin and hair pigmentation."
+    "description": "IRF4 variant - highly informative for European populations, associated with skin and hair pigmentation.",
+    "chromosome": "6",
+    "position": 396321,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs16891982_eur": {
     "rsid": "rs16891982_eur",
@@ -2345,7 +2561,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "SLC45A2 variant - diagnostic for European ancestry, specifically Northern and Western branches."
+    "description": "SLC45A2 variant - diagnostic for European ancestry, specifically Northern and Western branches.",
+    "chromosome": "5",
+    "position": 33951693,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12913832_eur": {
     "rsid": "rs12913832_eur",
@@ -2363,7 +2583,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "15",
+    "position": 28120472,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10766197_eur": {
     "rsid": "rs10766197_eur",
@@ -2383,7 +2609,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "HG873_PATCH",
+    "position": 14921880,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10809833_eur": {
     "rsid": "rs10809833_eur",
@@ -2403,7 +2633,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "9",
+    "position": 1283014,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10928570_eur": {
     "rsid": "rs10928570_eur",
@@ -2423,7 +2657,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "2",
+    "position": 137459812,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11136000_eur": {
     "rsid": "rs11136000_eur",
@@ -2443,7 +2681,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "8",
+    "position": 27464519,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11211845_eur": {
     "rsid": "rs11211845_eur",
@@ -2463,7 +2705,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 97464169,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11269293_eur": {
     "rsid": "rs11269293_eur",
@@ -2483,7 +2729,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "18",
+    "position": 171286433,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11640220_eur": {
     "rsid": "rs11640220_eur",
@@ -2503,7 +2755,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "16",
+    "position": 24403075,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1168127_eur": {
     "rsid": "rs1168127_eur",
@@ -2523,7 +2779,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 63136078,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1171097_eur": {
     "rsid": "rs1171097_eur",
@@ -2543,7 +2803,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "19",
+    "position": 48533727,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1173684_eur": {
     "rsid": "rs1173684_eur",
@@ -2563,7 +2827,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 35544877,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175114_eur": {
     "rsid": "rs1175114_eur",
@@ -2583,7 +2853,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 192205477,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175151_eur": {
     "rsid": "rs1175151_eur",
@@ -2603,7 +2877,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 192214321,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175205_eur": {
     "rsid": "rs1175205_eur",
@@ -2623,7 +2901,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "13",
+    "position": 44895006,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175259_eur": {
     "rsid": "rs1175259_eur",
@@ -2643,7 +2925,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "2",
+    "position": 110004701,
+    "ref": "T",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175313_eur": {
     "rsid": "rs1175313_eur",
@@ -2663,7 +2951,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 52718965,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175367_eur": {
     "rsid": "rs1175367_eur",
@@ -2683,7 +2977,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 5909417,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175421_eur": {
     "rsid": "rs1175421_eur",
@@ -2703,7 +3001,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "4",
+    "position": 76855202,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175475_eur": {
     "rsid": "rs1175475_eur",
@@ -2723,7 +3027,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "12",
+    "position": 77068791,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175529_eur": {
     "rsid": "rs1175529_eur",
@@ -2743,7 +3053,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 6032679,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175583_eur": {
     "rsid": "rs1175583_eur",
@@ -2763,7 +3079,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 111137443,
+    "ref": "T",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175637_eur": {
     "rsid": "rs1175637_eur",
@@ -2783,7 +3105,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 113003365,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175691_eur": {
     "rsid": "rs1175691_eur",
@@ -2803,7 +3129,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "13",
+    "position": 26866550,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175745_eur": {
     "rsid": "rs1175745_eur",
@@ -2823,7 +3153,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "18",
+    "position": 24587049,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175799_eur": {
     "rsid": "rs1175799_eur",
@@ -2843,7 +3177,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "19",
+    "position": 49695824,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175853_eur": {
     "rsid": "rs1175853_eur",
@@ -2863,7 +3201,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "2",
+    "position": 4221943,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175907_eur": {
     "rsid": "rs1175907_eur",
@@ -2883,7 +3225,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "13",
+    "position": 39953308,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1175961_eur": {
     "rsid": "rs1175961_eur",
@@ -2903,7 +3249,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 169731584,
+    "ref": "C",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176015_eur": {
     "rsid": "rs1176015_eur",
@@ -2923,7 +3275,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 247840523,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176069_eur": {
     "rsid": "rs1176069_eur",
@@ -2943,7 +3299,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 247849711,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176123_eur": {
     "rsid": "rs1176123_eur",
@@ -2963,7 +3323,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 6099528,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176177_eur": {
     "rsid": "rs1176177_eur",
@@ -2983,7 +3349,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "9",
+    "position": 103063584,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176231_eur": {
     "rsid": "rs1176231_eur",
@@ -3003,7 +3375,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 63261938,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176285_eur": {
     "rsid": "rs1176285_eur",
@@ -3023,7 +3401,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "13",
+    "position": 81244442,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176339_eur": {
     "rsid": "rs1176339_eur",
@@ -3043,7 +3425,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 63193517,
+    "ref": "G",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176393_eur": {
     "rsid": "rs1176393_eur",
@@ -3063,7 +3451,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176447_eur": {
     "rsid": "rs1176447_eur",
@@ -3083,7 +3477,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "10",
+    "position": 132439167,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176501_eur": {
     "rsid": "rs1176501_eur",
@@ -3103,7 +3501,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "10",
+    "position": 132449907,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176555_eur": {
     "rsid": "rs1176555_eur",
@@ -3123,7 +3525,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 157136541,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176609_eur": {
     "rsid": "rs1176609_eur",
@@ -3143,7 +3549,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "2",
+    "position": 195765045,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176663_eur": {
     "rsid": "rs1176663_eur",
@@ -3163,7 +3575,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 59252166,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176717_eur": {
     "rsid": "rs1176717_eur",
@@ -3183,7 +3601,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 113855342,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176771_eur": {
     "rsid": "rs1176771_eur",
@@ -3203,7 +3625,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "19",
+    "position": 39349909,
+    "ref": "G",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176825_eur": {
     "rsid": "rs1176825_eur",
@@ -3223,7 +3651,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "9",
+    "position": 77548082,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176879_eur": {
     "rsid": "rs1176879_eur",
@@ -3243,7 +3675,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "14",
+    "position": 41293626,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176933_eur": {
     "rsid": "rs1176933_eur",
@@ -3263,7 +3699,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 73988050,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1176987_eur": {
     "rsid": "rs1176987_eur",
@@ -3283,7 +3725,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "14",
+    "position": 41447466,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177041_eur": {
     "rsid": "rs1177041_eur",
@@ -3303,7 +3749,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 33352373,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177095_eur": {
     "rsid": "rs1177095_eur",
@@ -3323,7 +3775,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177149_eur": {
     "rsid": "rs1177149_eur",
@@ -3343,7 +3801,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "20",
+    "position": 60550452,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177203_eur": {
     "rsid": "rs1177203_eur",
@@ -3363,7 +3827,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "2",
+    "position": 61074686,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177257_eur": {
     "rsid": "rs1177257_eur",
@@ -3383,7 +3851,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "14",
+    "position": 35936786,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177311_eur": {
     "rsid": "rs1177311_eur",
@@ -3403,7 +3875,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 33556235,
+    "ref": "T",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177365_eur": {
     "rsid": "rs1177365_eur",
@@ -3423,7 +3901,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177419_eur": {
     "rsid": "rs1177419_eur",
@@ -3443,7 +3927,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177473_eur": {
     "rsid": "rs1177473_eur",
@@ -3463,7 +3953,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177527_eur": {
     "rsid": "rs1177527_eur",
@@ -3483,7 +3979,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177581_eur": {
     "rsid": "rs1177581_eur",
@@ -3503,7 +4005,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177635_eur": {
     "rsid": "rs1177635_eur",
@@ -3523,7 +4031,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "10",
+    "position": 134538259,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177689_eur": {
     "rsid": "rs1177689_eur",
@@ -3543,7 +4055,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "6",
+    "position": 21035908,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177743_eur": {
     "rsid": "rs1177743_eur",
@@ -3563,7 +4081,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177797_eur": {
     "rsid": "rs1177797_eur",
@@ -3583,7 +4107,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "1",
+    "position": 192203048,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177851_eur": {
     "rsid": "rs1177851_eur",
@@ -3603,7 +4131,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 6681975,
+    "ref": "T",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177905_eur": {
     "rsid": "rs1177905_eur",
@@ -3623,7 +4157,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 61193461,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1177959_eur": {
     "rsid": "rs1177959_eur",
@@ -3643,7 +4183,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "17",
+    "position": 70494389,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178013_eur": {
     "rsid": "rs1178013_eur",
@@ -3663,7 +4207,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "6",
+    "position": 50951698,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178067_eur": {
     "rsid": "rs1178067_eur",
@@ -3683,7 +4233,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 134999693,
+    "ref": "G",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178121_eur": {
     "rsid": "rs1178121_eur",
@@ -3703,7 +4259,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "7",
+    "position": 18762652,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178175_eur": {
     "rsid": "rs1178175_eur",
@@ -3723,7 +4283,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "7",
+    "position": 18797629,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178229_eur": {
     "rsid": "rs1178229_eur",
@@ -3743,7 +4307,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178283_eur": {
     "rsid": "rs1178283_eur",
@@ -3763,7 +4333,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "2",
+    "position": 180043808,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178337_eur": {
     "rsid": "rs1178337_eur",
@@ -3783,7 +4359,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "7",
+    "position": 18222859,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178391_eur": {
     "rsid": "rs1178391_eur",
@@ -3803,7 +4383,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178445_eur": {
     "rsid": "rs1178445_eur",
@@ -3823,7 +4409,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "5",
+    "position": 103076511,
+    "ref": "T",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178499_eur": {
     "rsid": "rs1178499_eur",
@@ -3843,7 +4435,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "20",
+    "position": 127004951,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178553_eur": {
     "rsid": "rs1178553_eur",
@@ -3863,7 +4461,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "16",
+    "position": 14334508,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178607_eur": {
     "rsid": "rs1178607_eur",
@@ -3883,7 +4487,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "11",
+    "position": 117516062,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178661_eur": {
     "rsid": "rs1178661_eur",
@@ -3903,7 +4513,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "17",
+    "position": 3347560,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178715_eur": {
     "rsid": "rs1178715_eur",
@@ -3923,7 +4539,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "3",
+    "position": 9607840,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1178769_eur": {
     "rsid": "rs1178769_eur",
@@ -3943,7 +4563,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - European informative."
+    "description": "UT-AIM250 Marker - European informative.",
+    "chromosome": "17",
+    "position": 3315458,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1042602_eur": {
     "rsid": "rs1042602_eur",
@@ -3961,7 +4587,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "11",
+    "position": 89178528,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1129038_eur": {
     "rsid": "rs1129038_eur",
@@ -3971,8 +4603,8 @@
       "A"
     ],
     "frequencies": {
-      "EUR": 0.75,
       "AFR": 0.1,
+      "EUR": 0.75,
       "EAS": 0.05,
       "AMR": 0.15,
       "SAS": 0.15
@@ -3985,7 +4617,12 @@
     "deepFrequencies": {},
     "weight": 8,
     "trait": "Pigmentation",
-    "description": "HERC2/OCA2 variation related to blue eye color in Western European populations."
+    "description": "HERC2/OCA2 variation related to blue eye color in Western European populations.",
+    "chromosome": "15",
+    "position": 28111713,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A"
   },
   "rs1805007_eur": {
     "rsid": "rs1805007_eur",
@@ -4003,7 +4640,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 2.5,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "16",
+    "position": 89986117,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12916300_eur": {
     "rsid": "rs12916300_eur",
@@ -4021,7 +4662,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "15",
+    "position": 28410491,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs4988235_eur": {
     "rsid": "rs4988235_eur",
@@ -4046,7 +4691,12 @@
     "deepFrequencies": {},
     "weight": 8,
     "trait": "Ancestry",
-    "description": "LCT variation marker frequently observed in Northern European population expansions."
+    "description": "LCT variation marker frequently observed in Northern European population expansions.",
+    "chromosome": "2",
+    "position": 135851076,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A"
   },
   "rs12203592_eur_2": {
     "rsid": "rs12203592_eur_2",
@@ -4064,7 +4714,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "6",
+    "position": 396321,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs2470102_eur": {
     "rsid": "rs2470102_eur",
@@ -4082,7 +4736,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "15",
+    "position": 48433494,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs909525_eur": {
     "rsid": "rs909525_eur",
@@ -4100,7 +4758,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "X",
+    "position": 43553202,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs2303627_eur": {
     "rsid": "rs2303627_eur",
@@ -4118,7 +4780,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for European populations."
+    "description": "Ancestry Informative Marker for European populations.",
+    "chromosome": "12",
+    "position": 102110613,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1126809_eur": {
     "rsid": "rs1126809_eur",
@@ -4138,7 +4804,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "TYRP1 variant - highly associated with European pigmentation traits."
+    "description": "TYRP1 variant - highly associated with European pigmentation traits.",
+    "chromosome": "11",
+    "position": 89017961,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1667394_eur": {
     "rsid": "rs1667394_eur",
@@ -4158,7 +4828,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "OCA2 variant - informative for Western Eurasian ancestry."
+    "description": "OCA2 variant - informative for Western Eurasian ancestry.",
+    "chromosome": "15",
+    "position": 28530182,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11568818_eur": {
     "rsid": "rs11568818_eur",
@@ -4178,7 +4852,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Tag SNP for CCR5-delta32 deletion - exclusively found in populations with European descent."
+    "description": "Tag SNP for CCR5-delta32 deletion - exclusively found in populations with European descent.",
+    "chromosome": "11",
+    "position": 102401661,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs4778138_eur": {
     "rsid": "rs4778138_eur",
@@ -4198,7 +4876,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "TYR variant - deeply informative for European populations."
+    "description": "TYR variant - deeply informative for European populations.",
+    "chromosome": "15",
+    "position": 28335820,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs2228479_eur": {
     "rsid": "rs2228479_eur",
@@ -4218,7 +4900,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "VDR variant - informative for European ancestry and localized vitamin D metabolism."
+    "description": "VDR variant - informative for European ancestry and localized vitamin D metabolism.",
+    "chromosome": "16",
+    "position": 89985940,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1048661_eur": {
     "rsid": "rs1048661_eur",
@@ -4238,7 +4924,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "LOXL1 variant - anchor marker for European genetic components."
+    "description": "LOXL1 variant - anchor marker for European genetic components.",
+    "chromosome": "15",
+    "position": 74219546,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10456273_eur": {
     "rsid": "rs10456273_eur",
@@ -4260,7 +4950,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "EUR/MENA Tie-Breaker - Highly specific to Northern and Central Europe, rare across the Mediterranean."
+    "description": "EUR/MENA Tie-Breaker - Highly specific to Northern and Central Europe, rare across the Mediterranean.",
+    "chromosome": "6",
+    "position": 10552574,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10456287_eur": {
     "rsid": "rs10456287_eur",
@@ -4282,7 +4976,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EUR/SAS Tie-Breaker - Anchors Western hunter-gatherer ancestry, drops sharply in South Asian populations."
+    "description": "EUR/SAS Tie-Breaker - Anchors Western hunter-gatherer ancestry, drops sharply in South Asian populations.",
+    "chromosome": "6",
+    "position": 23779519,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10456299_eur": {
     "rsid": "rs10456299_eur",
@@ -4304,7 +5002,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EUR/EAS Tie-Breaker - Anchors Western Eurasian genetics against Siberian/Turkic gene flow."
+    "description": "EUR/EAS Tie-Breaker - Anchors Western Eurasian genetics against Siberian/Turkic gene flow.",
+    "chromosome": "6",
+    "position": 24059779,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10456304_eur": {
     "rsid": "rs10456304_eur",
@@ -4326,7 +5028,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EUR/AMR Tie-Breaker - European-specific marker that frequently appears in admixed Latino populations."
+    "description": "EUR/AMR Tie-Breaker - European-specific marker that frequently appears in admixed Latino populations.",
+    "chromosome": "6",
+    "position": 24319478,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11103339_eur": {
     "rsid": "rs11103339_eur",
@@ -4351,7 +5057,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "English Ancestry Marker - informative for Anglo-Saxon and Germanic components in Britain."
+    "description": "English Ancestry Marker - informative for Anglo-Saxon and Germanic components in Britain.",
+    "chromosome": "9",
+    "position": 139007684,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11103353_eur": {
     "rsid": "rs11103353_eur",
@@ -4375,7 +5085,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "English Ancestry Marker - informative for English populations."
+    "description": "English Ancestry Marker - informative for English populations.",
+    "chromosome": "9",
+    "position": 139038107,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10456193_eur": {
     "rsid": "rs10456193_eur",
@@ -4400,7 +5114,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Irish Ancestry Marker - highly informative for Insular Celtic populations."
+    "description": "Irish Ancestry Marker - highly informative for Insular Celtic populations.",
+    "chromosome": "6",
+    "position": 14010156,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11103340_eur": {
     "rsid": "rs11103340_eur",
@@ -4424,7 +5142,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.8,
-    "description": "Irish Ancestry Marker - informative for Irish populations."
+    "description": "Irish Ancestry Marker - informative for Irish populations.",
+    "chromosome": "9",
+    "position": 139016504,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11103342_eur": {
     "rsid": "rs11103342_eur",
@@ -4448,7 +5170,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.8,
-    "description": "Scottish Ancestry Marker - informative for Scottish populations."
+    "description": "Scottish Ancestry Marker - informative for Scottish populations.",
+    "chromosome": "9",
+    "position": 139021644,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs10456192_eur": {
     "rsid": "rs10456192_eur",
@@ -4472,7 +5198,11 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Scottish Highland Ancestry Marker - diagnostic for Gaelic-speaking populations of the Highlands."
+    "description": "Scottish Highland Ancestry Marker - diagnostic for Gaelic-speaking populations of the Highlands.",
+    "chromosome": "6",
+    "position": 56928274,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11103331_eur": {
     "rsid": "rs11103331_eur",
@@ -4497,7 +5227,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Spanish Ancestry Marker - informative for Iberian populations."
+    "description": "Spanish Ancestry Marker - informative for Iberian populations.",
+    "chromosome": "9",
+    "position": 138992901,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1042602_eur_2": {
     "rsid": "rs1042602_eur_2",
@@ -4521,7 +5255,13 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "Spanish Ancestry Marker - informative for Mediterranean European populations."
+    "description": "Spanish Ancestry Marker - informative for Mediterranean European populations.",
+    "chromosome": "11",
+    "position": 89178528,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs9000282_eur": {
     "rsid": "rs9000282_eur",
@@ -4546,7 +5286,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Slavic Ancestry Marker - informative for Balto-Slavic populations."
+    "description": "Slavic Ancestry Marker - informative for Balto-Slavic populations.",
+    "chromosome": "2",
+    "position": 108027173,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1129038_eur_2": {
     "rsid": "rs1129038_eur_2",
@@ -4570,7 +5316,13 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Polish Ancestry Marker - informative for West Slavic populations."
+    "description": "Polish Ancestry Marker - informative for West Slavic populations.",
+    "chromosome": "15",
+    "position": 28111713,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1426657_eur": {
     "rsid": "rs1426657_eur",
@@ -4594,7 +5346,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Russian Ancestry Marker - informative for East Slavic populations."
+    "description": "Russian Ancestry Marker - informative for East Slavic populations.",
+    "chromosome": "15",
+    "position": 44434529,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12913832_eur_2": {
     "rsid": "rs12913832_eur_2",
@@ -4618,7 +5374,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "European Eye Color/Ancestry Marker - highly frequent in Northern European and Ashkenazi populations."
+    "description": "European Eye Color/Ancestry Marker - highly frequent in Northern European and Ashkenazi populations.",
+    "chromosome": "15",
+    "position": 28120472,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1800407_eur": {
     "rsid": "rs1800407_eur",
@@ -4641,7 +5403,13 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ashkenazi Jewish Ancestry Marker - highly informative for Jewish populations of Eastern European descent."
+    "description": "Ashkenazi Jewish Ancestry Marker - highly informative for Jewish populations of Eastern European descent.",
+    "chromosome": "15",
+    "position": 27985172,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs6730157_eur": {
     "rsid": "rs6730157_eur",
@@ -4664,7 +5432,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "European Regional Marker - informative for North-South gradient within Europe."
+    "description": "European Regional Marker - informative for North-South gradient within Europe.",
+    "chromosome": "2",
+    "position": 135907088,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs3829251_eur": {
     "rsid": "rs3829251_eur",
@@ -4687,7 +5459,11 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "European Regional Marker - useful for distinguishing Northern and Southern European ancestry."
+    "description": "European Regional Marker - useful for distinguishing Northern and Southern European ancestry.",
+    "chromosome": "11",
+    "position": 71194559,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12896399_eur": {
     "rsid": "rs12896399_eur",
@@ -4710,7 +5486,11 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "SLC24A4 Eye Color Marker - informative for European regional variation."
+    "description": "SLC24A4 Eye Color Marker - informative for European regional variation.",
+    "chromosome": "14",
+    "position": 92773663,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1393350_eur": {
     "rsid": "rs1393350_eur",
@@ -4733,7 +5513,11 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "TYRP1 Hair Color Marker - shows significant variation across European populations."
+    "description": "TYRP1 Hair Color Marker - shows significant variation across European populations.",
+    "chromosome": "11",
+    "position": 89011046,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1129038_eur_3": {
     "rsid": "rs1129038_eur_3",
@@ -4756,7 +5540,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "HERC2 Eye Color Marker - highly informative for European ancestry and pigmentation traits."
+    "description": "HERC2 Eye Color Marker - highly informative for European ancestry and pigmentation traits.",
+    "chromosome": "15",
+    "position": 28111713,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs4988235_eur_2": {
     "rsid": "rs4988235_eur_2",
@@ -4781,7 +5571,13 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Lactase Persistence Marker - highly prevalent in Northern and Central European populations (Germany/UK/Scandinavia)."
+    "description": "Lactase Persistence Marker - highly prevalent in Northern and Central European populations (Germany/UK/Scandinavia).",
+    "chromosome": "2",
+    "position": 135851076,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12124819_eur": {
     "rsid": "rs12124819_eur",
@@ -4805,7 +5601,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Basque/Iberian Ancestry Marker - informative for populations of the Iberian Peninsula and Southern France."
+    "description": "Basque/Iberian Ancestry Marker - informative for populations of the Iberian Peninsula and Southern France.",
+    "chromosome": "1",
+    "position": 776546,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs174537_eur": {
     "rsid": "rs174537_eur",
@@ -4829,7 +5629,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Sardinian/Mediterranean Ancestry Marker - informative for Southern European and Mediterranean populations."
+    "description": "Sardinian/Mediterranean Ancestry Marker - informative for Southern European and Mediterranean populations.",
+    "chromosome": "11",
+    "position": 61552680,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1126809_eur_2": {
     "rsid": "rs1126809_eur_2",
@@ -4853,7 +5657,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Central/Eastern European Ancestry Marker - informative for Ashkenazi Jewish and Central European populations."
+    "description": "Central/Eastern European Ancestry Marker - informative for Ashkenazi Jewish and Central European populations.",
+    "chromosome": "11",
+    "position": 89017961,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1229984_eur": {
     "rsid": "rs1229984_eur",
@@ -4877,7 +5685,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Finnish/Baltic Ancestry Marker - informative for Northern and Eastern European populations."
+    "description": "Finnish/Baltic Ancestry Marker - informative for Northern and Eastern European populations.",
+    "chromosome": "4",
+    "position": 100239319,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1042602_eur_3": {
     "rsid": "rs1042602_eur_3",
@@ -4901,7 +5713,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Northwestern European Ancestry Marker - informative for populations of Germany, Benelux, and the British Isles."
+    "description": "Northwestern European Ancestry Marker - informative for populations of Germany, Benelux, and the British Isles.",
+    "chromosome": "11",
+    "position": 89178528,
+    "ref": "C",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1393350_eur_2": {
     "rsid": "rs1393350_eur_2",
@@ -4925,7 +5743,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Southern European Ancestry Marker - informative for Mediterranean and Balkan populations."
+    "description": "Southern European Ancestry Marker - informative for Mediterranean and Balkan populations.",
+    "chromosome": "11",
+    "position": 89011046,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12913832_eur_3": {
     "rsid": "rs12913832_eur_3",
@@ -4951,7 +5773,13 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "HERC2 Eye Color Marker - Primary determinant of blue/brown eye color in Europeans."
+    "description": "HERC2 Eye Color Marker - Primary determinant of blue/brown eye color in Europeans.",
+    "chromosome": "15",
+    "position": 28120472,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1426654_eur": {
     "rsid": "rs1426654_eur",
@@ -4964,19 +5792,27 @@
       "AFR": 0.1,
       "EUR": 0.95,
       "EAS": 0.1,
-      "AMR": 0.2,
       "SAS": 0.4,
       "MENA": 0.5,
+      "AMR": 0.2,
       "OCE": 0.1
     },
     "subFrequencies": {
+      "German": 0.99,
+      "British": 0.99,
+      "Italian": 0.98,
+      "Spanish": 0.98,
+      "Polish": 0.99,
       "Northern European": 0.98,
       "Southern European": 0.9
     },
     "deepFrequencies": {},
     "weight": 8,
     "trait": "Ancestry",
-    "description": "SLC24A5 marker associated with skin pigmentation and high frequency across European populations."
+    "description": "SLC24A5 marker associated with skin pigmentation and high frequency across European populations.",
+    "chromosome": "15",
+    "position": 48426484,
+    "gene": "N/A"
   },
   "rs16891982_eur_2": {
     "rsid": "rs16891982_eur_2",
@@ -5001,7 +5837,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "SLC45A2 Skin Pigmentation Marker - Highly informative for European ancestry and light skin."
+    "description": "SLC45A2 Skin Pigmentation Marker - Highly informative for European ancestry and light skin.",
+    "chromosome": "5",
+    "position": 33951693,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12203592_eur_3": {
     "rsid": "rs12203592_eur_3",
@@ -5026,7 +5866,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "IRF4 Hair/Skin Marker - Associated with freckling, brown hair, and blue eyes in Northern Europeans."
+    "description": "IRF4 Hair/Skin Marker - Associated with freckling, brown hair, and blue eyes in Northern Europeans.",
+    "chromosome": "6",
+    "position": 396321,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1805007_eur_2": {
     "rsid": "rs1805007_eur_2",
@@ -5051,7 +5895,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "MC1R Red Hair Marker - Highly specific to Northern and Western European populations."
+    "description": "MC1R Red Hair Marker - Highly specific to Northern and Western European populations.",
+    "chromosome": "16",
+    "position": 89986117,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12821256_eur": {
     "rsid": "rs12821256_eur",
@@ -5076,7 +5924,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "KITLG Blond Hair Marker - Informative for Northern and Central European ancestry."
+    "description": "KITLG Blond Hair Marker - Informative for Northern and Central European ancestry.",
+    "chromosome": "12",
+    "position": 89328335,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1800562_eur": {
     "rsid": "rs1800562_eur",
@@ -5101,7 +5953,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "HFE Hemochromatosis Marker - Highest frequency in Northwestern Europe (Celtic/Germanic populations)."
+    "description": "HFE Hemochromatosis Marker - Highest frequency in Northwestern Europe (Celtic/Germanic populations).",
+    "chromosome": "6",
+    "position": 26093141,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs2395129_eur": {
     "rsid": "rs2395129_eur",
@@ -5126,7 +5982,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "HLA-DQA1 Celiac Risk Marker - Informative for European and Mediterranean ancestry."
+    "description": "HLA-DQA1 Celiac Risk Marker - Informative for European and Mediterranean ancestry.",
+    "chromosome": "10",
+    "position": 76812741,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1129038_eur_4": {
     "rsid": "rs1129038_eur_4",
@@ -5151,7 +6011,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "HERC2 Eye Color Marker - Complementary to rs12913832 for European pigmentation."
+    "description": "HERC2 Eye Color Marker - Complementary to rs12913832 for European pigmentation.",
+    "chromosome": "15",
+    "position": 28111713,
+    "ref": "C",
+    "alt": "T",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12896399_eur_2": {
     "rsid": "rs12896399_eur_2",
@@ -5176,7 +6042,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "SLC24A4 Eye Color Marker - Informative for blue/green eye color in Europeans."
+    "description": "SLC24A4 Eye Color Marker - Informative for blue/green eye color in Europeans.",
+    "chromosome": "14",
+    "position": 92773663,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11614913_eur": {
     "rsid": "rs11614913_eur",
@@ -5200,7 +6070,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "TTC39B Southern European Marker - Informative for Mediterranean populations."
+    "description": "TTC39B Southern European Marker - Informative for Mediterranean populations.",
+    "chromosome": "12",
+    "position": 54385599,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs4988235_eur_3": {
     "rsid": "rs4988235_eur_3",
@@ -5219,7 +6093,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "description": "LCT Tie-Breaker - Informative for European lactase persistence and ancestry."
+    "description": "LCT Tie-Breaker - Informative for European lactase persistence and ancestry.",
+    "chromosome": "2",
+    "position": 135851076,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1805008_eur": {
     "rsid": "rs1805008_eur",
@@ -5242,7 +6122,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "MC1R Red Hair Variant (R151C) - Specific to Northern and Western European populations."
+    "description": "MC1R Red Hair Variant (R151C) - Specific to Northern and Western European populations.",
+    "chromosome": "16",
+    "position": 89986154,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1805009_eur": {
     "rsid": "rs1805009_eur",
@@ -5265,7 +6149,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "MC1R Red Hair Variant (D294H) - Informative for Northern European ancestry."
+    "description": "MC1R Red Hair Variant (D294H) - Informative for Northern European ancestry.",
+    "chromosome": "16",
+    "position": 89986546,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs11547464_eur": {
     "rsid": "rs11547464_eur",
@@ -5289,7 +6177,11 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "SLC45A2 Pigmentation Marker - Informative for European ancestry and light skin."
+    "description": "SLC45A2 Pigmentation Marker - Informative for European ancestry and light skin.",
+    "chromosome": "16",
+    "position": 89986091,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs7495174_eur": {
     "rsid": "rs7495174_eur",
@@ -5313,7 +6205,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "OCA2 Eye Color Marker - Informative for blue/green eye color in Europeans."
+    "description": "OCA2 Eye Color Marker - Informative for blue/green eye color in Europeans.",
+    "chromosome": "15",
+    "position": 28099092,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1545397_eur": {
     "rsid": "rs1545397_eur",
@@ -5332,7 +6230,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "OCA2 Pigmentation Marker - Informative for European ancestry."
+    "description": "OCA2 Pigmentation Marker - Informative for European ancestry.",
+    "chromosome": "15",
+    "position": 28187772,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12203594_eur": {
     "rsid": "rs12203594_eur",
@@ -5351,7 +6253,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "IRF4 Pigmentation Marker - Informative for Northern European ancestry."
+    "description": "IRF4 Pigmentation Marker - Informative for Northern European ancestry.",
+    "chromosome": "6",
+    "position": 106664964,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs16891985_eur": {
     "rsid": "rs16891985_eur",
@@ -5370,7 +6276,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "SLC45A2 Pigmentation Marker - Strong European anchor marker."
+    "description": "SLC45A2 Pigmentation Marker - Strong European anchor marker.",
+    "chromosome": "6",
+    "position": 39357302,
+    "ref": "G",
+    "alt": "A",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1805010_eur": {
     "rsid": "rs1805010_eur",
@@ -5393,7 +6305,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "MC1R Red Hair Variant (I155V) - Specific to Northern European populations."
+    "description": "MC1R Red Hair Variant (I155V) - Specific to Northern European populations.",
+    "chromosome": "16",
+    "position": 27356203,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs4988238_eur": {
     "rsid": "rs4988238_eur",
@@ -5412,7 +6328,11 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "LCT Lactase Persistence Marker - Informative for European ancestry."
+    "description": "LCT Lactase Persistence Marker - Informative for European ancestry.",
+    "chromosome": "2",
+    "position": 136607994,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs12913832_eur_4": {
     "rsid": "rs12913832_eur_4",
@@ -5434,7 +6354,13 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "HERC2 OCA2 variant - highly diagnostic for blue eye color in Northern European populations."
+    "description": "HERC2 OCA2 variant - highly diagnostic for blue eye color in Northern European populations.",
+    "chromosome": "15",
+    "position": 28120472,
+    "ref": "A",
+    "alt": "C",
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1426654_eur_2": {
     "rsid": "rs1426654_eur_2",
@@ -5456,7 +6382,11 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "SLC24A5 'European' lightness variant - essential for identifying European admixture."
+    "description": "SLC24A5 'European' lightness variant - essential for identifying European admixture.",
+    "chromosome": "15",
+    "position": 48426484,
+    "gene": "N/A",
+    "trait": "Ancestry"
   },
   "rs1042714_eur": {
     "rsid": "rs1042714_eur",
@@ -5481,7 +6411,10 @@
     "deepFrequencies": {},
     "weight": 8,
     "trait": "Ancestry",
-    "description": "Ancestry Informative Marker for European populations, with higher frequency in Northern lineage."
+    "description": "Ancestry Informative Marker for European populations, with higher frequency in Northern lineage.",
+    "chromosome": "5",
+    "position": 148206473,
+    "gene": "N/A"
   },
   "rs61986422_eur": {
     "rsid": "rs61986422_eur",
@@ -5504,7 +6437,12 @@
     "deepFrequencies": {},
     "weight": 7,
     "trait": "Pigmentation",
-    "description": "Marker associated with European hair color and skin pigmentation."
+    "description": "Marker associated with European hair color and skin pigmentation.",
+    "chromosome": "1",
+    "position": 176558038,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A"
   },
   "rs6059655_eur": {
     "rsid": "rs6059655_eur",
@@ -5527,7 +6465,10 @@
     "deepFrequencies": {},
     "weight": 8,
     "trait": "Ancestry",
-    "description": "High-frequency marker in British Isles lineages."
+    "description": "High-frequency marker in British Isles lineages.",
+    "chromosome": "20",
+    "position": 32665748,
+    "gene": "N/A"
   },
   "rs112735431_eur": {
     "rsid": "rs112735431_eur",
@@ -5547,7 +6488,10 @@
     "deepFrequencies": {},
     "weight": 8,
     "trait": "Ancestry",
-    "description": "Added marker rs112735431."
+    "description": "Added marker rs112735431.",
+    "chromosome": "17",
+    "position": 78358945,
+    "gene": "N/A"
   },
   "rs1446585_eur": {
     "rsid": "rs1446585_eur",
@@ -5567,13 +6511,18 @@
     "deepFrequencies": {},
     "weight": 3,
     "trait": "Ancestry",
-    "description": "SLC24A4 Pigmentation Marker - Common on commercial ancestry chips."
+    "description": "SLC24A4 Pigmentation Marker - Common on commercial ancestry chips.",
+    "chromosome": "15",
+    "position": 48425110,
+    "gene": "N/A"
   },
   "ami_gnomad": {
     "rsid": "ami_gnomad",
     "region": "European",
     "color": "#95A5A6",
-    "alleles": [],
+    "alleles": [
+      "G"
+    ],
     "frequencies": {
       "rs2887286": 0.1424,
       "rs2840528": 0.6369,
@@ -8155,6 +9104,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": ""
+    "description": "",
+    "chromosome": "3",
+    "position": 132276556,
+    "ref": "A",
+    "alt": "G",
+    "gene": "N/A",
+    "trait": "Ancestry"
   }
 }

@@ -2193,7 +2193,14 @@ export default function App() {
               let step = "Ingesting DNA stream...";
               if (statusVal === 2) step = "Engaging Bayesian Ancestry Engine...";
               else if (statusVal === 3) step = "Completing Profiler...";
-              else if (statusVal === 4) step = "Ingestion failed.";
+              else if (statusVal === 4) {
+                step = "Ingestion failed.";
+                clearInterval(intervalId);
+                setError("Processing failed in background worker.");
+                setProcessing(false);
+                worker.terminate();
+                return;
+              }
 
               setStreamProgress({ processed, total, snps, step });
             }
@@ -2255,6 +2262,7 @@ export default function App() {
         sab
       }, transferables);
     } catch (err) {
+      if (intervalId) clearInterval(intervalId);
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
       setProcessing(false);

@@ -32,8 +32,8 @@ export function validateAIMsData(filePath: string) {
 
     const errors: string[] = [];
     const requiredFields: (keyof AimEntry)[] = [
-      'rsid', 'chromosome', 'position', 'region', 'color', 
-      'alleles', 'frequencies', 'weight', 'gene', 'trait', 'description'
+      'rsid', 'region', 'color', 
+      'alleles', 'frequencies', 'weight', 'description'
     ];
 
     // Validate entries

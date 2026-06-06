@@ -1,6 +1,8 @@
 {
   "rs11103345": {
     "rsid": "rs11103345",
+    "chromosome": "9",
+    "position": 137458670,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -23,6 +25,8 @@
   },
   "rs11103346": {
     "rsid": "rs11103346",
+    "chromosome": "9",
+    "position": 139027289,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -45,6 +49,8 @@
   },
   "rs9999903": {
     "rsid": "rs9999903",
+    "chromosome": "4",
+    "position": 9464680,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -67,6 +73,8 @@
   },
   "rs7722456": {
     "rsid": "rs7722456",
+    "chromosome": "5",
+    "position": 170202984,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -89,6 +97,8 @@
   },
   "rs6119472": {
     "rsid": "rs6119472",
+    "chromosome": "20",
+    "position": 30099741,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -111,6 +121,8 @@
   },
   "rs7722457": {
     "rsid": "rs7722457",
+    "chromosome": "5",
+    "position": 97841179,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -133,6 +145,8 @@
   },
   "rs12821257": {
     "rsid": "rs12821257",
+    "chromosome": "12",
+    "position": 67333105,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -155,6 +169,8 @@
   },
   "rs6119473": {
     "rsid": "rs6119473",
+    "chromosome": "20",
+    "position": 32809249,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -177,6 +193,8 @@
   },
   "rs7722458": {
     "rsid": "rs7722458",
+    "chromosome": "5",
+    "position": 147734639,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -199,6 +217,8 @@
   },
   "rs6119478": {
     "rsid": "rs6119478",
+    "chromosome": "20",
+    "position": 32842487,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -221,6 +241,8 @@
   },
   "rs6119479": {
     "rsid": "rs6119479",
+    "chromosome": "20",
+    "position": 32843050,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -243,6 +265,8 @@
   },
   "rs6119480": {
     "rsid": "rs6119480",
+    "chromosome": "20",
+    "position": 30105160,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -265,6 +289,8 @@
   },
   "rs6119481": {
     "rsid": "rs6119481",
+    "chromosome": "20",
+    "position": 32847608,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -287,6 +313,8 @@
   },
   "rs6119474": {
     "rsid": "rs6119474",
+    "chromosome": "20",
+    "position": 32809307,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -309,6 +337,8 @@
   },
   "rs7722459": {
     "rsid": "rs7722459",
+    "chromosome": "5",
+    "position": 35325064,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -331,6 +361,8 @@
   },
   "rs12821259": {
     "rsid": "rs12821259",
+    "chromosome": "12",
+    "position": 117759859,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -353,6 +385,8 @@
   },
   "rs10911063": {
     "rsid": "rs10911063",
+    "chromosome": "1",
+    "position": 182318783,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -375,6 +409,8 @@
   },
   "rs10911061": {
     "rsid": "rs10911061",
+    "chromosome": "1",
+    "position": 182312600,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -397,6 +433,8 @@
   },
   "rs10456317": {
     "rsid": "rs10456317",
+    "chromosome": "6",
+    "position": 10728452,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -419,6 +457,8 @@
   },
   "rs10456318": {
     "rsid": "rs10456318",
+    "chromosome": "6",
+    "position": 10728595,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -441,6 +481,8 @@
   },
   "rs10456319": {
     "rsid": "rs10456319",
+    "chromosome": "6",
+    "position": 25260434,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -463,6 +505,8 @@
   },
   "rs10456320": {
     "rsid": "rs10456320",
+    "chromosome": "6",
+    "position": 25292401,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -485,6 +529,8 @@
   },
   "rs10456321": {
     "rsid": "rs10456321",
+    "chromosome": "6",
+    "position": 25334038,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -507,6 +553,8 @@
   },
   "rs10456322": {
     "rsid": "rs10456322",
+    "chromosome": "6",
+    "position": 25550504,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -529,6 +577,8 @@
   },
   "rs10456356": {
     "rsid": "rs10456356",
+    "chromosome": "6",
+    "position": 27535795,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -551,6 +601,8 @@
   },
   "rs10456408": {
     "rsid": "rs10456408",
+    "chromosome": "6",
+    "position": 11478736,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -573,6 +625,8 @@
   },
   "rs10456421": {
     "rsid": "rs10456421",
+    "chromosome": "6",
+    "position": 33771148,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -595,6 +649,8 @@
   },
   "rs10456422": {
     "rsid": "rs10456422",
+    "chromosome": "6",
+    "position": 33774532,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
@@ -617,6 +673,8 @@
   },
   "rs10456423": {
     "rsid": "rs10456423",
+    "chromosome": "6",
+    "position": 11601563,
     "region": "North African",
     "color": "#95A5A6",
     "alleles": [
