@@ -115,7 +115,7 @@ export default defineConfig(({mode}) => {
       // Pull the large, standalone, lazily-used assets out of the main entry
       // chunk so the app shell loads fast. Kept conservative: only split leaf
       // modules (genomic data JSON + ONNX runtime) to avoid React init/order bugs.
-      chunkSizeWarningLimit: 1500,
+      chunkSizeWarningLimit: 6000,
       rollupOptions: {
         output: {
           manualChunks(id) {
