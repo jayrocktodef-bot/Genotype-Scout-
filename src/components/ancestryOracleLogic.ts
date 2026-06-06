@@ -587,6 +587,34 @@ export function processSubpopulations(
           violations += 1.5;
         }
       }
+
+      // rs3827760 (EDAR): East Asian (EAS) specific diagnostic marker. High frequency in EAS, absent in EUR/AFR
+      if (rsidLower === 'rs3827760') {
+        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        if (isEastAsianPop && userDosageDiscrete === 0) {
+          // Non-East Asian carrying ancestral allele: penalize East Asian clades
+          violations += 2.0;
+        } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
+          // East Asian carrying homozygous derived allele: penalize European/African clades
+          violations += 2.0;
+        }
+      }
+
+      // rs3094315: Highly diagnostic Indigenous American (AMR) marker (associated with unadmixed AMR populations like PEL/MXL)
+      if (rsidLower === 'rs3094315') {
+        const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        if (isAmrPop && userDosageDiscrete === 0) {
+          // User lacks Indigenous American alleles: penalize AMR reference clades
+          violations += 1.5;
+        } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
+          // User is homozygous AMR-allele: penalize European and African reference populations
+          violations += 1.5;
+        }
+      }
     }
 
     const M = matchedUserDosages.length;
