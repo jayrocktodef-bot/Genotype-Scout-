@@ -560,6 +560,29 @@ export function processSubpopulations(
       if (refFreq >= 0.85 && userDosageDiscrete === 0) {
         violations++;
       }
+
+      // Mutual diagnostic gating for highly fixated population-defining markers
+      // rs2814778 (Duffy Null): Fixated in sub-Saharan Africans, absent in Europeans
+      if (rsidLower === 'rs2814778') {
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
+        if (isAfricanPop && userDosageDiscrete === 0) {
+          // European carrying CC (ancestral, non-Duffy-null homozygous) gets a penalty against African clades
+          violations += 2.0; 
+        } else if (isEuropeanPop && userDosageDiscrete === 2) {
+          // African carrying G/G or T/T (Duffy null homozygous) gets a penalty against European clades
+          violations += 2.0;
+        }
+      }
+
+      // rs1426654 (SLC24A5) and rs16891982 (SLC45A2): Nearly 100% fixated for European alleles
+      if (rsidLower === 'rs1426654' || rsidLower === 'rs16891982') {
+        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
+        if (isAfricanPop && userDosageDiscrete === 2) {
+          // User has homozygous European-derived allele: penalize African clades
+          violations += 1.5;
+        }
+      }
     }
 
     const M = matchedUserDosages.length;
