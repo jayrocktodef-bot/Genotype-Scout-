@@ -157,39 +157,36 @@ export function parseRawDNA(
   }
 
   // Hyper-optimized Regex Parsing Loop with optional quote support for MyHeritage/CSV formats
-  const rowRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDIN-]{1,2})"?([\t, ]+"?([ACGTDIN-]))?"?/gmi;
+  const lineRegex = /^"?(rs\d+|i\d+)"?[\t, ]+"?((?:chr)?[\w]+)"?[\t, ]+"?(\d+)"?[\t, ]+"?([ACGTDIN-]{1,2})"?([\t, ]+"?([ACGTDIN-]))?"?/i;
   
   let linesTotal = 0;
   let linesCommented = 0;
   let linesMalformed = 0;
 
-  const linesSplit = text.slice(0, 10000).split(/\r?\n/);
-  linesSplit.forEach(line => {
-    if (!line) return;
-    if (line.startsWith("#") || line.startsWith("//")) linesCommented++;
-  });
-
   const isVcf = format === "VCF";
+  const totalLength = text.length;
+  let lineStart = 0;
+  let matchCount = 0;
 
-  if (isVcf) {
-    const lines = text.split(/\r?\n/);
-    let bytesAccumulated = 0;
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      if (!line) continue;
-      bytesAccumulated += line.length + 1;
-      if (i % 10000 === 0 && onProgress) {
-        onProgress(bytesAccumulated, text.length, snpCount);
-      }
-      if (line.startsWith("##")) {
-        linesCommented++;
-        continue;
-      }
-      if (line.startsWith("#")) {
-        linesCommented++;
-        continue;
-      }
+  while (lineStart < totalLength) {
+    let lineEnd = text.indexOf('\n', lineStart);
+    if (lineEnd === -1) {
+      lineEnd = totalLength;
+    }
+    const line = text.substring(lineStart, lineEnd).trim();
+    lineStart = lineEnd + 1;
+    linesTotal++;
 
+    if (!line) continue;
+    if (line.startsWith("#") || line.startsWith("//")) {
+      linesCommented++;
+      continue;
+    }
+
+    if (isVcf) {
+      if (linesTotal % 10000 === 0 && onProgress) {
+        onProgress(lineStart, totalLength, snpCount);
+      }
       // VCF line layout: CHROM POS ID REF ALT QUAL FILTER INFO FORMAT SAMPLE
       const cols = line.split("\t");
       if (cols.length >= 10) {
@@ -252,61 +249,62 @@ export function parseRawDNA(
       } else {
         linesMalformed++;
       }
-    }
-  } else {
-    let match;
-    let matchCount = 0;
-    while ((match = rowRegex.exec(text)) !== null) {
-      matchCount++;
-      if (matchCount % 10000 === 0 && onProgress) {
-        onProgress(rowRegex.lastIndex, text.length, snpCount);
-      }
-      const markerId = match[1].toLowerCase();
-      let chrom = match[2].toUpperCase();
-      if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
-      const posStr = match[3];
-      const pos = parseInt(posStr, 10);
-      
-      // Support multi-column genotype (AncestryDNA style: "A G" -> "AG")
-      let genotype = match[4].toUpperCase();
-      if (match[6]) {
-        genotype += match[6].toUpperCase();
-      }
-      genotype = genotype.replace(/0/g, ""); // Ancestry specific cleaning
-
-      if (!isValidGenotype(genotype)) continue;
-
-      const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
-      
-      // Stream Filter: If allowlist is provided, skip unknown markers unless they are Y or MT
-      if (allowlist && !isYorMT && !allowlist.has(markerId)) {
-        continue;
-      }
-
-      snpCount++;
-      
-      // Store regular SNPs
-      snpMap[markerId] = genotype;
-      if (!isNaN(pos)) {
-        snpMetaMap[markerId] = { chrom, pos };
-        // Also index by coordinate-based ID for engines that need fallback lookup
-        const coordId = `chr${chrom}_${pos}`.toLowerCase();
-        if (!snpMap[coordId]) {
-          snpMap[coordId] = genotype;
+    } else {
+      const match = lineRegex.exec(line);
+      if (match) {
+        matchCount++;
+        if (matchCount % 10000 === 0 && onProgress) {
+          onProgress(lineStart, totalLength, snpCount);
         }
-      }
-      
-      // Extract Y-DNA mutations
-      if (chrom === "Y" || chrom === "24") {
-        yMap[markerId] = genotype;
-      }
-      
-      // Extract mtDNA mutations
-      if (chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25") {
-        const allele = genotype[0];
-        if (allele !== "-") {
-          mtMap[posStr] = allele;
+        const markerId = match[1].toLowerCase();
+        let chrom = match[2].toUpperCase();
+        if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
+        const posStr = match[3];
+        const pos = parseInt(posStr, 10);
+        
+        // Support multi-column genotype (AncestryDNA style: "A G" -> "AG")
+        let genotype = match[4].toUpperCase();
+        if (match[6]) {
+          genotype += match[6].toUpperCase();
         }
+        genotype = genotype.replace(/0/g, ""); // Ancestry specific cleaning
+
+        if (!isValidGenotype(genotype)) continue;
+
+        const isYorMT = chrom === "Y" || chrom === "24" || chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25";
+        
+        // Stream Filter: If allowlist is provided, skip unknown markers unless they are Y or MT
+        if (allowlist && !isYorMT && !allowlist.has(markerId)) {
+          continue;
+        }
+
+        snpCount++;
+        
+        // Store regular SNPs
+        snpMap[markerId] = genotype;
+        if (!isNaN(pos)) {
+          snpMetaMap[markerId] = { chrom, pos };
+          // Also index by coordinate-based ID for engines that need fallback lookup
+          const coordId = `chr${chrom}_${pos}`.toLowerCase();
+          if (!snpMap[coordId]) {
+            snpMap[coordId] = genotype;
+          }
+        }
+        
+        // Extract Y-DNA mutations
+        if (chrom === "Y" || chrom === "24") {
+          yMap[markerId] = genotype;
+        }
+        
+        // Extract mtDNA mutations
+        if (chrom === "MT" || chrom === "M" || chrom === "26" || chrom === "25") {
+          const allele = genotype[0];
+          if (allele !== "-") {
+            mtMap[posStr] = allele;
+          }
+        }
+      } else {
+        linesMalformed++;
       }
     }
   }
