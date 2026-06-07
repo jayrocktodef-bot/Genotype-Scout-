@@ -103,7 +103,11 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
   return { healthy: true };
 }
 
-export function parseRawDNA(text: string, allowlist?: Set<string>) {
+export function parseRawDNA(
+  text: string, 
+  allowlist?: Set<string>,
+  onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void
+) {
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
   const yMap: Record<string, string> = {};
@@ -169,9 +173,14 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
 
   if (isVcf) {
     const lines = text.split(/\r?\n/);
+    let bytesAccumulated = 0;
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       if (!line) continue;
+      bytesAccumulated += line.length + 1;
+      if (i % 10000 === 0 && onProgress) {
+        onProgress(bytesAccumulated, text.length, snpCount);
+      }
       if (line.startsWith("##")) {
         linesCommented++;
         continue;
@@ -246,7 +255,12 @@ export function parseRawDNA(text: string, allowlist?: Set<string>) {
     }
   } else {
     let match;
+    let matchCount = 0;
     while ((match = rowRegex.exec(text)) !== null) {
+      matchCount++;
+      if (matchCount % 10000 === 0 && onProgress) {
+        onProgress(rowRegex.lastIndex, text.length, snpCount);
+      }
       const markerId = match[1].toLowerCase();
       let chrom = match[2].toUpperCase();
       if (chrom.startsWith("CHR")) chrom = chrom.slice(3);
