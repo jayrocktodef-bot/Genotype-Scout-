@@ -20,9 +20,7 @@
     "weight": 8,
     "gene": "SLC24A5",
     "trait": "Ancestry",
-    "description": "Marker identified in North American Indigenous lineages.",
-    "chromosome": "2",
-    "position": 107396524
+    "description": "Marker identified in North American Indigenous lineages."
   },
   "rs11612028_amr": {
     "rsid": "rs11612028_amr",
@@ -45,9 +43,7 @@
     "weight": 8,
     "gene": "GPR15",
     "trait": "Ancestry",
-    "description": "Marker linked to South American Indigenous groups.",
-    "chromosome": "12",
-    "position": 122387872
+    "description": "Marker linked to South American Indigenous groups."
   },
   "rs11612029_amr": {
     "rsid": "rs11612029_amr",
@@ -70,9 +66,7 @@
     "weight": 8,
     "gene": "GPR15",
     "trait": "Ancestry",
-    "description": "Marker associated with Central American Indigenous populations, particularly in Mexico and Guatemala.",
-    "chromosome": "12",
-    "position": 104979604
+    "description": "Marker associated with Central American Indigenous populations, particularly in Mexico and Guatemala."
   },
   "rs11612030_amr": {
     "rsid": "rs11612030_amr",
@@ -95,9 +89,7 @@
     "weight": 8.5,
     "gene": "GPR15",
     "trait": "Ancestry",
-    "description": "Marker deeply connected to Amazonian Indigenous lineages.",
-    "chromosome": "12",
-    "position": 124188064
+    "description": "Marker deeply connected to Amazonian Indigenous lineages."
   },
   "rs17822931_amr": {
     "rsid": "rs17822931_amr",
@@ -120,11 +112,7 @@
     "weight": 8,
     "gene": "ABCC11",
     "trait": "Ancestry",
-    "description": "Marker associated with elevated frequency in Indigenous American populations.",
-    "chromosome": "16",
-    "position": 48224287,
-    "ref": "C",
-    "alt": "G"
+    "description": "Marker associated with elevated frequency in Indigenous American populations."
   },
   "rs3827760_nat": {
     "rsid": "rs3827760_nat",
@@ -150,13 +138,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits.",
-    "chromosome": "2",
-    "position": 108897145,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EDAR variant - diagnostic for East Asian and Native American populations, associated with hair and dental traits."
   },
   "rs10456303_nat": {
     "rsid": "rs10456303_nat",
@@ -181,11 +163,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Pan-American Indigenous Marker - highly diagnostic for pre-Columbian populations of the Americas.",
-    "chromosome": "6",
-    "position": 24317399,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Pan-American Indigenous Marker - highly diagnostic for pre-Columbian populations of the Americas."
   },
   "rs10954737_nat": {
     "rsid": "rs10954737_nat",
@@ -210,11 +188,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "IRF5 - informative for distinguishing Native Americans from other populations.",
-    "chromosome": "7",
-    "position": 83533047,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "IRF5 - informative for distinguishing Native Americans from other populations."
   },
   "rs1800562_nat": {
     "rsid": "rs1800562_nat",
@@ -239,11 +213,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "HFE - inverse marker, presence signals European ancestry.",
-    "chromosome": "6",
-    "position": 26093141,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "HFE - inverse marker, presence signals European ancestry."
   },
   "rs9282541_nat": {
     "rsid": "rs9282541_nat",
@@ -269,11 +239,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "ABCA1 - variant associated with Native American ancestry and cholesterol metabolism.",
-    "chromosome": "9",
-    "position": 107620835,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ABCA1 - variant associated with Native American ancestry and cholesterol metabolism."
   },
   "rs174570_nat": {
     "rsid": "rs174570_nat",
@@ -299,13 +265,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "FADS2 - associated with fatty acid metabolism in Native American populations.",
-    "chromosome": "11",
-    "position": 61829740,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "FADS2 - associated with fatty acid metabolism in Native American populations."
   },
   "rs20424_nat": {
     "rsid": "rs20424_nat",
@@ -331,11 +291,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations.",
-    "chromosome": "1",
-    "position": 186649618,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Beringian Standstill Proxy - diagnostic for separating Indigenous American from later Asian migrations."
   },
   "rs13342232_nat": {
     "rsid": "rs13342232_nat",
@@ -361,11 +317,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SLC16A11 - high frequency in Native American populations, associated with diabetes risk.",
-    "chromosome": "17",
-    "position": 6945940,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "SLC16A11 - high frequency in Native American populations, associated with diabetes risk."
   },
   "rs10456217_nat": {
     "rsid": "rs10456217_nat",
@@ -391,11 +343,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Inuit-specific ancestry marker.",
-    "chromosome": "6",
-    "position": 18767479,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Inuit-specific ancestry marker."
   },
   "rs2144915_nat": {
     "rsid": "rs2144915_nat",
@@ -421,11 +369,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Native American ancestry marker.",
-    "chromosome": "14",
-    "position": 50519948,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American ancestry marker."
   },
   "rs1800497_nat": {
     "rsid": "rs1800497_nat",
@@ -451,11 +395,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations.",
-    "chromosome": "11",
-    "position": 113270828,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ANKK1 - Taq1A variant, found at exceptionally high frequencies in many Native American populations."
   },
   "rs80356779_nat": {
     "rsid": "rs80356779_nat",
@@ -481,11 +421,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations.",
-    "chromosome": "11",
-    "position": 68548130,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "CPT1A Arctic Variant - highly prevalent in Inuit and Northern Native American populations."
   },
   "rs174583_nat": {
     "rsid": "rs174583_nat",
@@ -511,11 +447,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations.",
-    "chromosome": "11",
-    "position": 61609750,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "FADS2 variant - shows strong signs of positive selection in Native American populations."
   },
   "rs11215559_nat": {
     "rsid": "rs11215559_nat",
@@ -541,11 +473,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry.",
-    "chromosome": "11",
-    "position": 115309455,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Indigenous American Marker - high frequency marker for unadmixed Native American ancestry."
   },
   "rs12149627_nat": {
     "rsid": "rs12149627_nat",
@@ -571,11 +499,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Andean Ancestry Marker - informative for populations from the Andes region.",
-    "chromosome": "16",
-    "position": 70977546,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
   },
   "rs4845571_nat": {
     "rsid": "rs4845571_nat",
@@ -601,11 +525,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Andean Ancestry Marker - informative for populations from the Andes region.",
-    "chromosome": "HSCHR1_1_CTG31",
-    "position": 153755786,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Andean Ancestry Marker - informative for populations from the Andes region."
   },
   "rs10456280_nat": {
     "rsid": "rs10456280_nat",
@@ -633,11 +553,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results.",
-    "chromosome": "6",
-    "position": 23686432,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "AMR/EAS Tie-Breaker - Post-migration mutation unique to the Americas, prevents false East Asian trace results."
   },
   "rs10456295_nat": {
     "rsid": "rs10456295_nat",
@@ -665,11 +581,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups.",
-    "chromosome": "6",
-    "position": 23910352,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "AMR/OCE Tie-Breaker - Ancient Beringian mutation, prevents false Papuan/Melanesian signals in Amazonian groups."
   },
   "rs10456303_nat_2": {
     "rsid": "rs10456303_nat_2",
@@ -697,11 +609,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression.",
-    "chromosome": "6",
-    "position": 24317399,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression."
   },
   "rs11103500_nat": {
     "rsid": "rs11103500_nat",
@@ -728,11 +636,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Native American Informative Marker - highly diagnostic for indigenous American ancestry.",
-    "chromosome": "9",
-    "position": 137643733,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - highly diagnostic for indigenous American ancestry."
   },
   "rs11103501_nat": {
     "rsid": "rs11103501_nat",
@@ -759,11 +663,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "Native American Informative Marker - strong differentiation from European and African populations.",
-    "chromosome": "9",
-    "position": 137646046,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - strong differentiation from European and African populations."
   },
   "rs11103502_nat": {
     "rsid": "rs11103502_nat",
@@ -790,11 +690,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "Native American Informative Marker - nearly fixed in indigenous populations of the Americas.",
-    "chromosome": "9",
-    "position": 137646217,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - nearly fixed in indigenous populations of the Americas."
   },
   "rs11103503_nat": {
     "rsid": "rs11103503_nat",
@@ -821,11 +717,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "Native American Informative Marker - useful for identifying indigenous American lineages.",
-    "chromosome": "9",
-    "position": 137647993,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
   "rs11103504_nat": {
     "rsid": "rs11103504_nat",
@@ -852,11 +744,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "Native American Informative Marker - strong differentiation from non-indigenous populations.",
-    "chromosome": "9",
-    "position": 137653544,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
   "rs11103505_nat": {
     "rsid": "rs11103505_nat",
@@ -883,11 +771,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "Native American Informative Marker - general indigenous American signal.",
-    "chromosome": "9",
-    "position": 137653625,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - general indigenous American signal."
   },
   "rs11103506_nat": {
     "rsid": "rs11103506_nat",
@@ -914,11 +798,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "Native American Informative Marker - high frequency in South American indigenous groups.",
-    "chromosome": "9",
-    "position": 137653652,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - high frequency in South American indigenous groups."
   },
   "rs11103507_nat": {
     "rsid": "rs11103507_nat",
@@ -945,11 +825,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "Native American Informative Marker - highly specific to indigenous American populations.",
-    "chromosome": "9",
-    "position": 137653663,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - highly specific to indigenous American populations."
   },
   "rs11103508_nat": {
     "rsid": "rs11103508_nat",
@@ -976,11 +852,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "Native American Informative Marker - useful for identifying North American indigenous lineages.",
-    "chromosome": "9",
-    "position": 137653717,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - useful for identifying North American indigenous lineages."
   },
   "rs11103509_nat": {
     "rsid": "rs11103509_nat",
@@ -1007,11 +879,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "Native American Informative Marker - strong differentiation from European populations.",
-    "chromosome": "9",
-    "position": 137654103,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - strong differentiation from European populations."
   },
   "rs11103510_nat": {
     "rsid": "rs11103510_nat",
@@ -1038,11 +906,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "Native American Informative Marker - general indigenous American signal.",
-    "chromosome": "9",
-    "position": 137655320,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - general indigenous American signal."
   },
   "rs11103511_nat": {
     "rsid": "rs11103511_nat",
@@ -1069,11 +933,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "Native American Informative Marker - high frequency in Mesoamerican indigenous groups.",
-    "chromosome": "9",
-    "position": 137656096,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - high frequency in Mesoamerican indigenous groups."
   },
   "rs11103512_nat": {
     "rsid": "rs11103512_nat",
@@ -1100,11 +960,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "Native American Informative Marker - nearly fixed in indigenous populations.",
-    "chromosome": "9",
-    "position": 137656637,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - nearly fixed in indigenous populations."
   },
   "rs11103513_nat": {
     "rsid": "rs11103513_nat",
@@ -1131,11 +987,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "Native American Informative Marker - useful for identifying indigenous American ancestry.",
-    "chromosome": "9",
-    "position": 137656942,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - useful for identifying indigenous American ancestry."
   },
   "rs11103514_nat": {
     "rsid": "rs11103514_nat",
@@ -1162,11 +1014,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "Native American Informative Marker - strong differentiation from African populations.",
-    "chromosome": "9",
-    "position": 137656951,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - strong differentiation from African populations."
   },
   "rs11103515_nat": {
     "rsid": "rs11103515_nat",
@@ -1193,11 +1041,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "Native American Informative Marker - general indigenous American signal.",
-    "chromosome": "9",
-    "position": 137657110,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - general indigenous American signal."
   },
   "rs11103516_nat": {
     "rsid": "rs11103516_nat",
@@ -1224,11 +1068,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "Native American Informative Marker - high frequency in indigenous populations of the Americas.",
-    "chromosome": "9",
-    "position": 137657111,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - high frequency in indigenous populations of the Americas."
   },
   "rs11103517_nat": {
     "rsid": "rs11103517_nat",
@@ -1255,11 +1095,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "Native American Informative Marker - highly specific to indigenous American ancestry.",
-    "chromosome": "9",
-    "position": 137661778,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - highly specific to indigenous American ancestry."
   },
   "rs11103518_nat": {
     "rsid": "rs11103518_nat",
@@ -1286,11 +1122,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "Native American Informative Marker - useful for identifying indigenous American lineages.",
-    "chromosome": "9",
-    "position": 137662064,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - useful for identifying indigenous American lineages."
   },
   "rs11103519_nat": {
     "rsid": "rs11103519_nat",
@@ -1317,11 +1149,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "Native American Informative Marker - strong differentiation from non-indigenous populations.",
-    "chromosome": "9",
-    "position": 137662883,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Informative Marker - strong differentiation from non-indigenous populations."
   },
   "rs75493593_nat": {
     "rsid": "rs75493593_nat",
@@ -1341,11 +1169,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Native American T2D Risk Marker - confirmed Neanderthal introgression origin.",
-    "chromosome": "17",
-    "position": 6945087,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American T2D Risk Marker - confirmed Neanderthal introgression origin."
   },
   "rs13342692_nat": {
     "rsid": "rs13342692_nat",
@@ -1365,11 +1189,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Native American T2D Risk Marker - co-segregates with rs75493593.",
-    "chromosome": "17",
-    "position": 6946287,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American T2D Risk Marker - co-segregates with rs75493593."
   },
   "rs117767867_nat": {
     "rsid": "rs117767867_nat",
@@ -1389,11 +1209,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Native American T2D Risk Marker - rare outside Native American populations.",
-    "chromosome": "17",
-    "position": 6946330,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American T2D Risk Marker - rare outside Native American populations."
   },
   "rs75418188_nat": {
     "rsid": "rs75418188_nat",
@@ -1413,11 +1229,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Native American T2D Risk Marker - part of the SLC16A11 haplotype.",
-    "chromosome": "17",
-    "position": 6945483,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American T2D Risk Marker - part of the SLC16A11 haplotype."
   },
   "rs13342232_nat_2": {
     "rsid": "rs13342232_nat_2",
@@ -1437,11 +1249,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Native American T2D Risk Marker - strongest GWAS signal in Mexican cohorts.",
-    "chromosome": "17",
-    "position": 6945940,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American T2D Risk Marker - strongest GWAS signal in Mexican cohorts."
   },
   "rs9282541_nat_2": {
     "rsid": "rs9282541_nat_2",
@@ -1461,11 +1269,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas.",
-    "chromosome": "9",
-    "position": 107620835,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas."
   },
   "rs10954737_nat_2": {
     "rsid": "rs10954737_nat_2",
@@ -1484,11 +1288,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians.",
-    "chromosome": "7",
-    "position": 83533047,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians."
   },
   "rs762551_amr": {
     "rsid": "rs762551_amr",
@@ -1511,9 +1311,7 @@
     "weight": 8,
     "gene": "CYP1A2",
     "trait": "Ancestry",
-    "description": "Marker identified in North American ancestral lineages.",
-    "chromosome": "15",
-    "position": 75041917
+    "description": "Marker identified in North American ancestral lineages."
   },
   "d9s1120_amr": {
     "rsid": "d9s1120_amr",
@@ -1531,12 +1329,7 @@
     "deepFrequencies": {},
     "weight": 9,
     "trait": "Native American Ancestry Marker",
-    "description": "The \"9-repeat allele\" is a private marker found in almost all Native American groups but absent in Asia.",
-    "chromosome": "4",
-    "position": 210965443,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A"
+    "description": "The \"9-repeat allele\" is a private marker found in almost all Native American groups but absent in Asia."
   },
   "rs7089424_amr": {
     "rsid": "rs7089424_amr",
@@ -1554,10 +1347,7 @@
     "deepFrequencies": {},
     "weight": 9,
     "trait": "Native American Ancestry Marker",
-    "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk.",
-    "chromosome": "10",
-    "position": 63752159,
-    "gene": "N/A"
+    "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk."
   },
   "rs7088318_amr": {
     "rsid": "rs7088318_amr",
@@ -1575,10 +1365,7 @@
     "deepFrequencies": {},
     "weight": 9,
     "trait": "Native American Ancestry Marker",
-    "description": "Another high-frequency risk allele linked to increased Native American genetic heritage.",
-    "chromosome": "10",
-    "position": 22852948,
-    "gene": "N/A"
+    "description": "Another high-frequency risk allele linked to increased Native American genetic heritage."
   },
   "rs3731217_amr": {
     "rsid": "rs3731217_amr",
@@ -1596,10 +1383,7 @@
     "deepFrequencies": {},
     "weight": 9,
     "trait": "Native American Ancestry Marker",
-    "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility.",
-    "chromosome": "9",
-    "position": 21984661,
-    "gene": "N/A"
+    "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility."
   },
   "rs2239633_amr": {
     "rsid": "rs2239633_amr",
@@ -1617,10 +1401,7 @@
     "deepFrequencies": {},
     "weight": 9,
     "trait": "Native American Ancestry Marker",
-    "description": "A specific marker used to differentiate ancestry profiles in admixed US populations.",
-    "chromosome": "14",
-    "position": 23589057,
-    "gene": "N/A"
+    "description": "A specific marker used to differentiate ancestry profiles in admixed US populations."
   },
   "rs1800404_amr": {
     "rsid": "rs1800404_amr",
@@ -1640,9 +1421,6 @@
     "deepFrequencies": {},
     "weight": 4,
     "trait": "Ancestry",
-    "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation.",
-    "chromosome": "15",
-    "position": 28235773,
-    "gene": "N/A"
+    "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation."
   }
 }

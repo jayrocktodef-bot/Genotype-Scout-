@@ -19,9 +19,7 @@
     "weight": 8,
     "gene": "HBB",
     "trait": "Ancestry",
-    "description": "Marker identified with historic Gullah/Geechee populations of the US Atlantic coast.",
-    "chromosome": "6",
-    "position": 23799540
+    "description": "Marker identified with historic Gullah/Geechee populations of the US Atlantic coast."
   },
   "rs10456292_afr": {
     "rsid": "rs10456292_afr",
@@ -43,9 +41,7 @@
     "weight": 8,
     "gene": "HBB",
     "trait": "Ancestry",
-    "description": "Marker associated with Caribbean-descent African American lineages.",
-    "chromosome": "6",
-    "position": 23799702
+    "description": "Marker associated with Caribbean-descent African American lineages."
   },
   "rs10456293_afr": {
     "rsid": "rs10456293_afr",
@@ -67,9 +63,7 @@
     "weight": 8,
     "gene": "HBB",
     "trait": "Ancestry",
-    "description": "Marker related to Central/West African origins common across African American populations.",
-    "chromosome": "6",
-    "position": 23860624
+    "description": "Marker related to Central/West African origins common across African American populations."
   },
   "rs200000_afram": {
     "rsid": "rs200000_afram",
@@ -87,11 +81,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "12",
-    "position": 234545693,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs200001_afram": {
     "rsid": "rs200001_afram",
@@ -109,11 +99,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8699653,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs200002_afram": {
     "rsid": "rs200002_afram",
@@ -131,11 +117,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8699126,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs200003_afram": {
     "rsid": "rs200003_afram",
@@ -153,11 +135,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "15",
-    "position": 237708656,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs200004_afram": {
     "rsid": "rs200004_afram",
@@ -175,11 +153,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8698711,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs200005_afram": {
     "rsid": "rs200005_afram",
@@ -197,11 +171,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8698686,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs200006_afram": {
     "rsid": "rs200006_afram",
@@ -219,11 +189,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8698675,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs200007_afram": {
     "rsid": "rs200007_afram",
@@ -241,11 +207,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "19",
-    "position": 1925940,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs200008_afram": {
     "rsid": "rs200008_afram",
@@ -263,11 +225,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8697332,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs200009_afram": {
     "rsid": "rs200009_afram",
@@ -285,11 +243,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 8696941,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000010_afram": {
     "rsid": "rs2000010_afram",
@@ -307,11 +261,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 48683047,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000011_afram": {
     "rsid": "rs2000011_afram",
@@ -329,11 +279,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "18",
-    "position": 47261743,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000012_afram": {
     "rsid": "rs2000012_afram",
@@ -351,11 +297,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 48949408,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000013_afram": {
     "rsid": "rs2000013_afram",
@@ -373,11 +315,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 48973192,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000014_afram": {
     "rsid": "rs2000014_afram",
@@ -395,11 +333,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 34007261,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000015_afram": {
     "rsid": "rs2000015_afram",
@@ -417,11 +351,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "22",
-    "position": 51479027,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000016_afram": {
     "rsid": "rs2000016_afram",
@@ -439,11 +369,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 48762170,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000017_afram": {
     "rsid": "rs2000017_afram",
@@ -461,11 +387,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "2",
-    "position": 53587669,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000018_afram": {
     "rsid": "rs2000018_afram",
@@ -483,11 +405,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 24278893,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000019_afram": {
     "rsid": "rs2000019_afram",
@@ -505,11 +423,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "X",
-    "position": 43593679,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000020_afram": {
     "rsid": "rs2000020_afram",
@@ -527,11 +441,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "X",
-    "position": 43593763,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000021_afram": {
     "rsid": "rs2000021_afram",
@@ -549,11 +459,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 79673428,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000022_afram": {
     "rsid": "rs2000022_afram",
@@ -571,11 +477,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 82539708,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000023_afram": {
     "rsid": "rs2000023_afram",
@@ -593,11 +495,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "21",
-    "position": 50424706,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000024_afram": {
     "rsid": "rs2000024_afram",
@@ -615,11 +513,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 14586549,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000025_afram": {
     "rsid": "rs2000025_afram",
@@ -637,11 +531,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 14586506,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000026_afram": {
     "rsid": "rs2000026_afram",
@@ -659,11 +549,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 149780852,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000027_afram": {
     "rsid": "rs2000027_afram",
@@ -681,11 +567,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 47442605,
-    "ref": "A",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000028_afram": {
     "rsid": "rs2000028_afram",
@@ -703,11 +585,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 47442859,
-    "ref": "G",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000029_afram": {
     "rsid": "rs2000029_afram",
@@ -725,11 +603,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 47445610,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000030_afram": {
     "rsid": "rs2000030_afram",
@@ -747,11 +621,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "19",
-    "position": 48316064,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000031_afram": {
     "rsid": "rs2000031_afram",
@@ -769,11 +639,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "20",
-    "position": 49370385,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000032_afram": {
     "rsid": "rs2000032_afram",
@@ -791,11 +657,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "21",
-    "position": 50424706,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000033_afram": {
     "rsid": "rs2000033_afram",
@@ -813,11 +675,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 193364280,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000034_afram": {
     "rsid": "rs2000034_afram",
@@ -835,11 +693,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 52533348,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000035_afram": {
     "rsid": "rs2000035_afram",
@@ -857,11 +711,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248450325,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000036_afram": {
     "rsid": "rs2000036_afram",
@@ -879,11 +729,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248446465,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000037_afram": {
     "rsid": "rs2000037_afram",
@@ -901,11 +747,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248446434,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000038_afram": {
     "rsid": "rs2000038_afram",
@@ -923,11 +765,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248446392,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000039_afram": {
     "rsid": "rs2000039_afram",
@@ -945,11 +783,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248445504,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000040_afram": {
     "rsid": "rs2000040_afram",
@@ -967,11 +801,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248445361,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000041_afram": {
     "rsid": "rs2000041_afram",
@@ -989,11 +819,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248440894,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000042_afram": {
     "rsid": "rs2000042_afram",
@@ -1011,11 +837,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 248651185,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000043_afram": {
     "rsid": "rs2000043_afram",
@@ -1033,11 +855,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 52533348,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000044_afram": {
     "rsid": "rs2000044_afram",
@@ -1055,11 +873,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 8127733,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000045_afram": {
     "rsid": "rs2000045_afram",
@@ -1077,11 +891,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 1306916,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000046_afram": {
     "rsid": "rs2000046_afram",
@@ -1099,11 +909,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 6893609,
-    "ref": "G",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000047_afram": {
     "rsid": "rs2000047_afram",
@@ -1121,11 +927,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 18464002,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000048_afram": {
     "rsid": "rs2000048_afram",
@@ -1143,11 +945,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 57804953,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000049_afram": {
     "rsid": "rs2000049_afram",
@@ -1165,11 +963,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "7",
-    "position": 58859274,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000050_afram": {
     "rsid": "rs2000050_afram",
@@ -1187,11 +981,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "13",
-    "position": 72312886,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000051_afram": {
     "rsid": "rs2000051_afram",
@@ -1209,11 +999,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "3",
-    "position": 195276823,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000052_afram": {
     "rsid": "rs2000052_afram",
@@ -1231,11 +1017,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 52533348,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000053_afram": {
     "rsid": "rs2000053_afram",
@@ -1253,11 +1035,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "2",
-    "position": 53587669,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000054_afram": {
     "rsid": "rs2000054_afram",
@@ -1275,11 +1053,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 191809541,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000055_afram": {
     "rsid": "rs2000055_afram",
@@ -1297,11 +1071,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 191807238,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000056_afram": {
     "rsid": "rs2000056_afram",
@@ -1319,11 +1089,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 206967889,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000057_afram": {
     "rsid": "rs2000057_afram",
@@ -1341,11 +1107,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 206967940,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000058_afram": {
     "rsid": "rs2000058_afram",
@@ -1363,11 +1125,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "7",
-    "position": 58859274,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000059_afram": {
     "rsid": "rs2000059_afram",
@@ -1385,11 +1143,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 206963993,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000060_afram": {
     "rsid": "rs2000060_afram",
@@ -1407,11 +1161,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 206963944,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000061_afram": {
     "rsid": "rs2000061_afram",
@@ -1429,11 +1179,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 206860369,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000062_afram": {
     "rsid": "rs2000062_afram",
@@ -1451,11 +1197,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 127091594,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000063_afram": {
     "rsid": "rs2000063_afram",
@@ -1473,11 +1215,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 4066859,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000064_afram": {
     "rsid": "rs2000064_afram",
@@ -1495,11 +1233,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 13374918,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000065_afram": {
     "rsid": "rs2000065_afram",
@@ -1517,11 +1251,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 20907968,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000066_afram": {
     "rsid": "rs2000066_afram",
@@ -1539,11 +1269,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 57804953,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000067_afram": {
     "rsid": "rs2000067_afram",
@@ -1561,11 +1287,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "13",
-    "position": 47454844,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000068_afram": {
     "rsid": "rs2000068_afram",
@@ -1583,11 +1305,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 104956027,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000069_afram": {
     "rsid": "rs2000069_afram",
@@ -1605,11 +1323,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 104873588,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000070_afram": {
     "rsid": "rs2000070_afram",
@@ -1627,11 +1341,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 24188109,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000071_afram": {
     "rsid": "rs2000071_afram",
@@ -1649,11 +1359,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 74083585,
-    "ref": "G",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000072_afram": {
     "rsid": "rs2000072_afram",
@@ -1671,11 +1377,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 147498757,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000073_afram": {
     "rsid": "rs2000073_afram",
@@ -1693,11 +1395,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "13",
-    "position": 63461050,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000074_afram": {
     "rsid": "rs2000074_afram",
@@ -1715,11 +1413,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 56750632,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000075_afram": {
     "rsid": "rs2000075_afram",
@@ -1737,11 +1431,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 57804953,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000076_afram": {
     "rsid": "rs2000076_afram",
@@ -1759,11 +1449,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 61150000,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000077_afram": {
     "rsid": "rs2000077_afram",
@@ -1781,11 +1467,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 66312952,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000078_afram": {
     "rsid": "rs2000078_afram",
@@ -1803,11 +1485,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 66313191,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000079_afram": {
     "rsid": "rs2000079_afram",
@@ -1825,11 +1503,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 62022237,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000080_afram": {
     "rsid": "rs2000080_afram",
@@ -1847,11 +1521,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 65372460,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000081_afram": {
     "rsid": "rs2000081_afram",
@@ -1869,11 +1539,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 86176029,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000082_afram": {
     "rsid": "rs2000082_afram",
@@ -1891,11 +1557,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 6883049,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000083_afram": {
     "rsid": "rs2000083_afram",
@@ -1913,11 +1575,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 110672278,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000084_afram": {
     "rsid": "rs2000084_afram",
@@ -1935,11 +1593,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "X",
-    "position": 50837699,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000085_afram": {
     "rsid": "rs2000085_afram",
@@ -1957,11 +1611,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "X",
-    "position": 50837721,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000086_afram": {
     "rsid": "rs2000086_afram",
@@ -1979,11 +1629,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 48141735,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000087_afram": {
     "rsid": "rs2000087_afram",
@@ -2001,11 +1647,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 148096017,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000088_afram": {
     "rsid": "rs2000088_afram",
@@ -2023,11 +1665,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 71254763,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000089_afram": {
     "rsid": "rs2000089_afram",
@@ -2045,11 +1683,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 50356354,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000090_afram": {
     "rsid": "rs2000090_afram",
@@ -2067,11 +1701,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 69765817,
-    "ref": "G",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000091_afram": {
     "rsid": "rs2000091_afram",
@@ -2089,11 +1719,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 69765592,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000092_afram": {
     "rsid": "rs2000092_afram",
@@ -2111,11 +1737,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "20",
-    "position": 47087472,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000093_afram": {
     "rsid": "rs2000093_afram",
@@ -2133,11 +1755,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 50253181,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000094_afram": {
     "rsid": "rs2000094_afram",
@@ -2155,11 +1773,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 40560493,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000095_afram": {
     "rsid": "rs2000095_afram",
@@ -2177,11 +1791,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 59913595,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs2000096_afram": {
     "rsid": "rs2000096_afram",
@@ -2199,11 +1809,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 632487,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs2000097_afram": {
     "rsid": "rs2000097_afram",
@@ -2221,11 +1827,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "20",
-    "position": 46803849,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs2000098_afram": {
     "rsid": "rs2000098_afram",
@@ -2243,11 +1845,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "20",
-    "position": 46803930,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs2000099_afram": {
     "rsid": "rs2000099_afram",
@@ -2265,11 +1863,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "10",
-    "position": 30829167,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs700000_afram": {
     "rsid": "rs700000_afram",
@@ -2287,11 +1881,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 49817956,
-    "ref": "G",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs700001_afram": {
     "rsid": "rs700001_afram",
@@ -2309,11 +1899,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 49818152,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs700002_afram": {
     "rsid": "rs700002_afram",
@@ -2331,11 +1917,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 49819180,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs700003_afram": {
     "rsid": "rs700003_afram",
@@ -2353,11 +1935,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 49819542,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs700004_afram": {
     "rsid": "rs700004_afram",
@@ -2375,11 +1953,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 44064594,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs700005_afram": {
     "rsid": "rs700005_afram",
@@ -2397,11 +1971,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 50187446,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs700006_afram": {
     "rsid": "rs700006_afram",
@@ -2419,11 +1989,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "1",
-    "position": 6143224,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs700007_afram": {
     "rsid": "rs700007_afram",
@@ -2441,11 +2007,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "2",
-    "position": 90214753,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs700008_afram": {
     "rsid": "rs700008_afram",
@@ -2463,11 +2025,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 43432099,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs700009_afram": {
     "rsid": "rs700009_afram",
@@ -2485,11 +2043,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "3",
-    "position": 83337845,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000010_afram": {
     "rsid": "rs7000010_afram",
@@ -2507,11 +2061,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 10482347,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000011_afram": {
     "rsid": "rs7000011_afram",
@@ -2529,11 +2079,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 86029027,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000012_afram": {
     "rsid": "rs7000012_afram",
@@ -2551,11 +2097,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 62935254,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000013_afram": {
     "rsid": "rs7000013_afram",
@@ -2573,11 +2115,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 20740275,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000014_afram": {
     "rsid": "rs7000014_afram",
@@ -2595,11 +2133,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 87625005,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000015_afram": {
     "rsid": "rs7000015_afram",
@@ -2617,11 +2151,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 83466168,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000016_afram": {
     "rsid": "rs7000016_afram",
@@ -2639,11 +2169,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 16533817,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000017_afram": {
     "rsid": "rs7000017_afram",
@@ -2661,11 +2187,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 20492379,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000018_afram": {
     "rsid": "rs7000018_afram",
@@ -2683,11 +2205,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 17554331,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000019_afram": {
     "rsid": "rs7000019_afram",
@@ -2705,11 +2223,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 132553444,
-    "ref": "G",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000020_afram": {
     "rsid": "rs7000020_afram",
@@ -2727,11 +2241,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 62912661,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000021_afram": {
     "rsid": "rs7000021_afram",
@@ -2749,11 +2259,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 129519744,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000022_afram": {
     "rsid": "rs7000022_afram",
@@ -2771,11 +2277,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "3",
-    "position": 54641990,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000023_afram": {
     "rsid": "rs7000023_afram",
@@ -2793,11 +2295,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 77962842,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000024_afram": {
     "rsid": "rs7000024_afram",
@@ -2815,11 +2313,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 56750632,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000025_afram": {
     "rsid": "rs7000025_afram",
@@ -2837,11 +2331,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "6",
-    "position": 57804953,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000026_afram": {
     "rsid": "rs7000026_afram",
@@ -2859,11 +2349,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 114591430,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000027_afram": {
     "rsid": "rs7000027_afram",
@@ -2881,11 +2367,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 108962227,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000028_afram": {
     "rsid": "rs7000028_afram",
@@ -2903,11 +2385,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 60967916,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000029_afram": {
     "rsid": "rs7000029_afram",
@@ -2925,11 +2403,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 73620915,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000030_afram": {
     "rsid": "rs7000030_afram",
@@ -2947,11 +2421,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "2",
-    "position": 53587669,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000031_afram": {
     "rsid": "rs7000031_afram",
@@ -2969,11 +2439,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "3",
-    "position": 54641990,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000032_afram": {
     "rsid": "rs7000032_afram",
@@ -2991,11 +2457,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 78954193,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000033_afram": {
     "rsid": "rs7000033_afram",
@@ -3013,11 +2475,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 144624719,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000034_afram": {
     "rsid": "rs7000034_afram",
@@ -3035,11 +2493,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 123398347,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000035_afram": {
     "rsid": "rs7000035_afram",
@@ -3057,11 +2511,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 34857293,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000036_afram": {
     "rsid": "rs7000036_afram",
@@ -3079,11 +2529,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 1276437,
-    "ref": "G",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000037_afram": {
     "rsid": "rs7000037_afram",
@@ -3101,11 +2547,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 4583745,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000038_afram": {
     "rsid": "rs7000038_afram",
@@ -3123,11 +2565,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 1266758,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000039_afram": {
     "rsid": "rs7000039_afram",
@@ -3145,11 +2583,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 144770268,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000040_afram": {
     "rsid": "rs7000040_afram",
@@ -3167,11 +2601,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 107717447,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000041_afram": {
     "rsid": "rs7000041_afram",
@@ -3189,11 +2619,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 126200359,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000042_afram": {
     "rsid": "rs7000042_afram",
@@ -3211,11 +2637,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 132209544,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000043_afram": {
     "rsid": "rs7000043_afram",
@@ -3233,11 +2655,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 30004815,
-    "ref": "T",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000044_afram": {
     "rsid": "rs7000044_afram",
@@ -3255,11 +2673,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 4879298,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000045_afram": {
     "rsid": "rs7000045_afram",
@@ -3277,11 +2691,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 72833437,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000046_afram": {
     "rsid": "rs7000046_afram",
@@ -3299,11 +2709,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 62456528,
-    "ref": "A",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000047_afram": {
     "rsid": "rs7000047_afram",
@@ -3321,11 +2727,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 41039115,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000048_afram": {
     "rsid": "rs7000048_afram",
@@ -3343,11 +2745,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 90542646,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000049_afram": {
     "rsid": "rs7000049_afram",
@@ -3365,11 +2763,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 130531933,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000050_afram": {
     "rsid": "rs7000050_afram",
@@ -3387,11 +2781,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "4",
-    "position": 55696311,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000051_afram": {
     "rsid": "rs7000051_afram",
@@ -3409,11 +2799,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 86603701,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000052_afram": {
     "rsid": "rs7000052_afram",
@@ -3431,11 +2817,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 134945585,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000053_afram": {
     "rsid": "rs7000053_afram",
@@ -3453,11 +2835,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 62824796,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000054_afram": {
     "rsid": "rs7000054_afram",
@@ -3475,11 +2853,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 79779392,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000055_afram": {
     "rsid": "rs7000055_afram",
@@ -3497,11 +2871,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 8514379,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000056_afram": {
     "rsid": "rs7000056_afram",
@@ -3519,11 +2889,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 104306320,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000057_afram": {
     "rsid": "rs7000057_afram",
@@ -3541,11 +2907,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 2745311,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000058_afram": {
     "rsid": "rs7000058_afram",
@@ -3563,11 +2925,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 103646148,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000059_afram": {
     "rsid": "rs7000059_afram",
@@ -3585,11 +2943,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 38983976,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000060_afram": {
     "rsid": "rs7000060_afram",
@@ -3607,11 +2961,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "5",
-    "position": 56750632,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000061_afram": {
     "rsid": "rs7000061_afram",
@@ -3629,11 +2979,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 3502237,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000062_afram": {
     "rsid": "rs7000062_afram",
@@ -3651,11 +2997,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 91173515,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000063_afram": {
     "rsid": "rs7000063_afram",
@@ -3673,11 +3015,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 59913595,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000064_afram": {
     "rsid": "rs7000064_afram",
@@ -3695,11 +3033,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 97692410,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000065_afram": {
     "rsid": "rs7000065_afram",
@@ -3717,11 +3051,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 137334134,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000066_afram": {
     "rsid": "rs7000066_afram",
@@ -3739,11 +3069,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 84223185,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000067_afram": {
     "rsid": "rs7000067_afram",
@@ -3761,11 +3087,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 14257701,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000068_afram": {
     "rsid": "rs7000068_afram",
@@ -3783,11 +3105,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 119910723,
-    "ref": "G",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000069_afram": {
     "rsid": "rs7000069_afram",
@@ -3805,11 +3123,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 130180096,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000070_afram": {
     "rsid": "rs7000070_afram",
@@ -3827,11 +3141,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 110751733,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000071_afram": {
     "rsid": "rs7000071_afram",
@@ -3849,11 +3159,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 4104682,
-    "ref": "T",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000072_afram": {
     "rsid": "rs7000072_afram",
@@ -3871,11 +3177,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 26323055,
-    "ref": "T",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000073_afram": {
     "rsid": "rs7000073_afram",
@@ -3893,11 +3195,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 40144001,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000074_afram": {
     "rsid": "rs7000074_afram",
@@ -3915,11 +3213,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 11945645,
-    "ref": "C",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000075_afram": {
     "rsid": "rs7000075_afram",
@@ -3937,11 +3231,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 8232622,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000076_afram": {
     "rsid": "rs7000076_afram",
@@ -3959,11 +3249,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "12",
-    "position": 64130879,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000077_afram": {
     "rsid": "rs7000077_afram",
@@ -3981,11 +3267,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 142165966,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000078_afram": {
     "rsid": "rs7000078_afram",
@@ -4003,11 +3285,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 6111207,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000079_afram": {
     "rsid": "rs7000079_afram",
@@ -4025,11 +3303,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 70035043,
-    "ref": "G",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000080_afram": {
     "rsid": "rs7000080_afram",
@@ -4047,11 +3321,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "7",
-    "position": 58859274,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000081_afram": {
     "rsid": "rs7000081_afram",
@@ -4069,11 +3339,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 59913595,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000082_afram": {
     "rsid": "rs7000082_afram",
@@ -4091,11 +3357,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 61384677,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000083_afram": {
     "rsid": "rs7000083_afram",
@@ -4113,11 +3375,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 74551841,
-    "ref": "C",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000084_afram": {
     "rsid": "rs7000084_afram",
@@ -4135,11 +3393,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "11",
-    "position": 63076558,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000085_afram": {
     "rsid": "rs7000085_afram",
@@ -4157,11 +3411,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "12",
-    "position": 64130879,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000086_afram": {
     "rsid": "rs7000086_afram",
@@ -4179,11 +3429,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "13",
-    "position": 65185200,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000087_afram": {
     "rsid": "rs7000087_afram",
@@ -4201,11 +3447,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 66239521,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000088_afram": {
     "rsid": "rs7000088_afram",
@@ -4223,11 +3465,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 96879239,
-    "ref": "A",
-    "alt": "T"
+    "description": "African American ancestry informative marker."
   },
   "rs7000089_afram": {
     "rsid": "rs7000089_afram",
@@ -4245,11 +3483,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 62824850,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000090_afram": {
     "rsid": "rs7000090_afram",
@@ -4267,11 +3501,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 113839959,
-    "ref": "T",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000091_afram": {
     "rsid": "rs7000091_afram",
@@ -4289,11 +3519,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "9",
-    "position": 60967916,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000092_afram": {
     "rsid": "rs7000092_afram",
@@ -4311,11 +3537,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 5007364,
-    "ref": "A",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000093_afram": {
     "rsid": "rs7000093_afram",
@@ -4333,11 +3555,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 72185867,
-    "ref": "C",
-    "alt": "A"
+    "description": "African American ancestry informative marker."
   },
   "rs7000094_afram": {
     "rsid": "rs7000094_afram",
@@ -4355,11 +3573,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 55900800,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000095_afram": {
     "rsid": "rs7000095_afram",
@@ -4377,11 +3591,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "8",
-    "position": 124809604,
-    "ref": "T",
-    "alt": "C"
+    "description": "African American ancestry informative marker."
   },
   "rs7000096_afram": {
     "rsid": "rs7000096_afram",
@@ -4399,11 +3609,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "14",
-    "position": 66239521,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   },
   "rs7000097_afram": {
     "rsid": "rs7000097_afram",
@@ -4421,10 +3627,6 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker.",
-    "chromosome": "15",
-    "position": 67293842,
-    "ref": "A",
-    "alt": "G"
+    "description": "African American ancestry informative marker."
   }
 }

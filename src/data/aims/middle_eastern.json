@@ -1853,9 +1853,7 @@
     "rsid": "asj_gnomad",
     "region": "Middle Eastern",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.1639,
       "rs2840528": 0.72,
@@ -4437,21 +4435,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "10",
-    "position": 139656803,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   },
   "mid_gnomad": {
     "rsid": "mid_gnomad",
     "region": "Middle Eastern",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.1599,
       "rs2840528": 0.6769,
@@ -7033,12 +7023,6 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "6",
-    "position": 135439519,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   }
 }

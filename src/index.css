@@ -190,4 +190,14 @@ nav button:active {
   transform: translateY(1px) scale(0.96) !important;
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-150%); }
+  50% { transform: translateX(150%); }
+  100% { transform: translateX(150%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite linear;
+}
+
 

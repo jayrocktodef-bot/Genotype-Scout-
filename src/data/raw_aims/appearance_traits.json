@@ -983,5 +983,428 @@
       "weight": "1.0",
       "conversion": "efficient"
     }
+  },
+  {
+    "rsid": "rs312262906",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "MC1R",
+      "name": "MC1R Insertion Variant",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Red hair / fair skin",
+      "evidence": "moderate",
+      "AA": "Likely red hair / fair skin",
+      "A": "Carrier of red hair variant",
+      "AAA": "Likely red hair / fair skin"
+    }
+  },
+  {
+    "rsid": "rs885479",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "MC1R",
+      "name": "MC1R Pigmentation Variant",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Skin/hair color",
+      "evidence": "strong",
+      "TT": "Increased likelihood of fair skin and red hair",
+      "CT": "Carrier of pigmentation variant (intermediate skin/hair)",
+      "CC": "Normal pigmentation / darker hair and skin",
+      "AA": "Increased likelihood of fair skin and red hair",
+      "AG": "Carrier of pigmentation variant (intermediate skin/hair)",
+      "GG": "Normal pigmentation / darker hair and skin"
+    }
+  },
+  {
+    "rsid": "rs1805006",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "MC1R",
+      "name": "MC1R D84E",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Red hair / sun sensitivity",
+      "evidence": "strong",
+      "AA": "Likely red hair / fair skin / high sun sensitivity",
+      "AC": "Carrier of D84E variant (increased sun sensitivity)",
+      "CC": "Normal red hair variant status",
+      "TT": "Likely red hair / fair skin / high sun sensitivity",
+      "TG": "Carrier of D84E variant (increased sun sensitivity)",
+      "GG": "Normal red hair variant status"
+    }
+  },
+  {
+    "rsid": "rs201326893",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "MC1R",
+      "name": "MC1R Stop Gained Variant",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Red hair / fair skin",
+      "evidence": "moderate",
+      "AA": "High likelihood of red hair and fair skin",
+      "AC": "Carrier of MC1R stop-gain variant",
+      "CC": "Normal pigmentation",
+      "TT": "High likelihood of red hair and fair skin",
+      "TG": "Carrier of MC1R stop-gain variant",
+      "GG": "Normal pigmentation"
+    }
+  },
+  {
+    "rsid": "rs4959270",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "HERC2",
+      "name": "HERC2 Pigmentation Modulator",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Eye/hair/skin color",
+      "evidence": "moderate",
+      "AA": "Associated with lighter skin, blond hair, or blue eyes",
+      "AC": "Intermediate pigmentation",
+      "CC": "Associated with darker pigmentation"
+    }
+  },
+  {
+    "rsid": "rs2402130",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "SLC24A4",
+      "name": "SLC24A4 Pigmentation Variant",
+      "risk_allele": "G",
+      "category": "pigmentation",
+      "trait": "Skin and hair color",
+      "evidence": "strong",
+      "GG": "Darker skin and hair pigmentation",
+      "AG": "Intermediate pigmentation",
+      "AA": "Lighter skin and hair (blond hair / light skin)",
+      "CC": "Darker skin and hair pigmentation",
+      "CT": "Intermediate pigmentation",
+      "TT": "Lighter skin and hair (blond hair / light skin)"
+    }
+  },
+  {
+    "rsid": "rs2378249",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "ASIP",
+      "name": "ASIP Skin Modulator",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Skin color",
+      "evidence": "strong",
+      "CC": "Associated with darker skin tone",
+      "CG": "Intermediate skin tone",
+      "GG": "Associated with lighter skin tone"
+    }
+  },
+  {
+    "rsid": "rs12896399",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "SLC24A4",
+      "name": "SLC24A4 Eye Color Variant",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Eye and hair color",
+      "evidence": "strong",
+      "TT": "Associated with blue/green eyes and blond hair",
+      "GT": "Intermediate eye/hair color",
+      "GG": "Associated with brown eyes and dark hair",
+      "AA": "Associated with blue/green eyes and blond hair",
+      "AC": "Intermediate eye/hair color",
+      "CC": "Associated with brown eyes and dark hair"
+    }
+  },
+  {
+    "rsid": "rs1393350",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "TYR",
+      "name": "Tyrosinase Freckling Variant",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Skin color / freckling",
+      "evidence": "strong",
+      "TT": "Increased freckling and lighter skin",
+      "GT": "Intermediate freckling and skin tone",
+      "GG": "Normal freckling / darker skin tone",
+      "AA": "Increased freckling and lighter skin",
+      "AC": "Intermediate freckling and skin tone",
+      "CC": "Normal freckling / darker skin tone"
+    }
+  },
+  {
+    "rsid": "rs683",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "TYRP1",
+      "name": "TYRP1 Pigmentation Variant",
+      "risk_allele": "G",
+      "category": "pigmentation",
+      "trait": "Skin and hair color",
+      "evidence": "moderate",
+      "GG": "Darker hair and skin pigmentation",
+      "AG": "Intermediate hair/skin color",
+      "AA": "Lighter hair and skin (blond hair)",
+      "CC": "Darker hair and skin pigmentation",
+      "CT": "Intermediate hair/skin color",
+      "TT": "Lighter hair and skin (blond hair)"
+    }
+  },
+  {
+    "rsid": "rs3114908",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "BNC2",
+      "name": "BNC2 Skin Saturation",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Skin color",
+      "evidence": "strong",
+      "TT": "Associated with lighter skin pigmentation / freckling",
+      "AT": "Intermediate skin pigmentation",
+      "AA": "Associated with darker skin pigmentation"
+    }
+  },
+  {
+    "rsid": "rs1800414",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "OCA2",
+      "name": "OCA2 Pigmentation Modulator",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Eye/hair/skin color",
+      "evidence": "strong",
+      "CC": "Associated with brown eyes and darker skin",
+      "CT": "Intermediate pigmentation",
+      "TT": "Associated with blue/green eyes and blonde hair",
+      "GG": "Associated with brown eyes and darker skin",
+      "AG": "Intermediate pigmentation",
+      "AA": "Associated with blue/green eyes and blonde hair"
+    }
+  },
+  {
+    "rsid": "rs10756819",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "BNC2",
+      "name": "BNC2 Skin Pigmentation Locus",
+      "risk_allele": "G",
+      "category": "pigmentation",
+      "trait": "Skin pigmentation",
+      "evidence": "strong",
+      "GG": "Darker skin pigmentation / reduced freckling",
+      "AG": "Intermediate skin pigmentation",
+      "AA": "Lighter skin pigmentation / increased freckling"
+    }
+  },
+  {
+    "rsid": "rs2238289",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "HERC2",
+      "name": "HERC2 Skin Lightening Variant",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Skin and eye color",
+      "evidence": "strong",
+      "CC": "Lighter skin and blue eyes",
+      "CG": "Intermediate skin/eye color",
+      "GG": "Lighter skin and blue eyes",
+      "AG": "Intermediate skin/eye color",
+      "AA": "Darker skin and brown eyes"
+    }
+  },
+  {
+    "rsid": "rs17128291",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "SLC24A4",
+      "name": "SLC24A4 Hair/Skin Modifier",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Hair and skin color",
+      "evidence": "strong",
+      "CC": "Lighter skin and blond hair",
+      "CG": "Intermediate hair/skin color",
+      "GG": "Lighter skin and blond hair",
+      "AG": "Intermediate hair/skin color",
+      "AA": "Darker skin and dark hair"
+    }
+  },
+  {
+    "rsid": "rs6497292",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "HERC2",
+      "name": "HERC2 Eye/Skin Modulator",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Skin and eye color",
+      "evidence": "strong",
+      "CC": "Lighter skin and blue/green eyes",
+      "CG": "Intermediate skin/eye color",
+      "GG": "Lighter skin and blue/green eyes",
+      "AG": "Intermediate skin/eye color",
+      "AA": "Darker skin and brown eyes"
+    }
+  },
+  {
+    "rsid": "rs1129038",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "HERC2",
+      "name": "HERC2 Eye Color Predictor",
+      "risk_allele": "G",
+      "category": "pigmentation",
+      "trait": "Eye color",
+      "evidence": "strong",
+      "GG": "Brown eyes / darker pigmentation",
+      "AG": "Intermediate / hazel eyes",
+      "AA": "Blue/green eyes / lighter pigmentation",
+      "CC": "Brown eyes / darker pigmentation",
+      "CT": "Intermediate / hazel eyes",
+      "TT": "Blue/green eyes / lighter pigmentation"
+    }
+  },
+  {
+    "rsid": "rs1667394",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "HERC2",
+      "name": "HERC2 Pigmentation Modulator",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Skin and hair color",
+      "evidence": "strong",
+      "CC": "Lighter skin tone and blond hair",
+      "AC": "Intermediate skin/hair color",
+      "AA": "Darker skin tone and dark hair",
+      "GG": "Lighter skin tone and blond hair",
+      "TG": "Intermediate skin/hair color",
+      "TT": "Darker skin tone and dark hair"
+    }
+  },
+  {
+    "rsid": "rs1470608",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "OCA2",
+      "name": "OCA2 Eye/Skin Variant",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Eye and skin color",
+      "evidence": "strong",
+      "AA": "Lighter skin pigmentation and blue eyes",
+      "AG": "Intermediate pigmentation",
+      "GG": "Darker skin pigmentation and brown eyes",
+      "TT": "Lighter skin pigmentation and blue eyes",
+      "CT": "Intermediate pigmentation",
+      "CC": "Darker skin pigmentation and brown eyes"
+    }
+  },
+  {
+    "rsid": "rs6119471",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "ASIP",
+      "name": "ASIP Skin Color Locus",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Skin color",
+      "evidence": "strong",
+      "CC": "Associated with darker skin tone",
+      "AC": "Intermediate skin tone",
+      "AA": "Associated with lighter skin tone"
+    }
+  },
+  {
+    "rsid": "rs1545397",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "OCA2",
+      "name": "OCA2 Pigmentation Modulator",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Skin and eye color",
+      "evidence": "strong",
+      "TT": "Associated with lighter skin tone and light eyes",
+      "AT": "Intermediate skin/eye color",
+      "AA": "Associated with darker skin tone and brown eyes"
+    }
+  },
+  {
+    "rsid": "rs6059655",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "ASIP",
+      "name": "ASIP Hair/Skin Locus",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Skin and hair color",
+      "evidence": "strong",
+      "TT": "Associated with lighter skin and blond/red hair",
+      "GT": "Intermediate pigmentation",
+      "GG": "Associated with darker skin and dark hair",
+      "AA": "Associated with lighter skin and blond/red hair",
+      "AC": "Intermediate pigmentation",
+      "CC": "Associated with darker skin and dark hair"
+    }
+  },
+  {
+    "rsid": "rs12441727",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "OCA2",
+      "name": "OCA2 Pigmentation Modifier",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Eye and skin color",
+      "evidence": "strong",
+      "AA": "Lighter skin and blue/green eyes",
+      "AG": "Intermediate pigmentation",
+      "GG": "Darker skin and brown eyes",
+      "TT": "Lighter skin and blue/green eyes",
+      "CT": "Intermediate pigmentation",
+      "CC": "Darker skin and brown eyes"
+    }
+  },
+  {
+    "rsid": "rs3212355",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "MC1R",
+      "name": "MC1R Promoter Variant",
+      "risk_allele": "A",
+      "category": "pigmentation",
+      "trait": "Hair color / fair skin",
+      "evidence": "strong",
+      "AA": "High likelihood of red/fair hair and fair skin",
+      "AC": "Carrier of MC1R promoter variant",
+      "CC": "Normal pigmentation / darker hair",
+      "TT": "High likelihood of red/fair hair and fair skin",
+      "TG": "Carrier of MC1R promoter variant",
+      "GG": "Normal pigmentation / darker hair"
+    }
+  },
+  {
+    "rsid": "rs8051733",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "DEF8",
+      "name": "DEF8 Skin Color Variant",
+      "risk_allele": "C",
+      "category": "pigmentation",
+      "trait": "Skin color",
+      "evidence": "strong",
+      "CC": "Associated with darker skin tone",
+      "AC": "Intermediate skin tone",
+      "AA": "Associated with lighter skin tone"
+    }
   }
 ]

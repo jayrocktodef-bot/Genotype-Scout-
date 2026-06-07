@@ -14,6 +14,10 @@ import { calculatePopulationProximityOptimized, compileReferenceKernel } from '.
 import { extractPlinkGenotype } from '../utils/plinkUtils';
 import { processSubpopulations } from '../components/ancestryOracleLogic';
 import { loadMasterAims } from '../data/index';
+import { calculateMDLPK16Scores } from "../engines/ancestry/mdlpAncEngine";
+import { calculateRegionalScores } from "../engines/ancestry/grafAncEngine";
+import { identifyMicroHapSignatures } from "../engines/ancestry/microHapEngine";
+import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveEngine";
 
 compileReferenceKernel();
 
@@ -37,10 +41,10 @@ async function runGenotypeScout(
       matchHealthAndWellness(imputedSnpMap),
       calculatePopulationProximityOptimized(snpMapForEngine),
       calculateMarkerBenchmarks(imputedSnpMap),
-      (async () => { const { calculateMDLPK16Scores } = await import("../engines/ancestry/mdlpAncEngine"); return calculateMDLPK16Scores(imputedSnpMap); })(),
-      (async () => { const { calculateRegionalScores } = await import("../engines/ancestry/grafAncEngine"); return calculateRegionalScores(imputedSnpMap); })(),
-      (async () => { const { identifyMicroHapSignatures } = await import("../engines/ancestry/microHapEngine"); return identifyMicroHapSignatures(imputedSnpMap); })(),
-      (async () => { const { calculateComprehensiveScores } = await import("../engines/ancestry/comprehensiveEngine"); return calculateComprehensiveScores(imputedSnpMap); })()
+      calculateMDLPK16Scores(imputedSnpMap),
+      calculateRegionalScores(imputedSnpMap),
+      identifyMicroHapSignatures(imputedSnpMap),
+      calculateComprehensiveScores(imputedSnpMap)
     ]);
     const bloodResult = { ancientAdmixture, individualMatches, famousMatches, healthWellness, populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw, microHapResults, comprehensiveResults };
 

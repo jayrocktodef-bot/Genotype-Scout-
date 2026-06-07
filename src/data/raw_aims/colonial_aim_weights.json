@@ -1,16 +1,30 @@
 {
   "rs1426654": {
-    "YRI": 0.01,
-    "LWK": 0.02,
-    "GWD": 0.01,
-    "MSL": 0.01,
-    "ESN": 0.01
+    "rsid": "rs1426654",
+    "frequencies": {}
   },
-  "rs11119561": {
-    "YRI": 0.40,
-    "LWK": 0.35,
-    "GWD": 0.38,
-    "MSL": 0.42,
-    "ESN": 0.39
+  "rs16891982": {
+    "rsid": "rs16891982",
+    "frequencies": {}
+  },
+  "rs12913832": {
+    "rsid": "rs12913832",
+    "frequencies": {}
+  },
+  "rs2814778": {
+    "rsid": "rs2814778",
+    "frequencies": {}
+  },
+  "rs16139": {
+    "rsid": "rs16139",
+    "frequencies": {}
+  },
+  "rs1476413": {
+    "rsid": "rs1476413",
+    "frequencies": {}
+  },
+  "rs10756819": {
+    "rsid": "rs10756819",
+    "frequencies": {}
   }
 }

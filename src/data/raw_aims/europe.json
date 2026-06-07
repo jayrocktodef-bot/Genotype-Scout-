@@ -11908,5 +11908,4755 @@
     "trait": "Ancestry",
     "category": "Ancestry",
     "subRegion": "EUROPE"
+  },
+  {
+    "rsid": "rs12124147_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.978,
+      "EUR": 0.599,
+      "EAS": 0.752,
+      "AMR": 0.732,
+      "SAS": 0.835,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.778
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7548659_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.828,
+      "EUR": 0.219,
+      "EAS": 0.261,
+      "AMR": 0.281,
+      "SAS": 0.367,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.4
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs760607_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.528,
+      "EUR": 0.407,
+      "EAS": 0.817,
+      "AMR": 0.478,
+      "SAS": 0.689,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.563
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1981135_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.198,
+      "EUR": 0.127,
+      "EAS": 0.072,
+      "AMR": 0.105,
+      "SAS": 0.326,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.335
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs213496_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.639,
+      "EUR": 0.392,
+      "EAS": 0.541,
+      "AMR": 0.3,
+      "SAS": 0.363,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.621
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1566246_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.771,
+      "EUR": 0.709,
+      "EAS": 0.899,
+      "AMR": 0.775,
+      "SAS": 0.828,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.903
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10493649_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.991,
+      "EUR": 0.79,
+      "EAS": 0.956,
+      "AMR": 0.919,
+      "SAS": 0.881,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.937
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6660484_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.633,
+      "EUR": 0.6,
+      "EAS": 0.562,
+      "AMR": 0.65,
+      "SAS": 0.783,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.756
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2968485_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.625,
+      "EUR": 0.768,
+      "EAS": 0.345,
+      "AMR": 0.602,
+      "SAS": 0.615,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.876
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs731756_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.27,
+      "EUR": 0.1,
+      "EAS": 0.008,
+      "AMR": 0.244,
+      "SAS": 0.163,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.243
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs488150_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.989,
+      "EUR": 0.798,
+      "EAS": 0.439,
+      "AMR": 0.762,
+      "SAS": 0.868,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.898
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2784101_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.772,
+      "EUR": 0.579,
+      "EAS": 0.713,
+      "AMR": 0.706,
+      "SAS": 0.785,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.745
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10494878_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.899,
+      "EUR": 0.801,
+      "EAS": 0.995,
+      "AMR": 0.846,
+      "SAS": 0.914,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.911
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1930903_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.67,
+      "EUR": 0.492,
+      "EAS": 0.305,
+      "AMR": 0.486,
+      "SAS": 0.419,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.607
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 1 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs587913_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.775,
+      "EUR": 0.769,
+      "EAS": 0.971,
+      "AMR": 0.804,
+      "SAS": 0.877,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.921
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4260216_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.616,
+      "EUR": 0.286,
+      "EAS": 0.523,
+      "AMR": 0.399,
+      "SAS": 0.381,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.464
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs340747_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.641,
+      "EUR": 0.157,
+      "EAS": 0.306,
+      "AMR": 0.258,
+      "SAS": 0.511,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.331
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1489688_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.316,
+      "EUR": 0.042,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.076,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.148
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4665797_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.985,
+      "EUR": 0.767,
+      "EAS": 0.975,
+      "AMR": 0.83,
+      "SAS": 0.941,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.869
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10205008_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.837,
+      "EUR": 0.521,
+      "EAS": 0.787,
+      "AMR": 0.695,
+      "SAS": 0.481,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.707
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2075375_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.489,
+      "EUR": 0.49,
+      "EAS": 0.405,
+      "AMR": 0.546,
+      "SAS": 0.375,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.718
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6720799_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.775,
+      "EUR": 0.775,
+      "EAS": 0.886,
+      "AMR": 0.898,
+      "SAS": 0.918,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.895
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs13032535_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.514,
+      "EUR": 0.583,
+      "EAS": 0.693,
+      "AMR": 0.671,
+      "SAS": 0.677,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.699
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11123861_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.896,
+      "EUR": 0.351,
+      "EAS": 0.784,
+      "AMR": 0.595,
+      "SAS": 0.808,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.569
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6739285_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.996,
+      "EUR": 0.853,
+      "EAS": 1.0,
+      "AMR": 0.938,
+      "SAS": 0.976,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.961
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1955394_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.662,
+      "EUR": 0.127,
+      "EAS": 0.537,
+      "AMR": 0.329,
+      "SAS": 0.425,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.254
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs16829231_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.899,
+      "EUR": 0.851,
+      "EAS": 0.956,
+      "AMR": 0.85,
+      "SAS": 0.958,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.942
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2117742_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.672,
+      "EUR": 0.581,
+      "EAS": 0.954,
+      "AMR": 0.689,
+      "SAS": 0.709,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.774
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1037266_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.952,
+      "EUR": 0.526,
+      "EAS": 0.541,
+      "AMR": 0.487,
+      "SAS": 0.593,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.731
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6752189_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.283,
+      "EUR": 0.154,
+      "EAS": 0.412,
+      "AMR": 0.147,
+      "SAS": 0.141,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.354
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1227131_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.759,
+      "EUR": 0.362,
+      "EAS": 0.977,
+      "AMR": 0.503,
+      "SAS": 0.728,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.526
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7558428_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.229,
+      "EUR": 0.311,
+      "EAS": 0.107,
+      "AMR": 0.215,
+      "SAS": 0.126,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.478
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10189760_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.18,
+      "EUR": 0.296,
+      "EAS": 0.086,
+      "AMR": 0.281,
+      "SAS": 0.217,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.484
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6436553_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.301,
+      "EUR": 0.064,
+      "EAS": 0.006,
+      "AMR": 0.071,
+      "SAS": 0.033,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.145
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 2 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10510268_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.986,
+      "EUR": 0.803,
+      "EAS": 0.965,
+      "AMR": 0.905,
+      "SAS": 0.851,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.939
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs3804989_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.744,
+      "EUR": 0.537,
+      "EAS": 0.92,
+      "AMR": 0.624,
+      "SAS": 0.806,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.685
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs3916092_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.559,
+      "EUR": 0.816,
+      "EAS": 0.985,
+      "AMR": 0.821,
+      "SAS": 0.92,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.936
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11544593_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.993,
+      "EUR": 0.841,
+      "EAS": 0.996,
+      "AMR": 0.872,
+      "SAS": 0.896,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.962
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs9310279_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.393,
+      "EUR": 0.415,
+      "EAS": 0.429,
+      "AMR": 0.503,
+      "SAS": 0.53,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.582
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6551458_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.674,
+      "EUR": 0.085,
+      "EAS": 0.101,
+      "AMR": 0.124,
+      "SAS": 0.056,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.196
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7630043_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.008,
+      "EUR": 0.096,
+      "EAS": 0.203,
+      "AMR": 0.19,
+      "SAS": 0.086,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.194
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10513729_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.638,
+      "EUR": 0.437,
+      "EAS": 0.862,
+      "AMR": 0.604,
+      "SAS": 0.636,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.622
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7636818_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.814,
+      "EUR": 0.777,
+      "EAS": 0.999,
+      "AMR": 0.84,
+      "SAS": 0.935,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.868
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4859259_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.959,
+      "EUR": 0.239,
+      "EAS": 0.762,
+      "AMR": 0.366,
+      "SAS": 0.441,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.436
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 3 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6449375_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.51,
+      "EAS": 0.641,
+      "AMR": 0.494,
+      "SAS": 0.673,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.638
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6448770_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.331,
+      "EUR": 0.151,
+      "EAS": 0.005,
+      "AMR": 0.171,
+      "SAS": 0.132,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.405
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs9884706_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.635,
+      "EUR": 0.861,
+      "EAS": 0.713,
+      "AMR": 0.831,
+      "SAS": 0.903,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.954
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10008492_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.983,
+      "EUR": 0.434,
+      "EAS": 0.999,
+      "AMR": 0.751,
+      "SAS": 0.935,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.619
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12186184_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.846,
+      "EUR": 0.571,
+      "EAS": 0.688,
+      "AMR": 0.601,
+      "SAS": 0.598,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.77
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1109501_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.063,
+      "EUR": 0.287,
+      "EAS": 0.389,
+      "AMR": 0.264,
+      "SAS": 0.302,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.468
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs3923243_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.723,
+      "EUR": 0.4,
+      "EAS": 0.121,
+      "AMR": 0.333,
+      "SAS": 0.375,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.599
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6820697_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.385,
+      "EUR": 0.464,
+      "EAS": 0.704,
+      "AMR": 0.392,
+      "SAS": 0.567,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.573
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1343921_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.465,
+      "EUR": 0.527,
+      "EAS": 0.186,
+      "AMR": 0.376,
+      "SAS": 0.527,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.685
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs13349989_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.997,
+      "EUR": 0.86,
+      "EAS": 0.999,
+      "AMR": 0.941,
+      "SAS": 0.965,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.977
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7669241_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.452,
+      "EUR": 0.061,
+      "EAS": 0.497,
+      "AMR": 0.117,
+      "SAS": 0.075,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.215
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2194860_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.689,
+      "EUR": 0.17,
+      "EAS": 0.65,
+      "AMR": 0.49,
+      "SAS": 0.411,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.345
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4574434_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.918,
+      "EUR": 0.695,
+      "EAS": 0.398,
+      "AMR": 0.651,
+      "SAS": 0.611,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.778
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1541745_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.786,
+      "EUR": 0.649,
+      "EAS": 0.553,
+      "AMR": 0.781,
+      "SAS": 0.722,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.809
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs692157_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.5,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.736
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1390009_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.924,
+      "EUR": 0.824,
+      "EAS": 0.992,
+      "AMR": 0.823,
+      "SAS": 0.971,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.931
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10519410_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.275,
+      "EUR": 0.189,
+      "EAS": 0.212,
+      "AMR": 0.16,
+      "SAS": 0.334,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.333
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1507500_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.197,
+      "EUR": 0.11,
+      "EAS": 0.138,
+      "AMR": 0.21,
+      "SAS": 0.117,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.238
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1430975_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.352,
+      "EUR": 0.178,
+      "EAS": 0.501,
+      "AMR": 0.281,
+      "SAS": 0.277,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.308
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1435442_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.665,
+      "EUR": 0.242,
+      "EAS": 0.068,
+      "AMR": 0.2,
+      "SAS": 0.161,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.417
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10032784_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.534,
+      "EUR": 0.268,
+      "EAS": 0.369,
+      "AMR": 0.282,
+      "SAS": 0.29,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.451
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 4 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2736122_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.762,
+      "EUR": 0.747,
+      "EAS": 0.917,
+      "AMR": 0.878,
+      "SAS": 0.821,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.878
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1373967_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.712,
+      "EUR": 0.32,
+      "EAS": 0.349,
+      "AMR": 0.487,
+      "SAS": 0.412,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.544
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs174015_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.666,
+      "EUR": 0.647,
+      "EAS": 0.581,
+      "AMR": 0.713,
+      "SAS": 0.79,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.779
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6863510_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.648,
+      "EUR": 0.144,
+      "EAS": 0.173,
+      "AMR": 0.157,
+      "SAS": 0.304,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.252
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6866231_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.405,
+      "EUR": 0.083,
+      "EAS": 0.086,
+      "AMR": 0.195,
+      "SAS": 0.12,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.192
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs346650_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.532,
+      "EUR": 0.539,
+      "EAS": 0.631,
+      "AMR": 0.715,
+      "SAS": 0.455,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.693
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1528961_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.8,
+      "EUR": 0.567,
+      "EAS": 0.354,
+      "AMR": 0.575,
+      "SAS": 0.36,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.755
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4868204_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.107,
+      "EUR": 0.146,
+      "EAS": 0.394,
+      "AMR": 0.277,
+      "SAS": 0.274,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.325
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7727897_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.07,
+      "EUR": 0.089,
+      "EAS": 0.334,
+      "AMR": 0.184,
+      "SAS": 0.103,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.264
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs248327_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.865,
+      "EUR": 0.645,
+      "EAS": 0.382,
+      "AMR": 0.582,
+      "SAS": 0.571,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.739
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 5 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4960257_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.573,
+      "EUR": 0.399,
+      "EAS": 0.303,
+      "AMR": 0.357,
+      "SAS": 0.425,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.539
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2876167_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.756,
+      "EUR": 0.665,
+      "EAS": 0.452,
+      "AMR": 0.689,
+      "SAS": 0.572,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.786
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1992387_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.692,
+      "EUR": 0.054,
+      "EAS": 0.062,
+      "AMR": 0.11,
+      "SAS": 0.163,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.143
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7763768_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.757,
+      "EUR": 0.486,
+      "EAS": 0.496,
+      "AMR": 0.418,
+      "SAS": 0.64,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.763
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6918101_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.793,
+      "EUR": 0.442,
+      "EAS": 0.856,
+      "AMR": 0.579,
+      "SAS": 0.625,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.654
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12660883_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.055,
+      "EUR": 0.164,
+      "EAS": 0.28,
+      "AMR": 0.386,
+      "SAS": 0.445,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.398
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs382259_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.356,
+      "EUR": 0.261,
+      "EAS": 0.465,
+      "AMR": 0.398,
+      "SAS": 0.478,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.661
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2076173_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.866,
+      "EUR": 0.115,
+      "EAS": 0.374,
+      "AMR": 0.258,
+      "SAS": 0.321,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.369
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4610536_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.772,
+      "EUR": 0.684,
+      "EAS": 0.724,
+      "AMR": 0.69,
+      "SAS": 0.765,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.792
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7753036_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.996,
+      "EUR": 0.881,
+      "EAS": 0.999,
+      "AMR": 0.929,
+      "SAS": 0.963,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.931
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17551120_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.051,
+      "EUR": 0.163,
+      "EAS": 0.062,
+      "AMR": 0.117,
+      "SAS": 0.102,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.325
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10428822_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.774,
+      "EUR": 0.852,
+      "EAS": 0.936,
+      "AMR": 0.906,
+      "SAS": 0.837,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.955
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 6 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2189947_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.087,
+      "EUR": 0.25,
+      "EAS": 0.338,
+      "AMR": 0.305,
+      "SAS": 0.128,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.423
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs697518_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.255,
+      "EUR": 0.069,
+      "EAS": 0.003,
+      "AMR": 0.098,
+      "SAS": 0.067,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.266
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2529015_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.874,
+      "EUR": 0.847,
+      "EAS": 0.999,
+      "AMR": 0.927,
+      "SAS": 0.957,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.96
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10951140_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.648,
+      "EUR": 0.75,
+      "EAS": 0.878,
+      "AMR": 0.526,
+      "SAS": 0.695,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.849
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7791143_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.732,
+      "EUR": 0.455,
+      "EAS": 0.592,
+      "AMR": 0.591,
+      "SAS": 0.371,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.632
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4730287_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.981,
+      "EUR": 0.526,
+      "EAS": 0.718,
+      "AMR": 0.445,
+      "SAS": 0.608,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.699
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7781715_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.328,
+      "EUR": 0.069,
+      "EAS": 0.159,
+      "AMR": 0.092,
+      "SAS": 0.177,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.234
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12705973_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.871,
+      "EUR": 0.591,
+      "EAS": 0.87,
+      "AMR": 0.71,
+      "SAS": 0.733,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.715
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1593306_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.452,
+      "EUR": 0.074,
+      "EAS": 0.005,
+      "AMR": 0.075,
+      "SAS": 0.056,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.218
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11761774_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.747,
+      "EUR": 0.716,
+      "EAS": 0.947,
+      "AMR": 0.695,
+      "SAS": 0.738,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.849
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 7 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1548353_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.325,
+      "EUR": 0.418,
+      "EAS": 0.673,
+      "AMR": 0.378,
+      "SAS": 0.77,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.636
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4565458_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.628,
+      "EUR": 0.504,
+      "EAS": 0.805,
+      "AMR": 0.579,
+      "SAS": 0.689,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.576
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12548107_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.205,
+      "EUR": 0.083,
+      "EAS": 0.334,
+      "AMR": 0.127,
+      "SAS": 0.178,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.239
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10109984_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.91,
+      "EUR": 0.417,
+      "EAS": 0.347,
+      "AMR": 0.509,
+      "SAS": 0.719,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.603
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6993747_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.592,
+      "EUR": 0.255,
+      "EAS": 0.318,
+      "AMR": 0.35,
+      "SAS": 0.496,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.445
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7827918_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.843,
+      "EUR": 0.417,
+      "EAS": 0.653,
+      "AMR": 0.386,
+      "SAS": 0.675,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.548
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4634634_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.315,
+      "EUR": 0.136,
+      "EAS": 0.125,
+      "AMR": 0.108,
+      "SAS": 0.1,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.373
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11784678_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.381,
+      "EUR": 0.287,
+      "EAS": 0.364,
+      "AMR": 0.287,
+      "SAS": 0.259,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.446
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1026804_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.497,
+      "EUR": 0.173,
+      "EAS": 0.079,
+      "AMR": 0.197,
+      "SAS": 0.261,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.257
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1841316_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.196,
+      "EUR": 0.313,
+      "EAS": 0.387,
+      "AMR": 0.285,
+      "SAS": 0.268,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.479
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4871195_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.957,
+      "EUR": 0.298,
+      "EAS": 0.835,
+      "AMR": 0.513,
+      "SAS": 0.604,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.501
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4736413_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.449,
+      "EUR": 0.524,
+      "EAS": 0.642,
+      "AMR": 0.49,
+      "SAS": 0.527,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.663
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 8 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10962589_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.313,
+      "EUR": 0.152,
+      "EAS": 0.696,
+      "AMR": 0.262,
+      "SAS": 0.455,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.266
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 9 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10812520_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.772,
+      "EUR": 0.743,
+      "EAS": 0.876,
+      "AMR": 0.787,
+      "SAS": 0.716,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.882
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 9 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10739277_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.999,
+      "EUR": 0.904,
+      "EAS": 1.0,
+      "AMR": 0.947,
+      "SAS": 0.98,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.98
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 9 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7860625_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.372,
+      "EUR": 0.124,
+      "EAS": 0.373,
+      "AMR": 0.114,
+      "SAS": 0.375,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.306
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 9 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7921493_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.784,
+      "EUR": 0.914,
+      "EAS": 1.0,
+      "AMR": 0.873,
+      "SAS": 0.981,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.981
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1324322_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.672,
+      "EUR": 0.631,
+      "EAS": 0.863,
+      "AMR": 0.731,
+      "SAS": 0.86,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.763
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs3858126_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.116,
+      "EUR": 0.369,
+      "EAS": 0.603,
+      "AMR": 0.526,
+      "SAS": 0.391,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.56
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7072160_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.517,
+      "EUR": 0.253,
+      "EAS": 0.458,
+      "AMR": 0.341,
+      "SAS": 0.439,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.408
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4691_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.917,
+      "EUR": 0.78,
+      "EAS": 0.459,
+      "AMR": 0.738,
+      "SAS": 0.545,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.902
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs499437_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.383,
+      "EUR": 0.53,
+      "EAS": 0.657,
+      "AMR": 0.63,
+      "SAS": 0.531,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.704
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1857459_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.79,
+      "EUR": 0.435,
+      "EAS": 0.271,
+      "AMR": 0.539,
+      "SAS": 0.4,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.636
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1023331_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.798,
+      "EUR": 0.655,
+      "EAS": 0.811,
+      "AMR": 0.751,
+      "SAS": 0.723,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.874
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10509826_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.17,
+      "EUR": 0.311,
+      "EAS": 0.131,
+      "AMR": 0.219,
+      "SAS": 0.179,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.439
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11146457_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.007,
+      "EUR": 0.25,
+      "EAS": 0.496,
+      "AMR": 0.16,
+      "SAS": 0.31,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.418
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 10 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2045272_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.672,
+      "EUR": 0.542,
+      "EAS": 0.784,
+      "AMR": 0.546,
+      "SAS": 0.715,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.699
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 11 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7931276_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.874,
+      "EUR": 0.867,
+      "EAS": 0.878,
+      "AMR": 0.756,
+      "SAS": 0.907,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.896
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 11 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2218868_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.601,
+      "EUR": 0.48,
+      "EAS": 0.34,
+      "AMR": 0.457,
+      "SAS": 0.298,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.649
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 11 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2237997_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.341,
+      "EUR": 0.375,
+      "EAS": 0.251,
+      "AMR": 0.216,
+      "SAS": 0.327,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.534
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 11 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12804561_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.647,
+      "EUR": 0.343,
+      "EAS": 0.623,
+      "AMR": 0.268,
+      "SAS": 0.531,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.509
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 11 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4936969_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.821,
+      "EUR": 0.773,
+      "EAS": 0.933,
+      "AMR": 0.68,
+      "SAS": 0.903,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.924
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 11 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs740851_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.893,
+      "EUR": 0.598,
+      "EAS": 0.636,
+      "AMR": 0.661,
+      "SAS": 0.657,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.788
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7976721_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.784,
+      "EUR": 0.878,
+      "EAS": 0.885,
+      "AMR": 0.922,
+      "SAS": 0.819,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.955
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs699039_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.876,
+      "EUR": 0.756,
+      "EAS": 0.99,
+      "AMR": 0.863,
+      "SAS": 0.809,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.902
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2860493_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.182,
+      "EUR": 0.136,
+      "EAS": 0.542,
+      "AMR": 0.228,
+      "SAS": 0.428,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.295
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2723891_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.703,
+      "EUR": 0.631,
+      "EAS": 0.457,
+      "AMR": 0.592,
+      "SAS": 0.683,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.759
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11107018_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.992,
+      "EUR": 0.832,
+      "EAS": 0.803,
+      "AMR": 0.879,
+      "SAS": 0.948,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.929
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs12231308_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.667,
+      "EUR": 0.566,
+      "EAS": 0.521,
+      "AMR": 0.598,
+      "SAS": 0.478,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.725
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7312155_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.072,
+      "EUR": 0.119,
+      "EAS": 0.001,
+      "AMR": 0.097,
+      "SAS": 0.118,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.31
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs991817_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.162,
+      "EUR": 0.442,
+      "EAS": 0.521,
+      "AMR": 0.291,
+      "SAS": 0.326,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.664
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1955105_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.769,
+      "EUR": 0.684,
+      "EAS": 0.441,
+      "AMR": 0.523,
+      "SAS": 0.636,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.857
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1405050_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.308,
+      "EUR": 0.513,
+      "EAS": 0.27,
+      "AMR": 0.363,
+      "SAS": 0.368,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.791
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs3815210_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.486,
+      "EUR": 0.154,
+      "EAS": 0.568,
+      "AMR": 0.143,
+      "SAS": 0.231,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.304
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2398513_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.867,
+      "EUR": 0.477,
+      "EAS": 0.449,
+      "AMR": 0.481,
+      "SAS": 0.586,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.656
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 12 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs377318_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.735,
+      "EUR": 0.667,
+      "EAS": 0.863,
+      "AMR": 0.625,
+      "SAS": 0.699,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.816
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 13 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1678386_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.294,
+      "EUR": 0.32,
+      "EAS": 0.665,
+      "AMR": 0.339,
+      "SAS": 0.557,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.508
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 13 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4982420_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.387,
+      "EUR": 0.456,
+      "EAS": 0.791,
+      "AMR": 0.307,
+      "SAS": 0.487,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.639
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 14 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2038281_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.927,
+      "EUR": 0.506,
+      "EAS": 0.715,
+      "AMR": 0.67,
+      "SAS": 0.57,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.74
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 14 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10498472_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.998,
+      "EUR": 0.888,
+      "EAS": 1.0,
+      "AMR": 0.96,
+      "SAS": 0.986,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.958
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 14 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1531631_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.2,
+      "EUR": 0.303,
+      "EAS": 0.11,
+      "AMR": 0.21,
+      "SAS": 0.296,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.476
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 14 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17126387_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.078,
+      "EUR": 0.051,
+      "EAS": 0.042,
+      "AMR": 0.082,
+      "SAS": 0.128,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.148
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 14 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4906226_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.733,
+      "EUR": 0.768,
+      "EAS": 0.561,
+      "AMR": 0.643,
+      "SAS": 0.748,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.859
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 14 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1947745_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.866,
+      "EUR": 0.679,
+      "EAS": 0.731,
+      "AMR": 0.827,
+      "SAS": 0.786,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.817
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 15 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11634609_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.939,
+      "EUR": 0.642,
+      "EAS": 0.472,
+      "AMR": 0.641,
+      "SAS": 0.833,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.806
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 15 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2611605_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.871,
+      "EUR": 0.812,
+      "EAS": 0.991,
+      "AMR": 0.87,
+      "SAS": 0.938,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.915
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 15 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1906433_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.43,
+      "EUR": 0.397,
+      "EAS": 0.186,
+      "AMR": 0.258,
+      "SAS": 0.449,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.586
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 15 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs10519005_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.908,
+      "EUR": 0.565,
+      "EAS": 0.618,
+      "AMR": 0.474,
+      "SAS": 0.724,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.688
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 15 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1510058_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.035,
+      "EUR": 0.114,
+      "EAS": 0.311,
+      "AMR": 0.138,
+      "SAS": 0.275,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.252
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 15 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1891325_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.477,
+      "EUR": 0.117,
+      "EAS": 0.056,
+      "AMR": 0.114,
+      "SAS": 0.139,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.264
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 16 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs30237_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.907,
+      "EUR": 0.162,
+      "EAS": 0.343,
+      "AMR": 0.169,
+      "SAS": 0.253,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.275
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 16 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6539986_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.421,
+      "EUR": 0.101,
+      "EAS": 0.443,
+      "AMR": 0.228,
+      "SAS": 0.246,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.225
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 16 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2253820_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.494,
+      "EUR": 0.176,
+      "EAS": 0.715,
+      "AMR": 0.497,
+      "SAS": 0.262,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.398
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 17 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7215135_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.609,
+      "EUR": 0.117,
+      "EAS": 0.453,
+      "AMR": 0.187,
+      "SAS": 0.241,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.234
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 17 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11870879_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.726,
+      "EUR": 0.655,
+      "EAS": 0.622,
+      "AMR": 0.624,
+      "SAS": 0.641,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.761
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 17 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs196948_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.731,
+      "EUR": 0.242,
+      "EAS": 0.322,
+      "AMR": 0.388,
+      "SAS": 0.217,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.398
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 17 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs8071270_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.185,
+      "EUR": 0.279,
+      "EAS": 0.223,
+      "AMR": 0.245,
+      "SAS": 0.178,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.474
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 17 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs736632_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.76,
+      "EUR": 0.425,
+      "EAS": 0.434,
+      "AMR": 0.512,
+      "SAS": 0.593,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.579
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 18 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs400839_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.656,
+      "EUR": 0.471,
+      "EAS": 0.643,
+      "AMR": 0.532,
+      "SAS": 0.504,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.649
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 18 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1786153_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.443,
+      "EUR": 0.456,
+      "EAS": 0.704,
+      "AMR": 0.49,
+      "SAS": 0.624,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.668
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 18 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs11564361_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.922,
+      "EUR": 0.796,
+      "EAS": 0.955,
+      "AMR": 0.791,
+      "SAS": 0.892,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.897
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 18 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17079195_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.227,
+      "EUR": 0.14,
+      "EAS": 0.4,
+      "AMR": 0.144,
+      "SAS": 0.164,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.301
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 18 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs4536588_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.137,
+      "EUR": 0.426,
+      "EAS": 0.46,
+      "AMR": 0.444,
+      "SAS": 0.55,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.595
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1552046_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.517,
+      "EUR": 0.621,
+      "EAS": 0.351,
+      "AMR": 0.69,
+      "SAS": 0.584,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.773
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs8111998_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.689,
+      "EUR": 0.06,
+      "EAS": 0.137,
+      "AMR": 0.099,
+      "SAS": 0.158,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.151
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2082455_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.856,
+      "EUR": 0.265,
+      "EAS": 0.546,
+      "AMR": 0.323,
+      "SAS": 0.401,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.402
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs17496703_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.994,
+      "EUR": 0.932,
+      "EAS": 0.993,
+      "AMR": 0.961,
+      "SAS": 0.93,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.988
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7976_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.904,
+      "EUR": 0.773,
+      "EAS": 0.989,
+      "AMR": 0.89,
+      "SAS": 0.893,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.935
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs7252868_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.444,
+      "EUR": 0.28,
+      "EAS": 0.319,
+      "AMR": 0.21,
+      "SAS": 0.221,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.424
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 19 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6076623_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.994,
+      "EUR": 0.694,
+      "EAS": 0.703,
+      "AMR": 0.677,
+      "SAS": 0.901,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.877
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1041200_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.293,
+      "EUR": 0.119,
+      "EAS": 0.227,
+      "AMR": 0.167,
+      "SAS": 0.195,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.224
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs8116153_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.078,
+      "EAS": 0.002,
+      "AMR": 0.061,
+      "SAS": 0.123,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.179
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1884783_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.551,
+      "EUR": 0.375,
+      "EAS": 0.379,
+      "AMR": 0.424,
+      "SAS": 0.415,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.55
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6126462_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.23,
+      "EUR": 0.416,
+      "EAS": 0.444,
+      "AMR": 0.317,
+      "SAS": 0.537,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.623
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6129532_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.914,
+      "EUR": 0.761,
+      "EAS": 0.785,
+      "AMR": 0.785,
+      "SAS": 0.799,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.917
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6032343_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.612,
+      "EUR": 0.578,
+      "EAS": 0.941,
+      "AMR": 0.646,
+      "SAS": 0.758,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.707
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs477627_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.105,
+      "EUR": 0.17,
+      "EAS": 0.131,
+      "AMR": 0.117,
+      "SAS": 0.17,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.359
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2041317_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.231,
+      "EUR": 0.209,
+      "EAS": 0.138,
+      "AMR": 0.17,
+      "SAS": 0.368,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.343
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs6092326_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.5,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.709
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs3916504_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.464,
+      "EUR": 0.298,
+      "EAS": 0.749,
+      "AMR": 0.493,
+      "SAS": 0.504,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.527
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 20 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs977712_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.996,
+      "EUR": 0.896,
+      "EAS": 1.0,
+      "AMR": 0.941,
+      "SAS": 0.978,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.969
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 21 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs1735899_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.317,
+      "EUR": 0.39,
+      "EAS": 0.511,
+      "AMR": 0.402,
+      "SAS": 0.47,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.578
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 21 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs2235338_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8.0,
+    "frequencies": {
+      "AFR": 0.664,
+      "EUR": 0.436,
+      "EAS": 0.622,
+      "AMR": 0.375,
+      "SAS": 0.425,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Ashkenazi": 0.606
+    },
+    "description": "Ashkenazi Jewish Ancestry Marker (Tian192 panel) - Informative variant on chromosome 22 separating Jewish and Northern European lineages.",
+    "trait": "Ashkenazi Jewish Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "European",
+    "subRegion": "Europe"
   }
 ]

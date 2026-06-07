@@ -433,11 +433,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Insular Southeast Asian Marker - diagnostic for Austronesian speaking populations of the Philippines and Indonesia.",
-    "chromosome": "6",
-    "position": 28681444,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Insular Southeast Asian Marker - diagnostic for Austronesian speaking populations of the Philippines and Indonesia."
   },
   "rs10456365_eas": {
     "rsid": "rs10456365_eas",
@@ -462,11 +458,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Mainland Southeast Asian Marker - informative for Tai-Kadai and Austroasiatic speaking populations.",
-    "chromosome": "6",
-    "position": 28681804,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mainland Southeast Asian Marker - informative for Tai-Kadai and Austroasiatic speaking populations."
   },
   "rs10456366_eas": {
     "rsid": "rs10456366_eas",
@@ -491,11 +483,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Tibeto-Burman Border Marker - diagnostic for populations along the Himalayas and Indo-Burma border.",
-    "chromosome": "6",
-    "position": 28683771,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tibeto-Burman Border Marker - diagnostic for populations along the Himalayas and Indo-Burma border."
   },
   "rs671_eas": {
     "rsid": "rs671_eas",
@@ -520,11 +508,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "ALDH2 Alcohol Sensitivity Variant - globally unique to East Asian populations.",
-    "chromosome": "12",
-    "position": 112241766,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ALDH2 Alcohol Sensitivity Variant - globally unique to East Asian populations."
   },
   "rs13430441_eas": {
     "rsid": "rs13430441_eas",
@@ -550,11 +534,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Southeast Asian Informative Marker - highly prevalent in Austroasiatic and Austronesian speaking populations.",
-    "chromosome": "2",
-    "position": 147331041,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Southeast Asian Informative Marker - highly prevalent in Austroasiatic and Austronesian speaking populations."
   },
   "rs10456305_eas": {
     "rsid": "rs10456305_eas",
@@ -579,11 +559,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "East Asian Core Marker - highly diagnostic for Sinitic and Japonic populations.",
-    "chromosome": "6",
-    "position": 24491341,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "East Asian Core Marker - highly diagnostic for Sinitic and Japonic populations."
   },
   "rs10456306_eas": {
     "rsid": "rs10456306_eas",
@@ -608,11 +584,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "High-Altitude Adaptation Marker - informative for Tibetan and Central Asian populations.",
-    "chromosome": "6",
-    "position": 24550041,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "High-Altitude Adaptation Marker - informative for Tibetan and Central Asian populations."
   },
   "rs3827760_eas": {
     "rsid": "rs3827760_eas",
@@ -635,11 +607,7 @@
     "weight": 8,
     "gene": "EDAR",
     "trait": "Ancestry",
-    "description": "EDAR V370A variant common in East Asian populations.",
-    "chromosome": "2",
-    "position": 108897145,
-    "ref": "A",
-    "alt": "C"
+    "description": "EDAR V370A variant common in East Asian populations."
   },
   "rs1075290_eas": {
     "rsid": "rs1075290_eas",
@@ -659,13 +627,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "8",
-    "position": 91158037,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs10876236_eas": {
     "rsid": "rs10876236_eas",
@@ -685,11 +647,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "12",
-    "position": 52531375,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs11083341_eas": {
     "rsid": "rs11083341_eas",
@@ -709,11 +667,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "18",
-    "position": 19370289,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs11155600_eas": {
     "rsid": "rs11155600_eas",
@@ -733,11 +687,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "6",
-    "position": 149167074,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs11247693_eas": {
     "rsid": "rs11247693_eas",
@@ -757,11 +707,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 28169170,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs11584100_eas": {
     "rsid": "rs11584100_eas",
@@ -781,11 +727,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 40001336,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs11701539_eas": {
     "rsid": "rs11701539_eas",
@@ -805,11 +747,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "21",
-    "position": 28592292,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1171591_eas": {
     "rsid": "rs1171591_eas",
@@ -829,11 +767,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "10",
-    "position": 61506677,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1174052_eas": {
     "rsid": "rs1174052_eas",
@@ -853,13 +787,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 7823774,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175122_eas": {
     "rsid": "rs1175122_eas",
@@ -879,11 +807,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 192240185,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175169_eas": {
     "rsid": "rs1175169_eas",
@@ -903,11 +827,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 192162949,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175223_eas": {
     "rsid": "rs1175223_eas",
@@ -927,11 +847,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "13",
-    "position": 44883898,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175277_eas": {
     "rsid": "rs1175277_eas",
@@ -951,13 +867,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175331_eas": {
     "rsid": "rs1175331_eas",
@@ -977,13 +887,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 52652319,
-    "ref": "C",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175385_eas": {
     "rsid": "rs1175385_eas",
@@ -1003,11 +907,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "13",
-    "position": 45526496,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175439_eas": {
     "rsid": "rs1175439_eas",
@@ -1027,11 +927,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "7",
-    "position": 156036933,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175493_eas": {
     "rsid": "rs1175493_eas",
@@ -1051,13 +947,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175547_eas": {
     "rsid": "rs1175547_eas",
@@ -1077,11 +967,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 3693755,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175601_eas": {
     "rsid": "rs1175601_eas",
@@ -1101,13 +987,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 87995074,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175655_eas": {
     "rsid": "rs1175655_eas",
@@ -1127,13 +1007,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "11",
-    "position": 111054979,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175709_eas": {
     "rsid": "rs1175709_eas",
@@ -1153,11 +1027,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "13",
-    "position": 26894943,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175763_eas": {
     "rsid": "rs1175763_eas",
@@ -1177,13 +1047,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 5993443,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175817_eas": {
     "rsid": "rs1175817_eas",
@@ -1203,11 +1067,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "19",
-    "position": 49738265,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175871_eas": {
     "rsid": "rs1175871_eas",
@@ -1227,11 +1087,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 4205777,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175925_eas": {
     "rsid": "rs1175925_eas",
@@ -1251,11 +1107,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "9",
-    "position": 94982330,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1175979_eas": {
     "rsid": "rs1175979_eas",
@@ -1275,13 +1127,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 32086941,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176033_eas": {
     "rsid": "rs1176033_eas",
@@ -1301,11 +1147,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 247795462,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176087_eas": {
     "rsid": "rs1176087_eas",
@@ -1325,13 +1167,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 231985476,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176141_eas": {
     "rsid": "rs1176141_eas",
@@ -1351,13 +1187,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 38045255,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176195_eas": {
     "rsid": "rs1176195_eas",
@@ -1377,11 +1207,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "9",
-    "position": 105998310,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176249_eas": {
     "rsid": "rs1176249_eas",
@@ -1401,13 +1227,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 63279981,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176303_eas": {
     "rsid": "rs1176303_eas",
@@ -1427,11 +1247,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "13",
-    "position": 81200219,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176357_eas": {
     "rsid": "rs1176357_eas",
@@ -1451,13 +1267,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 63256890,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176411_eas": {
     "rsid": "rs1176411_eas",
@@ -1477,11 +1287,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "10",
-    "position": 132573698,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176465_eas": {
     "rsid": "rs1176465_eas",
@@ -1501,11 +1307,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "10",
-    "position": 132436562,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176519_eas": {
     "rsid": "rs1176519_eas",
@@ -1525,13 +1327,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 6484354,
-    "ref": "G",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176573_eas": {
     "rsid": "rs1176573_eas",
@@ -1551,13 +1347,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "3",
-    "position": 78778515,
-    "ref": "T",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176627_eas": {
     "rsid": "rs1176627_eas",
@@ -1577,11 +1367,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "17",
-    "position": 5112581,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176681_eas": {
     "rsid": "rs1176681_eas",
@@ -1601,11 +1387,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "8",
-    "position": 104740672,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176735_eas": {
     "rsid": "rs1176735_eas",
@@ -1625,11 +1407,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "11",
-    "position": 113809982,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176789_eas": {
     "rsid": "rs1176789_eas",
@@ -1649,11 +1427,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 77416379,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176843_eas": {
     "rsid": "rs1176843_eas",
@@ -1673,11 +1447,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "9",
-    "position": 36814888,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176897_eas": {
     "rsid": "rs1176897_eas",
@@ -1697,13 +1467,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "3",
-    "position": 13180410,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1176951_eas": {
     "rsid": "rs1176951_eas",
@@ -1723,11 +1487,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 104680729,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177005_eas": {
     "rsid": "rs1177005_eas",
@@ -1747,11 +1507,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "7",
-    "position": 147545430,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177059_eas": {
     "rsid": "rs1177059_eas",
@@ -1771,13 +1527,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 115426757,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177113_eas": {
     "rsid": "rs1177113_eas",
@@ -1797,13 +1547,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 59310874,
-    "ref": "C",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177167_eas": {
     "rsid": "rs1177167_eas",
@@ -1823,11 +1567,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 61003585,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177221_eas": {
     "rsid": "rs1177221_eas",
@@ -1847,13 +1587,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 60919204,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177275_eas": {
     "rsid": "rs1177275_eas",
@@ -1873,11 +1607,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 61371478,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177329_eas": {
     "rsid": "rs1177329_eas",
@@ -1897,11 +1627,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "11",
-    "position": 129646787,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177383_eas": {
     "rsid": "rs1177383_eas",
@@ -1921,13 +1647,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 85345704,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177437_eas": {
     "rsid": "rs1177437_eas",
@@ -1947,13 +1667,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 74812957,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177491_eas": {
     "rsid": "rs1177491_eas",
@@ -1973,11 +1687,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "3",
-    "position": 76442234,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177545_eas": {
     "rsid": "rs1177545_eas",
@@ -1997,11 +1707,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "12",
-    "position": 121185991,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177599_eas": {
     "rsid": "rs1177599_eas",
@@ -2021,13 +1727,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 106972852,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177653_eas": {
     "rsid": "rs1177653_eas",
@@ -2047,11 +1747,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "3",
-    "position": 145566691,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177707_eas": {
     "rsid": "rs1177707_eas",
@@ -2071,11 +1767,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "10",
-    "position": 61681337,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177761_eas": {
     "rsid": "rs1177761_eas",
@@ -2095,13 +1787,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177815_eas": {
     "rsid": "rs1177815_eas",
@@ -2121,11 +1807,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 112997891,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177869_eas": {
     "rsid": "rs1177869_eas",
@@ -2145,13 +1827,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 106972852,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177923_eas": {
     "rsid": "rs1177923_eas",
@@ -2171,11 +1847,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "7",
-    "position": 148042071,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1177977_eas": {
     "rsid": "rs1177977_eas",
@@ -2195,11 +1867,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "17",
-    "position": 70469702,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178031_eas": {
     "rsid": "rs1178031_eas",
@@ -2219,11 +1887,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "20",
-    "position": 2992928,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178085_eas": {
     "rsid": "rs1178085_eas",
@@ -2243,13 +1907,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178139_eas": {
     "rsid": "rs1178139_eas",
@@ -2269,11 +1927,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "7",
-    "position": 18772444,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178193_eas": {
     "rsid": "rs1178193_eas",
@@ -2293,11 +1947,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 15237984,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178247_eas": {
     "rsid": "rs1178247_eas",
@@ -2317,13 +1967,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "2",
-    "position": 179756119,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178301_eas": {
     "rsid": "rs1178301_eas",
@@ -2343,13 +1987,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "6",
-    "position": 1223397,
-    "ref": "T",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178355_eas": {
     "rsid": "rs1178355_eas",
@@ -2369,11 +2007,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "7",
-    "position": 18204811,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178409_eas": {
     "rsid": "rs1178409_eas",
@@ -2393,11 +2027,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "6",
-    "position": 151144242,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178463_eas": {
     "rsid": "rs1178463_eas",
@@ -2417,13 +2047,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 103085391,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178517_eas": {
     "rsid": "rs1178517_eas",
@@ -2443,11 +2067,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "3",
-    "position": 2256286,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178571_eas": {
     "rsid": "rs1178571_eas",
@@ -2467,13 +2087,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "7",
-    "position": 100310282,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178625_eas": {
     "rsid": "rs1178625_eas",
@@ -2493,13 +2107,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "5",
-    "position": 103261455,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178679_eas": {
     "rsid": "rs1178679_eas",
@@ -2519,13 +2127,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "17",
-    "position": 3351681,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178733_eas": {
     "rsid": "rs1178733_eas",
@@ -2545,13 +2147,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs1178787_eas": {
     "rsid": "rs1178787_eas",
@@ -2571,13 +2167,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - East Asian informative.",
-    "chromosome": "1",
-    "position": 106972852,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - East Asian informative."
   },
   "rs10456199_eas": {
     "rsid": "rs10456199_eas",
@@ -2595,11 +2185,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "6",
-    "position": 9723026,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs10456200_eas": {
     "rsid": "rs10456200_eas",
@@ -2617,11 +2203,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "6",
-    "position": 15541024,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs671_eas_2": {
     "rsid": "rs671_eas_2",
@@ -2639,11 +2221,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "12",
-    "position": 112241766,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs1229984_eas": {
     "rsid": "rs1229984_eas",
@@ -2661,11 +2239,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "4",
-    "position": 100239319,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs17822931_eas": {
     "rsid": "rs17822931_eas",
@@ -2683,13 +2257,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "16",
-    "position": 48224287,
-    "ref": "C",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs1869901_eas": {
     "rsid": "rs1869901_eas",
@@ -2707,11 +2275,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "15",
-    "position": 40595627,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs1048943_eas": {
     "rsid": "rs1048943_eas",
@@ -2729,11 +2293,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "15",
-    "position": 75012985,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs7330728_eas": {
     "rsid": "rs7330728_eas",
@@ -2751,11 +2311,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "13",
-    "position": 41968485,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for East Asian populations."
   },
   "rs10456238_eas": {
     "rsid": "rs10456238_eas",
@@ -2775,11 +2331,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Han Chinese Ancestry Marker - highly prevalent in major East Asian populations.",
-    "chromosome": "6",
-    "position": 21112327,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Han Chinese Ancestry Marker - highly prevalent in major East Asian populations."
   },
   "rs10456239_eas": {
     "rsid": "rs10456239_eas",
@@ -2799,11 +2351,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Tibetan Ancestry Marker - informative for Himalayan and high-altitude East Asian populations.",
-    "chromosome": "6",
-    "position": 10344564,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tibetan Ancestry Marker - informative for Himalayan and high-altitude East Asian populations."
   },
   "rs10456279_eas": {
     "rsid": "rs10456279_eas",
@@ -2825,11 +2373,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EAS/AMR Tie-Breaker - Highly prevalent in Siberia and East Asia, sharply reduced in the Americas.",
-    "chromosome": "6",
-    "position": 23683443,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EAS/AMR Tie-Breaker - Highly prevalent in Siberia and East Asia, sharply reduced in the Americas."
   },
   "rs10456281_eas": {
     "rsid": "rs10456281_eas",
@@ -2851,11 +2395,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EAS/AMR Tie-Breaker - Diagnostic for East Asian coastal populations, effectively absent in Native Americans.",
-    "chromosome": "6",
-    "position": 23688720,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EAS/AMR Tie-Breaker - Diagnostic for East Asian coastal populations, effectively absent in Native Americans."
   },
   "rs10456286_eas": {
     "rsid": "rs10456286_eas",
@@ -2877,11 +2417,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EAS/OCE Tie-Breaker - Common across Southeast Asia, drops sharply in unadmixed Melanesian/Papuan groups.",
-    "chromosome": "6",
-    "position": 23767741,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EAS/OCE Tie-Breaker - Common across Southeast Asia, drops sharply in unadmixed Melanesian/Papuan groups."
   },
   "rs10456289_eas": {
     "rsid": "rs10456289_eas",
@@ -2903,11 +2439,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EAS/SAS Tie-Breaker - Common in Tibeto-Burman populations, filters out false East Asian noise in South Asia.",
-    "chromosome": "6",
-    "position": 23797824,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EAS/SAS Tie-Breaker - Common in Tibeto-Burman populations, filters out false East Asian noise in South Asia."
   },
   "rs10456298_eas": {
     "rsid": "rs10456298_eas",
@@ -2929,11 +2461,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EAS/AFR Tie-Breaker - Diagnostic for Austronesian expansion markers, filtering out African overlap.",
-    "chromosome": "6",
-    "position": 23995857,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EAS/AFR Tie-Breaker - Diagnostic for Austronesian expansion markers, filtering out African overlap."
   },
   "rs10456300_eas": {
     "rsid": "rs10456300_eas",
@@ -2955,11 +2483,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "EAS/EUR Tie-Breaker - Highly specific to Eastern Eurasian Steppe populations.",
-    "chromosome": "6",
-    "position": 24127756,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EAS/EUR Tie-Breaker - Highly specific to Eastern Eurasian Steppe populations."
   },
   "rs671_eas_3": {
     "rsid": "rs671_eas_3",
@@ -2983,11 +2507,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "East Asian Alcohol Flush Marker - highly informative for Japanese and Han Chinese subpopulations.",
-    "chromosome": "12",
-    "position": 112241766,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "East Asian Alcohol Flush Marker - highly informative for Japanese and Han Chinese subpopulations."
   },
   "rs3827760_eas_2": {
     "rsid": "rs3827760_eas_2",
@@ -3011,13 +2531,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "EDAR Gene Marker - diagnostic for East Asian and Native American populations.",
-    "chromosome": "2",
-    "position": 108897145,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EDAR Gene Marker - diagnostic for East Asian and Native American populations."
   },
   "rs3827760_eas_3": {
     "rsid": "rs3827760_eas_3",
@@ -3036,13 +2550,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "description": "EDAR Tie-Breaker - Highly diagnostic for East Asian and Native American ancestry.",
-    "chromosome": "2",
-    "position": 108897145,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "EDAR Tie-Breaker - Highly diagnostic for East Asian and Native American ancestry."
   },
   "rs121913059_eas": {
     "rsid": "rs121913059_eas",
@@ -3061,11 +2569,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "ABCC11 Earwax Type Marker - Diagnostic for East Asian and Native American ancestry (Dry earwax).",
-    "chromosome": "1",
-    "position": 196716375,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ABCC11 Earwax Type Marker - Diagnostic for East Asian and Native American ancestry (Dry earwax)."
   },
   "rs1229984_eas_2": {
     "rsid": "rs1229984_eas_2",
@@ -3084,11 +2588,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "ADH1B Alcohol Metabolism Marker - Highly informative for East Asian ancestry.",
-    "chromosome": "4",
-    "position": 100239319,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ADH1B Alcohol Metabolism Marker - Highly informative for East Asian ancestry."
   },
   "rs671_eas_4": {
     "rsid": "rs671_eas_4",
@@ -3111,11 +2611,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "ALDH2 Alcohol Flush Marker - Highly specific to East Asian populations.",
-    "chromosome": "12",
-    "position": 112241766,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ALDH2 Alcohol Flush Marker - Highly specific to East Asian populations."
   },
   "rs17822931_eas_2": {
     "rsid": "rs17822931_eas_2",
@@ -3134,13 +2630,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 5,
-    "description": "ABCC11 Earwax/Body Odor Marker - Diagnostic for East Asian and Native American ancestry.",
-    "chromosome": "16",
-    "position": 48224287,
-    "ref": "C",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ABCC11 Earwax/Body Odor Marker - Diagnostic for East Asian and Native American ancestry."
   },
   "rs12224928_eas": {
     "rsid": "rs12224928_eas",
@@ -3164,11 +2654,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Northeast Asian Diagnostic Marker - highly informative for populations of the North China Plain and Korea.",
-    "chromosome": "11",
-    "position": 65704372,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Northeast Asian Diagnostic Marker - highly informative for populations of the North China Plain and Korea."
   },
   "rs9271160_eas": {
     "rsid": "rs9271160_eas",
@@ -3192,11 +2678,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "South Chinese Informative Marker - highlights the genetic distinction between Northern and Southern Han populations.",
-    "chromosome": "6",
-    "position": 32577646,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "South Chinese Informative Marker - highlights the genetic distinction between Northern and Southern Han populations."
   },
   "rs1800414_eas": {
     "rsid": "rs1800414_eas",
@@ -3219,19 +2701,13 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Himalayan/High Altitude Adaption Marker - highly informative for Tibetan and High Altitude Asian populations.",
-    "chromosome": "15",
-    "position": 28197037,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Himalayan/High Altitude Adaption Marker - highly informative for Tibetan and High Altitude Asian populations."
   },
   "gemj_japan": {
     "rsid": "gemj_japan",
     "region": "East Asian",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.8426,
       "rs2840528": 0.4219,
@@ -5813,12 +5289,6 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "3",
-    "position": 132276556,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   }
 }

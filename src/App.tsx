@@ -57,6 +57,7 @@ import { FamousMatches } from "./components/FamousMatches";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
 import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
 import SubpopulationBento from "./components/SubpopulationBento";
+import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
 
@@ -2174,7 +2175,7 @@ export default function App() {
       let progressArray: Int32Array | null = null;
       let intervalId: any = null;
 
-      if (typeof SharedArrayBuffer !== 'undefined') {
+      if (typeof SharedArrayBuffer !== 'undefined' && typeof crossOriginIsolated !== 'undefined' && crossOriginIsolated) {
         try {
           sab = new SharedArrayBuffer(16);
           progressArray = new Int32Array(sab);
@@ -2540,59 +2541,7 @@ export default function App() {
         )}
 
         {processing && (
-          <div className="min-h-[60vh] flex flex-col items-center justify-center text-center animate-fade-up max-w-lg mx-auto py-12">
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-              className="w-20 h-20 overflow-hidden rounded-3xl flex items-center justify-center mb-8 shadow-inner"
-            >
-              <img 
-                src="https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png" 
-                alt="DNA Processing" 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-            <h2 className="text-3xl font-black text-slate-800 mb-2 tracking-tight">Decrypting genome...</h2>
-            <div className="text-xs font-mono font-black text-teal-600 uppercase tracking-widest mb-6">
-              {streamProgress.step}
-            </div>
-
-            {streamProgress.total > 0 && (
-              <div className="w-full bg-slate-100 rounded-full h-3 mb-6 overflow-hidden p-0.5 border border-slate-200">
-                <motion.div 
-                  className="bg-gradient-to-r from-teal-500 to-emerald-500 h-full rounded-full"
-                  style={{ width: `${Math.min(100, (streamProgress.processed / streamProgress.total) * 100)}%` }}
-                  layout
-                />
-              </div>
-            )}
-
-            <div className="grid grid-cols-3 gap-6 w-full text-center text-slate-500 text-xs font-bold uppercase tracking-wider mb-8">
-              <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
-                <span className="text-slate-400 block mb-1 text-[10px]">Processed</span>
-                <span className="text-slate-800 font-extrabold font-mono text-base">
-                  {(streamProgress.processed / (1024 * 1024)).toFixed(1)} MB
-                </span>
-              </div>
-              <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
-                <span className="text-slate-400 block mb-1 text-[10px]">Total size</span>
-                <span className="text-slate-800 font-extrabold font-mono text-base">
-                  {(streamProgress.total / (1024 * 1024)).toFixed(1)} MB
-                </span>
-              </div>
-              <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl">
-                <span className="text-slate-400 block mb-1 text-[10px]">Markers Matched</span>
-                <span className="text-teal-600 font-extrabold font-mono text-base font-black">
-                  {streamProgress.snps.toLocaleString()}
-                </span>
-              </div>
-            </div>
-
-            <p className="text-slate-500 max-w-sm mx-auto leading-relaxed text-xs">
-              Streaming dataset chunk-by-chunk using background Web Workers and SharedArrayBuffer memory models. Analyzing locally inside your sandbox browser context.
-            </p>
-          </div>
+          <GenotypeParser streamProgress={streamProgress} />
         )}
 
         {!results && !processing && (

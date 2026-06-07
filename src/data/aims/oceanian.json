@@ -1626,13 +1626,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "ABCC11 variant - highly informative for East Asian, Native American, and Oceanian populations.",
-    "chromosome": "16",
-    "position": 48224287,
-    "ref": "C",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "ABCC11 variant - highly informative for East Asian, Native American, and Oceanian populations."
   },
   "rs10456304_oce": {
     "rsid": "rs10456304_oce",
@@ -1658,11 +1652,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Melanesian Specific Marker - diagnostic for the unique genetic lineages of the Bismarck Archipelago and Solomon Islands.",
-    "chromosome": "6",
-    "position": 24319478,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Melanesian Specific Marker - diagnostic for the unique genetic lineages of the Bismarck Archipelago and Solomon Islands."
   },
   "rs9000296_oce": {
     "rsid": "rs9000296_oce",
@@ -1683,13 +1673,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Maori Ancestry Marker - informative for Polynesian populations from New Zealand.",
-    "chromosome": "8",
-    "position": 91158037,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Maori Ancestry Marker - informative for Polynesian populations from New Zealand."
   },
   "rs9000298_oce": {
     "rsid": "rs9000298_oce",
@@ -1710,13 +1694,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Fijian Ancestry Marker - informative for populations from Fiji.",
-    "chromosome": "10",
-    "position": 93266679,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Fijian Ancestry Marker - informative for populations from Fiji."
   },
   "rs9000300_oce": {
     "rsid": "rs9000300_oce",
@@ -1737,13 +1715,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Tongan Ancestry Marker - informative for populations from Tonga.",
-    "chromosome": "16",
-    "position": 76397543,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tongan Ancestry Marker - informative for populations from Tonga."
   },
   "rs9000302_oce": {
     "rsid": "rs9000302_oce",
@@ -1764,13 +1736,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Tahitian Ancestry Marker - informative for populations from Tahiti.",
-    "chromosome": "18",
-    "position": 78506185,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tahitian Ancestry Marker - informative for populations from Tahiti."
   },
   "rs9000304_oce": {
     "rsid": "rs9000304_oce",
@@ -1791,13 +1757,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Cook Islander Ancestry Marker - informative for populations from the Cook Islands.",
-    "chromosome": "20",
-    "position": 80614827,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Cook Islander Ancestry Marker - informative for populations from the Cook Islands."
   },
   "rs10456223_oce": {
     "rsid": "rs10456223_oce",
@@ -1818,11 +1778,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Papuan Ancestry Marker - informative for indigenous populations of New Guinea.",
-    "chromosome": "6",
-    "position": 19522774,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Papuan Ancestry Marker - informative for indigenous populations of New Guinea."
   },
   "rs10456224_oce": {
     "rsid": "rs10456224_oce",
@@ -1843,11 +1799,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures.",
-    "chromosome": "6",
-    "position": 19666843,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Aboriginal Australian Marker - diagnostic for ancient Sahul genetic signatures."
   },
   "rs10456225_oce": {
     "rsid": "rs10456225_oce",
@@ -1868,11 +1820,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Samoan Ancestry Marker - informative for western Polynesian populations.",
-    "chromosome": "6",
-    "position": 10205186,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Samoan Ancestry Marker - informative for western Polynesian populations."
   },
   "rs10456226_oce": {
     "rsid": "rs10456226_oce",
@@ -1893,11 +1841,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Melanesian Ancestry Marker - informative for populations from Vanuatu and the Solomon Islands.",
-    "chromosome": "6",
-    "position": 19850819,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Melanesian Ancestry Marker - informative for populations from Vanuatu and the Solomon Islands."
   },
   "rs10456227_oce": {
     "rsid": "rs10456227_oce",
@@ -1918,11 +1862,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Micronesian Ancestry Marker - informative for populations of the Mariana and Caroline Islands.",
-    "chromosome": "6",
-    "position": 19921581,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Micronesian Ancestry Marker - informative for populations of the Mariana and Caroline Islands."
   },
   "rs10456285_oce": {
     "rsid": "rs10456285_oce",
@@ -1944,11 +1884,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "OCE/EAS Tie-Breaker - Deep Sahul lineage marker, strongly filters out Austronesian/East Asian overlap.",
-    "chromosome": "6",
-    "position": 23765890,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "OCE/EAS Tie-Breaker - Deep Sahul lineage marker, strongly filters out Austronesian/East Asian overlap."
   },
   "rs10456294_oce": {
     "rsid": "rs10456294_oce",
@@ -1970,11 +1906,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "OCE/AFR Tie-Breaker - Denisovan-introgressed lineage marker, entirely absent in Sub-Saharan Africa.",
-    "chromosome": "6",
-    "position": 23862404,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "OCE/AFR Tie-Breaker - Denisovan-introgressed lineage marker, entirely absent in Sub-Saharan Africa."
   },
   "rs10456296_oce": {
     "rsid": "rs10456296_oce",
@@ -1996,11 +1928,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "OCE/AMR Tie-Breaker - Deep Sahul lineage, effectively absent in indigenous populations of the Americas.",
-    "chromosome": "6",
-    "position": 23936635,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "OCE/AMR Tie-Breaker - Deep Sahul lineage, effectively absent in indigenous populations of the Americas."
   },
   "rs10456265_oce": {
     "rsid": "rs10456265_oce",
@@ -2019,11 +1947,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "description": "Oceanian Tie-Breaker - Highly specific to Melanesian and Papuan populations.",
-    "chromosome": "6",
-    "position": 22783328,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Oceanian Tie-Breaker - Highly specific to Melanesian and Papuan populations."
   },
   "rs10456266_oce": {
     "rsid": "rs10456266_oce",
@@ -2042,11 +1966,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "description": "Oceanian Tie-Breaker - Informative for Australasian genetic signatures.",
-    "chromosome": "6",
-    "position": 22785416,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Oceanian Tie-Breaker - Informative for Australasian genetic signatures."
   },
   "rs11887534_oce": {
     "rsid": "rs11887534_oce",
@@ -2068,11 +1988,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Oceanian Diagnostic Marker - highly informative for identifying indigenous ancestry in the Pacific.",
-    "chromosome": "2",
-    "position": 44066247,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Oceanian Diagnostic Marker - highly informative for identifying indigenous ancestry in the Pacific."
   },
   "rs600000_oce": {
     "rsid": "rs600000_oce",
@@ -2090,11 +2006,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "6",
-    "position": 19464209,
-    "ref": "A",
-    "alt": "G"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600001_oce": {
     "rsid": "rs600001_oce",
@@ -2112,9 +2024,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "HG736_PATCH",
-    "position": 56927578
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600002_oce": {
     "rsid": "rs600002_oce",
@@ -2132,11 +2042,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "16",
-    "position": 32880051,
-    "ref": "T",
-    "alt": "C"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600003_oce": {
     "rsid": "rs600003_oce",
@@ -2154,9 +2060,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "6",
-    "position": 44692366
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600004_oce": {
     "rsid": "rs600004_oce",
@@ -2174,11 +2078,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "10",
-    "position": 23681493,
-    "ref": "A",
-    "alt": "G"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600005_oce": {
     "rsid": "rs600005_oce",
@@ -2196,9 +2096,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "6",
-    "position": 44692364
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600006_oce": {
     "rsid": "rs600006_oce",
@@ -2216,11 +2114,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "13",
-    "position": 68442036,
-    "ref": "A",
-    "alt": "G"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600007_oce": {
     "rsid": "rs600007_oce",
@@ -2238,11 +2132,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "21",
-    "position": 23158719,
-    "ref": "T",
-    "alt": "G"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600008_oce": {
     "rsid": "rs600008_oce",
@@ -2260,11 +2150,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "17",
-    "position": 66115356,
-    "ref": "A",
-    "alt": "T"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs600009_oce": {
     "rsid": "rs600009_oce",
@@ -2282,9 +2168,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "13",
-    "position": 38871060
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000010_oce": {
     "rsid": "rs6000010_oce",
@@ -2302,9 +2186,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36222469
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000011_oce": {
     "rsid": "rs6000011_oce",
@@ -2322,9 +2204,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36226590
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000012_oce": {
     "rsid": "rs6000012_oce",
@@ -2342,9 +2222,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36238752
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000013_oce": {
     "rsid": "rs6000013_oce",
@@ -2362,9 +2240,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36241389
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000014_oce": {
     "rsid": "rs6000014_oce",
@@ -2382,9 +2258,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36248137
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000015_oce": {
     "rsid": "rs6000015_oce",
@@ -2402,9 +2276,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36253162
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000016_oce": {
     "rsid": "rs6000016_oce",
@@ -2422,9 +2294,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36253221
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000017_oce": {
     "rsid": "rs6000017_oce",
@@ -2442,9 +2312,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36254546
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000018_oce": {
     "rsid": "rs6000018_oce",
@@ -2462,9 +2330,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36256059
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000019_oce": {
     "rsid": "rs6000019_oce",
@@ -2482,9 +2348,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36256827
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000020_oce": {
     "rsid": "rs6000020_oce",
@@ -2502,9 +2366,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36258266
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000021_oce": {
     "rsid": "rs6000021_oce",
@@ -2522,9 +2384,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36265404
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000022_oce": {
     "rsid": "rs6000022_oce",
@@ -2542,9 +2402,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36270192
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000023_oce": {
     "rsid": "rs6000023_oce",
@@ -2562,9 +2420,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36270721
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000024_oce": {
     "rsid": "rs6000024_oce",
@@ -2582,9 +2438,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36274976
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000025_oce": {
     "rsid": "rs6000025_oce",
@@ -2602,9 +2456,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22254042
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000026_oce": {
     "rsid": "rs6000026_oce",
@@ -2622,9 +2474,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36288320
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000027_oce": {
     "rsid": "rs6000027_oce",
@@ -2642,9 +2492,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36288926
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000028_oce": {
     "rsid": "rs6000028_oce",
@@ -2662,9 +2510,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36293439
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000029_oce": {
     "rsid": "rs6000029_oce",
@@ -2682,9 +2528,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36296247
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000030_oce": {
     "rsid": "rs6000030_oce",
@@ -2702,9 +2546,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36298160
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000031_oce": {
     "rsid": "rs6000031_oce",
@@ -2722,9 +2564,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36305752
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000032_oce": {
     "rsid": "rs6000032_oce",
@@ -2742,9 +2582,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36306266
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000033_oce": {
     "rsid": "rs6000033_oce",
@@ -2762,9 +2600,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36312926
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000034_oce": {
     "rsid": "rs6000034_oce",
@@ -2782,9 +2618,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36312986
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000035_oce": {
     "rsid": "rs6000035_oce",
@@ -2802,9 +2636,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36318445
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000036_oce": {
     "rsid": "rs6000036_oce",
@@ -2822,9 +2654,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36320740
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000037_oce": {
     "rsid": "rs6000037_oce",
@@ -2842,9 +2672,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36321270
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000038_oce": {
     "rsid": "rs6000038_oce",
@@ -2862,9 +2690,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36325986
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000039_oce": {
     "rsid": "rs6000039_oce",
@@ -2882,9 +2708,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36327951
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000040_oce": {
     "rsid": "rs6000040_oce",
@@ -2902,9 +2726,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36334261
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000041_oce": {
     "rsid": "rs6000041_oce",
@@ -2922,9 +2744,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36339831
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000042_oce": {
     "rsid": "rs6000042_oce",
@@ -2942,9 +2762,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36343322
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000043_oce": {
     "rsid": "rs6000043_oce",
@@ -2962,9 +2780,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22260441
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000044_oce": {
     "rsid": "rs6000044_oce",
@@ -2982,9 +2798,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36351510
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000045_oce": {
     "rsid": "rs6000045_oce",
@@ -3002,9 +2816,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36353874
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000046_oce": {
     "rsid": "rs6000046_oce",
@@ -3022,9 +2834,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36358710
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000047_oce": {
     "rsid": "rs6000047_oce",
@@ -3042,9 +2852,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36358992
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000048_oce": {
     "rsid": "rs6000048_oce",
@@ -3062,9 +2870,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36364983
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000049_oce": {
     "rsid": "rs6000049_oce",
@@ -3082,9 +2888,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36369512
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000050_oce": {
     "rsid": "rs6000050_oce",
@@ -3102,9 +2906,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36374861
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000051_oce": {
     "rsid": "rs6000051_oce",
@@ -3122,9 +2924,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22264027
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000052_oce": {
     "rsid": "rs6000052_oce",
@@ -3142,9 +2942,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22264137
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000053_oce": {
     "rsid": "rs6000053_oce",
@@ -3162,9 +2960,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36400487
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000054_oce": {
     "rsid": "rs6000054_oce",
@@ -3182,9 +2978,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22265584
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000055_oce": {
     "rsid": "rs6000055_oce",
@@ -3202,9 +2996,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36403828
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000056_oce": {
     "rsid": "rs6000056_oce",
@@ -3222,9 +3014,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36407425
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000057_oce": {
     "rsid": "rs6000057_oce",
@@ -3242,9 +3032,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36407572
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000058_oce": {
     "rsid": "rs6000058_oce",
@@ -3262,9 +3050,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22266210
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000059_oce": {
     "rsid": "rs6000059_oce",
@@ -3282,9 +3068,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36409990
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000060_oce": {
     "rsid": "rs6000060_oce",
@@ -3302,9 +3086,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36410020
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000061_oce": {
     "rsid": "rs6000061_oce",
@@ -3322,9 +3104,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36412079
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000062_oce": {
     "rsid": "rs6000062_oce",
@@ -3342,9 +3122,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36412283
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000063_oce": {
     "rsid": "rs6000063_oce",
@@ -3362,9 +3140,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36412424
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000064_oce": {
     "rsid": "rs6000064_oce",
@@ -3382,9 +3158,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36413289
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000065_oce": {
     "rsid": "rs6000065_oce",
@@ -3402,9 +3176,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36416058
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000066_oce": {
     "rsid": "rs6000066_oce",
@@ -3422,9 +3194,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36418475
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000067_oce": {
     "rsid": "rs6000067_oce",
@@ -3442,9 +3212,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22267610
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000068_oce": {
     "rsid": "rs6000068_oce",
@@ -3462,9 +3230,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36426348
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000069_oce": {
     "rsid": "rs6000069_oce",
@@ -3482,9 +3248,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36426966
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000070_oce": {
     "rsid": "rs6000070_oce",
@@ -3502,9 +3266,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22268244
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000071_oce": {
     "rsid": "rs6000071_oce",
@@ -3522,9 +3284,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36428388
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000072_oce": {
     "rsid": "rs6000072_oce",
@@ -3542,9 +3302,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22268287
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000073_oce": {
     "rsid": "rs6000073_oce",
@@ -3562,9 +3320,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36439646
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000074_oce": {
     "rsid": "rs6000074_oce",
@@ -3582,9 +3338,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36439738
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000075_oce": {
     "rsid": "rs6000075_oce",
@@ -3602,9 +3356,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36439889
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000076_oce": {
     "rsid": "rs6000076_oce",
@@ -3622,9 +3374,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36440309
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000077_oce": {
     "rsid": "rs6000077_oce",
@@ -3642,9 +3392,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36440434
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000078_oce": {
     "rsid": "rs6000078_oce",
@@ -3662,9 +3410,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36441052
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000079_oce": {
     "rsid": "rs6000079_oce",
@@ -3682,9 +3428,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36441400
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000080_oce": {
     "rsid": "rs6000080_oce",
@@ -3702,9 +3446,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36441541
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000081_oce": {
     "rsid": "rs6000081_oce",
@@ -3722,9 +3464,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36442219
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000082_oce": {
     "rsid": "rs6000082_oce",
@@ -3742,9 +3482,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36443675
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000083_oce": {
     "rsid": "rs6000083_oce",
@@ -3762,9 +3500,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36443705
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000084_oce": {
     "rsid": "rs6000084_oce",
@@ -3782,9 +3518,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36443943
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000085_oce": {
     "rsid": "rs6000085_oce",
@@ -3802,9 +3536,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36444188
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000086_oce": {
     "rsid": "rs6000086_oce",
@@ -3822,9 +3554,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22269877
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000087_oce": {
     "rsid": "rs6000087_oce",
@@ -3842,9 +3572,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22270860
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000088_oce": {
     "rsid": "rs6000088_oce",
@@ -3862,11 +3590,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36060244,
-    "ref": "C",
-    "alt": "T"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000089_oce": {
     "rsid": "rs6000089_oce",
@@ -3884,11 +3608,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36060414,
-    "ref": "A",
-    "alt": "G"
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000090_oce": {
     "rsid": "rs6000090_oce",
@@ -3906,9 +3626,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 22271061
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000091_oce": {
     "rsid": "rs6000091_oce",
@@ -3926,9 +3644,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36458346
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000092_oce": {
     "rsid": "rs6000092_oce",
@@ -3946,9 +3662,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36460132
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000093_oce": {
     "rsid": "rs6000093_oce",
@@ -3966,9 +3680,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36465515
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000094_oce": {
     "rsid": "rs6000094_oce",
@@ -3986,9 +3698,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36465570
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000095_oce": {
     "rsid": "rs6000095_oce",
@@ -4006,9 +3716,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36465692
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000096_oce": {
     "rsid": "rs6000096_oce",
@@ -4026,9 +3734,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36465696
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000097_oce": {
     "rsid": "rs6000097_oce",
@@ -4046,9 +3752,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36465813
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000098_oce": {
     "rsid": "rs6000098_oce",
@@ -4066,9 +3770,7 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36466982
+    "description": "Oceanian ancestry informative marker."
   },
   "rs6000099_oce": {
     "rsid": "rs6000099_oce",
@@ -4086,8 +3788,6 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Oceanian ancestry informative marker.",
-    "chromosome": "22",
-    "position": 36467494
+    "description": "Oceanian ancestry informative marker."
   }
 }

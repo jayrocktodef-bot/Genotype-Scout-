@@ -24,9 +24,7 @@
     "weight": 8,
     "gene": "EDAR",
     "trait": "Phenotype",
-    "description": "Variant associated with hair texture common in diverse West African populations.",
-    "chromosome": "6",
-    "position": 24308444
+    "description": "Variant associated with hair texture common in diverse West African populations."
   },
   "rs9990001_afr": {
     "rsid": "rs9990001_afr",
@@ -52,9 +50,7 @@
     "weight": 8,
     "gene": "HBB",
     "trait": "Ancestry",
-    "description": "Bantu diagnostic SNP - informative for West-Central and Eastern African Bantu-speaking populations.",
-    "chromosome": "3",
-    "position": 22706518
+    "description": "Bantu diagnostic SNP - informative for West-Central and Eastern African Bantu-speaking populations."
   },
   "rs10456303_afr": {
     "rsid": "rs10456303_afr",
@@ -76,9 +72,7 @@
     "weight": 4,
     "gene": "HBB",
     "trait": "Phenotype",
-    "description": "Marker identified with phenotypic variation in East African Bantu populations.",
-    "chromosome": "6",
-    "position": 24317399
+    "description": "Marker identified with phenotypic variation in East African Bantu populations."
   },
   "rs334_afr": {
     "rsid": "rs334_afr",
@@ -101,9 +95,7 @@
     "weight": 8,
     "gene": "HBB",
     "trait": "Ancestry",
-    "description": "Sickle Cell Trait marker, highly informative for West African ancestry.",
-    "chromosome": "11",
-    "position": 5248232
+    "description": "Sickle Cell Trait marker, highly informative for West African ancestry."
   },
   "rs10456197_afr": {
     "rsid": "rs10456197_afr",
@@ -129,11 +121,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Khoisan Ancestry Marker - highly diagnostic for the indigenous Khoe-San populations of Southern Africa.",
-    "chromosome": "6",
-    "position": 14888270,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Khoisan Ancestry Marker - highly diagnostic for the indigenous Khoe-San populations of Southern Africa."
   },
   "rs12149626_afr": {
     "rsid": "rs12149626_afr",
@@ -159,11 +147,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Nilotic Ancestry Marker - diagnostic for Nilotic-speaking populations of the Nile Valley and East Africa.",
-    "chromosome": "16",
-    "position": 75555780,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nilotic Ancestry Marker - diagnostic for Nilotic-speaking populations of the Nile Valley and East Africa."
   },
   "rs12149628_afr": {
     "rsid": "rs12149628_afr",
@@ -189,11 +173,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Cushitic Ancestry Marker - informative for Afroasiatic-speaking populations of the Horn of Africa.",
-    "chromosome": "16",
-    "position": 60913519,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Cushitic Ancestry Marker - informative for Afroasiatic-speaking populations of the Horn of Africa."
   },
   "rs7252508_afr": {
     "rsid": "rs7252508_afr",
@@ -218,11 +198,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Central African Hunter-Gatherer Marker - diagnostic for Pygmy populations of the Congo Basin.",
-    "chromosome": "19",
-    "position": 52334783,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central African Hunter-Gatherer Marker - diagnostic for Pygmy populations of the Congo Basin."
   },
   "rs10456213_afr": {
     "rsid": "rs10456213_afr",
@@ -248,11 +224,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Upper Guinea Ancestry Marker - informative for populations of the Senegambia and Sierra Leone region.",
-    "chromosome": "6",
-    "position": 18119112,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Upper Guinea Ancestry Marker - informative for populations of the Senegambia and Sierra Leone region."
   },
   "rs10456215_afr": {
     "rsid": "rs10456215_afr",
@@ -278,11 +250,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bight of Benin Ancestry Marker - highly informative for Gbe and Yoruboid speaking populations.",
-    "chromosome": "6",
-    "position": 18452654,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bight of Benin Ancestry Marker - highly informative for Gbe and Yoruboid speaking populations."
   },
   "rs10456216_afr": {
     "rsid": "rs10456216_afr",
@@ -308,11 +276,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "East African Bantu Marker - informative for Bantu-speaking populations of the Great Lakes region.",
-    "chromosome": "6",
-    "position": 18684443,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "East African Bantu Marker - informative for Bantu-speaking populations of the Great Lakes region."
   },
   "rs10456198_afr": {
     "rsid": "rs10456198_afr",
@@ -338,11 +302,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana speaking populations.",
-    "chromosome": "6",
-    "position": 14904669,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana speaking populations."
   },
   "rs10456271_afr": {
     "rsid": "rs10456271_afr",
@@ -368,11 +328,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Berber Ancestry Marker - highly informative for the indigenous Amazigh populations of North Africa.",
-    "chromosome": "6",
-    "position": 23108417,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Berber Ancestry Marker - highly informative for the indigenous Amazigh populations of North Africa."
   },
   "rs10456234_afr": {
     "rsid": "rs10456234_afr",
@@ -398,11 +354,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Sahelian Ancestry Marker - informative for populations of the Sahel and Southern Sahara.",
-    "chromosome": "6",
-    "position": 20598774,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Sahelian Ancestry Marker - informative for populations of the Sahel and Southern Sahara."
   },
   "rs10456258_afr": {
     "rsid": "rs10456258_afr",
@@ -428,11 +380,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Nilo-Saharan Ancestry Marker - diagnostic for populations of the Lake Chad Basin and Darfur.",
-    "chromosome": "6",
-    "position": 22481561,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nilo-Saharan Ancestry Marker - diagnostic for populations of the Lake Chad Basin and Darfur."
   },
   "rs10456248_afr": {
     "rsid": "rs10456248_afr",
@@ -458,11 +406,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana).",
-    "chromosome": "6",
-    "position": 21850260,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Gur Ancestry Marker - informative for populations of the Voltaic region (Burkina Faso, Northern Ghana)."
   },
   "rs10456269_afr": {
     "rsid": "rs10456269_afr",
@@ -488,11 +432,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ethiosemitic Ancestry Marker - informative for the Semitic-speaking populations of the Ethiopian Highlands.",
-    "chromosome": "6",
-    "position": 23098186,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ethiosemitic Ancestry Marker - informative for the Semitic-speaking populations of the Ethiopian Highlands."
   },
   "rs10456247_afr": {
     "rsid": "rs10456247_afr",
@@ -518,11 +458,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Kru Ancestry Marker - informative for Kru-speaking populations of the Liberian coast.",
-    "chromosome": "6",
-    "position": 21537518,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Kru Ancestry Marker - informative for Kru-speaking populations of the Liberian coast."
   },
   "rs10456249_afr": {
     "rsid": "rs10456249_afr",
@@ -548,11 +484,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia.",
-    "chromosome": "6",
-    "position": 21967290,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bassa Ancestry Marker - informative for Kru-speaking populations of Liberia."
   },
   "rs10456252_afr": {
     "rsid": "rs10456252_afr",
@@ -578,11 +510,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea.",
-    "chromosome": "6",
-    "position": 22106979,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Kpelle Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Guinea."
   },
   "rs10456256_afr": {
     "rsid": "rs10456256_afr",
@@ -608,11 +536,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bakongo Ancestry Marker - diagnostic for populations of the former Kingdom of Kongo.",
-    "chromosome": "6",
-    "position": 22446285,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bakongo Ancestry Marker - diagnostic for populations of the former Kingdom of Kongo."
   },
   "rs10456243_afr": {
     "rsid": "rs10456243_afr",
@@ -638,11 +562,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Edo Ancestry Marker - informative for populations of the former Benin Empire (Nigeria).",
-    "chromosome": "6",
-    "position": 21205479,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Edo Ancestry Marker - informative for populations of the former Benin Empire (Nigeria)."
   },
   "rs10456244_afr": {
     "rsid": "rs10456244_afr",
@@ -668,11 +588,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Mende Ancestry Marker - diagnostic for Mande-speaking populations of Sierra Leone.",
-    "chromosome": "6",
-    "position": 10360682,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mende Ancestry Marker - diagnostic for Mande-speaking populations of Sierra Leone."
   },
   "rs10456245_afr": {
     "rsid": "rs10456245_afr",
@@ -698,11 +614,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Limba Ancestry Marker - diagnostic for indigenous populations of Sierra Leone.",
-    "chromosome": "6",
-    "position": 10360701,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Limba Ancestry Marker - diagnostic for indigenous populations of Sierra Leone."
   },
   "rs10456257_afr": {
     "rsid": "rs10456257_afr",
@@ -728,11 +640,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Baluba Ancestry Marker - informative for Luba populations of the Democratic Republic of Congo.",
-    "chromosome": "6",
-    "position": 22478911,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Baluba Ancestry Marker - informative for Luba populations of the Democratic Republic of Congo."
   },
   "rs10456259_afr": {
     "rsid": "rs10456259_afr",
@@ -758,11 +666,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Chokwe Ancestry Marker - informative for populations of Angola, DRC, and Zambia.",
-    "chromosome": "6",
-    "position": 22558999,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Chokwe Ancestry Marker - informative for populations of Angola, DRC, and Zambia."
   },
   "rs10456260_afr": {
     "rsid": "rs10456260_afr",
@@ -788,11 +692,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Lozi Ancestry Marker - diagnostic for populations of the Barotse Floodplain (Zambia).",
-    "chromosome": "6",
-    "position": 22559036,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Lozi Ancestry Marker - diagnostic for populations of the Barotse Floodplain (Zambia)."
   },
   "rs10456261_afr": {
     "rsid": "rs10456261_afr",
@@ -818,11 +718,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC.",
-    "chromosome": "6",
-    "position": 22623471,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bemba Ancestry Marker - informative for Bantu populations of Zambia and DRC."
   },
   "rs10456262_afr": {
     "rsid": "rs10456262_afr",
@@ -848,11 +744,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley.",
-    "chromosome": "6",
-    "position": 22627198,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tonga Ancestry Marker - informative for Bantu populations of the Zambezi Valley."
   },
   "rs10456263_afr": {
     "rsid": "rs10456263_afr",
@@ -878,11 +770,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Chewa Ancestry Marker - diagnostic for Maravi populations of Malawi and Zambia.",
-    "chromosome": "6",
-    "position": 22685851,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Chewa Ancestry Marker - diagnostic for Maravi populations of Malawi and Zambia."
   },
   "rs10456265_afr": {
     "rsid": "rs10456265_afr",
@@ -908,11 +796,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Makua Ancestry Marker - informative for Bantu populations of Northern Mozambique.",
-    "chromosome": "6",
-    "position": 22783328,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Makua Ancestry Marker - informative for Bantu populations of Northern Mozambique."
   },
   "rs10456266_afr": {
     "rsid": "rs10456266_afr",
@@ -936,11 +820,7 @@
     },
     "deepFrequencies": {},
     "weight": 2,
-    "description": "High significance Nigerian Marker - Fulani focus.",
-    "chromosome": "6",
-    "position": 22785416,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "High significance Nigerian Marker - Fulani focus."
   },
   "rs10456267_afr": {
     "rsid": "rs10456267_afr",
@@ -964,11 +844,7 @@
     },
     "deepFrequencies": {},
     "weight": 2,
-    "description": "High significance Nigerian Marker - Edo focus.",
-    "chromosome": "6",
-    "position": 22961259,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "High significance Nigerian Marker - Edo focus."
   },
   "rs10456268_afr": {
     "rsid": "rs10456268_afr",
@@ -992,11 +868,7 @@
     },
     "deepFrequencies": {},
     "weight": 2,
-    "description": "High significance Nigerian Marker - Ibibio focus.",
-    "chromosome": "6",
-    "position": 23033529,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "High significance Nigerian Marker - Ibibio focus."
   },
   "rs2814778_afr": {
     "rsid": "rs2814778_afr",
@@ -1022,11 +894,7 @@
     "weight": 8,
     "gene": "ACKR1",
     "trait": "Malaria Resistance",
-    "description": "Duffy Null Phenotype. Essential for tracking the Bantu contribution to the Malagasy gene pool.",
-    "chromosome": "1",
-    "position": 159204893,
-    "ref": "T",
-    "alt": "C"
+    "description": "Duffy Null Phenotype. Essential for tracking the Bantu contribution to the Malagasy gene pool."
   },
   "rs16891982_afr": {
     "rsid": "rs16891982_afr",
@@ -1050,11 +918,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "5",
-    "position": 33951693,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs1800414_afr": {
     "rsid": "rs1800414_afr",
@@ -1078,11 +942,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "15",
-    "position": 28197037,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs2862_afr": {
     "rsid": "rs2862_afr",
@@ -1106,11 +966,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "15",
-    "position": 35145553,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs3340_afr": {
     "rsid": "rs3340_afr",
@@ -1134,11 +990,7 @@
     },
     "deepFrequencies": {},
     "weight": 2.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "5",
-    "position": 153831867,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs1572318_afr": {
     "rsid": "rs1572318_afr",
@@ -1162,11 +1014,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "1",
-    "position": 42912066,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456206_afr": {
     "rsid": "rs10456206_afr",
@@ -1190,11 +1038,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 17556708,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456207_afr": {
     "rsid": "rs10456207_afr",
@@ -1218,11 +1062,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 17563814,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs1800407_afr": {
     "rsid": "rs1800407_afr",
@@ -1246,13 +1086,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "15",
-    "position": 27985172,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456218_afr": {
     "rsid": "rs10456218_afr",
@@ -1278,11 +1112,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast.",
-    "chromosome": "6",
-    "position": 18780759,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Akan Ancestry Marker - informative for populations of Ghana and Ivory Coast."
   },
   "rs10793168_afr": {
     "rsid": "rs10793168_afr",
@@ -1308,11 +1138,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "11",
-    "position": 76158636,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs10888503_afr": {
     "rsid": "rs10888503_afr",
@@ -1338,13 +1164,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 152621073,
-    "ref": "C",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs10954606_afr": {
     "rsid": "rs10954606_afr",
@@ -1370,11 +1190,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "7",
-    "position": 137847598,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs11122330_afr": {
     "rsid": "rs11122330_afr",
@@ -1400,11 +1216,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 231898591,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs11162487_afr": {
     "rsid": "rs11162487_afr",
@@ -1430,11 +1242,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 78879237,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs11252398_afr": {
     "rsid": "rs11252398_afr",
@@ -1460,11 +1268,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "10",
-    "position": 4267047,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs11624035_afr": {
     "rsid": "rs11624035_afr",
@@ -1490,11 +1294,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "14",
-    "position": 93123142,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1165196_afr": {
     "rsid": "rs1165196_afr",
@@ -1520,13 +1320,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "6",
-    "position": 25812922,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1170258_afr": {
     "rsid": "rs1170258_afr",
@@ -1552,13 +1346,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "2",
-    "position": 70596389,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1172605_afr": {
     "rsid": "rs1172605_afr",
@@ -1584,13 +1372,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 50870862,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1174629_afr": {
     "rsid": "rs1174629_afr",
@@ -1616,13 +1398,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "18",
-    "position": 22761856,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175143_afr": {
     "rsid": "rs1175143_afr",
@@ -1648,11 +1424,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 192217230,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175187_afr": {
     "rsid": "rs1175187_afr",
@@ -1678,11 +1450,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 125500092,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175241_afr": {
     "rsid": "rs1175241_afr",
@@ -1708,11 +1476,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "13",
-    "position": 45068636,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175295_afr": {
     "rsid": "rs1175295_afr",
@@ -1738,11 +1502,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "13",
-    "position": 45373456,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175349_afr": {
     "rsid": "rs1175349_afr",
@@ -1768,13 +1528,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "16",
-    "position": 2269716,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175403_afr": {
     "rsid": "rs1175403_afr",
@@ -1800,13 +1554,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "4",
-    "position": 167147666,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175457_afr": {
     "rsid": "rs1175457_afr",
@@ -1832,11 +1580,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "9",
-    "position": 107637064,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175511_afr": {
     "rsid": "rs1175511_afr",
@@ -1862,13 +1606,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "9",
-    "position": 81004544,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175565_afr": {
     "rsid": "rs1175565_afr",
@@ -1894,13 +1632,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 6007310,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175619_afr": {
     "rsid": "rs1175619_afr",
@@ -1926,13 +1658,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "12",
-    "position": 77177938,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175673_afr": {
     "rsid": "rs1175673_afr",
@@ -1958,13 +1684,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175727_afr": {
     "rsid": "rs1175727_afr",
@@ -1990,13 +1710,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 32087147,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175781_afr": {
     "rsid": "rs1175781_afr",
@@ -2022,13 +1736,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "12",
-    "position": 77094114,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175835_afr": {
     "rsid": "rs1175835_afr",
@@ -2054,13 +1762,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "6",
-    "position": 65603989,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175889_afr": {
     "rsid": "rs1175889_afr",
@@ -2086,13 +1788,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 169820006,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175943_afr": {
     "rsid": "rs1175943_afr",
@@ -2118,13 +1814,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "18",
-    "position": 26920187,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1175997_afr": {
     "rsid": "rs1175997_afr",
@@ -2150,11 +1840,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 247846153,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176051_afr": {
     "rsid": "rs1176051_afr",
@@ -2180,11 +1866,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 247812583,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176105_afr": {
     "rsid": "rs1176105_afr",
@@ -2210,13 +1892,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 232011505,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176159_afr": {
     "rsid": "rs1176159_afr",
@@ -2242,13 +1918,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 247570815,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176213_afr": {
     "rsid": "rs1176213_afr",
@@ -2274,13 +1944,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 144766375,
-    "ref": "T",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176267_afr": {
     "rsid": "rs1176267_afr",
@@ -2306,13 +1970,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "13",
-    "position": 80689186,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176321_afr": {
     "rsid": "rs1176321_afr",
@@ -2338,11 +1996,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "13",
-    "position": 81227243,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176375_afr": {
     "rsid": "rs1176375_afr",
@@ -2368,13 +2022,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 68383175,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176429_afr": {
     "rsid": "rs1176429_afr",
@@ -2400,13 +2048,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 6353897,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176483_afr": {
     "rsid": "rs1176483_afr",
@@ -2432,11 +2074,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "10",
-    "position": 132472351,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176537_afr": {
     "rsid": "rs1176537_afr",
@@ -2462,11 +2100,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 157062696,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176591_afr": {
     "rsid": "rs1176591_afr",
@@ -2492,13 +2126,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "6",
-    "position": 42454742,
-    "ref": "C",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176645_afr": {
     "rsid": "rs1176645_afr",
@@ -2524,13 +2152,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176699_afr": {
     "rsid": "rs1176699_afr",
@@ -2556,13 +2178,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 33313652,
-    "ref": "G",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176753_afr": {
     "rsid": "rs1176753_afr",
@@ -2588,11 +2204,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "11",
-    "position": 113840627,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176807_afr": {
     "rsid": "rs1176807_afr",
@@ -2618,13 +2230,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 13164432,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176861_afr": {
     "rsid": "rs1176861_afr",
@@ -2650,13 +2256,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "14",
-    "position": 40821154,
-    "ref": "C",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176915_afr": {
     "rsid": "rs1176915_afr",
@@ -2682,13 +2282,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "14",
-    "position": 97483963,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1176969_afr": {
     "rsid": "rs1176969_afr",
@@ -2714,11 +2308,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "14",
-    "position": 41435329,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177023_afr": {
     "rsid": "rs1177023_afr",
@@ -2744,13 +2334,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "13",
-    "position": 57577390,
-    "ref": "C",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177077_afr": {
     "rsid": "rs1177077_afr",
@@ -2776,11 +2360,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 93057472,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177131_afr": {
     "rsid": "rs1177131_afr",
@@ -2806,13 +2386,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 13295784,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177185_afr": {
     "rsid": "rs1177185_afr",
@@ -2838,13 +2412,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 33541422,
-    "ref": "C",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177239_afr": {
     "rsid": "rs1177239_afr",
@@ -2870,11 +2438,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 33573492,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177293_afr": {
     "rsid": "rs1177293_afr",
@@ -2900,11 +2464,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "2",
-    "position": 61348080,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177347_afr": {
     "rsid": "rs1177347_afr",
@@ -2930,13 +2490,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "15",
-    "position": 75941607,
-    "ref": "C",
-    "alt": "T",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177401_afr": {
     "rsid": "rs1177401_afr",
@@ -2962,11 +2516,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "13",
-    "position": 112173067,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177455_afr": {
     "rsid": "rs1177455_afr",
@@ -2992,13 +2542,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 193872983,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177509_afr": {
     "rsid": "rs1177509_afr",
@@ -3024,11 +2568,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "6",
-    "position": 75330995,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177563_afr": {
     "rsid": "rs1177563_afr",
@@ -3054,11 +2594,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "HG299_PATCH",
-    "position": 118949082,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177617_afr": {
     "rsid": "rs1177617_afr",
@@ -3084,11 +2620,7 @@
     },
     "deepFrequencies": {},
     "weight": 2,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "11",
-    "position": 22615770,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177671_afr": {
     "rsid": "rs1177671_afr",
@@ -3114,13 +2646,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "10",
-    "position": 115405516,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177725_afr": {
     "rsid": "rs1177725_afr",
@@ -3146,11 +2672,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 103595531,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177779_afr": {
     "rsid": "rs1177779_afr",
@@ -3176,13 +2698,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 106972852,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177833_afr": {
     "rsid": "rs1177833_afr",
@@ -3208,13 +2724,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "18",
-    "position": 26995345,
-    "ref": "G",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177887_afr": {
     "rsid": "rs1177887_afr",
@@ -3240,13 +2750,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "1",
-    "position": 106972852,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177941_afr": {
     "rsid": "rs1177941_afr",
@@ -3272,11 +2776,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "7",
-    "position": 148060659,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1177995_afr": {
     "rsid": "rs1177995_afr",
@@ -3302,11 +2802,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "17",
-    "position": 70544030,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178049_afr": {
     "rsid": "rs1178049_afr",
@@ -3332,11 +2828,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "20",
-    "position": 2933613,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178103_afr": {
     "rsid": "rs1178103_afr",
@@ -3362,11 +2854,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "7",
-    "position": 18741367,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178157_afr": {
     "rsid": "rs1178157_afr",
@@ -3392,11 +2880,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "7",
-    "position": 18783661,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178211_afr": {
     "rsid": "rs1178211_afr",
@@ -3422,11 +2906,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "2",
-    "position": 15207738,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178265_afr": {
     "rsid": "rs1178265_afr",
@@ -3452,13 +2932,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 8898035,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178319_afr": {
     "rsid": "rs1178319_afr",
@@ -3484,11 +2958,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "7",
-    "position": 18239627,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178373_afr": {
     "rsid": "rs1178373_afr",
@@ -3514,11 +2984,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "7",
-    "position": 18169266,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178427_afr": {
     "rsid": "rs1178427_afr",
@@ -3544,13 +3010,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "4",
-    "position": 87088468,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178481_afr": {
     "rsid": "rs1178481_afr",
@@ -3576,13 +3036,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 141787742,
-    "ref": "G",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178535_afr": {
     "rsid": "rs1178535_afr",
@@ -3608,11 +3062,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 2375485,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178589_afr": {
     "rsid": "rs1178589_afr",
@@ -3638,13 +3088,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "5",
-    "position": 85486629,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178643_afr": {
     "rsid": "rs1178643_afr",
@@ -3670,13 +3114,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "17",
-    "position": 3430502,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178697_afr": {
     "rsid": "rs1178697_afr",
@@ -3702,13 +3140,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "17",
-    "position": 3371448,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178751_afr": {
     "rsid": "rs1178751_afr",
@@ -3734,13 +3166,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 9655282,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs1178805_afr": {
     "rsid": "rs1178805_afr",
@@ -3766,13 +3192,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "UT-AIM250 Marker - African informative.",
-    "chromosome": "3",
-    "position": 9665489,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "UT-AIM250 Marker - African informative."
   },
   "rs622682_afr": {
     "rsid": "rs622682_afr",
@@ -3798,11 +3218,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "General African ancestry informative marker.",
-    "chromosome": "1",
-    "position": 5344779,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "General African ancestry informative marker."
   },
   "rs73885319_afr": {
     "rsid": "rs73885319_afr",
@@ -3828,11 +3244,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "APOL1 variant - associated with kidney disease risk, found almost exclusively in African populations.",
-    "chromosome": "22",
-    "position": 36661906,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "APOL1 variant - associated with kidney disease risk, found almost exclusively in African populations."
   },
   "rs1126647_afr": {
     "rsid": "rs1126647_afr",
@@ -3858,11 +3270,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "G6PD variant - common in African populations, associated with malaria resistance.",
-    "chromosome": "4",
-    "position": 74609045,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "G6PD variant - common in African populations, associated with malaria resistance."
   },
   "rs334_afr_2": {
     "rsid": "rs334_afr_2",
@@ -3888,11 +3296,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Sickle Cell Trait - high frequency in sub-Saharan Africa.",
-    "chromosome": "11",
-    "position": 5248232,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Sickle Cell Trait - high frequency in sub-Saharan Africa."
   },
   "rs1545397_afr": {
     "rsid": "rs1545397_afr",
@@ -3918,11 +3322,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "15",
-    "position": 28187772,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456195_afr": {
     "rsid": "rs10456195_afr",
@@ -3948,11 +3348,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Yoruba-specific ancestry marker.",
-    "chromosome": "6",
-    "position": 14457965,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Yoruba-specific ancestry marker."
   },
   "rs10456196_afr": {
     "rsid": "rs10456196_afr",
@@ -3978,11 +3374,7 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Igbo-specific ancestry marker.",
-    "chromosome": "6",
-    "position": 9690715,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Igbo-specific ancestry marker."
   },
   "rs10456201_afr": {
     "rsid": "rs10456201_afr",
@@ -4006,11 +3398,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 15557636,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456202_afr": {
     "rsid": "rs10456202_afr",
@@ -4034,11 +3422,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 16004552,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456203_afr": {
     "rsid": "rs10456203_afr",
@@ -4062,11 +3446,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 16435066,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456219_afr": {
     "rsid": "rs10456219_afr",
@@ -4092,11 +3472,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana).",
-    "chromosome": "6",
-    "position": 18780770,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ga-Adangbe Ancestry Marker - informative for populations of the Greater Accra region (Ghana)."
   },
   "rs10456220_afr": {
     "rsid": "rs10456220_afr",
@@ -4120,13 +3496,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 18925121,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456221_afr": {
     "rsid": "rs10456221_afr",
@@ -4152,11 +3522,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Amhara Ancestry Marker - diagnostic for Ethiosemitic populations of the Ethiopian Highlands.",
-    "chromosome": "6",
-    "position": 10131177,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Amhara Ancestry Marker - diagnostic for Ethiosemitic populations of the Ethiopian Highlands."
   },
   "rs10456222_afr": {
     "rsid": "rs10456222_afr",
@@ -4180,11 +3546,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "Ancestry Informative Marker for African populations.",
-    "chromosome": "6",
-    "position": 19137158,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ancestry Informative Marker for African populations."
   },
   "rs10456240_afr": {
     "rsid": "rs10456240_afr",
@@ -4210,11 +3572,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Mbundu Ancestry Marker - informative for Kimbundu-speaking populations of Angola.",
-    "chromosome": "6",
-    "position": 21205221,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mbundu Ancestry Marker - informative for Kimbundu-speaking populations of Angola."
   },
   "rs10456241_afr": {
     "rsid": "rs10456241_afr",
@@ -4240,11 +3598,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Efik Ancestry Marker - diagnostic for Cross River populations of Nigeria.",
-    "chromosome": "6",
-    "position": 21205350,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Efik Ancestry Marker - diagnostic for Cross River populations of Nigeria."
   },
   "rs10456242_afr": {
     "rsid": "rs10456242_afr",
@@ -4270,11 +3624,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ibibio Ancestry Marker - diagnostic for populations of Akwa Ibom State (Nigeria).",
-    "chromosome": "6",
-    "position": 21205388,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ibibio Ancestry Marker - diagnostic for populations of Akwa Ibom State (Nigeria)."
   },
   "rs10456228_afr": {
     "rsid": "rs10456228_afr",
@@ -4300,11 +3650,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Baule Ancestry Marker - diagnostic for Akan-related populations of Ivory Coast.",
-    "chromosome": "6",
-    "position": 10228120,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Baule Ancestry Marker - diagnostic for Akan-related populations of Ivory Coast."
   },
   "rs10456229_afr": {
     "rsid": "rs10456229_afr",
@@ -4330,11 +3676,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana.",
-    "chromosome": "6",
-    "position": 10228129,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mossi Ancestry Marker - informative for Gur-speaking populations of Burkina Faso and Ghana."
   },
   "rs10456230_afr": {
     "rsid": "rs10456230_afr",
@@ -4360,13 +3702,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Kikuyu Ancestry Marker - informative for Central Bantu populations of Kenya.",
-    "chromosome": "6",
-    "position": 20018805,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Kikuyu Ancestry Marker - informative for Central Bantu populations of Kenya."
   },
   "rs10456231_afr": {
     "rsid": "rs10456231_afr",
@@ -4392,11 +3728,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda.",
-    "chromosome": "6",
-    "position": 10230534,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Baganda Ancestry Marker - informative for Great Lakes Bantu populations of Uganda."
   },
   "rs10456232_afr": {
     "rsid": "rs10456232_afr",
@@ -4422,11 +3754,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Tigrayan Ancestry Marker - diagnostic for Ethiosemitic populations of Ethiopia and Eritrea.",
-    "chromosome": "6",
-    "position": 20579123,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tigrayan Ancestry Marker - diagnostic for Ethiosemitic populations of Ethiopia and Eritrea."
   },
   "rs10456246_afr": {
     "rsid": "rs10456246_afr",
@@ -4452,11 +3780,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Sherbro Ancestry Marker - diagnostic for coastal populations of Sierra Leone.",
-    "chromosome": "6",
-    "position": 10360801,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Sherbro Ancestry Marker - diagnostic for coastal populations of Sierra Leone."
   },
   "rs10456248_afr_2": {
     "rsid": "rs10456248_afr_2",
@@ -4482,11 +3806,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Grebo Ancestry Marker - informative for Kru-speaking populations of Liberia.",
-    "chromosome": "6",
-    "position": 21850260,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Grebo Ancestry Marker - informative for Kru-speaking populations of Liberia."
   },
   "rs10456250_afr": {
     "rsid": "rs10456250_afr",
@@ -4512,11 +3832,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Vai Ancestry Marker - informative for Mande-speaking populations of Liberia and Sierra Leone.",
-    "chromosome": "6",
-    "position": 22061048,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Vai Ancestry Marker - informative for Mande-speaking populations of Liberia and Sierra Leone."
   },
   "rs10456251_afr": {
     "rsid": "rs10456251_afr",
@@ -4542,11 +3858,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Gola Ancestry Marker - diagnostic for populations of Liberia and Sierra Leone.",
-    "chromosome": "6",
-    "position": 22101853,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Gola Ancestry Marker - diagnostic for populations of Liberia and Sierra Leone."
   },
   "rs10456253_afr": {
     "rsid": "rs10456253_afr",
@@ -4572,11 +3884,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia.",
-    "chromosome": "6",
-    "position": 22222589,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Loma Ancestry Marker - informative for Mande-speaking populations of Guinea and Liberia."
   },
   "rs10456233_afr": {
     "rsid": "rs10456233_afr",
@@ -4602,11 +3910,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Shona Ancestry Marker - informative for populations of Zimbabwe and Mozambique.",
-    "chromosome": "6",
-    "position": 20581793,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Shona Ancestry Marker - informative for populations of Zimbabwe and Mozambique."
   },
   "rs10456234_afr_2": {
     "rsid": "rs10456234_afr_2",
@@ -4632,11 +3936,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Tsonga Ancestry Marker - diagnostic for Tswa-Ronga populations of South Africa and Mozambique.",
-    "chromosome": "6",
-    "position": 20598774,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tsonga Ancestry Marker - diagnostic for Tswa-Ronga populations of South Africa and Mozambique."
   },
   "rs10456235_afr": {
     "rsid": "rs10456235_afr",
@@ -4662,11 +3962,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ndebele Ancestry Marker - diagnostic for Nguni populations of Zimbabwe and South Africa.",
-    "chromosome": "6",
-    "position": 10301579,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ndebele Ancestry Marker - diagnostic for Nguni populations of Zimbabwe and South Africa."
   },
   "rs10456237_afr": {
     "rsid": "rs10456237_afr",
@@ -4692,11 +3988,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bamileke Ancestry Marker - diagnostic for Grassfields Bantu populations of Cameroon.",
-    "chromosome": "6",
-    "position": 21081906,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bamileke Ancestry Marker - diagnostic for Grassfields Bantu populations of Cameroon."
   },
   "rs10456276_afr": {
     "rsid": "rs10456276_afr",
@@ -4724,11 +4016,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African.",
-    "chromosome": "6",
-    "position": 23668148,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "AFR/MENA Tie-Breaker - Fixed in Sub-Saharan populations, prevents Middle Eastern noise from registering as African."
   },
   "rs10456297_afr": {
     "rsid": "rs10456297_afr",
@@ -4756,11 +4044,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression.",
-    "chromosome": "6",
-    "position": 23995856,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "AFR/EAS Tie-Breaker - Anchors deep Sub-Saharan lineages against Southeast Asian introgression."
   },
   "rs10456306_afr": {
     "rsid": "rs10456306_afr",
@@ -4788,11 +4072,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor.",
-    "chromosome": "6",
-    "position": 24550041,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "AFR/NAFR Tie-Breaker - Sub-Saharan specific marker to filter out noise from the Sahel corridor."
   },
   "rs11547466_afr": {
     "rsid": "rs11547466_afr",
@@ -4818,11 +4098,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "West African Ancestry Marker - highly informative for Niger-Congo speaking populations.",
-    "chromosome": "13",
-    "position": 113890109,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "West African Ancestry Marker - highly informative for Niger-Congo speaking populations."
   },
   "rs4871195_afr": {
     "rsid": "rs4871195_afr",
@@ -4848,11 +4124,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Mandinka/Wolof Ancestry Marker - diagnostic for Upper Guinea and Senegambian populations.",
-    "chromosome": "8",
-    "position": 122498253,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mandinka/Wolof Ancestry Marker - diagnostic for Upper Guinea and Senegambian populations."
   },
   "rs12535789_afr": {
     "rsid": "rs12535789_afr",
@@ -4878,11 +4150,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "East African/Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations.",
-    "chromosome": "HG115_PATCH",
-    "position": 101969315,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "East African/Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations."
   },
   "rs13115481_afr": {
     "rsid": "rs13115481_afr",
@@ -4908,11 +4176,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Khoisan Ancestry Marker - highly diagnostic for Southern African hunter-gatherer populations.",
-    "chromosome": "4",
-    "position": 92334242,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Khoisan Ancestry Marker - highly diagnostic for Southern African hunter-gatherer populations."
   },
   "rs13116547_afr": {
     "rsid": "rs13116547_afr",
@@ -4938,11 +4202,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Central African Pygmy Marker - informative for Mbuti and Biaka genetic signatures.",
-    "chromosome": "4",
-    "position": 131012359,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central African Pygmy Marker - informative for Mbuti and Biaka genetic signatures."
   },
   "rs17135020_afr": {
     "rsid": "rs17135020_afr",
@@ -4968,11 +4228,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Nilotic Ancestry Marker - diagnostic for Nilo-Saharan speaking populations of East Africa.",
-    "chromosome": "7",
-    "position": 52495570,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nilotic Ancestry Marker - diagnostic for Nilo-Saharan speaking populations of East Africa."
   },
   "rs10456307_afr": {
     "rsid": "rs10456307_afr",
@@ -4998,11 +4254,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Horn of Africa Regional Marker - informative for Afroasiatic populations of the Horn.",
-    "chromosome": "6",
-    "position": 24566639,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Horn of Africa Regional Marker - informative for Afroasiatic populations of the Horn."
   },
   "rs10456308_afr": {
     "rsid": "rs10456308_afr",
@@ -5028,11 +4280,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana populations.",
-    "chromosome": "6",
-    "position": 24580408,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Southern Bantu Ancestry Marker - informative for Nguni and Sotho-Tswana populations."
   },
   "rs10456309_afr": {
     "rsid": "rs10456309_afr",
@@ -5058,11 +4306,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Central/Western Bantu Ancestry Marker - informative for populations of the Congo Basin.",
-    "chromosome": "6",
-    "position": 24589562,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central/Western Bantu Ancestry Marker - informative for populations of the Congo Basin."
   },
   "rs10456255_afr": {
     "rsid": "rs10456255_afr",
@@ -5088,11 +4332,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Dan Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Ivory Coast.",
-    "chromosome": "6",
-    "position": 22436086,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Dan Ancestry Marker - diagnostic for Mande-speaking populations of Liberia and Ivory Coast."
   },
   "rs10456254_afr": {
     "rsid": "rs10456254_afr",
@@ -5118,11 +4358,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Mano Ancestry Marker - diagnostic for Mande-speaking populations of Liberia.",
-    "chromosome": "6",
-    "position": 22236945,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mano Ancestry Marker - diagnostic for Mande-speaking populations of Liberia."
   },
   "rs10456258_afr_2": {
     "rsid": "rs10456258_afr_2",
@@ -5148,11 +4384,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Ovimbundu Ancestry Marker - informative for Umbundu-speaking populations of Angola.",
-    "chromosome": "6",
-    "position": 22481561,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Ovimbundu Ancestry Marker - informative for Umbundu-speaking populations of Angola."
   },
   "rs10456264_afr": {
     "rsid": "rs10456264_afr",
@@ -5178,11 +4410,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Yao Ancestry Marker - diagnostic for populations of the Lake Malawi region.",
-    "chromosome": "6",
-    "position": 22724823,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Yao Ancestry Marker - diagnostic for populations of the Lake Malawi region."
   },
   "rs11103349_afr": {
     "rsid": "rs11103349_afr",
@@ -5208,11 +4436,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Maasai Ancestry Marker - informative for Nilotic pastoralist populations of East Africa.",
-    "chromosome": "9",
-    "position": 139033949,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Maasai Ancestry Marker - informative for Nilotic pastoralist populations of East Africa."
   },
   "rs10424071_afr": {
     "rsid": "rs10424071_afr",
@@ -5238,11 +4462,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Nigerian Regional Marker - informative for populations of the Niger-Benue confluence.",
-    "chromosome": "19",
-    "position": 15015059,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nigerian Regional Marker - informative for populations of the Niger-Benue confluence."
   },
   "rs10456207-afr_afr": {
     "rsid": "rs10456207-afr_afr",
@@ -5268,11 +4488,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Nubian Ancestry Marker - diagnostic for Nilo-Saharan populations of the Nile Valley.",
-    "chromosome": "6",
-    "position": 17563814,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nubian Ancestry Marker - diagnostic for Nilo-Saharan populations of the Nile Valley."
   },
   "rs10456206-afr_afr": {
     "rsid": "rs10456206-afr_afr",
@@ -5298,11 +4514,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan.",
-    "chromosome": "6",
-    "position": 17556708,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Sudanese Ancestry Marker - informative for Nilotic populations of South Sudan and Sudan."
   },
   "rs11103333_afr": {
     "rsid": "rs11103333_afr",
@@ -5328,11 +4540,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Akan Ancestry Marker - highly informative for populations of the Gold Coast and Ivory Coast.",
-    "chromosome": "9",
-    "position": 138998890,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Akan Ancestry Marker - highly informative for populations of the Gold Coast and Ivory Coast."
   },
   "rs10456209_afr": {
     "rsid": "rs10456209_afr",
@@ -5358,11 +4566,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Central African Bantu Marker - diagnostic for populations of the Congo Basin and Cameroon.",
-    "chromosome": "6",
-    "position": 17744573,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central African Bantu Marker - diagnostic for populations of the Congo Basin and Cameroon."
   },
   "rs10456210_afr": {
     "rsid": "rs10456210_afr",
@@ -5388,11 +4592,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Khoe-San Specific Marker - highly diagnostic for indigenous Southern African hunter-gatherer populations.",
-    "chromosome": "6",
-    "position": 17752101,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Khoe-San Specific Marker - highly diagnostic for indigenous Southern African hunter-gatherer populations."
   },
   "rs10456212_afr": {
     "rsid": "rs10456212_afr",
@@ -5418,11 +4618,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations of East Africa.",
-    "chromosome": "6",
-    "position": 17951669,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Horn of Africa Marker - informative for Cushitic and Ethiosemitic populations of East Africa."
   },
   "rs7388531_afr": {
     "rsid": "rs7388531_afr",
@@ -5448,11 +4644,7 @@
     "weight": 3,
     "gene": "APOL1",
     "trait": "Kidney Health / Parasite Resistance",
-    "description": "APOL1 gene variant - highly prevalent in West African populations, associated with kidney disease risk and trypanosomiasis resistance.",
-    "chromosome": "8",
-    "position": 26160100,
-    "ref": "C",
-    "alt": "T"
+    "description": "APOL1 gene variant - highly prevalent in West African populations, associated with kidney disease risk and trypanosomiasis resistance."
   },
   "rs6071022_afr": {
     "rsid": "rs6071022_afr",
@@ -5478,11 +4670,7 @@
     },
     "deepFrequencies": {},
     "weight": 2,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "20",
-    "position": 58483198,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs1866074_afr": {
     "rsid": "rs1866074_afr",
@@ -5508,11 +4696,7 @@
     },
     "deepFrequencies": {},
     "weight": 2.5,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "12",
-    "position": 104374442,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103331_afr": {
     "rsid": "rs11103331_afr",
@@ -5538,11 +4722,7 @@
     },
     "deepFrequencies": {},
     "weight": 2.2,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 138992901,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103332_afr": {
     "rsid": "rs11103332_afr",
@@ -5568,11 +4748,7 @@
     },
     "deepFrequencies": {},
     "weight": 2.1,
-    "description": "African Informative Marker - useful for distinguishing African from Middle Eastern/North African populations.",
-    "chromosome": "9",
-    "position": 138995478,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for distinguishing African from Middle Eastern/North African populations."
   },
   "rs11635515_afr": {
     "rsid": "rs11635515_afr",
@@ -5598,11 +4774,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "African Informative Marker - strong sub-Saharan African signal with high differentiation.",
-    "chromosome": "15",
-    "position": 24323115,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal with high differentiation."
   },
   "rs10809850_afr": {
     "rsid": "rs10809850_afr",
@@ -5628,11 +4800,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - highly prevalent in Bantu-speaking populations.",
-    "chromosome": "9",
-    "position": 1295602,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly prevalent in Bantu-speaking populations."
   },
   "rs10767971_afr": {
     "rsid": "rs10767971_afr",
@@ -5658,11 +4826,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - useful for identifying West African ancestry.",
-    "chromosome": "11",
-    "position": 32895664,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying West African ancestry."
   },
   "rs11103334_afr": {
     "rsid": "rs11103334_afr",
@@ -5688,11 +4852,7 @@
     },
     "deepFrequencies": {},
     "weight": 2.7,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 138999801,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103335_afr": {
     "rsid": "rs11103335_afr",
@@ -5718,11 +4878,7 @@
     },
     "deepFrequencies": {},
     "weight": 2.9,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139001143,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103336_afr": {
     "rsid": "rs11103336_afr",
@@ -5748,11 +4904,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - highly specific to West African populations.",
-    "chromosome": "9",
-    "position": 139001254,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly specific to West African populations."
   },
   "rs11103340_afr": {
     "rsid": "rs11103340_afr",
@@ -5776,11 +4928,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Southern African Hunter-Gatherer Marker - highly informative for San and Khoe populations.",
-    "chromosome": "9",
-    "position": 139016504,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Southern African Hunter-Gatherer Marker - highly informative for San and Khoe populations."
   },
   "rs11103341_afr": {
     "rsid": "rs11103341_afr",
@@ -5804,11 +4952,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.2,
-    "description": "Central/Southern African Informative Marker - useful for identifying deep African lineages.",
-    "chromosome": "9",
-    "position": 139021480,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central/Southern African Informative Marker - useful for identifying deep African lineages."
   },
   "rs11103337_afr": {
     "rsid": "rs11103337_afr",
@@ -5835,11 +4979,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 139001270,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa."
   },
   "rs11103338_afr": {
     "rsid": "rs11103338_afr",
@@ -5866,11 +5006,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - strong differentiation between African and non-African populations.",
-    "chromosome": "9",
-    "position": 139005138,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation between African and non-African populations."
   },
   "rs11103339_afr": {
     "rsid": "rs11103339_afr",
@@ -5897,11 +5033,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - useful for identifying West African and Bantu ancestry.",
-    "chromosome": "9",
-    "position": 139007684,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying West African and Bantu ancestry."
   },
   "rs11103342_afr": {
     "rsid": "rs11103342_afr",
@@ -5928,11 +5060,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139021644,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103343_afr": {
     "rsid": "rs11103343_afr",
@@ -5959,11 +5087,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 139023017,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103344_afr": {
     "rsid": "rs11103344_afr",
@@ -5990,11 +5114,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "African Informative Marker - nearly fixed in sub-Saharan African populations.",
-    "chromosome": "9",
-    "position": 139023138,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in sub-Saharan African populations."
   },
   "rs11103345_afr": {
     "rsid": "rs11103345_afr",
@@ -6021,11 +5141,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency across West and Central Africa.",
-    "chromosome": "9",
-    "position": 137458670,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency across West and Central Africa."
   },
   "rs11103346_afr": {
     "rsid": "rs11103346_afr",
@@ -6052,11 +5168,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - useful for distinguishing African from non-African lineages.",
-    "chromosome": "9",
-    "position": 139027289,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for distinguishing African from non-African lineages."
   },
   "rs11103347_afr": {
     "rsid": "rs11103347_afr",
@@ -6083,11 +5195,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137458897,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103348_afr": {
     "rsid": "rs11103348_afr",
@@ -6114,11 +5222,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - high differentiation from European and Asian populations.",
-    "chromosome": "9",
-    "position": 139030044,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high differentiation from European and Asian populations."
   },
   "rs11103350_afr": {
     "rsid": "rs11103350_afr",
@@ -6145,11 +5249,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139035609,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103351_afr": {
     "rsid": "rs11103351_afr",
@@ -6176,11 +5276,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in Bantu-speaking populations.",
-    "chromosome": "9",
-    "position": 139035762,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in Bantu-speaking populations."
   },
   "rs11103352_afr": {
     "rsid": "rs11103352_afr",
@@ -6207,11 +5303,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139037560,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103353_afr": {
     "rsid": "rs11103353_afr",
@@ -6238,11 +5330,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 139038107,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103354_afr": {
     "rsid": "rs11103354_afr",
@@ -6269,11 +5357,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - nearly fixed in West and Central Africa.",
-    "chromosome": "9",
-    "position": 139041820,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in West and Central Africa."
   },
   "rs11103355_afr": {
     "rsid": "rs11103355_afr",
@@ -6300,11 +5384,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 139043669,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   "rs11103356_afr": {
     "rsid": "rs11103356_afr",
@@ -6331,11 +5411,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - useful for identifying African ancestry.",
-    "chromosome": "9",
-    "position": 139048479,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying African ancestry."
   },
   "rs11103357_afr": {
     "rsid": "rs11103357_afr",
@@ -6362,11 +5438,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139052549,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103358_afr": {
     "rsid": "rs11103358_afr",
@@ -6393,11 +5465,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - high differentiation from European and Asian populations.",
-    "chromosome": "9",
-    "position": 139053278,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high differentiation from European and Asian populations."
   },
   "rs11103359_afr": {
     "rsid": "rs11103359_afr",
@@ -6424,11 +5492,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 139053930,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103360_afr": {
     "rsid": "rs11103360_afr",
@@ -6455,11 +5519,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 139057780,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   "rs11103361_afr": {
     "rsid": "rs11103361_afr",
@@ -6486,11 +5546,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139057910,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103362_afr": {
     "rsid": "rs11103362_afr",
@@ -6517,11 +5573,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139058209,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103363_afr": {
     "rsid": "rs11103363_afr",
@@ -6548,11 +5600,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in West African populations.",
-    "chromosome": "9",
-    "position": 139058361,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   "rs11103364_afr": {
     "rsid": "rs11103364_afr",
@@ -6579,11 +5627,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 139065393,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103365_afr": {
     "rsid": "rs11103365_afr",
@@ -6610,11 +5654,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - useful for identifying African ancestry.",
-    "chromosome": "9",
-    "position": 139069214,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying African ancestry."
   },
   "rs11103366_afr": {
     "rsid": "rs11103366_afr",
@@ -6641,11 +5681,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139069713,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103367_afr": {
     "rsid": "rs11103367_afr",
@@ -6672,11 +5708,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in Bantu-speaking populations.",
-    "chromosome": "9",
-    "position": 139071555,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in Bantu-speaking populations."
   },
   "rs11103368_afr": {
     "rsid": "rs11103368_afr",
@@ -6703,11 +5735,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 139071689,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in sub-Saharan Africa."
   },
   "rs11103369_afr": {
     "rsid": "rs11103369_afr",
@@ -6734,11 +5762,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE.",
-    "chromosome": "9",
-    "position": 139078849,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
   "rs11103370_afr": {
     "rsid": "rs11103370_afr",
@@ -6765,11 +5789,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Middle Eastern populations.",
-    "chromosome": "9",
-    "position": 139078853,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
   "rs11103371_afr": {
     "rsid": "rs11103371_afr",
@@ -6796,11 +5816,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA.",
-    "chromosome": "9",
-    "position": 137464244,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
   "rs11103372_afr": {
     "rsid": "rs11103372_afr",
@@ -6827,11 +5843,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages.",
-    "chromosome": "9",
-    "position": 139083019,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
   "rs11103373_afr": {
     "rsid": "rs11103373_afr",
@@ -6858,11 +5870,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - high frequency in Central African populations.",
-    "chromosome": "9",
-    "position": 139085865,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in Central African populations."
   },
   "rs11103374_afr": {
     "rsid": "rs11103374_afr",
@@ -6889,11 +5897,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap.",
-    "chromosome": "9",
-    "position": 139087521,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
   "rs11103375_afr": {
     "rsid": "rs11103375_afr",
@@ -6920,11 +5924,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
-    "chromosome": "9",
-    "position": 137464925,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
   "rs11103376_afr": {
     "rsid": "rs11103376_afr",
@@ -6951,11 +5951,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap.",
-    "chromosome": "9",
-    "position": 139094740,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
   "rs11103377_afr": {
     "rsid": "rs11103377_afr",
@@ -6982,11 +5978,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
-    "chromosome": "9",
-    "position": 139097135,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
   "rs11103378_afr": {
     "rsid": "rs11103378_afr",
@@ -7013,11 +6005,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency.",
-    "chromosome": "9",
-    "position": 139097205,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
   "rs11103379_afr": {
     "rsid": "rs11103379_afr",
@@ -7044,11 +6032,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in East African populations.",
-    "chromosome": "9",
-    "position": 139097350,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in East African populations."
   },
   "rs11103380_afr": {
     "rsid": "rs11103380_afr",
@@ -7075,11 +6059,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 139097496,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103381_afr": {
     "rsid": "rs11103381_afr",
@@ -7106,11 +6086,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 139097773,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103382_afr": {
     "rsid": "rs11103382_afr",
@@ -7137,13 +6113,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE.",
-    "chromosome": "9",
-    "position": 134573079,
-    "ref": "C",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
   "rs11103383_afr": {
     "rsid": "rs11103383_afr",
@@ -7170,11 +6140,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137466680,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   "rs11103384_afr": {
     "rsid": "rs11103384_afr",
@@ -7201,11 +6167,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in West African populations.",
-    "chromosome": "9",
-    "position": 137466723,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   "rs11103385_afr": {
     "rsid": "rs11103385_afr",
@@ -7232,11 +6194,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137466735,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103386_afr": {
     "rsid": "rs11103386_afr",
@@ -7263,11 +6221,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137466833,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103387_afr": {
     "rsid": "rs11103387_afr",
@@ -7294,11 +6248,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 139107879,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103388_afr": {
     "rsid": "rs11103388_afr",
@@ -7325,11 +6275,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 139107925,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   "rs11103389_afr": {
     "rsid": "rs11103389_afr",
@@ -7356,11 +6302,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE.",
-    "chromosome": "9",
-    "position": 139117099,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
   "rs11103390_afr": {
     "rsid": "rs11103390_afr",
@@ -7387,11 +6329,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Middle Eastern populations.",
-    "chromosome": "9",
-    "position": 139120828,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
   "rs11103391_afr": {
     "rsid": "rs11103391_afr",
@@ -7418,11 +6356,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA.",
-    "chromosome": "9",
-    "position": 137468339,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
   "rs11103392_afr": {
     "rsid": "rs11103392_afr",
@@ -7449,11 +6383,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages.",
-    "chromosome": "9",
-    "position": 139124781,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
   "rs11103393_afr": {
     "rsid": "rs11103393_afr",
@@ -7480,11 +6410,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - high frequency in Central African populations.",
-    "chromosome": "9",
-    "position": 139124789,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in Central African populations."
   },
   "rs11103394_afr": {
     "rsid": "rs11103394_afr",
@@ -7511,11 +6437,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap.",
-    "chromosome": "9",
-    "position": 139124796,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
   "rs11103395_afr": {
     "rsid": "rs11103395_afr",
@@ -7542,11 +6464,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
-    "chromosome": "9",
-    "position": 139125549,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
   "rs11103396_afr": {
     "rsid": "rs11103396_afr",
@@ -7573,11 +6491,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap.",
-    "chromosome": "9",
-    "position": 137469494,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
   "rs11103397_afr": {
     "rsid": "rs11103397_afr",
@@ -7604,11 +6518,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
-    "chromosome": "9",
-    "position": 137469503,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
   "rs11103398_afr": {
     "rsid": "rs11103398_afr",
@@ -7635,11 +6545,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency.",
-    "chromosome": "9",
-    "position": 139134474,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
   "rs11103399_afr": {
     "rsid": "rs11103399_afr",
@@ -7666,11 +6572,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in East African populations.",
-    "chromosome": "9",
-    "position": 137469807,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in East African populations."
   },
   "rs11103400_afr": {
     "rsid": "rs11103400_afr",
@@ -7697,11 +6599,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137471529,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103401_afr": {
     "rsid": "rs11103401_afr",
@@ -7728,11 +6626,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137471532,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103402_afr": {
     "rsid": "rs11103402_afr",
@@ -7759,11 +6653,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE.",
-    "chromosome": "9",
-    "position": 137472537,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
   "rs11103403_afr": {
     "rsid": "rs11103403_afr",
@@ -7790,11 +6680,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137473115,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   "rs11103404_afr": {
     "rsid": "rs11103404_afr",
@@ -7821,11 +6707,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in West African populations.",
-    "chromosome": "9",
-    "position": 137476593,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   "rs11103405_afr": {
     "rsid": "rs11103405_afr",
@@ -7852,11 +6734,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137477197,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103406_afr": {
     "rsid": "rs11103406_afr",
@@ -7883,11 +6761,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137477369,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103407_afr": {
     "rsid": "rs11103407_afr",
@@ -7914,11 +6788,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137477402,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103408_afr": {
     "rsid": "rs11103408_afr",
@@ -7945,11 +6815,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137484947,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   "rs11103409_afr": {
     "rsid": "rs11103409_afr",
@@ -7976,11 +6842,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE.",
-    "chromosome": "9",
-    "position": 137488517,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry, absent in MENA and OCE."
   },
   "rs11103410_afr": {
     "rsid": "rs11103410_afr",
@@ -8007,11 +6869,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Middle Eastern populations.",
-    "chromosome": "9",
-    "position": 137491241,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Middle Eastern populations."
   },
   "rs11103411_afr": {
     "rsid": "rs11103411_afr",
@@ -8038,11 +6896,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA.",
-    "chromosome": "9",
-    "position": 137491247,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in West Africa, extremely rare in MENA."
   },
   "rs11103412_afr": {
     "rsid": "rs11103412_afr",
@@ -8069,11 +6923,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages.",
-    "chromosome": "9",
-    "position": 137491269,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
   "rs11103413_afr": {
     "rsid": "rs11103413_afr",
@@ -8100,11 +6950,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - high frequency in Central African populations.",
-    "chromosome": "9",
-    "position": 137491378,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in Central African populations."
   },
   "rs11103414_afr": {
     "rsid": "rs11103414_afr",
@@ -8131,11 +6977,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap.",
-    "chromosome": "9",
-    "position": 137491435,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal with low MENA overlap."
   },
   "rs11103415_afr": {
     "rsid": "rs11103415_afr",
@@ -8162,11 +7004,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
-    "chromosome": "9",
-    "position": 137305477,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
   "rs11103416_afr": {
     "rsid": "rs11103416_afr",
@@ -8193,11 +7031,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap.",
-    "chromosome": "9",
-    "position": 137305479,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly specific to sub-Saharan Africa, filtering out ancient OCE overlap."
   },
   "rs11103417_afr": {
     "rsid": "rs11103417_afr",
@@ -8224,11 +7058,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
-    "chromosome": "9",
-    "position": 137494787,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
   "rs11103418_afr": {
     "rsid": "rs11103418_afr",
@@ -8255,11 +7085,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency.",
-    "chromosome": "9",
-    "position": 137495164,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal, low MENA frequency."
   },
   "rs11103419_afr": {
     "rsid": "rs11103419_afr",
@@ -8286,11 +7112,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in East African populations.",
-    "chromosome": "9",
-    "position": 137496159,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in East African populations."
   },
   "rs11103420_afr": {
     "rsid": "rs11103420_afr",
@@ -8317,11 +7139,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137497133,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103421_afr": {
     "rsid": "rs11103421_afr",
@@ -8348,11 +7166,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137497293,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103422_afr": {
     "rsid": "rs11103422_afr",
@@ -8379,11 +7193,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE.",
-    "chromosome": "9",
-    "position": 137498393,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa, absent in OCE."
   },
   "rs11103423_afr": {
     "rsid": "rs11103423_afr",
@@ -8410,11 +7220,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137498513,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   "rs11103424_afr": {
     "rsid": "rs11103424_afr",
@@ -8441,11 +7247,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in West African populations.",
-    "chromosome": "9",
-    "position": 137498664,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   "rs11103425_afr": {
     "rsid": "rs11103425_afr",
@@ -8472,11 +7274,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137498969,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103426_afr": {
     "rsid": "rs11103426_afr",
@@ -8503,11 +7301,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137500742,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103427_afr": {
     "rsid": "rs11103427_afr",
@@ -8534,11 +7328,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137500750,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103428_afr": {
     "rsid": "rs11103428_afr",
@@ -8565,11 +7355,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137505527,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   "rs11103429_afr": {
     "rsid": "rs11103429_afr",
@@ -8596,11 +7382,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry.",
-    "chromosome": "9",
-    "position": 137506578,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly diagnostic for sub-Saharan African ancestry."
   },
   "rs11103430_afr": {
     "rsid": "rs11103430_afr",
@@ -8627,11 +7409,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137507003,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103431_afr": {
     "rsid": "rs11103431_afr",
@@ -8658,11 +7436,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.5,
-    "description": "African Informative Marker - nearly fixed in West Africa.",
-    "chromosome": "9",
-    "position": 137507359,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in West Africa."
   },
   "rs11103432_afr": {
     "rsid": "rs11103432_afr",
@@ -8689,11 +7463,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages.",
-    "chromosome": "9",
-    "position": 137507483,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for separating sub-Saharan from North African lineages."
   },
   "rs11103433_afr": {
     "rsid": "rs11103433_afr",
@@ -8720,11 +7490,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - high frequency in Central African populations.",
-    "chromosome": "9",
-    "position": 137510144,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in Central African populations."
   },
   "rs11103434_afr": {
     "rsid": "rs11103434_afr",
@@ -8751,11 +7517,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137512034,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103435_afr": {
     "rsid": "rs11103435_afr",
@@ -8782,11 +7544,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from Oceanian populations.",
-    "chromosome": "9",
-    "position": 137513309,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from Oceanian populations."
   },
   "rs11103436_afr": {
     "rsid": "rs11103436_afr",
@@ -8813,11 +7571,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - highly specific to sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137513917,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - highly specific to sub-Saharan Africa."
   },
   "rs11103437_afr": {
     "rsid": "rs11103437_afr",
@@ -8844,11 +7598,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - useful for identifying Bantu expansion lineages.",
-    "chromosome": "9",
-    "position": 137514117,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - useful for identifying Bantu expansion lineages."
   },
   "rs11103438_afr": {
     "rsid": "rs11103438_afr",
@@ -8875,11 +7625,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137520070,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103439_afr": {
     "rsid": "rs11103439_afr",
@@ -8906,11 +7652,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in East African populations.",
-    "chromosome": "9",
-    "position": 137520289,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in East African populations."
   },
   "rs11103440_afr": {
     "rsid": "rs11103440_afr",
@@ -8937,11 +7679,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137521140,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103441_afr": {
     "rsid": "rs11103441_afr",
@@ -8968,11 +7706,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137521141,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103442_afr": {
     "rsid": "rs11103442_afr",
@@ -8999,11 +7733,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.4,
-    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137524163,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - nearly fixed in sub-Saharan Africa."
   },
   "rs11103443_afr": {
     "rsid": "rs11103443_afr",
@@ -9030,11 +7760,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - high frequency across sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137524233,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency across sub-Saharan Africa."
   },
   "rs11103444_afr": {
     "rsid": "rs11103444_afr",
@@ -9061,11 +7787,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.3,
-    "description": "African Informative Marker - extremely high frequency in West African populations.",
-    "chromosome": "9",
-    "position": 137524254,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - extremely high frequency in West African populations."
   },
   "rs11103445_afr": {
     "rsid": "rs11103445_afr",
@@ -9092,11 +7814,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - strong sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137524286,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong sub-Saharan African signal."
   },
   "rs11103446_afr": {
     "rsid": "rs11103446_afr",
@@ -9123,11 +7841,7 @@
     },
     "deepFrequencies": {},
     "weight": 3,
-    "description": "African Informative Marker - general sub-Saharan African signal.",
-    "chromosome": "9",
-    "position": 137524520,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - general sub-Saharan African signal."
   },
   "rs11103447_afr": {
     "rsid": "rs11103447_afr",
@@ -9154,11 +7868,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.1,
-    "description": "African Informative Marker - strong differentiation from non-African populations.",
-    "chromosome": "9",
-    "position": 137524529,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - strong differentiation from non-African populations."
   },
   "rs11103448_afr": {
     "rsid": "rs11103448_afr",
@@ -9185,11 +7895,7 @@
     },
     "deepFrequencies": {},
     "weight": 3.2,
-    "description": "African Informative Marker - high frequency in sub-Saharan Africa.",
-    "chromosome": "9",
-    "position": 137524637,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Informative Marker - high frequency in sub-Saharan Africa."
   },
   "rs6684372_afr": {
     "rsid": "rs6684372_afr",
@@ -9211,9 +7917,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 116158051
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2649578_afr": {
     "rsid": "rs2649578_afr",
@@ -9235,9 +7939,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1425407
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs4342826_afr": {
     "rsid": "rs4342826_afr",
@@ -9259,9 +7961,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 166302197
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10442708_afr": {
     "rsid": "rs10442708_afr",
@@ -9283,9 +7983,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 230082552
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7554884_afr": {
     "rsid": "rs7554884_afr",
@@ -9307,9 +8005,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 192551196
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7418014_afr": {
     "rsid": "rs7418014_afr",
@@ -9331,9 +8027,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 116784301
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7548736_afr": {
     "rsid": "rs7548736_afr",
@@ -9355,9 +8049,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 159340686
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs56168930_afr": {
     "rsid": "rs56168930_afr",
@@ -9379,9 +8071,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 11037447
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10801952_afr": {
     "rsid": "rs10801952_afr",
@@ -9403,9 +8093,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 117781885
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10900423_afr": {
     "rsid": "rs10900423_afr",
@@ -9427,9 +8115,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 204678203
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2788252_afr": {
     "rsid": "rs2788252_afr",
@@ -9451,9 +8137,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 113745455
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs3007210_afr": {
     "rsid": "rs3007210_afr",
@@ -9475,9 +8159,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 36856573
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs12065033_afr": {
     "rsid": "rs12065033_afr",
@@ -9499,9 +8181,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 173579034
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs12066494_afr": {
     "rsid": "rs12066494_afr",
@@ -9523,9 +8203,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 173579970
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2483328_afr": {
     "rsid": "rs2483328_afr",
@@ -9547,9 +8225,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 112960192
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs290829_afr": {
     "rsid": "rs290829_afr",
@@ -9571,9 +8247,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 97451677
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs6429390_afr": {
     "rsid": "rs6429390_afr",
@@ -9595,9 +8269,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 243064156
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs6657624_afr": {
     "rsid": "rs6657624_afr",
@@ -9619,9 +8291,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 117002489
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1220399_afr": {
     "rsid": "rs1220399_afr",
@@ -9643,9 +8313,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 9995254
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs59459799_afr": {
     "rsid": "rs59459799_afr",
@@ -9667,9 +8335,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 57627960
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7551243_afr": {
     "rsid": "rs7551243_afr",
@@ -9691,9 +8357,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 100209959
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2997748_afr": {
     "rsid": "rs2997748_afr",
@@ -9715,9 +8379,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 116181829
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs9428863_afr": {
     "rsid": "rs9428863_afr",
@@ -9739,9 +8401,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 241271227
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs3100865_afr": {
     "rsid": "rs3100865_afr",
@@ -9763,9 +8423,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 2806107
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2246829_afr": {
     "rsid": "rs2246829_afr",
@@ -9787,9 +8445,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 192547074
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1385120_afr": {
     "rsid": "rs1385120_afr",
@@ -9811,9 +8467,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 102177800
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs4839518_afr": {
     "rsid": "rs4839518_afr",
@@ -9835,9 +8489,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 116745951
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs11121639_afr": {
     "rsid": "rs11121639_afr",
@@ -9859,9 +8511,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 10937920
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs12240271_afr": {
     "rsid": "rs12240271_afr",
@@ -9883,9 +8533,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 230207462
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1036001_afr": {
     "rsid": "rs1036001_afr",
@@ -9907,9 +8555,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 236837395
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2132407_afr": {
     "rsid": "rs2132407_afr",
@@ -9931,9 +8577,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 232986191
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs4839456_afr": {
     "rsid": "rs4839456_afr",
@@ -9955,9 +8599,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 116100909
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs591001_afr": {
     "rsid": "rs591001_afr",
@@ -9979,9 +8621,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 36154485
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10888286_afr": {
     "rsid": "rs10888286_afr",
@@ -10003,9 +8643,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 248116335
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs35338133_afr": {
     "rsid": "rs35338133_afr",
@@ -10027,9 +8665,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 248780821
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2073017_afr": {
     "rsid": "rs2073017_afr",
@@ -10051,9 +8687,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 10822808
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7524748_afr": {
     "rsid": "rs7524748_afr",
@@ -10075,9 +8709,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 117708477
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs602507_afr": {
     "rsid": "rs602507_afr",
@@ -10099,9 +8731,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 32369008
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2487568_afr": {
     "rsid": "rs2487568_afr",
@@ -10123,9 +8753,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 120441998
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10737801_afr": {
     "rsid": "rs10737801_afr",
@@ -10147,9 +8775,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 247530238
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs11580984_afr": {
     "rsid": "rs11580984_afr",
@@ -10171,9 +8797,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 36182139
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2131633_afr": {
     "rsid": "rs2131633_afr",
@@ -10195,9 +8819,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 100220891
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs6704425_afr": {
     "rsid": "rs6704425_afr",
@@ -10219,9 +8841,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 38875991
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs3125685_afr": {
     "rsid": "rs3125685_afr",
@@ -10243,9 +8863,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 107805682
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2651924_afr": {
     "rsid": "rs2651924_afr",
@@ -10267,9 +8885,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 3147251
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7555426_afr": {
     "rsid": "rs7555426_afr",
@@ -10291,9 +8907,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 905160
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs3737720_afr": {
     "rsid": "rs3737720_afr",
@@ -10315,9 +8929,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1241800
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs683602_afr": {
     "rsid": "rs683602_afr",
@@ -10339,9 +8951,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 43570543
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs70937179_afr": {
     "rsid": "rs70937179_afr",
@@ -10363,9 +8973,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1647650
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1272959_afr": {
     "rsid": "rs1272959_afr",
@@ -10387,9 +8995,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1230419
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs137856800_afr": {
     "rsid": "rs137856800_afr",
@@ -10411,11 +9017,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 247959800,
-    "ref": "C",
-    "alt": "T"
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10754487_afr": {
     "rsid": "rs10754487_afr",
@@ -10437,9 +9039,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 246090194
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2045519_afr": {
     "rsid": "rs2045519_afr",
@@ -10461,9 +9061,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 234304145
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs6702454_afr": {
     "rsid": "rs6702454_afr",
@@ -10485,9 +9083,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 173968982
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2500308_afr": {
     "rsid": "rs2500308_afr",
@@ -10509,9 +9105,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 3188079
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1926881_afr": {
     "rsid": "rs1926881_afr",
@@ -10533,9 +9127,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 183977703
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs12076468_afr": {
     "rsid": "rs12076468_afr",
@@ -10557,9 +9149,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 241817912
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs6687840_afr": {
     "rsid": "rs6687840_afr",
@@ -10581,9 +9171,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 159342439
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10864470_afr": {
     "rsid": "rs10864470_afr",
@@ -10605,9 +9193,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 10831408
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2196537_afr": {
     "rsid": "rs2196537_afr",
@@ -10629,9 +9215,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 65014651
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10902667_afr": {
     "rsid": "rs10902667_afr",
@@ -10653,9 +9237,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 28062107
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10888793_afr": {
     "rsid": "rs10888793_afr",
@@ -10677,9 +9259,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 53964385
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs12095724_afr": {
     "rsid": "rs12095724_afr",
@@ -10701,9 +9281,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 28143168
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs11206168_afr": {
     "rsid": "rs11206168_afr",
@@ -10725,9 +9303,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 53972764
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10921525_afr": {
     "rsid": "rs10921525_afr",
@@ -10749,9 +9325,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 194239725
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs59289285_afr": {
     "rsid": "rs59289285_afr",
@@ -10773,9 +9347,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1428000
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1211184_afr": {
     "rsid": "rs1211184_afr",
@@ -10797,9 +9369,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 35888147
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10888590_afr": {
     "rsid": "rs10888590_afr",
@@ -10821,9 +9391,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 249109034
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs10908401_afr": {
     "rsid": "rs10908401_afr",
@@ -10845,9 +9413,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 36082395
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1268339_afr": {
     "rsid": "rs1268339_afr",
@@ -10869,9 +9435,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1215424
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs61210877_afr": {
     "rsid": "rs61210877_afr",
@@ -10893,9 +9457,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 229984977
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs628928_afr": {
     "rsid": "rs628928_afr",
@@ -10917,9 +9479,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "HG1287_PATCH",
-    "position": 148270893
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1006310_afr": {
     "rsid": "rs1006310_afr",
@@ -10941,9 +9501,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 161811555
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs155291_afr": {
     "rsid": "rs155291_afr",
@@ -10965,9 +9523,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 57634356
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs57399863_afr": {
     "rsid": "rs57399863_afr",
@@ -10989,9 +9545,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 173558473
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs11426822_afr": {
     "rsid": "rs11426822_afr",
@@ -11013,9 +9567,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 76933515
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs61314084_afr": {
     "rsid": "rs61314084_afr",
@@ -11037,9 +9589,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 53499512
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs61554547_afr": {
     "rsid": "rs61554547_afr",
@@ -11061,9 +9611,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 173544872
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs11121643_afr": {
     "rsid": "rs11121643_afr",
@@ -11085,9 +9633,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 10941670
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs6698938_afr": {
     "rsid": "rs6698938_afr",
@@ -11109,9 +9655,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 229985356
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs7554059_afr": {
     "rsid": "rs7554059_afr",
@@ -11133,9 +9677,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 244460826
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs1240709_afr": {
     "rsid": "rs1240709_afr",
@@ -11157,9 +9699,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 1337837
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs12029589_afr": {
     "rsid": "rs12029589_afr",
@@ -11181,9 +9721,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 54066402
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs4971072_afr": {
     "rsid": "rs4971072_afr",
@@ -11205,9 +9743,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "HSCHR1_2_CTG31",
-    "position": 155289273
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs856847_afr": {
     "rsid": "rs856847_afr",
@@ -11229,9 +9765,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "African Ancestry Marker",
-    "description": "Fox Chase African AIM panel marker (Chr 1).",
-    "chromosome": "1",
-    "position": 57351488
+    "description": "Fox Chase African AIM panel marker (Chr 1)."
   },
   "rs2814778_afr_2": {
     "rsid": "rs2814778_afr_2",
@@ -11250,13 +9784,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 6,
-    "description": "Duffy Null Tie-Breaker - Nearly fixed in Sub-Saharan Africa, diagnostic for African ancestry.",
-    "chromosome": "1",
-    "position": 159204893,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Duffy Null Tie-Breaker - Nearly fixed in Sub-Saharan Africa, diagnostic for African ancestry."
   },
   "rs4833103_afr": {
     "rsid": "rs4833103_afr",
@@ -11275,11 +9803,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "African vs. Native American Marker - Useful for discriminating ancestry in admixed individuals.",
-    "chromosome": "4",
-    "position": 38815502,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African vs. Native American Marker - Useful for discriminating ancestry in admixed individuals."
   },
   "rs10811661_afr": {
     "rsid": "rs10811661_afr",
@@ -11298,11 +9822,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "SLC14A2 African Ancestry Marker - Informative for African genetic signatures.",
-    "chromosome": "9",
-    "position": 22134094,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "SLC14A2 African Ancestry Marker - Informative for African genetic signatures."
   },
   "rs12779790_afr": {
     "rsid": "rs12779790_afr",
@@ -11321,11 +9841,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "African Ancestry Marker - Informative for Sub-Saharan African populations.",
-    "chromosome": "10",
-    "position": 12328010,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "African Ancestry Marker - Informative for Sub-Saharan African populations."
   },
   "rs10456271_afr_2": {
     "rsid": "rs10456271_afr_2",
@@ -11350,11 +9866,7 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "description": "Khoisan Tie-Breaker - Highly diagnostic for Southern African hunter-gatherer lineages (San/Khoe).",
-    "chromosome": "6",
-    "position": 23108417,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Khoisan Tie-Breaker - Highly diagnostic for Southern African hunter-gatherer lineages (San/Khoe)."
   },
   "rs10456234_afr_3": {
     "rsid": "rs10456234_afr_3",
@@ -11379,11 +9891,7 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "description": "Nilotic Tie-Breaker - Diagnostic for Nilotic populations of East Africa and the Nile Valley.",
-    "chromosome": "6",
-    "position": 20598774,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nilotic Tie-Breaker - Diagnostic for Nilotic populations of East Africa and the Nile Valley."
   },
   "rs10456258_afr_3": {
     "rsid": "rs10456258_afr_3",
@@ -11408,11 +9916,7 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "description": "Central African Pygmy Tie-Breaker - Diagnostic for hunter-gatherer populations of the Congo Basin.",
-    "chromosome": "6",
-    "position": 22481561,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central African Pygmy Tie-Breaker - Diagnostic for hunter-gatherer populations of the Congo Basin."
   },
   "rs10456248_afr_3": {
     "rsid": "rs10456248_afr_3",
@@ -11437,11 +9941,7 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "description": "Senegambian Ancestry Marker - Informative for populations of the Senegambia region.",
-    "chromosome": "6",
-    "position": 21850260,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Senegambian Ancestry Marker - Informative for populations of the Senegambia region."
   },
   "rs10456269_afr_2": {
     "rsid": "rs10456269_afr_2",
@@ -11466,11 +9966,7 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "description": "Nguni Ancestry Marker - Informative for Southern African Bantu populations (Zulu/Xhosa).",
-    "chromosome": "6",
-    "position": 23098186,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nguni Ancestry Marker - Informative for Southern African Bantu populations (Zulu/Xhosa)."
   },
   "rs10456213_afr_2": {
     "rsid": "rs10456213_afr_2",
@@ -11495,11 +9991,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Tigrayan Ancestry Marker - Informative for Semitic-speaking populations of the Ethiopian Highlands and Eritrea.",
-    "chromosome": "6",
-    "position": 18119112,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tigrayan Ancestry Marker - Informative for Semitic-speaking populations of the Ethiopian Highlands and Eritrea."
   },
   "rs10456215_afr_2": {
     "rsid": "rs10456215_afr_2",
@@ -11524,11 +10016,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Beja Ancestry Marker - Informative for Cushitic-speaking nomadic populations of the Red Sea Hills (Sudan/Egypt/Eritrea).",
-    "chromosome": "6",
-    "position": 18452654,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Beja Ancestry Marker - Informative for Cushitic-speaking nomadic populations of the Red Sea Hills (Sudan/Egypt/Eritrea)."
   },
   "rs10456216_afr_2": {
     "rsid": "rs10456216_afr_2",
@@ -11553,11 +10041,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Tutsi/Hima Ancestry Marker - Informative for pastoralist-descended populations of the African Great Lakes region.",
-    "chromosome": "6",
-    "position": 18684443,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Tutsi/Hima Ancestry Marker - Informative for pastoralist-descended populations of the African Great Lakes region."
   },
   "rs10456198_afr_2": {
     "rsid": "rs10456198_afr_2",
@@ -11582,11 +10066,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Esan Ancestry Marker - Informative for Edoid-speaking populations of Southern Nigeria.",
-    "chromosome": "6",
-    "position": 14904669,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Esan Ancestry Marker - Informative for Edoid-speaking populations of Southern Nigeria."
   },
   "rs11887534_afr": {
     "rsid": "rs11887534_afr",
@@ -11605,11 +10085,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 3,
-    "description": "BCL11A Marker - Associated with fetal hemoglobin levels; common in African populations.",
-    "chromosome": "2",
-    "position": 44066247,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "BCL11A Marker - Associated with fetal hemoglobin levels; common in African populations."
   },
   "rs60910145_afr": {
     "rsid": "rs60910145_afr",
@@ -11628,11 +10104,7 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 4,
-    "description": "APOL1 Kidney Disease Risk (G2) - Common in West African populations.",
-    "chromosome": "22",
-    "position": 36662034,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "APOL1 Kidney Disease Risk (G2) - Common in West African populations."
   },
   "rs10486573_afr": {
     "rsid": "rs10486573_afr",
@@ -11655,11 +10127,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bantu Ancestry Marker - Informative for Bantu-speaking populations across Sub-Saharan Africa.",
-    "chromosome": "7",
-    "position": 28080493,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bantu Ancestry Marker - Informative for Bantu-speaking populations across Sub-Saharan Africa."
   },
   "rs4242382_afr": {
     "rsid": "rs4242382_afr",
@@ -11683,11 +10151,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Cameroonian Ancestry Marker - Informative for populations of the Cameroon Grassfields and surrounding regions.",
-    "chromosome": "8",
-    "position": 128517573,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Cameroonian Ancestry Marker - Informative for populations of the Cameroon Grassfields and surrounding regions."
   },
   "rs12752445_afr": {
     "rsid": "rs12752445_afr",
@@ -11711,13 +10175,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Congolese Ancestry Marker - Informative for populations of the Congo Basin and Angola.",
-    "chromosome": "18",
-    "position": 148091371,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Congolese Ancestry Marker - Informative for populations of the Congo Basin and Angola."
   },
   "rs7252505_afr": {
     "rsid": "rs7252505_afr",
@@ -11741,11 +10199,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Igbo Ancestry Marker - Highly informative for Igbo and related populations of Southeastern Nigeria.",
-    "chromosome": "19",
-    "position": 33575064,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Igbo Ancestry Marker - Highly informative for Igbo and related populations of Southeastern Nigeria."
   },
   "rs1572319_afr": {
     "rsid": "rs1572319_afr",
@@ -11769,11 +10223,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Khoe-San Ancestry Marker - Highly diagnostic for Southern African hunter-gatherer populations.",
-    "chromosome": "13",
-    "position": 102076838,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Khoe-San Ancestry Marker - Highly diagnostic for Southern African hunter-gatherer populations."
   },
   "rs7460469_afr": {
     "rsid": "rs7460469_afr",
@@ -11797,11 +10247,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Malagasy Ancestry Marker - Reflects the unique Austronesian and Bantu admixture of Madagascar.",
-    "chromosome": "8",
-    "position": 11027441,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Malagasy Ancestry Marker - Reflects the unique Austronesian and Bantu admixture of Madagascar."
   },
   "rs10456197_afr_2": {
     "rsid": "rs10456197_afr_2",
@@ -11825,11 +10271,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Mandinka Ancestry Marker - Informative for Mandé-speaking populations of West Africa.",
-    "chromosome": "6",
-    "position": 14888270,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Mandinka Ancestry Marker - Informative for Mandé-speaking populations of West Africa."
   },
   "rs10424072_afr": {
     "rsid": "rs10424072_afr",
@@ -11853,13 +10295,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Nigerian Ancestry Marker - General informative marker for populations of Nigeria.",
-    "chromosome": "19",
-    "position": 11796977,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nigerian Ancestry Marker - General informative marker for populations of Nigeria."
   },
   "rs12149626_afr_2": {
     "rsid": "rs12149626_afr_2",
@@ -11883,11 +10319,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Pygmy Ancestry Marker - Highly diagnostic for Central African hunter-gatherer (Pygmy) populations.",
-    "chromosome": "16",
-    "position": 75555780,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Pygmy Ancestry Marker - Highly diagnostic for Central African hunter-gatherer (Pygmy) populations."
   },
   "rs17388247_afr": {
     "rsid": "rs17388247_afr",
@@ -11911,13 +10343,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "West African Ancestry Marker - Informative for populations of Upper Guinea (Sierra Leone/Liberia).",
-    "chromosome": "4",
-    "position": 156442479,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "West African Ancestry Marker - Informative for populations of Upper Guinea (Sierra Leone/Liberia)."
   },
   "rs694339_afr": {
     "rsid": "rs694339_afr",
@@ -11941,11 +10367,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Yoruba Ancestry Marker - Informative for Yoruba and related populations of Southwestern Nigeria.",
-    "chromosome": "18",
-    "position": 70221980,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Yoruba Ancestry Marker - Informative for Yoruba and related populations of Southwestern Nigeria."
   },
   "rs1042604_afr": {
     "rsid": "rs1042604_afr",
@@ -11969,11 +10391,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Zulu Ancestry Marker - Informative for Nguni-speaking populations of Southern Africa.",
-    "chromosome": "X",
-    "position": 24232095,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Zulu Ancestry Marker - Informative for Nguni-speaking populations of Southern Africa."
   },
   "rs10486574_afr": {
     "rsid": "rs10486574_afr",
@@ -11996,11 +10414,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bantu Ancestry Marker - Informative for Bantu populations.",
-    "chromosome": "7",
-    "position": 28080754,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
   },
   "rs4242383_afr": {
     "rsid": "rs4242383_afr",
@@ -12024,11 +10438,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations.",
-    "chromosome": "8",
-    "position": 128517760,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
   },
   "rs12752446_afr": {
     "rsid": "rs12752446_afr",
@@ -12052,13 +10462,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Congolese Ancestry Marker - Informative for Congolese populations.",
-    "chromosome": "1",
-    "position": 79056755,
-    "ref": "A",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
   },
   "rs10424073_afr": {
     "rsid": "rs10424073_afr",
@@ -12082,11 +10486,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations.",
-    "chromosome": "19",
-    "position": 38947366,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
   },
   "rs12149628_afr_2": {
     "rsid": "rs12149628_afr_2",
@@ -12110,11 +10510,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Pygmy Ancestry Marker - Informative for Central African hunter-gatherer populations.",
-    "chromosome": "16",
-    "position": 60913519,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Pygmy Ancestry Marker - Informative for Central African hunter-gatherer populations."
   },
   "rs7252508_afr_2": {
     "rsid": "rs7252508_afr_2",
@@ -12138,11 +10534,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "San Ancestry Marker - Informative for San populations (Southern Africa).",
-    "chromosome": "19",
-    "position": 52334783,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "San Ancestry Marker - Informative for San populations (Southern Africa)."
   },
   "rs13136401_afr": {
     "rsid": "rs13136401_afr",
@@ -12166,11 +10558,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "San Ancestry Marker - Informative for San populations.",
-    "chromosome": "4",
-    "position": 186594384,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "San Ancestry Marker - Informative for San populations."
   },
   "rs10900598_afr": {
     "rsid": "rs10900598_afr",
@@ -12194,11 +10582,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "West African Ancestry Marker - Informative for West African populations.",
-    "chromosome": "1",
-    "position": 204525568,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "West African Ancestry Marker - Informative for West African populations."
   },
   "rs1129039_afr": {
     "rsid": "rs1129039_afr",
@@ -12222,13 +10606,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Zulu Ancestry Marker - Informative for Zulu populations (South Africa).",
-    "chromosome": "13",
-    "position": 113491133,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Zulu Ancestry Marker - Informative for Zulu populations (South Africa)."
   },
   "rs10486575_afr": {
     "rsid": "rs10486575_afr",
@@ -12251,11 +10629,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Bantu Ancestry Marker - Informative for Bantu populations.",
-    "chromosome": "7",
-    "position": 28107380,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Bantu Ancestry Marker - Informative for Bantu populations."
   },
   "rs4242384_afr": {
     "rsid": "rs4242384_afr",
@@ -12279,11 +10653,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations.",
-    "chromosome": "8",
-    "position": 128518554,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Cameroonian Ancestry Marker - Informative for Cameroonian populations."
   },
   "rs12752447_afr": {
     "rsid": "rs12752447_afr",
@@ -12307,11 +10677,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Congolese Ancestry Marker - Informative for Congolese populations.",
-    "chromosome": "1",
-    "position": 47634560,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Congolese Ancestry Marker - Informative for Congolese populations."
   },
   "rs10424074_afr": {
     "rsid": "rs10424074_afr",
@@ -12335,11 +10701,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations.",
-    "chromosome": "19",
-    "position": 43362301,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Nigerian Ancestry Marker - Informative for Nigerian populations."
   },
   "rs13136402_afr": {
     "rsid": "rs13136402_afr",
@@ -12363,11 +10725,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "San Ancestry Marker - Informative for San populations.",
-    "chromosome": "4",
-    "position": 1627490,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "San Ancestry Marker - Informative for San populations."
   },
   "rs13136403_afr": {
     "rsid": "rs13136403_afr",
@@ -12391,13 +10749,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "San Ancestry Marker - Informative for San populations.",
-    "chromosome": "4",
-    "position": 107675074,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "San Ancestry Marker - Informative for San populations."
   },
   "rs16847050_afr": {
     "rsid": "rs16847050_afr",
@@ -12420,11 +10772,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "East African Bantu Marker - highly diagnostic for Bantu-speaking populations of the Great Lakes.",
-    "chromosome": "4",
-    "position": 72667331,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "East African Bantu Marker - highly diagnostic for Bantu-speaking populations of the Great Lakes."
   },
   "rs10456426_afr": {
     "rsid": "rs10456426_afr",
@@ -12447,11 +10795,7 @@
     },
     "deepFrequencies": {},
     "weight": 4.5,
-    "description": "Upper Guinea Coast Marker - diagnostic for populations of Sierra Leone and Liberia.",
-    "chromosome": "6",
-    "position": 34164468,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Upper Guinea Coast Marker - diagnostic for populations of Sierra Leone and Liberia."
   },
   "rs12149627_afr": {
     "rsid": "rs12149627_afr",
@@ -12474,11 +10818,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Lowland East Cushitic Marker - highly informative for populations of the Horn of Africa.",
-    "chromosome": "16",
-    "position": 70977546,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Lowland East Cushitic Marker - highly informative for populations of the Horn of Africa."
   },
   "rs10456440_afr": {
     "rsid": "rs10456440_afr",
@@ -12501,11 +10841,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "Upper Nile Nilotic Marker - highly diagnostic for the Nilotic heartland.",
-    "chromosome": "6",
-    "position": 36543367,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Upper Nile Nilotic Marker - highly diagnostic for the Nilotic heartland."
   },
   "rs13136405_afr": {
     "rsid": "rs13136405_afr",
@@ -12528,13 +10864,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Central African Pygmy Marker - diagnostic for the hunter-gatherer populations of the Congo Basin.",
-    "chromosome": "4",
-    "position": 162090511,
-    "ref": "G",
-    "alt": "A",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Central African Pygmy Marker - diagnostic for the hunter-gatherer populations of the Congo Basin."
   },
   "rs7252509_afr": {
     "rsid": "rs7252509_afr",
@@ -12558,11 +10888,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "North African Amazigh Marker - diagnostic for the indigenous Berber populations.",
-    "chromosome": "19",
-    "position": 28841617,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "North African Amazigh Marker - diagnostic for the indigenous Berber populations."
   },
   "rs11887534_afr_2": {
     "rsid": "rs11887534_afr_2",
@@ -12586,11 +10912,7 @@
     },
     "deepFrequencies": {},
     "weight": 4,
-    "description": "APOL1 G1 variant - highly informative for West African populations and their descendants.",
-    "chromosome": "2",
-    "position": 44066247,
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "APOL1 G1 variant - highly informative for West African populations and their descendants."
   },
   "rs2814778_afr_3": {
     "rsid": "rs2814778_afr_3",
@@ -12613,13 +10935,7 @@
     },
     "deepFrequencies": {},
     "weight": 5,
-    "description": "Duffy Null Variant - the most diagnostic marker for Sub-Saharan African ancestry globally.",
-    "chromosome": "1",
-    "position": 159204893,
-    "ref": "T",
-    "alt": "C",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": "Duffy Null Variant - the most diagnostic marker for Sub-Saharan African ancestry globally."
   },
   "rs41525747_afr": {
     "rsid": "rs41525747_afr",
@@ -12648,11 +10964,7 @@
     "weight": 8,
     "gene": "MCM6/LCT",
     "trait": "Lactase Persistence",
-    "description": "Lactase Persistence G-14010 Variant - associated with pastoralist heritage in East Africa (Maasai, Cushitic populations).",
-    "chromosome": "2",
-    "position": 135851073,
-    "ref": "G",
-    "alt": "C"
+    "description": "Lactase Persistence G-14010 Variant - associated with pastoralist heritage in East Africa (Maasai, Cushitic populations)."
   },
   "rs12149629_afr": {
     "rsid": "rs12149629_afr",
@@ -12681,9 +10993,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Horn of Africa Ancestry Marker - diagnostic for Cushitic and Semitic-speaking populations of East Africa.",
-    "chromosome": "16",
-    "position": 70977593
+    "description": "Horn of Africa Ancestry Marker - diagnostic for Cushitic and Semitic-speaking populations of East Africa."
   },
   "rs12149630_afr": {
     "rsid": "rs12149630_afr",
@@ -12713,19 +11023,13 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Nilotic Core Marker - highly diagnostic for Nilo-Saharan speaking populations of the Upper Nile and East Africa.",
-    "chromosome": "16",
-    "position": 8741698,
-    "ref": "G",
-    "alt": "A"
+    "description": "Nilotic Core Marker - highly diagnostic for Nilo-Saharan speaking populations of the Upper Nile and East Africa."
   },
   "gwf_fula": {
     "rsid": "gwf_fula",
     "region": "African",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.527174,
       "rs2840528": 0.815217,
@@ -15307,21 +13611,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "8",
-    "position": 168792603,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   },
   "gwj_jola": {
     "rsid": "gwj_jola",
     "region": "African",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.586735,
       "rs2840528": 0.77551,
@@ -17903,21 +16199,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "10",
-    "position": 170901245,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   },
   "gww_wolof": {
     "rsid": "gww_wolof",
     "region": "African",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.576531,
       "rs2840528": 0.826531,
@@ -20499,21 +18787,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "20",
-    "position": 80614827,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   },
   "alfa_afam": {
     "rsid": "alfa_afam",
     "region": "African",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.5632,
       "rs2840528": 0.8417,
@@ -23095,21 +21375,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "3",
-    "position": 233106184,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   },
   "alfa_african": {
     "rsid": "alfa_african",
     "region": "African",
     "color": "#95A5A6",
-    "alleles": [
-      "G"
-    ],
+    "alleles": [],
     "frequencies": {
       "rs2887286": 0.4635,
       "rs2840528": 0.7366,
@@ -25691,12 +23963,6 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "",
-    "chromosome": "14",
-    "position": 89434583,
-    "ref": "A",
-    "alt": "G",
-    "gene": "N/A",
-    "trait": "Ancestry"
+    "description": ""
   }
 }

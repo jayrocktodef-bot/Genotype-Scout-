@@ -14,7 +14,7 @@ export interface PopulationProximity {
 // THE BINARY KERNEL (Cached in RAM)
 // --------------------------------------------------------
 let isCompiled = false;
-let isCompiling = false;
+let compilationPromise: Promise<void> | null = null;
 let globalRsIDs: string[] = [];
 let popNames: string[] = [];
 let popRegions: string[] = [];
@@ -23,97 +23,98 @@ let rsidToIndexMap: Map<string, number> = new Map();
 
 const CACHE_KEY = 'genotype_scout_matrix_cache_v4_46pop';
 
-export async function compileReferenceKernel() {
-  if (isCompiled || isCompiling) return;
-  isCompiling = true;
+export function compileReferenceKernel(): Promise<void> {
+  if (isCompiled) return Promise.resolve();
+  if (compilationPromise) return compilationPromise;
 
-  let cachedData = null;
+  compilationPromise = (async () => {
+    let cachedData = null;
 
-  // 1. SAFELY CHECK CACHE (Ignores iframe security blocks, wrapped in timeout to prevent indefinite stalls)
-  try {
-    console.log("🔍 Checking IndexedDB for cached binary kernel...");
-    const getWithTimeout = (key: string, timeoutMs = 500) => {
-      return Promise.race([
-        get(key),
-        new Promise<any>((_, reject) => setTimeout(() => reject(new Error("IndexedDB get timeout")), timeoutMs))
-      ]);
-    };
-    cachedData = await getWithTimeout(CACHE_KEY);
-  } catch (e) {
-    console.warn("⚠️ IndexedDB access blocked or timed out. Skipping cache read.", e);
-  }
-
-  if (cachedData) {
-    globalRsIDs = cachedData.globalRsIDs;
-    popNames = cachedData.popNames;
-    popRegions = cachedData.popRegions;
-    popFrequencies = cachedData.popFrequencies;
-    rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
-    isCompiled = true;
-    isCompiling = false;
-    console.log(`⚡ BOOTSTRAP FAST: Loaded ${popNames.length} populations from IndexedDB.`);
-    return;
-  }
-
-  try {
-    console.log("⚙️ Compiling JSON kernel into Float32 binary arrays...");
-
-    // 1. Extract all unique markers across all populations
-    const rsIDSet = new Set<string>();
-    for (const popData of Object.values(hoReferenceKernel as any)) {
-      const frequencies = (popData as any).frequencies;
-      if (frequencies) {
-        for (const rsid of Object.keys(frequencies)) {
-          rsIDSet.add(rsid);
-        }
-      }
-    }
-    globalRsIDs = Array.from(rsIDSet);
-    rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
-    const numMarkers = globalRsIDs.length;
-
-    // 2. Build the contiguous binary arrays
-    for (const [popCode, popDataRaw] of Object.entries(hoReferenceKernel as any)) {
-      const popData = popDataRaw as any;
-      popNames.push(popCode.replace(/_/g, ' '));
-      popRegions.push(popData.region);
-
-      // Create a fixed-size memory block for this population's frequencies
-      const freqArray = new Float32Array(numMarkers);
-
-      // Map frequencies exactly to the globalRsIDs index. Use -1 if missing.
-      for (let i = 0; i < numMarkers; i++) {
-        const rsid = globalRsIDs[i];
-        freqArray[i] = (popData as any).frequencies?.[rsid] ?? -1.0; 
-      }
-      popFrequencies.push(freqArray);
-    }
-
-    // 3. SAFELY SAVE CACHE (Ignores iframe security blocks, wrapped in timeout to prevent indefinite stalls)
+    // 1. SAFELY CHECK CACHE (Ignores iframe security blocks, wrapped in timeout to prevent indefinite stalls)
     try {
-      const setWithTimeout = (key: string, val: any, timeoutMs = 500) => {
+      console.log("🔍 Checking IndexedDB for cached binary kernel...");
+      const getWithTimeout = (key: string, timeoutMs = 500) => {
         return Promise.race([
-          set(key, val),
-          new Promise<void>((_, reject) => setTimeout(() => reject(new Error("IndexedDB set timeout")), timeoutMs))
+          get(key),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error("IndexedDB get timeout")), timeoutMs))
         ]);
       };
-      await setWithTimeout(CACHE_KEY, {
-        globalRsIDs,
-        popNames,
-        popRegions,
-        popFrequencies
-      });
-      console.log(`✅ Cache Saved. Mapped ${popNames.length} populations.`);
+      cachedData = await getWithTimeout(CACHE_KEY);
     } catch (e) {
-      console.warn("⚠️ IndexedDB save blocked or timed out. Running purely in RAM for this session.", e);
+      console.warn("⚠️ IndexedDB access blocked or timed out. Skipping cache read.", e);
     }
 
-    isCompiled = true;
-  } catch (error) {
-    console.error("Failed to compile kernel:", error);
-  } finally {
-    isCompiling = false;
-  }
+    if (cachedData) {
+      globalRsIDs = cachedData.globalRsIDs;
+      popNames = cachedData.popNames;
+      popRegions = cachedData.popRegions;
+      popFrequencies = cachedData.popFrequencies;
+      rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
+      isCompiled = true;
+      console.log(`⚡ BOOTSTRAP FAST: Loaded ${popNames.length} populations from IndexedDB.`);
+      return;
+    }
+
+    try {
+      console.log("⚙️ Compiling JSON kernel into Float32 binary arrays...");
+
+      // 1. Extract all unique markers across all populations
+      const rsIDSet = new Set<string>();
+      for (const popData of Object.values(hoReferenceKernel as any)) {
+        const frequencies = (popData as any).frequencies;
+        if (frequencies) {
+          for (const rsid of Object.keys(frequencies)) {
+            rsIDSet.add(rsid);
+          }
+        }
+      }
+      globalRsIDs = Array.from(rsIDSet);
+      rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
+      const numMarkers = globalRsIDs.length;
+
+      // 2. Build the contiguous binary arrays
+      for (const [popCode, popDataRaw] of Object.entries(hoReferenceKernel as any)) {
+        const popData = popDataRaw as any;
+        popNames.push(popCode.replace(/_/g, ' '));
+        popRegions.push(popData.region);
+
+        // Create a fixed-size memory block for this population's frequencies
+        const freqArray = new Float32Array(numMarkers);
+
+        // Map frequencies exactly to the globalRsIDs index. Use -1 if missing.
+        for (let i = 0; i < numMarkers; i++) {
+          const rsid = globalRsIDs[i];
+          freqArray[i] = (popData as any).frequencies?.[rsid] ?? -1.0; 
+        }
+        popFrequencies.push(freqArray);
+      }
+
+      // 3. SAFELY SAVE CACHE (Ignores iframe security blocks, wrapped in timeout to prevent indefinite stalls)
+      try {
+        const setWithTimeout = (key: string, val: any, timeoutMs = 500) => {
+          return Promise.race([
+            set(key, val),
+            new Promise<void>((_, reject) => setTimeout(() => reject(new Error("IndexedDB set timeout")), timeoutMs))
+          ]);
+        };
+        await setWithTimeout(CACHE_KEY, {
+          globalRsIDs,
+          popNames,
+          popRegions,
+          popFrequencies
+        });
+        console.log(`✅ Cache Saved. Mapped ${popNames.length} populations.`);
+      } catch (e) {
+        console.warn("⚠️ IndexedDB save blocked or timed out. Running purely in RAM for this session.", e);
+      }
+
+      isCompiled = true;
+    } catch (error) {
+      console.error("Failed to compile kernel:", error);
+    }
+  })();
+
+  return compilationPromise;
 }
 
 // --------------------------------------------------------

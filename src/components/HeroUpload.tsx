@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import { motion } from 'motion/react';
-import { Upload, Shield, Zap, Lock, Database, Dna, ArrowRight, Info } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Upload, Shield, Zap, Lock, Database, Dna, ArrowRight, Info, FileText, CheckCircle, HelpCircle } from 'lucide-react';
 
 interface HeroUploadProps {
   onFiles: (files: FileList) => void;
@@ -10,236 +10,314 @@ interface HeroUploadProps {
 
 const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isDragActive, setIsDragActive] = useState(false);
+  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setIsDragActive(true);
+    } else if (e.type === "dragleave") {
+      setIsDragActive(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragActive(false);
+    
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      const file = e.dataTransfer.files[0];
+      setSelectedFileName(file.name);
+      onFiles(e.dataTransfer.files);
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFileName(e.target.files[0].name);
+      onFiles(e.target.files);
+    }
+  };
 
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center py-20 px-6 text-center animate-fade-up">
+    <div className="min-h-[85vh] flex flex-col items-center justify-center py-12 px-6 text-center animate-fade-up relative overflow-hidden">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-teal-500/10 to-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl w-full"
+        className="max-w-4xl w-full relative z-10"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 dark:bg-teal-950/50 text-teal-650 dark:text-teal-400 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 ring-1 ring-teal-100 dark:ring-teal-800 animate-pulse-soft">
-          <Database className="w-3 h-3" /> 10,000+ Genomic Markers Reference
+        {/* Curated Reference Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 text-teal-650 dark:text-teal-300 rounded-full text-[11px] font-black uppercase tracking-[0.2em] mb-8 ring-1 ring-teal-500/20 shadow-sm animate-pulse-soft">
+          <Database className="w-3.5 h-3.5" /> 17,000+ Phased Genomic Markers Active
         </div>
         
-        <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-slate-800 dark:text-slate-100 mb-8 leading-[1.1]">
-          The most private way to <br /> explore your <span className="text-teal-600 dark:text-teal-400">DNA heritage.</span>
+        <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-slate-800 dark:text-slate-100 mb-6 leading-[1.1] text-gradient">
+          Decrypt Your DNA <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-400">100% Privately.</span>
         </h1>
         
-        <p className="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed">
-          Upload your raw data from 23andMe, AncestryDNA, or MyHeritage. 
-          All analysis happens <span className="text-slate-800 dark:text-slate-200 font-bold underline decoration-teal-300 dark:decoration-teal-600 underline-offset-4">locally in your browser</span>. 
-          Your privacy is our core architecture.
+        <p className="text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Upload raw autosomal data from 23andMe, AncestryDNA, or MyHeritage. 
+          Genotype Scout decodes your genetic composition <span className="text-slate-800 dark:text-slate-200 font-bold underline decoration-teal-400 decoration-2 underline-offset-4">entirely inside your browser</span>.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 max-w-md mx-auto">
-          <button 
-            disabled={processing}
-            onClick={() => fileInputRef.current?.click()}
-            className="w-full sm:w-auto px-10 py-5 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-[2rem] font-black text-lg shadow-2xl shadow-slate-300 dark:shadow-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 transition-all flex items-center justify-center gap-4 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <Upload className="w-6 h-6" />
-            {processing ? 'Analyzing...' : 'Upload Raw DNA'}
-          </button>
-          
-          <button 
-            onClick={onReset}
-            className="w-full sm:w-auto px-10 py-5 bg-rose-50 text-rose-600 rounded-[2rem] font-black text-lg shadow-lg shadow-rose-100 hover:bg-rose-100 transition-all flex items-center justify-center gap-4 hover:scale-105 active:scale-95 border border-rose-100"
-          >
-            Clear Cache
-          </button>
-          
+        {/* Drag & Drop Zone */}
+        <motion.div
+          onDragEnter={handleDrag}
+          onDragOver={handleDrag}
+          onDragLeave={handleDrag}
+          onDrop={handleDrop}
+          onClick={() => fileInputRef.current?.click()}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
+          className={`relative max-w-2xl mx-auto mb-8 p-10 rounded-[2.5rem] border-2 border-dashed cursor-pointer transition-all duration-300 overflow-hidden ${
+            isDragActive 
+              ? 'border-teal-500 bg-teal-500/5 dark:bg-teal-950/20 shadow-[0_0_30px_rgba(20,184,166,0.15)] scale-[1.02]' 
+              : 'border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 backdrop-blur-md hover:border-teal-400 hover:shadow-lg dark:hover:bg-slate-900/80 shadow-sm'
+          }`}
+        >
+          {/* Animated corner decorations */}
+          <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-slate-300 dark:border-slate-700 rounded-tl-sm pointer-events-none" />
+          <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-slate-300 dark:border-slate-700 rounded-tr-sm pointer-events-none" />
+          <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-slate-300 dark:border-slate-700 rounded-bl-sm pointer-events-none" />
+          <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-slate-300 dark:border-slate-700 rounded-br-sm pointer-events-none" />
+
+          <div className="flex flex-col items-center justify-center py-6">
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+              isDragActive ? 'bg-teal-500 text-white rotate-12 scale-110 shadow-lg shadow-teal-500/30' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
+            }`}>
+              <Upload className="w-8 h-8" />
+            </div>
+            
+            <h3 className="text-xl font-extrabold text-slate-800 dark:text-slate-200 mb-2">
+              Drag and drop your DNA file here
+            </h3>
+            
+            <p className="text-sm text-slate-400 dark:text-slate-500 mb-6 max-w-sm">
+              Supports <strong className="text-slate-600 dark:text-slate-300 font-semibold">.txt, .csv, or .zip</strong> raw datasets
+            </p>
+            
+            <span className="px-6 py-3 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 font-black rounded-full text-xs uppercase tracking-widest transition-all shadow-md">
+              Select File Manually
+            </span>
+          </div>
+
           <input 
             type="file" 
             ref={fileInputRef} 
-            onChange={(e) => {
-              if (e.target.files && e.target.files.length > 0) {
-                onFiles(e.target.files);
-              } else {
-                // Optionally handle cancel here, e.g. onReset()
-              }
-            }}
+            onChange={handleFileChange}
             className="hidden" 
             accept=".txt,.csv,.zip"
           />
+        </motion.div>
+
+        {/* Action Buttons & Cache Controller */}
+        <div className="flex items-center justify-center gap-4 mb-16">
+          <button 
+            onClick={onReset}
+            className="px-6 py-3 bg-rose-50 hover:bg-rose-100/80 dark:bg-rose-950/20 dark:hover:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-full font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-2 border border-rose-100 dark:border-rose-900/30 shadow-sm"
+          >
+            Clear Local Cache
+          </button>
         </div>
 
+        {/* Supported Providers Bar */}
+        <div className="mb-20">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 mb-4">
+            Optimized for industry standard exports
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 dark:opacity-45">
+            <span className="font-mono text-sm font-bold tracking-tight text-slate-700 dark:text-slate-300">23andMe</span>
+            <span className="font-sans text-sm font-black tracking-tight text-slate-700 dark:text-slate-300">AncestryDNA</span>
+            <span className="font-sans text-sm font-bold tracking-tight text-slate-700 dark:text-slate-300">MyHeritage</span>
+            <span className="font-mono text-sm font-bold tracking-tight text-slate-700 dark:text-slate-300">FamilyTreeDNA</span>
+          </div>
+        </div>
 
-        {/* Beta + scope disclaimer */}
-        <div className="max-w-2xl mx-auto mb-20 rounded-2xl border border-amber-200 dark:border-amber-800 bg-amber-50/70 dark:bg-amber-950/30 px-5 py-4 text-left">
-          <div className="flex items-start gap-3">
-            <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+        {/* Informational Scope Alert */}
+        <div className="max-w-3xl mx-auto mb-20 rounded-[2rem] border border-amber-200/60 dark:border-amber-900/30 bg-amber-50/40 dark:bg-amber-950/20 backdrop-blur-sm p-6 text-left shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
+              <Info className="w-5 h-5" />
+            </div>
             <div>
-              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-700 mb-1">
-                Beta — Research &amp; Educational Tool
-              </p>
-              <p className="text-sm text-amber-900/90 leading-relaxed">
-                Genotype Scout is in active <span className="font-bold">beta</span> and is <span className="font-bold">not an ethnicity calculator</span>.
-                It is a research and educational tool for exploring your raw genotype data, and its results are
-                <span className="font-bold"> not directly comparable</span> to the ethnicity estimates from commercial tests
-                like 23andMe or AncestryDNA. Findings are exploratory and are not medical or diagnostic advice.
+              <h4 className="text-xs font-black uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1.5 flex items-center gap-1.5">
+                Research &amp; Educational Tool Disclosure
+              </h4>
+              <p className="text-sm text-slate-650 dark:text-slate-305 leading-relaxed">
+                Genotype Scout is a browser-based analysis sandbox. It is <strong className="text-slate-800 dark:text-slate-200 font-extrabold">not a commercial consumer ethnicity calculator</strong>, and its mathematical models are not directly comparable to commercial estimates. Findings represent statistical likelihood alignments for educational study. No data ever leaves your device.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Informational Bento Grid */}
+        {/* Feature Highlights Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left w-full mt-12">
           
-          {/* Bento Card 1: personally curated AIMs */}
-          <div className="p-8 premium-card hover:border-amber-100 transition-colors md:col-span-2 relative overflow-hidden bg-gradient-to-br from-white to-amber-50/10">
+          {/* Amerind Card */}
+          <div className="p-8 premium-card md:col-span-2 relative overflow-hidden bg-gradient-to-br from-white via-white to-teal-50/5 dark:from-slate-900 dark:to-slate-900/90 border border-slate-100 dark:border-slate-850 hover:border-teal-500/30 dark:hover:border-teal-400/20 transition-all duration-300 shadow-md">
             <div className="absolute top-6 right-6">
-              <span className="px-3 py-1 bg-amber-55 text-amber-700 text-[9px] font-black uppercase tracking-widest rounded-full border border-amber-100">
-                Exclusive Native Cohorts
+              <span className="px-3 py-1 bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[9px] font-black uppercase tracking-widest rounded-full border border-teal-500/20">
+                Granular Referencing
               </span>
             </div>
-            <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-6">
+            <div className="w-12 h-12 bg-teal-500/10 dark:bg-teal-950/60 rounded-2xl flex items-center justify-center text-teal-600 dark:text-teal-400 mb-6 shadow-sm">
               <Dna className="w-6 h-6" />
             </div>
-            <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-lg mb-2">Curated Amerind & Distinct Global AIMs</h3>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">
-              To represent the complex demographics of America more accurately, we have integrated a hand-curated panel of Ancestry Informative Markers (AIMs). These are optimized specifically to isolate high-precision Native American (North, Central, and South American indigenous cohorts) genomic profiles from modern European and African components.
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-xl mb-3">Curated Amerind &amp; Distinct Global AIMs</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+              Equipped with a specialized panel of Ancestry Informative Markers (AIMs) optimized to isolate high-precision Native American (North, Central, and South American indigenous cohorts) components. Designed to distinguish sub-regional cohorts from broad continental overlaps.
             </p>
-            <p className="text-xs text-slate-400 font-semibold flex items-center gap-1">
-              <span>Resolves regional subclades, Mesoamerican ancestry, and First Nations markers.</span>
+            <p className="text-xs text-teal-600 dark:text-teal-450 font-bold flex items-center gap-1.5">
+              <CheckCircle className="w-4 h-4" /> Resolves regional subclades, Mesoamerican ancestry, and First Nations markers.
             </p>
           </div>
 
-          {/* Bento Card 2 */}
-          <div className="p-8 premium-card hover:border-teal-100 transition-colors">
-            <div className="w-12 h-12 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 mb-6">
+          {/* Admixture Card */}
+          <div className="p-8 premium-card md:col-span-2 relative overflow-hidden bg-gradient-to-br from-white via-white to-indigo-50/5 dark:from-slate-900 dark:to-slate-900/90 border border-slate-100 dark:border-slate-850 hover:border-indigo-500/30 dark:hover:border-indigo-400/20 transition-all duration-300 shadow-md">
+            <div className="w-12 h-12 bg-indigo-500/10 dark:bg-indigo-950/60 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6 shadow-sm">
+              <Dna className="w-6 h-6 animate-pulse-soft" />
+            </div>
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-xl mb-3">Deconvolving African American Admixture</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              African American ancestry is highly complex due to historical structural admixture. Genotype Scout implements deconvolution algorithms to distinguish West African, East African, European, and indigenous components through phased genomic window analysis.
+            </p>
+          </div>
+
+          {/* Privacy Card */}
+          <div className="p-8 premium-card hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300">
+            <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-700 dark:text-slate-300 mb-6 shadow-sm">
               <Lock className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">Zero-Footprint Sandbox</h3>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              We never save, upload, or index your raw genetic data. Your DNA file is processed exclusively inside local client memory using active browser sandboxing and disappears upon closing the tab.
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-150 text-lg mb-2">Zero-Footprint Sandbox</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              Genotype Scout operates entirely locally in isolated RAM. Your files never cross the network. Once you close this browser tab, all session memory is permanently destroyed.
             </p>
           </div>
           
-          {/* Bento Card 3 */}
-          <div className="p-8 premium-card hover:border-indigo-100 transition-colors">
-            <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
+          {/* Math Model Card */}
+          <div className="p-8 premium-card hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300">
+            <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-700 dark:text-slate-300 mb-6 shadow-sm">
               <Zap className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">Bayesian Likelihood Models</h3>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              Our calculations match your genotypes with a broad 10,000 SNP reference dataset representing 26 distinct global sub-populations for high-fidelity regional clustering.
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-150 text-lg mb-2">Bayesian Likelihood Models</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              Using a robust 17,000+ marker reference database representing distinct global sub-populations to execute statistical regional deconvolution and likelihood scoring.
             </p>
           </div>
           
-          {/* Bento Card 4 */}
-          <div className="p-8 premium-card hover:border-rose-100 transition-colors md:col-span-2">
-            <div className="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 mb-6">
+          {/* Peer reviewed Card */}
+          <div className="p-8 premium-card md:col-span-2 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300">
+            <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-700 dark:text-slate-300 mb-6 shadow-sm">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">Verified Research DB References</h3>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              All ancestry predictions, star-allele pgx associations, and physiological traits are cross-referenced directly with peer-reviewed scientific literature data and standard index datasets.
+            <h3 className="font-extrabold text-slate-800 dark:text-slate-150 text-lg mb-2">Verified Peer-Reviewed Database References</h3>
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+              All star-allele pgx markers, wellness indicators, physiological traits, and admixture frequency ratios are derived directly from published public medical and anthropological studies.
             </p>
           </div>
         </div>
         
-        {/* Bento Card: African American DNA */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left w-full mt-8">
-          <div className="p-8 premium-card hover:border-blue-100 transition-colors md:col-span-2 bg-gradient-to-br from-white to-blue-50/10">
-            <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-              <Dna className="w-6 h-6" />
-            </div>
-            <h3 className="font-extrabold text-slate-800 dark:text-slate-100 text-lg mb-2">Deconvolving African American Admixture</h3>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              African American ancestry is often highly complex due to centuries of structural admixture. Our algorithms specifically untangle these threads by isolating West African, European, and indigenous sub-components through high-resolution, phased marker analysis, ensuring greater precision in identifying your specific, nuanced regional heritage.
-            </p>
-          </div>
-        </div>
-
-        {/* Privacy Commitment Section */}
-        <div className="mt-20 border-t border-slate-100 pt-16">
-          <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 mb-8 tracking-tight">Technical Data Privacy: How it works</h2>
-          <div className="bg-slate-900 rounded-3xl p-10 text-left text-white shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-12 opacity-10">
-              <Lock size={200} />
+        {/* Technical Data Privacy Accordion/Details */}
+        <div className="mt-24 border-t border-slate-200/50 dark:border-slate-800/50 pt-16">
+          <h2 className="text-3xl font-black text-slate-850 dark:text-slate-100 mb-8 tracking-tight">Security Architecture: Sandbox Privacy</h2>
+          <div className="bg-slate-900 rounded-[2.5rem] p-10 text-left text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-12 opacity-[0.03] text-white">
+              <Lock size={300} />
             </div>
             <div className="relative z-10 grid md:grid-cols-3 gap-8">
               {/* Pillar 1: Local Execution */}
-              <div>
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-teal-400">
-                  <Shield size={20} /> 100% Local Execution
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold flex items-center gap-3 text-teal-400">
+                  <Shield size={20} className="shrink-0" /> Local Compute
                 </h3>
-                <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  Genotype Scout uses your browser's <strong className="text-white">FileReader API</strong> to load your file into isolated RAM. Analysis happens within a sandboxed <strong className="text-white">Web Worker</strong>, completely separate from the main application thread.
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Uses the browser-native <strong className="text-white">FileReader API</strong> to load text files directly into RAM. All calculations run in an isolated <strong className="text-white">Web Worker</strong>, leaving the main interface thread unencumbered.
                 </p>
-                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                    <li>Zero server uploads.</li>
-                    <li>CPU/RAM bound, not Network bound.</li>
-                    <li>Isolated thread execution.</li>
+                <div className="bg-slate-850 p-4 rounded-2xl border border-slate-800">
+                  <ul className="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                    <li>No server API uploads</li>
+                    <li>Browser sandboxed RAM</li>
+                    <li>Multi-threaded compute</li>
                   </ul>
                 </div>
               </div>
               
               {/* Pillar 2: Local Persistence */}
-              <div>
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-amber-400">
-                  <Database size={20} /> Browser Isolation
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold flex items-center gap-3 text-emerald-400">
+                  <Database size={20} className="shrink-0" /> Client Database
                 </h3>
-                <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  If you choose to "Save," we use <strong className="text-white">IndexedDB</strong>—a browser-native storage engine. This is a secure database residing physically on your hard drive, NOT at our servers. It is scoped exclusively to this domain.
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Results can be optionally saved on-device using <strong className="text-white">IndexedDB</strong>. This is a local database residing directly on your hard drive, completely isolated by the browser's Same-Origin policy.
                 </p>
-                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                    <li>Database = local file on your disk.</li>
-                    <li>Stores result-only.</li>
-                    <li>Sandboxed origin access.</li>
+                <div className="bg-slate-850 p-4 rounded-2xl border border-slate-800">
+                  <ul className="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                    <li>Data resides on your disk</li>
+                    <li>Strict sandbox limits</li>
+                    <li>IndexedDB local isolation</li>
                   </ul>
                 </div>
               </div>
 
               {/* Pillar 3: Verification */}
-              <div>
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-3 text-rose-400">
-                  <Lock size={20} /> Absolute Verifiability
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold flex items-center gap-3 text-indigo-400">
+                  <Lock size={20} className="shrink-0" /> Open Verification
                 </h3>
-                <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                  Privacy isn't just a claim—it's verifiable. Open your browser's Developer Tools (F12) and watch the <strong className="text-white">Network tab</strong> during analysis. You will see <strong className="text-white">zero traffic</strong> related to your DNA data.
+                <p className="text-slate-300 text-xs leading-relaxed">
+                  Open your browser's Developer Tools (<kbd className="bg-slate-850 px-1.5 py-0.5 rounded font-mono border border-slate-700">F12</kbd>), navigate to the <strong className="text-white">Network tab</strong>, and upload your file. You will confirm <strong className="text-white">0 bytes</strong> of network traffic leave your browser.
                 </p>
-                <div className="bg-slate-800 p-4 rounded-xl border border-slate-700">
-                  <ul className="text-xs text-slate-300 space-y-2 list-disc list-inside">
-                    <li>Verify with your own eyes.</li>
-                    <li>Zero network calls for data.</li>
-                    <li>Total control over cache.</li>
+                <div className="bg-slate-850 p-4 rounded-2xl border border-slate-800">
+                  <ul className="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                    <li>Verifiable in real-time</li>
+                    <li>Inspect traffic logs</li>
+                    <li>Open-source architecture</li>
                   </ul>
                 </div>
               </div>
             </div>
             
             {/* Technical Pipeline Visualization */}
-            <div className="mt-10 p-6 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <div className="flex flex-col items-center gap-2">
-                <span className="font-bold text-white">Your File</span>
-                <div className="p-3 bg-slate-800 rounded-lg">DNA File</div>
+            <div className="mt-12 p-6 bg-slate-950/80 rounded-3xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-6">
+              <div className="flex flex-col items-center gap-2 text-center w-full sm:w-auto">
+                <span className="font-bold text-white uppercase tracking-wider text-[9px] text-slate-500">Input Data</span>
+                <div className="px-5 py-3.5 bg-slate-900 border border-slate-850 rounded-2xl w-full sm:w-44 flex items-center gap-2 justify-center">
+                  <FileText className="w-4 h-4 text-slate-500" /> RAW_DNA.txt
+                </div>
               </div>
-              <ArrowRight size={24} className="text-slate-600" />
-              <div className="flex flex-col items-center gap-2">
-                <span className="font-bold text-white">Browser Core</span>
-                <div className="p-3 bg-teal-900/30 border border-teal-800 rounded-lg text-teal-300">沙 Sandboxed Worker</div>
+              <ArrowRight size={20} className="text-slate-700 rotate-90 sm:rotate-0" />
+              <div className="flex flex-col items-center gap-2 text-center w-full sm:w-auto">
+                <span className="font-bold text-teal-400 uppercase tracking-wider text-[9px]">Local Analysis</span>
+                <div className="px-5 py-3.5 bg-teal-950/20 border border-teal-900/40 rounded-2xl w-full sm:w-48 text-teal-300 flex items-center gap-2 justify-center">
+                  <Dna className="w-4 h-4 text-teal-400 animate-pulse-soft" /> Web Worker Sandbox
+                </div>
               </div>
-              <ArrowRight size={24} className="text-slate-600" />
-              <div className="flex flex-col items-center gap-2">
-                <span className="font-bold text-white">Results</span>
-                <div className="p-3 bg-amber-900/30 border border-amber-800 rounded-lg text-amber-300">Local IndexedDB</div>
+              <ArrowRight size={20} className="text-slate-700 rotate-90 sm:rotate-0" />
+              <div className="flex flex-col items-center gap-2 text-center w-full sm:w-auto">
+                <span className="font-bold text-emerald-400 uppercase tracking-wider text-[9px]">Storage</span>
+                <div className="px-5 py-3.5 bg-emerald-950/20 border border-emerald-900/40 rounded-2xl w-full sm:w-44 text-emerald-300 flex items-center gap-2 justify-center">
+                  <Database className="w-4 h-4 text-emerald-400" /> Device IndexedDB
+                </div>
               </div>
             </div>
 
             {/* Privacy Policy Link */}
-            <div className="mt-6 text-center text-xs text-slate-500">
+            <div className="mt-8 text-center text-xs">
               <a 
                 href="https://writteninthegenome.blog/writteninthegenome-privacy-policy/your-dna-your-device-the-engineering-behind-genotype-scouts-zero-footprint-privacy/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-teal-400 hover:text-teal-300 underline font-semibold transition-colors"
+                className="text-teal-400 hover:text-teal-300 underline font-semibold transition-colors flex items-center justify-center gap-1.5"
               >
-                View our detailed privacy policy and zero-footprint engineering.
+                <span>Read more about our device-side engineering & privacy guarantees.</span>
+                <ArrowRight size={12} />
               </a>
             </div>
           </div>

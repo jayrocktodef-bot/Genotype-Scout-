@@ -44,17 +44,29 @@ async function runAutomation() {
       eyeColor: { 
         rs12913832: { gene: "HERC2", weight: 0.45, alleles: ["A", "G"] }, 
         rs1800407: { gene: "OCA2", weight: 0.15, alleles: ["C", "T"] },
-        rs12896399: { gene: "SLC24A4", weight: 0.10, alleles: ["G", "T"] }
+        rs12896399: { gene: "SLC24A4", weight: 0.10, alleles: ["G", "T"] },
+        rs12203592: { gene: "IRF4", weight: 0.05, alleles: ["C", "T"] },
+        rs1042602: { gene: "TYR", weight: 0.05, alleles: ["C", "T"] }
       },
       hairColor: { 
-        rs1805007: { gene: "MC1R", weight: 0.30, alleles: ["C", "T"] }, 
-        rs16891982: { gene: "SLC45A2", weight: 0.20, alleles: ["C", "G"] },
-        rs12913832: { gene: "HERC2", weight: 0.15, alleles: ["A", "G"] }
+        rs1805007: { gene: "MC1R", weight: 0.20, alleles: ["C", "T"] }, 
+        rs1805008: { gene: "MC1R", weight: 0.15, alleles: ["C", "T"] },
+        rs1805009: { gene: "MC1R", weight: 0.15, alleles: ["G", "A"] },
+        rs16891982: { gene: "SLC45A2", weight: 0.15, alleles: ["C", "G"] },
+        rs12913832: { gene: "HERC2", weight: 0.10, alleles: ["A", "G"] },
+        rs12203592: { gene: "IRF4", weight: 0.05, alleles: ["C", "T"] },
+        rs28777: { gene: "SLC45A2", weight: 0.05, alleles: ["C", "T"] },
+        rs12821256: { gene: "KITLG", weight: 0.05, alleles: ["A", "G"] }
       },
       skinTone: {
-        rs1426654: { gene: "SLC24A5", weight: 0.40, alleles: ["A", "G"] },
-        rs16891982: { gene: "SLC45A2", weight: 0.25, alleles: ["C", "G"] },
-        rs885479: { gene: "MC1R", weight: 0.10, alleles: ["A", "G"] }
+        rs1426654: { gene: "SLC24A5", weight: 0.30, alleles: ["A", "G"] },
+        rs16891982: { gene: "SLC45A2", weight: 0.20, alleles: ["C", "G"] },
+        rs885479: { gene: "MC1R", weight: 0.10, alleles: ["A", "G"] },
+        rs6059655: { gene: "ASIP", weight: 0.08, alleles: ["A", "G"] },
+        rs12203592: { gene: "IRF4", weight: 0.08, alleles: ["C", "T"] },
+        rs1800407: { gene: "OCA2", weight: 0.08, alleles: ["C", "T"] },
+        rs3114908: { gene: "BNC2", weight: 0.08, alleles: ["A", "T"] },
+        rs8051733: { gene: "DEF8", weight: 0.05, alleles: ["A", "G"] }
       }
       // Weights sourced from HIrisPlex-S published AUC metrics and forensic standards
     };
