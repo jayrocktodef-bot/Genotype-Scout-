@@ -2157,6 +2157,8 @@ export default function App() {
       step: "Ingesting DNA stream..."
     });
 
+    let intervalId: any = null;
+
     try {
       // Ingest DNA using zero-copy Transferable ArrayBuffers to bypass main-thread cloning latency
       const fileContents = await Promise.all(
@@ -2173,7 +2175,6 @@ export default function App() {
       
       let sab: SharedArrayBuffer | null = null;
       let progressArray: Int32Array | null = null;
-      let intervalId: any = null;
 
       if (typeof SharedArrayBuffer !== 'undefined' && typeof crossOriginIsolated !== 'undefined' && crossOriginIsolated) {
         try {

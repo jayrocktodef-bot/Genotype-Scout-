@@ -40,8 +40,35 @@ const REGION_COLORS: Record<string, string> = {
   MEA: "#1ABC9C", // Turquoise
   AMR: "#E74C3C", // Alizarin (NAT/Americas)
   ASIA: "#F1C40F",
-  GLOBAL: "#95A5A6" // Asbestos
+  GLOBAL: "#95A5A6", // Asbestos
+  "South Asian": "#9B59B6",
+  "East Asian": "#F1C40F",
+  "African": "#2ECC71",
+  "European": "#3498DB",
+  "Native American": "#E74C3C",
+  "Middle Eastern": "#1ABC9C",
+  "Oceanian": "#E67E22",
+  "Central Asian": "#F59E0B",
+  "North African": "#C084FC"
 };
+
+function normalizeRegion(rawRegion: string): string {
+  if (!rawRegion) return 'Global';
+  const r = rawRegion.trim().toUpperCase();
+  
+  if (r === 'AFR' || r === 'AFRICAN' || r === 'AFRICA') return 'African';
+  if (r === 'EUR' || r === 'EUROPEAN' || r === 'EUROPE') return 'European';
+  if (r === 'SAS' || r === 'SOUTH ASIAN' || r === 'SOUTH_ASIAN') return 'South Asian';
+  if (r === 'EAS' || r === 'EAST ASIAN' || r === 'EAST_ASIAN' || r === 'ASI' || r === 'ASIAN' || r === 'ASIA') return 'East Asian';
+  if (r === 'CAS' || r === 'CENTRAL ASIAN' || r === 'CENTRAL_ASIAN') return 'Central Asian';
+  if (r === 'AMR' || r === 'NAT' || r === 'AMERICAN' || r === 'AMERICAS' || r === 'NATIVE AMERICAN' || r === 'NATIVE_AMERICAN') return 'Native American';
+  if (r === 'OCE' || r === 'OCEANIAN' || r === 'OCEANIA') return 'Oceanian';
+  if (r === 'MEA' || r === 'MENA' || r === 'MIDDLE EAST' || r === 'MIDDLE EASTERN' || r === 'MIDDLE_EASTERN') return 'Middle Eastern';
+  if (r === 'NAFR' || r === 'NORTH AFRICAN' || r === 'NORTH_AFRICAN') return 'North African';
+  if (r === 'GLOBAL' || r === 'GLOBAL_AIMS') return 'Global';
+  
+  return rawRegion.charAt(0).toUpperCase() + rawRegion.slice(1);
+}
 
 function buildMasterAims() {
   const globalAimMap = new Map<string, StandardAim>();
@@ -79,7 +106,7 @@ function buildMasterAims() {
           return;
         }
 
-        const region = entry.region || 'GLOBAL';
+        const region = normalizeRegion(entry.region || 'GLOBAL');
 
         let chromosome = entry.chromosome || entry.chrom || entry.chr;
         let position = typeof entry.position === 'number' ? entry.position : (typeof entry.pos === 'number' ? entry.pos : undefined);
@@ -125,6 +152,8 @@ function buildMasterAims() {
           mergedAim = {
             ...existing,
             ...standardAim,
+            region: (standardAim.region && standardAim.region !== 'Global') ? standardAim.region : existing.region,
+            color: (standardAim.region && standardAim.region !== 'Global') ? standardAim.color : existing.color,
             chromosome: standardAim.chromosome || existing.chromosome,
             position: standardAim.position || existing.position,
             frequencies: { ...existing.frequencies, ...standardAim.frequencies },

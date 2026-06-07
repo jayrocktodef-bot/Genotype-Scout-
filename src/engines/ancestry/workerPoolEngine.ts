@@ -29,7 +29,7 @@ export class WorkerPoolEngine {
     smoothness: number = 20,
     windowSize: number = 40,
     stepSize: number = 20
-  ): Promise<Record<string, LAISegment[]>> {
+  ): Promise<Record<string, { strandA: LAISegment[]; strandB: LAISegment[] }>> {
     this.initPool();
 
     // Group snps by chromosome
