@@ -12,6 +12,8 @@
 
 ## ✨ What's New in V4.5
 
+- **Ultra-Fast DNA Parsing** — Replaced global regex evaluation with a line-by-line index-based search, reducing parse times for massive DNA files to milliseconds.
+- **AIMs Database Normalization** — Fixed case-sensitive regional overrides and integrated missing Central Asian ancestry markers for higher accuracy.
 - **Dark / Light Mode Toggle** — Switch freely between themes via the navbar Sun/Moon button. Light mode is the default.
 - **PWA Support** — Install Genotype Scout to your home screen (Android, iOS, desktop). Works offline after the first load.
 - **NNLS Admixture Solver** — Replaced least-squares with a Lawson-Hanson Non-Negative Least Squares engine for more accurate population mixing proportions.
