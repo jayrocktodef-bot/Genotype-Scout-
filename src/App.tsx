@@ -83,6 +83,7 @@ import { MethodologyPage } from "./components/MethodologyPage";
 import Dashboard from "./components/Dashboard";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
+import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 
@@ -2546,11 +2547,16 @@ export default function App() {
         )}
 
         {!results && !processing && (
-          <HeroUpload 
-            onFiles={(files) => processFiles(files)} 
-            processing={processing} 
-            onReset={resetApp}
-          />
+          <>
+            <HeroUpload 
+              onFiles={(files) => processFiles(files)} 
+              processing={processing} 
+              onReset={resetApp}
+            />
+            <div className="max-w-4xl mx-auto mt-8 px-4">
+              <AdBanner format="auto" className="rounded-2xl" />
+            </div>
+          </>
         )}
 
         {results && (
@@ -2944,6 +2950,11 @@ export default function App() {
                   </div>
                 )}
 
+                {/* Ad placement between content sections */}
+                <div className="max-w-4xl mx-auto my-8">
+                  <AdBanner format="auto" className="rounded-2xl" />
+                </div>
+
                 {activeTab === 'debug' && (
                   <div className="p-8 premium-card">
                     <h3 className="text-xl font-black mb-4">Diagnostic Tool</h3>
@@ -3177,7 +3188,12 @@ export default function App() {
             )}
 
             {currentApp === 'methodology' && (
-              <MethodologyPage activeTab={activeTab} />
+              <>
+                <MethodologyPage activeTab={activeTab} />
+                <div className="mt-8">
+                  <AdBanner format="auto" className="rounded-2xl" />
+                </div>
+              </>
             )}
           </AndroidDesktop>
         )}
