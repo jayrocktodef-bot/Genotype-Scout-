@@ -165,7 +165,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
               {/* External Links */}
               <a 
-                href="https://WrittenInTheGenome.blog" 
+                href="https://writteninthegenome.blog" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-800 dark:hover:text-slate-100 whitespace-nowrap shrink-0"
