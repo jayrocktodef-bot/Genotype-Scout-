@@ -14,6 +14,16 @@ const POP_COLORS: Record<string, string> = {
   MID: '#f97316'
 };
 
+const REGION_NAMES: Record<string, string> = {
+  EUR: 'European',
+  AFR: 'African',
+  EAS: 'East Asian',
+  SAS: 'South Asian',
+  AMR: 'Indigenous American',
+  OCE: 'Oceanian',
+  MID: 'Middle Eastern'
+};
+
 interface Segment {
   continent: string;
   start: number;
@@ -286,7 +296,7 @@ export const ChromosomePainter = forwardRef<ChromosomePainterRef, ChromosomePain
           }}
         >
           <div className="font-black text-teal-400 uppercase tracking-widest text-[9px] mb-1">Chromosome {hovered.chrom}</div>
-          <div><strong className="text-slate-400">Ancestry:</strong> <span className="font-extrabold" style={{ color: POP_COLORS[hovered.segment.continent] }}>{hovered.segment.continent}</span></div>
+          <div><strong className="text-slate-400">Ancestry:</strong> <span className="font-extrabold" style={{ color: POP_COLORS[hovered.segment.continent] }}>{REGION_NAMES[hovered.segment.continent] ?? hovered.segment.continent}</span></div>
           {hovered.strand !== 'Both' && <div><strong className="text-slate-400">Strand:</strong> {hovered.strand === 'A' ? 'Strand A (Maternal)' : 'Strand B (Paternal)'}</div>}
           <div><strong className="text-slate-400">Range:</strong> {(hovered.segment.start / 1000000).toFixed(1)}M - {(hovered.segment.end / 1000000).toFixed(1)}M bp</div>
           <div><strong className="text-slate-400">Confidence:</strong> {(hovered.segment.confidence * 100).toFixed(0)}%</div>
@@ -298,7 +308,7 @@ export const ChromosomePainter = forwardRef<ChromosomePainterRef, ChromosomePain
         {Object.entries(POP_COLORS).map(([pop, color]) => (
             <div key={pop} className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }}></div>
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{pop}</span>
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{REGION_NAMES[pop] ?? pop}</span>
             </div>
         ))}
       </div>

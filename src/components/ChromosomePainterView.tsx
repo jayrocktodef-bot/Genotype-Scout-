@@ -14,6 +14,16 @@ const POP_COLORS: Record<string, string> = {
   MID: '#f97316'
 };
 
+const REGION_NAMES: Record<string, string> = {
+  EUR: 'European',
+  AFR: 'African',
+  EAS: 'East Asian',
+  SAS: 'South Asian',
+  AMR: 'Indigenous American',
+  OCE: 'Oceanian',
+  MID: 'Middle Eastern'
+};
+
 interface Segment {
   continent: string;
   start: number;
@@ -170,12 +180,7 @@ export const ChromosomePainterView = ({
                             className="w-2.5 h-2.5 rounded-full inline-block" 
                             style={{ backgroundColor: POP_COLORS[selectedSegment.segment.continent] }}
                           />
-                          {selectedSegment.segment.continent === 'EUR' ? 'European' : 
-                           selectedSegment.segment.continent === 'AFR' ? 'African' :
-                           selectedSegment.segment.continent === 'EAS' ? 'East Asian' :
-                           selectedSegment.segment.continent === 'SAS' ? 'South Asian' :
-                           selectedSegment.segment.continent === 'AMR' ? 'Native American' : 
-                           selectedSegment.segment.continent}
+                          {REGION_NAMES[selectedSegment.segment.continent] ?? selectedSegment.segment.continent}
                         </span>
                       </div>
 
