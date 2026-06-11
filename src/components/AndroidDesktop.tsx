@@ -383,6 +383,34 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                     No matching apps found
                   </div>
                 )}
+
+                {/* External Links */}
+                <div className="flex items-center justify-center gap-3 mt-6 flex-wrap">
+                  <a 
+                    href="https://writteninthegenome.blog" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-white/20 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all shadow-sm"
+                  >
+                    📝 Blog
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/share/g/1EFyWD35tB/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-white/20 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all shadow-sm"
+                  >
+                    👥 Facebook
+                  </a>
+                  <a 
+                    href="https://www.paypal.me/jequandavis" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider bg-teal-500/10 dark:bg-teal-950/20 backdrop-blur-md border border-teal-500/20 dark:border-teal-500/10 text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 dark:hover:bg-teal-900/30 transition-all shadow-sm"
+                  >
+                    💚 Donate
+                  </a>
+                </div>
               </div>
 
               {/* Bottom Frosted Glass Dock */}
