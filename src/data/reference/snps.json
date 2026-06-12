@@ -25676,5 +25676,18 @@
       "G"
     ],
     "continent": "European"
+  },
+  {
+    "markerId": "M26",
+    "rsid": "rs1018890698",
+    "aliases": ["rs1018890698"],
+    "category": "Ancestry",
+    "trait": "Haplogroup I2a1a",
+    "description": "Defining marker for Haplogroup I2a1a (Sardinian).",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "continent": "European"
   }
 ]
