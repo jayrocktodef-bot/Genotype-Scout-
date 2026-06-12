@@ -21,36 +21,265 @@ import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveE
 
 compileReferenceKernel();
 
+// ── Sanitize payload without the expensive JSON round-trip ───────────
+// Recursively strips non-structured-cloneable values (Promises, functions,
+// Maps, Sets) without serializing/deserializing the entire result tree.
+function sanitizePayload(obj: any): any {
+  if (obj === null || obj === undefined) return obj;
+  if (typeof obj === 'function' || obj instanceof Promise) return undefined;
+  if (obj instanceof Map) return Object.fromEntries(obj);
+  if (obj instanceof Set) return Array.from(obj);
+  if (ArrayBuffer.isView(obj)) return obj; // TypedArrays are cloneable
+  if (obj instanceof ArrayBuffer) return obj;
+  if (Array.isArray(obj)) {
+    const arr: any[] = new Array(obj.length);
+    for (let i = 0; i < obj.length; i++) {
+      arr[i] = sanitizePayload(obj[i]);
+    }
+    return arr;
+  }
+  if (typeof obj === 'object') {
+    const clean: any = {};
+    const keys = Object.keys(obj);
+    for (let i = 0; i < keys.length; i++) {
+      const val = sanitizePayload(obj[keys[i]]);
+      if (val !== undefined) clean[keys[i]] = val;
+    }
+    return clean;
+  }
+  return obj; // primitives (string, number, boolean)
+}
+
+// ── Engine metadata for progress reporting ───────────────────────────
+const ENGINE_LABELS: Record<string, string> = {
+  matchSNPs: 'Matching 17K+ genomic markers',
+  calculateAncientAdmixture: 'Computing ancient admixture',
+  calculateIndividualMatches: 'Matching individual profiles',
+  calculateFamousMatches: 'Analyzing notable matches',
+  matchHealthAndWellness: 'Scoring health & wellness markers',
+  calculatePopulationProximityOptimized: 'Computing population proximity matrix',
+  calculateMarkerBenchmarks: 'Benchmarking marker coverage',
+  calculateMDLPK16Scores: 'Running MDLP-K16 calculator',
+  calculateRegionalScores: 'Running GRAF regional scorer',
+  identifyMicroHapSignatures: 'Detecting microhaplotype signatures',
+  calculateComprehensiveScores: 'Running comprehensive engine',
+};
+
+// ── Parallel analysis engine dispatcher ──────────────────────────────
+// Fans out CPU-bound analysis tasks across real worker threads.
+// Falls back to sequential execution if nested workers aren't supported.
+type EngineTask = {
+  engine: string;
+  snpMap: Record<string, string>;
+  snpMetaMap?: Record<string, { chrom: string; pos: number }>;
+};
+
+function canSpawnNestedWorkers(): boolean {
+  try {
+    // Feature-detect by checking if Worker constructor is available in worker scope
+    return typeof Worker !== 'undefined';
+  } catch {
+    return false;
+  }
+}
+
+async function runEnginesParallel(
+  imputedSnpMap: Record<string, string>,
+  mergedSnpMetaMap: Record<string, { chrom: string; pos: number }>,
+  onEngineProgress: (completed: number, total: number, label: string) => void
+): Promise<Record<string, any>> {
+  const engines = [
+    'matchSNPs',
+    'calculateAncientAdmixture',
+    'calculateIndividualMatches',
+    'calculateFamousMatches',
+    'matchHealthAndWellness',
+    'calculatePopulationProximityOptimized',
+    'calculateMarkerBenchmarks',
+    'calculateMDLPK16Scores',
+    'calculateRegionalScores',
+    'identifyMicroHapSignatures',
+    'calculateComprehensiveScores',
+  ];
+
+  const totalEngines = engines.length;
+  let completedCount = 0;
+
+  // ── Try parallel dispatch via nested workers ───────────────────
+  if (canSpawnNestedWorkers()) {
+    try {
+      const poolSize = Math.min(navigator.hardwareConcurrency || 4, engines.length);
+      const workers: Worker[] = [];
+
+      for (let i = 0; i < poolSize; i++) {
+        workers.push(
+          new Worker(new URL('./analysisWorker.ts', import.meta.url), { type: 'module' })
+        );
+      }
+
+      const results: Record<string, any> = {};
+      const queue = [...engines];
+      let nextWorkerIdx = 0;
+
+      await new Promise<void>((resolve, reject) => {
+        let settled = false;
+
+        const dispatchNext = (worker: Worker) => {
+          const engine = queue.shift();
+          if (!engine) return;
+
+          const taskId = engine;
+          const onMsg = (e: MessageEvent) => {
+            if (e.data.taskId !== taskId) return;
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+
+            if (e.data.type === 'SUCCESS') {
+              results[engine] = e.data.result;
+              completedCount++;
+              onEngineProgress(completedCount, totalEngines, ENGINE_LABELS[engine] || engine);
+
+              // Dispatch next task to this free worker
+              if (queue.length > 0) {
+                dispatchNext(worker);
+              }
+
+              if (completedCount === totalEngines && !settled) {
+                settled = true;
+                // Terminate all workers
+                workers.forEach(w => w.terminate());
+                resolve();
+              }
+            } else if (e.data.type === 'ERROR' && !settled) {
+              settled = true;
+              workers.forEach(w => w.terminate());
+              reject(new Error(`Engine ${engine} failed: ${e.data.error}`));
+            }
+          };
+
+          const onErr = (err: any) => {
+            worker.removeEventListener('message', onMsg);
+            worker.removeEventListener('error', onErr);
+            if (!settled) {
+              settled = true;
+              workers.forEach(w => w.terminate());
+              reject(err);
+            }
+          };
+
+          worker.addEventListener('message', onMsg);
+          worker.addEventListener('error', onErr);
+
+          worker.postMessage({
+            taskId,
+            engine,
+            snpMap: imputedSnpMap,
+            snpMetaMap: engine === 'matchSNPs' ? mergedSnpMetaMap : undefined,
+          });
+        };
+
+        // Launch initial batch — one task per worker
+        for (const worker of workers) {
+          if (queue.length > 0) {
+            dispatchNext(worker);
+          }
+        }
+      });
+
+      return results;
+    } catch (nestedErr) {
+      console.warn('⚠️ Nested workers failed, falling back to sequential:', nestedErr);
+      // Fall through to sequential
+    }
+  }
+
+  // ── Sequential fallback (Safari, or nested worker failure) ─────
+  return runEnginesSequential(imputedSnpMap, mergedSnpMetaMap, onEngineProgress);
+}
+
+// ── Sequential fallback ──────────────────────────────────────────────
+async function runEnginesSequential(
+  imputedSnpMap: Record<string, string>,
+  mergedSnpMetaMap: Record<string, { chrom: string; pos: number }>,
+  onEngineProgress: (completed: number, total: number, label: string) => void
+): Promise<Record<string, any>> {
+  const results: Record<string, any> = {};
+  const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
+  let completed = 0;
+  const total = 11;
+
+  const run = async (name: string, fn: () => any) => {
+    onEngineProgress(completed, total, ENGINE_LABELS[name] || name);
+    results[name] = await fn();
+    completed++;
+  };
+
+  await run('matchSNPs', () => matchSNPs(imputedSnpMap, mergedSnpMetaMap));
+  await run('calculateAncientAdmixture', () => calculateAncientAdmixture(imputedSnpMap));
+  await run('calculateIndividualMatches', () => calculateIndividualMatches(imputedSnpMap));
+  await run('calculateFamousMatches', () => calculateFamousMatches(imputedSnpMap));
+  await run('matchHealthAndWellness', () => matchHealthAndWellness(imputedSnpMap));
+  await run('calculatePopulationProximityOptimized', () => calculatePopulationProximityOptimized(snpMapForEngine));
+  await run('calculateMarkerBenchmarks', () => calculateMarkerBenchmarks(imputedSnpMap));
+  await run('calculateMDLPK16Scores', () => calculateMDLPK16Scores(imputedSnpMap));
+  await run('calculateRegionalScores', () => calculateRegionalScores(imputedSnpMap));
+  await run('identifyMicroHapSignatures', () => identifyMicroHapSignatures(imputedSnpMap));
+  await run('calculateComprehensiveScores', () => calculateComprehensiveScores(imputedSnpMap));
+
+  onEngineProgress(total, total, 'All engines complete');
+  return results;
+}
+
+// ── Main orchestration ───────────────────────────────────────────────
 async function runGenotypeScout(
     imputedSnpMap: Record<string, string>,
     mergedSnpMetaMap: Record<string, { chrom: string, pos: number }>,
     names: string[],
     sab: any
 ) {
-    const ancestryResult = matchSNPs(imputedSnpMap, mergedSnpMetaMap);
-    
-    const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
-    const [
-      ancientAdmixture, individualMatches, famousMatches, healthWellness,
-      populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw,
-      microHapResults, comprehensiveResults
-    ] = await Promise.all([
-      calculateAncientAdmixture(imputedSnpMap),
-      calculateIndividualMatches(imputedSnpMap),
-      calculateFamousMatches(imputedSnpMap),
-      matchHealthAndWellness(imputedSnpMap),
-      calculatePopulationProximityOptimized(snpMapForEngine),
-      calculateMarkerBenchmarks(imputedSnpMap),
-      calculateMDLPK16Scores(imputedSnpMap),
-      calculateRegionalScores(imputedSnpMap),
-      identifyMicroHapSignatures(imputedSnpMap),
-      calculateComprehensiveScores(imputedSnpMap)
-    ]);
-    const bloodResult = { ancientAdmixture, individualMatches, famousMatches, healthWellness, populationProximity, markerBenchmarks, mdlpResults_raw, grafResults_raw, microHapResults, comprehensiveResults };
+    // Fan out all CPU-bound engines across real worker threads
+    const engineResults = await runEnginesParallel(
+      imputedSnpMap,
+      mergedSnpMetaMap,
+      (completed, total, label) => {
+        if (sab) {
+          // Encode sub-progress in sab slot 4 (engine completion count)
+          const progressArray = new Int32Array(sab);
+          Atomics.store(progressArray, 3, 2); // still in "analyzing" phase
+        } else {
+          self.postMessage({
+            type: 'PROGRESS',
+            payload: { step: `${label}... (${completed}/${total})` }
+          });
+        }
+      }
+    );
+
+    const ancestryResult = engineResults.matchSNPs;
+    const bloodResult = {
+      ancientAdmixture: engineResults.calculateAncientAdmixture,
+      individualMatches: engineResults.calculateIndividualMatches,
+      famousMatches: engineResults.calculateFamousMatches,
+      healthWellness: engineResults.matchHealthAndWellness,
+      populationProximity: engineResults.calculatePopulationProximityOptimized,
+      markerBenchmarks: engineResults.calculateMarkerBenchmarks,
+      mdlpResults_raw: engineResults.calculateMDLPK16Scores,
+      grafResults_raw: engineResults.calculateRegionalScores,
+      microHapResults: engineResults.identifyMicroHapSignatures,
+      comprehensiveResults: engineResults.calculateComprehensiveScores,
+    };
 
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
-    const oracleResults = await calculateAncestryOracle(ancestryResult.filter(r => r.category === 'Ancestry'), undefined, undefined, bloodResult.grafResults_raw, bloodResult.mdlpResults_raw, bloodResult.comprehensiveResults, sampleId);
-    
+    const oracleResults = await calculateAncestryOracle(
+      ancestryResult.filter((r: any) => r.category === 'Ancestry'),
+      undefined,
+      undefined,
+      bloodResult.grafResults_raw,
+      bloodResult.mdlpResults_raw,
+      bloodResult.comprehensiveResults,
+      sampleId
+    );
+
     return { ancestryResult, bloodResult, oracleResults };
 }
 
@@ -142,7 +371,7 @@ self.onmessage = async (e: MessageEvent) => {
       self.postMessage({ type: 'PROGRESS', payload: { step: "Engaging Bayesian Ancestry Engine..." } });
     }
     
-    // Orchestration
+    // Orchestration — now fans out across multiple workers
     const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, names, sab);
     
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
@@ -159,8 +388,8 @@ self.onmessage = async (e: MessageEvent) => {
       self.postMessage({ type: 'PROGRESS', payload: { step: "Completing Profiler..." } });
     }
 
-    // Force-sanitize payload: JSON round-trip strips Promises, functions, Maps,
-    // Sets, and any other non-structured-cloneable values that would crash postMessage.
+    // Targeted sanitization — replaces the expensive JSON.parse(JSON.stringify()) round-trip.
+    // Only strips non-structured-cloneable types (Maps, Sets, Promises, functions).
     const rawPayload = { 
       name: names[0], 
       results: ancestryResult, 
@@ -175,7 +404,7 @@ self.onmessage = async (e: MessageEvent) => {
         subpopulationOracle
       } 
     };
-    const safePayload = JSON.parse(JSON.stringify(rawPayload));
+    const safePayload = sanitizePayload(rawPayload);
 
     self.postMessage({ 
       type: 'SUCCESS', 
