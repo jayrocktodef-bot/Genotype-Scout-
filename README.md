@@ -13,6 +13,9 @@
 ## ✨ What's New in V4.5
 
 - **Ultra-Fast DNA Parsing** — Replaced global regex evaluation with a line-by-line index-based search, reducing parse times for massive DNA files to milliseconds.
+- **True Multi-Worker Parallelism** — Parallelized all 11 CPU-bound analysis engines using a dynamically dispatched Web Worker pool (`navigator.hardwareConcurrency`), achieving a 2-3x speedup on post-parsing analysis.
+- **Optimized Worker Payloads** — Replaced expensive global JSON serialization with direct targeted payload sanitization, removing execution bottlenecks.
+- **Real-Time Progress Streaming** — Added streaming progress events per engine, keeping the UI fully interactive and informative during the post-parsing phase.
 - **AIMs Database Normalization** — Fixed case-sensitive regional overrides and integrated missing Central Asian ancestry markers for higher accuracy.
 - **Dark / Light Mode Toggle** — Switch freely between themes via the navbar Sun/Moon button. Light mode is the default.
 - **PWA Support** — Install Genotype Scout to your home screen (Android, iOS, desktop). Works offline after the first load.
@@ -50,7 +53,7 @@ Genotype Scout leverages modern web technologies to handle computationally inten
 | **Runtime** | React 19 + Vite |
 | **Language** | TypeScript (`strict` mode) |
 | **Styling** | Tailwind CSS v4 with custom design tokens |
-| **Performance** | Web Workers for heavy parsing & matrix ops; code-split chunks for fast app-shell load |
+| **Performance** | Multi-worker parallel thread pool for concurrent analysis engines; streaming parser; code-split chunks for fast app-shell load |
 | **On-device ML** | ONNX model via `onnxruntime-web` — no cloud calls, no API key |
 | **Admixture Engine** | MDLP K16 with Lawson-Hanson NNLS solver |
 | **PWA** | `vite-plugin-pwa` with Workbox service worker, offline precaching, runtime font/asset caching |
