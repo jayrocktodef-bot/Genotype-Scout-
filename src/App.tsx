@@ -1978,7 +1978,8 @@ export default function App() {
     total: number;
     snps: number;
     step: string;
-  }>({ processed: 0, total: 0, snps: 0, step: "Ready" });
+    percent?: number;
+  }>({ processed: 0, total: 0, snps: 0, step: "Ready", percent: 0 });
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   const [error, setError] = useState<any | null>(null);
@@ -2072,7 +2073,7 @@ export default function App() {
       setMicroHapResults(newDataset.analysis.microHapResults);
     }
 
-    await saveResults(newDatasets);
+    saveResults(newDatasets);
     setActiveDatasetIndex(newDatasets.length - 1);
   };
 
@@ -2194,9 +2195,18 @@ export default function App() {
               const statusVal = Atomics.load(progressArray, 3);
 
               let step = "Ingesting DNA stream...";
-              if (statusVal === 2) step = "Engaging Bayesian Ancestry Engine...";
-              else if (statusVal === 3) step = "Completing Profiler...";
-              else if (statusVal === 4) {
+              let percent = 0;
+
+              if (statusVal === 1) {
+                step = "Ingesting DNA stream...";
+                percent = total > 0 ? Math.round((processed / total) * 50) : 0;
+              } else if (statusVal === 2) {
+                step = "Engaging Bayesian Ancestry Engine...";
+                percent = total > 0 ? 50 + Math.round((processed / total) * 45) : 50;
+              } else if (statusVal === 3) {
+                step = "Completing Profiler...";
+                percent = 100;
+              } else if (statusVal === 4) {
                 step = "Ingestion failed.";
                 clearInterval(intervalId);
                 setError("Processing failed in background worker.");
@@ -2205,7 +2215,7 @@ export default function App() {
                 return;
               }
 
-              setStreamProgress({ processed, total, snps, step });
+              setStreamProgress({ processed, total, snps, step, percent });
             }
           }, 60);
         } catch (e) {
@@ -2216,13 +2226,29 @@ export default function App() {
       worker.onmessage = (e) => {
         const { type, payload, error: workerError } = e.data;
         if (type === 'PROGRESS') {
-          const { processed, total, snps, step } = payload;
-          setStreamProgress(prev => ({
-            processed: processed !== undefined ? processed : prev.processed,
-            total: total !== undefined ? total : prev.total,
-            snps: snps !== undefined ? snps : prev.snps,
-            step: step || prev.step || "Ingesting DNA stream..."
-          }));
+          const { processed, total, snps, step, completed, totalEngines, statusVal } = payload;
+          setStreamProgress(prev => {
+            const newProcessed = processed !== undefined ? processed : prev.processed;
+            const newTotal = total !== undefined ? total : prev.total;
+            const newSnps = snps !== undefined ? snps : prev.snps;
+            
+            let percent = prev.percent || 0;
+            if (statusVal === 2 || (completed !== undefined && totalEngines !== undefined)) {
+              percent = 50 + Math.round((completed / totalEngines) * 45);
+            } else if (statusVal === 3) {
+              percent = 100;
+            } else {
+              percent = newTotal > 0 ? Math.round((newProcessed / newTotal) * 50) : 0;
+            }
+
+            return {
+              processed: newProcessed,
+              total: newTotal,
+              snps: newSnps,
+              step: step || prev.step || "Ingesting DNA stream...",
+              percent
+            };
+          });
         } else if (type === 'SUCCESS') {
           if (intervalId) clearInterval(intervalId);
           const newIndex = datasets.length;

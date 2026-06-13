@@ -243,13 +243,19 @@ async function runGenotypeScout(
       mergedSnpMetaMap,
       (completed, total, label) => {
         if (sab) {
-          // Encode sub-progress in sab slot 4 (engine completion count)
           const progressArray = new Int32Array(sab);
+          Atomics.store(progressArray, 0, completed);
+          Atomics.store(progressArray, 1, total);
           Atomics.store(progressArray, 3, 2); // still in "analyzing" phase
         } else {
           self.postMessage({
             type: 'PROGRESS',
-            payload: { step: `${label}... (${completed}/${total})` }
+            payload: { 
+              step: `${label}... (${completed}/${total})`,
+              completed,
+              totalEngines: total,
+              statusVal: 2
+            }
           });
         }
       }

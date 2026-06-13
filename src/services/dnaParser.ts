@@ -406,6 +406,10 @@ export function parseRawDNA(
     );
   }
 
+  if (onProgress) {
+    onProgress(totalLength, totalLength, snpCount);
+  }
+
   return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };
 }
 
@@ -705,6 +709,10 @@ export async function parseRawDNAStream(
         suggestedSolution: "Make sure you downloaded 'all SNPs' or 'raw data text' rather than mitochondrial-only sequences or visual screenshots. The file should contain rsIDs and genotypes."
       }
     );
+  }
+
+  if (onProgress) {
+    onProgress(file.size, file.size, snpCount);
   }
 
   return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };

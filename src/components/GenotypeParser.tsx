@@ -8,6 +8,7 @@ interface GenotypeParserProps {
     processed: number;
     total: number;
     snps: number;
+    percent?: number;
   };
 }
 
@@ -25,9 +26,11 @@ export const GenotypeParser: React.FC<GenotypeParserProps> = ({ streamProgress }
     }
   }, [streamProgress.step]);
 
-  const percent = streamProgress.total > 0 
-    ? Math.min(100, Math.round((streamProgress.processed / streamProgress.total) * 100)) 
-    : 0;
+  const percent = streamProgress.percent !== undefined 
+    ? streamProgress.percent 
+    : (streamProgress.total > 0 
+        ? Math.min(100, Math.round((streamProgress.processed / streamProgress.total) * 100)) 
+        : 0);
 
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center py-12 px-6 text-center animate-fade-up max-w-2xl mx-auto relative overflow-hidden">
