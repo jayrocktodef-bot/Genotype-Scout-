@@ -28,7 +28,42 @@ vi.mock('../constants/haplogroups', () => ({
       {
         branchName: 'Haplogroup H',
         mutations: ['A769G'],
-        children: []
+        children: [
+          {
+            branchName: 'Haplogroup H1',
+            mutations: ['G16129A!'],
+            children: [
+              {
+                branchName: 'Haplogroup H1a',
+                mutations: ['C498d'],
+                children: [
+                  {
+                    branchName: 'Haplogroup H1a1',
+                    mutations: ['8281-8289d'],
+                    children: [
+                      {
+                        branchName: 'Haplogroup H1a1a',
+                        mutations: ['2491.1C'],
+                        children: [
+                          {
+                            branchName: 'Haplogroup H1a1a1',
+                            mutations: ['573.XC'],
+                            children: [
+                              {
+                                branchName: 'Haplogroup H1a1a1a',
+                                mutations: ['5899.1d!']
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   }
@@ -70,5 +105,47 @@ describe('analyzeMtDNA', () => {
     const result = analyzeMtDNA(mtMap);
     expect(result.predicted).toBe('Haplogroup H');
     expect(result.path).toContain('Haplogroup H');
+  });
+
+  it('should handle trailing reversals (!) correctly', () => {
+    const mtMap = { '769': 'G', '16129': 'A' };
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('Haplogroup H1');
+    expect(result.path).toContain('Haplogroup H1');
+  });
+
+  it('should handle single deletions (d) correctly', () => {
+    const mtMap = { '769': 'G', '16129': 'A', '498': '-' };
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('Haplogroup H1a');
+    expect(result.path).toContain('Haplogroup H1a');
+  });
+
+  it('should handle range deletions (e.g. 8281-8289d) correctly', () => {
+    const mtMap = { '769': 'G', '16129': 'A', '498': '-', '8281': '-', '8285': '-' };
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('Haplogroup H1a1');
+    expect(result.path).toContain('Haplogroup H1a1');
+  });
+
+  it('should handle insertions (e.g. 2491.1C) correctly', () => {
+    const mtMap = { '769': 'G', '16129': 'A', '498': '-', '8281': '-', '2491.1': 'C' };
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('Haplogroup H1a1a');
+    expect(result.path).toContain('Haplogroup H1a1a');
+  });
+
+  it('should handle custom XC insertions correctly', () => {
+    const mtMap = { '769': 'G', '16129': 'A', '498': '-', '8281': '-', '2491.1': 'C', '573': 'C' };
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('Haplogroup H1a1a1');
+    expect(result.path).toContain('Haplogroup H1a1a1');
+  });
+
+  it('should handle deletion of an insertion (5899.1d!) correctly', () => {
+    const mtMap = { '769': 'G', '16129': 'A', '498': '-', '8281': '-', '2491.1': 'C', '573': 'C', '5899.1': '-' };
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('Haplogroup H1a1a1a');
+    expect(result.path).toContain('Haplogroup H1a1a1a');
   });
 });

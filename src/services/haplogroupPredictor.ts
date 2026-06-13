@@ -284,30 +284,116 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   const testedMarkers: any[] = [];
   
   allMutations.forEach(mutation => {
-    const mtMatch = mutation.match(/^([A-Z])(\d+)([A-Za-z])$/);
-    if (!mtMatch) return;
+    // 1. Clean the mutation representation for parsing
+    // Strip trailing '!' or '!!'
+    const cleanMutation = mutation.replace(/!+$/, '');
 
-    const ancestral = mtMatch[1];
-    const pos = mtMatch[2];
-    const derived = mtMatch[3];
-    
-    const userAllele = mtMap[pos];
-    
-    if (derived.toLowerCase() === 'd') {
-      if (userAllele === '-' || userAllele === 'D' || !userAllele) {
-        userMutations.push(mutation);
-        testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
-      } else if (userAllele === ancestral) {
-        testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+    // Case A: Standard Substitution (e.g., A263G, C3516a) or Single Deletion (e.g., C498d)
+    const subMatch = cleanMutation.match(/^([A-Z])(\d+)([A-Za-z])$/);
+    if (subMatch) {
+      const ancestral = subMatch[1];
+      const pos = subMatch[2];
+      const derived = subMatch[3];
+      const userAllele = mtMap[pos];
+
+      if (derived.toLowerCase() === 'd') {
+        // Single deletion represented as [Base][Pos]d
+        if (userAllele === '-' || userAllele === 'D' || userAllele === 'd') {
+          userMutations.push(mutation);
+          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
+        } else if (userAllele && userAllele.toUpperCase() === ancestral.toUpperCase()) {
+          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+        }
+      } else {
+        if (userAllele && userAllele.toUpperCase() === derived.toUpperCase()) {
+          userMutations.push(mutation);
+          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
+        } else if (userAllele && userAllele.toUpperCase() === ancestral.toUpperCase()) {
+          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+        }
       }
       return;
     }
 
-    if (userAllele && userAllele.toUpperCase() === derived.toUpperCase()) {
-      userMutations.push(mutation);
-      testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
-    } else if (userAllele && userAllele.toUpperCase() === ancestral.toUpperCase()) {
-      testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+    // Case B: Range Deletion (e.g., 8281-8289d, 106-111d)
+    const rangeMatch = cleanMutation.match(/^(\d+)-(\d+)d$/);
+    if (rangeMatch) {
+      const startPos = parseInt(rangeMatch[1], 10);
+      const endPos = parseInt(rangeMatch[2], 10);
+      
+      let hasAncestralBase = false;
+      let hasExplicitDeletion = false;
+
+      for (let p = startPos; p <= endPos; p++) {
+        const allele = mtMap[p.toString()];
+        if (allele && allele !== '-' && allele !== 'D' && allele !== 'd') {
+          hasAncestralBase = true;
+          break;
+        } else if (allele === '-' || allele === 'D' || allele === 'd') {
+          hasExplicitDeletion = true;
+        }
+      }
+
+      if (!hasAncestralBase && hasExplicitDeletion) {
+        userMutations.push(mutation);
+        testedMarkers.push({ mutation, pos: `${startPos}-${endPos}`, derived: 'd', ancestral: 'R', status: 'derived', description: getMarkerDescription(mutation) });
+      } else if (hasAncestralBase) {
+        testedMarkers.push({ mutation, pos: `${startPos}-${endPos}`, derived: 'd', ancestral: 'R', status: 'ancestral', description: getMarkerDescription(mutation) });
+      }
+      return;
+    }
+
+    // Case C: Insertion (e.g., 2491.1C, 455.2T, 8289.1CCCCCTCTACCCCCTCTA, 5899.1d!)
+    const insMatch = cleanMutation.match(/^(\d+)\.(\d+)([A-Za-z]+)$/);
+    if (insMatch) {
+      const pos = insMatch[1];
+      const subPos = insMatch[2];
+      const insertedVal = insMatch[3];
+      
+      const userAllele1 = mtMap[pos];
+      const userAllele2 = mtMap[`${pos}.${subPos}`];
+      const userAllele = userAllele2 || userAllele1;
+
+      if (insertedVal.toLowerCase() === 'd') {
+        if (userAllele === '-' || userAllele === 'D' || userAllele === 'd') {
+          userMutations.push(mutation);
+          testedMarkers.push({ mutation, pos: `${pos}.${subPos}`, derived: 'd', ancestral: '', status: 'derived', description: getMarkerDescription(mutation) });
+        } else if (userAllele) {
+          testedMarkers.push({ mutation, pos: `${pos}.${subPos}`, derived: 'd', ancestral: '', status: 'ancestral', description: getMarkerDescription(mutation) });
+        }
+      } else {
+        if (userAllele && (
+          userAllele.toUpperCase() === insertedVal.toUpperCase() ||
+          userAllele.toUpperCase().includes(insertedVal.toUpperCase()) ||
+          userAllele === 'I' || userAllele === 'i'
+        )) {
+          userMutations.push(mutation);
+          testedMarkers.push({ mutation, pos: `${pos}.${subPos}`, derived: insertedVal, ancestral: '', status: 'derived', description: getMarkerDescription(mutation) });
+        } else if (userAllele === '-' || userAllele === 'D' || userAllele === 'd') {
+          testedMarkers.push({ mutation, pos: `${pos}.${subPos}`, derived: insertedVal, ancestral: '', status: 'ancestral', description: getMarkerDescription(mutation) });
+        }
+      }
+      return;
+    }
+
+    // Case D: XC / Custom Insertions (e.g., 573.XC, 5899.XC)
+    const xcMatch = cleanMutation.match(/^(\d+)\.XC([A-Za-z]*)$/);
+    const genericXcMatch = xcMatch || cleanMutation.match(/^(\d+)\.XC$/);
+    if (genericXcMatch) {
+      const pos = genericXcMatch[1];
+      const userAllele = mtMap[pos] || mtMap[`${pos}.1`] || mtMap[`${pos}.XC`];
+
+      if (userAllele && (
+        userAllele.toUpperCase() === 'C' ||
+        userAllele === 'I' || userAllele === 'i' ||
+        userAllele.toUpperCase().includes('C')
+      )) {
+        userMutations.push(mutation);
+        testedMarkers.push({ mutation, pos, derived: 'C', ancestral: '', status: 'derived', description: getMarkerDescription(mutation) });
+      } else if (userAllele) {
+        testedMarkers.push({ mutation, pos, derived: 'C', ancestral: '', status: 'ancestral', description: getMarkerDescription(mutation) });
+      }
+      return;
     }
   });
 
@@ -315,7 +401,8 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   
   allResults.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
-    return b.path.length - a.path.length;
+    // Tie-breaker: if scores are equal, prefer the shallower path to avoid false-positive deep predictions
+    return a.path.length - b.path.length;
   });
 
   // Deep search in the large mtHaplogroup database
