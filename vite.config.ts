@@ -49,7 +49,7 @@ export default defineConfig(({mode}) => {
           // Cache all built assets (JS, CSS, HTML, fonts, images)
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,woff,ttf}'],
           // Exclude oversized chunks from precache — they load on-demand
-          globIgnores: ['**/genomic-data-*.js', '**/genotypeWorker-*.js', '**/markerProcessingWorker-*.js'],
+          globIgnores: ['**/genomic-data-*.js', '**/genotypeWorker-*.js', '**/markerProcessingWorker-*.js', '**/analysisWorker-*.js'],
           // Allow remaining large chunks (vendor-onnx ~400KB etc.)
           maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
           // Runtime caching for external resources (Google Fonts, blog images)
