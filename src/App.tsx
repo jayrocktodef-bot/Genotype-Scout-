@@ -2112,9 +2112,37 @@ export default function App() {
   };
 
   const resetApp = async () => {
-    await clearResults();
+    // Clear dataset state
     setDatasets([]);
     setActiveDatasetIndex(0);
+    
+    // Clear local storage and IndexedDB results
+    await clearResults();
+
+    // Clear all service worker registrations to force a fresh download
+    if ('serviceWorker' in navigator) {
+      try {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        for (const registration of registrations) {
+          await registration.unregister();
+        }
+      } catch (err) {
+        console.error('Failed to unregister service worker:', err);
+      }
+    }
+
+    // Clear all browser caches (CacheStorage) to free up memory and storage
+    if ('caches' in window) {
+      try {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(key => caches.delete(key)));
+      } catch (err) {
+        console.error('Failed to clear cache storage:', err);
+      }
+    }
+
+    // Perform a clean reload from the server, bypassing cache
+    window.location.reload();
   };
 
   const processFiles = useCallback(async (files: FileList | File[]) => {
