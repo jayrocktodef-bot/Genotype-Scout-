@@ -228,15 +228,35 @@ function resolveSnpName(userRsid: string, databaseKeys: string[]): string | null
   return bestMatch;
 }
 
+// Helper: Project an arbitrary vector to the probability simplex (non-negative and sum to 1)
+function projectToSimplex(v: Float32Array): Float32Array {
+  const n = v.length;
+  const sorted = new Float32Array(v).sort().reverse();
+  let runningSum = 0;
+  let rho = 0;
+  for (let i = 0; i < n; i++) {
+    runningSum += sorted[i];
+    if (sorted[i] + (1 - runningSum) / (i + 1) > 0) {
+      rho = i;
+    }
+  }
+  const theta = (1 - sorted.slice(0, rho + 1).reduce((a, b) => a + b, 0)) / (rho + 1);
+  const projected = new Float32Array(n);
+  for (let i = 0; i < n; i++) {
+    projected[i] = Math.max(0, v[i] + theta);
+  }
+  return projected;
+}
+
 /**
- * Pure TypeScript Non-Negative Least Squares (NNLS) Coordinate Descent solver.
+ * Pure TypeScript Non-Negative Least Squares (NNLS) simplex-projected solver.
  * Multi-source deconvolution of mixed ancestral profiles with simplex projection.
  */
 export function solveAdmixtureProportions(
   userDosages: Float32Array,
   popExpectedDosages: Record<string, Float32Array>,
   aimWeights: Float32Array,
-  numIterations = 200
+  numIterations = 150
 ): Record<string, number> {
   const popCodes = Object.keys(popExpectedDosages);
   if (popCodes.length === 0 || userDosages.length === 0) return {};
@@ -245,59 +265,48 @@ export function solveAdmixtureProportions(
   const M = userDosages.length;
 
   // Initialize weights uniformly
-  const weights = new Float32Array(P);
+  let weights = new Float32Array(P);
   for (let p = 0; p < P; p++) {
     weights[p] = 1.0 / P;
   }
 
-  // Precompute weighted self-dot factors (denominators)
-  const weightedPopSelfDot = new Float32Array(P);
-  for (let p = 0; p < P; p++) {
-    const arr = popExpectedDosages[popCodes[p]];
-    let sum = 0;
-    for (let i = 0; i < M; i++) {
-      sum += arr[i] * arr[i] * aimWeights[i];
-    }
-    weightedPopSelfDot[p] = sum || 1.0;
-  }
+  // Precompute step size (learning rate) scaling factor to ensure stability
+  const lr = 0.05;
 
-  // Iterative coordinate descent with active state projection + convergence check
   for (let iter = 0; iter < numIterations; iter++) {
+    const grad = new Float32Array(P);
+    
+    // Compute gradient: grad[p] = - sum_i (userDosage[i] - predicted[i]) * popExpected[p][i] * weight[i]
+    for (let i = 0; i < M; i++) {
+      let predicted = 0;
+      for (let p = 0; p < P; p++) {
+        predicted += weights[p] * popExpectedDosages[popCodes[p]][i];
+      }
+      const diff = userDosages[i] - predicted;
+      
+      for (let p = 0; p < P; p++) {
+        grad[p] -= diff * popExpectedDosages[popCodes[p]][i] * aimWeights[i];
+      }
+    }
+
+    // Gradient descent step
+    const nextWeights = new Float32Array(P);
     let maxDelta = 0;
     for (let p = 0; p < P; p++) {
-      const popCode = popCodes[p];
-      const pExp = popExpectedDosages[popCode];
-      const pSelf = weightedPopSelfDot[p];
-
-      let sumNumerator = 0;
-      for (let i = 0; i < M; i++) {
-        let predictedValue = 0;
-        for (let k = 0; k < P; k++) {
-          if (k !== p) {
-            predictedValue += weights[k] * popExpectedDosages[popCodes[k]][i];
-          }
-        }
-        const residual = userDosages[i] - predictedValue;
-        sumNumerator += residual * pExp[i] * aimWeights[i];
-      }
-
-      const optimalW = sumNumerator / pSelf;
-      const newW = Math.max(0, optimalW);
-      maxDelta = Math.max(maxDelta, Math.abs(newW - weights[p]));
-      weights[p] = newW;
+      nextWeights[p] = weights[p] - lr * grad[p];
     }
 
-    // Projects weights onto the standard probability simplex
-    let sumW = 0;
-    for (let p = 0; p < P; p++) sumW += weights[p];
-    if (sumW > 0) {
-      for (let p = 0; p < P; p++) weights[p] /= sumW;
-    } else {
-      for (let p = 0; p < P; p++) weights[p] = 1.0 / P;
+    // Project nextWeights back onto the simplex (non-negative and sum to 1)
+    const projected = projectToSimplex(nextWeights);
+    for (let p = 0; p < P; p++) {
+      maxDelta = Math.max(maxDelta, Math.abs(projected[p] - weights[p]));
     }
+    weights = projected;
 
-    // Early convergence exit: stop when max weight change < 0.001
-    if (maxDelta < 0.001) break;
+    // Early convergence check
+    if (maxDelta < 0.0005) {
+      break;
+    }
   }
 
   const result: Record<string, number> = {};
@@ -319,69 +328,6 @@ export function processSubpopulations(
   sampleId?: string,
   snpMetaMap?: Record<string, { chrom: string; pos: number }>
 ): OracleResult {
-  let info = sampleId ? getPopulationInfo(sampleId) : null;
-  if (!info && sampleId) {
-    const sUpper = sampleId.toUpperCase().trim();
-    const superPops = ['AMR', 'AFR', 'EAS', 'EUR', 'SAS'];
-    const codes = ['ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI', 'CEU', 'FIN', 'GBR', 'IBS', 'TSI', 'CDX', 'CHB', 'CHS', 'JPT', 'KHV', 'BEB', 'GIH', 'ITU', 'PJL', 'STU', 'CLM', 'MXL', 'PEL', 'PUR'];
-    
-    // Check if the sampleId is or contains a known sub-population code
-    const foundSubPop = codes.find(code => sUpper === code || sUpper.includes(code));
-    // Check if the sampleId is or contains a known super-population code
-    const foundSuperPop = superPops.find(pop => sUpper === pop || sUpper.includes(pop));
-
-    if (foundSubPop) {
-      const parents: Record<string, string> = {
-        'ACB': 'AFR', 'ASW': 'AFR', 'ESN': 'AFR', 'GWD': 'AFR', 'LWK': 'AFR', 'MSL': 'AFR', 'YRI': 'AFR',
-        'CEU': 'EUR', 'FIN': 'EUR', 'GBR': 'EUR', 'IBS': 'EUR', 'TSI': 'EUR',
-        'CDX': 'EAS', 'CHB': 'EAS', 'CHS': 'EAS', 'JPT': 'EAS', 'KHV': 'EAS',
-        'BEB': 'SAS', 'GIH': 'SAS', 'ITU': 'SAS', 'PJL': 'SAS', 'STU': 'SAS',
-        'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR', 'PUR': 'AMR'
-      };
-      info = {
-        population_code: foundSubPop,
-        super_population_code: parents[foundSubPop] || 'EUR'
-      };
-    } else if (foundSuperPop) {
-      info = {
-        population_code: foundSuperPop,
-        super_population_code: foundSuperPop
-      };
-    }
-  }
-
-  if (info) {
-    const SUPER_POP_LABELS: Record<string, string> = {
-      'AFR': 'African (AFR)',
-      'EUR': 'European (EUR)',
-      'EAS': 'East Asian (EAS)',
-      'SAS': 'South Asian (SAS)',
-      'AMR': 'Indigenous American (AMR)'
-    };
-    const popName = POPULATION_NAMES_MAP[info.population_code] || SUPER_POP_LABELS[info.population_code] || info.population_code;
-    return {
-      topMatch: popName,
-      subpopAimsUsed: 0,
-      unmappedAims: [],
-      breakdown: [
-        {
-          subpop: popName,
-          distance: 0.0,
-          similarityScore: 100.0,
-          markersCompared: 0,
-          count: 0
-        }
-      ],
-      admixtureMix: [
-        {
-          popCode: info.population_code,
-          name: popName,
-          percentage: 100.0
-        }
-      ]
-    };
-  }
-
   const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
   const dbKeys = Object.keys(normalizedDatabase);
