@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { calculateCYP2D6Status, MetabolizerStatus } from '../utils/pgxAdvanced';
 import { callStarAlleles } from '../engines/health/pypgxEngine';
 import { inferRhFactor } from './bloodPredictorService';
+import { calculateBloodType } from '../engines/bloodTypeCalculator';
 
 describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
   describe('calculateCYP2D6Status (pgxAdvanced)', () => {
@@ -167,6 +168,42 @@ describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
 
       const result = inferRhFactor(genotypes);
       expect(result.phenotype).toBe('Positive');
+    });
+
+    it('correctly predicts Rh phenotype using the custom deletion marker i4001527', () => {
+      const negativeResult = inferRhFactor({ 'i4001527': 'DD' });
+      expect(negativeResult.phenotype).toBe('Negative');
+      expect(negativeResult.confidence).toBe(1);
+
+      const positiveResult = inferRhFactor({ 'i4001527': 'II' });
+      expect(positiveResult.phenotype).toBe('Positive');
+      expect(positiveResult.confidence).toBe(1);
+
+      const heterozygousResult = inferRhFactor({ 'i4001527': 'DI' });
+      expect(heterozygousResult.phenotype).toBe('Positive');
+      expect(heterozygousResult.confidence).toBe(1);
+    });
+  });
+
+  describe('calculateBloodType (bloodTypeCalculator)', () => {
+    it('does not classify a missing/no-call O marker as Type O', () => {
+      const genotypes = {
+        'rs8176719': '--', // No Call
+        'rs8176747': 'GG'  // non-B (so A)
+      };
+
+      const result = calculateBloodType(genotypes);
+      expect(result.details.abo).toBe('A');
+    });
+
+    it('correctly predicts O for homozygous deletion', () => {
+      const genotypes = {
+        'rs8176719': 'DD',
+        'rs8176747': 'GG'
+      };
+
+      const result = calculateBloodType(genotypes);
+      expect(result.details.abo).toBe('O');
     });
   });
 });

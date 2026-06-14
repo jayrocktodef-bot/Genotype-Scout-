@@ -6,7 +6,7 @@ import { inferRhFactor } from '../services/bloodPredictorService';
 
 const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
   ABO: ["rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666"],
-  Rh: ["rs590787", "rs676785", "rs28362459", "rs609320", "rs6762788", "rs118204008", "rs606429", "rs11124803", "rs118204007", "rs676185"],
+  Rh: ["rs590787", "rs676785", "rs28362459", "rs609320", "rs6762788", "rs118204008", "rs606429", "rs11124803", "rs118204007", "rs676185", "i4001527"],
   Duffy: ["rs2814778", "rs12075", "rs34599049"],
   Kidd: ["rs1058396", "rs10755968"],
   MNS: ["rs7683365", "rs11273308", "rs2250101"],
@@ -45,6 +45,7 @@ const MARKER_METADATA: Record<string, any> = {
   "rs11124803": { effect: "RHD/RHCE variation", antigen: "Rh" },
   "rs118204007": { effect: "Rh factor marker", antigen: "Rh" },
   "rs676185": { effect: "Rh C/c variation", antigen: "C/c" },
+  "i4001527": { effect: "RHD gene deletion (major determinant of RhD positive/negative status)", antigen: "D" },
   "rs2814778": { effect: "FY*0 — Duffy-null (Malaria resistance)", antigen: "Fy(null)" },
   "rs12075": { effect: "p.Gly42Asp (Fya vs Fyb)", antigen: "Fya/Fyb" },
   "rs34599049": { effect: "FY*X allele", antigen: "Fyx" },
@@ -118,7 +119,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
 
     // Rh Logic leveraging surrogate inferRhFactor predictor
     const genotypeMapForRh = new Map<string, string>();
-    ["rs590787", "rs609320"].forEach(rsid => {
+    Object.keys(rhData.rhSystem).forEach(rsid => {
       const g = getGenotype(rsid);
       if (g && g !== "--") {
         genotypeMapForRh.set(rsid, g);

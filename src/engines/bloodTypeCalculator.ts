@@ -10,6 +10,8 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
   }
   const oMarker = userSnps['rs8176719']; // O vs non-O
   const bMarker = userSnps['rs8176747']; // B-specific variant
+  const a2Marker = userSnps['rs8176746']; // A1 vs A2
+  const abDiffMarker = userSnps['rs8176750']; // A/B differentiation
 
   let phenotype = "Unknown";
   
@@ -23,30 +25,41 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
   }
 
   // 2. Determine ABO Phenotype
-  // Note: 'D' = Deletion (O), 'I' = Insertion (A or B), '-' = Deletion
-  const isHomozygousO = oMarker && (
-    ["DD", "--", "O/O", "-/-", "D/D"].includes(oMarker) ||
-    oMarker.split('').every(c => c === '-' || c === 'D' || c === 'O')
-  );
+  const isOVal = (val: string) => 
+    val && val !== '--' && val !== '00' && val !== 'NN' && (
+      ["DD", "O/O", "-/-", "D/D"].includes(val) ||
+      val.split('').every(c => c === '-' || c === 'D' || c === 'O')
+    );
 
-  if (isHomozygousO) {
-    phenotype = "O";
-  } else {
-    // If not O, check if B markers are present
-    const hasB = bMarker && (bMarker.includes('C'));
-    const isHomozygousB = bMarker === 'CC';
-    
-    if (hasB) {
-      // If they have B and are not Type O, they are either B or AB
-      phenotype = (oMarker === 'II' && isHomozygousB) ? "B" : "AB"; 
+  const hasA = (bMarker && bMarker !== '--' && bMarker.includes('G')) ||
+                (abDiffMarker && abDiffMarker !== '--' && abDiffMarker.includes('A')) ||
+                (a2Marker && a2Marker !== '--' && a2Marker.includes('G'));
+                
+  const hasB = (bMarker && bMarker !== '--' && bMarker.includes('C')) ||
+                (abDiffMarker && abDiffMarker !== '--' && abDiffMarker.includes('G'));
+
+  const isNoCallO = !oMarker || oMarker === '--' || oMarker === '00' || oMarker === 'NN';
+
+  if (!isNoCallO) {
+    if (isOVal(oMarker)) {
+      phenotype = "O";
     } else {
-      phenotype = "A";
+      if (hasA && hasB) phenotype = "AB";
+      else if (hasA) phenotype = "A";
+      else if (hasB) phenotype = "B";
+      else phenotype = "O"; // fallback
     }
+  } else {
+    // If oMarker is missing/no-call but we have A/B indicators
+    if (hasA && hasB) phenotype = "AB";
+    else if (hasA) phenotype = "A";
+    else if (hasB) phenotype = "B";
+    else phenotype = "Unknown";
   }
 
   return {
-    bloodType: `${phenotype}${rhFactor === "Unknown" ? "?" : rhFactor}`,
-    confidence: (oMarker && rhInference.phenotype !== "Unknown") ? "High" : "Low",
+    bloodType: phenotype === "Unknown" ? "Unknown" : `${phenotype}${rhFactor === "Unknown" ? "?" : rhFactor}`,
+    confidence: (oMarker && oMarker !== '--' && oMarker !== '00' && rhInference.phenotype !== "Unknown") ? "High" : "Low",
     details: {
       abo: phenotype,
       rh: rhFactor,

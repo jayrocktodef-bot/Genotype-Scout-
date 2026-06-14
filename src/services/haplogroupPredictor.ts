@@ -229,7 +229,15 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
   };
 }
 
-export function predictMtHaplogroup(userMutations: string[], mtMap: Record<string, string>, currentNode: any, currentPath: string[] = [], currentScore: number = 0): any[] {
+export function predictMtHaplogroup(
+  userMutations: string[], 
+  mtMap: Record<string, string>, 
+  currentNode: any, 
+  currentPath: string[] = [], 
+  currentScore: number = 0,
+  cumulativeMatches: number = 0,
+  cumulativeMismatches: number = 0
+): any[] {
   const nodeMutations = currentNode.mutations || [];
   let matches = 0;
   let mismatches = 0;
@@ -248,20 +256,30 @@ export function predictMtHaplogroup(userMutations: string[], mtMap: Record<strin
 
   const newScore = currentScore + matches - (mismatches * 0.5);
   const newPath = [...currentPath, currentNode.branchName];
+  const newCumulativeMatches = cumulativeMatches + matches;
+  const newCumulativeMismatches = cumulativeMismatches + mismatches;
   
   let results = [{
     name: currentNode.branchName,
     score: newScore,
     path: newPath,
-    matchCount: matches,
-    mismatchCount: mismatches,
+    matchCount: newCumulativeMatches,
+    mismatchCount: newCumulativeMismatches,
     region: currentNode.region,
     description: currentNode.description
   }];
 
   if (currentNode.children) {
     for (const child of currentNode.children) {
-      results = results.concat(predictMtHaplogroup(userMutations, mtMap, child, newPath, newScore));
+      results = results.concat(predictMtHaplogroup(
+        userMutations, 
+        mtMap, 
+        child, 
+        newPath, 
+        newScore, 
+        newCumulativeMatches, 
+        newCumulativeMismatches
+      ));
     }
   }
 
@@ -400,8 +418,13 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   const allResults = predictMtHaplogroup(userMutations, mtMap, MT_DNA_TREE);
   
   allResults.sort((a, b) => {
+    // 1. Prioritize cumulative derived mutation matches to prevent untested sibling branches (L0/L1/L2) from winning over true paths
+    if (b.matchCount !== a.matchCount) {
+      return b.matchCount - a.matchCount;
+    }
+    // 2. Secondary sort by score (which factors in mismatch penalties)
     if (b.score !== a.score) return b.score - a.score;
-    // Tie-breaker: if scores are equal, prefer the shallower path to avoid false-positive deep predictions
+    // 3. Tie-breaker: prefer the shallower path to avoid false-positive deep predictions
     return a.path.length - b.path.length;
   });
 

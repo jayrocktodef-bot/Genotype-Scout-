@@ -98,4 +98,26 @@ describe('European mtDNA Haplogroups Integration', () => {
     expect(result.region).toBe('Western / Northern Europe');
     expect(result.description).toContain('Basques and Saami');
   });
+
+  it('should not fall back to L haplogroups for H1 users who have genotyped ancestral alleles at L0/L1/L2 positions', () => {
+    const mtMap = {
+      // H1 markers (derived)
+      '2706': 'A',
+      '7028': 'A',
+      '3010': 'A',
+      // Sibling L0 markers (genotyped as ancestral - e.g. T146C, C182T)
+      '146': 'T',
+      '182': 'C',
+      '189': 'A',
+      // Sibling L1 markers (genotyped as ancestral)
+      '3666': 'G',
+      '3915': 'G',
+      // Sibling L2 markers (genotyped as ancestral)
+      '143': 'G',
+      '1189': 'G'
+    };
+
+    const result = analyzeMtDNA(mtMap);
+    expect(result.predicted).toBe('H1');
+  });
 });

@@ -17,6 +17,18 @@
         "GA": { "prediction": "Positive", "confidence": 0.75, "traitPhenotype": "Likely Rh+ (Carrier)" },
         "AA": { "prediction": "Negative", "confidence": 0.80, "traitPhenotype": "Likely Rh-" }
       }
+    },
+    "i4001527": {
+      "gene": "RHD",
+      "reference": "I",
+      "alleles": {
+        "II": { "prediction": "Positive", "confidence": 0.99, "traitPhenotype": "Likely Rh+" },
+        "DI": { "prediction": "Positive", "confidence": 0.95, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "ID": { "prediction": "Positive", "confidence": 0.95, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "DD": { "prediction": "Negative", "confidence": 0.99, "traitPhenotype": "Likely Rh-" },
+        "I": { "prediction": "Positive", "confidence": 0.90, "traitPhenotype": "Likely Rh+" },
+        "D": { "prediction": "Negative", "confidence": 0.90, "traitPhenotype": "Likely Rh-" }
+      }
     }
   }
 }

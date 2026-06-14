@@ -54,22 +54,27 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
     P.push(t);
     Z = Z.filter(item => item !== t);
 
-    // Solve least squares for P
-    // For small systems, we can solve A_P^T * A_P * x_P = A_P^T * b
-    // A_P is A[:, P]
-    let A_P: number[][] = A_w.map(row => P.map(idx => row[idx]));
+    // Solve least squares for P: A_P^T * A_P * x_P = A_P^T * b
     let At_A = new Array(P.length).fill(0).map(() => new Array(P.length).fill(0));
     let At_b = new Array(P.length).fill(0);
 
     for (let i = 0; i < P.length; i++) {
-        for (let j = 0; j < P.length; j++) {
+        const idx_i = P[i];
+        // At_A is symmetric; calculate only the lower triangle
+        for (let j = 0; j <= i; j++) {
+            const idx_j = P[j];
+            let sum = 0;
             for (let k = 0; k < m; k++) {
-                At_A[i][j] += A_P[k][i] * A_P[k][j];
+                sum += A_w[k][idx_i] * A_w[k][idx_j];
             }
+            At_A[i][j] = sum;
+            At_A[j][i] = sum;
         }
+        let sum_b = 0;
         for (let k = 0; k < m; k++) {
-            At_b[i] += A_P[k][i] * b_w[k];
+            sum_b += A_w[k][idx_i] * b_w[k];
         }
+        At_b[i] = sum_b;
     }
 
     // Simple Gaussian elimination or matrix inversion for 5x5
