@@ -74,6 +74,106 @@ const MARKER_METADATA: Record<string, any> = {
   "rs311103": { effect: "Regulatory variant for Xg blood group expression", antigen: "Xg" },
 };
 
+// Helper: Compute the ISBT official blood group phenotype from user genotypes
+function getIsbtPhenotype(rsid: string, genotype: string, getGenotype: (rsid: string) => string): string {
+  if (!genotype || genotype === "--" || genotype === "No Call" || genotype === "00") return "Not tested";
+  
+  const g = genotype.toUpperCase().replace(/[\s\/_]/g, '');
+  if (g.length < 2) return "Uncertain";
+
+  switch (rsid) {
+    // --- Duffy System ---
+    case 'rs12075': {
+      const promoter = getGenotype('rs2814778').toUpperCase().replace(/[\s\/_]/g, '');
+      if (promoter === 'CC') {
+        return "Fy(a-b-) [Duffy Null - Malaria Resistant]";
+      }
+      if (g === 'AA' || g === 'TT') return "Fy(a+b-) [Fya Antigen Only]";
+      if (g === 'GG' || g === 'CC') return "Fy(a-b+) [Fyb Antigen Only]";
+      if (g === 'AG' || g === 'GA' || g === 'AT' || g === 'TA' || g === 'CG' || g === 'GC' || g === 'CT' || g === 'TC') return "Fy(a+b+) [Fya & Fyb Antigens Present]";
+      return "Fy (Variable)";
+    }
+    case 'rs2814778': {
+      if (g === 'CC') return "Fy(a-b-) [Erythroid Duffy Expression Silent / Vivax Malaria Resistant]";
+      if (g === 'TT') return "Fy(a/b)+ [Normal Duffy Expression]";
+      return "Fy(a/b)+ [Heterozygous Duffy Null Carrier]";
+    }
+    
+    // --- Kidd System ---
+    case 'rs1058396': {
+      if (g === 'AA' || g === 'TT') return "Jk(a+b-) [Jka Antigen Only]";
+      if (g === 'GG' || g === 'CC') return "Jk(a-b+) [Jkb Antigen Only]";
+      if (g === 'AG' || g === 'GA' || g === 'AT' || g === 'TA' || g === 'CG' || g === 'GC' || g === 'CT' || g === 'TC') return "Jk(a+b+) [Jka & Jkb Antigens Present]";
+      return "Jk (Variable)";
+    }
+
+    // --- Kell System ---
+    case 'rs8176058': {
+      if (g === 'CC' || g === 'GG') return "K+k- [Kell Antigen Present / Cellano Absent (Rare)]";
+      if (g === 'TT' || g === 'AA') return "K-k+ [Kell Absent / Cellano Present (>99%)]";
+      if (g === 'CT' || g === 'TC' || g === 'GA' || g === 'AG') return "K+k+ [Kell & Cellano Antigens Present (~9%)]";
+      return "K/k (Variable)";
+    }
+
+    // --- MNS System ---
+    case 'rs7683365': {
+      if (g === 'CC' || g === 'GG') return "M+N- [M Antigen Only]";
+      if (g === 'TT' || g === 'AA') return "M-N+ [N Antigen Only]";
+      return "M+N+ [M & N Antigens Present]";
+    }
+    case 'rs11273308': {
+      if (g === 'TT' || g === 'AA') return "S+s- [S Antigen Only]";
+      if (g === 'CC' || g === 'GG') return "S-s+ [s Antigen Only]";
+      return "S+s+ [S & s Antigens Present]";
+    }
+
+    // --- Lutheran System ---
+    case 'rs2298661': {
+      if (g === 'TT' || g === 'AA') return "Lu(a+b-) [Lua Antigen Only]";
+      if (g === 'CC' || g === 'GG') return "Lu(a-b+) [Lub Antigen Only]";
+      return "Lu(a+b+) [Lua & Lub Antigens Present]";
+    }
+
+    // --- Diego System ---
+    case 'rs2285603': {
+      if (g === 'TT' || g === 'AA') return "Di(a+b-) [Dia Antigen Only (Indigenous American/East Asian marker)]";
+      if (g === 'CC' || g === 'GG') return "Di(a-b+) [Dib Antigen Only]";
+      return "Di(a+b+) [Dia & Dib Antigens Present]";
+    }
+
+    // --- Colton System ---
+    case 'rs2836269': {
+      if (g === 'GG' || g === 'CC') return "Co(a+b-) [Coa Antigen Only]";
+      if (g === 'AA' || g === 'TT') return "Co(a-b+) [Cob Antigen Only]";
+      return "Co(a+b+) [Coa & Cob Antigens Present]";
+    }
+
+    // --- Dombrock System ---
+    case 'rs11276': {
+      if (g === 'GG' || g === 'CC') return "Do(a+b-) [Doa Antigen Only]";
+      if (g === 'AA' || g === 'TT') return "Do(a-b+) [Dob Antigen Only]";
+      return "Do(a+b+) [Doa & Dob Antigens Present]";
+    }
+
+    // --- Cartwright System ---
+    case 'rs11551124': {
+      if (g === 'CC' || g === 'GG') return "Yt(a+b-) [Yta Antigen Only]";
+      if (g === 'TT' || g === 'AA') return "Yt(a-b+) [Ytb Antigen Only]";
+      return "Yt(a+b+) [Yta & Ytb Antigens Present]";
+    }
+
+    // --- Secretor Status (FUT2) ---
+    case 'rs601338': {
+      if (g === 'AA' || g === 'TT') return "Non-secretor [Salivary antigens absent / Norovirus resistant (se/se)]";
+      if (g === 'GG' || g === 'CC') return "Secretor [Salivary antigens secreted (Se/Se)]";
+      return "Secretor [Salivary antigens secreted (Se/se)]";
+    }
+
+    default:
+      return "Antigen Expressed (ISBT Conformant)";
+  }
+}
+
 export const BloodTypeView = ({ dataset }: { dataset: any }) => {
   const [overrides, setOverrides] = useState<Record<string, string>>({});
 
@@ -191,11 +291,14 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
           }
         }
         
+        const isbtPhenotype = getIsbtPhenotype(rsid, genotype, getGenotype);
+
         return {
           system,
           rsid,
           genotype,
           rawGenotype,
+          isbtPhenotype,
           ...meta
         };
       })
@@ -244,14 +347,15 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
           <span className="text-[10px] font-mono text-slate-400 uppercase">Interactive Sequence Map</span>
         </div>
         <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-200 dark:scroll-thumb-slate-700">
-          <table className="w-full text-left min-w-[600px]">
+          <table className="w-full text-left min-w-[700px]">
             <thead>
               <tr className="bg-slate-50/50 dark:bg-slate-800/50 text-slate-500 text-[10px] font-black uppercase tracking-widest">
                 <th className="px-6 py-4">System</th>
                 <th className="px-6 py-4">Marker</th>
                 <th className="px-6 py-4 text-center">Reference</th>
                 <th className="px-6 py-4">Modification</th>
-                <th className="px-6 py-4">Trait phenotype</th>
+                <th className="px-6 py-4">ISBT Predicted Phenotype</th>
+                <th className="px-6 py-4">Biochemical Variant</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-[11px] font-medium text-slate-700 dark:text-slate-300">
@@ -271,6 +375,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
                       onChange={(e) => handleOverride(m.rsid, e.target.value)} 
                     />
                   </td>
+                  <td className="px-6 py-4 font-bold text-teal-600 dark:text-teal-400">{m.isbtPhenotype}</td>
                   <td className="px-6 py-4 italic opacity-70">{m.effect}</td>
                 </tr>
               ))}
