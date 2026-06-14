@@ -403,7 +403,7 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                     👥 Facebook
                   </a>
                   <a 
-                    href="https://givebutter.com/jequandavis" 
+                    href="https://givebutter.com/genotypescout" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-wider bg-teal-500/10 dark:bg-teal-950/20 backdrop-blur-md border border-teal-500/20 dark:border-teal-500/10 text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 dark:hover:bg-teal-900/30 transition-all shadow-sm"

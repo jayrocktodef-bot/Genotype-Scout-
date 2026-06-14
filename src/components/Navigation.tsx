@@ -181,7 +181,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 Facebook
               </a>
               <a 
-                href="https://givebutter.com/jequandavis" 
+                href="https://givebutter.com/genotypescout" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-wider text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/30 hover:bg-teal-100 dark:hover:bg-teal-900/30 whitespace-nowrap shrink-0"
