@@ -8,7 +8,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useCallback, useRef, useEffect, useMemo, memo, Suspense, lazy } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo, memo, Suspense, lazy, startTransition } from "react";
 import JSZip from 'jszip';
 import { motion, AnimatePresence } from "motion/react";
 import { useRegisterSW } from 'virtual:pwa-register/react';
@@ -2145,6 +2145,12 @@ export default function App() {
     window.location.reload();
   };
 
+  const handleUiModeChange = (mode: 'desktop' | 'classic') => {
+    startTransition(() => {
+      setUiMode(mode);
+    });
+  };
+
   const processFiles = useCallback(async (files: FileList | File[]) => {
     setProcessing(true);
     setError(null);
@@ -2462,7 +2468,7 @@ export default function App() {
         isInstallable={!!installPromptEvent}
         onInstallApp={handleInstallApp}
         uiMode={uiMode}
-        onChangeUiMode={setUiMode}
+        onChangeUiMode={handleUiModeChange}
       />
 
       <input 
@@ -3044,7 +3050,7 @@ export default function App() {
             }}
             onReset={resetApp}
             uiMode={uiMode}
-            onChangeUiMode={setUiMode}
+            onChangeUiMode={handleUiModeChange}
             currentApp={currentApp}
             onOpenApp={setCurrentApp}
           >
