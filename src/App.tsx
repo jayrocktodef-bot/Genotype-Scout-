@@ -2146,9 +2146,14 @@ export default function App() {
   };
 
   const handleUiModeChange = (mode: 'desktop' | 'classic') => {
-    startTransition(() => {
-      setUiMode(mode);
-    });
+    // Defer the heavy transition state update to a new event loop tick.
+    // This allows the event handler to finish immediately and let the browser
+    // paint the button's clicked/active state first, preventing INP block.
+    setTimeout(() => {
+      startTransition(() => {
+        setUiMode(mode);
+      });
+    }, 20);
   };
 
   const processFiles = useCallback(async (files: FileList | File[]) => {
