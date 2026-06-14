@@ -108,7 +108,8 @@ async function runEnginesParallel(
   // ── Try parallel dispatch via nested workers ───────────────────
   if (canSpawnNestedWorkers()) {
     try {
-      const poolSize = Math.min(navigator.hardwareConcurrency || 4, engines.length);
+      // Cap the pool size at 2 to avoid memory pressure from spawning multiple heavy (15MB+) worker threads
+      const poolSize = Math.min(Math.min(navigator.hardwareConcurrency || 4, 2), engines.length);
       const workers: Worker[] = [];
 
       for (let i = 0; i < poolSize; i++) {

@@ -12,7 +12,7 @@ export class WorkerPoolEngine {
   private maxWorkers: number;
 
   constructor() {
-    this.maxWorkers = navigator.hardwareConcurrency || 4;
+    this.maxWorkers = Math.min(navigator.hardwareConcurrency || 4, 4);
   }
 
   private initPool() {
