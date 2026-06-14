@@ -22,23 +22,10 @@ interface ParsedFields {
   genotype: string;  // already uppercased
 }
 
-function fastParseLine(line: string): ParsedFields | null {
-  // Determine delimiter: tab > comma > space
-  let delim: number; // charCode of delimiter
-  const tabIdx = line.indexOf('\t');
-  if (tabIdx !== -1) {
-    delim = 9; // tab
-  } else if (line.indexOf(',') !== -1) {
-    delim = 44; // comma
-  } else if (line.indexOf(' ') !== -1) {
-    delim = 32; // space
-  } else {
-    return null;
-  }
-
+function fastParseLine(line: string, delim: number, delimStr: string): ParsedFields | null {
   // Field 0: rsID / marker ID
   let start = 0;
-  let end = line.indexOf(String.fromCharCode(delim), start);
+  let end = line.indexOf(delimStr, start);
   if (end === -1) return null;
   let field0 = line.substring(start, end);
   // Strip quotes
@@ -59,7 +46,7 @@ function fastParseLine(line: string): ParsedFields | null {
   start = end + 1;
   // Skip consecutive delimiters (e.g. multiple spaces)
   while (start < line.length && line.charCodeAt(start) === delim) start++;
-  end = line.indexOf(String.fromCharCode(delim), start);
+  end = line.indexOf(delimStr, start);
   if (end === -1) return null;
   let field1 = line.substring(start, end);
   if (field1.charCodeAt(0) === 34) field1 = field1.substring(1);
@@ -68,7 +55,7 @@ function fastParseLine(line: string): ParsedFields | null {
   // Field 2: position
   start = end + 1;
   while (start < line.length && line.charCodeAt(start) === delim) start++;
-  end = line.indexOf(String.fromCharCode(delim), start);
+  end = line.indexOf(delimStr, start);
   if (end === -1) end = line.length;
   let field2 = line.substring(start, end);
   if (field2.charCodeAt(0) === 34) field2 = field2.substring(1);
@@ -77,7 +64,7 @@ function fastParseLine(line: string): ParsedFields | null {
   // Field 3+: genotype (may be 1 field "AG" or 2 fields "A" "G")
   start = end < line.length ? end + 1 : end;
   while (start < line.length && line.charCodeAt(start) === delim) start++;
-  let genoEnd = line.indexOf(String.fromCharCode(delim), start);
+  let genoEnd = line.indexOf(delimStr, start);
   if (genoEnd === -1) genoEnd = line.length;
   let field3 = line.substring(start, genoEnd);
   if (field3.charCodeAt(0) === 34) field3 = field3.substring(1);
@@ -89,7 +76,7 @@ function fastParseLine(line: string): ParsedFields | null {
   if (genotype.length === 1 && genoEnd < line.length) {
     let s2 = genoEnd + 1;
     while (s2 < line.length && line.charCodeAt(s2) === delim) s2++;
-    let e2 = line.indexOf(String.fromCharCode(delim), s2);
+    let e2 = line.indexOf(delimStr, s2);
     if (e2 === -1) e2 = line.length;
     let allele2 = line.substring(s2, e2);
     if (allele2.charCodeAt(0) === 34) allele2 = allele2.substring(1);
@@ -274,6 +261,9 @@ export function parseRawDNA(
   let lineStart = 0;
   let matchCount = 0;
 
+  let delim: number | null = null;
+  let delimStr = "";
+
   while (lineStart < totalLength) {
     let lineEnd = text.indexOf('\n', lineStart);
     if (lineEnd === -1) lineEnd = totalLength;
@@ -351,8 +341,23 @@ export function parseRawDNA(
         linesMalformed++;
       }
     } else {
+      if (delim === null) {
+        if (line.indexOf('\t') !== -1) {
+          delim = 9;
+          delimStr = '\t';
+        } else if (line.indexOf(',') !== -1) {
+          delim = 44;
+          delimStr = ',';
+        } else if (line.indexOf(' ') !== -1) {
+          delim = 32;
+          delimStr = ' ';
+        } else {
+          linesMalformed++;
+          continue;
+        }
+      }
       // ── Fast manual field extraction (replaces regex) ──
-      const parsed = fastParseLine(line);
+      const parsed = fastParseLine(line, delim, delimStr);
       if (parsed) {
         matchCount++;
         if (matchCount % 10000 === 0 && onProgress) {
@@ -425,6 +430,8 @@ export async function parseRawDNAStream(
   let format = "Unknown";
   let chip = "Unknown Chip";
   let snpCount = 0;
+  let delim: number | null = null;
+  let delimStr = "";
 
   const totalBytes = file.size;
   let bytesProcessed = 0;
@@ -567,8 +574,23 @@ export async function parseRawDNAStream(
               linesMalformed++;
             }
           } else {
+            if (delim === null) {
+              if (line.indexOf('\t') !== -1) {
+                delim = 9;
+                delimStr = '\t';
+              } else if (line.indexOf(',') !== -1) {
+                delim = 44;
+                delimStr = ',';
+              } else if (line.indexOf(' ') !== -1) {
+                delim = 32;
+                delimStr = ' ';
+              } else {
+                linesMalformed++;
+                continue;
+              }
+            }
             // ── Fast manual field extraction (replaces regex) ──
-            const parsed = fastParseLine(line);
+            const parsed = fastParseLine(line, delim, delimStr);
             if (parsed) {
               const { markerId, chrom, posStr, pos: colPos, genotype } = parsed;
               const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
@@ -661,7 +683,23 @@ export async function parseRawDNAStream(
           linesMalformed++;
         }
       } else {
-        const parsed = fastParseLine(line);
+        if (delim === null) {
+          if (line.indexOf('\t') !== -1) {
+            delim = 9;
+            delimStr = '\t';
+          } else if (line.indexOf(',') !== -1) {
+            delim = 44;
+            delimStr = ',';
+          } else if (line.indexOf(' ') !== -1) {
+            delim = 32;
+            delimStr = ' ';
+          } else {
+            linesMalformed++;
+          }
+        }
+      }
+      if (delim !== null) {
+        const parsed = fastParseLine(line, delim, delimStr);
         if (parsed) {
           const { markerId, chrom, posStr, pos: colPos, genotype } = parsed;
           const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
