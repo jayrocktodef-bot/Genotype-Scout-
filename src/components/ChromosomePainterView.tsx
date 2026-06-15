@@ -60,26 +60,31 @@ export const ChromosomePainterView = ({
     const runLAI = async () => {
       setCalculatingLAI(true);
       try {
+        const rawRsids = dataset.results.map((r: any) => (r.rsid || r.markerId || "").toLowerCase()).filter(Boolean);
+        const { getAimsByRsids } = await import('../services/dbHydrator');
+        const aimsDb = await getAimsByRsids(rawRsids);
+
         const snpsForLAI = dataset.results
-          .filter((r: any) => {
-            if (!r.chrom || r.pos === undefined) return false;
-            const chrom = r.chrom.replace('chr', '').toUpperCase();
-            const n = parseInt(chrom);
-            return !isNaN(n) && n >= 1 && n <= 22;
+          .map((r: any) => {
+            const rsid = (r.rsid || r.markerId || "").toLowerCase();
+            const aim = aimsDb[rsid];
+            const chrom = r.chrom || aim?.chromosome || aim?.chrom;
+            const pos = r.pos !== undefined ? r.pos : (aim?.position !== undefined ? aim.position : aim?.pos);
+            return {
+              rsid,
+              genotype: r.genotype || '--',
+              chrom: chrom ? String(chrom).replace('chr', '').toUpperCase() : '',
+              pos: typeof pos === 'number' ? pos : (pos ? parseInt(pos, 10) : undefined)
+            };
           })
-          .map((r: any) => ({
-            rsid: (r.rsid || r.markerId).toLowerCase(),
-            genotype: r.genotype || '--',
-            chrom: r.chrom,
-            pos: r.pos
-          }));
+          .filter((s: any) => {
+            if (!s.chrom || s.pos === undefined || isNaN(s.pos)) return false;
+            const n = parseInt(s.chrom);
+            return !isNaN(n) && n >= 1 && n <= 22;
+          });
 
         if (snpsForLAI.length === 0) return;
 
-        const rsids = snpsForLAI.map((s: any) => s.rsid);
-        const { getAimsByRsids } = await import('../services/dbHydrator');
-        const aimsDb = await getAimsByRsids(rsids);
-        
         const populations = ['AFR', 'EUR', 'EAS', 'AMR', 'SAS'];
         
         const segments = await workerPoolEngine.runParallelAncestry(

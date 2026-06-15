@@ -57,6 +57,7 @@ import { FamousMatches } from "./components/FamousMatches";
 import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
 import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
 import SubpopulationBento from "./components/SubpopulationBento";
+import { processSubpopulations } from "./components/ancestryOracleLogic";
 import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
@@ -2044,7 +2045,49 @@ export default function App() {
   useEffect(() => {
     const init = async () => {
       const saved = await loadResults();
-      if (saved) setDatasets(saved);
+      if (saved) {
+        let hasChanges = false;
+        const updated = saved.map((ds: any, idx: number) => {
+          // Backward compatibility: reconstruct mergedSnpMap if missing but results exist
+          if (!ds.mergedSnpMap && ds.results) {
+            console.log("Reconstructing mergedSnpMap from results for:", ds.name);
+            const reconstructed: Record<string, string> = {};
+            ds.results.forEach((r: any) => {
+              const rsid = (r.rsid || r.markerId || "").toLowerCase();
+              if (rsid && r.genotype && r.genotype !== '--') {
+                reconstructed[rsid] = r.genotype;
+              }
+            });
+            ds.mergedSnpMap = reconstructed;
+            hasChanges = true;
+          }
+
+          if (ds.mergedSnpMap) {
+            snpMaps.current[idx] = ds.mergedSnpMap;
+          }
+
+          if (ds.analysis && ds.mergedSnpMap) {
+            const isCollapsed = !ds.analysis.subpopulationOracle || 
+              !ds.analysis.subpopulationOracle.admixtureMix || 
+              ds.analysis.subpopulationOracle.admixtureMix.length <= 1 ||
+              (ds.analysis.subpopulationOracle.admixtureMix.length === 1 && 
+               ds.analysis.subpopulationOracle.admixtureMix[0].percentage === 100);
+            
+            if (isCollapsed) {
+              console.log("Recalculating subpopulationOracle for cached dataset:", ds.name);
+              const userGenotypes = Object.entries(ds.mergedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype: genotype as string }));
+              const freshOracle = processSubpopulations(userGenotypes, []);
+              ds.analysis.subpopulationOracle = freshOracle;
+              hasChanges = true;
+            }
+          }
+          return ds;
+        });
+        setDatasets(updated);
+        if (hasChanges) {
+          saveResults(updated);
+        }
+      }
     };
     init();
   }, []);
@@ -2057,7 +2100,8 @@ export default function App() {
     predictedYDNA?: any, 
     predictedMtDNA?: any,
     mergedMtMap?: Record<string, string>,
-    analysis?: any
+    analysis?: any,
+    mergedSnpMap?: Record<string, string>
   }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
@@ -2300,7 +2344,8 @@ export default function App() {
             predictedYDNA: payload.predictedYDNA,
             predictedMtDNA: payload.predictedMtDNA,
             mergedMtMap: payload.mergedMtMap,
-            analysis: payload.analysis
+            analysis: payload.analysis,
+            mergedSnpMap: payload.mergedSnpMap
           });
           setPendingFiles([]);
           setProcessing(false);

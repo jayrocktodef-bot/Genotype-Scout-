@@ -519,7 +519,7 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
     const transformed: Record<string, number> = {};
     let totalTransformed = 0;
     for (const pop in avgSim) {
-        const val = Math.pow(avgSim[pop], 8); // Slightly higher exponent for cleaner resolution
+        const val = Math.pow(avgSim[pop], 4); // Exponent 4 allows minor populations to be represented without collapsing to 0
         transformed[pop] = val;
         totalTransformed += val;
     }

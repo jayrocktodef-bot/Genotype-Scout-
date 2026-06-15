@@ -163,6 +163,25 @@ function damerauLevenshtein(s1: string, s2: string): number {
   return d[len1][len2];
 }
 
+function alignGenotype(genotype: string, targetAlleles: string[]): string {
+  const upperGeno = genotype.toUpperCase();
+  if (upperGeno === '--' || upperGeno.length === 0) return upperGeno;
+
+  const hasDirectMatch = upperGeno.split('').some(char => targetAlleles.includes(char));
+  if (hasDirectMatch) {
+    return upperGeno;
+  }
+
+  const complementMap: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+  const complementGeno = upperGeno.split('').map(b => complementMap[b] || b).join('');
+  const hasCompMatch = complementGeno.split('').some(char => targetAlleles.includes(char));
+  if (hasCompMatch) {
+    return complementGeno;
+  }
+
+  return upperGeno;
+}
+
 // Local high-performance index caching variables
 let isSnpCacheInitialized = false;
 const normalizedKeyToOriginal = new Map<string, string>();
@@ -190,7 +209,7 @@ function initializeSnpCache(databaseKeys: string[]) {
 /**
  * Fuzzy-matching resolver to handle nomenclature variations or typos
  */
-function resolveSnpName(userRsid: string, databaseKeys: string[]): string | null {
+function resolveSnpName(userRsid: string, databaseKeys: string[], allowFuzzy = false): string | null {
   const raw = userRsid.toLowerCase();
   
   // 1. Direct short-circuit matches
@@ -207,6 +226,10 @@ function resolveSnpName(userRsid: string, databaseKeys: string[]): string | null
   const normMatch = normalizedKeyToOriginal.get(cleanUser);
   if (normMatch) {
     return normMatch;
+  }
+
+  if (!allowFuzzy) {
+    return null;
   }
 
   // 3. Tabix-inspired local bucketing fuzzy match using Levenshtein distance <= 2
@@ -228,10 +251,12 @@ function resolveSnpName(userRsid: string, databaseKeys: string[]): string | null
   return bestMatch;
 }
 
+
 // Helper: Project an arbitrary vector to the probability simplex (non-negative and sum to 1)
 function projectToSimplex(v: Float32Array): Float32Array {
   const n = v.length;
-  const sorted = new Float32Array(v).sort().reverse();
+  // MUST use a numerical sort comparator, otherwise JS sort() sorts lexicographically as strings!
+  const sorted = new Float32Array(v).sort((a, b) => b - a);
   let runningSum = 0;
   let rho = 0;
   for (let i = 0; i < n; i++) {
@@ -256,7 +281,7 @@ export function solveAdmixtureProportions(
   userDosages: Float32Array,
   popExpectedDosages: Record<string, Float32Array>,
   aimWeights: Float32Array,
-  numIterations = 150
+  numIterations = 200
 ): Record<string, number> {
   const popCodes = Object.keys(popExpectedDosages);
   if (popCodes.length === 0 || userDosages.length === 0) return {};
@@ -270,33 +295,54 @@ export function solveAdmixtureProportions(
     weights[p] = 1.0 / P;
   }
 
-  // Precompute step size (learning rate) scaling factor to ensure stability
-  const lr = 0.05;
+  // Precompute Hessian diagonals a[p] = sum_i (x_p[i]^2 * weight_i)
+  const a = new Float32Array(P);
+  for (let p = 0; p < P; p++) {
+    const x_p = popExpectedDosages[popCodes[p]];
+    let sumVal = 0;
+    for (let i = 0; i < M; i++) {
+      sumVal += x_p[i] * x_p[i] * aimWeights[i];
+    }
+    a[p] = sumVal || 1.0;
+  }
 
   for (let iter = 0; iter < numIterations; iter++) {
-    const grad = new Float32Array(P);
-    
-    // Compute gradient: grad[p] = - sum_i (userDosage[i] - predicted[i]) * popExpected[p][i] * weight[i]
-    for (let i = 0; i < M; i++) {
-      let predicted = 0;
-      for (let p = 0; p < P; p++) {
-        predicted += weights[p] * popExpectedDosages[popCodes[p]][i];
-      }
-      const diff = userDosages[i] - predicted;
-      
-      for (let p = 0; p < P; p++) {
-        grad[p] -= diff * popExpectedDosages[popCodes[p]][i] * aimWeights[i];
-      }
-    }
-
-    // Gradient descent step
-    const nextWeights = new Float32Array(P);
     let maxDelta = 0;
-    for (let p = 0; p < P; p++) {
-      nextWeights[p] = weights[p] - lr * grad[p];
+    
+    // Predicted user dosage based on current weights
+    const predicted = new Float32Array(M);
+    for (let i = 0; i < M; i++) {
+      for (let p = 0; p < P; p++) {
+        predicted[i] += weights[p] * popExpectedDosages[popCodes[p]][i];
+      }
     }
 
-    // Project nextWeights back onto the simplex (non-negative and sum to 1)
+    const nextWeights = new Float32Array(weights);
+
+    // Gauss-Seidel updates for each population weight
+    for (let p = 0; p < P; p++) {
+      let G_p = 0;
+      const x_p = popExpectedDosages[popCodes[p]];
+      
+      for (let i = 0; i < M; i++) {
+        const diff = userDosages[i] - predicted[i];
+        G_p -= diff * x_p[i] * aimWeights[i];
+      }
+      
+      const oldWeight = weights[p];
+      const newWeight = Math.max(0, oldWeight - G_p / a[p]);
+      nextWeights[p] = newWeight;
+      
+      const delta = newWeight - oldWeight;
+      if (delta !== 0) {
+        // Immediately update predicted values for the rest of the coordinate updates
+        for (let i = 0; i < M; i++) {
+          predicted[i] += delta * x_p[i];
+        }
+      }
+    }
+
+    // Project onto probability simplex (non-negative and sum to 1)
     const projected = projectToSimplex(nextWeights);
     for (let p = 0; p < P; p++) {
       maxDelta = Math.max(maxDelta, Math.abs(projected[p] - weights[p]));
@@ -304,7 +350,7 @@ export function solveAdmixtureProportions(
     weights = projected;
 
     // Early convergence check
-    if (maxDelta < 0.0005) {
+    if (maxDelta < 0.0001) {
       break;
     }
   }
@@ -355,7 +401,7 @@ export function processSubpopulations(
     }
   }
 
-  const breakdown: SubpopBreakdown[] = [];
+  let breakdown: SubpopBreakdown[] = [];
   const unmappedAims: AIM[] = [];
   const usedAimsSet = new Set<string>();
 
@@ -379,6 +425,21 @@ export function processSubpopulations(
       const chrom = meta?.chrom || aim.chromosome;
       const position = meta?.pos || aim.position;
       
+      // Align raw genotype to target alleles using base-complementation if needed
+      const targetAlleles: string[] = [];
+      const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()] ||
+                     (graf10kIndex as any)[dbKey] || (graf10kIndex as any)[dbKey.toUpperCase()] || (graf10kIndex as any)[dbKey.toLowerCase()];
+      if (marker) {
+        targetAlleles.push(marker.ref.toUpperCase(), marker.alt.toUpperCase());
+      } else if (aim.alleles) {
+        if (Array.isArray(aim.alleles)) {
+          targetAlleles.push(...aim.alleles.map((a: string) => a.toUpperCase()));
+        } else if (typeof aim.alleles === 'string') {
+          targetAlleles.push(...aim.alleles.toUpperCase().split(''));
+        }
+      }
+      const alignedGenotype = alignGenotype(genotype, targetAlleles);
+      
       let popVarianceWeight = 1.5;
       if (aim.frequencies) {
         const freqs = Object.values(aim.frequencies) as number[];
@@ -390,7 +451,7 @@ export function processSubpopulations(
       }
       
       const entry = {
-        genotype,
+        genotype: alignedGenotype,
         gene: aim.gene,
         weight: (aim.weight || 1.0) * popVarianceWeight
       };
@@ -398,7 +459,7 @@ export function processSubpopulations(
       if (chrom && typeof position === 'number' && !isNaN(position)) {
         const chromStr = String(chrom).toUpperCase();
         if (!chromGroups[chromStr]) chromGroups[chromStr] = [];
-        chromGroups[chromStr].push({ rsid, dbKey: dbKey.toLowerCase(), position, genotype, aim });
+        chromGroups[chromStr].push({ rsid, dbKey: dbKey.toLowerCase(), position, genotype: alignedGenotype, aim });
       } else {
         // If coordinate metadata is missing, fallback to including it directly
         prunedGenotypesMap.set(rsid, entry);
@@ -649,7 +710,8 @@ export function processSubpopulations(
       // Uniform penalty across all populations — previously EUR had a lower penalty (0.12)
       // which gave European populations a systematic scoring advantage over all others.
       const penaltyFactor = 0.18;
-      const adjustedDistance = baseDistance * (1.0 + penaltyFactor * violations);
+      const normalizedViolations = violations / (M / 100.0);
+      const adjustedDistance = baseDistance * (1.0 + penaltyFactor * normalizedViolations);
       popDistances.set(popCode, adjustedDistance);
     } else {
       popDistances.set(popCode, 1.0); // Insufficient markers fallback
@@ -689,19 +751,18 @@ export function processSubpopulations(
   // creating a positive-feedback loop that obliterated realistic admixture proportions.
   // NNLS (Component 4 below) handles admixture proportions; the breakdown list
   // is now sorted purely by distance with no post-hoc adjustments.
+  const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number }> = [];
   const MIN_MARKERS = 5; // Lower from 10 to improve coverage for underrepresented populations
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
     if (markersCompared >= MIN_MARKERS) {
-      const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (finalDistance * 2.2)) * 100));
       const popName = POPULATION_NAMES_MAP[popCode] || popCode;
 
-      breakdown.push({
+      rawBreakdown.push({
         subpop: popName,
         distance: finalDistance,
-        similarityScore,
         markersCompared,
         count: markersCompared
       });
@@ -709,7 +770,20 @@ export function processSubpopulations(
   }
 
   // Sort breakdown list so closest proximity matches are first
-  breakdown.sort((a, b) => a.distance - b.distance);
+  rawBreakdown.sort((a, b) => a.distance - b.distance);
+
+  const minDist = rawBreakdown.length > 0 ? rawBreakdown[0].distance : 0.0;
+  breakdown = rawBreakdown.map(item => {
+    const uiDistance = 0.05 + (item.distance - minDist);
+    const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (uiDistance * 2.2)) * 100));
+    return {
+      subpop: item.subpop,
+      distance: item.distance,
+      similarityScore,
+      markersCompared: item.markersCompared,
+      count: item.count
+    };
+  });
   
   let topMatch = 'Unknown';
   if (breakdown.length > 0) {
@@ -738,7 +812,7 @@ export function processSubpopulations(
 
   // --- COMPONENT 4: Deconvolution Admixture Modeling (NNLS Solver) ---
   // Compile the collective list of reference alleles and user genotypes
-  const activeSnpKeys = Array.from(prunedGenotypesMap.keys());
+  const activeSnpKeys = Array.from(usedAimsSet);
   const activeM = activeSnpKeys.length;
 
   const nnlsWeights = new Float32Array(activeM);

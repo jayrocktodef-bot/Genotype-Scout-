@@ -114,12 +114,12 @@ const QUADRUPLE_WEIGHT_MARKERS = new Set([
   "rs60910144", "rs16892766", "rs7712345", "rs11122334", "rs10456272", "rs5857297"
 ]);
 
-// Viterbi decoding for HMM
+// Viterbi decoding for HMM with physical recombination modeling and Laplace smoothing
 function viterbi(
   observations: number[],
   frequencies: number[][], // [marker][continent]
   numStates: number,
-  recombinationRate = 0.0001
+  positions: number[] // Physical chromosomal positions in base pairs
 ): number[] {
   const numMarkers = observations.length;
   if (numMarkers === 0) return [];
@@ -127,31 +127,41 @@ function viterbi(
   const viterbiTable = new Array(numStates).fill(0).map(() => new Array(numMarkers).fill(0));
   const backpointer = new Array(numStates).fill(0).map(() => new Array(numMarkers).fill(0));
 
+  // Effective panel sample size for Laplace frequency smoothing prior
+  const N_PRIOR = 100;
+
+  // Helper: Laplace-smoothed emission probability calculation
+  const getSmoothedEmission = (obs: number, p: number) => {
+    // Smooth boundary frequencies
+    const smoothedP = (p * N_PRIOR + 1) / (N_PRIOR + 2);
+    if (obs === 2) return smoothedP * smoothedP;
+    if (obs === 1) return 2 * smoothedP * (1 - smoothedP);
+    return (1 - smoothedP) * (1 - smoothedP);
+  };
+
   // Initialization
   for (let i = 0; i < numStates; i++) {
     const p = frequencies[0][i];
     const obs = observations[0];
-    let probOfObs = 0.01;
-    if (obs === 2) probOfObs = p * p;
-    else if (obs === 1) probOfObs = 2 * p * (1 - p);
-    else if (obs === 0) probOfObs = (1 - p) * (1 - p);
-    viterbiTable[i][0] = Math.log(1 / numStates) + Math.log(Math.max(0.001, probOfObs));
+    const probOfObs = getSmoothedEmission(obs, p);
+    viterbiTable[i][0] = Math.log(1 / numStates) + Math.log(Math.max(0.0001, probOfObs));
   }
 
   // Recursion
   for (let t = 1; t < numMarkers; t++) {
     const obs = observations[t];
+    
+    // Calculate physical recombination distance-scaled rate: 1 cM per Megabase (r = 1e-8)
+    const distBp = Math.max(1, positions[t] - positions[t - 1]);
+    const recombinationRate = 0.5 * (1 - Math.exp(-2.0 * 1e-8 * distBp));
+    
     for (let i = 0; i < numStates; i++) {
       let maxProb = -Infinity;
       let prevStateIndex = 0;
       
       const p = frequencies[t][i];
-      let probOfObs = 0.01;
-      if (obs === 2) probOfObs = p * p;
-      else if (obs === 1) probOfObs = 2 * p * (1 - p);
-      else if (obs === 0) probOfObs = (1 - p) * (1 - p);
-      
-      const emission = Math.log(Math.max(0.001, probOfObs));
+      const probOfObs = getSmoothedEmission(obs, p);
+      const emission = Math.log(Math.max(0.0001, probOfObs));
 
       for (let j = 0; j < numStates; j++) {
         const transition = Math.log((i === j) ? (1 - recombinationRate) : (recombinationRate / (numStates - 1)));
@@ -536,7 +546,10 @@ export function runAncestryInference(
       const afrIndex = continentsToScore.indexOf('African');
       if (afrIndex !== -1) damping[afrIndex] = 1.3; // Moderate uplift for African (was 1.5)
 
-      const pathIndices = viterbi(windowGenotypes, windowFrequencies, continentsToScore.length);
+      // Extract physical positions of window markers
+      const windowPositions = window.map(m => m.pos || 0);
+
+      const pathIndices = viterbi(windowGenotypes, windowFrequencies, continentsToScore.length, windowPositions);
       const windowProportions = new Array(continentsToScore.length).fill(0);
       pathIndices.forEach(idx => windowProportions[idx] += 1 / pathIndices.length);
       

@@ -1,5 +1,28 @@
 import React, { useMemo, useRef, useImperativeHandle, forwardRef, useEffect, useState } from 'react';
 
+// Canvas roundRect Polyfill for compatibility with older browsers/webviews
+if (typeof window !== 'undefined' && typeof HTMLCanvasElement !== 'undefined') {
+  const Canvas2D = CanvasRenderingContext2D.prototype as any;
+  if (!Canvas2D.roundRect) {
+    Canvas2D.roundRect = function (x: number, y: number, w: number, h: number, r: number | number[]) {
+      const radii = Array.isArray(r) ? r : [r];
+      const r0 = radii[0] || 0;
+      this.beginPath();
+      this.moveTo(x + r0, y);
+      this.lineTo(x + w - r0, y);
+      this.quadraticCurveTo(x + w, y, x + w, y + r0);
+      this.lineTo(x + w, y + h - r0);
+      this.quadraticCurveTo(x + w, y + h, x + w - r0, y + h);
+      this.lineTo(x + r0, y + h);
+      this.quadraticCurveTo(x, y + h, x, y + h - r0);
+      this.lineTo(x, y + r0);
+      this.quadraticCurveTo(x, y, x + r0, y);
+      this.closePath();
+      return this;
+    };
+  }
+}
+
 const CHROMOSOME_LENGTHS: Record<string, number> = {
   "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259, "6": 170805979, "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422, "11": 135086622, "12": 133851895, "13": 115169878, "14": 107349540, "15": 102520552, "16": 90354753, "17": 83257441, "18": 80373285, "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895
 };

@@ -13,13 +13,17 @@
 ## ✨ What's New in V4.5
 
 - **True Multi-Worker Parallelism** — Parallelized all 11 CPU-bound analysis engines using a dynamically dispatched Web Worker pool (`navigator.hardwareConcurrency`), achieving a 2-3x speedup on post-parsing analysis.
+- **Improved HMM Local Ancestry Inference** — Overhauled the Hidden Markov Model (HMM) Viterbi chromosome painter to model transition rates dynamically using physical base-pair distances (1 cM/Mb scale) and smoothed boundary emissions using a Laplace prior.
+- **Ancestry-Aware Genotype Imputation** — Upgraded the targeted imputation engine to run regional cohort detection (sensing Native American, African, East Asian, and European diagnostic signals) to apply ancestry-aware imputation frequencies instead of a flat global average.
+- **Expanded Regional Anchor AIMs** — Updated the core Ancestry Informative Markers database (Seldin 128 / FROG-kb panels) to incorporate highly diagnostic anchors for underrepresented Oceanian, Native American, and MENA cohorts.
+- **Fixed NNLS Admixture Proportions** — Resolved the single-population deconvolution collapse by implementing a stable numerical sort in the simplex projection logic.
 - **Optimized Worker Payloads** — Replaced expensive global JSON serialization with direct targeted payload sanitization, removing execution bottlenecks.
 - **Real-Time Progress Streaming** — Added streaming progress events per engine, keeping the UI fully interactive and informative during the post-parsing phase.
 - **Dark / Light Mode Toggle** — Switch freely between themes via the navbar Sun/Moon button. Light mode is the default.
 - **PWA Support** — Install Genotype Scout to your home screen (Android, iOS, desktop). Works offline after the first load.
 - **NNLS Admixture Solver** — Replaced least-squares with a Lawson-Hanson Non-Negative Least Squares engine for more accurate population mixing proportions.
 - **Dynamic Strand Alignment** — Automatic complement-based flip correction ensures markers on the reverse strand are matched correctly.
-- **LD Pruning** — 250 kb sliding-window linkage disequilibrium pruning removes redundant markers for cleaner ancestry signals.
+- **LD Pruning** — 50 kb sliding-window linkage disequilibrium pruning removes redundant markers for cleaner ancestry signals.
 - **Haplogroup Consensus Validation** — Flanking SNP checks allow bypassing ancestral rejection when sufficient descendant evidence exists.
 - **Tactile UI Micro-interactions** — Hover lifts, press scaling, and smooth transitions across all tabs and buttons.
 - **Streaming Tabs Navigation** — Horizontal scrolling navigation bar replacing the mobile hamburger menu, ensuring immediate access to all tools.

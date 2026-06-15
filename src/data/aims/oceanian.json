@@ -1,4 +1,29 @@
 {
+  "rs10456286": {
+    "rsid": "rs10456286",
+    "chromosome": "6",
+    "position": 23767741,
+    "region": "Oceanian",
+    "color": "#E67E22",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0.3,
+      "EUR": 0.05,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "Unknown",
+    "trait": "Hawaiian Ancestry Marker",
+    "description": "Ancestry Informative Marker for Native Hawaiian populations."
+  },
   "rs10456291": {
     "rsid": "rs10456291",
     "chromosome": "6",
