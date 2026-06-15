@@ -1,4 +1,5 @@
 import hoReferenceKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
+import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
 
 export interface PopulationProximity {
   population: string;
@@ -29,17 +30,23 @@ export function calculatePopulationProximity(userSnps: Record<string, string>): 
       
       if (!userCall || userCall.length !== 2) continue;
 
-      // Dosage Calculation
-      // 0.5 for hetero, 1.0 or 0.0 for homo based on refFreq proximity
+      // Precise dosage calculation mapping alt/ref alleles using master_aims_normalized
+      const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
       let userDosage = 0.0;
-      const c0 = userCall[0];
-      const c1 = userCall[1];
-      
-      if (c0 !== c1) {
-        userDosage = 0.5;
+      const c0 = userCall[0].toUpperCase();
+      const c1 = userCall[1].toUpperCase();
+
+      if (marker) {
+        const alt = marker.alt.toUpperCase();
+        if (c0 === alt) userDosage += 0.5;
+        if (c1 === alt) userDosage += 0.5;
       } else {
-        // Approximate homozygous dosage
-        userDosage = refFreq > 0.5 ? 1.0 : 0.0; 
+        // Fallback to frequency heuristic if marker details aren't in index
+        if (c0 !== c1) {
+          userDosage = 0.5;
+        } else {
+          userDosage = refFreq > 0.5 ? 1.0 : 0.0; 
+        }
       }
 
       const diff = userDosage - refFreq;
