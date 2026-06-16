@@ -424,6 +424,21 @@ export function processSubpopulations(
       const meta = snpMetaMap?.[rsid] || snpMetaMap?.[rsid.toUpperCase()] || snpMetaMap?.[dbKey] || snpMetaMap?.[dbKey.toUpperCase()];
       const chrom = meta?.chrom || aim.chromosome;
       const position = meta?.pos || aim.position;
+
+      // Filter out Y-DNA, mtDNA, and sex chromosomes (X/Y) to isolate deconvolution from haplogroups
+      const chromStr = String(chrom || '').toUpperCase().replace('CHR', '');
+      const isSexOrMt = chromStr === 'X' || chromStr === 'Y' || chromStr === 'MT' || chromStr === 'M' ||
+                        chromStr === '23' || chromStr === '24' || chromStr === '25' || chromStr === '26';
+      
+      const isSexOrMtKey = (k: string) => {
+        const kl = k.toLowerCase();
+        return kl.startsWith('chry_') || kl.startsWith('chrx_') || kl.startsWith('chrmt_') || kl.startsWith('chrm_') ||
+               kl.startsWith('chr23_') || kl.startsWith('chr24_') || kl.startsWith('chr25_') || kl.startsWith('chr26_');
+      };
+
+      if (isSexOrMt || isSexOrMtKey(rsid) || isSexOrMtKey(dbKey)) {
+        continue;
+      }
       
       // Align raw genotype to target alleles using base-complementation if needed
       const targetAlleles: string[] = [];

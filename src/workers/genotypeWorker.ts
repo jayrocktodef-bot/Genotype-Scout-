@@ -65,6 +65,46 @@ const ENGINE_LABELS: Record<string, string> = {
   calculateComprehensiveScores: 'Running comprehensive engine',
 };
 
+// ── Helper to filter out Y-DNA, mtDNA, and sex chromosomes (X/Y) to isolate deconvolution from haplogroups ──
+function filterAutosomalSNPs(
+  snpMap: Record<string, string>,
+  snpMetaMap: Record<string, { chrom: string; pos: number }>
+): { filteredSnpMap: Record<string, string>; filteredMetaMap: Record<string, { chrom: string; pos: number }> } {
+  const filteredSnpMap: Record<string, string> = {};
+  const filteredMetaMap: Record<string, { chrom: string; pos: number }> = {};
+
+  const isSexOrMt = (chrom: string): boolean => {
+    const c = String(chrom).toUpperCase().replace('CHR', '');
+    return c === 'X' || c === 'Y' || c === 'MT' || c === 'M' || c === '23' || c === '24' || c === '25' || c === '26';
+  };
+
+  const isSexOrMtKey = (key: string): boolean => {
+    const k = key.toLowerCase();
+    return k.startsWith('chry_') ||
+           k.startsWith('chrx_') ||
+           k.startsWith('chrmt_') ||
+           k.startsWith('chrm_') ||
+           k.startsWith('chr23_') ||
+           k.startsWith('chr24_') ||
+           k.startsWith('chr25_') ||
+           k.startsWith('chr26_');
+  };
+
+  for (const [rsid, genotype] of Object.entries(snpMap)) {
+    if (isSexOrMtKey(rsid)) continue;
+
+    const meta = snpMetaMap[rsid];
+    if (meta && isSexOrMt(meta.chrom)) continue;
+
+    filteredSnpMap[rsid] = genotype;
+    if (meta) {
+      filteredMetaMap[rsid] = meta;
+    }
+  }
+
+  return { filteredSnpMap, filteredMetaMap };
+}
+
 // ── Parallel analysis engine dispatcher ──────────────────────────────
 // Fans out CPU-bound analysis tasks across real worker threads.
 // Falls back to sequential execution if nested workers aren't supported.
@@ -86,6 +126,8 @@ function canSpawnNestedWorkers(): boolean {
 async function runEnginesParallel(
   imputedSnpMap: Record<string, string>,
   mergedSnpMetaMap: Record<string, { chrom: string; pos: number }>,
+  autosomalSnpMap: Record<string, string>,
+  autosomalMetaMap: Record<string, { chrom: string; pos: number }>,
   onEngineProgress: (completed: number, total: number, label: string) => void
 ): Promise<Record<string, any>> {
   const engines = [
@@ -171,11 +213,15 @@ async function runEnginesParallel(
           worker.addEventListener('message', onMsg);
           worker.addEventListener('error', onErr);
 
+          const isDeconvolutionEngine = engine !== 'matchSNPs' && engine !== 'matchHealthAndWellness' && engine !== 'calculateMarkerBenchmarks';
+          const targetSnpMap = isDeconvolutionEngine ? autosomalSnpMap : imputedSnpMap;
+          const targetMetaMap = isDeconvolutionEngine ? autosomalMetaMap : mergedSnpMetaMap;
+
           worker.postMessage({
             taskId,
             engine,
-            snpMap: imputedSnpMap,
-            snpMetaMap: engine === 'matchSNPs' ? mergedSnpMetaMap : undefined,
+            snpMap: targetSnpMap,
+            snpMetaMap: engine === 'matchSNPs' ? targetMetaMap : undefined,
           });
         };
 
@@ -195,17 +241,19 @@ async function runEnginesParallel(
   }
 
   // ── Sequential fallback (Safari, or nested worker failure) ─────
-  return runEnginesSequential(imputedSnpMap, mergedSnpMetaMap, onEngineProgress);
+  return runEnginesSequential(imputedSnpMap, mergedSnpMetaMap, autosomalSnpMap, autosomalMetaMap, onEngineProgress);
 }
 
 // ── Sequential fallback ──────────────────────────────────────────────
 async function runEnginesSequential(
   imputedSnpMap: Record<string, string>,
   mergedSnpMetaMap: Record<string, { chrom: string; pos: number }>,
+  autosomalSnpMap: Record<string, string>,
+  autosomalMetaMap: Record<string, { chrom: string; pos: number }>,
   onEngineProgress: (completed: number, total: number, label: string) => void
 ): Promise<Record<string, any>> {
   const results: Record<string, any> = {};
-  const snpMapForEngine = new Map(Object.entries(imputedSnpMap));
+  const autosomalSnpMapForEngine = new Map(Object.entries(autosomalSnpMap));
   let completed = 0;
   const total = 11;
 
@@ -216,16 +264,16 @@ async function runEnginesSequential(
   };
 
   await run('matchSNPs', () => matchSNPs(imputedSnpMap, mergedSnpMetaMap));
-  await run('calculateAncientAdmixture', () => calculateAncientAdmixture(imputedSnpMap));
-  await run('calculateIndividualMatches', () => calculateIndividualMatches(imputedSnpMap));
-  await run('calculateFamousMatches', () => calculateFamousMatches(imputedSnpMap));
+  await run('calculateAncientAdmixture', () => calculateAncientAdmixture(autosomalSnpMap));
+  await run('calculateIndividualMatches', () => calculateIndividualMatches(autosomalSnpMap));
+  await run('calculateFamousMatches', () => calculateFamousMatches(autosomalSnpMap));
   await run('matchHealthAndWellness', () => matchHealthAndWellness(imputedSnpMap));
-  await run('calculatePopulationProximityOptimized', () => calculatePopulationProximityOptimized(snpMapForEngine));
+  await run('calculatePopulationProximityOptimized', () => calculatePopulationProximityOptimized(autosomalSnpMapForEngine));
   await run('calculateMarkerBenchmarks', () => calculateMarkerBenchmarks(imputedSnpMap));
-  await run('calculateMDLPK16Scores', () => calculateMDLPK16Scores(imputedSnpMap));
-  await run('calculateRegionalScores', () => calculateRegionalScores(imputedSnpMap));
-  await run('identifyMicroHapSignatures', () => identifyMicroHapSignatures(imputedSnpMap));
-  await run('calculateComprehensiveScores', () => calculateComprehensiveScores(imputedSnpMap));
+  await run('calculateMDLPK16Scores', () => calculateMDLPK16Scores(autosomalSnpMap));
+  await run('calculateRegionalScores', () => calculateRegionalScores(autosomalSnpMap));
+  await run('identifyMicroHapSignatures', () => identifyMicroHapSignatures(autosomalSnpMap));
+  await run('calculateComprehensiveScores', () => calculateComprehensiveScores(autosomalSnpMap));
 
   onEngineProgress(total, total, 'All engines complete');
   return results;
@@ -235,6 +283,8 @@ async function runEnginesSequential(
 async function runGenotypeScout(
     imputedSnpMap: Record<string, string>,
     mergedSnpMetaMap: Record<string, { chrom: string, pos: number }>,
+    autosomalSnpMap: Record<string, string>,
+    autosomalMetaMap: Record<string, { chrom: string, pos: number }>,
     names: string[],
     sab: any
 ) {
@@ -242,6 +292,8 @@ async function runGenotypeScout(
     const engineResults = await runEnginesParallel(
       imputedSnpMap,
       mergedSnpMetaMap,
+      autosomalSnpMap,
+      autosomalMetaMap,
       (completed, total, label) => {
         if (sab) {
           const progressArray = new Int32Array(sab);
@@ -378,16 +430,18 @@ self.onmessage = async (e: MessageEvent) => {
       self.postMessage({ type: 'PROGRESS', payload: { step: "Engaging Bayesian Ancestry Engine..." } });
     }
     
+    const { filteredSnpMap: autosomalSnpMap, filteredMetaMap: autosomalMetaMap } = filterAutosomalSNPs(imputedSnpMap, mergedSnpMetaMap);
+
     // Orchestration — now fans out across multiple workers
-    const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, names, sab);
+    const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, autosomalSnpMap, autosomalMetaMap, names, sab);
     
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
     const predictedMtDNA = analyzeMtDNA(mergedMtMap);
     
-    const userGenotypes = Object.entries(imputedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
+    const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
-    const subpopulationOracle = processSubpopulations(userGenotypes, [], sampleId, mergedSnpMetaMap);
-    const naiveEstimates = calculateNaiveEthnicity(imputedSnpMap); 
+    const subpopulationOracle = processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap);
+    const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
     
     if (sab) { 
       Atomics.store(new Int32Array(sab), 3, 3); 
