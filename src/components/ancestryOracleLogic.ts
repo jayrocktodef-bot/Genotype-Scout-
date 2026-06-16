@@ -75,9 +75,9 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'ACB': 'African Caribbean / Barbados (ACB)',
   // gnomAD populations
   'AFR_gnomAD': 'African (gnomAD)',
-  'AMI_gnomAD': 'Amish (gnomAD)',
+  'AMI_gnomAD': 'Amish / Germanic European (AMI)',
   'AMR_gnomAD': 'Latino / Admixed American (gnomAD)',
-  'ASJ_gnomAD': 'Ashkenazi Jewish (gnomAD)',
+  'ASJ_gnomAD': 'Ashkenazi Jewish (ASJ)',
   'EAS_gnomAD': 'East Asian (gnomAD)',
   'FIN_gnomAD': 'Finnish (gnomAD)',
   'MID_gnomAD': 'Middle Eastern (gnomAD)',
