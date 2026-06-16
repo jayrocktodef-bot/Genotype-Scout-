@@ -4,6 +4,7 @@ import {
   Sparkles, Send, Key, RefreshCw, Trash2, Info, 
   ChevronDown, ChevronUp, Check, AlertCircle, Download, Bot
 } from 'lucide-react';
+import { calculateArchaicIntrogression } from '../lib/AncientAdmixtureCalculator';
 
 interface AIGenomicAgentProps {
   dataset: any;
@@ -190,8 +191,29 @@ You can ask me questions like:
         });
       summary += `\n`;
     }
+
+    // 7. Archaic Hominin Introgression
+    if (userSnps && Object.keys(userSnps).length > 0) {
+      try {
+        const archaic = calculateArchaicIntrogression(userSnps);
+        summary += `Archaic Hominin Introgression:\n`;
+        summary += `- Neanderthal/Denisovan Allele Index: ${archaic.score.toFixed(1)}%\n`;
+        summary += `- Archaic Alleles Detected: ${archaic.carriedAlleles} out of ${archaic.comparedMarkers * 2} tested alleles\n`;
+        
+        const carriers = archaic.details.filter(d => d.hasDerived);
+        if (carriers.length > 0) {
+          summary += `- Introgressed Variants Carried:\n`;
+          carriers.forEach(c => {
+            summary += `  * Gene ${c.gene} (${c.rsid}): ${c.trait} (Genotype: ${c.userGenotype})\n`;
+          });
+        }
+        summary += `\n`;
+      } catch (e) {
+        console.error('Failed to parse archaic introgression context:', e);
+      }
+    }
     
-    // 7. Non-clinical traits (Secretor, Blood Type)
+    // 8. Non-clinical traits (Secretor, Blood Type)
     const traits = autosomalMarkers?.filter(m => m.category === 'Appearance' || m.category === 'Identity' || m.category === 'Lifestyle') || [];
     if (traits.length > 0) {
       summary += `Predicted Non-Clinical Traits:\n`;

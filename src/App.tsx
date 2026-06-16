@@ -73,7 +73,7 @@ import { ChromosomePainterView } from "./components/ChromosomePainterView";
 import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
 import { EngineAncestryOracle } from "./components/EngineAncestryOracle";
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
-import { calculateAncientAdmixture, calculateIndividualMatches } from "./lib/AncientAdmixtureCalculator";
+import { calculateAncientAdmixture, calculateIndividualMatches, calculateArchaicIntrogression } from "./lib/AncientAdmixtureCalculator";
 import { calculateHistoricalClusterMatches } from "./engines/ancestry/historicalClusterEngine";
 import { calculateProAncestry } from "./engines/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
@@ -88,6 +88,7 @@ import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 import { AIGenomicAgent } from "./components/AIGenomicAgent";
+import { ArchaicIntrogressionView } from "./components/ArchaicIntrogressionView";
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "4.0.0-beta";
@@ -2432,6 +2433,14 @@ export default function App() {
     return calculateAncientAdmixture(snpMap);
   }, [datasets, activeDatasetIndex]);
 
+  const archaicIntrogression = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (dataset?.analysis?.archaicIntrogression) return dataset.analysis.archaicIntrogression;
+    const snpMap = snpMaps.current[activeDatasetIndex];
+    if (!snpMap) return null;
+    return calculateArchaicIntrogression(snpMap);
+  }, [datasets, activeDatasetIndex]);
+
   const individualMatches = useMemo(() => {
     const dataset = datasets[activeDatasetIndex];
     if (dataset?.analysis?.individualMatches) return dataset.analysis.individualMatches;
@@ -3034,13 +3043,16 @@ export default function App() {
                         </div>
 
                         {activeAncientSubTab === 'admixture' ? (
-                          <AncientAncestryOracle 
-                            results={ancientAdmixture} 
-                            title="Deep Time Oracle" 
-                            subtitle="Ancient Admixture & Paleolithic Affinity"
-                            type="admixture"
-                            onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                          />
+                          <div className="space-y-8 animate-fade-in">
+                            <AncientAncestryOracle 
+                              results={ancientAdmixture} 
+                              title="Deep Time Oracle" 
+                              subtitle="Ancient Admixture & Paleolithic Affinity"
+                              type="admixture"
+                              onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                            />
+                            <ArchaicIntrogressionView results={archaicIntrogression} />
+                          </div>
                         ) : (
                           <AncientAncestryOracle 
                             results={individualMatches} 
@@ -3228,13 +3240,16 @@ export default function App() {
                 </div>
 
                 {activeAncientSubTab === 'admixture' ? (
-                  <AncientAncestryOracle 
-                    results={ancientAdmixture} 
-                    title="Deep Time Oracle" 
-                    subtitle="Ancient Admixture & Paleolithic Affinity"
-                    type="admixture"
-                    onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                  />
+                  <div className="space-y-8 animate-fade-in">
+                    <AncientAncestryOracle 
+                      results={ancientAdmixture} 
+                      title="Deep Time Oracle" 
+                      subtitle="Ancient Admixture & Paleolithic Affinity"
+                      type="admixture"
+                      onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                    />
+                    <ArchaicIntrogressionView results={archaicIntrogression} />
+                  </div>
                 ) : (
                   <AncientAncestryOracle 
                     results={individualMatches} 
