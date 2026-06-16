@@ -27,7 +27,7 @@ export interface AppConfig {
   icon: React.ComponentType<any>;
   gradient: string;
   glowColor: string;
-  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology';
+  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology' | 'ai_agent';
   targetSubTab?: string;
   description: string;
   imageUrl?: string;
@@ -186,6 +186,16 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'autosomal',
       description: 'Search, filter, and inspect your parsed autosomal variants.',
       imageUrl: '/assets/markers_icon.png',
+    },
+    {
+      id: 'ai_agent',
+      name: 'AI Explainer',
+      icon: Sparkles,
+      gradient: 'from-purple-500 to-indigo-650',
+      glowColor: 'rgba(139, 92, 246, 0.45)',
+      targetTab: 'ai_agent',
+      description: 'Your personal AI genomic guide. Ask questions and interpret your ancestry, lineages, and ancient matches.',
+      imageUrl: '/assets/ai_agent_icon.png',
     },
     {
       id: 'methodology',

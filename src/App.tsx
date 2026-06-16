@@ -87,6 +87,7 @@ import HeroUpload from "./components/HeroUpload";
 import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
+import { AIGenomicAgent } from "./components/AIGenomicAgent";
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "4.0.0-beta";
@@ -1988,7 +1989,7 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology' | 'desktop'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology' | 'desktop' | 'ai_agent'>('dashboard');
   const [uiMode, setUiMode] = useState<'desktop' | 'classic'>('desktop');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
@@ -3060,6 +3061,19 @@ export default function App() {
                   </div>
                 )}
 
+                {activeTab === 'ai_agent' && (
+                  <div className="pb-20 animate-fade-in">
+                    <AIGenomicAgent
+                      dataset={datasets[activeDatasetIndex]}
+                      oracleResults={oracleResults}
+                      populationProximity={populationProximity}
+                      famousMatches={famousMatches}
+                      autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
+                      userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                    />
+                  </div>
+                )}
+
                 {/* Ad placement between content sections */}
                 <div className="max-w-4xl mx-auto my-8">
                   <AdBanner format="auto" className="rounded-2xl" />
@@ -3293,6 +3307,19 @@ export default function App() {
                   toggleExpand={toggleExpand}
                   datasets={datasets}
                   activeDatasetIndex={activeDatasetIndex}
+                />
+              </div>
+            )}
+
+            {currentApp === 'ai_agent' && (
+              <div className="space-y-8 animate-fade-in">
+                <AIGenomicAgent
+                  dataset={datasets[activeDatasetIndex]}
+                  oracleResults={oracleResults}
+                  populationProximity={populationProximity}
+                  famousMatches={famousMatches}
+                  autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
+                  userSnps={snpMaps.current[activeDatasetIndex] || {}}
                 />
               </div>
             )}
