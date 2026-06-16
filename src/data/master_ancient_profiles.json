@@ -38,6 +38,18 @@
         "period": "~100,000-30,000 years ago",
         "region": "Central/East Asia",
         "description": "Archaic humans related to Neanderthals. Up to 5% DNA in some Melanesian populations."
+      },
+      "AncientAfrican": {
+        "name": "Ancient African",
+        "period": "~10,000-2,000 BCE",
+        "region": "Sub-Saharan Africa",
+        "description": "Pre-Bantu hunter-gatherer and early agriculturalist lineages from West, East, and Southern Africa."
+      },
+      "AncientEastAsian": {
+        "name": "Ancient East Asian / Paleo-Indian",
+        "period": "~30,000-10,000 BCE",
+        "region": "East Asia / Siberia / Beringia",
+        "description": "Pleistocene ancestors of East Asians and Native Americans who migrated across Beringia."
       }
     }
   },
@@ -1223,6 +1235,98 @@
       },
       "culture": "Plantagenet English",
       "age_bp": 540
+    },
+    {
+      "id": "spirit_cave_mummy",
+      "name": "Spirit Cave Mummy",
+      "region": "Nevada, USA",
+      "period": "Early Holocene (10,600 BP)",
+      "description": "The oldest natural mummy found in North America. Genetic sequencing confirmed close lineage continuity with modern Indigenous groups, resolving long-standing controversies.",
+      "ancestry_group": "Indigenous American / Paleo-Indian",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832",
+        "rs3827760"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      },
+      "culture": "Early Great Basin Forager",
+      "age_bp": 10600
+    },
+    {
+      "id": "luzia_pedra_furada",
+      "name": "Luzia (Lagoa Santa)",
+      "region": "Minas Gerais, Brazil",
+      "period": "Paleo-Indian (11,500 BP)",
+      "description": "One of the oldest Paleo-Indian skeletons discovered in South America. Her genome establishes direct ancestral descent shared with ancient North American migrations.",
+      "ancestry_group": "Indigenous American / Paleo-Indian",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832",
+        "rs3827760"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      },
+      "culture": "Lagoa Santa Paleo-Indian",
+      "age_bp": 11500
+    },
+    {
+      "id": "ballito_bay",
+      "name": "Ballito Bay Child",
+      "region": "KwaZulu-Natal, South Africa",
+      "period": "Stone Age (2,000 BP)",
+      "description": "An ancient hunter-gatherer child whose high-coverage genome proved Khoe-San lineages diverged over 260,000 years ago, predating modern out-of-Africa migrations.",
+      "ancestry_group": "Khoe-San / Southern Hunter-Gatherer",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs2814778"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs2814778": "CC",
+        "rs4988235": "GG"
+      },
+      "culture": "Later Stone Age Hunter-Gatherer",
+      "age_bp": 2000
+    },
+    {
+      "id": "asselar_man",
+      "name": "Asselar Man",
+      "region": "Asselar, Mali",
+      "period": "Holocene (6,500 BP)",
+      "description": "A skeleton from the 'Green Sahara' wet phase of West Africa, representing crucial Holocene-era baseline variation prior to the Sahara's desertification.",
+      "ancestry_group": "West African Hunter-Gatherer",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs2814778"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs2814778": "CC",
+        "rs4988235": "GG"
+      },
+      "culture": "Wet Sahara Pastoralist",
+      "age_bp": 6500
     }
   ]
 }

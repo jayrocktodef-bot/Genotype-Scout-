@@ -194,10 +194,20 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
 };
 
 export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
-  const samples = [
+  const rawSamples = [
     ...Object.values(masterAncient.samples).filter(s => (s as any).id),
     ...(masterAncient as any).matches
   ];
+  
+  const seenIds = new Set<string>();
+  const samples: any[] = [];
+  for (const s of rawSamples) {
+    const id = s.id || s.sampleId;
+    if (id && !seenIds.has(id)) {
+      seenIds.add(id);
+      samples.push(s);
+    }
+  }
   
   const markerImportance: Record<string, number> = {
     "rs1426654": 20.0,

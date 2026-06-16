@@ -79,7 +79,9 @@ export const ChromosomePainterView = ({
           })
           .filter((s: any) => {
             if (!s.chrom || s.pos === undefined || isNaN(s.pos)) return false;
-            const n = parseInt(s.chrom);
+            const chromStr = String(s.chrom).toUpperCase().replace('CHR', '');
+            if (chromStr === 'X' || chromStr === '23') return true;
+            const n = parseInt(chromStr, 10);
             return !isNaN(n) && n >= 1 && n <= 22;
           });
 
