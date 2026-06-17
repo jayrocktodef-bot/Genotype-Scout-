@@ -95,20 +95,32 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'GWF_Fula': 'Fula / West African (GWF)',
   'GWJ_Jola': 'Jola / West African (GWJ)',
   'GWW_Wolof': 'Wolof / West African (GWW)',
-  'GEMJ_Japan': 'Japanese (GEM-J)'
+  'GEMJ_Japan': 'Japanese (GEM-J)',
+  // Custom sub-populations
+  'LMB': 'Lumbee / NC Indigenous-Admixed (LMB)',
+  'GLL': 'Gullah Geechee / Atlantic Coast (GLL)',
+  'CHK': 'Cherokee / Southern Appalachian (CHK)',
+  'LNP': 'Lenape / Delaware Woodlands (LNP)',
+  'NAN': 'Nanticoke / Delmarva Indigenous-Admixed (NAN)',
+  'WDN': 'Eastern Woodlands Indigenous (WDN)',
+  'ASJ': 'Ashkenazi Jewish / European (ASJ)',
+  'SEJ': 'Sephardic Jewish / Mediterranean (SEJ)',
+  'MZJ': 'Mizrahi Jewish / Middle Eastern (MZJ)',
+  'YMJ': 'Yemenite Jewish / Arabian (YMJ)',
+  'MEL': 'Melungeon / Appalachian Tri-Racial (MEL)'
 };
 
 // Macro-continental Group Classifications for Hierarchy-Aware Matching
 const MACRO_GROUPS: Record<string, string[]> = {
   'AFR': [
     'ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI',
-    'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_AfAm', 'ALFA_African', 'AFR_gnomAD'
+    'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_AfAm', 'ALFA_African', 'AFR_gnomAD',
+    'GLL'
   ],
   'EUR': [
     'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
     'AMI_gnomAD', 'NFE_gnomAD', 'FIN_gnomAD', 'ALFA_EUR',
-    'ASJ_gnomAD'
-    // NOTE: MID_gnomAD moved to MENA — Middle Eastern is NOT European
+    'ASJ_gnomAD', 'ASJ', 'SEJ'
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
@@ -120,11 +132,11 @@ const MACRO_GROUPS: Record<string, string[]> = {
   ],
   'AMR': [
     'CLM', 'MXL', 'PEL', 'PUR',
-    'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD'
+    'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD',
+    'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL'
   ],
   'MENA': [
-    'MID_gnomAD'
-    // Middle Eastern / North African — distinct from European
+    'MID_gnomAD', 'MZJ', 'YMJ'
   ]
 };
 
