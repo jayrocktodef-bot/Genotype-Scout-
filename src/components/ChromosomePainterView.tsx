@@ -106,8 +106,13 @@ export const ChromosomePainterView = ({
             const masterAims = loadMasterAims() as Record<string, any>;
             const baseMap = new Map<string, any>();
             for (const [key, val] of Object.entries(masterAims)) {
-              baseMap.set(key.toLowerCase().split('_')[0], val);
               baseMap.set(key.toLowerCase(), val);
+            }
+            for (const [key, val] of Object.entries(masterAims)) {
+              const base = key.toLowerCase().split('_')[0];
+              if (!baseMap.has(base)) {
+                baseMap.set(base, val);
+              }
             }
             for (const rsid of rawMatchingRsids) {
               const match = baseMap.get(rsid);

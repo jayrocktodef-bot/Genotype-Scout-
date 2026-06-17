@@ -1,7 +1,7 @@
 // src/services/dbHydrator.ts
 
 const DB_NAME = 'genotype-scout-db';
-const DB_VERSION = 3;
+const DB_VERSION = 4;
 const STORE_NAME = 'aims';
 
 let dbInstance: IDBDatabase | null = null;
@@ -73,11 +73,25 @@ export async function hydrateReferenceDatabase(): Promise<void> {
     const store = tx.objectStore(STORE_NAME);
 
     // Batch write markers (write both the suffixed key and standard base key)
+    const seenBases = new Set<string>();
+
+    // Pass 1: Insert all exact keys
+    for (const [rsid, markerData] of Object.entries(masterAims)) {
+      const lower = rsid.toLowerCase();
+      store.put(markerData, lower);
+      if (lower.indexOf('_') === -1) {
+        seenBases.add(lower);
+      }
+    }
+
+    // Pass 2: Insert base aliases only if the base key does not natively exist
     for (const [rsid, markerData] of Object.entries(masterAims)) {
       const lower = rsid.toLowerCase();
       const base = lower.split('_')[0];
-      store.put(markerData, lower);
-      store.put(markerData, base);
+      if (base !== lower && !seenBases.has(base)) {
+        store.put(markerData, base);
+        seenBases.add(base); // Prevent another suffix from overwriting it
+      }
     }
     
     // Set seed complete flag
@@ -153,11 +167,18 @@ export async function getAimsByRsids(rsids: string[]): Promise<Record<string, an
     const { loadMasterAims } = await import('../data/index');
     const masterAims = loadMasterAims() as Record<string, any>;
     
-    // Create base mapping
+    // First pass: exact matches
     const baseMap = new Map<string, any>();
     for (const [key, val] of Object.entries(masterAims)) {
-      baseMap.set(key.toLowerCase().split('_')[0], val);
       baseMap.set(key.toLowerCase(), val);
+    }
+    
+    // Second pass: base fallbacks
+    for (const [key, val] of Object.entries(masterAims)) {
+      const base = key.toLowerCase().split('_')[0];
+      if (!baseMap.has(base)) {
+        baseMap.set(base, val);
+      }
     }
 
     for (const rsid of rsids) {
@@ -211,11 +232,17 @@ export async function getAimsByRsids(rsids: string[]): Promise<Record<string, an
     const { loadMasterAims } = await import('../data/index');
     const masterAims = loadMasterAims() as Record<string, any>;
     
-    // Create base mapping
-    const baseMap = new Map<string, any>();
+    // First pass: exact matches
     for (const [key, val] of Object.entries(masterAims)) {
-      baseMap.set(key.toLowerCase().split('_')[0], val);
       baseMap.set(key.toLowerCase(), val);
+    }
+    
+    // Second pass: base fallbacks
+    for (const [key, val] of Object.entries(masterAims)) {
+      const base = key.toLowerCase().split('_')[0];
+      if (!baseMap.has(base)) {
+        baseMap.set(base, val);
+      }
     }
 
     for (const rsid of rsids) {
