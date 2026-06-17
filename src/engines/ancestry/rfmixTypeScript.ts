@@ -36,7 +36,7 @@ export class RFMixTypeScript {
     const smoothed = new Float32Array(nWindows * nPopulations);
     
     const getTransitionProbs = (idx: number) => {
-      const tp = Array.isArray(transitionProbParam) ? transitionProbParam[idx] : transitionProbParam;
+      const tp = (Array.isArray(transitionProbParam) ? transitionProbParam[idx] : transitionProbParam) ?? 0.99;
       const sp = (1 - tp) / (nPopulations - 1);
       return { tp, sp };
     };

@@ -1,30 +1,10 @@
-import React, { useMemo, useRef, useImperativeHandle, forwardRef, useEffect, useState } from 'react';
-
-// Canvas roundRect Polyfill for compatibility with older browsers/webviews
-if (typeof window !== 'undefined' && typeof HTMLCanvasElement !== 'undefined') {
-  const Canvas2D = CanvasRenderingContext2D.prototype as any;
-  if (!Canvas2D.roundRect) {
-    Canvas2D.roundRect = function (x: number, y: number, w: number, h: number, r: number | number[]) {
-      const radii = Array.isArray(r) ? r : [r];
-      const r0 = radii[0] || 0;
-      this.beginPath();
-      this.moveTo(x + r0, y);
-      this.lineTo(x + w - r0, y);
-      this.quadraticCurveTo(x + w, y, x + w, y + r0);
-      this.lineTo(x + w, y + h - r0);
-      this.quadraticCurveTo(x + w, y + h, x + w - r0, y + h);
-      this.lineTo(x + r0, y + h);
-      this.quadraticCurveTo(x, y + h, x, y + h - r0);
-      this.lineTo(x, y + r0);
-      this.quadraticCurveTo(x, y, x + r0, y);
-      this.closePath();
-      return this;
-    };
-  }
-}
+import React, { useMemo, useState } from 'react';
 
 const CHROMOSOME_LENGTHS: Record<string, number> = {
-  "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259, "6": 170805979, "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422, "11": 135086622, "12": 133851895, "13": 115169878, "14": 107349540, "15": 102520552, "16": 90354753, "17": 83257441, "18": 80373285, "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895
+  "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259, "6": 170805979, 
+  "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422, "11": 135086622, "12": 133851895, 
+  "13": 115169878, "14": 107349540, "15": 102520552, "16": 90354753, "17": 83257441, "18": 80373285, 
+  "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895
 };
 
 const POP_COLORS: Record<string, string> = {
@@ -61,282 +41,203 @@ interface ChromosomePainterProps {
   onSegmentClick?: (chrom: string, strand: 'A' | 'B' | 'Both', segment: Segment, bp: number) => void;
 }
 
-export interface ChromosomePainterRef {
-  getSnapshot: (scale?: number) => string;
-}
-
-export const ChromosomePainter = forwardRef<ChromosomePainterRef, ChromosomePainterProps>(({ 
+export const ChromosomePainter = ({ 
   segments = {}, 
-  width = 800, 
-  height = 500,
-  onSegmentClick
-}, ref) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [hovered, setHovered] = useState<{ chrom: string; strand: 'A' | 'B' | 'Both'; segment: Segment; bp: number; clientX: number; clientY: number } | null>(null);
+  onSegmentClick 
+}: ChromosomePainterProps) => {
+  const [activeContinentFilter, setActiveContinentFilter] = useState<string | null>(null);
+  const [hoveredSegment, setHoveredSegment] = useState<{
+    chrom: string;
+    strand: 'A' | 'B' | 'Both';
+    segment: Segment;
+    x: number;
+    y: number;
+  } | null>(null);
 
-  const draw = (ctx: CanvasRenderingContext2D, scale: number = 1) => {
-    const sw = width * scale;
-    const sh = height * scale;
-    const padding = 40 * scale;
-    const chromWidth = 14 * scale;
-    const gap = (sw - padding * 2) / 22;
-
-    ctx.fillStyle = '#0f172a'; // Dark background
-    ctx.fillRect(0, 0, sw, sh);
-
-    const maxLen = Math.max(...Object.values(CHROMOSOME_LENGTHS));
-    const usableHeight = sh - padding * 2;
-
-    Object.keys(CHROMOSOME_LENGTHS).sort((a,b) => {
-        if (a === 'X') return 1;
-        if (b === 'X') return -1;
-        return parseInt(a) - parseInt(b);
-    }).forEach((chrom, idx) => {
-      const len = CHROMOSOME_LENGTHS[chrom];
-      const x = padding + idx * gap;
-      const h = (len / maxLen) * usableHeight;
-      const y = padding;
-
-      // Draw shadow/track
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
-      ctx.beginPath();
-      ctx.roundRect(x, y, chromWidth, h, 4 * scale);
-      ctx.fill();
-
-      // Label
-      ctx.fillStyle = '#94a3b8';
-      ctx.font = `bold ${10 * scale}px Inter`;
-      ctx.textAlign = 'center';
-      ctx.fillText(chrom, x + chromWidth / 2, y - 10 * scale);
-
-      // Draw Segments
-      const chromData = segments[chrom] || [];
-      const hasStrands = !Array.isArray(chromData) && (chromData as any).strandA && (chromData as any).strandB;
-
-      if (hasStrands) {
-        const strandA: Segment[] = (chromData as any).strandA || [];
-        const strandB: Segment[] = (chromData as any).strandB || [];
-        const halfWidth = chromWidth / 2 - 1 * scale;
-
-        // Draw Strand A (Maternal)
-        strandA.forEach(seg => {
-          const segY = y + (seg.start / maxLen) * usableHeight;
-          const segH = ((seg.end - seg.start) / maxLen) * usableHeight;
-          ctx.fillStyle = POP_COLORS[seg.continent] || '#475569';
-          ctx.beginPath();
-          ctx.roundRect(x, segY, halfWidth, Math.max(2 * scale, segH), 1 * scale);
-          ctx.fill();
-
-          if (seg.confidence > 0.9) {
-            ctx.shadowBlur = 2 * scale;
-            ctx.shadowColor = ctx.fillStyle;
-            ctx.stroke();
-            ctx.shadowBlur = 0;
-          }
-        });
-
-        // Draw Strand B (Paternal)
-        strandB.forEach(seg => {
-          const segY = y + (seg.start / maxLen) * usableHeight;
-          const segH = ((seg.end - seg.start) / maxLen) * usableHeight;
-          ctx.fillStyle = POP_COLORS[seg.continent] || '#475569';
-          ctx.beginPath();
-          ctx.roundRect(x + halfWidth + 2 * scale, segY, halfWidth, Math.max(2 * scale, segH), 1 * scale);
-          ctx.fill();
-
-          if (seg.confidence > 0.9) {
-            ctx.shadowBlur = 2 * scale;
-            ctx.shadowColor = ctx.fillStyle;
-            ctx.stroke();
-            ctx.shadowBlur = 0;
-          }
-        });
-      } else {
-        // Fallback: draw single bar
-        const chromSegments = Array.isArray(chromData) ? chromData : [];
-        chromSegments.forEach(seg => {
-          const segY = y + (seg.start / maxLen) * usableHeight;
-          const segH = ((seg.end - seg.start) / maxLen) * usableHeight;
-          ctx.fillStyle = POP_COLORS[seg.continent] || '#475569';
-          ctx.beginPath();
-          ctx.roundRect(x, segY, chromWidth, Math.max(2 * scale, segH), 2 * scale);
-          ctx.fill();
-          
-          if (seg.confidence > 0.9) {
-              ctx.shadowBlur = 4 * scale;
-              ctx.shadowColor = ctx.fillStyle;
-              ctx.stroke();
-              ctx.shadowBlur = 0;
-          }
-        });
-      }
-
-      // Draw Highlight Outline if hovered
-      if (hovered && hovered.chrom === chrom) {
-        const seg = hovered.segment;
-        const segY = y + (seg.start / maxLen) * usableHeight;
-        const segH = ((seg.end - seg.start) / maxLen) * usableHeight;
-        
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 1.5 * scale;
-        ctx.shadowColor = POP_COLORS[seg.continent] || '#ffffff';
-        ctx.shadowBlur = 8 * scale;
-        ctx.beginPath();
-        
-        if (hovered.strand === 'A') {
-          const halfWidth = chromWidth / 2 - 1 * scale;
-          ctx.roundRect(x - 1 * scale, segY - 1 * scale, halfWidth + 2 * scale, Math.max(2 * scale, segH) + 2 * scale, 1 * scale);
-        } else if (hovered.strand === 'B') {
-          const halfWidth = chromWidth / 2 - 1 * scale;
-          ctx.roundRect(x + halfWidth + 1 * scale, segY - 1 * scale, halfWidth + 2 * scale, Math.max(2 * scale, segH) + 2 * scale, 1 * scale);
-        } else {
-          ctx.roundRect(x - 1 * scale, segY - 1 * scale, chromWidth + 2 * scale, Math.max(2 * scale, segH) + 2 * scale, 2 * scale);
-        }
-        ctx.stroke();
-        ctx.shadowBlur = 0;
-      }
+  const handleMouseMove = (e: React.MouseEvent, chrom: string, strand: 'A' | 'B' | 'Both', segment: Segment) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    setHoveredSegment({
+      chrom,
+      strand,
+      segment,
+      x: e.clientX,
+      y: e.clientY
     });
-  };
-
-  const getCoordinatesFromEvent = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return null;
-    const rect = canvas.getBoundingClientRect();
-    
-    // Account for styling scaling
-    const clickX = ((e.clientX - rect.left) / rect.width) * width;
-    const clickY = ((e.clientY - rect.top) / rect.height) * height;
-
-    const scale = 1;
-    const padding = 40 * scale;
-    const chromWidth = 14 * scale;
-    const gap = (width - padding * 2) / 22;
-    const maxLen = Math.max(...Object.values(CHROMOSOME_LENGTHS));
-    const usableHeight = height - padding * 2;
-
-    const sortedChroms = Object.keys(CHROMOSOME_LENGTHS).sort((a, b) => {
-      if (a === 'X') return 1;
-      if (b === 'X') return -1;
-      return parseInt(a) - parseInt(b);
-    });
-
-    for (let idx = 0; idx < sortedChroms.length; idx++) {
-      const chrom = sortedChroms[idx];
-      const x = padding + idx * gap;
-      const len = CHROMOSOME_LENGTHS[chrom];
-      const h = (len / maxLen) * usableHeight;
-      const y = padding;
-
-      if (clickX >= x - 2 && clickX <= x + chromWidth + 2 && clickY >= y && clickY <= y + h) {
-        const relativeY = clickY - y;
-        const bp = (relativeY / h) * len;
-        
-        const chromData = segments[chrom] || [];
-        const hasStrands = !Array.isArray(chromData) && (chromData as any).strandA && (chromData as any).strandB;
-
-        if (hasStrands) {
-          const strandA: Segment[] = (chromData as any).strandA || [];
-          const strandB: Segment[] = (chromData as any).strandB || [];
-          const halfWidth = chromWidth / 2 - 1 * scale;
-          const isStrandA = clickX <= x + halfWidth;
-          const activeStrand = isStrandA ? 'A' : 'B';
-          const activeSegments = isStrandA ? strandA : strandB;
-
-          const match = activeSegments.find(seg => bp >= seg.start && bp <= seg.end);
-          if (match) {
-            return { chrom, strand: activeStrand as 'A' | 'B', segment: match, bp, clientX: e.clientX, clientY: e.clientY };
-          }
-        } else {
-          const chromSegments = Array.isArray(chromData) ? chromData : [];
-          const match = chromSegments.find(seg => bp >= seg.start && bp <= seg.end);
-          if (match) {
-            return { chrom, strand: 'Both' as const, segment: match, bp, clientX: e.clientX, clientY: e.clientY };
-          }
-        }
-      }
-    }
-    return null;
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const coords = getCoordinatesFromEvent(e);
-    setHovered(coords);
   };
 
   const handleMouseLeave = () => {
-    setHovered(null);
+    setHoveredSegment(null);
   };
 
-  const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const coords = getCoordinatesFromEvent(e);
-    if (coords && onSegmentClick) {
-      onSegmentClick(coords.chrom, coords.strand, coords.segment, coords.bp);
-    }
-  };
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        draw(ctx);
-      }
-    }
-  }, [segments, width, height, hovered]);
-
-  useImperativeHandle(ref, () => ({
-    getSnapshot: (scale: number = 2) => {
-      const snapshotCanvas = document.createElement('canvas');
-      snapshotCanvas.width = width * scale;
-      snapshotCanvas.height = height * scale;
-      const ctx = snapshotCanvas.getContext('2d');
-      if (ctx) {
-        draw(ctx, scale);
-      }
-      return snapshotCanvas.toDataURL('image/png');
-    }
-  }));
+  const sortedChroms = useMemo(() => {
+    return Object.keys(CHROMOSOME_LENGTHS).sort((a, b) => {
+      if (a === 'X') return 1;
+      if (b === 'X') return -1;
+      return parseInt(a, 10) - parseInt(b, 10);
+    });
+  }, []);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-slate-950 p-4 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden relative">
-      <canvas 
-        ref={canvasRef} 
-        width={width} 
-        height={height}
-        className="max-w-full h-auto rounded-xl cursor-pointer"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleClick}
-      />
+    <div className="w-full bg-[#0d0e10]/90 border border-white/5 rounded-3xl p-6 shadow-2xl relative">
+      
+      {/* Continental Highlighter Filter */}
+      <div className="mb-6 flex flex-wrap justify-between items-center gap-4 bg-slate-900/50 p-4 rounded-2xl border border-white/5">
+        <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">Highlight region:</div>
+        <div className="flex flex-wrap gap-2">
+          <button 
+            onClick={() => setActiveContinentFilter(null)}
+            className={`px-3 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg transition-all ${
+              activeContinentFilter === null 
+                ? 'bg-teal-500/20 text-teal-300 border border-teal-500/35' 
+                : 'bg-slate-800/40 text-slate-400 border border-transparent hover:bg-slate-800/85'
+            }`}
+          >
+            Show All
+          </button>
+          {Object.entries(POP_COLORS).map(([pop, color]) => (
+            <button
+              key={pop}
+              onClick={() => setActiveContinentFilter(activeContinentFilter === pop ? null : pop)}
+              className={`px-3 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                activeContinentFilter === pop 
+                  ? 'bg-teal-500/20 text-teal-300 border-teal-500/35 shadow-sm'
+                  : 'bg-slate-800/40 text-slate-400 border-transparent hover:bg-slate-800/85'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: color }} />
+              {REGION_NAMES[pop] ?? pop}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Horizontal Chromosome Stack */}
+      <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-800">
+        {sortedChroms.map((chrom) => {
+          const length = CHROMOSOME_LENGTHS[chrom];
+          const chromData = segments[chrom] || [];
+          const hasStrands = !Array.isArray(chromData) && (chromData as any).strandA && (chromData as any).strandB;
+          
+          const strandA: Segment[] = hasStrands ? (chromData as any).strandA || [] : (Array.isArray(chromData) ? chromData : []);
+          const strandB: Segment[] = hasStrands ? (chromData as any).strandB || [] : [];
+
+          return (
+            <div key={chrom} className="group flex flex-col md:flex-row items-stretch gap-2 md:gap-4 p-3 bg-slate-900/30 hover:bg-slate-900/60 rounded-xl border border-white/[0.02] transition-colors">
+              {/* Left Label Info */}
+              <div className="flex md:flex-col justify-between md:justify-center w-full md:w-32 shrink-0 border-b md:border-b-0 md:border-r border-white/5 pb-2 md:pb-0 pr-0 md:pr-4">
+                <span className="text-sm font-black text-white">Chr {chrom}</span>
+                <span className="text-[10px] font-mono text-slate-500">{(length / 1000000).toFixed(1)} M bp</span>
+              </div>
+
+              {/* Tracks Container */}
+              <div className="flex-1 flex flex-col justify-center gap-1.5 min-h-[36px] relative py-1">
+                {/* Strand A (Maternal) */}
+                <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                  {strandA.map((seg, i) => {
+                    const pctLeft = (seg.start / length) * 100;
+                    const pctWidth = ((seg.end - seg.start) / length) * 100;
+                    const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                    return (
+                      <div
+                        key={i}
+                        className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
+                        style={{
+                          left: `${pctLeft}%`,
+                          width: `${Math.max(0.2, pctWidth)}%`,
+                          backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                          opacity: isMuted ? 0.15 : 1,
+                          zIndex: isMuted ? 1 : 2
+                        }}
+                        onMouseMove={(e) => handleMouseMove(e, chrom, hasStrands ? 'A' : 'Both', seg)}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={() => onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', seg, (seg.start + seg.end) / 2)}
+                      />
+                    );
+                  })}
+                  {hasStrands && (
+                    <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
+                      Strand A (Maternal)
+                    </div>
+                  )}
+                </div>
+
+                {/* Strand B (Paternal) */}
+                {hasStrands && (
+                  <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                    {strandB.map((seg, i) => {
+                      const pctLeft = (seg.start / length) * 100;
+                      const pctWidth = ((seg.end - seg.start) / length) * 100;
+                      const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                      return (
+                        <div
+                          key={i}
+                          className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
+                          style={{
+                            left: `${pctLeft}%`,
+                            width: `${Math.max(0.2, pctWidth)}%`,
+                            backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                            opacity: isMuted ? 0.15 : 1,
+                            zIndex: isMuted ? 1 : 2
+                          }}
+                          onMouseMove={(e) => handleMouseMove(e, chrom, 'B', seg)}
+                          onMouseLeave={handleMouseLeave}
+                          onClick={() => onSegmentClick?.(chrom, 'B', seg, (seg.start + seg.end) / 2)}
+                        />
+                      );
+                    })}
+                    <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
+                      Strand B (Paternal)
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
       {/* Floating Tooltip */}
-      {hovered && (
+      {hoveredSegment && (
         <div 
-          className="absolute z-20 bg-slate-900/95 border border-slate-700 text-white p-3 rounded-xl shadow-xl backdrop-blur-sm pointer-events-none text-[10px] leading-relaxed transition-all duration-100"
+          className="fixed z-[9999] bg-slate-900/95 border border-slate-700/80 text-white p-3 rounded-xl shadow-2xl backdrop-blur-md pointer-events-none text-[10px] leading-relaxed transition-all duration-75"
           style={{
-            left: `${hovered.clientX - canvasRef.current!.getBoundingClientRect().left + 15}px`,
-            top: `${hovered.clientY - canvasRef.current!.getBoundingClientRect().top + 15}px`,
+            left: `${hoveredSegment.x + 15}px`,
+            top: `${hoveredSegment.y + 15}px`,
           }}
         >
-          <div className="font-black text-teal-400 uppercase tracking-widest text-[9px] mb-1">Chromosome {hovered.chrom}</div>
-          <div><strong className="text-slate-400">Ancestry:</strong> <span className="font-extrabold" style={{ color: POP_COLORS[hovered.segment.continent] }}>{REGION_NAMES[hovered.segment.continent] ?? hovered.segment.continent}</span></div>
-          {hovered.strand !== 'Both' && <div><strong className="text-slate-400">Strand:</strong> {hovered.strand === 'A' ? 'Strand A (Maternal)' : 'Strand B (Paternal)'}</div>}
-          <div><strong className="text-slate-400">Range:</strong> {(hovered.segment.start / 1000000).toFixed(1)}M - {(hovered.segment.end / 1000000).toFixed(1)}M bp</div>
-          <div><strong className="text-slate-400">Confidence:</strong> {(hovered.segment.confidence * 100).toFixed(0)}%</div>
-          <div className="text-[8px] text-teal-300 font-bold mt-1.5 animate-pulse">🖱️ Click to inspect SNPs</div>
+          <div className="font-black text-teal-400 uppercase tracking-widest text-[9px] mb-1">
+            Chromosome {hoveredSegment.chrom}
+          </div>
+          <div>
+            <strong className="text-slate-400">Ancestry:</strong>{' '}
+            <span className="font-extrabold" style={{ color: POP_COLORS[hoveredSegment.segment.continent] }}>
+              {REGION_NAMES[hoveredSegment.segment.continent] ?? hoveredSegment.segment.continent}
+            </span>
+          </div>
+          {hoveredSegment.strand !== 'Both' && (
+            <div>
+              <strong className="text-slate-400">Strand:</strong>{' '}
+              {hoveredSegment.strand === 'A' ? 'Strand A (Maternal)' : 'Strand B (Paternal)'}
+            </div>
+          )}
+          <div>
+            <strong className="text-slate-400">Range:</strong>{' '}
+            {(hoveredSegment.segment.start / 1000000).toFixed(1)}M - {(hoveredSegment.segment.end / 1000000).toFixed(1)}M bp
+          </div>
+          <div>
+            <strong className="text-slate-400">Confidence:</strong>{' '}
+            {(hoveredSegment.segment.confidence * 100).toFixed(0)}%
+          </div>
+          <div className="text-[8px] text-teal-300 font-bold mt-1.5 animate-pulse">🖱️ Click segment to list SNPs</div>
         </div>
       )}
 
-      <div className="mt-8 flex flex-wrap justify-center gap-4">
-        {Object.entries(POP_COLORS).map(([pop, color]) => (
-            <div key={pop} className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: color }}></div>
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{REGION_NAMES[pop] ?? pop}</span>
-            </div>
-        ))}
+      {/* Bottom Info Bar */}
+      <div className="mt-6 text-[10px] text-slate-500 flex justify-between items-center uppercase tracking-widest border-t border-white/5 pt-4">
+        <span>Scroll vertically to explore chromosomes 1–X</span>
+        <span>Interactive Inspector</span>
       </div>
     </div>
   );
-});
-
-ChromosomePainter.displayName = 'ChromosomePainter';
+};

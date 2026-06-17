@@ -395,6 +395,14 @@ export function processSubpopulations(
 ): OracleResult {
   const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
+  const GLOBAL_REFERENCE_CODES = new Set([
+    // Superpopulations and Global References
+    'ALL', 'EUR', 'AFR', 'EAS', 'SAS', 'AMR',
+    // Broad gnomAD panels
+    'AFR_gnomAD', 'AMR_gnomAD', 'EAS_gnomAD', 'SAS_gnomAD', 'NFE_gnomAD',
+    // Broad ALFA panels
+    'ALFA_African', 'ALFA_EAS', 'ALFA_EUR', 'ALFA_LatAm1', 'ALFA_LatAm2', 'ALFA_SAS', 'ALFA_AfAm'
+  ]);
   const dbKeys = Object.keys(normalizedDatabase);
 
   // Build a fast lookup mapping from base rsid to the database key
@@ -538,6 +546,7 @@ export function processSubpopulations(
 
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
+    if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     const frequencies = popData.frequencies;
     const matchedKeys: string[] = [];
     const matchedUserDosages: number[] = [];
@@ -788,6 +797,7 @@ export function processSubpopulations(
   const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number }> = [];
   const MIN_MARKERS = 5; // Lower from 10 to improve coverage for underrepresented populations
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
+    if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
@@ -855,6 +865,7 @@ export function processSubpopulations(
 
   // Build the expected matrices
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
+    if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     nnlsPopExpectedDosages[popCode] = new Float32Array(activeM);
   }
 
@@ -889,6 +900,7 @@ export function processSubpopulations(
 
     // Fill in expected frequencies or apply Soft Bayesian priors for missing subpopulation values
     for (const [popCode, popData] of Object.entries(referenceDatabase)) {
+      if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
       let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
       
       if (freq === undefined) {

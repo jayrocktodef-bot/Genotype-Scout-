@@ -41,38 +41,91 @@ export const ChromosomePainterView = ({
   const [calculatingLAI, setCalculatingLAI] = useState(false);
   const [localSegments, setLocalSegments] = useState<any>(null);
   const [selectedSegment, setSelectedSegment] = useState<{ chrom: string; strand: 'A' | 'B' | 'Both'; segment: Segment; bp: number } | null>(null);
+  const [snpsUsedForLAI, setSnpsUsedForLAI] = useState<any[]>([]);
 
   const snpsInSegment = useMemo(() => {
-    if (!selectedSegment || !dataset?.results) return [];
+    if (!selectedSegment || snpsUsedForLAI.length === 0) return [];
     const { chrom, segment } = selectedSegment;
-    return dataset.results.filter((r: any) => {
+    return snpsUsedForLAI.filter((r: any) => {
       if (!r.chrom || r.pos === undefined) return false;
       const c = r.chrom.replace('chr', '').toUpperCase();
       const targetC = chrom.replace('chr', '').toUpperCase();
       return c === targetC && r.pos >= segment.start && r.pos <= segment.end;
     });
-  }, [selectedSegment, dataset]);
+  }, [selectedSegment, snpsUsedForLAI]);
 
   useEffect(() => {
-    if (!dataset?.results || dataset.results.length === 0) return;
+    if (!dataset) return;
     
     let active = true;
     const runLAI = async () => {
       setCalculatingLAI(true);
       try {
-        const rawRsids = dataset.results.map((r: any) => (r.rsid || r.markerId || "").toLowerCase()).filter(Boolean);
-        const { getAimsByRsids } = await import('../services/dbHydrator');
-        const aimsDb = await getAimsByRsids(rawRsids);
+        const userSnpMap = dataset.mergedSnpMap || {};
+        const normalizedUserSnpMap = new Map<string, string>();
+        for (const [key, val] of Object.entries(userSnpMap)) {
+          normalizedUserSnpMap.set(key.toLowerCase(), val as string);
+        }
+        
+        const { getAimsByRsids, getIndexedDBKeys } = await import('../services/dbHydrator');
+        
+        let aimsDb: Record<string, any> = {};
+        let rawMatchingRsids: string[] = [];
+        
+        if (normalizedUserSnpMap.size > 0) {
+          let indexedDbKeys = await getIndexedDBKeys();
+          if (indexedDbKeys.length === 0) {
+            const { loadMasterAims } = await import('../data/index');
+            const masterAims = loadMasterAims();
+            indexedDbKeys = Object.keys(masterAims).map(k => k.toLowerCase());
+          }
+          rawMatchingRsids = indexedDbKeys.filter(key => {
+            const base = key.split('_')[0];
+            return normalizedUserSnpMap.has(key) || normalizedUserSnpMap.has(base);
+          });
+          aimsDb = await getAimsByRsids(rawMatchingRsids);
+          
+          if (Object.keys(aimsDb).length === 0 && rawMatchingRsids.length > 0) {
+            const { loadMasterAims } = await import('../data/index');
+            const masterAims = loadMasterAims() as Record<string, any>;
+            const baseMap = new Map<string, any>();
+            for (const [key, val] of Object.entries(masterAims)) {
+              baseMap.set(key.toLowerCase().split('_')[0], val);
+              baseMap.set(key.toLowerCase(), val);
+            }
+            for (const rsid of rawMatchingRsids) {
+              const match = baseMap.get(rsid);
+              if (match) aimsDb[rsid] = match;
+            }
+          }
+        } else if (dataset.results && dataset.results.length > 0) {
+          rawMatchingRsids = dataset.results.map((r: any) => (r.rsid || r.markerId || "").toLowerCase()).filter(Boolean);
+          aimsDb = await getAimsByRsids(rawMatchingRsids);
+          if (Object.keys(aimsDb).length === 0 && rawMatchingRsids.length > 0) {
+            const { loadMasterAims } = await import('../data/index');
+            const masterAims = loadMasterAims() as Record<string, any>;
+            const baseMap = new Map<string, any>();
+            for (const [key, val] of Object.entries(masterAims)) {
+              baseMap.set(key.toLowerCase().split('_')[0], val);
+              baseMap.set(key.toLowerCase(), val);
+            }
+            for (const rsid of rawMatchingRsids) {
+              const match = baseMap.get(rsid);
+              if (match) aimsDb[rsid] = match;
+            }
+          }
+        }
 
-        const snpsForLAI = dataset.results
-          .map((r: any) => {
-            const rsid = (r.rsid || r.markerId || "").toLowerCase();
-            const aim = aimsDb[rsid];
-            const chrom = r.chrom || aim?.chromosome || aim?.chrom;
-            const pos = r.pos !== undefined ? r.pos : (aim?.position !== undefined ? aim.position : aim?.pos);
+        let snpsForLAI = rawMatchingRsids
+          .map((key) => {
+            const aim = aimsDb[key];
+            const base = key.split('_')[0];
+            const genotype = normalizedUserSnpMap.get(key) || normalizedUserSnpMap.get(base) || (dataset.results?.find((r: any) => (r.rsid || r.markerId || "").toLowerCase() === key)?.genotype) || '--';
+            const chrom = aim?.chromosome || aim?.chrom;
+            const pos = aim?.position !== undefined ? aim.position : aim?.pos;
             return {
-              rsid,
-              genotype: r.genotype || '--',
+              rsid: key,
+              genotype: genotype || '--',
               chrom: chrom ? String(chrom).replace('chr', '').toUpperCase() : '',
               pos: typeof pos === 'number' ? pos : (pos ? parseInt(pos, 10) : undefined)
             };
@@ -85,7 +138,14 @@ export const ChromosomePainterView = ({
             return !isNaN(n) && n >= 1 && n <= 22;
           });
 
-        if (snpsForLAI.length === 0) return;
+        if (snpsForLAI.length === 0) {
+          setCalculatingLAI(false);
+          return;
+        }
+
+        if (active) {
+          setSnpsUsedForLAI(snpsForLAI);
+        }
 
         const populations = ['AFR', 'EUR', 'EAS', 'AMR', 'SAS'];
         
