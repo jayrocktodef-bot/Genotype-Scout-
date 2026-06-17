@@ -107,7 +107,14 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'SEJ': 'Sephardic Jewish / Mediterranean (SEJ)',
   'MZJ': 'Mizrahi Jewish / Middle Eastern (MZJ)',
   'YMJ': 'Yemenite Jewish / Arabian (YMJ)',
-  'MEL': 'Melungeon / Appalachian Tri-Racial (MEL)'
+  'MEL': 'Melungeon / Appalachian Tri-Racial (MEL)',
+  // Superpopulations and Global References
+  'ALL': 'Global Reference (ALL)',
+  'EUR': 'European Reference (EUR)',
+  'AFR': 'African Reference (AFR)',
+  'EAS': 'East Asian Reference (EAS)',
+  'SAS': 'South Asian Reference (SAS)',
+  'AMR': 'Indigenous American Reference (AMR)'
 };
 
 // Macro-continental Group Classifications for Hierarchy-Aware Matching
