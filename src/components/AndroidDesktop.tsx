@@ -27,7 +27,7 @@ export interface AppConfig {
   icon: React.ComponentType<any>;
   gradient: string;
   glowColor: string;
-  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology' | 'ai_agent';
+  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'ai_agent';
   targetSubTab?: string;
   description: string;
   imageUrl?: string;
@@ -186,6 +186,16 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetTab: 'autosomal',
       description: 'Search, filter, and inspect your parsed autosomal variants.',
       imageUrl: '/assets/markers_icon.png',
+    },
+    {
+      id: 'rare_variants',
+      name: 'Rare Variants',
+      icon: Zap,
+      gradient: 'from-fuchsia-400 to-purple-600',
+      glowColor: 'rgba(192, 38, 211, 0.45)',
+      targetTab: 'rare_variants',
+      description: 'Identify internally tracked, unmapped, and potentially rare genetic variants.',
+      imageUrl: '/assets/oracle_icon.png', // Or a new icon if available
     },
     {
       id: 'ai_agent',

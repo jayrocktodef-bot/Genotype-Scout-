@@ -18,6 +18,7 @@ import { calculateMDLPK16Scores } from "../engines/ancestry/mdlpAncEngine";
 import { calculateRegionalScores } from "../engines/ancestry/grafAncEngine";
 import { identifyMicroHapSignatures } from "../engines/ancestry/microHapEngine";
 import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveEngine";
+import { identifyRareAndNovelVariants } from "../utils/rareVariantsAnalyzer";
 
 compileReferenceKernel();
 
@@ -449,6 +450,14 @@ self.onmessage = async (e: MessageEvent) => {
       self.postMessage({ type: 'PROGRESS', payload: { step: "Completing Profiler..." } });
     }
 
+    // ── Rare & Novel Variants Identification ──
+    const knownDbKeys = new Set<string>();
+    const aims = getMasterAims();
+    if (aims) {
+      for (const k of Object.keys(aims)) knownDbKeys.add(k.toLowerCase().split('_')[0]);
+    }
+    const rareAndNovelVariants = identifyRareAndNovelVariants(imputedSnpMap, knownDbKeys, aims);
+
     // Targeted sanitization — replaces the expensive JSON.parse(JSON.stringify()) round-trip.
     // Only strips non-structured-cloneable types (Maps, Sets, Promises, functions).
     const rawPayload = { 
@@ -458,6 +467,7 @@ self.onmessage = async (e: MessageEvent) => {
       snpCount: totalSnps,
       predictedYDNA, predictedMtDNA, mergedMtMap,
       mergedSnpMap: imputedSnpMap,
+      rareAndNovelVariants,
       analysis: { 
         ...bloodResult,
         oracleResults, 

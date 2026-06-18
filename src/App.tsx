@@ -88,6 +88,7 @@ import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 import { AIGenomicAgent } from "./components/AIGenomicAgent";
+import RareVariantsView from "./components/RareVariantsView";
 import { ArchaicIntrogressionView } from "./components/ArchaicIntrogressionView";
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
@@ -3070,6 +3071,12 @@ export default function App() {
                 {activeTab === 'markers' && (
                   <div className="pb-20">
                     <MarkerBenchmarks benchmarks={markerBenchmarks} />
+                  </div>
+                )}
+
+                {activeTab === 'rare_variants' && (
+                  <div className="pb-20 animate-fade-in">
+                    <RareVariantsView variants={datasets[activeDatasetIndex]?.rareAndNovelVariants || []} />
                   </div>
                 )}
 

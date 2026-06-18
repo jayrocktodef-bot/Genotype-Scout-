@@ -286,6 +286,26 @@ const Dashboard: React.FC<DashboardProps> = ({
             Technical Data <ArrowRight className="w-3 h-3" />
           </div>
         </motion.div>
+
+        {/* Rare & Novel Variants */}
+        <motion.div 
+          onClick={() => onNavigateToTab('rare_variants')}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          className="premium-card p-3.5 sm:p-8 group cursor-pointer"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 mb-6 transition-transform group-hover:scale-110">
+            <Zap className="w-7 h-7" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-800 mb-2">Rare & Novel Variants</h3>
+          <p className="text-sm text-slate-500 leading-relaxed mb-6">
+            Identify internally tracked, unmapped, and potentially rare genetic variants within your raw data.
+          </p>
+          <div className="flex items-center text-fuchsia-600 text-xs font-black uppercase tracking-widest gap-2">
+            Discover Variants <ArrowRight className="w-3 h-3" />
+          </div>
+        </motion.div>
       </div>
 
       {/* Danger Zone / Reset */}
