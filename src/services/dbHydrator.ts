@@ -232,6 +232,8 @@ export async function getAimsByRsids(rsids: string[]): Promise<Record<string, an
     const { loadMasterAims } = await import('../data/index');
     const masterAims = loadMasterAims() as Record<string, any>;
     
+    const baseMap = new Map<string, any>();
+    
     // First pass: exact matches
     for (const [key, val] of Object.entries(masterAims)) {
       baseMap.set(key.toLowerCase(), val);
