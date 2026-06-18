@@ -2902,7 +2902,11 @@ export default function App() {
 
                     {activeAncestrySubTab === 'scout' && (
                       <div className="animate-fade-in">
-                         <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
+                         <NaiveAncestryOracle 
+                           results={datasets[activeDatasetIndex]?.analysis || {}} 
+                           userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                           onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                         />
                       </div>
                     )}
                   </div>
@@ -3179,7 +3183,11 @@ export default function App() {
 
             {currentApp === 'ancestry_scout' && (
               <div className="animate-fade-in">
-                <NaiveAncestryOracle results={datasets[activeDatasetIndex]?.analysis || {}} onOpenMethodology={() => setIsMethodologyOpen(true)} />
+                <NaiveAncestryOracle 
+                  results={datasets[activeDatasetIndex]?.analysis || {}} 
+                  userSnps={snpMaps.current[activeDatasetIndex] || {}}
+                  onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                />
               </div>
             )}
 
