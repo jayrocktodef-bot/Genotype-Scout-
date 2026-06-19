@@ -15,7 +15,7 @@ import { calculateAncientAdmixture, calculateIndividualMatches } from '../lib/An
 import { calculateFamousMatches } from '../utils/individualMatching';
 import { matchHealthAndWellness } from '../utils/healthMatching';
 import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../engines/ancestry/fastMatrixEngine';
-import { calculateMDLPK16Scores } from '../engines/ancestry/mdlpAncEngine';
+import { calculateHumanOriginsScores } from '../engines/ancestry/humanOriginsEngine';
 import { calculateRegionalScores } from '../engines/ancestry/grafAncEngine';
 import { identifyMicroHapSignatures } from '../engines/ancestry/microHapEngine';
 import { calculateComprehensiveScores } from '../engines/ancestry/comprehensiveEngine';
@@ -31,7 +31,7 @@ type EngineName =
   | 'matchHealthAndWellness'
   | 'calculatePopulationProximityOptimized'
   | 'calculateMarkerBenchmarks'
-  | 'calculateMDLPK16Scores'
+  | 'calculateHumanOriginsScores'
   | 'calculateRegionalScores'
   | 'identifyMicroHapSignatures'
   | 'calculateComprehensiveScores';
@@ -71,8 +71,8 @@ self.onmessage = async (e: MessageEvent) => {
       case 'calculateMarkerBenchmarks':
         result = await calculateMarkerBenchmarks(snpMap);
         break;
-      case 'calculateMDLPK16Scores':
-        result = await calculateMDLPK16Scores(snpMap);
+      case 'calculateHumanOriginsScores':
+        result = await calculateHumanOriginsScores(snpMap);
         break;
       case 'calculateRegionalScores':
         result = await calculateRegionalScores(snpMap);
