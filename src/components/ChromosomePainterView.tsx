@@ -61,10 +61,19 @@ export const ChromosomePainterView = ({
     const runLAI = async () => {
       setCalculatingLAI(true);
       try {
-        const userSnpMap = dataset.mergedSnpMap || {};
+        const userSnpMap: Record<string, string> = dataset.mergedSnpMap || {};
+        const userMetaMap: Record<string, { chrom: string; pos: number }> = dataset.mergedSnpMetaMap || {};
+        
+        // Build a normalized lookup of user genotypes
         const normalizedUserSnpMap = new Map<string, string>();
         for (const [key, val] of Object.entries(userSnpMap)) {
           normalizedUserSnpMap.set(key.toLowerCase(), val as string);
+        }
+
+        // Build a normalized lookup of user chrom/pos metadata
+        const normalizedMetaMap = new Map<string, { chrom: string; pos: number }>();
+        for (const [key, val] of Object.entries(userMetaMap)) {
+          normalizedMetaMap.set(key.toLowerCase(), val);
         }
         
         const { getAimsByRsids, getIndexedDBKeys } = await import('../services/dbHydrator');
@@ -84,59 +93,71 @@ export const ChromosomePainterView = ({
             return normalizedUserSnpMap.has(key) || normalizedUserSnpMap.has(base);
           });
           aimsDb = await getAimsByRsids(rawMatchingRsids);
-          
-          if (Object.keys(aimsDb).length === 0 && rawMatchingRsids.length > 0) {
-            const { loadMasterAims } = await import('../data/index');
-            const masterAims = loadMasterAims() as Record<string, any>;
-            const baseMap = new Map<string, any>();
-            for (const [key, val] of Object.entries(masterAims)) {
-              baseMap.set(key.toLowerCase().split('_')[0], val);
-              baseMap.set(key.toLowerCase(), val);
-            }
-            for (const rsid of rawMatchingRsids) {
-              const match = baseMap.get(rsid);
-              if (match) aimsDb[rsid] = match;
-            }
-          }
         } else if (dataset.results && dataset.results.length > 0) {
           rawMatchingRsids = dataset.results.map((r: any) => (r.rsid || r.markerId || "").toLowerCase()).filter(Boolean);
           aimsDb = await getAimsByRsids(rawMatchingRsids);
-          if (Object.keys(aimsDb).length === 0 && rawMatchingRsids.length > 0) {
-            const { loadMasterAims } = await import('../data/index');
-            const masterAims = loadMasterAims() as Record<string, any>;
-            const baseMap = new Map<string, any>();
-            for (const [key, val] of Object.entries(masterAims)) {
-              baseMap.set(key.toLowerCase(), val);
+        }
+
+        // Dynamically supplement any missing keys from static masterAims
+        const missingRsids = rawMatchingRsids.filter(rsid => !aimsDb[rsid]);
+        if (missingRsids.length > 0) {
+          const { loadMasterAims } = await import('../data/index');
+          const masterAims = loadMasterAims() as Record<string, any>;
+          const baseMap = new Map<string, any>();
+          for (const [key, val] of Object.entries(masterAims)) {
+            const lowerKey = key.toLowerCase();
+            baseMap.set(lowerKey, val);
+            const base = lowerKey.split('_')[0];
+            if (!baseMap.has(base)) {
+              baseMap.set(base, val);
             }
-            for (const [key, val] of Object.entries(masterAims)) {
-              const base = key.toLowerCase().split('_')[0];
-              if (!baseMap.has(base)) {
-                baseMap.set(base, val);
-              }
-            }
-            for (const rsid of rawMatchingRsids) {
-              const match = baseMap.get(rsid);
-              if (match) aimsDb[rsid] = match;
+          }
+          for (const rsid of missingRsids) {
+            const match = baseMap.get(rsid);
+            if (match) {
+              aimsDb[rsid] = match;
             }
           }
         }
 
+        // Build snpsForLAI: cross-reference AIM keys with user SNPs
+        // Use mergedSnpMetaMap from the raw file for chrom/pos (AIM entries often lack this data)
         let snpsForLAI = rawMatchingRsids
           .map((key) => {
             const aim = aimsDb[key];
+            if (!aim) return null;
             const base = key.split('_')[0];
             const genotype = normalizedUserSnpMap.get(key) || normalizedUserSnpMap.get(base) || (dataset.results?.find((r: any) => (r.rsid || r.markerId || "").toLowerCase() === key)?.genotype) || '--';
-            const chrom = aim?.chromosome || aim?.chrom;
-            const pos = aim?.position !== undefined ? aim.position : aim?.pos;
+            
+            // Priority: user meta map (from raw file) → AIM entry → skip
+            const meta = normalizedMetaMap.get(base) || normalizedMetaMap.get(key);
+            let chrom: string | undefined;
+            let pos: number | undefined;
+
+            if (meta) {
+              chrom = meta.chrom;
+              pos = meta.pos;
+            } else {
+              // Fallback to AIM entry (may be "Unknown" or undefined)
+              const aimChrom = aim?.chromosome || aim?.chrom;
+              const aimPos = aim?.position !== undefined ? aim.position : aim?.pos;
+              if (aimChrom && aimChrom !== 'Unknown' && aimChrom !== 'unknown') {
+                chrom = String(aimChrom);
+              }
+              if (aimPos !== undefined) {
+                pos = typeof aimPos === 'number' ? aimPos : parseInt(aimPos, 10);
+              }
+            }
+
             return {
               rsid: key,
               genotype: genotype || '--',
               chrom: chrom ? String(chrom).replace('chr', '').toUpperCase() : '',
-              pos: typeof pos === 'number' ? pos : (pos ? parseInt(pos, 10) : undefined)
+              pos
             };
           })
-          .filter((s: any) => {
-            if (!s.chrom || s.pos === undefined || isNaN(s.pos)) return false;
+          .filter((s): s is NonNullable<typeof s> => {
+            if (!s || !s.chrom || s.pos === undefined || isNaN(s.pos)) return false;
             const chromStr = String(s.chrom).toUpperCase().replace('CHR', '');
             if (chromStr === 'X' || chromStr === '23') return true;
             const n = parseInt(chromStr, 10);

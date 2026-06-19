@@ -2104,7 +2104,8 @@ export default function App() {
     predictedMtDNA?: any,
     mergedMtMap?: Record<string, string>,
     analysis?: any,
-    mergedSnpMap?: Record<string, string>
+    mergedSnpMap?: Record<string, string>,
+    mergedSnpMetaMap?: Record<string, { chrom: string; pos: number }>
   }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
@@ -2348,7 +2349,8 @@ export default function App() {
             predictedMtDNA: payload.predictedMtDNA,
             mergedMtMap: payload.mergedMtMap,
             analysis: payload.analysis,
-            mergedSnpMap: payload.mergedSnpMap
+            mergedSnpMap: payload.mergedSnpMap,
+            mergedSnpMetaMap: payload.mergedSnpMetaMap
           });
           setPendingFiles([]);
           setProcessing(false);

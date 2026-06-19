@@ -467,6 +467,7 @@ self.onmessage = async (e: MessageEvent) => {
       snpCount: totalSnps,
       predictedYDNA, predictedMtDNA, mergedMtMap,
       mergedSnpMap: imputedSnpMap,
+      mergedSnpMetaMap,
       rareAndNovelVariants,
       analysis: { 
         ...bloodResult,
