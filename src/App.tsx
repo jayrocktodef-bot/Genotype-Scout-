@@ -2426,9 +2426,9 @@ export default function App() {
 
     return {
       primary: processOracle(oracle.primary),
-      engine: mdlpK16Results
+      engine: humanOriginsResults
     };
-  }, [datasets, activeDatasetIndex, mdlpK16Results]);
+  }, [datasets, activeDatasetIndex, humanOriginsResults]);
 
   const ancientAdmixture = useMemo(() => {
     const dataset = datasets[activeDatasetIndex];
