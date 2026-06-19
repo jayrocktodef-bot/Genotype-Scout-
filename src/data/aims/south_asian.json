@@ -13230,7 +13230,7 @@
   },
   "rs10456369_sou": {
     "rsid": "rs10456369_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13252,11 +13252,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Indo-Iranian Border Marker - informative for populations of the Northwest Subcontinent and Eastern Plateau."
+    "description": "Indo-Iranian Border Marker - informative for populations of the Northwest Subcontinent and Eastern Plateau.",
+    "position": 29233338
   },
   "rs16139_sou": {
     "rsid": "rs16139_sou",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13278,11 +13279,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "South Asian Specific Marker - informative for distinguishing Indo-European speaking populations of the subcontinent."
+    "description": "South Asian Specific Marker - informative for distinguishing Indo-European speaking populations of the subcontinent.",
+    "position": 24285260
   },
   "rs10954737_sou": {
     "rsid": "rs10954737_sou",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13304,22 +13306,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Dravidian Ancestry Marker - highly diagnostic for Southern Indian and Sri Lankan populations."
+    "description": "Dravidian Ancestry Marker - highly diagnostic for Southern Indian and Sri Lankan populations.",
+    "position": 83903731
   },
   "rs1426654_sou": {
     "rsid": "rs1426654_sou",
-    "chromosome": "Unknown",
+    "chromosome": "15",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.99,
-      "EAS": 0.02,
-      "AMR": 0.15,
-      "SAS": 0.85,
+      "AFR": 0.0741301059001513,
+      "EUR": 0.997017892644135,
+      "EAS": 0.0119047619047619,
+      "AMR": 0.589337175792507,
+      "SAS": 0.685071574642127,
       "MENA": 0.8
     },
     "subFrequencies": {
@@ -13331,22 +13334,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SLC24A5 variant - highly informative for West Eurasian and South Asian populations."
+    "description": "SLC24A5 variant - highly informative for West Eurasian and South Asian populations.",
+    "position": 48134287
   },
   "rs10456302_sou": {
     "rsid": "rs10456302_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.1,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.95,
+      "AFR": 1,
+      "EUR": 0.997017892644135,
+      "EAS": 1,
+      "AMR": 0.998559077809798,
+      "SAS": 1,
       "MENA": 0.05
     },
     "subFrequencies": {
@@ -13357,11 +13361,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Ancestral South Indian (ASI) Marker - diagnostic for the indigenous populations of the Indian subcontinent."
+    "description": "Ancestral South Indian (ASI) Marker - diagnostic for the indigenous populations of the Indian subcontinent.",
+    "position": 24308216
   },
   "rs2816030_sou": {
     "rsid": "rs2816030_sou",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13378,11 +13383,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SLC24A5 variant - associated with lighter skin pigmentation, prevalent in South Asian populations."
+    "description": "SLC24A5 variant - associated with lighter skin pigmentation, prevalent in South Asian populations.",
+    "position": 18531104
   },
   "rs12146713_sou": {
     "rsid": "rs12146713_sou",
-    "chromosome": "Unknown",
+    "chromosome": "12",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13399,49 +13405,52 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "South Asian Ancestry Marker - informative for populations from the Indian subcontinent."
+    "description": "South Asian Ancestry Marker - informative for populations from the Indian subcontinent.",
+    "position": 106083027
   },
   "rs11030104_sou": {
     "rsid": "rs11030104_sou",
-    "chromosome": "Unknown",
+    "chromosome": "11",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "SAS": 0.85,
-      "EUR": 0.1,
-      "AFR": 0.02,
-      "EAS": 0.02,
-      "AMR": 0.02,
+      "SAS": 0.736196319018405,
+      "EUR": 0.779324055666004,
+      "AFR": 0.981089258698941,
+      "EAS": 0.510912698412698,
+      "AMR": 0.831412103746398,
       "MENA": 0.15
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "South Asian Ancestry Marker - informative for Indo-Aryan and Dravidian populations."
+    "description": "South Asian Ancestry Marker - informative for Indo-Aryan and Dravidian populations.",
+    "position": 27662970
   },
   "rs10456236_sou": {
     "rsid": "rs10456236_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "SAS": 0.88,
-      "EUR": 0.15,
-      "AFR": 0.01,
-      "EAS": 0.01,
-      "AMR": 0.01,
+      "SAS": 0.121676891615542,
+      "EUR": 0.0785288270377734,
+      "AFR": 0.201210287443268,
+      "EAS": 0.0912698412698413,
+      "AMR": 0.151296829971182,
       "MENA": 0.25
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Punjabi Ancestry Marker - informative for Northern Indo-Aryan populations."
+    "description": "Punjabi Ancestry Marker - informative for Northern Indo-Aryan populations.",
+    "position": 20797988
   },
   "rs10456282_sou": {
     "rsid": "rs10456282_sou",
@@ -13468,30 +13477,31 @@
   },
   "rs10456284_sou": {
     "rsid": "rs10456284_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "SAS": 0.92,
-      "EAS": 0.1,
+      "SAS": 0.752556237218814,
+      "EAS": 0.806547619047619,
       "MENA": 0.08,
-      "EUR": 0.02,
-      "AFR": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.688866799204771,
+      "AFR": 0.843419062027231,
+      "AMR": 0.747838616714697,
       "NAFR": 0.01,
       "OCE": 0.05
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups."
+    "description": "SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups.",
+    "position": 23731548
   },
   "rs10456288_sou": {
     "rsid": "rs10456288_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13510,11 +13520,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SAS/EUR Tie-Breaker - Diagnostic for Ancestral South Indian (ASI) components, effectively absent in Europe."
+    "description": "SAS/EUR Tie-Breaker - Diagnostic for Ancestral South Indian (ASI) components, effectively absent in Europe.",
+    "position": 23797406
   },
   "rs10456290_sou": {
     "rsid": "rs10456290_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13533,11 +13544,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SAS/EAS Tie-Breaker - Anchors Indo-Aryan genetics, strongly separating the subcontinent from East Asia."
+    "description": "SAS/EAS Tie-Breaker - Anchors Indo-Aryan genetics, strongly separating the subcontinent from East Asia.",
+    "position": 23797597
   },
   "rs10456302_sou_2": {
     "rsid": "rs10456302_sou_2",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13546,21 +13558,22 @@
     "frequencies": {
       "SAS": 0.95,
       "MENA": 0.12,
-      "EUR": 0.05,
+      "EUR": 0.00298210735586481,
       "NAFR": 0.01,
       "AFR": 0.01,
       "EAS": 0.05,
-      "AMR": 0.01,
+      "AMR": 0.00144092219020173,
       "OCE": 0.02
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "SAS/MENA Tie-Breaker - Diagnostic for deeper South Asian (AASI) lineages."
+    "description": "SAS/MENA Tie-Breaker - Diagnostic for deeper South Asian (AASI) lineages.",
+    "position": 24308216
   },
   "rs6119471_sou": {
     "rsid": "rs6119471_sou",
-    "chromosome": "Unknown",
+    "chromosome": "20",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13581,22 +13594,24 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Ancestral South Indian (ASI) Marker - highly diagnostic for the indigenous Neolithic populations of the South subcontinent."
+    "description": "Ancestral South Indian (ASI) Marker - highly diagnostic for the indigenous Neolithic populations of the South subcontinent.",
+    "position": 34197406
   },
   "rs12203592_sou": {
     "rsid": "rs12203592_sou",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.45,
-      "EAS": 0.01,
-      "SAS": 0.88,
-      "MENA": 0.35
+      "AFR": 0.991679273827534,
+      "EUR": 0.883697813121272,
+      "EAS": 1,
+      "SAS": 0.993865030674847,
+      "MENA": 0.35,
+      "AMR": 0.927953890489914
     },
     "subFrequencies": {
       "Indo-Aryan": 0.95,
@@ -13606,22 +13621,24 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Ancestral North Indian (ANI) Marker - informative for the West Eurasian related expansion into the Northern subcontinent."
+    "description": "Ancestral North Indian (ANI) Marker - informative for the West Eurasian related expansion into the Northern subcontinent.",
+    "position": 396321
   },
   "rs16891982_sou": {
     "rsid": "rs16891982_sou",
-    "chromosome": "Unknown",
+    "chromosome": "5",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.92,
-      "EAS": 0.01,
-      "SAS": 0.65,
-      "MENA": 0.8
+      "AFR": 0.0355521936459909,
+      "EUR": 0.938369781312127,
+      "EAS": 0.00595238095238095,
+      "SAS": 0.0593047034764826,
+      "MENA": 0.8,
+      "AMR": 0.463976945244957
     },
     "subFrequencies": {
       "Northwest_Indian": 0.85,
@@ -13631,11 +13648,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "West Eurasian-South Asian Cline Marker - helps distinguish the level of Western Eurasian admixture in the subcontinent."
+    "description": "West Eurasian-South Asian Cline Marker - helps distinguish the level of Western Eurasian admixture in the subcontinent.",
+    "position": 33951588
   },
   "rs11190870_sou": {
     "rsid": "rs11190870_sou",
-    "chromosome": "Unknown",
+    "chromosome": "10",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13656,7 +13674,8 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Austroasiatic/Munda Indian Marker - diagnostic for the early Austroasiatic speaking populations of Central and Eastern India."
+    "description": "Austroasiatic/Munda Indian Marker - diagnostic for the early Austroasiatic speaking populations of Central and Eastern India.",
+    "position": 101219450
   },
   "rs7431289_sou": {
     "rsid": "rs7431289_sou",
@@ -13685,7 +13704,7 @@
   },
   "rs16892766_sou": {
     "rsid": "rs16892766_sou",
-    "chromosome": "Unknown",
+    "chromosome": "8",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13705,11 +13724,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "South Asian-Caspian Cline Marker - indicative of West Eurasian admixture in North India."
+    "description": "South Asian-Caspian Cline Marker - indicative of West Eurasian admixture in North India.",
+    "position": 116618444
   },
   "rs11122334_sou": {
     "rsid": "rs11122334_sou",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13729,7 +13749,8 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Dravidian Genomic Marker - characteristic of the Southern Indian subcontinent."
+    "description": "Dravidian Genomic Marker - characteristic of the Southern Indian subcontinent.",
+    "position": 231783840
   },
   "rs10186066": {
     "rsid": "rs10186066",
@@ -13777,15 +13798,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.643149284253579,
+      "GLOBAL": 0.1,
+      "AFR": 0.58320726172466,
+      "AMR": 0.651296829971182,
+      "EAS": 0.754960317460317,
+      "EUR": 0.483101391650099
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 101453729
   },
   "rs500001_sas": {
     "rsid": "rs500001_sas",
@@ -13821,7 +13848,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "15",
+    "position": 53095816
   },
   "rs500003_sas": {
     "rsid": "rs500003_sas",
@@ -13831,15 +13860,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.936605316973415,
+      "GLOBAL": 0.1,
+      "AFR": 0.937972768532526,
+      "AMR": 0.963976945244957,
+      "EAS": 0.876984126984127,
+      "EUR": 0.997017892644135
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 120510145
   },
   "rs500004_sas": {
     "rsid": "rs500004_sas",
@@ -13857,7 +13892,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "X",
+    "position": 145179432
   },
   "rs500005_sas": {
     "rsid": "rs500005_sas",
@@ -13875,7 +13912,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 34054847
   },
   "rs500006_sas": {
     "rsid": "rs500006_sas",
@@ -13893,7 +13932,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 306724
   },
   "rs500007_sas": {
     "rsid": "rs500007_sas",
@@ -13903,15 +13944,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.697341513292434,
+      "GLOBAL": 0.1,
+      "AFR": 0.602118003025719,
+      "AMR": 0.557636887608069,
+      "EAS": 0.711309523809524,
+      "EUR": 0.639165009940358
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 81020609
   },
   "rs500008_sas": {
     "rsid": "rs500008_sas",
@@ -13929,7 +13976,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "6",
+    "position": 131115260
   },
   "rs500009_sas": {
     "rsid": "rs500009_sas",
@@ -13947,7 +13996,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 129243654
   },
   "rs5000010_sas": {
     "rsid": "rs5000010_sas",
@@ -13965,7 +14016,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 86063370
   },
   "rs5000011_sas": {
     "rsid": "rs5000011_sas",
@@ -13983,7 +14036,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 86063380
   },
   "rs5000012_sas": {
     "rsid": "rs5000012_sas",
@@ -14001,7 +14056,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "16",
+    "position": 86063390
   },
   "rs5000013_sas": {
     "rsid": "rs5000013_sas",
@@ -14091,7 +14148,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 28888414
   },
   "rs5000018_sas": {
     "rsid": "rs5000018_sas",
@@ -14109,7 +14168,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 28888418
   },
   "rs5000019_sas": {
     "rsid": "rs5000019_sas",
@@ -14127,7 +14188,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "19",
+    "position": 28888420
   },
   "rs5000020_sas": {
     "rsid": "rs5000020_sas",
@@ -14137,15 +14200,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.103271983640082,
+      "GLOBAL": 0.1,
+      "AFR": 0.157337367624811,
+      "AMR": 0.0518731988472622,
+      "EAS": 0.114087301587302,
+      "EUR": 0.0656063618290258
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "11",
+    "position": 9028215
   },
   "rs5000021_sas": {
     "rsid": "rs5000021_sas",
@@ -14379,7 +14448,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 75544391
   },
   "rs5000034_sas": {
     "rsid": "rs5000034_sas",
@@ -14415,7 +14486,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358779
   },
   "rs5000036_sas": {
     "rsid": "rs5000036_sas",
@@ -14433,7 +14506,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358783
   },
   "rs5000037_sas": {
     "rsid": "rs5000037_sas",
@@ -14451,7 +14526,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358795
   },
   "rs5000038_sas": {
     "rsid": "rs5000038_sas",
@@ -14469,7 +14546,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "5",
+    "position": 30358826
   },
   "rs5000039_sas": {
     "rsid": "rs5000039_sas",
@@ -14505,7 +14584,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "7",
+    "position": 133979484
   },
   "rs5000041_sas": {
     "rsid": "rs5000041_sas",
@@ -14523,7 +14604,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "14",
+    "position": 104098103
   },
   "rs5000042_sas": {
     "rsid": "rs5000042_sas",
@@ -14533,15 +14616,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.403885480572597,
+      "GLOBAL": 0.1,
+      "AFR": 0.446293494704992,
+      "AMR": 0.384726224783862,
+      "EAS": 0.345238095238095,
+      "EUR": 0.320079522862823
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "14",
+    "position": 104098101
   },
   "rs5000043_sas": {
     "rsid": "rs5000043_sas",
@@ -14577,7 +14666,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 91922481
   },
   "rs5000045_sas": {
     "rsid": "rs5000045_sas",
@@ -14587,15 +14678,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.074642126789366,
+      "GLOBAL": 0.1,
+      "AFR": 0.17624810892587,
+      "AMR": 0.201729106628242,
+      "EAS": 0.205357142857143,
+      "EUR": 0.0308151093439364
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 91922480
   },
   "rs5000046_sas": {
     "rsid": "rs5000046_sas",
@@ -14605,15 +14702,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.925357873210634,
+      "GLOBAL": 0.1,
+      "AFR": 0.82375189107413,
+      "AMR": 0.798270893371758,
+      "EAS": 0.794642857142857,
+      "EUR": 0.969184890656064
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 91922465
   },
   "rs5000047_sas": {
     "rsid": "rs5000047_sas",
@@ -14641,15 +14744,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.119631901840491,
+      "GLOBAL": 0.1,
+      "AFR": 0.0960665658093797,
+      "AMR": 0.174351585014409,
+      "EAS": 0.172619047619048,
+      "EUR": 0.213717693836978
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "10",
+    "position": 122769658
   },
   "rs5000049_sas": {
     "rsid": "rs5000049_sas",
@@ -14667,7 +14776,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "13",
+    "position": 19229441
   },
   "rs5000050_sas": {
     "rsid": "rs5000050_sas",
@@ -14749,15 +14860,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.116991643454039,
+      "GLOBAL": 0.1,
+      "AFR": 0.551345962113659,
+      "AMR": 0.141221374045802,
+      "EAS": 0.171465968586387,
+      "EUR": 0.0652741514360313
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "X",
+    "position": 130447589
   },
   "rs5000055_sas": {
     "rsid": "rs5000055_sas",
@@ -14767,15 +14884,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.883008356545961,
+      "GLOBAL": 0.1,
+      "AFR": 0.459621136590229,
+      "AMR": 0.858778625954199,
+      "EAS": 0.828534031413613,
+      "EUR": 0.934725848563969
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "X",
+    "position": 130447659
   },
   "rs5000056_sas": {
     "rsid": "rs5000056_sas",
@@ -14785,15 +14908,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.455010224948875,
+      "GLOBAL": 0.1,
+      "AFR": 0.0529500756429652,
+      "AMR": 0.429394812680115,
+      "EAS": 0.276785714285714,
+      "EUR": 0.409542743538767
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "8",
+    "position": 35317796
   },
   "rs5000057_sas": {
     "rsid": "rs5000057_sas",
@@ -14803,15 +14932,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.485685071574642,
+      "GLOBAL": 0.1,
+      "AFR": 0.381996974281392,
+      "AMR": 0.482708933717579,
+      "EAS": 0.470238095238095,
+      "EUR": 0.487077534791252
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 619215
   },
   "rs5000058_sas": {
     "rsid": "rs5000058_sas",
@@ -14901,7 +15036,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "9",
+    "position": 114984820
   },
   "rs5000063_sas": {
     "rsid": "rs5000063_sas",
@@ -15091,15 +15228,21 @@
       "A"
     ],
     "frequencies": {
-      "SAS": 0.95,
-      "GLOBAL": 0.1
+      "SAS": 0.634969325153374,
+      "GLOBAL": 0.1,
+      "AFR": 0.447806354009077,
+      "AMR": 0.576368876080692,
+      "EAS": 0.604166666666667,
+      "EUR": 0.55168986083499
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 130782485
   },
   "rs5000074_sas": {
     "rsid": "rs5000074_sas",
@@ -15117,7 +15260,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 130782481
   },
   "rs5000075_sas": {
     "rsid": "rs5000075_sas",
@@ -15135,7 +15280,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 130782425
   },
   "rs5000076_sas": {
     "rsid": "rs5000076_sas",
@@ -15153,7 +15300,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "12",
+    "position": 130782397
   },
   "rs5000077_sas": {
     "rsid": "rs5000077_sas",
@@ -15225,7 +15374,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "1",
+    "position": 160375491
   },
   "rs5000081_sas": {
     "rsid": "rs5000081_sas",
@@ -15308,14 +15459,17 @@
     ],
     "frequencies": {
       "SAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.00226928895612708
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 172702471
   },
   "rs5000086_sas": {
     "rsid": "rs5000086_sas",
@@ -15423,7 +15577,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "13",
+    "position": 37921113
   },
   "rs5000092_sas": {
     "rsid": "rs5000092_sas",
@@ -15513,7 +15669,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "3",
+    "position": 34279896
   },
   "rs5000097_sas": {
     "rsid": "rs5000097_sas",
@@ -15549,7 +15707,9 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "6",
+    "position": 33551454
   },
   "rs5000099_sas": {
     "rsid": "rs5000099_sas",
@@ -15567,6 +15727,8 @@
     "weight": 9,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "South Asian ancestry informative marker."
+    "description": "South Asian ancestry informative marker.",
+    "chromosome": "18",
+    "position": 67575462
   }
 }

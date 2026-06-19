@@ -1,18 +1,18 @@
 {
   "rs10456370_cen": {
     "rsid": "rs10456370_cen",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.15,
-      "EAS": 0.45,
-      "AMR": 0.05,
-      "SAS": 0.2,
+      "AFR": 0.0605143721633888,
+      "EUR": 0.467196819085487,
+      "EAS": 0.229166666666667,
+      "AMR": 0.358789625360231,
+      "SAS": 0.34560327198364,
       "MENA": 0.25,
       "CAS": 0.95
     },
@@ -24,22 +24,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Hazaragi/Central Asian Marker - diagnostic for the unique admixed populations of central Afghanistan and the Silk Road."
+    "description": "Hazaragi/Central Asian Marker - diagnostic for the unique admixed populations of central Afghanistan and the Silk Road.",
+    "position": 29312959
   },
   "rs10456301_cen": {
     "rsid": "rs10456301_cen",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.3,
-      "EAS": 0.4,
-      "AMR": 0.1,
-      "SAS": 0.2,
+      "AFR": 0.0196671709531014,
+      "EUR": 0.0745526838966203,
+      "EAS": 0.00694444444444444,
+      "AMR": 0.0561959654178674,
+      "SAS": 0.0756646216768916,
       "MENA": 0.1,
       "CAS": 0.9
     },
@@ -52,7 +53,8 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Central Asian Steppe Marker - diagnostic for the admixed populations of the Silk Road."
+    "description": "Central Asian Steppe Marker - diagnostic for the admixed populations of the Silk Road.",
+    "position": 24308127
   },
   "rs10456345_cen": {
     "rsid": "rs10456345_cen",
@@ -254,7 +256,7 @@
   },
   "rs300000_cas": {
     "rsid": "rs300000_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -269,11 +271,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86714386
   },
   "rs300001_cas": {
     "rsid": "rs300001_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -288,11 +291,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86714319
   },
   "rs300002_cas": {
     "rsid": "rs300002_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -307,11 +311,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86714313
   },
   "rs300003_cas": {
     "rsid": "rs300003_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -326,11 +331,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86714016
   },
   "rs300004_cas": {
     "rsid": "rs300004_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -338,18 +344,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.190620272314675,
+      "AMR": 0.0893371757925072,
+      "EAS": 0.0347222222222222,
+      "EUR": 0.0427435387673956,
+      "SAS": 0.016359918200409
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86713778
   },
   "rs300005_cas": {
     "rsid": "rs300005_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -364,11 +376,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86713439
   },
   "rs300006_cas": {
     "rsid": "rs300006_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -376,18 +389,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.534795763993949,
+      "AMR": 0.851585014409222,
+      "EAS": 0.952380952380952,
+      "EUR": 0.910536779324056,
+      "SAS": 0.908997955010225
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86712349
   },
   "rs300007_cas": {
     "rsid": "rs300007_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -402,11 +421,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86712151
   },
   "rs300008_cas": {
     "rsid": "rs300008_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -421,11 +441,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86711970
   },
   "rs300009_cas": {
     "rsid": "rs300009_cas",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -440,11 +461,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86711556
   },
   "rs3000010_cas": {
     "rsid": "rs3000010_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -459,11 +481,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 18712392
   },
   "rs3000011_cas": {
     "rsid": "rs3000011_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -478,11 +501,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19615357
   },
   "rs3000012_cas": {
     "rsid": "rs3000012_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -497,11 +521,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19615340
   },
   "rs3000013_cas": {
     "rsid": "rs3000013_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -516,11 +541,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19615273
   },
   "rs3000014_cas": {
     "rsid": "rs3000014_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -535,11 +561,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19614190
   },
   "rs3000015_cas": {
     "rsid": "rs3000015_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -554,11 +581,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19496093
   },
   "rs3000016_cas": {
     "rsid": "rs3000016_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -573,11 +601,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19725281
   },
   "rs3000017_cas": {
     "rsid": "rs3000017_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -592,11 +621,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19725228
   },
   "rs3000018_cas": {
     "rsid": "rs3000018_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -611,7 +641,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19725115
   },
   "rs3000019_cas": {
     "rsid": "rs3000019_cas",
@@ -634,7 +665,7 @@
   },
   "rs3000020_cas": {
     "rsid": "rs3000020_cas",
-    "chromosome": "Unknown",
+    "chromosome": "22",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -649,11 +680,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 15520787
   },
   "rs3000021_cas": {
     "rsid": "rs3000021_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -668,7 +700,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19723939
   },
   "rs3000022_cas": {
     "rsid": "rs3000022_cas",
@@ -710,7 +743,7 @@
   },
   "rs3000024_cas": {
     "rsid": "rs3000024_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -725,7 +758,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19719939
   },
   "rs3000025_cas": {
     "rsid": "rs3000025_cas",
@@ -748,7 +782,7 @@
   },
   "rs3000026_cas": {
     "rsid": "rs3000026_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -763,11 +797,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19719659
   },
   "rs3000027_cas": {
     "rsid": "rs3000027_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -782,7 +817,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19718868
   },
   "rs3000028_cas": {
     "rsid": "rs3000028_cas",
@@ -805,7 +841,7 @@
   },
   "rs3000029_cas": {
     "rsid": "rs3000029_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -813,18 +849,23 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0075642965204236,
+      "AMR": 0.00576368876080692,
+      "EAS": 0.00496031746031746,
+      "EUR": 0.00099403578528827
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19713375
   },
   "rs3000030_cas": {
     "rsid": "rs3000030_cas",
-    "chromosome": "Unknown",
+    "chromosome": "22",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -839,7 +880,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 15528876
   },
   "rs3000031_cas": {
     "rsid": "rs3000031_cas",
@@ -862,7 +904,7 @@
   },
   "rs3000032_cas": {
     "rsid": "rs3000032_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -877,11 +919,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84512829
   },
   "rs3000033_cas": {
     "rsid": "rs3000033_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -889,18 +932,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.155068078668684,
+      "AMR": 0.328530259365994,
+      "EAS": 0.295634920634921,
+      "EUR": 0.246520874751491,
+      "SAS": 0.0991820040899796
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84511214
   },
   "rs3000034_cas": {
     "rsid": "rs3000034_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -915,11 +964,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84510625
   },
   "rs3000035_cas": {
     "rsid": "rs3000035_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -934,11 +984,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84509910
   },
   "rs3000036_cas": {
     "rsid": "rs3000036_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -946,18 +997,23 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.029500756429652,
+      "AMR": 0.00144092219020173,
+      "EUR": 0.00099403578528827,
+      "SAS": 0.00102249488752556
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84505010
   },
   "rs3000037_cas": {
     "rsid": "rs3000037_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -972,11 +1028,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84504994
   },
   "rs3000038_cas": {
     "rsid": "rs3000038_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -984,18 +1041,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.835854765506808,
+      "AMR": 0.687319884726225,
+      "EAS": 0.669642857142857,
+      "EUR": 0.736580516898608,
+      "SAS": 0.64519427402863
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84502357
   },
   "rs3000039_cas": {
     "rsid": "rs3000039_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1010,11 +1073,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84488170
   },
   "rs3000040_cas": {
     "rsid": "rs3000040_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1029,7 +1093,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84487519
   },
   "rs3000041_cas": {
     "rsid": "rs3000041_cas",
@@ -1052,7 +1117,7 @@
   },
   "rs3000042_cas": {
     "rsid": "rs3000042_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1067,7 +1132,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84517909
   },
   "rs3000043_cas": {
     "rsid": "rs3000043_cas",
@@ -1109,7 +1175,7 @@
   },
   "rs3000045_cas": {
     "rsid": "rs3000045_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1124,11 +1190,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84453200
   },
   "rs3000046_cas": {
     "rsid": "rs3000046_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1136,18 +1203,21 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.00529500756429652,
+      "AMR": 0.00144092219020173
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84448028
   },
   "rs3000047_cas": {
     "rsid": "rs3000047_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1162,11 +1232,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84447085
   },
   "rs3000048_cas": {
     "rsid": "rs3000048_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1181,11 +1252,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84438415
   },
   "rs3000049_cas": {
     "rsid": "rs3000049_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1193,18 +1265,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.599092284417549,
+      "AMR": 0.419308357348703,
+      "EAS": 0.380952380952381,
+      "EUR": 0.521868787276342,
+      "SAS": 0.687116564417178
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84437597
   },
   "rs3000050_cas": {
     "rsid": "rs3000050_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1219,11 +1297,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84436995
   },
   "rs3000051_cas": {
     "rsid": "rs3000051_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1231,18 +1310,23 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0302571860816944,
+      "AMR": 0.00144092219020173,
+      "EUR": 0.00099403578528827,
+      "SAS": 0.00102249488752556
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84515103
   },
   "rs3000052_cas": {
     "rsid": "rs3000052_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1257,11 +1341,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84435692
   },
   "rs3000053_cas": {
     "rsid": "rs3000053_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1269,18 +1354,23 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0423600605143722,
+      "AMR": 0.00144092219020173,
+      "EUR": 0.00099403578528827,
+      "SAS": 0.00102249488752556
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84514560
   },
   "rs3000054_cas": {
     "rsid": "rs3000054_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1288,18 +1378,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.844931921331316,
+      "AMR": 0.70028818443804,
+      "EAS": 0.679563492063492,
+      "EUR": 0.742544731610338,
+      "SAS": 0.625766871165644
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84514405
   },
   "rs3000055_cas": {
     "rsid": "rs3000055_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1314,11 +1410,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84428514
   },
   "rs3000056_cas": {
     "rsid": "rs3000056_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1333,11 +1430,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 18539905
   },
   "rs3000057_cas": {
     "rsid": "rs3000057_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1352,11 +1450,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 18539841
   },
   "rs3000058_cas": {
     "rsid": "rs3000058_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1371,7 +1470,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 18530998
   },
   "rs3000059_cas": {
     "rsid": "rs3000059_cas",
@@ -1394,7 +1494,7 @@
   },
   "rs3000060_cas": {
     "rsid": "rs3000060_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1409,11 +1509,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 230752167
   },
   "rs3000061_cas": {
     "rsid": "rs3000061_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1428,11 +1529,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 230752462
   },
   "rs3000062_cas": {
     "rsid": "rs3000062_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1447,11 +1549,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 230753059
   },
   "rs3000063_cas": {
     "rsid": "rs3000063_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1466,11 +1569,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 230753789
   },
   "rs3000064_cas": {
     "rsid": "rs3000064_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1478,18 +1582,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.914523449319213,
+      "AMR": 0.76657060518732,
+      "EAS": 0.898809523809524,
+      "EUR": 0.567594433399602,
+      "SAS": 0.671779141104294
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 230690196
   },
   "rs3000065_cas": {
     "rsid": "rs3000065_cas",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1504,11 +1614,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 1536463
   },
   "rs3000066_cas": {
     "rsid": "rs3000066_cas",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1523,11 +1634,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 1521118
   },
   "rs3000067_cas": {
     "rsid": "rs3000067_cas",
-    "chromosome": "Unknown",
+    "chromosome": "8",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1542,11 +1654,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 5887706
   },
   "rs3000068_cas": {
     "rsid": "rs3000068_cas",
-    "chromosome": "Unknown",
+    "chromosome": "8",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1554,18 +1667,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0635400907715582,
+      "AMR": 0.229106628242075,
+      "EAS": 0.0178571428571429,
+      "EUR": 0.251491053677932,
+      "SAS": 0.122699386503067
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 5887754
   },
   "rs3000069_cas": {
     "rsid": "rs3000069_cas",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1580,11 +1699,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86253409
   },
   "rs3000070_cas": {
     "rsid": "rs3000070_cas",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1592,18 +1712,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.847957639939486,
+      "AMR": 0.870317002881844,
+      "EAS": 0.906746031746032,
+      "EUR": 0.808151093439364,
+      "SAS": 0.957055214723926
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86253554
   },
   "rs3000071_cas": {
     "rsid": "rs3000071_cas",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1618,11 +1744,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86254432
   },
   "rs3000072_cas": {
     "rsid": "rs3000072_cas",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1630,18 +1757,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.120398773006135,
+      "AMR": 0.25,
+      "EAS": 0.346315789473684,
+      "EUR": 0.229714285714286,
+      "SAS": 0.239001189060642
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86257359
   },
   "rs3000073_cas": {
     "rsid": "rs3000073_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1649,18 +1782,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.258698940998487,
+      "AMR": 0.198847262247839,
+      "EAS": 0.123015873015873,
+      "EUR": 0.312127236580517,
+      "SAS": 0.323108384458078
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 105263455
   },
   "rs3000074_cas": {
     "rsid": "rs3000074_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1675,11 +1814,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 105272206
   },
   "rs3000075_cas": {
     "rsid": "rs3000075_cas",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -1687,14 +1827,20 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.84947049924357,
+      "AMR": 0.812680115273775,
+      "EAS": 0.876984126984127,
+      "EUR": 0.709741550695825,
+      "SAS": 0.69120654396728
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 105246882
   },
   "rs3000076_cas": {
     "rsid": "rs3000076_cas",
@@ -2040,7 +2186,7 @@
   },
   "rs3000094_cas": {
     "rsid": "rs3000094_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2055,11 +2201,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 79424522
   },
   "rs3000095_cas": {
     "rsid": "rs3000095_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2067,18 +2214,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.574130105900151,
+      "AMR": 0.302593659942363,
+      "EAS": 0.222222222222222,
+      "EUR": 0.500994035785288,
+      "SAS": 0.369120654396728
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 79424659
   },
   "rs3000096_cas": {
     "rsid": "rs3000096_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2086,18 +2239,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0620272314674735,
+      "AMR": 0.0345821325648415,
+      "EAS": 0.00396825396825397,
+      "EUR": 0.0526838966202783,
+      "SAS": 0.0368098159509202
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 79426394
   },
   "rs3000097_cas": {
     "rsid": "rs3000097_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2112,11 +2271,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 79430321
   },
   "rs3000098_cas": {
     "rsid": "rs3000098_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2124,18 +2284,21 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0249621785173979,
+      "AMR": 0.00144092219020173
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 79431396
   },
   "rs3000099_cas": {
     "rsid": "rs3000099_cas",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2150,7 +2313,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 79435027
   },
   "rs800000_cas": {
     "rsid": "rs800000_cas",
@@ -2344,7 +2508,7 @@
   },
   "rs8000010_cas": {
     "rsid": "rs8000010_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2359,11 +2523,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 69642790
   },
   "rs8000011_cas": {
     "rsid": "rs8000011_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2378,11 +2543,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 54039376
   },
   "rs8000012_cas": {
     "rsid": "rs8000012_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2397,11 +2563,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 99685547
   },
   "rs8000013_cas": {
     "rsid": "rs8000013_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2416,11 +2583,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 77829513
   },
   "rs8000014_cas": {
     "rsid": "rs8000014_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2435,11 +2603,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 23460592
   },
   "rs8000015_cas": {
     "rsid": "rs8000015_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2454,11 +2623,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 103292962
   },
   "rs8000016_cas": {
     "rsid": "rs8000016_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2473,11 +2643,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 27999512
   },
   "rs8000017_cas": {
     "rsid": "rs8000017_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2485,18 +2656,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.245839636913767,
+      "AMR": 0.0417867435158501,
+      "EAS": 0.056547619047619,
+      "EUR": 0.102385685884692,
+      "SAS": 0.165644171779141
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 31954967
   },
   "rs8000018_cas": {
     "rsid": "rs8000018_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2504,18 +2681,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.723146747352496,
+      "AMR": 0.753602305475504,
+      "EAS": 0.922619047619048,
+      "EUR": 0.833001988071571,
+      "SAS": 0.829243353783231
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 95878283
   },
   "rs8000019_cas": {
     "rsid": "rs8000019_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2530,11 +2713,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 101456607
   },
   "rs8000020_cas": {
     "rsid": "rs8000020_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2549,11 +2733,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 83599979
   },
   "rs8000021_cas": {
     "rsid": "rs8000021_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2568,11 +2753,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 24620822
   },
   "rs8000022_cas": {
     "rsid": "rs8000022_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2580,18 +2766,23 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.577155824508321,
+      "AMR": 0.0576368876080692,
+      "EUR": 0.00497017892644135,
+      "SAS": 0.00204498977505112
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 97048591
   },
   "rs8000023_cas": {
     "rsid": "rs8000023_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2599,14 +2790,20 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.940998487140696,
+      "AMR": 0.845821325648415,
+      "EAS": 0.998015873015873,
+      "EUR": 0.761431411530815,
+      "SAS": 0.896728016359918
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 101095541
   },
   "rs8000024_cas": {
     "rsid": "rs8000024_cas",
@@ -2629,7 +2826,7 @@
   },
   "rs8000025_cas": {
     "rsid": "rs8000025_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2637,18 +2834,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.543116490166415,
+      "AMR": 0.129682997118156,
+      "EAS": 0.156746031746032,
+      "EUR": 0.114314115308151,
+      "SAS": 0.0828220858895705
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 71425673
   },
   "rs8000026_cas": {
     "rsid": "rs8000026_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2656,18 +2859,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.924357034795764,
+      "AMR": 1,
+      "EAS": 1,
+      "EUR": 1,
+      "SAS": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 34766720
   },
   "rs8000027_cas": {
     "rsid": "rs8000027_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2682,11 +2891,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 77963430
   },
   "rs8000028_cas": {
     "rsid": "rs8000028_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2694,18 +2904,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.177760968229955,
+      "AMR": 0.145533141210375,
+      "EAS": 0.0168650793650794,
+      "EUR": 0.21272365805169,
+      "SAS": 0.166666666666667
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 93496867
   },
   "rs8000029_cas": {
     "rsid": "rs8000029_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2720,11 +2936,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 36708095
   },
   "rs8000030_cas": {
     "rsid": "rs8000030_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2732,18 +2949,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.192133131618759,
+      "AMR": 0.0230547550432277,
+      "EAS": 0.068452380952381,
+      "EUR": 0.00099403578528827,
+      "SAS": 0.00102249488752556
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 97083483
   },
   "rs8000031_cas": {
     "rsid": "rs8000031_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2751,18 +2974,23 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.00075642965204236,
+      "AMR": 0.00144092219020173,
+      "EUR": 0.00695825049701789,
+      "SAS": 0.00102249488752556
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 49660296
   },
   "rs8000032_cas": {
     "rsid": "rs8000032_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2777,11 +3005,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 110921644
   },
   "rs8000033_cas": {
     "rsid": "rs8000033_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2789,18 +3018,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.96142208774584,
+      "AMR": 0.998559077809798,
+      "EAS": 0.996031746031746,
+      "EUR": 0.998011928429423,
+      "SAS": 0.995910020449898
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 47297611
   },
   "rs8000034_cas": {
     "rsid": "rs8000034_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2815,11 +3050,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 80197450
   },
   "rs8000035_cas": {
     "rsid": "rs8000035_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2834,11 +3070,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 19204635
   },
   "rs8000036_cas": {
     "rsid": "rs8000036_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2846,18 +3083,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.782904689863843,
+      "AMR": 0.736311239193084,
+      "EAS": 0.581349206349206,
+      "EUR": 0.757455268389662,
+      "SAS": 0.785276073619632
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 83671990
   },
   "rs8000037_cas": {
     "rsid": "rs8000037_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2865,18 +3108,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.201210287443268,
+      "AMR": 0.403458213256484,
+      "EAS": 0.48015873015873,
+      "EUR": 0.341948310139165,
+      "SAS": 0.333333333333333
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 93313926
   },
   "rs8000038_cas": {
     "rsid": "rs8000038_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2884,18 +3133,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.934947049924357,
+      "AMR": 0.995677233429395,
+      "EAS": 1,
+      "EUR": 1,
+      "SAS": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 48884171
   },
   "rs8000039_cas": {
     "rsid": "rs8000039_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2903,18 +3158,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.238275340393343,
+      "AMR": 0.282420749279539,
+      "EAS": 0.130952380952381,
+      "EUR": 0.387673956262425,
+      "SAS": 0.234151329243354
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 92428123
   },
   "rs8000040_cas": {
     "rsid": "rs8000040_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2922,18 +3183,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.533282904689864,
+      "AMR": 0.389048991354467,
+      "EAS": 0.170634920634921,
+      "EUR": 0.506958250497018,
+      "SAS": 0.460122699386503
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 40285741
   },
   "rs8000041_cas": {
     "rsid": "rs8000041_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2941,18 +3208,20 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0113464447806354
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 80489936
   },
   "rs8000042_cas": {
     "rsid": "rs8000042_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2967,11 +3236,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 21050139
   },
   "rs8000043_cas": {
     "rsid": "rs8000043_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -2986,11 +3256,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 24534918
   },
   "rs8000044_cas": {
     "rsid": "rs8000044_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3005,11 +3276,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 45524972
   },
   "rs8000045_cas": {
     "rsid": "rs8000045_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3024,11 +3296,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 70194301
   },
   "rs8000046_cas": {
     "rsid": "rs8000046_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3043,11 +3316,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 21050147
   },
   "rs8000047_cas": {
     "rsid": "rs8000047_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3062,11 +3336,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 38059329
   },
   "rs8000048_cas": {
     "rsid": "rs8000048_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3081,11 +3356,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 43227925
   },
   "rs8000049_cas": {
     "rsid": "rs8000049_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3093,18 +3369,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.977307110438729,
+      "AMR": 0.988472622478386,
+      "EAS": 0.999007936507937,
+      "EUR": 0.989065606361829,
+      "SAS": 0.988752556237219
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 100962039
   },
   "rs8000050_cas": {
     "rsid": "rs8000050_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3119,11 +3401,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 70100480
   },
   "rs8000051_cas": {
     "rsid": "rs8000051_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3138,11 +3421,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 65403560
   },
   "rs8000052_cas": {
     "rsid": "rs8000052_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3157,11 +3441,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 75023951
   },
   "rs8000053_cas": {
     "rsid": "rs8000053_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3169,18 +3454,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0499243570347958,
+      "AMR": 0.0576368876080692,
+      "EAS": 0.0505952380952381,
+      "EUR": 0.0546719681908549,
+      "SAS": 0.153374233128834
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 108645391
   },
   "rs8000054_cas": {
     "rsid": "rs8000054_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3188,18 +3479,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.990922844175492,
+      "AMR": 1,
+      "EAS": 1,
+      "EUR": 1,
+      "SAS": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 60691964
   },
   "rs8000055_cas": {
     "rsid": "rs8000055_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3214,11 +3511,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 39105416
   },
   "rs8000056_cas": {
     "rsid": "rs8000056_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3233,11 +3531,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 105827091
   },
   "rs8000057_cas": {
     "rsid": "rs8000057_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3245,18 +3544,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.315431164901664,
+      "AMR": 0.121037463976945,
+      "EAS": 0.0416666666666667,
+      "EUR": 0.130218687872763,
+      "SAS": 0.23721881390593
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 74757921
   },
   "rs8000058_cas": {
     "rsid": "rs8000058_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3271,11 +3576,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 30702088
   },
   "rs8000059_cas": {
     "rsid": "rs8000059_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3290,11 +3596,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 85650396
   },
   "rs8000060_cas": {
     "rsid": "rs8000060_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3309,11 +3616,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 111435673
   },
   "rs8000061_cas": {
     "rsid": "rs8000061_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3328,11 +3636,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 63574582
   },
   "rs8000062_cas": {
     "rsid": "rs8000062_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3340,18 +3649,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.54160363086233,
+      "AMR": 0.559077809798271,
+      "EAS": 0.364087301587302,
+      "EUR": 0.462226640159046,
+      "SAS": 0.562372188139059
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 75596332
   },
   "rs8000063_cas": {
     "rsid": "rs8000063_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3359,18 +3674,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.258698940998487,
+      "AMR": 0.146974063400576,
+      "EAS": 0.0218253968253968,
+      "EUR": 0.133200795228628,
+      "SAS": 0.104294478527607
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 97937588
   },
   "rs8000064_cas": {
     "rsid": "rs8000064_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3385,11 +3706,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 30955360
   },
   "rs8000065_cas": {
     "rsid": "rs8000065_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3404,11 +3726,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 26058465
   },
   "rs8000066_cas": {
     "rsid": "rs8000066_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3423,11 +3746,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 23392939
   },
   "rs8000067_cas": {
     "rsid": "rs8000067_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3442,11 +3766,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 110039879
   },
   "rs8000068_cas": {
     "rsid": "rs8000068_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3454,18 +3779,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.977307110438729,
+      "AMR": 1,
+      "EAS": 1,
+      "EUR": 1,
+      "SAS": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 90741792
   },
   "rs8000069_cas": {
     "rsid": "rs8000069_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3480,11 +3811,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 109560265
   },
   "rs8000070_cas": {
     "rsid": "rs8000070_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3499,11 +3831,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 45268125
   },
   "rs8000071_cas": {
     "rsid": "rs8000071_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3518,11 +3851,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 32551236
   },
   "rs8000072_cas": {
     "rsid": "rs8000072_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3530,18 +3864,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.964447806354009,
+      "AMR": 0.994236311239193,
+      "EAS": 1,
+      "EUR": 1,
+      "SAS": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 68835308
   },
   "rs8000073_cas": {
     "rsid": "rs8000073_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3556,11 +3896,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 37574756
   },
   "rs8000074_cas": {
     "rsid": "rs8000074_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3568,18 +3909,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.369894099848714,
+      "AMR": 0.351585014409222,
+      "EAS": 0.123015873015873,
+      "EUR": 0.370775347912525,
+      "SAS": 0.236196319018405
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 59456335
   },
   "rs8000075_cas": {
     "rsid": "rs8000075_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3594,11 +3941,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 65419926
   },
   "rs8000076_cas": {
     "rsid": "rs8000076_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3613,11 +3961,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 18219523
   },
   "rs8000077_cas": {
     "rsid": "rs8000077_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3625,18 +3974,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.170196671709531,
+      "AMR": 0.0201729106628242,
+      "EAS": 0.000992063492063492,
+      "EUR": 0.0536779324055666,
+      "SAS": 0.0715746421267894
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 60737732
   },
   "rs8000078_cas": {
     "rsid": "rs8000078_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3651,11 +4006,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 106527626
   },
   "rs8000079_cas": {
     "rsid": "rs8000079_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3670,7 +4026,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 102611067
   },
   "rs8000080_cas": {
     "rsid": "rs8000080_cas",
@@ -3693,7 +4050,7 @@
   },
   "rs8000081_cas": {
     "rsid": "rs8000081_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3708,11 +4065,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 73042041
   },
   "rs8000082_cas": {
     "rsid": "rs8000082_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3727,11 +4085,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 52927065
   },
   "rs8000083_cas": {
     "rsid": "rs8000083_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3746,11 +4105,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 58428319
   },
   "rs8000084_cas": {
     "rsid": "rs8000084_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3765,11 +4125,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 33037056
   },
   "rs8000085_cas": {
     "rsid": "rs8000085_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3784,11 +4145,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 88207199
   },
   "rs8000086_cas": {
     "rsid": "rs8000086_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3803,11 +4165,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 86567392
   },
   "rs8000087_cas": {
     "rsid": "rs8000087_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3822,11 +4185,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 105827142
   },
   "rs8000088_cas": {
     "rsid": "rs8000088_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3834,18 +4198,20 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.00680786686838124
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 20538747
   },
   "rs8000089_cas": {
     "rsid": "rs8000089_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3853,18 +4219,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.624054462934947,
+      "AMR": 0.646974063400576,
+      "EAS": 0.868055555555556,
+      "EUR": 0.533797216699801,
+      "SAS": 0.794478527607362
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 54294526
   },
   "rs8000090_cas": {
     "rsid": "rs8000090_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3872,18 +4244,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.864599092284418,
+      "AMR": 0.984149855907781,
+      "EAS": 1,
+      "EUR": 0.981113320079523,
+      "SAS": 0.995910020449898
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 112159919
   },
   "rs8000091_cas": {
     "rsid": "rs8000091_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3891,18 +4269,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.481089258698941,
+      "AMR": 0.298270893371758,
+      "EAS": 0.287698412698413,
+      "EUR": 0.432405566600398,
+      "SAS": 0.383435582822086
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 69746894
   },
   "rs8000092_cas": {
     "rsid": "rs8000092_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3910,18 +4294,20 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0181543116490166
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 92967189
   },
   "rs8000093_cas": {
     "rsid": "rs8000093_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3929,18 +4315,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.437972768532526,
+      "AMR": 0.50864553314121,
+      "EAS": 0.458333333333333,
+      "EUR": 0.441351888667992,
+      "SAS": 0.241308793456033
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 76245577
   },
   "rs8000094_cas": {
     "rsid": "rs8000094_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3948,18 +4340,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.713313161875946,
+      "AMR": 0.906340057636888,
+      "EAS": 0.889880952380952,
+      "EUR": 0.903578528827038,
+      "SAS": 0.842535787321063
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 84554010
   },
   "rs8000095_cas": {
     "rsid": "rs8000095_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3967,18 +4365,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.565809379727685,
+      "AMR": 0.263688760806916,
+      "EAS": 0.169642857142857,
+      "EUR": 0.200795228628231,
+      "SAS": 0.349693251533742
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 67805327
   },
   "rs8000096_cas": {
     "rsid": "rs8000096_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -3993,11 +4397,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 64303566
   },
   "rs8000097_cas": {
     "rsid": "rs8000097_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -4005,18 +4410,24 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.532526475037821,
+      "AMR": 0.81700288184438,
+      "EAS": 0.904761904761905,
+      "EUR": 0.797216699801193,
+      "SAS": 0.794478527607362
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 68887963
   },
   "rs8000098_cas": {
     "rsid": "rs8000098_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -4024,18 +4435,21 @@
     ],
     "frequencies": {
       "CAS": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.14750378214826,
+      "AMR": 0.0129682997118156
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 53799475
   },
   "rs8000099_cas": {
     "rsid": "rs8000099_cas",
-    "chromosome": "Unknown",
+    "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
     "alleles": [
@@ -4050,6 +4464,7 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "Central Asian ancestry informative marker."
+    "description": "Central Asian ancestry informative marker.",
+    "position": 93756294
   }
 }

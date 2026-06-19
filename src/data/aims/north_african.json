@@ -697,7 +697,7 @@
   },
   "rs12821256_nor": {
     "rsid": "rs12821256_nor",
-    "chromosome": "Unknown",
+    "chromosome": "12",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -714,11 +714,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African Ancestry Marker - highly prevalent in Maghreb and Egyptian populations."
+    "description": "North African Ancestry Marker - highly prevalent in Maghreb and Egyptian populations.",
+    "position": 88934558
   },
   "rs9999903_nor": {
     "rsid": "rs9999903_nor",
-    "chromosome": "Unknown",
+    "chromosome": "4",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -735,11 +736,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African Ancestry Marker - informative for distinguishing North African from Sub-Saharan African."
+    "description": "North African Ancestry Marker - informative for distinguishing North African from Sub-Saharan African.",
+    "position": 9462956
   },
   "rs6119471_nor": {
     "rsid": "rs6119471_nor",
-    "chromosome": "Unknown",
+    "chromosome": "20",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -756,11 +758,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African Ancestry Marker - high frequency in Berber and Arab-Berber populations."
+    "description": "North African Ancestry Marker - high frequency in Berber and Arab-Berber populations.",
+    "position": 34197406
   },
   "rs7722456_nor": {
     "rsid": "rs7722456_nor",
-    "chromosome": "Unknown",
+    "chromosome": "5",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -777,11 +780,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African Ancestry Marker - useful for identifying North African ancestry components."
+    "description": "North African Ancestry Marker - useful for identifying North African ancestry components.",
+    "position": 170775980
   },
   "rs10911063_nor": {
     "rsid": "rs10911063_nor",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -798,11 +802,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African Ancestry Marker - highly specific to populations of the Maghreb."
+    "description": "North African Ancestry Marker - highly specific to populations of the Maghreb.",
+    "position": 182349648
   },
   "rs10911061_nor": {
     "rsid": "rs10911061_nor",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -819,11 +824,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African Ancestry Marker - diagnostic for North African genetic signatures."
+    "description": "North African Ancestry Marker - diagnostic for North African genetic signatures.",
+    "position": 182343465
   },
   "rs10456208_nor": {
     "rsid": "rs10456208_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -840,49 +846,52 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Egyptian/North African ancestry marker."
+    "description": "Egyptian/North African ancestry marker.",
+    "position": 17678353
   },
   "rs10456211_nor": {
     "rsid": "rs10456211_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
       "T"
     ],
     "frequencies": {
-      "AFR": 0.32,
-      "EUR": 0.08,
-      "EAS": 0.01,
-      "AMR": 0.04,
-      "SAS": 0.04,
+      "AFR": 0.00907715582450832,
+      "EUR": 0.215705765407555,
+      "EAS": 0.0525793650793651,
+      "AMR": 0.204610951008646,
+      "SAS": 0.188139059304703,
       "MENA": 0.92
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Egyptian/North African ancestry marker."
+    "description": "Egyptian/North African ancestry marker.",
+    "position": 10006287
   },
   "rs10456214_nor": {
     "rsid": "rs10456214_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.3,
-      "EUR": 0.06,
-      "EAS": 0.01,
-      "AMR": 0.03,
-      "SAS": 0.03,
+      "AFR": 0.885779122541604,
+      "EUR": 0.910536779324056,
+      "EAS": 0.999007936507937,
+      "AMR": 0.940922190201729,
+      "SAS": 0.952965235173824,
       "MENA": 0.94
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Egyptian/North African ancestry marker."
+    "description": "Egyptian/North African ancestry marker.",
+    "position": 18287942
   },
   "rs9000318_nor": {
     "rsid": "rs9000318_nor",
@@ -991,7 +1000,7 @@
   },
   "rs10456275_nor": {
     "rsid": "rs10456275_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -999,22 +1008,23 @@
     ],
     "frequencies": {
       "NAFR": 0.91,
-      "EUR": 0.09,
+      "EUR": 0.288270377733598,
       "MENA": 0.35,
-      "AFR": 0.2,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.02,
+      "AFR": 0.0370650529500756,
+      "EAS": 0.0545634920634921,
+      "AMR": 0.15850144092219,
+      "SAS": 0.201431492842536,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "NAFR/EUR Tie-Breaker - Distinctive Maghreb marker, filters out false Iberian/Southern European overlap."
+    "description": "NAFR/EUR Tie-Breaker - Distinctive Maghreb marker, filters out false Iberian/Southern European overlap.",
+    "position": 23511532
   },
   "rs10456278_nor": {
     "rsid": "rs10456278_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1022,22 +1032,23 @@
     ],
     "frequencies": {
       "NAFR": 0.89,
-      "AFR": 0.12,
+      "AFR": 0.1732223903177,
       "MENA": 0.5,
-      "EUR": 0.15,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.02,
+      "EUR": 0.306163021868787,
+      "EAS": 0.18452380952381,
+      "AMR": 0.20028818443804,
+      "SAS": 0.215746421267894,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "NAFR/AFR Tie-Breaker - Prevents Sahel/Saharan border populations from misclassifying as strictly Sub-Saharan."
+    "description": "NAFR/AFR Tie-Breaker - Prevents Sahel/Saharan border populations from misclassifying as strictly Sub-Saharan.",
+    "position": 23683162
   },
   "rs10456291_nor": {
     "rsid": "rs10456291_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1056,11 +1067,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap."
+    "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap.",
+    "position": 23799312
   },
   "rs10456305_nor": {
     "rsid": "rs10456305_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1068,22 +1080,23 @@
     ],
     "frequencies": {
       "NAFR": 0.94,
-      "AFR": 0.15,
+      "AFR": 0.722390317700454,
       "MENA": 0.25,
-      "EUR": 0.1,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "AMR": 0.01,
+      "EUR": 0.447316103379722,
+      "EAS": 0.593253968253968,
+      "SAS": 0.538854805725971,
+      "AMR": 0.56628242074928,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "NAFR/AFR Tie-Breaker - Anchors indigenous Berber/Maghrebi components against Sub-Saharan gene flow."
+    "description": "NAFR/AFR Tie-Breaker - Anchors indigenous Berber/Maghrebi components against Sub-Saharan gene flow.",
+    "position": 24491113
   },
   "rs10456272_nor": {
     "rsid": "rs10456272_nor",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1103,22 +1116,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Saharan Amazigh Marker - diagnostic for the indigenous Berber populations."
+    "description": "Saharan Amazigh Marker - diagnostic for the indigenous Berber populations.",
+    "position": 23154117
   },
   "rs10456205_be": {
     "rsid": "rs10456205_be",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.4,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.25,
-      "SAS": 0.05,
+      "AFR": 0.235249621785174,
+      "AMR": 0.523054755043228,
+      "EAS": 0.464285714285714,
+      "EUR": 0.431411530815109,
+      "SAS": 0.395705521472393,
       "MENA": 0.75
     },
     "subFrequencies": {},
@@ -1126,7 +1140,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Berber Ancestry Marker",
-    "description": "Ancestry Informative Marker for Berber populations."
+    "description": "Ancestry Informative Marker for Berber populations.",
+    "position": 17035644
   },
   "rs12821258": {
     "rsid": "rs12821258",
@@ -1153,18 +1168,18 @@
   },
   "rs10456205_tu": {
     "rsid": "rs10456205_tu",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.6,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.15,
-      "SAS": 0.05,
+      "AFR": 0.764750378214826,
+      "AMR": 0.476945244956772,
+      "EAS": 0.535714285714286,
+      "EUR": 0.568588469184891,
+      "SAS": 0.604294478527607,
       "MENA": 0.5
     },
     "subFrequencies": {},
@@ -1172,11 +1187,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Tuareg Ancestry Marker",
-    "description": "Ancestry Informative Marker for Tuareg populations."
+    "description": "Ancestry Informative Marker for Tuareg populations.",
+    "position": 17035644
   },
   "rs400000_naf": {
     "rsid": "rs400000_naf",
-    "chromosome": "Unknown",
+    "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1184,14 +1200,20 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.769690927218345,
+      "AMR": 0.284351145038168,
+      "EAS": 0.255235602094241,
+      "EUR": 0.385117493472585,
+      "SAS": 0.391364902506964
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 105626269
   },
   "rs400001_naf": {
     "rsid": "rs400001_naf",
@@ -1214,7 +1236,7 @@
   },
   "rs400002_naf": {
     "rsid": "rs400002_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1229,7 +1251,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 23364541
   },
   "rs400003_naf": {
     "rsid": "rs400003_naf",
@@ -1252,7 +1275,7 @@
   },
   "rs400004_naf": {
     "rsid": "rs400004_naf",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1267,11 +1290,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 4655082
   },
   "rs400005_naf": {
     "rsid": "rs400005_naf",
-    "chromosome": "Unknown",
+    "chromosome": "14",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1279,18 +1303,23 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.156580937972769,
+      "AMR": 0.015850144092219,
+      "EAS": 0.0694444444444444,
+      "SAS": 0.0081799591002045
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 87928891
   },
   "rs400006_naf": {
     "rsid": "rs400006_naf",
-    "chromosome": "Unknown",
+    "chromosome": "12",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1298,18 +1327,24 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.0279878971255673,
+      "AMR": 0.180115273775216,
+      "EAS": 0.0446428571428571,
+      "EUR": 0.186878727634195,
+      "SAS": 0.0756646216768916
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 59417531
   },
   "rs400007_naf": {
     "rsid": "rs400007_naf",
-    "chromosome": "Unknown",
+    "chromosome": "2",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1324,11 +1359,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 159052886
   },
   "rs400008_naf": {
     "rsid": "rs400008_naf",
-    "chromosome": "Unknown",
+    "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1336,18 +1372,24 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 1,
+      "AMR": 1,
+      "EAS": 1,
+      "EUR": 1,
+      "SAS": 1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 43991822
   },
   "rs400009_naf": {
     "rsid": "rs400009_naf",
-    "chromosome": "Unknown",
+    "chromosome": "16",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1355,18 +1397,24 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.266263237518911,
+      "AMR": 0.204610951008646,
+      "EAS": 0.616071428571429,
+      "EUR": 0.222664015904573,
+      "SAS": 0.270961145194274
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 79570636
   },
   "rs4000010_naf": {
     "rsid": "rs4000010_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1381,11 +1429,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35136884
   },
   "rs4000011_naf": {
     "rsid": "rs4000011_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1400,11 +1449,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35075029
   },
   "rs4000012_naf": {
     "rsid": "rs4000012_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1419,11 +1469,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35075085
   },
   "rs4000013_naf": {
     "rsid": "rs4000013_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1438,11 +1489,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35075285
   },
   "rs4000014_naf": {
     "rsid": "rs4000014_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1457,11 +1509,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35079006
   },
   "rs4000015_naf": {
     "rsid": "rs4000015_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1476,11 +1529,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35086558
   },
   "rs4000016_naf": {
     "rsid": "rs4000016_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1495,11 +1549,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35086597
   },
   "rs4000017_naf": {
     "rsid": "rs4000017_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1514,11 +1569,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073635
   },
   "rs4000018_naf": {
     "rsid": "rs4000018_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1533,11 +1589,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073669
   },
   "rs4000019_naf": {
     "rsid": "rs4000019_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1552,11 +1609,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073681
   },
   "rs4000020_naf": {
     "rsid": "rs4000020_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1571,11 +1629,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073704
   },
   "rs4000021_naf": {
     "rsid": "rs4000021_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1590,11 +1649,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35074851
   },
   "rs4000022_naf": {
     "rsid": "rs4000022_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1609,11 +1669,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35074916
   },
   "rs4000023_naf": {
     "rsid": "rs4000023_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1628,11 +1689,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35074977
   },
   "rs4000024_naf": {
     "rsid": "rs4000024_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1647,11 +1709,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35074986
   },
   "rs4000025_naf": {
     "rsid": "rs4000025_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1666,11 +1729,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35075025
   },
   "rs4000026_naf": {
     "rsid": "rs4000026_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1685,11 +1749,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 90133454
   },
   "rs4000027_naf": {
     "rsid": "rs4000027_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1704,11 +1769,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072237
   },
   "rs4000028_naf": {
     "rsid": "rs4000028_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1723,11 +1789,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072341
   },
   "rs4000029_naf": {
     "rsid": "rs4000029_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1742,11 +1809,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072432
   },
   "rs4000030_naf": {
     "rsid": "rs4000030_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1761,11 +1829,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072455
   },
   "rs4000031_naf": {
     "rsid": "rs4000031_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1780,11 +1849,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072470
   },
   "rs4000032_naf": {
     "rsid": "rs4000032_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1799,11 +1869,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072477
   },
   "rs4000033_naf": {
     "rsid": "rs4000033_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1818,11 +1889,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072491
   },
   "rs4000034_naf": {
     "rsid": "rs4000034_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1837,11 +1909,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35072567
   },
   "rs4000035_naf": {
     "rsid": "rs4000035_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1856,7 +1929,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073109
   },
   "rs4000036_naf": {
     "rsid": "rs4000036_naf",
@@ -1879,7 +1953,7 @@
   },
   "rs4000037_naf": {
     "rsid": "rs4000037_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1894,11 +1968,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073265
   },
   "rs4000038_naf": {
     "rsid": "rs4000038_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1913,7 +1988,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073295
   },
   "rs4000039_naf": {
     "rsid": "rs4000039_naf",
@@ -1936,7 +2012,7 @@
   },
   "rs4000040_naf": {
     "rsid": "rs4000040_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1951,7 +2027,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35073541
   },
   "rs4000041_naf": {
     "rsid": "rs4000041_naf",
@@ -1974,7 +2051,7 @@
   },
   "rs4000042_naf": {
     "rsid": "rs4000042_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -1989,11 +2066,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 22518404
   },
   "rs4000043_naf": {
     "rsid": "rs4000043_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2008,11 +2086,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35068026
   },
   "rs4000044_naf": {
     "rsid": "rs4000044_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2027,11 +2106,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35068028
   },
   "rs4000045_naf": {
     "rsid": "rs4000045_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2046,11 +2126,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35068748
   },
   "rs4000046_naf": {
     "rsid": "rs4000046_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2065,11 +2146,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35068890
   },
   "rs4000047_naf": {
     "rsid": "rs4000047_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2084,11 +2166,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35069003
   },
   "rs4000048_naf": {
     "rsid": "rs4000048_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2103,11 +2186,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35069036
   },
   "rs4000049_naf": {
     "rsid": "rs4000049_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2122,11 +2206,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35070035
   },
   "rs4000050_naf": {
     "rsid": "rs4000050_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2141,11 +2226,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35071990
   },
   "rs4000051_naf": {
     "rsid": "rs4000051_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2160,11 +2246,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35071995
   },
   "rs4000052_naf": {
     "rsid": "rs4000052_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2179,7 +2266,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 90133494
   },
   "rs4000053_naf": {
     "rsid": "rs4000053_naf",
@@ -2221,7 +2309,7 @@
   },
   "rs4000055_naf": {
     "rsid": "rs4000055_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2236,11 +2324,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35060278
   },
   "rs4000056_naf": {
     "rsid": "rs4000056_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2255,7 +2344,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35060279
   },
   "rs4000057_naf": {
     "rsid": "rs4000057_naf",
@@ -2278,7 +2368,7 @@
   },
   "rs4000058_naf": {
     "rsid": "rs4000058_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2293,7 +2383,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35060419
   },
   "rs4000059_naf": {
     "rsid": "rs4000059_naf",
@@ -2316,7 +2407,7 @@
   },
   "rs4000060_naf": {
     "rsid": "rs4000060_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2331,11 +2422,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35063022
   },
   "rs4000061_naf": {
     "rsid": "rs4000061_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2350,11 +2442,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35063065
   },
   "rs4000062_naf": {
     "rsid": "rs4000062_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2362,18 +2455,20 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.00075642965204236
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35063076
   },
   "rs4000063_naf": {
     "rsid": "rs4000063_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2388,11 +2483,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35063263
   },
   "rs4000064_naf": {
     "rsid": "rs4000064_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2407,11 +2503,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35067723
   },
   "rs4000065_naf": {
     "rsid": "rs4000065_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2426,11 +2523,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35067830
   },
   "rs4000066_naf": {
     "rsid": "rs4000066_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2445,11 +2543,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35067841
   },
   "rs4000067_naf": {
     "rsid": "rs4000067_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2464,11 +2563,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35067851
   },
   "rs4000068_naf": {
     "rsid": "rs4000068_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2483,11 +2583,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056586
   },
   "rs4000069_naf": {
     "rsid": "rs4000069_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2502,7 +2603,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056633
   },
   "rs4000070_naf": {
     "rsid": "rs4000070_naf",
@@ -2525,7 +2627,7 @@
   },
   "rs4000071_naf": {
     "rsid": "rs4000071_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2540,11 +2642,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056789
   },
   "rs4000072_naf": {
     "rsid": "rs4000072_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2559,11 +2662,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 22505682
   },
   "rs4000073_naf": {
     "rsid": "rs4000073_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2578,11 +2682,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056944
   },
   "rs4000074_naf": {
     "rsid": "rs4000074_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2597,7 +2702,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056977
   },
   "rs4000075_naf": {
     "rsid": "rs4000075_naf",
@@ -2620,7 +2726,7 @@
   },
   "rs4000076_naf": {
     "rsid": "rs4000076_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2635,11 +2741,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35057066
   },
   "rs4000077_naf": {
     "rsid": "rs4000077_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2654,11 +2761,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35057133
   },
   "rs4000078_naf": {
     "rsid": "rs4000078_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2673,11 +2781,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35057198
   },
   "rs4000079_naf": {
     "rsid": "rs4000079_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2692,11 +2801,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35057208
   },
   "rs4000080_naf": {
     "rsid": "rs4000080_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2711,11 +2821,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35057901
   },
   "rs4000081_naf": {
     "rsid": "rs4000081_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2730,11 +2841,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35057996
   },
   "rs4000082_naf": {
     "rsid": "rs4000082_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2749,11 +2861,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35058098
   },
   "rs4000083_naf": {
     "rsid": "rs4000083_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2768,11 +2881,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35058129
   },
   "rs4000084_naf": {
     "rsid": "rs4000084_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2787,11 +2901,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35058150
   },
   "rs4000085_naf": {
     "rsid": "rs4000085_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2806,7 +2921,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35058185
   },
   "rs4000086_naf": {
     "rsid": "rs4000086_naf",
@@ -2829,7 +2945,7 @@
   },
   "rs4000087_naf": {
     "rsid": "rs4000087_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2844,11 +2960,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056072
   },
   "rs4000088_naf": {
     "rsid": "rs4000088_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2863,11 +2980,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056326
   },
   "rs4000089_naf": {
     "rsid": "rs4000089_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2882,11 +3000,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056360
   },
   "rs4000090_naf": {
     "rsid": "rs4000090_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2901,11 +3020,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056467
   },
   "rs4000091_naf": {
     "rsid": "rs4000091_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2920,11 +3040,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056549
   },
   "rs4000092_naf": {
     "rsid": "rs4000092_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2939,11 +3060,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056569
   },
   "rs4000093_naf": {
     "rsid": "rs4000093_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2958,11 +3080,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35056570
   },
   "rs4000094_naf": {
     "rsid": "rs4000094_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2977,11 +3100,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35043591
   },
   "rs4000095_naf": {
     "rsid": "rs4000095_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -2996,11 +3120,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35055851
   },
   "rs4000096_naf": {
     "rsid": "rs4000096_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3015,11 +3140,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35055853
   },
   "rs4000097_naf": {
     "rsid": "rs4000097_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3027,18 +3153,24 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.969742813918306,
+      "AMR": 0.946685878962536,
+      "EAS": 0.932539682539683,
+      "EUR": 0.918489065606362,
+      "SAS": 0.84560327198364
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35055889
   },
   "rs4000098_naf": {
     "rsid": "rs4000098_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3053,11 +3185,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 35055986
   },
   "rs4000099_naf": {
     "rsid": "rs4000099_naf",
-    "chromosome": "Unknown",
+    "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3072,7 +3205,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 32630618
   },
   "rs900000_naf": {
     "rsid": "rs900000_naf",
@@ -3114,7 +3248,7 @@
   },
   "rs900002_naf": {
     "rsid": "rs900002_naf",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3129,11 +3263,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 37193615
   },
   "rs900003_naf": {
     "rsid": "rs900003_naf",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3141,18 +3276,24 @@
     ],
     "frequencies": {
       "MENA": 0.95,
-      "GLOBAL": 0.1
+      "GLOBAL": 0.1,
+      "AFR": 0.954614220877458,
+      "AMR": 0.99135446685879,
+      "EAS": 0.89484126984127,
+      "EUR": 0.993041749502982,
+      "SAS": 0.985685071574642
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 238221991
   },
   "rs900004_naf": {
     "rsid": "rs900004_naf",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3167,11 +3308,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 238257918
   },
   "rs900005_naf": {
     "rsid": "rs900005_naf",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3186,11 +3328,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 238257792
   },
   "rs900006_naf": {
     "rsid": "rs900006_naf",
-    "chromosome": "Unknown",
+    "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3205,11 +3348,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 238257649
   },
   "rs900007_naf": {
     "rsid": "rs900007_naf",
-    "chromosome": "Unknown",
+    "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3224,11 +3368,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 97747258
   },
   "rs900008_naf": {
     "rsid": "rs900008_naf",
-    "chromosome": "Unknown",
+    "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3243,11 +3388,12 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 97746760
   },
   "rs900009_naf": {
     "rsid": "rs900009_naf",
-    "chromosome": "Unknown",
+    "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
     "alleles": [
@@ -3262,7 +3408,8 @@
     "weight": 1,
     "gene": "Unknown",
     "trait": "Ancestry",
-    "description": "North African ancestry informative marker."
+    "description": "North African ancestry informative marker.",
+    "position": 97746386
   },
   "rs9000010_naf": {
     "rsid": "rs9000010_naf",

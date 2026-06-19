@@ -7027,7 +7027,7 @@
   },
   "rs10456367_mid": {
     "rsid": "rs10456367_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7049,21 +7049,22 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North Mesopotamian Marker - highly informative for Kurdish and Northern Fertile Crescent populations."
+    "description": "North Mesopotamian Marker - highly informative for Kurdish and Northern Fertile Crescent populations.",
+    "position": 28716027
   },
   "rs10456368_mid": {
     "rsid": "rs10456368_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.25,
+      "AFR": 0.0832072617246596,
+      "EUR": 0.00099403578528827,
       "EAS": 0.05,
-      "AMR": 0.01,
+      "AMR": 0.00432276657060519,
       "SAS": 0.15,
       "MENA": 0.92
     },
@@ -7075,22 +7076,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "South Caucasus/Azeri Marker - diagnostic for populations of the Caucasus and Northwestern Iran."
+    "description": "South Caucasus/Azeri Marker - diagnostic for populations of the Caucasus and Northwestern Iran.",
+    "position": 28725119
   },
   "rs1393350_mid": {
     "rsid": "rs1393350_mid",
-    "chromosome": "Unknown",
+    "chromosome": "11",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.6,
-      "EAS": 0.01,
-      "AMR": 0.1,
-      "SAS": 0.25,
+      "AFR": 0.991679273827534,
+      "EUR": 0.756461232604374,
+      "EAS": 0.99702380952381,
+      "AMR": 0.877521613832853,
+      "SAS": 0.945807770961145,
       "MENA": 0.9
     },
     "subFrequencies": {
@@ -7102,11 +7104,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "West Asian/Middle Eastern Informative Marker - diagnostic for Afroasiatic and Indo-Iranian speaking populations of the Near East."
+    "description": "West Asian/Middle Eastern Informative Marker - diagnostic for Afroasiatic and Indo-Iranian speaking populations of the Near East.",
+    "position": 89277878
   },
   "rs4988238_mid": {
     "rsid": "rs4988238_mid",
-    "chromosome": "Unknown",
+    "chromosome": "2",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7129,11 +7132,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Peninsular Arabian Marker - highly informative for populations of the Arabian Peninsula."
+    "description": "Peninsular Arabian Marker - highly informative for populations of the Arabian Peninsula.",
+    "position": 135850424
   },
   "rs60910145_mid": {
     "rsid": "rs60910145_mid",
-    "chromosome": "Unknown",
+    "chromosome": "22",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7156,22 +7160,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Levantine Endemic Marker - diagnostic for the indigenous populations of the Levant."
+    "description": "Levantine Endemic Marker - diagnostic for the indigenous populations of the Levant.",
+    "position": 36265988
   },
   "rs12913832_mid": {
     "rsid": "rs12913832_mid",
-    "chromosome": "Unknown",
+    "chromosome": "15",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.85,
-      "EAS": 0.01,
-      "AMR": 0.05,
-      "SAS": 0.3,
+      "AFR": 0.0279878971255673,
+      "EUR": 0.636182902584493,
+      "EAS": 0.00198412698412698,
+      "AMR": 0.201729106628242,
+      "SAS": 0.0705521472392638,
       "MENA": 0.75
     },
     "subFrequencies": {
@@ -7183,11 +7188,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "HERC2 variant - informative for West Eurasian and Middle Eastern populations, associated with eye color."
+    "description": "HERC2 variant - informative for West Eurasian and Middle Eastern populations, associated with eye color.",
+    "position": 28120472
   },
   "rs1129038_mid": {
     "rsid": "rs1129038_mid",
-    "chromosome": "Unknown",
+    "chromosome": "15",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7209,32 +7215,34 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "HERC2/OCA2 region marker - highly informative for Middle Eastern and Mediterranean populations."
+    "description": "HERC2/OCA2 region marker - highly informative for Middle Eastern and Mediterranean populations.",
+    "position": 28111713
   },
   "rs1042522_mid": {
     "rsid": "rs1042522_mid",
-    "chromosome": "Unknown",
+    "chromosome": "17",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
       "C"
     ],
     "frequencies": {
-      "AFR": 0.1,
-      "EUR": 0.4,
-      "EAS": 0.05,
-      "AMR": 0.1,
-      "SAS": 0.2,
+      "AFR": 0.331316187594554,
+      "EUR": 0.714711729622266,
+      "EAS": 0.586309523809524,
+      "AMR": 0.68299711815562,
+      "SAS": 0.508179959100205,
       "MENA": 0.5
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "TP53 variant - found at varying frequencies in Middle Eastern and European populations."
+    "description": "TP53 variant - found at varying frequencies in Middle Eastern and European populations.",
+    "position": 7676154
   },
   "rs10456204_mid": {
     "rsid": "rs10456204_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7251,11 +7259,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Levantine Ancestry Marker - informative for populations from the Levant region."
+    "description": "Levantine Ancestry Marker - informative for populations from the Levant region.",
+    "position": 9924318
   },
   "rs10456205_mid": {
     "rsid": "rs10456205_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7272,11 +7281,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "North African (MENA) Marker - informative for Maghreb and North African populations."
+    "description": "North African (MENA) Marker - informative for Maghreb and North African populations.",
+    "position": 17035644
   },
   "rs1042524_mid": {
     "rsid": "rs1042524_mid",
-    "chromosome": "Unknown",
+    "chromosome": "15",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7293,11 +7303,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Middle Eastern Ancestry Marker - informative for general Middle Eastern populations."
+    "description": "Middle Eastern Ancestry Marker - informative for general Middle Eastern populations.",
+    "position": 89784929
   },
   "rs1042525_mid": {
     "rsid": "rs1042525_mid",
-    "chromosome": "Unknown",
+    "chromosome": "5",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7314,11 +7325,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Middle Eastern Ancestry Marker - informative for general Middle Eastern populations."
+    "description": "Middle Eastern Ancestry Marker - informative for general Middle Eastern populations.",
+    "position": 256504
   },
   "rs10456274_mid": {
     "rsid": "rs10456274_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7337,11 +7349,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "MENA/EUR Tie-Breaker - Frequent in the Levant and Anatolia, drops off sharply in Southern Europe."
+    "description": "MENA/EUR Tie-Breaker - Frequent in the Levant and Anatolia, drops off sharply in Southern Europe.",
+    "position": 23469452
   },
   "rs10456277_mid": {
     "rsid": "rs10456277_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7349,22 +7362,23 @@
     ],
     "frequencies": {
       "MENA": 0.92,
-      "AFR": 0.08,
+      "AFR": 0.8267776096823,
       "NAFR": 0.6,
-      "EUR": 0.25,
-      "EAS": 0.01,
-      "AMR": 0.01,
-      "SAS": 0.2,
+      "EUR": 0.693836978131213,
+      "EAS": 0.81547619047619,
+      "AMR": 0.79971181556196,
+      "SAS": 0.784253578732106,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "MENA/AFR Tie-Breaker - Distinctive to the Arabian Peninsula, filters out false Horn of Africa overlap."
+    "description": "MENA/AFR Tie-Breaker - Distinctive to the Arabian Peninsula, filters out false Horn of Africa overlap.",
+    "position": 23683027
   },
   "rs10456283_mid": {
     "rsid": "rs10456283_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7383,11 +7397,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "MENA/SAS Tie-Breaker - Anchors populations to the Iranian plateau and West Asia, filtering out South Asian noise."
+    "description": "MENA/SAS Tie-Breaker - Anchors populations to the Iranian plateau and West Asia, filtering out South Asian noise.",
+    "position": 23715678
   },
   "rs10456292_mid": {
     "rsid": "rs10456292_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7406,11 +7421,12 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification."
+    "description": "MENA/NAFR Tie-Breaker - Natufian-derived Levantine marker, preventing Egyptian/North African misclassification.",
+    "position": 23799474
   },
   "rs10456301_mid": {
     "rsid": "rs10456301_mid",
-    "chromosome": "Unknown",
+    "chromosome": "6",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7418,18 +7434,19 @@
     ],
     "frequencies": {
       "MENA": 0.93,
-      "SAS": 0.1,
-      "EUR": 0.15,
+      "SAS": 0.0756646216768916,
+      "EUR": 0.0745526838966203,
       "NAFR": 0.2,
-      "AFR": 0.05,
-      "EAS": 0.01,
-      "AMR": 0.01,
+      "AFR": 0.0196671709531014,
+      "EAS": 0.00694444444444444,
+      "AMR": 0.0561959654178674,
       "OCE": 0.01
     },
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 1,
-    "description": "MENA/SAS Tie-Breaker - Anchors Iranian Plateau genetics against Indo-Aryan overlap."
+    "description": "MENA/SAS Tie-Breaker - Anchors Iranian Plateau genetics against Indo-Aryan overlap.",
+    "position": 24308127
   },
   "rs60910144_mid": {
     "rsid": "rs60910144_mid",
@@ -7457,7 +7474,7 @@
   },
   "rs7712345_mid": {
     "rsid": "rs7712345_mid",
-    "chromosome": "Unknown",
+    "chromosome": "5",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7477,11 +7494,12 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Iranian Plateau Diagnostic - informative for populations originating from the Persian core."
+    "description": "Iranian Plateau Diagnostic - informative for populations originating from the Persian core.",
+    "position": 129704716
   },
   "rs5857297_mid": {
     "rsid": "rs5857297_mid",
-    "chromosome": "Unknown",
+    "chromosome": "4",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
@@ -7501,22 +7519,23 @@
     },
     "deepFrequencies": {},
     "weight": 1,
-    "description": "Common Mediterranean/Levantine marker often elevated in Jewish Diasporic populations."
+    "description": "Common Mediterranean/Levantine marker often elevated in Jewish Diasporic populations.",
+    "position": 32275066
   },
   "rs16891982_mena": {
     "rsid": "rs16891982_mena",
-    "chromosome": "Unknown",
+    "chromosome": "5",
     "region": "Middle Eastern",
     "color": "#1ABC9C",
     "alleles": [
       "G"
     ],
     "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.2,
-      "EAS": 0.02,
-      "AMR": 0.05,
-      "SAS": 0.1,
+      "AFR": 0.0355521936459909,
+      "EUR": 0.938369781312127,
+      "EAS": 0.00595238095238095,
+      "AMR": 0.463976945244957,
+      "SAS": 0.0593047034764826,
       "MENA": 0.85,
       "OCE": 0.02
     },
@@ -7525,7 +7544,8 @@
     "weight": 1,
     "gene": "SLC45A2",
     "trait": "Ancestry",
-    "description": "SLC45A2 variant associated with West Asian/MENA depigmentation."
+    "description": "SLC45A2 variant associated with West Asian/MENA depigmentation.",
+    "position": 33951588
   },
   "rs10488632": {
     "rsid": "rs10488632",
