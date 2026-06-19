@@ -2105,7 +2105,8 @@ export default function App() {
     mergedMtMap?: Record<string, string>,
     analysis?: any,
     mergedSnpMap?: Record<string, string>,
-    mergedSnpMetaMap?: Record<string, { chrom: string; pos: number }>
+    mergedSnpMetaMap?: Record<string, { chrom: string; pos: number }>,
+    rareAndNovelVariants?: any[]
   }) => {
     const newDatasets = [...datasets, newDataset];
     setDatasets(newDatasets);
@@ -2350,7 +2351,8 @@ export default function App() {
             mergedMtMap: payload.mergedMtMap,
             analysis: payload.analysis,
             mergedSnpMap: payload.mergedSnpMap,
-            mergedSnpMetaMap: payload.mergedSnpMetaMap
+            mergedSnpMetaMap: payload.mergedSnpMetaMap,
+            rareAndNovelVariants: payload.rareAndNovelVariants
           });
           setPendingFiles([]);
           setProcessing(false);
