@@ -7,13 +7,12 @@ interface BentoProps {
   userGenotypes: UserGenotype[];
   aimsDatabase: AIM[];
   precalculated?: any;
-  eurogenesPrecalculated?: any[];
-}
+  }
 
 const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated }) => {
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
-  const [modelType, setModelType] = useState<'euclidean' | 'admixture' | 'eurogenes'>('euclidean');
+  const [modelType, setModelType] = useState<'euclidean' | 'admixture'>('euclidean');
 
   // Run or inherit Oracle Logic
   const results = useMemo(() => {
@@ -47,7 +46,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
 
   // Filter admixture items that are reasonably informative (> 0.5%)
   const admixtureList = results.admixtureMix || [];
-  const eurogenesList = eurogenesPrecalculated || [];
+  
 
   return (
     <div className="bg-[#111213]/70 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-[2rem] p-2.5 sm:p-8 shadow-2xl text-white space-y-6">
@@ -125,17 +124,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               : 'text-slate-400 hover:text-slate-200'
           }`}
         >
-          📊 MDLP K16 (NNLS)
-        </button>
-        <button
-          onClick={() => setModelType('eurogenes')}
-          className={`flex-1 py-3 text-xs font-black uppercase tracking-wider rounded-xl transition-all ${
-            modelType === 'eurogenes' 
-              ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/20' 
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          🌍 Eurogenes K13
+          🌍 Human Origins (K61)
         </button>
       </div>
 
@@ -240,10 +229,10 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               </div>
             )}
           </>
-        ) : modelType === 'admixture' ? (
+        ) : (
           <>
             <h4 className="text-xs font-black uppercase text-slate-400 tracking-wider flex items-center gap-2">
-              <Layers className="w-4 h-4 text-emerald-400" /> MDLP K16 Mixture Proportions
+              <Layers className="w-4 h-4 text-emerald-400" /> Human Origins (K61) Mixture
             </h4>
             
             {admixtureList.length === 0 ? (

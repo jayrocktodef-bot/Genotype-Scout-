@@ -14,8 +14,7 @@ import { calculatePopulationProximityOptimized, compileReferenceKernel } from '.
 import { extractPlinkGenotype } from '../utils/plinkUtils';
 import { processSubpopulations } from '../components/ancestryOracleLogic';
 import { loadMasterAims } from '../data/index';
-import { calculateMDLPK16Scores } from "../engines/ancestry/mdlpAncEngine";
-import { calculateEurogenesK13Scores } from "../engines/ancestry/eurogenesAncEngine";
+import { calculateHumanOriginsScores } from "../engines/ancestry/humanOriginsEngine";
 import { calculateRegionalScores } from "../engines/ancestry/grafAncEngine";
 import { identifyMicroHapSignatures } from "../engines/ancestry/microHapEngine";
 import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveEngine";
@@ -61,8 +60,7 @@ const ENGINE_LABELS: Record<string, string> = {
   matchHealthAndWellness: 'Scoring health & wellness markers',
   calculatePopulationProximityOptimized: 'Computing population proximity matrix',
   calculateMarkerBenchmarks: 'Benchmarking marker coverage',
-  calculateMDLPK16Scores: 'Running MDLP-K16 calculator',
-  calculateEurogenesK13Scores: 'Running Eurogenes K13 calculator',
+  calculateHumanOriginsScores: 'Running Human Origins K61 calculator',
   calculateRegionalScores: 'Determining regional affinity',
   identifyMicroHapSignatures: 'Detecting microhaplotype signatures',
   calculateComprehensiveScores: 'Running comprehensive engine',
@@ -141,8 +139,7 @@ async function runEnginesParallel(
     'matchHealthAndWellness',
     'calculatePopulationProximityOptimized',
     'calculateMarkerBenchmarks',
-    'calculateMDLPK16Scores',
-    'calculateEurogenesK13Scores',
+    'calculateHumanOriginsScores',
     'calculateRegionalScores',
     'identifyMicroHapSignatures',
     'calculateComprehensiveScores',
@@ -259,7 +256,7 @@ async function runEnginesSequential(
   const results: Record<string, any> = {};
   const autosomalSnpMapForEngine = new Map(Object.entries(autosomalSnpMap));
   let completed = 0;
-  const total = 12;
+  const total = 10;
 
   const run = async (name: string, fn: () => any) => {
     onEngineProgress(completed, total, ENGINE_LABELS[name] || name);
@@ -274,8 +271,7 @@ async function runEnginesSequential(
   await run('matchHealthAndWellness', () => matchHealthAndWellness(imputedSnpMap));
   await run('calculatePopulationProximityOptimized', () => calculatePopulationProximityOptimized(autosomalSnpMapForEngine));
   await run('calculateMarkerBenchmarks', () => calculateMarkerBenchmarks(imputedSnpMap));
-  await run('calculateMDLPK16Scores', () => calculateMDLPK16Scores(autosomalSnpMap));
-  await run('calculateEurogenesK13Scores', () => calculateEurogenesK13Scores(autosomalSnpMap));
+  await run('calculateHumanOriginsScores', () => calculateHumanOriginsScores(autosomalSnpMap));
   await run('calculateRegionalScores', () => calculateRegionalScores(autosomalSnpMap));
   await run('identifyMicroHapSignatures', () => identifyMicroHapSignatures(autosomalSnpMap));
   await run('calculateComprehensiveScores', () => calculateComprehensiveScores(autosomalSnpMap));
@@ -327,8 +323,7 @@ async function runGenotypeScout(
       healthWellness: engineResults.matchHealthAndWellness,
       populationProximity: engineResults.calculatePopulationProximityOptimized,
       markerBenchmarks: engineResults.calculateMarkerBenchmarks,
-      mdlpResults_raw: engineResults.calculateMDLPK16Scores,
-      eurogenesResults_raw: engineResults.calculateEurogenesK13Scores,
+      humanOriginsResults_raw: engineResults.calculateHumanOriginsScores,
       grafResults_raw: engineResults.calculateRegionalScores,
       microHapResults: engineResults.identifyMicroHapSignatures,
       comprehensiveResults: engineResults.calculateComprehensiveScores,
@@ -340,8 +335,7 @@ async function runGenotypeScout(
       undefined,
       undefined,
       bloodResult.grafResults_raw,
-      bloodResult.mdlpResults_raw,
-      bloodResult.eurogenesResults_raw,
+      bloodResult.humanOriginsResults_raw,
       bloodResult.comprehensiveResults,
       sampleId
     );

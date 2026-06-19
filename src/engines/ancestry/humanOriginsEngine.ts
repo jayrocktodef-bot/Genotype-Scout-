@@ -1,4 +1,4 @@
-import eurogenesKernel from '../../data/raw_aims/eurogenes_k13_kernel.json';
+import hoModernKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
 import { solveNNLS } from '../../utils/nnls';
 
 export interface AdmixtureComponent {
@@ -9,35 +9,34 @@ export interface AdmixtureComponent {
 }
 
 /**
- * Eurogenes K13 Ancestry Engine
+ * Human Origins Ancestry Engine (K61)
  * Uses a Non-Negative Least Squares (NNLS) solver to estimate optimal population mixture proportions
- * based on the Eurogenes K13 reference dataset.
+ * based on the 61-population Human Origins reference dataset.
  */
-export async function calculateEurogenesK13Scores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
+export async function calculateHumanOriginsScores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
   // Normalize user SNPs keys
   const normalizedUserSnps: Record<string, string> = {};
   for (const rsid in userSnps) {
     normalizedUserSnps[rsid.toLowerCase()] = userSnps[rsid];
   }
 
-  const pops = Object.keys(eurogenesKernel);
+  const pops = Object.keys(hoModernKernel);
   const N = pops.length;
   
   // Find all rsids that are common across the kernel and present in user SNPs
   const firstPop = pops[0];
-  const allRsids = Object.keys((eurogenesKernel as any)[firstPop].frequencies);
+  const allRsids = Object.keys((hoModernKernel as any)[firstPop].frequencies);
   const matchedRsids = allRsids.filter(rsid => {
     const userCall = normalizedUserSnps[rsid.toLowerCase()];
     return userCall && userCall.length === 2 && userCall !== '--';
   });
 
   const totalMatched = matchedRsids.length;
-  if (totalMatched < 1) {
-    // Return empty if no markers match (the placeholder kernel only has 2 SNPs for now)
+  if (totalMatched < 10) {
     return [];
   }
 
-  // Thin markers if there are too many
+  // Cap the number of markers evaluated for NNLS performance
   const MAX_MARKERS = 1000;
   const thinnedRsids = totalMatched > MAX_MARKERS 
     ? matchedRsids.filter((_, idx) => idx % Math.ceil(totalMatched / MAX_MARKERS) === 0).slice(0, MAX_MARKERS)
@@ -52,19 +51,20 @@ export async function calculateEurogenesK13Scores(userSnps: Record<string, strin
   for (let i = 0; i < M; i++) {
     const rsid = thinnedRsids[i];
     
-    // Determine the average frequency across all populations to resolve dosage direction consistently
+    // Determine the average frequency across all populations to resolve dosage direction
     let sumFreq = 0;
     for (let j = 0; j < N; j++) {
       const popName = pops[j];
-      const popData = (eurogenesKernel as any)[popName];
+      const popData = (hoModernKernel as any)[popName];
       sumFreq += popData.frequencies[rsid] || 0;
     }
     const avgFreq = sumFreq / N;
 
-    // Calculate user call value based on average frequency direction
+    // Calculate user call value
     const userCall = normalizedUserSnps[rsid.toLowerCase()];
     let userVal = 0.5; // Heterozygous
     if (userCall[0] === userCall[1]) {
+      // Homozygous: Assumes major allele direction correlates with >0.5 average freq
       userVal = avgFreq > 0.5 ? 1.0 : 0.0;
     }
 
@@ -72,12 +72,12 @@ export async function calculateEurogenesK13Scores(userSnps: Record<string, strin
 
     for (let j = 0; j < N; j++) {
       const popName = pops[j];
-      const popData = (eurogenesKernel as any)[popName];
+      const popData = (hoModernKernel as any)[popName];
       A[i][j] = popData.frequencies[rsid] || 0;
     }
   }
 
-  // Solve NNLS: Minimizes ||Ax - b|| subject to x >= 0
+  // Solve NNLS
   const weights = solveNNLS(A, b);
   const sumWeights = weights.reduce((sum, w) => sum + w, 0);
 
@@ -86,12 +86,12 @@ export async function calculateEurogenesK13Scores(userSnps: Record<string, strin
     for (let j = 0; j < N; j++) {
       const popName = pops[j];
       const rawPercentage = (weights[j] / sumWeights) * 100;
-      if (rawPercentage > 0.5) {
+      if (rawPercentage > 0.5) { // Only return >0.5% contributions
         components.push({
           population: popName.replace(/_/g, ' '),
-          region: (eurogenesKernel as any)[popName].region,
+          region: (hoModernKernel as any)[popName].region,
           percentage: Number(rawPercentage.toFixed(2)),
-          distance: 0.0 // NNLS computes a direct linear mix fit
+          distance: 0.0
         });
       }
     }
