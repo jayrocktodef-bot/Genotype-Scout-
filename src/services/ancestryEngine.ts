@@ -199,7 +199,7 @@ export function runAncestryInference(
   yHaploRegion?: string | null,
   mtHaploRegion?: string | null,
   isPrimary: boolean = false,
-  priorResults?: { graf?: any, mdlp?: any },
+  priorResults?: { graf?: any, mdlp?: any, eurogenes?: any },
   sampleId?: string
 ): AncestryInferenceResult {
   // Check if we can directly map this known reference sample ID to a subpopulation
@@ -309,6 +309,7 @@ export function runAncestryInference(
     };
     checkEngine(priorResults.graf);
     checkEngine(priorResults.mdlp);
+    checkEngine(priorResults.eurogenes);
     return boost;
   };
 
@@ -854,7 +855,7 @@ export function runAncestryInference(
   };
 }
 
-export async function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null, grafResults?: any, mdlpResults?: any, comprehensiveResults?: any, sampleId?: string) {
+export async function calculateAncestryOracle(results: any[], yHaploRegion?: string | null, mtHaploRegion?: string | null, grafResults?: any, mdlpResults?: any, eurogenesResults?: any, comprehensiveResults?: any, sampleId?: string) {
   // Ensure global anchors are loaded
   await initializeGlobalAnchors();
 
@@ -912,7 +913,7 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
   }
 
   return {
-    primary: await runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, mdlp: mdlpResults }, sampleId),
+    primary: await runAncestryInference(primaryMarkers, imputedGenotype, yHaploRegion, mtHaploRegion, true, { graf: grafResults, mdlp: mdlpResults, eurogenes: eurogenesResults }, sampleId),
     onnxClassifierResult: onnxResult || undefined
   };
 }

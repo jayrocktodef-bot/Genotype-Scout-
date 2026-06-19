@@ -7,12 +7,13 @@ interface BentoProps {
   userGenotypes: UserGenotype[];
   aimsDatabase: AIM[];
   precalculated?: any;
+  eurogenesPrecalculated?: any[];
 }
 
 const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated }) => {
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
-  const [modelType, setModelType] = useState<'euclidean' | 'admixture'>('euclidean');
+  const [modelType, setModelType] = useState<'euclidean' | 'admixture' | 'eurogenes'>('euclidean');
 
   // Run or inherit Oracle Logic
   const results = useMemo(() => {
@@ -46,6 +47,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
 
   // Filter admixture items that are reasonably informative (> 0.5%)
   const admixtureList = results.admixtureMix || [];
+  const eurogenesList = eurogenesPrecalculated || [];
 
   return (
     <div className="bg-[#111213]/70 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-[2rem] p-2.5 sm:p-8 shadow-2xl text-white space-y-6">
@@ -123,7 +125,17 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               : 'text-slate-400 hover:text-slate-200'
           }`}
         >
-          📊 Multi-Source Admixture (NNLS)
+          📊 MDLP K16 (NNLS)
+        </button>
+        <button
+          onClick={() => setModelType('eurogenes')}
+          className={`flex-1 py-3 text-xs font-black uppercase tracking-wider rounded-xl transition-all ${
+            modelType === 'eurogenes' 
+              ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/20' 
+              : 'text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          🌍 Eurogenes K13
         </button>
       </div>
 
@@ -228,10 +240,10 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               </div>
             )}
           </>
-        ) : (
+        ) : modelType === 'admixture' ? (
           <>
             <h4 className="text-xs font-black uppercase text-slate-400 tracking-wider flex items-center gap-2">
-              <Layers className="w-4 h-4 text-emerald-400" /> Multi-Source Mixture Proportions (NNLS Solver)
+              <Layers className="w-4 h-4 text-emerald-400" /> MDLP K16 Mixture Proportions
             </h4>
             
             {admixtureList.length === 0 ? (
@@ -262,6 +274,48 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                           animate={{ width: `${comp?.percentage ?? 0}%` }}
                           transition={{ duration: 1.0, ease: "easeOut", delay: idx * 0.05 }}
                           className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <h4 className="text-xs font-black uppercase text-slate-400 tracking-wider flex items-center gap-2">
+              <Layers className="w-4 h-4 text-blue-400" /> Eurogenes K13 Mixture Proportions
+            </h4>
+            
+            {eurogenesList.length === 0 ? (
+              <p className="text-sm text-slate-400 italic">No Eurogenes admixture components mapped. Insufficient markers.</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {eurogenesList.map((comp: any, idx: number) => (
+                  <div key={comp.population} className="flex flex-col justify-between p-5 rounded-3xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/5 transition-all shadow-lg shadow-black/20 group relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none group-hover:bg-blue-500/20 transition-all" />
+
+                    <div className="flex flex-col space-y-2 relative z-10">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-slate-400 text-[10px] bg-black/40 px-2.5 py-1 rounded-full border border-white/5">#{idx + 1}</span>
+                      </div>
+                      <h4 className="text-sm font-black text-slate-100 break-words leading-tight mt-1 group-hover:text-blue-300 transition-colors">
+                        {comp.population}
+                      </h4>
+                    </div>
+
+                    <div className="mt-8 flex flex-col space-y-3 relative z-10">
+                      <div className="flex flex-col">
+                        <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider mb-0.5">Admixture CI</span>
+                        <span className="text-blue-400 text-2xl font-black font-mono leading-none mt-1">{Number(comp.percentage ?? 0).toFixed(1)}%</span>
+                      </div>
+                      <div className="w-full bg-black/40 h-2 rounded-full overflow-hidden border border-white/5 p-px">
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          animate={{ width: `${comp.percentage ?? 0}%` }}
+                          transition={{ duration: 1.0, ease: "easeOut", delay: idx * 0.05 }}
+                          className="h-full rounded-full bg-gradient-to-r from-blue-500 to-cyan-400"
                         />
                       </div>
                     </div>

@@ -2007,6 +2007,7 @@ export default function App() {
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
   const [mdlpK16Results, setMdlpK16Results] = useState<any[]>([]);
+  const [eurogenesK13Results, setEurogenesK13Results] = useState<any[]>([]);
   const [grafResults, setGrafResults] = useState<any[]>([]);
   const [microHapResults, setMicroHapResults] = useState<any[]>([]);
 
@@ -2114,6 +2115,9 @@ export default function App() {
     if (newDataset.analysis?.mdlpResults_raw) {
       setMdlpK16Results(newDataset.analysis.mdlpResults_raw);
     }
+    if (newDataset.analysis?.eurogenesResults_raw) {
+      setEurogenesK13Results(newDataset.analysis.eurogenesResults_raw);
+    }
     if (newDataset.analysis?.grafResults) {
       setGrafResults(newDataset.analysis.grafResults);
     }
@@ -2128,6 +2132,9 @@ export default function App() {
   useEffect(() => {
     if (datasets[activeDatasetIndex]?.analysis?.mdlpResults_raw) {
       setMdlpK16Results(datasets[activeDatasetIndex].analysis.mdlpResults_raw);
+    }
+    if (datasets[activeDatasetIndex]?.analysis?.eurogenesResults_raw) {
+      setEurogenesK13Results(datasets[activeDatasetIndex].analysis.eurogenesResults_raw);
     }
     if (datasets[activeDatasetIndex]?.analysis?.grafResults) {
       setGrafResults(datasets[activeDatasetIndex].analysis.grafResults);
@@ -2883,6 +2890,7 @@ export default function App() {
                       <div className="space-y-8">
                          <SubpopulationBento 
                            precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
+                           eurogenesPrecalculated={eurogenesK13Results}
                            userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
                            aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
                              rsid: aim.rsid,
@@ -2892,6 +2900,7 @@ export default function App() {
                              alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
                            }))}
                          />
+                         
                          <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
                       </div>
                     )}
