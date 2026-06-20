@@ -23,6 +23,7 @@ import { calculateRegionalScores } from "../engines/ancestry/grafAncEngine";
 import { identifyMicroHapSignatures } from "../engines/ancestry/microHapEngine";
 import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveEngine";
 import { identifyRareAndNovelVariants } from "../utils/rareVariantsAnalyzer";
+import { calculatePharmacogenomics } from '../services/pgxEngine';
 
 compileReferenceKernel();
 
@@ -473,6 +474,7 @@ self.onmessage = async (e: MessageEvent) => {
 
       mergedSnpMap: imputedSnpMap,
       prsResults: calculateAllPRS(imputedSnpMap),
+      pgxResults: calculatePharmacogenomics(imputedSnpMap),
       mergedSnpMetaMap,
       rareAndNovelVariants,
       analysis: { 
