@@ -564,7 +564,7 @@ You can ask me questions like:
                     placeholder="AIzaSy..."
                     value={apiKey}
                     onChange={(e) => setApiKey(e.target.value)}
-                    className="flex-1 px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-850 rounded-xl text-xs font-mono text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                    className="flex-1 px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-mono text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                   />
                   {isSaved ? (
                     <>
@@ -629,14 +629,14 @@ You can ask me questions like:
                 >
                   <div className="flex items-start gap-2.5 max-w-[85%] text-left">
                     {isAI && (
-                      <div className="w-8 h-8 rounded-lg bg-slate-150 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
+                      <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
                         <Sparkles className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                       </div>
                     )}
                     <div 
                       className={`p-4 sm:p-5 rounded-2xl sm:rounded-[1.75rem] border ${
                         isAI 
-                          ? 'bg-slate-50/50 dark:bg-slate-850/50 border-slate-100 dark:border-slate-800 text-slate-800 dark:text-slate-150 shadow-sm' 
+                          ? 'bg-slate-50/50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 text-slate-800 dark:text-slate-200 shadow-sm' 
                           : 'bg-teal-600 border-teal-500 text-white shadow-md shadow-teal-500/10'
                       }`}
                     >
@@ -660,10 +660,10 @@ You can ask me questions like:
               className="flex justify-start"
             >
               <div className="flex items-start gap-2.5 max-w-[85%]">
-                <div className="w-8 h-8 rounded-lg bg-slate-150 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
+                <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center shrink-0 mt-1">
                   <RefreshCw className="w-4 h-4 text-teal-500 animate-spin" />
                 </div>
-                <div className="p-4 rounded-[1.75rem] bg-slate-50/40 dark:bg-slate-850/40 border border-slate-100 dark:border-slate-800 text-slate-400 flex items-center gap-1.5">
+                <div className="p-4 rounded-[1.75rem] bg-slate-50/40 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 text-slate-400 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
                   <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
@@ -709,7 +709,7 @@ You can ask me questions like:
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             disabled={isGenerating}
-            className="flex-1 px-4 py-3 bg-white dark:bg-slate-900 border border-slate-250 dark:border-slate-850 rounded-2xl text-xs font-semibold text-slate-800 dark:text-slate-250 focus:outline-none focus:ring-2 focus:ring-teal-500/20 placeholder-slate-400 disabled:opacity-60"
+            className="flex-1 px-4 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-xs font-semibold text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 placeholder-slate-400 disabled:opacity-60"
           />
           <button
             type="submit"

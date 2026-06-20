@@ -7,6 +7,7 @@ interface RareVariant {
   genotype: string;
   type: 'internal' | 'unmapped' | 'rare_allele';
   description?: string;
+  globalFrequency?: number;
 }
 
 interface RareVariantsViewProps {

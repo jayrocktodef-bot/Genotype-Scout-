@@ -82,7 +82,7 @@ export const GenotypeParser: React.FC<GenotypeParserProps> = ({ streamProgress }
       <div className="w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-100 dark:border-slate-800/80 rounded-[2rem] p-6 shadow-sm mb-6">
         <div className="flex items-center justify-between mb-3 text-xs font-black uppercase tracking-wider text-slate-500">
           <span>Analysis Progress</span>
-          <span className="text-teal-600 dark:text-teal-450 font-mono">{percent}%</span>
+          <span className="text-teal-600 dark:text-teal-400 font-mono">{percent}%</span>
         </div>
 
         {/* Beautiful Glowing Progress Bar */}

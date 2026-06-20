@@ -72,7 +72,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
               className="h-full bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)] z-10 relative"
             />
           </div>
-          <div className="flex justify-between text-[8px] font-mono text-slate-650 mt-1.5 uppercase font-bold">
+          <div className="flex justify-between text-[8px] font-mono text-slate-500 mt-1.5 uppercase font-bold">
             <span>0% (Typical African baseline)</span>
             <span>10% - 25% (Average Non-African)</span>
             <span>50%+ (High Introgression Haplotype)</span>

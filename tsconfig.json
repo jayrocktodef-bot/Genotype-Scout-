@@ -25,5 +25,13 @@
     "resolveJsonModule": false,
     "noEmit": true,
     "strict": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "android",
+    "scratch",
+    "scripts",
+    "src/scripts"
+  ]
 }

@@ -345,7 +345,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
 
                     <button 
                       onClick={() => togglePrs(key)}
-                      className="mt-4 w-full text-left py-2 px-3 rounded-xl bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 text-[9px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 transition-colors flex items-center justify-between"
+                      className="mt-4 w-full text-left py-2 px-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-[9px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 transition-colors flex items-center justify-between"
                     >
                       <span>{expandedPrs[key] ? 'Hide Variant details' : 'Show Variant details'}</span>
                       <span>{expandedPrs[key] ? '▲' : '▼'}</span>
@@ -619,7 +619,7 @@ const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, i
             <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Sensitive Health Info Masked</p>
             <button 
               onClick={() => setRevealed(true)}
-              className="px-4 py-2 bg-slate-200 dark:bg-slate-850 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest cursor-pointer"
+              className="px-4 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 text-[10px] font-black rounded-lg transition-colors uppercase tracking-widest cursor-pointer"
             >
               Reveal Analysis
             </button>
@@ -630,7 +630,7 @@ const HealthItemCard: React.FC<{ item: HealthImpact; idx: number }> = ({ item, i
         )}
       </div>
 
-      <div className="pt-4 border-t border-slate-100 dark:border-slate-850 flex justify-between items-center">
+      <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
         <a 
           href={`https://www.snpedia.com/index.php/${item.rsid}`} 
           target="_blank" 

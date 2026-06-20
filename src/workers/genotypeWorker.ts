@@ -1,6 +1,4 @@
 import { parseRawDNA, parseRawDNAStream } from '../services/dnaParser';
-import { runMDLPK16 } from '../lib/AncientAdmixtureCalculator';
-import { humanOriginsEngine } from '../lib/ancestryOracleLogic';
 
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
 import { matchSNPs, getAllSources } from '../services/snpMatcher';

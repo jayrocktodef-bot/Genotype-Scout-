@@ -103,6 +103,9 @@ export default defineConfig(({mode}) => {
     worker: {
       format: 'es',
     },
+    optimizeDeps: {
+      entries: ['index.html'],
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

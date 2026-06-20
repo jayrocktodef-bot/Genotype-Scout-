@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Dna, Loader2, X, HelpCircle } from 'lucide-react';
 import { ChromosomePainter } from './ChromosomePainter';
+import { ChromosomePainter3D } from './ChromosomePainter3D';
 import { workerPoolEngine } from '../engines/ancestry/workerPoolEngine';
 
 const POP_COLORS: Record<string, string> = {
@@ -44,6 +45,7 @@ export const ChromosomePainterView = ({
   const [retryCount, setRetryCount] = useState(0);
   const [selectedSegment, setSelectedSegment] = useState<{ chrom: string; strand: 'A' | 'B' | 'Both'; segment: Segment; bp: number } | null>(null);
   const [snpsUsedForLAI, setSnpsUsedForLAI] = useState<any[]>([]);
+  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d');
 
   const snpsInSegment = useMemo(() => {
     if (!selectedSegment || snpsUsedForLAI.length === 0) return [];
@@ -240,14 +242,40 @@ export const ChromosomePainterView = ({
           </div>
         ) : localSegments ? (
           <div className="relative">
-            <ChromosomePainter 
-              segments={localSegments} 
-              width={700} 
-              height={500} 
-              onSegmentClick={(chrom, strand, segment, bp) => {
-                setSelectedSegment({ chrom, strand, segment, bp });
-              }}
-            />
+            {/* View Mode Toggle */}
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 flex items-center bg-slate-900/80 backdrop-blur border border-white/10 rounded-xl p-1 z-20">
+              <button 
+                onClick={() => setViewMode('2d')}
+                className={`px-6 py-2 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${viewMode === '2d' ? 'bg-teal-500/20 text-teal-300 shadow-sm' : 'text-slate-500 hover:text-slate-300'}`}
+              >
+                2D Flat
+              </button>
+              <button 
+                onClick={() => setViewMode('3d')}
+                className={`px-6 py-2 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${viewMode === '3d' ? 'bg-indigo-500/20 text-indigo-300 shadow-sm' : 'text-slate-500 hover:text-slate-300'}`}
+              >
+                3D Spatial
+              </button>
+            </div>
+
+            {viewMode === '2d' ? (
+              <ChromosomePainter 
+                segments={localSegments} 
+                width={700} 
+                height={500} 
+                onSegmentClick={(chrom, strand, segment, bp) => {
+                  setSelectedSegment({ chrom, strand, segment, bp });
+                }}
+              />
+            ) : (
+              <ChromosomePainter3D
+                segments={localSegments}
+                activeContinentFilter={null}
+                onSegmentClick={(chrom, strand, segment, bp) => {
+                  setSelectedSegment({ chrom, strand, segment, bp });
+                }}
+              />
+            )}
             {/* Detailed Segment Popover/Drawer */}
             <AnimatePresence>
               {selectedSegment && (

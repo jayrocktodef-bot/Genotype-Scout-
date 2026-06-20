@@ -309,7 +309,7 @@ export function solveAdmixtureProportions(
   const M = userDosages.length;
 
   // Initialize weights uniformly
-  let weights = new Float32Array(P);
+  let weights: any = new Float32Array(P);
   for (let p = 0; p < P; p++) {
     weights[p] = 1.0 / P;
   }

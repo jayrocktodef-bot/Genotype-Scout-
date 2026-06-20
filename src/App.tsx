@@ -62,7 +62,7 @@ import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
 
-import AndroidDesktop from "./components/AndroidDesktop";
+import ScoutWorkspace from "./components/ScoutWorkspace";
 import { BloodTypeView } from "./components/BloodTypeView";
 import { HealthTraitsTab } from "./components/HealthTraitsTab";
 import { inferRhFactor } from "./services/bloodPredictorService";
@@ -88,6 +88,9 @@ import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 import { AIGenomicAgent } from "./components/AIGenomicAgent";
+import { KinshipModule } from './components/KinshipModule';
+import { ExportModule, ExportConfig } from './components/ExportModule';
+import { PrintableView } from './components/PrintableView';
 import RareVariantsView from "./components/RareVariantsView";
 import { HaplogroupBento } from "./components/HaplogroupBento";
 import { YDNABento } from "./components/YDNABento";
@@ -742,7 +745,7 @@ const AutosomalView = memo(({
             </button>
             
             {isExpanded && (
-              <div className="p-6 space-y-4 bg-slate-50/30 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-700">
+              <div className="p-6 space-y-4 bg-slate-50/30 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-700/50">
                 {category === 'Ancestry' && (
                   <div className="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg text-xs text-amber-700 dark:text-amber-300 italic">
                     <strong>Important Note:</strong> DNA markers show broad regions, not specific tribes.
@@ -1099,8 +1102,6 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                 );
               })}
             </div>
-
-{/* Remove continent sub-population div */}
           </div>
         </div>
 
@@ -1238,56 +1239,6 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
         {/* Combined Paternal Heritage Card */}
         <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
            <div className="md:col-span-5 lg:col-span-4">
-{/* Archive: Haplogroup Distribution
-             <h4 className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Haplogroup Distribution</h4>
-             {markerPieData.length > 0 ? (
-               <div className="h-[220px]">
-                 <ResponsiveContainer width="100%" height="100%">
-                   <PieChart>
-                     <Pie
-                       data={markerPieData}
-                       cx="50%"
-                       cy="50%"
-                       innerRadius={45}
-                       outerRadius={75}
-                       paddingAngle={1}
-                       dataKey="value"
-                     >
-                       {markerPieData.map((entry: any, index: number) => (
-                         <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch)} />
-                       ))}
-                     </Pie>
-                     <Tooltip 
-                       content={({ active, payload }) => {
-                         if (active && payload && payload.length) {
-                           const data = payload[0].payload;
-                           return (
-                             <div className="bg-slate-800 p-2 rounded text-[10px] text-white shadow-xl border border-slate-700">
-                               <div className="flex items-center gap-1.5 mb-0.5">
-                                 <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: getHaploColor(data.branch) }}></div>
-                                 <span className="font-bold">{data.name}</span>
-                               </div>
-                               <div className="text-slate-400">Branch: {data.branch}</div>
-                             </div>
-                           );
-                         }
-                         return null;
-                       }}
-                     />
-                   </PieChart>
-                 </ResponsiveContainer>
-               </div>
-             ) : (
-               <div className="h-[220px] flex items-center justify-center text-slate-400 italic text-xs">No markers</div>
-             )}
-             <div className="mt-4 flex flex-wrap gap-2">
-                {Array.from(new Set(markerPieData.map(m => m.branch))).slice(0, 4).map((branch) => (
-                   <span key={branch as string} className="px-2 py-1 bg-slate-50 dark:bg-slate-900 rounded-lg text-[9px] font-bold border border-slate-100 dark:border-slate-800">
-                     {branch as string}
-                   </span>
-                ))}
-             </div>
-             */}
            </div>
 
            <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center h-full space-y-8">
@@ -1722,50 +1673,6 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
           
         </div>
 
-        {/* Archive: PhyloTree Deep Analysis
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-rose-500/5 blur-[80px] -mr-24 -mt-24 group-hover:bg-rose-500/10 transition-colors duration-1000"></div>
-          <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 flex items-center gap-4 mb-8 relative z-10">
-            <span className="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 dark:text-rose-400 shadow-sm">🔬</span>
-            PhyloTree Deep Analysis
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
-            {mtData.deepMatches && mtData.deepMatches.length > 0 ? (
-              mtData.deepMatches.slice(0, 15).map((match: any, idx: number) => (
-                <div key={idx} className="p-5 rounded-3xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-rose-300 dark:hover:border-rose-900/30 transition-all hover:shadow-lg group/item">
-                   <div className="flex justify-between items-start mb-3">
-                     <span className="text-lg font-black text-slate-900 dark:text-white tracking-tighter group-hover/item:text-rose-600 transition-colors">{match.branch.branchName}</span>
-                     <span className="text-[10px] font-black text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/40 px-3 py-1 rounded-xl border border-rose-100 dark:border-rose-800/50 shadow-sm">
-                       {match.matches.length} Mutations
-                     </span>
-                   </div>
-                   <div className="flex flex-wrap gap-1.5 line-clamp-2">
-                     {match.matches.map((m: string) => (
-                       <span key={m} className="px-2 py-0.5 bg-white dark:bg-slate-800 rounded-lg text-[10px] font-mono text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700 shadow-sm">
-                         {m}
-                       </span>
-                     ))}
-                   </div>
-                </div>
-              ))
-            ) : (
-              <div className="col-span-full py-16 text-center">
-                <div className="text-6xl mb-6 grayscale opacity-20">🧬</div>
-                <h4 className="text-lg font-black text-slate-900 dark:text-slate-100 mb-2">Reference Refinement In Progress</h4>
-                <p className="text-sm text-slate-500 dark:text-slate-400 max-w-sm mx-auto">Requires specific deep-branch mutations not identified in current coverage.</p>
-              </div>
-            )}
-          </div>
-          
-          {mtData.deepMatches && mtData.deepMatches.length > 15 && (
-            <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-700/50 text-center">
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Showing top 15 of {mtData.deepMatches.length} specific subclade matches</p>
-            </div>
-          )}
-        </div>
-        */}
-
         {/* Maternal Health Traits Section */}
         {matchedTraits && matchedTraits.length > 0 && (
           <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-sm">
@@ -1962,6 +1869,11 @@ export default function App() {
     predictedYDNA?: any, 
     predictedMtDNA?: any,
     mergedMtMap?: Record<string, string>,
+    prsResults?: any,
+    pgxResults?: any,
+    rareAndNovelVariants?: any[],
+    mergedSnpMap?: Record<string, string>,
+    mergedSnpMetaMap?: Record<string, { chrom: string, pos: number }>,
     analysis?: any
   }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
@@ -1994,9 +1906,12 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'debug' | 'methodology' | 'desktop' | 'ai_agent'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'ai_agent'>('dashboard');
   const [uiMode, setUiMode] = useState<'desktop' | 'classic'>('desktop');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
+
+  const [isPrinting, setIsPrinting] = useState(false);
+  const [printConfig, setPrintConfig] = useState<ExportConfig | null>(null);
 
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
   const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'traits' | 'blood' | 'prs'>('wellness');
@@ -2035,9 +1950,7 @@ export default function App() {
     });
   };
 
-  useEffect(() => {
-    // Light mode by default
-  }, []);
+
 
   const toggleExpand = useCallback((rsid: string) => {
     setExpandedSnps(prev => {
@@ -2152,6 +2065,7 @@ export default function App() {
   };
 
   const exportPDF = () => {
+    // Legacy jsPDF export, now deprecated by ExportModule
     const doc = new jsPDF();
     doc.text("Genotype Scout Results", 10, 10);
     let y = 20;
@@ -2162,6 +2076,20 @@ export default function App() {
     });
     doc.save("genotype_results.pdf");
   };
+
+  const handleGenerateReport = (config: ExportConfig) => {
+    setPrintConfig(config);
+    setIsPrinting(true);
+    setTimeout(() => {
+      window.print();
+    }, 500);
+  };
+
+  useEffect(() => {
+    const handleAfterPrint = () => setIsPrinting(false);
+    window.addEventListener('afterprint', handleAfterPrint);
+    return () => window.removeEventListener('afterprint', handleAfterPrint);
+  }, []);
 
   const resetApp = async () => {
     // Clear dataset state
@@ -2521,6 +2449,17 @@ export default function App() {
     });
   }, [datasets, activeDatasetIndex]);
 
+  if (isPrinting && printConfig) {
+    return (
+      <PrintableView 
+        config={printConfig}
+        dataset={datasets[activeDatasetIndex]}
+        healthImpacts={healthWellnessMatches}
+        oracleResults={oracleResults}
+      />
+    );
+  }
+
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800 font-sans selection:bg-teal-200 selection:text-teal-900 transition-colors duration-500 relative overflow-x-hidden">
       {/* Dynamic Premium Mesh Background (Light Mode) */}
@@ -2571,7 +2510,7 @@ export default function App() {
             return (
               <div className="mb-12 p-8 rounded-[2.5rem] bg-white border border-rose-100 shadow-xl shadow-rose-100/40 animate-fade-in relative overflow-hidden z-50">
                 {/* Visual border gradient accent */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-450 via-pink-400 to-amber-400" />
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-500 via-pink-400 to-amber-400" />
                 
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   {/* Decorative Amber Warning Circle */}
@@ -2588,7 +2527,7 @@ export default function App() {
                       Genomic Analysis Blocked
                     </h3>
                     
-                    <p className="text-slate-650 font-semibold text-sm leading-relaxed mb-6">
+                    <p className="text-slate-600 font-semibold text-sm leading-relaxed mb-6">
                       {errMsg}
                     </p>
 
@@ -2636,7 +2575,7 @@ export default function App() {
                           </span>
                         </summary>
                         
-                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-150/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto">
+                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-200/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto">
                           <div><strong className="text-slate-700">Error Category:</strong> {details?.errorCategory || category}</div>
                           {details?.bytesTotal !== undefined && (
                             <div><strong className="text-slate-700">File Ingestion Size:</strong> {(details.bytesTotal / (1024 * 1024)).toFixed(2)} MB ({details.bytesTotal.toLocaleString()} bytes)</div>
@@ -2769,7 +2708,7 @@ export default function App() {
                 {!(activeTab === 'health_traits' && activeHealthSubTab === 'wellness') && (
                   <button
                     onClick={() => setIsMethodologyOpen(true)}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-teal-50 hover:bg-teal-100/90 border border-teal-150/40 text-teal-700 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-sm"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-teal-50 hover:bg-teal-100/90 border border-teal-200/40 text-teal-700 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-sm"
                   >
                     <BookOpen className="w-3.5 h-3.5 text-teal-500" />
                     Methodology
@@ -3158,7 +3097,7 @@ export default function App() {
             </AnimatePresence>
           </>
         ) : (
-          <AndroidDesktop
+          <ScoutWorkspace
             oracleResults={oracleResults}
             populationProximity={populationProximity}
             dataset={datasets[activeDatasetIndex]}
@@ -3232,7 +3171,7 @@ export default function App() {
             {currentApp === 'haplogroups' && (
               <div className="space-y-8 animate-fade-in">
                 <div className="flex justify-center mb-8">
-                  <div className="inline-flex bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-250 dark:border-slate-700 shadow-sm">
+                  <div className="inline-flex bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                     <button 
                       onClick={() => setActiveHaploType('paternal')}
                       className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 dark:text-slate-400'}`}
@@ -3402,6 +3341,24 @@ export default function App() {
               </div>
             )}
 
+            {currentApp === 'kinship' && (
+              <div className="space-y-8 animate-fade-in">
+                <KinshipModule 
+                  datasets={datasets} 
+                  activeDatasetIndex={activeDatasetIndex} 
+                />
+              </div>
+            )}
+
+            {currentApp === 'export' && (
+              <div className="space-y-8 animate-fade-in">
+                <ExportModule 
+                  onGenerateReport={handleGenerateReport}
+                  datasetName={datasets[activeDatasetIndex]?.name || 'Dataset'}
+                />
+              </div>
+            )}
+
             {currentApp === 'methodology' && (
               <>
                 <MethodologyPage activeTab={activeTab} />
@@ -3410,7 +3367,7 @@ export default function App() {
                 </div>
               </>
             )}
-          </AndroidDesktop>
+          </ScoutWorkspace>
         )}
       </div>
         )}

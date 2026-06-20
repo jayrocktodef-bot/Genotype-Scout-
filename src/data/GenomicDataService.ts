@@ -56,7 +56,13 @@ export interface AncientMarker {
       frequency: string;
       note: string;
     }
-  }
+  };
+  introgression?: {
+    source: string;
+  };
+  history?: string;
+  chromosome?: string;
+  position?: number;
 }
 
 export const getAncientMarkers = () => {
