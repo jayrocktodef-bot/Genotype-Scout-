@@ -89,7 +89,10 @@ import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 import { AIGenomicAgent } from "./components/AIGenomicAgent";
 import RareVariantsView from "./components/RareVariantsView";
+import { HaplogroupBento } from "./components/HaplogroupBento";
+import { YDNABento } from "./components/YDNABento";
 import { ArchaicIntrogressionView } from "./components/ArchaicIntrogressionView";
+import { PolygenicScores } from "./components/PolygenicScores";
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "4.0.0-beta";
@@ -1996,7 +1999,7 @@ export default function App() {
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
-  const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'traits' | 'blood'>('wellness');
+  const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'traits' | 'blood' | 'prs'>('wellness');
   const [activeHistorySubTab, setActiveHistorySubTab] = useState<'modern' | 'ancient'>('modern');
 
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
@@ -2519,7 +2522,13 @@ export default function App() {
   }, [datasets, activeDatasetIndex]);
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-800 dark:text-slate-100 font-sans selection:bg-teal-100 dark:selection:bg-teal-900 selection:text-teal-900 dark:selection:text-teal-100 transition-colors duration-300">
+    <div className="bg-slate-50 min-h-screen text-slate-800 font-sans selection:bg-teal-200 selection:text-teal-900 transition-colors duration-500 relative overflow-x-hidden">
+      {/* Dynamic Premium Mesh Background (Light Mode) */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-teal-400/10 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse-soft"></div>
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-sky-400/10 rounded-full blur-[150px] mix-blend-multiply opacity-50"></div>
+      </div>
+      <div className="relative z-10">
       <Navigation 
         activeTab={activeTab} 
         onTabChange={(tab) => {
@@ -2939,6 +2948,12 @@ export default function App() {
                         >
                           🩸 Blood Type Predictor
                         </button>
+                        <button 
+                          onClick={() => setActiveHealthSubTab('prs')}
+                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'prs' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
+                        >
+                          🧬 Polygenic Scores
+                        </button>
                       </div>
                     </div>
 
@@ -2966,6 +2981,14 @@ export default function App() {
                       <div className="animate-fade-in">
                         <BloodTypeView 
                           dataset={datasets[activeDatasetIndex]} 
+                        />
+                      </div>
+                    )}
+
+                    {activeHealthSubTab === 'prs' && (
+                      <div className="animate-fade-in">
+                        <PolygenicScores 
+                          prsResults={datasets[activeDatasetIndex]?.prsResults}
                         />
                       </div>
                     )}
@@ -3011,18 +3034,28 @@ export default function App() {
                         </div>
 
                         {activeHaploType === 'paternal' ? (
-                          <YDNAView 
-                            yData={datasets[activeDatasetIndex].predictedYDNA} 
-                            treeSearchTerm={treeSearchTerm}
-                            setTreeSearchTerm={setTreeSearchTerm}
-                          />
+                          <div className="space-y-6">
+                            <YDNABento
+                              yData={datasets[activeDatasetIndex].predictedYDNA}
+                            />
+                            <YDNAView 
+                              yData={datasets[activeDatasetIndex].predictedYDNA} 
+                              treeSearchTerm={treeSearchTerm}
+                              setTreeSearchTerm={setTreeSearchTerm}
+                            />
+                          </div>
                         ) : (
-                          <MTDNAView 
-                            mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                            treeSearchTerm={treeSearchTerm}
-                            setTreeSearchTerm={setTreeSearchTerm}
-                            matchedTraits={userMatchedMitoTraits}
-                          />
+                          <div className="space-y-6">
+                            <HaplogroupBento 
+                              predictedMt={datasets[activeDatasetIndex].predictedMtDNA}
+                            />
+                            <MTDNAView 
+                              mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                              treeSearchTerm={treeSearchTerm}
+                              setTreeSearchTerm={setTreeSearchTerm}
+                              matchedTraits={userMatchedMitoTraits}
+                            />
+                          </div>
                         )}
                       </div>
                     ) : (
@@ -3216,18 +3249,28 @@ export default function App() {
                 </div>
 
                 {activeHaploType === 'paternal' ? (
-                  <YDNAView 
-                    yData={datasets[activeDatasetIndex].predictedYDNA} 
-                    treeSearchTerm={treeSearchTerm}
-                    setTreeSearchTerm={setTreeSearchTerm}
-                  />
+                  <div className="space-y-6">
+                    <YDNABento
+                      yData={datasets[activeDatasetIndex].predictedYDNA}
+                    />
+                    <YDNAView 
+                      yData={datasets[activeDatasetIndex].predictedYDNA} 
+                      treeSearchTerm={treeSearchTerm}
+                      setTreeSearchTerm={setTreeSearchTerm}
+                    />
+                  </div>
                 ) : (
-                  <MTDNAView 
-                    mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                    treeSearchTerm={treeSearchTerm}
-                    setTreeSearchTerm={setTreeSearchTerm}
-                    matchedTraits={userMatchedMitoTraits}
-                  />
+                  <div className="space-y-6">
+                    <HaplogroupBento 
+                      predictedMt={datasets[activeDatasetIndex].predictedMtDNA}
+                    />
+                    <MTDNAView 
+                      mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                      treeSearchTerm={treeSearchTerm}
+                      setTreeSearchTerm={setTreeSearchTerm}
+                      matchedTraits={userMatchedMitoTraits}
+                    />
+                  </div>
                 )}
               </div>
             )}
@@ -3447,6 +3490,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </div>
   );
 }

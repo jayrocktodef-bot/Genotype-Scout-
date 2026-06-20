@@ -29,7 +29,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
   const admixtureList = results.admixtureMix || [];
   
   return (
-    <div className="bg-[#111213]/70 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-[2rem] p-2.5 sm:p-8 shadow-2xl text-white space-y-6">
+    <div className="bg-slate-900/60 backdrop-blur-3xl border border-white/5 rounded-2xl sm:rounded-[2rem] p-2.5 sm:p-8 shadow-2xl text-white space-y-6 transition-all duration-700 hover:shadow-[0_0_50px_rgba(16,185,129,0.2)] hover:border-emerald-500/20">
       
       {/* Header section */}
       <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-start">

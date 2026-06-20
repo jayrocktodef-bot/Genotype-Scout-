@@ -15,6 +15,16 @@ export function identifyRareAndNovelVariants(
   let unmappedCount = 0;
   let rareCount = 0;
   
+  const aimBaseMap = new Map<string, any>();
+  if (aimsDatabase) {
+    for (const [key, value] of Object.entries(aimsDatabase)) {
+      const base = key.split('_')[0].toLowerCase();
+      if (!aimBaseMap.has(base)) {
+        aimBaseMap.set(base, value);
+      }
+    }
+  }
+  
   for (const [rsid, genotype] of Object.entries(userSnpMap)) {
     const cleanRsid = rsid.toLowerCase();
     
@@ -46,12 +56,8 @@ export function identifyRareAndNovelVariants(
 
     // 3. Globally Rare Alleles
     // Check if the user has an allele that is extremely rare globally (< 1%)
-    if (aimsDatabase && rareCount < 100) {
-      // The aim key might have _suffix, but userSnpMap is just rsid.
-      // We look up by the cleanRsid. Since aims keys can have suffixes (e.g. rs123_A), we just check the first matching base RSID.
-      // Or we can just do a direct lookup if aims is keyed by rsid.
-      // In master_aims, keys are usually just the rsid unless there are multiple.
-      const aim = aimsDatabase[cleanRsid] || aimsDatabase[cleanRsid.toUpperCase()];
+    if (aimBaseMap.size > 0 && rareCount < 100) {
+      const aim = aimBaseMap.get(cleanRsid);
       
       if (aim && aim.frequencies && aim.alleles && aim.alleles.length > 0) {
         const effectAllele = aim.alleles[0];

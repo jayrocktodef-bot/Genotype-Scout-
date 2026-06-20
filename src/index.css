@@ -1,29 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-main: #f8fafc; /* bg-slate-50 */
+  --bg-main: #fdfdfd; /* bright white */
   --bg-card: #ffffff;
-  --text-primary: #1e293b; /* text-slate-800 */
+  --text-primary: #0f172a; /* text-slate-900 */
   --text-secondary: #64748b; /* text-slate-500 */
-  --accent: #0d9488; /* teal-600 */
+  --accent: #0f766e; /* teal-700 */
   --accent-soft: #f0fdfa; /* teal-50 */
   --border-soft: #f1f5f9; /* slate-100 */
 }
 
 html.dark {
-  --bg-main: #0b0f19; /* dark slate-950 */
-  --bg-card: #151d30; /* dark slate-900 */
+  --bg-main: #030712; /* ultra dark obsidian (gray-950) */
+  --bg-card: #09090b; /* zinc-950 */
   --text-primary: #f8fafc; /* slate-50 */
   --text-secondary: #94a3b8; /* slate-400 */
-  --accent: #0d9488; /* teal-600 */
+  --accent: #14b8a6; /* teal-500 */
   --accent-soft: #042f2e; /* dark teal-950 */
   --border-soft: #1e293b; /* slate-800 */
 }
@@ -67,7 +68,7 @@ body {
 }
 
 .premium-card {
-  @apply bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm transition-all hover:shadow-md;
+  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[2rem] border border-white/20 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-500 hover:shadow-lg hover:border-white/30 dark:hover:border-white/20;
 }
 
 .text-gradient {

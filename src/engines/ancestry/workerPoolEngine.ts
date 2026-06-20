@@ -314,11 +314,20 @@ export class WorkerPoolEngine {
 
     workerResults.forEach(res => {
       const { chromosome, resultStrandA, resultStrandB, nWindows, nPopulations } = res;
+      if (!chromTasks[chromosome]) return;
       const chromSnps = chromTasks[chromosome].sort((a, b) => a.pos - b.pos);
       
+      // Ensure we have Float32Array views (buffers may arrive as ArrayBuffer after transfer)
+      const probsA = resultStrandA instanceof Float32Array 
+        ? resultStrandA 
+        : new Float32Array(resultStrandA);
+      const probsB = resultStrandB instanceof Float32Array 
+        ? resultStrandB 
+        : new Float32Array(resultStrandB);
+      
       finalSegments[chromosome] = {
-        strandA: this.extractTracts(resultStrandA, nWindows, nPopulations, populations, chromSnps),
-        strandB: this.extractTracts(resultStrandB, nWindows, nPopulations, populations, chromSnps)
+        strandA: this.extractTracts(probsA, nWindows, nPopulations, populations, chromSnps),
+        strandB: this.extractTracts(probsB, nWindows, nPopulations, populations, chromSnps)
       };
     });
 
@@ -333,12 +342,36 @@ export class WorkerPoolEngine {
     snps: any[]
   ): LAISegment[] {
     const segments: LAISegment[] = [];
-    if (nWindows === 0) return [];
+    if (nWindows === 0 || snps.length === 0) return [];
 
-    const windowSize = Math.ceil(snps.length / nWindows);
-    
+    // Reconstruct the same window-to-SNP midpoint mapping used in calculateRawProbs.
+    // The windows were built with windowSize=40, stepSize=20 (sliding).
+    const calcWindowSize = 40;
+    const calcStepSize = 20;
+    const nMarkers = snps.length;
+
+    // Build a mapping: windowIndex → representative SNP index (midpoint of window)
+    const windowMidpoints: number[] = [];
+    for (let i = 0; i < nMarkers; i += calcStepSize) {
+      const end = Math.min(i + calcWindowSize, nMarkers);
+      const mid = Math.min(Math.floor((i + end) / 2), nMarkers - 1);
+      windowMidpoints.push(mid);
+      if (end === nMarkers) break;
+    }
+
+    // If the reconstructed count differs from nWindows, fall back to uniform mapping
+    const useReconstructed = windowMidpoints.length === nWindows;
+
+    const getSnpIdx = (windowIdx: number): number => {
+      if (useReconstructed) {
+        return Math.min(windowMidpoints[windowIdx], nMarkers - 1);
+      }
+      // Fallback: linear interpolation
+      return Math.min(Math.round((windowIdx / Math.max(nWindows - 1, 1)) * (nMarkers - 1)), nMarkers - 1);
+    };
+
     let currentPopIdx = -1;
-    let startIdx = 0;
+    let startWindowIdx = 0;
 
     for (let i = 0; i < nWindows; i++) {
       let maxProb = -1;
@@ -353,24 +386,24 @@ export class WorkerPoolEngine {
 
       if (maxPop !== currentPopIdx) {
         if (currentPopIdx !== -1) {
-          const sIdx = startIdx * windowSize;
-          const eIdx = Math.min(i * windowSize, snps.length - 1);
+          const sIdx = getSnpIdx(startWindowIdx);
+          const eIdx = getSnpIdx(i);
           segments.push({
             continent: populations[currentPopIdx],
             start: snps[sIdx].pos,
             end: snps[eIdx].pos,
-            confidence: probs[(i-1) * nPopulations + currentPopIdx]
+            confidence: probs[(i - 1) * nPopulations + currentPopIdx]
           });
         }
         currentPopIdx = maxPop;
-        startIdx = i;
+        startWindowIdx = i;
       }
     }
 
     // Final segment
     if (currentPopIdx !== -1) {
-      const sIdx = startIdx * windowSize;
-      const eIdx = snps.length - 1;
+      const sIdx = getSnpIdx(startWindowIdx);
+      const eIdx = nMarkers - 1;
       segments.push({
         continent: populations[currentPopIdx],
         start: snps[sIdx].pos,

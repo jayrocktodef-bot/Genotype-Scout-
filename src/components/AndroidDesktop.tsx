@@ -2,8 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   User, Globe, History, HeartPulse, Database, BookOpen, 
-  Zap, Droplet, Wifi, BatteryCharging, ArrowLeft, 
-  Circle, Square, Search, Mic, Settings, Play, X, Dna, Sparkles,
+  Zap, Droplet, ArrowLeft, 
+  Search, Mic, Settings, Play, X, Dna, Sparkles,
   Trash2
 } from 'lucide-react';
 
@@ -46,36 +46,9 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
   onOpenApp,
   children
 }) => {
-  const [time, setTime] = useState(new Date());
-  const [batteryLevel, setBatteryLevel] = useState(88);
   const [searchQuery, setSearchQuery] = useState('');
   const [isRecentsOpen, setIsRecentsOpen] = useState(false);
   const [openedAppsHistory, setOpenedAppsHistory] = useState<string[]>([]);
-
-  // Update clock
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  // Simulate slight battery discharging/charging
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBatteryLevel(prev => {
-        if (prev <= 15) return 98; // reset to simulate charging
-        return prev - 1;
-      });
-    }, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
-  };
-
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString([], { weekday: 'long', month: 'short', day: 'numeric' });
-  };
 
   // Define 9 genetic analysis "Apps"
   const apps: AppConfig[] = useMemo(() => [
@@ -176,6 +149,17 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
       targetSubTab: 'blood',
       description: 'Predict ABO and Rhesus Factor blood groups from genetic data.',
       imageUrl: '/assets/blood_icon.png',
+    },
+    {
+      id: 'prs',
+      name: 'PRS Engine',
+      icon: HeartPulse,
+      gradient: 'from-indigo-500 to-purple-600',
+      glowColor: 'rgba(99, 102, 241, 0.45)',
+      targetTab: 'health_traits',
+      targetSubTab: 'prs',
+      description: 'Calculate Polygenic Risk Scores (PRS) for complex clinical traits.',
+      imageUrl: '/assets/health_icon.png',
     },
     {
       id: 'markers',
@@ -294,27 +278,9 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
   }, [apps, searchQuery]);
 
   return (
-    <div className="relative w-full min-h-[90vh] rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col transition-all duration-300">
-      {/* Desktop Wallpaper */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-tr from-slate-100 via-indigo-50/50 to-teal-50/50 dark:from-[#090b0e] dark:via-[#131922] dark:to-[#17112c] transition-colors duration-500" />
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-500/5 via-transparent to-transparent opacity-60" />
-
-      {/* Simulated Android Status Bar */}
-      <div className="relative z-10 w-full h-8 px-6 flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 select-none">
-        <div className="flex items-center gap-1.5">
-          <span>Scout Mobile</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" title="Connected to local sandbox"></span>
-          <span className="text-[9px] uppercase bg-slate-200 dark:bg-slate-800/80 px-1.5 py-0.5 rounded tracking-wider">5G</span>
-          <Wifi className="w-3.5 h-3.5" />
-        </div>
-        <div>
-          <span>{formatTime(time)}</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="text-[9px] font-mono">{batteryLevel}%</span>
-          <BatteryCharging className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-        </div>
-      </div>
+    <div className="relative w-full min-h-[85vh] flex flex-col transition-all duration-300">
+      {/* Workspace Background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-tr from-slate-100/50 via-indigo-50/30 to-teal-50/30 dark:from-[#090b0e]/50 dark:via-[#131922]/50 dark:to-[#17112c]/50 transition-colors duration-500 rounded-[2.5rem]" />
 
       {/* Main Desktop Workspace Area */}
       <div className="relative z-10 flex-1 flex flex-col p-6 sm:p-8 select-none">
@@ -536,9 +502,9 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
                   <button
                     onClick={handleGoHome}
                     className="p-1.5 hover:bg-slate-250 dark:hover:bg-slate-800 rounded-full text-slate-550 dark:text-slate-450 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer"
-                    title="Minimize to Desktop"
+                    title="Close App"
                   >
-                    <Circle className="w-3.5 h-3.5 fill-current" />
+                    <X className="w-4 h-4" />
                   </button>
                 </div>
               </div>
@@ -652,43 +618,17 @@ const AndroidDesktop: React.FC<AndroidDesktopProps> = ({
         </AnimatePresence>
       </div>
 
-      {/* Simulated Android Navigation Bar (Gestures/Buttons) */}
-      <div className="relative z-10 w-full h-12 bg-slate-900 border-t border-slate-850 flex items-center justify-around select-none">
-        {/* Back Button (◀) */}
-        <button 
-          onClick={handleGoBack}
-          className={`flex items-center justify-center w-14 h-8 rounded-xl transition-all ${
-            currentApp || isRecentsOpen 
-              ? 'text-white hover:bg-white/10 active:scale-90 cursor-pointer' 
-              : 'text-slate-700 pointer-events-none'
-          }`}
-          title="Back"
-        >
-          <ArrowLeft className="w-5 h-5 shrink-0" />
-        </button>
-
-        {/* Home Button (●) */}
-        <button 
-          onClick={handleGoHome}
-          className={`flex items-center justify-center w-14 h-8 rounded-xl text-white hover:bg-white/10 active:scale-90 cursor-pointer`}
-          title="Home Desktop"
-        >
-          <Circle className="w-4 h-4 fill-current shrink-0" />
-        </button>
-
-        {/* Recents Multitasking (■) */}
-        <button 
-          onClick={handleToggleRecents}
-          className={`flex items-center justify-center w-14 h-8 rounded-xl transition-all ${
-            openedAppsHistory.length > 0
-              ? 'text-white hover:bg-white/10 active:scale-90 cursor-pointer'
-              : 'text-slate-700 pointer-events-none'
-          }`}
-          title="Recent Apps"
-        >
-          <Square className="w-4 h-4 fill-current shrink-0" />
-        </button>
-      </div>
+      {/* Workspace specific close app handler instead of Android Navigation Bar */}
+      {currentApp && (
+        <div className="absolute top-8 left-8 z-50">
+          <button 
+            onClick={handleGoHome}
+            className="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-bold shadow-lg hover:scale-105 transition-all text-slate-700 dark:text-slate-300"
+          >
+            <ArrowLeft className="w-4 h-4" /> Return to Grid
+          </button>
+        </div>
+      )}
     </div>
   );
 };

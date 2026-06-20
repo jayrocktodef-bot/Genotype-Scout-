@@ -40,6 +40,8 @@ export const ChromosomePainterView = ({
 }) => {
   const [calculatingLAI, setCalculatingLAI] = useState(false);
   const [localSegments, setLocalSegments] = useState<any>(null);
+  const [laiError, setLaiError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
   const [selectedSegment, setSelectedSegment] = useState<{ chrom: string; strand: 'A' | 'B' | 'Both'; segment: Segment; bp: number } | null>(null);
   const [snpsUsedForLAI, setSnpsUsedForLAI] = useState<any[]>([]);
 
@@ -60,6 +62,7 @@ export const ChromosomePainterView = ({
     let active = true;
     const runLAI = async () => {
       setCalculatingLAI(true);
+      setLaiError(null);
       try {
         const userSnpMap: Record<string, string> = dataset.mergedSnpMap || {};
         const userMetaMap: Record<string, { chrom: string; pos: number }> = dataset.mergedSnpMetaMap || {};
@@ -183,8 +186,11 @@ export const ChromosomePainterView = ({
         if (active) {
           setLocalSegments(segments);
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error("Failed to run local ancestry inference chromosome painting:", err);
+        if (active) {
+          setLaiError(err?.message || 'Unknown error during Local Ancestry Inference.');
+        }
       } finally {
         if (active) {
           setCalculatingLAI(false);
@@ -197,7 +203,7 @@ export const ChromosomePainterView = ({
     return () => {
       active = false;
     };
-  }, [dataset]);
+  }, [dataset, retryCount]);
 
   return (
     <motion.div 
@@ -320,8 +326,19 @@ export const ChromosomePainterView = ({
             </AnimatePresence>
           </div>
         ) : (
-          <div className="text-center py-10 text-slate-500 font-bold uppercase text-xs tracking-wider">
-            Failed to load chromosome painting data. Make sure a raw kit has been successfully processed.
+          <div className="text-center py-10 space-y-4">
+            <p className="text-slate-500 font-bold uppercase text-xs tracking-wider">
+              {laiError 
+                ? `Chromosome painting error: ${laiError}`
+                : 'Failed to load chromosome painting data. Make sure a raw kit has been successfully processed.'
+              }
+            </p>
+            <button
+              onClick={() => { setLocalSegments(null); setLaiError(null); setRetryCount(c => c + 1); }}
+              className="px-6 py-2.5 bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 font-black text-xs uppercase tracking-widest rounded-xl border border-teal-500/30 transition-all"
+            >
+              ↻ Retry Computation
+            </button>
           </div>
         )}
       </div>

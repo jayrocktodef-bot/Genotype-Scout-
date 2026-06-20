@@ -1,7 +1,11 @@
 import { parseRawDNA, parseRawDNAStream } from '../services/dnaParser';
+import { runMDLPK16 } from '../lib/AncientAdmixtureCalculator';
+import { humanOriginsEngine } from '../lib/ancestryOracleLogic';
+
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
 import { matchSNPs, getAllSources } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
+import { calculateAllPRS } from '../services/prsEngine';
 import { Y_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerAllowlist } from '../utils/markerAllowlist';
 import { calculateAncestryOracle } from '../services/ancestryEngine';
@@ -466,7 +470,9 @@ self.onmessage = async (e: MessageEvent) => {
       chip: chips[0] || "Unknown Chip",
       snpCount: totalSnps,
       predictedYDNA, predictedMtDNA, mergedMtMap,
+
       mergedSnpMap: imputedSnpMap,
+      prsResults: calculateAllPRS(imputedSnpMap),
       mergedSnpMetaMap,
       rareAndNovelVariants,
       analysis: { 

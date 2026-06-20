@@ -16,3 +16,7 @@ my_regions.txt
 firebase-applet-config.json
 metadata.json
 .vercel
+
+# Scratch directory for massive datasets (like AADR)
+scratch/
+aadr/
