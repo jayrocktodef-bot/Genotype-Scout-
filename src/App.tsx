@@ -3294,6 +3294,20 @@ export default function App() {
               </div>
             )}
 
+            {currentApp === 'prs' && (
+              <div className="animate-fade-in">
+                <PolygenicScores 
+                  prsResults={datasets[activeDatasetIndex]?.prsResults}
+                />
+              </div>
+            )}
+
+            {currentApp === 'rare_variants' && (
+              <div className="animate-fade-in">
+                <RareVariantsView variants={datasets[activeDatasetIndex]?.rareAndNovelVariants || []} />
+              </div>
+            )}
+
             {currentApp === 'markers' && (
               <div className="space-y-8 animate-fade-in">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
