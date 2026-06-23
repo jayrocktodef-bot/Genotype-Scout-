@@ -1,0 +1,1150 @@
+{
+  "metadata": {
+    "description": "Unified Ancient and Historical Genomic Data",
+    "generated_at": "2026-05-23T03:38:06.627Z",
+    "ancient_populations": {
+      "WHG": {
+        "name": "Western Hunter-Gatherers",
+        "period": "~15,000-5,000 BCE",
+        "region": "Western/Central Europe",
+        "description": "Mesolithic foragers who inhabited Europe before farming. Dark skin, blue eyes."
+      },
+      "EHG": {
+        "name": "Eastern Hunter-Gatherers",
+        "period": "~8,000-5,000 BCE",
+        "region": "Eastern Europe/Russia",
+        "description": "Hunter-gatherers from the steppe and forest zones east of the Baltic."
+      },
+      "ANF": {
+        "name": "Anatolian Neolithic Farmers",
+        "period": "~8,000-4,000 BCE",
+        "region": "Anatolia \u2192 Europe",
+        "description": "First farmers who migrated from the Near East, bringing agriculture to Europe."
+      },
+      "Yamnaya": {
+        "name": "Yamnaya/Steppe Pastoralists",
+        "period": "~3,300-2,600 BCE",
+        "region": "Pontic-Caspian Steppe",
+        "description": "Bronze Age herders who massively impacted European genetics. Brought Indo-European languages."
+      },
+      "Neanderthal": {
+        "name": "Neanderthal",
+        "period": "~400,000-40,000 years ago",
+        "region": "Europe and Western Asia",
+        "description": "Archaic humans who interbred with modern humans leaving ~1-4% DNA in non-Africans."
+      },
+      "Denisovan": {
+        "name": "Denisovan",
+        "period": "~100,000-30,000 years ago",
+        "region": "Central/East Asia",
+        "description": "Archaic humans related to Neanderthals. Up to 5% DNA in some Melanesian populations."
+      },
+      "AncientAfrican": {
+        "name": "Ancient African",
+        "period": "~10,000-2,000 BCE",
+        "region": "Sub-Saharan Africa",
+        "description": "Pre-Bantu hunter-gatherer and early agriculturalist lineages from West, East, and Southern Africa."
+      },
+      "AncientEastAsian": {
+        "name": "Ancient East Asian / Paleo-Indian",
+        "period": "~30,000-10,000 BCE",
+        "region": "East Asia / Siberia / Beringia",
+        "description": "Pleistocene ancestors of East Asians and Native Americans who migrated across Beringia."
+      }
+    }
+  },
+  "markers": {
+    "rs12913832": {
+      "gene": "HERC2",
+      "trait": "Blue/brown eye color",
+      "derived_allele": "G",
+      "ancestral_allele": "A",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "high",
+          "genotypes_found": [
+            "GG",
+            "GA"
+          ],
+          "note": "Blue eyes originated in WHG. Nearly all Mesolithic European hunter-gatherers had blue eyes.",
+          "example_samples": [
+            "Loschbour (Luxembourg)",
+            "La Bra\u00f1a 1 (Spain)"
+          ]
+        },
+        "EHG": {
+          "frequency": "moderate",
+          "genotypes_found": [
+            "GA",
+            "AA"
+          ],
+          "note": "Mixed - some blue, some brown eyes in eastern populations."
+        },
+        "ANF": {
+          "frequency": "rare",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Brown eyes predominant in Neolithic farmers from Anatolia."
+        },
+        "Yamnaya": {
+          "frequency": "moderate",
+          "genotypes_found": [
+            "GA",
+            "GG"
+          ],
+          "note": "Mixed eye colors in Steppe populations. Likely acquired from WHG admixture."
+        }
+      },
+      "history": "The blue eye mutation arose once in a single European ancestor ~6,000-10,000 years ago, during the Mesolithic. Hunter-gatherers had blue eyes but dark skin - a combination not seen in modern Europeans.",
+      "pmid": [
+        "18252222",
+        "24463508",
+        "25230663"
+      ]
+    },
+    "rs1426654": {
+      "gene": "SLC24A5",
+      "trait": "Light skin pigmentation",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "rare",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "WHG had DARK SKIN despite living in Europe for 30,000+ years. This light skin allele was absent."
+        },
+        "EHG": {
+          "frequency": "variable",
+          "genotypes_found": [
+            "GA",
+            "AA"
+          ],
+          "note": "Some EHG carried the light skin allele, especially those with ANF admixture."
+        },
+        "ANF": {
+          "frequency": "fixed",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Neolithic farmers from Anatolia were already fixed for light skin."
+        },
+        "Yamnaya": {
+          "frequency": "fixed",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Steppe populations had light skin."
+        }
+      },
+      "history": "Modern European light skin came from Neolithic farmers, NOT from adaptation in Europe. Hunter-gatherers were dark-skinned for 30,000+ years. The light skin allele swept through Europe only after ~5,000 BCE with farming.",
+      "pmid": [
+        "16357253",
+        "24463508",
+        "25230663"
+      ]
+    },
+    "rs16891982": {
+      "gene": "SLC45A2",
+      "trait": "Light skin pigmentation",
+      "derived_allele": "G",
+      "ancestral_allele": "C",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "variable",
+          "genotypes_found": [
+            "GC",
+            "GG"
+          ],
+          "note": "Some WHG carried this light skin variant, but not fixed."
+        },
+        "EHG": {
+          "frequency": "moderate",
+          "genotypes_found": [
+            "GC",
+            "GG"
+          ],
+          "note": "Partially present in eastern hunter-gatherers."
+        },
+        "ANF": {
+          "frequency": "low",
+          "genotypes_found": [
+            "GC",
+            "CC"
+          ],
+          "note": "Early farmers had variable frequencies."
+        },
+        "Yamnaya": {
+          "frequency": "high",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "High frequency in Steppe populations."
+        }
+      },
+      "history": "This second major European light-skin gene has a different history than SLC24A5. It was partially present in hunter-gatherers and increased through Bronze Age migrations.",
+      "pmid": [
+        "17999355",
+        "24463508"
+      ]
+    },
+    "rs4988235": {
+      "gene": "LCT",
+      "trait": "Lactase persistence (adult milk digestion)",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "No lactase persistence - could not digest milk as adults."
+        },
+        "EHG": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "Lactase persistence absent in pre-pastoral populations."
+        },
+        "ANF": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "SURPRISINGLY, early farmers could NOT digest milk! They kept animals for meat, not dairy."
+        },
+        "Yamnaya": {
+          "frequency": "low",
+          "genotypes_found": [
+            "GG",
+            "GA"
+          ],
+          "note": "Only ~10-20% carried the allele initially. Despite herding, most Steppe people were lactose intolerant."
+        }
+      },
+      "history": "Lactase persistence only became common in the last 4,000 years - much later than domestication. It underwent one of the strongest selective sweeps in the human genome, going from <5% to >70% in Northern Europeans in just 100 generations.",
+      "pmid": [
+        "11788828",
+        "24463508",
+        "27863252"
+      ]
+    },
+    "rs3827760": {
+      "gene": "EDAR",
+      "trait": "Hair thickness, shovel-shaped incisors, sweat glands",
+      "derived_allele": "G",
+      "ancestral_allele": "A",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "European hunter-gatherers did not have this East Asian variant."
+        },
+        "EHG": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Not present in European populations."
+        },
+        "ANF": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Not present in Near Eastern farmers."
+        },
+        "AncientEastAsian": {
+          "frequency": "variable",
+          "genotypes_found": [
+            "GA",
+            "GG"
+          ],
+          "note": "Selected in East Asian populations, possibly for cold adaptation or other factors."
+        }
+      },
+      "history": "This variant underwent strong selection in East Asia ~30,000 years ago. It affects multiple traits: thick straight hair, shovel-shaped incisors (common in Native Americans and East Asians), and increased sweat gland density.",
+      "pmid": [
+        "18561325",
+        "23151935"
+      ]
+    },
+    "rs2814778": {
+      "gene": "DARC (Duffy antigen)",
+      "trait": "Malaria resistance (Duffy null)",
+      "derived_allele": "C",
+      "ancestral_allele": "T",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "TT"
+          ],
+          "note": "European hunter-gatherers susceptible to Plasmodium vivax malaria."
+        },
+        "ANF": {
+          "frequency": "absent",
+          "genotypes_found": [
+            "TT"
+          ],
+          "note": "Near Eastern farmers did not have malaria resistance."
+        },
+        "AncientAfrican": {
+          "frequency": "high",
+          "genotypes_found": [
+            "CC"
+          ],
+          "note": "Fixed or near-fixed in sub-Saharan Africa for thousands of years."
+        }
+      },
+      "history": "The Duffy-null allele provides complete resistance to Plasmodium vivax malaria. It reached near-fixation in sub-Saharan Africa where malaria was endemic. This is one of the clearest examples of selection by infectious disease.",
+      "pmid": [
+        "11171069",
+        "12612580"
+      ]
+    },
+    "rs17822931": {
+      "gene": "ABCC11",
+      "trait": "Dry earwax, reduced body odor",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "low",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "Wet earwax type predominant."
+        },
+        "ANF": {
+          "frequency": "low",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "Wet earwax type."
+        },
+        "AncientEastAsian": {
+          "frequency": "high",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Dry earwax variant highly selected in East Asian populations."
+        }
+      },
+      "history": "The dry earwax allele is nearly fixed in East Asian and Native American populations, suggesting strong selection ~40,000 years ago. It also reduces apocrine gland secretion (less body odor). The selective pressure is unknown - possibly cold adaptation or social selection.",
+      "pmid": [
+        "16444273",
+        "20029941"
+      ]
+    },
+    "rs4778241": {
+      "gene": "OCA2",
+      "trait": "Eye/skin color regulation",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "high",
+          "genotypes_found": [
+            "AA",
+            "AG"
+          ],
+          "note": "Associated with blue eye color in hunter-gatherers."
+        },
+        "ANF": {
+          "frequency": "low",
+          "genotypes_found": [
+            "GG",
+            "AG"
+          ],
+          "note": "Brown eyes predominant in farmers."
+        }
+      },
+      "history": "Part of the OCA2/HERC2 eye color locus. Multiple variants in this region interact to produce blue, green, and brown eye colors.",
+      "pmid": [
+        "18252222",
+        "24463508"
+      ]
+    },
+    "rs1800407": {
+      "gene": "OCA2",
+      "trait": "Eye color (green/hazel modifier)",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "variable",
+          "genotypes_found": [
+            "CT",
+            "TT"
+          ],
+          "note": "Present in some Mesolithic Europeans."
+        },
+        "ANF": {
+          "frequency": "rare",
+          "genotypes_found": [
+            "CC"
+          ],
+          "note": "Rare in Neolithic farmers."
+        }
+      },
+      "history": "This variant modifies eye color toward green/hazel. Combined with other OCA2/HERC2 variants, it contributes to the diversity of European eye colors.",
+      "pmid": [
+        "18252222"
+      ]
+    },
+    "rs72921001": {
+      "gene": "Intergenic (3q21)",
+      "trait": "Neanderthal introgression - Pain sensitivity",
+      "derived_allele": "C",
+      "ancestral_allele": "T",
+      "ancient_context": {
+        "Neanderthal": {
+          "frequency": "fixed",
+          "genotypes_found": [
+            "CC"
+          ],
+          "note": "This haplotype is derived from Neanderthal introgression."
+        }
+      },
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.02,
+        "modern_frequency_EAS": 0.01,
+        "modern_frequency_AFR": 0
+      },
+      "history": "This region shows clear Neanderthal introgression and may affect pain sensitivity. Only present in populations with Neanderthal ancestry (non-Africans).",
+      "pmid": [
+        "23978324",
+        "26412862"
+      ]
+    },
+    "rs10774671": {
+      "gene": "OAS1",
+      "trait": "Neanderthal introgression - Antiviral immunity",
+      "derived_allele": "G",
+      "ancestral_allele": "A",
+      "ancient_context": {
+        "Neanderthal": {
+          "frequency": "high",
+          "genotypes_found": [
+            "GG"
+          ],
+          "note": "Neanderthal-derived immune variant."
+        }
+      },
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.25,
+        "modern_frequency_EAS": 0.35,
+        "effect": "Enhanced antiviral response"
+      },
+      "history": "The Neanderthal version of OAS1 provides enhanced protection against RNA viruses. It was likely positively selected in modern humans after introgression.",
+      "pmid": [
+        "26943528",
+        "33273464"
+      ]
+    },
+    "rs35744605": {
+      "gene": "TLR1",
+      "trait": "Neanderthal introgression - Immune response",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "ancient_context": {
+        "Neanderthal": {
+          "frequency": "high",
+          "genotypes_found": [
+            "TT"
+          ],
+          "note": "Part of Neanderthal immune haplotype."
+        }
+      },
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.45,
+        "effect": "Modified innate immune response"
+      },
+      "history": "TLR1 variants from Neanderthals affect how the innate immune system responds to bacteria. These variants are among the most strongly positively selected Neanderthal introgressions.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs2066853": {
+      "gene": "AHR",
+      "trait": "Neanderthal introgression - Detoxification",
+      "derived_allele": "G",
+      "ancestral_allele": "A",
+      "ancient_context": {
+        "Neanderthal": {
+          "frequency": "variable",
+          "genotypes_found": [
+            "GG",
+            "GA"
+          ],
+          "note": "Complex introgression history at this locus."
+        }
+      },
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.12,
+        "effect": "Altered xenobiotic metabolism"
+      },
+      "history": "The AHR gene regulates the body's response to environmental toxins and is involved in detoxification. Neanderthal variants may reflect adaptation to different diets or environments.",
+      "pmid": [
+        "24463508"
+      ]
+    },
+    "rs7277176": {
+      "gene": "BNC2",
+      "trait": "Neanderthal introgression - Skin pigmentation/freckling",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "ancient_context": {
+        "Neanderthal": {
+          "frequency": "present",
+          "genotypes_found": [
+            "TT"
+          ],
+          "note": "Neanderthal haplotype associated with lighter skin."
+        }
+      },
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.66,
+        "effect": "Lighter skin, freckling, sun sensitivity"
+      },
+      "history": "BNC2 is a major determinant of skin color and freckling. The high frequency of this Neanderthal variant in Europeans suggests strong positive selection for lighter skin at high latitudes.",
+      "pmid": [
+        "24463508",
+        "29532074"
+      ]
+    },
+    "rs1881227": {
+      "gene": "Intergenic (2p16.1)",
+      "trait": "Neanderthal introgression",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "ancient_context": {
+        "Neanderthal": {
+          "frequency": "high",
+          "genotypes_found": [
+            "AA"
+          ],
+          "note": "Classic Neanderthal introgression region."
+        }
+      },
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.08
+      },
+      "history": "This region contains one of the most well-characterized Neanderthal introgression haplotypes in modern Europeans.",
+      "pmid": [
+        "29532074"
+      ]
+    },
+    "rs1042602_anc": {
+      "gene": "TYR",
+      "trait": "Skin pigmentation selection",
+      "derived_allele": "A",
+      "ancestral_allele": "C",
+      "ancient_context": {
+        "WHG": {
+          "frequency": "rare",
+          "genotypes_found": [
+            "CC"
+          ],
+          "note": "Ancestral allele predominant."
+        },
+        "ANF": {
+          "frequency": "moderate",
+          "genotypes_found": [
+            "CA",
+            "AA"
+          ],
+          "note": "Increased in early farmers."
+        }
+      },
+      "history": "TYR variants affect melanin production. Selection at this locus contributed to European skin pigmentation adaptation.",
+      "pmid": [
+        "18483556",
+        "24463508"
+      ]
+    }
+  },
+  "samples": {
+    "loschbour": {
+      "id": "loschbour",
+      "name": "Loschbour Man",
+      "site": "Mullerthal",
+      "country": "Luxembourg",
+      "age_bp": 8000,
+      "period": "Mesolithic",
+      "culture": "Western Hunter-Gatherer (WHG)",
+      "culture_name": "WHG",
+      "sex": "M",
+      "description": "A famous Western Hunter-Gatherer. Known to have had dark skin, dark hair, but bright blue eyes.",
+      "region": "Europe",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "GG",
+        "rs4988235": "CC",
+        "rs3827760": "AA"
+      }
+    },
+    "cheddar_man": {
+      "id": "cheddar_man",
+      "name": "Cheddar Man",
+      "site": "Gough's Cave",
+      "country": "United Kingdom",
+      "age_bp": 9100,
+      "period": "Mesolithic",
+      "culture": "Western Hunter-Gatherer (WHG)",
+      "culture_name": "WHG",
+      "sex": "M",
+      "description": "Oldest complete skeleton found in Britain. Typical WHG phenotype of dark skin and light eyes.",
+      "region": "Europe",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "GG",
+        "rs4988235": "CC"
+      }
+    },
+    "stuttgart": {
+      "id": "stuttgart",
+      "name": "Stuttgart",
+      "site": "Baden-W\u00fcrttemberg",
+      "country": "Germany",
+      "age_bp": 7000,
+      "period": "Neolithic",
+      "culture": "Early European Farmer (EEF)",
+      "culture_name": "EEF",
+      "sex": "F",
+      "description": "An Early European Farmer of the LBK culture. Brought agriculture from Anatolia. Had light skin and brown eyes.",
+      "region": "Europe",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "CC"
+      }
+    },
+    "anzick": {
+      "id": "anzick",
+      "name": "Anzick-1",
+      "site": "Montana",
+      "country": "USA",
+      "age_bp": 12700,
+      "period": "Paleolithic",
+      "culture": "Clovis",
+      "culture_name": "Ancient Native American",
+      "sex": "M",
+      "description": "The only known human burial associated with the Clovis culture. Closely related to modern Native Americans.",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "AA",
+        "rs12913832": "AA"
+      }
+    },
+    "mota": {
+      "id": "mota",
+      "name": "Mota",
+      "site": "Mota Cave",
+      "country": "Ethiopia",
+      "age_bp": 4500,
+      "period": "Neolithic",
+      "culture": "African Hunter-Gatherer",
+      "culture_name": "Ancient African",
+      "sex": "M",
+      "description": "The first ancient African genome sequenced. Predates the Eurasian backflow into Africa.",
+      "region": "Africa",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs2814778": "CC",
+        "rs334": "AA"
+      }
+    },
+    "yamnaya_samara": {
+      "id": "yamnaya_samara",
+      "name": "Yamnaya Herder",
+      "site": "Samara",
+      "country": "Russia",
+      "age_bp": 5000,
+      "period": "Bronze Age",
+      "culture": "Yamnaya",
+      "culture_name": "Western Steppe Herder",
+      "sex": "M",
+      "description": "Nomadic pastoralists from the Pontic-Caspian steppe who expanded massively during the Bronze Age.",
+      "region": "Eurasia",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CG",
+        "rs12913832": "AA",
+        "rs4988235": "CT"
+      }
+    }
+  },
+  "clusters": [
+    {
+      "id": "NYABG-Manhattan",
+      "name": "New York African Burial Ground (NYABG)",
+      "period": "1640\u20131794 AD",
+      "location": "Lower Manhattan, NYC",
+      "signatures": [
+        {
+          "haplogroup": "L2a1",
+          "frequency": 0.35,
+          "origin": "West/Central Africa (Bantu)"
+        },
+        {
+          "haplogroup": "L1b",
+          "frequency": 0.2,
+          "origin": "West Africa (Senegambia)"
+        },
+        {
+          "haplogroup": "L3b",
+          "frequency": 0.15,
+          "origin": "West Africa (Nigeria/Cameroon)"
+        },
+        {
+          "haplogroup": "L3d",
+          "frequency": 0.1,
+          "origin": "West Africa"
+        },
+        {
+          "haplogroup": "M7",
+          "frequency": 0.02,
+          "origin": "Madagascar / East Africa"
+        }
+      ],
+      "description": "An estimated 15,000 individuals were interred here. These lineages represent the founding African community of New Amsterdam/New York."
+    },
+    {
+      "id": "St-Helena-Liberated",
+      "name": "St. Helena 'Liberated Africans'",
+      "period": "1840\u20131867 AD",
+      "location": "Rupert's Valley, St. Helena",
+      "signatures": [
+        {
+          "haplogroup": "L2a1f",
+          "frequency": 0.25,
+          "origin": "West-Central Africa (Gabon/Angola)"
+        },
+        {
+          "haplogroup": "L2b",
+          "frequency": 0.15,
+          "origin": "West-Central Africa"
+        },
+        {
+          "haplogroup": "L1c3a",
+          "frequency": 0.12,
+          "origin": "Central African Republic"
+        },
+        {
+          "haplogroup": "L3f1b1a",
+          "frequency": 0.1,
+          "origin": "Angola"
+        }
+      ],
+      "description": "Intercepted by the Royal Navy during the final phase of the slave trade, these 27,000 individuals represent a direct genomic fingerprint of 19th-century West-Central Africa."
+    },
+    {
+      "id": "Takarkori-Saharan-Ghost",
+      "name": "Takarkori 'Green Sahara' Ghost",
+      "period": "7,000 BP",
+      "location": "Libya (Messak Settafet)",
+      "signatures": [
+        {
+          "haplogroup": "L3",
+          "frequency": 0.6,
+          "origin": "Divergent North/Central African"
+        },
+        {
+          "haplogroup": "L2",
+          "frequency": 0.3,
+          "origin": "Ancient Saharan"
+        }
+      ],
+      "tags": [
+        "Ghost Lineage",
+        "Ancient Saharan"
+      ],
+      "description": "A deeply divergent lineage from the 'Green Sahara' that remained isolated for millennia. Represents a 'Ghost Population' distinct from modern groups."
+    }
+  ],
+  "african_weights": {
+    "rs12913832": {
+      "YRI": 0.01,
+      "LWK": 0.01,
+      "GWD": 0.01,
+      "MSL": 0.01,
+      "ESN": 0.01
+    }
+  },
+  "matches": [
+    {
+      "id": "Mota-Ethiopia",
+      "name": "Mota Man",
+      "region": "Ethiopia (Gamo Highlands)",
+      "period": "Stone Age (4,500 BP)",
+      "description": "A hunter-gatherer from the Mota Cave. His genome predates the massive migration of Eurasian farmers into East Africa.",
+      "ancestry_group": "East African / Nilotic",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      },
+      "culture": "Stone Age Hunter-Gatherer",
+      "age_bp": 4500
+    },
+    {
+      "id": "Shum-Laka-Cameroon",
+      "name": "Shum Laka Boy",
+      "region": "Cameroon (Grassfields)",
+      "period": "Holocene (8,000 BP)",
+      "description": "Key for understanding the origins of Bantu-speaking populations and West African hunter-gatherers.",
+      "ancestry_group": "West/Central African",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs2814778"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs2814778": "CC"
+      },
+      "culture": "Late Stone Age",
+      "age_bp": 8000
+    },
+    {
+      "id": "I8088-Catoctin",
+      "name": "Catoctin Ancestor (I8088)",
+      "region": "Maryland (Enslaved Ironworker)",
+      "period": "Colonial/Antebellum (1774\u20131850)",
+      "description": "Part of an enslaved community at a Maryland iron furnace. Shows mixed Wolof, Kongo, and British Isles ancestry. A direct link to African American ancestral history.",
+      "ancestry_group": "Upper South Colonial",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs12913832",
+        "rs16891982"
+      ],
+      "genotypes": {
+        "rs1426654": "AG",
+        "rs12913832": "AG",
+        "rs16891982": "CG"
+      },
+      "culture": "African Diaspora",
+      "age_bp": 200
+    },
+    {
+      "id": "GHK-Sudan",
+      "name": "Kulubnarti Nubian",
+      "region": "Sudan (Nile Valley)",
+      "period": "Christian Era (1,500 BP)",
+      "description": "Nubian samples that show the complex mix of Nilotic and Near Eastern lineages in the Nile Valley.",
+      "ancestry_group": "Nilo-Saharan / Nilotic",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16139",
+        "rs1065852"
+      ],
+      "genotypes": {
+        "rs1426654": "AG",
+        "rs16139": "GG",
+        "rs1065852": "AA"
+      },
+      "culture": "Nubian",
+      "age_bp": 1500
+    },
+    {
+      "id": "Taforalt-Morocco",
+      "name": "Taforalt Individual",
+      "region": "Morocco (Rif)",
+      "period": "Epipaleolithic (15,000 BP)",
+      "description": "The oldest Iberomaurusian genome. Shows a link between Near Eastern and Sub-Saharan African lineages.",
+      "ancestry_group": "North African / Iberomaurusian",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs12913832",
+        "rs16891982"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs12913832": "AA",
+        "rs16891982": "CC"
+      },
+      "culture": "Iberomaurusian",
+      "age_bp": 15000
+    },
+    {
+      "id": "Nama-San-Deep",
+      "name": "Deep San Ancestor",
+      "region": "Southern Africa (Namibia/Botswana)",
+      "period": "Late Pleistocene (10,200 BP)",
+      "description": "Represents the world's oldest genetic lineages. This individual shows continuity with modern Nama and San groups, with signatures that have remained stable for over 10,000 years.",
+      "ancestry_group": "Khoe-San / Southern Hunter-Gatherer",
+      "diagnostic_markers": [
+        "rs11568828",
+        "rs13097409",
+        "rs885479"
+      ],
+      "genotypes": {
+        "rs11568828": "AA",
+        "rs13097409": "GG",
+        "rs885479": "AA"
+      },
+      "culture": "Wilton / Oakhurst",
+      "age_bp": 10200
+    },
+    {
+      "id": "anzick_1",
+      "name": "Anzick-1 (Clovis Boy)",
+      "region": "Wilsall, Montana, USA",
+      "period": "Late Pleistocene (12,600 BP)",
+      "description": "Skeletal remains of an infant boy buried with Clovis stone tools in Montana. His genome confirms the Siberian migration origin of Native Americans and shows direct lineage continuity with modern Indigenous Central and South Americans.",
+      "ancestry_group": "Indigenous American / Paleo-Indian",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832",
+        "rs3827760"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CA"
+      },
+      "culture": "Clovis Paleo-Indian",
+      "age_bp": 12600
+    },
+    {
+      "id": "kennewick_man",
+      "name": "Kennewick Man (Ancient One)",
+      "region": "Columbia River, Washington, USA",
+      "period": "Early Holocene (8,900 BP)",
+      "description": "Found along the Columbia River. A landmark legal and genetic case that proved close genetic continuity to the modern Colville and other Pacific Northwest Native American tribes.",
+      "ancestry_group": "Indigenous American",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832",
+        "rs3827760"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      },
+      "culture": "Early Cascade",
+      "age_bp": 8900
+    },
+    {
+      "id": "gyamfi_single",
+      "name": "Gyamfi Single",
+      "region": "Gyamfi-Sade, Ghana",
+      "period": "Iron Age (2,500 BP)",
+      "description": "An ancient West African genome from Ghana predating the major Bantu migration events, providing a key baseline of historic West African genetic variation.",
+      "ancestry_group": "West African",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs2814778"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs2814778": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CC"
+      },
+      "culture": "Kintampo Culture",
+      "age_bp": 2500
+    },
+    {
+      "id": "luxor_ancestor",
+      "name": "Luxor Ancient Egyptian",
+      "region": "Abusir el-Meleq, Egypt",
+      "period": "Ptolemaic Period (2,200 BP)",
+      "description": "Ancient Egyptian from a mummified community. Shows high genetic affinity to historical Near Eastern and Anatolian populations with smaller Sub-Saharan African components.",
+      "ancestry_group": "North African / Near Eastern",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs1042602"
+      ],
+      "genotypes": {
+        "rs1426654": "AG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CA"
+      },
+      "culture": "Ancient Egyptian",
+      "age_bp": 2200
+    },
+    {
+      "id": "rameses_iii",
+      "name": "Rameses III",
+      "region": "Thebes, Egypt",
+      "period": "New Kingdom (3,150 BP)",
+      "description": "Famous pharaoh of the 20th Dynasty, known for repelling the Sea Peoples during the Late Bronze Age collapse.",
+      "ancestry_group": "North African Pharaoh",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1042602": "CC"
+      },
+      "culture": "Ancient Egyptian",
+      "age_bp": 3150
+    },
+    {
+      "id": "richard_iii",
+      "name": "King Richard III",
+      "region": "Leicester, England",
+      "period": "Late Medieval (540 BP)",
+      "description": "The last English monarch of South-Western Europe descent to die in battle, found buried under a car park in Leicester.",
+      "ancestry_group": "Late Medieval English",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832"
+      ],
+      "genotypes": {
+        "rs1426654": "AA",
+        "rs16891982": "GG",
+        "rs12913832": "GG",
+        "rs4988235": "AA",
+        "rs1042602": "CA"
+      },
+      "culture": "Plantagenet English",
+      "age_bp": 540
+    },
+    {
+      "id": "spirit_cave_mummy",
+      "name": "Spirit Cave Mummy",
+      "region": "Nevada, USA",
+      "period": "Early Holocene (10,600 BP)",
+      "description": "The oldest natural mummy found in North America. Genetic sequencing confirmed close lineage continuity with modern Indigenous groups, resolving long-standing controversies.",
+      "ancestry_group": "Indigenous American / Paleo-Indian",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832",
+        "rs3827760"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      },
+      "culture": "Early Great Basin Forager",
+      "age_bp": 10600
+    },
+    {
+      "id": "luzia_pedra_furada",
+      "name": "Luzia (Lagoa Santa)",
+      "region": "Minas Gerais, Brazil",
+      "period": "Paleo-Indian (11,500 BP)",
+      "description": "One of the oldest Paleo-Indian skeletons discovered in South America. Her genome establishes direct ancestral descent shared with ancient North American migrations.",
+      "ancestry_group": "Indigenous American / Paleo-Indian",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs12913832",
+        "rs3827760"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      },
+      "culture": "Lagoa Santa Paleo-Indian",
+      "age_bp": 11500
+    },
+    {
+      "id": "ballito_bay",
+      "name": "Ballito Bay Child",
+      "region": "KwaZulu-Natal, South Africa",
+      "period": "Stone Age (2,000 BP)",
+      "description": "An ancient hunter-gatherer child whose high-coverage genome proved Khoe-San lineages diverged over 260,000 years ago, predating modern out-of-Africa migrations.",
+      "ancestry_group": "Khoe-San / Southern Hunter-Gatherer",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs2814778"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs2814778": "CC",
+        "rs4988235": "GG"
+      },
+      "culture": "Later Stone Age Hunter-Gatherer",
+      "age_bp": 2000
+    },
+    {
+      "id": "asselar_man",
+      "name": "Asselar Man",
+      "region": "Asselar, Mali",
+      "period": "Holocene (6,500 BP)",
+      "description": "A skeleton from the 'Green Sahara' wet phase of West Africa, representing crucial Holocene-era baseline variation prior to the Sahara's desertification.",
+      "ancestry_group": "West African Hunter-Gatherer",
+      "diagnostic_markers": [
+        "rs1426654",
+        "rs16891982",
+        "rs2814778"
+      ],
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs2814778": "CC",
+        "rs4988235": "GG"
+      },
+      "culture": "Wet Sahara Pastoralist",
+      "age_bp": 6500
+    }
+  ]
+}

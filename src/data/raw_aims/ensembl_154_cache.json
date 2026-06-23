@@ -1,0 +1,1969 @@
+{
+  "rs1008121": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A/T",
+        "seq_region_name": "9",
+        "start": 126222552
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs10129215": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/C",
+        "seq_region_name": "14",
+        "start": 40645549
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1042531": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/G",
+        "seq_region_name": "20",
+        "start": 57565924
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs10484725": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "6",
+        "start": 77559444
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs10521310": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "16",
+        "start": 54426430
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs10741285": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A/C",
+        "seq_region_name": "10",
+        "start": 127712207
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs10756819": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C/T",
+        "seq_region_name": "9",
+        "start": 16858086
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs10776839": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/C/T",
+        "seq_region_name": "9",
+        "start": 134525462
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs10862024": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G/T",
+        "seq_region_name": "12",
+        "start": 79951557
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs10865507": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/C",
+        "seq_region_name": "2",
+        "start": 28761125
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs10888503": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/T",
+        "seq_region_name": "1",
+        "start": 152621073
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs10931559": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/T",
+        "seq_region_name": "2",
+        "start": 192581225
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs10958548": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/C",
+        "seq_region_name": "8",
+        "start": 39409824
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs11003444": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G",
+        "seq_region_name": "10",
+        "start": 50039229
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs11024523": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/G",
+        "seq_region_name": "11",
+        "start": 18162689
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs11065987": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "12",
+        "start": 111634620
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs11083324": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A",
+        "seq_region_name": "18",
+        "start": 29155446
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs11119561": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G/T",
+        "seq_region_name": "1",
+        "start": 210653034
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "A/G/T",
+        "seq_region_name": "HG1832_PATCH",
+        "start": 432798
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs11211843": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G/T",
+        "seq_region_name": "11",
+        "start": 106661055
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs1129038": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "15",
+        "start": 28111713
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C",
+        "seq_region_name": "HSCHR15_4_CTG8",
+        "start": 245178
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs11612053": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "12",
+        "start": 111317434
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs11618683": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/A/C/G",
+        "seq_region_name": "13",
+        "start": 19376418
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs11646276": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/T",
+        "seq_region_name": "16",
+        "start": 26815192
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs11736767": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/C",
+        "seq_region_name": "4",
+        "start": 79042215
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs12048995": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/T",
+        "seq_region_name": "1",
+        "start": 245863548
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs12057771": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/G",
+        "seq_region_name": "1",
+        "start": 95821946
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs12242137": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/C",
+        "seq_region_name": "10",
+        "start": 16624922
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs12255743": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "10",
+        "start": 3259881
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs12411516": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "10",
+        "start": 28351246
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs12519119": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "5",
+        "start": 67722735
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs12521575": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/C/G",
+        "seq_region_name": "5",
+        "start": 18152068
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs12543329": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A",
+        "seq_region_name": "8",
+        "start": 104519521
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs12550186": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/T",
+        "seq_region_name": "8",
+        "start": 8552294
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HG76_PATCH",
+        "start": 4799829
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs12558488": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "X",
+        "start": 152390248
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs12563300": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "T/A",
+        "seq_region_name": "1",
+        "start": 76746239
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs12702758": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A/T",
+        "seq_region_name": "7",
+        "start": 8658907
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs12723223": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "C/T",
+        "seq_region_name": "1",
+        "start": 15209264
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs12725178": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "1",
+        "start": 4058589
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs12752179": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A",
+        "seq_region_name": "1",
+        "start": 213728751
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs12771217": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "10",
+        "start": 23214616
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs12779603": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "10",
+        "start": 131632114
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs12781443": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A",
+        "seq_region_name": "10",
+        "start": 60282869
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs12913832": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/C/G",
+        "seq_region_name": "15",
+        "start": 28120472
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "G/A/C",
+        "seq_region_name": "HSCHR15_4_CTG8",
+        "start": 253911
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs13028308": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G",
+        "seq_region_name": "2",
+        "start": 170499268
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs13083697": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C",
+        "seq_region_name": "3",
+        "start": 77929342
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs13104680": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A",
+        "seq_region_name": "4",
+        "start": 41053278
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs13115450": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G/T",
+        "seq_region_name": "4",
+        "start": 62476199
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs13214040": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/T",
+        "seq_region_name": "6",
+        "start": 131005522
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs13222530": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/G",
+        "seq_region_name": "7",
+        "start": 39005516
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs1337424": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/C",
+        "seq_region_name": "6",
+        "start": 101687420
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs1351394": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/A/C/G",
+        "seq_region_name": "12",
+        "start": 65958046
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs1380629": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/C",
+        "seq_region_name": "4",
+        "start": 136771003
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1385413": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/A/C",
+        "seq_region_name": "2",
+        "start": 138926015
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs1418385": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/G/T",
+        "seq_region_name": "9",
+        "start": 6226295
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs1433857": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "18",
+        "start": 40460412
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs1454530": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "2",
+        "start": 220370533
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1459424": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/C",
+        "seq_region_name": "4",
+        "start": 66219912
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1469584": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "3",
+        "start": 197489210
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "G/A",
+        "seq_region_name": "HSCHR3_2_CTG3",
+        "start": 92757
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs1476413": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/G/T",
+        "seq_region_name": "1",
+        "start": 11792243
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs1481119": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "4",
+        "start": 173414653
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1544325": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/C/G/T",
+        "seq_region_name": "22",
+        "start": 19944145
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1544983": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "G/A/C/T",
+        "seq_region_name": "10",
+        "start": 69554632
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs1551607": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C/T",
+        "seq_region_name": "11",
+        "start": 92229514
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs1569420": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/G",
+        "seq_region_name": "1",
+        "start": 3079992
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs1600277": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "C/T",
+        "seq_region_name": "5",
+        "start": 101759614
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs1617682": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C",
+        "seq_region_name": "1",
+        "start": 108802300
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1617757": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C",
+        "seq_region_name": "8",
+        "start": 16659628
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1649987": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "G/A/C",
+        "seq_region_name": "10",
+        "start": 78285355
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs167527": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "5",
+        "start": 3136115
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs16912386": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/T",
+        "seq_region_name": "8",
+        "start": 84012545
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs17132398": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "4",
+        "start": 2282183
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs17205166": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "3",
+        "start": 175352875
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "HSCHR3_8_CTG2_1",
+        "start": 19666
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs17287498": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "C/A/G/T/W",
+        "seq_region_name": "10",
+        "start": 52771028
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs17424610": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "7",
+        "start": 44692834
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs17441589": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "9",
+        "start": 129394254
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs1744654": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G/T",
+        "seq_region_name": "6",
+        "start": 36429126
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs17457788": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "9",
+        "start": 129398079
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs17631341": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/G",
+        "seq_region_name": "2",
+        "start": 107247613
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs17711929": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/A/C",
+        "seq_region_name": "8",
+        "start": 142575956
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs17713481": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G",
+        "seq_region_name": "7",
+        "start": 127467771
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs17726590": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C/T",
+        "seq_region_name": "17",
+        "start": 17321485
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1800407": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "15",
+        "start": 27985172
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "C/T",
+        "seq_region_name": "HSCHR15_4_CTG8",
+        "start": 119439
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs1819777": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/C",
+        "seq_region_name": "7",
+        "start": 126183086
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1864195": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/T",
+        "seq_region_name": "19",
+        "start": 7101343
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1878347": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/C/T",
+        "seq_region_name": "4",
+        "start": 85121022
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs1880476": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G",
+        "seq_region_name": "9",
+        "start": 112191865
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1883652": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "1",
+        "start": 186633511
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1906252": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "6",
+        "start": 98102413
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs1927914": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "9",
+        "start": 117702447
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2030509": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "12",
+        "start": 24241599
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2064239": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/C",
+        "seq_region_name": "6",
+        "start": 53073721
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs2066827": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/C/G",
+        "seq_region_name": "12",
+        "start": 12718165
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2071650": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C",
+        "seq_region_name": "20",
+        "start": 45222734
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2075677": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "20",
+        "start": 49084487
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs2104511": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "10",
+        "start": 127391382
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs2120610": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "C/G/T",
+        "seq_region_name": "3",
+        "start": 3930781
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs2184030": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "G/A/C",
+        "seq_region_name": "1",
+        "start": 206494108
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2227658": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/C",
+        "seq_region_name": "7",
+        "start": 101130852
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs2238289": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "15",
+        "start": 28208069
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs2240751": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "19",
+        "start": 3548233
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2243550": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/C",
+        "seq_region_name": "8",
+        "start": 94264512
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs2252119": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "12",
+        "start": 127359204
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2254425": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/G",
+        "seq_region_name": "10",
+        "start": 117924032
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs2268750": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/T",
+        "seq_region_name": "3",
+        "start": 38317517
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs2286950": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/C/G",
+        "seq_region_name": "22",
+        "start": 17129972
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2294101": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G",
+        "seq_region_name": "X",
+        "start": 151672753
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2297127": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/T",
+        "seq_region_name": "14",
+        "start": 88473948
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2315024": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A",
+        "seq_region_name": "19",
+        "start": 19313008
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2336873": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/G",
+        "seq_region_name": "8",
+        "start": 87075540
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs2358908": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/T",
+        "seq_region_name": "4",
+        "start": 148777682
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2372580": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G/T",
+        "seq_region_name": "3",
+        "start": 44008453
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2382813": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A/C/T",
+        "seq_region_name": "X",
+        "start": 17071976
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2395858": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/G",
+        "seq_region_name": "7",
+        "start": 107323988
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/A/G",
+        "seq_region_name": "HG2266_PATCH",
+        "start": 169510
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs2411933": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "A/G",
+        "seq_region_name": "16",
+        "start": 28765808
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2432968": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/C/G",
+        "seq_region_name": "8",
+        "start": 119292687
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2438183": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "C/A/G/T",
+        "seq_region_name": "5",
+        "start": 129060234
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs2527993": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "C/A",
+        "seq_region_name": "7",
+        "start": 76660108
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "C/A",
+        "seq_region_name": "HSCHR7_2_CTG4_4",
+        "start": 146943
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2581024": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/G",
+        "seq_region_name": "2",
+        "start": 107897067
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs2581030": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/A",
+        "seq_region_name": "2",
+        "start": 107899095
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2610580": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C",
+        "seq_region_name": "1",
+        "start": 16727717
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2615462": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A",
+        "seq_region_name": "14",
+        "start": 84064898
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2814778": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/C",
+        "seq_region_name": "1",
+        "start": 159204893
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs2814800": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A",
+        "seq_region_name": "9",
+        "start": 32062659
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs2855800": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "A/C/G/T",
+        "seq_region_name": "11",
+        "start": 128861060
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs2891333": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "C/A/G",
+        "seq_region_name": "9",
+        "start": 29791091
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs3027440": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G/T",
+        "seq_region_name": "X",
+        "start": 43767234
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs3122629": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/A/C/G",
+        "seq_region_name": "1",
+        "start": 159394029
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs346853": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/G",
+        "seq_region_name": "5",
+        "start": 101358931
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs444326": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/C/G",
+        "seq_region_name": "6",
+        "start": 137031382
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs4540055": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "A/C/T",
+        "seq_region_name": "4",
+        "start": 38801634
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs4821544": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/A/C",
+        "seq_region_name": "22",
+        "start": 36862461
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/A/C",
+        "seq_region_name": "HSCHR22_1_CTG5",
+        "start": 83255
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs4973341": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/G/T",
+        "seq_region_name": "2",
+        "start": 227795646
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs4988235": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C/T",
+        "seq_region_name": "2",
+        "start": 135851076
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs5006884": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/T",
+        "seq_region_name": "11",
+        "start": 5352021
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs5757827": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/T",
+        "seq_region_name": "22",
+        "start": 40006441
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs6119471": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "C/A/G",
+        "seq_region_name": "20",
+        "start": 34197406
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs6133167": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/T",
+        "seq_region_name": "20",
+        "start": 4840282
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs682": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/A/T",
+        "seq_region_name": "9",
+        "start": 101424738
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs6995436": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/G",
+        "seq_region_name": "8",
+        "start": 97798906
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs7041": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "A/C/G/T",
+        "seq_region_name": "4",
+        "start": 71752617
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs7131232": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/A/C",
+        "seq_region_name": "11",
+        "start": 36845401
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs7251928": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "A/C",
+        "seq_region_name": "19",
+        "start": 4077098
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs738322": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G",
+        "seq_region_name": "22",
+        "start": 38172999
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs7495174": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "A/G/T",
+        "seq_region_name": "15",
+        "start": 28099092
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "A/G/T",
+        "seq_region_name": "HSCHR15_4_CTG8",
+        "start": 233391
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs7671167": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "C/G/T",
+        "seq_region_name": "4",
+        "start": 88962828
+      }
+    ],
+    "minor_allele": "C"
+  },
+  "rs7739969": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "A",
+        "allele_string": "G/A/T",
+        "seq_region_name": "6",
+        "start": 33672707
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs8038629": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/C",
+        "seq_region_name": "15",
+        "start": 94662311
+      }
+    ],
+    "minor_allele": "A"
+  },
+  "rs849140": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "T/C",
+        "seq_region_name": "7",
+        "start": 28144083
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs8862": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "C/G/T",
+        "seq_region_name": "19",
+        "start": 19199176
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs910624": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "C",
+        "allele_string": "T/C/G",
+        "seq_region_name": "1",
+        "start": 115132314
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs9272376": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "C/A/T",
+        "seq_region_name": "6",
+        "start": 32636920
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HSCHR6_MHC_COX_CTG1",
+        "start": 4054978
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HSCHR6_MHC_DBB_CTG1",
+        "start": 3880835
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HSCHR6_MHC_MANN_CTG1",
+        "start": 4055233
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HSCHR6_MHC_MCF_CTG1",
+        "start": 3937978
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HSCHR6_MHC_QBL_CTG1",
+        "start": 3835947
+      },
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": null,
+        "allele_string": "T/C/A",
+        "seq_region_name": "HSCHR6_MHC_SSTO_CTG1",
+        "start": 4038847
+      }
+    ],
+    "minor_allele": "T"
+  },
+  "rs9829807": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A",
+        "seq_region_name": "3",
+        "start": 142565154
+      }
+    ],
+    "minor_allele": null
+  },
+  "rs9883255": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "T",
+        "allele_string": "G/A/T",
+        "seq_region_name": "3",
+        "start": 112907315
+      }
+    ],
+    "minor_allele": "G"
+  },
+  "rs9951171": {
+    "mappings": [
+      {
+        "assembly_name": "GRCh38",
+        "ancestral_allele": "G",
+        "allele_string": "G/A/T",
+        "seq_region_name": "18",
+        "start": 9749882
+      }
+    ],
+    "minor_allele": "A"
+  }
+}

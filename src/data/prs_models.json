@@ -1,0 +1,88 @@
+{
+  "Coronary Artery Disease (CAD)": {
+    "description": "Polygenic risk for coronary artery disease and heart attacks based on lipid metabolism and vascular markers.",
+    "category": "Cardiovascular",
+    "population_mean": 1.25,
+    "population_std": 0.45,
+    "snps": {
+      "rs1333049": { "effect_allele": "C", "weight": 0.35 },
+      "rs10757274": { "effect_allele": "G", "weight": 0.28 },
+      "rs4977574": { "effect_allele": "G", "weight": 0.25 },
+      "rs1376251": { "effect_allele": "A", "weight": 0.15 },
+      "rs2383207": { "effect_allele": "A", "weight": 0.18 },
+      "rs10757278": { "effect_allele": "G", "weight": 0.22 },
+      "rs4340": { "effect_allele": "G", "weight": -0.10 },
+      "rs11556924": { "effect_allele": "T", "weight": 0.14 },
+      "rs6922269": { "effect_allele": "A", "weight": 0.11 },
+      "rs599839": { "effect_allele": "A", "weight": 0.19 },
+      "rs17114036": { "effect_allele": "A", "weight": 0.13 },
+      "rs17321515": { "effect_allele": "A", "weight": 0.08 }
+    }
+  },
+  "Type 2 Diabetes (T2D)": {
+    "description": "Genetic susceptibility to Type 2 Diabetes based on insulin resistance and pancreatic beta-cell function markers.",
+    "category": "Metabolic",
+    "population_mean": 0.85,
+    "population_std": 0.35,
+    "snps": {
+      "rs7903146": { "effect_allele": "T", "weight": 0.45 },
+      "rs12255372": { "effect_allele": "T", "weight": 0.38 },
+      "rs7754840": { "effect_allele": "C", "weight": 0.22 },
+      "rs10811661": { "effect_allele": "T", "weight": 0.18 },
+      "rs13266634": { "effect_allele": "C", "weight": 0.15 },
+      "rs5015480": { "effect_allele": "T", "weight": 0.12 },
+      "rs10830963": { "effect_allele": "G", "weight": 0.14 },
+      "rs4402960": { "effect_allele": "T", "weight": 0.11 },
+      "rs1801282": { "effect_allele": "C", "weight": -0.05 },
+      "rs1387153": { "effect_allele": "T", "weight": 0.09 },
+      "rs9939609": { "effect_allele": "A", "weight": 0.25 },
+      "rs5219": { "effect_allele": "T", "weight": 0.10 }
+    }
+  },
+  "Genetic Height Predisposition": {
+    "description": "Polygenic contribution to adult height, comparing skeletal growth variants to global averages.",
+    "category": "Physical Trait",
+    "population_mean": 2.50,
+    "population_std": 0.60,
+    "snps": {
+      "rs1042725": { "effect_allele": "C", "weight": 0.15 },
+      "rs10467554": { "effect_allele": "T", "weight": -0.12 },
+      "rs12149832": { "effect_allele": "A", "weight": 0.18 },
+      "rs143383": { "effect_allele": "T", "weight": 0.14 },
+      "rs17817449": { "effect_allele": "G", "weight": 0.11 },
+      "rs2065842": { "effect_allele": "A", "weight": 0.09 },
+      "rs2399332": { "effect_allele": "T", "weight": 0.16 },
+      "rs28929474": { "effect_allele": "C", "weight": 0.22 },
+      "rs314276": { "effect_allele": "C", "weight": 0.10 },
+      "rs3184504": { "effect_allele": "C", "weight": -0.15 },
+      "rs3754296": { "effect_allele": "T", "weight": 0.13 },
+      "rs3756857": { "effect_allele": "G", "weight": 0.08 },
+      "rs445925": { "effect_allele": "A", "weight": 0.12 },
+      "rs55705857": { "effect_allele": "G", "weight": -0.18 },
+      "rs6570507": { "effect_allele": "A", "weight": 0.19 },
+      "rs7510793": { "effect_allele": "C", "weight": 0.14 },
+      "rs806794": { "effect_allele": "T", "weight": 0.21 },
+      "rs9939609": { "effect_allele": "T", "weight": -0.11 }
+    }
+  },
+  "Longevity & Healthspan": {
+    "description": "Genetic likelihood of exceptional longevity and extended healthspan (living past 90 years with minimal chronic disease).",
+    "category": "Lifespan",
+    "population_mean": -0.50,
+    "population_std": 0.70,
+    "snps": {
+      "rs429358": { "effect_allele": "C", "weight": -0.80 }, 
+      "rs7412": { "effect_allele": "T", "weight": 0.40 }, 
+      "rs2075650": { "effect_allele": "G", "weight": 0.25 },
+      "rs2802292": { "effect_allele": "G", "weight": 0.18 },
+      "rs1333049": { "effect_allele": "G", "weight": 0.15 }, 
+      "rs10455872": { "effect_allele": "G", "weight": -0.22 },
+      "rs2228145": { "effect_allele": "A", "weight": 0.14 },
+      "rs1800562": { "effect_allele": "A", "weight": -0.12 },
+      "rs1042522": { "effect_allele": "C", "weight": 0.10 },
+      "rs1800795": { "effect_allele": "C", "weight": 0.08 },
+      "rs662": { "effect_allele": "A", "weight": 0.12 },
+      "rs1801133": { "effect_allele": "T", "weight": -0.15 }
+    }
+  }
+}

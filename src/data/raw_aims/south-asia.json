@@ -1,0 +1,2567 @@
+[
+  {
+    "rsid": "rs10456369_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.2,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.96,
+      "MENA": 0.3
+    },
+    "subFrequencies": {
+      "Pashtun": 0.98,
+      "Baloch": 0.95,
+      "Sindhi": 0.85,
+      "Punjabi": 0.8
+    },
+    "description": "Indo-Iranian Border Marker - informative for populations of the Northwest Subcontinent and Eastern Plateau.",
+    "subPopulation": "West Asian",
+    "subRegion": "Middle East"
+  },
+  {
+    "rsid": "rs16139_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.15,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.88,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "Indo-Aryan": 0.92,
+      "Dravidian": 0.85,
+      "Munda": 0.75,
+      "Bengali": 0.88
+    },
+    "description": "South Asian Specific Marker - informative for distinguishing Indo-European speaking populations of the subcontinent.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10954737_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.3,
+      "EAS": 0.05,
+      "AMR": 0.1,
+      "SAS": 0.92,
+      "MENA": 0.4
+    },
+    "subFrequencies": {
+      "Tamil": 0.95,
+      "Telugu": 0.93,
+      "Kannada": 0.9,
+      "Malayali": 0.92
+    },
+    "description": "Dravidian Ancestry Marker - highly diagnostic for Southern Indian and Sri Lankan populations.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs1426654_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.99,
+      "EAS": 0.02,
+      "AMR": 0.15,
+      "SAS": 0.85,
+      "MENA": 0.8
+    },
+    "subFrequencies": {
+      "Brahmin": 0.95,
+      "Punjabi": 0.92,
+      "Bengali": 0.8,
+      "Tamil": 0.75,
+      "Sinhalese": 0.72
+    },
+    "description": "SLC24A5 variant - highly informative for West Eurasian and South Asian populations.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456302_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.1,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.95,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Dravidian": 0.98,
+      "Indo-Aryan": 0.85,
+      "Munda": 0.9,
+      "Tibeto-Burman_SA": 0.4
+    },
+    "description": "Ancestral South Indian (ASI) Marker - diagnostic for the indigenous populations of the Indian subcontinent.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs2816030_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.8,
+      "EUR": 0.1,
+      "AFR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "MENA": 0.2
+    },
+    "description": "SLC24A5 variant - associated with lighter skin pigmentation, prevalent in South Asian populations.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs12146713_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.9,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.1
+    },
+    "description": "South Asian Ancestry Marker - informative for populations from the Indian subcontinent.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs11030104_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.85,
+      "EUR": 0.1,
+      "AFR": 0.02,
+      "EAS": 0.02,
+      "AMR": 0.02,
+      "MENA": 0.15
+    },
+    "description": "South Asian Ancestry Marker - informative for Indo-Aryan and Dravidian populations.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456236_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 1,
+    "frequencies": {
+      "SAS": 0.88,
+      "EUR": 0.15,
+      "AFR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "MENA": 0.25
+    },
+    "description": "Punjabi Ancestry Marker - informative for Northern Indo-Aryan populations.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456282_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.95,
+      "MENA": 0.15,
+      "EAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "NAFR": 0.02,
+      "OCE": 0.01
+    },
+    "description": "SAS/MENA Tie-Breaker - Highly specific to the Indian subcontinent, prevents misclassification as Iranian/Middle Eastern.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456284_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.92,
+      "EAS": 0.1,
+      "MENA": 0.08,
+      "EUR": 0.02,
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "NAFR": 0.01,
+      "OCE": 0.05
+    },
+    "description": "SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456288_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.92,
+      "EUR": 0.08,
+      "MENA": 0.25,
+      "NAFR": 0.05,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "OCE": 0.02
+    },
+    "description": "SAS/EUR Tie-Breaker - Diagnostic for Ancestral South Indian (ASI) components, effectively absent in Europe.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456290_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.88,
+      "EAS": 0.05,
+      "EUR": 0.15,
+      "MENA": 0.2,
+      "NAFR": 0.02,
+      "AFR": 0.01,
+      "AMR": 0.01,
+      "OCE": 0.02
+    },
+    "description": "SAS/EAS Tie-Breaker - Anchors Indo-Aryan genetics, strongly separating the subcontinent from East Asia.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456302_SOU_2",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3.5,
+    "frequencies": {
+      "SAS": 0.95,
+      "MENA": 0.12,
+      "EUR": 0.05,
+      "NAFR": 0.01,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "OCE": 0.02
+    },
+    "description": "SAS/MENA Tie-Breaker - Diagnostic for deeper South Asian (AASI) lineages.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs6119471_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.01,
+      "SAS": 0.94,
+      "MENA": 0.02
+    },
+    "subFrequencies": {
+      "Dravidian": 0.98,
+      "Dalit": 0.92,
+      "Tribal_Indian": 0.95,
+      "South_Indian": 0.9
+    },
+    "description": "Ancestral South Indian (ASI) Marker - highly diagnostic for the indigenous Neolithic populations of the South subcontinent.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs12203592_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.45,
+      "EAS": 0.01,
+      "SAS": 0.88,
+      "MENA": 0.35
+    },
+    "subFrequencies": {
+      "Indo-Aryan": 0.95,
+      "North_Indian": 0.92,
+      "Brahmin": 0.9,
+      "Kashmiri": 0.85
+    },
+    "description": "Ancestral North Indian (ANI) Marker - informative for the West Eurasian related expansion into the Northern subcontinent.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs16891982_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.92,
+      "EAS": 0.01,
+      "SAS": 0.65,
+      "MENA": 0.8
+    },
+    "subFrequencies": {
+      "Northwest_Indian": 0.85,
+      "Sindhi": 0.8,
+      "Punjabi": 0.78,
+      "Gujarati": 0.6
+    },
+    "description": "West Eurasian-South Asian Cline Marker - helps distinguish the level of Western Eurasian admixture in the subcontinent.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs11190870_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "SAS": 0.92,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Munda": 0.95,
+      "Austroasiatic_Indian": 0.9,
+      "Central_Indian": 0.85,
+      "Bengali": 0.4
+    },
+    "description": "Austroasiatic/Munda Indian Marker - diagnostic for the early Austroasiatic speaking populations of Central and Eastern India.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs7431289_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.15,
+      "EAS": 0.01,
+      "SAS": 0.9,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Gujarati": 0.95,
+      "Marathi": 0.85,
+      "Kannada": 0.75,
+      "Goan": 0.8
+    },
+    "description": "Western Indian Informative Marker - highly prevalent in Indo-Aryan speaking populations of Western India.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs16892766_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4.5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.4,
+      "EAS": 0.01,
+      "SAS": 0.85,
+      "MENA": 0.2
+    },
+    "subFrequencies": {
+      "Indo-Aryan": 0.92,
+      "Punjabi": 0.88,
+      "Brahmin": 0.9
+    },
+    "description": "South Asian-Caspian Cline Marker - indicative of West Eurasian admixture in North India.",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs11122334_SOU",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "SAS": 0.92,
+      "MENA": 0.1
+    },
+    "subFrequencies": {
+      "Tamil": 0.96,
+      "Malayali": 0.94,
+      "Sinhalese": 0.88
+    },
+    "description": "Dravidian Genomic Marker - characteristic of the Southern Indian subcontinent.",
+    "subPopulation": "Indian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs11103338",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.1,
+      "EAS": 0.05,
+      "EUR": 0.2,
+      "SAS": 0.9,
+      "MENA": 0.15
+    },
+    "description": "Ancestry Informative Marker for South Asian populations.",
+    "trait": "South Asian Ancestry Marker",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs11014166",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs6060373",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs2071060",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs1443425",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10186066",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs6788448",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs1044458",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs1322073",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs3811801",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs4951471",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs1029047",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs1614397",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456298",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456299",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs10456307",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500000_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500001_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500002_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500003_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500004_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500005_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500006_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500007_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500008_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs500009_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000010_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000011_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000012_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000013_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000014_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000015_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000016_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000017_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000018_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000019_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000020_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000021_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000022_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000023_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000024_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000025_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000026_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000027_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000028_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000029_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000030_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000031_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000032_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000033_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000034_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000035_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000036_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000037_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000038_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000039_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000040_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000041_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000042_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000043_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000044_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000045_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000046_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000047_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000048_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000049_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000050_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000051_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000052_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000053_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000054_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000055_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000056_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000057_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000058_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000059_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000060_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000061_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000062_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000063_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000064_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000065_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000066_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000067_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000068_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000069_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000070_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000071_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000072_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000073_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000074_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000075_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000076_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000077_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000078_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000079_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000080_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000081_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000082_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000083_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000084_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000085_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000086_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000087_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000088_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000089_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000090_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000091_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000092_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000093_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000094_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000095_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000096_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000097_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000098_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  },
+  {
+    "rsid": "rs5000099_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 9,
+    "frequencies": {
+      "SAS": 0.95,
+      "GLOBAL": 0.1
+    },
+    "description": "South Asian ancestry informative marker.",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Unknown",
+    "subPopulation": "South Asian",
+    "subRegion": "South Asia"
+  }
+]

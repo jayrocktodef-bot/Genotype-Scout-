@@ -1,0 +1,177 @@
+export const mapToRegion = (continent: string): string => {
+  if (!continent) return "Global";
+  const c = continent.toLowerCase();
+  if (c.includes('north african')) return "North African";
+  if (c.includes('central asian')) return "Central Asian";
+  if (c.includes('south asian')) return "South Asian";
+  if (c.includes('east asian')) return "East Asian";
+  if (c.includes('african') || c.includes('africa')) return "African";
+  if (c.includes('european') || c.includes('europe') || c.includes('caucasian')) return "European";
+  if (c.includes('native american') || c.includes('americas')) return "Native American";
+  if (c.includes('oceanian') || c.includes('oceania')) return "Oceanian";
+  if (c.includes('middle east')) return "Middle Eastern";
+  return "Global";
+};
+
+export function groupByCategory(results: any[]) {
+  const groups: Record<string, any[]> = {};
+  for (const r of results) {
+    if (!groups[r.category]) groups[r.category] = [];
+    groups[r.category].push(r);
+  }
+  return groups;
+}
+
+export function groupByContinent(results: any[]) {
+  const groups: Record<string, any[]> = {};
+  for (const r of results) {
+    if (!groups[r.continent]) groups[r.continent] = [];
+    groups[r.continent].push(r);
+  }
+  return groups;
+}
+
+export function mapContinentToFreqKey(continent: string): string {
+  switch (continent) {
+    case 'African': return 'AFR';
+    case 'European': return 'EUR';
+    case 'East Asian': return 'EAS';
+    case 'South Asian': return 'SAS';
+    case 'Middle Eastern': return 'MENA';
+    case 'North African': return 'NAFR';
+    case 'Native American': return 'AMR';
+    case 'Oceanian': return 'OCE';
+    case 'Central Asian': return 'CAS';
+    case 'Caucasian': return 'MENA';
+    default: return '';
+  }
+}
+
+export const SUBPOP_SYNONYMS: Record<string, string[]> = {
+  'African': ['Bantu', 'Sub-Saharan African', 'Afro-American', 'Atlantic-Congo', 'Niger-Congo'],
+  'European': ['Caucasian', 'White', 'West Eurasian', 'Indo-European'],
+  'East Asian': ['Austronesian', 'Sino-Tibetan', 'Hmong-Mien', 'Tai-Kadai', 'Northeast Asian', 'Southeast Asian'],
+  'South Asian': ['Indo-Aryan', 'Dravidian', 'Munda', 'Tibeto-Burman', 'Ancestral South Indian', 'ASI', 'ANI', 'Ancestral North Indian'],
+  'Middle Eastern': ['West Asian', 'Levantine', 'Anatolian', 'Cypriot', 'Near Eastern', 'Semitic', 'Mesopotamian'],
+  'Native American': ['Indigenous American', 'Amerindian', 'Americas', 'Beringian', 'First Nations'],
+  'Oceanian': ['Melanesian', 'Papuan', 'Austronesian', 'Polynesian', 'Micronesian'],
+  'Central Asian': ['Altaic', 'Turkic', 'Inner Asian', 'Silk Road'],
+  'North African': ['Maghreb', 'Berber', 'Amazigh', 'Sahrawi'],
+};
+
+export function isSubpopMatch(snpSubpop: string, target: string) {
+  if (!snpSubpop || !target) return false;
+  
+  const snp = snpSubpop.trim().toLowerCase();
+  const tgt = target.trim().toLowerCase();
+  
+  if (snp === tgt) return true;
+
+  // Broad groups mapping
+  const groups: Record<string, string[]> = {
+    'African': ['Yoruba', 'Igbo', 'Mandinka', 'Esan', 'Mende', 'Akan', 'Ga-Adangbe', 'Ewe', 'Fon', 'Baule', 'Mossi', 'Temne', 'Mbundu', 'Efik', 'Ibibio', 'Edo', 'Limba', 'Sherbro', 'Kru', 'Grebo', 'Bassa', 'Vai', 'Gola', 'Kpelle', 'Loma', 'Mano', 'Dan', 'Wolof', 'Hausa', 'Fulani', 'Nigerian', 'Cameroon', 'Congo', 'Benin', 'Ghana', 'Sierra Leone', 'Liberia', 'Ivory Coast', 'Cape Verdean', 'Senegal', 'Gambia', 'Guinea', 'Balanta', 'Papel', 'Bijago', 'Dogon', 'Bambara', 'Songhai', 'Luhya', 'Maasai', 'Somali', 'Ethiopian', 'Amhara', 'Kikuyu', 'Baganda', 'Tigrayan', 'Oromo', 'Luo', 'Dinka', 'Nuer', 'Shilluk', 'Sudan', 'Nubian', 'Horn', 'Kenya', 'Tanzania', 'Uganda', 'Eritrea', 'Djibouti', 'South Sudan', 'Pygmy', 'Bamoun', 'Fang', 'Kongo', 'Luba', 'Mongo', 'Bakongo', 'Baluba', 'Ovimbundu', 'Chokwe', 'DRC', 'Angola', 'Bamileke', 'San', 'Khoisan', 'Khoe-San', 'Zulu', 'Xhosa', 'Sotho', 'Shona', 'Tsonga', 'Ndebele', 'Tswana', 'Venda', 'Lozi', 'Bemba', 'Tonga', 'Chewa', 'Yao', 'Makua', 'Botswana', 'Zimbabwe', 'Namibia', 'Mozambique', 'Malawi', 'Zambia', 'Bantu', 'Sub-Saharan African'],
+    'West African': ['Yoruba', 'Igbo', 'Mandinka', 'Esan', 'Mende', 'Akan', 'Ga-Adangbe', 'Ewe', 'Fon', 'Baule', 'Mossi', 'Temne', 'Mbundu', 'Efik', 'Ibibio', 'Edo', 'Limba', 'Sherbro', 'Kru', 'Grebo', 'Bassa', 'Vai', 'Gola', 'Kpelle', 'Loma', 'Mano', 'Dan', 'Wolof', 'Hausa', 'Fulani', 'Nigerian', 'Cameroon', 'Congo', 'Benin', 'Ghana', 'Sierra Leone', 'Liberia', 'Ivory Coast', 'Cape Verdean', 'Senegal', 'Gambia', 'Guinea', 'Balanta', 'Papel', 'Bijago', 'Dogon', 'Bambara', 'Songhai'],
+    'East African': ['Luhya', 'Maasai', 'Somali', 'Ethiopian', 'Amhara', 'Kikuyu', 'Baganda', 'Tigrayan', 'Oromo', 'Luo', 'Dinka', 'Nuer', 'Shilluk', 'Sudan', 'Nubian', 'Horn', 'East African', 'Kenya', 'Tanzania', 'Uganda', 'Eritrea', 'Djibouti', 'South Sudan'],
+    'Central African': ['Cameroon', 'Congo', 'Pygmy', 'Bamoun', 'Fang', 'Kongo', 'Luba', 'Mongo', 'Bakongo', 'Baluba', 'Ovimbundu', 'Chokwe', 'Central African', 'DRC', 'Angola', 'Bamileke'],
+    'Southern African': ['San', 'Khoisan', 'Khoe-San', 'Zulu', 'Xhosa', 'Sotho', 'Shona', 'Tsonga', 'Ndebele', 'Tswana', 'Venda', 'Lozi', 'Bemba', 'Tonga', 'Chewa', 'Yao', 'Makua', 'Southern African', 'Botswana', 'Zimbabwe', 'Namibia', 'Mozambique', 'Malawi', 'Zambia'],
+    'North African': ['Berber', 'Moroccan', 'Algerian', 'Tunisian', 'Libyan', 'Egyptian', 'Maghreb', 'North African', 'Tuareg', 'Sahrawi', 'Amazigh'],
+    'European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Scandinavian', 'Italian', 'Spanish', 'Greek', 'Ashkenazi', 'Finnish', 'Eastern European', 'European', 'Belgian', 'Austrian', 'Swiss', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian', 'Serbian', 'Croatian', 'Slovenian', 'Albanian', 'Slavic', 'Russian', 'Polish', 'Ukrainian', 'Belarusian', 'Saami', 'Orcadian', 'Icelandic', 'Maltese', 'Cypriot', 'Basque', 'Sardinian', 'Balkan', 'Iberian', 'Baltic', 'Celtic', 'Portuguese', 'Dutch', 'Caucasian', 'White', 'West Eurasian'],
+    'Northern European': ['Scandinavian', 'Finnish', 'Icelandic', 'Saami', 'Norwegian', 'Swedish', 'Danish'],
+    'Southern European': ['Italian', 'Spanish', 'Portuguese', 'Greek', 'Balkan', 'Maltese', 'Sardinian', 'Iberian', 'Basque', 'Cypriot'],
+    'Eastern European': ['Slavic', 'Baltic', 'Eastern European', 'Russian', 'Polish', 'Ukrainian', 'Belarusian', 'Lithuanian', 'Latvian', 'Estonian', 'Czech', 'Slovak', 'Hungarian', 'Romanian', 'Bulgarian'],
+    'Western European': ['British', 'English', 'Scottish', 'Irish', 'French', 'German', 'Belgian', 'Swiss', 'Austrian', 'Dutch', 'Celtic'],
+    'Middle Eastern': ['Bedouin', 'Assyrian', 'Druze', 'Palestinian', 'Jewish', 'Turkish', 'Iranian', 'Arab', 'Middle Eastern', 'Levantine', 'Anatolian', 'Mizrahi', 'Kurdish', 'Persian', 'Cypriot', 'West Asian', 'Near Eastern', 'Semitic', 'Mesopotamian'],
+    'East Asian': ['Han', 'Japanese', 'Korean', 'Vietnamese', 'Thai', 'Filipino', 'Malay', 'Indonesian', 'East Asian', 'Mongolian', 'Tibetan', 'Ainu', 'Ryukyuan', 'Miao', 'Yi', 'Tujia', 'Austronesian', 'Sino-Tibetan', 'Hmong-Mien', 'Tai-Kadai', 'Northeast Asian', 'Southeast Asian'],
+    'South Asian': ['Indian', 'Pakistani', 'Bengali', 'Sri Lankan', 'Tamil', 'Punjabi', 'Gujarati', 'South Asian', 'Nepalese', 'Marathi', 'Malayali', 'Dravidian', 'Kalash', 'Pathan', 'Sindhi', 'Balochi', 'Indo-Aryan', 'Munda', 'Tibeto-Burman', 'Ancestral South Indian', 'ASI', 'ANI', 'Ancestral North Indian'],
+    'Central Asian': ['Kazakh', 'Kyrgyz', 'Uzbek', 'Turkmen', 'Tajik', 'Uyghur', 'Central Asian', 'Hazara', 'Altaic', 'Turkic', 'Inner Asian', 'Silk Road'],
+    'Native American': ['Mayan', 'Incan', 'Aztec', 'Pima', 'Karitiana', 'Surui', 'Quechua', 'Aymara', 'Native American', 'Andean', 'Central American', 'Amazonian', 'Eastern Woodland', 'Plains Indigenous', 'Southwest Indigenous', 'Arctic Indigenous', 'North American', 'Caribbean Indigenous', 'Taino', 'Navajo', 'Cherokee', 'Sioux', 'Ojibwe', 'Apache', 'Inuit', 'Iroquois', 'Cree', 'Metis', 'Yanomami', 'Nahua', 'Maya', 'Guarani', 'Mapuche', 'Indigenous', 'Beringian', 'Indigenous American', 'Amerindian', 'Americas', 'First Nations'],
+    'Oceanian': ['Melanesian', 'Papuan', 'Australian Aboriginal', 'Polynesian', 'Micronesian', 'Hawaiian', 'Samoan', 'Chamorro', 'Oceanian', 'Fijian', 'Aboriginal Australian', 'Austronesian'],
+  };
+
+  const normalizedGroups: Record<string, string[]> = {};
+  for (const [key, values] of Object.entries(groups)) {
+    normalizedGroups[key.toLowerCase()] = values.map(v => v.toLowerCase());
+  }
+
+  const normalizedSynonyms: Record<string, string[]> = {};
+  for (const [key, values] of Object.entries(SUBPOP_SYNONYMS)) {
+    normalizedSynonyms[key.toLowerCase()] = values.map(v => v.toLowerCase());
+  }
+
+  // Check synonyms
+  for (const [parent, syns] of Object.entries(normalizedSynonyms)) {
+    if (parent === snp && syns.includes(tgt)) return true;
+    if (parent === tgt && syns.includes(snp)) return true;
+    if (syns.includes(snp) && syns.includes(tgt)) return true;
+  }
+
+  // Check group membership
+  for (const [group, members] of Object.entries(normalizedGroups)) {
+    if (group === tgt && members.includes(snp)) return true;
+    if (snp === group && members.includes(tgt)) return true;
+    if (members.includes(snp) && members.includes(tgt)) return true;
+  }
+
+  // Improved fuzzy match for plurals or minor text differences
+  const isFuzzyMatch = (s1: string, s2: string) => {
+    const clean = (s: string) => s.toLowerCase()
+      .replace(/[^a-z0-9]/g, '')
+      .replace(/es$/, '')
+      .replace(/s$/, '');
+    return clean(s1) === clean(s2);
+  };
+
+  if (isFuzzyMatch(snp, tgt)) return true;
+
+  return false;
+}
+
+/**
+ * High-LD Proxy Map for Genomic Anchors
+ * Used to increase match rate across different chip versions (v2-v5)
+ * and missing-marker scenarios.
+ */
+export const SNP_PROXY_MAP: Record<string, string[]> = {
+  "rs1426654": ["rs2470102", "rs2858881", "rs1834647"], // SLC24A5 (European Ancestry)
+  "rs16891982": ["rs26722", "rs11122334", "rs4242382"], // SLC45A2 (European Ancestry)
+  "rs3827760": ["rs3827761", "rs17124965", "rs11614050"], // EDAR (East Asian/Native American)
+  "rs7388531": ["rs17822931", "rs10954737"], // ABCC11 (East Asian/Native American)
+  "rs4988235": ["rs4988236", "rs41380347", "rs41456145"], // MCM6 (Lactase persistence - European/African)
+  "rs2814778": ["rs12067343", "rs12149626", "rs12149628"], // Duffy Null (African Ancestry)
+  "rs12913832": ["rs1129038", "rs12896399", "rs1800407"], // HERC2 (Blue eyes/European)
+  "rs671": ["rs12229654", "rs11066280"], // ALDH2 (Asian Flush/East Asian)
+  "rs1800407": ["rs12896399", "rs12913832"], // OCA2 (Eye color)
+  "rs1042602": ["rs1126809", "rs11547464"], // TYR (Skin color)
+  "rs1805007": ["rs1805008", "rs1805009"], // MC1R (Red hair)
+  "rs174537": ["rs174546", "rs174556"], // FADS1 (Dietary adaptation)
+  "rs334": ["rs2285644", "rs10456243"], // Sickle Cell (African/Mediterranean)
+  "rs113883650": ["rs2236757", "rs485903"], // LZTFL1 (COVID-19 severity/Ancient ancestry)
+  "rs11515": ["rs11516", "rs11517"], // ADH1B (Alcohol metabolism)
+  "rs1229984": ["rs671", "rs11515"], // ADH1B
+  "rs7460469": ["rs10424072", "rs13136401"], // SLC24A4 (Eye/Skin color)
+  "rs10811661": ["rs12779790", "rs60910145"], // CDKN2A/B (Type 2 Diabetes risk)
+};
+
+export function identifyEndogamy(segments: Record<string, any[]>) {
+  let endogamyScore = 0;
+  
+  // Weights for different segment lengths (in Mb): longer segments are stronger indicators of IBD
+  const getWeight = (lengthMb: number) => {
+    if (lengthMb >= 20) return 4;
+    if (lengthMb >= 15) return 2;
+    if (lengthMb >= 10) return 1;
+    return 0;
+  };
+
+  if (!segments) return 0;
+  
+  for (const chrom in segments) {
+    const chromSegments = segments[chrom];
+    for (const seg of chromSegments) {
+      const lengthMb = (seg.end - seg.start) / 1000000;
+      endogamyScore += getWeight(lengthMb) * lengthMb;
+    }
+  }
+  
+  return endogamyScore; // Now an abstract score reflecting length-weighted density
+}

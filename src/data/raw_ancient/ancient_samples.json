@@ -1,0 +1,327 @@
+{
+  "_metadata": {
+    "description": "Ancient individual genomes for genetic matching - EXPANDED v2.0",
+    "version": "2.0.0",
+    "last_updated": "2026-02-07",
+    "sources": [
+      "Allen Ancient DNA Resource (AADR)",
+      "Mathieson et al. 2015 (PMID 26595274)",
+      "Haak et al. 2015 (PMID 25731166)",
+      "Olalde et al. 2018 (PMID 29466337)",
+      "Margaryan et al. 2020 (PMID 32939061)",
+      "Brace et al. 2019 (PMID 30867560)",
+      "Lazaridis et al. 2014 (PMID 25230663)"
+    ]
+  },
+
+  "cheddar_man": {
+    "id": "cheddar_man",
+    "name": "Cheddar Man",
+    "site": "Gough's Cave, Somerset, England",
+    "country": "United Kingdom",
+    "age_bp": 10000,
+    "period": "Mesolithic",
+    "culture": "WHG",
+    "culture_name": "Western Hunter-Gatherer",
+    "sex": "Male",
+    "description": "Britain's oldest complete human skeleton. Had dark skin and blue eyes.",
+    "significance": "Challenged assumptions about ancient European phenotypes.",
+    "region": "Northern Europe",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CG",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC",
+      "rs1393350": "GG"
+    }
+  },
+
+  "loschbour": {
+    "id": "loschbour",
+    "name": "Loschbour Man",
+    "site": "Luxembourg",
+    "country": "Luxembourg",
+    "age_bp": 8000,
+    "period": "Mesolithic",
+    "culture": "WHG",
+    "culture_name": "Western Hunter-Gatherer",
+    "sex": "Male",
+    "description": "Complete Mesolithic genome from continental Europe. Dark skin, blue eyes.",
+    "region": "Central Europe",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    }
+  },
+
+  "otzi": {
+    "id": "otzi",
+    "name": "Ötzi the Iceman",
+    "site": "Ötztal Alps",
+    "country": "Italy",
+    "age_bp": 5300,
+    "period": "Copper Age",
+    "culture": "EEF",
+    "culture_name": "Neolithic Farmer",
+    "sex": "Male",
+    "description": "Natural mummy preserved in ice. Neolithic farmer with brown eyes and light skin.",
+    "region": "Alpine Europe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "CG",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "yamnaya_samara": {
+    "id": "yamnaya_samara",
+    "name": "Yamnaya Steppe Warrior",
+    "site": "Samara, Russia",
+    "country": "Russia",
+    "age_bp": 5000,
+    "period": "Bronze Age",
+    "culture": "Yamnaya",
+    "culture_name": "Steppe Pastoralist",
+    "sex": "Male",
+    "description": "Bronze Age herder from the Pontic-Caspian steppe. Tall and light-skinned.",
+    "region": "Eurasian Steppe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GA",
+      "rs4988235": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "viking_denmark": {
+    "id": "viking_denmark",
+    "name": "Viking Warrior (Galgedil)",
+    "site": "Galgedil, Denmark",
+    "country": "Denmark",
+    "age_bp": 1100,
+    "period": "Viking Age",
+    "culture": "Viking",
+    "culture_name": "Scandinavian Viking",
+    "sex": "Male",
+    "description": "Viking Age warrior showing typical Scandinavian profile and lactase persistence.",
+    "region": "Scandinavia",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "catoctin_iron_workers": {
+    "id": "catoctin_iron_workers",
+    "name": "Catoctin Iron Workers",
+    "site": "Catoctin Furnace, Maryland, USA",
+    "country": "United States",
+    "age_bp": 250,
+    "period": "18th Century",
+    "culture": "Iron Industry",
+    "culture_name": "Industrial Period",
+    "sex": "Various",
+    "description": "Genetic markers associated with enslaved individuals from Catoctin Furnace, Maryland.",
+    "region": "North America",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CC"
+    }
+  },
+
+  "western_hunter_gatherer": {
+    "id": "western_hunter_gatherer",
+    "name": "Western Hunter-Gatherer (WHG)",
+    "site": "Various, Europe",
+    "country": "Europe",
+    "age_bp": 10000,
+    "period": "Mesolithic",
+    "culture": "Various",
+    "culture_name": "Mesolithic",
+    "sex": "Various",
+    "description": "Representative markers for West European Hunter-Gatherer ancestry.",
+    "region": "Europe",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "AA",
+      "rs12913832": "AA",
+      "rs4988235": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    }
+  },
+
+  "early_european_farmer": {
+    "id": "early_european_farmer",
+    "name": "Early European Farmer (EEF)",
+    "site": "Various, Anatolia/Europe",
+    "country": "Anatolia/Europe",
+    "age_bp": 7000,
+    "period": "Neolithic",
+    "culture": "LBK/Various",
+    "culture_name": "Neolithic Farmer",
+    "sex": "Various",
+    "description": "Representative markers for Early European Farmer ancestry.",
+    "region": "West Asia/Europe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "CC",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs1800414": "AG",
+      "rs1042602": "TT"
+    }
+  },
+
+  "anzick_1": {
+    "id": "anzick_1",
+    "name": "Anzick-1 (Clovis Boy)",
+    "site": "Wilsall, Montana, USA",
+    "country": "United States",
+    "age_bp": 12600,
+    "period": "Late Pleistocene",
+    "culture": "Clovis",
+    "culture_name": "Paleo-clovis",
+    "sex": "Male",
+    "description": "Skeletal remains of an infant boy buried with Clovis stone tools in Montana. His genome confirms the Siberian migration origin of Native Americans and shows direct lineage continuity with modern Indigenous Central and South Americans.",
+    "region": "Americas (Indigenous)",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CA"
+    }
+  },
+
+  "kennewick_man": {
+    "id": "kennewick_man",
+    "name": "Kennewick Man (Ancient One)",
+    "site": "Columbia River, Washington, USA",
+    "country": "United States",
+    "age_bp": 8900,
+    "period": "Early Holocene",
+    "culture": "Early Cascade",
+    "culture_name": "Early Cascade",
+    "sex": "Male",
+    "description": "Found along the Columbia River. A landmark legal and genetic case that proved close genetic continuity to the modern Colville and other Pacific Northwest Native American tribes.",
+    "region": "Americas (Indigenous)",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    }
+  },
+
+  "gyamfi_single": {
+    "id": "gyamfi_single",
+    "name": "Gyamfi Single",
+    "site": "Gyamfi-Sade, Ghana",
+    "country": "Ghana",
+    "age_bp": 2500,
+    "period": "Iron Age",
+    "culture": "Kintampo Culture",
+    "culture_name": "Kintampo Culture",
+    "sex": "Male",
+    "description": "An ancient West African genome from Ghana predating the major Bantu migration events, providing a key baseline of historic West African genetic variation.",
+    "region": "West Africa",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs2814778": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CC"
+    }
+  },
+
+  "luxor_ancestor": {
+    "id": "luxor_ancestor",
+    "name": "Luxor Ancient Egyptian",
+    "site": "Abusir el-Meleq, Egypt",
+    "country": "Egypt",
+    "age_bp": 2200,
+    "period": "Ptolemaic Period",
+    "culture": "Ancient Egyptian",
+    "culture_name": "Ancient Egyptian",
+    "sex": "Male",
+    "description": "Ancient Egyptian from a mummified community. Shows high genetic affinity to historical Near Eastern and Anatolian populations with smaller Sub-Saharan African components.",
+    "region": "North Africa / Near Eastern",
+    "snps": {
+      "rs1426654": "AG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1800414": "GG",
+      "rs1042602": "CA"
+    }
+  },
+
+  "rameses_iii": {
+    "id": "rameses_iii",
+    "name": "Rameses III",
+    "site": "Thebes, Egypt",
+    "country": "Egypt",
+    "age_bp": 3150,
+    "period": "New Kingdom",
+    "culture": "Ancient Egyptian",
+    "culture_name": "New Kingdom Pharaoh",
+    "sex": "Male",
+    "description": "Famous pharaoh of the 20th Dynasty, known for repelling the Sea Peoples during the Late Bronze Age collapse.",
+    "region": "North Africa",
+    "snps": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs1042602": "CC"
+    }
+  },
+
+  "richard_iii": {
+    "id": "richard_iii",
+    "name": "King Richard III",
+    "site": "Leicester, England",
+    "country": "United Kingdom",
+    "age_bp": 540,
+    "period": "Late Medieval",
+    "culture": "Plantagenet English",
+    "culture_name": "Plantagenet English",
+    "sex": "Male",
+    "description": "The last English monarch of South-Western Europe descent to die in battle, found buried under a car park in Leicester.",
+    "region": "Western Europe",
+    "snps": {
+      "rs1426654": "AA",
+      "rs16891982": "GG",
+      "rs12913832": "GG",
+      "rs4988235": "AA",
+      "rs1042602": "CA"
+    }
+  }
+}
