@@ -20,7 +20,12 @@ metadata.json
 # Scratch directory for massive datasets (like AADR)
 scratch/
 aadr/
-.venv/\nscratch/\n*.pyc\n__pycache__/\n*.onnx\n*.safetensors
+.venv/
+scratch/
+*.pyc
+__pycache__/
+*.onnx
+*.safetensors
 node_modules/
 .venv/
 scripts/train_onnx/venv/
