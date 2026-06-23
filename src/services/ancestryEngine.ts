@@ -361,6 +361,7 @@ export function runAncestryInference(
   };
 
   const subPopDistances: Record<string, Record<string, number>> = {}; // continent -> subpop -> distance
+  const subPopWeights: Record<string, Record<string, number>> = {}; // NEW: Track weights for normalization
   const subPopMarkers: Record<string, any[]> = {};
 
   // Pre-calculate sub-populations for each continent and initialize markers
@@ -585,10 +586,12 @@ export function runAncestryInference(
         if (topContinent) {
             const continentSubpops = continentSubpopsMap[topContinent] || [];
             if (!subPopDistances[topContinent]) subPopDistances[topContinent] = {};
+            if (!subPopWeights[topContinent]) subPopWeights[topContinent] = {};
 
             for (const sp of continentSubpops) {
                 if (subPopDistances[topContinent][sp] === undefined) {
                     subPopDistances[topContinent][sp] = 0;
+                    subPopWeights[topContinent][sp] = 0;
                 }
 
                 for (const marker of window) {
@@ -659,6 +662,7 @@ export function runAncestryInference(
                     const error = (matchCount / 2) - f;
                     const distSq = weight * (error * error);
                     subPopDistances[topContinent][sp] += distSq;
+                    subPopWeights[topContinent][sp] += weight;
                 }
             }
         }
@@ -727,7 +731,11 @@ export function runAncestryInference(
   const subPopulations: Record<string, any[]> = {};
   for (const continent of Object.keys(subPopDistances)) {
     const subProbs = Object.entries(subPopDistances[continent])
-      .map(([name, d]) => ({ name, dist: d }));
+      .map(([name, d]) => {
+        const w = subPopWeights[continent][name] || 1;
+        const normalizedDist = Math.sqrt(d / w) * 10.0;
+        return { name, dist: normalizedDist };
+      });
     
     let minDist = Infinity;
     for (const p of subProbs) if (p.dist < minDist) minDist = p.dist;
@@ -738,9 +746,7 @@ export function runAncestryInference(
       const filtered = probs
         .map(p => {
           const rawDist = subProbs.find(sp => sp.name === p.name)?.dist || 0;
-          // Normalize distance: sqrt(sum of weighted squares) / normalization factor
-          // We use a constant to scale it to the familiar 1-10 range where < 3 is good
-          const normalizedDist = Math.sqrt(rawDist) / 10; 
+          const normalizedDist = rawDist; 
           
           return {
             name: p.name,

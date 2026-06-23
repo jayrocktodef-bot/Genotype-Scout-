@@ -204,7 +204,7 @@ export const ModernAncestryOracle = memo(({
             const allPops = Object.values(subPops).flat().sort((a: any, b: any) => a.distance - b.distance).slice(0, 5);
             if (allPops.length === 0) return <div className="text-slate-500 py-4">Insufficient markers to calculate affinities.</div>;
             return allPops.map((pop: any, idx: number) => {
-              const maxDistance = 20;
+              const maxDistance = 10;
               const closeness = Math.max(0, 100 - (pop.distance / maxDistance) * 100);
               return (
                 <div key={pop.name} className="flex flex-col space-y-2 group">
