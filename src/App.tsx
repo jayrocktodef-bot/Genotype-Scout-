@@ -3080,6 +3080,21 @@ export default function App() {
                   </div>
                 )}
 
+                {activeTab === 'kit_comparison' && (
+                  <div className="pb-20 animate-fade-in">
+                    <KitComparisonModule datasets={datasets} />
+                  </div>
+                )}
+
+                {activeTab === 'export' && (
+                  <div className="pb-20 animate-fade-in">
+                    <ExportModule 
+                      onGenerateReport={handleGenerateReport}
+                      datasetName={datasets[activeDatasetIndex]?.name || 'Dataset'}
+                    />
+                  </div>
+                )}
+
                 {/* Ad placement between content sections */}
                 <div className="max-w-4xl mx-auto my-8">
                   <AdBanner format="auto" className="rounded-2xl" />

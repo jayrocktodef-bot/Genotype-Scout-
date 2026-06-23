@@ -198,7 +198,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
       icon: Printer,
       gradient: 'from-rose-400 to-red-600',
       glowColor: 'rgba(244, 63, 94, 0.45)',
-      targetTab: 'summary',
+      targetTab: 'export',
       description: 'Generate high-quality PDF reports with customizable health filters.',
     },
     {

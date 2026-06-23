@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, User, BookOpen, Sun, Moon, Download, Sparkles } from 'lucide-react';
+import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, User, BookOpen, Sun, Moon, Download, Sparkles, Users, Zap } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -35,6 +35,9 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'health_traits', label: 'Health & Traits', icon: HeartPulse },
     { id: 'ai_agent', label: 'AI Explainer', icon: Sparkles },
     { id: 'autosomal', label: 'Markers', icon: Database },
+    { id: 'rare_variants', label: 'Rare Variants', icon: Zap },
+    { id: 'kit_comparison', label: 'Compare Kits', icon: Users },
+    { id: 'export', label: 'Export', icon: Download },
     { id: 'methodology', label: 'Methodology', icon: BookOpen }
   ];
 
