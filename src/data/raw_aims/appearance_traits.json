@@ -1406,5 +1406,215 @@
       "AC": "Intermediate skin tone",
       "AA": "Associated with lighter skin tone"
     }
+  },
+  {
+    "rsid": "rs1015362",
+    "category": "Dermatology",
+    "interpretation": {
+      "gene": "BNC2",
+      "name": "Freckling Variant",
+      "risk_allele": "T",
+      "category": "pigmentation",
+      "trait": "Freckles",
+      "evidence": "strong",
+      "CC": "Lower chance of freckling",
+      "CT": "Moderate chance of freckling",
+      "TT": "Higher chance of heavy freckling"
+    }
+  },
+  {
+    "rsid": "rs10427255",
+    "category": "Misc Traits",
+    "interpretation": {
+      "gene": "ZEB2",
+      "name": "Photic Sneeze Reflex",
+      "risk_allele": "C",
+      "category": "reflexes",
+      "trait": "Sun Sneezing",
+      "evidence": "moderate",
+      "TT": "Typical sneeze reflex",
+      "TC": "Slightly increased chance of photic sneezing",
+      "CC": "High chance of sneezing when exposed to bright light"
+    }
+  },
+  {
+    "rsid": "rs6954203",
+    "category": "Dietary",
+    "interpretation": {
+      "gene": "OR2M7",
+      "name": "Asparagus Smell",
+      "risk_allele": "G",
+      "category": "olfactory",
+      "trait": "Asparagus Anosmia",
+      "evidence": "moderate",
+      "AA": "Can smell asparagus in urine",
+      "AG": "Reduced ability to smell asparagus",
+      "GG": "Unable to smell asparagus in urine"
+    }
+  },
+  {
+    "rsid": "rs72921001",
+    "category": "Dietary",
+    "interpretation": {
+      "gene": "OR6A2",
+      "name": "Cilantro Preference",
+      "risk_allele": "A",
+      "category": "taste",
+      "trait": "Cilantro Taste",
+      "evidence": "moderate",
+      "CC": "Typical cilantro taste",
+      "CA": "May perceive a soapy taste in cilantro",
+      "AA": "Strongly perceives cilantro as tasting like soap"
+    }
+  },
+  {
+    "rsid": "rs4680",
+    "category": "Behavioral",
+    "interpretation": {
+      "gene": "COMT",
+      "name": "Warrior vs Worrier",
+      "risk_allele": "A",
+      "category": "neurological",
+      "trait": "Stress & Pain Tolerance",
+      "evidence": "moderate",
+      "GG": "Warrior: Higher stress tolerance, lower pain tolerance (Val/Val)",
+      "GA": "Intermediate stress and pain tolerance (Val/Met)",
+      "AA": "Worrier: Lower stress tolerance, higher pain tolerance (Met/Met)"
+    }
+  },
+  {
+    "rsid": "rs53576",
+    "category": "Behavioral",
+    "interpretation": {
+      "gene": "OXTR",
+      "name": "Oxytocin Receptor",
+      "risk_allele": "A",
+      "category": "neurological",
+      "trait": "Empathy & Social Bonding",
+      "evidence": "moderate",
+      "GG": "Higher self-reported empathy and sociability",
+      "GA": "Intermediate empathy levels",
+      "AA": "Less empathetic responding, potentially lower stress resilience"
+    }
+  },
+  {
+    "rsid": "rs9939609",
+    "category": "Metabolic",
+    "interpretation": {
+      "gene": "FTO",
+      "name": "FTO Obesity Variant",
+      "risk_allele": "A",
+      "category": "weight",
+      "trait": "Weight & Satiety",
+      "evidence": "strong",
+      "TT": "Typical weight regulation and satiety",
+      "TA": "Slightly increased BMI risk and reduced satiety",
+      "AA": "Higher risk for increased BMI; may feel less full after meals"
+    }
+  },
+  {
+    "rsid": "rs8192678",
+    "category": "Athletic",
+    "interpretation": {
+      "gene": "PPARGC1A",
+      "name": "Aerobic Capacity",
+      "risk_allele": "A",
+      "category": "fitness",
+      "trait": "Endurance vs Power",
+      "evidence": "moderate",
+      "GG": "Higher baseline aerobic capacity and endurance response",
+      "GA": "Intermediate aerobic response",
+      "AA": "Lower baseline aerobic capacity, potential advantage in power sports"
+    }
+  },
+  {
+    "rsid": "rs12722",
+    "category": "Athletic",
+    "interpretation": {
+      "gene": "COL5A1",
+      "name": "Tendon Flexibility & Injury",
+      "risk_allele": "T",
+      "category": "fitness",
+      "trait": "Ligament Flexibility",
+      "evidence": "moderate",
+      "CC": "More flexible tendons, potentially higher endurance efficiency",
+      "CT": "Average tendon flexibility",
+      "TT": "Stiffer tendons, advantageous for jumping/sprinting but slightly higher injury risk"
+    }
+  },
+  {
+    "rsid": "rs699",
+    "category": "Athletic",
+    "interpretation": {
+      "gene": "AGT",
+      "name": "Power Sports Performance",
+      "risk_allele": "G",
+      "category": "fitness",
+      "trait": "Power vs Endurance",
+      "evidence": "moderate",
+      "AA": "Better suited for endurance sports",
+      "AG": "Balanced power and endurance",
+      "GG": "Strongly associated with power and strength-based sports"
+    }
+  },
+  {
+    "rsid": "rs838133",
+    "category": "Dietary",
+    "interpretation": {
+      "gene": "FGF21",
+      "name": "Sweet Tooth Variant",
+      "risk_allele": "A",
+      "category": "taste",
+      "trait": "Sugar Preference",
+      "evidence": "moderate",
+      "GG": "Typical sugar consumption",
+      "GA": "Slightly increased preference for sweet foods",
+      "AA": "High likelihood of having a 'sweet tooth' and increased sugar intake"
+    }
+  },
+  {
+    "rsid": "rs601338",
+    "category": "Dietary",
+    "interpretation": {
+      "gene": "FUT2",
+      "name": "B12 Absorption (Non-Secretor)",
+      "risk_allele": "A",
+      "category": "vitamins",
+      "trait": "Vitamin B12 Levels",
+      "evidence": "strong",
+      "GG": "Secretor: Lower baseline Vitamin B12 levels",
+      "GA": "Secretor: Intermediate Vitamin B12 levels",
+      "AA": "Non-Secretor: Higher baseline Vitamin B12 levels (protection against deficiency)"
+    }
+  },
+  {
+    "rsid": "rs174546",
+    "category": "Dietary",
+    "interpretation": {
+      "gene": "FADS1",
+      "name": "Omega-3/6 Processing",
+      "risk_allele": "T",
+      "category": "metabolism",
+      "trait": "Fatty Acid Conversion",
+      "evidence": "strong",
+      "CC": "Efficient converter of plant-based Omega-3s (ALA) to EPA/DHA",
+      "CT": "Moderate converter of plant-based Omega-3s",
+      "TT": "Poor converter; may require direct EPA/DHA supplements (e.g., fish oil)"
+    }
+  },
+  {
+    "rsid": "rs5082",
+    "category": "Dietary",
+    "interpretation": {
+      "gene": "APOA2",
+      "name": "Saturated Fat Sensitivity",
+      "risk_allele": "C",
+      "category": "metabolism",
+      "trait": "Weight response to Saturated Fat",
+      "evidence": "strong",
+      "TT": "Typical weight response to saturated fats",
+      "TC": "Typical weight response to saturated fats",
+      "CC": "High sensitivity; high saturated fat diet strongly linked to increased BMI"
+    }
   }
 ]

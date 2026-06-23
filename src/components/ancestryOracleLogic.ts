@@ -108,6 +108,14 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'MZJ': 'Mizrahi Jewish / Middle Eastern (MZJ)',
   'YMJ': 'Yemenite Jewish / Arabian (YMJ)',
   'MEL': 'Melungeon / Appalachian Tri-Racial (MEL)',
+  // US Synthetic Demographics
+  'IRISH_AM': 'Irish American / Celtic (IRISH_AM)',
+  'ITALIAN_AM': 'Italian American / Southern European (ITALIAN_AM)',
+  'GERMAN_AM': 'German American / Central European (GERMAN_AM)',
+  'CUBAN_AM': 'Cuban American / Caribbean (CUBAN_AM)',
+  'DOMINICAN_AM': 'Dominican American / Caribbean (DOMINICAN_AM)',
+  'FILIPINO_AM': 'Filipino American / SE Asian (FILIPINO_AM)',
+  'VIETNAMESE_AM': 'Vietnamese American / SE Asian (VIETNAMESE_AM)',
   // Superpopulations and Global References
   'ALL': 'Global Reference (ALL)',
   'EUR': 'European Reference (EUR)',
@@ -127,11 +135,13 @@ const MACRO_GROUPS: Record<string, string[]> = {
   'EUR': [
     'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
     'AMI_gnomAD', 'NFE_gnomAD', 'FIN_gnomAD', 'ALFA_EUR',
-    'ASJ_gnomAD', 'ASJ', 'SEJ'
+    'ASJ_gnomAD', 'ASJ', 'SEJ',
+    'IRISH_AM', 'ITALIAN_AM', 'GERMAN_AM'
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
-    'GEMJ_Japan', 'EAS_gnomAD', 'ALFA_EAS'
+    'GEMJ_Japan', 'EAS_gnomAD', 'ALFA_EAS',
+    'FILIPINO_AM', 'VIETNAMESE_AM'
   ],
   'SAS': [
     'BEB', 'GIH', 'ITU', 'PJL', 'STU',
@@ -140,7 +150,8 @@ const MACRO_GROUPS: Record<string, string[]> = {
   'AMR': [
     'CLM', 'MXL', 'PEL', 'PUR',
     'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD',
-    'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL'
+    'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL',
+    'CUBAN_AM', 'DOMINICAN_AM'
   ],
   'MENA': [
     'MID_gnomAD', 'MZJ', 'YMJ'

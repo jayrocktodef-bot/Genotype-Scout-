@@ -1,4 +1,5 @@
 import hoModernKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
+import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
 import { solveNNLS } from '../../utils/nnls';
 
 export interface AdmixtureComponent {
@@ -31,48 +32,46 @@ export async function calculateHumanOriginsScores(userSnps: Record<string, strin
     return userCall && userCall.length === 2 && userCall !== '--';
   });
 
-  const totalMatched = matchedRsids.length;
-  if (totalMatched < 10) {
-    return [];
-  }
-
-  // Cap the number of markers evaluated for NNLS performance
-  const MAX_MARKERS = 1000;
-  const thinnedRsids = totalMatched > MAX_MARKERS 
-    ? matchedRsids.filter((_, idx) => idx % Math.ceil(totalMatched / MAX_MARKERS) === 0).slice(0, MAX_MARKERS)
-    : matchedRsids;
-
-  const M = thinnedRsids.length;
+  const M = matchedRsids.length;
+  if (M < 10) return [];
 
   // Build A (M x N) and b (M)
   const A: number[][] = Array.from({ length: M }, () => new Array(N).fill(0));
   const b: number[] = new Array(M).fill(0);
 
   for (let i = 0; i < M; i++) {
-    const rsid = thinnedRsids[i];
-    
-    // Determine the average frequency across all populations to resolve dosage direction
-    let sumFreq = 0;
-    for (let j = 0; j < N; j++) {
-      const popName = pops[j];
-      const popData = (hoModernKernel as any)[popName];
-      sumFreq += popData.frequencies[rsid] || 0;
-    }
-    const avgFreq = sumFreq / N;
-
-    // Calculate user call value
+    const rsid = matchedRsids[i];
     const userCall = normalizedUserSnps[rsid.toLowerCase()];
-    let userVal = 0.5; // Heterozygous
-    if (userCall[0] === userCall[1]) {
-      // Homozygous: Assumes major allele direction correlates with >0.5 average freq
-      userVal = avgFreq > 0.5 ? 1.0 : 0.0;
+    
+    // Accurate Dosage Calculation mapped to exact Alternative Allele
+    let dosage = 0.0;
+    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+    
+    if (marker && marker.alt) {
+      const alt = marker.alt.toUpperCase();
+      const a1 = userCall[0].toUpperCase();
+      const a2 = userCall[1].toUpperCase();
+      if (a1 === alt) dosage += 0.5;
+      if (a2 === alt) dosage += 0.5;
+    } else {
+      // Rare fallback if index is missing: attempt to guess based on global average
+      let sumFreq = 0;
+      for (let j = 0; j < N; j++) {
+        sumFreq += (hoModernKernel as any)[pops[j]].frequencies[rsid] || 0;
+      }
+      const avgFreq = sumFreq / N;
+      dosage = 0.5;
+      if (userCall[0] === userCall[1]) {
+        dosage = avgFreq > 0.5 ? 1.0 : 0.0;
+      }
     }
 
-    b[i] = userVal;
+    b[i] = dosage;
 
     for (let j = 0; j < N; j++) {
       const popName = pops[j];
       const popData = (hoModernKernel as any)[popName];
+      // Assign frequency. If missing, assume 0
       A[i][j] = popData.frequencies[rsid] || 0;
     }
   }

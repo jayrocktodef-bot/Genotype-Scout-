@@ -184,25 +184,33 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
             )}
 
             {/* Human Origins (K61) Admixture Solver Section */}
-            {sortedK61.length > 0 && (
+            {(oracleResults?.breakdown || []).length > 0 && (
               <div className="break-inside-avoid space-y-4">
                 <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Human Origins (K61) Subpopulation Admixture</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {sortedK61.map((comp: any, idx: number) => (
-                    <div key={comp.popCode || comp.population || idx} className="p-4 border border-slate-200 rounded-xl flex flex-col justify-between bg-slate-50">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="text-[10px] font-mono text-slate-500 uppercase">Component #{idx + 1}</span>
-                        <span className="font-mono font-black text-teal-700 text-base">{Number(comp.percentage || 0).toFixed(1)}%</span>
+                  {(oracleResults?.breakdown || []).slice(0, 8).map((comp: any, idx: number) => {
+                    const visualWidth = Math.max(5, 100 - (comp.distance * 200));
+                    return (
+                      <div key={comp.subpop} className="border border-slate-200 rounded-lg p-3">
+                        <div className="flex justify-between items-start mb-2">
+                          <div>
+                            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Population Match</span>
+                            <h4 className="text-sm font-bold text-slate-800">{comp.name || comp.subpop}</h4>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Distance</span>
+                            <span className="font-mono font-black text-teal-700 text-base">{Number(comp.distance).toFixed(4)}</span>
+                          </div>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                          <div 
+                            className="h-full bg-teal-500 rounded-full" 
+                            style={{ width: `${visualWidth}%` }} 
+                          />
+                        </div>
                       </div>
-                      <h4 className="font-bold text-slate-800 text-sm mb-2">{comp.name || comp.population}</h4>
-                      <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                        <div 
-                          className="h-full rounded-full bg-teal-500" 
-                          style={{ width: `${comp.percentage}%` }} 
-                        />
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}

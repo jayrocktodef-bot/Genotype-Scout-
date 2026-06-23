@@ -105,6 +105,7 @@ export default defineConfig(({mode}) => {
     },
     optimizeDeps: {
       entries: ['index.html'],
+      exclude: ['@xenova/transformers']
     },
     resolve: {
       alias: {
@@ -128,12 +129,27 @@ export default defineConfig(({mode}) => {
             if (id.includes('node_modules/onnxruntime-web')) {
               return 'vendor-onnx';
             }
+            if (id.includes('node_modules/@xenova')) {
+              return 'vendor-xenova';
+            }
+            if (id.includes('node_modules/recharts')) {
+              return 'vendor-recharts';
+            }
+            if (id.includes('node_modules/motion') || id.includes('node_modules/framer-motion')) {
+              return 'vendor-motion';
+            }
+            if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+              return 'vendor-react';
+            }
           },
         },
       },
     },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
+      watch: {
+        ignored: ['**/venv/**', '**/results_ner_genetics/**', '**/onnx_unquantized/**', '**/onnx_quantized/**']
+      }
     },
   };
 });

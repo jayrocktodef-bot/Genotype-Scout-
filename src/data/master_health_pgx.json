@@ -77,7 +77,12 @@
     "name": "PTPN22",
     "description": "Associated with multiple autoimmune conditions",
     "impact": "moderate",
-    "_group": "autoimmune"
+    "_group": "autoimmune",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, single submitter",
+    "clinvar_phenotypes": [
+      "not provided"
+    ]
   },
   "rs4349859": {
     "gene": "HLA-B",
@@ -104,7 +109,12 @@
     "condition": "Ankylosing spondylitis",
     "odds_ratio": 1.4,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, single submitter",
+    "clinvar_phenotypes": [
+      "not specified"
+    ]
   },
   "rs6910071": {
     "gene": "HLA-DRB1",
@@ -131,7 +141,12 @@
     "condition": "Graves disease",
     "odds_ratio": 1.5,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "reviewed by expert panel",
+    "clinvar_phenotypes": [
+      "Autoimmune lymphoproliferative syndrome due to CTLA4 haploinsufficiency"
+    ]
   },
   "rs1270942": {
     "gene": "HLA-DRB1",
@@ -140,7 +155,12 @@
     "condition": "Systemic lupus erythematosus",
     "odds_ratio": 2.5,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, single submitter",
+    "clinvar_phenotypes": [
+      "not provided"
+    ]
   },
   "rs7574865": {
     "gene": "STAT4",
@@ -149,7 +169,12 @@
     "condition": "Systemic lupus erythematosus",
     "odds_ratio": 1.6,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "risk factor",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Systemic lupus erythematosus, susceptibility to, 11"
+    ]
   },
   "rs2205960": {
     "gene": "TNFSF4",
@@ -176,7 +201,12 @@
     "condition": "Systemic lupus erythematosus",
     "odds_ratio": 1.6,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not provided"
+    ]
   },
   "rs3135388": {
     "gene": "HLA-DRB1",
@@ -212,7 +242,16 @@
     "condition": "Hashimoto thyroiditis",
     "odds_ratio": 1.3,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "Thrombocythemia 1",
+      "Primary myelofibrosis",
+      "Primary familial polycythemia due to EPO receptor mutation",
+      "not specified",
+      "not provided"
+    ]
   },
   "rs10484554": {
     "gene": "HLA-C",
@@ -239,7 +278,12 @@
     "condition": "Crohn disease",
     "odds_ratio": 0.4,
     "is_protective": true,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not provided"
+    ]
   },
   "rs2066844": {
     "gene": "NOD2",
@@ -248,7 +292,18 @@
     "condition": "Crohn disease",
     "odds_ratio": 2.4,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity; association",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "Regional enteritis",
+      "Blau syndrome",
+      "not specified",
+      "Yao syndrome",
+      "Inflammatory bowel disease 1",
+      "Autoinflammatory syndrome",
+      "not provided"
+    ]
   },
   "rs2066845": {
     "gene": "NOD2",
@@ -257,7 +312,15 @@
     "condition": "Crohn disease",
     "odds_ratio": 2.8,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "Inflammatory bowel disease 1",
+      "not provided",
+      "Blau syndrome",
+      "Regional enteritis"
+    ]
   },
   "rs2066847": {
     "gene": "NOD2",
@@ -266,7 +329,18 @@
     "condition": "Crohn disease",
     "odds_ratio": 4,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity; association",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "Inflammatory bowel disease 1",
+      "Blau syndrome",
+      "Yao syndrome",
+      "Regional enteritis",
+      "Autoinflammatory syndrome",
+      "not specified",
+      "not provided"
+    ]
   },
   "rs1393350": {
     "gene": "TYR",
@@ -275,7 +349,19 @@
     "condition": "Vitiligo",
     "odds_ratio": 1.5,
     "is_protective": false,
-    "_source": "autoimmune_hla_panel.json"
+    "_source": "autoimmune_hla_panel.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity; other",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "TYR-related disorder",
+      "Pigmentary skin disorders",
+      "Albinism or congenital nystagmus",
+      "not specified",
+      "not provided",
+      "Oculocutaneous albinism type 1",
+      "Oculocutaneous albinism type 1A",
+      "Oculocutaneous albinism type 1B"
+    ]
   },
   "rs9275572": {
     "gene": "HLA-DQB1",
@@ -307,7 +393,12 @@
       "GA": "Likely Type AB",
       "AA": "Likely Type B"
     },
-    "_source": "blood_markers.json"
+    "_source": "blood_markers.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Severely weakened expression of B on erythrocytes"
+    ]
   },
   "rs8176747": {
     "rsid": "rs8176747",
@@ -319,7 +410,12 @@
       "CC": "B-Antigen Present"
     },
     "description": "The 803G>C mutation. The 'C' allele is specific to the B blood group.",
-    "_source": "blood_markers.json"
+    "_source": "blood_markers.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Severely weakened expression of B on erythrocytes"
+    ]
   },
   "rs590787": {
     "rsid": "rs590787",
@@ -334,20 +430,28 @@
     "_source": "blood_markers.json"
   },
   "rs429358": {
-    "name": "APOE ε4 marker 1",
+    "name": "APOE \u03b54 marker 1",
     "risk_allele": "C",
     "description": "APOE gene variant associated with Alzheimer's risk",
     "impact": "high",
     "_group": "alzheimers_apoe",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "no classification for the single variant",
+    "clinvar_review_status": "no classification for the single variant",
+    "clinvar_phenotypes": []
   },
   "rs7412": {
-    "name": "APOE ε4 marker 2",
+    "name": "APOE \u03b54 marker 2",
     "risk_allele": "C",
-    "description": "Second APOE variant - combined with rs429358 determines ε2/ε3/ε4 status",
+    "description": "Second APOE variant - combined with rs429358 determines \u03b52/\u03b53/\u03b54 status",
     "impact": "high",
     "_group": "alzheimers_apoe",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Likely pathogenic",
+    "clinvar_review_status": "criteria provided, single submitter",
+    "clinvar_phenotypes": [
+      "Familial type 3 hyperlipoproteinemia"
+    ]
   },
   "rs1333049": {
     "name": "9p21 CAD risk",
@@ -355,7 +459,12 @@
     "description": "Coronary artery disease risk variant on chromosome 9",
     "impact": "moderate",
     "_group": "cardiovascular",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "risk factor",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Three Vessel Coronary Disease"
+    ]
   },
   "rs10757278": {
     "name": "Heart attack risk",
@@ -371,7 +480,14 @@
     "description": "Affects folate metabolism, homocysteine levels",
     "impact": "moderate",
     "_group": "cardiovascular",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not specified",
+      "not provided",
+      "Congenital hyperammonemia, type I"
+    ]
   },
   "rs1042522": {
     "name": "TP53 codon 72",
@@ -379,7 +495,13 @@
     "description": "p53 tumor suppressor variant",
     "impact": "low",
     "_group": "cancer_risk",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "Hereditary cancer-predisposing syndrome",
+      "Li-Fraumeni syndrome"
+    ]
   },
   "rs6983267": {
     "name": "Colorectal cancer risk",
@@ -395,7 +517,12 @@
     "description": "Strongest known genetic risk factor for Type 2 diabetes",
     "impact": "high",
     "_group": "diabetes",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Likely risk allele",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Type 2 diabetes mellitus"
+    ]
   },
   "rs1801282": {
     "name": "PPARG Pro12Ala",
@@ -403,7 +530,16 @@
     "description": "Associated with insulin sensitivity",
     "impact": "moderate",
     "_group": "diabetes",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Benign/Likely benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not specified",
+      "not provided",
+      "PPARG-related familial partial lipodystrophy",
+      "INSULIN RESISTANCE, DIGENIC",
+      "Obesity"
+    ]
   },
   "rs6025": {
     "name": "Factor V Leiden",
@@ -411,7 +547,13 @@
     "description": "Increased risk of blood clots (DVT, PE)",
     "impact": "high",
     "_group": "clotting",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "Congenital factor V deficiency",
+      "not provided"
+    ]
   },
   "rs1799963": {
     "name": "Prothrombin G20210A",
@@ -419,7 +561,19 @@
     "description": "Increased clotting risk",
     "impact": "high",
     "_group": "clotting",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Pathogenic/Likely pathogenic/Pathogenic, low penetrance/Established risk allele; risk factor",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "Thrombophilia due to thrombin defect",
+      "Venous thromboembolism",
+      "Inborn genetic diseases",
+      "Pregnancy loss, recurrent, susceptibility to, 2",
+      "Congenital prothrombin deficiency",
+      "Ischemic stroke",
+      "not provided",
+      "Cerebral palsy"
+    ]
   },
   "rs1061170": {
     "name": "CFH Y402H",
@@ -427,7 +581,19 @@
     "description": "Age-related macular degeneration risk",
     "impact": "high",
     "_group": "macular_degeneration",
-    "_source": "clinical_health.json"
+    "_source": "clinical_health.json",
+    "clinvar_significance": "Conflicting classifications of pathogenicity",
+    "clinvar_review_status": "criteria provided, conflicting classifications",
+    "clinvar_phenotypes": [
+      "Age related macular degeneration 4",
+      "CFH-Related Dense Deposit Disease / Membranoproliferative Glomerulonephritis Type II",
+      "Hemolytic uremic syndrome, atypical, susceptibility to, 1",
+      "not provided",
+      "Atypical hemolytic-uremic syndrome",
+      "Basal laminar drusen",
+      "Factor H deficiency",
+      "not specified"
+    ]
   },
   "rs1799853": {
     "name": "CYP2C9*2",
@@ -438,7 +604,10 @@
       "phenytoin"
     ],
     "_group": "warfarin",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "no classification for the single variant",
+    "clinvar_review_status": "no classification for the single variant",
+    "clinvar_phenotypes": []
   },
   "rs1057910": {
     "name": "CYP2C9*3",
@@ -449,7 +618,10 @@
       "losartan"
     ],
     "_group": "warfarin",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "no classification for the single variant",
+    "clinvar_review_status": "no classification for the single variant",
+    "clinvar_phenotypes": []
   },
   "rs9923231": {
     "name": "VKORC1",
@@ -459,7 +631,12 @@
       "warfarin"
     ],
     "_group": "warfarin",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "drug response",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Warfarin response"
+    ]
   },
   "rs4244285": {
     "name": "CYP2C19*2",
@@ -471,7 +648,12 @@
       "citalopram"
     ],
     "_group": "clopidogrel",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "drug response",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Acute coronary syndrome"
+    ]
   },
   "rs4986893": {
     "name": "CYP2C19*3",
@@ -482,7 +664,16 @@
       "proton pump inhibitors"
     ],
     "_group": "clopidogrel",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "drug response",
+    "clinvar_review_status": "practice guideline",
+    "clinvar_phenotypes": [
+      "Voriconazole response",
+      "Clopidogrel response",
+      "Citalopram response",
+      "Escitalopram response",
+      "Sertraline response"
+    ]
   },
   "rs3892097": {
     "name": "CYP2D6*4",
@@ -495,7 +686,15 @@
       "hydrocodone"
     ],
     "_group": "codeine_opioids",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "Likely benign; drug response; other",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "Tamoxifen response",
+      "not specified",
+      "not provided",
+      "Deutetrabenazine response"
+    ]
   },
   "rs1065852": {
     "name": "CYP2D6*10",
@@ -507,7 +706,15 @@
       "antidepressants"
     ],
     "_group": "codeine_opioids",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "Likely benign; drug response; other",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not specified",
+      "not provided",
+      "Tamoxifen response",
+      "Deutetrabenazine response"
+    ]
   },
   "rs4149056": {
     "name": "SLCO1B1*5",
@@ -519,7 +726,26 @@
       "pravastatin"
     ],
     "_group": "statins",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "drug response",
+    "clinvar_review_status": "reviewed by expert panel",
+    "clinvar_phenotypes": [
+      "simvastatin acid response - Metabolism/PK",
+      "rosuvastatin response - Metabolism/PK",
+      "atorvastatin response - Metabolism/PK",
+      "atorvastatin response - Toxicity",
+      "lovastatin response - Toxicity",
+      "pitavastatin response - Metabolism/PK",
+      "pravastatin response - Toxicity",
+      "rosuvastatin response - Toxicity",
+      "simvastatin response - Metabolism/PK",
+      "hmg coa reductase inhibitors response - Toxicity",
+      "simvastatin response - Toxicity",
+      "fluvastatin response - Metabolism/PK",
+      "fluvastatin response - Toxicity",
+      "lovastatin acid response - Metabolism/PK",
+      "lovastatin response - Metabolism/PK"
+    ]
   },
   "rs762551": {
     "name": "CYP1A2",
@@ -530,7 +756,13 @@
       "theophylline"
     ],
     "_group": "caffeine",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "Likely benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not specified",
+      "not provided"
+    ]
   },
   "rs671": {
     "name": "ALDH2*2",
@@ -541,7 +773,12 @@
       "nitroglycerin"
     ],
     "_group": "alcohol",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "drug response",
+    "clinvar_review_status": "reviewed by expert panel",
+    "clinvar_phenotypes": [
+      "ethanol response - Toxicity"
+    ]
   },
   "rs1800497": {
     "name": "ANKK1/DRD2 Taq1A",
@@ -552,6 +789,109 @@
       "opioids"
     ],
     "_group": "anesthesia",
-    "_source": "pharmacogenomics.json"
+    "_source": "pharmacogenomics.json",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "not specified",
+      "not provided",
+      "Schizophrenia"
+    ]
+  },
+  "rs113993960": {
+    "gene": "CFTR",
+    "name": "Cystic Fibrosis (deltaF508)",
+    "description": "Most common Cystic Fibrosis causing variant",
+    "risk_allele": "DEL",
+    "impact": "high",
+    "_group": "carrier_status",
+    "clinvar_significance": "Pathogenic",
+    "clinvar_review_status": "reviewed by expert panel",
+    "clinvar_phenotypes": [
+      "Cystic fibrosis"
+    ]
+  },
+  "rs1815739": {
+    "gene": "ACTN3",
+    "name": "Muscle Performance (R577X)",
+    "description": "Associated with fast-twitch muscle fiber composition",
+    "risk_allele": "T",
+    "impact": "low",
+    "_group": "traits",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, single submitter",
+    "clinvar_phenotypes": [
+      "not specified"
+    ]
+  },
+  "rs17822931": {
+    "gene": "ABCC11",
+    "name": "Earwax and Body Odor Type",
+    "description": "Determines wet vs dry earwax and body odor production",
+    "risk_allele": "A",
+    "impact": "low",
+    "_group": "traits",
+    "clinvar_significance": "Benign",
+    "clinvar_review_status": "criteria provided, single submitter",
+    "clinvar_phenotypes": [
+      "not provided"
+    ]
+  },
+  "rs80357906": {
+    "gene": "BRCA1",
+    "name": "Breast Cancer Risk",
+    "description": "Pathogenic variant in BRCA1 associated with breast and ovarian cancer",
+    "risk_allele": "T",
+    "impact": "high",
+    "_group": "cancer_risk",
+    "clinvar_significance": "Pathogenic",
+    "clinvar_review_status": "reviewed by expert panel",
+    "clinvar_phenotypes": [
+      "Breast-ovarian cancer, familial, susceptibility to, 1"
+    ]
+  },
+  "rs34637584": {
+    "gene": "LRRK2",
+    "name": "Parkinson's Disease (G2019S)",
+    "description": "Most common genetic variant associated with Parkinson's disease",
+    "risk_allele": "A",
+    "impact": "high",
+    "_group": "neurological",
+    "clinvar_significance": "Pathogenic/Likely pathogenic; risk factor",
+    "clinvar_review_status": "criteria provided, multiple submitters, no conflicts",
+    "clinvar_phenotypes": [
+      "Young-onset Parkinson disease",
+      "Inborn genetic diseases",
+      "not provided",
+      "Autosomal dominant Parkinson disease 8",
+      "Parkinson disease",
+      "Parkinson disease, late-onset"
+    ]
+  },
+  "rs4988235": {
+    "gene": "MCM6",
+    "name": "Lactose Intolerance",
+    "description": "Determines lactase persistence (ability to digest dairy) in adulthood",
+    "risk_allele": "C",
+    "impact": "moderate",
+    "_group": "traits",
+    "clinvar_significance": "association",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "LACTASE PERSISTENCE"
+    ]
+  },
+  "rs713598": {
+    "gene": "TAS2R38",
+    "name": "Bitter Taste Perception",
+    "description": "Ability to taste bitter compounds like PTC/PROP",
+    "risk_allele": "G",
+    "impact": "low",
+    "_group": "traits",
+    "clinvar_significance": "drug response",
+    "clinvar_review_status": "no assertion criteria provided",
+    "clinvar_phenotypes": [
+      "Phenylthiocarbamide tasting"
+    ]
   }
 }

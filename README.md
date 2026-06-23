@@ -17,6 +17,9 @@
 - **Improved HMM Local Ancestry Inference** — Overhauled the Hidden Markov Model (HMM) Viterbi chromosome painter to model transition rates dynamically using physical base-pair distances (1 cM/Mb scale) and smoothed boundary emissions using a Laplace prior.
 - **Ancestry-Aware Genotype Imputation** — Upgraded the targeted imputation engine to run regional cohort detection (sensing Native American, African, East Asian, and European diagnostic signals) to apply ancestry-aware imputation frequencies instead of a flat global average.
 - **Expanded Regional Anchor AIMs** — Updated the core Ancestry Informative Markers database (Seldin 128 / FROG-kb panels) to incorporate highly diagnostic anchors for underrepresented Oceanian, Native American, and MENA cohorts.
+- **Phenotype & Appearance Engine** — Exposed comprehensive phenotypic trait analysis to predict eye color, hair color, skin pigmentation, and baldness risk using the VISAGE forensics panel.
+- **Autoimmune & Celiac Disease Tracking** — Integrated high-fidelity HLA risk markers to identify susceptibility to Celiac disease and other autoimmune conditions within the Health tab.
+- **Marker Database Hydration** — Executed a massive automated metadata hydration pipeline, repairing structural defects and injecting missing chromosomal coordinates for over 5,000 diagnostic markers.
 - **Fixed NNLS Admixture Proportions** — Resolved the single-population deconvolution collapse by implementing a stable numerical sort in the simplex projection logic.
 - **Optimized Worker Payloads** — Replaced expensive global JSON serialization with direct targeted payload sanitization, removing execution bottlenecks.
 - **Real-Time Progress Streaming** — Added streaming progress events per engine, keeping the UI fully interactive and informative during the post-parsing phase.

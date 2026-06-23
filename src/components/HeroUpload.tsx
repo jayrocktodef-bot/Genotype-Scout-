@@ -118,13 +118,33 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
         </motion.div>
 
         {/* Action Buttons & Cache Controller */}
-        <div className="flex items-center justify-center gap-4 mb-16">
+        <div className="flex items-center justify-center gap-4 mb-10">
           <button 
             onClick={onReset}
             className="px-6 py-3 bg-rose-50 hover:bg-rose-100/80 dark:bg-rose-950/20 dark:hover:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-full font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-2 border border-rose-100 dark:border-rose-900/30 shadow-sm"
           >
             Clear Local Cache
           </button>
+        </div>
+
+        {/* PWA Installation Instructions */}
+        <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-16">
+          <div className="flex-1 p-5 rounded-2xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200 dark:border-slate-800 text-left shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <h4 className="text-sm font-black text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
+              <span className="text-xl">🍏</span> iOS Installation
+            </h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Open in <strong className="text-slate-700 dark:text-slate-300">Safari</strong>, tap the <strong className="text-slate-700 dark:text-slate-300">Share</strong> button at the bottom, and select <strong className="text-slate-700 dark:text-slate-300">"Add to Home Screen"</strong> to install as an offline-ready app.
+            </p>
+          </div>
+          <div className="flex-1 p-5 rounded-2xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200 dark:border-slate-800 text-left shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <h4 className="text-sm font-black text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
+              <span className="text-xl">🤖</span> Android Installation
+            </h4>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Open in <strong className="text-slate-700 dark:text-slate-300">Chrome</strong>, tap the <strong className="text-slate-700 dark:text-slate-300">Menu (⋮)</strong> icon at the top right, and select <strong className="text-slate-700 dark:text-slate-300">"Add to Home screen"</strong> to install as an offline-ready app.
+            </p>
+          </div>
         </div>
 
         {/* Supported Providers Bar */}

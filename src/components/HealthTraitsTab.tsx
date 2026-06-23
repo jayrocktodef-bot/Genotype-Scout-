@@ -43,7 +43,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
   }, [userSnps]);
   
   const healthMarkers = autosomalMarkers.filter(m => 
-    (m.category === 'Health' || m.category === 'Nutrition' || m.category === 'Lifestyle' || m.category === 'Appearance' || m.category === 'Methylation') &&
+    (['Health', 'Nutrition', 'Lifestyle', 'Appearance', 'Methylation', 'Clinical Health', 'Autoimmune/HLA', 'Pharmacogenomics', 'Dermatology', 'Skin Appearance'].includes(m.category)) &&
     (m.status === 'matched' || m.status === 'partial')
   );
 
@@ -182,7 +182,11 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
           <div className="mb-8 flex items-center justify-between">
             <h3 className="text-xl font-black text-slate-900 dark:text-white">{activeCategory} Markers</h3>
             <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-full text-[10px] font-black text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-900/30">
-              {activeCategory === 'Identity' ? 2 : healthMarkers.filter(m => m.category === activeCategory).length} Markers Matched
+              {activeCategory === 'Identity' ? 2 : healthMarkers.filter(m => {
+                if (activeCategory === 'Health') return ['Health', 'Clinical Health', 'Autoimmune/HLA', 'Pharmacogenomics'].includes(m.category);
+                if (activeCategory === 'Appearance') return ['Appearance', 'Dermatology', 'Skin Appearance'].includes(m.category);
+                return m.category === activeCategory;
+              }).length} Markers Matched
             </span>
           </div>
 
@@ -231,7 +235,11 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                 </ul>
               </motion.div>
             </div>
-          ) : healthMarkers.filter(m => m.category === activeCategory).length === 0 ? (
+          ) : healthMarkers.filter(m => {
+                if (activeCategory === 'Health') return ['Health', 'Clinical Health', 'Autoimmune/HLA', 'Pharmacogenomics'].includes(m.category);
+                if (activeCategory === 'Appearance') return ['Appearance', 'Dermatology', 'Skin Appearance'].includes(m.category);
+                return m.category === activeCategory;
+              }).length === 0 ? (
             <div className="p-20 bg-slate-50 dark:bg-slate-900/50 rounded-[3rem] border border-dashed border-slate-200 dark:border-slate-800 text-center">
               <div className="text-6xl mb-6 opacity-20 grayscale">🥗</div>
               <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-2">No {activeCategory} Markers Detected</h3>
@@ -239,7 +247,11 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {healthMarkers.filter(m => m.category === activeCategory).map((marker, index) => (
+              {healthMarkers.filter(m => {
+                if (activeCategory === 'Health') return ['Health', 'Clinical Health', 'Autoimmune/HLA', 'Pharmacogenomics'].includes(m.category);
+                if (activeCategory === 'Appearance') return ['Appearance', 'Dermatology', 'Skin Appearance'].includes(m.category);
+                return m.category === activeCategory;
+              }).map((marker, index) => (
                 <motion.div 
                 key={index} 
                 initial={{ opacity: 0, y: 10 }}

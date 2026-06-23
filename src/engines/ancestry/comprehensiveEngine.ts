@@ -47,13 +47,20 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
 
   for (const key in aims) {
     const marker = aims[key];
-    const baseRsid = marker.rsid.toLowerCase().split('_')[0];
+    const rsidLower = marker.rsid.toLowerCase();
     
     // O(1) Map matching
-    let genotype = lowerUserGenotypes.get(baseRsid) || lowerUserGenotypes.get(marker.rsid.toLowerCase());
+    let genotype = lowerUserGenotypes.get(rsidLower);
+    
+    if (!genotype) {
+      const splitIdx = rsidLower.indexOf('_');
+      if (splitIdx !== -1) {
+        genotype = lowerUserGenotypes.get(rsidLower.substring(0, splitIdx));
+      }
+    }
     
     if (!genotype && marker.chromosome && marker.position) {
-      const coordId = `chr${marker.chromosome}_${marker.position}`.toLowerCase();
+      const coordId = 'chr' + marker.chromosome + '_' + marker.position;
       genotype = lowerUserGenotypes.get(coordId);
     }
 

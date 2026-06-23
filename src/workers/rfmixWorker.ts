@@ -99,10 +99,11 @@ function calculateRawProbs(
     
     const nWindows = windowIndices.length;
     const rawProbs = new Float32Array(nWindows * nPopulations);
+    const logProbs = new Float64Array(nPopulations);
     
     for (let w = 0; w < nWindows; w++) {
         const markerIdxs = windowIndices[w];
-        const logProbs = new Float64Array(nPopulations).fill(0);
+        logProbs.fill(0);
         
         for (const mIdx of markerIdxs) {
             const rsid = rsids[mIdx].toLowerCase();
