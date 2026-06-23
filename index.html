@@ -29,6 +29,33 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Genotype Scout" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
+
+    <script>
+      (function() {
+        var APP_VERSION = "5.0.1-force-refresh";
+        if (localStorage.getItem("scout_version_lock") !== APP_VERSION) {
+          console.log("Version update detected. Forcing cache clear...");
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+              for(var i=0; i<registrations.length; i++) {
+                registrations[i].unregister();
+              }
+            });
+          }
+          if ('caches' in window) {
+            caches.keys().then(function(names) {
+              for (var j=0; j<names.length; j++) {
+                caches.delete(names[j]);
+              }
+            });
+          }
+          localStorage.clear();
+          sessionStorage.clear();
+          localStorage.setItem("scout_version_lock", APP_VERSION);
+          window.location.reload(true);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

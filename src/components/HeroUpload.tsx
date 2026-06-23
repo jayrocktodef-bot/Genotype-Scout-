@@ -58,7 +58,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           <Database className="w-3.5 h-3.5" /> 17,000+ Phased Genomic Markers Active
         </div>
         
-        <h1 className="text-5xl sm:text-7xl font-black tracking-tight text-slate-800 dark:text-slate-100 mb-6 leading-[1.1] text-gradient">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-slate-800 dark:text-slate-100 mb-6 leading-[1.1] text-gradient">
           Decrypt Your DNA <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-400">100% Privately.</span>
         </h1>
         
@@ -76,7 +76,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           onClick={() => fileInputRef.current?.click()}
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.99 }}
-          className={`relative max-w-2xl mx-auto mb-8 p-10 rounded-[2.5rem] border-2 border-dashed cursor-pointer transition-all duration-300 overflow-hidden ${
+          className={`relative max-w-2xl mx-auto mb-8 p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border-2 border-dashed cursor-pointer transition-all duration-300 overflow-hidden ${
             isDragActive 
               ? 'border-teal-500 bg-teal-500/5 dark:bg-teal-950/20 shadow-[0_0_30px_rgba(20,184,166,0.15)] scale-[1.02]' 
               : 'border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 backdrop-blur-md hover:border-teal-400 hover:shadow-lg dark:hover:bg-slate-900/80 shadow-sm'
@@ -118,12 +118,28 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
         </motion.div>
 
         {/* Action Buttons & Cache Controller */}
-        <div className="flex items-center justify-center gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <button 
-            onClick={onReset}
-            className="px-6 py-3 bg-rose-50 hover:bg-rose-100/80 dark:bg-rose-950/20 dark:hover:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-full font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-2 border border-rose-100 dark:border-rose-900/30 shadow-sm"
+            onClick={() => {
+              if (window.confirm("This will clear all saved genomic data and force a reload. Continue?")) {
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) { registration.unregister(); }
+                  });
+                }
+                if ('caches' in window) {
+                  caches.keys().then((names) => {
+                    names.forEach(name => caches.delete(name));
+                  });
+                }
+                localStorage.clear();
+                sessionStorage.clear();
+                window.location.reload();
+              }
+            }}
+            className="px-6 py-3 w-full sm:w-auto bg-rose-50 hover:bg-rose-100/80 dark:bg-rose-950/20 dark:hover:bg-rose-950/40 text-rose-600 dark:text-rose-400 rounded-full font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 border border-rose-100 dark:border-rose-900/30 shadow-sm"
           >
-            Clear Local Cache
+            Clear Local Cache & Force Reload
           </button>
         </div>
 
