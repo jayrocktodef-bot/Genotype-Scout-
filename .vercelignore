@@ -1,0 +1,13 @@
+.vercel/
+.venv/
+scratch/
+android/
+dist/
+node_modules/
+*.onnx
+*.safetensors
+*.pyc
+__pycache__/
+.git/
+*.pack
+*.idx
