@@ -21,3 +21,6 @@ metadata.json
 scratch/
 aadr/
 .venv/\nscratch/\n*.pyc\n__pycache__/\n*.onnx\n*.safetensors
+node_modules/
+.venv/
+scripts/train_onnx/venv/
