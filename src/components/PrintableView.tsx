@@ -2,6 +2,41 @@ import React from 'react';
 import { ExportConfig } from './ExportModule';
 import { Activity, AlertTriangle, Dna, FlaskConical, CheckCircle } from 'lucide-react';
 
+const MODERN_POP_NAMES: Record<string, string> = {
+  'Nilotic-Omotic': 'East African (Nilotic)',
+  'Ancestral-South-Indian': 'South Asian (Dravidian)',
+  'North-European-Baltic': 'North European & Baltic',
+  'Uralic': 'Siberian & Uralic',
+  'Australo-Melanesian': 'Australo-Melanesian',
+  'East-Siberean': 'East Siberian',
+  'Ancestral-Yayoi': 'Japanese (Yayoi)',
+  'Caucasian-Near-Eastern': 'Caucasus & Near East',
+  'Tibeto-Burman': 'Tibeto-Burman',
+  'Austronesian': 'Southeast Asian (Austronesian)',
+  'Central-African-Pygmean': 'Central African (Pygmy)',
+  'Central-African-Hunter-Catherers': 'Central African Hunter-Gatherers',
+  'Nilo-Sahrian': 'Nilo-Saharan',
+  'North-African': 'North African',
+  'Gedrosia-Caucasian': 'Caucasus & West Asian',
+  'Cushitic': 'East African (Cushitic)',
+  'Congo-Pygmean': 'Congo Basin (Pygmy)',
+  'Bushmen': 'South African (Khoisan)',
+  'South-Meso-Amerindian': 'Mesoamerican & South Amerindian',
+  'South-West-European': 'Southwest European',
+  'North-Amerindian': 'North Amerindian',
+  'Arabic': 'Arabian',
+  'North-Circumpolar': 'Arctic & Circumpolar',
+  'Kalash': 'Hindukush (Kalash)',
+  'Papuan-Australian': 'Papuan & Australian',
+  'Baltic-Finnic': 'Baltic Finnic',
+  'Bantu': 'West/Central African (Bantu)'
+};
+
+const formatPopName = (name: string) => {
+  if (!name) return 'Unknown';
+  return MODERN_POP_NAMES[name] || name.replace(/-/g, ' ');
+};
+
 interface PrintableViewProps {
   config: ExportConfig;
   dataset: any;
@@ -96,53 +131,130 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
       )}
 
       {/* --- GENETIC REPORT --- */}
-      {config.reportType === 'genetic' && (
-        <div className="space-y-10">
-          <div className="break-inside-avoid bg-slate-50 p-6 rounded-xl border border-slate-200">
-            <h2 className="text-2xl font-black mb-4 flex items-center gap-3">
-              <Dna className="w-6 h-6 text-teal-600" />
-              Ancestry Overview
-            </h2>
-            <p className="text-slate-700">
-              This report contains population admixture estimations, deep ancestry oracle models, and haplogroup predictions.
-            </p>
+      {config.reportType === 'genetic' && (() => {
+        const continentalScores = oracleResults?.primary?.continentalScores || dataset?.analysis?.oracleResults?.primary?.continentalScores || {};
+        const continentalList = Object.entries(continentalScores)
+          .map(([name, val]) => ({ name, value: Number(val) }))
+          .sort((a, b) => b.value - a.value);
+
+        const subPopulations = oracleResults?.primary?.subPopulations || dataset?.analysis?.oracleResults?.primary?.subPopulations || {};
+        const affinityList = Object.values(subPopulations).flat()
+          .sort((a: any, b: any) => a.distance - b.distance)
+          .slice(0, 5);
+
+        const subpopOracle = dataset?.analysis?.subpopulationOracle;
+        const K61Mix = subpopOracle?.admixtureMix || [];
+        const sortedK61 = [...K61Mix]
+          .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
+          .slice(0, 6);
+
+        return (
+          <div className="space-y-10">
+            <div className="break-inside-avoid bg-slate-50 p-6 rounded-xl border border-slate-200">
+              <h2 className="text-2xl font-black mb-4 flex items-center gap-3">
+                <Dna className="w-6 h-6 text-teal-600" />
+                Ancestry Overview
+              </h2>
+              <p className="text-slate-700">
+                This report contains population admixture estimations, deep ancestry oracle models, and haplogroup predictions.
+              </p>
+            </div>
+
+            {/* Continental Admixture Section */}
+            {continentalList.length > 0 && (
+              <div className="break-inside-avoid space-y-4">
+                <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Continental Admixture</h3>
+                <div className="p-6 border border-slate-200 rounded-xl space-y-4">
+                  {continentalList.map((entry) => (
+                    <div key={entry.name} className="space-y-1">
+                      <div className="flex justify-between text-sm font-bold text-slate-700">
+                        <span>{entry.name}</span>
+                        <span className="font-mono">{entry.value.toFixed(1)}%</span>
+                      </div>
+                      <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200">
+                        <div 
+                          className="h-full rounded-full bg-teal-600" 
+                          style={{ width: `${entry.value}%` }} 
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Human Origins (K61) Admixture Solver Section */}
+            {sortedK61.length > 0 && (
+              <div className="break-inside-avoid space-y-4">
+                <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Human Origins (K61) Subpopulation Admixture</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {sortedK61.map((comp: any, idx: number) => (
+                    <div key={comp.popCode || comp.population || idx} className="p-4 border border-slate-200 rounded-xl flex flex-col justify-between bg-slate-50">
+                      <div className="flex justify-between items-start mb-2">
+                        <span className="text-[10px] font-mono text-slate-500 uppercase">Component #{idx + 1}</span>
+                        <span className="font-mono font-black text-teal-700 text-base">{Number(comp.percentage || 0).toFixed(1)}%</span>
+                      </div>
+                      <h4 className="font-bold text-slate-800 text-sm mb-2">{comp.name || comp.population}</h4>
+                      <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full rounded-full bg-teal-500" 
+                          style={{ width: `${comp.percentage}%` }} 
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Subpopulation Affinity Proximity */}
+            {affinityList.length > 0 && (
+              <div className="break-inside-avoid space-y-4">
+                <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Subpopulation Affinity (Genetic Proximity)</h3>
+                <div className="p-6 border border-slate-200 rounded-xl space-y-3">
+                  {affinityList.map((pop: any, idx: number) => {
+                    const closeness = Math.max(0, 100 - (pop.distance / 20) * 100);
+                    return (
+                      <div key={pop.name || idx} className="space-y-1">
+                        <div className="flex justify-between text-sm">
+                          <span className="font-bold text-slate-700">{idx + 1}. {formatPopName(pop.name)}</span>
+                          <span className="font-mono font-bold text-slate-600">Distance: {pop.distance.toFixed(3)}</span>
+                        </div>
+                        <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200">
+                          <div 
+                            className={`h-full rounded-full ${pop.distance < 3 ? 'bg-emerald-600' : pop.distance < 6 ? 'bg-blue-600' : 'bg-slate-400'}`} 
+                            style={{ width: `${closeness}%` }} 
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {dataset?.predictedYDNA && dataset.predictedYDNA.predicted && (
+              <div className="break-inside-avoid space-y-4">
+                <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Paternal Haplogroup</h3>
+                <div className="p-6 border border-slate-200 rounded-xl flex items-center justify-between bg-sky-50">
+                  <div className="text-3xl font-black text-sky-800">{dataset.predictedYDNA.predicted}</div>
+                  <div className="text-sky-600 font-bold uppercase text-sm">Y-DNA Lineage</div>
+                </div>
+              </div>
+            )}
+
+            {dataset?.predictedMtDNA && dataset.predictedMtDNA.predicted && (
+              <div className="break-inside-avoid space-y-4">
+                <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Maternal Haplogroup</h3>
+                <div className="p-6 border border-slate-200 rounded-xl flex items-center justify-between bg-fuchsia-50">
+                  <div className="text-3xl font-black text-fuchsia-800">{dataset.predictedMtDNA.predicted}</div>
+                  <div className="text-fuchsia-600 font-bold uppercase text-sm">mtDNA Lineage</div>
+                </div>
+              </div>
+            )}
           </div>
-
-          {oracleResults && oracleResults.mixed && (
-            <div className="break-inside-avoid space-y-6">
-              <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Primary Admixture (Oracle 2-Way)</h3>
-              <div className="p-6 border border-slate-200 rounded-xl grid grid-cols-2 gap-8">
-                {oracleResults.mixed.slice(0, 4).map((res: any, idx: number) => (
-                  <div key={idx} className="flex justify-between items-center border-b border-slate-100 pb-2">
-                    <span className="font-medium text-slate-700">{res.population1} & {res.population2}</span>
-                    <span className="font-mono font-bold text-teal-700">Distance: {res.distance.toFixed(4)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {dataset?.predictedYDNA && dataset.predictedYDNA.predicted && (
-            <div className="break-inside-avoid space-y-4">
-              <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Paternal Haplogroup</h3>
-              <div className="p-6 border border-slate-200 rounded-xl flex items-center justify-between bg-sky-50">
-                <div className="text-3xl font-black text-sky-800">{dataset.predictedYDNA.predicted}</div>
-                <div className="text-sky-600 font-bold uppercase text-sm">Y-DNA Lineage</div>
-              </div>
-            </div>
-          )}
-
-          {dataset?.predictedMtDNA && dataset.predictedMtDNA.predicted && (
-            <div className="break-inside-avoid space-y-4">
-              <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Maternal Haplogroup</h3>
-              <div className="p-6 border border-slate-200 rounded-xl flex items-center justify-between bg-fuchsia-50">
-                <div className="text-3xl font-black text-fuchsia-800">{dataset.predictedMtDNA.predicted}</div>
-                <div className="text-fuchsia-600 font-bold uppercase text-sm">mtDNA Lineage</div>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
+        );
+      })()}
 
       {/* --- FULL DATA TABLE (OPTIONAL) --- */}
       {config.filters.includeFullTable && dataset?.results && (

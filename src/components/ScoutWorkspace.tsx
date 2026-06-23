@@ -18,6 +18,9 @@ interface ScoutWorkspaceProps {
   onChangeUiMode: (mode: 'desktop' | 'classic') => void;
   currentApp: string | null;
   onOpenApp: (appId: string | null) => void;
+  datasets: any[];
+  activeDatasetIndex: number;
+  setActiveDatasetIndex: (i: number) => void;
   children?: React.ReactNode;
 }
 
@@ -41,6 +44,9 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
   onChangeUiMode,
   currentApp,
   onOpenApp,
+  datasets,
+  activeDatasetIndex,
+  setActiveDatasetIndex,
   children
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -177,13 +183,14 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
       imageUrl: '/assets/oracle_icon.png',
     },
     {
-      id: 'kinship',
-      name: 'Kinship & Relatives',
+      id: 'kit_comparison',
+      name: 'Kit Comparison',
       icon: Users,
       gradient: 'from-blue-400 to-indigo-600',
       glowColor: 'rgba(99, 102, 241, 0.45)',
-      targetTab: 'summary', // Default tab since it doesn't map cleanly to old layout
-      description: 'Compare multiple kits to detect IBD segments and predict relationships.',
+      targetTab: 'kit_comparison',
+      description: 'Side-by-side comparison of multiple kits, traits, and ancestry.',
+      imageUrl: '/assets/kit_comparison_icon.png',
     },
     {
       id: 'export',
@@ -248,7 +255,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="flex-1 flex flex-col max-w-7xl mx-auto w-full"
+              className="flex-1 flex flex-col max-w-[1600px] mx-auto w-full"
             >
               {/* Header Panel */}
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
@@ -276,6 +283,25 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
                       className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-sm text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all shadow-sm"
                     />
                   </div>
+
+                  {/* Dataset Picker Inline */}
+                  {datasets && datasets.length > 1 && (
+                    <div className="flex items-center gap-1 bg-white dark:bg-slate-800 p-1 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                      {datasets.map((d, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setActiveDatasetIndex(i)}
+                          className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all ${
+                            activeDatasetIndex === i 
+                              ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-sm' 
+                              : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700/50'
+                          }`}
+                        >
+                          {d.name?.split('.')[0] || `Kit ${i+1}`}
+                        </button>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Settings / Reset Controls */}
                   <button

@@ -53,25 +53,25 @@ import { getHaplogroupDetails } from "./utils/haplogroupDetails";
 import { calculateMarkerBenchmarks } from "./utils/markerBenchmarks";
 import { calculateFileIntegrity } from "./utils/statistics/qualityControl";
 import { applyConfidenceIntervals } from "./utils/statistics/admixtureRigor";
-import { FamousMatches } from "./components/FamousMatches";
-import { PopulationComparisonTab } from "./components/PopulationComparisonTab";
-import { MarkerBenchmarks } from "./components/MarkerBenchmarks";
-import SubpopulationBento from "./components/SubpopulationBento";
+const FamousMatches = lazy(() => import("./components/FamousMatches").then(m => ({ default: m.FamousMatches })));
+const PopulationComparisonTab = lazy(() => import("./components/PopulationComparisonTab").then(m => ({ default: m.PopulationComparisonTab })));
+const MarkerBenchmarks = lazy(() => import("./components/MarkerBenchmarks").then(m => ({ default: m.MarkerBenchmarks })));
+const SubpopulationBento = lazy(() => import("./components/SubpopulationBento"));
 import { processSubpopulations } from "./components/ancestryOracleLogic";
 import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
 
 import ScoutWorkspace from "./components/ScoutWorkspace";
-import { BloodTypeView } from "./components/BloodTypeView";
-import { HealthTraitsTab } from "./components/HealthTraitsTab";
+const BloodTypeView = lazy(() => import("./components/BloodTypeView").then(m => ({ default: m.BloodTypeView })));
+const HealthTraitsTab = lazy(() => import("./components/HealthTraitsTab").then(m => ({ default: m.HealthTraitsTab })));
 import { inferRhFactor } from "./services/bloodPredictorService";
 
-import { ModernAncestryOracle } from "./components/ModernAncestryOracle";
-import { NaiveAncestryOracle } from "./components/NaiveAncestryOracle";
-import { ChromosomePainterView } from "./components/ChromosomePainterView";
-import { AncientAncestryOracle } from "./components/AncientAncestryOracle";
-import { EngineAncestryOracle } from "./components/EngineAncestryOracle";
+const ModernAncestryOracle = lazy(() => import("./components/ModernAncestryOracle").then(m => ({ default: m.ModernAncestryOracle })));
+const NaiveAncestryOracle = lazy(() => import("./components/NaiveAncestryOracle").then(m => ({ default: m.NaiveAncestryOracle })));
+const ChromosomePainterView = lazy(() => import("./components/ChromosomePainterView").then(m => ({ default: m.ChromosomePainterView })));
+const AncientAncestryOracle = lazy(() => import("./components/AncientAncestryOracle").then(m => ({ default: m.AncientAncestryOracle })));
+const EngineAncestryOracle = lazy(() => import("./components/EngineAncestryOracle").then(m => ({ default: m.EngineAncestryOracle })));
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches, calculateArchaicIntrogression } from "./lib/AncientAdmixtureCalculator";
 import { calculateHistoricalClusterMatches } from "./engines/ancestry/historicalClusterEngine";
@@ -88,14 +88,14 @@ import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 import { AIGenomicAgent } from "./components/AIGenomicAgent";
-import { KinshipModule } from './components/KinshipModule';
+import { KitComparisonModule } from './components/KitComparisonModule';
 import { ExportModule, ExportConfig } from './components/ExportModule';
 import { PrintableView } from './components/PrintableView';
-import RareVariantsView from "./components/RareVariantsView";
+const RareVariantsView = lazy(() => import("./components/RareVariantsView"));
 import { HaplogroupBento } from "./components/HaplogroupBento";
 import { YDNABento } from "./components/YDNABento";
-import { ArchaicIntrogressionView } from "./components/ArchaicIntrogressionView";
-import { PolygenicScores } from "./components/PolygenicScores";
+const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogressionView").then(m => ({ default: m.ArchaicIntrogressionView })));
+const PolygenicScores = lazy(() => import("./components/PolygenicScores").then(m => ({ default: m.PolygenicScores })));
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "4.0.0-beta";
@@ -2725,6 +2725,12 @@ export default function App() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
+                <Suspense fallback={
+                  <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse">
+                    <div className="w-10 h-10 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-4" />
+                    <p className="font-bold tracking-widest uppercase text-xs">Loading Tool...</p>
+                  </div>
+                }>
                 {activeTab === 'dashboard' && (
                   <Dashboard 
                     oracleResults={oracleResults}
@@ -3093,6 +3099,7 @@ export default function App() {
                     </pre>
                   </div>
                 )}
+                </Suspense>
               </motion.div>
             </AnimatePresence>
           </>
@@ -3102,6 +3109,9 @@ export default function App() {
             populationProximity={populationProximity}
             dataset={datasets[activeDatasetIndex]}
             userSnps={snpMaps.current[activeDatasetIndex] || {}}
+            datasets={datasets}
+            activeDatasetIndex={activeDatasetIndex}
+            setActiveDatasetIndex={setActiveDatasetIndex}
             onNavigateToTab={(tab: string, subTab?: string) => {
               setActiveTab(tab as any);
               if (tab === 'ancestry' && subTab) {
@@ -3118,6 +3128,12 @@ export default function App() {
             currentApp={currentApp}
             onOpenApp={setCurrentApp}
           >
+            <Suspense fallback={
+              <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse">
+                <div className="w-10 h-10 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-4" />
+                <p className="font-bold tracking-widest uppercase text-xs">Initializing Analysis...</p>
+              </div>
+            }>
             {currentApp === 'profile' && (
               <div className="space-y-8 animate-fade-in">
                 <ProfileSummary 
@@ -3355,11 +3371,10 @@ export default function App() {
               </div>
             )}
 
-            {currentApp === 'kinship' && (
+            {currentApp === 'kit_comparison' && (
               <div className="space-y-8 animate-fade-in">
-                <KinshipModule 
+                <KitComparisonModule 
                   datasets={datasets} 
-                  activeDatasetIndex={activeDatasetIndex} 
                 />
               </div>
             )}
@@ -3381,6 +3396,7 @@ export default function App() {
                 </div>
               </>
             )}
+            </Suspense>
           </ScoutWorkspace>
         )}
       </div>

@@ -2,8 +2,40 @@
 import regionalWeights from '../../data/raw_aims/graf_10k_weights.json';
 import grafIndex from '../../data/raw_aims/graf_10k_index.json';
 
-const EUROPEAN_POPS = ["CEU", "GBR", "FIN", "IBS", "TSI"];
+const EUROPEAN_POPS = [
+  "CEU", "GBR", "FIN", "IBS", "TSI"
+];
 const EUROPEAN_BOOST = 1.05; // 5% boost for European fine-mapping
+
+// Helper for UI presentation of the real populations
+export const POPULATION_NAMES: Record<string, string> = {
+  "CEU": "Northwestern European (CEU)",
+  "GBR": "British & Irish (GBR)",
+  "FIN": "Finnish / Uralic (FIN)",
+  "IBS": "Iberian (IBS)",
+  "TSI": "Southern European / Italian (TSI)",
+  "ACB": "African Caribbean (ACB)",
+  "ASW": "African American (ASW)",
+  "ESN": "Esan in Nigeria (ESN)",
+  "GWD": "Gambian (GWD)",
+  "LWK": "Luhya in Kenya (LWK)",
+  "MSL": "Mende in Sierra Leone (MSL)",
+  "YRI": "Yoruba in Nigeria (YRI)",
+  "CDX": "Chinese Dai (CDX)",
+  "CHB": "Han Chinese (CHB)",
+  "CHS": "Southern Han Chinese (CHS)",
+  "JPT": "Japanese (JPT)",
+  "KHV": "Kinh in Vietnam (KHV)",
+  "BEB": "Bengali (BEB)",
+  "GIH": "Gujarati Indian (GIH)",
+  "ITU": "Indian Telugu (ITU)",
+  "PJL": "Punjabi (PJL)",
+  "STU": "Sri Lankan Tamil (STU)",
+  "CLM": "Colombian (CLM)",
+  "MXL": "Mexican (MXL)",
+  "PEL": "Peruvian (PEL)",
+  "PUR": "Puerto Rican (PUR)"
+};
 
 /**
  * Calculates the resonance (likelihood) of 26 sub-populations.

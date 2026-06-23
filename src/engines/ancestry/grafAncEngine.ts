@@ -27,7 +27,12 @@ const POP_NAME_MAP: Record<string, string> = {
   'CLM': 'Colombian',
   'PEL': 'Peruvian (Lima)',
   'ASW': 'African Ancestry (SW USA)',
-  'ACB': 'African Caribbean (Barbados)'
+  'ACB': 'African Caribbean (Barbados)',
+  'BALKAN': 'Balkan',
+  'BALTIC': 'Baltic',
+  'SLAVIC': 'Slavic (Eastern European)',
+  'SCANDINAVIAN': 'Scandinavian',
+  'BASQUE': 'Basque'
 };
 
 /**

@@ -93,7 +93,7 @@ const Navigation: React.FC<NavigationProps> = ({
                     : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
                 }`}
               >
-                Scout Mode
+                Scout Desktop
               </button>
               <button
                 onClick={() => onChangeUiMode('classic')}
