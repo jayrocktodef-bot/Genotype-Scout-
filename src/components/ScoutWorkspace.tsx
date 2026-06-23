@@ -30,7 +30,7 @@ export interface AppConfig {
   icon: React.ComponentType<any>;
   gradient: string;
   glowColor: string;
-  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'ai_agent';
+  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'ai_agent' | 'kit_comparison' | 'export';
   targetSubTab?: string;
   description: string;
   imageUrl?: string;

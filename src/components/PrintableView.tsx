@@ -245,7 +245,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
               <div className="break-inside-avoid space-y-4">
                 <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Paternal Haplogroup</h3>
                 <div className="p-6 border border-slate-200 rounded-xl flex items-center justify-between bg-sky-50">
-                  <div className="text-3xl font-black text-sky-800">{dataset.predictedYDNA.predicted}</div>
+                  <div className="text-3xl font-black text-sky-800">{dataset.predictedYDNA.phase2?.haplogroup || dataset.predictedYDNA.predicted?.name}</div>
                   <div className="text-sky-600 font-bold uppercase text-sm">Y-DNA Lineage</div>
                 </div>
               </div>

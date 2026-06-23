@@ -9,6 +9,7 @@ const getMasterAims = () => {
 import hoReferenceKernel from '../data/raw_aims/ho_modern_reference_kernel.json';
 import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
 import { getPopulationInfo } from '../services/populationMapper';
+import { solveNNLS } from '../utils/nnls';
 
 export interface AIM {
   rsid: string;
@@ -282,30 +283,9 @@ function resolveSnpName(userRsid: string, databaseKeys: string[], allowFuzzy = f
 }
 
 
-// Helper: Project an arbitrary vector to the probability simplex (non-negative and sum to 1)
-function projectToSimplex(v: Float32Array): Float32Array {
-  const n = v.length;
-  // MUST use a numerical sort comparator, otherwise JS sort() sorts lexicographically as strings!
-  const sorted = new Float32Array(v).sort((a, b) => b - a);
-  let runningSum = 0;
-  let rho = 0;
-  for (let i = 0; i < n; i++) {
-    runningSum += sorted[i];
-    if (sorted[i] + (1 - runningSum) / (i + 1) > 0) {
-      rho = i;
-    }
-  }
-  const theta = (1 - sorted.slice(0, rho + 1).reduce((a, b) => a + b, 0)) / (rho + 1);
-  const projected = new Float32Array(n);
-  for (let i = 0; i < n; i++) {
-    projected[i] = Math.max(0, v[i] + theta);
-  }
-  return projected;
-}
-
 /**
- * Pure TypeScript Non-Negative Least Squares (NNLS) simplex-projected solver.
- * Multi-source deconvolution of mixed ancestral profiles with simplex projection.
+ * Pure TypeScript Non-Negative Least Squares (NNLS) solver using Lawson-Hanson.
+ * Multi-source deconvolution of mixed ancestral profiles.
  */
 export function solveAdmixtureProportions(
   userDosages: Float32Array,
@@ -319,76 +299,39 @@ export function solveAdmixtureProportions(
   const P = popCodes.length;
   const M = userDosages.length;
 
-  // Initialize weights uniformly
-  let weights: any = new Float32Array(P);
-  for (let p = 0; p < P; p++) {
-    weights[p] = 1.0 / P;
-  }
-
-  // Precompute Hessian diagonals a[p] = sum_i (x_p[i]^2 * weight_i)
-  const a = new Float32Array(P);
-  for (let p = 0; p < P; p++) {
-    const x_p = popExpectedDosages[popCodes[p]];
-    let sumVal = 0;
-    for (let i = 0; i < M; i++) {
-      sumVal += x_p[i] * x_p[i] * aimWeights[i];
-    }
-    a[p] = sumVal || 1.0;
-  }
-
-  for (let iter = 0; iter < numIterations; iter++) {
-    let maxDelta = 0;
-    
-    // Predicted user dosage based on current weights
-    const predicted = new Float32Array(M);
-    for (let i = 0; i < M; i++) {
-      for (let p = 0; p < P; p++) {
-        predicted[i] += weights[p] * popExpectedDosages[popCodes[p]][i];
-      }
-    }
-
-    const nextWeights = new Float32Array(weights);
-
-    // Gauss-Seidel updates for each population weight
+  // Build A matrix (M x P)
+  // A[i][j] = expected dosage of marker i in pop j
+  const A: number[][] = new Array(M);
+  for (let i = 0; i < M; i++) {
+    A[i] = new Array(P);
     for (let p = 0; p < P; p++) {
-      let G_p = 0;
-      const x_p = popExpectedDosages[popCodes[p]];
-      
-      for (let i = 0; i < M; i++) {
-        const diff = userDosages[i] - predicted[i];
-        G_p -= diff * x_p[i] * aimWeights[i];
-      }
-      
-      const oldWeight = weights[p];
-      const newWeight = Math.max(0, oldWeight - G_p / a[p]);
-      nextWeights[p] = newWeight;
-      
-      const delta = newWeight - oldWeight;
-      if (delta !== 0) {
-        // Immediately update predicted values for the rest of the coordinate updates
-        for (let i = 0; i < M; i++) {
-          predicted[i] += delta * x_p[i];
-        }
-      }
-    }
-
-    // Project onto probability simplex (non-negative and sum to 1)
-    const projected = projectToSimplex(nextWeights);
-    for (let p = 0; p < P; p++) {
-      maxDelta = Math.max(maxDelta, Math.abs(projected[p] - weights[p]));
-    }
-    weights = projected;
-
-    // Early convergence check
-    if (maxDelta < 0.0001) {
-      break;
+      A[i][p] = popExpectedDosages[popCodes[p]][i];
     }
   }
+
+  // userDosages is Float32Array, convert to standard array for solveNNLS
+  const b = Array.from(userDosages);
+  const w = Array.from(aimWeights);
+
+  // To enforce sum(x) = 1, we augment A and b with a heavily weighted row.
+  // We want sum_p x_p = 1. So lambda * sum_p x_p = lambda.
+  const LAMBDA = 1000;
+  const augA = new Array(P).fill(LAMBDA);
+  A.push(augA);
+  b.push(LAMBDA);
+  w.push(1.0); // Augment weight
+
+  // Solve exact NNLS using Lawson-Hanson
+  const x = solveNNLS(A, b, w);
+
+  // Normalize exact proportions (to fix tiny floating point residuals from lambda enforcement)
+  const sum = x.reduce((acc, val) => acc + val, 0);
+  const normalized = sum > 0 ? x.map(val => val / sum) : x;
 
   const result: Record<string, number> = {};
   popCodes.forEach((code, idx) => {
-    if (weights[idx] > 0.005) { // Minimum listing threshold of 0.5%
-      result[code] = weights[idx] * 100;
+    if (normalized[idx] > 0.005) { // Minimum listing threshold of 0.5%
+      result[code] = normalized[idx] * 100;
     }
   });
 

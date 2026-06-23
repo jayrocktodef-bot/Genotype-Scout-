@@ -2,8 +2,7 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import rhData from '../data/blood_markers.json';
-import { inferRhFactor } from '../services/bloodPredictorService';
-
+import { calculateBloodType } from '../engines/bloodTypeCalculator';
 const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
   ABO: ["rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666"],
   Rh: ["rs590787", "rs676785", "rs28362459", "rs609320", "rs6762788", "rs118204008", "rs606429", "rs11124803", "rs118204007", "rs676185", "i4001527"],
@@ -184,54 +183,24 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
       return val || "--";
     };
 
-    // ABO Logic
-    const r719 = getGenotype("rs8176719") || "--"; // G = A, - = O
-    const r746 = getGenotype("rs8176746") || "--"; // G = A1, A = A2
-    const r747 = getGenotype("rs8176747") || "--"; // G = A, C = B
-    const r750 = getGenotype("rs8176750") || "--"; // G = B, A = A
-
-    let predicted = "Uncertain";
+    // Use the central blood type engine for both ABO and Rh calculations
+    const userSnpsForCalc: Record<string, string> = {};
+    const coreMarkers = ["rs8176719", "rs8176746", "rs8176747", "rs8176750", ...Object.keys(rhData.rhSystem)];
     
-    // Check for Type O (Homozygous deletion at rs8176719)
-    // Common formats: DD, --, del/del, -/-, O/O, D/D
-    const isHomozygousO = ["DD", "--", "O/O", "-/-", "D/D"].includes(r719) || (r719 || "").split('').every(c => c === '-' || c === 'D' || c === 'O');
-    
-    // Check for A and B alleles
-    const hasA = (r747 || "").includes('G') || (r750 || "").includes('A') || (r746 || "").includes('G');
-    const hasB = (r747 || "").includes('C') || (r750 || "").includes('G');
-    
-    if (r719 !== "--") {
-      if (isHomozygousO) {
-        predicted = "Type O";
-      } else {
-        // Heterozygous or homozygous for G (A/B)
-        if (hasA && hasB) predicted = "Type AB";
-        else if (hasA) predicted = "Type A";
-        else if (hasB) predicted = "Type B";
-        else predicted = "Type O (Likely)"; // Should have matched A or B if G is present
-      }
-    } else if (hasA || hasB) {
-      // If 719 is missing but others aren't
-      if (hasA && hasB) predicted = "Type AB";
-      else if (hasA) predicted = "Type A";
-      else if (hasB) predicted = "Type B";
-    }
-
-    // Rh Logic leveraging surrogate inferRhFactor predictor
-    const genotypeMapForRh = new Map<string, string>();
-    Object.keys(rhData.rhSystem).forEach(rsid => {
+    coreMarkers.forEach(rsid => {
       const g = getGenotype(rsid);
       if (g && g !== "--") {
-        genotypeMapForRh.set(rsid, g);
+        userSnpsForCalc[rsid] = g;
       }
     });
 
-    const rhInference = inferRhFactor(genotypeMapForRh);
+    const bloodCalc = calculateBloodType(userSnpsForCalc);
+    const predicted = bloodCalc.details.abo !== "Unknown" ? `Type ${bloodCalc.details.abo}` : "Uncertain";
 
     let dType = "Unknown";
-    if (rhInference.phenotype !== "Unknown") {
-      const isPositive = rhInference.phenotype === "Positive";
-      const conf = rhInference.confidence;
+    if (bloodCalc.details.rhPhenotype !== "Unknown") {
+      const isPositive = bloodCalc.details.rhPhenotype === "Positive";
+      const conf = bloodCalc.details.rhConfidence || 0;
       if (conf >= 0.8) {
         dType = isPositive ? "Rh+ (High Confidence)" : "Rh- (High Confidence)";
       } else if (conf >= 0.5) {

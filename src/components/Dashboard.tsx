@@ -41,7 +41,7 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   // 2. Haplogroups
   const mtHaplo = dataset?.predictedMtDNA?.predicted || "Not Detected";
-  const yHaplo = dataset?.predictedYDNA?.predicted || "N/A";
+  const yHaplo = dataset?.predictedYDNA?.phase2?.haplogroup || dataset?.predictedYDNA?.predicted?.name || "N/A";
 
   // 3. Health & Traits
   const rawResults = dataset?.results || [];

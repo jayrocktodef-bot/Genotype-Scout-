@@ -65,7 +65,7 @@ const masterAims = loadMasterAims();
 import ScoutWorkspace from "./components/ScoutWorkspace";
 const BloodTypeView = lazy(() => import("./components/BloodTypeView").then(m => ({ default: m.BloodTypeView })));
 const HealthTraitsTab = lazy(() => import("./components/HealthTraitsTab").then(m => ({ default: m.HealthTraitsTab })));
-import { inferRhFactor } from "./services/bloodPredictorService";
+import { calculateBloodType } from "./engines/bloodTypeCalculator";
 
 const ModernAncestryOracle = lazy(() => import("./components/ModernAncestryOracle").then(m => ({ default: m.ModernAncestryOracle })));
 const NaiveAncestryOracle = lazy(() => import("./components/NaiveAncestryOracle").then(m => ({ default: m.NaiveAncestryOracle })));
@@ -98,7 +98,7 @@ const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogre
 const PolygenicScores = lazy(() => import("./components/PolygenicScores").then(m => ({ default: m.PolygenicScores })));
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
-const VERSION = "4.0.0-beta";
+const VERSION = "5.0.0";
 
 const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace("haplogroup ", "").trim();
 
@@ -315,36 +315,39 @@ const ProfileSummary = memo(({
 
   const dataset = datasets[activeDatasetIndex];
 
-  const rhInference = useMemo(() => {
-    return inferRhFactor(userSnps || {});
+  const bloodTypeAnalysis = useMemo(() => {
+    return calculateBloodType(userSnps || {});
   }, [userSnps]);
 
   const rhDisplay = useMemo(() => {
-    if (!rhInference || rhInference.phenotype === "Unknown") {
+    if (!bloodTypeAnalysis || bloodTypeAnalysis.details.rhPhenotype === "Unknown") {
       return { 
-        name: "Unknown", 
+        name: bloodTypeAnalysis?.bloodType || "Unknown", 
         badge: "Confidence 0.0", 
-        pillColor: "bg-slate-600 shadow-slate-600/10"
+        pillColor: "bg-slate-600 shadow-slate-600/10",
+        label: "Predicted Blood Type"
       };
     }
-    const isPos = rhInference.phenotype === "Positive";
-    const name = isPos ? "Rh+ Factor" : "Rh- Factor";
-    const confPercent = Math.round(rhInference.confidence * 100);
+    const isPos = bloodTypeAnalysis.details.rhPhenotype === "Positive";
+    const bloodTypeStr = bloodTypeAnalysis.bloodType !== "Unknown" ? bloodTypeAnalysis.bloodType : (isPos ? "Rh+" : "Rh-");
+    const confPercent = Math.round((bloodTypeAnalysis.details.rhConfidence || 0) * 100);
     
-    if (rhInference.confidence >= 0.8) {
+    if ((bloodTypeAnalysis.details.rhConfidence || 0) >= 0.8) {
       return { 
-        name, 
+        name: bloodTypeStr, 
         badge: `High Confidence (${confPercent}%)`, 
-        pillColor: "bg-red-600 shadow-red-600/10"
+        pillColor: "bg-red-600 shadow-red-600/10",
+        label: "Predicted Blood Type"
       };
     } else {
       return { 
-        name: `Likely ${isPos ? "Rh+" : "Rh-"}`, 
+        name: `Likely ${bloodTypeStr}`, 
         badge: `Moderate/Low Confidence (${confPercent}%)`, 
-        pillColor: "bg-amber-600 shadow-amber-600/10"
+        pillColor: "bg-amber-600 shadow-amber-600/10",
+        label: "Predicted Blood Type"
       };
     }
-  }, [rhInference]);
+  }, [bloodTypeAnalysis]);
 
   const statisticalInsights = useMemo(() => {
     const stats = oracleResults?.statistical;
@@ -490,8 +493,8 @@ const ProfileSummary = memo(({
               </div>
               <div className="min-w-0">
                 <span className="text-[8px] font-black text-teal-600 uppercase tracking-widest block leading-none mb-0.5">Paternal haplogroup (y-dna)</span>
-                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{yData?.predicted?.name || 'Unknown / Female lineage'}</span>
-                <span className="text-[9px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.2">{yData?.predicted?.continent || 'Universal Genetic Origin'}</span>
+                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{yData?.phase2?.haplogroup || yData?.predicted?.name || 'Unknown / Female lineage'}</span>
+                <span className="text-[9px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.2">{yData?.phase2?.region || yData?.predicted?.continent || 'Universal Genetic Origin'}</span>
               </div>
             </div>
 
@@ -507,13 +510,13 @@ const ProfileSummary = memo(({
               </div>
             </div>
 
-            {/* Rh Factor Card */}
+            {/* Blood Type Card */}
             <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-red-50/10 border border-red-100/30 flex gap-3 items-center">
               <div className={`w-8 h-8 rounded-xl text-white flex items-center justify-center shrink-0 shadow-sm ${rhDisplay.pillColor}`}>
                 <FlaskConical className="w-4 h-4" />
               </div>
               <div className="min-w-0">
-                <span className="text-[8px] font-black text-red-600 uppercase tracking-widest block leading-none mb-0.5">Rhesus Factor (RHCE Surrogate)</span>
+                <span className="text-[8px] font-black text-red-600 uppercase tracking-widest block leading-none mb-0.5">{rhDisplay.label || "Predicted Blood Type"}</span>
                 <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{rhDisplay.name}</span>
                 <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.2">{rhDisplay.badge}</span>
               </div>
@@ -1906,7 +1909,7 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'ai_agent'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'ai_agent' | 'kit_comparison' | 'export'>('dashboard');
   const [uiMode, setUiMode] = useState<'desktop' | 'classic'>('desktop');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
