@@ -10,6 +10,8 @@ import hoReferenceKernel from '../data/raw_aims/ho_modern_reference_kernel.json'
 import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
 import { getPopulationInfo } from '../services/populationMapper';
 import { solveNNLS } from '../utils/nnls';
+import { pruneMarkersByPhysicalDistance } from '../utils/ancestry/ldPruner';
+import forensicPanels from '../data/raw_aims/forensic_panels.json';
 
 export interface AIM {
   rsid: string;
@@ -109,6 +111,34 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'MZJ': 'Mizrahi Jewish / Middle Eastern (MZJ)',
   'YMJ': 'Yemenite Jewish / Arabian (YMJ)',
   'MEL': 'Melungeon / Appalachian Tri-Racial (MEL)',
+  // SGDP Injected Populations
+  'sgdp_luo': 'Luo / Nilotic East African (Luo)',
+  'sgdp_masai': 'Maasai / Nilotic East African (Masai)',
+  'sgdp_jew_iraqi': 'Mizrahi Jewish / Iraqi (SGDP)',
+  'sgdp_jew_yemenite': 'Yemenite Jewish (SGDP)',
+  'sgdp_samaritan': 'Samaritan (SGDP)',
+  'sgdp_karitiana': 'Karitiana / Amazonian (SGDP)',
+  'sgdp_surui': 'Surui / Amazonian (SGDP)',
+  'sgdp_pima': 'Pima / Central American (SGDP)',
+  'sgdp_mixe': 'Mixe / Mexican Indigenous (SGDP)',
+  'sgdp_mixtec': 'Mixtec / Mexican Indigenous (SGDP)',
+  'sgdp_mayan': 'Maya / Central American (SGDP)',
+  'sgdp_mexico_zapotec': 'Zapotec / Mexican Indigenous (SGDP)',
+  'sgdp_quechua': 'Quechua / Andean (SGDP)',
+  'sgdp_piapoco': 'Piapoco / Orinoco (SGDP)',
+  // Middle Eastern, North African, and Spanish Injected Populations
+  'sgdp_spanish': 'Spanish / Southern European (SGDP)',
+  'sgdp_saharawi': 'Saharawi / North African (SGDP)',
+  'sgdp_mozabite': 'Mozabite / North African (SGDP)',
+  'hgdp_mozabite': 'Mozabite / North African (HGDP)',
+  'sgdp_bedouinb': 'Bedouin / Arabian Peninsula (SGDP)',
+  'sgdp_druze': 'Druze / Levant (SGDP)',
+  'sgdp_palestinian': 'Palestinian / Levant (SGDP)',
+  'sgdp_jordanian': 'Jordanian / Levant (SGDP)',
+  'sgdp_iranian': 'Iranian / Middle Eastern (SGDP)',
+  'hgdp_bedouin': 'Bedouin / Arabian Peninsula (HGDP)',
+  'hgdp_druze': 'Druze / Levant (HGDP)',
+  'hgdp_palestinian': 'Palestinian / Levant (HGDP)',
   // US Synthetic Demographics
   'IRISH_AM': 'Irish American / Celtic (IRISH_AM)',
   'ITALIAN_AM': 'Italian American / Southern European (ITALIAN_AM)',
@@ -131,13 +161,13 @@ const MACRO_GROUPS: Record<string, string[]> = {
   'AFR': [
     'ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI',
     'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_AfAm', 'ALFA_African', 'AFR_gnomAD',
-    'GLL'
+    'GLL', 'sgdp_luo', 'sgdp_masai'
   ],
   'EUR': [
     'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
     'AMI_gnomAD', 'NFE_gnomAD', 'FIN_gnomAD', 'ALFA_EUR',
     'ASJ_gnomAD', 'ASJ', 'SEJ',
-    'IRISH_AM', 'ITALIAN_AM', 'GERMAN_AM'
+    'IRISH_AM', 'ITALIAN_AM', 'GERMAN_AM', 'sgdp_spanish'
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
@@ -152,10 +182,15 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'CLM', 'MXL', 'PEL', 'PUR',
     'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD',
     'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL',
-    'CUBAN_AM', 'DOMINICAN_AM'
+    'CUBAN_AM', 'DOMINICAN_AM',
+    'sgdp_karitiana', 'sgdp_surui', 'sgdp_pima', 'sgdp_mixe', 'sgdp_mixtec', 
+    'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco'
   ],
   'MENA': [
-    'MID_gnomAD', 'MZJ', 'YMJ'
+    'MID_gnomAD', 'MZJ', 'YMJ', 'sgdp_jew_iraqi', 'sgdp_jew_yemenite', 'sgdp_samaritan',
+    'sgdp_saharawi', 'sgdp_mozabite', 'hgdp_mozabite', 'sgdp_bedouinb', 'sgdp_druze', 
+    'sgdp_palestinian', 'sgdp_jordanian', 'sgdp_iranian', 'hgdp_bedouin', 'hgdp_druze', 
+    'hgdp_palestinian'
   ]
 };
 
@@ -345,7 +380,8 @@ export function processSubpopulations(
   userGenotypes: UserGenotype[],
   aimsDatabase: AIM[],
   sampleId?: string,
-  snpMetaMap?: Record<string, { chrom: string; pos: number }>
+  snpMetaMap?: Record<string, { chrom: string; pos: number }>,
+  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' = 'all'
 ): OracleResult {
   const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
@@ -393,11 +429,18 @@ export function processSubpopulations(
 
   // --- COMPONENT 1: Spatial Gene-Locus Mapping (All Available Markers) ---
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
+  const markersToPrune: Array<{ rsid: string; dbKey: string; chromosome: string; position: number; genotype: string; gene?: string; weight: number }> = [];
 
-  // Group matched AIMS by chromosome to apply physical distance-based LD pruning (density filter)
-  const chromGroups: Record<string, Array<{ rsid: string; dbKey: string; position: number; genotype: string; aim: any }>> = {};
-  
   for (const [rsid, genotype] of genotypeMap.entries()) {
+    // Apply panel filter if specified
+    if (panel !== 'all') {
+      const panelSet = new Set((forensicPanels as any)[panel]?.map((id: string) => id.toLowerCase()) || []);
+      const baseRsid = rsid.split('_')[0].toLowerCase();
+      if (!panelSet.has(baseRsid)) {
+        continue;
+      }
+    }
+
     const dbKey = dbBaseMap.get(rsid) || rsid;
     const aim = normalizedDatabase[dbKey] || normalizedDatabase[dbKey.toUpperCase()] || normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
     if (aim) {
@@ -453,9 +496,15 @@ export function processSubpopulations(
       };
 
       if (chrom && typeof position === 'number' && !isNaN(position)) {
-        const chromStr = String(chrom).toUpperCase();
-        if (!chromGroups[chromStr]) chromGroups[chromStr] = [];
-        chromGroups[chromStr].push({ rsid, dbKey: dbKey.toLowerCase(), position, genotype: alignedGenotype, aim });
+        markersToPrune.push({
+          rsid,
+          dbKey: dbKey.toLowerCase(),
+          chromosome: String(chrom),
+          position,
+          genotype: alignedGenotype,
+          gene: aim.gene,
+          weight: (aim.weight || 1.0) * popVarianceWeight
+        });
       } else {
         // If coordinate metadata is missing, fallback to including it directly
         prunedGenotypesMap.set(rsid, entry);
@@ -464,39 +513,13 @@ export function processSubpopulations(
     }
   }
 
-  // Apply 50kb sliding window LD Pruning for each chromosome.
-  // 50kb is more appropriate than 250kb: African populations have shorter LD blocks (~5-20kb)
-  // and a coarser window discards too many informative African markers.
-  const LD_WINDOW_BP = 50000;
-  for (const chrom in chromGroups) {
-    const sortedMarkers = chromGroups[chrom].sort((a, b) => a.position - b.position);
-    let lastPosition = -1;
-    
-    for (const marker of sortedMarkers) {
-      if (lastPosition === -1 || (marker.position - lastPosition) >= LD_WINDOW_BP) {
-        lastPosition = marker.position;
-        
-        let popVarianceWeight = 1.5;
-        const aim = marker.aim;
-        if (aim.frequencies) {
-          const freqs = Object.values(aim.frequencies) as number[];
-          if (freqs.length > 1) {
-            const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
-            const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
-            popVarianceWeight = 0.5 + (variance * 4.0);
-          }
-        }
-        
-        const entry = {
-          genotype: marker.genotype,
-          gene: aim.gene,
-          weight: (aim.weight || 1.0) * popVarianceWeight
-        };
-        prunedGenotypesMap.set(marker.rsid, entry);
-        prunedGenotypesMap.set(marker.dbKey, entry);
-      }
-    }
-  }
+  // Use the centralized pruner with 50kb physical distance threshold
+  const prunedList = pruneMarkersByPhysicalDistance(markersToPrune, 50000);
+  prunedList.forEach(m => {
+    const entry = { genotype: m.genotype, gene: m.gene, weight: m.weight };
+    prunedGenotypesMap.set(m.rsid, entry);
+    prunedGenotypesMap.set(m.dbKey, entry);
+  });
 
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
@@ -870,12 +893,52 @@ export function processSubpopulations(
     }
   });
 
-  // Calculate the Multi-source Admixture profile with NNLS
-  // Lower the threshold from 10 to 5 to help underrepresented populations
+  // Calculate the Multi-source Admixture profile with Hierarchical (Two-Pass) Admixture Routing
   let admixtureMix: AdmixtureComponent[] = [];
   if (activeM >= 5) {
-    const mixProportions = solveAdmixtureProportions(nnlsUserDosages, nnlsPopExpectedDosages, nnlsWeights);
-    admixtureMix = Object.entries(mixProportions)
+    // Pass 1: Run initial NNLS across all reference subpopulations
+    const firstPassProportions = solveAdmixtureProportions(nnlsUserDosages, nnlsPopExpectedDosages, nnlsWeights);
+    
+    // Aggregate continental ancestry percentages based on MACRO_GROUPS
+    const continentalAncestry: Record<string, number> = {
+      'EUR': 0, 'AFR': 0, 'EAS': 0, 'SAS': 0, 'AMR': 0, 'MENA': 0
+    };
+    Object.entries(firstPassProportions).forEach(([popCode, pct]) => {
+      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'EUR';
+      continentalAncestry[macroCode] = (continentalAncestry[macroCode] || 0) + pct;
+    });
+
+    // Sub-select populations: include continental groups with >= 2.0% ancestry
+    const activeMacroGroups = Object.entries(continentalAncestry)
+      .filter(([_, pct]) => pct >= 2.0)
+      .map(([macro, _]) => macro);
+
+    // Fallback if no group meets the threshold: select the single macro group with the highest percentage
+    if (activeMacroGroups.length === 0) {
+      let maxPct = -1;
+      let maxMacro = 'EUR';
+      Object.entries(continentalAncestry).forEach(([macro, pct]) => {
+        if (pct > maxPct) {
+          maxPct = pct;
+          maxMacro = macro;
+        }
+      });
+      activeMacroGroups.push(maxMacro);
+    }
+
+    // Pass 2: Filter reference clades to only keep populations in active continental groups
+    const filteredPopExpectedDosages: Record<string, Float32Array> = {};
+    for (const popCode of Object.keys(nnlsPopExpectedDosages)) {
+      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'EUR';
+      if (activeMacroGroups.includes(macroCode)) {
+        filteredPopExpectedDosages[popCode] = nnlsPopExpectedDosages[popCode];
+      }
+    }
+
+    // Run final Pass 2 NNLS deconvolution on sub-selected populations
+    const finalProportions = solveAdmixtureProportions(nnlsUserDosages, filteredPopExpectedDosages, nnlsWeights);
+
+    admixtureMix = Object.entries(finalProportions)
       .map(([popCode, percentage]) => ({
         popCode,
         name: POPULATION_NAMES_MAP[popCode] || popCode,

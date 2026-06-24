@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { processSubpopulations, AIM, UserGenotype } from './ancestryOracleLogic';
+import { deconvolveMicrohaplotypes } from '../utils/ancestry/microhapAdmixture';
 import { motion } from 'motion/react';
 import { Target, Layers, Info, Activity } from 'lucide-react';
 
@@ -9,17 +10,37 @@ interface BentoProps {
   precalculated?: any;
 }
 
+type PanelType = 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'microhap';
+
 const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated }) => {
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
+  const [selectedPanel, setSelectedPanel] = useState<PanelType>('all');
 
-  // Run or inherit Oracle Logic
+  // Run or inherit Oracle Logic with panel filter
   const results = useMemo(() => {
-    if (precalculated) {
+    if (selectedPanel === 'microhap') {
+      const userSnps = Object.fromEntries(userGenotypes.map(g => [g.rsid, g.genotype]));
+      const mix = deconvolveMicrohaplotypes(userSnps);
+      return {
+        topMatch: mix[0]?.name || 'Unknown',
+        subpopAimsUsed: mix.length,
+        unmappedAims: [],
+        breakdown: mix.map(m => ({
+          subpop: m.name,
+          distance: 1.0 - (m.percentage / 100.0),
+          similarityScore: m.percentage,
+          markersCompared: mix.length,
+          count: mix.length
+        })),
+        admixtureMix: mix
+      };
+    }
+    if (selectedPanel === 'all' && precalculated) {
       return precalculated;
     }
-    return processSubpopulations(userGenotypes, aimsDatabase);
-  }, [userGenotypes, aimsDatabase, precalculated]);
+    return processSubpopulations(userGenotypes, aimsDatabase, undefined, undefined, selectedPanel);
+  }, [userGenotypes, aimsDatabase, precalculated, selectedPanel]);
 
   if (!results) {
     return <div className="text-slate-400 p-8 text-center">Processing genomic oracle...</div>;
@@ -44,7 +65,21 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             <p className="text-[10px] uppercase tracking-widest font-black text-teal-500">Genetic Distance Engine</p>
           </div>
         </div>
+        
+        {/* Selector Panel Dropdown */}
         <div className="flex flex-wrap items-center gap-2">
+          <select
+            value={selectedPanel}
+            onChange={(e) => setSelectedPanel(e.target.value as PanelType)}
+            className="bg-slate-800 border border-white/10 rounded-xl px-3 py-1.5 text-xs text-slate-300 font-bold focus:outline-none focus:ring-2 focus:ring-teal-500"
+          >
+            <option value="all">Global Reference (All AIMs)</option>
+            <option value="kidd55">Kidd Lab 55 AIMs (Kidd55)</option>
+            <option value="seldin128">Seldin Lab 128 AIMs</option>
+            <option value="euroforgen">EuroForGen European Substructure</option>
+            <option value="microhap">Microhaplotypes (Top 100 Multi-Allelic)</option>
+          </select>
+
           <button 
             type="button"
             onClick={() => setShowExplain(!showExplain)}
@@ -77,6 +112,9 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             <li>
               <strong>Euclidean Genetic Distance:</strong> Calculates the raw vector distance between the user's genotype dosages and the K61 Human Origins reference population allele frequencies. Lower distances indicate closer genetic similarity.
             </li>
+            <li>
+              <strong>Microhaplotypes:</strong> Leverage small genomic regions containing closely linked SNPs to extract multi-allelic haplotype dosages for high-precision Mixed Deconvolution.
+            </li>
           </ul>
         </motion.div>
       )}
@@ -89,7 +127,9 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             {breakdownList.length > 0 ? (breakdownList[0] as any).name || breakdownList[0].subpop : 'Calculating optimal match...'}
           </h1>
           <p className="text-xs text-slate-400 font-mono">
-            Population with the absolute lowest genetic distance (highest allele sharing).
+            {selectedPanel === 'microhap' 
+              ? 'NNLS Mixture proportion deconvolution from microhaplotype regions.' 
+              : 'Population with the absolute lowest genetic distance (highest allele sharing) in chosen panel.'}
           </p>
         </div>
       </div>

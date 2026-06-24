@@ -1201,71 +1201,33 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
 
   return (
     <div className="animate-fade-up space-y-6">
-      <div className="grid grid-cols-1 gap-6">
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-8 opacity-20 text-9xl">♂️</div>
-          <div className="relative z-10">
-            <h3 className="text-blue-100 font-bold uppercase tracking-widest text-xs mb-2">Paternal Lineage</h3>
-            {yData.predicted ? (
-              <>
-                <h2 className="text-5xl font-black mb-4 tracking-tighter">{yData.predicted.name}</h2>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Marker: {yData.predicted.marker}</span>
-                  <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold shadow-sm">Region: {yData.predicted.continent}</span>
-                  <Phase2Badge phase2={yData.phase2} />
-                </div>
-                <p className="text-blue-50 text-sm leading-relaxed max-w-xl font-medium opacity-90 border-l-2 border-blue-300/30 pl-4 py-1 italic mb-6">
-                  {yData.predicted.description || "Tracing the unbroken paternal line across civilizations and continents."}
-                </p>
-                
-                {/* Lineage Path Highlight */}
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <h4 className="text-[10px] font-bold text-blue-200 uppercase tracking-widest mb-3">Predicted Paternal Path</h4>
-                  <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
-                    {yData.path.map((step: string, idx: number) => (
-                      <div key={idx} className="flex items-center gap-1">
-                        {idx > 0 && <span className="text-blue-300/50 text-[10px]">▶</span>}
-                        <span className={`px-2 py-1 rounded text-[10px] font-bold ${idx === yData.path.length - 1 ? 'bg-white text-blue-700 shadow-lg' : 'bg-white/10 text-white'}`}>
-                          {(step || '').replace("Haplogroup ", "")}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </>
-            ) : (
-              <h2 className="text-3xl font-bold">No haplogroup detected</h2>
-            )}
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:col-span-1">
+          <YDNABento yData={yData} />
         </div>
         
         {/* Combined Paternal Heritage Card */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-           <div className="md:col-span-5 lg:col-span-4">
-           </div>
+        <div className="md:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-center space-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
+              <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Defining SNP</div>
+              <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.phase2?.haplogroup || yData.predicted?.marker}</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
+              <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Path Depth</div>
+              <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.path.length} Steps</div>
+            </div>
+          </div>
 
-           <div className="md:col-span-7 lg:col-span-8 flex flex-col justify-center h-full space-y-8">
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
-                   <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Defining SNP</div>
-                   <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.predicted?.marker}</div>
-                </div>
-                <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
-                   <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Path Depth</div>
-                   <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.path.length} Steps</div>
-                </div>
-             </div>
-
-             <div className="p-6 rounded-2xl bg-blue-50/30 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/20 flex items-center justify-between">
-                <div className="flex items-center gap-3 text-[12px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">
-                   <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-                   Lineage Support Confidence
-                </div>
-                <div className="text-lg font-black text-blue-700 dark:text-blue-300">
-                  {derivedMarkers.length} Derived Markers
-                </div>
-             </div>
-           </div>
+          <div className="p-6 rounded-2xl bg-blue-50/30 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/20 flex items-center justify-between">
+            <div className="flex items-center gap-3 text-[12px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+              Lineage Support Confidence
+            </div>
+            <div className="text-lg font-black text-blue-700 dark:text-blue-300">
+              {derivedMarkers.length} Derived Markers
+            </div>
+          </div>
         </div>
       </div>
       
@@ -1479,41 +1441,9 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   return (
     <div className="animate-fade-up space-y-8 pb-12">
       {/* Hero Prediction Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div 
-          className="lg:col-span-1 bg-gradient-to-br from-rose-500 to-pink-700 p-8 rounded-[2rem] text-white shadow-2xl relative overflow-hidden group"
-        >
-          <div className="absolute -top-10 -right-10 opacity-10 text-[12rem] select-none pointer-events-none group-hover:rotate-12 transition-transform duration-700">♀️</div>
-          <div className="relative z-10 h-full flex flex-col">
-            <h3 className="text-rose-100 font-bold uppercase tracking-[0.2em] text-[10px] mb-4 opacity-80">Maternal Lineage (mtDNA)</h3>
-            {mtData.predicted ? (
-              <>
-                <motion.h2 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 tracking-tighter"
-                >
-                  {mtData.predicted}
-                </motion.h2>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  <div className="px-5 py-2 bg-white/20 backdrop-blur-md rounded-2xl text-[11px] font-black shadow-sm flex items-center gap-2 border border-white/10 uppercase tracking-widest">
-                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    Confidence: {mtData.score}
-                  </div>
-                  <div className="px-5 py-2 bg-white/20 backdrop-blur-md rounded-2xl text-[11px] font-black shadow-sm border border-white/10 uppercase tracking-widest">
-                    {mtData.region}
-                  </div>
-                </div>
-                <div className="mt-auto">
-                  <p className="text-rose-50 text-sm leading-relaxed max-w-xl font-medium opacity-90 border-l-2 border-rose-300/30 pl-4 py-1 italic">
-                    {mtData.description || "Tracing the unbroken maternal line across civilizations and continents."}
-                  </p>
-                </div>
-              </>
-            ) : (
-              <h2 className="text-3xl font-bold">Lineage Pending...</h2>
-            )}
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-1">
+          <HaplogroupBento predictedMt={mtData} />
         </div>
 
         <div 
@@ -2166,10 +2096,10 @@ export default function App() {
       return;
     }
     
-    const MAX_FILE_SIZE = 2000 * 1024 * 1024; // 2GB
+    const MAX_FILE_SIZE = 150 * 1024 * 1024; // 150MB limit to prevent mobile browser OOM white-screens
     const largeFiles = fileArray.filter(f => f.size > MAX_FILE_SIZE);
     if (largeFiles.length > 0) {
-      setError(`File(s) too large: ${largeFiles.map(f => f.name).join(', ')}. Max size is 2GB.`);
+      setError(`File(s) too large: ${largeFiles.map(f => f.name).join(', ')}. Maximum file size is 150MB to prevent browser crashes.`);
       setProcessing(false);
       return;
     }
@@ -2983,28 +2913,18 @@ export default function App() {
                         </div>
 
                         {activeHaploType === 'paternal' ? (
-                          <div className="space-y-6">
-                            <YDNABento
-                              yData={datasets[activeDatasetIndex].predictedYDNA}
-                            />
-                            <YDNAView 
-                              yData={datasets[activeDatasetIndex].predictedYDNA} 
-                              treeSearchTerm={treeSearchTerm}
-                              setTreeSearchTerm={setTreeSearchTerm}
-                            />
-                          </div>
+                          <YDNAView 
+                            yData={datasets[activeDatasetIndex].predictedYDNA} 
+                            treeSearchTerm={treeSearchTerm}
+                            setTreeSearchTerm={setTreeSearchTerm}
+                          />
                         ) : (
-                          <div className="space-y-6">
-                            <HaplogroupBento 
-                              predictedMt={datasets[activeDatasetIndex].predictedMtDNA}
-                            />
-                            <MTDNAView 
-                              mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                              treeSearchTerm={treeSearchTerm}
-                              setTreeSearchTerm={setTreeSearchTerm}
-                              matchedTraits={userMatchedMitoTraits}
-                            />
-                          </div>
+                          <MTDNAView 
+                            mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                            treeSearchTerm={treeSearchTerm}
+                            setTreeSearchTerm={setTreeSearchTerm}
+                            matchedTraits={userMatchedMitoTraits}
+                          />
                         )}
                       </div>
                     ) : (
@@ -3223,28 +3143,18 @@ export default function App() {
                 </div>
 
                 {activeHaploType === 'paternal' ? (
-                  <div className="space-y-6">
-                    <YDNABento
-                      yData={datasets[activeDatasetIndex].predictedYDNA}
-                    />
-                    <YDNAView 
-                      yData={datasets[activeDatasetIndex].predictedYDNA} 
-                      treeSearchTerm={treeSearchTerm}
-                      setTreeSearchTerm={setTreeSearchTerm}
-                    />
-                  </div>
+                  <YDNAView 
+                    yData={datasets[activeDatasetIndex].predictedYDNA} 
+                    treeSearchTerm={treeSearchTerm}
+                    setTreeSearchTerm={setTreeSearchTerm}
+                  />
                 ) : (
-                  <div className="space-y-6">
-                    <HaplogroupBento 
-                      predictedMt={datasets[activeDatasetIndex].predictedMtDNA}
-                    />
-                    <MTDNAView 
-                      mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                      treeSearchTerm={treeSearchTerm}
-                      setTreeSearchTerm={setTreeSearchTerm}
-                      matchedTraits={userMatchedMitoTraits}
-                    />
-                  </div>
+                  <MTDNAView 
+                    mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                    treeSearchTerm={treeSearchTerm}
+                    setTreeSearchTerm={setTreeSearchTerm}
+                    matchedTraits={userMatchedMitoTraits}
+                  />
                 )}
               </div>
             )}

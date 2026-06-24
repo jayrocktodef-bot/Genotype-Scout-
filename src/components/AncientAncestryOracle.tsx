@@ -67,7 +67,7 @@ export const AncientAncestryOracle = memo(({
                     {(pop.score || 0).toFixed(1)}%
                   </span>
                   <span className="text-[10px] uppercase font-bold tracking-tighter text-amber-500/70">
-                    {type === 'matches' ? 'Genetic Match' : 'Affinity Score'}
+                    {type === 'matches' ? 'Genetic Match' : 'Admixture Proportion'}
                   </span>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export const AncientAncestryOracle = memo(({
               <div className="flex items-center justify-between pt-4 border-t border-white/5">
                 <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 truncate">
                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
-                   {pop.culture || 'Archaeological Sample'}
+                   {pop.culture || (type === 'matches' ? 'Archaeological Sample' : 'Reference Clade')}
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] font-mono text-slate-600">

@@ -1,5 +1,6 @@
 import { getAncestryMarkers } from '../data/GenomicDataService';
 import { solveNNLS } from '../utils/nnls';
+import { pruneMarkersByPhysicalDistance } from '../utils/ancestry/ldPruner';
 import { 
   graf10kIndex as grafIndex,
   forensicAimsMaster as forensicAims,
@@ -162,13 +163,28 @@ export function calculateProAncestry(
   // 2. Build/Get enhanced reference
   const { enhancedRef, allInformativeMarkers, markerWeightMap } = getEnhancedReference(referenceData);
 
-  // 3. Filter user SNPs (Optimized loop)
-  const informativeRsids: string[] = [];
+  // 3. Filter user SNPs with LD pruning
+  const unfilteredMarkers: Array<{ rsid: string; chromosome: string; position: number; weight: number }> = [];
   allInformativeMarkers.forEach(rsid => {
     if (normalizedUserSnps[rsid] && normalizedUserSnps[rsid] !== '--' && enhancedRef[rsid]) {
-      informativeRsids.push(rsid);
+      const idxMarker = (grafIndex as any)[rsid.toUpperCase()] || (grafIndex as any)[rsid];
+      const chrom = idxMarker?.chr || idxMarker?.chromosome || "Unknown";
+      const pos = Number(idxMarker?.pos || idxMarker?.position || 0);
+      const weight = markerWeightMap?.[rsid] || 1.0;
+      
+      if (chrom !== "Unknown" && pos > 0) {
+        unfilteredMarkers.push({
+          rsid,
+          chromosome: String(chrom),
+          position: pos,
+          weight
+        });
+      }
     }
   });
+
+  const prunedMarkers = pruneMarkersByPhysicalDistance(unfilteredMarkers, 50000);
+  const informativeRsids = prunedMarkers.map(m => m.rsid);
 
   // PREPARE MATRICES FOR NNLS
   const numPops = SUPER_POPS.length;

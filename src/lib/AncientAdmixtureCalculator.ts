@@ -1,5 +1,9 @@
 import { getAncientMarkers } from '../data/GenomicDataService';
 import masterAncient from '../data/master_ancient_profiles.json';
+import { solveNNLS } from '../utils/nnls';
+import ancientCladesFrequencies from '../data/raw_ancient/ancient_clades_frequencies.json';
+import grafWeights from '../data/raw_aims/graf_10k_weights.json';
+import grafIndex from '../data/raw_aims/graf_10k_index.json';
 
 export interface AncientSampleMatch {
   popCode: string;
@@ -32,107 +36,166 @@ export interface ArchaicIntrogressionResult {
   details: ArchaicVariantDetail[];
 }
 
-export const calculateAncientAdmixture = (userGenotypes: Record<string, string>) => {
-  const markers = getAncientMarkers();
-  const markersList = Object.entries(markers).filter(([rsid]) => !rsid.startsWith('_'));
-  const metadata = (markers as any)._metadata?.ancient_populations || {};
+const CLADE_INFO: Record<string, { name: string; region: string; period: string; description: string }> = {
+  Yamnaya: {
+    name: "Yamnaya Steppe Pastoralist",
+    region: "Pontic Steppe",
+    period: "Bronze Age (~3,300 BCE)",
+    description: "Bronze Age nomadic herders who migrated from the Pontic-Caspian steppe, massively altering Europe's genetic landscape."
+  },
+  WHG: {
+    name: "Western Hunter-Gatherer",
+    region: "Europe",
+    period: "Mesolithic (~8,000 BCE)",
+    description: "Post-Ice Age hunter-gatherers of Europe, genetically characterized by dark skin and light/blue eyes."
+  },
+  EEF: {
+    name: "Early European Farmer",
+    region: "Anatolia / Europe",
+    period: "Neolithic (~6,000 BCE)",
+    description: "Neolithic agriculturalists who migrated from Anatolia, introducing farming and lighter skin alleles into Europe."
+  },
+  Ancient_East_Asian: {
+    name: "Ancient East Asian / Paleo-Indian",
+    region: "East Asia / Siberia",
+    period: "Pleistocene (~15,000 BCE)",
+    description: "Paleolithic hunter-gatherers of East Asia and Siberia, ancestral to modern East Asians and Native Americans."
+  },
+  Ancient_African: {
+    name: "Ancient African",
+    region: "Sub-Saharan Africa",
+    period: "Paleolithic (~10,000 BCE)",
+    description: "Deeply diverse hunter-gatherer and early agricultural lineages that did not experience the Out-of-Africa bottleneck."
+  },
+  Oceanian: {
+    name: "Deep Oceanian / Sahul",
+    region: "Sahul / Melanesia",
+    period: "Pleistocene (~40,000 BCE)",
+    description: "Lineages of early modern human migrations to Papua New Guinea and Australia, retaining high levels of Denisovan admixture."
+  }
+};
 
-  const archaicPops = ['Neanderthal', 'Denisovan'];
-  const popCodes = Object.keys(metadata).filter(code => !archaicPops.includes(code));
+export const calculateAncientAdmixture = (userGenotypes: Record<string, string>): AncientSampleMatch[] => {
+  const clades = Object.keys(CLADE_INFO);
+  const A: number[][] = [];
+  const b: number[] = [];
+  const weights: number[] = [];
+  let markersCompared = 0;
 
-  // Initialize log-likelihoods and counts
-  const logLikelihoods: Record<string, number> = {};
-  const markerCounts: Record<string, number> = {};
-  
-  popCodes.forEach(code => {
-    logLikelihoods[code] = 0;
-    markerCounts[code] = 0;
-  });
-
-  // Map frequency category strings to estimated allele frequencies (p)
-  const getFreqValue = (freq: string): number => {
-    switch (freq?.toLowerCase()) {
-      case 'fixed': return 1.0;
-      case 'high': return 0.9;
-      case 'moderate':
-      case 'variable': return 0.5;
-      case 'low': return 0.2;
-      case 'rare': return 0.05;
-      case 'absent': return 0.0;
-      default: return 0.0;
+  // Normalized user SNPs
+  const normalizedUserSnps: Record<string, string> = {};
+  for (const rsid in userGenotypes) {
+    if (userGenotypes[rsid] && userGenotypes[rsid] !== '--') {
+      normalizedUserSnps[rsid.toLowerCase()] = userGenotypes[rsid];
     }
-  };
+  }
 
-  markersList.forEach(([rsid, marker]) => {
-    const userGenotype = userGenotypes[rsid];
-    if (!userGenotype || userGenotype === '--') return;
+  // Iterate over matched SNPs to build matrices for deconvolution
+  Object.keys(grafIndex).forEach(rsid => {
+    const genotype = normalizedUserSnps[rsid.toLowerCase()];
+    if (!genotype || genotype.length !== 2) return;
 
-    // Skip archaic markers for the Holocene admixture
-    if (marker.introgression || (marker.ancient_context && Object.keys(marker.ancient_context).every(k => archaicPops.includes(k)))) {
-      return;
-    }
+    const marker = (grafIndex as any)[rsid];
+    if (!marker) return;
 
-    const derivedAllele = marker.derived_allele;
-    if (!derivedAllele) return;
+    const ref = marker.ref.toUpperCase();
+    const alt = marker.alt.toUpperCase();
 
-    // Count derived alleles (0, 1, or 2)
-    let derivedCount = 0;
-    if (userGenotype.length === 1) {
-      if (userGenotype === derivedAllele) derivedCount = 2;
-    } else if (userGenotype.length === 2) {
-      if (userGenotype[0] === derivedAllele) derivedCount++;
-      if (userGenotype[1] === derivedAllele) derivedCount++;
-    }
+    // Determine ALT allele dosage (0, 1, or 2)
+    let uDosage = 0;
+    if (genotype[0] === alt) uDosage++;
+    if (genotype[1] === alt) uDosage++;
 
-    popCodes.forEach(popCode => {
-      const context = marker.ancient_context?.[popCode];
-      const p = context ? getFreqValue(context.frequency) : 0.0;
-      
-      // Apply Laplace smoothing to keep frequencies strictly within [0.01, 0.99]
-      const adjP = Math.max(0.01, Math.min(0.99, p));
-      
-      // Calculate Hardy-Weinberg genotype probabilities
-      let prob = 1.0;
-      if (derivedCount === 2) {
-        prob = adjP * adjP;
-      } else if (derivedCount === 1) {
-        prob = 2 * adjP * (1 - adjP);
-      } else {
-        prob = (1 - adjP) * (1 - adjP);
+    // Compile expected dosages for all clades
+    const popExpectations: number[] = Array(clades.length).fill(0);
+    let validCount = 0;
+
+    clades.forEach((clade, idx) => {
+      let freq = 0.5; // fallback prior
+
+      if (clade === "WHG" || clade === "EEF" || clade === "Yamnaya") {
+        const cladeFreqs = (ancientCladesFrequencies as any)[rsid] || (ancientCladesFrequencies as any)[rsid.toLowerCase()];
+        if (cladeFreqs && cladeFreqs[clade] !== undefined) {
+          freq = cladeFreqs[clade];
+          validCount++;
+        }
+      } else if (clade === "Ancient_East_Asian") {
+        const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
+        if (w) {
+          const han = w["sgdp_han"] ?? 0.5;
+          const jpt = w["sgdp_japanese"] ?? 0.5;
+          const dai = w["sgdp_dai"] ?? 0.5;
+          freq = (han + jpt + dai) / 3.0;
+          validCount++;
+        }
+      } else if (clade === "Ancient_African") {
+        const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
+        if (w) {
+          const yri = w["sgdp_yoruba"] ?? 0.5;
+          const mbuti = w["sgdp_mbuti"] ?? 0.5;
+          const san = w["sgdp_khomani_san"] ?? 0.5;
+          freq = (yri + mbuti + san) / 3.0;
+          validCount++;
+        }
+      } else if (clade === "Oceanian") {
+        const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
+        if (w) {
+          const papuan = w["sgdp_papuan"] ?? w["sgdp_papuan.dg"] ?? 0.5;
+          const boug = w["sgdp_bougainville"] ?? w["sgdp_bougainville.dg"] ?? 0.5;
+          freq = (papuan + boug) / 2.0;
+          validCount++;
+        }
       }
 
-      logLikelihoods[popCode] += Math.log(prob);
-      markerCounts[popCode] += 1;
+      popExpectations[idx] = freq * 2.0; // expected continuous dosage [0, 2]
     });
+
+    if (validCount > 0) {
+      A.push(popExpectations);
+      b.push(uDosage);
+      weights.push(1.0); // uniform weight for global ancient markers
+      markersCompared++;
+    }
   });
 
-  // Convert log-likelihoods to relative percentages using Softmax normalization
-  const maxLog = Math.max(...Object.values(logLikelihoods));
-  const relProbs: Record<string, number> = {};
-  let sumRelProbs = 0;
+  if (markersCompared < 5) {
+    // Return empty results if insufficient marker coverage
+    return [];
+  }
 
-  popCodes.forEach(code => {
-    const rel = Math.exp(logLikelihoods[code] - maxLog);
-    relProbs[code] = rel;
-    sumRelProbs += rel;
-  });
+  // To enforce sum(proportions) = 1, augment with a heavily weighted constraint row
+  const P = clades.length;
+  const LAMBDA = 1000;
+  const A_aug = [...A];
+  const b_aug = [...b];
+  const w_aug = [...weights];
 
-  const finalMatches: AncientSampleMatch[] = popCodes
-    .map(popCode => {
-      const popInfo = metadata[popCode] || {};
-      const score = sumRelProbs > 0 ? (relProbs[popCode] / sumRelProbs) * 100 : 0;
-      
-      return {
-        popCode,
-        popName: popInfo.name || popCode,
-        score,
-        description: popInfo.description || '',
-        period: popInfo.period || '',
-        region: popInfo.region || '',
-        matchingMarkers: markerCounts[popCode] || 0
-      };
-    })
-    .sort((a, b) => b.score - a.score);
+  const augRow = new Array(P).fill(LAMBDA);
+  A_aug.push(augRow);
+  b_aug.push(LAMBDA);
+  w_aug.push(1.0);
+
+  // Solve exact deconvolution using Lawson-Hanson NNLS
+  const x = solveNNLS(A_aug, b_aug, w_aug);
+  const sum = x.reduce((acc, val) => acc + val, 0);
+  const normalized = sum > 0 ? x.map(val => val / sum) : x;
+
+  const finalMatches: AncientSampleMatch[] = clades.map((clade, idx) => {
+    const info = CLADE_INFO[clade];
+    const score = normalized[idx] * 100;
+
+    return {
+      popCode: clade,
+      popName: info.name,
+      score: score,
+      description: info.description,
+      period: info.period,
+      region: info.region,
+      matchingMarkers: markersCompared
+    };
+  })
+  .filter(r => r.score >= 0.1) // omit trace scores < 0.1%
+  .sort((a, b) => b.score - a.score);
 
   return finalMatches;
 };
@@ -151,7 +214,7 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
       
     if (!source) return;
 
-    const userGenotype = userGenotypes[rsid];
+    const userGenotype = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
     if (!userGenotype || userGenotype === '--') return;
 
     comparedMarkers++;
@@ -232,7 +295,7 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
     const sampleSnps = sample.snps || sample.genotypes || {};
     
     Object.entries(sampleSnps).forEach(([rsid, sampleGenotype]) => {
-      const userGenotype = userGenotypes[rsid];
+      const userGenotype = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
       if (userGenotype && sampleGenotype) {
         markersCompared++;
         const weight = markerImportance[rsid] || 1.0;
@@ -274,7 +337,10 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
       description: sample.description,
       period: sample.period,
       region: sample.region,
-      matchingMarkers: Object.keys(sampleSnps).filter(rsid => userGenotypes[rsid] && userGenotypes[rsid] === sampleSnps[rsid]).length,
+      matchingMarkers: Object.keys(sampleSnps).filter(rsid => {
+        const uG = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
+        return uG && uG === sampleSnps[rsid];
+      }).length,
       culture: sample.culture_name || sample.culture,
       age_bp: sample.age_bp
     } as AncientSampleMatch & { distance: number };
