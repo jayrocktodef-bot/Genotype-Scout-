@@ -2485,6 +2485,7 @@ export default function App() {
         onInstallApp={handleInstallApp}
         uiMode={uiMode}
         onChangeUiMode={handleUiModeChange}
+        onReset={resetApp}
       />
 
       <input 

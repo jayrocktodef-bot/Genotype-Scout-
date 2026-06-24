@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, User, BookOpen, Sun, Moon, Download, Sparkles, Users, Zap } from 'lucide-react';
+import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, User, BookOpen, Sun, Moon, Download, Sparkles, Users, Zap, Trash2 } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -13,6 +13,7 @@ interface NavigationProps {
   isInstallable?: boolean;
   uiMode?: 'desktop' | 'classic';
   onChangeUiMode?: (mode: 'desktop' | 'classic') => void;
+  onReset?: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ 
@@ -25,7 +26,8 @@ const Navigation: React.FC<NavigationProps> = ({
   onInstallApp,
   isInstallable = false,
   uiMode = 'desktop',
-  onChangeUiMode
+  onChangeUiMode,
+  onReset
 }) => {
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
@@ -38,7 +40,8 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'rare_variants', label: 'Rare Variants', icon: Zap },
     { id: 'kit_comparison', label: 'Compare Kits', icon: Users },
     { id: 'export', label: 'Export', icon: Download },
-    { id: 'methodology', label: 'Methodology', icon: BookOpen }
+    { id: 'methodology', label: 'Methodology', icon: BookOpen },
+    { id: 'clear_cache', label: 'Clear Cache', icon: Trash2 }
   ];
 
   return (
@@ -69,6 +72,12 @@ const Navigation: React.FC<NavigationProps> = ({
               <button
                 key={tab.id}
                 onClick={() => {
+                  if (tab.id === 'clear_cache') {
+                    if (window.confirm("This will clear all saved genomic data and force a reload. Continue?")) {
+                      if (onReset) onReset();
+                    }
+                    return;
+                  }
                   onTabChange(tab.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
@@ -151,6 +160,12 @@ const Navigation: React.FC<NavigationProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => {
+                    if (tab.id === 'clear_cache') {
+                      if (window.confirm("This will clear all saved genomic data and force a reload. Continue?")) {
+                        if (onReset) onReset();
+                      }
+                      return;
+                    }
                     onTabChange(tab.id);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}

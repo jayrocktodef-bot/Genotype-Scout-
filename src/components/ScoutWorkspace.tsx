@@ -220,10 +220,25 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
       targetTab: 'methodology',
       description: 'Learn the underlying math, science, and calculation engines.',
       imageUrl: '/assets/methodology_icon.png',
+    },
+    {
+      id: 'clear_cache',
+      name: 'Clear Cache',
+      icon: Trash2,
+      gradient: 'from-rose-500 to-red-600',
+      glowColor: 'rgba(244, 63, 94, 0.45)',
+      targetTab: 'clear_cache',
+      description: 'Hard reset your local browser cache and reload the application.',
     }
   ], []);
 
   const handleLaunchModule = (moduleId: string) => {
+    if (moduleId === 'clear_cache') {
+      if (window.confirm("This will clear all saved genomic data and force a reload. Continue?")) {
+        onReset();
+      }
+      return;
+    }
     const selectedModule = modules.find(m => m.id === moduleId);
     if (!selectedModule) return;
     onNavigateToTab(selectedModule.targetTab, selectedModule.targetSubTab);
@@ -336,7 +351,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
                   >
                     <div className="flex items-center gap-4 mb-4">
                       <div 
-                        className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0 shadow-lg`}
+                        className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0 shadow-lg`}
                         style={{ boxShadow: `0 8px 16px -4px ${mod.glowColor}` }}
                       >
                         {mod.imageUrl ? (
