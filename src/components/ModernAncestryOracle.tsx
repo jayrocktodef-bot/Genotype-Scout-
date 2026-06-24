@@ -7,9 +7,11 @@ import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
 const POP_COLORS: Record<string, string> = {
   EUR: '#3b82f6',
   AFR: '#10b981',
+  AFRAM: '#059669',
   EAS: '#ef4444',
   SAS: '#f59e0b',
   AMR: '#a855f7',
+  AMER: '#db2777',
   OCE: '#06b6d4',
   MID: '#f97316'
 };
@@ -89,11 +91,25 @@ export const ModernAncestryOracle = memo(({
   }, [results.userSnps]);
 
   const chartData = useMemo(() => {
-    return Object.entries(continentalScores).map(([key, value]) => ({
-      subject: key === 'AMR' ? 'American' : (key === 'EAS' ? 'East Asian' : (key === 'SAS' ? 'South Asian' : (key === 'AFR' ? 'African' : (key === 'EUR' ? 'European' : key)))),
-      A: Number(value),
-      fullMark: 100,
-    }));
+    return Object.entries(continentalScores).map(([key, value]) => {
+      let label = key;
+      if (key === 'AMR') label = 'Indigenous American';
+      else if (key === 'AMER') label = 'Admixed American';
+      else if (key === 'EAS') label = 'East Asian';
+      else if (key === 'SAS') label = 'South Asian';
+      else if (key === 'AFR') label = 'African';
+      else if (key === 'AFRAM') label = 'African-American';
+      else if (key === 'EUR') label = 'European';
+      else if (key === 'MENA') label = 'Middle Eastern';
+      else if (key === 'OCE') label = 'Oceanian';
+      else if (key === 'CAS') label = 'Central Asian & Siberian';
+      
+      return {
+        subject: label,
+        A: Number(value),
+        fullMark: 100,
+      };
+    });
   }, [continentalScores]);
 
   const hasData = Object.keys(continentalScores).length > 0;
@@ -110,9 +126,14 @@ export const ModernAncestryOracle = memo(({
     const map: Record<string, string> = {
       'EUR': 'European',
       'AFR': 'African',
+      'AFRAM': 'African-American',
       'EAS': 'East Asian',
       'SAS': 'South Asian',
-      'AMR': 'Native American'
+      'AMR': 'Indigenous American',
+      'AMER': 'Admixed American',
+      'MENA': 'Middle Eastern / North African',
+      'OCE': 'Oceanian',
+      'CAS': 'Central Asian & Siberian'
     };
     return map[code] || code;
   };

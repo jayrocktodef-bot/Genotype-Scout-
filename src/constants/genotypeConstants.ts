@@ -8,6 +8,8 @@ export const CONTINENT_META: Record<string, {color: string, icon: string}> = {
   "Central Asian":  {color:"#f59e0b", icon:"🌏"},
   "South Asian":    {color:"#f472b6", icon:"🇮🇳"},
   "North African":  {color:"#c084fc", icon:"🏜️"},
+  "African-American":{color:"#059669", icon:"🇺🇸"},
+  "Admixed American": {color:"#db2777", icon:"🇺🇸"},
   "Global":         {color:"#10b981", icon:"🌐"}
 };
 
@@ -31,7 +33,9 @@ export const REGION_CODES: Record<string, string> = {
   MENA: 'Middle Eastern',
   OCE: 'Oceanian',
   NAFR: 'North African',
-  CAS: 'Central Asian'
+  CAS: 'Central Asian',
+  AFRAM: 'African-American',
+  AMER: 'Admixed American'
 };
 
 export const CONTINENT_TO_CODE: Record<string, string> = {
@@ -43,7 +47,9 @@ export const CONTINENT_TO_CODE: Record<string, string> = {
   'Middle Eastern': 'MENA',
   'North African': 'NAFR',
   'Oceanian': 'OCE',
-  'Central Asian': 'CAS'
+  'Central Asian': 'CAS',
+  'African-American': 'AFRAM',
+  'Admixed American': 'AMER'
 };
 
 export const IUPAC_MAP: Record<string, string> = {

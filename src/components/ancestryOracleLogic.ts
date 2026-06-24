@@ -114,6 +114,23 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   // SGDP Injected Populations
   'sgdp_luo': 'Luo / Nilotic East African (Luo)',
   'sgdp_masai': 'Maasai / Nilotic East African (Masai)',
+  'sgdp_bantuherero': 'Herero / Southern Bantu (SGDP)',
+  'sgdp_bantukenya': 'Kenya Bantu / East African (SGDP)',
+  'sgdp_bantutswana': 'Tswana / Southern Bantu (SGDP)',
+  'sgdp_biaka': 'Biaka Pygmy / Central African (SGDP)',
+  'sgdp_mbuti': 'Mbuti Pygmy / Central African (SGDP)',
+  'sgdp_khomani_san': '‡Khomani San / Southern African (SGDP)',
+  'sgdp_ju_hoan_north': 'Ju|\'hoansi / San Hunter-Gatherer (SGDP)',
+  'sgdp_somali': 'Somali / Cushitic East African (SGDP)',
+  'sgdp_malagasy': 'Malagasy / Madagascar (SGDP)',
+  'sgdp_yoruba': 'Yoruba / West African (SGDP)',
+  'sgdp_mandenka': 'Mandenka / West African (SGDP)',
+  'sgdp_mende': 'Mende / Sierra Leonean (SGDP)',
+  'sgdp_esan': 'Esan / Nigerian (SGDP)',
+  'sgdp_gambian': 'Gambian / West African (SGDP)',
+  'sgdp_luhya': 'Luhya / East African (SGDP)',
+  'hgdp_yoruba': 'Yoruba / West African (HGDP)',
+  'hgdp_mandenka': 'Mandenka / West African (HGDP)',
   'sgdp_jew_iraqi': 'Mizrahi Jewish / Iraqi (SGDP)',
   'sgdp_jew_yemenite': 'Yemenite Jewish (SGDP)',
   'sgdp_samaritan': 'Samaritan (SGDP)',
@@ -126,6 +143,11 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'sgdp_mexico_zapotec': 'Zapotec / Mexican Indigenous (SGDP)',
   'sgdp_quechua': 'Quechua / Andean (SGDP)',
   'sgdp_piapoco': 'Piapoco / Orinoco (SGDP)',
+  'sgdp_tlingit': 'Tlingit / Pacific Northwest Indigenous (SGDP)',
+  'sgdp_aleut': 'Aleutian Islander / Eskimo-Aleut (SGDP)',
+  'sgdp_eskimo_chaplin': 'Siberian Eskimo / Chaplin (SGDP)',
+  'sgdp_eskimo_naukan': 'Siberian Eskimo / Naukan (SGDP)',
+  'sgdp_eskimo_sireniki': 'Siberian Eskimo / Sireniki (SGDP)',
   // Middle Eastern, North African, and Spanish Injected Populations
   'sgdp_spanish': 'Spanish / Southern European (SGDP)',
   'sgdp_saharawi': 'Saharawi / North African (SGDP)',
@@ -139,6 +161,38 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'hgdp_bedouin': 'Bedouin / Arabian Peninsula (HGDP)',
   'hgdp_druze': 'Druze / Levant (HGDP)',
   'hgdp_palestinian': 'Palestinian / Levant (HGDP)',
+  // Oceanian and Central Asian / Siberian Injected Populations
+  'sgdp_australian': 'Aboriginal Australian (SGDP)',
+  'sgdp_bougainville': 'Bougainville Islander (SGDP)',
+  'sgdp_hawaiian': 'Native Hawaiian / Polynesian (SGDP)',
+  'sgdp_maori': 'Māori / Polynesian (SGDP)',
+  'sgdp_papuan': 'Papuan / Oceanian (SGDP)',
+  'sgdp_altaian': 'Altaian / Siberian (SGDP)',
+  'sgdp_chukchi': 'Chukchi / Siberian (SGDP)',
+  'sgdp_even': 'Even / Siberian (SGDP)',
+  'sgdp_itelmen': 'Itelmen / Siberian (SGDP)',
+  'sgdp_kyrgyz_kyrgyzstan': 'Kyrgyz / Central Asian (SGDP)',
+  'sgdp_mansi': 'Mansi / Siberian (SGDP)',
+  'sgdp_tubalar': 'Tubalar / Siberian (SGDP)',
+  'sgdp_ulchi': 'Ulchi / Siberian (SGDP)',
+  'sgdp_uyghur': 'Uyghur / Central Asian (SGDP)',
+  'sgdp_yakut': 'Yakut / Siberian (SGDP)',
+  'hgdp_yakut': 'Yakut / Siberian (HGDP)',
+  'hgdp_uygur': 'Uyghur / Central Asian (HGDP)',
+  'hgdp_mongola': 'Mongolian / East Asian (HGDP)',
+  'sgdp_mongola': 'Mongolian / East Asian (SGDP)',
+  'hgdp_hazara': 'Hazara / Central Asian (HGDP)',
+  'sgdp_hazara': 'Hazara / Central Asian (SGDP)',
+  'hgdp_daur': 'Daur / East Asian (HGDP)',
+  'sgdp_daur': 'Daur / East Asian (SGDP)',
+  'hgdp_hezhen': 'Hezhen / East Asian (HGDP)',
+  'sgdp_hezhen': 'Hezhen / East Asian (SGDP)',
+  'hgdp_oroqen': 'Oroqen / Siberian (HGDP)',
+  'sgdp_oroqen': 'Oroqen / Siberian (SGDP)',
+  'hgdp_tujia': 'Tujia / East Asian (HGDP)',
+  'sgdp_tujia': 'Tujia / East Asian (SGDP)',
+  'hgdp_xibo': 'Xibo / East Asian (HGDP)',
+  'sgdp_xibo': 'Xibo / East Asian (SGDP)',
   // US Synthetic Demographics
   'IRISH_AM': 'Irish American / Celtic (IRISH_AM)',
   'ITALIAN_AM': 'Italian American / Southern European (ITALIAN_AM)',
@@ -147,21 +201,36 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'DOMINICAN_AM': 'Dominican American / Caribbean (DOMINICAN_AM)',
   'FILIPINO_AM': 'Filipino American / SE Asian (FILIPINO_AM)',
   'VIETNAMESE_AM': 'Vietnamese American / SE Asian (VIETNAMESE_AM)',
+  'AFRAM_SOUTH': 'African-American / Southern US (AFRAM_SOUTH)',
+  'AFRAM_NORTHEAST': 'African-American / Northeast US (AFRAM_NORTHEAST)',
+  'AFRAM_WEST': 'African-American / Western US (AFRAM_WEST)',
+  'LOUISIANA_CREOLE': 'Louisiana Creole / Tri-Racial (LOUISIANA_CREOLE)',
   // Superpopulations and Global References
   'ALL': 'Global Reference (ALL)',
   'EUR': 'European Reference (EUR)',
   'AFR': 'African Reference (AFR)',
   'EAS': 'East Asian Reference (EAS)',
   'SAS': 'South Asian Reference (SAS)',
-  'AMR': 'Indigenous American Reference (AMR)'
+  'AMR': 'Indigenous American Reference (AMR)',
+  'MENA': 'Middle Eastern Reference (MENA)',
+  'OCE': 'Oceanian Reference (OCE)',
+  'CAS': 'Central Asian & Siberian Reference (CAS)'
 };
 
 // Macro-continental Group Classifications for Hierarchy-Aware Matching
 const MACRO_GROUPS: Record<string, string[]> = {
   'AFR': [
-    'ACB', 'ASW', 'ESN', 'GWD', 'LWK', 'MSL', 'YRI',
-    'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_AfAm', 'ALFA_African', 'AFR_gnomAD',
-    'GLL', 'sgdp_luo', 'sgdp_masai'
+    'ESN', 'GWD', 'LWK', 'MSL', 'YRI',
+    'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_African', 'AFR_gnomAD',
+    'sgdp_luo', 'sgdp_masai', 'sgdp_bantuherero', 'sgdp_bantukenya', 
+    'sgdp_bantutswana', 'sgdp_biaka', 'sgdp_mbuti', 'sgdp_khomani_san', 
+    'sgdp_ju_hoan_north', 'sgdp_somali', 'sgdp_malagasy', 'sgdp_yoruba', 
+    'sgdp_mandenka', 'sgdp_mende', 'sgdp_esan', 'sgdp_gambian', 'sgdp_luhya',
+    'hgdp_yoruba', 'hgdp_mandenka'
+  ],
+  'AFRAM': [
+    'ACB', 'ASW', 'GLL', 'ALFA_AfAm', 'AFRAM_SOUTH', 'AFRAM_NORTHEAST', 
+    'AFRAM_WEST', 'LOUISIANA_CREOLE'
   ],
   'EUR': [
     'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
@@ -179,18 +248,31 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'SAS_gnomAD', 'ALFA_SAS'
   ],
   'AMR': [
-    'CLM', 'MXL', 'PEL', 'PUR',
-    'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD',
-    'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL',
-    'CUBAN_AM', 'DOMINICAN_AM',
+    'PEL', 'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL',
     'sgdp_karitiana', 'sgdp_surui', 'sgdp_pima', 'sgdp_mixe', 'sgdp_mixtec', 
-    'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco'
+    'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco',
+    'sgdp_tlingit', 'sgdp_aleut', 'sgdp_eskimo_chaplin', 'sgdp_eskimo_naukan',
+    'sgdp_eskimo_sireniki'
+  ],
+  'AMER': [
+    'CLM', 'MXL', 'PUR', 'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD',
+    'CUBAN_AM', 'DOMINICAN_AM'
   ],
   'MENA': [
     'MID_gnomAD', 'MZJ', 'YMJ', 'sgdp_jew_iraqi', 'sgdp_jew_yemenite', 'sgdp_samaritan',
     'sgdp_saharawi', 'sgdp_mozabite', 'hgdp_mozabite', 'sgdp_bedouinb', 'sgdp_druze', 
     'sgdp_palestinian', 'sgdp_jordanian', 'sgdp_iranian', 'hgdp_bedouin', 'hgdp_druze', 
     'hgdp_palestinian'
+  ],
+  'OCE': [
+    'sgdp_australian', 'sgdp_bougainville', 'sgdp_hawaiian', 'sgdp_maori', 'sgdp_papuan'
+  ],
+  'CAS': [
+    'sgdp_altaian', 'sgdp_chukchi', 'sgdp_even', 'sgdp_itelmen', 'sgdp_kyrgyz_kyrgyzstan', 
+    'sgdp_mansi', 'sgdp_tubalar', 'sgdp_ulchi', 'sgdp_uyghur', 'sgdp_yakut', 'hgdp_yakut', 
+    'hgdp_uygur', 'hgdp_mongola', 'sgdp_mongola', 'hgdp_hazara', 'sgdp_hazara',
+    'hgdp_daur', 'sgdp_daur', 'hgdp_hezhen', 'sgdp_hezhen', 'hgdp_oroqen', 'sgdp_oroqen',
+    'hgdp_tujia', 'sgdp_tujia', 'hgdp_xibo', 'sgdp_xibo'
   ]
 };
 
@@ -812,11 +894,15 @@ export function processSubpopulations(
   } else {
     const SUPER_POP_LABELS: Record<string, string> = {
       'AFR': 'African (AFR)',
+      'AFRAM': 'African-American (AFRAM)',
       'EUR': 'European (EUR)',
       'EAS': 'East Asian (EAS)',
       'SAS': 'South Asian (SAS)',
       'AMR': 'Indigenous American (AMR)',
-      'MENA': 'Middle Eastern / North African (MENA)'
+      'AMER': 'Admixed American (AMER)',
+      'MENA': 'Middle Eastern / North African (MENA)',
+      'OCE': 'Oceanian (OCE)',
+      'CAS': 'Central Asian & Siberian (CAS)'
     };
     // Use the detected dominant macro — 'UNKNOWN' is surfaced as 'Undetermined'
     // rather than silently defaulting to European.
@@ -901,7 +987,7 @@ export function processSubpopulations(
     
     // Aggregate continental ancestry percentages based on MACRO_GROUPS
     const continentalAncestry: Record<string, number> = {
-      'EUR': 0, 'AFR': 0, 'EAS': 0, 'SAS': 0, 'AMR': 0, 'MENA': 0
+      'EUR': 0, 'AFR': 0, 'AFRAM': 0, 'EAS': 0, 'SAS': 0, 'AMR': 0, 'AMER': 0, 'MENA': 0, 'OCE': 0, 'CAS': 0
     };
     Object.entries(firstPassProportions).forEach(([popCode, pct]) => {
       const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'EUR';
@@ -950,11 +1036,15 @@ export function processSubpopulations(
   if (admixtureMix.length === 0) {
     const SUPER_POP_LABELS: Record<string, string> = {
       'AFR': 'African (AFR)',
+      'AFRAM': 'African-American (AFRAM)',
       'EUR': 'European (EUR)',
       'EAS': 'East Asian (EAS)',
       'SAS': 'South Asian (SAS)',
       'AMR': 'Indigenous American (AMR)',
-      'MENA': 'Middle Eastern / North African (MENA)'
+      'AMER': 'Admixed American (AMER)',
+      'MENA': 'Middle Eastern / North African (MENA)',
+      'OCE': 'Oceanian (OCE)',
+      'CAS': 'Central Asian & Siberian (CAS)'
     };
     // Use the actual dominant macro rather than defaulting to EUR
     admixtureMix.push({
