@@ -772,7 +772,7 @@ export function processSubpopulations(
   // NNLS (Component 4 below) handles admixture proportions; the breakdown list
   // is now sorted purely by distance with no post-hoc adjustments.
   const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number }> = [];
-  const MIN_MARKERS = 5; // Lower from 10 to improve coverage for underrepresented populations
+  const MIN_MARKERS = panel !== 'all' ? 1 : 5; // Lower limit when a panel is active so thin marker sets do not result in empty breakdowns
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     const finalDistance = popDistances.get(popCode) ?? 1.0;
