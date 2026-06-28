@@ -277,7 +277,7 @@ export function calculateSubPopResonance(userGenotypes: Record<string, string>) 
       
       // Apply boost for European AIMs
       const boost = EUROPEAN_POPS.includes(pop) ? EUROPEAN_BOOST : 1.0;
-      popScores[pop] += Math.log(prob) * boost;
+      popScores[pop] += Math.log(prob) / boost;
     });
   });
 

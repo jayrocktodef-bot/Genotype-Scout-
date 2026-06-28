@@ -105,6 +105,7 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'CHK': 'Cherokee / Southern Appalachian (CHK)',
   'LNP': 'Lenape / Delaware Woodlands (LNP)',
   'NAN': 'Nanticoke / Delmarva Indigenous-Admixed (NAN)',
+  'CAT': 'Catawba / Piedmont Siouan Admixture Proxy (CAT)',
   'WDN': 'Eastern Woodlands Indigenous (WDN)',
   'ASJ': 'Ashkenazi Jewish / European (ASJ)',
   'SEJ': 'Sephardic Jewish / Mediterranean (SEJ)',
@@ -248,7 +249,7 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'SAS_gnomAD', 'ALFA_SAS'
   ],
   'AMR': [
-    'PEL', 'LMB', 'CHK', 'LNP', 'NAN', 'WDN', 'MEL',
+    'PEL', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL',
     'sgdp_karitiana', 'sgdp_surui', 'sgdp_pima', 'sgdp_mixe', 'sgdp_mixtec', 
     'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco',
     'sgdp_tlingit', 'sgdp_aleut', 'sgdp_eskimo_chaplin', 'sgdp_eskimo_naukan',

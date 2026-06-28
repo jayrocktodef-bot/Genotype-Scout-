@@ -680,8 +680,8 @@ export function runAncestryInference(
     }
   }
 
-  const applyHaploWeight = (regionStr: string | null | undefined) => {
-    if (!regionStr) return;
+  const applyHaploWeight = (regionStr: string | null | undefined, rawTotal: number) => {
+    if (!regionStr || rawTotal === 0) return;
     
     // Map common high-level haplogroup regions detected to continental priors
     const HAPLO_PRIOR_MAP: Record<string, string> = {
@@ -706,13 +706,15 @@ export function runAncestryInference(
         'East Asian': 2.0,
         'South Asian': 2.0,
       };
-      const boost = BOOST_MAP[targetContinent] || 1.5; 
-      continentalCounts[targetContinent] = (continentalCounts[targetContinent] || 0) + boost;
+      const boostPercent = BOOST_MAP[targetContinent] || 1.5; 
+      const boostVal = (rawTotal * boostPercent) / 100.0;
+      continentalCounts[targetContinent] = (continentalCounts[targetContinent] || 0) + boostVal;
     }
   };
 
-  applyHaploWeight(yHaploRegion);
-  applyHaploWeight(mtHaploRegion);
+  const rawTotalSegments = Object.values(continentalCounts).reduce((a, b) => a + b, 0);
+  applyHaploWeight(yHaploRegion, rawTotalSegments);
+  applyHaploWeight(mtHaploRegion, rawTotalSegments);
 
   const totalSegments = Object.values(continentalCounts).reduce((a, b) => a + b, 0);
   const continentalScores: Record<string, number> = {};
