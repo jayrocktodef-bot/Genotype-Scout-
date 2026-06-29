@@ -98,5 +98,25 @@
       "description": "Age-related macular degeneration risk",
       "impact": "high"
     }
+  },
+  "thalassemia": {
+    "rs33930165": {
+      "name": "Beta Thalassemia / HbE Marker",
+      "risk_allele": "A",
+      "description": "HBB variant causing Hemoglobin E, associated with mild beta thalassemia or hemolytic anemia",
+      "impact": "high"
+    },
+    "rs33950507": {
+      "name": "Beta Thalassemia splice-site mutation",
+      "risk_allele": "A",
+      "description": "Common Mediterranean HBB mutation (IVS-I-110 G>A) causing beta-plus thalassemia",
+      "impact": "high"
+    },
+    "rs11886868": {
+      "name": "BCL11A Thalassemia modifier",
+      "risk_allele": "C",
+      "description": "BCL11A variant that regulates fetal hemoglobin (HbF) persistence, ameliorating thalassemia severity",
+      "impact": "moderate"
+    }
   }
 }

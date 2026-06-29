@@ -12,7 +12,7 @@ function main() {
     process.exit(1);
   }
 
-  const files = fs.readdirSync(RAW_DIR);
+  const files = fs.readdirSync(RAW_DIR).filter(file => file.endsWith('.json'));
 
   files.forEach(file => {
     const filePath = path.join(RAW_DIR, file);
