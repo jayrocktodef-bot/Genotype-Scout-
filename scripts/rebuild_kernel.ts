@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-const GRAF_WEIGHTS_FILE = path.join(process.cwd(), 'src', 'data', 'raw_aims', 'graf_10k_weights.json');
-const HO_KERNEL_FILE = path.join(process.cwd(), 'src', 'data', 'raw_aims', 'ho_modern_reference_kernel.json');
+const GRAF_WEIGHTS_FILE = path.join(process.cwd(), 'public', 'data', 'graf_10k_weights.json');
+const HO_KERNEL_FILE = path.join(process.cwd(), 'public', 'data', 'ho_modern_reference_kernel.json');
 
 const REGION_MAP: Record<string, string> = {
   'GBR': 'Europe', 'CEU': 'Europe', 'FIN': 'Europe', 'TSI': 'Europe', 'IBS': 'Europe',

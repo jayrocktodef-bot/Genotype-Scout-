@@ -62,6 +62,9 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'FIN': 'Uralic & North-East European (FIN)',
   'TSI': 'Central Mediterranean / Tuscan (TSI)',
   'IBS': 'Iberian Peninsula (IBS)',
+  'GERMAN': 'German / Central European (GERMAN)',
+  'SWEDISH': 'Swedish / Scandinavian (SWEDISH)',
+  'DUTCH': 'Dutch / North Sea Germanic (DUTCH)',
   'YRI': 'Yoruba / West African (YRI)',
   'ESN': 'Esan / West African (ESN)',
   'GWD': 'Gambian / West African (GWD)',
@@ -244,7 +247,8 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'CEU', 'FIN', 'GBR', 'IBS', 'TSI',
     'AMI_gnomAD', 'NFE_gnomAD', 'FIN_gnomAD', 'ALFA_EUR',
     'ASJ_gnomAD', 'ASJ', 'SEJ',
-    'IRISH_AM', 'ITALIAN_AM', 'GERMAN_AM', 'sgdp_spanish'
+    'IRISH_AM', 'ITALIAN_AM', 'GERMAN_AM', 'sgdp_spanish',
+    'GERMAN', 'SWEDISH', 'DUTCH'
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',

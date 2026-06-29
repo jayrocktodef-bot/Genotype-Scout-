@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 // Define the source and target files
-const GRAF_WEIGHTS_FILE = path.join(process.cwd(), 'src', 'data', 'raw_aims', 'graf_10k_weights.json');
-const HO_KERNEL_FILE = path.join(process.cwd(), 'src', 'data', 'raw_aims', 'ho_modern_reference_kernel.json');
+const GRAF_WEIGHTS_FILE = path.join(process.cwd(), 'public', 'data', 'graf_10k_weights.json');
+const HO_KERNEL_FILE = path.join(process.cwd(), 'public', 'data', 'ho_modern_reference_kernel.json');
 
 // Define new synthetic populations and their admixture blends based on existing 1000G codes
 const SYNTHETIC_POPS: Record<string, Record<string, number>> = {
@@ -11,7 +11,10 @@ const SYNTHETIC_POPS: Record<string, Record<string, number>> = {
   'BALTIC': { 'FIN': 0.5, 'CEU': 0.5 },
   'SLAVIC': { 'FIN': 0.4, 'CEU': 0.4, 'TSI': 0.2 },
   'SCANDINAVIAN': { 'CEU': 0.6, 'FIN': 0.3, 'GBR': 0.1 },
-  'BASQUE': { 'IBS': 0.8, 'CEU': 0.2 }
+  'BASQUE': { 'IBS': 0.8, 'CEU': 0.2 },
+  'GERMAN': { 'CEU': 0.70, 'GBR': 0.15, 'TSI': 0.15 },
+  'SWEDISH': { 'CEU': 0.65, 'FIN': 0.25, 'GBR': 0.10 },
+  'DUTCH': { 'CEU': 0.75, 'GBR': 0.20, 'TSI': 0.05 }
 };
 
 function run() {

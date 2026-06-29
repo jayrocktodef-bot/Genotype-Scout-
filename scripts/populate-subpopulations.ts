@@ -36,7 +36,7 @@ function runPopulate() {
   let ref1000gMerged = 0;
 
   // 2. Load and Populate from graf_10k_weights.json
-  const grafPath = path.join(REGIONAL_DIR, 'graf_10k_weights.json');
+  const grafPath = path.resolve(__dirname, '../public/data/graf_10k_weights.json');
   if (fs.existsSync(grafPath)) {
     console.log('📂 Loading GRAF-10k weights...');
     const grafWeights = JSON.parse(fs.readFileSync(grafPath, 'utf-8'));
