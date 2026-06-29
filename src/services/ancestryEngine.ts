@@ -603,9 +603,9 @@ export function runAncestryInference(
                     let matchCount = 0;
                     for (const char of genotype) if ((marker.alleles || []).includes(char)) matchCount++;
 
-                    // Partial match logic: half weight if only one allele matches
-                    const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
-                    if (weightFactor === 0) continue;
+                    // Partial match logic: user dosage of the alternative/target allele (0.0, 0.5, or 1.0)
+                    const userDosage = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0.0);
+                    const weightFactor = userDosage;
 
                     const aim = extendedAnchorMap.get(rsid);
                     let freq = 0.01;
@@ -613,10 +613,14 @@ export function runAncestryInference(
 
                     if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
                       freq = aim.subFrequencies[sp];
-                      subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
+                      if (weightFactor > 0) {
+                        subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
+                      }
                     } else if (isSubpopMatch(marker.subpop, sp)) {
                       freq = 0.8;
-                      subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
+                      if (weightFactor > 0) {
+                        subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
+                      }
                     } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
                       freq = aim.frequencies[code];
                     } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
@@ -655,11 +659,9 @@ export function runAncestryInference(
                       continentSpecificWeight = 8.0;
                     }
 
-                    let weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight * weightFactor;
-                    
+                    const weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
 
-
-                    const error = (matchCount / 2) - f;
+                    const error = userDosage - f;
                     const distSq = weight * (error * error);
                     subPopDistances[topContinent][sp] += distSq;
                     subPopWeights[topContinent][sp] += weight;
