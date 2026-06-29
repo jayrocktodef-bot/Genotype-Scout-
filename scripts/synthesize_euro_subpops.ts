@@ -14,7 +14,12 @@ const SYNTHETIC_POPS: Record<string, Record<string, number>> = {
   'BASQUE': { 'IBS': 0.8, 'CEU': 0.2 },
   'GERMAN': { 'CEU': 0.70, 'GBR': 0.15, 'TSI': 0.15 },
   'SWEDISH': { 'CEU': 0.65, 'FIN': 0.25, 'GBR': 0.10 },
-  'DUTCH': { 'CEU': 0.75, 'GBR': 0.20, 'TSI': 0.05 }
+  'DUTCH': { 'CEU': 0.75, 'GBR': 0.20, 'TSI': 0.05 },
+  'IRISH': { 'GBR': 0.85, 'CEU': 0.15 },
+  'FRENCH': { 'CEU': 0.60, 'IBS': 0.25, 'TSI': 0.15 },
+  'SPANISH': { 'IBS': 0.90, 'TSI': 0.10 },
+  'POLISH': { 'CEU': 0.50, 'FIN': 0.40, 'TSI': 0.10 },
+  'GREEK': { 'TSI': 0.80, 'IBS': 0.20 }
 };
 
 function run() {
