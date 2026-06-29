@@ -1,4 +1,5 @@
 import { loadMasterAims } from '../data/index';
+import { fetchJsonAsset } from '../utils/fetchHelper';
 
 // Initialize on first use or cache
 let masterAimsCache: any = null;
@@ -6,7 +7,13 @@ const getMasterAims = () => {
   if (!masterAimsCache) masterAimsCache = loadMasterAims();
   return masterAimsCache;
 };
-import hoReferenceKernel from '../data/raw_aims/ho_modern_reference_kernel.json';
+let hoReferenceKernelCache: any = null;
+async function getHoReferenceKernel() {
+  if (!hoReferenceKernelCache) {
+    hoReferenceKernelCache = await fetchJsonAsset('/data/ho_modern_reference_kernel.json');
+  }
+  return hoReferenceKernelCache;
+}
 import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
 import { getPopulationInfo } from '../services/populationMapper';
 import { solveNNLS } from '../utils/nnls';
@@ -459,15 +466,15 @@ export function solveAdmixtureProportions(
 /**
  * Primary High Resolution Bayesian Ancestry and Subpopulation Oracle Solver (Engine v3)
  */
-export function processSubpopulations(
+export async function processSubpopulations(
   userGenotypes: UserGenotype[],
   aimsDatabase: AIM[],
   sampleId?: string,
   snpMetaMap?: Record<string, { chrom: string; pos: number }>,
   panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' = 'all'
-): OracleResult {
+): Promise<OracleResult> {
   const normalizedDatabase = getMasterAims() as Record<string, any>;
-  const referenceDatabase = hoReferenceKernel as Record<string, { region: string; frequencies: Record<string, number> }>;
+  const referenceDatabase = await getHoReferenceKernel() as Record<string, { region: string; frequencies: Record<string, number> }>;
   const GLOBAL_REFERENCE_CODES = new Set([
     // Superpopulations and Global References
     'ALL', 'EUR', 'AFR', 'EAS', 'SAS', 'AMR',

@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { calculateAncientAdmixture } from '../../lib/AncientAdmixtureCalculator';
 
 describe('Ancient Admixture Calculator', () => {
-  it('should compute ancient admixture proportions that sum to 100%', () => {
+  it('should compute ancient admixture proportions that sum to 100%', async () => {
     const mockGenotypes = {
       'rs2887286': 'CC',
       'rs2840528': 'GG',
@@ -11,7 +11,7 @@ describe('Ancient Admixture Calculator', () => {
       'rs6663840': 'AA'
     };
 
-    const results = calculateAncientAdmixture(mockGenotypes);
+    const results = await calculateAncientAdmixture(mockGenotypes);
     expect(results.length).toBeGreaterThan(0);
 
     const totalScore = results.reduce((acc, val) => acc + val.score, 0);
@@ -25,11 +25,11 @@ describe('Ancient Admixture Calculator', () => {
     });
   });
 
-  it('should return empty results if there are insufficient markers', () => {
+  it('should return empty results if there are insufficient markers', async () => {
     const mockGenotypes = {
       'rs2887286': 'CC'
     };
-    const results = calculateAncientAdmixture(mockGenotypes);
+    const results = await calculateAncientAdmixture(mockGenotypes);
     expect(results).toEqual([]);
   });
 });

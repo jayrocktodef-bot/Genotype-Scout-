@@ -1,5 +1,5 @@
-// src/utils/ancestry/grafAncEngine.ts
 import { calculateSubPopResonance } from '../../utils/ancestry/subPopulationLogic';
+import { fetchJsonAsset } from '../../utils/fetchHelper';
 
 const POP_NAME_MAP: Record<string, string> = {
   'GBR': 'British (England & Scotland)',
@@ -218,8 +218,8 @@ const POP_NAME_MAP: Record<string, string> = {
  */
 export async function calculateRegionalScores(userGenotypes: Record<string, string>) {
   try {
-    // We use a dynamic import to avoid blocking if the file is large or missing
-    const results = await calculateSubPopResonance(userGenotypes);
+    const regionalWeights = await fetchJsonAsset('/data/graf_10k_weights.json');
+    const results = await calculateSubPopResonance(userGenotypes, regionalWeights);
     
     if (!results || results.length === 0) return [];
 

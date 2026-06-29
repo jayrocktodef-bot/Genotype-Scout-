@@ -1,6 +1,6 @@
 import { get, set } from 'idb-keyval';
-import hoReferenceKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
 import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
+import { fetchJsonAsset } from '../../utils/fetchHelper';
 
 export interface PopulationProximity {
   population: string;
@@ -57,6 +57,7 @@ export function compileReferenceKernel(): Promise<void> {
 
     try {
       console.log("⚙️ Compiling JSON kernel into Float32 binary arrays...");
+      const hoReferenceKernel = await fetchJsonAsset('/data/ho_modern_reference_kernel.json');
 
       // 1. Extract all unique markers across all populations
       const rsIDSet = new Set<string>();

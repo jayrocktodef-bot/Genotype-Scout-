@@ -22,7 +22,7 @@ describe('LD Pruner Utility', () => {
 });
 
 describe('Hierarchical Deconvolution Routing', () => {
-  it('should process subpopulation deconvolution and yield valid percentages', () => {
+  it('should process subpopulation deconvolution and yield valid percentages', async () => {
     // Generate a mock dataset of user genotypes
     const userGenotypes = [
       { rsid: 'rs2887286', genotype: 'TT' },
@@ -41,14 +41,14 @@ describe('Hierarchical Deconvolution Routing', () => {
       { rsid: 'rs6663840', chromosome: '1', position: 3826755, continent: 'EUR' }
     ];
 
-    const results = processSubpopulations(userGenotypes, aimsDatabase);
+    const results = await processSubpopulations(userGenotypes, aimsDatabase);
     
     expect(results).toHaveProperty('topMatch');
     expect(results).toHaveProperty('admixtureMix');
     expect(results.admixtureMix.length).toBeGreaterThan(0);
     
     // Total proportions should sum to 100%
-    const totalPercentage = results.admixtureMix.reduce((sum, item) => sum + item.percentage, 0);
+    const totalPercentage = results.admixtureMix.reduce((sum: number, item: any) => sum + item.percentage, 0);
     expect(totalPercentage).toBeCloseTo(100.0, 1);
   });
 });

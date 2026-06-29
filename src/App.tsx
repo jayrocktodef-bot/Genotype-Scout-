@@ -75,7 +75,6 @@ const EngineAncestryOracle = lazy(() => import("./components/EngineAncestryOracl
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches, calculateArchaicIntrogression } from "./lib/AncientAdmixtureCalculator";
 import { calculateHistoricalClusterMatches } from "./engines/ancestry/historicalClusterEngine";
-import { calculateProAncestry } from "./engines/admixtureCalculator";
 import { getPopFrequencies } from "./data/GenomicDataService";
 import { forensicAimsMaster as forensicAims, graf10kIndex as grafIndex } from './data';
 import masterMtdna from "./data/master_mtdna.json";
@@ -98,7 +97,7 @@ const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogre
 const PolygenicScores = lazy(() => import("./components/PolygenicScores").then(m => ({ default: m.PolygenicScores })));
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
-const VERSION = "5.3.0";
+const VERSION = "5.4.0";
 
 const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace("haplogroup ", "").trim();
 
@@ -1810,6 +1809,8 @@ export default function App() {
     analysis?: any
   }[]>([]);
   const [activeDatasetIndex, setActiveDatasetIndex] = useState(0);
+  const [ancientAdmixture, setAncientAdmixture] = useState<any[]>([]);
+  const [populationProximity, setPopulationProximity] = useState<any[]>([]);
   const snpMaps = useRef<Record<number, Record<string, string>>>({});
   const [statusFilter, setStatusFilter] = useState<'matched' | 'unmatched' | 'not_tested'>('matched');
   const [significanceFilter, setSignificanceFilter] = useState<string>('all');
@@ -1899,7 +1900,7 @@ export default function App() {
       const saved = await loadResults();
       if (saved) {
         let hasChanges = false;
-        const updated = saved.map((ds: any, idx: number) => {
+        const updated = await Promise.all(saved.map(async (ds: any, idx: number) => {
           // Backward compatibility: reconstruct mergedSnpMap if missing but results exist
           if (!ds.mergedSnpMap && ds.results) {
             console.log("Reconstructing mergedSnpMap from results for:", ds.name);
@@ -1928,13 +1929,13 @@ export default function App() {
             if (isCollapsed) {
               console.log("Recalculating subpopulationOracle for cached dataset:", ds.name);
               const userGenotypes = Object.entries(ds.mergedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype: genotype as string }));
-              const freshOracle = processSubpopulations(userGenotypes, []);
+              const freshOracle = await processSubpopulations(userGenotypes, []);
               ds.analysis.subpopulationOracle = freshOracle;
               hasChanges = true;
             }
           }
           return ds;
-        });
+        }));
         setDatasets(updated);
         if (hasChanges) {
           saveResults(updated);
@@ -2294,13 +2295,28 @@ export default function App() {
     };
   }, [datasets, activeDatasetIndex, humanOriginsResults]);
 
-  const ancientAdmixture = useMemo(() => {
+  useEffect(() => {
     const dataset = datasets[activeDatasetIndex];
-    if (dataset?.analysis?.ancientAdmixture) return dataset.analysis.ancientAdmixture;
+    if (!dataset) {
+      setAncientAdmixture([]);
+      return;
+    }
+    if (dataset.analysis?.ancientAdmixture) {
+      setAncientAdmixture(dataset.analysis.ancientAdmixture);
+      return;
+    }
     const snpMap = snpMaps.current[activeDatasetIndex];
-    if (!snpMap) return [];
-    return calculateAncientAdmixture(snpMap);
-  }, [datasets, activeDatasetIndex]);
+    if (!snpMap) {
+      setAncientAdmixture([]);
+      return;
+    }
+    calculateAncientAdmixture(snpMap).then(res => {
+      setAncientAdmixture(res);
+    }).catch(err => {
+      console.error("Ancient Admixture Error:", err);
+      setAncientAdmixture([]);
+    });
+  }, [datasets, activeDatasetIndex, datasets[activeDatasetIndex]?.analysis?.ancientAdmixture]);
 
   const archaicIntrogression = useMemo(() => {
     const dataset = datasets[activeDatasetIndex];
@@ -2334,13 +2350,28 @@ export default function App() {
     return matchHealthAndWellness(snpMap);
   }, [datasets, activeDatasetIndex]);
 
-  const populationProximity = useMemo(() => {
+  useEffect(() => {
     const dataset = datasets[activeDatasetIndex];
-    if (dataset?.analysis?.populationProximity) return dataset.analysis.populationProximity;
+    if (!dataset) {
+      setPopulationProximity([]);
+      return;
+    }
+    if (dataset.analysis?.populationProximity) {
+      setPopulationProximity(dataset.analysis.populationProximity);
+      return;
+    }
     const snpMap = snpMaps.current[activeDatasetIndex];
-    if (!snpMap) return [];
-    return calculatePopulationProximity(snpMap);
-  }, [datasets, activeDatasetIndex]);
+    if (!snpMap) {
+      setPopulationProximity([]);
+      return;
+    }
+    calculatePopulationProximity(snpMap).then(res => {
+      setPopulationProximity(res);
+    }).catch(err => {
+      console.error("Population Proximity Error:", err);
+      setPopulationProximity([]);
+    });
+  }, [datasets, activeDatasetIndex, datasets[activeDatasetIndex]?.analysis?.populationProximity]);
 
   const markerBenchmarks = useMemo(() => {
     const dataset = datasets[activeDatasetIndex];

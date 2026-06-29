@@ -1,6 +1,6 @@
-import hoModernKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
 import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
 import { solveNNLS } from '../../utils/nnls';
+import { fetchJsonAsset } from '../../utils/fetchHelper';
 
 export interface AdmixtureComponent {
   population: string;
@@ -15,6 +15,8 @@ export interface AdmixtureComponent {
  * based on the 61-population Human Origins reference dataset.
  */
 export async function calculateHumanOriginsScores(userSnps: Record<string, string>): Promise<AdmixtureComponent[]> {
+  const hoModernKernel = await fetchJsonAsset('/data/ho_modern_reference_kernel.json');
+
   // Normalize user SNPs keys
   const normalizedUserSnps: Record<string, string> = {};
   for (const rsid in userSnps) {

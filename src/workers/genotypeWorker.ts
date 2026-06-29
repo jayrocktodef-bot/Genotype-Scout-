@@ -444,7 +444,7 @@ self.onmessage = async (e: MessageEvent) => {
     
     const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
-    const subpopulationOracle = processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap);
+    const subpopulationOracle = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap);
     const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
     
     if (sab) { 

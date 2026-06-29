@@ -26,7 +26,6 @@ import euroforgenNamePanel from './raw_aims/euroforgen_name_panel.json';
 import commercialAimWeights from './raw_aims/commercial_aim_weights.json';
 import colonialAimWeights from './raw_aims/colonial_aim_weights.json';
 import africanDeepResWeights from './raw_aims/african_deep_res_weights.json';
-import graf10kWeights from './raw_aims/graf_10k_weights.json';
 import graf10kIndex from './raw_aims/graf_10k_index.json';
 import customCuratedMarkers from './raw_aims/custom_curated_markers.json';
 import keyAims from './raw_aims/key_aims.json';
@@ -70,7 +69,6 @@ export {
   commercialAimWeights,
   colonialAimWeights,
   africanDeepResWeights,
-  graf10kWeights,
   graf10kIndex,
   customCuratedMarkers,
   keyAims,

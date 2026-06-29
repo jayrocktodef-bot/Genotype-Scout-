@@ -1,5 +1,4 @@
 // src/utils/ancestry/subPopulationLogic.ts
-import regionalWeights from '../../data/raw_aims/graf_10k_weights.json';
 import grafIndex from '../../data/raw_aims/graf_10k_index.json';
 
 const EUROPEAN_POPS = [
@@ -218,7 +217,7 @@ export const POPULATION_NAMES: Record<string, string> = {
  * Calculates the resonance (likelihood) of 26 sub-populations.
  * This is the core of the "Engine" mode for high-precision ethnicity.
  */
-export function calculateSubPopResonance(userGenotypes: Record<string, string>) {
+export function calculateSubPopResonance(userGenotypes: Record<string, string>, regionalWeights: Record<string, any>) {
   const popScores: Record<string, number> = {};
   const populations = Object.keys(Object.values(regionalWeights)[0] || {});
 

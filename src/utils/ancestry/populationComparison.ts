@@ -1,5 +1,5 @@
-import hoReferenceKernel from '../../data/raw_aims/ho_modern_reference_kernel.json';
 import graf10kIndex from '../../data/raw_aims/graf_10k_index.json';
+import { fetchJsonAsset } from '../fetchHelper';
 
 export interface PopulationProximity {
   population: string;
@@ -9,7 +9,8 @@ export interface PopulationProximity {
   markersCompared: number;
 }
 
-export function calculatePopulationProximity(userSnps: Record<string, string>): PopulationProximity[] {
+export async function calculatePopulationProximity(userSnps: Record<string, string>): Promise<PopulationProximity[]> {
+  const hoReferenceKernel = await fetchJsonAsset('/data/ho_modern_reference_kernel.json');
   const results: PopulationProximity[] = [];
   
   // Normalize user SNPs keys once

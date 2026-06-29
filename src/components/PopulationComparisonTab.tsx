@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import pcaModel from '../data/raw_aims/pca_model.json';
-import { calculatePopulationProximity } from '../utils/ancestry/populationComparison';
 import { PCAMap } from './PCAMap';
 
 interface PopulationComparisonTabProps {
@@ -44,9 +43,8 @@ export const PopulationComparisonTab: React.FC<PopulationComparisonTabProps> = (
     if (populationProximity && populationProximity.length > 0) {
       return populationProximity.slice(0, 15);
     }
-    if (!userSnps || Object.keys(userSnps).length === 0) return [];
-    return calculatePopulationProximity(userSnps).slice(0, 15);
-  }, [userSnps, populationProximity]);
+    return [];
+  }, [populationProximity]);
 
   // Project user SNPs into the PCA space
   const userCoordinates = useMemo(() => {

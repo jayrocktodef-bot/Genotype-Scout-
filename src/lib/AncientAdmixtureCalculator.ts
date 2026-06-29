@@ -2,8 +2,8 @@ import { getAncientMarkers } from '../data/GenomicDataService';
 import masterAncient from '../data/master_ancient_profiles.json';
 import { solveNNLS } from '../utils/nnls';
 import ancientCladesFrequencies from '../data/raw_ancient/ancient_clades_frequencies.json';
-import grafWeights from '../data/raw_aims/graf_10k_weights.json';
 import grafIndex from '../data/raw_aims/graf_10k_index.json';
+import { fetchJsonAsset } from '../utils/fetchHelper';
 
 export interface AncientSampleMatch {
   popCode: string;
@@ -75,7 +75,8 @@ const CLADE_INFO: Record<string, { name: string; region: string; period: string;
   }
 };
 
-export const calculateAncientAdmixture = (userGenotypes: Record<string, string>): AncientSampleMatch[] => {
+export const calculateAncientAdmixture = async (userGenotypes: Record<string, string>): Promise<AncientSampleMatch[]> => {
+  const grafWeights = await fetchJsonAsset('/data/graf_10k_weights.json');
   const clades = Object.keys(CLADE_INFO);
   const A: number[][] = [];
   const b: number[] = [];
