@@ -132,6 +132,14 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
   // Pre-process only user markers present in the reference
   const activeMarkers: { index: number, dosage: number }[] = [];
   
+  const complement = (a: string) => {
+    if (a === 'A') return 'T';
+    if (a === 'T') return 'A';
+    if (a === 'C') return 'G';
+    if (a === 'G') return 'C';
+    return a;
+  };
+
   for (const [rsid, call] of userSnps.entries()) {
     const index = rsidToIndexMap.get(rsid);
     if (index === undefined || call.length !== 2) continue;
@@ -141,9 +149,21 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
 
     // Determine exact user dosage of the alternative allele
     let dosage = 0.0;
-    const a1 = call[0].toUpperCase();
-    const a2 = call[1].toUpperCase();
+    let a1 = call[0].toUpperCase();
+    let a2 = call[1].toUpperCase();
     const alt = marker.alt.toUpperCase();
+    const ref = marker.ref ? marker.ref.toUpperCase() : '';
+
+    // If neither allele matches ref or alt directly, but complements do, complement user call
+    if ((a1 !== ref && a1 !== alt) || (a2 !== ref && a2 !== alt)) {
+      const comp1 = complement(a1);
+      const comp2 = complement(a2);
+      if ((comp1 === ref || comp1 === alt) && (comp2 === ref || comp2 === alt)) {
+        a1 = comp1;
+        a2 = comp2;
+      }
+    }
+
     if (a1 === alt) dosage += 0.5;
     if (a2 === alt) dosage += 0.5;
     

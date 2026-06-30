@@ -25,24 +25,42 @@ export async function calculatePopulationProximity(userSnps: Record<string, stri
     let validMarkers = 0;
     const frequencies = popData.frequencies;
 
+    const complement = (a: string) => {
+      if (a === 'A') return 'T';
+      if (a === 'T') return 'A';
+      if (a === 'C') return 'G';
+      if (a === 'G') return 'C';
+      return a;
+    };
+
     for (const rsid in frequencies) {
       const refFreq = frequencies[rsid];
       const userCall = normalizedUserSnps[rsid.toLowerCase()];
       
       if (!userCall || userCall.length !== 2) continue;
 
-      // Precise dosage calculation mapping alt/ref alleles using master_aims_normalized
       const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
       let userDosage = 0.0;
-      const c0 = userCall[0].toUpperCase();
-      const c1 = userCall[1].toUpperCase();
+      let c0 = userCall[0].toUpperCase();
+      let c1 = userCall[1].toUpperCase();
 
       if (marker) {
         const alt = marker.alt.toUpperCase();
+        const ref = marker.ref ? marker.ref.toUpperCase() : '';
+
+        // If neither allele matches ref or alt directly, but complements do, complement user call
+        if ((c0 !== ref && c0 !== alt) || (c1 !== ref && c1 !== alt)) {
+          const comp0 = complement(c0);
+          const comp1 = complement(c1);
+          if ((comp0 === ref || comp0 === alt) && (comp1 === ref || comp1 === alt)) {
+            c0 = comp0;
+            c1 = comp1;
+          }
+        }
+
         if (c0 === alt) userDosage += 0.5;
         if (c1 === alt) userDosage += 0.5;
       } else {
-        // Fallback to frequency heuristic if marker details aren't in index
         if (c0 !== c1) {
           userDosage = 0.5;
         } else {
