@@ -172,43 +172,61 @@ const ChromosomeGroup = ({
 
       {/* Strand A */}
       <group position={hasStrands ? [-0.5, 0, 0] : [0, 0, 0]}>
-        {strandA.map((seg, i) => {
-          const segUnits = (seg.end - seg.start) / SCALE;
-          const yOff = startY - (seg.start / SCALE) - (segUnits / 2);
-          const isMuted = activeContinentFilter !== null && activeContinentFilter !== seg.continent;
-          return (
-            <StrandCylinder 
-              key={`A-${i}`} 
-              segment={seg} 
-              length={segUnits} 
-              yOffset={yOff} 
-              isMuted={isMuted} 
-              onHover={(e, s) => handleHover(e, s, hasStrands ? 'A' : 'Both')}
-              onClick={(s) => handleClick(s, hasStrands ? 'A' : 'Both')}
-            />
-          );
-        })}
+        {strandA.length === 0 ? (
+          <mesh position={[0, 0, 0]} material={mutedMaterial}>
+            <cylinderGeometry args={[0.3, 0.3, totalUnits, 16]} />
+          </mesh>
+        ) : (
+          strandA.map((seg, i) => {
+            const startPos = i === 0 ? 0 : seg.start;
+            const endPos = i === strandA.length - 1 ? chromLength : seg.end;
+            const segUnits = (endPos - startPos) / SCALE;
+            const yOff = startY - (startPos / SCALE) - (segUnits / 2);
+            const isMuted = activeContinentFilter !== null && activeContinentFilter !== seg.continent;
+            const adjustedSeg = { ...seg, start: startPos, end: endPos };
+            return (
+              <StrandCylinder 
+                key={`A-${i}`} 
+                segment={adjustedSeg} 
+                length={segUnits} 
+                yOffset={yOff} 
+                isMuted={isMuted} 
+                onHover={(e, s) => handleHover(e, s, hasStrands ? 'A' : 'Both')}
+                onClick={(s) => handleClick(s, hasStrands ? 'A' : 'Both')}
+              />
+            );
+          })
+        )}
       </group>
 
       {/* Strand B */}
       {hasStrands && (
         <group position={[0.5, 0, 0]}>
-          {strandB.map((seg, i) => {
-            const segUnits = (seg.end - seg.start) / SCALE;
-            const yOff = startY - (seg.start / SCALE) - (segUnits / 2);
-            const isMuted = activeContinentFilter !== null && activeContinentFilter !== seg.continent;
-            return (
-              <StrandCylinder 
-                key={`B-${i}`} 
-                segment={seg} 
-                length={segUnits} 
-                yOffset={yOff} 
-                isMuted={isMuted} 
-                onHover={(e, s) => handleHover(e, s, 'B')}
-                onClick={(s) => handleClick(s, 'B')}
-              />
-            );
-          })}
+          {strandB.length === 0 ? (
+            <mesh position={[0, 0, 0]} material={mutedMaterial}>
+              <cylinderGeometry args={[0.3, 0.3, totalUnits, 16]} />
+            </mesh>
+          ) : (
+            strandB.map((seg, i) => {
+              const startPos = i === 0 ? 0 : seg.start;
+              const endPos = i === strandB.length - 1 ? chromLength : seg.end;
+              const segUnits = (endPos - startPos) / SCALE;
+              const yOff = startY - (startPos / SCALE) - (segUnits / 2);
+              const isMuted = activeContinentFilter !== null && activeContinentFilter !== seg.continent;
+              const adjustedSeg = { ...seg, start: startPos, end: endPos };
+              return (
+                <StrandCylinder 
+                  key={`B-${i}`} 
+                  segment={adjustedSeg} 
+                  length={segUnits} 
+                  yOffset={yOff} 
+                  isMuted={isMuted} 
+                  onHover={(e, s) => handleHover(e, s, 'B')}
+                  onClick={(s) => handleClick(s, 'B')}
+                />
+              );
+            })
+          )}
         </group>
       )}
     </group>

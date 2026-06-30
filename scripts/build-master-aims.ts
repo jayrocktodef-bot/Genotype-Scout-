@@ -134,7 +134,14 @@ function buildMasterAims() {
           alleles: Array.isArray(entry.alleles) ? entry.alleles : [],
           ref: entry.ref || undefined,
           alt: entry.alt || undefined,
-          frequencies: entry.frequencies || entry.freqs || {},
+          frequencies: entry.frequencies || entry.freqs || (() => {
+            const f: Record<string, number> = {};
+            const possiblePops = ['AFR', 'EUR', 'EAS', 'SAS', 'AMR', 'OCE', 'MENA', 'NAFR', 'Global'];
+            possiblePops.forEach(pop => {
+              if (entry[pop] !== undefined) f[pop] = entry[pop];
+            });
+            return f;
+          })(),
           subFrequencies: entry.subFrequencies || {},
           deepFrequencies: entry.deepFrequencies || {},
           weight: typeof entry.weight === 'number' ? entry.weight : 1.0,

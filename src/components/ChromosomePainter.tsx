@@ -134,40 +134,16 @@ export const ChromosomePainter = ({
               <div className="flex-1 flex flex-col justify-center gap-1.5 min-h-[36px] relative py-1">
                 {/* Strand A (Maternal) */}
                 <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
-                  {strandA.map((seg, i) => {
-                    const pctLeft = (seg.start / length) * 100;
-                    const pctWidth = ((seg.end - seg.start) / length) * 100;
-                    const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
-                    return (
-                      <div
-                        key={i}
-                        className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
-                        style={{
-                          left: `${pctLeft}%`,
-                          width: `${Math.max(0.2, pctWidth)}%`,
-                          backgroundColor: POP_COLORS[seg.continent] || '#475569',
-                          opacity: isMuted ? 0.15 : 1,
-                          zIndex: isMuted ? 1 : 2
-                        }}
-                        onMouseMove={(e) => handleMouseMove(e, chrom, hasStrands ? 'A' : 'Both', seg)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', seg, (seg.start + seg.end) / 2)}
-                      />
-                    );
-                  })}
-                  {hasStrands && (
-                    <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
-                      Strand A (Maternal)
+                  {strandA.length === 0 ? (
+                    <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none">
+                      No Coverage
                     </div>
-                  )}
-                </div>
-
-                {/* Strand B (Paternal) */}
-                {hasStrands && (
-                  <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
-                    {strandB.map((seg, i) => {
-                      const pctLeft = (seg.start / length) * 100;
-                      const pctWidth = ((seg.end - seg.start) / length) * 100;
+                  ) : (
+                    strandA.map((seg, i) => {
+                      const startPos = i === 0 ? 0 : seg.start;
+                      const endPos = i === strandA.length - 1 ? length : seg.end;
+                      const pctLeft = (startPos / length) * 100;
+                      const pctWidth = ((endPos - startPos) / length) * 100;
                       const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
                       return (
                         <div
@@ -180,12 +156,52 @@ export const ChromosomePainter = ({
                             opacity: isMuted ? 0.15 : 1,
                             zIndex: isMuted ? 1 : 2
                           }}
-                          onMouseMove={(e) => handleMouseMove(e, chrom, 'B', seg)}
+                          onMouseMove={(e) => handleMouseMove(e, chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos })}
                           onMouseLeave={handleMouseLeave}
-                          onClick={() => onSegmentClick?.(chrom, 'B', seg, (seg.start + seg.end) / 2)}
+                          onClick={() => onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
                         />
                       );
-                    })}
+                    })
+                  )}
+                  {hasStrands && (
+                    <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
+                      Strand A (Maternal)
+                    </div>
+                  )}
+                </div>
+
+                {/* Strand B (Paternal) */}
+                {hasStrands && (
+                  <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                    {strandB.length === 0 ? (
+                      <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none">
+                        No Coverage
+                      </div>
+                    ) : (
+                      strandB.map((seg, i) => {
+                        const startPos = i === 0 ? 0 : seg.start;
+                        const endPos = i === strandB.length - 1 ? length : seg.end;
+                        const pctLeft = (startPos / length) * 100;
+                        const pctWidth = ((endPos - startPos) / length) * 100;
+                        const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                        return (
+                          <div
+                            key={i}
+                            className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
+                            style={{
+                              left: `${pctLeft}%`,
+                              width: `${Math.max(0.2, pctWidth)}%`,
+                              backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                              opacity: isMuted ? 0.15 : 1,
+                              zIndex: isMuted ? 1 : 2
+                            }}
+                            onMouseMove={(e) => handleMouseMove(e, chrom, 'B', { ...seg, start: startPos, end: endPos })}
+                            onMouseLeave={handleMouseLeave}
+                            onClick={() => onSegmentClick?.(chrom, 'B', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
+                          />
+                        );
+                      })
+                    )}
                     <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
                       Strand B (Paternal)
                     </div>
