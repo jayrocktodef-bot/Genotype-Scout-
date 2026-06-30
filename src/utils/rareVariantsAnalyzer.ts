@@ -4,6 +4,7 @@ export interface RareVariant {
   type: 'internal' | 'unmapped' | 'rare_allele';
   description?: string;
   globalFrequency?: number;
+  rarity?: 'ultra_rare' | 'rare' | 'low_frequency';
 }
 
 export function identifyRareAndNovelVariants(
@@ -55,34 +56,28 @@ export function identifyRareAndNovelVariants(
     }
 
     // 3. Globally Rare Alleles
-    // Check if the user has an allele that is extremely rare globally (< 1%)
     if (aimBaseMap.size > 0 && rareCount < 100) {
       const aim = aimBaseMap.get(cleanRsid);
       
       if (aim && aim.frequencies && aim.alleles && aim.alleles.length > 0) {
         const effectAllele = aim.alleles[0];
-        // Calculate global average frequency for the effect allele
         const popFreqs = Object.values(aim.frequencies) as number[];
         if (popFreqs.length > 0) {
           const globalEffectFreq = popFreqs.reduce((a, b) => a + b, 0) / popFreqs.length;
-          
-          // What alleles does the user have?
           const userAlleles = genotype.split('');
           
           let isRare = false;
           let minFreq = 1.0;
           
           for (const a of userAlleles) {
-            // If user allele is the effect allele
             if (a === effectAllele) {
-              if (globalEffectFreq < 0.01) {
+              if (globalEffectFreq < 0.05) {
                 isRare = true;
                 minFreq = Math.min(minFreq, globalEffectFreq);
               }
             } else {
-              // If user allele is the alternate (we assume biallelic)
               const altFreq = 1 - globalEffectFreq;
-              if (altFreq < 0.01) {
+              if (altFreq < 0.05) {
                 isRare = true;
                 minFreq = Math.min(minFreq, altFreq);
               }
@@ -90,12 +85,24 @@ export function identifyRareAndNovelVariants(
           }
           
           if (isRare) {
+            let rarity: 'ultra_rare' | 'rare' | 'low_frequency' = 'low_frequency';
+            if (minFreq < 0.001) {
+              rarity = 'ultra_rare';
+            } else if (minFreq < 0.01) {
+              rarity = 'rare';
+            }
+
             variants.push({
               rsid,
               genotype,
               type: 'rare_allele',
-              description: `You carry a globally rare allele at this position (estimated < 1% worldwide).`,
-              globalFrequency: minFreq
+              description: rarity === 'ultra_rare'
+                ? `You carry an ultra-rare allele (estimated < 0.1% worldwide).`
+                : rarity === 'rare'
+                ? `You carry a globally rare allele (estimated < 1% worldwide).`
+                : `You carry a low-frequency allele (estimated 1% to 5% worldwide).`,
+              globalFrequency: minFreq,
+              rarity
             });
             rareCount++;
           }

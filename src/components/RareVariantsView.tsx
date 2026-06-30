@@ -91,26 +91,45 @@ const RareVariantsView: React.FC<RareVariantsViewProps> = ({ variants }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ delay: idx * 0.05 }}
-              className="premium-card p-5 group"
+              className="premium-card p-5 group flex flex-col justify-between"
             >
-              <div className="flex justify-between items-start mb-4">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${activeTab === 'internal' ? 'bg-orange-50 text-orange-600' : activeTab === 'rare_allele' ? 'bg-rose-50 text-rose-600' : 'bg-blue-50 text-blue-600'}`}>
-                    <Fingerprint className="w-5 h-5" />
+              <div>
+                <div className="flex justify-between items-start mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${activeTab === 'internal' ? 'bg-orange-50 dark:bg-orange-950/30 text-orange-600' : activeTab === 'rare_allele' ? 'bg-rose-50 dark:bg-rose-950/30 text-rose-600' : 'bg-blue-50 dark:bg-blue-950/30 text-blue-600'}`}>
+                      <Fingerprint className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-black text-slate-800 dark:text-slate-100 text-lg">{variant.rsid}</h3>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                        Genotype: <span className="text-fuchsia-600">{variant.genotype}</span>
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-black text-slate-800 dark:text-slate-100 text-lg">{variant.rsid}</h3>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
-                      Genotype: <span className="text-fuchsia-600">{variant.genotype}</span>
+                  {activeTab === 'rare_allele' && variant.rarity && (
+                    <span className={`px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest ${
+                      variant.rarity === 'ultra_rare' 
+                        ? 'bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-900/50'
+                        : variant.rarity === 'rare'
+                        ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900/50'
+                        : 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/50'
+                    }`}>
+                      {variant.rarity.replace('_', ' ')}
                     </span>
-                    {activeTab === 'rare_allele' && variant.globalFrequency !== undefined && (
-                       <span className="ml-2 text-[10px] font-black uppercase tracking-widest text-slate-400">
-                         MAF: <span className="text-rose-600">{(variant.globalFrequency * 100).toFixed(2)}%</span>
-                       </span>
-                    )}
-                  </div>
+                  )}
                 </div>
+                {variant.description && (
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mt-2 pl-1">
+                    {variant.description}
+                  </p>
+                )}
               </div>
+              {activeTab === 'rare_allele' && variant.globalFrequency !== undefined && (
+                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-slate-400">
+                  <span>Global Allele Frequency (MAF)</span>
+                  <span className="text-rose-600 dark:text-rose-400 text-xs">{(variant.globalFrequency * 100).toFixed(3)}%</span>
+                </div>
+              )}
             </motion.div>
           ))}
         </AnimatePresence>
