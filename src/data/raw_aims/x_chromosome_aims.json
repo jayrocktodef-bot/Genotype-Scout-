@@ -1,0 +1,442 @@
+[
+  {
+    "rsid": "rs1042604",
+    "chromosome": "X",
+    "position": 43522201,
+    "region": "Global",
+    "ref": "C",
+    "alt": "T",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.942,
+      "EUR": 0.010,
+      "EAS": 0.010,
+      "SAS": 0.006,
+      "AMR": 0.024
+    },
+    "weight": 4.7,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs12558488",
+    "chromosome": "X",
+    "position": 152390248,
+    "region": "Global",
+    "ref": "C",
+    "alt": "T",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.039,
+      "EUR": 0.354,
+      "EAS": 0.443,
+      "SAS": 0.550,
+      "AMR": 0.565
+    },
+    "weight": 2.6,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs1351394",
+    "chromosome": "X",
+    "position": 31276811,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.408,
+      "EUR": 0.450,
+      "EAS": 0.909,
+      "SAS": 0.226,
+      "AMR": 0.320
+    },
+    "weight": 3.4,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs1426654",
+    "chromosome": "X",
+    "position": 48426484,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.926,
+      "EUR": 0.003,
+      "EAS": 0.012,
+      "SAS": 0.685,
+      "AMR": 0.589
+    },
+    "weight": 4.6,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs1617682",
+    "chromosome": "X",
+    "position": 46682701,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.259,
+      "EUR": 0.743,
+      "EAS": 0.223,
+      "SAS": 0.371,
+      "AMR": 0.524
+    },
+    "weight": 2.6,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs16891982",
+    "chromosome": "X",
+    "position": 33951693,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.964,
+      "EUR": 0.938,
+      "EAS": 0.006,
+      "SAS": 0.059,
+      "AMR": 0.464
+    },
+    "weight": 4.8,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs17287498",
+    "chromosome": "X",
+    "position": 61405990,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.540,
+      "EUR": 0.197,
+      "EAS": 0.138,
+      "SAS": 0.281,
+      "AMR": 0.709
+    },
+    "weight": 2.9,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs1800407",
+    "chromosome": "X",
+    "position": 48962782,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.002,
+      "EUR": 0.076,
+      "EAS": 0.999,
+      "SAS": 0.027,
+      "AMR": 0.032
+    },
+    "weight": 5.0,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs1927914",
+    "chromosome": "X",
+    "position": 151525044,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.163,
+      "EUR": 0.329,
+      "EAS": 0.371,
+      "SAS": 0.611,
+      "AMR": 0.620
+    },
+    "weight": 2.3,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2066827",
+    "chromosome": "X",
+    "position": 219717011,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.784,
+      "EUR": 0.757,
+      "EAS": 0.056,
+      "SAS": 0.319,
+      "AMR": 0.782
+    },
+    "weight": 3.6,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2104511",
+    "chromosome": "X",
+    "position": 28335820,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.251,
+      "EUR": 0.724,
+      "EAS": 0.256,
+      "SAS": 0.300,
+      "AMR": 0.182
+    },
+    "weight": 2.7,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2184030",
+    "chromosome": "X",
+    "position": 13417753,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.200,
+      "EUR": 0.476,
+      "EAS": 0.315,
+      "SAS": 0.410,
+      "AMR": 0.562
+    },
+    "weight": 1.8,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2238289",
+    "chromosome": "X",
+    "position": 89985940,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.702,
+      "EUR": 0.199,
+      "EAS": 0.691,
+      "SAS": 0.581,
+      "AMR": 0.365
+    },
+    "weight": 2.5,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2294101",
+    "chromosome": "X",
+    "position": 151672753,
+    "region": "Global",
+    "ref": "A",
+    "alt": "G",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.735,
+      "EUR": 0.255,
+      "EAS": 0.911,
+      "SAS": 0.355,
+      "AMR": 0.474
+    },
+    "weight": 3.3,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2315024",
+    "chromosome": "X",
+    "position": 169542517,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.362,
+      "EUR": 0.313,
+      "EAS": 0.305,
+      "SAS": 0.512,
+      "AMR": 0.452
+    },
+    "weight": 1.0,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2382813",
+    "chromosome": "X",
+    "position": 17071976,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.018,
+      "EUR": 0.205,
+      "EAS": 0.970,
+      "SAS": 0.221,
+      "AMR": 0.090
+    },
+    "weight": 4.8,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2814778",
+    "chromosome": "X",
+    "position": 159174683,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.964,
+      "EUR": 0.006,
+      "EAS": 1.000,
+      "SAS": 1.000,
+      "AMR": 0.078
+    },
+    "weight": 5.0,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs3027440",
+    "chromosome": "X",
+    "position": 43767234,
+    "region": "Global",
+    "ref": "A",
+    "alt": "G",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.043,
+      "EUR": 0.996,
+      "EAS": 0.169,
+      "SAS": 0.221,
+      "AMR": 0.090
+    },
+    "weight": 4.8,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs3122629",
+    "chromosome": "X",
+    "position": 32785212,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.940,
+      "EUR": 0.355,
+      "EAS": 0.760,
+      "SAS": 0.300,
+      "AMR": 0.474
+    },
+    "weight": 3.2,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs3811801",
+    "chromosome": "X",
+    "position": 28344238,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.964,
+      "EUR": 0.006,
+      "EAS": 1.000,
+      "SAS": 1.000,
+      "AMR": 0.078
+    },
+    "weight": 5.0,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs3827760",
+    "chromosome": "X",
+    "position": 33065245,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.964,
+      "EUR": 0.938,
+      "EAS": 0.006,
+      "SAS": 0.059,
+      "AMR": 0.464
+    },
+    "weight": 4.8,
+    "description": "X-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs5951801",
+    "chromosome": "X",
+    "position": 147539706,
+    "region": "Global",
+    "ref": "A",
+    "alt": "G",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.526,
+      "EUR": 0.880,
+      "EAS": 0.780,
+      "SAS": 0.749,
+      "AMR": 0.586
+    },
+    "weight": 1.8,
+    "description": "X-chromosomal ancestry informative marker"
+  }
+]

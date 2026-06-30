@@ -97,7 +97,7 @@ const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogre
 const PolygenicScores = lazy(() => import("./components/PolygenicScores").then(m => ({ default: m.PolygenicScores })));
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
-const VERSION = "5.8.0";
+const VERSION = "5.9.0";
 
 const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace("haplogroup ", "").trim();
 
