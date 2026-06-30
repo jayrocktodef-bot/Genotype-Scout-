@@ -1,0 +1,102 @@
+[
+  {
+    "rsid": "rs2032658",
+    "chromosome": "Y",
+    "position": 13470103,
+    "region": "Global",
+    "ref": "A",
+    "alt": "G",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.038,
+      "EUR": 0.583,
+      "EAS": 0.004,
+      "SAS": 0.388,
+      "AMR": 0.435
+    },
+    "weight": 2.9,
+    "description": "Y-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs9786139",
+    "chromosome": "Y",
+    "position": 6885478,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.934,
+      "EUR": 0.054,
+      "EAS": 0.139,
+      "SAS": 0.327,
+      "AMR": 0.206
+    },
+    "weight": 4.4,
+    "description": "Y-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs9785897",
+    "chromosome": "Y",
+    "position": 20634811,
+    "region": "Global",
+    "ref": "T",
+    "alt": "C",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.038,
+      "EUR": 0.533,
+      "EAS": 0.004,
+      "SAS": 0.004,
+      "AMR": 0.418
+    },
+    "weight": 2.6,
+    "description": "Y-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs3901328",
+    "chromosome": "Y",
+    "position": 2862080,
+    "region": "Global",
+    "ref": "A",
+    "alt": "G",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.526,
+      "EUR": 0.880,
+      "EAS": 0.780,
+      "SAS": 0.749,
+      "AMR": 0.586
+    },
+    "weight": 1.8,
+    "description": "Y-chromosomal ancestry informative marker"
+  },
+  {
+    "rsid": "rs2030274",
+    "chromosome": "Y",
+    "position": 5917468,
+    "region": "Global",
+    "ref": "G",
+    "alt": "A",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.964,
+      "EUR": 0.006,
+      "EAS": 1.000,
+      "SAS": 1.000,
+      "AMR": 0.078
+    },
+    "weight": 5.0,
+    "description": "Y-chromosomal ancestry informative marker"
+  }
+]
