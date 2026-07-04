@@ -101,26 +101,26 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div className="space-y-6 animate-fade-up pb-20">
-      <section className="pt-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-800 mb-2">
-            Genomic Passport
+      <div className="flex items-center justify-between pt-2 pb-4 border-b border-slate-200/50 dark:border-slate-800/50">
+        <div>
+          <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-slate-100">
+            System Overview
           </h1>
-          <p className="text-slate-500 max-w-2xl text-sm">
-            {greeting}, Explorer. Your core genetic signature is summarized below. Click any module to dive deeper.
+          <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">
+            {greeting}, Explorer. Your genomic widgets are active.
           </p>
-        </motion.div>
-      </section>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        {/* Ancestry Hero Card */}
+        {/* Ancestry Hero Widget */}
         <motion.div
           onClick={() => onNavigateToTab('ancestry', 'painter')}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
-          className="lg:col-span-2 premium-card p-6 sm:p-8 cursor-pointer group relative overflow-hidden"
+          className="lg:col-span-2 premium-card p-5 cursor-pointer group relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full blur-3xl -mr-32 -mt-32"></div>
           <div className="flex flex-col md:flex-row gap-8 items-center relative z-10 h-full">
@@ -292,13 +292,13 @@ const Dashboard: React.FC<DashboardProps> = ({
         </motion.div>
 
         {/* Blood Predictor & Ancient DNA (Split Grid) */}
-        <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <motion.div
             onClick={() => onNavigateToTab('health_traits', 'blood')}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="premium-card p-6 cursor-pointer group flex items-center justify-between"
+            className="lg:col-span-2 premium-card p-5 cursor-pointer group flex items-center justify-between"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-2 transition-transform group-hover:scale-110">
@@ -315,7 +315,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="premium-card p-6 cursor-pointer group flex items-center justify-between"
+            className="lg:col-span-2 premium-card p-5 cursor-pointer group flex items-center justify-between"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-2 transition-transform group-hover:scale-110">

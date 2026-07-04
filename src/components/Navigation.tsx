@@ -40,27 +40,25 @@ const Navigation: React.FC<NavigationProps> = ({
     { id: 'rare_variants', label: 'Rare Variants', icon: Zap },
     { id: 'kit_comparison', label: 'Compare Kits', icon: Users },
     { id: 'export', label: 'Export', icon: Download },
-    { id: 'methodology', label: 'Methodology', icon: BookOpen },
-    { id: 'clear_cache', label: 'Clear Cache', icon: Trash2 }
+    { id: 'methodology', label: 'Methodology', icon: BookOpen }
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800">
-      <div className="max-w-[1360px] mx-auto px-2 sm:px-6 md:px-8 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-4 cursor-pointer" onClick={() => {
+    <nav className="fixed top-0 left-0 right-0 z-50 menubar">
+      <div className="w-full px-4 h-10 flex items-center justify-between">
+        <div className="flex items-center gap-3 cursor-pointer" onClick={() => {
           onTabChange('dashboard');
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}>
           <img 
             src="https://writteninthegenome.blog/wp-content/uploads/2026/03/cropped-1000055020-e1773637919503.webp" 
             alt="Genotype Scout Logo"
-            className="w-10 h-10 rounded-xl shadow-lg ring-4 ring-slate-100 dark:ring-slate-800"
+            className="w-6 h-6 rounded-md shadow-sm ring-1 ring-slate-200 dark:ring-slate-700"
           />
-          <div className="hidden sm:block">
-            <h2 className="text-lg font-black tracking-tighter text-slate-800 dark:text-slate-100 leading-none">Genotype Scout</h2>
-            <p className="text-[10px] font-black text-teal-600 dark:text-teal-400 uppercase tracking-widest mt-1 flex items-center gap-1.5 drop-shadow-[0_0_8px_rgba(13,148,136,0.7)] dark:drop-shadow-[0_0_8px_rgba(45,212,191,0.7)]">
-              V4.5 BETA
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse shadow-[0_0_8px_rgba(20,184,166,0.8)]"></span>
+          <div className="hidden sm:flex items-center gap-2">
+            <h2 className="text-sm font-black tracking-tighter text-slate-800 dark:text-slate-100 leading-none">Genotype Scout</h2>
+            <p className="text-[9px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest flex items-center gap-1 mt-0.5">
+              V5.13
             </p>
           </div>
         </div>
@@ -81,10 +79,10 @@ const Navigation: React.FC<NavigationProps> = ({
                   onTabChange(tab.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-wider transition-all duration-200 transform ${
+                className={`flex items-center gap-1.5 px-3 py-2 text-[11px] font-bold uppercase tracking-wider transition-all duration-200 border-b-2 ${
                   activeTab === tab.id 
-                    ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-md shadow-teal-500/10 dark:shadow-indigo-500/10 scale-105' 
-                    : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-800 dark:hover:text-slate-100'
+                    ? 'border-teal-500 text-teal-600 dark:text-teal-400' 
+                    : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700'
                 }`}
               >
                 <tab.icon className={`w-3.5 h-3.5 transition-colors ${activeTab === tab.id ? 'text-teal-500 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'}`} />
@@ -169,10 +167,10 @@ const Navigation: React.FC<NavigationProps> = ({
                     onTabChange(tab.id);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-wider transition-all duration-200 transform whitespace-nowrap shrink-0 ${
+                  className={`flex items-center gap-1.5 px-3 py-2 text-[10px] font-bold uppercase tracking-wider transition-all duration-200 border-b-2 whitespace-nowrap shrink-0 ${
                     activeTab === tab.id 
-                      ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-md scale-105' 
-                      : 'text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-800 dark:hover:text-slate-100'
+                      ? 'border-teal-500 text-teal-600 dark:text-teal-400' 
+                      : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700'
                   }`}
                 >
                   <tab.icon className={`w-3.5 h-3.5 transition-colors ${activeTab === tab.id ? 'text-teal-500 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'}`} />
@@ -187,7 +185,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 href="https://writteninthegenome.blog" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-800 dark:hover:text-slate-100 whitespace-nowrap shrink-0"
+                className="flex items-center gap-1 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-700 whitespace-nowrap shrink-0 transition-all"
               >
                 Blog
               </a>
@@ -195,7 +193,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 href="https://www.facebook.com/share/g/1EFyWD35tB/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-800 dark:hover:text-slate-100 whitespace-nowrap shrink-0"
+                className="flex items-center gap-1 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 border-b-2 border-transparent hover:border-slate-300 dark:hover:border-slate-700 whitespace-nowrap shrink-0 transition-all"
               >
                 Facebook
               </a>
@@ -203,7 +201,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 href="https://givebutter.com/genotypescout" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 px-3.5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-wider text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/30 hover:bg-teal-100 dark:hover:bg-teal-900/30 whitespace-nowrap shrink-0"
+                className="flex items-center gap-1 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 border-b-2 border-transparent hover:border-teal-300 dark:hover:border-teal-700 whitespace-nowrap shrink-0 transition-all"
               >
                 Donate
               </a>

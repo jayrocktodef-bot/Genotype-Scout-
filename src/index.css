@@ -141,7 +141,23 @@ body {
 }
 
 .premium-card {
-  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[2rem] border border-white/20 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-500 hover:shadow-lg hover:border-white/30 dark:hover:border-white/20;
+  @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-[30px] rounded-[1.5rem] border border-slate-200/50 dark:border-slate-700/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-xl hover:border-slate-300/50 dark:hover:border-slate-600/50;
+}
+
+.mac-window {
+  @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-[40px] rounded-2xl border border-white/40 dark:border-slate-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300;
+}
+
+.desktop-icon {
+  @apply flex flex-col items-center justify-center p-3 rounded-2xl hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-200 cursor-pointer active:scale-95;
+}
+
+.taskbar {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-[40px] border-t border-white/40 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.2)];
+}
+
+.menubar {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-[40px] border-b border-white/40 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)];
 }
 
 .text-gradient {

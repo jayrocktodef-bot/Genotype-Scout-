@@ -259,7 +259,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
   return (
     <div className="relative w-full min-h-[85vh] flex flex-col transition-all duration-300">
       {/* Workspace Background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-tr from-slate-50 via-slate-100 to-indigo-50/50 dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] transition-colors duration-500 rounded-[2rem]" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-indigo-100 via-white to-teal-50 dark:from-slate-900 dark:via-[#09090b] dark:to-teal-950/20 transition-colors duration-500 rounded-b-none sm:rounded-b-[2rem]" />
 
       {/* Main Workspace Area */}
       <div className="relative z-10 flex-1 flex flex-col p-6 sm:p-12">
@@ -336,37 +336,30 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
                 </div>
               </div>
 
-              {/* Bento Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {/* Desktop App Grid */}
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-4 sm:gap-6 lg:gap-8 max-w-[1200px] mx-auto w-full pt-8">
                 {filteredModules.map((mod, idx) => (
                   <motion.div
                     key={mod.id}
                     onClick={() => handleLaunchModule(mod.id)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.02, y: -4 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/60 rounded-3xl p-6 cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: idx * 0.02 }}
+                    className="desktop-icon group"
                   >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div 
-                        className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0 shadow-lg`}
-                        style={{ boxShadow: `0 8px 16px -4px ${mod.glowColor}` }}
-                      >
-                        {mod.imageUrl ? (
-                          <img src={mod.imageUrl} alt={mod.name} className="w-full h-full object-cover rounded-2xl" />
-                        ) : (
-                          <mod.icon className="w-6 h-6 text-white" />
-                        )}
-                      </div>
-                      <h3 className="text-lg font-black text-slate-800 dark:text-slate-100 leading-tight">
-                        {mod.name}
-                      </h3>
+                    <div 
+                      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl sm:rounded-3xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 ring-1 ring-white/20 dark:ring-white/10`}
+                      style={{ boxShadow: `0 10px 20px -5px ${mod.glowColor}` }}
+                    >
+                      {mod.imageUrl ? (
+                        <img src={mod.imageUrl} alt={mod.name} className="w-full h-full object-cover rounded-2xl sm:rounded-3xl" />
+                      ) : (
+                        <mod.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow-md" />
+                      )}
                     </div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
-                      {mod.description}
-                    </p>
+                    <h3 className="mt-3 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 text-center leading-tight drop-shadow-sm line-clamp-2">
+                      {mod.name}
+                    </h3>
                   </motion.div>
                 ))}
               </div>
@@ -381,45 +374,39 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
             </motion.div>
           )}
 
-          {/* Module Full View Wrapper */}
+          {/* Module Window Full View Wrapper */}
           {currentApp && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.98, y: 10 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.98, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="flex-1 flex flex-col w-full h-full bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden"
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="flex-1 flex flex-col w-full h-full mac-window overflow-hidden relative z-20 mt-4"
             >
-              {/* Minimalist Header / Breadcrumbs */}
-              <div className="px-8 py-5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950 flex items-center justify-between z-20">
-                <div className="flex items-center gap-4">
-                  <button 
-                    onClick={handleGoHome}
-                    className="flex items-center gap-2 px-3 py-1.5 text-sm font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 bg-slate-200/50 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                    Workspace
+              {/* macOS Style Window Title Bar */}
+              <div className="px-4 py-3 border-b border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-900/40 flex items-center justify-between z-30 select-none">
+                <div className="flex items-center gap-2">
+                  <button onClick={handleGoHome} className="w-3.5 h-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-colors shadow-sm flex items-center justify-center group">
+                    <X className="w-2.5 h-2.5 text-red-900 opacity-0 group-hover:opacity-100" />
                   </button>
-                  <div className="h-4 w-px bg-slate-300 dark:bg-slate-700" />
-                  <div className="flex items-center gap-3">
-                    {getModuleById(currentApp)?.imageUrl && (
-                       <img src={getModuleById(currentApp)!.imageUrl} alt="" className="w-6 h-6 rounded object-cover shadow-sm" />
-                    )}
-                    <h2 className="text-base font-black text-slate-900 dark:text-white uppercase tracking-wider">
-                      {getModuleById(currentApp)?.name}
-                    </h2>
-                  </div>
+                  <button className="w-3.5 h-3.5 rounded-full bg-amber-400 cursor-default shadow-sm" />
+                  <button className="w-3.5 h-3.5 rounded-full bg-emerald-400 cursor-default shadow-sm" />
                 </div>
-                <button
-                  onClick={handleGoHome}
-                  className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
+                
+                <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+                  {getModuleById(currentApp)?.imageUrl && (
+                     <img src={getModuleById(currentApp)!.imageUrl} alt="" className="w-4 h-4 rounded shadow-sm opacity-80" />
+                  )}
+                  <h2 className="text-xs font-bold text-slate-700 dark:text-slate-300 tracking-wide">
+                    {getModuleById(currentApp)?.name}
+                  </h2>
+                </div>
+
+                <div className="w-16"></div> {/* Spacer to center title */}
               </div>
 
               {/* Module Content */}
-              <div className="flex-1 overflow-y-auto p-4 sm:p-8 relative">
+              <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-white/50 dark:bg-slate-950/50 relative">
                 {children}
               </div>
             </motion.div>

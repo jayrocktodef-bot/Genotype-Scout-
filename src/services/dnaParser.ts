@@ -586,6 +586,8 @@ export async function parseRawDNAStream(
                 delimStr = ' ';
               } else {
                 linesMalformed++;
+                lastNewline = nlIdx;
+                pos = nlIdx + 1;
                 continue;
               }
             }

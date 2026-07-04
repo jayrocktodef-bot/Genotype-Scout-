@@ -154,8 +154,8 @@ async function runEnginesParallel(
   // ── Try parallel dispatch via nested workers ───────────────────
   if (canSpawnNestedWorkers()) {
     try {
-      // Cap the pool size at 2 to avoid memory pressure from spawning multiple heavy (15MB+) worker threads
-      const poolSize = Math.min(Math.min(navigator.hardwareConcurrency || 4, 2), engines.length);
+      // Allow up to the hardware concurrency (capped at 8 for sanity) to maximize parallel dispatch for heavy calculations
+      const poolSize = Math.min(Math.min(navigator.hardwareConcurrency || 4, 8), engines.length);
       const workers: Worker[] = [];
 
       for (let i = 0; i < poolSize; i++) {
@@ -521,10 +521,10 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
     for (const [rsid, genotype] of Object.entries(snpMap)) {
         const matchedAims = aimBaseMap.get(rsid.toLowerCase());
         if (matchedAims) {
+            if (usedRsids.has(rsid)) continue;
+            usedRsids.add(rsid);
             for (const aim of matchedAims) {
                 if (aim && aim.frequencies) {
-                    if (usedRsids.has(rsid)) continue;
-
                     const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
                     if (!cleanGenotype || cleanGenotype.length < 1 || cleanGenotype.includes('-') || cleanGenotype.includes('N')) {
                         continue;
@@ -567,10 +567,6 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>) {
                         totalSim[pop] = (totalSim[pop] || 0) + sim;
                         counts[pop] = (counts[pop] || 0) + 1;
                     }
-
-                    // Deduplicate by rsid (not gene name) so that multiple distinct markers
-                    // on the same gene (e.g., multiple HBB sickle-cell markers) are all scored.
-                    usedRsids.add(rsid);
                 }
             }
         }
