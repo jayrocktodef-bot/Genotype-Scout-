@@ -12,8 +12,9 @@
 
 ## ✨ What's New in V4.5
 
-- **Ultra-Fast DNA Parsing** — Replaced global regex evaluation with a line-by-line index-based search, reducing parse times for massive DNA files to milliseconds.
-- **True Multi-Worker Parallelism** — Parallelized all 11 CPU-bound analysis engines using a dynamically dispatched Web Worker pool (`navigator.hardwareConcurrency`), achieving a 2-3x speedup on post-parsing analysis.
+- **Ultra-Fast DNA Parsing & Intake** — Replaced global regex evaluation with a line-by-line index-based search, reducing parse times for massive DNA files to milliseconds. Resolved an intake flaw that caused infinite loops on malformed file headers.
+- **True Multi-Worker Parallelism** — Parallelized all CPU-bound analysis engines using a dynamically dispatched Web Worker pool (`navigator.hardwareConcurrency`, up to 8 threads), achieving massive speedups on post-parsing analysis.
+- **Desktop UI Overhaul** — Completely redesigned the user interface into a sleek, native OS-style desktop environment with floating app modules, improved navigation, and optimized accessibility.
 - **Improved HMM Local Ancestry Inference** — Overhauled the Hidden Markov Model (HMM) Viterbi chromosome painter to model transition rates dynamically using physical base-pair distances (1 cM/Mb scale) and smoothed boundary emissions using a Laplace prior.
 - **Ancestry-Aware Genotype Imputation** — Upgraded the targeted imputation engine to run regional cohort detection (sensing Native American, African, East Asian, and European diagnostic signals) to apply ancestry-aware imputation frequencies instead of a flat global average.
 - **Expanded Regional Anchor AIMs** — Updated the core Ancestry Informative Markers database (Seldin 128 / FROG-kb panels) to incorporate highly diagnostic anchors for underrepresented Oceanian, Native American, and MENA cohorts.
