@@ -2079,6 +2079,9 @@ export default function App() {
       const expandedFiles: File[] = [];
       for (const file of fileArray) {
         if (file.name.toLowerCase().endsWith('.zip')) {
+          if (file.size > 50 * 1024 * 1024) {
+            throw new Error(`The ZIP file "${file.name}" is too large to safely extract in the browser. Please extract it on your computer and upload the uncompressed raw text or VCF file directly. Streaming supports massive files!`);
+          }
           const zip = await JSZip.loadAsync(file);
           for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
             if (!zipEntry.dir) {
@@ -2092,15 +2095,7 @@ export default function App() {
       }
       fileArray = expandedFiles;
     } catch (e) {
-      setError(`Failed to process zip file: ${e instanceof Error ? e.message : String(e)}`);
-      setProcessing(false);
-      return;
-    }
-    
-    const MAX_FILE_SIZE = 150 * 1024 * 1024; // 150MB limit to prevent mobile browser OOM white-screens
-    const largeFiles = fileArray.filter(f => f.size > MAX_FILE_SIZE);
-    if (largeFiles.length > 0) {
-      setError(`File(s) too large: ${largeFiles.map(f => f.name).join(', ')}. Maximum file size is 150MB to prevent browser crashes.`);
+      setError(e instanceof Error ? e.message : `Failed to process zip file: ${String(e)}`);
       setProcessing(false);
       return;
     }

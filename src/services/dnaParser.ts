@@ -4,6 +4,9 @@ const VALID_BASE_CODES = new Set([
 ]);
 
 export function isValidGenotype(genotype: string): boolean {
+  if (genotype === '--' || genotype === '__' || genotype === '00' || genotype === '??' || genotype === './.' || genotype === '.|.' || genotype === '-' || genotype === '.') {
+    return false; // Treat uncalled/missing variants as invalid so they are skipped
+  }
   const len = genotype.length;
   if (len === 0 || len > 2) return false;
   if (!VALID_BASE_CODES.has(genotype.charCodeAt(0))) return false;
@@ -91,11 +94,26 @@ function fastParseLine(line: string, delim: number, delimStr: string): ParsedFie
 
   if (!isValidGenotype(genotype)) return null;
 
+  // Sort SNP alleles alphabetically to be position independent (e.g. TC -> CT)
+  if (genotype.length === 2 && genotype[0] !== 'I' && genotype[0] !== 'D' && genotype[1] !== 'I' && genotype[1] !== 'D') {
+    if (genotype.charCodeAt(0) > genotype.charCodeAt(1)) {
+      genotype = genotype[1] + genotype[0];
+    }
+  }
+
   let chrom = field1.toUpperCase();
   if (chrom.startsWith('CHR')) chrom = chrom.substring(3);
+  if (chrom === '23') chrom = 'X';
+  else if (chrom === '24') chrom = 'Y';
+  else if (chrom === '25' || chrom === '26' || chrom === 'M') chrom = 'MT';
+
+  let rawMarkerId = field0.toLowerCase();
+  if (!rawMarkerId || rawMarkerId === '.' || rawMarkerId === '-') {
+    rawMarkerId = `chr${chrom}_${field2}`.toLowerCase(); // Hydrate empty rsID with chr_pos
+  }
 
   return {
-    markerId: field0.toLowerCase(),
+    markerId: rawMarkerId,
     chrom,
     posStr: field2,
     pos: parseInt(field2, 10),
