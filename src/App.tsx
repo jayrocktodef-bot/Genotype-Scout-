@@ -428,9 +428,9 @@ const ProfileSummary = memo(({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             {/* Radar chart - span 5 */}
             <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-slate-100/50 pr-0 lg:pr-4">
-              <div className="relative w-full h-[150px] flex items-center justify-center">
+              <div className="relative w-full h-[250px] flex items-center justify-center">
                 {isChartReady ? (
-                  <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={150} debounce={1}>
+                  <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={250} debounce={1}>
                     <RadarChart data={ancestryChartData} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
                       <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
                       <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 8, fontWeight: 800 }} />

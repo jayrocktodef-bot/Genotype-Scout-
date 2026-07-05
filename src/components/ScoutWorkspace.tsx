@@ -386,14 +386,19 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
               {/* macOS Style Window Title Bar */}
               <div className="px-4 py-3 border-b border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-900/40 flex items-center justify-between z-30 select-none">
                 <div className="flex items-center gap-2">
-                  <button onClick={handleGoHome} className="w-3.5 h-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-colors shadow-sm flex items-center justify-center group">
+                  <button onClick={handleGoHome} className="w-3.5 h-3.5 rounded-full bg-red-400 hover:bg-red-500 transition-colors shadow-sm flex items-center justify-center group" title="Close App">
                     <X className="w-2.5 h-2.5 text-red-900 opacity-0 group-hover:opacity-100" />
                   </button>
                   <button className="w-3.5 h-3.5 rounded-full bg-amber-400 cursor-default shadow-sm" />
                   <button className="w-3.5 h-3.5 rounded-full bg-emerald-400 cursor-default shadow-sm" />
+                  
+                  <button onClick={handleGoHome} className="ml-3 flex items-center gap-1.5 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-slate-800 hover:bg-slate-200/50 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/50 transition-all">
+                    <LayoutGrid className="w-3.5 h-3.5" />
+                    <span>Home</span>
+                  </button>
                 </div>
                 
-                <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 pointer-events-none">
                   {getModuleById(currentApp)?.imageUrl && (
                      <img src={getModuleById(currentApp)!.imageUrl} alt="" className="w-4 h-4 rounded shadow-sm opacity-80" />
                   )}
