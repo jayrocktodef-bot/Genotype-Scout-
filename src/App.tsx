@@ -2466,6 +2466,17 @@ export default function App() {
             const details = isDetailed ? error.details : null;
             const category = isDetailed ? (details?.errorCategory || error.name || "Analytical Mismatch") : "Process Aborted";
 
+            // Generate a simple deterministic error code based on the string value
+            const generateErrorCode = (str: string) => {
+              let hash = 0;
+              for (let i = 0; i < str.length; i++) {
+                hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                hash |= 0;
+              }
+              return 'ERR-' + Math.abs(hash).toString(16).toUpperCase();
+            };
+            const errorCode = generateErrorCode(String(errMsg));
+
             return (
               <div className="mb-12 p-8 rounded-[2.5rem] bg-white border border-rose-100 shadow-xl shadow-rose-100/40 animate-fade-in relative overflow-hidden z-50">
                 {/* Visual border gradient accent */}
@@ -2489,6 +2500,19 @@ export default function App() {
                     <p className="text-slate-600 font-semibold text-sm leading-relaxed mb-6">
                       {errMsg}
                     </p>
+
+                    <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">Support Reference Code</div>
+                        <div className="text-sm font-mono font-bold text-slate-700">{errorCode}</div>
+                      </div>
+                      <button 
+                        onClick={() => navigator.clipboard.writeText(`Error: ${errMsg}\nCode: ${errorCode}`)}
+                        className="text-xs px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-bold text-slate-600 hover:text-slate-900 hover:border-slate-300 active:bg-slate-100 transition-colors"
+                      >
+                        Copy Error
+                      </button>
+                    </div>
 
                     {details?.suggestedSolution && (
                       <div className="mb-6 p-5 bg-teal-50/50 rounded-2xl border border-teal-100/60">
