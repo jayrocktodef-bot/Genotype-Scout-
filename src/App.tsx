@@ -2115,16 +2115,13 @@ export default function App() {
     let intervalId: any = null;
 
     try {
-      // Ingest DNA using zero-copy Transferable ArrayBuffers to bypass main-thread cloning latency
-      const fileContents = await Promise.all(
-        fileArray.map(async (file) => {
-          const buffer = await file.arrayBuffer();
-          return {
-            buffer,
-            name: file.name
-          };
-        })
-      );
+      // Pass the raw File objects so the worker can use the asynchronous streaming parser to avoid blocking the event loop
+      const fileContents = fileArray.map((file) => {
+        return {
+          file,
+          name: file.name
+        };
+      });
 
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
@@ -2237,15 +2234,12 @@ export default function App() {
         worker.terminate();
       };
 
-      // Extract ArrayBuffer instances for zero-copy Transferable list
-      const transferables = fileContents.map(fc => fc.buffer);
-
-      // Ship the processing request to the worker transferring ownership of ArrayBuffers
+      // Ship the processing request to the worker, passing the File objects directly
       worker.postMessage({ 
         type: 'PROCESS_GENOME', 
         files: fileContents,
         sab
-      }, transferables);
+      });
     } catch (err) {
       if (intervalId) clearInterval(intervalId);
       console.error("Processing error:", err);
