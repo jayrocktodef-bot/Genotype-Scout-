@@ -63,7 +63,7 @@ Genotype Scout leverages modern web technologies to handle computationally inten
 | **Styling** | Tailwind CSS v4 with custom design tokens |
 | **Performance** | Multi-worker parallel thread pool for concurrent analysis engines; streaming parser; code-split chunks for fast app-shell load |
 | **On-device ML** | ONNX model via `onnxruntime-web` — no cloud calls, no API key |
-| **Admixture Engine** | MDLP K16 with Lawson-Hanson NNLS solver |
+| **Admixture Engine** | Human Origins (K61) with Lawson-Hanson NNLS solver |
 | **PWA** | `vite-plugin-pwa` with Workbox service worker, offline precaching, runtime font/asset caching |
 | **Theme** | Light (default) / Dark mode toggle with CSS custom properties |
 
@@ -84,7 +84,7 @@ We utilize specialized, industry-recognized forensic panels to maximize the accu
 ## 📋 Feature Breakdown
 
 ### 🌍 High-Precision Ancestry
-Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) methods with MDLP K16 reference populations. Your genotype is compared against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation. 95% confidence intervals are computed per population.
+Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) methods with Human Origins (K61) reference populations. Your genotype is compared against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation. 95% confidence intervals are computed per population.
 
 ### 🏛️ Ancient DNA Oracle
 Weighted Ancient DNA matching. The engine applies weight boosts to region-specific Ancestry Informative Markers (AIMs), reducing noise and providing higher-confidence matches to ancestral populations.
