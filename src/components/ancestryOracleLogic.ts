@@ -449,7 +449,9 @@ export function solveAdmixtureProportions(
 
   // To enforce sum(x) = 1, we augment A and b with a heavily weighted row.
   // We want sum_p x_p = 1. So lambda * sum_p x_p = lambda.
-  const LAMBDA = 1000;
+  // Scale lambda proportionally to panel size to avoid overwhelming small panels
+  // while keeping tight constraint on large ones.
+  const LAMBDA = Math.max(10, Math.sqrt(M) * 10);
   const augA = new Array(P).fill(LAMBDA);
   A.push(augA);
   b.push(LAMBDA);
@@ -584,7 +586,8 @@ export async function processSubpopulations(
         if (freqs.length > 1) {
           const mean = freqs.reduce((a, b) => a + b, 0) / freqs.length;
           const variance = freqs.reduce((a, b) => a + (b - mean) ** 2, 0) / freqs.length;
-          popVarianceWeight = 0.5 + (variance * 4.0);
+          // Dampened sqrt scaling — prevents high-FST markers from dominating the distance
+          popVarianceWeight = 0.5 + (Math.sqrt(variance) * 2.0);
         }
       }
       
@@ -643,7 +646,7 @@ export async function processSubpopulations(
 
       const genotype = meta.genotype;
       const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
-      let userDosageDiscrete = 1; // Default to heterozygous (1 copy)
+      let userDosageDiscrete = -1; // -1 = unresolved
 
       const marker = (graf10kIndex as any)[rsidLower] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid];
       if (marker) {
@@ -665,15 +668,10 @@ export async function processSubpopulations(
         }
         userDosageDiscrete = matchCount; // Will yield 0, 1, or 2
       } else {
-        // Fallback dosage calculation when allele identity is unknown.
-        // For homozygous calls we default to 1 (het equivalent) rather than
-        // guessing 0 or 2 based on frequency, which was producing systematic errors
-        // (homozygous REF was being scored as dosage 2 when it should be 0).
-        if (genotype[0] === genotype[1]) {
-          userDosageDiscrete = 1; // Uncertain homozygous: use middle ground
-        } else {
-          userDosageDiscrete = 1; // Heterozygous
-        }
+        // Skip marker entirely when allele identity is ambiguous.
+        // Defaulting to dosage=1 erases the strongest ancestry signal
+        // (hom-derived vs hom-ancestral) and injects systematic bias.
+        continue;
       }
 
       matchedUserDosages.push(userDosageDiscrete);
@@ -826,11 +824,9 @@ export async function processSubpopulations(
       const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
 
       // Scale penalties for ancestral allele/cladistic conflicts.
-      // Uniform penalty across all populations — previously EUR had a lower penalty (0.12)
-      // which gave European populations a systematic scoring advantage over all others.
-      const penaltyFactor = 0.18;
-      const normalizedViolations = violations / (M / 100.0);
-      const adjustedDistance = baseDistance * (1.0 + penaltyFactor * normalizedViolations);
+      // Fixed per-violation penalty avoids explosion on small panels (M<50)
+      // and under-penalizing on large panels (M>5000).
+      const adjustedDistance = baseDistance * (1.0 + 0.20 * violations);
       popDistances.set(popCode, adjustedDistance);
     } else {
       popDistances.set(popCode, 1.0); // Insufficient markers fallback
@@ -894,7 +890,8 @@ export async function processSubpopulations(
 
   const minDist = rawBreakdown.length > 0 ? rawBreakdown[0].distance : 0.0;
   breakdown = rawBreakdown.map(item => {
-    const uiDistance = 0.05 + (item.distance - minDist);
+    // No artificial offset — preserve the true relative differences between populations
+    const uiDistance = item.distance - minDist;
     const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (uiDistance * 2.2)) * 100));
     return {
       subpop: item.subpop,
@@ -954,7 +951,7 @@ export async function processSubpopulations(
     nnlsWeights[idx] = meta.weight;
 
     const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
-    let uDosage = 1;
+    let uDosage = -1; // -1 = unresolved
 
     const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()];
     if (marker) {
@@ -971,10 +968,9 @@ export async function processSubpopulations(
         if (char === testAllele) matchCount++;
       }
       uDosage = matchCount;
-    } else {
-      // Fallback: dosage 1 (middle ground) avoids incorrect REF/ALT homozygous assignment
-      uDosage = 1;
     }
+    // Skip markers with ambiguous allele identity — injecting dosage=1 distorts NNLS
+    if (uDosage < 0) continue;
     
     nnlsUserDosages[idx] = uDosage;
 
@@ -1007,13 +1003,13 @@ export async function processSubpopulations(
       'EUR': 0, 'AFR': 0, 'AFRAM': 0, 'EAS': 0, 'SAS': 0, 'AMR': 0, 'AMER': 0, 'MENA': 0, 'OCE': 0, 'CAS': 0
     };
     Object.entries(firstPassProportions).forEach(([popCode, pct]) => {
-      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'EUR';
+      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'UNKNOWN';
       continentalAncestry[macroCode] = (continentalAncestry[macroCode] || 0) + pct;
     });
 
     // Sub-select populations: include continental groups with >= 2.0% ancestry
     const activeMacroGroups = Object.entries(continentalAncestry)
-      .filter(([_, pct]) => pct >= 2.0)
+      .filter(([_, pct]) => pct >= 0.5)
       .map(([macro, _]) => macro);
 
     // Fallback if no group meets the threshold: select the single macro group with the highest percentage
@@ -1032,7 +1028,7 @@ export async function processSubpopulations(
     // Pass 2: Filter reference clades to only keep populations in active continental groups
     const filteredPopExpectedDosages: Record<string, Float32Array> = {};
     for (const popCode of Object.keys(nnlsPopExpectedDosages)) {
-      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'EUR';
+      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'UNKNOWN';
       if (activeMacroGroups.includes(macroCode)) {
         filteredPopExpectedDosages[popCode] = nnlsPopExpectedDosages[popCode];
       }

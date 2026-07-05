@@ -86,6 +86,12 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
         At_b[i] = sum_b;
       }
 
+      // Ridge regularization: add 1e-8 to diagonal to stabilize
+      // near-singular matrices from highly correlated populations (e.g., CEU vs GBR)
+      for (let i = 0; i < pArray.length; i++) {
+        At_A[i][i] += 1e-8;
+      }
+
       let s_P = solveLinearSystem(At_A, At_b);
       
       // Map s_P back to full n-dimensional vector s
