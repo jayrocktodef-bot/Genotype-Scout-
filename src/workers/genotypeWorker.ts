@@ -1,5 +1,5 @@
-import { parseRawDNA, parseRawDNAStream } from '../services/dnaParser';
-
+import { parseRawDNA, parseRawDNAStream, GenomicsParseError } from '../services/dnaParser';
+import { unzipSync } from 'fflate';
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
 import { matchSNPs, getAllSources } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
@@ -380,19 +380,25 @@ self.onmessage = async (e: MessageEvent) => {
           const fileName = fileObj.name || 'Uploaded Kit';
           
           let parsed;
-          if (fileObj.buffer) {
-            parsed = parseRawDNA(decoder.decode(fileObj.buffer), allowlist, (processed, total, snps) => {
-              if (sab) {
-                const progressArray = new Int32Array(sab);
-                Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
-              } else {
-                self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+          try {
+            if (fileObj.buffer) {
+              let actualBuffer = fileObj.buffer;
+              
+              // 1. Detect ZIP signature (PK\x03\x04) for automatic decompression
+              const headerBytes = new Uint8Array(actualBuffer, 0, Math.min(4, actualBuffer.byteLength));
+              if (headerBytes.length >= 4 && headerBytes[0] === 0x50 && headerBytes[1] === 0x4B && headerBytes[2] === 0x03 && headerBytes[3] === 0x04) {
+                const unzipped = unzipSync(new Uint8Array(actualBuffer));
+                // Find the first valid text file in the archive (ignoring __MACOSX etc)
+                const textFileKey = Object.keys(unzipped).find(k => !k.startsWith('__MACOSX/') && (k.endsWith('.txt') || k.endsWith('.csv') || !k.includes('.')));
+                if (textFileKey) {
+                  actualBuffer = unzipped[textFileKey].buffer;
+                } else {
+                  throw new GenomicsParseError("ZIP archive does not contain a recognizable text file.", { errorCode: "ERR_ZIP_DECODE_02" });
+                }
               }
-            });
-          } else {
-            // Fallback for standard non-transferred File/Blob object
-            const actualFile = fileObj.stream ? fileObj : (fileObj.file ? fileObj.file : null);
-            if (actualFile && typeof actualFile.stream === 'function') {
+
+              // 2. Use Stream-based parsing via Blob to prevent V8 String 1GB Limit / OOM
+              const actualFile = new Blob([actualBuffer]);
               parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
                 if (sab) {
                   const progressArray = new Int32Array(sab);
@@ -401,18 +407,35 @@ self.onmessage = async (e: MessageEvent) => {
                   self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
                 }
               });
-            } else if (actualFile) {
-              parsed = parseRawDNA(decoder.decode(await actualFile.arrayBuffer()), allowlist, (processed, total, snps) => {
-                if (sab) {
-                  const progressArray = new Int32Array(sab);
-                  Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
-                } else {
-                  self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
-                }
-              });
             } else {
-              throw new Error("Invalid file object structure passed to worker");
+              // Fallback for standard non-transferred File/Blob object
+              const actualFile = fileObj.stream ? fileObj : (fileObj.file ? fileObj.file : null);
+              if (actualFile && typeof actualFile.stream === 'function') {
+                parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
+                  if (sab) {
+                    const progressArray = new Int32Array(sab);
+                    Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
+                  } else {
+                    self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+                  }
+                });
+              } else if (actualFile) {
+                // If it doesn't support streams, fallback to arrayBuffer
+                parsed = await parseRawDNAStream(new Blob([await actualFile.arrayBuffer()]), allowlist, (processed, total, snps) => {
+                  if (sab) {
+                    const progressArray = new Int32Array(sab);
+                    Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
+                  } else {
+                    self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+                  }
+                });
+              } else {
+                throw new Error("Invalid file object structure passed to worker");
+              }
             }
+          } catch (error: any) {
+             console.error("Worker parsing error:", error);
+             throw error; // Re-throw so the main try-catch catches it and posts ERR
           }
           parsedFiles.push({ ...parsed, name: fileName });
         }

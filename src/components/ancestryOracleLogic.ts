@@ -970,7 +970,7 @@ export async function processSubpopulations(
       uDosage = matchCount;
     }
     // Skip markers with ambiguous allele identity — injecting dosage=1 distorts NNLS
-    if (uDosage < 0) continue;
+    if (uDosage < 0) return;
     
     nnlsUserDosages[idx] = uDosage;
 

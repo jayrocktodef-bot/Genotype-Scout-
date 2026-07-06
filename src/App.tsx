@@ -2108,6 +2108,8 @@ export default function App() {
     });
 
     let intervalId: any = null;
+    let watchdogId: any = null;
+    let lastProgressTime = Date.now();
 
     try {
       // Pass the raw File objects so the worker can use the asynchronous streaming parser to avoid blocking the event loop
@@ -2120,6 +2122,16 @@ export default function App() {
 
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
+      watchdogId = setInterval(() => {
+        if (Date.now() - lastProgressTime > 25000) {
+          if (intervalId) clearInterval(intervalId);
+          clearInterval(watchdogId);
+          setError("ERR_WORKER_TIMEOUT_03: The genetic analysis worker stopped responding. Your dataset may be exceptionally large or heavily compressed. Please refresh and try extracting the ZIP first.");
+          setProcessing(false);
+          worker.terminate();
+        }
+      }, 5000);
+
       let sab: SharedArrayBuffer | null = null;
       let progressArray: Int32Array | null = null;
 
@@ -2169,6 +2181,7 @@ export default function App() {
       }
 
       worker.onmessage = (e) => {
+        lastProgressTime = Date.now();
         const { type, payload, error: workerError } = e.data;
         if (type === 'PROGRESS') {
           const { processed, total, snps, step, completed, totalEngines, statusVal } = payload;
@@ -2196,6 +2209,7 @@ export default function App() {
           });
         } else if (type === 'SUCCESS') {
           if (intervalId) clearInterval(intervalId);
+          if (watchdogId) clearInterval(watchdogId);
           const newIndex = datasets.length;
           snpMaps.current[newIndex] = payload.mergedSnpMap;
           updateDatasets({ 
@@ -2216,6 +2230,7 @@ export default function App() {
           worker.terminate();
         } else if (type === 'ERROR') {
           if (intervalId) clearInterval(intervalId);
+          if (watchdogId) clearInterval(watchdogId);
           setError(workerError?.message || workerError || "Processing failed in background worker.");
           setProcessing(false);
           worker.terminate();
@@ -2224,6 +2239,7 @@ export default function App() {
 
       worker.onerror = (err) => {
         if (intervalId) clearInterval(intervalId);
+        if (watchdogId) clearInterval(watchdogId);
         setError(`Worker error: ${err.message}`);
         setProcessing(false);
         worker.terminate();
@@ -2237,6 +2253,7 @@ export default function App() {
       });
     } catch (err) {
       if (intervalId) clearInterval(intervalId);
+      if (watchdogId) clearInterval(watchdogId);
       console.error("Processing error:", err);
       setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
       setProcessing(false);

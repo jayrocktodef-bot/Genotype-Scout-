@@ -189,7 +189,8 @@ describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
     it('does not classify a missing/no-call O marker as Type O', () => {
       const genotypes = {
         'rs8176719': '--', // No Call
-        'rs8176747': 'GG'  // non-B (so A)
+        'rs8176747': 'GG',  // non-B
+        'rs8176746': 'GG'   // A evidence
       };
 
       const result = calculateBloodType(genotypes);

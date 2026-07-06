@@ -131,6 +131,7 @@ export interface GenomicsParseErrorDetails {
   headerPreview?: string;
   errorCategory?: string;
   suggestedSolution?: string;
+  errorCode?: string;
 }
 
 export class GenomicsParseError extends Error {
@@ -166,7 +167,7 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
   }
 
   // 2. Check for zip signature that bypassed client extract
-  if (header.startsWith("PK\x03\x04") || header.includes("PK\u0003\u0004") || header.startsWith("PK\x05\x06") || header.startsWith("PK\x07\x08")) {
+  if (header.startsWith("PK\x03\x04") || header.includes("PK\u0003\u0004") || header.startsWith("PK\x05\x06") || header.startsWith("PK\x07\x08") || header.startsWith("\x1f\x8b")) {
     return {
       healthy: false,
       category: "Direct Binary ZIP Archive",
@@ -437,7 +438,7 @@ export function parseRawDNA(
 }
 
 export async function parseRawDNAStream(
-  file: File,
+  file: File | Blob,
   allowlist?: Set<string>,
   onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void
 ) {
