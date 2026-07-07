@@ -90,7 +90,10 @@ export const ChromosomePainterView = ({
           rawMatchingRsids = Array.from(normalizedUserSnpMap.keys());
           aimsDb = await getAimsByRsids(rawMatchingRsids);
         } else if (dataset.results && dataset.results.length > 0) {
-          rawMatchingRsids = dataset.results.map((r: any) => (r.rsid || r.markerId || "").toLowerCase()).filter(Boolean);
+          rawMatchingRsids = dataset.results.flatMap((r: any) => {
+            const id = (r.rsid || r.markerId || "").toLowerCase();
+            return id ? [id] : [];
+          });
           aimsDb = await getAimsByRsids(rawMatchingRsids);
         }
 

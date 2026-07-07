@@ -76,7 +76,7 @@
 
 @theme {
   --font-sans: "Supreme", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Supreme", "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Supreme", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
@@ -136,8 +136,13 @@ body {
 
 @layer base {
   button {
-    @apply transition-all active:scale-95 cursor-pointer;
+    @apply transition-[transform,opacity] active:scale-[0.96] cursor-pointer;
   }
+}
+
+/* Utility: tabular number rendering */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 .premium-card {
@@ -266,27 +271,28 @@ body {
   }
 }
 
-/* Tactile button, tag and tab transition states */
-button, 
-[role="tab"], 
+/* Tactile feedback: transition only GPU-composited properties */
+button,
+[role="tab"],
 .tab-btn,
 nav button,
 .category-btn,
 a.btn {
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-property: transform, opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 
 button:hover,
 [role="tab"]:hover,
 nav button:hover {
-  transform: translateY(-1.5px);
   filter: brightness(1.05);
 }
 
 button:active,
 [role="tab"]:active,
 nav button:active {
-  transform: translateY(1px) scale(0.96) !important;
+  transform: scale(0.96) !important;
 }
 
 @keyframes shimmer {

@@ -186,7 +186,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           className="premium-card p-6 cursor-pointer group flex flex-col justify-between"
         >
           <div>
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 transition-transform group-hover:scale-105">
               <Map className="w-5 h-5" />
             </div>
             <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Closest Population</h3>
@@ -215,7 +215,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           className="premium-card p-6 cursor-pointer group"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 rounded-xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 transition-transform group-hover:scale-105">
               <Fingerprint className="w-5 h-5" />
             </div>
             <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-fuchsia-500 transition-colors" />
@@ -244,7 +244,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           className="premium-card p-6 cursor-pointer group"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 transition-transform group-hover:scale-105">
               <HeartPulse className="w-5 h-5" />
             </div>
             <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-emerald-500 transition-colors" />
@@ -272,7 +272,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           className="premium-card p-6 cursor-pointer group"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 transition-transform group-hover:scale-105">
               <Sparkles className="w-5 h-5" />
             </div>
             <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-pink-500 transition-colors" />
@@ -301,7 +301,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             className="lg:col-span-2 premium-card p-5 cursor-pointer group flex items-center justify-between"
           >
             <div>
-              <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-2 transition-transform group-hover:scale-110">
+              <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-2 transition-transform group-hover:scale-105">
                 <Droplet className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Blood Predictor</h3>
@@ -318,7 +318,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             className="lg:col-span-2 premium-card p-5 cursor-pointer group flex items-center justify-between"
           >
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-2 transition-transform group-hover:scale-110">
+              <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-2 transition-transform group-hover:scale-105">
                 <Shield className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Top Ancient Match</h3>

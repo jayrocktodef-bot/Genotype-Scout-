@@ -296,7 +296,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
            <h3 className="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tighter leading-none">{predictedABO}</h3>
         </div>
         <div className="p-3.5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-[#1a1b1d] backdrop-blur-xl border border-slate-700 shadow-xl hover:shadow-2xl transition-all group overflow-hidden relative">
-           <div className="absolute top-0 right-0 p-6 opacity-30 text-6xl pointer-events-none group-hover:rotate-45 transition-transform duration-1000">🧬</div>
+           <div className="absolute top-0 right-0 p-6 opacity-30 text-6xl pointer-events-none group-hover:rotate-45 transition-transform">🧬</div>
            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Rhesus Factor</p>
            <h3 className="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tighter leading-none">{predictedRh}</h3>
         </div>

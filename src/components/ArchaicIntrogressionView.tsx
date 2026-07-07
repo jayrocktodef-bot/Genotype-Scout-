@@ -68,7 +68,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: `${results.score}%` }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="h-full bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)] z-10 relative"
             />
           </div>
@@ -86,7 +86,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
               key={item.rsid}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.05 }}
+              transition={{ delay: idx * 0.03 }}
               className="p-5 rounded-xl bg-black/20 border border-white/5 hover:border-purple-500/20 transition-all flex flex-col justify-between"
             >
               <div className="flex justify-between items-start gap-4 mb-3">

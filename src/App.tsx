@@ -103,7 +103,7 @@ const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace
 
 function enrichHaplogroupTree(tree: any, userPath: string[], testedMarkers: any[]) {
   if (!tree) return null;
-  const cloned = JSON.parse(JSON.stringify(tree));
+  const cloned = structuredClone(tree);
   if (!userPath || userPath.length <= 1) return cloned;
   
   function findNodeInCloned(root: any, normalizedName: string): any | null {
@@ -1841,7 +1841,6 @@ export default function App() {
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'ai_agent' | 'kit_comparison' | 'export'>('dashboard');
-  const [uiMode, setUiMode] = useState<'desktop' | 'classic'>('desktop');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
   const [isPrinting, setIsPrinting] = useState(false);
@@ -2059,16 +2058,6 @@ export default function App() {
     window.location.reload();
   };
 
-  const handleUiModeChange = (mode: 'desktop' | 'classic') => {
-    // Defer the heavy transition state update to a new event loop tick.
-    // This allows the event handler to finish immediately and let the browser
-    // paint the button's clicked/active state first, preventing INP block.
-    setTimeout(() => {
-      startTransition(() => {
-        setUiMode(mode);
-      });
-    }, 20);
-  };
 
   const processFiles = useCallback(async (files: FileList | File[]) => {
     setProcessing(true);
@@ -2431,7 +2420,7 @@ export default function App() {
   }
 
   return (
-    <div className="bg-slate-50 min-h-screen text-slate-800 font-sans selection:bg-teal-200 selection:text-teal-900 transition-colors duration-500 relative overflow-x-hidden">
+    <div className={`bg-[#030712] text-slate-100 font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh bg-slate-50 text-slate-800' : ''}`}>
       {/* Dynamic Premium Mesh Background (Light Mode) */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-teal-400/10 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse-soft"></div>
@@ -2450,8 +2439,6 @@ export default function App() {
         onThemeToggle={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
         isInstallable={!!installPromptEvent}
         onInstallApp={handleInstallApp}
-        uiMode={uiMode}
-        onChangeUiMode={handleUiModeChange}
         onReset={resetApp}
       />
 
@@ -2470,7 +2457,10 @@ export default function App() {
         }} 
       />
 
+      {!results ? (
+        <>
       <main className="max-w-[1360px] mx-auto px-1 sm:px-6 md:px-8 pt-24 sm:pt-28">
+
         {error && (
           (() => {
             const isDetailed = typeof error === 'object' && error !== null;
@@ -2626,106 +2616,67 @@ export default function App() {
             </div>
           </>
         )}
+      </main>
+        </>
+      ) : (
+        <>
+          {error ? (
+            (() => {
+              const isDetailed = typeof error === 'object' && error !== null;
+              const errMsg = isDetailed ? (error.message || "An unexpected error occurred.") : error;
+              return (
+                <div className="fixed top-10 left-0 right-0 z-50 px-4 py-3 bg-rose-900/90 border-b border-rose-500/30 text-rose-200 text-xs font-bold flex items-center justify-between gap-3">
+                  <span>⚠️ {errMsg}</span>
+                  <button onClick={() => setError(null)} className="text-rose-300 hover:text-white px-2 py-1 rounded" aria-label="Dismiss error">✕</button>
+                </div>
+              );
+            })()
+          ) : null}
 
-        {results && (
-          <div className="space-y-12 animate-fade-in">
+          {processing ? (
+            <div className="fixed top-10 left-0 right-0 z-50"><GenotypeParser streamProgress={streamProgress} /></div>
+          ) : null}
 
-            {pendingFiles.length > 0 && (
-              <div className="p-8 premium-card flex flex-col sm:flex-row items-center justify-between gap-6 bg-teal-50/30 border-teal-100">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600">
-                    <FlaskConical className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-800">{pendingFiles.length} Kit(s) Ready</h3>
-                    <p className="text-xs text-slate-500">{pendingFiles.map(f => f.name).join(', ')}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 w-full sm:w-auto">
-                  <button 
-                    onClick={() => setPendingFiles([])}
-                    className="flex-1 sm:flex-none px-6 py-3 border border-slate-200 rounded-2xl text-xs font-black text-slate-500 hover:bg-white"
-                  >
-                    Cancel
-                  </button>
-                  <button 
-                    onClick={() => {
-                      processFiles(pendingFiles);
-                      setPendingFiles([]);
-                    }}
-                    className="flex-1 sm:flex-none px-8 py-3 bg-teal-600 text-white rounded-2xl text-xs font-black shadow-lg shadow-teal-100 hover:bg-teal-700"
-                  >
-                    Start Analysis
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {uiMode === 'classic' ? (
-              <>
-                {/* Top Analysis Header Action Bar */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-8">
-                  <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-black">
-                  <FlaskConical className="w-5 h-5 text-teal-400" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 tracking-tight capitalize select-none">
-                    {activeTab === 'ancestry' ? 'Ancestry & Populations' : activeTab === 'history' ? 'Lineages & History' : activeTab === 'health_traits' ? 'Health & Traits' : activeTab === 'autosomal' ? 'Markers' : activeTab}
-                  </h2>
-                  <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">
-                    Analyzing dataset: <span className="text-slate-600 font-mono font-black">{datasets[activeDatasetIndex]?.name}</span>
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-wrap items-center gap-3">
-                {/* Dataset Picker Inline */}
-                {datasets.length > 1 && (
-                  <div className="flex items-center gap-1 bg-white p-1 rounded-full border border-slate-100 shadow-sm">
-                    {datasets.map((d, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setActiveDatasetIndex(i)}
-                        className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider transition-all ${
-                          activeDatasetIndex === i 
-                            ? 'bg-slate-900 text-white shadow-sm' 
-                            : 'text-slate-500 hover:bg-slate-50'
-                        }`}
-                      >
-                        {d.name.split('.')[0]}
-                      </button>
-                    ))}
-                  </div>
-                )}
-                
-                {/* Methodology Button (Except Wellness) */}
-                {!(activeTab === 'health_traits' && activeHealthSubTab === 'wellness') && (
-                  <button
-                    onClick={() => setIsMethodologyOpen(true)}
-                    className="flex items-center gap-1.5 px-4 py-2 bg-teal-50 hover:bg-teal-100/90 border border-teal-200/40 text-teal-700 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all shadow-sm"
-                  >
-                    <BookOpen className="w-3.5 h-3.5 text-teal-500" />
-                    Methodology
-                  </button>
-                )}
+          {pendingFiles.length > 0 ? (
+            <div className="fixed top-10 left-0 right-0 z-50 px-6 py-3 bg-teal-900/95 border-b border-teal-500/30 flex items-center justify-between gap-4">
+              <span className="text-teal-200 text-xs font-bold">{pendingFiles.length} Kit(s) pending — {pendingFiles.map(f => f.name).join(', ')}</span>
+              <div className="flex gap-2">
+                <button onClick={() => setPendingFiles([])} className="px-3 py-1.5 text-xs font-black text-teal-400 hover:text-teal-200 border border-teal-700 rounded-lg">Cancel</button>
+                <button onClick={() => { processFiles(pendingFiles); setPendingFiles([]); }} className="px-4 py-1.5 text-xs font-black bg-teal-600 hover:bg-teal-500 text-white rounded-lg">Analyze</button>
               </div>
             </div>
+          ) : null}
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab + activeDatasetIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Suspense fallback={
+
+          <ScoutWorkspace
+            oracleResults={oracleResults}
+            populationProximity={populationProximity}
+            dataset={datasets[activeDatasetIndex]}
+            userSnps={snpMaps.current[activeDatasetIndex] || {}}
+            datasets={datasets}
+            activeDatasetIndex={activeDatasetIndex}
+            setActiveDatasetIndex={setActiveDatasetIndex}
+            onNavigateToTab={(tab: string, subTab?: string) => {
+              setActiveTab(tab as any);
+              if (tab === 'ancestry' && subTab) {
+                setActiveAncestrySubTab(subTab as any);
+              } else if (tab === 'health_traits' && subTab) {
+                setActiveHealthSubTab(subTab as any);
+              } else if (tab === 'history' && subTab) {
+                setActiveHistorySubTab(subTab as any);
+              }
+            }}
+            onReset={resetApp}
+            currentApp={currentApp}
+            onOpenApp={setCurrentApp}
+          >
+            <Suspense fallback={
                   <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse">
                     <div className="w-10 h-10 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-4" />
                     <p className="font-bold tracking-widest uppercase text-xs">Loading Tool...</p>
                   </div>
                 }>
+
                 {activeTab === 'dashboard' && (
                   <Dashboard 
                     oracleResults={oracleResults}
@@ -3099,41 +3050,8 @@ export default function App() {
                     </pre>
                   </div>
                 )}
-                </Suspense>
-              </motion.div>
-            </AnimatePresence>
-          </>
-        ) : (
-          <ScoutWorkspace
-            oracleResults={oracleResults}
-            populationProximity={populationProximity}
-            dataset={datasets[activeDatasetIndex]}
-            userSnps={snpMaps.current[activeDatasetIndex] || {}}
-            datasets={datasets}
-            activeDatasetIndex={activeDatasetIndex}
-            setActiveDatasetIndex={setActiveDatasetIndex}
-            onNavigateToTab={(tab: string, subTab?: string) => {
-              setActiveTab(tab as any);
-              if (tab === 'ancestry' && subTab) {
-                setActiveAncestrySubTab(subTab as any);
-              } else if (tab === 'health_traits' && subTab) {
-                setActiveHealthSubTab(subTab as any);
-              } else if (tab === 'history' && subTab) {
-                setActiveHistorySubTab(subTab as any);
-              }
-            }}
-            onReset={resetApp}
-            uiMode={uiMode}
-            onChangeUiMode={handleUiModeChange}
-            currentApp={currentApp}
-            onOpenApp={setCurrentApp}
-          >
-            <Suspense fallback={
-              <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse">
-                <div className="w-10 h-10 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-4" />
-                <p className="font-bold tracking-widest uppercase text-xs">Initializing Analysis...</p>
-              </div>
-            }>
+
+
             {currentApp === 'profile' && (
               <div className="space-y-8 animate-fade-in">
                 <ProfileSummary 
@@ -3388,10 +3306,9 @@ export default function App() {
             )}
             </Suspense>
           </ScoutWorkspace>
-        )}
-      </div>
-        )}
-      </main>
+        </>
+      )}
+
 
       <MethodologyModal
         isOpen={isMethodologyOpen}

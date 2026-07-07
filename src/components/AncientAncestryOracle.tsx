@@ -55,11 +55,11 @@ export const AncientAncestryOracle = memo(({
               key={`${pop.popCode || 'unknown'}-${index}`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.03 }}
               className="p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-amber-500/30 transition-all group"
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:scale-105 transition-transform">
                   {type === 'matches' ? <User size={20} /> : <History size={20} />}
                 </div>
                 <div className="text-right">
