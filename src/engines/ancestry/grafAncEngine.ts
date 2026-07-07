@@ -229,13 +229,13 @@ export async function calculateRegionalScores(userGenotypes: Record<string, stri
     const topScore = results[0].score;
     
     return results.map(r => {
-        // Convert log-likelihood difference to a 0-100 percentage-like confidence
-        const relProb = Math.exp((r.score - topScore) / 10); // Smoothing factor 10
+        // Convert log-likelihood difference to a raw relative weight
+        const relProb = Math.exp(r.score - topScore);
         return {
             population: POP_NAME_MAP[r.name] || r.name,
             score: r.score,
             percentage: relProb * 100, // This is relative resonance
-            distance: Math.abs(r.score) / 100 // Inverse log-likelihood as a distance metric
+            distance: Math.abs(r.score) // Inverse log-likelihood as a distance metric
         };
     });
   } catch (error) {

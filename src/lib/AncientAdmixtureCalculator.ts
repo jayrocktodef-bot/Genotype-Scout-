@@ -342,12 +342,13 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
         const uG = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
         return uG && uG === sampleSnps[rsid];
       }).length,
+      markersCompared: markersCompared,
       culture: sample.culture_name || sample.culture,
       age_bp: sample.age_bp
-    } as AncientSampleMatch & { distance: number };
+    } as AncientSampleMatch & { distance: number; markersCompared: number };
   });
   
   return results
-    .filter(r => r.matchingMarkers > 0)
+    .filter(r => r.markersCompared > 0)
     .sort((a, b) => a.distance - b.distance);
 };

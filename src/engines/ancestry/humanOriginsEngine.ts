@@ -31,7 +31,16 @@ export async function calculateHumanOriginsScores(userSnps: Record<string, strin
   const allRsids = Object.keys((hoModernKernel as any)[firstPop].frequencies);
   const matchedRsids = allRsids.filter(rsid => {
     const userCall = normalizedUserSnps[rsid.toLowerCase()];
-    return userCall && userCall.length === 2 && userCall !== '--';
+    if (!userCall || userCall.length !== 2 || userCall === '--') return false;
+    
+    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+    if (!marker || !marker.alt) return false; // skip markers without alt allele
+
+    // Ensure all populations have a defined frequency for this marker
+    return pops.every(pop => {
+      const freq = (hoModernKernel as any)[pop].frequencies[rsid];
+      return typeof freq === 'number' && freq >= 0;
+    });
   });
 
   const M = matchedRsids.length;
@@ -48,33 +57,18 @@ export async function calculateHumanOriginsScores(userSnps: Record<string, strin
     // Accurate Dosage Calculation mapped to exact Alternative Allele
     let dosage = 0.0;
     const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
-    
-    if (marker && marker.alt) {
-      const alt = marker.alt.toUpperCase();
-      const a1 = userCall[0].toUpperCase();
-      const a2 = userCall[1].toUpperCase();
-      if (a1 === alt) dosage += 0.5;
-      if (a2 === alt) dosage += 0.5;
-    } else {
-      // Rare fallback if index is missing: attempt to guess based on global average
-      let sumFreq = 0;
-      for (let j = 0; j < N; j++) {
-        sumFreq += (hoModernKernel as any)[pops[j]].frequencies[rsid] || 0;
-      }
-      const avgFreq = sumFreq / N;
-      dosage = 0.5;
-      if (userCall[0] === userCall[1]) {
-        dosage = avgFreq > 0.5 ? 1.0 : 0.0;
-      }
-    }
+    const alt = marker.alt.toUpperCase();
+    const a1 = userCall[0].toUpperCase();
+    const a2 = userCall[1].toUpperCase();
+    if (a1 === alt) dosage += 0.5;
+    if (a2 === alt) dosage += 0.5;
 
     b[i] = dosage;
 
     for (let j = 0; j < N; j++) {
       const popName = pops[j];
       const popData = (hoModernKernel as any)[popName];
-      // Assign frequency. If missing, assume 0
-      A[i][j] = popData.frequencies[rsid] || 0;
+      A[i][j] = popData.frequencies[rsid]; // guaranteed to exist from filter above
     }
   }
 

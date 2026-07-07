@@ -90,7 +90,7 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
   cyp2d6_score = cyp2d6_score - hasNone - (hasDecreased * 0.5);
 
   let cyp2d6_phenotype = 'Normal Metabolizer';
-  if (cyp2d6_score <= 0.5) cyp2d6_phenotype = 'Poor Metabolizer';
+  if (cyp2d6_score <= 0) cyp2d6_phenotype = 'Poor Metabolizer';
   else if (cyp2d6_score <= 1.0) cyp2d6_phenotype = 'Intermediate Metabolizer';
   
   // Note: Ultrarapid for 2D6 usually requires CNV analysis (duplications), which arrays struggle with, so we skip it.

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { LayoutGrid, Globe, HeartPulse, History, FlaskConical, Database, User, BookOpen, Sun, Moon, Download, Sparkles, Users, Zap, Trash2 } from 'lucide-react';
+import { LayoutDashboard, Globe, HeartPulse, History, FlaskConical, Database, User, BookOpen, Sun, Moon, Download, Sparkles, Users, Zap, Trash2 } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -30,7 +30,7 @@ const Navigation: React.FC<NavigationProps> = ({
   onReset
 }) => {
   const tabs = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutGrid },
+    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'summary', label: 'Profile', icon: User },
     { id: 'ancestry', label: 'Ancestry & Pop', icon: Globe },
     { id: 'history', label: 'Lineages & History', icon: History },

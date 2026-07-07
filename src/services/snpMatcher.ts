@@ -136,8 +136,8 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
   
   const sourcesCount = allSources.length;
   for (let i = 0; i < sourcesCount; i++) {
-    const snp = allSources[i];
-    const markerIdLower = snp.markerId.toLowerCase();
+    const snpObj = { ...allSources[i] };
+    const markerIdLower = snpObj.markerId.toLowerCase();
     
     if (seen.has(markerIdLower)) continue;
     seen.add(markerIdLower);
@@ -155,18 +155,18 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       if (snpMetaMap?.[baseMarkerId]) meta = snpMetaMap[baseMarkerId];
     }
     // Check rsid
-    else if (snp.rsid && snpMap[snp.rsid.toLowerCase()]) {
-      const k = snp.rsid.toLowerCase();
+    else if (snpObj.rsid && snpMap[snpObj.rsid.toLowerCase()]) {
+      const k = snpObj.rsid.toLowerCase();
       raw = snpMap[k];
       if (snpMetaMap?.[k]) meta = snpMetaMap[k];
-    } else if (snp.rsid && snpMap[snp.rsid.toLowerCase().split('_')[0]]) {
-      const k = snp.rsid.toLowerCase().split('_')[0];
+    } else if (snpObj.rsid && snpMap[snpObj.rsid.toLowerCase().split('_')[0]]) {
+      const k = snpObj.rsid.toLowerCase().split('_')[0];
       raw = snpMap[k];
       if (snpMetaMap?.[k]) meta = snpMetaMap[k];
     }
     // Check aliases
-    else if (snp.aliases) {
-      for (const alias of snp.aliases) {
+    else if (snpObj.aliases) {
+      for (const alias of snpObj.aliases) {
         const k = alias.toLowerCase();
         if (snpMap[k]) {
           raw = snpMap[k];
@@ -177,15 +177,15 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     }
 
     // Proxy Lookup
-    if (!raw && snp.rsid) {
-      const proxies = SNP_PROXY_MAP[snp.rsid.toLowerCase()];
+    if (!raw && snpObj.rsid) {
+      const proxies = SNP_PROXY_MAP[snpObj.rsid.toLowerCase()];
       if (proxies) {
         for (const proxy of proxies) {
           const k = proxy.toLowerCase();
           if (snpMap[k]) {
             raw = snpMap[k];
             if (snpMetaMap?.[k]) meta = snpMetaMap[k];
-            snp.description = (snp.description || "") + ` [Proxy matched via ${proxy}]`;
+            snpObj.description = (snpObj.description || "") + ` [Proxy matched via ${proxy}]`;
             break;
           }
         }
@@ -193,7 +193,7 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     }
 
     if (!raw) {
-      results.push({ ...snp, status: 'not_tested' });
+      results.push({ ...snpObj, status: 'not_tested' });
       continue;
     }
     
@@ -201,7 +201,7 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     const sortedGenotype = raw.length === 2 ? (raw[0] > raw[1] ? raw[1] + raw[0] : raw).toUpperCase() : normalizedGenotype;
     
     let interpretation = null;
-    const interpretations = snp.interpretations;
+    const interpretations = snpObj.interpretations;
     
     if (interpretations) {
       for (const key in interpretations) {
@@ -236,8 +236,8 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     }
 
     let matchCount = 0;
-    if (Array.isArray(snp.alleles)) {
-      for (const allele of snp.alleles) {
+    if (Array.isArray(snpObj.alleles)) {
+      for (const allele of snpObj.alleles) {
         if (raw[0] === allele) matchCount++;
         if (raw[1] === allele) matchCount++;
       }
@@ -251,8 +251,8 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       const complementGenotype = raw.split('').map(b => complementMap[b.toUpperCase()] || b).join('').toUpperCase();
       
       let compMatchCount = 0;
-      if (Array.isArray(snp.alleles)) {
-        for (const allele of snp.alleles) {
+      if (Array.isArray(snpObj.alleles)) {
+        for (const allele of snpObj.alleles) {
           if (complementGenotype[0] === allele) compMatchCount++;
           if (complementGenotype[1] === allele) compMatchCount++;
         }
@@ -287,7 +287,7 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
     const isPartial = !interpretation && matchCount > 0 && matchCount < 2 && raw.length === 2;
     
     if (!interpretation) {
-      const alleleStr = Array.isArray(snp.alleles) ? snp.alleles.join('/') : 'N/A';
+      const alleleStr = Array.isArray(snpObj.alleles) ? snpObj.alleles.join('/') : 'N/A';
       if (matchCount === 2) {
         interpretation = `Homozygous for the ${alleleStr} allele. Carry two copies.`;
       } else if (matchCount === 1) {
@@ -296,10 +296,10 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
         interpretation = `No ${alleleStr} variant detected.`;
       }
       if (isPartial) interpretation = `[Partial Match] ${interpretation}`;
-      if (snp.description) interpretation += ` ${snp.description}`;
+      if (snpObj.description) interpretation += ` ${snpObj.description}`;
     }
       
-    results.push({ ...snp, genotype: raw, interpretation, status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', chrom: meta?.chrom, pos: meta?.pos });
+    results.push({ ...snpObj, genotype: raw, interpretation, status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', chrom: meta?.chrom, pos: meta?.pos });
   }
   return results;
 }

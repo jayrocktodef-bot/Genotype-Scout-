@@ -78,6 +78,12 @@ export const ChromosomePainter = ({
     });
   }, []);
 
+  const isDiploid = useMemo(() => {
+    return Object.values(segments).some(
+      chromData => chromData && !Array.isArray(chromData) && (chromData as any).strandA
+    );
+  }, [segments]);
+
   return (
     <div className="w-full bg-[#0d0e10]/90 border border-white/5 rounded-3xl p-6 shadow-2xl relative">
       
@@ -116,11 +122,15 @@ export const ChromosomePainter = ({
       <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-800">
         {sortedChroms.map((chrom) => {
           const length = CHROMOSOME_LENGTHS[chrom];
-          const chromData = segments[chrom] || [];
-          const hasStrands = !Array.isArray(chromData) && (chromData as any).strandA && (chromData as any).strandB;
+          const chromData = segments[chrom];
           
-          const strandA: Segment[] = hasStrands ? (chromData as any).strandA || [] : (Array.isArray(chromData) ? chromData : []);
-          const strandB: Segment[] = hasStrands ? (chromData as any).strandB || [] : [];
+          const hasStrands = isDiploid;
+          const strandA: Segment[] = chromData 
+            ? (Array.isArray(chromData) ? chromData : (chromData as any).strandA || [])
+            : [];
+          const strandB: Segment[] = chromData
+            ? (Array.isArray(chromData) ? [] : (chromData as any).strandB || [])
+            : [];
 
           return (
             <div key={chrom} className="group flex flex-col md:flex-row items-stretch gap-2 md:gap-4 p-3 bg-slate-900/30 hover:bg-slate-900/60 rounded-xl border border-white/[0.02] transition-colors">
@@ -136,7 +146,7 @@ export const ChromosomePainter = ({
                 <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
                   {strandA.length === 0 ? (
                     <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none">
-                      No Coverage
+                      {chromData ? 'No Coverage' : 'No Data'}
                     </div>
                   ) : (
                     strandA.map((seg, i) => {
@@ -175,7 +185,7 @@ export const ChromosomePainter = ({
                   <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
                     {strandB.length === 0 ? (
                       <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none">
-                        No Coverage
+                        {chromData ? 'No Coverage' : 'No Data'}
                       </div>
                     ) : (
                       strandB.map((seg, i) => {

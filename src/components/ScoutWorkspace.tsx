@@ -4,7 +4,7 @@ import {
   User, Globe, History, HeartPulse, Database, BookOpen, 
   Zap, Droplet, ArrowLeft, 
   Search, Settings, Play, X, Dna, Sparkles,
-  Trash2, Users, Printer
+  Trash2, Users, Printer, LayoutDashboard
 } from 'lucide-react';
 
 interface ScoutWorkspaceProps {
@@ -393,7 +393,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
                   <button className="w-3.5 h-3.5 rounded-full bg-emerald-400 cursor-default shadow-sm" />
                   
                   <button onClick={handleGoHome} className="ml-3 flex items-center gap-1.5 px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-slate-800 hover:bg-slate-200/50 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800/50 transition-all">
-                    <LayoutGrid className="w-3.5 h-3.5" />
+                    <LayoutDashboard className="w-3.5 h-3.5" />
                     <span>Home</span>
                   </button>
                 </div>

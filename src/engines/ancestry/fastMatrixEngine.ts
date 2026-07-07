@@ -48,7 +48,7 @@ export function compileReferenceKernel(): Promise<void> {
       globalRsIDs = cachedData.globalRsIDs;
       popNames = cachedData.popNames;
       popRegions = cachedData.popRegions;
-      popFrequencies = cachedData.popFrequencies;
+      popFrequencies = cachedData.popFrequencies.map((f: any[]) => new Float32Array(f));
       rsidToIndexMap = new Map(globalRsIDs.map((rsid, index) => [rsid, index]));
       isCompiled = true;
       console.log(`⚡ BOOTSTRAP FAST: Loaded ${popNames.length} populations from IndexedDB.`);
@@ -102,7 +102,7 @@ export function compileReferenceKernel(): Promise<void> {
           globalRsIDs,
           popNames,
           popRegions,
-          popFrequencies
+          popFrequencies: popFrequencies.map(f => Array.from(f))
         });
         console.log(`✅ Cache Saved. Mapped ${popNames.length} populations.`);
       } catch (e) {
@@ -137,6 +137,8 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
     if (a === 'T') return 'A';
     if (a === 'C') return 'G';
     if (a === 'G') return 'C';
+    // Protect against indels (I/D) or other weird calls silently passing
+    if (a === 'I' || a === 'D') return a; 
     return a;
   };
 

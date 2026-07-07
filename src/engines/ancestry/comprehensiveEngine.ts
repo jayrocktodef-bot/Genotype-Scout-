@@ -72,7 +72,13 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
     markersUsed++;
 
     // Pre-extract genotype string length and content
-    const matchCount = (alleles.includes(genotype[0]) ? 1 : 0) + (genotype[1] && alleles.includes(genotype[1]) ? 1 : 0);
+    // We assume marker.alleles[0] is the AIM allele for which frequencies are provided
+    const aimAllele = alleles.length > 0 ? alleles[0] : null;
+    if (!aimAllele) continue;
+
+    const a1IsAim = (genotype[0] === aimAllele) ? 1 : 0;
+    const a2IsAim = (genotype[1] && genotype[1] === aimAllele) ? 1 : 0;
+    const aimCount = a1IsAim + a2IsAim;
 
     for (const popCode of populations) {
       const continent = CONTINENT_MAP[popCode];
@@ -81,9 +87,9 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
       const p = Math.max(0.001, Math.min(0.999, frequencies?.[popCode] || 0.01));
       const q = 1 - p;
 
-      let prob = 1e-6; // Laplacian smoothing
-      if (matchCount === 2) prob = p * p;
-      else if (matchCount === 1) prob = 2 * p * q;
+      let prob = 1e-6; // Laplacian smoothing fallback
+      if (aimCount === 2) prob = p * p;
+      else if (aimCount === 1) prob = 2 * p * q;
       else prob = q * q;
 
       continentalLogLikelihoods[continent] += Math.log(prob);

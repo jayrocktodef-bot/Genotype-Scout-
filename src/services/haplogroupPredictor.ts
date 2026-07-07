@@ -306,10 +306,10 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     // Strip trailing '!' or '!!'
     const cleanMutation = mutation.replace(/!+$/, '');
 
-    // Case A: Standard Substitution (e.g., A263G, C3516a) or Single Deletion (e.g., C498d)
-    const subMatch = cleanMutation.match(/^([A-Z])(\d+)([A-Za-z])$/);
+    // Case A: Standard Substitution (e.g., A263G, C3516a) or Single Deletion (e.g., C498d), or Abbreviated Substitution (e.g., 263G, 16111t)
+    const subMatch = cleanMutation.match(/^([A-Z]?)(\d+)([A-Za-z])$/);
     if (subMatch) {
-      const ancestral = subMatch[1];
+      const ancestral = subMatch[1] || '';
       const pos = subMatch[2];
       const derived = subMatch[3];
       const userAllele = mtMap[pos];

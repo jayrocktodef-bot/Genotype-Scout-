@@ -63,8 +63,7 @@ export function pruneMarkersByPhysicalDistance<T extends GenomicMarker>(
           (marker.weight || 0) > (lastMarker.weight || 0)
         ) {
           pruned[lastIndex] = marker;
-          // Keep the lastPos updated if we swapped it
-          lastPos = marker.position;
+          // DO NOT update lastPos here, because we want to maintain the same window boundary
         }
       }
     }

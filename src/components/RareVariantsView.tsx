@@ -8,6 +8,7 @@ interface RareVariant {
   type: 'internal' | 'unmapped' | 'rare_allele';
   description?: string;
   globalFrequency?: number;
+  rarity?: 'ultra_rare' | 'rare' | 'uncommon';
 }
 
 interface RareVariantsViewProps {

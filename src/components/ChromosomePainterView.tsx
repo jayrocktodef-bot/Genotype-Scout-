@@ -87,16 +87,7 @@ export const ChromosomePainterView = ({
         let rawMatchingRsids: string[] = [];
         
         if (normalizedUserSnpMap.size > 0) {
-          let indexedDbKeys = await getIndexedDBKeys();
-          if (indexedDbKeys.length === 0) {
-            const { loadMasterAims } = await import('../data/index');
-            const masterAims = loadMasterAims();
-            indexedDbKeys = Object.keys(masterAims).map(k => k.toLowerCase());
-          }
-          rawMatchingRsids = indexedDbKeys.filter(key => {
-            const base = key.split('_')[0];
-            return normalizedUserSnpMap.has(key) || normalizedUserSnpMap.has(base);
-          });
+          rawMatchingRsids = Array.from(normalizedUserSnpMap.keys());
           aimsDb = await getAimsByRsids(rawMatchingRsids);
         } else if (dataset.results && dataset.results.length > 0) {
           rawMatchingRsids = dataset.results.map((r: any) => (r.rsid || r.markerId || "").toLowerCase()).filter(Boolean);
