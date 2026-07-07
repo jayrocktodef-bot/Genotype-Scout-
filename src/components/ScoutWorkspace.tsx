@@ -301,10 +301,10 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
             </div>
           ) : (
             <div>
-              <p className="text-[9px] font-mono font-bold uppercase tracking-[0.22em] text-slate-600 leading-none mb-0.5">
+              <p className="text-[9px] font-mono font-bold uppercase tracking-[0.22em] text-slate-600 leading-none mb-0.5 dark:text-slate-400">
                 READY TO ANALYZE
               </p>
-              <p className="text-xs font-bold text-slate-500 leading-none">
+              <p className="text-xs font-bold text-slate-500 leading-none dark:text-slate-400">
                 No dataset loaded
               </p>
             </div>
@@ -321,14 +321,14 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
               >
                 {snpCount.toLocaleString()}
               </p>
-              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mt-0.5">
+              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mt-0.5 dark:text-slate-400">
                 SNPs
               </p>
             </div>
             {chip !== '' ? (
               <div className="text-center">
                 <p className="text-[10px] font-black text-slate-300 leading-none">{chip}</p>
-                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mt-0.5">
+                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mt-0.5 dark:text-slate-400">
                   Array
                 </p>
               </div>
@@ -341,7 +341,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
           {/* Search (only when showing launcher grid) */}
           {showSearch ? (
             <div className="relative">
-              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-500 pointer-events-none" />
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-500 pointer-events-none dark:text-slate-400" />
               <input
                 type="text"
                 value={searchQuery}
@@ -390,7 +390,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
             onClick={onReset}
             aria-label="Clear all data and reset"
             title="Clear session"
-            className="p-2 rounded-lg border border-white/[0.06] text-slate-600 hover:text-rose-400 hover:border-rose-500/30 transition-[color,border-color] duration-150 active:scale-[0.96]"
+            className="p-2 rounded-lg border border-white/[0.06] text-slate-600 hover:text-rose-400 hover:border-rose-500/30 transition-[color,border-color] duration-150 active:scale-[0.96] dark:text-slate-400"
           >
             <Trash2 className="w-3.5 h-3.5" />
           </button>
@@ -399,11 +399,11 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
       {/* Bottom tagline stripe */}
       <div className="relative px-4 sm:px-6 pb-2 flex items-center justify-between">
-        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-700">
+        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-700 dark:text-slate-300">
           GENOTYPE SCOUT • 100% CLIENT-SIDE GENOMIC ANALYSIS • ZERO SERVER UPLOAD
         </p>
         <p
-          className="text-[8px] font-mono text-slate-700 tracking-[0.1em]"
+          className="text-[8px] font-mono text-slate-700 tracking-[0.1em] dark:text-slate-300"
           style={{ fontVariantNumeric: 'tabular-nums' }}
         >
           V5.13.0
@@ -435,17 +435,17 @@ const SidebarNavItem: React.FC<SidebarNavItemProps> = ({ mod, isActive, collapse
     style={{ transitionProperty: 'background-color, color, transform' }}
   >
     <div
-      className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 bg-gradient-to-tr ${mod.gradient} shadow-sm`}
+      className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-gradient-to-tr ${mod.gradient} shadow-sm`}
       style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
     >
       {mod.imageUrl ? (
         <img src={mod.imageUrl} alt="" className="w-full h-full object-cover rounded-lg opacity-90" />
       ) : (
-        <mod.icon className="w-3.5 h-3.5 text-white" aria-hidden="true" />
+        <mod.icon className="w-4 h-4 text-white" aria-hidden="true" />
       )}
     </div>
     {collapsed ? null : (
-      <span className="text-[11px] font-bold truncate text-left flex-1">{mod.name}</span>
+      <span className="text-sm font-bold truncate text-left flex-1">{mod.name}</span>
     )}
     {isActive && !collapsed ? (
       <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" aria-hidden="true" />
@@ -465,7 +465,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onToggle }) => (
   <aside
     className={`hidden lg:flex flex-col shrink-0 border-r border-white/[0.06] bg-[#09090b] overflow-hidden transition-[width] duration-200 ${
-      collapsed ? 'w-[56px]' : 'w-[196px]'
+      collapsed ? 'w-[64px]' : 'w-[240px]'
     }`}
     aria-label="Module navigation"
   >
@@ -482,9 +482,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
         }`}
         style={{ transitionProperty: 'background-color, color, transform' }}
       >
-        <Home className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+        <Home className="w-4 h-4 shrink-0" aria-hidden="true" />
         {collapsed ? null : (
-          <span className="text-[11px] font-bold">All Modules</span>
+          <span className="text-sm font-bold">All Modules</span>
         )}
       </button>
     </div>
@@ -492,7 +492,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
     {/* Primary nav */}
     <div className="flex-1 overflow-y-auto p-2 space-y-0.5 scrollbar-none">
       {collapsed ? null : (
-        <p className="px-2.5 pt-1 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-700">
+        <p className="px-2.5 pt-1 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-700 dark:text-slate-300">
           Primary
         </p>
       )}
@@ -507,7 +507,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
       ))}
 
       {collapsed ? null : (
-        <p className="px-2.5 pt-3 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-700">
+        <p className="px-2.5 pt-3 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-700 dark:text-slate-300">
           Tools
         </p>
       )}
@@ -527,13 +527,13 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
       <button
         onClick={onToggle}
         aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        className="w-full flex items-center justify-center p-2 rounded-xl text-slate-600 hover:text-slate-300 hover:bg-white/[0.04] transition-[color,background-color] duration-150 active:scale-[0.96]"
+        className="w-full flex items-center justify-center p-2 rounded-xl text-slate-600 hover:text-slate-300 hover:bg-white/[0.04] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
         style={{ transitionProperty: 'color, background-color, transform' }}
       >
         {collapsed ? (
-          <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+          <ChevronRight className="w-4 h-4" aria-hidden="true" />
         ) : (
-          <ChevronLeft className="w-3.5 h-3.5" aria-hidden="true" />
+          <ChevronLeft className="w-4 h-4" aria-hidden="true" />
         )}
       </button>
     </div>
@@ -603,7 +603,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeId, onSelect }) => (
     <button
       onClick={() => onSelect('__more__')}
       aria-label="More modules"
-      className="flex flex-col items-center justify-center gap-1 flex-1 min-w-[44px] min-h-[44px] text-slate-600 hover:text-slate-400 transition-[color] duration-150 active:scale-[0.96]"
+      className="flex flex-col items-center justify-center gap-1 flex-1 min-w-[44px] min-h-[44px] text-slate-600 hover:text-slate-400 transition-[color] duration-150 active:scale-[0.96] dark:text-slate-400"
       style={{ transitionProperty: 'color, transform' }}
     >
       <MoreHorizontal className="w-5 h-5" aria-hidden="true" />
@@ -635,7 +635,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ mod, index, onSelect }) => (
     style={{ transitionProperty: 'background-color, border-color, transform' }}
   >
     <div
-      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center flex-shrink-0`}
+      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center flex-shrink-0`}
       style={{
         boxShadow: `0 12px 24px -8px ${mod.glowColor}, 0 0 0 1px rgba(255,255,255,0.1)`,
       }}
@@ -643,11 +643,11 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ mod, index, onSelect }) => (
       {mod.imageUrl ? (
         <img src={mod.imageUrl} alt="" className="w-full h-full object-cover rounded-2xl" />
       ) : (
-        <mod.icon className="w-7 h-7 text-white drop-shadow-md" aria-hidden="true" />
+        <mod.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white drop-shadow-md" aria-hidden="true" />
       )}
     </div>
     <h3
-      className="text-xs font-black text-slate-400 group-hover:text-white text-center leading-tight transition-[color] duration-150"
+      className="text-sm font-black text-slate-400 group-hover:text-white text-center leading-tight transition-[color] duration-150"
       style={{ textWrap: 'balance' } as React.CSSProperties}
     >
       {mod.name}
@@ -689,8 +689,8 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-20 gap-3">
-          <p className="text-slate-500 font-bold text-sm">No modules match</p>
-          <p className="text-xs font-mono text-slate-700">"{searchQuery}"</p>
+          <p className="text-slate-500 font-bold text-sm dark:text-slate-400">No modules match</p>
+          <p className="text-xs font-mono text-slate-700 dark:text-slate-300">"{searchQuery}"</p>
         </div>
       )}
     </div>
@@ -709,7 +709,7 @@ const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack }) => (
     <button
       onClick={onBack}
       aria-label="Back to module launcher"
-      className="p-1.5 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96]"
+      className="p-1.5 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
       style={{ transitionProperty: 'color, background-color, transform' }}
     >
       <ArrowLeft className="w-4 h-4" aria-hidden="true" />
@@ -734,7 +734,7 @@ const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack }) => (
       >
         {mod.name}
       </h2>
-      <p className="text-[9px] font-bold text-slate-600 uppercase tracking-[0.18em] mt-0.5">
+      <p className="text-[9px] font-bold text-slate-600 uppercase tracking-[0.18em] mt-0.5 dark:text-slate-400">
         {mod.description.slice(0, 55)}
         {mod.description.length > 55 ? '…' : ''}
       </p>
@@ -766,7 +766,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ onUploadNew }) => (
         No Dataset Loaded
       </h2>
       <p
-        className="text-sm text-slate-500 max-w-xs"
+        className="text-sm text-slate-500 max-w-xs dark:text-slate-400"
         style={{ textWrap: 'pretty' } as React.CSSProperties}
       >
         Load a raw DNA file to unlock all genomic analysis modules.

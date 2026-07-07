@@ -38,7 +38,7 @@ export const PCAMap: React.FC<PCAMapProps> = ({ userCoordinates }) => {
     <div className="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 overflow-hidden relative shadow-2xl">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-emerald-400 font-bold text-sm tracking-widest uppercase">Global PCA Projection (HGDP + 1kGP)</h3>
-        <div className="text-[10px] text-slate-500 bg-slate-950 px-2 py-1 rounded border border-slate-800">
+        <div className="text-[10px] text-slate-500 bg-slate-950 px-2 py-1 rounded border border-slate-800 dark:text-slate-400">
           PC1 vs PC2 Space
         </div>
       </div>

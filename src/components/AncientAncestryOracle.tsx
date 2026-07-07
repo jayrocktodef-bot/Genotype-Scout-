@@ -74,16 +74,16 @@ export const AncientAncestryOracle = memo(({
 
               <h3 className="text-lg font-black text-[#F5F6F7] mb-1 truncate" title={pop.popName}>{pop.popName}</h3>
               <div className="flex flex-wrap items-center gap-1.5 mb-3">
-                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 uppercase truncate">
+                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 uppercase truncate dark:text-slate-400">
                   <MapPin size={10} /> {pop.region}
                 </div>
-                <span className="text-slate-700">•</span>
-                <div className="text-[9px] font-bold text-slate-500 uppercase truncate">
+                <span className="text-slate-700 dark:text-slate-300">•</span>
+                <div className="text-[9px] font-bold text-slate-500 uppercase truncate dark:text-slate-400">
                   {pop.period}
                 </div>
                 {pop.age_bp && (
                   <>
-                    <span className="text-slate-700">•</span>
+                    <span className="text-slate-700 dark:text-slate-300">•</span>
                     <div className="text-[9px] font-bold text-amber-500/80 uppercase truncate">
                       {pop.age_bp.toLocaleString()} BP
                     </div>
@@ -96,12 +96,12 @@ export const AncientAncestryOracle = memo(({
               </p>
 
               <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 truncate">
+                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 truncate dark:text-slate-400">
                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
                    {pop.culture || (type === 'matches' ? 'Archaeological Sample' : 'Reference Clade')}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-mono text-slate-600">
+                  <span className="text-[10px] font-mono text-slate-600 dark:text-slate-400">
                     {pop.matchingMarkers} Markers
                   </span>
                   <button className="text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity">

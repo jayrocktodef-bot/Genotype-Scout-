@@ -408,7 +408,7 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onCl
               <div className="grid grid-cols-2 gap-4">
                 {data.metrics.map((m, i) => (
                   <div key={i} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                    <div className="text-[10px] text-slate-500 uppercase tracking-wider font-extrabold">{m.label}</div>
+                    <div className="text-[10px] text-slate-500 uppercase tracking-wider font-extrabold dark:text-slate-400">{m.label}</div>
                     <div className="text-xs font-black text-slate-200 mt-1 font-mono uppercase tracking-tight">{m.value}</div>
                   </div>
                 ))}
@@ -433,7 +433,7 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({ isOpen, onCl
 
             {/* Footer */}
             <div className="border-t border-white/5 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+              <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-bold uppercase tracking-wider dark:text-slate-400">
                 <Shield className="w-3.5 h-3.5 text-teal-500" /> privacy-first, local analysis only
               </div>
               <button

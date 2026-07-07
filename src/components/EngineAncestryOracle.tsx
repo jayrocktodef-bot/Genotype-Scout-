@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 export const EngineAncestryOracle = memo(({ results }: { results: any[] }) => {
   if (!results || results.length === 0) {
     return (
-      <div className="p-12 text-center text-slate-500 bg-white/5 rounded-3xl border border-dashed border-white/10">
+      <div className="p-12 text-center text-slate-500 bg-white/5 rounded-3xl border border-dashed border-white/10 dark:text-slate-400">
         <div className="text-3xl mb-4">💿</div>
         <h3 className="text-xl font-bold text-white mb-2">Engine Data Not Found</h3>
         <p className="text-sm max-w-sm mx-auto">Please run <code>npm run sync-graf</code> in the terminal to fetch the 10,000 SNP population weights database.</p>
@@ -52,7 +52,7 @@ export const EngineAncestryOracle = memo(({ results }: { results: any[] }) => {
                    className="h-full bg-[#4599FF]"
                  />
               </div>
-              <div className="flex justify-between text-[9px] font-bold text-slate-500 uppercase tracking-widest">
+              <div className="flex justify-between text-[9px] font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">
                 <span>Fit Confidence</span>
                 <span className="font-mono">Distance Score</span>
               </div>

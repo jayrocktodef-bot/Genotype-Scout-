@@ -42,7 +42,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
               <span className="block text-3xl font-black text-purple-400 leading-none tracking-tighter">
                 {results.score.toFixed(1)}%
               </span>
-              <span className="text-[9px] uppercase font-black tracking-widest text-slate-500">
+              <span className="text-[9px] uppercase font-black tracking-widest text-slate-500 dark:text-slate-400">
                 Archaic Allele Index
               </span>
             </div>
@@ -56,7 +56,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
 
         {/* Introgression context gauge */}
         <div className="mb-10 bg-black/30 p-5 rounded-2xl border border-white/5">
-          <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-wider text-slate-500 mb-2">
+          <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-wider text-slate-500 mb-2 dark:text-slate-400">
             <span>Introgression Level compared to modern reference populations</span>
             <span className="text-purple-400">
               {results.score > 25 ? 'High Carrier' : results.score > 10 ? 'Average Carrier' : 'Low Carrier'}
@@ -72,7 +72,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
               className="h-full bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)] z-10 relative"
             />
           </div>
-          <div className="flex justify-between text-[8px] font-mono text-slate-500 mt-1.5 uppercase font-bold">
+          <div className="flex justify-between text-[8px] font-mono text-slate-500 mt-1.5 uppercase font-bold dark:text-slate-400">
             <span>0% (Typical African baseline)</span>
             <span>10% - 25% (Average Non-African)</span>
             <span>50%+ (High Introgression Haplotype)</span>
@@ -97,7 +97,7 @@ export const ArchaicIntrogressionView: React.FC<ArchaicIntrogressionViewProps> =
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
                       <h4 className="text-xs font-black text-[#F5F6F7]">{item.gene}</h4>
-                      <span className="text-[8px] font-mono text-slate-500">{item.rsid}</span>
+                      <span className="text-[8px] font-mono text-slate-500 dark:text-slate-400">{item.rsid}</span>
                     </div>
                     <p className="text-[10px] text-slate-450 leading-tight font-semibold truncate mt-0.5">{item.trait}</p>
                   </div>

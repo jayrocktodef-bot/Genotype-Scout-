@@ -146,28 +146,28 @@ const Dashboard: React.FC<DashboardProps> = ({
                   </PieChart>
                 </ResponsiveContainer>
               ) : (
-                <div className="w-full h-full bg-slate-50 rounded-full animate-pulse" />
+                <div className="w-full h-full bg-slate-50 rounded-full animate-pulse dark:bg-slate-800" />
               )}
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-2xl font-black text-slate-800">{chartData[0]?.value || 0}%</span>
-                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest truncate max-w-[80px]">{chartData[0]?.name}</span>
+                <span className="text-2xl font-black text-slate-800 dark:text-slate-200">{chartData[0]?.value || 0}%</span>
+                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest truncate max-w-[80px] dark:text-slate-400">{chartData[0]?.name}</span>
               </div>
             </div>
             
             <div className="flex-1 space-y-4">
               <div>
                 <h3 className="text-xs font-black text-teal-600 uppercase tracking-[0.2em] mb-1">Global Ancestry</h3>
-                <h2 className="text-2xl font-black text-slate-800 leading-tight">Continental Admixture</h2>
+                <h2 className="text-2xl font-black text-slate-800 leading-tight dark:text-slate-200">Continental Admixture</h2>
               </div>
               
               <div className="space-y-3">
                 {chartData.slice(0, 3).map((item, idx) => (
                   <div key={item.name}>
                     <div className="flex justify-between items-end mb-1">
-                      <span className="text-xs font-bold text-slate-700">{item.name}</span>
+                      <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{item.name}</span>
                       <span className="text-xs font-black text-teal-600">{item.value}%</span>
                     </div>
-                    <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden dark:bg-slate-800">
                       <div className="h-full rounded-full transition-all" style={{ width: `${item.value}%`, backgroundColor: COLORS[idx % COLORS.length] }} />
                     </div>
                   </div>
@@ -192,13 +192,13 @@ const Dashboard: React.FC<DashboardProps> = ({
             <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Closest Population</h3>
             {topOracleMatch ? (
               <>
-                <h2 className="text-xl font-black text-slate-800 leading-tight mb-2">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
+                <h2 className="text-xl font-black text-slate-800 leading-tight mb-2 dark:text-slate-200">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
                 <div className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-mono font-bold">
                   Dist: {Number(topOracleMatch.distance || 0).toFixed(4)}
                 </div>
               </>
             ) : (
-              <p className="text-sm font-bold text-slate-500">Oracle Not Run</p>
+              <p className="text-sm font-bold text-slate-500 dark:text-slate-400">Oracle Not Run</p>
             )}
           </div>
           <div className="mt-4 flex items-center text-indigo-600 text-xs font-black uppercase tracking-widest gap-2">
@@ -223,13 +223,13 @@ const Dashboard: React.FC<DashboardProps> = ({
           <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">Terminal Haplogroups</h3>
           <div className="space-y-3">
             <div>
-              <span className="text-[9px] font-bold text-slate-500 uppercase">Maternal (mtDNA)</span>
-              <p className="text-lg font-black text-slate-800">{mtHaplo}</p>
+              <span className="text-[9px] font-bold text-slate-500 uppercase dark:text-slate-400">Maternal (mtDNA)</span>
+              <p className="text-lg font-black text-slate-800 dark:text-slate-200">{mtHaplo}</p>
             </div>
             {yHaplo !== "N/A" && (
               <div>
-                <span className="text-[9px] font-bold text-slate-500 uppercase">Paternal (Y-DNA)</span>
-                <p className="text-lg font-black text-slate-800">{yHaplo}</p>
+                <span className="text-[9px] font-bold text-slate-500 uppercase dark:text-slate-400">Paternal (Y-DNA)</span>
+                <p className="text-lg font-black text-slate-800 dark:text-slate-200">{yHaplo}</p>
               </div>
             )}
           </div>
@@ -253,13 +253,13 @@ const Dashboard: React.FC<DashboardProps> = ({
           {topHealth.length > 0 ? (
             <ul className="space-y-2">
               {topHealth.map((h: any, i: number) => (
-                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 truncate">
+                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 truncate dark:text-slate-300 dark:bg-slate-800">
                   <span className="text-emerald-600 mr-2">●</span>{h.phenotype}
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-xs font-medium text-slate-500 italic">No significant health findings flagged in standard panel.</p>
+            <p className="text-xs font-medium text-slate-500 italic dark:text-slate-400">No significant health findings flagged in standard panel.</p>
           )}
         </motion.div>
 
@@ -281,13 +281,13 @@ const Dashboard: React.FC<DashboardProps> = ({
           {topTraits.length > 0 ? (
             <ul className="space-y-2">
               {topTraits.map((t: any, i: number) => (
-                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 truncate">
+                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 truncate dark:text-slate-300 dark:bg-slate-800">
                   <span className="text-pink-500 mr-2">✦</span>{t.phenotype}
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-xs font-medium text-slate-500 italic">No specific appearance traits mapped.</p>
+            <p className="text-xs font-medium text-slate-500 italic dark:text-slate-400">No specific appearance traits mapped.</p>
           )}
         </motion.div>
 
@@ -305,7 +305,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                 <Droplet className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Blood Predictor</h3>
-              <p className="text-2xl font-black text-slate-800">{bloodSummary.abo}</p>
+              <p className="text-2xl font-black text-slate-800 dark:text-slate-200">{bloodSummary.abo}</p>
             </div>
             <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-red-500 transition-colors" />
           </motion.div>
@@ -322,7 +322,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                 <Shield className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Top Ancient Match</h3>
-              <p className="text-lg font-black text-slate-800 truncate max-w-[200px]">
+              <p className="text-lg font-black text-slate-800 truncate max-w-[200px] dark:text-slate-200">
                 {topAncientMatch ? (topAncientMatch.name || topAncientMatch.population) : "No Match Data"}
               </p>
             </div>

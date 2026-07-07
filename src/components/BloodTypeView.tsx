@@ -300,12 +300,12 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Rhesus Factor</p>
            <h3 className="text-3xl sm:text-5xl font-black text-white mt-2 tracking-tighter leading-none">{predictedRh}</h3>
         </div>
-        <div className="p-3.5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-slate-100 border border-slate-200 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative sm:col-span-2 lg:col-span-1">
+        <div className="p-3.5 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-slate-100 border border-slate-200 shadow-sm hover:shadow-xl transition-all group overflow-hidden relative sm:col-span-2 lg:col-span-1 dark:bg-slate-800">
            <div className="absolute top-0 right-0 p-6 opacity-20 text-6xl pointer-events-none">🔬</div>
-           <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Sequencing Depth</p>
-           <h3 className="text-3xl sm:text-5xl font-black text-slate-900 mt-2 tracking-tighter leading-none">
+           <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] dark:text-slate-400">Sequencing Depth</p>
+           <h3 className="text-3xl sm:text-5xl font-black text-slate-900 mt-2 tracking-tighter leading-none dark:text-slate-100">
              {coverage.identified} 
-             <span className="text-sm font-bold text-slate-500 ml-2">/ {coverage.total}</span>
+             <span className="text-sm font-bold text-slate-500 ml-2 dark:text-slate-400">/ {coverage.total}</span>
            </h3>
         </div>
       </div>
@@ -318,7 +318,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
         <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-200 dark:scroll-thumb-slate-700">
           <table className="w-full text-left min-w-[700px]">
             <thead>
-              <tr className="bg-slate-50/50 dark:bg-slate-800/50 text-slate-500 text-[10px] font-black uppercase tracking-widest">
+              <tr className="bg-slate-50/50 dark:bg-slate-800/50 text-slate-500 text-[10px] font-black uppercase tracking-widest dark:text-slate-400">
                 <th className="px-6 py-4">System</th>
                 <th className="px-6 py-4">Marker</th>
                 <th className="px-6 py-4 text-center">Reference</th>

@@ -86,7 +86,7 @@ export function Phase2Badge({ phase2 }: Phase2BadgeProps) {
               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
                 Phase 2 Engine
               </span>
-              <span className="text-[10px] font-mono text-slate-500">YDnaPredictorV2</span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">YDnaPredictorV2</span>
             </div>
 
             {/* Confidence */}
@@ -135,7 +135,7 @@ export function Phase2Badge({ phase2 }: Phase2BadgeProps) {
             {/* Rejected branches */}
             {rejectedBranches.length > 0 && (
               <div>
-                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">
+                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1 dark:text-slate-400">
                   Rejected ({rejectedBranches.length})
                 </div>
                 <div className="flex flex-wrap gap-1">
@@ -145,7 +145,7 @@ export function Phase2Badge({ phase2 }: Phase2BadgeProps) {
                     </span>
                   ))}
                   {rejectedBranches.length > 5 && (
-                    <span className="text-[9px] text-slate-500 self-center">
+                    <span className="text-[9px] text-slate-500 self-center dark:text-slate-400">
                       +{rejectedBranches.length - 5} more
                     </span>
                   )}

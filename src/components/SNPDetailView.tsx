@@ -60,7 +60,7 @@ export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
       <div className="flex justify-between items-start">
         <div>
           <h2 className="text-xl font-black text-slate-900 dark:text-slate-100">{snp.markerId}</h2>
-          {snp.rsid && <p className="text-xs text-slate-500 font-mono mt-0.5">RSID: {snp.rsid}</p>}
+          {snp.rsid && <p className="text-xs text-slate-500 font-mono mt-0.5 dark:text-slate-400">RSID: {snp.rsid}</p>}
         </div>
         <div className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-white shadow-sm" style={{ backgroundColor: continentMeta.color }}>
           {snp.continent}
@@ -69,11 +69,11 @@ export const SNPDetailView: React.FC<SNPDetailViewProps> = ({ snp }) => {
 
       <div className="grid grid-cols-2 gap-4 text-sm bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl">
         <div>
-          <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest">Gene</span>
+          <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">Gene</span>
           <span className="font-semibold text-slate-900 dark:text-slate-200">{snp.gene}</span>
         </div>
         <div>
-          <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest">Trait</span>
+          <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">Trait</span>
           <span className="font-semibold text-slate-900 dark:text-slate-200">{snp.trait}</span>
         </div>
       </div>

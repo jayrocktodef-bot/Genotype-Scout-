@@ -552,7 +552,7 @@ You can ask me questions like:
                   </div>
                   <div>
                     <h4 className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-slate-200">Gemini Developer API Key</h4>
-                    <p className="text-[10px] text-slate-500 mt-1">
+                    <p className="text-[10px] text-slate-500 mt-1 dark:text-slate-400">
                       To run explanations, input a Gemini API key. You can generate a free key in <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline font-bold">Google AI Studio</a>. Keys are stored locally in your browser.
                     </p>
                   </div>

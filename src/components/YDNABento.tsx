@@ -27,7 +27,7 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
     return (
       <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative overflow-hidden group flex flex-col h-full min-h-[300px]">
         <div className="flex-1 flex flex-col items-center justify-center text-center opacity-70">
-          <ShieldAlert className="w-12 h-12 text-slate-500 mb-3" />
+          <ShieldAlert className="w-12 h-12 text-slate-500 mb-3 dark:text-slate-400" />
           <div className="text-lg font-bold text-slate-300 mb-2">Paternal Lineage Unresolved</div>
           <p className="text-xs text-slate-400 px-4 max-w-sm">
             We could not confidently determine a paternal founder group. This usually happens if the uploaded DNA is from a female sample (lacking a Y-chromosome) or if the Y-DNA markers on the microarray chip were too sparse.
@@ -96,16 +96,20 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
         <div className="w-full mt-auto flex items-center justify-between border-t border-slate-200/50 pt-4 px-2">
           {yData.phase2 && (
             <div className="flex flex-col text-left">
-              <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5">Confidence</span>
+              <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Confidence</span>
               <span className="text-sm font-black text-[#14B8A6]">{confidence.toFixed(1)}%</span>
             </div>
           )}
           <div className="flex flex-col text-center">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5">Coverage</span>
+            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Path Depth</span>
+            <span className="text-sm font-black text-indigo-400">{yData.path.length} Steps</span>
+          </div>
+          <div className="flex flex-col text-center">
+            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Coverage</span>
             <span className="text-sm font-black text-emerald-400">{coverage.toFixed(1)}%</span>
           </div>
           <div className="flex flex-col text-right">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end"><Dna className="w-3 h-3"/> Processed</span>
+            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end dark:text-slate-400"><Dna className="w-3 h-3"/> Processed</span>
             <span className="text-sm font-black text-blue-400">{totalTested.toLocaleString()}</span>
           </div>
         </div>

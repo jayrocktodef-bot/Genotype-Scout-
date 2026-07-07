@@ -163,7 +163,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
 
                   <div className="mt-8 flex flex-col space-y-3 relative z-10">
                     <div className="flex flex-col">
-                      <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider mb-0.5">Genetic Distance</span>
+                      <span className="text-[10px] text-slate-500 font-mono uppercase tracking-wider mb-0.5 dark:text-slate-400">Genetic Distance</span>
                       <span className="text-emerald-400 text-2xl font-black font-mono leading-none mt-1">
                         {Number(comp.distance).toFixed(4)}
                       </span>
@@ -204,7 +204,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             <ul className="text-xs space-y-1 font-mono text-slate-350 grid grid-cols-2 gap-x-4">
               {(results.unmappedAims || []).slice(0, 50).map((aim: any) => (
                 <li key={aim.rsid} className="truncate">
-                  ● <span className="text-teal-400">{aim.rsid}</span> <span className="text-slate-500">(chr {aim.chromosome})</span>
+                  ● <span className="text-teal-400">{aim.rsid}</span> <span className="text-slate-500 dark:text-slate-400">(chr {aim.chromosome})</span>
                 </li>
               ))}
               {(results.unmappedAims || []).length > 50 && (

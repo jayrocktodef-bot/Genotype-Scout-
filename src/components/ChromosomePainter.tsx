@@ -137,7 +137,7 @@ export const ChromosomePainter = ({
               {/* Left Label Info */}
               <div className="flex md:flex-col justify-between md:justify-center w-full md:w-32 shrink-0 border-b md:border-b-0 md:border-r border-white/5 pb-2 md:pb-0 pr-0 md:pr-4">
                 <span className="text-sm font-black text-white">Chr {chrom}</span>
-                <span className="text-[10px] font-mono text-slate-500">{(length / 1000000).toFixed(1)} M bp</span>
+                <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">{(length / 1000000).toFixed(1)} M bp</span>
               </div>
 
               {/* Tracks Container */}
@@ -145,7 +145,7 @@ export const ChromosomePainter = ({
                 {/* Strand A (Maternal) */}
                 <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
                   {strandA.length === 0 ? (
-                    <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none">
+                    <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
                       {chromData ? 'No Coverage' : 'No Data'}
                     </div>
                   ) : (
@@ -184,7 +184,7 @@ export const ChromosomePainter = ({
                 {hasStrands && (
                   <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
                     {strandB.length === 0 ? (
-                      <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none">
+                      <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
                         {chromData ? 'No Coverage' : 'No Data'}
                       </div>
                     ) : (
@@ -260,7 +260,7 @@ export const ChromosomePainter = ({
       )}
 
       {/* Bottom Info Bar */}
-      <div className="mt-6 text-[10px] text-slate-500 flex justify-between items-center uppercase tracking-widest border-t border-white/5 pt-4">
+      <div className="mt-6 text-[10px] text-slate-500 flex justify-between items-center uppercase tracking-widest border-t border-white/5 pt-4 dark:text-slate-400">
         <span>Scroll vertically to explore chromosomes 1–X</span>
         <span>Interactive Inspector</span>
       </div>

@@ -75,63 +75,74 @@
 }
 
 @theme {
+  /* Typography – unchanged from original */
   --font-sans: "Supreme", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", "Supreme", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Global semantic colors mapped to CSS variables */
+  --color-background: var(--bg-main);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--bg-card);
+  --color-card-foreground: var(--text-primary);
+  --color-border: var(--border-soft);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--accent-foreground);
+  --color-muted: var(--accent-soft);
+  --color-muted-foreground: var(--text-secondary);
+  --color-secondary: var(--accent);
+  --color-secondary-foreground: var(--accent-foreground);
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-ring: var(--accent);
 }
 
 @variant dark (&:where(.dark, .dark *));
 
+/* Light mode palette */
 :root {
-  --bg-main: #fdfdfd; /* bright white */
+  --bg-main: #fdfdfd;
   --bg-card: #ffffff;
-  --text-primary: #0f172a; /* text-slate-900 */
-  --text-secondary: #64748b; /* text-slate-500 */
-  --accent: #0f766e; /* teal-700 */
-  --accent-soft: #f0fdfa; /* teal-50 */
-  --border-soft: #f1f5f9; /* slate-100 */
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent: #0f766e;
+  --accent-foreground: #ffffff;
+  --accent-soft: #f0fdfa;
+  --border-soft: #e2e8f0; /* stronger than the original #f1f5f9 for better contrast */
 }
 
+/* Dark mode palette */
 html.dark {
-  --bg-main: #030712; /* ultra dark obsidian (gray-950) */
-  --bg-card: #09090b; /* zinc-950 */
-  --text-primary: #f8fafc; /* slate-50 */
-  --text-secondary: #94a3b8; /* slate-400 */
-  --accent: #14b8a6; /* teal-500 */
-  --accent-soft: #042f2e; /* dark teal-950 */
-  --border-soft: #1e293b; /* slate-800 */
+  --bg-main: #030712;
+  --bg-card: #0f172a;       /* slightly lighter card for subtle separation */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #14b8a6;
+  --accent-foreground: #030712;
+  --accent-soft: #042f2e;
+  --border-soft: #1e293b;
 }
 
-/* Safety contrast rules: If the box is white, the text must be dark in dark mode */
-.dark .bg-white,
-.dark .bg-white\/80,
-.dark .bg-white\/90,
-.dark [class*="bg-white"] {
-  color: #1e293b !important;
-}
-
-.dark .bg-white h1,
-.dark .bg-white h2,
-.dark .bg-white h3,
-.dark .bg-white h4,
-.dark .bg-white h5,
-.dark .bg-white h6,
-.dark .bg-white p,
-.dark .bg-white span,
-.dark .bg-white div,
-.dark .bg-white li,
-.dark .bg-white td,
-.dark .bg-white th {
-  color: #1e293b !important;
+/* Base reset – removes all previous !important hacks */
+*, *::before, *::after {
+  border-color: var(--border-soft);
 }
 
 body {
   margin: 0;
   background-color: var(--bg-main);
   color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
   font-family: var(--font-sans);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: consistent focus ring using accent color */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 @layer base {

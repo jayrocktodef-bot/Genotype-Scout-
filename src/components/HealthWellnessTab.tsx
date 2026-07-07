@@ -106,7 +106,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
     return (
       <div className="flex flex-col items-center justify-center py-32 space-y-4">
         <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
-        <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Analyzing Genomic Markers...</p>
+        <p className="text-slate-500 font-bold uppercase tracking-widest text-xs dark:text-slate-400">Analyzing Genomic Markers...</p>
       </div>
     );
   }
@@ -144,7 +144,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
           </div>
         </div>
 
-        <p className="text-slate-500 mb-8 text-[11px] leading-relaxed px-8">
+        <p className="text-slate-500 mb-8 text-[11px] leading-relaxed px-8 dark:text-slate-400">
           By continuing, you acknowledge that you will not use this data to make any medical decisions without consulting a qualified healthcare professional.
         </p>
 
@@ -162,11 +162,11 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
     <div className="space-y-8">
       {/* Print-Only Clinician Header */}
       <div className="hidden print:block mb-8 border-b-2 border-slate-800 pb-4">
-        <h1 className="text-2xl font-black uppercase tracking-tight text-slate-900">Genotype Scout - Clinical PGx & Health Report</h1>
-        <p className="text-xs font-mono text-slate-500 mt-1">
+        <h1 className="text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-slate-100">Genotype Scout - Clinical PGx & Health Report</h1>
+        <p className="text-xs font-mono text-slate-500 mt-1 dark:text-slate-400">
           Generated: {new Date().toLocaleDateString()} | Reference Guidelines: CPIC / PharmGKB
         </p>
-        <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-[10px] leading-relaxed text-slate-700">
+        <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-[10px] leading-relaxed text-slate-700 dark:text-slate-300 dark:bg-slate-800">
           <strong>Important Clinical Notice:</strong> This report is for professional reference and genotyping validation. All annotations correspond to PGx database versions. Clinical verification is recommended prior to any therapeutic dosage adjustments.
         </div>
       </div>
@@ -174,8 +174,8 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       <SafetyDisclaimer />
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-black text-slate-900 mb-1">Health, Wellness & Traits</h2>
-          <p className="text-slate-600 text-sm">Automated matching of clinical and appearance markers.</p>
+          <h2 className="text-3xl font-black text-slate-900 mb-1 dark:text-slate-100">Health, Wellness & Traits</h2>
+          <p className="text-slate-600 text-sm dark:text-slate-400">Automated matching of clinical and appearance markers.</p>
         </div>
         <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-none max-w-full snap-x shrink-0">
           {categories.map(cat => (
@@ -368,7 +368,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                                   <div key={s.rsid} className="flex items-center justify-between text-[10px] font-mono py-1 border-b border-slate-900/60 last:border-0">
                                     <div className="w-20 truncate">
                                       <span className="text-sky-400 font-bold">{s.rsid}</span>
-                                      <span className="text-slate-500 text-[9px] ml-1 uppercase">({s.genotype || '--'})</span>
+                                      <span className="text-slate-500 text-[9px] ml-1 uppercase dark:text-slate-400">({s.genotype || '--'})</span>
                                     </div>
 
                                     {/* Dual-sided center-aligned bar */}
@@ -396,7 +396,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                         <div className="p-3 bg-slate-950 rounded-2xl border border-slate-900 space-y-2 max-h-40 overflow-y-auto">
                           <table className="w-full text-left text-[9px]">
                             <thead>
-                              <tr className="border-b border-slate-800 text-slate-500 font-bold uppercase tracking-wider">
+                              <tr className="border-b border-slate-800 text-slate-500 font-bold uppercase tracking-wider dark:text-slate-400">
                                 <th className="pb-1">Marker</th>
                                 <th className="pb-1">Genotype</th>
                                 <th className="pb-1 text-right">Weight</th>
@@ -431,7 +431,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-              <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px]">Pharmacogenomic Alerts</h3>
+              <h3 className="text-slate-900 font-black uppercase tracking-widest text-[10px] dark:text-slate-100">Pharmacogenomic Alerts</h3>
             </div>
             
             {/* Med search and filters */}
@@ -443,13 +443,13 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                   placeholder="Search meds or genes..."
                   value={medSearch}
                   onChange={(e) => setMedSearch(e.target.value)}
-                  className="w-full pl-8 pr-3 py-1.5 text-[11px] bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-8 pr-3 py-1.5 text-[11px] bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800"
                 />
               </div>
               <select
                 value={severityFilter}
                 onChange={(e: any) => setSeverityFilter(e.target.value)}
-                className="px-2 py-1.5 text-[11px] bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="px-2 py-1.5 text-[11px] bg-slate-100 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-slate-800"
               >
                 <option value="All">All Priority</option>
                 <option value="High">High Priority</option>
@@ -485,7 +485,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
             ))}
 
             {filteredMedicationReports.length === 0 && (
-              <div className="col-span-full py-8 text-center text-xs text-slate-500 italic bg-slate-50 border border-dashed border-slate-200 rounded-2xl">
+              <div className="col-span-full py-8 text-center text-xs text-slate-500 italic bg-slate-50 border border-dashed border-slate-200 rounded-2xl dark:text-slate-400 dark:bg-slate-800">
                 No medication safety alerts match your search or filter.
               </div>
             )}

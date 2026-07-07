@@ -70,7 +70,7 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
             🔬
           </div>
           <div className="text-left">
-            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
+            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest dark:text-slate-400">
               Phase 2 · YDnaPredictorV2
             </div>
             <div className="text-base font-black text-white mt-0.5 flex items-center gap-2">
@@ -87,12 +87,12 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
         <div className="flex items-center gap-6">
           {/* Confidence mini-pill */}
           <div className="hidden sm:flex flex-col items-end gap-0.5">
-            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Confidence</span>
+            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest dark:text-slate-400">Confidence</span>
             <span className={`text-sm font-black ${confColor.text}`}>{confidence.toFixed(0)}%</span>
           </div>
           {/* Coverage mini-pill */}
           <div className="hidden sm:flex flex-col items-end gap-0.5">
-            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">Coverage</span>
+            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-widest dark:text-slate-400">Coverage</span>
             <span className="text-sm font-black text-blue-400">{coverage.toFixed(0)}%</span>
           </div>
           {/* Chevron */}
@@ -114,7 +114,7 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6">
             {/* Confidence */}
             <div className={`p-4 rounded-2xl bg-slate-800/60 ring-1 ${confColor.ring} flex flex-col gap-2`}>
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Confidence</div>
+              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest dark:text-slate-400">Confidence</div>
               <div className={`text-2xl font-black ${confColor.text}`}>{confidence.toFixed(1)}%</div>
               <div className="h-1.5 bg-slate-700 rounded-full overflow-hidden">
                 <div
@@ -122,12 +122,12 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
                   style={{ width: `${Math.min(100, confidence)}%` }}
                 />
               </div>
-              <div className="text-[9px] text-slate-500 font-bold">{confColor.label} signal</div>
+              <div className="text-[9px] text-slate-500 font-bold dark:text-slate-400">{confColor.label} signal</div>
             </div>
 
             {/* Coverage */}
             <div className="p-4 rounded-2xl bg-slate-800/60 ring-1 ring-blue-500/20 flex flex-col gap-2">
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Branch Coverage</div>
+              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest dark:text-slate-400">Branch Coverage</div>
               <div className="text-2xl font-black text-blue-400">{coverage.toFixed(1)}%</div>
               <div className="h-1.5 bg-slate-700 rounded-full overflow-hidden">
                 <div
@@ -135,14 +135,14 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
                   style={{ width: `${Math.min(100, coverage)}%` }}
                 />
               </div>
-              <div className="text-[9px] text-slate-500 font-bold">of branch SNPs tested</div>
+              <div className="text-[9px] text-slate-500 font-bold dark:text-slate-400">of branch SNPs tested</div>
             </div>
 
             {/* Derived */}
             <div className="p-4 rounded-2xl bg-emerald-500/10 ring-1 ring-emerald-500/20 flex flex-col gap-1">
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Derived SNPs</div>
+              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest dark:text-slate-400">Derived SNPs</div>
               <div className="text-2xl font-black text-emerald-400">{derivedMarkers}</div>
-              <div className="text-[9px] text-slate-500 font-bold">confirmed derived state</div>
+              <div className="text-[9px] text-slate-500 font-bold dark:text-slate-400">confirmed derived state</div>
             </div>
 
             {/* Ancestral */}
@@ -151,11 +151,11 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
                 ? 'bg-red-500/10 ring-1 ring-red-500/20'
                 : 'bg-slate-800/60 ring-1 ring-slate-700/40'
             }`}>
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Ancestral SNPs</div>
+              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest dark:text-slate-400">Ancestral SNPs</div>
               <div className={`text-2xl font-black ${ancestralMarkers > 0 ? 'text-red-400' : 'text-slate-500'}`}>
                 {ancestralMarkers}
               </div>
-              <div className="text-[9px] text-slate-500 font-bold">
+              <div className="text-[9px] text-slate-500 font-bold dark:text-slate-400">
                 {ancestralMarkers > 0 ? 'rejected (ancestral state)' : 'none — clean call'}
               </div>
             </div>
@@ -178,13 +178,13 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
           {/* V2 Traversal Path */}
           {path.length > 0 && (
             <div>
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-3">
+              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-3 dark:text-slate-400">
                 V2 Traversal Path
               </div>
               <div className="flex flex-wrap items-center gap-y-2 gap-x-1">
                 {path.map((step, idx) => (
                   <div key={idx} className="flex items-center gap-1">
-                    {idx > 0 && <span className="text-slate-600 text-[10px]">▶</span>}
+                    {idx > 0 && <span className="text-slate-600 text-[10px] dark:text-slate-400">▶</span>}
                     <span className={`px-2 py-1 rounded text-[10px] font-bold font-mono ${
                       idx === path.length - 1
                         ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/20'
@@ -201,7 +201,7 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
           {/* Rejected branches */}
           {rejectedBranches.length > 0 && (
             <div>
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-3 flex items-center gap-2 dark:text-slate-400">
                 <span className="w-2 h-2 rounded-full bg-red-500" />
                 Rejected Branches ({rejectedBranches.length}) — ancestral defining SNPs found
               </div>
@@ -224,15 +224,15 @@ export function Phase2Panel({ phase2, phase1Haplogroup }: Phase2PanelProps) {
                   </button>
                 )}
               </div>
-              <p className="text-[9px] text-slate-600 mt-2 italic">
+              <p className="text-[9px] text-slate-600 mt-2 italic dark:text-slate-400">
                 These branches were excluded because at least one of their defining SNPs was observed in the ancestral (non-derived) state in your data, which makes that branch phylogenetically impossible.
               </p>
             </div>
           )}
 
           {/* Method note */}
-          <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-600 leading-relaxed">
-            <span className="font-bold text-slate-500">Phase 2 method:</span>{' '}
+          <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-600 leading-relaxed dark:text-slate-400">
+            <span className="font-bold text-slate-500 dark:text-slate-400">Phase 2 method:</span>{' '}
             Tree traversal from haplogroup A with 4-rule validation — (1) derived-only confirmation, (2) ancestral branch rejection,
             (3) ≥2 SNPs required for deep terminals (depth ≥5), (4) coverage and confidence reporting.
             Allele directions sourced from ybrowse.org Y-SNP database via the Phase 1 generator.

@@ -68,7 +68,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
   };
 
   return (
-    <div className="bg-white min-h-screen text-slate-900 p-8 md:p-12 font-sans print:m-0 print:p-0">
+    <div className="bg-white min-h-screen text-slate-900 p-8 md:p-12 font-sans print:m-0 print:p-0 dark:text-slate-100 dark:bg-slate-900">
       
       {/* Report Header */}
       <div className="border-b-4 border-slate-900 pb-6 mb-8 flex justify-between items-end break-inside-avoid">
@@ -76,24 +76,24 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
           <h1 className="text-4xl font-black uppercase tracking-tight mb-2">
             {config.reportType === 'medical' ? 'Clinical Health Report' : 'Genetic Ancestry Report'}
           </h1>
-          <div className="text-lg text-slate-600 font-medium">Genotype Scout Automated Analysis</div>
+          <div className="text-lg text-slate-600 font-medium dark:text-slate-400">Genotype Scout Automated Analysis</div>
         </div>
         <div className="text-right">
           <div className="text-2xl font-bold">{dataset?.name || 'Unknown Specimen'}</div>
-          <div className="text-slate-500 font-mono text-sm">Date: {dateStr}</div>
-          <div className="text-slate-500 font-mono text-sm">SNPs Analyzed: {dataset?.snpCount?.toLocaleString()}</div>
+          <div className="text-slate-500 font-mono text-sm dark:text-slate-400">Date: {dateStr}</div>
+          <div className="text-slate-500 font-mono text-sm dark:text-slate-400">SNPs Analyzed: {dataset?.snpCount?.toLocaleString()}</div>
         </div>
       </div>
 
       {/* --- MEDICAL REPORT --- */}
       {config.reportType === 'medical' && (
         <div className="space-y-10">
-          <div className="break-inside-avoid bg-slate-50 p-6 rounded-xl border border-slate-200">
+          <div className="break-inside-avoid bg-slate-50 p-6 rounded-xl border border-slate-200 dark:bg-slate-800">
             <h2 className="text-2xl font-black mb-4 flex items-center gap-3">
               <Activity className="w-6 h-6 text-rose-600" />
               Executive Summary
             </h2>
-            <p className="text-slate-700">
+            <p className="text-slate-700 dark:text-slate-300">
               This report contains algorithmic predictions of health, carrier status, and pharmacogenomics (PGx) based on the provided genetic variant file. 
               {config.filters.highImpactOnly && " It has been strictly filtered to only show high-impact and pathogenic traits."}
             </p>
@@ -105,7 +105,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
             </h3>
             
             {displayImpacts.length === 0 ? (
-              <div className="p-8 text-center text-slate-500 border border-slate-200 border-dashed rounded-xl">
+              <div className="p-8 text-center text-slate-500 border border-slate-200 border-dashed rounded-xl dark:text-slate-400">
                 No notable health impacts detected based on current filters.
               </div>
             ) : (
@@ -150,12 +150,12 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
 
         return (
           <div className="space-y-10">
-            <div className="break-inside-avoid bg-slate-50 p-6 rounded-xl border border-slate-200">
+            <div className="break-inside-avoid bg-slate-50 p-6 rounded-xl border border-slate-200 dark:bg-slate-800">
               <h2 className="text-2xl font-black mb-4 flex items-center gap-3">
                 <Dna className="w-6 h-6 text-teal-600" />
                 Ancestry Overview
               </h2>
-              <p className="text-slate-700">
+              <p className="text-slate-700 dark:text-slate-300">
                 This report contains population admixture estimations, deep ancestry oracle models, and haplogroup predictions.
               </p>
             </div>
@@ -167,11 +167,11 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
                 <div className="p-6 border border-slate-200 rounded-xl space-y-4">
                   {continentalList.map((entry) => (
                     <div key={entry.name} className="space-y-1">
-                      <div className="flex justify-between text-sm font-bold text-slate-700">
+                      <div className="flex justify-between text-sm font-bold text-slate-700 dark:text-slate-300">
                         <span>{entry.name}</span>
                         <span className="font-mono">{entry.value.toFixed(1)}%</span>
                       </div>
-                      <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200">
+                      <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden border border-slate-200 dark:bg-slate-800">
                         <div 
                           className="h-full rounded-full bg-teal-600" 
                           style={{ width: `${entry.value}%` }} 
@@ -195,14 +195,14 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
                         <div className="flex justify-between items-start mb-2">
                           <div>
                             <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Population Match</span>
-                            <h4 className="text-sm font-bold text-slate-800">{comp.name || comp.subpop}</h4>
+                            <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">{comp.name || comp.subpop}</h4>
                           </div>
                           <div className="text-right">
                             <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Distance</span>
                             <span className="font-mono font-black text-teal-700 text-base">{Number(comp.distance).toFixed(4)}</span>
                           </div>
                         </div>
-                        <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                        <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden dark:bg-slate-800">
                           <div 
                             className="h-full bg-teal-500 rounded-full" 
                             style={{ width: `${visualWidth}%` }} 
@@ -225,10 +225,10 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
                     return (
                       <div key={pop.name || idx} className="space-y-1">
                         <div className="flex justify-between text-sm">
-                          <span className="font-bold text-slate-700">{idx + 1}. {formatPopName(pop.name)}</span>
-                          <span className="font-mono font-bold text-slate-600">Distance: {pop.distance.toFixed(3)}</span>
+                          <span className="font-bold text-slate-700 dark:text-slate-300">{idx + 1}. {formatPopName(pop.name)}</span>
+                          <span className="font-mono font-bold text-slate-600 dark:text-slate-400">Distance: {pop.distance.toFixed(3)}</span>
                         </div>
-                        <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200">
+                        <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200 dark:bg-slate-800">
                           <div 
                             className={`h-full rounded-full ${pop.distance < 3 ? 'bg-emerald-600' : pop.distance < 6 ? 'bg-blue-600' : 'bg-slate-400'}`} 
                             style={{ width: `${closeness}%` }} 
@@ -270,10 +270,10 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
           <h3 className="text-xl font-black mb-4 flex items-center gap-2 break-after-avoid">
             <FlaskConical className="w-5 h-5" /> Raw SNP Appendix
           </h3>
-          <p className="text-xs text-slate-500 mb-6 break-after-avoid">Showing first 200 parsed markers.</p>
+          <p className="text-xs text-slate-500 mb-6 break-after-avoid dark:text-slate-400">Showing first 200 parsed markers.</p>
           <table className="w-full text-left text-xs font-mono">
             <thead>
-              <tr className="border-b-2 border-slate-800 text-slate-800">
+              <tr className="border-b-2 border-slate-800 text-slate-800 dark:text-slate-200">
                 <th className="py-2">RSID</th>
                 <th className="py-2">Chromosome</th>
                 <th className="py-2">Position</th>

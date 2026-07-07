@@ -24,7 +24,7 @@ export const MarkerBenchmarks: React.FC<{ benchmarks: MarkerSetBenchmark[] }> = 
           </p>
         </div>
         <div className="text-right">
-          <div className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Total Coverage</div>
+          <div className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1 dark:text-slate-400">Total Coverage</div>
           <div className="text-3xl font-black text-blue-400">{overallPercentage}%</div>
           <div className="text-xs text-slate-400 font-mono">
             {totalFound.toLocaleString()} / {totalPossible.toLocaleString()}
@@ -49,13 +49,13 @@ export const MarkerBenchmarks: React.FC<{ benchmarks: MarkerSetBenchmark[] }> = 
             </div>
 
             <h3 className="text-sm font-semibold text-white mb-1">{b.name}</h3>
-            <p className="text-[11px] text-slate-500 mb-4 line-clamp-2 leading-relaxed">
+            <p className="text-[11px] text-slate-500 mb-4 line-clamp-2 leading-relaxed dark:text-slate-400">
               {b.description}
             </p>
 
             <div className="flex items-end justify-between pt-4 border-t border-slate-800">
               <div className="text-xl font-black text-white">{b.count.toLocaleString()}</div>
-              <div className="text-[10px] text-slate-500 uppercase font-bold text-right">Detected</div>
+              <div className="text-[10px] text-slate-500 uppercase font-bold text-right dark:text-slate-400">Detected</div>
             </div>
             
             <div className="mt-3 w-full bg-slate-800 h-1 rounded-full overflow-hidden">

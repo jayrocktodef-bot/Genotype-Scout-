@@ -52,7 +52,7 @@ const Navigation: React.FC<NavigationProps> = ({
         <button
           onClick={onThemeToggle}
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          className="p-2 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96]"
+          className="p-2 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
           style={{ transitionProperty: 'color, background-color, transform' }}
         >
           {theme === 'dark' ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}

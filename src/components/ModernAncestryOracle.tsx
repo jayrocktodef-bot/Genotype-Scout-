@@ -116,7 +116,7 @@ export const ModernAncestryOracle = memo(({
   
   if (!hasData) {
     return (
-      <div className="p-12 text-center text-slate-500">
+      <div className="p-12 text-center text-slate-500 dark:text-slate-400">
         No Ancestry Results Available - Please load and process a valid dataset.
       </div>
     );
@@ -223,7 +223,7 @@ export const ModernAncestryOracle = memo(({
           {(() => {
             const subPops = resultsToDisplay?.subPopulations || {};
             const allPops = Object.values(subPops).flat().sort((a: any, b: any) => a.distance - b.distance).slice(0, 5);
-            if (allPops.length === 0) return <div className="text-slate-500 py-4">Insufficient markers to calculate affinities.</div>;
+            if (allPops.length === 0) return <div className="text-slate-500 py-4 dark:text-slate-400">Insufficient markers to calculate affinities.</div>;
             return allPops.map((pop: any, idx: number) => {
               const maxDistance = 10;
               const closeness = Math.max(0, 100 - (pop.distance / maxDistance) * 100);
@@ -235,7 +235,7 @@ export const ModernAncestryOracle = memo(({
                       <span className="text-sm font-black text-[#F5F6F7] group-hover:text-[#4599FF] transition-colors">{formatPopName(pop.name)}</span>
                     </div>
                     <div className="text-right">
-                      <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Distance</div>
+                      <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">Distance</div>
                       <div className="text-sm font-mono font-black text-slate-300">{(pop.distance || 0).toFixed(3)}</div>
                     </div>
                   </div>
@@ -278,7 +278,7 @@ export const ModernAncestryOracle = memo(({
                  </p>
               </div>
               <div className="w-full md:min-w-[280px] md:w-auto p-6 rounded-2xl bg-black/40 border border-white/5">
-                 <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4">Migration Path</div>
+                 <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-4 dark:text-slate-400">Migration Path</div>
                  <div className="space-y-4">
                     {hbbMigration.path.split('→').map((node, i, arr) => (
                       <div key={i} className="flex items-center gap-3">

@@ -288,295 +288,484 @@ const getHaploColor = (name: string, isMt: boolean = false) => {
   return isMt ? '#f43f5e' : '#64748b';
 };
 
-const ProfileSummary = memo(({ 
-  datasets, 
-  activeDatasetIndex, 
-  oracleResults,
-  populationProximity,
-  userSnps,
-  famousMatches = [],
-  healthImpacts = []
-}: { 
-  datasets: any[], 
-  activeDatasetIndex: number, 
-  oracleResults: any,
-  populationProximity: any[],
-  userSnps: Record<string, string>,
-  famousMatches?: any[],
-  healthImpacts?: any[]
-}) => {
-  const [isChartReady, setIsChartReady] = useState(false);
-  useEffect(() => {
-    setIsChartReady(false);
-    const timer = setTimeout(() => setIsChartReady(true), 150);
-    return () => clearTimeout(timer);
-  }, [activeDatasetIndex]);
+const ProfileSummary = memo(
+  ({
+    datasets,
+    activeDatasetIndex,
+    oracleResults,
+    populationProximity,
+    userSnps,
+    famousMatches = [],
+    healthImpacts = [],
+  }: {
+    datasets: any[];
+    activeDatasetIndex: number;
+    oracleResults: any;
+    populationProximity: any[];
+    userSnps: Record<string, string>;
+    famousMatches?: any[];
+    healthImpacts?: any[];
+  }) => {
+    const [isChartReady, setIsChartReady] = useState(false);
+    useEffect(() => {
+      setIsChartReady(false);
+      const timer = setTimeout(() => setIsChartReady(true), 150);
+      return () => clearTimeout(timer);
+    }, [activeDatasetIndex]);
 
-  const dataset = datasets[activeDatasetIndex];
+    const dataset = datasets[activeDatasetIndex];
 
-  const bloodTypeAnalysis = useMemo(() => {
-    return calculateBloodType(userSnps || {});
-  }, [userSnps]);
+    const bloodTypeAnalysis = useMemo(() => {
+      return calculateBloodType(userSnps || {});
+    }, [userSnps]);
 
-  const rhDisplay = useMemo(() => {
-    if (!bloodTypeAnalysis || bloodTypeAnalysis.details.rhPhenotype === "Unknown") {
-      return { 
-        name: bloodTypeAnalysis?.bloodType || "Unknown", 
-        badge: "Confidence 0.0", 
-        pillColor: "bg-slate-600 shadow-slate-600/10",
-        label: "Predicted Blood Type"
-      };
-    }
-    const isPos = bloodTypeAnalysis.details.rhPhenotype === "Positive";
-    const bloodTypeStr = bloodTypeAnalysis.bloodType !== "Unknown" ? bloodTypeAnalysis.bloodType : (isPos ? "Rh+" : "Rh-");
-    const confPercent = Math.round((bloodTypeAnalysis.details.rhConfidence || 0) * 100);
-    
-    if ((bloodTypeAnalysis.details.rhConfidence || 0) >= 0.8) {
-      return { 
-        name: bloodTypeStr, 
-        badge: `High Confidence (${confPercent}%)`, 
-        pillColor: "bg-red-600 shadow-red-600/10",
-        label: "Predicted Blood Type"
-      };
-    } else {
-      return { 
-        name: `Likely ${bloodTypeStr}`, 
-        badge: `Moderate/Low Confidence (${confPercent}%)`, 
-        pillColor: "bg-amber-600 shadow-amber-600/10",
-        label: "Predicted Blood Type"
-      };
-    }
-  }, [bloodTypeAnalysis]);
+    const rhDisplay = useMemo(() => {
+      if (
+        !bloodTypeAnalysis ||
+        bloodTypeAnalysis.details.rhPhenotype === 'Unknown'
+      ) {
+        return {
+          name: bloodTypeAnalysis?.bloodType || 'Unknown',
+          badge: 'Confidence 0.0',
+          pillColor: 'bg-slate-600 shadow-slate-600/10',
+          label: 'Predicted Blood Type',
+        };
+      }
+      const isPos = bloodTypeAnalysis.details.rhPhenotype === 'Positive';
+      const bloodTypeStr =
+        bloodTypeAnalysis.bloodType !== 'Unknown'
+          ? bloodTypeAnalysis.bloodType
+          : isPos
+          ? 'Rh+'
+          : 'Rh-';
+      const confPercent = Math.round(
+        (bloodTypeAnalysis.details.rhConfidence || 0) * 100,
+      );
 
-  const statisticalInsights = useMemo(() => {
-    const stats = oracleResults?.statistical;
-    if (!stats || !stats.results) return null;
+      if ((bloodTypeAnalysis.details.rhConfidence || 0) >= 0.8) {
+        return {
+          name: bloodTypeStr,
+          badge: `High Confidence (${confPercent}%)`,
+          pillColor: 'bg-red-600 shadow-red-600/10',
+          label: 'Predicted Blood Type',
+        };
+      } else {
+        return {
+          name: `Likely ${bloodTypeStr}`,
+          badge: `Moderate/Low Confidence (${confPercent}%)`,
+          pillColor: 'bg-amber-600 shadow-amber-600/10',
+          label: 'Predicted Blood Type',
+        };
+      }
+    }, [bloodTypeAnalysis]);
 
-    const markersUsed = stats.markersUsed || 100;
-    return Object.entries(stats.results).map(([pop, percentage]) => {
-      const confidence = applyConfidenceIntervals(Number(percentage), markersUsed);
-      return { pop, percentage, ...confidence };
-    });
-  }, [oracleResults]);
+    const statisticalInsights = useMemo(() => {
+      const stats = oracleResults?.statistical;
+      if (!stats || !stats.results) return null;
 
-  const sortedEngineResults = useMemo(() => {
-    const subpopOracle = dataset?.analysis?.subpopulationOracle;
-    const admixtureMix = subpopOracle?.admixtureMix || [];
-    return [...admixtureMix]
-      .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
-      .slice(0, 5);
-  }, [dataset]);
+      const markersUsed = stats.markersUsed || 100;
+      return Object.entries(stats.results).map(([pop, percentage]) => {
+        const confidence = applyConfidenceIntervals(
+          Number(percentage),
+          markersUsed,
+        );
+        return { pop, percentage, ...confidence };
+      });
+    }, [oracleResults]);
 
-  if (!dataset) return null;
+    const sortedEngineResults = useMemo(() => {
+      const subpopOracle = dataset?.analysis?.subpopulationOracle;
+      const admixtureMix = subpopOracle?.admixtureMix || [];
+      return [...admixtureMix]
+        .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
+        .slice(0, 5);
+    }, [dataset]);
 
-  const yData = dataset.predictedYDNA || { predicted: null, path: [], testedMarkers: [] };
-  const mtData = dataset.predictedMtDNA || { predicted: null, path: [], testedMarkers: [] };
-  
-  const currentOracle = oracleResults?.primary;
-  const ancestryScores = currentOracle?.continentalScores || {};
-  
-  const ancestryChartData = Object.entries(ancestryScores)
-    .map(([name, value]) => ({ name, value: Number(value) }))
-    .sort((a, b) => b.value - a.value);
+    if (!dataset) return null;
 
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="space-y-5 pb-8"
-    >
-      {/* Premium Dashboard Header Capsule */}
-      <div className="p-4 rounded-3xl premium-card bg-slate-900 border border-slate-800 text-white shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-emerald-400">Genomic Passport Summary</h3>
-          </div>
-          <h2 className="text-lg font-black text-white tracking-tight mt-1 truncate max-w-md">
-            {dataset.name || "Sample Specimen"}
-          </h2>
-        </div>
-        
-        <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 text-xs font-mono">
-          <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl">
-            <span className="text-slate-400 font-bold block text-[8px] uppercase tracking-widest leading-none mb-1">Genotype Array</span>
-            <span className="font-bold text-slate-200">{dataset.chip || "High-Density Array"}</span>
-          </div>
-          <div className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl">
-            <span className="text-slate-400 font-bold block text-[8px] uppercase tracking-widest leading-none mb-1">Markers Tested</span>
-            <span className="font-bold text-slate-200">{dataset.snpCount ? `${dataset.snpCount.toLocaleString()} SNPs` : "Admixture Panel"}</span>
-          </div>
-          <div className="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-emerald-400">
-            <CheckCircle className="w-3.5 h-3.5" />
-            <span className="font-black tracking-widest text-[9px] uppercase">LOCAL INTEGRITY OK</span>
-          </div>
-        </div>
-      </div>
+    const yData = dataset.predictedYDNA || {
+      predicted: null,
+      path: [],
+      testedMarkers: [],
+    };
+    const mtData = dataset.predictedMtDNA || {
+      predicted: null,
+      path: [],
+      testedMarkers: [],
+    };
 
-      {/* Main High-Density Bento Grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
-        
-        {/* Cell A (Span 8) - Biogeographical Admixture & Subpopulation Deconvolution */}
-        <div className="xl:col-span-8 p-5 premium-card flex flex-col justify-between">
-          <div className="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
-            <div>
-              <h3 className="text-xs font-black text-slate-450 uppercase tracking-[0.15em]">Biogeographical Origins & Deconvolution</h3>
-              <p className="text-[10px] text-slate-500 font-medium">Continental admixture proportions and refined subpopulation estimates.</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            {/* Radar chart - span 5 */}
-            <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-slate-100/50 pr-0 lg:pr-4">
-              <div className="relative w-full h-[250px] flex items-center justify-center">
-                {isChartReady ? (
-                  <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={250} debounce={1}>
-                    <RadarChart data={ancestryChartData} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
-                      <PolarGrid stroke="#cbd5e1" strokeOpacity={0.6} />
-                      <PolarAngleAxis dataKey="name" tick={{ fill: '#475569', fontSize: 8, fontWeight: 800 }} />
-                      <Radar name="Origins" dataKey="value" stroke="#0d9488" fill="#0d9488" fillOpacity={0.12} />
-                    </RadarChart>
-                  </ResponsiveContainer>
-                ) : (
-                  <div className="w-full h-full bg-slate-50/50 rounded-2xl animate-pulse" />
-                )}
+    const currentOracle = oracleResults?.primary;
+    const ancestryScores = currentOracle?.continentalScores || {};
+
+    const ancestryChartData = Object.entries(ancestryScores)
+      .map(([name, value]) => ({ name, value: Number(value) }))
+      .sort((a, b) => b.value - a.value);
+
+    // ----- Famous matches extraction (if available) -----
+    const topFamousMatches = useMemo(() => {
+      if (!famousMatches || famousMatches.length === 0) return [];
+      return famousMatches
+        .sort((a, b) => (b.matchPercentage || 0) - (a.matchPercentage || 0))
+        .slice(0, 6);
+    }, [famousMatches]);
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6 pb-8"
+      >
+        {/* ===== Outer glass dashboard card ===== */}
+        <div className="relative overflow-hidden rounded-3xl bg-slate-950/90 backdrop-blur-xl p-6 shadow-2xl ring-1 ring-white/10">
+          {/* Decorative gradient blobs */}
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-fuchsia-500/10 pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-28 -left-28 w-80 h-80 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Content */}
+          <div className="relative z-10 space-y-6">
+            {/* ===== Header Capsule ===== */}
+            <div className="rounded-2xl bg-slate-800/40 backdrop-blur-md border border-white/10 shadow-inner shadow-white/5 p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+                </span>
+                <div>
+                  <h3 className="text-[11px] font-black uppercase tracking-[0.25em] text-emerald-400">
+                    Genomic Passport
+                  </h3>
+                  <h2 className="text-lg font-black text-white tracking-tight mt-0.5 truncate max-w-md">
+                    {dataset.name || 'Sample Specimen'}
+                  </h2>
+                </div>
               </div>
-              <div className="flex justify-center gap-3 mt-1 flex-wrap text-[9px] font-mono">
-                {ancestryChartData.slice(0, 3).map((anc: any, i: number) => (
-                  <span key={i} className="text-slate-600 bg-slate-50 px-2 py-0.5 rounded-lg border border-slate-100">
-                    <strong>{anc.name}:</strong> {anc.value.toFixed(0)}%
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs font-mono">
+                <div className="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 backdrop-blur">
+                  <span className="text-slate-400 font-bold block text-[8px] uppercase tracking-widest leading-none mb-1">
+                    Array
                   </span>
-                ))}
+                  <span className="font-bold text-slate-200">
+                    {dataset.chip || 'High-Density Array'}
+                  </span>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl px-3 py-1.5 backdrop-blur">
+                  <span className="text-slate-400 font-bold block text-[8px] uppercase tracking-widest leading-none mb-1">
+                    Markers
+                  </span>
+                  <span className="font-bold text-slate-200">
+                    {dataset.snpCount
+                      ? `${dataset.snpCount.toLocaleString()} SNPs`
+                      : 'Admixture Panel'}
+                  </span>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl px-3 py-1.5 flex items-center gap-1.5 backdrop-blur">
+                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="font-black tracking-widest text-[9px] uppercase text-emerald-400">
+                    LOCAL INTEGRITY OK
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Subpopulations fit list - span 7 */}
-            <div className="lg:col-span-7 space-y-2">
-              <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Top Subpopulation Contributions</span>
-              {sortedEngineResults.length > 0 ? (
-                sortedEngineResults.slice(0, 4).map((pop, idx) => (
-                  <div key={idx} className="p-2 rounded-xl bg-slate-50/70 border border-slate-100 flex flex-col justify-between">
-                    <div className="flex justify-between items-center text-xs min-w-0 gap-2">
-                      <span className="font-bold text-slate-700 truncate min-w-0">{formatPopName(pop.name || pop.popCode)}</span>
-                      <span className="font-mono font-black text-teal-600 bg-teal-50 px-1.5 py-0.2 rounded text-[9px]">{(pop.percentage || 0).toFixed(1)}%</span>
+            {/* ===== Main Bento Grid ===== */}
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
+              {/* ===== CELL A : Admixture & Subpopulations (span 8) ===== */}
+              <div className="xl:col-span-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 shadow-xl flex flex-col">
+                <div className="border-b border-white/10 pb-4 mb-5 flex justify-between items-center">
+                  <div>
+                    <h3 className="text-xs font-black text-slate-300 uppercase tracking-[0.15em]">
+                      Biogeographical Origins & Deconvolution
+                    </h3>
+                    <p className="text-[10px] text-slate-500 font-medium mt-0.5">
+                      Continental admixture and fine‑grained substructure.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1">
+                  {/* Radar chart */}
+                  <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-white/10 pr-0 lg:pr-4">
+                    <div className="relative w-full h-[250px] flex items-center justify-center">
+                      {isChartReady ? (
+                        <ResponsiveContainer
+                          width="100%"
+                          height="100%"
+                          minWidth={0}
+                          minHeight={250}
+                          debounce={1}
+                        >
+                          <RadarChart
+                            data={ancestryChartData}
+                            margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
+                          >
+                            <PolarGrid
+                              stroke="rgba(148,163,184,0.25)"
+                              strokeOpacity={1}
+                            />
+                            <PolarAngleAxis
+                              dataKey="name"
+                              tick={{
+                                fill: '#94a3b8',
+                                fontSize: 9,
+                                fontWeight: 800,
+                              }}
+                            />
+                            <Radar
+                              name="Origins"
+                              dataKey="value"
+                              stroke="#06b6d4"
+                              fill="url(#radarGradient)"
+                              fillOpacity={0.3}
+                            />
+                          </RadarChart>
+                        </ResponsiveContainer>
+                      ) : (
+                        <div className="w-full h-full bg-slate-800/50 rounded-2xl animate-pulse" />
+                      )}
                     </div>
-                    <div className="w-full bg-slate-200 rounded-full h-1 my-1 overflow-hidden">
-                      <div 
-                        className="bg-teal-600 h-full rounded-full"
-                        style={{ width: `${Math.max(pop.percentage || 0, 1)}%` }}
-                      />
+                    <div className="flex justify-center gap-3 mt-2 flex-wrap text-[9px] font-mono">
+                      {ancestryChartData.slice(0, 3).map((anc: any, i: number) => (
+                        <span
+                          key={i}
+                          className="text-slate-300 bg-slate-800/50 px-3 py-1 rounded-xl border border-white/10"
+                        >
+                          <strong>{anc.name}:</strong> {anc.value.toFixed(0)}%
+                        </span>
+                      ))}
                     </div>
                   </div>
-                ))
-              ) : (
-                <div className="py-6 text-center text-xs text-slate-400">
-                  No advanced subpopulation data active.
+
+                  {/* Subpopulations list */}
+                  <div className="lg:col-span-7 space-y-3">
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">
+                      Top Subpopulation Contributions
+                    </span>
+                    {sortedEngineResults.length > 0 ? (
+                      sortedEngineResults.slice(0, 4).map((pop, idx) => (
+                        <div
+                          key={idx}
+                          className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition hover:border-cyan-500/30"
+                        >
+                          <div className="flex justify-between items-center text-xs min-w-0 gap-2">
+                            <span className="font-bold text-slate-200 truncate min-w-0">
+                              {formatPopName(pop.name || pop.popCode)}
+                            </span>
+                            <span className="font-mono font-black text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full text-[10px]">
+                              {(pop.percentage || 0).toFixed(1)}%
+                            </span>
+                          </div>
+                          <div className="w-full bg-slate-800/70 rounded-full h-1.5 mt-2 overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full transition-all"
+                              style={{
+                                width: `${Math.max(pop.percentage || 0, 2)}%`,
+                              }}
+                            />
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="py-8 text-center text-xs text-slate-500">
+                        No advanced subpopulation data present.
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* ===== CELL B : Lineages & Blood (span 4) ===== */}
+              <div className="xl:col-span-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 flex flex-col shadow-xl">
+                <div className="border-b border-white/10 pb-4 mb-4">
+                  <h3 className="text-xs font-black text-slate-300 uppercase tracking-[0.15em]">
+                    Uniparental Lineages
+                  </h3>
+                  <p className="text-[10px] text-slate-500 font-medium mt-0.5">
+                    Deep paternal & maternal markers.
+                  </p>
+                </div>
+
+                <div className="space-y-3 my-auto">
+                  {/* Paternal */}
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur border border-teal-500/20 flex gap-3 items-center group hover:border-teal-400/40 transition">
+                    <div className="w-10 h-10 rounded-xl bg-teal-600/30 flex items-center justify-center shrink-0 shadow shadow-teal-500/10">
+                      <Compass className="w-5 h-5 text-teal-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[9px] font-black text-teal-400 uppercase tracking-widest block leading-none mb-1">
+                        Paternal (Y‑DNA)
+                      </span>
+                      <span className="text-sm font-black text-slate-100 block truncate tracking-tight">
+                        {yData?.phase2?.haplogroup ||
+                          yData?.predicted?.name ||
+                          'Unknown / Female lineage'}
+                      </span>
+                      <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">
+                        {yData?.phase2?.region ||
+                          yData?.predicted?.continent ||
+                          'Universal Origin'}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Maternal */}
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur border border-rose-500/20 flex gap-3 items-center group hover:border-rose-400/40 transition">
+                    <div className="w-10 h-10 rounded-xl bg-rose-600/30 flex items-center justify-center shrink-0 shadow shadow-rose-500/10">
+                      <History className="w-5 h-5 text-rose-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[9px] font-black text-rose-400 uppercase tracking-widest block leading-none mb-1">
+                        Maternal (mtDNA)
+                      </span>
+                      <span className="text-sm font-black text-slate-100 block truncate tracking-tight">
+                        {mtData?.predicted || 'Unknown'}
+                      </span>
+                      <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">
+                        {mtData?.region || 'Universal Origin'}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Blood type */}
+                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur border border-red-500/20 flex gap-3 items-center group hover:border-red-400/40 transition">
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow ${rhDisplay.pillColor} backdrop-blur`}
+                    >
+                      <FlaskConical className="w-5 h-5 text-white" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[9px] font-black text-red-400 uppercase tracking-widest block leading-none mb-1">
+                        {rhDisplay.label || 'Predicted Blood Type'}
+                      </span>
+                      <span className="text-sm font-black text-slate-100 block truncate">
+                        {rhDisplay.name}
+                      </span>
+                      <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">
+                        {rhDisplay.badge}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-[8px] font-extrabold text-slate-500 bg-slate-800/50 border border-slate-700/50 p-2 rounded-xl text-center mt-4 select-none backdrop-blur">
+                  <Shield className="w-3 h-3 inline mr-1" />
+                  Fully local processing: genomic privacy protected.
+                </div>
+              </div>
+
+              {/* ===== CELL C : Statistical Confidence Intervals (span 12) ===== */}
+              {statisticalInsights && (
+                <div className="xl:col-span-12 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 shadow-xl">
+                  <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
+                    <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <div>
+                      <h3 className="text-xs font-black text-slate-300 uppercase tracking-wider">
+                        Confidence Interval Rigor (95% CI)
+                      </h3>
+                      <p className="text-[9px] text-slate-500 mt-0.5">
+                        Statistical error bounds based on ancestry‑informative
+                        marker count.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {statisticalInsights
+                      .slice(0, 4)
+                      .map((insight: any, i: number) => (
+                        <div
+                          key={insight?.pop || i}
+                          className="p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 flex flex-col transition hover:border-emerald-500/30"
+                        >
+                          <div className="flex justify-between items-center text-[11px] font-bold mb-2 min-w-0 gap-2">
+                            <span className="text-slate-200 uppercase tracking-tight truncate min-w-0 flex-1">
+                              {formatPopName(insight?.pop)}
+                            </span>
+                            <span className="text-emerald-400 font-black shrink-0">
+                              {insight?.percentage || 0}%
+                            </span>
+                          </div>
+
+                          {/* Custom interval bar */}
+                          <div className="relative mt-2 mb-1">
+                            <div className="h-2 w-full bg-slate-800/80 rounded-full overflow-hidden relative">
+                              <div
+                                className="absolute h-full bg-emerald-500/20 rounded-full"
+                                style={{
+                                  left: `${insight?.low || 0}%`,
+                                  width: `${Math.max(
+                                    (insight?.high || 0) -
+                                      (insight?.low || 0),
+                                    3,
+                                  )}%`,
+                                }}
+                              />
+                            </div>
+                            <div
+                              className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-emerald-400 shadow-glow shadow-emerald-500/50 border-2 border-white/30"
+                              style={{
+                                left: `calc(${insight?.percentage || 0}% - 6px)`,
+                              }}
+                            />
+                          </div>
+                          <div className="flex justify-between text-[9px] font-bold text-slate-500 mt-2 uppercase tracking-widest">
+                            <span>Low: {insight?.low || 0}%</span>
+                            <span>High: {insight?.high || 0}%</span>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
                 </div>
               )}
             </div>
-          </div>
-        </div>
 
-        {/* Cell B (Span 4) - Uni-parental Lineages (Maternal + Paternal + Rh) */}
-        <div className="xl:col-span-4 p-5 premium-card flex flex-col justify-between">
-          <div className="border-b border-slate-100 pb-3 mb-3">
-            <h3 className="text-xs font-black text-slate-455 uppercase tracking-[0.15em]">Uniparental Lineages</h3>
-            <p className="text-[10px] text-slate-500 font-medium">Cladistic deep maternal & paternal marker sets.</p>
-          </div>
-
-          <div className="space-y-2 my-auto">
-            {/* Paternal Card */}
-            <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-teal-50/10 border border-teal-100/30 flex gap-3 items-center">
-              <div className="w-8 h-8 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-teal-600/10">
-                <Compass className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[8px] font-black text-teal-600 uppercase tracking-widest block leading-none mb-0.5">Paternal haplogroup (y-dna)</span>
-                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{yData?.phase2?.haplogroup || yData?.predicted?.name || 'Unknown / Female lineage'}</span>
-                <span className="text-[9px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.2">{yData?.phase2?.region || yData?.predicted?.continent || 'Universal Genetic Origin'}</span>
-              </div>
-            </div>
-
-            {/* Maternal Card */}
-            <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-rose-50/10 border border-rose-100/30 flex gap-3 items-center">
-              <div className="w-8 h-8 rounded-xl bg-rose-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-rose-600/10">
-                <History className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[8px] font-black text-rose-600 uppercase tracking-widest block leading-none mb-0.5">Maternal haplogroup (mtdna)</span>
-                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{mtData?.predicted || 'Unknown'}</span>
-                <span className="text-[9px] font-bold text-slate-400 font-mono block uppercase truncate mt-0.2">{mtData?.region || 'Universal Genetic Origin'}</span>
-              </div>
-            </div>
-
-            {/* Blood Type Card */}
-            <div className="p-2.5 rounded-xl bg-gradient-to-br from-white to-red-50/10 border border-red-100/30 flex gap-3 items-center">
-              <div className={`w-8 h-8 rounded-xl text-white flex items-center justify-center shrink-0 shadow-sm ${rhDisplay.pillColor}`}>
-                <FlaskConical className="w-4 h-4" />
-              </div>
-              <div className="min-w-0">
-                <span className="text-[8px] font-black text-red-600 uppercase tracking-widest block leading-none mb-0.5">{rhDisplay.label || "Predicted Blood Type"}</span>
-                <span className="text-sm font-black text-slate-800 block truncate tracking-tight">{rhDisplay.name}</span>
-                <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.2">{rhDisplay.badge}</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-[8px] font-extrabold text-[#475569] bg-slate-50 border border-slate-100 p-1.5 rounded-lg text-center mt-3 select-none">
-            🔒 Fully local processing: genomic privacy protected.
-          </div>
-        </div>
-
-        {/* Statistical Rigor Container (Span 12) */}
-        {statisticalInsights && (
-          <div className="xl:col-span-12 p-4 premium-card">
-            <div className="flex items-center gap-2 mb-3 border-b border-slate-100 pb-2">
-              <Shield className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-              <div>
-                <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">Confidence Interval Rigor (95% CI)</h3>
-                <p className="text-[9px] text-slate-500 dark:text-slate-400">Statistical error bounds based on total AIM markers parsed.</p>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {statisticalInsights.slice(0, 4).map((insight: any, i: number) => (
-                <div key={insight?.pop || i} className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
-                  <div className="flex justify-between items-center text-[10px] font-bold mb-1.5 min-w-0 gap-2">
-                    <span className="text-slate-800 uppercase tracking-tight truncate min-w-0 flex-1">
-                      {formatPopName(insight?.pop)}
-                    </span>
-                    <span className="text-emerald-600 font-black shrink-0">{insight?.percentage || 0}%</span>
-                  </div>
-                  
+            {/* ===== OPTIONAL: Famous Matches Section ===== */}
+            {topFamousMatches.length > 0 && (
+              <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5">
+                <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
+                  <Dna className="w-4 h-4 text-purple-400" />
                   <div>
-                    <div className="h-1.5 w-full bg-slate-200/80 rounded-full relative overflow-hidden">
-                      <div 
-                        className="absolute h-full bg-emerald-200/80" 
-                        style={{ 
-                          left: `${insight?.low || 0}%`, 
-                          width: `${Math.max((insight?.high - insight?.low) || 0, 3)}%` 
-                        }} 
-                      />
-                      <div 
-                        className="absolute w-2 h-2 rounded-full bg-emerald-600 top-[-1px] -translate-x-1/2" 
-                        style={{ left: `${insight?.percentage || 0}%` }} 
-                      />
-                    </div>
-                    <div className="flex justify-between text-[8px] font-bold text-slate-400 mt-1 uppercase tracking-widest leading-none">
-                      <span>Low: {insight?.low || 0}%</span>
-                      <span>High: {insight?.high || 0}%</span>
-                    </div>
+                    <h3 className="text-xs font-black text-slate-300 uppercase tracking-wider">
+                      Ancestral Kinship & Famous Matches
+                    </h3>
+                    <p className="text-[9px] text-slate-500 mt-0.5">
+                      Genetic similarity with notable individuals
+                      (non‑attributive).
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+                <div className="flex flex-wrap gap-3 justify-start">
+                  {topFamousMatches.map((match: any, idx: number) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 bg-white/5 backdrop-blur border border-white/10 rounded-xl px-4 py-2.5 hover:border-purple-500/30 transition"
+                    >
+                      {/* Icon placeholder */}
+                      <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <User className="w-4 h-4 text-purple-300" />
+                      </div>
+                      <div className="text-xs">
+                        <p className="font-bold text-slate-200">
+                          {match.name || 'Unknown'}
+                        </p>
+                        <p className="text-[10px] text-purple-400 font-mono font-semibold">
+                          {match.matchPercentage != null
+                            ? `${match.matchPercentage.toFixed(1)}% match`
+                            : 'Similar'}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-        )}
+        </div>
+      </motion.div>
+    );
+  },
+);
 
-      </div>
-    </motion.div>
-  );
-});
 
 const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpanded: boolean, onToggleExpand: (rsid: string) => void }) => {
   const meta = (CATEGORY_META as any)[snp.category] || { color: "#0d9488", icon: "🧬" };
@@ -591,7 +780,7 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
     >
       <div className="flex items-center justify-between gap-4 mb-2">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-lg bg-slate-50 border border-slate-100 group-hover:bg-teal-50 transition-colors">
+          <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-lg bg-slate-50 border border-slate-100 group-hover:bg-teal-50 transition-colors dark:bg-slate-800">
             {meta.icon}
           </div>
           <div>
@@ -601,13 +790,13 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
                 {snp.significance}
               </span>
             </div>
-            <h4 className="text-base font-bold text-slate-800 group-hover:text-teal-600 transition-colors leading-tight">{snp.trait}</h4>
+            <h4 className="text-base font-bold text-slate-800 group-hover:text-teal-600 transition-colors leading-tight dark:text-slate-200">{snp.trait}</h4>
           </div>
         </div>
         <div className="flex items-center gap-6">
           <div className="text-right">
             <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Genotype</div>
-            <div className="text-sm font-mono font-bold text-slate-800">{snp.genotype || '--'}</div>
+            <div className="text-sm font-mono font-bold text-slate-800 dark:text-slate-200">{snp.genotype || '--'}</div>
           </div>
           <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isExpanded ? 'bg-teal-500 text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:text-teal-500'}`}>
             <ChevronDown className="w-4 h-4" />
@@ -624,17 +813,17 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
             className="overflow-hidden"
           >
             <div className="mt-6 pt-6 border-t border-slate-100">
-              <p className="text-sm text-slate-500 leading-relaxed mb-6">
+              <p className="text-sm text-slate-500 leading-relaxed mb-6 dark:text-slate-400">
                 {snp.description}
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 dark:bg-slate-800">
                   <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Gene</div>
-                  <div className="text-xs font-bold text-slate-800">{snp.gene || 'N/A'}</div>
+                  <div className="text-xs font-bold text-slate-800 dark:text-slate-200">{snp.gene || 'N/A'}</div>
                 </div>
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 dark:bg-slate-800">
                   <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Region</div>
-                  <div className="text-xs font-bold text-slate-800">{snp.continent}</div>
+                  <div className="text-xs font-bold text-slate-800 dark:text-slate-200">{snp.continent}</div>
                 </div>
               </div>
             </div>
@@ -783,7 +972,7 @@ const AutosomalView = memo(({
                             </div>
                             <div>
                               <h4 className="font-bold text-slate-900 dark:text-slate-100">{region}</h4>
-                              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">
                                 {matchedInRegion} / {snps.length} Identifiers
                               </p>
                             </div>
@@ -795,7 +984,7 @@ const AutosomalView = memo(({
                                   {s.genotype[0]}
                                 </div>
                               ))}
-                              {snps.length > 5 && <div className="w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[7px] font-bold text-slate-400">+{snps.length - 5}</div>}
+                              {snps.length > 5 && <div className="w-5 h-5 rounded-full border-2 border-white dark:border-slate-800 bg-slate-100 flex items-center justify-center text-[7px] font-bold text-slate-400 dark:bg-slate-800">+{snps.length - 5}</div>}
                             </div>
                             <span className="text-slate-400">{regionExpanded ? '－' : '＋'}</span>
                           </div>
@@ -1082,7 +1271,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: meta.color }}></div>
                         <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{entry.name}</span>
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-500">{Number(entry.value || 0).toFixed(1)}%</span>
+                      <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">{Number(entry.value || 0).toFixed(1)}%</span>
                     </div>
                     {ci && (
                       <div className="flex items-center gap-2">
@@ -1122,7 +1311,7 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                       </div>
                       <div className="flex items-end justify-between">
                     <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(2)}%</span>
-                     <span className="text-[9px] font-mono font-bold text-slate-500" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(3)} D</span>
+                     <span className="text-[9px] font-mono font-bold text-slate-500 dark:text-slate-400" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(3)} D</span>
                   </div>
                 </div>
               ))}
@@ -1200,107 +1389,10 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
 
   return (
     <div className="animate-fade-up space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-1">
-          <YDNABento yData={yData} />
-        </div>
-        
-        {/* Combined Paternal Heritage Card */}
-        <div className="md:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-center space-y-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
-              <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Defining SNP</div>
-              <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.phase2?.haplogroup || yData.predicted?.marker}</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-800/30 group hover:border-indigo-400 transition-colors">
-              <div className="text-[9px] font-bold text-indigo-500 uppercase tracking-widest mb-2">Path Depth</div>
-              <div className="text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">{yData.path.length} Steps</div>
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-blue-50/30 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/20 flex items-center justify-between">
-            <div className="flex items-center gap-3 text-[12px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-              Lineage Support Confidence
-            </div>
-            <div className="text-lg font-black text-blue-700 dark:text-blue-300">
-              {derivedMarkers.length} Derived Markers
-            </div>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 gap-6">
+        <YDNABento yData={yData} />
       </div>
       
-      {/* Tree and Markers Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Phylogenetic Tree */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">🌳</span>
-              Phylogenetic Tree
-            </h3>
-            <div className="relative">
-              <input 
-                type="text" 
-                placeholder="Find branch or SNP..." 
-                className="bg-slate-100 dark:bg-slate-900 rounded-full px-4 py-1.5 pl-9 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none border border-slate-200 dark:border-slate-700 w-full sm:w-48 transition-all"
-                value={treeSearchTerm}
-                onChange={(e) => setTreeSearchTerm(e.target.value)}
-              />
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              </div>
-            </div>
-          </div>
-          <div className="max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
-              <HaplogroupTreeView 
-                node={enrichedYTree} 
-                userPath={yData.path} 
-                searchTerm={treeSearchTerm} 
-                testedMarkers={yData.testedMarkers} 
-              />
-          </div>
-        </div>
-
-        {/* Tested Markers */}
-        <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-3">
-            <span className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">🔬</span>
-            Tested Markers
-          </h3>
-          <div className="grid grid-cols-1 gap-3 max-h-[500px] overflow-y-auto pr-2">
-            {yData.testedMarkers.length === 0 ? (
-              <div className="p-8 text-center bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800">
-                <div className="text-3xl mb-3">🔬</div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">No Y-DNA Markers Found</h4>
-                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                  This is common for female users or certain DNA tests with limited Y-chromosome coverage.
-                </p>
-              </div>
-            ) : (
-              yData.testedMarkers.map((m: any, i: number) => (
-                <div key={i} className={`p-4 rounded-xl border ${m.isDerived ? 'bg-blue-50 dark:bg-blue-900/10 border-blue-200 dark:border-blue-800' : 'bg-slate-50 dark:bg-slate-900 border-slate-100 dark:border-slate-800'}`}>
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-sm font-bold text-slate-900 dark:text-slate-100">{m.marker}</span>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${m.isDerived ? 'bg-blue-500 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'}`}>
-                      {m.isDerived ? 'Derived' : 'Ancestral'}
-                    </span>
-                  </div>
-                  <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono uppercase mb-1">{m.trait}</div>
-                  {m.description && (
-                    <div className="text-[10px] text-slate-600 dark:text-slate-400 italic mb-2 leading-tight border-l-2 border-blue-200 dark:border-blue-800 pl-2">
-                      {m.description}
-                    </div>
-                  )}
-                  <div className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 px-2 py-1 rounded border border-slate-200 dark:border-slate-700 inline-block">
-                    Genotype: {m.genotype}
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-      </div>
 
       {/* Paternal Odyssey Migration Story */}
       {enrichedYPath.length > 0 && (
@@ -1316,7 +1408,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
                 </div>
                 <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                   <span className="text-[10px] font-black uppercase text-slate-500">Ancient to Modern</span>
+                   <span className="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400">Ancient to Modern</span>
                 </div>
               </div>
 
@@ -1440,71 +1532,8 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   return (
     <div className="animate-fade-up space-y-8 pb-12">
       {/* Hero Prediction Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-1">
-          <HaplogroupBento predictedMt={mtData} />
-        </div>
-
-        <div 
-          className="lg:col-span-2 bg-slate-900 p-8 rounded-[2rem] text-white flex flex-col shadow-2xl relative overflow-hidden group min-w-0"
-        >
-          <div className="absolute top-0 right-0 p-8 opacity-5 text-8xl pointer-events-none">🧬</div>
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
-            <div>
-              <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-6">Evolutionary Pulse</h4>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-rose-500/20 transition-colors">🧬</div>
-                  <div>
-                    <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">SNP Resolution</div>
-                    <div className="text-lg font-black">{mtData.testedMarkers.length} Markers</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-xl group-hover:bg-indigo-500/20 transition-colors">🛣️</div>
-                  <div>
-                    <div className="text-[10px] text-slate-400 uppercase font-black tracking-wider">Path Distance</div>
-                    <div className="text-lg font-black">{enrichedPath.length} Milestones</div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-[9px] text-slate-500 mt-8 leading-tight italic border-t border-white/5 pt-6">
-                Mitochondrial Eve is our direct common maternal ancestor who lived ~150,000 to 200,000 years ago in Africa.
-              </p>
-            </div>
-            
-            <div className="flex flex-col justify-center items-center border-l border-white/5 pl-8">
-               <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 w-full text-center">Marker Distribution</h4>
-               {markerPieData.length > 0 ? (
-                 <div className="relative w-[180px] h-[180px] mx-auto flex items-center justify-center">
-                      <PieChart width={180} height={180}>
-                        <Pie
-                          data={markerPieData}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={55}
-                          outerRadius={75}
-                          paddingAngle={4}
-                          dataKey="value"
-                          stroke="none"
-                        >
-                          {markerPieData.map((entry: any, index: number) => (
-                             <Cell key={`cell-${index}`} fill={getHaploColor(entry.branch, true)} className="hover:opacity-80 transition-opacity" />
-                          ))}
-                        </Pie>
-                        <Tooltip cursor={false} content={<CustomTooltip />} />
-                      </PieChart>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                      <span className="text-3xl font-black text-white">{derivedMarkers.length}</span>
-                      <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Matches</span>
-                    </div>
-                 </div>
-               ) : (
-                 <div className="text-slate-500 text-xs italic">Insufficient data</div>
-               )}
-            </div>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 gap-6">
+        <HaplogroupBento predictedMt={mtData} />
       </div>
 
       {/* Migration Story and Marker Detail Layout */}
@@ -1521,7 +1550,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
               </div>
               <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700">
                  <span className="w-2 h-2 rounded-full bg-rose-500"></span>
-                 <span className="text-[10px] font-black uppercase text-slate-500">Ancient to Modern</span>
+                 <span className="text-[10px] font-black uppercase text-slate-500 dark:text-slate-400">Ancient to Modern</span>
               </div>
             </div>
 
@@ -1672,11 +1701,11 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
               <div className="flex justify-between items-end">
                 <div>
                   <div className="text-2xl font-black text-slate-900 dark:text-slate-100">{c.markerCount.toLocaleString()}</div>
-                  <div className="text-[10px] text-slate-500 uppercase font-bold">Markers</div>
+                  <div className="text-[10px] text-slate-500 uppercase font-bold dark:text-slate-400">Markers</div>
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{c.aimCount.toLocaleString()}</div>
-                  <div className="text-[10px] text-slate-500 uppercase font-bold">AIMs</div>
+                  <div className="text-[10px] text-slate-500 uppercase font-bold dark:text-slate-400">AIMs</div>
                 </div>
               </div>
             </div>
@@ -1690,7 +1719,7 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
           <h4 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-widest mb-6">SNP Coverage</h4>
           <div className="space-y-6">
             <div className="flex justify-between items-end">
-              <span className="text-xs font-bold text-slate-500 uppercase">Matched SNPs</span>
+              <span className="text-xs font-bold text-slate-500 uppercase dark:text-slate-400">Matched SNPs</span>
               <span className="text-2xl font-black text-slate-900 dark:text-slate-100">{coverage?.matched.toLocaleString()}</span>
             </div>
             <div className="w-full h-3 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden">
@@ -1699,7 +1728,7 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
                 style={{ width: `${coverage?.percent}%` }}
               />
             </div>
-            <p className="text-[10px] text-slate-500 leading-relaxed">
+            <p className="text-[10px] text-slate-500 leading-relaxed dark:text-slate-400">
               Your file covers <span className="font-bold text-indigo-600 dark:text-indigo-400">{coverage?.percent}%</span> of the reference database. 
               Higher coverage typically leads to more stable ancestry predictions.
             </p>
@@ -1728,11 +1757,11 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
         <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
           <div className="flex justify-between items-center">
             <div>
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Chip Detection</div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1 dark:text-slate-400">Chip Detection</div>
               <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{activeDataset?.chip || 'No file uploaded'}</div>
             </div>
             <div className="text-right">
-              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Last Update</div>
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1 dark:text-slate-400">Last Update</div>
               <div className="text-xs font-mono text-slate-400">2026-04-16</div>
             </div>
           </div>
@@ -2480,7 +2509,7 @@ export default function App() {
             const errorCode = generateErrorCode(String(errMsg));
 
             return (
-              <div className="mb-12 p-8 rounded-[2.5rem] bg-white border border-rose-100 shadow-xl shadow-rose-100/40 animate-fade-in relative overflow-hidden z-50">
+              <div className="mb-12 p-8 rounded-[2.5rem] bg-white border border-rose-100 shadow-xl shadow-rose-100/40 animate-fade-in relative overflow-hidden z-50 dark:bg-slate-900">
                 {/* Visual border gradient accent */}
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-rose-500 via-pink-400 to-amber-400" />
                 
@@ -2495,22 +2524,22 @@ export default function App() {
                       {category}
                     </span>
                     
-                    <h3 className="text-xl font-extrabold text-slate-800 mt-3 mb-2">
+                    <h3 className="text-xl font-extrabold text-slate-800 mt-3 mb-2 dark:text-slate-200">
                       Genomic Analysis Blocked
                     </h3>
                     
-                    <p className="text-slate-600 font-semibold text-sm leading-relaxed mb-6">
+                    <p className="text-slate-600 font-semibold text-sm leading-relaxed mb-6 dark:text-slate-400">
                       {errMsg}
                     </p>
 
-                    <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between dark:bg-slate-800">
                       <div>
-                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">Support Reference Code</div>
-                        <div className="text-sm font-mono font-bold text-slate-700">{errorCode}</div>
+                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wide dark:text-slate-400">Support Reference Code</div>
+                        <div className="text-sm font-mono font-bold text-slate-700 dark:text-slate-300">{errorCode}</div>
                       </div>
                       <button 
                         onClick={() => navigator.clipboard.writeText(`Error: ${errMsg}\nCode: ${errorCode}`)}
-                        className="text-xs px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-bold text-slate-600 hover:text-slate-900 hover:border-slate-300 active:bg-slate-100 transition-colors"
+                        className="text-xs px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-bold text-slate-600 hover:text-slate-900 hover:border-slate-300 active:bg-slate-100 transition-colors dark:text-slate-400 dark:bg-slate-900"
                       >
                         Copy Error
                       </button>
@@ -2521,7 +2550,7 @@ export default function App() {
                         <h4 className="text-teal-800 font-extrabold text-xs uppercase tracking-widest mb-1.5">
                           🟢 Recommended Peer Action:
                         </h4>
-                        <p className="text-slate-700 text-xs font-semibold leading-relaxed">
+                        <p className="text-slate-700 text-xs font-semibold leading-relaxed dark:text-slate-300">
                           {details.suggestedSolution}
                         </p>
                       </div>
@@ -2529,10 +2558,10 @@ export default function App() {
 
                     {/* Troubleshooting suggestions list */}
                     <div className="mb-6">
-                      <h4 className="text-slate-500 font-bold text-xs uppercase tracking-widest mb-3">
+                      <h4 className="text-slate-500 font-bold text-xs uppercase tracking-widest mb-3 dark:text-slate-400">
                         Troubleshooting Guidelines:
                       </h4>
-                      <ul className="space-y-3 text-xs font-semibold text-slate-600">
+                      <ul className="space-y-3 text-xs font-semibold text-slate-600 dark:text-slate-400">
                         <li className="flex items-start gap-2.5">
                           <span className="text-teal-500 shrink-0">📎</span>
                           <span><strong>Format:</strong> Tab-delimited (.txt) or comma-separated (.csv) raw genome file.</span>
@@ -2560,19 +2589,19 @@ export default function App() {
                           </span>
                         </summary>
                         
-                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-200/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto">
-                          <div><strong className="text-slate-700">Error Category:</strong> {details?.errorCategory || category}</div>
+                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-200/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto dark:text-slate-400 dark:bg-slate-800">
+                          <div><strong className="text-slate-700 dark:text-slate-300">Error Category:</strong> {details?.errorCategory || category}</div>
                           {details?.bytesTotal !== undefined && (
-                            <div><strong className="text-slate-700">File Ingestion Size:</strong> {(details.bytesTotal / (1024 * 1024)).toFixed(2)} MB ({details.bytesTotal.toLocaleString()} bytes)</div>
+                            <div><strong className="text-slate-700 dark:text-slate-300">File Ingestion Size:</strong> {(details.bytesTotal / (1024 * 1024)).toFixed(2)} MB ({details.bytesTotal.toLocaleString()} bytes)</div>
                           )}
                           {details?.linesTotal !== undefined && (
-                            <div><strong className="text-slate-700">Total Rows Read:</strong> {details.linesTotal.toLocaleString()}</div>
+                            <div><strong className="text-slate-700 dark:text-slate-300">Total Rows Read:</strong> {details.linesTotal.toLocaleString()}</div>
                           )}
                           {details?.linesCommented !== undefined && (
-                            <div><strong className="text-slate-700">Comment Headers Found:</strong> {details.linesCommented.toLocaleString()}</div>
+                            <div><strong className="text-slate-700 dark:text-slate-300">Comment Headers Found:</strong> {details.linesCommented.toLocaleString()}</div>
                           )}
                           {details?.linesMalformed !== undefined && (
-                            <div><strong className="text-slate-700">Malformed/Unrecognized Rows:</strong> {details.linesMalformed.toLocaleString()}</div>
+                            <div><strong className="text-slate-700 dark:text-slate-300">Malformed/Unrecognized Rows:</strong> {details.linesMalformed.toLocaleString()}</div>
                           )}
                           {details?.headerPreview && (
                             <div className="pt-3 border-t border-slate-200 dark:border-slate-800 mt-3">
@@ -2671,387 +2700,11 @@ export default function App() {
             onOpenApp={setCurrentApp}
           >
             <Suspense fallback={
-                  <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse">
+                  <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse dark:text-slate-400">
                     <div className="w-10 h-10 border-4 border-teal-200 border-t-teal-600 rounded-full animate-spin mb-4" />
                     <p className="font-bold tracking-widest uppercase text-xs">Loading Tool...</p>
                   </div>
                 }>
-
-                {activeTab === 'dashboard' && (
-                  <Dashboard 
-                    oracleResults={oracleResults}
-                    populationProximity={populationProximity}
-                    dataset={datasets[activeDatasetIndex]}
-                    userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                    onNavigateToTab={(tab: string) => {
-                      if (tab === 'ancient_dna') {
-                        setActiveTab('history');
-                        setActiveHistorySubTab('ancient');
-                      } else if (tab === 'haplogroups') {
-                        setActiveTab('history');
-                        setActiveHistorySubTab('modern');
-                      } else if (tab === 'wellness') {
-                        setActiveTab('health_traits');
-                        setActiveHealthSubTab('wellness');
-                      } else if (tab === 'blood') {
-                        setActiveTab('health_traits');
-                        setActiveHealthSubTab('blood');
-                      } else {
-                        setActiveTab(tab as any);
-                      }
-                    }}
-                    onReset={resetApp}
-                  />
-                )}
-
-                {activeTab === 'methodology' && (
-                  <MethodologyPage activeTab={activeTab} />
-                )}
-
-                {activeTab === 'summary' && (
-                  <div className="space-y-8">
-                    <ProfileSummary 
-                      datasets={datasets} 
-                      activeDatasetIndex={activeDatasetIndex} 
-                      oracleResults={oracleResults} 
-                      populationProximity={populationProximity}
-                      userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                      famousMatches={famousMatches}
-                      healthImpacts={healthWellnessMatches}
-                    />
-                  </div>
-                )}
-
-                {activeTab === 'autosomal' && (
-                  <div className="space-y-8 pb-20">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
-                      <div>
-                        <h2 className="text-3xl font-black text-slate-800 tracking-tight">Genetic Markers</h2>
-                        <p className="text-slate-500">Filtered view of your autosomal variants.</p>
-                      </div>
-                      <div className="flex items-center gap-2 bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
-                        {(['matched', 'unmatched'] as const).map(status => (
-                          <button 
-                            key={status}
-                            onClick={() => setStatusFilter(status)}
-                            className={`px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${statusFilter === status ? 'bg-teal-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
-                          >
-                            {status}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <AutosomalView 
-                      filteredResults={filteredResults}
-                      groupedCategories={groupByCategory(filteredResults || [])}
-                      availableCategories={Object.keys(groupByCategory(filteredResults || []))}
-                      expandedCategories={expandedCategories}
-                      toggleCategory={toggleCategory}
-                      expandedSnps={expandedSnps}
-                      toggleExpand={toggleExpand}
-                      datasets={datasets}
-                      activeDatasetIndex={activeDatasetIndex}
-                    />
-                  </div>
-                )}
-
-                {activeTab === 'ancestry' && (
-                  <div className="pb-20 space-y-8">
-                    <div className="flex justify-center mb-4 overflow-x-auto pb-0.5">
-                      <div className="inline-flex bg-[#111213]/40 p-1.5 rounded-2xl border border-white/5 shadow-inner shrink-0">
-                        <button 
-                          onClick={() => setActiveAncestrySubTab('oracle')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeAncestrySubTab === 'oracle' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
-                        >
-                          🔬 High-Res Oracle
-                        </button>
-                        <button 
-                          onClick={() => setActiveAncestrySubTab('painter')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeAncestrySubTab === 'painter' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
-                        >
-                          🎨 Chromosome Painting
-                        </button>
-                        <button 
-                          onClick={() => setActiveAncestrySubTab('scout')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeAncestrySubTab === 'scout' ? 'bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-400 hover:text-slate-200'}`}
-                        >
-                          ⚡ Scout Score
-                        </button>
-                      </div>
-                    </div>
-
-                    {activeAncestrySubTab === 'oracle' && (
-                      <div className="space-y-8">
-                         <SubpopulationBento 
-                           precalculated={datasets[activeDatasetIndex]?.analysis?.subpopulationOracle}
-                           userGenotypes={Object.entries(snpMaps.current[activeDatasetIndex] || {}).map(([rsid, genotype]) => ({ rsid, genotype }))}
-                           aimsDatabase={Object.values(masterAims as any).map((aim: any) => ({
-                             rsid: aim.rsid,
-                             chromosome: aim.chromosome || 'Unknown',
-                             subpop: aim.region, // Assuming region maps to subpop
-                             continent: aim.region || 'Unknown',
-                             alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
-                           }))}
-                         />
-                         
-                         <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
-                      </div>
-                    )}
-
-                    {activeAncestrySubTab === 'painter' && (
-                      <div className="animate-fade-in">
-                         <ChromosomePainterView dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} />
-                      </div>
-                    )}
-
-                    {activeAncestrySubTab === 'scout' && (
-                      <div className="animate-fade-in">
-                         <NaiveAncestryOracle 
-                           results={datasets[activeDatasetIndex]?.analysis || {}} 
-                           userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                           onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                         />
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {activeTab === 'health_traits' && (
-                  <div className="pb-20 space-y-8">
-                    <div className="flex justify-center mb-4 overflow-x-auto pb-0.5">
-                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner shrink-0">
-                        <button 
-                          onClick={() => setActiveHealthSubTab('wellness')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'wellness' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        >
-                          🩺 Wellness & Risk
-                        </button>
-                        <button 
-                          onClick={() => setActiveHealthSubTab('traits')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'traits' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        >
-                          ✨ Personal Traits
-                        </button>
-                        <button 
-                          onClick={() => setActiveHealthSubTab('blood')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'blood' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        >
-                          🩸 Blood Type Predictor
-                        </button>
-                        <button 
-                          onClick={() => setActiveHealthSubTab('prs')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHealthSubTab === 'prs' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        >
-                          🧬 Polygenic Scores
-                        </button>
-                      </div>
-                    </div>
-
-                    {activeHealthSubTab === 'wellness' && (
-                      <Suspense fallback={<div className="text-center p-12 text-slate-400">Loading Wellness Analysis...</div>}>
-                        <HealthWellnessTab 
-                          impacts={healthWellnessMatches} 
-                          userSnps={snpMaps.current[activeDatasetIndex]} 
-                          mode="analyst"
-                        />
-                      </Suspense>
-                    )}
-
-                    {activeHealthSubTab === 'traits' && (
-                      <div className="animate-fade-in">
-                        <HealthTraitsTab 
-                          matchedTraits={userMatchedMitoTraits}
-                          autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
-                          userSnps={snpMaps.current[activeDatasetIndex]}
-                        />
-                      </div>
-                    )}
-
-                    {activeHealthSubTab === 'blood' && (
-                      <div className="animate-fade-in">
-                        <BloodTypeView 
-                          dataset={datasets[activeDatasetIndex]} 
-                        />
-                      </div>
-                    )}
-
-                    {activeHealthSubTab === 'prs' && (
-                      <div className="animate-fade-in">
-                        <PolygenicScores 
-                          prsResults={datasets[activeDatasetIndex]?.prsResults}
-                        />
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {activeTab === 'history' && (
-                  <div className="pb-20 space-y-8">
-                    <div className="flex justify-center mb-4 overflow-x-auto pb-0.5">
-                      <div className="inline-flex bg-slate-100 dark:bg-[#111213]/40 p-1.5 rounded-2xl border border-slate-200/50 dark:border-white/5 shadow-inner shrink-0">
-                        <button 
-                          onClick={() => setActiveHistorySubTab('modern')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHistorySubTab === 'modern' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        >
-                          🧬 Modern Lineages
-                        </button>
-                        <button 
-                          onClick={() => setActiveHistorySubTab('ancient')}
-                          className={`px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHistorySubTab === 'ancient' ? 'bg-slate-900 dark:bg-[#4599FF] text-white shadow-lg scale-105' : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'}`}
-                        >
-                          💀 Ancient DNA Matches
-                        </button>
-                      </div>
-                    </div>
-
-                    {activeHistorySubTab === 'modern' ? (
-                      <div className="space-y-8 animate-fade-in">
-                        <div className="flex justify-center mb-8 overflow-x-auto pb-0.5">
-                          <div className="inline-flex bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm shrink-0">
-                            <button 
-                              onClick={() => setActiveHaploType('paternal')}
-                              className={`px-5 sm:px-8 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHaploType === 'paternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
-                            >
-                              ♂️ Paternal
-                            </button>
-                            <button 
-                              onClick={() => setActiveHaploType('maternal')}
-                              className={`px-5 sm:px-8 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${activeHaploType === 'maternal' ? 'bg-teal-600 text-white shadow-lg scale-105' : 'text-slate-500 hover:text-slate-800'}`}
-                            >
-                              ♀️ Maternal
-                            </button>
-                          </div>
-                        </div>
-
-                        {activeHaploType === 'paternal' ? (
-                          <YDNAView 
-                            yData={datasets[activeDatasetIndex].predictedYDNA} 
-                            treeSearchTerm={treeSearchTerm}
-                            setTreeSearchTerm={setTreeSearchTerm}
-                          />
-                        ) : (
-                          <MTDNAView 
-                            mtData={datasets[activeDatasetIndex].predictedMtDNA} 
-                            treeSearchTerm={treeSearchTerm}
-                            setTreeSearchTerm={setTreeSearchTerm}
-                            matchedTraits={userMatchedMitoTraits}
-                          />
-                        )}
-                      </div>
-                    ) : (
-                      <div className="space-y-8 animate-fade-in">
-                        <div className="flex justify-center overflow-x-auto pb-0.5">
-                          <div className="p-1.5 bg-slate-100 rounded-2xl inline-flex border border-slate-200 shadow-inner shrink-0">
-                            <button
-                              onClick={() => setActiveAncientSubTab('admixture')}
-                              className={`flex items-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${
-                                activeAncientSubTab === 'admixture' 
-                                  ? 'bg-slate-900 text-white shadow-md scale-105' 
-                                  : 'text-slate-500 hover:text-slate-800'
-                              }`}
-                            >
-                              <History size={14} /> Ancient Admixture
-                            </button>
-                            <button
-                              onClick={() => setActiveAncientSubTab('matches')}
-                              className={`flex items-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all whitespace-nowrap ${
-                                activeAncientSubTab === 'matches' 
-                                  ? 'bg-slate-900 text-white shadow-md scale-105' 
-                                  : 'text-slate-500 hover:text-slate-800'
-                              }`}
-                            >
-                              <User size={14} /> Sample Matches
-                            </button>
-                          </div>
-                        </div>
-
-                        {activeAncientSubTab === 'admixture' ? (
-                          <div className="space-y-8 animate-fade-in">
-                            <AncientAncestryOracle 
-                              results={ancientAdmixture} 
-                              title="Deep Time Oracle" 
-                              subtitle="Ancient Admixture & Paleolithic Affinity"
-                              type="admixture"
-                              onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                            />
-                            <ArchaicIntrogressionView results={archaicIntrogression} />
-                          </div>
-                        ) : (
-                          <AncientAncestryOracle 
-                            results={individualMatches} 
-                            title="Fossil Specimen Matches" 
-                            subtitle="Direct Genetic Affinity to Ancient Individuals"
-                            type="matches"
-                            onOpenMethodology={() => setIsMethodologyOpen(true)} 
-                          />
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {activeTab === 'markers' && (
-                  <div className="pb-20">
-                    <MarkerBenchmarks benchmarks={markerBenchmarks} />
-                  </div>
-                )}
-
-                {activeTab === 'rare_variants' && (
-                  <div className="pb-20 animate-fade-in">
-                    <RareVariantsView variants={datasets[activeDatasetIndex]?.rareAndNovelVariants || []} />
-                  </div>
-                )}
-
-                {activeTab === 'ai_agent' && (
-                  <div className="pb-20 animate-fade-in">
-                    <AIGenomicAgent
-                      dataset={datasets[activeDatasetIndex]}
-                      oracleResults={oracleResults}
-                      populationProximity={populationProximity}
-                      famousMatches={famousMatches}
-                      autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
-                      userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                    />
-                  </div>
-                )}
-
-                {activeTab === 'kit_comparison' && (
-                  <div className="pb-20 animate-fade-in">
-                    <KitComparisonModule datasets={datasets} />
-                  </div>
-                )}
-
-                {activeTab === 'export' && (
-                  <div className="pb-20 animate-fade-in">
-                    <ExportModule 
-                      onGenerateReport={handleGenerateReport}
-                      datasetName={datasets[activeDatasetIndex]?.name || 'Dataset'}
-                    />
-                  </div>
-                )}
-
-                {/* Ad placement between content sections */}
-                <div className="max-w-4xl mx-auto my-8">
-                  <AdBanner format="auto" className="rounded-2xl" />
-                </div>
-
-                {activeTab === 'debug' && (
-                  <div className="p-8 premium-card">
-                    <h3 className="text-xl font-black mb-4">Diagnostic Tool</h3>
-                    <pre className="text-[10px] font-mono bg-slate-50 p-4 rounded-xl overflow-auto max-h-[400px]">
-                      {JSON.stringify({
-                        version: VERSION,
-                        dataset: datasets[activeDatasetIndex]?.name,
-                        snpCount: datasets[activeDatasetIndex]?.snpCount,
-                        validSnps: Object.keys(snpMaps.current[activeDatasetIndex] || {}).length,
-                        activeTab
-                      }, null, 2)}
-                    </pre>
-                  </div>
-                )}
-
-
             {currentApp === 'profile' && (
               <div className="space-y-8 animate-fade-in">
                 <ProfileSummary 
@@ -3237,7 +2890,7 @@ export default function App() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
                   <div>
                     <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 tracking-tight">Genetic Markers</h2>
-                    <p className="text-slate-500">Filtered view of your autosomal variants.</p>
+                    <p className="text-slate-500 dark:text-slate-400">Filtered view of your autosomal variants.</p>
                   </div>
                   <div className="flex items-center gap-2 bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                     {(['matched', 'unmatched'] as const).map(status => (

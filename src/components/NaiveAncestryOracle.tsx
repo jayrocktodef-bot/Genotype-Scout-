@@ -265,7 +265,7 @@ export const NaiveAncestryOracle = memo(({
 
   if (!hasData) {
     return (
-      <div className="p-12 text-center text-slate-500">
+      <div className="p-12 text-center text-slate-500 dark:text-slate-400">
         No Naive Ancestry Results Available - Please load and process a valid dataset.
       </div>
     );
@@ -485,7 +485,7 @@ export const NaiveAncestryOracle = memo(({
                       <div className="flex items-start justify-between gap-3 mb-2.5">
                         <div>
                           <h4 className="font-extrabold text-white text-xs sm:text-sm tracking-tight">{driver.name}</h4>
-                          <span className="font-mono text-[9px] font-bold text-slate-500 mt-0.5 block">
+                          <span className="font-mono text-[9px] font-bold text-slate-500 mt-0.5 block dark:text-slate-400">
                             {driver.gene} &bull; {driver.rsid}
                           </span>
                         </div>
@@ -499,7 +499,7 @@ export const NaiveAncestryOracle = memo(({
                             </span>
                           </div>
                         ) : (
-                          <span className="text-[9px] font-bold text-slate-500 bg-white/5 border border-white/5 px-2 py-0.5 rounded">
+                          <span className="text-[9px] font-bold text-slate-500 bg-white/5 border border-white/5 px-2 py-0.5 rounded dark:text-slate-400">
                             Untested
                           </span>
                         )}
@@ -517,7 +517,7 @@ export const NaiveAncestryOracle = memo(({
                           </p>
                         </div>
                         <div>
-                          <span className="text-[8px] font-black uppercase tracking-widest text-slate-500 block mb-0.5">Global Frequency</span>
+                          <span className="text-[8px] font-black uppercase tracking-widest text-slate-500 block mb-0.5 dark:text-slate-400">Global Frequency</span>
                           <p className="text-[10px] text-slate-400 font-semibold leading-relaxed">
                             {driver.globalFreq}
                           </p>

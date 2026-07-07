@@ -12,7 +12,7 @@ export const PolygenicScores = memo(({ prsResults }: PolygenicScoresProps) => {
       <div className="flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm text-center">
         <ShieldAlert className="w-12 h-12 text-slate-300 dark:text-slate-600 mb-4" />
         <h3 className="text-xl font-black text-slate-700 dark:text-slate-300 mb-2">PRS Engine Not Available</h3>
-        <p className="text-sm text-slate-500 max-w-md">
+        <p className="text-sm text-slate-500 max-w-md dark:text-slate-400">
           Your raw DNA file does not contain enough matching markers to calculate Polygenic Risk Scores accurately.
         </p>
       </div>

@@ -30,7 +30,7 @@ export const ExportModule: React.FC<ExportModuleProps> = ({ onGenerateReport, da
           </div>
           <div>
             <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 tracking-tight">Export & Reports</h2>
-            <p className="text-slate-500">Generate high-quality PDF reports for {datasetName}</p>
+            <p className="text-slate-500 dark:text-slate-400">Generate high-quality PDF reports for {datasetName}</p>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ export const ExportModule: React.FC<ExportModuleProps> = ({ onGenerateReport, da
           >
             <Stethoscope className={`w-8 h-8 mb-4 ${reportType === 'medical' ? 'text-rose-500' : 'text-slate-400'}`} />
             <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-2">Medical & Health</h3>
-            <p className="text-sm text-slate-500 mb-4">
+            <p className="text-sm text-slate-500 mb-4 dark:text-slate-400">
               Export clinical Pharmacogenomics (PGx), high-impact carrier status, Polygenic Risk Scores (PRS), and wellness traits.
             </p>
           </div>
@@ -62,7 +62,7 @@ export const ExportModule: React.FC<ExportModuleProps> = ({ onGenerateReport, da
           >
             <Dna className={`w-8 h-8 mb-4 ${reportType === 'genetic' ? 'text-teal-500' : 'text-slate-400'}`} />
             <h3 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-2">Ancestry & Genetic</h3>
-            <p className="text-sm text-slate-500 mb-4">
+            <p className="text-sm text-slate-500 mb-4 dark:text-slate-400">
               Export ancient DNA matches, haplogroups, admixture composition, and multi-kit kinship matching results.
             </p>
           </div>
@@ -85,7 +85,7 @@ export const ExportModule: React.FC<ExportModuleProps> = ({ onGenerateReport, da
                 />
                 <div>
                   <div className="font-bold text-slate-800 dark:text-slate-200 text-sm">Filter High-Impact Only</div>
-                  <div className="text-xs text-slate-500">Only include traits marked as Pathogenic, Moderate or High Risk. Excludes Benign and common traits.</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">Only include traits marked as Pathogenic, Moderate or High Risk. Excludes Benign and common traits.</div>
                 </div>
               </label>
             )}
@@ -99,7 +99,7 @@ export const ExportModule: React.FC<ExportModuleProps> = ({ onGenerateReport, da
               />
               <div>
                 <div className="font-bold text-slate-800 dark:text-slate-200 text-sm">Include Raw Data Table</div>
-                <div className="text-xs text-slate-500">Append a table of the underlying parsed SNPs at the end of the report (may generate a very long PDF).</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Append a table of the underlying parsed SNPs at the end of the report (may generate a very long PDF).</div>
               </div>
             </label>
           </div>

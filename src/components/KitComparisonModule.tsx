@@ -13,7 +13,7 @@ export const KitComparisonModule = ({ datasets }: { datasets: any[] }) => {
           <ShieldAlert className="w-10 h-10 text-slate-400" />
         </div>
         <h2 className="text-3xl font-black tracking-tight text-slate-800 dark:text-slate-100">Insufficient Datasets</h2>
-        <p className="text-slate-500 mt-4 max-w-lg">
+        <p className="text-slate-500 mt-4 max-w-lg dark:text-slate-400">
           To perform a side-by-side comparison, you need to load at least two genomic datasets into the workspace.
         </p>
       </div>
@@ -83,7 +83,7 @@ export const KitComparisonModule = ({ datasets }: { datasets: any[] }) => {
           <div className="p-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[2rem] shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-teal-400 to-emerald-500"></div>
             <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-1 truncate">{kitA.name?.split('.')[0] || 'Kit A'}</h3>
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest">{kitA.snpCount?.toLocaleString()} SNPs Tested • {kitA.chip || 'Unknown Array'}</p>
+            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">{kitA.snpCount?.toLocaleString()} SNPs Tested • {kitA.chip || 'Unknown Array'}</p>
             
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700/50">
@@ -118,7 +118,7 @@ export const KitComparisonModule = ({ datasets }: { datasets: any[] }) => {
           <div className="p-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-[2rem] shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
             <h3 className="text-xl font-black text-slate-900 dark:text-slate-100 mb-1 truncate">{kitB.name?.split('.')[0] || 'Kit B'}</h3>
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest">{kitB.snpCount?.toLocaleString()} SNPs Tested • {kitB.chip || 'Unknown Array'}</p>
+            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">{kitB.snpCount?.toLocaleString()} SNPs Tested • {kitB.chip || 'Unknown Array'}</p>
             
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700/50">

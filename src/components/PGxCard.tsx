@@ -20,7 +20,7 @@ export const PGxCard: React.FC<{ report: PGxReport }> = ({ report }) => {
         <span className="font-black text-[10px] uppercase tracking-[0.2em]">
           {report.severity} Priority Alert
         </span>
-        <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">
+        <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest dark:text-slate-400">
           Source: CPIC 1A
         </span>
       </div>
@@ -39,7 +39,7 @@ export const PGxCard: React.FC<{ report: PGxReport }> = ({ report }) => {
         <div className="px-3 py-1 bg-slate-800 text-slate-400 text-[10px] font-black uppercase rounded-lg border border-slate-700/50">
           Gene: <span className="text-slate-200">{report.gene}</span>
         </div>
-        <div className="px-3 py-1 bg-slate-800/50 text-slate-500 text-[10px] font-black uppercase rounded-lg italic">
+        <div className="px-3 py-1 bg-slate-800/50 text-slate-500 text-[10px] font-black uppercase rounded-lg italic dark:text-slate-400">
           Genomic Marker Detected
         </div>
       </div>

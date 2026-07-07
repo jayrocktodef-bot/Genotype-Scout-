@@ -330,17 +330,17 @@ export const ChromosomePainterView = ({
                             </div>
                           ))}
                           {snpsInSegment.length === 0 && (
-                            <span className="text-[10px] text-slate-500 italic block">No call SNPs in this segment window</span>
+                            <span className="text-[10px] text-slate-500 italic block dark:text-slate-400">No call SNPs in this segment window</span>
                           )}
                           {snpsInSegment.length > 30 && (
-                            <span className="text-[9px] text-slate-500 text-center block pt-1">...and {snpsInSegment.length - 30} more SNPs</span>
+                            <span className="text-[9px] text-slate-500 text-center block pt-1 dark:text-slate-400">...and {snpsInSegment.length - 30} more SNPs</span>
                           )}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-500 text-center uppercase tracking-widest">
+                  <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-500 text-center uppercase tracking-widest dark:text-slate-400">
                     Interactive Segment Inspector
                   </div>
                 </motion.div>
@@ -349,7 +349,7 @@ export const ChromosomePainterView = ({
           </div>
         ) : (
           <div className="text-center py-10 space-y-4">
-            <p className="text-slate-500 font-bold uppercase text-xs tracking-wider">
+            <p className="text-slate-500 font-bold uppercase text-xs tracking-wider dark:text-slate-400">
               {laiError 
                 ? `Chromosome painting error: ${laiError}`
                 : 'Failed to load chromosome painting data. Make sure a raw kit has been successfully processed.'

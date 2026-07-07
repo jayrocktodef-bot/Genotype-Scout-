@@ -80,7 +80,7 @@ export const GenotypeParser: React.FC<GenotypeParserProps> = ({ streamProgress }
 
       {/* Progress Metrics Panel */}
       <div className="w-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-100 dark:border-slate-800/80 rounded-[2rem] p-6 shadow-sm mb-6">
-        <div className="flex items-center justify-between mb-3 text-xs font-black uppercase tracking-wider text-slate-500">
+        <div className="flex items-center justify-between mb-3 text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400">
           <span>Analysis Progress</span>
           <span className="text-teal-600 dark:text-teal-400 font-mono">{percent}%</span>
         </div>
@@ -125,7 +125,7 @@ export const GenotypeParser: React.FC<GenotypeParserProps> = ({ streamProgress }
 
       {/* DNA Live Sequencer Output Logs */}
       <div className="w-full bg-slate-950 dark:bg-black rounded-2xl p-5 border border-slate-900 font-mono text-left shadow-inner mb-8 overflow-hidden h-[180px] flex flex-col justify-end">
-        <div className="text-[10px] text-slate-500 uppercase tracking-widest border-b border-slate-900 pb-2 mb-2 flex items-center justify-between">
+        <div className="text-[10px] text-slate-500 uppercase tracking-widest border-b border-slate-900 pb-2 mb-2 flex items-center justify-between dark:text-slate-400">
           <span className="flex items-center gap-1.5"><Activity size={10} className="text-teal-400 animate-pulse" /> Sequencer Console</span>
           <span className="text-teal-400 font-bold">Online</span>
         </div>

@@ -60,7 +60,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
     return (
       <div className="flex flex-col items-center justify-center py-32 space-y-4">
         <Loader2 className="w-12 h-12 text-red-600 animate-spin" />
-        <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Phasing Genomic Traits...</p>
+        <p className="text-slate-500 font-bold uppercase tracking-widest text-xs dark:text-slate-400">Phasing Genomic Traits...</p>
       </div>
     );
   }
@@ -208,7 +208,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                   <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Predicted Blood Group</div>
                   <div className="text-4xl font-black text-red-600 dark:text-red-400">{healthResults.bloodType.bloodType}</div>
                 </div>
-                <p className="text-xs text-slate-500 font-medium">Confidence: {healthResults.bloodType.confidence}</p>
+                <p className="text-xs text-slate-500 font-medium dark:text-slate-400">Confidence: {healthResults.bloodType.confidence}</p>
               </motion.div>
 
               <motion.div 
@@ -230,7 +230,7 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
                 </div>
                 <ul className="space-y-2">
                   {healthResults.secretorStatus.traits.map((trait: string, i: number) => (
-                    <li key={i} className="text-xs text-slate-500 font-medium border-l-2 border-blue-200 dark:border-blue-800 pl-3">{trait}</li>
+                    <li key={i} className="text-xs text-slate-500 font-medium border-l-2 border-blue-200 dark:border-blue-800 pl-3 dark:text-slate-400">{trait}</li>
                   ))}
                 </ul>
               </motion.div>

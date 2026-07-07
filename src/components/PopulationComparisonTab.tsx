@@ -75,7 +75,7 @@ export const PopulationComparisonTab: React.FC<PopulationComparisonTabProps> = (
 
   if (!userSnps || Object.keys(userSnps).length === 0) {
     return (
-      <div className="p-8 text-center text-slate-500 bg-slate-900 rounded-xl border border-slate-800">
+      <div className="p-8 text-center text-slate-500 bg-slate-900 rounded-xl border border-slate-800 dark:text-slate-400">
         No genotype data available. Please upload a file to see population comparisons.
       </div>
     );
@@ -92,7 +92,7 @@ export const PopulationComparisonTab: React.FC<PopulationComparisonTabProps> = (
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-slate-300 font-medium">
                       {POPULATION_NAME_MAP[match.population] || match.population.replace('_', ' ')}
-                      <span className="ml-2 text-[10px] text-slate-500 uppercase tracking-tighter bg-slate-800 px-1.5 py-0.5 rounded">
+                      <span className="ml-2 text-[10px] text-slate-500 uppercase tracking-tighter bg-slate-800 px-1.5 py-0.5 rounded dark:text-slate-400">
                         {match.region}
                       </span>
                     </span>

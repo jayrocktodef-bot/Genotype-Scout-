@@ -21,7 +21,7 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
     return (
       <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative overflow-hidden group flex flex-col h-full min-h-[300px]">
         <div className="flex-1 flex flex-col items-center justify-center text-center opacity-70">
-          <ShieldAlert className="w-12 h-12 text-slate-500 mb-3" />
+          <ShieldAlert className="w-12 h-12 text-slate-500 mb-3 dark:text-slate-400" />
           <div className="text-lg font-bold text-slate-300 mb-2">Lineage Unresolved</div>
           <p className="text-xs text-slate-400 px-4 max-w-sm">
             We could not confidently determine a maternal founder group based on your provided markers.
@@ -79,11 +79,15 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
 
         <div className="w-full mt-auto flex items-center justify-between border-t border-slate-200/50 pt-4 px-2">
           <div className="flex flex-col text-left">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5">Phylo Score</span>
+            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Phylo Score</span>
             <span className="text-sm font-black text-[#4599FF]">{predictedMt.score.toLocaleString()}</span>
           </div>
+          <div className="flex flex-col text-center">
+            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Path Depth</span>
+            <span className="text-sm font-black text-indigo-400">{predictedMt.path.length} Steps</span>
+          </div>
           <div className="flex flex-col text-right">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end"><Dna className="w-3 h-3"/> Processed</span>
+            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end dark:text-slate-400"><Dna className="w-3 h-3"/> Processed</span>
             <span className="text-sm font-black text-emerald-500">{predictedMt.testedMarkers.toLocaleString()}</span>
           </div>
         </div>
