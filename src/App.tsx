@@ -834,6 +834,58 @@ const SNPCard = memo(({ snp, isExpanded, onToggleExpand }: { snp: any, isExpande
   );
 });
 
+const GroupedSNPCards = memo(({ 
+  trait, 
+  snps, 
+  expandedSnps, 
+  toggleExpand 
+}: { 
+  trait: string, 
+  snps: any[], 
+  expandedSnps: Set<string>, 
+  toggleExpand: (rsid: string) => void 
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const matchedCount = snps.filter(s => s.status === 'matched' || s.status === 'partial').length;
+
+  return (
+    <div className="border border-slate-200 dark:border-slate-700/50 rounded-xl overflow-hidden bg-slate-50/20 dark:bg-slate-900/10 mb-2">
+      <button 
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full flex items-center justify-between p-4 hover:bg-slate-100 dark:hover:bg-slate-800/30 transition-colors text-left"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-teal-50 dark:bg-teal-900/20 border border-teal-100 dark:border-teal-800 text-teal-600 dark:text-teal-400 font-bold text-xs">
+            {snps.length}
+          </div>
+          <div>
+            <h5 className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug">{trait}</h5>
+            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-0.5">
+              {matchedCount} / {snps.length} matched markers
+            </p>
+          </div>
+        </div>
+        <span className="text-slate-400 text-xs">{isExpanded ? '▲' : '▼'}</span>
+      </button>
+      
+      {isExpanded && (
+        <div className="p-4 pt-0 space-y-3 border-t border-slate-50 dark:border-slate-700/50 mt-2 bg-white dark:bg-slate-800">
+          <div className="grid grid-cols-1 gap-3 mt-2">
+            {snps.map((snp: any, index: number) => (
+              <SNPCard 
+                key={`${snp.rsid || snp.markerId || index}-${snp.continent}-${snp.gene || 'none'}-${index}`} 
+                snp={snp} 
+                isExpanded={expandedSnps.has(snp.rsid)} 
+                onToggleExpand={toggleExpand} 
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+});
+
 const AutosomalView = memo(({ 
   filteredResults, 
   groupedCategories, 
@@ -993,14 +1045,36 @@ const AutosomalView = memo(({
                         {regionExpanded && (
                           <div className="p-4 pt-0 space-y-4 border-t border-slate-50 dark:border-slate-700/50 mt-2">
                             <div className="grid grid-cols-1 gap-4 mt-2">
-                              {snps.map((snp: any, index: number) => (
-                                <SNPCard 
-                                  key={`${snp.rsid || snp.markerId || index}-${snp.continent}-${snp.gene || 'none'}-${index}`} 
-                                  snp={snp} 
-                                  isExpanded={expandedSnps.has(snp.rsid)} 
-                                  onToggleExpand={toggleExpand} 
-                                />
-                              ))}
+                              {(() => {
+                                const traitGroups: Record<string, any[]> = {};
+                                snps.forEach((snp: any) => {
+                                  const t = snp.trait || 'Other Markers';
+                                  if (!traitGroups[t]) traitGroups[t] = [];
+                                  traitGroups[t].push(snp);
+                                });
+                                return Object.entries(traitGroups).map(([trait, groupSnps]) => {
+                                  if (groupSnps.length === 1) {
+                                    const snp = groupSnps[0];
+                                    return (
+                                      <SNPCard 
+                                        key={snp.rsid || snp.markerId}
+                                        snp={snp} 
+                                        isExpanded={expandedSnps.has(snp.rsid)} 
+                                        onToggleExpand={toggleExpand} 
+                                      />
+                                    );
+                                  }
+                                  return (
+                                    <GroupedSNPCards 
+                                      key={trait}
+                                      trait={trait}
+                                      snps={groupSnps}
+                                      expandedSnps={expandedSnps}
+                                      toggleExpand={toggleExpand}
+                                    />
+                                  );
+                                });
+                              })()}
                             </div>
                           </div>
                         )}
@@ -1008,14 +1082,36 @@ const AutosomalView = memo(({
                     );
                   })
                 ) : (
-                  allSnpsInCategory.map((snp: any, index: number) => (
-                    <SNPCard 
-                      key={`${snp.rsid || snp.markerId || index}-${snp.continent}-${snp.gene || 'none'}-${index}`} 
-                      snp={snp} 
-                      isExpanded={expandedSnps.has(snp.rsid)} 
-                      onToggleExpand={toggleExpand} 
-                    />
-                  ))
+                  (() => {
+                    const traitGroups: Record<string, any[]> = {};
+                    allSnpsInCategory.forEach((snp: any) => {
+                      const t = snp.trait || 'Other Markers';
+                      if (!traitGroups[t]) traitGroups[t] = [];
+                      traitGroups[t].push(snp);
+                    });
+                    return Object.entries(traitGroups).map(([trait, groupSnps]) => {
+                      if (groupSnps.length === 1) {
+                        const snp = groupSnps[0];
+                        return (
+                          <SNPCard 
+                            key={snp.rsid || snp.markerId}
+                            snp={snp} 
+                            isExpanded={expandedSnps.has(snp.rsid)} 
+                            onToggleExpand={toggleExpand} 
+                          />
+                        );
+                      }
+                      return (
+                        <GroupedSNPCards 
+                          key={trait}
+                          trait={trait}
+                          snps={groupSnps}
+                          expandedSnps={expandedSnps}
+                          toggleExpand={toggleExpand}
+                        />
+                      );
+                    });
+                  })()
                 )}
               </div>
             )}
