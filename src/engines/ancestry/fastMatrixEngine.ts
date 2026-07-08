@@ -173,11 +173,13 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
   }
 
   const results: PopulationProximity[] = [];
+  const EPSILON = 1e-6;
+  const D_MAX = 3.5; // Constant to scale average negative log-likelihood to a 0-100% score
 
   // Loop through populations
   for (let p = 0; p < numPops; p++) {
     const refArray = popFrequencies[p];
-    let totalEuclideanDistance = 0.0;
+    let sumLogP = 0.0;
     let validMarkers = 0;
 
     for (const { index, dosage } of activeMarkers) {
@@ -186,20 +188,31 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
       // Skip if reference is missing this marker
       if (refFreq === -1.0) continue;
 
-      // Calculate distance
-      const diff = dosage - refFreq;
-      totalEuclideanDistance += (diff * diff);
+      // Hardy-Weinberg probability
+      const safeP = Math.max(EPSILON, Math.min(refFreq, 1 - EPSILON));
+      let prob = EPSILON;
+
+      if (dosage === 1.0) {
+        prob = safeP * safeP;
+      } else if (dosage === 0.5) {
+        prob = 2 * safeP * (1 - safeP);
+      } else if (dosage === 0.0) {
+        prob = (1 - safeP) * (1 - safeP);
+      }
+
+      sumLogP += Math.log(prob);
       validMarkers++;
     }
 
     if (validMarkers > 0) {
-      const meanDistance = Math.sqrt(totalEuclideanDistance / validMarkers);
-      const similarityScore = Math.max(0, 100 - (meanDistance * 100));
+      const avgNegLogL = -sumLogP / validMarkers;
+      // Map average negative log-likelihood to a highly descriptive 0-100% score
+      const similarityScore = Math.max(0, 100 * (1 - avgNegLogL / D_MAX));
 
       results.push({
         population: popNames[p],
         region: popRegions[p],
-        distance: meanDistance,
+        distance: avgNegLogL,
         similarityScore: parseFloat(similarityScore.toFixed(2)),
         markersCompared: validMarkers
       });

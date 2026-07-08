@@ -4,22 +4,15 @@ import { fetchJsonAsset } from '../fetchHelper';
 export interface PopulationProximity {
   population: string;
   region: string;
-  distance: number;          // Euclidean distance in allele frequency space
+  distance: number;          // Average negative log-likelihood per marker
   similarityScore: number;   // 0–100, higher is more similar
   markersCompared: number;
 }
 
 /**
  * Computes genetic similarity between a user and multiple populations
- * by comparing user allele dosages against population allele frequencies.
- *
- * Assumptions:
- * - popData.frequencies[rsid] contains the ALTERNATE allele frequency (0..1).
- * - user SNPs are bi-allelic, diploid calls of length 2.
- * - When no orientation info is available (missing from graf10kIndex),
- *   the SNP is excluded from comparison to avoid guessing.
- * - Distance metric: Euclidean distance un-normalised, then converted
- *   to a similarity score by scaling against max possible distance.
+ * by comparing user allele genotypes against population allele frequencies
+ * using a Hardy-Weinberg Genotype Likelihood model.
  */
 export async function calculatePopulationProximity(
   userSnps: Record<string, string>
@@ -43,10 +36,13 @@ export async function calculatePopulationProximity(
     }
   };
 
+  const EPSILON = 1e-6;
+  const D_MAX = 3.5; // Constant to scale average negative log-likelihood to a 0-100% score
+
   for (const popCode in hoReferenceKernel) {
     const popData = (hoReferenceKernel as any)[popCode];
     const frequencies: Record<string, number> = popData.frequencies;
-    let sumSquaredDiffs = 0;
+    let sumLogP = 0;
     let validMarkers = 0;
 
     for (const rsid in frequencies) {
@@ -67,8 +63,7 @@ export async function calculatePopulationProximity(
       let allele1 = rawUserCall[0].toUpperCase();
       let allele2 = rawUserCall[1].toUpperCase();
 
-      // Resolve strand ambiguity: if the user's alleles don't directly match
-      // ref or alt, try their complements. If both complements match, we flip.
+      // Resolve strand ambiguity
       if (
         (allele1 !== ref && allele1 !== alt) ||
         (allele2 !== ref && allele2 !== alt)
@@ -82,38 +77,40 @@ export async function calculatePopulationProximity(
           allele1 = comp1;
           allele2 = comp2;
         } else {
-          // Ambiguous; safe to skip this marker
           continue;
         }
       }
 
-      // Compute dosage of the ALT allele (0, 0.5, 1, 1.5, 2)
-      // Assuming frequencies represent ALT frequency.
+      // Compute dosage of the ALT allele (0, 0.5, or 1.0)
       let dosage = 0;
       if (allele1 === alt) dosage += 0.5;
       if (allele2 === alt) dosage += 0.5;
 
-      const diff = dosage - refFreq;
-      sumSquaredDiffs += diff * diff;
+      // Hardy-Weinberg probability
+      const safeP = Math.max(EPSILON, Math.min(refFreq, 1 - EPSILON));
+      let prob = EPSILON;
+
+      if (dosage === 1.0) {
+        prob = safeP * safeP;
+      } else if (dosage === 0.5) {
+        prob = 2 * safeP * (1 - safeP);
+      } else if (dosage === 0.0) {
+        prob = (1 - safeP) * (1 - safeP);
+      }
+
+      sumLogP += Math.log(prob);
       validMarkers++;
     }
 
     if (validMarkers > 0) {
-      // Standard Euclidean distance (not RMSD)
-      const euclideanDistance = Math.sqrt(sumSquaredDiffs);
-
-      // Max possible Euclidean distance if all differences were 1
-      const maxPossibleDistance = Math.sqrt(validMarkers);
-      // Similarity score: 0 = worst, 100 = identical frequencies
-      const similarityScore = Math.max(
-        0,
-        100 * (1 - euclideanDistance / maxPossibleDistance)
-      );
+      const avgNegLogL = -sumLogP / validMarkers;
+      // Map average negative log-likelihood to a highly descriptive 0-100% score
+      const similarityScore = Math.max(0, 100 * (1 - avgNegLogL / D_MAX));
 
       results.push({
         population: popCode.replace(/_/g, ' '),
         region: popData.region,
-        distance: euclideanDistance,
+        distance: avgNegLogL,
         similarityScore: Math.round(similarityScore * 100) / 100,
         markersCompared: validMarkers,
       });
