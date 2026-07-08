@@ -198,11 +198,11 @@ export const MethodologyPage: React.FC<{ activeTab: string }> = ({ activeTab }) 
                       <div>
                         <div className="flex items-center gap-2 mb-2">
                           <Beaker className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
-                          <h3 className="text-xs font-black uppercase tracking-widest text-slate-600 dark:text-slate-400">
+                          <h3 className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">
                             Technical Description
                           </h3>
                         </div>
-                        <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        <p className="text-sm text-slate-700 dark:text-slate-450 leading-relaxed font-medium">
                           {data.description}
                         </p>
                       </div>
@@ -212,17 +212,17 @@ export const MethodologyPage: React.FC<{ activeTab: string }> = ({ activeTab }) 
                         <div className="space-y-4">
                           <div className="flex items-center gap-2">
                             <Code className="w-4 h-4 text-violet-500 dark:text-violet-400" />
-                            <h3 className="text-xs font-black uppercase tracking-widest text-slate-600 dark:text-slate-400">
+                            <h3 className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">
                               Algebraic Modeling
                             </h3>
                           </div>
                           {data.formulas.map((f, i) => (
-                            <div key={i} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800 space-y-3">
-                              <div className="text-[10px] font-black text-violet-600 dark:text-violet-400 uppercase tracking-widest">{f.label}</div>
-                              <div className="font-mono text-center text-sm py-4 px-4 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 font-black overflow-x-auto select-all">
+                            <div key={i} className="p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
+                              <div className="text-[10px] font-black text-violet-750 dark:text-violet-400 uppercase tracking-widest">{f.label}</div>
+                              <div className="font-mono text-center text-sm py-4 px-4 bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 font-black overflow-x-auto select-all">
                                 {f.equation}
                               </div>
-                              <p className="text-xs text-slate-500 dark:text-slate-400 italic leading-relaxed">{f.explanation}</p>
+                              <p className="text-xs text-slate-700 dark:text-slate-450 italic leading-relaxed font-medium">{f.explanation}</p>
                             </div>
                           ))}
                         </div>
@@ -231,24 +231,24 @@ export const MethodologyPage: React.FC<{ activeTab: string }> = ({ activeTab }) 
                       {/* Metrics */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {data.metrics.map((m, i) => (
-                          <div key={i} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800">
-                            <div className="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-wider font-extrabold">{m.label}</div>
-                            <div className="text-sm font-black text-slate-700 dark:text-slate-300 mt-1 font-mono">{m.value}</div>
+                          <div key={i} className="p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800">
+                            <div className="text-[10px] text-slate-500 dark:text-slate-500 uppercase tracking-wider font-extrabold">{m.label}</div>
+                            <div className="text-sm font-black text-slate-800 dark:text-slate-350 mt-1 font-mono">{m.value}</div>
                           </div>
                         ))}
                       </div>
 
                       {/* References */}
-                      <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+                      <div className="pt-4 border-t border-slate-250 dark:border-slate-800 space-y-3">
                         <div className="flex items-center gap-2">
                           <Landmark className="w-4 h-4 text-amber-500 dark:text-amber-400" />
-                          <h3 className="text-xs font-black uppercase tracking-widest text-slate-600 dark:text-slate-400">
+                          <h3 className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">
                             Academic References
                           </h3>
                         </div>
                         <ul className="space-y-2">
                           {data.references.map((r, i) => (
-                            <li key={i} className="flex gap-2 text-xs text-slate-500 dark:text-slate-400 items-start">
+                            <li key={i} className="flex gap-2 text-xs text-slate-650 dark:text-slate-400 items-start font-medium">
                               <Award className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
                               <span>{r}</span>
                             </li>

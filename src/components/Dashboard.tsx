@@ -101,7 +101,7 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div className="space-y-6 animate-fade-up pb-20">
-      <div className="flex items-center justify-between pt-2 pb-4 border-b border-slate-200/50 dark:border-slate-800/50">
+      <div className="flex items-center justify-between pt-2 pb-4 border-b border-slate-205/50 dark:border-slate-800/50">
         <div>
           <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-slate-100">
             System Overview
@@ -120,9 +120,9 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
-          className="lg:col-span-2 premium-card p-5 cursor-pointer group relative overflow-hidden"
+          className="lg:col-span-2 tactile-3d-card p-5 cursor-pointer group relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-50 rounded-full blur-3xl -mr-32 -mt-32"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-50/5 dark:bg-teal-900/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
           <div className="flex flex-col md:flex-row gap-8 items-center relative z-10 h-full">
             <div className="w-48 h-48 relative shrink-0">
               {isChartReady ? (
@@ -183,17 +183,17 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="premium-card p-6 cursor-pointer group flex flex-col justify-between"
+          className="tactile-3d-card p-6 cursor-pointer group flex flex-col justify-between"
         >
           <div>
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 transition-transform group-hover:scale-105">
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4 avatar-icon">
               <Map className="w-5 h-5" />
             </div>
             <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Closest Population</h3>
             {topOracleMatch ? (
               <>
                 <h2 className="text-xl font-black text-slate-800 leading-tight mb-2 dark:text-slate-200">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-mono font-bold">
+                <div className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/25 border border-indigo-100 dark:border-indigo-900/35 text-indigo-700 dark:text-indigo-400 text-xs font-mono font-bold">
                   Dist: {Number(topOracleMatch.distance || 0).toFixed(4)}
                 </div>
               </>
@@ -201,7 +201,7 @@ const Dashboard: React.FC<DashboardProps> = ({
               <p className="text-sm font-bold text-slate-500 dark:text-slate-400">Oracle Not Run</p>
             )}
           </div>
-          <div className="mt-4 flex items-center text-indigo-600 text-xs font-black uppercase tracking-widest gap-2">
+          <div className="mt-4 flex items-center text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-widest gap-2">
             View Oracle <ArrowRight className="w-3 h-3" />
           </div>
         </motion.div>
@@ -212,10 +212,10 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="premium-card p-6 cursor-pointer group"
+          className="tactile-3d-card p-6 cursor-pointer group"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 transition-transform group-hover:scale-105">
+            <div className="w-10 h-10 rounded-xl bg-fuchsia-50 dark:bg-fuchsia-950/20 flex items-center justify-center text-fuchsia-600 dark:text-fuchsia-400 avatar-icon">
               <Fingerprint className="w-5 h-5" />
             </div>
             <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-fuchsia-500 transition-colors" />
@@ -241,10 +241,10 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="premium-card p-6 cursor-pointer group"
+          className="tactile-3d-card p-6 cursor-pointer group"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 transition-transform group-hover:scale-105">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 avatar-icon">
               <HeartPulse className="w-5 h-5" />
             </div>
             <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-emerald-500 transition-colors" />
@@ -269,10 +269,10 @@ const Dashboard: React.FC<DashboardProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="premium-card p-6 cursor-pointer group"
+          className="tactile-3d-card p-6 cursor-pointer group"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 transition-transform group-hover:scale-105">
+            <div className="w-10 h-10 rounded-xl bg-pink-50 dark:bg-pink-950/20 flex items-center justify-center text-pink-600 dark:text-pink-400 avatar-icon">
               <Sparkles className="w-5 h-5" />
             </div>
             <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-pink-500 transition-colors" />
@@ -298,10 +298,10 @@ const Dashboard: React.FC<DashboardProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="lg:col-span-2 premium-card p-5 cursor-pointer group flex items-center justify-between"
+            className="lg:col-span-2 tactile-3d-card p-5 cursor-pointer group flex items-center justify-between"
           >
             <div>
-              <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-2 transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/20 flex items-center justify-center text-red-600 dark:text-red-400 mb-2 avatar-icon">
                 <Droplet className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Blood Predictor</h3>
@@ -315,10 +315,10 @@ const Dashboard: React.FC<DashboardProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="lg:col-span-2 premium-card p-5 cursor-pointer group flex items-center justify-between"
+            className="lg:col-span-2 tactile-3d-card p-5 cursor-pointer group flex items-center justify-between"
           >
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-2 transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/20 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-2 avatar-icon">
                 <Shield className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Top Ancient Match</h3>
@@ -335,4 +335,3 @@ const Dashboard: React.FC<DashboardProps> = ({
 };
 
 export default Dashboard;
-

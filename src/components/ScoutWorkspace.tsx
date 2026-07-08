@@ -147,18 +147,7 @@ const MODULES: AppConfig[] = [
     imageUrl: '/assets/blood_icon.png',
     navGroup: 'secondary',
   },
-  {
-    id: 'prs',
-    name: 'PRS Engine',
-    icon: HeartPulse,
-    gradient: 'from-indigo-500 to-purple-600',
-    glowColor: 'rgba(99,102,241,0.45)',
-    targetTab: 'health_traits',
-    targetSubTab: 'prs',
-    description: 'Calculate Polygenic Risk Scores (PRS) for complex clinical traits.',
-    imageUrl: '/assets/health_icon.png',
-    navGroup: 'secondary',
-  },
+
   {
     id: 'markers',
     name: 'Genomic Markers',
@@ -263,7 +252,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
   return (
     <header
-      className="relative z-30 border-b border-white/[0.06] bg-[#030712]/98 backdrop-blur-xl shrink-0"
+      className="relative z-30 border-b border-slate-200 dark:border-white/[0.06] bg-slate-50/98 dark:bg-[#030712]/98 backdrop-blur-xl shrink-0"
       role="banner"
     >
       {/* Sequence-alignment texture — pure CSS, no extra elements */}
@@ -366,7 +355,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
           {/* Multi-dataset tabs */}
           {datasets.length > 1 ? (
-            <div className="flex items-center gap-0.5 bg-white/[0.04] rounded-lg p-0.5 border border-white/[0.06]">
+            <div className="flex items-center gap-0.5 bg-slate-200/50 dark:bg-white/[0.04] rounded-lg p-0.5 border border-slate-350 dark:border-white/[0.06]">
               {datasets.slice(0, 4).map((d: any, i: number) => (
                 <button
                   key={i}
@@ -374,8 +363,8 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
                   aria-label={`Switch to dataset ${d.name ?? `Kit ${i + 1}`}`}
                   className={`px-2.5 py-1 rounded-md text-[9px] font-black uppercase tracking-wider transition-[background-color,color] duration-150 active:scale-[0.96] ${
                     activeDatasetIndex === i
-                      ? 'bg-teal-500/20 text-teal-300'
-                      : 'text-slate-500 hover:text-slate-300'
+                      ? 'bg-teal-500/20 text-teal-700 dark:text-teal-300'
+                      : 'text-slate-550 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'
                   }`}
                   style={{ fontVariantNumeric: 'tabular-nums' }}
                 >
@@ -390,7 +379,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
             onClick={onReset}
             aria-label="Clear all data and reset"
             title="Clear session"
-            className="p-2 rounded-lg border border-white/[0.06] text-slate-600 hover:text-rose-400 hover:border-rose-500/30 transition-[color,border-color] duration-150 active:scale-[0.96] dark:text-slate-400"
+            className="p-2 rounded-lg border border-slate-300 dark:border-white/[0.06] text-slate-500 hover:text-rose-600 hover:border-rose-500/30 transition-[color,border-color] duration-150 active:scale-[0.96] dark:text-slate-400"
           >
             <Trash2 className="w-3.5 h-3.5" />
           </button>
@@ -430,7 +419,7 @@ const SidebarNavItem: React.FC<SidebarNavItemProps> = ({ mod, isActive, collapse
     className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-[background-color,color] duration-150 active:scale-[0.96] group ${
       isActive
         ? 'bg-teal-500/10 text-teal-300'
-        : 'text-slate-400 hover:bg-white/[0.04] hover:text-slate-200'
+        : 'text-slate-500 dark:text-slate-200 hover:bg-slate-150 dark:hover:bg-white/[0.04] hover:text-slate-800 dark:hover:text-slate-100'
     }`}
     style={{ transitionProperty: 'background-color, color, transform' }}
   >
@@ -464,21 +453,21 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onToggle }) => (
   <aside
-    className={`hidden lg:flex flex-col shrink-0 border-r border-white/[0.06] bg-[#09090b] overflow-hidden transition-[width] duration-200 ${
+    className={`hidden lg:flex flex-col shrink-0 border-r border-slate-200 dark:border-white/[0.06] bg-slate-50 dark:bg-[#09090b] overflow-hidden transition-[width] duration-200 ${
       collapsed ? 'w-[64px]' : 'w-[240px]'
     }`}
     aria-label="Module navigation"
   >
     {/* Home button */}
-    <div className="p-2 border-b border-white/[0.06]">
+    <div className="p-2 border-b border-slate-200 dark:border-white/[0.06]">
       <button
         onClick={() => onSelect('__home__')}
         aria-label="Back to module launcher"
         title="Module Launcher"
         className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-[background-color,color] duration-150 active:scale-[0.96] ${
           activeId === null
-            ? 'bg-white/[0.06] text-slate-200'
-            : 'text-slate-500 hover:bg-white/[0.04] hover:text-slate-300'
+            ? 'bg-slate-200/60 dark:bg-white/[0.06] text-slate-800 dark:text-slate-250'
+            : 'text-slate-500 dark:text-slate-200 hover:bg-slate-150 dark:hover:bg-white/[0.04] hover:text-slate-800 dark:hover:text-slate-100'
         }`}
         style={{ transitionProperty: 'background-color, color, transform' }}
       >
@@ -492,7 +481,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
     {/* Primary nav */}
     <div className="flex-1 overflow-y-auto p-2 space-y-0.5 scrollbar-none">
       {collapsed ? null : (
-        <p className="px-2.5 pt-1 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-700 dark:text-slate-300">
+        <p className="px-2.5 pt-1 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-500 dark:text-slate-300">
           Primary
         </p>
       )}
@@ -523,11 +512,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
     </div>
 
     {/* Collapse toggle */}
-    <div className="p-2 border-t border-white/[0.06]">
+    <div className="p-2 border-t border-slate-200 dark:border-white/[0.06]">
       <button
         onClick={onToggle}
         aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        className="w-full flex items-center justify-center p-2 rounded-xl text-slate-600 hover:text-slate-300 hover:bg-white/[0.04] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
+        className="w-full flex items-center justify-center p-2 rounded-xl text-slate-550 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-slate-150 dark:hover:bg-white/[0.04] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
         style={{ transitionProperty: 'color, background-color, transform' }}
       >
         {collapsed ? (
@@ -830,8 +819,8 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
 
   return (
     <div
-      className="flex flex-col bg-[#030712] text-slate-100"
-      style={{ height: '100dvh', paddingTop: 'env(safe-area-inset-top)' }}
+      className="flex flex-col bg-background text-foreground"
+      style={{ height: 'calc(100dvh - 64px)', marginTop: '64px', paddingTop: 'env(safe-area-inset-top)' }}
     >
       {/* Signature Banner Header */}
       <BannerHeader

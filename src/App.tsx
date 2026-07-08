@@ -94,7 +94,7 @@ const RareVariantsView = lazy(() => import("./components/RareVariantsView"));
 import { HaplogroupBento } from "./components/HaplogroupBento";
 import { YDNABento } from "./components/YDNABento";
 const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogressionView").then(m => ({ default: m.ArchaicIntrogressionView })));
-const PolygenicScores = lazy(() => import("./components/PolygenicScores").then(m => ({ default: m.PolygenicScores })));
+
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
 const VERSION = "5.13.0";
@@ -2545,7 +2545,7 @@ export default function App() {
   }
 
   return (
-    <div className={`bg-[#030712] text-slate-100 font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh bg-slate-50 text-slate-800' : ''}`}>
+    <div className={`bg-background text-foreground font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh' : ''}`}>
       {/* Dynamic Premium Mesh Background (Light Mode) */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-teal-400/10 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse-soft"></div>
@@ -2967,13 +2967,7 @@ export default function App() {
               </div>
             )}
 
-            {currentApp === 'prs' && (
-              <div className="animate-fade-in">
-                <PolygenicScores 
-                  prsResults={datasets[activeDatasetIndex]?.prsResults}
-                />
-              </div>
-            )}
+
 
             {currentApp === 'rare_variants' && (
               <div className="animate-fade-in">

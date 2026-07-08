@@ -339,12 +339,12 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
                     <input 
                       type="text" 
                       placeholder={m.rawGenotype} 
-                      className="w-16 px-2 py-1 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg font-mono text-[10px] outline-none focus:ring-1 focus:ring-sky-500 transition-all" 
+                      className="w-16 px-2 py-1 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg font-mono text-[10px] text-slate-900 dark:text-slate-100 outline-none focus:ring-1 focus:ring-sky-500 transition-all" 
                       value={overrides[m.rsid] || ''} 
                       onChange={(e) => handleOverride(m.rsid, e.target.value)} 
                     />
                   </td>
-                  <td className="px-6 py-4 font-bold text-teal-600 dark:text-teal-400">{m.isbtPhenotype}</td>
+                  <td className="px-6 py-4 font-bold text-green-700 dark:text-teal-400">{m.isbtPhenotype}</td>
                   <td className="px-6 py-4 italic opacity-70">{m.effect}</td>
                 </tr>
               ))}
