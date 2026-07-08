@@ -7,6 +7,9 @@ const TAB = 0x09;
 const LF = 0x0A;
 const CR = 0x0D;
 const HASH = 0x23;
+const QUOTE = 0x22;
+const SPACE = 0x20;
+const DECODER = new TextDecoder('utf-8');
 
 export function isValidGenotype(genotype: string): boolean {
   if (genotype === '--' || genotype === '__' || genotype === '00' || genotype === '??' || genotype === './.' || genotype === '.|.' || genotype === '-' || genotype === '.') {
@@ -31,24 +34,20 @@ interface ParsedFields {
 }
 
 function bytesToString(buf: Uint8Array): string {
-  let s = '';
-  for (let i = 0; i < buf.length; i++) s += String.fromCharCode(buf[i]);
-  return s;
+  return DECODER.decode(buf);
 }
 
-function extractBytes(buf: Uint8Array, start: number, end: number): { fieldBytes: Uint8Array, hasQuotes: boolean } {
-  let s = start;
-  let e = end;
-  let hasQuotes = false;
-  if (s < e && buf[s] === 0x22 /* " */) {
-    s++;
-    hasQuotes = true;
+function parseIntFromBytes(buf: Uint8Array, start: number, end: number): number {
+  let val = 0;
+  for (let i = start; i < end; i++) {
+    const byte = buf[i];
+    if (byte >= 0x30 && byte <= 0x39) {
+      val = val * 10 + (byte - 0x30);
+    } else {
+      return NaN;
+    }
   }
-  if (e > s && buf[e - 1] === 0x22) {
-    e--;
-    hasQuotes = true;
-  }
-  return { fieldBytes: buf.subarray(s, e), hasQuotes };
+  return val;
 }
 
 function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: number): ParsedFields | null {
@@ -56,86 +55,127 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
   let logicalEnd = end;
   if (logicalEnd > start && buf[logicalEnd - 1] === CR) logicalEnd--;
 
-  // Field 0: rsID
-  let f0Start = start;
-  let p = f0Start;
+  // Field 0: rsID (raw byte range after quote stripping)
+  let f0DataStart = start;
+  let p = f0DataStart;
   while (p < logicalEnd && buf[p] !== delimByte) p++;
   if (p === logicalEnd) return null;
-  const f0End = p;
-  
-  const { fieldBytes: f0Bytes, hasQuotes: hq0 } = extractBytes(buf, f0Start, f0End);
-  
-  if (f0Bytes.length > 0) {
-    const c0 = f0Bytes[0];
+  let f0RawEnd = p;
+
+  if (f0DataStart < f0RawEnd && buf[f0DataStart] === QUOTE) f0DataStart++;
+  if (f0RawEnd > f0DataStart && buf[f0RawEnd - 1] === QUOTE) f0RawEnd--;
+  const f0Len = f0RawEnd - f0DataStart;
+
+  if (f0Len > 0) {
+    const c0 = buf[f0DataStart];
     if (c0 === 114 || c0 === 82) { // 'r' or 'R'
-      if (f0Bytes.length < 2) return null;
-      const c1 = f0Bytes[1];
+      if (f0Len < 2) return null;
+      const c1 = buf[f0DataStart + 1];
       if (c1 !== 115 && c1 !== 83) return null; // 's' or 'S'
-    } else if (c0 === 105 || c0 === 73) { // 'i' or 'I'
-      // internal marker ok
-    } else {
+    } else if (c0 !== 105 && c0 !== 73) { // not 'i' or 'I'
       return null;
     }
-  } else if (hq0) {
-    // empty string is invalid rsID usually, but let it pass to be hydrated later
   } else {
-    return null;
+    if (start < f0RawEnd && buf[start] !== QUOTE) return null;
   }
 
   // Field 1: chromosome
-  let f1Start = f0End + 1;
-  while (f1Start < logicalEnd && buf[f1Start] === delimByte) f1Start++;
-  p = f1Start;
+  let f1RawStart = f0RawEnd + 1;
+  while (f1RawStart < logicalEnd && buf[f1RawStart] === delimByte) f1RawStart++;
+  p = f1RawStart;
   while (p < logicalEnd && buf[p] !== delimByte) p++;
   if (p === logicalEnd) return null;
-  const f1End = p;
-  const { fieldBytes: f1Bytes } = extractBytes(buf, f1Start, f1End);
+  let f1RawEnd = p;
+
+  let f1DataStart = f1RawStart;
+  let f1DataEnd = f1RawEnd;
+  if (f1DataStart < f1DataEnd && buf[f1DataStart] === QUOTE) f1DataStart++;
+  if (f1DataEnd > f1DataStart && buf[f1DataEnd - 1] === QUOTE) f1DataEnd--;
 
   // Field 2: position
-  let f2Start = f1End + 1;
-  while (f2Start < logicalEnd && buf[f2Start] === delimByte) f2Start++;
-  p = f2Start;
+  let f2RawStart = f1RawEnd + 1;
+  while (f2RawStart < logicalEnd && buf[f2RawStart] === delimByte) f2RawStart++;
+  p = f2RawStart;
   while (p < logicalEnd && buf[p] !== delimByte) p++;
-  const f2End = p;
-  const { fieldBytes: f2Bytes } = extractBytes(buf, f2Start, f2End);
+  let f2RawEnd = p;
+
+  let f2DataStart = f2RawStart;
+  let f2DataEnd = f2RawEnd;
+  if (f2DataStart < f2DataEnd && buf[f2DataStart] === QUOTE) f2DataStart++;
+  if (f2DataEnd > f2DataStart && buf[f2DataEnd - 1] === QUOTE) f2DataEnd--;
+
+  const pos = parseIntFromBytes(buf, f2DataStart, f2DataEnd);
+  if (isNaN(pos)) return null;
 
   // Field 3: genotype
-  let f3Start = f2End < logicalEnd ? f2End + 1 : f2End;
-  while (f3Start < logicalEnd && buf[f3Start] === delimByte) f3Start++;
-  p = f3Start;
+  let f3RawStart = f2RawEnd < logicalEnd ? f2RawEnd + 1 : f2RawEnd;
+  while (f3RawStart < logicalEnd && buf[f3RawStart] === delimByte) f3RawStart++;
+  p = f3RawStart;
   while (p < logicalEnd && buf[p] !== delimByte) p++;
-  
-  // Also check for split alleles (AncestryDNA style)
-  let firstAlleleEnd = p;
-  const { fieldBytes: allele1Bytes, hasQuotes: hq1 } = extractBytes(buf, f3Start, firstAlleleEnd);
-  
-  let genotypeBytes: Uint8Array = allele1Bytes;
-  if (hq1 && allele1Bytes.length === 0) return null;
+  let f3RawEnd = p;
 
-  if (allele1Bytes.length === 1 && firstAlleleEnd < logicalEnd) {
-    let s2 = firstAlleleEnd + 1;
-    while (s2 < logicalEnd && (buf[s2] === delimByte || buf[s2] === 0x20)) s2++;
-    let e2 = s2;
-    while (e2 < logicalEnd && buf[e2] !== delimByte) e2++;
-    const { fieldBytes: allele2Bytes } = extractBytes(buf, s2, e2);
-    if (allele2Bytes.length === 1) {
-      genotypeBytes = new Uint8Array([allele1Bytes[0], allele2Bytes[0]]);
+  let f3DataStart = f3RawStart;
+  let f3DataEnd = f3RawEnd;
+  if (f3DataStart < f3DataEnd && buf[f3DataStart] === QUOTE) f3DataStart++;
+  if (f3DataEnd > f3DataStart && buf[f3DataEnd - 1] === QUOTE) f3DataEnd--;
+
+  const allele1Len = f3DataEnd - f3DataStart;
+  let allele1Byte = 0;
+  let allele2Byte = 0;
+  let hasSecondAllele = false;
+
+  if (allele1Len === 1) {
+    allele1Byte = buf[f3DataStart];
+    if (f3RawEnd < logicalEnd) {
+      let s2 = f3RawEnd + 1;
+      while (s2 < logicalEnd && (buf[s2] === delimByte || buf[s2] === SPACE)) s2++;
+      let e2 = s2;
+      while (e2 < logicalEnd && buf[e2] !== delimByte) e2++;
+
+      let a2dStart = s2;
+      let a2dEnd = e2;
+      if (a2dStart < a2dEnd && buf[a2dStart] === QUOTE) a2dStart++;
+      if (a2dEnd > a2dStart && buf[a2dEnd - 1] === QUOTE) a2dEnd--;
+
+      if (a2dEnd - a2dStart === 1) {
+        allele2Byte = buf[a2dStart];
+        hasSecondAllele = true;
+      }
     }
+  } else if (allele1Len === 2) {
+    allele1Byte = buf[f3DataStart];
+    allele2Byte = buf[f3DataStart + 1];
+    hasSecondAllele = true;
+  } else if (allele1Len !== 0) {
+    return null;
   }
 
+  const upper = (b: number) => b >= 0x61 && b <= 0x7a ? b - 0x20 : b;
   let genotype = '';
   let valid = true;
-  for (let i = 0; i < genotypeBytes.length; i++) {
-    const byte = genotypeBytes[i];
-    const upper = (byte >= 0x61 && byte <= 0x7a) ? byte - 0x20 : byte;
-    if (upper === 0x30) continue; // skip '0'
-    if (!(upper === 0x41 || upper === 0x43 || upper === 0x47 || upper === 0x54 || upper === 0x49 || upper === 0x44 || upper === 0x2D)) {
-      valid = false;
-      break;
+
+  if (allele1Len === 1 || allele1Len === 2) {
+    const b = upper(allele1Byte);
+    if (b !== 0x30) {
+      if (!(b === 0x41 || b === 0x43 || b === 0x47 || b === 0x54 || b === 0x49 || b === 0x44 || b === 0x2D)) {
+        valid = false;
+      } else {
+        genotype = String.fromCharCode(b);
+      }
     }
-    genotype += String.fromCharCode(upper);
   }
-  
+
+  if (valid && hasSecondAllele) {
+    const b2 = upper(allele2Byte);
+    if (b2 !== 0x30) {
+      if (!(b2 === 0x41 || b2 === 0x43 || b2 === 0x47 || b2 === 0x54 || b2 === 0x49 || b2 === 0x44 || b2 === 0x2D)) {
+        valid = false;
+      } else {
+        genotype += String.fromCharCode(b2);
+      }
+    }
+  }
+
   if (!valid || genotype.length === 0 || genotype.length > 2) return null;
 
   if (genotype.length === 2 && genotype[0] !== 'I' && genotype[0] !== 'D' && genotype[1] !== 'I' && genotype[1] !== 'D') {
@@ -144,23 +184,20 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
     }
   }
 
-  const chromStr = bytesToString(f1Bytes).toUpperCase();
-  let chrom = chromStr.startsWith('CHR') ? chromStr.slice(3) : chromStr;
+  const chromRaw = DECODER.decode(buf.subarray(f1DataStart, f1DataEnd)).toUpperCase();
+  let chrom = chromRaw.startsWith('CHR') ? chromRaw.slice(3) : chromRaw;
   if (chrom === '23') chrom = 'X';
   else if (chrom === '24') chrom = 'Y';
   else if (chrom === '25' || chrom === '26' || chrom === 'M') chrom = 'MT';
 
-  const markerIdStr = bytesToString(f0Bytes).toLowerCase();
-  const posStr = bytesToString(f2Bytes);
-  const posInt = parseInt(posStr, 10);
-  
-  const rawMarkerId = markerIdStr && markerIdStr !== '.' && markerIdStr !== '-' ? markerIdStr : `chr${chrom}_${posStr}`.toLowerCase();
+  const markerIdRaw = DECODER.decode(buf.subarray(f0DataStart, f0RawEnd)).toLowerCase();
+  const rawMarkerId = markerIdRaw && markerIdRaw !== '.' && markerIdRaw !== '-' ? markerIdRaw : `chr${chrom}_${pos}`.toLowerCase();
 
   return {
     markerId: rawMarkerId,
     chrom,
-    posStr,
-    pos: posInt,
+    posStr: String(pos),
+    pos,
     genotype
   };
 }
