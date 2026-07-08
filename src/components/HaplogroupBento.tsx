@@ -6,7 +6,7 @@ interface PredictedMtDNA {
   path: string[];
   region?: string;
   description?: string;
-  testedMarkers: number;
+  testedMarkers: any[];
   userMutations: string[];
   score: number;
   deepMatches: any[];
@@ -88,7 +88,9 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
           </div>
           <div className="flex flex-col text-right">
             <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end dark:text-slate-400"><Dna className="w-3 h-3"/> Processed</span>
-            <span className="text-sm font-black text-emerald-500">{predictedMt.testedMarkers.toLocaleString()}</span>
+            <span className="text-sm font-black text-emerald-500">
+              {(Array.isArray(predictedMt.testedMarkers) ? predictedMt.testedMarkers.length : 0).toLocaleString()}
+            </span>
           </div>
         </div>
       </div>
