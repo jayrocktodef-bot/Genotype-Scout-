@@ -2258,12 +2258,23 @@ export default function App() {
           progressArray[2] = 0; // matches found
           progressArray[3] = 1; // status (1 = parsing, 2 = analyzing, 3 = finished, 4 = error)
 
+          let lastProcessed = 0;
+          let lastStatusVal = 1;
+          let lastSnps = 0;
+
           intervalId = setInterval(() => {
             if (progressArray) {
               const processed = Atomics.load(progressArray, 0);
               const total = Atomics.load(progressArray, 1);
               const snps = Atomics.load(progressArray, 2);
               const statusVal = Atomics.load(progressArray, 3);
+
+              if (processed > lastProcessed || statusVal !== lastStatusVal || snps > lastSnps) {
+                lastProgressTime = Date.now();
+                lastProcessed = processed;
+                lastStatusVal = statusVal;
+                lastSnps = snps;
+              }
 
               let step = "Ingesting DNA stream...";
               let percent = 0;
