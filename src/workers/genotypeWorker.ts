@@ -3,7 +3,7 @@ import { unzipSync } from 'fflate';
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
 import { matchSNPs, getAllSources } from '../services/snpMatcher';
 import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredictor';
-import { calculateAllPRS } from '../services/prsEngine';
+
 import { Y_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerAllowlist } from '../utils/markerAllowlist';
 import { calculateAncestryOracle } from '../services/ancestryEngine';
@@ -494,7 +494,7 @@ self.onmessage = async (e: MessageEvent) => {
       predictedYDNA, predictedMtDNA, mergedMtMap,
 
       mergedSnpMap: imputedSnpMap,
-      prsResults: calculateAllPRS(imputedSnpMap),
+      prsResults: undefined,
       pgxResults: calculatePharmacogenomics(imputedSnpMap),
       mergedSnpMetaMap,
       rareAndNovelVariants,

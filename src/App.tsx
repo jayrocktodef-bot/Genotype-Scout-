@@ -71,7 +71,7 @@ const ModernAncestryOracle = lazy(() => import("./components/ModernAncestryOracl
 const NaiveAncestryOracle = lazy(() => import("./components/NaiveAncestryOracle").then(m => ({ default: m.NaiveAncestryOracle })));
 const ChromosomePainterView = lazy(() => import("./components/ChromosomePainterView").then(m => ({ default: m.ChromosomePainterView })));
 const AncientAncestryOracle = lazy(() => import("./components/AncientAncestryOracle").then(m => ({ default: m.AncientAncestryOracle })));
-const EngineAncestryOracle = lazy(() => import("./components/EngineAncestryOracle").then(m => ({ default: m.EngineAncestryOracle })));
+
 import { runAncestryOracle } from "./engines/ancestry/oracleEngine";
 import { calculateAncientAdmixture, calculateIndividualMatches, calculateArchaicIntrogression } from "./lib/AncientAdmixtureCalculator";
 import { calculateHistoricalClusterMatches } from "./engines/ancestry/historicalClusterEngine";
