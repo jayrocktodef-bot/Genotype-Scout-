@@ -2237,7 +2237,7 @@ export default function App() {
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
       watchdogId = setInterval(() => {
-        if (Date.now() - lastProgressTime > 25000) {
+        if (Date.now() - lastProgressTime > 60000) {
           if (intervalId) clearInterval(intervalId);
           clearInterval(watchdogId);
           setError("ERR_WORKER_TIMEOUT_03: The genetic analysis worker stopped responding. Your dataset may be exceptionally large or heavily compressed. Please refresh and try extracting the ZIP first.");

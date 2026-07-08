@@ -375,27 +375,37 @@ function initializeSnpCache(databaseKeys: string[]) {
  * Fuzzy-matching resolver to handle nomenclature variations or typos
  */
 function resolveSnpName(userRsid: string, databaseKeys: string[], allowFuzzy = false): string | null {
+  initializeSnpCache(databaseKeys);
+
+  // 1. Direct match (case-sensitive lookup first for high speed)
+  const directMatch = normalizedKeyToOriginal.get(userRsid);
+  if (directMatch) return directMatch;
+
   const raw = userRsid.toLowerCase();
   
-  // 1. Direct short-circuit matches
+  // 2. Direct short-circuit matches
   if (normalizedKeyToOriginal.has(raw)) {
     return normalizedKeyToOriginal.get(raw) || null;
   }
   
-  initializeSnpCache(databaseKeys);
-  
-  const cleanUser = raw.replace(/[^a-z0-9]/g, '');
-  if (!cleanUser) return null;
-
-  // 2. Direct normalized match
-  const normMatch = normalizedKeyToOriginal.get(cleanUser);
-  if (normMatch) {
-    return normMatch;
+  // Only perform expensive regex cleaning if userRsid contains non-alphanumeric characters
+  const hasSpecial = /[^a-zA-Z0-9]/.test(userRsid);
+  if (hasSpecial) {
+    const cleanUser = raw.replace(/[^a-z0-9]/g, '');
+    if (cleanUser) {
+      const normMatch = normalizedKeyToOriginal.get(cleanUser);
+      if (normMatch) {
+        return normMatch;
+      }
+    }
   }
 
   if (!allowFuzzy) {
     return null;
   }
+
+  const cleanUser = raw.replace(/[^a-z0-9]/g, '');
+  if (!cleanUser) return null;
 
   // 3. Tabix-inspired local bucketing fuzzy match using Levenshtein distance <= 2
   const prefix = cleanUser.substring(0, 3);
@@ -623,168 +633,138 @@ export async function processSubpopulations(
     prunedGenotypesMap.set(m.dbKey, entry);
   });
 
+  // Get active reference SNPs that the user actually has
+  const firstPop = Object.values(referenceDatabase)[0];
+  const refSnpKeys = firstPop ? Object.keys(firstPop.frequencies) : [];
+  const activeRefSnps: { rsid: string; rsidLower: string; meta: any; userDosage: number }[] = [];
+
+  for (const rsid of refSnpKeys) {
+    const rsidLower = rsid.toLowerCase();
+    const meta = prunedGenotypesMap.get(rsidLower);
+    if (!meta) continue;
+
+    const genotype = meta.genotype;
+    const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
+    let userDosageDiscrete = -1;
+
+    const marker = (graf10kIndex as any)[rsidLower] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid];
+    if (marker) {
+      const alt = marker.alt.toUpperCase();
+      let matchCount = 0;
+      for (const char of genotype.toUpperCase()) {
+        if (char === alt) matchCount++;
+      }
+      userDosageDiscrete = matchCount;
+    } else if (aim && aim.alleles && aim.alleles.length > 0) {
+      const testAllele = aim.alleles[0];
+      let matchCount = 0;
+      for (const char of genotype) {
+        if (char === testAllele) matchCount++;
+      }
+      userDosageDiscrete = matchCount;
+    } else {
+      continue;
+    }
+
+    activeRefSnps.push({
+      rsid,
+      rsidLower,
+      meta,
+      userDosage: userDosageDiscrete
+    });
+  }
+
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     const frequencies = popData.frequencies;
-    const matchedKeys: string[] = [];
     const matchedUserDosages: number[] = [];
     const matchedRefFreqs: number[] = [];
     const matchedWeights: number[] = [];
     let violations = 0;
 
-    for (const [rsid, refFreq] of Object.entries(frequencies)) {
-      const rsidLower = rsid.toLowerCase();
-      const meta = prunedGenotypesMap.get(rsidLower);
+    for (let i = 0; i < activeRefSnps.length; i++) {
+      const activeSnp = activeRefSnps[i];
+      const refFreq = frequencies[activeSnp.rsid];
+      if (refFreq === undefined || refFreq === -1.0) continue;
 
-      if (!meta) {
-        continue;
-      }
+      const userDosageDiscrete = activeSnp.userDosage;
+      const rsidLower = activeSnp.rsidLower;
 
-      matchedKeys.push(rsidLower);
       usedAimsSet.add(rsidLower);
-
-      const genotype = meta.genotype;
-      const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
-      let userDosageDiscrete = -1; // -1 = unresolved
-
-      const marker = (graf10kIndex as any)[rsidLower] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid];
-      if (marker) {
-        const alt = marker.alt.toUpperCase();
-        let matchCount = 0;
-        for (const char of genotype.toUpperCase()) {
-          if (char === alt) {
-            matchCount++;
-          }
-        }
-        userDosageDiscrete = matchCount; // Will yield 0, 1, or 2
-      } else if (aim && aim.alleles && aim.alleles.length > 0) {
-        const testAllele = aim.alleles[0];
-        let matchCount = 0;
-        for (const char of genotype) {
-          if (char === testAllele) {
-            matchCount++;
-          }
-        }
-        userDosageDiscrete = matchCount; // Will yield 0, 1, or 2
-      } else {
-        // Skip marker entirely when allele identity is ambiguous.
-        // Defaulting to dosage=1 erases the strongest ancestry signal
-        // (hom-derived vs hom-ancestral) and injects systematic bias.
-        continue;
-      }
-
       matchedUserDosages.push(userDosageDiscrete);
       matchedRefFreqs.push(refFreq);
-      matchedWeights.push(meta.weight);
+      matchedWeights.push(activeSnp.meta.weight);
 
       // --- COMPONENT 2: Explicit Cladistic Negation Gating ---
-      // If the reference clade strictly requires this derived allele (frequency >= 0.85)
-      // but the user exhibits the ancestral homozygous state (dosage is 0), count as a decisive violation
       if (refFreq >= 0.85 && userDosageDiscrete === 0) {
         violations++;
       }
 
-      // Mutual diagnostic gating for highly fixated population-defining markers
-      // rs2814778 (Duffy Null): Fixated in sub-Saharan Africans, absent in Europeans
+      // Check specific diagnostic markers (fast checks)
       if (rsidLower === 'rs2814778') {
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 0) {
-          // European carrying CC (ancestral, non-Duffy-null homozygous) gets a penalty against African clades
           violations += 2.0; 
         } else if (isEuropeanPop && userDosageDiscrete === 2) {
-          // African carrying G/G or T/T (Duffy null homozygous) gets a penalty against European clades
           violations += 2.0;
         }
-      }
-
-      // rs1426654 (SLC24A5) and rs16891982 (SLC45A2): Nearly 100% fixated for European alleles
-      if (rsidLower === 'rs1426654' || rsidLower === 'rs16891982') {
+      } else if (rsidLower === 'rs1426654' || rsidLower === 'rs16891982') {
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 2) {
-          // User has homozygous European-derived allele: penalize African clades
           violations += 1.5;
         } else if (isEuropeanPop && userDosageDiscrete === 0) {
-          // User has homozygous African ancestral allele (0 copies of European allele): penalize European clades
           violations += 1.5;
         }
-      }
-
-      // rs3827760 (EDAR): East Asian (EAS) and Native American (AMR) diagnostic marker. High frequency in EAS/AMR, absent in EUR/AFR
-      if (rsidLower === 'rs3827760') {
+      } else if (rsidLower === 'rs3827760') {
         const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
         const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if ((isEastAsianPop || isAmrPop) && userDosageDiscrete === 0) {
-          // Lacks EDAR derived allele: penalize EAS and AMR clades
           violations += 2.0;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          // Has homozygous derived allele: penalize European/African clades
           violations += 2.0;
         }
-      }
-
-      // rs3094315: Highly diagnostic Indigenous American (AMR) marker (associated with unadmixed AMR populations like PEL/MXL)
-      if (rsidLower === 'rs3094315') {
+      } else if (rsidLower === 'rs3094315') {
         const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if (isAmrPop && userDosageDiscrete === 0) {
-          // User lacks Indigenous American alleles: penalize AMR reference clades
           violations += 1.5;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          // User is homozygous AMR-allele: penalize European and African reference populations
           violations += 1.5;
         }
-      }
-
-      // rs16139 and rs2229765: African (AFR) vs Non-African diagnostic variants (highly fixated in AFR, rare/absent elsewhere)
-      if (rsidLower === 'rs16139' || rsidLower === 'rs2229765') {
+      } else if (rsidLower === 'rs16139' || rsidLower === 'rs2229765') {
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 0) {
-          // User lacks African-fixated variant: penalize African reference clades
           violations += 1.5;
         } else if ((isEuropeanPop || isEastAsianPop) && userDosageDiscrete === 2) {
-          // User has homozygous African variant: penalize European/East Asian clades
           violations += 1.5;
         }
-      }
-
-      // rs7388531 (ABCC11) and rs671 (ALDH2): Specific East Asian (EAS) diagnostic variants
-      if (rsidLower === 'rs7388531' || rsidLower === 'rs671') {
+      } else if (rsidLower === 'rs7388531' || rsidLower === 'rs671') {
         const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if (isEastAsianPop && userDosageDiscrete === 0) {
-          // Lacks EAS variants: penalize EAS clades
           violations += 1.5;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          // Homozygous for EAS variants: penalize European and African clades
           violations += 1.5;
         }
-      }
-
-      // rs12203592 (IRF4): South Asian (SAS) diagnostic variant
-      if (rsidLower === 'rs12203592') {
+      } else if (rsidLower === 'rs12203592') {
         const isSouthAsianPop = MACRO_GROUPS['SAS'].includes(popCode);
         const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
         if (isSouthAsianPop && userDosageDiscrete === 0) {
-          // Lacks South Asian variant: penalize SAS reference clades
           violations += 1.0;
         } else if ((isAfricanPop || isEastAsianPop) && userDosageDiscrete === 2) {
-          // Homozygous for SAS variant: penalize African/East Asian clades
           violations += 1.0;
         }
-      }
-
-      // rs1042602 (TYR): Diagnostic Native American/European vs East Asian/African variant
-      if (rsidLower === 'rs1042602') {
+      } else if (rsidLower === 'rs1042602') {
         const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
         const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
@@ -820,12 +800,9 @@ export async function processSubpopulations(
         totalW += wt;
       }
 
-      const meanW = totalW / M;
       const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
 
       // Scale penalties for ancestral allele/cladistic conflicts.
-      // Fixed per-violation penalty avoids explosion on small panels (M<50)
-      // and under-penalizing on large panels (M>5000).
       const adjustedDistance = baseDistance * (1.0 + 0.20 * violations);
       popDistances.set(popCode, adjustedDistance);
     } else {

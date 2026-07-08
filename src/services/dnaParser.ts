@@ -685,11 +685,20 @@ export async function parseRawDNAStream(
   let linesCommented = 0;
   let linesMalformed = 0;
 
+  let lastYield = performance.now();
+  const YIELD_INTERVAL = 150; // ms
+
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
 
     bytesProcessed += value.length;
+
+    const now = performance.now();
+    if (now - lastYield > YIELD_INTERVAL) {
+      await new Promise(resolve => setTimeout(resolve, 0));
+      lastYield = performance.now();
+    }
 
     // Concatenate remainder with new chunk
     const combined = new Uint8Array(remainder.length + value.length);

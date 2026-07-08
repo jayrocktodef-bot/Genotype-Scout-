@@ -94,12 +94,13 @@ function filterAutosomalSNPs(
            k.startsWith('chr26_');
   };
 
-  for (const [rsid, genotype] of Object.entries(snpMap)) {
+  for (const rsid in snpMap) {
     if (isSexOrMtKey(rsid)) continue;
 
     const meta = snpMetaMap[rsid];
     if (meta && isSexOrMt(meta.chrom)) continue;
 
+    const genotype = snpMap[rsid];
     filteredSnpMap[rsid] = genotype;
     if (meta) {
       filteredMetaMap[rsid] = meta;
@@ -263,6 +264,8 @@ async function runEnginesSequential(
 
   const run = async (name: string, fn: () => any) => {
     onEngineProgress(completed, total, ENGINE_LABELS[name] || name);
+    // Yield to the event loop to let progress updates transmit and reset watchdog
+    await new Promise(resolve => setTimeout(resolve, 0));
     results[name] = await fn();
     completed++;
   };
@@ -545,11 +548,13 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
 
     const usedRsids = new Set<string>();   // avoid processing the same user rsid twice
 
-    for (const [rsid, genotype] of Object.entries(snpMap)) {
+    for (const rsid in snpMap) {
         const base = rsid.toLowerCase();
         const matchedAims = aimBaseMap.get(base);
         if (!matchedAims || usedRsids.has(base)) continue;
         usedRsids.add(base);
+
+        const genotype = snpMap[rsid];
 
         // Clean genotype: remove whitespace, '/', '_'; keep only A, C, G, T, I, D
         const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
