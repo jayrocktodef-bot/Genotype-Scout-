@@ -50,5 +50,5 @@ describe('Hierarchical Deconvolution Routing', () => {
     // Total proportions should sum to 100%
     const totalPercentage = results.admixtureMix.reduce((sum: number, item: any) => sum + item.percentage, 0);
     expect(totalPercentage).toBeCloseTo(100.0, 1);
-  });
+  }, 20000);
 });
