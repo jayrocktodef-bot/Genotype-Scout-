@@ -50,6 +50,16 @@ export async function calculateHumanOriginsScores(userSnps: Record<string, strin
   const A: number[][] = Array.from({ length: M }, () => new Array(N).fill(0));
   const b: number[] = new Array(M).fill(0);
 
+  const complement = (base: string): string => {
+    switch (base.toUpperCase()) {
+      case 'A': return 'T';
+      case 'T': return 'A';
+      case 'C': return 'G';
+      case 'G': return 'C';
+      default: return base;
+    }
+  };
+
   for (let i = 0; i < M; i++) {
     const rsid = matchedRsids[i];
     const userCall = normalizedUserSnps[rsid.toLowerCase()];
@@ -60,8 +70,8 @@ export async function calculateHumanOriginsScores(userSnps: Record<string, strin
     const alt = marker.alt.toUpperCase();
     const a1 = userCall[0].toUpperCase();
     const a2 = userCall[1].toUpperCase();
-    if (a1 === alt) dosage += 0.5;
-    if (a2 === alt) dosage += 0.5;
+    if (a1 === alt || complement(a1) === alt) dosage += 0.5;
+    if (a2 === alt || complement(a2) === alt) dosage += 0.5;
 
     b[i] = dosage;
 

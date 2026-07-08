@@ -1,5 +1,6 @@
 import { ANCHOR_AIMS, loadGlobalAnchors } from '../anchorAims';
 import { SNP_DB } from '../data/snpDatabase';
+import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
 import { imputeTargetedGenotypes } from './imputationService';
 import { getPopulationInfo } from './populationMapper';
 import { getPopFrequencies, PopFrequencyEntry, findFrequency } from '../data/GenomicDataService';
@@ -202,6 +203,16 @@ export function runAncestryInference(
   priorResults?: { graf?: any, humanOrigins?: any },
   sampleId?: string
 ): AncestryInferenceResult {
+  const complement = (base: string): string => {
+    switch (base.toUpperCase()) {
+      case 'A': return 'T';
+      case 'T': return 'A';
+      case 'C': return 'G';
+      case 'G': return 'C';
+      default: return base;
+    }
+  };
+
   // Check if we can directly map this known reference sample ID to a subpopulation
   let info = sampleId ? getPopulationInfo(sampleId) : null;
   if (!info && sampleId) {
@@ -413,20 +424,38 @@ export function runAncestryInference(
         const genotype = userGenotype[rsid] || marker.genotype;
         if (!genotype) continue;
 
-        const alleles = marker.alleles || [];
-        let matchCount = 0;
-        for (const char of genotype) {
-          if (alleles.includes(char)) matchCount++;
+        // ──── Determine alternative allele ────
+        const markerInfo = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+        const aim = extendedAnchorMap.get(rsid);
+        let alt: string | null = null;
+        if (markerInfo && markerInfo.alt) {
+          alt = markerInfo.alt.toUpperCase();
+        } else if (aim && aim.alleles && aim.alleles.length > 0) {
+          alt = aim.alleles[0].toUpperCase();
+        } else if (alleles.length > 0) {
+          alt = alleles[0].toUpperCase();
         }
-        
-        // Partial match logic: half weight if only one allele matches
-        const weightFactor = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0);
-        if (weightFactor === 0) continue;
-        
-        windowGenotypes.push(matchCount);
+
+        if (!alt) continue;
+
+        // Extract user alleles
+        const a1 = genotype[0].toUpperCase();
+        const a2 = genotype[1] ? genotype[1].toUpperCase() : '';
+
+        // Incomplete/ambiguous genotype check
+        if (genotype.length !== 2 || !['A','T','C','G'].includes(a1) || !['A','T','C','G'].includes(a2)) {
+          continue;
+        }
+
+        // Compute alternative-allele dosage (0, 1, or 2)
+        let dosage = 0;
+        if (a1 === alt || complement(a1) === alt) dosage += 1;
+        if (a2 === alt || complement(a2) === alt) dosage += 1;
+
+        const weightFactor = 1.0;
+        windowGenotypes.push(dosage);
         
         const markerFreqs: number[] = [];
-        const aim = extendedAnchorMap.get(rsid);
 
         for (const continent of continentsToScore) {
           let freq = 0.01; 
@@ -600,11 +629,33 @@ export function runAncestryInference(
                     const rsid = (marker.rsid || marker.markerId).toLowerCase();
                     const genotype = userGenotype[rsid] || marker.genotype;
                     if (!genotype) continue;
-                    let matchCount = 0;
-                    for (const char of genotype) if ((marker.alleles || []).includes(char)) matchCount++;
+                    // ──── Determine alternative allele ────
+                    const subMarkerInfo = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+                    const subAim = extendedAnchorMap.get(rsid);
+                    let subAlt: string | null = null;
+                    if (subMarkerInfo && subMarkerInfo.alt) {
+                      subAlt = subMarkerInfo.alt.toUpperCase();
+                    } else if (subAim && subAim.alleles && subAim.alleles.length > 0) {
+                      subAlt = subAim.alleles[0].toUpperCase();
+                    } else if ((marker.alleles || []).length > 0) {
+                      subAlt = marker.alleles[0].toUpperCase();
+                    }
 
-                    // Partial match logic: user dosage of the alternative/target allele (0.0, 0.5, or 1.0)
-                    const userDosage = genotype.length === 2 && matchCount === 1 ? 0.5 : (matchCount === 2 ? 1.0 : 0.0);
+                    if (!subAlt) continue;
+
+                    const subA1 = genotype[0].toUpperCase();
+                    const subA2 = genotype[1] ? genotype[1].toUpperCase() : '';
+
+                    // Incomplete genotype check
+                    if (genotype.length !== 2 || !['A','T','C','G'].includes(subA1) || !['A','T','C','G'].includes(subA2)) {
+                      continue;
+                    }
+
+                    // Compute dosage of alternative allele (0.0, 0.5, or 1.0)
+                    let userDosage = 0.0;
+                    if (subA1 === subAlt || complement(subA1) === subAlt) userDosage += 0.5;
+                    if (subA2 === subAlt || complement(subA2) === subAlt) userDosage += 0.5;
+
                     const weightFactor = userDosage;
 
                     const aim = extendedAnchorMap.get(rsid);
