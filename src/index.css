@@ -101,14 +101,14 @@
 
 /* Light mode palette */
 :root {
-  --bg-main: #fdfdfd;
-  --bg-card: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --accent: #0f766e;
-  --accent-foreground: #ffffff;
-  --accent-soft: #f0fdfa;
-  --border-soft: #e2e8f0; /* stronger than the original #f1f5f9 for better contrast */
+  --bg-main: #ffffff;
+  --bg-card: #ffffff;        
+  --text-primary: #0f172a;   
+  --text-secondary: #475569; 
+  --accent: #1e40af;         
+  --accent-foreground: #ffffff; 
+  --accent-soft: #eff6ff;    
+  --border-soft: #e2e8f0;    
 }
 
 /* Dark mode palette */
