@@ -527,97 +527,101 @@ const getMasterAims = () => {
   return masterAimsCache;
 };
 
-function calculateNaiveEthnicity(snpMap: Record<string, string>) {
-    const totalSim: Record<string, number> = {};
-    const counts: Record<string, number> = {};
-    const aims = getMasterAims() as any;
-    const usedRsids = new Set<string>();
+function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
+    const MIN_MARKERS = 5;           // minimum markers to report a population
+    const SMOOTH = 0.001;            // floor/ceiling for allele frequencies to avoid log(0)
 
-    // Pre-map the database by base rsid (without regional suffix)
+    const totalLogProb: Record<string, number> = {};
+    const markerCounts: Record<string, number> = {};
+
+    const aims = getMasterAims() as any;
     const aimBaseMap = new Map<string, any[]>();
+    // Pre-map AIMS by their base rsid (ignore region/isoform suffixes)
     for (const [key, value] of Object.entries(aims)) {
         const base = key.split('_')[0].toLowerCase();
         if (!aimBaseMap.has(base)) aimBaseMap.set(base, []);
         aimBaseMap.get(base)!.push(value);
     }
 
+    const usedRsids = new Set<string>();   // avoid processing the same user rsid twice
+
     for (const [rsid, genotype] of Object.entries(snpMap)) {
-        const matchedAims = aimBaseMap.get(rsid.toLowerCase());
-        if (matchedAims) {
-            if (usedRsids.has(rsid)) continue;
-            usedRsids.add(rsid);
-            for (const aim of matchedAims) {
-                if (aim && aim.frequencies) {
-                    const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
-                    if (!cleanGenotype || cleanGenotype.length < 1 || cleanGenotype.includes('-') || cleanGenotype.includes('N')) {
-                        continue;
-                    }
+        const base = rsid.toLowerCase();
+        const matchedAims = aimBaseMap.get(base);
+        if (!matchedAims || usedRsids.has(base)) continue;
+        usedRsids.add(base);
 
-                    const effectAlleles = aim.alleles || [];
-                    if (effectAlleles.length === 0) continue;
-                    const effectAllele = effectAlleles[0].toUpperCase();
+        // Clean genotype: remove whitespace, '/', '_'; keep only A, C, G, T, I, D
+        const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
+        if (!cleanGenotype || cleanGenotype.includes('-') || cleanGenotype.includes('N')) continue;
 
-                    let k = 0;
-                    let validLength = 0;
-                    for (const char of cleanGenotype) {
-                        if (['A', 'C', 'G', 'T', 'I', 'D'].includes(char)) {
-                            validLength++;
-                            if (char === effectAllele) {
-                                k++;
-                            }
-                        }
-                    }
+        // Extract valid allele characters; determine ploidy
+        let validAlleles = '';
+        for (const ch of cleanGenotype) {
+            if ('ACGTID'.includes(ch)) validAlleles += ch;
+        }
+        const ploidy = validAlleles.length;
+        if (ploidy === 0) continue;
 
-                    if (validLength === 0) continue;
+        // For each matched AIM entry (allows multiple entries per rsid)
+        for (const aim of matchedAims) {
+            if (!aim || !aim.frequencies) continue;
+            const effectAlleles = aim.alleles || [];
+            if (effectAlleles.length === 0) continue;
+            const effectAllele = effectAlleles[0].toUpperCase();
 
-                    let dosage = k;
-                    if (validLength === 1) {
-                        dosage = k * 2;
-                    }
+            // Count how many effect alleles are present
+            let k = 0;
+            for (const ch of validAlleles) {
+                if (ch === effectAllele) k++;
+            }
 
-                    const userFreq = dosage / 2; // 0.0, 0.5, or 1.0
-
-                    for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                        // Skip system, global, or compound reference tags
-                        const cleanPop = pop.toUpperCase().trim();
-                        if (cleanPop === 'GLOBAL' || cleanPop === 'ASI') {
-                            continue;
-                        }
-
-                        const p = freq as number;
-                        const distance = (userFreq - p) * (userFreq - p);
-                        const sim = 1.0 - distance;
-                        totalSim[pop] = (totalSim[pop] || 0) + sim;
-                        counts[pop] = (counts[pop] || 0) + 1;
-                    }
+            // Helper: HWE-based genotype probability for a given p
+            const genotypeProbability = (p: number): number => {
+                const pClamp = Math.max(SMOOTH, Math.min(1 - SMOOTH, p));
+                if (ploidy === 1) {
+                    return k === 1 ? pClamp : (1 - pClamp);
+                } else {
+                    // assume diploid
+                    if (k === 0) return (1 - pClamp) ** 2;
+                    if (k === 1) return 2 * pClamp * (1 - pClamp);
+                    if (k === 2) return pClamp ** 2;
+                    // fallback for polyploidy (unlikely in common AIMs)
+                    return 0;
                 }
+            };
+
+            // Accumulate log-probabilities per population
+            for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
+                const cleanPop = pop.toUpperCase().trim();
+                if (cleanPop === 'GLOBAL' || cleanPop === 'ASI') continue;
+
+                const p = freq as number;
+                const prob = genotypeProbability(p);
+                if (prob <= 0) continue;   // safety, though clamping prevents this
+
+                totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + Math.log(prob);
+                markerCounts[cleanPop] = (markerCounts[cleanPop] || 0) + 1;
             }
         }
     }
 
-    const avgSim: Record<string, number> = {};
-    for (const pop in totalSim) {
-        // Enforce a higher baseline threshold (e.g., 20) for naive estimates to prevent
-        // thin reference panel components (e.g., Siberian, Oceanian) from getting inflated
-        // averages due to a handful of matched SNPs.
-        if (counts[pop] >= 20) {
-            avgSim[pop] = totalSim[pop] / counts[pop];
+    // Convert average log-prob into an unnormalised score (geometric mean)
+    const scores: Record<string, number> = {};
+    let sumScores = 0;
+    for (const pop in totalLogProb) {
+        if (markerCounts[pop] >= MIN_MARKERS) {
+            const avgLogProb = totalLogProb[pop] / markerCounts[pop];
+            scores[pop] = Math.exp(avgLogProb);   // per-marker geometric mean
+            sumScores += scores[pop];
         }
     }
 
-    // Power transformation to boost contrast and resolve distinct ancestral profiles cleanly
-    const transformed: Record<string, number> = {};
-    let totalTransformed = 0;
-    for (const pop in avgSim) {
-        const val = Math.pow(avgSim[pop], 2); // Exponent 2 allows minor populations to be represented without collapsing to 0
-        transformed[pop] = val;
-        totalTransformed += val;
-    }
-
+    // Normalise to percentages
     const finalScores: Record<string, number> = {};
-    if (totalTransformed > 0) {
-        for (const pop in transformed) {
-            finalScores[pop] = (transformed[pop] / totalTransformed) * 100;
+    if (sumScores > 0) {
+        for (const pop in scores) {
+            finalScores[pop] = (scores[pop] / sumScores) * 100;
         }
     }
     return finalScores;
