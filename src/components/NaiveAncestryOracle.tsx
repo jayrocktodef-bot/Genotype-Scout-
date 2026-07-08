@@ -202,6 +202,71 @@ const DRIVER_SNPS: DriverSNP[] = [
       'GC': { state: 'Heterozygous', text: 'Carrier of MC1R Fair Skin Trait', impact: 'You carry one copy of the red hair variant. You likely have normal hair coloring but may carry increased skin fairness or freckling.' },
       'CG': { state: 'Heterozygous', text: 'Carrier of MC1R Fair Skin Trait', impact: 'You carry one copy of the red hair variant. You likely have normal hair coloring but may carry increased skin fairness or freckling.' }
     }
+  },
+  {
+    rsid: 'rs1426654',
+    gene: 'SLC24A5',
+    name: 'Skin Pigmentation (European Light Skin)',
+    description: 'Major determinant of light skin pigmentation in Europeans. The derived allele is near-fixed in Europe and rare in Africa and East Asia.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'Two copies of the light-skin allele. Strongly associated with lighter skin pigmentation typical of European ancestry.', impact: 'Strongly associated with lighter skin; reduces eumelanin production.' },
+      'AG': { state: 'Heterozygous', text: 'One copy of the light-skin allele. Intermediate effect on skin pigmentation.', impact: 'Moderate lightening of skin tone.' },
+      'GA': { state: 'Heterozygous', text: 'One copy of the light-skin allele. Intermediate effect on skin pigmentation.', impact: 'Moderate lightening of skin tone.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral allele. Darker skin pigmentation, common in African and East Asian populations.', impact: 'Associated with darker skin tones.' }
+    },
+    globalFreq: 'Derived allele (A) ~99% in Europeans, <1% in sub-Saharan Africans, ~5% in East Asians.'
+  },
+  {
+    rsid: 'rs1800414',
+    gene: 'OCA2',
+    name: 'Skin Pigmentation (East Asian Light Skin)',
+    description: 'A key determinant of lighter skin in East Asians. The derived allele has been under strong positive selection in that region.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Two copies of the East Asian light-skin allele. Typically leads to lighter skin in East Asian populations.', impact: 'Lighter skin pigmentation — convergent evolution with European light-skin alleles.' },
+      'AG': { state: 'Heterozygous', text: 'One copy of the light-skin allele. Intermediate effect on skin pigmentation.', impact: 'Moderate lightening of skin in East Asian contexts.' },
+      'GA': { state: 'Heterozygous', text: 'One copy of the light-skin allele. Intermediate effect on skin pigmentation.', impact: 'Moderate lightening of skin in East Asian contexts.' },
+      'AA': { state: 'Ancestral', text: 'Ancestral allele. Associated with darker skin pigmentation; common in Africans and Europeans.', impact: 'Darker skin tones outside of East Asia.' }
+    },
+    globalFreq: 'Derived allele (G) ~90% in East Asians, ~5% in Europeans, nearly absent in Africans.'
+  },
+  {
+    rsid: 'rs17822931',
+    gene: 'ABCC11',
+    name: 'Earwax Type & Body Odor',
+    description: 'Determines earwax consistency (dry vs. wet) and axillary body odor. The derived allele causes dry earwax and reduced body odor.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Two copies of the dry earwax allele. Common in East Asians; associated with dry, flaky earwax and less body odor.', impact: 'Dry earwax, reduced apocrine sweat gland activity.' },
+      'CT': { state: 'Heterozygous', text: 'One copy each. Intermediate phenotype — earwax may be moist/dry mixed, body odor somewhat reduced.', impact: 'Mixed earwax type, moderately reduced body odor.' },
+      'TC': { state: 'Heterozygous', text: 'One copy each. Intermediate phenotype — earwax may be moist/dry mixed, body odor somewhat reduced.', impact: 'Mixed earwax type, moderately reduced body odor.' },
+      'CC': { state: 'Ancestral', text: 'Ancestral wet earwax allele. Predominant in Africans and Europeans; wet earwax and typical body odor.', impact: 'Wet earwax, normal apocrine gland function.' }
+    },
+    globalFreq: 'Derived allele (T) ~95% in East Asians, <5% in Europeans, ~1% in Africans.'
+  },
+  {
+    rsid: 'rs334',
+    gene: 'HBB',
+    name: 'Sickle Cell Trait & Malaria Resistance',
+    description: 'The sickle hemoglobin variant (HbS). Heterozygotes have strong protection against severe malaria; homozygotes have sickle cell disease.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Two copies of the sickle cell allele (HbS disease). Severe red-blood-cell disorder with life-long health complications.', impact: 'Sickle cell disease — serious genetic condition.' },
+      'AT': { state: 'Heterozygous', text: 'One sickle cell allele. Sickle cell trait — typically asymptomatic and provides strong resistance to falciparum malaria.', impact: 'Malaria resistance (heterozygote advantage). Mild risk under extreme hypoxia.' },
+      'TA': { state: 'Heterozygous', text: 'One sickle cell allele. Sickle cell trait — typically asymptomatic and provides strong resistance to falciparum malaria.', impact: 'Malaria resistance (heterozygote advantage). Mild risk under extreme hypoxia.' },
+      'AA': { state: 'Ancestral', text: 'Ancestral normal hemoglobin allele. Normal hemoglobin; no malaria resistance from this locus.', impact: 'Normal hemoglobin; no malaria resistance from this locus.' }
+    },
+    globalFreq: 'Derived allele (T) up to 15-20% in malaria-endemic sub-Saharan Africa; very rare elsewhere.'
+  },
+  {
+    rsid: 'rs4953354',
+    gene: 'EPAS1',
+    name: 'High-Altitude Adaptation (Tibetan)',
+    description: 'Key variant in the hypoxia-inducible factor pathway. The derived allele is highly enriched in Tibetans and helps them live at extreme high altitudes without excessive red blood cell production.',
+    interpretations: {
+      'CC': { state: 'Derived', text: 'Two copies of the Tibetan high-altitude adaptation allele. Associated with lower hemoglobin levels at high altitude, reducing risk of chronic mountain sickness.', impact: 'Efficient oxygen use at high altitude — typical Tibetan adaptation.' },
+      'CG': { state: 'Heterozygous', text: 'One copy of the Tibetan adaptation allele. Intermediate hemoglobin phenotype at high altitude.', impact: 'Partial adaptation; some protection against high-altitude sickness.' },
+      'GC': { state: 'Heterozygous', text: 'One copy of the Tibetan adaptation allele. Intermediate hemoglobin phenotype at high altitude.', impact: 'Partial adaptation; some protection against high-altitude sickness.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral allele. Common outside of high-altitude populations; higher hemoglobin levels at altitude.', impact: 'Standard hypoxic response; less adaptation to extreme high altitudes.' }
+    },
+    globalFreq: 'Derived allele (C) ~87% in Tibetans, <1% in Han Chinese, absent in other continental groups.'
   }
 ];
 
