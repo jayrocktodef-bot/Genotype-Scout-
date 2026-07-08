@@ -303,8 +303,8 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   
   allMutations.forEach(mutation => {
     // 1. Clean the mutation representation for parsing
-    // Strip trailing '!' or '!!'
-    const cleanMutation = mutation.replace(/!+$/, '');
+    // Strip trailing recurrent/uncertainty indicators like '!', '!!', or '?'
+    const cleanMutation = mutation.replace(/[!?]+$/, '');
 
     // Case A: Standard Substitution (e.g., A263G, C3516a) or Single Deletion (e.g., C498d), or Abbreviated Substitution (e.g., 263G, 16111t)
     const subMatch = cleanMutation.match(/^([A-Z]?)(\d+)([A-Za-z])$/);
@@ -319,15 +319,27 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
         if (userAllele === '-' || userAllele === 'D' || userAllele === 'd') {
           userMutations.push(mutation);
           testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
-        } else if (userAllele && userAllele.toUpperCase() === ancestral.toUpperCase()) {
-          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+        } else if (userAllele) {
+          const isAncestral = ancestral 
+            ? userAllele.toUpperCase() === ancestral.toUpperCase()
+            : (userAllele !== '-' && userAllele !== 'D' && userAllele !== 'd');
+          
+          if (isAncestral) {
+            testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+          }
         }
       } else {
         if (userAllele && userAllele.toUpperCase() === derived.toUpperCase()) {
           userMutations.push(mutation);
           testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
-        } else if (userAllele && userAllele.toUpperCase() === ancestral.toUpperCase()) {
-          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+        } else if (userAllele) {
+          const isAncestral = ancestral 
+            ? userAllele.toUpperCase() === ancestral.toUpperCase()
+            : userAllele.toUpperCase() !== derived.toUpperCase();
+          
+          if (isAncestral) {
+            testedMarkers.push({ mutation, pos, derived, ancestral, status: 'ancestral', description: getMarkerDescription(mutation) });
+          }
         }
       }
       return;

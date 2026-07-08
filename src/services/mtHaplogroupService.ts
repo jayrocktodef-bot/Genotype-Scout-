@@ -18,9 +18,9 @@ export function findMatchesInMtHaplogroups(userMutations: string[]) {
     const branchMatches = branch.mutations.filter(m => userMutations.includes(m));
     
     if (branchMatches.length > 0) {
-      // Calculate Jaccard similarity to improve accuracy
+      // Calculate true Jaccard similarity to improve accuracy
       const unionSize = new Set([...userMutations, ...branch.mutations]).size;
-      const similarity = branchMatches.length / Math.max(userMutations.length, branch.mutations.length); // Use a modified Jaccard to reward branch coverage
+      const similarity = unionSize > 0 ? branchMatches.length / unionSize : 0;
       
       matches.push({ branch, matches: branchMatches, similarity });
     }
