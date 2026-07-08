@@ -413,6 +413,14 @@ export function runAncestryInference(
       if (end === chromMarkers.length) break;
     }
 
+    const chromosomeWindows: {
+      proportions: number[];
+      topContinent: string;
+      start: number;
+      end: number;
+      window: any[];
+    }[] = [];
+
     for (const window of windowMarkers) {
       const windowGenotypes: number[] = [];
       const windowFrequencies: number[][] = [];
@@ -432,8 +440,8 @@ export function runAncestryInference(
           alt = markerInfo.alt.toUpperCase();
         } else if (aim && aim.alleles && aim.alleles.length > 0) {
           alt = aim.alleles[0].toUpperCase();
-        } else if (alleles.length > 0) {
-          alt = alleles[0].toUpperCase();
+        } else if ((marker.alleles || []).length > 0) {
+          alt = marker.alleles[0].toUpperCase();
         }
 
         if (!alt) continue;
@@ -587,137 +595,194 @@ export function runAncestryInference(
       windowProportions.forEach((_, i) => windowProportions[i] *= damping[i]);
       
       if (pathIndices.length > 0) {
-        allWindowProportions.push(windowProportions);
-        
-        // Detailed segment tracking
         const topIndex = pathIndices[Math.floor(pathIndices.length / 2)];
         const topContinent = continentsToScore[topIndex];
-        
-        // HMM provides a direct assignment, which we treat as high confidence
-        segments[chrom].push({
-          continent: topContinent,
+        chromosomeWindows.push({
+          proportions: windowProportions,
+          topContinent,
           start: window[0].pos,
           end: window[window.length - 1].pos,
-          confidence: 0.9 // High confidence for Viterbi decoding
+          window
         });
+      }
+    }
 
-        windowProportions.forEach((prob, i) => {
-          const continent = continentsToScore[i];
-          let filteredProb = prob < 0.001 ? 0 : prob; // Even lower threshold to allow trace amounts
-          
+    // Run-length pruning pass to filter short runs (< 3 windows) to eliminate noise
+    const cleanedWindows = [...chromosomeWindows];
+    let idxRun = 0;
+    while (idxRun < cleanedWindows.length) {
+      let j = idxRun;
+      while (j < cleanedWindows.length && cleanedWindows[j].topContinent === cleanedWindows[idxRun].topContinent) {
+        j++;
+      }
+      const runLength = j - idxRun;
+      const currentContinent = cleanedWindows[idxRun].topContinent;
 
-
-          continentalCounts[continent] += filteredProb;
-          chromCounts[continent] += filteredProb;
-        });
+      if (runLength < 3 && cleanedWindows.length >= 3) {
+        let replacementContinent = 'European'; // default fallback
         
-        // --- Hierarchical Clustering: Only calculate subpop distances for the topContinent ---
-        if (topContinent) {
-            const continentSubpops = continentSubpopsMap[topContinent] || [];
-            if (!subPopDistances[topContinent]) subPopDistances[topContinent] = {};
-            if (!subPopWeights[topContinent]) subPopWeights[topContinent] = {};
+        let leftNeighbor: string | null = null;
+        let rightNeighbor: string | null = null;
+        
+        if (idxRun > 0) {
+          leftNeighbor = cleanedWindows[idxRun - 1].topContinent;
+        }
+        if (j < cleanedWindows.length) {
+          rightNeighbor = cleanedWindows[j].topContinent;
+        }
+        
+        if (leftNeighbor) {
+          replacementContinent = leftNeighbor;
+        } else if (rightNeighbor) {
+          replacementContinent = rightNeighbor;
+        }
+        
+        // Apply replacement to all windows in this short run
+        for (let k = idxRun; k < j; k++) {
+          const wInfo = cleanedWindows[k];
+          const oldContinent = wInfo.topContinent;
+          wInfo.topContinent = replacementContinent;
+          
+          // Transfer proportion to replacement
+          const oldIdx = continentsToScore.indexOf(oldContinent);
+          const repIdx = continentsToScore.indexOf(replacementContinent);
+          if (oldIdx !== -1 && repIdx !== -1) {
+            const transferVal = wInfo.proportions[oldIdx];
+            wInfo.proportions[oldIdx] = 0;
+            wInfo.proportions[repIdx] += transferVal;
+          }
+        }
+      }
+      idxRun = j;
+    }
 
-            for (const sp of continentSubpops) {
-                if (subPopDistances[topContinent][sp] === undefined) {
-                    subPopDistances[topContinent][sp] = 0;
-                    subPopWeights[topContinent][sp] = 0;
-                }
+    // Now populate chromosome and continental counts and segments using cleaned windows
+    for (let wIdx = 0; wIdx < cleanedWindows.length; wIdx++) {
+      const wInfo = cleanedWindows[wIdx];
+      const origWindow = wInfo.window;
+      
+      allWindowProportions.push(wInfo.proportions);
 
-                for (const marker of window) {
-                    if (marker.subpop?.toLowerCase() === 'general') continue;
+      segments[chrom].push({
+        continent: wInfo.topContinent,
+        start: wInfo.start,
+        end: wInfo.end,
+        confidence: 0.9
+      });
 
-                    const rsid = (marker.rsid || marker.markerId).toLowerCase();
-                    const genotype = userGenotype[rsid] || marker.genotype;
-                    if (!genotype) continue;
-                    // ──── Determine alternative allele ────
-                    const subMarkerInfo = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
-                    const subAim = extendedAnchorMap.get(rsid);
-                    let subAlt: string | null = null;
-                    if (subMarkerInfo && subMarkerInfo.alt) {
-                      subAlt = subMarkerInfo.alt.toUpperCase();
-                    } else if (subAim && subAim.alleles && subAim.alleles.length > 0) {
-                      subAlt = subAim.alleles[0].toUpperCase();
-                    } else if ((marker.alleles || []).length > 0) {
-                      subAlt = marker.alleles[0].toUpperCase();
-                    }
+      wInfo.proportions.forEach((prob, i) => {
+        const continent = continentsToScore[i];
+        let filteredProb = prob < 0.01 ? 0 : prob; // Raised threshold to 1.0% to prune noise (Option B)
 
-                    if (!subAlt) continue;
+        continentalCounts[continent] += filteredProb;
+        chromCounts[continent] += filteredProb;
+      });
 
-                    const subA1 = genotype[0].toUpperCase();
-                    const subA2 = genotype[1] ? genotype[1].toUpperCase() : '';
+      // Run-level subpop distance calculations
+      const topContinent = wInfo.topContinent;
+      if (topContinent) {
+        const continentSubpops = continentSubpopsMap[topContinent] || [];
+        if (!subPopDistances[topContinent]) subPopDistances[topContinent] = {};
+        if (!subPopWeights[topContinent]) subPopWeights[topContinent] = {};
 
-                    // Incomplete genotype check
-                    if (genotype.length !== 2 || !['A','T','C','G'].includes(subA1) || !['A','T','C','G'].includes(subA2)) {
-                      continue;
-                    }
+        for (const sp of continentSubpops) {
+          if (subPopDistances[topContinent][sp] === undefined) {
+            subPopDistances[topContinent][sp] = 0;
+            subPopWeights[topContinent][sp] = 0;
+          }
 
-                    // Compute dosage of alternative allele (0.0, 0.5, or 1.0)
-                    let userDosage = 0.0;
-                    if (subA1 === subAlt || complement(subA1) === subAlt) userDosage += 0.5;
-                    if (subA2 === subAlt || complement(subA2) === subAlt) userDosage += 0.5;
+          for (const marker of origWindow) {
+            if (marker.subpop?.toLowerCase() === 'general') continue;
 
-                    const weightFactor = userDosage;
-
-                    const aim = extendedAnchorMap.get(rsid);
-                    let freq = 0.01;
-                    const code = CONTINENT_TO_CODE[topContinent];
-
-                    if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
-                      freq = aim.subFrequencies[sp];
-                      if (weightFactor > 0) {
-                        subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
-                      }
-                    } else if (isSubpopMatch(marker.subpop, sp)) {
-                      freq = 0.8;
-                      if (weightFactor > 0) {
-                        subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
-                      }
-                    } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
-                      freq = aim.frequencies[code];
-                    } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
-                      freq = marker.frequencies[code];
-                    } else if (matchesContinent(marker.continent, topContinent)) {
-                      freq = 0.5;
-                    }
-
-                    const f = Math.max(0.001, Math.min(0.999, freq));
-                    const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
-                    const isHeavy = extendedAnchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
-                    const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
-                    const weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
-                    
-                    let effectiveSignificance = marker.significance;
-                    if (isNamedPop) effectiveSignificance = 'High';
-                    let significanceWeight = (effectiveSignificance === 'High' ? 3.0 : effectiveSignificance === 'Medium' ? 2.0 : 1.0);
-                    
-                    const regionalMultiplier = isNamedPop ? 4.0 : 1.0;
-                    
-                    const subPopFreqs: number[] = [];
-                    for (const c of continentsToScore) {
-                      const cCode = CONTINENT_TO_CODE[c];
-                      let f = 0.01;
-                      if (aim && aim.frequencies && cCode && aim.frequencies[cCode] !== undefined) f = aim.frequencies[cCode];
-                      else if (marker.frequencies && cCode && marker.frequencies[cCode] !== undefined) f = marker.frequencies[cCode];
-                      subPopFreqs.push(f);
-                    }
-                    const maxF = Math.max(...subPopFreqs);
-                    const minF = Math.min(...subPopFreqs);
-                    const distributionWeight = 1.0 + (maxF - minF) * 6.0;
-
-                    let continentSpecificWeight = 1.0;
-                    const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
-                    if (sortedSubFreqs[0] > 0.65 && sortedSubFreqs[1] < 0.1) {
-                      continentSpecificWeight = 8.0;
-                    }
-
-                    const weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
-
-                    const error = userDosage - f;
-                    const distSq = weight * (error * error);
-                    subPopDistances[topContinent][sp] += distSq;
-                    subPopWeights[topContinent][sp] += weight;
-                }
+            const rsid = (marker.rsid || marker.markerId).toLowerCase();
+            const genotype = userGenotype[rsid] || marker.genotype;
+            if (!genotype) continue;
+            // ──── Determine alternative allele ────
+            const subMarkerInfo = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+            const subAim = extendedAnchorMap.get(rsid);
+            let subAlt: string | null = null;
+            if (subMarkerInfo && subMarkerInfo.alt) {
+              subAlt = subMarkerInfo.alt.toUpperCase();
+            } else if (subAim && subAim.alleles && subAim.alleles.length > 0) {
+              subAlt = subAim.alleles[0].toUpperCase();
+            } else if ((marker.alleles || []).length > 0) {
+              subAlt = marker.alleles[0].toUpperCase();
             }
+
+            if (!subAlt) continue;
+
+            const subA1 = genotype[0].toUpperCase();
+            const subA2 = genotype[1] ? genotype[1].toUpperCase() : '';
+
+            if (genotype.length !== 2 || !['A','T','C','G'].includes(subA1) || !['A','T','C','G'].includes(subA2)) {
+              continue;
+            }
+
+            let userDosage = 0.0;
+            if (subA1 === subAlt || complement(subA1) === subAlt) userDosage += 0.5;
+            if (subA2 === subAlt || complement(subA2) === subAlt) userDosage += 0.5;
+
+            const weightFactor = userDosage;
+
+            const aim = extendedAnchorMap.get(rsid);
+            let freq = 0.01;
+            const code = CONTINENT_TO_CODE[topContinent];
+
+            if (aim && aim.subFrequencies && aim.subFrequencies[sp] !== undefined) {
+              freq = aim.subFrequencies[sp];
+              if (weightFactor > 0) {
+                subPopMarkers[sp].push({ rsid: aim.rsid, trait: aim.description, contribution: freq * (aim.weight || 1.0) * weightFactor, genotype });
+              }
+            } else if (isSubpopMatch(marker.subpop, sp)) {
+              freq = 0.8;
+              if (weightFactor > 0) {
+                subPopMarkers[sp].push({ rsid: marker.rsid, trait: marker.trait, contribution: 2.0 * weightFactor, genotype });
+              }
+            } else if (aim && aim.frequencies && code && aim.frequencies[code] !== undefined) {
+              freq = aim.frequencies[code];
+            } else if (marker.frequencies && code && marker.frequencies[code] !== undefined) {
+              freq = marker.frequencies[code];
+            } else if (matchesContinent(marker.continent, topContinent)) {
+              freq = 0.5;
+            }
+
+            const f = Math.max(0.001, Math.min(0.999, freq));
+            const isNamedPop = (!!marker.subpop && marker.subpop.toLowerCase() !== 'general') || !!aim?.subFrequencies;
+            const isHeavy = extendedAnchorRsids.has(rsid) || DOUBLE_WEIGHT_MARKERS.has(rsid);
+            const isTieBreaker = QUADRUPLE_WEIGHT_MARKERS.has(rsid);
+            const weightMultiplier = isTieBreaker ? 5.0 : (isNamedPop ? 3.5 : (isHeavy ? 2.5 : 1.0));
+            
+            let effectiveSignificance = marker.significance;
+            if (isNamedPop) effectiveSignificance = 'High';
+            let significanceWeight = (effectiveSignificance === 'High' ? 3.0 : effectiveSignificance === 'Medium' ? 2.0 : 1.0);
+            
+            const regionalMultiplier = isNamedPop ? 4.0 : 1.0;
+            
+            const subPopFreqs: number[] = [];
+            for (const c of continentsToScore) {
+              const cCode = CONTINENT_TO_CODE[c];
+              let f = 0.01;
+              if (aim && aim.frequencies && cCode && aim.frequencies[cCode] !== undefined) f = aim.frequencies[cCode];
+              else if (marker.frequencies && cCode && marker.frequencies[cCode] !== undefined) f = marker.frequencies[cCode];
+              subPopFreqs.push(f);
+            }
+            const maxF = Math.max(...subPopFreqs);
+            const minF = Math.min(...subPopFreqs);
+            const distributionWeight = 1.0 + (maxF - minF) * 6.0;
+
+            let continentSpecificWeight = 1.0;
+            const sortedSubFreqs = [...subPopFreqs].sort((a, b) => b - a);
+            if (sortedSubFreqs[0] > 0.65 && sortedSubFreqs[1] < 0.1) {
+              continentSpecificWeight = 8.0;
+            }
+
+            const weight = (isPrimary ? 8.0 : 1.0) * (aim?.weight || 1.0) * regionalMultiplier * weightMultiplier * significanceWeight * distributionWeight * continentSpecificWeight;
+
+            const error = userDosage - f;
+            const distSq = weight * (error * error);
+            subPopDistances[topContinent][sp] += distSq;
+            subPopWeights[topContinent][sp] += weight;
+          }
         }
       }
     }
