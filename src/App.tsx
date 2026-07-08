@@ -1869,7 +1869,7 @@ const DebugView = ({ snps, aims, activeDataset }: { snps: SNP[], aims: any[], ac
 
 
 export default function App() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('light');
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   // PWA Register service worker hooks
   const {
