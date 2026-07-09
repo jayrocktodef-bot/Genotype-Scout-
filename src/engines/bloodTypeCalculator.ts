@@ -9,9 +9,7 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
     };
   }
   const oMarker = userSnps['rs8176719']; // O vs non-O
-  const bMarker = userSnps['rs8176747']; // B-specific variant
-  const a2Marker = userSnps['rs8176746']; // A1 vs A2
-  const abDiffMarker = userSnps['rs8176750']; // A/B differentiation
+  const bMarker = userSnps['rs8176747']; // A vs B differentiation
 
   let phenotype = "Unknown";
   
@@ -31,25 +29,18 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
       val.split('').every(c => c === '-' || c === 'D' || c === 'O')
     );
 
-  const isNoCallO = !oMarker || oMarker === '--' || oMarker === '00' || oMarker === 'NN';
+  const isO = oMarker && oMarker !== '--' && oMarker !== '00' && oMarker !== 'NN' && isOVal(oMarker);
+  const hasB = bMarker && bMarker !== '--' && bMarker.includes('C');
+  const hasA = bMarker && bMarker !== '--' && bMarker.includes('G');
 
-  if (!isNoCallO) {
-    if (isOVal(oMarker)) {
-      phenotype = "O";
-    } else {
-      const hasA = (a2Marker && a2Marker !== '--' && (a2Marker.includes('G') || a2Marker.includes('A')));
-      const hasB = (bMarker && bMarker !== '--' && bMarker.includes('C'));
-      if (hasA && hasB) phenotype = "AB";
-      else if (hasA) phenotype = "A";
-      else if (hasB) phenotype = "B";
-    }
-  } else {
-    // If oMarker is missing/no-call but we have A/B indicators
-    const hasA = (a2Marker && a2Marker !== '--' && (a2Marker.includes('G') || a2Marker.includes('A')));
-    const hasB = (bMarker && bMarker !== '--' && bMarker.includes('C'));
-    if (hasA && hasB) phenotype = "AB";
-    else if (hasA) phenotype = "A";
-    else if (hasB) phenotype = "B";
+  if (isO) {
+    phenotype = "O";
+  } else if (hasA && hasB) {
+    phenotype = "AB";
+  } else if (hasA) {
+    phenotype = "A";
+  } else if (hasB) {
+    phenotype = "B";
   }
 
   return {
@@ -64,4 +55,3 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
     }
   };
 }
-
