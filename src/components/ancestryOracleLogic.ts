@@ -190,9 +190,10 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'BASQUE': 'Basque / Southwestern European (BASQUE)',
   'SLAVIC': 'Slavic / Eastern European (SLAVIC)',
   'SCANDINAVIAN': 'Scandinavian / Northern European (SCANDINAVIAN)',
-  'sgdp_saharawi': 'Saharawi / North African (SGDP)',
-  'sgdp_mozabite': 'Mozabite / North African (SGDP)',
-  'hgdp_mozabite': 'Mozabite / North African (HGDP)',
+  'sgdp_saharawi': 'Saharawi / Amazigh Berber (SGDP)',
+  'sgdp_mozabite': 'Mozabite / Amazigh Berber (SGDP)',
+  'hgdp_mozabite': 'Mozabite / Amazigh Berber (HGDP)',
+  'lemba_proxy': 'Lemba / Jewish-Bantu Admixture Proxy (LEM)',
   'sgdp_bedouinb': 'Bedouin / Arabian Peninsula (SGDP)',
   'sgdp_druze': 'Druze / Levant (SGDP)',
   'sgdp_palestinian': 'Palestinian / Levant (SGDP)',
@@ -289,7 +290,7 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'sgdp_bantutswana', 'sgdp_biaka', 'sgdp_mbuti', 'sgdp_khomani_san', 
     'sgdp_ju_hoan_north', 'sgdp_somali', 'sgdp_malagasy', 'sgdp_yoruba', 
     'sgdp_mandenka', 'sgdp_mende', 'sgdp_esan', 'sgdp_gambian', 'sgdp_luhya',
-    'hgdp_yoruba', 'hgdp_mandenka'
+    'hgdp_yoruba', 'hgdp_mandenka', 'lemba_proxy'
   ],
   'AFRAM': [
     'ACB', 'ASW', 'GLL', 'ALFA_AfAm', 'AFRAM_SOUTH', 'AFRAM_NORTHEAST', 
