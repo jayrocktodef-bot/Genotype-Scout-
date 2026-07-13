@@ -16658,5 +16658,1787 @@
     "gene": "Unknown",
     "subPopulation": "European",
     "subRegion": "Europe"
+  },
+  {
+    "rsid": "rs916977_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "HERC2 intronic marker for blue eye color with extreme frequency difference between Europeans and Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "HERC2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs16830500_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP in HERC2 with almost fixed difference between African and European populations",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "HERC2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1079597_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "HERC2 region variant with Fst >0.75 between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "HERC2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs10843344_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic AIM with allele frequency near fixation in Europeans and absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs12593929_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated intergenic SNP between African and European populations",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1468627_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM with strong continental differentiation and Fst >0.75",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs17642714_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Variant near SLC24A5 with near-fixed derived allele in Europeans, ancestral in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC24A5",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs206516_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP in SLC45A2 with almost fixed difference between African and European populations, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC45A2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2179967_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM in POLG region with high allele frequency disparity between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "POLG",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2733831_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "TYRP1 pigmentation AIM showing high differentiation of allele frequencies between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "TYRP1",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2836215_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SLC24A5 region variant with extreme population frequency divergence, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC24A5",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2952768_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP near CYP2B6 with near-fixed allele in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "CYP2B6",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3118327_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SLC45A2 variant with Fst >0.78, highly differentiated between African and European populations",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC45A2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3751631_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Lactase persistence region SNP with large allele frequency difference between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "MCM6",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3793451_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic AIM with strong African vs European differentiation, Fst >0.75",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs4471745_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "ABO blood group region AIM with substantial frequency difference between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "ABO",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs4648336_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP in IGF2BP3 showing near-fixation in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "IGF2BP3",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs642742_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "KITLG pigmentation AIM with significant allele frequency divergence between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "KITLG",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs6494462_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated SNP near EXOC3L4 with Fst ~0.7 between African and European groups",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "EXOC3L4",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs730570_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "HERC2 intronic marker almost fixed in Europeans, ancestral allele in Africans, Fst >0.75",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "HERC2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs735346_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "HERC2 variant with near-fixed derived allele in Europeans, nearly absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "HERC2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs765250_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP in SLC24A5 region with extreme population differentiation, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC24A5",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs780307_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SLC24A5 region AIM with high derived allele frequency in Europeans, ancestral in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC24A5",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs8035124_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SLC45A2 variant with nearly fixed difference between African and European populations, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC45A2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs992873_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP in SLC45A2 near fixation for derived allele in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC45A2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs993295_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "HERC2 marker with extreme allele frequency disparity between African and European populations",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "HERC2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1490413_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated intergenic AIM with Fst >0.75 between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1498112_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP with near-fixed allele in Europeans, very low frequency in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1503766_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM with strong population differentiation, allele frequency differences >0.9",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1559953_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic variant highly differentiated between African and European populations, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1592010_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP showing extreme continental allele frequency divergence, used in AIM panels",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1651852_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative marker with near-fixation in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1871534_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly informative SNP for distinguishing African and European ancestry, Fst >0.7",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2003543_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Variant with large frequency difference between Africans and Europeans, selected as AIM",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2059746_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM with Fst >0.75, derived allele fixed in Europeans, ancestral in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2073812_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic SNP with extreme African vs European population differentiation",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2161492_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative locus with near-fixed derived allele in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2197016_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated intergenic AIM, European frequency ~1.0, African ~0.0",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2236895_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with strong continental divergence, used in standard AIM panels",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2285640_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM from SNPforID panel with large allele frequency difference between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2303790_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Variant exhibiting near-fixation in Europeans, very rare in Africans, Fst >0.7",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2421826_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic marker with Fst >0.8 between African and European groups",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs243044_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP with almost fixed difference between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2493129_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated intergenic AIM, Fst >0.7",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2519733_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with near-fixed derived allele in Europeans, absent in Africans, strong AIM",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2571862_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic variant showing extreme African vs European frequency divergence",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs264922_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative locus with extreme population differentiation, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2727964_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated SNP between African and European populations",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2734642_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM used in forensic panels, showing near-fixation in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2736100_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with strong continental divergence, derived allele frequency ~1.0 in Europeans, ~0.0 in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2742624_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic variant with Fst >0.75 between African and European groups",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs276936_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative marker with near-fixed allele differences",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs280520_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated AIM, European frequency close to fixation, African near zero",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2836437_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with extreme population frequency disparity, Fst >0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2852506_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic AIM showing large African vs European differentiation",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2882096_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Variant with near-fixed derived allele in Europeans, very low in Africans, strong AIM",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs29232_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative SNP with high Fst between Africans and Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs298279_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic marker with almost fixed difference, used in AIM panels",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3010_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated SNP with European frequency ~1.0, African ~0.0",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3091244_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM with strong population frequency divergence, Fst >0.7",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3131974_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic variant with extreme African vs European allele frequency differences",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs321198_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP from forensic AIM panel with high continent-specific differentiation",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs326782_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative locus with near-fixed derived allele in Europeans, absent in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs328842_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated AIM, European frequency >0.95, African <0.05",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs331752_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic SNP with Fst >0.75 between African and European populations",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs337146_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Variant showing near-fixation differences between Africans and Europeans, strong AIM",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs339301_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative marker with extreme continental divergence",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs344081_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with high allele frequency disparity between African and European groups",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs345900_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic AIM with almost fixed derived allele in Europeans, very rare in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs348196_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated variant used in standard ancestry panels",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs350339_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with Fst >0.8, derived allele near fixation in Europeans, ancestral in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs352480_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Ancestry informative locus with extreme population frequency differences",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs35395_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SLC45A2 variant with near-fixed derived allele in Europeans, absent in Africans, Fst ~0.8",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "SLC45A2",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs354074_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic AIM showing large African vs European differentiation",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs358865_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "SNP with derived allele frequency ~1.0 in Europeans, ~0.0 in Africans, strong AIM",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs360412_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly differentiated intergenic variant, Fst >0.75",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3743930_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic marker with extreme continental allele frequency divergence",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3773839_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM with strong population differentiation, used in forensic panels",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs386569_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Highly informative SNP for African vs European ancestry, Fst >0.7",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3914874_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "AIM with extreme population frequency disparity, derived allele fixed in Europeans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs4072405_European",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 8,
+    "frequencies": {
+      "EUR": 0.99,
+      "AFR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "description": "Intergenic locus almost fixed for derived allele in Europeans, ancestral in Africans",
+    "trait": "Ancestry",
+    "category": "Ancestry",
+    "gene": "Intergenic",
+    "subPopulation": "DeepSeek Supplement",
+    "subRegion": "Global"
   }
 ]
