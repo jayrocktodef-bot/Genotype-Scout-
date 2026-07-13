@@ -16,13 +16,14 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
   const [selectedPanel, setSelectedPanel] = useState<PanelType>('all');
+  const [results, setResults] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
-  // Run or inherit Oracle Logic with panel filter
-  const results = useMemo(() => {
+  React.useEffect(() => {
     if (selectedPanel === 'microhap') {
       const userSnps = Object.fromEntries(userGenotypes.map(g => [g.rsid, g.genotype]));
       const mix = deconvolveMicrohaplotypes(userSnps);
-      return {
+      setResults({
         topMatch: mix[0]?.name || 'Unknown',
         subpopAimsUsed: mix.length,
         unmappedAims: [],
@@ -34,12 +35,41 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
           count: mix.length
         })),
         admixtureMix: mix
-      };
+      });
+      setLoading(false);
+      return;
     }
-    if (selectedPanel === 'all' && precalculated) {
-      return precalculated;
+
+    if (precalculated) {
+      if (precalculated[selectedPanel]) {
+        setResults(precalculated[selectedPanel]);
+        setLoading(false);
+        return;
+      }
+      if (selectedPanel === 'all') {
+        setResults(precalculated);
+        setLoading(false);
+        return;
+      }
     }
-    return processSubpopulations(userGenotypes, aimsDatabase, undefined, undefined, selectedPanel);
+
+    let active = true;
+    setLoading(true);
+    processSubpopulations(userGenotypes, aimsDatabase, undefined, undefined, selectedPanel)
+      .then(res => {
+        if (active) {
+          setResults(res);
+          setLoading(false);
+        }
+      })
+      .catch(err => {
+        console.error("Error calculating panel:", err);
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
   }, [userGenotypes, aimsDatabase, precalculated, selectedPanel]);
 
   if (!results) {

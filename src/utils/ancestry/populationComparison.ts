@@ -39,52 +39,68 @@ export async function calculatePopulationProximity(
   const EPSILON = 1e-6;
   const D_MAX = 3.5; // Constant to scale average negative log-likelihood to a 0-100% score
 
+  // Pre-resolve all valid user genotypes that exist in the reference database
+  const firstPop = Object.values(hoReferenceKernel)[0];
+  const refSnpKeys = firstPop ? Object.keys((firstPop as any).frequencies) : [];
+  
+  const activeUserSnps: { rsid: string; rsidLower: string; dosage: number }[] = [];
+
+  for (const rsid of refSnpKeys) {
+    const rsidLower = rsid.toLowerCase();
+    const rawUserCall = normalizedUserSnps[rsidLower];
+    if (!rawUserCall || rawUserCall.length !== 2) continue;
+
+    const marker = (graf10kIndex as any)[rsid] ?? (graf10kIndex as any)[rsid.toUpperCase()];
+    if (!marker || !marker.ref || !marker.alt) continue;
+
+    const ref = marker.ref.toUpperCase();
+    const alt = marker.alt.toUpperCase();
+
+    let allele1 = rawUserCall[0].toUpperCase();
+    let allele2 = rawUserCall[1].toUpperCase();
+
+    // Resolve strand ambiguity
+    if (
+      (allele1 !== ref && allele1 !== alt) ||
+      (allele2 !== ref && allele2 !== alt)
+    ) {
+      const comp1 = complement(allele1);
+      const comp2 = complement(allele2);
+      if (
+        (comp1 === ref || comp1 === alt) &&
+        (comp2 === ref || comp2 === alt)
+      ) {
+        allele1 = comp1;
+        allele2 = comp2;
+      } else {
+        continue;
+      }
+    }
+
+    // Compute dosage of the ALT allele (0, 0.5, or 1.0)
+    let dosage = 0;
+    if (allele1 === alt) dosage += 0.5;
+    if (allele2 === alt) dosage += 0.5;
+
+    activeUserSnps.push({
+      rsid,
+      rsidLower,
+      dosage
+    });
+  }
+
   for (const popCode in hoReferenceKernel) {
     const popData = (hoReferenceKernel as any)[popCode];
     const frequencies: Record<string, number> = popData.frequencies;
     let sumLogP = 0;
     let validMarkers = 0;
 
-    for (const rsid in frequencies) {
-      const refFreq = frequencies[rsid]; // assuming ALT allele frequency
-      const rawUserCall = normalizedUserSnps[rsid.toLowerCase()];
+    for (let i = 0; i < activeUserSnps.length; i++) {
+      const activeSnp = activeUserSnps[i];
+      const refFreq = frequencies[activeSnp.rsid];
+      if (refFreq === undefined || refFreq === -1.0) continue;
 
-      // Require user call to be a valid diploid genotype
-      if (!rawUserCall || rawUserCall.length !== 2) continue;
-
-      const marker = (graf10kIndex as any)[rsid] ?? (graf10kIndex as any)[rsid.toUpperCase()];
-
-      // If we cannot determine the reference/alternate alleles, skip to avoid guessing
-      if (!marker || !marker.ref || !marker.alt) continue;
-
-      const ref = marker.ref.toUpperCase();
-      const alt = marker.alt.toUpperCase();
-
-      let allele1 = rawUserCall[0].toUpperCase();
-      let allele2 = rawUserCall[1].toUpperCase();
-
-      // Resolve strand ambiguity
-      if (
-        (allele1 !== ref && allele1 !== alt) ||
-        (allele2 !== ref && allele2 !== alt)
-      ) {
-        const comp1 = complement(allele1);
-        const comp2 = complement(allele2);
-        if (
-          (comp1 === ref || comp1 === alt) &&
-          (comp2 === ref || comp2 === alt)
-        ) {
-          allele1 = comp1;
-          allele2 = comp2;
-        } else {
-          continue;
-        }
-      }
-
-      // Compute dosage of the ALT allele (0, 0.5, or 1.0)
-      let dosage = 0;
-      if (allele1 === alt) dosage += 0.5;
-      if (allele2 === alt) dosage += 0.5;
+      const dosage = activeSnp.dosage;
 
       // Hardy-Weinberg probability
       const safeP = Math.max(EPSILON, Math.min(refFreq, 1 - EPSILON));

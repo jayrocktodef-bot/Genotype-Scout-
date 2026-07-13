@@ -1476,7 +1476,7 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
     });
   }, [yData]);
 
-  const derivedMarkers = yData.testedMarkers.filter((m: any) => m.isDerived);
+  const derivedMarkers = yData.testedMarkers ? yData.testedMarkers.filter((m: any) => m.isDerived) : [];
   const markerPieData = derivedMarkers.map((m: any) => ({
     name: m.marker,
     branch: (m.branch || 'Unknown').replace("Haplogroup ", ""),
@@ -1583,11 +1583,12 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   matchedTraits: any[]
 }) => {
   const enrichedMtTree = useMemo(() => {
+    if (!mtData) return null;
     return enrichHaplogroupTree(MT_DNA_TREE, mtData.path, mtData.testedMarkers);
-  }, [mtData.path, mtData.testedMarkers]);
+  }, [mtData?.path, mtData?.testedMarkers]);
 
   const findNode = useCallback((name: string, node: any = enrichedMtTree): any | null => {
-    if (node.branchName === name) return node;
+    if (!node || node.branchName === name) return node;
     if (node.children) {
       for (const child of node.children) {
         const found = findNode(name, child);
@@ -1595,7 +1596,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
       }
     }
     return null;
-  }, []);
+  }, [enrichedMtTree]);
 
   const enrichedPath = useMemo(() => {
     if (!mtData) return [];
@@ -1615,7 +1616,7 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
 
   if (!mtData) return null;
 
-  const derivedMarkers = mtData.testedMarkers.filter((m: any) => m.status === 'derived');
+  const derivedMarkers = mtData.testedMarkers ? mtData.testedMarkers.filter((m: any) => m.status === 'derived') : [];
   const markerPieData = derivedMarkers.map((m: any) => {
     const branch = ((mtData.path || []).find((p: string) => p && typeof p === 'string' && p.includes(m.mutation)) || mtData.predicted || 'Root').replace("Haplogroup ", "");
     return {
