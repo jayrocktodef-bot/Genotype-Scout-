@@ -53,48 +53,68 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
   const matchedHaps: Array<{
     id: string;
     observedAllele: string;
+    dosage: number;
     freqs: Record<string, number>;
   }> = [];
 
   // Match user alleles to known microhap regions in the microhap_top100_kernel
   microHapKernel.forEach((hap: any) => {
-    const userAlleles = hap.snps.map((rsid: string) => {
+    const locusAlleles: string[][] = [];
+    let hasAllSnps = true;
+
+    for (const rsid of hap.snps) {
       const g = normalizedSnps[rsid.toLowerCase()];
-      // Check for homozygous call to reconstruct haplotype string
-      if (g && g.length === 2 && g[0] === g[1]) {
-        return g[0];
+      if (!g || g === '--' || g === '00' || g === '??') {
+        hasAllSnps = false;
+        break;
       }
-      return null;
-    });
-
-    if (userAlleles.every((a: string | null) => a !== null)) {
-      const haplotypeString = userAlleles.join(':'); // Format: "A:G:T"
-      
-      // Look up in the larger microhap_db.json
-      const dbEntry = (microHapDb as any)[hap.id];
-      if (dbEntry && dbEntry.alleles) {
-        // Find index of the matching haplotype string
-        const matchIdx = dbEntry.alleles.indexOf(haplotypeString);
-        if (matchIdx !== -1) {
-          // Compile pop frequencies for this allele
-          const freqs: Record<string, number> = {};
-          Object.entries(dbEntry.frequencies).forEach(([pop, freqArray]: [string, any]) => {
-            if (Array.isArray(freqArray)) {
-              freqs[pop] = freqArray[matchIdx] || 0;
-            } else if (typeof freqArray === 'number') {
-              // Fallback for single allele profiles
-              freqs[pop] = freqArray;
-            }
-          });
-
-          matchedHaps.push({
-            id: hap.id,
-            observedAllele: haplotypeString,
-            freqs
-          });
-        }
+      const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
+      const alleles = Array.from(new Set(cleanG.split('')));
+      if (alleles.length === 0) {
+        hasAllSnps = false;
+        break;
       }
+      locusAlleles.push(alleles);
     }
+
+    if (!hasAllSnps) return;
+
+    // Generate Cartesian product of alleles to find all possible haplotype strings
+    const cartesian = (arrays: string[][]): string[][] => {
+      return arrays.reduce((acc, curr) => {
+        return acc.flatMap(d => curr.map(e => [...d, e]));
+      }, [[]] as string[][]);
+    };
+
+    const possibleHaploVectors = cartesian(locusAlleles);
+    const numHaplos = possibleHaploVectors.length;
+    if (numHaplos === 0) return;
+
+    const dosagePerHaplo = 2.0 / numHaplos;
+    const dbEntry = (microHapDb as any)[hap.id];
+    if (!dbEntry || !dbEntry.alleles) return;
+
+    possibleHaploVectors.forEach((vector) => {
+      const haplotypeString = vector.join(':');
+      const matchIdx = dbEntry.alleles.indexOf(haplotypeString);
+      if (matchIdx !== -1) {
+        const freqs: Record<string, number> = {};
+        Object.entries(dbEntry.frequencies).forEach(([pop, freqArray]: [string, any]) => {
+          if (Array.isArray(freqArray)) {
+            freqs[pop] = freqArray[matchIdx] || 0;
+          } else if (typeof freqArray === 'number') {
+            freqs[pop] = freqArray;
+          }
+        });
+
+        matchedHaps.push({
+          id: hap.id,
+          observedAllele: haplotypeString,
+          dosage: dosagePerHaplo,
+          freqs
+        });
+      }
+    });
   });
 
   if (matchedHaps.length === 0) {
@@ -113,8 +133,8 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
   });
   const aimWeights = new Float32Array(M);
 
-  matchedHaps.forEach((h, idx) => {
-    userDosages[idx] = 2.0; // Since we filter for homozygous haplotype reconstructions
+  matchedHaps.forEach((h: any, idx) => {
+    userDosages[idx] = h.dosage;
     aimWeights[idx] = 1.5;
     popCodes.forEach(p => {
       popExpectedDosages[p][idx] = (h.freqs[p] || 0) * 2.0;

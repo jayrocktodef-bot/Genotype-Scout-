@@ -14,6 +14,7 @@ import bloodMarkers from '../data/blood_markers.json' with { type: 'json' };
 import masterHealth from '../data/master_health_pgx.json' with { type: 'json' };
 import { PGX_MARKERS_MAP } from '../engines/health/pypgxEngine';
 import { dietLogic } from '../engines/dietaryCalculator';
+import microHapKernel from '../data/raw_aims/microhap_top100_kernel.json' with { type: 'json' };
 
 export function getMarkerAllowlist(): Set<string> {
   const allowlist = new Set<string>();
@@ -67,6 +68,13 @@ export function getMarkerAllowlist(): Set<string> {
   allowlist.add('rs11545624');
   allowlist.add('rs2075592');
   allowlist.add('rs311103');
+
+  // 1.8 Microhaplotypes
+  microHapKernel.forEach((hap: any) => {
+    if (hap.snps) {
+      hap.snps.forEach((rsid: string) => allowlist.add(rsid.toLowerCase()));
+    }
+  });
 
   // 5. SNP_DB (Health, Traits, etc.)
   SNP_DB.forEach(snp => {
