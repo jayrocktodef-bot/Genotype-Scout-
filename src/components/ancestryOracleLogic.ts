@@ -840,7 +840,7 @@ export async function processSubpopulations(
     popMarkerCounts.set(popCode, M);
     negativeViolations.set(popCode, violations);
 
-    if (M >= 10) {
+    if (M >= 4) {
       // Euclidean Distance calculations vectorized in Float32Array
       const userVector = new Float32Array(M);
       const refVector = new Float32Array(M);
