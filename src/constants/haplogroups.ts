@@ -258,32 +258,38 @@ export const Y_DNA_TREE: HaplogroupNode = {
           ]
         },
         {
+          branchName: "Haplogroup E1b1",
+          snp: ["P2", "rs9785907"],
+          region: "Africa",
+          description: "The ancestor of E1b1a and E1b1b, the two largest E haplogroup lineages. Covers most of Africa and significant portions of the Mediterranean.",
+          children: [
+        {
           branchName: "Haplogroup E1b1a",
-          snp: ["M2", "V38", "rs9785941", "rs9786172", "i4000012", "rs3904", "rs144365313", "rs34767228", "rs2032653"],
+          snp: ["M2", "V38", "rs9785941", "rs9786172", "i4000012", "rs3904", "rs144365313", "rs34767228", "rs2032653", "rs2032584"],
           region: "Sub-Saharan Africa",
           description: "The dominant lineage in Sub-Saharan Africa, strongly associated with the Bantu expansion that spread agriculture and iron-working across Central, Eastern, and Southern Africa over the last 3,000 years.",
           children: [
             {
               branchName: "Haplogroup E1b1a1",
-              snp: ["M180", "rs9786207"],
+              snp: ["M180", "rs9786207", "rs2032601"],
               region: "West/Central Africa",
               description: "The core lineage of the Bantu expansion.",
               children: [
                 {
                   branchName: "Haplogroup E1b1a1a1",
-                  snp: ["U175", "rs34195338"],
+                  snp: ["U175", "rs34195338", "rs7892964"],
                   region: "West/Central Africa",
                   description: "A major lineage across West and Central Africa, common in Nigeria and Ghana.",
                   children: [
                     {
                       branchName: "Haplogroup E1b1a1a1a",
-                      snp: ["U174", "rs34166788"],
+                      snp: ["U174", "rs34166788", "rs9786186"],
                       region: "West Africa",
                       description: "Highly prevalent in West African coastal populations.",
                       children: [
                         {
                           branchName: "Haplogroup E1b1a1a1a1",
-                          snp: ["M191", "P86", "rs9786219", "i4000033", "rs35817812", "rs35191570"],
+                          snp: ["M191", "P86", "rs9786219", "i4000033", "rs35817812", "rs35191570", "rs2032602"],
                           region: "West Africa",
                           description: "Extremely common in West African populations like the Yoruba, Igbo, and Akan. It is also the most frequent lineage among African Americans.",
                           children: [
@@ -399,13 +405,13 @@ export const Y_DNA_TREE: HaplogroupNode = {
         },
         {
           branchName: "Haplogroup E1b1b",
-          snp: ["M215", "M35", "rs2032654", "rs375228668", "rs28357984", "L539", "PF2431"],
+          snp: ["M215", "M35", "rs2032654", "rs375228668", "rs28357984", "L539", "PF2431", "rs2032598"],
           region: "North Africa / Horn of Africa / Mediterranean",
           description: "A major lineage in North Africa, the Horn of Africa, and the Mediterranean. It is associated with the spread of Afroasiatic languages and early farming movements into Europe.",
           children: [
             {
               branchName: "Haplogroup E1b1b1",
-              snp: ["M35", "rs28357984", "i4000018", "rs9306842"],
+              snp: ["M35", "rs28357984", "i4000018", "rs9306842", "rs2032620"],
               region: "North Africa / Horn of Africa",
               description: "The primary branch of E1b1b.",
               children: [
@@ -417,13 +423,13 @@ export const Y_DNA_TREE: HaplogroupNode = {
                   children: [
                     {
                       branchName: "Haplogroup E1b1b1a1",
-                      snp: ["M78", "rs9305888", "i4000024", "V12", "V13", "V22", "V65"],
+                      snp: ["M78", "rs9305888", "i4000024", "V12", "V13", "V22", "V65", "rs2032640"],
                       region: "North Africa / Balkans",
                       description: "Widespread in North Africa and the Balkans. It is believed to have originated in Northeast Africa.",
                       children: [
                         { 
                           branchName: "Haplogroup E1b1b1a1a", 
-                          snp: ["V12", "rs148064093"],
+                          snp: ["V12", "rs148064093", "rs730248"],
                           region: "Egypt / Sudan",
                           description: "The most common subclade in Southern Egypt and Sudan.",
                           children: [
@@ -443,7 +449,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         },
                         { 
                           branchName: "Haplogroup E1b1b1a1b", 
-                          snp: ["V13", "rs11800462", "rs144618774"],
+                          snp: ["V13", "rs11800462", "rs144618774", "rs1972775"],
                           region: "Balkans / Europe",
                           description: "The most common E1b1b branch in Europe, particularly in the Balkans (Albania, Greece, Kosovo). It is associated with the expansion of farming and later Bronze/Iron Age movements in Southeast Europe.",
                           children: [
@@ -463,7 +469,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                         },
                         { 
                           branchName: "Haplogroup E1b1b1a1c", 
-                          snp: ["V22", "rs149747468", "rs17306812"],
+                          snp: ["V22", "rs149747468", "rs17306812", "rs1321814"],
                           region: "Egypt / Levant",
                           description: "Common in Egypt, the Levant, and the Arabian Peninsula."
                         },
@@ -491,7 +497,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                 },
                 {
                   branchName: "Haplogroup E1b1b1b1",
-                  snp: ["M81", "rs9786119", "i4000019", "M183", "L19"],
+                  snp: ["M81", "rs9786119", "i4000019", "M183", "L19", "rs2032595"],
                   region: "Northwest Africa (Maghreb)",
                   description: "The 'Berber' marker, found at very high frequencies among Berber-speaking populations in Morocco, Algeria, and Tunisia. It is almost entirely restricted to Northwest Africa.",
                   children: [
@@ -511,7 +517,7 @@ export const Y_DNA_TREE: HaplogroupNode = {
                 },
                 {
                   branchName: "Haplogroup E1b1b1c",
-                  snp: ["M123", "rs2032655", "i4000020"],
+                  snp: ["M123", "rs2032655", "i4000020", "rs17269816"],
                   region: "Levant / Near East",
                   description: "Common in the Levant (Palestine, Lebanon, Israel) and found at low frequencies in Southern Europe.",
                   children: [
@@ -519,7 +525,15 @@ export const Y_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup E1b1b1c1", 
                       snp: ["M34"],
                       region: "Levant",
-                      description: "The primary subclade of E-M123."
+                      description: "The primary subclade of E-M123.",
+                      children: [
+                        {
+                          branchName: "Haplogroup E1b1b1c1b",
+                          snp: ["M84", "rs2032643"],
+                          region: "Levant / Anatolia",
+                          description: "Found in the Eastern Mediterranean, particularly in Turkey, Syria, and Lebanon."
+                        }
+                      ]
                     }
                   ]
                 },
@@ -545,9 +559,11 @@ export const Y_DNA_TREE: HaplogroupNode = {
             }
           ]
         },
+          ]
+        },
         { 
           branchName: "Haplogroup E2", 
-          snp: ["M75", "rs9786142", "i4000022"],
+          snp: ["M75", "rs9786142", "i4000022", "rs2032633"],
           region: "East/Southern Africa",
           description: "Found primarily in East and Southern Africa.",
           children: [
@@ -783,95 +799,159 @@ export const Y_DNA_TREE: HaplogroupNode = {
     },
     {
       branchName: "Haplogroup R",
-      snp: ["M207", "i4000028"],
+      snp: ["M207", "i4000028", "rs2032634"],
       region: "Europe / South Asia / Central Asia",
       description: "The most common paternal lineage in Western Eurasia, split into two major branches that dominate Europe and South Asia respectively.",
       children: [
         {
-          branchName: "Haplogroup R1a",
-          snp: ["M420", "L146"],
-          region: "Eastern Europe / South Asia / Central Asia",
-          description: "Associated with the expansion of Indo-European languages.",
+          branchName: "Haplogroup R1",
+          snp: ["M173", "rs2032624"],
+          region: "Eurasia",
+          description: "The ancestor of both R1a and R1b, the two most widespread paternal lineages in Western Eurasia.",
           children: [
-            { 
-              branchName: "Haplogroup R1a1", 
-              snp: ["SRY10831.2", "M17", "M198", "rs2032657", "i4000056"],
-              region: "Eastern Europe / South Asia",
-              description: "The most common branch of R1a.",
+            {
+              branchName: "Haplogroup R1a",
+              snp: ["M420", "L146", "rs17316187"],
+              region: "Eastern Europe / South Asia / Central Asia",
+              description: "Associated with the expansion of Indo-European languages.",
               children: [
-                {
-                  branchName: "Haplogroup R1a-Z93",
-                  snp: ["Z93", "Z94", "rs34614619"],
-                  region: "South Asia / Central Asia",
-                  description: "The 'Indo-Aryan' branch of R1a, dominant among Indo-European speaking populations of the Indian subcontinent and Central Asia."
-                },
-                {
-                  branchName: "Haplogroup R1a-Z282",
-                  snp: ["Z282", "rs756128035"],
-                  region: "Eastern/Central Europe",
-                  description: "The Balto-Slavic branch of R1a, dominant in Eastern Europe and Scandinavia.",
+                { 
+                  branchName: "Haplogroup R1a1", 
+                  snp: ["SRY10831.2", "M17", "M198", "rs2032657", "i4000056", "rs3908"],
+                  region: "Eastern Europe / South Asia",
+                  description: "The most common branch of R1a.",
                   children: [
                     {
-                      branchName: "Haplogroup R1a-M458",
-                      snp: ["M458", "rs375498877"],
-                      region: "Central/Eastern Europe",
-                      description: "A major Slavic subclade of R1a, highly frequent in Poland, the Czech Republic, and Slovakia."
-                    },
-                    {
-                      branchName: "Haplogroup R1a-Z280",
-                      snp: ["Z280", "rs756128035"],
-                      region: "Eastern Europe / Balto-Slavic",
-                      description: "A major Balto-Slavic branch of R1a, common across Eastern Europe and the Baltic states."
+                      branchName: "Haplogroup R1a1a1",
+                      snp: ["M417", "rs17222146"],
+                      region: "Eastern Europe / Central Asia",
+                      description: "The major post-LGM expansion branch of R1a, ancestral to both the European (Z282) and Asian (Z93) branches.",
+                      children: [
+                        {
+                          branchName: "Haplogroup R1a-Z93",
+                          snp: ["Z93", "Z94", "rs34614619", "rs33941657"],
+                          region: "South Asia / Central Asia",
+                          description: "The 'Indo-Aryan' branch of R1a, dominant among Indo-European speaking populations of the Indian subcontinent and Central Asia."
+                        },
+                        {
+                          branchName: "Haplogroup R1a-Z282",
+                          snp: ["Z282", "rs756128035", "rs34492041"],
+                          region: "Eastern/Central Europe",
+                          description: "The Balto-Slavic branch of R1a, dominant in Eastern Europe and Scandinavia.",
+                          children: [
+                            {
+                              branchName: "Haplogroup R1a-M458",
+                              snp: ["M458", "rs375498877", "rs34351054"],
+                              region: "Central/Eastern Europe",
+                              description: "A major Slavic subclade of R1a, highly frequent in Poland, the Czech Republic, and Slovakia."
+                            },
+                            {
+                              branchName: "Haplogroup R1a-Z280",
+                              snp: ["Z280", "rs756128035", "rs35744690"],
+                              region: "Eastern Europe / Balto-Slavic",
+                              description: "A major Balto-Slavic branch of R1a, common across Eastern Europe and the Baltic states."
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          branchName: "Haplogroup R1b",
-          snp: ["M343", "i4000029"],
-          region: "Western Europe / Central Africa",
-          description: "The dominant lineage of Western Europe, found in over 80% of men in Ireland, Scotland, and Wales. Also found in a unique branch in Central Africa (Chad/Cameroon).",
-          children: [
+            },
             {
-              branchName: "Haplogroup R1b1a2",
-              snp: ["M269", "rs2032658", "i4000057"],
-              region: "Western Europe",
-              description: "The primary branch of R1b in Europe.",
+              branchName: "Haplogroup R1b",
+              snp: ["M343", "i4000029", "rs9786184"],
+              region: "Western Europe / Central Africa",
+              description: "The dominant lineage of Western Europe, found in over 80% of men in Ireland, Scotland, and Wales. Also found in a unique branch in Central Africa (Chad/Cameroon).",
               children: [
-                { 
-                  branchName: "Haplogroup R1b-L21", 
-                  snp: ["L21"],
-                  region: "British Isles / France",
-                  description: "The 'Celtic' marker, dominant in Ireland and Britain."
-                },
-                { 
-                  branchName: "Haplogroup R1b-U152", 
-                  snp: ["U152"],
-                  region: "Central Europe / Italy",
-                  description: "The 'Italo-Celtic' marker, common in the Alps and Italy."
-                },
-                { 
-                  branchName: "Haplogroup R1b-U106", 
-                  snp: ["U106"],
-                  region: "Northern Europe / Germany",
-                  description: "The 'Germanic' marker, common in Germany, the Netherlands, and England."
-                },
                 {
-                  branchName: "Haplogroup R1b-DF27",
-                  snp: ["DF27", "rs758888062"],
-                  region: "Southwestern Europe / Iberia",
-                  description: "Known as the Iberian R1b branch, highly concentrated in Spain, Portugal, and southern France."
+                  branchName: "Haplogroup R1b1",
+                  snp: ["P25", "rs150173", "L278"],
+                  region: "Eurasia",
+                  description: "The major branch of R1b, ancestral to both the European M269 and African V88 lineages.",
+                  children: [
+                    {
+                      branchName: "Haplogroup R1b1a2",
+                      snp: ["M269", "rs2032658", "i4000057"],
+                      region: "Western Europe",
+                      description: "The primary branch of R1b in Europe.",
+                      children: [
+                        {
+                          branchName: "Haplogroup R1b-L23",
+                          snp: ["L23", "rs2734"],
+                          region: "Western Asia / Eastern Europe",
+                          description: "Found in Anatolia, the Caucasus, and the Pontic Steppe. The ancestor of all Western European R1b-M269 branches.",
+                          children: [
+                            {
+                              branchName: "Haplogroup R1b-L51",
+                              snp: ["L51", "rs9785979"],
+                              region: "Europe",
+                              description: "The primary European expansion branch. Ancestral to the Bell Beaker and later Bronze Age expansions.",
+                              children: [
+                                {
+                                  branchName: "Haplogroup R1b-L151",
+                                  snp: ["L151", "rs2566678", "P310"],
+                                  region: "Western Europe",
+                                  description: "The major Western European branch, splitting into the U106 (Germanic) and P312 (Celtic/Italic) lineages.",
+                                  children: [
+                                    { 
+                                      branchName: "Haplogroup R1b-U106", 
+                                      snp: ["U106", "rs16981293", "S21"],
+                                      region: "Northern Europe / Germany",
+                                      description: "The 'Germanic' marker, common in Germany, the Netherlands, and England."
+                                    },
+                                    {
+                                      branchName: "Haplogroup R1b-P312",
+                                      snp: ["P312", "rs34276300", "S116"],
+                                      region: "Western Europe",
+                                      description: "The dominant branch of R1b in France, Spain, and the British Isles. Ancestral to L21, U152, and DF27.",
+                                      children: [
+                                        { 
+                                          branchName: "Haplogroup R1b-L21", 
+                                          snp: ["L21", "rs11799226", "S145"],
+                                          region: "British Isles / France",
+                                          description: "The 'Celtic' marker, dominant in Ireland and Britain."
+                                        },
+                                        { 
+                                          branchName: "Haplogroup R1b-U152", 
+                                          snp: ["U152", "rs1236440", "S28"],
+                                          region: "Central Europe / Italy",
+                                          description: "The 'Italo-Celtic' marker, common in the Alps and Italy.",
+                                          children: [
+                                            {
+                                              branchName: "Haplogroup R1b-L2",
+                                              snp: ["L2", "rs2566671"],
+                                              region: "Italy / Alps",
+                                              description: "A major subclade of U152, common in Northern Italy."
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          branchName: "Haplogroup R1b-DF27",
+                                          snp: ["DF27", "rs758888062", "rs12936169"],
+                                          region: "Southwestern Europe / Iberia",
+                                          description: "Known as the Iberian R1b branch, highly concentrated in Spain, Portugal, and southern France."
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    { 
+                      branchName: "Haplogroup R1b1c", 
+                      snp: ["V88"],
+                      region: "Central Africa",
+                      description: "A unique branch of R1b found at high frequencies in the Lake Chad basin, representing an ancient back-migration to Africa."
+                    }
+                  ]
                 }
               ]
-            },
-            { 
-              branchName: "Haplogroup R1b1c", 
-              snp: ["V88"],
-              region: "Central Africa",
-              description: "A unique branch of R1b found at high frequencies in the Lake Chad basin, representing an ancient back-migration to Africa."
             }
           ]
         }
