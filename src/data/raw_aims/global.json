@@ -1624,5 +1624,505 @@
     "description": "Separates African from Oceanian populations; near fixation AFR, very low others",
     "subPopulation": "Global",
     "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1076_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.12,
+      "EAS": 0.06,
+      "AMR": 0.1,
+      "SAS": 0.95,
+      "MENA": 0.15,
+      "OCE": 0.07
+    },
+    "description": "Separates South Asian ancestry from all other continental groups",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1077_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.92,
+      "EAS": 0.1,
+      "AMR": 0.45,
+      "SAS": 0.18,
+      "MENA": 0.32,
+      "OCE": 0.08
+    },
+    "description": "Separates European from Middle Eastern and South Asian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1078_AFR",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.03,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.02,
+      "MENA": 0.12,
+      "OCE": 0.04
+    },
+    "description": "Distinguishes sub-Saharan African from non-African populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1079_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.07,
+      "EUR": 0.14,
+      "EAS": 0.96,
+      "AMR": 0.22,
+      "SAS": 0.11,
+      "MENA": 0.08,
+      "OCE": 0.25
+    },
+    "description": "Separates East Asian ancestry from South Asian and Oceanian populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1080_MEN",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.25,
+      "EUR": 0.3,
+      "EAS": 0.05,
+      "AMR": 0.18,
+      "SAS": 0.2,
+      "MENA": 0.94,
+      "OCE": 0.09
+    },
+    "description": "Differentiates Middle Eastern/North African from European and South Asian groups",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1081_AMR",
+    "region": "American (Native)",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.1,
+      "EAS": 0.24,
+      "AMR": 0.93,
+      "SAS": 0.06,
+      "MENA": 0.12,
+      "OCE": 0.15
+    },
+    "description": "Separates Native American ancestry from East Asian and European components",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1082_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.08,
+      "EAS": 0.22,
+      "AMR": 0.14,
+      "SAS": 0.1,
+      "MENA": 0.05,
+      "OCE": 0.96
+    },
+    "description": "Distinguishes Oceanian (Melanesian) ancestry from East Asian and South Asian",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1083_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.3,
+      "EAS": 0.14,
+      "AMR": 0.18,
+      "SAS": 0.85,
+      "MENA": 0.35,
+      "OCE": 0.16
+    },
+    "description": "Separates South Asian from European and Middle Eastern populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1084_EUR",
+    "region": "European",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.09,
+      "EUR": 0.88,
+      "EAS": 0.05,
+      "AMR": 0.42,
+      "SAS": 0.22,
+      "MENA": 0.28,
+      "OCE": 0.07
+    },
+    "description": "Differentiates European ancestry from Middle Eastern and South Asian",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1085_AFR",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.9,
+      "EUR": 0.06,
+      "EAS": 0.02,
+      "AMR": 0.09,
+      "SAS": 0.04,
+      "MENA": 0.18,
+      "OCE": 0.05
+    },
+    "description": "Separates African ancestry from Middle Eastern and European populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1086_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.05,
+      "EAS": 0.92,
+      "AMR": 0.2,
+      "SAS": 0.12,
+      "MENA": 0.07,
+      "OCE": 0.32
+    },
+    "description": "Distinguishes East Asian from South Asian and Oceanian components",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1087_MEN",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.22,
+      "EUR": 0.18,
+      "EAS": 0.04,
+      "AMR": 0.11,
+      "SAS": 0.16,
+      "MENA": 0.91,
+      "OCE": 0.06
+    },
+    "description": "Separates Middle Eastern/North African from South Asian and European ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1088_AMR",
+    "region": "American (Native)",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.03,
+      "EUR": 0.13,
+      "EAS": 0.18,
+      "AMR": 0.9,
+      "SAS": 0.08,
+      "MENA": 0.09,
+      "OCE": 0.19
+    },
+    "description": "Differentiates Native American ancestry from East Asian and Oceanian groups",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1089_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.12,
+      "EAS": 0.28,
+      "AMR": 0.16,
+      "SAS": 0.14,
+      "MENA": 0.1,
+      "OCE": 0.97
+    },
+    "description": "Separates Oceanian (Papuan) ancestry from East Asian and South Asian populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1090_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.11,
+      "EUR": 0.18,
+      "EAS": 0.07,
+      "AMR": 0.15,
+      "SAS": 0.89,
+      "MENA": 0.22,
+      "OCE": 0.09
+    },
+    "description": "Distinguishes South Asian from Middle Eastern and European ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1091_EUR",
+    "region": "European",
+    "alleles": [
+      "C"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.86,
+      "EAS": 0.12,
+      "AMR": 0.38,
+      "SAS": 0.24,
+      "MENA": 0.36,
+      "OCE": 0.15
+    },
+    "description": "Separates European from South Asian and Middle Eastern populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1092_AFR",
+    "region": "African",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.05,
+      "EAS": 0.02,
+      "AMR": 0.07,
+      "SAS": 0.06,
+      "MENA": 0.14,
+      "OCE": 0.03
+    },
+    "description": "Differentiates African from East Asian and Oceanian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1093_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.09,
+      "EAS": 0.98,
+      "AMR": 0.17,
+      "SAS": 0.08,
+      "MENA": 0.06,
+      "OCE": 0.21
+    },
+    "description": "Separates East Asian ancestry from Oceanian and Native American components",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1094_MEN",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.26,
+      "EUR": 0.34,
+      "EAS": 0.06,
+      "AMR": 0.2,
+      "SAS": 0.18,
+      "MENA": 0.93,
+      "OCE": 0.07
+    },
+    "description": "Differentiates Middle Eastern/North African from African and European populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1095_AMR",
+    "region": "American (Native)",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.11,
+      "EAS": 0.22,
+      "AMR": 0.92,
+      "SAS": 0.09,
+      "MENA": 0.14,
+      "OCE": 0.18
+    },
+    "description": "Separates Native American ancestry from European and East Asian groups",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1096_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "G"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.07,
+      "EUR": 0.1,
+      "EAS": 0.19,
+      "AMR": 0.12,
+      "SAS": 0.13,
+      "MENA": 0.08,
+      "OCE": 0.92
+    },
+    "description": "Distinguishes Oceanian ancestry from South Asian and East Asian populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1097_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 3,
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.24,
+      "EAS": 0.09,
+      "AMR": 0.16,
+      "SAS": 0.84,
+      "MENA": 0.29,
+      "OCE": 0.11
+    },
+    "description": "Separates South Asian from Middle Eastern and European ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1098_EUR",
+    "region": "European",
+    "alleles": [
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.03,
+      "EUR": 0.95,
+      "EAS": 0.08,
+      "AMR": 0.41,
+      "SAS": 0.17,
+      "MENA": 0.31,
+      "OCE": 0.1
+    },
+    "description": "Differentiates European from East Asian and South Asian populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1099_AFR",
+    "region": "African",
+    "alleles": [
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.04,
+      "EAS": 0.01,
+      "AMR": 0.06,
+      "SAS": 0.03,
+      "MENA": 0.11,
+      "OCE": 0.05
+    },
+    "description": "Separates African ancestry from Oceanian and Middle Eastern populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1100_AMR",
+    "region": "American (Native)",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.14,
+      "EAS": 0.2,
+      "AMR": 0.94,
+      "SAS": 0.11,
+      "MENA": 0.15,
+      "OCE": 0.13
+    },
+    "description": "Distinguishes Native American ancestry from European and East Asian components",
+    "subPopulation": "Global",
+    "subRegion": "Global"
   }
 ]
