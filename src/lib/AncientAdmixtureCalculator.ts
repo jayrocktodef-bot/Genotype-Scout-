@@ -108,50 +108,69 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
     if (genotype[1] === alt) uDosage++;
 
     // Compile expected dosages for all clades
-    const popExpectations: number[] = Array(clades.length).fill(0);
-    let validCount = 0;
+    const popExpectations: number[] = [];
+    let validAll = true;
 
-    clades.forEach((clade, idx) => {
-      let freq = 0.5; // fallback prior
+    for (let idx = 0; idx < clades.length; idx++) {
+      const clade = clades[idx];
+      let freq: number | undefined;
 
       if (clade === "WHG" || clade === "EEF" || clade === "Yamnaya") {
         const cladeFreqs = (ancientCladesFrequencies as any)[rsid] || (ancientCladesFrequencies as any)[rsid.toLowerCase()];
-        if (cladeFreqs && cladeFreqs[clade] !== undefined) {
-          freq = cladeFreqs[clade];
-          validCount++;
+        freq = cladeFreqs?.[clade];
+        if (freq === undefined) {
+          validAll = false;
+          break;
         }
       } else if (clade === "Ancient_East_Asian") {
         const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
-        if (w) {
-          const han = w["sgdp_han"] ?? 0.5;
-          const jpt = w["sgdp_japanese"] ?? 0.5;
-          const dai = w["sgdp_dai"] ?? 0.5;
-          freq = (han + jpt + dai) / 3.0;
-          validCount++;
+        if (!w) {
+          validAll = false;
+          break;
         }
+        const proxies = [w.sgdp_han, w.sgdp_japanese, w.sgdp_dai].filter(v => v !== undefined);
+        if (proxies.length === 0) {
+          validAll = false;
+          break;
+        }
+        freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
       } else if (clade === "Ancient_African") {
         const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
-        if (w) {
-          const yri = w["sgdp_yoruba"] ?? 0.5;
-          const mbuti = w["sgdp_mbuti"] ?? 0.5;
-          const san = w["sgdp_khomani_san"] ?? 0.5;
-          freq = (yri + mbuti + san) / 3.0;
-          validCount++;
+        if (!w) {
+          validAll = false;
+          break;
         }
+        const proxies = [w.sgdp_yoruba, w.sgdp_mbuti, w.sgdp_khomani_san].filter(v => v !== undefined);
+        if (proxies.length === 0) {
+          validAll = false;
+          break;
+        }
+        freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
       } else if (clade === "Oceanian") {
         const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
-        if (w) {
-          const papuan = w["sgdp_papuan"] ?? w["sgdp_papuan.dg"] ?? 0.5;
-          const boug = w["sgdp_bougainville"] ?? w["sgdp_bougainville.dg"] ?? 0.5;
-          freq = (papuan + boug) / 2.0;
-          validCount++;
+        if (!w) {
+          validAll = false;
+          break;
         }
+        const papuan = w.sgdp_papuan ?? w["sgdp_papuan.dg"];
+        const boug = w.sgdp_bougainville ?? w["sgdp_bougainville.dg"];
+        const proxies = [papuan, boug].filter(v => v !== undefined);
+        if (proxies.length === 0) {
+          validAll = false;
+          break;
+        }
+        freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
       }
 
-      popExpectations[idx] = freq * 2.0; // expected continuous dosage [0, 2]
-    });
+      if (freq === undefined) {
+        validAll = false;
+        break;
+      }
 
-    if (validCount > 0) {
+      popExpectations.push(freq * 2.0); // expected continuous dosage [0, 2]
+    }
+
+    if (validAll) {
       A.push(popExpectations);
       b.push(uDosage);
       weights.push(1.0); // uniform weight for global ancient markers
@@ -166,7 +185,7 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
 
   // To enforce sum(proportions) = 1, augment with a heavily weighted constraint row
   const P = clades.length;
-  const LAMBDA = 1000;
+  const LAMBDA = 1000 * markersCompared; // dynamically scaled penalty
   const A_aug = [...A];
   const b_aug = [...b];
   const w_aug = [...weights];
@@ -207,6 +226,7 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
   
   let comparedMarkers = 0;
   let carriedAlleles = 0;
+  let totalMaxPossible = 0;
   const details: ArchaicVariantDetail[] = [];
 
   markersList.forEach(([rsid, marker]) => {
@@ -219,18 +239,25 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
     if (!userGenotype || userGenotype === '--') return;
 
     comparedMarkers++;
-    const derivedAllele = marker.derived_allele;
-    const ancestralAllele = marker.ancestral_allele || '';
+    const derivedAllele = marker.derived_allele.toUpperCase();
+    const ancestralAllele = (marker.ancestral_allele || '').toUpperCase();
+    const normUser = userGenotype.toUpperCase();
 
     let userCarriedCount = 0;
-    if (userGenotype.length === 1) {
-      if (userGenotype === derivedAllele) userCarriedCount = 2;
-    } else if (userGenotype.length === 2) {
-      if (userGenotype[0] === derivedAllele) userCarriedCount++;
-      if (userGenotype[1] === derivedAllele) userCarriedCount++;
+    let maxForThisMarker = 2;
+
+    if (normUser.length === 1) {
+      if (normUser === derivedAllele) userCarriedCount = 1;
+      maxForThisMarker = 1;
+    } else if (normUser.length === 2) {
+      if (normUser[0] === derivedAllele) userCarriedCount++;
+      if (normUser[1] === derivedAllele) userCarriedCount++;
+    } else {
+      maxForThisMarker = 0;
     }
 
     carriedAlleles += userCarriedCount;
+    totalMaxPossible += maxForThisMarker;
     const hasDerived = userCarriedCount > 0;
 
     details.push({
@@ -238,16 +265,15 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
       gene: marker.gene || 'Unknown',
       trait: marker.trait || 'Archaic Variant',
       userGenotype,
-      derivedAllele,
-      ancestralAllele,
+      derivedAllele: marker.derived_allele,
+      ancestralAllele: marker.ancestral_allele || '',
       source: source as 'Neanderthal' | 'Denisovan',
       hasDerived,
       history: marker.history || ''
     });
   });
 
-  const maxPossible = 2 * comparedMarkers;
-  const score = maxPossible > 0 ? (carriedAlleles / maxPossible) * 100 : 0;
+  const score = totalMaxPossible > 0 ? (carriedAlleles / totalMaxPossible) * 100 : 0;
 
   return {
     score,
@@ -298,26 +324,31 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
     Object.entries(sampleSnps).forEach(([rsid, sampleGenotype]) => {
       const userGenotype = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
       if (userGenotype && sampleGenotype) {
+        const normUser = (userGenotype as string).toUpperCase();
+        const normSample = (sampleGenotype as string).toUpperCase();
+        if (normUser.length !== 2 || normSample.length !== 2) return;
+
         markersCompared++;
         const weight = markerImportance[rsid] || 1.0;
         
         let distance = 0;
-        const u = (userGenotype as string).split('');
-        const s = (sampleGenotype as string).split('');
-        
-        if (userGenotype === sampleGenotype) {
+        if (normUser === normSample) {
           distance = 0;
         } else {
-          const shared = u.filter((allele) => {
-            const matchIndex = s.indexOf(allele);
-            if (matchIndex !== -1) {
-              s.splice(matchIndex, 1);
-              return true;
+          let shared = 0;
+          const sampleCounts: Record<string, number> = {};
+          for (let i = 0; i < normSample.length; i++) {
+            const a = normSample[i];
+            sampleCounts[a] = (sampleCounts[a] || 0) + 1;
+          }
+          for (let i = 0; i < normUser.length; i++) {
+            const a = normUser[i];
+            if (sampleCounts[a] && sampleCounts[a] > 0) {
+              shared++;
+              sampleCounts[a]--;
             }
-            return false;
-          });
-          
-          distance = 2 - shared.length;
+          }
+          distance = 2 - shared;
         }
         
         weightedDistance += distance * weight;
@@ -331,7 +362,7 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
       : 0;
     
     return {
-      popCode: sample.id,
+      popCode: sample.id || sample.sampleId,
       popName: sample.name,
       score: affinity,
       distance: weightedDistance,
@@ -339,8 +370,9 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
       period: sample.period,
       region: sample.region,
       matchingMarkers: Object.keys(sampleSnps).filter(rsid => {
-        const uG = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
-        return uG && uG === sampleSnps[rsid];
+        const uG = (userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()])?.toUpperCase();
+        const sG = (sampleSnps[rsid] as string)?.toUpperCase();
+        return uG && sG && uG === sG;
       }).length,
       markersCompared: markersCompared,
       culture: sample.culture_name || sample.culture,
