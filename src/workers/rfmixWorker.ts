@@ -150,11 +150,11 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
 
                 // Try Wasm first, otherwise use optimized TypeScript
                 if (wasmEngine || await initWasmEngine()) {
-                    const resultView = wasmEngine.processChromosome(
+                    const resultView = wasmEngine.smooth(
                         rawProbs,
-                        new Float32Array(nPopulations).fill(1/nPopulations),
                         nWindows,
-                        nPopulations
+                        nPopulations,
+                        smoothness
                     );
                     const result = new Float32Array(resultView).slice();
                     (self as any).postMessage({ type: 'SUCCESS', result: result, nWindows, nPopulations }, [result.buffer]);
@@ -188,7 +188,7 @@ self.onmessage = async (e: MessageEvent<RFMixTask>) => {
                     let result: Float32Array;
 
                     if (wasmEngine || await initWasmEngine()) {
-                        const resultView = wasmEngine.processChromosome(rawProbs, new Float32Array(populations.length).fill(1/populations.length), nWindows, populations.length);
+                        const resultView = wasmEngine.smooth(rawProbs, nWindows, populations.length, transitionProbs);
                         result = new Float32Array(resultView).slice();
                     } else {
                         result = RFMixTypeScript.smooth(rawProbs, nWindows, populations.length, transitionProbs);
