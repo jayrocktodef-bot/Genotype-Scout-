@@ -694,7 +694,9 @@ export async function processSubpopulations(
 
   // Get active reference SNPs that the user actually has
   const firstPop = Object.values(referenceDatabase)[0];
-  const refSnpKeys = firstPop ? Object.keys(firstPop.frequencies) : [];
+  const referenceKeys = firstPop ? Object.keys(firstPop.frequencies) : [];
+  // Merge reference keys with all keys from the master database to include new tiebreaker AIMs
+  const refSnpKeys = Array.from(new Set([...referenceKeys, ...Object.keys(normalizedDatabase)]));
   const activeRefSnps: { rsid: string; rsidLower: string; meta: any; userDosage: number }[] = [];
 
   for (const rsid of refSnpKeys) {
@@ -732,6 +734,9 @@ export async function processSubpopulations(
       userDosage: userDosageDiscrete
     });
   }
+
+  // Pre-populate usedAimsSet with all active reference SNPs that the user has
+  activeRefSnps.forEach(s => usedAimsSet.add(s.rsidLower));
 
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
