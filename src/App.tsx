@@ -1165,82 +1165,7 @@ const formatPopName = (name: string) => {
   return MODERN_POP_NAMES[name] || name.replace(/-/g, ' ');
 };
 
-const SubpopulationAffinity = ({ oracleResults }: { oracleResults: any }) => {
-  const subPopulations = oracleResults?.primary?.subPopulations || {};
-  const allPops = Object.values(subPopulations).flat()
-    .sort((a: any, b: any) => a.distance - b.distance) // Sort by distance ascending (closer first)
-    .slice(0, 5);
-  
-  return (
-    <div className="bg-white dark:bg-slate-800/50 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">🧬</div>
-          <div>
-            <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 uppercase tracking-tight">Subpopulation Affinity</h3>
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">Similarity to reference populations</p>
-          </div>
-        </div>
-        <div className="text-[10px] text-slate-400 font-mono bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">Ancestry Analysis</div>
-      </div>
 
-      <div className="space-y-6">
-        {allPops.length > 0 ? allPops.map((pop: any, idx) => {
-          // Calculate a "Closeness" percentage for the progress bar based on distance
-          // Distance < 2 is very close, > 10 is far.
-          const maxDistance = 20;
-          const closeness = Math.max(0, 100 - (pop.distance / maxDistance) * 100);
-          
-          return (
-            <motion.div 
-              key={pop.name}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className="space-y-2 group"
-            >
-              <div className="flex justify-between items-end">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 w-4">{idx + 1}</span>
-                  <span className="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-emerald-600 transition-colors">{formatPopName(pop.name)}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="text-right">
-                    <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Distance</div>
-                    <div className="text-sm font-mono font-black text-slate-700 dark:text-slate-300">{(pop.distance || 0).toFixed(3)}</div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative h-2 bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden border border-slate-200 dark:border-slate-800">
-                <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: `${closeness}%` }}
-                  transition={{ duration: 1, ease: "easeOut", delay: 0.5 + idx * 0.1 }}
-                  className={`absolute top-0 left-0 h-full rounded-full ${
-                    pop.distance < 3 ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]' : 
-                    pop.distance < 6 ? 'bg-blue-500' : 'bg-slate-400'
-                  }`}
-                />
-              </div>
-            </motion.div>
-          );
-        }) : (
-          <div className="py-12 text-center">
-            <div className="text-4xl mb-4 opacity-20">📡</div>
-            <p className="text-sm text-slate-400 font-medium">Insufficient informative markers to calculate affinities.</p>
-          </div>
-        )}
-      </div>
-
-      <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
-        <p className="text-[9px] text-slate-500 dark:text-slate-400 leading-relaxed italic">
-          * Euclidean distance measures the statistical gap between your profile and reference population datasets. 
-          Values under <strong>3.0</strong> indicate very close affinity, while values above <strong>8.0</strong> suggest more distant matching.
-        </p>
-      </div>
-    </div>
-  );
-};
 
 const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelectedSubPop }: { oracleResults: any, ancestrySnps: any[], selectedSubPop: string | null, setSelectedSubPop: (sp: string | null) => void }) => {
   const [isChartReady, setIsChartReady] = useState(false);
@@ -1406,20 +1331,16 @@ const OracleView = memo(({ oracleResults, ancestrySnps, selectedSubPop, setSelec
                         <span className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider line-clamp-1">{formatPopName(pop.name)}</span>
                       </div>
                       <div className="flex items-end justify-between">
-                    <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(2)}%</span>
-                     <span className="text-[9px] font-mono font-bold text-slate-500 dark:text-slate-400" title="Euclidean Distance">{(pop.distance || pop.dist || 0).toFixed(3)} D</span>
-                  </div>
+                        <span className="text-lg font-black text-slate-900 dark:text-slate-100">{(pop.percentage || 0).toFixed(2)}%</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
+              </div>
+            )}
 
-        {/* Subpopulation Affinity */}
-        <SubpopulationAffinity oracleResults={oracleResults} />
-
-        {/* Endogamy Indicator */}
-        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800/30 flex items-center justify-between">
+            {/* Endogamy Indicator */}
+            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-purple-100 dark:border-purple-800/30 flex items-center justify-between">
           <div>
             <h3 className="text-xs font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Endogamy Detection</h3>
             <p className="text-[10px] text-indigo-600 dark:text-indigo-400 mt-1">Based on contiguous segment analysis</p>

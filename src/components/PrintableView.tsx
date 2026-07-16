@@ -215,31 +215,7 @@ export const PrintableView: React.FC<PrintableViewProps> = ({ config, dataset, h
               </div>
             )}
 
-            {/* Subpopulation Affinity Proximity */}
-            {affinityList.length > 0 && (
-              <div className="break-inside-avoid space-y-4">
-                <h3 className="text-xl font-bold border-b border-slate-200 pb-2">Subpopulation Affinity (Genetic Proximity)</h3>
-                <div className="p-6 border border-slate-200 rounded-xl space-y-3">
-                  {affinityList.map((pop: any, idx: number) => {
-                    const closeness = Math.max(0, 100 - (pop.distance / 20) * 100);
-                    return (
-                      <div key={pop.name || idx} className="space-y-1">
-                        <div className="flex justify-between text-sm">
-                          <span className="font-bold text-slate-700 dark:text-slate-300">{idx + 1}. {formatPopName(pop.name)}</span>
-                          <span className="font-mono font-bold text-slate-600 dark:text-slate-400">Distance: {pop.distance.toFixed(3)}</span>
-                        </div>
-                        <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200 dark:bg-slate-800">
-                          <div 
-                            className={`h-full rounded-full ${pop.distance < 3 ? 'bg-emerald-600' : pop.distance < 6 ? 'bg-blue-600' : 'bg-slate-400'}`} 
-                            style={{ width: `${closeness}%` }} 
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+
 
             {dataset?.predictedYDNA && dataset.predictedYDNA.predicted && (
               <div className="break-inside-avoid space-y-4">

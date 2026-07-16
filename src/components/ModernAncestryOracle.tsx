@@ -210,52 +210,7 @@ export const ModernAncestryOracle = memo(({
         </div>
       </div>
 
-      {/* Subpopulation Affinity Section */}
-      <div className="p-2.5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Subpopulation Affinity</h2>
-            <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest">Genetic Proximity (Euclidean Distance)</p>
-          </div>
-        </div>
-        
-        <div className="space-y-6">
-          {(() => {
-            const subPops = resultsToDisplay?.subPopulations || {};
-            const allPops = Object.values(subPops).flat().sort((a: any, b: any) => a.distance - b.distance).slice(0, 5);
-            if (allPops.length === 0) return <div className="text-slate-500 py-4 dark:text-slate-400">Insufficient markers to calculate affinities.</div>;
-            return allPops.map((pop: any, idx: number) => {
-              const maxDistance = 10;
-              const closeness = Math.max(0, 100 - (pop.distance / maxDistance) * 100);
-              return (
-                <div key={pop.name} className="flex flex-col space-y-2 group">
-                  <div className="flex justify-between items-end">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-[10px] font-black text-[#4599FF] w-4">{idx + 1}</span>
-                      <span className="text-sm font-black text-[#F5F6F7] group-hover:text-[#4599FF] transition-colors">{formatPopName(pop.name)}</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest dark:text-slate-400">Distance</div>
-                      <div className="text-sm font-mono font-black text-slate-300">{(pop.distance || 0).toFixed(3)}</div>
-                    </div>
-                  </div>
-                  <div className="h-2 w-full bg-slate-800/50 rounded-full overflow-hidden border border-white/5">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: `${closeness}%` }}
-                      transition={{ duration: 1, ease: "easeOut", delay: idx * 0.1 }}
-                      className={`h-full rounded-full ${
-                        pop.distance < 3 ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]' : 
-                        pop.distance < 6 ? 'bg-[#4599FF]' : 'bg-slate-500'
-                      }`}
-                    />
-                  </div>
-                </div>
-              );
-            });
-          })()}
-        </div>
-      </div>
+
 
       {/* Historical Haplotype Tracking for Sickle Cell / HBB */}
       {hbbMigration && (
