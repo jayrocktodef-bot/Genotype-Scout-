@@ -588,6 +588,16 @@ export async function processSubpopulations(
     }
   }
 
+  // Diagnostic log for custom tiebreaker markers
+  let matchedNewTiebreakersCount = 0;
+  for (let idx = 1001; idx <= 1175; idx++) {
+    const baseRsid = `rs${idx}`;
+    if (genotypeMap.has(baseRsid)) {
+      matchedNewTiebreakersCount++;
+    }
+  }
+  console.log(`[Ancestry Oracle V2] Matched new global tiebreaker AIMs (rs1001-rs1175): ${matchedNewTiebreakersCount} / 175`);
+
   let breakdown: SubpopBreakdown[] = [];
   const unmappedAims: AIM[] = [];
   const usedAimsSet = new Set<string>();
