@@ -3624,5 +3624,530 @@
     "description": "Native American tiebreaker, high frequency in AMR and low in EAS and EUR.",
     "subPopulation": "Global",
     "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1176_WAF",
+    "region": "West Africa",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0.01,
+      "MENA": 0.02,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for West African ancestry, high in Yoruba and Mandenka",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1177_EAF",
+    "region": "East Africa",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.25,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0.05,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for East African ancestry, common in Maasai and Somali",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1178_NAF",
+    "region": "North Africa",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.05,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0.8,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for North African ancestry, prevalent in Berbers",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1179_SAF",
+    "region": "South Africa",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Khoisan ancestry in South Africa",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1180_CAF",
+    "region": "Central Africa",
+    "alleles": [
+      "A",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Pygmy ancestry in Central Africa",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1181_WAF",
+    "region": "West Africa",
+    "alleles": [
+      "C",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.01,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0.02,
+      "MENA": 0.03,
+      "OCE": 0
+    },
+    "description": "Second highly informative AIM for West African ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1182_EAF",
+    "region": "East Africa",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.3,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0.03,
+      "OCE": 0
+    },
+    "description": "Second highly informative AIM for East African ancestry, distinct from West African",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1183_NEU",
+    "region": "North Europe",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.95,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Northern European ancestry, high in Finnish and Swedish",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1184_MED",
+    "region": "Mediterranean",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.85,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0.1,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Mediterranean ancestry, typical in Sicilians and Greeks",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1185_EAS",
+    "region": "East Asia",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.97,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for East Asian ancestry, near fixation in Han Chinese",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1186_SIB",
+    "region": "Siberia",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.02,
+      "EAS": 0.6,
+      "AMR": 0.1,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Siberian ancestry, elevated in Nganasan and Yakut",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1187_CAS",
+    "region": "Central Asia",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.2,
+      "EAS": 0.1,
+      "AMR": 0,
+      "SAS": 0.6,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Central Asian ancestry, peak in Kazakhs and Uzbeks",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1188_DRA",
+    "region": "Dravidian South Asia",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0.9,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Dravidian ancestry, high in Tamil and Telugu populations",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1189_ASI",
+    "region": "Ancestral South Indian",
+    "alleles": [
+      "G",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0.55,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Ancestral South Indian lineage, deep indigenous component",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1190_NAM",
+    "region": "North America",
+    "alleles": [
+      "A",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0.92,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Indigenous North American ancestry, common in Cree and Ojibwe",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1191_SAM",
+    "region": "South America",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0.9,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Indigenous South American ancestry, typical in Quechua and Aymara",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1192_SAH",
+    "region": "Sahul",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.95
+    },
+    "description": "Highly informative AIM for Sahul ancestry, near fixation in Australian Aboriginals",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1193_NEU",
+    "region": "North Europe",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.9,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Second AIM for Northern European ancestry, common in British and Scandinavian",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1194_MED",
+    "region": "Mediterranean",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.8,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0.15,
+      "OCE": 0
+    },
+    "description": "Second AIM for Mediterranean ancestry, widespread in Iberians and Italians",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1195_EAS",
+    "region": "East Asia",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.95,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Second AIM for East Asian ancestry, high in Japanese and Korean",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1196_MEL",
+    "region": "Melanesia",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.85
+    },
+    "description": "Highly informative AIM for Melanesian ancestry, common in Papua New Guinea and Solomon Islands",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1197_POL",
+    "region": "Polynesia",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0.9
+    },
+    "description": "Highly informative AIM for Polynesian ancestry, high in Maori and Samoans",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1198_MDE",
+    "region": "Middle East",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0.85,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Middle Eastern ancestry, common in Saudi and Yemeni",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1199_SEA",
+    "region": "Southeast Asia",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0.9,
+      "AMR": 0,
+      "SAS": 0,
+      "MENA": 0,
+      "OCE": 0
+    },
+    "description": "Highly informative AIM for Southeast Asian ancestry, typical in Vietnamese and Thai",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1200_AND",
+    "region": "Andaman Islands",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0,
+      "EAS": 0,
+      "AMR": 0,
+      "SAS": 0.7,
+      "MENA": 0,
+      "OCE": 0.1
+    },
+    "description": "Highly informative AIM for Andamanese ancestry, distinct from mainland South Asians",
+    "subPopulation": "Global",
+    "subRegion": "Global"
   }
 ]
