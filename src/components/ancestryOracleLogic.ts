@@ -989,9 +989,29 @@ export async function processSubpopulations(
 
   activeSnpKeys.forEach((rsid, idx) => {
     const meta = prunedGenotypesMap.get(rsid)!;
-    nnlsWeights[idx] = meta.weight;
-
     const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
+
+    // 1. Regularized Binomial Variance Weights
+    let sumFreq = 0;
+    let validPopsCount = 0;
+    for (const [popCode, popData] of Object.entries(referenceDatabase)) {
+      if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
+      if (freq === undefined) {
+        const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
+        freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
+      }
+      if (freq !== undefined && !isNaN(freq)) {
+        sumFreq += freq;
+        validPopsCount++;
+      }
+    }
+    const meanFreq = validPopsCount > 0 ? (sumFreq / validPopsCount) : 0.5;
+    const binomialVariance = meanFreq * (1.0 - meanFreq);
+    const varianceScale = 1.0 / (binomialVariance + 0.05); // regularized binomial weight scale
+
+    nnlsWeights[idx] = meta.weight * varianceScale;
+
     let uDosage = -1; // -1 = unresolved
 
     const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()];
@@ -1020,16 +1040,20 @@ export async function processSubpopulations(
       if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
       let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
       
+      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
+      const macroFreq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
+
       if (freq === undefined) {
         // Soft Bayesian Prior Imputation fallback:
         // Use the macro-group continental frequency from the AIM database.
-        // Previously this fell back to 'EUR' when the pop code was unrecognized,
-        // causing missing-data imputation to use European allele frequencies for non-EUR pops.
-        const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
-        freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
+        freq = macroFreq;
       }
       
-      nnlsPopExpectedDosages[popCode][idx] = freq * 2.0; // continuous expected dosage
+      // 2. F-Model Genetic Drift Correction (F_k = 0.04)
+      const F_k = 0.04;
+      const correctedFreq = (1.0 - F_k) * freq + F_k * macroFreq;
+
+      nnlsPopExpectedDosages[popCode][idx] = correctedFreq * 2.0; // continuous expected dosage
     }
   });
 
@@ -1075,8 +1099,40 @@ export async function processSubpopulations(
       }
     }
 
-    // Run final Pass 2 NNLS deconvolution on sub-selected populations
-    const finalProportions = solveAdmixtureProportions(nnlsUserDosages, filteredPopExpectedDosages, nnlsWeights);
+    // 3. Iterative Local-Variance SNP Reweighting for Pass 2 deconvolution
+    const finalPopCodes = Object.keys(filteredPopExpectedDosages);
+    const finalWeights = new Float32Array(activeM);
+    activeSnpKeys.forEach((rsid, idx) => {
+      let sumActiveFreq = 0;
+      const activeFreqs: number[] = [];
+      const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
+
+      finalPopCodes.forEach(popCode => {
+        const popData = referenceDatabase[popCode];
+        let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
+        if (freq === undefined) {
+          const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
+          freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
+        }
+        if (freq !== undefined && !isNaN(freq)) {
+          activeFreqs.push(freq);
+          sumActiveFreq += freq;
+        }
+      });
+
+      let localVarianceWeight = 1.0;
+      if (activeFreqs.length > 1) {
+        const mean = sumActiveFreq / activeFreqs.length;
+        const variance = activeFreqs.reduce((a, b) => a + (b - mean) ** 2, 0) / activeFreqs.length;
+        // Informativeness scale: highly differentiated SNPs among the active set get higher weights
+        localVarianceWeight = 0.5 + Math.sqrt(variance) * 4.0;
+      }
+
+      finalWeights[idx] = nnlsWeights[idx] * localVarianceWeight;
+    });
+
+    // Run final Pass 2 NNLS deconvolution on sub-selected populations with refined weights
+    const finalProportions = solveAdmixtureProportions(nnlsUserDosages, filteredPopExpectedDosages, finalWeights);
 
     admixtureMix = Object.entries(finalProportions)
       .map(([popCode, percentage]) => ({
