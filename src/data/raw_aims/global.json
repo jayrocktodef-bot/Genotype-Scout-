@@ -2624,5 +2624,505 @@
     "description": "AMR informative marker; distinguishes AMR from EAS.",
     "subPopulation": "Global",
     "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1126_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.01,
+      "EAS": 0.04,
+      "AMR": 0.05,
+      "SAS": 0.94,
+      "MENA": 0.05,
+      "OCE": 0.02
+    },
+    "description": "Separates South Asian populations from East Asian populations with high allele frequency in SAS and low in EAS.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1127_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.92,
+      "EAS": 0.01,
+      "AMR": 0.1,
+      "SAS": 0.02,
+      "MENA": 0.05,
+      "OCE": 0.01
+    },
+    "description": "Strongly differentiates European from Middle Eastern & North African populations.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1128_MENA",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.08,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.91,
+      "OCE": 0.02
+    },
+    "description": "Distinguishes Middle Eastern & North African populations from Europeans.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1129_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.01,
+      "EAS": 0.96,
+      "AMR": 0.04,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.02
+    },
+    "description": "Differentiates East Asian from Admixed American populations, high in EAS low in AMR.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1130_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.02,
+      "SAS": 0.06,
+      "MENA": 0.01,
+      "OCE": 0.94
+    },
+    "description": "Separates Oceanian populations from South Asian and East Asian groups, high in OCE.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1131_AMR",
+    "region": "Admixed American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.2,
+      "EAS": 0.03,
+      "AMR": 0.85,
+      "SAS": 0.05,
+      "MENA": 0.1,
+      "OCE": 0.02
+    },
+    "description": "Differentiates Admixed Americans from East Asians, high in AMR, low in EAS.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1132_AFR",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.93,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.15,
+      "SAS": 0.02,
+      "MENA": 0.08,
+      "OCE": 0.01
+    },
+    "description": "High frequency in African populations, low in MENA, separating AFR from MENA.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1133_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.06,
+      "AMR": 0.07,
+      "SAS": 0.91,
+      "MENA": 0.06,
+      "OCE": 0.03
+    },
+    "description": "Informative for SAS vs EAS differentiation.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1134_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.91,
+      "EAS": 0.02,
+      "AMR": 0.08,
+      "SAS": 0.01,
+      "MENA": 0.04,
+      "OCE": 0
+    },
+    "description": "European-specific marker separating EUR from MENA.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1135_MENA",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.07,
+      "EAS": 0.02,
+      "AMR": 0.06,
+      "SAS": 0.08,
+      "MENA": 0.92,
+      "OCE": 0.03
+    },
+    "description": "Separates MENA from EUR with high frequency in MENA.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1136_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.94,
+      "AMR": 0.05,
+      "SAS": 0.06,
+      "MENA": 0.02,
+      "OCE": 0.03
+    },
+    "description": "EAS vs AMR separation marker.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1137_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0,
+      "EAS": 0.04,
+      "AMR": 0.02,
+      "SAS": 0.07,
+      "MENA": 0.01,
+      "OCE": 0.93
+    },
+    "description": "OCE-specific marker distinguishing from SAS/EAS.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1138_AMR",
+    "region": "Admixed American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.06,
+      "EUR": 0.22,
+      "EAS": 0.04,
+      "AMR": 0.82,
+      "SAS": 0.04,
+      "MENA": 0.08,
+      "OCE": 0.01
+    },
+    "description": "AMR vs EAS separation marker.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1139_AFR",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.91,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.18,
+      "SAS": 0.03,
+      "MENA": 0.09,
+      "OCE": 0.02
+    },
+    "description": "AFR vs MENA AIM, high in AFR.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1140_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.01,
+      "EAS": 0.03,
+      "AMR": 0.04,
+      "SAS": 0.88,
+      "MENA": 0.04,
+      "OCE": 0.02
+    },
+    "description": "High in SAS, distinguishes SAS from EAS and other continental groups.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1141_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.93,
+      "EAS": 0.01,
+      "AMR": 0.11,
+      "SAS": 0.03,
+      "MENA": 0.06,
+      "OCE": 0.02
+    },
+    "description": "Ancestry informative for European ancestry, distinguishing EUR vs MENA.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1142_MENA",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.09,
+      "EAS": 0.01,
+      "AMR": 0.07,
+      "SAS": 0.06,
+      "MENA": 0.89,
+      "OCE": 0.02
+    },
+    "description": "MENA-specific AIM for EUR vs MENA differentiation.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1143_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.95,
+      "AMR": 0.03,
+      "SAS": 0.04,
+      "MENA": 0.02,
+      "OCE": 0.02
+    },
+    "description": "High in East Asian, distinguishes EAS from AMR.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1144_OCE",
+    "region": "Oceanian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.01,
+      "EAS": 0.06,
+      "AMR": 0.03,
+      "SAS": 0.08,
+      "MENA": 0.02,
+      "OCE": 0.91
+    },
+    "description": "Ancestry informative for Oceanian ancestry, separating OCE from SAS and EAS.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1145_AMR",
+    "region": "Admixed American",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.18,
+      "EAS": 0.02,
+      "AMR": 0.88,
+      "SAS": 0.03,
+      "MENA": 0.07,
+      "OCE": 0.02
+    },
+    "description": "Informative for Admixed American ancestry, distinguishing from East Asian.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1146_AFR",
+    "region": "African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.2,
+      "SAS": 0.02,
+      "MENA": 0.07,
+      "OCE": 0.01
+    },
+    "description": "Ancestry informative for African ancestry, distinguishing AFR from MENA.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1147_SAS",
+    "region": "South Asian",
+    "alleles": [
+      "A"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.06,
+      "SAS": 0.93,
+      "MENA": 0.05,
+      "OCE": 0.02
+    },
+    "description": "AIM for South Asian ancestry, separating SAS from EAS.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1148_EUR",
+    "region": "European",
+    "alleles": [
+      "G"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.9,
+      "EAS": 0.01,
+      "AMR": 0.09,
+      "SAS": 0.02,
+      "MENA": 0.05,
+      "OCE": 0.01
+    },
+    "description": "High frequency in EUR, contrasting with MENA.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1149_MENA",
+    "region": "Middle Eastern & North African",
+    "alleles": [
+      "C"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0.07,
+      "EUR": 0.06,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.04,
+      "MENA": 0.93,
+      "OCE": 0.01
+    },
+    "description": "Ancestry informative marker highlighting MENA ancestry distinct from EUR.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1150_EAS",
+    "region": "East Asian",
+    "alleles": [
+      "T"
+    ],
+    "weight": 4,
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.01,
+      "EAS": 0.97,
+      "AMR": 0.04,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.03
+    },
+    "description": "Ancestry informative for East Asian vs Admixed American.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
   }
 ]
