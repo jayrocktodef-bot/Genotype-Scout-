@@ -838,7 +838,8 @@ export async function processSubpopulations(
 
     for (let i = 0; i < activeRefSnps.length; i++) {
       const activeSnp = activeRefSnps[i];
-      const refFreq = frequencies[activeSnp.rsid];
+      const baseRsid = activeSnp.rsid.split('_')[0].toLowerCase();
+      const refFreq = frequencies[activeSnp.rsid] ?? frequencies[activeSnp.rsidLower] ?? frequencies[baseRsid];
       if (refFreq === undefined || refFreq === -1.0) continue;
 
       const userDosageDiscrete = activeSnp.userDosage;
@@ -1107,6 +1108,7 @@ export async function processSubpopulations(
   // Build the expected matrices
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (!isPopAllowedForPanel(popCode)) continue;
     nnlsPopExpectedDosages[popCode] = new Float32Array(activeM);
   }
 
@@ -1119,7 +1121,9 @@ export async function processSubpopulations(
     let validPopsCount = 0;
     for (const [popCode, popData] of Object.entries(referenceDatabase)) {
       if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
-      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
+      if (!isPopAllowedForPanel(popCode)) continue;
+      const baseKey = rsid.split('_')[0].toLowerCase();
+      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[baseKey];
       if (freq === undefined) {
         const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
         freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
@@ -1161,7 +1165,9 @@ export async function processSubpopulations(
     // Fill in expected frequencies or apply Soft Bayesian priors for missing subpopulation values
     for (const [popCode, popData] of Object.entries(referenceDatabase)) {
       if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
-      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
+      if (!isPopAllowedForPanel(popCode)) continue;
+      const baseKey = rsid.split('_')[0].toLowerCase();
+      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[baseKey];
       
       const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
       const macroFreq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
