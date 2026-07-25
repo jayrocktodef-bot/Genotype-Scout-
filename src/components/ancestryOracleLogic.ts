@@ -55,28 +55,89 @@ export interface OracleResult {
   admixtureMix: AdmixtureComponent[];
 }
 
+export function humanizePopName(rawName: string): string {
+  if (!rawName) return 'Unknown';
+  
+  const DIRECT_MAP: Record<string, string> = {
+    'AMI_gnomAD': 'Amish / Germanic European (AMI)',
+    '48J_gnomAD': 'Japanese (gnomAD)',
+    'BALKAN': 'Balkan / Southeastern European',
+    'ITALIAN_AM': 'Italian-American',
+    'GREEK': 'Greek / Southern European',
+    'IRISH': 'Irish / British Isles',
+    'GIWD': 'Gambian (GWD)',
+    'LWK': 'Luhya / East African (LWK)',
+    'GWD': 'Gambian / West African (GWD)',
+    'YRI': 'Yoruba / West African (YRI)',
+    'CEU': 'Central European (CEU)',
+    'GBR': 'British (GBR)',
+    'FIN': 'Finnish (FIN)',
+    'IBS': 'Iberian (IBS)',
+    'TSI': 'Tuscan (TSI)',
+    'CHB': 'Han Chinese / Beijing (CHB)',
+    'CHS': 'Southern Han Chinese (CHS)',
+    'JPT': 'Japanese / Yamato (JPT)',
+    'KHV': 'Kinh Vietnamese (KHV)',
+    'CDX': 'Chinese Dai (CDX)',
+    'GIH': 'Gujarati (GIH)',
+    'PJL': 'Punjabi (PJL)',
+    'BEB': 'Bengali (BEB)',
+    'STU': 'Tamil (STU)',
+    'ITU': 'Telugu (ITU)',
+    'PUR': 'Puerto Rican (PUR)',
+    'CLM': 'Colombian (CLM)',
+    'MXL': 'Mexican (MXL)',
+    'PEL': 'Peruvian (PEL)',
+    'ASW': 'African-American (ASW)',
+    'ACB': 'African Caribbean (ACB)'
+  };
+  if (DIRECT_MAP[rawName]) return DIRECT_MAP[rawName];
+
+  let cleaned = rawName;
+  let prefixTag = '';
+
+  if (/^hgdp_/i.test(cleaned)) { prefixTag = 'HGDP'; cleaned = cleaned.replace(/^hgdp_/i, ''); }
+  else if (/^sgdp_/i.test(cleaned)) { prefixTag = 'SGDP'; cleaned = cleaned.replace(/^sgdp_/i, ''); }
+  else if (/^agcp_/i.test(cleaned)) { prefixTag = 'AGCP'; cleaned = cleaned.replace(/^agcp_/i, ''); }
+  else if (/_gnomAD$/i.test(cleaned)) { prefixTag = 'gnomAD'; cleaned = cleaned.replace(/_gnomAD$/i, ''); }
+  else if (/_proxy$/i.test(cleaned)) { cleaned = cleaned.replace(/_proxy$/i, ''); }
+
+  cleaned = cleaned.replace(/[_]/g, ' ').trim();
+  cleaned = cleaned.split(' ').map(w => {
+    const lower = w.toLowerCase();
+    if (lower === 'am') return 'American';
+    return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+  }).join(' ');
+
+  if (cleaned.toLowerCase() === 'orcardian') cleaned = 'Orcadian';
+  if (cleaned.toLowerCase() === 'mzerabita') cleaned = 'Mzabite';
+
+  return prefixTag ? `${cleaned} (${prefixTag})` : cleaned;
+}
+
+export function getBasePopKey(popCode: string, popName: string): string {
+  let key = (popCode || popName).toLowerCase();
+  key = key.replace(/^(hgdp_|sgdp_|agcp_|1000g_)/i, '');
+  key = key.replace(/(_gnomad|_proxy)$/i, '');
+  key = key.replace(/[^a-z0-9]/g, '');
+  return key;
+}
+
 // Map of 1000 Genomes population codes to detailed, scientific, and readable names
-const POPULATION_NAMES_MAP: Record<string, string> = {
+export const POPULATION_NAMES_MAP: Record<string, string> = {
   'CEU': 'Central European (CEU)',
   'GBR': 'British Isles (GBR)',
   'FIN': 'Uralic & North-East European (FIN)',
   'TSI': 'Central Mediterranean / Tuscan (TSI)',
   'IBS': 'Iberian Peninsula (IBS)',
   'GERMAN': 'German / Central European (GERMAN)',
-  'SWEDISH': 'Swedish / Scandinavian (SWEDISH)',
-  'DUTCH': 'Dutch / North Sea Germanic (DUTCH)',
-  'IRISH': 'Irish / Celtic (IRISH)',
-  'FRENCH': 'French / Western European (FRENCH)',
-  'SPANISH': 'Spanish / Iberian (SPANISH)',
-  'POLISH': 'Polish / Eastern European (POLISH)',
-  'GREEK': 'Greek / Southern European (GREEK)',
   'YRI': 'Yoruba / West African (YRI)',
-  'ESN': 'Esan / West African (ESN)',
+  'LWK': 'Luhya / East African (LWK)',
   'GWD': 'Gambian / West African (GWD)',
   'MSL': 'Mende / Sierra Leonean (MSL)',
-  'LWK': 'Luhya / East African (LWK)',
-  'BEB': 'Bengali / South Asian (BEB)',
+  'ESN': 'Esan / Nigerian (ESN)',
   'GIH': 'Gujarati / South Asian (GIH)',
+  'BEB': 'Bengali / South Asian (BEB)',
   'PJL': 'Punjabi / South Asian (PJL)',
   'ITU': 'Telugu / South Asian (ITU)',
   'STU': 'Tamil / South Asian (STU)',
@@ -985,7 +1046,7 @@ export async function processSubpopulations(
   // creating a positive-feedback loop that obliterated realistic admixture proportions.
   // NNLS (Component 4 below) handles admixture proportions; the breakdown list
   // is now sorted purely by distance with no post-hoc adjustments.
-  const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number }> = [];
+  const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number; popCode: string }> = [];
   const MIN_MARKERS = panel !== 'all' ? 1 : 5; // Lower limit when a panel is active so thin marker sets do not result in empty breakdowns
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
@@ -994,13 +1055,14 @@ export async function processSubpopulations(
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
     if (markersCompared >= MIN_MARKERS) {
-      const popName = POPULATION_NAMES_MAP[popCode] || popCode;
+      const popName = POPULATION_NAMES_MAP[popCode] || humanizePopName(popCode);
 
       rawBreakdown.push({
         subpop: popName,
         distance: finalDistance,
         markersCompared,
-        count: markersCompared
+        count: markersCompared,
+        popCode
       });
     }
   }
@@ -1008,8 +1070,23 @@ export async function processSubpopulations(
   // Sort breakdown list so closest proximity matches are first
   rawBreakdown.sort((a, b) => a.distance - b.distance);
 
-  const minDist = rawBreakdown.length > 0 ? rawBreakdown[0].distance : 0.0;
-  breakdown = rawBreakdown.map(item => {
+  // Deduplicate HGDP vs SGDP for the same base population:
+  // If an HGDP entry (or a closer match) for a base population exists, omit the duplicate SGDP entry
+  const seenBreakdownKeys = new Set<string>();
+  const deduplicatedBreakdown: typeof rawBreakdown = [];
+  for (const item of rawBreakdown) {
+    const baseKey = getBasePopKey(item.popCode, item.subpop);
+    const isSgdp = item.popCode.toLowerCase().startsWith('sgdp_');
+
+    if (isSgdp && seenBreakdownKeys.has(baseKey)) {
+      continue;
+    }
+    seenBreakdownKeys.add(baseKey);
+    deduplicatedBreakdown.push(item);
+  }
+
+  const minDist = deduplicatedBreakdown.length > 0 ? deduplicatedBreakdown[0].distance : 0.0;
+  breakdown = deduplicatedBreakdown.map(item => {
     // No artificial offset — preserve the true relative differences between populations
     const uiDistance = item.distance - minDist;
     const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (uiDistance * 2.2)) * 100));
@@ -1221,10 +1298,25 @@ export async function processSubpopulations(
     admixtureMix = Object.entries(finalProportions)
       .map(([popCode, percentage]) => ({
         popCode,
-        name: POPULATION_NAMES_MAP[popCode] || popCode,
+        name: POPULATION_NAMES_MAP[popCode] || humanizePopName(popCode),
         percentage
       }))
       .sort((a, b) => b.percentage - a.percentage);
+
+    // Deduplicate: If an HGDP entry (or higher percentage match) for a base population exists, omit duplicate SGDP
+    const seenAdmixtureKeys = new Set<string>();
+    const deduplicatedAdmixture: typeof admixtureMix = [];
+    for (const item of admixtureMix) {
+      const baseKey = getBasePopKey(item.popCode, item.name);
+      const isSgdp = item.popCode.toLowerCase().startsWith('sgdp_');
+
+      if (isSgdp && seenAdmixtureKeys.has(baseKey)) {
+        continue;
+      }
+      seenAdmixtureKeys.add(baseKey);
+      deduplicatedAdmixture.push(item);
+    }
+    admixtureMix = deduplicatedAdmixture;
   }
 
   if (admixtureMix.length === 0) {

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Dna, HelpCircle, MapPin } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
+import { humanizePopName } from './ancestryOracleLogic';
 
 const POP_COLORS: Record<string, string> = {
   EUR: '#3b82f6',
@@ -116,6 +117,7 @@ export const ModernAncestryOracle = memo(({
       else if (key === 'MENA') label = 'Middle Eastern';
       else if (key === 'OCE') label = 'Oceanian';
       else if (key === 'CAS') label = 'Central Asian & Siberian';
+      else label = humanizePopName(key);
       
       return {
         subject: label,
@@ -148,7 +150,7 @@ export const ModernAncestryOracle = memo(({
       'OCE': 'Oceanian',
       'CAS': 'Central Asian & Siberian'
     };
-    return map[code] || code;
+    return map[code] || humanizePopName(code);
   };
 
   return (
@@ -190,21 +192,22 @@ export const ModernAncestryOracle = memo(({
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-center">
-          <div className="h-[300px] sm:h-[450px] lg:col-span-2 w-full min-w-0 relative">
+          <div className="h-[450px] sm:h-[600px] lg:col-span-2 w-full min-w-0 relative bg-slate-900/40 rounded-2xl p-4 border border-white/5 shadow-inner flex items-center justify-center">
             {isChartReady ? (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
-                <RadarChart cx="50%" cy="50%" outerRadius="65%" data={chartData} margin={{ top: 30, right: 30, bottom: 30, left: 30 }}>
-                  <PolarGrid stroke="#334155" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11 }} />
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
+                <RadarChart cx="50%" cy="50%" outerRadius="82%" data={chartData} margin={{ top: 20, right: 35, bottom: 20, left: 35 }}>
+                  <PolarGrid stroke="#334155" strokeDasharray="3 3" />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#38bdf8', fontSize: 12, fontWeight: 600 }} />
                   <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                   <Radar
                     name="Ancestry"
                     dataKey="A"
-                    stroke="#4599FF"
-                    fill="#4599FF"
-                    fillOpacity={0.3}
+                    stroke="#38bdf8"
+                    strokeWidth={2}
+                    fill="#38bdf8"
+                    fillOpacity={0.35}
                   />
-                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#f8fafc', borderRadius: '1rem', backdropFilter: 'blur(8px)' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', color: '#f8fafc', borderRadius: '1rem', backdropFilter: 'blur(8px)', fontWeight: 'bold' }} />
                 </RadarChart>
               </ResponsiveContainer>
             ) : (
