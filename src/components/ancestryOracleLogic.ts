@@ -518,9 +518,9 @@ export function solveAdmixtureProportions(
 
   // To enforce sum(x) = 1, we augment A and b with a heavily weighted row.
   // We want sum_p x_p = 1. So lambda * sum_p x_p = lambda.
-  // Scale lambda proportionally to panel size to avoid overwhelming small panels
-  // while keeping tight constraint on large ones.
-  const LAMBDA = Math.max(10, Math.sqrt(M) * 10);
+  // Scale lambda proportionally to panel size and average marker weight.
+  const avgWeight = w.length > 0 ? (w.reduce((acc, val) => acc + val, 0) / w.length) : 1.0;
+  const LAMBDA = Math.max(10, Math.sqrt(M) * 10 * avgWeight);
   const augA = new Array(P).fill(LAMBDA);
   A.push(augA);
   b.push(LAMBDA);
@@ -551,8 +551,14 @@ export async function processSubpopulations(
   aimsDatabase: AIM[],
   sampleId?: string,
   snpMetaMap?: Record<string, { chrom: string; pos: number }>,
-  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' = 'all'
+  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'ramos' = 'all'
 ): Promise<OracleResult> {
+  const popToMacroMap = new Map<string, string>();
+  for (const [macro, pops] of Object.entries(MACRO_GROUPS)) {
+    for (const pop of pops) {
+      popToMacroMap.set(pop, macro);
+    }
+  }
   const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = await getHoReferenceKernel() as Record<string, { region: string; frequencies: Record<string, number> }>;
   const GLOBAL_REFERENCE_CODES = new Set([
@@ -607,13 +613,28 @@ export async function processSubpopulations(
   const popMarkerCounts = new Map<string, number>();
   const negativeViolations = new Map<string, number>();
 
+  const isPopAllowedForPanel = (popCode: string) => {
+    if (panel === 'all' || panel === 'kidd55' || panel === 'seldin128') {
+      return true;
+    }
+    if (panel === 'euroforgen') {
+      const macroCode = popToMacroMap.get(popCode) || '';
+      return macroCode === 'EUR' || macroCode === 'MENA';
+    }
+    if (panel === 'ramos') {
+      const macroCode = popToMacroMap.get(popCode) || '';
+      return macroCode === 'AFR';
+    }
+    return true;
+  };
+
   // --- COMPONENT 1: Spatial Gene-Locus Mapping (All Available Markers) ---
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
   const markersToPrune: Array<{ rsid: string; dbKey: string; chromosome: string; position: number; genotype: string; gene?: string; weight: number }> = [];
 
   for (const [rsid, genotype] of genotypeMap.entries()) {
-    // Apply panel filter if specified
-    if (panel !== 'all') {
+    // Apply panel filter if specified (except for ramos, which is restricted dynamically by population instead of locus subset)
+    if (panel !== 'all' && panel !== 'ramos') {
       const panelSet = new Set((forensicPanels as any)[panel]?.map((id: string) => id.toLowerCase()) || []);
       const baseRsid = rsid.split('_')[0].toLowerCase();
       if (!panelSet.has(baseRsid)) {
@@ -759,7 +780,13 @@ export async function processSubpopulations(
 
     for (let i = 0; i < activeRefSnps.length; i++) {
       const activeSnp = activeRefSnps[i];
-      const refFreq = frequencies[activeSnp.rsid];
+      let refFreq = frequencies[activeSnp.rsid];
+      if (refFreq === undefined) {
+        refFreq = frequencies[activeSnp.rsidLower];
+      }
+      if (refFreq === undefined) {
+        refFreq = frequencies[activeSnp.rsid.toUpperCase()];
+      }
       if (refFreq === undefined || refFreq === -1.0) continue;
 
       const userDosageDiscrete = activeSnp.userDosage;
@@ -856,28 +883,69 @@ export async function processSubpopulations(
     negativeViolations.set(popCode, violations);
 
     if (M >= 4) {
-      // Euclidean Distance calculations vectorized in Float32Array
-      const userVector = new Float32Array(M);
-      const refVector = new Float32Array(M);
+      // Calculate Log-Likelihood of the user's genotype vector under Hardy-Weinberg equilibrium.
+      // We use a tiny epsilon value (0.005) to avoid Math.log(0) for extremely rare or unobserved alleles.
+      let logLikelihood = 0;
+      let expectedMean = 0;
+      let expectedVariance = 0;
+      const epsilon = 0.005;
 
       for (let i = 0; i < M; i++) {
-        userVector[i] = matchedUserDosages[i];
-        refVector[i] = matchedRefFreqs[i] * 2.0; // Expected continuous dosage [0, 2]
-      }
-
-      let weightedSquaredDiffSum = 0;
-      let totalW = 0;
-      for (let i = 0; i < M; i++) {
+        const uGeno = matchedUserDosages[i]; // user dosage: 0, 1, or 2
+        const p = Math.max(epsilon, Math.min(1.0 - epsilon, matchedRefFreqs[i])); // frequency of alternative allele
+        const q = 1.0 - p; // frequency of reference allele
         const wt = matchedWeights[i];
-        const normalDiff = (userVector[i] - refVector[i]) / 2.0; // range [0, 2] / 2 -> [0, 1] scope
-        weightedSquaredDiffSum += (normalDiff * normalDiff) * wt;
-        totalW += wt;
+
+        // 1. Observed log-probability
+        let genotypeProb = epsilon;
+        if (uGeno === 0) {
+          genotypeProb = q * q; // homozygous reference probability: q^2
+        } else if (uGeno === 1) {
+          genotypeProb = 2.0 * p * q; // heterozygous probability: 2pq
+        } else if (uGeno === 2) {
+          genotypeProb = p * p; // homozygous alternative probability: p^2
+        }
+        logLikelihood += Math.log(genotypeProb) * wt;
+
+        // 2. Analytical Null Expectation for this locus (Hardy-Weinberg proportions)
+        const p0 = q * q;
+        const p1 = 2.0 * p * q;
+        const p2 = p * p;
+
+        const val0 = Math.log(p0);
+        const val1 = Math.log(p1);
+        const val2 = Math.log(p2);
+
+        const unweightedMean = p0 * val0 + p1 * val1 + p2 * val2;
+        const unweightedSecondMoment = p0 * (val0 * val0) + p1 * (val1 * val1) + p2 * (val2 * val2);
+        
+        expectedMean += unweightedMean * wt;
+
+        const locusVar = (wt * wt) * Math.max(0.0001, unweightedSecondMoment - (unweightedMean * unweightedMean));
+        expectedVariance += locusVar;
       }
 
-      const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
+      const expectedStdDev = Math.sqrt(expectedVariance);
+
+      // 3. Compute Z-score of observed log-likelihood
+      const zScore = (logLikelihood - expectedMean) / (expectedStdDev || 1.0);
+
+      // 4. Map Z-score using normal CDF approximation.
+      // A clean HWE match has a Z-score near 0. Extreme outliers have negative Z-scores.
+      // Standard normal CDF approximation (Hart's method or logistic approximation):
+      // CDF(Z) is the probability of a random member having a score <= ours.
+      // Higher typicalness = higher CDF value (approaching 0.5 to 1.0).
+      // Low typicalness (outliers) = CDF approaches 0.0.
+      const logisticCdf = 1.0 / (1.0 + Math.exp(-0.07056 * zScore * zScore * zScore - 1.5976 * zScore));
+      const typicalness = Math.max(0.0001, Math.min(0.9999, logisticCdf));
+
+      // Genetic distance is inversely proportional to typicalness.
+      // A highly typical profile yields a distance close to 0.
+      // An outlier profile scales cleanly to 1.0.
+      const normalizedDistance = Math.min(1.0, Math.max(0.0016, 1.0 - typicalness));
 
       // Scale penalties for ancestral allele/cladistic conflicts.
-      const adjustedDistance = baseDistance * (1.0 + 0.20 * violations);
+      const adjustedDistance = normalizedDistance * (1.0 + 0.20 * violations);
       popDistances.set(popCode, adjustedDistance);
     } else {
       popDistances.set(popCode, 1.0); // Insufficient markers fallback
@@ -921,6 +989,7 @@ export async function processSubpopulations(
   const MIN_MARKERS = panel !== 'all' ? 1 : 5; // Lower limit when a panel is active so thin marker sets do not result in empty breakdowns
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (!isPopAllowedForPanel(popCode)) continue;
     const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
@@ -1048,7 +1117,7 @@ export async function processSubpopulations(
     // Fill in expected frequencies or apply Soft Bayesian priors for missing subpopulation values
     for (const [popCode, popData] of Object.entries(referenceDatabase)) {
       if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
-      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
+      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[rsid.toUpperCase()];
       
       const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
       const macroFreq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
@@ -1082,10 +1151,15 @@ export async function processSubpopulations(
       continentalAncestry[macroCode] = (continentalAncestry[macroCode] || 0) + pct;
     });
 
-    // Sub-select populations: include continental groups with >= 2.0% ancestry
-    const activeMacroGroups = Object.entries(continentalAncestry)
+    let activeMacroGroups = Object.entries(continentalAncestry)
       .filter(([_, pct]) => pct >= 0.5)
       .map(([macro, _]) => macro);
+
+    if (panel === 'euroforgen') {
+      activeMacroGroups = activeMacroGroups.filter(macro => macro === 'EUR' || macro === 'MENA');
+    } else if (panel === 'ramos') {
+      activeMacroGroups = activeMacroGroups.filter(macro => macro === 'AFR');
+    }
 
     // Fallback if no group meets the threshold: select the single macro group with the highest percentage
     if (activeMacroGroups.length === 0) {
@@ -1119,7 +1193,7 @@ export async function processSubpopulations(
 
       finalPopCodes.forEach(popCode => {
         const popData = referenceDatabase[popCode];
-        let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
+        let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[rsid.toUpperCase()];
         if (freq === undefined) {
           const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
           freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
