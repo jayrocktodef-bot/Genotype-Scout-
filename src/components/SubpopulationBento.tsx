@@ -20,26 +20,6 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
   const [loading, setLoading] = useState(false);
 
   React.useEffect(() => {
-    if (selectedPanel === 'microhap') {
-      const userSnps = Object.fromEntries(userGenotypes.map(g => [g.rsid, g.genotype]));
-      const mix = deconvolveMicrohaplotypes(userSnps);
-      setResults({
-        topMatch: mix[0]?.name || 'Unknown',
-        subpopAimsUsed: mix.length,
-        unmappedAims: [],
-        breakdown: mix.map(m => ({
-          subpop: m.name,
-          distance: 1.0 - (m.percentage / 100.0),
-          similarityScore: m.percentage,
-          markersCompared: mix.length,
-          count: mix.length
-        })),
-        admixtureMix: mix
-      });
-      setLoading(false);
-      return;
-    }
-
     if (precalculated) {
       if (precalculated[selectedPanel]) {
         setResults(precalculated[selectedPanel]);
@@ -48,6 +28,28 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
       }
       if (selectedPanel === 'all') {
         setResults(precalculated);
+        setLoading(false);
+        return;
+      }
+    }
+
+    if (selectedPanel === 'microhap') {
+      const userSnps = Object.fromEntries(userGenotypes.map(g => [g.rsid, g.genotype]));
+      const mix = deconvolveMicrohaplotypes(userSnps);
+      if (mix && mix.length > 0) {
+        setResults({
+          topMatch: mix[0]?.name || 'Unknown',
+          subpopAimsUsed: mix.length,
+          unmappedAims: [],
+          breakdown: mix.map(m => ({
+            subpop: m.name,
+            distance: 1.0 - (m.percentage / 100.0),
+            similarityScore: m.percentage,
+            markersCompared: mix.length,
+            count: mix.length
+          })),
+          admixtureMix: mix
+        });
         setLoading(false);
         return;
       }

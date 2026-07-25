@@ -474,13 +474,17 @@ self.onmessage = async (e: MessageEvent) => {
     const kidd55Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'kidd55');
     const seldin128Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'seldin128');
     const euroforgenResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'euroforgen');
+    const ramosResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'ramos');
+    const microhapResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'microhap');
 
     const subpopulationOracle = {
       ...allResult,
       all: allResult,
       kidd55: kidd55Result,
       seldin128: seldin128Result,
-      euroforgen: euroforgenResult
+      euroforgen: euroforgenResult,
+      ramos: ramosResult,
+      microhap: microhapResult
     };
     const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
     

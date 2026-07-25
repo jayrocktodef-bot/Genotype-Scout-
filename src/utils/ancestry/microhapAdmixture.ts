@@ -43,7 +43,7 @@ const POP_LABEL_MAP: Record<string, string> = {
 };
 
 /**
- * Performs mixed deconvolution using microhaplotype allele frequencies
+ * Performs mixed deconvolution using microhaplotype allele frequencies across 3,053 global microhaplotype loci.
  */
 export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): MicroHapResult[] {
   const normalizedSnps = Object.fromEntries(
@@ -52,69 +52,102 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
 
   const matchedHaps: Array<{
     id: string;
-    observedAllele: string;
     dosage: number;
     freqs: Record<string, number>;
   }> = [];
 
-  // Match user alleles to known microhap regions in the microhap_top100_kernel
-  microHapKernel.forEach((hap: any) => {
-    const locusAlleles: string[][] = [];
-    let hasAllSnps = true;
+  // 1. First check block-based haplotypes from microHapKernel if present
+  if (Array.isArray(microHapKernel) && microHapKernel.length > 0) {
+    microHapKernel.forEach((hap: any) => {
+      const locusAlleles: string[][] = [];
+      let hasAllSnps = true;
 
-    for (const rsid of hap.snps) {
-      const g = normalizedSnps[rsid.toLowerCase()];
-      if (!g || g === '--' || g === '00' || g === '??') {
-        hasAllSnps = false;
-        break;
+      for (const rsid of hap.snps) {
+        const g = normalizedSnps[rsid.toLowerCase()];
+        if (!g || g === '--' || g === '00' || g === '??') {
+          hasAllSnps = false;
+          break;
+        }
+        const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
+        const alleles = Array.from(new Set(cleanG.split('')));
+        if (alleles.length === 0) {
+          hasAllSnps = false;
+          break;
+        }
+        locusAlleles.push(alleles);
       }
-      const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
-      const alleles = Array.from(new Set(cleanG.split('')));
-      if (alleles.length === 0) {
-        hasAllSnps = false;
-        break;
-      }
-      locusAlleles.push(alleles);
+
+      if (!hasAllSnps) return;
+
+      const cartesian = (arrays: string[][]): string[][] => {
+        return arrays.reduce((acc, curr) => {
+          return acc.flatMap(d => curr.map(e => [...d, e]));
+        }, [[]] as string[][]);
+      };
+
+      const possibleHaploVectors = cartesian(locusAlleles);
+      const numHaplos = possibleHaploVectors.length;
+      if (numHaplos === 0) return;
+
+      const dosagePerHaplo = 2.0 / numHaplos;
+      const dbEntry = (microHapDb as any)[hap.id];
+      if (!dbEntry || !dbEntry.alleles) return;
+
+      possibleHaploVectors.forEach((vector) => {
+        const haplotypeString = vector.join(':');
+        const matchIdx = dbEntry.alleles.indexOf(haplotypeString);
+        if (matchIdx !== -1) {
+          const freqs: Record<string, number> = {};
+          Object.entries(dbEntry.frequencies).forEach(([pop, freqArray]: [string, any]) => {
+            if (Array.isArray(freqArray)) {
+              freqs[pop] = freqArray[matchIdx] || 0;
+            } else if (typeof freqArray === 'number') {
+              freqs[pop] = freqArray;
+            }
+          });
+
+          matchedHaps.push({
+            id: hap.id,
+            dosage: dosagePerHaplo,
+            freqs
+          });
+        }
+      });
+    });
+  }
+
+  // 2. Direct locus matching against 3,053 microhaplotypes in microHapDb
+  Object.entries(microHapDb as Record<string, any>).forEach(([hapId, dbEntry]) => {
+    const rsid = dbEntry.rsid || hapId;
+    const g = normalizedSnps[rsid.toLowerCase()] || normalizedSnps[hapId.toLowerCase()];
+    if (!g || g === '--' || g === '00' || g === '??') return;
+
+    const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
+    const ref = (dbEntry.ref || 'A').toUpperCase();
+    const alt = (dbEntry.alt || 'G').toUpperCase();
+    let dosage = 0;
+    for (const char of cleanG) {
+      if (char === alt) dosage += 1.0;
     }
 
-    if (!hasAllSnps) return;
+    const freqs: Record<string, number> = {};
+    if (dbEntry.frequencies && typeof dbEntry.frequencies === 'object') {
+      Object.entries(dbEntry.frequencies).forEach(([pop, val]: [string, any]) => {
+        if (typeof val === 'number') {
+          freqs[pop] = val;
+        } else if (Array.isArray(val) && val.length > 0) {
+          freqs[pop] = val[0];
+        }
+      });
+    }
 
-    // Generate Cartesian product of alleles to find all possible haplotype strings
-    const cartesian = (arrays: string[][]): string[][] => {
-      return arrays.reduce((acc, curr) => {
-        return acc.flatMap(d => curr.map(e => [...d, e]));
-      }, [[]] as string[][]);
-    };
-
-    const possibleHaploVectors = cartesian(locusAlleles);
-    const numHaplos = possibleHaploVectors.length;
-    if (numHaplos === 0) return;
-
-    const dosagePerHaplo = 2.0 / numHaplos;
-    const dbEntry = (microHapDb as any)[hap.id];
-    if (!dbEntry || !dbEntry.alleles) return;
-
-    possibleHaploVectors.forEach((vector) => {
-      const haplotypeString = vector.join(':');
-      const matchIdx = dbEntry.alleles.indexOf(haplotypeString);
-      if (matchIdx !== -1) {
-        const freqs: Record<string, number> = {};
-        Object.entries(dbEntry.frequencies).forEach(([pop, freqArray]: [string, any]) => {
-          if (Array.isArray(freqArray)) {
-            freqs[pop] = freqArray[matchIdx] || 0;
-          } else if (typeof freqArray === 'number') {
-            freqs[pop] = freqArray;
-          }
-        });
-
-        matchedHaps.push({
-          id: hap.id,
-          observedAllele: haplotypeString,
-          dosage: dosagePerHaplo,
-          freqs
-        });
-      }
-    });
+    if (Object.keys(freqs).length > 0) {
+      matchedHaps.push({
+        id: hapId,
+        dosage,
+        freqs
+      });
+    }
   });
 
   if (matchedHaps.length === 0) {
@@ -149,5 +182,6 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
       name: POP_LABEL_MAP[popCode] || popCode,
       percentage
     }))
+    .filter(item => item.percentage > 0.1)
     .sort((a, b) => b.percentage - a.percentage);
 }

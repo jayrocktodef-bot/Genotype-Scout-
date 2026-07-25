@@ -84,46 +84,39 @@ export const ModernAncestryOracle = memo(({
   const exportAncestryReport = async () => {};
   
   const resultsToDisplay = results?.primary;
-  const continentalScores = resultsToDisplay?.continentalScores || {};
-  
-  const hbbMigration = useMemo(() => {
-    return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
-  }, [results.userSnps]);
 
-  const chartData = useMemo(() => {
-    return Object.entries(continentalScores).map(([key, value]) => {
-      let label = key;
-      if (key === 'AMR') label = 'Indigenous American';
-      else if (key === 'AMER') label = 'Admixed American';
-      else if (key === 'EAS') label = 'East Asian';
-      else if (key === 'SAS') label = 'South Asian';
-      else if (key === 'AFR') label = 'African';
-      else if (key === 'AFRAM') label = 'African-American';
-      else if (key === 'EUR') label = 'European';
-      else if (key === 'MENA') label = 'Middle Eastern';
-      else if (key === 'OCE') label = 'Oceanian';
-      else if (key === 'CAS') label = 'Central Asian & Siberian';
-      
-      return {
-        subject: label,
-        A: Number(value),
-        fullMark: 100,
-      };
-    });
-  }, [continentalScores]);
+  const subpopulationScores = useMemo(() => {
+    // 1. Prefer high-precision NNLS subpopulation admixture mix from subpopulationOracle
+    const subOracle = dataset?.analysis?.subpopulationOracle || results?.subpopulationOracle;
+    const mix = subOracle?.all?.admixtureMix || subOracle?.admixtureMix;
+    if (mix && Array.isArray(mix) && mix.length > 0) {
+      const scores: Record<string, number> = {};
+      mix.forEach((item: any) => {
+        const name = item.name || item.subpop || item.popCode;
+        if (name && item.percentage > 0.1) {
+          scores[name] = Number(item.percentage);
+        }
+      });
+      if (Object.keys(scores).length > 0) return scores;
+    }
 
-  const hasData = Object.keys(continentalScores).length > 0;
-  
-  if (!hasData) {
-    return (
-      <div className="p-12 text-center text-slate-500 dark:text-slate-400">
-        No Ancestry Results Available - Please load and process a valid dataset.
-      </div>
-    );
-  }
-  
-  const getDisplayName = (code: string) => {
-    const map: Record<string, string> = {
+    // 2. Fallback to breakdown or primary continentalScores with humanized names
+    const breakdown = subOracle?.all?.breakdown || subOracle?.breakdown;
+    if (breakdown && Array.isArray(breakdown) && breakdown.length > 0) {
+      const scores: Record<string, number> = {};
+      breakdown.slice(0, 10).forEach((item: any) => {
+        const name = item.subpop || item.name || item.popCode;
+        if (name) {
+          scores[name] = Number(item.similarityScore || item.percentage || 0);
+        }
+      });
+      if (Object.keys(scores).length > 0) return scores;
+    }
+
+    // 3. Fallback to resultsToDisplay.continentalScores
+    const rawScores = resultsToDisplay?.continentalScores || {};
+    const mappedScores: Record<string, number> = {};
+    const macroMap: Record<string, string> = {
       'EUR': 'European',
       'AFR': 'African',
       'AFRAM': 'African-American',
@@ -135,7 +128,37 @@ export const ModernAncestryOracle = memo(({
       'OCE': 'Oceanian',
       'CAS': 'Central Asian & Siberian'
     };
-    return map[code] || code;
+    Object.entries(rawScores).forEach(([k, v]) => {
+      const label = macroMap[k] || k;
+      mappedScores[label] = Number(v);
+    });
+    return mappedScores;
+  }, [dataset, results, resultsToDisplay]);
+  
+  const hbbMigration = useMemo(() => {
+    return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
+  }, [results.userSnps]);
+
+  const chartData = useMemo(() => {
+    return Object.entries(subpopulationScores).map(([label, value]) => ({
+      subject: label,
+      A: Number(value),
+      fullMark: 100,
+    }));
+  }, [subpopulationScores]);
+
+  const hasData = Object.keys(subpopulationScores).length > 0;
+  
+  if (!hasData) {
+    return (
+      <div className="p-12 text-center text-slate-500 dark:text-slate-400">
+        No Ancestry Results Available - Please load and process a valid dataset.
+      </div>
+    );
+  }
+  
+  const getDisplayName = (code: string) => {
+    return code;
   };
 
   return (
@@ -200,7 +223,7 @@ export const ModernAncestryOracle = memo(({
           </div>
           
           <div className="space-y-4 sm:space-y-6 lg:col-span-1">
-            {Object.entries(continentalScores).map(([name, value]) => (
+            {Object.entries(subpopulationScores).map(([name, value]) => (
               <div key={name} className="flex items-center justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
                 <span className="font-bold text-base sm:text-lg text-[#F5F6F7]">{getDisplayName(name)}</span>
                 <span className="font-mono font-black text-lg sm:text-xl text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>

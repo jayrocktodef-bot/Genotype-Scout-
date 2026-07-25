@@ -590,8 +590,30 @@ export async function processSubpopulations(
   aimsDatabase: AIM[],
   sampleId?: string,
   snpMetaMap?: Record<string, { chrom: string; pos: number }>,
-  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' = 'all'
+  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'ramos' | 'microhap' = 'all'
 ): Promise<OracleResult> {
+  const popToMacroMap = new Map<string, string>();
+  for (const [macro, pops] of Object.entries(MACRO_GROUPS)) {
+    for (const pop of pops) {
+      popToMacroMap.set(pop, macro);
+    }
+  }
+
+  const isPopAllowedForPanel = (popCode: string) => {
+    if (panel === 'all' || panel === 'kidd55' || panel === 'seldin128' || panel === 'microhap') {
+      return true;
+    }
+    if (panel === 'euroforgen') {
+      const macroCode = popToMacroMap.get(popCode) || '';
+      return macroCode === 'EUR' || macroCode === 'MENA';
+    }
+    if (panel === 'ramos') {
+      const macroCode = popToMacroMap.get(popCode) || '';
+      return macroCode === 'AFR' || macroCode === 'AFRAM';
+    }
+    return true;
+  };
+
   const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = await getHoReferenceKernel() as Record<string, { region: string; frequencies: Record<string, number> }>;
   const GLOBAL_REFERENCE_CODES = new Set([
@@ -651,18 +673,21 @@ export async function processSubpopulations(
   const markersToPrune: Array<{ rsid: string; dbKey: string; chromosome: string; position: number; genotype: string; gene?: string; weight: number }> = [];
 
   // Build panel filter set ONCE outside the loop (not on every iteration)
-  // Also filter out known placeholder/fake RSIDs (rs1001415-rs1001515 in euroforgen)
   const panelSet: Set<string> | null = panel !== 'all'
-    ? new Set(
-        ((forensicPanels as any)[panel] as string[] || [])
-          .filter((id: string) => {
-            // Exclude placeholder markers: real RSIDs don't start with rs1001 through rs1002
-            // when followed by 3 more digits (these were padding entries)
-            const num = parseInt(id.replace(/^rs/i, ''), 10);
-            return isNaN(num) || num < 1001 || num > 1999 || num < 1001415;
-          })
-          .map((id: string) => id.toLowerCase())
-      )
+    ? panel === 'microhap'
+      ? new Set(
+          Object.keys(normalizedDatabase)
+            .filter(k => k.toLowerCase().startsWith('mh') || normalizedDatabase[k]?.trait === 'Forensic Microhaplotype')
+            .map(k => k.toLowerCase())
+        )
+      : new Set(
+          ((forensicPanels as any)[panel] as string[] || [])
+            .filter((id: string) => {
+              const num = parseInt(id.replace(/^rs/i, ''), 10);
+              return isNaN(num) || num < 1001 || num > 1999 || num < 1001415;
+            })
+            .map((id: string) => id.toLowerCase())
+        )
     : null;
 
   for (const [rsid, genotype] of genotypeMap.entries()) {
@@ -804,6 +829,7 @@ export async function processSubpopulations(
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (!isPopAllowedForPanel(popCode)) continue;
     const frequencies = popData.frequencies;
     const matchedUserDosages: number[] = [];
     const matchedRefFreqs: number[] = [];
@@ -989,6 +1015,7 @@ export async function processSubpopulations(
   const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number; popCode: string }> = [];
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (!isPopAllowedForPanel(popCode)) continue;
     const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
