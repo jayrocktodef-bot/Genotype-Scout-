@@ -101,9 +101,10 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
         const freqs: Record<string, number> = {};
         Object.entries(dbEntry.frequencies).forEach(([pop, freqArray]: [string, any]) => {
           if (Array.isArray(freqArray)) {
-            freqs[pop] = freqArray[matchIdx] || 0;
+            const rawFreq = freqArray[matchIdx];
+            freqs[pop] = (rawFreq !== undefined && rawFreq > 0) ? rawFreq : 0.001; // Soft Bayesian floor to avoid 0-likelihood artifacts
           } else if (typeof freqArray === 'number') {
-            freqs[pop] = freqArray;
+            freqs[pop] = freqArray > 0 ? freqArray : 0.001;
           }
         });
 

@@ -102,7 +102,7 @@ export function matchHealthAndWellness(userSnps: Record<string, string>): Health
           interpretation: ensureString(interpretation),
           impact,
           drugs: marker.drugs_affected || marker.drugs,
-          evidence: ensureString(marker.evidence),
+          evidence: ensureString(marker.evidence) || (marker.categories?.includes('pharmacogenomics') ? 'CPIC Level 1A Clinical Guideline' : 'GWAS Catalog Standard'),
           actionable,
           masked: isSensitive && (impact === 'high' || impact === 'moderate')
         });
