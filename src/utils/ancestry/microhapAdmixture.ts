@@ -1,5 +1,6 @@
 import microHapDb from '../../data/raw_aims/microhap_db.json';
 import microHapKernel from '../../data/raw_aims/microhap_top100_kernel.json';
+import { loadMasterAims } from '../../data/index';
 import { solveAdmixtureProportions } from '../../components/ancestryOracleLogic';
 
 export interface MicroHapResult {
@@ -50,13 +51,15 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
     Object.entries(userSnps).map(([k, v]) => [k.toLowerCase(), v])
   );
 
+  const masterAims = (loadMasterAims() || {}) as Record<string, any>;
+
   const matchedHaps: Array<{
     id: string;
     dosage: number;
     freqs: Record<string, number>;
   }> = [];
 
-  // 1. First check block-based haplotypes from microHapKernel if present
+  // 1. Check block-based haplotypes from microHapKernel if present
   if (Array.isArray(microHapKernel) && microHapKernel.length > 0) {
     microHapKernel.forEach((hap: any) => {
       const locusAlleles: string[][] = [];
@@ -116,10 +119,13 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
     });
   }
 
-  // 2. Direct locus matching against 3,053 microhaplotypes in microHapDb
-  Object.entries(microHapDb as Record<string, any>).forEach(([hapId, dbEntry]) => {
-    const rsid = dbEntry.rsid || hapId;
-    const g = normalizedSnps[rsid.toLowerCase()] || normalizedSnps[hapId.toLowerCase()];
+  // 2. Direct RSID and coordinate locus matching against master microhaplotypes
+  Object.entries(masterAims).forEach(([aimKey, aimEntry]) => {
+    if (!aimKey.toLowerCase().startsWith('mh') && aimEntry.trait !== 'Forensic Microhaplotype') return;
+
+    const dbEntry = (microHapDb as any)[aimKey] || aimEntry;
+    const rsid = dbEntry.rsid || aimKey;
+    const g = normalizedSnps[rsid.toLowerCase()] || normalizedSnps[aimKey.toLowerCase()];
     if (!g || g === '--' || g === '00' || g === '??') return;
 
     const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
@@ -131,8 +137,9 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
     }
 
     const freqs: Record<string, number> = {};
-    if (dbEntry.frequencies && typeof dbEntry.frequencies === 'object') {
-      Object.entries(dbEntry.frequencies).forEach(([pop, val]: [string, any]) => {
+    const freqSource = dbEntry.frequencies || aimEntry.frequencies;
+    if (freqSource && typeof freqSource === 'object') {
+      Object.entries(freqSource).forEach(([pop, val]: [string, any]) => {
         if (typeof val === 'number') {
           freqs[pop] = val;
         } else if (Array.isArray(val) && val.length > 0) {
@@ -143,7 +150,7 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
 
     if (Object.keys(freqs).length > 0) {
       matchedHaps.push({
-        id: hapId,
+        id: aimKey,
         dosage,
         freqs
       });

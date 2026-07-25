@@ -198,21 +198,22 @@ export const ModernAncestryOracle = memo(({
         )}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 items-center">
-          <div className="h-[280px] sm:h-[360px] lg:col-span-2 w-full min-w-0 relative">
+          <div className="h-[440px] sm:h-[520px] lg:col-span-2 w-full min-w-0 relative bg-black/20 rounded-xl p-2 border border-white/5">
             {isChartReady ? (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={280} debounce={1}>
-                <RadarChart cx="50%" cy="50%" outerRadius="75%" data={chartData} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
-                  <PolarGrid stroke="#334155" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 10 }} />
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
+                <RadarChart cx="50%" cy="50%" outerRadius="88%" data={chartData} margin={{ top: 20, right: 35, bottom: 20, left: 35 }}>
+                  <PolarGrid stroke="#334155" strokeWidth={1.5} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#cbd5e1', fontSize: 12, fontWeight: 700 }} />
                   <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                   <Radar
                     name="Ancestry"
                     dataKey="A"
                     stroke="#4599FF"
                     fill="#4599FF"
-                    fillOpacity={0.3}
+                    fillOpacity={0.35}
+                    strokeWidth={2.5}
                   />
-                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#f8fafc', borderRadius: '0.75rem', backdropFilter: 'blur(8px)', fontSize: '0.75rem' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#4599FF', color: '#f8fafc', borderRadius: '0.75rem', backdropFilter: 'blur(8px)', fontSize: '0.85rem' }} />
                 </RadarChart>
               </ResponsiveContainer>
             ) : (
@@ -220,7 +221,7 @@ export const ModernAncestryOracle = memo(({
             )}
           </div>
           
-          <div className="space-y-2 lg:col-span-1 max-h-[360px] overflow-y-auto pr-1">
+          <div className="space-y-2 lg:col-span-1 max-h-[520px] overflow-y-auto pr-1">
             {Object.entries(subpopulationScores).map(([name, value]) => (
               <div key={name} className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
                 <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] truncate max-w-[180px]">{getDisplayName(name)}</span>
