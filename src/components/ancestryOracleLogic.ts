@@ -55,89 +55,28 @@ export interface OracleResult {
   admixtureMix: AdmixtureComponent[];
 }
 
-export function humanizePopName(rawName: string): string {
-  if (!rawName) return 'Unknown';
-  
-  const DIRECT_MAP: Record<string, string> = {
-    'AMI_gnomAD': 'Amish / Germanic European (AMI)',
-    '48J_gnomAD': 'Japanese (gnomAD)',
-    'BALKAN': 'Balkan / Southeastern European',
-    'ITALIAN_AM': 'Italian-American',
-    'GREEK': 'Greek / Southern European',
-    'IRISH': 'Irish / British Isles',
-    'GIWD': 'Gambian (GWD)',
-    'LWK': 'Luhya / East African (LWK)',
-    'GWD': 'Gambian / West African (GWD)',
-    'YRI': 'Yoruba / West African (YRI)',
-    'CEU': 'Central European (CEU)',
-    'GBR': 'British (GBR)',
-    'FIN': 'Finnish (FIN)',
-    'IBS': 'Iberian (IBS)',
-    'TSI': 'Tuscan (TSI)',
-    'CHB': 'Han Chinese / Beijing (CHB)',
-    'CHS': 'Southern Han Chinese (CHS)',
-    'JPT': 'Japanese / Yamato (JPT)',
-    'KHV': 'Kinh Vietnamese (KHV)',
-    'CDX': 'Chinese Dai (CDX)',
-    'GIH': 'Gujarati (GIH)',
-    'PJL': 'Punjabi (PJL)',
-    'BEB': 'Bengali (BEB)',
-    'STU': 'Tamil (STU)',
-    'ITU': 'Telugu (ITU)',
-    'PUR': 'Puerto Rican (PUR)',
-    'CLM': 'Colombian (CLM)',
-    'MXL': 'Mexican (MXL)',
-    'PEL': 'Peruvian (PEL)',
-    'ASW': 'African-American (ASW)',
-    'ACB': 'African Caribbean (ACB)'
-  };
-  if (DIRECT_MAP[rawName]) return DIRECT_MAP[rawName];
-
-  let cleaned = rawName;
-  let prefixTag = '';
-
-  if (/^hgdp_/i.test(cleaned)) { prefixTag = 'HGDP'; cleaned = cleaned.replace(/^hgdp_/i, ''); }
-  else if (/^sgdp_/i.test(cleaned)) { prefixTag = 'SGDP'; cleaned = cleaned.replace(/^sgdp_/i, ''); }
-  else if (/^agcp_/i.test(cleaned)) { prefixTag = 'AGCP'; cleaned = cleaned.replace(/^agcp_/i, ''); }
-  else if (/_gnomAD$/i.test(cleaned)) { prefixTag = 'gnomAD'; cleaned = cleaned.replace(/_gnomAD$/i, ''); }
-  else if (/_proxy$/i.test(cleaned)) { cleaned = cleaned.replace(/_proxy$/i, ''); }
-
-  cleaned = cleaned.replace(/[_]/g, ' ').trim();
-  cleaned = cleaned.split(' ').map(w => {
-    const lower = w.toLowerCase();
-    if (lower === 'am') return 'American';
-    return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
-  }).join(' ');
-
-  if (cleaned.toLowerCase() === 'orcardian') cleaned = 'Orcadian';
-  if (cleaned.toLowerCase() === 'mzerabita') cleaned = 'Mzabite';
-
-  return prefixTag ? `${cleaned} (${prefixTag})` : cleaned;
-}
-
-export function getBasePopKey(popCode: string, popName: string): string {
-  let key = (popCode || popName).toLowerCase();
-  key = key.replace(/^(hgdp_|sgdp_|agcp_|1000g_)/i, '');
-  key = key.replace(/(_gnomad|_proxy)$/i, '');
-  key = key.replace(/[^a-z0-9]/g, '');
-  return key;
-}
-
 // Map of 1000 Genomes population codes to detailed, scientific, and readable names
-export const POPULATION_NAMES_MAP: Record<string, string> = {
+const POPULATION_NAMES_MAP: Record<string, string> = {
   'CEU': 'Central European (CEU)',
   'GBR': 'British Isles (GBR)',
   'FIN': 'Uralic & North-East European (FIN)',
   'TSI': 'Central Mediterranean / Tuscan (TSI)',
   'IBS': 'Iberian Peninsula (IBS)',
   'GERMAN': 'German / Central European (GERMAN)',
+  'SWEDISH': 'Swedish / Scandinavian (SWEDISH)',
+  'DUTCH': 'Dutch / North Sea Germanic (DUTCH)',
+  'IRISH': 'Irish / Celtic (IRISH)',
+  'FRENCH': 'French / Western European (FRENCH)',
+  'SPANISH': 'Spanish / Iberian (SPANISH)',
+  'POLISH': 'Polish / Eastern European (POLISH)',
+  'GREEK': 'Greek / Southern European (GREEK)',
   'YRI': 'Yoruba / West African (YRI)',
-  'LWK': 'Luhya / East African (LWK)',
+  'ESN': 'Esan / West African (ESN)',
   'GWD': 'Gambian / West African (GWD)',
   'MSL': 'Mende / Sierra Leonean (MSL)',
-  'ESN': 'Esan / Nigerian (ESN)',
-  'GIH': 'Gujarati / South Asian (GIH)',
+  'LWK': 'Luhya / East African (LWK)',
   'BEB': 'Bengali / South Asian (BEB)',
+  'GIH': 'Gujarati / South Asian (GIH)',
   'PJL': 'Punjabi / South Asian (PJL)',
   'ITU': 'Telugu / South Asian (ITU)',
   'STU': 'Tamil / South Asian (STU)',
@@ -341,6 +280,45 @@ export const POPULATION_NAMES_MAP: Record<string, string> = {
   'OCE': 'Oceanian Reference (OCE)',
   'CAS': 'Central Asian & Siberian Reference (CAS)'
 };
+
+/**
+ * Converts a raw population code (e.g. 'sgdp_orcadian', 'hgdp_mozabite') into a human-readable label.
+ * Falls back to a prettified version of the code when no direct mapping is found.
+ */
+export function humanizePopName(rawName: string): string {
+  if (!rawName) return 'Unknown';
+  if (POPULATION_NAMES_MAP[rawName]) return POPULATION_NAMES_MAP[rawName];
+
+  let cleaned = rawName;
+  let prefixTag = '';
+
+  if (/^hgdp_/i.test(cleaned)) { prefixTag = 'HGDP'; cleaned = cleaned.replace(/^hgdp_/i, ''); }
+  else if (/^sgdp_/i.test(cleaned)) { prefixTag = 'SGDP'; cleaned = cleaned.replace(/^sgdp_/i, ''); }
+  else if (/^agcp_/i.test(cleaned)) { prefixTag = 'AGCP'; cleaned = cleaned.replace(/^agcp_/i, ''); }
+  else if (/_gnomAD$/i.test(cleaned)) { prefixTag = 'gnomAD'; cleaned = cleaned.replace(/_gnomAD$/i, ''); }
+  else if (/_proxy$/i.test(cleaned)) { cleaned = cleaned.replace(/_proxy$/i, ''); }
+
+  cleaned = cleaned.replace(/[_]/g, ' ').trim();
+  cleaned = cleaned.split(' ').map(w => {
+    const lower = w.toLowerCase();
+    if (lower === 'am') return 'American';
+    return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+  }).join(' ');
+
+  return prefixTag ? `${cleaned} (${prefixTag})` : cleaned;
+}
+
+/**
+ * Returns a normalized base key for a population, stripping dataset prefix (hgdp_, sgdp_, agcp_)
+ * and suffix (_gnomad, _proxy) to allow deduplication across source datasets.
+ */
+export function getBasePopKey(popCode: string, popName: string): string {
+  let key = (popCode || popName).toLowerCase();
+  key = key.replace(/^(hgdp_|sgdp_|agcp_|1000g_)/i, '');
+  key = key.replace(/(_gnomad|_proxy)$/i, '');
+  key = key.replace(/[^a-z0-9]/g, '');
+  return key;
+}
 
 // Macro-continental Group Classifications for Hierarchy-Aware Matching
 const MACRO_GROUPS: Record<string, string[]> = {
@@ -579,9 +557,9 @@ export function solveAdmixtureProportions(
 
   // To enforce sum(x) = 1, we augment A and b with a heavily weighted row.
   // We want sum_p x_p = 1. So lambda * sum_p x_p = lambda.
-  // Scale lambda proportionally to panel size and average marker weight.
-  const avgWeight = w.length > 0 ? (w.reduce((acc, val) => acc + val, 0) / w.length) : 1.0;
-  const LAMBDA = Math.max(10, Math.sqrt(M) * 10 * avgWeight);
+  // Scale lambda proportionally to panel size to avoid overwhelming small panels
+  // while keeping tight constraint on large ones.
+  const LAMBDA = Math.max(10, Math.sqrt(M) * 10);
   const augA = new Array(P).fill(LAMBDA);
   A.push(augA);
   b.push(LAMBDA);
@@ -612,7 +590,7 @@ export async function processSubpopulations(
   aimsDatabase: AIM[],
   sampleId?: string,
   snpMetaMap?: Record<string, { chrom: string; pos: number }>,
-  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'ramos' = 'all'
+  panel: 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'ramos' | 'microhap' = 'all'
 ): Promise<OracleResult> {
   const popToMacroMap = new Map<string, string>();
   for (const [macro, pops] of Object.entries(MACRO_GROUPS)) {
@@ -620,6 +598,22 @@ export async function processSubpopulations(
       popToMacroMap.set(pop, macro);
     }
   }
+
+  const isPopAllowedForPanel = (popCode: string) => {
+    if (panel === 'all' || panel === 'kidd55' || panel === 'seldin128' || panel === 'microhap') {
+      return true;
+    }
+    if (panel === 'euroforgen') {
+      const macroCode = popToMacroMap.get(popCode) || '';
+      return macroCode === 'EUR' || macroCode === 'MENA';
+    }
+    if (panel === 'ramos') {
+      const macroCode = popToMacroMap.get(popCode) || '';
+      return macroCode === 'AFR' || macroCode === 'AFRAM';
+    }
+    return true;
+  };
+
   const normalizedDatabase = getMasterAims() as Record<string, any>;
   const referenceDatabase = await getHoReferenceKernel() as Record<string, { region: string; frequencies: Record<string, number> }>;
   const GLOBAL_REFERENCE_CODES = new Set([
@@ -674,29 +668,31 @@ export async function processSubpopulations(
   const popMarkerCounts = new Map<string, number>();
   const negativeViolations = new Map<string, number>();
 
-  const isPopAllowedForPanel = (popCode: string) => {
-    if (panel === 'all' || panel === 'kidd55' || panel === 'seldin128') {
-      return true;
-    }
-    if (panel === 'euroforgen') {
-      const macroCode = popToMacroMap.get(popCode) || '';
-      return macroCode === 'EUR' || macroCode === 'MENA';
-    }
-    if (panel === 'ramos') {
-      const macroCode = popToMacroMap.get(popCode) || '';
-      return macroCode === 'AFR';
-    }
-    return true;
-  };
-
   // --- COMPONENT 1: Spatial Gene-Locus Mapping (All Available Markers) ---
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
   const markersToPrune: Array<{ rsid: string; dbKey: string; chromosome: string; position: number; genotype: string; gene?: string; weight: number }> = [];
 
+  // Build panel filter set ONCE outside the loop (not on every iteration)
+  const panelSet: Set<string> | null = panel !== 'all'
+    ? panel === 'microhap'
+      ? new Set(
+          Object.keys(normalizedDatabase)
+            .filter(k => k.toLowerCase().startsWith('mh') || normalizedDatabase[k]?.trait === 'Forensic Microhaplotype')
+            .map(k => k.toLowerCase())
+        )
+      : new Set(
+          ((forensicPanels as any)[panel] as string[] || [])
+            .filter((id: string) => {
+              const num = parseInt(id.replace(/^rs/i, ''), 10);
+              return isNaN(num) || num < 1001 || num > 1999 || num < 1001415;
+            })
+            .map((id: string) => id.toLowerCase())
+        )
+    : null;
+
   for (const [rsid, genotype] of genotypeMap.entries()) {
-    // Apply panel filter if specified (except for ramos, which is restricted dynamically by population instead of locus subset)
-    if (panel !== 'all' && panel !== 'ramos') {
-      const panelSet = new Set((forensicPanels as any)[panel]?.map((id: string) => id.toLowerCase()) || []);
+    // Apply panel filter if specified
+    if (panelSet !== null) {
       const baseRsid = rsid.split('_')[0].toLowerCase();
       if (!panelSet.has(baseRsid)) {
         continue;
@@ -833,6 +829,7 @@ export async function processSubpopulations(
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (!isPopAllowedForPanel(popCode)) continue;
     const frequencies = popData.frequencies;
     const matchedUserDosages: number[] = [];
     const matchedRefFreqs: number[] = [];
@@ -841,13 +838,7 @@ export async function processSubpopulations(
 
     for (let i = 0; i < activeRefSnps.length; i++) {
       const activeSnp = activeRefSnps[i];
-      let refFreq = frequencies[activeSnp.rsid];
-      if (refFreq === undefined) {
-        refFreq = frequencies[activeSnp.rsidLower];
-      }
-      if (refFreq === undefined) {
-        refFreq = frequencies[activeSnp.rsid.toUpperCase()];
-      }
+      const refFreq = frequencies[activeSnp.rsid];
       if (refFreq === undefined || refFreq === -1.0) continue;
 
       const userDosageDiscrete = activeSnp.userDosage;
@@ -944,69 +935,28 @@ export async function processSubpopulations(
     negativeViolations.set(popCode, violations);
 
     if (M >= 4) {
-      // Calculate Log-Likelihood of the user's genotype vector under Hardy-Weinberg equilibrium.
-      // We use a tiny epsilon value (0.005) to avoid Math.log(0) for extremely rare or unobserved alleles.
-      let logLikelihood = 0;
-      let expectedMean = 0;
-      let expectedVariance = 0;
-      const epsilon = 0.005;
+      // Euclidean Distance calculations vectorized in Float32Array
+      const userVector = new Float32Array(M);
+      const refVector = new Float32Array(M);
 
       for (let i = 0; i < M; i++) {
-        const uGeno = matchedUserDosages[i]; // user dosage: 0, 1, or 2
-        const p = Math.max(epsilon, Math.min(1.0 - epsilon, matchedRefFreqs[i])); // frequency of alternative allele
-        const q = 1.0 - p; // frequency of reference allele
-        const wt = matchedWeights[i];
-
-        // 1. Observed log-probability
-        let genotypeProb = epsilon;
-        if (uGeno === 0) {
-          genotypeProb = q * q; // homozygous reference probability: q^2
-        } else if (uGeno === 1) {
-          genotypeProb = 2.0 * p * q; // heterozygous probability: 2pq
-        } else if (uGeno === 2) {
-          genotypeProb = p * p; // homozygous alternative probability: p^2
-        }
-        logLikelihood += Math.log(genotypeProb) * wt;
-
-        // 2. Analytical Null Expectation for this locus (Hardy-Weinberg proportions)
-        const p0 = q * q;
-        const p1 = 2.0 * p * q;
-        const p2 = p * p;
-
-        const val0 = Math.log(p0);
-        const val1 = Math.log(p1);
-        const val2 = Math.log(p2);
-
-        const unweightedMean = p0 * val0 + p1 * val1 + p2 * val2;
-        const unweightedSecondMoment = p0 * (val0 * val0) + p1 * (val1 * val1) + p2 * (val2 * val2);
-        
-        expectedMean += unweightedMean * wt;
-
-        const locusVar = (wt * wt) * Math.max(0.0001, unweightedSecondMoment - (unweightedMean * unweightedMean));
-        expectedVariance += locusVar;
+        userVector[i] = matchedUserDosages[i];
+        refVector[i] = matchedRefFreqs[i] * 2.0; // Expected continuous dosage [0, 2]
       }
 
-      const expectedStdDev = Math.sqrt(expectedVariance);
+      let weightedSquaredDiffSum = 0;
+      let totalW = 0;
+      for (let i = 0; i < M; i++) {
+        const wt = matchedWeights[i];
+        const normalDiff = (userVector[i] - refVector[i]) / 2.0; // range [0, 2] / 2 -> [0, 1] scope
+        weightedSquaredDiffSum += (normalDiff * normalDiff) * wt;
+        totalW += wt;
+      }
 
-      // 3. Compute Z-score of observed log-likelihood
-      const zScore = (logLikelihood - expectedMean) / (expectedStdDev || 1.0);
-
-      // 4. Map Z-score using normal CDF approximation.
-      // A clean HWE match has a Z-score near 0. Extreme outliers have negative Z-scores.
-      // Standard normal CDF approximation (Hart's method or logistic approximation):
-      // CDF(Z) is the probability of a random member having a score <= ours.
-      // Higher typicalness = higher CDF value (approaching 0.5 to 1.0).
-      // Low typicalness (outliers) = CDF approaches 0.0.
-      const logisticCdf = 1.0 / (1.0 + Math.exp(-0.07056 * zScore * zScore * zScore - 1.5976 * zScore));
-      const typicalness = Math.max(0.0001, Math.min(0.9999, logisticCdf));
-
-      // Genetic distance is inversely proportional to typicalness.
-      // A highly typical profile yields a distance close to 0.
-      // An outlier profile scales cleanly to 1.0.
-      const normalizedDistance = Math.min(1.0, Math.max(0.0016, 1.0 - typicalness));
+      const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
 
       // Scale penalties for ancestral allele/cladistic conflicts.
-      const adjustedDistance = normalizedDistance * (1.0 + 0.20 * violations);
+      const adjustedDistance = baseDistance * (1.0 + 0.20 * violations);
       popDistances.set(popCode, adjustedDistance);
     } else {
       popDistances.set(popCode, 1.0); // Insufficient markers fallback
@@ -1046,8 +996,23 @@ export async function processSubpopulations(
   // creating a positive-feedback loop that obliterated realistic admixture proportions.
   // NNLS (Component 4 below) handles admixture proportions; the breakdown list
   // is now sorted purely by distance with no post-hoc adjustments.
+  // Minimum markers required: forensic panels need enough markers to differentiate populations.
+  // With fewer than 10 markers the Euclidean distances collapse to near-identical values
+  // because there are insufficient independent loci to distinguish populations.
+  // Panel-specific minimum marker thresholds for meaningful population differentiation.
+  // Kidd55/Seldin128 have ~50-100 kernel-matched markers → min=10 forces real differentiation.
+  // EuroForGen has only 8 kernel-matched markers → min=4 to allow at least some output.
+  // Ramos/all use a lower default since they rely on thousands of markers.
+  const MIN_MARKERS_BY_PANEL: Record<string, number> = {
+    'kidd55': 10,
+    'seldin128': 10,
+    'euroforgen': 4,
+    'ramos': 4,
+    'all': 5
+  };
+  const MIN_MARKERS = MIN_MARKERS_BY_PANEL[panel] ?? 5;
+
   const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number; popCode: string }> = [];
-  const MIN_MARKERS = panel !== 'all' ? 1 : 5; // Lower limit when a panel is active so thin marker sets do not result in empty breakdowns
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     if (!isPopAllowedForPanel(popCode)) continue;
@@ -1067,17 +1032,20 @@ export async function processSubpopulations(
     }
   }
 
-  // Sort breakdown list so closest proximity matches are first
+  // Log panel coverage for diagnostics
+  const panelCoverage = rawBreakdown.length > 0 ? rawBreakdown[0].markersCompared : 0;
+  console.log(`[Oracle ${panel}] ${rawBreakdown.length} populations with ≥${MIN_MARKERS} markers. Top pop has ${panelCoverage} markers.`);
+
+  // Sort by distance so closest populations appear first
   rawBreakdown.sort((a, b) => a.distance - b.distance);
 
   // Deduplicate HGDP vs SGDP for the same base population:
-  // If an HGDP entry (or a closer match) for a base population exists, omit the duplicate SGDP entry
+  // If an HGDP entry (or a closer match) for a base population exists, omit the duplicate SGDP entry.
   const seenBreakdownKeys = new Set<string>();
   const deduplicatedBreakdown: typeof rawBreakdown = [];
   for (const item of rawBreakdown) {
     const baseKey = getBasePopKey(item.popCode, item.subpop);
     const isSgdp = item.popCode.toLowerCase().startsWith('sgdp_');
-
     if (isSgdp && seenBreakdownKeys.has(baseKey)) {
       continue;
     }
@@ -1087,7 +1055,6 @@ export async function processSubpopulations(
 
   const minDist = deduplicatedBreakdown.length > 0 ? deduplicatedBreakdown[0].distance : 0.0;
   breakdown = deduplicatedBreakdown.map(item => {
-    // No artificial offset — preserve the true relative differences between populations
     const uiDistance = item.distance - minDist;
     const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (uiDistance * 2.2)) * 100));
     return {
@@ -1194,7 +1161,7 @@ export async function processSubpopulations(
     // Fill in expected frequencies or apply Soft Bayesian priors for missing subpopulation values
     for (const [popCode, popData] of Object.entries(referenceDatabase)) {
       if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
-      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[rsid.toUpperCase()];
+      let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
       
       const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
       const macroFreq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
@@ -1228,15 +1195,10 @@ export async function processSubpopulations(
       continentalAncestry[macroCode] = (continentalAncestry[macroCode] || 0) + pct;
     });
 
-    let activeMacroGroups = Object.entries(continentalAncestry)
+    // Sub-select populations: include continental groups with >= 2.0% ancestry
+    const activeMacroGroups = Object.entries(continentalAncestry)
       .filter(([_, pct]) => pct >= 0.5)
       .map(([macro, _]) => macro);
-
-    if (panel === 'euroforgen') {
-      activeMacroGroups = activeMacroGroups.filter(macro => macro === 'EUR' || macro === 'MENA');
-    } else if (panel === 'ramos') {
-      activeMacroGroups = activeMacroGroups.filter(macro => macro === 'AFR');
-    }
 
     // Fallback if no group meets the threshold: select the single macro group with the highest percentage
     if (activeMacroGroups.length === 0) {
@@ -1270,7 +1232,7 @@ export async function processSubpopulations(
 
       finalPopCodes.forEach(popCode => {
         const popData = referenceDatabase[popCode];
-        let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[rsid.toUpperCase()];
+        let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
         if (freq === undefined) {
           const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
           freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
@@ -1298,25 +1260,10 @@ export async function processSubpopulations(
     admixtureMix = Object.entries(finalProportions)
       .map(([popCode, percentage]) => ({
         popCode,
-        name: POPULATION_NAMES_MAP[popCode] || humanizePopName(popCode),
+        name: POPULATION_NAMES_MAP[popCode] || popCode,
         percentage
       }))
       .sort((a, b) => b.percentage - a.percentage);
-
-    // Deduplicate: If an HGDP entry (or higher percentage match) for a base population exists, omit duplicate SGDP
-    const seenAdmixtureKeys = new Set<string>();
-    const deduplicatedAdmixture: typeof admixtureMix = [];
-    for (const item of admixtureMix) {
-      const baseKey = getBasePopKey(item.popCode, item.name);
-      const isSgdp = item.popCode.toLowerCase().startsWith('sgdp_');
-
-      if (isSgdp && seenAdmixtureKeys.has(baseKey)) {
-        continue;
-      }
-      seenAdmixtureKeys.add(baseKey);
-      deduplicatedAdmixture.push(item);
-    }
-    admixtureMix = deduplicatedAdmixture;
   }
 
   if (admixtureMix.length === 0) {

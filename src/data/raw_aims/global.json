@@ -801,7 +801,7 @@
       "MENA": 0.09,
       "OCE": 0.01
     },
-    "description": "General anchor for African ancestry (near‑fixed in AFR, minimal elsewhere)",
+    "description": "General anchor for African ancestry (near\u2011fixed in AFR, minimal elsewhere)",
     "subPopulation": "Global",
     "subRegion": "Global"
   },
@@ -841,7 +841,7 @@
       "MENA": 0.04,
       "OCE": 0.11
     },
-    "description": "General anchor for East Asian ancestry (near‑fixed in EAS)",
+    "description": "General anchor for East Asian ancestry (near\u2011fixed in EAS)",
     "subPopulation": "Global",
     "subRegion": "Global"
   },

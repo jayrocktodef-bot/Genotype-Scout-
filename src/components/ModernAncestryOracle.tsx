@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import { Dna, HelpCircle, MapPin } from 'lucide-react';
 import { PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
-import { humanizePopName } from './ancestryOracleLogic';
 
 const POP_COLORS: Record<string, string> = {
   EUR: '#3b82f6',
@@ -85,60 +84,39 @@ export const ModernAncestryOracle = memo(({
   const exportAncestryReport = async () => {};
   
   const resultsToDisplay = results?.primary;
-  const continentalScores = useMemo(() => {
-    // 1. Prefer high-precision NNLS admixture proportions from ancestryOracleLogic
-    const subOracle = dataset?.analysis?.subpopulationOracle;
+
+  const subpopulationScores = useMemo(() => {
+    // 1. Prefer high-precision NNLS subpopulation admixture mix from subpopulationOracle
+    const subOracle = dataset?.analysis?.subpopulationOracle || results?.subpopulationOracle;
     const mix = subOracle?.all?.admixtureMix || subOracle?.admixtureMix;
-    if (Array.isArray(mix) && mix.length > 0) {
+    if (mix && Array.isArray(mix) && mix.length > 0) {
       const scores: Record<string, number> = {};
       mix.forEach((item: any) => {
-        scores[item.popCode || item.name] = item.percentage;
+        const name = item.name || item.subpop || item.popCode;
+        if (name && item.percentage > 0.1) {
+          scores[name] = Number(item.percentage);
+        }
       });
-      return scores;
+      if (Object.keys(scores).length > 0) return scores;
     }
-    // 2. Fallback to primary continentalScores
-    return resultsToDisplay?.continentalScores || {};
-  }, [dataset, resultsToDisplay]);
-  
-  const hbbMigration = useMemo(() => {
-    return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
-  }, [results.userSnps]);
 
-  const chartData = useMemo(() => {
-    return Object.entries(continentalScores).map(([key, value]) => {
-      let label = key;
-      if (key === 'AMR') label = 'Indigenous American';
-      else if (key === 'AMER') label = 'Admixed American';
-      else if (key === 'EAS') label = 'East Asian';
-      else if (key === 'SAS') label = 'South Asian';
-      else if (key === 'AFR') label = 'African';
-      else if (key === 'AFRAM') label = 'African-American';
-      else if (key === 'EUR') label = 'European';
-      else if (key === 'MENA') label = 'Middle Eastern';
-      else if (key === 'OCE') label = 'Oceanian';
-      else if (key === 'CAS') label = 'Central Asian & Siberian';
-      else label = humanizePopName(key);
-      
-      return {
-        subject: label,
-        A: Number(value),
-        fullMark: 100,
-      };
-    });
-  }, [continentalScores]);
+    // 2. Fallback to breakdown or primary continentalScores with humanized names
+    const breakdown = subOracle?.all?.breakdown || subOracle?.breakdown;
+    if (breakdown && Array.isArray(breakdown) && breakdown.length > 0) {
+      const scores: Record<string, number> = {};
+      breakdown.slice(0, 10).forEach((item: any) => {
+        const name = item.subpop || item.name || item.popCode;
+        if (name) {
+          scores[name] = Number(item.similarityScore || item.percentage || 0);
+        }
+      });
+      if (Object.keys(scores).length > 0) return scores;
+    }
 
-  const hasData = Object.keys(continentalScores).length > 0;
-  
-  if (!hasData) {
-    return (
-      <div className="p-12 text-center text-slate-500 dark:text-slate-400">
-        No Ancestry Results Available - Please load and process a valid dataset.
-      </div>
-    );
-  }
-  
-  const getDisplayName = (code: string) => {
-    const map: Record<string, string> = {
+    // 3. Fallback to resultsToDisplay.continentalScores
+    const rawScores = resultsToDisplay?.continentalScores || {};
+    const mappedScores: Record<string, number> = {};
+    const macroMap: Record<string, string> = {
       'EUR': 'European',
       'AFR': 'African',
       'AFRAM': 'African-American',
@@ -150,7 +128,37 @@ export const ModernAncestryOracle = memo(({
       'OCE': 'Oceanian',
       'CAS': 'Central Asian & Siberian'
     };
-    return map[code] || humanizePopName(code);
+    Object.entries(rawScores).forEach(([k, v]) => {
+      const label = macroMap[k] || k;
+      mappedScores[label] = Number(v);
+    });
+    return mappedScores;
+  }, [dataset, results, resultsToDisplay]);
+  
+  const hbbMigration = useMemo(() => {
+    return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
+  }, [results.userSnps]);
+
+  const chartData = useMemo(() => {
+    return Object.entries(subpopulationScores).map(([label, value]) => ({
+      subject: label,
+      A: Number(value),
+      fullMark: 100,
+    }));
+  }, [subpopulationScores]);
+
+  const hasData = Object.keys(subpopulationScores).length > 0;
+  
+  if (!hasData) {
+    return (
+      <div className="p-12 text-center text-slate-500 dark:text-slate-400">
+        No Ancestry Results Available - Please load and process a valid dataset.
+      </div>
+    );
+  }
+  
+  const getDisplayName = (code: string) => {
+    return code;
   };
 
   return (
@@ -160,66 +168,64 @@ export const ModernAncestryOracle = memo(({
       className="space-y-6 sm:space-y-12"
     >
       {/* Standard Oracle Section */}
-      <div className="p-2.5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+      <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-xl">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2 border-b border-white/5 pb-3">
           <div>
-            <h2 className="text-2xl sm:text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Ancestry Oracle V2</h2>
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
-            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-[#F5F6F7] tracking-tight">Ancestry Oracle V2</h2>
+            <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
           </div>
         </div>
 
         {mode === 'analyst' && (
-        <div className="mb-10 p-6 rounded-2xl bg-teal-500/5 border border-teal-500/10 flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-teal-500/25 transition-all">
-          <div className="flex gap-4 items-start text-[#F5F6F7]">
-            <Dna className="w-8 h-8 text-teal-400 mt-1 shrink-0" />
+        <div className="mb-4 p-3.5 rounded-xl bg-teal-500/5 border border-teal-500/10 flex flex-col sm:flex-row items-center justify-between gap-3 hover:border-teal-500/25 transition-all">
+          <div className="flex gap-3 items-center text-[#F5F6F7]">
+            <Dna className="w-5 h-5 text-teal-400 shrink-0" />
             <div>
-              <h4 className="font-extrabold text-base tracking-tight mb-1">Non-Negative Least Squares (NNLS) Optimization Oracle</h4>
-              <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
-                The Ancestry Oracle is not a classic "ethnicity calculator." It directly analyzes your exact Ancestry Informative Markers (AIMs) database against modern 1000 Genomes references using raw genetic dosages through Non-Negative Least Squares optimization.
+              <h4 className="font-extrabold text-xs tracking-tight">Non-Negative Least Squares (NNLS) Optimization Oracle</h4>
+              <p className="text-xs text-slate-400 leading-normal max-w-xl">
+                Directly analyzes your exact Ancestry Informative Markers (AIMs) against modern 1000 Genomes reference vectors using Non-Negative Least Squares optimization.
               </p>
             </div>
           </div>
           <button
             onClick={onOpenMethodology}
-            className="w-full sm:w-auto shrink-0 px-6 py-3 bg-teal-600/20 hover:bg-teal-600/35 border border-teal-500/30 text-teal-300 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
+            className="w-full sm:w-auto shrink-0 px-3.5 py-1.5 bg-teal-600/20 hover:bg-teal-600/35 border border-teal-500/30 text-teal-300 font-bold text-xs uppercase tracking-widest rounded-lg transition-all flex items-center justify-center gap-1.5"
           >
-            <HelpCircle className="w-4 h-4 text-teal-400" />
+            <HelpCircle className="w-3.5 h-3.5 text-teal-400" />
             Methodology
           </button>
         </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-center">
-          <div className="h-[450px] sm:h-[600px] lg:col-span-2 w-full min-w-0 relative bg-slate-900/40 rounded-2xl p-4 border border-white/5 shadow-inner flex items-center justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 items-center">
+          <div className="h-[440px] sm:h-[520px] lg:col-span-2 w-full min-w-0 relative bg-black/20 rounded-xl p-2 border border-white/5">
             {isChartReady ? (
               <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
-                <RadarChart cx="50%" cy="50%" outerRadius="82%" data={chartData} margin={{ top: 20, right: 35, bottom: 20, left: 35 }}>
-                  <PolarGrid stroke="#334155" strokeDasharray="3 3" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#38bdf8', fontSize: 12, fontWeight: 600 }} />
+                <RadarChart cx="50%" cy="50%" outerRadius="88%" data={chartData} margin={{ top: 20, right: 35, bottom: 20, left: 35 }}>
+                  <PolarGrid stroke="#334155" strokeWidth={1.5} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#cbd5e1', fontSize: 12, fontWeight: 700 }} />
                   <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                   <Radar
                     name="Ancestry"
                     dataKey="A"
-                    stroke="#38bdf8"
-                    strokeWidth={2}
-                    fill="#38bdf8"
+                    stroke="#4599FF"
+                    fill="#4599FF"
                     fillOpacity={0.35}
+                    strokeWidth={2.5}
                   />
-                  <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', color: '#f8fafc', borderRadius: '1rem', backdropFilter: 'blur(8px)', fontWeight: 'bold' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#4599FF', color: '#f8fafc', borderRadius: '0.75rem', backdropFilter: 'blur(8px)', fontSize: '0.85rem' }} />
                 </RadarChart>
               </ResponsiveContainer>
             ) : (
-              <div className="w-full h-full bg-[#1e293b]/50 rounded-2xl animate-pulse" />
+              <div className="w-full h-full bg-[#1e293b]/50 rounded-xl animate-pulse" />
             )}
           </div>
           
-          <div className="space-y-4 sm:space-y-6 lg:col-span-1">
-            {Object.entries(continentalScores).map(([name, value]) => (
-              <div key={name} className="flex items-center justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
-                <span className="font-bold text-base sm:text-lg text-[#F5F6F7]">{getDisplayName(name)}</span>
-                <span className="font-mono font-black text-lg sm:text-xl text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>
+          <div className="space-y-2 lg:col-span-1 max-h-[520px] overflow-y-auto pr-1">
+            {Object.entries(subpopulationScores).map(([name, value]) => (
+              <div key={name} className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
+                <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] truncate max-w-[180px]">{getDisplayName(name)}</span>
+                <span className="font-mono font-bold text-sm sm:text-base text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>
               </div>
             ))}
           </div>
