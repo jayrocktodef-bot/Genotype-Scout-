@@ -281,6 +281,45 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'CAS': 'Central Asian & Siberian Reference (CAS)'
 };
 
+/**
+ * Converts a raw population code (e.g. 'sgdp_orcadian', 'hgdp_mozabite') into a human-readable label.
+ * Falls back to a prettified version of the code when no direct mapping is found.
+ */
+export function humanizePopName(rawName: string): string {
+  if (!rawName) return 'Unknown';
+  if (POPULATION_NAMES_MAP[rawName]) return POPULATION_NAMES_MAP[rawName];
+
+  let cleaned = rawName;
+  let prefixTag = '';
+
+  if (/^hgdp_/i.test(cleaned)) { prefixTag = 'HGDP'; cleaned = cleaned.replace(/^hgdp_/i, ''); }
+  else if (/^sgdp_/i.test(cleaned)) { prefixTag = 'SGDP'; cleaned = cleaned.replace(/^sgdp_/i, ''); }
+  else if (/^agcp_/i.test(cleaned)) { prefixTag = 'AGCP'; cleaned = cleaned.replace(/^agcp_/i, ''); }
+  else if (/_gnomAD$/i.test(cleaned)) { prefixTag = 'gnomAD'; cleaned = cleaned.replace(/_gnomAD$/i, ''); }
+  else if (/_proxy$/i.test(cleaned)) { cleaned = cleaned.replace(/_proxy$/i, ''); }
+
+  cleaned = cleaned.replace(/[_]/g, ' ').trim();
+  cleaned = cleaned.split(' ').map(w => {
+    const lower = w.toLowerCase();
+    if (lower === 'am') return 'American';
+    return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+  }).join(' ');
+
+  return prefixTag ? `${cleaned} (${prefixTag})` : cleaned;
+}
+
+/**
+ * Returns a normalized base key for a population, stripping dataset prefix (hgdp_, sgdp_, agcp_)
+ * and suffix (_gnomad, _proxy) to allow deduplication across source datasets.
+ */
+export function getBasePopKey(popCode: string, popName: string): string {
+  let key = (popCode || popName).toLowerCase();
+  key = key.replace(/^(hgdp_|sgdp_|agcp_|1000g_)/i, '');
+  key = key.replace(/(_gnomad|_proxy)$/i, '');
+  key = key.replace(/[^a-z0-9]/g, '');
+  return key;
+}
+
 // Macro-continental Group Classifications for Hierarchy-Aware Matching
 const MACRO_GROUPS: Record<string, string[]> = {
   'AFR': [
@@ -611,10 +650,24 @@ export async function processSubpopulations(
   const prunedGenotypesMap = new Map<string, { genotype: string; gene?: string; weight: number }>();
   const markersToPrune: Array<{ rsid: string; dbKey: string; chromosome: string; position: number; genotype: string; gene?: string; weight: number }> = [];
 
+  // Build panel filter set ONCE outside the loop (not on every iteration)
+  // Also filter out known placeholder/fake RSIDs (rs1001415-rs1001515 in euroforgen)
+  const panelSet: Set<string> | null = panel !== 'all'
+    ? new Set(
+        ((forensicPanels as any)[panel] as string[] || [])
+          .filter((id: string) => {
+            // Exclude placeholder markers: real RSIDs don't start with rs1001 through rs1002
+            // when followed by 3 more digits (these were padding entries)
+            const num = parseInt(id.replace(/^rs/i, ''), 10);
+            return isNaN(num) || num < 1001 || num > 1999 || num < 1001415;
+          })
+          .map((id: string) => id.toLowerCase())
+      )
+    : null;
+
   for (const [rsid, genotype] of genotypeMap.entries()) {
     // Apply panel filter if specified
-    if (panel !== 'all') {
-      const panelSet = new Set((forensicPanels as any)[panel]?.map((id: string) => id.toLowerCase()) || []);
+    if (panelSet !== null) {
       const baseRsid = rsid.split('_')[0].toLowerCase();
       if (!panelSet.has(baseRsid)) {
         continue;
@@ -917,31 +970,64 @@ export async function processSubpopulations(
   // creating a positive-feedback loop that obliterated realistic admixture proportions.
   // NNLS (Component 4 below) handles admixture proportions; the breakdown list
   // is now sorted purely by distance with no post-hoc adjustments.
-  const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number }> = [];
-  const MIN_MARKERS = panel !== 'all' ? 1 : 5; // Lower limit when a panel is active so thin marker sets do not result in empty breakdowns
+  // Minimum markers required: forensic panels need enough markers to differentiate populations.
+  // With fewer than 10 markers the Euclidean distances collapse to near-identical values
+  // because there are insufficient independent loci to distinguish populations.
+  // Panel-specific minimum marker thresholds for meaningful population differentiation.
+  // Kidd55/Seldin128 have ~50-100 kernel-matched markers → min=10 forces real differentiation.
+  // EuroForGen has only 8 kernel-matched markers → min=4 to allow at least some output.
+  // Ramos/all use a lower default since they rely on thousands of markers.
+  const MIN_MARKERS_BY_PANEL: Record<string, number> = {
+    'kidd55': 10,
+    'seldin128': 10,
+    'euroforgen': 4,
+    'ramos': 4,
+    'all': 5
+  };
+  const MIN_MARKERS = MIN_MARKERS_BY_PANEL[panel] ?? 5;
+
+  const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number; popCode: string }> = [];
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
     const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
 
     if (markersCompared >= MIN_MARKERS) {
-      const popName = POPULATION_NAMES_MAP[popCode] || popCode;
+      const popName = POPULATION_NAMES_MAP[popCode] || humanizePopName(popCode);
 
       rawBreakdown.push({
         subpop: popName,
         distance: finalDistance,
         markersCompared,
-        count: markersCompared
+        count: markersCompared,
+        popCode
       });
     }
   }
 
-  // Sort breakdown list so closest proximity matches are first
+  // Log panel coverage for diagnostics
+  const panelCoverage = rawBreakdown.length > 0 ? rawBreakdown[0].markersCompared : 0;
+  console.log(`[Oracle ${panel}] ${rawBreakdown.length} populations with ≥${MIN_MARKERS} markers. Top pop has ${panelCoverage} markers.`);
+
+  // Sort by distance so closest populations appear first
   rawBreakdown.sort((a, b) => a.distance - b.distance);
 
-  const minDist = rawBreakdown.length > 0 ? rawBreakdown[0].distance : 0.0;
-  breakdown = rawBreakdown.map(item => {
-    // No artificial offset — preserve the true relative differences between populations
+  // Deduplicate HGDP vs SGDP for the same base population:
+  // If an HGDP entry (or a closer match) for a base population exists, omit the duplicate SGDP entry.
+  const seenBreakdownKeys = new Set<string>();
+  const deduplicatedBreakdown: typeof rawBreakdown = [];
+  for (const item of rawBreakdown) {
+    const baseKey = getBasePopKey(item.popCode, item.subpop);
+    const isSgdp = item.popCode.toLowerCase().startsWith('sgdp_');
+    if (isSgdp && seenBreakdownKeys.has(baseKey)) {
+      continue;
+    }
+    seenBreakdownKeys.add(baseKey);
+    deduplicatedBreakdown.push(item);
+  }
+
+  const minDist = deduplicatedBreakdown.length > 0 ? deduplicatedBreakdown[0].distance : 0.0;
+  breakdown = deduplicatedBreakdown.map(item => {
     const uiDistance = item.distance - minDist;
     const similarityScore = Math.max(5.0, Math.min(99.8, (1.0 - (uiDistance * 2.2)) * 100));
     return {
