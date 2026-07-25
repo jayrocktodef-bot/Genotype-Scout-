@@ -168,12 +168,12 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
         {breakdownList.length === 0 ? (
           <p className="text-xs text-slate-400 italic py-2">No populations mapped for this panel.</p>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
             {breakdownList.map((comp: any, idx: number) => {
               const visualWidth = Math.max(5, 100 - (comp.distance * 200));
               
               return (
-                <div key={comp.subpop} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden">
+                <div key={comp.subpop} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px]">
                   <div className="flex items-center justify-between mb-1">
                     <span className="font-mono text-slate-400 text-[9px] bg-black/40 px-1.5 py-0.5 rounded border border-white/5">#{idx + 1}</span>
                     <span className="text-emerald-400 text-xs font-bold font-mono">

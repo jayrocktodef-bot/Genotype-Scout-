@@ -197,13 +197,13 @@ export const ModernAncestryOracle = memo(({
         </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 items-center">
-          <div className="h-[440px] sm:h-[520px] lg:col-span-2 w-full min-w-0 relative bg-black/20 rounded-xl p-2 border border-white/5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-6 items-center">
+          <div className="h-[320px] sm:h-[480px] lg:col-span-2 w-full min-w-0 relative bg-black/20 rounded-xl p-1.5 sm:p-2 border border-white/5">
             {isChartReady ? (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
-                <RadarChart cx="50%" cy="50%" outerRadius="88%" data={chartData} margin={{ top: 20, right: 35, bottom: 20, left: 35 }}>
-                  <PolarGrid stroke="#334155" strokeWidth={1.5} />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#cbd5e1', fontSize: 12, fontWeight: 700 }} />
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
+                <RadarChart cx="50%" cy="50%" outerRadius={window.innerWidth < 640 ? "68%" : "85%"} data={chartData} margin={{ top: 10, right: 15, bottom: 10, left: 15 }}>
+                  <PolarGrid stroke="#334155" strokeWidth={1.2} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#cbd5e1', fontSize: window.innerWidth < 640 ? 9 : 11, fontWeight: 700 }} />
                   <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                   <Radar
                     name="Ancestry"
@@ -211,9 +211,9 @@ export const ModernAncestryOracle = memo(({
                     stroke="#4599FF"
                     fill="#4599FF"
                     fillOpacity={0.35}
-                    strokeWidth={2.5}
+                    strokeWidth={2}
                   />
-                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#4599FF', color: '#f8fafc', borderRadius: '0.75rem', backdropFilter: 'blur(8px)', fontSize: '0.85rem' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#4599FF', color: '#f8fafc', borderRadius: '0.75rem', backdropFilter: 'blur(8px)', fontSize: '0.75rem' }} />
                 </RadarChart>
               </ResponsiveContainer>
             ) : (
@@ -221,11 +221,11 @@ export const ModernAncestryOracle = memo(({
             )}
           </div>
           
-          <div className="space-y-2 lg:col-span-1 max-h-[520px] overflow-y-auto pr-1">
+          <div className="space-y-1.5 sm:space-y-2 lg:col-span-1 max-h-[320px] sm:max-h-[480px] overflow-y-auto pr-1">
             {Object.entries(subpopulationScores).map(([name, value]) => (
-              <div key={name} className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
-                <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] truncate max-w-[180px]">{getDisplayName(name)}</span>
-                <span className="font-mono font-bold text-sm sm:text-base text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>
+              <div key={name} className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors min-h-[44px]">
+                <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] truncate max-w-[180px] sm:max-w-none">{getDisplayName(name)}</span>
+                <span className="font-mono font-bold text-xs sm:text-base text-[#4599FF] shrink-0 ml-2">{(Number(value) || 0).toFixed(1)}%</span>
               </div>
             ))}
           </div>
