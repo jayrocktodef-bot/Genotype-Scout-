@@ -339,44 +339,40 @@ export const NaiveAncestryOracle = memo(({
   const primaryImplication = dominantComponent ? POPULATION_IMPLICATIONS[dominantComponent.code] : null;
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="p-3 sm:p-8 rounded-2xl sm:rounded-[2rem] bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl space-y-8"
-    >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-        <div className="flex items-center gap-4">
-          <div className="p-1 rounded-2xl bg-gradient-to-tr from-[#FF6B6B] to-[#4ECDC4] shadow-lg">
+    <div className="bg-[#111213]/80 backdrop-blur-3xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-xl text-white space-y-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-3">
+        <div className="flex items-center gap-3">
+          <div className="relative shrink-0">
             <img 
               src="https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.webp" 
               alt="Scout Score"
-              className="w-16 h-16 rounded-xl object-cover"
+              className="w-10 h-10 rounded-lg object-cover"
             />
           </div>
           <div>
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#FFE66D] mb-1">Scout Score</h2>
-            <p className="text-sm font-bold text-[#4ECDC4] uppercase tracking-widest">Marker Frequency Est.</p>
+            <h2 className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#FFE66D]">Scout Score</h2>
+            <p className="text-[10px] font-bold text-[#4ECDC4] uppercase tracking-widest">Marker Frequency Est.</p>
           </div>
         </div>
         {onOpenMethodology && (
           <button
             onClick={onOpenMethodology}
-            className="w-full sm:w-auto shrink-0 px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-black text-xs uppercase tracking-widest rounded-2xl transition-all shadow-sm flex items-center justify-center gap-3 backdrop-blur"
+            className="w-full sm:w-auto shrink-0 px-3.5 py-1.5 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-bold text-xs uppercase tracking-widest rounded-lg transition-all shadow-sm flex items-center justify-center gap-1.5 backdrop-blur"
           >
-            <HelpCircle className="w-5 h-5 text-[#FFE66D]" />
+            <HelpCircle className="w-3.5 h-3.5 text-[#FFE66D]" />
             Methodology
           </button>
         )}
       </div>
 
-      <div className="h-[400px] w-full min-w-0 relative bg-black/20 rounded-3xl p-2 sm:p-4 border border-white/5">
+      <div className="h-[260px] sm:h-[300px] w-full min-w-0 relative bg-black/20 rounded-xl p-2 border border-white/5">
         {isChartReady ? (
-          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={400} debounce={1}>
-            <BarChart data={chartData} layout="vertical" margin={{ left: 5, right: 10 }}>
+          <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={260} debounce={1}>
+            <BarChart data={chartData} layout="vertical" margin={{ left: 0, right: 10, top: 5, bottom: 5 }}>
               <XAxis type="number" hide />
-              <YAxis dataKey="name" type="category" width={150} tick={{ fill: '#e2e8f0', fontSize: 12, fontWeight: 600 }} />
-              <Tooltip contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '1rem' }} />
-              <Bar dataKey="value" fill="#4ECDC4" radius={[0, 8, 8, 0]}>
+              <YAxis dataKey="name" type="category" width={130} tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 600 }} />
+              <Tooltip contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '0.75rem', fontSize: '0.75rem' }} />
+              <Bar dataKey="value" fill="#4ECDC4" radius={[0, 6, 6, 0]}>
                 {chartData.map((entry, index) => {
                   const color = REGION_COLORS[entry.code] || '#4ECDC4';
                   return <Cell key={`cell-${index}`} fill={color} />;
@@ -385,27 +381,27 @@ export const NaiveAncestryOracle = memo(({
             </BarChart>
           </ResponsiveContainer>
         ) : (
-          <div className="w-full h-full bg-slate-900/40 rounded-2xl animate-pulse" />
+          <div className="w-full h-full bg-slate-900/40 rounded-xl animate-pulse" />
         )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
         {chartData.map((data) => {
           const color = REGION_COLORS[data.code] || '#FFE66D';
           return (
-            <div key={data.name} className="flex justify-between items-center p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-[#4ECDC4]/50 transition-colors">
-              <span className="font-bold text-slate-100 flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: color }} />
+            <div key={data.name} className="flex justify-between items-center p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-[#4ECDC4]/50 transition-colors">
+              <span className="font-bold text-slate-100 text-xs truncate flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
                 {data.name}
               </span>
-              <span className="font-mono font-black text-lg" style={{ color }}>{(data.value || 0).toFixed(1)}%</span>
+              <span className="font-mono font-bold text-xs sm:text-sm ml-1" style={{ color }}>{(data.value || 0).toFixed(1)}%</span>
             </div>
           );
         })}
       </div>
 
       {/* Scout Score Implications Bento Area */}
-      <div className="border-t border-white/10 pt-8 space-y-6">
+      <div className="border-t border-white/10 pt-4 space-y-4">
         <div className="flex justify-center sm:justify-start">
           <div className="inline-flex bg-white/5 p-1 rounded-2xl border border-white/10 shadow-inner">
             <button
@@ -596,6 +592,6 @@ export const NaiveAncestryOracle = memo(({
           )}
         </AnimatePresence>
       </div>
-    </motion.div>
+    </div>
   );
 });

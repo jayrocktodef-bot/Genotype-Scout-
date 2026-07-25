@@ -168,44 +168,42 @@ export const ModernAncestryOracle = memo(({
       className="space-y-6 sm:space-y-12"
     >
       {/* Standard Oracle Section */}
-      <div className="p-2.5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-2xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+      <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-[#111213]/70 backdrop-blur-xl border border-white/10 shadow-xl">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2 border-b border-white/5 pb-3">
           <div>
-            <h2 className="text-2xl sm:text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Ancestry Oracle V2</h2>
-            <div className="flex flex-wrap items-center gap-3">
-              <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
-            </div>
+            <h2 className="text-xl sm:text-2xl font-black text-[#F5F6F7] tracking-tight">Ancestry Oracle V2</h2>
+            <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest">High-Precision Admixture Analysis</p>
           </div>
         </div>
 
         {mode === 'analyst' && (
-        <div className="mb-10 p-6 rounded-2xl bg-teal-500/5 border border-teal-500/10 flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-teal-500/25 transition-all">
-          <div className="flex gap-4 items-start text-[#F5F6F7]">
-            <Dna className="w-8 h-8 text-teal-400 mt-1 shrink-0" />
+        <div className="mb-4 p-3.5 rounded-xl bg-teal-500/5 border border-teal-500/10 flex flex-col sm:flex-row items-center justify-between gap-3 hover:border-teal-500/25 transition-all">
+          <div className="flex gap-3 items-center text-[#F5F6F7]">
+            <Dna className="w-5 h-5 text-teal-400 shrink-0" />
             <div>
-              <h4 className="font-extrabold text-base tracking-tight mb-1">Non-Negative Least Squares (NNLS) Optimization Oracle</h4>
-              <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
-                The Ancestry Oracle is not a classic "ethnicity calculator." It directly analyzes your exact Ancestry Informative Markers (AIMs) database against modern 1000 Genomes references using raw genetic dosages through Non-Negative Least Squares optimization.
+              <h4 className="font-extrabold text-xs tracking-tight">Non-Negative Least Squares (NNLS) Optimization Oracle</h4>
+              <p className="text-xs text-slate-400 leading-normal max-w-xl">
+                Directly analyzes your exact Ancestry Informative Markers (AIMs) against modern 1000 Genomes reference vectors using Non-Negative Least Squares optimization.
               </p>
             </div>
           </div>
           <button
             onClick={onOpenMethodology}
-            className="w-full sm:w-auto shrink-0 px-6 py-3 bg-teal-600/20 hover:bg-teal-600/35 border border-teal-500/30 text-teal-300 font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-sm flex items-center justify-center gap-2"
+            className="w-full sm:w-auto shrink-0 px-3.5 py-1.5 bg-teal-600/20 hover:bg-teal-600/35 border border-teal-500/30 text-teal-300 font-bold text-xs uppercase tracking-widest rounded-lg transition-all flex items-center justify-center gap-1.5"
           >
-            <HelpCircle className="w-4 h-4 text-teal-400" />
+            <HelpCircle className="w-3.5 h-3.5 text-teal-400" />
             Methodology
           </button>
         </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12 items-center">
-          <div className="h-[300px] sm:h-[450px] lg:col-span-2 w-full min-w-0 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 items-center">
+          <div className="h-[280px] sm:h-[360px] lg:col-span-2 w-full min-w-0 relative">
             {isChartReady ? (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={300} debounce={1}>
-                <RadarChart cx="50%" cy="50%" outerRadius="65%" data={chartData} margin={{ top: 30, right: 30, bottom: 30, left: 30 }}>
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={280} debounce={1}>
+                <RadarChart cx="50%" cy="50%" outerRadius="75%" data={chartData} margin={{ top: 15, right: 15, bottom: 15, left: 15 }}>
                   <PolarGrid stroke="#334155" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11 }} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 10 }} />
                   <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                   <Radar
                     name="Ancestry"
@@ -214,19 +212,19 @@ export const ModernAncestryOracle = memo(({
                     fill="#4599FF"
                     fillOpacity={0.3}
                   />
-                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#f8fafc', borderRadius: '1rem', backdropFilter: 'blur(8px)' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#475569', color: '#f8fafc', borderRadius: '0.75rem', backdropFilter: 'blur(8px)', fontSize: '0.75rem' }} />
                 </RadarChart>
               </ResponsiveContainer>
             ) : (
-              <div className="w-full h-full bg-[#1e293b]/50 rounded-2xl animate-pulse" />
+              <div className="w-full h-full bg-[#1e293b]/50 rounded-xl animate-pulse" />
             )}
           </div>
           
-          <div className="space-y-4 sm:space-y-6 lg:col-span-1">
+          <div className="space-y-2 lg:col-span-1 max-h-[360px] overflow-y-auto pr-1">
             {Object.entries(subpopulationScores).map(([name, value]) => (
-              <div key={name} className="flex items-center justify-between p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
-                <span className="font-bold text-base sm:text-lg text-[#F5F6F7]">{getDisplayName(name)}</span>
-                <span className="font-mono font-black text-lg sm:text-xl text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>
+              <div key={name} className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors">
+                <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] truncate max-w-[180px]">{getDisplayName(name)}</span>
+                <span className="font-mono font-bold text-sm sm:text-base text-[#4599FF]">{(Number(value) || 0).toFixed(1)}%</span>
               </div>
             ))}
           </div>
