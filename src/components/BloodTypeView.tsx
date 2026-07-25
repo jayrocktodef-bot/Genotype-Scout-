@@ -185,9 +185,15 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
 
     // Use the central blood type engine for both ABO and Rh calculations
     const userSnpsForCalc: Record<string, string> = {};
-    const coreMarkers = ["rs8176719", "rs8176746", "rs8176747", "rs8176750", ...Object.keys(rhData.rhSystem)];
-    
-    coreMarkers.forEach(rsid => {
+    if (Array.isArray(rawResults)) {
+      rawResults.forEach((r: any) => {
+        if (r && r.rsid && r.genotype && r.genotype !== '--') {
+          userSnpsForCalc[r.rsid] = overrides[r.rsid] || r.genotype;
+        }
+      });
+    }
+    const allKnownRsids = Object.values(BLOOD_TYPE_SYSTEMS).flat();
+    allKnownRsids.forEach(rsid => {
       const g = getGenotype(rsid);
       if (g && g !== "--") {
         userSnpsForCalc[rsid] = g;
