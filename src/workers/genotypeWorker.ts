@@ -474,14 +474,25 @@ self.onmessage = async (e: MessageEvent) => {
     const kidd55Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'kidd55');
     const seldin128Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'seldin128');
     const euroforgenResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'euroforgen');
+    const ramosResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'ramos');
 
     const subpopulationOracle = {
       ...allResult,
       all: allResult,
       kidd55: kidd55Result,
       seldin128: seldin128Result,
-      euroforgen: euroforgenResult
+      euroforgen: euroforgenResult,
+      ramos: ramosResult
     };
+
+    if (allResult && allResult.admixtureMix && allResult.admixtureMix.length > 0 && oracleResults && oracleResults.primary) {
+      const nnlsScores: Record<string, number> = {};
+      allResult.admixtureMix.forEach((item: any) => {
+        nnlsScores[item.popCode || item.name] = item.percentage;
+      });
+      oracleResults.primary.continentalScores = nnlsScores;
+    }
+
     const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
     
     if (sab) { 

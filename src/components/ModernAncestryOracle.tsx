@@ -84,7 +84,20 @@ export const ModernAncestryOracle = memo(({
   const exportAncestryReport = async () => {};
   
   const resultsToDisplay = results?.primary;
-  const continentalScores = resultsToDisplay?.continentalScores || {};
+  const continentalScores = useMemo(() => {
+    // 1. Prefer high-precision NNLS admixture proportions from ancestryOracleLogic
+    const subOracle = dataset?.analysis?.subpopulationOracle;
+    const mix = subOracle?.all?.admixtureMix || subOracle?.admixtureMix;
+    if (Array.isArray(mix) && mix.length > 0) {
+      const scores: Record<string, number> = {};
+      mix.forEach((item: any) => {
+        scores[item.popCode || item.name] = item.percentage;
+      });
+      return scores;
+    }
+    // 2. Fallback to primary continentalScores
+    return resultsToDisplay?.continentalScores || {};
+  }, [dataset, resultsToDisplay]);
   
   const hbbMigration = useMemo(() => {
     return results.userSnps ? trackSickleCellHaplotype(results.userSnps) : null;
