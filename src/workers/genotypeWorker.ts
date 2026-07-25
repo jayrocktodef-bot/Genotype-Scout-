@@ -590,23 +590,25 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
             if (effectAlleles.length === 0) continue;
             const effectAllele = effectAlleles[0].toUpperCase();
 
-            // Count how many effect alleles are present
+            const COMPLEMENTS: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+            const complementAllele = COMPLEMENTS[effectAllele] || effectAllele;
+
+            // Count how many effect alleles (or strand-complemented alleles) are present
             let k = 0;
             for (const ch of validAlleles) {
-                if (ch === effectAllele) k++;
+                if (ch === effectAllele || ch === complementAllele) k++;
             }
 
             // Helper: HWE-based genotype probability for a given p
             const genotypeProbability = (p: number): number => {
                 const pClamp = Math.max(SMOOTH, Math.min(1 - SMOOTH, p));
                 if (ploidy === 1) {
-                    return k === 1 ? pClamp : (1 - pClamp);
+                    return k >= 1 ? pClamp : (1 - pClamp);
                 } else {
                     // assume diploid
                     if (k === 0) return (1 - pClamp) ** 2;
                     if (k === 1) return 2 * pClamp * (1 - pClamp);
-                    if (k === 2) return pClamp ** 2;
-                    // fallback for polyploidy (unlikely in common AIMs)
+                    if (k >= 2) return pClamp ** 2;
                     return 0;
                 }
             };
@@ -618,7 +620,7 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
 
                 const p = freq as number;
                 const prob = genotypeProbability(p);
-                if (prob <= 0) continue;   // safety, though clamping prevents this
+                if (prob <= 0) continue;
 
                 totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + Math.log(prob);
                 markerCounts[cleanPop] = (markerCounts[cleanPop] || 0) + 1;
@@ -626,15 +628,29 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         }
     }
 
-    // Convert average log-prob into an unnormalised score (geometric mean)
-    const scores: Record<string, number> = {};
-    let sumScores = 0;
+    // Compute average log-likelihood per marker for each population
+    const avgLogProbs: Record<string, number> = {};
+    let maxAvgLogProb = -Infinity;
+
     for (const pop in totalLogProb) {
         if (markerCounts[pop] >= MIN_MARKERS) {
-            const avgLogProb = totalLogProb[pop] / markerCounts[pop];
-            scores[pop] = Math.exp(avgLogProb);   // per-marker geometric mean
-            sumScores += scores[pop];
+            const avg = totalLogProb[pop] / markerCounts[pop];
+            avgLogProbs[pop] = avg;
+            if (avg > maxAvgLogProb) maxAvgLogProb = avg;
         }
+    }
+
+    // Temperature-scaled Log-Sum-Exp Softmax (T = 16.0)
+    // Prevents floating-point underflow while preserving true statistical discrimination
+    const TEMP_SCALE = 16.0;
+    const scores: Record<string, number> = {};
+    let sumScores = 0;
+
+    for (const pop in avgLogProbs) {
+        const scaledDiff = (avgLogProbs[pop] - maxAvgLogProb) * TEMP_SCALE;
+        const score = Math.exp(scaledDiff);
+        scores[pop] = score;
+        sumScores += score;
     }
 
     // Normalise to percentages
