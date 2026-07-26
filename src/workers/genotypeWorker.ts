@@ -546,10 +546,11 @@ const getMasterAims = () => {
 };
 
 function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
-    const MIN_MARKERS = 5;           // minimum markers to report a population
+    const MIN_MARKERS = 5;           // require at least 5 AIMs matched per population
     const SMOOTH = 0.001;            // floor/ceiling for allele frequencies to avoid log(0)
 
     const totalLogProb: Record<string, number> = {};
+    const totalWeights: Record<string, number> = {};
     const markerCounts: Record<string, number> = {};
 
     const aims = getMasterAims() as any;
@@ -562,6 +563,7 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
     }
 
     const usedRsids = new Set<string>();   // avoid processing the same user rsid twice
+    const lastPosPerChrom: Record<string, number> = {}; // Physical LD-pruning (50 kb window)
 
     for (const rsid in snpMap) {
         const base = rsid.toLowerCase();
@@ -586,6 +588,20 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         // For each matched AIM entry (allows multiple entries per rsid)
         for (const aim of matchedAims) {
             if (!aim || !aim.frequencies) continue;
+
+            // Physical LD pruning: skip markers within 50kb of previous marker on same chromosome
+            if (aim.chromosome && aim.position) {
+                const chrom = String(aim.chromosome).toLowerCase();
+                const pos = Number(aim.position);
+                if (!isNaN(pos) && pos > 0) {
+                    const lastPos = lastPosPerChrom[chrom];
+                    if (lastPos !== undefined && Math.abs(pos - lastPos) < 50000) {
+                        continue;
+                    }
+                    lastPosPerChrom[chrom] = pos;
+                }
+            }
+
             const effectAlleles = aim.alleles || [];
             if (effectAlleles.length === 0) continue;
             const effectAllele = effectAlleles[0].toUpperCase();
@@ -613,7 +629,25 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
                 }
             };
 
-            // Accumulate log-probabilities per population
+            // Compute Wright's Fst informativeness across populations for this AIM
+            const freqsList = Object.entries(aim.frequencies as Record<string, number>)
+                .filter(([pop]) => {
+                    const cp = pop.toUpperCase().trim();
+                    return cp !== 'GLOBAL' && cp !== 'ASI';
+                })
+                .map(([, f]) => f as number);
+
+            let markerWeight = 1.0;
+            if (freqsList.length > 1) {
+                const meanP = freqsList.reduce((a, b) => a + b, 0) / freqsList.length;
+                const varP = freqsList.reduce((a, b) => a + (b - meanP) ** 2, 0) / freqsList.length;
+                const denom = meanP * (1 - meanP) + 1e-6;
+                const fst = varP / denom;
+                // Informative markers get higher weight; non-informative SNPs get low weight
+                markerWeight = Math.max(0.05, Math.min(2.0, fst * 4.0));
+            }
+
+            // Accumulate weighted log-probabilities per population
             for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
                 const cleanPop = pop.toUpperCase().trim();
                 if (cleanPop === 'GLOBAL' || cleanPop === 'ASI') continue;
@@ -622,32 +656,40 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
                 const prob = genotypeProbability(p);
                 if (prob <= 0) continue;
 
-                totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + Math.log(prob);
+                totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + markerWeight * Math.log(prob);
+                totalWeights[cleanPop] = (totalWeights[cleanPop] || 0) + markerWeight;
                 markerCounts[cleanPop] = (markerCounts[cleanPop] || 0) + 1;
             }
         }
     }
 
-    // Compute average log-likelihood per marker for each population
+    // Compute weighted average log-likelihood per marker for each population
     const avgLogProbs: Record<string, number> = {};
     let maxAvgLogProb = -Infinity;
 
     for (const pop in totalLogProb) {
-        if (markerCounts[pop] >= MIN_MARKERS) {
-            const avg = totalLogProb[pop] / markerCounts[pop];
+        if (markerCounts[pop] >= MIN_MARKERS && (totalWeights[pop] || 0) > 0) {
+            const avg = totalLogProb[pop] / totalWeights[pop];
             avgLogProbs[pop] = avg;
             if (avg > maxAvgLogProb) maxAvgLogProb = avg;
         }
     }
 
-    // Temperature-scaled Log-Sum-Exp Softmax (T = 16.0)
-    // Prevents floating-point underflow while preserving true statistical discrimination
-    const TEMP_SCALE = 16.0;
+    // Adaptive Temperature Calibration based on log-likelihood variance across populations
+    const popLogAvgs = Object.values(avgLogProbs);
+    let tempScale = 16.0;
+    if (popLogAvgs.length > 1) {
+        const meanLog = popLogAvgs.reduce((a, b) => a + b, 0) / popLogAvgs.length;
+        const varLog = popLogAvgs.reduce((a, b) => a + (b - meanLog) ** 2, 0) / popLogAvgs.length;
+        const stdLog = Math.sqrt(varLog);
+        tempScale = Math.max(10.0, Math.min(24.0, 2.5 / (stdLog + 1e-4)));
+    }
+
     const scores: Record<string, number> = {};
     let sumScores = 0;
 
     for (const pop in avgLogProbs) {
-        const scaledDiff = (avgLogProbs[pop] - maxAvgLogProb) * TEMP_SCALE;
+        const scaledDiff = (avgLogProbs[pop] - maxAvgLogProb) * tempScale;
         const score = Math.exp(scaledDiff);
         scores[pop] = score;
         sumScores += score;
