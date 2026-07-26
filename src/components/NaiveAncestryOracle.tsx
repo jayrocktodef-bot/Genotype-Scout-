@@ -267,6 +267,162 @@ const DRIVER_SNPS: DriverSNP[] = [
       'GG': { state: 'Ancestral', text: 'Ancestral allele. Common outside of high-altitude populations; higher hemoglobin levels at altitude.', impact: 'Standard hypoxic response; less adaptation to extreme high altitudes.' }
     },
     globalFreq: 'Derived allele (C) ~87% in Tibetans, <1% in Han Chinese, absent in other continental groups.'
+  },
+  {
+    rsid: 'rs16891982',
+    gene: 'SLC45A2 / MATP',
+    name: 'European Light Skin (L374F)',
+    description: 'Major determinant of skin and hair pigmentation in West Eurasians. The derived G allele (Phe374) reduces melanosome acidification, producing lighter skin.',
+    globalFreq: 'Derived allele (G) ~98% in Europeans, <1% in Sub-Saharan Africans and East Asians.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Two copies of European light-skin allele (Phe374)', impact: 'Strong skin lightening effect typical of European lineages.' },
+      'CG': { state: 'Heterozygous', text: 'Carrier of European light-skin allele', impact: 'Intermediate skin lightening effect.' },
+      'GC': { state: 'Heterozygous', text: 'Carrier of European light-skin allele', impact: 'Intermediate skin lightening effect.' },
+      'CC': { state: 'Ancestral', text: 'Ancestral Leu374 allele', impact: 'Standard dark pigmentation; predominant in African and Asian populations.' }
+    }
+  },
+  {
+    rsid: 'rs174546',
+    gene: 'FADS1 / FADS2',
+    name: 'Fatty Acid Desaturase Adaptation',
+    description: 'Regulates conversion of plant fatty acids to long-chain polyunsaturated fatty acids (PUFAs). Strongly selected in agricultural and cold-climate populations.',
+    globalFreq: 'Derived allele (C) ~95% in South Asians, ~70% in Africans, ~60% in Europeans, and <5% in Greenlandic Inuit.',
+    interpretations: {
+      'CC': { state: 'Derived', text: 'Enhanced PUFA Synthesis Allele', impact: 'Efficient conversion of plant-derived ALA/LA to EPA/DHA; adaptation to plant-based agricultural diets.' },
+      'CT': { state: 'Heterozygous', text: 'Intermediate Fatty Acid Metabolism', impact: 'Balanced lipid conversion capacity.' },
+      'TC': { state: 'Heterozygous', text: 'Intermediate Fatty Acid Metabolism', impact: 'Balanced lipid conversion capacity.' },
+      'TT': { state: 'Ancestral', text: 'Ancestral / Marine Lipid Adaptation', impact: 'Lower endogenous PUFA synthesis; optimized for high-fat marine mammal diets (e.g. Inuit).' }
+    }
+  },
+  {
+    rsid: 'rs1229984',
+    gene: 'ADH1B',
+    name: 'Fast Alcohol Oxidation (His48Arg)',
+    description: 'Encodes alcohol dehydrogenase 1B. The derived T allele oxidizes ethanol to toxic acetaldehyde up to 100x faster, linked to ancient rice domestication in East Asia.',
+    globalFreq: 'Derived allele (T) ~70-80% in Southeast China and Japan, ~10-20% in Middle East, <1% in Europe and Africa.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Rapid Alcohol Oxidation (Super-Active ADH1B)', impact: 'Converts alcohol to acetaldehyde rapidly; protective against alcoholism, common in East Asia.' },
+      'CT': { state: 'Heterozygous', text: 'Accelerated Alcohol Oxidation', impact: 'Intermediate rate of alcohol breakdown.' },
+      'TC': { state: 'Heterozygous', text: 'Accelerated Alcohol Oxidation', impact: 'Intermediate rate of alcohol breakdown.' },
+      'CC': { state: 'Ancestral', text: 'Standard Alcohol Oxidation', impact: 'Normal ethanol clearance rate typical of European and African lineages.' }
+    }
+  },
+  {
+    rsid: 'rs12097901',
+    gene: 'EGLN1 / PHD2',
+    name: 'Andean High-Altitude Adaptation',
+    description: 'Prolyl hydroxylase domain enzyme in the HIF hypoxia pathway. Under strong selection in Quechua and Aymara high-altitude populations in the Andes.',
+    globalFreq: 'Derived allele ~50-70% in Andean Indigenous populations, <2% in non-high-altitude populations.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Andean Hypoxia Protection Phenotype', impact: 'Regulates hemoglobin levels under extreme altitude, preventing polycythemia and mountain sickness.' },
+      'CG': { state: 'Heterozygous', text: 'Partial High-Altitude Protection', impact: 'Moderate adaptation to low-oxygen environments.' },
+      'GC': { state: 'Heterozygous', text: 'Partial High-Altitude Protection', impact: 'Moderate adaptation to low-oxygen environments.' },
+      'CC': { state: 'Ancestral', text: 'Standard Lowland Hypoxia Response', impact: 'Standard red blood cell response to altitude.' }
+    }
+  },
+  {
+    rsid: 'rs10166942',
+    gene: 'TRPM8',
+    name: 'Cold Temperature Receptor Adaptation',
+    description: 'Transient receptor potential ion channel sensing cold temperature and menthol. The derived T allele has been selected in northern latitudes.',
+    globalFreq: 'Derived allele (T) ~85% in Northern Europeans, ~40% in East Asians, ~5% in Sub-Saharan Africans.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Cold Climate Adapted TRPM8 Receptor', impact: 'Associated with adaptation to cold environments and lower baseline migraine susceptibility.' },
+      'CT': { state: 'Heterozygous', text: 'Intermediate Cold Sensitivity', impact: 'Moderate cold perception adaptation.' },
+      'TC': { state: 'Heterozygous', text: 'Intermediate Cold Sensitivity', impact: 'Moderate cold perception adaptation.' },
+      'CC': { state: 'Ancestral', text: 'Ancestral Warm-Climate Receptor', impact: 'Standard thermal sensation common in tropical climates.' }
+    }
+  },
+  {
+    rsid: 'rs1050828',
+    gene: 'G6PD',
+    name: 'G6PD Deficiency (A- Variant / Malaria Protection)',
+    description: 'Glucose-6-phosphate dehydrogenase deficiency variant. Reduces red cell survival under oxidative stress, conferring strong resistance to falciparum malaria.',
+    globalFreq: 'Derived allele (T) ~10-25% in Sub-Saharan Africa, <1% in Europe and East Asia.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'G6PD A- Variant (Malaria Protection)', impact: 'Provides high resistance to falciparum malaria; confers risk of hemolytic anemia with oxidative triggers.' },
+      'CT': { state: 'Heterozygous', text: 'G6PD Heterozygous Carrier (Females)', impact: 'Mosaic expression conferring partial malaria protection with low hemolysis risk.' },
+      'TC': { state: 'Heterozygous', text: 'G6PD Heterozygous Carrier (Females)', impact: 'Mosaic expression conferring partial malaria protection with low hemolysis risk.' },
+      'CC': { state: 'Ancestral', text: 'Normal G6PD Enzyme Activity', impact: 'Standard red blood cell oxidative metabolism; no malaria protection from this locus.' }
+    }
+  },
+  {
+    rsid: 'rs1042602',
+    gene: 'TYR',
+    name: 'Tyrosinase Skin Pigmentation (Ser192Tyr)',
+    description: 'Tyrosinase is the rate-limiting enzyme in melanin production. The derived A allele reduces enzyme activity, contributing to lighter skin in Europeans.',
+    globalFreq: 'Derived allele (A) ~60% in Europeans, ~40% in South Asians, <2% in East Asians and Sub-Saharan Africans.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'European Light Skin Tyrosinase Allele', impact: 'Associated with lighter skin pigmentation and reduced melanin deposition.' },
+      'AC': { state: 'Heterozygous', text: 'Intermediate Tyrosinase Activity', impact: 'Moderate skin lightening effect.' },
+      'CA': { state: 'Heterozygous', text: 'Intermediate Tyrosinase Activity', impact: 'Moderate skin lightening effect.' },
+      'CC': { state: 'Ancestral', text: 'Ancestral Full-Activity Tyrosinase', impact: 'Standard dark melanin synthesis.' }
+    }
+  },
+  {
+    rsid: 'rs12821256',
+    gene: 'KITLG',
+    name: 'Blonde Hair & Fair Skin Regulator',
+    description: 'Upstream regulatory enhancer of KIT ligand controlling melanocyte migration. Strongly selected in Northern Europeans for blonde hair and fair skin.',
+    globalFreq: 'Derived allele (C) ~70% in Northern Europe, ~5% in the Americas, <1% in Africa and Asia.',
+    interpretations: {
+      'CC': { state: 'Derived', text: 'Northern European Blonde / Fair Skin Allele', impact: 'Strongly associated with blonde hair and fair skin in European populations.' },
+      'TC': { state: 'Heterozygous', text: 'Blonde Hair Trait Carrier', impact: 'Partial lightening effect on hair and skin.' },
+      'CT': { state: 'Heterozygous', text: 'Blonde Hair Trait Carrier', impact: 'Partial lightening effect on hair and skin.' },
+      'TT': { state: 'Ancestral', text: 'Ancestral Dark Hair / Skin Enhancer', impact: 'Standard dark hair and skin pigmentation.' }
+    }
+  },
+  {
+    rsid: 'rs10810640',
+    gene: 'BNC2',
+    name: 'Skin Saturation & Freckling Variant',
+    description: 'Basonuclin 2 regulates skin pigmentation saturation, tanning responsiveness, and freckle formation in West Eurasians.',
+    globalFreq: 'Derived allele (G) ~55% in Europeans, ~35% in South Asians, ~30% in East Asians, ~10% in Africans.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Light Skin Saturation & Freckling Allele', impact: 'Associated with fair skin saturation, sun sensitivity, and freckling.' },
+      'AG': { state: 'Heterozygous', text: 'Intermediate Freckling & Saturation', impact: 'Moderate effect on tanning and freckle tendency.' },
+      'GA': { state: 'Heterozygous', text: 'Intermediate Freckling & Saturation', impact: 'Moderate effect on tanning and freckle tendency.' },
+      'AA': { state: 'Ancestral', text: 'Ancestral Darker Saturation Allele', impact: 'Lower freckling propensity and standard tanning capacity.' }
+    }
+  },
+  {
+    rsid: 'rs601338',
+    gene: 'FUT2',
+    name: 'Secretor Status & Norovirus Resistance',
+    description: 'Determines mucosal ABO blood group antigen secretion. Derived nonsense mutation (A) produces non-secretor status, granting resistance to GII.4 Norovirus.',
+    globalFreq: 'Derived allele (A) ~45% in Europe and East Asia, ~35% in Sub-Saharan Africa.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'Non-Secretor Phenotype (Norovirus Resistant)', impact: 'No ABO antigens in saliva/mucosa; strongly protected against most common Norovirus strains.' },
+      'GA': { state: 'Heterozygous', text: 'Secretor Phenotype (Carrier)', impact: 'ABO antigens present in body fluids; susceptible to Norovirus infection.' },
+      'AG': { state: 'Heterozygous', text: 'Secretor Phenotype (Carrier)', impact: 'ABO antigens present in body fluids; susceptible to Norovirus infection.' },
+      'GG': { state: 'Ancestral', text: 'Secretor Phenotype', impact: 'Normal ABO antigen secretion in body fluids.' }
+    }
+  },
+  {
+    rsid: 'rs497116',
+    gene: 'CASP12',
+    name: 'Sepsis Protection (Caspase-12 Loss-of-Function)',
+    description: 'Premature stop codon in CASP12 inactivates inflammatory caspase-12. Strongly selected outside Africa to protect against lethal bacterial sepsis.',
+    globalFreq: 'Derived allele (T) >98% in Europeans, East Asians, and Indigenous Americans, ~45% in Sub-Saharan Africans.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Inactive Caspase-12 (Sepsis Resistant)', impact: 'Full protection against caspase-12 mediated severe sepsis; near-fixed outside Africa.' },
+      'GT': { state: 'Heterozygous', text: 'Partial Sepsis Protection', impact: 'Intermediate inflammatory response to severe infections.' },
+      'TG': { state: 'Heterozygous', text: 'Partial Sepsis Protection', impact: 'Intermediate inflammatory response to severe infections.' },
+      'GG': { state: 'Ancestral', text: 'Active Caspase-12 (Ancestral Sepsis Risk)', impact: 'Functional enzyme; higher vulnerability to severe septic shock.' }
+    }
+  },
+  {
+    rsid: 'rs713598',
+    gene: 'TAS2R38',
+    name: 'Bitter Taste Sensitivity (PTC Taster Status)',
+    description: 'Encodes bitter taste receptor 38. Governs ability to taste glucosinolate bitter compounds in cruciferous vegetables (broccoli, kale).',
+    globalFreq: 'Derived allele (G) ~50% in Europeans and Africans, ~70% in East Asians.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Non-Taster Phenotype (AVI Variant)', impact: 'Insensitive to PTC/PROP bitter taste; associated with higher vegetable intake.' },
+      'CG': { state: 'Heterozygous', text: 'Intermediate Bitter Taster', impact: 'Moderate sensitivity to bitter plant compounds.' },
+      'GC': { state: 'Heterozygous', text: 'Intermediate Bitter Taster', impact: 'Moderate sensitivity to bitter plant compounds.' },
+      'CC': { state: 'Ancestral', text: 'High Bitter Taster Phenotype (PAV Variant)', impact: 'Strong sensitivity to PTC bitter compounds; protective against ingesting plant toxins.' }
+    }
   }
 ];
 
