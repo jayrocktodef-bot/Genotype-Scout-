@@ -137,6 +137,26 @@
     "age_bp": 8900
   },
   {
+    "id": "luzia",
+    "name": "Luzia (Lagoa Santa)",
+    "region": "Minas Gerais, Brazil",
+    "period": "Late Pleistocene (12,700 BP)",
+    "description": "One of the oldest human skeletons discovered in South America. Her genome establishes direct ancestral descent shared with ancient North American migrations and modern Indigenous South Americans.",
+    "ancestry_group": "Indigenous American / Paleo-Indian",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Lagoa Santa Paleo-Indian",
+    "age_bp": 12700
+  },
+  {
     "id": "gyamfi_single",
     "name": "Gyamfi Single",
     "region": "Gyamfi-Sade, Ghana",

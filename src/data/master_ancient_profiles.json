@@ -654,6 +654,28 @@
         "rs12913832": "AA"
       }
     },
+    "luzia": {
+      "id": "luzia",
+      "name": "Luzia (Lagoa Santa)",
+      "site": "Lapa Vermelha, Minas Gerais",
+      "country": "Brazil",
+      "age_bp": 12700,
+      "period": "Paleo-Indian",
+      "culture": "Lagoa Santa Paleo-Indian",
+      "culture_name": "Paleoamerican",
+      "sex": "F",
+      "description": "One of the oldest human skeletons found in South America. Her genome confirms early Paleoamerican migration continuity shared across Indigenous South Americans.",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
     "mota": {
       "id": "mota",
       "name": "Mota",
