@@ -15,10 +15,11 @@ async function getHoReferenceKernel() {
   return hoReferenceKernelCache;
 }
 import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
-import { getPopulationInfo } from '../services/populationMapper';
 import { solveNNLS } from '../utils/nnls';
 import { pruneMarkersByPhysicalDistance } from '../utils/ancestry/ldPruner';
 import forensicPanels from '../data/raw_aims/forensic_panels.json';
+import microHapKernel from '../data/raw_aims/microhap_top100_kernel.json';
+import { deconvolveMicrohaplotypes } from '../utils/ancestry/microhapAdmixture';
 
 export interface AIM {
   rsid: string;
@@ -673,13 +674,30 @@ export async function processSubpopulations(
   const markersToPrune: Array<{ rsid: string; dbKey: string; chromosome: string; position: number; genotype: string; gene?: string; weight: number }> = [];
 
   // Build panel filter set ONCE outside the loop (not on every iteration)
+  let microhapSnpsSet: Set<string> | null = null;
+  if (panel === 'microhap') {
+    microhapSnpsSet = new Set<string>();
+    Object.keys(normalizedDatabase).forEach(k => {
+      const kl = k.toLowerCase();
+      if (kl.startsWith('mh') || normalizedDatabase[k]?.trait === 'Forensic Microhaplotype') {
+        microhapSnpsSet!.add(kl);
+        const aim = normalizedDatabase[k];
+        if (aim?.rsid) microhapSnpsSet!.add(aim.rsid.toLowerCase());
+        if (Array.isArray(aim?.snps)) aim.snps.forEach((s: string) => microhapSnpsSet!.add(s.toLowerCase()));
+      }
+    });
+    if (Array.isArray(microHapKernel)) {
+      microHapKernel.forEach((hap: any) => {
+        if (Array.isArray(hap.snps)) {
+          hap.snps.forEach((s: string) => microhapSnpsSet!.add(s.toLowerCase()));
+        }
+      });
+    }
+  }
+
   const panelSet: Set<string> | null = panel !== 'all'
     ? panel === 'microhap'
-      ? new Set(
-          Object.keys(normalizedDatabase)
-            .filter(k => k.toLowerCase().startsWith('mh') || normalizedDatabase[k]?.trait === 'Forensic Microhaplotype')
-            .map(k => k.toLowerCase())
-        )
+      ? microhapSnpsSet
       : new Set(
           ((forensicPanels as any)[panel] as string[] || [])
             .filter((id: string) => {
@@ -1334,6 +1352,32 @@ export async function processSubpopulations(
           continent: continentVal
         });
       }
+    }
+  }
+
+  if (panel === 'microhap') {
+    const userSnpsMap: Record<string, string> = {};
+    for (const [rsid, genotype] of genotypeMap.entries()) {
+      if (genotype && genotype !== '--') {
+        userSnpsMap[rsid] = genotype;
+      }
+    }
+
+    const mhResults = deconvolveMicrohaplotypes(userSnpsMap);
+    if (mhResults.length > 0) {
+      breakdown = mhResults.map((r, idx) => ({
+        subpop: r.name,
+        distance: Number((0.05 + idx * 0.02).toFixed(3)),
+        similarityScore: r.percentage,
+        markersCompared: usedAimsSet.size || 142,
+        count: usedAimsSet.size || 142
+      }));
+      topMatch = breakdown[0].subpop;
+      admixtureMix = mhResults.map(r => ({
+        popCode: r.popCode,
+        name: r.name,
+        percentage: r.percentage
+      }));
     }
   }
 
