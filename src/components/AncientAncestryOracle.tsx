@@ -50,62 +50,62 @@ export const AncientAncestryOracle = memo(({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {results.filter(x => x).slice(0, 9).map((pop, index) => (
+          {results.filter(x => x).map((pop, index) => (
             <motion.div
               key={`${pop.popCode || 'unknown'}-${index}`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.03 }}
-              className="p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-amber-500/30 transition-all group"
+              className="p-6 sm:p-7 rounded-2xl bg-black/50 border border-white/10 hover:border-amber-500/40 transition-all group shadow-lg"
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:scale-105 transition-transform">
-                  {type === 'matches' ? <User size={20} /> : <History size={20} />}
+                <div className="w-11 h-11 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform border border-amber-500/20">
+                  {type === 'matches' ? <User size={22} /> : <History size={22} />}
                 </div>
                 <div className="text-right">
-                  <span className="block text-2xl font-black text-[#F5F6F7] leading-none mb-1">
+                  <span className="block text-3xl font-black text-white leading-none mb-1 tracking-tight">
                     {(pop.score || 0).toFixed(1)}%
                   </span>
-                  <span className="text-[10px] uppercase font-bold tracking-tighter text-amber-500/70">
+                  <span className="text-xs uppercase font-bold tracking-wider text-amber-400/90">
                     {type === 'matches' ? 'Genetic Match' : 'Admixture Proportion'}
                   </span>
                 </div>
               </div>
 
-              <h3 className="text-lg font-black text-[#F5F6F7] mb-1 truncate" title={pop.popName}>{pop.popName}</h3>
-              <div className="flex flex-wrap items-center gap-1.5 mb-3">
-                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 uppercase truncate dark:text-slate-400">
-                  <MapPin size={10} /> {pop.region}
+              <h3 className="text-xl font-black text-white mb-2 truncate" title={pop.popName}>{pop.popName}</h3>
+              <div className="flex flex-wrap items-center gap-2 mb-3.5">
+                <div className="flex items-center gap-1 text-xs font-bold text-slate-300 uppercase truncate dark:text-slate-200">
+                  <MapPin size={12} className="text-amber-400 shrink-0" /> {pop.region}
                 </div>
-                <span className="text-slate-700 dark:text-slate-300">•</span>
-                <div className="text-[9px] font-bold text-slate-500 uppercase truncate dark:text-slate-400">
+                <span className="text-slate-500">•</span>
+                <div className="text-xs font-bold text-slate-300 uppercase truncate dark:text-slate-200">
                   {pop.period}
                 </div>
                 {pop.age_bp && (
                   <>
-                    <span className="text-slate-700 dark:text-slate-300">•</span>
-                    <div className="text-[9px] font-bold text-amber-500/80 uppercase truncate">
+                    <span className="text-slate-500">•</span>
+                    <div className="text-xs font-bold text-amber-400 uppercase truncate">
                       {pop.age_bp.toLocaleString()} BP
                     </div>
                   </>
                 )}
               </div>
 
-              <p className="text-[10px] text-slate-400 leading-relaxed mb-4 line-clamp-3 italic">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5 font-normal italic">
                 "{pop.description}"
               </p>
 
-              <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                <div className="flex items-center gap-1 text-[9px] font-bold text-slate-500 truncate dark:text-slate-400">
-                   <div className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
+              <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300 truncate dark:text-slate-200">
+                   <div className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
                    {pop.culture || (type === 'matches' ? 'Archaeological Sample' : 'Reference Clade')}
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-mono text-slate-600 dark:text-slate-400">
+                  <span className="text-xs font-mono font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
                     {pop.matchingMarkers} Markers
                   </span>
-                  <button className="text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Info size={14} />
+                  <button className="text-amber-400 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <Info size={16} />
                   </button>
                 </div>
               </div>

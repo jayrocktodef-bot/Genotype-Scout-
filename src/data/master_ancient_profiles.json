@@ -786,6 +786,138 @@
         "rs1042602": "CC"
       }
     },
+    "tianyuan": {
+      "id": "tianyuan",
+      "name": "Tianyuan Man",
+      "site": "Tianyuan Cave, Beijing",
+      "country": "China",
+      "age_bp": 40000,
+      "period": "Early Upper Paleolithic",
+      "culture": "Paleolithic East Asian",
+      "culture_name": "Paleolithic",
+      "sex": "M",
+      "description": "Landmark 40,000-year-old human from Tianyuan Cave near Beijing. Demonstrates early divergence of East Asian lineages from Western Eurasian populations.",
+      "region": "East Asia",
+      "snps": {
+        "rs3827760": "AA",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "jomon": {
+      "id": "jomon",
+      "name": "Jōmon Hunter-Gatherer",
+      "site": "Funadomari, Hokkaido",
+      "country": "Japan",
+      "age_bp": 3800,
+      "period": "Jōmon Period",
+      "culture": "Jōmon Culture",
+      "culture_name": "Jōmon",
+      "sex": "M",
+      "description": "Indigenous hunter-gatherer of the Japanese archipelago prior to Yayoi agricultural expansion. Characterized by wet earwax, dark skin, and unique island adaptation.",
+      "region": "East Asia",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "rakhigarhi": {
+      "id": "rakhigarhi",
+      "name": "Rakhigarhi Indus Valley Ancestor",
+      "site": "Rakhigarhi, Haryana",
+      "country": "India",
+      "age_bp": 4500,
+      "period": "Bronze Age (Indus Valley)",
+      "culture": "Indus Valley Civilization",
+      "culture_name": "Harappan",
+      "sex": "F",
+      "description": "High-coverage genome from the Harappan civilization. Predates Steppe pastoralist migration into South Asia, representing ancient Ancestral South Indian (ASI) baseline.",
+      "region": "South Asia",
+      "snps": {
+        "rs3827760": "AA",
+        "rs1426654": "AG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CC"
+      }
+    },
+    "kostenki14": {
+      "id": "kostenki14",
+      "name": "Kostenki-14 (Markina Gora)",
+      "site": "Kostenki, Voronezh",
+      "country": "Russia",
+      "age_bp": 37000,
+      "period": "Upper Paleolithic",
+      "culture": "Early European Paleolithic",
+      "culture_name": "Paleolithic",
+      "sex": "M",
+      "description": "Early European hunter-gatherer genome. Shows deep shared ancestry between Western Hunter-Gatherers and Ancient North Eurasians.",
+      "region": "Europe",
+      "snps": {
+        "rs3827760": "AA",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "boncuklu": {
+      "id": "boncuklu",
+      "name": "Boncuklu Anatolian Farmer",
+      "site": "Boncuklu Höyük, Konya",
+      "country": "Turkey",
+      "age_bp": 10300,
+      "period": "Pre-Pottery Neolithic",
+      "culture": "Anatolian Farmer",
+      "culture_name": "Neolithic",
+      "sex": "M",
+      "description": "Pre-Pottery Neolithic inhabitant of central Anatolia, ancestral to the Early European Farmers who brought agriculture to Europe.",
+      "region": "West Asia",
+      "snps": {
+        "rs3827760": "AA",
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "GG",
+        "rs4988235": "GG",
+        "rs1800414": "AG",
+        "rs1042602": "TT"
+      }
+    },
+    "australian_ancient": {
+      "id": "australian_ancient",
+      "name": "Ancient Australian (Willandra Lakes)",
+      "site": "Willandra Lakes, NSW",
+      "country": "Australia",
+      "age_bp": 2000,
+      "period": "Late Holocene",
+      "culture": "Aboriginal Australian",
+      "culture_name": "Sahul",
+      "sex": "M",
+      "description": "Ancient Aboriginal Australian genome demonstrating 50,000+ years of genetic isolation and deep lineage continuity in Sahul.",
+      "region": "Oceania",
+      "snps": {
+        "rs3827760": "AA",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
     "mota": {
       "id": "mota",
       "name": "Mota",

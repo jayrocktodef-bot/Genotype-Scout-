@@ -286,15 +286,20 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
 export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
   const rawSamples = [
     ...Object.values(masterAncient.samples).filter(s => (s as any).id),
-    ...(masterAncient as any).matches
+    ...((masterAncient as any).matches || [])
   ];
   
   const seenIds = new Set<string>();
+  const seenNames = new Set<string>();
   const samples: any[] = [];
   for (const s of rawSamples) {
     const id = s.id || s.sampleId;
-    if (id && !seenIds.has(id)) {
+    const rawName = (s.name || '').toLowerCase();
+    // Normalize name to deduplicate e.g. "Mota" vs "Mota Man", "Anzick-1" vs "Anzick-1 (Clovis Boy)"
+    const nameKey = rawName.replace(/\(.*?\)/g, '').replace(/[^a-z]/g, '');
+    if (id && !seenIds.has(id) && !seenNames.has(nameKey)) {
       seenIds.add(id);
+      seenNames.add(nameKey);
       samples.push(s);
     }
   }
@@ -382,5 +387,5 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
   
   return results
     .filter(r => r.markersCompared > 0)
-    .sort((a, b) => a.distance - b.distance);
+    .sort((a, b) => b.score - a.score || a.distance - b.distance);
 };

@@ -257,6 +257,126 @@
     "age_bp": 1500
   },
   {
+    "id": "tianyuan",
+    "name": "Tianyuan Man",
+    "region": "Tianyuan Cave, Beijing, China",
+    "period": "Early Upper Paleolithic (40,000 BP)",
+    "description": "Landmark 40,000-year-old human from Tianyuan Cave near Beijing. Demonstrates early divergence of East Asian lineages from Western Eurasian populations.",
+    "ancestry_group": "Paleolithic East Asian",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Paleolithic",
+    "age_bp": 40000
+  },
+  {
+    "id": "jomon",
+    "name": "Jōmon Hunter-Gatherer",
+    "region": "Funadomari, Hokkaido, Japan",
+    "period": "Jōmon Period (3,800 BP)",
+    "description": "Indigenous hunter-gatherer of the Japanese archipelago prior to Yayoi agricultural expansion. Characterized by wet earwax, dark skin, and unique island adaptation.",
+    "ancestry_group": "Jōmon / East Asian Island Hunter-Gatherer",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Jōmon Culture",
+    "age_bp": 3800
+  },
+  {
+    "id": "rakhigarhi",
+    "name": "Rakhigarhi Indus Valley Ancestor",
+    "region": "Rakhigarhi, Haryana, India",
+    "period": "Bronze Age Indus Valley (4,500 BP)",
+    "description": "High-coverage genome from the Harappan civilization. Predates Steppe pastoralist migration into South Asia, representing ancient Ancestral South Indian (ASI) baseline.",
+    "ancestry_group": "Indus Valley Civilization / South Asian",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "AG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "AA",
+      "rs1800414": "GG",
+      "rs1042602": "CC"
+    },
+    "culture": "Harappan (IVC)",
+    "age_bp": 4500
+  },
+  {
+    "id": "kostenki14",
+    "name": "Kostenki-14 (Markina Gora)",
+    "region": "Kostenki, Voronezh, Russia",
+    "period": "Upper Paleolithic (37,000 BP)",
+    "description": "Early European hunter-gatherer genome. Shows deep shared ancestry between Western Hunter-Gatherers and Ancient North Eurasians.",
+    "ancestry_group": "Upper Paleolithic European",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Paleolithic Hunter-Gatherer",
+    "age_bp": 37000
+  },
+  {
+    "id": "boncuklu",
+    "name": "Boncuklu Anatolian Farmer",
+    "region": "Boncuklu Höyük, Konya, Turkey",
+    "period": "Pre-Pottery Neolithic (10,300 BP)",
+    "description": "Pre-Pottery Neolithic inhabitant of central Anatolia, ancestral to the Early European Farmers who brought agriculture to Europe.",
+    "ancestry_group": "Neolithic Anatolian Farmer",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "AA",
+      "rs16891982": "CC",
+      "rs12913832": "GG",
+      "rs4988235": "GG",
+      "rs3827760": "AA",
+      "rs1800414": "AG",
+      "rs1042602": "TT"
+    },
+    "culture": "Anatolian Farmer",
+    "age_bp": 10300
+  },
+  {
+    "id": "australian_ancient",
+    "name": "Ancient Australian (Willandra Lakes)",
+    "region": "Willandra Lakes, NSW, Australia",
+    "period": "Late Holocene (2,000 BP)",
+    "description": "Ancient Aboriginal Australian genome demonstrating 50,000+ years of genetic isolation and deep lineage continuity in Sahul.",
+    "ancestry_group": "Aboriginal Australian / Sahul",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "AA",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Sahul Aboriginal",
+    "age_bp": 2000
+  },
+  {
     "id": "gyamfi_single",
     "name": "Gyamfi Single",
     "region": "Gyamfi-Sade, Ghana",
