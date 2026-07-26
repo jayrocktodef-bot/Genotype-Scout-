@@ -423,6 +423,175 @@ const DRIVER_SNPS: DriverSNP[] = [
       'GC': { state: 'Heterozygous', text: 'Intermediate Bitter Taster', impact: 'Moderate sensitivity to bitter plant compounds.' },
       'CC': { state: 'Ancestral', text: 'High Bitter Taster Phenotype (PAV Variant)', impact: 'Strong sensitivity to PTC bitter compounds; protective against ingesting plant toxins.' }
     }
+  },
+  {
+    rsid: 'rs1800562',
+    gene: 'HFE',
+    name: 'Celtic Iron Absorption (C282Y Hemochromatosis)',
+    description: 'Major genetic variant driving iron hyper-absorption in North-Western Europeans ("Celtic mutation"). Historical adaptation to low-iron agricultural diets.',
+    globalFreq: 'Derived allele (A) ~10-15% in Celtic/Irish and Northern Europeans, <1% outside Europe.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'Hereditary Hemochromatosis Risk (C282Y Homozygote)', impact: 'High iron absorption capacity; high risk for iron overload without monitoring.' },
+      'GA': { state: 'Heterozygous', text: 'Carrier of Celtic Iron Absorption Allele', impact: 'Increased dietary iron absorption capacity without overt disease risk.' },
+      'AG': { state: 'Heterozygous', text: 'Carrier of Celtic Iron Absorption Allele', impact: 'Increased dietary iron absorption capacity without overt disease risk.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral Standard Iron Absorption', impact: 'Normal iron regulation typical of global non-European populations.' }
+    }
+  },
+  {
+    rsid: 'rs738409',
+    gene: 'PNPLA3',
+    name: 'Fatty Liver & Indigenous American Lipid Adaptation (I148M)',
+    description: 'Encodes adiponutrin. The derived G allele (Met148) is under strong selection in Indigenous Americans and Hispanics, predisposing to hepatic lipid storage.',
+    globalFreq: 'Derived allele (G) ~45-70% in Indigenous Americans and Hispanics, ~25% in Europeans, ~15% in Africans.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'High Hepatic Lipid Storage (PNPLA3 Met148)', impact: 'Adapted for rapid lipid storage; increased susceptibility to fatty liver on high-sugar diets.' },
+      'CG': { state: 'Heterozygous', text: 'Intermediate Lipid Storage Capacity', impact: 'Moderate hepatic fat retention.' },
+      'GC': { state: 'Heterozygous', text: 'Intermediate Lipid Storage Capacity', impact: 'Moderate hepatic fat retention.' },
+      'CC': { state: 'Ancestral', text: 'Standard Hepatic Triglyceride Clearance', impact: 'Ancestral fat metabolism pathway.' }
+    }
+  },
+  {
+    rsid: 'rs1801133',
+    gene: 'MTHFR',
+    name: 'Folate Metabolism & UV Adaptation (C677T)',
+    description: 'Thermolabile MTHFR variant regulating methylenetetrahydrofolate reductase activity. T allele is selected in high-UV regions to balance folate breakdown vs. vitamin D.',
+    globalFreq: 'Derived allele (T) ~40-50% in Mediterranean Europe and Mesoamerica, ~10-20% in Sub-Saharan Africa.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Reduced MTHFR Activity (~30% of normal)', impact: 'Requires higher dietary folate/methylfolate intake; evolved under UV exposure trade-offs.' },
+      'CT': { state: 'Heterozygous', text: 'Moderate MTHFR Activity (~65% of normal)', impact: 'Slightly reduced folate processing capacity.' },
+      'TC': { state: 'Heterozygous', text: 'Moderate MTHFR Activity (~65% of normal)', impact: 'Slightly reduced folate processing capacity.' },
+      'CC': { state: 'Ancestral', text: 'Optimal MTHFR Enzymatic Function', impact: 'Standard baseline folate conversion.' }
+    }
+  },
+  {
+    rsid: 'rs12255372',
+    gene: 'TCF7L2',
+    name: 'Thrifty Gene Glucose Regulation',
+    description: 'Transcription factor in the Wnt signaling pathway. Key thrifty gene candidate under positive selection during ancestral periods of famine.',
+    globalFreq: 'Derived allele (T) ~30% in Europeans, ~30% in Africans, ~5% in East Asians.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Thrifty Insulin Expression Variant', impact: 'Adapted for maximum energy conservation during food scarcity; elevates Type 2 Diabetes risk on modern diets.' },
+      'GT': { state: 'Heterozygous', text: 'Intermediate Glucose Homeostasis', impact: 'Moderate thrifty gene metabolic response.' },
+      'TG': { state: 'Heterozygous', text: 'Intermediate Glucose Homeostasis', impact: 'Moderate thrifty gene metabolic response.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral Insulin Secretion Phenotype', impact: 'Baseline insulin response.' }
+    }
+  },
+  {
+    rsid: 'rs4680',
+    gene: 'COMT',
+    name: 'Dopamine Clearance (Warrior vs. Worrier Val158Met)',
+    description: 'Catechol-O-methyltransferase enzyme activity. Met158 (A) reduces dopamine breakdown 4-fold, boosting cognitive focus; Val158 (G) increases stress resilience.',
+    globalFreq: 'Derived allele (A) ~50% in Europeans, ~30% in East Asians, ~20% in Africans.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'Worrier Phenotype (Met/Met - High Dopamine)', impact: 'Superior cognitive focus, memory, and executive processing; higher stress sensitivity.' },
+      'GA': { state: 'Heterozygous', text: 'Balanced Warrior-Worrier Profile (Val/Met)', impact: 'Intermediate dopamine clearance; optimal balance of focus and stress resilience.' },
+      'AG': { state: 'Heterozygous', text: 'Balanced Warrior-Worrier Profile (Val/Met)', impact: 'Intermediate dopamine clearance; optimal balance of focus and stress resilience.' },
+      'GG': { state: 'Ancestral', text: 'Warrior Phenotype (Val/Val - Fast Dopamine Clear)', impact: 'High stress resilience and pain tolerance; lower baseline dopamine levels under non-stress conditions.' }
+    }
+  },
+  {
+    rsid: 'rs2228570',
+    gene: 'VDR',
+    name: 'Vitamin D Receptor High-Latitude Adaptation (FokI)',
+    description: 'Vitamin D receptor translation initiation site variant. The F (T) allele produces a shorter, more active VDR protein, selected in high-latitude environments.',
+    globalFreq: 'Derived allele (T) ~65% in Europeans, ~55% in East Asians, ~35% in Africans.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Enhanced VDR Transcriptional Activity (FokI F/F)', impact: 'More efficient vitamin D signaling and calcium absorption; high-latitude adaptation.' },
+      'CT': { state: 'Heterozygous', text: 'Intermediate VDR Signaling Activity', impact: 'Balanced vitamin D receptor responsiveness.' },
+      'TC': { state: 'Heterozygous', text: 'Intermediate VDR Signaling Activity', impact: 'Balanced vitamin D receptor responsiveness.' },
+      'CC': { state: 'Ancestral', text: 'Ancestral VDR Protein Length (FokI f/f)', impact: 'Standard baseline vitamin D receptor activation.' }
+    }
+  },
+  {
+    rsid: 'rs1042713',
+    gene: 'ADRB2',
+    name: 'Beta-2 Adrenergic Receptor Energy Expenditure (Arg16Gly)',
+    description: 'Regulates bronchodilation, lipolysis, and energy expenditure. Derived Gly16 allele is selected in cold-adapted and agricultural populations.',
+    globalFreq: 'Derived allele (G) ~60% in Europeans, ~50% in East Asians, ~40% in Africans.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Enhanced Receptor Down-regulation (Gly16/Gly16)', impact: 'Promotes fat retention and energy conservation; selected in cold climates.' },
+      'AG': { state: 'Heterozygous', text: 'Intermediate Adrenergic Responsiveness', impact: 'Balanced lipolysis and airway reactivity.' },
+      'GA': { state: 'Heterozygous', text: 'Intermediate Adrenergic Responsiveness', impact: 'Balanced lipolysis and airway reactivity.' },
+      'AA': { state: 'Ancestral', text: 'Ancestral High-Lipolysis Phenotype (Arg16/Arg16)', impact: 'Higher baseline energy expenditure and bronchodilator sensitivity.' }
+    }
+  },
+  {
+    rsid: 'rs1799983',
+    gene: 'NOS3 / eNOS',
+    name: 'Nitric Oxide Vasodilation & Altitude Response (Glu298Asp)',
+    description: 'Endothelial nitric oxide synthase. Regulates vascular tone, blood flow, and oxygen delivery under hypoxic high-altitude conditions.',
+    globalFreq: 'Derived allele (T) ~30-40% in Europeans, ~10% in East Asians, ~5% in Africans.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Modified Endothelial Nitric Oxide Production', impact: 'Altered vascular nitric oxide synthesis and blood pressure regulation.' },
+      'GT': { state: 'Heterozygous', text: 'Intermediate Nitric Oxide Synthesis', impact: 'Balanced endothelial vasodilation capacity.' },
+      'TG': { state: 'Heterozygous', text: 'Intermediate Nitric Oxide Synthesis', impact: 'Balanced endothelial vasodilation capacity.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral High-Activity eNOS Vasodilation', impact: 'Efficient baseline nitric oxide production.' }
+    }
+  },
+  {
+    rsid: 'rs1800629',
+    gene: 'TNF-alpha',
+    name: 'Pro-Inflammatory Immune Response (-308G>A)',
+    description: 'Promoter variant altering tumor necrosis factor alpha transcription. The derived A allele increases TNF-alpha levels, providing immunity against malaria.',
+    globalFreq: 'Derived allele (A) ~15-20% in Europeans and Africans, ~5% in East Asians.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'High TNF-Alpha Inflammatory Response (-308A/A)', impact: 'Robust innate immune response against pathogens; protective against severe malaria.' },
+      'GA': { state: 'Heterozygous', text: 'Elevated TNF-Alpha Production', impact: 'Enhanced pathogen clearance with moderate inflammatory response.' },
+      'AG': { state: 'Heterozygous', text: 'Elevated TNF-Alpha Production', impact: 'Enhanced pathogen clearance with moderate inflammatory response.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral Baseline TNF Transcription', impact: 'Standard baseline inflammatory signaling.' }
+    }
+  },
+  {
+    rsid: 'rs1799971',
+    gene: 'OPRM1',
+    name: 'Mu-Opioid Endorphin Sensitivity (A118G)',
+    description: 'Primary mu-opioid receptor variant. G allele reduces receptor density, requiring higher endogenous endorphins for pain relief and social bonding.',
+    globalFreq: 'Derived allele (G) ~45-50% in East Asians, ~15-20% in Europeans, ~2-5% in Sub-Saharan Africans.',
+    interpretations: {
+      'GG': { state: 'Derived', text: 'Reduced Mu-Opioid Receptor Density (118G/G)', impact: 'Altered endorphin binding; higher threshold for physical pain and social rejection.' },
+      'AG': { state: 'Heterozygous', text: 'Intermediate Opioid Receptor Binding', impact: 'Moderate endorphin sensitivity.' },
+      'GA': { state: 'Heterozygous', text: 'Intermediate Opioid Receptor Binding', impact: 'Moderate endorphin sensitivity.' },
+      'AA': { state: 'Ancestral', text: 'Ancestral High-Sensitivity Mu-Opioid Receptor', impact: 'Strong baseline response to endogenous endorphins and opioid analgesics.' }
+    }
+  },
+  {
+    rsid: 'rs1800795',
+    gene: 'IL6',
+    name: 'Interleukin-6 Inflammatory Regulation (-174G>C)',
+    description: 'Promoter SNP governing IL-6 cytokine production. Derived C allele lowers systemic inflammation, selected in European long-lived cohorts.',
+    globalFreq: 'Derived allele (C) ~40% in Europeans, ~5% in Africans, <1% in East Asians.',
+    interpretations: {
+      'CC': { state: 'Derived', text: 'Low Systemic IL-6 Production Phenotype', impact: 'Lower baseline inflammation; associated with longevity and cardiovascular protection in Europeans.' },
+      'GC': { state: 'Heterozygous', text: 'Intermediate IL-6 Inflammatory Response', impact: 'Balanced cytokine expression.' },
+      'CG': { state: 'Heterozygous', text: 'Intermediate IL-6 Inflammatory Response', impact: 'Balanced cytokine expression.' },
+      'GG': { state: 'Ancestral', text: 'Ancestral Higher IL-6 Inflammatory Output', impact: 'Robust early immune defense against bacterial pathogens.' }
+    }
+  },
+  {
+    rsid: 'rs1815739',
+    gene: 'ACTN3',
+    name: 'Alpha-Actinin-3 Muscle Performance (R577X)',
+    description: 'Fast-twitch muscle fiber protein. Derived T (577X) allele eliminates alpha-actinin-3, favoring endurance and cold survival; ancestral R favors sprint/power.',
+    globalFreq: 'Derived allele (T / X) ~55% in Europeans, ~50% in East Asians, ~15% in Sub-Saharan Africans.',
+    interpretations: {
+      'TT': { state: 'Derived', text: 'Alpha-Actinin-3 Null Phenotype (XX - Endurance)', impact: 'Optimized for endurance efficiency, metabolic economy, and cold tolerance.' },
+      'CT': { state: 'Heterozygous', text: 'Balanced Power & Endurance Muscle (RX)', impact: 'Intermediate fast-twitch muscle function.' },
+      'TC': { state: 'Heterozygous', text: 'Balanced Power & Endurance Muscle (RX)', impact: 'Intermediate fast-twitch muscle function.' },
+      'CC': { state: 'Ancestral', text: 'Full Alpha-Actinin-3 Expression (RR - Sprint/Power)', impact: 'Optimized for explosive sprint, power, and high-force muscle contractions.' }
+    }
+  },
+  {
+    rsid: 'rs9939609',
+    gene: 'FTO',
+    name: 'FTO Thrifty Gene Metabolic Storage',
+    description: 'Intronic regulator of IRX3/IRX5 expression in adipocytes. Derived A allele is a classic thrifty gene conferring increased energy storage efficiency.',
+    globalFreq: 'Derived allele (A) ~42% in Europeans, ~30% in South Asians, ~15% in West Africans, ~10% in East Asians.',
+    interpretations: {
+      'AA': { state: 'Derived', text: 'Thrifty Energy Storage Phenotype (A/A)', impact: 'Highly efficient fat storage; evolved to survive famine, predisposing to higher BMI on modern diets.' },
+      'AT': { state: 'Heterozygous', text: 'Intermediate Metabolic Storage Efficiency', impact: 'Moderate energy storage propensity.' },
+      'TA': { state: 'Heterozygous', text: 'Intermediate Metabolic Storage Efficiency', impact: 'Moderate energy storage propensity.' },
+      'TT': { state: 'Ancestral', text: 'Ancestral Lean Metabolic Phenotype (T/T)', impact: 'Lower baseline fat accumulation propensity.' }
+    }
   }
 ];
 
