@@ -57,6 +57,7 @@ const FamousMatches = lazy(() => import("./components/FamousMatches").then(m => 
 const PopulationComparisonTab = lazy(() => import("./components/PopulationComparisonTab").then(m => ({ default: m.PopulationComparisonTab })));
 const MarkerBenchmarks = lazy(() => import("./components/MarkerBenchmarks").then(m => ({ default: m.MarkerBenchmarks })));
 const SubpopulationBento = lazy(() => import("./components/SubpopulationBento"));
+const SubpopulationGlossaryTab = lazy(() => import("./components/SubpopulationGlossaryTab").then(m => ({ default: m.SubpopulationGlossaryTab })));
 import { processSubpopulations } from "./components/ancestryOracleLogic";
 import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
@@ -2745,6 +2746,12 @@ export default function App() {
                   famousMatches={famousMatches}
                   healthImpacts={healthWellnessMatches}
                 />
+              </div>
+            )}
+
+            {currentApp === 'glossary' && (
+              <div className="space-y-8 animate-fade-in">
+                <SubpopulationGlossaryTab />
               </div>
             )}
 

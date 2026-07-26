@@ -64,6 +64,17 @@ const MODULES: AppConfig[] = [
     navGroup: 'primary',
   },
   {
+    id: 'glossary',
+    name: 'Population Glossary',
+    icon: BookOpen,
+    gradient: 'from-[#4ECDC4] to-teal-700',
+    glowColor: 'rgba(78,205,196,0.45)',
+    targetTab: 'ancestry',
+    description: 'Explore origin geographies, migration routes, and evolutionary traits for global populations.',
+    imageUrl: '/assets/oracle_icon.png',
+    navGroup: 'primary',
+  },
+  {
     id: 'chromosome_painter',
     name: 'Chromosome Painter',
     icon: Dna,
