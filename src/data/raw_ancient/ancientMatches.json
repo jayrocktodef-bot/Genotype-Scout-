@@ -157,6 +157,106 @@
     "age_bp": 12700
   },
   {
+    "id": "usr1",
+    "name": "Upward Sun River 1 (USR1)",
+    "region": "Tanana River Valley, Alaska",
+    "period": "Late Pleistocene (11,500 BP)",
+    "description": "An infant genome from interior Alaska representing Ancient Beringians—the earliest diverged lineage of ancient Americans prior to Northern/Southern Native American splits.",
+    "ancestry_group": "Ancient Beringian",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Ancient Beringian",
+    "age_bp": 11500
+  },
+  {
+    "id": "lovelock_cave",
+    "name": "Lovelock Cave Ancestor",
+    "region": "Humboldt Sink, Nevada",
+    "period": "Late Holocene (1,500 BP)",
+    "description": "Ancient Great Basin inhabitant demonstrating direct genetic lineage continuity with modern Numic-speaking populations (Paiute and Shoshone).",
+    "ancestry_group": "Indigenous American / Great Basin",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Great Basin Forager",
+    "age_bp": 1500
+  },
+  {
+    "id": "lauricocha",
+    "name": "Lauricocha Highland Ancestor",
+    "region": "Lauricocha Cave, Huanuco, Peru",
+    "period": "Early Holocene (8,600 BP)",
+    "description": "One of the earliest high-altitude Andean genomes, showing early adaptation to high-altitude hypoxia and genetic continuity with modern Quechua populations.",
+    "ancestry_group": "Indigenous American / Andean",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Central Andean Forager",
+    "age_bp": 8600
+  },
+  {
+    "id": "machu_picchu",
+    "name": "Machu Picchu Inca Royal Ancestor",
+    "region": "Machu Picchu, Cusco, Peru",
+    "period": "Imperial Inca Era (500 BP)",
+    "description": "Late pre-Columbian imperial Inca genome from the Royal Estate of Machu Picchu, exhibiting highland Quechua and coastal Peruvian genetic components.",
+    "ancestry_group": "Indigenous American / Inca Empire",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Inca Empire",
+    "age_bp": 500
+  },
+  {
+    "id": "fuegian_yamana",
+    "name": "Fuegian Yámana Ancestor",
+    "region": "Tierra del Fuego, Chile/Argentina",
+    "period": "Late Holocene (1,500 BP)",
+    "description": "Ancient southern maritime hunter-gatherer from Tierra del Fuego representing the extreme southern terminus of ancient human expansion into South America.",
+    "ancestry_group": "Indigenous American / Patagonian",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "GG",
+      "rs1800414": "AA",
+      "rs1042602": "CC"
+    },
+    "culture": "Patagonian Maritime Hunter-Gatherer",
+    "age_bp": 1500
+  },
+  {
     "id": "gyamfi_single",
     "name": "Gyamfi Single",
     "region": "Gyamfi-Sade, Ghana",

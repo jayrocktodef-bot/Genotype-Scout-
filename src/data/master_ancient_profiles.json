@@ -676,6 +676,116 @@
         "rs1042602": "CC"
       }
     },
+    "usr1": {
+      "id": "usr1",
+      "name": "Upward Sun River 1 (USR1)",
+      "site": "Tanana River Valley, Alaska",
+      "country": "USA",
+      "age_bp": 11500,
+      "period": "Late Pleistocene",
+      "culture": "Ancient Beringian",
+      "culture_name": "Ancient Beringian",
+      "sex": "F",
+      "description": "An infant genome from interior Alaska representing Ancient Beringians—the earliest diverged lineage of ancient Americans prior to Northern/Southern Native American splits.",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "lovelock_cave": {
+      "id": "lovelock_cave",
+      "name": "Lovelock Cave Ancestor",
+      "site": "Humboldt Sink, Nevada",
+      "country": "USA",
+      "age_bp": 1500,
+      "period": "Late Holocene",
+      "culture": "Great Basin Forager",
+      "culture_name": "Native American",
+      "sex": "M",
+      "description": "Ancient Great Basin inhabitant demonstrating direct genetic lineage continuity with modern Numic-speaking populations (Paiute and Shoshone).",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "lauricocha": {
+      "id": "lauricocha",
+      "name": "Lauricocha Highland Ancestor",
+      "site": "Lauricocha Cave, Huanuco",
+      "country": "Peru",
+      "age_bp": 8600,
+      "period": "Early Holocene",
+      "culture": "Central Andean Forager",
+      "culture_name": "Andean Paleo-Indian",
+      "sex": "M",
+      "description": "One of the earliest high-altitude Andean genomes, showing early adaptation to high-altitude hypoxia and genetic continuity with modern Quechua populations.",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "machu_picchu": {
+      "id": "machu_picchu",
+      "name": "Machu Picchu Inca Royal Ancestor",
+      "site": "Machu Picchu, Cusco",
+      "country": "Peru",
+      "age_bp": 500,
+      "period": "Imperial Inca Era",
+      "culture": "Inca Empire",
+      "culture_name": "Inca",
+      "sex": "M",
+      "description": "Late pre-Columbian imperial Inca genome from the Royal Estate of Machu Picchu, exhibiting highland Quechua and coastal Peruvian genetic components.",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
+    "fuegian_yamana": {
+      "id": "fuegian_yamana",
+      "name": "Fuegian Yámana Ancestor",
+      "site": "Tierra del Fuego",
+      "country": "Chile/Argentina",
+      "age_bp": 1500,
+      "period": "Late Holocene",
+      "culture": "Patagonian Maritime Hunter-Gatherer",
+      "culture_name": "Fuegian",
+      "sex": "M",
+      "description": "Ancient southern maritime hunter-gatherer from Tierra del Fuego representing the extreme southern terminus of ancient human expansion into South America.",
+      "region": "Americas",
+      "snps": {
+        "rs3827760": "GG",
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
+    },
     "mota": {
       "id": "mota",
       "name": "Mota",
