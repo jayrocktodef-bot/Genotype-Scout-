@@ -14,6 +14,7 @@ export interface PopulationGlossaryItem {
   description: string;
   keyMarkers: string[];
   haplogroupNotes?: string;
+  aliases?: string[];
 }
 
 export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
@@ -22,9 +23,10 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'CEU',
+    aliases: ['NFE_gnomAD', 'ALFA_EUR', 'sgdp_french', 'FRENCH', 'GERMAN', 'DUTCH'],
     name: 'Central European (CEU)',
     category: 'Europe',
-    geographicCenter: 'Utah Residents (CEPH) / Western & Central Europe (France, Germany, British Isles)',
+    geographicCenter: 'Utah Residents (CEPH) / Western & Central Europe (France, Germany, Netherlands, Rhine Basin)',
     historicalTimeline: 'Tri-partite ancestral fusion: Mesolithic Western Hunter-Gatherers (WHG, ~8000 BCE) + Anatolian Early European Farmers (EEF, ~6000 BCE) + Bronze Age Yamnaya Western Steppe Pastoralists (WSH, ~2800 BCE).',
     migrationPath: [
       'Out-of-Africa migration via Levant corridor (~60,000–50,000 BP)',
@@ -43,6 +45,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
   {
     code: 'GBR',
+    aliases: ['IRISH', 'sgdp_english', 'sgdp_orcadian'],
     name: 'British Isles (GBR)',
     category: 'Europe',
     geographicCenter: 'Great Britain, Ireland, Orkney & Hebrides',
@@ -65,9 +68,10 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
   {
     code: 'FIN',
+    aliases: ['FIN_gnomAD', 'sgdp_finnish', 'sgdp_estonian'],
     name: 'Uralic & North-East European (FIN)',
     category: 'Europe',
-    geographicCenter: 'Finland, Karelia, Bothnian Basin',
+    geographicCenter: 'Finland, Karelia, Bothnian Basin, Estonia',
     historicalTimeline: 'Distinct northern bottlenecked population formed by Eastern Hunter-Gatherers (EHG), Western Hunter-Gatherers (WHG), and Siberian-related Nganasan-like intake via Uralic language expansion (~1500 BCE).',
     migrationPath: [
       'Post-glacial North-Eastern European settlement (~9,000 BP)',
@@ -85,9 +89,10 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
   {
     code: 'POLISH',
+    aliases: ['SLAVIC', 'BALTIC', 'sgdp_polish', 'sgdp_russian', 'sgdp_czech', 'RUSSIAN'],
     name: 'Polish / Eastern European (POLISH / SLAVIC)',
     category: 'Europe',
-    geographicCenter: 'Vistula-Oder Basins, Poland, Ukraine, Belarus',
+    geographicCenter: 'Vistula-Oder Basins, Poland, Ukraine, Belarus, European Russia',
     historicalTimeline: 'Central-Eastern European Slavic lineage characterized by high Steppe pastoralist ancestry (R1a-M417), Early European Farmer components, and Baltic/Slavic early medieval expansions (5th–7th Century CE).',
     migrationPath: [
       'Mesolithic EHG / WHG hunter-gatherer foraging in North European Plain',
@@ -105,6 +110,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
   {
     code: 'BASQUE',
+    aliases: ['sgdp_basque'],
     name: 'Basque / Southwestern European (BASQUE)',
     category: 'Europe',
     geographicCenter: 'Western Pyrenees (Franco-Cantabrian Region, Spain/France)',
@@ -122,12 +128,53 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     keyMarkers: ['RHD negative', 'rs1426654-A', 'Y-DNA R1b-DF27'],
     haplogroupNotes: 'Y-DNA R1b-DF27 (>85%); mtDNA H1, H3, V, U5.'
   },
+  {
+    code: 'SCANDINAVIAN',
+    aliases: ['SWEDISH', 'sgdp_norwegian', 'sgdp_icelandic'],
+    name: 'Scandinavian / Northern European (SCANDINAVIAN)',
+    category: 'Europe',
+    geographicCenter: 'Sweden, Norway, Denmark, Iceland',
+    historicalTimeline: 'North European maritime lineage formed by Scandinavian Hunter-Gatherers (SHG, WHG+EHG blend), Battle-Axe Steppe herders (~2800 BCE), and Iron Age Viking expansions.',
+    migrationPath: [
+      'Post-glacial colonization of Scandinavian peninsula from south and northeast (~11,000 BP)',
+      'Neolithic Pitted Ware & Funnelbeaker farming coastal interactions (~6,000 BP)',
+      'Battle-Axe Corded Ware Steppe migration (~4,800 BP)',
+      'Viking Age maritime navigation and insular settlements across Atlantic (800–1050 CE)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Highest Lactase Persistence', gene: 'MCM6', rsid: 'rs4988235', impact: 'Near complete fixation (~90-95%) driven by dairy cattle farming.' },
+      { trait: 'Blonde Hair & Blue Eyes', gene: 'HERC2 / KITLG / SLC45A2', impact: 'Fixation of depigmentation alleles in northern maritime light environments.' }
+    ],
+    description: 'Scandinavian populations combine Scandinavian Hunter-Gatherer (SHG) heritage with high Steppe herder and Germanic Iron Age components, exhibiting the highest lactase persistence in Europe.',
+    keyMarkers: ['rs4988235-T', 'Y-DNA I1-M253', 'R1b-U106', 'R1a-Z284'],
+    haplogroupNotes: 'Y-DNA I1-M253 (~35-40%), R1a-Z284 (~20-25%), R1b (~25%); mtDNA H1, H3, U5a, K.'
+  },
+  {
+    code: 'BALKAN',
+    aliases: ['GREEK', 'sgdp_albanian', 'sgdp_bulgarian', 'sgdp_greek'],
+    name: 'Balkan / Southeastern European (BALKAN / GREEK)',
+    category: 'Europe',
+    geographicCenter: 'Balkan Peninsula, Greece, Albania, Bulgaria, Aegean Islands',
+    historicalTimeline: 'Southeastern European crossroads lineage blending European Mesolithic hunter-gatherers, Neolithic Aegean farmers, Bronze Age Mycenaean/Minoan Greeks, and Medieval Slavic expansions.',
+    migrationPath: [
+      'Neolithic Aegean farmer expansion into Balkans (~8,500 BP)',
+      'Bronze Age Helladic and Mycenaean Greek civilization development (~4,000 BP)',
+      'Slavic migrations into the Balkan peninsula during 6th–7th Century CE'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'G6PD Deficiency & Thalassemia Resistance', gene: 'G6PD / HBB', impact: 'Malaria protective balancing selection in Mediterranean coastal plains.' }
+    ],
+    description: 'Balkan and Greek populations bridge Southern Europe with Anatolia and the Near East, combining ancient Aegean Neolithic and Classical Greek ancestry with Slavic intake.',
+    keyMarkers: ['Y-DNA E-V13', 'J2a-M410', 'R1b-L23'],
+    haplogroupNotes: 'Y-DNA E-V13 (~25-35%), J2a, R1a, I2a-CTS10228; mtDNA H, J, T2, HV.'
+  },
 
   // ==========================================
   // MEDITERRANEAN & SOUTHERN EUROPE
   // ==========================================
   {
     code: 'TSI',
+    aliases: ['sgdp_bergamo', 'sgdp_cretan'],
     name: 'Central Mediterranean / Tuscan (TSI)',
     category: 'Europe',
     geographicCenter: 'Tuscany, Central & Southern Italy',
@@ -146,7 +193,28 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     haplogroupNotes: 'Y-DNA R1b-U152, J2a, G2a, E-V13; mtDNA H, J, T2, K.'
   },
   {
+    code: 'IBS',
+    aliases: ['SPANISH', 'sgdp_spanish'],
+    name: 'Iberian Peninsula (IBS / SPANISH)',
+    category: 'Europe',
+    geographicCenter: 'Spain, Portugal, Balearic Islands',
+    historicalTimeline: 'Southwestern Mediterranean population combining Neolithic Cardial Farmers, Bronze Age Bell Beakers, Phoenician/Greek maritime colonies, Roman Hispania, and medieval North African Amazigh intake.',
+    migrationPath: [
+      'Neolithic Cardial Mediterranean farmer expansion (~7,500 BP)',
+      'Bell Beaker Steppe herder migration (~4,500 BP)',
+      'Roman and Germanic Suebi/Visigothic settlements',
+      'Islamic Al-Andalus period North African gene flow (8th–15th Century CE)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'FADS Polyunsaturated Fatty Acid Adaptation', gene: 'FADS1', rsid: 'rs174546', impact: 'High-efficiency PUFA synthesis adapted to Mediterranean olive oil and fish diet.' }
+    ],
+    description: 'Iberian (IBS/Spanish) populations reflect Southwestern European Bell Beaker ancestry with distinct Mediterranean farmer components and ~5-10% historical North African admixture.',
+    keyMarkers: ['Y-DNA R1b-DF27', 'rs174546-C', 'rs1426654-A'],
+    haplogroupNotes: 'Y-DNA R1b-DF27 (~60-70%), E-M81, J2; mtDNA H1, H3, V, T2, U5b.'
+  },
+  {
     code: 'SARDINIAN',
+    aliases: ['sgdp_sardinian'],
     name: 'Sardinian / Mediterranean (SARDINIAN)',
     category: 'Europe',
     geographicCenter: 'Sardinia (Western Mediterranean Island)',
@@ -170,6 +238,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'ASJ',
+    aliases: ['ASJ_gnomAD'],
     name: 'Ashkenazi Jewish (ASJ)',
     category: 'Middle East & Jewish',
     geographicCenter: 'Central & Eastern Europe (historical Diaspora roots in Rhine Valley & Levant)',
@@ -189,10 +258,49 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     haplogroupNotes: 'Y-DNA J1, J2, E1b1b, R1a-M582 (Levite lineage); mtDNA K1a1b1a (~32% of all Ashkenazim), N1b, H.'
   },
   {
-    code: 'Druze',
-    name: 'Druze / Levant (Druze)',
+    code: 'SEJ',
+    aliases: ['Sephardic'],
+    name: 'Sephardic Jewish (SEJ)',
     category: 'Middle East & Jewish',
-    geographicCenter: 'Mount Lebanon, Hermon, Carmel, & Hauran (Lebanon, Syria, Israel)',
+    geographicCenter: 'Iberian Peninsula (pre-1492), Ottoman Mediterranean, North Africa',
+    historicalTimeline: 'Levantine Judean diaspora lineage established in Roman Hispania, flourishing during Al-Andalus, and dispersing across Ottoman Mediterranean ports (Salonica, Istanbul, North Africa) after the 1492 Alhambra Decree.',
+    migrationPath: [
+      'Roman Judean migration to Iberian Peninsula (~1st–4th Century CE)',
+      'Cultural & genetic development in medieval Islamic and Christian Iberia',
+      'Post-1492 expulsion migration to Ottoman Empire, North Africa, and Netherlands'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Familial Mediterranean Fever (FMF)', gene: 'MEFV', rsid: 'rs28937871 (M694V)', impact: 'High carrier frequency of MEFV mutations conferring resistance to bacterial sepsis.' }
+    ],
+    description: 'Sephardic Jewish (SEJ) represents the Jewish population of Iberian origin, combining Levantine ancestral stock with Mediterranean European components.',
+    keyMarkers: ['MEFV M694V', 'Y-DNA J1-M267', 'J2a', 'E-M123'],
+    haplogroupNotes: 'Y-DNA J1, J2a, E1b1b, T; mtDNA H, J, T2, V.'
+  },
+  {
+    code: 'MZJ',
+    aliases: ['sgdp_jew_iraqi', 'sgdp_jew_yemenite', 'YMJ', 'Mizrahi'],
+    name: 'Mizrahi & Yemenite Jewish (MZJ / YMJ)',
+    category: 'Middle East & Jewish',
+    geographicCenter: 'Mesopotamia (Iraq, Iran), Yemen, Levant',
+    historicalTimeline: 'Ancient Jewish communities residing continuous in Near East since Babylonian Captivity (586 BCE) and Ancient South Arabia (Yemenite Himyarite Kingdom).',
+    migrationPath: [
+      'Babylonian Exile of Judean population to Mesopotamia (6th Century BCE)',
+      'Ancient trade routes establishing Jewish communities in Yemen & Persia',
+      'Endogamous preservation of ancient Near Eastern gene pool for over 2,500 years'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'G6PD Deficiency (Favism Resistance)', gene: 'G6PD', rsid: 'G6PD Mediterranean variant', impact: 'Extreme high frequency protecting against falciparum malaria in Mesopotamian and Yemenite oases.' }
+    ],
+    description: 'Mizrahi and Yemenite Jewish populations preserve ancient Levantine and Near Eastern genetic continuity predating European Diaspora admixture.',
+    keyMarkers: ['G6PD Mediterranean', 'Y-DNA J1-P58', 'J2a'],
+    haplogroupNotes: 'Y-DNA J1-P58 (>60%), J2a, E-M123; mtDNA R0a, HV1, U1a.'
+  },
+  {
+    code: 'Druze',
+    aliases: ['sgdp_druze', 'hgdp_druze', 'MID_gnomAD', 'sgdp_palestinian', 'sgdp_jordanian', 'sgdp_bedouinb', 'sgdp_samaritan', 'sgdp_iranian'],
+    name: 'Levant & Near Eastern (Druze / Levantine)',
+    category: 'Middle East & Jewish',
+    geographicCenter: 'Mount Lebanon, Hermon, Levant, Arabian Peninsula, Iranian Plateau',
     historicalTimeline: 'Ancient Levantine genetic isolate formed during the 11th Century CE Fatimid Era under strict endogamy, preserving Bronze Age & Iron Age Near Eastern genomic structure.',
     migrationPath: [
       'Ancient Canaanite / Phoenician Levantine Bronze Age settlements (~4,000 BP)',
@@ -212,6 +320,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'YRI',
+    aliases: ['AFR_gnomAD', 'ALFA_African', 'sgdp_yoruba', 'hgdp_yoruba', 'sgdp_esan', 'ESN'],
     name: 'Yoruba / West African (YRI)',
     category: 'Africa',
     geographicCenter: 'South-Western Nigeria, Oyo, Lagos, Ogun',
@@ -232,22 +341,63 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     haplogroupNotes: 'Y-DNA E1b1a1a1 (E-M2) (>90%); mtDNA L2a, L3e, L1b, L3b.'
   },
   {
-    code: 'GLL',
-    name: 'Gullah Geechee / Atlantic Coast (GLL)',
+    code: 'GWD',
+    aliases: ['GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'MSL', 'sgdp_mandenka', 'sgdp_mende', 'sgdp_gambian'],
+    name: 'Senegambian & Upper Guinea (GWD / Wolof / Mandenka / Mende)',
     category: 'Africa',
-    geographicCenter: 'Lowcountry Sea Islands (South Carolina, Georgia, North-East Florida)',
-    historicalTimeline: 'African Diaspora population preserved on isolated coastal Sea Islands, descended from West African rice-cultivating populations (Sierra Leone, Windward Coast, Senegambia, Bight of Biafra).',
+    geographicCenter: 'The Gambia, Senegal, Sierra Leone, Upper Guinea Coast',
+    historicalTimeline: 'Atlantic West African populations associated with the ancient Ghana and Mali Empires, Wolof kingdoms, and Senegambian rice cultivation.',
     migrationPath: [
-      'Enslavement & transport from Windward Coast (Sierra Leone/Liberia), Senegambia, and Central Africa to Charleston (~1700–1808 CE)',
-      'Geographic & cultural isolation on barrier Sea Islands enabling preservation of Gullah language & African traditions',
-      'High West African genomic retention (~90-95%) with minimal European admixture'
+      'Holocene savanna & riverine foraging along Gambia and Senegal river basins',
+      'Mande agricultural expansion and Mali Empire unification (~13th Century CE)',
+      'Atlantic coastal trading and rice farming specialization'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Duffy Null Fixation', gene: 'ACKR1', rsid: 'rs2814778', impact: 'Complete protection against P. vivax malaria.' },
+      { trait: 'Hemoglobin C Variant', gene: 'HBB', rsid: 'rs33930165 (HbC)', impact: 'Protective hemoglobin variant prevalent in Upper Guinea.' }
+    ],
+    description: 'Senegambian and West African coastal populations (Gambian GWD, Wolof, Mende MSL) represent foundational West African populations with high genetic diversity and specialized rice-farming adaptations.',
+    keyMarkers: ['rs2814778-C', 'rs33930165-A', 'Y-DNA E-M2'],
+    haplogroupNotes: 'Y-DNA E-M2, E-M33; mtDNA L2a, L1b, L0a.'
+  },
+  {
+    code: 'GLL',
+    aliases: ['ASW', 'ACB', 'ALFA_AfAm'],
+    name: 'Gullah Geechee & African Diaspora (GLL / ASW / ACB)',
+    category: 'Africa',
+    geographicCenter: 'Sea Islands (SC/GA/FL), African Caribbean (Barbados), African-American SW US',
+    historicalTimeline: 'African Diaspora populations preserved on coastal Sea Islands and Caribbean, descended from West African rice-cultivating populations (Sierra Leone, Windward Coast, Bight of Biafra, Central Africa).',
+    migrationPath: [
+      'Enslavement & transport from Windward Coast, Senegambia, Biafra, and West-Central Africa (18th Century CE)',
+      'Geographic & cultural isolation on barrier Sea Islands enabling preservation of Gullah language & traditions',
+      'Admixture profiles ranging from ~90-95% West African (Gullah) to ~75-80% West African with European components (ASW/ACB)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Malaria Protective Alleles', gene: 'ACKR1 / HBB', rsid: 'rs2814778', impact: 'High retention of Duffy null and sickle cell alleles conferring resistance in Lowcountry rice swamps.' }
     ],
-    description: 'Gullah Geechee (GLL) represents the most direct genetic and cultural bridge to 18th-century West African rice-farming societies in North America, exhibiting high genetic affinity to Mende (MSL), Temne, and Wolof populations.',
+    description: 'Gullah Geechee (GLL) and African Diaspora reference groups (ASW, ACB) represent historical West and Central African lineages enriched for coastal rice-farming ancestral heritage.',
     keyMarkers: ['rs2814778-C', 'Y-DNA E-M2', 'mtDNA L2a1, L3e, L1b'],
     haplogroupNotes: 'Y-DNA E-M2 (~85%), R1b; mtDNA L2a1, L3e, L1b, L3b.'
+  },
+  {
+    code: 'sgdp_biaka',
+    aliases: ['sgdp_mbuti', 'sgdp_khomani_san', 'sgdp_ju_hoan_north', 'sgdp_bantuherero', 'lemba_proxy', 'sgdp_bantutswana'],
+    name: 'Central Pygmy & Southern Khoesan (Biaka / Mbuti / ‡Khomani San)',
+    category: 'Africa',
+    geographicCenter: 'Congo Basin Forests, Kalahari Desert (Namibia, Botswana, South Africa)',
+    historicalTimeline: 'Deepest modern human lineage divergences (L0 mtDNA & A/B Y-DNA), representing hunter-gatherer populations isolated prior to the Bantu agricultural expansion (~100,000–150,000 BP).',
+    migrationPath: [
+      'Deepest internal modern human divergence in Africa (>100,000 BP)',
+      'Continuous hunter-gatherer foraging in Congo rainforests (Pygmies) and Kalahari desert (Khoesan)',
+      'Encounter & admixture with migrating Bantu pastoralists (~2,000 BP)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Pygmy Short Stature Adaptation', gene: 'GHSR / IGF1', impact: 'Natural selection on growth hormone signaling for thermoregulation and dense tropical jungle mobility.' },
+      { trait: 'UV & Arid Desert Metabolism', gene: 'SLC24A5 / APOL1', impact: 'Extreme light skin/yellow skin tone adaptations in southern latitude Kalahari.' }
+    ],
+    description: 'Central African Pygmy (Biaka, Mbuti) and Southern African Khoesan (Ju|\'hoansi, ‡Khomani) populations represent the most ancient, deeply-diverged ancestral branches of humanity.',
+    keyMarkers: ['Y-DNA A-M13', 'B-M60', 'mtDNA L0d', 'L0k'],
+    haplogroupNotes: 'Y-DNA A1b, B2b; mtDNA L0d, L0k (Khoesan), L1c (Pygmy).'
   },
 
   // ==========================================
@@ -255,10 +405,11 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'LWK',
-    name: 'Luhya / East African (LWK)',
+    aliases: ['sgdp_luo', 'sgdp_masai', 'sgdp_somali', 'sgdp_bantukenya', 'sgdp_luhya'],
+    name: 'Luhya & East African Nilotic/Cushitic (LWK / Luo / Maasai / Somali)',
     category: 'Africa',
-    geographicCenter: 'Western Kenya (Kakamega, Vihiga, Bungoma)',
-    historicalTimeline: 'Bantu-speaking population of East Africa formed by the expansion of West-Central African Bantu farmers into the Great Lakes region (~1000 BCE), absorbing indigenous Nilotic and Cushitic pastoralists.',
+    geographicCenter: 'Western Kenya, Horn of Africa, Rift Valley',
+    historicalTimeline: 'East African populations formed by Bantu agriculturalist expansion into Great Lakes (~1000 BCE) interacting with indigenous Nilotic cattle herders and Afroasiatic Cushitic pastoralists.',
     migrationPath: [
       'Bantu Migration out of West-Central Africa (Nigeria/Cameroon borderland, ~4,000 BP)',
       'Eastward expansion around Lake Victoria (~2,500 BP)',
@@ -268,9 +419,9 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
       { trait: 'Independent Lactase Persistence', gene: 'MCM6', rsid: 'rs145414006 (-14010*C)', impact: 'Convergent evolution for adult milk digestion in East African pastoralist environments.' },
       { trait: 'High-Altitude Hypoxia Tolerance', gene: 'EGLN1 / EPAS1', impact: 'Adaptive variants for Rift Valley highland altitudes.' }
     ],
-    description: 'Luhya (LWK) represents East African Bantu populations. Their genetic structure reflects Bantu agriculturalist heritage blended with ancient Cushitic pastoralist and indigenous hunter-gatherer lineages.',
-    keyMarkers: ['rs145414006-C', 'rs2814778-C', 'Y-DNA E-M2'],
-    haplogroupNotes: 'Y-DNA E-M2 (~70%), E-M35 (~15%); mtDNA L2a, L3x, L0a.'
+    description: 'Luhya (LWK), Luo, and Maasai represent East African populations blending Bantu agriculturalist heritage with Nilotic cattle-herding and ancient Cushitic pastoralist lineages.',
+    keyMarkers: ['rs145414006-C', 'rs2814778-C', 'Y-DNA E-M2', 'E-M35'],
+    haplogroupNotes: 'Y-DNA E-M2 (~70%), E-M35 (~15%); mtDNA L2a, L3x, L0a, M1.'
   },
   {
     code: 'Mota',
@@ -296,23 +447,24 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'BEB',
-    name: 'Bengali / South Asian (BEB)',
+    aliases: ['SAS_gnomAD', 'ALFA_SAS', 'GIH', 'PJL', 'ITU', 'STU'],
+    name: 'South Asian & Bengali Subcontinent (BEB / GIH / PJL / ITU / STU)',
     category: 'South Asia',
-    geographicCenter: 'Bengal Delta (Bangladesh and West Bengal, India)',
-    historicalTimeline: 'Tri-partite genetic mix: Ancestral South Indian (ASI, ~50%), Ancestral North Indian (ANI / Steppe herder, ~35%), and Austroasiatic / Tibeto-Burman East Asian admixture (~15%) via eastern river corridors.',
+    geographicCenter: 'Bengal Delta, Gujarat, Punjab, South India (Tamil Nadu, Andhra Pradesh)',
+    historicalTimeline: 'Tri-partite genetic mix across Subcontinent: Ancestral South Indian (ASI, Ancient AASI hunter-gatherers + Iranian Farmers) and Ancestral North Indian (ANI / Steppe herder R1a-M417 expansion, ~3800 BP).',
     migrationPath: [
       'First Wave Out-of-Africa coastal migration into South Asia (~60,000 BP)',
       'Indus Valley & Iranian Farmer migration into Subcontinent (~7,000–5,000 BP)',
       'Bronze Age Yamnaya Steppe herder expansion carrying Indo-Aryan languages (~3,800 BP)',
-      'East Asian Tibeto-Burman & Austroasiatic gene flow down Brahmaputra Valley (~2,000 BP)'
+      'East Asian Tibeto-Burman & Austroasiatic gene flow down Brahmaputra Valley in eastern regions'
     ],
     evolutionaryAdaptations: [
-      { trait: 'Arsenic Metabolism Adaptation', gene: 'AS3MT', rsid: 'rs3740393', impact: 'Natural selection for efficient enzymatic methylation and clearance of inorganic environmental arsenic in Bengal Delta groundwater.' },
+      { trait: 'Arsenic Metabolism Adaptation', gene: 'AS3MT', rsid: 'rs3740393', impact: 'Natural selection for efficient enzymatic clearance of inorganic arsenic in Ganges Delta groundwater.' },
       { trait: 'Thalassemia / Cholera Resistance', gene: 'HBB / ABO', impact: 'Balancing selection in tropical deltaic river systems.' }
     ],
-    description: 'Bengali (BEB) represents the eastern South Asian population of the Ganges-Brahmaputra Delta, blending South Asian ANI/ASI baselines with Austroasiatic and Tibeto-Burman East Asian components.',
-    keyMarkers: ['rs3740393-G (AS3MT)', 'Y-DNA R1a-Y7', 'H-M69', 'O-M175'],
-    haplogroupNotes: 'Y-DNA R1a-L657, H-M69, O-M175; mtDNA M30, M3, R0a, U2.'
+    description: 'South Asian reference populations (Bengali BEB, Gujarati GIH, Punjabi PJL, Telugu ITU, Tamil STU) encompass the complex Ancestral North Indian (ANI) and Ancestral South Indian (ASI) genetic gradient across India.',
+    keyMarkers: ['rs3740393-G (AS3MT)', 'Y-DNA R1a-L657', 'H-M69', 'L-M20'],
+    haplogroupNotes: 'Y-DNA R1a-L657, H-M69, L-M20, R2; mtDNA M30, M3, R0a, U2, N5.'
   },
   {
     code: 'Rakhigarhi',
@@ -338,14 +490,15 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'CHB',
-    name: 'Han Chinese / Beijing (CHB)',
+    aliases: ['CHS', 'KHV', 'CDX', 'EAS_gnomAD', 'ALFA_EAS', 'GEMJ_Japan'],
+    name: 'Han Chinese & East/SE Asian (CHB / CHS / KHV / CDX)',
     category: 'East Asia',
-    geographicCenter: 'Northern China (Yellow River Basin, Beijing, Hebei)',
-    historicalTimeline: 'Northern Han Chinese population formed by Yellow River agricultural civilization (millet farming, ~8000 BCE), Yangshao & Longshan cultures, and historical southward expansions.',
+    geographicCenter: 'Northern China (Beijing), Southern China, Vietnam, Dai Autonomous Region',
+    historicalTimeline: 'East Asian civilization lineage formed by Yellow River millet agriculturalists (~8000 BCE) in the north and Yangtze River rice agriculturalists (~7000 BCE) in the south.',
     migrationPath: [
       'Southern route Out-of-Africa migration across South & SE Asia into East Asia (~50,000 BP)',
       'Upper Paleolithic establishment in East Asia (e.g. Tianyuan Man, ~40,000 BP)',
-      'Neolithic Yellow River Basin millet farming demographic boom (~9,000–5,000 BP)',
+      'Neolithic Yellow River & Yangtze agricultural demographic expansion (~9,000–5,000 BP)',
       'Imperial Han dynasty expansions unifying Northern and Southern Han groups'
     ],
     evolutionaryAdaptations: [
@@ -353,15 +506,16 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
       { trait: 'East Asian Hair, Sweat & Dental Morph.', gene: 'EDAR', rsid: 'rs3827760', impact: 'Derived Val370Ala variant causing coarse hair shafts, shovel-shaped incisors, and increased eccrine sweat glands.' },
       { trait: 'Dry Earwax & Low Body Odor', gene: 'ABCC11', rsid: 'rs17822931', impact: 'Loss-of-function 538G>A mutation producing dry earwax and reduced apocrine body odor.' }
     ],
-    description: 'Han Chinese in Beijing (CHB) is the primary benchmark for Northern East Asian genetics. Driven by Yellow River Neolithic farming expansions and characterized by near-fixation of EDAR 370A and ABCC11 dry earwax alleles.',
+    description: 'Han Chinese (CHB/CHS), Kinh Vietnamese (KHV), and Dai (CDX) represent East and Southeast Asian populations characterized by near-fixation of EDAR 370A and ABCC11 dry earwax alleles.',
     keyMarkers: ['rs3827760-G (EDAR 370A)', 'rs671-A (ALDH2)', 'rs17822931-T (ABCC11)'],
-    haplogroupNotes: 'Y-DNA O-M122 (O2), O-F3288, N-M231; mtDNA D4, M7, F1, B4.'
+    haplogroupNotes: 'Y-DNA O-M122 (O2), O-F3288, N-M231; mtDNA D4, M7, F1, B4, C.'
   },
   {
     code: 'JPT',
-    name: 'Japanese / Yamato (JPT)',
+    aliases: ['jomon'],
+    name: 'Japanese & Jōmon (JPT / Jōmon)',
     category: 'East Asia',
-    geographicCenter: 'Mainland Japan (Honshu, Kyushu, Shikoku)',
+    geographicCenter: 'Mainland Japan (Honshu, Kyushu, Shikoku, Hokkaido)',
     historicalTimeline: 'Dual-structure population formed by indigenous Jōmon hunter-gatherers (~15,000–3000 BCE) admixed with Yayoi wet-rice farmers migrating from the Korean Peninsula (~900 BCE–300 CE) and Kofun Period migrations.',
     migrationPath: [
       'Paleolithic land-bridge entry into Japanese archipelago (~30,000 BP)',
@@ -383,43 +537,63 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'PEL',
-    name: 'Peruvian / Indigenous American (PEL)',
+    aliases: ['MXL', 'PUR', 'CLM', 'AMR_gnomAD', 'ALFA_LatAm1', 'ALFA_LatAm2', 'sgdp_karitiana', 'sgdp_surui', 'sgdp_pima', 'sgdp_mixe', 'sgdp_mixtec', 'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco', 'sgdp_tlingit', 'sgdp_aleut', 'sgdp_eskimo_chaplin', 'sgdp_eskimo_naukan', 'sgdp_eskimo_sireniki'],
+    name: 'Indigenous & Admixed Americas (PEL / MXL / PUR / CLM / Andean / Amazonian)',
     category: 'Americas',
-    geographicCenter: 'Lima, Andean Highlands (Cusco, Puno), & Peruvian Coast',
-    historicalTimeline: 'High Indigenous American genetic component (~80-90%) derived from Paleo-Indian expansion down the Pacific Rim (~15,000 BP), Central Andean highland adaptation (Lauricocha, ~8600 BP), and Inca Imperial civilization.',
+    geographicCenter: 'Andes (Peru), Mesoamerica (Mexico, Guatemala), Amazonia, Caribbean, North America',
+    historicalTimeline: 'High Indigenous American genetic component derived from Paleo-Indian expansion down the Pacific Rim (~15,000 BP), Central Andean highland adaptation (Lauricocha, ~8600 BP), Mesoamerican maize farming, and European/African colonial admixture.',
     migrationPath: [
       'Siberian-Beringian migration across Bering Land Bridge / Kelp Highway (~16,000 BP)',
       'Rapid coastal Pacific route migration down South America (~15,000 BP)',
-      'Early Andean highland settlement & adaptation to hypoxia (~9,000 BP)',
-      'Development of Chavín, Moche, Tiwanaku, and Inca imperial states'
+      'Development of Maya, Zapotec, Aztec, and Inca civilizations',
+      '500 years of European (Spanish/Portuguese) and African colonial admixture in LATAM groups'
     ],
     evolutionaryAdaptations: [
-      { trait: 'High-Altitude Hypoxia Tolerance', gene: 'EGLN1 / PRKAA1', impact: 'Natural selection for lower hemoglobin concentration to prevent polycythemia at 3,500+ meters altitude.' },
+      { trait: 'High-Altitude Hypoxia Tolerance', gene: 'EGLN1 / PRKAA1', impact: 'Natural selection for lower hemoglobin concentration to prevent polycythemia at 3,500+ meters altitude in Andes.' },
       { trait: 'Lipid Regulation & Fatty Liver Vulnerability', gene: 'PNPLA3', rsid: 'rs738409', impact: 'Derived G allele (I148M) selected under historic feast-and-famine conditions, predisposing to hepatic fat storage on modern diets.' },
       { trait: 'EDAR 370A Fixation', gene: 'EDAR', rsid: 'rs3827760', impact: 'Near 100% fixation of derived G allele inherited from Siberian ancestral stock.' }
     ],
-    description: 'Peruvian (PEL) represents Indigenous American Andean and Pacific coastal ancestry. Exhibits high Native American genomic proportions (~85%) with specific physiological adaptations to high-altitude hypoxia in the Andes.',
-    keyMarkers: ['rs3827760-G', 'rs738409-G', 'Y-DNA Q-M3', 'mtDNA B2, C1, D1'],
+    description: 'Indigenous American and Latino reference populations (PEL, MXL, PUR, CLM, Maya, Quechua, Amazonian) preserve Paleo-Indian genomic heritage combined with varying proportions of Spanish and West African ancestry.',
+    keyMarkers: ['rs3827760-G', 'rs738409-G', 'Y-DNA Q-M3', 'mtDNA B2, C1, D1, A2'],
     haplogroupNotes: 'Y-DNA Q-M3 / Q-L54 (>90% in unadmixed males); mtDNA B2, C1b, D1, A2.'
   },
   {
-    code: 'usr1',
-    name: 'Upward Sun River 1 (USR1 / Ancient Beringian)',
+    code: 'LMB',
+    aliases: ['CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
+    name: 'Native North American & Eastern Woodlands (Lumbee / Cherokee / Lenape / Catawba)',
     category: 'Americas',
-    geographicCenter: 'Tanana River Valley, Interior Alaska',
-    historicalTimeline: 'Landmark 11,500-year-old infant genome representing the Ancient Beringian lineage—the earliest known diverged branch of Native Americans that remained in Beringia while Northern and Southern Native Americans expanded southward.',
+    geographicCenter: 'North Carolina Coastal Plain, Southern Appalachia, Delaware Valley, Piedmont Siouan',
+    historicalTimeline: 'Indigenous North American and tri-racial admixed populations of the Atlantic seaboard and Eastern Woodlands, descended from Mississippian, Algonquian, Iroquoian, and Siouan nations.',
     migrationPath: [
-      'Ancestral Native American divergence from East Asian / Ancient North Eurasian ancestors in Siberia (~36,000–25,000 BP)',
-      'Beringian Standstill isolation in unglaciated Alaska/Beringia (~24,000–16,000 BP)',
-      'USR1 branch remained in interior Alaska while Southern Native Americans (SNA) migrated south of the Laurentide Ice Sheet'
+      'Paleo-Indian colonization of North America (~15,000 BP)',
+      'Archaic & Woodland Period mound-building agricultural civilizations',
+      'Post-contact resilience, community formation, and European/African admixture along Atlantic frontier'
     ],
     evolutionaryAdaptations: [
-      { trait: 'Sub-Arctic Cold Climate Adaptation', gene: 'TRPM8 / FADS1', impact: 'Adapts fatty acid synthesis to high-fat marine & megafauna meat diets.' },
-      { trait: 'EDAR 370A Derived Allele', gene: 'EDAR', rsid: 'rs3827760', impact: 'Homozygous derived allele establishing EDAR presence in ancient Beringians.' }
+      { trait: 'Native American Metabolic Profile', gene: 'PNPLA3 / ABCA1', impact: 'Enriched lipid metabolism alleles adapted to traditional hunter-gatherer and maize agriculture diets.' }
     ],
-    description: 'Upward Sun River 1 (USR1) is the founding reference genome for Ancient Beringians. Discovered in Alaska, USR1 proved that ancient Native Americans diverged in Beringia prior to entering North America.',
-    keyMarkers: ['Y-DNA Q-L54', 'mtDNA C1b', 'rs3827760-G'],
-    haplogroupNotes: 'mtDNA C1b; Y-DNA Q-L54 lineage.'
+    description: 'Eastern Woodlands Indigenous reference populations (Lumbee LMB, Cherokee CHK, Lenape LNP, Melungeon MEL) represent North American Indigenous heritage preserved in eastern states.',
+    keyMarkers: ['Y-DNA Q-M3', 'R1b', 'mtDNA A2, B2, C1, D1'],
+    haplogroupNotes: 'Y-DNA Q-M3, R1b, E-M2; mtDNA A2, B2, C1, X2a.'
+  },
+  {
+    code: 'usr1',
+    aliases: ['anzick1', 'luzia', 'saqqaq', 'kennewick', 'spirit_cave'],
+    name: 'Ancient Paleo-American Reference Genomes (USR1 / Anzick-1 / Luzia)',
+    category: 'Americas',
+    geographicCenter: 'Interior Alaska, Montana (Clovis), Lagoa Santa (Brazil)',
+    historicalTimeline: 'Cornerstone ancient genomes establishing Paleo-Indian migrations: USR1 (Ancient Beringian, 11,500 BP), Anzick-1 (Clovis Boy, 12,600 BP), and Luzia (Lagoa Santa Paleoamerican, 12,700 BP).',
+    migrationPath: [
+      'Beringian Standstill divergence in Alaska (~24,000–16,000 BP)',
+      'Southward migration past Laurentide Ice Sheet (Anzick-1 Clovis lineage, ~13,000 BP)',
+      'Rapid South American colonization (Lagoa Santa Luzia lineage, ~12,700 BP)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Sub-Arctic & High-Fat Adaptation', gene: 'FADS1 / TRPM8', impact: 'Fatty acid metabolism tailored to megafauna hunting.' }
+    ],
+    description: 'Ancient Paleo-American reference genomes (USR1, Anzick-1, Luzia, Kennewick) form the empirical ancient benchmark for all Indigenous American populations.',
+    keyMarkers: ['Y-DNA Q-L54', 'mtDNA C1b, D4h3a'],
+    haplogroupNotes: 'Y-DNA Q-L54 / Q-M3; mtDNA C1b, D4h3a.'
   },
 
   // ==========================================
@@ -427,23 +601,24 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'sgdp_papuan',
-    name: 'Papuan / Oceanian (Papuan)',
+    aliases: ['sgdp_australian', 'sgdp_bougainville', 'sgdp_hawaiian', 'sgdp_maori', 'australian_ancient'],
+    name: 'Papuan & Sahul Oceanian (Papuan / Australian / Polynesian)',
     category: 'Oceania & Sahul',
-    geographicCenter: 'Highlands & Lowlands of Papua New Guinea',
-    historicalTimeline: 'Deep Paleolithic Sahul lineage (~50,000 BP) representing early modern human settlement of Australasia, retaining the world highest level of Denisovan archaic introgression (~4-6%).',
+    geographicCenter: 'Papua New Guinea, Australia (Willandra Lakes), Bougainville, Hawaii, Aotearoa',
+    historicalTimeline: 'Deep Paleolithic Sahul lineage (~50,000 BP) representing early modern human settlement of Australasia, retaining the world highest level of Denisovan archaic introgression (~4-6%), alongside Lapita maritime expansion into Polynesia.',
     migrationPath: [
       'Southern Express Route Out-of-Africa migration along Indian Ocean coast (~65,000–55,000 BP)',
       'Sea crossing across Wallace Line into Pleistocene Sahul (Australia + New Guinea landmass, ~50,000 BP)',
       'Admixture with archaic Denisovans in Southeast Asia (~45,000 BP)',
-      'Highland agricultural isolation and taro/banana domestication in Kuk Swamp (~9,000 BP)'
+      'Lapita pottery maritime voyager expansion across Remote Oceania (~3,500–1,000 BP)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Denisovan Archaic Immunity Introgression', gene: 'OAS1 / STAT2', impact: 'Introgressed Denisovan immune genes providing enhanced protection against tropical RNA viruses.' },
-      { trait: 'High-Altitude Tropical Adaptation', gene: 'EPAS1 / EGLN1', impact: 'Adapted to life in rugged New Guinea Highlands.' }
+      { trait: 'Thrifty Gene / Maritime Fasting Adaptation', gene: 'CREBRF', rsid: 'rs373863828', impact: 'Missense variant in Polynesians promoting fat storage during long-distance open-ocean voyaging.' }
     ],
-    description: 'Papuan represents deep Oceanian Sahul ancestry. Having settled New Guinea ~50,000 years ago, Papuans carry ~4-6% Denisovan DNA and maintain extraordinary linguistic and genetic diversity.',
-    keyMarkers: ['4-6% Denisovan Introgression', 'Y-DNA MS-P93', 'C-M130', 'mtDNA P, Q'],
-    haplogroupNotes: 'Y-DNA K-M9, MS-P93, C-M130; mtDNA P, Q, M28.'
+    description: 'Papuan, Aboriginal Australian, and Polynesian reference populations carry deep Sahul heritage (~50,000 years isolation) enriched with ~4-6% Denisovan archaic DNA.',
+    keyMarkers: ['4-6% Denisovan Introgression', 'rs373863828-A (CREBRF)', 'Y-DNA MS-P93', 'C-M130'],
+    haplogroupNotes: 'Y-DNA K-M9, MS-P93, C-M130; mtDNA P, Q, M28, B4a1a1 (Polynesian motif).'
   },
 
   // ==========================================
@@ -451,10 +626,11 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   // ==========================================
   {
     code: 'sgdp_kyrgyz_kyrgyzstan',
-    name: 'Kyrgyz / Central Asian (Kyrgyz)',
+    aliases: ['sgdp_altaian', 'sgdp_chukchi', 'sgdp_even', 'sgdp_itelmen', 'sgdp_mansi', 'sgdp_tubalar', 'sgdp_ulchi', 'sgdp_uyghur'],
+    name: 'Central Asian & Siberian Nomads (Kyrgyz / Uyghur / Altaian / Even / Chukchi)',
     category: 'Central Asia & Siberia',
-    geographicCenter: 'Tian Shan Mountains, Kyrgyzstan, Central Asia',
-    historicalTimeline: 'Central Asian Turkic population combining Ancient North Eurasian (ANE), East Asian (Mongolic/Siberian), and Western Eurasian (Steppe/Indo-Iranian) lineages along the Silk Road.',
+    geographicCenter: 'Tian Shan Mountains, Altai-Sayan, Kamchatka, Chukotka, Ural Mountains',
+    historicalTimeline: 'Central Asian Turkic and North Siberian populations combining Ancient North Eurasian (ANE), East Asian (Mongolic/Siberian), and Western Eurasian (Steppe/Indo-Iranian) lineages along the Silk Road.',
     migrationPath: [
       'Bronze Age Indo-Iranian Andronovo & Afanasievo herder expansion into Central Asia (~4,000 BP)',
       'Turkic nomadic expansion out of Altai-Sayan mountains (~6th Century CE)',
@@ -462,10 +638,36 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     ],
     evolutionaryAdaptations: [
       { trait: 'High-Altitude Adaptation', gene: 'EPAS1', impact: 'Genetic adaptations to Tian Shan mountain ranges (3,000+ meters).' },
-      { trait: 'Lactase Persistence & Mare Milk Metabolism', gene: 'MCM6', impact: 'Adapted to nomadic pastoralist horse-milk and dairy consumption.' }
+      { trait: 'Sub-Arctic Cold & Mare Milk Metabolism', gene: 'TRPM8 / MCM6', impact: 'Adapted to sub-freezing Siberian winters and nomadic pastoralist mare-milk consumption.' }
     ],
-    description: 'Kyrgyz represents Central Asian Turkic steppe populations. Situated along the Silk Road, their genome is a classic ~60/40 blend of East Asian (Siberian/Mongolic) and West Eurasian (Indo-Iranian) ancestries.',
-    keyMarkers: ['Y-DNA R1a-Z93', 'C-M217', 'O-M122', 'mtDNA D4, C4, H, U'],
-    haplogroupNotes: 'Y-DNA R1a-Z93 (~63%), C-M217 (~20%), N-M231; mtDNA D4, C4, G2, H.'
+    description: 'Kyrgyz, Uyghur, Altaian, and Siberian populations represent Silk Road and sub-Arctic Eurasian steppe nomads, exhibiting an ancient ~60/40 blend of East Asian and West Eurasian ancestries.',
+    keyMarkers: ['Y-DNA R1a-Z93', 'C-M217', 'O-M122', 'N-M231'],
+    haplogroupNotes: 'Y-DNA R1a-Z93, C-M217, N-M231; mtDNA D4, C4, G2, H, U.'
   }
 ];
+
+/**
+ * Robust population lookup helper that resolves any population code or alias
+ * (e.g. 'sgdp_yoruba', 'AFR_gnomAD', 'FRENCH', 'NFE_gnomAD', 'jomon')
+ * to its matching master glossary entry.
+ */
+export function getPopulationGlossaryItem(codeOrAlias: string): PopulationGlossaryItem | undefined {
+  if (!codeOrAlias) return undefined;
+  const target = codeOrAlias.toLowerCase().trim();
+
+  // 1. Direct code match
+  const directMatch = SUBPOPULATION_GLOSSARY_DATA.find(item => item.code.toLowerCase() === target);
+  if (directMatch) return directMatch;
+
+  // 2. Alias match
+  const aliasMatch = SUBPOPULATION_GLOSSARY_DATA.find(item => 
+    item.aliases?.some(alias => alias.toLowerCase() === target)
+  );
+  if (aliasMatch) return aliasMatch;
+
+  // 3. Partial / fallback match (e.g. 'sgdp_spanish' -> 'SPANISH' / 'IBS')
+  return SUBPOPULATION_GLOSSARY_DATA.find(item => 
+    item.name.toLowerCase().includes(target) || 
+    item.code.toLowerCase().includes(target)
+  );
+}

@@ -42,6 +42,7 @@ export const SubpopulationGlossaryTab: React.FC<{ initialSearch?: string }> = ({
         item.name.toLowerCase().includes(term) ||
         item.geographicCenter.toLowerCase().includes(term) ||
         item.description.toLowerCase().includes(term) ||
+        (item.aliases && item.aliases.some(a => a.toLowerCase().includes(term))) ||
         item.evolutionaryAdaptations.some(a => a.trait.toLowerCase().includes(term) || a.gene.toLowerCase().includes(term));
 
       return matchesCategory && matchesSearch;
