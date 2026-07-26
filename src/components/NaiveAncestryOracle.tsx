@@ -650,7 +650,7 @@ export const NaiveAncestryOracle = memo(({
         },
         isMatched: !!interpretation
       };
-    });
+    }).filter(driver => driver.isMatched);
   }, [userSnps]);
 
   if (!hasData) {
@@ -842,14 +842,19 @@ export const NaiveAncestryOracle = memo(({
               <div className="p-4 rounded-2xl bg-teal-500/5 border border-teal-500/10 flex items-start gap-3">
                 <Info className="w-4 h-4 text-[#4ECDC4] mt-0.5 shrink-0" />
                 <div>
-                  <h4 className="font-extrabold text-[#4ECDC4] text-xs uppercase tracking-wider mb-0.5">High-Impact Selection Loci</h4>
+                  <h4 className="font-extrabold text-[#4ECDC4] text-xs uppercase tracking-wider mb-0.5">Matched High-Impact Selection Loci ({matchedDrivers.length})</h4>
                   <p className="text-slate-400 text-[11px] font-semibold leading-relaxed">
-                    These specific single nucleotide polymorphisms (SNPs) have undergone extreme evolutionary selection across distinct global populations, driving the regional frequencies calculated in your Scout Score.
+                    Displaying {matchedDrivers.length} matched evolutionary selection markers present in your raw DNA file out of 36 tracked driver loci.
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {matchedDrivers.length === 0 ? (
+                <div className="p-8 text-center bg-black/20 border border-white/5 rounded-2xl text-slate-400 text-xs">
+                  No tested High-Impact Selection Loci were identified in your uploaded raw DNA file.
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {matchedDrivers.map(driver => {
                   const hasGenotype = driver.isMatched;
                   const stateColors = {
@@ -913,6 +918,7 @@ export const NaiveAncestryOracle = memo(({
                   );
                 })}
               </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
