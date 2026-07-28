@@ -4,11 +4,15 @@ import rhData from '../data/blood_markers.json';
 import { calculateBloodType } from '../engines/bloodTypeCalculator';
 
 const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
-  ABO: ["rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666"],
+  ABO: [
+    "rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666",
+    "rs8176743", "rs8176742", "rs8176744", "rs8176751", "rs1051268", "rs512768", "rs2519093", "rs635634", "rs651007"
+  ],
   Rh: [
     "rs590787", "rs676785", "rs28362459", "rs609320", "rs6762788", "rs118204008", "rs606429", 
     "rs11124803", "rs118204007", "rs676185", "rs6784865", "rs17525388", "rs28362463", "rs1053313", 
-    "rs1053315", "rs606428", "rs676839", "rs667500", "rs10456285", "i4001527"
+    "rs1053315", "rs606428", "rs676839", "rs667500", "rs10456285", "i4001527", "rs121912707",
+    "rs139410370", "rs61750042", "rs121912708", "rs586178", "rs1053348"
   ],
   Duffy: ["rs2814778", "rs12075", "rs34599049"],
   Kidd: ["rs1058396", "rs10755968"],
@@ -29,7 +33,19 @@ const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
   Jr: ["rs72552713"],
   Kx: ["rs137852525"],
   "Landsteiner-Wiener": ["rs2306884", "rs11545624"],
-  Sid: ["rs7224888"]
+  Sid: ["rs7224888"],
+  "Chido/Rodgers": ["rs1051328", "rs1051329"],
+  Cromer: ["rs121917822", "rs121917827"],
+  Indian: ["rs201267121", "rs17844216"],
+  Ok: ["rs138957743"],
+  RAPH: ["rs199473687"],
+  JMH: ["rs199763124"],
+  Gill: ["rs121908961", "rs121908962"],
+  FORS: ["rs199763128", "rs75850172"],
+  MAM: ["rs387906624", "rs200051785"],
+  KAN: ["rs79094901", "rs76256445"],
+  Pel: ["rs768039401", "rs77568825"],
+  CD59: ["rs121908627"]
 };
 
 const MARKER_METADATA: Record<string, any> = {
@@ -41,6 +57,15 @@ const MARKER_METADATA: Record<string, any> = {
   "rs8176741": { effect: "p.Met266Leu", antigen: "A" },
   "rs505922": { effect: "Associated with ABO group plasma levels", antigen: "ABO" },
   "rs507666": { effect: "Regulatory variant for ABO antigen expression", antigen: "ABO" },
+  "rs8176743": { effect: "Cis-AB glycosyltransferase mutation", antigen: "Cis-AB" },
+  "rs8176742": { effect: "A3 subgroup weak expression variant", antigen: "A3" },
+  "rs8176744": { effect: "Ax subgroup weak expression variant", antigen: "Ax" },
+  "rs8176751": { effect: "B3 subgroup glycosyltransferase variant", antigen: "B3" },
+  "rs1051268": { effect: "ABO 3' UTR expression modifier", antigen: "ABO" },
+  "rs512768": { effect: "ABO promoter region variant", antigen: "ABO" },
+  "rs2519093": { effect: "ABO intron regulatory SNP", antigen: "ABO" },
+  "rs635634": { effect: "ABO soluble antigen regulator", antigen: "ABO" },
+  "rs651007": { effect: "ABO level tag variant", antigen: "ABO" },
   "rs590787": { effect: "RHCE intron 2 surrogate for RHD deletion", antigen: "D / Rh" },
   "rs676785": { effect: "C/c antigen polymorphism (Ala103Pro)", antigen: "C/c" },
   "rs28362459": { effect: "E/e antigen polymorphism (Pro226Ala)", antigen: "E/e" },
@@ -61,6 +86,12 @@ const MARKER_METADATA: Record<string, any> = {
   "rs667500": { effect: "RHCE 3' region tag", antigen: "Rh" },
   "rs10456285": { effect: "RHD structural deletion tag", antigen: "D" },
   "i4001527": { effect: "RHD gene structural deletion (major determinant of RhD negative status)", antigen: "D" },
+  "rs121912707": { effect: "RHD DIIIa partial D phenotype", antigen: "Partial D" },
+  "rs139410370": { effect: "RHD DVa partial D phenotype", antigen: "Partial D" },
+  "rs61750042": { effect: "RHD DAU partial D phenotype", antigen: "Partial D" },
+  "rs121912708": { effect: "Weak D type 5 variant", antigen: "Weak D" },
+  "rs586178": { effect: "RHCE c antigen expression variant", antigen: "c" },
+  "rs1053348": { effect: "RHCE VS antigen expression (Leu245Val)", antigen: "VS" },
   "rs2814778": { effect: "FY*0 — Duffy-null (Vivax Malaria resistance)", antigen: "Fy(null)" },
   "rs12075": { effect: "p.Gly42Asp (Fya vs Fyb antigen)", antigen: "Fya/Fyb" },
   "rs34599049": { effect: "FY*X weak antigen allele", antigen: "Fyx" },
@@ -99,7 +130,27 @@ const MARKER_METADATA: Record<string, any> = {
   "rs137852525": { effect: "XK p.Arg334Ter (McLeod syndrome / Kx-null)", antigen: "Kx(null)" },
   "rs2306884": { effect: "ICAM4 p.Thr100Ile (LWa vs LWb antigen)", antigen: "LW" },
   "rs11545624": { effect: "p.Gln70Arg (LWa vs LWb antigen)", antigen: "LW" },
-  "rs7224888": { effect: "B4GALNT2 p.Arg463Ter (Sd(a-) null)", antigen: "Sd(a)" }
+  "rs7224888": { effect: "B4GALNT2 p.Arg463Ter (Sd(a-) null)", antigen: "Sd(a)" },
+  "rs1051328": { effect: "C4A Rodgers (Rg1) antigen marker", antigen: "Ch/Rg" },
+  "rs1051329": { effect: "C4A Chido/Rodgers epitope modifier", antigen: "Ch/Rg" },
+  "rs121917822": { effect: "CD55 Cra-negative Cromer antigen mutation", antigen: "Cra" },
+  "rs121917827": { effect: "CD55 Dra-negative Cromer antigen mutation", antigen: "Dra" },
+  "rs201267121": { effect: "CD44 In(b-) Indian blood group variant", antigen: "Inb" },
+  "rs17844216": { effect: "CD44 Ina Indian blood group variant", antigen: "Ina" },
+  "rs138957743": { effect: "BSG Ok(a-) null blood group phenotype", antigen: "Oka" },
+  "rs199473687": { effect: "CD151 MER2-negative RAPH blood group variant", antigen: "MER2" },
+  "rs199763124": { effect: "SEMA7A JMH-negative blood group variant", antigen: "JMH" },
+  "rs121908961": { effect: "AQP3 GIL-negative Gill blood group variant", antigen: "GIL" },
+  "rs121908962": { effect: "AQP3 GIL-negative secondary variant", antigen: "GIL" },
+  "rs199763128": { effect: "GBGT1 FORS1-negative Forssman blood group variant", antigen: "FORS1" },
+  "rs75850172": { effect: "GBGT1 FORS1 expression modifier", antigen: "FORS1" },
+  "rs387906624": { effect: "EMP3 MAM-negative blood group variant", antigen: "MAM" },
+  "rs200051785": { effect: "EMP3 MAM variant", antigen: "MAM" },
+  "rs79094901": { effect: "GCNT2 KANNO-negative null variant", antigen: "KANNO" },
+  "rs76256445": { effect: "GCNT2 KANNO variant", antigen: "KANNO" },
+  "rs768039401": { effect: "ATP11C PEL-negative blood group variant", antigen: "PEL" },
+  "rs77568825": { effect: "ATP11C PEL variant", antigen: "PEL" },
+  "rs121908627": { effect: "CD59 deficiency / CD59-negative blood group mutation", antigen: "CD59" }
 };
 
 // Blood Compatibility Rules
@@ -441,10 +492,10 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
             <h3 className="text-lg font-black text-white flex items-center gap-2">
-              <span>🧬</span> Hydrated Rhesus System Panel (20 Markers)
+              <span>🧬</span> Hydrated Rhesus System Panel (26 Markers)
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
-              Comprehensive RHD deletion tags, RHCE intron proxies, and C/c / E/e antigen polymorphisms.
+              Comprehensive RHD deletion tags, RHCE intron proxies, Weak D, Partial D, and C/c / E/e antigen polymorphisms.
             </p>
           </div>
           <div className="flex items-center gap-2">
