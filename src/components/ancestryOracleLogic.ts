@@ -165,6 +165,10 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'sgdp_eskimo_chaplin': 'Siberian Eskimo / Chaplin (SGDP)',
   'sgdp_eskimo_naukan': 'Siberian Eskimo / Naukan (SGDP)',
   'sgdp_eskimo_sireniki': 'Siberian Eskimo / Sireniki (SGDP)',
+  'sgdp_ticuna': 'Ticuna / Upper Amazon (SGDP)',
+  'aymara': 'Aymara / Lake Titicaca Altiplano (AYM)',
+  'guarani': 'Guaraní / Paraná Basin (GUA)',
+  'algonquian': 'Algonquian & Ojibwe / Eastern Woodlands (ALG)',
   // Middle Eastern, North African, and Spanish Injected Populations
   'sgdp_spanish': 'Spanish / Southern European (SGDP)',
   'sgdp_albanian': 'Albanian / Balkan European (SGDP)',

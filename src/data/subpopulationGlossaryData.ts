@@ -504,10 +504,12 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     evolutionaryAdaptations: [
       { trait: 'Alcohol Flush Reaction (ALDH2 Deficiency)', gene: 'ALDH2', rsid: 'rs671', impact: 'Derived A allele causes inactive acetaldehyde dehydrogenase, causing flushing and protective against alcoholism.' },
       { trait: 'East Asian Hair, Sweat & Dental Morph.', gene: 'EDAR', rsid: 'rs3827760', impact: 'Derived Val370Ala variant causing coarse hair shafts, shovel-shaped incisors, and increased eccrine sweat glands.' },
-      { trait: 'Dry Earwax & Low Body Odor', gene: 'ABCC11', rsid: 'rs17822931', impact: 'Loss-of-function 538G>A mutation producing dry earwax and reduced apocrine body odor.' }
+      { trait: 'Dry Earwax & Low Body Odor', gene: 'ABCC11', rsid: 'rs17822931', impact: 'Loss-of-function 538G>A mutation producing dry earwax and reduced apocrine body odor.' },
+      { trait: 'Alcohol Metabolism (ADH1B Fast Oxidizer)', gene: 'ADH1B', rsid: 'rs1229984', impact: 'His48Arg derived allele causing rapid ethanol-to-acetaldehyde conversion.' },
+      { trait: 'Light Skin Depigmentation', gene: 'OCA2', rsid: 'rs1800414', impact: 'Arg615His East Asian-specific light skin allele.' }
     ],
-    description: 'Han Chinese (CHB/CHS), Kinh Vietnamese (KHV), and Dai (CDX) represent East and Southeast Asian populations characterized by near-fixation of EDAR 370A and ABCC11 dry earwax alleles.',
-    keyMarkers: ['rs3827760-G (EDAR 370A)', 'rs671-A (ALDH2)', 'rs17822931-T (ABCC11)'],
+    description: 'Han Chinese (CHB/CHS), Kinh Vietnamese (KHV), and Dai (CDX) represent East and Southeast Asian populations characterized by near-fixation of EDAR 370A, ALDH2 flush, and OCA2 Arg615His alleles.',
+    keyMarkers: ['rs3827760-G (EDAR 370A)', 'rs671-A (ALDH2)', 'rs1800414-T (OCA2)', 'rs17822931-T (ABCC11)'],
     haplogroupNotes: 'Y-DNA O-M122 (O2), O-F3288, N-M231; mtDNA D4, M7, F1, B4, C.'
   },
   {
@@ -533,52 +535,274 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
 
   // ==========================================
-  // INDIGENOUS AMERICAS & ADMIXED AMERICAS
+  // INDIGENOUS AMERICAS SUBPOPULATIONS
   // ==========================================
   {
-    code: 'PEL',
-    aliases: ['MXL', 'PUR', 'CLM', 'AMR_gnomAD', 'ALFA_LatAm1', 'ALFA_LatAm2', 'sgdp_karitiana', 'sgdp_surui', 'sgdp_pima', 'sgdp_mixe', 'sgdp_mixtec', 'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco', 'sgdp_tlingit', 'sgdp_aleut', 'sgdp_eskimo_chaplin', 'sgdp_eskimo_naukan', 'sgdp_eskimo_sireniki'],
-    name: 'Indigenous & Admixed Americas (PEL / MXL / PUR / CLM / Andean / Amazonian)',
+    code: 'sgdp_karitiana',
+    aliases: ['Karitiana'],
+    name: 'Karitiana / Amazonian Brazil (Karitiana)',
     category: 'Americas',
-    geographicCenter: 'Andes (Peru), Mesoamerica (Mexico, Guatemala), Amazonia, Caribbean, North America',
-    historicalTimeline: 'High Indigenous American genetic component derived from Paleo-Indian expansion down the Pacific Rim (~15,000 BP), Central Andean highland adaptation (Lauricocha, ~8600 BP), Mesoamerican maize farming, and European/African colonial admixture.',
+    geographicCenter: 'Rondônia, Southwestern Amazon Basin, Brazil',
+    historicalTimeline: 'Indigenous Tupi-speaking Amazonian population isolated deep within the southwestern Amazon rainforest for millennia prior to modern contact.',
     migrationPath: [
-      'Siberian-Beringian migration across Bering Land Bridge / Kelp Highway (~16,000 BP)',
-      'Rapid coastal Pacific route migration down South America (~15,000 BP)',
-      'Development of Maya, Zapotec, Aztec, and Inca civilizations',
-      '500 years of European (Spanish/Portuguese) and African colonial admixture in LATAM groups'
+      'Paleo-Indian migration past Laurentide Ice Sheet (~15,000 BP)',
+      'Southward Pacific Rim dispersal',
+      'Early Amazon Basin settlement (~12,000 BP)',
+      'Rainforest isolation producing unadmixed Amazonian genetic profile'
     ],
     evolutionaryAdaptations: [
-      { trait: 'High-Altitude Hypoxia Tolerance', gene: 'EGLN1 / PRKAA1', impact: 'Natural selection for lower hemoglobin concentration to prevent polycythemia at 3,500+ meters altitude in Andes.' },
-      { trait: 'Lipid Regulation & Fatty Liver Vulnerability', gene: 'PNPLA3', rsid: 'rs738409', impact: 'Derived G allele (I148M) selected under historic feast-and-famine conditions, predisposing to hepatic fat storage on modern diets.' },
-      { trait: 'EDAR 370A Fixation', gene: 'EDAR', rsid: 'rs3827760', impact: 'Near 100% fixation of derived G allele inherited from Siberian ancestral stock.' }
+      { trait: 'PNPLA3 I148M Fixation', gene: 'PNPLA3', rsid: 'rs738409', impact: 'Extreme high frequency (~0.85-0.90) for hepatic lipid storage during Amazonian feast-and-famine cycles.' },
+      { trait: 'EDAR 370A Fixation', gene: 'EDAR', rsid: 'rs3827760', impact: 'Complete 100% fixation of Siberian-derived coarse hair allele.' }
     ],
-    description: 'Indigenous American and Latino reference populations (PEL, MXL, PUR, CLM, Maya, Quechua, Amazonian) preserve Paleo-Indian genomic heritage combined with varying proportions of Spanish and West African ancestry.',
-    keyMarkers: ['rs3827760-G', 'rs738409-G', 'Y-DNA Q-M3', 'mtDNA B2, C1, D1, A2'],
-    haplogroupNotes: 'Y-DNA Q-M3 / Q-L54 (>90% in unadmixed males); mtDNA B2, C1b, D1, A2.'
+    description: 'Karitiana is a primary genetic reference population for unadmixed South American Amazonian Native American ancestry from HGDP and SGDP datasets.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA C1b', 'rs738409-G', 'rs3827760-G'],
+    haplogroupNotes: 'Y-DNA Q-M3 / Q-L54 (>95%); mtDNA C1b, D1.'
   },
   {
-    code: 'LMB',
-    aliases: ['CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
-    name: 'Native North American & Eastern Woodlands (Lumbee / Cherokee / Lenape / Catawba)',
+    code: 'sgdp_surui',
+    aliases: ['Surui'],
+    name: 'Suruí / Amazonian Brazil (Suruí)',
     category: 'Americas',
-    geographicCenter: 'North Carolina Coastal Plain, Southern Appalachia, Delaware Valley, Piedmont Siouan',
-    historicalTimeline: 'Indigenous North American and tri-racial admixed populations of the Atlantic seaboard and Eastern Woodlands, descended from Mississippian, Algonquian, Iroquoian, and Siouan nations.',
+    geographicCenter: 'Rondônia / Mato Grosso border, Amazon Basin, Brazil',
+    historicalTimeline: 'Tupi-Mondé speaking indigenous Amazonian population displaying deep Amazonian isolation and carrying trace Population Y (Australasian-related) genomic signals.',
     migrationPath: [
-      'Paleo-Indian colonization of North America (~15,000 BP)',
-      'Archaic & Woodland Period mound-building agricultural civilizations',
-      'Post-contact resilience, community formation, and European/African admixture along Atlantic frontier'
+      'Ancient Paleo-American entry into South America (~15,000 BP)',
+      'Rainforest settlement (~12,000 BP)',
+      'Deep interior Amazonian genetic drift'
     ],
     evolutionaryAdaptations: [
-      { trait: 'Native American Metabolic Profile', gene: 'PNPLA3 / ABCA1', impact: 'Enriched lipid metabolism alleles adapted to traditional hunter-gatherer and maize agriculture diets.' }
+      { trait: 'Amazonian Pathogen Immunity', gene: 'HLA-A / HLA-B', impact: 'Specialized MHC allele enrichment for rainforest endemic arbovirus protection.' }
     ],
-    description: 'Eastern Woodlands Indigenous reference populations (Lumbee LMB, Cherokee CHK, Lenape LNP, Melungeon MEL) represent North American Indigenous heritage preserved in eastern states.',
-    keyMarkers: ['Y-DNA Q-M3', 'R1b', 'mtDNA A2, B2, C1, D1'],
-    haplogroupNotes: 'Y-DNA Q-M3, R1b, E-M2; mtDNA A2, B2, C1, X2a.'
+    description: 'Suruí represents an unadmixed Amazonian indigenous population. Recent ancient DNA studies revealed that Suruí and Karitiana carry a subtle ancestral signal ("Population Y") distantly related to Australasians.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA D1', 'Population Y Signal'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA D1, C1b.'
+  },
+  {
+    code: 'sgdp_piapoco',
+    aliases: ['Piapoco'],
+    name: 'Piapoco / Orinoco Basin (Piapoco)',
+    category: 'Americas',
+    geographicCenter: 'Meta & Vichada Rivers, Orinoco Basin, Colombia & Venezuela',
+    historicalTimeline: 'Arawakan-speaking indigenous people of the Orinoco riverine savannas (Llanos Orientales).',
+    migrationPath: [
+      'Paleo-Indian entry into Northern South America (~14,000 BP)',
+      'Settlement along Orinoco-Amazon river networks (~9,000 BP)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Riverine Disease Resistance', gene: 'ACKR1', impact: 'Specialized tropical riverine pathogen immune profile.' }
+    ],
+    description: 'Piapoco represents northern South American Arawakan indigenous ancestry from the Orinoco river basin.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA A2', 'B2'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA A2, B2.'
+  },
+  {
+    code: 'sgdp_ticuna',
+    aliases: ['Ticuna'],
+    name: 'Ticuna / Upper Amazon (Ticuna)',
+    category: 'Americas',
+    geographicCenter: 'Tres Fronteras region (Brazil, Peru, Colombia), Upper Amazon River',
+    historicalTimeline: 'Isolated language-isolate indigenous population of the Upper Amazon riverine forests.',
+    migrationPath: [
+      'Paleo-Indian migration → Upper Amazon river valley colonization (~10,000 BP)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Humid Tropical Forest Metabolism', gene: 'PNPLA3', rsid: 'rs738409', impact: 'Protective hepatic fat regulation.' }
+    ],
+    description: 'Ticuna is one of the largest indigenous Amazonian populations, maintaining genetic continuity in the Upper Amazon basin.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA C1b', 'D1'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA C1b, D1.'
+  },
+  {
+    code: 'sgdp_pima',
+    aliases: ['Pima'],
+    name: 'Pima / Sonoran Desert (Pima)',
+    category: 'Americas',
+    geographicCenter: 'Gila River Valley, Arizona (US) & Sonora (Mexico)',
+    historicalTimeline: 'Uto-Aztecan speaking descendants of the Hohokam desert canal-farming civilization (300 BCE–1450 CE).',
+    migrationPath: [
+      'Archaic Southwest desert foraging → Hohokam canal-building agricultural boom → Modern Gila River settlement.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Thrifty Gene Hypothesis', gene: 'ABCA1 / FABP2', impact: 'Natural selection for extreme insulin efficiency and carbohydrate storage during desert droughts, predisposing to modern type-2 diabetes on high-sugar diets.' }
+    ],
+    description: 'Pima (Akimel O\'odham) is a key Native North American reference population from the Sonoran Desert, famous in medical genetics for desert canal-farming adaptations.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA A2', 'B2'],
+    haplogroupNotes: 'Y-DNA Q-M3 (~90%); mtDNA A2, B2, C1.'
+  },
+  {
+    code: 'sgdp_mayan',
+    aliases: ['Maya'],
+    name: 'Maya / Mesoamerica (Maya)',
+    category: 'Americas',
+    geographicCenter: 'Yucatán Peninsula, Chiapas (Mexico), Highland & Lowland Guatemala',
+    historicalTimeline: 'Mayan-speaking civilization builders (Preclassic 2000 BCE – Postclassic 1500 CE) responsible for monumental architecture, mathematics, and writing.',
+    migrationPath: [
+      'Paleo-Indian Mesoamerican settlement → Early maize domestication in Balsas River Valley (~9,000 BP) → Maya Lowland & Highland urban civilization.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Maize Agricultural Metabolism', gene: 'FADS1 / PNPLA3', impact: 'Adapted to cereal maize/bean agriculture.' }
+    ],
+    description: 'Maya (sgdp_mayan) represents Mesoamerican indigenous agriculturalist ancestry, characterized by high Native American genetic retention.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA A2', 'B2', 'C1'],
+    haplogroupNotes: 'Y-DNA Q-M3 (>90%); mtDNA A2, B2, C1.'
+  },
+  {
+    code: 'sgdp_mixtec',
+    aliases: ['Mixtec'],
+    name: 'Mixtec / Oaxaca Highlands (Mixtec)',
+    category: 'Americas',
+    geographicCenter: 'La Mixteca region, Oaxaca & Puebla, Mexico',
+    historicalTimeline: 'Oto-Manguean speaking Mesoamerican civilization (Tilantongo, Tututepec) renowned for codices, gold metallurgy, and terrace farming.',
+    migrationPath: [
+      'Early Oto-Manguean diversification in Southern Mexico (~6,000 BP) → Montane terrace agriculture.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Montane Agricultural Metabolism', gene: 'PNPLA3', impact: 'Adapted to high-altitude Mesoamerican maize farming.' }
+    ],
+    description: 'Mixtec represents high-altitude Oto-Manguean Mesoamerican ancestry from Southern Mexico.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA A2', 'B2'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA A2, B2.'
+  },
+  {
+    code: 'sgdp_mixe',
+    aliases: ['Mixe'],
+    name: 'Mixe / Sierra Mixe (Mixe)',
+    category: 'Americas',
+    geographicCenter: 'Sierra Mixe, Eastern Oaxaca, Mexico',
+    historicalTimeline: 'Mixe-Zoquean speaking population distantly descended from the ancient Olmec civilization baseline (~1500–400 BCE).',
+    migrationPath: [
+      'Olmec Gulf Coast agricultural expansion → Mountain refuge isolation in Sierra Mixe.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Olmec Baseline Genetic Retention', gene: 'EDAR / PNPLA3', impact: 'High endogamous genetic stability.' }
+    ],
+    description: 'Mixe represents an unadmixed Mesoamerican population carrying direct genetic lineage from the ancient Mixe-Zoquean Olmec culture.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA A2', 'B2'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA A2, B2.'
+  },
+  {
+    code: 'sgdp_mexico_zapotec',
+    aliases: ['Zapotec'],
+    name: 'Zapotec / Valley of Oaxaca (Zapotec)',
+    category: 'Americas',
+    geographicCenter: 'Valley of Oaxaca & Monte Albán, Mexico',
+    historicalTimeline: 'Oto-Manguean urban civilization builders of Monte Albán (500 BCE – 800 CE), creating the earliest written script in Mesoamerica.',
+    migrationPath: [
+      'Early Mesoamerican agricultural settlement → Valley of Oaxaca urban empire.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Urban Agricultural Metabolism', gene: 'FADS1', impact: 'Maize/squash agricultural adaptation.' }
+    ],
+    description: 'Zapotec (Cloud People) represents one of the oldest continuous urban civilizations in Mesoamerica.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA A2', 'B2'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA A2, B2.'
+  },
+  {
+    code: 'sgdp_quechua',
+    aliases: ['Quechua'],
+    name: 'Quechua / Central Andes (Quechua)',
+    category: 'Americas',
+    geographicCenter: 'Cusco, Puno, Ayacucho, Peruvian & Bolivian Andes',
+    historicalTimeline: 'Indigenous Andean civilization lineage associated with Chavín, Tiwanaku, Wari, and the Inca Empire (Tawantinsuyu).',
+    migrationPath: [
+      'Paleo-Indian Pacific coastal dispersal → Highland Andean colonization (~9,000 BP) → High-altitude hypoxia natural selection.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'High-Altitude Hypoxia Tolerance', gene: 'EGLN1 / PRKAA1', impact: 'Selection for lower hemoglobin concentration to prevent polycythemia at 3,500+ meters.' }
+    ],
+    description: 'Quechua represents the primary genetic reference for high-altitude Andean Indigenous ancestry.',
+    keyMarkers: ['EGLN1 Selection', 'Y-DNA Q-M3', 'mtDNA B2b', 'C1b'],
+    haplogroupNotes: 'Y-DNA Q-M3 (>90%); mtDNA B2b, C1b.'
+  },
+  {
+    code: 'aymara',
+    aliases: ['Aymara'],
+    name: 'Aymara / Lake Titicaca Altiplano (Aymara)',
+    category: 'Americas',
+    geographicCenter: 'Lake Titicaca Basin & Altiplano, Bolivia & Peru',
+    historicalTimeline: 'Aymaran-speaking high-altitude civilization builders of Tiwanaku (300–1000 CE).',
+    migrationPath: [
+      'Altiplano high-altitude settlement (~9,000 BP) → Potato & quinoa domestication.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'High-Altitude Chest Expansion & Hypoxemia Resistance', gene: 'EGLN1', impact: 'Specialized physiological adaptation to 4,000m altitude.' }
+    ],
+    description: 'Aymara represents high-altitude Altiplano indigenous ancestry surrounding Lake Titicaca.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA B2', 'C1'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA B2, C1.'
+  },
+  {
+    code: 'guarani',
+    aliases: ['Guarani'],
+    name: 'Guaraní / Paraná Basin (Guaraní)',
+    category: 'Americas',
+    geographicCenter: 'Paraguay, Paraná-Uruguay River Basins, Argentina, Brazil',
+    historicalTimeline: 'Tupi-Guarani agriculturalists and forest navigators of South-Central South America.',
+    migrationPath: [
+      'Amazonian Tupi expansion southward into Gran Chaco and Paraná basin (~3,000 BP).'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Subtropical Forest Adaptation', gene: 'PNPLA3', impact: 'Subtropical riverine metabolism.' }
+    ],
+    description: 'Guaraní represents Southern South American Tupi-Guarani indigenous lineage.',
+    keyMarkers: ['Y-DNA Q-M3', 'mtDNA C1', 'D1'],
+    haplogroupNotes: 'Y-DNA Q-M3; mtDNA C1, D1.'
+  },
+  {
+    code: 'sgdp_tlingit',
+    aliases: ['Tlingit'],
+    name: 'Tlingit / Pacific Northwest Coast (Tlingit)',
+    category: 'Americas',
+    geographicCenter: 'Southeast Alaska Panhandle & Coastal British Columbia',
+    historicalTimeline: 'Na-Dene speaking maritime fishing civilization famed for totem poles, potlatches, and cedar plank houses.',
+    migrationPath: [
+      'Na-Dene migration from interior Alaska/Canada to Pacific Northwest fjords (~6,000 BP).'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Marine Salmon/Seal High-Omega-3 Diet Adaptation', gene: 'FADS1 / FADS2', impact: 'Tailored fatty acid synthesis.' }
+    ],
+    description: 'Tlingit represents Pacific Northwest Na-Dene coastal indigenous ancestry.',
+    keyMarkers: ['Y-DNA C2-M217 (Na-Dene branch)', 'Q-M3', 'mtDNA A2'],
+    haplogroupNotes: 'Y-DNA C2a-P39 (~40%), Q-M3; mtDNA A2, D4h3a.'
+  },
+  {
+    code: 'sgdp_eskimo_chaplin',
+    aliases: ['Inuit', 'Saqqaq', 'sgdp_eskimo_naukan', 'sgdp_eskimo_sireniki'],
+    name: 'Inuit & Siberian Eskimo (Chaplin / Saqqaq)',
+    category: 'Americas',
+    geographicCenter: 'Chukotka, Arctic Alaska, Northern Canada, Greenland',
+    historicalTimeline: 'Neo-Eskimo (Thule) and Paleo-Eskimo (Saqqaq, Dorsett) Arctic maritime hunters (~4,500–1,000 BP).',
+    migrationPath: [
+      'Late Beringian sea-crossing (~4,500 BP) → Rapid Arctic expansion across North America to Greenland.'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'FADS Fatty Acid Adaptation', gene: 'FADS1 / FADS2', rsid: 'rs174546', impact: 'Adapted to high-fat marine mammal diet.' },
+      { trait: 'CPT1A Arctic Variant', gene: 'CPT1A', rsid: 'P479L', impact: 'Protects against Arctic hypothermia and hypoglycemia.' }
+    ],
+    description: 'Inuit / Siberian Eskimo represents late-arriving Neo-Eskimo Arctic maritime populations.',
+    keyMarkers: ['CPT1A P479L', 'FADS selection', 'Y-DNA N-M231', 'Q-L54', 'mtDNA A2a', 'D2a'],
+    haplogroupNotes: 'Y-DNA N-M231 (~50%), Q-L54; mtDNA A2a, D2a.'
+  },
+  {
+    code: 'algonquian',
+    aliases: ['Ojibwe', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
+    name: 'Algonquian & Ojibwe / Eastern Woodlands (Algonquian)',
+    category: 'Americas',
+    geographicCenter: 'Great Lakes, Boreal Forest, Eastern Canada & US',
+    historicalTimeline: 'Algonquian-speaking birchbark canoe builders, wild rice harvesters, and hunters of the boreal forest.',
+    migrationPath: [
+      'Glacial retreat entry into Great Lakes region (~10,000 BP).'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Boreal Forest Adaptation', gene: 'PNPLA3', impact: 'Adapted to wild rice and game diet.' }
+    ],
+    description: 'Algonquian & Ojibwe represents Northern Eastern Woodlands Indigenous ancestry.',
+    keyMarkers: ['Y-DNA Q-M3', 'C2-M217', 'mtDNA X2a', 'A2'],
+    haplogroupNotes: 'Y-DNA Q-M3, C2a-P39; mtDNA X2a (~25%), A2, B2.'
   },
   {
     code: 'usr1',
-    aliases: ['anzick1', 'luzia', 'saqqaq', 'kennewick', 'spirit_cave'],
+    aliases: ['anzick1', 'luzia', 'kennewick', 'spirit_cave'],
     name: 'Ancient Paleo-American Reference Genomes (USR1 / Anzick-1 / Luzia)',
     category: 'Americas',
     geographicCenter: 'Interior Alaska, Montana (Clovis), Lagoa Santa (Brazil)',
@@ -648,7 +872,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
 
 /**
  * Robust population lookup helper that resolves any population code or alias
- * (e.g. 'sgdp_yoruba', 'AFR_gnomAD', 'FRENCH', 'NFE_gnomAD', 'jomon')
+ * (e.g. 'sgdp_yoruba', 'AFR_gnomAD', 'FRENCH', 'NFE_gnomAD', 'jomon', 'sgdp_karitiana')
  * to its matching master glossary entry.
  */
 export function getPopulationGlossaryItem(codeOrAlias: string): PopulationGlossaryItem | undefined {
@@ -665,7 +889,7 @@ export function getPopulationGlossaryItem(codeOrAlias: string): PopulationGlossa
   );
   if (aliasMatch) return aliasMatch;
 
-  // 3. Partial / fallback match (e.g. 'sgdp_spanish' -> 'SPANISH' / 'IBS')
+  // 3. Partial / fallback match
   return SUBPOPULATION_GLOSSARY_DATA.find(item => 
     item.name.toLowerCase().includes(target) || 
     item.code.toLowerCase().includes(target)
