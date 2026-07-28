@@ -100,6 +100,96 @@
         "AA": { "prediction": "Negative", "confidence": 0.80, "traitPhenotype": "Likely Rh-" }
       }
     },
+    "rs6784865": {
+      "gene": "RHD",
+      "reference": "T",
+      "alleles": {
+        "TT": { "prediction": "Positive", "confidence": 0.92, "traitPhenotype": "Likely Rh+ (RHD Intron 3 Proxy)" },
+        "TC": { "prediction": "Positive", "confidence": 0.86, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "CT": { "prediction": "Positive", "confidence": 0.86, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "CC": { "prediction": "Negative", "confidence": 0.88, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs17525388": {
+      "gene": "RHCE",
+      "reference": "C",
+      "alleles": {
+        "CC": { "prediction": "Positive", "confidence": 0.91, "traitPhenotype": "Likely Rh+ (C Antigen Tag)" },
+        "CT": { "prediction": "Positive", "confidence": 0.84, "traitPhenotype": "Likely Rh+ (C/c Carrier)" },
+        "TC": { "prediction": "Positive", "confidence": 0.84, "traitPhenotype": "Likely Rh+ (C/c Carrier)" },
+        "TT": { "prediction": "Negative", "confidence": 0.86, "traitPhenotype": "Likely Rh- (c/c)" }
+      }
+    },
+    "rs28362463": {
+      "gene": "RHCE",
+      "reference": "G",
+      "alleles": {
+        "GG": { "prediction": "Positive", "confidence": 0.89, "traitPhenotype": "Likely Rh+ (E Antigen Tag)" },
+        "GA": { "prediction": "Positive", "confidence": 0.82, "traitPhenotype": "Likely Rh+ (E/e Carrier)" },
+        "AG": { "prediction": "Positive", "confidence": 0.82, "traitPhenotype": "Likely Rh+ (E/e Carrier)" },
+        "AA": { "prediction": "Negative", "confidence": 0.84, "traitPhenotype": "Likely Rh- (e/e)" }
+      }
+    },
+    "rs1053313": {
+      "gene": "RHCE",
+      "reference": "G",
+      "alleles": {
+        "GG": { "prediction": "Positive", "confidence": 0.88, "traitPhenotype": "Likely Rh+" },
+        "GA": { "prediction": "Positive", "confidence": 0.80, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "AG": { "prediction": "Positive", "confidence": 0.80, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "AA": { "prediction": "Negative", "confidence": 0.82, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs1053315": {
+      "gene": "RHD",
+      "reference": "C",
+      "alleles": {
+        "CC": { "prediction": "Positive", "confidence": 0.90, "traitPhenotype": "Likely Rh+" },
+        "CT": { "prediction": "Positive", "confidence": 0.83, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "TC": { "prediction": "Positive", "confidence": 0.83, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "TT": { "prediction": "Negative", "confidence": 0.85, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs606428": {
+      "gene": "RHCE",
+      "reference": "C",
+      "alleles": {
+        "CC": { "prediction": "Positive", "confidence": 0.87, "traitPhenotype": "Likely Rh+" },
+        "CT": { "prediction": "Positive", "confidence": 0.80, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "TC": { "prediction": "Positive", "confidence": 0.80, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "TT": { "prediction": "Negative", "confidence": 0.82, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs676839": {
+      "gene": "RHD",
+      "reference": "G",
+      "alleles": {
+        "GG": { "prediction": "Positive", "confidence": 0.93, "traitPhenotype": "Likely Rh+ (RHD Promoter)" },
+        "GA": { "prediction": "Positive", "confidence": 0.87, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "AG": { "prediction": "Positive", "confidence": 0.87, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "AA": { "prediction": "Negative", "confidence": 0.89, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs667500": {
+      "gene": "RHCE",
+      "reference": "T",
+      "alleles": {
+        "TT": { "prediction": "Positive", "confidence": 0.88, "traitPhenotype": "Likely Rh+" },
+        "TC": { "prediction": "Positive", "confidence": 0.81, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "CT": { "prediction": "Positive", "confidence": 0.81, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "CC": { "prediction": "Negative", "confidence": 0.83, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs10456285": {
+      "gene": "RHD",
+      "reference": "G",
+      "alleles": {
+        "GG": { "prediction": "Positive", "confidence": 0.94, "traitPhenotype": "Likely Rh+ (RHD Deletion Tag)" },
+        "GA": { "prediction": "Positive", "confidence": 0.88, "traitPhenotype": "Likely Rh+ (Heterozygous)" },
+        "AG": { "prediction": "Positive", "confidence": 0.88, "traitPhenotype": "Likely Rh+ (Heterozygous)" },
+        "AA": { "prediction": "Negative", "confidence": 0.91, "traitPhenotype": "Likely Rh-" }
+      }
+    },
     "i4001527": {
       "gene": "RHD",
       "reference": "I",
