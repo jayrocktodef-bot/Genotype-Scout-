@@ -119,10 +119,8 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'LMB': 'Lumbee / NC Indigenous-Admixed (LMB)',
   'GLL': 'Gullah Geechee / Atlantic Coast (GLL)',
   'CHK': 'Cherokee / Southern Appalachian (CHK)',
-  'LNP': 'Eastern Woodlands Algonquian (Lenape / Nanticoke / WDN)',
-  'NAN': 'Eastern Woodlands Algonquian (Lenape / Nanticoke / WDN)',
   'CAT': 'Catawba / Piedmont Siouan Admixture Proxy (CAT)',
-  'WDN': 'Eastern Woodlands Algonquian (Lenape / Nanticoke / WDN)',
+  'WDN': 'Eastern Woodlands Algonquian (WDN)',
   'ASJ': 'Ashkenazi Jewish / European (ASJ)',
   'SEJ': 'Sephardic Jewish / Mediterranean (SEJ)',
   'MZJ': 'Mizrahi Jewish / Middle Eastern (MZJ)',
@@ -851,6 +849,7 @@ export async function processSubpopulations(
   // Iterate over each population in the 1000 Genomes reference kernel to compute distances & negative SNP counts
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (popCode === 'LNP' || popCode === 'NAN') continue; // Deprecated: Consolidated into WDN
     if (!isPopAllowedForPanel(popCode)) continue;
     const frequencies = popData.frequencies;
     const matchedUserDosages: number[] = [];
@@ -1038,6 +1037,7 @@ export async function processSubpopulations(
   const rawBreakdown: Array<{ subpop: string; distance: number; markersCompared: number; count: number; popCode: string }> = [];
   for (const [popCode, popData] of Object.entries(referenceDatabase)) {
     if (GLOBAL_REFERENCE_CODES.has(popCode)) continue;
+    if (popCode === 'LNP' || popCode === 'NAN') continue; // Deprecated: Consolidated into WDN
     if (!isPopAllowedForPanel(popCode)) continue;
     const finalDistance = popDistances.get(popCode) ?? 1.0;
     const markersCompared = popMarkerCounts.get(popCode) ?? 0;
@@ -1062,16 +1062,22 @@ export async function processSubpopulations(
   // Sort by distance so closest populations appear first
   rawBreakdown.sort((a, b) => a.distance - b.distance);
 
-  // Deduplicate HGDP vs SGDP for the same base population:
-  // If an HGDP entry (or a closer match) for a base population exists, omit the duplicate SGDP entry.
+  // Deduplicate entries by base population key and display name to prevent identical duplicate labels
   const seenBreakdownKeys = new Set<string>();
+  const seenSubpopNames = new Set<string>();
   const deduplicatedBreakdown: typeof rawBreakdown = [];
   for (const item of rawBreakdown) {
     const baseKey = getBasePopKey(item.popCode, item.subpop);
+    const subpopNameClean = item.subpop.toLowerCase().trim();
     const isSgdp = item.popCode.toLowerCase().startsWith('sgdp_');
+
+    if (seenSubpopNames.has(subpopNameClean)) {
+      continue;
+    }
     if (isSgdp && seenBreakdownKeys.has(baseKey)) {
       continue;
     }
+    seenSubpopNames.add(subpopNameClean);
     seenBreakdownKeys.add(baseKey);
     deduplicatedBreakdown.push(item);
   }

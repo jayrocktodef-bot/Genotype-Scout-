@@ -612,8 +612,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
   {
     code: 'algonquian',
-    aliases: ['Ojibwe', 'Lenape', 'Nanticoke', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
-    name: 'Eastern Woodlands Algonquian (Ojibwe / Lenape / Nanticoke)',
+    aliases: ['Eastern Woodlands', 'Ojibwe', 'Lenape', 'Nanticoke', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
+    name: 'Eastern Woodlands Algonquian',
     category: 'Americas',
     geographicCenter: 'Mid-Atlantic, Great Lakes, Boreal Forest, Eastern US & Canada',
     historicalTimeline: 'Algonquian-speaking birchbark canoe builders, coastal fishers, wild rice harvesters, and hunters of the Eastern Woodlands (Delaware Valley, Chesapeake, Great Lakes).',
@@ -623,7 +623,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     evolutionaryAdaptations: [
       { trait: 'Woodland & Coastal Riverine Adaptation', gene: 'PNPLA3', impact: 'Adapted to wild rice, fish, and game diets.' }
     ],
-    description: 'Consolidated Eastern Woodlands Algonquian ancestral lineage encompassing Lenape (Delaware), Nanticoke, Ojibwe, and related Mid-Atlantic & Great Lakes Algonquian-speaking populations.',
+    description: 'Consolidated Eastern Woodlands Algonquian ancestral lineage encompassing Great Lakes, Mid-Atlantic, and Boreal Forest Algonquian-speaking populations.',
     keyMarkers: ['Y-DNA Q-M3', 'C2-M217', 'mtDNA X2a', 'A2'],
     haplogroupNotes: 'Y-DNA Q-M3, C2a-P39; mtDNA X2a (~25%), A2, B2.'
   },
