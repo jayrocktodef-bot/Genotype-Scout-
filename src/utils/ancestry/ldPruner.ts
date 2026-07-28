@@ -1,8 +1,8 @@
 /**
- * Physical Distance-Based Linkage Disequilibrium (LD) Pruner
+ * Physical Distance & Linkage Disequilibrium (LD) Pruner
  * 
- * Filters genomic markers to remove variants that are physically close on a chromosome,
- * which helps prevent double-counting of ancestral signals.
+ * Filters genomic markers to remove variants that are physically close on a chromosome or
+ * in strong Linkage Disequilibrium (r^2 > 0.1), preventing double-counting of ancestral signals.
  */
 
 export interface GenomicMarker {
@@ -10,19 +10,51 @@ export interface GenomicMarker {
   chromosome: string | number;
   position: number;
   weight?: number;
+  frequencies?: Record<string, number>;
 }
 
 /**
- * Prunes a list of markers using a physical distance sliding window.
- * Within each window, we keep the marker with the highest weight (or the first one seen).
+ * Calculates estimated r^2 correlation between two bi-allelic markers across reference population frequencies.
+ */
+export function calculateMarkerCorrelation(freqsA: Record<string, number>, freqsB: Record<string, number>): number {
+  const pops = Object.keys(freqsA).filter(p => typeof freqsB[p] === 'number');
+  if (pops.length < 3) return 0;
+
+  const meanA = pops.reduce((sum, p) => sum + freqsA[p], 0) / pops.length;
+  const meanB = pops.reduce((sum, p) => sum + freqsB[p], 0) / pops.length;
+
+  let cov = 0;
+  let varA = 0;
+  let varB = 0;
+
+  pops.forEach(p => {
+    const diffA = freqsA[p] - meanA;
+    const diffB = freqsB[p] - meanB;
+    cov += diffA * diffB;
+    varA += diffA * diffA;
+    varB += diffB * diffB;
+  });
+
+  if (varA === 0 || varB === 0) return 0;
+  const r = cov / Math.sqrt(varA * varB);
+  return r * r; // Return r^2
+}
+
+/**
+ * Prunes a list of markers using a physical distance sliding window (default 250,000 bp / 250kb)
+ * and optional r^2 threshold filtering (r^2 < 0.1).
+ * 
+ * Within each window, we retain the marker with the highest informativeness weight.
  * 
  * @param markers List of genomic markers to prune
- * @param windowSizeBp Size of the sliding window in base pairs (default 50,000 bp / 50kb)
- * @returns Pruned list of markers
+ * @param windowSizeBp Size of the sliding window in base pairs (default 250,000 bp)
+ * @param maxR2 Maximum allowed LD r^2 correlation (default 0.10)
+ * @returns Pruned list of independent markers
  */
 export function pruneMarkersByPhysicalDistance<T extends GenomicMarker>(
   markers: T[],
-  windowSizeBp = 50000
+  windowSizeBp = 250000,
+  maxR2 = 0.10
 ): T[] {
   // Group by chromosome
   const chromGroups: Record<string, T[]> = {};
@@ -50,11 +82,27 @@ export function pruneMarkersByPhysicalDistance<T extends GenomicMarker>(
 
     for (const marker of sorted) {
       if (lastPos === -1 || (marker.position - lastPos) >= windowSizeBp) {
+        // If frequencies are available, check r^2 correlation against last retained marker
+        const lastRetained = pruned[pruned.length - 1];
+        if (
+          lastRetained &&
+          lastRetained.frequencies &&
+          marker.frequencies
+        ) {
+          const r2 = calculateMarkerCorrelation(lastRetained.frequencies, marker.frequencies);
+          if (r2 > maxR2) {
+            // Keep higher weighted marker
+            if ((marker.weight || 0) > (lastRetained.weight || 0)) {
+              pruned[pruned.length - 1] = marker;
+            }
+            continue;
+          }
+        }
+
         pruned.push(marker);
         lastPos = marker.position;
       } else {
-        // If they are within the window, check if current marker has higher weight
-        // and replace the previous one if it is more informative
+        // Within window boundary: check if current marker has higher weight and replace if more informative
         const lastIndex = pruned.length - 1;
         const lastMarker = pruned[lastIndex];
         if (
@@ -63,7 +111,6 @@ export function pruneMarkersByPhysicalDistance<T extends GenomicMarker>(
           (marker.weight || 0) > (lastMarker.weight || 0)
         ) {
           pruned[lastIndex] = marker;
-          // DO NOT update lastPos here, because we want to maintain the same window boundary
         }
       }
     }

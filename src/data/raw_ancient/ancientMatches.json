@@ -450,5 +450,74 @@
     },
     "culture": "Plantagenet English",
     "age_bp": 540
+  },
+  {
+    "id": "malta_boy_ma1",
+    "name": "Mal'ta Boy (MA-1)",
+    "region": "Mal'ta, Lake Baikal, Siberia",
+    "period": "Upper Paleolithic (24,000 BP)",
+    "description": "Landmark 24,000-year-old genome defining Ancient North Eurasian (ANE) ancestry. MA-1 contributed ~30-40% ancestry to all Indigenous Americans and ~40-50% to Bronze Age Steppe herders.",
+    "ancestry_group": "Ancient North Eurasian (ANE)",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs3827760"],
+    "genotypes": {
+      "rs1426654": "AA",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG",
+      "rs3827760": "AA"
+    },
+    "culture": "Mal'ta-Buret Upper Paleolithic",
+    "age_bp": 24000
+  },
+  {
+    "id": "villabruna_whg",
+    "name": "Villabruna WHG",
+    "region": "Cismon valley, Veneto, Italy",
+    "period": "Epipaleolithic (14,000 BP)",
+    "description": "Cornerstone reference genome for Western Hunter-Gatherers (WHG). Represented post-glacial blue-eyed, dark-skinned European foragers who expanded across Mesolithic Europe.",
+    "ancestry_group": "Western Hunter-Gatherer (WHG)",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs4988235"],
+    "genotypes": {
+      "rs1426654": "GG",
+      "rs16891982": "CC",
+      "rs12913832": "GG",
+      "rs4988235": "GG"
+    },
+    "culture": "Epigravettian Mesolithic",
+    "age_bp": 14000
+  },
+  {
+    "id": "yamnaya_samara",
+    "name": "Yamnaya Samara Herder",
+    "region": "Samara River Basin, Russia",
+    "period": "Early Bronze Age (5,000 BP)",
+    "description": "Cornerstone reference genome for Western Steppe Herders (WSH). Nomadic pastoralists of the Pontic-Caspian steppe whose Corded Ware and Bell Beaker expansions transformed Bronze Age European DNA and spread Indo-European languages.",
+    "ancestry_group": "Western Steppe Herder (WSH / Yamnaya)",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832", "rs4988235"],
+    "genotypes": {
+      "rs1426654": "AA",
+      "rs16891982": "CC",
+      "rs12913832": "GA",
+      "rs4988235": "GG"
+    },
+    "culture": "Yamnaya Pastoralist",
+    "age_bp": 5000
+  },
+  {
+    "id": "satsurblia_chg",
+    "name": "Satsurblia CHG",
+    "region": "Satsurblia Cave, Imereti, Georgia",
+    "period": "Late Upper Paleolithic (13,300 BP)",
+    "description": "Reference genome for Caucasus Hunter-Gatherers (CHG). Provided the critical second ancestral lineage (alongside EHG) that coalesced into Yamnaya Steppe herders.",
+    "ancestry_group": "Caucasus Hunter-Gatherer (CHG)",
+    "diagnostic_markers": ["rs1426654", "rs16891982", "rs12913832"],
+    "genotypes": {
+      "rs1426654": "AA",
+      "rs16891982": "CC",
+      "rs12913832": "AA",
+      "rs4988235": "GG"
+    },
+    "culture": "Caucasus Upper Paleolithic",
+    "age_bp": 13300
   }
 ]
