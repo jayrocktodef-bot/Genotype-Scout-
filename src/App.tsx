@@ -1967,13 +1967,19 @@ export default function App() {
           }
 
           if (ds.analysis && ds.mergedSnpMap) {
-            const isCollapsed = !ds.analysis.subpopulationOracle || 
-              !ds.analysis.subpopulationOracle.admixtureMix || 
-              ds.analysis.subpopulationOracle.admixtureMix.length <= 1 ||
-              (ds.analysis.subpopulationOracle.admixtureMix.length === 1 && 
-               ds.analysis.subpopulationOracle.admixtureMix[0].percentage === 100);
+            const oracle = ds.analysis.subpopulationOracle;
+            const isCollapsed = !oracle || 
+              !oracle.admixtureMix || 
+              oracle.admixtureMix.length <= 1 ||
+              (oracle.admixtureMix.length === 1 && oracle.admixtureMix[0].percentage === 100);
             
-            if (isCollapsed) {
+            const hasDuplicateBreakdown = oracle?.breakdown && Array.isArray(oracle.breakdown) && 
+              oracle.breakdown.some((b: any, index: number, arr: any[]) => {
+                const name = (b.subpop || b.name || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+                return arr.findIndex((x: any) => (x.subpop || x.name || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim() === name) !== index;
+              });
+            
+            if (isCollapsed || hasDuplicateBreakdown) {
               console.log("Recalculating subpopulationOracle for cached dataset:", ds.name);
               const userGenotypes = Object.entries(ds.mergedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype: genotype as string }));
               const freshOracle = await processSubpopulations(userGenotypes, []);

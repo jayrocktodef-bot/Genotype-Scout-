@@ -78,8 +78,18 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
     return <div className="text-slate-400 p-8 text-center">Processing genomic oracle...</div>;
   }
 
-  // Filter the breakdown list to show top matches by genetic distance
-  const breakdownList = (results.breakdown || []).slice(0, 12);
+  // Filter and deduplicate the breakdown list to show unique top matches by genetic distance
+  const rawBreakdown = results.breakdown || [];
+  const seenSubpopNames = new Set<string>();
+  const deduplicatedBreakdown = rawBreakdown.filter((comp: any) => {
+    const rawName = (comp?.name || comp?.subpop || '').toLowerCase().trim();
+    // Normalize name by removing parenthetical labels e.g. "Eastern Woodlands Algonquian (WDN)" -> "eastern woodlands algonquian"
+    const cleanName = rawName.replace(/\s*\([^)]*\)/g, '').trim();
+    if (!cleanName || seenSubpopNames.has(cleanName)) return false;
+    seenSubpopNames.add(cleanName);
+    return true;
+  });
+  const breakdownList = deduplicatedBreakdown.slice(0, 12);
   
   return (
     <div className="bg-slate-900/60 backdrop-blur-3xl border border-white/5 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-xl text-white space-y-4 transition-all duration-700 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:border-emerald-500/20">
@@ -173,7 +183,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               const visualWidth = Math.max(5, 100 - (comp.distance * 200));
               
               return (
-                <div key={comp.subpop} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px]">
+                <div key={(comp?.name || comp?.subpop || 'comp') + idx} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px]">
                   <div className="flex items-center justify-between mb-1">
                     <span className="font-mono text-slate-400 text-[9px] bg-black/40 px-1.5 py-0.5 rounded border border-white/5">#{idx + 1}</span>
                     <span className="text-emerald-400 text-xs font-bold font-mono">
