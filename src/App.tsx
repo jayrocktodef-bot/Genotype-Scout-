@@ -908,7 +908,18 @@ const AutosomalView = memo(({
   datasets: any[],
   activeDatasetIndex: number
 }) => {
-  const [expandedRegions, setExpandedRegions] = useState<Set<string>>(new Set());
+  const [expandedRegions, setExpandedRegions] = useState<Set<string>>(() => {
+    const defaultSet = new Set<string>();
+    if (filteredResults && filteredResults.length > 0) {
+      filteredResults.forEach((s: any) => {
+        if (s.continent) {
+          const reg = mapToRegion(s.continent);
+          if (reg) defaultSet.add(reg);
+        }
+      });
+    }
+    return defaultSet;
+  });
 
   if (availableCategories.length === 0) return null;
   
@@ -1904,7 +1915,7 @@ export default function App() {
   const [activeAncientSubTab, setActiveAncientSubTab] = useState<'admixture' | 'matches'>('admixture');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(() => new Set(['Ancestry', 'Health', 'Pharmacogenomics', 'Traits', 'Carrier Status']));
   const [humanOriginsResults, setHumanOriginsResults] = useState<any[]>([]);
   const [grafResults, setGrafResults] = useState<any[]>([]);
   const [microHapResults, setMicroHapResults] = useState<any[]>([]);
