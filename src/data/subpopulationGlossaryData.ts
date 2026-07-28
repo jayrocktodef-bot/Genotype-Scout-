@@ -612,18 +612,18 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
   },
   {
     code: 'algonquian',
-    aliases: ['Ojibwe', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
-    name: 'Algonquian & Ojibwe / Eastern Woodlands (Algonquian)',
+    aliases: ['Ojibwe', 'Lenape', 'Nanticoke', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL'],
+    name: 'Eastern Woodlands Algonquian (Ojibwe / Lenape / Nanticoke)',
     category: 'Americas',
-    geographicCenter: 'Great Lakes, Boreal Forest, Eastern Canada & US',
-    historicalTimeline: 'Algonquian-speaking birchbark canoe builders, wild rice harvesters, and hunters of the boreal forest.',
+    geographicCenter: 'Mid-Atlantic, Great Lakes, Boreal Forest, Eastern US & Canada',
+    historicalTimeline: 'Algonquian-speaking birchbark canoe builders, coastal fishers, wild rice harvesters, and hunters of the Eastern Woodlands (Delaware Valley, Chesapeake, Great Lakes).',
     migrationPath: [
-      'Glacial retreat entry into Great Lakes region (~10,000 BP).'
+      'Glacial retreat entry into Eastern Woodlands and Great Lakes (~10,000 BP).'
     ],
     evolutionaryAdaptations: [
-      { trait: 'Boreal Forest Adaptation', gene: 'PNPLA3', impact: 'Adapted to wild rice and game diet.' }
+      { trait: 'Woodland & Coastal Riverine Adaptation', gene: 'PNPLA3', impact: 'Adapted to wild rice, fish, and game diets.' }
     ],
-    description: 'Algonquian & Ojibwe represents Northern Eastern Woodlands Indigenous ancestry.',
+    description: 'Consolidated Eastern Woodlands Algonquian ancestral lineage encompassing Lenape (Delaware), Nanticoke, Ojibwe, and related Mid-Atlantic & Great Lakes Algonquian-speaking populations.',
     keyMarkers: ['Y-DNA Q-M3', 'C2-M217', 'mtDNA X2a', 'A2'],
     haplogroupNotes: 'Y-DNA Q-M3, C2a-P39; mtDNA X2a (~25%), A2, B2.'
   },
