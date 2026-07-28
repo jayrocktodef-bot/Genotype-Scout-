@@ -16,13 +16,20 @@ const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
   Kell: ["rs8176058", "rs12046423"],
   Secretor: ["rs601338", "rs602662", "rs1047781"],
   Lewis: ["rs3894326", "rs3745635", "rs28362491"],
-  Colton: ["rs2836269"],
-  Lutheran: ["rs2298661"],
-  Cartwright: ["rs11551124"],
-  Dombrock: ["rs11276"],
-  Knops: ["rs1145322"],
-  Diego: ["rs2285603"],
-  Gerbich: ["rs2075592"],
+  Diego: ["rs2285644", "rs61756431", "rs2285603"],
+  Colton: ["rs17154394", "rs2836269"],
+  Dombrock: ["rs11273308", "rs11276"],
+  Lutheran: ["rs28399653", "rs2298661"],
+  Cartwright: ["rs28933390", "rs11551124"],
+  Knops: ["rs3737002", "rs1145322"],
+  Gerbich: ["rs7689609", "rs2075592"],
+  Scianna: ["rs56019829", "rs1018780"],
+  Vel: ["rs76975238"],
+  Lan: ["rs149202834"],
+  Jr: ["rs72552713"],
+  Kx: ["rs137852525"],
+  "Landsteiner-Wiener": ["rs2306884", "rs11545624"],
+  Sid: ["rs7224888"]
 };
 
 const MARKER_METADATA: Record<string, any> = {
@@ -70,13 +77,29 @@ const MARKER_METADATA: Record<string, any> = {
   "rs3745635": { effect: "FUT3 variation", antigen: "Le" },
   "rs28362491": { effect: "Lewis group variation", antigen: "Le" },
   "rs1047781": { effect: "FUT1 (H-antigen) variation", antigen: "H" },
-  "rs2836269": { effect: "p.Ala45Thr (Coa vs Cob antigen)", antigen: "Co" },
-  "rs2298661": { effect: "Lutheran blood group polymorphism", antigen: "Lu" },
-  "rs11551124": { effect: "Cartwright blood group polymorphism", antigen: "Yt" },
-  "rs11276": { effect: "Dombrock blood group polymorphism", antigen: "Do" },
-  "rs1145322": { effect: "Knops blood group polymorphism", antigen: "Kn" },
+  "rs2285644": { effect: "SLC4A1 p.Pro854Leu (Dia vs Dib antigen)", antigen: "Di(a/b)" },
+  "rs61756431": { effect: "SLC4A1 p.Glu658Lys (Wra vs Wrb antigen)", antigen: "Wr(a/b)" },
   "rs2285603": { effect: "p.Pro854Leu (Dia vs Dib antigen)", antigen: "Di" },
+  "rs17154394": { effect: "AQP1 p.Ala45Val (Coa vs Cob antigen)", antigen: "Co(a/b)" },
+  "rs2836269": { effect: "p.Ala45Thr (Coa vs Cob antigen)", antigen: "Co" },
+  "rs11276": { effect: "ART4 p.Tyr126His (Doa vs Dob antigen)", antigen: "Do" },
+  "rs28399653": { effect: "BCAM p.Arg77His (Lua vs Lub antigen)", antigen: "Lu" },
+  "rs2298661": { effect: "Lutheran blood group polymorphism", antigen: "Lu" },
+  "rs28933390": { effect: "BCHE p.His567Asn (Yta vs Ytb antigen)", antigen: "Yt" },
+  "rs11551124": { effect: "Cartwright blood group polymorphism", antigen: "Yt" },
+  "rs3737002": { effect: "CR1 p.Lys1561Glu (Kna vs Knb antigen)", antigen: "Kn" },
+  "rs1145322": { effect: "Knops blood group polymorphism", antigen: "Kn" },
+  "rs7689609": { effect: "GYPC p.Gln81Ter (Gerbich null / Ge:-2,3,4)", antigen: "Ge" },
   "rs2075592": { effect: "GYPC intron variant associated with Gerbich system", antigen: "Ge" },
+  "rs56019829": { effect: "ERMAP p.Gly57Arg (Sc1 vs Sc2 antigen)", antigen: "Sc" },
+  "rs1018780": { effect: "p.Gly244Arg (Sc1 vs Sc2 antigen)", antigen: "Sc" },
+  "rs76975238": { effect: "SMIM1 c.64_80del (17bp deletion causing Vel-negative null)", antigen: "Vel(null)" },
+  "rs149202834": { effect: "ABCB6 p.Arg192Trp (Lan-negative null)", antigen: "Lan(null)" },
+  "rs72552713": { effect: "ABCG2 p.Arg246Ter (Jr(a-) null)", antigen: "Jr(null)" },
+  "rs137852525": { effect: "XK p.Arg334Ter (McLeod syndrome / Kx-null)", antigen: "Kx(null)" },
+  "rs2306884": { effect: "ICAM4 p.Thr100Ile (LWa vs LWb antigen)", antigen: "LW" },
+  "rs11545624": { effect: "p.Gln70Arg (LWa vs LWb antigen)", antigen: "LW" },
+  "rs7224888": { effect: "B4GALNT2 p.Arg463Ter (Sd(a-) null)", antigen: "Sd(a)" }
 };
 
 // Blood Compatibility Rules
@@ -164,9 +187,33 @@ function getIsbtPhenotype(rsid: string, genotype: string, getGenotype: (rsid: st
       if (g === 'CC' || g === 'GG') return "S-s+ [s Antigen Only]";
       return "S+s+ [S & s Antigens Present]";
     }
+    case 'rs2285644':
+    case 'rs2285603': {
+      if (g === 'TT' || g === 'AA') return "Di(a+b-) [Dia Antigen Only (Indigenous/East Asian)]";
+      if (g === 'CC' || g === 'GG') return "Di(a-b+) [Dib Antigen Only]";
+      return "Di(a+b+) [Dia & Dib Antigens Present]";
+    }
+    case 'rs17154394':
+    case 'rs2836269': {
+      if (g === 'TT' || g === 'AA') return "Co(a-b+) [Cob Antigen Only]";
+      if (g === 'CC' || g === 'GG') return "Co(a+b-) [Coa Antigen Only]";
+      return "Co(a+b+) [Coa & Cob Antigens Present]";
+    }
     case 'rs601338': {
       if (g === 'AA' || g === 'TT') return "Non-secretor [se/se / Norovirus Resistant]";
       return "Secretor [Se/Se or Se/se]";
+    }
+    case 'rs76975238': {
+      if (g.includes('DEL') || g === 'DD') return "Vel-negative [Vel Null / Rare Transfusion Recipient]";
+      return "Vel-positive [Normal Vel Expression]";
+    }
+    case 'rs149202834': {
+      if (g === 'TT') return "Lan-negative [Lan Null / Rare]";
+      return "Lan-positive [Normal Lan Expression]";
+    }
+    case 'rs72552713': {
+      if (g === 'TT') return "Jr(a-) [Jr Null / Rare]";
+      return "Jr(a+) [Normal Jr Expression]";
     }
     default:
       return "Antigen Expressed (ISBT Standard)";
