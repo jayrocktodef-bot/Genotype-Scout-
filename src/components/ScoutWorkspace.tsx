@@ -71,7 +71,7 @@ const MODULES: AppConfig[] = [
     glowColor: 'rgba(78,205,196,0.45)',
     targetTab: 'ancestry',
     description: 'Explore origin geographies, migration routes, and evolutionary traits for global populations.',
-    imageUrl: '/assets/oracle_icon.png',
+    imageUrl: '/assets/glossary_icon.png',
     navGroup: 'primary',
   },
   {
@@ -143,7 +143,7 @@ const MODULES: AppConfig[] = [
     targetTab: 'health_traits',
     targetSubTab: 'traits',
     description: 'Explore physical appearance, lifestyle, and nutrition traits.',
-    imageUrl: '/assets/health_icon.png',
+    imageUrl: '/assets/traits_icon.png',
     navGroup: 'secondary',
   },
   {
@@ -178,7 +178,7 @@ const MODULES: AppConfig[] = [
     glowColor: 'rgba(192,38,211,0.45)',
     targetTab: 'rare_variants',
     description: 'Identify unmapped and potentially rare genetic variants.',
-    imageUrl: '/assets/oracle_icon.png',
+    imageUrl: '/assets/rare_variants_icon.png',
     navGroup: 'secondary',
   },
   {
@@ -200,6 +200,7 @@ const MODULES: AppConfig[] = [
     glowColor: 'rgba(244,63,94,0.45)',
     targetTab: 'export',
     description: 'Generate high-quality PDF reports with customizable health filters.',
+    imageUrl: '/assets/export_icon.png',
     navGroup: 'secondary',
   },
   {
