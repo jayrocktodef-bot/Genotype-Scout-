@@ -2934,17 +2934,17 @@ export default function App() {
 
             {currentApp === 'markers' && (
               <div className="space-y-8 animate-fade-in">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8">
+                <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 text-white">
                   <div>
-                    <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 tracking-tight">Genetic Markers</h2>
-                    <p className="text-slate-500 dark:text-slate-400">Filtered view of your autosomal variants.</p>
+                    <h2 className="text-2xl sm:text-3xl font-black text-slate-100 tracking-tight">Genetic Markers Browser</h2>
+                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mt-1">Filtered view of your autosomal variants, allele dosages, and phenotypic annotations.</p>
                   </div>
-                  <div className="flex items-center gap-2 bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                  <div className="flex items-center gap-2 bg-black/40 p-1.5 rounded-2xl border border-white/10 shadow-inner">
                     {(['matched', 'unmatched'] as const).map(status => (
                       <button 
                         key={status}
                         onClick={() => setStatusFilter(status)}
-                        className={`px-5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${statusFilter === status ? 'bg-teal-600 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700'}`}
+                        className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all ${statusFilter === status ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40 shadow-lg' : 'text-slate-400 hover:text-slate-200'}`}
                       >
                         {status}
                       </button>
