@@ -48756,5 +48756,176 @@
     "deepFrequencies": {},
     "weight": 1,
     "description": ""
+  },
+  "rs145946881_afr": {
+    "rsid": "rs145946881",
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.001,
+      "SAS": 0.001,
+      "MENA": 0.05
+    },
+    "subFrequencies": {
+      "Maasai": 0.45,
+      "Kikuyu": 0.3,
+      "Dinka": 0.35,
+      "Luo": 0.25
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "MCM6",
+    "trait": "Ancestry",
+    "description": "The primary pastoralist East African lactase persistence variant (-14010*C), strongly selected in Maasai, Kikuyu, and Nilotic-Cushitic pastoralist populations for adult milk digestion.",
+    "chromosome": "2",
+    "position": 135851084
+  },
+  "rs33930165_afr": {
+    "rsid": "rs33930165",
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.005,
+      "SAS": 0.001,
+      "MENA": 0.001
+    },
+    "subFrequencies": {
+      "Mossi": 0.25,
+      "Akan": 0.18,
+      "Yoruba": 0.08,
+      "Ewe": 0.15
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "HBB",
+    "trait": "Hemoglobin C (HbC) West African Malaria Adaptation",
+    "description": "Hemoglobin C variant (Glu6Lys / 19C>A) in HBB, heavily enriched in West Africa (Ghana, Burkina Faso, Ivory Coast, Mali). Confers up to 90% protection against severe Plasmodium falciparum malaria without severe sickle anemia.",
+    "chromosome": "11",
+    "position": 5227002
+  },
+  "rs71785313_afr": {
+    "rsid": "rs71785313",
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "D"
+    ],
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.02,
+      "SAS": 0.001,
+      "MENA": 0.005
+    },
+    "subFrequencies": {
+      "Yoruba": 0.18,
+      "Esan": 0.16,
+      "Mende": 0.14,
+      "Igbo": 0.15
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "APOL1",
+    "trait": "APOL1 Trypanosomiasis Resistance & Kidney Risk (G2)",
+    "description": "APOL1 G2 6bp in-frame deletion variant conferring lytic protection against African Trypanosomiasis (sleeping sickness). Carrying two risk alleles (G1/G1, G2/G2, or G1/G2) increases risk for focal segmental glomerulosclerosis (FSGS) and hypertensive kidney disease.",
+    "chromosome": "22",
+    "position": 36265860
+  },
+  "rs10824040_afr": {
+    "rsid": "rs10824040",
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.15
+    },
+    "subFrequencies": {
+      "San": 0.92,
+      "Dinka": 0.95,
+      "Yoruba": 0.85
+    },
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MFSD12",
+    "trait": "Ancestry",
+    "description": "Variant in MFSD12 identified by Tishkoff et al. (2017) as a major driver of dark skin pigmentation across Sub-Saharan African populations (Nilo-Saharan, Khoisan, Cushitic).",
+    "chromosome": "19",
+    "position": 17642646
+  },
+  "rs28371706_afr": {
+    "rsid": "rs28371706",
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.22,
+      "EUR": 0.002,
+      "EAS": 0.001,
+      "AMR": 0.02,
+      "SAS": 0.005,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Yoruba": 0.28,
+      "Luhya": 0.22,
+      "Gambian": 0.2
+    },
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "CYP2D6",
+    "trait": "CYP2D6*17 Reduced Drug Metabolism",
+    "description": "CYP2D6*17 (C1023T, p.T107I) is an African-enriched reduced-function allele (~20-34% frequency in Black/African populations) altering metabolism of codeine, tamoxifen, beta-blockers, and antidepressants.",
+    "chromosome": "22",
+    "position": 42129180
+  },
+  "rs59421388_afr": {
+    "rsid": "rs59421388",
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.01,
+      "SAS": 0.001,
+      "MENA": 0.005
+    },
+    "subFrequencies": {
+      "Yoruba": 0.12,
+      "Esan": 0.1,
+      "Mende": 0.08
+    },
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "CYP2D6",
+    "trait": "CYP2D6*29 Reduced Drug Metabolism",
+    "description": "CYP2D6*29 (g.3183G>A, p.V343A) is a key African-specific reduced-function metabolizer variant (~7-12% frequency in populations of African descent).",
+    "chromosome": "22",
+    "position": 42127941
   }
 }

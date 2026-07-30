@@ -33228,5 +33228,174 @@
     "deepFrequencies": {},
     "weight": 1,
     "description": ""
+  },
+  "rs10166942_eur": {
+    "rsid": "rs10166942",
+    "region": "European",
+    "color": "#3498DB",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.88,
+      "EAS": 0.15,
+      "AMR": 0.2,
+      "SAS": 0.35,
+      "MENA": 0.4
+    },
+    "subFrequencies": {
+      "Polish": 0.92,
+      "Russian": 0.9,
+      "Finnish": 0.94,
+      "Swedish": 0.89,
+      "Lithuanian": 0.95
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "TRPM8",
+    "trait": "Ancestry",
+    "description": "High-frequency cold-temperature receptor allele (rs10166942-T) selected in northern continental Europe (Baltic, Slavic, Scandinavian) to adapt to sub-freezing winters.",
+    "chromosome": "2",
+    "position": 234057883
+  },
+  "rs5030868_eur": {
+    "rsid": "rs5030868",
+    "region": "European",
+    "color": "#3498DB",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.05,
+      "EAS": 0.001,
+      "AMR": 0.01,
+      "SAS": 0.005,
+      "MENA": 0.08
+    },
+    "subFrequencies": {
+      "Sardinian": 0.12,
+      "Sicilian": 0.08,
+      "Greek": 0.06,
+      "Italian": 0.04
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "G6PD",
+    "trait": "G6PD Mediterranean Malaria Protection & Favism",
+    "description": "The classic Mediterranean G6PD variant (Ser188Phe) conferring malaria protection but predisposing to favism; highly diagnostic for Southern European and Mediterranean island populations.",
+    "chromosome": "X",
+    "position": 154536002
+  },
+  "rs80357906_eur": {
+    "rsid": "rs80357906",
+    "region": "European",
+    "color": "#3498DB",
+    "alleles": [
+      "D"
+    ],
+    "frequencies": {
+      "AFR": 0.0001,
+      "EUR": 0.025,
+      "EAS": 0.0001,
+      "AMR": 0.001,
+      "SAS": 0.0001,
+      "MENA": 0.005
+    },
+    "subFrequencies": {
+      "Ashkenazi Jewish": 0.025
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "BRCA1",
+    "trait": "Ashkenazi Jewish Founder Mutation (BRCA1 185delAG)",
+    "description": "High-frequency founder mutation in BRCA1 (185delAG) resulting from historical medieval bottlenecks in Rhineland/Polish Ashkenazi Jewish communities.",
+    "chromosome": "17",
+    "position": 43057064
+  },
+  "rs80359550_eur": {
+    "rsid": "rs80359550",
+    "region": "European",
+    "color": "#3498DB",
+    "alleles": [
+      "D"
+    ],
+    "frequencies": {
+      "AFR": 0.0001,
+      "EUR": 0.015,
+      "EAS": 0.0001,
+      "AMR": 0.001,
+      "SAS": 0.0001,
+      "MENA": 0.003
+    },
+    "subFrequencies": {
+      "Ashkenazi Jewish": 0.015
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "BRCA2",
+    "trait": "Ashkenazi Jewish Founder Mutation (BRCA2 6174delT)",
+    "description": "Major Ashkenazi Jewish founder allele (6174delT in BRCA2) enriched by medieval population bottlenecks.",
+    "chromosome": "13",
+    "position": 32338166
+  },
+  "rs1801282_eur": {
+    "rsid": "rs1801282",
+    "region": "European",
+    "color": "#3498DB",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.18,
+      "EAS": 0.001,
+      "AMR": 0.02,
+      "SAS": 0.005,
+      "MENA": 0.01
+    },
+    "subFrequencies": {
+      "Irish": 0.28,
+      "Scottish": 0.26,
+      "Welsh": 0.22,
+      "English": 0.14
+    },
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MC1R",
+    "trait": "Ancestry",
+    "description": "Loss-of-function MC1R variant (Arg151Cys) producing pheomelanin, red hair, and freckling; highly enriched in Insular Atlantic Celtic populations.",
+    "chromosome": "16",
+    "position": 89986117
+  },
+  "rs121908698_eur": {
+    "rsid": "rs121908698",
+    "region": "European",
+    "color": "#3498DB",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.04,
+      "EAS": 0.001,
+      "AMR": 0.005,
+      "SAS": 0.01,
+      "MENA": 0.06
+    },
+    "subFrequencies": {
+      "Cypriot": 0.1,
+      "Greek": 0.07,
+      "Sicilian": 0.05,
+      "Italian": 0.03
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "HBB",
+    "trait": "Beta-Thalassemia Mediterranean Founder Variant",
+    "description": "The most common Mediterranean beta-thalassemia mutation (IVS-I-110 G>A), diagnostic for Aegean, Cypriot, and Southern Italian lineages.",
+    "chromosome": "11",
+    "position": 5225676
   }
 }

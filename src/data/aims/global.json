@@ -477060,5 +477060,92 @@
     "deepFrequencies": {},
     "weight": 5,
     "description": "Highly informative AIM for Andamanese ancestry, distinct from mainland South Asians"
+  },
+  "rs738409_glb": {
+    "rsid": "rs738409",
+    "region": "Native American",
+    "color": "#9B59B6",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.14,
+      "EUR": 0.23,
+      "EAS": 0.35,
+      "AMR": 0.72,
+      "SAS": 0.28,
+      "MENA": 0.25
+    },
+    "subFrequencies": {
+      "Karitiana": 0.88,
+      "Mayan": 0.78,
+      "Mixtec": 0.75,
+      "Iberian": 0.32
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "PNPLA3",
+    "trait": "Ancestry",
+    "description": "High-frequency variant in PNPLA3 (I148M) associated with liver fat regulation, showing strong divergence between Iberian/Latin American vs Northern European cohorts.",
+    "chromosome": "22",
+    "position": 43928847
+  },
+  "rs373863828_glb": {
+    "rsid": "rs373863828",
+    "region": "Oceanian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.0001,
+      "EUR": 0.0001,
+      "EAS": 0.02,
+      "AMR": 0.0001,
+      "SAS": 0.0001,
+      "MENA": 0.0001,
+      "OCE": 0.45
+    },
+    "subFrequencies": {
+      "Samoan": 0.45,
+      "Tongan": 0.4,
+      "Maori": 0.35,
+      "Filipino": 0.1
+    },
+    "deepFrequencies": {},
+    "weight": 10,
+    "gene": "CREBRF",
+    "trait": "Ancestry",
+    "description": "Missense variant in CREBRF (R457Q) unique to Austronesian and Polynesian populations, promoting energy storage during open-ocean maritime voyaging.",
+    "chromosome": "5",
+    "position": 120536767
+  },
+  "rs7388531_glb": {
+    "rsid": "rs7388531",
+    "region": "East Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.05,
+      "EAS": 0.95,
+      "AMR": 0.6,
+      "SAS": 0.15,
+      "MENA": 0.08
+    },
+    "subFrequencies": {
+      "Korean": 0.99,
+      "Han": 0.95,
+      "Japanese": 0.92
+    },
+    "deepFrequencies": {},
+    "weight": 9,
+    "gene": "ABCC11",
+    "trait": "Ancestry",
+    "description": "Loss-of-function allele (538G>A) near 100% fixed in East Asians (Han, Korean, Japanese) and high in Siberian/Native American populations, producing dry earwax and reduced body odor.",
+    "chromosome": "16",
+    "position": 48224287
   }
 }

@@ -25680,7 +25680,9 @@
   {
     "markerId": "M26",
     "rsid": "rs1018890698",
-    "aliases": ["rs1018890698"],
+    "aliases": [
+      "rs1018890698"
+    ],
     "category": "Ancestry",
     "trait": "Haplogroup I2a1a",
     "description": "Defining marker for Haplogroup I2a1a (Sardinian).",
@@ -25689,5 +25691,421 @@
       "A"
     ],
     "continent": "European"
+  },
+  {
+    "markerId": "rs121908528",
+    "rsid": "rs121908528",
+    "gene": "NDRG1",
+    "trait": "Charcot-Marie-Tooth Disease Type 4D (Lom) Founder Mutation",
+    "continent": "South Asian / Romani",
+    "subpop": "Roma",
+    "alleles": [
+      "A"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "A major founder mutation (p.L371fs) in the NDRG1 gene causing Charcot-Marie-Tooth disease type 4D (CMT4D), highly prevalent in Romani populations.",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.01,
+      "EAS": 0,
+      "SAS": 0.05,
+      "AMR": 0
+    }
+  },
+  {
+    "markerId": "rs72552725",
+    "rsid": "rs72552725",
+    "gene": "CHRNE",
+    "trait": "Congenital Myasthenic Syndrome Romani Founder Mutation",
+    "continent": "South Asian / Romani",
+    "subpop": "Roma",
+    "alleles": [
+      "D"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "A frame-shift founder mutation (1267delG) in the CHRNE gene, common in European Romani populations and causing congenital myasthenic syndrome.",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.005,
+      "EAS": 0,
+      "SAS": 0.02,
+      "AMR": 0
+    }
+  },
+  {
+    "markerId": "rs28936658",
+    "rsid": "rs28936658",
+    "gene": "CYP1B1",
+    "trait": "Primary Congenital Glaucoma Romani Founder Mutation",
+    "continent": "South Asian / Romani",
+    "subpop": "Roma",
+    "alleles": [
+      "A"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "CYP1B1 E387K is a major founder mutation causing primary congenital glaucoma in Romani communities, reflecting historical population bottlenecks.",
+    "frequencies": {
+      "AFR": 0,
+      "EUR": 0.008,
+      "EAS": 0,
+      "SAS": 0.03,
+      "AMR": 0
+    }
+  },
+  {
+    "markerId": "rs9000246_Roma",
+    "rsid": "rs9000246",
+    "gene": "N/A",
+    "trait": "Roma Ancestry Marker",
+    "continent": "European",
+    "subpop": "Roma",
+    "alleles": [
+      "G"
+    ],
+    "significance": "Medium",
+    "category": "Ancestry",
+    "description": "Ancestry Informative Marker for Roma populations.",
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.05,
+      "EAS": 0.05,
+      "EUR": 0.52,
+      "SAS": 0.31,
+      "MENA": 0.05
+    }
+  },
+  {
+    "markerId": "rs9000247_Roma",
+    "rsid": "rs9000247",
+    "gene": "N/A",
+    "trait": "Roma Ancestry Marker",
+    "continent": "European",
+    "subpop": "Roma",
+    "alleles": [
+      "C"
+    ],
+    "significance": "Medium",
+    "category": "Ancestry",
+    "description": "Ancestry Informative Marker for Roma populations.",
+    "frequencies": {
+      "AFR": 0.04,
+      "AMR": 0.05,
+      "EAS": 0.05,
+      "EUR": 0.55,
+      "SAS": 0.28,
+      "MENA": 0.05
+    }
+  },
+  {
+    "markerId": "rs9000248_Roma",
+    "rsid": "rs9000248",
+    "gene": "N/A",
+    "trait": "Roma Ancestry Marker",
+    "continent": "European",
+    "subpop": "Roma",
+    "alleles": [
+      "T"
+    ],
+    "significance": "Medium",
+    "category": "Ancestry",
+    "description": "Ancestry Informative Marker for Roma populations.",
+    "frequencies": {
+      "AFR": 0.05,
+      "AMR": 0.04,
+      "EAS": 0.06,
+      "EUR": 0.48,
+      "SAS": 0.32,
+      "MENA": 0.05
+    }
+  },
+  {
+    "markerId": "rs145946881",
+    "rsid": "rs145946881",
+    "gene": "MCM6",
+    "trait": "East African Lactase Persistence (-14010C)",
+    "continent": "African",
+    "subpop": "Maasai / Nilotic",
+    "alleles": [
+      "C"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "The primary pastoralist East African lactase persistence variant (-14010*C), strongly selected in Maasai, Kikuyu, and Nilotic-Cushitic pastoralist populations for adult milk digestion.",
+    "frequencies": {
+      "AFR": 0.35,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.001,
+      "SAS": 0.001,
+      "MENA": 0.05
+    }
+  },
+  {
+    "markerId": "rs41525747",
+    "rsid": "rs41525747",
+    "gene": "MCM6",
+    "trait": "Sahelian & Horn of Africa Lactase Persistence (-13915G)",
+    "continent": "African",
+    "subpop": "Somali / Fulani",
+    "alleles": [
+      "G"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "The Sahelian, Afro-Asiatic, and Horn of Africa lactase persistence variant (-13915*G), selected in Somali, Fulani, Beja, and Bedouin pastoralist groups.",
+    "frequencies": {
+      "AFR": 0.25,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.001,
+      "SAS": 0.01,
+      "MENA": 0.4
+    }
+  },
+  {
+    "markerId": "rs33930165",
+    "rsid": "rs33930165",
+    "gene": "HBB",
+    "trait": "Hemoglobin C (HbC) West African Malaria Adaptation",
+    "continent": "African",
+    "subpop": "Yoruba / Akan / Mossi",
+    "alleles": [
+      "A"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "Hemoglobin C variant (Glu6Lys / 19C>A) in HBB, heavily enriched in West Africa (Ghana, Burkina Faso, Ivory Coast, Mali). Confers up to 90% protection against severe Plasmodium falciparum malaria without severe sickle anemia.",
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.005,
+      "SAS": 0.001,
+      "MENA": 0.001
+    }
+  },
+  {
+    "markerId": "rs71785313",
+    "rsid": "rs71785313",
+    "gene": "APOL1",
+    "trait": "APOL1 Trypanosomiasis Resistance & Kidney Risk (G2)",
+    "continent": "African",
+    "subpop": "West African / African Diaspora",
+    "alleles": [
+      "D"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "APOL1 G2 6bp in-frame deletion variant conferring lytic protection against African Trypanosomiasis (sleeping sickness). Carrying two risk alleles (G1/G1, G2/G2, or G1/G2) increases risk for focal segmental glomerulosclerosis (FSGS) and hypertensive kidney disease.",
+    "frequencies": {
+      "AFR": 0.15,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.02,
+      "SAS": 0.001,
+      "MENA": 0.005
+    }
+  },
+  {
+    "markerId": "rs10824040",
+    "rsid": "rs10824040",
+    "gene": "MFSD12",
+    "trait": "Sub-Saharan African Pigmentation Adaptation",
+    "continent": "African",
+    "subpop": "Nilo-Saharan / Khoe-San / Niger-Congo",
+    "alleles": [
+      "T"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "Variant in MFSD12 identified by Tishkoff et al. (2017) as a major driver of dark skin pigmentation across Sub-Saharan African populations (Nilo-Saharan, Khoisan, Cushitic).",
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.02,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.15
+    }
+  },
+  {
+    "markerId": "rs28371706",
+    "rsid": "rs28371706",
+    "gene": "CYP2D6",
+    "trait": "CYP2D6*17 Reduced Drug Metabolism",
+    "continent": "African",
+    "subpop": "West African / Bantu",
+    "alleles": [
+      "T"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "CYP2D6*17 (C1023T, p.T107I) is an African-enriched reduced-function allele (~20-34% frequency in Black/African populations) altering metabolism of codeine, tamoxifen, beta-blockers, and antidepressants.",
+    "frequencies": {
+      "AFR": 0.22,
+      "EUR": 0.002,
+      "EAS": 0.001,
+      "AMR": 0.02,
+      "SAS": 0.005,
+      "MENA": 0.01
+    }
+  },
+  {
+    "markerId": "rs59421388",
+    "rsid": "rs59421388",
+    "gene": "CYP2D6",
+    "trait": "CYP2D6*29 Reduced Drug Metabolism",
+    "continent": "African",
+    "subpop": "West African / African Diaspora",
+    "alleles": [
+      "A"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "CYP2D6*29 (g.3183G>A, p.V343A) is a key African-specific reduced-function metabolizer variant (~7-12% frequency in populations of African descent).",
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.001,
+      "EAS": 0.001,
+      "AMR": 0.01,
+      "SAS": 0.001,
+      "MENA": 0.005
+    }
+  },
+  {
+    "markerId": "rs10166942",
+    "rsid": "rs10166942",
+    "gene": "TRPM8",
+    "trait": "Cold-Temperature Receptor Adaptation (Slavic / Baltic / Scandinavian)",
+    "continent": "European",
+    "subpop": "Baltic / Slavic / Scandinavian",
+    "alleles": [
+      "T"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "High-frequency cold-temperature receptor allele (rs10166942-T) selected in northern continental Europe (Baltic, Slavic, Scandinavian) to adapt to sub-freezing winters.",
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.88,
+      "EAS": 0.15,
+      "AMR": 0.2,
+      "SAS": 0.35,
+      "MENA": 0.4
+    }
+  },
+  {
+    "markerId": "rs5030868",
+    "rsid": "rs5030868",
+    "gene": "G6PD",
+    "trait": "G6PD Mediterranean Malaria Protection & Favism",
+    "continent": "European",
+    "subpop": "Italian / Sicilian / Greek / Sardinian",
+    "alleles": [
+      "T"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "The classic Mediterranean G6PD variant (Ser188Phe) conferring malaria protection but predisposing to favism; highly diagnostic for Southern European and Mediterranean island populations.",
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.05,
+      "EAS": 0.001,
+      "AMR": 0.01,
+      "SAS": 0.005,
+      "MENA": 0.08
+    }
+  },
+  {
+    "markerId": "rs80359550",
+    "rsid": "rs80359550",
+    "gene": "BRCA2",
+    "trait": "Ashkenazi Jewish Founder Mutation (BRCA2 6174delT)",
+    "continent": "European",
+    "subpop": "Ashkenazi Jewish",
+    "alleles": [
+      "D"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "Major Ashkenazi Jewish founder allele (6174delT in BRCA2) enriched by medieval population bottlenecks.",
+    "frequencies": {
+      "AFR": 0.0001,
+      "EUR": 0.015,
+      "EAS": 0.0001,
+      "AMR": 0.001,
+      "SAS": 0.0001,
+      "MENA": 0.003
+    }
+  },
+  {
+    "markerId": "rs121908698",
+    "rsid": "rs121908698",
+    "gene": "HBB",
+    "trait": "Beta-Thalassemia Mediterranean Founder Variant",
+    "continent": "European",
+    "subpop": "Greek / Italian / Cypriot",
+    "alleles": [
+      "A"
+    ],
+    "significance": "High",
+    "category": "Health",
+    "description": "The most common Mediterranean beta-thalassemia mutation (IVS-I-110 G>A), diagnostic for Aegean, Cypriot, and Southern Italian lineages.",
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.04,
+      "EAS": 0.001,
+      "AMR": 0.005,
+      "SAS": 0.01,
+      "MENA": 0.06
+    }
+  },
+  {
+    "markerId": "rs738409",
+    "rsid": "rs738409",
+    "gene": "PNPLA3",
+    "trait": "Hepatic Fat Storage & Feast-and-Famine Metabolism",
+    "continent": "Native American",
+    "subpop": "Iberian / Native American / Mesoamerican",
+    "alleles": [
+      "G"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "High-frequency variant in PNPLA3 (I148M) associated with liver fat regulation, showing strong divergence between Iberian/Latin American vs Northern European cohorts.",
+    "frequencies": {
+      "AFR": 0.14,
+      "EUR": 0.23,
+      "EAS": 0.35,
+      "AMR": 0.72,
+      "SAS": 0.28,
+      "MENA": 0.25
+    }
+  },
+  {
+    "markerId": "rs373863828",
+    "rsid": "rs373863828",
+    "gene": "CREBRF",
+    "trait": "Austronesian & Polynesian Thrifty Fasting Adaptation",
+    "continent": "Oceanian",
+    "subpop": "Polynesian / Samoan / Filipino",
+    "alleles": [
+      "A"
+    ],
+    "significance": "High",
+    "category": "Ancestry",
+    "description": "Missense variant in CREBRF (R457Q) unique to Austronesian and Polynesian populations, promoting energy storage during open-ocean maritime voyaging.",
+    "frequencies": {
+      "AFR": 0.0001,
+      "EUR": 0.0001,
+      "EAS": 0.02,
+      "AMR": 0.0001,
+      "SAS": 0.0001,
+      "MENA": 0.0001,
+      "OCE": 0.45
+    }
   }
 ]
