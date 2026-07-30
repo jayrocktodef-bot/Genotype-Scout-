@@ -38,6 +38,7 @@ import {
   History
 } from 'lucide-react';
 import { MethodologyModal } from "./components/MethodologyModal";
+import { calculateAdmixtureCI, calculateHaplogroupConfidence } from "./utils/statistics/confidenceEngine";
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
@@ -370,7 +371,7 @@ const ProfileSummary = memo(
           Number(percentage),
           markersUsed,
         );
-        return { pop, percentage, ...confidence };
+        return { pop, ...confidence };
       });
     }, [oracleResults]);
 
@@ -575,29 +576,37 @@ const ProfileSummary = memo(
                       Top Subpopulation Contributions
                     </span>
                     {sortedEngineResults.length > 0 ? (
-                      sortedEngineResults.slice(0, 5).map((pop, idx) => (
-                        <div
-                          key={idx}
-                          className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition hover:border-cyan-500/30"
-                        >
-                          <div className="flex justify-between items-center text-xs min-w-0 gap-2">
-                            <span className="font-bold text-slate-200 truncate min-w-0">
-                              {pop.name}
-                            </span>
-                            <span className="font-mono font-black text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full text-[10px]">
-                              {(pop.percentage || 0).toFixed(1)}%
-                            </span>
+                      sortedEngineResults.slice(0, 5).map((pop, idx) => {
+                        const ci = calculateAdmixtureCI(pop.percentage || 0, dataset?.snpsCount || 1000);
+                        return (
+                          <div
+                            key={idx}
+                            className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition hover:border-cyan-500/30"
+                          >
+                            <div className="flex justify-between items-center text-xs min-w-0 gap-2">
+                              <span className="font-bold text-slate-200 truncate min-w-0">
+                                {pop.name}
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="font-mono text-[9px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
+                                  95% CI: [{ci.low}%–{ci.high}%]
+                                </span>
+                                <span className="font-mono font-black text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full text-[10px]">
+                                  {(pop.percentage || 0).toFixed(1)}%
+                                </span>
+                              </div>
+                            </div>
+                            <div className="w-full bg-slate-800/70 rounded-full h-1.5 mt-2 overflow-hidden">
+                              <div
+                                className="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full transition-all"
+                                style={{
+                                  width: `${Math.max(pop.percentage || 0, 2)}%`,
+                                }}
+                              />
+                            </div>
                           </div>
-                          <div className="w-full bg-slate-800/70 rounded-full h-1.5 mt-2 overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full transition-all"
-                              style={{
-                                width: `${Math.max(pop.percentage || 0, 2)}%`,
-                              }}
-                            />
-                          </div>
-                        </div>
-                      ))
+                        );
+                      })
                     ) : (
                       <div className="py-8 text-center text-xs text-slate-500">
                         No advanced subpopulation data present.
