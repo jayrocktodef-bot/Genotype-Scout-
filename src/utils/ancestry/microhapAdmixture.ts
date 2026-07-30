@@ -62,8 +62,8 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
   // 1. Check block-based haplotypes from microHapKernel if present
   if (Array.isArray(microHapKernel) && microHapKernel.length > 0) {
     microHapKernel.forEach((hap: any) => {
-      const locusAlleles: string[][] = [];
       let hasAllSnps = true;
+      const userAlleles: string[] = [];
 
       for (const rsid of hap.snps) {
         const g = normalizedSnps[rsid.toLowerCase()];
@@ -72,50 +72,37 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
           break;
         }
         const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
-        const alleles = Array.from(new Set(cleanG.split('')));
-        if (alleles.length === 0) {
-          hasAllSnps = false;
-          break;
-        }
-        locusAlleles.push(alleles);
+        userAlleles.push(cleanG[0] || 'A');
       }
 
       if (!hasAllSnps) return;
 
-      const cartesian = (arrays: string[][]): string[][] => {
-        return arrays.reduce((acc, curr) => {
-          return acc.flatMap(d => curr.map(e => [...d, e]));
-        }, [[]] as string[][]);
-      };
+      const hapStrNoColons = userAlleles.join('');
+      const hapStrWithColons = userAlleles.join(':');
 
-      const possibleHaploVectors = cartesian(locusAlleles);
-      const numHaplos = possibleHaploVectors.length;
-      if (numHaplos === 0) return;
+      const freqs: Record<string, number> = {};
 
-      const dosagePerHaplo = 2.0 / numHaplos;
-      const dbEntry = (microHapDb as any)[hap.id];
-      if (!dbEntry || !dbEntry.alleles) return;
-
-      possibleHaploVectors.forEach((vector) => {
-        const haplotypeString = vector.join(':');
-        const matchIdx = dbEntry.alleles.indexOf(haplotypeString);
-        if (matchIdx !== -1) {
-          const freqs: Record<string, number> = {};
-          Object.entries(dbEntry.frequencies).forEach(([pop, freqArray]: [string, any]) => {
-            if (Array.isArray(freqArray)) {
-              freqs[pop] = freqArray[matchIdx] || 0;
-            } else if (typeof freqArray === 'number') {
-              freqs[pop] = freqArray;
-            }
-          });
-
-          matchedHaps.push({
-            id: hap.id,
-            dosage: dosagePerHaplo,
-            freqs
+      if (hap.weights) {
+        Object.entries(hap.weights).forEach(([pop, map]: [string, any]) => {
+          const f = map[hapStrNoColons] ?? map[hapStrWithColons] ?? 0;
+          freqs[pop] = f;
+        });
+      } else {
+        const dbEntry = (microHapDb as any)[hap.id];
+        if (dbEntry && dbEntry.frequencies) {
+          Object.entries(dbEntry.frequencies).forEach(([pop, val]: [string, any]) => {
+            freqs[pop] = typeof val === 'number' ? val : (Array.isArray(val) ? val[0] : 0);
           });
         }
-      });
+      }
+
+      if (Object.keys(freqs).length > 0) {
+        matchedHaps.push({
+          id: hap.id,
+          dosage: 1.0,
+          freqs
+        });
+      }
     });
   }
 
@@ -129,8 +116,7 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
     if (!g || g === '--' || g === '00' || g === '??') return;
 
     const cleanG = g.toUpperCase().replace(/[\s\/_]/g, '');
-    const ref = (dbEntry.ref || 'A').toUpperCase();
-    const alt = (dbEntry.alt || 'G').toUpperCase();
+    const alt = (dbEntry.alt || aimEntry.alt || 'G').toUpperCase();
     let dosage = 0;
     for (const char of cleanG) {
       if (char === alt) dosage += 1.0;
@@ -151,7 +137,7 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
     if (Object.keys(freqs).length > 0) {
       matchedHaps.push({
         id: aimKey,
-        dosage,
+        dosage: dosage / 2.0,
         freqs
       });
     }
@@ -163,7 +149,15 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
 
   const popSet = new Set<string>();
   matchedHaps.forEach(h => Object.keys(h.freqs).forEach(p => popSet.add(p)));
-  const popCodes = Array.from(popSet).filter(p => p !== 'GLOBAL' && p !== 'ALL');
+  
+  const superPops = new Set(['AFR', 'EUR', 'EAS', 'SAS', 'AMR']);
+  let popCodes = Array.from(popSet).filter(p => p !== 'GLOBAL' && p !== 'ALL');
+  
+  // If macro superpopulation frequencies exist (EUR, AFR, EAS, SAS, AMR), isolate them from sub-clades to prevent zero-fill bias
+  const hasSuperPops = popCodes.some(p => superPops.has(p));
+  if (hasSuperPops) {
+    popCodes = popCodes.filter(p => superPops.has(p));
+  }
 
   const M = matchedHaps.length;
   const userDosages = new Float32Array(M);
@@ -171,13 +165,12 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
   popCodes.forEach(p => {
     popExpectedDosages[p] = new Float32Array(M);
   });
-  const aimWeights = new Float32Array(M);
+  const aimWeights = new Float32Array(M).fill(1.5);
 
   matchedHaps.forEach((h: any, idx) => {
     userDosages[idx] = h.dosage;
-    aimWeights[idx] = 1.5;
     popCodes.forEach(p => {
-      popExpectedDosages[p][idx] = (h.freqs[p] || 0) * 2.0;
+      popExpectedDosages[p][idx] = h.freqs[p] ?? 0;
     });
   });
 
