@@ -375,12 +375,15 @@ const ProfileSummary = memo(
     }, [oracleResults]);
 
     const sortedEngineResults = useMemo(() => {
-      const subpopOracle = dataset?.analysis?.subpopulationOracle;
-      const admixtureMix = subpopOracle?.admixtureMix || [];
-      return [...admixtureMix]
+      const subpops = oracleResults?.primary?.subPopulations || {};
+      return Object.values(subpops).flat()
+        .map((p: any) => ({
+          name: p.name,
+          percentage: p.percentage || 0
+        }))
         .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
         .slice(0, 5);
-    }, [dataset]);
+    }, [oracleResults]);
 
     if (!dataset) return null;
 
@@ -543,14 +546,14 @@ const ProfileSummary = memo(
                       Top Subpopulation Contributions
                     </span>
                     {sortedEngineResults.length > 0 ? (
-                      sortedEngineResults.slice(0, 4).map((pop, idx) => (
+                      sortedEngineResults.slice(0, 5).map((pop, idx) => (
                         <div
                           key={idx}
                           className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition hover:border-cyan-500/30"
                         >
                           <div className="flex justify-between items-center text-xs min-w-0 gap-2">
                             <span className="font-bold text-slate-200 truncate min-w-0">
-                              {formatPopName(pop.name || pop.popCode)}
+                              {formatPopName(pop.name)}
                             </span>
                             <span className="font-mono font-black text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full text-[10px]">
                               {(pop.percentage || 0).toFixed(1)}%
