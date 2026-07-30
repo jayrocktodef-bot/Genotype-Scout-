@@ -167,7 +167,7 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
   const uniqueMarkers = Array.from(new Map(testedMarkers.map(m => [m.marker, m])).values());
 
   let prediction = null;
-  if (bestNode && bestNode.branchName !== "Y-DNA Root (Adam)") {
+  if (bestNode && bestNode.branchName !== "Y-DNA Root (Adam)" && maxDerivedCount > 0) {
     const details = getHaplogroupDetails(bestNode.branchName, false);
     prediction = {
       name: bestNode.branchName.replace("Haplogroup ", ""),
@@ -179,7 +179,7 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
 
   // If we have a very specific ISOGG match that is deeper than our basic tree prediction
   // or if we have no basic tree prediction, use ISOGG.
-  let finalPath = bestPath;
+  let finalPath = maxDerivedCount > 0 ? bestPath : [];
   // Only let an ISOGG deep-match become the terminal call when it is ALLELE-CONFIRMED
   // (>=2 derived markers) AND carries more confirmed-derived evidence than the curated
   // tree path. The old logic overrode on mere SNP *presence* + branch-name length, which
@@ -203,17 +203,22 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
     }
   }
 
+  // If no derived Y-markers found at all in Phase 1 or ISOGG
+  if (maxDerivedCount <= 0 && (!topIsogg || topIsogg.derivedCount < 2)) {
+    prediction = null;
+    finalPath = [];
+  }
+
   // === PHASE 2: Run enriched Y-phylotree analysis ===
   let phase2Result: any = null;
   try {
     const phase2Analysis = analyzePhase2YDna(yMap);
     if (phase2Analysis) {
       phase2Result = formatPhase2Result(phase2Analysis);
-      
-      // Log Phase 2 findings
-      console.log(`[Phase 2] Haplogroup: ${phase2Result.haplogroup}, Confidence: ${phase2Result.confidence}%, Coverage: ${phase2Result.coverage}%`);
-      if (phase2Result.rejectedBranches.length > 0) {
-        console.log(`[Phase 2] Rejected branches (ancestral SNPs): ${phase2Result.rejectedBranches.join(', ')}`);
+      if (phase2Result.derivedMarkers === 0) {
+        phase2Result = null;
+      } else {
+        console.log(`[Phase 2] Haplogroup: ${phase2Result.haplogroup}, Confidence: ${phase2Result.confidence}%, Coverage: ${phase2Result.coverage}%`);
       }
     }
   } catch (e) {

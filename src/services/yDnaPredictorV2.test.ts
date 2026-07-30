@@ -170,9 +170,9 @@ describe('YDnaPredictorV2', () => {
         { name: 'M168', rsid: 'rs1234', allele: 'C' },
       ]);
 
-      // CT should be rejected; best should be A
+      // CT should be rejected; best should be N/A
       expect(result.rejectedBranches).toContain('CT');
-      expect(result.terminalHaplogroup).toBe('A');
+      expect(result.terminalHaplogroup).toBe('N/A');
     });
 
     it('still traverses other branches after rejecting one', () => {
@@ -287,7 +287,7 @@ describe('YDnaPredictorV2', () => {
       const predictor = new YDnaPredictorV2(dataset);
 
       const result = predictor.predict([]);
-      expect(result.terminalHaplogroup).toBe('A');
+      expect(result.terminalHaplogroup).toBe('N/A');
       expect(result.confidence).toBe(0);
     });
 

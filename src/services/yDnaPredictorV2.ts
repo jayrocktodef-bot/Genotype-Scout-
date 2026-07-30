@@ -190,13 +190,15 @@ export class YDnaPredictorV2 {
     // Root of the Y-DNA tree is 'A'
     traverse('A', 1, [], new Set<string>(), new Set<string>());
 
+    const finalTerminal = bestDerived > 0 ? bestTerminal : 'N/A';
+
     return {
-      terminalHaplogroup: bestTerminal,
-      confidence: Math.round(bestConfidence * 100) / 100,
-      coverage: Math.round(bestCoverage * 100) / 100,
+      terminalHaplogroup: finalTerminal,
+      confidence: bestDerived > 0 ? Math.round(bestConfidence * 100) / 100 : 0,
+      coverage: bestDerived > 0 ? Math.round(bestCoverage * 100) / 100 : 0,
       derivedSnpCount: bestDerived,
       ancestralSnpCount: bestAncestral,
-      path: bestPath,
+      path: bestDerived > 0 ? bestPath : [],
       rejectedBranches,
     };
   }

@@ -88,6 +88,20 @@ export function formatPhase2Result(result: YDnaPredictionDetails): {
   region: string;
   description: string;
 } {
+  if (result.derivedSnpCount === 0 || result.terminalHaplogroup === 'N/A') {
+    return {
+      haplogroup: 'N/A',
+      confidence: 0,
+      coverage: 0,
+      derivedMarkers: 0,
+      ancestralMarkers: result.ancestralSnpCount,
+      path: [],
+      rejectedBranches: [],
+      region: 'N/A',
+      description: 'No derived Y-chromosome markers detected (Female XX genotype or no Y-chromosome coverage).'
+    };
+  }
+
   const details = getHaplogroupDetails(result.terminalHaplogroup, false);
   return {
     haplogroup: result.terminalHaplogroup,
