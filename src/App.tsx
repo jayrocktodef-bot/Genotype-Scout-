@@ -58,7 +58,7 @@ const PopulationComparisonTab = lazy(() => import("./components/PopulationCompar
 const MarkerBenchmarks = lazy(() => import("./components/MarkerBenchmarks").then(m => ({ default: m.MarkerBenchmarks })));
 const SubpopulationBento = lazy(() => import("./components/SubpopulationBento"));
 const SubpopulationGlossaryTab = lazy(() => import("./components/SubpopulationGlossaryTab").then(m => ({ default: m.SubpopulationGlossaryTab })));
-import { processSubpopulations } from "./components/ancestryOracleLogic";
+import { processSubpopulations, humanizePopName } from "./components/ancestryOracleLogic";
 import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
@@ -375,15 +375,44 @@ const ProfileSummary = memo(
     }, [oracleResults]);
 
     const sortedEngineResults = useMemo(() => {
+      const subOracle = dataset?.analysis?.subpopulationOracle || oracleResults?.subpopulationOracle;
+      const allOracle = subOracle?.all || subOracle;
+
+      // 1. Prefer high-precision NNLS subpopulation admixture mix from (K61 All) subpopulationOracle
+      const mix = allOracle?.admixtureMix;
+      if (mix && Array.isArray(mix) && mix.length > 0) {
+        const sorted = mix
+          .filter((item: any) => (item.percentage || 0) > 0.1)
+          .map((item: any) => ({
+            name: humanizePopName(item.name || item.subpop || item.popCode),
+            percentage: Number(item.percentage) || 0
+          }))
+          .sort((a: any, b: any) => b.percentage - a.percentage);
+        if (sorted.length > 0) return sorted.slice(0, 5);
+      }
+
+      // 2. Secondary: Top Population Matches (Closest Distances) from (K61 All) subpopulationOracle
+      const breakdown = allOracle?.breakdown;
+      if (breakdown && Array.isArray(breakdown) && breakdown.length > 0) {
+        const sorted = breakdown
+          .slice(0, 5)
+          .map((item: any) => ({
+            name: humanizePopName(item.subpop || item.name || item.popCode),
+            percentage: Number(item.similarityScore || Math.max(0, 100 - (item.distance || 0) * 10)) || 0
+          }));
+        if (sorted.length > 0) return sorted;
+      }
+
+      // 3. Fallback: oracleResults primary subPopulations
       const subpops = oracleResults?.primary?.subPopulations || {};
       return Object.values(subpops).flat()
         .map((p: any) => ({
-          name: p.name,
+          name: humanizePopName(p.name),
           percentage: p.percentage || 0
         }))
         .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
         .slice(0, 5);
-    }, [oracleResults]);
+    }, [dataset, oracleResults]);
 
     if (!dataset) return null;
 
@@ -553,7 +582,7 @@ const ProfileSummary = memo(
                         >
                           <div className="flex justify-between items-center text-xs min-w-0 gap-2">
                             <span className="font-bold text-slate-200 truncate min-w-0">
-                              {formatPopName(pop.name)}
+                              {pop.name}
                             </span>
                             <span className="font-mono font-black text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full text-[10px]">
                               {(pop.percentage || 0).toFixed(1)}%
