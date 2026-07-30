@@ -20,6 +20,7 @@ import { pruneMarkersByPhysicalDistance } from '../utils/ancestry/ldPruner';
 import forensicPanels from '../data/raw_aims/forensic_panels.json';
 import microHapKernel from '../data/raw_aims/microhap_top100_kernel.json';
 import { deconvolveMicrohaplotypes } from '../utils/ancestry/microhapAdmixture';
+import { refineWithSecretorStatus } from '../utils/ancestry/secretorPostProcessor';
 
 export interface AIM {
   rsid: string;
@@ -1298,6 +1299,27 @@ export async function processSubpopulations(
         percentage
       }))
       .sort((a, b) => b.percentage - a.percentage);
+
+    // Apply FUT2 Secretor Status Post-Processing Refinement
+    const userSnpMap: Record<string, string> = {};
+    userGenotypes.forEach(g => {
+      if (g.rsid && g.genotype) {
+        userSnpMap[g.rsid.toLowerCase()] = g.genotype;
+      }
+    });
+
+    const unrefined = admixtureMix.map(m => ({ subpop: m.popCode, percentage: m.percentage }));
+    const secretorRefined = refineWithSecretorStatus(unrefined, userSnpMap);
+    
+    if (secretorRefined.appliedAdjustments.length > 0) {
+      console.log('[Post-Processor FUT2] Applied Secretor refinements:', secretorRefined.appliedAdjustments.join('; '));
+    }
+
+    const refinedMap = new Map(secretorRefined.refinedWeights.map(r => [r.subpop, r.percentage]));
+    admixtureMix = admixtureMix.map(m => ({
+      ...m,
+      percentage: refinedMap.get(m.popCode) ?? m.percentage
+    })).sort((a, b) => b.percentage - a.percentage);
   }
 
   if (admixtureMix.length === 0) {
