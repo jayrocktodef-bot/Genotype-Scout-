@@ -39,9 +39,20 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setSelectedFileName(e.target.files[0].name);
-      onFiles(e.target.files);
+    if (e.target.files && e.target.files.length > 0) {
+      const files = e.target.files;
+      setSelectedFileName(files[0].name);
+      onFiles(files);
+      e.target.value = '';
+    }
+  };
+
+  const handleZoneClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+      fileInputRef.current.click();
     }
   };
 
@@ -68,6 +79,16 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
       {/* Background ambient glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-teal-500/10 to-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
 
+      {/* Hidden File Input placed outside dropzone container to avoid nested click bubbling */}
+      <input 
+        type="file" 
+        ref={fileInputRef} 
+        onChange={handleFileChange}
+        className="hidden" 
+        accept=".txt,.csv,.zip,.tsv,.gz,.vcf,.dat,text/plain,text/csv,application/zip,application/x-zip-compressed,*"
+        multiple
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -93,7 +114,7 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
           onDragOver={handleDrag}
           onDragLeave={handleDrag}
           onDrop={handleDrop}
-          onClick={() => fileInputRef.current?.click()}
+          onClick={handleZoneClick}
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.99 }}
           className={`relative max-w-2xl mx-auto mb-12 p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border-2 border-dashed cursor-pointer transition-all duration-300 overflow-hidden ${
@@ -127,14 +148,6 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
               Select File Manually
             </span>
           </div>
-
-          <input 
-            type="file" 
-            ref={fileInputRef} 
-            onChange={handleFileChange}
-            className="hidden" 
-            accept=".txt,.csv,.zip"
-          />
         </motion.div>
 
         {/* Decluttered Interactive Info Panel */}

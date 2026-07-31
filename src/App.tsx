@@ -2550,7 +2550,12 @@ export default function App() {
           setActiveTab(tab);
           setCurrentApp(null);
         }} 
-        onUploadNew={() => fileRef.current?.click()}
+        onUploadNew={() => {
+          if (fileRef.current) {
+            fileRef.current.value = '';
+            fileRef.current.click();
+          }
+        }}
         hasResults={!!results}
         theme={theme}
         onThemeToggle={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
@@ -2563,13 +2568,14 @@ export default function App() {
         ref={fileRef} 
         type="file" 
         className="hidden" 
-        accept=".csv,.txt,.zip" 
+        accept=".txt,.csv,.zip,.tsv,.gz,.vcf,.dat,text/plain,text/csv,application/zip,application/x-zip-compressed,*" 
         multiple 
         onChange={(e) => {
-          if (e.target.files) {
+          if (e.target.files && e.target.files.length > 0) {
             setError(null);
             const newFiles = Array.from(e.target.files);
             setPendingFiles(prev => [...prev, ...newFiles]);
+            e.target.value = '';
           }
         }} 
       />
