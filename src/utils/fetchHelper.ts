@@ -18,9 +18,23 @@ export async function fetchJsonAsset(relativeUrl: string): Promise<any> {
     }
   }
 
-  const response = await fetch(relativeUrl);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch JSON asset: ${relativeUrl} (status: ${response.status})`);
+  const pathsToTry = [
+    relativeUrl,
+    './' + cleanUrl,
+    (typeof location !== 'undefined' && location.origin ? location.origin : '') + '/' + cleanUrl
+  ];
+
+  let lastErr: any = null;
+  for (const p of pathsToTry) {
+    try {
+      const response = await fetch(p);
+      if (response.ok) {
+        return await response.json();
+      }
+    } catch (err) {
+      lastErr = err;
+    }
   }
-  return response.json();
+
+  throw new Error(`Failed to fetch JSON asset: ${relativeUrl} (${lastErr ? String(lastErr) : '404/Network Error'})`);
 }

@@ -470,9 +470,12 @@ self.onmessage = async (e: MessageEvent) => {
     
     const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
+    if (!sab) self.postMessage({ type: 'PROGRESS', payload: { step: "Analyzing Subpopulation Oracles (Global)...", percent: 95 } });
     const allResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'all');
+    if (!sab) self.postMessage({ type: 'PROGRESS', payload: { step: "Calculating Kidd55 & Seldin128 Oracles...", percent: 97 } });
     const kidd55Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'kidd55');
     const seldin128Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'seldin128');
+    if (!sab) self.postMessage({ type: 'PROGRESS', payload: { step: "Finalizing EuroForGen & Microhaplotypes...", percent: 99 } });
     const euroforgenResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'euroforgen');
     const ramosResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'ramos');
     const microhapResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'microhap');

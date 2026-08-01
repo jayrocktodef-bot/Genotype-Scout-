@@ -2290,14 +2290,16 @@ export default function App() {
         lastProgressTime = Date.now();
         const { type, payload, error: workerError } = e.data;
         if (type === 'PROGRESS') {
-          const { processed, total, snps, step, completed, totalEngines, statusVal } = payload;
+          const { processed, total, snps, step, completed, totalEngines, statusVal, percent: explicitPercent } = payload;
           setStreamProgress(prev => {
             const newProcessed = processed !== undefined ? processed : prev.processed;
             const newTotal = total !== undefined ? total : prev.total;
             const newSnps = snps !== undefined ? snps : prev.snps;
             
             let percent = prev.percent || 0;
-            if (statusVal === 2 || (completed !== undefined && totalEngines !== undefined)) {
+            if (explicitPercent !== undefined) {
+              percent = explicitPercent;
+            } else if (statusVal === 2 || (completed !== undefined && totalEngines !== undefined)) {
               percent = 50 + Math.round((completed / totalEngines) * 45);
             } else if (statusVal === 3) {
               percent = 100;

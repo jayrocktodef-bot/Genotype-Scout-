@@ -8,10 +8,13 @@ const getMasterAims = () => {
   return masterAimsCache;
 };
 let hoReferenceKernelCache: any = null;
+let hoReferenceKernelPromise: Promise<any> | null = null;
 async function getHoReferenceKernel() {
-  if (!hoReferenceKernelCache) {
-    hoReferenceKernelCache = await fetchJsonAsset('/data/ho_modern_reference_kernel.json');
+  if (hoReferenceKernelCache) return hoReferenceKernelCache;
+  if (!hoReferenceKernelPromise) {
+    hoReferenceKernelPromise = fetchJsonAsset('/data/ho_modern_reference_kernel.json');
   }
+  hoReferenceKernelCache = await hoReferenceKernelPromise;
   return hoReferenceKernelCache;
 }
 import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
@@ -858,6 +861,13 @@ export async function processSubpopulations(
     const matchedWeights: number[] = [];
     let violations = 0;
 
+    const macroCode = popToMacroMap.get(popCode) || '';
+    const isAfricanPop = macroCode === 'AFR';
+    const isEuropeanPop = macroCode === 'EUR';
+    const isEastAsianPop = macroCode === 'EAS';
+    const isSouthAsianPop = macroCode === 'SAS';
+    const isAmrPop = macroCode === 'AMR';
+
     for (let i = 0; i < activeRefSnps.length; i++) {
       const activeSnp = activeRefSnps[i];
       const baseRsid = activeSnp.rsid.split('_')[0].toLowerCase();
@@ -879,72 +889,48 @@ export async function processSubpopulations(
 
       // Check specific diagnostic markers (fast checks)
       if (rsidLower === 'rs2814778') {
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 0) {
           violations += 2.0; 
         } else if (isEuropeanPop && userDosageDiscrete === 2) {
           violations += 2.0;
         }
       } else if (rsidLower === 'rs1426654' || rsidLower === 'rs16891982') {
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 2) {
           violations += 1.5;
         } else if (isEuropeanPop && userDosageDiscrete === 0) {
           violations += 1.5;
         }
       } else if (rsidLower === 'rs3827760') {
-        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
-        const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if ((isEastAsianPop || isAmrPop) && userDosageDiscrete === 0) {
           violations += 2.0;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
           violations += 2.0;
         }
       } else if (rsidLower === 'rs3094315') {
-        const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if (isAmrPop && userDosageDiscrete === 0) {
           violations += 1.5;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
           violations += 1.5;
         }
       } else if (rsidLower === 'rs16139' || rsidLower === 'rs2229765') {
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
-        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
         if (isAfricanPop && userDosageDiscrete === 0) {
           violations += 1.5;
         } else if ((isEuropeanPop || isEastAsianPop) && userDosageDiscrete === 2) {
           violations += 1.5;
         }
       } else if (rsidLower === 'rs7388531' || rsidLower === 'rs671') {
-        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if (isEastAsianPop && userDosageDiscrete === 0) {
           violations += 1.5;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
           violations += 1.5;
         }
       } else if (rsidLower === 'rs12203592') {
-        const isSouthAsianPop = MACRO_GROUPS['SAS'].includes(popCode);
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
-        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
         if (isSouthAsianPop && userDosageDiscrete === 0) {
           violations += 1.0;
         } else if ((isAfricanPop || isEastAsianPop) && userDosageDiscrete === 2) {
           violations += 1.0;
         }
       } else if (rsidLower === 'rs1042602') {
-        const isAmrPop = MACRO_GROUPS['AMR'].includes(popCode);
-        const isEuropeanPop = MACRO_GROUPS['EUR'].includes(popCode);
-        const isEastAsianPop = MACRO_GROUPS['EAS'].includes(popCode);
-        const isAfricanPop = MACRO_GROUPS['AFR'].includes(popCode);
         if ((isAmrPop || isEuropeanPop) && userDosageDiscrete === 0) {
           violations += 1.0;
         } else if ((isEastAsianPop || isAfricanPop) && userDosageDiscrete === 2) {
