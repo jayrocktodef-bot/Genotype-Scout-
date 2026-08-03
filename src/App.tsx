@@ -1995,6 +1995,30 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const checkForceReset = async () => {
+      const CURRENT_BUILD = 'v5.13.1_forced_reset';
+      const lastBuild = localStorage.getItem('genotype_scout_build');
+      if (lastBuild !== CURRENT_BUILD) {
+        console.log(`[App] Forced build reset triggered: ${lastBuild} -> ${CURRENT_BUILD}`);
+        localStorage.setItem('genotype_scout_build', CURRENT_BUILD);
+        if ('serviceWorker' in navigator) {
+          try {
+            const regs = await navigator.serviceWorker.getRegistrations();
+            for (const r of regs) await r.unregister();
+          } catch (e) {}
+        }
+        if ('caches' in window) {
+          try {
+            const keys = await caches.keys();
+            await Promise.all(keys.map(k => caches.delete(k)));
+          } catch (e) {}
+        }
+      }
+    };
+    checkForceReset();
+  }, []);
+
+  useEffect(() => {
     const init = async () => {
       const saved = await loadResults();
       if (saved) {
