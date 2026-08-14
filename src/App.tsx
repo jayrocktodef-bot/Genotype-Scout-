@@ -95,6 +95,7 @@ import { PrintableView } from './components/PrintableView';
 const RareVariantsView = lazy(() => import("./components/RareVariantsView"));
 import { HaplogroupBento } from "./components/HaplogroupBento";
 import { YDNABento } from "./components/YDNABento";
+import { HaplogroupDistributionVisualizer } from "./components/HaplogroupDistributionVisualizer";
 const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogressionView").then(m => ({ default: m.ArchaicIntrogressionView })));
 
 
@@ -1460,6 +1461,9 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
   return (
     <div className="animate-fade-up space-y-6">
       <div className="grid grid-cols-1 gap-6">
+        <HaplogroupDistributionVisualizer predictedY={yData} />
+      </div>
+      <div className="grid grid-cols-1 gap-6">
         <YDNABento yData={yData} />
       </div>
       
@@ -1603,6 +1607,9 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   return (
     <div className="animate-fade-up space-y-8 pb-12">
       {/* Hero Prediction Section */}
+      <div className="grid grid-cols-1 gap-6">
+        <HaplogroupDistributionVisualizer predictedMt={mtData} />
+      </div>
       <div className="grid grid-cols-1 gap-6">
         <HaplogroupBento predictedMt={mtData} />
       </div>
