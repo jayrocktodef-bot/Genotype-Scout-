@@ -8,6 +8,4 @@ node_modules/
 *.safetensors
 *.pyc
 __pycache__/
-.git/
-*.pack
-*.idx
+
