@@ -1460,9 +1460,11 @@ const YDNAView = memo(({ yData, treeSearchTerm, setTreeSearchTerm }: { yData: an
 
   return (
     <div className="animate-fade-up space-y-6">
-      <div className="grid grid-cols-1 gap-6">
-        <HaplogroupDistributionVisualizer predictedY={yData} />
-      </div>
+      {yData && (
+        <div className="grid grid-cols-1 gap-6">
+          <HaplogroupDistributionVisualizer predictedY={yData} />
+        </div>
+      )}
       <div className="grid grid-cols-1 gap-6">
         <YDNABento yData={yData} />
       </div>
@@ -1607,9 +1609,11 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
   return (
     <div className="animate-fade-up space-y-8 pb-12">
       {/* Hero Prediction Section */}
-      <div className="grid grid-cols-1 gap-6">
-        <HaplogroupDistributionVisualizer predictedMt={mtData} />
-      </div>
+      {mtData && (
+        <div className="grid grid-cols-1 gap-6">
+          <HaplogroupDistributionVisualizer predictedMt={mtData} />
+        </div>
+      )}
       <div className="grid grid-cols-1 gap-6">
         <HaplogroupBento predictedMt={mtData} />
       </div>

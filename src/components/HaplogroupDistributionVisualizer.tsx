@@ -321,9 +321,9 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
     return { chartData, options };
   };
 
-  const showY = !!predictedY || !!data?.yDna;
-  const showMt = !!predictedMt || !!data?.mtDna;
-  const showBoth = (showY && showMt) || (!predictedY && !predictedMt && !data?.yDna && !data?.mtDna);
+  const showY = predictedY !== undefined || data?.yDna !== undefined;
+  const showMt = predictedMt !== undefined || data?.mtDna !== undefined;
+  const showBoth = showY && showMt;
 
   return (
     <div className="w-full space-y-6">
