@@ -4454,5 +4454,55 @@
     "description": "Oceanian ancestry informative marker.",
     "chromosome": "22",
     "position": 36071446
+  },
+  "rs387906": {
+    "rsid": "rs387906",
+    "region": "Oceanian",
+    "color": "#1ABC9C",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "TYRP1",
+    "trait": "Ancestry",
+    "description": "Melanesian / Oceanian diagnostic blonde hair marker.",
+    "chromosome": "9",
+    "position": 12693532
+  },
+  "rs3827760_oce": {
+    "rsid": "rs3827760_oce",
+    "region": "Oceanian",
+    "color": "#1ABC9C",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "OCE": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "EDAR",
+    "trait": "Ancestry",
+    "description": "Polynesian Austronesian admixture marker.",
+    "chromosome": "2",
+    "position": 108897145
   }
 }

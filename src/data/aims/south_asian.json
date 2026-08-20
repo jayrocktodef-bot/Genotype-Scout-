@@ -15730,5 +15730,105 @@
     "description": "South Asian ancestry informative marker.",
     "chromosome": "18",
     "position": 67575462
+  },
+  "rs1426654": {
+    "rsid": "rs1426654",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "SAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC24A5",
+    "trait": "Ancestry",
+    "description": "ANI/SAS West Eurasian ancestry marker.",
+    "chromosome": "15",
+    "position": 48426484
+  },
+  "rs16891982": {
+    "rsid": "rs16891982",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "SAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "SLC45A2",
+    "trait": "Ancestry",
+    "description": "ANI-high differentiation variant.",
+    "chromosome": "5",
+    "position": 33951693
+  },
+  "rs12913832": {
+    "rsid": "rs12913832",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "SAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "HERC2",
+    "trait": "Ancestry",
+    "description": "ANI vs ASI gradient marker.",
+    "chromosome": "15",
+    "position": 28365618
+  },
+  "rs1042602": {
+    "rsid": "rs1042602",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "SAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "TYR",
+    "trait": "Ancestry",
+    "description": "South Asian ancestry gradient marker.",
+    "chromosome": "11",
+    "position": 89017961
   }
 }

@@ -18519,5 +18519,30 @@
     "gene": "ABCC11",
     "trait": "Ancestry",
     "description": "The 'A' allele (associated with dry earwax and reduced body odor) is extremely common in East Asian populations and rare in African and European populations."
+  },
+  "rs1800414": {
+    "rsid": "rs1800414",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "EAS": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "OCA2",
+    "trait": "Ancestry",
+    "description": "East Asian specific pigmentation marker.",
+    "chromosome": "15",
+    "position": 28230288
   }
 }

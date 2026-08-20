@@ -12960,5 +12960,55 @@
     "description": "North African ancestry informative marker.",
     "chromosome": "1",
     "position": 1000000
+  },
+  "rs4988235": {
+    "rsid": "rs4988235",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "MENA": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "SAS": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "MCM6",
+    "trait": "Ancestry",
+    "description": "Anatolian/Levant lactase persistence marker.",
+    "chromosome": "2",
+    "position": 136608646
+  },
+  "rs2814778": {
+    "rsid": "rs2814778",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "MENA": 0.05,
+      "EUR": 0.05,
+      "AFR": 0.02,
+      "AMR": 0.02,
+      "EAS": 0.05,
+      "SAS": 0.05,
+      "OCE": 0.05
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 8,
+    "gene": "DARC",
+    "trait": "Ancestry",
+    "description": "Duffy negative marker - African/Arabian admixture indicator.",
+    "chromosome": "1",
+    "position": 159174683
   }
 }
