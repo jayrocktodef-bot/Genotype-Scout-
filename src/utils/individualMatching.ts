@@ -59,19 +59,31 @@ export function matchToAncientIndividual(
 export function calculateFamousMatches(userSnps: Record<string, string>): IndividualMatch[] {
   const matches: IndividualMatch[] = [];
 
-  for (const [id, data] of Object.entries(masterAncient.samples)) {
-    if (id === "_metadata") continue;
+  const rawSamples = [
+    ...Object.values(masterAncient.samples).filter(s => (s as any).id),
+    ...((masterAncient as any).matches || [])
+  ];
 
-    const match = matchToAncientIndividual(userSnps, data);
-    
-    // Threshold: Only show matches with at least 5 markers overlapped 
-    // or significant confidence/affinity
-    if (match.sharedMarkers >= 3 && match.affinity >= 20) {
-      matches.push(match);
+  const seenIds = new Set<string>();
+  const seenNames = new Set<string>();
+
+  for (const data of rawSamples) {
+    if (!data || typeof data !== 'object') continue;
+    const id = (data as any).id || (data as any).sampleId;
+    const rawName = ((data as any).name || '').toLowerCase();
+    const nameKey = rawName.replace(/\(.*?\)/g, '').replace(/[^a-z]/g, '');
+
+    if (id && !seenIds.has(id) && !seenNames.has(nameKey)) {
+      seenIds.add(id);
+      seenNames.add(nameKey);
+
+      const match = matchToAncientIndividual(userSnps, data);
+      if (match.sharedMarkers >= 3 && match.affinity >= 20) {
+        matches.push(match);
+      }
     }
   }
 
   // Sort by affinity, then confidence
-  const uniqueMatches = Array.from(new Map(matches.map(m => [m.sampleId, m])).values());
-  return uniqueMatches.sort((a, b) => b.affinity - a.affinity || b.confidence - a.confidence).slice(0, 5);
+  return matches.sort((a, b) => b.affinity - a.affinity || b.confidence - a.confidence).slice(0, 5);
 }
