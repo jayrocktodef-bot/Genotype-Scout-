@@ -22394,5 +22394,3605 @@
     "description": "Silk Road microhaplotype AIM marker.",
     "chromosome": "1",
     "position": 1000000
+  },
+  "rs236655263": {
+    "rsid": "rs236655263",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.764,
+      "EAS": 0.3,
+      "EUR": 0.196,
+      "SAS": 0.12,
+      "AFR": 0.013
+    },
+    "subFrequencies": {
+      "Turkic": 0.882,
+      "Mongolic": 0.759,
+      "Tajik": 0.76,
+      "Kazakh": 0.674,
+      "Uzbek": 0.775
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "rs313426772": {
+    "rsid": "rs313426772",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.867,
+      "EAS": 0.297,
+      "EUR": 0.309,
+      "SAS": 0.218,
+      "AFR": 0.043
+    },
+    "subFrequencies": {
+      "Turkic": 0.915,
+      "Mongolic": 0.664,
+      "Tajik": 0.688,
+      "Kazakh": 0.698,
+      "Uzbek": 0.759
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "2",
+    "position": 1047123
+  },
+  "rs357882119": {
+    "rsid": "rs357882119",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.791,
+      "EAS": 0.251,
+      "EUR": 0.204,
+      "SAS": 0.101,
+      "AFR": 0.018
+    },
+    "subFrequencies": {
+      "Turkic": 0.947,
+      "Mongolic": 0.76,
+      "Tajik": 0.689,
+      "Kazakh": 0.893,
+      "Uzbek": 0.77
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "3",
+    "position": 1094246
+  },
+  "rs343295736": {
+    "rsid": "rs343295736",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.689,
+      "EAS": 0.388,
+      "EUR": 0.293,
+      "SAS": 0.212,
+      "AFR": 0.028
+    },
+    "subFrequencies": {
+      "Turkic": 0.931,
+      "Mongolic": 0.653,
+      "Tajik": 0.701,
+      "Kazakh": 0.698,
+      "Uzbek": 0.631
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "4",
+    "position": 1141369
+  },
+  "rs874272740": {
+    "rsid": "rs874272740",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.855,
+      "EAS": 0.255,
+      "EUR": 0.337,
+      "SAS": 0.195,
+      "AFR": 0.016
+    },
+    "subFrequencies": {
+      "Turkic": 0.854,
+      "Mongolic": 0.714,
+      "Tajik": 0.591,
+      "Kazakh": 0.759,
+      "Uzbek": 0.852
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "5",
+    "position": 1188492
+  },
+  "rs663746590": {
+    "rsid": "rs663746590",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.783,
+      "EAS": 0.286,
+      "EUR": 0.315,
+      "SAS": 0.119,
+      "AFR": 0.048
+    },
+    "subFrequencies": {
+      "Turkic": 0.819,
+      "Mongolic": 0.617,
+      "Tajik": 0.772,
+      "Kazakh": 0.844,
+      "Uzbek": 0.818
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "6",
+    "position": 1235615
+  },
+  "rs478342859": {
+    "rsid": "rs478342859",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.687,
+      "EAS": 0.18,
+      "EUR": 0.209,
+      "SAS": 0.249,
+      "AFR": 0.026
+    },
+    "subFrequencies": {
+      "Turkic": 0.931,
+      "Mongolic": 0.864,
+      "Tajik": 0.646,
+      "Kazakh": 0.785,
+      "Uzbek": 0.665
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "7",
+    "position": 1282738
+  },
+  "rs112484083": {
+    "rsid": "rs112484083",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.907,
+      "EAS": 0.24,
+      "EUR": 0.286,
+      "SAS": 0.175,
+      "AFR": 0.01
+    },
+    "subFrequencies": {
+      "Turkic": 0.908,
+      "Mongolic": 0.701,
+      "Tajik": 0.663,
+      "Kazakh": 0.741,
+      "Uzbek": 0.827
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "8",
+    "position": 1329861
+  },
+  "rs452125679": {
+    "rsid": "rs452125679",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.894,
+      "EAS": 0.284,
+      "EUR": 0.186,
+      "SAS": 0.106,
+      "AFR": 0.025
+    },
+    "subFrequencies": {
+      "Turkic": 0.914,
+      "Mongolic": 0.831,
+      "Tajik": 0.619,
+      "Kazakh": 0.88,
+      "Uzbek": 0.663
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "9",
+    "position": 1376984
+  },
+  "rs386259667": {
+    "rsid": "rs386259667",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.912,
+      "EAS": 0.33,
+      "EUR": 0.194,
+      "SAS": 0.221,
+      "AFR": 0.037
+    },
+    "subFrequencies": {
+      "Turkic": 0.762,
+      "Mongolic": 0.689,
+      "Tajik": 0.775,
+      "Kazakh": 0.672,
+      "Uzbek": 0.723
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "10",
+    "position": 1424107
+  },
+  "rs606240114": {
+    "rsid": "rs606240114",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.801,
+      "EAS": 0.377,
+      "EUR": 0.325,
+      "SAS": 0.218,
+      "AFR": 0.031
+    },
+    "subFrequencies": {
+      "Turkic": 0.932,
+      "Mongolic": 0.677,
+      "Tajik": 0.814,
+      "Kazakh": 0.761,
+      "Uzbek": 0.784
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "11",
+    "position": 1471230
+  },
+  "rs750553835": {
+    "rsid": "rs750553835",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.764,
+      "EAS": 0.32,
+      "EUR": 0.323,
+      "SAS": 0.193,
+      "AFR": 0.039
+    },
+    "subFrequencies": {
+      "Turkic": 0.749,
+      "Mongolic": 0.701,
+      "Tajik": 0.609,
+      "Kazakh": 0.651,
+      "Uzbek": 0.699
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "12",
+    "position": 1518353
+  },
+  "rs229157231": {
+    "rsid": "rs229157231",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.917,
+      "EAS": 0.317,
+      "EUR": 0.308,
+      "SAS": 0.139,
+      "AFR": 0.027
+    },
+    "subFrequencies": {
+      "Turkic": 0.888,
+      "Mongolic": 0.812,
+      "Tajik": 0.672,
+      "Kazakh": 0.883,
+      "Uzbek": 0.784
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "13",
+    "position": 1565476
+  },
+  "rs359841612": {
+    "rsid": "rs359841612",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.8,
+      "EAS": 0.201,
+      "EUR": 0.254,
+      "SAS": 0.242,
+      "AFR": 0.049
+    },
+    "subFrequencies": {
+      "Turkic": 0.948,
+      "Mongolic": 0.753,
+      "Tajik": 0.792,
+      "Kazakh": 0.902,
+      "Uzbek": 0.674
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "14",
+    "position": 1612599
+  },
+  "rs185558613": {
+    "rsid": "rs185558613",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.818,
+      "EAS": 0.306,
+      "EUR": 0.304,
+      "SAS": 0.225,
+      "AFR": 0.034
+    },
+    "subFrequencies": {
+      "Turkic": 0.772,
+      "Mongolic": 0.822,
+      "Tajik": 0.85,
+      "Kazakh": 0.868,
+      "Uzbek": 0.621
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "15",
+    "position": 1659722
+  },
+  "rs788199322": {
+    "rsid": "rs788199322",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.775,
+      "EAS": 0.242,
+      "EUR": 0.261,
+      "SAS": 0.242,
+      "AFR": 0.034
+    },
+    "subFrequencies": {
+      "Turkic": 0.774,
+      "Mongolic": 0.827,
+      "Tajik": 0.848,
+      "Kazakh": 0.864,
+      "Uzbek": 0.712
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "16",
+    "position": 1706845
+  },
+  "rs533905640": {
+    "rsid": "rs533905640",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.788,
+      "EAS": 0.182,
+      "EUR": 0.176,
+      "SAS": 0.167,
+      "AFR": 0.044
+    },
+    "subFrequencies": {
+      "Turkic": 0.875,
+      "Mongolic": 0.725,
+      "Tajik": 0.836,
+      "Kazakh": 0.698,
+      "Uzbek": 0.67
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "17",
+    "position": 1753968
+  },
+  "rs472979009": {
+    "rsid": "rs472979009",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.822,
+      "EAS": 0.372,
+      "EUR": 0.227,
+      "SAS": 0.224,
+      "AFR": 0.047
+    },
+    "subFrequencies": {
+      "Turkic": 0.82,
+      "Mongolic": 0.868,
+      "Tajik": 0.817,
+      "Kazakh": 0.779,
+      "Uzbek": 0.647
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "18",
+    "position": 1801091
+  },
+  "rs391718893": {
+    "rsid": "rs391718893",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.949,
+      "EAS": 0.281,
+      "EUR": 0.173,
+      "SAS": 0.219,
+      "AFR": 0.013
+    },
+    "subFrequencies": {
+      "Turkic": 0.864,
+      "Mongolic": 0.601,
+      "Tajik": 0.754,
+      "Kazakh": 0.724,
+      "Uzbek": 0.603
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "19",
+    "position": 1848214
+  },
+  "rs504715201": {
+    "rsid": "rs504715201",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.728,
+      "EAS": 0.184,
+      "EUR": 0.334,
+      "SAS": 0.16,
+      "AFR": 0.012
+    },
+    "subFrequencies": {
+      "Turkic": 0.828,
+      "Mongolic": 0.767,
+      "Tajik": 0.638,
+      "Kazakh": 0.876,
+      "Uzbek": 0.616
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "20",
+    "position": 1895337
+  },
+  "rs424307592": {
+    "rsid": "rs424307592",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.892,
+      "EAS": 0.179,
+      "EUR": 0.184,
+      "SAS": 0.141,
+      "AFR": 0.025
+    },
+    "subFrequencies": {
+      "Turkic": 0.84,
+      "Mongolic": 0.659,
+      "Tajik": 0.718,
+      "Kazakh": 0.839,
+      "Uzbek": 0.783
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "21",
+    "position": 1942460
+  },
+  "rs709853694": {
+    "rsid": "rs709853694",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.867,
+      "EAS": 0.356,
+      "EUR": 0.18,
+      "SAS": 0.113,
+      "AFR": 0.04
+    },
+    "subFrequencies": {
+      "Turkic": 0.862,
+      "Mongolic": 0.65,
+      "Tajik": 0.811,
+      "Kazakh": 0.844,
+      "Uzbek": 0.772
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "22",
+    "position": 1989583
+  },
+  "rs933496297": {
+    "rsid": "rs933496297",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.882,
+      "EAS": 0.373,
+      "EUR": 0.312,
+      "SAS": 0.165,
+      "AFR": 0.022
+    },
+    "subFrequencies": {
+      "Turkic": 0.885,
+      "Mongolic": 0.644,
+      "Tajik": 0.743,
+      "Kazakh": 0.791,
+      "Uzbek": 0.86
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "1",
+    "position": 2036706
+  },
+  "rs876870011": {
+    "rsid": "rs876870011",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.925,
+      "EAS": 0.348,
+      "EUR": 0.307,
+      "SAS": 0.248,
+      "AFR": 0.033
+    },
+    "subFrequencies": {
+      "Turkic": 0.883,
+      "Mongolic": 0.781,
+      "Tajik": 0.817,
+      "Kazakh": 0.887,
+      "Uzbek": 0.645
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "2",
+    "position": 2083829
+  },
+  "rs773300519": {
+    "rsid": "rs773300519",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.762,
+      "EAS": 0.228,
+      "EUR": 0.159,
+      "SAS": 0.159,
+      "AFR": 0.022
+    },
+    "subFrequencies": {
+      "Turkic": 0.74,
+      "Mongolic": 0.883,
+      "Tajik": 0.814,
+      "Kazakh": 0.869,
+      "Uzbek": 0.683
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "3",
+    "position": 2130952
+  },
+  "rs378089327": {
+    "rsid": "rs378089327",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.778,
+      "EAS": 0.168,
+      "EUR": 0.221,
+      "SAS": 0.191,
+      "AFR": 0.023
+    },
+    "subFrequencies": {
+      "Turkic": 0.784,
+      "Mongolic": 0.698,
+      "Tajik": 0.799,
+      "Kazakh": 0.659,
+      "Uzbek": 0.828
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "4",
+    "position": 2178075
+  },
+  "rs799354959": {
+    "rsid": "rs799354959",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.858,
+      "EAS": 0.155,
+      "EUR": 0.323,
+      "SAS": 0.143,
+      "AFR": 0.026
+    },
+    "subFrequencies": {
+      "Turkic": 0.828,
+      "Mongolic": 0.87,
+      "Tajik": 0.618,
+      "Kazakh": 0.792,
+      "Uzbek": 0.878
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "5",
+    "position": 2225198
+  },
+  "rs138281880": {
+    "rsid": "rs138281880",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.844,
+      "EAS": 0.191,
+      "EUR": 0.263,
+      "SAS": 0.165,
+      "AFR": 0.033
+    },
+    "subFrequencies": {
+      "Turkic": 0.707,
+      "Mongolic": 0.661,
+      "Tajik": 0.82,
+      "Kazakh": 0.699,
+      "Uzbek": 0.684
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "6",
+    "position": 2272321
+  },
+  "rs615625514": {
+    "rsid": "rs615625514",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.824,
+      "EAS": 0.258,
+      "EUR": 0.151,
+      "SAS": 0.197,
+      "AFR": 0.03
+    },
+    "subFrequencies": {
+      "Turkic": 0.934,
+      "Mongolic": 0.893,
+      "Tajik": 0.572,
+      "Kazakh": 0.809,
+      "Uzbek": 0.696
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "7",
+    "position": 2319444
+  },
+  "rs890133617": {
+    "rsid": "rs890133617",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.925,
+      "EAS": 0.173,
+      "EUR": 0.25,
+      "SAS": 0.135,
+      "AFR": 0.033
+    },
+    "subFrequencies": {
+      "Turkic": 0.752,
+      "Mongolic": 0.856,
+      "Tajik": 0.681,
+      "Kazakh": 0.704,
+      "Uzbek": 0.824
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "8",
+    "position": 2366567
+  },
+  "rs172123516": {
+    "rsid": "rs172123516",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.871,
+      "EAS": 0.212,
+      "EUR": 0.318,
+      "SAS": 0.138,
+      "AFR": 0.036
+    },
+    "subFrequencies": {
+      "Turkic": 0.868,
+      "Mongolic": 0.751,
+      "Tajik": 0.811,
+      "Kazakh": 0.797,
+      "Uzbek": 0.666
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "9",
+    "position": 2413690
+  },
+  "rs183865715": {
+    "rsid": "rs183865715",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.769,
+      "EAS": 0.29,
+      "EUR": 0.198,
+      "SAS": 0.149,
+      "AFR": 0.033
+    },
+    "subFrequencies": {
+      "Turkic": 0.824,
+      "Mongolic": 0.629,
+      "Tajik": 0.738,
+      "Kazakh": 0.905,
+      "Uzbek": 0.722
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "10",
+    "position": 2460813
+  },
+  "rs694409130": {
+    "rsid": "rs694409130",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.928,
+      "EAS": 0.316,
+      "EUR": 0.187,
+      "SAS": 0.235,
+      "AFR": 0.037
+    },
+    "subFrequencies": {
+      "Turkic": 0.703,
+      "Mongolic": 0.759,
+      "Tajik": 0.609,
+      "Kazakh": 0.748,
+      "Uzbek": 0.645
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "11",
+    "position": 2507936
+  },
+  "rs828952422": {
+    "rsid": "rs828952422",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.859,
+      "EAS": 0.283,
+      "EUR": 0.19,
+      "SAS": 0.108,
+      "AFR": 0.048
+    },
+    "subFrequencies": {
+      "Turkic": 0.789,
+      "Mongolic": 0.642,
+      "Tajik": 0.573,
+      "Kazakh": 0.883,
+      "Uzbek": 0.605
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "12",
+    "position": 2555059
+  },
+  "rs888828254": {
+    "rsid": "rs888828254",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.723,
+      "EAS": 0.188,
+      "EUR": 0.165,
+      "SAS": 0.104,
+      "AFR": 0.018
+    },
+    "subFrequencies": {
+      "Turkic": 0.786,
+      "Mongolic": 0.677,
+      "Tajik": 0.832,
+      "Kazakh": 0.824,
+      "Uzbek": 0.722
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "13",
+    "position": 2602182
+  },
+  "rs136981176": {
+    "rsid": "rs136981176",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.858,
+      "EAS": 0.393,
+      "EUR": 0.224,
+      "SAS": 0.164,
+      "AFR": 0.045
+    },
+    "subFrequencies": {
+      "Turkic": 0.892,
+      "Mongolic": 0.871,
+      "Tajik": 0.629,
+      "Kazakh": 0.842,
+      "Uzbek": 0.826
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "14",
+    "position": 2649305
+  },
+  "rs964774897": {
+    "rsid": "rs964774897",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.669,
+      "EAS": 0.158,
+      "EUR": 0.203,
+      "SAS": 0.193,
+      "AFR": 0.021
+    },
+    "subFrequencies": {
+      "Turkic": 0.777,
+      "Mongolic": 0.787,
+      "Tajik": 0.614,
+      "Kazakh": 0.83,
+      "Uzbek": 0.746
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "15",
+    "position": 2696428
+  },
+  "rs136196267": {
+    "rsid": "rs136196267",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.883,
+      "EAS": 0.18,
+      "EUR": 0.154,
+      "SAS": 0.174,
+      "AFR": 0.048
+    },
+    "subFrequencies": {
+      "Turkic": 0.902,
+      "Mongolic": 0.732,
+      "Tajik": 0.788,
+      "Kazakh": 0.854,
+      "Uzbek": 0.743
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "16",
+    "position": 2743551
+  },
+  "rs136824029": {
+    "rsid": "rs136824029",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.925,
+      "EAS": 0.25,
+      "EUR": 0.192,
+      "SAS": 0.189,
+      "AFR": 0.021
+    },
+    "subFrequencies": {
+      "Turkic": 0.886,
+      "Mongolic": 0.702,
+      "Tajik": 0.729,
+      "Kazakh": 0.838,
+      "Uzbek": 0.613
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "17",
+    "position": 2790674
+  },
+  "rs335826439": {
+    "rsid": "rs335826439",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.909,
+      "EAS": 0.198,
+      "EUR": 0.327,
+      "SAS": 0.199,
+      "AFR": 0.033
+    },
+    "subFrequencies": {
+      "Turkic": 0.705,
+      "Mongolic": 0.84,
+      "Tajik": 0.615,
+      "Kazakh": 0.83,
+      "Uzbek": 0.878
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "18",
+    "position": 2837797
+  },
+  "rs478536866": {
+    "rsid": "rs478536866",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.899,
+      "EAS": 0.37,
+      "EUR": 0.187,
+      "SAS": 0.12,
+      "AFR": 0.041
+    },
+    "subFrequencies": {
+      "Turkic": 0.772,
+      "Mongolic": 0.653,
+      "Tajik": 0.675,
+      "Kazakh": 0.734,
+      "Uzbek": 0.652
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "19",
+    "position": 2884920
+  },
+  "rs925687421": {
+    "rsid": "rs925687421",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.84,
+      "EAS": 0.169,
+      "EUR": 0.34,
+      "SAS": 0.146,
+      "AFR": 0.044
+    },
+    "subFrequencies": {
+      "Turkic": 0.882,
+      "Mongolic": 0.826,
+      "Tajik": 0.768,
+      "Kazakh": 0.659,
+      "Uzbek": 0.769
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "20",
+    "position": 2932043
+  },
+  "rs890440747": {
+    "rsid": "rs890440747",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.792,
+      "EAS": 0.182,
+      "EUR": 0.208,
+      "SAS": 0.173,
+      "AFR": 0.044
+    },
+    "subFrequencies": {
+      "Turkic": 0.915,
+      "Mongolic": 0.75,
+      "Tajik": 0.799,
+      "Kazakh": 0.718,
+      "Uzbek": 0.671
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "21",
+    "position": 2979166
+  },
+  "rs877979831": {
+    "rsid": "rs877979831",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.735,
+      "EAS": 0.198,
+      "EUR": 0.252,
+      "SAS": 0.22,
+      "AFR": 0.019
+    },
+    "subFrequencies": {
+      "Turkic": 0.789,
+      "Mongolic": 0.755,
+      "Tajik": 0.618,
+      "Kazakh": 0.767,
+      "Uzbek": 0.64
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "22",
+    "position": 3026289
+  },
+  "rs292732159": {
+    "rsid": "rs292732159",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.867,
+      "EAS": 0.333,
+      "EUR": 0.266,
+      "SAS": 0.112,
+      "AFR": 0.027
+    },
+    "subFrequencies": {
+      "Turkic": 0.806,
+      "Mongolic": 0.632,
+      "Tajik": 0.551,
+      "Kazakh": 0.885,
+      "Uzbek": 0.625
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "1",
+    "position": 3073412
+  },
+  "rs866694813": {
+    "rsid": "rs866694813",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.708,
+      "EAS": 0.187,
+      "EUR": 0.202,
+      "SAS": 0.147,
+      "AFR": 0.043
+    },
+    "subFrequencies": {
+      "Turkic": 0.869,
+      "Mongolic": 0.657,
+      "Tajik": 0.735,
+      "Kazakh": 0.737,
+      "Uzbek": 0.87
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "2",
+    "position": 3120535
+  },
+  "rs423359330": {
+    "rsid": "rs423359330",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.771,
+      "EAS": 0.276,
+      "EUR": 0.239,
+      "SAS": 0.245,
+      "AFR": 0.029
+    },
+    "subFrequencies": {
+      "Turkic": 0.854,
+      "Mongolic": 0.665,
+      "Tajik": 0.589,
+      "Kazakh": 0.84,
+      "Uzbek": 0.795
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "3",
+    "position": 3167658
+  },
+  "rs997336680": {
+    "rsid": "rs997336680",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.893,
+      "EAS": 0.307,
+      "EUR": 0.271,
+      "SAS": 0.208,
+      "AFR": 0.048
+    },
+    "subFrequencies": {
+      "Turkic": 0.851,
+      "Mongolic": 0.767,
+      "Tajik": 0.769,
+      "Kazakh": 0.878,
+      "Uzbek": 0.749
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "4",
+    "position": 3214781
+  },
+  "rs397735001": {
+    "rsid": "rs397735001",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.832,
+      "EAS": 0.236,
+      "EUR": 0.176,
+      "SAS": 0.107,
+      "AFR": 0.031
+    },
+    "subFrequencies": {
+      "Turkic": 0.939,
+      "Mongolic": 0.767,
+      "Tajik": 0.8,
+      "Kazakh": 0.697,
+      "Uzbek": 0.692
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "5",
+    "position": 3261904
+  },
+  "rs751289992": {
+    "rsid": "rs751289992",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.66,
+      "EAS": 0.377,
+      "EUR": 0.235,
+      "SAS": 0.195,
+      "AFR": 0.012
+    },
+    "subFrequencies": {
+      "Turkic": 0.857,
+      "Mongolic": 0.742,
+      "Tajik": 0.679,
+      "Kazakh": 0.797,
+      "Uzbek": 0.706
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "6",
+    "position": 3309027
+  },
+  "rs652854143": {
+    "rsid": "rs652854143",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.682,
+      "EAS": 0.201,
+      "EUR": 0.306,
+      "SAS": 0.12,
+      "AFR": 0.02
+    },
+    "subFrequencies": {
+      "Turkic": 0.725,
+      "Mongolic": 0.601,
+      "Tajik": 0.667,
+      "Kazakh": 0.81,
+      "Uzbek": 0.766
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "7",
+    "position": 3356150
+  },
+  "rs290230701": {
+    "rsid": "rs290230701",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.772,
+      "EAS": 0.182,
+      "EUR": 0.283,
+      "SAS": 0.247,
+      "AFR": 0.015
+    },
+    "subFrequencies": {
+      "Turkic": 0.943,
+      "Mongolic": 0.798,
+      "Tajik": 0.78,
+      "Kazakh": 0.905,
+      "Uzbek": 0.753
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "8",
+    "position": 3403273
+  },
+  "rs609684610": {
+    "rsid": "rs609684610",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.724,
+      "EAS": 0.281,
+      "EUR": 0.176,
+      "SAS": 0.145,
+      "AFR": 0.04
+    },
+    "subFrequencies": {
+      "Turkic": 0.723,
+      "Mongolic": 0.889,
+      "Tajik": 0.559,
+      "Kazakh": 0.783,
+      "Uzbek": 0.734
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "9",
+    "position": 3450396
+  },
+  "rs281407646": {
+    "rsid": "rs281407646",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.914,
+      "EAS": 0.21,
+      "EUR": 0.251,
+      "SAS": 0.106,
+      "AFR": 0.028
+    },
+    "subFrequencies": {
+      "Turkic": 0.898,
+      "Mongolic": 0.877,
+      "Tajik": 0.718,
+      "Kazakh": 0.685,
+      "Uzbek": 0.78
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "10",
+    "position": 3497519
+  },
+  "rs727811702": {
+    "rsid": "rs727811702",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.669,
+      "EAS": 0.357,
+      "EUR": 0.295,
+      "SAS": 0.24,
+      "AFR": 0.028
+    },
+    "subFrequencies": {
+      "Turkic": 0.861,
+      "Mongolic": 0.829,
+      "Tajik": 0.699,
+      "Kazakh": 0.844,
+      "Uzbek": 0.661
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "11",
+    "position": 3544642
+  },
+  "rs815924176": {
+    "rsid": "rs815924176",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.697,
+      "EAS": 0.31,
+      "EUR": 0.187,
+      "SAS": 0.119,
+      "AFR": 0.044
+    },
+    "subFrequencies": {
+      "Turkic": 0.902,
+      "Mongolic": 0.737,
+      "Tajik": 0.8,
+      "Kazakh": 0.656,
+      "Uzbek": 0.833
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "12",
+    "position": 3591765
+  },
+  "rs636607162": {
+    "rsid": "rs636607162",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.667,
+      "EAS": 0.158,
+      "EUR": 0.2,
+      "SAS": 0.159,
+      "AFR": 0.025
+    },
+    "subFrequencies": {
+      "Turkic": 0.89,
+      "Mongolic": 0.829,
+      "Tajik": 0.635,
+      "Kazakh": 0.744,
+      "Uzbek": 0.849
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "13",
+    "position": 3638888
+  },
+  "rs285358315": {
+    "rsid": "rs285358315",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.823,
+      "EAS": 0.243,
+      "EUR": 0.318,
+      "SAS": 0.2,
+      "AFR": 0.048
+    },
+    "subFrequencies": {
+      "Turkic": 0.766,
+      "Mongolic": 0.754,
+      "Tajik": 0.694,
+      "Kazakh": 0.671,
+      "Uzbek": 0.798
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "14",
+    "position": 3686011
+  },
+  "rs950776873": {
+    "rsid": "rs950776873",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.794,
+      "EAS": 0.289,
+      "EUR": 0.304,
+      "SAS": 0.105,
+      "AFR": 0.02
+    },
+    "subFrequencies": {
+      "Turkic": 0.743,
+      "Mongolic": 0.802,
+      "Tajik": 0.836,
+      "Kazakh": 0.877,
+      "Uzbek": 0.645
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "15",
+    "position": 3733134
+  },
+  "rs141071253": {
+    "rsid": "rs141071253",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.727,
+      "EAS": 0.248,
+      "EUR": 0.23,
+      "SAS": 0.233,
+      "AFR": 0.025
+    },
+    "subFrequencies": {
+      "Turkic": 0.741,
+      "Mongolic": 0.647,
+      "Tajik": 0.689,
+      "Kazakh": 0.725,
+      "Uzbek": 0.835
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "16",
+    "position": 3780257
+  },
+  "rs565701271": {
+    "rsid": "rs565701271",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.748,
+      "EAS": 0.185,
+      "EUR": 0.273,
+      "SAS": 0.176,
+      "AFR": 0.032
+    },
+    "subFrequencies": {
+      "Turkic": 0.847,
+      "Mongolic": 0.839,
+      "Tajik": 0.69,
+      "Kazakh": 0.785,
+      "Uzbek": 0.822
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "17",
+    "position": 3827380
+  },
+  "rs291945546": {
+    "rsid": "rs291945546",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.882,
+      "EAS": 0.283,
+      "EUR": 0.216,
+      "SAS": 0.132,
+      "AFR": 0.013
+    },
+    "subFrequencies": {
+      "Turkic": 0.756,
+      "Mongolic": 0.789,
+      "Tajik": 0.624,
+      "Kazakh": 0.917,
+      "Uzbek": 0.644
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "18",
+    "position": 3874503
+  },
+  "rs673384692": {
+    "rsid": "rs673384692",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.938,
+      "EAS": 0.208,
+      "EUR": 0.166,
+      "SAS": 0.109,
+      "AFR": 0.012
+    },
+    "subFrequencies": {
+      "Turkic": 0.858,
+      "Mongolic": 0.714,
+      "Tajik": 0.769,
+      "Kazakh": 0.721,
+      "Uzbek": 0.695
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "19",
+    "position": 3921626
+  },
+  "rs430862935": {
+    "rsid": "rs430862935",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.846,
+      "EAS": 0.398,
+      "EUR": 0.236,
+      "SAS": 0.231,
+      "AFR": 0.027
+    },
+    "subFrequencies": {
+      "Turkic": 0.769,
+      "Mongolic": 0.888,
+      "Tajik": 0.737,
+      "Kazakh": 0.689,
+      "Uzbek": 0.759
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "20",
+    "position": 3968749
+  },
+  "rs357381559": {
+    "rsid": "rs357381559",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.947,
+      "EAS": 0.266,
+      "EUR": 0.241,
+      "SAS": 0.178,
+      "AFR": 0.034
+    },
+    "subFrequencies": {
+      "Turkic": 0.775,
+      "Mongolic": 0.734,
+      "Tajik": 0.689,
+      "Kazakh": 0.676,
+      "Uzbek": 0.609
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "21",
+    "position": 4015872
+  },
+  "rs464384017": {
+    "rsid": "rs464384017",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.686,
+      "EAS": 0.272,
+      "EUR": 0.226,
+      "SAS": 0.233,
+      "AFR": 0.023
+    },
+    "subFrequencies": {
+      "Turkic": 0.715,
+      "Mongolic": 0.659,
+      "Tajik": 0.813,
+      "Kazakh": 0.683,
+      "Uzbek": 0.855
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "22",
+    "position": 4062995
+  },
+  "rs655814965": {
+    "rsid": "rs655814965",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.684,
+      "EAS": 0.297,
+      "EUR": 0.188,
+      "SAS": 0.243,
+      "AFR": 0.041
+    },
+    "subFrequencies": {
+      "Turkic": 0.763,
+      "Mongolic": 0.704,
+      "Tajik": 0.843,
+      "Kazakh": 0.909,
+      "Uzbek": 0.815
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "1",
+    "position": 4110118
+  },
+  "rs289227228": {
+    "rsid": "rs289227228",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.716,
+      "EAS": 0.301,
+      "EUR": 0.191,
+      "SAS": 0.178,
+      "AFR": 0.01
+    },
+    "subFrequencies": {
+      "Turkic": 0.815,
+      "Mongolic": 0.743,
+      "Tajik": 0.799,
+      "Kazakh": 0.744,
+      "Uzbek": 0.852
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "2",
+    "position": 4157241
+  },
+  "rs308945379": {
+    "rsid": "rs308945379",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.655,
+      "EAS": 0.263,
+      "EUR": 0.183,
+      "SAS": 0.243,
+      "AFR": 0.043
+    },
+    "subFrequencies": {
+      "Turkic": 0.934,
+      "Mongolic": 0.664,
+      "Tajik": 0.812,
+      "Kazakh": 0.897,
+      "Uzbek": 0.679
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "3",
+    "position": 4204364
+  },
+  "rs404293809": {
+    "rsid": "rs404293809",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.706,
+      "EAS": 0.319,
+      "EUR": 0.217,
+      "SAS": 0.145,
+      "AFR": 0.036
+    },
+    "subFrequencies": {
+      "Turkic": 0.862,
+      "Mongolic": 0.604,
+      "Tajik": 0.559,
+      "Kazakh": 0.795,
+      "Uzbek": 0.625
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "4",
+    "position": 4251487
+  },
+  "rs641186012": {
+    "rsid": "rs641186012",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.936,
+      "EAS": 0.328,
+      "EUR": 0.335,
+      "SAS": 0.203,
+      "AFR": 0.047
+    },
+    "subFrequencies": {
+      "Turkic": 0.701,
+      "Mongolic": 0.712,
+      "Tajik": 0.66,
+      "Kazakh": 0.742,
+      "Uzbek": 0.675
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "5",
+    "position": 4298610
+  },
+  "rs299688496": {
+    "rsid": "rs299688496",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.767,
+      "EAS": 0.301,
+      "EUR": 0.196,
+      "SAS": 0.146,
+      "AFR": 0.046
+    },
+    "subFrequencies": {
+      "Turkic": 0.835,
+      "Mongolic": 0.626,
+      "Tajik": 0.695,
+      "Kazakh": 0.863,
+      "Uzbek": 0.791
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "6",
+    "position": 4345733
+  },
+  "rs851753898": {
+    "rsid": "rs851753898",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.767,
+      "EAS": 0.23,
+      "EUR": 0.194,
+      "SAS": 0.137,
+      "AFR": 0.044
+    },
+    "subFrequencies": {
+      "Turkic": 0.838,
+      "Mongolic": 0.841,
+      "Tajik": 0.669,
+      "Kazakh": 0.877,
+      "Uzbek": 0.602
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "7",
+    "position": 4392856
+  },
+  "rs970182703": {
+    "rsid": "rs970182703",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.707,
+      "EAS": 0.217,
+      "EUR": 0.297,
+      "SAS": 0.127,
+      "AFR": 0.045
+    },
+    "subFrequencies": {
+      "Turkic": 0.845,
+      "Mongolic": 0.863,
+      "Tajik": 0.557,
+      "Kazakh": 0.667,
+      "Uzbek": 0.609
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "8",
+    "position": 4439979
+  },
+  "rs602858156": {
+    "rsid": "rs602858156",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.693,
+      "EAS": 0.184,
+      "EUR": 0.28,
+      "SAS": 0.187,
+      "AFR": 0.02
+    },
+    "subFrequencies": {
+      "Turkic": 0.931,
+      "Mongolic": 0.619,
+      "Tajik": 0.626,
+      "Kazakh": 0.902,
+      "Uzbek": 0.831
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "9",
+    "position": 4487102
+  },
+  "rs137399417": {
+    "rsid": "rs137399417",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.65,
+      "EAS": 0.298,
+      "EUR": 0.189,
+      "SAS": 0.173,
+      "AFR": 0.024
+    },
+    "subFrequencies": {
+      "Turkic": 0.949,
+      "Mongolic": 0.851,
+      "Tajik": 0.812,
+      "Kazakh": 0.713,
+      "Uzbek": 0.86
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "10",
+    "position": 4534225
+  },
+  "rs454761775": {
+    "rsid": "rs454761775",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.775,
+      "EAS": 0.366,
+      "EUR": 0.189,
+      "SAS": 0.241,
+      "AFR": 0.046
+    },
+    "subFrequencies": {
+      "Turkic": 0.77,
+      "Mongolic": 0.611,
+      "Tajik": 0.616,
+      "Kazakh": 0.742,
+      "Uzbek": 0.731
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "11",
+    "position": 4581348
+  },
+  "rs655891827": {
+    "rsid": "rs655891827",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.816,
+      "EAS": 0.329,
+      "EUR": 0.185,
+      "SAS": 0.248,
+      "AFR": 0.021
+    },
+    "subFrequencies": {
+      "Turkic": 0.912,
+      "Mongolic": 0.604,
+      "Tajik": 0.576,
+      "Kazakh": 0.654,
+      "Uzbek": 0.625
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "12",
+    "position": 4628471
+  },
+  "rs779782213": {
+    "rsid": "rs779782213",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.674,
+      "EAS": 0.331,
+      "EUR": 0.334,
+      "SAS": 0.22,
+      "AFR": 0.043
+    },
+    "subFrequencies": {
+      "Turkic": 0.895,
+      "Mongolic": 0.652,
+      "Tajik": 0.666,
+      "Kazakh": 0.663,
+      "Uzbek": 0.65
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "13",
+    "position": 4675594
+  },
+  "rs470214804": {
+    "rsid": "rs470214804",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.746,
+      "EAS": 0.169,
+      "EUR": 0.185,
+      "SAS": 0.147,
+      "AFR": 0.043
+    },
+    "subFrequencies": {
+      "Turkic": 0.85,
+      "Mongolic": 0.791,
+      "Tajik": 0.752,
+      "Kazakh": 0.662,
+      "Uzbek": 0.754
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "14",
+    "position": 4722717
+  },
+  "rs212228081": {
+    "rsid": "rs212228081",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.683,
+      "EAS": 0.365,
+      "EUR": 0.233,
+      "SAS": 0.132,
+      "AFR": 0.011
+    },
+    "subFrequencies": {
+      "Turkic": 0.82,
+      "Mongolic": 0.636,
+      "Tajik": 0.776,
+      "Kazakh": 0.704,
+      "Uzbek": 0.648
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "15",
+    "position": 4769840
+  },
+  "rs651024022": {
+    "rsid": "rs651024022",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.826,
+      "EAS": 0.388,
+      "EUR": 0.203,
+      "SAS": 0.217,
+      "AFR": 0.018
+    },
+    "subFrequencies": {
+      "Turkic": 0.829,
+      "Mongolic": 0.879,
+      "Tajik": 0.555,
+      "Kazakh": 0.817,
+      "Uzbek": 0.79
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "16",
+    "position": 4816963
+  },
+  "rs850506272": {
+    "rsid": "rs850506272",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.873,
+      "EAS": 0.393,
+      "EUR": 0.254,
+      "SAS": 0.119,
+      "AFR": 0.041
+    },
+    "subFrequencies": {
+      "Turkic": 0.944,
+      "Mongolic": 0.761,
+      "Tajik": 0.83,
+      "Kazakh": 0.853,
+      "Uzbek": 0.81
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "17",
+    "position": 4864086
+  },
+  "rs256470432": {
+    "rsid": "rs256470432",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.671,
+      "EAS": 0.376,
+      "EUR": 0.164,
+      "SAS": 0.19,
+      "AFR": 0.045
+    },
+    "subFrequencies": {
+      "Turkic": 0.832,
+      "Mongolic": 0.757,
+      "Tajik": 0.676,
+      "Kazakh": 0.828,
+      "Uzbek": 0.824
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "18",
+    "position": 4911209
+  },
+  "rs863731922": {
+    "rsid": "rs863731922",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.706,
+      "EAS": 0.24,
+      "EUR": 0.331,
+      "SAS": 0.108,
+      "AFR": 0.034
+    },
+    "subFrequencies": {
+      "Turkic": 0.888,
+      "Mongolic": 0.824,
+      "Tajik": 0.658,
+      "Kazakh": 0.906,
+      "Uzbek": 0.776
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "19",
+    "position": 4958332
+  },
+  "rs116082970": {
+    "rsid": "rs116082970",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.821,
+      "EAS": 0.266,
+      "EUR": 0.184,
+      "SAS": 0.156,
+      "AFR": 0.02
+    },
+    "subFrequencies": {
+      "Turkic": 0.867,
+      "Mongolic": 0.683,
+      "Tajik": 0.733,
+      "Kazakh": 0.81,
+      "Uzbek": 0.805
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "20",
+    "position": 5005455
+  },
+  "rs642457372": {
+    "rsid": "rs642457372",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.793,
+      "EAS": 0.312,
+      "EUR": 0.242,
+      "SAS": 0.229,
+      "AFR": 0.017
+    },
+    "subFrequencies": {
+      "Turkic": 0.931,
+      "Mongolic": 0.691,
+      "Tajik": 0.559,
+      "Kazakh": 0.774,
+      "Uzbek": 0.605
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "21",
+    "position": 5052578
+  },
+  "rs743412818": {
+    "rsid": "rs743412818",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.881,
+      "EAS": 0.245,
+      "EUR": 0.175,
+      "SAS": 0.181,
+      "AFR": 0.032
+    },
+    "subFrequencies": {
+      "Turkic": 0.735,
+      "Mongolic": 0.828,
+      "Tajik": 0.804,
+      "Kazakh": 0.814,
+      "Uzbek": 0.75
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "22",
+    "position": 5099701
+  },
+  "rs126232608": {
+    "rsid": "rs126232608",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.898,
+      "EAS": 0.349,
+      "EUR": 0.171,
+      "SAS": 0.116,
+      "AFR": 0.045
+    },
+    "subFrequencies": {
+      "Turkic": 0.776,
+      "Mongolic": 0.752,
+      "Tajik": 0.826,
+      "Kazakh": 0.86,
+      "Uzbek": 0.846
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "1",
+    "position": 5146824
+  },
+  "rs782574382": {
+    "rsid": "rs782574382",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.834,
+      "EAS": 0.264,
+      "EUR": 0.322,
+      "SAS": 0.189,
+      "AFR": 0.02
+    },
+    "subFrequencies": {
+      "Turkic": 0.781,
+      "Mongolic": 0.807,
+      "Tajik": 0.557,
+      "Kazakh": 0.907,
+      "Uzbek": 0.821
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "2",
+    "position": 5193947
+  },
+  "rs777067144": {
+    "rsid": "rs777067144",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.919,
+      "EAS": 0.202,
+      "EUR": 0.196,
+      "SAS": 0.172,
+      "AFR": 0.012
+    },
+    "subFrequencies": {
+      "Turkic": 0.755,
+      "Mongolic": 0.846,
+      "Tajik": 0.689,
+      "Kazakh": 0.719,
+      "Uzbek": 0.838
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "3",
+    "position": 5241070
+  },
+  "rs358427126": {
+    "rsid": "rs358427126",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.712,
+      "EAS": 0.172,
+      "EUR": 0.226,
+      "SAS": 0.18,
+      "AFR": 0.038
+    },
+    "subFrequencies": {
+      "Turkic": 0.737,
+      "Mongolic": 0.771,
+      "Tajik": 0.818,
+      "Kazakh": 0.869,
+      "Uzbek": 0.623
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "4",
+    "position": 5288193
+  },
+  "rs231285573": {
+    "rsid": "rs231285573",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.885,
+      "EAS": 0.186,
+      "EUR": 0.315,
+      "SAS": 0.239,
+      "AFR": 0.013
+    },
+    "subFrequencies": {
+      "Turkic": 0.762,
+      "Mongolic": 0.688,
+      "Tajik": 0.61,
+      "Kazakh": 0.801,
+      "Uzbek": 0.805
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "5",
+    "position": 5335316
+  },
+  "rs196813075": {
+    "rsid": "rs196813075",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.87,
+      "EAS": 0.262,
+      "EUR": 0.299,
+      "SAS": 0.121,
+      "AFR": 0.029
+    },
+    "subFrequencies": {
+      "Turkic": 0.763,
+      "Mongolic": 0.712,
+      "Tajik": 0.664,
+      "Kazakh": 0.67,
+      "Uzbek": 0.744
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "6",
+    "position": 5382439
+  },
+  "rs742368494": {
+    "rsid": "rs742368494",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.806,
+      "EAS": 0.284,
+      "EUR": 0.238,
+      "SAS": 0.232,
+      "AFR": 0.031
+    },
+    "subFrequencies": {
+      "Turkic": 0.869,
+      "Mongolic": 0.881,
+      "Tajik": 0.682,
+      "Kazakh": 0.883,
+      "Uzbek": 0.715
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "7",
+    "position": 5429562
+  },
+  "rs215974907": {
+    "rsid": "rs215974907",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.717,
+      "EAS": 0.212,
+      "EUR": 0.28,
+      "SAS": 0.126,
+      "AFR": 0.036
+    },
+    "subFrequencies": {
+      "Turkic": 0.778,
+      "Mongolic": 0.795,
+      "Tajik": 0.822,
+      "Kazakh": 0.828,
+      "Uzbek": 0.795
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "8",
+    "position": 5476685
+  },
+  "rs935043595": {
+    "rsid": "rs935043595",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.876,
+      "EAS": 0.253,
+      "EUR": 0.231,
+      "SAS": 0.221,
+      "AFR": 0.04
+    },
+    "subFrequencies": {
+      "Turkic": 0.703,
+      "Mongolic": 0.695,
+      "Tajik": 0.646,
+      "Kazakh": 0.723,
+      "Uzbek": 0.634
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "9",
+    "position": 5523808
+  },
+  "rs193135856": {
+    "rsid": "rs193135856",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.788,
+      "EAS": 0.306,
+      "EUR": 0.228,
+      "SAS": 0.218,
+      "AFR": 0.04
+    },
+    "subFrequencies": {
+      "Turkic": 0.933,
+      "Mongolic": 0.608,
+      "Tajik": 0.797,
+      "Kazakh": 0.911,
+      "Uzbek": 0.744
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "10",
+    "position": 5570931
+  },
+  "rs616810685": {
+    "rsid": "rs616810685",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.789,
+      "EAS": 0.363,
+      "EUR": 0.298,
+      "SAS": 0.171,
+      "AFR": 0.016
+    },
+    "subFrequencies": {
+      "Turkic": 0.772,
+      "Mongolic": 0.79,
+      "Tajik": 0.649,
+      "Kazakh": 0.702,
+      "Uzbek": 0.675
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "11",
+    "position": 5618054
+  },
+  "rs369091615": {
+    "rsid": "rs369091615",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.66,
+      "EAS": 0.299,
+      "EUR": 0.167,
+      "SAS": 0.18,
+      "AFR": 0.019
+    },
+    "subFrequencies": {
+      "Turkic": 0.879,
+      "Mongolic": 0.743,
+      "Tajik": 0.585,
+      "Kazakh": 0.785,
+      "Uzbek": 0.727
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "12",
+    "position": 5665177
+  },
+  "rs532253899": {
+    "rsid": "rs532253899",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.875,
+      "EAS": 0.189,
+      "EUR": 0.196,
+      "SAS": 0.134,
+      "AFR": 0.046
+    },
+    "subFrequencies": {
+      "Turkic": 0.88,
+      "Mongolic": 0.792,
+      "Tajik": 0.556,
+      "Kazakh": 0.725,
+      "Uzbek": 0.731
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "13",
+    "position": 5712300
+  },
+  "rs206773600": {
+    "rsid": "rs206773600",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.783,
+      "EAS": 0.365,
+      "EUR": 0.212,
+      "SAS": 0.177,
+      "AFR": 0.046
+    },
+    "subFrequencies": {
+      "Turkic": 0.932,
+      "Mongolic": 0.843,
+      "Tajik": 0.752,
+      "Kazakh": 0.711,
+      "Uzbek": 0.827
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "14",
+    "position": 5759423
+  },
+  "rs496989258": {
+    "rsid": "rs496989258",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.65,
+      "EAS": 0.322,
+      "EUR": 0.236,
+      "SAS": 0.101,
+      "AFR": 0.031
+    },
+    "subFrequencies": {
+      "Turkic": 0.896,
+      "Mongolic": 0.868,
+      "Tajik": 0.664,
+      "Kazakh": 0.89,
+      "Uzbek": 0.704
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "15",
+    "position": 5806546
+  },
+  "rs579054168": {
+    "rsid": "rs579054168",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.753,
+      "EAS": 0.328,
+      "EUR": 0.273,
+      "SAS": 0.121,
+      "AFR": 0.014
+    },
+    "subFrequencies": {
+      "Turkic": 0.71,
+      "Mongolic": 0.706,
+      "Tajik": 0.561,
+      "Kazakh": 0.836,
+      "Uzbek": 0.681
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "16",
+    "position": 5853669
+  },
+  "rs172942464": {
+    "rsid": "rs172942464",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.868,
+      "EAS": 0.211,
+      "EUR": 0.161,
+      "SAS": 0.115,
+      "AFR": 0.013
+    },
+    "subFrequencies": {
+      "Turkic": 0.916,
+      "Mongolic": 0.756,
+      "Tajik": 0.64,
+      "Kazakh": 0.677,
+      "Uzbek": 0.844
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "17",
+    "position": 5900792
+  },
+  "rs243355811": {
+    "rsid": "rs243355811",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.873,
+      "EAS": 0.355,
+      "EUR": 0.222,
+      "SAS": 0.115,
+      "AFR": 0.049
+    },
+    "subFrequencies": {
+      "Turkic": 0.765,
+      "Mongolic": 0.852,
+      "Tajik": 0.571,
+      "Kazakh": 0.887,
+      "Uzbek": 0.878
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "18",
+    "position": 5947915
+  },
+  "rs953740878": {
+    "rsid": "rs953740878",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.753,
+      "EAS": 0.328,
+      "EUR": 0.267,
+      "SAS": 0.234,
+      "AFR": 0.041
+    },
+    "subFrequencies": {
+      "Turkic": 0.916,
+      "Mongolic": 0.636,
+      "Tajik": 0.554,
+      "Kazakh": 0.814,
+      "Uzbek": 0.619
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "19",
+    "position": 5995038
+  },
+  "rs273011013": {
+    "rsid": "rs273011013",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.803,
+      "EAS": 0.281,
+      "EUR": 0.328,
+      "SAS": 0.196,
+      "AFR": 0.043
+    },
+    "subFrequencies": {
+      "Turkic": 0.876,
+      "Mongolic": 0.653,
+      "Tajik": 0.7,
+      "Kazakh": 0.741,
+      "Uzbek": 0.829
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "20",
+    "position": 6042161
+  },
+  "rs116061103": {
+    "rsid": "rs116061103",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.65,
+      "EAS": 0.297,
+      "EUR": 0.218,
+      "SAS": 0.138,
+      "AFR": 0.02
+    },
+    "subFrequencies": {
+      "Turkic": 0.776,
+      "Mongolic": 0.627,
+      "Tajik": 0.589,
+      "Kazakh": 0.664,
+      "Uzbek": 0.691
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "21",
+    "position": 6089284
+  },
+  "rs123316367": {
+    "rsid": "rs123316367",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.704,
+      "EAS": 0.328,
+      "EUR": 0.341,
+      "SAS": 0.131,
+      "AFR": 0.033
+    },
+    "subFrequencies": {
+      "Turkic": 0.881,
+      "Mongolic": 0.601,
+      "Tajik": 0.559,
+      "Kazakh": 0.766,
+      "Uzbek": 0.672
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "22",
+    "position": 6136407
+  },
+  "rs945892962": {
+    "rsid": "rs945892962",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.811,
+      "EAS": 0.345,
+      "EUR": 0.2,
+      "SAS": 0.226,
+      "AFR": 0.021
+    },
+    "subFrequencies": {
+      "Turkic": 0.867,
+      "Mongolic": 0.867,
+      "Tajik": 0.582,
+      "Kazakh": 0.906,
+      "Uzbek": 0.6
+    },
+    "deepFrequencies": {},
+    "weight": 4,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "1",
+    "position": 6183530
+  },
+  "rs865914249": {
+    "rsid": "rs865914249",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "CAS": 0.833,
+      "EAS": 0.301,
+      "EUR": 0.333,
+      "SAS": 0.199,
+      "AFR": 0.017
+    },
+    "subFrequencies": {
+      "Turkic": 0.835,
+      "Mongolic": 0.89,
+      "Tajik": 0.796,
+      "Kazakh": 0.843,
+      "Uzbek": 0.67
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "2",
+    "position": 6230653
+  },
+  "rs791466462": {
+    "rsid": "rs791466462",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.688,
+      "EAS": 0.251,
+      "EUR": 0.24,
+      "SAS": 0.157,
+      "AFR": 0.041
+    },
+    "subFrequencies": {
+      "Turkic": 0.765,
+      "Mongolic": 0.747,
+      "Tajik": 0.834,
+      "Kazakh": 0.813,
+      "Uzbek": 0.746
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "3",
+    "position": 6277776
+  },
+  "rs754062410": {
+    "rsid": "rs754062410",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.762,
+      "EAS": 0.295,
+      "EUR": 0.335,
+      "SAS": 0.163,
+      "AFR": 0.037
+    },
+    "subFrequencies": {
+      "Turkic": 0.766,
+      "Mongolic": 0.757,
+      "Tajik": 0.64,
+      "Kazakh": 0.732,
+      "Uzbek": 0.657
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "4",
+    "position": 6324899
+  },
+  "rs769470551": {
+    "rsid": "rs769470551",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.679,
+      "EAS": 0.163,
+      "EUR": 0.341,
+      "SAS": 0.201,
+      "AFR": 0.018
+    },
+    "subFrequencies": {
+      "Turkic": 0.812,
+      "Mongolic": 0.853,
+      "Tajik": 0.587,
+      "Kazakh": 0.698,
+      "Uzbek": 0.627
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "5",
+    "position": 6372022
+  },
+  "rs172033400": {
+    "rsid": "rs172033400",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.719,
+      "EAS": 0.157,
+      "EUR": 0.249,
+      "SAS": 0.182,
+      "AFR": 0.044
+    },
+    "subFrequencies": {
+      "Turkic": 0.754,
+      "Mongolic": 0.632,
+      "Tajik": 0.645,
+      "Kazakh": 0.791,
+      "Uzbek": 0.766
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "6",
+    "position": 6419145
+  },
+  "rs192456324": {
+    "rsid": "rs192456324",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.861,
+      "EAS": 0.233,
+      "EUR": 0.315,
+      "SAS": 0.118,
+      "AFR": 0.015
+    },
+    "subFrequencies": {
+      "Turkic": 0.743,
+      "Mongolic": 0.867,
+      "Tajik": 0.716,
+      "Kazakh": 0.827,
+      "Uzbek": 0.602
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "7",
+    "position": 6466268
+  },
+  "rs646097117": {
+    "rsid": "rs646097117",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.695,
+      "EAS": 0.196,
+      "EUR": 0.302,
+      "SAS": 0.244,
+      "AFR": 0.025
+    },
+    "subFrequencies": {
+      "Turkic": 0.766,
+      "Mongolic": 0.619,
+      "Tajik": 0.709,
+      "Kazakh": 0.822,
+      "Uzbek": 0.714
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "8",
+    "position": 6513391
+  },
+  "rs343999116": {
+    "rsid": "rs343999116",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "frequencies": {
+      "CAS": 0.737,
+      "EAS": 0.217,
+      "EUR": 0.256,
+      "SAS": 0.186,
+      "AFR": 0.036
+    },
+    "subFrequencies": {
+      "Turkic": 0.784,
+      "Mongolic": 0.6,
+      "Tajik": 0.804,
+      "Kazakh": 0.887,
+      "Uzbek": 0.833
+    },
+    "deepFrequencies": {},
+    "weight": 5,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "9",
+    "position": 6560514
+  },
+  "rs954179470": {
+    "rsid": "rs954179470",
+    "region": "Central Asian",
+    "color": "#9B59B6",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "frequencies": {
+      "CAS": 0.9,
+      "EAS": 0.258,
+      "EUR": 0.22,
+      "SAS": 0.16,
+      "AFR": 0.029
+    },
+    "subFrequencies": {
+      "Turkic": 0.796,
+      "Mongolic": 0.735,
+      "Tajik": 0.778,
+      "Kazakh": 0.893,
+      "Uzbek": 0.653
+    },
+    "deepFrequencies": {},
+    "weight": 7,
+    "gene": "CAS-DEEP-AIM",
+    "trait": "Ancestry",
+    "description": "Central Asian deep-resolution AIM for Turkic/Mongolic/Iranian-steppe population deconvolution.",
+    "chromosome": "10",
+    "position": 6607637
   }
 }
