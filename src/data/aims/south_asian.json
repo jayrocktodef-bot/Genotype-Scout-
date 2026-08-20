@@ -13228,8 +13228,8 @@
     "weight": 1,
     "description": ""
   },
-  "rs10456369_sou": {
-    "rsid": "rs10456369_sou",
+  "rs10456369": {
+    "rsid": "rs10456369",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13255,8 +13255,8 @@
     "description": "Indo-Iranian Border Marker - informative for populations of the Northwest Subcontinent and Eastern Plateau.",
     "position": 29233338
   },
-  "rs16139_sou": {
-    "rsid": "rs16139_sou",
+  "rs16139": {
+    "rsid": "rs16139",
     "chromosome": "7",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13282,8 +13282,8 @@
     "description": "South Asian Specific Marker - informative for distinguishing Indo-European speaking populations of the subcontinent.",
     "position": 24285260
   },
-  "rs10954737_sou": {
-    "rsid": "rs10954737_sou",
+  "rs10954737": {
+    "rsid": "rs10954737",
     "chromosome": "7",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13309,8 +13309,8 @@
     "description": "Dravidian Ancestry Marker - highly diagnostic for Southern Indian and Sri Lankan populations.",
     "position": 83903731
   },
-  "rs1426654_sou": {
-    "rsid": "rs1426654_sou",
+  "rs1426654": {
+    "rsid": "rs1426654",
     "chromosome": "15",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13318,12 +13318,13 @@
       "A"
     ],
     "frequencies": {
-      "AFR": 0.0741301059001513,
-      "EUR": 0.997017892644135,
-      "EAS": 0.0119047619047619,
-      "AMR": 0.589337175792507,
-      "SAS": 0.685071574642127,
-      "MENA": 0.8
+      "AFR": 0.02,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
     },
     "subFrequencies": {
       "Brahmin": 0.95,
@@ -13333,12 +13334,12 @@
       "Sinhalese": 0.72
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 8,
     "description": "SLC24A5 variant - highly informative for West Eurasian and South Asian populations.",
     "position": 48134287
   },
-  "rs10456302_sou": {
-    "rsid": "rs10456302_sou",
+  "rs10456302": {
+    "rsid": "rs10456302",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13346,12 +13347,14 @@
       "T"
     ],
     "frequencies": {
-      "AFR": 1,
-      "EUR": 0.997017892644135,
-      "EAS": 1,
-      "AMR": 0.998559077809798,
-      "SAS": 1,
-      "MENA": 0.05
+      "AFR": 0.01,
+      "EUR": 0.00298210735586481,
+      "EAS": 0.05,
+      "AMR": 0.00144092219020173,
+      "SAS": 0.95,
+      "MENA": 0.12,
+      "NAFR": 0.01,
+      "OCE": 0.02
     },
     "subFrequencies": {
       "Dravidian": 0.98,
@@ -13364,8 +13367,8 @@
     "description": "Ancestral South Indian (ASI) Marker - diagnostic for the indigenous populations of the Indian subcontinent.",
     "position": 24308216
   },
-  "rs2816030_sou": {
-    "rsid": "rs2816030_sou",
+  "rs2816030": {
+    "rsid": "rs2816030",
     "chromosome": "1",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13386,8 +13389,8 @@
     "description": "SLC24A5 variant - associated with lighter skin pigmentation, prevalent in South Asian populations.",
     "position": 18531104
   },
-  "rs12146713_sou": {
-    "rsid": "rs12146713_sou",
+  "rs12146713": {
+    "rsid": "rs12146713",
     "chromosome": "12",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13408,8 +13411,8 @@
     "description": "South Asian Ancestry Marker - informative for populations from the Indian subcontinent.",
     "position": 106083027
   },
-  "rs11030104_sou": {
-    "rsid": "rs11030104_sou",
+  "rs11030104": {
+    "rsid": "rs11030104",
     "chromosome": "11",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13430,8 +13433,8 @@
     "description": "South Asian Ancestry Marker - informative for Indo-Aryan and Dravidian populations.",
     "position": 27662970
   },
-  "rs10456236_sou": {
-    "rsid": "rs10456236_sou",
+  "rs10456236": {
+    "rsid": "rs10456236",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13452,8 +13455,8 @@
     "description": "Punjabi Ancestry Marker - informative for Northern Indo-Aryan populations.",
     "position": 20797988
   },
-  "rs10456282_sou": {
-    "rsid": "rs10456282_sou",
+  "rs10456282": {
+    "rsid": "rs10456282",
     "chromosome": "Unknown",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13475,8 +13478,8 @@
     "weight": 1,
     "description": "SAS/MENA Tie-Breaker - Highly specific to the Indian subcontinent, prevents misclassification as Iranian/Middle Eastern."
   },
-  "rs10456284_sou": {
-    "rsid": "rs10456284_sou",
+  "rs10456284": {
+    "rsid": "rs10456284",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13499,8 +13502,8 @@
     "description": "SAS/EAS Tie-Breaker - Differentiates populations south of the Himalayas from East/Southeast Asian groups.",
     "position": 23731548
   },
-  "rs10456288_sou": {
-    "rsid": "rs10456288_sou",
+  "rs10456288": {
+    "rsid": "rs10456288",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13523,8 +13526,8 @@
     "description": "SAS/EUR Tie-Breaker - Diagnostic for Ancestral South Indian (ASI) components, effectively absent in Europe.",
     "position": 23797406
   },
-  "rs10456290_sou": {
-    "rsid": "rs10456290_sou",
+  "rs10456290": {
+    "rsid": "rs10456290",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13547,32 +13550,8 @@
     "description": "SAS/EAS Tie-Breaker - Anchors Indo-Aryan genetics, strongly separating the subcontinent from East Asia.",
     "position": 23797597
   },
-  "rs10456302_sou_2": {
-    "rsid": "rs10456302_sou_2",
-    "chromosome": "6",
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "SAS": 0.95,
-      "MENA": 0.12,
-      "EUR": 0.00298210735586481,
-      "NAFR": 0.01,
-      "AFR": 0.01,
-      "EAS": 0.05,
-      "AMR": 0.00144092219020173,
-      "OCE": 0.02
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "SAS/MENA Tie-Breaker - Diagnostic for deeper South Asian (AASI) lineages.",
-    "position": 24308216
-  },
-  "rs6119471_sou": {
-    "rsid": "rs6119471_sou",
+  "rs6119471": {
+    "rsid": "rs6119471",
     "chromosome": "20",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13597,8 +13576,8 @@
     "description": "Ancestral South Indian (ASI) Marker - highly diagnostic for the indigenous Neolithic populations of the South subcontinent.",
     "position": 34197406
   },
-  "rs12203592_sou": {
-    "rsid": "rs12203592_sou",
+  "rs12203592": {
+    "rsid": "rs12203592",
     "chromosome": "6",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13624,8 +13603,8 @@
     "description": "Ancestral North Indian (ANI) Marker - informative for the West Eurasian related expansion into the Northern subcontinent.",
     "position": 396321
   },
-  "rs16891982_sou": {
-    "rsid": "rs16891982_sou",
+  "rs16891982": {
+    "rsid": "rs16891982",
     "chromosome": "5",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13633,12 +13612,13 @@
       "G"
     ],
     "frequencies": {
-      "AFR": 0.0355521936459909,
-      "EUR": 0.938369781312127,
-      "EAS": 0.00595238095238095,
-      "SAS": 0.0593047034764826,
-      "MENA": 0.8,
-      "AMR": 0.463976945244957
+      "AFR": 0.02,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "SAS": 0.05,
+      "MENA": 0.05,
+      "AMR": 0.02,
+      "OCE": 0.05
     },
     "subFrequencies": {
       "Northwest_Indian": 0.85,
@@ -13647,12 +13627,12 @@
       "Gujarati": 0.6
     },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 8,
     "description": "West Eurasian-South Asian Cline Marker - helps distinguish the level of Western Eurasian admixture in the subcontinent.",
     "position": 33951588
   },
-  "rs11190870_sou": {
-    "rsid": "rs11190870_sou",
+  "rs11190870": {
+    "rsid": "rs11190870",
     "chromosome": "10",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13677,8 +13657,8 @@
     "description": "Austroasiatic/Munda Indian Marker - diagnostic for the early Austroasiatic speaking populations of Central and Eastern India.",
     "position": 101219450
   },
-  "rs7431289_sou": {
-    "rsid": "rs7431289_sou",
+  "rs7431289": {
+    "rsid": "rs7431289",
     "chromosome": "Unknown",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13702,8 +13682,8 @@
     "weight": 1,
     "description": "Western Indian Informative Marker - highly prevalent in Indo-Aryan speaking populations of Western India."
   },
-  "rs16892766_sou": {
-    "rsid": "rs16892766_sou",
+  "rs16892766": {
+    "rsid": "rs16892766",
     "chromosome": "8",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13727,8 +13707,8 @@
     "description": "South Asian-Caspian Cline Marker - indicative of West Eurasian admixture in North India.",
     "position": 116618444
   },
-  "rs11122334_sou": {
-    "rsid": "rs11122334_sou",
+  "rs11122334": {
+    "rsid": "rs11122334",
     "chromosome": "1",
     "region": "South Asian",
     "color": "#9B59B6",
@@ -13790,8 +13770,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs500000_sas": {
-    "rsid": "rs500000_sas",
+  "rs500000": {
+    "rsid": "rs500000",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13814,8 +13794,8 @@
     "chromosome": "8",
     "position": 101453729
   },
-  "rs500001_sas": {
-    "rsid": "rs500001_sas",
+  "rs500001": {
+    "rsid": "rs500001",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13832,8 +13812,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs500002_sas": {
-    "rsid": "rs500002_sas",
+  "rs500002": {
+    "rsid": "rs500002",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13852,8 +13832,8 @@
     "chromosome": "15",
     "position": 53095816
   },
-  "rs500003_sas": {
-    "rsid": "rs500003_sas",
+  "rs500003": {
+    "rsid": "rs500003",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13876,8 +13856,8 @@
     "chromosome": "12",
     "position": 120510145
   },
-  "rs500004_sas": {
-    "rsid": "rs500004_sas",
+  "rs500004": {
+    "rsid": "rs500004",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13896,8 +13876,8 @@
     "chromosome": "X",
     "position": 145179432
   },
-  "rs500005_sas": {
-    "rsid": "rs500005_sas",
+  "rs500005": {
+    "rsid": "rs500005",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13916,8 +13896,8 @@
     "chromosome": "19",
     "position": 34054847
   },
-  "rs500006_sas": {
-    "rsid": "rs500006_sas",
+  "rs500006": {
+    "rsid": "rs500006",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13936,8 +13916,8 @@
     "chromosome": "18",
     "position": 306724
   },
-  "rs500007_sas": {
-    "rsid": "rs500007_sas",
+  "rs500007": {
+    "rsid": "rs500007",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13960,8 +13940,8 @@
     "chromosome": "5",
     "position": 81020609
   },
-  "rs500008_sas": {
-    "rsid": "rs500008_sas",
+  "rs500008": {
+    "rsid": "rs500008",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13980,8 +13960,8 @@
     "chromosome": "6",
     "position": 131115260
   },
-  "rs500009_sas": {
-    "rsid": "rs500009_sas",
+  "rs500009": {
+    "rsid": "rs500009",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14000,8 +13980,8 @@
     "chromosome": "10",
     "position": 129243654
   },
-  "rs5000010_sas": {
-    "rsid": "rs5000010_sas",
+  "rs5000010": {
+    "rsid": "rs5000010",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14020,8 +14000,8 @@
     "chromosome": "16",
     "position": 86063370
   },
-  "rs5000011_sas": {
-    "rsid": "rs5000011_sas",
+  "rs5000011": {
+    "rsid": "rs5000011",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14040,8 +14020,8 @@
     "chromosome": "16",
     "position": 86063380
   },
-  "rs5000012_sas": {
-    "rsid": "rs5000012_sas",
+  "rs5000012": {
+    "rsid": "rs5000012",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14060,8 +14040,8 @@
     "chromosome": "16",
     "position": 86063390
   },
-  "rs5000013_sas": {
-    "rsid": "rs5000013_sas",
+  "rs5000013": {
+    "rsid": "rs5000013",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14078,8 +14058,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000014_sas": {
-    "rsid": "rs5000014_sas",
+  "rs5000014": {
+    "rsid": "rs5000014",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14096,8 +14076,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000015_sas": {
-    "rsid": "rs5000015_sas",
+  "rs5000015": {
+    "rsid": "rs5000015",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14114,8 +14094,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000016_sas": {
-    "rsid": "rs5000016_sas",
+  "rs5000016": {
+    "rsid": "rs5000016",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14132,8 +14112,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000017_sas": {
-    "rsid": "rs5000017_sas",
+  "rs5000017": {
+    "rsid": "rs5000017",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14152,8 +14132,8 @@
     "chromosome": "19",
     "position": 28888414
   },
-  "rs5000018_sas": {
-    "rsid": "rs5000018_sas",
+  "rs5000018": {
+    "rsid": "rs5000018",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14172,8 +14152,8 @@
     "chromosome": "19",
     "position": 28888418
   },
-  "rs5000019_sas": {
-    "rsid": "rs5000019_sas",
+  "rs5000019": {
+    "rsid": "rs5000019",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14192,8 +14172,8 @@
     "chromosome": "19",
     "position": 28888420
   },
-  "rs5000020_sas": {
-    "rsid": "rs5000020_sas",
+  "rs5000020": {
+    "rsid": "rs5000020",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14216,8 +14196,8 @@
     "chromosome": "11",
     "position": 9028215
   },
-  "rs5000021_sas": {
-    "rsid": "rs5000021_sas",
+  "rs5000021": {
+    "rsid": "rs5000021",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14234,8 +14214,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000022_sas": {
-    "rsid": "rs5000022_sas",
+  "rs5000022": {
+    "rsid": "rs5000022",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14252,8 +14232,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000023_sas": {
-    "rsid": "rs5000023_sas",
+  "rs5000023": {
+    "rsid": "rs5000023",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14270,8 +14250,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000024_sas": {
-    "rsid": "rs5000024_sas",
+  "rs5000024": {
+    "rsid": "rs5000024",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14288,8 +14268,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000025_sas": {
-    "rsid": "rs5000025_sas",
+  "rs5000025": {
+    "rsid": "rs5000025",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14306,8 +14286,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000026_sas": {
-    "rsid": "rs5000026_sas",
+  "rs5000026": {
+    "rsid": "rs5000026",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14324,8 +14304,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000027_sas": {
-    "rsid": "rs5000027_sas",
+  "rs5000027": {
+    "rsid": "rs5000027",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14342,8 +14322,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000028_sas": {
-    "rsid": "rs5000028_sas",
+  "rs5000028": {
+    "rsid": "rs5000028",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14360,8 +14340,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000029_sas": {
-    "rsid": "rs5000029_sas",
+  "rs5000029": {
+    "rsid": "rs5000029",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14378,8 +14358,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000030_sas": {
-    "rsid": "rs5000030_sas",
+  "rs5000030": {
+    "rsid": "rs5000030",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14396,8 +14376,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000031_sas": {
-    "rsid": "rs5000031_sas",
+  "rs5000031": {
+    "rsid": "rs5000031",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14414,8 +14394,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000032_sas": {
-    "rsid": "rs5000032_sas",
+  "rs5000032": {
+    "rsid": "rs5000032",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14432,8 +14412,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000033_sas": {
-    "rsid": "rs5000033_sas",
+  "rs5000033": {
+    "rsid": "rs5000033",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14452,8 +14432,8 @@
     "chromosome": "7",
     "position": 75544391
   },
-  "rs5000034_sas": {
-    "rsid": "rs5000034_sas",
+  "rs5000034": {
+    "rsid": "rs5000034",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14470,8 +14450,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000035_sas": {
-    "rsid": "rs5000035_sas",
+  "rs5000035": {
+    "rsid": "rs5000035",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14490,8 +14470,8 @@
     "chromosome": "5",
     "position": 30358779
   },
-  "rs5000036_sas": {
-    "rsid": "rs5000036_sas",
+  "rs5000036": {
+    "rsid": "rs5000036",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14510,8 +14490,8 @@
     "chromosome": "5",
     "position": 30358783
   },
-  "rs5000037_sas": {
-    "rsid": "rs5000037_sas",
+  "rs5000037": {
+    "rsid": "rs5000037",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14530,8 +14510,8 @@
     "chromosome": "5",
     "position": 30358795
   },
-  "rs5000038_sas": {
-    "rsid": "rs5000038_sas",
+  "rs5000038": {
+    "rsid": "rs5000038",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14550,8 +14530,8 @@
     "chromosome": "5",
     "position": 30358826
   },
-  "rs5000039_sas": {
-    "rsid": "rs5000039_sas",
+  "rs5000039": {
+    "rsid": "rs5000039",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14568,8 +14548,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000040_sas": {
-    "rsid": "rs5000040_sas",
+  "rs5000040": {
+    "rsid": "rs5000040",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14588,8 +14568,8 @@
     "chromosome": "7",
     "position": 133979484
   },
-  "rs5000041_sas": {
-    "rsid": "rs5000041_sas",
+  "rs5000041": {
+    "rsid": "rs5000041",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14608,8 +14588,8 @@
     "chromosome": "14",
     "position": 104098103
   },
-  "rs5000042_sas": {
-    "rsid": "rs5000042_sas",
+  "rs5000042": {
+    "rsid": "rs5000042",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14632,8 +14612,8 @@
     "chromosome": "14",
     "position": 104098101
   },
-  "rs5000043_sas": {
-    "rsid": "rs5000043_sas",
+  "rs5000043": {
+    "rsid": "rs5000043",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14650,8 +14630,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000044_sas": {
-    "rsid": "rs5000044_sas",
+  "rs5000044": {
+    "rsid": "rs5000044",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14670,8 +14650,8 @@
     "chromosome": "9",
     "position": 91922481
   },
-  "rs5000045_sas": {
-    "rsid": "rs5000045_sas",
+  "rs5000045": {
+    "rsid": "rs5000045",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14694,8 +14674,8 @@
     "chromosome": "9",
     "position": 91922480
   },
-  "rs5000046_sas": {
-    "rsid": "rs5000046_sas",
+  "rs5000046": {
+    "rsid": "rs5000046",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14718,8 +14698,8 @@
     "chromosome": "9",
     "position": 91922465
   },
-  "rs5000047_sas": {
-    "rsid": "rs5000047_sas",
+  "rs5000047": {
+    "rsid": "rs5000047",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14736,8 +14716,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000048_sas": {
-    "rsid": "rs5000048_sas",
+  "rs5000048": {
+    "rsid": "rs5000048",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14760,8 +14740,8 @@
     "chromosome": "10",
     "position": 122769658
   },
-  "rs5000049_sas": {
-    "rsid": "rs5000049_sas",
+  "rs5000049": {
+    "rsid": "rs5000049",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14780,8 +14760,8 @@
     "chromosome": "13",
     "position": 19229441
   },
-  "rs5000050_sas": {
-    "rsid": "rs5000050_sas",
+  "rs5000050": {
+    "rsid": "rs5000050",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14798,8 +14778,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000051_sas": {
-    "rsid": "rs5000051_sas",
+  "rs5000051": {
+    "rsid": "rs5000051",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14816,8 +14796,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000052_sas": {
-    "rsid": "rs5000052_sas",
+  "rs5000052": {
+    "rsid": "rs5000052",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14834,8 +14814,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000053_sas": {
-    "rsid": "rs5000053_sas",
+  "rs5000053": {
+    "rsid": "rs5000053",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14852,8 +14832,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000054_sas": {
-    "rsid": "rs5000054_sas",
+  "rs5000054": {
+    "rsid": "rs5000054",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14876,8 +14856,8 @@
     "chromosome": "X",
     "position": 130447589
   },
-  "rs5000055_sas": {
-    "rsid": "rs5000055_sas",
+  "rs5000055": {
+    "rsid": "rs5000055",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14900,8 +14880,8 @@
     "chromosome": "X",
     "position": 130447659
   },
-  "rs5000056_sas": {
-    "rsid": "rs5000056_sas",
+  "rs5000056": {
+    "rsid": "rs5000056",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14924,8 +14904,8 @@
     "chromosome": "8",
     "position": 35317796
   },
-  "rs5000057_sas": {
-    "rsid": "rs5000057_sas",
+  "rs5000057": {
+    "rsid": "rs5000057",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14948,8 +14928,8 @@
     "chromosome": "3",
     "position": 619215
   },
-  "rs5000058_sas": {
-    "rsid": "rs5000058_sas",
+  "rs5000058": {
+    "rsid": "rs5000058",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14966,8 +14946,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000059_sas": {
-    "rsid": "rs5000059_sas",
+  "rs5000059": {
+    "rsid": "rs5000059",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14984,8 +14964,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000060_sas": {
-    "rsid": "rs5000060_sas",
+  "rs5000060": {
+    "rsid": "rs5000060",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15002,8 +14982,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000061_sas": {
-    "rsid": "rs5000061_sas",
+  "rs5000061": {
+    "rsid": "rs5000061",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15020,8 +15000,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000062_sas": {
-    "rsid": "rs5000062_sas",
+  "rs5000062": {
+    "rsid": "rs5000062",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15040,8 +15020,8 @@
     "chromosome": "9",
     "position": 114984820
   },
-  "rs5000063_sas": {
-    "rsid": "rs5000063_sas",
+  "rs5000063": {
+    "rsid": "rs5000063",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15058,8 +15038,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000064_sas": {
-    "rsid": "rs5000064_sas",
+  "rs5000064": {
+    "rsid": "rs5000064",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15076,8 +15056,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000065_sas": {
-    "rsid": "rs5000065_sas",
+  "rs5000065": {
+    "rsid": "rs5000065",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15094,8 +15074,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000066_sas": {
-    "rsid": "rs5000066_sas",
+  "rs5000066": {
+    "rsid": "rs5000066",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15112,8 +15092,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000067_sas": {
-    "rsid": "rs5000067_sas",
+  "rs5000067": {
+    "rsid": "rs5000067",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15130,8 +15110,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000068_sas": {
-    "rsid": "rs5000068_sas",
+  "rs5000068": {
+    "rsid": "rs5000068",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15148,8 +15128,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000069_sas": {
-    "rsid": "rs5000069_sas",
+  "rs5000069": {
+    "rsid": "rs5000069",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15166,8 +15146,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000070_sas": {
-    "rsid": "rs5000070_sas",
+  "rs5000070": {
+    "rsid": "rs5000070",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15184,8 +15164,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000071_sas": {
-    "rsid": "rs5000071_sas",
+  "rs5000071": {
+    "rsid": "rs5000071",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15202,8 +15182,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000072_sas": {
-    "rsid": "rs5000072_sas",
+  "rs5000072": {
+    "rsid": "rs5000072",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15220,8 +15200,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000073_sas": {
-    "rsid": "rs5000073_sas",
+  "rs5000073": {
+    "rsid": "rs5000073",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15244,8 +15224,8 @@
     "chromosome": "12",
     "position": 130782485
   },
-  "rs5000074_sas": {
-    "rsid": "rs5000074_sas",
+  "rs5000074": {
+    "rsid": "rs5000074",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15264,8 +15244,8 @@
     "chromosome": "12",
     "position": 130782481
   },
-  "rs5000075_sas": {
-    "rsid": "rs5000075_sas",
+  "rs5000075": {
+    "rsid": "rs5000075",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15284,8 +15264,8 @@
     "chromosome": "12",
     "position": 130782425
   },
-  "rs5000076_sas": {
-    "rsid": "rs5000076_sas",
+  "rs5000076": {
+    "rsid": "rs5000076",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15304,8 +15284,8 @@
     "chromosome": "12",
     "position": 130782397
   },
-  "rs5000077_sas": {
-    "rsid": "rs5000077_sas",
+  "rs5000077": {
+    "rsid": "rs5000077",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15322,8 +15302,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000078_sas": {
-    "rsid": "rs5000078_sas",
+  "rs5000078": {
+    "rsid": "rs5000078",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15340,8 +15320,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000079_sas": {
-    "rsid": "rs5000079_sas",
+  "rs5000079": {
+    "rsid": "rs5000079",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15358,8 +15338,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000080_sas": {
-    "rsid": "rs5000080_sas",
+  "rs5000080": {
+    "rsid": "rs5000080",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15378,8 +15358,8 @@
     "chromosome": "1",
     "position": 160375491
   },
-  "rs5000081_sas": {
-    "rsid": "rs5000081_sas",
+  "rs5000081": {
+    "rsid": "rs5000081",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15396,8 +15376,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000082_sas": {
-    "rsid": "rs5000082_sas",
+  "rs5000082": {
+    "rsid": "rs5000082",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15414,8 +15394,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000083_sas": {
-    "rsid": "rs5000083_sas",
+  "rs5000083": {
+    "rsid": "rs5000083",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15432,8 +15412,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000084_sas": {
-    "rsid": "rs5000084_sas",
+  "rs5000084": {
+    "rsid": "rs5000084",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15450,8 +15430,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000085_sas": {
-    "rsid": "rs5000085_sas",
+  "rs5000085": {
+    "rsid": "rs5000085",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15471,8 +15451,8 @@
     "chromosome": "3",
     "position": 172702471
   },
-  "rs5000086_sas": {
-    "rsid": "rs5000086_sas",
+  "rs5000086": {
+    "rsid": "rs5000086",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15489,8 +15469,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000087_sas": {
-    "rsid": "rs5000087_sas",
+  "rs5000087": {
+    "rsid": "rs5000087",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15507,8 +15487,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000088_sas": {
-    "rsid": "rs5000088_sas",
+  "rs5000088": {
+    "rsid": "rs5000088",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15525,8 +15505,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000089_sas": {
-    "rsid": "rs5000089_sas",
+  "rs5000089": {
+    "rsid": "rs5000089",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15543,8 +15523,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000090_sas": {
-    "rsid": "rs5000090_sas",
+  "rs5000090": {
+    "rsid": "rs5000090",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15561,8 +15541,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000091_sas": {
-    "rsid": "rs5000091_sas",
+  "rs5000091": {
+    "rsid": "rs5000091",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15581,8 +15561,8 @@
     "chromosome": "13",
     "position": 37921113
   },
-  "rs5000092_sas": {
-    "rsid": "rs5000092_sas",
+  "rs5000092": {
+    "rsid": "rs5000092",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15599,8 +15579,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000093_sas": {
-    "rsid": "rs5000093_sas",
+  "rs5000093": {
+    "rsid": "rs5000093",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15617,8 +15597,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000094_sas": {
-    "rsid": "rs5000094_sas",
+  "rs5000094": {
+    "rsid": "rs5000094",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15635,8 +15615,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000095_sas": {
-    "rsid": "rs5000095_sas",
+  "rs5000095": {
+    "rsid": "rs5000095",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15653,8 +15633,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000096_sas": {
-    "rsid": "rs5000096_sas",
+  "rs5000096": {
+    "rsid": "rs5000096",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15673,8 +15653,8 @@
     "chromosome": "3",
     "position": 34279896
   },
-  "rs5000097_sas": {
-    "rsid": "rs5000097_sas",
+  "rs5000097": {
+    "rsid": "rs5000097",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15691,8 +15671,8 @@
     "trait": "Ancestry",
     "description": "South Asian ancestry informative marker."
   },
-  "rs5000098_sas": {
-    "rsid": "rs5000098_sas",
+  "rs5000098": {
+    "rsid": "rs5000098",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15711,8 +15691,8 @@
     "chromosome": "6",
     "position": 33551454
   },
-  "rs5000099_sas": {
-    "rsid": "rs5000099_sas",
+  "rs5000099": {
+    "rsid": "rs5000099",
     "region": "South Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15730,56 +15710,6 @@
     "description": "South Asian ancestry informative marker.",
     "chromosome": "18",
     "position": 67575462
-  },
-  "rs1426654": {
-    "rsid": "rs1426654",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "SAS": 0.05,
-      "EUR": 0.05,
-      "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.05,
-      "MENA": 0.05,
-      "OCE": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "SLC24A5",
-    "trait": "Ancestry",
-    "description": "ANI/SAS West Eurasian ancestry marker.",
-    "chromosome": "15",
-    "position": 48426484
-  },
-  "rs16891982": {
-    "rsid": "rs16891982",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "SAS": 0.05,
-      "EUR": 0.05,
-      "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.05,
-      "MENA": 0.05,
-      "OCE": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "SLC45A2",
-    "trait": "Ancestry",
-    "description": "ANI-high differentiation variant.",
-    "chromosome": "5",
-    "position": 33951693
   },
   "rs12913832": {
     "rsid": "rs12913832",
@@ -17227,73 +17157,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-002.v2": {
-    "rsid": "mh01wl-002.v2",
+  "mh01wl-002": {
+    "rsid": "mh01wl-002",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
       "A:G:A:A:A",
       "A:G:A:G:A"
-    ],
-    "frequencies": {
-      "SAS": 0.596,
-      "EUR": 0.508,
-      "AFR": 0.341,
-      "AMR": 0.644,
-      "EAS": 0.702
-    },
-    "subFrequencies": {
-      "BEB": 0.59901,
-      "GIH": 0.66505,
-      "ITU": 0.58173,
-      "PJL": 0.58173,
-      "STU": 0.55288
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-002.v3": {
-    "rsid": "mh01wl-002.v3",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A:A:A",
-      "A:G:A"
-    ],
-    "frequencies": {
-      "SAS": 0.596,
-      "EUR": 0.508,
-      "AFR": 0.341,
-      "AMR": 0.644,
-      "EAS": 0.702
-    },
-    "subFrequencies": {
-      "BEB": 0.59901,
-      "GIH": 0.66505,
-      "ITU": 0.58173,
-      "PJL": 0.58173,
-      "STU": 0.55288
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-002.v1": {
-    "rsid": "mh01wl-002.v1",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A:A:A:A",
-      "A:G:A:A"
     ],
     "frequencies": {
       "SAS": 0.596,
@@ -17352,8 +17222,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01kk-211.v2": {
-    "rsid": "mh01kk-211.v2",
+  "mh01kk-211": {
+    "rsid": "mh01kk-211",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -17488,8 +17358,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01usc-1qc.v2": {
-    "rsid": "mh01usc-1qc.v2",
+  "mh01usc-1qc": {
+    "rsid": "mh01usc-1qc",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -18013,8 +17883,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02kk-136.v1": {
-    "rsid": "mh02kk-136.v1",
+  "mh02kk-136": {
+    "rsid": "mh02kk-136",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -18186,8 +18056,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-017.v4": {
-    "rsid": "mh03kk-017.v4",
+  "mh03kk-017": {
+    "rsid": "mh03kk-017",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -18418,8 +18288,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0059871.v2": {
-    "rsid": "mh04scuzj-0059871.v2",
+  "mh04scuzj-0059871": {
+    "rsid": "mh04scuzj-0059871",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -18448,8 +18318,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-004.v3": {
-    "rsid": "mh04wl-004.v3",
+  "mh04wl-004": {
+    "rsid": "mh04wl-004",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -18653,8 +18523,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-001.v3": {
-    "rsid": "mh04wl-001.v3",
+  "mh04wl-001": {
+    "rsid": "mh04wl-001",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -19151,44 +19021,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06scuzj-0480560.v1": {
-    "rsid": "mh06scuzj-0480560.v1",
+  "mh06scuzj-0480560": {
+    "rsid": "mh06scuzj-0480560",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
       "G:T:A:T:C:G:G:C:A:G:C:A:A:C:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:A:A:T:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "SAS": 0.999,
-      "EUR": 1,
-      "AFR": 0.007,
-      "AMR": 1,
-      "EAS": 0.995
-    },
-    "subFrequencies": {
-      "BEB": 1,
-      "GIH": 0.99515,
-      "ITU": 1,
-      "PJL": 1,
-      "STU": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06scuzj-0480560.v2": {
-    "rsid": "mh06scuzj-0480560.v2",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T:C:G:G:C:A:G:C:A:A",
-      "T:C:G:G:C:A:G:C:T:A"
     ],
     "frequencies": {
       "SAS": 1,
@@ -19495,8 +19335,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06kk-008.v1": {
-    "rsid": "mh06kk-008.v1",
+  "mh06kk-008": {
+    "rsid": "mh06kk-008",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -19516,192 +19356,6 @@
       "T:G:G:G",
       "G:G:A:G",
       "T:C:A:G"
-    ],
-    "frequencies": {
-      "SAS": 0.427,
-      "EUR": 0.291,
-      "AFR": 0.031,
-      "AMR": 0.01,
-      "EAS": 0.638
-    },
-    "subFrequencies": {
-      "BEB": 0,
-      "GIH": 0,
-      "ITU": 0,
-      "PJL": 0,
-      "STU": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06kk-008.v2": {
-    "rsid": "mh06kk-008.v2",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G:C:A:C:G:T:G:A:G:G:G:G",
-      "G:C:A:C:G:T:G:G:A:G:G:G",
-      "G:C:A:C:G:T:G:G:G:G:G:G",
-      "G:C:G:C:G:G:G:A:A:G:G:G",
-      "G:C:G:C:G:G:G:G:G:G:G:G",
-      "G:C:G:C:G:T:G:A:A:G:G:G",
-      "G:C:G:C:G:T:G:A:G:G:G:G",
-      "G:C:G:C:G:T:G:A:G:G:T:G",
-      "G:C:G:C:G:T:G:G:G:G:G:G",
-      "G:G:A:C:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:G:G:A:G:G:T:G",
-      "G:G:G:C:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:T:G",
-      "T:C:A:C:G:T:G:A:G:G:G:G",
-      "T:C:G:C:G:T:G:A:A:G:G:G",
-      "T:C:G:C:G:T:G:A:G:G:G:G",
-      "T:C:G:C:G:T:G:G:A:G:G:G",
-      "T:C:G:C:G:T:G:G:G:G:G:G",
-      "T:G:A:C:A:T:G:A:G:G:G:G",
-      "T:G:A:C:G:T:G:A:G:G:G:G",
-      "T:G:A:C:G:T:G:G:G:G:G:G",
-      "T:G:G:C:G:T:G:A:G:G:G:G",
-      "T:G:G:C:G:T:G:G:G:G:G:G",
-      "G:C:A:C:A:T:G:A:G:G:G:G",
-      "G:C:A:C:G:G:G:G:G:G:G:G",
-      "G:C:A:C:G:T:G:A:G:G:T:G",
-      "G:C:G:C:G:G:G:A:G:G:G:G",
-      "G:C:G:C:G:G:G:A:G:G:T:G",
-      "G:C:G:C:G:T:G:G:A:G:G:G",
-      "G:G:A:C:A:T:G:A:G:G:G:G",
-      "G:G:A:C:G:G:G:A:G:G:G:G",
-      "G:G:A:C:G:G:G:G:G:G:G:G",
-      "G:G:A:C:G:T:G:G:G:G:G:G",
-      "G:G:G:C:G:G:G:G:G:G:G:G",
-      "G:G:G:C:G:T:G:A:A:G:G:G",
-      "G:G:G:C:G:T:G:A:G:G:T:G",
-      "G:G:G:C:G:T:G:G:A:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:G:C",
-      "T:C:A:C:G:T:G:G:G:G:G:G",
-      "T:C:G:C:G:G:G:A:G:G:G:G",
-      "T:G:A:C:A:T:G:G:G:G:G:C",
-      "T:G:A:C:G:G:G:A:G:G:T:G",
-      "T:G:A:C:G:T:G:G:A:G:G:G",
-      "T:G:G:C:G:G:G:A:A:G:G:G",
-      "T:G:G:C:G:G:G:A:G:G:G:G",
-      "T:G:G:C:G:T:G:A:A:G:G:G",
-      "T:G:G:C:G:T:G:A:G:G:T:G",
-      "T:G:G:C:G:T:G:G:G:G:G:C",
-      "G:C:G:C:A:T:G:A:G:G:G:G",
-      "G:G:A:C:G:T:G:G:A:G:G:G",
-      "T:G:G:C:G:T:G:G:A:G:G:G",
-      "T:G:A:C:A:T:G:G:G:G:G:G",
-      "T:G:G:C:A:T:G:G:G:G:G:G",
-      "T:C:A:C:A:T:G:G:G:G:G:G",
-      "T:C:A:C:G:T:G:G:A:G:G:G",
-      "T:G:A:C:G:T:G:G:G:G:G:C",
-      "T:G:G:C:A:T:G:A:G:G:G:G",
-      "T:C:A:C:A:T:G:A:G:G:G:G",
-      "T:C:A:C:G:T:G:A:A:G:G:G",
-      "T:G:G:C:G:G:G:G:G:G:G:G",
-      "T:G:A:C:G:T:G:A:A:G:G:G",
-      "G:C:G:G:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:G:G:A:A:G:G:G",
-      "G:G:G:C:G:T:A:G:G:G:G:G",
-      "T:G:G:C:G:G:G:A:G:G:T:G",
-      "T:C:G:C:G:T:G:G:G:G:G:C",
-      "T:G:A:C:G:T:G:G:G:A:G:G"
-    ],
-    "frequencies": {
-      "SAS": 0.415,
-      "EUR": 0.276,
-      "AFR": 0.028,
-      "AMR": 0.332,
-      "EAS": 0.625
-    },
-    "subFrequencies": {
-      "BEB": 0.43069,
-      "GIH": 0.38835,
-      "ITU": 0.37981,
-      "PJL": 0.36538,
-      "STU": 0.50962
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06kk-008.v3": {
-    "rsid": "mh06kk-008.v3",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G:C:C:A:C:C:G:T:G:A:G:G:G:G",
-      "G:C:C:A:C:C:G:T:G:G:A:G:G:G",
-      "G:C:C:A:C:C:G:T:G:G:G:G:G:G",
-      "G:C:C:G:C:C:G:G:G:A:A:G:G:G",
-      "G:C:C:G:C:C:G:G:G:G:G:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:A:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:G:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:A:G:G:G:G",
-      "G:C:G:G:C:C:G:G:G:A:G:G:T:G",
-      "G:C:G:G:C:C:G:T:G:A:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:T:G",
-      "T:C:C:A:C:C:G:T:G:A:G:G:G:G",
-      "T:C:C:G:C:C:G:T:G:A:A:G:G:G",
-      "T:C:C:G:C:C:G:T:G:A:G:G:G:G",
-      "T:C:C:G:C:C:G:T:G:G:A:G:G:G",
-      "T:C:C:G:C:C:G:T:G:G:G:G:G:G",
-      "T:C:G:A:C:C:A:T:G:A:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:A:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:G:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:C:A:C:C:A:T:G:A:G:G:G:G",
-      "G:C:C:A:C:C:G:G:G:G:G:G:G:G",
-      "G:C:C:A:C:C:G:T:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:G:G:A:G:G:G:G",
-      "G:C:C:G:C:C:G:G:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:T:G:G:A:G:G:G",
-      "G:C:G:A:C:C:A:T:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:G:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:G:G:G:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:G:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:A:A:G:G:G",
-      "G:C:G:G:C:C:G:T:G:A:G:G:T:G",
-      "G:C:G:G:C:C:G:T:G:G:A:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:G:C",
-      "T:C:C:A:C:C:G:T:G:G:G:G:G:G",
-      "T:C:C:G:C:C:G:G:G:A:G:G:G:G",
-      "T:C:G:A:C:C:A:T:G:G:G:G:G:C",
-      "T:C:G:A:C:C:G:G:G:A:G:G:T:G",
-      "T:C:G:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:A:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:G:G:T:G",
-      "T:C:G:G:C:C:G:T:G:G:G:G:G:C",
-      "G:C:C:G:C:C:A:T:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:G:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:A:C:C:A:T:G:G:G:G:G:G",
-      "T:C:G:G:C:C:A:T:G:G:G:G:G:G",
-      "T:C:C:A:C:C:A:T:G:G:G:G:G:G",
-      "T:C:C:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:A:C:C:G:T:G:G:G:G:G:C",
-      "T:C:G:G:C:C:A:T:G:A:G:G:G:G",
-      "T:C:C:A:C:C:A:T:G:A:G:G:G:G",
-      "T:C:C:A:C:C:G:T:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:G:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:A:A:G:G:G"
     ],
     "frequencies": {
       "SAS": 0.415,
@@ -19853,8 +19507,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07hyp-19.v1": {
-    "rsid": "mh07hyp-19.v1",
+  "mh07hyp-19": {
+    "rsid": "mh07hyp-19",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -20062,8 +19716,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-011.v3": {
-    "rsid": "mh07wl-011.v3",
+  "mh07wl-011": {
+    "rsid": "mh07wl-011",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -20280,8 +19934,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08wl-045.v2": {
-    "rsid": "mh08wl-045.v2",
+  "mh08wl-045": {
+    "rsid": "mh08wl-045",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -20485,8 +20139,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-161.v1": {
-    "rsid": "mh09kk-161.v1",
+  "mh09kk-161": {
+    "rsid": "mh09kk-161",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -20517,75 +20171,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-010.v1": {
-    "rsid": "mh09wl-010.v1",
+  "mh09wl-010": {
+    "rsid": "mh09wl-010",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
       "A:G:G:A:T:A:T",
       "A:G:G:A:T:G:T",
       "T:G:G:A:T:G:T"
-    ],
-    "frequencies": {
-      "SAS": 0.995,
-      "EUR": 0.996,
-      "AFR": 0.001,
-      "AMR": 0.969,
-      "EAS": 0.933
-    },
-    "subFrequencies": {
-      "BEB": 1,
-      "GIH": 1,
-      "ITU": 0.98558,
-      "PJL": 1,
-      "STU": 0.99038
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-010.v3": {
-    "rsid": "mh09wl-010.v3",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A:G:G:A:A:T",
-      "A:G:G:A:G:T",
-      "T:G:G:A:G:T"
-    ],
-    "frequencies": {
-      "SAS": 0.995,
-      "EUR": 0.996,
-      "AFR": 0.001,
-      "AMR": 0.969,
-      "EAS": 0.933
-    },
-    "subFrequencies": {
-      "BEB": 1,
-      "GIH": 1,
-      "ITU": 0.98558,
-      "PJL": 1,
-      "STU": 0.99038
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-010.v2": {
-    "rsid": "mh09wl-010.v2",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G:G:A:T:A:T",
-      "G:G:A:T:G:T"
     ],
     "frequencies": {
       "SAS": 0.995,
@@ -20744,8 +20337,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-152.v2": {
-    "rsid": "mh09kk-152.v2",
+  "mh09kk-152": {
+    "rsid": "mh09kk-152",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -21197,8 +20790,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-024.v1": {
-    "rsid": "mh11wl-024.v1",
+  "mh11wl-024": {
+    "rsid": "mh11wl-024",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -21298,8 +20891,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-027.v2": {
-    "rsid": "mh11wl-027.v2",
+  "mh11wl-027": {
+    "rsid": "mh11wl-027",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -21307,36 +20900,6 @@
       "G:C:G:G:C:T:A:C",
       "G:C:G:G:C:T:G:C",
       "G:C:G:G:C:T:A:T"
-    ],
-    "frequencies": {
-      "SAS": 0.985,
-      "EUR": 0.999,
-      "AFR": 0.007,
-      "AMR": 0.959,
-      "EAS": 0.026
-    },
-    "subFrequencies": {
-      "BEB": 0.99505,
-      "GIH": 0.98544,
-      "ITU": 0.96635,
-      "PJL": 0.99519,
-      "STU": 0.98077
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-027.v1": {
-    "rsid": "mh11wl-027.v1",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G:G:C:T:A",
-      "G:G:C:T:G"
     ],
     "frequencies": {
       "SAS": 1,
@@ -21492,8 +21055,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-001.v2": {
-    "rsid": "mh11wl-001.v2",
+  "mh11wl-001": {
+    "rsid": "mh11wl-001",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -21506,73 +21069,6 @@
       "A:A:T:C:A:C:T",
       "C:A:C:G:A:C:T",
       "C:C:C:C:A:C:T"
-    ],
-    "frequencies": {
-      "SAS": 0.566,
-      "EUR": 0.346,
-      "AFR": 0.349,
-      "AMR": 0.667,
-      "EAS": 0.553
-    },
-    "subFrequencies": {
-      "BEB": 0.59406,
-      "GIH": 0.6068,
-      "ITU": 0.53846,
-      "PJL": 0.55288,
-      "STU": 0.53846
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-001.v3": {
-    "rsid": "mh11wl-001.v3",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A:A:C:C:A:C:T:G:C",
-      "A:A:C:G:A:C:T:G:C",
-      "A:A:T:G:A:C:T:G:C",
-      "C:C:C:G:A:C:T:G:C",
-      "C:C:T:C:A:C:T:G:C",
-      "C:C:T:G:A:C:T:G:C",
-      "A:A:T:C:A:C:T:G:C",
-      "C:A:C:G:A:C:T:G:C",
-      "C:C:C:C:A:C:T:G:C"
-    ],
-    "frequencies": {
-      "SAS": 0.566,
-      "EUR": 0.346,
-      "AFR": 0.349,
-      "AMR": 0.667,
-      "EAS": 0.553
-    },
-    "subFrequencies": {
-      "BEB": 0.59406,
-      "GIH": 0.6068,
-      "ITU": 0.53846,
-      "PJL": 0.55288,
-      "STU": 0.53846
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-001.v1": {
-    "rsid": "mh11wl-001.v1",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C:A:C:T:G:C",
-      "G:A:C:T:G:C"
     ],
     "frequencies": {
       "SAS": 0.605,
@@ -21891,8 +21387,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-213.v4": {
-    "rsid": "mh13kk-213.v4",
+  "mh13kk-213": {
+    "rsid": "mh13kk-213",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -21955,8 +21451,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-217.v4": {
-    "rsid": "mh13kk-217.v4",
+  "mh13kk-217": {
+    "rsid": "mh13kk-217",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -22017,8 +21513,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-225.v4": {
-    "rsid": "mh13kk-225.v4",
+  "mh13kk-225": {
+    "rsid": "mh13kk-225",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -22307,8 +21803,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15kk-067.v4": {
-    "rsid": "mh15kk-067.v4",
+  "mh15kk-067": {
+    "rsid": "mh15kk-067",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -22510,8 +22006,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-003.v1": {
-    "rsid": "mh16wl-003.v1",
+  "mh16wl-003": {
+    "rsid": "mh16wl-003",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -22938,8 +22434,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17wl-030.v2": {
-    "rsid": "mh17wl-030.v2",
+  "mh17wl-030": {
+    "rsid": "mh17wl-030",
     "region": "South Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -22947,36 +22443,6 @@
       "G:C:C:A:G:C:G:G:C:G:C:C",
       "G:C:C:C:G:C:G:G:A:G:C:C",
       "G:C:C:C:G:C:G:G:C:G:C:C"
-    ],
-    "frequencies": {
-      "SAS": 0.959,
-      "EUR": 0.958,
-      "AFR": 0.886,
-      "AMR": 0.989,
-      "EAS": 0.976
-    },
-    "subFrequencies": {
-      "BEB": 0.9703,
-      "GIH": 0.96117,
-      "ITU": 0.94712,
-      "PJL": 0.96154,
-      "STU": 0.95673
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-030.v1": {
-    "rsid": "mh17wl-030.v1",
-    "region": "South Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C:C:A:G:C:G:G:G:C:C",
-      "C:C:C:G:C:G:G:G:C:C"
     ],
     "frequencies": {
       "SAS": 0.963,

@@ -1,6 +1,6 @@
 {
-  "rs10456370_cen": {
-    "rsid": "rs10456370_cen",
+  "rs10456370": {
+    "rsid": "rs10456370",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -27,8 +27,8 @@
     "description": "Hazaragi/Central Asian Marker - diagnostic for the unique admixed populations of central Afghanistan and the Silk Road.",
     "position": 29312959
   },
-  "rs10456301_cen": {
-    "rsid": "rs10456301_cen",
+  "rs10456301": {
+    "rsid": "rs10456301",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -56,8 +56,8 @@
     "description": "Central Asian Steppe Marker - diagnostic for the admixed populations of the Silk Road.",
     "position": 24308127
   },
-  "rs10456345_cen": {
-    "rsid": "rs10456345_cen",
+  "rs10456345": {
+    "rsid": "rs10456345",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -254,8 +254,8 @@
     "trait": "Ancestry",
     "description": "Seldin 128 Ancestry Informative Marker for continental populations."
   },
-  "rs300000_cas": {
-    "rsid": "rs300000_cas",
+  "rs300000": {
+    "rsid": "rs300000",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -274,8 +274,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86714386
   },
-  "rs300001_cas": {
-    "rsid": "rs300001_cas",
+  "rs300001": {
+    "rsid": "rs300001",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -294,8 +294,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86714319
   },
-  "rs300002_cas": {
-    "rsid": "rs300002_cas",
+  "rs300002": {
+    "rsid": "rs300002",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -314,8 +314,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86714313
   },
-  "rs300003_cas": {
-    "rsid": "rs300003_cas",
+  "rs300003": {
+    "rsid": "rs300003",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -334,8 +334,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86714016
   },
-  "rs300004_cas": {
-    "rsid": "rs300004_cas",
+  "rs300004": {
+    "rsid": "rs300004",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -359,8 +359,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86713778
   },
-  "rs300005_cas": {
-    "rsid": "rs300005_cas",
+  "rs300005": {
+    "rsid": "rs300005",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -379,8 +379,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86713439
   },
-  "rs300006_cas": {
-    "rsid": "rs300006_cas",
+  "rs300006": {
+    "rsid": "rs300006",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -404,8 +404,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86712349
   },
-  "rs300007_cas": {
-    "rsid": "rs300007_cas",
+  "rs300007": {
+    "rsid": "rs300007",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -424,8 +424,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86712151
   },
-  "rs300008_cas": {
-    "rsid": "rs300008_cas",
+  "rs300008": {
+    "rsid": "rs300008",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -444,8 +444,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86711970
   },
-  "rs300009_cas": {
-    "rsid": "rs300009_cas",
+  "rs300009": {
+    "rsid": "rs300009",
     "chromosome": "16",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -464,8 +464,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86711556
   },
-  "rs3000010_cas": {
-    "rsid": "rs3000010_cas",
+  "rs3000010": {
+    "rsid": "rs3000010",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -484,8 +484,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 18712392
   },
-  "rs3000011_cas": {
-    "rsid": "rs3000011_cas",
+  "rs3000011": {
+    "rsid": "rs3000011",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -504,8 +504,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19615357
   },
-  "rs3000012_cas": {
-    "rsid": "rs3000012_cas",
+  "rs3000012": {
+    "rsid": "rs3000012",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -524,8 +524,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19615340
   },
-  "rs3000013_cas": {
-    "rsid": "rs3000013_cas",
+  "rs3000013": {
+    "rsid": "rs3000013",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -544,8 +544,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19615273
   },
-  "rs3000014_cas": {
-    "rsid": "rs3000014_cas",
+  "rs3000014": {
+    "rsid": "rs3000014",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -564,8 +564,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19614190
   },
-  "rs3000015_cas": {
-    "rsid": "rs3000015_cas",
+  "rs3000015": {
+    "rsid": "rs3000015",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -584,8 +584,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19496093
   },
-  "rs3000016_cas": {
-    "rsid": "rs3000016_cas",
+  "rs3000016": {
+    "rsid": "rs3000016",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -604,8 +604,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19725281
   },
-  "rs3000017_cas": {
-    "rsid": "rs3000017_cas",
+  "rs3000017": {
+    "rsid": "rs3000017",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -624,8 +624,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19725228
   },
-  "rs3000018_cas": {
-    "rsid": "rs3000018_cas",
+  "rs3000018": {
+    "rsid": "rs3000018",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -644,8 +644,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19725115
   },
-  "rs3000019_cas": {
-    "rsid": "rs3000019_cas",
+  "rs3000019": {
+    "rsid": "rs3000019",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -663,8 +663,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000020_cas": {
-    "rsid": "rs3000020_cas",
+  "rs3000020": {
+    "rsid": "rs3000020",
     "chromosome": "22",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -683,8 +683,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 15520787
   },
-  "rs3000021_cas": {
-    "rsid": "rs3000021_cas",
+  "rs3000021": {
+    "rsid": "rs3000021",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -703,8 +703,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19723939
   },
-  "rs3000022_cas": {
-    "rsid": "rs3000022_cas",
+  "rs3000022": {
+    "rsid": "rs3000022",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -722,8 +722,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000023_cas": {
-    "rsid": "rs3000023_cas",
+  "rs3000023": {
+    "rsid": "rs3000023",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -741,8 +741,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000024_cas": {
-    "rsid": "rs3000024_cas",
+  "rs3000024": {
+    "rsid": "rs3000024",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -761,8 +761,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19719939
   },
-  "rs3000025_cas": {
-    "rsid": "rs3000025_cas",
+  "rs3000025": {
+    "rsid": "rs3000025",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -780,8 +780,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000026_cas": {
-    "rsid": "rs3000026_cas",
+  "rs3000026": {
+    "rsid": "rs3000026",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -800,8 +800,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19719659
   },
-  "rs3000027_cas": {
-    "rsid": "rs3000027_cas",
+  "rs3000027": {
+    "rsid": "rs3000027",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -820,8 +820,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19718868
   },
-  "rs3000028_cas": {
-    "rsid": "rs3000028_cas",
+  "rs3000028": {
+    "rsid": "rs3000028",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -839,8 +839,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000029_cas": {
-    "rsid": "rs3000029_cas",
+  "rs3000029": {
+    "rsid": "rs3000029",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -863,8 +863,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19713375
   },
-  "rs3000030_cas": {
-    "rsid": "rs3000030_cas",
+  "rs3000030": {
+    "rsid": "rs3000030",
     "chromosome": "22",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -883,8 +883,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 15528876
   },
-  "rs3000031_cas": {
-    "rsid": "rs3000031_cas",
+  "rs3000031": {
+    "rsid": "rs3000031",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -902,8 +902,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000032_cas": {
-    "rsid": "rs3000032_cas",
+  "rs3000032": {
+    "rsid": "rs3000032",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -922,8 +922,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84512829
   },
-  "rs3000033_cas": {
-    "rsid": "rs3000033_cas",
+  "rs3000033": {
+    "rsid": "rs3000033",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -947,8 +947,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84511214
   },
-  "rs3000034_cas": {
-    "rsid": "rs3000034_cas",
+  "rs3000034": {
+    "rsid": "rs3000034",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -967,8 +967,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84510625
   },
-  "rs3000035_cas": {
-    "rsid": "rs3000035_cas",
+  "rs3000035": {
+    "rsid": "rs3000035",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -987,8 +987,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84509910
   },
-  "rs3000036_cas": {
-    "rsid": "rs3000036_cas",
+  "rs3000036": {
+    "rsid": "rs3000036",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1011,8 +1011,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84505010
   },
-  "rs3000037_cas": {
-    "rsid": "rs3000037_cas",
+  "rs3000037": {
+    "rsid": "rs3000037",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1031,8 +1031,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84504994
   },
-  "rs3000038_cas": {
-    "rsid": "rs3000038_cas",
+  "rs3000038": {
+    "rsid": "rs3000038",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1056,8 +1056,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84502357
   },
-  "rs3000039_cas": {
-    "rsid": "rs3000039_cas",
+  "rs3000039": {
+    "rsid": "rs3000039",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1076,8 +1076,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84488170
   },
-  "rs3000040_cas": {
-    "rsid": "rs3000040_cas",
+  "rs3000040": {
+    "rsid": "rs3000040",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1096,8 +1096,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84487519
   },
-  "rs3000041_cas": {
-    "rsid": "rs3000041_cas",
+  "rs3000041": {
+    "rsid": "rs3000041",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1115,8 +1115,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000042_cas": {
-    "rsid": "rs3000042_cas",
+  "rs3000042": {
+    "rsid": "rs3000042",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1135,8 +1135,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84517909
   },
-  "rs3000043_cas": {
-    "rsid": "rs3000043_cas",
+  "rs3000043": {
+    "rsid": "rs3000043",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1154,8 +1154,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000044_cas": {
-    "rsid": "rs3000044_cas",
+  "rs3000044": {
+    "rsid": "rs3000044",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1173,8 +1173,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000045_cas": {
-    "rsid": "rs3000045_cas",
+  "rs3000045": {
+    "rsid": "rs3000045",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1193,8 +1193,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84453200
   },
-  "rs3000046_cas": {
-    "rsid": "rs3000046_cas",
+  "rs3000046": {
+    "rsid": "rs3000046",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1215,8 +1215,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84448028
   },
-  "rs3000047_cas": {
-    "rsid": "rs3000047_cas",
+  "rs3000047": {
+    "rsid": "rs3000047",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1235,8 +1235,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84447085
   },
-  "rs3000048_cas": {
-    "rsid": "rs3000048_cas",
+  "rs3000048": {
+    "rsid": "rs3000048",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1255,8 +1255,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84438415
   },
-  "rs3000049_cas": {
-    "rsid": "rs3000049_cas",
+  "rs3000049": {
+    "rsid": "rs3000049",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1280,8 +1280,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84437597
   },
-  "rs3000050_cas": {
-    "rsid": "rs3000050_cas",
+  "rs3000050": {
+    "rsid": "rs3000050",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1300,8 +1300,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84436995
   },
-  "rs3000051_cas": {
-    "rsid": "rs3000051_cas",
+  "rs3000051": {
+    "rsid": "rs3000051",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1324,8 +1324,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84515103
   },
-  "rs3000052_cas": {
-    "rsid": "rs3000052_cas",
+  "rs3000052": {
+    "rsid": "rs3000052",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1344,8 +1344,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84435692
   },
-  "rs3000053_cas": {
-    "rsid": "rs3000053_cas",
+  "rs3000053": {
+    "rsid": "rs3000053",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1368,8 +1368,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84514560
   },
-  "rs3000054_cas": {
-    "rsid": "rs3000054_cas",
+  "rs3000054": {
+    "rsid": "rs3000054",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1393,8 +1393,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84514405
   },
-  "rs3000055_cas": {
-    "rsid": "rs3000055_cas",
+  "rs3000055": {
+    "rsid": "rs3000055",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1413,8 +1413,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84428514
   },
-  "rs3000056_cas": {
-    "rsid": "rs3000056_cas",
+  "rs3000056": {
+    "rsid": "rs3000056",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1433,8 +1433,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 18539905
   },
-  "rs3000057_cas": {
-    "rsid": "rs3000057_cas",
+  "rs3000057": {
+    "rsid": "rs3000057",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1453,8 +1453,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 18539841
   },
-  "rs3000058_cas": {
-    "rsid": "rs3000058_cas",
+  "rs3000058": {
+    "rsid": "rs3000058",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1473,8 +1473,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 18530998
   },
-  "rs3000059_cas": {
-    "rsid": "rs3000059_cas",
+  "rs3000059": {
+    "rsid": "rs3000059",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1492,8 +1492,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000060_cas": {
-    "rsid": "rs3000060_cas",
+  "rs3000060": {
+    "rsid": "rs3000060",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1512,8 +1512,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 230752167
   },
-  "rs3000061_cas": {
-    "rsid": "rs3000061_cas",
+  "rs3000061": {
+    "rsid": "rs3000061",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1532,8 +1532,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 230752462
   },
-  "rs3000062_cas": {
-    "rsid": "rs3000062_cas",
+  "rs3000062": {
+    "rsid": "rs3000062",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1552,8 +1552,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 230753059
   },
-  "rs3000063_cas": {
-    "rsid": "rs3000063_cas",
+  "rs3000063": {
+    "rsid": "rs3000063",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1572,8 +1572,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 230753789
   },
-  "rs3000064_cas": {
-    "rsid": "rs3000064_cas",
+  "rs3000064": {
+    "rsid": "rs3000064",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1597,8 +1597,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 230690196
   },
-  "rs3000065_cas": {
-    "rsid": "rs3000065_cas",
+  "rs3000065": {
+    "rsid": "rs3000065",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1617,8 +1617,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 1536463
   },
-  "rs3000066_cas": {
-    "rsid": "rs3000066_cas",
+  "rs3000066": {
+    "rsid": "rs3000066",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1637,8 +1637,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 1521118
   },
-  "rs3000067_cas": {
-    "rsid": "rs3000067_cas",
+  "rs3000067": {
+    "rsid": "rs3000067",
     "chromosome": "8",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1657,8 +1657,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 5887706
   },
-  "rs3000068_cas": {
-    "rsid": "rs3000068_cas",
+  "rs3000068": {
+    "rsid": "rs3000068",
     "chromosome": "8",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1682,8 +1682,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 5887754
   },
-  "rs3000069_cas": {
-    "rsid": "rs3000069_cas",
+  "rs3000069": {
+    "rsid": "rs3000069",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1702,8 +1702,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86253409
   },
-  "rs3000070_cas": {
-    "rsid": "rs3000070_cas",
+  "rs3000070": {
+    "rsid": "rs3000070",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1727,8 +1727,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86253554
   },
-  "rs3000071_cas": {
-    "rsid": "rs3000071_cas",
+  "rs3000071": {
+    "rsid": "rs3000071",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1747,8 +1747,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86254432
   },
-  "rs3000072_cas": {
-    "rsid": "rs3000072_cas",
+  "rs3000072": {
+    "rsid": "rs3000072",
     "chromosome": "6",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1772,8 +1772,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86257359
   },
-  "rs3000073_cas": {
-    "rsid": "rs3000073_cas",
+  "rs3000073": {
+    "rsid": "rs3000073",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1797,8 +1797,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 105263455
   },
-  "rs3000074_cas": {
-    "rsid": "rs3000074_cas",
+  "rs3000074": {
+    "rsid": "rs3000074",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1817,8 +1817,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 105272206
   },
-  "rs3000075_cas": {
-    "rsid": "rs3000075_cas",
+  "rs3000075": {
+    "rsid": "rs3000075",
     "chromosome": "14",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1842,8 +1842,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 105246882
   },
-  "rs3000076_cas": {
-    "rsid": "rs3000076_cas",
+  "rs3000076": {
+    "rsid": "rs3000076",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1861,8 +1861,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000077_cas": {
-    "rsid": "rs3000077_cas",
+  "rs3000077": {
+    "rsid": "rs3000077",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1880,8 +1880,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000078_cas": {
-    "rsid": "rs3000078_cas",
+  "rs3000078": {
+    "rsid": "rs3000078",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1899,8 +1899,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000079_cas": {
-    "rsid": "rs3000079_cas",
+  "rs3000079": {
+    "rsid": "rs3000079",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1918,8 +1918,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000080_cas": {
-    "rsid": "rs3000080_cas",
+  "rs3000080": {
+    "rsid": "rs3000080",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1937,8 +1937,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000081_cas": {
-    "rsid": "rs3000081_cas",
+  "rs3000081": {
+    "rsid": "rs3000081",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1956,8 +1956,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000082_cas": {
-    "rsid": "rs3000082_cas",
+  "rs3000082": {
+    "rsid": "rs3000082",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1975,8 +1975,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000083_cas": {
-    "rsid": "rs3000083_cas",
+  "rs3000083": {
+    "rsid": "rs3000083",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -1994,8 +1994,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000084_cas": {
-    "rsid": "rs3000084_cas",
+  "rs3000084": {
+    "rsid": "rs3000084",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2013,8 +2013,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000085_cas": {
-    "rsid": "rs3000085_cas",
+  "rs3000085": {
+    "rsid": "rs3000085",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2032,8 +2032,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000086_cas": {
-    "rsid": "rs3000086_cas",
+  "rs3000086": {
+    "rsid": "rs3000086",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2051,8 +2051,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000087_cas": {
-    "rsid": "rs3000087_cas",
+  "rs3000087": {
+    "rsid": "rs3000087",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2070,8 +2070,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000088_cas": {
-    "rsid": "rs3000088_cas",
+  "rs3000088": {
+    "rsid": "rs3000088",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2089,8 +2089,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000089_cas": {
-    "rsid": "rs3000089_cas",
+  "rs3000089": {
+    "rsid": "rs3000089",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2108,8 +2108,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000090_cas": {
-    "rsid": "rs3000090_cas",
+  "rs3000090": {
+    "rsid": "rs3000090",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2127,8 +2127,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000091_cas": {
-    "rsid": "rs3000091_cas",
+  "rs3000091": {
+    "rsid": "rs3000091",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2146,8 +2146,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000092_cas": {
-    "rsid": "rs3000092_cas",
+  "rs3000092": {
+    "rsid": "rs3000092",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2165,8 +2165,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000093_cas": {
-    "rsid": "rs3000093_cas",
+  "rs3000093": {
+    "rsid": "rs3000093",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2184,8 +2184,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs3000094_cas": {
-    "rsid": "rs3000094_cas",
+  "rs3000094": {
+    "rsid": "rs3000094",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2204,8 +2204,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 79424522
   },
-  "rs3000095_cas": {
-    "rsid": "rs3000095_cas",
+  "rs3000095": {
+    "rsid": "rs3000095",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2229,8 +2229,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 79424659
   },
-  "rs3000096_cas": {
-    "rsid": "rs3000096_cas",
+  "rs3000096": {
+    "rsid": "rs3000096",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2254,8 +2254,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 79426394
   },
-  "rs3000097_cas": {
-    "rsid": "rs3000097_cas",
+  "rs3000097": {
+    "rsid": "rs3000097",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2274,8 +2274,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 79430321
   },
-  "rs3000098_cas": {
-    "rsid": "rs3000098_cas",
+  "rs3000098": {
+    "rsid": "rs3000098",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2296,8 +2296,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 79431396
   },
-  "rs3000099_cas": {
-    "rsid": "rs3000099_cas",
+  "rs3000099": {
+    "rsid": "rs3000099",
     "chromosome": "1",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2316,8 +2316,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 79435027
   },
-  "rs800000_cas": {
-    "rsid": "rs800000_cas",
+  "rs800000": {
+    "rsid": "rs800000",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2335,8 +2335,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800001_cas": {
-    "rsid": "rs800001_cas",
+  "rs800001": {
+    "rsid": "rs800001",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2354,8 +2354,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800002_cas": {
-    "rsid": "rs800002_cas",
+  "rs800002": {
+    "rsid": "rs800002",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2373,8 +2373,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800003_cas": {
-    "rsid": "rs800003_cas",
+  "rs800003": {
+    "rsid": "rs800003",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2392,8 +2392,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800004_cas": {
-    "rsid": "rs800004_cas",
+  "rs800004": {
+    "rsid": "rs800004",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2411,8 +2411,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800005_cas": {
-    "rsid": "rs800005_cas",
+  "rs800005": {
+    "rsid": "rs800005",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2430,8 +2430,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800006_cas": {
-    "rsid": "rs800006_cas",
+  "rs800006": {
+    "rsid": "rs800006",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2449,8 +2449,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800007_cas": {
-    "rsid": "rs800007_cas",
+  "rs800007": {
+    "rsid": "rs800007",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2468,8 +2468,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800008_cas": {
-    "rsid": "rs800008_cas",
+  "rs800008": {
+    "rsid": "rs800008",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2487,8 +2487,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs800009_cas": {
-    "rsid": "rs800009_cas",
+  "rs800009": {
+    "rsid": "rs800009",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2506,8 +2506,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs8000010_cas": {
-    "rsid": "rs8000010_cas",
+  "rs8000010": {
+    "rsid": "rs8000010",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2526,8 +2526,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 69642790
   },
-  "rs8000011_cas": {
-    "rsid": "rs8000011_cas",
+  "rs8000011": {
+    "rsid": "rs8000011",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2546,8 +2546,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 54039376
   },
-  "rs8000012_cas": {
-    "rsid": "rs8000012_cas",
+  "rs8000012": {
+    "rsid": "rs8000012",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2566,8 +2566,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 99685547
   },
-  "rs8000013_cas": {
-    "rsid": "rs8000013_cas",
+  "rs8000013": {
+    "rsid": "rs8000013",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2586,8 +2586,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 77829513
   },
-  "rs8000014_cas": {
-    "rsid": "rs8000014_cas",
+  "rs8000014": {
+    "rsid": "rs8000014",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2606,8 +2606,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 23460592
   },
-  "rs8000015_cas": {
-    "rsid": "rs8000015_cas",
+  "rs8000015": {
+    "rsid": "rs8000015",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2626,8 +2626,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 103292962
   },
-  "rs8000016_cas": {
-    "rsid": "rs8000016_cas",
+  "rs8000016": {
+    "rsid": "rs8000016",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2646,8 +2646,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 27999512
   },
-  "rs8000017_cas": {
-    "rsid": "rs8000017_cas",
+  "rs8000017": {
+    "rsid": "rs8000017",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2671,8 +2671,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 31954967
   },
-  "rs8000018_cas": {
-    "rsid": "rs8000018_cas",
+  "rs8000018": {
+    "rsid": "rs8000018",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2696,8 +2696,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 95878283
   },
-  "rs8000019_cas": {
-    "rsid": "rs8000019_cas",
+  "rs8000019": {
+    "rsid": "rs8000019",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2716,8 +2716,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 101456607
   },
-  "rs8000020_cas": {
-    "rsid": "rs8000020_cas",
+  "rs8000020": {
+    "rsid": "rs8000020",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2736,8 +2736,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 83599979
   },
-  "rs8000021_cas": {
-    "rsid": "rs8000021_cas",
+  "rs8000021": {
+    "rsid": "rs8000021",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2756,8 +2756,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 24620822
   },
-  "rs8000022_cas": {
-    "rsid": "rs8000022_cas",
+  "rs8000022": {
+    "rsid": "rs8000022",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2780,8 +2780,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 97048591
   },
-  "rs8000023_cas": {
-    "rsid": "rs8000023_cas",
+  "rs8000023": {
+    "rsid": "rs8000023",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2805,8 +2805,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 101095541
   },
-  "rs8000024_cas": {
-    "rsid": "rs8000024_cas",
+  "rs8000024": {
+    "rsid": "rs8000024",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2824,8 +2824,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs8000025_cas": {
-    "rsid": "rs8000025_cas",
+  "rs8000025": {
+    "rsid": "rs8000025",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2849,8 +2849,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 71425673
   },
-  "rs8000026_cas": {
-    "rsid": "rs8000026_cas",
+  "rs8000026": {
+    "rsid": "rs8000026",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2874,8 +2874,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 34766720
   },
-  "rs8000027_cas": {
-    "rsid": "rs8000027_cas",
+  "rs8000027": {
+    "rsid": "rs8000027",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2894,8 +2894,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 77963430
   },
-  "rs8000028_cas": {
-    "rsid": "rs8000028_cas",
+  "rs8000028": {
+    "rsid": "rs8000028",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2919,8 +2919,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 93496867
   },
-  "rs8000029_cas": {
-    "rsid": "rs8000029_cas",
+  "rs8000029": {
+    "rsid": "rs8000029",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2939,8 +2939,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 36708095
   },
-  "rs8000030_cas": {
-    "rsid": "rs8000030_cas",
+  "rs8000030": {
+    "rsid": "rs8000030",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2964,8 +2964,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 97083483
   },
-  "rs8000031_cas": {
-    "rsid": "rs8000031_cas",
+  "rs8000031": {
+    "rsid": "rs8000031",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -2988,8 +2988,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 49660296
   },
-  "rs8000032_cas": {
-    "rsid": "rs8000032_cas",
+  "rs8000032": {
+    "rsid": "rs8000032",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3008,8 +3008,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 110921644
   },
-  "rs8000033_cas": {
-    "rsid": "rs8000033_cas",
+  "rs8000033": {
+    "rsid": "rs8000033",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3033,8 +3033,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 47297611
   },
-  "rs8000034_cas": {
-    "rsid": "rs8000034_cas",
+  "rs8000034": {
+    "rsid": "rs8000034",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3053,8 +3053,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 80197450
   },
-  "rs8000035_cas": {
-    "rsid": "rs8000035_cas",
+  "rs8000035": {
+    "rsid": "rs8000035",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3073,8 +3073,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 19204635
   },
-  "rs8000036_cas": {
-    "rsid": "rs8000036_cas",
+  "rs8000036": {
+    "rsid": "rs8000036",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3098,8 +3098,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 83671990
   },
-  "rs8000037_cas": {
-    "rsid": "rs8000037_cas",
+  "rs8000037": {
+    "rsid": "rs8000037",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3123,8 +3123,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 93313926
   },
-  "rs8000038_cas": {
-    "rsid": "rs8000038_cas",
+  "rs8000038": {
+    "rsid": "rs8000038",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3148,8 +3148,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 48884171
   },
-  "rs8000039_cas": {
-    "rsid": "rs8000039_cas",
+  "rs8000039": {
+    "rsid": "rs8000039",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3173,8 +3173,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 92428123
   },
-  "rs8000040_cas": {
-    "rsid": "rs8000040_cas",
+  "rs8000040": {
+    "rsid": "rs8000040",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3198,8 +3198,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 40285741
   },
-  "rs8000041_cas": {
-    "rsid": "rs8000041_cas",
+  "rs8000041": {
+    "rsid": "rs8000041",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3219,8 +3219,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 80489936
   },
-  "rs8000042_cas": {
-    "rsid": "rs8000042_cas",
+  "rs8000042": {
+    "rsid": "rs8000042",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3239,8 +3239,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 21050139
   },
-  "rs8000043_cas": {
-    "rsid": "rs8000043_cas",
+  "rs8000043": {
+    "rsid": "rs8000043",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3259,8 +3259,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 24534918
   },
-  "rs8000044_cas": {
-    "rsid": "rs8000044_cas",
+  "rs8000044": {
+    "rsid": "rs8000044",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3279,8 +3279,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 45524972
   },
-  "rs8000045_cas": {
-    "rsid": "rs8000045_cas",
+  "rs8000045": {
+    "rsid": "rs8000045",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3299,8 +3299,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 70194301
   },
-  "rs8000046_cas": {
-    "rsid": "rs8000046_cas",
+  "rs8000046": {
+    "rsid": "rs8000046",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3319,8 +3319,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 21050147
   },
-  "rs8000047_cas": {
-    "rsid": "rs8000047_cas",
+  "rs8000047": {
+    "rsid": "rs8000047",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3339,8 +3339,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 38059329
   },
-  "rs8000048_cas": {
-    "rsid": "rs8000048_cas",
+  "rs8000048": {
+    "rsid": "rs8000048",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3359,8 +3359,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 43227925
   },
-  "rs8000049_cas": {
-    "rsid": "rs8000049_cas",
+  "rs8000049": {
+    "rsid": "rs8000049",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3384,8 +3384,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 100962039
   },
-  "rs8000050_cas": {
-    "rsid": "rs8000050_cas",
+  "rs8000050": {
+    "rsid": "rs8000050",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3404,8 +3404,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 70100480
   },
-  "rs8000051_cas": {
-    "rsid": "rs8000051_cas",
+  "rs8000051": {
+    "rsid": "rs8000051",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3424,8 +3424,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 65403560
   },
-  "rs8000052_cas": {
-    "rsid": "rs8000052_cas",
+  "rs8000052": {
+    "rsid": "rs8000052",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3444,8 +3444,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 75023951
   },
-  "rs8000053_cas": {
-    "rsid": "rs8000053_cas",
+  "rs8000053": {
+    "rsid": "rs8000053",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3469,8 +3469,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 108645391
   },
-  "rs8000054_cas": {
-    "rsid": "rs8000054_cas",
+  "rs8000054": {
+    "rsid": "rs8000054",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3494,8 +3494,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 60691964
   },
-  "rs8000055_cas": {
-    "rsid": "rs8000055_cas",
+  "rs8000055": {
+    "rsid": "rs8000055",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3514,8 +3514,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 39105416
   },
-  "rs8000056_cas": {
-    "rsid": "rs8000056_cas",
+  "rs8000056": {
+    "rsid": "rs8000056",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3534,8 +3534,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 105827091
   },
-  "rs8000057_cas": {
-    "rsid": "rs8000057_cas",
+  "rs8000057": {
+    "rsid": "rs8000057",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3559,8 +3559,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 74757921
   },
-  "rs8000058_cas": {
-    "rsid": "rs8000058_cas",
+  "rs8000058": {
+    "rsid": "rs8000058",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3579,8 +3579,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 30702088
   },
-  "rs8000059_cas": {
-    "rsid": "rs8000059_cas",
+  "rs8000059": {
+    "rsid": "rs8000059",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3599,8 +3599,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 85650396
   },
-  "rs8000060_cas": {
-    "rsid": "rs8000060_cas",
+  "rs8000060": {
+    "rsid": "rs8000060",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3619,8 +3619,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 111435673
   },
-  "rs8000061_cas": {
-    "rsid": "rs8000061_cas",
+  "rs8000061": {
+    "rsid": "rs8000061",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3639,8 +3639,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 63574582
   },
-  "rs8000062_cas": {
-    "rsid": "rs8000062_cas",
+  "rs8000062": {
+    "rsid": "rs8000062",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3664,8 +3664,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 75596332
   },
-  "rs8000063_cas": {
-    "rsid": "rs8000063_cas",
+  "rs8000063": {
+    "rsid": "rs8000063",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3689,8 +3689,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 97937588
   },
-  "rs8000064_cas": {
-    "rsid": "rs8000064_cas",
+  "rs8000064": {
+    "rsid": "rs8000064",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3709,8 +3709,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 30955360
   },
-  "rs8000065_cas": {
-    "rsid": "rs8000065_cas",
+  "rs8000065": {
+    "rsid": "rs8000065",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3729,8 +3729,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 26058465
   },
-  "rs8000066_cas": {
-    "rsid": "rs8000066_cas",
+  "rs8000066": {
+    "rsid": "rs8000066",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3749,8 +3749,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 23392939
   },
-  "rs8000067_cas": {
-    "rsid": "rs8000067_cas",
+  "rs8000067": {
+    "rsid": "rs8000067",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3769,8 +3769,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 110039879
   },
-  "rs8000068_cas": {
-    "rsid": "rs8000068_cas",
+  "rs8000068": {
+    "rsid": "rs8000068",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3794,8 +3794,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 90741792
   },
-  "rs8000069_cas": {
-    "rsid": "rs8000069_cas",
+  "rs8000069": {
+    "rsid": "rs8000069",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3814,8 +3814,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 109560265
   },
-  "rs8000070_cas": {
-    "rsid": "rs8000070_cas",
+  "rs8000070": {
+    "rsid": "rs8000070",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3834,8 +3834,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 45268125
   },
-  "rs8000071_cas": {
-    "rsid": "rs8000071_cas",
+  "rs8000071": {
+    "rsid": "rs8000071",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3854,8 +3854,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 32551236
   },
-  "rs8000072_cas": {
-    "rsid": "rs8000072_cas",
+  "rs8000072": {
+    "rsid": "rs8000072",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3879,8 +3879,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 68835308
   },
-  "rs8000073_cas": {
-    "rsid": "rs8000073_cas",
+  "rs8000073": {
+    "rsid": "rs8000073",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3899,8 +3899,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 37574756
   },
-  "rs8000074_cas": {
-    "rsid": "rs8000074_cas",
+  "rs8000074": {
+    "rsid": "rs8000074",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3924,8 +3924,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 59456335
   },
-  "rs8000075_cas": {
-    "rsid": "rs8000075_cas",
+  "rs8000075": {
+    "rsid": "rs8000075",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3944,8 +3944,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 65419926
   },
-  "rs8000076_cas": {
-    "rsid": "rs8000076_cas",
+  "rs8000076": {
+    "rsid": "rs8000076",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3964,8 +3964,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 18219523
   },
-  "rs8000077_cas": {
-    "rsid": "rs8000077_cas",
+  "rs8000077": {
+    "rsid": "rs8000077",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -3989,8 +3989,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 60737732
   },
-  "rs8000078_cas": {
-    "rsid": "rs8000078_cas",
+  "rs8000078": {
+    "rsid": "rs8000078",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4009,8 +4009,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 106527626
   },
-  "rs8000079_cas": {
-    "rsid": "rs8000079_cas",
+  "rs8000079": {
+    "rsid": "rs8000079",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4029,8 +4029,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 102611067
   },
-  "rs8000080_cas": {
-    "rsid": "rs8000080_cas",
+  "rs8000080": {
+    "rsid": "rs8000080",
     "chromosome": "Unknown",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4048,8 +4048,8 @@
     "trait": "Ancestry",
     "description": "Central Asian ancestry informative marker."
   },
-  "rs8000081_cas": {
-    "rsid": "rs8000081_cas",
+  "rs8000081": {
+    "rsid": "rs8000081",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4068,8 +4068,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 73042041
   },
-  "rs8000082_cas": {
-    "rsid": "rs8000082_cas",
+  "rs8000082": {
+    "rsid": "rs8000082",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4088,8 +4088,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 52927065
   },
-  "rs8000083_cas": {
-    "rsid": "rs8000083_cas",
+  "rs8000083": {
+    "rsid": "rs8000083",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4108,8 +4108,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 58428319
   },
-  "rs8000084_cas": {
-    "rsid": "rs8000084_cas",
+  "rs8000084": {
+    "rsid": "rs8000084",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4128,8 +4128,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 33037056
   },
-  "rs8000085_cas": {
-    "rsid": "rs8000085_cas",
+  "rs8000085": {
+    "rsid": "rs8000085",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4148,8 +4148,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 88207199
   },
-  "rs8000086_cas": {
-    "rsid": "rs8000086_cas",
+  "rs8000086": {
+    "rsid": "rs8000086",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4168,8 +4168,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 86567392
   },
-  "rs8000087_cas": {
-    "rsid": "rs8000087_cas",
+  "rs8000087": {
+    "rsid": "rs8000087",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4188,8 +4188,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 105827142
   },
-  "rs8000088_cas": {
-    "rsid": "rs8000088_cas",
+  "rs8000088": {
+    "rsid": "rs8000088",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4209,8 +4209,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 20538747
   },
-  "rs8000089_cas": {
-    "rsid": "rs8000089_cas",
+  "rs8000089": {
+    "rsid": "rs8000089",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4234,8 +4234,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 54294526
   },
-  "rs8000090_cas": {
-    "rsid": "rs8000090_cas",
+  "rs8000090": {
+    "rsid": "rs8000090",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4259,8 +4259,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 112159919
   },
-  "rs8000091_cas": {
-    "rsid": "rs8000091_cas",
+  "rs8000091": {
+    "rsid": "rs8000091",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4284,8 +4284,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 69746894
   },
-  "rs8000092_cas": {
-    "rsid": "rs8000092_cas",
+  "rs8000092": {
+    "rsid": "rs8000092",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4305,8 +4305,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 92967189
   },
-  "rs8000093_cas": {
-    "rsid": "rs8000093_cas",
+  "rs8000093": {
+    "rsid": "rs8000093",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4330,8 +4330,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 76245577
   },
-  "rs8000094_cas": {
-    "rsid": "rs8000094_cas",
+  "rs8000094": {
+    "rsid": "rs8000094",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4355,8 +4355,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 84554010
   },
-  "rs8000095_cas": {
-    "rsid": "rs8000095_cas",
+  "rs8000095": {
+    "rsid": "rs8000095",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4380,8 +4380,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 67805327
   },
-  "rs8000096_cas": {
-    "rsid": "rs8000096_cas",
+  "rs8000096": {
+    "rsid": "rs8000096",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4400,8 +4400,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 64303566
   },
-  "rs8000097_cas": {
-    "rsid": "rs8000097_cas",
+  "rs8000097": {
+    "rsid": "rs8000097",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4425,8 +4425,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 68887963
   },
-  "rs8000098_cas": {
-    "rsid": "rs8000098_cas",
+  "rs8000098": {
+    "rsid": "rs8000098",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4447,8 +4447,8 @@
     "description": "Central Asian ancestry informative marker.",
     "position": 53799475
   },
-  "rs8000099_cas": {
-    "rsid": "rs8000099_cas",
+  "rs8000099": {
+    "rsid": "rs8000099",
     "chromosome": "13",
     "region": "Central Asian",
     "color": "#F59E0B",
@@ -4490,35 +4490,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01scuzj-0005171.v1": {
-    "rsid": "mh01scuzj-0005171.v1",
+  "mh01scuzj-0005171": {
+    "rsid": "mh01scuzj-0005171",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:A:G:T:T:G:A:G:G:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01scuzj-0005171.v2": {
-    "rsid": "mh01scuzj-0005171.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:T:T:G:A:G:G:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -4566,8 +4543,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01kk-001.v2": {
-    "rsid": "mh01kk-001.v2",
+  "mh01kk-001": {
+    "rsid": "mh01kk-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -4678,8 +4655,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01kk-205.v1": {
-    "rsid": "mh01kk-205.v1",
+  "mh01kk-205": {
+    "rsid": "mh01kk-205",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -4690,32 +4667,6 @@
       "T:T:G:G",
       "T:T:G:A",
       "T:C:G:G"
-    ],
-    "frequencies": {
-      "CAS": 0.263,
-      "EUR": 0.209,
-      "AFR": 0.366,
-      "EAS": 0.277,
-      "SAS": 0.303
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01kk-205.v4": {
-    "rsid": "mh01kk-205.v4",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A",
-      "A:G",
-      "G:G",
-      "G:A"
     ],
     "frequencies": {
       "CAS": 0.263,
@@ -4859,8 +4810,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-040.v1": {
-    "rsid": "mh01wl-040.v1",
+  "mh01wl-040": {
+    "rsid": "mh01wl-040",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -4911,8 +4862,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-077.v2": {
-    "rsid": "mh01wl-077.v2",
+  "mh01wl-077": {
+    "rsid": "mh01wl-077",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -4922,42 +4873,6 @@
       "T:T:T",
       "C:C:C",
       "T:T:C"
-    ],
-    "frequencies": {
-      "CAS": 0.371,
-      "EUR": 0.411,
-      "AFR": 0.481,
-      "EAS": 0.337,
-      "SAS": 0.366
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-077.v1": {
-    "rsid": "mh01wl-077.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:C:G:T:C",
-      "C:C:G:T:T",
-      "C:T:G:C:C",
-      "C:T:G:C:T",
-      "C:T:G:T:C",
-      "C:T:G:T:T",
-      "T:T:A:T:C",
-      "T:T:A:T:T",
-      "T:T:G:T:C",
-      "T:T:G:T:T",
-      "C:C:G:C:C",
-      "C:C:G:C:T",
-      "T:T:G:C:T",
-      "T:T:A:C:T"
     ],
     "frequencies": {
       "CAS": 0.28,
@@ -5056,8 +4971,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-088.v1": {
-    "rsid": "mh01wl-088.v1",
+  "mh01wl-088": {
+    "rsid": "mh01wl-088",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -5106,8 +5021,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-003.v1": {
-    "rsid": "mh01wl-003.v1",
+  "mh01wl-003": {
+    "rsid": "mh01wl-003",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -5131,8 +5046,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-038.v3": {
-    "rsid": "mh01wl-038.v3",
+  "mh01wl-038": {
+    "rsid": "mh01wl-038",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -5257,61 +5172,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-002.v2": {
-    "rsid": "mh01wl-002.v2",
+  "mh01wl-002": {
+    "rsid": "mh01wl-002",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:G:A:A:A",
       "A:G:A:G:A"
-    ],
-    "frequencies": {
-      "CAS": 0.602,
-      "EUR": 0.508,
-      "AFR": 0.341,
-      "EAS": 0.702,
-      "SAS": 0.596
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-002.v3": {
-    "rsid": "mh01wl-002.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:A",
-      "A:G:A"
-    ],
-    "frequencies": {
-      "CAS": 0.602,
-      "EUR": 0.508,
-      "AFR": 0.341,
-      "EAS": 0.702,
-      "SAS": 0.596
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-002.v1": {
-    "rsid": "mh01wl-002.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:A:A",
-      "A:G:A:A"
     ],
     "frequencies": {
       "CAS": 0.602,
@@ -5384,8 +5251,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01kk-211.v2": {
-    "rsid": "mh01kk-211.v2",
+  "mh01kk-211": {
+    "rsid": "mh01kk-211",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -5523,8 +5390,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01usc-1qc.v2": {
-    "rsid": "mh01usc-1qc.v2",
+  "mh01usc-1qc": {
+    "rsid": "mh01usc-1qc",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -5650,58 +5517,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-024.v2": {
-    "rsid": "mh01wl-024.v2",
+  "mh01wl-024": {
+    "rsid": "mh01wl-024",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:T:A:T:A:T:A:A:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-024.v1": {
-    "rsid": "mh01wl-024.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:T:A:T:A:A:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-024.v3": {
-    "rsid": "mh01wl-024.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:A:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -5742,35 +5563,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-001.v1": {
-    "rsid": "mh02wl-001.v1",
+  "mh02wl-001": {
+    "rsid": "mh02wl-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:T:G:T:C:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-001.v2": {
-    "rsid": "mh02wl-001.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:T:G:T:C:T:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -5904,58 +5702,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-025.v2": {
-    "rsid": "mh02wl-025.v2",
+  "mh02wl-025": {
+    "rsid": "mh02wl-025",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "T:C:G:G:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-025.v3": {
-    "rsid": "mh02wl-025.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-025.v1": {
-    "rsid": "mh02wl-025.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:G:T:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -6504,8 +6256,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-047.v2": {
-    "rsid": "mh02wl-047.v2",
+  "mh02wl-047": {
+    "rsid": "mh02wl-047",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -6530,8 +6282,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02scuzj-0451996.v2": {
-    "rsid": "mh02scuzj-0451996.v2",
+  "mh02scuzj-0451996": {
+    "rsid": "mh02scuzj-0451996",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -6861,35 +6613,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-030.v2": {
-    "rsid": "mh02wl-030.v2",
+  "mh02wl-030": {
+    "rsid": "mh02wl-030",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:C:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-030.v1": {
-    "rsid": "mh02wl-030.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C:A:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -6971,8 +6700,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-016.v1": {
-    "rsid": "mh03kk-016.v1",
+  "mh03kk-016": {
+    "rsid": "mh03kk-016",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -6989,41 +6718,6 @@
       "C:G:T:T:T:T:G:C:T",
       "C:T:C:T:T:T:G:C:G",
       "T:G:C:T:C:G:G:T:G"
-    ],
-    "frequencies": {
-      "CAS": 0.334,
-      "EUR": 0.293,
-      "AFR": 0.551,
-      "EAS": 0.305,
-      "SAS": 0.403
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-016.v2": {
-    "rsid": "mh03kk-016.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:C:C:C:T:A:C:G:T:C:G",
-      "C:G:C:T:C:T:A:C:G:C:C:T",
-      "C:G:T:C:C:T:A:C:G:T:C:G",
-      "C:G:T:T:C:T:A:C:C:C:C:T",
-      "C:G:T:T:C:T:A:C:G:C:C:T",
-      "C:T:C:C:C:T:A:C:G:C:C:G",
-      "C:T:C:C:C:T:A:C:G:C:C:T",
-      "C:T:C:T:C:T:A:C:G:T:C:T",
-      "C:T:C:T:T:T:A:C:G:C:C:T",
-      "C:G:C:T:C:T:A:C:G:T:C:G",
-      "C:G:T:T:T:T:A:C:G:C:C:T",
-      "C:G:T:C:C:T:A:C:G:T:T:G",
-      "C:T:C:T:T:T:A:C:G:C:C:G"
     ],
     "frequencies": {
       "CAS": 0.334,
@@ -7200,8 +6894,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-017.v4": {
-    "rsid": "mh03kk-017.v4",
+  "mh03kk-017": {
+    "rsid": "mh03kk-017",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -7259,8 +6953,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-070.v1": {
-    "rsid": "mh03wl-070.v1",
+  "mh03wl-070": {
+    "rsid": "mh03wl-070",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -7286,41 +6980,6 @@
       "C:A:T:T:G",
       "C:A:C:T:G",
       "T:C:T:A:G"
-    ],
-    "frequencies": {
-      "CAS": 0.468,
-      "EUR": 0.584,
-      "AFR": 0.568,
-      "EAS": 0.302,
-      "SAS": 0.518
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03wl-070.v4": {
-    "rsid": "mh03wl-070.v4",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C:A:A",
-      "A:C:T:A",
-      "A:C:T:G",
-      "A:T:A:A",
-      "A:T:A:G",
-      "A:T:T:A",
-      "A:T:T:G",
-      "C:C:A:A",
-      "C:C:A:G",
-      "C:C:T:A",
-      "C:C:T:G",
-      "A:C:A:G",
-      "C:T:A:G"
     ],
     "frequencies": {
       "CAS": 0.472,
@@ -7581,69 +7240,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-150.v3": {
-    "rsid": "mh03kk-150.v3",
+  "mh03kk-150": {
+    "rsid": "mh03kk-150",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:A",
       "G:A",
       "G:G"
-    ],
-    "frequencies": {
-      "CAS": 0.288,
-      "EUR": 0.262,
-      "AFR": 0.328,
-      "EAS": 0.215,
-      "SAS": 0.388
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-150.v1": {
-    "rsid": "mh03kk-150.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:C:A",
-      "A:A:T:A",
-      "G:A:C:C",
-      "G:G:C:C"
-    ],
-    "frequencies": {
-      "CAS": 0.288,
-      "EUR": 0.262,
-      "AFR": 0.328,
-      "EAS": 0.215,
-      "SAS": 0.388
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-150.v2": {
-    "rsid": "mh03kk-150.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:T:A:A:G:G:C:C:A",
-      "A:T:A:A:G:G:T:C:A",
-      "G:T:A:A:G:G:C:C:C",
-      "G:T:G:A:G:G:C:C:C",
-      "A:T:A:A:G:A:C:C:A",
-      "G:T:G:A:G:A:C:C:C",
-      "A:T:A:A:G:G:C:T:A"
     ],
     "frequencies": {
       "CAS": 0.287,
@@ -7847,8 +7451,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-029.v2": {
-    "rsid": "mh03wl-029.v2",
+  "mh03wl-029": {
+    "rsid": "mh03wl-029",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -7952,8 +7556,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-065.v1": {
-    "rsid": "mh03wl-065.v1",
+  "mh03wl-065": {
+    "rsid": "mh03wl-065",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -7975,31 +7579,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-065.v2": {
-    "rsid": "mh03wl-065.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:T:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03wl-020.v1": {
-    "rsid": "mh03wl-020.v1",
+  "mh03wl-020": {
+    "rsid": "mh03wl-020",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8021,31 +7602,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-020.v2": {
-    "rsid": "mh03wl-020.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:A:C:G:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-018.v1": {
-    "rsid": "mh04wl-018.v1",
+  "mh04wl-018": {
+    "rsid": "mh04wl-018",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8054,32 +7612,6 @@
       "T:G:A:C:T:G:G",
       "A:G:A:C:T:G:G",
       "T:G:A:C:T:A:C"
-    ],
-    "frequencies": {
-      "CAS": 0.663,
-      "EUR": 0.596,
-      "AFR": 0.832,
-      "EAS": 0.722,
-      "SAS": 0.672
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-018.v2": {
-    "rsid": "mh04wl-018.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:A:C:T:A:G",
-      "G:A:C:T:G:C",
-      "G:A:C:T:G:G",
-      "G:A:C:T:A:C"
     ],
     "frequencies": {
       "CAS": 0.687,
@@ -8149,8 +7681,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0059871.v2": {
-    "rsid": "mh04scuzj-0059871.v2",
+  "mh04scuzj-0059871": {
+    "rsid": "mh04scuzj-0059871",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8197,8 +7729,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04zha-002.v4": {
-    "rsid": "mh04zha-002.v4",
+  "mh04zha-002": {
+    "rsid": "mh04zha-002",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8207,38 +7739,6 @@
       "T:C:C:T:T",
       "T:T:C:T:C",
       "T:T:C:T:T"
-    ],
-    "frequencies": {
-      "CAS": 0.424,
-      "EUR": 0.51,
-      "AFR": 0.471,
-      "EAS": 0.299,
-      "SAS": 0.461
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04zha-002.v2": {
-    "rsid": "mh04zha-002.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:T:T:A:T:A:A:T",
-      "C:T:T:T:T:A:A:T",
-      "C:T:T:T:T:C:G:T",
-      "T:C:C:T:T:C:G:T",
-      "T:T:C:T:C:C:G:C",
-      "T:T:C:T:C:C:G:T",
-      "T:T:C:T:T:C:G:C",
-      "T:T:C:T:T:C:G:T",
-      "T:T:C:T:T:A:A:C",
-      "C:T:T:A:T:C:G:T"
     ],
     "frequencies": {
       "CAS": 0.416,
@@ -8369,8 +7869,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0146582.v2": {
-    "rsid": "mh04scuzj-0146582.v2",
+  "mh04scuzj-0146582": {
+    "rsid": "mh04scuzj-0146582",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8418,8 +7918,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-004.v4": {
-    "rsid": "mh04wl-004.v4",
+  "mh04wl-004": {
+    "rsid": "mh04wl-004",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8454,35 +7954,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0194557.v1": {
-    "rsid": "mh04scuzj-0194557.v1",
+  "mh04scuzj-0194557": {
+    "rsid": "mh04scuzj-0194557",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:A:A:C:C:G:G:G:T:A:G:T:A:C:G:G:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04scuzj-0194557.v2": {
-    "rsid": "mh04scuzj-0194557.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:C:G:G:G:T:A:G:T:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -8585,8 +8062,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-082.v2": {
-    "rsid": "mh04wl-082.v2",
+  "mh04wl-082": {
+    "rsid": "mh04wl-082",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -8612,36 +8089,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-082.v1": {
-    "rsid": "mh04wl-082.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:T:T:C",
-      "A:G:A:T:C",
-      "A:G:T:C:C",
-      "A:G:T:T:C",
-      "A:G:T:T:G",
-      "G:G:T:C:C"
-    ],
-    "frequencies": {
-      "CAS": 0.259,
-      "EUR": 0.302,
-      "AFR": 0.137,
-      "EAS": 0.229,
-      "SAS": 0.245
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04kk-013.v4": {
-    "rsid": "mh04kk-013.v4",
+  "mh04kk-013": {
+    "rsid": "mh04kk-013",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -9157,81 +8606,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05wl-015.v4": {
-    "rsid": "mh05wl-015.v4",
+  "mh05wl-015": {
+    "rsid": "mh05wl-015",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "T:A:G:A:A:A:A:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-015.v2": {
-    "rsid": "mh05wl-015.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:C:G:T:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-015.v3": {
-    "rsid": "mh05wl-015.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:T:C:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-015.v1": {
-    "rsid": "mh05wl-015.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:T:C:T:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -9354,8 +8734,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05wl-006.v2": {
-    "rsid": "mh05wl-006.v2",
+  "mh05wl-006": {
+    "rsid": "mh05wl-006",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -9366,35 +8746,6 @@
       "T:C:G:C:T:G:T:G",
       "C:G:A:C:C:C:C:G",
       "T:C:A:C:T:C:T:G"
-    ],
-    "frequencies": {
-      "CAS": 0.233,
-      "EUR": 0.249,
-      "AFR": 0.234,
-      "EAS": 0.211,
-      "SAS": 0.24
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-006.v1": {
-    "rsid": "mh05wl-006.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C:T:C:C:A",
-      "A:C:T:C:C:G",
-      "A:C:T:G:T:G",
-      "A:T:T:G:T:G",
-      "G:C:T:G:T:G",
-      "A:C:C:C:C:G",
-      "A:C:T:C:T:G"
     ],
     "frequencies": {
       "CAS": 0.233,
@@ -9631,35 +8982,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05scuzj-0282942.v1": {
-    "rsid": "mh05scuzj-0282942.v1",
+  "mh05scuzj-0282942": {
+    "rsid": "mh05scuzj-0282942",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:C:T:G:T:C:C:G:T:T:C:C:T:C:C:T:C:C:T:C:C:T:C:C:G:T:T:C:C:G:C:C:C:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05scuzj-0282942.v2": {
-    "rsid": "mh05scuzj-0282942.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:T:C:C:G:C:C:C:G:C:C:C:G:C:G:C:C:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -9926,8 +9254,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05scuzj-0427297.v2": {
-    "rsid": "mh05scuzj-0427297.v2",
+  "mh05scuzj-0427297": {
+    "rsid": "mh05scuzj-0427297",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -10203,8 +9531,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-039.v1": {
-    "rsid": "mh06wl-039.v1",
+  "mh06wl-039": {
+    "rsid": "mh06wl-039",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -10277,38 +9605,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06scuzj-0480560.v1": {
-    "rsid": "mh06scuzj-0480560.v1",
+  "mh06scuzj-0480560": {
+    "rsid": "mh06scuzj-0480560",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:T:A:T:C:G:G:C:A:G:C:A:A:C:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:A:A:T:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "CAS": 0.998,
-      "EUR": 1,
-      "AFR": 0.007,
-      "EAS": 0.995,
-      "SAS": 0.999
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06scuzj-0480560.v2": {
-    "rsid": "mh06scuzj-0480560.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:C:G:G:C:A:G:C:A:A",
-      "T:C:G:G:C:A:G:C:T:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -10376,8 +9680,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-073.v1": {
-    "rsid": "mh06wl-073.v1",
+  "mh06wl-073": {
+    "rsid": "mh06wl-073",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -10462,8 +9766,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-071.v1": {
-    "rsid": "mh06wl-071.v1",
+  "mh06wl-071": {
+    "rsid": "mh06wl-071",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -10476,35 +9780,6 @@
       "T:G:T:A:T",
       "C:G:T:G:T",
       "T:G:G:G:T"
-    ],
-    "frequencies": {
-      "CAS": 0.213,
-      "EUR": 0.254,
-      "AFR": 0.489,
-      "EAS": 0.227,
-      "SAS": 0.157
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06wl-071.v2": {
-    "rsid": "mh06wl-071.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C:C:T",
-      "G:C:C:C",
-      "G:C:C:T",
-      "G:T:C:C",
-      "A:T:C:T",
-      "A:C:C:C",
-      "G:C:A:T"
     ],
     "frequencies": {
       "CAS": 0.213,
@@ -10705,35 +9980,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-006.v2": {
-    "rsid": "mh06wl-006.v2",
+  "mh06wl-006": {
+    "rsid": "mh06wl-006",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:C:G:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06wl-006.v1": {
-    "rsid": "mh06wl-006.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -10798,8 +10050,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-009.v3": {
-    "rsid": "mh06wl-009.v3",
+  "mh06wl-009": {
+    "rsid": "mh06wl-009",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -10807,34 +10059,6 @@
       "C:G:T",
       "T:G:G",
       "T:G:T"
-    ],
-    "frequencies": {
-      "CAS": 0.289,
-      "EUR": 0.402,
-      "AFR": 0.001,
-      "EAS": 0.304,
-      "SAS": 0.162
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06wl-009.v1": {
-    "rsid": "mh06wl-009.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:G:C",
-      "C:G:G:T",
-      "C:G:T:T",
-      "T:G:G:T",
-      "C:G:T:C",
-      "T:G:T:T"
     ],
     "frequencies": {
       "CAS": 0.289,
@@ -10876,8 +10100,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06kk-008.v1": {
-    "rsid": "mh06kk-008.v1",
+  "mh06kk-008": {
+    "rsid": "mh06kk-008",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -10897,180 +10121,6 @@
       "T:G:G:G",
       "G:G:A:G",
       "T:C:A:G"
-    ],
-    "frequencies": {
-      "CAS": 0.452,
-      "EUR": 0.291,
-      "AFR": 0.031,
-      "EAS": 0.638,
-      "SAS": 0.427
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06kk-008.v2": {
-    "rsid": "mh06kk-008.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:C:A:C:G:T:G:A:G:G:G:G",
-      "G:C:A:C:G:T:G:G:A:G:G:G",
-      "G:C:A:C:G:T:G:G:G:G:G:G",
-      "G:C:G:C:G:G:G:A:A:G:G:G",
-      "G:C:G:C:G:G:G:G:G:G:G:G",
-      "G:C:G:C:G:T:G:A:A:G:G:G",
-      "G:C:G:C:G:T:G:A:G:G:G:G",
-      "G:C:G:C:G:T:G:A:G:G:T:G",
-      "G:C:G:C:G:T:G:G:G:G:G:G",
-      "G:G:A:C:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:G:G:A:G:G:T:G",
-      "G:G:G:C:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:T:G",
-      "T:C:A:C:G:T:G:A:G:G:G:G",
-      "T:C:G:C:G:T:G:A:A:G:G:G",
-      "T:C:G:C:G:T:G:A:G:G:G:G",
-      "T:C:G:C:G:T:G:G:A:G:G:G",
-      "T:C:G:C:G:T:G:G:G:G:G:G",
-      "T:G:A:C:A:T:G:A:G:G:G:G",
-      "T:G:A:C:G:T:G:A:G:G:G:G",
-      "T:G:A:C:G:T:G:G:G:G:G:G",
-      "T:G:G:C:G:T:G:A:G:G:G:G",
-      "T:G:G:C:G:T:G:G:G:G:G:G",
-      "G:C:A:C:A:T:G:A:G:G:G:G",
-      "G:C:A:C:G:G:G:G:G:G:G:G",
-      "G:C:A:C:G:T:G:A:G:G:T:G",
-      "G:C:G:C:G:G:G:A:G:G:G:G",
-      "G:C:G:C:G:G:G:A:G:G:T:G",
-      "G:C:G:C:G:T:G:G:A:G:G:G",
-      "G:G:A:C:A:T:G:A:G:G:G:G",
-      "G:G:A:C:G:G:G:A:G:G:G:G",
-      "G:G:A:C:G:G:G:G:G:G:G:G",
-      "G:G:A:C:G:T:G:G:G:G:G:G",
-      "G:G:G:C:G:G:G:G:G:G:G:G",
-      "G:G:G:C:G:T:G:A:A:G:G:G",
-      "G:G:G:C:G:T:G:A:G:G:T:G",
-      "G:G:G:C:G:T:G:G:A:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:G:C",
-      "T:C:A:C:G:T:G:G:G:G:G:G",
-      "T:C:G:C:G:G:G:A:G:G:G:G",
-      "T:G:A:C:A:T:G:G:G:G:G:C",
-      "T:G:A:C:G:G:G:A:G:G:T:G",
-      "T:G:A:C:G:T:G:G:A:G:G:G",
-      "T:G:G:C:G:G:G:A:A:G:G:G",
-      "T:G:G:C:G:G:G:A:G:G:G:G",
-      "T:G:G:C:G:T:G:A:A:G:G:G",
-      "T:G:G:C:G:T:G:A:G:G:T:G",
-      "T:G:G:C:G:T:G:G:G:G:G:C",
-      "G:C:G:C:A:T:G:A:G:G:G:G",
-      "G:G:A:C:G:T:G:G:A:G:G:G",
-      "T:G:G:C:G:T:G:G:A:G:G:G",
-      "T:G:A:C:A:T:G:G:G:G:G:G",
-      "T:G:G:C:A:T:G:G:G:G:G:G",
-      "T:C:A:C:A:T:G:G:G:G:G:G",
-      "T:C:A:C:G:T:G:G:A:G:G:G",
-      "T:G:A:C:G:T:G:G:G:G:G:C",
-      "T:G:G:C:A:T:G:A:G:G:G:G",
-      "T:C:A:C:A:T:G:A:G:G:G:G",
-      "T:C:A:C:G:T:G:A:A:G:G:G",
-      "T:G:G:C:G:G:G:G:G:G:G:G",
-      "T:G:A:C:G:T:G:A:A:G:G:G",
-      "G:C:G:G:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:G:G:A:A:G:G:G",
-      "G:G:G:C:G:T:A:G:G:G:G:G",
-      "T:G:G:C:G:G:G:A:G:G:T:G",
-      "T:C:G:C:G:T:G:G:G:G:G:C",
-      "T:G:A:C:G:T:G:G:G:A:G:G"
-    ],
-    "frequencies": {
-      "CAS": 0.438,
-      "EUR": 0.276,
-      "AFR": 0.028,
-      "EAS": 0.625,
-      "SAS": 0.415
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06kk-008.v3": {
-    "rsid": "mh06kk-008.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:C:C:A:C:C:G:T:G:A:G:G:G:G",
-      "G:C:C:A:C:C:G:T:G:G:A:G:G:G",
-      "G:C:C:A:C:C:G:T:G:G:G:G:G:G",
-      "G:C:C:G:C:C:G:G:G:A:A:G:G:G",
-      "G:C:C:G:C:C:G:G:G:G:G:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:A:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:G:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:A:G:G:G:G",
-      "G:C:G:G:C:C:G:G:G:A:G:G:T:G",
-      "G:C:G:G:C:C:G:T:G:A:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:T:G",
-      "T:C:C:A:C:C:G:T:G:A:G:G:G:G",
-      "T:C:C:G:C:C:G:T:G:A:A:G:G:G",
-      "T:C:C:G:C:C:G:T:G:A:G:G:G:G",
-      "T:C:C:G:C:C:G:T:G:G:A:G:G:G",
-      "T:C:C:G:C:C:G:T:G:G:G:G:G:G",
-      "T:C:G:A:C:C:A:T:G:A:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:A:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:G:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:C:A:C:C:A:T:G:A:G:G:G:G",
-      "G:C:C:A:C:C:G:G:G:G:G:G:G:G",
-      "G:C:C:A:C:C:G:T:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:G:G:A:G:G:G:G",
-      "G:C:C:G:C:C:G:G:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:T:G:G:A:G:G:G",
-      "G:C:G:A:C:C:A:T:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:G:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:G:G:G:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:G:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:A:A:G:G:G",
-      "G:C:G:G:C:C:G:T:G:A:G:G:T:G",
-      "G:C:G:G:C:C:G:T:G:G:A:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:G:C",
-      "T:C:C:A:C:C:G:T:G:G:G:G:G:G",
-      "T:C:C:G:C:C:G:G:G:A:G:G:G:G",
-      "T:C:G:A:C:C:A:T:G:G:G:G:G:C",
-      "T:C:G:A:C:C:G:G:G:A:G:G:T:G",
-      "T:C:G:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:A:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:G:G:T:G",
-      "T:C:G:G:C:C:G:T:G:G:G:G:G:C",
-      "G:C:C:G:C:C:A:T:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:G:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:A:C:C:A:T:G:G:G:G:G:G",
-      "T:C:G:G:C:C:A:T:G:G:G:G:G:G",
-      "T:C:C:A:C:C:A:T:G:G:G:G:G:G",
-      "T:C:C:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:A:C:C:G:T:G:G:G:G:G:C",
-      "T:C:G:G:C:C:A:T:G:A:G:G:G:G",
-      "T:C:C:A:C:C:A:T:G:A:G:G:G:G",
-      "T:C:C:A:C:C:G:T:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:G:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:A:A:G:G:G"
     ],
     "frequencies": {
       "CAS": 0.438,
@@ -11166,35 +10216,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-018.v1": {
-    "rsid": "mh07wl-018.v1",
+  "mh07wl-018": {
+    "rsid": "mh07wl-018",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "T:T:C:A:G:T:C:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-018.v3": {
-    "rsid": "mh07wl-018.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:C:A:G:T:C:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -11388,35 +10415,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07scuzj-0102959.v1": {
-    "rsid": "mh07scuzj-0102959.v1",
+  "mh07scuzj-0102959": {
+    "rsid": "mh07scuzj-0102959",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:A:A:C:A:A:G:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07scuzj-0102959.v2": {
-    "rsid": "mh07scuzj-0102959.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C:A:A:G:T:G:T:G:G:T:G:G:C:G:A:C:C:C:A:T:G:A:T:C:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -11652,8 +10656,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07hyp-19.v1": {
-    "rsid": "mh07hyp-19.v1",
+  "mh07hyp-19": {
+    "rsid": "mh07hyp-19",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -12005,8 +11009,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-011.v1": {
-    "rsid": "mh07wl-011.v1",
+  "mh07wl-011": {
+    "rsid": "mh07wl-011",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -12014,60 +11018,6 @@
       "G:G:C:C",
       "G:T:C:C",
       "A:T:C:C"
-    ],
-    "frequencies": {
-      "CAS": 0.303,
-      "EUR": 0.241,
-      "AFR": 0.222,
-      "EAS": 0.276,
-      "SAS": 0.392
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-011.v3": {
-    "rsid": "mh07wl-011.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C:C:C:G:G",
-      "G:C:C:C:G:G"
-    ],
-    "frequencies": {
-      "CAS": 0.813,
-      "EUR": 0.76,
-      "AFR": 0.909,
-      "EAS": 0.765,
-      "SAS": 0.914
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-011.v2": {
-    "rsid": "mh07wl-011.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:C:C:G:G:T:A",
-      "A:G:C:C:G:G:T:G",
-      "G:G:C:C:G:G:T:A",
-      "G:G:C:C:G:G:T:G",
-      "G:T:C:C:G:G:T:A",
-      "G:T:C:C:G:G:T:G",
-      "A:T:C:C:G:G:T:A",
-      "A:T:C:C:G:G:T:G"
     ],
     "frequencies": {
       "CAS": 0.299,
@@ -12266,58 +11216,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-017.v2": {
-    "rsid": "mh07wl-017.v2",
+  "mh07wl-017": {
+    "rsid": "mh07wl-017",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:A:G:A:G:A:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-017.v3": {
-    "rsid": "mh07wl-017.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:A:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-017.v1": {
-    "rsid": "mh07wl-017.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:A:G:A:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -12411,35 +11315,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08wl-016.v1": {
-    "rsid": "mh08wl-016.v1",
+  "mh08wl-016": {
+    "rsid": "mh08wl-016",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:T:A:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08wl-016.v2": {
-    "rsid": "mh08wl-016.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:T:A:A:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -12701,8 +11582,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08wl-045.v2": {
-    "rsid": "mh08wl-045.v2",
+  "mh08wl-045": {
+    "rsid": "mh08wl-045",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -12904,8 +11785,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08shy-007.v2": {
-    "rsid": "mh08shy-007.v2",
+  "mh08shy-007": {
+    "rsid": "mh08shy-007",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -12914,63 +11795,6 @@
       "T:G:A:A",
       "T:G:A:G",
       "T:G:T:G"
-    ],
-    "frequencies": {
-      "CAS": 0.221,
-      "EUR": 0.224,
-      "AFR": 0.122,
-      "EAS": 0.272,
-      "SAS": 0.167
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08shy-007.v3": {
-    "rsid": "mh08shy-007.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:T:G:T",
-      "T:A:A:G:C",
-      "T:G:A:A:C",
-      "T:G:A:G:C",
-      "T:G:A:G:T",
-      "T:G:T:G:T"
-    ],
-    "frequencies": {
-      "CAS": 0.221,
-      "EUR": 0.224,
-      "AFR": 0.122,
-      "EAS": 0.272,
-      "SAS": 0.167
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08shy-007.v1": {
-    "rsid": "mh08shy-007.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:A:G:C:C:G:C",
-      "G:A:A:A:C:C:G:C",
-      "G:A:A:G:C:C:G:C",
-      "G:A:A:G:C:T:G:C",
-      "G:T:A:G:C:T:G:C",
-      "G:A:A:G:C:C:T:C",
-      "G:T:A:G:C:T:G:A"
     ],
     "frequencies": {
       "CAS": 0.321,
@@ -13062,58 +11886,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08wl-014.v2": {
-    "rsid": "mh08wl-014.v2",
+  "mh08wl-014": {
+    "rsid": "mh08wl-014",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:G:G:G:G:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08wl-014.v1": {
-    "rsid": "mh08wl-014.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:G:G:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08wl-014.v3": {
-    "rsid": "mh08wl-014.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -13183,8 +11961,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-161.v1": {
-    "rsid": "mh09kk-161.v1",
+  "mh09kk-161": {
+    "rsid": "mh09kk-161",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13209,63 +11987,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-010.v1": {
-    "rsid": "mh09wl-010.v1",
+  "mh09wl-010": {
+    "rsid": "mh09wl-010",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:G:G:A:T:A:T",
       "A:G:G:A:T:G:T",
       "T:G:G:A:T:G:T"
-    ],
-    "frequencies": {
-      "CAS": 0.975,
-      "EUR": 0.996,
-      "AFR": 0.001,
-      "EAS": 0.933,
-      "SAS": 0.995
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-010.v3": {
-    "rsid": "mh09wl-010.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:G:A:A:T",
-      "A:G:G:A:G:T",
-      "T:G:G:A:G:T"
-    ],
-    "frequencies": {
-      "CAS": 0.975,
-      "EUR": 0.996,
-      "AFR": 0.001,
-      "EAS": 0.933,
-      "SAS": 0.995
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-010.v2": {
-    "rsid": "mh09wl-010.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:A:T:A:T",
-      "G:G:A:T:G:T"
     ],
     "frequencies": {
       "CAS": 0.975,
@@ -13283,8 +12012,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-033.v1": {
-    "rsid": "mh09kk-033.v1",
+  "mh09kk-033": {
+    "rsid": "mh09kk-033",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -13576,58 +12305,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-014.v3": {
-    "rsid": "mh09wl-014.v3",
+  "mh09wl-014": {
+    "rsid": "mh09wl-014",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:G:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-014.v1": {
-    "rsid": "mh09wl-014.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:C:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-014.v2": {
-    "rsid": "mh09wl-014.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:C:T:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -13672,35 +12355,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09scuzj-0395135.v1": {
-    "rsid": "mh09scuzj-0395135.v1",
+  "mh09scuzj-0395135": {
+    "rsid": "mh09scuzj-0395135",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "T:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09scuzj-0395135.v2": {
-    "rsid": "mh09scuzj-0395135.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:G:A:G:G:A:A:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -14332,8 +12992,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh10wl-058.v1": {
-    "rsid": "mh10wl-058.v1",
+  "mh10wl-058": {
+    "rsid": "mh10wl-058",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14485,58 +13145,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh10wl-043.v3": {
-    "rsid": "mh10wl-043.v3",
+  "mh10wl-043": {
+    "rsid": "mh10wl-043",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "T:A:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh10wl-043.v1": {
-    "rsid": "mh10wl-043.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:A:T:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh10wl-043.v2": {
-    "rsid": "mh10wl-043.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:A:T:T:A:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -14672,39 +13286,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11kk-036.v2": {
-    "rsid": "mh11kk-036.v2",
+  "mh11kk-036": {
+    "rsid": "mh11kk-036",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A",
       "C"
-    ],
-    "frequencies": {
-      "CAS": 0.301,
-      "EUR": 0.276,
-      "AFR": 0.289,
-      "EAS": 0.393,
-      "SAS": 0.234
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11kk-036.v1": {
-    "rsid": "mh11kk-036.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A",
-      "A:G",
-      "C:G",
-      "C:A"
     ],
     "frequencies": {
       "CAS": 0.301,
@@ -14892,8 +13480,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-015.v2": {
-    "rsid": "mh11wl-015.v2",
+  "mh11wl-015": {
+    "rsid": "mh11wl-015",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -14915,31 +13503,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-015.v1": {
-    "rsid": "mh11wl-015.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:T:G:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-024.v2": {
-    "rsid": "mh11wl-024.v2",
+  "mh11wl-024": {
+    "rsid": "mh11wl-024",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15501,8 +14066,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-003.v1": {
-    "rsid": "mh11wl-003.v1",
+  "mh11wl-003": {
+    "rsid": "mh11wl-003",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15604,8 +14169,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11shy-001.v2": {
-    "rsid": "mh11shy-001.v2",
+  "mh11shy-001": {
+    "rsid": "mh11shy-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15618,38 +14183,6 @@
       "G:G:G:T:T",
       "G:G:A:T:C",
       "G:C:G:T:C"
-    ],
-    "frequencies": {
-      "CAS": 0.228,
-      "EUR": 0.304,
-      "AFR": 0.382,
-      "EAS": 0.224,
-      "SAS": 0.156
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11shy-001.v1": {
-    "rsid": "mh11shy-001.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:C:G:T:T:G:T",
-      "G:G:A:C:T:G:T",
-      "G:G:A:T:T:G:T",
-      "G:G:G:C:T:G:T",
-      "G:G:G:T:C:G:T",
-      "G:G:G:T:T:G:T",
-      "G:G:G:C:T:C:T",
-      "G:G:A:T:C:G:T",
-      "G:C:G:T:C:G:T",
-      "G:G:A:T:T:G:G"
     ],
     "frequencies": {
       "CAS": 0.228,
@@ -15696,8 +14229,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-001.v2": {
-    "rsid": "mh11wl-001.v2",
+  "mh11wl-001": {
+    "rsid": "mh11wl-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15710,61 +14243,6 @@
       "A:A:T:C:A:C:T",
       "C:A:C:G:A:C:T",
       "C:C:C:C:A:C:T"
-    ],
-    "frequencies": {
-      "CAS": 0.488,
-      "EUR": 0.346,
-      "AFR": 0.349,
-      "EAS": 0.553,
-      "SAS": 0.566
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-001.v3": {
-    "rsid": "mh11wl-001.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:C:C:A:C:T:G:C",
-      "A:A:C:G:A:C:T:G:C",
-      "A:A:T:G:A:C:T:G:C",
-      "C:C:C:G:A:C:T:G:C",
-      "C:C:T:C:A:C:T:G:C",
-      "C:C:T:G:A:C:T:G:C",
-      "A:A:T:C:A:C:T:G:C",
-      "C:A:C:G:A:C:T:G:C",
-      "C:C:C:C:A:C:T:G:C"
-    ],
-    "frequencies": {
-      "CAS": 0.488,
-      "EUR": 0.346,
-      "AFR": 0.349,
-      "EAS": 0.553,
-      "SAS": 0.566
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-001.v1": {
-    "rsid": "mh11wl-001.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:A:C:T:G:C",
-      "G:A:C:T:G:C"
     ],
     "frequencies": {
       "CAS": 0.521,
@@ -15782,8 +14260,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-030.v2": {
-    "rsid": "mh11wl-030.v2",
+  "mh11wl-030": {
+    "rsid": "mh11wl-030",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15805,31 +14283,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-030.v1": {
-    "rsid": "mh11wl-030.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:A:C:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12wl-011.v2": {
-    "rsid": "mh12wl-011.v2",
+  "mh12wl-011": {
+    "rsid": "mh12wl-011",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -15995,8 +14450,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12shy-001.v4": {
-    "rsid": "mh12shy-001.v4",
+  "mh12shy-001": {
+    "rsid": "mh12shy-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -16105,8 +14560,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12kk-202.v1": {
-    "rsid": "mh12kk-202.v1",
+  "mh12kk-202": {
+    "rsid": "mh12kk-202",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -16119,39 +14574,6 @@
       "A:G:T:C",
       "A:G:C:T",
       "A:A:C:C"
-    ],
-    "frequencies": {
-      "CAS": 0.305,
-      "EUR": 0.397,
-      "AFR": 0.203,
-      "EAS": 0.234,
-      "SAS": 0.285
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12kk-202.v2": {
-    "rsid": "mh12kk-202.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:A:C:T",
-      "A:A:A:T:C",
-      "A:A:A:T:T",
-      "A:A:T:T:C",
-      "A:A:T:T:T",
-      "A:G:A:T:T",
-      "C:A:A:T:C",
-      "C:A:A:T:T",
-      "A:G:A:T:C",
-      "A:G:A:C:T",
-      "A:A:A:C:C"
     ],
     "frequencies": {
       "CAS": 0.305,
@@ -16291,35 +14713,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12scuzj-0265665.v1": {
-    "rsid": "mh12scuzj-0265665.v1",
+  "mh12scuzj-0265665": {
+    "rsid": "mh12scuzj-0265665",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "T:C:T:T:C:T:A:T:T:A:T:G:T:T:T:G:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12scuzj-0265665.v2": {
-    "rsid": "mh12scuzj-0265665.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:T:C:T:A:T:T:A:T"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -16392,35 +14791,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12scuzj-0276370.v1": {
-    "rsid": "mh12scuzj-0276370.v1",
+  "mh12scuzj-0276370": {
+    "rsid": "mh12scuzj-0276370",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:A:T:T:T:T:T:T:T:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12scuzj-0276370.v2": {
-    "rsid": "mh12scuzj-0276370.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:T:T:A:T:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -16488,8 +14864,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-018.v2": {
-    "rsid": "mh12wl-018.v2",
+  "mh12wl-018": {
+    "rsid": "mh12wl-018",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -16626,8 +15002,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-013.v2": {
-    "rsid": "mh12wl-013.v2",
+  "mh12wl-013": {
+    "rsid": "mh12wl-013",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -16649,54 +15025,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-013.v1": {
-    "rsid": "mh12wl-013.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:T:A:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12wl-013.v3": {
-    "rsid": "mh12wl-013.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:A:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12kk-046.v1": {
-    "rsid": "mh12kk-046.v1",
+  "mh12kk-046": {
+    "rsid": "mh12kk-046",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -16748,35 +15078,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-001.v2": {
-    "rsid": "mh12wl-001.v2",
+  "mh12wl-001": {
+    "rsid": "mh12wl-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:T:T:C:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12wl-001.v1": {
-    "rsid": "mh12wl-001.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:T:C:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -16900,8 +15207,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-213.v6": {
-    "rsid": "mh13kk-213.v6",
+  "mh13kk-213": {
+    "rsid": "mh13kk-213",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -16909,31 +15216,6 @@
       "A:C:A:C:G:T",
       "A:C:A:T:A:T",
       "A:C:A:C:A:T"
-    ],
-    "frequencies": {
-      "CAS": 0.419,
-      "EUR": 0.344,
-      "AFR": 0.37,
-      "EAS": 0.527,
-      "SAS": 0.387
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh13kk-213.v4": {
-    "rsid": "mh13kk-213.v4",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:C",
-      "T:A",
-      "T:C"
     ],
     "frequencies": {
       "CAS": 0.567,
@@ -17118,8 +15400,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-217.v4": {
-    "rsid": "mh13kk-217.v4",
+  "mh13kk-217": {
+    "rsid": "mh13kk-217",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -17168,8 +15450,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-218.v3": {
-    "rsid": "mh13kk-218.v3",
+  "mh13kk-218": {
+    "rsid": "mh13kk-218",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -17198,8 +15480,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-225.v4": {
-    "rsid": "mh13kk-225.v4",
+  "mh13kk-225": {
+    "rsid": "mh13kk-225",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -17509,35 +15791,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13wl-008.v1": {
-    "rsid": "mh13wl-008.v1",
+  "mh13wl-008": {
+    "rsid": "mh13wl-008",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:A:C:A:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh13wl-008.v2": {
-    "rsid": "mh13wl-008.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:C:A:C:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -17907,8 +16166,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh14kk-048.v1": {
-    "rsid": "mh14kk-048.v1",
+  "mh14kk-048": {
+    "rsid": "mh14kk-048",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -18039,35 +16298,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh14wl-010.v2": {
-    "rsid": "mh14wl-010.v2",
+  "mh14wl-010": {
+    "rsid": "mh14wl-010",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:A:T:G:C:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh14wl-010.v1": {
-    "rsid": "mh14wl-010.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:G:C:C"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -18349,8 +16585,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15wl-015.v2": {
-    "rsid": "mh15wl-015.v2",
+  "mh15wl-015": {
+    "rsid": "mh15wl-015",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -18436,8 +16672,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15kk-066.v4": {
-    "rsid": "mh15kk-066.v4",
+  "mh15kk-066": {
+    "rsid": "mh15kk-066",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -18460,8 +16696,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15wl-018.v1": {
-    "rsid": "mh15wl-018.v1",
+  "mh15wl-018": {
+    "rsid": "mh15wl-018",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -19190,37 +17426,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16scuzj-0328951.v1": {
-    "rsid": "mh16scuzj-0328951.v1",
+  "mh16scuzj-0328951": {
+    "rsid": "mh16scuzj-0328951",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:G:C:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh16scuzj-0328951.v2": {
-    "rsid": "mh16scuzj-0328951.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:C:A:T:C:A:T:T",
-      "G:G:C:A:T:C:T:C:T",
-      "G:G:C:A:T:C:T:T:T"
     ],
     "frequencies": {
       "CAS": 0.828,
@@ -19238,8 +17449,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-010.v1": {
-    "rsid": "mh16wl-010.v1",
+  "mh16wl-010": {
+    "rsid": "mh16wl-010",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -19261,31 +17472,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-010.v2": {
-    "rsid": "mh16wl-010.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:A:G:C:A:T:T:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-009.v1": {
-    "rsid": "mh17wl-009.v1",
+  "mh17wl-009": {
+    "rsid": "mh17wl-009",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -19296,59 +17484,6 @@
       "A:G:T:T:A:T:T:C:C:T:T:T:T:T",
       "A:A:T:T:A:T:T:T:T:T:T:T:T:T",
       "C:G:T:T:A:T:T:C:T:T:T:T:T:T"
-    ],
-    "frequencies": {
-      "CAS": 0.816,
-      "EUR": 0.977,
-      "AFR": 0.904,
-      "EAS": 0.569,
-      "SAS": 0.902
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-009.v2": {
-    "rsid": "mh17wl-009.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "C:A:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "C:G:T:T:A:T:T:C:C:T:T:T:T:T:A:T",
-      "C:G:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "A:G:T:T:A:T:T:C:C:T:T:T:T:T:A:T",
-      "A:A:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "C:G:T:T:A:T:T:C:T:T:T:T:T:T:A:T"
-    ],
-    "frequencies": {
-      "CAS": 0.816,
-      "EUR": 0.977,
-      "AFR": 0.904,
-      "EAS": 0.569,
-      "SAS": 0.902
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-009.v3": {
-    "rsid": "mh17wl-009.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:T:T:A:T:T:T:T:T:T:T:T:T:T:A:A:G:G:A",
-      "G:T:T:A:T:T:T:T:T:T:T:T:T:T:A:A:G:G:A"
     ],
     "frequencies": {
       "CAS": 0.886,
@@ -19553,35 +17688,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17scuzj-0090327.v1": {
-    "rsid": "mh17scuzj-0090327.v1",
+  "mh17scuzj-0090327": {
+    "rsid": "mh17scuzj-0090327",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:T:C:T:T:A:G:A:A:G:C:A:C:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17scuzj-0090327.v2": {
-    "rsid": "mh17scuzj-0090327.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:A:A:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -19818,40 +17930,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17kk-055.v1": {
-    "rsid": "mh17kk-055.v1",
+  "mh17kk-055": {
+    "rsid": "mh17kk-055",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:C",
       "C:C",
       "C:T",
-      "A:T"
-    ],
-    "frequencies": {
-      "CAS": 0.335,
-      "EUR": 0.323,
-      "AFR": 0.27,
-      "EAS": 0.362,
-      "SAS": 0.322
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17kk-055.v2": {
-    "rsid": "mh17kk-055.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:C",
-      "G:C",
-      "G:T",
       "A:T"
     ],
     "frequencies": {
@@ -19870,8 +17956,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17wl-008.v2": {
-    "rsid": "mh17wl-008.v2",
+  "mh17wl-008": {
+    "rsid": "mh17wl-008",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -19893,54 +17979,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17wl-008.v1": {
-    "rsid": "mh17wl-008.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T:C:T:G:A:C:G:G:T:G:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-008.v3": {
-    "rsid": "mh17wl-008.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:T:G:C"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-030.v2": {
-    "rsid": "mh17wl-030.v2",
+  "mh17wl-030": {
+    "rsid": "mh17wl-030",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -19948,30 +17988,6 @@
       "G:C:C:A:G:C:G:G:C:G:C:C",
       "G:C:C:C:G:C:G:G:A:G:C:C",
       "G:C:C:C:G:C:G:G:C:G:C:C"
-    ],
-    "frequencies": {
-      "CAS": 0.964,
-      "EUR": 0.958,
-      "AFR": 0.886,
-      "EAS": 0.976,
-      "SAS": 0.959
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-030.v1": {
-    "rsid": "mh17wl-030.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:C:A:G:C:G:G:G:C:C",
-      "C:C:C:G:C:G:G:G:C:C"
     ],
     "frequencies": {
       "CAS": 0.966,
@@ -20167,36 +18183,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18wl-009.v2": {
-    "rsid": "mh18wl-009.v2",
+  "mh18wl-009": {
+    "rsid": "mh18wl-009",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:G:G:C:T:G:G:T:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh18wl-009.v1": {
-    "rsid": "mh18wl-009.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:G:C:T:G:G:T:G:A",
-      "A:G:G:C:T:G:G:T:G:G"
     ],
     "frequencies": {
       "CAS": 0.516,
@@ -20214,35 +18206,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18scuzj-0091845.v1": {
-    "rsid": "mh18scuzj-0091845.v1",
+  "mh18scuzj-0091845": {
+    "rsid": "mh18scuzj-0091845",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:T:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh18scuzj-0091845.v2": {
-    "rsid": "mh18scuzj-0091845.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:T:A:A:T"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -20422,8 +18391,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18wl-027.v2": {
-    "rsid": "mh18wl-027.v2",
+  "mh18wl-027": {
+    "rsid": "mh18wl-027",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -20604,35 +18573,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18wl-010.v2": {
-    "rsid": "mh18wl-010.v2",
+  "mh18wl-010": {
+    "rsid": "mh18wl-010",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:G:C:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh18wl-010.v1": {
-    "rsid": "mh18wl-010.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:C:G:G:G:G:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -20676,59 +18622,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh19wl-007.v2": {
-    "rsid": "mh19wl-007.v2",
+  "mh19wl-007": {
+    "rsid": "mh19wl-007",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:G:G:A:A:A",
       "G:G:G:A:A:A"
-    ],
-    "frequencies": {
-      "CAS": 0.918,
-      "EUR": 0.977,
-      "AFR": 0.972,
-      "EAS": 0.867,
-      "SAS": 0.911
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh19wl-007.v1": {
-    "rsid": "mh19wl-007.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:G:A:A:A"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh19wl-007.v3": {
-    "rsid": "mh19wl-007.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:A:A:A"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -21282,8 +19182,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh20wl-026.v2": {
-    "rsid": "mh20wl-026.v2",
+  "mh20wl-026": {
+    "rsid": "mh20wl-026",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -21293,37 +19193,6 @@
       "G:G:A",
       "G:G:G",
       "A:T:A"
-    ],
-    "frequencies": {
-      "CAS": 0.226,
-      "EUR": 0.257,
-      "AFR": 0.063,
-      "EAS": 0.228,
-      "SAS": 0.193
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh20wl-026.v1": {
-    "rsid": "mh20wl-026.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:G:A:C",
-      "A:G:A:T",
-      "A:G:G:T",
-      "A:T:G:T",
-      "G:G:A:C",
-      "G:G:A:T",
-      "G:G:G:T",
-      "A:G:G:C",
-      "A:T:A:T"
     ],
     "frequencies": {
       "CAS": 0.226,
@@ -21544,35 +19413,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh20wl-001.v2": {
-    "rsid": "mh20wl-001.v2",
+  "mh20wl-001": {
+    "rsid": "mh20wl-001",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "G:G:A:G:G:G:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh20wl-001.v1": {
-    "rsid": "mh20wl-001.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G:A:G:G:G:G"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -21727,8 +19573,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21scuzj-0100459.v1": {
-    "rsid": "mh21scuzj-0100459.v1",
+  "mh21scuzj-0100459": {
+    "rsid": "mh21scuzj-0100459",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -21750,31 +19596,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21scuzj-0100459.v2": {
-    "rsid": "mh21scuzj-0100459.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:A:T:T:G:A:T:T:G:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21kk-320.v4": {
-    "rsid": "mh21kk-320.v4",
+  "mh21kk-320": {
+    "rsid": "mh21kk-320",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -21866,58 +19689,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21wl-005.v2": {
-    "rsid": "mh21wl-005.v2",
+  "mh21wl-005": {
+    "rsid": "mh21wl-005",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "A:A:A:G:G:T"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21wl-005.v3": {
-    "rsid": "mh21wl-005.v3",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:G:G"
-    ],
-    "frequencies": {
-      "CAS": 1.0,
-      "EUR": 1,
-      "AFR": 1,
-      "EAS": 1,
-      "SAS": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21wl-005.v1": {
-    "rsid": "mh21wl-005.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A:A:G:G:T"
     ],
     "frequencies": {
       "CAS": 1.0,
@@ -21986,40 +19763,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh22kk-060.v2": {
-    "rsid": "mh22kk-060.v2",
+  "mh22kk-060": {
+    "rsid": "mh22kk-060",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
       "C:C",
       "C:T",
       "G:C"
-    ],
-    "frequencies": {
-      "CAS": 0.353,
-      "EUR": 0.404,
-      "AFR": 0.165,
-      "EAS": 0.341,
-      "SAS": 0.313
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh22kk-060.v1": {
-    "rsid": "mh22kk-060.v1",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:A",
-      "C:G",
-      "G:G",
-      "G:A"
     ],
     "frequencies": {
       "CAS": 0.351,
@@ -22088,8 +19839,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh22wl-004.v1": {
-    "rsid": "mh22wl-004.v1",
+  "mh22wl-004": {
+    "rsid": "mh22wl-004",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -22194,8 +19945,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh22wl-013.v1": {
-    "rsid": "mh22wl-013.v1",
+  "mh22wl-013": {
+    "rsid": "mh22wl-013",
     "region": "Central Asian",
     "color": "#9B59B6",
     "alleles": [
@@ -22203,35 +19954,6 @@
       "C:A:G:A:A:T:G:A",
       "C:A:G:A:A:T:G:G",
       "C:A:G:A:A:T:A:A"
-    ],
-    "frequencies": {
-      "CAS": 0.61,
-      "EUR": 0.71,
-      "AFR": 0.592,
-      "EAS": 0.538,
-      "SAS": 0.583
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Silk Road microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh22wl-013.v2": {
-    "rsid": "mh22wl-013.v2",
-    "region": "Central Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C:G:G:G:T:A:A:T:A:G:G",
-      "C:G:G:G:T:A:A:T:G:A:A",
-      "C:G:G:G:T:A:A:T:G:A:G",
-      "C:G:G:G:T:A:A:T:G:G:G",
-      "C:G:G:G:T:A:A:T:G:G:A",
-      "C:G:G:G:C:A:A:T:G:A:G",
-      "C:G:G:G:T:A:A:T:A:A:A"
     ],
     "frequencies": {
       "CAS": 0.605,

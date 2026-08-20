@@ -9,19 +9,24 @@
       "G"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.98,
+      "AFR": 0.00302571860816944,
+      "EUR": 0.010934393638171,
+      "EAS": 0.873015873015873,
       "AMR_admixed": 0.65,
       "Native_American_unadmixed": 0.95,
-      "SAS": 0.05,
-      "AMR": 0.9,
-      "MENA": 0.01,
+      "SAS": 0.0132924335378323,
+      "AMR": 0.39193083573487,
+      "MENA": 0.02,
       "OCE": 0.1
     },
-    "subFrequencies": {},
+    "subFrequencies": {
+      "Han Chinese": 0.99,
+      "Japanese": 0.9,
+      "Korean": 0.95,
+      "Native American": 0.5
+    },
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 8,
     "gene": "EDAR",
     "trait": "Ancestry",
     "description": "The 'G' allele is highly specific to East Asian and Indigenous American populations. It influences hair thickness, sweat gland density, and dental morphology."
@@ -36,11 +41,15 @@
       "A"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "EAS": 0.9,
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "AMR": 0.8,
+      "SAS": 0.1
     },
     "subFrequencies": {},
     "deepFrequencies": {},
-    "weight": 1,
+    "weight": 5,
     "gene": "ABCC11",
     "trait": "East Asian Earwax",
     "description": "Determines dry earwax and reduced body odor, highly prevalent in East Asian populations."
@@ -201,15 +210,22 @@
       "A"
     ],
     "frequencies": {
-      "EAS": 0.4,
-      "AFR": 0.001,
-      "EUR": 0.001,
-      "AMR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.001,
+      "EAS": 0.173611111111111,
+      "AFR": 0.00151285930408472,
+      "EUR": 0,
+      "AMR": 0.00288184438040346,
+      "SAS": 0,
+      "MENA": 0,
       "OCE": 0.01
     },
-    "subFrequencies": {},
+    "subFrequencies": {
+      "Han": 0.5,
+      "Japanese": 0.45,
+      "Korean": 0.3,
+      "Cantonese": 0.55,
+      "Han Chinese": 0.2,
+      "Vietnamese": 0.15
+    },
     "deepFrequencies": {},
     "weight": 8,
     "gene": "ALDH2",
@@ -227,7 +243,12 @@
       "T"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "EAS": 0.8,
+      "AFR": 0.01,
+      "EUR": 0.05,
+      "AMR": 0.05,
+      "SAS": 0.1,
+      "MENA": 0.05
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -246,7 +267,11 @@
       "G"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "EAS": 0.22718253968254,
+      "AFR": 0.505295007564297,
+      "EUR": 0.399602385685885,
+      "AMR": 0.27521613832853,
+      "SAS": 0.341513292433538
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -265,7 +290,10 @@
       "G"
     ],
     "frequencies": {
-      "EAS": 0.8
+      "EAS": 0.94,
+      "AFR": 0.01,
+      "EUR": 0.01,
+      "AMR": 0.02
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -480,8 +508,8 @@
     "trait": "Lao Ancestry Marker",
     "description": "Ancestry Informative Marker for Lao populations."
   },
-  "rs10456364_eas": {
-    "rsid": "rs10456364_eas",
+  "rs10456364": {
+    "rsid": "rs10456364",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -508,8 +536,8 @@
     "chromosome": "6",
     "position": 28713667
   },
-  "rs10456365_eas": {
-    "rsid": "rs10456365_eas",
+  "rs10456365": {
+    "rsid": "rs10456365",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -535,8 +563,8 @@
     "chromosome": "6",
     "position": 28714027
   },
-  "rs10456366_eas": {
-    "rsid": "rs10456366_eas",
+  "rs10456366": {
+    "rsid": "rs10456366",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -562,35 +590,8 @@
     "chromosome": "6",
     "position": 28715994
   },
-  "rs671_eas": {
-    "rsid": "rs671_eas",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.00151285930408472,
-      "EUR": 0.01,
-      "EAS": 0.173611111111111,
-      "AMR": 0.00288184438040346,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Han": 0.5,
-      "Japanese": 0.4,
-      "Korean": 0.35,
-      "Cantonese": 0.55
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "ALDH2 Alcohol Sensitivity Variant - globally unique to East Asian populations.",
-    "chromosome": "12",
-    "position": 111803962
-  },
-  "rs13430441_eas": {
-    "rsid": "rs13430441_eas",
+  "rs13430441": {
+    "rsid": "rs13430441",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -617,8 +618,8 @@
     "chromosome": "2",
     "position": 146573473
   },
-  "rs10456305_eas": {
-    "rsid": "rs10456305_eas",
+  "rs10456305": {
+    "rsid": "rs10456305",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -644,8 +645,8 @@
     "chromosome": "6",
     "position": 24491113
   },
-  "rs10456306_eas": {
-    "rsid": "rs10456306_eas",
+  "rs10456306": {
+    "rsid": "rs10456306",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -671,8 +672,8 @@
     "chromosome": "6",
     "position": 24549813
   },
-  "rs1426654_asi": {
-    "rsid": "rs1426654_asi",
+  "rs1426654": {
+    "rsid": "rs1426654",
     "chromosome": "15",
     "region": "East Asian",
     "color": "#F1C40F",
@@ -698,33 +699,8 @@
     "description": "SLC24A5 variant. Used here to distinguish between the 'pure' African and the admixed Malagasy profiles.",
     "position": 48134287
   },
-  "rs3827760_eas": {
-    "rsid": "rs3827760_eas",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.996974281391831,
-      "EUR": 0.989065606361829,
-      "EAS": 0.126984126984127,
-      "AMR": 0.60806916426513,
-      "SAS": 0.986707566462168,
-      "MENA": 0.02,
-      "OCE": 0.1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "EDAR",
-    "trait": "Ancestry",
-    "description": "EDAR V370A variant common in East Asian populations.",
-    "chromosome": "2",
-    "position": 108897145
-  },
-  "rs1075290_eas": {
-    "rsid": "rs1075290_eas",
+  "rs1075290": {
+    "rsid": "rs1075290",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -743,8 +719,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs10876236_eas": {
-    "rsid": "rs10876236_eas",
+  "rs10876236": {
+    "rsid": "rs10876236",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -765,8 +741,8 @@
     "chromosome": "12",
     "position": 52137591
   },
-  "rs11083341_eas": {
-    "rsid": "rs11083341_eas",
+  "rs11083341": {
+    "rsid": "rs11083341",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -787,8 +763,8 @@
     "chromosome": "18",
     "position": 21790328
   },
-  "rs11155600_eas": {
-    "rsid": "rs11155600_eas",
+  "rs11155600": {
+    "rsid": "rs11155600",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -809,8 +785,8 @@
     "chromosome": "6",
     "position": 148845938
   },
-  "rs11247693_eas": {
-    "rsid": "rs11247693_eas",
+  "rs11247693": {
+    "rsid": "rs11247693",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -831,8 +807,8 @@
     "chromosome": "1",
     "position": 27842659
   },
-  "rs11584100_eas": {
-    "rsid": "rs11584100_eas",
+  "rs11584100": {
+    "rsid": "rs11584100",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -853,8 +829,8 @@
     "chromosome": "1",
     "position": 39535664
   },
-  "rs11701539_eas": {
-    "rsid": "rs11701539_eas",
+  "rs11701539": {
+    "rsid": "rs11701539",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -875,8 +851,8 @@
     "chromosome": "21",
     "position": 27219973
   },
-  "rs1171591_eas": {
-    "rsid": "rs1171591_eas",
+  "rs1171591": {
+    "rsid": "rs1171591",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -897,8 +873,8 @@
     "chromosome": "10",
     "position": 59746919
   },
-  "rs1174052_eas": {
-    "rsid": "rs1174052_eas",
+  "rs1174052": {
+    "rsid": "rs1174052",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -917,8 +893,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175122_eas": {
-    "rsid": "rs1175122_eas",
+  "rs1175122": {
+    "rsid": "rs1175122",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -939,8 +915,8 @@
     "chromosome": "1",
     "position": 192271055
   },
-  "rs1175169_eas": {
-    "rsid": "rs1175169_eas",
+  "rs1175169": {
+    "rsid": "rs1175169",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -961,8 +937,8 @@
     "chromosome": "1",
     "position": 192193819
   },
-  "rs1175223_eas": {
-    "rsid": "rs1175223_eas",
+  "rs1175223": {
+    "rsid": "rs1175223",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -983,8 +959,8 @@
     "chromosome": "13",
     "position": 44309762
   },
-  "rs1175277_eas": {
-    "rsid": "rs1175277_eas",
+  "rs1175277": {
+    "rsid": "rs1175277",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1003,8 +979,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175331_eas": {
-    "rsid": "rs1175331_eas",
+  "rs1175331": {
+    "rsid": "rs1175331",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1023,8 +999,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175385_eas": {
-    "rsid": "rs1175385_eas",
+  "rs1175385": {
+    "rsid": "rs1175385",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1045,8 +1021,8 @@
     "chromosome": "13",
     "position": 44952361
   },
-  "rs1175439_eas": {
-    "rsid": "rs1175439_eas",
+  "rs1175439": {
+    "rsid": "rs1175439",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1067,8 +1043,8 @@
     "chromosome": "7",
     "position": 156244239
   },
-  "rs1175493_eas": {
-    "rsid": "rs1175493_eas",
+  "rs1175493": {
+    "rsid": "rs1175493",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1087,8 +1063,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175547_eas": {
-    "rsid": "rs1175547_eas",
+  "rs1175547": {
+    "rsid": "rs1175547",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1109,8 +1085,8 @@
     "chromosome": "1",
     "position": 3777191
   },
-  "rs1175601_eas": {
-    "rsid": "rs1175601_eas",
+  "rs1175601": {
+    "rsid": "rs1175601",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1129,8 +1105,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175655_eas": {
-    "rsid": "rs1175655_eas",
+  "rs1175655": {
+    "rsid": "rs1175655",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1149,8 +1125,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175709_eas": {
-    "rsid": "rs1175709_eas",
+  "rs1175709": {
+    "rsid": "rs1175709",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1171,8 +1147,8 @@
     "chromosome": "13",
     "position": 26320806
   },
-  "rs1175763_eas": {
-    "rsid": "rs1175763_eas",
+  "rs1175763": {
+    "rsid": "rs1175763",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1191,8 +1167,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1175817_eas": {
-    "rsid": "rs1175817_eas",
+  "rs1175817": {
+    "rsid": "rs1175817",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1213,8 +1189,8 @@
     "chromosome": "19",
     "position": 49235008
   },
-  "rs1175871_eas": {
-    "rsid": "rs1175871_eas",
+  "rs1175871": {
+    "rsid": "rs1175871",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1235,8 +1211,8 @@
     "chromosome": "2",
     "position": 4158187
   },
-  "rs1175925_eas": {
-    "rsid": "rs1175925_eas",
+  "rs1175925": {
+    "rsid": "rs1175925",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1257,8 +1233,8 @@
     "chromosome": "9",
     "position": 92220048
   },
-  "rs1175979_eas": {
-    "rsid": "rs1175979_eas",
+  "rs1175979": {
+    "rsid": "rs1175979",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1277,8 +1253,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176033_eas": {
-    "rsid": "rs1176033_eas",
+  "rs1176033": {
+    "rsid": "rs1176033",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1299,8 +1275,8 @@
     "chromosome": "1",
     "position": 247632160
   },
-  "rs1176087_eas": {
-    "rsid": "rs1176087_eas",
+  "rs1176087": {
+    "rsid": "rs1176087",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1319,8 +1295,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176141_eas": {
-    "rsid": "rs1176141_eas",
+  "rs1176141": {
+    "rsid": "rs1176141",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1339,8 +1315,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176195_eas": {
-    "rsid": "rs1176195_eas",
+  "rs1176195": {
+    "rsid": "rs1176195",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1361,8 +1337,8 @@
     "chromosome": "9",
     "position": 103236028
   },
-  "rs1176249_eas": {
-    "rsid": "rs1176249_eas",
+  "rs1176249": {
+    "rsid": "rs1176249",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1381,8 +1357,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176303_eas": {
-    "rsid": "rs1176303_eas",
+  "rs1176303": {
+    "rsid": "rs1176303",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1403,8 +1379,8 @@
     "chromosome": "13",
     "position": 80626084
   },
-  "rs1176357_eas": {
-    "rsid": "rs1176357_eas",
+  "rs1176357": {
+    "rsid": "rs1176357",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1423,8 +1399,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176411_eas": {
-    "rsid": "rs1176411_eas",
+  "rs1176411": {
+    "rsid": "rs1176411",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1445,8 +1421,8 @@
     "chromosome": "10",
     "position": 130775434
   },
-  "rs1176465_eas": {
-    "rsid": "rs1176465_eas",
+  "rs1176465": {
+    "rsid": "rs1176465",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1467,8 +1443,8 @@
     "chromosome": "10",
     "position": 130638298
   },
-  "rs1176519_eas": {
-    "rsid": "rs1176519_eas",
+  "rs1176519": {
+    "rsid": "rs1176519",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1487,8 +1463,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176573_eas": {
-    "rsid": "rs1176573_eas",
+  "rs1176573": {
+    "rsid": "rs1176573",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1507,8 +1483,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176627_eas": {
-    "rsid": "rs1176627_eas",
+  "rs1176627": {
+    "rsid": "rs1176627",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1529,8 +1505,8 @@
     "chromosome": "17",
     "position": 5209286
   },
-  "rs1176681_eas": {
-    "rsid": "rs1176681_eas",
+  "rs1176681": {
+    "rsid": "rs1176681",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1551,8 +1527,8 @@
     "chromosome": "8",
     "position": 103728444
   },
-  "rs1176735_eas": {
-    "rsid": "rs1176735_eas",
+  "rs1176735": {
+    "rsid": "rs1176735",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1573,8 +1549,8 @@
     "chromosome": "11",
     "position": 113939260
   },
-  "rs1176789_eas": {
-    "rsid": "rs1176789_eas",
+  "rs1176789": {
+    "rsid": "rs1176789",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1595,8 +1571,8 @@
     "chromosome": "2",
     "position": 77189253
   },
-  "rs1176843_eas": {
-    "rsid": "rs1176843_eas",
+  "rs1176843": {
+    "rsid": "rs1176843",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1617,8 +1593,8 @@
     "chromosome": "9",
     "position": 36814891
   },
-  "rs1176897_eas": {
-    "rsid": "rs1176897_eas",
+  "rs1176897": {
+    "rsid": "rs1176897",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1637,8 +1613,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1176951_eas": {
-    "rsid": "rs1176951_eas",
+  "rs1176951": {
+    "rsid": "rs1176951",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1659,8 +1635,8 @@
     "chromosome": "1",
     "position": 104138107
   },
-  "rs1177005_eas": {
-    "rsid": "rs1177005_eas",
+  "rs1177005": {
+    "rsid": "rs1177005",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1681,8 +1657,8 @@
     "chromosome": "7",
     "position": 147848338
   },
-  "rs1177059_eas": {
-    "rsid": "rs1177059_eas",
+  "rs1177059": {
+    "rsid": "rs1177059",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1701,8 +1677,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177113_eas": {
-    "rsid": "rs1177113_eas",
+  "rs1177113": {
+    "rsid": "rs1177113",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1721,8 +1697,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177167_eas": {
-    "rsid": "rs1177167_eas",
+  "rs1177167": {
+    "rsid": "rs1177167",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1743,8 +1719,8 @@
     "chromosome": "2",
     "position": 60776450
   },
-  "rs1177221_eas": {
-    "rsid": "rs1177221_eas",
+  "rs1177221": {
+    "rsid": "rs1177221",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1763,8 +1739,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177275_eas": {
-    "rsid": "rs1177275_eas",
+  "rs1177275": {
+    "rsid": "rs1177275",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1785,8 +1761,8 @@
     "chromosome": "2",
     "position": 61144343
   },
-  "rs1177329_eas": {
-    "rsid": "rs1177329_eas",
+  "rs1177329": {
+    "rsid": "rs1177329",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1807,8 +1783,8 @@
     "chromosome": "11",
     "position": 129776892
   },
-  "rs1177383_eas": {
-    "rsid": "rs1177383_eas",
+  "rs1177383": {
+    "rsid": "rs1177383",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1827,8 +1803,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177437_eas": {
-    "rsid": "rs1177437_eas",
+  "rs1177437": {
+    "rsid": "rs1177437",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1847,8 +1823,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177491_eas": {
-    "rsid": "rs1177491_eas",
+  "rs1177491": {
+    "rsid": "rs1177491",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1869,8 +1845,8 @@
     "chromosome": "3",
     "position": 76393083
   },
-  "rs1177545_eas": {
-    "rsid": "rs1177545_eas",
+  "rs1177545": {
+    "rsid": "rs1177545",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1891,8 +1867,8 @@
     "chromosome": "12",
     "position": 120748188
   },
-  "rs1177599_eas": {
-    "rsid": "rs1177599_eas",
+  "rs1177599": {
+    "rsid": "rs1177599",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1911,8 +1887,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177653_eas": {
-    "rsid": "rs1177653_eas",
+  "rs1177653": {
+    "rsid": "rs1177653",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1933,8 +1909,8 @@
     "chromosome": "3",
     "position": 145848904
   },
-  "rs1177707_eas": {
-    "rsid": "rs1177707_eas",
+  "rs1177707": {
+    "rsid": "rs1177707",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1955,8 +1931,8 @@
     "chromosome": "10",
     "position": 59921579
   },
-  "rs1177761_eas": {
-    "rsid": "rs1177761_eas",
+  "rs1177761": {
+    "rsid": "rs1177761",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1975,8 +1951,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177815_eas": {
-    "rsid": "rs1177815_eas",
+  "rs1177815": {
+    "rsid": "rs1177815",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -1997,8 +1973,8 @@
     "chromosome": "1",
     "position": 112455269
   },
-  "rs1177869_eas": {
-    "rsid": "rs1177869_eas",
+  "rs1177869": {
+    "rsid": "rs1177869",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2017,8 +1993,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1177923_eas": {
-    "rsid": "rs1177923_eas",
+  "rs1177923": {
+    "rsid": "rs1177923",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2039,8 +2015,8 @@
     "chromosome": "7",
     "position": 148344979
   },
-  "rs1177977_eas": {
-    "rsid": "rs1177977_eas",
+  "rs1177977": {
+    "rsid": "rs1177977",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2061,8 +2037,8 @@
     "chromosome": "17",
     "position": 72473562
   },
-  "rs1178031_eas": {
-    "rsid": "rs1178031_eas",
+  "rs1178031": {
+    "rsid": "rs1178031",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2083,8 +2059,8 @@
     "chromosome": "20",
     "position": 3012282
   },
-  "rs1178085_eas": {
-    "rsid": "rs1178085_eas",
+  "rs1178085": {
+    "rsid": "rs1178085",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2103,8 +2079,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178139_eas": {
-    "rsid": "rs1178139_eas",
+  "rs1178139": {
+    "rsid": "rs1178139",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2125,8 +2101,8 @@
     "chromosome": "7",
     "position": 18732821
   },
-  "rs1178193_eas": {
-    "rsid": "rs1178193_eas",
+  "rs1178193": {
+    "rsid": "rs1178193",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2147,8 +2123,8 @@
     "chromosome": "2",
     "position": 15097860
   },
-  "rs1178247_eas": {
-    "rsid": "rs1178247_eas",
+  "rs1178247": {
+    "rsid": "rs1178247",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2167,8 +2143,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178301_eas": {
-    "rsid": "rs1178301_eas",
+  "rs1178301": {
+    "rsid": "rs1178301",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2187,8 +2163,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178355_eas": {
-    "rsid": "rs1178355_eas",
+  "rs1178355": {
+    "rsid": "rs1178355",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2209,8 +2185,8 @@
     "chromosome": "7",
     "position": 18165188
   },
-  "rs1178409_eas": {
-    "rsid": "rs1178409_eas",
+  "rs1178409": {
+    "rsid": "rs1178409",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2231,8 +2207,8 @@
     "chromosome": "6",
     "position": 150823106
   },
-  "rs1178463_eas": {
-    "rsid": "rs1178463_eas",
+  "rs1178463": {
+    "rsid": "rs1178463",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2251,8 +2227,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178517_eas": {
-    "rsid": "rs1178517_eas",
+  "rs1178517": {
+    "rsid": "rs1178517",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2273,8 +2249,8 @@
     "chromosome": "3",
     "position": 2214602
   },
-  "rs1178571_eas": {
-    "rsid": "rs1178571_eas",
+  "rs1178571": {
+    "rsid": "rs1178571",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2293,8 +2269,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178625_eas": {
-    "rsid": "rs1178625_eas",
+  "rs1178625": {
+    "rsid": "rs1178625",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2313,8 +2289,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178679_eas": {
-    "rsid": "rs1178679_eas",
+  "rs1178679": {
+    "rsid": "rs1178679",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2333,8 +2309,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178733_eas": {
-    "rsid": "rs1178733_eas",
+  "rs1178733": {
+    "rsid": "rs1178733",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2353,8 +2329,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs1178787_eas": {
-    "rsid": "rs1178787_eas",
+  "rs1178787": {
+    "rsid": "rs1178787",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2373,8 +2349,8 @@
     "weight": 1,
     "description": "UT-AIM250 Marker - East Asian informative."
   },
-  "rs10456199_eas": {
-    "rsid": "rs10456199_eas",
+  "rs10456199": {
+    "rsid": "rs10456199",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2394,8 +2370,8 @@
     "chromosome": "6",
     "position": 9722793
   },
-  "rs10456200_eas": {
-    "rsid": "rs10456200_eas",
+  "rs10456200": {
+    "rsid": "rs10456200",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2414,109 +2390,8 @@
     "chromosome": "6",
     "position": 15540793
   },
-  "rs671_eas_2": {
-    "rsid": "rs671_eas_2",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.00151285930408472,
-      "EUR": 0.001,
-      "EAS": 0.173611111111111,
-      "AMR": 0.00288184438040346
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "12",
-    "position": 111803962
-  },
-  "rs1229984_eas": {
-    "rsid": "rs1229984_eas",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.7,
-      "AMR": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 3.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "4",
-    "position": 99318162
-  },
-  "rs17822931_eas": {
-    "rsid": "rs17822931_eas",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.05,
-      "EAS": 0.95,
-      "AMR": 0.9
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "16",
-    "position": 48224287
-  },
-  "rs1869901_eas": {
-    "rsid": "rs1869901_eas",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.505295007564297,
-      "EUR": 0.399602385685885,
-      "EAS": 0.22718253968254,
-      "AMR": 0.27521613832853,
-      "SAS": 0.341513292433538
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "15",
-    "position": 40303426
-  },
-  "rs1048943_eas": {
-    "rsid": "rs1048943_eas",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.94,
-      "AMR": 0.02
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 4.5,
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "chromosome": "15",
-    "position": 74720644
-  },
-  "rs7330728_eas": {
-    "rsid": "rs7330728_eas",
+  "rs7330728": {
+    "rsid": "rs7330728",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2536,8 +2411,8 @@
     "chromosome": "13",
     "position": 41394349
   },
-  "rs10456238_eas": {
-    "rsid": "rs10456238_eas",
+  "rs10456238": {
+    "rsid": "rs10456238",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2558,8 +2433,8 @@
     "chromosome": "6",
     "position": 21112096
   },
-  "rs10456239_eas": {
-    "rsid": "rs10456239_eas",
+  "rs10456239": {
+    "rsid": "rs10456239",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2580,8 +2455,8 @@
     "chromosome": "6",
     "position": 10344331
   },
-  "rs10456279_eas": {
-    "rsid": "rs10456279_eas",
+  "rs10456279": {
+    "rsid": "rs10456279",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2604,8 +2479,8 @@
     "chromosome": "6",
     "position": 23683215
   },
-  "rs10456281_eas": {
-    "rsid": "rs10456281_eas",
+  "rs10456281": {
+    "rsid": "rs10456281",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2628,8 +2503,8 @@
     "chromosome": "6",
     "position": 23688492
   },
-  "rs10456286_eas": {
-    "rsid": "rs10456286_eas",
+  "rs10456286": {
+    "rsid": "rs10456286",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2652,8 +2527,8 @@
     "chromosome": "6",
     "position": 23767513
   },
-  "rs10456289_eas": {
-    "rsid": "rs10456289_eas",
+  "rs10456289": {
+    "rsid": "rs10456289",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2676,8 +2551,8 @@
     "chromosome": "6",
     "position": 23797596
   },
-  "rs10456298_eas": {
-    "rsid": "rs10456298_eas",
+  "rs10456298": {
+    "rsid": "rs10456298",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2700,8 +2575,8 @@
     "chromosome": "6",
     "position": 23995629
   },
-  "rs10456300_eas": {
-    "rsid": "rs10456300_eas",
+  "rs10456300": {
+    "rsid": "rs10456300",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2724,81 +2599,8 @@
     "chromosome": "6",
     "position": 24127528
   },
-  "rs671_eas_3": {
-    "rsid": "rs671_eas_3",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.00151285930408472,
-      "EUR": 0,
-      "EAS": 0.173611111111111,
-      "AMR": 0.00288184438040346,
-      "SAS": 0
-    },
-    "subFrequencies": {
-      "Japanese": 0.45,
-      "Han Chinese": 0.2,
-      "Vietnamese": 0.15,
-      "Korean": 0.3
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "East Asian Alcohol Flush Marker - highly informative for Japanese and Han Chinese subpopulations.",
-    "chromosome": "12",
-    "position": 111803962
-  },
-  "rs3827760_eas_2": {
-    "rsid": "rs3827760_eas_2",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "AMR": 0.4,
-      "SAS": 0.05
-    },
-    "subFrequencies": {
-      "Han Chinese": 0.99,
-      "Japanese": 0.9,
-      "Korean": 0.95,
-      "Native American": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "EDAR Gene Marker - diagnostic for East Asian and Native American populations.",
-    "chromosome": "2",
-    "position": 108897145
-  },
-  "rs3827760_eas_3": {
-    "rsid": "rs3827760_eas_3",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.00302571860816944,
-      "EUR": 0.010934393638171,
-      "EAS": 0.873015873015873,
-      "SAS": 0.0132924335378323,
-      "AMR": 0.39193083573487
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "description": "EDAR Tie-Breaker - Highly diagnostic for East Asian and Native American ancestry.",
-    "chromosome": "2",
-    "position": 108897145
-  },
-  "rs121913059_eas": {
-    "rsid": "rs121913059_eas",
+  "rs121913059": {
+    "rsid": "rs121913059",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2818,76 +2620,8 @@
     "chromosome": "1",
     "position": 196747245
   },
-  "rs1229984_eas_2": {
-    "rsid": "rs1229984_eas_2",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.8,
-      "SAS": 0.1,
-      "MENA": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "ADH1B Alcohol Metabolism Marker - Highly informative for East Asian ancestry.",
-    "chromosome": "4",
-    "position": 99318162
-  },
-  "rs671_eas_4": {
-    "rsid": "rs671_eas_4",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.00151285930408472,
-      "EUR": 0,
-      "EAS": 0.173611111111111,
-      "SAS": 0,
-      "MENA": 0,
-      "AMR": 0.00288184438040346
-    },
-    "subFrequencies": {
-      "Japanese": 0.45,
-      "Han Chinese": 0.2,
-      "Vietnamese": 0.15
-    },
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "ALDH2 Alcohol Flush Marker - Highly specific to East Asian populations.",
-    "chromosome": "12",
-    "position": 111803962
-  },
-  "rs17822931_eas_2": {
-    "rsid": "rs17822931_eas_2",
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.9,
-      "SAS": 0.1,
-      "AMR": 0.8
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 5,
-    "description": "ABCC11 Earwax/Body Odor Marker - Diagnostic for East Asian and Native American ancestry.",
-    "chromosome": "16",
-    "position": 48224287
-  },
-  "rs12224928_eas": {
-    "rsid": "rs12224928_eas",
+  "rs12224928": {
+    "rsid": "rs12224928",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2912,8 +2646,8 @@
     "chromosome": "11",
     "position": 65936901
   },
-  "rs9271160_eas": {
-    "rsid": "rs9271160_eas",
+  "rs9271160": {
+    "rsid": "rs9271160",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
@@ -2938,18 +2672,21 @@
     "chromosome": "6",
     "position": 32609869
   },
-  "rs1800414_eas": {
-    "rsid": "rs1800414_eas",
+  "rs1800414": {
+    "rsid": "rs1800414",
     "region": "East Asian",
     "color": "#F1C40F",
     "alleles": [
       "A"
     ],
     "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.92,
-      "AMR": 0.6
+      "AFR": 0.02,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
     },
     "subFrequencies": {
       "Tibetan": 0.98,
@@ -2958,7 +2695,7 @@
       "Bhutanese": 0.9
     },
     "deepFrequencies": {},
-    "weight": 4,
+    "weight": 8,
     "description": "Himalayan/High Altitude Adaption Marker - highly informative for Tibetan and High Altitude Asian populations.",
     "chromosome": "15",
     "position": 27951891
@@ -18520,31 +18257,6 @@
     "trait": "Ancestry",
     "description": "The 'A' allele (associated with dry earwax and reduced body odor) is extremely common in East Asian populations and rare in African and European populations."
   },
-  "rs1800414": {
-    "rsid": "rs1800414",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "EAS": 0.05,
-      "EUR": 0.05,
-      "AFR": 0.02,
-      "AMR": 0.02,
-      "SAS": 0.05,
-      "MENA": 0.05,
-      "OCE": 0.05
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "OCA2",
-    "trait": "Ancestry",
-    "description": "East Asian specific pigmentation marker.",
-    "chromosome": "15",
-    "position": 28230288
-  },
   "rs1351394": {
     "rsid": "rs1351394",
     "region": "East Asian",
@@ -20365,8 +20077,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01kk-001.v2": {
-    "rsid": "mh01kk-001.v2",
+  "mh01kk-001": {
+    "rsid": "mh01kk-001",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -20463,73 +20175,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-002.v2": {
-    "rsid": "mh01wl-002.v2",
+  "mh01wl-002": {
+    "rsid": "mh01wl-002",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
       "A:G:A:A:A",
       "A:G:A:G:A"
-    ],
-    "frequencies": {
-      "EAS": 0.702,
-      "EUR": 0.508,
-      "AFR": 0.341,
-      "AMR": 0.644,
-      "SAS": 0.596
-    },
-    "subFrequencies": {
-      "CDX": 0.67742,
-      "CHB": 0.69417,
-      "CHS": 0.71875,
-      "JPT": 0.75962,
-      "KHV": 0.65347
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-002.v3": {
-    "rsid": "mh01wl-002.v3",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:A:A",
-      "A:G:A"
-    ],
-    "frequencies": {
-      "EAS": 0.702,
-      "EUR": 0.508,
-      "AFR": 0.341,
-      "AMR": 0.644,
-      "SAS": 0.596
-    },
-    "subFrequencies": {
-      "CDX": 0.67742,
-      "CHB": 0.69417,
-      "CHS": 0.71875,
-      "JPT": 0.75962,
-      "KHV": 0.65347
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-002.v1": {
-    "rsid": "mh01wl-002.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:A:A:A",
-      "A:G:A:A"
     ],
     "frequencies": {
       "EAS": 0.702,
@@ -20905,8 +20557,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02kk-004.v2": {
-    "rsid": "mh02kk-004.v2",
+  "mh02kk-004": {
+    "rsid": "mh02kk-004",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -20914,38 +20566,6 @@
       "G:G:A",
       "G:G:G",
       "G:T:A"
-    ],
-    "frequencies": {
-      "EAS": 0.5,
-      "EUR": 0.156,
-      "AFR": 0.015,
-      "AMR": 0.221,
-      "SAS": 0.13
-    },
-    "subFrequencies": {
-      "CDX": 0.56452,
-      "CHB": 0.50971,
-      "CHS": 0.45536,
-      "JPT": 0.48558,
-      "KHV": 0.49505
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02kk-004.v1": {
-    "rsid": "mh02kk-004.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "G:A:A",
-      "G:A:G",
-      "G:G:A",
-      "T:A:G"
     ],
     "frequencies": {
       "EAS": 0.5,
@@ -21224,8 +20844,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-017.v4": {
-    "rsid": "mh03kk-017.v4",
+  "mh03kk-017": {
+    "rsid": "mh03kk-017",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -21584,8 +21204,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-018.v1": {
-    "rsid": "mh04wl-018.v1",
+  "mh04wl-018": {
+    "rsid": "mh04wl-018",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -21594,38 +21214,6 @@
       "T:G:A:C:T:G:G",
       "A:G:A:C:T:G:G",
       "T:G:A:C:T:A:C"
-    ],
-    "frequencies": {
-      "EAS": 0.722,
-      "EUR": 0.596,
-      "AFR": 0.832,
-      "AMR": 0.764,
-      "SAS": 0.672
-    },
-    "subFrequencies": {
-      "CDX": 0.72043,
-      "CHB": 0.7233,
-      "CHS": 0.77679,
-      "JPT": 0.67788,
-      "KHV": 0.70792
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-018.v2": {
-    "rsid": "mh04wl-018.v2",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "G:A:C:T:A:G",
-      "G:A:C:T:G:C",
-      "G:A:C:T:G:G",
-      "G:A:C:T:A:C"
     ],
     "frequencies": {
       "EAS": 0.794,
@@ -21679,8 +21267,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-003.v1": {
-    "rsid": "mh04wl-003.v1",
+  "mh04wl-003": {
+    "rsid": "mh04wl-003",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -21692,38 +21280,6 @@
       "A:G:G:A",
       "C:G:A:A",
       "A:G:A:A"
-    ],
-    "frequencies": {
-      "EAS": 0.458,
-      "EUR": 0.001,
-      "AFR": 0.003,
-      "AMR": 0.057,
-      "SAS": 0.002
-    },
-    "subFrequencies": {
-      "CDX": 0.49462,
-      "CHB": 0.43689,
-      "CHS": 0.4375,
-      "JPT": 0.47596,
-      "KHV": 0.4505
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-003.v2": {
-    "rsid": "mh04wl-003.v2",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:A:A",
-      "A:G:A",
-      "G:G:A",
-      "G:A:A"
     ],
     "frequencies": {
       "EAS": 0.625,
@@ -21747,8 +21303,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0059871.v2": {
-    "rsid": "mh04scuzj-0059871.v2",
+  "mh04scuzj-0059871": {
+    "rsid": "mh04scuzj-0059871",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -21777,45 +21333,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04kk-011.v2": {
-    "rsid": "mh04kk-011.v2",
+  "mh04kk-011": {
+    "rsid": "mh04kk-011",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
       "A",
       "G"
-    ],
-    "frequencies": {
-      "EAS": 0.437,
-      "EUR": 0.134,
-      "AFR": 0.696,
-      "AMR": 0.27,
-      "SAS": 0.241
-    },
-    "subFrequencies": {
-      "CDX": 0.56989,
-      "CHB": 0.39806,
-      "CHS": 0.40625,
-      "JPT": 0.34615,
-      "KHV": 0.4802
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04kk-011.v1": {
-    "rsid": "mh04kk-011.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:C",
-      "A:T",
-      "G:C",
-      "G:T"
     ],
     "frequencies": {
       "EAS": 0.434,
@@ -21946,8 +21470,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04kk-013.v1": {
-    "rsid": "mh04kk-013.v1",
+  "mh04kk-013": {
+    "rsid": "mh04kk-013",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -21958,108 +21482,6 @@
       "C:G:G:A:T",
       "C:G:G:G:T",
       "C:A:G:G:T"
-    ],
-    "frequencies": {
-      "EAS": 0.569,
-      "EUR": 0.106,
-      "AFR": 0.388,
-      "AMR": 0,
-      "SAS": 0.302
-    },
-    "subFrequencies": {
-      "CDX": 0,
-      "CHB": 0,
-      "CHS": 0,
-      "JPT": 0,
-      "KHV": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04kk-013.v2": {
-    "rsid": "mh04kk-013.v2",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:G:A:G:T:A:T",
-      "C:G:A:G:T:A:T",
-      "C:G:G:A:T:A:T",
-      "C:G:G:G:C:G:T",
-      "C:G:G:G:T:A:C",
-      "C:G:G:G:T:A:T",
-      "C:G:G:G:T:G:T",
-      "C:C:G:G:T:A:T"
-    ],
-    "frequencies": {
-      "EAS": 0.569,
-      "EUR": 0.106,
-      "AFR": 0.371,
-      "AMR": 0.408,
-      "SAS": 0.302
-    },
-    "subFrequencies": {
-      "CDX": 0.54301,
-      "CHB": 0.58252,
-      "CHS": 0.45089,
-      "JPT": 0.66346,
-      "KHV": 0.61386
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04kk-013.v3": {
-    "rsid": "mh04kk-013.v3",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:A:G:A:G:T:A:T",
-      "C:A:G:A:G:T:A:T",
-      "C:A:G:G:A:T:A:T",
-      "C:A:G:G:G:C:G:T",
-      "C:A:G:G:G:T:A:C",
-      "C:A:G:G:G:T:A:T",
-      "C:A:G:G:G:T:G:T"
-    ],
-    "frequencies": {
-      "EAS": 0.569,
-      "EUR": 0.106,
-      "AFR": 0.371,
-      "AMR": 0.408,
-      "SAS": 0.302
-    },
-    "subFrequencies": {
-      "CDX": 0.54301,
-      "CHB": 0.58252,
-      "CHS": 0.45089,
-      "JPT": 0.66346,
-      "KHV": 0.61386
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04kk-013.v4": {
-    "rsid": "mh04kk-013.v4",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:G",
-      "G:A",
-      "G:G"
     ],
     "frequencies": {
       "EAS": 0.733,
@@ -22347,8 +21769,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05kk-120.v2": {
-    "rsid": "mh05kk-120.v2",
+  "mh05kk-120": {
+    "rsid": "mh05kk-120",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -22673,44 +22095,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06scuzj-0480560.v1": {
-    "rsid": "mh06scuzj-0480560.v1",
+  "mh06scuzj-0480560": {
+    "rsid": "mh06scuzj-0480560",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
       "G:T:A:T:C:G:G:C:A:G:C:A:A:C:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:A:A:T:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "EAS": 0.995,
-      "EUR": 1,
-      "AFR": 0.007,
-      "AMR": 1,
-      "SAS": 0.999
-    },
-    "subFrequencies": {
-      "CDX": 1,
-      "CHB": 0.99515,
-      "CHS": 0.99554,
-      "JPT": 0.99038,
-      "KHV": 0.99505
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06scuzj-0480560.v2": {
-    "rsid": "mh06scuzj-0480560.v2",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "T:C:G:G:C:A:G:C:A:A",
-      "T:C:G:G:C:A:G:C:T:A"
     ],
     "frequencies": {
       "EAS": 1,
@@ -22890,8 +22282,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06kk-008.v1": {
-    "rsid": "mh06kk-008.v1",
+  "mh06kk-008": {
+    "rsid": "mh06kk-008",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -22911,192 +22303,6 @@
       "T:G:G:G",
       "G:G:A:G",
       "T:C:A:G"
-    ],
-    "frequencies": {
-      "EAS": 0.638,
-      "EUR": 0.291,
-      "AFR": 0.031,
-      "AMR": 0.01,
-      "SAS": 0.427
-    },
-    "subFrequencies": {
-      "CDX": 0,
-      "CHB": 0,
-      "CHS": 0,
-      "JPT": 0,
-      "KHV": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06kk-008.v2": {
-    "rsid": "mh06kk-008.v2",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "G:C:A:C:G:T:G:A:G:G:G:G",
-      "G:C:A:C:G:T:G:G:A:G:G:G",
-      "G:C:A:C:G:T:G:G:G:G:G:G",
-      "G:C:G:C:G:G:G:A:A:G:G:G",
-      "G:C:G:C:G:G:G:G:G:G:G:G",
-      "G:C:G:C:G:T:G:A:A:G:G:G",
-      "G:C:G:C:G:T:G:A:G:G:G:G",
-      "G:C:G:C:G:T:G:A:G:G:T:G",
-      "G:C:G:C:G:T:G:G:G:G:G:G",
-      "G:G:A:C:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:G:G:A:G:G:T:G",
-      "G:G:G:C:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:T:G",
-      "T:C:A:C:G:T:G:A:G:G:G:G",
-      "T:C:G:C:G:T:G:A:A:G:G:G",
-      "T:C:G:C:G:T:G:A:G:G:G:G",
-      "T:C:G:C:G:T:G:G:A:G:G:G",
-      "T:C:G:C:G:T:G:G:G:G:G:G",
-      "T:G:A:C:A:T:G:A:G:G:G:G",
-      "T:G:A:C:G:T:G:A:G:G:G:G",
-      "T:G:A:C:G:T:G:G:G:G:G:G",
-      "T:G:G:C:G:T:G:A:G:G:G:G",
-      "T:G:G:C:G:T:G:G:G:G:G:G",
-      "G:C:A:C:A:T:G:A:G:G:G:G",
-      "G:C:A:C:G:G:G:G:G:G:G:G",
-      "G:C:A:C:G:T:G:A:G:G:T:G",
-      "G:C:G:C:G:G:G:A:G:G:G:G",
-      "G:C:G:C:G:G:G:A:G:G:T:G",
-      "G:C:G:C:G:T:G:G:A:G:G:G",
-      "G:G:A:C:A:T:G:A:G:G:G:G",
-      "G:G:A:C:G:G:G:A:G:G:G:G",
-      "G:G:A:C:G:G:G:G:G:G:G:G",
-      "G:G:A:C:G:T:G:G:G:G:G:G",
-      "G:G:G:C:G:G:G:G:G:G:G:G",
-      "G:G:G:C:G:T:G:A:A:G:G:G",
-      "G:G:G:C:G:T:G:A:G:G:T:G",
-      "G:G:G:C:G:T:G:G:A:G:G:G",
-      "G:G:G:C:G:T:G:G:G:G:G:C",
-      "T:C:A:C:G:T:G:G:G:G:G:G",
-      "T:C:G:C:G:G:G:A:G:G:G:G",
-      "T:G:A:C:A:T:G:G:G:G:G:C",
-      "T:G:A:C:G:G:G:A:G:G:T:G",
-      "T:G:A:C:G:T:G:G:A:G:G:G",
-      "T:G:G:C:G:G:G:A:A:G:G:G",
-      "T:G:G:C:G:G:G:A:G:G:G:G",
-      "T:G:G:C:G:T:G:A:A:G:G:G",
-      "T:G:G:C:G:T:G:A:G:G:T:G",
-      "T:G:G:C:G:T:G:G:G:G:G:C",
-      "G:C:G:C:A:T:G:A:G:G:G:G",
-      "G:G:A:C:G:T:G:G:A:G:G:G",
-      "T:G:G:C:G:T:G:G:A:G:G:G",
-      "T:G:A:C:A:T:G:G:G:G:G:G",
-      "T:G:G:C:A:T:G:G:G:G:G:G",
-      "T:C:A:C:A:T:G:G:G:G:G:G",
-      "T:C:A:C:G:T:G:G:A:G:G:G",
-      "T:G:A:C:G:T:G:G:G:G:G:C",
-      "T:G:G:C:A:T:G:A:G:G:G:G",
-      "T:C:A:C:A:T:G:A:G:G:G:G",
-      "T:C:A:C:G:T:G:A:A:G:G:G",
-      "T:G:G:C:G:G:G:G:G:G:G:G",
-      "T:G:A:C:G:T:G:A:A:G:G:G",
-      "G:C:G:G:G:T:G:A:G:G:G:G",
-      "G:G:G:C:G:G:G:A:A:G:G:G",
-      "G:G:G:C:G:T:A:G:G:G:G:G",
-      "T:G:G:C:G:G:G:A:G:G:T:G",
-      "T:C:G:C:G:T:G:G:G:G:G:C",
-      "T:G:A:C:G:T:G:G:G:A:G:G"
-    ],
-    "frequencies": {
-      "EAS": 0.625,
-      "EUR": 0.276,
-      "AFR": 0.028,
-      "AMR": 0.332,
-      "SAS": 0.415
-    },
-    "subFrequencies": {
-      "CDX": 0.56989,
-      "CHB": 0.6068,
-      "CHS": 0.60268,
-      "JPT": 0.73558,
-      "KHV": 0.60396
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06kk-008.v3": {
-    "rsid": "mh06kk-008.v3",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "G:C:C:A:C:C:G:T:G:A:G:G:G:G",
-      "G:C:C:A:C:C:G:T:G:G:A:G:G:G",
-      "G:C:C:A:C:C:G:T:G:G:G:G:G:G",
-      "G:C:C:G:C:C:G:G:G:A:A:G:G:G",
-      "G:C:C:G:C:C:G:G:G:G:G:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:A:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:G:G:G:G",
-      "G:C:C:G:C:C:G:T:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:A:G:G:G:G",
-      "G:C:G:G:C:C:G:G:G:A:G:G:T:G",
-      "G:C:G:G:C:C:G:T:G:A:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:T:G",
-      "T:C:C:A:C:C:G:T:G:A:G:G:G:G",
-      "T:C:C:G:C:C:G:T:G:A:A:G:G:G",
-      "T:C:C:G:C:C:G:T:G:A:G:G:G:G",
-      "T:C:C:G:C:C:G:T:G:G:A:G:G:G",
-      "T:C:C:G:C:C:G:T:G:G:G:G:G:G",
-      "T:C:G:A:C:C:A:T:G:A:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:A:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:G:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:G:G:G:G:G",
-      "G:C:C:A:C:C:A:T:G:A:G:G:G:G",
-      "G:C:C:A:C:C:G:G:G:G:G:G:G:G",
-      "G:C:C:A:C:C:G:T:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:G:G:A:G:G:G:G",
-      "G:C:C:G:C:C:G:G:G:A:G:G:T:G",
-      "G:C:C:G:C:C:G:T:G:G:A:G:G:G",
-      "G:C:G:A:C:C:A:T:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:G:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:G:G:G:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:G:G:G:G:G:G:G",
-      "G:C:G:G:C:C:G:T:G:A:A:G:G:G",
-      "G:C:G:G:C:C:G:T:G:A:G:G:T:G",
-      "G:C:G:G:C:C:G:T:G:G:A:G:G:G",
-      "G:C:G:G:C:C:G:T:G:G:G:G:G:C",
-      "T:C:C:A:C:C:G:T:G:G:G:G:G:G",
-      "T:C:C:G:C:C:G:G:G:A:G:G:G:G",
-      "T:C:G:A:C:C:A:T:G:G:G:G:G:C",
-      "T:C:G:A:C:C:G:G:G:A:G:G:T:G",
-      "T:C:G:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:A:G:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:T:G:A:G:G:T:G",
-      "T:C:G:G:C:C:G:T:G:G:G:G:G:C",
-      "G:C:C:G:C:C:A:T:G:A:G:G:G:G",
-      "G:C:G:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:G:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:A:C:C:A:T:G:G:G:G:G:G",
-      "T:C:G:G:C:C:A:T:G:G:G:G:G:G",
-      "T:C:C:A:C:C:A:T:G:G:G:G:G:G",
-      "T:C:C:A:C:C:G:T:G:G:A:G:G:G",
-      "T:C:G:A:C:C:G:T:G:G:G:G:G:C",
-      "T:C:G:G:C:C:A:T:G:A:G:G:G:G",
-      "T:C:C:A:C:C:A:T:G:A:G:G:G:G",
-      "T:C:C:A:C:C:G:T:G:A:A:G:G:G",
-      "T:C:G:G:C:C:G:G:G:G:G:G:G:G",
-      "T:C:G:A:C:C:G:T:G:A:A:G:G:G"
     ],
     "frequencies": {
       "EAS": 0.625,
@@ -23621,8 +22827,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08shy-007.v1": {
-    "rsid": "mh08shy-007.v1",
+  "mh08shy-007": {
+    "rsid": "mh08shy-007",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -23753,8 +22959,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-161.v2": {
-    "rsid": "mh09kk-161.v2",
+  "mh09kk-161": {
+    "rsid": "mh09kk-161",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -23792,96 +22998,6 @@
       "T:C:C:G:C:G:G:G:G"
     ],
     "frequencies": {
-      "EAS": 0.668,
-      "EUR": 0.006,
-      "AFR": 0.009,
-      "AMR": 0.425,
-      "SAS": 0.001
-    },
-    "subFrequencies": {
-      "CDX": 0.71505,
-      "CHB": 0.6699,
-      "CHS": 0.69643,
-      "JPT": 0.62981,
-      "KHV": 0.62871
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09kk-161.v3": {
-    "rsid": "mh09kk-161.v3",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "G:C:C:G:C:G:T:C:G:G",
-      "G:C:C:G:C:G:T:C:T:G",
-      "G:C:G:G:C:G:T:C:G:G",
-      "G:C:G:G:C:G:T:C:T:G",
-      "G:C:G:G:T:G:T:C:G:G",
-      "G:C:G:G:T:G:T:C:T:G",
-      "T:C:C:G:C:G:T:C:G:G",
-      "T:C:C:G:C:G:T:C:T:G",
-      "T:C:G:A:C:G:T:C:G:G",
-      "T:C:G:A:T:G:T:C:G:G",
-      "T:C:G:G:C:G:T:C:G:G",
-      "T:C:G:G:C:G:T:C:T:G",
-      "T:C:G:G:T:G:T:C:G:G",
-      "T:C:G:G:T:G:T:C:T:G",
-      "T:G:G:G:C:G:T:C:G:G",
-      "G:C:G:A:C:G:T:C:G:G",
-      "G:C:G:A:C:G:T:C:T:G",
-      "G:C:G:A:T:G:T:C:G:G",
-      "T:C:C:A:T:G:T:C:G:G",
-      "T:C:C:G:T:G:T:C:G:G",
-      "T:C:C:G:T:G:T:C:G:T",
-      "T:C:C:G:T:G:T:C:T:G",
-      "T:C:G:A:C:G:T:C:T:G",
-      "T:C:G:A:T:G:T:C:T:G",
-      "T:C:C:A:C:G:T:C:T:G",
-      "T:C:C:G:C:G:T:C:T:T",
-      "G:C:G:G:T:G:G:C:T:G",
-      "T:C:G:G:C:G:T:C:T:T",
-      "T:C:G:G:T:G:T:C:T:T",
-      "G:C:G:G:C:G:T:C:T:T"
-    ],
-    "frequencies": {
-      "EAS": 0.668,
-      "EUR": 0.006,
-      "AFR": 0.009,
-      "AMR": 0.425,
-      "SAS": 0.001
-    },
-    "subFrequencies": {
-      "CDX": 0.71505,
-      "CHB": 0.6699,
-      "CHS": 0.69643,
-      "JPT": 0.62981,
-      "KHV": 0.62871
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09kk-161.v1": {
-    "rsid": "mh09kk-161.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "C:G",
-      "C:T",
-      "T:G",
-      "T:T"
-    ],
-    "frequencies": {
       "EAS": 0.738,
       "EUR": 0.54,
       "AFR": 0.023,
@@ -23903,8 +23019,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-010.v1": {
-    "rsid": "mh09wl-010.v1",
+  "mh09wl-010": {
+    "rsid": "mh09wl-010",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -23934,39 +23050,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-010.v3": {
-    "rsid": "mh09wl-010.v3",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:G:G:A:A:T",
-      "A:G:G:A:G:T",
-      "T:G:G:A:G:T"
-    ],
-    "frequencies": {
-      "EAS": 0.933,
-      "EUR": 0.996,
-      "AFR": 0.001,
-      "AMR": 0.969,
-      "SAS": 0.995
-    },
-    "subFrequencies": {
-      "CDX": 0.94624,
-      "CHB": 0.8932,
-      "CHS": 0.9375,
-      "JPT": 0.9375,
-      "KHV": 0.9505
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09usc-9pa.v1": {
-    "rsid": "mh09usc-9pa.v1",
+  "mh09usc-9pa": {
+    "rsid": "mh09usc-9pa",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -24107,8 +23192,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-152.v2": {
-    "rsid": "mh09kk-152.v2",
+  "mh09kk-152": {
+    "rsid": "mh09kk-152",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -24612,8 +23697,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11kk-191.v4": {
-    "rsid": "mh11kk-191.v4",
+  "mh11kk-191": {
+    "rsid": "mh11kk-191",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -24621,43 +23706,6 @@
       "C:G",
       "T:A",
       "T:G"
-    ],
-    "frequencies": {
-      "EAS": 0.686,
-      "EUR": 0.071,
-      "AFR": 0.022,
-      "AMR": 0.713,
-      "SAS": 0.064
-    },
-    "subFrequencies": {
-      "CDX": 0.6828,
-      "CHB": 0.62136,
-      "CHS": 0.63393,
-      "JPT": 0.82212,
-      "KHV": 0.67327
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11kk-191.v1": {
-    "rsid": "mh11kk-191.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "C:A:A:T",
-      "C:G:A:T",
-      "T:A:A:C",
-      "T:A:A:T",
-      "T:G:A:T",
-      "C:A:G:T",
-      "C:G:G:T",
-      "C:G:A:C",
-      "C:A:A:C"
     ],
     "frequencies": {
       "EAS": 0.521,
@@ -24810,8 +23858,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11usc-11qc.v1": {
-    "rsid": "mh11usc-11qc.v1",
+  "mh11usc-11qc": {
+    "rsid": "mh11usc-11qc",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -24844,8 +23892,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-001.v2": {
-    "rsid": "mh11wl-001.v2",
+  "mh11wl-001": {
+    "rsid": "mh11wl-001",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -24858,73 +23906,6 @@
       "A:A:T:C:A:C:T",
       "C:A:C:G:A:C:T",
       "C:C:C:C:A:C:T"
-    ],
-    "frequencies": {
-      "EAS": 0.553,
-      "EUR": 0.346,
-      "AFR": 0.349,
-      "AMR": 0.667,
-      "SAS": 0.566
-    },
-    "subFrequencies": {
-      "CDX": 0.48387,
-      "CHB": 0.57282,
-      "CHS": 0.60268,
-      "JPT": 0.57692,
-      "KHV": 0.51485
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-001.v3": {
-    "rsid": "mh11wl-001.v3",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "A:A:C:C:A:C:T:G:C",
-      "A:A:C:G:A:C:T:G:C",
-      "A:A:T:G:A:C:T:G:C",
-      "C:C:C:G:A:C:T:G:C",
-      "C:C:T:C:A:C:T:G:C",
-      "C:C:T:G:A:C:T:G:C",
-      "A:A:T:C:A:C:T:G:C",
-      "C:A:C:G:A:C:T:G:C",
-      "C:C:C:C:A:C:T:G:C"
-    ],
-    "frequencies": {
-      "EAS": 0.553,
-      "EUR": 0.346,
-      "AFR": 0.349,
-      "AMR": 0.667,
-      "SAS": 0.566
-    },
-    "subFrequencies": {
-      "CDX": 0.48387,
-      "CHB": 0.57282,
-      "CHS": 0.60268,
-      "JPT": 0.57692,
-      "KHV": 0.51485
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-001.v1": {
-    "rsid": "mh11wl-001.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "C:A:C:T:G:C",
-      "G:A:C:T:G:C"
     ],
     "frequencies": {
       "EAS": 0.588,
@@ -25140,8 +24121,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-213.v6": {
-    "rsid": "mh13kk-213.v6",
+  "mh13kk-213": {
+    "rsid": "mh13kk-213",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -25149,37 +24130,6 @@
       "A:C:A:C:G:T",
       "A:C:A:T:A:T",
       "A:C:A:C:A:T"
-    ],
-    "frequencies": {
-      "EAS": 0.527,
-      "EUR": 0.344,
-      "AFR": 0.37,
-      "AMR": 0.546,
-      "SAS": 0.387
-    },
-    "subFrequencies": {
-      "CDX": 0.60215,
-      "CHB": 0.51456,
-      "CHS": 0.50446,
-      "JPT": 0.48558,
-      "KHV": 0.5396
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh13kk-213.v4": {
-    "rsid": "mh13kk-213.v4",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "C:C",
-      "T:A",
-      "T:C"
     ],
     "frequencies": {
       "EAS": 0.554,
@@ -25203,8 +24153,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-217.v4": {
-    "rsid": "mh13kk-217.v4",
+  "mh13kk-217": {
+    "rsid": "mh13kk-217",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -25971,8 +24921,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17wl-030.v2": {
-    "rsid": "mh17wl-030.v2",
+  "mh17wl-030": {
+    "rsid": "mh17wl-030",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -25980,36 +24930,6 @@
       "G:C:C:A:G:C:G:G:C:G:C:C",
       "G:C:C:C:G:C:G:G:A:G:C:C",
       "G:C:C:C:G:C:G:G:C:G:C:C"
-    ],
-    "frequencies": {
-      "EAS": 0.976,
-      "EUR": 0.958,
-      "AFR": 0.886,
-      "AMR": 0.989,
-      "SAS": 0.959
-    },
-    "subFrequencies": {
-      "CDX": 0.98387,
-      "CHB": 0.97087,
-      "CHS": 0.98214,
-      "JPT": 0.98077,
-      "KHV": 0.9604
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-030.v1": {
-    "rsid": "mh17wl-030.v1",
-    "region": "East Asian",
-    "color": "#E74C3C",
-    "alleles": [
-      "C:C:A:G:C:G:G:G:C:C",
-      "C:C:C:G:C:G:G:G:C:C"
     ],
     "frequencies": {
       "EAS": 0.977,
@@ -26365,8 +25285,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh20kk-307.v3": {
-    "rsid": "mh20kk-307.v3",
+  "mh20kk-307": {
+    "rsid": "mh20kk-307",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [
@@ -26617,8 +25537,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21kk-320.v4": {
-    "rsid": "mh21kk-320.v4",
+  "mh21kk-320": {
+    "rsid": "mh21kk-320",
     "region": "East Asian",
     "color": "#E74C3C",
     "alleles": [

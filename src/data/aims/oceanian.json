@@ -1601,8 +1601,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs17822931_oce": {
-    "rsid": "rs17822931_oce",
+  "rs17822931": {
+    "rsid": "rs17822931",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1630,8 +1630,8 @@
     "chromosome": "16",
     "position": 48224287
   },
-  "rs10456304_oce": {
-    "rsid": "rs10456304_oce",
+  "rs10456304": {
+    "rsid": "rs10456304",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1658,8 +1658,8 @@
     "chromosome": "6",
     "position": 24319250
   },
-  "rs9000296_oce": {
-    "rsid": "rs9000296_oce",
+  "rs9000296": {
+    "rsid": "rs9000296",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1679,8 +1679,8 @@
     "weight": 1,
     "description": "Maori Ancestry Marker - informative for Polynesian populations from New Zealand."
   },
-  "rs9000298_oce": {
-    "rsid": "rs9000298_oce",
+  "rs9000298": {
+    "rsid": "rs9000298",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1700,8 +1700,8 @@
     "weight": 1,
     "description": "Fijian Ancestry Marker - informative for populations from Fiji."
   },
-  "rs9000300_oce": {
-    "rsid": "rs9000300_oce",
+  "rs9000300": {
+    "rsid": "rs9000300",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1721,8 +1721,8 @@
     "weight": 1,
     "description": "Tongan Ancestry Marker - informative for populations from Tonga."
   },
-  "rs9000302_oce": {
-    "rsid": "rs9000302_oce",
+  "rs9000302": {
+    "rsid": "rs9000302",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1742,8 +1742,8 @@
     "weight": 1,
     "description": "Tahitian Ancestry Marker - informative for populations from Tahiti."
   },
-  "rs9000304_oce": {
-    "rsid": "rs9000304_oce",
+  "rs9000304": {
+    "rsid": "rs9000304",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1763,8 +1763,8 @@
     "weight": 1,
     "description": "Cook Islander Ancestry Marker - informative for populations from the Cook Islands."
   },
-  "rs10456223_oce": {
-    "rsid": "rs10456223_oce",
+  "rs10456223": {
+    "rsid": "rs10456223",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1786,8 +1786,8 @@
     "chromosome": "6",
     "position": 19522543
   },
-  "rs10456224_oce": {
-    "rsid": "rs10456224_oce",
+  "rs10456224": {
+    "rsid": "rs10456224",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1809,8 +1809,8 @@
     "chromosome": "6",
     "position": 19666612
   },
-  "rs10456225_oce": {
-    "rsid": "rs10456225_oce",
+  "rs10456225": {
+    "rsid": "rs10456225",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1832,8 +1832,8 @@
     "chromosome": "6",
     "position": 10204953
   },
-  "rs10456226_oce": {
-    "rsid": "rs10456226_oce",
+  "rs10456226": {
+    "rsid": "rs10456226",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1855,8 +1855,8 @@
     "chromosome": "6",
     "position": 19850588
   },
-  "rs10456227_oce": {
-    "rsid": "rs10456227_oce",
+  "rs10456227": {
+    "rsid": "rs10456227",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1878,8 +1878,8 @@
     "chromosome": "6",
     "position": 19921350
   },
-  "rs10456285_oce": {
-    "rsid": "rs10456285_oce",
+  "rs10456285": {
+    "rsid": "rs10456285",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1902,8 +1902,8 @@
     "chromosome": "6",
     "position": 23765662
   },
-  "rs10456294_oce": {
-    "rsid": "rs10456294_oce",
+  "rs10456294": {
+    "rsid": "rs10456294",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1926,8 +1926,8 @@
     "chromosome": "6",
     "position": 23862176
   },
-  "rs10456296_oce": {
-    "rsid": "rs10456296_oce",
+  "rs10456296": {
+    "rsid": "rs10456296",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1950,8 +1950,8 @@
     "chromosome": "6",
     "position": 23936407
   },
-  "rs10456265_oce": {
-    "rsid": "rs10456265_oce",
+  "rs10456265": {
+    "rsid": "rs10456265",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1972,8 +1972,8 @@
     "chromosome": "6",
     "position": 22783099
   },
-  "rs10456266_oce": {
-    "rsid": "rs10456266_oce",
+  "rs10456266": {
+    "rsid": "rs10456266",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -1994,8 +1994,8 @@
     "chromosome": "6",
     "position": 22785187
   },
-  "rs11887534_oce": {
-    "rsid": "rs11887534_oce",
+  "rs11887534": {
+    "rsid": "rs11887534",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2365,8 +2365,8 @@
     "trait": "Oceanian Ancestry Marker",
     "description": "Highly specific marker for Melanesian and Papuan populations."
   },
-  "rs600000_oce": {
-    "rsid": "rs600000_oce",
+  "rs600000": {
+    "rsid": "rs600000",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2383,8 +2383,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs600001_oce": {
-    "rsid": "rs600001_oce",
+  "rs600001": {
+    "rsid": "rs600001",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2403,8 +2403,8 @@
     "chromosome": "7",
     "position": 56859885
   },
-  "rs600002_oce": {
-    "rsid": "rs600002_oce",
+  "rs600002": {
+    "rsid": "rs600002",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2421,8 +2421,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs600003_oce": {
-    "rsid": "rs600003_oce",
+  "rs600003": {
+    "rsid": "rs600003",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2441,8 +2441,8 @@
     "chromosome": "6",
     "position": 44724629
   },
-  "rs600004_oce": {
-    "rsid": "rs600004_oce",
+  "rs600004": {
+    "rsid": "rs600004",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2459,8 +2459,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs600005_oce": {
-    "rsid": "rs600005_oce",
+  "rs600005": {
+    "rsid": "rs600005",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2479,8 +2479,8 @@
     "chromosome": "6",
     "position": 44724627
   },
-  "rs600006_oce": {
-    "rsid": "rs600006_oce",
+  "rs600006": {
+    "rsid": "rs600006",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2497,8 +2497,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs600007_oce": {
-    "rsid": "rs600007_oce",
+  "rs600007": {
+    "rsid": "rs600007",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2515,8 +2515,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs600008_oce": {
-    "rsid": "rs600008_oce",
+  "rs600008": {
+    "rsid": "rs600008",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2533,8 +2533,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs600009_oce": {
-    "rsid": "rs600009_oce",
+  "rs600009": {
+    "rsid": "rs600009",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2553,8 +2553,8 @@
     "chromosome": "13",
     "position": 38296923
   },
-  "rs6000010_oce": {
-    "rsid": "rs6000010_oce",
+  "rs6000010": {
+    "rsid": "rs6000010",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2573,8 +2573,8 @@
     "chromosome": "22",
     "position": 35826422
   },
-  "rs6000011_oce": {
-    "rsid": "rs6000011_oce",
+  "rs6000011": {
+    "rsid": "rs6000011",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2593,8 +2593,8 @@
     "chromosome": "22",
     "position": 35830543
   },
-  "rs6000012_oce": {
-    "rsid": "rs6000012_oce",
+  "rs6000012": {
+    "rsid": "rs6000012",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2614,8 +2614,8 @@
     "chromosome": "22",
     "position": 35842705
   },
-  "rs6000013_oce": {
-    "rsid": "rs6000013_oce",
+  "rs6000013": {
+    "rsid": "rs6000013",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2639,8 +2639,8 @@
     "chromosome": "22",
     "position": 35845342
   },
-  "rs6000014_oce": {
-    "rsid": "rs6000014_oce",
+  "rs6000014": {
+    "rsid": "rs6000014",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2659,8 +2659,8 @@
     "chromosome": "22",
     "position": 35852090
   },
-  "rs6000015_oce": {
-    "rsid": "rs6000015_oce",
+  "rs6000015": {
+    "rsid": "rs6000015",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2680,8 +2680,8 @@
     "chromosome": "22",
     "position": 35857115
   },
-  "rs6000016_oce": {
-    "rsid": "rs6000016_oce",
+  "rs6000016": {
+    "rsid": "rs6000016",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2700,8 +2700,8 @@
     "chromosome": "22",
     "position": 35857174
   },
-  "rs6000017_oce": {
-    "rsid": "rs6000017_oce",
+  "rs6000017": {
+    "rsid": "rs6000017",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2720,8 +2720,8 @@
     "chromosome": "22",
     "position": 35858499
   },
-  "rs6000018_oce": {
-    "rsid": "rs6000018_oce",
+  "rs6000018": {
+    "rsid": "rs6000018",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2745,8 +2745,8 @@
     "chromosome": "22",
     "position": 35860012
   },
-  "rs6000019_oce": {
-    "rsid": "rs6000019_oce",
+  "rs6000019": {
+    "rsid": "rs6000019",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2765,8 +2765,8 @@
     "chromosome": "22",
     "position": 35860780
   },
-  "rs6000020_oce": {
-    "rsid": "rs6000020_oce",
+  "rs6000020": {
+    "rsid": "rs6000020",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2785,8 +2785,8 @@
     "chromosome": "22",
     "position": 35862219
   },
-  "rs6000021_oce": {
-    "rsid": "rs6000021_oce",
+  "rs6000021": {
+    "rsid": "rs6000021",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2805,8 +2805,8 @@
     "chromosome": "22",
     "position": 35869357
   },
-  "rs6000022_oce": {
-    "rsid": "rs6000022_oce",
+  "rs6000022": {
+    "rsid": "rs6000022",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2825,8 +2825,8 @@
     "chromosome": "22",
     "position": 35874145
   },
-  "rs6000023_oce": {
-    "rsid": "rs6000023_oce",
+  "rs6000023": {
+    "rsid": "rs6000023",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2845,8 +2845,8 @@
     "chromosome": "22",
     "position": 35874674
   },
-  "rs6000024_oce": {
-    "rsid": "rs6000024_oce",
+  "rs6000024": {
+    "rsid": "rs6000024",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2865,8 +2865,8 @@
     "chromosome": "22",
     "position": 35878929
   },
-  "rs6000025_oce": {
-    "rsid": "rs6000025_oce",
+  "rs6000025": {
+    "rsid": "rs6000025",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2885,8 +2885,8 @@
     "chromosome": "22",
     "position": 21899704
   },
-  "rs6000026_oce": {
-    "rsid": "rs6000026_oce",
+  "rs6000026": {
+    "rsid": "rs6000026",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2910,8 +2910,8 @@
     "chromosome": "22",
     "position": 35892273
   },
-  "rs6000027_oce": {
-    "rsid": "rs6000027_oce",
+  "rs6000027": {
+    "rsid": "rs6000027",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2930,8 +2930,8 @@
     "chromosome": "22",
     "position": 35892879
   },
-  "rs6000028_oce": {
-    "rsid": "rs6000028_oce",
+  "rs6000028": {
+    "rsid": "rs6000028",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2950,8 +2950,8 @@
     "chromosome": "22",
     "position": 35897391
   },
-  "rs6000029_oce": {
-    "rsid": "rs6000029_oce",
+  "rs6000029": {
+    "rsid": "rs6000029",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2970,8 +2970,8 @@
     "chromosome": "22",
     "position": 35900199
   },
-  "rs6000030_oce": {
-    "rsid": "rs6000030_oce",
+  "rs6000030": {
+    "rsid": "rs6000030",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -2990,8 +2990,8 @@
     "chromosome": "22",
     "position": 35902112
   },
-  "rs6000031_oce": {
-    "rsid": "rs6000031_oce",
+  "rs6000031": {
+    "rsid": "rs6000031",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3010,8 +3010,8 @@
     "chromosome": "22",
     "position": 35909704
   },
-  "rs6000032_oce": {
-    "rsid": "rs6000032_oce",
+  "rs6000032": {
+    "rsid": "rs6000032",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3035,8 +3035,8 @@
     "chromosome": "22",
     "position": 35910218
   },
-  "rs6000033_oce": {
-    "rsid": "rs6000033_oce",
+  "rs6000033": {
+    "rsid": "rs6000033",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3055,8 +3055,8 @@
     "chromosome": "22",
     "position": 35916878
   },
-  "rs6000034_oce": {
-    "rsid": "rs6000034_oce",
+  "rs6000034": {
+    "rsid": "rs6000034",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3080,8 +3080,8 @@
     "chromosome": "22",
     "position": 35916938
   },
-  "rs6000035_oce": {
-    "rsid": "rs6000035_oce",
+  "rs6000035": {
+    "rsid": "rs6000035",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3105,8 +3105,8 @@
     "chromosome": "22",
     "position": 35922397
   },
-  "rs6000036_oce": {
-    "rsid": "rs6000036_oce",
+  "rs6000036": {
+    "rsid": "rs6000036",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3130,8 +3130,8 @@
     "chromosome": "22",
     "position": 35924692
   },
-  "rs6000037_oce": {
-    "rsid": "rs6000037_oce",
+  "rs6000037": {
+    "rsid": "rs6000037",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3155,8 +3155,8 @@
     "chromosome": "22",
     "position": 35925222
   },
-  "rs6000038_oce": {
-    "rsid": "rs6000038_oce",
+  "rs6000038": {
+    "rsid": "rs6000038",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3175,8 +3175,8 @@
     "chromosome": "22",
     "position": 35929938
   },
-  "rs6000039_oce": {
-    "rsid": "rs6000039_oce",
+  "rs6000039": {
+    "rsid": "rs6000039",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3195,8 +3195,8 @@
     "chromosome": "22",
     "position": 35931903
   },
-  "rs6000040_oce": {
-    "rsid": "rs6000040_oce",
+  "rs6000040": {
+    "rsid": "rs6000040",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3217,8 +3217,8 @@
     "chromosome": "22",
     "position": 35938213
   },
-  "rs6000041_oce": {
-    "rsid": "rs6000041_oce",
+  "rs6000041": {
+    "rsid": "rs6000041",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3237,8 +3237,8 @@
     "chromosome": "22",
     "position": 35943783
   },
-  "rs6000042_oce": {
-    "rsid": "rs6000042_oce",
+  "rs6000042": {
+    "rsid": "rs6000042",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3257,8 +3257,8 @@
     "chromosome": "22",
     "position": 35947274
   },
-  "rs6000043_oce": {
-    "rsid": "rs6000043_oce",
+  "rs6000043": {
+    "rsid": "rs6000043",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3277,8 +3277,8 @@
     "chromosome": "22",
     "position": 21906101
   },
-  "rs6000044_oce": {
-    "rsid": "rs6000044_oce",
+  "rs6000044": {
+    "rsid": "rs6000044",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3299,8 +3299,8 @@
     "chromosome": "22",
     "position": 35955462
   },
-  "rs6000045_oce": {
-    "rsid": "rs6000045_oce",
+  "rs6000045": {
+    "rsid": "rs6000045",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3319,8 +3319,8 @@
     "chromosome": "22",
     "position": 35957826
   },
-  "rs6000046_oce": {
-    "rsid": "rs6000046_oce",
+  "rs6000046": {
+    "rsid": "rs6000046",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3339,8 +3339,8 @@
     "chromosome": "22",
     "position": 35962662
   },
-  "rs6000047_oce": {
-    "rsid": "rs6000047_oce",
+  "rs6000047": {
+    "rsid": "rs6000047",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3359,8 +3359,8 @@
     "chromosome": "22",
     "position": 35962944
   },
-  "rs6000048_oce": {
-    "rsid": "rs6000048_oce",
+  "rs6000048": {
+    "rsid": "rs6000048",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3379,8 +3379,8 @@
     "chromosome": "22",
     "position": 35968935
   },
-  "rs6000049_oce": {
-    "rsid": "rs6000049_oce",
+  "rs6000049": {
+    "rsid": "rs6000049",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3399,8 +3399,8 @@
     "chromosome": "22",
     "position": 35973464
   },
-  "rs6000050_oce": {
-    "rsid": "rs6000050_oce",
+  "rs6000050": {
+    "rsid": "rs6000050",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3419,8 +3419,8 @@
     "chromosome": "22",
     "position": 35978813
   },
-  "rs6000051_oce": {
-    "rsid": "rs6000051_oce",
+  "rs6000051": {
+    "rsid": "rs6000051",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3444,8 +3444,8 @@
     "chromosome": "22",
     "position": 21909687
   },
-  "rs6000052_oce": {
-    "rsid": "rs6000052_oce",
+  "rs6000052": {
+    "rsid": "rs6000052",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3464,8 +3464,8 @@
     "chromosome": "22",
     "position": 21909797
   },
-  "rs6000053_oce": {
-    "rsid": "rs6000053_oce",
+  "rs6000053": {
+    "rsid": "rs6000053",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3484,8 +3484,8 @@
     "chromosome": "22",
     "position": 36004439
   },
-  "rs6000054_oce": {
-    "rsid": "rs6000054_oce",
+  "rs6000054": {
+    "rsid": "rs6000054",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3504,8 +3504,8 @@
     "chromosome": "22",
     "position": 21911244
   },
-  "rs6000055_oce": {
-    "rsid": "rs6000055_oce",
+  "rs6000055": {
+    "rsid": "rs6000055",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3524,8 +3524,8 @@
     "chromosome": "22",
     "position": 36007780
   },
-  "rs6000056_oce": {
-    "rsid": "rs6000056_oce",
+  "rs6000056": {
+    "rsid": "rs6000056",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3548,8 +3548,8 @@
     "chromosome": "22",
     "position": 36011377
   },
-  "rs6000057_oce": {
-    "rsid": "rs6000057_oce",
+  "rs6000057": {
+    "rsid": "rs6000057",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3568,8 +3568,8 @@
     "chromosome": "22",
     "position": 36011524
   },
-  "rs6000058_oce": {
-    "rsid": "rs6000058_oce",
+  "rs6000058": {
+    "rsid": "rs6000058",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3588,8 +3588,8 @@
     "chromosome": "22",
     "position": 21911870
   },
-  "rs6000059_oce": {
-    "rsid": "rs6000059_oce",
+  "rs6000059": {
+    "rsid": "rs6000059",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3608,8 +3608,8 @@
     "chromosome": "22",
     "position": 36013942
   },
-  "rs6000060_oce": {
-    "rsid": "rs6000060_oce",
+  "rs6000060": {
+    "rsid": "rs6000060",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3628,8 +3628,8 @@
     "chromosome": "22",
     "position": 36013972
   },
-  "rs6000061_oce": {
-    "rsid": "rs6000061_oce",
+  "rs6000061": {
+    "rsid": "rs6000061",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3648,8 +3648,8 @@
     "chromosome": "22",
     "position": 36016031
   },
-  "rs6000062_oce": {
-    "rsid": "rs6000062_oce",
+  "rs6000062": {
+    "rsid": "rs6000062",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3668,8 +3668,8 @@
     "chromosome": "22",
     "position": 36016235
   },
-  "rs6000063_oce": {
-    "rsid": "rs6000063_oce",
+  "rs6000063": {
+    "rsid": "rs6000063",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3688,8 +3688,8 @@
     "chromosome": "22",
     "position": 36016376
   },
-  "rs6000064_oce": {
-    "rsid": "rs6000064_oce",
+  "rs6000064": {
+    "rsid": "rs6000064",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3711,8 +3711,8 @@
     "chromosome": "22",
     "position": 36017241
   },
-  "rs6000065_oce": {
-    "rsid": "rs6000065_oce",
+  "rs6000065": {
+    "rsid": "rs6000065",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3731,8 +3731,8 @@
     "chromosome": "22",
     "position": 36020010
   },
-  "rs6000066_oce": {
-    "rsid": "rs6000066_oce",
+  "rs6000066": {
+    "rsid": "rs6000066",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3751,8 +3751,8 @@
     "chromosome": "22",
     "position": 36022427
   },
-  "rs6000067_oce": {
-    "rsid": "rs6000067_oce",
+  "rs6000067": {
+    "rsid": "rs6000067",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3771,8 +3771,8 @@
     "chromosome": "22",
     "position": 21913268
   },
-  "rs6000068_oce": {
-    "rsid": "rs6000068_oce",
+  "rs6000068": {
+    "rsid": "rs6000068",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3791,8 +3791,8 @@
     "chromosome": "22",
     "position": 36030300
   },
-  "rs6000069_oce": {
-    "rsid": "rs6000069_oce",
+  "rs6000069": {
+    "rsid": "rs6000069",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3816,8 +3816,8 @@
     "chromosome": "22",
     "position": 36030918
   },
-  "rs6000070_oce": {
-    "rsid": "rs6000070_oce",
+  "rs6000070": {
+    "rsid": "rs6000070",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3841,8 +3841,8 @@
     "chromosome": "22",
     "position": 21913871
   },
-  "rs6000071_oce": {
-    "rsid": "rs6000071_oce",
+  "rs6000071": {
+    "rsid": "rs6000071",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3861,8 +3861,8 @@
     "chromosome": "22",
     "position": 36032340
   },
-  "rs6000072_oce": {
-    "rsid": "rs6000072_oce",
+  "rs6000072": {
+    "rsid": "rs6000072",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3886,8 +3886,8 @@
     "chromosome": "22",
     "position": 21913914
   },
-  "rs6000073_oce": {
-    "rsid": "rs6000073_oce",
+  "rs6000073": {
+    "rsid": "rs6000073",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3907,8 +3907,8 @@
     "chromosome": "22",
     "position": 36043598
   },
-  "rs6000074_oce": {
-    "rsid": "rs6000074_oce",
+  "rs6000074": {
+    "rsid": "rs6000074",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3927,8 +3927,8 @@
     "chromosome": "22",
     "position": 36043690
   },
-  "rs6000075_oce": {
-    "rsid": "rs6000075_oce",
+  "rs6000075": {
+    "rsid": "rs6000075",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3947,8 +3947,8 @@
     "chromosome": "22",
     "position": 36043841
   },
-  "rs6000076_oce": {
-    "rsid": "rs6000076_oce",
+  "rs6000076": {
+    "rsid": "rs6000076",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3967,8 +3967,8 @@
     "chromosome": "22",
     "position": 36044261
   },
-  "rs6000077_oce": {
-    "rsid": "rs6000077_oce",
+  "rs6000077": {
+    "rsid": "rs6000077",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -3987,8 +3987,8 @@
     "chromosome": "22",
     "position": 36044386
   },
-  "rs6000078_oce": {
-    "rsid": "rs6000078_oce",
+  "rs6000078": {
+    "rsid": "rs6000078",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4007,8 +4007,8 @@
     "chromosome": "22",
     "position": 36045004
   },
-  "rs6000079_oce": {
-    "rsid": "rs6000079_oce",
+  "rs6000079": {
+    "rsid": "rs6000079",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4027,8 +4027,8 @@
     "chromosome": "22",
     "position": 36045352
   },
-  "rs6000080_oce": {
-    "rsid": "rs6000080_oce",
+  "rs6000080": {
+    "rsid": "rs6000080",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4052,8 +4052,8 @@
     "chromosome": "22",
     "position": 36045493
   },
-  "rs6000081_oce": {
-    "rsid": "rs6000081_oce",
+  "rs6000081": {
+    "rsid": "rs6000081",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4072,8 +4072,8 @@
     "chromosome": "22",
     "position": 36046171
   },
-  "rs6000082_oce": {
-    "rsid": "rs6000082_oce",
+  "rs6000082": {
+    "rsid": "rs6000082",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4092,8 +4092,8 @@
     "chromosome": "22",
     "position": 36047627
   },
-  "rs6000083_oce": {
-    "rsid": "rs6000083_oce",
+  "rs6000083": {
+    "rsid": "rs6000083",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4117,8 +4117,8 @@
     "chromosome": "22",
     "position": 36047657
   },
-  "rs6000084_oce": {
-    "rsid": "rs6000084_oce",
+  "rs6000084": {
+    "rsid": "rs6000084",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4142,8 +4142,8 @@
     "chromosome": "22",
     "position": 36047895
   },
-  "rs6000085_oce": {
-    "rsid": "rs6000085_oce",
+  "rs6000085": {
+    "rsid": "rs6000085",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4162,8 +4162,8 @@
     "chromosome": "22",
     "position": 36048140
   },
-  "rs6000086_oce": {
-    "rsid": "rs6000086_oce",
+  "rs6000086": {
+    "rsid": "rs6000086",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4182,8 +4182,8 @@
     "chromosome": "22",
     "position": 21915504
   },
-  "rs6000087_oce": {
-    "rsid": "rs6000087_oce",
+  "rs6000087": {
+    "rsid": "rs6000087",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4202,8 +4202,8 @@
     "chromosome": "22",
     "position": 21916487
   },
-  "rs6000088_oce": {
-    "rsid": "rs6000088_oce",
+  "rs6000088": {
+    "rsid": "rs6000088",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4220,8 +4220,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs6000089_oce": {
-    "rsid": "rs6000089_oce",
+  "rs6000089": {
+    "rsid": "rs6000089",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4238,8 +4238,8 @@
     "trait": "Ancestry",
     "description": "Oceanian ancestry informative marker."
   },
-  "rs6000090_oce": {
-    "rsid": "rs6000090_oce",
+  "rs6000090": {
+    "rsid": "rs6000090",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4258,8 +4258,8 @@
     "chromosome": "22",
     "position": 21916688
   },
-  "rs6000091_oce": {
-    "rsid": "rs6000091_oce",
+  "rs6000091": {
+    "rsid": "rs6000091",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4278,8 +4278,8 @@
     "chromosome": "22",
     "position": 36062298
   },
-  "rs6000092_oce": {
-    "rsid": "rs6000092_oce",
+  "rs6000092": {
+    "rsid": "rs6000092",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4298,8 +4298,8 @@
     "chromosome": "22",
     "position": 36064084
   },
-  "rs6000093_oce": {
-    "rsid": "rs6000093_oce",
+  "rs6000093": {
+    "rsid": "rs6000093",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4323,8 +4323,8 @@
     "chromosome": "22",
     "position": 36069467
   },
-  "rs6000094_oce": {
-    "rsid": "rs6000094_oce",
+  "rs6000094": {
+    "rsid": "rs6000094",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4343,8 +4343,8 @@
     "chromosome": "22",
     "position": 36069522
   },
-  "rs6000095_oce": {
-    "rsid": "rs6000095_oce",
+  "rs6000095": {
+    "rsid": "rs6000095",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4363,8 +4363,8 @@
     "chromosome": "22",
     "position": 36069644
   },
-  "rs6000096_oce": {
-    "rsid": "rs6000096_oce",
+  "rs6000096": {
+    "rsid": "rs6000096",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4388,8 +4388,8 @@
     "chromosome": "22",
     "position": 36069648
   },
-  "rs6000097_oce": {
-    "rsid": "rs6000097_oce",
+  "rs6000097": {
+    "rsid": "rs6000097",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4410,8 +4410,8 @@
     "chromosome": "22",
     "position": 36069765
   },
-  "rs6000098_oce": {
-    "rsid": "rs6000098_oce",
+  "rs6000098": {
+    "rsid": "rs6000098",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4430,8 +4430,8 @@
     "chromosome": "22",
     "position": 36070934
   },
-  "rs6000099_oce": {
-    "rsid": "rs6000099_oce",
+  "rs6000099": {
+    "rsid": "rs6000099",
     "region": "Oceanian",
     "color": "#E67E22",
     "alleles": [
@@ -4480,8 +4480,8 @@
     "chromosome": "9",
     "position": 12693532
   },
-  "rs3827760_oce": {
-    "rsid": "rs3827760_oce",
+  "rs3827760": {
+    "rsid": "rs3827760",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -4670,8 +4670,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-019.v1": {
-    "rsid": "mh01wl-019.v1",
+  "mh01wl-019": {
+    "rsid": "mh01wl-019",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -4682,35 +4682,6 @@
       "G:T:G:C",
       "A:T:G:T",
       "A:C:G:C"
-    ],
-    "frequencies": {
-      "OCE": 0.316,
-      "EAS": 0.313,
-      "AMR": 0.316
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-019.v2": {
-    "rsid": "mh01wl-019.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:G:T:G:C",
-      "G:C:A:C:G:C",
-      "G:C:G:C:G:C",
-      "G:C:G:C:T:T",
-      "G:C:G:T:G:C",
-      "G:T:G:C:G:C",
-      "G:T:G:C:T:T",
-      "A:T:G:T:G:C",
-      "A:C:G:C:G:C"
     ],
     "frequencies": {
       "OCE": 0.316,
@@ -4754,8 +4725,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-088.v2": {
-    "rsid": "mh01wl-088.v2",
+  "mh01wl-088": {
+    "rsid": "mh01wl-088",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -4884,8 +4855,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01kk-211.v1": {
-    "rsid": "mh01kk-211.v1",
+  "mh01kk-211": {
+    "rsid": "mh01kk-211",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -4942,8 +4913,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-020.v1": {
-    "rsid": "mh01wl-020.v1",
+  "mh01wl-020": {
+    "rsid": "mh01wl-020",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -4955,41 +4926,6 @@
       "T:C:T",
       "T:T:T",
       "T:T:C"
-    ],
-    "frequencies": {
-      "OCE": 0.443,
-      "EAS": 0.003,
-      "AMR": 0.443
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-020.v2": {
-    "rsid": "mh01wl-020.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:C:C:C",
-      "C:C:C:G",
-      "C:C:T:C",
-      "C:C:T:G",
-      "C:T:C:C",
-      "C:T:C:G",
-      "C:T:T:C",
-      "C:T:T:G",
-      "T:C:C:G",
-      "T:C:T:C",
-      "T:C:T:G",
-      "T:T:T:G",
-      "T:T:C:G",
-      "T:T:C:C",
-      "T:C:C:C"
     ],
     "frequencies": {
       "OCE": 0.443,
@@ -5165,8 +5101,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01usc-1qc.v1": {
-    "rsid": "mh01usc-1qc.v1",
+  "mh01usc-1qc": {
+    "rsid": "mh01usc-1qc",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -5212,8 +5148,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-047.v1": {
-    "rsid": "mh01wl-047.v1",
+  "mh01wl-047": {
+    "rsid": "mh01wl-047",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -5223,31 +5159,6 @@
       "T:T:G:C",
       "T:C:G:C",
       "C:T:A:C"
-    ],
-    "frequencies": {
-      "OCE": 0.374,
-      "EAS": 0.211,
-      "AMR": 0.374
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-047.v2": {
-    "rsid": "mh01wl-047.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:A:C",
-      "C:G:A",
-      "C:G:C",
-      "T:G:C",
-      "T:A:C"
     ],
     "frequencies": {
       "OCE": 0.374,
@@ -5313,8 +5224,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-053.v1": {
-    "rsid": "mh01wl-053.v1",
+  "mh01wl-053": {
+    "rsid": "mh01wl-053",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -5326,34 +5237,6 @@
       "G:T:G",
       "G:T:T",
       "A:T:T"
-    ],
-    "frequencies": {
-      "OCE": 0.322,
-      "EAS": 0.001,
-      "AMR": 0.322
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-053.v2": {
-    "rsid": "mh01wl-053.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:A:G:G",
-      "A:A:G:T",
-      "A:A:T:G",
-      "G:A:G:G",
-      "G:A:G:T",
-      "G:A:T:G",
-      "G:A:T:T",
-      "A:A:T:T"
     ],
     "frequencies": {
       "OCE": 0.322,
@@ -5401,8 +5284,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01nh-04.v1": {
-    "rsid": "mh01nh-04.v1",
+  "mh01nh-04": {
+    "rsid": "mh01nh-04",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -5801,8 +5684,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02kk-004.v2": {
-    "rsid": "mh02kk-004.v2",
+  "mh02kk-004": {
+    "rsid": "mh02kk-004",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -5825,32 +5708,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02kk-004.v1": {
-    "rsid": "mh02kk-004.v1",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G:A:A",
-      "G:A:G",
-      "G:G:A",
-      "T:A:G"
-    ],
-    "frequencies": {
-      "OCE": 0.5,
-      "EAS": 0.5,
-      "AMR": 0.221
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02scuzj-0390961.v1": {
-    "rsid": "mh02scuzj-0390961.v1",
+  "mh02scuzj-0390961": {
+    "rsid": "mh02scuzj-0390961",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -6081,8 +5940,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02scuzj-0451996.v1": {
-    "rsid": "mh02scuzj-0451996.v1",
+  "mh02scuzj-0451996": {
+    "rsid": "mh02scuzj-0451996",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -6192,8 +6051,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02kk-136.v2": {
-    "rsid": "mh02kk-136.v2",
+  "mh02kk-136": {
+    "rsid": "mh02kk-136",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -6211,40 +6070,6 @@
       "A:C:G:T:C",
       "G:C:T:C:C",
       "G:C:G:C:A"
-    ],
-    "frequencies": {
-      "OCE": 0.5,
-      "EAS": 0.096,
-      "AMR": 0.5
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02kk-136.v3": {
-    "rsid": "mh02kk-136.v3",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:C:T:C:A:T",
-      "A:C:C:T:C:C:T",
-      "A:C:C:T:T:C:T",
-      "G:C:C:G:C:C:T",
-      "G:C:C:G:T:A:T",
-      "G:C:C:G:T:C:T",
-      "G:C:C:T:C:A:T",
-      "G:C:C:T:T:A:T",
-      "G:C:C:T:T:C:T",
-      "G:C:T:T:T:C:T",
-      "A:C:C:G:T:A:T",
-      "A:C:C:G:T:C:T",
-      "G:C:C:T:C:C:T",
-      "G:C:C:G:C:A:T"
     ],
     "frequencies": {
       "OCE": 0.5,
@@ -6575,8 +6400,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03lv-01.v3": {
-    "rsid": "mh03lv-01.v3",
+  "mh03lv-01": {
+    "rsid": "mh03lv-01",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -6714,8 +6539,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-017.v3": {
-    "rsid": "mh03kk-017.v3",
+  "mh03kk-017": {
+    "rsid": "mh03kk-017",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -6742,48 +6567,6 @@
       "G:T:G:A:C:G:T:T:G:T:C:A",
       "G:C:G:G:C:A:T:T:G:T:T:G",
       "G:C:G:G:C:G:T:T:A:T:C:A"
-    ],
-    "frequencies": {
-      "OCE": 0.323,
-      "EAS": 0.288,
-      "AMR": 0.323
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-017.v2": {
-    "rsid": "mh03kk-017.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:G:G:A:A:C:A",
-      "C:G:G:A:A:C:G",
-      "C:G:G:A:A:T:A",
-      "C:G:G:A:G:C:A",
-      "C:G:G:A:G:C:G",
-      "C:G:G:A:G:T:A",
-      "C:G:G:G:A:C:A",
-      "C:G:G:G:A:C:G",
-      "C:G:G:G:A:T:A",
-      "C:G:G:G:G:C:A",
-      "C:G:G:G:G:C:G",
-      "C:G:G:G:G:T:A",
-      "C:G:G:G:G:T:G",
-      "C:G:A:G:A:C:A",
-      "C:G:G:A:G:T:G",
-      "T:G:G:A:A:T:A",
-      "C:G:A:A:A:T:A",
-      "C:G:A:G:G:C:A",
-      "C:A:G:G:G:C:A",
-      "T:G:G:A:G:C:A",
-      "C:A:G:G:G:C:G",
-      "C:G:G:G:A:T:G"
     ],
     "frequencies": {
       "OCE": 0.323,
@@ -6877,8 +6660,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-021.v1": {
-    "rsid": "mh03wl-021.v1",
+  "mh03wl-021": {
+    "rsid": "mh03wl-021",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7019,8 +6802,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-003.v1": {
-    "rsid": "mh04wl-003.v1",
+  "mh04wl-003": {
+    "rsid": "mh04wl-003",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7032,30 +6815,6 @@
       "A:G:G:A",
       "C:G:A:A",
       "A:G:A:A"
-    ],
-    "frequencies": {
-      "OCE": 0.458,
-      "EAS": 0.458,
-      "AMR": 0.057
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-003.v2": {
-    "rsid": "mh04wl-003.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:A:A",
-      "A:G:A",
-      "G:G:A",
-      "G:A:A"
     ],
     "frequencies": {
       "OCE": 0.625,
@@ -7232,8 +6991,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-023.v2": {
-    "rsid": "mh04wl-023.v2",
+  "mh04wl-023": {
+    "rsid": "mh04wl-023",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7305,8 +7064,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-036.v2": {
-    "rsid": "mh04wl-036.v2",
+  "mh04wl-036": {
+    "rsid": "mh04wl-036",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7370,8 +7129,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-001.v1": {
-    "rsid": "mh04wl-001.v1",
+  "mh04wl-001": {
+    "rsid": "mh04wl-001",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7388,39 +7147,6 @@
       "A:C:A:G:T:C:C:C:G:C:T:G:C:A",
       "G:C:A:G:T:G:C:C:G:C:T:G:C:A",
       "G:C:C:G:T:G:C:C:G:C:T:G:C:A"
-    ],
-    "frequencies": {
-      "OCE": 0.557,
-      "EAS": 0.002,
-      "AMR": 0.557
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-001.v2": {
-    "rsid": "mh04wl-001.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:T:C:G:C:C:C:C:G:C:T:G:C:A:A",
-      "A:T:C:G:T:C:C:C:G:C:T:G:C:A:A",
-      "G:C:A:G:C:C:C:C:G:C:T:G:C:A:A",
-      "G:C:A:G:T:C:C:C:G:C:T:G:C:A:A",
-      "G:C:C:G:C:C:C:C:G:C:T:G:C:A:A",
-      "G:C:C:G:T:C:C:C:G:C:T:G:C:A:A",
-      "A:C:C:G:T:C:C:C:G:C:T:G:C:A:A",
-      "A:T:A:G:T:C:C:C:G:C:T:G:C:A:A",
-      "G:T:C:G:C:C:C:C:G:C:T:G:C:A:A",
-      "G:T:C:G:T:C:C:C:G:C:T:G:C:A:A",
-      "A:C:A:G:T:C:C:C:G:C:T:G:C:A:A",
-      "G:C:A:G:T:G:C:C:G:C:T:G:C:A:A",
-      "G:C:C:G:T:G:C:C:G:C:T:G:C:A:A"
     ],
     "frequencies": {
       "OCE": 0.557,
@@ -7563,8 +7289,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05wl-067.v2": {
-    "rsid": "mh05wl-067.v2",
+  "mh05wl-067": {
+    "rsid": "mh05wl-067",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7654,8 +7380,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05kk-120.v2": {
-    "rsid": "mh05kk-120.v2",
+  "mh05kk-120": {
+    "rsid": "mh05kk-120",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7735,8 +7461,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05wl-013.v1": {
-    "rsid": "mh05wl-013.v1",
+  "mh05wl-013": {
+    "rsid": "mh05wl-013",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -7751,35 +7477,6 @@
       "C:G:T:C:T:A",
       "C:G:T:A:C:A",
       "T:G:C:A:T:A"
-    ],
-    "frequencies": {
-      "OCE": 0.437,
-      "EAS": 0.274,
-      "AMR": 0.437
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-013.v2": {
-    "rsid": "mh05wl-013.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:A:T:A",
-      "A:T:A:C:A",
-      "A:T:A:T:A",
-      "G:C:C:T:A",
-      "G:C:C:T:G",
-      "G:T:C:T:A",
-      "A:T:A:T:G",
-      "G:C:A:T:A",
-      "G:T:A:C:A"
     ],
     "frequencies": {
       "OCE": 0.437,
@@ -7872,8 +7569,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05usc-5qc.v1": {
-    "rsid": "mh05usc-5qc.v1",
+  "mh05usc-5qc": {
+    "rsid": "mh05usc-5qc",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -8371,8 +8068,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07fhl-002.v1": {
-    "rsid": "mh07fhl-002.v1",
+  "mh07fhl-002": {
+    "rsid": "mh07fhl-002",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -8742,8 +8439,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-022.v1": {
-    "rsid": "mh07wl-022.v1",
+  "mh07wl-022": {
+    "rsid": "mh07wl-022",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -8755,57 +8452,6 @@
       "G:G:C",
       "G:G:T",
       "A:G:C"
-    ],
-    "frequencies": {
-      "OCE": 0.471,
-      "EAS": 0.193,
-      "AMR": 0.471
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-022.v2": {
-    "rsid": "mh07wl-022.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:A:C:A:C",
-      "A:A:C:A:T",
-      "A:A:C:C:C",
-      "A:A:C:C:T",
-      "A:A:T:A:C",
-      "A:A:T:A:T",
-      "A:A:T:C:C",
-      "A:A:T:C:T",
-      "A:G:T:C:C",
-      "A:G:T:C:T",
-      "G:A:C:A:C",
-      "G:A:C:A:T",
-      "G:A:C:C:C",
-      "G:A:C:C:T",
-      "G:A:T:A:C",
-      "G:A:T:A:T",
-      "G:A:T:C:C",
-      "G:A:T:C:T",
-      "G:G:C:A:C",
-      "G:G:C:A:T",
-      "G:G:C:C:C",
-      "G:G:C:C:T",
-      "G:G:T:A:T",
-      "G:G:T:C:T",
-      "A:G:T:A:T",
-      "G:G:T:A:C",
-      "G:G:T:C:C",
-      "A:G:C:A:C",
-      "A:G:T:A:C",
-      "A:G:C:A:T",
-      "A:G:C:C:C"
     ],
     "frequencies": {
       "OCE": 0.425,
@@ -8846,8 +8492,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08kk-131.v1": {
-    "rsid": "mh08kk-131.v1",
+  "mh08kk-131": {
+    "rsid": "mh08kk-131",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -8886,58 +8532,6 @@
       "A:A:G:G:A:G:T:G:C:C:C:T:C:G",
       "C:C:G:G:G:A:C:G:C:G:C:T:G:C",
       "C:C:G:G:G:G:C:G:T:G:C:G:C:G"
-    ],
-    "frequencies": {
-      "OCE": 0.323,
-      "EAS": 0.001,
-      "AMR": 0.323
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08kk-131.v2": {
-    "rsid": "mh08kk-131.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:A:G:G:T:A:G:C:G:C:G:C:T:C:G",
-      "C:A:G:G:T:A:G:C:G:T:G:C:T:C:G",
-      "C:A:G:G:T:A:G:C:G:T:G:T:T:C:G",
-      "C:A:G:G:T:A:G:T:G:C:C:C:T:C:G",
-      "C:C:G:G:T:A:G:C:G:T:G:C:T:C:G",
-      "C:C:G:G:T:A:G:T:G:C:C:C:T:C:G",
-      "C:C:G:G:T:A:G:T:G:C:G:C:T:C:G",
-      "C:C:G:G:T:G:A:C:G:C:C:C:T:C:G",
-      "C:C:G:G:T:G:A:C:G:C:G:C:T:C:G",
-      "C:C:G:G:T:G:A:C:G:T:G:C:T:C:G",
-      "C:C:G:G:T:G:G:C:G:C:G:C:T:C:G",
-      "C:C:G:G:T:G:G:C:G:T:G:C:T:C:G",
-      "C:C:G:G:T:G:G:T:G:C:C:C:T:C:G",
-      "C:A:G:G:T:G:G:C:G:C:G:C:T:C:G",
-      "C:C:G:A:T:G:A:C:G:C:G:C:T:C:G",
-      "C:C:G:G:T:A:G:C:G:C:C:C:T:C:G",
-      "C:C:G:G:T:G:G:C:A:T:G:C:T:C:G",
-      "C:C:G:G:T:G:G:C:G:C:C:C:T:C:G",
-      "C:A:G:G:T:G:G:C:G:T:G:C:T:C:G",
-      "C:C:A:G:T:A:G:T:G:C:C:C:T:C:G",
-      "C:C:A:G:T:G:G:C:G:T:G:C:T:C:G",
-      "C:A:G:G:T:A:G:C:G:C:C:C:T:C:G",
-      "C:C:G:G:T:A:G:C:G:C:G:C:T:C:G",
-      "C:A:G:G:T:G:A:C:G:C:G:C:T:C:G",
-      "C:C:G:G:T:G:G:T:G:T:G:C:T:C:G",
-      "C:A:G:G:T:G:A:C:G:C:C:C:T:C:G",
-      "C:C:A:G:T:G:A:C:G:C:G:C:T:C:G",
-      "C:C:G:G:T:G:G:T:G:C:G:C:T:C:G",
-      "C:A:G:G:T:A:G:C:G:T:C:C:T:C:G",
-      "C:C:G:G:T:A:A:C:G:C:G:C:T:C:G",
-      "C:A:G:G:T:A:G:T:G:C:G:C:T:C:G",
-      "C:A:A:G:T:A:G:C:G:T:G:C:T:C:G"
     ],
     "frequencies": {
       "OCE": 0.323,
@@ -9107,35 +8701,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08scuzj-0453008.v1": {
-    "rsid": "mh08scuzj-0453008.v1",
+  "mh08scuzj-0453008": {
+    "rsid": "mh08scuzj-0453008",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
       "G:G:T:G:T:T:A:A:A:C",
       "G:G:T:G:T:T:A:G:A:C"
-    ],
-    "frequencies": {
-      "OCE": 1,
-      "EAS": 0.013,
-      "AMR": 1
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08scuzj-0453008.v2": {
-    "rsid": "mh08scuzj-0453008.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G:T:T:A:A:A:C:A:G",
-      "G:T:T:A:G:A:C:A:G"
     ],
     "frequencies": {
       "OCE": 1,
@@ -9215,8 +8787,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-161.v2": {
-    "rsid": "mh09kk-161.v2",
+  "mh09kk-161": {
+    "rsid": "mh09kk-161",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -9267,56 +8839,6 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-161.v3": {
-    "rsid": "mh09kk-161.v3",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "G:C:C:G:C:G:T:C:G:G",
-      "G:C:C:G:C:G:T:C:T:G",
-      "G:C:G:G:C:G:T:C:G:G",
-      "G:C:G:G:C:G:T:C:T:G",
-      "G:C:G:G:T:G:T:C:G:G",
-      "G:C:G:G:T:G:T:C:T:G",
-      "T:C:C:G:C:G:T:C:G:G",
-      "T:C:C:G:C:G:T:C:T:G",
-      "T:C:G:A:C:G:T:C:G:G",
-      "T:C:G:A:T:G:T:C:G:G",
-      "T:C:G:G:C:G:T:C:G:G",
-      "T:C:G:G:C:G:T:C:T:G",
-      "T:C:G:G:T:G:T:C:G:G",
-      "T:C:G:G:T:G:T:C:T:G",
-      "T:G:G:G:C:G:T:C:G:G",
-      "G:C:G:A:C:G:T:C:G:G",
-      "G:C:G:A:C:G:T:C:T:G",
-      "G:C:G:A:T:G:T:C:G:G",
-      "T:C:C:A:T:G:T:C:G:G",
-      "T:C:C:G:T:G:T:C:G:G",
-      "T:C:C:G:T:G:T:C:G:T",
-      "T:C:C:G:T:G:T:C:T:G",
-      "T:C:G:A:C:G:T:C:T:G",
-      "T:C:G:A:T:G:T:C:T:G",
-      "T:C:C:A:C:G:T:C:T:G",
-      "T:C:C:G:C:G:T:C:T:T",
-      "G:C:G:G:T:G:G:C:T:G",
-      "T:C:G:G:C:G:T:C:T:T",
-      "T:C:G:G:T:G:T:C:T:T",
-      "G:C:G:G:C:G:T:C:T:T"
-    ],
-    "frequencies": {
-      "OCE": 0.668,
-      "EAS": 0.668,
-      "AMR": 0.425
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
   "mh09wl-037": {
     "rsid": "mh09wl-037",
     "region": "Oceanian",
@@ -9347,8 +8869,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09shy-001.v4": {
-    "rsid": "mh09shy-001.v4",
+  "mh09shy-001": {
+    "rsid": "mh09shy-001",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -9368,96 +8890,6 @@
       "C:C:G:C",
       "T:T:G:C",
       "T:T:G:T"
-    ],
-    "frequencies": {
-      "OCE": 0.328,
-      "EAS": 0.03,
-      "AMR": 0.328
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09shy-001.v3": {
-    "rsid": "mh09shy-001.v3",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:C:A:A:C:T",
-      "C:C:A:G:T:C",
-      "C:C:G:A:C:T",
-      "C:C:G:A:T:C",
-      "C:C:G:G:T:C",
-      "C:T:A:A:T:C",
-      "C:T:G:A:C:T",
-      "C:T:G:A:T:C",
-      "C:T:G:G:C:T",
-      "C:T:G:G:T:C",
-      "T:C:A:A:T:C",
-      "T:C:A:G:C:T",
-      "T:C:A:G:T:C",
-      "T:C:G:A:C:T",
-      "T:C:G:A:T:C",
-      "T:C:G:G:T:C",
-      "T:T:A:A:T:C",
-      "T:T:G:A:C:T",
-      "T:T:G:A:T:C",
-      "C:C:A:A:T:C",
-      "C:C:A:G:C:T",
-      "C:C:G:G:C:T",
-      "T:C:A:A:C:T",
-      "T:C:G:G:C:T",
-      "T:T:A:A:C:T",
-      "T:T:G:G:C:T",
-      "T:T:G:G:T:C",
-      "C:T:A:A:C:T",
-      "T:T:A:G:T:C",
-      "C:T:A:G:C:T",
-      "T:T:A:G:C:T",
-      "C:T:A:G:T:C",
-      "T:C:G:A:T:T"
-    ],
-    "frequencies": {
-      "OCE": 0.328,
-      "EAS": 0.011,
-      "AMR": 0.328
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09shy-001.v2": {
-    "rsid": "mh09shy-001.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:A:A:C:T",
-      "C:A:A:T:C",
-      "C:A:G:C:T",
-      "C:A:G:T:C",
-      "C:G:A:C:T",
-      "C:G:A:T:C",
-      "C:G:G:T:C",
-      "T:A:A:T:C",
-      "T:G:A:C:T",
-      "T:G:A:T:C",
-      "T:G:G:C:T",
-      "T:G:G:T:C",
-      "C:G:G:C:T",
-      "T:A:A:C:T",
-      "T:A:G:T:C",
-      "T:A:G:C:T",
-      "C:G:A:T:T"
     ],
     "frequencies": {
       "OCE": 0.345,
@@ -9661,8 +9093,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-153.v4": {
-    "rsid": "mh09kk-153.v4",
+  "mh09kk-153": {
+    "rsid": "mh09kk-153",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -9697,8 +9129,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-023.v2": {
-    "rsid": "mh09wl-023.v2",
+  "mh09wl-023": {
+    "rsid": "mh09wl-023",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -9805,8 +9237,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh10wl-012.v2": {
-    "rsid": "mh10wl-012.v2",
+  "mh10wl-012": {
+    "rsid": "mh10wl-012",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -9856,92 +9288,6 @@
     ],
     "frequencies": {
       "OCE": 0.322,
-      "EAS": 0.29,
-      "AMR": 0.322
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh10wl-012.v1": {
-    "rsid": "mh10wl-012.v1",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:C:C:C:A:T",
-      "A:C:C:C:C:G:T",
-      "A:C:C:C:T:A:T",
-      "A:C:C:C:T:G:T",
-      "A:C:T:C:C:A:T",
-      "A:C:T:C:T:A:T",
-      "A:C:T:T:T:A:T",
-      "A:T:C:C:C:A:T",
-      "A:T:C:C:C:G:T",
-      "A:T:T:C:C:A:T",
-      "G:C:C:C:C:G:T",
-      "G:T:C:C:C:A:C",
-      "G:T:C:C:C:A:T",
-      "G:T:C:C:C:G:C",
-      "G:T:C:C:C:G:T",
-      "G:T:C:C:T:A:T",
-      "G:T:C:C:T:G:T",
-      "G:T:T:C:C:A:C",
-      "G:T:T:C:C:A:T",
-      "G:T:T:C:C:G:T",
-      "G:T:T:C:T:A:C",
-      "G:T:T:C:T:A:T",
-      "G:T:T:C:T:G:T",
-      "G:T:T:T:C:A:T",
-      "G:T:T:T:T:A:C",
-      "G:T:T:T:T:G:T",
-      "A:C:C:C:C:A:C",
-      "A:C:T:C:C:A:C",
-      "A:C:T:C:C:G:T",
-      "A:C:T:C:T:A:C",
-      "A:C:T:C:T:G:T",
-      "A:C:T:T:C:A:T",
-      "A:T:C:C:C:A:C",
-      "A:T:C:C:T:G:T",
-      "G:C:C:C:C:A:T",
-      "G:C:C:C:T:A:T",
-      "G:C:T:C:C:A:T",
-      "G:T:C:C:T:A:C",
-      "G:T:T:C:C:G:C",
-      "G:T:T:T:C:A:C",
-      "G:T:T:T:C:G:T",
-      "A:C:T:T:T:A:C",
-      "A:C:C:C:C:G:C",
-      "G:C:T:T:T:G:T",
-      "G:T:C:T:T:G:C",
-      "G:T:C:T:T:G:T",
-      "G:T:T:C:T:G:C",
-      "G:T:T:T:C:G:C",
-      "G:T:T:T:T:A:T",
-      "G:T:T:T:T:G:C",
-      "A:C:C:C:T:G:C",
-      "A:C:T:T:T:G:T",
-      "A:T:T:C:C:G:T",
-      "G:C:T:C:T:G:T",
-      "A:C:C:T:C:G:T",
-      "G:C:T:T:C:G:T",
-      "A:C:T:C:C:G:C",
-      "A:C:T:C:T:G:C",
-      "A:T:T:T:T:G:T",
-      "G:C:C:C:C:G:C",
-      "G:C:C:C:T:G:T",
-      "G:C:T:C:C:G:T",
-      "G:C:T:T:T:A:T",
-      "G:T:C:C:T:G:C",
-      "A:C:T:T:C:G:T",
-      "G:T:C:T:C:G:T"
-    ],
-    "frequencies": {
-      "OCE": 0.322,
       "EAS": 0.272,
       "AMR": 0.322
     },
@@ -9979,8 +9325,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh10kk-169.v2": {
-    "rsid": "mh10kk-169.v2",
+  "mh10kk-169": {
+    "rsid": "mh10kk-169",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -10041,8 +9387,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh10wl-022.v1": {
-    "rsid": "mh10wl-022.v1",
+  "mh10wl-022": {
+    "rsid": "mh10wl-022",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -10184,8 +9530,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-024.v1": {
-    "rsid": "mh11wl-024.v1",
+  "mh11wl-024": {
+    "rsid": "mh11wl-024",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -10237,8 +9583,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-005.v3": {
-    "rsid": "mh11wl-005.v3",
+  "mh11wl-005": {
+    "rsid": "mh11wl-005",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -10290,8 +9636,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11kk-191.v4": {
-    "rsid": "mh11kk-191.v4",
+  "mh11kk-191": {
+    "rsid": "mh11kk-191",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -10299,100 +9645,6 @@
       "C:G",
       "T:A",
       "T:G"
-    ],
-    "frequencies": {
-      "OCE": 0.713,
-      "EAS": 0.686,
-      "AMR": 0.713
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11kk-191.v1": {
-    "rsid": "mh11kk-191.v1",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:A:A:T",
-      "C:G:A:T",
-      "T:A:A:C",
-      "T:A:A:T",
-      "T:G:A:T",
-      "C:A:G:T",
-      "C:G:G:T",
-      "C:G:A:C",
-      "C:A:A:C"
-    ],
-    "frequencies": {
-      "OCE": 0.521,
-      "EAS": 0.521,
-      "AMR": 0
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11kk-191.v2": {
-    "rsid": "mh11kk-191.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:A:A:G:A:T",
-      "C:G:A:G:A:T",
-      "T:A:A:G:A:C",
-      "T:A:A:G:A:T",
-      "T:A:A:G:C:T",
-      "T:G:A:G:A:T",
-      "C:G:A:G:A:C",
-      "C:A:G:G:A:T",
-      "C:G:G:G:A:T",
-      "C:A:A:G:A:C",
-      "T:A:A:G:C:C",
-      "C:A:G:G:C:T",
-      "C:G:A:A:A:T"
-    ],
-    "frequencies": {
-      "OCE": 0.477,
-      "EAS": 0.304,
-      "AMR": 0.477
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11kk-191.v3": {
-    "rsid": "mh11kk-191.v3",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "C:G:A:A:G:A:T",
-      "C:G:G:A:G:A:T",
-      "T:G:A:A:G:A:C",
-      "T:G:A:A:G:A:T",
-      "T:G:A:A:G:C:T",
-      "T:G:G:A:G:A:T",
-      "C:G:G:A:G:A:C",
-      "C:G:A:G:G:A:T",
-      "C:G:G:G:G:A:T",
-      "C:G:A:A:G:A:C",
-      "T:G:A:A:G:C:C",
-      "C:G:A:G:G:C:T"
     ],
     "frequencies": {
       "OCE": 0.477,
@@ -10457,8 +9709,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11usc-11qc.v1": {
-    "rsid": "mh11usc-11qc.v1",
+  "mh11usc-11qc": {
+    "rsid": "mh11usc-11qc",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -10600,8 +9852,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-010.v1": {
-    "rsid": "mh12wl-010.v1",
+  "mh12wl-010": {
+    "rsid": "mh12wl-010",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -11035,8 +10287,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15shy-001.v2": {
-    "rsid": "mh15shy-001.v2",
+  "mh15shy-001": {
+    "rsid": "mh15shy-001",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -11718,8 +10970,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17scuzj-0137941.v1": {
-    "rsid": "mh17scuzj-0137941.v1",
+  "mh17scuzj-0137941": {
+    "rsid": "mh17scuzj-0137941",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -11790,8 +11042,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18scuzj-0064707.v2": {
-    "rsid": "mh18scuzj-0064707.v2",
+  "mh18scuzj-0064707": {
+    "rsid": "mh18scuzj-0064707",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -11949,8 +11201,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh19kk-299.v4": {
-    "rsid": "mh19kk-299.v4",
+  "mh19kk-299": {
+    "rsid": "mh19kk-299",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12105,8 +11357,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh19scuzj-0249059.v2": {
-    "rsid": "mh19scuzj-0249059.v2",
+  "mh19scuzj-0249059": {
+    "rsid": "mh19scuzj-0249059",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12357,8 +11609,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21kk-315.v6": {
-    "rsid": "mh21kk-315.v6",
+  "mh21kk-315": {
+    "rsid": "mh21kk-315",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12380,72 +11632,6 @@
       "G:A:C:T"
     ],
     "frequencies": {
-      "OCE": 0.356,
-      "EAS": 0.269,
-      "AMR": 0.356
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21kk-315.v1": {
-    "rsid": "mh21kk-315.v1",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:C",
-      "A:T:C",
-      "A:T:T",
-      "G:C:C",
-      "G:C:T",
-      "G:T:C",
-      "G:T:T",
-      "A:C:T"
-    ],
-    "frequencies": {
-      "OCE": 0.346,
-      "EAS": 0.334,
-      "AMR": 0.346
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21kk-315.v4": {
-    "rsid": "mh21kk-315.v4",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:A:C:C:T:C:T",
-      "A:G:C:C:C:C:T",
-      "A:G:C:C:T:C:T",
-      "A:G:C:C:T:T:T",
-      "G:A:C:C:C:C:T",
-      "G:A:C:C:C:T:T",
-      "G:A:C:C:T:C:T",
-      "G:A:C:C:T:T:T",
-      "G:G:C:C:C:C:T",
-      "G:G:C:C:C:T:T",
-      "G:G:C:C:T:C:T",
-      "G:G:C:C:T:T:C",
-      "G:G:C:C:T:T:T",
-      "A:A:C:C:T:T:T",
-      "A:G:C:C:C:T:T",
-      "G:G:C:C:T:C:C",
-      "G:G:T:C:T:T:T",
-      "G:G:T:C:T:C:T"
-    ],
-    "frequencies": {
       "OCE": 0.379,
       "EAS": 0.001,
       "AMR": 0.379
@@ -12459,8 +11645,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21kk-316.v1": {
-    "rsid": "mh21kk-316.v1",
+  "mh21kk-316": {
+    "rsid": "mh21kk-316",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12473,35 +11659,6 @@
       "G:T:G:C"
     ],
     "frequencies": {
-      "OCE": 0.441,
-      "EAS": 0.196,
-      "AMR": 0.441
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21kk-316.v2": {
-    "rsid": "mh21kk-316.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:A:C:G:A",
-      "A:C:G:C:A:A",
-      "A:C:G:C:G:A",
-      "A:C:G:T:G:A",
-      "A:T:G:C:G:A",
-      "G:C:G:C:G:A",
-      "G:C:G:T:G:A",
-      "G:T:G:C:G:A",
-      "A:C:G:C:G:G"
-    ],
-    "frequencies": {
       "OCE": 0.431,
       "EAS": 0.196,
       "AMR": 0.431
@@ -12515,36 +11672,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21kk-316.v3": {
-    "rsid": "mh21kk-316.v3",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:C:A:C:G:A:A",
-      "A:C:G:C:A:A:A",
-      "A:C:G:C:G:A:A",
-      "A:C:G:T:G:A:A",
-      "A:T:G:C:G:A:A",
-      "G:C:G:C:G:A:A",
-      "G:C:G:T:G:A:A",
-      "G:T:G:C:G:A:A"
-    ],
-    "frequencies": {
-      "OCE": 0.431,
-      "EAS": 0.196,
-      "AMR": 0.431
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21wl-020.v2": {
-    "rsid": "mh21wl-020.v2",
+  "mh21wl-020": {
+    "rsid": "mh21wl-020",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12645,8 +11774,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh22wl-004.v2": {
-    "rsid": "mh22wl-004.v2",
+  "mh22wl-004": {
+    "rsid": "mh22wl-004",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12733,8 +11862,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh22usc-22qb.v1": {
-    "rsid": "mh22usc-22qb.v1",
+  "mh22usc-22qb": {
+    "rsid": "mh22usc-22qb",
     "region": "Oceanian",
     "color": "#1ABC9C",
     "alleles": [
@@ -12748,92 +11877,6 @@
       "G:G:C:A:T",
       "G:G:C:G:T",
       "G:G:T:A:T"
-    ],
-    "frequencies": {
-      "OCE": 0.489,
-      "EAS": 0.18,
-      "AMR": 0.489
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh22usc-22qb.v3": {
-    "rsid": "mh22usc-22qb.v3",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:A:T:A:T:A:T:C:C:C",
-      "A:A:T:A:T:G:C:C:C:C",
-      "A:A:T:A:T:G:T:C:C:C",
-      "A:A:T:G:T:A:T:C:C:C",
-      "A:A:T:G:T:G:T:C:C:C",
-      "A:G:C:A:T:G:C:C:C:C",
-      "A:G:C:G:T:G:T:C:C:C",
-      "A:G:T:A:T:G:C:C:C:C",
-      "A:G:T:G:C:G:T:C:C:C",
-      "A:G:T:G:T:A:T:C:C:C",
-      "A:G:T:G:T:G:T:C:C:C",
-      "G:G:C:A:T:A:T:C:C:C",
-      "G:G:C:A:T:G:C:C:C:C",
-      "G:G:C:G:T:A:T:C:C:C",
-      "A:G:T:A:T:G:T:C:C:C",
-      "A:G:T:G:T:G:C:C:C:C",
-      "G:G:T:A:T:G:T:C:C:C",
-      "A:A:T:A:T:G:T:T:T:C",
-      "A:G:C:G:T:A:T:C:C:C",
-      "G:G:C:G:T:G:T:C:C:C",
-      "A:A:T:A:T:G:T:C:C:T",
-      "G:G:C:G:T:A:C:C:C:C"
-    ],
-    "frequencies": {
-      "OCE": 0.483,
-      "EAS": 0.18,
-      "AMR": 0.483
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Austronesian / Oceanian microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh22usc-22qb.v2": {
-    "rsid": "mh22usc-22qb.v2",
-    "region": "Oceanian",
-    "color": "#1ABC9C",
-    "alleles": [
-      "A:A:T:A:T:A:T:C",
-      "A:A:T:A:T:G:C:C",
-      "A:A:T:A:T:G:T:C",
-      "A:A:T:G:T:A:T:C",
-      "A:A:T:G:T:G:T:C",
-      "A:A:T:G:T:G:T:T",
-      "A:G:C:A:T:G:C:C",
-      "A:G:C:G:T:G:T:C",
-      "A:G:T:A:T:G:C:C",
-      "A:G:T:G:C:G:T:C",
-      "A:G:T:G:T:A:T:C",
-      "A:G:T:G:T:G:T:C",
-      "G:G:C:A:T:A:T:C",
-      "G:G:C:A:T:G:C:C",
-      "G:G:C:G:T:A:T:C",
-      "A:G:T:A:T:G:T:C",
-      "A:G:T:G:T:G:C:C",
-      "A:G:T:G:T:G:T:T",
-      "G:G:T:A:T:G:T:C",
-      "A:G:C:G:T:A:T:C",
-      "G:G:C:G:T:A:T:T",
-      "G:G:C:G:T:G:T:C",
-      "G:G:C:G:T:A:C:C",
-      "A:G:C:G:C:G:T:C"
     ],
     "frequencies": {
       "OCE": 0.483,

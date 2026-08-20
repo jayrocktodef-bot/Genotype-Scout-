@@ -69,7 +69,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
-    "description": "Ancestry Informative Marker for North African populations."
+    "description": "North African Ancestry Marker - informative for distinguishing North African from Sub-Saharan African."
   },
   "rs7722456": {
     "rsid": "rs7722456",
@@ -93,7 +93,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
-    "description": "Ancestry Informative Marker for North African populations."
+    "description": "North African Ancestry Marker - useful for identifying North African ancestry components."
   },
   "rs6119472": {
     "rsid": "rs6119472",
@@ -405,7 +405,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
-    "description": "Ancestry Informative Marker for North African populations."
+    "description": "North African Ancestry Marker - highly specific to populations of the Maghreb."
   },
   "rs10911061": {
     "rsid": "rs10911061",
@@ -429,7 +429,7 @@
     "weight": 8,
     "gene": "Unknown",
     "trait": "North African Ancestry Marker",
-    "description": "Ancestry Informative Marker for North African populations."
+    "description": "North African Ancestry Marker - diagnostic for North African genetic signatures."
   },
   "rs10456317": {
     "rsid": "rs10456317",
@@ -695,8 +695,8 @@
     "trait": "Tunisian Ancestry Marker",
     "description": "Ancestry Informative Marker for Tunisian populations."
   },
-  "rs12821256_nor": {
-    "rsid": "rs12821256_nor",
+  "rs12821256": {
+    "rsid": "rs12821256",
     "chromosome": "12",
     "region": "North African",
     "color": "#C084FC",
@@ -717,30 +717,8 @@
     "description": "North African Ancestry Marker - highly prevalent in Maghreb and Egyptian populations.",
     "position": 88934558
   },
-  "rs9999903_nor": {
-    "rsid": "rs9999903_nor",
-    "chromosome": "4",
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.3,
-      "AMR": 0.05,
-      "EAS": 0.02,
-      "EUR": 0.15,
-      "SAS": 0.1,
-      "MENA": 0.92
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "North African Ancestry Marker - informative for distinguishing North African from Sub-Saharan African.",
-    "position": 9462956
-  },
-  "rs6119471_nor": {
-    "rsid": "rs6119471_nor",
+  "rs6119471": {
+    "rsid": "rs6119471",
     "chromosome": "20",
     "region": "North African",
     "color": "#C084FC",
@@ -761,74 +739,8 @@
     "description": "North African Ancestry Marker - high frequency in Berber and Arab-Berber populations.",
     "position": 34197406
   },
-  "rs7722456_nor": {
-    "rsid": "rs7722456_nor",
-    "chromosome": "5",
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.42,
-      "AMR": 0.05,
-      "EAS": 0.04,
-      "EUR": 0.18,
-      "SAS": 0.12,
-      "MENA": 0.85
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "North African Ancestry Marker - useful for identifying North African ancestry components.",
-    "position": 170775980
-  },
-  "rs10911063_nor": {
-    "rsid": "rs10911063_nor",
-    "chromosome": "1",
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.12,
-      "AMR": 0.02,
-      "EAS": 0.01,
-      "EUR": 0.08,
-      "SAS": 0.03,
-      "MENA": 0.94
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "North African Ancestry Marker - highly specific to populations of the Maghreb.",
-    "position": 182349648
-  },
-  "rs10911061_nor": {
-    "rsid": "rs10911061_nor",
-    "chromosome": "1",
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.1,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.06,
-      "SAS": 0.02,
-      "MENA": 0.96
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "description": "North African Ancestry Marker - diagnostic for North African genetic signatures.",
-    "position": 182343465
-  },
-  "rs10456208_nor": {
-    "rsid": "rs10456208_nor",
+  "rs10456208": {
+    "rsid": "rs10456208",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -849,8 +761,8 @@
     "description": "Egyptian/North African ancestry marker.",
     "position": 17678353
   },
-  "rs10456211_nor": {
-    "rsid": "rs10456211_nor",
+  "rs10456211": {
+    "rsid": "rs10456211",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -871,8 +783,8 @@
     "description": "Egyptian/North African ancestry marker.",
     "position": 10006287
   },
-  "rs10456214_nor": {
-    "rsid": "rs10456214_nor",
+  "rs10456214": {
+    "rsid": "rs10456214",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -893,8 +805,8 @@
     "description": "Egyptian/North African ancestry marker.",
     "position": 18287942
   },
-  "rs9000318_nor": {
-    "rsid": "rs9000318_nor",
+  "rs9000318": {
+    "rsid": "rs9000318",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -914,8 +826,8 @@
     "weight": 1,
     "description": "Egyptian ancestry marker."
   },
-  "rs9000320_nor": {
-    "rsid": "rs9000320_nor",
+  "rs9000320": {
+    "rsid": "rs9000320",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -935,8 +847,8 @@
     "weight": 1,
     "description": "Moroccan ancestry marker."
   },
-  "rs9000322_nor": {
-    "rsid": "rs9000322_nor",
+  "rs9000322": {
+    "rsid": "rs9000322",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -956,8 +868,8 @@
     "weight": 1,
     "description": "Algerian ancestry marker."
   },
-  "rs9000324_nor": {
-    "rsid": "rs9000324_nor",
+  "rs9000324": {
+    "rsid": "rs9000324",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -977,8 +889,8 @@
     "weight": 1,
     "description": "Tunisian ancestry marker."
   },
-  "rs9000326_nor": {
-    "rsid": "rs9000326_nor",
+  "rs9000326": {
+    "rsid": "rs9000326",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -998,8 +910,8 @@
     "weight": 1,
     "description": "Libyan ancestry marker."
   },
-  "rs10456275_nor": {
-    "rsid": "rs10456275_nor",
+  "rs10456275": {
+    "rsid": "rs10456275",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1022,8 +934,8 @@
     "description": "NAFR/EUR Tie-Breaker - Distinctive Maghreb marker, filters out false Iberian/Southern European overlap.",
     "position": 23511532
   },
-  "rs10456278_nor": {
-    "rsid": "rs10456278_nor",
+  "rs10456278": {
+    "rsid": "rs10456278",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1046,8 +958,8 @@
     "description": "NAFR/AFR Tie-Breaker - Prevents Sahel/Saharan border populations from misclassifying as strictly Sub-Saharan.",
     "position": 23683162
   },
-  "rs10456291_nor": {
-    "rsid": "rs10456291_nor",
+  "rs10456291": {
+    "rsid": "rs10456291",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1070,8 +982,8 @@
     "description": "NAFR/MENA Tie-Breaker - Deep autochthonous Maghrebi marker, sharply reduces false Middle Eastern overlap.",
     "position": 23799312
   },
-  "rs10456305_nor": {
-    "rsid": "rs10456305_nor",
+  "rs10456305": {
+    "rsid": "rs10456305",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1094,8 +1006,8 @@
     "description": "NAFR/AFR Tie-Breaker - Anchors indigenous Berber/Maghrebi components against Sub-Saharan gene flow.",
     "position": 24491113
   },
-  "rs10456272_nor": {
-    "rsid": "rs10456272_nor",
+  "rs10456272": {
+    "rsid": "rs10456272",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1119,8 +1031,8 @@
     "description": "Saharan Amazigh Marker - diagnostic for the indigenous Berber populations.",
     "position": 23154117
   },
-  "rs10456205_be": {
-    "rsid": "rs10456205_be",
+  "rs10456205": {
+    "rsid": "rs10456205",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1128,12 +1040,12 @@
       "C"
     ],
     "frequencies": {
-      "AFR": 0.235249621785174,
-      "AMR": 0.523054755043228,
-      "EAS": 0.464285714285714,
-      "EUR": 0.431411530815109,
-      "SAS": 0.395705521472393,
-      "MENA": 0.75
+      "AFR": 0.764750378214826,
+      "AMR": 0.476945244956772,
+      "EAS": 0.535714285714286,
+      "EUR": 0.568588469184891,
+      "SAS": 0.604294478527607,
+      "MENA": 0.5
     },
     "subFrequencies": {},
     "deepFrequencies": {},
@@ -1166,32 +1078,8 @@
     "trait": "North African Ancestry Marker",
     "description": "Ancestry Informative Marker for North African populations."
   },
-  "rs10456205_tu": {
-    "rsid": "rs10456205_tu",
-    "chromosome": "6",
-    "region": "North African",
-    "color": "#C084FC",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.764750378214826,
-      "AMR": 0.476945244956772,
-      "EAS": 0.535714285714286,
-      "EUR": 0.568588469184891,
-      "SAS": 0.604294478527607,
-      "MENA": 0.5
-    },
-    "subFrequencies": {},
-    "deepFrequencies": {},
-    "weight": 1,
-    "gene": "Unknown",
-    "trait": "Tuareg Ancestry Marker",
-    "description": "Ancestry Informative Marker for Tuareg populations.",
-    "position": 17035644
-  },
-  "rs400000_naf": {
-    "rsid": "rs400000_naf",
+  "rs400000": {
+    "rsid": "rs400000",
     "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
@@ -1215,8 +1103,8 @@
     "description": "North African ancestry informative marker.",
     "position": 105626269
   },
-  "rs400001_naf": {
-    "rsid": "rs400001_naf",
+  "rs400001": {
+    "rsid": "rs400001",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -1234,8 +1122,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs400002_naf": {
-    "rsid": "rs400002_naf",
+  "rs400002": {
+    "rsid": "rs400002",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1254,8 +1142,8 @@
     "description": "North African ancestry informative marker.",
     "position": 23364541
   },
-  "rs400003_naf": {
-    "rsid": "rs400003_naf",
+  "rs400003": {
+    "rsid": "rs400003",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -1273,8 +1161,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs400004_naf": {
-    "rsid": "rs400004_naf",
+  "rs400004": {
+    "rsid": "rs400004",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -1293,8 +1181,8 @@
     "description": "North African ancestry informative marker.",
     "position": 4655082
   },
-  "rs400005_naf": {
-    "rsid": "rs400005_naf",
+  "rs400005": {
+    "rsid": "rs400005",
     "chromosome": "14",
     "region": "North African",
     "color": "#C084FC",
@@ -1317,8 +1205,8 @@
     "description": "North African ancestry informative marker.",
     "position": 87928891
   },
-  "rs400006_naf": {
-    "rsid": "rs400006_naf",
+  "rs400006": {
+    "rsid": "rs400006",
     "chromosome": "12",
     "region": "North African",
     "color": "#C084FC",
@@ -1342,8 +1230,8 @@
     "description": "North African ancestry informative marker.",
     "position": 59417531
   },
-  "rs400007_naf": {
-    "rsid": "rs400007_naf",
+  "rs400007": {
+    "rsid": "rs400007",
     "chromosome": "2",
     "region": "North African",
     "color": "#C084FC",
@@ -1362,8 +1250,8 @@
     "description": "North African ancestry informative marker.",
     "position": 159052886
   },
-  "rs400008_naf": {
-    "rsid": "rs400008_naf",
+  "rs400008": {
+    "rsid": "rs400008",
     "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
@@ -1387,8 +1275,8 @@
     "description": "North African ancestry informative marker.",
     "position": 43991822
   },
-  "rs400009_naf": {
-    "rsid": "rs400009_naf",
+  "rs400009": {
+    "rsid": "rs400009",
     "chromosome": "16",
     "region": "North African",
     "color": "#C084FC",
@@ -1412,8 +1300,8 @@
     "description": "North African ancestry informative marker.",
     "position": 79570636
   },
-  "rs4000010_naf": {
-    "rsid": "rs4000010_naf",
+  "rs4000010": {
+    "rsid": "rs4000010",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1432,8 +1320,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35136884
   },
-  "rs4000011_naf": {
-    "rsid": "rs4000011_naf",
+  "rs4000011": {
+    "rsid": "rs4000011",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1452,8 +1340,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35075029
   },
-  "rs4000012_naf": {
-    "rsid": "rs4000012_naf",
+  "rs4000012": {
+    "rsid": "rs4000012",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1472,8 +1360,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35075085
   },
-  "rs4000013_naf": {
-    "rsid": "rs4000013_naf",
+  "rs4000013": {
+    "rsid": "rs4000013",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1492,8 +1380,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35075285
   },
-  "rs4000014_naf": {
-    "rsid": "rs4000014_naf",
+  "rs4000014": {
+    "rsid": "rs4000014",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1512,8 +1400,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35079006
   },
-  "rs4000015_naf": {
-    "rsid": "rs4000015_naf",
+  "rs4000015": {
+    "rsid": "rs4000015",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1532,8 +1420,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35086558
   },
-  "rs4000016_naf": {
-    "rsid": "rs4000016_naf",
+  "rs4000016": {
+    "rsid": "rs4000016",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1552,8 +1440,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35086597
   },
-  "rs4000017_naf": {
-    "rsid": "rs4000017_naf",
+  "rs4000017": {
+    "rsid": "rs4000017",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1572,8 +1460,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073635
   },
-  "rs4000018_naf": {
-    "rsid": "rs4000018_naf",
+  "rs4000018": {
+    "rsid": "rs4000018",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1592,8 +1480,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073669
   },
-  "rs4000019_naf": {
-    "rsid": "rs4000019_naf",
+  "rs4000019": {
+    "rsid": "rs4000019",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1612,8 +1500,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073681
   },
-  "rs4000020_naf": {
-    "rsid": "rs4000020_naf",
+  "rs4000020": {
+    "rsid": "rs4000020",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1632,8 +1520,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073704
   },
-  "rs4000021_naf": {
-    "rsid": "rs4000021_naf",
+  "rs4000021": {
+    "rsid": "rs4000021",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1652,8 +1540,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35074851
   },
-  "rs4000022_naf": {
-    "rsid": "rs4000022_naf",
+  "rs4000022": {
+    "rsid": "rs4000022",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1672,8 +1560,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35074916
   },
-  "rs4000023_naf": {
-    "rsid": "rs4000023_naf",
+  "rs4000023": {
+    "rsid": "rs4000023",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1692,8 +1580,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35074977
   },
-  "rs4000024_naf": {
-    "rsid": "rs4000024_naf",
+  "rs4000024": {
+    "rsid": "rs4000024",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1712,8 +1600,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35074986
   },
-  "rs4000025_naf": {
-    "rsid": "rs4000025_naf",
+  "rs4000025": {
+    "rsid": "rs4000025",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1732,8 +1620,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35075025
   },
-  "rs4000026_naf": {
-    "rsid": "rs4000026_naf",
+  "rs4000026": {
+    "rsid": "rs4000026",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1752,8 +1640,8 @@
     "description": "North African ancestry informative marker.",
     "position": 90133454
   },
-  "rs4000027_naf": {
-    "rsid": "rs4000027_naf",
+  "rs4000027": {
+    "rsid": "rs4000027",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1772,8 +1660,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072237
   },
-  "rs4000028_naf": {
-    "rsid": "rs4000028_naf",
+  "rs4000028": {
+    "rsid": "rs4000028",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1792,8 +1680,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072341
   },
-  "rs4000029_naf": {
-    "rsid": "rs4000029_naf",
+  "rs4000029": {
+    "rsid": "rs4000029",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1812,8 +1700,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072432
   },
-  "rs4000030_naf": {
-    "rsid": "rs4000030_naf",
+  "rs4000030": {
+    "rsid": "rs4000030",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1832,8 +1720,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072455
   },
-  "rs4000031_naf": {
-    "rsid": "rs4000031_naf",
+  "rs4000031": {
+    "rsid": "rs4000031",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1852,8 +1740,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072470
   },
-  "rs4000032_naf": {
-    "rsid": "rs4000032_naf",
+  "rs4000032": {
+    "rsid": "rs4000032",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1872,8 +1760,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072477
   },
-  "rs4000033_naf": {
-    "rsid": "rs4000033_naf",
+  "rs4000033": {
+    "rsid": "rs4000033",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1892,8 +1780,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072491
   },
-  "rs4000034_naf": {
-    "rsid": "rs4000034_naf",
+  "rs4000034": {
+    "rsid": "rs4000034",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1912,8 +1800,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35072567
   },
-  "rs4000035_naf": {
-    "rsid": "rs4000035_naf",
+  "rs4000035": {
+    "rsid": "rs4000035",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1932,8 +1820,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073109
   },
-  "rs4000036_naf": {
-    "rsid": "rs4000036_naf",
+  "rs4000036": {
+    "rsid": "rs4000036",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -1951,8 +1839,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000037_naf": {
-    "rsid": "rs4000037_naf",
+  "rs4000037": {
+    "rsid": "rs4000037",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1971,8 +1859,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073265
   },
-  "rs4000038_naf": {
-    "rsid": "rs4000038_naf",
+  "rs4000038": {
+    "rsid": "rs4000038",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -1991,8 +1879,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073295
   },
-  "rs4000039_naf": {
-    "rsid": "rs4000039_naf",
+  "rs4000039": {
+    "rsid": "rs4000039",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2010,8 +1898,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000040_naf": {
-    "rsid": "rs4000040_naf",
+  "rs4000040": {
+    "rsid": "rs4000040",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2030,8 +1918,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35073541
   },
-  "rs4000041_naf": {
-    "rsid": "rs4000041_naf",
+  "rs4000041": {
+    "rsid": "rs4000041",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2049,8 +1937,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000042_naf": {
-    "rsid": "rs4000042_naf",
+  "rs4000042": {
+    "rsid": "rs4000042",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2069,8 +1957,8 @@
     "description": "North African ancestry informative marker.",
     "position": 22518404
   },
-  "rs4000043_naf": {
-    "rsid": "rs4000043_naf",
+  "rs4000043": {
+    "rsid": "rs4000043",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2089,8 +1977,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35068026
   },
-  "rs4000044_naf": {
-    "rsid": "rs4000044_naf",
+  "rs4000044": {
+    "rsid": "rs4000044",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2109,8 +1997,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35068028
   },
-  "rs4000045_naf": {
-    "rsid": "rs4000045_naf",
+  "rs4000045": {
+    "rsid": "rs4000045",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2129,8 +2017,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35068748
   },
-  "rs4000046_naf": {
-    "rsid": "rs4000046_naf",
+  "rs4000046": {
+    "rsid": "rs4000046",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2149,8 +2037,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35068890
   },
-  "rs4000047_naf": {
-    "rsid": "rs4000047_naf",
+  "rs4000047": {
+    "rsid": "rs4000047",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2169,8 +2057,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35069003
   },
-  "rs4000048_naf": {
-    "rsid": "rs4000048_naf",
+  "rs4000048": {
+    "rsid": "rs4000048",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2189,8 +2077,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35069036
   },
-  "rs4000049_naf": {
-    "rsid": "rs4000049_naf",
+  "rs4000049": {
+    "rsid": "rs4000049",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2209,8 +2097,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35070035
   },
-  "rs4000050_naf": {
-    "rsid": "rs4000050_naf",
+  "rs4000050": {
+    "rsid": "rs4000050",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2229,8 +2117,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35071990
   },
-  "rs4000051_naf": {
-    "rsid": "rs4000051_naf",
+  "rs4000051": {
+    "rsid": "rs4000051",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2249,8 +2137,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35071995
   },
-  "rs4000052_naf": {
-    "rsid": "rs4000052_naf",
+  "rs4000052": {
+    "rsid": "rs4000052",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2269,8 +2157,8 @@
     "description": "North African ancestry informative marker.",
     "position": 90133494
   },
-  "rs4000053_naf": {
-    "rsid": "rs4000053_naf",
+  "rs4000053": {
+    "rsid": "rs4000053",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2288,8 +2176,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000054_naf": {
-    "rsid": "rs4000054_naf",
+  "rs4000054": {
+    "rsid": "rs4000054",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2307,8 +2195,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000055_naf": {
-    "rsid": "rs4000055_naf",
+  "rs4000055": {
+    "rsid": "rs4000055",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2327,8 +2215,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35060278
   },
-  "rs4000056_naf": {
-    "rsid": "rs4000056_naf",
+  "rs4000056": {
+    "rsid": "rs4000056",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2347,8 +2235,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35060279
   },
-  "rs4000057_naf": {
-    "rsid": "rs4000057_naf",
+  "rs4000057": {
+    "rsid": "rs4000057",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2366,8 +2254,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000058_naf": {
-    "rsid": "rs4000058_naf",
+  "rs4000058": {
+    "rsid": "rs4000058",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2386,8 +2274,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35060419
   },
-  "rs4000059_naf": {
-    "rsid": "rs4000059_naf",
+  "rs4000059": {
+    "rsid": "rs4000059",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2405,8 +2293,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000060_naf": {
-    "rsid": "rs4000060_naf",
+  "rs4000060": {
+    "rsid": "rs4000060",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2425,8 +2313,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35063022
   },
-  "rs4000061_naf": {
-    "rsid": "rs4000061_naf",
+  "rs4000061": {
+    "rsid": "rs4000061",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2445,8 +2333,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35063065
   },
-  "rs4000062_naf": {
-    "rsid": "rs4000062_naf",
+  "rs4000062": {
+    "rsid": "rs4000062",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2466,8 +2354,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35063076
   },
-  "rs4000063_naf": {
-    "rsid": "rs4000063_naf",
+  "rs4000063": {
+    "rsid": "rs4000063",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2486,8 +2374,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35063263
   },
-  "rs4000064_naf": {
-    "rsid": "rs4000064_naf",
+  "rs4000064": {
+    "rsid": "rs4000064",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2506,8 +2394,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35067723
   },
-  "rs4000065_naf": {
-    "rsid": "rs4000065_naf",
+  "rs4000065": {
+    "rsid": "rs4000065",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2526,8 +2414,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35067830
   },
-  "rs4000066_naf": {
-    "rsid": "rs4000066_naf",
+  "rs4000066": {
+    "rsid": "rs4000066",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2546,8 +2434,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35067841
   },
-  "rs4000067_naf": {
-    "rsid": "rs4000067_naf",
+  "rs4000067": {
+    "rsid": "rs4000067",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2566,8 +2454,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35067851
   },
-  "rs4000068_naf": {
-    "rsid": "rs4000068_naf",
+  "rs4000068": {
+    "rsid": "rs4000068",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2586,8 +2474,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056586
   },
-  "rs4000069_naf": {
-    "rsid": "rs4000069_naf",
+  "rs4000069": {
+    "rsid": "rs4000069",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2606,8 +2494,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056633
   },
-  "rs4000070_naf": {
-    "rsid": "rs4000070_naf",
+  "rs4000070": {
+    "rsid": "rs4000070",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2625,8 +2513,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000071_naf": {
-    "rsid": "rs4000071_naf",
+  "rs4000071": {
+    "rsid": "rs4000071",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2645,8 +2533,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056789
   },
-  "rs4000072_naf": {
-    "rsid": "rs4000072_naf",
+  "rs4000072": {
+    "rsid": "rs4000072",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2665,8 +2553,8 @@
     "description": "North African ancestry informative marker.",
     "position": 22505682
   },
-  "rs4000073_naf": {
-    "rsid": "rs4000073_naf",
+  "rs4000073": {
+    "rsid": "rs4000073",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2685,8 +2573,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056944
   },
-  "rs4000074_naf": {
-    "rsid": "rs4000074_naf",
+  "rs4000074": {
+    "rsid": "rs4000074",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2705,8 +2593,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056977
   },
-  "rs4000075_naf": {
-    "rsid": "rs4000075_naf",
+  "rs4000075": {
+    "rsid": "rs4000075",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2724,8 +2612,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000076_naf": {
-    "rsid": "rs4000076_naf",
+  "rs4000076": {
+    "rsid": "rs4000076",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2744,8 +2632,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35057066
   },
-  "rs4000077_naf": {
-    "rsid": "rs4000077_naf",
+  "rs4000077": {
+    "rsid": "rs4000077",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2764,8 +2652,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35057133
   },
-  "rs4000078_naf": {
-    "rsid": "rs4000078_naf",
+  "rs4000078": {
+    "rsid": "rs4000078",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2784,8 +2672,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35057198
   },
-  "rs4000079_naf": {
-    "rsid": "rs4000079_naf",
+  "rs4000079": {
+    "rsid": "rs4000079",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2804,8 +2692,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35057208
   },
-  "rs4000080_naf": {
-    "rsid": "rs4000080_naf",
+  "rs4000080": {
+    "rsid": "rs4000080",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2824,8 +2712,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35057901
   },
-  "rs4000081_naf": {
-    "rsid": "rs4000081_naf",
+  "rs4000081": {
+    "rsid": "rs4000081",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2844,8 +2732,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35057996
   },
-  "rs4000082_naf": {
-    "rsid": "rs4000082_naf",
+  "rs4000082": {
+    "rsid": "rs4000082",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2864,8 +2752,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35058098
   },
-  "rs4000083_naf": {
-    "rsid": "rs4000083_naf",
+  "rs4000083": {
+    "rsid": "rs4000083",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2884,8 +2772,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35058129
   },
-  "rs4000084_naf": {
-    "rsid": "rs4000084_naf",
+  "rs4000084": {
+    "rsid": "rs4000084",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2904,8 +2792,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35058150
   },
-  "rs4000085_naf": {
-    "rsid": "rs4000085_naf",
+  "rs4000085": {
+    "rsid": "rs4000085",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2924,8 +2812,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35058185
   },
-  "rs4000086_naf": {
-    "rsid": "rs4000086_naf",
+  "rs4000086": {
+    "rsid": "rs4000086",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -2943,8 +2831,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs4000087_naf": {
-    "rsid": "rs4000087_naf",
+  "rs4000087": {
+    "rsid": "rs4000087",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2963,8 +2851,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056072
   },
-  "rs4000088_naf": {
-    "rsid": "rs4000088_naf",
+  "rs4000088": {
+    "rsid": "rs4000088",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -2983,8 +2871,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056326
   },
-  "rs4000089_naf": {
-    "rsid": "rs4000089_naf",
+  "rs4000089": {
+    "rsid": "rs4000089",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3003,8 +2891,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056360
   },
-  "rs4000090_naf": {
-    "rsid": "rs4000090_naf",
+  "rs4000090": {
+    "rsid": "rs4000090",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3023,8 +2911,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056467
   },
-  "rs4000091_naf": {
-    "rsid": "rs4000091_naf",
+  "rs4000091": {
+    "rsid": "rs4000091",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3043,8 +2931,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056549
   },
-  "rs4000092_naf": {
-    "rsid": "rs4000092_naf",
+  "rs4000092": {
+    "rsid": "rs4000092",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3063,8 +2951,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056569
   },
-  "rs4000093_naf": {
-    "rsid": "rs4000093_naf",
+  "rs4000093": {
+    "rsid": "rs4000093",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3083,8 +2971,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35056570
   },
-  "rs4000094_naf": {
-    "rsid": "rs4000094_naf",
+  "rs4000094": {
+    "rsid": "rs4000094",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3103,8 +2991,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35043591
   },
-  "rs4000095_naf": {
-    "rsid": "rs4000095_naf",
+  "rs4000095": {
+    "rsid": "rs4000095",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3123,8 +3011,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35055851
   },
-  "rs4000096_naf": {
-    "rsid": "rs4000096_naf",
+  "rs4000096": {
+    "rsid": "rs4000096",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3143,8 +3031,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35055853
   },
-  "rs4000097_naf": {
-    "rsid": "rs4000097_naf",
+  "rs4000097": {
+    "rsid": "rs4000097",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3168,8 +3056,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35055889
   },
-  "rs4000098_naf": {
-    "rsid": "rs4000098_naf",
+  "rs4000098": {
+    "rsid": "rs4000098",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3188,8 +3076,8 @@
     "description": "North African ancestry informative marker.",
     "position": 35055986
   },
-  "rs4000099_naf": {
-    "rsid": "rs4000099_naf",
+  "rs4000099": {
+    "rsid": "rs4000099",
     "chromosome": "7",
     "region": "North African",
     "color": "#C084FC",
@@ -3208,8 +3096,8 @@
     "description": "North African ancestry informative marker.",
     "position": 32630618
   },
-  "rs900000_naf": {
-    "rsid": "rs900000_naf",
+  "rs900000": {
+    "rsid": "rs900000",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3227,8 +3115,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs900001_naf": {
-    "rsid": "rs900001_naf",
+  "rs900001": {
+    "rsid": "rs900001",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3246,8 +3134,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs900002_naf": {
-    "rsid": "rs900002_naf",
+  "rs900002": {
+    "rsid": "rs900002",
     "chromosome": "6",
     "region": "North African",
     "color": "#C084FC",
@@ -3266,8 +3154,8 @@
     "description": "North African ancestry informative marker.",
     "position": 37193615
   },
-  "rs900003_naf": {
-    "rsid": "rs900003_naf",
+  "rs900003": {
+    "rsid": "rs900003",
     "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
@@ -3291,8 +3179,8 @@
     "description": "North African ancestry informative marker.",
     "position": 238221991
   },
-  "rs900004_naf": {
-    "rsid": "rs900004_naf",
+  "rs900004": {
+    "rsid": "rs900004",
     "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
@@ -3311,8 +3199,8 @@
     "description": "North African ancestry informative marker.",
     "position": 238257918
   },
-  "rs900005_naf": {
-    "rsid": "rs900005_naf",
+  "rs900005": {
+    "rsid": "rs900005",
     "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
@@ -3331,8 +3219,8 @@
     "description": "North African ancestry informative marker.",
     "position": 238257792
   },
-  "rs900006_naf": {
-    "rsid": "rs900006_naf",
+  "rs900006": {
+    "rsid": "rs900006",
     "chromosome": "1",
     "region": "North African",
     "color": "#C084FC",
@@ -3351,8 +3239,8 @@
     "description": "North African ancestry informative marker.",
     "position": 238257649
   },
-  "rs900007_naf": {
-    "rsid": "rs900007_naf",
+  "rs900007": {
+    "rsid": "rs900007",
     "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
@@ -3371,8 +3259,8 @@
     "description": "North African ancestry informative marker.",
     "position": 97747258
   },
-  "rs900008_naf": {
-    "rsid": "rs900008_naf",
+  "rs900008": {
+    "rsid": "rs900008",
     "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
@@ -3391,8 +3279,8 @@
     "description": "North African ancestry informative marker.",
     "position": 97746760
   },
-  "rs900009_naf": {
-    "rsid": "rs900009_naf",
+  "rs900009": {
+    "rsid": "rs900009",
     "chromosome": "X",
     "region": "North African",
     "color": "#C084FC",
@@ -3411,8 +3299,8 @@
     "description": "North African ancestry informative marker.",
     "position": 97746386
   },
-  "rs9000010_naf": {
-    "rsid": "rs9000010_naf",
+  "rs9000010": {
+    "rsid": "rs9000010",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3430,8 +3318,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000011_naf": {
-    "rsid": "rs9000011_naf",
+  "rs9000011": {
+    "rsid": "rs9000011",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3449,8 +3337,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000012_naf": {
-    "rsid": "rs9000012_naf",
+  "rs9000012": {
+    "rsid": "rs9000012",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3468,8 +3356,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000013_naf": {
-    "rsid": "rs9000013_naf",
+  "rs9000013": {
+    "rsid": "rs9000013",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3487,8 +3375,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000014_naf": {
-    "rsid": "rs9000014_naf",
+  "rs9000014": {
+    "rsid": "rs9000014",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3506,8 +3394,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000015_naf": {
-    "rsid": "rs9000015_naf",
+  "rs9000015": {
+    "rsid": "rs9000015",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3525,8 +3413,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000016_naf": {
-    "rsid": "rs9000016_naf",
+  "rs9000016": {
+    "rsid": "rs9000016",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3544,8 +3432,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000017_naf": {
-    "rsid": "rs9000017_naf",
+  "rs9000017": {
+    "rsid": "rs9000017",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3563,8 +3451,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000018_naf": {
-    "rsid": "rs9000018_naf",
+  "rs9000018": {
+    "rsid": "rs9000018",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3582,8 +3470,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000019_naf": {
-    "rsid": "rs9000019_naf",
+  "rs9000019": {
+    "rsid": "rs9000019",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3601,8 +3489,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000020_naf": {
-    "rsid": "rs9000020_naf",
+  "rs9000020": {
+    "rsid": "rs9000020",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3620,8 +3508,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000021_naf": {
-    "rsid": "rs9000021_naf",
+  "rs9000021": {
+    "rsid": "rs9000021",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3639,8 +3527,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000022_naf": {
-    "rsid": "rs9000022_naf",
+  "rs9000022": {
+    "rsid": "rs9000022",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3658,8 +3546,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000023_naf": {
-    "rsid": "rs9000023_naf",
+  "rs9000023": {
+    "rsid": "rs9000023",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3677,8 +3565,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000024_naf": {
-    "rsid": "rs9000024_naf",
+  "rs9000024": {
+    "rsid": "rs9000024",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3696,8 +3584,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000025_naf": {
-    "rsid": "rs9000025_naf",
+  "rs9000025": {
+    "rsid": "rs9000025",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3715,8 +3603,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000026_naf": {
-    "rsid": "rs9000026_naf",
+  "rs9000026": {
+    "rsid": "rs9000026",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3734,8 +3622,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000027_naf": {
-    "rsid": "rs9000027_naf",
+  "rs9000027": {
+    "rsid": "rs9000027",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3753,8 +3641,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000028_naf": {
-    "rsid": "rs9000028_naf",
+  "rs9000028": {
+    "rsid": "rs9000028",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3772,8 +3660,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000029_naf": {
-    "rsid": "rs9000029_naf",
+  "rs9000029": {
+    "rsid": "rs9000029",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3791,8 +3679,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000030_naf": {
-    "rsid": "rs9000030_naf",
+  "rs9000030": {
+    "rsid": "rs9000030",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3810,8 +3698,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000031_naf": {
-    "rsid": "rs9000031_naf",
+  "rs9000031": {
+    "rsid": "rs9000031",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3829,8 +3717,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000032_naf": {
-    "rsid": "rs9000032_naf",
+  "rs9000032": {
+    "rsid": "rs9000032",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3848,8 +3736,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000033_naf": {
-    "rsid": "rs9000033_naf",
+  "rs9000033": {
+    "rsid": "rs9000033",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3867,8 +3755,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000034_naf": {
-    "rsid": "rs9000034_naf",
+  "rs9000034": {
+    "rsid": "rs9000034",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3886,8 +3774,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000035_naf": {
-    "rsid": "rs9000035_naf",
+  "rs9000035": {
+    "rsid": "rs9000035",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3905,8 +3793,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000036_naf": {
-    "rsid": "rs9000036_naf",
+  "rs9000036": {
+    "rsid": "rs9000036",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3924,8 +3812,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000037_naf": {
-    "rsid": "rs9000037_naf",
+  "rs9000037": {
+    "rsid": "rs9000037",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3943,8 +3831,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000038_naf": {
-    "rsid": "rs9000038_naf",
+  "rs9000038": {
+    "rsid": "rs9000038",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3962,8 +3850,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000039_naf": {
-    "rsid": "rs9000039_naf",
+  "rs9000039": {
+    "rsid": "rs9000039",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -3981,8 +3869,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000040_naf": {
-    "rsid": "rs9000040_naf",
+  "rs9000040": {
+    "rsid": "rs9000040",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4000,8 +3888,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000041_naf": {
-    "rsid": "rs9000041_naf",
+  "rs9000041": {
+    "rsid": "rs9000041",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4019,8 +3907,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000042_naf": {
-    "rsid": "rs9000042_naf",
+  "rs9000042": {
+    "rsid": "rs9000042",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4038,8 +3926,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000043_naf": {
-    "rsid": "rs9000043_naf",
+  "rs9000043": {
+    "rsid": "rs9000043",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4057,8 +3945,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000044_naf": {
-    "rsid": "rs9000044_naf",
+  "rs9000044": {
+    "rsid": "rs9000044",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4076,8 +3964,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000045_naf": {
-    "rsid": "rs9000045_naf",
+  "rs9000045": {
+    "rsid": "rs9000045",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4095,8 +3983,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000046_naf": {
-    "rsid": "rs9000046_naf",
+  "rs9000046": {
+    "rsid": "rs9000046",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4114,8 +4002,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000047_naf": {
-    "rsid": "rs9000047_naf",
+  "rs9000047": {
+    "rsid": "rs9000047",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4133,8 +4021,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000048_naf": {
-    "rsid": "rs9000048_naf",
+  "rs9000048": {
+    "rsid": "rs9000048",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4152,8 +4040,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000049_naf": {
-    "rsid": "rs9000049_naf",
+  "rs9000049": {
+    "rsid": "rs9000049",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4171,8 +4059,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000050_naf": {
-    "rsid": "rs9000050_naf",
+  "rs9000050": {
+    "rsid": "rs9000050",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4190,8 +4078,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000051_naf": {
-    "rsid": "rs9000051_naf",
+  "rs9000051": {
+    "rsid": "rs9000051",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4209,8 +4097,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000052_naf": {
-    "rsid": "rs9000052_naf",
+  "rs9000052": {
+    "rsid": "rs9000052",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4228,8 +4116,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000053_naf": {
-    "rsid": "rs9000053_naf",
+  "rs9000053": {
+    "rsid": "rs9000053",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4247,8 +4135,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000054_naf": {
-    "rsid": "rs9000054_naf",
+  "rs9000054": {
+    "rsid": "rs9000054",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4266,8 +4154,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000055_naf": {
-    "rsid": "rs9000055_naf",
+  "rs9000055": {
+    "rsid": "rs9000055",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4285,8 +4173,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000056_naf": {
-    "rsid": "rs9000056_naf",
+  "rs9000056": {
+    "rsid": "rs9000056",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4304,8 +4192,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000057_naf": {
-    "rsid": "rs9000057_naf",
+  "rs9000057": {
+    "rsid": "rs9000057",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4323,8 +4211,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000058_naf": {
-    "rsid": "rs9000058_naf",
+  "rs9000058": {
+    "rsid": "rs9000058",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4342,8 +4230,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000059_naf": {
-    "rsid": "rs9000059_naf",
+  "rs9000059": {
+    "rsid": "rs9000059",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4361,8 +4249,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000060_naf": {
-    "rsid": "rs9000060_naf",
+  "rs9000060": {
+    "rsid": "rs9000060",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4380,8 +4268,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000061_naf": {
-    "rsid": "rs9000061_naf",
+  "rs9000061": {
+    "rsid": "rs9000061",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4399,8 +4287,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000062_naf": {
-    "rsid": "rs9000062_naf",
+  "rs9000062": {
+    "rsid": "rs9000062",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4418,8 +4306,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000063_naf": {
-    "rsid": "rs9000063_naf",
+  "rs9000063": {
+    "rsid": "rs9000063",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4437,8 +4325,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000064_naf": {
-    "rsid": "rs9000064_naf",
+  "rs9000064": {
+    "rsid": "rs9000064",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4456,8 +4344,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000065_naf": {
-    "rsid": "rs9000065_naf",
+  "rs9000065": {
+    "rsid": "rs9000065",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4475,8 +4363,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000066_naf": {
-    "rsid": "rs9000066_naf",
+  "rs9000066": {
+    "rsid": "rs9000066",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4494,8 +4382,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000067_naf": {
-    "rsid": "rs9000067_naf",
+  "rs9000067": {
+    "rsid": "rs9000067",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4513,8 +4401,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000068_naf": {
-    "rsid": "rs9000068_naf",
+  "rs9000068": {
+    "rsid": "rs9000068",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4532,8 +4420,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000069_naf": {
-    "rsid": "rs9000069_naf",
+  "rs9000069": {
+    "rsid": "rs9000069",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4551,8 +4439,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000070_naf": {
-    "rsid": "rs9000070_naf",
+  "rs9000070": {
+    "rsid": "rs9000070",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4570,8 +4458,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000071_naf": {
-    "rsid": "rs9000071_naf",
+  "rs9000071": {
+    "rsid": "rs9000071",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4589,8 +4477,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000072_naf": {
-    "rsid": "rs9000072_naf",
+  "rs9000072": {
+    "rsid": "rs9000072",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4608,8 +4496,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000073_naf": {
-    "rsid": "rs9000073_naf",
+  "rs9000073": {
+    "rsid": "rs9000073",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4627,8 +4515,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000074_naf": {
-    "rsid": "rs9000074_naf",
+  "rs9000074": {
+    "rsid": "rs9000074",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4646,8 +4534,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000075_naf": {
-    "rsid": "rs9000075_naf",
+  "rs9000075": {
+    "rsid": "rs9000075",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4665,8 +4553,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000076_naf": {
-    "rsid": "rs9000076_naf",
+  "rs9000076": {
+    "rsid": "rs9000076",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4684,8 +4572,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000077_naf": {
-    "rsid": "rs9000077_naf",
+  "rs9000077": {
+    "rsid": "rs9000077",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4703,8 +4591,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000078_naf": {
-    "rsid": "rs9000078_naf",
+  "rs9000078": {
+    "rsid": "rs9000078",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4722,8 +4610,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000079_naf": {
-    "rsid": "rs9000079_naf",
+  "rs9000079": {
+    "rsid": "rs9000079",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4741,8 +4629,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000080_naf": {
-    "rsid": "rs9000080_naf",
+  "rs9000080": {
+    "rsid": "rs9000080",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4760,8 +4648,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000081_naf": {
-    "rsid": "rs9000081_naf",
+  "rs9000081": {
+    "rsid": "rs9000081",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4779,8 +4667,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000082_naf": {
-    "rsid": "rs9000082_naf",
+  "rs9000082": {
+    "rsid": "rs9000082",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4798,8 +4686,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000083_naf": {
-    "rsid": "rs9000083_naf",
+  "rs9000083": {
+    "rsid": "rs9000083",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4817,8 +4705,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000084_naf": {
-    "rsid": "rs9000084_naf",
+  "rs9000084": {
+    "rsid": "rs9000084",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4836,8 +4724,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000085_naf": {
-    "rsid": "rs9000085_naf",
+  "rs9000085": {
+    "rsid": "rs9000085",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4855,8 +4743,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000086_naf": {
-    "rsid": "rs9000086_naf",
+  "rs9000086": {
+    "rsid": "rs9000086",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4874,8 +4762,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000087_naf": {
-    "rsid": "rs9000087_naf",
+  "rs9000087": {
+    "rsid": "rs9000087",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4893,8 +4781,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000088_naf": {
-    "rsid": "rs9000088_naf",
+  "rs9000088": {
+    "rsid": "rs9000088",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4912,8 +4800,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000089_naf": {
-    "rsid": "rs9000089_naf",
+  "rs9000089": {
+    "rsid": "rs9000089",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4931,8 +4819,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000090_naf": {
-    "rsid": "rs9000090_naf",
+  "rs9000090": {
+    "rsid": "rs9000090",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4950,8 +4838,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000091_naf": {
-    "rsid": "rs9000091_naf",
+  "rs9000091": {
+    "rsid": "rs9000091",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4969,8 +4857,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000092_naf": {
-    "rsid": "rs9000092_naf",
+  "rs9000092": {
+    "rsid": "rs9000092",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -4988,8 +4876,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000093_naf": {
-    "rsid": "rs9000093_naf",
+  "rs9000093": {
+    "rsid": "rs9000093",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -5007,8 +4895,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000094_naf": {
-    "rsid": "rs9000094_naf",
+  "rs9000094": {
+    "rsid": "rs9000094",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -5026,8 +4914,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000095_naf": {
-    "rsid": "rs9000095_naf",
+  "rs9000095": {
+    "rsid": "rs9000095",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -5045,8 +4933,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000096_naf": {
-    "rsid": "rs9000096_naf",
+  "rs9000096": {
+    "rsid": "rs9000096",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -5064,8 +4952,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000097_naf": {
-    "rsid": "rs9000097_naf",
+  "rs9000097": {
+    "rsid": "rs9000097",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -5083,8 +4971,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000098_naf": {
-    "rsid": "rs9000098_naf",
+  "rs9000098": {
+    "rsid": "rs9000098",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",
@@ -5102,8 +4990,8 @@
     "trait": "Ancestry",
     "description": "North African ancestry informative marker."
   },
-  "rs9000099_naf": {
-    "rsid": "rs9000099_naf",
+  "rs9000099": {
+    "rsid": "rs9000099",
     "chromosome": "Unknown",
     "region": "North African",
     "color": "#C084FC",

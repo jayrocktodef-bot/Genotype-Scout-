@@ -1,6 +1,6 @@
 {
-  "rs10456291_afr": {
-    "rsid": "rs10456291_afr",
+  "rs10456291": {
+    "rsid": "rs10456291",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -23,8 +23,8 @@
     "chromosome": "6",
     "position": 23799312
   },
-  "rs10456292_afr": {
-    "rsid": "rs10456292_afr",
+  "rs10456292": {
+    "rsid": "rs10456292",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -47,8 +47,8 @@
     "chromosome": "6",
     "position": 23799474
   },
-  "rs10456293_afr": {
-    "rsid": "rs10456293_afr",
+  "rs10456293": {
+    "rsid": "rs10456293",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -71,8 +71,8 @@
     "chromosome": "6",
     "position": 23860396
   },
-  "rs200000_afram": {
-    "rsid": "rs200000_afram",
+  "rs200000": {
+    "rsid": "rs200000",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -95,8 +95,8 @@
     "chromosome": "5",
     "position": 8700011
   },
-  "rs200001_afram": {
-    "rsid": "rs200001_afram",
+  "rs200001": {
+    "rsid": "rs200001",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -119,8 +119,8 @@
     "chromosome": "5",
     "position": 8699653
   },
-  "rs200002_afram": {
-    "rsid": "rs200002_afram",
+  "rs200002": {
+    "rsid": "rs200002",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -143,8 +143,8 @@
     "chromosome": "5",
     "position": 8699126
   },
-  "rs200003_afram": {
-    "rsid": "rs200003_afram",
+  "rs200003": {
+    "rsid": "rs200003",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -163,8 +163,8 @@
     "chromosome": "5",
     "position": 8699020
   },
-  "rs200004_afram": {
-    "rsid": "rs200004_afram",
+  "rs200004": {
+    "rsid": "rs200004",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -183,8 +183,8 @@
     "chromosome": "5",
     "position": 8698711
   },
-  "rs200005_afram": {
-    "rsid": "rs200005_afram",
+  "rs200005": {
+    "rsid": "rs200005",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -203,8 +203,8 @@
     "chromosome": "5",
     "position": 8698686
   },
-  "rs200006_afram": {
-    "rsid": "rs200006_afram",
+  "rs200006": {
+    "rsid": "rs200006",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -223,8 +223,8 @@
     "chromosome": "5",
     "position": 8698675
   },
-  "rs200007_afram": {
-    "rsid": "rs200007_afram",
+  "rs200007": {
+    "rsid": "rs200007",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -247,8 +247,8 @@
     "chromosome": "5",
     "position": 8698284
   },
-  "rs200008_afram": {
-    "rsid": "rs200008_afram",
+  "rs200008": {
+    "rsid": "rs200008",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -267,8 +267,8 @@
     "chromosome": "5",
     "position": 8697332
   },
-  "rs200009_afram": {
-    "rsid": "rs200009_afram",
+  "rs200009": {
+    "rsid": "rs200009",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -287,8 +287,8 @@
     "chromosome": "5",
     "position": 8696941
   },
-  "rs2000010_afram": {
-    "rsid": "rs2000010_afram",
+  "rs2000010": {
+    "rsid": "rs2000010",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -311,8 +311,8 @@
     "chromosome": "14",
     "position": 48683047
   },
-  "rs2000011_afram": {
-    "rsid": "rs2000011_afram",
+  "rs2000011": {
+    "rsid": "rs2000011",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -331,8 +331,8 @@
     "chromosome": "14",
     "position": 48949351
   },
-  "rs2000012_afram": {
-    "rsid": "rs2000012_afram",
+  "rs2000012": {
+    "rsid": "rs2000012",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -355,8 +355,8 @@
     "chromosome": "14",
     "position": 48949408
   },
-  "rs2000013_afram": {
-    "rsid": "rs2000013_afram",
+  "rs2000013": {
+    "rsid": "rs2000013",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -375,8 +375,8 @@
     "chromosome": "14",
     "position": 48973192
   },
-  "rs2000014_afram": {
-    "rsid": "rs2000014_afram",
+  "rs2000014": {
+    "rsid": "rs2000014",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -399,8 +399,8 @@
     "chromosome": "14",
     "position": 34007261
   },
-  "rs2000015_afram": {
-    "rsid": "rs2000015_afram",
+  "rs2000015": {
+    "rsid": "rs2000015",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -419,8 +419,8 @@
     "chromosome": "14",
     "position": 34011194
   },
-  "rs2000016_afram": {
-    "rsid": "rs2000016_afram",
+  "rs2000016": {
+    "rsid": "rs2000016",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -439,8 +439,8 @@
     "chromosome": "1",
     "position": 48762170
   },
-  "rs2000017_afram": {
-    "rsid": "rs2000017_afram",
+  "rs2000017": {
+    "rsid": "rs2000017",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -463,8 +463,8 @@
     "chromosome": "10",
     "position": 45223548
   },
-  "rs2000018_afram": {
-    "rsid": "rs2000018_afram",
+  "rs2000018": {
+    "rsid": "rs2000018",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -486,8 +486,8 @@
     "chromosome": "1",
     "position": 24278893
   },
-  "rs2000019_afram": {
-    "rsid": "rs2000019_afram",
+  "rs2000019": {
+    "rsid": "rs2000019",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -506,8 +506,8 @@
     "chromosome": "X",
     "position": 43593679
   },
-  "rs2000020_afram": {
-    "rsid": "rs2000020_afram",
+  "rs2000020": {
+    "rsid": "rs2000020",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -530,8 +530,8 @@
     "chromosome": "X",
     "position": 43593763
   },
-  "rs2000021_afram": {
-    "rsid": "rs2000021_afram",
+  "rs2000021": {
+    "rsid": "rs2000021",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -550,8 +550,8 @@
     "chromosome": "1",
     "position": 79673428
   },
-  "rs2000022_afram": {
-    "rsid": "rs2000022_afram",
+  "rs2000022": {
+    "rsid": "rs2000022",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -574,8 +574,8 @@
     "chromosome": "10",
     "position": 82539708
   },
-  "rs2000023_afram": {
-    "rsid": "rs2000023_afram",
+  "rs2000023": {
+    "rsid": "rs2000023",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -592,8 +592,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000024_afram": {
-    "rsid": "rs2000024_afram",
+  "rs2000024": {
+    "rsid": "rs2000024",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -613,8 +613,8 @@
     "chromosome": "1",
     "position": 14586549
   },
-  "rs2000025_afram": {
-    "rsid": "rs2000025_afram",
+  "rs2000025": {
+    "rsid": "rs2000025",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -637,8 +637,8 @@
     "chromosome": "1",
     "position": 14586506
   },
-  "rs2000026_afram": {
-    "rsid": "rs2000026_afram",
+  "rs2000026": {
+    "rsid": "rs2000026",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -657,8 +657,8 @@
     "chromosome": "1",
     "position": 149780852
   },
-  "rs2000027_afram": {
-    "rsid": "rs2000027_afram",
+  "rs2000027": {
+    "rsid": "rs2000027",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -681,8 +681,8 @@
     "chromosome": "14",
     "position": 47442605
   },
-  "rs2000028_afram": {
-    "rsid": "rs2000028_afram",
+  "rs2000028": {
+    "rsid": "rs2000028",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -701,8 +701,8 @@
     "chromosome": "14",
     "position": 47442859
   },
-  "rs2000029_afram": {
-    "rsid": "rs2000029_afram",
+  "rs2000029": {
+    "rsid": "rs2000029",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -721,8 +721,8 @@
     "chromosome": "14",
     "position": 47445610
   },
-  "rs2000030_afram": {
-    "rsid": "rs2000030_afram",
+  "rs2000030": {
+    "rsid": "rs2000030",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -741,8 +741,8 @@
     "chromosome": "14",
     "position": 47449655
   },
-  "rs2000031_afram": {
-    "rsid": "rs2000031_afram",
+  "rs2000031": {
+    "rsid": "rs2000031",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -765,8 +765,8 @@
     "chromosome": "14",
     "position": 47328024
   },
-  "rs2000032_afram": {
-    "rsid": "rs2000032_afram",
+  "rs2000032": {
+    "rsid": "rs2000032",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -789,8 +789,8 @@
     "chromosome": "14",
     "position": 47284191
   },
-  "rs2000033_afram": {
-    "rsid": "rs2000033_afram",
+  "rs2000033": {
+    "rsid": "rs2000033",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -810,8 +810,8 @@
     "chromosome": "1",
     "position": 193364280
   },
-  "rs2000034_afram": {
-    "rsid": "rs2000034_afram",
+  "rs2000034": {
+    "rsid": "rs2000034",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -830,8 +830,8 @@
     "chromosome": "1",
     "position": 193364590
   },
-  "rs2000035_afram": {
-    "rsid": "rs2000035_afram",
+  "rs2000035": {
+    "rsid": "rs2000035",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -850,8 +850,8 @@
     "chromosome": "1",
     "position": 248450325
   },
-  "rs2000036_afram": {
-    "rsid": "rs2000036_afram",
+  "rs2000036": {
+    "rsid": "rs2000036",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -870,8 +870,8 @@
     "chromosome": "1",
     "position": 248446465
   },
-  "rs2000037_afram": {
-    "rsid": "rs2000037_afram",
+  "rs2000037": {
+    "rsid": "rs2000037",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -890,8 +890,8 @@
     "chromosome": "1",
     "position": 248446434
   },
-  "rs2000038_afram": {
-    "rsid": "rs2000038_afram",
+  "rs2000038": {
+    "rsid": "rs2000038",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -910,8 +910,8 @@
     "chromosome": "1",
     "position": 248446392
   },
-  "rs2000039_afram": {
-    "rsid": "rs2000039_afram",
+  "rs2000039": {
+    "rsid": "rs2000039",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -930,8 +930,8 @@
     "chromosome": "1",
     "position": 248445504
   },
-  "rs2000040_afram": {
-    "rsid": "rs2000040_afram",
+  "rs2000040": {
+    "rsid": "rs2000040",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -950,8 +950,8 @@
     "chromosome": "1",
     "position": 248445361
   },
-  "rs2000041_afram": {
-    "rsid": "rs2000041_afram",
+  "rs2000041": {
+    "rsid": "rs2000041",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -970,8 +970,8 @@
     "chromosome": "1",
     "position": 248440894
   },
-  "rs2000042_afram": {
-    "rsid": "rs2000042_afram",
+  "rs2000042": {
+    "rsid": "rs2000042",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -990,8 +990,8 @@
     "chromosome": "1",
     "position": 248651185
   },
-  "rs2000043_afram": {
-    "rsid": "rs2000043_afram",
+  "rs2000043": {
+    "rsid": "rs2000043",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1013,8 +1013,8 @@
     "chromosome": "1",
     "position": 248376689
   },
-  "rs2000044_afram": {
-    "rsid": "rs2000044_afram",
+  "rs2000044": {
+    "rsid": "rs2000044",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1033,8 +1033,8 @@
     "chromosome": "1",
     "position": 8127733
   },
-  "rs2000045_afram": {
-    "rsid": "rs2000045_afram",
+  "rs2000045": {
+    "rsid": "rs2000045",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1053,8 +1053,8 @@
     "chromosome": "9",
     "position": 1306916
   },
-  "rs2000046_afram": {
-    "rsid": "rs2000046_afram",
+  "rs2000046": {
+    "rsid": "rs2000046",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1073,8 +1073,8 @@
     "chromosome": "10",
     "position": 6893609
   },
-  "rs2000047_afram": {
-    "rsid": "rs2000047_afram",
+  "rs2000047": {
+    "rsid": "rs2000047",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1093,8 +1093,8 @@
     "chromosome": "9",
     "position": 18464002
   },
-  "rs2000048_afram": {
-    "rsid": "rs2000048_afram",
+  "rs2000048": {
+    "rsid": "rs2000048",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1113,8 +1113,8 @@
     "chromosome": "6",
     "position": 164351342
   },
-  "rs2000049_afram": {
-    "rsid": "rs2000049_afram",
+  "rs2000049": {
+    "rsid": "rs2000049",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1133,8 +1133,8 @@
     "chromosome": "6",
     "position": 164347070
   },
-  "rs2000050_afram": {
-    "rsid": "rs2000050_afram",
+  "rs2000050": {
+    "rsid": "rs2000050",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1156,8 +1156,8 @@
     "chromosome": "13",
     "position": 72312886
   },
-  "rs2000051_afram": {
-    "rsid": "rs2000051_afram",
+  "rs2000051": {
+    "rsid": "rs2000051",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1176,8 +1176,8 @@
     "chromosome": "3",
     "position": 195276823
   },
-  "rs2000052_afram": {
-    "rsid": "rs2000052_afram",
+  "rs2000052": {
+    "rsid": "rs2000052",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1196,8 +1196,8 @@
     "chromosome": "3",
     "position": 195276891
   },
-  "rs2000053_afram": {
-    "rsid": "rs2000053_afram",
+  "rs2000053": {
+    "rsid": "rs2000053",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1220,8 +1220,8 @@
     "chromosome": "9",
     "position": 112310423
   },
-  "rs2000054_afram": {
-    "rsid": "rs2000054_afram",
+  "rs2000054": {
+    "rsid": "rs2000054",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1244,8 +1244,8 @@
     "chromosome": "1",
     "position": 191809541
   },
-  "rs2000055_afram": {
-    "rsid": "rs2000055_afram",
+  "rs2000055": {
+    "rsid": "rs2000055",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1268,8 +1268,8 @@
     "chromosome": "1",
     "position": 191807238
   },
-  "rs2000056_afram": {
-    "rsid": "rs2000056_afram",
+  "rs2000056": {
+    "rsid": "rs2000056",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1292,8 +1292,8 @@
     "chromosome": "1",
     "position": 206967889
   },
-  "rs2000057_afram": {
-    "rsid": "rs2000057_afram",
+  "rs2000057": {
+    "rsid": "rs2000057",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1316,8 +1316,8 @@
     "chromosome": "1",
     "position": 206967940
   },
-  "rs2000058_afram": {
-    "rsid": "rs2000058_afram",
+  "rs2000058": {
+    "rsid": "rs2000058",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1336,8 +1336,8 @@
     "chromosome": "1",
     "position": 206964340
   },
-  "rs2000059_afram": {
-    "rsid": "rs2000059_afram",
+  "rs2000059": {
+    "rsid": "rs2000059",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1360,8 +1360,8 @@
     "chromosome": "1",
     "position": 206963993
   },
-  "rs2000060_afram": {
-    "rsid": "rs2000060_afram",
+  "rs2000060": {
+    "rsid": "rs2000060",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1380,8 +1380,8 @@
     "chromosome": "1",
     "position": 206963944
   },
-  "rs2000061_afram": {
-    "rsid": "rs2000061_afram",
+  "rs2000061": {
+    "rsid": "rs2000061",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1398,8 +1398,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs2000062_afram": {
-    "rsid": "rs2000062_afram",
+  "rs2000062": {
+    "rsid": "rs2000062",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1422,8 +1422,8 @@
     "chromosome": "10",
     "position": 127091594
   },
-  "rs2000063_afram": {
-    "rsid": "rs2000063_afram",
+  "rs2000063": {
+    "rsid": "rs2000063",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1442,8 +1442,8 @@
     "chromosome": "9",
     "position": 4066859
   },
-  "rs2000064_afram": {
-    "rsid": "rs2000064_afram",
+  "rs2000064": {
+    "rsid": "rs2000064",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1462,8 +1462,8 @@
     "chromosome": "10",
     "position": 13374918
   },
-  "rs2000065_afram": {
-    "rsid": "rs2000065_afram",
+  "rs2000065": {
+    "rsid": "rs2000065",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1482,8 +1482,8 @@
     "chromosome": "10",
     "position": 20907968
   },
-  "rs2000066_afram": {
-    "rsid": "rs2000066_afram",
+  "rs2000066": {
+    "rsid": "rs2000066",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1502,8 +1502,8 @@
     "chromosome": "13",
     "position": 64274518
   },
-  "rs2000067_afram": {
-    "rsid": "rs2000067_afram",
+  "rs2000067": {
+    "rsid": "rs2000067",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1522,8 +1522,8 @@
     "chromosome": "13",
     "position": 47454844
   },
-  "rs2000068_afram": {
-    "rsid": "rs2000068_afram",
+  "rs2000068": {
+    "rsid": "rs2000068",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1546,8 +1546,8 @@
     "chromosome": "9",
     "position": 104956027
   },
-  "rs2000069_afram": {
-    "rsid": "rs2000069_afram",
+  "rs2000069": {
+    "rsid": "rs2000069",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1566,8 +1566,8 @@
     "chromosome": "9",
     "position": 104873588
   },
-  "rs2000070_afram": {
-    "rsid": "rs2000070_afram",
+  "rs2000070": {
+    "rsid": "rs2000070",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1590,8 +1590,8 @@
     "chromosome": "6",
     "position": 24188109
   },
-  "rs2000071_afram": {
-    "rsid": "rs2000071_afram",
+  "rs2000071": {
+    "rsid": "rs2000071",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1610,8 +1610,8 @@
     "chromosome": "1",
     "position": 74083585
   },
-  "rs2000072_afram": {
-    "rsid": "rs2000072_afram",
+  "rs2000072": {
+    "rsid": "rs2000072",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1630,8 +1630,8 @@
     "chromosome": "1",
     "position": 147498757
   },
-  "rs2000073_afram": {
-    "rsid": "rs2000073_afram",
+  "rs2000073": {
+    "rsid": "rs2000073",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1654,8 +1654,8 @@
     "chromosome": "13",
     "position": 63461050
   },
-  "rs2000074_afram": {
-    "rsid": "rs2000074_afram",
+  "rs2000074": {
+    "rsid": "rs2000074",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1674,8 +1674,8 @@
     "chromosome": "14",
     "position": 59124791
   },
-  "rs2000075_afram": {
-    "rsid": "rs2000075_afram",
+  "rs2000075": {
+    "rsid": "rs2000075",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1694,8 +1694,8 @@
     "chromosome": "14",
     "position": 61282701
   },
-  "rs2000076_afram": {
-    "rsid": "rs2000076_afram",
+  "rs2000076": {
+    "rsid": "rs2000076",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1718,8 +1718,8 @@
     "chromosome": "14",
     "position": 61150000
   },
-  "rs2000077_afram": {
-    "rsid": "rs2000077_afram",
+  "rs2000077": {
+    "rsid": "rs2000077",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1742,8 +1742,8 @@
     "chromosome": "14",
     "position": 66312952
   },
-  "rs2000078_afram": {
-    "rsid": "rs2000078_afram",
+  "rs2000078": {
+    "rsid": "rs2000078",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1766,8 +1766,8 @@
     "chromosome": "14",
     "position": 66313191
   },
-  "rs2000079_afram": {
-    "rsid": "rs2000079_afram",
+  "rs2000079": {
+    "rsid": "rs2000079",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1786,8 +1786,8 @@
     "chromosome": "14",
     "position": 38068699
   },
-  "rs2000080_afram": {
-    "rsid": "rs2000080_afram",
+  "rs2000080": {
+    "rsid": "rs2000080",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1808,8 +1808,8 @@
     "chromosome": "14",
     "position": 65372460
   },
-  "rs2000081_afram": {
-    "rsid": "rs2000081_afram",
+  "rs2000081": {
+    "rsid": "rs2000081",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1832,8 +1832,8 @@
     "chromosome": "14",
     "position": 86176029
   },
-  "rs2000082_afram": {
-    "rsid": "rs2000082_afram",
+  "rs2000082": {
+    "rsid": "rs2000082",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1852,8 +1852,8 @@
     "chromosome": "9",
     "position": 6883049
   },
-  "rs2000083_afram": {
-    "rsid": "rs2000083_afram",
+  "rs2000083": {
+    "rsid": "rs2000083",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1872,8 +1872,8 @@
     "chromosome": "10",
     "position": 110672278
   },
-  "rs2000084_afram": {
-    "rsid": "rs2000084_afram",
+  "rs2000084": {
+    "rsid": "rs2000084",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1893,8 +1893,8 @@
     "chromosome": "X",
     "position": 50837699
   },
-  "rs2000085_afram": {
-    "rsid": "rs2000085_afram",
+  "rs2000085": {
+    "rsid": "rs2000085",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1913,8 +1913,8 @@
     "chromosome": "X",
     "position": 50837721
   },
-  "rs2000086_afram": {
-    "rsid": "rs2000086_afram",
+  "rs2000086": {
+    "rsid": "rs2000086",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1933,8 +1933,8 @@
     "chromosome": "14",
     "position": 48141735
   },
-  "rs2000087_afram": {
-    "rsid": "rs2000087_afram",
+  "rs2000087": {
+    "rsid": "rs2000087",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1957,8 +1957,8 @@
     "chromosome": "6",
     "position": 148096017
   },
-  "rs2000088_afram": {
-    "rsid": "rs2000088_afram",
+  "rs2000088": {
+    "rsid": "rs2000088",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -1977,8 +1977,8 @@
     "chromosome": "10",
     "position": 71254763
   },
-  "rs2000089_afram": {
-    "rsid": "rs2000089_afram",
+  "rs2000089": {
+    "rsid": "rs2000089",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2001,8 +2001,8 @@
     "chromosome": "14",
     "position": 50356354
   },
-  "rs2000090_afram": {
-    "rsid": "rs2000090_afram",
+  "rs2000090": {
+    "rsid": "rs2000090",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2021,8 +2021,8 @@
     "chromosome": "1",
     "position": 69765817
   },
-  "rs2000091_afram": {
-    "rsid": "rs2000091_afram",
+  "rs2000091": {
+    "rsid": "rs2000091",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2041,8 +2041,8 @@
     "chromosome": "1",
     "position": 69765592
   },
-  "rs2000092_afram": {
-    "rsid": "rs2000092_afram",
+  "rs2000092": {
+    "rsid": "rs2000092",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2061,8 +2061,8 @@
     "chromosome": "20",
     "position": 47087472
   },
-  "rs2000093_afram": {
-    "rsid": "rs2000093_afram",
+  "rs2000093": {
+    "rsid": "rs2000093",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2081,8 +2081,8 @@
     "chromosome": "6",
     "position": 50253181
   },
-  "rs2000094_afram": {
-    "rsid": "rs2000094_afram",
+  "rs2000094": {
+    "rsid": "rs2000094",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2101,8 +2101,8 @@
     "chromosome": "6",
     "position": 40560493
   },
-  "rs2000095_afram": {
-    "rsid": "rs2000095_afram",
+  "rs2000095": {
+    "rsid": "rs2000095",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2121,8 +2121,8 @@
     "chromosome": "1",
     "position": 632403
   },
-  "rs2000096_afram": {
-    "rsid": "rs2000096_afram",
+  "rs2000096": {
+    "rsid": "rs2000096",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2145,8 +2145,8 @@
     "chromosome": "1",
     "position": 632487
   },
-  "rs2000097_afram": {
-    "rsid": "rs2000097_afram",
+  "rs2000097": {
+    "rsid": "rs2000097",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2165,8 +2165,8 @@
     "chromosome": "20",
     "position": 46803849
   },
-  "rs2000098_afram": {
-    "rsid": "rs2000098_afram",
+  "rs2000098": {
+    "rsid": "rs2000098",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2185,8 +2185,8 @@
     "chromosome": "20",
     "position": 46803930
   },
-  "rs2000099_afram": {
-    "rsid": "rs2000099_afram",
+  "rs2000099": {
+    "rsid": "rs2000099",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2205,8 +2205,8 @@
     "chromosome": "10",
     "position": 30829167
   },
-  "rs700000_afram": {
-    "rsid": "rs700000_afram",
+  "rs700000": {
+    "rsid": "rs700000",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2223,8 +2223,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700001_afram": {
-    "rsid": "rs700001_afram",
+  "rs700001": {
+    "rsid": "rs700001",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2241,8 +2241,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs700002_afram": {
-    "rsid": "rs700002_afram",
+  "rs700002": {
+    "rsid": "rs700002",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2261,8 +2261,8 @@
     "chromosome": "6",
     "position": 49819180
   },
-  "rs700003_afram": {
-    "rsid": "rs700003_afram",
+  "rs700003": {
+    "rsid": "rs700003",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2285,8 +2285,8 @@
     "chromosome": "6",
     "position": 49819542
   },
-  "rs700004_afram": {
-    "rsid": "rs700004_afram",
+  "rs700004": {
+    "rsid": "rs700004",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2309,8 +2309,8 @@
     "chromosome": "6",
     "position": 44064594
   },
-  "rs700005_afram": {
-    "rsid": "rs700005_afram",
+  "rs700005": {
+    "rsid": "rs700005",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2329,8 +2329,8 @@
     "chromosome": "6",
     "position": 50187446
   },
-  "rs700006_afram": {
-    "rsid": "rs700006_afram",
+  "rs700006": {
+    "rsid": "rs700006",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2349,8 +2349,8 @@
     "chromosome": "6",
     "position": 44113773
   },
-  "rs700007_afram": {
-    "rsid": "rs700007_afram",
+  "rs700007": {
+    "rsid": "rs700007",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2373,8 +2373,8 @@
     "chromosome": "2",
     "position": 90214753
   },
-  "rs700008_afram": {
-    "rsid": "rs700008_afram",
+  "rs700008": {
+    "rsid": "rs700008",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2397,8 +2397,8 @@
     "chromosome": "6",
     "position": 43432099
   },
-  "rs700009_afram": {
-    "rsid": "rs700009_afram",
+  "rs700009": {
+    "rsid": "rs700009",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2415,8 +2415,8 @@
     "trait": "Ancestry",
     "description": "African American ancestry informative marker."
   },
-  "rs7000010_afram": {
-    "rsid": "rs7000010_afram",
+  "rs7000010": {
+    "rsid": "rs7000010",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2435,8 +2435,8 @@
     "chromosome": "8",
     "position": 10482347
   },
-  "rs7000011_afram": {
-    "rsid": "rs7000011_afram",
+  "rs7000011": {
+    "rsid": "rs7000011",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2455,8 +2455,8 @@
     "chromosome": "8",
     "position": 86029027
   },
-  "rs7000012_afram": {
-    "rsid": "rs7000012_afram",
+  "rs7000012": {
+    "rsid": "rs7000012",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2479,8 +2479,8 @@
     "chromosome": "8",
     "position": 62935254
   },
-  "rs7000013_afram": {
-    "rsid": "rs7000013_afram",
+  "rs7000013": {
+    "rsid": "rs7000013",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2499,8 +2499,8 @@
     "chromosome": "8",
     "position": 20740275
   },
-  "rs7000014_afram": {
-    "rsid": "rs7000014_afram",
+  "rs7000014": {
+    "rsid": "rs7000014",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2519,8 +2519,8 @@
     "chromosome": "8",
     "position": 87625005
   },
-  "rs7000015_afram": {
-    "rsid": "rs7000015_afram",
+  "rs7000015": {
+    "rsid": "rs7000015",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2539,8 +2539,8 @@
     "chromosome": "8",
     "position": 83466168
   },
-  "rs7000016_afram": {
-    "rsid": "rs7000016_afram",
+  "rs7000016": {
+    "rsid": "rs7000016",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2559,8 +2559,8 @@
     "chromosome": "8",
     "position": 16533817
   },
-  "rs7000017_afram": {
-    "rsid": "rs7000017_afram",
+  "rs7000017": {
+    "rsid": "rs7000017",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2579,8 +2579,8 @@
     "chromosome": "8",
     "position": 20492379
   },
-  "rs7000018_afram": {
-    "rsid": "rs7000018_afram",
+  "rs7000018": {
+    "rsid": "rs7000018",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2603,8 +2603,8 @@
     "chromosome": "8",
     "position": 17554331
   },
-  "rs7000019_afram": {
-    "rsid": "rs7000019_afram",
+  "rs7000019": {
+    "rsid": "rs7000019",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2623,8 +2623,8 @@
     "chromosome": "8",
     "position": 132553444
   },
-  "rs7000020_afram": {
-    "rsid": "rs7000020_afram",
+  "rs7000020": {
+    "rsid": "rs7000020",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2647,8 +2647,8 @@
     "chromosome": "8",
     "position": 62912661
   },
-  "rs7000021_afram": {
-    "rsid": "rs7000021_afram",
+  "rs7000021": {
+    "rsid": "rs7000021",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2667,8 +2667,8 @@
     "chromosome": "8",
     "position": 129519744
   },
-  "rs7000022_afram": {
-    "rsid": "rs7000022_afram",
+  "rs7000022": {
+    "rsid": "rs7000022",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2687,8 +2687,8 @@
     "chromosome": "8",
     "position": 26030993
   },
-  "rs7000023_afram": {
-    "rsid": "rs7000023_afram",
+  "rs7000023": {
+    "rsid": "rs7000023",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2707,8 +2707,8 @@
     "chromosome": "8",
     "position": 77962842
   },
-  "rs7000024_afram": {
-    "rsid": "rs7000024_afram",
+  "rs7000024": {
+    "rsid": "rs7000024",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2727,8 +2727,8 @@
     "chromosome": "8",
     "position": 127846086
   },
-  "rs7000025_afram": {
-    "rsid": "rs7000025_afram",
+  "rs7000025": {
+    "rsid": "rs7000025",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2751,8 +2751,8 @@
     "chromosome": "8",
     "position": 61861219
   },
-  "rs7000026_afram": {
-    "rsid": "rs7000026_afram",
+  "rs7000026": {
+    "rsid": "rs7000026",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2771,8 +2771,8 @@
     "chromosome": "8",
     "position": 114591430
   },
-  "rs7000027_afram": {
-    "rsid": "rs7000027_afram",
+  "rs7000027": {
+    "rsid": "rs7000027",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2795,8 +2795,8 @@
     "chromosome": "8",
     "position": 108962227
   },
-  "rs7000028_afram": {
-    "rsid": "rs7000028_afram",
+  "rs7000028": {
+    "rsid": "rs7000028",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2815,8 +2815,8 @@
     "chromosome": "8",
     "position": 136114861
   },
-  "rs7000029_afram": {
-    "rsid": "rs7000029_afram",
+  "rs7000029": {
+    "rsid": "rs7000029",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2839,8 +2839,8 @@
     "chromosome": "8",
     "position": 73620915
   },
-  "rs7000030_afram": {
-    "rsid": "rs7000030_afram",
+  "rs7000030": {
+    "rsid": "rs7000030",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2859,8 +2859,8 @@
     "chromosome": "8",
     "position": 88307468
   },
-  "rs7000031_afram": {
-    "rsid": "rs7000031_afram",
+  "rs7000031": {
+    "rsid": "rs7000031",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2881,8 +2881,8 @@
     "chromosome": "8",
     "position": 98363068
   },
-  "rs7000032_afram": {
-    "rsid": "rs7000032_afram",
+  "rs7000032": {
+    "rsid": "rs7000032",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2905,8 +2905,8 @@
     "chromosome": "8",
     "position": 78954193
   },
-  "rs7000033_afram": {
-    "rsid": "rs7000033_afram",
+  "rs7000033": {
+    "rsid": "rs7000033",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2925,8 +2925,8 @@
     "chromosome": "8",
     "position": 144624719
   },
-  "rs7000034_afram": {
-    "rsid": "rs7000034_afram",
+  "rs7000034": {
+    "rsid": "rs7000034",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2949,8 +2949,8 @@
     "chromosome": "8",
     "position": 123398347
   },
-  "rs7000035_afram": {
-    "rsid": "rs7000035_afram",
+  "rs7000035": {
+    "rsid": "rs7000035",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2973,8 +2973,8 @@
     "chromosome": "8",
     "position": 34857293
   },
-  "rs7000036_afram": {
-    "rsid": "rs7000036_afram",
+  "rs7000036": {
+    "rsid": "rs7000036",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -2993,8 +2993,8 @@
     "chromosome": "8",
     "position": 1276437
   },
-  "rs7000037_afram": {
-    "rsid": "rs7000037_afram",
+  "rs7000037": {
+    "rsid": "rs7000037",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3014,8 +3014,8 @@
     "chromosome": "8",
     "position": 4583745
   },
-  "rs7000038_afram": {
-    "rsid": "rs7000038_afram",
+  "rs7000038": {
+    "rsid": "rs7000038",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3034,8 +3034,8 @@
     "chromosome": "8",
     "position": 1266758
   },
-  "rs7000039_afram": {
-    "rsid": "rs7000039_afram",
+  "rs7000039": {
+    "rsid": "rs7000039",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3055,8 +3055,8 @@
     "chromosome": "8",
     "position": 144770268
   },
-  "rs7000040_afram": {
-    "rsid": "rs7000040_afram",
+  "rs7000040": {
+    "rsid": "rs7000040",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3079,8 +3079,8 @@
     "chromosome": "8",
     "position": 107717447
   },
-  "rs7000041_afram": {
-    "rsid": "rs7000041_afram",
+  "rs7000041": {
+    "rsid": "rs7000041",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3099,8 +3099,8 @@
     "chromosome": "8",
     "position": 126200359
   },
-  "rs7000042_afram": {
-    "rsid": "rs7000042_afram",
+  "rs7000042": {
+    "rsid": "rs7000042",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3123,8 +3123,8 @@
     "chromosome": "8",
     "position": 132209544
   },
-  "rs7000043_afram": {
-    "rsid": "rs7000043_afram",
+  "rs7000043": {
+    "rsid": "rs7000043",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3143,8 +3143,8 @@
     "chromosome": "8",
     "position": 30004815
   },
-  "rs7000044_afram": {
-    "rsid": "rs7000044_afram",
+  "rs7000044": {
+    "rsid": "rs7000044",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3164,8 +3164,8 @@
     "chromosome": "8",
     "position": 4879298
   },
-  "rs7000045_afram": {
-    "rsid": "rs7000045_afram",
+  "rs7000045": {
+    "rsid": "rs7000045",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3184,8 +3184,8 @@
     "chromosome": "8",
     "position": 72833437
   },
-  "rs7000046_afram": {
-    "rsid": "rs7000046_afram",
+  "rs7000046": {
+    "rsid": "rs7000046",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3208,8 +3208,8 @@
     "chromosome": "8",
     "position": 62456528
   },
-  "rs7000047_afram": {
-    "rsid": "rs7000047_afram",
+  "rs7000047": {
+    "rsid": "rs7000047",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3228,8 +3228,8 @@
     "chromosome": "8",
     "position": 41039115
   },
-  "rs7000048_afram": {
-    "rsid": "rs7000048_afram",
+  "rs7000048": {
+    "rsid": "rs7000048",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3248,8 +3248,8 @@
     "chromosome": "8",
     "position": 90542646
   },
-  "rs7000049_afram": {
-    "rsid": "rs7000049_afram",
+  "rs7000049": {
+    "rsid": "rs7000049",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3268,8 +3268,8 @@
     "chromosome": "8",
     "position": 130531933
   },
-  "rs7000050_afram": {
-    "rsid": "rs7000050_afram",
+  "rs7000050": {
+    "rsid": "rs7000050",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3289,8 +3289,8 @@
     "chromosome": "8",
     "position": 136639276
   },
-  "rs7000051_afram": {
-    "rsid": "rs7000051_afram",
+  "rs7000051": {
+    "rsid": "rs7000051",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3309,8 +3309,8 @@
     "chromosome": "8",
     "position": 86603701
   },
-  "rs7000052_afram": {
-    "rsid": "rs7000052_afram",
+  "rs7000052": {
+    "rsid": "rs7000052",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3329,8 +3329,8 @@
     "chromosome": "8",
     "position": 134945585
   },
-  "rs7000053_afram": {
-    "rsid": "rs7000053_afram",
+  "rs7000053": {
+    "rsid": "rs7000053",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3353,8 +3353,8 @@
     "chromosome": "8",
     "position": 62824796
   },
-  "rs7000054_afram": {
-    "rsid": "rs7000054_afram",
+  "rs7000054": {
+    "rsid": "rs7000054",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3377,8 +3377,8 @@
     "chromosome": "8",
     "position": 79779392
   },
-  "rs7000055_afram": {
-    "rsid": "rs7000055_afram",
+  "rs7000055": {
+    "rsid": "rs7000055",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3401,8 +3401,8 @@
     "chromosome": "8",
     "position": 8514379
   },
-  "rs7000056_afram": {
-    "rsid": "rs7000056_afram",
+  "rs7000056": {
+    "rsid": "rs7000056",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3421,8 +3421,8 @@
     "chromosome": "8",
     "position": 104306320
   },
-  "rs7000057_afram": {
-    "rsid": "rs7000057_afram",
+  "rs7000057": {
+    "rsid": "rs7000057",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3441,8 +3441,8 @@
     "chromosome": "8",
     "position": 2745311
   },
-  "rs7000058_afram": {
-    "rsid": "rs7000058_afram",
+  "rs7000058": {
+    "rsid": "rs7000058",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3461,8 +3461,8 @@
     "chromosome": "8",
     "position": 103646148
   },
-  "rs7000059_afram": {
-    "rsid": "rs7000059_afram",
+  "rs7000059": {
+    "rsid": "rs7000059",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3485,8 +3485,8 @@
     "chromosome": "8",
     "position": 38983976
   },
-  "rs7000060_afram": {
-    "rsid": "rs7000060_afram",
+  "rs7000060": {
+    "rsid": "rs7000060",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3505,8 +3505,8 @@
     "chromosome": "8",
     "position": 137334129
   },
-  "rs7000061_afram": {
-    "rsid": "rs7000061_afram",
+  "rs7000061": {
+    "rsid": "rs7000061",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3525,8 +3525,8 @@
     "chromosome": "8",
     "position": 3502237
   },
-  "rs7000062_afram": {
-    "rsid": "rs7000062_afram",
+  "rs7000062": {
+    "rsid": "rs7000062",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3545,8 +3545,8 @@
     "chromosome": "8",
     "position": 91173515
   },
-  "rs7000063_afram": {
-    "rsid": "rs7000063_afram",
+  "rs7000063": {
+    "rsid": "rs7000063",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3565,8 +3565,8 @@
     "chromosome": "8",
     "position": 80712804
   },
-  "rs7000064_afram": {
-    "rsid": "rs7000064_afram",
+  "rs7000064": {
+    "rsid": "rs7000064",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3587,8 +3587,8 @@
     "chromosome": "8",
     "position": 97692410
   },
-  "rs7000065_afram": {
-    "rsid": "rs7000065_afram",
+  "rs7000065": {
+    "rsid": "rs7000065",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3607,8 +3607,8 @@
     "chromosome": "8",
     "position": 137334134
   },
-  "rs7000066_afram": {
-    "rsid": "rs7000066_afram",
+  "rs7000066": {
+    "rsid": "rs7000066",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3628,8 +3628,8 @@
     "chromosome": "8",
     "position": 84223185
   },
-  "rs7000067_afram": {
-    "rsid": "rs7000067_afram",
+  "rs7000067": {
+    "rsid": "rs7000067",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3648,8 +3648,8 @@
     "chromosome": "8",
     "position": 14257701
   },
-  "rs7000068_afram": {
-    "rsid": "rs7000068_afram",
+  "rs7000068": {
+    "rsid": "rs7000068",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3668,8 +3668,8 @@
     "chromosome": "8",
     "position": 119910723
   },
-  "rs7000069_afram": {
-    "rsid": "rs7000069_afram",
+  "rs7000069": {
+    "rsid": "rs7000069",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3688,8 +3688,8 @@
     "chromosome": "8",
     "position": 130180096
   },
-  "rs7000070_afram": {
-    "rsid": "rs7000070_afram",
+  "rs7000070": {
+    "rsid": "rs7000070",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3708,8 +3708,8 @@
     "chromosome": "8",
     "position": 110751733
   },
-  "rs7000071_afram": {
-    "rsid": "rs7000071_afram",
+  "rs7000071": {
+    "rsid": "rs7000071",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3728,8 +3728,8 @@
     "chromosome": "8",
     "position": 4104682
   },
-  "rs7000072_afram": {
-    "rsid": "rs7000072_afram",
+  "rs7000072": {
+    "rsid": "rs7000072",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3751,8 +3751,8 @@
     "chromosome": "8",
     "position": 26323055
   },
-  "rs7000073_afram": {
-    "rsid": "rs7000073_afram",
+  "rs7000073": {
+    "rsid": "rs7000073",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3772,8 +3772,8 @@
     "chromosome": "8",
     "position": 40144001
   },
-  "rs7000074_afram": {
-    "rsid": "rs7000074_afram",
+  "rs7000074": {
+    "rsid": "rs7000074",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3792,8 +3792,8 @@
     "chromosome": "8",
     "position": 11945645
   },
-  "rs7000075_afram": {
-    "rsid": "rs7000075_afram",
+  "rs7000075": {
+    "rsid": "rs7000075",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3816,8 +3816,8 @@
     "chromosome": "8",
     "position": 8232622
   },
-  "rs7000076_afram": {
-    "rsid": "rs7000076_afram",
+  "rs7000076": {
+    "rsid": "rs7000076",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3837,8 +3837,8 @@
     "chromosome": "8",
     "position": 62852239
   },
-  "rs7000077_afram": {
-    "rsid": "rs7000077_afram",
+  "rs7000077": {
+    "rsid": "rs7000077",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3861,8 +3861,8 @@
     "chromosome": "8",
     "position": 142165966
   },
-  "rs7000078_afram": {
-    "rsid": "rs7000078_afram",
+  "rs7000078": {
+    "rsid": "rs7000078",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3885,8 +3885,8 @@
     "chromosome": "8",
     "position": 6111207
   },
-  "rs7000079_afram": {
-    "rsid": "rs7000079_afram",
+  "rs7000079": {
+    "rsid": "rs7000079",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3909,8 +3909,8 @@
     "chromosome": "8",
     "position": 70035043
   },
-  "rs7000080_afram": {
-    "rsid": "rs7000080_afram",
+  "rs7000080": {
+    "rsid": "rs7000080",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3929,8 +3929,8 @@
     "chromosome": "8",
     "position": 73525613
   },
-  "rs7000081_afram": {
-    "rsid": "rs7000081_afram",
+  "rs7000081": {
+    "rsid": "rs7000081",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3949,8 +3949,8 @@
     "chromosome": "8",
     "position": 88919675
   },
-  "rs7000082_afram": {
-    "rsid": "rs7000082_afram",
+  "rs7000082": {
+    "rsid": "rs7000082",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3971,8 +3971,8 @@
     "chromosome": "8",
     "position": 61384677
   },
-  "rs7000083_afram": {
-    "rsid": "rs7000083_afram",
+  "rs7000083": {
+    "rsid": "rs7000083",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -3991,8 +3991,8 @@
     "chromosome": "8",
     "position": 74551841
   },
-  "rs7000084_afram": {
-    "rsid": "rs7000084_afram",
+  "rs7000084": {
+    "rsid": "rs7000084",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4015,8 +4015,8 @@
     "chromosome": "8",
     "position": 15681915
   },
-  "rs7000085_afram": {
-    "rsid": "rs7000085_afram",
+  "rs7000085": {
+    "rsid": "rs7000085",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4035,8 +4035,8 @@
     "chromosome": "8",
     "position": 120248917
   },
-  "rs7000086_afram": {
-    "rsid": "rs7000086_afram",
+  "rs7000086": {
+    "rsid": "rs7000086",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4059,8 +4059,8 @@
     "chromosome": "8",
     "position": 24347829
   },
-  "rs7000087_afram": {
-    "rsid": "rs7000087_afram",
+  "rs7000087": {
+    "rsid": "rs7000087",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4079,8 +4079,8 @@
     "chromosome": "8",
     "position": 102131841
   },
-  "rs7000088_afram": {
-    "rsid": "rs7000088_afram",
+  "rs7000088": {
+    "rsid": "rs7000088",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4103,8 +4103,8 @@
     "chromosome": "8",
     "position": 96879239
   },
-  "rs7000089_afram": {
-    "rsid": "rs7000089_afram",
+  "rs7000089": {
+    "rsid": "rs7000089",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4127,8 +4127,8 @@
     "chromosome": "8",
     "position": 62824850
   },
-  "rs7000090_afram": {
-    "rsid": "rs7000090_afram",
+  "rs7000090": {
+    "rsid": "rs7000090",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4147,8 +4147,8 @@
     "chromosome": "8",
     "position": 113839959
   },
-  "rs7000091_afram": {
-    "rsid": "rs7000091_afram",
+  "rs7000091": {
+    "rsid": "rs7000091",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4171,8 +4171,8 @@
     "chromosome": "8",
     "position": 10219677
   },
-  "rs7000092_afram": {
-    "rsid": "rs7000092_afram",
+  "rs7000092": {
+    "rsid": "rs7000092",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4195,8 +4195,8 @@
     "chromosome": "8",
     "position": 5007364
   },
-  "rs7000093_afram": {
-    "rsid": "rs7000093_afram",
+  "rs7000093": {
+    "rsid": "rs7000093",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4219,8 +4219,8 @@
     "chromosome": "8",
     "position": 72185867
   },
-  "rs7000094_afram": {
-    "rsid": "rs7000094_afram",
+  "rs7000094": {
+    "rsid": "rs7000094",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4239,8 +4239,8 @@
     "chromosome": "8",
     "position": 55900800
   },
-  "rs7000095_afram": {
-    "rsid": "rs7000095_afram",
+  "rs7000095": {
+    "rsid": "rs7000095",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4259,8 +4259,8 @@
     "chromosome": "8",
     "position": 124809604
   },
-  "rs7000096_afram": {
-    "rsid": "rs7000096_afram",
+  "rs7000096": {
+    "rsid": "rs7000096",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4279,8 +4279,8 @@
     "chromosome": "8",
     "position": 139747815
   },
-  "rs7000097_afram": {
-    "rsid": "rs7000097_afram",
+  "rs7000097": {
+    "rsid": "rs7000097",
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
@@ -4322,35 +4322,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01scuzj-0005171.v1": {
-    "rsid": "mh01scuzj-0005171.v1",
+  "mh01scuzj-0005171": {
+    "rsid": "mh01scuzj-0005171",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:A:G:T:T:G:A:G:G:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01scuzj-0005171.v2": {
-    "rsid": "mh01scuzj-0005171.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:T:T:G:A:G:G:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -4425,8 +4402,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01scuzj-0109665.v1": {
-    "rsid": "mh01scuzj-0109665.v1",
+  "mh01scuzj-0109665": {
+    "rsid": "mh01scuzj-0109665",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -4438,43 +4415,6 @@
       "T:G:G",
       "C:G:C",
       "C:C:C"
-    ],
-    "frequencies": {
-      "AFR": 0.582,
-      "EUR": 0.078,
-      "ASW": 0.467
-    },
-    "subFrequencies": {
-      "ASW": 0.46721
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01scuzj-0109665.v2": {
-    "rsid": "mh01scuzj-0109665.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:C:G:C",
-      "C:G:G:C",
-      "T:C:C:C",
-      "T:C:G:C",
-      "T:C:G:T",
-      "T:G:C:C",
-      "T:G:G:C",
-      "T:G:G:T",
-      "C:C:G:T",
-      "C:G:C:C",
-      "T:G:C:T",
-      "C:C:C:C",
-      "T:C:C:T",
-      "C:C:C:T",
-      "C:G:G:T"
     ],
     "frequencies": {
       "AFR": 0.009,
@@ -4492,8 +4432,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-077.v2": {
-    "rsid": "mh01wl-077.v2",
+  "mh01wl-077": {
+    "rsid": "mh01wl-077",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -4520,38 +4460,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-088.v1": {
-    "rsid": "mh01wl-088.v1",
+  "mh01wl-088": {
+    "rsid": "mh01wl-088",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "T:C:T:C:G",
       "T:C:G:C:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-088.v2": {
-    "rsid": "mh01wl-088.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:C:G:A:A:T",
-      "T:C:G:A:T:T",
-      "G:C:G:A:A:T"
     ],
     "frequencies": {
       "AFR": 0.014,
@@ -4627,8 +4542,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-003.v1": {
-    "rsid": "mh01wl-003.v1",
+  "mh01wl-003": {
+    "rsid": "mh01wl-003",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -4961,58 +4876,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh01wl-024.v2": {
-    "rsid": "mh01wl-024.v2",
+  "mh01wl-024": {
+    "rsid": "mh01wl-024",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:T:A:T:A:T:A:A:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-024.v1": {
-    "rsid": "mh01wl-024.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:T:A:T:A:A:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh01wl-024.v3": {
-    "rsid": "mh01wl-024.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:A:A"
     ],
     "frequencies": {
       "AFR": 1,
@@ -5077,35 +4946,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-001.v1": {
-    "rsid": "mh02wl-001.v1",
+  "mh02wl-001": {
+    "rsid": "mh02wl-001",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:T:G:T:C:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-001.v2": {
-    "rsid": "mh02wl-001.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:T:G:T:C:T:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -5239,58 +5085,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-025.v2": {
-    "rsid": "mh02wl-025.v2",
+  "mh02wl-025": {
+    "rsid": "mh02wl-025",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "T:C:G:G:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-025.v3": {
-    "rsid": "mh02wl-025.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-025.v1": {
-    "rsid": "mh02wl-025.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:G:G:T:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -5443,8 +5243,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02scuzj-0224273.v2": {
-    "rsid": "mh02scuzj-0224273.v2",
+  "mh02scuzj-0224273": {
+    "rsid": "mh02scuzj-0224273",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -5582,8 +5382,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02scuzj-0451996.v2": {
-    "rsid": "mh02scuzj-0451996.v2",
+  "mh02scuzj-0451996": {
+    "rsid": "mh02scuzj-0451996",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -5804,35 +5604,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh02wl-030.v2": {
-    "rsid": "mh02wl-030.v2",
+  "mh02wl-030": {
+    "rsid": "mh02wl-030",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:C:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh02wl-030.v1": {
-    "rsid": "mh02wl-030.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:C:A:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -5880,8 +5657,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-016.v1": {
-    "rsid": "mh03kk-016.v1",
+  "mh03kk-016": {
+    "rsid": "mh03kk-016",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -5898,41 +5675,6 @@
       "C:G:T:T:T:T:G:C:T",
       "C:T:C:T:T:T:G:C:G",
       "T:G:C:T:C:G:G:T:G"
-    ],
-    "frequencies": {
-      "AFR": 0.551,
-      "EUR": 0.293,
-      "ASW": 0.492
-    },
-    "subFrequencies": {
-      "ASW": 0.4918
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-016.v2": {
-    "rsid": "mh03kk-016.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:G:C:C:C:T:A:C:G:T:C:G",
-      "C:G:C:T:C:T:A:C:G:C:C:T",
-      "C:G:T:C:C:T:A:C:G:T:C:G",
-      "C:G:T:T:C:T:A:C:C:C:C:T",
-      "C:G:T:T:C:T:A:C:G:C:C:T",
-      "C:T:C:C:C:T:A:C:G:C:C:G",
-      "C:T:C:C:C:T:A:C:G:C:C:T",
-      "C:T:C:T:C:T:A:C:G:T:C:T",
-      "C:T:C:T:T:T:A:C:G:C:C:T",
-      "C:G:C:T:C:T:A:C:G:T:C:G",
-      "C:G:T:T:T:T:A:C:G:C:C:T",
-      "C:G:T:C:C:T:A:C:G:T:T:G",
-      "C:T:C:T:T:T:A:C:G:C:C:G"
     ],
     "frequencies": {
       "AFR": 0.551,
@@ -5973,8 +5715,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-070.v1": {
-    "rsid": "mh03wl-070.v1",
+  "mh03wl-070": {
+    "rsid": "mh03wl-070",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6000,41 +5742,6 @@
       "C:A:T:T:G",
       "C:A:C:T:G",
       "T:C:T:A:G"
-    ],
-    "frequencies": {
-      "AFR": 0.568,
-      "EUR": 0.584,
-      "ASW": 0.607
-    },
-    "subFrequencies": {
-      "ASW": 0.60656
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03wl-070.v4": {
-    "rsid": "mh03wl-070.v4",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:C:A:A",
-      "A:C:T:A",
-      "A:C:T:G",
-      "A:T:A:A",
-      "A:T:A:G",
-      "A:T:T:A",
-      "A:T:T:G",
-      "C:C:A:A",
-      "C:C:A:G",
-      "C:C:T:A",
-      "C:C:T:G",
-      "A:C:A:G",
-      "C:T:A:G"
     ],
     "frequencies": {
       "AFR": 0.568,
@@ -6329,69 +6036,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03kk-150.v3": {
-    "rsid": "mh03kk-150.v3",
+  "mh03kk-150": {
+    "rsid": "mh03kk-150",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:A",
       "G:A",
       "G:G"
-    ],
-    "frequencies": {
-      "AFR": 0.328,
-      "EUR": 0.262,
-      "ASW": 0.41
-    },
-    "subFrequencies": {
-      "ASW": 0.40984
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-150.v1": {
-    "rsid": "mh03kk-150.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:C:A",
-      "A:A:T:A",
-      "G:A:C:C",
-      "G:G:C:C"
-    ],
-    "frequencies": {
-      "AFR": 0.328,
-      "EUR": 0.262,
-      "ASW": 0.41
-    },
-    "subFrequencies": {
-      "ASW": 0.41
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03kk-150.v2": {
-    "rsid": "mh03kk-150.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:T:A:A:G:G:C:C:A",
-      "A:T:A:A:G:G:T:C:A",
-      "G:T:A:A:G:G:C:C:C",
-      "G:T:G:A:G:G:C:C:C",
-      "A:T:A:A:G:A:C:C:A",
-      "G:T:G:A:G:A:C:C:C",
-      "A:T:A:A:G:G:C:T:A"
     ],
     "frequencies": {
       "AFR": 0.328,
@@ -6475,8 +6127,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-039.v2": {
-    "rsid": "mh03wl-039.v2",
+  "mh03wl-039": {
+    "rsid": "mh03wl-039",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6486,33 +6138,6 @@
       "C:T:A:A:T",
       "C:T:G:A:A",
       "C:T:G:A:T"
-    ],
-    "frequencies": {
-      "AFR": 0.493,
-      "EUR": 0.118,
-      "ASW": 0.41
-    },
-    "subFrequencies": {
-      "ASW": 0.40984
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03wl-039.v1": {
-    "rsid": "mh03wl-039.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:T:A",
-      "A:A:T:G",
-      "A:G:T:G",
-      "G:A:A:G",
-      "G:A:T:G"
     ],
     "frequencies": {
       "AFR": 0.493,
@@ -6610,35 +6235,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-065.v1": {
-    "rsid": "mh03wl-065.v1",
+  "mh03wl-065": {
+    "rsid": "mh03wl-065",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:G:T:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh03wl-065.v2": {
-    "rsid": "mh03wl-065.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:T:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -6682,8 +6284,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-020.v1": {
-    "rsid": "mh03wl-020.v1",
+  "mh03wl-020": {
+    "rsid": "mh03wl-020",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6705,31 +6307,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh03wl-020.v2": {
-    "rsid": "mh03wl-020.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:A:C:G:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-018.v1": {
-    "rsid": "mh04wl-018.v1",
+  "mh04wl-018": {
+    "rsid": "mh04wl-018",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6738,32 +6317,6 @@
       "T:G:A:C:T:G:G",
       "A:G:A:C:T:G:G",
       "T:G:A:C:T:A:C"
-    ],
-    "frequencies": {
-      "AFR": 0.832,
-      "EUR": 0.596,
-      "ASW": 0.82
-    },
-    "subFrequencies": {
-      "ASW": 0.81967
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04wl-018.v2": {
-    "rsid": "mh04wl-018.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:A:C:T:A:G",
-      "G:A:C:T:G:C",
-      "G:A:C:T:G:G",
-      "G:A:C:T:A:C"
     ],
     "frequencies": {
       "AFR": 0.832,
@@ -6805,8 +6358,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-003.v2": {
-    "rsid": "mh04wl-003.v2",
+  "mh04wl-003": {
+    "rsid": "mh04wl-003",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6831,8 +6384,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0059871.v2": {
-    "rsid": "mh04scuzj-0059871.v2",
+  "mh04scuzj-0059871": {
+    "rsid": "mh04scuzj-0059871",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6879,8 +6432,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04zha-002.v4": {
-    "rsid": "mh04zha-002.v4",
+  "mh04zha-002": {
+    "rsid": "mh04zha-002",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6889,38 +6442,6 @@
       "T:C:C:T:T",
       "T:T:C:T:C",
       "T:T:C:T:T"
-    ],
-    "frequencies": {
-      "AFR": 0.471,
-      "EUR": 0.51,
-      "ASW": 0.475
-    },
-    "subFrequencies": {
-      "ASW": 0.47541
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04zha-002.v2": {
-    "rsid": "mh04zha-002.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:T:T:A:T:A:A:T",
-      "C:T:T:T:T:A:A:T",
-      "C:T:T:T:T:C:G:T",
-      "T:C:C:T:T:C:G:T",
-      "T:T:C:T:C:C:G:C",
-      "T:T:C:T:C:C:G:T",
-      "T:T:C:T:T:C:G:C",
-      "T:T:C:T:T:C:G:T",
-      "T:T:C:T:T:A:A:C",
-      "C:T:T:A:T:C:G:T"
     ],
     "frequencies": {
       "AFR": 0.467,
@@ -6938,8 +6459,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0146582.v2": {
-    "rsid": "mh04scuzj-0146582.v2",
+  "mh04scuzj-0146582": {
+    "rsid": "mh04scuzj-0146582",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -6989,39 +6510,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04kk-011.v2": {
-    "rsid": "mh04kk-011.v2",
+  "mh04kk-011": {
+    "rsid": "mh04kk-011",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A",
       "G"
-    ],
-    "frequencies": {
-      "AFR": 0.696,
-      "EUR": 0.134,
-      "ASW": 0.549
-    },
-    "subFrequencies": {
-      "ASW": 0.54918
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04kk-011.v1": {
-    "rsid": "mh04kk-011.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:C",
-      "A:T",
-      "G:C",
-      "G:T"
     ],
     "frequencies": {
       "AFR": 0.686,
@@ -7039,35 +6534,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04scuzj-0194557.v1": {
-    "rsid": "mh04scuzj-0194557.v1",
+  "mh04scuzj-0194557": {
+    "rsid": "mh04scuzj-0194557",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:A:A:C:C:G:G:G:T:A:G:T:A:C:G:G:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh04scuzj-0194557.v2": {
-    "rsid": "mh04scuzj-0194557.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:C:G:G:G:T:A:G:T:A"
     ],
     "frequencies": {
       "AFR": 1,
@@ -7133,8 +6605,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04kk-013.v4": {
-    "rsid": "mh04kk-013.v4",
+  "mh04kk-013": {
+    "rsid": "mh04kk-013",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -7371,8 +6843,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-074.v2": {
-    "rsid": "mh04wl-074.v2",
+  "mh04wl-074": {
+    "rsid": "mh04wl-074",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -7512,8 +6984,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh04wl-001.v3": {
-    "rsid": "mh04wl-001.v3",
+  "mh04wl-001": {
+    "rsid": "mh04wl-001",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -7584,81 +7056,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05wl-015.v4": {
-    "rsid": "mh05wl-015.v4",
+  "mh05wl-015": {
+    "rsid": "mh05wl-015",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "T:A:G:A:A:A:A:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-015.v2": {
-    "rsid": "mh05wl-015.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:C:G:T:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-015.v3": {
-    "rsid": "mh05wl-015.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:T:C:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05wl-015.v1": {
-    "rsid": "mh05wl-015.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:T:C:T:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -7860,35 +7263,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05scuzj-0282942.v1": {
-    "rsid": "mh05scuzj-0282942.v1",
+  "mh05scuzj-0282942": {
+    "rsid": "mh05scuzj-0282942",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:C:T:G:T:C:C:G:T:T:C:C:T:C:C:T:C:C:T:C:C:T:C:C:G:T:T:C:C:G:C:C:C:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh05scuzj-0282942.v2": {
-    "rsid": "mh05scuzj-0282942.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:T:C:C:G:C:C:C:G:C:C:C:G:C:G:C:C:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -8045,8 +7425,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh05scuzj-0427297.v2": {
-    "rsid": "mh05scuzj-0427297.v2",
+  "mh05scuzj-0427297": {
+    "rsid": "mh05scuzj-0427297",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -8424,8 +7804,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-039.v1": {
-    "rsid": "mh06wl-039.v1",
+  "mh06wl-039": {
+    "rsid": "mh06wl-039",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -8447,38 +7827,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06scuzj-0480560.v1": {
-    "rsid": "mh06scuzj-0480560.v1",
+  "mh06scuzj-0480560": {
+    "rsid": "mh06scuzj-0480560",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "G:T:A:T:C:G:G:C:A:G:C:A:A:C:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:A:A:T:G:A",
       "G:T:A:T:C:G:G:C:A:G:C:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "AFR": 0.007,
-      "EUR": 1,
-      "ASW": 0.992
-    },
-    "subFrequencies": {
-      "ASW": 0.9918
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06scuzj-0480560.v2": {
-    "rsid": "mh06scuzj-0480560.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:C:G:G:C:A:G:C:A:A",
-      "T:C:G:G:C:A:G:C:T:A"
     ],
     "frequencies": {
       "AFR": 0.007,
@@ -8522,8 +7878,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-071.v1": {
-    "rsid": "mh06wl-071.v1",
+  "mh06wl-071": {
+    "rsid": "mh06wl-071",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -8536,35 +7892,6 @@
       "T:G:T:A:T",
       "C:G:T:G:T",
       "T:G:G:G:T"
-    ],
-    "frequencies": {
-      "AFR": 0.489,
-      "EUR": 0.254,
-      "ASW": 0.426
-    },
-    "subFrequencies": {
-      "ASW": 0.42623
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06wl-071.v2": {
-    "rsid": "mh06wl-071.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:C:C:T",
-      "G:C:C:C",
-      "G:C:C:T",
-      "G:T:C:C",
-      "A:T:C:T",
-      "A:C:C:C",
-      "G:C:A:T"
     ],
     "frequencies": {
       "AFR": 0.489,
@@ -8686,35 +8013,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh06wl-006.v2": {
-    "rsid": "mh06wl-006.v2",
+  "mh06wl-006": {
+    "rsid": "mh06wl-006",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:C:G:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh06wl-006.v1": {
-    "rsid": "mh06wl-006.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:G:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -8854,35 +8158,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-018.v1": {
-    "rsid": "mh07wl-018.v1",
+  "mh07wl-018": {
+    "rsid": "mh07wl-018",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "T:T:C:A:G:T:C:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-018.v3": {
-    "rsid": "mh07wl-018.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:C:A:G:T:C:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -8977,35 +8258,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07scuzj-0102959.v1": {
-    "rsid": "mh07scuzj-0102959.v1",
+  "mh07scuzj-0102959": {
+    "rsid": "mh07scuzj-0102959",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "G:A:A:C:A:A:G:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07scuzj-0102959.v2": {
-    "rsid": "mh07scuzj-0102959.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:C:A:A:G:T:G:T:G:G:T:G:G:C:G:A:C:C:C:A:T:G:A:T:C:A"
     ],
     "frequencies": {
       "AFR": 1,
@@ -9217,8 +8475,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07hyp-19.v1": {
-    "rsid": "mh07hyp-19.v1",
+  "mh07hyp-19": {
+    "rsid": "mh07hyp-19",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -9420,8 +8678,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-011.v3": {
-    "rsid": "mh07wl-011.v3",
+  "mh07wl-011": {
+    "rsid": "mh07wl-011",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -9554,8 +8812,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-073.v1": {
-    "rsid": "mh07wl-073.v1",
+  "mh07wl-073": {
+    "rsid": "mh07wl-073",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -9580,41 +8838,6 @@
       "A:C:T:G:C:C",
       "A:C:C:A:T:T",
       "A:C:C:A:C:T"
-    ],
-    "frequencies": {
-      "AFR": 0.606,
-      "EUR": 0.085,
-      "ASW": 0.467
-    },
-    "subFrequencies": {
-      "ASW": 0.46721
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-073.v2": {
-    "rsid": "mh07wl-073.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:C:A:C:C",
-      "C:C:A:T:C",
-      "C:C:A:T:T",
-      "C:C:G:C:C",
-      "C:C:G:C:T",
-      "C:C:G:T:T",
-      "C:T:A:C:T",
-      "C:T:A:T:T",
-      "C:C:A:C:T",
-      "C:T:A:C:C",
-      "C:T:A:T:C",
-      "T:C:G:T:T",
-      "C:T:G:C:C"
     ],
     "frequencies": {
       "AFR": 0.608,
@@ -9704,58 +8927,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh07wl-017.v2": {
-    "rsid": "mh07wl-017.v2",
+  "mh07wl-017": {
+    "rsid": "mh07wl-017",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:A:G:A:G:A:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-017.v3": {
-    "rsid": "mh07wl-017.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:A:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh07wl-017.v1": {
-    "rsid": "mh07wl-017.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:A:G:A:A"
     ],
     "frequencies": {
       "AFR": 1,
@@ -9873,35 +9050,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08wl-016.v1": {
-    "rsid": "mh08wl-016.v1",
+  "mh08wl-016": {
+    "rsid": "mh08wl-016",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "G:T:A:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08wl-016.v2": {
-    "rsid": "mh08wl-016.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:T:A:A:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -10119,58 +9273,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh08wl-014.v2": {
-    "rsid": "mh08wl-014.v2",
+  "mh08wl-014": {
+    "rsid": "mh08wl-014",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:G:G:G:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08wl-014.v1": {
-    "rsid": "mh08wl-014.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:G:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh08wl-014.v3": {
-    "rsid": "mh08wl-014.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -10214,63 +9322,14 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-010.v1": {
-    "rsid": "mh09wl-010.v1",
+  "mh09wl-010": {
+    "rsid": "mh09wl-010",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:G:G:A:T:A:T",
       "A:G:G:A:T:G:T",
       "T:G:G:A:T:G:T"
-    ],
-    "frequencies": {
-      "AFR": 0.001,
-      "EUR": 0.996,
-      "ASW": 0.984
-    },
-    "subFrequencies": {
-      "ASW": 0.98361
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-010.v3": {
-    "rsid": "mh09wl-010.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:G:A:A:T",
-      "A:G:G:A:G:T",
-      "T:G:G:A:G:T"
-    ],
-    "frequencies": {
-      "AFR": 0.001,
-      "EUR": 0.996,
-      "ASW": 0.984
-    },
-    "subFrequencies": {
-      "ASW": 0.98361
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-010.v2": {
-    "rsid": "mh09wl-010.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:A:T:A:T",
-      "G:G:A:T:G:T"
     ],
     "frequencies": {
       "AFR": 0.984,
@@ -10424,8 +9483,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09kk-152.v2": {
-    "rsid": "mh09kk-152.v2",
+  "mh09kk-152": {
+    "rsid": "mh09kk-152",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -10564,8 +9623,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-014.v3": {
-    "rsid": "mh09wl-014.v3",
+  "mh09wl-014": {
+    "rsid": "mh09wl-014",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -10587,81 +9646,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh09wl-014.v1": {
-    "rsid": "mh09wl-014.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:C:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09wl-014.v2": {
-    "rsid": "mh09wl-014.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:C:T:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09scuzj-0395135.v1": {
-    "rsid": "mh09scuzj-0395135.v1",
+  "mh09scuzj-0395135": {
+    "rsid": "mh09scuzj-0395135",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "T:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh09scuzj-0395135.v2": {
-    "rsid": "mh09scuzj-0395135.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:G:A:G:G:A:A:A"
     ],
     "frequencies": {
       "AFR": 1,
@@ -11308,58 +10298,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh10wl-043.v3": {
-    "rsid": "mh10wl-043.v3",
+  "mh10wl-043": {
+    "rsid": "mh10wl-043",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "T:A:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh10wl-043.v1": {
-    "rsid": "mh10wl-043.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:A:T:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh10wl-043.v2": {
-    "rsid": "mh10wl-043.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:A:T:T:A:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -11469,8 +10413,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11kk-036.v1": {
-    "rsid": "mh11kk-036.v1",
+  "mh11kk-036": {
+    "rsid": "mh11kk-036",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -11640,8 +10584,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-015.v2": {
-    "rsid": "mh11wl-015.v2",
+  "mh11wl-015": {
+    "rsid": "mh11wl-015",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -11663,31 +10607,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-015.v1": {
-    "rsid": "mh11wl-015.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:T:G:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-024.v1": {
-    "rsid": "mh11wl-024.v1",
+  "mh11wl-024": {
+    "rsid": "mh11wl-024",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -11698,34 +10619,6 @@
       "C:T:G:T:G",
       "T:T:G:T:G",
       "T:C:A:T:A"
-    ],
-    "frequencies": {
-      "AFR": 0.001,
-      "EUR": 0.001,
-      "ASW": 0.492
-    },
-    "subFrequencies": {
-      "ASW": 0.4918
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh11wl-024.v2": {
-    "rsid": "mh11wl-024.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:A:T:G",
-      "C:G:C:G",
-      "C:G:T:A",
-      "C:G:T:G",
-      "T:G:T:G",
-      "C:A:T:A"
     ],
     "frequencies": {
       "AFR": 0.529,
@@ -11866,8 +10759,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-011.v1": {
-    "rsid": "mh11wl-011.v1",
+  "mh11wl-011": {
+    "rsid": "mh11wl-011",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12123,8 +11016,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-001.v1": {
-    "rsid": "mh11wl-001.v1",
+  "mh11wl-001": {
+    "rsid": "mh11wl-001",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12147,8 +11040,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-030.v2": {
-    "rsid": "mh11wl-030.v2",
+  "mh11wl-030": {
+    "rsid": "mh11wl-030",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12170,31 +11063,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh11wl-030.v1": {
-    "rsid": "mh11wl-030.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:A:C:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12wl-011.v2": {
-    "rsid": "mh12wl-011.v2",
+  "mh12wl-011": {
+    "rsid": "mh12wl-011",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12339,8 +11209,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-052.v2": {
-    "rsid": "mh12wl-052.v2",
+  "mh12wl-052": {
+    "rsid": "mh12wl-052",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12366,8 +11236,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12scuzj-0265665.v1": {
-    "rsid": "mh12scuzj-0265665.v1",
+  "mh12scuzj-0265665": {
+    "rsid": "mh12scuzj-0265665",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12389,58 +11259,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12scuzj-0265665.v2": {
-    "rsid": "mh12scuzj-0265665.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:T:C:T:A:T:T:A:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12scuzj-0276370.v1": {
-    "rsid": "mh12scuzj-0276370.v1",
+  "mh12scuzj-0276370": {
+    "rsid": "mh12scuzj-0276370",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:A:T:T:T:T:T:T:T:T:A:T:G:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12scuzj-0276370.v2": {
-    "rsid": "mh12scuzj-0276370.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:T:T:A:T:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -12508,8 +11332,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-018.v1": {
-    "rsid": "mh12wl-018.v1",
+  "mh12wl-018": {
+    "rsid": "mh12wl-018",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12561,8 +11385,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-048.v1": {
-    "rsid": "mh12wl-048.v1",
+  "mh12wl-048": {
+    "rsid": "mh12wl-048",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12631,8 +11455,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-013.v2": {
-    "rsid": "mh12wl-013.v2",
+  "mh12wl-013": {
+    "rsid": "mh12wl-013",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12654,54 +11478,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-013.v1": {
-    "rsid": "mh12wl-013.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:T:A:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12wl-013.v3": {
-    "rsid": "mh12wl-013.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:A:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12kk-046.v1": {
-    "rsid": "mh12kk-046.v1",
+  "mh12kk-046": {
+    "rsid": "mh12kk-046",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -12726,35 +11504,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh12wl-001.v2": {
-    "rsid": "mh12wl-001.v2",
+  "mh12wl-001": {
+    "rsid": "mh12wl-001",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "G:T:T:C:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh12wl-001.v1": {
-    "rsid": "mh12wl-001.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:T:C:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -12872,8 +11627,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-213.v4": {
-    "rsid": "mh13kk-213.v4",
+  "mh13kk-213": {
+    "rsid": "mh13kk-213",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -13088,8 +11843,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13kk-225.v4": {
-    "rsid": "mh13kk-225.v4",
+  "mh13kk-225": {
+    "rsid": "mh13kk-225",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -13326,35 +12081,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh13wl-008.v1": {
-    "rsid": "mh13wl-008.v1",
+  "mh13wl-008": {
+    "rsid": "mh13wl-008",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:A:C:A:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh13wl-008.v2": {
-    "rsid": "mh13wl-008.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:C:A:C:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -13633,8 +12365,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh14wl-030.v1": {
-    "rsid": "mh14wl-030.v1",
+  "mh14wl-030": {
+    "rsid": "mh14wl-030",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -13669,8 +12401,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh14kk-048.v1": {
-    "rsid": "mh14kk-048.v1",
+  "mh14kk-048": {
+    "rsid": "mh14kk-048",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -13776,35 +12508,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh14wl-010.v2": {
-    "rsid": "mh14wl-010.v2",
+  "mh14wl-010": {
+    "rsid": "mh14wl-010",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:A:T:G:C:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh14wl-010.v1": {
-    "rsid": "mh14wl-010.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:G:C:C"
     ],
     "frequencies": {
       "AFR": 1,
@@ -14002,8 +12711,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15kk-067.v4": {
-    "rsid": "mh15kk-067.v4",
+  "mh15kk-067": {
+    "rsid": "mh15kk-067",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14059,8 +12768,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh15kk-066.v4": {
-    "rsid": "mh15kk-066.v4",
+  "mh15kk-066": {
+    "rsid": "mh15kk-066",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14412,8 +13121,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-013.v2": {
-    "rsid": "mh16wl-013.v2",
+  "mh16wl-013": {
+    "rsid": "mh16wl-013",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14445,40 +13154,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-013.v1": {
-    "rsid": "mh16wl-013.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:G:C:T:C",
-      "A:A:G:G:C:G",
-      "A:A:G:G:T:G",
-      "A:G:G:G:T:G",
-      "G:A:G:G:T:G",
-      "G:G:A:G:T:G",
-      "G:G:G:C:T:G",
-      "G:G:G:G:T:C",
-      "G:G:G:G:T:G",
-      "A:A:G:C:T:G"
-    ],
-    "frequencies": {
-      "AFR": 0.547,
-      "EUR": 0.18,
-      "ASW": 0.451
-    },
-    "subFrequencies": {
-      "ASW": 0.45082
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh16kk-255.v4": {
-    "rsid": "mh16kk-255.v4",
+  "mh16kk-255": {
+    "rsid": "mh16kk-255",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14587,37 +13264,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16scuzj-0328951.v1": {
-    "rsid": "mh16scuzj-0328951.v1",
+  "mh16scuzj-0328951": {
+    "rsid": "mh16scuzj-0328951",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "G:G:C:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh16scuzj-0328951.v2": {
-    "rsid": "mh16scuzj-0328951.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:C:A:T:C:A:T:T",
-      "G:G:C:A:T:C:T:C:T",
-      "G:G:C:A:T:C:T:T:T"
     ],
     "frequencies": {
       "AFR": 0.932,
@@ -14635,8 +13287,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-010.v1": {
-    "rsid": "mh16wl-010.v1",
+  "mh16wl-010": {
+    "rsid": "mh16wl-010",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14658,31 +13310,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh16wl-010.v2": {
-    "rsid": "mh16wl-010.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:A:G:C:A:T:T:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-009.v1": {
-    "rsid": "mh17wl-009.v1",
+  "mh17wl-009": {
+    "rsid": "mh17wl-009",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14693,59 +13322,6 @@
       "A:G:T:T:A:T:T:C:C:T:T:T:T:T",
       "A:A:T:T:A:T:T:T:T:T:T:T:T:T",
       "C:G:T:T:A:T:T:C:T:T:T:T:T:T"
-    ],
-    "frequencies": {
-      "AFR": 0.904,
-      "EUR": 0.977,
-      "ASW": 0.869
-    },
-    "subFrequencies": {
-      "ASW": 0.86885
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-009.v2": {
-    "rsid": "mh17wl-009.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "C:A:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "C:G:T:T:A:T:T:C:C:T:T:T:T:T:A:T",
-      "C:G:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "A:G:T:T:A:T:T:C:C:T:T:T:T:T:A:T",
-      "A:A:T:T:A:T:T:T:T:T:T:T:T:T:A:T",
-      "C:G:T:T:A:T:T:C:T:T:T:T:T:T:A:T"
-    ],
-    "frequencies": {
-      "AFR": 0.904,
-      "EUR": 0.977,
-      "ASW": 0.869
-    },
-    "subFrequencies": {
-      "ASW": 0.86885
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-009.v3": {
-    "rsid": "mh17wl-009.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:T:T:A:T:T:T:T:T:T:T:T:T:T:A:A:G:G:A",
-      "G:T:T:A:T:T:T:T:T:T:T:T:T:T:A:A:G:G:A"
     ],
     "frequencies": {
       "AFR": 0.956,
@@ -14834,35 +13410,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17scuzj-0090327.v1": {
-    "rsid": "mh17scuzj-0090327.v1",
+  "mh17scuzj-0090327": {
+    "rsid": "mh17scuzj-0090327",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "C:T:C:T:T:A:G:A:A:G:C:A:C:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17scuzj-0090327.v2": {
-    "rsid": "mh17scuzj-0090327.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:A:A:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -14933,8 +13486,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17wl-008.v2": {
-    "rsid": "mh17wl-008.v2",
+  "mh17wl-008": {
+    "rsid": "mh17wl-008",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -14956,54 +13509,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh17wl-008.v1": {
-    "rsid": "mh17wl-008.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "T:C:T:G:A:C:G:G:T:G:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-008.v3": {
-    "rsid": "mh17wl-008.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:T:G:C"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-030.v2": {
-    "rsid": "mh17wl-030.v2",
+  "mh17wl-030": {
+    "rsid": "mh17wl-030",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -15011,30 +13518,6 @@
       "G:C:C:A:G:C:G:G:C:G:C:C",
       "G:C:C:C:G:C:G:G:A:G:C:C",
       "G:C:C:C:G:C:G:G:C:G:C:C"
-    ],
-    "frequencies": {
-      "AFR": 0.886,
-      "EUR": 0.958,
-      "ASW": 0.893
-    },
-    "subFrequencies": {
-      "ASW": 0.89344
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh17wl-030.v1": {
-    "rsid": "mh17wl-030.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:C:A:G:C:G:G:G:C:C",
-      "C:C:C:G:C:G:G:G:C:C"
     ],
     "frequencies": {
       "AFR": 0.905,
@@ -15122,36 +13605,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18wl-009.v2": {
-    "rsid": "mh18wl-009.v2",
+  "mh18wl-009": {
+    "rsid": "mh18wl-009",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:G:G:C:T:G:G:T:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh18wl-009.v1": {
-    "rsid": "mh18wl-009.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:G:G:C:T:G:G:T:G:A",
-      "A:G:G:C:T:G:G:T:G:G"
     ],
     "frequencies": {
       "AFR": 0.746,
@@ -15169,35 +13628,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18scuzj-0091845.v1": {
-    "rsid": "mh18scuzj-0091845.v1",
+  "mh18scuzj-0091845": {
+    "rsid": "mh18scuzj-0091845",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:T:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh18scuzj-0091845.v2": {
-    "rsid": "mh18scuzj-0091845.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:T:A:A:T"
     ],
     "frequencies": {
       "AFR": 1,
@@ -15362,8 +13798,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18wl-010.v2": {
-    "rsid": "mh18wl-010.v2",
+  "mh18wl-010": {
+    "rsid": "mh18wl-010",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -15385,82 +13821,13 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh18wl-010.v1": {
-    "rsid": "mh18wl-010.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:G:C:G:G:G:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh19wl-007.v2": {
-    "rsid": "mh19wl-007.v2",
+  "mh19wl-007": {
+    "rsid": "mh19wl-007",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:G:G:A:A:A",
       "G:G:G:A:A:A"
-    ],
-    "frequencies": {
-      "AFR": 0.972,
-      "EUR": 0.977,
-      "ASW": 0.975
-    },
-    "subFrequencies": {
-      "ASW": 0.97541
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh19wl-007.v1": {
-    "rsid": "mh19wl-007.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:G:A:A:A"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh19wl-007.v3": {
-    "rsid": "mh19wl-007.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:A:A:A"
     ],
     "frequencies": {
       "AFR": 1,
@@ -15762,8 +14129,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh20kk-307.v3": {
-    "rsid": "mh20kk-307.v3",
+  "mh20kk-307": {
+    "rsid": "mh20kk-307",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -15963,35 +14330,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh20wl-001.v2": {
-    "rsid": "mh20wl-001.v2",
+  "mh20wl-001": {
+    "rsid": "mh20wl-001",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "G:G:A:G:G:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh20wl-001.v1": {
-    "rsid": "mh20wl-001.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "G:A:G:G:G:G"
     ],
     "frequencies": {
       "AFR": 1,
@@ -16055,8 +14399,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21scuzj-0100459.v1": {
-    "rsid": "mh21scuzj-0100459.v1",
+  "mh21scuzj-0100459": {
+    "rsid": "mh21scuzj-0100459",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -16078,31 +14422,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21scuzj-0100459.v2": {
-    "rsid": "mh21scuzj-0100459.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:A:T:T:G:A:T:T:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21kk-320.v4": {
-    "rsid": "mh21kk-320.v4",
+  "mh21kk-320": {
+    "rsid": "mh21kk-320",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -16194,58 +14515,12 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh21wl-005.v2": {
-    "rsid": "mh21wl-005.v2",
+  "mh21wl-005": {
+    "rsid": "mh21wl-005",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
       "A:A:A:G:G:T"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21wl-005.v3": {
-    "rsid": "mh21wl-005.v3",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:G:G"
-    ],
-    "frequencies": {
-      "AFR": 1,
-      "EUR": 1,
-      "ASW": 1
-    },
-    "subFrequencies": {
-      "ASW": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh21wl-005.v1": {
-    "rsid": "mh21wl-005.v1",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "A:A:G:G:T"
     ],
     "frequencies": {
       "AFR": 1,
@@ -16333,8 +14608,8 @@
     "chromosome": "1",
     "position": 1000000
   },
-  "mh22wl-013.v1": {
-    "rsid": "mh22wl-013.v1",
+  "mh22wl-013": {
+    "rsid": "mh22wl-013",
     "region": "African American",
     "color": "#2ECC71",
     "alleles": [
@@ -16342,35 +14617,6 @@
       "C:A:G:A:A:T:G:A",
       "C:A:G:A:A:T:G:G",
       "C:A:G:A:A:T:A:A"
-    ],
-    "frequencies": {
-      "AFR": 0.592,
-      "EUR": 0.71,
-      "ASW": 0.639
-    },
-    "subFrequencies": {
-      "ASW": 0.63934
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "MICROHAP-AIM",
-    "trait": "Ancestry",
-    "description": "Transatlantic diaspora microhaplotype AIM marker.",
-    "chromosome": "1",
-    "position": 1000000
-  },
-  "mh22wl-013.v2": {
-    "rsid": "mh22wl-013.v2",
-    "region": "African American",
-    "color": "#2ECC71",
-    "alleles": [
-      "C:G:G:G:T:A:A:T:A:G:G",
-      "C:G:G:G:T:A:A:T:G:A:A",
-      "C:G:G:G:T:A:A:T:G:A:G",
-      "C:G:G:G:T:A:A:T:G:G:G",
-      "C:G:G:G:T:A:A:T:G:G:A",
-      "C:G:G:G:C:A:A:T:G:A:G",
-      "C:G:G:G:T:A:A:T:A:A:A"
     ],
     "frequencies": {
       "AFR": 0.587,
