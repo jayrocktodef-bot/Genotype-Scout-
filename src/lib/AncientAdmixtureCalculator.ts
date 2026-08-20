@@ -12,6 +12,7 @@ export interface AncientSampleMatch {
   description: string;
   period: string;
   region: string;
+  continent?: string;
   matchingMarkers: number;
   culture?: string;
   age_bp?: number;
@@ -36,40 +37,46 @@ export interface ArchaicIntrogressionResult {
   details: ArchaicVariantDetail[];
 }
 
-const CLADE_INFO: Record<string, { name: string; region: string; period: string; description: string }> = {
+const CLADE_INFO: Record<string, { name: string; region: string; continent: string; period: string; description: string }> = {
   Yamnaya: {
     name: "Yamnaya Steppe Pastoralist",
     region: "Pontic Steppe",
+    continent: "Asia",
     period: "Bronze Age (~3,300 BCE)",
     description: "Bronze Age nomadic herders who migrated from the Pontic-Caspian steppe, massively altering Europe's genetic landscape."
   },
   WHG: {
     name: "Western Hunter-Gatherer",
     region: "Europe",
+    continent: "Europe",
     period: "Mesolithic (~8,000 BCE)",
     description: "Post-Ice Age hunter-gatherers of Europe, genetically characterized by dark skin and light/blue eyes."
   },
   EEF: {
     name: "Early European Farmer",
     region: "Anatolia / Europe",
+    continent: "Europe",
     period: "Neolithic (~6,000 BCE)",
     description: "Neolithic agriculturalists who migrated from Anatolia, introducing farming and lighter skin alleles into Europe."
   },
   Ancient_East_Asian: {
     name: "Ancient East Asian / Paleo-Indian",
     region: "East Asia / Siberia",
+    continent: "Asia",
     period: "Pleistocene (~15,000 BCE)",
     description: "Paleolithic hunter-gatherers of East Asia and Siberia, ancestral to modern East Asians and Native Americans."
   },
   Ancient_African: {
     name: "Ancient African",
     region: "Sub-Saharan Africa",
+    continent: "Africa",
     period: "Paleolithic (~10,000 BCE)",
     description: "Deeply diverse hunter-gatherer and early agricultural lineages that did not experience the Out-of-Africa bottleneck."
   },
   Oceanian: {
     name: "Deep Oceanian / Sahul",
     region: "Sahul / Melanesia",
+    continent: "Oceania",
     period: "Pleistocene (~40,000 BCE)",
     description: "Lineages of early modern human migrations to Papua New Guinea and Australia, retaining high levels of Denisovan admixture."
   }
@@ -211,6 +218,7 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
       description: info.description,
       period: info.period,
       region: info.region,
+      continent: info.continent,
       matchingMarkers: markersCompared
     };
   })
@@ -366,6 +374,17 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
       ? Math.max(0, 100 * (1 - (weightedDistance / maxPossibleWeightedDistance))) 
       : 0;
     
+    const getContinent = (s: any) => {
+      if (s.continent) return s.continent;
+      const text = `${s.region || ''} ${s.country || ''} ${s.site || ''} ${s.name || ''}`.toLowerCase();
+      if (text.includes('africa') || text.includes('ethiopia') || text.includes('cameroon') || text.includes('sudan') || text.includes('morocco') || text.includes('namibia') || text.includes('botswana') || text.includes('ghana') || text.includes('egypt') || text.includes('mali')) return 'Africa';
+      if (text.includes('america') || text.includes('usa') || text.includes('brazil') || text.includes('peru') || text.includes('chile') || text.includes('montana') || text.includes('washington') || text.includes('nevada') || text.includes('maryland')) return 'Americas';
+      if (text.includes('oceania') || text.includes('australia') || text.includes('willandra') || text.includes('sahul')) return 'Oceania';
+      if (text.includes('asia') || text.includes('china') || text.includes('japan') || text.includes('india') || text.includes('turkey') || text.includes('anatolian') || text.includes('eurasia') || text.includes('steppe')) return 'Asia';
+      if (text.includes('europe') || text.includes('luxembourg') || text.includes('uk') || text.includes('england') || text.includes('germany') || text.includes('russia')) return 'Europe';
+      return 'Other';
+    };
+
     return {
       popCode: sample.id || sample.sampleId,
       popName: sample.name,
@@ -374,6 +393,7 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
       description: sample.description,
       period: sample.period,
       region: sample.region,
+      continent: getContinent(sample),
       matchingMarkers: Object.keys(sampleSnps).filter(rsid => {
         const uG = (userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()])?.toUpperCase();
         const sG = (sampleSnps[rsid] as string)?.toUpperCase();

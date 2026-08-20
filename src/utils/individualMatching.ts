@@ -4,6 +4,7 @@ export interface IndividualMatch {
   sampleId: string;
   name: string;
   location: string;
+  continent?: string;
   era: string;
   affinity: number;      // The similarity score
   confidence: number;    // How reliable the match is (0-100)
@@ -44,9 +45,10 @@ export function matchToAncientIndividual(
   const confidence = Math.min(100, (overlappingMarkers / 30) * 100);
 
   return {
-    sampleId: sampleData.id,
+    sampleId: sampleData.id || sampleData.sampleId,
     name: sampleData.name,
     location: sampleData.site || sampleData.location || 'Unknown',
+    continent: sampleData.continent || sampleData.region || 'Other',
     era: sampleData.period || sampleData.era || 'Unknown',
     affinity: Math.round(affinity),
     confidence: Math.round(confidence),

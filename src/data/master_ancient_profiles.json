@@ -596,7 +596,8 @@
         "rs12913832": "GG",
         "rs4988235": "CC",
         "rs3827760": "AA"
-      }
+      },
+      "continent": "Europe"
     },
     "cheddar_man": {
       "id": "cheddar_man",
@@ -615,7 +616,8 @@
         "rs16891982": "CC",
         "rs12913832": "GG",
         "rs4988235": "CC"
-      }
+      },
+      "continent": "Europe"
     },
     "stuttgart": {
       "id": "stuttgart",
@@ -634,7 +636,8 @@
         "rs16891982": "CC",
         "rs12913832": "AA",
         "rs4988235": "CC"
-      }
+      },
+      "continent": "Europe"
     },
     "anzick": {
       "id": "anzick",
@@ -652,7 +655,8 @@
         "rs3827760": "GG",
         "rs1426654": "AA",
         "rs12913832": "AA"
-      }
+      },
+      "continent": "Americas"
     },
     "luzia": {
       "id": "luzia",
@@ -674,7 +678,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Americas"
     },
     "usr1": {
       "id": "usr1",
@@ -686,7 +691,7 @@
       "culture": "Ancient Beringian",
       "culture_name": "Ancient Beringian",
       "sex": "F",
-      "description": "An infant genome from interior Alaska representing Ancient Beringians—the earliest diverged lineage of ancient Americans prior to Northern/Southern Native American splits.",
+      "description": "An infant genome from interior Alaska representing Ancient Beringians\u2014the earliest diverged lineage of ancient Americans prior to Northern/Southern Native American splits.",
       "region": "Americas",
       "snps": {
         "rs3827760": "GG",
@@ -696,7 +701,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Americas"
     },
     "lovelock_cave": {
       "id": "lovelock_cave",
@@ -718,7 +724,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Americas"
     },
     "lauricocha": {
       "id": "lauricocha",
@@ -740,7 +747,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Americas"
     },
     "machu_picchu": {
       "id": "machu_picchu",
@@ -762,11 +770,12 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Americas"
     },
     "fuegian_yamana": {
       "id": "fuegian_yamana",
-      "name": "Fuegian Yámana Ancestor",
+      "name": "Fuegian Y\u00e1mana Ancestor",
       "site": "Tierra del Fuego",
       "country": "Chile/Argentina",
       "age_bp": 1500,
@@ -784,7 +793,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Americas"
     },
     "tianyuan": {
       "id": "tianyuan",
@@ -806,17 +816,18 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Asia"
     },
     "jomon": {
       "id": "jomon",
-      "name": "Jōmon Hunter-Gatherer",
+      "name": "J\u014dmon Hunter-Gatherer",
       "site": "Funadomari, Hokkaido",
       "country": "Japan",
       "age_bp": 3800,
-      "period": "Jōmon Period",
-      "culture": "Jōmon Culture",
-      "culture_name": "Jōmon",
+      "period": "J\u014dmon Period",
+      "culture": "J\u014dmon Culture",
+      "culture_name": "J\u014dmon",
       "sex": "M",
       "description": "Indigenous hunter-gatherer of the Japanese archipelago prior to Yayoi agricultural expansion. Characterized by wet earwax, dark skin, and unique island adaptation.",
       "region": "East Asia",
@@ -828,7 +839,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Asia"
     },
     "rakhigarhi": {
       "id": "rakhigarhi",
@@ -850,7 +862,8 @@
         "rs4988235": "GG",
         "rs1800414": "GG",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Asia"
     },
     "kostenki14": {
       "id": "kostenki14",
@@ -872,12 +885,13 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Europe"
     },
     "boncuklu": {
       "id": "boncuklu",
       "name": "Boncuklu Anatolian Farmer",
-      "site": "Boncuklu Höyük, Konya",
+      "site": "Boncuklu H\u00f6y\u00fck, Konya",
       "country": "Turkey",
       "age_bp": 10300,
       "period": "Pre-Pottery Neolithic",
@@ -894,7 +908,8 @@
         "rs4988235": "GG",
         "rs1800414": "AG",
         "rs1042602": "TT"
-      }
+      },
+      "continent": "Asia"
     },
     "australian_ancient": {
       "id": "australian_ancient",
@@ -916,7 +931,8 @@
         "rs4988235": "GG",
         "rs1800414": "AA",
         "rs1042602": "CC"
-      }
+      },
+      "continent": "Oceania"
     },
     "mota": {
       "id": "mota",
@@ -936,7 +952,8 @@
         "rs12913832": "AA",
         "rs2814778": "CC",
         "rs334": "AA"
-      }
+      },
+      "continent": "Africa"
     },
     "yamnaya_samara": {
       "id": "yamnaya_samara",
@@ -955,7 +972,8 @@
         "rs16891982": "CG",
         "rs12913832": "AA",
         "rs4988235": "CT"
-      }
+      },
+      "continent": "Asia"
     }
   },
   "clusters": [
@@ -1075,7 +1093,8 @@
         "rs4988235": "GG"
       },
       "culture": "Stone Age Hunter-Gatherer",
-      "age_bp": 4500
+      "age_bp": 4500,
+      "continent": "Africa"
     },
     {
       "id": "Shum-Laka-Cameroon",
@@ -1095,7 +1114,8 @@
         "rs2814778": "CC"
       },
       "culture": "Late Stone Age",
-      "age_bp": 8000
+      "age_bp": 8000,
+      "continent": "Africa"
     },
     {
       "id": "I8088-Catoctin",
@@ -1115,7 +1135,8 @@
         "rs16891982": "CG"
       },
       "culture": "African Diaspora",
-      "age_bp": 200
+      "age_bp": 200,
+      "continent": "Americas"
     },
     {
       "id": "GHK-Sudan",
@@ -1135,7 +1156,8 @@
         "rs1065852": "AA"
       },
       "culture": "Nubian",
-      "age_bp": 1500
+      "age_bp": 1500,
+      "continent": "Africa"
     },
     {
       "id": "Taforalt-Morocco",
@@ -1155,7 +1177,8 @@
         "rs16891982": "CC"
       },
       "culture": "Iberomaurusian",
-      "age_bp": 15000
+      "age_bp": 15000,
+      "continent": "Africa"
     },
     {
       "id": "Nama-San-Deep",
@@ -1175,7 +1198,8 @@
         "rs885479": "AA"
       },
       "culture": "Wilton / Oakhurst",
-      "age_bp": 10200
+      "age_bp": 10200,
+      "continent": "Africa"
     },
     {
       "id": "anzick_1",
@@ -1200,7 +1224,8 @@
         "rs1042602": "CA"
       },
       "culture": "Clovis Paleo-Indian",
-      "age_bp": 12600
+      "age_bp": 12600,
+      "continent": "Americas"
     },
     {
       "id": "kennewick_man",
@@ -1225,7 +1250,8 @@
         "rs1042602": "CC"
       },
       "culture": "Early Cascade",
-      "age_bp": 8900
+      "age_bp": 8900,
+      "continent": "Americas"
     },
     {
       "id": "gyamfi_single",
@@ -1249,7 +1275,8 @@
         "rs1042602": "CC"
       },
       "culture": "Kintampo Culture",
-      "age_bp": 2500
+      "age_bp": 2500,
+      "continent": "Africa"
     },
     {
       "id": "luxor_ancestor",
@@ -1272,7 +1299,8 @@
         "rs1042602": "CA"
       },
       "culture": "Ancient Egyptian",
-      "age_bp": 2200
+      "age_bp": 2200,
+      "continent": "Africa"
     },
     {
       "id": "rameses_iii",
@@ -1294,7 +1322,8 @@
         "rs1042602": "CC"
       },
       "culture": "Ancient Egyptian",
-      "age_bp": 3150
+      "age_bp": 3150,
+      "continent": "Africa"
     },
     {
       "id": "richard_iii",
@@ -1316,7 +1345,8 @@
         "rs1042602": "CA"
       },
       "culture": "Plantagenet English",
-      "age_bp": 540
+      "age_bp": 540,
+      "continent": "Europe"
     },
     {
       "id": "spirit_cave_mummy",
@@ -1340,7 +1370,8 @@
         "rs1042602": "CC"
       },
       "culture": "Early Great Basin Forager",
-      "age_bp": 10600
+      "age_bp": 10600,
+      "continent": "Americas"
     },
     {
       "id": "luzia_pedra_furada",
@@ -1364,7 +1395,8 @@
         "rs1042602": "CC"
       },
       "culture": "Lagoa Santa Paleo-Indian",
-      "age_bp": 11500
+      "age_bp": 11500,
+      "continent": "Americas"
     },
     {
       "id": "ballito_bay",
@@ -1386,7 +1418,8 @@
         "rs4988235": "GG"
       },
       "culture": "Later Stone Age Hunter-Gatherer",
-      "age_bp": 2000
+      "age_bp": 2000,
+      "continent": "Africa"
     },
     {
       "id": "asselar_man",
@@ -1408,7 +1441,8 @@
         "rs4988235": "GG"
       },
       "culture": "Wet Sahara Pastoralist",
-      "age_bp": 6500
+      "age_bp": 6500,
+      "continent": "Africa"
     }
   ]
 }
