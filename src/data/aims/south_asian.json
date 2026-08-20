@@ -16870,5 +16870,6860 @@
     "description": "Commercial array AIM marker informative for South Asian ancestry.",
     "chromosome": "1",
     "position": 1000000
+  },
+  "mh01wl-090": {
+    "rsid": "mh01wl-090",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A:G:T",
+      "C:G:G:A:C",
+      "C:G:G:A:T",
+      "C:G:G:G:C",
+      "C:G:G:G:T",
+      "C:T:A:G:C",
+      "T:G:A:G:T",
+      "T:G:G:A:C",
+      "T:G:G:A:T",
+      "T:T:A:G:C",
+      "T:T:A:G:T",
+      "T:G:G:G:C",
+      "T:G:G:G:T",
+      "C:T:A:G:T",
+      "C:T:G:A:T",
+      "T:T:G:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.463,
+      "EUR": 0.001,
+      "AFR": 0.007,
+      "AMR": 0.492,
+      "EAS": 0.14
+    },
+    "subFrequencies": {
+      "BEB": 0.46535,
+      "GIH": 0.44175,
+      "ITU": 0.45192,
+      "PJL": 0.42788,
+      "STU": 0.52885
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01cp-008": {
+    "rsid": "mh01cp-008",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:A",
+      "G:C:A",
+      "G:C:T",
+      "G:G:A",
+      "G:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.663,
+      "EUR": 0.001,
+      "AFR": 0.038,
+      "AMR": 0.149,
+      "EAS": 0.227
+    },
+    "subFrequencies": {
+      "BEB": 0.145,
+      "GIH": 0.131,
+      "ITU": 0.074,
+      "PJL": 0.141,
+      "STU": 0.137
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0062205": {
+    "rsid": "mh01scuzj-0062205",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A:A:G",
+      "T:A:A:A:A",
+      "T:A:A:A:G",
+      "T:A:A:T:A",
+      "T:A:T:A:A",
+      "T:T:A:A:G",
+      "C:T:A:A:G",
+      "T:T:A:A:A",
+      "T:T:A:T:A",
+      "C:A:A:T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.438,
+      "EUR": 0.299,
+      "AFR": 0.001,
+      "AMR": 0.206,
+      "EAS": 0.33
+    },
+    "subFrequencies": {
+      "BEB": 0.42574,
+      "GIH": 0.46602,
+      "ITU": 0.44712,
+      "PJL": 0.41827,
+      "STU": 0.43269
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-081": {
+    "rsid": "mh01wl-081",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:C:C:G",
+      "C:G:T:C:G",
+      "T:G:C:C:A",
+      "T:G:C:C:G",
+      "T:G:C:G:G",
+      "T:G:T:C:G",
+      "T:T:C:C:A",
+      "C:G:C:C:A",
+      "T:T:T:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.531,
+      "EUR": 0.526,
+      "AFR": 0.139,
+      "AMR": 0.483,
+      "EAS": 0.296
+    },
+    "subFrequencies": {
+      "BEB": 0.5495,
+      "GIH": 0.52427,
+      "ITU": 0.55288,
+      "PJL": 0.52404,
+      "STU": 0.50481
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0156524": {
+    "rsid": "mh01scuzj-0156524",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:C:T:T",
+      "T:A:A:T:C",
+      "T:A:A:T:T",
+      "T:A:C:T:T",
+      "T:G:C:T:T",
+      "G:G:C:T:T",
+      "G:A:C:C:T",
+      "T:A:C:T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.654,
+      "EUR": 0.627,
+      "AFR": 0.266,
+      "AMR": 0.534,
+      "EAS": 0.281
+    },
+    "subFrequencies": {
+      "BEB": 0.60891,
+      "GIH": 0.67961,
+      "ITU": 0.62981,
+      "PJL": 0.73077,
+      "STU": 0.62019
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01cp-012": {
+    "rsid": "mh01cp-012",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "T:A:C",
+      "T:A:T",
+      "T:G:T",
+      "T:G:C",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.492,
+      "EUR": 0.591,
+      "AFR": 0.267,
+      "AMR": 0.035,
+      "EAS": 0.435
+    },
+    "subFrequencies": {
+      "BEB": 0.047,
+      "GIH": 0.01,
+      "ITU": 0.02,
+      "PJL": 0.01,
+      "STU": 0.034
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-037": {
+    "rsid": "mh01wl-037",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:A:A",
+      "G:A:A:T",
+      "G:A:T:T",
+      "G:T:A:A",
+      "A:T:A:A",
+      "A:A:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.5,
+      "EUR": 0.581,
+      "AFR": 0.303,
+      "AMR": 0.558,
+      "EAS": 0.19
+    },
+    "subFrequencies": {
+      "BEB": 0.53465,
+      "GIH": 0.49515,
+      "ITU": 0.44231,
+      "PJL": 0.5625,
+      "STU": 0.46635
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01usc-1pc": {
+    "rsid": "mh01usc-1pc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:G",
+      "G:G:G",
+      "T:A:G",
+      "T:A:T",
+      "T:G:G",
+      "T:G:T",
+      "G:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.491,
+      "EUR": 0.235,
+      "AFR": 0.252,
+      "AMR": 0.192,
+      "EAS": 0.3
+    },
+    "subFrequencies": {
+      "BEB": 0.45545,
+      "GIH": 0.48544,
+      "ITU": 0.53846,
+      "PJL": 0.45192,
+      "STU": 0.52404
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01ls-1pg": {
+    "rsid": "mh01ls-1pg",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C",
+      "C:T:C",
+      "T:C:A",
+      "T:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.443,
+      "EUR": 0.572,
+      "AFR": 0.122,
+      "AMR": 0.462,
+      "EAS": 0.339
+    },
+    "subFrequencies": {
+      "BEB": 0.46535,
+      "GIH": 0.41748,
+      "ITU": 0.44712,
+      "PJL": 0.43269,
+      "STU": 0.45192
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-099": {
+    "rsid": "mh01wl-099",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:T",
+      "A:T:T",
+      "C:T:C",
+      "C:T:T",
+      "C:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.679,
+      "EUR": 0.676,
+      "AFR": 0.022,
+      "AMR": 0.644,
+      "EAS": 0.394
+    },
+    "subFrequencies": {
+      "BEB": 0.62871,
+      "GIH": 0.71845,
+      "ITU": 0.6875,
+      "PJL": 0.65385,
+      "STU": 0.70673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-002.v2": {
+    "rsid": "mh01wl-002.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:A:A:A",
+      "A:G:A:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.596,
+      "EUR": 0.508,
+      "AFR": 0.341,
+      "AMR": 0.644,
+      "EAS": 0.702
+    },
+    "subFrequencies": {
+      "BEB": 0.59901,
+      "GIH": 0.66505,
+      "ITU": 0.58173,
+      "PJL": 0.58173,
+      "STU": 0.55288
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-002.v3": {
+    "rsid": "mh01wl-002.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A",
+      "A:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.596,
+      "EUR": 0.508,
+      "AFR": 0.341,
+      "AMR": 0.644,
+      "EAS": 0.702
+    },
+    "subFrequencies": {
+      "BEB": 0.59901,
+      "GIH": 0.66505,
+      "ITU": 0.58173,
+      "PJL": 0.58173,
+      "STU": 0.55288
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-002.v1": {
+    "rsid": "mh01wl-002.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A:A",
+      "A:G:A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.596,
+      "EUR": 0.508,
+      "AFR": 0.341,
+      "AMR": 0.644,
+      "EAS": 0.702
+    },
+    "subFrequencies": {
+      "BEB": 0.59901,
+      "GIH": 0.66505,
+      "ITU": 0.58173,
+      "PJL": 0.58173,
+      "STU": 0.55288
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-119": {
+    "rsid": "mh01wl-119",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T:G",
+      "G:C:G",
+      "G:T:A",
+      "G:T:G",
+      "A:T:A",
+      "A:C:G",
+      "G:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.45,
+      "EUR": 0.253,
+      "AFR": 0.304,
+      "AMR": 0.197,
+      "EAS": 0.279
+    },
+    "subFrequencies": {
+      "BEB": 0.4703,
+      "GIH": 0.40291,
+      "ITU": 0.46154,
+      "PJL": 0.43269,
+      "STU": 0.48077
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01kk-211.v2": {
+    "rsid": "mh01kk-211.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:T",
+      "T:A:C",
+      "T:G:C",
+      "T:G:T",
+      "C:A:C",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.503,
+      "EUR": 0.621,
+      "AFR": 0.12,
+      "AMR": 0.567,
+      "EAS": 0.228
+    },
+    "subFrequencies": {
+      "BEB": 0.44059,
+      "GIH": 0.54369,
+      "ITU": 0.55288,
+      "PJL": 0.44712,
+      "STU": 0.52885
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01nh-03": {
+    "rsid": "mh01nh-03",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A",
+      "A:A:C",
+      "G:G:C",
+      "A:G:C",
+      "G:A:A",
+      "G:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.666,
+      "EUR": 0.82,
+      "AFR": 0.475,
+      "AMR": 0.758,
+      "EAS": 0.509
+    },
+    "subFrequencies": {
+      "BEB": 0.68812,
+      "GIH": 0.63107,
+      "ITU": 0.67308,
+      "PJL": 0.64904,
+      "STU": 0.6875
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0508420": {
+    "rsid": "mh01scuzj-0508420",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:T:T:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:T:C:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "C:T:T:T:G:A:C:T:C:A:G:A:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "C:T:T:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:T:T:G:A:C:T:C:A:G:A:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:T:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:T",
+      "T:T:C:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:C:C:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.997,
+      "EUR": 0.993,
+      "AFR": 0.998,
+      "AMR": 1,
+      "EAS": 0.008
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 0.99029,
+      "ITU": 1,
+      "PJL": 0.99519,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01ls-1qc": {
+    "rsid": "mh01ls-1qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:G",
+      "T:C:A",
+      "T:T:A",
+      "T:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.459,
+      "EUR": 0.447,
+      "AFR": 0.407,
+      "AMR": 0.365,
+      "EAS": 0.413
+    },
+    "subFrequencies": {
+      "BEB": 0.44554,
+      "GIH": 0.47573,
+      "ITU": 0.46635,
+      "PJL": 0.42308,
+      "STU": 0.48558
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01usc-1qc.v2": {
+    "rsid": "mh01usc-1qc.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A:T:C:C:T:A",
+      "A:A:G:T:C:C:T:A",
+      "A:A:G:T:C:C:T:G",
+      "G:A:G:T:T:T:C:A",
+      "G:G:G:T:T:T:C:A",
+      "G:A:G:G:T:T:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.405,
+      "EUR": 0.279,
+      "AFR": 0.24,
+      "AMR": 0.192,
+      "EAS": 0.217
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.43689,
+      "ITU": 0.40385,
+      "PJL": 0.32212,
+      "STU": 0.43269
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-112": {
+    "rsid": "mh01wl-112",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A:C",
+      "A:C:G:C",
+      "A:C:G:T",
+      "A:T:G:C",
+      "T:C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.504,
+      "EUR": 0.6,
+      "AFR": 0.114,
+      "AMR": 0.423,
+      "EAS": 0.234
+    },
+    "subFrequencies": {
+      "BEB": 0.58911,
+      "GIH": 0.50971,
+      "ITU": 0.49519,
+      "PJL": 0.43269,
+      "STU": 0.49519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-080": {
+    "rsid": "mh02wl-080",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:T:A:A:A:G:C",
+      "A:A:T:A:A:C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 0.001,
+      "AFR": 0.001,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-052": {
+    "rsid": "mh02wl-052",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:T:T",
+      "C:G:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.946,
+      "EUR": 0.862,
+      "AFR": 0.939,
+      "AMR": 0.96,
+      "EAS": 0.923
+    },
+    "subFrequencies": {
+      "BEB": 0.95545,
+      "GIH": 0.95631,
+      "ITU": 0.94712,
+      "PJL": 0.94712,
+      "STU": 0.92308
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-109": {
+    "rsid": "mh02wl-109",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:G:C:T",
+      "C:A:G:T:T",
+      "C:G:A:C:C",
+      "C:G:A:C:T",
+      "C:G:G:C:T",
+      "G:A:A:C:T",
+      "G:G:G:C:T",
+      "C:G:G:C:C",
+      "G:A:G:C:T",
+      "C:A:A:C:C",
+      "G:G:A:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.477,
+      "EUR": 0.308,
+      "AFR": 0.128,
+      "AMR": 0.34,
+      "EAS": 0.258
+    },
+    "subFrequencies": {
+      "BEB": 0.51485,
+      "GIH": 0.48058,
+      "ITU": 0.5,
+      "PJL": 0.39904,
+      "STU": 0.49038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02scuzj-0232405": {
+    "rsid": "mh02scuzj-0232405",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A:A",
+      "C:A:A:C",
+      "C:G:A:A",
+      "C:G:A:C",
+      "T:A:A:A",
+      "T:G:A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.461,
+      "EUR": 0.546,
+      "AFR": 0.094,
+      "AMR": 0.486,
+      "EAS": 0.222
+    },
+    "subFrequencies": {
+      "BEB": 0.4802,
+      "GIH": 0.49029,
+      "ITU": 0.40385,
+      "PJL": 0.49519,
+      "STU": 0.4375
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-131": {
+    "rsid": "mh02kk-131",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A",
+      "G:A",
+      "G:G",
+      "C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.698,
+      "EUR": 0.229,
+      "AFR": 0.03,
+      "AMR": 0.006,
+      "EAS": 0.684
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02zbf-001": {
+    "rsid": "mh02zbf-001",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:A",
+      "G:G:A",
+      "C:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.843,
+      "EUR": 0.707,
+      "AFR": 0.76,
+      "AMR": 0.732,
+      "EAS": 0.935
+    },
+    "subFrequencies": {
+      "BEB": 0.85644,
+      "GIH": 0.81553,
+      "ITU": 0.83654,
+      "PJL": 0.81731,
+      "STU": 0.88942
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-213": {
+    "rsid": "mh02kk-213",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:T",
+      "C:G:T",
+      "T:G:C",
+      "T:G:T",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.478,
+      "EUR": 0.266,
+      "AFR": 0.362,
+      "AMR": 0.019,
+      "EAS": 0.577
+    },
+    "subFrequencies": {
+      "BEB": 0.041,
+      "GIH": 0.073,
+      "ITU": 0.054,
+      "PJL": 0.089,
+      "STU": 0.069
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-202": {
+    "rsid": "mh02kk-202",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A",
+      "C:C",
+      "G:A",
+      "G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.427,
+      "EUR": 0.242,
+      "AFR": 0.48,
+      "AMR": 0,
+      "EAS": 0.568
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-215": {
+    "rsid": "mh02kk-215",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T",
+      "C:C",
+      "C:T",
+      "A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.454,
+      "EUR": 0.108,
+      "AFR": 0.563,
+      "AMR": 0.362,
+      "EAS": 0.622
+    },
+    "subFrequencies": {
+      "BEB": 0.151,
+      "GIH": 0.228,
+      "ITU": 0.157,
+      "PJL": 0.313,
+      "STU": 0.093
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02scuzj-0409633": {
+    "rsid": "mh02scuzj-0409633",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:G:A:T",
+      "A:T:G:A:G",
+      "A:T:G:A:T",
+      "A:T:G:T:T",
+      "G:T:G:A:T",
+      "A:A:G:A:G",
+      "G:T:A:A:T",
+      "G:A:G:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.44,
+      "EUR": 0.269,
+      "AFR": 0.152,
+      "AMR": 0.42,
+      "EAS": 0.267
+    },
+    "subFrequencies": {
+      "BEB": 0.42079,
+      "GIH": 0.49029,
+      "ITU": 0.5,
+      "PJL": 0.32692,
+      "STU": 0.46154
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02ls-2qc": {
+    "rsid": "mh02ls-2qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:A",
+      "C:C:T",
+      "T:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.595,
+      "EUR": 0.762,
+      "AFR": 0.281,
+      "AMR": 0.611,
+      "EAS": 0.478
+    },
+    "subFrequencies": {
+      "BEB": 0.61386,
+      "GIH": 0.62136,
+      "ITU": 0.55769,
+      "PJL": 0.57692,
+      "STU": 0.60577
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-038": {
+    "rsid": "mh02wl-038",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:A:C",
+      "G:C:A:T",
+      "G:C:G:T",
+      "G:T:A:T",
+      "G:T:G:T",
+      "T:C:G:T",
+      "G:C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.655,
+      "EUR": 0.668,
+      "AFR": 0.057,
+      "AMR": 0.515,
+      "EAS": 0.299
+    },
+    "subFrequencies": {
+      "BEB": 0.63366,
+      "GIH": 0.64078,
+      "ITU": 0.65865,
+      "PJL": 0.65385,
+      "STU": 0.6875
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02ls-2qf": {
+    "rsid": "mh02ls-2qf",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:C:A",
+      "T:A:T:C",
+      "T:G:C:C",
+      "C:G:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.541,
+      "EUR": 0.208,
+      "AFR": 0.583,
+      "AMR": 0.354,
+      "EAS": 0.193
+    },
+    "subFrequencies": {
+      "BEB": 0.5198,
+      "GIH": 0.57767,
+      "ITU": 0.53846,
+      "PJL": 0.46635,
+      "STU": 0.60096
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02nh-06": {
+    "rsid": "mh02nh-06",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:T",
+      "G:C:C",
+      "C:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.632,
+      "EUR": 0.49,
+      "AFR": 0.604,
+      "AMR": 0.552,
+      "EAS": 0.481
+    },
+    "subFrequencies": {
+      "BEB": 0.63366,
+      "GIH": 0.56311,
+      "ITU": 0.68269,
+      "PJL": 0.62019,
+      "STU": 0.65865
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-136.v1": {
+    "rsid": "mh02kk-136.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:C",
+      "G:T:A",
+      "G:T:C",
+      "T:C:A",
+      "T:C:C",
+      "T:T:A",
+      "T:T:C",
+      "G:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.464,
+      "EUR": 0.196,
+      "AFR": 0.368,
+      "AMR": 0.106,
+      "EAS": 0.341
+    },
+    "subFrequencies": {
+      "BEB": 0.122,
+      "GIH": 0.117,
+      "ITU": 0.113,
+      "PJL": 0.151,
+      "STU": 0.152
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02scuzj-0677360": {
+    "rsid": "mh02scuzj-0677360",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:C:A:T:G:A:A",
+      "A:A:C:A:T:G:A:G",
+      "A:A:C:A:T:G:C:G",
+      "A:A:C:A:T:G:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.906,
+      "EUR": 0.938,
+      "AFR": 0.852,
+      "AMR": 0.969,
+      "EAS": 0.671
+    },
+    "subFrequencies": {
+      "BEB": 0.92079,
+      "GIH": 0.93689,
+      "ITU": 0.86538,
+      "PJL": 0.9375,
+      "STU": 0.87019
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-081": {
+    "rsid": "mh03wl-081",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:A:T",
+      "C:C:G:C",
+      "C:C:G:T",
+      "C:T:A:T",
+      "C:T:G:C",
+      "C:T:G:T",
+      "G:C:A:C",
+      "G:C:A:T",
+      "G:C:G:C",
+      "G:C:G:T",
+      "G:T:G:C",
+      "G:T:G:T",
+      "C:T:A:C",
+      "G:T:A:T",
+      "C:C:A:C",
+      "G:T:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.466,
+      "EUR": 0.304,
+      "AFR": 0.357,
+      "AMR": 0.212,
+      "EAS": 0.314
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.4466,
+      "ITU": 0.50962,
+      "PJL": 0.49038,
+      "STU": 0.45192
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03ls-3pc": {
+    "rsid": "mh03ls-3pc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A",
+      "C:G:G",
+      "T:A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.6,
+      "EUR": 0.652,
+      "AFR": 0.182,
+      "AMR": 0.655,
+      "EAS": 0.362
+    },
+    "subFrequencies": {
+      "BEB": 0.55941,
+      "GIH": 0.56311,
+      "ITU": 0.69231,
+      "PJL": 0.58654,
+      "STU": 0.59615
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03scuzj-0161227": {
+    "rsid": "mh03scuzj-0161227",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:A:C:G:A:A:G:A:G:A:G:A:A:A:A",
+      "A:G:A:C:G:A:A:G:A:G:A:G:A:A:A:G"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 1,
+      "AFR": 0.026,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-017.v4": {
+    "rsid": "mh03kk-017.v4",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A",
+      "C:A:G",
+      "C:G:A",
+      "C:G:G",
+      "T:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.539,
+      "EUR": 0.29,
+      "AFR": 0.317,
+      "AMR": 0.494,
+      "EAS": 0.44
+    },
+    "subFrequencies": {
+      "BEB": 0.48515,
+      "GIH": 0.52427,
+      "ITU": 0.61058,
+      "PJL": 0.48077,
+      "STU": 0.59135
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03scuzj-0229447": {
+    "rsid": "mh03scuzj-0229447",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T:G:T:C:C",
+      "A:T:G:T:C:T",
+      "T:T:A:C:T:C",
+      "T:T:A:C:T:T",
+      "T:T:G:T:C:C",
+      "T:T:G:T:C:T",
+      "A:T:A:C:T:C",
+      "T:T:A:C:C:C",
+      "T:T:A:T:C:C",
+      "T:T:G:C:T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.797,
+      "EUR": 0.852,
+      "AFR": 0.237,
+      "AMR": 0.784,
+      "EAS": 0.3
+    },
+    "subFrequencies": {
+      "BEB": 0.78218,
+      "GIH": 0.81068,
+      "ITU": 0.80769,
+      "PJL": 0.76923,
+      "STU": 0.81731
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-009": {
+    "rsid": "mh03kk-009",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:T",
+      "C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.577,
+      "EUR": 0.663,
+      "AFR": 0.167,
+      "AMR": 0.664,
+      "EAS": 0.697
+    },
+    "subFrequencies": {
+      "BEB": 0.64,
+      "GIH": 0.539,
+      "ITU": 0.505,
+      "PJL": 0.724,
+      "STU": 0.51
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-085": {
+    "rsid": "mh03wl-085",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C:G",
+      "T:A:C:G",
+      "T:G:C:G",
+      "T:G:C:T",
+      "T:G:T:G",
+      "C:G:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.533,
+      "EUR": 0.575,
+      "AFR": 0.072,
+      "AMR": 0.646,
+      "EAS": 0.288
+    },
+    "subFrequencies": {
+      "BEB": 0.57426,
+      "GIH": 0.58252,
+      "ITU": 0.58654,
+      "PJL": 0.45673,
+      "STU": 0.46635
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03hyp-09": {
+    "rsid": "mh03hyp-09",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G",
+      "A:T",
+      "G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.549,
+      "EUR": 0.512,
+      "AFR": 0.089,
+      "AMR": 0.649,
+      "EAS": 0.602
+    },
+    "subFrequencies": {
+      "BEB": 0.49505,
+      "GIH": 0.5534,
+      "ITU": 0.58654,
+      "PJL": 0.52885,
+      "STU": 0.58173
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-014": {
+    "rsid": "mh03wl-014",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:A",
+      "G:T:A",
+      "T:G:G",
+      "T:T:G",
+      "T:T:A",
+      "T:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.425,
+      "EUR": 0.422,
+      "AFR": 0.237,
+      "AMR": 0.362,
+      "EAS": 0.489
+    },
+    "subFrequencies": {
+      "BEB": 0.5099,
+      "GIH": 0.43689,
+      "ITU": 0.38462,
+      "PJL": 0.42308,
+      "STU": 0.375
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-075": {
+    "rsid": "mh04wl-075",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:G:G",
+      "C:A:G:C"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 1,
+      "AFR": 0.991,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0059871.v2": {
+    "rsid": "mh04scuzj-0059871.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:G:T:G:G:C",
+      "C:G:G:T:G:G:C"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 1,
+      "AFR": 0.97,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-004.v3": {
+    "rsid": "mh04wl-004.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T:A",
+      "A:T:G",
+      "G:T:A",
+      "G:T:G",
+      "A:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.493,
+      "EUR": 0.582,
+      "AFR": 0.001,
+      "AMR": 0.517,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.57426,
+      "GIH": 0.48544,
+      "ITU": 0.48558,
+      "PJL": 0.52885,
+      "STU": 0.39423
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-074": {
+    "rsid": "mh04kk-074",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C",
+      "A:T",
+      "G:C",
+      "G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.439,
+      "EUR": 0.421,
+      "AFR": 0.115,
+      "AMR": 0.332,
+      "EAS": 0.1
+    },
+    "subFrequencies": {
+      "BEB": 0.395,
+      "GIH": 0.49,
+      "ITU": 0.431,
+      "PJL": 0.365,
+      "STU": 0.436
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04zha-004": {
+    "rsid": "mh04zha-004",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:A:C",
+      "G:C:A:G",
+      "G:C:C:G",
+      "G:T:A:C",
+      "G:T:A:G",
+      "T:C:A:C",
+      "T:C:A:G",
+      "T:C:C:C",
+      "T:C:C:G",
+      "T:T:A:C",
+      "T:T:C:G",
+      "T:T:A:G",
+      "T:T:C:C",
+      "G:T:C:G",
+      "G:T:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.49,
+      "EUR": 0.429,
+      "AFR": 0.139,
+      "AMR": 0.638,
+      "EAS": 0.451
+    },
+    "subFrequencies": {
+      "BEB": 0.44554,
+      "GIH": 0.54369,
+      "ITU": 0.46635,
+      "PJL": 0.47115,
+      "STU": 0.52404
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0352611": {
+    "rsid": "mh04scuzj-0352611",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:C:T:T",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:C:T",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:T:C",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:T:T",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.849,
+      "EUR": 0.82,
+      "AFR": 0.651,
+      "AMR": 0.822,
+      "EAS": 0.894
+    },
+    "subFrequencies": {
+      "BEB": 0.81188,
+      "GIH": 0.90291,
+      "ITU": 0.88942,
+      "PJL": 0.80769,
+      "STU": 0.83173
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-028": {
+    "rsid": "mh04kk-028",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "C:A",
+      "T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.61,
+      "EUR": 0.256,
+      "AFR": 0.484,
+      "AMR": 0,
+      "EAS": 0.762
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-016": {
+    "rsid": "mh04kk-016",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:T",
+      "C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.516,
+      "EUR": 0.203,
+      "AFR": 0.344,
+      "AMR": 0,
+      "EAS": 0.651
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-001.v3": {
+    "rsid": "mh04wl-001.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:C:C:C:G:C:T:G:C:A",
+      "G:T:C:C:C:G:C:T:G:C:A",
+      "G:T:G:C:C:G:C:T:G:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.993,
+      "EUR": 0.992,
+      "AFR": 0.733,
+      "AMR": 1,
+      "EAS": 0.003
+    },
+    "subFrequencies": {
+      "BEB": 0.98515,
+      "GIH": 0.99029,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 0.99038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0714579": {
+    "rsid": "mh04scuzj-0714579",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:C:G:C:A:G:A:T:A:T",
+      "G:G:C:G:C:A:G:A:T:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.888,
+      "EUR": 0.858,
+      "AFR": 0.888,
+      "AMR": 0.96,
+      "EAS": 0.932
+    },
+    "subFrequencies": {
+      "BEB": 0.89604,
+      "GIH": 0.8835,
+      "ITU": 0.89904,
+      "PJL": 0.86538,
+      "STU": 0.89423
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05scuzj-0042261": {
+    "rsid": "mh05scuzj-0042261",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:C:A:A",
+      "T:A:C:A:T",
+      "T:G:C:A:A",
+      "T:G:C:A:T",
+      "T:G:C:T:A",
+      "T:G:T:A:A",
+      "C:G:C:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.406,
+      "EUR": 0.213,
+      "AFR": 0.163,
+      "AMR": 0.273,
+      "EAS": 0.135
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.34466,
+      "ITU": 0.46154,
+      "PJL": 0.40385,
+      "STU": 0.38942
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05cp-010": {
+    "rsid": "mh05cp-010",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C:G",
+      "C:C:C:T",
+      "C:C:T:T",
+      "C:C:A:G",
+      "C:A:C:T",
+      "C:A:C:G",
+      "C:A:A:G",
+      "T:C:C:T",
+      "T:C:C:G",
+      "T:C:A:G",
+      "T:A:C:T",
+      "T:A:C:G",
+      "T:A:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.925,
+      "EUR": 0.001,
+      "AFR": 0.941,
+      "AMR": 0.082,
+      "EAS": 0.918
+    },
+    "subFrequencies": {
+      "BEB": 0.023,
+      "GIH": 0.024,
+      "ITU": 0.025,
+      "PJL": 0.016,
+      "STU": 0.02
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-123": {
+    "rsid": "mh05kk-123",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C",
+      "G:C",
+      "G:T",
+      "A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.417,
+      "EUR": 0.013,
+      "AFR": 0.146,
+      "AMR": 0,
+      "EAS": 0.218
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-124": {
+    "rsid": "mh05kk-124",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.645,
+      "EUR": 0.227,
+      "AFR": 0.134,
+      "AMR": 0.139,
+      "EAS": 0.158
+    },
+    "subFrequencies": {
+      "BEB": 0.529,
+      "GIH": 0.65,
+      "ITU": 0.691,
+      "PJL": 0.563,
+      "STU": 0.603
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05ls-5qb": {
+    "rsid": "mh05ls-5qb",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G",
+      "A:C:T",
+      "C:G:T",
+      "A:G:G",
+      "A:G:T",
+      "C:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.459,
+      "EUR": 0.467,
+      "AFR": 0.429,
+      "AMR": 0.486,
+      "EAS": 0.297
+    },
+    "subFrequencies": {
+      "BEB": 0.4604,
+      "GIH": 0.46602,
+      "ITU": 0.46154,
+      "PJL": 0.38942,
+      "STU": 0.51923
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05nh-09": {
+    "rsid": "mh05nh-09",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:C",
+      "G:T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.468,
+      "EUR": 0.48,
+      "AFR": 0.411,
+      "AMR": 0.469,
+      "EAS": 0.475
+    },
+    "subFrequencies": {
+      "BEB": 0.47525,
+      "GIH": 0.41262,
+      "ITU": 0.55288,
+      "PJL": 0.39904,
+      "STU": 0.5
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05scuzj-0315595": {
+    "rsid": "mh05scuzj-0315595",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:A:A:C:C:A:T",
+      "A:G:A:G:C:C:A:T",
+      "G:C:G:G:C:C:A:T",
+      "G:G:G:G:C:C:A:T",
+      "G:G:G:G:C:C:T:T",
+      "G:G:G:A:C:C:A:T",
+      "A:G:A:A:A:A:A:T",
+      "A:G:G:A:A:A:A:T",
+      "A:G:G:A:C:C:A:T",
+      "A:G:G:G:A:A:A:T",
+      "G:G:A:G:C:C:A:T",
+      "A:G:A:A:C:C:T:T",
+      "G:G:A:A:C:C:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.575,
+      "EUR": 0.501,
+      "AFR": 0.011,
+      "AMR": 0.514,
+      "EAS": 0.466
+    },
+    "subFrequencies": {
+      "BEB": 0.55941,
+      "GIH": 0.5534,
+      "ITU": 0.59615,
+      "PJL": 0.56731,
+      "STU": 0.59615
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05ls-5qe": {
+    "rsid": "mh05ls-5qe",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "G:A:C",
+      "G:G:T",
+      "C:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.432,
+      "EUR": 0.529,
+      "AFR": 0.286,
+      "AMR": 0.471,
+      "EAS": 0.377
+    },
+    "subFrequencies": {
+      "BEB": 0.39109,
+      "GIH": 0.43689,
+      "ITU": 0.41346,
+      "PJL": 0.47596,
+      "STU": 0.44231
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-025": {
+    "rsid": "mh06kk-025",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:G",
+      "A:G:A",
+      "A:G:G",
+      "G:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.424,
+      "EUR": 0.335,
+      "AFR": 0.025,
+      "AMR": 0.314,
+      "EAS": 0.258
+    },
+    "subFrequencies": {
+      "BEB": 0.407,
+      "GIH": 0.422,
+      "ITU": 0.456,
+      "PJL": 0.427,
+      "STU": 0.436
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-080": {
+    "rsid": "mh06kk-080",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G",
+      "C:A",
+      "C:G",
+      "A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.916,
+      "EUR": 0.771,
+      "AFR": 0.799,
+      "AMR": 0.016,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-076": {
+    "rsid": "mh06wl-076",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T:C:C",
+      "G:C:C:T",
+      "G:T:C:C",
+      "G:T:C:T",
+      "G:C:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.47,
+      "EUR": 0.235,
+      "AFR": 0.036,
+      "AMR": 0.221,
+      "EAS": 0.19
+    },
+    "subFrequencies": {
+      "BEB": 0.42574,
+      "GIH": 0.54369,
+      "ITU": 0.45673,
+      "PJL": 0.46154,
+      "STU": 0.46154
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06ls-6pd": {
+    "rsid": "mh06ls-6pd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A:A",
+      "C:T:T:A",
+      "T:A:A:A",
+      "T:A:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.483,
+      "EUR": 0.623,
+      "AFR": 0.313,
+      "AMR": 0.723,
+      "EAS": 0.416
+    },
+    "subFrequencies": {
+      "BEB": 0.48515,
+      "GIH": 0.40291,
+      "ITU": 0.51923,
+      "PJL": 0.49519,
+      "STU": 0.50962
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06usc-6pb": {
+    "rsid": "mh06usc-6pb",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A",
+      "C:G:A",
+      "T:A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.458,
+      "EUR": 0.369,
+      "AFR": 0.342,
+      "AMR": 0.621,
+      "EAS": 0.656
+    },
+    "subFrequencies": {
+      "BEB": 0.51485,
+      "GIH": 0.43689,
+      "ITU": 0.4375,
+      "PJL": 0.48077,
+      "STU": 0.42308
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06scuzj-0480560.v1": {
+    "rsid": "mh06scuzj-0480560.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:T:A:T:C:G:G:C:A:G:C:A:A:C:G:A",
+      "G:T:A:T:C:G:G:C:A:G:C:A:A:T:G:A",
+      "G:T:A:T:C:G:G:C:A:G:C:T:A:T:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.999,
+      "EUR": 1,
+      "AFR": 0.007,
+      "AMR": 1,
+      "EAS": 0.995
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 0.99515,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06scuzj-0480560.v2": {
+    "rsid": "mh06scuzj-0480560.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:C:G:G:C:A:G:C:A:A",
+      "T:C:G:G:C:A:G:C:T:A"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 1,
+      "AFR": 0.007,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06ls-6qa": {
+    "rsid": "mh06ls-6qa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A",
+      "C:T:A",
+      "T:A:A",
+      "T:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.483,
+      "EUR": 0.43,
+      "AFR": 0.399,
+      "AMR": 0.684,
+      "EAS": 0.446
+    },
+    "subFrequencies": {
+      "BEB": 0.42079,
+      "GIH": 0.51456,
+      "ITU": 0.50481,
+      "PJL": 0.5,
+      "STU": 0.47115
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-031": {
+    "rsid": "mh06kk-031",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G",
+      "G:C",
+      "A:C",
+      "G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.491,
+      "EUR": 0.149,
+      "AFR": 0.007,
+      "AMR": 0.445,
+      "EAS": 0.83
+    },
+    "subFrequencies": {
+      "BEB": 0.599,
+      "GIH": 0.393,
+      "ITU": 0.559,
+      "PJL": 0.411,
+      "STU": 0.485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06zbf-001": {
+    "rsid": "mh06zbf-001",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C",
+      "A:G",
+      "G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.555,
+      "EUR": 0.171,
+      "AFR": 0.715,
+      "AMR": 0.408,
+      "EAS": 0.567
+    },
+    "subFrequencies": {
+      "BEB": 0.61386,
+      "GIH": 0.50485,
+      "ITU": 0.52404,
+      "PJL": 0.54808,
+      "STU": 0.58654
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06ls-6qc": {
+    "rsid": "mh06ls-6qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:A",
+      "C:T:T",
+      "T:G:T",
+      "T:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.617,
+      "EUR": 0.593,
+      "AFR": 0.29,
+      "AMR": 0.567,
+      "EAS": 0.414
+    },
+    "subFrequencies": {
+      "BEB": 0.56931,
+      "GIH": 0.63592,
+      "ITU": 0.60096,
+      "PJL": 0.65865,
+      "STU": 0.62019
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06usc-6qc": {
+    "rsid": "mh06usc-6qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C",
+      "A:T:C",
+      "A:T:T",
+      "C:T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.43,
+      "EUR": 0.425,
+      "AFR": 0.192,
+      "AMR": 0.375,
+      "EAS": 0.236
+    },
+    "subFrequencies": {
+      "BEB": 0.44059,
+      "GIH": 0.38835,
+      "ITU": 0.46635,
+      "PJL": 0.40865,
+      "STU": 0.44712
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06hyp-18": {
+    "rsid": "mh06hyp-18",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.49,
+      "EUR": 0.321,
+      "AFR": 0.26,
+      "AMR": 0.805,
+      "EAS": 0.761
+    },
+    "subFrequencies": {
+      "BEB": 0.55446,
+      "GIH": 0.46602,
+      "ITU": 0.49519,
+      "PJL": 0.46635,
+      "STU": 0.47115
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06ls-6qd": {
+    "rsid": "mh06ls-6qd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C",
+      "C:T:C",
+      "T:C:C",
+      "T:C:G",
+      "C:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.439,
+      "EUR": 0.224,
+      "AFR": 0.063,
+      "AMR": 0.346,
+      "EAS": 0.277
+    },
+    "subFrequencies": {
+      "BEB": 0.41089,
+      "GIH": 0.4466,
+      "ITU": 0.48077,
+      "PJL": 0.36058,
+      "STU": 0.49519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-079": {
+    "rsid": "mh06wl-079",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:T:A",
+      "G:C:T:C"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 0.999,
+      "AFR": 0.941,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06scuzj-0818553": {
+    "rsid": "mh06scuzj-0818553",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C:C:T:A:A:A:T:G:A",
+      "C:A:C:C:T:A:A:A:C:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.999,
+      "EUR": 0.997,
+      "AFR": 1,
+      "AMR": 1,
+      "EAS": 0.985
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 0.99519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-008.v1": {
+    "rsid": "mh06kk-008.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:A:A",
+      "G:C:A:G",
+      "G:C:G:A",
+      "G:C:G:G",
+      "G:G:A:A",
+      "G:G:G:A",
+      "G:G:G:G",
+      "T:C:A:A",
+      "T:C:G:A",
+      "T:C:G:G",
+      "T:G:A:A",
+      "T:G:A:G",
+      "T:G:G:A",
+      "T:G:G:G",
+      "G:G:A:G",
+      "T:C:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.427,
+      "EUR": 0.291,
+      "AFR": 0.031,
+      "AMR": 0.01,
+      "EAS": 0.638
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-008.v2": {
+    "rsid": "mh06kk-008.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:A:C:G:T:G:A:G:G:G:G",
+      "G:C:A:C:G:T:G:G:A:G:G:G",
+      "G:C:A:C:G:T:G:G:G:G:G:G",
+      "G:C:G:C:G:G:G:A:A:G:G:G",
+      "G:C:G:C:G:G:G:G:G:G:G:G",
+      "G:C:G:C:G:T:G:A:A:G:G:G",
+      "G:C:G:C:G:T:G:A:G:G:G:G",
+      "G:C:G:C:G:T:G:A:G:G:T:G",
+      "G:C:G:C:G:T:G:G:G:G:G:G",
+      "G:G:A:C:G:T:G:A:G:G:G:G",
+      "G:G:G:C:G:G:G:A:G:G:T:G",
+      "G:G:G:C:G:T:G:A:G:G:G:G",
+      "G:G:G:C:G:T:G:G:G:G:G:G",
+      "G:G:G:C:G:T:G:G:G:G:T:G",
+      "T:C:A:C:G:T:G:A:G:G:G:G",
+      "T:C:G:C:G:T:G:A:A:G:G:G",
+      "T:C:G:C:G:T:G:A:G:G:G:G",
+      "T:C:G:C:G:T:G:G:A:G:G:G",
+      "T:C:G:C:G:T:G:G:G:G:G:G",
+      "T:G:A:C:A:T:G:A:G:G:G:G",
+      "T:G:A:C:G:T:G:A:G:G:G:G",
+      "T:G:A:C:G:T:G:G:G:G:G:G",
+      "T:G:G:C:G:T:G:A:G:G:G:G",
+      "T:G:G:C:G:T:G:G:G:G:G:G",
+      "G:C:A:C:A:T:G:A:G:G:G:G",
+      "G:C:A:C:G:G:G:G:G:G:G:G",
+      "G:C:A:C:G:T:G:A:G:G:T:G",
+      "G:C:G:C:G:G:G:A:G:G:G:G",
+      "G:C:G:C:G:G:G:A:G:G:T:G",
+      "G:C:G:C:G:T:G:G:A:G:G:G",
+      "G:G:A:C:A:T:G:A:G:G:G:G",
+      "G:G:A:C:G:G:G:A:G:G:G:G",
+      "G:G:A:C:G:G:G:G:G:G:G:G",
+      "G:G:A:C:G:T:G:G:G:G:G:G",
+      "G:G:G:C:G:G:G:G:G:G:G:G",
+      "G:G:G:C:G:T:G:A:A:G:G:G",
+      "G:G:G:C:G:T:G:A:G:G:T:G",
+      "G:G:G:C:G:T:G:G:A:G:G:G",
+      "G:G:G:C:G:T:G:G:G:G:G:C",
+      "T:C:A:C:G:T:G:G:G:G:G:G",
+      "T:C:G:C:G:G:G:A:G:G:G:G",
+      "T:G:A:C:A:T:G:G:G:G:G:C",
+      "T:G:A:C:G:G:G:A:G:G:T:G",
+      "T:G:A:C:G:T:G:G:A:G:G:G",
+      "T:G:G:C:G:G:G:A:A:G:G:G",
+      "T:G:G:C:G:G:G:A:G:G:G:G",
+      "T:G:G:C:G:T:G:A:A:G:G:G",
+      "T:G:G:C:G:T:G:A:G:G:T:G",
+      "T:G:G:C:G:T:G:G:G:G:G:C",
+      "G:C:G:C:A:T:G:A:G:G:G:G",
+      "G:G:A:C:G:T:G:G:A:G:G:G",
+      "T:G:G:C:G:T:G:G:A:G:G:G",
+      "T:G:A:C:A:T:G:G:G:G:G:G",
+      "T:G:G:C:A:T:G:G:G:G:G:G",
+      "T:C:A:C:A:T:G:G:G:G:G:G",
+      "T:C:A:C:G:T:G:G:A:G:G:G",
+      "T:G:A:C:G:T:G:G:G:G:G:C",
+      "T:G:G:C:A:T:G:A:G:G:G:G",
+      "T:C:A:C:A:T:G:A:G:G:G:G",
+      "T:C:A:C:G:T:G:A:A:G:G:G",
+      "T:G:G:C:G:G:G:G:G:G:G:G",
+      "T:G:A:C:G:T:G:A:A:G:G:G",
+      "G:C:G:G:G:T:G:A:G:G:G:G",
+      "G:G:G:C:G:G:G:A:A:G:G:G",
+      "G:G:G:C:G:T:A:G:G:G:G:G",
+      "T:G:G:C:G:G:G:A:G:G:T:G",
+      "T:C:G:C:G:T:G:G:G:G:G:C",
+      "T:G:A:C:G:T:G:G:G:A:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.415,
+      "EUR": 0.276,
+      "AFR": 0.028,
+      "AMR": 0.332,
+      "EAS": 0.625
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.38835,
+      "ITU": 0.37981,
+      "PJL": 0.36538,
+      "STU": 0.50962
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-008.v3": {
+    "rsid": "mh06kk-008.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:C:A:C:C:G:T:G:A:G:G:G:G",
+      "G:C:C:A:C:C:G:T:G:G:A:G:G:G",
+      "G:C:C:A:C:C:G:T:G:G:G:G:G:G",
+      "G:C:C:G:C:C:G:G:G:A:A:G:G:G",
+      "G:C:C:G:C:C:G:G:G:G:G:G:G:G",
+      "G:C:C:G:C:C:G:T:G:A:A:G:G:G",
+      "G:C:C:G:C:C:G:T:G:A:G:G:G:G",
+      "G:C:C:G:C:C:G:T:G:A:G:G:T:G",
+      "G:C:C:G:C:C:G:T:G:G:G:G:G:G",
+      "G:C:G:A:C:C:G:T:G:A:G:G:G:G",
+      "G:C:G:G:C:C:G:G:G:A:G:G:T:G",
+      "G:C:G:G:C:C:G:T:G:A:G:G:G:G",
+      "G:C:G:G:C:C:G:T:G:G:G:G:G:G",
+      "G:C:G:G:C:C:G:T:G:G:G:G:T:G",
+      "T:C:C:A:C:C:G:T:G:A:G:G:G:G",
+      "T:C:C:G:C:C:G:T:G:A:A:G:G:G",
+      "T:C:C:G:C:C:G:T:G:A:G:G:G:G",
+      "T:C:C:G:C:C:G:T:G:G:A:G:G:G",
+      "T:C:C:G:C:C:G:T:G:G:G:G:G:G",
+      "T:C:G:A:C:C:A:T:G:A:G:G:G:G",
+      "T:C:G:A:C:C:G:T:G:A:G:G:G:G",
+      "T:C:G:A:C:C:G:T:G:G:G:G:G:G",
+      "T:C:G:G:C:C:G:T:G:A:G:G:G:G",
+      "T:C:G:G:C:C:G:T:G:G:G:G:G:G",
+      "G:C:C:A:C:C:A:T:G:A:G:G:G:G",
+      "G:C:C:A:C:C:G:G:G:G:G:G:G:G",
+      "G:C:C:A:C:C:G:T:G:A:G:G:T:G",
+      "G:C:C:G:C:C:G:G:G:A:G:G:G:G",
+      "G:C:C:G:C:C:G:G:G:A:G:G:T:G",
+      "G:C:C:G:C:C:G:T:G:G:A:G:G:G",
+      "G:C:G:A:C:C:A:T:G:A:G:G:G:G",
+      "G:C:G:A:C:C:G:G:G:A:G:G:G:G",
+      "G:C:G:A:C:C:G:G:G:G:G:G:G:G",
+      "G:C:G:A:C:C:G:T:G:G:G:G:G:G",
+      "G:C:G:G:C:C:G:G:G:G:G:G:G:G",
+      "G:C:G:G:C:C:G:T:G:A:A:G:G:G",
+      "G:C:G:G:C:C:G:T:G:A:G:G:T:G",
+      "G:C:G:G:C:C:G:T:G:G:A:G:G:G",
+      "G:C:G:G:C:C:G:T:G:G:G:G:G:C",
+      "T:C:C:A:C:C:G:T:G:G:G:G:G:G",
+      "T:C:C:G:C:C:G:G:G:A:G:G:G:G",
+      "T:C:G:A:C:C:A:T:G:G:G:G:G:C",
+      "T:C:G:A:C:C:G:G:G:A:G:G:T:G",
+      "T:C:G:A:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:G:C:C:G:G:G:A:A:G:G:G",
+      "T:C:G:G:C:C:G:G:G:A:G:G:G:G",
+      "T:C:G:G:C:C:G:T:G:A:A:G:G:G",
+      "T:C:G:G:C:C:G:T:G:A:G:G:T:G",
+      "T:C:G:G:C:C:G:T:G:G:G:G:G:C",
+      "G:C:C:G:C:C:A:T:G:A:G:G:G:G",
+      "G:C:G:A:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:G:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:A:C:C:A:T:G:G:G:G:G:G",
+      "T:C:G:G:C:C:A:T:G:G:G:G:G:G",
+      "T:C:C:A:C:C:A:T:G:G:G:G:G:G",
+      "T:C:C:A:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:A:C:C:G:T:G:G:G:G:G:C",
+      "T:C:G:G:C:C:A:T:G:A:G:G:G:G",
+      "T:C:C:A:C:C:A:T:G:A:G:G:G:G",
+      "T:C:C:A:C:C:G:T:G:A:A:G:G:G",
+      "T:C:G:G:C:C:G:G:G:G:G:G:G:G",
+      "T:C:G:A:C:C:G:T:G:A:A:G:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.415,
+      "EUR": 0.276,
+      "AFR": 0.028,
+      "AMR": 0.332,
+      "EAS": 0.625
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.38835,
+      "ITU": 0.37981,
+      "PJL": 0.36538,
+      "STU": 0.50962
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06nh-11": {
+    "rsid": "mh06nh-11",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T:T",
+      "G:C:C",
+      "G:T:T",
+      "A:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.473,
+      "EUR": 0.701,
+      "AFR": 0.216,
+      "AMR": 0.692,
+      "EAS": 0.003
+    },
+    "subFrequencies": {
+      "BEB": 0.42079,
+      "GIH": 0.45146,
+      "ITU": 0.45192,
+      "PJL": 0.60577,
+      "STU": 0.43269
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0064598": {
+    "rsid": "mh07scuzj-0064598",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.998,
+      "EUR": 1,
+      "AFR": 0.953,
+      "AMR": 1,
+      "EAS": 0.991
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 0.99515,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 0.99519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-083": {
+    "rsid": "mh07wl-083",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:T",
+      "A:T:T",
+      "C:A:T",
+      "C:T:T",
+      "A:A:C",
+      "A:T:C",
+      "C:T:C",
+      "C:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.607,
+      "EUR": 0.434,
+      "AFR": 0.371,
+      "AMR": 0.644,
+      "EAS": 0.335
+    },
+    "subFrequencies": {
+      "BEB": 0.59406,
+      "GIH": 0.66505,
+      "ITU": 0.64423,
+      "PJL": 0.57212,
+      "STU": 0.55769
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07nh-12": {
+    "rsid": "mh07nh-12",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G",
+      "G:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.747,
+      "EUR": 0.757,
+      "AFR": 0.668,
+      "AMR": 0.785,
+      "EAS": 0.493
+    },
+    "subFrequencies": {
+      "BEB": 0.73267,
+      "GIH": 0.68932,
+      "ITU": 0.83654,
+      "PJL": 0.72115,
+      "STU": 0.75481
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07hyp-19.v1": {
+    "rsid": "mh07hyp-19.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "C:A",
+      "C:G",
+      "A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.775,
+      "EUR": 0.643,
+      "AFR": 0.726,
+      "AMR": 0.722,
+      "EAS": 0.554
+    },
+    "subFrequencies": {
+      "BEB": 0.79208,
+      "GIH": 0.78155,
+      "ITU": 0.76923,
+      "PJL": 0.73077,
+      "STU": 0.80288
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07kk-081": {
+    "rsid": "mh07kk-081",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:C",
+      "T:T",
+      "TA:T",
+      "TA:C"
+    ],
+    "frequencies": {
+      "SAS": 0.962,
+      "EUR": 0.907,
+      "AFR": 0.999,
+      "AMR": 0,
+      "EAS": 0.999
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-074": {
+    "rsid": "mh07wl-074",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C:G:G:T:T:C",
+      "A:C:T:A:G:T:T:C",
+      "A:C:T:A:G:T:T:T",
+      "A:C:T:G:A:T:C:C",
+      "A:C:T:G:A:T:T:C",
+      "A:C:T:G:G:T:T:C",
+      "A:T:C:G:G:G:T:C",
+      "G:C:C:G:G:T:T:C",
+      "G:T:C:G:G:G:T:C",
+      "A:C:C:A:G:T:T:T",
+      "A:C:C:G:G:G:T:C",
+      "G:C:C:G:G:G:T:C",
+      "G:C:T:G:G:T:T:C",
+      "G:T:C:G:A:T:C:C",
+      "G:T:C:G:G:T:T:C",
+      "A:C:C:G:G:T:T:T",
+      "A:C:C:G:A:T:T:C",
+      "G:T:C:G:A:G:T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.451,
+      "EUR": 0.482,
+      "AFR": 0.213,
+      "AMR": 0.5,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.4505,
+      "GIH": 0.50485,
+      "ITU": 0.44231,
+      "PJL": 0.44231,
+      "STU": 0.41346
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-013": {
+    "rsid": "mh07wl-013",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:T",
+      "G:G:G",
+      "T:G:G",
+      "G:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.422,
+      "EUR": 0.42,
+      "AFR": 0.164,
+      "AMR": 0.423,
+      "EAS": 0.138
+    },
+    "subFrequencies": {
+      "BEB": 0.40099,
+      "GIH": 0.47573,
+      "ITU": 0.39904,
+      "PJL": 0.44231,
+      "STU": 0.38942
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07ls-7qe": {
+    "rsid": "mh07ls-7qe",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A",
+      "T:A:A",
+      "T:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.658,
+      "EUR": 0.7,
+      "AFR": 0.542,
+      "AMR": 0.731,
+      "EAS": 0.435
+    },
+    "subFrequencies": {
+      "BEB": 0.61386,
+      "GIH": 0.67961,
+      "ITU": 0.64904,
+      "PJL": 0.72115,
+      "STU": 0.625
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-043": {
+    "rsid": "mh07wl-043",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:G",
+      "C:T:A",
+      "C:T:G",
+      "T:T:G",
+      "C:G:A",
+      "T:T:A",
+      "T:G:A",
+      "T:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.401,
+      "EUR": 0.087,
+      "AFR": 0.164,
+      "AMR": 0.135,
+      "EAS": 0.32
+    },
+    "subFrequencies": {
+      "BEB": 0.47525,
+      "GIH": 0.40291,
+      "ITU": 0.41346,
+      "PJL": 0.31731,
+      "STU": 0.39904
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-011.v3": {
+    "rsid": "mh07wl-011.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C:C:G:G",
+      "G:C:C:C:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.914,
+      "EUR": 0.76,
+      "AFR": 0.909,
+      "AMR": 0.885,
+      "EAS": 0.765
+    },
+    "subFrequencies": {
+      "BEB": 0.90594,
+      "GIH": 0.90291,
+      "ITU": 0.91346,
+      "PJL": 0.88942,
+      "STU": 0.95673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0514088": {
+    "rsid": "mh07scuzj-0514088",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:T:G:A:T:T:A:T",
+      "C:A:T:G:A:T:T:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.873,
+      "EUR": 0.83,
+      "AFR": 0.724,
+      "AMR": 0.774,
+      "EAS": 0.631
+    },
+    "subFrequencies": {
+      "BEB": 0.84653,
+      "GIH": 0.8932,
+      "ITU": 0.88462,
+      "PJL": 0.87019,
+      "STU": 0.87019
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0532868": {
+    "rsid": "mh07scuzj-0532868",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A:C:T:A:T:A:A:A:A:A:T:C:A:T:A:C:T",
+      "C:A:A:C:T:A:T:A:A:A:A:A:T:C:A:T:A:T:T",
+      "C:A:A:C:T:A:T:A:A:A:A:A:C:C:A:T:A:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.994,
+      "EUR": 0.986,
+      "AFR": 0.971,
+      "AMR": 1,
+      "EAS": 0.973
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 0.97596,
+      "PJL": 1,
+      "STU": 0.99519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-061": {
+    "rsid": "mh07wl-061",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C:C",
+      "A:G:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.996,
+      "EUR": 0.993,
+      "AFR": 0.99,
+      "AMR": 0.995,
+      "EAS": 0.994
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 0.99515,
+      "ITU": 0.98558,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07ls-7qg": {
+    "rsid": "mh07ls-7qg",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "C:A:G",
+      "C:G:C",
+      "T:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.416,
+      "EUR": 0.144,
+      "AFR": 0.136,
+      "AMR": 0.201,
+      "EAS": 0.324
+    },
+    "subFrequencies": {
+      "BEB": 0.41089,
+      "GIH": 0.46117,
+      "ITU": 0.38942,
+      "PJL": 0.39904,
+      "STU": 0.41827
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08kk-032": {
+    "rsid": "mh08kk-032",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G",
+      "T:A",
+      "T:G",
+      "C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.499,
+      "EUR": 0.168,
+      "AFR": 0.565,
+      "AMR": 0.365,
+      "EAS": 0.752
+    },
+    "subFrequencies": {
+      "BEB": 0.558,
+      "GIH": 0.534,
+      "ITU": 0.451,
+      "PJL": 0.411,
+      "STU": 0.525
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08ls-8qa": {
+    "rsid": "mh08ls-8qa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:C",
+      "C:T:G",
+      "T:A:C",
+      "T:T:C",
+      "T:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.432,
+      "EUR": 0.003,
+      "AFR": 0.112,
+      "AMR": 0.019,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.48515,
+      "GIH": 0.34466,
+      "ITU": 0.46154,
+      "PJL": 0.39423,
+      "STU": 0.47596
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-045.v2": {
+    "rsid": "mh08wl-045.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:G",
+      "C:T:T",
+      "G:C:G",
+      "G:T:G",
+      "G:T:T",
+      "G:C:T",
+      "C:C:T",
+      "C:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.612,
+      "EUR": 0.529,
+      "AFR": 0.137,
+      "AMR": 0.374,
+      "EAS": 0.374
+    },
+    "subFrequencies": {
+      "BEB": 0.63366,
+      "GIH": 0.62136,
+      "ITU": 0.60577,
+      "PJL": 0.62019,
+      "STU": 0.58173
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08scuzj-0386847": {
+    "rsid": "mh08scuzj-0386847",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:C:G",
+      "C:G:T:G",
+      "T:G:C:A",
+      "T:G:C:G",
+      "T:G:T:G",
+      "C:G:C:A",
+      "C:A:T:G",
+      "C:G:T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.512,
+      "EUR": 0.381,
+      "AFR": 0.14,
+      "AMR": 0.298,
+      "EAS": 0.25
+    },
+    "subFrequencies": {
+      "BEB": 0.5297,
+      "GIH": 0.46602,
+      "ITU": 0.50962,
+      "PJL": 0.52404,
+      "STU": 0.52885
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-047": {
+    "rsid": "mh08wl-047",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A:C:T",
+      "A:A:A:T:T",
+      "A:A:G:C:C",
+      "A:A:G:C:T",
+      "A:A:G:T:T",
+      "A:T:G:T:T",
+      "A:T:G:T:C",
+      "A:T:A:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.435,
+      "EUR": 0.45,
+      "AFR": 0.122,
+      "AMR": 0.418,
+      "EAS": 0.251
+    },
+    "subFrequencies": {
+      "BEB": 0.42574,
+      "GIH": 0.42718,
+      "ITU": 0.41827,
+      "PJL": 0.49038,
+      "STU": 0.41346
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08cp-009": {
+    "rsid": "mh08cp-009",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A",
+      "C:T:A",
+      "T:G:A",
+      "T:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.423,
+      "EUR": 0.447,
+      "AFR": 0.03,
+      "AMR": 0.529,
+      "EAS": 0.224
+    },
+    "subFrequencies": {
+      "BEB": 0.45545,
+      "GIH": 0.46117,
+      "ITU": 0.36058,
+      "PJL": 0.45673,
+      "STU": 0.38462
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08usc-8qc": {
+    "rsid": "mh08usc-8qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A:C",
+      "C:A:A:C",
+      "C:A:G:C",
+      "C:C:G:A",
+      "C:C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.435,
+      "EUR": 0.363,
+      "AFR": 0.066,
+      "AMR": 0.471,
+      "EAS": 0.404
+    },
+    "subFrequencies": {
+      "BEB": 0.4505,
+      "GIH": 0.46117,
+      "ITU": 0.45673,
+      "PJL": 0.41827,
+      "STU": 0.38942
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08ls-8qf": {
+    "rsid": "mh08ls-8qf",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:A",
+      "C:T:G",
+      "T:T:A",
+      "C:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.539,
+      "EUR": 0.347,
+      "AFR": 0.321,
+      "AMR": 0.356,
+      "EAS": 0.481
+    },
+    "subFrequencies": {
+      "BEB": 0.5099,
+      "GIH": 0.51942,
+      "ITU": 0.56731,
+      "PJL": 0.56731,
+      "STU": 0.52885
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-161.v1": {
+    "rsid": "mh09kk-161.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G",
+      "C:T",
+      "T:G",
+      "T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.599,
+      "EUR": 0.54,
+      "AFR": 0.023,
+      "AMR": 0.014,
+      "EAS": 0.738
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-010.v1": {
+    "rsid": "mh09wl-010.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:G:A:T:A:T",
+      "A:G:G:A:T:G:T",
+      "T:G:G:A:T:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.995,
+      "EUR": 0.996,
+      "AFR": 0.001,
+      "AMR": 0.969,
+      "EAS": 0.933
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 0.98558,
+      "PJL": 1,
+      "STU": 0.99038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-010.v3": {
+    "rsid": "mh09wl-010.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:G:A:A:T",
+      "A:G:G:A:G:T",
+      "T:G:G:A:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.995,
+      "EUR": 0.996,
+      "AFR": 0.001,
+      "AMR": 0.969,
+      "EAS": 0.933
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 0.98558,
+      "PJL": 1,
+      "STU": 0.99038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-010.v2": {
+    "rsid": "mh09wl-010.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:A:T:A:T",
+      "G:G:A:T:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.995,
+      "EUR": 0.996,
+      "AFR": 0.984,
+      "AMR": 0.969,
+      "EAS": 0.933
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 0.98558,
+      "PJL": 1,
+      "STU": 0.99038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-037": {
+    "rsid": "mh09wl-037",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A:G:G:T",
+      "G:C:A:C:A:T",
+      "G:C:A:G:A:T",
+      "G:C:A:G:G:T",
+      "G:C:G:G:A:T",
+      "G:G:A:G:G:T",
+      "G:C:G:G:G:T",
+      "A:C:G:G:G:T",
+      "G:G:A:G:G:C",
+      "G:G:A:G:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.403,
+      "EUR": 0.166,
+      "AFR": 0.021,
+      "AMR": 0.402,
+      "EAS": 0.319
+    },
+    "subFrequencies": {
+      "BEB": 0.41584,
+      "GIH": 0.37864,
+      "ITU": 0.40865,
+      "PJL": 0.38462,
+      "STU": 0.42788
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-034": {
+    "rsid": "mh09kk-034",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "G:A",
+      "G:G",
+      "A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.417,
+      "EUR": 0.117,
+      "AFR": 0.568,
+      "AMR": 0.759,
+      "EAS": 0.771
+    },
+    "subFrequencies": {
+      "BEB": 0.453,
+      "GIH": 0.383,
+      "ITU": 0.422,
+      "PJL": 0.318,
+      "STU": 0.471
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-020": {
+    "rsid": "mh09kk-020",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C:C",
+      "A:C:T:C",
+      "A:C:T:T",
+      "A:T:T:C",
+      "G:C:T:C",
+      "G:C:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.436,
+      "EUR": 0.119,
+      "AFR": 0.326,
+      "AMR": 0.234,
+      "EAS": 0.459
+    },
+    "subFrequencies": {
+      "BEB": 0.477,
+      "GIH": 0.432,
+      "ITU": 0.461,
+      "PJL": 0.375,
+      "STU": 0.436
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09scuzj-0182699": {
+    "rsid": "mh09scuzj-0182699",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:G:G:A:A",
+      "T:G:G:C:A",
+      "T:G:G:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.744,
+      "EUR": 0.679,
+      "AFR": 0.005,
+      "AMR": 0.726,
+      "EAS": 0.618
+    },
+    "subFrequencies": {
+      "BEB": 0.74752,
+      "GIH": 0.74272,
+      "ITU": 0.76442,
+      "PJL": 0.74519,
+      "STU": 0.72115
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-152.v2": {
+    "rsid": "mh09kk-152.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.473,
+      "EUR": 0.138,
+      "AFR": 0.576,
+      "AMR": 0.437,
+      "EAS": 0.549
+    },
+    "subFrequencies": {
+      "BEB": 0.5099,
+      "GIH": 0.41748,
+      "ITU": 0.52404,
+      "PJL": 0.42788,
+      "STU": 0.48558
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-008": {
+    "rsid": "mh09wl-008",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C",
+      "A:C:T",
+      "A:T:C",
+      "A:T:T",
+      "T:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.566,
+      "EUR": 0.664,
+      "AFR": 0.052,
+      "AMR": 0.623,
+      "EAS": 0.012
+    },
+    "subFrequencies": {
+      "BEB": 0.5396,
+      "GIH": 0.60194,
+      "ITU": 0.60577,
+      "PJL": 0.52404,
+      "STU": 0.55769
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10scuzj-0041521": {
+    "rsid": "mh10scuzj-0041521",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A:A:A:G:A:T:C:C:G:G:C:T:G",
+      "A:A:A:A:A:G:A:T:C:C:A:G:C:T:G"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 1,
+      "AFR": 0.994,
+      "AMR": 1,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10usc-10pa": {
+    "rsid": "mh10usc-10pa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:G",
+      "T:A:G",
+      "T:G:A",
+      "T:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.452,
+      "EUR": 0.471,
+      "AFR": 0.353,
+      "AMR": 0.462,
+      "EAS": 0.133
+    },
+    "subFrequencies": {
+      "BEB": 0.39109,
+      "GIH": 0.50971,
+      "ITU": 0.48077,
+      "PJL": 0.45673,
+      "STU": 0.41827
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10pa": {
+    "rsid": "mh10ls-10pa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "C:C:C",
+      "T:A:A",
+      "T:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.759,
+      "EUR": 0.592,
+      "AFR": 0.16,
+      "AMR": 0.531,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.75248,
+      "GIH": 0.76699,
+      "ITU": 0.79327,
+      "PJL": 0.72596,
+      "STU": 0.75481
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10wl-056": {
+    "rsid": "mh10wl-056",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A:G:C",
+      "A:C:A:G:G",
+      "A:C:G:G:C",
+      "A:C:G:G:G",
+      "A:T:G:A:G",
+      "G:C:G:G:G",
+      "G:C:G:G:C",
+      "A:C:G:A:G",
+      "A:T:G:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.451,
+      "EUR": 0.324,
+      "AFR": 0.023,
+      "AMR": 0.341,
+      "EAS": 0.293
+    },
+    "subFrequencies": {
+      "BEB": 0.4703,
+      "GIH": 0.45146,
+      "ITU": 0.46635,
+      "PJL": 0.42788,
+      "STU": 0.4375
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10scuzj-0281402": {
+    "rsid": "mh10scuzj-0281402",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:G:C:G",
+      "G:A:G:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.655,
+      "EUR": 0.321,
+      "AFR": 0.9,
+      "AMR": 0.443,
+      "EAS": 0.804
+    },
+    "subFrequencies": {
+      "BEB": 0.70792,
+      "GIH": 0.63107,
+      "ITU": 0.63942,
+      "PJL": 0.69712,
+      "STU": 0.60096
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10qd": {
+    "rsid": "mh10ls-10qd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A",
+      "C:G:G",
+      "T:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.412,
+      "EUR": 0.221,
+      "AFR": 0.073,
+      "AMR": 0.218,
+      "EAS": 0.335
+    },
+    "subFrequencies": {
+      "BEB": 0.39109,
+      "GIH": 0.42233,
+      "ITU": 0.44712,
+      "PJL": 0.37981,
+      "STU": 0.41827
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10qe": {
+    "rsid": "mh10ls-10qe",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:C",
+      "A:A:T",
+      "G:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.829,
+      "EUR": 0.861,
+      "AFR": 0.642,
+      "AMR": 0.869,
+      "EAS": 0.504
+    },
+    "subFrequencies": {
+      "BEB": 0.77228,
+      "GIH": 0.86893,
+      "ITU": 0.8125,
+      "PJL": 0.88462,
+      "STU": 0.80769
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10wl-007": {
+    "rsid": "mh10wl-007",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:G:A:C",
+      "G:G:A:A:C",
+      "G:G:G:A:C",
+      "G:T:G:A:C",
+      "A:G:G:A:T",
+      "G:G:G:G:C",
+      "G:T:G:A:T",
+      "G:G:A:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.486,
+      "EUR": 0.001,
+      "AFR": 0.057,
+      "AMR": 0.438,
+      "EAS": 0.261
+    },
+    "subFrequencies": {
+      "BEB": 0.4604,
+      "GIH": 0.52913,
+      "ITU": 0.49519,
+      "PJL": 0.49519,
+      "STU": 0.45192
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10kk-084": {
+    "rsid": "mh10kk-084",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G",
+      "T:C",
+      "T:G",
+      "A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.981,
+      "EUR": 0.938,
+      "AFR": 0.805,
+      "AMR": 0,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10qi": {
+    "rsid": "mh10ls-10qi",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:C",
+      "C:G:T",
+      "C:T:C",
+      "C:T:T",
+      "T:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.551,
+      "EUR": 0.741,
+      "AFR": 0.359,
+      "AMR": 0.654,
+      "EAS": 0.38
+    },
+    "subFrequencies": {
+      "BEB": 0.5297,
+      "GIH": 0.59709,
+      "ITU": 0.51923,
+      "PJL": 0.59135,
+      "STU": 0.51923
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11pb": {
+    "rsid": "mh11ls-11pb",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:T:A",
+      "G:T:C",
+      "T:C:A",
+      "T:T:A",
+      "G:C:C",
+      "G:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.401,
+      "EUR": 0.001,
+      "AFR": 0.16,
+      "AMR": 0.048,
+      "EAS": 0.4
+    },
+    "subFrequencies": {
+      "BEB": 0.41584,
+      "GIH": 0.3835,
+      "ITU": 0.375,
+      "PJL": 0.4375,
+      "STU": 0.39423
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11pc": {
+    "rsid": "mh11ls-11pc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:G",
+      "G:G:A",
+      "T:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.538,
+      "EUR": 0.441,
+      "AFR": 0.355,
+      "AMR": 0.433,
+      "EAS": 0.369
+    },
+    "subFrequencies": {
+      "BEB": 0.58416,
+      "GIH": 0.59223,
+      "ITU": 0.57212,
+      "PJL": 0.5,
+      "STU": 0.44231
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-024.v1": {
+    "rsid": "mh11wl-024.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:A:T:G",
+      "C:C:G:C:G",
+      "C:C:G:T:A",
+      "C:C:G:T:G",
+      "C:T:G:T:G",
+      "T:T:G:T:G",
+      "T:C:A:T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.445,
+      "EUR": 0.001,
+      "AFR": 0.001,
+      "AMR": 0.423,
+      "EAS": 0.065
+    },
+    "subFrequencies": {
+      "BEB": 0.39109,
+      "GIH": 0.47573,
+      "ITU": 0.41346,
+      "PJL": 0.44712,
+      "STU": 0.49519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11hyp-28": {
+    "rsid": "mh11hyp-28",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "G:A",
+      "G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.857,
+      "EUR": 0.64,
+      "AFR": 0.364,
+      "AMR": 0.515,
+      "EAS": 0.432
+    },
+    "subFrequencies": {
+      "BEB": 0.78713,
+      "GIH": 0.90777,
+      "ITU": 0.90865,
+      "PJL": 0.82212,
+      "STU": 0.85577
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11qa": {
+    "rsid": "mh11ls-11qa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A",
+      "A:T:A",
+      "G:C:A",
+      "G:C:G",
+      "G:T:G",
+      "G:T:A",
+      "A:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.622,
+      "EUR": 0.001,
+      "AFR": 0.141,
+      "AMR": 0.701,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.63861,
+      "GIH": 0.62621,
+      "ITU": 0.61538,
+      "PJL": 0.57212,
+      "STU": 0.65865
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-027.v2": {
+    "rsid": "mh11wl-027.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G:G:C:T:A:C",
+      "G:C:G:G:C:T:A:C",
+      "G:C:G:G:C:T:G:C",
+      "G:C:G:G:C:T:A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.985,
+      "EUR": 0.999,
+      "AFR": 0.007,
+      "AMR": 0.959,
+      "EAS": 0.026
+    },
+    "subFrequencies": {
+      "BEB": 0.99505,
+      "GIH": 0.98544,
+      "ITU": 0.96635,
+      "PJL": 0.99519,
+      "STU": 0.98077
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-027.v1": {
+    "rsid": "mh11wl-027.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:C:T:A",
+      "G:G:C:T:G"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 1,
+      "AFR": 0.007,
+      "AMR": 1,
+      "EAS": 0.026
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11qc": {
+    "rsid": "mh11ls-11qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "G:A:C",
+      "G:G:T",
+      "G:G:C",
+      "C:G:T",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.604,
+      "EUR": 0.735,
+      "AFR": 0.342,
+      "AMR": 0.845,
+      "EAS": 0.482
+    },
+    "subFrequencies": {
+      "BEB": 0.60396,
+      "GIH": 0.59223,
+      "ITU": 0.58173,
+      "PJL": 0.63942,
+      "STU": 0.60096
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11qd": {
+    "rsid": "mh11ls-11qd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:A",
+      "G:A:C",
+      "G:G:C",
+      "G:A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.515,
+      "EUR": 0.419,
+      "AFR": 0.232,
+      "AMR": 0.592,
+      "EAS": 0.524
+    },
+    "subFrequencies": {
+      "BEB": 0.46535,
+      "GIH": 0.55825,
+      "ITU": 0.5625,
+      "PJL": 0.51923,
+      "STU": 0.47115
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-091": {
+    "rsid": "mh11kk-091",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:C",
+      "T:T",
+      "TG:C",
+      "TG:T"
+    ],
+    "frequencies": {
+      "SAS": 0.922,
+      "EUR": 0.941,
+      "AFR": 0.816,
+      "AMR": 0.176,
+      "EAS": 0.825
+    },
+    "subFrequencies": {
+      "BEB": 0.163,
+      "GIH": 0.092,
+      "ITU": 0.113,
+      "PJL": 0.089,
+      "STU": 0.181
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-050": {
+    "rsid": "mh11wl-050",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C:G",
+      "A:C:T:G",
+      "A:T:C:A",
+      "A:T:C:G",
+      "G:C:C:G",
+      "A:C:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.503,
+      "EUR": 0.349,
+      "AFR": 0.026,
+      "AMR": 0.523,
+      "EAS": 0.351
+    },
+    "subFrequencies": {
+      "BEB": 0.46535,
+      "GIH": 0.5534,
+      "ITU": 0.49519,
+      "PJL": 0.48558,
+      "STU": 0.51442
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-001.v2": {
+    "rsid": "mh11wl-001.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:C:C:A:C:T",
+      "A:A:C:G:A:C:T",
+      "A:A:T:G:A:C:T",
+      "C:C:C:G:A:C:T",
+      "C:C:T:C:A:C:T",
+      "C:C:T:G:A:C:T",
+      "A:A:T:C:A:C:T",
+      "C:A:C:G:A:C:T",
+      "C:C:C:C:A:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.566,
+      "EUR": 0.346,
+      "AFR": 0.349,
+      "AMR": 0.667,
+      "EAS": 0.553
+    },
+    "subFrequencies": {
+      "BEB": 0.59406,
+      "GIH": 0.6068,
+      "ITU": 0.53846,
+      "PJL": 0.55288,
+      "STU": 0.53846
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-001.v3": {
+    "rsid": "mh11wl-001.v3",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:C:C:A:C:T:G:C",
+      "A:A:C:G:A:C:T:G:C",
+      "A:A:T:G:A:C:T:G:C",
+      "C:C:C:G:A:C:T:G:C",
+      "C:C:T:C:A:C:T:G:C",
+      "C:C:T:G:A:C:T:G:C",
+      "A:A:T:C:A:C:T:G:C",
+      "C:A:C:G:A:C:T:G:C",
+      "C:C:C:C:A:C:T:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.566,
+      "EUR": 0.346,
+      "AFR": 0.349,
+      "AMR": 0.667,
+      "EAS": 0.553
+    },
+    "subFrequencies": {
+      "BEB": 0.59406,
+      "GIH": 0.6068,
+      "ITU": 0.53846,
+      "PJL": 0.55288,
+      "STU": 0.53846
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-001.v1": {
+    "rsid": "mh11wl-001.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C:T:G:C",
+      "G:A:C:T:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.605,
+      "EUR": 0.37,
+      "AFR": 0.439,
+      "AMR": 0.695,
+      "EAS": 0.588
+    },
+    "subFrequencies": {
+      "BEB": 0.62871,
+      "GIH": 0.62621,
+      "ITU": 0.59135,
+      "PJL": 0.60577,
+      "STU": 0.57212
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12scuzj-0007105": {
+    "rsid": "mh12scuzj-0007105",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A:G:A",
+      "C:G:A:G:C",
+      "C:G:A:T:A",
+      "G:A:G:T:A",
+      "G:G:A:G:A",
+      "G:G:A:T:A",
+      "G:G:G:T:A",
+      "G:G:A:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.432,
+      "EUR": 0.542,
+      "AFR": 0.013,
+      "AMR": 0.371,
+      "EAS": 0.373
+    },
+    "subFrequencies": {
+      "BEB": 0.40594,
+      "GIH": 0.39806,
+      "ITU": 0.4375,
+      "PJL": 0.45673,
+      "STU": 0.46154
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12wl-051": {
+    "rsid": "mh12wl-051",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "C:A:T",
+      "C:G:C",
+      "C:G:T",
+      "G:A:C",
+      "G:A:T",
+      "G:G:C",
+      "G:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.468,
+      "EUR": 0.33,
+      "AFR": 0.058,
+      "AMR": 0.598,
+      "EAS": 0.371
+    },
+    "subFrequencies": {
+      "BEB": 0.4604,
+      "GIH": 0.45146,
+      "ITU": 0.43269,
+      "PJL": 0.45673,
+      "STU": 0.53846
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12kk-092": {
+    "rsid": "mh12kk-092",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.42,
+      "EUR": 0.371,
+      "AFR": 0.355,
+      "AMR": 0.516,
+      "EAS": 0.643
+    },
+    "subFrequencies": {
+      "BEB": 0.506,
+      "GIH": 0.413,
+      "ITU": 0.382,
+      "PJL": 0.391,
+      "STU": 0.358
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12usc-12pb": {
+    "rsid": "mh12usc-12pb",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:T",
+      "T:A:T",
+      "T:G:A",
+      "T:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.414,
+      "EUR": 0.508,
+      "AFR": 0.258,
+      "AMR": 0.672,
+      "EAS": 0.488
+    },
+    "subFrequencies": {
+      "BEB": 0.54455,
+      "GIH": 0.40777,
+      "ITU": 0.36058,
+      "PJL": 0.45192,
+      "STU": 0.30769
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12hyp-31": {
+    "rsid": "mh12hyp-31",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.576,
+      "EUR": 0.498,
+      "AFR": 0.365,
+      "AMR": 0.577,
+      "EAS": 0.454
+    },
+    "subFrequencies": {
+      "BEB": 0.58416,
+      "GIH": 0.61165,
+      "ITU": 0.59135,
+      "PJL": 0.54808,
+      "STU": 0.54327
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12ls-12qd": {
+    "rsid": "mh12ls-12qd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:A",
+      "G:C:A",
+      "G:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.548,
+      "EUR": 0.447,
+      "AFR": 0.49,
+      "AMR": 0.672,
+      "EAS": 0.434
+    },
+    "subFrequencies": {
+      "BEB": 0.58416,
+      "GIH": 0.58252,
+      "ITU": 0.56731,
+      "PJL": 0.51923,
+      "STU": 0.49038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12usc-12qc": {
+    "rsid": "mh12usc-12qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A:C",
+      "A:C:A:T",
+      "A:T:A:C",
+      "A:T:A:T",
+      "G:C:A:C",
+      "G:C:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.405,
+      "EUR": 0.311,
+      "AFR": 0.096,
+      "AMR": 0.356,
+      "EAS": 0.258
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.42718,
+      "ITU": 0.46154,
+      "PJL": 0.34615,
+      "STU": 0.36058
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12scuzj-0331644": {
+    "rsid": "mh12scuzj-0331644",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C",
+      "C:C:T",
+      "T:C:C",
+      "T:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.523,
+      "EUR": 0.566,
+      "AFR": 0.287,
+      "AMR": 0.514,
+      "EAS": 0.512
+    },
+    "subFrequencies": {
+      "BEB": 0.48515,
+      "GIH": 0.54369,
+      "ITU": 0.50962,
+      "PJL": 0.57212,
+      "STU": 0.50481
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12scuzj-0345285": {
+    "rsid": "mh12scuzj-0345285",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C:C:T:T:A",
+      "C:C:C:C:T:T:T",
+      "C:C:C:C:C:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.583,
+      "EUR": 0.328,
+      "AFR": 0.417,
+      "AMR": 0.672,
+      "EAS": 0.395
+    },
+    "subFrequencies": {
+      "BEB": 0.56931,
+      "GIH": 0.57282,
+      "ITU": 0.60096,
+      "PJL": 0.56731,
+      "STU": 0.60577
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-213.v4": {
+    "rsid": "mh13kk-213.v4",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "T:A",
+      "T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.682,
+      "EUR": 0.464,
+      "AFR": 0.637,
+      "AMR": 0.51,
+      "EAS": 0.554
+    },
+    "subFrequencies": {
+      "BEB": 0.66337,
+      "GIH": 0.72816,
+      "ITU": 0.69231,
+      "PJL": 0.63942,
+      "STU": 0.6875
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13ls-13qa": {
+    "rsid": "mh13ls-13qa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A:A",
+      "G:C:A:A",
+      "G:G:A:A",
+      "G:G:G:G",
+      "A:G:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.581,
+      "EUR": 0.514,
+      "AFR": 0.647,
+      "AMR": 0.672,
+      "EAS": 0.429
+    },
+    "subFrequencies": {
+      "BEB": 0.5396,
+      "GIH": 0.59223,
+      "ITU": 0.53365,
+      "PJL": 0.56731,
+      "STU": 0.67308
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-217.v4": {
+    "rsid": "mh13kk-217.v4",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.415,
+      "EUR": 0.411,
+      "AFR": 0.323,
+      "AMR": 0.454,
+      "EAS": 0.596
+    },
+    "subFrequencies": {
+      "BEB": 0.4901,
+      "GIH": 0.38835,
+      "ITU": 0.41346,
+      "PJL": 0.39423,
+      "STU": 0.38942
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13scuzj-0108086": {
+    "rsid": "mh13scuzj-0108086",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:T:C:T:A",
+      "T:T:C:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.996,
+      "EUR": 0.997,
+      "AFR": 0.987,
+      "AMR": 1,
+      "EAS": 0.986
+    },
+    "subFrequencies": {
+      "BEB": 0.98515,
+      "GIH": 0.99515,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-225.v4": {
+    "rsid": "mh13kk-225.v4",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G",
+      "A:T:A",
+      "A:T:G",
+      "C:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.633,
+      "EUR": 0.577,
+      "AFR": 0.504,
+      "AMR": 0.874,
+      "EAS": 0.443
+    },
+    "subFrequencies": {
+      "BEB": 0.61386,
+      "GIH": 0.70874,
+      "ITU": 0.62019,
+      "PJL": 0.58654,
+      "STU": 0.63462
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13ls-13qd": {
+    "rsid": "mh13ls-13qd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:G",
+      "T:C:A",
+      "T:C:G",
+      "T:T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.463,
+      "EUR": 0.414,
+      "AFR": 0.467,
+      "AMR": 0.438,
+      "EAS": 0.34
+    },
+    "subFrequencies": {
+      "BEB": 0.44059,
+      "GIH": 0.46602,
+      "ITU": 0.48558,
+      "PJL": 0.43269,
+      "STU": 0.49038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13ls-13qe": {
+    "rsid": "mh13ls-13qe",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:G",
+      "C:G:G",
+      "T:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.446,
+      "EUR": 0.43,
+      "AFR": 0.229,
+      "AMR": 0.423,
+      "EAS": 0.504
+    },
+    "subFrequencies": {
+      "BEB": 0.45545,
+      "GIH": 0.50971,
+      "ITU": 0.42788,
+      "PJL": 0.39904,
+      "STU": 0.4375
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13ls-13qf": {
+    "rsid": "mh13ls-13qf",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:A",
+      "T:C:A",
+      "T:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.556,
+      "EUR": 0.46,
+      "AFR": 0.57,
+      "AMR": 0.418,
+      "EAS": 0.473
+    },
+    "subFrequencies": {
+      "BEB": 0.58416,
+      "GIH": 0.54854,
+      "ITU": 0.55288,
+      "PJL": 0.52885,
+      "STU": 0.56731
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14kk-101": {
+    "rsid": "mh14kk-101",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T",
+      "G:C",
+      "G:T",
+      "A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.663,
+      "EUR": 0.392,
+      "AFR": 0.243,
+      "AMR": 0.12,
+      "EAS": 0.915
+    },
+    "subFrequencies": {
+      "BEB": 0.029,
+      "GIH": 0.058,
+      "ITU": 0.034,
+      "PJL": 0.094,
+      "STU": 0.088
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-068": {
+    "rsid": "mh15kk-068",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T",
+      "T:C",
+      "T:T",
+      "C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.543,
+      "EUR": 0.243,
+      "AFR": 0.719,
+      "AMR": 0,
+      "EAS": 0.261
+    },
+    "subFrequencies": {
+      "BEB": 0.006,
+      "GIH": 0.01,
+      "ITU": 0,
+      "PJL": 0.005,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15wl-037": {
+    "rsid": "mh15wl-037",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "C:A:G",
+      "C:T:C",
+      "C:T:G",
+      "T:A:C",
+      "T:A:G",
+      "T:T:C",
+      "T:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.576,
+      "EUR": 0.389,
+      "AFR": 0.131,
+      "AMR": 0.402,
+      "EAS": 0.25
+    },
+    "subFrequencies": {
+      "BEB": 0.50495,
+      "GIH": 0.57282,
+      "ITU": 0.55288,
+      "PJL": 0.59615,
+      "STU": 0.64904
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15scuzj-0054004": {
+    "rsid": "mh15scuzj-0054004",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:T:T:T",
+      "G:G:T:G:C",
+      "G:G:T:G:T",
+      "G:A:T:T:C",
+      "G:A:T:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.708,
+      "EUR": 0.751,
+      "AFR": 0.567,
+      "AMR": 0.851,
+      "EAS": 0.434
+    },
+    "subFrequencies": {
+      "BEB": 0.70792,
+      "GIH": 0.63107,
+      "ITU": 0.72115,
+      "PJL": 0.72596,
+      "STU": 0.75481
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15zbf-001": {
+    "rsid": "mh15zbf-001",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G",
+      "G:G",
+      "G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.686,
+      "EUR": 0.614,
+      "AFR": 0.591,
+      "AMR": 0.608,
+      "EAS": 0.278
+    },
+    "subFrequencies": {
+      "BEB": 0.65347,
+      "GIH": 0.71359,
+      "ITU": 0.69231,
+      "PJL": 0.67308,
+      "STU": 0.69712
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-067.v4": {
+    "rsid": "mh15kk-067.v4",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.627,
+      "EUR": 0.743,
+      "AFR": 0.484,
+      "AMR": 0.753,
+      "EAS": 0.132
+    },
+    "subFrequencies": {
+      "BEB": 0.64356,
+      "GIH": 0.74757,
+      "ITU": 0.64423,
+      "PJL": 0.52404,
+      "STU": 0.57692
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-104": {
+    "rsid": "mh15kk-104",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:G",
+      "T:A:A",
+      "T:A:G",
+      "T:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.414,
+      "EUR": 0.106,
+      "AFR": 0.129,
+      "AMR": 0.294,
+      "EAS": 0.904
+    },
+    "subFrequencies": {
+      "BEB": 0.035,
+      "GIH": 0.053,
+      "ITU": 0.015,
+      "PJL": 0.073,
+      "STU": 0.074
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15wl-041": {
+    "rsid": "mh15wl-041",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C:G:A:G",
+      "T:C:C:G:A:A",
+      "T:C:C:G:A:G",
+      "T:C:T:G:A:G",
+      "T:T:T:A:A:A",
+      "T:T:T:A:A:G",
+      "T:C:T:G:A:A",
+      "T:C:T:A:A:G",
+      "T:C:T:G:G:G",
+      "C:C:C:A:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.462,
+      "EUR": 0.001,
+      "AFR": 0.014,
+      "AMR": 0.263,
+      "EAS": 0.331
+    },
+    "subFrequencies": {
+      "BEB": 0.42574,
+      "GIH": 0.46117,
+      "ITU": 0.47115,
+      "PJL": 0.45192,
+      "STU": 0.5
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15ls-15qd": {
+    "rsid": "mh15ls-15qd",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A:A",
+      "T:G:G:G",
+      "T:T:G:G",
+      "C:G:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.686,
+      "EUR": 0.574,
+      "AFR": 0.578,
+      "AMR": 0.524,
+      "EAS": 0.506
+    },
+    "subFrequencies": {
+      "BEB": 0.71782,
+      "GIH": 0.56796,
+      "ITU": 0.71635,
+      "PJL": 0.6875,
+      "STU": 0.74038
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16cp-001": {
+    "rsid": "mh16cp-001",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:G:C:T",
+      "G:C:G:C:T",
+      "G:C:G:T:C",
+      "G:C:G:T:T",
+      "T:C:G:C:T",
+      "G:A:G:T:T",
+      "G:C:T:C:T",
+      "G:C:C:C:T",
+      "G:C:G:C:C",
+      "G:A:G:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.401,
+      "EUR": 0.476,
+      "AFR": 0.257,
+      "AMR": 0.385,
+      "EAS": 0.415
+    },
+    "subFrequencies": {
+      "BEB": 0.41089,
+      "GIH": 0.42718,
+      "ITU": 0.34615,
+      "PJL": 0.41827,
+      "STU": 0.40385
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-029": {
+    "rsid": "mh16wl-029",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:T:T:G",
+      "T:G:T:T:G",
+      "T:G:T:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.992,
+      "EUR": 0.997,
+      "AFR": 0.967,
+      "AMR": 1,
+      "EAS": 0.992
+    },
+    "subFrequencies": {
+      "BEB": 0.9901,
+      "GIH": 0.99515,
+      "ITU": 0.99038,
+      "PJL": 0.99038,
+      "STU": 0.99519
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-003.v1": {
+    "rsid": "mh16wl-003.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:A:A:C:T:C:G:A:A:A",
+      "C:A:A:A:C:T:T:G:A:A:A",
+      "C:A:A:A:C:T:T:T:T:C:A",
+      "C:A:A:A:T:T:T:T:T:C:A",
+      "C:A:A:C:C:T:T:G:A:A:A",
+      "C:A:G:A:C:T:T:T:T:C:A",
+      "T:A:A:A:T:T:T:T:T:C:A",
+      "C:A:A:C:C:T:C:G:A:A:A",
+      "C:G:G:A:C:T:T:T:T:C:A",
+      "C:A:A:A:C:T:T:G:A:A:C",
+      "C:A:A:A:C:G:C:G:A:A:A",
+      "C:A:A:A:C:G:T:T:T:C:A",
+      "T:A:A:A:T:T:T:G:A:A:A",
+      "C:A:A:C:C:T:T:G:A:A:C",
+      "C:A:A:C:C:T:T:T:T:C:A"
+    ],
+    "frequencies": {
+      "SAS": 0.408,
+      "EUR": 0.595,
+      "AFR": 0.144,
+      "AMR": 0.514,
+      "EAS": 0.092
+    },
+    "subFrequencies": {
+      "BEB": 0.34653,
+      "GIH": 0.38835,
+      "ITU": 0.46154,
+      "PJL": 0.46635,
+      "STU": 0.375
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16kk-053": {
+    "rsid": "mh16kk-053",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:T",
+      "T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.543,
+      "EUR": 0.002,
+      "AFR": 1,
+      "AMR": 0,
+      "EAS": 0.002
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16ls-16qb": {
+    "rsid": "mh16ls-16qb",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:C",
+      "A:G:T",
+      "T:C:C",
+      "T:C:T",
+      "T:G:T",
+      "A:C:C",
+      "T:G:C",
+      "A:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.41,
+      "EUR": 0.001,
+      "AFR": 0.044,
+      "AMR": 0.255,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.44059,
+      "GIH": 0.43204,
+      "ITU": 0.40385,
+      "PJL": 0.34615,
+      "STU": 0.42788
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-047": {
+    "rsid": "mh16wl-047",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:A:G:C",
+      "C:C:G:G:C",
+      "T:C:A:G:C",
+      "T:C:A:T:C",
+      "T:T:A:G:C",
+      "T:T:A:G:T",
+      "T:T:A:T:C"
+    ],
+    "frequencies": {
+      "SAS": 0.457,
+      "EUR": 0.556,
+      "AFR": 0.175,
+      "AMR": 0.46,
+      "EAS": 0.18
+    },
+    "subFrequencies": {
+      "BEB": 0.46535,
+      "GIH": 0.49029,
+      "ITU": 0.40865,
+      "PJL": 0.49519,
+      "STU": 0.42788
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17scuzj-0003983": {
+    "rsid": "mh17scuzj-0003983",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G:A:G:A",
+      "A:C:G:G:G:C",
+      "G:C:A:G:G:C",
+      "G:C:G:A:G:A",
+      "G:C:G:G:G:A",
+      "G:C:G:G:G:C",
+      "G:G:A:G:G:A",
+      "G:G:A:G:G:C",
+      "G:G:G:A:G:C",
+      "G:G:G:G:A:C",
+      "G:G:G:G:G:A",
+      "G:G:G:G:G:C",
+      "A:C:A:G:G:C",
+      "A:C:G:A:G:C",
+      "A:C:G:G:G:A",
+      "G:C:G:A:G:C",
+      "G:G:A:G:A:C",
+      "G:G:G:A:G:A",
+      "G:C:A:G:G:A",
+      "A:G:G:G:G:C",
+      "G:C:A:G:A:A",
+      "G:C:G:G:A:A",
+      "G:G:G:G:A:A",
+      "G:C:G:G:A:C",
+      "A:C:G:G:A:A",
+      "G:C:A:A:G:A",
+      "G:G:G:A:A:A",
+      "G:G:A:G:A:A"
+    ],
+    "frequencies": {
+      "SAS": 0.61,
+      "EUR": 0.51,
+      "AFR": 0.398,
+      "AMR": 0.486,
+      "EAS": 0.176
+    },
+    "subFrequencies": {
+      "BEB": 0.52475,
+      "GIH": 0.55825,
+      "ITU": 0.62019,
+      "PJL": 0.625,
+      "STU": 0.72115
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17kk-014": {
+    "rsid": "mh17kk-014",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:C",
+      "C:C:C",
+      "C:C:T",
+      "G:A:C",
+      "G:C:C",
+      "G:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.444,
+      "EUR": 0.713,
+      "AFR": 0.007,
+      "AMR": 0.005,
+      "EAS": 0.003
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17cp-006": {
+    "rsid": "mh17cp-006",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:T",
+      "C:T:C",
+      "C:T:T",
+      "G:T:C",
+      "C:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.468,
+      "EUR": 0.551,
+      "AFR": 0.349,
+      "AMR": 0.624,
+      "EAS": 0.406
+    },
+    "subFrequencies": {
+      "BEB": 0.459,
+      "GIH": 0.485,
+      "ITU": 0.48,
+      "PJL": 0.531,
+      "STU": 0.407
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17ls-17qb": {
+    "rsid": "mh17ls-17qb",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:G:A",
+      "C:A:G:G",
+      "T:A:G:G",
+      "T:A:T:G",
+      "T:C:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.429,
+      "EUR": 0.337,
+      "AFR": 0.111,
+      "AMR": 0.402,
+      "EAS": 0.279
+    },
+    "subFrequencies": {
+      "BEB": 0.39109,
+      "GIH": 0.36893,
+      "ITU": 0.52404,
+      "PJL": 0.38462,
+      "STU": 0.47596
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17lw-44": {
+    "rsid": "mh17lw-44",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "T:G:T:T:G:A:G:A:A:A:A:T:A:A:G",
+      "T:T:T:T:G:A:G:A:A:A:A:T:A:A:G"
+    ],
+    "frequencies": {
+      "SAS": 0.495,
+      "EUR": 0.356,
+      "AFR": 0.204,
+      "AMR": 0.443,
+      "EAS": 0.367
+    },
+    "subFrequencies": {
+      "BEB": 0.48515,
+      "GIH": 0.48544,
+      "ITU": 0.50962,
+      "PJL": 0.46635,
+      "STU": 0.52885
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17kk-054": {
+    "rsid": "mh17kk-054",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:G",
+      "G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.419,
+      "EUR": 0.34,
+      "AFR": 0.363,
+      "AMR": 0,
+      "EAS": 0.235
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17scuzj-0135202": {
+    "rsid": "mh17scuzj-0135202",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:T:A:G:A",
+      "A:T:A:G:T",
+      "A:T:G:G:A",
+      "A:T:G:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.594,
+      "EUR": 0.654,
+      "AFR": 0.23,
+      "AMR": 0.592,
+      "EAS": 0.396
+    },
+    "subFrequencies": {
+      "BEB": 0.56931,
+      "GIH": 0.62136,
+      "ITU": 0.62019,
+      "PJL": 0.64423,
+      "STU": 0.51442
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17ls-17qc": {
+    "rsid": "mh17ls-17qc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T:G",
+      "T:C:A",
+      "T:C:G",
+      "T:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.514,
+      "EUR": 0.49,
+      "AFR": 0.007,
+      "AMR": 0.481,
+      "EAS": 0.257
+    },
+    "subFrequencies": {
+      "BEB": 0.5,
+      "GIH": 0.47087,
+      "ITU": 0.53846,
+      "PJL": 0.47115,
+      "STU": 0.58654
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17wl-030.v2": {
+    "rsid": "mh17wl-030.v2",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:C:A:G:C:G:G:A:G:C:C",
+      "G:C:C:A:G:C:G:G:C:G:C:C",
+      "G:C:C:C:G:C:G:G:A:G:C:C",
+      "G:C:C:C:G:C:G:G:C:G:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.959,
+      "EUR": 0.958,
+      "AFR": 0.886,
+      "AMR": 0.989,
+      "EAS": 0.976
+    },
+    "subFrequencies": {
+      "BEB": 0.9703,
+      "GIH": 0.96117,
+      "ITU": 0.94712,
+      "PJL": 0.96154,
+      "STU": 0.95673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17wl-030.v1": {
+    "rsid": "mh17wl-030.v1",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:A:G:C:G:G:G:C:C",
+      "C:C:C:G:C:G:G:G:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.963,
+      "EUR": 0.959,
+      "AFR": 0.905,
+      "AMR": 0.989,
+      "EAS": 0.977
+    },
+    "subFrequencies": {
+      "BEB": 0.9802,
+      "GIH": 0.96117,
+      "ITU": 0.95673,
+      "PJL": 0.96154,
+      "STU": 0.95673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18usc-18qa": {
+    "rsid": "mh18usc-18qa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:G",
+      "G:A:A",
+      "G:A:G",
+      "G:C:G"
+    ],
+    "frequencies": {
+      "SAS": 0.658,
+      "EUR": 0.637,
+      "AFR": 0.396,
+      "AMR": 0.615,
+      "EAS": 0.237
+    },
+    "subFrequencies": {
+      "BEB": 0.58911,
+      "GIH": 0.66019,
+      "ITU": 0.72596,
+      "PJL": 0.58654,
+      "STU": 0.72596
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0117020": {
+    "rsid": "mh18scuzj-0117020",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A:T:G:G:G:T",
+      "C:A:T:G:G:T:T",
+      "C:G:T:G:G:G:T",
+      "G:G:T:G:A:G:C",
+      "G:G:T:G:A:G:T",
+      "C:G:T:G:A:G:T",
+      "C:G:T:G:G:T:T",
+      "G:A:T:G:G:T:T",
+      "G:A:T:G:A:G:T",
+      "G:G:T:G:G:G:T"
+    ],
+    "frequencies": {
+      "SAS": 0.615,
+      "EUR": 0.001,
+      "AFR": 0.298,
+      "AMR": 0.519,
+      "EAS": 0.264
+    },
+    "subFrequencies": {
+      "BEB": 0.5396,
+      "GIH": 0.62621,
+      "ITU": 0.625,
+      "PJL": 0.66346,
+      "STU": 0.62019
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0198187": {
+    "rsid": "mh18scuzj-0198187",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:C:C:T:T:C:C",
+      "C:G:C:C:T:T:C:C",
+      "T:G:C:C:T:T:C:C",
+      "C:G:C:C:T:T:A:C",
+      "T:C:C:C:T:T:C:C",
+      "T:G:C:C:T:T:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.43,
+      "EUR": 0.289,
+      "AFR": 0.318,
+      "AMR": 0.245,
+      "EAS": 0.477
+    },
+    "subFrequencies": {
+      "BEB": 0.43069,
+      "GIH": 0.46602,
+      "ITU": 0.40385,
+      "PJL": 0.33654,
+      "STU": 0.51442
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0212405": {
+    "rsid": "mh18scuzj-0212405",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G:T:T:T:G",
+      "G:C:A:C:T:T:G",
+      "G:C:A:C:T:T:T",
+      "G:C:A:T:T:T:G",
+      "G:T:A:C:T:T:G",
+      "G:T:A:T:T:T:G",
+      "A:C:A:T:T:T:G",
+      "G:C:A:C:T:C:G",
+      "G:T:A:T:T:C:G",
+      "G:C:A:T:T:T:T",
+      "A:C:G:C:T:T:G",
+      "A:T:A:T:T:T:G",
+      "G:T:A:C:T:C:G",
+      "G:T:A:C:T:T:T",
+      "A:C:A:C:T:T:T",
+      "G:C:A:T:T:C:G",
+      "G:C:G:T:T:T:G",
+      "A:C:G:C:T:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.475,
+      "EUR": 0.555,
+      "AFR": 0.385,
+      "AMR": 0.572,
+      "EAS": 0.24
+    },
+    "subFrequencies": {
+      "BEB": 0.40594,
+      "GIH": 0.47087,
+      "ITU": 0.51442,
+      "PJL": 0.52885,
+      "STU": 0.45192
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19scuzj-0046036": {
+    "rsid": "mh19scuzj-0046036",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:T:A:G:A:C",
+      "A:A:T:A:G:A:T",
+      "A:A:T:A:G:G:T",
+      "A:A:T:T:G:A:C",
+      "A:A:T:T:G:A:T",
+      "A:A:T:A:G:G:C"
+    ],
+    "frequencies": {
+      "SAS": 0.47,
+      "EUR": 0.41,
+      "AFR": 0.003,
+      "AMR": 0.447,
+      "EAS": 0.001
+    },
+    "subFrequencies": {
+      "BEB": 0.49505,
+      "GIH": 0.46602,
+      "ITU": 0.52404,
+      "PJL": 0.42308,
+      "STU": 0.44231
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19scuzj-0081305": {
+    "rsid": "mh19scuzj-0081305",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A:T:A:C",
+      "A:A:T:T:C",
+      "A:T:T:A:C",
+      "G:A:T:A:C",
+      "G:A:T:T:C",
+      "G:T:A:T:C",
+      "G:T:A:T:T",
+      "G:T:T:A:C",
+      "G:T:T:T:C",
+      "A:T:T:T:C",
+      "A:A:A:A:C",
+      "G:T:A:A:C",
+      "G:T:A:A:T",
+      "G:A:A:T:C",
+      "G:A:T:A:T",
+      "G:T:T:T:T",
+      "G:A:A:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.488,
+      "EUR": 0.514,
+      "AFR": 0.126,
+      "AMR": 0.356,
+      "EAS": 0.27
+    },
+    "subFrequencies": {
+      "BEB": 0.47525,
+      "GIH": 0.47087,
+      "ITU": 0.52404,
+      "PJL": 0.49038,
+      "STU": 0.48077
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19nh-23": {
+    "rsid": "mh19nh-23",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:G",
+      "C:T:C",
+      "T:C:G",
+      "T:T:G",
+      "T:C:C"
+    ],
+    "frequencies": {
+      "SAS": 0.668,
+      "EUR": 0.419,
+      "AFR": 0.005,
+      "AMR": 0.476,
+      "EAS": 0.454
+    },
+    "subFrequencies": {
+      "BEB": 0.67822,
+      "GIH": 0.70388,
+      "ITU": 0.71635,
+      "PJL": 0.64904,
+      "STU": 0.59135
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19wl-028": {
+    "rsid": "mh19wl-028",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:G:G:G:G",
+      "T:G:G:G:G",
+      "T:T:G:G:G",
+      "T:T:T:G:C",
+      "T:T:T:G:G",
+      "T:T:T:T:C",
+      "T:T:T:T:G",
+      "T:T:G:G:C",
+      "G:T:G:G:G",
+      "T:T:G:T:G"
+    ],
+    "frequencies": {
+      "SAS": 0.534,
+      "EUR": 0.679,
+      "AFR": 0.21,
+      "AMR": 0.613,
+      "EAS": 0.367
+    },
+    "subFrequencies": {
+      "BEB": 0.56436,
+      "GIH": 0.53883,
+      "ITU": 0.49519,
+      "PJL": 0.48077,
+      "STU": 0.59135
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-035": {
+    "rsid": "mh20kk-035",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:G",
+      "T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.435,
+      "EUR": 0.025,
+      "AFR": 0.324,
+      "AMR": 0,
+      "EAS": 0.818
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20shy-001": {
+    "rsid": "mh20shy-001",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:T:C:A:C:A:T:A:T:T",
+      "G:T:C:A:C:T:A:A:C:T",
+      "G:T:C:A:C:T:T:A:T:C",
+      "G:T:C:A:C:T:T:G:C:T",
+      "G:T:C:A:C:T:T:G:T:T",
+      "G:T:C:G:C:T:A:A:C:T",
+      "G:T:C:G:C:T:T:A:T:C",
+      "G:T:T:A:C:T:A:A:C:T",
+      "G:T:C:A:C:A:T:A:T:C",
+      "G:T:C:A:T:A:T:A:T:T",
+      "G:T:C:G:T:T:A:A:C:T",
+      "G:T:T:A:C:T:T:G:T:T",
+      "G:T:C:A:C:T:A:G:C:T",
+      "G:T:T:A:C:T:A:A:T:C",
+      "G:T:C:A:C:T:T:A:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.405,
+      "EUR": 0.001,
+      "AFR": 0.001,
+      "AMR": 0.489,
+      "EAS": 0.207
+    },
+    "subFrequencies": {
+      "BEB": 0.43564,
+      "GIH": 0.37864,
+      "ITU": 0.52404,
+      "PJL": 0.30769,
+      "STU": 0.37981
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20ls-20pa": {
+    "rsid": "mh20ls-20pa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:C:C",
+      "G:T:C",
+      "T:C:C",
+      "T:C:T",
+      "G:C:T"
+    ],
+    "frequencies": {
+      "SAS": 0.437,
+      "EUR": 0.437,
+      "AFR": 0.338,
+      "AMR": 0.623,
+      "EAS": 0.571
+    },
+    "subFrequencies": {
+      "BEB": 0.5297,
+      "GIH": 0.3932,
+      "ITU": 0.40385,
+      "PJL": 0.39904,
+      "STU": 0.46154
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20nh-24": {
+    "rsid": "mh20nh-24",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:C",
+      "G:T:C",
+      "G:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.424,
+      "EUR": 0.389,
+      "AFR": 0.097,
+      "AMR": 0.408,
+      "EAS": 0.542
+    },
+    "subFrequencies": {
+      "BEB": 0.41584,
+      "GIH": 0.35922,
+      "ITU": 0.41346,
+      "PJL": 0.45192,
+      "STU": 0.48077
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20usc-20qa": {
+    "rsid": "mh20usc-20qa",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "G:A:A",
+      "G:A:C",
+      "G:G:C",
+      "T:A:C"
+    ],
+    "frequencies": {
+      "SAS": 0.539,
+      "EUR": 0.343,
+      "AFR": 0.143,
+      "AMR": 0.897,
+      "EAS": 0.383
+    },
+    "subFrequencies": {
+      "BEB": 0.57921,
+      "GIH": 0.4466,
+      "ITU": 0.59615,
+      "PJL": 0.51923,
+      "STU": 0.55288
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20wl-018": {
+    "rsid": "mh20wl-018",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:G:G:A:A:G",
+      "A:C:G:G:A:G:A"
+    ],
+    "frequencies": {
+      "SAS": 1,
+      "EUR": 0.998,
+      "AFR": 0.865,
+      "AMR": 0.994,
+      "EAS": 1
+    },
+    "subFrequencies": {
+      "BEB": 1,
+      "GIH": 1,
+      "ITU": 1,
+      "PJL": 1,
+      "STU": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-059": {
+    "rsid": "mh20kk-059",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:G",
+      "G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.698,
+      "EUR": 0.595,
+      "AFR": 0.587,
+      "AMR": 0.718,
+      "EAS": 0.66
+    },
+    "subFrequencies": {
+      "BEB": 0.744,
+      "GIH": 0.66,
+      "ITU": 0.711,
+      "PJL": 0.693,
+      "STU": 0.686
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21wl-007": {
+    "rsid": "mh21wl-007",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:C:A",
+      "C:C:G",
+      "C:T:A",
+      "T:T:A"
+    ],
+    "frequencies": {
+      "SAS": 0.5,
+      "EUR": 0.476,
+      "AFR": 0.053,
+      "AMR": 0.592,
+      "EAS": 0.342
+    },
+    "subFrequencies": {
+      "BEB": 0.4505,
+      "GIH": 0.47087,
+      "ITU": 0.49519,
+      "PJL": 0.53846,
+      "STU": 0.54327
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh22kk-303": {
+    "rsid": "mh22kk-303",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:G:A:G",
+      "C:G:G:G",
+      "T:G:G:G",
+      "C:T:G:G",
+      "T:G:A:G",
+      "T:G:G:A"
+    ],
+    "frequencies": {
+      "SAS": 0.445,
+      "EUR": 0.497,
+      "AFR": 0.285,
+      "AMR": 0,
+      "EAS": 0.266
+    },
+    "subFrequencies": {
+      "BEB": 0,
+      "GIH": 0,
+      "ITU": 0,
+      "PJL": 0,
+      "STU": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh22kk-069": {
+    "rsid": "mh22kk-069",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G",
+      "G:G",
+      "G:T",
+      "A:T"
+    ],
+    "frequencies": {
+      "SAS": 0.597,
+      "EUR": 0.73,
+      "AFR": 0.339,
+      "AMR": 0.591,
+      "EAS": 0.449
+    },
+    "subFrequencies": {
+      "BEB": 0.512,
+      "GIH": 0.602,
+      "ITU": 0.637,
+      "PJL": 0.63,
+      "STU": 0.608
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xqc": {
+    "rsid": "mh0xusc-xqc",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:C:T",
+      "A:T:G",
+      "A:T:T",
+      "G:T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.574,
+      "EUR": 0.568,
+      "AFR": 0.494,
+      "AMR": 0.727,
+      "EAS": 0.525
+    },
+    "subFrequencies": {
+      "BEB": 0.56863,
+      "GIH": 0.52,
+      "ITU": 0.54054,
+      "PJL": 0.61688,
+      "STU": 0.62252
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xqf": {
+    "rsid": "mh0xusc-xqf",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "SAS": 0.616,
+      "EUR": 0.8,
+      "AFR": 0.319,
+      "AMR": 0.688,
+      "EAS": 0.618
+    },
+    "subFrequencies": {
+      "BEB": 0.66667,
+      "GIH": 0.69333,
+      "ITU": 0.52703,
+      "PJL": 0.5974,
+      "STU": 0.59603
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xqg": {
+    "rsid": "mh0xusc-xqg",
+    "region": "South Asian",
+    "color": "#F1C40F",
+    "alleles": [
+      "A:G:C",
+      "G:A:G",
+      "G:G:C",
+      "G:G:G"
+    ],
+    "frequencies": {
+      "SAS": 0.46,
+      "EUR": 0.529,
+      "AFR": 0.334,
+      "AMR": 0.47,
+      "EAS": 0.421
+    },
+    "subFrequencies": {
+      "BEB": 0.47059,
+      "GIH": 0.38,
+      "ITU": 0.48649,
+      "PJL": 0.45455,
+      "STU": 0.50993
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for South Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
   }
 }

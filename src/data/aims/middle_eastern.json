@@ -13010,5 +13010,4808 @@
     "description": "Duffy negative marker - African/Arabian admixture indicator.",
     "chromosome": "1",
     "position": 159174683
+  },
+  "mh01kk-001.v5": {
+    "rsid": "mh01kk-001.v5",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:C",
+      "A:G:T",
+      "G:C:C",
+      "G:G:C",
+      "G:G:T",
+      "A:C:C",
+      "A:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.184,
+      "EUR": 0.239,
+      "AFR": 0.13,
+      "EAS": 0.003
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-058": {
+    "rsid": "mh01wl-058",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:A:C:A",
+      "A:A:A:C:G",
+      "A:A:A:T:A",
+      "A:G:A:C:A",
+      "A:G:G:C:G",
+      "A:G:G:T:A",
+      "C:A:A:C:A",
+      "C:G:G:C:A",
+      "C:G:G:C:G",
+      "C:A:A:T:A",
+      "C:A:A:C:G",
+      "A:A:G:C:G",
+      "C:G:G:T:G",
+      "C:G:A:C:G",
+      "A:G:G:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.28,
+      "EUR": 0.306,
+      "AFR": 0.253,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-073.v1": {
+    "rsid": "mh01wl-073.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:T:C",
+      "C:G:C:A",
+      "C:G:T:A",
+      "G:C:C:A",
+      "G:C:C:C",
+      "G:C:T:A",
+      "G:C:T:C",
+      "G:G:C:A",
+      "G:G:C:C",
+      "G:G:T:A",
+      "G:G:T:C",
+      "C:C:C:C",
+      "C:G:C:C",
+      "C:G:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.186,
+      "EUR": 0.239,
+      "AFR": 0.133,
+      "EAS": 0.128
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-037": {
+    "rsid": "mh01wl-037",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:A:A",
+      "G:A:A:T",
+      "G:A:T:T",
+      "G:T:A:A",
+      "A:T:A:A",
+      "A:A:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.442,
+      "EUR": 0.581,
+      "AFR": 0.303,
+      "EAS": 0.19
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0258509": {
+    "rsid": "mh01scuzj-0258509",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:A:C:G:A",
+      "G:A:A:C:G:A",
+      "G:A:A:C:T:A",
+      "G:G:A:A:G:G",
+      "G:G:A:C:G:A",
+      "G:G:A:C:G:G",
+      "G:G:G:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.586,
+      "EUR": 0.559,
+      "AFR": 0.614,
+      "EAS": 0.041
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0508420": {
+    "rsid": "mh01scuzj-0508420",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "T:T:T:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:T:C:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "C:T:T:T:G:A:C:T:C:A:G:A:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "C:T:T:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:T:T:G:A:C:T:C:A:G:A:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:T:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:T",
+      "T:T:C:T:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C",
+      "T:T:C:C:G:A:C:T:C:A:G:T:A:T:C:A:T:C:C:T:T:C:T:G:A:T:A:T:G:C:A:T:G:A:G:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.996,
+      "EUR": 0.993,
+      "AFR": 0.998,
+      "EAS": 0.008
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01kk-002": {
+    "rsid": "mh01kk-002",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:A",
+      "G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.208,
+      "EUR": 0.271,
+      "AFR": 0.144,
+      "EAS": 0.04
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0573296": {
+    "rsid": "mh01scuzj-0573296",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "T:A:G:T:A:A:T:A:T:A:A:T:C:C:A:C:A:C:C:A:C:A",
+      "T:A:G:T:A:A:T:A:T:A:A:T:C:C:A:C:A:C:C:A:C:G"
+    ],
+    "frequencies": {
+      "MENA": 1.0,
+      "EUR": 1,
+      "AFR": 1,
+      "EAS": 0.176
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01kk-135": {
+    "rsid": "mh01kk-135",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G",
+      "G:A",
+      "G:G",
+      "A:A"
+    ],
+    "frequencies": {
+      "MENA": 0.314,
+      "EUR": 0.393,
+      "AFR": 0.235,
+      "EAS": 0.022
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01usc-1qd": {
+    "rsid": "mh01usc-1qd",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:A",
+      "C:A:G",
+      "C:G:A",
+      "C:G:G",
+      "T:A:G",
+      "T:A:A"
+    ],
+    "frequencies": {
+      "MENA": 0.184,
+      "EUR": 0.252,
+      "AFR": 0.115,
+      "EAS": 0.172
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-008.v1": {
+    "rsid": "mh01wl-008.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:G:G",
+      "C:C:G:T",
+      "C:T:A:G",
+      "C:T:G:G",
+      "C:T:G:T",
+      "T:C:G:G",
+      "T:C:G:T",
+      "T:T:G:G",
+      "T:T:G:T",
+      "T:T:A:G",
+      "C:C:A:G",
+      "T:C:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.411,
+      "EUR": 0.605,
+      "AFR": 0.217,
+      "EAS": 0.082
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02cp-004": {
+    "rsid": "mh02cp-004",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:G",
+      "C:T:A",
+      "C:T:G",
+      "T:T:G",
+      "C:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.247,
+      "EUR": 0.323,
+      "AFR": 0.171,
+      "EAS": 0.118
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02scuzj-0038503": {
+    "rsid": "mh02scuzj-0038503",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:C:G:C",
+      "C:C:C:G:G:C",
+      "C:C:C:G:G:G",
+      "C:C:G:G:G:C",
+      "C:C:G:G:G:G",
+      "C:G:C:G:G:G",
+      "C:G:G:G:C:C",
+      "C:G:G:G:G:C",
+      "C:G:G:G:G:G",
+      "C:G:G:C:G:C",
+      "C:G:C:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.311,
+      "EUR": 0.273,
+      "AFR": 0.35,
+      "EAS": 0.199
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-005": {
+    "rsid": "mh02wl-005",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:A:G",
+      "G:C:G:A",
+      "G:C:G:G",
+      "G:T:A:G",
+      "G:T:G:A",
+      "T:C:A:G",
+      "T:C:G:A",
+      "T:C:G:G",
+      "T:T:A:G",
+      "T:T:G:A",
+      "G:T:G:G",
+      "T:T:G:G",
+      "T:T:A:A"
+    ],
+    "frequencies": {
+      "MENA": 0.199,
+      "EUR": 0.229,
+      "AFR": 0.169,
+      "EAS": 0.021
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02scuzj-0127632": {
+    "rsid": "mh02scuzj-0127632",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C:T:A",
+      "C:A:C:T:G",
+      "C:A:T:C:A",
+      "C:A:T:T:A",
+      "C:A:T:T:G",
+      "C:G:C:C:A",
+      "C:G:C:C:G",
+      "C:G:C:T:A",
+      "C:G:C:T:G",
+      "C:G:T:C:A",
+      "C:G:T:C:G",
+      "C:G:T:T:A",
+      "C:G:T:T:G",
+      "C:A:C:C:A",
+      "C:A:C:C:G",
+      "G:G:C:T:A",
+      "C:A:T:C:G",
+      "G:G:T:T:G",
+      "G:G:T:T:A"
+    ],
+    "frequencies": {
+      "MENA": 0.241,
+      "EUR": 0.381,
+      "AFR": 0.1,
+      "EAS": 0.015
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02usc-2pb": {
+    "rsid": "mh02usc-2pb",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:A",
+      "G:A:A",
+      "G:C:A",
+      "G:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.188,
+      "EUR": 0.237,
+      "AFR": 0.14,
+      "EAS": 0.157
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-054": {
+    "rsid": "mh02wl-054",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C",
+      "C:G:C",
+      "C:G:T",
+      "T:G:C",
+      "T:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.38,
+      "EUR": 0.212,
+      "AFR": 0.548,
+      "EAS": 0.152
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02zha-003": {
+    "rsid": "mh02zha-003",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C:A",
+      "C:A:C:C",
+      "C:G:C:C",
+      "T:G:A:C",
+      "T:G:C:C",
+      "C:G:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.228,
+      "EUR": 0.292,
+      "AFR": 0.165,
+      "EAS": 0.122
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02shy-001.v2": {
+    "rsid": "mh02shy-001.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:C",
+      "A:G:T",
+      "A:T:C",
+      "A:T:T",
+      "G:T:C",
+      "G:T:T",
+      "G:G:C",
+      "G:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.338,
+      "EUR": 0.364,
+      "AFR": 0.312,
+      "EAS": 0.128
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-011": {
+    "rsid": "mh02wl-011",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:G",
+      "A:A:T",
+      "A:G:G",
+      "A:G:T",
+      "C:A:G",
+      "C:A:T",
+      "C:G:T",
+      "C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.198,
+      "EUR": 0.287,
+      "AFR": 0.11,
+      "EAS": 0.091
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-101": {
+    "rsid": "mh02wl-101",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:G:G:T",
+      "T:A:C:G:T",
+      "T:A:G:G:G",
+      "T:A:G:G:T",
+      "G:A:G:A:T",
+      "T:G:G:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.26,
+      "EUR": 0.209,
+      "AFR": 0.311,
+      "EAS": 0.04
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02ls-2qf": {
+    "rsid": "mh02ls-2qf",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C:A",
+      "T:A:T:C",
+      "T:G:C:C",
+      "C:G:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.396,
+      "EUR": 0.208,
+      "AFR": 0.583,
+      "EAS": 0.193
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-084": {
+    "rsid": "mh02wl-084",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:T:T",
+      "C:T:C:C",
+      "C:T:C:T",
+      "C:T:T:C",
+      "C:T:T:T",
+      "T:C:T:T",
+      "T:T:C:C",
+      "T:T:C:T",
+      "T:T:T:C",
+      "T:T:T:T",
+      "C:C:C:C",
+      "C:C:C:T",
+      "T:C:C:C",
+      "C:C:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.3,
+      "EUR": 0.374,
+      "AFR": 0.226,
+      "EAS": 0.143
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-068": {
+    "rsid": "mh03wl-068",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C:G:A:C",
+      "C:G:C:G:G:C",
+      "T:C:C:A:G:C",
+      "T:C:C:G:G:C",
+      "T:C:T:G:G:C",
+      "C:G:C:G:G:T",
+      "T:C:T:G:A:C",
+      "C:G:C:A:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.499,
+      "EUR": 0.502,
+      "AFR": 0.495,
+      "EAS": 0.132
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03scuzj-0242802": {
+    "rsid": "mh03scuzj-0242802",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:G:G:G:C",
+      "T:C:A:G:G:C",
+      "T:C:G:G:G:C",
+      "T:G:G:G:G:C",
+      "T:G:A:G:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.531,
+      "EUR": 0.554,
+      "AFR": 0.508,
+      "EAS": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03scuzj-0332056": {
+    "rsid": "mh03scuzj-0332056",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "T:A:A:C:G:C:T:G:G",
+      "T:C:A:C:G:C:T:G:G"
+    ],
+    "frequencies": {
+      "MENA": 1.0,
+      "EUR": 1,
+      "AFR": 1,
+      "EAS": 0.014
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-087": {
+    "rsid": "mh03wl-087",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:A:G",
+      "T:A:A:G",
+      "T:C:A:A",
+      "T:C:A:G",
+      "T:C:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.367,
+      "EUR": 0.221,
+      "AFR": 0.512,
+      "EAS": 0.029
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-015.v1": {
+    "rsid": "mh03wl-015.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:C",
+      "G:A:T",
+      "G:G:C",
+      "G:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.352,
+      "EUR": 0.439,
+      "AFR": 0.265,
+      "EAS": 0.134
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-015.v2": {
+    "rsid": "mh03wl-015.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:C:C:C:C",
+      "G:A:T:C:C:C",
+      "G:G:C:C:C:C",
+      "G:G:C:C:C:T",
+      "G:G:C:C:G:C",
+      "G:G:C:T:C:T",
+      "G:G:T:C:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.352,
+      "EUR": 0.439,
+      "AFR": 0.265,
+      "EAS": 0.134
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-088": {
+    "rsid": "mh03wl-088",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:T:T:T:C:C",
+      "G:T:T:T:T:C",
+      "G:T:T:T:T:T",
+      "T:T:T:G:C:C",
+      "T:T:T:T:C:C",
+      "T:T:T:T:T:C",
+      "G:T:T:G:C:C",
+      "T:T:T:G:T:C",
+      "G:T:T:G:T:C",
+      "T:T:T:T:T:T",
+      "T:T:T:G:T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.606,
+      "EUR": 0.649,
+      "AFR": 0.563,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03scuzj-0589868": {
+    "rsid": "mh03scuzj-0589868",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:C:T:G",
+      "C:C:C:T:A",
+      "C:T:C:G:A",
+      "C:T:C:T:A",
+      "C:T:C:T:G",
+      "C:T:T:T:A",
+      "A:C:C:T:A",
+      "A:C:C:T:G",
+      "C:C:C:G:A",
+      "C:C:C:T:G",
+      "C:T:T:T:G",
+      "C:C:T:T:A",
+      "C:T:T:G:A",
+      "A:T:C:T:A"
+    ],
+    "frequencies": {
+      "MENA": 0.342,
+      "EUR": 0.406,
+      "AFR": 0.279,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-016": {
+    "rsid": "mh03wl-016",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "T:C:C:A:C",
+      "T:C:C:T:C",
+      "T:C:C:T:T",
+      "T:C:G:A:C",
+      "T:T:C:T:C",
+      "T:T:C:T:T",
+      "C:C:C:A:C",
+      "C:T:C:T:T",
+      "C:C:G:A:C",
+      "T:C:C:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.224,
+      "EUR": 0.257,
+      "AFR": 0.191,
+      "EAS": 0.2
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03hyp-10": {
+    "rsid": "mh03hyp-10",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G",
+      "G:A",
+      "G:G",
+      "A:A"
+    ],
+    "frequencies": {
+      "MENA": 0.632,
+      "EUR": 0.491,
+      "AFR": 0.773,
+      "EAS": 0.088
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0078389": {
+    "rsid": "mh04scuzj-0078389",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:T:A",
+      "A:C:T:G",
+      "A:T:C:G",
+      "A:T:T:A",
+      "A:T:T:G",
+      "G:C:T:A",
+      "G:C:T:G",
+      "G:T:T:A",
+      "G:T:T:G",
+      "A:C:C:A",
+      "A:C:C:G",
+      "A:T:C:A",
+      "G:T:C:A",
+      "G:C:C:A",
+      "G:C:C:G",
+      "G:T:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.19,
+      "EUR": 0.212,
+      "AFR": 0.169,
+      "EAS": 0.061
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-091": {
+    "rsid": "mh04wl-091",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:A:A",
+      "A:G:T:A",
+      "A:T:A:A",
+      "G:G:A:A",
+      "G:G:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.278,
+      "EUR": 0.224,
+      "AFR": 0.331,
+      "EAS": 0.059
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0175374": {
+    "rsid": "mh04scuzj-0175374",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:G:A:C",
+      "A:T:G:C:C",
+      "G:C:G:A:T",
+      "G:T:A:A:T",
+      "G:T:G:A:C",
+      "G:T:G:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.525,
+      "EUR": 0.481,
+      "AFR": 0.568,
+      "EAS": 0.172
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-084": {
+    "rsid": "mh04wl-084",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:T:T",
+      "G:T:C:A",
+      "G:T:C:T",
+      "G:T:T:T",
+      "T:C:T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.294,
+      "EUR": 0.263,
+      "AFR": 0.325,
+      "EAS": 0.158
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-074": {
+    "rsid": "mh04kk-074",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C",
+      "A:T",
+      "G:C",
+      "G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.268,
+      "EUR": 0.421,
+      "AFR": 0.115,
+      "EAS": 0.1
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0254883": {
+    "rsid": "mh04scuzj-0254883",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:T:A:C:T",
+      "A:G:T:A:T:C",
+      "A:G:T:A:T:T",
+      "A:G:T:G:T:C",
+      "A:G:T:G:T:T",
+      "G:G:T:A:T:T",
+      "G:G:T:A:C:T",
+      "G:G:T:A:T:C",
+      "G:G:T:G:T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.445,
+      "EUR": 0.607,
+      "AFR": 0.283,
+      "EAS": 0.169
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0403151": {
+    "rsid": "mh04scuzj-0403151",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:G:A:A:A",
+      "G:A:G:A:A:T",
+      "G:A:G:A:G:T",
+      "G:A:G:G:A:A",
+      "G:A:G:G:A:T",
+      "G:A:G:G:G:T",
+      "G:A:G:A:G:A",
+      "G:A:G:G:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.348,
+      "EUR": 0.423,
+      "AFR": 0.272,
+      "EAS": 0.155
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-092": {
+    "rsid": "mh04wl-092",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:A:G:A",
+      "A:G:A:G:G",
+      "A:G:G:G:A",
+      "T:G:G:G:A",
+      "A:G:A:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.302,
+      "EUR": 0.312,
+      "AFR": 0.293,
+      "EAS": 0.189
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-022": {
+    "rsid": "mh04wl-022",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "T:A:A",
+      "T:A:G",
+      "C:A:G",
+      "C:G:G",
+      "T:G:A",
+      "T:G:G",
+      "C:A:A",
+      "C:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.795,
+      "EUR": 0.761,
+      "AFR": 0.828,
+      "EAS": 0.064
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-090": {
+    "rsid": "mh04wl-090",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:G:A",
+      "G:G:C:A",
+      "G:G:G:A",
+      "G:G:G:G",
+      "G:G:C:G",
+      "G:T:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.324,
+      "EUR": 0.248,
+      "AFR": 0.401,
+      "EAS": 0.034
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04usc-4qd": {
+    "rsid": "mh04usc-4qd",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:C",
+      "A:A:C:T",
+      "G:A:C:C",
+      "G:G:C:C",
+      "G:G:T:C",
+      "G:G:T:T",
+      "A:G:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.249,
+      "EUR": 0.361,
+      "AFR": 0.136,
+      "EAS": 0.008
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-001.v3": {
+    "rsid": "mh04wl-001.v3",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:C:C:C:G:C:T:G:C:A",
+      "G:T:C:C:C:G:C:T:G:C:A",
+      "G:T:G:C:C:G:C:T:G:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.863,
+      "EUR": 0.992,
+      "AFR": 0.733,
+      "EAS": 0.003
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-170.v4": {
+    "rsid": "mh05kk-170.v4",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:A",
+      "G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.377,
+      "EUR": 0.226,
+      "AFR": 0.528,
+      "EAS": 0.086
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05scuzj-0042261": {
+    "rsid": "mh05scuzj-0042261",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C:A:A",
+      "T:A:C:A:T",
+      "T:G:C:A:A",
+      "T:G:C:A:T",
+      "T:G:C:T:A",
+      "T:G:T:A:A",
+      "C:G:C:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.188,
+      "EUR": 0.213,
+      "AFR": 0.163,
+      "EAS": 0.135
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05cp-004": {
+    "rsid": "mh05cp-004",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:T",
+      "C:C:T",
+      "C:T:C",
+      "C:T:T",
+      "C:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.601,
+      "EUR": 0.545,
+      "AFR": 0.657,
+      "EAS": 0.163
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05ls-5pc": {
+    "rsid": "mh05ls-5pc",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G",
+      "A:T:A",
+      "A:T:G",
+      "T:C:G",
+      "T:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.502,
+      "EUR": 0.582,
+      "AFR": 0.423,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-124": {
+    "rsid": "mh05kk-124",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.181,
+      "EUR": 0.227,
+      "AFR": 0.134,
+      "EAS": 0.158
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05usc-5pb": {
+    "rsid": "mh05usc-5pb",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A",
+      "C:A",
+      "C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.334,
+      "EUR": 0.221,
+      "AFR": 0.447,
+      "EAS": 0.121
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05wl-003.v1": {
+    "rsid": "mh05wl-003.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:G",
+      "C:C:T",
+      "C:T:G",
+      "C:T:T",
+      "T:C:G",
+      "T:C:T",
+      "T:T:G",
+      "T:T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.249,
+      "EUR": 0.256,
+      "AFR": 0.242,
+      "EAS": 0.065
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05wl-075": {
+    "rsid": "mh05wl-075",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:A",
+      "C:A:C:A",
+      "C:A:C:G",
+      "C:A:T:A",
+      "C:T:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.206,
+      "EUR": 0.263,
+      "AFR": 0.148,
+      "EAS": 0.119
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05wl-009": {
+    "rsid": "mh05wl-009",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:G:T:G",
+      "G:G:G:T:T",
+      "G:T:A:T:G",
+      "G:T:G:C:G",
+      "G:T:G:C:T",
+      "G:T:G:T:G",
+      "A:T:A:T:G",
+      "G:G:G:T:G",
+      "G:T:A:T:T",
+      "G:T:A:C:T",
+      "G:T:A:C:G",
+      "G:G:G:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.337,
+      "EUR": 0.36,
+      "AFR": 0.314,
+      "EAS": 0.079
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05wl-024": {
+    "rsid": "mh05wl-024",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:C",
+      "A:A:C:T",
+      "A:G:C:T",
+      "A:G:T:T",
+      "G:G:C:T",
+      "A:G:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.407,
+      "EUR": 0.285,
+      "AFR": 0.529,
+      "EAS": 0.117
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-026": {
+    "rsid": "mh06kk-026",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G",
+      "A:T:G",
+      "G:C:A",
+      "G:C:G",
+      "G:T:G",
+      "G:T:A"
+    ],
+    "frequencies": {
+      "MENA": 0.193,
+      "EUR": 0.275,
+      "AFR": 0.112,
+      "EAS": 0.007
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06scuzj-0089255": {
+    "rsid": "mh06scuzj-0089255",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C:A:C:G",
+      "C:G:C:G:C:G",
+      "C:G:C:G:T:G",
+      "T:G:C:G:C:G",
+      "T:G:T:G:C:G",
+      "C:T:C:G:C:G",
+      "T:G:C:A:C:G",
+      "C:G:C:A:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.272,
+      "EUR": 0.311,
+      "AFR": 0.234,
+      "EAS": 0.199
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06usc-6pa": {
+    "rsid": "mh06usc-6pa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A",
+      "C:C:T",
+      "C:T:T",
+      "G:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.35,
+      "EUR": 0.326,
+      "AFR": 0.373,
+      "EAS": 0.138
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-039.v2": {
+    "rsid": "mh06wl-039.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:G:G:T:A:A",
+      "G:G:G:T:A:T",
+      "G:G:G:T:G:A",
+      "G:G:G:T:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.834,
+      "EUR": 0.898,
+      "AFR": 0.77,
+      "EAS": 0.009
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-031.v1": {
+    "rsid": "mh06wl-031.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A:G:C",
+      "C:T:A:A:C",
+      "C:T:A:G:C",
+      "C:T:C:A:C",
+      "C:T:C:G:C",
+      "C:C:A:A:C",
+      "C:C:C:G:C",
+      "T:T:A:G:C",
+      "T:T:C:G:C",
+      "C:C:C:A:C",
+      "T:C:A:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.2,
+      "EUR": 0.22,
+      "AFR": 0.18,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-056": {
+    "rsid": "mh06wl-056",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:T",
+      "A:A:T:G",
+      "A:A:T:T",
+      "G:A:T:T",
+      "G:T:C:G",
+      "G:T:C:T",
+      "G:T:T:G",
+      "G:T:T:T",
+      "A:A:C:G",
+      "G:A:T:G",
+      "A:T:T:G",
+      "A:T:T:T",
+      "G:A:C:G",
+      "G:A:C:T",
+      "A:T:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.287,
+      "EUR": 0.263,
+      "AFR": 0.311,
+      "EAS": 0.102
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06lw-22": {
+    "rsid": "mh06lw-22",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:A:C:G:G",
+      "A:C:G:C:G:G",
+      "A:G:G:C:G:A",
+      "A:G:G:C:G:G",
+      "A:G:G:T:G:G",
+      "G:G:G:C:G:G",
+      "A:G:G:T:T:G",
+      "G:G:G:T:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.299,
+      "EUR": 0.312,
+      "AFR": 0.286,
+      "EAS": 0.188
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-041": {
+    "rsid": "mh06wl-041",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C",
+      "C:T:C",
+      "T:C:A",
+      "T:C:C",
+      "T:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.353,
+      "EUR": 0.452,
+      "AFR": 0.254,
+      "EAS": 0.196
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06nh-11": {
+    "rsid": "mh06nh-11",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:T",
+      "G:C:C",
+      "G:T:T",
+      "A:C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.458,
+      "EUR": 0.701,
+      "AFR": 0.216,
+      "EAS": 0.003
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-101": {
+    "rsid": "mh06kk-101",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:G",
+      "G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.755,
+      "EUR": 0.841,
+      "AFR": 0.668,
+      "EAS": 0.129
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07ls-7pd": {
+    "rsid": "mh07ls-7pd",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:C",
+      "G:A:C",
+      "G:A:T",
+      "G:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.344,
+      "EUR": 0.253,
+      "AFR": 0.434,
+      "EAS": 0.161
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-036": {
+    "rsid": "mh07wl-036",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:C:A:C",
+      "G:A:C:G:C",
+      "G:A:T:G:C",
+      "G:T:C:G:C",
+      "G:T:T:G:T",
+      "T:A:T:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.374,
+      "EUR": 0.203,
+      "AFR": 0.544,
+      "EAS": 0.11
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-069": {
+    "rsid": "mh07wl-069",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:T:C:C",
+      "C:T:T:C",
+      "T:T:C:C",
+      "T:T:T:C",
+      "T:T:T:T",
+      "T:C:T:T",
+      "C:T:T:T",
+      "C:C:T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.287,
+      "EUR": 0.374,
+      "AFR": 0.201,
+      "EAS": 0.193
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0187111": {
+    "rsid": "mh07scuzj-0187111",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:C",
+      "A:G:A:T",
+      "A:G:C:C",
+      "A:G:C:T",
+      "G:A:C:C",
+      "G:A:C:T",
+      "G:G:A:C",
+      "G:G:A:T",
+      "G:G:C:C",
+      "G:G:C:T",
+      "A:A:C:T",
+      "A:A:A:C",
+      "G:A:A:T",
+      "G:A:A:C"
+    ],
+    "frequencies": {
+      "MENA": 0.411,
+      "EUR": 0.287,
+      "AFR": 0.535,
+      "EAS": 0.169
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0258926": {
+    "rsid": "mh07scuzj-0258926",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C:T",
+      "C:G:C:T",
+      "T:G:C:T",
+      "C:G:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.187,
+      "EUR": 0.223,
+      "AFR": 0.151,
+      "EAS": 0.174
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-074": {
+    "rsid": "mh07wl-074",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:C:G:G:T:T:C",
+      "A:C:T:A:G:T:T:C",
+      "A:C:T:A:G:T:T:T",
+      "A:C:T:G:A:T:C:C",
+      "A:C:T:G:A:T:T:C",
+      "A:C:T:G:G:T:T:C",
+      "A:T:C:G:G:G:T:C",
+      "G:C:C:G:G:T:T:C",
+      "G:T:C:G:G:G:T:C",
+      "A:C:C:A:G:T:T:T",
+      "A:C:C:G:G:G:T:C",
+      "G:C:C:G:G:G:T:C",
+      "G:C:T:G:G:T:T:C",
+      "G:T:C:G:A:T:C:C",
+      "G:T:C:G:G:T:T:C",
+      "A:C:C:G:G:T:T:T",
+      "A:C:C:G:A:T:T:C",
+      "G:T:C:G:A:G:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.347,
+      "EUR": 0.482,
+      "AFR": 0.213,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-013": {
+    "rsid": "mh07wl-013",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:T",
+      "G:G:G",
+      "T:G:G",
+      "G:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.292,
+      "EUR": 0.42,
+      "AFR": 0.164,
+      "EAS": 0.138
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-078": {
+    "rsid": "mh07wl-078",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C",
+      "C:A:T",
+      "C:G:C",
+      "C:G:T",
+      "T:A:C",
+      "T:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.32,
+      "EUR": 0.361,
+      "AFR": 0.279,
+      "EAS": 0.135
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-035": {
+    "rsid": "mh07wl-035",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:G:G:A:G",
+      "C:T:G:G:A:A",
+      "C:T:T:G:A:A",
+      "C:T:T:G:A:G",
+      "C:T:T:G:C:G",
+      "C:T:T:T:A:A",
+      "C:T:T:T:C:G",
+      "T:T:T:G:C:G",
+      "T:T:T:T:C:G",
+      "C:T:G:G:A:G",
+      "C:T:G:G:C:G",
+      "C:T:T:T:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.197,
+      "EUR": 0.287,
+      "AFR": 0.107,
+      "EAS": 0.157
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0555924": {
+    "rsid": "mh07scuzj-0555924",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:A:G:A:C:C:A:A:C:A:C:A:A:C:C",
+      "A:G:G:G:A:C:C:A:A:C:A:C:A:A:C:C"
+    ],
+    "frequencies": {
+      "MENA": 1.0,
+      "EUR": 1,
+      "AFR": 1,
+      "EAS": 0.01
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08zbf-001": {
+    "rsid": "mh08zbf-001",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:A",
+      "G:C:A",
+      "G:C:G",
+      "G:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.207,
+      "EUR": 0.238,
+      "AFR": 0.175,
+      "EAS": 0.15
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08zha-003": {
+    "rsid": "mh08zha-003",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C:A",
+      "C:A:T:A",
+      "C:G:C:A",
+      "T:G:C:A",
+      "C:G:C:T",
+      "T:G:C:T",
+      "C:G:T:A"
+    ],
+    "frequencies": {
+      "MENA": 0.226,
+      "EUR": 0.323,
+      "AFR": 0.129,
+      "EAS": 0.099
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-021.v1": {
+    "rsid": "mh08wl-021.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:G:A:A:C",
+      "G:A:G:A:A:G",
+      "G:G:G:A:A:C",
+      "T:A:A:A:A:G",
+      "T:A:G:A:A:G",
+      "G:A:G:T:A:C",
+      "T:A:G:A:A:C",
+      "T:A:G:A:C:G",
+      "T:A:A:A:C:G",
+      "G:A:G:A:C:G",
+      "T:A:A:A:A:C",
+      "G:G:G:A:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.467,
+      "EUR": 0.39,
+      "AFR": 0.545,
+      "EAS": 0.116
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-054": {
+    "rsid": "mh08wl-054",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:T:A:G",
+      "T:C:T:A:G",
+      "T:C:T:G:A",
+      "T:C:T:G:G",
+      "T:T:C:A:G",
+      "T:T:T:A:G",
+      "G:T:C:A:G",
+      "T:C:C:A:G",
+      "G:C:T:G:A",
+      "T:T:T:G:A",
+      "G:T:T:A:G",
+      "G:C:T:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.257,
+      "EUR": 0.295,
+      "AFR": 0.22,
+      "EAS": 0.002
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-005": {
+    "rsid": "mh08wl-005",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:G:C",
+      "G:A:G:C",
+      "G:G:A:C",
+      "G:G:G:C",
+      "G:G:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.446,
+      "EUR": 0.611,
+      "AFR": 0.281,
+      "EAS": 0.144
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-009": {
+    "rsid": "mh08wl-009",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:A:A",
+      "T:C:G:A",
+      "T:T:A:A",
+      "T:T:G:A",
+      "T:T:G:G",
+      "T:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.524,
+      "EUR": 0.8,
+      "AFR": 0.249,
+      "EAS": 0.128
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-048": {
+    "rsid": "mh08wl-048",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:C",
+      "G:C:C:C",
+      "G:C:G:C",
+      "G:C:G:T",
+      "G:T:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.214,
+      "EUR": 0.239,
+      "AFR": 0.189,
+      "EAS": 0.084
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08ls-8qd": {
+    "rsid": "mh08ls-8qd",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G",
+      "G:A:A",
+      "G:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.353,
+      "EUR": 0.455,
+      "AFR": 0.25,
+      "EAS": 0.141
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-063": {
+    "rsid": "mh08wl-063",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A:C",
+      "C:C:G:C",
+      "C:T:A:C",
+      "C:T:G:C",
+      "T:C:A:C",
+      "T:C:G:C",
+      "C:C:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.301,
+      "EUR": 0.386,
+      "AFR": 0.217,
+      "EAS": 0.07
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-042": {
+    "rsid": "mh09wl-042",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:G:C:T",
+      "T:A:G:A:T",
+      "T:G:G:C:T",
+      "T:G:T:C:C",
+      "T:G:T:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.232,
+      "EUR": 0.234,
+      "AFR": 0.231,
+      "EAS": 0.131
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09scuzj-0161170": {
+    "rsid": "mh09scuzj-0161170",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G:C:T",
+      "G:A:C:C:T",
+      "G:A:C:T:T",
+      "G:A:G:C:T",
+      "G:C:G:C:T",
+      "A:A:C:T:T",
+      "G:A:C:C:C",
+      "A:A:C:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.219,
+      "EUR": 0.234,
+      "AFR": 0.204,
+      "EAS": 0.135
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-152.v1": {
+    "rsid": "mh09kk-152.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:C:A",
+      "A:T:C:A",
+      "A:T:T:A",
+      "A:T:T:G",
+      "G:T:C:G",
+      "A:T:C:G",
+      "G:T:T:A",
+      "G:G:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.423,
+      "EUR": 0.647,
+      "AFR": 0.199,
+      "EAS": 0.184
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09zha-008": {
+    "rsid": "mh09zha-008",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:A",
+      "C:G:A",
+      "C:G:C",
+      "T:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.306,
+      "EUR": 0.347,
+      "AFR": 0.265,
+      "EAS": 0.162
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-157.v1": {
+    "rsid": "mh09kk-157.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:C:A:T",
+      "A:C:C:C:T",
+      "A:C:T:A:T",
+      "G:C:C:A:C",
+      "G:C:C:A:T",
+      "G:C:C:C:T",
+      "G:T:C:A:C",
+      "G:C:C:C:C",
+      "A:C:C:A:C",
+      "G:C:T:A:T",
+      "A:C:T:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.18,
+      "EUR": 0.248,
+      "AFR": 0.113,
+      "EAS": 0.115
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-035.v1": {
+    "rsid": "mh09kk-035.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G",
+      "C:T",
+      "T:G",
+      "T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.26,
+      "EUR": 0.314,
+      "AFR": 0.206,
+      "EAS": 0.181
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10usc-10pa": {
+    "rsid": "mh10usc-10pa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:G",
+      "T:A:G",
+      "T:G:A",
+      "T:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.412,
+      "EUR": 0.471,
+      "AFR": 0.353,
+      "EAS": 0.133
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10pa": {
+    "rsid": "mh10ls-10pa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C",
+      "C:C:C",
+      "T:A:A",
+      "T:A:C"
+    ],
+    "frequencies": {
+      "MENA": 0.376,
+      "EUR": 0.592,
+      "AFR": 0.16,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10qf": {
+    "rsid": "mh10ls-10qf",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:C",
+      "A:C:T",
+      "A:T:T",
+      "G:C:C",
+      "G:T:T",
+      "G:T:C",
+      "A:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.272,
+      "EUR": 0.252,
+      "AFR": 0.292,
+      "EAS": 0.004
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10kk-083": {
+    "rsid": "mh10kk-083",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C",
+      "T:C",
+      "T:T",
+      "G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.229,
+      "EUR": 0.223,
+      "AFR": 0.235,
+      "EAS": 0.016
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10wl-038": {
+    "rsid": "mh10wl-038",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:T:G:G",
+      "T:C:G:C",
+      "T:T:G:C",
+      "T:T:G:G",
+      "T:T:T:G",
+      "T:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.4,
+      "EUR": 0.306,
+      "AFR": 0.494,
+      "EAS": 0.166
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10qj": {
+    "rsid": "mh10ls-10qj",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C",
+      "C:G:T",
+      "T:A:T",
+      "T:G:C",
+      "T:G:T",
+      "C:A:C",
+      "C:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.345,
+      "EUR": 0.211,
+      "AFR": 0.479,
+      "EAS": 0.12
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11nh-17": {
+    "rsid": "mh11nh-17",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:C",
+      "G:A:C",
+      "G:A:T",
+      "G:G:C",
+      "C:G:A",
+      "C:G:G",
+      "C:A:A",
+      "C:A:G",
+      "T:A:A",
+      "T:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.566,
+      "EUR": 0.286,
+      "AFR": 0.845,
+      "EAS": 0.117
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11pk-63643.v1": {
+    "rsid": "mh11pk-63643.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A:T:G:G:T",
+      "C:C:G:T:G:G:T",
+      "T:C:G:C:A:G:T",
+      "T:C:G:C:G:G:T",
+      "T:T:G:C:G:T:T",
+      "C:C:G:C:G:G:T",
+      "T:C:G:T:G:G:T",
+      "C:C:G:T:G:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.308,
+      "EUR": 0.367,
+      "AFR": 0.249,
+      "EAS": 0.043
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11pk-63643.v2": {
+    "rsid": "mh11pk-63643.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:T:G",
+      "C:G:C:A",
+      "C:G:C:G",
+      "C:G:T:G",
+      "T:G:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.308,
+      "EUR": 0.367,
+      "AFR": 0.249,
+      "EAS": 0.043
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-011.v1": {
+    "rsid": "mh11wl-011.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:T:C",
+      "A:T:T:T",
+      "C:C:T:T",
+      "C:T:G:C",
+      "C:T:G:T",
+      "C:T:T:C",
+      "C:T:T:T",
+      "A:T:G:T",
+      "C:C:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.343,
+      "EUR": 0.221,
+      "AFR": 0.465,
+      "EAS": 0.087
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-026": {
+    "rsid": "mh11wl-026",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:A:T:T",
+      "A:C:G:T:G",
+      "A:C:G:T:T",
+      "A:G:G:T:G",
+      "A:G:G:T:T",
+      "G:C:G:G:G",
+      "G:C:G:T:T",
+      "G:G:G:T:G",
+      "G:G:G:T:T",
+      "A:C:G:G:G",
+      "G:C:G:G:T",
+      "G:C:G:T:G",
+      "G:C:A:T:T",
+      "G:G:G:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.311,
+      "EUR": 0.245,
+      "AFR": 0.376,
+      "EAS": 0.102
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11usc-11qb": {
+    "rsid": "mh11usc-11qb",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G:T",
+      "A:T:A:C",
+      "A:T:G:T",
+      "G:T:G:C",
+      "A:T:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.441,
+      "EUR": 0.448,
+      "AFR": 0.434,
+      "EAS": 0.084
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-020": {
+    "rsid": "mh11wl-020",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:A:G",
+      "T:A:A:A",
+      "T:A:A:G",
+      "T:A:T:G",
+      "T:G:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.339,
+      "EUR": 0.288,
+      "AFR": 0.389,
+      "EAS": 0.158
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11qg": {
+    "rsid": "mh11ls-11qg",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:G:C",
+      "G:G:T",
+      "T:A:T",
+      "T:G:T",
+      "G:A:T",
+      "T:A:C",
+      "T:G:C",
+      "G:A:C"
+    ],
+    "frequencies": {
+      "MENA": 0.35,
+      "EUR": 0.44,
+      "AFR": 0.261,
+      "EAS": 0.135
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12scuzj-0109036": {
+    "rsid": "mh12scuzj-0109036",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "T:C:C:G:A",
+      "T:T:C:G:A",
+      "T:T:G:C:A",
+      "T:T:G:G:A",
+      "C:T:C:G:A",
+      "T:C:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.3,
+      "EUR": 0.487,
+      "AFR": 0.114,
+      "EAS": 0.029
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12usc-12qa": {
+    "rsid": "mh12usc-12qa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:A",
+      "A:T:G",
+      "G:G:G",
+      "G:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.359,
+      "EUR": 0.361,
+      "AFR": 0.356,
+      "EAS": 0.144
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12lw-30": {
+    "rsid": "mh12lw-30",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:A:G",
+      "G:G:A:G",
+      "G:G:A:T",
+      "A:G:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.236,
+      "EUR": 0.244,
+      "AFR": 0.228,
+      "EAS": 0.156
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12cp-007": {
+    "rsid": "mh12cp-007",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:T",
+      "A:T:C",
+      "A:T:T",
+      "C:T:C",
+      "A:C:C",
+      "C:T:T",
+      "C:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.193,
+      "EUR": 0.24,
+      "AFR": 0.146,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12zha-008": {
+    "rsid": "mh12zha-008",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:G:C",
+      "G:C:T:C",
+      "G:C:T:T",
+      "G:G:T:T",
+      "T:G:T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.307,
+      "EUR": 0.271,
+      "AFR": 0.342,
+      "EAS": 0.182
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12wl-018.v1": {
+    "rsid": "mh12wl-018.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:T:T:G",
+      "G:C:C:T:A",
+      "G:C:T:T:A",
+      "G:C:T:T:G",
+      "G:T:C:C:A",
+      "G:T:C:T:A",
+      "G:C:C:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.329,
+      "EUR": 0.365,
+      "AFR": 0.294,
+      "EAS": 0.127
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12kk-045": {
+    "rsid": "mh12kk-045",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:T",
+      "T:C",
+      "T:T",
+      "C:C"
+    ],
+    "frequencies": {
+      "MENA": 0.459,
+      "EUR": 0.312,
+      "AFR": 0.606,
+      "EAS": 0.18
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12wl-048.v1": {
+    "rsid": "mh12wl-048.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:C:T",
+      "C:C:T:C:C",
+      "C:C:T:C:T",
+      "C:T:C:C:C",
+      "C:T:C:T:C",
+      "C:T:T:C:C",
+      "C:T:T:C:T",
+      "T:C:C:C:C",
+      "T:C:C:C:T",
+      "T:C:T:C:C",
+      "T:C:T:C:T",
+      "T:C:T:T:C",
+      "T:C:T:T:T",
+      "C:C:C:C:C",
+      "C:T:T:T:C",
+      "C:T:C:C:T",
+      "C:T:T:T:T",
+      "C:C:T:T:T",
+      "T:C:C:T:T",
+      "T:T:C:C:C",
+      "T:T:C:C:T",
+      "T:C:C:T:C",
+      "C:C:T:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.415,
+      "EUR": 0.334,
+      "AFR": 0.497,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13scuzj-0013697": {
+    "rsid": "mh13scuzj-0013697",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:A:A",
+      "A:G:G:A",
+      "A:G:G:G",
+      "G:A:A:A",
+      "G:A:A:G",
+      "G:A:G:A",
+      "G:A:G:G",
+      "G:G:A:A",
+      "G:G:A:G",
+      "G:G:G:A",
+      "G:G:G:G",
+      "A:A:A:G",
+      "A:G:A:G",
+      "A:A:G:G",
+      "A:G:A:A",
+      "A:A:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.332,
+      "EUR": 0.298,
+      "AFR": 0.367,
+      "EAS": 0.187
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13ls-13qc": {
+    "rsid": "mh13ls-13qc",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:G",
+      "C:A:A",
+      "C:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.424,
+      "EUR": 0.236,
+      "AFR": 0.613,
+      "EAS": 0.163
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-225.v1": {
+    "rsid": "mh13kk-225.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G",
+      "G:A:A",
+      "G:A:G",
+      "G:C:G",
+      "A:C:A",
+      "A:A:G",
+      "A:A:A",
+      "G:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.278,
+      "EUR": 0.201,
+      "AFR": 0.356,
+      "EAS": 0.012
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14wl-018": {
+    "rsid": "mh14wl-018",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:G",
+      "G:T:A",
+      "G:T:G",
+      "T:C:G",
+      "T:T:G",
+      "T:T:A"
+    ],
+    "frequencies": {
+      "MENA": 0.255,
+      "EUR": 0.361,
+      "AFR": 0.148,
+      "EAS": 0.002
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14cp-003": {
+    "rsid": "mh14cp-003",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:G",
+      "G:A:A",
+      "G:A:G",
+      "G:G:A",
+      "G:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.392,
+      "EUR": 0.499,
+      "AFR": 0.284,
+      "EAS": 0.18
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14shy-001": {
+    "rsid": "mh14shy-001",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C:A:T:A:T:A:G:A",
+      "C:G:T:A:T:A:T:A:G:A",
+      "C:G:T:A:T:A:T:A:G:T",
+      "C:G:T:A:T:A:T:A:T:T",
+      "C:G:T:T:T:A:T:A:G:A",
+      "C:G:T:T:T:A:T:A:G:T",
+      "C:G:T:A:T:G:T:A:G:T",
+      "C:G:T:A:T:A:T:A:T:A",
+      "C:G:C:A:T:A:T:A:T:T",
+      "C:G:T:T:T:A:T:A:T:T",
+      "C:A:T:A:T:A:T:A:G:A",
+      "C:G:C:A:T:A:T:A:G:T",
+      "C:G:T:A:T:A:T:G:T:T",
+      "C:G:T:T:T:A:T:G:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.228,
+      "EUR": 0.301,
+      "AFR": 0.154,
+      "EAS": 0.043
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14lw-36": {
+    "rsid": "mh14lw-36",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:T:C:T",
+      "A:T:T:C:T",
+      "A:T:T:G:T",
+      "G:T:T:C:T",
+      "A:T:T:G:C",
+      "A:A:C:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.191,
+      "EUR": 0.261,
+      "AFR": 0.12,
+      "EAS": 0.169
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14usc-14qb": {
+    "rsid": "mh14usc-14qb",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:C",
+      "A:T:C",
+      "C:C:A",
+      "C:C:C",
+      "A:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.205,
+      "EUR": 0.287,
+      "AFR": 0.123,
+      "EAS": 0.177
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14shy-002.v2": {
+    "rsid": "mh14shy-002.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:A",
+      "A:C:G",
+      "A:T:A",
+      "A:T:G",
+      "C:C:A",
+      "C:C:G",
+      "C:T:A",
+      "C:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.296,
+      "EUR": 0.449,
+      "AFR": 0.143,
+      "EAS": 0.103
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14wl-030.v1": {
+    "rsid": "mh14wl-030.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:A",
+      "C:T:C:A",
+      "T:C:A:A",
+      "T:C:C:A",
+      "T:T:A:A",
+      "T:T:C:A",
+      "C:T:A:A",
+      "C:C:A:A",
+      "T:T:C:G",
+      "C:T:A:G",
+      "C:C:A:G",
+      "T:C:C:G",
+      "C:T:C:G",
+      "T:T:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.489,
+      "EUR": 0.301,
+      "AFR": 0.676,
+      "EAS": 0.027
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14wl-016": {
+    "rsid": "mh14wl-016",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:G:C:C:G:T",
+      "C:G:G:T:C:G:C",
+      "C:G:G:T:T:G:C",
+      "T:G:G:T:C:G:C",
+      "C:C:G:C:C:G:C",
+      "C:G:G:T:C:G:T",
+      "T:G:G:C:C:G:C",
+      "C:G:A:T:C:A:C",
+      "T:G:G:T:T:G:C",
+      "C:C:A:C:C:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.282,
+      "EUR": 0.24,
+      "AFR": 0.324,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14ls-14qf": {
+    "rsid": "mh14ls-14qf",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:T",
+      "A:T:T",
+      "G:T:C",
+      "G:T:T",
+      "A:T:C",
+      "G:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.433,
+      "EUR": 0.32,
+      "AFR": 0.545,
+      "EAS": 0.197
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14scuzj-0235514": {
+    "rsid": "mh14scuzj-0235514",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:G:C:G:A",
+      "T:A:A:T:A:A",
+      "T:A:A:T:G:A",
+      "T:G:G:C:A:A",
+      "T:G:G:C:G:A",
+      "T:G:G:T:A:A",
+      "T:G:G:T:G:A",
+      "C:G:A:C:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.314,
+      "EUR": 0.288,
+      "AFR": 0.341,
+      "EAS": 0.153
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14usc-14qd": {
+    "rsid": "mh14usc-14qd",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:G",
+      "G:A:T",
+      "G:T:G",
+      "T:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.318,
+      "EUR": 0.388,
+      "AFR": 0.248,
+      "EAS": 0.081
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15usc-15qa": {
+    "rsid": "mh15usc-15qa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:A:A",
+      "A:T:A:A",
+      "A:T:A:G",
+      "A:T:C:A",
+      "G:T:A:A",
+      "A:C:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.263,
+      "EUR": 0.372,
+      "AFR": 0.154,
+      "EAS": 0.015
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-067.v1": {
+    "rsid": "mh15kk-067.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C",
+      "G:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.408,
+      "EUR": 0.405,
+      "AFR": 0.412,
+      "EAS": 0.007
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-067.v4": {
+    "rsid": "mh15kk-067.v4",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "MENA": 0.614,
+      "EUR": 0.743,
+      "AFR": 0.484,
+      "EAS": 0.132
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-066.v1": {
+    "rsid": "mh15kk-066.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G",
+      "A:T",
+      "C:G",
+      "C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.451,
+      "EUR": 0.672,
+      "AFR": 0.231,
+      "EAS": 0.193
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15wl-018.v2": {
+    "rsid": "mh15wl-018.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:T:T:G:T:G:G",
+      "C:T:T:G:T:G:T",
+      "T:C:T:G:C:G:T",
+      "T:T:T:C:T:A:T",
+      "T:T:T:C:T:G:T",
+      "T:T:T:G:T:G:G",
+      "T:T:T:G:T:G:T",
+      "T:C:T:G:T:G:T",
+      "T:T:C:C:T:G:T",
+      "T:C:T:G:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.372,
+      "EUR": 0.41,
+      "AFR": 0.335,
+      "EAS": 0.193
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15scuzj-0216291": {
+    "rsid": "mh15scuzj-0216291",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:A:T:G:C",
+      "C:G:G:C:G:A",
+      "C:G:G:C:G:C",
+      "C:G:G:T:A:A",
+      "C:G:G:T:G:A",
+      "C:G:G:T:G:C",
+      "C:G:A:C:G:C",
+      "C:G:A:T:G:A",
+      "C:G:A:C:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.283,
+      "EUR": 0.206,
+      "AFR": 0.359,
+      "EAS": 0.156
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15shy-003": {
+    "rsid": "mh15shy-003",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:T:C:C:G:T:C:G:C:G:T",
+      "C:G:T:C:C:A:T:C:G:C:G:C",
+      "C:G:T:C:C:G:T:C:A:C:G:C",
+      "C:G:T:C:C:G:T:C:G:A:A:C",
+      "C:G:T:C:C:G:T:C:G:C:A:C",
+      "C:G:T:C:C:G:T:C:G:C:G:C",
+      "C:G:T:C:C:G:T:C:G:C:G:T",
+      "C:G:T:G:C:G:T:C:A:C:G:C",
+      "T:G:T:C:C:G:T:C:A:C:G:C",
+      "T:G:T:C:C:G:T:C:G:C:G:C",
+      "T:G:T:G:C:G:T:C:A:C:G:C",
+      "T:G:C:C:C:G:T:C:A:C:G:C",
+      "T:G:T:G:C:G:T:C:G:C:G:C",
+      "C:A:T:C:C:G:T:C:G:C:A:C",
+      "C:A:T:C:C:G:T:C:G:C:G:C",
+      "C:G:T:G:C:G:T:C:G:C:G:C",
+      "C:G:T:C:C:G:T:C:G:A:G:C",
+      "C:G:T:G:C:G:T:C:G:C:A:C",
+      "T:G:T:G:C:A:T:C:A:C:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.186,
+      "EUR": 0.259,
+      "AFR": 0.114,
+      "EAS": 0.011
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15scuzj-0266423": {
+    "rsid": "mh15scuzj-0266423",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:T:T:A:A",
+      "T:C:T:T:A:A"
+    ],
+    "frequencies": {
+      "MENA": 1.0,
+      "EUR": 1,
+      "AFR": 1,
+      "EAS": 0.049
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16scuzj-0039596": {
+    "rsid": "mh16scuzj-0039596",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G:C:G",
+      "A:C:G:T:G",
+      "A:G:G:C:C",
+      "A:G:G:C:G",
+      "A:G:T:C:C",
+      "A:G:T:C:G",
+      "A:G:T:T:G",
+      "A:C:G:C:C",
+      "A:G:G:T:G",
+      "G:G:T:C:C",
+      "A:C:T:C:C",
+      "A:G:T:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.21,
+      "EUR": 0.302,
+      "AFR": 0.118,
+      "EAS": 0.008
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-003.v1": {
+    "rsid": "mh16wl-003.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:A:A:C:T:C:G:A:A:A",
+      "C:A:A:A:C:T:T:G:A:A:A",
+      "C:A:A:A:C:T:T:T:T:C:A",
+      "C:A:A:A:T:T:T:T:T:C:A",
+      "C:A:A:C:C:T:T:G:A:A:A",
+      "C:A:G:A:C:T:T:T:T:C:A",
+      "T:A:A:A:T:T:T:T:T:C:A",
+      "C:A:A:C:C:T:C:G:A:A:A",
+      "C:G:G:A:C:T:T:T:T:C:A",
+      "C:A:A:A:C:T:T:G:A:A:C",
+      "C:A:A:A:C:G:C:G:A:A:A",
+      "C:A:A:A:C:G:T:T:T:C:A",
+      "T:A:A:A:T:T:T:G:A:A:A",
+      "C:A:A:C:C:T:T:G:A:A:C",
+      "C:A:A:C:C:T:T:T:T:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.369,
+      "EUR": 0.595,
+      "AFR": 0.144,
+      "EAS": 0.092
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16usc-16qa": {
+    "rsid": "mh16usc-16qa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:G:T",
+      "G:T:T",
+      "T:G:C",
+      "T:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.309,
+      "EUR": 0.481,
+      "AFR": 0.137,
+      "EAS": 0.103
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-043": {
+    "rsid": "mh16wl-043",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:G",
+      "A:A:T:G",
+      "A:G:C:G",
+      "C:A:C:G",
+      "C:A:T:G",
+      "C:G:C:G",
+      "A:G:T:G",
+      "A:A:C:C",
+      "C:A:C:C",
+      "C:G:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.213,
+      "EUR": 0.204,
+      "AFR": 0.221,
+      "EAS": 0.093
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-047": {
+    "rsid": "mh16wl-047",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A:G:C",
+      "C:C:G:G:C",
+      "T:C:A:G:C",
+      "T:C:A:T:C",
+      "T:T:A:G:C",
+      "T:T:A:G:T",
+      "T:T:A:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.366,
+      "EUR": 0.556,
+      "AFR": 0.175,
+      "EAS": 0.18
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16scuzj-0289826": {
+    "rsid": "mh16scuzj-0289826",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:T:C:A:A",
+      "A:C:T:C:A:G",
+      "T:C:T:C:A:A",
+      "T:C:T:C:G:A",
+      "T:C:T:G:A:A",
+      "T:T:T:C:A:A",
+      "T:T:T:C:A:G",
+      "T:C:T:C:A:G",
+      "T:T:C:C:A:A",
+      "A:C:T:C:G:A",
+      "T:T:T:G:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.224,
+      "EUR": 0.337,
+      "AFR": 0.111,
+      "EAS": 0.132
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17scuzj-0003983": {
+    "rsid": "mh17scuzj-0003983",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G:A:G:A",
+      "A:C:G:G:G:C",
+      "G:C:A:G:G:C",
+      "G:C:G:A:G:A",
+      "G:C:G:G:G:A",
+      "G:C:G:G:G:C",
+      "G:G:A:G:G:A",
+      "G:G:A:G:G:C",
+      "G:G:G:A:G:C",
+      "G:G:G:G:A:C",
+      "G:G:G:G:G:A",
+      "G:G:G:G:G:C",
+      "A:C:A:G:G:C",
+      "A:C:G:A:G:C",
+      "A:C:G:G:G:A",
+      "G:C:G:A:G:C",
+      "G:G:A:G:A:C",
+      "G:G:G:A:G:A",
+      "G:C:A:G:G:A",
+      "A:G:G:G:G:C",
+      "G:C:A:G:A:A",
+      "G:C:G:G:A:A",
+      "G:G:G:G:A:A",
+      "G:C:G:G:A:C",
+      "A:C:G:G:A:A",
+      "G:C:A:A:G:A",
+      "G:G:G:A:A:A",
+      "G:G:A:G:A:A"
+    ],
+    "frequencies": {
+      "MENA": 0.454,
+      "EUR": 0.51,
+      "AFR": 0.398,
+      "EAS": 0.176
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17wl-033": {
+    "rsid": "mh17wl-033",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:C",
+      "C:C:C:T",
+      "C:C:T:T",
+      "C:G:C:T",
+      "C:G:T:T",
+      "T:G:T:T",
+      "T:C:T:T",
+      "C:C:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.169,
+      "EUR": 0.23,
+      "AFR": 0.108,
+      "EAS": 0.185
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17scuzj-0114315": {
+    "rsid": "mh17scuzj-0114315",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:G:G:A",
+      "C:A:G:G:G",
+      "C:A:T:G:A",
+      "C:G:G:G:G",
+      "T:A:G:G:G",
+      "C:G:G:A:G",
+      "T:A:T:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.186,
+      "EUR": 0.202,
+      "AFR": 0.171,
+      "EAS": 0.003
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17scuzj-0222289": {
+    "rsid": "mh17scuzj-0222289",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:G:A:T",
+      "C:A:G:G:T",
+      "C:A:T:A:T",
+      "C:A:T:G:T",
+      "C:G:T:A:T",
+      "C:G:T:G:T",
+      "T:A:T:A:T",
+      "C:A:T:G:C",
+      "T:A:T:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.334,
+      "EUR": 0.542,
+      "AFR": 0.126,
+      "EAS": 0.001
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0076547": {
+    "rsid": "mh18scuzj-0076547",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:C:T:G:C:G",
+      "G:C:C:T:G:C:A",
+      "G:C:C:T:G:C:G",
+      "G:C:C:T:T:C:G",
+      "G:C:T:T:G:C:A",
+      "G:C:T:T:G:C:G",
+      "G:C:T:T:G:T:G",
+      "A:C:C:T:G:C:A",
+      "G:G:C:T:G:C:A",
+      "G:C:T:G:G:C:G",
+      "G:C:C:T:T:C:A",
+      "G:C:T:T:T:C:G"
+    ],
+    "frequencies": {
+      "MENA": 0.226,
+      "EUR": 0.294,
+      "AFR": 0.158,
+      "EAS": 0.017
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18wl-013": {
+    "rsid": "mh18wl-013",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:T:C",
+      "A:C:T:T",
+      "A:T:T:C",
+      "A:T:T:T",
+      "G:T:T:C",
+      "G:T:T:T",
+      "G:T:A:T",
+      "G:T:A:C"
+    ],
+    "frequencies": {
+      "MENA": 0.269,
+      "EUR": 0.274,
+      "AFR": 0.265,
+      "EAS": 0.163
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18wl-033": {
+    "rsid": "mh18wl-033",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:C:G:C",
+      "G:C:A:C",
+      "G:C:A:G",
+      "G:C:G:C",
+      "G:T:G:C",
+      "G:C:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.212,
+      "EUR": 0.248,
+      "AFR": 0.176,
+      "EAS": 0.047
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0133911": {
+    "rsid": "mh18scuzj-0133911",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C:C:A:C",
+      "C:A:C:C:A:G",
+      "C:A:T:C:A:C",
+      "C:T:C:C:T:C",
+      "T:A:C:C:A:C",
+      "T:A:C:C:A:G",
+      "T:T:C:C:T:C",
+      "T:A:T:C:T:C",
+      "C:A:T:C:T:C",
+      "T:T:C:T:T:C",
+      "T:A:C:T:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.256,
+      "EUR": 0.348,
+      "AFR": 0.163,
+      "EAS": 0.13
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0162121": {
+    "rsid": "mh18scuzj-0162121",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:C",
+      "C:C:C:T",
+      "C:C:G:C",
+      "T:C:C:C",
+      "T:C:G:C",
+      "T:T:C:C",
+      "C:C:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.312,
+      "EUR": 0.33,
+      "AFR": 0.294,
+      "EAS": 0.015
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18wl-027.v1": {
+    "rsid": "mh18wl-027.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:C:G:A",
+      "G:G:C:A:A",
+      "G:G:C:G:A",
+      "G:G:C:G:T",
+      "G:G:G:G:A",
+      "A:G:C:A:A"
+    ],
+    "frequencies": {
+      "MENA": 0.32,
+      "EUR": 0.234,
+      "AFR": 0.407,
+      "EAS": 0.066
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18wl-005": {
+    "rsid": "mh18wl-005",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:G:A:A",
+      "C:G:G:A:G",
+      "C:G:G:G:A",
+      "G:C:G:G:A",
+      "G:C:G:G:G",
+      "C:G:G:G:G",
+      "G:G:G:A:A",
+      "C:C:G:G:A",
+      "G:C:G:A:G",
+      "G:G:G:G:A"
+    ],
+    "frequencies": {
+      "MENA": 0.395,
+      "EUR": 0.453,
+      "AFR": 0.336,
+      "EAS": 0.002
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19shy-001.v4": {
+    "rsid": "mh19shy-001.v4",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T:A:C",
+      "A:T:C:A",
+      "A:T:C:C",
+      "G:A:C:C",
+      "G:T:A:C",
+      "G:T:C:C",
+      "A:A:C:C",
+      "G:A:A:C",
+      "A:A:A:C",
+      "G:T:C:A"
+    ],
+    "frequencies": {
+      "MENA": 0.335,
+      "EUR": 0.201,
+      "AFR": 0.47,
+      "EAS": 0.129
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19zha-007": {
+    "rsid": "mh19zha-007",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:A:A:G",
+      "G:A:G:C",
+      "G:A:G:G",
+      "T:A:G:G",
+      "T:G:G:G",
+      "T:A:A:G",
+      "G:G:G:G"
+    ],
+    "frequencies": {
+      "MENA": 0.169,
+      "EUR": 0.209,
+      "AFR": 0.129,
+      "EAS": 0.108
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19scuzj-0121709": {
+    "rsid": "mh19scuzj-0121709",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:C",
+      "A:T:C",
+      "G:G:A",
+      "G:G:C",
+      "G:T:A",
+      "G:T:C",
+      "A:G:A",
+      "A:T:A"
+    ],
+    "frequencies": {
+      "MENA": 0.361,
+      "EUR": 0.45,
+      "AFR": 0.273,
+      "EAS": 0.08
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19kk-301": {
+    "rsid": "mh19kk-301",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:G:G:T",
+      "G:A:A:C",
+      "G:G:A:C",
+      "G:G:A:T",
+      "G:A:A:T",
+      "A:G:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.648,
+      "EUR": 0.736,
+      "AFR": 0.56,
+      "EAS": 0.128
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-306.v2": {
+    "rsid": "mh20kk-306.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:A:C:C:G:C",
+      "C:A:A:C:C:G:T",
+      "C:A:G:C:C:G:C",
+      "C:A:G:C:C:G:T",
+      "C:A:G:C:T:G:C",
+      "C:A:G:C:T:G:T",
+      "C:G:A:C:C:G:C",
+      "C:G:A:C:C:G:T",
+      "C:G:A:T:C:G:T",
+      "C:G:A:T:T:G:T",
+      "C:G:G:C:C:G:T",
+      "C:G:G:C:T:G:T",
+      "C:A:A:T:C:G:T",
+      "C:G:A:C:T:G:C",
+      "C:G:G:C:C:G:C",
+      "C:G:G:C:T:G:C",
+      "C:A:A:C:T:G:C",
+      "C:A:A:C:T:G:T",
+      "C:A:G:T:C:G:T",
+      "C:G:G:T:C:G:T",
+      "T:A:G:C:C:G:T",
+      "C:G:A:C:T:G:T",
+      "C:A:G:T:T:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.245,
+      "EUR": 0.381,
+      "AFR": 0.11,
+      "EAS": 0.002
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-306.v1": {
+    "rsid": "mh20kk-306.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:C:C:C",
+      "A:A:C:C:T",
+      "A:G:C:C:C",
+      "A:G:C:C:T",
+      "A:G:C:T:C",
+      "A:G:C:T:T",
+      "G:A:C:C:C",
+      "G:A:C:C:T",
+      "G:A:T:C:T",
+      "G:A:T:T:T",
+      "G:G:C:C:T",
+      "G:G:C:T:T",
+      "A:A:T:C:T",
+      "G:A:C:T:C",
+      "G:G:C:C:C",
+      "G:G:C:T:C",
+      "A:A:C:T:C",
+      "A:A:C:T:T",
+      "A:G:T:C:T",
+      "G:G:T:C:T",
+      "G:A:C:T:T",
+      "A:G:T:T:T",
+      "A:G:C:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.245,
+      "EUR": 0.381,
+      "AFR": 0.11,
+      "EAS": 0.128
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20usc-20pa": {
+    "rsid": "mh20usc-20pa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:C:C",
+      "T:A:C:T",
+      "T:A:T:T",
+      "T:G:C:C",
+      "C:A:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.298,
+      "EUR": 0.337,
+      "AFR": 0.259,
+      "EAS": 0.144
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20wl-014": {
+    "rsid": "mh20wl-014",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A",
+      "C:C:G",
+      "T:C:A",
+      "T:C:G",
+      "T:T:G",
+      "T:T:A",
+      "C:T:G"
+    ],
+    "frequencies": {
+      "MENA": 0.208,
+      "EUR": 0.251,
+      "AFR": 0.165,
+      "EAS": 0.111
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21ls-21qc": {
+    "rsid": "mh21ls-21qc",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:A:A:G",
+      "C:C:T:A",
+      "C:C:T:G",
+      "A:C:A:G",
+      "C:A:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.198,
+      "EUR": 0.266,
+      "AFR": 0.129,
+      "EAS": 0.122
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21kk-313.v3": {
+    "rsid": "mh21kk-313.v3",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:C:G:C:G:C:C",
+      "C:C:C:G:C:G:C:T",
+      "C:C:C:G:C:T:C:C",
+      "C:C:C:G:C:T:C:T",
+      "C:T:C:G:C:G:C:T",
+      "C:T:C:G:C:T:C:T",
+      "C:T:C:G:C:T:C:C",
+      "C:C:C:G:G:G:C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.288,
+      "EUR": 0.375,
+      "AFR": 0.201,
+      "EAS": 0.16
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21kk-313.v1": {
+    "rsid": "mh21kk-313.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:G:C",
+      "C:G:T",
+      "C:T:C",
+      "C:T:T",
+      "T:G:T",
+      "T:T:T",
+      "T:T:C",
+      "T:G:C"
+    ],
+    "frequencies": {
+      "MENA": 0.288,
+      "EUR": 0.375,
+      "AFR": 0.201,
+      "EAS": 0.16
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21kk-313.v2": {
+    "rsid": "mh21kk-313.v2",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:G:G:C",
+      "C:C:G:G:T",
+      "C:C:G:T:C",
+      "C:C:G:T:T",
+      "T:C:G:G:T",
+      "T:C:G:T:T",
+      "T:C:G:T:C",
+      "C:C:C:T:C",
+      "C:G:G:G:T"
+    ],
+    "frequencies": {
+      "MENA": 0.288,
+      "EUR": 0.375,
+      "AFR": 0.201,
+      "EAS": 0.16
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21ls-21qd": {
+    "rsid": "mh21ls-21qd",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:A:A",
+      "C:G:A",
+      "C:G:G",
+      "G:A:A",
+      "G:G:A",
+      "G:G:G",
+      "C:A:G",
+      "G:A:G"
+    ],
+    "frequencies": {
+      "MENA": 0.274,
+      "EUR": 0.389,
+      "AFR": 0.159,
+      "EAS": 0.165
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh22wl-006.v1": {
+    "rsid": "mh22wl-006.v1",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "C:C:A:C",
+      "C:C:G:C",
+      "C:T:A:C",
+      "C:T:A:T",
+      "C:T:G:C",
+      "C:T:G:T",
+      "T:C:A:C",
+      "T:C:G:C",
+      "T:T:A:C",
+      "T:T:G:C",
+      "T:T:G:T",
+      "C:C:G:T",
+      "T:C:G:T",
+      "T:T:A:T",
+      "C:C:A:T",
+      "T:C:A:T"
+    ],
+    "frequencies": {
+      "MENA": 0.308,
+      "EUR": 0.454,
+      "AFR": 0.161,
+      "EAS": 0.155
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xqa": {
+    "rsid": "mh0xusc-xqa",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "A:T",
+      "C:C",
+      "C:T"
+    ],
+    "frequencies": {
+      "MENA": 0.531,
+      "EUR": 0.464,
+      "AFR": 0.597,
+      "EAS": 0.145
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xqh": {
+    "rsid": "mh0xusc-xqh",
+    "region": "Middle Eastern",
+    "color": "#E67E22",
+    "alleles": [
+      "G:C:T",
+      "G:T:T",
+      "T:C:C",
+      "T:C:T",
+      "G:T:C"
+    ],
+    "frequencies": {
+      "MENA": 0.282,
+      "EUR": 0.256,
+      "AFR": 0.308,
+      "EAS": 0.124
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Fertile Crescent / MENA microhaplotype AIM marker.",
+    "chromosome": "1",
+    "position": 1000000
   }
 }

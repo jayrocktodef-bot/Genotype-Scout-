@@ -20364,5 +20364,6421 @@
     "description": "Commercial array AIM marker informative for East Asian ancestry.",
     "chromosome": "1",
     "position": 1000000
+  },
+  "mh01kk-001.v2": {
+    "rsid": "mh01kk-001.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.428,
+      "EUR": 0.457,
+      "AFR": 0.2,
+      "AMR": 0.678,
+      "SAS": 0.35
+    },
+    "subFrequencies": {
+      "CDX": 0.38172,
+      "CHB": 0.47573,
+      "CHS": 0.42857,
+      "JPT": 0.49038,
+      "KHV": 0.35644
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01kk-210": {
+    "rsid": "mh01kk-210",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:T",
+      "C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.515,
+      "EUR": 0.114,
+      "AFR": 0.044,
+      "AMR": 0.223,
+      "SAS": 0.156
+    },
+    "subFrequencies": {
+      "CDX": 0.425,
+      "CHB": 0.573,
+      "CHS": 0.519,
+      "JPT": 0.659,
+      "KHV": 0.374
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01cp-012": {
+    "rsid": "mh01cp-012",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:C",
+      "T:A:C",
+      "T:A:T",
+      "T:G:T",
+      "T:G:C",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.435,
+      "EUR": 0.591,
+      "AFR": 0.267,
+      "AMR": 0.035,
+      "SAS": 0.492
+    },
+    "subFrequencies": {
+      "CDX": 0.242,
+      "CHB": 0.15,
+      "CHS": 0.157,
+      "JPT": 0.216,
+      "KHV": 0.288
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-002.v2": {
+    "rsid": "mh01wl-002.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:A:A:A",
+      "A:G:A:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.702,
+      "EUR": 0.508,
+      "AFR": 0.341,
+      "AMR": 0.644,
+      "SAS": 0.596
+    },
+    "subFrequencies": {
+      "CDX": 0.67742,
+      "CHB": 0.69417,
+      "CHS": 0.71875,
+      "JPT": 0.75962,
+      "KHV": 0.65347
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-002.v3": {
+    "rsid": "mh01wl-002.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A",
+      "A:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.702,
+      "EUR": 0.508,
+      "AFR": 0.341,
+      "AMR": 0.644,
+      "SAS": 0.596
+    },
+    "subFrequencies": {
+      "CDX": 0.67742,
+      "CHB": 0.69417,
+      "CHS": 0.71875,
+      "JPT": 0.75962,
+      "KHV": 0.65347
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01wl-002.v1": {
+    "rsid": "mh01wl-002.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A:A",
+      "A:G:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.702,
+      "EUR": 0.508,
+      "AFR": 0.341,
+      "AMR": 0.644,
+      "SAS": 0.596
+    },
+    "subFrequencies": {
+      "CDX": 0.67742,
+      "CHB": 0.69417,
+      "CHS": 0.71875,
+      "JPT": 0.75962,
+      "KHV": 0.65347
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01usc-1qa": {
+    "rsid": "mh01usc-1qa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "G:A",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.598,
+      "EUR": 0.164,
+      "AFR": 0.404,
+      "AMR": 0.202,
+      "SAS": 0.219
+    },
+    "subFrequencies": {
+      "CDX": 0.60753,
+      "CHB": 0.64078,
+      "CHS": 0.60714,
+      "JPT": 0.48558,
+      "KHV": 0.65347
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01ls-1qb": {
+    "rsid": "mh01ls-1qb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:T:G",
+      "T:C:G",
+      "T:C:T",
+      "G:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.487,
+      "EUR": 0.164,
+      "AFR": 0.172,
+      "AMR": 0.287,
+      "SAS": 0.178
+    },
+    "subFrequencies": {
+      "CDX": 0.41398,
+      "CHB": 0.52427,
+      "CHS": 0.48214,
+      "JPT": 0.50481,
+      "KHV": 0.50495
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh01scuzj-0481939": {
+    "rsid": "mh01scuzj-0481939",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:T:A:T:G:G:T",
+      "T:T:A:T:T:G:T",
+      "T:T:A:T:T:T:T",
+      "T:T:G:T:G:G:T",
+      "T:T:G:T:T:G:T",
+      "T:T:G:T:T:T:T",
+      "C:T:A:T:T:T:T",
+      "T:T:G:T:T:T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.403,
+      "EUR": 0.36,
+      "AFR": 0.145,
+      "AMR": 0.438,
+      "SAS": 0.215
+    },
+    "subFrequencies": {
+      "CDX": 0.4086,
+      "CHB": 0.38835,
+      "CHS": 0.42857,
+      "JPT": 0.32212,
+      "KHV": 0.46535
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-080": {
+    "rsid": "mh02wl-080",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:T:A:A:A:G:C",
+      "A:A:T:A:A:C:G:C"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 0.001,
+      "AFR": 0.001,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02wl-052": {
+    "rsid": "mh02wl-052",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:T:T",
+      "C:G:T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.923,
+      "EUR": 0.862,
+      "AFR": 0.939,
+      "AMR": 0.96,
+      "SAS": 0.946
+    },
+    "subFrequencies": {
+      "CDX": 0.93548,
+      "CHB": 0.92718,
+      "CHS": 0.91964,
+      "JPT": 0.93269,
+      "KHV": 0.90099
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02ls-2pf": {
+    "rsid": "mh02ls-2pf",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G",
+      "A:A:T",
+      "A:G:G",
+      "G:G:G",
+      "G:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.425,
+      "EUR": 0.036,
+      "AFR": 0.005,
+      "AMR": 0.42,
+      "SAS": 0.078
+    },
+    "subFrequencies": {
+      "CDX": 0.45699,
+      "CHB": 0.43204,
+      "CHS": 0.40625,
+      "JPT": 0.41346,
+      "KHV": 0.42079
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-131": {
+    "rsid": "mh02kk-131",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "G:A",
+      "G:G",
+      "C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.684,
+      "EUR": 0.229,
+      "AFR": 0.03,
+      "AMR": 0.006,
+      "SAS": 0.698
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02zbf-001": {
+    "rsid": "mh02zbf-001",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:A",
+      "G:G:A",
+      "C:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.935,
+      "EUR": 0.707,
+      "AFR": 0.76,
+      "AMR": 0.732,
+      "SAS": 0.843
+    },
+    "subFrequencies": {
+      "CDX": 0.9086,
+      "CHB": 0.95631,
+      "CHS": 0.91964,
+      "JPT": 0.9375,
+      "KHV": 0.9505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-213": {
+    "rsid": "mh02kk-213",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:T",
+      "C:G:T",
+      "T:G:C",
+      "T:G:T",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.577,
+      "EUR": 0.266,
+      "AFR": 0.362,
+      "AMR": 0.019,
+      "SAS": 0.478
+    },
+    "subFrequencies": {
+      "CDX": 0.081,
+      "CHB": 0.049,
+      "CHS": 0.076,
+      "JPT": 0.043,
+      "KHV": 0.141
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-202": {
+    "rsid": "mh02kk-202",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:C",
+      "G:A",
+      "G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.568,
+      "EUR": 0.242,
+      "AFR": 0.48,
+      "AMR": 0,
+      "SAS": 0.427
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-139": {
+    "rsid": "mh02kk-139",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:A",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.871,
+      "EUR": 0.01,
+      "AFR": 0.669,
+      "AMR": 0,
+      "SAS": 0.015
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-004.v2": {
+    "rsid": "mh02kk-004.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:A",
+      "G:G:A",
+      "G:G:G",
+      "G:T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.5,
+      "EUR": 0.156,
+      "AFR": 0.015,
+      "AMR": 0.221,
+      "SAS": 0.13
+    },
+    "subFrequencies": {
+      "CDX": 0.56452,
+      "CHB": 0.50971,
+      "CHS": 0.45536,
+      "JPT": 0.48558,
+      "KHV": 0.49505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-004.v1": {
+    "rsid": "mh02kk-004.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:A",
+      "G:A:G",
+      "G:G:A",
+      "T:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.5,
+      "EUR": 0.156,
+      "AFR": 0.015,
+      "AMR": 0.221,
+      "SAS": 0.13
+    },
+    "subFrequencies": {
+      "CDX": 0.5645,
+      "CHB": 0.5146,
+      "CHS": 0.4571,
+      "JPT": 0.4856,
+      "KHV": 0.5051
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-215": {
+    "rsid": "mh02kk-215",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:T",
+      "C:C",
+      "C:T",
+      "A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.622,
+      "EUR": 0.108,
+      "AFR": 0.563,
+      "AMR": 0.362,
+      "SAS": 0.454
+    },
+    "subFrequencies": {
+      "CDX": 0.091,
+      "CHB": 0.126,
+      "CHS": 0.1,
+      "JPT": 0.082,
+      "KHV": 0.152
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02ls-2qb": {
+    "rsid": "mh02ls-2qb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:A",
+      "C:C:G",
+      "G:A:G",
+      "G:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.427,
+      "EUR": 0.264,
+      "AFR": 0.458,
+      "AMR": 0.385,
+      "SAS": 0.172
+    },
+    "subFrequencies": {
+      "CDX": 0.46774,
+      "CHB": 0.40777,
+      "CHS": 0.44196,
+      "JPT": 0.41827,
+      "KHV": 0.40099
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02kk-201": {
+    "rsid": "mh02kk-201",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A",
+      "G:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.981,
+      "EUR": 0.343,
+      "AFR": 0.2,
+      "AMR": 0.327,
+      "SAS": 0.001
+    },
+    "subFrequencies": {
+      "CDX": 0.005,
+      "CHB": 0.029,
+      "CHS": 0.01,
+      "JPT": 0.005,
+      "KHV": 0.02
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02usc-2qc": {
+    "rsid": "mh02usc-2qc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:G",
+      "C:G:G",
+      "G:G:G",
+      "G:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.58,
+      "EUR": 0.209,
+      "AFR": 0.44,
+      "AMR": 0.317,
+      "SAS": 0.32
+    },
+    "subFrequencies": {
+      "CDX": 0.55376,
+      "CHB": 0.61165,
+      "CHS": 0.61161,
+      "JPT": 0.5,
+      "KHV": 0.61881
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02usc-2qe": {
+    "rsid": "mh02usc-2qe",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:G",
+      "C:A:T",
+      "C:G:G",
+      "G:A:G",
+      "G:G:G",
+      "G:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.579,
+      "EUR": 0.002,
+      "AFR": 0.002,
+      "AMR": 0.315,
+      "SAS": 0.352
+    },
+    "subFrequencies": {
+      "CDX": 0.5914,
+      "CHB": 0.54854,
+      "CHS": 0.56696,
+      "JPT": 0.54808,
+      "KHV": 0.64356
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh02ls-2qh": {
+    "rsid": "mh02ls-2qh",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:T:C",
+      "A:T:T",
+      "G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.408,
+      "EUR": 0.125,
+      "AFR": 0.039,
+      "AMR": 0.305,
+      "SAS": 0.212
+    },
+    "subFrequencies": {
+      "CDX": 0.34409,
+      "CHB": 0.48058,
+      "CHS": 0.41518,
+      "JPT": 0.37981,
+      "KHV": 0.41584
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03hyp-06": {
+    "rsid": "mh03hyp-06",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:A",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.443,
+      "EUR": 0.24,
+      "AFR": 0.252,
+      "AMR": 0.466,
+      "SAS": 0.17
+    },
+    "subFrequencies": {
+      "CDX": 0.62366,
+      "CHB": 0.32039,
+      "CHS": 0.45089,
+      "JPT": 0.32212,
+      "KHV": 0.51485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03scuzj-0161227": {
+    "rsid": "mh03scuzj-0161227",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:A:C:G:A:A:G:A:G:A:G:A:A:A:A",
+      "A:G:A:C:G:A:A:G:A:G:A:G:A:A:A:G"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 1,
+      "AFR": 0.026,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-017.v4": {
+    "rsid": "mh03kk-017.v4",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A",
+      "C:A:G",
+      "C:G:A",
+      "C:G:G",
+      "T:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.44,
+      "EUR": 0.29,
+      "AFR": 0.317,
+      "AMR": 0.494,
+      "SAS": 0.539
+    },
+    "subFrequencies": {
+      "CDX": 0.36022,
+      "CHB": 0.5534,
+      "CHS": 0.4375,
+      "JPT": 0.44231,
+      "KHV": 0.39604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03usc-3pb": {
+    "rsid": "mh03usc-3pb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C:C:A",
+      "A:A:C:C:G",
+      "A:A:T:C:A",
+      "A:G:C:C:A",
+      "C:G:C:C:A",
+      "C:G:C:G:A",
+      "C:A:C:C:A",
+      "C:G:C:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.59,
+      "EUR": 0.26,
+      "AFR": 0.005,
+      "AMR": 0.718,
+      "SAS": 0.298
+    },
+    "subFrequencies": {
+      "CDX": 0.55914,
+      "CHB": 0.6068,
+      "CHS": 0.58929,
+      "JPT": 0.55769,
+      "KHV": 0.63366
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-008": {
+    "rsid": "mh03kk-008",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:T",
+      "T:G",
+      "T:T",
+      "C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.438,
+      "EUR": 0.144,
+      "AFR": 0.728,
+      "AMR": 0.309,
+      "SAS": 0.299
+    },
+    "subFrequencies": {
+      "CDX": 0.392,
+      "CHB": 0.432,
+      "CHS": 0.486,
+      "JPT": 0.49,
+      "KHV": 0.374
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-216": {
+    "rsid": "mh03kk-216",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.628,
+      "EUR": 0.012,
+      "AFR": 0.325,
+      "AMR": 0.337,
+      "SAS": 0.014
+    },
+    "subFrequencies": {
+      "CDX": 0.129,
+      "CHB": 0.204,
+      "CHS": 0.162,
+      "JPT": 0.288,
+      "KHV": 0.167
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03usc-3pc": {
+    "rsid": "mh03usc-3pc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:T:A:A",
+      "G:C:G:A",
+      "G:T:A:A",
+      "G:T:G:A",
+      "G:T:G:G",
+      "G:T:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.583,
+      "EUR": 0.08,
+      "AFR": 0.247,
+      "AMR": 0.339,
+      "SAS": 0.141
+    },
+    "subFrequencies": {
+      "CDX": 0.56452,
+      "CHB": 0.54369,
+      "CHS": 0.54911,
+      "JPT": 0.64423,
+      "KHV": 0.61386
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-009": {
+    "rsid": "mh03kk-009",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:T",
+      "C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.697,
+      "EUR": 0.663,
+      "AFR": 0.167,
+      "AMR": 0.664,
+      "SAS": 0.577
+    },
+    "subFrequencies": {
+      "CDX": 0.672,
+      "CHB": 0.675,
+      "CHS": 0.657,
+      "JPT": 0.721,
+      "KHV": 0.742
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03ls-3qc": {
+    "rsid": "mh03ls-3qc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:C",
+      "C:G:C",
+      "C:G:T",
+      "T:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.407,
+      "EUR": 0.275,
+      "AFR": 0.166,
+      "AMR": 0.368,
+      "SAS": 0.266
+    },
+    "subFrequencies": {
+      "CDX": 0.4086,
+      "CHB": 0.45146,
+      "CHS": 0.40625,
+      "JPT": 0.36058,
+      "KHV": 0.41089
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03usc-3qb": {
+    "rsid": "mh03usc-3qb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:A",
+      "G:C:A",
+      "G:C:C",
+      "G:T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.482,
+      "EUR": 0.123,
+      "AFR": 0.124,
+      "AMR": 0.322,
+      "SAS": 0.16
+    },
+    "subFrequencies": {
+      "CDX": 0.53763,
+      "CHB": 0.44175,
+      "CHS": 0.46429,
+      "JPT": 0.52404,
+      "KHV": 0.4505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03kk-020": {
+    "rsid": "mh03kk-020",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:T",
+      "T:C"
+    ],
+    "frequencies": {
+      "EAS": 0.866,
+      "EUR": 0.106,
+      "AFR": 0.245,
+      "AMR": 0,
+      "SAS": 0.322
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03hyp-09": {
+    "rsid": "mh03hyp-09",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "A:T",
+      "G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.602,
+      "EUR": 0.512,
+      "AFR": 0.089,
+      "AMR": 0.649,
+      "SAS": 0.549
+    },
+    "subFrequencies": {
+      "CDX": 0.76344,
+      "CHB": 0.47573,
+      "CHS": 0.55804,
+      "JPT": 0.46635,
+      "KHV": 0.77228
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh03wl-014": {
+    "rsid": "mh03wl-014",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:G:A",
+      "G:T:A",
+      "T:G:G",
+      "T:T:G",
+      "T:T:A",
+      "T:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.489,
+      "EUR": 0.422,
+      "AFR": 0.237,
+      "AMR": 0.362,
+      "SAS": 0.425
+    },
+    "subFrequencies": {
+      "CDX": 0.48925,
+      "CHB": 0.47087,
+      "CHS": 0.44196,
+      "JPT": 0.47596,
+      "KHV": 0.57426
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-018.v1": {
+    "rsid": "mh04wl-018.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:G:A:C:T:A:G",
+      "T:G:A:C:T:G:C",
+      "T:G:A:C:T:G:G",
+      "A:G:A:C:T:G:G",
+      "T:G:A:C:T:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.722,
+      "EUR": 0.596,
+      "AFR": 0.832,
+      "AMR": 0.764,
+      "SAS": 0.672
+    },
+    "subFrequencies": {
+      "CDX": 0.72043,
+      "CHB": 0.7233,
+      "CHS": 0.77679,
+      "JPT": 0.67788,
+      "KHV": 0.70792
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-018.v2": {
+    "rsid": "mh04wl-018.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:C:T:A:G",
+      "G:A:C:T:G:C",
+      "G:A:C:T:G:G",
+      "G:A:C:T:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.794,
+      "EUR": 0.596,
+      "AFR": 0.832,
+      "AMR": 0.764,
+      "SAS": 0.672
+    },
+    "subFrequencies": {
+      "CDX": 0.8172,
+      "CHB": 0.77184,
+      "CHS": 0.84375,
+      "JPT": 0.71154,
+      "KHV": 0.82673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-075": {
+    "rsid": "mh04wl-075",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:G:G",
+      "C:A:G:C"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 1,
+      "AFR": 0.991,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-003.v1": {
+    "rsid": "mh04wl-003.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A:A",
+      "A:A:G:A",
+      "C:A:A:A",
+      "C:A:G:A",
+      "C:G:G:A",
+      "A:G:G:A",
+      "C:G:A:A",
+      "A:G:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.458,
+      "EUR": 0.001,
+      "AFR": 0.003,
+      "AMR": 0.057,
+      "SAS": 0.002
+    },
+    "subFrequencies": {
+      "CDX": 0.49462,
+      "CHB": 0.43689,
+      "CHS": 0.4375,
+      "JPT": 0.47596,
+      "KHV": 0.4505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04wl-003.v2": {
+    "rsid": "mh04wl-003.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A",
+      "A:G:A",
+      "G:G:A",
+      "G:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.625,
+      "EUR": 0.001,
+      "AFR": 0.005,
+      "AMR": 0.063,
+      "SAS": 0.002
+    },
+    "subFrequencies": {
+      "CDX": 0.66129,
+      "CHB": 0.58738,
+      "CHS": 0.62054,
+      "JPT": 0.60096,
+      "KHV": 0.65842
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0059871.v2": {
+    "rsid": "mh04scuzj-0059871.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:G:T:G:G:C",
+      "C:G:G:T:G:G:C"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 1,
+      "AFR": 0.97,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-011.v2": {
+    "rsid": "mh04kk-011.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "EAS": 0.437,
+      "EUR": 0.134,
+      "AFR": 0.696,
+      "AMR": 0.27,
+      "SAS": 0.241
+    },
+    "subFrequencies": {
+      "CDX": 0.56989,
+      "CHB": 0.39806,
+      "CHS": 0.40625,
+      "JPT": 0.34615,
+      "KHV": 0.4802
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-011.v1": {
+    "rsid": "mh04kk-011.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C",
+      "A:T",
+      "G:C",
+      "G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.434,
+      "EUR": 0.134,
+      "AFR": 0.686,
+      "AMR": 0.276,
+      "SAS": 0.241
+    },
+    "subFrequencies": {
+      "CDX": 0.57,
+      "CHB": 0.398,
+      "CHS": 0.405,
+      "JPT": 0.341,
+      "KHV": 0.475
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04zha-004": {
+    "rsid": "mh04zha-004",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:A:C",
+      "G:C:A:G",
+      "G:C:C:G",
+      "G:T:A:C",
+      "G:T:A:G",
+      "T:C:A:C",
+      "T:C:A:G",
+      "T:C:C:C",
+      "T:C:C:G",
+      "T:T:A:C",
+      "T:T:C:G",
+      "T:T:A:G",
+      "T:T:C:C",
+      "G:T:C:G",
+      "G:T:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.451,
+      "EUR": 0.429,
+      "AFR": 0.139,
+      "AMR": 0.638,
+      "SAS": 0.49
+    },
+    "subFrequencies": {
+      "CDX": 0.34946,
+      "CHB": 0.45146,
+      "CHS": 0.48661,
+      "JPT": 0.53846,
+      "KHV": 0.41584
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04usc-4qa": {
+    "rsid": "mh04usc-4qa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:G",
+      "C:C:T",
+      "C:T:T",
+      "G:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.481,
+      "EUR": 0.106,
+      "AFR": 0.19,
+      "AMR": 0.177,
+      "SAS": 0.19
+    },
+    "subFrequencies": {
+      "CDX": 0.5,
+      "CHB": 0.4466,
+      "CHS": 0.5,
+      "JPT": 0.5,
+      "KHV": 0.4604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04ls-4qa": {
+    "rsid": "mh04ls-4qa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:G",
+      "T:A:A",
+      "T:C:A",
+      "C:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.437,
+      "EUR": 0.145,
+      "AFR": 0.145,
+      "AMR": 0.546,
+      "SAS": 0.168
+    },
+    "subFrequencies": {
+      "CDX": 0.39247,
+      "CHB": 0.42233,
+      "CHS": 0.47768,
+      "JPT": 0.43269,
+      "KHV": 0.4505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-013.v1": {
+    "rsid": "mh04kk-013.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G:A:T",
+      "C:A:G:A:T",
+      "C:G:A:A:T",
+      "C:G:G:A:C",
+      "C:G:G:A:T",
+      "C:G:G:G:T",
+      "C:A:G:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.569,
+      "EUR": 0.106,
+      "AFR": 0.388,
+      "AMR": 0,
+      "SAS": 0.302
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-013.v2": {
+    "rsid": "mh04kk-013.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:A:G:T:A:T",
+      "C:G:A:G:T:A:T",
+      "C:G:G:A:T:A:T",
+      "C:G:G:G:C:G:T",
+      "C:G:G:G:T:A:C",
+      "C:G:G:G:T:A:T",
+      "C:G:G:G:T:G:T",
+      "C:C:G:G:T:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.569,
+      "EUR": 0.106,
+      "AFR": 0.371,
+      "AMR": 0.408,
+      "SAS": 0.302
+    },
+    "subFrequencies": {
+      "CDX": 0.54301,
+      "CHB": 0.58252,
+      "CHS": 0.45089,
+      "JPT": 0.66346,
+      "KHV": 0.61386
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-013.v3": {
+    "rsid": "mh04kk-013.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G:A:G:T:A:T",
+      "C:A:G:A:G:T:A:T",
+      "C:A:G:G:A:T:A:T",
+      "C:A:G:G:G:C:G:T",
+      "C:A:G:G:G:T:A:C",
+      "C:A:G:G:G:T:A:T",
+      "C:A:G:G:G:T:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.569,
+      "EUR": 0.106,
+      "AFR": 0.371,
+      "AMR": 0.408,
+      "SAS": 0.302
+    },
+    "subFrequencies": {
+      "CDX": 0.54301,
+      "CHB": 0.58252,
+      "CHS": 0.45089,
+      "JPT": 0.66346,
+      "KHV": 0.61386
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-013.v4": {
+    "rsid": "mh04kk-013.v4",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "G:A",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.733,
+      "EUR": 0.441,
+      "AFR": 0.721,
+      "AMR": 0.548,
+      "SAS": 0.516
+    },
+    "subFrequencies": {
+      "CDX": 0.68817,
+      "CHB": 0.7233,
+      "CHS": 0.67411,
+      "JPT": 0.85096,
+      "KHV": 0.72772
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0352611": {
+    "rsid": "mh04scuzj-0352611",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:C:T:T",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:C:T",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:T:C",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:T:T",
+      "T:C:C:A:T:C:C:C:C:T:C:A:T:C:A:G:T:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.894,
+      "EUR": 0.82,
+      "AFR": 0.651,
+      "AMR": 0.822,
+      "SAS": 0.849
+    },
+    "subFrequencies": {
+      "CDX": 0.93548,
+      "CHB": 0.86893,
+      "CHS": 0.86161,
+      "JPT": 0.89423,
+      "KHV": 0.91584
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04usc-4qb": {
+    "rsid": "mh04usc-4qb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A",
+      "C:G:A",
+      "C:G:G",
+      "T:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.734,
+      "EUR": 0.126,
+      "AFR": 0.008,
+      "AMR": 0.106,
+      "SAS": 0.307
+    },
+    "subFrequencies": {
+      "CDX": 0.72581,
+      "CHB": 0.68932,
+      "CHS": 0.77679,
+      "JPT": 0.72596,
+      "KHV": 0.74752
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-028": {
+    "rsid": "mh04kk-028",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "C:A",
+      "T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.762,
+      "EUR": 0.256,
+      "AFR": 0.484,
+      "AMR": 0,
+      "SAS": 0.61
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04kk-016": {
+    "rsid": "mh04kk-016",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:T",
+      "C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.651,
+      "EUR": 0.203,
+      "AFR": 0.344,
+      "AMR": 0,
+      "SAS": 0.516
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04ls-4qi": {
+    "rsid": "mh04ls-4qi",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:A",
+      "A:T:A",
+      "A:T:G",
+      "G:T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.441,
+      "EUR": 0.237,
+      "AFR": 0.097,
+      "AMR": 0.237,
+      "SAS": 0.259
+    },
+    "subFrequencies": {
+      "CDX": 0.43011,
+      "CHB": 0.4466,
+      "CHS": 0.46429,
+      "JPT": 0.41827,
+      "KHV": 0.44059
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh04scuzj-0714579": {
+    "rsid": "mh04scuzj-0714579",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:G:C:G:C:A:G:A:T:A:T",
+      "G:G:C:G:C:A:G:A:T:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.932,
+      "EUR": 0.858,
+      "AFR": 0.888,
+      "AMR": 0.96,
+      "SAS": 0.888
+    },
+    "subFrequencies": {
+      "CDX": 0.91398,
+      "CHB": 0.91748,
+      "CHS": 0.94643,
+      "JPT": 0.92788,
+      "KHV": 0.9505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-079": {
+    "rsid": "mh05kk-079",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.465,
+      "EUR": 0.008,
+      "AFR": 0.026,
+      "AMR": 0,
+      "SAS": 0.05
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05cp-010": {
+    "rsid": "mh05cp-010",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:C:G",
+      "C:C:C:T",
+      "C:C:T:T",
+      "C:C:A:G",
+      "C:A:C:T",
+      "C:A:C:G",
+      "C:A:A:G",
+      "T:C:C:T",
+      "T:C:C:G",
+      "T:C:A:G",
+      "T:A:C:T",
+      "T:A:C:G",
+      "T:A:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.918,
+      "EUR": 0.001,
+      "AFR": 0.941,
+      "AMR": 0.082,
+      "SAS": 0.925
+    },
+    "subFrequencies": {
+      "CDX": 0.156,
+      "CHB": 0.175,
+      "CHS": 0.2,
+      "JPT": 0.149,
+      "KHV": 0.167
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-120.v2": {
+    "rsid": "mh05kk-120.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:A:C",
+      "G:C:A:C",
+      "G:C:A:T",
+      "G:C:G:C",
+      "T:C:G:C",
+      "G:A:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.43,
+      "EUR": 0.023,
+      "AFR": 0.036,
+      "AMR": 0.588,
+      "SAS": 0.204
+    },
+    "subFrequencies": {
+      "CDX": 0.468,
+      "CHB": 0.476,
+      "CHS": 0.443,
+      "JPT": 0.385,
+      "KHV": 0.399
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05kk-122": {
+    "rsid": "mh05kk-122",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C",
+      "C:A",
+      "C:C",
+      "A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.703,
+      "EUR": 0.031,
+      "AFR": 0.671,
+      "AMR": 0,
+      "SAS": 0.355
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05zbf-001": {
+    "rsid": "mh05zbf-001",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.813,
+      "EUR": 0.716,
+      "AFR": 0.778,
+      "AMR": 0.808,
+      "SAS": 0.702
+    },
+    "subFrequencies": {
+      "CDX": 0.81183,
+      "CHB": 0.79126,
+      "CHS": 0.73214,
+      "JPT": 0.90865,
+      "KHV": 0.82673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05ls-5qc": {
+    "rsid": "mh05ls-5qc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:A",
+      "C:T:G",
+      "T:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.406,
+      "EUR": 0.104,
+      "AFR": 0.034,
+      "AMR": 0.293,
+      "SAS": 0.181
+    },
+    "subFrequencies": {
+      "CDX": 0.41935,
+      "CHB": 0.34466,
+      "CHS": 0.38393,
+      "JPT": 0.46635,
+      "KHV": 0.42079
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05nh-09": {
+    "rsid": "mh05nh-09",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C",
+      "G:T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.475,
+      "EUR": 0.48,
+      "AFR": 0.411,
+      "AMR": 0.469,
+      "SAS": 0.468
+    },
+    "subFrequencies": {
+      "CDX": 0.52151,
+      "CHB": 0.3835,
+      "CHS": 0.43304,
+      "JPT": 0.49038,
+      "KHV": 0.55446
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh05scuzj-0315595": {
+    "rsid": "mh05scuzj-0315595",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:A:A:C:C:A:T",
+      "A:G:A:G:C:C:A:T",
+      "G:C:G:G:C:C:A:T",
+      "G:G:G:G:C:C:A:T",
+      "G:G:G:G:C:C:T:T",
+      "G:G:G:A:C:C:A:T",
+      "A:G:A:A:A:A:A:T",
+      "A:G:G:A:A:A:A:T",
+      "A:G:G:A:C:C:A:T",
+      "A:G:G:G:A:A:A:T",
+      "G:G:A:G:C:C:A:T",
+      "A:G:A:A:C:C:T:T",
+      "G:G:A:A:C:C:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.466,
+      "EUR": 0.501,
+      "AFR": 0.011,
+      "AMR": 0.514,
+      "SAS": 0.575
+    },
+    "subFrequencies": {
+      "CDX": 0.48925,
+      "CHB": 0.38835,
+      "CHS": 0.49554,
+      "JPT": 0.49038,
+      "KHV": 0.46535
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-080": {
+    "rsid": "mh06kk-080",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "C:A",
+      "C:G",
+      "A:A"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 0.771,
+      "AFR": 0.799,
+      "AMR": 0.016,
+      "SAS": 0.916
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-030": {
+    "rsid": "mh06kk-030",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:T",
+      "T:A:C",
+      "T:A:T",
+      "T:C:C",
+      "T:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.49,
+      "EUR": 0.101,
+      "AFR": 0.232,
+      "AMR": 0.247,
+      "SAS": 0.229
+    },
+    "subFrequencies": {
+      "CDX": 0.375,
+      "CHB": 0.585,
+      "CHS": 0.467,
+      "JPT": 0.529,
+      "KHV": 0.475
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06usc-6pb": {
+    "rsid": "mh06usc-6pb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A",
+      "C:G:A",
+      "T:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.656,
+      "EUR": 0.369,
+      "AFR": 0.342,
+      "AMR": 0.621,
+      "SAS": 0.458
+    },
+    "subFrequencies": {
+      "CDX": 0.69355,
+      "CHB": 0.65049,
+      "CHS": 0.60268,
+      "JPT": 0.67308,
+      "KHV": 0.66832
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06ls-6pe": {
+    "rsid": "mh06ls-6pe",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:A",
+      "C:G:T",
+      "G:A:A",
+      "G:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.494,
+      "EUR": 0.489,
+      "AFR": 0.097,
+      "AMR": 0.523,
+      "SAS": 0.002
+    },
+    "subFrequencies": {
+      "CDX": 0.50538,
+      "CHB": 0.46117,
+      "CHS": 0.48214,
+      "JPT": 0.53365,
+      "KHV": 0.4901
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06scuzj-0480560.v1": {
+    "rsid": "mh06scuzj-0480560.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:T:A:T:C:G:G:C:A:G:C:A:A:C:G:A",
+      "G:T:A:T:C:G:G:C:A:G:C:A:A:T:G:A",
+      "G:T:A:T:C:G:G:C:A:G:C:T:A:T:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.995,
+      "EUR": 1,
+      "AFR": 0.007,
+      "AMR": 1,
+      "SAS": 0.999
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 0.99515,
+      "CHS": 0.99554,
+      "JPT": 0.99038,
+      "KHV": 0.99505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06scuzj-0480560.v2": {
+    "rsid": "mh06scuzj-0480560.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:C:G:G:C:A:G:C:A:A",
+      "T:C:G:G:C:A:G:C:T:A"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 1,
+      "AFR": 0.007,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06ls-6qa": {
+    "rsid": "mh06ls-6qa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A",
+      "C:T:A",
+      "T:A:A",
+      "T:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.446,
+      "EUR": 0.43,
+      "AFR": 0.399,
+      "AMR": 0.684,
+      "SAS": 0.483
+    },
+    "subFrequencies": {
+      "CDX": 0.44086,
+      "CHB": 0.54369,
+      "CHS": 0.41964,
+      "JPT": 0.44231,
+      "KHV": 0.38614
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-031": {
+    "rsid": "mh06kk-031",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "G:C",
+      "A:C",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.83,
+      "EUR": 0.149,
+      "AFR": 0.007,
+      "AMR": 0.445,
+      "SAS": 0.491
+    },
+    "subFrequencies": {
+      "CDX": 0.882,
+      "CHB": 0.796,
+      "CHS": 0.805,
+      "JPT": 0.865,
+      "KHV": 0.808
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06zbf-001": {
+    "rsid": "mh06zbf-001",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C",
+      "A:G",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.567,
+      "EUR": 0.171,
+      "AFR": 0.715,
+      "AMR": 0.408,
+      "SAS": 0.555
+    },
+    "subFrequencies": {
+      "CDX": 0.54839,
+      "CHB": 0.61165,
+      "CHS": 0.55357,
+      "JPT": 0.51442,
+      "KHV": 0.60891
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06hyp-18": {
+    "rsid": "mh06hyp-18",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.761,
+      "EUR": 0.321,
+      "AFR": 0.26,
+      "AMR": 0.805,
+      "SAS": 0.49
+    },
+    "subFrequencies": {
+      "CDX": 0.91935,
+      "CHB": 0.6699,
+      "CHS": 0.80804,
+      "JPT": 0.57692,
+      "KHV": 0.84653
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06wl-079": {
+    "rsid": "mh06wl-079",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:T:A",
+      "G:C:T:C"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 0.999,
+      "AFR": 0.941,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-008.v1": {
+    "rsid": "mh06kk-008.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:A:A",
+      "G:C:A:G",
+      "G:C:G:A",
+      "G:C:G:G",
+      "G:G:A:A",
+      "G:G:G:A",
+      "G:G:G:G",
+      "T:C:A:A",
+      "T:C:G:A",
+      "T:C:G:G",
+      "T:G:A:A",
+      "T:G:A:G",
+      "T:G:G:A",
+      "T:G:G:G",
+      "G:G:A:G",
+      "T:C:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.638,
+      "EUR": 0.291,
+      "AFR": 0.031,
+      "AMR": 0.01,
+      "SAS": 0.427
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-008.v2": {
+    "rsid": "mh06kk-008.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:A:C:G:T:G:A:G:G:G:G",
+      "G:C:A:C:G:T:G:G:A:G:G:G",
+      "G:C:A:C:G:T:G:G:G:G:G:G",
+      "G:C:G:C:G:G:G:A:A:G:G:G",
+      "G:C:G:C:G:G:G:G:G:G:G:G",
+      "G:C:G:C:G:T:G:A:A:G:G:G",
+      "G:C:G:C:G:T:G:A:G:G:G:G",
+      "G:C:G:C:G:T:G:A:G:G:T:G",
+      "G:C:G:C:G:T:G:G:G:G:G:G",
+      "G:G:A:C:G:T:G:A:G:G:G:G",
+      "G:G:G:C:G:G:G:A:G:G:T:G",
+      "G:G:G:C:G:T:G:A:G:G:G:G",
+      "G:G:G:C:G:T:G:G:G:G:G:G",
+      "G:G:G:C:G:T:G:G:G:G:T:G",
+      "T:C:A:C:G:T:G:A:G:G:G:G",
+      "T:C:G:C:G:T:G:A:A:G:G:G",
+      "T:C:G:C:G:T:G:A:G:G:G:G",
+      "T:C:G:C:G:T:G:G:A:G:G:G",
+      "T:C:G:C:G:T:G:G:G:G:G:G",
+      "T:G:A:C:A:T:G:A:G:G:G:G",
+      "T:G:A:C:G:T:G:A:G:G:G:G",
+      "T:G:A:C:G:T:G:G:G:G:G:G",
+      "T:G:G:C:G:T:G:A:G:G:G:G",
+      "T:G:G:C:G:T:G:G:G:G:G:G",
+      "G:C:A:C:A:T:G:A:G:G:G:G",
+      "G:C:A:C:G:G:G:G:G:G:G:G",
+      "G:C:A:C:G:T:G:A:G:G:T:G",
+      "G:C:G:C:G:G:G:A:G:G:G:G",
+      "G:C:G:C:G:G:G:A:G:G:T:G",
+      "G:C:G:C:G:T:G:G:A:G:G:G",
+      "G:G:A:C:A:T:G:A:G:G:G:G",
+      "G:G:A:C:G:G:G:A:G:G:G:G",
+      "G:G:A:C:G:G:G:G:G:G:G:G",
+      "G:G:A:C:G:T:G:G:G:G:G:G",
+      "G:G:G:C:G:G:G:G:G:G:G:G",
+      "G:G:G:C:G:T:G:A:A:G:G:G",
+      "G:G:G:C:G:T:G:A:G:G:T:G",
+      "G:G:G:C:G:T:G:G:A:G:G:G",
+      "G:G:G:C:G:T:G:G:G:G:G:C",
+      "T:C:A:C:G:T:G:G:G:G:G:G",
+      "T:C:G:C:G:G:G:A:G:G:G:G",
+      "T:G:A:C:A:T:G:G:G:G:G:C",
+      "T:G:A:C:G:G:G:A:G:G:T:G",
+      "T:G:A:C:G:T:G:G:A:G:G:G",
+      "T:G:G:C:G:G:G:A:A:G:G:G",
+      "T:G:G:C:G:G:G:A:G:G:G:G",
+      "T:G:G:C:G:T:G:A:A:G:G:G",
+      "T:G:G:C:G:T:G:A:G:G:T:G",
+      "T:G:G:C:G:T:G:G:G:G:G:C",
+      "G:C:G:C:A:T:G:A:G:G:G:G",
+      "G:G:A:C:G:T:G:G:A:G:G:G",
+      "T:G:G:C:G:T:G:G:A:G:G:G",
+      "T:G:A:C:A:T:G:G:G:G:G:G",
+      "T:G:G:C:A:T:G:G:G:G:G:G",
+      "T:C:A:C:A:T:G:G:G:G:G:G",
+      "T:C:A:C:G:T:G:G:A:G:G:G",
+      "T:G:A:C:G:T:G:G:G:G:G:C",
+      "T:G:G:C:A:T:G:A:G:G:G:G",
+      "T:C:A:C:A:T:G:A:G:G:G:G",
+      "T:C:A:C:G:T:G:A:A:G:G:G",
+      "T:G:G:C:G:G:G:G:G:G:G:G",
+      "T:G:A:C:G:T:G:A:A:G:G:G",
+      "G:C:G:G:G:T:G:A:G:G:G:G",
+      "G:G:G:C:G:G:G:A:A:G:G:G",
+      "G:G:G:C:G:T:A:G:G:G:G:G",
+      "T:G:G:C:G:G:G:A:G:G:T:G",
+      "T:C:G:C:G:T:G:G:G:G:G:C",
+      "T:G:A:C:G:T:G:G:G:A:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.625,
+      "EUR": 0.276,
+      "AFR": 0.028,
+      "AMR": 0.332,
+      "SAS": 0.415
+    },
+    "subFrequencies": {
+      "CDX": 0.56989,
+      "CHB": 0.6068,
+      "CHS": 0.60268,
+      "JPT": 0.73558,
+      "KHV": 0.60396
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh06kk-008.v3": {
+    "rsid": "mh06kk-008.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:C:A:C:C:G:T:G:A:G:G:G:G",
+      "G:C:C:A:C:C:G:T:G:G:A:G:G:G",
+      "G:C:C:A:C:C:G:T:G:G:G:G:G:G",
+      "G:C:C:G:C:C:G:G:G:A:A:G:G:G",
+      "G:C:C:G:C:C:G:G:G:G:G:G:G:G",
+      "G:C:C:G:C:C:G:T:G:A:A:G:G:G",
+      "G:C:C:G:C:C:G:T:G:A:G:G:G:G",
+      "G:C:C:G:C:C:G:T:G:A:G:G:T:G",
+      "G:C:C:G:C:C:G:T:G:G:G:G:G:G",
+      "G:C:G:A:C:C:G:T:G:A:G:G:G:G",
+      "G:C:G:G:C:C:G:G:G:A:G:G:T:G",
+      "G:C:G:G:C:C:G:T:G:A:G:G:G:G",
+      "G:C:G:G:C:C:G:T:G:G:G:G:G:G",
+      "G:C:G:G:C:C:G:T:G:G:G:G:T:G",
+      "T:C:C:A:C:C:G:T:G:A:G:G:G:G",
+      "T:C:C:G:C:C:G:T:G:A:A:G:G:G",
+      "T:C:C:G:C:C:G:T:G:A:G:G:G:G",
+      "T:C:C:G:C:C:G:T:G:G:A:G:G:G",
+      "T:C:C:G:C:C:G:T:G:G:G:G:G:G",
+      "T:C:G:A:C:C:A:T:G:A:G:G:G:G",
+      "T:C:G:A:C:C:G:T:G:A:G:G:G:G",
+      "T:C:G:A:C:C:G:T:G:G:G:G:G:G",
+      "T:C:G:G:C:C:G:T:G:A:G:G:G:G",
+      "T:C:G:G:C:C:G:T:G:G:G:G:G:G",
+      "G:C:C:A:C:C:A:T:G:A:G:G:G:G",
+      "G:C:C:A:C:C:G:G:G:G:G:G:G:G",
+      "G:C:C:A:C:C:G:T:G:A:G:G:T:G",
+      "G:C:C:G:C:C:G:G:G:A:G:G:G:G",
+      "G:C:C:G:C:C:G:G:G:A:G:G:T:G",
+      "G:C:C:G:C:C:G:T:G:G:A:G:G:G",
+      "G:C:G:A:C:C:A:T:G:A:G:G:G:G",
+      "G:C:G:A:C:C:G:G:G:A:G:G:G:G",
+      "G:C:G:A:C:C:G:G:G:G:G:G:G:G",
+      "G:C:G:A:C:C:G:T:G:G:G:G:G:G",
+      "G:C:G:G:C:C:G:G:G:G:G:G:G:G",
+      "G:C:G:G:C:C:G:T:G:A:A:G:G:G",
+      "G:C:G:G:C:C:G:T:G:A:G:G:T:G",
+      "G:C:G:G:C:C:G:T:G:G:A:G:G:G",
+      "G:C:G:G:C:C:G:T:G:G:G:G:G:C",
+      "T:C:C:A:C:C:G:T:G:G:G:G:G:G",
+      "T:C:C:G:C:C:G:G:G:A:G:G:G:G",
+      "T:C:G:A:C:C:A:T:G:G:G:G:G:C",
+      "T:C:G:A:C:C:G:G:G:A:G:G:T:G",
+      "T:C:G:A:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:G:C:C:G:G:G:A:A:G:G:G",
+      "T:C:G:G:C:C:G:G:G:A:G:G:G:G",
+      "T:C:G:G:C:C:G:T:G:A:A:G:G:G",
+      "T:C:G:G:C:C:G:T:G:A:G:G:T:G",
+      "T:C:G:G:C:C:G:T:G:G:G:G:G:C",
+      "G:C:C:G:C:C:A:T:G:A:G:G:G:G",
+      "G:C:G:A:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:G:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:A:C:C:A:T:G:G:G:G:G:G",
+      "T:C:G:G:C:C:A:T:G:G:G:G:G:G",
+      "T:C:C:A:C:C:A:T:G:G:G:G:G:G",
+      "T:C:C:A:C:C:G:T:G:G:A:G:G:G",
+      "T:C:G:A:C:C:G:T:G:G:G:G:G:C",
+      "T:C:G:G:C:C:A:T:G:A:G:G:G:G",
+      "T:C:C:A:C:C:A:T:G:A:G:G:G:G",
+      "T:C:C:A:C:C:G:T:G:A:A:G:G:G",
+      "T:C:G:G:C:C:G:G:G:G:G:G:G:G",
+      "T:C:G:A:C:C:G:T:G:A:A:G:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.625,
+      "EUR": 0.276,
+      "AFR": 0.028,
+      "AMR": 0.332,
+      "SAS": 0.415
+    },
+    "subFrequencies": {
+      "CDX": 0.56989,
+      "CHB": 0.6068,
+      "CHS": 0.60268,
+      "JPT": 0.73558,
+      "KHV": 0.60396
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0064598": {
+    "rsid": "mh07scuzj-0064598",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:A",
+      "C:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.991,
+      "EUR": 1,
+      "AFR": 0.953,
+      "AMR": 1,
+      "SAS": 0.998
+    },
+    "subFrequencies": {
+      "CDX": 0.98387,
+      "CHB": 0.99515,
+      "CHS": 0.99107,
+      "JPT": 0.99038,
+      "KHV": 0.99505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-008": {
+    "rsid": "mh07wl-008",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:A:A:A:A",
+      "C:T:A:A:A:A",
+      "G:C:A:A:A:A",
+      "G:C:G:A:A:A",
+      "C:C:G:A:A:A",
+      "G:T:A:A:A:A",
+      "C:T:G:A:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.776,
+      "EUR": 0.001,
+      "AFR": 0.643,
+      "AMR": 0.764,
+      "SAS": 0.002
+    },
+    "subFrequencies": {
+      "CDX": 0.77419,
+      "CHB": 0.82524,
+      "CHS": 0.79018,
+      "JPT": 0.72115,
+      "KHV": 0.76733
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07pk-38311": {
+    "rsid": "mh07pk-38311",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:C:T",
+      "A:C:T:T",
+      "A:T:T:C",
+      "A:T:T:T",
+      "G:C:T:C",
+      "G:C:T:T",
+      "G:C:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.416,
+      "EUR": 0.123,
+      "AFR": 0.229,
+      "AMR": 0.31,
+      "SAS": 0.174
+    },
+    "subFrequencies": {
+      "CDX": 0.42473,
+      "CHB": 0.4466,
+      "CHS": 0.44196,
+      "JPT": 0.41827,
+      "KHV": 0.34653
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07kk-030": {
+    "rsid": "mh07kk-030",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C",
+      "G:A:C",
+      "G:A:T",
+      "A:C:C",
+      "G:C:C",
+      "G:C:T",
+      "G:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.424,
+      "EUR": 0.533,
+      "AFR": 0.001,
+      "AMR": 0.164,
+      "SAS": 0.377
+    },
+    "subFrequencies": {
+      "CDX": 0.371,
+      "CHB": 0.218,
+      "CHS": 0.262,
+      "JPT": 0.197,
+      "KHV": 0.237
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07ls-7pf": {
+    "rsid": "mh07ls-7pf",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:C:C",
+      "G:A:C:T",
+      "G:T:T:T",
+      "T:T:T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.411,
+      "EUR": 0.315,
+      "AFR": 0.005,
+      "AMR": 0.46,
+      "SAS": 0.365
+    },
+    "subFrequencies": {
+      "CDX": 0.46774,
+      "CHB": 0.34951,
+      "CHS": 0.38839,
+      "JPT": 0.40865,
+      "KHV": 0.4505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07kk-081": {
+    "rsid": "mh07kk-081",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:C",
+      "T:T",
+      "TA:T",
+      "TA:C"
+    ],
+    "frequencies": {
+      "EAS": 0.999,
+      "EUR": 0.907,
+      "AFR": 0.999,
+      "AMR": 0,
+      "SAS": 0.962
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07zha-009": {
+    "rsid": "mh07zha-009",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:C:C",
+      "C:G:A:T",
+      "C:G:C:T",
+      "T:G:A:T",
+      "C:A:A:T",
+      "T:G:C:T",
+      "C:G:A:C",
+      "C:A:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.475,
+      "EUR": 0.001,
+      "AFR": 0.001,
+      "AMR": 0.69,
+      "SAS": 0.36
+    },
+    "subFrequencies": {
+      "CDX": 0.45161,
+      "CHB": 0.5,
+      "CHS": 0.44196,
+      "JPT": 0.45673,
+      "KHV": 0.52475
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07ls-7qd": {
+    "rsid": "mh07ls-7qd",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A:G",
+      "T:A:A:G",
+      "T:T:A:G",
+      "T:T:G:A",
+      "T:T:G:G",
+      "C:T:G:A",
+      "C:A:G:G",
+      "T:T:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.459,
+      "EUR": 0.23,
+      "AFR": 0.029,
+      "AMR": 0.345,
+      "SAS": 0.372
+    },
+    "subFrequencies": {
+      "CDX": 0.46237,
+      "CHB": 0.4466,
+      "CHS": 0.44196,
+      "JPT": 0.43269,
+      "KHV": 0.51485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07usc-7qb": {
+    "rsid": "mh07usc-7qb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A",
+      "C:A:G",
+      "C:C:A",
+      "T:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.425,
+      "EUR": 0.158,
+      "AFR": 0.082,
+      "AMR": 0.58,
+      "SAS": 0.262
+    },
+    "subFrequencies": {
+      "CDX": 0.39785,
+      "CHB": 0.48058,
+      "CHS": 0.41964,
+      "JPT": 0.39423,
+      "KHV": 0.43069
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07kk-082": {
+    "rsid": "mh07kk-082",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:G",
+      "C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.675,
+      "EUR": 0.422,
+      "AFR": 0.463,
+      "AMR": 0,
+      "SAS": 0.348
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07wl-061": {
+    "rsid": "mh07wl-061",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:C:C",
+      "A:G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.994,
+      "EUR": 0.993,
+      "AFR": 0.99,
+      "AMR": 0.995,
+      "SAS": 0.996
+    },
+    "subFrequencies": {
+      "CDX": 0.98387,
+      "CHB": 1,
+      "CHS": 0.99107,
+      "JPT": 0.99519,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh07scuzj-0557572": {
+    "rsid": "mh07scuzj-0557572",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:C:A:T:G:A:C:A:A:A:T",
+      "C:A:T:G:G:G:A:C:A:A:A:T",
+      "C:G:C:A:T:G:A:C:A:A:A:T",
+      "C:G:C:G:G:G:A:C:A:A:A:T",
+      "C:G:T:G:G:G:A:C:A:A:A:T",
+      "C:G:T:G:T:G:A:C:A:A:A:T",
+      "T:G:T:G:G:G:A:C:A:A:A:T",
+      "T:G:C:A:T:G:A:C:A:A:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.431,
+      "EUR": 0.066,
+      "AFR": 0.16,
+      "AMR": 0.167,
+      "SAS": 0.209
+    },
+    "subFrequencies": {
+      "CDX": 0.53226,
+      "CHB": 0.3835,
+      "CHS": 0.40625,
+      "JPT": 0.40865,
+      "KHV": 0.43564
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08wl-015": {
+    "rsid": "mh08wl-015",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:G:A:G:T:G",
+      "T:G:G:G:T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.987,
+      "EUR": 0.986,
+      "AFR": 0.988,
+      "AMR": 1,
+      "SAS": 0.985
+    },
+    "subFrequencies": {
+      "CDX": 0.98387,
+      "CHB": 0.99029,
+      "CHS": 0.98661,
+      "JPT": 0.98558,
+      "KHV": 0.9901
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08kk-032": {
+    "rsid": "mh08kk-032",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G",
+      "T:A",
+      "T:G",
+      "C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.752,
+      "EUR": 0.168,
+      "AFR": 0.565,
+      "AMR": 0.365,
+      "SAS": 0.499
+    },
+    "subFrequencies": {
+      "CDX": 0.86,
+      "CHB": 0.689,
+      "CHS": 0.733,
+      "JPT": 0.702,
+      "KHV": 0.778
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08shy-004": {
+    "rsid": "mh08shy-004",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:C:C:G:G:C:T:G:T:C:G",
+      "T:C:T:G:G:C:G:G:G:C:G",
+      "T:C:T:G:G:C:T:G:G:C:G",
+      "T:C:T:G:G:C:T:G:T:C:G",
+      "T:T:T:G:G:C:T:G:T:C:G",
+      "T:C:T:G:G:T:T:G:G:C:G",
+      "T:C:T:G:G:C:T:G:T:C:A",
+      "T:C:T:G:A:C:G:G:G:C:G",
+      "T:C:T:G:G:C:T:G:T:T:G",
+      "T:C:C:A:G:C:T:G:T:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.423,
+      "EUR": 0.086,
+      "AFR": 0.174,
+      "AMR": 0.159,
+      "SAS": 0.232
+    },
+    "subFrequencies": {
+      "CDX": 0.37634,
+      "CHB": 0.40291,
+      "CHS": 0.42857,
+      "JPT": 0.5,
+      "KHV": 0.40099
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08shy-007.v1": {
+    "rsid": "mh08shy-007.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A:G:C:C:G:C",
+      "G:A:A:A:C:C:G:C",
+      "G:A:A:G:C:C:G:C",
+      "G:A:A:G:C:T:G:C",
+      "G:T:A:G:C:T:G:C",
+      "G:A:A:G:C:C:T:C",
+      "G:T:A:G:C:T:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.425,
+      "EUR": 0.309,
+      "AFR": 0.247,
+      "AMR": 0.365,
+      "SAS": 0.23
+    },
+    "subFrequencies": {
+      "CDX": 0.33871,
+      "CHB": 0.3835,
+      "CHS": 0.4375,
+      "JPT": 0.53365,
+      "KHV": 0.42079
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08usc-8qc": {
+    "rsid": "mh08usc-8qc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A:C",
+      "C:A:A:C",
+      "C:A:G:C",
+      "C:C:G:A",
+      "C:C:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.404,
+      "EUR": 0.363,
+      "AFR": 0.066,
+      "AMR": 0.471,
+      "SAS": 0.435
+    },
+    "subFrequencies": {
+      "CDX": 0.42473,
+      "CHB": 0.44175,
+      "CHS": 0.35268,
+      "JPT": 0.37981,
+      "KHV": 0.42574
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08ls-8qf": {
+    "rsid": "mh08ls-8qf",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:T:A",
+      "C:T:G",
+      "T:T:A",
+      "C:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.481,
+      "EUR": 0.347,
+      "AFR": 0.321,
+      "AMR": 0.356,
+      "SAS": 0.539
+    },
+    "subFrequencies": {
+      "CDX": 0.5,
+      "CHB": 0.54854,
+      "CHS": 0.45089,
+      "JPT": 0.42308,
+      "KHV": 0.4901
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh08hyp-23": {
+    "rsid": "mh08hyp-23",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C",
+      "G:G",
+      "T:C",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.66,
+      "EUR": 0.554,
+      "AFR": 0.667,
+      "AMR": 0.621,
+      "SAS": 0.603
+    },
+    "subFrequencies": {
+      "CDX": 0.72581,
+      "CHB": 0.75728,
+      "CHS": 0.72768,
+      "JPT": 0.37019,
+      "KHV": 0.72277
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-161.v2": {
+    "rsid": "mh09kk-161.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:C:G:C:G:C:G:G",
+      "G:C:C:G:C:G:C:T:G",
+      "G:C:G:G:C:G:C:G:G",
+      "G:C:G:G:C:G:C:T:G",
+      "G:C:G:G:T:G:C:G:G",
+      "G:C:G:G:T:G:C:T:G",
+      "T:C:C:G:C:G:C:G:G",
+      "T:C:C:G:C:G:C:T:G",
+      "T:C:G:A:C:G:C:G:G",
+      "T:C:G:A:T:G:C:G:G",
+      "T:C:G:G:C:G:C:G:G",
+      "T:C:G:G:C:G:C:T:G",
+      "T:C:G:G:T:G:C:G:G",
+      "T:C:G:G:T:G:C:T:G",
+      "T:G:G:G:C:G:C:G:G",
+      "G:C:G:A:C:G:C:G:G",
+      "G:C:G:A:C:G:C:T:G",
+      "G:C:G:A:T:G:C:G:G",
+      "T:C:C:A:T:G:C:G:G",
+      "T:C:C:G:T:G:C:G:G",
+      "T:C:C:G:T:G:C:G:T",
+      "T:C:C:G:T:G:C:T:G",
+      "T:C:G:A:C:G:C:T:G",
+      "T:C:G:A:T:G:C:T:G",
+      "T:C:C:A:C:G:C:T:G",
+      "T:C:C:G:C:G:C:T:T",
+      "T:C:G:G:C:G:C:T:T",
+      "T:C:G:G:T:G:C:T:T",
+      "G:C:G:G:C:G:C:T:T",
+      "T:C:G:G:C:A:C:G:G",
+      "T:C:G:G:C:G:G:G:G",
+      "T:C:C:G:C:G:G:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.668,
+      "EUR": 0.006,
+      "AFR": 0.009,
+      "AMR": 0.425,
+      "SAS": 0.001
+    },
+    "subFrequencies": {
+      "CDX": 0.71505,
+      "CHB": 0.6699,
+      "CHS": 0.69643,
+      "JPT": 0.62981,
+      "KHV": 0.62871
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-161.v3": {
+    "rsid": "mh09kk-161.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:C:G:C:G:T:C:G:G",
+      "G:C:C:G:C:G:T:C:T:G",
+      "G:C:G:G:C:G:T:C:G:G",
+      "G:C:G:G:C:G:T:C:T:G",
+      "G:C:G:G:T:G:T:C:G:G",
+      "G:C:G:G:T:G:T:C:T:G",
+      "T:C:C:G:C:G:T:C:G:G",
+      "T:C:C:G:C:G:T:C:T:G",
+      "T:C:G:A:C:G:T:C:G:G",
+      "T:C:G:A:T:G:T:C:G:G",
+      "T:C:G:G:C:G:T:C:G:G",
+      "T:C:G:G:C:G:T:C:T:G",
+      "T:C:G:G:T:G:T:C:G:G",
+      "T:C:G:G:T:G:T:C:T:G",
+      "T:G:G:G:C:G:T:C:G:G",
+      "G:C:G:A:C:G:T:C:G:G",
+      "G:C:G:A:C:G:T:C:T:G",
+      "G:C:G:A:T:G:T:C:G:G",
+      "T:C:C:A:T:G:T:C:G:G",
+      "T:C:C:G:T:G:T:C:G:G",
+      "T:C:C:G:T:G:T:C:G:T",
+      "T:C:C:G:T:G:T:C:T:G",
+      "T:C:G:A:C:G:T:C:T:G",
+      "T:C:G:A:T:G:T:C:T:G",
+      "T:C:C:A:C:G:T:C:T:G",
+      "T:C:C:G:C:G:T:C:T:T",
+      "G:C:G:G:T:G:G:C:T:G",
+      "T:C:G:G:C:G:T:C:T:T",
+      "T:C:G:G:T:G:T:C:T:T",
+      "G:C:G:G:C:G:T:C:T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.668,
+      "EUR": 0.006,
+      "AFR": 0.009,
+      "AMR": 0.425,
+      "SAS": 0.001
+    },
+    "subFrequencies": {
+      "CDX": 0.71505,
+      "CHB": 0.6699,
+      "CHS": 0.69643,
+      "JPT": 0.62981,
+      "KHV": 0.62871
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-161.v1": {
+    "rsid": "mh09kk-161.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G",
+      "C:T",
+      "T:G",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.738,
+      "EUR": 0.54,
+      "AFR": 0.023,
+      "AMR": 0.014,
+      "SAS": 0.599
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-010.v1": {
+    "rsid": "mh09wl-010.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:G:A:T:A:T",
+      "A:G:G:A:T:G:T",
+      "T:G:G:A:T:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.933,
+      "EUR": 0.996,
+      "AFR": 0.001,
+      "AMR": 0.969,
+      "SAS": 0.995
+    },
+    "subFrequencies": {
+      "CDX": 0.94624,
+      "CHB": 0.8932,
+      "CHS": 0.9375,
+      "JPT": 0.9375,
+      "KHV": 0.9505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-010.v3": {
+    "rsid": "mh09wl-010.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:G:A:A:T",
+      "A:G:G:A:G:T",
+      "T:G:G:A:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.933,
+      "EUR": 0.996,
+      "AFR": 0.001,
+      "AMR": 0.969,
+      "SAS": 0.995
+    },
+    "subFrequencies": {
+      "CDX": 0.94624,
+      "CHB": 0.8932,
+      "CHS": 0.9375,
+      "JPT": 0.9375,
+      "KHV": 0.9505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09usc-9pa.v1": {
+    "rsid": "mh09usc-9pa.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:C:A:A",
+      "A:C:C:G:C",
+      "A:T:C:A:A",
+      "A:T:C:G:A",
+      "A:T:C:G:C",
+      "A:T:T:G:C",
+      "G:C:C:A:A",
+      "G:C:C:A:C",
+      "G:C:C:G:C",
+      "G:T:C:A:A",
+      "G:T:C:A:C",
+      "G:T:C:G:C",
+      "A:C:C:G:A",
+      "A:T:C:A:C",
+      "G:T:C:G:A",
+      "G:T:T:G:C",
+      "G:T:T:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.605,
+      "EUR": 0.002,
+      "AFR": 0.135,
+      "AMR": 0.575,
+      "SAS": 0.001
+    },
+    "subFrequencies": {
+      "CDX": 0.55376,
+      "CHB": 0.59223,
+      "CHS": 0.60714,
+      "JPT": 0.65865,
+      "KHV": 0.60891
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-034": {
+    "rsid": "mh09kk-034",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A",
+      "G:A",
+      "G:G",
+      "A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.771,
+      "EUR": 0.117,
+      "AFR": 0.568,
+      "AMR": 0.759,
+      "SAS": 0.417
+    },
+    "subFrequencies": {
+      "CDX": 0.72,
+      "CHB": 0.752,
+      "CHS": 0.752,
+      "JPT": 0.851,
+      "KHV": 0.773
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-020": {
+    "rsid": "mh09kk-020",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:C:C",
+      "A:C:T:C",
+      "A:C:T:T",
+      "A:T:T:C",
+      "G:C:T:C",
+      "G:C:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.459,
+      "EUR": 0.119,
+      "AFR": 0.326,
+      "AMR": 0.234,
+      "SAS": 0.436
+    },
+    "subFrequencies": {
+      "CDX": 0.538,
+      "CHB": 0.451,
+      "CHS": 0.51,
+      "JPT": 0.329,
+      "KHV": 0.475
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09scuzj-0182699": {
+    "rsid": "mh09scuzj-0182699",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:G:G:A:A",
+      "T:G:G:C:A",
+      "T:G:G:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.618,
+      "EUR": 0.679,
+      "AFR": 0.005,
+      "AMR": 0.726,
+      "SAS": 0.744
+    },
+    "subFrequencies": {
+      "CDX": 0.65591,
+      "CHB": 0.55825,
+      "CHS": 0.60714,
+      "JPT": 0.58654,
+      "KHV": 0.68812
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09kk-152.v2": {
+    "rsid": "mh09kk-152.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.549,
+      "EUR": 0.138,
+      "AFR": 0.576,
+      "AMR": 0.437,
+      "SAS": 0.473
+    },
+    "subFrequencies": {
+      "CDX": 0.51075,
+      "CHB": 0.58252,
+      "CHS": 0.52232,
+      "JPT": 0.62019,
+      "KHV": 0.50495
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09scuzj-0331116": {
+    "rsid": "mh09scuzj-0331116",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:A:G:T",
+      "C:G:C:G:T",
+      "C:A:A:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.987,
+      "EUR": 0.031,
+      "AFR": 0.042,
+      "AMR": 0.031,
+      "SAS": 0.012
+    },
+    "subFrequencies": {
+      "CDX": 0.99462,
+      "CHB": 0.98544,
+      "CHS": 0.96875,
+      "JPT": 0.99519,
+      "KHV": 0.99505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh09wl-005": {
+    "rsid": "mh09wl-005",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G:G",
+      "A:G:G:G",
+      "G:G:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.42,
+      "EUR": 0.297,
+      "AFR": 0.082,
+      "AMR": 0.5,
+      "SAS": 0.304
+    },
+    "subFrequencies": {
+      "CDX": 0.39247,
+      "CHB": 0.44175,
+      "CHS": 0.35714,
+      "JPT": 0.51923,
+      "KHV": 0.39109
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10scuzj-0041521": {
+    "rsid": "mh10scuzj-0041521",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A:A:A:G:A:T:C:C:G:G:C:T:G",
+      "A:A:A:A:A:G:A:T:C:C:A:G:C:T:G"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 1,
+      "AFR": 0.994,
+      "AMR": 1,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10usc-10qa": {
+    "rsid": "mh10usc-10qa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G",
+      "A:G:A",
+      "A:G:G",
+      "C:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.435,
+      "EUR": 0.238,
+      "AFR": 0.348,
+      "AMR": 0.274,
+      "SAS": 0.372
+    },
+    "subFrequencies": {
+      "CDX": 0.48925,
+      "CHB": 0.37864,
+      "CHS": 0.42411,
+      "JPT": 0.42788,
+      "KHV": 0.4604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10scuzj-0206566": {
+    "rsid": "mh10scuzj-0206566",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:C:G",
+      "C:G:C:G",
+      "C:T:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.595,
+      "EUR": 0.316,
+      "AFR": 0.079,
+      "AMR": 0.32,
+      "SAS": 0.378
+    },
+    "subFrequencies": {
+      "CDX": 0.56989,
+      "CHB": 0.62136,
+      "CHS": 0.58929,
+      "JPT": 0.625,
+      "KHV": 0.56436
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10scuzj-0281402": {
+    "rsid": "mh10scuzj-0281402",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G:C:G",
+      "G:A:G:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.804,
+      "EUR": 0.321,
+      "AFR": 0.9,
+      "AMR": 0.443,
+      "SAS": 0.655
+    },
+    "subFrequencies": {
+      "CDX": 0.80108,
+      "CHB": 0.77184,
+      "CHS": 0.83036,
+      "JPT": 0.83654,
+      "KHV": 0.77723
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10usc-10qb": {
+    "rsid": "mh10usc-10qb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:A",
+      "A:T:A",
+      "G:T:A",
+      "G:T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.48,
+      "EUR": 0.111,
+      "AFR": 0.128,
+      "AMR": 0.323,
+      "SAS": 0.36
+    },
+    "subFrequencies": {
+      "CDX": 0.56452,
+      "CHB": 0.47087,
+      "CHS": 0.48661,
+      "JPT": 0.37019,
+      "KHV": 0.51485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10kk-084": {
+    "rsid": "mh10kk-084",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "T:C",
+      "T:G",
+      "A:C"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 0.938,
+      "AFR": 0.805,
+      "AMR": 0,
+      "SAS": 0.981
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10kk-085": {
+    "rsid": "mh10kk-085",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.549,
+      "EUR": 0.004,
+      "AFR": 0.187,
+      "AMR": 0,
+      "SAS": 0.012
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10ls-10qh": {
+    "rsid": "mh10ls-10qh",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:A",
+      "T:A:A",
+      "T:A:T",
+      "T:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.442,
+      "EUR": 0.317,
+      "AFR": 0.011,
+      "AMR": 0.661,
+      "SAS": 0.289
+    },
+    "subFrequencies": {
+      "CDX": 0.47849,
+      "CHB": 0.44175,
+      "CHS": 0.37946,
+      "JPT": 0.48077,
+      "KHV": 0.43564
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh10scuzj-0424390": {
+    "rsid": "mh10scuzj-0424390",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:G:A",
+      "C:G:G:G",
+      "C:G:C:G",
+      "C:G:C:A",
+      "C:T:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.74,
+      "EUR": 0.007,
+      "AFR": 0.922,
+      "AMR": 0.938,
+      "SAS": 0.002
+    },
+    "subFrequencies": {
+      "CDX": 0.74731,
+      "CHB": 0.78641,
+      "CHS": 0.73214,
+      "JPT": 0.72115,
+      "KHV": 0.71287
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11cp-005": {
+    "rsid": "mh11cp-005",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:T",
+      "T:A:T",
+      "T:G:T",
+      "T:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.422,
+      "EUR": 0.261,
+      "AFR": 0.294,
+      "AMR": 0.203,
+      "SAS": 0.268
+    },
+    "subFrequencies": {
+      "CDX": 0.14,
+      "CHB": 0.16,
+      "CHS": 0.157,
+      "JPT": 0.264,
+      "KHV": 0.152
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11hyp-27": {
+    "rsid": "mh11hyp-27",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.416,
+      "EUR": 0.565,
+      "AFR": 0.027,
+      "AMR": 0.701,
+      "SAS": 0.346
+    },
+    "subFrequencies": {
+      "CDX": 0.25269,
+      "CHB": 0.57767,
+      "CHS": 0.37946,
+      "JPT": 0.50962,
+      "KHV": 0.34653
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11nh-18": {
+    "rsid": "mh11nh-18",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:T:A",
+      "C:T:G",
+      "T:C:G",
+      "C:C:A",
+      "T:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.675,
+      "EUR": 0.58,
+      "AFR": 0.553,
+      "AMR": 0.615,
+      "SAS": 0.551
+    },
+    "subFrequencies": {
+      "CDX": 0.65591,
+      "CHB": 0.6699,
+      "CHS": 0.73661,
+      "JPT": 0.61538,
+      "KHV": 0.69307
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11ls-11qd": {
+    "rsid": "mh11ls-11qd",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A",
+      "G:A:C",
+      "G:G:C",
+      "G:A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.524,
+      "EUR": 0.419,
+      "AFR": 0.232,
+      "AMR": 0.592,
+      "SAS": 0.515
+    },
+    "subFrequencies": {
+      "CDX": 0.54301,
+      "CHB": 0.59709,
+      "CHS": 0.50893,
+      "JPT": 0.5,
+      "KHV": 0.47525
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-191.v4": {
+    "rsid": "mh11kk-191.v4",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.686,
+      "EUR": 0.071,
+      "AFR": 0.022,
+      "AMR": 0.713,
+      "SAS": 0.064
+    },
+    "subFrequencies": {
+      "CDX": 0.6828,
+      "CHB": 0.62136,
+      "CHS": 0.63393,
+      "JPT": 0.82212,
+      "KHV": 0.67327
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-191.v1": {
+    "rsid": "mh11kk-191.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A:T",
+      "C:G:A:T",
+      "T:A:A:C",
+      "T:A:A:T",
+      "T:G:A:T",
+      "C:A:G:T",
+      "C:G:G:T",
+      "C:G:A:C",
+      "C:A:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.521,
+      "EUR": 0.071,
+      "AFR": 0.022,
+      "AMR": 0,
+      "SAS": 0.064
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-039": {
+    "rsid": "mh11kk-039",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:G",
+      "G:T",
+      "T:T",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.478,
+      "EUR": 0.163,
+      "AFR": 0.459,
+      "AMR": 0.539,
+      "SAS": 0.275
+    },
+    "subFrequencies": {
+      "CDX": 0.548,
+      "CHB": 0.49,
+      "CHS": 0.433,
+      "JPT": 0.38,
+      "KHV": 0.485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-041": {
+    "rsid": "mh11kk-041",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G",
+      "G:A",
+      "G:G",
+      "A:A"
+    ],
+    "frequencies": {
+      "EAS": 0.41,
+      "EUR": 0.147,
+      "AFR": 0.29,
+      "AMR": 0.424,
+      "SAS": 0.281
+    },
+    "subFrequencies": {
+      "CDX": 0.452,
+      "CHB": 0.442,
+      "CHS": 0.362,
+      "JPT": 0.389,
+      "KHV": 0.404
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-103": {
+    "rsid": "mh11kk-103",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:T:C",
+      "G:C:C:C",
+      "G:C:T:C",
+      "G:C:T:T",
+      "G:T:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.415,
+      "EUR": 0.144,
+      "AFR": 0.01,
+      "AMR": 0.406,
+      "SAS": 0.286
+    },
+    "subFrequencies": {
+      "CDX": 0.452,
+      "CHB": 0.451,
+      "CHS": 0.362,
+      "JPT": 0.385,
+      "KHV": 0.424
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11kk-090": {
+    "rsid": "mh11kk-090",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C",
+      "A:T",
+      "G:T",
+      "G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.415,
+      "EUR": 0.145,
+      "AFR": 0.079,
+      "AMR": 0.418,
+      "SAS": 0.286
+    },
+    "subFrequencies": {
+      "CDX": 0.452,
+      "CHB": 0.451,
+      "CHS": 0.362,
+      "JPT": 0.385,
+      "KHV": 0.424
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11usc-11qc.v1": {
+    "rsid": "mh11usc-11qc.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C",
+      "A:A:T",
+      "A:G:C",
+      "G:A:T",
+      "G:G:C",
+      "G:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.407,
+      "EUR": 0.087,
+      "AFR": 0.001,
+      "AMR": 0.218,
+      "SAS": 0.234
+    },
+    "subFrequencies": {
+      "CDX": 0.37634,
+      "CHB": 0.45146,
+      "CHS": 0.36161,
+      "JPT": 0.41827,
+      "KHV": 0.43069
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-001.v2": {
+    "rsid": "mh11wl-001.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C:C:A:C:T",
+      "A:A:C:G:A:C:T",
+      "A:A:T:G:A:C:T",
+      "C:C:C:G:A:C:T",
+      "C:C:T:C:A:C:T",
+      "C:C:T:G:A:C:T",
+      "A:A:T:C:A:C:T",
+      "C:A:C:G:A:C:T",
+      "C:C:C:C:A:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.553,
+      "EUR": 0.346,
+      "AFR": 0.349,
+      "AMR": 0.667,
+      "SAS": 0.566
+    },
+    "subFrequencies": {
+      "CDX": 0.48387,
+      "CHB": 0.57282,
+      "CHS": 0.60268,
+      "JPT": 0.57692,
+      "KHV": 0.51485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-001.v3": {
+    "rsid": "mh11wl-001.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C:C:A:C:T:G:C",
+      "A:A:C:G:A:C:T:G:C",
+      "A:A:T:G:A:C:T:G:C",
+      "C:C:C:G:A:C:T:G:C",
+      "C:C:T:C:A:C:T:G:C",
+      "C:C:T:G:A:C:T:G:C",
+      "A:A:T:C:A:C:T:G:C",
+      "C:A:C:G:A:C:T:G:C",
+      "C:C:C:C:A:C:T:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.553,
+      "EUR": 0.346,
+      "AFR": 0.349,
+      "AMR": 0.667,
+      "SAS": 0.566
+    },
+    "subFrequencies": {
+      "CDX": 0.48387,
+      "CHB": 0.57282,
+      "CHS": 0.60268,
+      "JPT": 0.57692,
+      "KHV": 0.51485
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh11wl-001.v1": {
+    "rsid": "mh11wl-001.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:C:T:G:C",
+      "G:A:C:T:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.588,
+      "EUR": 0.37,
+      "AFR": 0.439,
+      "AMR": 0.695,
+      "SAS": 0.605
+    },
+    "subFrequencies": {
+      "CDX": 0.52151,
+      "CHB": 0.6068,
+      "CHS": 0.64732,
+      "JPT": 0.60577,
+      "KHV": 0.54455
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12kk-092": {
+    "rsid": "mh12kk-092",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.643,
+      "EUR": 0.371,
+      "AFR": 0.355,
+      "AMR": 0.516,
+      "SAS": 0.42
+    },
+    "subFrequencies": {
+      "CDX": 0.618,
+      "CHB": 0.728,
+      "CHS": 0.633,
+      "JPT": 0.74,
+      "KHV": 0.49
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12usc-12pb": {
+    "rsid": "mh12usc-12pb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:G:T",
+      "T:A:T",
+      "T:G:A",
+      "T:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.488,
+      "EUR": 0.508,
+      "AFR": 0.258,
+      "AMR": 0.672,
+      "SAS": 0.414
+    },
+    "subFrequencies": {
+      "CDX": 0.62903,
+      "CHB": 0.47573,
+      "CHS": 0.44643,
+      "JPT": 0.34135,
+      "KHV": 0.56931
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12scuzj-0160610": {
+    "rsid": "mh12scuzj-0160610",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:A:C",
+      "C:G:G:C",
+      "G:A:G:C",
+      "G:G:G:C",
+      "C:G:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.425,
+      "EUR": 0.448,
+      "AFR": 0.113,
+      "AMR": 0.474,
+      "SAS": 0.241
+    },
+    "subFrequencies": {
+      "CDX": 0.35484,
+      "CHB": 0.45146,
+      "CHS": 0.42857,
+      "JPT": 0.47596,
+      "KHV": 0.40594
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12hyp-31": {
+    "rsid": "mh12hyp-31",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.454,
+      "EUR": 0.498,
+      "AFR": 0.365,
+      "AMR": 0.577,
+      "SAS": 0.576
+    },
+    "subFrequencies": {
+      "CDX": 0.66667,
+      "CHB": 0.2767,
+      "CHS": 0.48214,
+      "JPT": 0.32692,
+      "KHV": 0.5396
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12scuzj-0331644": {
+    "rsid": "mh12scuzj-0331644",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:C",
+      "C:C:T",
+      "T:C:C",
+      "T:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.512,
+      "EUR": 0.566,
+      "AFR": 0.287,
+      "AMR": 0.514,
+      "SAS": 0.523
+    },
+    "subFrequencies": {
+      "CDX": 0.4086,
+      "CHB": 0.64078,
+      "CHS": 0.42857,
+      "JPT": 0.625,
+      "KHV": 0.4505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh12kk-042": {
+    "rsid": "mh12kk-042",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:G",
+      "T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.521,
+      "EUR": 0.002,
+      "AFR": 0.153,
+      "AMR": 0.741,
+      "SAS": 0.092
+    },
+    "subFrequencies": {
+      "CDX": 0.07,
+      "CHB": 0.044,
+      "CHS": 0.076,
+      "JPT": 0.101,
+      "KHV": 0.066
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-213.v6": {
+    "rsid": "mh13kk-213.v6",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:A:C:G:C",
+      "A:C:A:C:G:T",
+      "A:C:A:T:A:T",
+      "A:C:A:C:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.527,
+      "EUR": 0.344,
+      "AFR": 0.37,
+      "AMR": 0.546,
+      "SAS": 0.387
+    },
+    "subFrequencies": {
+      "CDX": 0.60215,
+      "CHB": 0.51456,
+      "CHS": 0.50446,
+      "JPT": 0.48558,
+      "KHV": 0.5396
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-213.v4": {
+    "rsid": "mh13kk-213.v4",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "T:A",
+      "T:C"
+    ],
+    "frequencies": {
+      "EAS": 0.554,
+      "EUR": 0.464,
+      "AFR": 0.637,
+      "AMR": 0.51,
+      "SAS": 0.682
+    },
+    "subFrequencies": {
+      "CDX": 0.56989,
+      "CHB": 0.53883,
+      "CHS": 0.58036,
+      "JPT": 0.49519,
+      "KHV": 0.58416
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-217.v4": {
+    "rsid": "mh13kk-217.v4",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.596,
+      "EUR": 0.411,
+      "AFR": 0.323,
+      "AMR": 0.454,
+      "SAS": 0.415
+    },
+    "subFrequencies": {
+      "CDX": 0.66667,
+      "CHB": 0.54854,
+      "CHS": 0.58482,
+      "JPT": 0.55769,
+      "KHV": 0.63366
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-047": {
+    "rsid": "mh13kk-047",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.631,
+      "EUR": 0.029,
+      "AFR": 0.074,
+      "AMR": 0.112,
+      "SAS": 0.06
+    },
+    "subFrequencies": {
+      "CDX": 0.602,
+      "CHB": 0.704,
+      "CHS": 0.614,
+      "JPT": 0.625,
+      "KHV": 0.621
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13ls-13qe": {
+    "rsid": "mh13ls-13qe",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:G",
+      "C:G:G",
+      "T:G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.504,
+      "EUR": 0.43,
+      "AFR": 0.229,
+      "AMR": 0.423,
+      "SAS": 0.446
+    },
+    "subFrequencies": {
+      "CDX": 0.48925,
+      "CHB": 0.50485,
+      "CHS": 0.49554,
+      "JPT": 0.5,
+      "KHV": 0.5297
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13kk-226": {
+    "rsid": "mh13kk-226",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:A",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.719,
+      "EUR": 0.022,
+      "AFR": 0.087,
+      "AMR": 0.418,
+      "SAS": 0.175
+    },
+    "subFrequencies": {
+      "CDX": 0.704,
+      "CHB": 0.723,
+      "CHS": 0.733,
+      "JPT": 0.688,
+      "KHV": 0.753
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13usc-13qd": {
+    "rsid": "mh13usc-13qd",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A:T",
+      "A:A:G:C",
+      "A:A:G:T",
+      "A:G:G:T",
+      "G:A:G:C",
+      "G:A:G:T",
+      "G:G:G:C",
+      "G:G:G:T",
+      "A:A:A:C",
+      "A:G:A:T",
+      "A:G:G:C",
+      "G:A:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.481,
+      "EUR": 0.36,
+      "AFR": 0.271,
+      "AMR": 0.385,
+      "SAS": 0.339
+    },
+    "subFrequencies": {
+      "CDX": 0.52688,
+      "CHB": 0.42233,
+      "CHS": 0.47768,
+      "JPT": 0.47596,
+      "KHV": 0.50495
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh13wl-035": {
+    "rsid": "mh13wl-035",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:C:C",
+      "G:G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.408,
+      "EUR": 0.465,
+      "AFR": 0.044,
+      "AMR": 0.438,
+      "SAS": 0.347
+    },
+    "subFrequencies": {
+      "CDX": 0.47849,
+      "CHB": 0.3835,
+      "CHS": 0.42857,
+      "JPT": 0.37981,
+      "KHV": 0.37624
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14kk-068": {
+    "rsid": "mh14kk-068",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C",
+      "A:T",
+      "C:C",
+      "C:T",
+      "T:C"
+    ],
+    "frequencies": {
+      "EAS": 0.5,
+      "EUR": 0.001,
+      "AFR": 0.002,
+      "AMR": 0.202,
+      "SAS": 0.153
+    },
+    "subFrequencies": {
+      "CDX": 0.543,
+      "CHB": 0.529,
+      "CHS": 0.529,
+      "JPT": 0.413,
+      "KHV": 0.51
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14pk-72639": {
+    "rsid": "mh14pk-72639",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G:A:G:C:G:A:C",
+      "A:A:G:T:G:C:A:A:C",
+      "A:G:A:A:G:C:G:A:T",
+      "A:G:G:A:G:C:G:A:C",
+      "G:G:G:A:G:C:G:A:C",
+      "A:G:A:A:G:C:G:A:C",
+      "A:G:A:A:G:T:G:A:T",
+      "G:A:G:A:G:C:G:A:C",
+      "G:G:G:A:A:C:G:A:C",
+      "G:G:G:T:G:C:G:A:C",
+      "A:A:G:A:G:C:A:A:C",
+      "G:G:A:A:G:C:G:A:C",
+      "A:G:G:A:G:C:G:A:T",
+      "A:A:A:A:G:C:G:A:C",
+      "A:A:G:T:G:C:A:T:C",
+      "G:G:G:A:A:C:G:G:C",
+      "G:G:G:A:G:C:G:G:C",
+      "A:G:G:A:G:T:G:G:C",
+      "A:A:G:T:G:C:A:G:C",
+      "A:A:G:G:G:C:A:G:C",
+      "A:G:A:A:G:C:G:G:T",
+      "A:G:A:G:G:C:G:G:T",
+      "A:G:G:A:G:C:G:G:C",
+      "A:A:G:A:G:C:G:G:C",
+      "G:A:G:G:G:C:G:G:C",
+      "A:A:G:G:G:C:G:G:C",
+      "A:G:G:G:G:C:G:G:C",
+      "A:G:C:G:G:C:G:G:C",
+      "A:A:G:T:G:T:A:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.439,
+      "EUR": 0.223,
+      "AFR": 0.001,
+      "AMR": 0.201,
+      "SAS": 0.382
+    },
+    "subFrequencies": {
+      "CDX": 0.3871,
+      "CHB": 0.43689,
+      "CHS": 0.46875,
+      "JPT": 0.56731,
+      "KHV": 0.32178
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14nh-21": {
+    "rsid": "mh14nh-21",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:A",
+      "C:C:C",
+      "C:T:C",
+      "T:T:A",
+      "T:T:C",
+      "C:T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.424,
+      "EUR": 0.377,
+      "AFR": 0.018,
+      "AMR": 0.298,
+      "SAS": 0.226
+    },
+    "subFrequencies": {
+      "CDX": 0.39247,
+      "CHB": 0.44175,
+      "CHS": 0.41964,
+      "JPT": 0.46635,
+      "KHV": 0.39604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh14kk-101": {
+    "rsid": "mh14kk-101",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:T",
+      "G:C",
+      "G:T",
+      "A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.915,
+      "EUR": 0.392,
+      "AFR": 0.243,
+      "AMR": 0.12,
+      "SAS": 0.663
+    },
+    "subFrequencies": {
+      "CDX": 0.005,
+      "CHB": 0.112,
+      "CHS": 0.071,
+      "JPT": 0.197,
+      "KHV": 0.02
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15pk-75170": {
+    "rsid": "mh15pk-75170",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:T:A:T:C:T:A:G:A:T:A:C",
+      "A:A:T:G:T:C:T:A:G:A:T:A:C",
+      "G:A:G:G:T:C:G:A:G:G:C:A:C",
+      "G:A:G:G:T:C:T:A:G:A:C:C:C",
+      "G:A:G:G:T:C:T:A:G:G:C:A:C",
+      "A:A:G:A:T:C:T:A:C:A:T:A:C",
+      "A:A:T:A:T:C:T:A:C:A:T:A:C",
+      "A:A:T:A:C:C:T:A:G:A:T:A:C",
+      "A:A:T:A:T:G:T:A:G:A:T:A:C",
+      "G:A:G:A:T:C:T:A:G:G:C:A:C",
+      "G:A:G:G:T:C:T:A:C:G:C:A:C",
+      "G:A:G:G:T:C:T:A:G:G:C:A:G",
+      "G:T:G:G:T:C:T:A:G:G:C:A:C",
+      "G:A:G:C:T:C:T:A:G:G:C:A:C",
+      "G:C:G:G:T:C:T:A:G:G:C:A:C",
+      "A:A:T:A:T:G:T:G:G:A:T:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.717,
+      "EUR": 0.002,
+      "AFR": 0.302,
+      "AMR": 0.603,
+      "SAS": 0.001
+    },
+    "subFrequencies": {
+      "CDX": 0.73118,
+      "CHB": 0.72816,
+      "CHS": 0.6875,
+      "JPT": 0.74038,
+      "KHV": 0.70297
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15kk-104": {
+    "rsid": "mh15kk-104",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:G",
+      "T:A:A",
+      "T:A:G",
+      "T:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.904,
+      "EUR": 0.106,
+      "AFR": 0.129,
+      "AMR": 0.294,
+      "SAS": 0.414
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0.005,
+      "CHS": 0.01,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15shy-002": {
+    "rsid": "mh15shy-002",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:T:T:C:G:A:C:C",
+      "G:T:C:C:T:G:G:C",
+      "G:T:T:C:G:A:C:C",
+      "G:T:T:C:G:G:C:C",
+      "G:T:T:C:G:G:C:T",
+      "G:T:T:C:G:G:G:C",
+      "G:T:T:C:T:G:G:C",
+      "G:T:T:C:T:G:C:C",
+      "A:T:T:C:G:G:G:C"
+    ],
+    "frequencies": {
+      "EAS": 0.414,
+      "EUR": 0.135,
+      "AFR": 0.235,
+      "AMR": 0.305,
+      "SAS": 0.208
+    },
+    "subFrequencies": {
+      "CDX": 0.28495,
+      "CHB": 0.42718,
+      "CHS": 0.41071,
+      "JPT": 0.47596,
+      "KHV": 0.4604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh15ls-15qf": {
+    "rsid": "mh15ls-15qf",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:G",
+      "A:T:G",
+      "G:T:A",
+      "G:T:G",
+      "G:C:G",
+      "G:C:A",
+      "A:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.422,
+      "EUR": 0.153,
+      "AFR": 0.039,
+      "AMR": 0.139,
+      "SAS": 0.054
+    },
+    "subFrequencies": {
+      "CDX": 0.36022,
+      "CHB": 0.35922,
+      "CHS": 0.41071,
+      "JPT": 0.55769,
+      "KHV": 0.41584
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16cp-001": {
+    "rsid": "mh16cp-001",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:A:G:C:T",
+      "G:C:G:C:T",
+      "G:C:G:T:C",
+      "G:C:G:T:T",
+      "T:C:G:C:T",
+      "G:A:G:T:T",
+      "G:C:T:C:T",
+      "G:C:C:C:T",
+      "G:C:G:C:C",
+      "G:A:G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.415,
+      "EUR": 0.476,
+      "AFR": 0.257,
+      "AMR": 0.385,
+      "SAS": 0.401
+    },
+    "subFrequencies": {
+      "CDX": 0.3871,
+      "CHB": 0.46117,
+      "CHS": 0.40179,
+      "JPT": 0.49519,
+      "KHV": 0.32673
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16usc-16pa": {
+    "rsid": "mh16usc-16pa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:T:G",
+      "C:G:C:G",
+      "C:G:T:A",
+      "C:G:T:G",
+      "T:G:C:G",
+      "T:G:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.464,
+      "EUR": 0.107,
+      "AFR": 0.09,
+      "AMR": 0.146,
+      "SAS": 0.113
+    },
+    "subFrequencies": {
+      "CDX": 0.39785,
+      "CHB": 0.47087,
+      "CHS": 0.45536,
+      "JPT": 0.57212,
+      "KHV": 0.41584
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-029": {
+    "rsid": "mh16wl-029",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:G:T:T:G",
+      "T:G:T:T:G",
+      "T:G:T:A:G"
+    ],
+    "frequencies": {
+      "EAS": 0.992,
+      "EUR": 0.997,
+      "AFR": 0.967,
+      "AMR": 1,
+      "SAS": 0.992
+    },
+    "subFrequencies": {
+      "CDX": 0.98925,
+      "CHB": 1,
+      "CHS": 0.99107,
+      "JPT": 0.99038,
+      "KHV": 0.9901
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16wl-050": {
+    "rsid": "mh16wl-050",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "T:C:G:C:A",
+      "T:C:G:C:T",
+      "T:C:T:T:A",
+      "T:C:G:T:A",
+      "T:C:T:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.439,
+      "EUR": 0.293,
+      "AFR": 0.295,
+      "AMR": 0.569,
+      "SAS": 0.231
+    },
+    "subFrequencies": {
+      "CDX": 0.46237,
+      "CHB": 0.38835,
+      "CHS": 0.40179,
+      "JPT": 0.5,
+      "KHV": 0.44554
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh16zbf-001": {
+    "rsid": "mh16zbf-001",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C",
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.488,
+      "EUR": 0.001,
+      "AFR": 0.331,
+      "AMR": 0.425,
+      "SAS": 0.249
+    },
+    "subFrequencies": {
+      "CDX": 0.41935,
+      "CHB": 0.5,
+      "CHS": 0.49554,
+      "JPT": 0.61058,
+      "KHV": 0.40594
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17cp-002": {
+    "rsid": "mh17cp-002",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:C",
+      "A:G:T",
+      "G:G:T",
+      "G:T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.491,
+      "EUR": 0.029,
+      "AFR": 0.056,
+      "AMR": 0.259,
+      "SAS": 0.079
+    },
+    "subFrequencies": {
+      "CDX": 0.57527,
+      "CHB": 0.46602,
+      "CHS": 0.49554,
+      "JPT": 0.4375,
+      "KHV": 0.4901
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17usc-17pa": {
+    "rsid": "mh17usc-17pa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:A",
+      "C:C:C",
+      "C:T:A",
+      "T:C:A",
+      "T:C:C",
+      "T:T:A",
+      "T:T:C",
+      "C:T:C"
+    ],
+    "frequencies": {
+      "EAS": 0.418,
+      "EUR": 0.244,
+      "AFR": 0.025,
+      "AMR": 0.188,
+      "SAS": 0.263
+    },
+    "subFrequencies": {
+      "CDX": 0.46774,
+      "CHB": 0.42718,
+      "CHS": 0.40625,
+      "JPT": 0.26923,
+      "KHV": 0.5297
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17zbf-001": {
+    "rsid": "mh17zbf-001",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:T",
+      "G:C:T",
+      "G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.51,
+      "EUR": 0.625,
+      "AFR": 0.384,
+      "AMR": 0.557,
+      "SAS": 0.376
+    },
+    "subFrequencies": {
+      "CDX": 0.58065,
+      "CHB": 0.52913,
+      "CHS": 0.52679,
+      "JPT": 0.48558,
+      "KHV": 0.43069
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17wl-030.v2": {
+    "rsid": "mh17wl-030.v2",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:C:A:G:C:G:G:A:G:C:C",
+      "G:C:C:A:G:C:G:G:C:G:C:C",
+      "G:C:C:C:G:C:G:G:A:G:C:C",
+      "G:C:C:C:G:C:G:G:C:G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.976,
+      "EUR": 0.958,
+      "AFR": 0.886,
+      "AMR": 0.989,
+      "SAS": 0.959
+    },
+    "subFrequencies": {
+      "CDX": 0.98387,
+      "CHB": 0.97087,
+      "CHS": 0.98214,
+      "JPT": 0.98077,
+      "KHV": 0.9604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh17wl-030.v1": {
+    "rsid": "mh17wl-030.v1",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:A:G:C:G:G:G:C:C",
+      "C:C:C:G:C:G:G:G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.977,
+      "EUR": 0.959,
+      "AFR": 0.905,
+      "AMR": 0.989,
+      "SAS": 0.963
+    },
+    "subFrequencies": {
+      "CDX": 0.98387,
+      "CHB": 0.97087,
+      "CHS": 0.98661,
+      "JPT": 0.98077,
+      "KHV": 0.9604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18ls-18pa": {
+    "rsid": "mh18ls-18pa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A:A",
+      "C:T:A",
+      "T:A:A",
+      "T:A:T",
+      "C:A:T"
+    ],
+    "frequencies": {
+      "EAS": 0.555,
+      "EUR": 0.374,
+      "AFR": 0.071,
+      "AMR": 0.557,
+      "SAS": 0.387
+    },
+    "subFrequencies": {
+      "CDX": 0.60215,
+      "CHB": 0.57282,
+      "CHS": 0.54018,
+      "JPT": 0.48558,
+      "KHV": 0.57921
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18wl-026": {
+    "rsid": "mh18wl-026",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:G",
+      "A:G:G",
+      "C:A:G",
+      "A:A:C",
+      "C:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.458,
+      "EUR": 0.486,
+      "AFR": 0.075,
+      "AMR": 0.428,
+      "SAS": 0.124
+    },
+    "subFrequencies": {
+      "CDX": 0.45161,
+      "CHB": 0.48058,
+      "CHS": 0.45089,
+      "JPT": 0.46154,
+      "KHV": 0.44554
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18scuzj-0198187": {
+    "rsid": "mh18scuzj-0198187",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:C:C:T:T:C:C",
+      "C:G:C:C:T:T:C:C",
+      "T:G:C:C:T:T:C:C",
+      "C:G:C:C:T:T:A:C",
+      "T:C:C:C:T:T:C:C",
+      "T:G:C:C:T:T:A:C"
+    ],
+    "frequencies": {
+      "EAS": 0.477,
+      "EUR": 0.289,
+      "AFR": 0.318,
+      "AMR": 0.245,
+      "SAS": 0.43
+    },
+    "subFrequencies": {
+      "CDX": 0.56452,
+      "CHB": 0.47087,
+      "CHS": 0.43304,
+      "JPT": 0.45673,
+      "KHV": 0.4703
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh18ls-18qc": {
+    "rsid": "mh18ls-18qc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:C:C",
+      "C:C:C:T",
+      "T:G:C:C",
+      "T:G:C:T",
+      "T:G:T:T",
+      "C:G:C:T",
+      "C:G:T:T",
+      "C:G:C:C",
+      "T:C:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.417,
+      "EUR": 0.183,
+      "AFR": 0.068,
+      "AMR": 0.443,
+      "SAS": 0.251
+    },
+    "subFrequencies": {
+      "CDX": 0.41398,
+      "CHB": 0.41748,
+      "CHS": 0.46429,
+      "JPT": 0.39904,
+      "KHV": 0.38614
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19kk-056": {
+    "rsid": "mh19kk-056",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:C",
+      "T:A",
+      "T:C"
+    ],
+    "frequencies": {
+      "EAS": 0.471,
+      "EUR": 0.267,
+      "AFR": 0.227,
+      "AMR": 0.58,
+      "SAS": 0.148
+    },
+    "subFrequencies": {
+      "CDX": 0.548,
+      "CHB": 0.515,
+      "CHS": 0.495,
+      "JPT": 0.591,
+      "KHV": 0.429
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19scuzj-0077038": {
+    "rsid": "mh19scuzj-0077038",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:G:T:A:C:T",
+      "A:G:T:A:T:T"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 0.03,
+      "AFR": 0.106,
+      "AMR": 0.023,
+      "SAS": 0.001
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19usc-19pb": {
+    "rsid": "mh19usc-19pb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:C:T:G",
+      "A:G:C:T:G",
+      "A:G:T:C:G",
+      "A:G:T:C:T",
+      "A:G:T:T:G",
+      "G:G:T:T:G",
+      "A:A:C:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.429,
+      "EUR": 0.344,
+      "AFR": 0.317,
+      "AMR": 0.331,
+      "SAS": 0.396
+    },
+    "subFrequencies": {
+      "CDX": 0.32258,
+      "CHB": 0.42233,
+      "CHS": 0.42857,
+      "JPT": 0.57212,
+      "KHV": 0.38614
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh19nh-23": {
+    "rsid": "mh19nh-23",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:G",
+      "C:T:C",
+      "T:C:G",
+      "T:T:G",
+      "T:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.454,
+      "EUR": 0.419,
+      "AFR": 0.005,
+      "AMR": 0.476,
+      "SAS": 0.668
+    },
+    "subFrequencies": {
+      "CDX": 0.54839,
+      "CHB": 0.34951,
+      "CHS": 0.41071,
+      "JPT": 0.45192,
+      "KHV": 0.52475
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-035": {
+    "rsid": "mh20kk-035",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:A",
+      "C:G",
+      "T:G",
+      "T:A"
+    ],
+    "frequencies": {
+      "EAS": 0.818,
+      "EUR": 0.025,
+      "AFR": 0.324,
+      "AMR": 0,
+      "SAS": 0.435
+    },
+    "subFrequencies": {
+      "CDX": 0,
+      "CHB": 0,
+      "CHS": 0,
+      "JPT": 0,
+      "KHV": 0
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20ls-20pa": {
+    "rsid": "mh20ls-20pa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:C",
+      "G:T:C",
+      "T:C:C",
+      "T:C:T",
+      "G:C:T"
+    ],
+    "frequencies": {
+      "EAS": 0.571,
+      "EUR": 0.437,
+      "AFR": 0.338,
+      "AMR": 0.623,
+      "SAS": 0.437
+    },
+    "subFrequencies": {
+      "CDX": 0.57527,
+      "CHB": 0.53398,
+      "CHS": 0.58929,
+      "JPT": 0.57212,
+      "KHV": 0.58416
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-307.v3": {
+    "rsid": "mh20kk-307.v3",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:G",
+      "C:T:G",
+      "T:C:G",
+      "T:T:A",
+      "T:T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.41,
+      "EUR": 0.183,
+      "AFR": 0.522,
+      "AMR": 0.316,
+      "SAS": 0.338
+    },
+    "subFrequencies": {
+      "CDX": 0.49462,
+      "CHB": 0.32524,
+      "CHS": 0.40625,
+      "JPT": 0.39904,
+      "KHV": 0.43564
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20nh-24": {
+    "rsid": "mh20nh-24",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:C",
+      "G:T:C",
+      "G:T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.542,
+      "EUR": 0.389,
+      "AFR": 0.097,
+      "AMR": 0.408,
+      "SAS": 0.424
+    },
+    "subFrequencies": {
+      "CDX": 0.55376,
+      "CHB": 0.50485,
+      "CHS": 0.54911,
+      "JPT": 0.5625,
+      "KHV": 0.5396
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20nh-25": {
+    "rsid": "mh20nh-25",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G:T",
+      "T:A:A",
+      "T:G:A",
+      "T:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.458,
+      "EUR": 0.042,
+      "AFR": 0.371,
+      "AMR": 0.087,
+      "SAS": 0.007
+    },
+    "subFrequencies": {
+      "CDX": 0.44624,
+      "CHB": 0.49515,
+      "CHS": 0.45089,
+      "JPT": 0.4375,
+      "KHV": 0.4604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20nh-26": {
+    "rsid": "mh20nh-26",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A:A",
+      "A:C:A",
+      "A:C:G",
+      "C:A:A",
+      "C:C:G"
+    ],
+    "frequencies": {
+      "EAS": 0.441,
+      "EUR": 0.248,
+      "AFR": 0.359,
+      "AMR": 0.24,
+      "SAS": 0.223
+    },
+    "subFrequencies": {
+      "CDX": 0.51075,
+      "CHB": 0.42718,
+      "CHS": 0.41964,
+      "JPT": 0.43269,
+      "KHV": 0.42079
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20hyp-41": {
+    "rsid": "mh20hyp-41",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:G",
+      "C:T",
+      "T:G"
+    ],
+    "frequencies": {
+      "EAS": 0.427,
+      "EUR": 0.142,
+      "AFR": 0.197,
+      "AMR": 0.354,
+      "SAS": 0.203
+    },
+    "subFrequencies": {
+      "CDX": 0.59677,
+      "CHB": 0.30583,
+      "CHS": 0.46875,
+      "JPT": 0.37019,
+      "KHV": 0.40594
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20wl-018": {
+    "rsid": "mh20wl-018",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:G:G:A:A:G",
+      "A:C:G:G:A:G:A"
+    ],
+    "frequencies": {
+      "EAS": 1,
+      "EUR": 0.998,
+      "AFR": 0.865,
+      "AMR": 0.994,
+      "SAS": 1
+    },
+    "subFrequencies": {
+      "CDX": 1,
+      "CHB": 1,
+      "CHS": 1,
+      "JPT": 1,
+      "KHV": 1
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20kk-059": {
+    "rsid": "mh20kk-059",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:A",
+      "A:G",
+      "G:G",
+      "G:A"
+    ],
+    "frequencies": {
+      "EAS": 0.66,
+      "EUR": 0.595,
+      "AFR": 0.587,
+      "AMR": 0.718,
+      "SAS": 0.698
+    },
+    "subFrequencies": {
+      "CDX": 0.72,
+      "CHB": 0.631,
+      "CHS": 0.643,
+      "JPT": 0.611,
+      "KHV": 0.687
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh20wl-021": {
+    "rsid": "mh20wl-021",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:C:G:A",
+      "G:C:G:G"
+    ],
+    "frequencies": {
+      "EAS": 0.445,
+      "EUR": 0.134,
+      "AFR": 0.658,
+      "AMR": 0.279,
+      "SAS": 0.217
+    },
+    "subFrequencies": {
+      "CDX": 0.47312,
+      "CHB": 0.40291,
+      "CHS": 0.39732,
+      "JPT": 0.46635,
+      "KHV": 0.49505
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh21kk-320.v4": {
+    "rsid": "mh21kk-320.v4",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "frequencies": {
+      "EAS": 0.61,
+      "EUR": 0.625,
+      "AFR": 0.549,
+      "AMR": 0.553,
+      "SAS": 0.528
+    },
+    "subFrequencies": {
+      "CDX": 0.54301,
+      "CHB": 0.6699,
+      "CHS": 0.57143,
+      "JPT": 0.75481,
+      "KHV": 0.50495
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh22ls-22qa": {
+    "rsid": "mh22ls-22qa",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "A:C:C",
+      "A:C:T",
+      "A:G:C",
+      "A:G:T",
+      "G:G:C",
+      "G:C:C"
+    ],
+    "frequencies": {
+      "EAS": 0.449,
+      "EUR": 0.036,
+      "AFR": 0.034,
+      "AMR": 0.062,
+      "SAS": 0.208
+    },
+    "subFrequencies": {
+      "CDX": 0.46237,
+      "CHB": 0.47087,
+      "CHS": 0.45089,
+      "JPT": 0.40385,
+      "KHV": 0.4604
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xpb": {
+    "rsid": "mh0xusc-xpb",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "G:G:G",
+      "G:T:G",
+      "G:T:T",
+      "T:G:G",
+      "G:G:T"
+    ],
+    "frequencies": {
+      "EAS": 0.614,
+      "EUR": 0.175,
+      "AFR": 0.298,
+      "AMR": 0.697,
+      "SAS": 0.3
+    },
+    "subFrequencies": {
+      "CDX": 0.58451,
+      "CHB": 0.575,
+      "CHS": 0.6369,
+      "JPT": 0.65132,
+      "KHV": 0.61935
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xpc": {
+    "rsid": "mh0xusc-xpc",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:C:C:T",
+      "C:T:C:T",
+      "C:T:T:T",
+      "T:C:T:T",
+      "C:C:C:A",
+      "T:T:T:T",
+      "C:C:T:T",
+      "T:C:C:A"
+    ],
+    "frequencies": {
+      "EAS": 0.609,
+      "EUR": 0.001,
+      "AFR": 0.342,
+      "AMR": 0.674,
+      "SAS": 0.351
+    },
+    "subFrequencies": {
+      "CDX": 0.58451,
+      "CHB": 0.64375,
+      "CHS": 0.57738,
+      "JPT": 0.65132,
+      "KHV": 0.5871
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
+  },
+  "mh0xusc-xqf": {
+    "rsid": "mh0xusc-xqf",
+    "region": "East Asian",
+    "color": "#E74C3C",
+    "alleles": [
+      "C:T",
+      "T:C",
+      "T:T"
+    ],
+    "frequencies": {
+      "EAS": 0.618,
+      "EUR": 0.8,
+      "AFR": 0.319,
+      "AMR": 0.688,
+      "SAS": 0.616
+    },
+    "subFrequencies": {
+      "CDX": 0.59859,
+      "CHB": 0.65,
+      "CHS": 0.68452,
+      "JPT": 0.53947,
+      "KHV": 0.60645
+    },
+    "deepFrequencies": {},
+    "weight": 6,
+    "gene": "MICROHAP-AIM",
+    "trait": "Ancestry",
+    "description": "Microhaplotype AIM diagnostic for East Asian sub-lineages.",
+    "chromosome": "1",
+    "position": 1000000
   }
 }
