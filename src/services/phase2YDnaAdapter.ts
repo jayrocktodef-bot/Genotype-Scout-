@@ -31,82 +31,24 @@ function initializePredictor(): YDnaPredictorV2 | null {
   return predictorInstance;
 }
 
-// @ts-ignore - y_snp_index.json import
-import ySnpIndex from '../data/y_snp_index.json' assert { type: 'json' };
-
-interface YSnpEntry {
-  name: string;
-  posHg38?: number;
-  posHg19?: number;
-  rsid?: string;
-  ancestral?: string;
-  derived?: string;
-}
-
-// Pre-build position and alias lookup tables for fast chip-to-tree resolution
-const yPos38ToNameMap = new Map<string, string>();
-const yPos19ToNameMap = new Map<string, string>();
-const yAliasToNameMap = new Map<string, string>();
-
-if (ySnpIndex && typeof ySnpIndex === 'object') {
-  for (const [key, val] of Object.entries(ySnpIndex as Record<string, YSnpEntry>)) {
-    if (!val) continue;
-    const snpName = val.name || key;
-    const keyLower = key.toLowerCase();
-    yAliasToNameMap.set(keyLower, snpName);
-
-    if (val.rsid) {
-      yAliasToNameMap.set(val.rsid.toLowerCase(), snpName);
-    }
-    if (val.posHg38) {
-      yPos38ToNameMap.set(`chry_${val.posHg38}`, snpName);
-      yPos38ToNameMap.set(`${val.posHg38}`, snpName);
-    }
-    if (val.posHg19) {
-      yPos19ToNameMap.set(`chry_${val.posHg19}`, snpName);
-      yPos19ToNameMap.set(`${val.posHg19}`, snpName);
-    }
-  }
-}
-
 /**
- * Convert SNP map (rsid/name/position -> allele) to RawSnp array.
- * Cross-references microarray chip calls (AncestryDNA, 23andMe, MyHeritage, FTDNA, Dante WGS)
- * by rsid, coordinate (hg19/hg38), or alias name directly into y_phylotree SNP names.
+ * Convert SNP map (rsid/name -> allele) to RawSnp array.
+ * Prioritizes SNP names (M269, M2, etc.) over rsids for y_phylotree lookup.
  */
 function snpMapToRawSnpArray(yMap: Record<string, string>): RawSnp[] {
   const result: RawSnp[] = [];
-  const seenSnps = new Map<string, string>();
-
-  for (const [rawKey, allele] of Object.entries(yMap)) {
+  for (const [key, allele] of Object.entries(yMap)) {
     if (!allele || allele === '--' || allele === '00' || allele === '?' || allele === '.') {
       continue;
     }
-
-    const keyLower = rawKey.toLowerCase();
-    // 1. Direct name or alias lookup (e.g. rsid or alias -> M269)
-    let canonicalName = yAliasToNameMap.get(keyLower);
-
-    // 2. Position lookup (hg38 / hg19 coordinate cross-referencing)
-    if (!canonicalName) {
-      canonicalName = yPos38ToNameMap.get(keyLower) || yPos19ToNameMap.get(keyLower);
-    }
-
-    // 3. Fallback to raw key if structured name
-    if (!canonicalName) {
-      canonicalName = /^[A-Z]+\d+/i.test(rawKey) ? rawKey : keyLower;
-    }
-
-    if (canonicalName && !seenSnps.has(canonicalName)) {
-      seenSnps.set(canonicalName, allele);
-      result.push({
-        name: canonicalName,
-        rsid: keyLower.startsWith('rs') ? keyLower : undefined,
-        allele
-      });
-    }
+    // Try to detect if key is SNP name (M269) or rsid (rs123)
+    const isSNPName = /^[A-Z]+\d+/.test(key);
+    result.push(
+      isSNPName
+        ? { name: key, allele }
+        : { rsid: key, allele }
+    );
   }
-
   return result;
 }
 

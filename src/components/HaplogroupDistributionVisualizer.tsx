@@ -64,15 +64,10 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
     if (data?.yDna) return data.yDna;
 
     if (predictedY && (predictedY.phase2 || predictedY.predicted)) {
-      const primaryName = typeof predictedY.phase2?.haplogroup === 'string'
-        ? predictedY.phase2.haplogroup
-        : typeof predictedY.predicted === 'string'
-          ? predictedY.predicted
-          : (predictedY.predicted?.name || 'Y-DNA Lineage');
-
+      const primaryName = predictedY.phase2?.haplogroup || predictedY.predicted?.name || 'Y-DNA Lineage';
       const path: string[] = predictedY.path || [];
       const tested: any[] = predictedY.testedMarkers || [];
-      const totalTestedSNPs = tested.length > 0 ? tested.length : 150;
+      const totalTestedSNPs = tested.length || 150;
       const region = predictedY.phase2?.region || predictedY.predicted?.continent || 'Global';
 
       let subclades: SubcladeDistributionItem[] = [];
@@ -83,8 +78,7 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
       if (derivedOnly.length > 0) {
         const branchGroups: Record<string, any[]> = {};
         derivedOnly.forEach((m: any) => {
-          const rawBranch = m.branch || m.nodeName || m.trait || primaryName;
-          const branchKey = (typeof rawBranch === 'string' ? rawBranch : String(rawBranch)).replace('Haplogroup ', '');
+          const branchKey = (m.branch || m.nodeName || m.trait || primaryName).replace('Haplogroup ', '');
           if (!branchGroups[branchKey]) branchGroups[branchKey] = [];
           branchGroups[branchKey].push(m);
         });
@@ -116,9 +110,7 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
           const share = isTerminal ? Math.max(35, remaining) : parseFloat((remaining * 0.35).toFixed(1));
           remaining -= share;
 
-          const derivedForNode = tested.filter((m: any) =>
-            (m.name === node || m.marker === node || m.branch === node) && (m.isDerived || m.status === 'derived')
-          ).slice(0, 3).map((m: any) => m.marker || m.name || node);
+          const derivedForNode = tested.filter((m: any) => m.name === node || m.marker === node || m.isDerived).slice(0, 3).map((m: any) => m.marker || m.name || node);
           
           return {
             haplogroup: node,
@@ -150,7 +142,7 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
         primaryLineage: primaryName,
         subclades,
         totalTestedSNPs,
-        confidenceScore: predictedY.phase2?.confidence ?? 95.0
+        confidenceScore: predictedY.phase2?.confidence || 95.0
       };
     }
 
@@ -162,13 +154,10 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
     if (data?.mtDna) return data.mtDna;
 
     if (predictedMt && predictedMt.predicted) {
-      const primaryName = typeof predictedMt.predicted === 'string'
-        ? predictedMt.predicted
-        : (predictedMt.predicted?.name || 'Maternal Lineage');
-
+      const primaryName = predictedMt.predicted;
       const path: string[] = predictedMt.path || [];
       const tested: any[] = predictedMt.testedMarkers || [];
-      const totalTestedSNPs = tested.length > 0 ? tested.length : 80;
+      const totalTestedSNPs = tested.length || 80;
       const region = predictedMt.region || 'Global';
 
       let subclades: SubcladeDistributionItem[] = [];
@@ -239,7 +228,7 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
         primaryLineage: primaryName,
         subclades,
         totalTestedSNPs,
-        confidenceScore: predictedMt.score ?? 92.5
+        confidenceScore: predictedMt.score || 92.5
       };
     }
 
@@ -294,12 +283,10 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
           callbacks: {
             label: (context: any) => {
               const item = lineageData.subclades[context.dataIndex];
-              if (!item) return '';
               return ` ${item.subclade}: ${item.percentage.toFixed(1)}% Share`;
             },
             afterBody: (context: any) => {
-              const item = lineageData.subclades[context[0]?.dataIndex];
-              if (!item) return [];
+              const item = lineageData.subclades[context[0].dataIndex];
               const lines = [];
               if (item.definingSNPs && item.definingSNPs.length > 0) {
                 lines.push(`Defining SNPs: ${item.definingSNPs.join(', ')}`);
@@ -321,9 +308,9 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
     return { chartData, options };
   };
 
-  const showY = predictedY !== undefined || data?.yDna !== undefined;
-  const showMt = predictedMt !== undefined || data?.mtDna !== undefined;
-  const showBoth = showY && showMt;
+  const showY = !!predictedY || !!data?.yDna;
+  const showMt = !!predictedMt || !!data?.mtDna;
+  const showBoth = (showY && showMt) || (!predictedY && !predictedMt && !data?.yDna && !data?.mtDna);
 
   return (
     <div className="w-full space-y-6">
