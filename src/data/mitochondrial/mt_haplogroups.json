@@ -39747,5 +39747,20 @@
       "A10398G!",
       "T16189C!"
     ]
+  },
+  {
+    "branchName": "A4",
+    "mutations": [
+      "C16223T",
+      "C16290T"
+    ]
+  },
+  {
+    "branchName": "A4a",
+    "mutations": [
+      "C16223T",
+      "C16290T",
+      "T16519C"
+    ]
   }
 ]

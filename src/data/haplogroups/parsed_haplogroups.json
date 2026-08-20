@@ -75976,7 +75976,7 @@
     "branchName": "J (Notes)",
     "definingSNPs": [
       "CTS7683",
-      "DYS445≤7",
+      "DYS445\u22647",
       "DYS455> or = 9",
       "L174.1",
       "L229",
@@ -124907,6 +124907,688 @@
       "Z34944",
       "Z34945",
       "Z34947"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1",
+    "definingSNPs": [
+      "DF13",
+      "S521"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a",
+    "definingSNPs": [
+      "L21",
+      "M529",
+      "S145"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a1",
+    "definingSNPs": [
+      "DF23"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a1a",
+    "definingSNPs": [
+      "Z253",
+      "S524"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a1a1",
+    "definingSNPs": [
+      "L226",
+      "Z254"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a1b",
+    "definingSNPs": [
+      "L513"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a2",
+    "definingSNPs": [
+      "Z255",
+      "S528"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a2a",
+    "definingSNPs": [
+      "Z256"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a3",
+    "definingSNPs": [
+      "DF49"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a4",
+    "definingSNPs": [
+      "L193"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a5",
+    "definingSNPs": [
+      "M222"
+    ],
+    "rsids": [
+      "rs9786076"
+    ]
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a5a",
+    "definingSNPs": [
+      "DF104"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a5b",
+    "definingSNPs": [
+      "DF85"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a6",
+    "definingSNPs": [
+      "DF21"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a6a",
+    "definingSNPs": [
+      "S530"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a7",
+    "definingSNPs": [
+      "Z2534"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a8",
+    "definingSNPs": [
+      "BY3",
+      "FGC11134"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2c1a1a9",
+    "definingSNPs": [
+      "CTS4466"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1",
+    "definingSNPs": [
+      "U106",
+      "S21"
+    ],
+    "rsids": [
+      "rs16981293"
+    ]
+  },
+  {
+    "branchName": "R1b1a1a2a1a1a",
+    "definingSNPs": [
+      "Z381"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1a1",
+    "definingSNPs": [
+      "Z301"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1a1a",
+    "definingSNPs": [
+      "L48"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1a1a1",
+    "definingSNPs": [
+      "Z9",
+      "Z30"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1a1a2",
+    "definingSNPs": [
+      "Z326"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1a2",
+    "definingSNPs": [
+      "Z156"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1b",
+    "definingSNPs": [
+      "Z18"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1b1",
+    "definingSNPs": [
+      "Z17"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a1c",
+    "definingSNPs": [
+      "L44"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2",
+    "definingSNPs": [
+      "P312",
+      "S116"
+    ],
+    "rsids": [
+      "rs34276300"
+    ]
+  },
+  {
+    "branchName": "R1b1a1a2a1a2a",
+    "definingSNPs": [
+      "U152",
+      "S28"
+    ],
+    "rsids": [
+      "rs1236440"
+    ]
+  },
+  {
+    "branchName": "R1b1a1a2a1a2a1",
+    "definingSNPs": [
+      "L2"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2a1a",
+    "definingSNPs": [
+      "Z49"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2a2",
+    "definingSNPs": [
+      "Z36"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2a3",
+    "definingSNPs": [
+      "Z56"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2b",
+    "definingSNPs": [
+      "Z195"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2b1",
+    "definingSNPs": [
+      "DF27"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2b1a",
+    "definingSNPs": [
+      "Z220"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1b1a1a2a1a2b1b",
+    "definingSNPs": [
+      "Z272"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a",
+    "definingSNPs": [
+      "Z282"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a1",
+    "definingSNPs": [
+      "Z280"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a1a1",
+    "definingSNPs": [
+      "Y35"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a1a2",
+    "definingSNPs": [
+      "L366"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a1b",
+    "definingSNPs": [
+      "S24902"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a2",
+    "definingSNPs": [
+      "Z284"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a2a",
+    "definingSNPs": [
+      "L448"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b1a2a1",
+    "definingSNPs": [
+      "CTS4179"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b2a1",
+    "definingSNPs": [
+      "Z2124"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b2a1a1",
+    "definingSNPs": [
+      "Y40"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b2a2",
+    "definingSNPs": [
+      "L657"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b2a2a",
+    "definingSNPs": [
+      "Y6"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "R1a1a1b2a3",
+    "definingSNPs": [
+      "Z2123"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1a",
+    "definingSNPs": [
+      "CTS6364"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1a1",
+    "definingSNPs": [
+      "Z63"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1a1a",
+    "definingSNPs": [
+      "Z58"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1a1a1",
+    "definingSNPs": [
+      "Z59"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1a1a1b",
+    "definingSNPs": [
+      "Z382"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1a1b",
+    "definingSNPs": [
+      "Z73"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1b2a",
+    "definingSNPs": [
+      "P109"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I1a1b3",
+    "definingSNPs": [
+      "CTS10028"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I2a1a1a1",
+    "definingSNPs": [
+      "CTS10936"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I2a1a1a1a",
+    "definingSNPs": [
+      "S17250"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I2a1a1a1b",
+    "definingSNPs": [
+      "Z16971"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I2a1a1b",
+    "definingSNPs": [
+      "L161"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "I2a2a1",
+    "definingSNPs": [
+      "M284"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "E1b1b1a1c",
+    "definingSNPs": [
+      "V22"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "E1b1b1a1d",
+    "definingSNPs": [
+      "V65"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "E1b1a",
+    "definingSNPs": [
+      "V38"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "E1b1a1a1b",
+    "definingSNPs": [
+      "U290"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "J2a1a2",
+    "definingSNPs": [
+      "L24"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "J2a1b",
+    "definingSNPs": [
+      "M47"
+    ],
+    "rsids": [
+      "rs2032612"
+    ]
+  },
+  {
+    "branchName": "J2a1b1",
+    "definingSNPs": [
+      "M68"
+    ],
+    "rsids": [
+      "rs2032635"
+    ]
+  },
+  {
+    "branchName": "J2a1h",
+    "definingSNPs": [
+      "L25"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "J2a1h1",
+    "definingSNPs": [
+      "Z387"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "J2b2",
+    "definingSNPs": [
+      "M241"
+    ],
+    "rsids": [
+      "rs2032661"
+    ]
+  },
+  {
+    "branchName": "J1a1",
+    "definingSNPs": [
+      "L136"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "J1a2",
+    "definingSNPs": [
+      "P58"
+    ],
+    "rsids": [
+      "rs34126399"
+    ]
+  },
+  {
+    "branchName": "J1a2a",
+    "definingSNPs": [
+      "Z2215"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "J1a2a1",
+    "definingSNPs": [
+      "L858"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "N1a1a1",
+    "definingSNPs": [
+      "L708"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "N1a1a1a2a",
+    "definingSNPs": [
+      "VL29"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "O2a1c",
+    "definingSNPs": [
+      "IMS-JST002611"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "Q1a2a1a",
+    "definingSNPs": [
+      "CTS1780"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "Q1a2a1b",
+    "definingSNPs": [
+      "Z780"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "Q1a2b",
+    "definingSNPs": [
+      "F1096"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "D1a2",
+    "definingSNPs": [
+      "M55"
+    ],
+    "rsids": [
+      "rs2032618"
+    ]
+  },
+  {
+    "branchName": "D1a3",
+    "definingSNPs": [
+      "P47"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "B1b",
+    "definingSNPs": [
+      "M192"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "B2a1",
+    "definingSNPs": [
+      "M218"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "B2a1a",
+    "definingSNPs": [
+      "M109"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "T1a1b",
+    "definingSNPs": [
+      "L208"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "H1a1a1",
+    "definingSNPs": [
+      "M82"
+    ],
+    "rsids": [
+      "rs2032637"
+    ]
+  },
+  {
+    "branchName": "H1a2",
+    "definingSNPs": [
+      "M97"
+    ],
+    "rsids": []
+  },
+  {
+    "branchName": "L1c",
+    "definingSNPs": [
+      "M274"
     ],
     "rsids": []
   }
