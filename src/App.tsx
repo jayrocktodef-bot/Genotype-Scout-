@@ -2003,7 +2003,7 @@ export default function App() {
 
   useEffect(() => {
     const checkForceReset = async () => {
-      const CURRENT_BUILD = 'v5.13.1_forced_reset';
+      const CURRENT_BUILD = 'v5.14.0_forced_reset';
       const lastBuild = localStorage.getItem('genotype_scout_build');
       if (lastBuild !== CURRENT_BUILD) {
         console.log(`[App] Forced build reset triggered: ${lastBuild} -> ${CURRENT_BUILD}`);
@@ -2020,6 +2020,7 @@ export default function App() {
             await Promise.all(keys.map(k => caches.delete(k)));
           } catch (e) {}
         }
+        window.location.reload();
       }
     };
     checkForceReset();
