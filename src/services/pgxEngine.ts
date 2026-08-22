@@ -131,5 +131,38 @@ export function calculatePharmacogenomics(snpMap: Record<string, string>): PGxRe
     });
   }
 
+  // VKORC1 (-1639G>A rs9923231) & CYP2C9 (*2 rs1799853, *3 rs1057910) Warfarin Sensitivity
+  const rs9923231 = (snpMap['rs9923231'] || '--').toUpperCase();
+  const rs1799853 = (snpMap['rs1799853'] || '--').toUpperCase();
+  const rs1057910 = (snpMap['rs1057910'] || '--').toUpperCase();
+
+  const isVkorc1Sensitive = rs9923231.includes('A');
+  const hasCyp2c9Variant = rs1799853.includes('T') || rs1057910.includes('C');
+
+  if (isVkorc1Sensitive || hasCyp2c9Variant) {
+    const isHighSensitivity = rs9923231 === 'AA' || (rs1799853.includes('T') && rs1057910.includes('C'));
+    reports.push({
+      gene: 'VKORC1 / CYP2C9',
+      drug: 'Warfarin (Coumadin)',
+      severity: isHighSensitivity ? 'High' : 'Moderate',
+      message: isHighSensitivity
+        ? 'You carry high-sensitivity variants in VKORC1 and/or CYP2C9 that significantly slow warfarin clearance and increase bleeding risk. CPIC recommends starting with a substantially lower dose.'
+        : 'You carry intermediate-sensitivity variants in VKORC1 or CYP2C9. CPIC recommends cautious dose titration and frequent INR monitoring.',
+      phenotype: isHighSensitivity ? 'High Sensitivity' : 'Intermediate Sensitivity'
+    });
+  }
+
+  // DPYD (*2A rs3918290 severe 5-FU toxicity variant)
+  const rs3918290 = (snpMap['rs3918290'] || '--').toUpperCase();
+  if (rs3918290.includes('A')) {
+    reports.push({
+      gene: 'DPYD',
+      drug: 'Fluorouracil (5-FU) / Capecitabine',
+      severity: 'High',
+      message: 'You carry a DPYD loss-of-function allele (*2A). DPYD deficiency severely impairs fluoropyrimidine breakdown, carrying extreme risk for severe or fatal chemotherapy toxicity. CPIC recommends alternative agents or 50%+ dose reduction.',
+      phenotype: rs3918290 === 'AA' ? 'Complete Deficiency' : 'Partial Deficiency'
+    });
+  }
+
   return reports;
 }

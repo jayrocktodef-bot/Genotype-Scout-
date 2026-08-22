@@ -21,11 +21,11 @@ export function calculateBloodType(userSnps: Record<string, string> | undefined)
   let hasA = false;
   let hasB = false;
 
-  // 1. Direct O 261delG frameshift check
+  // 1. Direct O 261delG frameshift check (homozygous deletion = O/O phenotype)
   if (o1Marker && o1Marker !== '--' && o1Marker !== '00' && o1Marker !== 'NN') {
     const cleanO = o1Marker.toUpperCase();
-    if (['DD', 'O/O', '-/-', 'D/D'].includes(cleanO) || cleanO.split('').every(c => c === '-' || c === 'D' || c === 'O')) {
-      isO = TrueHelper(cleanO);
+    if (['DD', 'O/O', '-/-', 'D/D'].includes(cleanO) || (cleanO.length >= 2 && cleanO.split('').every(c => c === '-' || c === 'D' || c === 'O'))) {
+      isO = true;
     }
   }
 
