@@ -550,9 +550,10 @@ const getMasterAims = () => {
 
 function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
     const MIN_MARKERS = 5;           // minimum markers to report a population
-    const SMOOTH = 0.001;            // floor/ceiling for allele frequencies to avoid log(0)
+    const SMOOTH_ALPHA = 0.5;        // Dirichlet/Jeffreys prior pseudocount
 
     const totalLogProb: Record<string, number> = {};
+    const totalWeight: Record<string, number> = {};
     const markerCounts: Record<string, number> = {};
 
     const aims = getMasterAims() as any;
@@ -596,27 +597,36 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
             const COMPLEMENTS: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
             const complementAllele = COMPLEMENTS[effectAllele] || effectAllele;
 
-            // Count how many effect alleles (or strand-complemented alleles) are present
+            // Palindromic SNP strand protection (skip A/T or C/G SNPs if complement ambiguity exists)
+            const isPalindromic = (effectAllele === 'A' && complementAllele === 'T') ||
+                                  (effectAllele === 'T' && complementAllele === 'A') ||
+                                  (effectAllele === 'C' && complementAllele === 'G') ||
+                                  (effectAllele === 'G' && complementAllele === 'C');
+
             let k = 0;
             for (const ch of validAlleles) {
-                if (ch === effectAllele || ch === complementAllele) k++;
+                if (ch === effectAllele || (!isPalindromic && ch === complementAllele)) k++;
             }
 
-            // Helper: HWE-based genotype probability for a given p
-            const genotypeProbability = (p: number): number => {
-                const pClamp = Math.max(SMOOTH, Math.min(1 - SMOOTH, p));
+            // Informativeness / Fst marker weighting (default to 1.0 if unspecified)
+            const markerWeight = typeof aim.weight === 'number' && aim.weight > 0 ? aim.weight : 
+                                 typeof aim.fst === 'number' && aim.fst > 0 ? Math.max(1.0, aim.fst * 5) : 1.0;
+
+            // Dirichlet / Jeffreys Bayesian smoothing for allele frequencies
+            const genotypeProbability = (rawP: number): number => {
+                const pSmooth = Math.max(0.0005, Math.min(0.9995, (rawP * 1000 + SMOOTH_ALPHA) / (1000 + 2 * SMOOTH_ALPHA)));
                 if (ploidy === 1) {
-                    return k >= 1 ? pClamp : (1 - pClamp);
+                    return k >= 1 ? pSmooth : (1 - pSmooth);
                 } else {
-                    // assume diploid
-                    if (k === 0) return (1 - pClamp) ** 2;
-                    if (k === 1) return 2 * pClamp * (1 - pClamp);
-                    if (k >= 2) return pClamp ** 2;
+                    // assume diploid HWE
+                    if (k === 0) return (1 - pSmooth) ** 2;
+                    if (k === 1) return 2 * pSmooth * (1 - pSmooth);
+                    if (k >= 2) return pSmooth ** 2;
                     return 0;
                 }
             };
 
-            // Accumulate log-probabilities per population
+            // Accumulate weighted log-probabilities per population
             for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
                 const cleanPop = pop.toUpperCase().trim();
                 if (cleanPop === 'GLOBAL' || cleanPop === 'ASI') continue;
@@ -625,27 +635,31 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
                 const prob = genotypeProbability(p);
                 if (prob <= 0) continue;
 
-                totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + Math.log(prob);
+                totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + (markerWeight * Math.log(prob));
+                totalWeight[cleanPop] = (totalWeight[cleanPop] || 0) + markerWeight;
                 markerCounts[cleanPop] = (markerCounts[cleanPop] || 0) + 1;
             }
         }
     }
 
-    // Compute average log-likelihood per marker for each population
+    // Compute average weighted log-likelihood per marker for each population
     const avgLogProbs: Record<string, number> = {};
     let maxAvgLogProb = -Infinity;
 
     for (const pop in totalLogProb) {
-        if (markerCounts[pop] >= MIN_MARKERS) {
-            const avg = totalLogProb[pop] / markerCounts[pop];
+        if (markerCounts[pop] >= MIN_MARKERS && totalWeight[pop] > 0) {
+            const avg = totalLogProb[pop] / totalWeight[pop];
             avgLogProbs[pop] = avg;
             if (avg > maxAvgLogProb) maxAvgLogProb = avg;
         }
     }
 
-    // Temperature-scaled Log-Sum-Exp Softmax (T = 16.0)
-    // Prevents floating-point underflow while preserving true statistical discrimination
-    const TEMP_SCALE = 16.0;
+    // Adaptive Softmax Temperature Scaling
+    // Dynamically adjusts temperature scale based on mean marker count to prevent probability collapse
+    const totalPops = Object.keys(avgLogProbs).length;
+    const avgCount = totalPops > 0 ? Object.values(markerCounts).reduce((a, b) => a + b, 0) / totalPops : 100;
+    const TEMP_SCALE = Math.max(10.0, Math.min(24.0, 16.0 * Math.sqrt(100 / Math.max(20, avgCount))));
+
     const scores: Record<string, number> = {};
     let sumScores = 0;
 
