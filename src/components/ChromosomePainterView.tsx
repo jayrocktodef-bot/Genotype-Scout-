@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Dna, Loader2, X, HelpCircle } from 'lucide-react';
+import { Dna, Loader2, X, HelpCircle, Search } from 'lucide-react';
 import { ChromosomePainter } from './ChromosomePainter';
-import { ChromosomePainter3D } from './ChromosomePainter3D';
 import { workerPoolEngine } from '../engines/ancestry/workerPoolEngine';
 
 const POP_COLORS: Record<string, string> = {
@@ -45,18 +44,27 @@ export const ChromosomePainterView = ({
   const [retryCount, setRetryCount] = useState(0);
   const [selectedSegment, setSelectedSegment] = useState<{ chrom: string; strand: 'A' | 'B' | 'Both'; segment: Segment; bp: number } | null>(null);
   const [snpsUsedForLAI, setSnpsUsedForLAI] = useState<any[]>([]);
-  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d');
+  const [snpSearchQuery, setSnpSearchQuery] = useState<string>('');
 
   const snpsInSegment = useMemo(() => {
     if (!selectedSegment || snpsUsedForLAI.length === 0) return [];
     const { chrom, segment } = selectedSegment;
-    return snpsUsedForLAI.filter((r: any) => {
+    const matched = snpsUsedForLAI.filter((r: any) => {
       if (!r.chrom || r.pos === undefined) return false;
-      const c = r.chrom.replace('chr', '').toUpperCase();
-      const targetC = chrom.replace('chr', '').toUpperCase();
+      const c = String(r.chrom).replace('chr', '').toUpperCase();
+      const targetC = String(chrom).replace('chr', '').toUpperCase();
       return c === targetC && r.pos >= segment.start && r.pos <= segment.end;
     });
-  }, [selectedSegment, snpsUsedForLAI]);
+
+    if (!snpSearchQuery.trim()) return matched;
+
+    const q = snpSearchQuery.trim().toLowerCase();
+    return matched.filter((s: any) => 
+      (s.rsid || '').toLowerCase().includes(q) ||
+      (s.genotype || '').toLowerCase().includes(q) ||
+      (s.chrom || '').toLowerCase().includes(q)
+    );
+  }, [selectedSegment, snpsUsedForLAI, snpSearchQuery]);
 
   useEffect(() => {
     if (!dataset) return;
@@ -81,7 +89,7 @@ export const ChromosomePainterView = ({
           normalizedMetaMap.set(key.toLowerCase(), val);
         }
         
-        const { getAimsByRsids, getIndexedDBKeys } = await import('../services/dbHydrator');
+        const { getAimsByRsids } = await import('../services/dbHydrator');
         
         let aimsDb: Record<string, any> = {};
         let rawMatchingRsids: string[] = [];
@@ -97,7 +105,7 @@ export const ChromosomePainterView = ({
           aimsDb = await getAimsByRsids(rawMatchingRsids);
         }
 
-        // Dynamically supplement any missing keys from static masterAims
+        // Supplement any missing keys from static masterAims
         const missingRsids = rawMatchingRsids.filter(rsid => !aimsDb[rsid]);
         if (missingRsids.length > 0) {
           const { loadMasterAims } = await import('../data/index');
@@ -119,16 +127,13 @@ export const ChromosomePainterView = ({
           }
         }
 
-        // Build snpsForLAI: cross-reference AIM keys with user SNPs
-        // Use mergedSnpMetaMap from the raw file for chrom/pos (AIM entries often lack this data)
+        // Build snpsForLAI: cross-reference AIM keys with user SNPs + metadata
         let snpsForLAI = rawMatchingRsids
           .map((key) => {
             const aim = aimsDb[key];
-            if (!aim) return null;
             const base = key.split('_')[0];
             const genotype = normalizedUserSnpMap.get(key) || normalizedUserSnpMap.get(base) || (dataset.results?.find((r: any) => (r.rsid || r.markerId || "").toLowerCase() === key)?.genotype) || '--';
             
-            // Priority: user meta map (from raw file) → AIM entry → skip
             const meta = normalizedMetaMap.get(base) || normalizedMetaMap.get(key);
             let chrom: string | undefined;
             let pos: number | undefined;
@@ -136,8 +141,7 @@ export const ChromosomePainterView = ({
             if (meta) {
               chrom = meta.chrom;
               pos = meta.pos;
-            } else {
-              // Fallback to AIM entry (may be "Unknown" or undefined)
+            } else if (aim) {
               const aimChrom = aim?.chromosome || aim?.chrom;
               const aimPos = aim?.position !== undefined ? aim.position : aim?.pos;
               if (aimChrom && aimChrom !== 'Unknown' && aimChrom !== 'unknown') {
@@ -148,10 +152,12 @@ export const ChromosomePainterView = ({
               }
             }
 
+            if (!chrom || pos === undefined) return null;
+
             return {
               rsid: key,
               genotype: genotype || '--',
-              chrom: chrom ? String(chrom).replace('chr', '').toUpperCase() : '',
+              chrom: String(chrom).replace('chr', '').toUpperCase(),
               pos
             };
           })
@@ -214,7 +220,7 @@ export const ChromosomePainterView = ({
             <div>
               <h2 className="text-2xl sm:text-3xl sm:text-4xl font-black text-[#F5F6F7] mb-2 tracking-tighter">Chromosome Painting Map</h2>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-2xl">
-                Maternal vs. Paternal segment-by-segment ancestral origin mapping of your 22 autosomes. For each chromosome pair, the left chromatid represents Strand A (maternal) and the right chromatid represents Strand B (paternal) computed via hidden Markov model smoothing.
+                Maternal vs. Paternal segment-by-segment ancestral origin mapping of your 22 autosomes. For each chromosome pair, the top chromatid represents Strand A (maternal) and the bottom chromatid represents Strand B (paternal) computed via hidden Markov model smoothing.
               </p>
             </div>
           </div>
@@ -236,40 +242,13 @@ export const ChromosomePainterView = ({
           </div>
         ) : localSegments ? (
           <div className="relative">
-            {/* View Mode Toggle */}
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2 flex items-center bg-slate-900/80 backdrop-blur border border-white/10 rounded-xl p-1 z-20">
-              <button 
-                onClick={() => setViewMode('2d')}
-                className={`px-6 py-2 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${viewMode === '2d' ? 'bg-teal-500/20 text-teal-300 shadow-sm' : 'text-slate-500 hover:text-slate-300'}`}
-              >
-                2D Flat
-              </button>
-              <button 
-                onClick={() => setViewMode('3d')}
-                className={`px-6 py-2 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${viewMode === '3d' ? 'bg-indigo-500/20 text-indigo-300 shadow-sm' : 'text-slate-500 hover:text-slate-300'}`}
-              >
-                3D Spatial
-              </button>
-            </div>
+            <ChromosomePainter 
+              segments={localSegments} 
+              onSegmentClick={(chrom, strand, segment, bp) => {
+                setSelectedSegment({ chrom, strand, segment, bp });
+              }}
+            />
 
-            {viewMode === '2d' ? (
-              <ChromosomePainter 
-                segments={localSegments} 
-                width={700} 
-                height={500} 
-                onSegmentClick={(chrom, strand, segment, bp) => {
-                  setSelectedSegment({ chrom, strand, segment, bp });
-                }}
-              />
-            ) : (
-              <ChromosomePainter3D
-                segments={localSegments}
-                activeContinentFilter={null}
-                onSegmentClick={(chrom, strand, segment, bp) => {
-                  setSelectedSegment({ chrom, strand, segment, bp });
-                }}
-              />
-            )}
             {/* Detailed Segment Popover/Drawer */}
             <AnimatePresence>
               {selectedSegment && (
@@ -277,10 +256,10 @@ export const ChromosomePainterView = ({
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 50 }}
-                  className="absolute right-0 top-0 bottom-0 w-80 bg-slate-900/95 border-l border-slate-800 text-white p-6 shadow-2xl flex flex-col justify-between overflow-y-auto z-10 rounded-r-3xl"
+                  className="absolute right-0 top-0 bottom-0 w-80 sm:w-96 bg-slate-900/95 border-l border-slate-800 text-white p-5 shadow-2xl flex flex-col justify-between overflow-y-auto z-30 rounded-r-3xl backdrop-blur-lg"
                 >
-                  <div className="space-y-6">
-                    <div className="flex justify-between items-start">
+                  <div className="space-y-5">
+                    <div className="flex justify-between items-start border-b border-slate-800 pb-3">
                       <div>
                         <span className="text-[10px] font-black text-teal-400 uppercase tracking-widest block">Chromosome {selectedSegment.chrom}</span>
                         <h4 className="text-lg font-black text-white mt-1 leading-none">Segment Details</h4>
@@ -293,7 +272,7 @@ export const ChromosomePainterView = ({
                       </button>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-3">
                       <div className="p-3 bg-slate-800/50 rounded-xl border border-slate-700/50">
                         <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Ancestral Origin</span>
                         <span className="text-sm font-black text-white mt-1 block flex items-center gap-2">
@@ -319,21 +298,35 @@ export const ChromosomePainterView = ({
                         </span>
                       </div>
 
-                      <div className="pt-2">
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">Matched SNPs ({snpsInSegment.length})</span>
-                        <div className="space-y-1.5 max-h-52 overflow-y-auto pr-1 scrollbar-thin">
-                          {snpsInSegment.slice(0, 30).map((snp: any, i: number) => (
-                            <div key={i} className="flex justify-between items-center text-[10px] bg-slate-800/30 p-2 rounded-lg border border-slate-800">
-                              <span className="font-mono text-sky-400">{snp.rsid || snp.markerId}</span>
+                      {/* SNP Search Input */}
+                      <div className="pt-2 space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">Matched DNA Markers ({snpsInSegment.length})</span>
+                        </div>
+                        <div className="relative">
+                          <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5 pointer-events-none" />
+                          <input 
+                            type="text"
+                            placeholder="Filter rsID, gene, or genotype..."
+                            value={snpSearchQuery}
+                            onChange={(e) => setSnpSearchQuery(e.target.value)}
+                            className="w-full bg-slate-950 text-slate-200 text-xs pl-8 pr-3 py-1.5 rounded-lg border border-slate-800 focus:outline-none focus:border-teal-500/50"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5 max-h-60 overflow-y-auto pr-1 scrollbar-thin">
+                          {snpsInSegment.slice(0, 50).map((snp: any, i: number) => (
+                            <div key={i} className="flex justify-between items-center text-[10px] bg-slate-800/30 p-2 rounded-lg border border-slate-800 hover:border-slate-700 transition-colors">
+                              <span className="font-mono text-sky-400 font-bold">{snp.rsid || snp.markerId}</span>
                               <span className="font-mono text-slate-400">pos: {(snp.pos / 1000000).toFixed(2)}M</span>
-                              <span className="font-mono font-black text-white">{snp.genotype || '--'}</span>
+                              <span className="font-mono font-black text-teal-300 bg-teal-950/60 px-1.5 py-0.5 rounded border border-teal-800/50">{snp.genotype || '--'}</span>
                             </div>
                           ))}
                           {snpsInSegment.length === 0 && (
-                            <span className="text-[10px] text-slate-500 italic block dark:text-slate-400">No call SNPs in this segment window</span>
+                            <span className="text-[10px] text-slate-500 italic block dark:text-slate-400 text-center py-3">No matching DNA markers in this range</span>
                           )}
-                          {snpsInSegment.length > 30 && (
-                            <span className="text-[9px] text-slate-500 text-center block pt-1 dark:text-slate-400">...and {snpsInSegment.length - 30} more SNPs</span>
+                          {snpsInSegment.length > 50 && (
+                            <span className="text-[9px] text-slate-500 text-center block pt-1 dark:text-slate-400">...and {snpsInSegment.length - 50} more markers</span>
                           )}
                         </div>
                       </div>
@@ -341,7 +334,7 @@ export const ChromosomePainterView = ({
                   </div>
 
                   <div className="pt-4 border-t border-slate-800 text-[9px] text-slate-500 text-center uppercase tracking-widest dark:text-slate-400">
-                    Interactive Segment Inspector
+                    Interactive Segment & DNA Inspector
                   </div>
                 </motion.div>
               )}
