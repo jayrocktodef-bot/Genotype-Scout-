@@ -193,7 +193,23 @@ export const Y_DNA_TREE: HaplogroupNode = {
           branchName: "Haplogroup C2", 
           snp: ["M217", "rs2032621", "i4000043"],
           region: "Central/East Asia",
-          description: "The most common branch of Haplogroup C, widespread in Mongolia, Siberia, and Central Asia. Associated with the expansion of the Mongol Empire."
+          description: "The most common branch of Haplogroup C, widespread in Mongolia, Siberia, and Central Asia. Associated with the expansion of the Mongol Empire.",
+          children: [
+            {
+              branchName: "C2a-F1067",
+              snp: ["F1067", "M217"],
+              region: "Central Asia, East Asia, Siberia",
+              description: "Widespread in Mongolic, Turkic, and Tungusic populations across East Asia.",
+              historicalContext: "Associated with the spread of nomadic pastoralism and the Mongol Empire."
+            },
+            {
+              branchName: "C2b-L1373",
+              snp: ["L1373", "M48", "P53"],
+              region: "Mongolia, Siberia, Central Asia",
+              description: "Found in Mongolic and some Turkic groups, including northern Mongols.",
+              historicalContext: "Linked to the rise of the Mongol Empire and ancient northern Asian pastoralist confederations."
+            }
+          ]
         }
       ]
     },
@@ -210,22 +226,18 @@ export const Y_DNA_TREE: HaplogroupNode = {
           description: "The primary branch of D found in Tibet and surrounding regions.",
           children: [
             {
-              branchName: "Haplogroup D1a1",
-              snp: ["M15"],
-              region: "Tibet / Southeast Asia",
-              description: "Common among Tibeto-Burman speakers and found at low frequencies in Southeast Asia."
+              branchName: "D1a1a-M15",
+              snp: ["M15", "P99", "M174"],
+              region: "Tibet, Qinghai, Sichuan",
+              description: "Common in Tibetan and other Tibeto-Burman populations.",
+              historicalContext: "Associated with the early peopling of the Tibetan Plateau and high-altitude hypoxia adaptation."
             },
             {
-              branchName: "Haplogroup D1a2",
-              snp: ["P99"],
-              region: "Tibet / Central Asia",
-              description: "Found primarily in Tibet and among some Central Asian populations."
-            },
-            {
-              branchName: "Haplogroup D1b",
-              snp: ["M55", "rs2032622"],
-              region: "Japan",
-              description: "The 'Ainu' or 'Jomon' marker, found at high frequencies in Japan, particularly among the Ainu people and in Okinawa. It represents the indigenous hunter-gatherer lineage of the Japanese archipelago."
+              branchName: "D1a2a-M55",
+              snp: ["M55", "P37", "M179", "rs2032622"],
+              region: "Japan (Ainu, Ryukyuan, Yamato)",
+              description: "The indigenous Jomon hunter-gatherer marker of Japan. Found at very high frequencies in Ainu and Ryukyuan people.",
+              historicalContext: "Linked to the Jomon period (14,000–300 BCE) before the Yayoi agricultural migration from the mainland."
             }
           ]
         },
@@ -767,19 +779,74 @@ export const Y_DNA_TREE: HaplogroupNode = {
           branchName: "Haplogroup O1", 
           snp: ["MSY2.2", "rs2032647", "i4000052"],
           region: "Southeast Asia / Taiwan",
-          description: "Associated with Austronesian-speaking populations."
+          description: "Associated with Austronesian-speaking populations.",
+          children: [
+            {
+              branchName: "O1a-M119",
+              snp: ["M119", "P203", "M101"],
+              region: "Southeast Asia, southern China, Taiwan",
+              description: "Common in Austronesian-speaking populations and southern Han Chinese.",
+              historicalContext: "Associated with early Austronesian expansion and Neolithic farming cultures of coastal southern China."
+            },
+            {
+              branchName: "O1b1-M95",
+              snp: ["M95", "P203", "M88"],
+              region: "Southeast Asia, South Asia, southern China",
+              description: "Frequent in Austroasiatic speakers (e.g., Khmer, Mon) and some Tai-Kadai groups.",
+              historicalContext: "Linked to the spread of rice agriculture and Austroasiatic language expansion from southern China."
+            },
+            {
+              branchName: "O1b2-M176",
+              snp: ["M176", "P49", "47z"],
+              region: "Japan, Korea, Manchuria",
+              description: "The 'Yayoi' lineage, common in Japanese and Korean populations.",
+              historicalContext: "Associated with the Yayoi migration from the Korean Peninsula to Japan, introducing wet-rice agriculture (~300 BCE)."
+            }
+          ]
         },
         { 
           branchName: "Haplogroup O2", 
           snp: ["P31", "rs2032648", "i4000053"],
           region: "Southeast Asia",
-          description: "Common in Southeast Asia, particularly in Austroasiatic-speaking groups."
+          description: "Common in Southeast Asia, particularly in Austroasiatic-speaking groups.",
+          children: [
+            {
+              branchName: "O2a1-L127",
+              snp: ["L127", "M164", "F187"],
+              region: "East Asia, Southeast Asia",
+              description: "Found in various Han Chinese and minority groups in southern China and Southeast Asia.",
+              historicalContext: "Part of the O2a lineage that expanded with early agricultural societies in East Asia."
+            }
+          ]
         },
         { 
           branchName: "Haplogroup O3", 
           snp: ["M122", "rs2032649", "i4000054"],
           region: "East Asia",
-          description: "The most frequent branch of Haplogroup O, dominant among Han Chinese."
+          description: "The most frequent branch of Haplogroup O, dominant among Han Chinese.",
+          children: [
+            {
+              branchName: "O2a2b-F46",
+              snp: ["F46", "M188", "P164"],
+              region: "China, Korea, Japan",
+              description: "A major subclade of O2a2b, common in Han Chinese and Korean/Japanese populations.",
+              historicalContext: "Expanded during the Neolithic and Bronze Age, linked to the spread of early East Asian civilizations."
+            },
+            {
+              branchName: "O2a2b1-M134",
+              snp: ["M134", "M117", "F450"],
+              region: "China, Tibet, Southeast Asia",
+              description: "Dominant in Sino-Tibetan speaking populations, especially Han Chinese and Tibetans.",
+              historicalContext: "Strongly associated with the expansion of Sino-Tibetan languages and the Yellow River agricultural expansion."
+            },
+            {
+              branchName: "O2a2b2-F11",
+              snp: ["F11", "F175", "F438"],
+              region: "China, Southeast Asia",
+              description: "Common in southern Han Chinese and some Tai-Kadai and Hmong-Mien groups.",
+              historicalContext: "Linked to the Neolithic expansion of rice-farming communities in the Yangtze River valley."
+            }
+          ]
         }
       ]
     },
@@ -1107,20 +1174,97 @@ export const MT_DNA_TREE: HaplogroupNode = {
             },
             { branchName: "M30", mutations: ["G16223A", "G16311A"], region: "South Asia", description: "A widespread South Asian branch." },
             { branchName: "M33", mutations: ["G16223A"], region: "South Asia" },
-            { branchName: "M7", mutations: ["G16297A"], region: "East Asia (Japan/China)" },
+            { 
+              branchName: "M7", 
+              mutations: ["G16297A"], 
+              region: "East Asia (Japan/China)", 
+              children: [
+                {
+                  branchName: "M7a",
+                  mutations: ["C16223T", "G16297A", "C16319T"],
+                  region: "Japan (Jomon / Ryukyu / Ainu)",
+                  description: "Indigenous Japanese Jomon maternal lineage, common in Ryukyuan and Ainu populations.",
+                  historicalContext: "Associated with the ancient Jomon period hunter-gatherers of Japan."
+                },
+                {
+                  branchName: "M7b1",
+                  mutations: ["G16297A", "T16319C"],
+                  region: "Southeast Asia, Southern China",
+                  description: "Common in Austronesian and Austroasiatic populations.",
+                  historicalContext: "Linked to the expansion of early rice agriculture in Southeast Asia."
+                }
+              ]
+            },
             { branchName: "M8", mutations: ["G16319A"], region: "East Asia", children: [
+              {
+                branchName: "M8a",
+                mutations: ["C16223T", "G16319A", "T16298C"],
+                region: "East Asia, Siberia",
+                description: "Common in northern East Asian populations, including Koreans and Japanese."
+              },
               { branchName: "CZ", mutations: ["G16298A"], children: [
                 { branchName: "C", mutations: ["G16327A"], region: "Siberia / Americas" },
-                { branchName: "Z", mutations: ["G16185A"], region: "Northern Eurasia" }
+                { 
+                  branchName: "Z", 
+                  mutations: ["G16185A"], 
+                  region: "Northern Eurasia",
+                  children: [
+                    {
+                      branchName: "Z1",
+                      mutations: ["C16223T", "C16260T", "G16319A"],
+                      region: "Siberia, East Asia, Northern Europe",
+                      description: "Common in Siberian and Uralic reindeer-herding populations."
+                    }
+                  ]
+                }
               ]}
             ]},
-            { branchName: "M9", mutations: ["G16223A", "G16311A"], region: "East Asia" },
+            { 
+              branchName: "M9", 
+              mutations: ["G16223A", "G16311A"], 
+              region: "East Asia",
+              children: [
+                {
+                  branchName: "M9a",
+                  mutations: ["C16223T", "G16319A", "C16234T"],
+                  region: "Tibet, East Asia",
+                  description: "Frequent in Tibetan and other Tibeto-Burman populations.",
+                  historicalContext: "Associated with the prehistoric peopling of the Tibetan Plateau."
+                }
+              ]
+            },
             { branchName: "M10", mutations: ["G16129A"], region: "East Asia" },
             { 
               branchName: "Haplogroup D", 
               mutations: ["G16362A"], 
               region: "East Asia / Americas",
-              historicalContext: "D is a widespread East Asian lineage and another founding member of the Native American gene pool. It is especially common in Siberia and East Asia."
+              historicalContext: "D is a widespread East Asian lineage and another founding member of the Native American gene pool.",
+              children: [
+                {
+                  branchName: "D4a",
+                  mutations: ["C16286T", "G16319A", "G16362A"],
+                  region: "East Asia, Siberia",
+                  description: "Common in northern East Asian populations, including Japanese and Koreans."
+                },
+                {
+                  branchName: "D4b",
+                  mutations: ["C16223T", "G16362A", "G16319A"],
+                  region: "East Asia, Siberia",
+                  description: "Widespread in East Asian populations, with high frequency in Siberian groups."
+                },
+                {
+                  branchName: "D4j",
+                  mutations: ["C16223T", "G16362A", "C16189T"],
+                  region: "Japan, Korea, China",
+                  description: "Found in Japanese and Korean populations, linked to Jomon and Yayoi migrations."
+                },
+                {
+                  branchName: "D4g",
+                  mutations: ["C16223T", "G16362A", "C16291T"],
+                  region: "East Asia, Central Asia",
+                  description: "Present in various East Asian and Central Asian populations."
+                }
+              ]
             },
             { 
               branchName: "Haplogroup G", 
@@ -1137,7 +1281,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
           mutations: ["G8701A", "G9540A", "G10398A", "G10873A", "G15301A"],
           region: "Eurasia / Oceania / Americas",
           description: "The other major lineage that migrated out of Africa. It is the ancestor of almost all European and many Asian lineages.",
-          historicalContext: "N likely branched early from L3 after the exit from Africa. It moved into Southwest Asia and then radiated into Europe and Northern Asia, serving as the common maternal ancestor for nearly all West Eurasians.",
+          historicalContext: "N likely branched early from L3 after the exit from Africa.",
           children: [
             { branchName: "N1", mutations: ["G16147A", "G16223A"], children: [
               { branchName: "I", mutations: ["G16129A", "G16223A"], region: "Europe / Near East" }
@@ -1151,13 +1295,27 @@ export const MT_DNA_TREE: HaplogroupNode = {
             ]},
             { branchName: "U7", mutations: ["G16311A", "C16318T"], region: "South Asia / Middle East", description: "Found primarily in India, Iran, and the Caucasus." },
             { branchName: "N9", mutations: ["T16223C", "G16311A"], region: "East Asia / Siberia / Japan", children: [
+              {
+                branchName: "N9a",
+                mutations: ["C16223T", "C16257T", "C16261T"],
+                region: "East Asia, Japan, Korea",
+                description: "Common in Japanese and Korean populations, linked to early East Asian agricultural expansions."
+              },
               { branchName: "Y", mutations: ["G16126C", "G16231A"], region: "Siberia / East Asia" }
             ]},
             { 
               branchName: "Haplogroup A", 
               mutations: ["G16223A", "G16290A", "G16319A"], 
               region: "East Asia / Americas",
-              historicalContext: "A is one of the founding lineages of the Americas. It is found across North and Central Asia and reached high frequencies among the indigenous peoples of North America."
+              historicalContext: "A is one of the founding lineages of the Americas.",
+              children: [
+                {
+                  branchName: "A11",
+                  mutations: ["C16223T", "G16290A", "G16319A"],
+                  region: "East Asia, Siberia",
+                  description: "Found in northern East Asian and Siberian populations."
+                }
+              ]
             },
             { 
               branchName: "Haplogroup S", 
