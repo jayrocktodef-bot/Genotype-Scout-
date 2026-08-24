@@ -280,6 +280,220 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     keyMarkers: ['rs2814778-C (~76%)', 'rs1426654-A (~23%)'],
     empiricalSource: { dataset: 'Multiethnic Cohort (MEC)', accession: 'dbGaP phs000517', sampleSize: 2000, admixtureBreakdown: '76% West/Central African, 23% European, 1% Native American' }
   },
+  {
+    code: 'MSL',
+    aliases: ['Mende', 'sgdp_mende', 'hgdp_mende'],
+    name: 'Mende / Sierra Leone (MSL)',
+    category: 'Africa',
+    geographicCenter: 'Southern & Eastern Sierra Leone (Mande belt)',
+    historicalTimeline: 'Mande-speaking West African lineage originating from the upper Niger River basin, settling the forested Windward Coast.',
+    migrationPath: ['Upper Niger agricultural expansion → Windward Coast forest settlement (~1,500 BP)'],
+    evolutionaryAdaptations: [
+      { trait: 'Duffy Null Malaria Resistance', gene: 'ACKR1', rsid: 'rs2814778', impact: 'Fixation (100%) conferring resistance to P. vivax.' },
+      { trait: 'Sickle Cell Trait', gene: 'HBB', rsid: 'rs334', impact: 'Heterozygote advantage against falciparum malaria.' }
+    ],
+    description: 'Mende (MSL) from 1000 Genomes Phase 3 represents Mande-speaking West African Windward Coast genetic diversity.',
+    keyMarkers: ['rs2814778-C', 'rs334-A', 'Y-DNA E-M2'],
+    haplogroupNotes: 'Y-DNA E1b1a1a1 (E-M2); mtDNA L2a, L3b, L3e.'
+  },
+  {
+    code: 'GWD',
+    aliases: ['Mandinka', 'Wolof', 'sgdp_mandinka', 'sgdp_wolof'],
+    name: 'Gambian in Mandeni (GWD)',
+    category: 'Africa',
+    geographicCenter: 'Gambia River Basin, Senegal, The Gambia',
+    historicalTimeline: 'Upper Guinea coastal population shaped by the medieval Mali Empire and Jolof Empire.',
+    migrationPath: ['Mali Empire westward expansion down the Gambia River (~13th Century CE)'],
+    evolutionaryAdaptations: [
+      { trait: 'APOL1 Sleeping Sickness Immunity', gene: 'APOL1', impact: 'Lytic factor variants G1/G2 against T. b. rhodesiense.' }
+    ],
+    description: 'Gambian in Mandeni (GWD) represents Upper Guinea Coast West African ancestry (Mandinka, Wolof, Jola).',
+    keyMarkers: ['rs2814778-C', 'Y-DNA E-M2', 'E-M33'],
+    haplogroupNotes: 'Y-DNA E1b1a (E-M2), E1b1a1a1g; mtDNA L2a1, L3b, L1b.'
+  },
+  {
+    code: 'ESN',
+    aliases: ['Esan', 'Edo', 'sgdp_esan'],
+    name: 'Esan / Benin Kingdom (ESN)',
+    category: 'Africa',
+    geographicCenter: 'Edo State, Southwestern Nigeria',
+    historicalTimeline: 'Edoid-speaking lineage historically integral to the ancient Kingdom of Benin (11th–19th Century CE).',
+    migrationPath: ['Niger-Benue confluence agricultural expansion → Rainforest Kingdom of Benin urban development'],
+    evolutionaryAdaptations: [
+      { trait: 'Duffy Null Fixation', gene: 'ACKR1', rsid: 'rs2814778', impact: '100% fixation of P. vivax resistance.' }
+    ],
+    description: 'Esan (ESN) from 1000 Genomes Phase 3 represents Edoid West African ancestry from the Benin Kingdom region.',
+    keyMarkers: ['rs2814778-C', 'rs334-A', 'Y-DNA E-M2'],
+    haplogroupNotes: 'Y-DNA E-M2 (>95%); mtDNA L2a, L3e.'
+  },
+  {
+    code: 'IGBO',
+    aliases: ['Igbo', 'Ibo', 'Biafra'],
+    name: 'Igbo / Southeastern Nigeria (IGBO)',
+    category: 'Africa',
+    geographicCenter: 'Southeastern Nigeria (Anambra, Enugu, Imo, Abia)',
+    historicalTimeline: 'Volta-Niger speaking lineage associated with the Nri Kingdom (9th Century CE) and Bight of Biafra agricultural history.',
+    migrationPath: ['Lower Niger basin agricultural settlement → Nri Kingdom economic & bronze metalwork expansion'],
+    evolutionaryAdaptations: [
+      { trait: 'Sickle Cell & APOL1 Selection', gene: 'HBB / APOL1', rsid: 'rs334', impact: 'High protection against malaria and sleeping sickness.' }
+    ],
+    description: 'Igbo represents major Southeastern Nigerian West African ancestry, a primary source region during historical transatlantic migrations.',
+    keyMarkers: ['rs2814778-C', 'rs334-A', 'Y-DNA E-M2'],
+    haplogroupNotes: 'Y-DNA E-M2 (~92%); mtDNA L2a1, L3e, L1b.'
+  },
+  {
+    code: 'AKAN_ASHANTI',
+    aliases: ['Akan', 'Ashanti', 'Fante', 'Ghana'],
+    name: 'Akan & Ashanti / Gold Coast (AKAN)',
+    category: 'Africa',
+    geographicCenter: 'Ashanti Region, Southern Ghana & Ivory Coast',
+    historicalTimeline: 'Kwa-speaking lineage associated with the Ashanti Empire (17th–19th Century CE) and Gold Coast history.',
+    migrationPath: ['Sahelian agricultural shifts southward into Gold Coast forest zone → Ashanti Empire unification'],
+    evolutionaryAdaptations: [
+      { trait: 'G6PD Deficiency Malaria Protection', gene: 'G6PD', rsid: 'rs1050828', impact: 'G6PD A- variant conferring falciparum malaria protection.' }
+    ],
+    description: 'Akan & Ashanti represents Gold Coast West African ancestry, famed for gold metallurgy and Ashanti Empire history.',
+    keyMarkers: ['rs1050828-T (G6PD A-)', 'rs2814778-C', 'Y-DNA E-M2'],
+    haplogroupNotes: 'Y-DNA E-M2 (~90%); mtDNA L2a, L3e, L1b.'
+  },
+  {
+    code: 'FULANI',
+    aliases: ['Fulani', 'Peul', 'Fula', 'sgdp_fulani'],
+    name: 'Fulani / Trans-Sahelian Pastoralist (FULANI)',
+    category: 'Africa',
+    geographicCenter: 'Sahel region across West & Central Africa (Senegal to Sudan)',
+    historicalTimeline: 'Nomadic pastoralist population exhibiting Senegambian West African ancestry blended with ancient North African / Eurasian admixture (~20-30%).',
+    migrationPath: ['Senegambian roots → Trans-Sahelian eastward pastoralist migrations across West Africa'],
+    evolutionaryAdaptations: [
+      { trait: 'African Lactase Persistence T-13910', gene: 'MCM6', rsid: 'rs4988235', impact: 'Pastoralist milk adaptation.' }
+    ],
+    description: 'Fulani (Peul) is a nomadic pastoralist African population characterized by West African roots with ancient Eurasian/North African admixture.',
+    keyMarkers: ['rs4988235-T', 'Y-DNA E-M2', 'T1a', 'R1b-V88'],
+    haplogroupNotes: 'Y-DNA E-M2, R1b-V88, T1a; mtDNA L2a, L3b, H1, J1.'
+  },
+  {
+    code: 'HAUSA',
+    aliases: ['Hausa', 'sgdp_hausa'],
+    name: 'Hausa / Chadic Afroasiatic (HAUSA)',
+    category: 'Africa',
+    geographicCenter: 'Northern Nigeria & Southern Niger (Kano, Katsina, Sokoto)',
+    historicalTimeline: 'Chadic Afroasiatic-speaking urban trade civilization of the Hausa Kingdoms (Kano, Katsina) across the trans-Saharan trade network.',
+    migrationPath: ['Sahara desertification → Sahelian settlement → Trans-Saharan trade urban centers'],
+    evolutionaryAdaptations: [
+      { trait: 'Arid Climate Lipid Metabolism', gene: 'FADS1', impact: 'Adapted to Sahelian cereal and cattle trade diets.' }
+    ],
+    description: 'Hausa represents Northern Nigerian and Niger Chadic-speaking West African trade civilization ancestry.',
+    keyMarkers: ['rs2814778-C', 'Y-DNA E-M2', 'R1b-V88'],
+    haplogroupNotes: 'Y-DNA E-M2, R1b-V88 (~15-20%); mtDNA L2a, L3e, L3f.'
+  },
+  {
+    code: 'BAKONGO',
+    aliases: ['Bakongo', 'Kongo', 'sgdp_kongo', 'Angola'],
+    name: 'Bakongo / Kingdom of Kongo (BAKONGO)',
+    category: 'Africa',
+    geographicCenter: 'Northern Angola, DRC, Congo Republic (Congo River estuary)',
+    historicalTimeline: 'Bantu-speaking lineage associated with the Kingdom of Kongo (14th–19th Century CE). Major ancestral component in the Transatlantic Diaspora.',
+    migrationPath: ['Early Bantu expansion southward from Cross River → Congo Basin riverine expansion → Kingdom of Kongo'],
+    evolutionaryAdaptations: [
+      { trait: 'Tropical Rainforest Immune Profiling', gene: 'ACKR1 / APOL1', impact: 'Fixation of Duffy null malaria resistance.' }
+    ],
+    description: 'Bakongo represents West-Central African Bantu ancestry from the Kingdom of Kongo and Angola coast.',
+    keyMarkers: ['rs2814778-C', 'Y-DNA E-M2 (E-P252)', 'mtDNA L1b, L2a'],
+    haplogroupNotes: 'Y-DNA E-M2 (~95%); mtDNA L1b, L2a, L3e.'
+  },
+  {
+    code: 'LUBA',
+    aliases: ['Luba', 'Baluba', 'sgdp_luba'],
+    name: 'Luba / Central Congo (LUBA)',
+    category: 'Africa',
+    geographicCenter: 'Kasai & Katanga provinces, Democratic Republic of Congo',
+    historicalTimeline: 'Bantu-speaking lineage associated with the Luba Empire (16th–19th Century CE) in Central Africa.',
+    migrationPath: ['Central African riverine Bantu expansion → Luba Empire unification in Kasai-Katanga savannas'],
+    evolutionaryAdaptations: [
+      { trait: 'Central African Savanna Pathogen Immune Profile', gene: 'ACKR1', impact: 'Duffy null fixation.' }
+    ],
+    description: 'Luba (Baluba) represents Central African interior Bantu ancestry from the Congo Basin savannas.',
+    keyMarkers: ['rs2814778-C', 'Y-DNA E-M2'],
+    haplogroupNotes: 'Y-DNA E-M2 (>90%); mtDNA L0a, L2a, L3e.'
+  },
+  {
+    code: 'MBUTI_BIAKA',
+    aliases: ['Mbuti', 'Biaka', 'Baka', 'Pygmy', 'hgdp_mbuti', 'hgdp_biaka'],
+    name: 'Mbuti & Biaka / Rainforest Hunter-Gatherers (PYGMY)',
+    category: 'Africa',
+    geographicCenter: 'Ituri Rainforest (DRC) & Central African Republic / Republic of Congo',
+    historicalTimeline: 'Indigenous Central African Rainforest Hunter-Gatherers representing one of the earliest modern human population splits (~60,000–100,000 BP).',
+    migrationPath: ['Ancient Paleolithic Congo Basin rainforest foraging (~100,000 BP isolation)'],
+    evolutionaryAdaptations: [
+      { trait: 'Rainforest Stature Phenotype (Pygmy Stature)', gene: 'GHSR / IGF1', impact: 'Genetic selection altering growth hormone pathways for rainforest canopy navigation and heat regulation.' },
+      { trait: 'Deep Rainforest Immune Selection', gene: 'HLA / KIR', impact: 'Unique MHC immunity against rainforest tropical parasites.' }
+    ],
+    description: 'Mbuti & Biaka represent deep indigenous Central African Rainforest Hunter-Gatherer lineages with extreme genetic divergence.',
+    keyMarkers: ['Y-DNA B-M60', 'A-M51', 'mtDNA L1c, L0d'],
+    haplogroupNotes: 'Y-DNA B2b (B-M60) (~60-70%), A-M51; mtDNA L1c1 (~70%), L0a.'
+  },
+  {
+    code: 'SOMALI',
+    aliases: ['Somali', 'sgdp_somali', 'hgdp_somali'],
+    name: 'Somali / Horn of Africa Cushitic (SOMALI)',
+    category: 'Africa',
+    geographicCenter: 'Somalia, Somaliland, Ogaden (Ethiopia), Djibouti',
+    historicalTimeline: 'Afroasiatic Cushitic-speaking maritime trading lineage (Land of Punt, Sultanate of Adal) carrying ~60% Horn African & ~40% Eurasian/Near Eastern admixture (~3,000 BCE).',
+    migrationPath: ['Ancient Afroasiatic expansion in Horn of Africa → Near Eastern / South Arabian maritime trade interactions'],
+    evolutionaryAdaptations: [
+      { trait: 'Cushitic Lactase Persistence C-14010', gene: 'MCM6', rsid: 'rs1456896', impact: 'Selected for camel and goat milk pastoralism.' }
+    ],
+    description: 'Somali represents Horn of Africa Cushitic ancestry characterized by ancient Afroasiatic pastoralism and trade.',
+    keyMarkers: ['Y-DNA E-V32 (E1b1b)', 'mtDNA L3f1b, M1, N1a', 'rs1456896-G'],
+    haplogroupNotes: 'Y-DNA E-V32 (~75-80%), T1a; mtDNA L3f1b, M1a, N1a.'
+  },
+  {
+    code: 'AMHARA_TIGRAY',
+    aliases: ['Amhara', 'Tigray', 'Ethiopian', 'sgdp_amhara', 'sgdp_tigray'],
+    name: 'Amhara & Tigray / Ethiopian Highlands (AMHARA)',
+    category: 'Africa',
+    geographicCenter: 'Ethiopian Highlands (Gonder, Shewa, Tigray, Eritrea)',
+    historicalTimeline: 'Ethiosemitic-speaking highland civilization builders of the Kingdom of Aksum (100–940 CE).',
+    migrationPath: ['Highland Ethiopian agricultural development → South Arabian trade & Aksumite Empire expansion'],
+    evolutionaryAdaptations: [
+      { trait: 'High-Altitude Adaptation', gene: 'EGLN1', impact: 'Adapted to 2,500+ meter Ethiopian plateau elevation.' },
+      { trait: 'Highland Dairy Metabolism', gene: 'MCM6', rsid: 'rs1456896', impact: 'Cushitic/Ethiosemitic pastoralist milk digestion.' }
+    ],
+    description: 'Amhara & Tigray represents Ethiosemitic highland Ethiopian ancestry associated with Aksumite civilization.',
+    keyMarkers: ['Y-DNA E-M35', 'J-M267', 'T1a', 'mtDNA L3, M1, HV'],
+    haplogroupNotes: 'Y-DNA E1b1b (E-M35), J1-M267, T1a; mtDNA L3, M1, HV, R0.'
+  },
+  {
+    code: 'DINKA_NUER',
+    aliases: ['Dinka', 'Nuer', 'Shilluk', 'Nilotic', 'sgdp_dinka'],
+    name: 'Dinka & Nuer / South Sudan Nilotic (DINKA)',
+    category: 'Africa',
+    geographicCenter: 'Sudd Marshlands & Bahr el Ghazal, South Sudan',
+    historicalTimeline: 'Nilo-Saharan speaking pastoralist population of the Upper Nile Valley exhibiting extreme physical stature and unadmixed Nilo-Saharan lineage continuity.',
+    migrationPath: ['Upper Nile Valley Paleolithic foraging → Sudd marshland pastoralism & cattle culture'],
+    evolutionaryAdaptations: [
+      { trait: 'High-Stature Thermoregulation', gene: 'FBN1 / GH1', impact: 'Allen Rule adaptation producing long distal limbs for heat dissipation in tropical wetlands.' }
+    ],
+    description: 'Dinka & Nuer represents Nilotic Nilo-Saharan ancestry from South Sudan, famed for extreme height and cattle culture.',
+    keyMarkers: ['Y-DNA A-M13', 'B-M60', 'E-M2', 'mtDNA L0a, L2a, L3f'],
+    haplogroupNotes: 'Y-DNA A-M13 (~45-50%), E-M2; mtDNA L0a, L2a, L3f.'
+  },
+  {
+    code: 'SAN_KHOE',
+    aliases: ['San', 'Khoe', 'Bushman', 'Ju_hoansi', 'Nama', 'hgdp_san', 'sgdp_ju_hoansi'],
+    name: 'San & Khoe / Kalahari Bushmen (KHOISAN)',
+    category: 'Africa',
+    geographicCenter: 'Kalahari Desert, Namibia, Botswana, Northern Cape (South Africa)',
+    historicalTimeline: 'Indigenous Southern African Hunter-Gatherers representing the oldest ancestral lineage branch in modern human genetics (~150,000–200,000 BP).',
+    migrationPath: ['Deep Paleolithic Southern African isolation in Kalahari refugia (~160,000 BP)'],
+    evolutionaryAdaptations: [
+      { trait: 'Arid Desert Water & Fat Regulation', gene: 'APOB / SLC24A5', impact: 'Adaptations for extreme desert survival and steatopygia.' },
+      { trait: 'UV & Cold Night Adaptation', gene: 'TRPM8 / TYRP1', impact: 'Kalahari desert temperature swings adaptation.' }
+    ],
+    description: 'San & Khoe represents the earliest diverging lineage of Homo sapiens with unprecedented genetic diversity.',
+    keyMarkers: ['Y-DNA A-M51', 'A-M114', 'mtDNA L0d', 'L0k'],
+    haplogroupNotes: 'Y-DNA A1b1b (A-M51), B2b; mtDNA L0d (~80-90%), L0k.'
+  },
 
   // ==========================================
   // CARIBBEAN & LATINO COHORTS
