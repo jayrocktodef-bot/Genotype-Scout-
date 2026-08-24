@@ -30,10 +30,19 @@ export interface ArchaicVariantDetail {
   history: string;
 }
 
+export interface HomininSourceBreakdown {
+  score: number;
+  comparedMarkers: number;
+  carriedAlleles: number;
+  percentile: string;
+}
+
 export interface ArchaicIntrogressionResult {
   score: number;
   comparedMarkers: number;
   carriedAlleles: number;
+  neanderthal: HomininSourceBreakdown;
+  denisovan: HomininSourceBreakdown;
   details: ArchaicVariantDetail[];
 }
 
@@ -90,7 +99,6 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
   const weights: number[] = [];
   let markersCompared = 0;
 
-  // Normalized user SNPs
   const normalizedUserSnps: Record<string, string> = {};
   for (const rsid in userGenotypes) {
     if (userGenotypes[rsid] && userGenotypes[rsid] !== '--') {
@@ -98,7 +106,6 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
     }
   }
 
-  // Iterate over matched SNPs to build matrices for deconvolution
   Object.keys(grafIndex).forEach(rsid => {
     const genotype = normalizedUserSnps[rsid.toLowerCase()];
     if (!genotype || genotype.length !== 2) return;
@@ -109,12 +116,10 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
     const ref = marker.ref.toUpperCase();
     const alt = marker.alt.toUpperCase();
 
-    // Determine ALT allele dosage (0, 1, or 2)
     let uDosage = 0;
     if (genotype[0] === alt) uDosage++;
     if (genotype[1] === alt) uDosage++;
 
-    // Compile expected dosages for all clades
     const popExpectations: number[] = [];
     let validAll = true;
 
@@ -174,25 +179,23 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
         break;
       }
 
-      popExpectations.push(freq * 2.0); // expected continuous dosage [0, 2]
+      popExpectations.push(freq * 2.0);
     }
 
     if (validAll) {
       A.push(popExpectations);
       b.push(uDosage);
-      weights.push(1.0); // uniform weight for global ancient markers
+      weights.push(1.0);
       markersCompared++;
     }
   });
 
   if (markersCompared < 5) {
-    // Return empty results if insufficient marker coverage
     return [];
   }
 
-  // To enforce sum(proportions) = 1, augment with a heavily weighted constraint row
   const P = clades.length;
-  const LAMBDA = 1000 * markersCompared; // dynamically scaled penalty
+  const LAMBDA = 1000 * markersCompared;
   const A_aug = [...A];
   const b_aug = [...b];
   const w_aug = [...weights];
@@ -202,7 +205,6 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
   b_aug.push(LAMBDA);
   w_aug.push(1.0);
 
-  // Solve exact deconvolution using Lawson-Hanson NNLS
   const x = solveNNLS(A_aug, b_aug, w_aug);
   const sum = x.reduce((acc, val) => acc + val, 0);
   const normalized = sum > 0 ? x.map(val => val / sum) : x;
@@ -222,7 +224,7 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
       matchingMarkers: markersCompared
     };
   })
-  .filter(r => r.score >= 0.1) // omit trace scores < 0.1%
+  .filter(r => r.score >= 0.1)
   .sort((a, b) => b.score - a.score);
 
   return finalMatches;
@@ -235,11 +237,21 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
   let comparedMarkers = 0;
   let carriedAlleles = 0;
   let totalMaxPossible = 0;
+
+  let neanderthalCompared = 0;
+  let neanderthalCarried = 0;
+  let neanderthalMax = 0;
+
+  let denisovanCompared = 0;
+  let denisovanCarried = 0;
+  let denisovanMax = 0;
+
   const details: ArchaicVariantDetail[] = [];
 
   markersList.forEach(([rsid, marker]) => {
     const source = marker.introgression?.source || 
-      (marker.ancient_context && Object.keys(marker.ancient_context).includes('Neanderthal') ? 'Neanderthal' : null);
+      (marker.ancient_context && Object.keys(marker.ancient_context).includes('Neanderthal') ? 'Neanderthal' :
+       marker.ancient_context && Object.keys(marker.ancient_context).includes('Denisovan') ? 'Denisovan' : null);
       
     if (!source) return;
 
@@ -266,6 +278,17 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
 
     carriedAlleles += userCarriedCount;
     totalMaxPossible += maxForThisMarker;
+
+    if (source === 'Neanderthal') {
+      neanderthalCompared++;
+      neanderthalCarried += userCarriedCount;
+      neanderthalMax += maxForThisMarker;
+    } else if (source === 'Denisovan') {
+      denisovanCompared++;
+      denisovanCarried += userCarriedCount;
+      denisovanMax += maxForThisMarker;
+    }
+
     const hasDerived = userCarriedCount > 0;
 
     details.push({
@@ -282,11 +305,33 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
   });
 
   const score = totalMaxPossible > 0 ? (carriedAlleles / totalMaxPossible) * 100 : 0;
+  const nScore = neanderthalMax > 0 ? (neanderthalCarried / neanderthalMax) * 100 : 0;
+  const dScore = denisovanMax > 0 ? (denisovanCarried / denisovanMax) * 100 : 0;
+
+  const getPercentile = (s: number, type: 'neanderthal' | 'denisovan') => {
+    if (s > 40) return '95th+ Percentile (Extremely High)';
+    if (s > 25) return '80th Percentile (Higher than average)';
+    if (s > 10) return '50th Percentile (Average non-African)';
+    if (s > 0) return '15th Percentile (Trace carrier)';
+    return '0th Percentile (Ancestral baseline)';
+  };
 
   return {
     score,
     comparedMarkers,
     carriedAlleles,
+    neanderthal: {
+      score: nScore,
+      comparedMarkers: neanderthalCompared,
+      carriedAlleles: neanderthalCarried,
+      percentile: getPercentile(nScore, 'neanderthal')
+    },
+    denisovan: {
+      score: dScore,
+      comparedMarkers: denisovanCompared,
+      carriedAlleles: denisovanCarried,
+      percentile: getPercentile(dScore, 'denisovan')
+    },
     details
   };
 };

@@ -575,6 +575,85 @@
         "18483556",
         "24463508"
       ]
+    },
+    "rs1427656": {
+      "gene": "EPAS1",
+      "trait": "Denisovan introgression - High-altitude hypoxia adaptation",
+      "derived_allele": "G",
+      "ancestral_allele": "A",
+      "introgression": {
+        "source": "Denisovan",
+        "modern_frequency_EAS": 0.8,
+        "modern_frequency_EUR": 0.0,
+        "effect": "Prevents polycythemia at extreme high altitude (Tibetan Plateau)"
+      },
+      "history": "Introgressed from Denisovans into the ancestors of Tibetans ~40,000 years ago. Allows normal oxygen transport without hyper-viscous blood at high altitudes.",
+      "pmid": [
+        "24990085"
+      ]
+    },
+    "rs73885319": {
+      "gene": "TBX15/WARS2",
+      "trait": "Denisovan introgression - Adipose fat distribution & cold adaptation",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Denisovan",
+        "modern_frequency_EAS": 0.5,
+        "modern_frequency_AMR": 0.95,
+        "effect": "Drives brown fat differentiation and metabolic heat generation"
+      },
+      "history": "Denisovan-derived haplotype that regulates body fat distribution and adaptation to extreme cold in Greenlandic Inuit and Indigenous Americans.",
+      "pmid": [
+        "28005318"
+      ]
+    },
+    "rs1042531": {
+      "gene": "TLR6/TLR1",
+      "trait": "Denisovan introgression - Innate immune receptor response",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Denisovan",
+        "modern_frequency_EAS": 0.3,
+        "modern_frequency_OCE": 0.6,
+        "effect": "Enhanced toll-like receptor sensing of bacterial pathogens"
+      },
+      "history": "Shared archaic immune haplotype present in Denisovans and early modern humans in Asia and Oceania.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs11724015": {
+      "gene": "POU2F3",
+      "trait": "Neanderthal introgression - Keratinocyte skin barrier defense",
+      "derived_allele": "C",
+      "ancestral_allele": "T",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EAS": 0.65,
+        "modern_frequency_EUR": 0.05,
+        "effect": "Increased epidermal skin thickness and keratin differentiation"
+      },
+      "history": "High-frequency Neanderthal introgression in East Asians that provided protection against northern UV and environmental skin pathogens.",
+      "pmid": [
+        "24463508"
+      ]
+    },
+    "rs13097409": {
+      "gene": "MC1R",
+      "trait": "Neanderthal introgression - Pigmentation & red hair variant",
+      "derived_allele": "G",
+      "ancestral_allele": "A",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.05,
+        "effect": "Reduced MC1R activity leading to fair skin and red hair"
+      },
+      "history": "Functional MC1R loss-of-function mutation identified in Altai Neanderthals, contributing to fair skin adaptation.",
+      "pmid": [
+        "17962520"
+      ]
     }
   },
   "samples": {

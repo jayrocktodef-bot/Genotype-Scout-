@@ -35,7 +35,8 @@ import {
   Globe,
   CheckCircle,
   Compass,
-  History
+  History,
+  Flame
 } from 'lucide-react';
 import { MethodologyModal } from "./components/MethodologyModal";
 import { calculateAdmixtureCI, calculateHaplogroupConfidence } from "./utils/statistics/confidenceEngine";
@@ -1960,7 +1961,7 @@ export default function App() {
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
-  const [activeAncientSubTab, setActiveAncientSubTab] = useState<'admixture' | 'matches'>('admixture');
+  const [activeAncientSubTab, setActiveAncientSubTab] = useState<'admixture' | 'matches' | 'archaic'>('admixture');
   const [isPrivacyExpanded, setIsPrivacyExpanded] = useState(false);
   const [treeSearchTerm, setTreeSearchTerm] = useState<string>('');
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(() => new Set(['Ancestry', 'Health', 'Pharmacogenomics', 'Traits', 'Carrier Status']));
@@ -2949,6 +2950,16 @@ export default function App() {
                     >
                       <User size={14} /> Sample Matches
                     </button>
+                    <button
+                      onClick={() => setActiveAncientSubTab('archaic')}
+                      className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                        activeAncientSubTab === 'archaic' 
+                          ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-md scale-105' 
+                          : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                      }`}
+                    >
+                      <Flame size={14} /> Neanderthal & Denisovan
+                    </button>
                   </div>
                 </div>
 
@@ -2961,6 +2972,10 @@ export default function App() {
                       type="admixture"
                       onOpenMethodology={() => setIsMethodologyOpen(true)} 
                     />
+                    <ArchaicIntrogressionView results={archaicIntrogression} />
+                  </div>
+                ) : activeAncientSubTab === 'archaic' ? (
+                  <div className="space-y-8 animate-fade-in">
                     <ArchaicIntrogressionView results={archaicIntrogression} />
                   </div>
                 ) : (
