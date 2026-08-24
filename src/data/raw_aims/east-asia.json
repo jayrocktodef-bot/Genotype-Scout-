@@ -1736,23 +1736,6 @@
     "subRegion": "East Asia"
   },
   {
-    "rsid": "rs671_EAS_2",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.001,
-      "EUR": 0.001,
-      "EAS": 0.25,
-      "AMR": 0.01
-    },
-    "description": "Ancestry Informative Marker for East Asian populations.",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
     "rsid": "rs1229984_EAS",
     "region": "East Asian",
     "alleles": [
@@ -2002,72 +1985,6 @@
     "subRegion": "East Asia"
   },
   {
-    "rsid": "rs671_EAS_3",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0.25,
-      "AMR": 0.01,
-      "SAS": 0
-    },
-    "subFrequencies": {
-      "Japanese": 0.45,
-      "Han Chinese": 0.2,
-      "Vietnamese": 0.15,
-      "Korean": 0.3
-    },
-    "description": "East Asian Alcohol Flush Marker - highly informative for Japanese and Han Chinese subpopulations.",
-    "subPopulation": "Han Chinese",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs3827760_EAS_2",
-    "region": "East Asian",
-    "alleles": [
-      "C"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "AMR": 0.4,
-      "SAS": 0.05
-    },
-    "subFrequencies": {
-      "Han Chinese": 0.99,
-      "Japanese": 0.9,
-      "Korean": 0.95,
-      "Native American": 0.5
-    },
-    "description": "EDAR Gene Marker - diagnostic for East Asian and Native American populations.",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs3827760_EAS_3",
-    "region": "East Asian",
-    "alleles": [
-      "G"
-    ],
-    "weight": 6,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.95,
-      "SAS": 0.05,
-      "AMR": 0.8
-    },
-    "description": "EDAR Tie-Breaker - Highly diagnostic for East Asian and Native American ancestry.",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
     "rsid": "rs121913059_EAS",
     "region": "East Asian",
     "alleles": [
@@ -2082,65 +1999,6 @@
       "AMR": 0.8
     },
     "description": "ABCC11 Earwax Type Marker - Diagnostic for East Asian and Native American ancestry (Dry earwax).",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs1229984_EAS_2",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.8,
-      "SAS": 0.1,
-      "MENA": 0.05
-    },
-    "description": "ADH1B Alcohol Metabolism Marker - Highly informative for East Asian ancestry.",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs671_EAS_4",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0.25,
-      "SAS": 0,
-      "MENA": 0
-    },
-    "subFrequencies": {
-      "Japanese": 0.45,
-      "Han Chinese": 0.2,
-      "Vietnamese": 0.15
-    },
-    "description": "ALDH2 Alcohol Flush Marker - Highly specific to East Asian populations.",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs17822931_EAS_2",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.05,
-      "EAS": 0.9,
-      "SAS": 0.1,
-      "AMR": 0.8
-    },
-    "description": "ABCC11 Earwax/Body Odor Marker - Diagnostic for East Asian and Native American ancestry.",
     "subPopulation": "East Asian",
     "subRegion": "East Asia"
   },
@@ -2212,29 +2070,6 @@
       "Bhutanese": 0.9
     },
     "description": "Himalayan/High Altitude Adaption Marker - highly informative for Tibetan and High Altitude Asian populations.",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs3827760_EAS",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.05,
-      "EAS": 0.9,
-      "AMR": 0.05,
-      "SAS": 0.1,
-      "MENA": 0.02,
-      "OCE": 0.1
-    },
-    "description": "EDAR V370A variant common in East Asian populations.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "EDAR",
     "subPopulation": "East Asian",
     "subRegion": "East Asia"
   },
@@ -2390,91 +2225,6 @@
     "trait": "Haplogroup C2",
     "category": "Ancestry",
     "gene": "Y-DNA",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs671",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "EAS": 0.8
-    },
-    "description": "Associated with alcohol flushing reaction in East Asian populations.",
-    "trait": "Alcohol Flushing",
-    "category": "Ancestry",
-    "gene": "ALDH2",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs1229984",
-    "region": "East Asian",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "EAS": 0.8
-    },
-    "description": "Associated with rapid breakdown of alcohol, highly prevalent in East Asian populations.",
-    "trait": "East Asian Alcohol Metabolism",
-    "category": "Ancestry",
-    "gene": "ADH1B",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs1869901",
-    "region": "East Asian",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EAS": 0.8
-    },
-    "description": "A variant found at higher frequencies in East Asian populations.",
-    "trait": "East Asian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "FAS",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs1048943",
-    "region": "East Asian",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EAS": 0.8
-    },
-    "description": "A variant in the CYP1A1 gene found predominantly in East Asian populations.",
-    "trait": "East Asian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "CYP1A1",
-    "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs17822931",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "EAS": 0.8
-    },
-    "description": "Determines dry earwax and reduced body odor, highly prevalent in East Asian populations.",
-    "trait": "East Asian Earwax",
-    "category": "Ancestry",
-    "gene": "ABCC11",
     "subPopulation": "East Asian",
     "subRegion": "East Asia"
   },
@@ -2643,30 +2393,6 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "East Asian",
-    "subRegion": "East Asia"
-  },
-  {
-    "rsid": "rs3827760_EAS",
-    "region": "East Asian",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.05,
-      "EAS": 0.9,
-      "AMR": 0.05,
-      "SAS": 0.1,
-      "MENA": 0.02,
-      "OCE": 0.1
-    },
-    "description": "EDAR V370A variant common in East Asian populations.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "EDAR",
-    "subpop": "East Eurasian",
-    "subPopulation": "East Eurasian",
     "subRegion": "East Asia"
   }
 ]

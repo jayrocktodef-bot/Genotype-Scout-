@@ -1653,23 +1653,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs12203592_EUR_2",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.04,
-      "EUR": 0.88,
-      "EAS": 0.04,
-      "AMR": 0.08
-    },
-    "description": "Ancestry Informative Marker for European populations.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs2470102_EUR",
     "region": "European",
     "alleles": [
@@ -2090,30 +2073,6 @@
     "subRegion": "Southern Europe"
   },
   {
-    "rsid": "rs1042602_EUR_2",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 3.2,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.82,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "AMR": 0.1,
-      "MENA": 0.35
-    },
-    "subFrequencies": {
-      "Spanish": 0.85,
-      "Italian": 0.6,
-      "Greek": 0.55
-    },
-    "description": "Spanish Ancestry Marker - informative for Mediterranean European populations.",
-    "subPopulation": "Southern European",
-    "subRegion": "Southern Europe"
-  },
-  {
     "rsid": "rs9000282_EUR",
     "region": "European",
     "alleles": [
@@ -2139,30 +2098,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs1129038_EUR_2",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 3.5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.88,
-      "EAS": 0.05,
-      "SAS": 0.1,
-      "AMR": 0.05,
-      "MENA": 0.15
-    },
-    "subFrequencies": {
-      "Polish": 0.95,
-      "Eastern Polish": 0.9,
-      "Russian": 0.7
-    },
-    "description": "Polish Ancestry Marker - informative for West Slavic populations.",
-    "subPopulation": "Eastern European",
-    "subRegion": "Eastern Europe"
-  },
-  {
     "rsid": "rs1426657_EUR",
     "region": "European",
     "alleles": [
@@ -2185,30 +2120,6 @@
     "description": "Russian Ancestry Marker - informative for East Slavic populations.",
     "subPopulation": "Eastern European",
     "subRegion": "Eastern Europe"
-  },
-  {
-    "rsid": "rs12913832_EUR_2",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.8,
-      "EAS": 0.01,
-      "AMR": 0.1,
-      "SAS": 0.05
-    },
-    "subFrequencies": {
-      "Scandinavian": 0.95,
-      "Northern European": 0.9,
-      "Southern European": 0.4,
-      "Ashkenazi Jewish": 0.85
-    },
-    "description": "European Eye Color/Ancestry Marker - highly frequent in Northern European and Ashkenazi populations.",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
   },
   {
     "rsid": "rs1800407_EUR",
@@ -2326,54 +2237,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs1129038_EUR_3",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.78,
-      "EAS": 0.01,
-      "AMR": 0.09,
-      "SAS": 0.04
-    },
-    "subFrequencies": {
-      "Northern European": 0.92,
-      "Southern European": 0.65,
-      "Eastern European": 0.85
-    },
-    "description": "HERC2 Eye Color Marker - highly informative for European ancestry and pigmentation traits.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs4988235_EUR_2",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.8,
-      "EAS": 0.01,
-      "SAS": 0.2,
-      "MENA": 0.15
-    },
-    "subFrequencies": {
-      "German": 0.75,
-      "British": 0.9,
-      "Scandinavian": 0.95,
-      "Italian": 0.4,
-      "Spanish": 0.5
-    },
-    "description": "Lactase Persistence Marker - highly prevalent in Northern and Central European populations (Germany/UK/Scandinavia).",
-    "subPopulation": "Western European",
-    "subRegion": "Western Europe"
-  },
-  {
     "rsid": "rs12124819_EUR",
     "region": "European",
     "alleles": [
@@ -2422,30 +2285,6 @@
     "subRegion": "Southern Europe"
   },
   {
-    "rsid": "rs1126809_EUR_2",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.35,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.15
-    },
-    "subFrequencies": {
-      "Ashkenazi": 0.7,
-      "German": 0.25,
-      "Polish": 0.3,
-      "Russian": 0.2
-    },
-    "description": "Central/Eastern European Ancestry Marker - informative for Ashkenazi Jewish and Central European populations.",
-    "subPopulation": "Eastern European",
-    "subRegion": "Eastern Europe"
-  },
-  {
     "rsid": "rs1229984_EUR",
     "region": "European",
     "alleles": [
@@ -2468,80 +2307,6 @@
     "description": "Finnish/Baltic Ancestry Marker - informative for Northern and Eastern European populations.",
     "subPopulation": "Northern European",
     "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs1042602_EUR_3",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.6,
-      "EAS": 0.01,
-      "SAS": 0.1,
-      "MENA": 0.2
-    },
-    "subFrequencies": {
-      "German": 0.65,
-      "Dutch": 0.7,
-      "British": 0.75,
-      "French": 0.55
-    },
-    "description": "Northwestern European Ancestry Marker - informative for populations of Germany, Benelux, and the British Isles.",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs1393350_EUR_2",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.45,
-      "EAS": 0.01,
-      "SAS": 0.1,
-      "MENA": 0.25
-    },
-    "subFrequencies": {
-      "Italian": 0.5,
-      "Greek": 0.55,
-      "Spanish": 0.45,
-      "Balkan": 0.4
-    },
-    "description": "Southern European Ancestry Marker - informative for Mediterranean and Balkan populations.",
-    "subPopulation": "Southern European",
-    "subRegion": "Southern Europe"
-  },
-  {
-    "rsid": "rs12913832_EUR_3",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.8,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.1
-    },
-    "subFrequencies": {
-      "German": 0.9,
-      "Scandinavian": 0.95,
-      "British": 0.85,
-      "Italian": 0.4,
-      "Spanish": 0.35,
-      "Russian": 0.8
-    },
-    "description": "HERC2 Eye Color Marker - Primary determinant of blue/brown eye color in Europeans.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
   },
   {
     "rsid": "rs1426654_EUR",
@@ -2567,81 +2332,6 @@
     "description": "SLC24A5 Skin Pigmentation Marker - Nearly fixed in European populations, key for light skin.",
     "subPopulation": "European",
     "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs16891982_EUR_2",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.95,
-      "EAS": 0.01,
-      "SAS": 0.1,
-      "MENA": 0.3
-    },
-    "subFrequencies": {
-      "German": 0.98,
-      "British": 0.97,
-      "Italian": 0.85,
-      "Spanish": 0.9,
-      "Russian": 0.95
-    },
-    "description": "SLC45A2 Skin Pigmentation Marker - Highly informative for European ancestry and light skin.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs12203592_EUR_3",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.2,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.05
-    },
-    "subFrequencies": {
-      "British": 0.35,
-      "Irish": 0.4,
-      "German": 0.2,
-      "Scandinavian": 0.15,
-      "Spanish": 0.05
-    },
-    "description": "IRF4 Hair/Skin Marker - Associated with freckling, brown hair, and blue eyes in Northern Europeans.",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs1805007_EUR_2",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0.1,
-      "EAS": 0,
-      "SAS": 0,
-      "MENA": 0.01
-    },
-    "subFrequencies": {
-      "Irish": 0.25,
-      "British": 0.15,
-      "German": 0.08,
-      "Scandinavian": 0.05,
-      "Italian": 0.01
-    },
-    "description": "MC1R Red Hair Marker - Highly specific to Northern and Western European populations.",
-    "subPopulation": "Western European",
-    "subRegion": "Western Europe"
   },
   {
     "rsid": "rs12821256_EUR",
@@ -2719,56 +2409,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs1129038_EUR_4",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.75,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.15
-    },
-    "subFrequencies": {
-      "German": 0.8,
-      "British": 0.8,
-      "Scandinavian": 0.85,
-      "Italian": 0.45,
-      "Spanish": 0.4
-    },
-    "description": "HERC2 Eye Color Marker - Complementary to rs12913832 for European pigmentation.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs12896399_EUR_2",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.4,
-      "EAS": 0.01,
-      "SAS": 0.05,
-      "MENA": 0.1
-    },
-    "subFrequencies": {
-      "German": 0.45,
-      "British": 0.5,
-      "Scandinavian": 0.55,
-      "Italian": 0.2,
-      "Spanish": 0.15
-    },
-    "description": "SLC24A4 Eye Color Marker - Informative for blue/green eye color in Europeans.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs11614913_EUR",
     "region": "European",
     "alleles": [
@@ -2791,24 +2431,6 @@
     "description": "TTC39B Southern European Marker - Informative for Mediterranean populations.",
     "subPopulation": "Southern European",
     "subRegion": "Southern Europe"
-  },
-  {
-    "rsid": "rs4988235_EUR_3",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 6,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.7,
-      "EAS": 0.01,
-      "SAS": 0.2,
-      "MENA": 0.15
-    },
-    "description": "LCT Tie-Breaker - Informative for European lactase persistence and ancestry.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
   },
   {
     "rsid": "rs1805008_EUR",
@@ -3000,50 +2622,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs12913832_EUR_4",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.95,
-      "EAS": 0.05,
-      "SAS": 0.2
-    },
-    "subFrequencies": {
-      "Northwest_European": 0.98,
-      "Scandinavian": 0.95,
-      "British": 0.96
-    },
-    "description": "HERC2 OCA2 variant - highly diagnostic for blue eye color in Northern European populations.",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs1426654_EUR_2",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.99,
-      "EAS": 0.01,
-      "SAS": 0.3
-    },
-    "subFrequencies": {
-      "European": 0.99,
-      "North_European": 1,
-      "South_European": 0.9
-    },
-    "description": "SLC24A5 'European' lightness variant - essential for identifying European admixture.",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs1042714_EUR",
     "region": "European",
     "alleles": [
@@ -3068,83 +2646,6 @@
     "category": "Ancestry",
     "subPopulation": "European",
     "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs4988235_EUR",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.75,
-      "EAS": 0.05,
-      "AMR": 0.1,
-      "SAS": 0.2,
-      "MENA": 0.15,
-      "OCE": 0.05
-    },
-    "subFrequencies": {
-      "Northern European": 0.85,
-      "Southern European": 0.3
-    },
-    "description": "LCT variation marker frequently observed in Northern European population expansions.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs1426654_EUR",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.1,
-      "EUR": 0.95,
-      "EAS": 0.1,
-      "AMR": 0.2,
-      "SAS": 0.4,
-      "MENA": 0.5,
-      "OCE": 0.1
-    },
-    "subFrequencies": {
-      "Northern European": 0.98,
-      "Southern European": 0.9
-    },
-    "description": "SLC24A5 marker associated with skin pigmentation and high frequency across European populations.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs1129038_EUR",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.75,
-      "AFR": 0.1,
-      "EAS": 0.05,
-      "AMR": 0.15,
-      "SAS": 0.15
-    },
-    "subFrequencies": {
-      "Irish": 0.85,
-      "Scottish": 0.82,
-      "English": 0.8
-    },
-    "description": "HERC2/OCA2 variation related to blue eye color in Western European populations.",
-    "trait": "Pigmentation",
-    "category": "Ancestry",
-    "subPopulation": "Western European",
-    "subRegion": "Western Europe"
   },
   {
     "rsid": "rs61986422_EUR",
@@ -3905,79 +3406,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs16891985",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.95,
-      "AMR": 0.02,
-      "EAS": 0.01,
-      "EUR": 0.01,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for Luo populations (Kenya).",
-    "trait": "Luo Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "SLC45A2",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs2470102",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.8
-    },
-    "description": "A variant associated with European ancestry and ergothioneine transport.",
-    "trait": "European Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "SLC22A4",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs909525",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.8
-    },
-    "description": "A variant found almost exclusively in populations of European descent.",
-    "trait": "European Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "PTCHD3",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs2303627",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.8
-    },
-    "description": "A variant found at higher frequencies in European populations.",
-    "trait": "European Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "SPATA13",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs11246020",
     "region": "European",
     "alleles": [
@@ -4008,57 +3436,6 @@
     "trait": "European Hair Color Marker",
     "category": "Ancestry",
     "gene": "SLC24A4",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs1805007",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.8
-    },
-    "description": "Associated with red hair and fair skin in European populations.",
-    "trait": "European Red Hair",
-    "category": "Ancestry",
-    "gene": "MC1R",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs1805008",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.8
-    },
-    "description": "Associated with red hair and fair skin in European populations.",
-    "trait": "European Red Hair",
-    "category": "Ancestry",
-    "gene": "MC1R",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs11547464",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.8
-    },
-    "description": "Associated with red hair and fair skin in European populations.",
-    "trait": "European Red Hair",
-    "category": "Ancestry",
-    "gene": "MC1R",
     "subPopulation": "European",
     "subRegion": "Europe"
   },
@@ -5085,28 +4462,6 @@
     "gene": "Unknown",
     "subPopulation": "European",
     "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs10456192",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0,
-      "EUR": 0.98,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "description": "Ancestry Informative Marker for British populations.",
-    "trait": "British Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
   },
   {
     "rsid": "rs9000091",
@@ -6385,50 +5740,6 @@
     "subRegion": "Eastern Europe"
   },
   {
-    "rsid": "rs11103339",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.02,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "EUR": 0.98,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for English populations.",
-    "trait": "English Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs11103353",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "EUR": 0.97,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for English populations.",
-    "trait": "English Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs11103367",
     "region": "European",
     "alleles": [
@@ -6843,49 +6154,6 @@
     "trait": "Gagauz Ancestry Marker",
     "category": "Ancestry",
     "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs12916300",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.05,
-      "AMR": 0.1,
-      "EAS": 0.05,
-      "EUR": 0.85,
-      "SAS": 0.2,
-      "MENA": 0.8
-    },
-    "description": "The primary determinant of blue vs. brown eye color in Europeans.",
-    "trait": "Eye Color",
-    "category": "Ancestry",
-    "gene": "HERC2",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs12203592",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.04,
-      "AMR": 0.08,
-      "EAS": 0.04,
-      "EUR": 0.88,
-      "MENA": 0.1
-    },
-    "description": "Ancestry Informative Marker for European populations.",
-    "trait": "Eye/Hair Color",
-    "category": "Ancestry",
-    "gene": "IRF4",
     "subPopulation": "European",
     "subRegion": "Europe"
   },
@@ -7548,50 +6816,6 @@
     "gene": "Unknown",
     "subPopulation": "European",
     "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs10456193",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0,
-      "EUR": 0.97,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "description": "Ancestry Informative Marker for Irish populations.",
-    "trait": "Irish Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs11103340",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "EUR": 0.99,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for Irish populations.",
-    "trait": "Irish Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
   },
   {
     "rsid": "rs11103354",
@@ -9486,28 +8710,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs2228479",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.35,
-      "SAS": 0.01,
-      "MENA": 0.02
-    },
-    "description": "Ancestry Informative Marker for Scandinavian populations.",
-    "trait": "Scandinavian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "MC1R",
-    "subPopulation": "Northern European",
-    "subRegion": "Northern Europe"
-  },
-  {
     "rsid": "rs11547467",
     "region": "European",
     "alleles": [
@@ -9616,28 +8818,6 @@
     "gene": "Unknown",
     "subPopulation": "Northern European",
     "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs11103342",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "SAS": 0.01,
-      "EUR": 0.99,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for Scottish populations.",
-    "trait": "Scottish Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
   },
   {
     "rsid": "rs11103356",
@@ -10014,28 +9194,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs9000282",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.02,
-      "EAS": 0.08,
-      "EUR": 0.87,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for Slavic populations.",
-    "trait": "Slavic Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs9000283",
     "region": "European",
     "alleles": [
@@ -10386,28 +9544,6 @@
     "gene": "Unknown",
     "subPopulation": "Eastern European",
     "subRegion": "Eastern Europe"
-  },
-  {
-    "rsid": "rs11103331",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.08,
-      "AMR": 0.15,
-      "EAS": 0.01,
-      "EUR": 0.82,
-      "SAS": 0.02,
-      "MENA": 0.35
-    },
-    "description": "Ancestry Informative Marker for Southern Spanish populations.",
-    "trait": "Southern Spanish Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Southern European",
-    "subRegion": "Southern Europe"
   },
   {
     "rsid": "rs9000270",
@@ -11576,72 +10712,6 @@
     "subRegion": "Europe"
   },
   {
-    "rsid": "rs12124819",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.4,
-      "SAS": 0,
-      "MENA": 0.05
-    },
-    "description": "A highly informative marker for Basque ancestry, reflecting the unique genetic isolate of the Basque people.",
-    "trait": "Basque Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs1126809",
-    "region": "European",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.35,
-      "SAS": 0.01,
-      "MENA": 0.15
-    },
-    "description": "An informative marker for Ashkenazi Jewish ancestry, reflecting the historical bottleneck and endogamy of the population.",
-    "trait": "Ashkenazi Jewish Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "TYR",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs12896399",
-    "region": "European",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.05,
-      "EAS": 0.01,
-      "EUR": 0.45,
-      "SAS": 0.1,
-      "MENA": 0.2
-    },
-    "description": "Associated with lighter hair color (blond/brown) in European populations.",
-    "trait": "Hair Color (European)",
-    "category": "Ancestry",
-    "gene": "SLC24A4",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
     "rsid": "rs3737597",
     "region": "European",
     "alleles": [
@@ -11728,79 +10798,6 @@
     "gene": "Unknown",
     "subPopulation": "Northern European",
     "subRegion": "Northern Europe"
-  },
-  {
-    "rsid": "rs61986422",
-    "region": "European",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "EUR": 0.65
-    },
-    "description": "Pigmentation variant observed in Scottish lineages.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs6059655",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "EUR": 0.88
-    },
-    "description": "Ancestry marker common in English populations.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs112735431",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "Global": 0.2
-    },
-    "description": "Added marker rs112735431.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "European",
-    "subRegion": "Europe"
-  },
-  {
-    "rsid": "rs2395129",
-    "region": "European",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.05,
-      "AMR": 0.1,
-      "EAS": 0.01,
-      "EUR": 0.3,
-      "SAS": 0.1,
-      "MENA": 0.2
-    },
-    "description": "Associated with an increased risk of Celiac disease, with higher prevalence in European populations.",
-    "trait": "Celiac Disease Risk",
-    "category": "Health",
-    "gene": "HLA-DQA1",
-    "subPopulation": "European",
-    "subRegion": "Europe"
   },
   {
     "rsid": "rs4988233",

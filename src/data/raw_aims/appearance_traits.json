@@ -498,48 +498,6 @@
     }
   },
   {
-    "rsid": "rs1805007",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "R151C",
-      "function": "Melanocortin 1 receptor - red hair/fair skin variant",
-      "risk_allele": "T",
-      "AFR": "0.001",
-      "EAS": "0.001"
-    }
-  },
-  {
-    "rsid": "rs1805008",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "R160W",
-      "function": "MC1R high-penetrance variant",
-      "risk_allele": "T"
-    }
-  },
-  {
-    "rsid": "rs1805009",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "D294H",
-      "function": "MC1R moderate effect variant",
-      "risk_allele": "A"
-    }
-  },
-  {
-    "rsid": "rs1805005",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "V60L",
-      "function": "MC1R low-penetrance (r) variant",
-      "risk_allele": "T"
-    }
-  },
-  {
     "rsid": "rs2228479",
     "category": "Skin Appearance",
     "interpretation": {
@@ -573,26 +531,6 @@
     }
   },
   {
-    "rsid": "rs1800407",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "OCA2",
-      "variant": "R419Q",
-      "function": "P protein - melanin synthesis",
-      "risk_allele": "T"
-    }
-  },
-  {
-    "rsid": "rs12203592",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "IRF4",
-      "variant": "Interferon regulatory factor 4",
-      "function": "Pigmentation regulation",
-      "risk_allele": "T"
-    }
-  },
-  {
     "rsid": "rs1126809",
     "category": "Skin Appearance",
     "interpretation": {
@@ -600,51 +538,6 @@
       "variant": "R402Q (Tyrosinase)",
       "function": "Rate-limiting enzyme in melanin synthesis",
       "risk_allele": "A"
-    }
-  },
-  {
-    "rsid": "rs16891982",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "SLC45A2",
-      "variant": "L374F (MATP)",
-      "function": "Membrane-associated transporter - melanin",
-      "risk_allele": "C",
-      "AFR": "0.05",
-      "EAS": "0.05"
-    }
-  },
-  {
-    "rsid": "rs1426654",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "SLC24A5",
-      "variant": "A111T",
-      "function": "Major European skin lightening variant",
-      "risk_allele": "A",
-      "AFR": "0.05",
-      "EAS": "0.05",
-      "SAS": "0.50"
-    }
-  },
-  {
-    "rsid": "rs910873",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "CDKN2A",
-      "variant": "p16 variant",
-      "function": "Cell cycle control - tumor suppressor",
-      "risk_allele": "C"
-    }
-  },
-  {
-    "rsid": "rs401681",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "TERT-CLPTM1L",
-      "variant": "5p15.33 region",
-      "function": "Telomerase regulation",
-      "risk_allele": "C"
     }
   },
   {
@@ -688,25 +581,6 @@
     }
   },
   {
-    "rsid": "rs10484554",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "variant": "Major psoriasis risk",
-      "function": "HLA class I - immune presentation",
-      "risk_allele": "A"
-    }
-  },
-  {
-    "rsid": "rs61816761",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "FLG",
-      "variant": "R501X (Filaggrin)",
-      "function": "Skin barrier protein",
-      "risk_allele": "A"
-    }
-  },
-  {
     "rsid": "rs2282458",
     "category": "Skin Appearance",
     "interpretation": {
@@ -734,16 +608,6 @@
       "variant": "Hair color variant",
       "function": "Pigmentation transport",
       "risk_allele": "A"
-    }
-  },
-  {
-    "rsid": "rs2180439",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "AR region (Xq12)",
-      "variant": "Androgen receptor variant",
-      "function": "Androgen sensitivity",
-      "risk_allele": "T"
     }
   },
   {
@@ -777,15 +641,6 @@
     }
   },
   {
-    "rsid": "rs12203592",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "IRF4",
-      "reference": "See PIGMENTATION_MARKERS",
-      "gray_hair_effect": "TT associated with earlier graying"
-    }
-  },
-  {
     "rsid": "rs35264875",
     "category": "Skin Appearance",
     "interpretation": {
@@ -808,65 +663,6 @@
     }
   },
   {
-    "rsid": "rs11803731",
-    "category": "Skin Appearance",
-    "interpretation": {
-      "gene": "TCHH",
-      "variant": "Trichohyalin",
-      "function": "Hair shaft structure",
-      "risk_allele": "A"
-    }
-  },
-  {
-    "rsid": "rs1805007",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "R151C",
-      "trait": "Red Hair / Fair Skin",
-      "risk_allele": "T",
-      "weight": "3.0",
-      "description": "Normal MC1R function",
-      "phenotype": "Normal pigmentation"
-    }
-  },
-  {
-    "rsid": "rs1805008",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "R160W",
-      "trait": "Red Hair / Fair Skin",
-      "risk_allele": "T",
-      "weight": "2.5",
-      "description": "Normal"
-    }
-  },
-  {
-    "rsid": "rs1805009",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "D294H",
-      "trait": "Red Hair / Fair Skin",
-      "risk_allele": "A",
-      "weight": "2.0",
-      "description": "Normal"
-    }
-  },
-  {
-    "rsid": "rs2228479",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "MC1R",
-      "variant": "V92M",
-      "trait": "Pigmentation",
-      "risk_allele": "A",
-      "weight": "0.8",
-      "description": "Normal"
-    }
-  },
-  {
     "rsid": "rs1110400",
     "category": "UV Sensitivity",
     "interpretation": {
@@ -875,43 +671,6 @@
       "trait": "Pigmentation",
       "risk_allele": "T",
       "weight": "0.8"
-    }
-  },
-  {
-    "rsid": "rs1426654",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "SLC24A5",
-      "trait": "Skin Lightening (European)",
-      "variant": "A111T",
-      "risk_allele": "A",
-      "weight": "3.0",
-      "description": "Ancestral (darker pigmentation)",
-      "uv_protection": "high"
-    }
-  },
-  {
-    "rsid": "rs16891982",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "SLC45A2",
-      "trait": "Skin/Hair Lightening",
-      "variant": "L374F (MATP)",
-      "risk_allele": "G",
-      "weight": "2.5",
-      "description": "Ancestral (darker pigmentation)",
-      "uv_protection": "high"
-    }
-  },
-  {
-    "rsid": "rs12203592",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "IRF4",
-      "trait": "Freckling / Sensitivity",
-      "risk_allele": "T",
-      "weight": "2.0",
-      "description": "Normal IRF4 function"
     }
   },
   {
@@ -927,30 +686,6 @@
     }
   },
   {
-    "rsid": "rs1800407",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "OCA2",
-      "trait": "Eye Color / Pigmentation",
-      "variant": "R419Q",
-      "risk_allele": "A",
-      "weight": "1.0",
-      "eye_effect": "darker"
-    }
-  },
-  {
-    "rsid": "rs12913832",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "HERC2/OCA2",
-      "trait": "Eye Color",
-      "risk_allele": "G",
-      "weight": "1.5",
-      "eye_color": "brown (nearly certain)",
-      "description": "Dominant for brown eyes"
-    }
-  },
-  {
     "rsid": "rs2282679",
     "category": "UV Sensitivity",
     "interpretation": {
@@ -959,17 +694,6 @@
       "risk_allele": "G",
       "weight": "1.5",
       "description": "Normal vitamin D binding protein",
-      "synthesis": "efficient"
-    }
-  },
-  {
-    "rsid": "rs12785878",
-    "category": "UV Sensitivity",
-    "interpretation": {
-      "gene": "DHCR7/NADSYN1",
-      "trait": "Vitamin D Synthesis",
-      "risk_allele": "T",
-      "weight": "1.0",
       "synthesis": "efficient"
     }
   },

@@ -584,34 +584,6 @@
     "subRegion": "South America"
   },
   {
-    "rsid": "rs10456303_NAT_2",
-    "region": "Native American",
-    "alleles": [
-      "G"
-    ],
-    "weight": 3.5,
-    "frequencies": {
-      "AMR": 0.98,
-      "EUR": 0.05,
-      "EAS": 0.1,
-      "MENA": 0.02,
-      "NAFR": 0.01,
-      "AFR": 0.01,
-      "SAS": 0.01,
-      "OCE": 0.01
-    },
-    "description": "AMR/EUR Tie-Breaker - Strictly isolates Indigenous American DNA from Iberian/European introgression.",
-    "subFrequencies": {
-      "Maya": 0.98,
-      "Pima": 0.97,
-      "Karitiana": 0.99,
-      "Surui": 0.98,
-      "Quechua": 0.96
-    },
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
     "rsid": "rs11103500_NAT",
     "region": "Native American",
     "alleles": [
@@ -1224,62 +1196,6 @@
       "SAS": 0.03
     },
     "description": "Native American T2D Risk Marker - part of the SLC16A11 haplotype.",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs13342232_NAT_2",
-    "region": "Native American",
-    "alleles": [
-      "G"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR": 0.3,
-      "Native_American": 0.5,
-      "SAS": 0.03
-    },
-    "description": "Native American T2D Risk Marker - strongest GWAS signal in Mexican cohorts.",
-    "subPopulation": "Central American",
-    "subRegion": "Central America"
-  },
-  {
-    "rsid": "rs9282541_NAT_2",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 5,
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0,
-      "EAS": 0,
-      "AMR": 0.15,
-      "Native_American": 0.25,
-      "SAS": 0
-    },
-    "description": "Native American Ancestry Marker - ABCA1 R230C variant, exclusive to the Americas.",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs10954737_NAT_2",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 6,
-    "frequencies": {
-      "AFR": 0.35,
-      "EUR": 0.62,
-      "EAS": 0.2,
-      "SAS": 0.45,
-      "AMR": 0.8
-    },
-    "description": "Native American Tie-Breaker - Especially informative for distinguishing Native Americans from East Asians.",
     "subPopulation": "Indigenous American",
     "subRegion": "Americas"
   },
@@ -2065,29 +1981,6 @@
     "subRegion": "Americas"
   },
   {
-    "rsid": "rs10954737",
-    "region": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.0567,
-      "EAS": 0.0855,
-      "OCE": 0.0445,
-      "SAS": 0.0806,
-      "AMR": 0.6109,
-      "EUR": 0.0503,
-      "SIB": 0.24
-    },
-    "description": "Seldin 128 Ancestry Informative Marker for continental populations.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
     "rsid": "rs11227699",
     "region": "Native American",
     "alleles": [
@@ -2410,28 +2303,6 @@
     "subRegion": "Americas"
   },
   {
-    "rsid": "rs3827760",
-    "region": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0,
-      "EAS": 0.87,
-      "AMR_admixed": 0.65,
-      "Native_American_unadmixed": 0.95,
-      "SAS": 0.07
-    },
-    "description": "Near-absent in African and European populations. Pre-contact Native American frequency likely near 100%; modern AMR figures reflect European admixture. Strong positive selection signal — one of the highest FST values genome-wide.",
-    "trait": "Thick straight hair, shovel-shaped incisors, denser sweat glands, reduced chin protrusion",
-    "category": "Ancestry",
-    "gene": "EDAR",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
     "rsid": "rs1800404",
     "region": "Native American",
     "alleles": [
@@ -2447,7 +2318,7 @@
       "SAS": 0.5
     },
     "description": "T allele elevated in East Asian and Native American populations; part of Seldin 93-AIM panel",
-    "trait": "Pigmentation — European vs. East Asian/Native American differentiation",
+    "trait": "Pigmentation \u2014 European vs. East Asian/Native American differentiation",
     "category": "Ancestry",
     "gene": "OCA2",
     "subPopulation": "Indigenous American",
@@ -2472,40 +2343,6 @@
     "trait": "Native American vs. African ancestry differentiation",
     "category": "Ancestry",
     "gene": "intergenic",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs174570",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "NAT": 0.8
-    },
-    "description": "Tied to adapting to cold weather and diets high in fat and protein. Found in groups like the Inuit.",
-    "trait": "Arctic / Sub-Arctic adaptation",
-    "category": "Ancestry",
-    "gene": "FADS2",
-    "subPopulation": "Arctic Indian",
-    "subRegion": "North America"
-  },
-  {
-    "rsid": "rs174583",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "NAT": 0.8
-    },
-    "description": "A variant in the FADS gene cluster that shows strong signs of positive selection in Native American populations, likely an adaptation to specific diets.",
-    "trait": "Native American Fatty Acid Metabolism",
-    "category": "Ancestry",
-    "gene": "FADS2",
     "subPopulation": "Indigenous American",
     "subRegion": "Americas"
   },
@@ -2639,28 +2476,6 @@
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "Amazonian",
-    "subRegion": "South America"
-  },
-  {
-    "rsid": "rs4845571",
-    "region": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.02,
-      "AMR": 0.9,
-      "EAS": 0.05,
-      "SAS": 0.02,
-      "EUR": 0.05,
-      "MENA": 0.02
-    },
-    "description": "Ancestry Informative Marker for Andean populations.",
-    "trait": "Andean Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Andean",
     "subRegion": "South America"
   },
   {
@@ -2816,25 +2631,6 @@
     "gene": "Unknown",
     "subPopulation": "Andean",
     "subRegion": "South America"
-  },
-  {
-    "rsid": "rs20424",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.45,
-      "EAS": 0.05,
-      "EUR": 0.01
-    },
-    "description": "Variant unique to the Beringian isolation period; diagnostic for separating Indigenous American from later Asian migrations.",
-    "trait": "Beringian Standstill Proxy",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
   },
   {
     "rsid": "rs2231534",
@@ -3123,28 +2919,6 @@
     "subRegion": "Americas"
   },
   {
-    "rsid": "rs11215559",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.95,
-      "EAS": 0.02,
-      "SAS": 0.01,
-      "EUR": 0.01,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for Indigenous American populations.",
-    "trait": "Indigenous Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
     "rsid": "rs11215560",
     "region": "Native American",
     "alleles": [
@@ -3165,28 +2939,6 @@
     "gene": "Unknown",
     "subPopulation": "Indigenous American",
     "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs10456217",
-    "region": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.85,
-      "EAS": 0.3,
-      "EUR": 0.05,
-      "SAS": 0.01,
-      "MENA": 0.01
-    },
-    "description": "Ancestry Informative Marker for Inuit populations.",
-    "trait": "Inuit Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Arctic Indian",
-    "subRegion": "North America"
   },
   {
     "rsid": "rs10821217",
@@ -4619,325 +4371,6 @@
     "subRegion": "Americas"
   },
   {
-    "rsid": "rs2222101",
-    "region": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Mayan/Yucatan populations.",
-    "trait": "Marker for Mayan/Yucatan populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Central American",
-    "subRegion": "Central America"
-  },
-  {
-    "rsid": "rs3333102",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Mexican Indigenous populations.",
-    "trait": "Marker for Mexican Indigenous populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Central American",
-    "subRegion": "Central America"
-  },
-  {
-    "rsid": "rs4444103",
-    "region": "Native American",
-    "alleles": [
-      "G"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Algonquin populations.",
-    "trait": "Marker for Algonquin populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs5555104",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Cherokee populations.",
-    "trait": "Marker for Cherokee populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North American",
-    "subRegion": "North America"
-  },
-  {
-    "rsid": "rs6666105",
-    "region": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Lumbee populations.",
-    "trait": "Marker for Lumbee populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs7777106",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Lenape populations.",
-    "trait": "Marker for Lenape populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs8888107",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.9
-    },
-    "description": "Marker for Creek populations.",
-    "trait": "Marker for Creek populations.",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs7089424",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.95
-    },
-    "description": "Strongly correlated with Native American ancestry; associated with B-cell ALL risk.",
-    "trait": "Native American Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "ARID5B",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs7088318",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.95
-    },
-    "description": "Another high-frequency risk allele linked to increased Native American genetic heritage.",
-    "trait": "Native American Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "PIP4K2A",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs3731217",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.95
-    },
-    "description": "Positively correlated with Native American ancestry and childhood leukemia susceptibility.",
-    "trait": "Native American Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "CDKN2A",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs2239633",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AMR": 0.95
-    },
-    "description": "A specific marker used to differentiate ancestry profiles in admixed US populations.",
-    "trait": "Native American Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "CEBPE",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs75493593",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR_admixed": 0.3,
-      "Native_American_unadmixed": 0.5,
-      "SAS": 0.03
-    },
-    "description": "Each haplotype copy confers ~20% increased T2D risk. Risk stronger in lean individuals (BMI <35). Neanderthal introgression origin confirmed by archaic genome analysis.",
-    "trait": "Type 2 diabetes risk — P443T",
-    "category": "Health",
-    "gene": "SLC16A11",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs13342692",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR_admixed": 0.3,
-      "Native_American_unadmixed": 0.5,
-      "SAS": 0.03
-    },
-    "description": "Co-segregates on same haplotype as rs75493593; highest individual association signal in SIGMA GWAS",
-    "trait": "Type 2 diabetes risk — D127G missense",
-    "category": "Health",
-    "gene": "SLC16A11",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs117767867",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0.09,
-      "AMR_admixed": 0.28,
-      "Native_American_unadmixed": 0.48,
-      "SAS": 0.02
-    },
-    "description": "Part of the 4-missense-SNP SLC16A11 risk haplotype; rare outside Native American and East Asian populations",
-    "trait": "Type 2 diabetes risk — V113I missense",
-    "category": "Health",
-    "gene": "SLC16A11",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs75418188",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR_admixed": 0.29,
-      "Native_American_unadmixed": 0.49,
-      "SAS": 0.03
-    },
-    "description": "Third missense variant in the SLC16A11 haplotype block; functionally tolerated per SIFT",
-    "trait": "Type 2 diabetes risk — G40S missense",
-    "category": "Health",
-    "gene": "SLC16A11",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs13342232",
-    "region": "Native American",
-    "alleles": [
-      "G"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.02,
-      "EUR": 0.02,
-      "EAS": 0.1,
-      "AMR_admixed": 0.3,
-      "Native_American_unadmixed": 0.5,
-      "SAS": 0.03
-    },
-    "description": "Silent variant but strongest GWAS signal due to LD with all four missense SNPs; used as primary tag in Mexican/Latin American studies",
-    "trait": "Type 2 diabetes risk — silent mutation",
-    "category": "Health",
-    "gene": "SLC16A11",
-    "subPopulation": "Central American",
-    "subRegion": "Central America"
-  },
-  {
-    "rsid": "rs9282541",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0.01,
-      "EAS": 0,
-      "AMR_admixed": 0.09,
-      "Native_American_unadmixed": 0.15,
-      "SAS": 0.01
-    },
-    "description": "Non-synonymous variant; associated with impaired lipid transport and T2D in Native American and Latin American cohorts; nearly absent elsewhere",
-    "trait": "Low HDL cholesterol; type 2 diabetes and obesity risk",
-    "category": "Health",
-    "gene": "ABCA1",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
     "rsid": "rs10811661",
     "region": "Native American",
     "alleles": [
@@ -4975,7 +4408,7 @@
       "SAS": 0.42
     },
     "description": "Common globally but studied specifically in Maya and Latin American Native American cohorts for T2D association",
-    "trait": "Type 2 diabetes — E23K variant",
+    "trait": "Type 2 diabetes \u2014 E23K variant",
     "category": "Health",
     "gene": "KCNJ11",
     "subPopulation": "Indigenous American",
@@ -4997,7 +4430,7 @@
       "SAS": 0.63
     },
     "description": "Moderately differentiated; elevated risk allele frequency in East Asian and Native American populations",
-    "trait": "Type 2 diabetes — pancreatic development",
+    "trait": "Type 2 diabetes \u2014 pancreatic development",
     "category": "Health",
     "gene": "HHEX",
     "subPopulation": "Indigenous American",
@@ -5019,31 +4452,9 @@
       "SAS": 0.6
     },
     "description": "Risk allele elevated in East Asian and Native American populations vs. African",
-    "trait": "Type 2 diabetes — zinc transporter ZnT8",
+    "trait": "Type 2 diabetes \u2014 zinc transporter ZnT8",
     "category": "Health",
     "gene": "SLC30A8",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs1800562",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 10,
-    "frequencies": {
-      "AFR": 0,
-      "EUR": 0.06,
-      "EAS": 0,
-      "AMR_admixed": 0.02,
-      "Native_American_unadmixed": 0,
-      "SAS": 0
-    },
-    "description": "Essentially absent in Native American populations; useful inverse marker. Presence of this allele is a strong signal of European ancestry in admixed individuals.",
-    "trait": "Hereditary hemochromatosis — C282Y; near-absent in Native Americans",
-    "category": "Health",
-    "gene": "HFE",
     "subPopulation": "Indigenous American",
     "subRegion": "Americas"
   },
@@ -5063,7 +4474,7 @@
       "SAS": 0.04
     },
     "description": "Low-frequency variant globally but modestly elevated in East Asian and Native American populations; affects hepatic glucose metabolism",
-    "trait": "Type 2 diabetes — MODY1-related hepatocyte nuclear factor",
+    "trait": "Type 2 diabetes \u2014 MODY1-related hepatocyte nuclear factor",
     "category": "Health",
     "gene": "HNF4A",
     "subPopulation": "Indigenous American",
@@ -5090,47 +4501,5 @@
     "gene": "CDC123/CAMK1D",
     "subPopulation": "Indigenous American",
     "subRegion": "Americas"
-  },
-  {
-    "rsid": "rs1800404_AMR",
-    "region": "Native American",
-    "alleles": [
-      "T"
-    ],
-    "weight": 4,
-    "frequencies": {
-      "AFR": 0.55,
-      "EUR": 0.3,
-      "EAS": 0.7,
-      "SAS": 0.5,
-      "AMR": 0.72
-    },
-    "description": "OCA2 Pigmentation Marker - Informative for global ancestry differentiation.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "subRegion": "AMERICAS"
-  },
-  {
-    "rsid": "rs762551_AMR",
-    "region": "Native American",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.1,
-      "EUR": 0.1,
-      "EAS": 0.3,
-      "AMR": 0.8,
-      "SAS": 0.1,
-      "MENA": 0.1,
-      "OCE": 0.05
-    },
-    "description": "Marker identified in North American ancestral lineages.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "CYP1A2",
-    "subPopulation": "Native American",
-    "subRegion": "AMERICAS"
   }
 ]

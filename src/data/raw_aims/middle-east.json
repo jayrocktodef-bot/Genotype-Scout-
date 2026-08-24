@@ -862,28 +862,6 @@
     "subRegion": "Middle East"
   },
   {
-    "rsid": "rs10456275",
-    "region": "Middle Eastern",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.4,
-      "SAS": 0.05,
-      "MENA": 0.95
-    },
-    "description": "Ancestry Informative Marker for Armenian populations.",
-    "trait": "Armenian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
-  },
-  {
     "rsid": "rs10456276",
     "region": "Middle Eastern",
     "alleles": [
@@ -919,28 +897,6 @@
       "EUR": 0.4,
       "SAS": 0.1,
       "MENA": 0.98
-    },
-    "description": "Ancestry Informative Marker for Caucasian populations.",
-    "trait": "Caucasian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs10456283",
-    "region": "Middle Eastern",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.35,
-      "SAS": 0.05,
-      "MENA": 0.97
     },
     "description": "Ancestry Informative Marker for Caucasian populations.",
     "trait": "Caucasian Ancestry Marker",
@@ -1135,28 +1091,6 @@
     "subRegion": "Middle East"
   },
   {
-    "rsid": "rs10456272",
-    "region": "Middle Eastern",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.05,
-      "EUR": 0.45,
-      "SAS": 0.05,
-      "MENA": 0.9
-    },
-    "description": "Ancestry Informative Marker for Anatolian populations (Turkey).",
-    "trait": "Anatolian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
-  },
-  {
     "rsid": "rs10456279",
     "region": "Middle Eastern",
     "alleles": [
@@ -1236,28 +1170,6 @@
       "EUR": 0.32,
       "SAS": 0.28,
       "MENA": 0.9
-    },
-    "description": "Ancestry Informative Marker for Arabian populations.",
-    "trait": "Arabian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs1393350",
-    "region": "Middle Eastern",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.12,
-      "AMR": 0.03,
-      "EAS": 0.02,
-      "EUR": 0.28,
-      "SAS": 0.18,
-      "MENA": 0.94
     },
     "description": "Ancestry Informative Marker for Arabian populations.",
     "trait": "Arabian Ancestry Marker",
@@ -1746,72 +1658,6 @@
     "subRegion": "Middle East"
   },
   {
-    "rsid": "rs10456208",
-    "region": "Middle Eastern",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.4,
-      "SAS": 0.1,
-      "MENA": 0.98
-    },
-    "description": "Ancestry Informative Marker for Druze populations.",
-    "trait": "Druze Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Levantine",
-    "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs10456211",
-    "region": "Middle Eastern",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.38,
-      "SAS": 0.08,
-      "MENA": 0.99
-    },
-    "description": "Ancestry Informative Marker for Druze populations.",
-    "trait": "Druze Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Levantine",
-    "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs10456214",
-    "region": "Middle Eastern",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.35,
-      "SAS": 0.06,
-      "MENA": 0.97
-    },
-    "description": "Ancestry Informative Marker for Druze populations.",
-    "trait": "Druze Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Levantine",
-    "subRegion": "Middle East"
-  },
-  {
     "rsid": "rs11103332",
     "region": "Middle Eastern",
     "alleles": [
@@ -1847,28 +1693,6 @@
       "EUR": 0.3,
       "SAS": 0.35,
       "MENA": 0.88
-    },
-    "description": "Ancestry Informative Marker for Iranian populations.",
-    "trait": "Iranian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "West Asian",
-    "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs10456274",
-    "region": "Middle Eastern",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.05,
-      "EUR": 0.25,
-      "SAS": 0.25,
-      "MENA": 0.92
     },
     "description": "Ancestry Informative Marker for Iranian populations.",
     "trait": "Iranian Ancestry Marker",
@@ -1935,28 +1759,6 @@
       "EUR": 0.35,
       "SAS": 0.3,
       "MENA": 0.9
-    },
-    "description": "Ancestry Informative Marker for Kurdish populations.",
-    "trait": "Kurdish Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs10456277",
-    "region": "Middle Eastern",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.02,
-      "AMR": 0.01,
-      "EAS": 0.02,
-      "EUR": 0.3,
-      "SAS": 0.2,
-      "MENA": 0.94
     },
     "description": "Ancestry Informative Marker for Kurdish populations.",
     "trait": "Kurdish Ancestry Marker",
@@ -2599,28 +2401,6 @@
     "subRegion": "Middle East"
   },
   {
-    "rsid": "rs10456278",
-    "region": "Middle Eastern",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.01,
-      "AMR": 0.01,
-      "EAS": 0.05,
-      "EUR": 0.2,
-      "SAS": 0.35,
-      "MENA": 0.95
-    },
-    "description": "Ancestry Informative Marker for Persian populations.",
-    "trait": "Persian Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
-  },
-  {
     "rsid": "rs10757275",
     "region": "Middle Eastern",
     "alleles": [
@@ -2707,72 +2487,6 @@
     "gene": "Unknown",
     "subPopulation": "Middle Eastern",
     "subRegion": "Middle East"
-  },
-  {
-    "rsid": "rs10456205_BE",
-    "region": "North African",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.4,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.25,
-      "SAS": 0.05,
-      "MENA": 0.75
-    },
-    "description": "Ancestry Informative Marker for Berber populations.",
-    "trait": "Berber Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North African",
-    "subRegion": "North Africa"
-  },
-  {
-    "rsid": "rs9999903",
-    "region": "North African",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.3,
-      "AMR": 0.05,
-      "EAS": 0.02,
-      "EUR": 0.15,
-      "SAS": 0.1,
-      "MENA": 0.92
-    },
-    "description": "Ancestry Informative Marker for North African populations.",
-    "trait": "North African Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North African",
-    "subRegion": "North Africa"
-  },
-  {
-    "rsid": "rs7722456",
-    "region": "North African",
-    "alleles": [
-      "A"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.42,
-      "AMR": 0.05,
-      "EAS": 0.04,
-      "EUR": 0.18,
-      "SAS": 0.12,
-      "MENA": 0.85
-    },
-    "description": "Ancestry Informative Marker for North African populations.",
-    "trait": "North African Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North African",
-    "subRegion": "North Africa"
   },
   {
     "rsid": "rs6119472",
@@ -3055,72 +2769,6 @@
     },
     "description": "Ancestry Informative Marker for North African populations.",
     "trait": "North African Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North African",
-    "subRegion": "North Africa"
-  },
-  {
-    "rsid": "rs10911063",
-    "region": "North African",
-    "alleles": [
-      "T"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.12,
-      "AMR": 0.02,
-      "EAS": 0.01,
-      "EUR": 0.08,
-      "SAS": 0.03,
-      "MENA": 0.94
-    },
-    "description": "Ancestry Informative Marker for North African populations.",
-    "trait": "North African Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North African",
-    "subRegion": "North Africa"
-  },
-  {
-    "rsid": "rs10911061",
-    "region": "North African",
-    "alleles": [
-      "C"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.1,
-      "AMR": 0.01,
-      "EAS": 0.01,
-      "EUR": 0.06,
-      "SAS": 0.02,
-      "MENA": 0.96
-    },
-    "description": "Ancestry Informative Marker for North African populations.",
-    "trait": "North African Ancestry Marker",
-    "category": "Ancestry",
-    "gene": "Unknown",
-    "subPopulation": "North African",
-    "subRegion": "North Africa"
-  },
-  {
-    "rsid": "rs10456205_TU",
-    "region": "North African",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.6,
-      "AMR": 0.01,
-      "EAS": 0,
-      "EUR": 0.15,
-      "SAS": 0.05,
-      "MENA": 0.5
-    },
-    "description": "Ancestry Informative Marker for Tuareg populations.",
-    "trait": "Tuareg Ancestry Marker",
     "category": "Ancestry",
     "gene": "Unknown",
     "subPopulation": "North African",
@@ -7011,28 +6659,5 @@
     "gene": "Unknown",
     "subPopulation": "North African",
     "subRegion": "North Africa"
-  },
-  {
-    "rsid": "rs16891982_MENA",
-    "region": "Middle Eastern",
-    "alleles": [
-      "G"
-    ],
-    "weight": 8,
-    "frequencies": {
-      "AFR": 0.05,
-      "EUR": 0.2,
-      "EAS": 0.02,
-      "AMR": 0.05,
-      "SAS": 0.1,
-      "MENA": 0.85,
-      "OCE": 0.02
-    },
-    "description": "SLC45A2 variant associated with West Asian/MENA depigmentation.",
-    "trait": "Ancestry",
-    "category": "Ancestry",
-    "gene": "SLC45A2",
-    "subPopulation": "Middle Eastern",
-    "subRegion": "Middle East"
   }
 ]
