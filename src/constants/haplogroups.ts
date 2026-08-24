@@ -1209,19 +1209,31 @@ export const MT_DNA_TREE: HaplogroupNode = {
                           branchName: "H1",
                           mutations: ["G3010A"],
                           region: "Western Europe",
-                          description: "The most common subclade of H in Europe, highly frequent in Iberia and the British Isles."
+                          description: "The most common subclade of H in Europe, highly frequent in Iberia and the British Isles.",
+                          historicalContext: "Expanded rapidly from the Franco-Cantabrian glacial refuge during the post-LGM repopulation of Western Europe.",
+                          children: [
+                            {
+                              branchName: "H1a",
+                              mutations: ["A16162G"],
+                              region: "Western / Northern Europe",
+                              description: "A major subclade of H1 widespread across Western Europe, particularly in Iberia, France, and the British Isles.",
+                              historicalContext: "Expanded rapidly from the Franco-Cantabrian glacial refuge during post-LGM repopulation."
+                            }
+                          ]
                         },
                         {
                           branchName: "H3",
                           mutations: ["T6776C"],
                           region: "Western Europe / Mediterranean",
-                          description: "A Western European branch of H, particularly common in Basques, Sardinians, and Galicians."
+                          description: "A Western European branch of H, particularly common in Basques, Sardinians, and Galicians.",
+                          historicalContext: "Linked to the Iberian post-glacial recolonization wave."
                         },
                         {
                           branchName: "H5",
                           mutations: ["T16304C", "T4336C"],
                           region: "Europe / Near East",
-                          description: "A branch of H found throughout Europe, with its highest frequencies in Wales and the Alpine region."
+                          description: "A branch of H found throughout Europe, with its highest frequencies in Wales and the Alpine region.",
+                          historicalContext: "Associated with both Upper Paleolithic survival and early European farmer expansions."
                         },
                         {
                           branchName: "H6",
@@ -1235,6 +1247,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup V", 
                       mutations: ["G4580A", "G16298A"], 
                       region: "Northern Europe",
+                      description: "A northern European maternal lineage common in Basques and Sami.",
                       historicalContext: "Haplogroup V is often called the 'Saami marker' because it occurs at very high frequencies among the Saami people of Northern Scandinavia. It is believed to have expanded from a refuge in Southwest Europe after the last Ice Age."
                     }
                   ]}
@@ -1243,7 +1256,16 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   branchName: "Haplogroup B", 
                   mutations: ["G16189A", "G16217A"], 
                   region: "East Asia / Americas",
-                  historicalContext: "B is one of the four founding maternal lineages of the Native American populations. It originated in East Asia and traveled across Beringia, though it is the only one of the 'Big Four' American haplogroups that has not been found in ancient remains from Northern Siberia as frequently as others."
+                  historicalContext: "B is one of the four founding maternal lineages of the Native American populations. It originated in East Asia and traveled across Beringia.",
+                  children: [
+                    {
+                      branchName: "B4a1a",
+                      mutations: ["C16189T", "8281-8289d"],
+                      region: "Island Southeast Asia / Oceania",
+                      description: "The 'Polynesian motif' maternal lineage.",
+                      historicalContext: "Dominant maternal marker of the Austronesian expansion across the Pacific Ocean."
+                    }
+                  ]
                 },
                 { 
                   branchName: "Haplogroup F", 
@@ -1259,7 +1281,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup J", 
                       mutations: ["G16069A", "G16126C"], 
                       region: "Europe / Near East",
-                      historicalContext: "J is one of the major lineages that arrived in Europe with the first Neolithic farmers from the Near East. It is often linked to the transition from hunter-gathering to agriculture.",
+                      historicalContext: "J is one of the major lineages that arrived in Europe with the first Neolithic farmers from the Near East.",
                       children: [
                         {
                           branchName: "J1",
@@ -1281,7 +1303,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                       branchName: "Haplogroup T", 
                       mutations: ["G16126C", "G16294A"], 
                       region: "Europe / Near East",
-                      historicalContext: "Similar to J, Haplogroup T is closely associated with the Neolithic revolution and the spread of pastoralism from the Fertile Crescent into Europe and North Africa.",
+                      historicalContext: "Similar to J, Haplogroup T is closely associated with the Neolithic revolution and the spread of pastoralism from the Fertile Crescent.",
                       children: [
                         {
                           branchName: "T1",
@@ -1313,14 +1335,14 @@ export const MT_DNA_TREE: HaplogroupNode = {
                   mutations: ["G11467A", "G12308A", "G16270A"], 
                   region: "Europe / Near East / North Africa", 
                   description: "One of the oldest and most diverse lineages in Western Eurasia, originating over 50,000 years ago.",
-                  historicalContext: "Haplogroup U originated in Western Asia and was among the first major lineages to settle in Europe. It diversified into several distinct branches (U1-U9). Most notably, U5 is considered the 'signature' lineage of European hunter-gatherers, having survived the Last Glacial Maximum in southern refugia before repopulating the north.",
+                  historicalContext: "Haplogroup U originated in Western Asia and was among the first major lineages to settle in Europe. U5 is considered the signature lineage of European hunter-gatherers.",
                   children: [
                   { 
                     branchName: "Haplogroup K", 
                     mutations: ["G10550A", "G12308A"], 
                     region: "Europe / Near East",
                     description: "A major sub-branch of U8 that expanded significantly during the Neolithic period.",
-                    historicalContext: "Haplogroup K (technically U8b) emerged in the Near East roughly 30,000 years ago. It is famous for its association with the spread of farming into Europe and its strong presence in Ashkenazi Jewish populations, where it reached high frequencies due to a major founder effect in the Middle Ages.",
+                    historicalContext: "Haplogroup K (U8b) emerged in the Near East ~30,000 years ago. Famous for its association with the spread of farming into Europe and Ötzi the Iceman.",
                     children: [
                       {
                         branchName: "K1",
@@ -1348,7 +1370,7 @@ export const MT_DNA_TREE: HaplogroupNode = {
                         branchName: "U5a",
                         mutations: ["A14793G", "C16256T"],
                         region: "Europe / Northern Eurasia",
-                        description: "A major subclade of U5, common in Eastern Europe and Scandinavia."
+                        description: "A major subclade of U5, common in Eastern Europe, Yamnaya pastoralists, and Scandinavia."
                       },
                       {
                         branchName: "U5b",
