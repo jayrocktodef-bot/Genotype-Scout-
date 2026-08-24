@@ -1218,6 +1218,459 @@
         "rs1042522": "CG"
       },
       "continent": "Asia"
+    },
+    "mota_ethiopia": {
+      "id": "mota_ethiopia",
+      "name": "Mota Man",
+      "site": "Ethiopia (Gamo Highlands)",
+      "country": "Ethiopia (Gamo Highlands)",
+      "age_bp": 4500,
+      "period": "Stone Age (4,500 BP)",
+      "culture": "Stone Age Hunter-Gatherer",
+      "culture_name": "East African / Nilotic",
+      "sex": "M",
+      "description": "A hunter-gatherer from the Mota Cave. His genome predates the massive migration of Eurasian farmers into East Africa.",
+      "region": "East African / Nilotic",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      },
+      "continent": "Ethiopia (Gamo Highlands)"
+    },
+    "shum_laka_cameroon": {
+      "id": "shum_laka_cameroon",
+      "name": "Shum Laka Boy",
+      "site": "Cameroon (Grassfields)",
+      "country": "Cameroon (Grassfields)",
+      "age_bp": 8000,
+      "period": "Holocene (8,000 BP)",
+      "culture": "Late Stone Age",
+      "culture_name": "West/Central African",
+      "sex": "M",
+      "description": "Key for understanding the origins of Bantu-speaking populations and West African hunter-gatherers.",
+      "region": "West/Central African",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs2814778": "CC"
+      },
+      "continent": "Cameroon (Grassfields)"
+    },
+    "i8088_catoctin": {
+      "id": "i8088_catoctin",
+      "name": "Catoctin Ancestor (I8088)",
+      "site": "Maryland (Enslaved Ironworker)",
+      "country": "Maryland (Enslaved Ironworker)",
+      "age_bp": 200,
+      "period": "Colonial/Antebellum (1774\u20131850)",
+      "culture": "African Diaspora",
+      "culture_name": "Upper South Colonial",
+      "sex": "M",
+      "description": "Part of an enslaved community at a Maryland iron furnace. Shows mixed Wolof, Kongo, and British Isles ancestry. A direct link to African American ancestral history.",
+      "region": "Upper South Colonial",
+      "snps": {
+        "rs1426654": "AG",
+        "rs12913832": "AG",
+        "rs16891982": "CG"
+      },
+      "continent": "Maryland (Enslaved Ironworker)"
+    },
+    "ghk_sudan": {
+      "id": "ghk_sudan",
+      "name": "Kulubnarti Nubian",
+      "site": "Sudan (Nile Valley)",
+      "country": "Sudan (Nile Valley)",
+      "age_bp": 1500,
+      "period": "Christian Era (1,500 BP)",
+      "culture": "Nubian",
+      "culture_name": "Nilo-Saharan / Nilotic",
+      "sex": "M",
+      "description": "Nubian samples that show the complex mix of Nilotic and Near Eastern lineages in the Nile Valley.",
+      "region": "Nilo-Saharan / Nilotic",
+      "snps": {
+        "rs1426654": "AG",
+        "rs16139": "GG",
+        "rs1065852": "AA"
+      },
+      "continent": "Sudan (Nile Valley)"
+    },
+    "taforalt_morocco": {
+      "id": "taforalt_morocco",
+      "name": "Taforalt Individual",
+      "site": "Morocco (Rif)",
+      "country": "Morocco (Rif)",
+      "age_bp": 15000,
+      "period": "Epipaleolithic (15,000 BP)",
+      "culture": "Iberomaurusian",
+      "culture_name": "North African / Iberomaurusian",
+      "sex": "M",
+      "description": "The oldest Iberomaurusian genome. Shows a link between Near Eastern and Sub-Saharan African lineages.",
+      "region": "North African / Iberomaurusian",
+      "snps": {
+        "rs1426654": "GG",
+        "rs12913832": "AA",
+        "rs16891982": "CC"
+      },
+      "continent": "Morocco (Rif)"
+    },
+    "nama_san_deep": {
+      "id": "nama_san_deep",
+      "name": "Deep San Ancestor",
+      "site": "Southern Africa (Namibia/Botswana)",
+      "country": "Southern Africa (Namibia/Botswana)",
+      "age_bp": 10200,
+      "period": "Late Pleistocene (10,200 BP)",
+      "culture": "Wilton / Oakhurst",
+      "culture_name": "Khoe-San / Southern Hunter-Gatherer",
+      "sex": "M",
+      "description": "Represents the world's oldest genetic lineages. This individual shows continuity with modern Nama and San groups, with signatures that have remained stable for over 10,000 years.",
+      "region": "Khoe-San / Southern Hunter-Gatherer",
+      "snps": {
+        "rs11568828": "AA",
+        "rs13097409": "GG",
+        "rs885479": "AA"
+      },
+      "continent": "Southern Africa (Namibia/Botswana)"
+    },
+    "anzick_1": {
+      "id": "anzick_1",
+      "name": "Anzick-1 (Clovis Boy)",
+      "site": "Wilsall, Montana, USA",
+      "country": "USA",
+      "age_bp": 12600,
+      "period": "Late Pleistocene (12,600 BP)",
+      "culture": "Clovis Paleo-Indian",
+      "culture_name": "Indigenous American / Paleo-Indian",
+      "sex": "M",
+      "description": "Skeletal remains of an infant boy buried with Clovis stone tools in Montana. His genome confirms the Siberian migration origin of Native Americans and shows direct lineage continuity with modern Indigenous Central and South Americans.",
+      "region": "Indigenous American / Paleo-Indian",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CA"
+      },
+      "continent": "Wilsall, Montana, USA"
+    },
+    "kennewick_man": {
+      "id": "kennewick_man",
+      "name": "Kennewick Man (Ancient One)",
+      "site": "Columbia River, Washington, USA",
+      "country": "USA",
+      "age_bp": 8900,
+      "period": "Early Holocene (8,900 BP)",
+      "culture": "Early Cascade",
+      "culture_name": "Indigenous American",
+      "sex": "M",
+      "description": "Found along the Columbia River. A landmark legal and genetic case that proved close genetic continuity to the modern Colville and other Pacific Northwest Native American tribes.",
+      "region": "Indigenous American",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      },
+      "continent": "Columbia River, Washington, USA"
+    },
+    "gyamfi_single": {
+      "id": "gyamfi_single",
+      "name": "Gyamfi Single",
+      "site": "Gyamfi-Sade, Ghana",
+      "country": "Ghana",
+      "age_bp": 2500,
+      "period": "Iron Age (2,500 BP)",
+      "culture": "Kintampo Culture",
+      "culture_name": "West African",
+      "sex": "M",
+      "description": "An ancient West African genome from Ghana predating the major Bantu migration events, providing a key baseline of historic West African genetic variation.",
+      "region": "West African",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs2814778": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CC"
+      },
+      "continent": "Gyamfi-Sade, Ghana"
+    },
+    "luxor_ancestor": {
+      "id": "luxor_ancestor",
+      "name": "Luxor Ancient Egyptian",
+      "site": "Abusir el-Meleq, Egypt",
+      "country": "Egypt",
+      "age_bp": 2200,
+      "period": "Ptolemaic Period (2,200 BP)",
+      "culture": "Ancient Egyptian",
+      "culture_name": "North African / Near Eastern",
+      "sex": "M",
+      "description": "Ancient Egyptian from a mummified community. Shows high genetic affinity to historical Near Eastern and Anatolian populations with smaller Sub-Saharan African components.",
+      "region": "North African / Near Eastern",
+      "snps": {
+        "rs1426654": "AG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CA"
+      },
+      "continent": "Abusir el-Meleq, Egypt"
+    },
+    "rameses_iii": {
+      "id": "rameses_iii",
+      "name": "Rameses III",
+      "site": "Thebes, Egypt",
+      "country": "Egypt",
+      "age_bp": 3150,
+      "period": "New Kingdom (3,150 BP)",
+      "culture": "Ancient Egyptian",
+      "culture_name": "North African Pharaoh",
+      "sex": "M",
+      "description": "Famous pharaoh of the 20th Dynasty, known for repelling the Sea Peoples during the Late Bronze Age collapse.",
+      "region": "North African Pharaoh",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1042602": "CC"
+      },
+      "continent": "Thebes, Egypt"
+    },
+    "richard_iii": {
+      "id": "richard_iii",
+      "name": "King Richard III",
+      "site": "Leicester, England",
+      "country": "England",
+      "age_bp": 540,
+      "period": "Late Medieval (540 BP)",
+      "culture": "Plantagenet English",
+      "culture_name": "Late Medieval English",
+      "sex": "M",
+      "description": "The last English monarch of South-Western Europe descent to die in battle, found buried under a car park in Leicester.",
+      "region": "Late Medieval English",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "GG",
+        "rs12913832": "GG",
+        "rs4988235": "AA",
+        "rs1042602": "CA"
+      },
+      "continent": "Leicester, England"
+    },
+    "malta_boy_ma1": {
+      "id": "malta_boy_ma1",
+      "name": "Mal'ta Boy (MA-1)",
+      "site": "Mal'ta, Lake Baikal, Siberia",
+      "country": "Siberia",
+      "age_bp": 24000,
+      "period": "Upper Paleolithic (24,000 BP)",
+      "culture": "Mal'ta-Buret Upper Paleolithic",
+      "culture_name": "Ancient North Eurasian (ANE)",
+      "sex": "M",
+      "description": "Landmark 24,000-year-old genome defining Ancient North Eurasian (ANE) ancestry. MA-1 contributed ~30-40% ancestry to all Indigenous Americans and ~40-50% to Bronze Age Steppe herders.",
+      "region": "Ancient North Eurasian (ANE)",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "AA"
+      },
+      "continent": "Mal'ta, Lake Baikal, Siberia"
+    },
+    "villabruna_whg": {
+      "id": "villabruna_whg",
+      "name": "Villabruna WHG",
+      "site": "Cismon valley, Veneto, Italy",
+      "country": "Italy",
+      "age_bp": 14000,
+      "period": "Epipaleolithic (14,000 BP)",
+      "culture": "Epigravettian Mesolithic",
+      "culture_name": "Western Hunter-Gatherer (WHG)",
+      "sex": "M",
+      "description": "Cornerstone reference genome for Western Hunter-Gatherers (WHG). Represented post-glacial blue-eyed, dark-skinned European foragers who expanded across Mesolithic Europe.",
+      "region": "Western Hunter-Gatherer (WHG)",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "GG",
+        "rs4988235": "GG"
+      },
+      "continent": "Cismon valley, Veneto, Italy"
+    },
+    "satsurblia_chg": {
+      "id": "satsurblia_chg",
+      "name": "Satsurblia CHG",
+      "site": "Satsurblia Cave, Imereti, Georgia",
+      "country": "Georgia",
+      "age_bp": 13300,
+      "period": "Late Upper Paleolithic (13,300 BP)",
+      "culture": "Caucasus Upper Paleolithic",
+      "culture_name": "Caucasus Hunter-Gatherer (CHG)",
+      "sex": "M",
+      "description": "Reference genome for Caucasus Hunter-Gatherers (CHG). Provided the critical second ancestral lineage (alongside EHG) that coalesced into Yamnaya Steppe herders.",
+      "region": "Caucasus Hunter-Gatherer (CHG)",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      },
+      "continent": "Satsurblia Cave, Imereti, Georgia"
+    },
+    "oetzi_iceman": {
+      "id": "oetzi_iceman",
+      "name": "\u00d6tzi the Iceman",
+      "site": "\u00d6tztal Alps, South Tyrol, Italy",
+      "country": "Italy",
+      "age_bp": 5300,
+      "period": "Copper Age (5,300 BP)",
+      "culture": "Copper Age (Alpine Tyrolean)",
+      "culture_name": "Neolithic European / Anatolian Farmer",
+      "sex": "M",
+      "description": "Europe's oldest known natural human mummy. Carried Y-haplogroup G2a and high Anatolian Farmer ancestry, suffering from lactose intolerance and atherosclerosis.",
+      "region": "Neolithic European / Anatolian Farmer",
+      "snps": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CC"
+      },
+      "continent": "\u00d6tztal Alps, South Tyrol, Italy"
+    },
+    "sunghir_paleolithic": {
+      "id": "sunghir_paleolithic",
+      "name": "Sunghir Upper Paleolithic Ancestor",
+      "site": "Vladimir, Russia",
+      "country": "Russia",
+      "age_bp": 34000,
+      "period": "Upper Paleolithic (34,000 BP)",
+      "culture": "Gravettian Paleolithic",
+      "culture_name": "Upper Paleolithic Eurasian",
+      "sex": "M",
+      "description": "Famous Gravettian-era burial site near Moscow. Represents early European Upper Paleolithic foragers with complex burial rituals and thousands of mammoth ivory beads.",
+      "region": "Upper Paleolithic Eurasian",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "AA"
+      },
+      "continent": "Vladimir, Russia"
+    },
+    "oase_1": {
+      "id": "oase_1",
+      "name": "Oase 1 (Pe\u0219tera cu Oase)",
+      "site": "Cara\u0219-Severin, Romania",
+      "country": "Romania",
+      "age_bp": 40000,
+      "period": "Early Upper Paleolithic (40,000 BP)",
+      "culture": "Early Upper Paleolithic",
+      "culture_name": "Early Modern Human / Neanderthal Admixed",
+      "sex": "M",
+      "description": "One of the oldest modern human fossils found in Europe. Possesses ~6\u20139% recent Neanderthal ancestry from interbreeding just 4 to 6 generations back in his family tree.",
+      "region": "Early Modern Human / Neanderthal Admixed",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs72921001": "CC"
+      },
+      "continent": "Cara\u0219-Severin, Romania"
+    },
+    "denisova_3": {
+      "id": "denisova_3",
+      "name": "Denisova 3 (Denisovan Hominin)",
+      "site": "Denisova Cave, Altai Mountains, Siberia",
+      "country": "Siberia",
+      "age_bp": 50000,
+      "period": "Middle Paleolithic (50,000 BP)",
+      "culture": "Archaic Hominin",
+      "culture_name": "Archaic Hominin / Denisovan",
+      "sex": "M",
+      "description": "High-coverage finger bone genome defining Denisovans\u2014an archaic human lineage whose DNA persists in Oceanian, Southeast Asian, and East Asian populations.",
+      "region": "Archaic Hominin / Denisovan",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      },
+      "continent": "Denisova Cave, Altai Mountains, Siberia"
+    },
+    "chagyrskaya_neanderthal": {
+      "id": "chagyrskaya_neanderthal",
+      "name": "Chagyrskaya Neanderthal",
+      "site": "Chagyrskaya Cave, Altai, Russia",
+      "country": "Russia",
+      "age_bp": 80000,
+      "period": "Middle Paleolithic (80,000 BP)",
+      "culture": "Micoquian Neanderthal",
+      "culture_name": "Archaic Hominin / Neanderthal",
+      "sex": "M",
+      "description": "High-coverage Neanderthal genome representing Micoquian toolmakers closely related to Neanderthals who interbred with the ancestors of non-Africans.",
+      "region": "Archaic Hominin / Neanderthal",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs10774671": "GG",
+        "rs35744605": "TT"
+      },
+      "continent": "Chagyrskaya Cave, Altai, Russia"
+    },
+    "guanche_canary": {
+      "id": "guanche_canary",
+      "name": "Guanche Ancestor",
+      "site": "Tenerife, Canary Islands, Spain",
+      "country": "Spain",
+      "age_bp": 1000,
+      "period": "Pre-Hispanic (1,000 BP)",
+      "culture": "Guanche Culture",
+      "culture_name": "North African / Berber",
+      "sex": "M",
+      "description": "Indigenous inhabitant of the Canary Islands before European colonization. Displays genetic affinity to ancient North African Berbers.",
+      "region": "North African / Berber",
+      "snps": {
+        "rs1426654": "AG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      },
+      "continent": "Tenerife, Canary Islands, Spain"
+    },
+    "bichon_man": {
+      "id": "bichon_man",
+      "name": "Bichon Man",
+      "site": "Grotte du Bichon, La Chaux-de-Fonds, Switzerland",
+      "country": "Switzerland",
+      "age_bp": 13700,
+      "period": "Upper Paleolithic (13,700 BP)",
+      "culture": "Azilian Culture",
+      "culture_name": "Western Hunter-Gatherer (WHG)",
+      "sex": "M",
+      "description": "Azilian hunter-gatherer found alongside a brown bear. Represents late Epipaleolithic Western Hunter-Gatherers prior to farming.",
+      "region": "Western Hunter-Gatherer (WHG)",
+      "snps": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "GG",
+        "rs4988235": "GG"
+      },
+      "continent": "Grotte du Bichon, La Chaux-de-Fonds, Switzerland"
     }
   },
   "clusters": [
