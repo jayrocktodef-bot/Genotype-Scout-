@@ -548,9 +548,24 @@ const getMasterAims = () => {
   return masterAimsCache;
 };
 
+function getMacroContinentalGroup(popKey: string): string | null {
+    const clean = popKey.toUpperCase().trim().replace(/^(HGDP_|SGDP_|AGCP_|1000G_)/i, '').replace(/(_GNOMAD|_PROXY)$/i, '');
+    if (['GLOBAL', 'ASI', 'ALL'].includes(clean)) return null;
+
+    if (['AFR', 'YORUBA', 'ESN', 'ESAN', 'GWD', 'GAMBIAN', 'MSL', 'MENDE', 'LWK', 'LUHYA', 'IGBO', 'AKAN', 'AKAN_ASHANTI', 'EWE', 'EWE_FON', 'FULANI', 'HAUSA', 'BAKONGO', 'LUBA', 'MBUTI', 'BIAKA', 'MBUTI_BIAKA', 'PYGMY', 'DINKA', 'DINKA_NUER', 'SAN', 'KHOE', 'SAN_KHOE', 'KHOISAN', 'ZULU', 'XHOSA', 'ZULU_XHOSA', 'MASAI', 'HERERO', 'TSWANA', 'MANDENKA', 'GWF_FULA', 'GWJ_JOLA', 'GWW_WOLOF', 'ALFA_AFRICAN', 'AFR_GNOMAD'].includes(clean)) return 'AFR';
+    if (['EUR', 'CEU', 'GBR', 'FIN', 'TSI', 'IBS', 'GERMAN', 'SWEDISH', 'DUTCH', 'IRISH', 'FRENCH', 'SPANISH', 'POLISH', 'GREEK', 'BALKAN', 'BALTIC', 'BASQUE', 'SLAVIC', 'SCANDINAVIAN', 'ORCADIAN', 'CRETAN', 'SARDINIAN', 'NFE_GNOMAD', 'FIN_GNOMAD', 'ALFA_EUR', 'AMI_GNOMAD'].includes(clean)) return 'EUR';
+    if (['EAS', 'CHB', 'CHS', 'JPT', 'KHV', 'CDX', 'HAN', 'JAPANESE', 'DAI', 'KINH', 'TIBETAN', 'MONGOLIAN', 'EAS_GNOMAD', 'ALFA_EAS'].includes(clean)) return 'EAS';
+    if (['SAS', 'BEB', 'GIH', 'PJL', 'ITU', 'STU', 'PUNJABI', 'TAMIL', 'TELUGU', 'GUJARATI', 'BENGALI', 'BRAHMIN', 'SINDHI', 'PATHAN', 'SAS_GNOMAD', 'ALFA_SAS'].includes(clean)) return 'SAS';
+    if (['AMR', 'PEL', 'MXL', 'CLM', 'PUR', 'KARITIANA', 'SURUI', 'PIMA', 'MAYA', 'MIXTEC', 'ZAPOTEC', 'QUECHUA', 'PIAPOCO', 'TLINGIT', 'AYMARA', 'GUARANI', 'INUIT', 'ESKIMO', 'AMR_GNOMAD', 'ALFA_LATAM1', 'ALFA_LATAM2'].includes(clean)) return 'AMR';
+    if (['OCE', 'PAPUAN', 'AUSTRALIAN', 'BOUGAINVILLE', 'HAWAIIAN', 'MAORI', 'POLYNESIAN'].includes(clean)) return 'OCE';
+    if (['MENA', 'MID', 'MID_GNOMAD', 'MOZABITE', 'BERBER', 'AMAZIGH', 'AMAZIGH_BERBER', 'BEDOUIN', 'DRUZE', 'PALESTINIAN', 'JORDANIAN', 'IRANIAN', 'IRAQI', 'SAMARITAN', 'YEMENITE', 'SAHARAWI', 'TUAREG'].includes(clean)) return 'MENA';
+
+    return null;
+}
+
 function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
-    const MIN_MARKERS = 5;           // minimum markers to report a population
-    const SMOOTH_ALPHA = 0.5;        // Dirichlet/Jeffreys prior pseudocount
+    const MIN_MARKERS = 5;
+    const SMOOTH_ALPHA = 0.5;
 
     const totalLogProb: Record<string, number> = {};
     const totalWeight: Record<string, number> = {};
@@ -558,14 +573,13 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
 
     const aims = getMasterAims() as any;
     const aimBaseMap = new Map<string, any[]>();
-    // Pre-map AIMS by their base rsid (ignore region/isoform suffixes)
     for (const [key, value] of Object.entries(aims)) {
         const base = key.split('_')[0].toLowerCase();
         if (!aimBaseMap.has(base)) aimBaseMap.set(base, []);
         aimBaseMap.get(base)!.push(value);
     }
 
-    const usedRsids = new Set<string>();   // avoid processing the same user rsid twice
+    const usedRsids = new Set<string>();
 
     for (const rsid in snpMap) {
         const base = rsid.toLowerCase();
@@ -574,12 +588,9 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         usedRsids.add(base);
 
         const genotype = snpMap[rsid];
-
-        // Clean genotype: remove whitespace, '/', '_'; keep only A, C, G, T, I, D
         const cleanGenotype = genotype.toUpperCase().replace(/[\s\/_]/g, '');
         if (!cleanGenotype || cleanGenotype.includes('-') || cleanGenotype.includes('N')) continue;
 
-        // Extract valid allele characters; determine ploidy
         let validAlleles = '';
         for (const ch of cleanGenotype) {
             if ('ACGTID'.includes(ch)) validAlleles += ch;
@@ -587,7 +598,6 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         const ploidy = validAlleles.length;
         if (ploidy === 0) continue;
 
-        // For each matched AIM entry (allows multiple entries per rsid)
         for (const aim of matchedAims) {
             if (!aim || !aim.frequencies) continue;
             const effectAlleles = aim.alleles || [];
@@ -597,28 +607,33 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
             const COMPLEMENTS: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
             const complementAllele = COMPLEMENTS[effectAllele] || effectAllele;
 
-            // Palindromic SNP strand protection (skip A/T or C/G SNPs if complement ambiguity exists)
             const isPalindromic = (effectAllele === 'A' && complementAllele === 'T') ||
                                   (effectAllele === 'T' && complementAllele === 'A') ||
                                   (effectAllele === 'C' && complementAllele === 'G') ||
                                   (effectAllele === 'G' && complementAllele === 'C');
 
-            let k = 0;
-            for (const ch of validAlleles) {
-                if (ch === effectAllele || (!isPalindromic && ch === complementAllele)) k++;
+            // Strand orientation check: if user alleles are on reverse strand, flip them first
+            let workingAlleles = validAlleles;
+            if (!isPalindromic && !workingAlleles.includes(effectAllele)) {
+                const flipped = workingAlleles.split('').map(b => COMPLEMENTS[b] || b).join('');
+                if (flipped.includes(effectAllele)) {
+                    workingAlleles = flipped;
+                }
             }
 
-            // Informativeness / Fst marker weighting (default to 1.0 if unspecified)
+            let k = 0;
+            for (const ch of workingAlleles) {
+                if (ch === effectAllele) k++;
+            }
+
             const markerWeight = typeof aim.weight === 'number' && aim.weight > 0 ? aim.weight : 
                                  typeof aim.fst === 'number' && aim.fst > 0 ? Math.max(1.0, aim.fst * 5) : 1.0;
 
-            // Dirichlet / Jeffreys Bayesian smoothing for allele frequencies
             const genotypeProbability = (rawP: number): number => {
                 const pSmooth = Math.max(0.0005, Math.min(0.9995, (rawP * 1000 + SMOOTH_ALPHA) / (1000 + 2 * SMOOTH_ALPHA)));
                 if (ploidy === 1) {
                     return k >= 1 ? pSmooth : (1 - pSmooth);
                 } else {
-                    // assume diploid HWE
                     if (k === 0) return (1 - pSmooth) ** 2;
                     if (k === 1) return 2 * pSmooth * (1 - pSmooth);
                     if (k >= 2) return pSmooth ** 2;
@@ -626,23 +641,27 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
                 }
             };
 
-            // Accumulate weighted log-probabilities per population
+            // Aggregate population frequencies into standard continental macro-groups
+            const macroFreqs: Record<string, number[]> = {};
             for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                const cleanPop = pop.toUpperCase().trim();
-                if (cleanPop === 'GLOBAL' || cleanPop === 'ASI') continue;
+                const macroGroup = getMacroContinentalGroup(pop);
+                if (!macroGroup) continue;
+                if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
+                macroFreqs[macroGroup].push(freq as number);
+            }
 
-                const p = freq as number;
-                const prob = genotypeProbability(p);
+            for (const [macroPop, freqs] of Object.entries(macroFreqs)) {
+                const avgFreq = freqs.reduce((a, b) => a + b, 0) / freqs.length;
+                const prob = genotypeProbability(avgFreq);
                 if (prob <= 0) continue;
 
-                totalLogProb[cleanPop] = (totalLogProb[cleanPop] || 0) + (markerWeight * Math.log(prob));
-                totalWeight[cleanPop] = (totalWeight[cleanPop] || 0) + markerWeight;
-                markerCounts[cleanPop] = (markerCounts[cleanPop] || 0) + 1;
+                totalLogProb[macroPop] = (totalLogProb[macroPop] || 0) + (markerWeight * Math.log(prob));
+                totalWeight[macroPop] = (totalWeight[macroPop] || 0) + markerWeight;
+                markerCounts[macroPop] = (markerCounts[macroPop] || 0) + 1;
             }
         }
     }
 
-    // Compute average weighted log-likelihood per marker for each population
     const avgLogProbs: Record<string, number> = {};
     let maxAvgLogProb = -Infinity;
 
@@ -654,11 +673,8 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         }
     }
 
-    // Adaptive Softmax Temperature Scaling
-    // Dynamically adjusts temperature scale based on mean marker count to prevent probability collapse
-    const totalPops = Object.keys(avgLogProbs).length;
-    const avgCount = totalPops > 0 ? Object.values(markerCounts).reduce((a, b) => a + b, 0) / totalPops : 100;
-    const TEMP_SCALE = Math.max(10.0, Math.min(24.0, 16.0 * Math.sqrt(100 / Math.max(20, avgCount))));
+    // Stable Softmax Temperature Scale for Macro-Continental Proportions
+    const TEMP_SCALE = 12.0;
 
     const scores: Record<string, number> = {};
     let sumScores = 0;
@@ -670,7 +686,6 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         sumScores += score;
     }
 
-    // Normalise to percentages
     const finalScores: Record<string, number> = {};
     if (sumScores > 0) {
         for (const pop in scores) {
