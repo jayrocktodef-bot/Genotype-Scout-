@@ -50,6 +50,11 @@ const KEY_GENES: GeneAnnotation[] = [
   { symbol: 'HERC2', name: 'HERC2 / OCA2', chrom: '15', pos: 28100000, icon: '👁️', trait: 'Iris Color Enhancer (Blue/Brown)' },
   { symbol: 'SLC24A5', name: 'SLC24A5 A111T', chrom: '15', pos: 48100000, icon: '☀️', trait: 'European Light Skin Pigmentation' },
   { symbol: 'ABCC11', name: 'ABCC11 538G>A', chrom: '16', pos: 48200000, icon: '🧼', trait: 'Dry Earwax & Reduced Body Odor' },
+  { symbol: 'MAOA', name: 'MAOA EcoRV', chrom: 'X', pos: 43654907, icon: '🧠', trait: 'Monoamine Neurotransmitter Degradation' },
+  { symbol: 'AR', name: 'AR StuI', chrom: 'X', pos: 67723790, icon: '💇‍♂️', trait: 'Androgen Receptor & Hair Loss Susceptibility' },
+  { symbol: 'OPN1LW', name: 'OPN1LW / OPN1MW', chrom: 'X', pos: 154189205, icon: '👁️', trait: 'Red-Green Color Vision Opsin' },
+  { symbol: 'G6PD', name: 'G6PD A-/Med', chrom: 'X', pos: 154536002, icon: '🦠', trait: 'G6PD Favism & Malaria Resistance' },
+  { symbol: 'F8', name: 'Factor VIII', chrom: 'X', pos: 154835788, icon: '🩸', trait: 'Factor VIII Blood Coagulation' },
 ];
 
 interface Segment {

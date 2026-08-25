@@ -395,6 +395,13 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
   return { healthy: true };
 }
 
+export function isPARRegion(chrom: string, pos: number): boolean {
+  if (chrom !== 'X' && chrom !== '23') return false;
+  if (pos >= 10001 && pos <= 2781479) return true; // PAR1
+  if (pos >= 154931044 && pos <= 156030895) return true; // PAR2 (GRCh37/38)
+  return false;
+}
+
 export function parseRawDNA(
   text: string, 
   allowlist?: Set<string>,
@@ -402,6 +409,7 @@ export function parseRawDNA(
 ) {
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
+  const xMap: Record<string, string> = {};
   const yMap: Record<string, string> = {};
   const mtMap: Record<string, string> = {};
   let format = "Unknown";
@@ -524,6 +532,7 @@ export function parseRawDNA(
                   snpMetaMap[markerId] = { chrom, pos };
                   snpMap[`chr${chrom}_${pos}`.toLowerCase()] = genotype;
                 }
+                if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
                 if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
                 if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
                   const allele = genotype[0];
@@ -571,6 +580,7 @@ export function parseRawDNA(
           const coordId = `chr${chrom}_${pos}`.toLowerCase();
           if (!snpMap[coordId]) snpMap[coordId] = genotype;
         }
+        if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
         if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
         if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
           const allele = genotype[0];
@@ -611,7 +621,7 @@ export function parseRawDNA(
     onProgress(totalLength, totalLength, snpCount);
   }
 
-  return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };
+  return { snpMap, snpMetaMap, xMap, yMap, mtMap, format, chip, snpCount };
 }
 
 export async function parseRawDNAStream(
@@ -621,6 +631,7 @@ export async function parseRawDNAStream(
 ) {
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
+  const xMap: Record<string, string> = {};
   const yMap: Record<string, string> = {};
   const mtMap: Record<string, string> = {};
   let format = "Unknown";
@@ -771,6 +782,7 @@ export async function parseRawDNAStream(
                     snpMetaMap[markerId] = { chrom, pos: colPos };
                     snpMap[`chr${chrom}_${colPos}`.toLowerCase()] = genotype;
                   }
+                  if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
                   if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
                   if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
                     const allele = genotype[0];
@@ -816,6 +828,7 @@ export async function parseRawDNAStream(
               const coordId = `chr${chrom}_${colPos}`.toLowerCase();
               if (!snpMap[coordId]) snpMap[coordId] = genotype;
             }
+            if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
             if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
             if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
               const allele = genotype[0];
@@ -858,6 +871,7 @@ export async function parseRawDNAStream(
             const coordId = `chr${chrom}_${colPos}`.toLowerCase();
             if (!snpMap[coordId]) snpMap[coordId] = genotype;
           }
+          if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
           if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
           if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
             const allele = genotype[0];
@@ -891,5 +905,5 @@ export async function parseRawDNAStream(
     onProgress(file.size, file.size, snpCount);
   }
 
-  return { snpMap, snpMetaMap, yMap, mtMap, format, chip, snpCount };
+  return { snpMap, snpMetaMap, xMap, yMap, mtMap, format, chip, snpCount };
 }
