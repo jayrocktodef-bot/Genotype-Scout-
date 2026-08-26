@@ -4,6 +4,8 @@ import { solveNNLS } from '../utils/nnls';
 import ancientCladesFrequencies from '../data/raw_ancient/ancient_clades_frequencies.json';
 import grafIndex from '../data/raw_aims/graf_10k_index.json';
 import { fetchJsonAsset } from '../utils/fetchHelper';
+import ancientSamplesRaw from '../data/raw_ancient/ancient_samples.json';
+import ancientMatchesRaw from '../data/raw_ancient/ancientMatches.json';
 
 export interface AncientSampleMatch {
   popCode: string;
@@ -406,8 +408,10 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
 
 export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
   const rawSamples = [
-    ...Object.values(masterAncient.samples).filter(s => (s as any).id),
-    ...((masterAncient as any).matches || [])
+    ...Object.values(masterAncient.samples || {}),
+    ...((masterAncient as any).matches || []),
+    ...(Array.isArray(ancientSamplesRaw) ? ancientSamplesRaw : Object.values(ancientSamplesRaw || {})),
+    ...(Array.isArray(ancientMatchesRaw) ? ancientMatchesRaw : Object.values(ancientMatchesRaw || {}))
   ];
   
   const seenIds = new Set<string>();

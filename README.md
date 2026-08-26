@@ -1,6 +1,6 @@
 <div align="center"><img width="1200" height="475" alt="Genotype Scout banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
-# Genotype Scout — V4.5 Beta
+# Genotype Scout — V5.15 Beta
 
 > ⚠️ **Beta — research & educational tool.** Genotype Scout is in active beta and is **not an ethnicity calculator**. Its results are exploratory, are **not directly comparable** to the ethnicity estimates from commercial tests (23andMe, AncestryDNA), and are **not medical or diagnostic advice**.
 
@@ -10,8 +10,12 @@
 
 ---
 
-## ✨ What's New in V4.5
+## ✨ What's New in V5.15
 
+- **Log-Likelihood Ratio (LLR) Specificity Weighting** — Replaced unweighted binary marker matching with LLR probability scoring ($\text{LLR}_k = \ln[P(G \mid p_k)/P(G \mid p_{\text{bg}})]$) and diagnostic private SNP gating ($f_{(1)} \ge 0.65, f_{(2)} \le 0.25$). Eliminates false positive Native American matches caused by shared ancestral East Asian / Ancient North Eurasian (ANEA) alleles (e.g., *EDAR* `rs3827760`).
+- **Elastic-Net Regularized NNLS Solver ($\lambda_1 / \lambda_2$)** — Added L1 soft-thresholding ($\lambda_1 = 10^{-4}$) and L2 Ridge regularization ($\lambda_2 = 10^{-4}$) to prevent admixed profiles from collapsing into intermediate centroid proxies (e.g., Burusho).
+- **Enriched Macro-Groups & Minor Signal Retention** — Expanded `MACRO_GROUPS` to map all 150+ HGDP/SGDP/1000G reference populations and lowered Pass 2 continental selection thresholds to `0.05%`, preserving genuine minor ancestral signals ($1\text{--}5\%$ Oceanian or African) down to a `0.1%` listing floor.
+- **Deep Time Oracle Expansion (54 Ancient Fossil Genomes & 12 Clades)** — Consolidated and indexed 54 radiocarbon-dated individual ancient fossil samples (Denisova 3, Vindija/Chagyrskaya/Altai Neanderthals, Ust'-Ishim, Oase-1, Anzick-1 Clovis, Mota Cave, Tianyuan, Loschbour, Cheddar Man, Stuttgart, Yamnaya, Rakhigarhi, etc.) across 12 deep paleogenomic clades, categorized by continent and era.
 - **Ultra-Fast DNA Parsing & Intake** — Replaced global regex evaluation with a line-by-line index-based search, reducing parse times for massive DNA files to milliseconds. Resolved an intake flaw that caused infinite loops on malformed file headers.
 - **True Multi-Worker Parallelism** — Parallelized all CPU-bound analysis engines using a dynamically dispatched Web Worker pool (`navigator.hardwareConcurrency`, up to 8 threads), achieving massive speedups on post-parsing analysis.
 - **Desktop UI Overhaul** — Completely redesigned the user interface into a sleek, native OS-style desktop environment with floating app modules, improved navigation, and optimized accessibility.
@@ -21,20 +25,19 @@
 - **Phenotype & Appearance Engine** — Exposed comprehensive phenotypic trait analysis to predict eye color, hair color, skin pigmentation, and baldness risk using the VISAGE forensics panel.
 - **Autoimmune & Celiac Disease Tracking** — Integrated high-fidelity HLA risk markers to identify susceptibility to Celiac disease and other autoimmune conditions within the Health tab.
 - **Marker Database Hydration** — Executed a massive automated metadata hydration pipeline, repairing structural defects and injecting missing chromosomal coordinates for over 5,000 diagnostic markers.
-- **Fixed NNLS Admixture Proportions** — Resolved the single-population deconvolution collapse by implementing a stable numerical sort in the simplex projection logic.
+- **Fixed NNLS Admixture Proportions** — Resolved single-population deconvolution collapse by implementing stable numerical sort in simplex projection logic.
 - **Optimized Worker Payloads** — Replaced expensive global JSON serialization with direct targeted payload sanitization, removing execution bottlenecks.
 - **Real-Time Progress Streaming** — Added streaming progress events per engine, keeping the UI fully interactive and informative during the post-parsing phase.
 - **AIMs Database Normalization** — Fixed case-sensitive regional overrides and integrated missing Central Asian ancestry markers for higher accuracy.
 - **Dark / Light Mode Toggle** — Switch freely between themes via the navbar Sun/Moon button. Light mode is the default.
 - **PWA Support** — Install Genotype Scout to your home screen (Android, iOS, desktop). Works offline after the first load.
-- **NNLS Admixture Solver** — Replaced least-squares with a Lawson-Hanson Non-Negative Least Squares engine for more accurate population mixing proportions.
 - **Dynamic Strand Alignment** — Automatic complement-based flip correction ensures markers on the reverse strand are matched correctly.
 - **LD Pruning** — 50 kb sliding-window linkage disequilibrium pruning removes redundant markers for cleaner ancestry signals.
 - **Haplogroup Consensus Validation** — Flanking SNP checks allow bypassing ancestral rejection when sufficient descendant evidence exists.
 - **Tactile UI Micro-interactions** — Hover lifts, press scaling, and smooth transitions across all tabs and buttons.
 - **Streaming Tabs Navigation** — Horizontal scrolling navigation bar replacing the mobile hamburger menu, ensuring immediate access to all tools.
 - **Ancient Matches Routing** — Renamed "Famous Comparisons" to "Ancient Matches", directing the user straight to the Ancient DNA tab.
-- **Plain English Methodology Explainers** — Complete overhaul of the Methodology tab to explain all 10 calculation engines in plain English alongside the technical algorithms.
+- **Plain English Methodology Explainers** — Complete overhaul of the Methodology tab to explain all 10 calculation engines in plain English alongside technical algorithms.
 
 ---
 

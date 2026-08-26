@@ -81,22 +81,28 @@ export const getMethodologyData = (tabId: string): MethodologyContent => {
       case 'oracle':
         return {
           title: 'Deep Regional Match Matching',
-          algName: 'Non-Negative Least Squares (NNLS) Ancestry Allocation (Oracle v3)',
-          description: 'Instead of relying on broad, imputed percentages that smear regional boundaries, this oracle computes direct multi-locus Non-Negative Least Squares (NNLS) optimization between your observed genotypes and reference-kernel subpopulations. This rigorous approach ensures ancestral admixtures sum precisely to 100% while eliminating negative probability artifacts often found in simpler distance models.',
+          algName: 'Elastic-Net NNLS & LLR Marker Specificity Engine (Oracle v5)',
+          description: 'Instead of relying on broad, imputed percentages or unweighted allele counts, this oracle computes direct multi-locus Elastic-Net Non-Negative Least Squares (NNLS) optimization with L1 soft-thresholding and L2 Ridge regularization between your observed genotypes and reference-kernel subpopulations. Log-Likelihood Ratio (LLR) scoring weights diagnostic private variants while discounting shared ancestral alleles (e.g., EDAR rs3827760 in East Asian/ANEA profiles). Pass 2 continental thresholds down to 0.05% ensure genuine minor ancestral traces (1-5% Oceanian/African) are retained.',
           formulas: [
             {
-              label: 'NNLS Optimization',
-              equation: 'min || A x - b ||² subject to x ≥ 0',
-              explanation: 'Optimizes the admixture weights (x) for each reference population (A) to best fit the observed user genotype dosage (b), ensuring all ancestry proportions are non-negative.'
+              label: 'Elastic-Net NNLS Optimization',
+              equation: 'min (1/2) || W (A x - b) ||² + λ₁ ∑ |x_i| + (λ₂ / 2) ||x||²  subject to x ≥ 0',
+              explanation: 'Optimizes admixture weights (x) for each reference population (A) against user genotypes (b) with L1 sparsity and L2 Ridge penalties to eliminate intermediate centroid proxy collapse.'
+            },
+            {
+              label: 'Log-Likelihood Ratio (LLR) Marker Weight',
+              equation: 'LLR_k(G) = ln[ P(G | p_k) / P(G | p_bg) + 10⁻⁶ ]',
+              explanation: 'Measures the relative diagnostic probability of genotype G under target population k versus global background mean p_bg, weighting private diagnostic SNPs.'
             }
           ],
           references: [
             'Schraiber & Akey (Nature Reviews Genetics) on Admixture Models',
-            'GRAF-pop Population Attribution Panel Algorithms'
+            'GRAF-pop Population Attribution Panel Algorithms',
+            'Lawson-Hanson Non-Negative Least Squares & Elastic Net Regularization'
           ],
           metrics: [
-            { label: 'Reference AIMs Count', value: '2,576 Regional Markers' },
-            { label: 'Subpop Coverage', value: '26 Detailed Global Cohorts' }
+            { label: 'Reference AIMs Count', value: '10,000+ Regional Markers' },
+            { label: 'Subpop Coverage', value: '150+ HGDP/SGDP/1000G Cohorts' }
           ]
         };
 
@@ -152,8 +158,8 @@ export const getMethodologyData = (tabId: string): MethodologyContent => {
       case 'haplogroups':
         return {
           title: 'Lineage Phylogeographic Attribution',
-          algName: 'Phylogenetic Clade Traversal & Marker Verification',
-          description: 'Determines paternal (Y-DNA) and maternal (mtDNA) haplogroups by searching for defining diagnostic mutations on the non-recombining Y chromosome and mitochondrial circular genome, tracing the path down modern phylotrees.',
+          algName: 'Phylogenetic Clade Traversal & Flanking Consensus Verification',
+          description: 'Determines paternal (Y-DNA) and maternal (mtDNA) haplogroups by searching for defining diagnostic mutations on the non-recombining Y chromosome and mitochondrial circular genome, tracing the path down modern phylotrees with flanking branch consensus validation.',
           formulas: [
             {
               label: 'Branch Mutation Status',
@@ -166,30 +172,31 @@ export const getMethodologyData = (tabId: string): MethodologyContent => {
             'PhyloTree mtDNA Build 17 (van Oven & Kayser)'
           ],
           metrics: [
-            { label: 'Maternal Database', value: '5400+ Node Clade Tree' },
-            { label: 'Paternal Database', value: '8200+ Defining Y-SNPs' }
+            { label: 'Maternal Database', value: '5,400+ Node Clade Tree' },
+            { label: 'Paternal Database', value: '8,200+ Defining Y-SNPs' }
           ]
         };
 
       case 'ancient':
         return {
           title: 'Archaeological Coordinate Projection',
-          algName: 'Ancient Climate & Admixture Solver',
-          description: 'Reconstructs deep history by projecting your autosomal proportions against genuine archaeological skeletons recovered from Kurgan pastoralist, Western hunter-gatherer, and Anatolian farmer excavation sites.',
+          algName: 'Deep Time Paleogenomic Admixture & Individual Fossil Matching',
+          description: 'Reconstructs deep history by projecting your autosomal proportions against 54 radiocarbon-dated individual ancient fossil genomes (Denisova 3, Neanderthals, Ust-Ishim, Oase-1, Anzick-1 Clovis, Mota, Tianyuan, Loschbour, Cheddar Man, Yamnaya, etc.) across 12 core paleogenomic lineages.',
           formulas: [
             {
               label: 'Ancient Fit Distance',
-              equation: 'Distance_(A, B) = √ [ Σ (User_Coord_i - Specimen_Coord_i )² ]',
+              equation: 'Distance_(A, B) = √ [ ∑ w_i (User_Coord_i - Specimen_Coord_i )² ]',
               explanation: 'Calculates geographical and genomic distance from coordinate vectors derived via principal component models.'
             }
           ],
           references: [
             'Allentoft et al. (Nature, 2015) on Bronze Age Europe DNA',
-            'Haak et al. (Nature, 2015) on Massive migration from the steppe'
+            'Haak et al. (Nature, 2015) on Massive migration from the steppe',
+            'Reich et al. (Nature) on Archaic Hominin Introgression'
           ],
           metrics: [
-            { label: 'Skeletons Mapped', value: '450+ Radiocarbon-dated specimens' },
-            { label: 'Macro Epochs', value: 'Neolithic, Bronze Age, Iron Age' }
+            { label: 'Fossil Genomes Mapped', value: '54 Radiocarbon-dated specimens' },
+            { label: 'Paleo Components', value: '12 Deep Clades (WHG, EHG, ANF, Yamnaya, CHG, NAT, ANE, AASI, Mota, TAF, Sahul)' }
           ]
         };
 

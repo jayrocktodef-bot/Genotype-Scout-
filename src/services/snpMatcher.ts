@@ -129,6 +129,78 @@ export function getAllSources() {
   return cachedAllSources;
 }
 
+export interface LLRScoreResult {
+  llrByPop: Record<string, number>;
+  maxLlr: number;
+  bestPop: string;
+  isDiagnostic: boolean;
+  deltaInformativeness: number;
+}
+
+export function calculateMarkerLLRScore(
+  genotype: string,
+  alleles: string[],
+  frequencies?: Record<string, number>
+): LLRScoreResult {
+  const llrByPop: Record<string, number> = {};
+  if (!frequencies || Object.keys(frequencies).length === 0 || !genotype || genotype === '--') {
+    return { llrByPop: {}, maxLlr: 0, bestPop: '', isDiagnostic: false, deltaInformativeness: 0 };
+  }
+
+  const riskAllele = alleles && alleles.length > 0 ? alleles[0].toUpperCase() : '';
+  if (!riskAllele) {
+    return { llrByPop: {}, maxLlr: 0, bestPop: '', isDiagnostic: false, deltaInformativeness: 0 };
+  }
+
+  // Count dosage G in {0, 1, 2}
+  let G = 0;
+  for (const c of genotype.toUpperCase()) {
+    if (c === riskAllele) G++;
+  }
+
+  const pops = Object.keys(frequencies);
+  const popFreqs = pops.map(p => Math.max(0.001, Math.min(0.999, frequencies[p])));
+  const meanFreq = popFreqs.reduce((a, b) => a + b, 0) / popFreqs.length;
+
+  const minF = Math.min(...popFreqs);
+  const maxF = Math.max(...popFreqs);
+  const deltaInformativeness = maxF - minF;
+
+  // Background likelihood under mean population frequency
+  const pBg = meanFreq;
+  const L_bg = Math.pow(pBg, G) * Math.pow(1.0 - pBg, 2 - G);
+
+  let maxLlr = -Infinity;
+  let bestPop = '';
+
+  pops.forEach((pop, i) => {
+    const pK = popFreqs[i];
+    const L_k = Math.pow(pK, G) * Math.pow(1.0 - pK, 2 - G);
+    const llr = Math.log(Math.max(1e-6, L_k) / Math.max(1e-6, L_bg));
+    llrByPop[pop] = llr;
+
+    if (llr > maxLlr) {
+      maxLlr = llr;
+      bestPop = pop;
+    }
+  });
+
+  const sortedFreqs = [...popFreqs].sort((a, b) => b - a);
+  const f1 = sortedFreqs[0] || 0;
+  const f2 = sortedFreqs[1] || 0;
+
+  // A marker is diagnostic/private if the top population has high frequency (>=0.65) AND no other population exceeds 0.25
+  const isDiagnostic = f1 >= 0.65 && f2 <= 0.25;
+
+  return {
+    llrByPop,
+    maxLlr: maxLlr === -Infinity ? 0 : maxLlr,
+    bestPop,
+    isDiagnostic,
+    deltaInformativeness
+  };
+}
+
 export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<string, { chrom: string, pos: number }>, markersChunk?: any[]) {
   const seen = new Set<string>();
   const allSources = markersChunk || getAllSources();
@@ -284,6 +356,7 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
         isMatched = true;
       }
     }
+
     const isPartial = !interpretation && matchCount > 0 && matchCount < 2 && raw.length === 2;
     
     if (!interpretation) {
@@ -298,8 +371,18 @@ export function matchSNPs(snpMap: Record<string, string>, snpMetaMap?: Record<st
       if (isPartial) interpretation = `[Partial Match] ${interpretation}`;
       if (snpObj.description) interpretation += ` ${snpObj.description}`;
     }
+
+    const llrAnalysis = calculateMarkerLLRScore(raw, snpObj.alleles, snpObj.frequencies);
       
-    results.push({ ...snpObj, genotype: raw, interpretation, status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', chrom: meta?.chrom, pos: meta?.pos });
+    results.push({ 
+      ...snpObj, 
+      genotype: raw, 
+      interpretation, 
+      status: isMatched ? (isPartial ? 'partial' : 'matched') : 'unmatched', 
+      chrom: meta?.chrom, 
+      pos: meta?.pos,
+      llrAnalysis
+    });
   }
   return results;
 }

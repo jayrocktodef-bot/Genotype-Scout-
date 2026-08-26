@@ -18,7 +18,7 @@ async function getHoReferenceKernel() {
   return hoReferenceKernelCache;
 }
 import graf10kIndex from '../data/raw_aims/graf_10k_index.json';
-import { solveNNLS } from '../utils/nnls';
+import { solveNNLS, solveElasticNetNNLS } from '../utils/nnls';
 import { pruneMarkersByPhysicalDistance } from '../utils/ancestry/ldPruner';
 import forensicPanels from '../data/raw_aims/forensic_panels.json';
 import microHapKernel from '../data/raw_aims/microhap_top100_kernel.json';
@@ -371,13 +371,19 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'sgdp_english', 'sgdp_estonian', 'sgdp_french', 'sgdp_greek',
     'sgdp_hungarian', 'sgdp_icelandic', 'sgdp_norwegian', 'sgdp_orcadian',
     'sgdp_polish', 'sgdp_russian', 'sgdp_sardinian', 'sgdp_bergamo',
-    'sgdp_cretan', 'sgdp_chechen', 'sgdp_finnish', 'BALKAN', 'BALTIC',
+    'sgdp_cretan', 'sgdp_chechen', 'sgdp_finnish', 'sgdp_saami',
+    'sgdp_russia_northossetian', 'sgdp_russia_abkhasian', 'sgdp_georgian',
+    'sgdp_adygei', 'sgdp_italian_north', 'sgdp_tuscan', 'BALKAN', 'BALTIC',
     'BASQUE', 'SLAVIC', 'SCANDINAVIAN'
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
     'GEMJ_Japan', 'EAS_gnomAD', 'ALFA_EAS',
-    'FILIPINO_AM', 'VIETNAMESE_AM'
+    'FILIPINO_AM', 'VIETNAMESE_AM', 'sgdp_dai', 'sgdp_dusun', 'sgdp_igorot',
+    'sgdp_ami', 'sgdp_atayal', 'sgdp_kinh', 'sgdp_cambodian', 'sgdp_thai',
+    'sgdp_burmese', 'sgdp_han', 'hgdp_han', 'sgdp_japanese', 'hgdp_japanese',
+    'sgdp_korean', 'sgdp_naxi', 'hgdp_naxi', 'sgdp_yi', 'sgdp_she', 'hgdp_she',
+    'sgdp_miao', 'sgdp_china_lahu', 'hgdp_lahu'
   ],
   'SAS': [
     'BEB', 'GIH', 'ITU', 'PJL', 'STU',
@@ -386,14 +392,16 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'sgdp_punjabi', 'sgdp_relli', 'sgdp_yadava', 'hgdp_kalash', 'hgdp_sindhi',
     'hgdp_pathan', 'hgdp_balochi', 'hgdp_brahui', 'hgdp_makrani', 'sgdp_balochi',
     'sgdp_brahui', 'sgdp_irula', 'sgdp_kalash', 'sgdp_khonda_dora', 'sgdp_makrani',
-    'sgdp_sindhi', 'romani_proxy'
+    'sgdp_sindhi', 'sgdp_burusho', 'hgdp_burusho', 'sgdp_kusunda', 'sgdp_pathan',
+    'romani_proxy'
   ],
   'AMR': [
     'PEL', 'LMB', 'CHK', 'LNP', 'NAN', 'CAT', 'WDN', 'MEL',
     'sgdp_karitiana', 'sgdp_surui', 'sgdp_pima', 'sgdp_mixe', 'sgdp_mixtec', 
     'sgdp_mayan', 'sgdp_mexico_zapotec', 'sgdp_quechua', 'sgdp_piapoco',
     'sgdp_tlingit', 'sgdp_aleut', 'sgdp_eskimo_chaplin', 'sgdp_eskimo_naukan',
-    'sgdp_eskimo_sireniki'
+    'sgdp_eskimo_sireniki', 'hgdp_karitiana', 'hgdp_surui', 'hgdp_maya',
+    'hgdp_pima', 'hgdp_colombian'
   ],
   'AMER': [
     'CLM', 'MXL', 'PUR', 'ALFA_LatAm1', 'ALFA_LatAm2', 'AMR_gnomAD',
@@ -403,17 +411,18 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'MID_gnomAD', 'MZJ', 'YMJ', 'sgdp_jew_iraqi', 'sgdp_jew_yemenite', 'sgdp_samaritan',
     'sgdp_saharawi', 'sgdp_mozabite', 'hgdp_mozabite', 'sgdp_bedouinb', 'sgdp_druze', 
     'sgdp_palestinian', 'sgdp_jordanian', 'sgdp_iranian', 'hgdp_bedouin', 'hgdp_druze', 
-    'hgdp_palestinian'
+    'hgdp_palestinian', 'sgdp_turkish'
   ],
   'OCE': [
-    'sgdp_australian', 'sgdp_bougainville', 'sgdp_hawaiian', 'sgdp_maori', 'sgdp_papuan'
+    'sgdp_australian', 'sgdp_bougainville', 'sgdp_hawaiian', 'sgdp_maori', 'sgdp_papuan',
+    'sgdp_ignore_papuan(discovery)'
   ],
   'CAS': [
     'sgdp_altaian', 'sgdp_chukchi', 'sgdp_even', 'sgdp_itelmen', 'sgdp_kyrgyz_kyrgyzstan', 
     'sgdp_mansi', 'sgdp_tubalar', 'sgdp_ulchi', 'sgdp_uyghur', 'sgdp_yakut', 'hgdp_yakut', 
     'hgdp_uygur', 'hgdp_mongola', 'sgdp_mongola', 'hgdp_hazara', 'sgdp_hazara',
     'hgdp_daur', 'sgdp_daur', 'hgdp_hezhen', 'sgdp_hezhen', 'hgdp_oroqen', 'sgdp_oroqen',
-    'hgdp_tujia', 'sgdp_tujia', 'hgdp_xibo', 'sgdp_xibo'
+    'hgdp_tujia', 'sgdp_tujia', 'hgdp_xibo', 'sgdp_xibo', 'sgdp_tajik'
   ]
 };
 
@@ -591,8 +600,8 @@ export function solveAdmixtureProportions(
   b.push(LAMBDA);
   w.push(1.0); // Augment weight
 
-  // Solve exact NNLS using Lawson-Hanson
-  const x = solveNNLS(A, b, w);
+  // Solve Elastic-Net NNLS with L1 sparsity and L2 Ridge regularization
+  const x = solveElasticNetNNLS(A, b, w, 1e-4, 1e-4);
 
   // Normalize exact proportions (to fix tiny floating point residuals from lambda enforcement)
   const sum = x.reduce((acc, val) => acc + val, 0);
@@ -600,7 +609,7 @@ export function solveAdmixtureProportions(
 
   const result: Record<string, number> = {};
   popCodes.forEach((code, idx) => {
-    if (normalized[idx] > 0.005) { // Minimum listing threshold of 0.5%
+    if (normalized[idx] >= 0.001) { // Retain minor ancestral signals down to 0.1%
       result[code] = normalized[idx] * 100;
     }
   });
@@ -1235,9 +1244,9 @@ export async function processSubpopulations(
       continentalAncestry[macroCode] = (continentalAncestry[macroCode] || 0) + pct;
     });
 
-    // Sub-select populations: include continental groups with >= 2.0% ancestry
+    // Sub-select populations: include continental groups with >= 0.05% ancestry to preserve minor signals
     const activeMacroGroups = Object.entries(continentalAncestry)
-      .filter(([_, pct]) => pct >= 0.5)
+      .filter(([_, pct]) => pct >= 0.05)
       .map(([macro, _]) => macro);
 
     // Fallback if no group meets the threshold: select the single macro group with the highest percentage
