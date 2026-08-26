@@ -654,6 +654,264 @@
       "pmid": [
         "17962520"
       ]
+    },
+    "rs143758366": {
+      "gene": "EPAS1",
+      "trait": "Denisovan introgression - High-altitude hypoxia adaptation",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Denisovan",
+        "modern_frequency_EAS": 0.85,
+        "effect": "Lowers hemoglobin concentration at extreme altitude, preventing polycythemia"
+      },
+      "history": "Intronic EPAS1 variant introgressed from Denisovans into ancestors of Tibetans ~40,000 years ago.",
+      "pmid": [
+        "24990085"
+      ]
+    },
+    "rs2298080": {
+      "gene": "TBX15",
+      "trait": "Denisovan introgression - Adipose fat distribution & cold adaptation",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Denisovan",
+        "modern_frequency_EAS": 0.55,
+        "modern_frequency_AMR": 0.95,
+        "effect": "Alters brown adipose tissue differentiation and body fat distribution"
+      },
+      "history": "Denisovan-derived developmental gene variant selected in Greenlandic Inuit and Indigenous Americans.",
+      "pmid": [
+        "28005318"
+      ]
+    },
+    "rs10756819": {
+      "gene": "BNC2",
+      "trait": "Neanderthal introgression - Skin pigmentation & freckling",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.60,
+        "effect": "Influences skin pigmentation and freckling in non-African populations"
+      },
+      "history": "Neanderthal introgression locus in BNC2 under strong positive selection in West Eurasians.",
+      "pmid": [
+        "24463508"
+      ]
+    },
+    "rs2066807": {
+      "gene": "STAT2",
+      "trait": "Neanderthal introgression - Type-I Interferon antiviral signaling",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_OCE": 0.50,
+        "modern_frequency_EUR": 0.05,
+        "effect": "Alters STAT2 interferon transcription and immune defense against viruses"
+      },
+      "history": "Missense Neanderthal STAT2 variant introgressed into Eurasian and Melanesian ancestors.",
+      "pmid": [
+        "22037374"
+      ]
+    },
+    "rs13342232": {
+      "gene": "SLC16A11",
+      "trait": "Neanderthal introgression - Lipid metabolism & Type-2 diabetes risk",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_AMR": 0.50,
+        "modern_frequency_EAS": 0.30,
+        "effect": "Alters hepatic lipid metabolism and increases type-2 diabetes risk"
+      },
+      "history": "Neanderthal coding variant in SLC16A11 common in Latin American and Native American populations.",
+      "pmid": [
+        "24390345"
+      ]
+    },
+    "rs4804803": {
+      "gene": "SLC35F3",
+      "trait": "Neanderthal introgression - Thiamine (Vitamin B1) transport",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.20,
+        "effect": "Modulates thiamine transport and neuro-metabolism"
+      },
+      "history": "Neanderthal regulatory variant affecting vitamin B1 metabolism.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs1800407": {
+      "gene": "MC1R",
+      "trait": "Neanderthal introgression - Fair skin & red hair pigmentation",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.10,
+        "effect": "Reduces MC1R receptor signaling, contributing to fair skin"
+      },
+      "history": "Neanderthal MC1R loss-of-function allele identified in European Neanderthals.",
+      "pmid": [
+        "17962520"
+      ]
+    },
+    "rs11568800": {
+      "gene": "MUC19",
+      "trait": "Neanderthal introgression - Respiratory mucosal defense",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.15,
+        "effect": "Modulates mucin 19 expression in respiratory tract"
+      },
+      "history": "Neanderthal introgression region affecting mucosal immune defense.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs34684178": {
+      "gene": "FOXP2",
+      "trait": "Neanderthal introgression - Vocal tract & language development region",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.05,
+        "effect": "Modulates FOXP2 non-coding regulatory sequences"
+      },
+      "history": "Archaic non-coding FOXP2 haplotype shared between Neanderthals and modern Eurasians.",
+      "pmid": [
+        "17943122"
+      ]
+    },
+    "rs10994397": {
+      "gene": "ZNF365",
+      "trait": "Neanderthal introgression - Gut immunity & Crohn's disease risk",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.12,
+        "effect": "Alters mucosal immune regulation in intestinal tract"
+      },
+      "history": "Neanderthal introgression locus associated with inflammatory bowel disease risk.",
+      "pmid": [
+        "24463508"
+      ]
+    },
+    "rs1048971": {
+      "gene": "CR2",
+      "trait": "Neanderthal introgression - B-cell complement receptor 2 response",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.18,
+        "effect": "Alters complement receptor 2 (CD21) binding affinity"
+      },
+      "history": "Neanderthal missense variant in CR2 under immune selection.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs715585": {
+      "gene": "ADAMTSL3",
+      "trait": "Neanderthal introgression - Skeletal growth & height",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.35,
+        "effect": "Modulates extracellular matrix remodeling and height"
+      },
+      "history": "Neanderthal introgression variant influencing skeletal phenotype.",
+      "pmid": [
+        "28143972"
+      ]
+    },
+    "rs174570": {
+      "gene": "FADS1",
+      "trait": "Neanderthal introgression - Polyunsaturated fatty acid desaturation",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.40,
+        "effect": "Alters arachidonic and linoleic acid metabolic conversion"
+      },
+      "history": "Neanderthal fatty acid desaturase variant adaptive for cold climate lipid diets.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs1047643": {
+      "gene": "SLC30A9",
+      "trait": "Neanderthal introgression - Zinc transport & neuronal homeostasis",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.22,
+        "effect": "Alters neuronal zinc transporter function"
+      },
+      "history": "Neanderthal missense mutation in SLC30A9 (ZnT9) influencing zinc homeostasis.",
+      "pmid": [
+        "28143972"
+      ]
+    },
+    "rs1233078": {
+      "gene": "STK33",
+      "trait": "Neanderthal introgression - Testicular kinase & spermatogenesis",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.14,
+        "effect": "Modulates serine/threonine kinase 33 expression"
+      },
+      "history": "Neanderthal introgression locus expressed during male gametogenesis.",
+      "pmid": [
+        "24463508"
+      ]
+    },
+    "rs34814041": {
+      "gene": "CH25H",
+      "trait": "Neanderthal introgression - Cholesterol 25-hydroxylase viral inhibition",
+      "derived_allele": "A",
+      "ancestral_allele": "G",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.15,
+        "effect": "Alters oxysterol production and viral entry suppression"
+      },
+      "history": "Neanderthal immune variant enhancing lipid-mediated antiviral defense.",
+      "pmid": [
+        "26943528"
+      ]
+    },
+    "rs1018596": {
+      "gene": "MUC3A",
+      "trait": "Neanderthal introgression - Intestinal mucin barrier defense",
+      "derived_allele": "T",
+      "ancestral_allele": "C",
+      "introgression": {
+        "source": "Neanderthal",
+        "modern_frequency_EUR": 0.25,
+        "effect": "Modulates intestinal epithelial glycoprotein shield"
+      },
+      "history": "Neanderthal introgression marker protecting gut epithelium from pathogens.",
+      "pmid": [
+        "26943528"
+      ]
     }
   },
   "samples": {
