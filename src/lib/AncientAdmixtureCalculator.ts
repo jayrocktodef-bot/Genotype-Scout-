@@ -46,48 +46,110 @@ export interface ArchaicIntrogressionResult {
   details: ArchaicVariantDetail[];
 }
 
-const CLADE_INFO: Record<string, { name: string; region: string; continent: string; period: string; description: string }> = {
-  Yamnaya: {
-    name: "Yamnaya Steppe Pastoralist",
-    region: "Pontic Steppe",
-    continent: "Asia",
-    period: "Bronze Age (~3,300 BCE)",
-    description: "Bronze Age nomadic herders who migrated from the Pontic-Caspian steppe, massively altering Europe's genetic landscape."
-  },
+const CLADE_INFO: Record<string, { name: string; region: string; continent: string; period: string; description: string; culture?: string }> = {
   WHG: {
     name: "Western Hunter-Gatherer",
-    region: "Europe",
+    region: "Western/Central Europe",
     continent: "Europe",
-    period: "Mesolithic (~8,000 BCE)",
-    description: "Post-Ice Age hunter-gatherers of Europe, genetically characterized by dark skin and light/blue eyes."
+    period: "Mesolithic (~15,000-5,000 BCE)",
+    culture: "Loschbour / Cheddar Man",
+    description: "Post-glacial foragers of Western Europe, genetically characterized by dark skin, bright blue eyes, and high physical endurance."
+  },
+  EHG: {
+    name: "Eastern Hunter-Gatherer",
+    region: "Eastern Europe / Samara / Urals",
+    continent: "Europe",
+    period: "Mesolithic (~13,000-5,000 BCE)",
+    culture: "Karelia / Samara",
+    description: "Robust cold-adapted hunter-fishers of the East European forest-steppe carrying high Ancient North Eurasian (ANE) ancestry."
+  },
+  ANF: {
+    name: "Early Anatolian Farmer",
+    region: "Anatolia / Aegean",
+    continent: "Asia",
+    period: "Neolithic (~8,500-4,000 BCE)",
+    culture: "Çatalhöyük / Barcın",
+    description: "First agriculturalists who domesticated wheat and barley in Anatolia, introducing sedentary farming and light skin alleles to Europe."
   },
   EEF: {
     name: "Early European Farmer",
-    region: "Anatolia / Europe",
+    region: "Europe",
     continent: "Europe",
     period: "Neolithic (~6,000 BCE)",
-    description: "Neolithic agriculturalists who migrated from Anatolia, introducing farming and lighter skin alleles into Europe."
+    culture: "LBK / Cardial",
+    description: "Neolithic farmers carrying predominantly Anatolian Farmer ancestry mixed with European hunter-gatherer lineages."
+  },
+  Yamnaya: {
+    name: "Yamnaya Steppe Pastoralist",
+    region: "Pontic-Caspian Steppe",
+    continent: "Europe",
+    period: "Bronze Age (~3,300-2,600 BCE)",
+    culture: "Kurgan / Corded Ware",
+    description: "Bronze Age nomadic horse herders and wagon pioneers who massively altered Eurasia's genetic landscape and spread Indo-European languages."
+  },
+  CHG: {
+    name: "Caucasus Hunter-Gatherer",
+    region: "Caucasus Mountains / Iran",
+    continent: "Asia",
+    period: "Upper Paleolithic (~13,000-6,000 BCE)",
+    culture: "Kotias Klde / Satsurblia",
+    description: "Deeply isolated mountain foragers of the Caucasus who contributed heavily to Yamnaya steppe pastoralists and Iranian farmers."
+  },
+  NAT: {
+    name: "Natufian Sedentary Forager",
+    region: "Levant / Middle East",
+    continent: "Asia",
+    period: "Epipaleolithic (~15,000-11,500 BCE)",
+    culture: "Ain Mallaha / Levant",
+    description: "First sedentary foragers of the Near East who harvested wild cereals and established the ancestral root of Middle Eastern agriculturalists."
   },
   Ancient_East_Asian: {
-    name: "Ancient East Asian / Paleo-Indian",
+    name: "Ancient East Asian (Tianyuan)",
     region: "East Asia / Siberia",
     continent: "Asia",
-    period: "Pleistocene (~15,000 BCE)",
-    description: "Paleolithic hunter-gatherers of East Asia and Siberia, ancestral to modern East Asians and Native Americans."
+    period: "Upper Paleolithic (~40,000-10,000 BCE)",
+    culture: "Tianyuan / Jomon",
+    description: "Deep ancestral lineage of East Asia and Beringia, ancestral to modern East Asians, Siberians, and Native Americans."
+  },
+  Ancient_Beringian: {
+    name: "Ancient Beringian (Clovis)",
+    region: "Beringia / North America",
+    continent: "Americas",
+    period: "Paleolithic (~20,000-11,000 BCE)",
+    culture: "Anzick-1 / Clovis",
+    description: "Ice-Age megafauna hunters who crossed the Bering Land Bridge, ancestral to nearly all Indigenous peoples of North and South America."
+  },
+  AASI: {
+    name: "Ancient Ancestral South Indian",
+    region: "South Asia / Deccan Plateau",
+    continent: "Asia",
+    period: "Pleistocene (~50,000-4,000 BCE)",
+    culture: "Pre-Neolithic South Asia",
+    description: "Indigenous hunter-gatherer lineage of the Indian subcontinent, representing one of the earliest Out-of-Africa expansions into Asia."
   },
   Ancient_African: {
-    name: "Ancient African",
-    region: "Sub-Saharan Africa",
+    name: "Ancient African (Mota)",
+    region: "Sub-Saharan Africa / Ethiopian Highlands",
     continent: "Africa",
-    period: "Paleolithic (~10,000 BCE)",
-    description: "Deeply diverse hunter-gatherer and early agricultural lineages that did not experience the Out-of-Africa bottleneck."
+    period: "Paleolithic (~10,000-2,000 BCE)",
+    culture: "Mota Cave / Pre-Bantu",
+    description: "Deeply diverse indigenous African hunter-gatherers predating both the Bantu expansion and back-migrations from Eurasia."
+  },
+  TAF: {
+    name: "Taforalt (Iberomaurusian)",
+    region: "North Africa / Maghreb",
+    continent: "Africa",
+    period: "Upper Paleolithic (~15,000-11,000 BCE)",
+    culture: "Grotte des Pigeons",
+    description: "Late Stone Age foragers of North Africa carrying a unique mixture of Sub-Saharan African and Natufian-like Eurasian lineages."
   },
   Oceanian: {
-    name: "Deep Oceanian / Sahul",
-    region: "Sahul / Melanesia",
+    name: "Deep Sahul / Oceanian",
+    region: "Sahul / New Guinea / Australia",
     continent: "Oceania",
-    period: "Pleistocene (~40,000 BCE)",
-    description: "Lineages of early modern human migrations to Papua New Guinea and Australia, retaining high levels of Denisovan admixture."
+    period: "Pleistocene (~50,000-10,000 BCE)",
+    culture: "Willandra Lakes / Kow Swamp",
+    description: "Ancient lineages of early modern human expansion across Sahul, preserving high proportions of Denisovan archaic introgression."
   }
 };
 
@@ -127,56 +189,62 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
       const clade = clades[idx];
       let freq: number | undefined;
 
-      if (clade === "WHG" || clade === "EEF" || clade === "Yamnaya") {
-        const cladeFreqs = (ancientCladesFrequencies as any)[rsid] || (ancientCladesFrequencies as any)[rsid.toLowerCase()];
-        freq = cladeFreqs?.[clade];
-        if (freq === undefined) {
-          validAll = false;
-          break;
-        }
+      const cladeFreqs = (ancientCladesFrequencies as any)[rsid] || (ancientCladesFrequencies as any)[rsid.toLowerCase()];
+      const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
+
+      if (clade === "WHG") {
+        freq = cladeFreqs?.["WHG"];
+      } else if (clade === "EEF") {
+        freq = cladeFreqs?.["EEF"] ?? cladeFreqs?.["ANF"];
+      } else if (clade === "ANF") {
+        freq = cladeFreqs?.["ANF"] ?? cladeFreqs?.["EEF"];
+      } else if (clade === "Yamnaya") {
+        freq = cladeFreqs?.["Yamnaya"];
+      } else if (clade === "EHG") {
+        freq = cladeFreqs?.["EHG"] ?? (cladeFreqs?.["WHG"] !== undefined && cladeFreqs?.["Yamnaya"] !== undefined ? (cladeFreqs["WHG"] + cladeFreqs["Yamnaya"]) / 2 : cladeFreqs?.["WHG"]);
+      } else if (clade === "CHG") {
+        const proxies = [w?.sgdp_georgian, w?.sgdp_armenian, cladeFreqs?.["Yamnaya"]].filter(v => v !== undefined);
+        if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
+      } else if (clade === "NAT") {
+        const proxies = [w?.sgdp_palestinian, w?.sgdp_bedouin, cladeFreqs?.["ANF"], cladeFreqs?.["EEF"]].filter(v => v !== undefined);
+        if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
       } else if (clade === "Ancient_East_Asian") {
-        const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
-        if (!w) {
-          validAll = false;
-          break;
+        if (w) {
+          const proxies = [w.sgdp_han, w.sgdp_japanese, w.sgdp_dai].filter(v => v !== undefined);
+          if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
         }
-        const proxies = [w.sgdp_han, w.sgdp_japanese, w.sgdp_dai].filter(v => v !== undefined);
-        if (proxies.length === 0) {
-          validAll = false;
-          break;
+      } else if (clade === "Ancient_Beringian") {
+        if (w) {
+          const proxies = [w.sgdp_karitiana, w.sgdp_surui, w.sgdp_pima, w.sgdp_han].filter(v => v !== undefined);
+          if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
         }
-        freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
+      } else if (clade === "AASI") {
+        if (w) {
+          const proxies = [w.sgdp_onge, w.sgdp_paniya, w.sgdp_indian].filter(v => v !== undefined);
+          if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
+        }
       } else if (clade === "Ancient_African") {
-        const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
-        if (!w) {
-          validAll = false;
-          break;
+        if (w) {
+          const proxies = [w.sgdp_yoruba, w.sgdp_mbuti, w.sgdp_khomani_san].filter(v => v !== undefined);
+          if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
         }
-        const proxies = [w.sgdp_yoruba, w.sgdp_mbuti, w.sgdp_khomani_san].filter(v => v !== undefined);
-        if (proxies.length === 0) {
-          validAll = false;
-          break;
+      } else if (clade === "TAF") {
+        if (w) {
+          const proxies = [w.sgdp_mozabite, w.sgdp_yoruba, w.sgdp_bedouin].filter(v => v !== undefined);
+          if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
         }
-        freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
       } else if (clade === "Oceanian") {
-        const w = (grafWeights as any)[rsid] || (grafWeights as any)[rsid.toLowerCase()];
-        if (!w) {
-          validAll = false;
-          break;
+        if (w) {
+          const papuan = w.sgdp_papuan ?? w["sgdp_papuan.dg"];
+          const boug = w.sgdp_bougainville ?? w["sgdp_bougainville.dg"];
+          const proxies = [papuan, boug].filter(v => v !== undefined);
+          if (proxies.length > 0) freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
         }
-        const papuan = w.sgdp_papuan ?? w["sgdp_papuan.dg"];
-        const boug = w.sgdp_bougainville ?? w["sgdp_bougainville.dg"];
-        const proxies = [papuan, boug].filter(v => v !== undefined);
-        if (proxies.length === 0) {
-          validAll = false;
-          break;
-        }
-        freq = proxies.reduce((a, b) => a + b, 0) / proxies.length;
       }
 
       if (freq === undefined) {
-        validAll = false;
-        break;
+        const avail = [cladeFreqs?.["WHG"], cladeFreqs?.["EEF"], cladeFreqs?.["Yamnaya"]].filter((v): v is number => v !== undefined);
+        freq = avail.length > 0 ? avail.reduce((a, b) => a + b, 0) / avail.length : 0.5;
       }
 
       popExpectations.push(freq * 2.0);
