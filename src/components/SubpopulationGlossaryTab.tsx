@@ -176,7 +176,7 @@ export const SubpopulationGlossaryTab: React.FC<{ initialSearch?: string }> = ({
                 )}
 
                 {/* Description Snippet */}
-                <p className="text-xs text-slate-300 font-normal leading-relaxed line-clamp-3 italic pt-1">
+                <p className="text-xs text-slate-300 font-normal leading-relaxed whitespace-normal break-words italic pt-1">
                   "{pop.description}"
                 </p>
               </div>

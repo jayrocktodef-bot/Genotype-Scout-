@@ -89,7 +89,7 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
           </div>
         )}
 
-        <p className="text-sm text-slate-300 leading-relaxed px-2 sm:px-6 mb-6 line-clamp-3">
+        <p className="text-sm text-slate-300 leading-relaxed px-2 sm:px-6 mb-6 whitespace-normal break-words">
           {displayDescription}
         </p>
 

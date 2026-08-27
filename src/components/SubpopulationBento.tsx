@@ -191,7 +191,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                     </span>
                   </div>
 
-                  <h4 className="text-xs font-bold text-slate-200 truncate leading-snug group-hover:text-emerald-300 transition-colors" title={comp?.name || comp?.subpop}>
+                  <h4 className="text-xs font-bold text-slate-200 whitespace-normal break-words leading-snug group-hover:text-emerald-300 transition-colors" title={comp?.name || comp?.subpop}>
                     {comp?.name || comp?.subpop || 'Unknown'}
                   </h4>
 
@@ -229,7 +229,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             </p>
             <ul className="text-xs space-y-1 font-mono text-slate-350 grid grid-cols-2 gap-x-4">
               {(results.unmappedAims || []).slice(0, 50).map((aim: any) => (
-                <li key={aim.rsid} className="truncate">
+                <li key={aim.rsid} className="whitespace-normal break-words">
                   ● <span className="text-teal-400">{aim.rsid}</span> <span className="text-slate-500 dark:text-slate-400">(chr {aim.chromosome})</span>
                 </li>
               ))}

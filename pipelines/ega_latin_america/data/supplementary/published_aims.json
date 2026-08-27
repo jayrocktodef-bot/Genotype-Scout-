@@ -1,0 +1,22 @@
+{
+  "rs3827072": {
+    "gene": "EDAR",
+    "trait": "Asian/Native American hair & incisor morphology",
+    "regional_significance": "High in Mesoamerica & Andes"
+  },
+  "rs1426654": {
+    "gene": "SLC24A5",
+    "trait": "Pigmentation AIM",
+    "regional_significance": "Native allele fixed in Indigenous populations"
+  },
+  "rs1800414": {
+    "gene": "OCA2",
+    "trait": "Eye/Skin pigmentation",
+    "regional_significance": "Derived Native American polymorphism"
+  },
+  "rs1805007": {
+    "gene": "MC1R",
+    "trait": "Pigmentation marker",
+    "regional_significance": "Useful AIM for admixture control"
+  }
+}

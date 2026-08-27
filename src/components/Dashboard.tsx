@@ -148,9 +148,9 @@ const Dashboard: React.FC<DashboardProps> = ({
               ) : (
                 <div className="w-full h-full bg-slate-50 rounded-full animate-pulse dark:bg-slate-800" />
               )}
-              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none p-2">
                 <span className="text-2xl font-black text-slate-800 dark:text-slate-200">{chartData[0]?.value || 0}%</span>
-                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest truncate max-w-[80px] dark:text-slate-400">{chartData[0]?.name}</span>
+                <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest text-center whitespace-normal break-words max-w-none dark:text-slate-400">{chartData[0]?.name}</span>
               </div>
             </div>
             
@@ -192,7 +192,7 @@ const Dashboard: React.FC<DashboardProps> = ({
             <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Closest Population</h3>
             {topOracleMatch ? (
               <>
-                <h2 className="text-xl font-black text-slate-800 leading-tight mb-2 dark:text-slate-200">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
+                <h2 className="text-xl font-black text-slate-800 leading-tight mb-2 whitespace-normal break-words dark:text-slate-200">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
                 <div className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/25 border border-indigo-100 dark:border-indigo-900/35 text-indigo-700 dark:text-indigo-400 text-xs font-mono font-bold">
                   Dist: {Number(topOracleMatch.distance || 0).toFixed(4)}
                 </div>
@@ -224,12 +224,12 @@ const Dashboard: React.FC<DashboardProps> = ({
           <div className="space-y-3">
             <div>
               <span className="text-[9px] font-bold text-slate-500 uppercase dark:text-slate-400">Maternal (mtDNA)</span>
-              <p className="text-lg font-black text-slate-800 dark:text-slate-200">{mtHaplo}</p>
+              <p className="text-lg font-black text-slate-800 whitespace-normal break-words dark:text-slate-200">{mtHaplo}</p>
             </div>
             {yHaplo !== "N/A" && (
               <div>
                 <span className="text-[9px] font-bold text-slate-500 uppercase dark:text-slate-400">Paternal (Y-DNA)</span>
-                <p className="text-lg font-black text-slate-800 dark:text-slate-200">{yHaplo}</p>
+                <p className="text-lg font-black text-slate-800 whitespace-normal break-words dark:text-slate-200">{yHaplo}</p>
               </div>
             )}
           </div>
@@ -253,7 +253,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           {topHealth.length > 0 ? (
             <ul className="space-y-2">
               {topHealth.map((h: any, i: number) => (
-                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 truncate dark:text-slate-300 dark:bg-slate-800">
+                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 whitespace-normal break-words dark:text-slate-300 dark:bg-slate-800">
                   <span className="text-emerald-600 mr-2">●</span>{h.phenotype}
                 </li>
               ))}
@@ -281,7 +281,7 @@ const Dashboard: React.FC<DashboardProps> = ({
           {topTraits.length > 0 ? (
             <ul className="space-y-2">
               {topTraits.map((t: any, i: number) => (
-                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 truncate dark:text-slate-300 dark:bg-slate-800">
+                <li key={i} className="text-xs font-bold text-slate-700 bg-slate-50 border border-slate-100 rounded-lg p-2 whitespace-normal break-words dark:text-slate-300 dark:bg-slate-800">
                   <span className="text-pink-500 mr-2">✦</span>{t.phenotype}
                 </li>
               ))}
@@ -322,7 +322,7 @@ const Dashboard: React.FC<DashboardProps> = ({
                 <Shield className="w-5 h-5" />
               </div>
               <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Top Ancient Match</h3>
-              <p className="text-lg font-black text-slate-800 truncate max-w-[200px] dark:text-slate-200">
+              <p className="text-lg font-black text-slate-800 whitespace-normal break-words max-w-none dark:text-slate-200">
                 {topAncientMatch ? (topAncientMatch.name || topAncientMatch.population) : "No Match Data"}
               </p>
             </div>

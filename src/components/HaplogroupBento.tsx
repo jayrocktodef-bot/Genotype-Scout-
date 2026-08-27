@@ -73,7 +73,7 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
           </div>
         )}
 
-        <p className="text-sm text-slate-300 leading-relaxed px-2 sm:px-6 mb-6 line-clamp-3">
+        <p className="text-sm text-slate-300 leading-relaxed px-2 sm:px-6 mb-6 whitespace-normal break-words">
           {predictedMt.description || "An ancient maternal founder branch identified by your mitochondrial DNA mutations."}
         </p>
 

@@ -224,7 +224,7 @@ export const ModernAncestryOracle = memo(({
           <div className="space-y-1.5 sm:space-y-2 lg:col-span-1 max-h-[320px] sm:max-h-[480px] overflow-y-auto pr-1">
             {Object.entries(subpopulationScores).map(([name, value]) => (
               <div key={name} className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#1a1b1d]/70 backdrop-blur-sm border border-white/5 hover:border-[#4599FF]/50 transition-colors min-h-[44px]">
-                <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] truncate max-w-[180px] sm:max-w-none">{getDisplayName(name)}</span>
+                <span className="font-bold text-xs sm:text-sm text-[#F5F6F7] whitespace-normal break-words max-w-none mr-2">{getDisplayName(name)}</span>
                 <span className="font-mono font-bold text-xs sm:text-base text-[#4599FF] shrink-0 ml-2">{(Number(value) || 0).toFixed(1)}%</span>
               </div>
             ))}

@@ -1,0 +1,26 @@
+{
+  "regional_groups": {
+    "Mesoamerica": {
+      "description": "3rd wave Mesoamerican groups (e.g., Maya, Zapotec, Mixtec, Nahua, Triqui)",
+      "populations": ["Maya", "Zapotec", "Mixtec", "Nahua", "Triqui", "Purepecha", "Totonac", "Otomi"]
+    },
+    "Andes": {
+      "description": "Highland Andean agriculturalists (e.g., Quechua, Aymara, Uros)",
+      "populations": ["Quechua", "Aymara", "Uros", "Chachapoyas", "Cañari", "Yanesha"]
+    },
+    "Amazonia_Tupi": {
+      "description": "Amazonian lowland and Tupi-Guarani linguistic family branches (e.g., Karitiana, Surui, Ticuna, Guarani-Kaiowá)",
+      "populations": ["Karitiana", "Surui", "Ticuna", "Guarani", "Kaingang", "Xavante", "Jamamadi", "Arara", "Wari", "Matses"]
+    },
+    "Southern_Cone": {
+      "description": "Patagonian, Fuegian & Chaco hunter-gatherer descendancy (e.g., Mapuche, Huilliche, Qom, Wichi)",
+      "populations": ["Mapuche", "Huilliche", "Qom", "Wichi", "Mocovi", "Tehuelche", "Yaghan"]
+    },
+    "Ypykuera_Proxy": {
+      "description": "Archaic / Ypykuéra signal proxy (deep lineage sharing Australasian genetic affinity elements)",
+      "populations": ["Surui_ArchaicProxy", "Karitiana_ArchaicProxy", "Chotuna_Proxy", "Botocudo_Proxy"]
+    }
+  },
+  "linguistic_families_count": 28,
+  "total_indigenous_subpopulations": 45
+}

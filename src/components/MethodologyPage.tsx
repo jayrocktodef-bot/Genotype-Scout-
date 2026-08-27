@@ -156,10 +156,10 @@ export const MethodologyPage: React.FC<{ activeTab: string }> = ({ activeTab }) 
                 <div className="flex items-center gap-4 min-w-0">
                   <span className="text-2xl shrink-0">{section.emoji}</span>
                   <div className="min-w-0">
-                    <h2 className="text-base sm:text-lg font-black text-slate-800 dark:text-slate-100 tracking-tight truncate">
+                    <h2 className="text-base sm:text-lg font-black text-slate-800 dark:text-slate-100 tracking-tight whitespace-normal break-words">
                       {data.title}
                     </h2>
-                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500 font-mono mt-0.5 truncate">
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500 font-mono mt-0.5 whitespace-normal break-words">
                       {data.algName}
                     </p>
                   </div>

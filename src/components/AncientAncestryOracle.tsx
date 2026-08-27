@@ -234,32 +234,32 @@ export const AncientAncestryOracle = memo(({
                             </span>
                           </div>
 
-                          <h3 className="text-xl font-black text-white mb-2 truncate" title={pop.popName}>{pop.popName}</h3>
+                          <h3 className="text-xl font-black text-white mb-2 whitespace-normal break-words leading-snug" title={pop.popName}>{pop.popName}</h3>
                           <div className="flex flex-wrap items-center gap-2 mb-3.5">
-                            <div className="flex items-center gap-1 text-xs font-bold text-slate-300 uppercase truncate dark:text-slate-200">
+                            <div className="flex items-center gap-1 text-xs font-bold text-slate-300 uppercase whitespace-normal break-words dark:text-slate-200">
                               <MapPin size={12} className="text-amber-400 shrink-0" /> {pop.region}
                             </div>
                             <span className="text-slate-500">•</span>
-                            <div className="text-xs font-bold text-slate-300 uppercase truncate dark:text-slate-200">
+                            <div className="text-xs font-bold text-slate-300 uppercase whitespace-normal break-words dark:text-slate-200">
                               {pop.period}
                             </div>
                             {pop.age_bp && (
                               <>
                                 <span className="text-slate-500">•</span>
-                                <div className="text-xs font-bold text-amber-400 uppercase truncate">
+                                <div className="text-xs font-bold text-amber-400 uppercase whitespace-normal break-words">
                                   {pop.age_bp.toLocaleString()} BP
                                 </div>
                               </>
                             )}
                           </div>
 
-                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5 font-normal italic">
+                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5 font-normal italic whitespace-normal break-words">
                             "{pop.description}"
                           </p>
                         </div>
 
                         <div className="flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
-                          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300 truncate dark:text-slate-200">
+                          <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300 whitespace-normal break-words dark:text-slate-200">
                              <div className="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0" />
                              {pop.culture || (type === 'matches' ? 'Archaeological Sample' : 'Reference Clade')}
                           </div>

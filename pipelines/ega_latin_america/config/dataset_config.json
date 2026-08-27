@@ -1,0 +1,35 @@
+{
+  "dataset_info": {
+    "study_accession": "EGAS50000001664",
+    "dataset_accession": "EGAD50000002396",
+    "dac_accession": "EGAC50000000368",
+    "title": "128 High-Coverage WGS across 45 Indigenous Latin American Populations",
+    "sequencing_depth": "44x",
+    "sample_count": 128,
+    "population_count": 45,
+    "linguistic_families": 28
+  },
+  "regional_clusters": [
+    "Mesoamerica",
+    "Andes",
+    "Amazonia_Tupi",
+    "Southern_Cone",
+    "Ypykuera_Proxy"
+  ],
+  "target_panels": {
+    "illumina_omni25": true,
+    "illumina_gsa": true,
+    "23andme_v4_v5": true,
+    "ancestry_v2": true
+  },
+  "filtering_parameters": {
+    "min_call_rate": 0.95,
+    "min_maf": 0.01,
+    "hwe_p_threshold": 1e-6,
+    "pseudo_count_epsilon": 1e-4
+  },
+  "open_access_sources": {
+    "github_repo": "https://macscastro.github.io/latin_america_wgs",
+    "supplementary_data_url": "https://macscastro.github.io/latin_america_wgs/data/supp_tables.json"
+  }
+}

@@ -1,0 +1,1026 @@
+{
+  "EGAS1664_IND_001": {
+    "sample_id": "EGAS1664_IND_001",
+    "population": "Maya",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Mayan",
+    "country": "Mexico/Guatemala",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_002": {
+    "sample_id": "EGAS1664_IND_002",
+    "population": "Maya",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Mayan",
+    "country": "Mexico/Guatemala",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_003": {
+    "sample_id": "EGAS1664_IND_003",
+    "population": "Maya",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Mayan",
+    "country": "Mexico/Guatemala",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_004": {
+    "sample_id": "EGAS1664_IND_004",
+    "population": "Zapotec",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Oto-Manguean",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_005": {
+    "sample_id": "EGAS1664_IND_005",
+    "population": "Zapotec",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Oto-Manguean",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_006": {
+    "sample_id": "EGAS1664_IND_006",
+    "population": "Zapotec",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Oto-Manguean",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_007": {
+    "sample_id": "EGAS1664_IND_007",
+    "population": "Mixtec",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Uto-Aztecan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_008": {
+    "sample_id": "EGAS1664_IND_008",
+    "population": "Mixtec",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Uto-Aztecan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_009": {
+    "sample_id": "EGAS1664_IND_009",
+    "population": "Mixtec",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Uto-Aztecan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_010": {
+    "sample_id": "EGAS1664_IND_010",
+    "population": "Nahua",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Totonacan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_011": {
+    "sample_id": "EGAS1664_IND_011",
+    "population": "Nahua",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Totonacan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_012": {
+    "sample_id": "EGAS1664_IND_012",
+    "population": "Nahua",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Totonacan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_013": {
+    "sample_id": "EGAS1664_IND_013",
+    "population": "Triqui",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Tarascan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_014": {
+    "sample_id": "EGAS1664_IND_014",
+    "population": "Triqui",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Tarascan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_015": {
+    "sample_id": "EGAS1664_IND_015",
+    "population": "Triqui",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Tarascan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_016": {
+    "sample_id": "EGAS1664_IND_016",
+    "population": "Purepecha",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Quechuan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_017": {
+    "sample_id": "EGAS1664_IND_017",
+    "population": "Purepecha",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Quechuan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_018": {
+    "sample_id": "EGAS1664_IND_018",
+    "population": "Purepecha",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Quechuan",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_019": {
+    "sample_id": "EGAS1664_IND_019",
+    "population": "Totonac",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Aymaran",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_020": {
+    "sample_id": "EGAS1664_IND_020",
+    "population": "Totonac",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Aymaran",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_021": {
+    "sample_id": "EGAS1664_IND_021",
+    "population": "Totonac",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Aymaran",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_022": {
+    "sample_id": "EGAS1664_IND_022",
+    "population": "Otomi",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Uru-Chipaya",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_023": {
+    "sample_id": "EGAS1664_IND_023",
+    "population": "Otomi",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Uru-Chipaya",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_024": {
+    "sample_id": "EGAS1664_IND_024",
+    "population": "Otomi",
+    "regional_cluster": "Mesoamerica",
+    "linguistic_family": "Uru-Chipaya",
+    "country": "Mexico",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_025": {
+    "sample_id": "EGAS1664_IND_025",
+    "population": "Quechua",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Arawakan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_026": {
+    "sample_id": "EGAS1664_IND_026",
+    "population": "Quechua",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Arawakan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_027": {
+    "sample_id": "EGAS1664_IND_027",
+    "population": "Quechua",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Arawakan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_028": {
+    "sample_id": "EGAS1664_IND_028",
+    "population": "Aymara",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Tupi-Guarani",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_029": {
+    "sample_id": "EGAS1664_IND_029",
+    "population": "Aymara",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Tupi-Guarani",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_030": {
+    "sample_id": "EGAS1664_IND_030",
+    "population": "Aymara",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Tupi-Guarani",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_031": {
+    "sample_id": "EGAS1664_IND_031",
+    "population": "Uros",
+    "regional_cluster": "Andes",
+    "linguistic_family": "J\u00ea",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_032": {
+    "sample_id": "EGAS1664_IND_032",
+    "population": "Uros",
+    "regional_cluster": "Andes",
+    "linguistic_family": "J\u00ea",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_033": {
+    "sample_id": "EGAS1664_IND_033",
+    "population": "Uros",
+    "regional_cluster": "Andes",
+    "linguistic_family": "J\u00ea",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_034": {
+    "sample_id": "EGAS1664_IND_034",
+    "population": "Chachapoyas",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Panoan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_035": {
+    "sample_id": "EGAS1664_IND_035",
+    "population": "Chachapoyas",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Panoan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_036": {
+    "sample_id": "EGAS1664_IND_036",
+    "population": "Chachapoyas",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Panoan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_037": {
+    "sample_id": "EGAS1664_IND_037",
+    "population": "Ca\u00f1ari",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Cariban",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_038": {
+    "sample_id": "EGAS1664_IND_038",
+    "population": "Ca\u00f1ari",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Cariban",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_039": {
+    "sample_id": "EGAS1664_IND_039",
+    "population": "Ca\u00f1ari",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Cariban",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_040": {
+    "sample_id": "EGAS1664_IND_040",
+    "population": "Yanesha",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Tucanoan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_041": {
+    "sample_id": "EGAS1664_IND_041",
+    "population": "Yanesha",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Tucanoan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_042": {
+    "sample_id": "EGAS1664_IND_042",
+    "population": "Yanesha",
+    "regional_cluster": "Andes",
+    "linguistic_family": "Tucanoan",
+    "country": "Peru/Bolivia",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_043": {
+    "sample_id": "EGAS1664_IND_043",
+    "population": "Karitiana",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chibchan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_044": {
+    "sample_id": "EGAS1664_IND_044",
+    "population": "Karitiana",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chibchan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_045": {
+    "sample_id": "EGAS1664_IND_045",
+    "population": "Karitiana",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chibchan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_046": {
+    "sample_id": "EGAS1664_IND_046",
+    "population": "Surui",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mapudungun",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_047": {
+    "sample_id": "EGAS1664_IND_047",
+    "population": "Surui",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mapudungun",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_048": {
+    "sample_id": "EGAS1664_IND_048",
+    "population": "Surui",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mapudungun",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_049": {
+    "sample_id": "EGAS1664_IND_049",
+    "population": "Ticuna",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Guaycuruan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_050": {
+    "sample_id": "EGAS1664_IND_050",
+    "population": "Ticuna",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Guaycuruan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_051": {
+    "sample_id": "EGAS1664_IND_051",
+    "population": "Ticuna",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Guaycuruan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_052": {
+    "sample_id": "EGAS1664_IND_052",
+    "population": "Guarani",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Matacoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_053": {
+    "sample_id": "EGAS1664_IND_053",
+    "population": "Guarani",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Matacoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_054": {
+    "sample_id": "EGAS1664_IND_054",
+    "population": "Guarani",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Matacoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_055": {
+    "sample_id": "EGAS1664_IND_055",
+    "population": "Kaingang",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chon",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_056": {
+    "sample_id": "EGAS1664_IND_056",
+    "population": "Kaingang",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chon",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_057": {
+    "sample_id": "EGAS1664_IND_057",
+    "population": "Kaingang",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chon",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_058": {
+    "sample_id": "EGAS1664_IND_058",
+    "population": "Xavante",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Fuegian",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_059": {
+    "sample_id": "EGAS1664_IND_059",
+    "population": "Xavante",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Fuegian",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_060": {
+    "sample_id": "EGAS1664_IND_060",
+    "population": "Xavante",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Fuegian",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_061": {
+    "sample_id": "EGAS1664_IND_061",
+    "population": "Jamamadi",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Barbacoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_062": {
+    "sample_id": "EGAS1664_IND_062",
+    "population": "Jamamadi",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Barbacoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_063": {
+    "sample_id": "EGAS1664_IND_063",
+    "population": "Jamamadi",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Barbacoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_064": {
+    "sample_id": "EGAS1664_IND_064",
+    "population": "Arara",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Misumalpan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_065": {
+    "sample_id": "EGAS1664_IND_065",
+    "population": "Arara",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Misumalpan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_066": {
+    "sample_id": "EGAS1664_IND_066",
+    "population": "Arara",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Misumalpan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_067": {
+    "sample_id": "EGAS1664_IND_067",
+    "population": "Wari",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tequistlatecan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_068": {
+    "sample_id": "EGAS1664_IND_068",
+    "population": "Wari",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tequistlatecan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_069": {
+    "sample_id": "EGAS1664_IND_069",
+    "population": "Wari",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tequistlatecan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_070": {
+    "sample_id": "EGAS1664_IND_070",
+    "population": "Matses",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mixe-Zoquean",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_071": {
+    "sample_id": "EGAS1664_IND_071",
+    "population": "Matses",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mixe-Zoquean",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_072": {
+    "sample_id": "EGAS1664_IND_072",
+    "population": "Matses",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mixe-Zoquean",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_073": {
+    "sample_id": "EGAS1664_IND_073",
+    "population": "Mapuche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Lengua-Maskoy",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_074": {
+    "sample_id": "EGAS1664_IND_074",
+    "population": "Mapuche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Lengua-Maskoy",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_075": {
+    "sample_id": "EGAS1664_IND_075",
+    "population": "Mapuche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Lengua-Maskoy",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_076": {
+    "sample_id": "EGAS1664_IND_076",
+    "population": "Huilliche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Zamucoan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_077": {
+    "sample_id": "EGAS1664_IND_077",
+    "population": "Huilliche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Zamucoan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_078": {
+    "sample_id": "EGAS1664_IND_078",
+    "population": "Huilliche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Zamucoan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_079": {
+    "sample_id": "EGAS1664_IND_079",
+    "population": "Qom",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Jabutian",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_080": {
+    "sample_id": "EGAS1664_IND_080",
+    "population": "Qom",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Jabutian",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_081": {
+    "sample_id": "EGAS1664_IND_081",
+    "population": "Qom",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Jabutian",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_082": {
+    "sample_id": "EGAS1664_IND_082",
+    "population": "Wichi",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Unclassified_Ypykuera",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_083": {
+    "sample_id": "EGAS1664_IND_083",
+    "population": "Wichi",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Unclassified_Ypykuera",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_084": {
+    "sample_id": "EGAS1664_IND_084",
+    "population": "Wichi",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Unclassified_Ypykuera",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_085": {
+    "sample_id": "EGAS1664_IND_085",
+    "population": "Mocovi",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Mayan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_086": {
+    "sample_id": "EGAS1664_IND_086",
+    "population": "Mocovi",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Mayan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_087": {
+    "sample_id": "EGAS1664_IND_087",
+    "population": "Mocovi",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Mayan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_088": {
+    "sample_id": "EGAS1664_IND_088",
+    "population": "Tehuelche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Oto-Manguean",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_089": {
+    "sample_id": "EGAS1664_IND_089",
+    "population": "Tehuelche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Oto-Manguean",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_090": {
+    "sample_id": "EGAS1664_IND_090",
+    "population": "Tehuelche",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Oto-Manguean",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_091": {
+    "sample_id": "EGAS1664_IND_091",
+    "population": "Yaghan",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Uto-Aztecan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_092": {
+    "sample_id": "EGAS1664_IND_092",
+    "population": "Yaghan",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Uto-Aztecan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_093": {
+    "sample_id": "EGAS1664_IND_093",
+    "population": "Yaghan",
+    "regional_cluster": "Southern_Cone",
+    "linguistic_family": "Uto-Aztecan",
+    "country": "Chile/Argentina",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_094": {
+    "sample_id": "EGAS1664_IND_094",
+    "population": "Surui_ArchaicProxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Totonacan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_095": {
+    "sample_id": "EGAS1664_IND_095",
+    "population": "Surui_ArchaicProxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Totonacan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_096": {
+    "sample_id": "EGAS1664_IND_096",
+    "population": "Surui_ArchaicProxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Totonacan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_097": {
+    "sample_id": "EGAS1664_IND_097",
+    "population": "Karitiana_ArchaicProxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Tarascan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_098": {
+    "sample_id": "EGAS1664_IND_098",
+    "population": "Karitiana_ArchaicProxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Tarascan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_099": {
+    "sample_id": "EGAS1664_IND_099",
+    "population": "Karitiana_ArchaicProxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Tarascan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_100": {
+    "sample_id": "EGAS1664_IND_100",
+    "population": "Chotuna_Proxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Quechuan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_101": {
+    "sample_id": "EGAS1664_IND_101",
+    "population": "Chotuna_Proxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Quechuan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_102": {
+    "sample_id": "EGAS1664_IND_102",
+    "population": "Chotuna_Proxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Quechuan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_103": {
+    "sample_id": "EGAS1664_IND_103",
+    "population": "Botocudo_Proxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Aymaran",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_104": {
+    "sample_id": "EGAS1664_IND_104",
+    "population": "Botocudo_Proxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Aymaran",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_105": {
+    "sample_id": "EGAS1664_IND_105",
+    "population": "Botocudo_Proxy",
+    "regional_cluster": "Ypykuera_Proxy",
+    "linguistic_family": "Aymaran",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_106": {
+    "sample_id": "EGAS1664_IND_106",
+    "population": "Pima",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Uru-Chipaya",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_107": {
+    "sample_id": "EGAS1664_IND_107",
+    "population": "Pima",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Uru-Chipaya",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_108": {
+    "sample_id": "EGAS1664_IND_108",
+    "population": "Pima",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Uru-Chipaya",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_109": {
+    "sample_id": "EGAS1664_IND_109",
+    "population": "Tarahumara",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Arawakan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_110": {
+    "sample_id": "EGAS1664_IND_110",
+    "population": "Tarahumara",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Arawakan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_111": {
+    "sample_id": "EGAS1664_IND_111",
+    "population": "Tarahumara",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Arawakan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_112": {
+    "sample_id": "EGAS1664_IND_112",
+    "population": "Huichol",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tupi-Guarani",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_113": {
+    "sample_id": "EGAS1664_IND_113",
+    "population": "Huichol",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tupi-Guarani",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_114": {
+    "sample_id": "EGAS1664_IND_114",
+    "population": "Huichol",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tupi-Guarani",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_115": {
+    "sample_id": "EGAS1664_IND_115",
+    "population": "Cora",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "J\u00ea",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_116": {
+    "sample_id": "EGAS1664_IND_116",
+    "population": "Cora",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "J\u00ea",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_117": {
+    "sample_id": "EGAS1664_IND_117",
+    "population": "Choco",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Panoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_118": {
+    "sample_id": "EGAS1664_IND_118",
+    "population": "Choco",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Panoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_119": {
+    "sample_id": "EGAS1664_IND_119",
+    "population": "Kogui",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Cariban",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_120": {
+    "sample_id": "EGAS1664_IND_120",
+    "population": "Kogui",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Cariban",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_121": {
+    "sample_id": "EGAS1664_IND_121",
+    "population": "Wayuu",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tucanoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_122": {
+    "sample_id": "EGAS1664_IND_122",
+    "population": "Wayuu",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Tucanoan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_123": {
+    "sample_id": "EGAS1664_IND_123",
+    "population": "Embera",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chibchan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_124": {
+    "sample_id": "EGAS1664_IND_124",
+    "population": "Embera",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Chibchan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_125": {
+    "sample_id": "EGAS1664_IND_125",
+    "population": "Guambiano",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mapudungun",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_126": {
+    "sample_id": "EGAS1664_IND_126",
+    "population": "Guambiano",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Mapudungun",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_127": {
+    "sample_id": "EGAS1664_IND_127",
+    "population": "Awa",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Guaycuruan",
+    "country": "Brazil",
+    "coverage": "44x"
+  },
+  "EGAS1664_IND_128": {
+    "sample_id": "EGAS1664_IND_128",
+    "population": "Awa",
+    "regional_cluster": "Amazonia_Tupi",
+    "linguistic_family": "Guaycuruan",
+    "country": "Brazil",
+    "coverage": "44x"
+  }
+}

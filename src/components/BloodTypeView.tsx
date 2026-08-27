@@ -523,7 +523,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
                     {isTested ? genotype : 'Not Tested'}
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-300 mt-2 font-medium truncate">
+                <p className="text-[11px] text-slate-300 mt-2 font-medium whitespace-normal break-words">
                   {MARKER_METADATA[rsid]?.effect || 'RHD/RHCE Marker'}
                 </p>
               </div>
