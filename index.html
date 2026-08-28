@@ -32,27 +32,29 @@
 
     <script>
       (function() {
-        var APP_VERSION = "5.0.2-force-refresh";
-        if (localStorage.getItem("scout_version_lock") !== APP_VERSION) {
-          console.log("Version update detected. Forcing cache clear...");
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-              for(var i=0; i<registrations.length; i++) {
-                registrations[i].unregister();
-              }
-            });
+        try {
+          var APP_VERSION = "5.15.0-clean";
+          var currentLock = localStorage.getItem("scout_version_lock");
+          if (currentLock !== APP_VERSION) {
+            console.log("Version update detected (" + currentLock + " -> " + APP_VERSION + "). Cleaning legacy service workers...");
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (var i = 0; i < registrations.length; i++) {
+                  registrations[i].unregister();
+                }
+              }).catch(function(e) { console.warn("SW unregister notice:", e); });
+            }
+            if ('caches' in window) {
+              caches.keys().then(function(names) {
+                for (var j = 0; j < names.length; j++) {
+                  caches.delete(names[j]);
+                }
+              }).catch(function(e) { console.warn("Cache delete notice:", e); });
+            }
+            localStorage.setItem("scout_version_lock", APP_VERSION);
           }
-          if ('caches' in window) {
-            caches.keys().then(function(names) {
-              for (var j=0; j<names.length; j++) {
-                caches.delete(names[j]);
-              }
-            });
-          }
-          localStorage.clear();
-          sessionStorage.clear();
-          localStorage.setItem("scout_version_lock", APP_VERSION);
-          window.location.reload(true);
+        } catch (e) {
+          console.warn("Storage access restricted or unavailable:", e);
         }
       })();
     </script>

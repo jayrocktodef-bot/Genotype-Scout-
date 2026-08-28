@@ -2004,24 +2004,15 @@ export default function App() {
 
   useEffect(() => {
     const checkForceReset = async () => {
-      const CURRENT_BUILD = 'v5.14.0_forced_reset';
-      const lastBuild = localStorage.getItem('genotype_scout_build');
-      if (lastBuild !== CURRENT_BUILD) {
-        console.log(`[App] Forced build reset triggered: ${lastBuild} -> ${CURRENT_BUILD}`);
-        localStorage.setItem('genotype_scout_build', CURRENT_BUILD);
-        if ('serviceWorker' in navigator) {
-          try {
-            const regs = await navigator.serviceWorker.getRegistrations();
-            for (const r of regs) await r.unregister();
-          } catch (e) {}
+      try {
+        const CURRENT_BUILD = 'v5.15.0_clean';
+        const lastBuild = localStorage.getItem('genotype_scout_build');
+        if (lastBuild !== CURRENT_BUILD) {
+          console.log(`[App] Build version update registered: ${lastBuild} -> ${CURRENT_BUILD}`);
+          localStorage.setItem('genotype_scout_build', CURRENT_BUILD);
         }
-        if ('caches' in window) {
-          try {
-            const keys = await caches.keys();
-            await Promise.all(keys.map(k => caches.delete(k)));
-          } catch (e) {}
-        }
-        window.location.reload();
+      } catch (e) {
+        console.warn('[App] Could not write build version to localStorage:', e);
       }
     };
     checkForceReset();
