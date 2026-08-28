@@ -1,3 +1,5 @@
+import { gunzipSync, unzipSync } from 'fflate';
+
 // ── Module-level constants (allocated once) ──────────────────────────
 const VALID_BASE_CODES = new Set([
   65/*A*/, 67/*C*/, 71/*G*/, 84/*T*/, 68/*D*/, 73/*I*/, 78/*N*/, 45/*-*/
@@ -10,6 +12,69 @@ const HASH = 0x23;
 const QUOTE = 0x22;
 const SPACE = 0x20;
 const DECODER = new TextDecoder('utf-8');
+
+/**
+ * Automatically inspects magic bytes and decompresses GZIP (\x1f\x8b) or ZIP (PK\x03\x04) buffers.
+ * Selects the primary genetic data file (.txt, .csv, .vcf, .tsv, .dat) case-insensitively.
+ */
+export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
+  if (!buf || buf.length < 4) return buf;
+
+  // 1. Check for GZIP magic bytes (\x1f\x8b)
+  if (buf[0] === 0x1f && buf[1] === 0x8b) {
+    try {
+      return gunzipSync(buf);
+    } catch (e) {
+      console.warn("fflate gunzipSync warning:", e);
+      return buf;
+    }
+  }
+
+  // 2. Check for ZIP magic bytes (PK\x03\x04, PK\x05\x06, PK\x07\x08)
+  if (buf[0] === 0x50 && buf[1] === 0x4b && (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07)) {
+    try {
+      const unzipped = unzipSync(buf);
+      const fileKeys = Object.keys(unzipped).filter(k => {
+        const lower = k.toLowerCase();
+        return !lower.startsWith('__macosx/') &&
+               !lower.includes('.ds_store') &&
+               !lower.endsWith('/') &&
+               !lower.endsWith('.pdf') &&
+               !lower.endsWith('.html') &&
+               !lower.endsWith('.png') &&
+               !lower.endsWith('.jpg');
+      });
+
+      if (fileKeys.length === 0) return buf;
+
+      fileKeys.sort((a, b) => {
+        const score = (key: string) => {
+          const l = key.toLowerCase();
+          let s = 0;
+          if (l.endsWith('.vcf') || l.endsWith('.vcf.gz')) s += 100;
+          if (l.endsWith('.txt') || l.endsWith('.txt.gz')) s += 90;
+          if (l.endsWith('.csv') || l.endsWith('.csv.gz')) s += 80;
+          if (l.endsWith('.tsv') || l.endsWith('.tsv.gz')) s += 70;
+          if (l.endsWith('.dat')) s += 60;
+          if (l.includes('genome') || l.includes('dna') || l.includes('ancestry') || l.includes('23andme')) s += 30;
+          return s;
+        };
+        return score(b) - score(a);
+      });
+
+      let innerBuffer = unzipped[fileKeys[0]];
+      if (innerBuffer.length >= 2 && innerBuffer[0] === 0x1f && innerBuffer[1] === 0x8b) {
+        innerBuffer = gunzipSync(innerBuffer);
+      }
+      return innerBuffer;
+    } catch (e) {
+      console.warn("fflate unzipSync warning:", e);
+      return buf;
+    }
+  }
+
+  return buf;
+}
 
 export function isValidGenotype(genotype: string): boolean {
   if (genotype === '--' || genotype === '__' || genotype === '00' || genotype === '??' || genotype === './.' || genotype === '.|.' || genotype === '-' || genotype === '.') {
@@ -68,13 +133,9 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
 
   if (f0Len > 0) {
     const c0 = buf[f0DataStart];
-    if (c0 === 114 || c0 === 82) { // 'r' or 'R'
-      if (f0Len < 2) return null;
-      const c1 = buf[f0DataStart + 1];
-      if (c1 !== 115 && c1 !== 83) return null; // 's' or 'S'
-    } else if (c0 !== 105 && c0 !== 73) { // not 'i' or 'I'
-      return null;
-    }
+    if (c0 === HASH) return null;
+    const f0Str = DECODER.decode(buf.subarray(f0DataStart, f0RawEnd)).toLowerCase();
+    if (f0Str === 'rsid' || f0Str === 'marker' || f0Str === 'name' || f0Str === 'id' || f0Str === 'chrom' || f0Str === 'chromosome') return null;
   } else {
     if (start < f0RawEnd && buf[start] !== QUOTE) return null;
   }
@@ -211,16 +272,9 @@ function fastParseLine(line: string, delim: number, delimStr: string): ParsedFie
   // Strip quotes
   if (field0.charCodeAt(0) === 34) field0 = field0.substring(1);
   if (field0.length > 0 && field0.charCodeAt(field0.length - 1) === 34) field0 = field0.substring(0, field0.length - 1);
-  // Must start with 'rs' or 'i' followed by digit
-  const c0 = field0.charCodeAt(0);
-  if (c0 === 114 || c0 === 82) { // 'r' or 'R'
-    const c1 = field0.charCodeAt(1);
-    if (c1 !== 115 && c1 !== 83) return null; // 's' or 'S'
-  } else if (c0 === 105 || c0 === 73) { // 'i' or 'I'
-    // ok — internal marker
-  } else {
-    return null;
-  }
+  if (!field0 || field0.length === 0) return null;
+  const f0Lower = field0.toLowerCase();
+  if (f0Lower === 'rsid' || f0Lower === 'marker' || f0Lower === 'name' || f0Lower === 'id' || f0Lower === 'chrom' || f0Lower === 'chromosome' || f0Lower.startsWith('#')) return null;
 
   // Field 1: chromosome
   start = end + 1;
@@ -343,17 +397,7 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
     };
   }
 
-  // 2. Check for zip signature that bypassed client extract
-  if (header.startsWith("PK\x03\x04") || header.includes("PK\u0003\u0004") || header.startsWith("PK\x05\x06") || header.startsWith("PK\x07\x08") || header.startsWith("\x1f\x8b")) {
-    return {
-      healthy: false,
-      category: "Direct Binary ZIP Archive",
-      reason: "This file is a zipped archive. Although Genotype Scout unpacks standard ZIP files, this archive appears to be encrypted, corrupted, or nested in unreadable sub-directories.",
-      solution: "Try unzipping the archive manually on your desktop first, and upload the enclosed plain text file (.txt or .csv)."
-    };
-  }
-
-  // 3. Check for HTML
+  // 2. Check for HTML
   if (header.trim().toLowerCase().startsWith("<!doctype html") || header.includes("<html") || header.includes("<head") || header.includes("schema.org")) {
     return {
       healthy: false,
@@ -363,7 +407,7 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
     };
   }
 
-  // 4. Check for Excel or formats
+  // 3. Check for Excel or formats
   if (header.includes("workbook") || header.includes("<workbook") || header.includes("xmlns:o=\"urn:schemas-microsoft-com:office")) {
     return {
       healthy: false,
@@ -373,7 +417,7 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
     };
   }
 
-  // 5. Binary scan - excessive non-printable characters or null bytes
+  // 4. Binary scan - excessive non-printable characters or null bytes
   let binaryCharCount = 0;
   const testLimit = Math.min(text.length, 1000);
   for (let i = 0; i < testLimit; i++) {
@@ -629,6 +673,18 @@ export async function parseRawDNAStream(
   allowlist?: Set<string>,
   onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void
 ) {
+  // Check for GZIP (\x1f\x8b) or ZIP (PK\x03\x04) signatures on sample slice
+  const sampleSlice = file.slice(0, Math.min(65536, file.size));
+  const sampleBuf = new Uint8Array(await sampleSlice.arrayBuffer());
+
+  if ((sampleBuf.length >= 2 && sampleBuf[0] === 0x1f && sampleBuf[1] === 0x8b) || 
+      (sampleBuf.length >= 4 && sampleBuf[0] === 0x50 && sampleBuf[1] === 0x4b)) {
+    const fullBuf = new Uint8Array(await file.arrayBuffer());
+    const decompressed = decompressGenomicBuffer(fullBuf);
+    const text = DECODER.decode(decompressed);
+    return parseRawDNA(text, allowlist, onProgress);
+  }
+
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
   const xMap: Record<string, string> = {};
@@ -642,7 +698,6 @@ export async function parseRawDNAStream(
   const totalBytes = file.size;
   let bytesProcessed = 0;
 
-  // Detect format/chip from primary slice of the header to avoid reading the whole file
   const firstSlice = file.slice(0, Math.min(50000, file.size));
   const firstChunkText = await firstSlice.text();
   const header = firstChunkText.slice(0, 1000);

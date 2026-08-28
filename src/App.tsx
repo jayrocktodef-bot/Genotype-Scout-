@@ -2198,15 +2198,23 @@ export default function App() {
       const expandedFiles: File[] = [];
       for (const file of fileArray) {
         if (file.name.toLowerCase().endsWith('.zip')) {
-          if (file.size > 50 * 1024 * 1024) {
-            throw new Error(`The ZIP file "${file.name}" is too large to safely extract in the browser. Please extract it on your computer and upload the uncompressed raw text or VCF file directly. Streaming supports massive files!`);
+          if (file.size > 80 * 1024 * 1024) {
+            throw new Error(`The ZIP file "${file.name}" is too large to safely extract in the browser. Please extract it on your computer and upload the enclosed raw text or VCF file directly.`);
           }
           const zip = await JSZip.loadAsync(file);
-          for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
-            if (!zipEntry.dir) {
-              const content = await zipEntry.async('blob');
-              expandedFiles.push(new File([content], relativePath, { type: 'text/plain' }));
-            }
+          const validKeys = Object.keys(zip.files).filter(k => {
+            const lower = k.toLowerCase();
+            return !zip.files[k].dir &&
+                   !lower.startsWith('__macosx/') &&
+                   !lower.includes('.ds_store') &&
+                   !lower.endsWith('.pdf') &&
+                   !lower.endsWith('.html') &&
+                   !lower.endsWith('.png') &&
+                   !lower.endsWith('.jpg');
+          });
+          for (const relativePath of validKeys) {
+            const content = await zip.files[relativePath].async('blob');
+            expandedFiles.push(new File([content], relativePath, { type: 'text/plain' }));
           }
         } else {
           expandedFiles.push(file);
