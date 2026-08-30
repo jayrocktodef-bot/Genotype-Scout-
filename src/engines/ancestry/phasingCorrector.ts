@@ -1,5 +1,6 @@
-
 import { LAIResults } from './rfmixTypeScript';
+
+const COMPLEMENTS: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
 
 /**
  * identifyTracts returns an Int32Array of assignment indices.
@@ -78,21 +79,34 @@ export function correctPhasingErrors(
     if (alleleA === alleleB || alleleA === '?' || alleleB === '?') continue;
 
     // 2. Statistical likelihood check
-    // In master_aims_normalized, 'frequencies' contains the frequency of the 'alleles' in the list.
-    // If multiple alleles are provided, we'll assume it's the frequency of the first one or we match.
-    const targetAllele = markerData.alleles[0];
+    const targetAllele = (markerData.alleles?.[0] || '').toUpperCase();
+    const compTarget = COMPLEMENTS[targetAllele] || targetAllele;
+    const aUpA = alleleA.toUpperCase();
+    const aUpB = alleleB.toUpperCase();
+    const isPalindromicLocus = (aUpA === 'A' && aUpB === 'T') ||
+                              (aUpA === 'T' && aUpB === 'A') ||
+                              (aUpA === 'C' && aUpB === 'G') ||
+                              (aUpA === 'G' && aUpB === 'C');
+
+    const matchesTarget = (allele: string) => {
+      const aUp = allele.toUpperCase();
+      if (aUp === targetAllele) return true;
+      if (!isPalindromicLocus && aUp === compTarget) return true;
+      return false;
+    };
+
     const freqA = markerData.frequencies[popA] || 0.01;
     const freqB = markerData.frequencies[popB] || 0.01;
 
     // Probability of seeing alleleA in popA
-    const pA_a = (alleleA === targetAllele) ? freqA : (1 - freqA);
+    const pA_a = matchesTarget(alleleA) ? freqA : (1 - freqA);
     // Probability of seeing alleleB in popB
-    const pB_b = (alleleB === targetAllele) ? freqB : (1 - freqB);
+    const pB_b = matchesTarget(alleleB) ? freqB : (1 - freqB);
     
     // Probability of seeing alleleA in popB
-    const pB_a = (alleleA === targetAllele) ? freqB : (1 - freqB);
+    const pB_a = matchesTarget(alleleA) ? freqB : (1 - freqB);
     // Probability of seeing alleleB in popA
-    const pA_b = (alleleB === targetAllele) ? freqA : (1 - freqA);
+    const pA_b = matchesTarget(alleleB) ? freqA : (1 - freqA);
 
     // Swap if: (current state is very unlikely) AND (swapped state is much more likely)
     const currentLikelihood = pA_a * pB_b;

@@ -11,27 +11,32 @@ const CR = 0x0D;
 const HASH = 0x23;
 const QUOTE = 0x22;
 const SPACE = 0x20;
+const COMMA = 0x2C;
+const SEMICOLON = 0x3B;
 const DECODER = new TextDecoder('utf-8');
 
 /**
  * Automatically inspects magic bytes and decompresses GZIP (\x1f\x8b) or ZIP (PK\x03\x04) buffers.
  * Selects the primary genetic data file (.txt, .csv, .vcf, .tsv, .dat) case-insensitively.
+ * Strips UTF-8 BOM (\xef\xbb\xbf) if present.
  */
 export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
   if (!buf || buf.length < 4) return buf;
 
+  let result = buf;
+
   // 1. Check for GZIP magic bytes (\x1f\x8b)
   if (buf[0] === 0x1f && buf[1] === 0x8b) {
     try {
-      return gunzipSync(buf);
+      result = gunzipSync(buf);
     } catch (e) {
       console.warn("fflate gunzipSync warning:", e);
-      return buf;
+      result = buf;
     }
   }
 
   // 2. Check for ZIP magic bytes (PK\x03\x04, PK\x05\x06, PK\x07\x08)
-  if (buf[0] === 0x50 && buf[1] === 0x4b && (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07)) {
+  else if (buf[0] === 0x50 && buf[1] === 0x4b && (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07)) {
     try {
       const unzipped = unzipSync(buf);
       const fileKeys = Object.keys(unzipped).filter(k => {
@@ -45,74 +50,224 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
                !lower.endsWith('.jpg');
       });
 
-      if (fileKeys.length === 0) return buf;
+      if (fileKeys.length > 0) {
+        fileKeys.sort((a, b) => {
+          const score = (key: string) => {
+            const l = key.toLowerCase();
+            let s = 0;
+            if (l.endsWith('.vcf') || l.endsWith('.vcf.gz')) s += 100;
+            if (l.endsWith('.txt') || l.endsWith('.txt.gz')) s += 90;
+            if (l.endsWith('.csv') || l.endsWith('.csv.gz')) s += 80;
+            if (l.endsWith('.tsv') || l.endsWith('.tsv.gz')) s += 70;
+            if (l.endsWith('.dat')) s += 60;
+            if (l.includes('genome') || l.includes('dna') || l.includes('ancestry') || l.includes('23andme') || l.includes('myheritage') || l.includes('ftdna') || l.includes('livingdna')) s += 30;
+            return s;
+          };
+          return score(b) - score(a);
+        });
 
-      fileKeys.sort((a, b) => {
-        const score = (key: string) => {
-          const l = key.toLowerCase();
-          let s = 0;
-          if (l.endsWith('.vcf') || l.endsWith('.vcf.gz')) s += 100;
-          if (l.endsWith('.txt') || l.endsWith('.txt.gz')) s += 90;
-          if (l.endsWith('.csv') || l.endsWith('.csv.gz')) s += 80;
-          if (l.endsWith('.tsv') || l.endsWith('.tsv.gz')) s += 70;
-          if (l.endsWith('.dat')) s += 60;
-          if (l.includes('genome') || l.includes('dna') || l.includes('ancestry') || l.includes('23andme')) s += 30;
-          return s;
-        };
-        return score(b) - score(a);
-      });
-
-      let innerBuffer = unzipped[fileKeys[0]];
-      if (innerBuffer.length >= 2 && innerBuffer[0] === 0x1f && innerBuffer[1] === 0x8b) {
-        innerBuffer = gunzipSync(innerBuffer);
+        let innerBuffer = unzipped[fileKeys[0]];
+        if (innerBuffer.length >= 2 && innerBuffer[0] === 0x1f && innerBuffer[1] === 0x8b) {
+          innerBuffer = gunzipSync(innerBuffer);
+        }
+        result = innerBuffer;
       }
-      return innerBuffer;
     } catch (e) {
       console.warn("fflate unzipSync warning:", e);
-      return buf;
+      result = buf;
     }
   }
 
-  return buf;
+  // 3. Strip UTF-8 BOM (\xef\xbb\xbf)
+  if (result.length >= 3 && result[0] === 0xef && result[1] === 0xbb && result[2] === 0xbf) {
+    result = result.subarray(3);
+  }
+
+  return result;
 }
 
+/**
+ * Standardize chromosome identifier across all commercial formats.
+ * Maps AncestryDNA chr23->X, chr24->Y, chr25->X (PAR), chr26->MT.
+ */
+export function normalizeChromosome(chromRaw: string): string {
+  let chrom = chromRaw.trim().toUpperCase();
+  if (chrom.startsWith('CHR')) chrom = chrom.slice(3);
+  if (chrom === '23' || chrom === 'X') return 'X';
+  if (chrom === '24' || chrom === 'Y') return 'Y';
+  // AncestryDNA uses '25' for the Pseudoautosomal Region (PAR) on X; also handle 'PAR' and 'XY'
+  if (chrom === '25' || chrom === 'PAR' || chrom === 'XY') return 'X';
+  if (chrom === '26' || chrom === 'M' || chrom === 'MT' || chrom === 'MITO' || chrom === 'MITOCHONDRIAL') return 'MT';
+  if (chrom === '0' || chrom === 'UN' || chrom === 'UNKNOWN') return 'UN';
+  return chrom;
+}
+
+/**
+ * Validate and clean genotype string.
+ * Handles split alleles, slashes, indels (I/D, +/-), and alphabetical sorting.
+ */
 export function isValidGenotype(genotype: string): boolean {
-  if (genotype === '--' || genotype === '__' || genotype === '00' || genotype === '??' || genotype === './.' || genotype === '.|.' || genotype === '-' || genotype === '.') {
-    return false; // Treat uncalled/missing variants as invalid so they are skipped
+  if (!genotype) return false;
+  const g = genotype.trim().toUpperCase().replace(/["'\s\/|_]/g, '');
+  if (g === '--' || g === '__' || g === '00' || g === '??' || g === './.' || g === '.|.' || g === '-' || g === '.' || g === '0' || g === 'NA' || g === 'NN' || g === 'NULL') {
+    return false;
   }
-  const len = genotype.length;
+  const len = g.length;
   if (len === 0 || len > 2) return false;
-  if (!VALID_BASE_CODES.has(genotype.charCodeAt(0))) return false;
-  if (len === 2 && !VALID_BASE_CODES.has(genotype.charCodeAt(1))) return false;
+  if (!VALID_BASE_CODES.has(g.charCodeAt(0))) return false;
+  if (len === 2 && !VALID_BASE_CODES.has(g.charCodeAt(1))) return false;
   return true;
 }
 
-// ── Ultra-fast manual field extractor (replaces regex) ───────────────
-// Handles tab, comma, and space delimited lines with optional quote wrapping.
-// Returns null for non-data lines (comments, headers, blanks).
-interface ParsedFields {
-  markerId: string;  // already lowercased
-  chrom: string;     // already uppercased, CHR prefix stripped
-  posStr: string;
-  pos: number;
-  genotype: string;  // already uppercased
-}
+export function cleanGenotypeString(rawGenotype: string): string | null {
+  if (!rawGenotype) return null;
+  let g = rawGenotype.trim().toUpperCase().replace(/["'\s\/|_]/g, '');
+  if (g === '--' || g === '__' || g === '00' || g === '??' || g === './.' || g === '.|.' || g === '-' || g === '.' || g === '0' || g === 'NA' || g === 'NN' || g === 'NULL') {
+    return null;
+  }
+  // Convert '+' and '-' indel notations to I / D
+  if (g === '++') g = 'II';
+  else if (g === '+-') g = 'ID';
+  else if (g === '-+') g = 'ID';
+  else if (g === '+') g = 'I';
 
-function bytesToString(buf: Uint8Array): string {
-  return DECODER.decode(buf);
-}
+  // Ancestry-specific "0" cleaning (e.g. 'A0' -> 'A')
+  if (g.length === 2 && g.includes('0')) {
+    g = g.replace(/0/g, '');
+  }
 
-function parseIntFromBytes(buf: Uint8Array, start: number, end: number): number {
-  let val = 0;
-  for (let i = start; i < end; i++) {
-    const byte = buf[i];
-    if (byte >= 0x30 && byte <= 0x39) {
-      val = val * 10 + (byte - 0x30);
-    } else {
-      return NaN;
+  const len = g.length;
+  if (len === 0 || len > 2) return null;
+  if (!VALID_BASE_CODES.has(g.charCodeAt(0))) return null;
+  if (len === 2 && !VALID_BASE_CODES.has(g.charCodeAt(1))) return null;
+
+  // Sort SNP alleles alphabetically to be position independent (e.g. TC -> CT) unless indels
+  if (len === 2 && g[0] !== 'I' && g[0] !== 'D' && g[1] !== 'I' && g[1] !== 'D') {
+    if (g.charCodeAt(0) > g.charCodeAt(1)) {
+      g = g[1] + g[0];
     }
   }
-  return val;
+
+  return g;
+}
+
+interface ParsedFields {
+  markerId: string;  // already lowercased
+  chrom: string;     // already normalized uppercase
+  posStr: string;
+  pos: number;
+  genotype: string;  // already normalized uppercase
+}
+
+export interface ColumnMapping {
+  rsidIdx: number;
+  chromIdx: number;
+  posIdx: number;
+  gtIdx: number;
+  allele1Idx: number;
+  allele2Idx: number;
+  hasSplitAlleles: boolean;
+  isCustom: boolean;
+}
+
+/**
+ * Adaptive column detector for headers across all commercial vendors.
+ * Detects standard formats as well as TellmeGen, 24Genetics, Spanish/Russian vendor formats.
+ */
+export function detectHeaderColumns(headerLine: string, delim: string): ColumnMapping | null {
+  const rawTokens = headerLine.replace(/^#+/, '').replace(/"/g, '').split(delim).map(t => t.trim().toLowerCase());
+  if (rawTokens.length < 3) return null;
+
+  let rsidIdx = -1;
+  let chromIdx = -1;
+  let posIdx = -1;
+  let gtIdx = -1;
+  let allele1Idx = -1;
+  let allele2Idx = -1;
+
+  for (let i = 0; i < rawTokens.length; i++) {
+    const t = rawTokens[i];
+    if (t === 'rsid' || t === 'marker' || t === 'snp' || t === 'id' || t === 'name' || t === 'probe set id' || t === 'dbsnp rs id' || t === 'probeset' || t === 'marker_id' || t === 'snp_name' || t === 'markername') {
+      if (rsidIdx === -1) rsidIdx = i;
+    } else if (t === 'chromosome' || t === 'chrom' || t === 'chr' || t === 'chromosome_name' || t === 'chr_name') {
+      if (chromIdx === -1) chromIdx = i;
+    } else if (t === 'position' || t === 'pos' || t === 'physical position' || t === 'coordinate' || t === 'phys_pos' || t === 'location' || t === 'chr_pos') {
+      if (posIdx === -1) posIdx = i;
+    } else if (t === 'genotype' || t === 'result' || t === 'call' || t === 'gt' || t === 'genotype_call' || t === 'alleles') {
+      if (gtIdx === -1) gtIdx = i;
+    } else if (t === 'allele1' || t === 'allele 1' || t === 'allele1 - top' || t === 'allele1_top' || t === 'a1' || t === 'allele_1') {
+      if (allele1Idx === -1) allele1Idx = i;
+    } else if (t === 'allele2' || t === 'allele 2' || t === 'allele2 - top' || t === 'allele2_top' || t === 'a2' || t === 'allele_2') {
+      if (allele2Idx === -1) allele2Idx = i;
+    }
+  }
+
+  const hasSplit = allele1Idx !== -1 && allele2Idx !== -1;
+  const isCustom = rsidIdx !== 0 || chromIdx !== 1 || posIdx !== 2 || (hasSplit ? (allele1Idx !== 3 || allele2Idx !== 4) : (gtIdx !== 3 && gtIdx !== -1));
+
+  if (chromIdx !== -1 && posIdx !== -1 && (gtIdx !== -1 || hasSplit || rsidIdx !== -1)) {
+    return {
+      rsidIdx: rsidIdx !== -1 ? rsidIdx : 0,
+      chromIdx,
+      posIdx,
+      gtIdx: gtIdx !== -1 ? gtIdx : 3,
+      allele1Idx: allele1Idx !== -1 ? allele1Idx : 3,
+      allele2Idx: allele2Idx !== -1 ? allele2Idx : 4,
+      hasSplitAlleles: hasSplit,
+      isCustom
+    };
+  }
+
+  return null;
+}
+
+function parseAdaptiveLine(line: string, delimStr: string, mapping: ColumnMapping): ParsedFields | null {
+  const parts = line.split(delimStr);
+  if (parts.length <= Math.max(mapping.chromIdx, mapping.posIdx)) return null;
+
+  const stripQ = (s: string) => {
+    let res = s.trim();
+    if (res.charCodeAt(0) === QUOTE) res = res.substring(1);
+    if (res.length > 0 && res.charCodeAt(res.length - 1) === QUOTE) res = res.substring(0, res.length - 1);
+    return res.trim();
+  };
+
+  const rawChrom = mapping.chromIdx < parts.length ? stripQ(parts[mapping.chromIdx]) : '';
+  const rawPos = mapping.posIdx < parts.length ? stripQ(parts[mapping.posIdx]) : '';
+  if (!rawChrom || !rawPos) return null;
+
+  const pos = parseInt(rawPos, 10);
+  if (isNaN(pos)) return null;
+
+  let rawGenotype = '';
+  if (mapping.hasSplitAlleles && mapping.allele1Idx < parts.length && mapping.allele2Idx < parts.length) {
+    const a1 = stripQ(parts[mapping.allele1Idx]);
+    const a2 = stripQ(parts[mapping.allele2Idx]);
+    if (a1 && a2 && a1 !== '0' && a2 !== '0' && a1 !== '-' && a2 !== '-') {
+      rawGenotype = a1 + a2;
+    } else if (a1 && a1 !== '0' && a1 !== '-') {
+      rawGenotype = a1;
+    }
+  } else if (mapping.gtIdx < parts.length) {
+    rawGenotype = stripQ(parts[mapping.gtIdx]);
+  }
+
+  const genotype = cleanGenotypeString(rawGenotype);
+  if (!genotype) return null;
+
+  const chrom = normalizeChromosome(rawChrom);
+  let rawMarker = mapping.rsidIdx < parts.length ? stripQ(parts[mapping.rsidIdx]).toLowerCase() : '';
+  if (!rawMarker || rawMarker === '.' || rawMarker === '-') {
+    rawMarker = `chr${chrom}_${pos}`.toLowerCase();
+  }
+
+  return {
+    markerId: rawMarker,
+    chrom,
+    posStr: String(pos),
+    pos,
+    genotype
+  };
 }
 
 function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: number): ParsedFields | null {
@@ -135,7 +290,7 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
     const c0 = buf[f0DataStart];
     if (c0 === HASH) return null;
     const f0Str = DECODER.decode(buf.subarray(f0DataStart, f0RawEnd)).toLowerCase();
-    if (f0Str === 'rsid' || f0Str === 'marker' || f0Str === 'name' || f0Str === 'id' || f0Str === 'chrom' || f0Str === 'chromosome') return null;
+    if (f0Str === 'rsid' || f0Str === 'marker' || f0Str === 'name' || f0Str === 'id' || f0Str === 'chrom' || f0Str === 'chromosome' || f0Str === 'snp') return null;
   } else {
     if (start < f0RawEnd && buf[start] !== QUOTE) return null;
   }
@@ -165,8 +320,15 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
   if (f2DataStart < f2DataEnd && buf[f2DataStart] === QUOTE) f2DataStart++;
   if (f2DataEnd > f2DataStart && buf[f2DataEnd - 1] === QUOTE) f2DataEnd--;
 
-  const pos = parseIntFromBytes(buf, f2DataStart, f2DataEnd);
-  if (isNaN(pos)) return null;
+  let pos = 0;
+  for (let i = f2DataStart; i < f2DataEnd; i++) {
+    const byte = buf[i];
+    if (byte >= 0x30 && byte <= 0x39) {
+      pos = pos * 10 + (byte - 0x30);
+    } else {
+      return null;
+    }
+  }
 
   // Field 3: genotype
   let f3RawStart = f2RawEnd < logicalEnd ? f2RawEnd + 1 : f2RawEnd;
@@ -245,11 +407,8 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
     }
   }
 
-  const chromRaw = DECODER.decode(buf.subarray(f1DataStart, f1DataEnd)).toUpperCase();
-  let chrom = chromRaw.startsWith('CHR') ? chromRaw.slice(3) : chromRaw;
-  if (chrom === '23') chrom = 'X';
-  else if (chrom === '24') chrom = 'Y';
-  else if (chrom === '25' || chrom === '26' || chrom === 'M') chrom = 'MT';
+  const chromRaw = DECODER.decode(buf.subarray(f1DataStart, f1DataEnd));
+  const chrom = normalizeChromosome(chromRaw);
 
   const markerIdRaw = DECODER.decode(buf.subarray(f0DataStart, f0RawEnd)).toLowerCase();
   const rawMarkerId = markerIdRaw && markerIdRaw !== '.' && markerIdRaw !== '-' ? markerIdRaw : `chr${chrom}_${pos}`.toLowerCase();
@@ -270,21 +429,20 @@ function fastParseLine(line: string, delim: number, delimStr: string): ParsedFie
   if (end === -1) return null;
   let field0 = line.substring(start, end);
   // Strip quotes
-  if (field0.charCodeAt(0) === 34) field0 = field0.substring(1);
-  if (field0.length > 0 && field0.charCodeAt(field0.length - 1) === 34) field0 = field0.substring(0, field0.length - 1);
+  if (field0.charCodeAt(0) === QUOTE) field0 = field0.substring(1);
+  if (field0.length > 0 && field0.charCodeAt(field0.length - 1) === QUOTE) field0 = field0.substring(0, field0.length - 1);
   if (!field0 || field0.length === 0) return null;
   const f0Lower = field0.toLowerCase();
   if (f0Lower === 'rsid' || f0Lower === 'marker' || f0Lower === 'name' || f0Lower === 'id' || f0Lower === 'chrom' || f0Lower === 'chromosome' || f0Lower.startsWith('#')) return null;
 
   // Field 1: chromosome
   start = end + 1;
-  // Skip consecutive delimiters (e.g. multiple spaces)
   while (start < line.length && line.charCodeAt(start) === delim) start++;
   end = line.indexOf(delimStr, start);
   if (end === -1) return null;
   let field1 = line.substring(start, end);
-  if (field1.charCodeAt(0) === 34) field1 = field1.substring(1);
-  if (field1.length > 0 && field1.charCodeAt(field1.length - 1) === 34) field1 = field1.substring(0, field1.length - 1);
+  if (field1.charCodeAt(0) === QUOTE) field1 = field1.substring(1);
+  if (field1.length > 0 && field1.charCodeAt(field1.length - 1) === QUOTE) field1 = field1.substring(0, field1.length - 1);
 
   // Field 2: position
   start = end + 1;
@@ -292,8 +450,8 @@ function fastParseLine(line: string, delim: number, delimStr: string): ParsedFie
   end = line.indexOf(delimStr, start);
   if (end === -1) end = line.length;
   let field2 = line.substring(start, end);
-  if (field2.charCodeAt(0) === 34) field2 = field2.substring(1);
-  if (field2.length > 0 && field2.charCodeAt(field2.length - 1) === 34) field2 = field2.substring(0, field2.length - 1);
+  if (field2.charCodeAt(0) === QUOTE) field2 = field2.substring(1);
+  if (field2.length > 0 && field2.charCodeAt(field2.length - 1) === QUOTE) field2 = field2.substring(0, field2.length - 1);
 
   // Field 3+: genotype (may be 1 field "AG" or 2 fields "A" "G")
   start = end < line.length ? end + 1 : end;
@@ -301,46 +459,32 @@ function fastParseLine(line: string, delim: number, delimStr: string): ParsedFie
   let genoEnd = line.indexOf(delimStr, start);
   if (genoEnd === -1) genoEnd = line.length;
   let field3 = line.substring(start, genoEnd);
-  if (field3.charCodeAt(0) === 34) field3 = field3.substring(1);
-  if (field3.length > 0 && field3.charCodeAt(field3.length - 1) === 34) field3 = field3.substring(0, field3.length - 1);
+  if (field3.charCodeAt(0) === QUOTE) field3 = field3.substring(1);
+  if (field3.length > 0 && field3.charCodeAt(field3.length - 1) === QUOTE) field3 = field3.substring(0, field3.length - 1);
 
-  let genotype = field3.toUpperCase();
+  let rawGenotype = field3;
 
   // Check for split alleles (AncestryDNA: "A\tG" → "AG")
-  if (genotype.length === 1 && genoEnd < line.length) {
+  if (rawGenotype.length === 1 && genoEnd < line.length) {
     let s2 = genoEnd + 1;
     while (s2 < line.length && line.charCodeAt(s2) === delim) s2++;
     let e2 = line.indexOf(delimStr, s2);
     if (e2 === -1) e2 = line.length;
     let allele2 = line.substring(s2, e2);
-    if (allele2.charCodeAt(0) === 34) allele2 = allele2.substring(1);
-    if (allele2.length > 0 && allele2.charCodeAt(allele2.length - 1) === 34) allele2 = allele2.substring(0, allele2.length - 1);
+    if (allele2.charCodeAt(0) === QUOTE) allele2 = allele2.substring(1);
+    if (allele2.length > 0 && allele2.charCodeAt(allele2.length - 1) === QUOTE) allele2 = allele2.substring(0, allele2.length - 1);
     if (allele2.length === 1) {
-      genotype += allele2.toUpperCase();
+      rawGenotype += allele2;
     }
   }
 
-  // Ancestry-specific "0" cleaning
-  if (genotype.includes('0')) genotype = genotype.replace(/0/g, '');
+  const genotype = cleanGenotypeString(rawGenotype);
+  if (!genotype) return null;
 
-  if (!isValidGenotype(genotype)) return null;
-
-  // Sort SNP alleles alphabetically to be position independent (e.g. TC -> CT)
-  if (genotype.length === 2 && genotype[0] !== 'I' && genotype[0] !== 'D' && genotype[1] !== 'I' && genotype[1] !== 'D') {
-    if (genotype.charCodeAt(0) > genotype.charCodeAt(1)) {
-      genotype = genotype[1] + genotype[0];
-    }
-  }
-
-  let chrom = field1.toUpperCase();
-  if (chrom.startsWith('CHR')) chrom = chrom.substring(3);
-  if (chrom === '23') chrom = 'X';
-  else if (chrom === '24') chrom = 'Y';
-  else if (chrom === '25' || chrom === '26' || chrom === 'M') chrom = 'MT';
-
+  const chrom = normalizeChromosome(field1);
   let rawMarkerId = field0.toLowerCase();
   if (!rawMarkerId || rawMarkerId === '.' || rawMarkerId === '-') {
-    rawMarkerId = `chr${chrom}_${field2}`.toLowerCase(); // Hydrate empty rsID with chr_pos
+    rawMarkerId = `chr${chrom}_${field2}`.toLowerCase();
   }
 
   return {
@@ -422,7 +566,6 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
   const testLimit = Math.min(text.length, 1000);
   for (let i = 0; i < testLimit; i++) {
     const charCode = text.charCodeAt(i);
-    // Null byte or strange unprintable characters indicating binary format (e.g. BAM, CRAM, BCF)
     if (charCode === 0 || (charCode < 32 && charCode !== 9 && charCode !== 10 && charCode !== 13)) {
       binaryCharCount++;
     }
@@ -440,17 +583,22 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
 }
 
 export function isPARRegion(chrom: string, pos: number): boolean {
-  if (chrom !== 'X' && chrom !== '23') return false;
-  if (pos >= 10001 && pos <= 2781479) return true; // PAR1
+  if (chrom !== 'X' && chrom !== '23' && chrom !== '25' && chrom !== 'PAR') return false;
+  if (pos >= 10001 && pos <= 2781479) return true; // PAR1 (GRCh37/38)
   if (pos >= 154931044 && pos <= 156030895) return true; // PAR2 (GRCh37/38)
   return false;
 }
 
 export function parseRawDNA(
-  text: string, 
+  rawText: string, 
   allowlist?: Set<string>,
   onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void
 ) {
+  let text = rawText;
+  if (text.charCodeAt(0) === 0xFEFF) {
+    text = text.slice(1);
+  }
+
   const snpMap: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string, pos: number }> = {};
   const xMap: Record<string, string> = {};
@@ -460,10 +608,8 @@ export function parseRawDNA(
   let chip = "Unknown Chip";
   let snpCount = 0;
   
-  // Try to detect format/chip early from header
   const header = text.slice(0, 1000);
   
-  // Enforce file health check
   const health = checkFileFormatHealth(text);
   if (!health.healthy) {
     throw new GenomicsParseError(health.reason || "Invalid file format", {
@@ -489,12 +635,15 @@ export function parseRawDNA(
   } else if (header.includes("MyHeritage")) {
     format = "MyHeritage";
     chip = "MyHeritage DNA (GSA)";
-  } else if (header.includes("Family Tree DNA") || header.includes("FTDNA")) {
+  } else if (header.includes("Family Tree DNA") || header.includes("FTDNA") || header.includes("RESULT") || header.includes("Result")) {
     format = "FTDNA";
     chip = "FTDNA Family Finder";
   } else if (header.includes("Living DNA")) {
     format = "Living DNA";
     chip = "Living DNA (GSA)";
+  } else if (header.includes("tellmegen") || header.includes("TellmeGen")) {
+    format = "TellmeGen";
+    chip = "TellmeGen Raw Data";
   } else if (header.includes("##fileformat=VCF") || header.includes("#CHROM\tPOS\tID\tREF\tALT") || header.includes("#CHROM")) {
     format = "VCF";
     chip = "Variant Call Format (VCF)";
@@ -511,12 +660,12 @@ export function parseRawDNA(
 
   let delim: number | null = null;
   let delimStr = "";
+  let columnMapping: ColumnMapping | null = null;
 
   while (lineStart < totalLength) {
     let lineEnd = text.indexOf('\n', lineStart);
     if (lineEnd === -1) lineEnd = totalLength;
 
-    // Strip \r without creating a trimmed copy
     let lineActualEnd = lineEnd;
     if (lineActualEnd > lineStart && text.charCodeAt(lineActualEnd - 1) === 13) lineActualEnd--;
 
@@ -527,12 +676,16 @@ export function parseRawDNA(
     if (lineLen === 0) continue;
 
     const firstChar = text.charCodeAt(lineActualEnd - lineLen);
+    const line = text.substring(lineActualEnd - lineLen, lineActualEnd);
+
     if (firstChar === 35 /* # */ || (firstChar === 47 /* / */ && text.charCodeAt(lineActualEnd - lineLen + 1) === 47)) {
       linesCommented++;
+      // Check if this comment line contains column definitions (e.g. # rsid, chromosome, position, genotype)
+      if (delimStr && !columnMapping) {
+        columnMapping = detectHeaderColumns(line, delimStr);
+      }
       continue;
     }
-
-    const line = text.substring(lineActualEnd - lineLen, lineActualEnd);
 
     if (isVcf) {
       if (linesTotal % 10000 === 0 && onProgress) {
@@ -540,7 +693,8 @@ export function parseRawDNA(
       }
       const cols = line.split('\t');
       if (cols.length >= 10) {
-        const chrom = cols[0].toUpperCase().replace('CHR', '');
+        const rawChrom = cols[0];
+        const chrom = normalizeChromosome(rawChrom);
         const posStr = cols[1];
         const pos = parseInt(posStr, 10);
         const id = cols[2];
@@ -554,7 +708,7 @@ export function parseRawDNA(
         if (gtIdx !== -1) {
           const sampleFields = sampleCol.split(':');
           const gtVal = sampleFields[gtIdx];
-          if (gtVal && gtVal !== '.' && gtVal !== './.') {
+          if (gtVal && gtVal !== '.' && gtVal !== './.' && gtVal !== '.|.') {
             const gtParts = gtVal.split(/[\/|]/);
             const altAlleles = alt.split(',');
             const getAllele = (idxStr: string) => {
@@ -564,11 +718,19 @@ export function parseRawDNA(
             };
             const a1 = getAllele(gtParts[0]);
             const a2 = getAllele(gtParts[1] || gtParts[0]);
-            const genotype = a1 + a2;
+            
+            // Normalize multicharacter indels if present in VCF
+            let normA1 = a1;
+            let normA2 = a2;
+            if (a1.length > 1 || a2.length > 1) {
+              normA1 = a1.length > ref.length ? 'I' : a1.length < ref.length ? 'D' : a1[0];
+              normA2 = a2.length > ref.length ? 'I' : a2.length < ref.length ? 'D' : a2[0];
+            }
+            const genotype = cleanGenotypeString(normA1 + normA2);
 
-            if (isValidGenotype(genotype)) {
+            if (genotype) {
               const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase();
-              const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
+              const isYorMT = chrom === 'Y' || chrom === 'MT';
               if (!allowlist || isYorMT || allowlist.has(markerId)) {
                 snpCount++;
                 snpMap[markerId] = genotype;
@@ -576,9 +738,9 @@ export function parseRawDNA(
                   snpMetaMap[markerId] = { chrom, pos };
                   snpMap[`chr${chrom}_${pos}`.toLowerCase()] = genotype;
                 }
-                if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
-                if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
-                if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
+                if (chrom === 'X') xMap[markerId] = genotype;
+                if (chrom === 'Y') yMap[markerId] = genotype;
+                if (chrom === 'MT') {
                   const allele = genotype[0];
                   if (allele !== '-') mtMap[posStr] = allele;
                 }
@@ -597,6 +759,9 @@ export function parseRawDNA(
         } else if (line.indexOf(',') !== -1) {
           delim = 44;
           delimStr = ',';
+        } else if (line.indexOf(';') !== -1) {
+          delim = 59;
+          delimStr = ';';
         } else if (line.indexOf(' ') !== -1) {
           delim = 32;
           delimStr = ' ';
@@ -604,16 +769,27 @@ export function parseRawDNA(
           linesMalformed++;
           continue;
         }
+        // Check if the very first data line is a table header
+        columnMapping = detectHeaderColumns(line, delimStr);
+        if (columnMapping) {
+          continue; // Skip header line
+        }
       }
-      // ── Fast manual field extraction (replaces regex) ──
-      const parsed = fastParseLine(line, delim, delimStr);
+
+      let parsed: ParsedFields | null = null;
+      if (columnMapping && columnMapping.isCustom) {
+        parsed = parseAdaptiveLine(line, delimStr, columnMapping);
+      } else {
+        parsed = fastParseLine(line, delim, delimStr);
+      }
+
       if (parsed) {
         matchCount++;
         if (matchCount % 10000 === 0 && onProgress) {
           onProgress(lineStart, totalLength, snpCount);
         }
         const { markerId, chrom, posStr, pos, genotype } = parsed;
-        const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
+        const isYorMT = chrom === 'Y' || chrom === 'MT';
 
         if (allowlist && !isYorMT && !allowlist.has(markerId)) continue;
 
@@ -624,9 +800,9 @@ export function parseRawDNA(
           const coordId = `chr${chrom}_${pos}`.toLowerCase();
           if (!snpMap[coordId]) snpMap[coordId] = genotype;
         }
-        if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
-        if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
-        if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
+        if (chrom === 'X') xMap[markerId] = genotype;
+        if (chrom === 'Y') yMap[markerId] = genotype;
+        if (chrom === 'MT') {
           const allele = genotype[0];
           if (allele !== '-') mtMap[posStr] = allele;
         }
@@ -694,6 +870,8 @@ export async function parseRawDNAStream(
   let chip = "Unknown Chip";
   let snpCount = 0;
   let delim: number | null = null;
+  let delimStr = "";
+  let columnMapping: ColumnMapping | null = null;
 
   const totalBytes = file.size;
   let bytesProcessed = 0;
@@ -702,7 +880,6 @@ export async function parseRawDNAStream(
   const firstChunkText = await firstSlice.text();
   const header = firstChunkText.slice(0, 1000);
 
-  // Enforce format health diagnostics early on stream
   const health = checkFileFormatHealth(firstChunkText);
   if (!health.healthy) {
     throw new GenomicsParseError(health.reason || "Invalid file format", {
@@ -728,12 +905,15 @@ export async function parseRawDNAStream(
   } else if (header.includes("MyHeritage")) {
     format = "MyHeritage";
     chip = "MyHeritage DNA (GSA)";
-  } else if (header.includes("Family Tree DNA") || header.includes("FTDNA")) {
+  } else if (header.includes("Family Tree DNA") || header.includes("FTDNA") || header.includes("RESULT") || header.includes("Result")) {
     format = "FTDNA";
     chip = "FTDNA Family Finder";
   } else if (header.includes("Living DNA")) {
     format = "Living DNA";
     chip = "Living DNA (GSA)";
+  } else if (header.includes("tellmegen") || header.includes("TellmeGen")) {
+    format = "TellmeGen";
+    chip = "TellmeGen Raw Data";
   } else if (header.includes("##fileformat=VCF") || header.includes("#CHROM\tPOS\tID\tREF\tALT") || header.includes("#CHROM")) {
     format = "VCF";
     chip = "Variant Call Format (VCF)";
@@ -741,7 +921,6 @@ export async function parseRawDNAStream(
 
   const isVcf = format === "VCF";
 
-  // Open the file stream
   const stream = file.stream();
   const reader = stream.getReader();
 
@@ -766,13 +945,17 @@ export async function parseRawDNAStream(
       lastYield = performance.now();
     }
 
-    // Concatenate remainder with new chunk
     const combined = new Uint8Array(remainder.length + value.length);
     combined.set(remainder);
     combined.set(value, remainder.length);
 
     let pos = 0;
     const length = combined.length;
+
+    // Check BOM in first chunk if needed
+    if (linesTotal === 0 && combined.length >= 3 && combined[0] === 0xef && combined[1] === 0xbb && combined[2] === 0xbf) {
+      pos = 3;
+    }
 
     while (pos < length) {
       let nl = pos;
@@ -785,23 +968,27 @@ export async function parseRawDNAStream(
 
       linesTotal++;
       
-      // Ignore empty lines
       if (lineEnd - lineStart <= 1) continue;
 
-      // Check for comments
       if (combined[lineStart] === HASH) {
         linesCommented++;
+        if (delimStr && !columnMapping) {
+          let actEnd = lineEnd - 1;
+          if (actEnd > lineStart && combined[actEnd - 1] === CR) actEnd--;
+          const commentLine = DECODER.decode(combined.subarray(lineStart, actEnd));
+          columnMapping = detectHeaderColumns(commentLine, delimStr);
+        }
         continue;
       }
 
       if (isVcf) {
-        // Fallback string-based VCF parsing since VCF has complex format fields
         let actualLineEnd = lineEnd - 1; // exclude LF
         if (actualLineEnd > lineStart && combined[actualLineEnd - 1] === CR) actualLineEnd--;
-        const line = bytesToString(combined.subarray(lineStart, actualLineEnd));
+        const line = DECODER.decode(combined.subarray(lineStart, actualLineEnd));
         const cols = line.split('\t');
         if (cols.length >= 10) {
-          const chrom = cols[0].toUpperCase().replace('CHR', '');
+          const rawChrom = cols[0];
+          const chrom = normalizeChromosome(rawChrom);
           const posStr = cols[1];
           const colPos = parseInt(posStr, 10);
           const id = cols[2];
@@ -815,7 +1002,7 @@ export async function parseRawDNAStream(
           if (gtIdx !== -1) {
             const sampleFields = sampleCol.split(':');
             const gtVal = sampleFields[gtIdx];
-            if (gtVal && gtVal !== '.' && gtVal !== './.') {
+            if (gtVal && gtVal !== '.' && gtVal !== './.' && gtVal !== '.|.') {
               const gtParts = gtVal.split(/[\/|]/);
               const altAlleles = alt.split(',');
               const getAllele = (idxStr: string) => {
@@ -825,11 +1012,17 @@ export async function parseRawDNAStream(
               };
               const a1 = getAllele(gtParts[0]);
               const a2 = getAllele(gtParts[1] || gtParts[0]);
-              const genotype = a1 + a2;
+              let normA1 = a1;
+              let normA2 = a2;
+              if (a1.length > 1 || a2.length > 1) {
+                normA1 = a1.length > ref.length ? 'I' : a1.length < ref.length ? 'D' : a1[0];
+                normA2 = a2.length > ref.length ? 'I' : a2.length < ref.length ? 'D' : a2[0];
+              }
+              const genotype = cleanGenotypeString(normA1 + normA2);
 
-              if (isValidGenotype(genotype)) {
+              if (genotype) {
                 const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${colPos}`.toLowerCase();
-                const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
+                const isYorMT = chrom === 'Y' || chrom === 'MT';
                 if (!allowlist || isYorMT || allowlist.has(markerId)) {
                   snpCount++;
                   snpMap[markerId] = genotype;
@@ -837,9 +1030,9 @@ export async function parseRawDNAStream(
                     snpMetaMap[markerId] = { chrom, pos: colPos };
                     snpMap[`chr${chrom}_${colPos}`.toLowerCase()] = genotype;
                   }
-                  if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
-                  if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
-                  if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
+                  if (chrom === 'X') xMap[markerId] = genotype;
+                  if (chrom === 'Y') yMap[markerId] = genotype;
+                  if (chrom === 'MT') {
                     const allele = genotype[0];
                     if (allele !== '-') mtMap[posStr] = allele;
                   }
@@ -851,30 +1044,49 @@ export async function parseRawDNAStream(
           linesMalformed++;
         }
       } else {
-        // Detect delimiter on first non-comment line
         if (delim === null) {
           let testStart = lineStart;
           let foundTab = false;
           let foundComma = false;
+          let foundSemicolon = false;
           let foundSpace = false;
           for (let i = testStart; i < lineEnd; i++) {
             if (combined[i] === TAB) foundTab = true;
-            else if (combined[i] === 0x2C) foundComma = true;
-            else if (combined[i] === 0x20) foundSpace = true;
+            else if (combined[i] === COMMA) foundComma = true;
+            else if (combined[i] === SEMICOLON) foundSemicolon = true;
+            else if (combined[i] === SPACE) foundSpace = true;
           }
-          if (foundTab) delim = TAB;
-          else if (foundComma) delim = 0x2C;
-          else if (foundSpace) delim = 0x20;
+          if (foundTab) { delim = TAB; delimStr = '\t'; }
+          else if (foundComma) { delim = COMMA; delimStr = ','; }
+          else if (foundSemicolon) { delim = SEMICOLON; delimStr = ';'; }
+          else if (foundSpace) { delim = SPACE; delimStr = ' '; }
           else {
             linesMalformed++;
             continue;
           }
+
+          let actEnd = lineEnd - 1;
+          if (actEnd > lineStart && combined[actEnd - 1] === CR) actEnd--;
+          const headerTestLine = DECODER.decode(combined.subarray(lineStart, actEnd));
+          columnMapping = detectHeaderColumns(headerTestLine, delimStr);
+          if (columnMapping) {
+            continue; // Skip header line
+          }
         }
 
-        const parsed = parseLineBytes(combined, lineStart, lineEnd - 1, delim);
+        let parsed: ParsedFields | null = null;
+        if (columnMapping && columnMapping.isCustom) {
+          let actEnd = lineEnd - 1;
+          if (actEnd > lineStart && combined[actEnd - 1] === CR) actEnd--;
+          const lineStr = DECODER.decode(combined.subarray(lineStart, actEnd));
+          parsed = parseAdaptiveLine(lineStr, delimStr, columnMapping);
+        } else {
+          parsed = parseLineBytes(combined, lineStart, lineEnd - 1, delim);
+        }
+
         if (parsed) {
           const { markerId, chrom, posStr, pos: colPos, genotype } = parsed;
-          const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
+          const isYorMT = chrom === 'Y' || chrom === 'MT';
           if (!allowlist || isYorMT || allowlist.has(markerId)) {
             snpCount++;
             snpMap[markerId] = genotype;
@@ -883,9 +1095,9 @@ export async function parseRawDNAStream(
               const coordId = `chr${chrom}_${colPos}`.toLowerCase();
               if (!snpMap[coordId]) snpMap[coordId] = genotype;
             }
-            if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
-            if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
-            if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
+            if (chrom === 'X') xMap[markerId] = genotype;
+            if (chrom === 'Y') yMap[markerId] = genotype;
+            if (chrom === 'MT') {
               const allele = genotype[0];
               if (allele !== '-') mtMap[posStr] = allele;
             }
@@ -911,13 +1123,19 @@ export async function parseRawDNAStream(
   if (remainder.length > 0 && remainder[0] !== HASH) {
     linesTotal++;
     if (isVcf) {
-      const line = bytesToString(remainder);
-      // Fallback
+      // VCF trailing line
     } else if (delim !== null) {
-      const parsed = parseLineBytes(remainder, 0, remainder.length, delim);
+      let parsed: ParsedFields | null = null;
+      if (columnMapping && columnMapping.isCustom) {
+        const lineStr = DECODER.decode(remainder);
+        parsed = parseAdaptiveLine(lineStr, delimStr, columnMapping);
+      } else {
+        parsed = parseLineBytes(remainder, 0, remainder.length, delim);
+      }
+
       if (parsed) {
         const { markerId, chrom, posStr, pos: colPos, genotype } = parsed;
-        const isYorMT = chrom === 'Y' || chrom === '24' || chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25';
+        const isYorMT = chrom === 'Y' || chrom === 'MT';
         if (!allowlist || isYorMT || allowlist.has(markerId)) {
           snpCount++;
           snpMap[markerId] = genotype;
@@ -926,9 +1144,9 @@ export async function parseRawDNAStream(
             const coordId = `chr${chrom}_${colPos}`.toLowerCase();
             if (!snpMap[coordId]) snpMap[coordId] = genotype;
           }
-          if (chrom === 'X' || chrom === '23') xMap[markerId] = genotype;
-          if (chrom === 'Y' || chrom === '24') yMap[markerId] = genotype;
-          if (chrom === 'MT' || chrom === 'M' || chrom === '26' || chrom === '25') {
+          if (chrom === 'X') xMap[markerId] = genotype;
+          if (chrom === 'Y') yMap[markerId] = genotype;
+          if (chrom === 'MT') {
             const allele = genotype[0];
             if (allele !== '-') mtMap[posStr] = allele;
           }
@@ -949,7 +1167,6 @@ export async function parseRawDNAStream(
       "The file contains no parseable genetic markers (SNPs). Please verify that the file represents local genome SNPs.",
       {
         format, chip, bytesTotal: file.size, linesTotal, linesCommented, linesMalformed,
-        headerPreview: header.slice(0, 300),
         errorCategory: "Empty Ingestion Spectrum",
         suggestedSolution: "Make sure you downloaded 'all SNPs' or 'raw data text' rather than mitochondrial-only sequences or visual screenshots. The file should contain rsIDs and genotypes."
       }

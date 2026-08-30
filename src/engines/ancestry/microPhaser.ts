@@ -1,7 +1,8 @@
 /**
  * microPhaser.ts
  * Lightweight utility for pseudo-phasing commercial DNA data.
- * splits unphased genotype calls into Two Strands (A/B) for LAI engines.
+ * Splits unphased genotype calls into Two Strands (A/B) for LAI engines.
+ * Includes strand complement resolution and effect allele orientation.
  */
 
 export interface PhasedStrands {
@@ -10,10 +11,12 @@ export interface PhasedStrands {
   confidence: number;
 }
 
+const COMPLEMENTS: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+
 /**
  * Compute a global reference allele frequency from per-population frequency data.
  * The AIM database stores frequencies keyed by population code (AFR, EUR, EAS, …),
- * NOT a global "AF" key.  Averaging across populations is a reasonable proxy.
+ * NOT a global "AF" key. Averaging across populations is a reasonable proxy.
  */
 function computeGlobalFreq(frequencies: Record<string, number>): number {
   const vals = Object.values(frequencies).filter(f => typeof f === 'number' && f >= 0 && f <= 1);
@@ -73,8 +76,6 @@ export function microPhase(
         anchoredCount++;
 
         // Compute a global allele frequency by averaging across all available populations.
-        // Previously this read `frequencies.AF` which does not exist in the AIM schema,
-        // causing every heterozygous site to use the 0.5 fallback (random assignment).
         const globalFreq = computeGlobalFreq(reference.frequencies);
 
         // The "effect allele" tracked in the AIM is the first listed allele (reference.alleles[0]).
@@ -84,8 +85,22 @@ export function microPhase(
         if (effectAllele) {
           const a1Up = allele1.toUpperCase();
           const a2Up = allele2.toUpperCase();
+          const compEffect = COMPLEMENTS[effectAllele] || effectAllele;
+          const isPalindromicLocus = (a1Up === 'A' && a2Up === 'T') ||
+                                    (a1Up === 'T' && a2Up === 'A') ||
+                                    (a1Up === 'C' && a2Up === 'G') ||
+                                    (a1Up === 'G' && a2Up === 'C');
 
-          if (a1Up === effectAllele) {
+          let matchedA1 = (a1Up === effectAllele);
+          let matchedA2 = (a2Up === effectAllele);
+
+          // If direct match failed and variant locus is non-palindromic, check reverse strand complement
+          if (!matchedA1 && !matchedA2 && !isPalindromicLocus) {
+            matchedA1 = (a1Up === compEffect);
+            matchedA2 = (a2Up === compEffect);
+          }
+
+          if (matchedA1) {
             // allele1 is the effect allele
             if (globalFreq > 0.5) {
               // Effect allele is major → put it on strandA
@@ -96,7 +111,7 @@ export function microPhase(
               strandA.push(allele2);
               strandB.push(allele1);
             }
-          } else if (a2Up === effectAllele) {
+          } else if (matchedA2) {
             // allele2 is the effect allele
             if (globalFreq > 0.5) {
               strandA.push(allele2);
@@ -107,8 +122,13 @@ export function microPhase(
             }
           } else {
             // Neither allele matches effect allele — consistent default assignment
-            strandA.push(allele1);
-            strandB.push(allele2);
+            if (globalFreq > 0.5) {
+              strandA.push(allele1);
+              strandB.push(allele2);
+            } else {
+              strandA.push(allele2);
+              strandB.push(allele1);
+            }
           }
         } else {
           // No effect allele info; use frequency to determine major strand
