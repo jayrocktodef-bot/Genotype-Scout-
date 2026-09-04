@@ -2005,7 +2005,7 @@ export default function App() {
   useEffect(() => {
     const checkForceReset = async () => {
       try {
-        const CURRENT_BUILD = 'v5.15.0_clean';
+        const CURRENT_BUILD = 'v5.16.0_clean_refresh';
         const lastBuild = localStorage.getItem('genotype_scout_build');
         if (lastBuild !== CURRENT_BUILD) {
           console.log(`[App] Build version update registered: ${lastBuild} -> ${CURRENT_BUILD}`);
