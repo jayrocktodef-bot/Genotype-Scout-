@@ -77,10 +77,5 @@
   },
   "overrides": {
     "fast-uri": "^3.1.7"
-  },
-  "pnpm": {
-    "overrides": {
-      "fast-uri": "^3.1.7"
-    }
   }
 }
