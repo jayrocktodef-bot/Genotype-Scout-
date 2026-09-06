@@ -4149,5 +4149,1748 @@
     "description": "Highly informative AIM for Andamanese ancestry, distinct from mainland South Asians",
     "subPopulation": "Global",
     "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1201_YOR",
+    "region": "West Africa",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.94,
+      "EUR": 0.01,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.02,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for West African (Yoruba, Akan, Igbo) ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1202_MAN",
+    "region": "West Africa",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.93,
+      "EUR": 0.01,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.0,
+      "MENA": 0.02,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Upper Guinean Mandinka ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1203_BAN",
+    "region": "Central Africa",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.96,
+      "EUR": 0.005,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.0,
+      "MENA": 0.01,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Western Bantu ancestry (Kongo, Ovambo)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1204_SOU",
+    "region": "Southern Africa",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.92,
+      "EUR": 0.01,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.0,
+      "MENA": 0.01,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Southern African Bantu ancestry (Zulu, Xhosa, Sotho)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1205_KHO",
+    "region": "Southern Africa",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.88,
+      "EUR": 0.0,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.0,
+      "MENA": 0.0,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for deep indigenous Khoisan lineage (Ju/'hoansi, Nama)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1206_NIL",
+    "region": "East Africa",
+    "alleles": [
+      "C",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.0,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.0,
+      "MENA": 0.01,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Nilotic East African ancestry (Dinka, Luo)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1207_CUS",
+    "region": "East Africa",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.7,
+      "EUR": 0.04,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.02,
+      "MENA": 0.24,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Cushitic Horn of Africa ancestry (Oromo, Somali)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1208_ETH",
+    "region": "East Africa",
+    "alleles": [
+      "T",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.05,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.02,
+      "MENA": 0.28,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Semitic Ethiopian Highlands ancestry (Amhara, Tigray)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1209_MBI",
+    "region": "Central Africa",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.97,
+      "EUR": 0.0,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.0,
+      "MENA": 0.0,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Central African Pygmy lineage (Mbuti, Biaka)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1210_AAM",
+    "region": "West Africa",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.89,
+      "EUR": 0.08,
+      "EAS": 0.0,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for African American / Afro-Caribbean founder lineages",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1211_NWU",
+    "region": "North Europe",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.005,
+      "EUR": 0.94,
+      "EAS": 0.005,
+      "AMR": 0.05,
+      "SAS": 0.02,
+      "MENA": 0.04,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Northwestern European ancestry (British, Irish)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1212_SCA",
+    "region": "North Europe",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.96,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.02,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Scandinavian ancestry (Norwegian, Swedish, Danish)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1213_FIN",
+    "region": "North Europe",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.93,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Finnish and Finno-Ugric European lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1214_BAL",
+    "region": "North Europe",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.95,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.02,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Baltic European ancestry (Lithuanian, Latvian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1215_EAS",
+    "region": "East Europe",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.92,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.03,
+      "MENA": 0.03,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Eastern Slavic ancestry (Russian, Ukrainian, Belarusian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1216_CEU",
+    "region": "Central Europe",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.005,
+      "EUR": 0.93,
+      "EAS": 0.005,
+      "AMR": 0.03,
+      "SAS": 0.02,
+      "MENA": 0.04,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Central European ancestry (German, Dutch, Austrian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1217_IBE",
+    "region": "South Europe",
+    "alleles": [
+      "C",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.88,
+      "EAS": 0.0,
+      "AMR": 0.08,
+      "SAS": 0.01,
+      "MENA": 0.08,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Iberian ancestry (Spanish, Portuguese)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1218_ITA",
+    "region": "South Europe",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.86,
+      "EAS": 0.0,
+      "AMR": 0.03,
+      "SAS": 0.02,
+      "MENA": 0.12,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Italian and Southern Mediterranean European ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1219_GRK",
+    "region": "South Europe",
+    "alleles": [
+      "A",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.87,
+      "EAS": 0.0,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.11,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Aegean and Balkan European ancestry (Greek, Albanian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1220_BAS",
+    "region": "South Europe",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.97,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.0,
+      "MENA": 0.01,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Basque indigenous European isolate",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1221_LEV",
+    "region": "Middle East",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.03,
+      "EUR": 0.1,
+      "EAS": 0.005,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.91,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Levantine ancestry (Lebanese, Syrian, Palestinian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1222_ARA",
+    "region": "Middle East",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.04,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.06,
+      "MENA": 0.95,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Arabian Peninsula ancestry (Saudi, Emirati, Omani)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1223_YEM",
+    "region": "Middle East",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.08,
+      "EUR": 0.02,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.04,
+      "MENA": 0.94,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Southern Arabian / Yemeni lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1224_EGY",
+    "region": "North Africa",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.08,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.03,
+      "MENA": 0.9,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Nile Valley / Egyptian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1225_MAG",
+    "region": "North Africa",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.16,
+      "EUR": 0.11,
+      "EAS": 0.0,
+      "AMR": 0.02,
+      "SAS": 0.01,
+      "MENA": 0.87,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Northwest African Maghreb ancestry (Moroccan, Algerian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1226_BER",
+    "region": "North Africa",
+    "alleles": [
+      "A",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.1,
+      "EUR": 0.08,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.01,
+      "MENA": 0.93,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for indigenous Amazigh / Berber lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1227_PER",
+    "region": "Middle East",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.12,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.14,
+      "MENA": 0.89,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Iranian Plateau / Persian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1228_KUR",
+    "region": "Middle East",
+    "alleles": [
+      "G",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.13,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.11,
+      "MENA": 0.9,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for Kurdish and Upper Mesopotamian Highland ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1229_CAU",
+    "region": "Middle East",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.005,
+      "EUR": 0.18,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.08,
+      "MENA": 0.88,
+      "OCE": 0.0
+    },
+    "description": "Diagnostic tiebreaker for South Caucasus ancestry (Armenian, Georgian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1230_BED",
+    "region": "Middle East",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.04,
+      "EUR": 0.03,
+      "EAS": 0.0,
+      "AMR": 0.01,
+      "SAS": 0.04,
+      "MENA": 0.96,
+      "OCE": 0.0
+    },
+    "description": "Highly diagnostic tiebreaker for Bedouin desert nomad isolate",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1231_NOR",
+    "region": "East Asia",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.96,
+      "AMR": 0.04,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.01
+    },
+    "description": "Highly diagnostic tiebreaker for Northern Han Chinese ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1232_SOU",
+    "region": "East Asia",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.97,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.03
+    },
+    "description": "Highly diagnostic tiebreaker for Southern Han Chinese ancestry (Cantonese, Min)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1233_JAP",
+    "region": "East Asia",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.95,
+      "AMR": 0.03,
+      "SAS": 0.01,
+      "MENA": 0.0,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Japanese Archipelago ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1234_KOR",
+    "region": "East Asia",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.97,
+      "AMR": 0.03,
+      "SAS": 0.01,
+      "MENA": 0.0,
+      "OCE": 0.01
+    },
+    "description": "Highly diagnostic tiebreaker for Korean Peninsula ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1235_VIE",
+    "region": "Southeast Asia",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.94,
+      "AMR": 0.02,
+      "SAS": 0.03,
+      "MENA": 0.0,
+      "OCE": 0.05
+    },
+    "description": "Diagnostic tiebreaker for Vietnamese / Kinh ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1236_THA",
+    "region": "Southeast Asia",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.92,
+      "AMR": 0.01,
+      "SAS": 0.06,
+      "MENA": 0.0,
+      "OCE": 0.06
+    },
+    "description": "Diagnostic tiebreaker for Tai-Kadai / Thai and Lao ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1237_FIL",
+    "region": "Southeast Asia",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.9,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.15
+    },
+    "description": "Diagnostic tiebreaker for Austronesian Filipino ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1238_TIB",
+    "region": "East Asia",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.93,
+      "AMR": 0.05,
+      "SAS": 0.06,
+      "MENA": 0.0,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Tibetan Plateau high-altitude adaptation lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1239_MON",
+    "region": "East Asia",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.05,
+      "EAS": 0.91,
+      "AMR": 0.07,
+      "SAS": 0.04,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Mongolic and Siberian Steppe East Asian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1240_AIN",
+    "region": "East Asia",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.88,
+      "AMR": 0.06,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.08
+    },
+    "description": "Diagnostic tiebreaker for deep Jomon / Ainu indigenous isolate",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1241_ANI",
+    "region": "South Asia",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.16,
+      "EAS": 0.02,
+      "AMR": 0.02,
+      "SAS": 0.92,
+      "MENA": 0.14,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Ancestral North Indian Indo-Aryan ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1242_ASI",
+    "region": "South Asia",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.02,
+      "EAS": 0.03,
+      "AMR": 0.01,
+      "SAS": 0.96,
+      "MENA": 0.03,
+      "OCE": 0.05
+    },
+    "description": "Highly diagnostic tiebreaker for Ancestral South Indian indigenous lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1243_DRA",
+    "region": "South Asia",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.04,
+      "EAS": 0.03,
+      "AMR": 0.01,
+      "SAS": 0.94,
+      "MENA": 0.05,
+      "OCE": 0.04
+    },
+    "description": "Diagnostic tiebreaker for Dravidian South Indian ancestry (Tamil, Telugu)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1244_PUN",
+    "region": "South Asia",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.15,
+      "EAS": 0.02,
+      "AMR": 0.02,
+      "SAS": 0.91,
+      "MENA": 0.15,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Northwestern Subcontinental ancestry (Punjabi, Sindhi)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1245_BEN",
+    "region": "South Asia",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.08,
+      "EAS": 0.12,
+      "AMR": 0.02,
+      "SAS": 0.9,
+      "MENA": 0.06,
+      "OCE": 0.02
+    },
+    "description": "Diagnostic tiebreaker for Eastern Subcontinental ancestry (Bengali, Assamese)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1246_GUJ",
+    "region": "South Asia",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.1,
+      "EAS": 0.02,
+      "AMR": 0.02,
+      "SAS": 0.93,
+      "MENA": 0.09,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Western Subcontinental ancestry (Gujarati, Marathi)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1247_SIN",
+    "region": "South Asia",
+    "alleles": [
+      "G",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.03,
+      "EUR": 0.12,
+      "EAS": 0.02,
+      "AMR": 0.02,
+      "SAS": 0.92,
+      "MENA": 0.13,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Indus Valley / Sindhi ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1248_PAS",
+    "region": "South Asia",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.18,
+      "EAS": 0.03,
+      "AMR": 0.02,
+      "SAS": 0.88,
+      "MENA": 0.2,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Pashtun / Pathan frontier ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1249_SRI",
+    "region": "South Asia",
+    "alleles": [
+      "A",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.05,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "SAS": 0.93,
+      "MENA": 0.05,
+      "OCE": 0.06
+    },
+    "description": "Diagnostic tiebreaker for Sri Lankan insular South Asian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1250_AND",
+    "region": "South Asia",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.0,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "SAS": 0.85,
+      "MENA": 0.0,
+      "OCE": 0.25
+    },
+    "description": "Highly diagnostic tiebreaker for deep indigenous Andamanese lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1251_ATH",
+    "region": "North America",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.12,
+      "AMR": 0.94,
+      "SAS": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.02
+    },
+    "description": "Diagnostic tiebreaker for Athabaskan / Northern Amerindian ancestry (Navajo, Apache)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1252_ALG",
+    "region": "North America",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.04,
+      "EAS": 0.09,
+      "AMR": 0.93,
+      "SAS": 0.02,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Eastern Woodlands Amerindian ancestry (Algonquian, Iroquoian)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1253_MAY",
+    "region": "Central America",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.04,
+      "AMR": 0.97,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Highly diagnostic tiebreaker for Mayan / Mesoamerican Highland ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1254_NAH",
+    "region": "Central America",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.03,
+      "EAS": 0.05,
+      "AMR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Nahua / Central Mexican indigenous ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1255_ZAP",
+    "region": "Central America",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.03,
+      "AMR": 0.97,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Zapotec and Mixtec Southern Mexican indigenous ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1256_QUE",
+    "region": "South America",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.03,
+      "AMR": 0.98,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Highly diagnostic tiebreaker for Quechua / Andean Highland ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1257_AYM",
+    "region": "South America",
+    "alleles": [
+      "A",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.02,
+      "AMR": 0.98,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Highly diagnostic tiebreaker for Aymara Altiplano indigenous ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1258_AMA",
+    "region": "South America",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.0,
+      "EAS": 0.01,
+      "AMR": 0.99,
+      "SAS": 0.0,
+      "MENA": 0.0,
+      "OCE": 0.02
+    },
+    "description": "Highly diagnostic tiebreaker for Amazonian indigenous isolate (Karitiana, Surui)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1259_GUA",
+    "region": "South America",
+    "alleles": [
+      "G",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.03,
+      "AMR": 0.96,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Guarani and Southern Cone indigenous ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1260_PAT",
+    "region": "South America",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.01,
+      "EUR": 0.02,
+      "EAS": 0.04,
+      "AMR": 0.95,
+      "SAS": 0.01,
+      "MENA": 0.01,
+      "OCE": 0.01
+    },
+    "description": "Diagnostic tiebreaker for Patagonian / Mapuche and Fuegian indigenous lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1261_PNG",
+    "region": "Melanesia",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.02,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.98
+    },
+    "description": "Highly diagnostic tiebreaker for Papua New Guinea Highlands ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1262_SEP",
+    "region": "Melanesia",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.04,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.97
+    },
+    "description": "Diagnostic tiebreaker for Lowland Papuan and Sepik River ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1263_SOL",
+    "region": "Melanesia",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.05,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.96
+    },
+    "description": "Diagnostic tiebreaker for Solomon Islands Melanesian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1264_VAN",
+    "region": "Melanesia",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.06,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.95
+    },
+    "description": "Diagnostic tiebreaker for Vanuatu and New Caledonian Melanesian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1265_FIJ",
+    "region": "Melanesia",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.08,
+      "AMR": 0.01,
+      "SAS": 0.03,
+      "MENA": 0.0,
+      "OCE": 0.94
+    },
+    "description": "Diagnostic tiebreaker for Fijian Melanesian-Polynesian transitional lineage",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1266_SAM",
+    "region": "Polynesia",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.12,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.93
+    },
+    "description": "Diagnostic tiebreaker for Samoan and Western Polynesian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1267_TON",
+    "region": "Polynesia",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.11,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.93
+    },
+    "description": "Diagnostic tiebreaker for Tongan Polynesian Kingdom ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1268_MAO",
+    "region": "Polynesia",
+    "alleles": [
+      "C",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.03,
+      "EAS": 0.13,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.92
+    },
+    "description": "Diagnostic tiebreaker for Maori / New Zealand Polynesian ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1269_MIC",
+    "region": "Micronesia",
+    "alleles": [
+      "A",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.01,
+      "EAS": 0.16,
+      "AMR": 0.01,
+      "SAS": 0.02,
+      "MENA": 0.0,
+      "OCE": 0.91
+    },
+    "description": "Diagnostic tiebreaker for Micronesian ancestry (Chamorro, Marshallese)",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs1270_ABO",
+    "region": "Oceania",
+    "alleles": [
+      "T",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.005,
+      "EAS": 0.01,
+      "AMR": 0.01,
+      "SAS": 0.03,
+      "MENA": 0.0,
+      "OCE": 0.99
+    },
+    "description": "Highly diagnostic tiebreaker for Australian Aboriginal indigenous ancestry",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2567608",
+    "region": "African",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.98,
+      "EUR": 0.04,
+      "EAS": 0.02,
+      "AMR": 0.05,
+      "SAS": 0.06,
+      "MENA": 0.05,
+      "OCE": 0.03
+    },
+    "description": "AGBL1 locus: G ancestral allele nearly fixed in sub-Saharan Africa, T derived across Eurasia (Fst ~ 0.62).",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs3814134",
+    "region": "African",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.72,
+      "EUR": 0.01,
+      "EAS": 0.01,
+      "AMR": 0.02,
+      "SAS": 0.02,
+      "MENA": 0.02,
+      "OCE": 0.01
+    },
+    "description": "ARHGAP28 locus: High in African lineages, near absence in Eurasians, strong African tiebreaker.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs11803701",
+    "region": "Middle Eastern",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.45,
+      "EAS": 0.01,
+      "AMR": 0.05,
+      "SAS": 0.15,
+      "MENA": 0.98,
+      "OCE": 0.02
+    },
+    "description": "TMEM232 locus: High-frequency derived allele in MENA, strongly distinguishing Middle Eastern from European.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2279744",
+    "region": "Middle Eastern",
+    "alleles": [
+      "T",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.12,
+      "EUR": 0.58,
+      "EAS": 0.45,
+      "AMR": 0.38,
+      "SAS": 0.32,
+      "MENA": 0.76,
+      "OCE": 0.25
+    },
+    "description": "MDM2 SNP309 promoter: Elevated T allele separates Levantine/Bedouin lineages from South Asian clades.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2032457",
+    "region": "Native American",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.08,
+      "EAS": 0.2,
+      "AMR": 0.92,
+      "SAS": 0.05,
+      "MENA": 0.05,
+      "OCE": 0.05
+    },
+    "description": "EIF2AK4 locus: Strong Native American Beringian tiebreaker distinguishing AMR from East Asian.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs7327831",
+    "region": "Native American",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.02,
+      "EUR": 0.1,
+      "EAS": 0.58,
+      "AMR": 0.95,
+      "SAS": 0.08,
+      "MENA": 0.08,
+      "OCE": 0.1
+    },
+    "description": "Intergenic Amerindian AIM: High-frequency fixation across Mesoamerican and South American indigenous cohorts.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2284553",
+    "region": "Native American",
+    "alleles": [
+      "T",
+      "C"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.0,
+      "EAS": 0.001,
+      "AMR": 0.26,
+      "SAS": 0.0,
+      "MENA": 0.0,
+      "OCE": 0.0
+    },
+    "description": "ABCA1 R230C: Private functional allele unique to indigenous Americas, absent in Old World populations.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs174537",
+    "region": "South Asian",
+    "alleles": [
+      "G",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.65,
+      "EUR": 0.48,
+      "EAS": 0.22,
+      "AMR": 0.4,
+      "SAS": 0.84,
+      "MENA": 0.55,
+      "OCE": 0.15
+    },
+    "description": "FADS1 fatty acid desaturase: Strong positive selection in South Asia, robustly separating SAS from EAS.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs2033028",
+    "region": "South Asian",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.05,
+      "EUR": 0.3,
+      "EAS": 0.15,
+      "AMR": 0.15,
+      "SAS": 0.65,
+      "MENA": 0.35,
+      "OCE": 0.08
+    },
+    "description": "Chromosome 15 AIM: Diagnostic frequency shift distinguishing South Asian from East Asian and European.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs10735788",
+    "region": "Oceanian",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.01,
+      "EAS": 0.08,
+      "AMR": 0.02,
+      "SAS": 0.05,
+      "MENA": 0.01,
+      "OCE": 0.96
+    },
+    "description": "NTNG2 / Denisovan introgression locus: Near fixed in Papuans and Melanesians, rare elsewhere (Fst ~ 0.64).",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs62588102",
+    "region": "Oceanian",
+    "alleles": [
+      "G",
+      "A"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.01,
+      "EAS": 0.05,
+      "AMR": 0.02,
+      "SAS": 0.08,
+      "MENA": 0.01,
+      "OCE": 0.95
+    },
+    "description": "WSCD2 region: High Oceanian diagnostic marker separating Melanesia from East and South Asia.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs45523335",
+    "region": "Oceanian",
+    "alleles": [
+      "C",
+      "T"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.001,
+      "EUR": 0.01,
+      "EAS": 0.1,
+      "AMR": 0.02,
+      "SAS": 0.08,
+      "MENA": 0.01,
+      "OCE": 0.96
+    },
+    "description": "GRM7 locus: Characteristic high-frequency Oceanian allele with minimal Eurasian spillover.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
+  },
+  {
+    "rsid": "rs11578877",
+    "region": "Oceanian",
+    "alleles": [
+      "A",
+      "G"
+    ],
+    "weight": 5,
+    "frequencies": {
+      "AFR": 0.0,
+      "EUR": 0.0,
+      "EAS": 0.0,
+      "AMR": 0.0,
+      "SAS": 0.0,
+      "MENA": 0.0,
+      "OCE": 0.28
+    },
+    "description": "TYRP1 blond hair missense mutation unique to Melanesian populations of Solomon Islands.",
+    "subPopulation": "Global",
+    "subRegion": "Global"
   }
 ]

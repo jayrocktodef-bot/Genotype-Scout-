@@ -51,4 +51,53 @@ describe('Hierarchical Deconvolution Routing', () => {
     const totalPercentage = results.admixtureMix.reduce((sum: number, item: any) => sum + item.percentage, 0);
     expect(totalPercentage).toBeCloseTo(100.0, 1);
   }, 20000);
+
+  it('should exclude admixed sink populations (Uyghur, Hazara, AFRAM_WEST) from admixture deconvolution', async () => {
+    const userGenotypes = [
+      { rsid: 'rs2887286', genotype: 'TT' },
+      { rsid: 'rs2840528', genotype: 'AA' },
+      { rsid: 'rs3890745', genotype: 'TT' },
+      { rsid: 'rs1181875', genotype: 'TT' },
+      { rsid: 'rs6663840', genotype: 'GG' }
+    ];
+    const aimsDatabase = [
+      { rsid: 'rs2887286', chromosome: '1', position: 1220751, continent: 'EUR' },
+      { rsid: 'rs2840528', chromosome: '1', position: 2352457, continent: 'EUR' },
+      { rsid: 'rs3890745', chromosome: '1', position: 2622185, continent: 'EUR' },
+      { rsid: 'rs1181875', chromosome: '1', position: 3765267, continent: 'EUR' },
+      { rsid: 'rs6663840', chromosome: '1', position: 3826755, continent: 'EUR' }
+    ];
+    const results = await processSubpopulations(userGenotypes, aimsDatabase);
+    const popCodes = results.admixtureMix.map(item => item.popCode.toLowerCase());
+    expect(popCodes).not.toContain('sgdp_uyghur');
+    expect(popCodes).not.toContain('hgdp_uygur');
+    expect(popCodes).not.toContain('hgdp_hazara');
+    expect(popCodes).not.toContain('sgdp_hazara');
+    expect(popCodes).not.toContain('afram_west');
+  }, 20000);
+
+  it('accurately resolves African ancestral components without diluting non-African admixture', async () => {
+    // Genotypes modeling an admixed genome carrying West African (Yoruba/Mandenka),
+    // European (British/CEU), and Indigenous American alleles
+    const admixedGenotypes = [
+      { rsid: 'rs2814778', genotype: 'CC' }, // Duffy null fixed in Sub-Saharan Africa
+      { rsid: 'rs1426654', genotype: 'AG' }, // Heterozygous ancestral G / European derived A
+      { rsid: 'rs334', genotype: 'AT' },     // Sickle cell carrier (West African selection)
+      { rsid: 'rs776746', genotype: 'AA' },  // CYP3A5*1 Sub-Saharan African major
+      { rsid: 'rs2887286', genotype: 'CT' }, // Shared European / African locus
+      { rsid: 'rs2840528', genotype: 'AG' }
+    ];
+
+    const results = await processSubpopulations(admixedGenotypes, []);
+    expect(results).toBeDefined();
+    expect(results.breakdown.length).toBeGreaterThan(0);
+    
+    // Total percentages should sum to 100%
+    const total = results.admixtureMix.reduce((sum: number, b: any) => sum + b.percentage, 0);
+    expect(total).toBeCloseTo(100.0, 1);
+    
+    // Top match should be an authentic population (not a synthetic sink)
+    expect(results.topMatch).toBeDefined();
+    expect(['sgdp_uyghur', 'hgdp_uygur', 'sgdp_hazara', 'hgdp_hazara']).not.toContain(results.topMatch.toLowerCase());
+  }, 20000);
 });

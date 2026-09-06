@@ -12,12 +12,12 @@ import oceanian from './oceanian.json';
 import southAsian from './south_asian.json';
 
 export const ALL_REGION_AIMS = {
+    ...global,
     ...african,
     ...africanAmerican,
     ...centralAsian,
     ...eastAsian,
     ...european,
-    ...global,
     ...middleEastern,
     ...nativeAmerican,
     ...northAfrican,

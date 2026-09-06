@@ -36,7 +36,10 @@ import {
   CheckCircle,
   Compass,
   History,
-  Flame
+  Flame,
+  Layers,
+  Orbit,
+  Radio
 } from 'lucide-react';
 import { MethodologyModal } from "./components/MethodologyModal";
 import { calculateAdmixtureCI, calculateHaplogroupConfidence } from "./utils/statistics/confidenceEngine";
@@ -61,6 +64,7 @@ const MarkerBenchmarks = lazy(() => import("./components/MarkerBenchmarks").then
 const SubpopulationBento = lazy(() => import("./components/SubpopulationBento"));
 const SubpopulationGlossaryTab = lazy(() => import("./components/SubpopulationGlossaryTab").then(m => ({ default: m.SubpopulationGlossaryTab })));
 import { processSubpopulations, humanizePopName } from "./components/ancestryOracleLogic";
+import { CONTINENT_PALETTES, assignContinent } from "./constants/ancestryThemes";
 import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
@@ -292,6 +296,14 @@ const getHaploColor = (name: string, isMt: boolean = false) => {
   return isMt ? '#f43f5e' : '#64748b';
 };
 
+const RANK_BADGE_STYLES = [
+  { label: '#1', badge: 'bg-amber-400/20 text-amber-300 border-amber-400/40 ring-1 ring-amber-400/20 shadow-amber-400/10' },
+  { label: '#2', badge: 'bg-slate-300/20 text-slate-200 border-slate-300/40 ring-1 ring-slate-300/20' },
+  { label: '#3', badge: 'bg-amber-700/20 text-amber-400 border-amber-600/40 ring-1 ring-amber-600/20' },
+  { label: '#4', badge: 'bg-slate-800/80 text-slate-400 border-white/10' },
+  { label: '#5', badge: 'bg-slate-800/80 text-slate-400 border-white/10' },
+];
+
 const ProfileSummary = memo(
   ({
     datasets,
@@ -311,6 +323,14 @@ const ProfileSummary = memo(
     healthImpacts?: any[];
   }) => {
     const [isChartReady, setIsChartReady] = useState(false);
+    const [chartMode, setChartMode] = useState<'donut' | 'radar'>('donut');
+    const [hoveredSlice, setHoveredSlice] = useState<{
+      name: string;
+      value: number;
+      color: string;
+      icon: string;
+    } | null>(null);
+
     useEffect(() => {
       setIsChartReady(false);
       const timer = setTimeout(() => setIsChartReady(true), 150);
@@ -356,7 +376,7 @@ const ProfileSummary = memo(
       } else {
         return {
           name: `Likely ${bloodTypeStr}`,
-          badge: `Moderate/Low Confidence (${confPercent}%)`,
+          badge: `Moderate Confidence (${confPercent}%)`,
           pillColor: 'bg-amber-600 shadow-amber-600/10',
           label: 'Predicted Blood Type',
         };
@@ -377,10 +397,11 @@ const ProfileSummary = memo(
       });
     }, [oracleResults]);
 
-    const sortedEngineResults = useMemo(() => {
-      const subOracle = dataset?.analysis?.subpopulationOracle || oracleResults?.subpopulationOracle;
-      const allOracle = subOracle?.all || subOracle;
+    const subOracle = dataset?.analysis?.subpopulationOracle || oracleResults?.subpopulationOracle;
+    const allOracle = subOracle?.all || subOracle;
+    const currentOracle = oracleResults?.primary;
 
+    const sortedEngineResults = useMemo(() => {
       // 1. Prefer high-precision NNLS subpopulation admixture mix from (K61 All) subpopulationOracle
       const mix = allOracle?.admixtureMix;
       if (mix && Array.isArray(mix) && mix.length > 0) {
@@ -388,7 +409,8 @@ const ProfileSummary = memo(
           .filter((item: any) => (item.percentage || 0) > 0.1)
           .map((item: any) => ({
             name: humanizePopName(item.name || item.subpop || item.popCode),
-            percentage: Number(item.percentage) || 0
+            rawPopCode: item.popCode || '',
+            percentage: Number(item.percentage) || 0,
           }))
           .sort((a: any, b: any) => b.percentage - a.percentage);
         if (sorted.length > 0) return sorted.slice(0, 5);
@@ -401,21 +423,117 @@ const ProfileSummary = memo(
           .slice(0, 5)
           .map((item: any) => ({
             name: humanizePopName(item.subpop || item.name || item.popCode),
-            percentage: Number(item.similarityScore || Math.max(0, 100 - (item.distance || 0) * 10)) || 0
+            rawPopCode: item.popCode || '',
+            percentage: Number(item.similarityScore || Math.max(0, 100 - (item.distance || 0) * 10)) || 0,
           }));
         if (sorted.length > 0) return sorted;
       }
 
       // 3. Fallback: oracleResults primary subPopulations
       const subpops = oracleResults?.primary?.subPopulations || {};
-      return Object.values(subpops).flat()
+      return Object.values(subpops)
+        .flat()
         .map((p: any) => ({
           name: humanizePopName(p.name),
-          percentage: p.percentage || 0
+          rawPopCode: p.code || '',
+          percentage: p.percentage || 0,
         }))
         .sort((a: any, b: any) => (b.percentage || 0) - (a.percentage || 0))
         .slice(0, 5);
-    }, [dataset, oracleResults]);
+    }, [allOracle, dataset, oracleResults]);
+
+    // Continental Clade Totals
+    const continentalTotals = useMemo(() => {
+      const totals: Record<string, number> = {};
+
+      const mix = allOracle?.admixtureMix;
+      if (mix && Array.isArray(mix) && mix.length > 0) {
+        mix.forEach((item: any) => {
+          const c = assignContinent(item.name || item.subpop || item.popCode, item.popCode);
+          totals[c] = (totals[c] || 0) + (Number(item.percentage) || 0);
+        });
+        if (Object.keys(totals).length > 0) return totals;
+      }
+
+      let scores = allOracle?.continentalScores;
+      if (!scores || Object.keys(scores).length === 0 || Object.values(scores).every((v: any) => Number(v) === 0)) {
+        scores = currentOracle?.continentalScores || {};
+      }
+
+      if (scores && Object.keys(scores).length > 0) {
+        Object.entries(scores).forEach(([name, val]) => {
+          const num = Number(val) || 0;
+          if (num > 0) {
+            const c = assignContinent(name);
+            totals[c] = (totals[c] || 0) + num;
+          }
+        });
+        if (Object.keys(totals).length > 0) return totals;
+      }
+
+      sortedEngineResults.forEach((item: any) => {
+        const c = assignContinent(item.name, item.rawPopCode);
+        totals[c] = (totals[c] || 0) + (item.percentage || 0);
+      });
+
+      return totals;
+    }, [allOracle, currentOracle, sortedEngineResults]);
+
+    const continentalData = useMemo(() => {
+      const entries = Object.entries(continentalTotals).filter(([_, v]) => v > 0.05);
+      const sum = entries.reduce((acc, [_, v]) => acc + v, 0);
+      if (sum === 0) return [];
+
+      return entries
+        .map(([name, value]) => {
+          const pct = sum > 0 ? (value / sum) * 100 : value;
+          const theme = CONTINENT_PALETTES[name] || CONTINENT_PALETTES['Other'];
+          return {
+            name,
+            value: Number(pct.toFixed(1)),
+            color: theme.base,
+            gradient: theme.gradient,
+            icon: theme.icon,
+            border: theme.border,
+            bg: theme.bg,
+            text: theme.text,
+          };
+        })
+        .sort((a, b) => b.value - a.value);
+    }, [continentalTotals]);
+
+    const dominantContinent = continentalData[0] || {
+      name: 'Global',
+      value: 100,
+      color: '#06b6d4',
+      gradient: 'from-cyan-500 to-teal-400',
+      icon: '🌐',
+      border: 'border-cyan-500/30',
+      bg: 'bg-cyan-500/10',
+      text: 'text-cyan-400',
+    };
+
+    // Data for legacy radar view
+    const ancestryRadarData = useMemo(() => {
+      if (continentalData.length > 0) {
+        return continentalData.map(c => ({
+          name: c.name,
+          value: c.value,
+        }));
+      }
+      return [];
+    }, [continentalData]);
+
+    const topFamousMatches = useMemo(() => {
+      if (!famousMatches || famousMatches.length === 0) return [];
+      return [...famousMatches]
+        .sort((a, b) => {
+          const scoreA = a.affinity != null ? a.affinity : (a.matchPercentage || 0);
+          const scoreB = b.affinity != null ? b.affinity : (b.matchPercentage || 0);
+          return scoreB - scoreA;
+        })
+        .slice(0, 6);
+    }, [famousMatches]);
 
     if (!dataset) return null;
 
@@ -429,21 +547,6 @@ const ProfileSummary = memo(
       path: [],
       testedMarkers: [],
     };
-
-    const currentOracle = oracleResults?.primary;
-    const ancestryScores = currentOracle?.continentalScores || {};
-
-    const ancestryChartData = Object.entries(ancestryScores)
-      .map(([name, value]) => ({ name, value: Number(value) }))
-      .sort((a, b) => b.value - a.value);
-
-    // ----- Famous matches extraction (if available) -----
-    const topFamousMatches = useMemo(() => {
-      if (!famousMatches || famousMatches.length === 0) return [];
-      return famousMatches
-        .sort((a, b) => (b.matchPercentage || 0) - (a.matchPercentage || 0))
-        .slice(0, 6);
-    }, [famousMatches]);
 
     return (
       <motion.div
@@ -507,100 +610,260 @@ const ProfileSummary = memo(
             {/* ===== Main Bento Grid ===== */}
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
               {/* ===== CELL A : Admixture & Subpopulations (span 8) ===== */}
-              <div className="xl:col-span-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 shadow-xl flex flex-col">
-                <div className="border-b border-white/10 pb-4 mb-5 flex justify-between items-center">
+              <div className="xl:col-span-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 shadow-xl flex flex-col space-y-5">
+                {/* Header & View Switcher */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-3">
                   <div>
                     <h3 className="text-xs font-black text-slate-300 uppercase tracking-[0.15em]">
-                      Biogeographical Origins & Deconvolution
+                      Biogeographical Origins &amp; Deconvolution
                     </h3>
-                    <p className="text-[10px] text-slate-500 font-medium mt-0.5">
-                      Continental admixture and fine‑grained substructure.
+                    <p className="text-[10px] text-slate-400 font-medium mt-0.5">
+                      Hierarchical continental partition and fine‑grained regional substructure.
                     </p>
+                  </div>
+
+                  {/* Visual mode switcher */}
+                  <div className="flex items-center gap-1 p-1 rounded-xl bg-black/40 border border-white/10 self-start sm:self-auto">
+                    <button
+                      onClick={() => setChartMode('donut')}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                        chartMode === 'donut'
+                          ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <Orbit className="w-3.5 h-3.5" />
+                      <span>Donut Ring</span>
+                    </button>
+                    <button
+                      onClick={() => setChartMode('radar')}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                        chartMode === 'radar'
+                          ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <Radio className="w-3.5 h-3.5" />
+                      <span>Radar</span>
+                    </button>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1">
-                  {/* Radar chart */}
-                  <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-white/10 pr-0 lg:pr-4">
-                    <div className="relative w-full h-[250px] flex items-center justify-center">
-                      {isChartReady ? (
-                        <ResponsiveContainer
-                          width="100%"
-                          height="100%"
-                          minWidth={0}
-                          minHeight={250}
-                          debounce={1}
+                {/* Continental Genome Horizon Ribbon */}
+                {continentalData.length > 0 && (
+                  <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-2.5">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="text-[10px] uppercase font-black tracking-widest text-slate-400 flex items-center gap-1.5">
+                        <Layers className="w-3.5 h-3.5 text-cyan-400" /> Continental Genome Horizon
+                      </span>
+                      <span className="text-[10px] font-mono text-slate-500 font-bold">100.0% Normalized Partition</span>
+                    </div>
+
+                    {/* Proportional ribbon bar */}
+                    <div className="w-full h-3.5 bg-slate-900 rounded-full overflow-hidden flex border border-white/10 shadow-inner">
+                      {continentalData.map((c) => (
+                        <div
+                          key={c.name}
+                          style={{ width: `${c.value}%`, backgroundColor: c.color }}
+                          className="h-full transition-all duration-300 hover:opacity-90 cursor-pointer"
+                          onMouseEnter={() => setHoveredSlice({ name: c.name, value: c.value, color: c.color, icon: c.icon })}
+                          onMouseLeave={() => setHoveredSlice(null)}
+                          title={`${c.name}: ${c.value.toFixed(1)}%`}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Horizon Legend Pills */}
+                    <div className="flex flex-wrap gap-2 pt-0.5">
+                      {continentalData.map((c) => (
+                        <button
+                          key={c.name}
+                          onClick={() => setHoveredSlice(hoveredSlice?.name === c.name ? null : { name: c.name, value: c.value, color: c.color, icon: c.icon })}
+                          className={`flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-lg border transition-all ${
+                            hoveredSlice?.name === c.name
+                              ? `${c.bg} ${c.border} ${c.text} ring-1 ring-white/20`
+                              : 'bg-white/[0.03] border-white/5 text-slate-300 hover:bg-white/[0.08]'
+                          }`}
                         >
-                          <RadarChart
-                            data={ancestryChartData}
-                            margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
+                          <span>{c.icon}</span>
+                          <span className="font-semibold">{c.name}:</span>
+                          <span className="font-mono font-black text-white">{c.value.toFixed(1)}%</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Sub-grid: Chart (Left) + Top Subpopulations (Right) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 items-stretch">
+                  {/* Left Column: Visual Chart Display */}
+                  <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-white/10 pr-0 lg:pr-4">
+                    <div className="relative w-full h-[260px] flex items-center justify-center">
+                      {isChartReady ? (
+                        chartMode === 'donut' ? (
+                          <>
+                            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={250}>
+                              <PieChart>
+                                <Pie
+                                  data={continentalData}
+                                  dataKey="value"
+                                  nameKey="name"
+                                  cx="50%"
+                                  cy="50%"
+                                  innerRadius="60%"
+                                  outerRadius="88%"
+                                  paddingAngle={3}
+                                  stroke="#0f172a"
+                                  strokeWidth={2}
+                                  onMouseEnter={(_, index) => {
+                                    const item = continentalData[index];
+                                    if (item) setHoveredSlice({ name: item.name, value: item.value, color: item.color, icon: item.icon });
+                                  }}
+                                  onMouseLeave={() => setHoveredSlice(null)}
+                                >
+                                  {continentalData.map((entry, index) => (
+                                    <Cell key={`donut-${index}`} fill={entry.color} />
+                                  ))}
+                                </Pie>
+                              </PieChart>
+                            </ResponsiveContainer>
+
+                            {/* Interactive Center Hub */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center p-3">
+                              <AnimatePresence mode="wait">
+                                <motion.div
+                                  key={hoveredSlice ? hoveredSlice.name : dominantContinent.name}
+                                  initial={{ opacity: 0, scale: 0.94 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  exit={{ opacity: 0, scale: 0.94 }}
+                                  transition={{ duration: 0.15 }}
+                                  className="flex flex-col items-center justify-center space-y-0.5"
+                                >
+                                  <span className="text-2xl filter drop-shadow-md">
+                                    {hoveredSlice ? hoveredSlice.icon : dominantContinent.icon}
+                                  </span>
+                                  <span className="text-2xl sm:text-3xl font-black text-white font-mono tracking-tight leading-none pt-1">
+                                    {(hoveredSlice ? hoveredSlice.value : dominantContinent.value).toFixed(1)}%
+                                  </span>
+                                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-300 truncate max-w-[130px]">
+                                    {hoveredSlice ? hoveredSlice.name : dominantContinent.name}
+                                  </span>
+                                  <span className="text-[8px] font-bold uppercase tracking-widest text-cyan-400 font-mono">
+                                    {hoveredSlice ? 'Inspected Clade' : 'Dominant Clade'}
+                                  </span>
+                                </motion.div>
+                              </AnimatePresence>
+                            </div>
+                          </>
+                        ) : (
+                          <ResponsiveContainer
+                            width="100%"
+                            height="100%"
+                            minWidth={0}
+                            minHeight={250}
+                            debounce={1}
                           >
-                            <PolarGrid
-                              stroke="rgba(148,163,184,0.25)"
-                              strokeOpacity={1}
-                            />
-                            <PolarAngleAxis
-                              dataKey="name"
-                              tick={{
-                                fill: '#94a3b8',
-                                fontSize: 9,
-                                fontWeight: 800,
-                              }}
-                            />
-                            <Radar
-                              name="Origins"
-                              dataKey="value"
-                              stroke="#06b6d4"
-                              fill="url(#radarGradient)"
-                              fillOpacity={0.3}
-                            />
-                          </RadarChart>
-                        </ResponsiveContainer>
+                            <RadarChart
+                              data={ancestryRadarData}
+                              margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
+                            >
+                              <PolarGrid
+                                stroke="rgba(148,163,184,0.2)"
+                                strokeOpacity={1}
+                              />
+                              <PolarAngleAxis
+                                dataKey="name"
+                                tick={{
+                                  fill: '#94a3b8',
+                                  fontSize: 9,
+                                  fontWeight: 800,
+                                }}
+                              />
+                              <Radar
+                                name="Origins"
+                                dataKey="value"
+                                stroke="#06b6d4"
+                                fill="#06b6d4"
+                                fillOpacity={0.25}
+                              />
+                            </RadarChart>
+                          </ResponsiveContainer>
+                        )
                       ) : (
                         <div className="w-full h-full bg-slate-800/50 rounded-2xl animate-pulse" />
                       )}
                     </div>
-                    <div className="flex justify-center gap-3 mt-2 flex-wrap text-[9px] font-mono">
-                      {ancestryChartData.slice(0, 3).map((anc: any, i: number) => (
+
+                    <div className="flex justify-center gap-2 mt-2 flex-wrap text-[9px] font-mono">
+                      {continentalData.slice(0, 3).map((anc: any, i: number) => (
                         <span
                           key={i}
-                          className="text-slate-300 bg-slate-800/50 px-3 py-1 rounded-xl border border-white/10"
+                          className="text-slate-300 bg-slate-800/50 px-2.5 py-1 rounded-xl border border-white/10 flex items-center gap-1.5"
                         >
+                          <span>{anc.icon}</span>
                           <strong>{anc.name}:</strong> {anc.value.toFixed(0)}%
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  {/* Subpopulations list */}
-                  <div className="lg:col-span-7 space-y-3">
-                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">
-                      Top Subpopulation Contributions
-                    </span>
+                  {/* Right Column: Top Subpopulations List with Ranks & Badges */}
+                  <div className="lg:col-span-7 space-y-2.5 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
+                        Top Subpopulation Contributions
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-500 font-bold">
+                        Stage 2 NNLS
+                      </span>
+                    </div>
+
                     {sortedEngineResults.length > 0 ? (
                       sortedEngineResults.slice(0, 5).map((pop, idx) => {
-                        const ci = calculateAdmixtureCI(pop.percentage || 0, dataset?.snpsCount || 1000);
+                        const ci = calculateAdmixtureCI(pop.percentage || 0, dataset?.snpCount || dataset?.snpsCount || 1000);
+                        const continent = assignContinent(pop.name, pop.rawPopCode);
+                        const theme = CONTINENT_PALETTES[continent] || CONTINENT_PALETTES['Other'];
+                        const rankStyle = RANK_BADGE_STYLES[idx] || RANK_BADGE_STYLES[4];
+
                         return (
                           <div
                             key={idx}
-                            className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition hover:border-cyan-500/30"
+                            className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition-all hover:border-white/20 hover:bg-white/[0.08]"
                           >
-                            <div className="flex justify-between items-center text-xs min-w-0 gap-2">
-                              <span className="font-bold text-slate-200 truncate min-w-0">
-                                {pop.name}
-                              </span>
-                              <div className="flex items-center gap-1.5">
-                                <span className="font-mono text-[9px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
-                                  95% CI: [{ci.low}%–{ci.high}%]
+                            <div className="flex items-center justify-between text-xs min-w-0 gap-2 mb-1.5">
+                              <div className="flex items-center gap-2 min-w-0 flex-1">
+                                {/* Rank Medal Badge */}
+                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-md border shrink-0 ${rankStyle.badge}`}>
+                                  {rankStyle.label}
                                 </span>
-                                <span className="font-mono font-black text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full text-[10px]">
+                                <span className="font-bold text-slate-100 truncate min-w-0">
+                                  {pop.name}
+                                </span>
+                              </div>
+
+                              <div className="flex items-center gap-1.5 shrink-0">
+                                {/* Regional Chip */}
+                                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border hidden sm:inline-flex items-center gap-1 ${theme.bg} ${theme.border} ${theme.text}`}>
+                                  <span>{theme.icon}</span>
+                                  <span>{continent}</span>
+                                </span>
+
+                                {/* 95% CI */}
+                                <span className="font-mono text-[9px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
+                                  CI: [{ci.low}%–{ci.high}%]
+                                </span>
+
+                                {/* Percentage */}
+                                <span className="font-mono font-black text-white bg-white/10 px-2 py-0.5 rounded-full text-[11px] min-w-[44px] text-right">
                                   {(pop.percentage || 0).toFixed(1)}%
                                 </span>
                               </div>
                             </div>
-                            <div className="w-full bg-slate-800/70 rounded-full h-1.5 mt-2 overflow-hidden">
+
+                            {/* Animated progress bar using continent gradient */}
+                            <div className="w-full bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
                               <div
-                                className="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full transition-all"
+                                className={`h-full bg-gradient-to-r ${theme.gradient} rounded-full transition-all duration-300`}
                                 style={{
                                   width: `${Math.max(pop.percentage || 0, 2)}%`,
                                 }}
@@ -619,81 +882,98 @@ const ProfileSummary = memo(
               </div>
 
               {/* ===== CELL B : Lineages & Blood (span 4) ===== */}
-              <div className="xl:col-span-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 flex flex-col shadow-xl">
-                <div className="border-b border-white/10 pb-4 mb-4">
+              <div className="xl:col-span-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 flex flex-col justify-between shadow-xl space-y-4">
+                <div className="border-b border-white/10 pb-3">
                   <h3 className="text-xs font-black text-slate-300 uppercase tracking-[0.15em]">
-                    Uniparental Lineages
+                    Uniparental Lineages &amp; Serology
                   </h3>
-                  <p className="text-[10px] text-slate-500 font-medium mt-0.5">
-                    Deep paternal & maternal markers.
+                  <p className="text-[10px] text-slate-400 font-medium mt-0.5">
+                    Deep phylogenetic markers &amp; erythrocyte antigens.
                   </p>
                 </div>
 
-                <div className="space-y-3 my-auto">
-                  {/* Paternal */}
-                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur border border-teal-500/20 flex gap-3 items-center group hover:border-teal-400/40 transition">
-                    <div className="w-10 h-10 rounded-xl bg-teal-600/30 flex items-center justify-center shrink-0 shadow shadow-teal-500/10">
-                      <Compass className="w-5 h-5 text-teal-400" />
+                <div className="space-y-3.5 my-auto">
+                  {/* Paternal Y-DNA */}
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-teal-500/20 hover:border-teal-400/40 transition flex gap-3.5 items-center group">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-600/30 to-emerald-500/20 border border-teal-500/30 flex items-center justify-center shrink-0 shadow-lg shadow-teal-500/10 group-hover:scale-105 transition-transform">
+                      <Compass className="w-5 h-5 text-teal-300" />
                     </div>
-                    <div className="min-w-0">
-                      <span className="text-[9px] font-black text-teal-400 uppercase tracking-widest block leading-none mb-1">
-                        Paternal (Y‑DNA)
-                      </span>
-                      <span className="text-sm font-black text-slate-100 block truncate tracking-tight">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-[9px] font-black text-teal-400 uppercase tracking-widest block leading-none">
+                          Paternal (Y‑DNA)
+                        </span>
+                        <span className="text-[8px] font-mono text-teal-400/80 bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/20 font-bold">
+                          Clade
+                        </span>
+                      </div>
+                      <span className="text-base font-black text-white block truncate tracking-tight">
                         {yData?.phase2?.haplogroup ||
                           yData?.predicted?.name ||
-                          'Unknown / Female lineage'}
+                          yData?.predicted ||
+                          'Unknown / Female Specimen'}
                       </span>
-                      <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">
+                      <span className="text-[10px] font-semibold text-slate-400 font-mono block uppercase truncate mt-0.5">
                         {yData?.phase2?.region ||
                           yData?.predicted?.continent ||
+                          yData?.region ||
                           'Universal Origin'}
                       </span>
                     </div>
                   </div>
 
-                  {/* Maternal */}
-                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur border border-rose-500/20 flex gap-3 items-center group hover:border-rose-400/40 transition">
-                    <div className="w-10 h-10 rounded-xl bg-rose-600/30 flex items-center justify-center shrink-0 shadow shadow-rose-500/10">
-                      <History className="w-5 h-5 text-rose-400" />
+                  {/* Maternal mtDNA */}
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-rose-500/20 hover:border-rose-400/40 transition flex gap-3.5 items-center group">
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-rose-600/30 to-pink-500/20 border border-rose-500/30 flex items-center justify-center shrink-0 shadow-lg shadow-rose-500/10 group-hover:scale-105 transition-transform">
+                      <History className="w-5 h-5 text-rose-300" />
                     </div>
-                    <div className="min-w-0">
-                      <span className="text-[9px] font-black text-rose-400 uppercase tracking-widest block leading-none mb-1">
-                        Maternal (mtDNA)
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-[9px] font-black text-rose-400 uppercase tracking-widest block leading-none">
+                          Maternal (mtDNA)
+                        </span>
+                        <span className="text-[8px] font-mono text-rose-400/80 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20 font-bold">
+                          Mitochondrial
+                        </span>
+                      </div>
+                      <span className="text-base font-black text-white block truncate tracking-tight">
+                        {mtData?.predicted?.name || mtData?.predicted || 'Unknown'}
                       </span>
-                      <span className="text-sm font-black text-slate-100 block truncate tracking-tight">
-                        {mtData?.predicted || 'Unknown'}
-                      </span>
-                      <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">
-                        {mtData?.region || 'Universal Origin'}
+                      <span className="text-[10px] font-semibold text-slate-400 font-mono block uppercase truncate mt-0.5">
+                        {mtData?.region || mtData?.continent || 'Universal Origin'}
                       </span>
                     </div>
                   </div>
 
-                  {/* Blood type */}
-                  <div className="p-3 rounded-xl bg-white/5 backdrop-blur border border-red-500/20 flex gap-3 items-center group hover:border-red-400/40 transition">
+                  {/* Blood Type & Rh Factor */}
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-red-500/20 hover:border-red-400/40 transition flex gap-3.5 items-center group">
                     <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow ${rhDisplay.pillColor} backdrop-blur`}
+                      className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 shadow-lg backdrop-blur ${rhDisplay.pillColor} group-hover:scale-105 transition-transform`}
                     >
                       <FlaskConical className="w-5 h-5 text-white" />
                     </div>
-                    <div className="min-w-0">
-                      <span className="text-[9px] font-black text-red-400 uppercase tracking-widest block leading-none mb-1">
-                        {rhDisplay.label || 'Predicted Blood Type'}
-                      </span>
-                      <span className="text-sm font-black text-slate-100 block truncate">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-[9px] font-black text-red-400 uppercase tracking-widest block leading-none">
+                          {rhDisplay.label || 'Predicted Blood Type'}
+                        </span>
+                        <span className="text-[8px] font-mono text-red-400/90 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 font-bold">
+                          ABO / Rh
+                        </span>
+                      </div>
+                      <span className="text-base font-black text-white block truncate tracking-tight">
                         {rhDisplay.name}
                       </span>
-                      <span className="text-[9px] font-bold text-slate-500 font-mono block uppercase truncate mt-0.5">
+                      <span className="text-[10px] font-semibold text-slate-400 font-mono block uppercase truncate mt-0.5">
                         {rhDisplay.badge}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="text-[8px] font-extrabold text-slate-500 bg-slate-800/50 border border-slate-700/50 p-2 rounded-xl text-center mt-4 select-none backdrop-blur">
-                  <Shield className="w-3 h-3 inline mr-1" />
-                  Fully local processing: genomic privacy protected.
+                <div className="text-[9px] font-extrabold text-slate-400 bg-slate-900/60 border border-white/10 p-2.5 rounded-xl text-center select-none backdrop-blur flex items-center justify-center gap-1.5">
+                  <Shield className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>100% In-Browser Local Processing • Zero Data Transmitted</span>
                 </div>
               </div>
 
@@ -706,9 +986,8 @@ const ProfileSummary = memo(
                       <h3 className="text-xs font-black text-slate-300 uppercase tracking-wider">
                         Confidence Interval Rigor (95% CI)
                       </h3>
-                      <p className="text-[9px] text-slate-500 mt-0.5">
-                        Statistical error bounds based on ancestry‑informative
-                        marker count.
+                      <p className="text-[9px] text-slate-400 mt-0.5">
+                        Statistical error bounds based on ancestry‑informative marker count.
                       </p>
                     </div>
                   </div>
@@ -723,7 +1002,7 @@ const ProfileSummary = memo(
                         >
                           <div className="flex justify-between items-center text-[11px] font-bold mb-2 min-w-0 gap-2">
                             <span className="text-slate-200 uppercase tracking-tight truncate min-w-0 flex-1">
-                              {formatPopName(insight?.pop)}
+                              {humanizePopName(insight?.pop)}
                             </span>
                             <span className="text-emerald-400 font-black shrink-0">
                               {insight?.percentage || 0}%
@@ -763,43 +1042,92 @@ const ProfileSummary = memo(
               )}
             </div>
 
-            {/* ===== OPTIONAL: Famous Matches Section ===== */}
+            {/* ===== Ancestral Kinship & Ancient DNA Specimen Affinity ===== */}
             {topFamousMatches.length > 0 && (
-              <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5">
-                <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
-                  <Dna className="w-4 h-4 text-purple-400" />
-                  <div>
-                    <h3 className="text-xs font-black text-slate-300 uppercase tracking-wider">
-                      Ancestral Kinship & Famous Matches
-                    </h3>
-                    <p className="text-[9px] text-slate-500 mt-0.5">
-                      Genetic similarity with notable individuals
-                      (non‑attributive).
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-3 justify-start">
-                  {topFamousMatches.map((match: any, idx: number) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 bg-white/5 backdrop-blur border border-white/10 rounded-xl px-4 py-2.5 hover:border-purple-500/30 transition"
-                    >
-                      {/* Icon placeholder */}
-                      <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
-                        <User className="w-4 h-4 text-purple-300" />
-                      </div>
-                      <div className="text-xs">
-                        <p className="font-bold text-slate-200">
-                          {match.name || 'Unknown'}
-                        </p>
-                        <p className="text-[10px] text-purple-400 font-mono font-semibold">
-                          {match.matchPercentage != null
-                            ? `${match.matchPercentage.toFixed(1)}% match`
-                            : 'Similar'}
-                        </p>
-                      </div>
+              <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-3 gap-2">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300">
+                      <Dna className="w-4 h-4" />
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-xs font-black text-slate-200 uppercase tracking-wider">
+                        Ancestral Kinship &amp; Ancient DNA Specimen Affinity
+                      </h3>
+                      <p className="text-[10px] text-slate-400">
+                        Pairwise SNP matching against published archaeological benchmark genomes.
+                      </p>
+                    </div>
+                  </div>
+                  <span className="text-[9px] font-mono font-bold uppercase tracking-widest text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-full self-start sm:self-auto">
+                    Archaeological Benchmark
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {topFamousMatches.map((match: any, idx: number) => {
+                    const affinity = match.affinity != null ? match.affinity : (match.matchPercentage != null ? Math.round(match.matchPercentage) : 0);
+                    const loc = match.location || match.site || 'Archaeological Site';
+                    const era = match.era || match.period || 'Ancient Era';
+                    const sampleId = match.sampleId || `ANC-${idx + 1}`;
+                    const markers = match.sharedMarkers || match.overlappingMarkers || null;
+
+                    return (
+                      <div
+                        key={match.sampleId || idx}
+                        className="p-4 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur border border-white/10 hover:border-purple-500/40 transition-all duration-200 flex flex-col justify-between gap-3 group"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-500/20 to-indigo-500/20 border border-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 group-hover:scale-105 transition-transform">
+                              <User className="w-4 h-4" />
+                            </div>
+                            <div className="min-w-0">
+                              <h4 className="text-xs font-black text-slate-100 truncate group-hover:text-purple-300 transition-colors">
+                                {match.name || 'Ancient Individual'}
+                              </h4>
+                              <span className="text-[9px] font-mono text-purple-400/80 font-bold block uppercase tracking-widest truncate">
+                                {sampleId}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="text-right shrink-0">
+                            <span className="text-base font-black text-purple-400 font-mono tracking-tight block leading-none">
+                              {affinity}%
+                            </span>
+                            <span className="text-[8px] font-black text-slate-500 uppercase tracking-wider block mt-0.5">
+                              Affinity
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Visual mini affinity meter */}
+                        <div className="w-full bg-slate-800/80 rounded-full h-1 overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-purple-500 to-indigo-400 rounded-full"
+                            style={{ width: `${Math.min(100, Math.max(affinity, 5))}%` }}
+                          />
+                        </div>
+
+                        <div className="space-y-1.5 pt-1 text-[10px] text-slate-400 border-t border-white/5">
+                          <div className="flex items-center gap-1.5 truncate">
+                            <MapPin className="w-3 h-3 text-slate-500 shrink-0" />
+                            <span className="truncate">{loc}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 truncate">
+                            <Calendar className="w-3 h-3 text-slate-500 shrink-0" />
+                            <span className="truncate text-slate-300 font-medium">{era}</span>
+                          </div>
+                          {markers && (
+                            <div className="flex items-center gap-1.5 font-mono text-[9px] text-slate-500">
+                              <Activity className="w-3 h-3 text-purple-400/70 shrink-0" />
+                              <span>{markers} overlapping markers</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -2054,12 +2382,17 @@ export default function App() {
                 const name = (b.subpop || b.name || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
                 return arr.findIndex((x: any) => (x.subpop || x.name || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim() === name) !== index;
               });
+
+            const isOutdatedEngine = !oracle?._engineVersion || oracle._engineVersion !== 'v4-afroindigenous';
             
-            if (isCollapsed || hasDuplicateBreakdown) {
+            if (isCollapsed || hasDuplicateBreakdown || isOutdatedEngine) {
               console.log("Recalculating subpopulationOracle for cached dataset:", ds.name);
               const userGenotypes = Object.entries(ds.mergedSnpMap).map(([rsid, genotype]) => ({ rsid, genotype: genotype as string }));
               const freshOracle = await processSubpopulations(userGenotypes, []);
-              ds.analysis.subpopulationOracle = freshOracle;
+              ds.analysis.subpopulationOracle = {
+                ...freshOracle,
+                all: freshOracle
+              };
               hasChanges = true;
             }
           }
@@ -2531,8 +2864,12 @@ export default function App() {
     const dataset = datasets[activeDatasetIndex];
     if (!dataset) return [];
     
-    const mtHaplo = dataset.predictedMtDNA?.predicted;
-    const yHaplo = dataset.predictedYDNA?.predicted?.name;
+    const mtHaplo = typeof dataset.predictedMtDNA?.predicted === 'string' 
+      ? dataset.predictedMtDNA.predicted 
+      : (dataset.predictedMtDNA?.predicted?.name || dataset.predictedMtDNA?.haplogroup || '');
+    const yHaplo = dataset.predictedYDNA?.phase2?.haplogroup 
+      || dataset.predictedYDNA?.predicted?.name 
+      || (typeof dataset.predictedYDNA?.predicted === 'string' ? dataset.predictedYDNA.predicted : '');
     
     return calculateHistoricalClusterMatches(mtHaplo, yHaplo);
   }, [datasets, activeDatasetIndex]);

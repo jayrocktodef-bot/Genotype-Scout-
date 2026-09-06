@@ -22,6 +22,9 @@ import { identifyMicroHapSignatures } from "../engines/ancestry/microHapEngine";
 import { calculateComprehensiveScores } from "../engines/ancestry/comprehensiveEngine";
 import { identifyRareAndNovelVariants } from "../utils/rareVariantsAnalyzer";
 import { calculatePharmacogenomics } from '../services/pgxEngine';
+import { computeAncientMatches } from '../services/ancientMatchEngine';
+import { calculateArchaicAffinity } from '../services/archaicEngine';
+import { Y_DNA_HAPLOGROUPS, MT_DNA_HAPLOGROUPS } from '../data/haplogroupTree';
 
 compileReferenceKernel();
 
@@ -444,6 +447,29 @@ self.onmessage = async (e: MessageEvent) => {
     
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
     const predictedMtDNA = analyzeMtDNA(mergedMtMap);
+
+    // ── Haplotype-Scout: Ancient Archaeological Match & Archaic Hominin Affinity ──
+    const yCode = predictedYDNA?.phase2?.haplogroup || predictedYDNA?.predicted?.name;
+    const mtCode = predictedMtDNA?.predicted;
+
+    const userYDef = yCode
+      ? (Y_DNA_HAPLOGROUPS.find(h => h.code.toLowerCase() === yCode.toLowerCase() || yCode.toLowerCase().startsWith(h.code.toLowerCase())) || { code: yCode, cladeName: yCode } as any)
+      : null;
+    const userMtDef = mtCode
+      ? (MT_DNA_HAPLOGROUPS.find(h => h.code.toLowerCase() === mtCode.toLowerCase() || mtCode.toLowerCase().startsWith(h.code.toLowerCase())) || { code: mtCode, cladeName: mtCode } as any)
+      : null;
+
+    const ancientLineageMatches = computeAncientMatches(userYDef, userMtDef);
+
+    // Build coordinate position lookup for archaic introgression engine
+    const snpByPosition: Record<string, string> = {};
+    for (const [rsid, genotype] of Object.entries(imputedSnpMap)) {
+      const meta = mergedSnpMetaMap[rsid];
+      if (meta && meta.chrom && meta.pos) {
+        snpByPosition[`${meta.chrom.toLowerCase()}:${meta.pos}`] = genotype;
+      }
+    }
+    const archaicAffinity = calculateArchaicAffinity(imputedSnpMap, snpByPosition);
     
     const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
@@ -490,6 +516,8 @@ self.onmessage = async (e: MessageEvent) => {
       chip: chips[0] || "Unknown Chip",
       snpCount: totalSnps,
       predictedYDNA, predictedMtDNA, mergedMtMap,
+      ancientLineageMatches,
+      archaicAffinity,
 
       mergedSnpMap: imputedSnpMap,
       prsResults: undefined,

@@ -77,6 +77,8 @@ export function analyzePhase2YDna(yMap: Record<string, string>): YDnaPredictionD
  * Format Phase 2 result for UI display/logging.
  * Provides structured transparency on derived-only validation + coverage metrics.
  */
+import { estimateTmrcaForHaplogroup } from './tmrcaEngine';
+
 export function formatPhase2Result(result: YDnaPredictionDetails): {
   haplogroup: string;
   confidence: number;
@@ -87,6 +89,16 @@ export function formatPhase2Result(result: YDnaPredictionDetails): {
   rejectedBranches: string[];
   region: string;
   description: string;
+  nonPalindromicDerivedCount?: number;
+  palindromicDerivedCount?: number;
+  recurrentDerivedCount?: number;
+  isPalindromicAmbiguous?: boolean;
+  isProvisionalTerminal?: boolean;
+  apexAnchorClade?: string;
+  inferredBiologicalSex?: 'MALE' | 'FEMALE' | 'UNKNOWN';
+  derivedMarkerList?: YDnaPredictionDetails['derivedMarkers'];
+  ancestralMarkerList?: YDnaPredictionDetails['ancestralMarkers'];
+  tmrca?: any;
 } {
   if (result.derivedSnpCount === 0 || result.terminalHaplogroup === 'N/A') {
     return {
@@ -103,6 +115,8 @@ export function formatPhase2Result(result: YDnaPredictionDetails): {
   }
 
   const details = getHaplogroupDetails(result.terminalHaplogroup, false);
+  const tmrca = estimateTmrcaForHaplogroup(result.terminalHaplogroup, 'PATERNAL_YDNA', result.derivedSnpCount);
+
   return {
     haplogroup: result.terminalHaplogroup,
     confidence: result.confidence,
@@ -113,5 +127,16 @@ export function formatPhase2Result(result: YDnaPredictionDetails): {
     rejectedBranches: result.rejectedBranches,
     region: details.region,
     description: details.description,
+    nonPalindromicDerivedCount: result.nonPalindromicDerivedCount,
+    palindromicDerivedCount: result.palindromicDerivedCount,
+    recurrentDerivedCount: result.recurrentDerivedCount,
+    isPalindromicAmbiguous: result.isPalindromicAmbiguous,
+    isProvisionalTerminal: result.isProvisionalTerminal,
+    apexAnchorClade: result.apexAnchorClade,
+    inferredBiologicalSex: result.inferredBiologicalSex,
+    derivedMarkerList: result.derivedMarkers,
+    ancestralMarkerList: result.ancestralMarkers,
+    tmrca
   };
 }
+

@@ -18,3 +18,6 @@ ANCHOR_AIMS.forEach(aim => {
     SNP_LOOKUP.set(aim.rsid.toLowerCase(), aim);
   }
 });
+
+export { ALL_DEFINING_SNPS } from './definingSnps';
+

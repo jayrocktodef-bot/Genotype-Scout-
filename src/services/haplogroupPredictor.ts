@@ -6,12 +6,15 @@ import { findMatchesInHaplogroups } from './haplogroupService';
 import { findMatchesInMtHaplogroups } from './mtHaplogroupService';
 import { analyzePhase2YDna, formatPhase2Result } from './phase2YDnaAdapter';
 import { getHaplogroupDetails } from '../utils/haplogroupDetails';
+import { estimateTmrcaForHaplogroup } from './tmrcaEngine';
+import { runEmpopForensicQc } from './empopForensicEngine';
 
 export interface YDnaAnalysisResult {
   predicted: { name: string; marker: string; continent: string; description: string } | null;
   isoggMatches: any[];
   testedMarkers: any[];
   path: string[];
+  tmrca?: any;
   phase2?: {
     haplogroup: string;
     confidence: number;
@@ -21,6 +24,16 @@ export interface YDnaAnalysisResult {
     rejectedBranches: string[];
     region?: string;
     description?: string;
+    nonPalindromicDerivedCount?: number;
+    palindromicDerivedCount?: number;
+    recurrentDerivedCount?: number;
+    isPalindromicAmbiguous?: boolean;
+    isProvisionalTerminal?: boolean;
+    apexAnchorClade?: string;
+    inferredBiologicalSex?: 'MALE' | 'FEMALE' | 'UNKNOWN';
+    derivedMarkerList?: any[];
+    ancestralMarkerList?: any[];
+    tmrca?: any;
   };
 }
 
@@ -225,12 +238,17 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
     console.warn('[Phase 2] Analysis failed, continuing with Phase 1 results:', e);
   }
 
+  const yTmrca = (phase2Result?.haplogroup || prediction?.name)
+    ? estimateTmrcaForHaplogroup(phase2Result?.haplogroup || prediction!.name, 'PATERNAL_YDNA', maxDerivedCount)
+    : null;
+
   return {
     predicted: prediction,
     isoggMatches: sortedIsogg.slice(0, 100), // Cap at 100 deep matches
     testedMarkers: uniqueMarkers.sort((a, b) => (b.isDerived ? 1 : 0) - (a.isDerived ? 1 : 0)),
     path: finalPath,
-    phase2: phase2Result
+    phase2: phase2Result,
+    tmrca: yTmrca
   };
 }
 
@@ -478,6 +496,18 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
   const details = getHaplogroupDetails(predictedHaplogroup, true);
   let region = details.region;
   let description = details.description;
+
+  const mtPosMap: Record<number, string> = {};
+  for (const [posStr, allele] of Object.entries(mtMap)) {
+    const p = parseInt(posStr, 10);
+    if (!isNaN(p)) {
+      mtPosMap[p] = allele;
+    }
+  }
+  const empopQc = runEmpopForensicQc(mtPosMap);
+  const tmrca = predictedHaplogroup && predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)"
+    ? estimateTmrcaForHaplogroup(predictedHaplogroup, 'MATERNAL_MTDNA', userMutations.length)
+    : null;
   
   return {
     predicted: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? predictedHaplogroup : null,
@@ -487,6 +517,9 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     testedMarkers,
     userMutations,
     score: bestMatch.score,
-    deepMatches: sortedDeep.slice(0, 50)
+    deepMatches: sortedDeep.slice(0, 50),
+    empopQc,
+    tmrca
   };
 }
+

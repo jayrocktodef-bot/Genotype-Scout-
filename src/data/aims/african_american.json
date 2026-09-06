@@ -579,7 +579,7 @@
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "C"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -588,9 +588,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "OR4C46",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "chromosome": "11",
+    "position": 47901372,
+    "ref": "T",
+    "alt": "C"
   },
   "rs2000024": {
     "rsid": "rs2000024",
@@ -1385,7 +1389,7 @@
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -1394,9 +1398,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "ZNF384",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "chromosome": "11",
+    "position": 115593557,
+    "ref": "C",
+    "alt": "T"
   },
   "rs2000062": {
     "rsid": "rs2000062",
@@ -2210,7 +2218,7 @@
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "G"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -2219,9 +2227,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "TRPS1",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "chromosome": "8",
+    "position": 116116572,
+    "ref": "A",
+    "alt": "G"
   },
   "rs700001": {
     "rsid": "rs700001",
@@ -2237,9 +2249,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "TRPS1",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "chromosome": "8",
+    "position": 116117404,
+    "ref": "G",
+    "alt": "A"
   },
   "rs700002": {
     "rsid": "rs700002",
@@ -2402,7 +2418,7 @@
     "region": "African American",
     "color": "#95A5A6",
     "alleles": [
-      "A"
+      "T"
     ],
     "frequencies": {
       "AFR": 0.95,
@@ -2411,9 +2427,13 @@
     "subFrequencies": {},
     "deepFrequencies": {},
     "weight": 9,
-    "gene": "Unknown",
+    "gene": "TRPS1",
     "trait": "Ancestry",
-    "description": "African American ancestry informative marker."
+    "description": "African American ancestry informative marker.",
+    "chromosome": "8",
+    "position": 116193721,
+    "ref": "C",
+    "alt": "T"
   },
   "rs7000010": {
     "rsid": "rs7000010",

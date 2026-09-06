@@ -15,16 +15,19 @@ export interface ClusterMatch {
 /**
  * Calculates high-confidence affinity between user's haplogroups and historical burial/site clusters.
  */
-export function calculateHistoricalClusterMatches(userMtDna?: string, userYdna?: string): ClusterMatch[] {
+export function calculateHistoricalClusterMatches(userMtDna?: any, userYdna?: any): ClusterMatch[] {
   const matches: ClusterMatch[] = [];
 
-  if (!userMtDna && !userYdna) return matches;
+  const mtStr = typeof userMtDna === 'string' ? userMtDna : (userMtDna?.name || userMtDna?.haplogroup || '');
+  const yStr = typeof userYdna === 'string' ? userYdna : (userYdna?.name || userYdna?.haplogroup || '');
+
+  if (!mtStr && !yStr) return matches;
 
   (masterAncient as any).clusters.forEach((cluster: any) => {
     // Maternal (mtDNA) matching
-    if (userMtDna) {
+    if (mtStr) {
       const mtMatch = cluster.signatures.find((sig: any) => 
-        userMtDna === sig.haplogroup || userMtDna.startsWith(sig.haplogroup + '.') || userMtDna.startsWith(sig.haplogroup + '-')
+        mtStr === sig.haplogroup || mtStr.startsWith(sig.haplogroup + '.') || mtStr.startsWith(sig.haplogroup + '-')
       );
 
       if (mtMatch) {

@@ -80,7 +80,7 @@
     "alleles": [
       "C"
     ],
-    "description": "Component of the APOE-ε4 allele, a major genetic risk factor for late-onset Alzheimer's.",
+    "description": "Component of the APOE-\u03b54 allele, a major genetic risk factor for late-onset Alzheimer's.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs429358"
   },
   {
@@ -230,50 +230,6 @@
     "subRegion": "Sub-Saharan Africa"
   },
   {
-    "markerId": "rs12913832",
-    "rsid": "rs12913832",
-    "gene": "HERC2",
-    "trait": "Ancestral Pigmentation Marker",
-    "continent": "African",
-    "category": "Ancestry",
-    "significance": "High",
-    "alleles": [
-      "A"
-    ],
-    "description": "The 'A' allele is the ancestral version found in Africa. The 'G' allele is the primary driver of blue eye color in Europeans.",
-    "frequencies": {
-      "AFR": 0.99,
-      "EUR": 0.2,
-      "EAS": 0.98,
-      "AMR": 0.7
-    },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs12913832",
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
-    "markerId": "rs1800407",
-    "rsid": "rs1800407",
-    "gene": "OCA2",
-    "trait": "African Pigmentation Marker",
-    "continent": "African",
-    "category": "Ancestry",
-    "significance": "Medium",
-    "alleles": [
-      "G"
-    ],
-    "description": "A pigmentation marker where the 'G' allele is highly prevalent in African populations.",
-    "frequencies": {
-      "AFR": 0.95,
-      "EUR": 0.4,
-      "EAS": 0.8,
-      "AMR": 0.65
-    },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800407",
-    "subPopulation": "Sub-Saharan",
-    "subRegion": "African Continent"
-  },
-  {
     "markerId": "rs1042602",
     "rsid": "rs1042602",
     "gene": "TYR",
@@ -340,79 +296,11 @@
     "subRegion": "African Continent"
   },
   {
-    "markerId": "rs1426654_AF",
-    "rsid": "rs1426654",
-    "gene": "SLC24A5",
-    "trait": "Ancestral Pigmentation Marker",
-    "continent": "African",
-    "category": "Ancestry",
-    "significance": "High",
-    "alleles": [
-      "G"
-    ],
-    "description": "The 'G' allele is the ancestral version found in Africa. The 'A' allele is the primary driver of skin lightening in West Eurasians.",
-    "frequencies": {
-      "AFR": 0.96,
-      "EUR": 0.01,
-      "EAS": 0.97,
-      "AMR": 0.45
-    },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1426654",
-    "subPopulation": "West African",
-    "subRegion": "Sub-Saharan Africa"
-  },
-  {
-    "markerId": "rs16891982_AF",
-    "rsid": "rs16891982",
-    "gene": "SLC45A2",
-    "trait": "Ancestral Pigmentation Marker",
-    "continent": "African",
-    "category": "Ancestry",
-    "significance": "High",
-    "alleles": [
-      "C"
-    ],
-    "description": "The 'C' allele is the ancestral version found in Africa. The 'G' allele is associated with lighter pigmentation in Europeans.",
-    "frequencies": {
-      "AFR": 0.98,
-      "EUR": 0.07,
-      "EAS": 0.98,
-      "AMR": 0.7
-    },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs16891982",
-    "subPopulation": "Levantine",
-    "subRegion": "Eastern Mediterranean"
-  },
-  {
-    "markerId": "rs3827760",
-    "rsid": "rs3827760",
-    "gene": "EDAR",
-    "category": "Ancestry",
-    "trait": "Thick straight hair, shovel-shaped incisors, denser sweat glands, reduced chin protrusion",
-    "continent": "Native American",
-    "alleles": [
-      "C"
-    ],
-    "significance": "High",
-    "description": "Near-absent in African and European populations. Pre-contact Native American frequency likely near 100%; modern AMR figures reflect European admixture. Strong positive selection signal — one of the highest FST values genome-wide.",
-    "frequencies": {
-      "AFR": 0.01,
-      "EUR": 0,
-      "EAS": 0.87,
-      "AMR_admixed": 0.65,
-      "Native_American_unadmixed": 0.95,
-      "SAS": 0.07
-    },
-    "referenceUrl": "https://www.biorxiv.org/content/10.1101/813063v1.full",
-    "subPopulation": "Indigenous American",
-    "subRegion": "Beringian/North America"
-  },
-  {
     "markerId": "rs75493593",
     "rsid": "rs75493593",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk — P443T",
+    "trait": "Type 2 diabetes risk \u2014 P443T",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -436,7 +324,7 @@
     "rsid": "rs13342692",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk — D127G missense",
+    "trait": "Type 2 diabetes risk \u2014 D127G missense",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -460,7 +348,7 @@
     "rsid": "rs117767867",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk — V113I missense",
+    "trait": "Type 2 diabetes risk \u2014 V113I missense",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -484,7 +372,7 @@
     "rsid": "rs75418188",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk — G40S missense",
+    "trait": "Type 2 diabetes risk \u2014 G40S missense",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -508,7 +396,7 @@
     "rsid": "rs13342232",
     "gene": "SLC16A11",
     "category": "Health",
-    "trait": "Type 2 diabetes risk — silent mutation",
+    "trait": "Type 2 diabetes risk \u2014 silent mutation",
     "continent": "Native American",
     "alleles": [
       "G"
@@ -580,7 +468,7 @@
     "rsid": "rs5219",
     "gene": "KCNJ11",
     "category": "Health",
-    "trait": "Type 2 diabetes — E23K variant",
+    "trait": "Type 2 diabetes \u2014 E23K variant",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -603,7 +491,7 @@
     "rsid": "rs1111875",
     "gene": "HHEX",
     "category": "Health",
-    "trait": "Type 2 diabetes — pancreatic development",
+    "trait": "Type 2 diabetes \u2014 pancreatic development",
     "continent": "Native American",
     "alleles": [
       "C"
@@ -626,7 +514,7 @@
     "rsid": "rs13266634",
     "gene": "SLC30A8",
     "category": "Health",
-    "trait": "Type 2 diabetes — zinc transporter ZnT8",
+    "trait": "Type 2 diabetes \u2014 zinc transporter ZnT8",
     "continent": "Native American",
     "alleles": [
       "C"
@@ -672,7 +560,7 @@
     "rsid": "rs1800404",
     "gene": "OCA2",
     "category": "Ancestry",
-    "trait": "Pigmentation — European vs. East Asian/Native American differentiation",
+    "trait": "Pigmentation \u2014 European vs. East Asian/Native American differentiation",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -695,7 +583,7 @@
     "rsid": "rs1800562",
     "gene": "HFE",
     "category": "Health",
-    "trait": "Hereditary hemochromatosis — C282Y; near-absent in Native Americans",
+    "trait": "Hereditary hemochromatosis \u2014 C282Y; near-absent in Native Americans",
     "continent": "Native American",
     "alleles": [
       "A"
@@ -718,7 +606,7 @@
     "rsid": "rs1800961",
     "gene": "HNF4A",
     "category": "Health",
-    "trait": "Type 2 diabetes — MODY1-related hepatocyte nuclear factor",
+    "trait": "Type 2 diabetes \u2014 MODY1-related hepatocyte nuclear factor",
     "continent": "Native American",
     "alleles": [
       "T"
@@ -5936,20 +5824,6 @@
     }
   },
   {
-    "markerId": "rs671",
-    "rsid": "rs671",
-    "gene": "ALDH2",
-    "trait": "Alcohol Flushing",
-    "continent": "East Asian",
-    "category": "Ancestry",
-    "significance": "High",
-    "alleles": [
-      "A"
-    ],
-    "description": "Associated with alcohol flushing reaction in East Asian populations.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs671"
-  },
-  {
     "markerId": "rs1229984",
     "rsid": "rs1229984",
     "gene": "ADH1B",
@@ -5990,20 +5864,6 @@
     ],
     "description": "A variant in the CYP1A1 gene found predominantly in East Asian populations.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1048943"
-  },
-  {
-    "markerId": "rs17822931",
-    "rsid": "rs17822931",
-    "gene": "ABCC11",
-    "trait": "East Asian Earwax",
-    "continent": "East Asian",
-    "category": "Ancestry",
-    "significance": "High",
-    "alleles": [
-      "A"
-    ],
-    "description": "Determines dry earwax and reduced body odor, highly prevalent in East Asian populations.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs17822931"
   },
   {
     "markerId": "M175",
@@ -6271,20 +6131,6 @@
     ],
     "description": "A variant associated with lighter hair color in European populations.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs12891399"
-  },
-  {
-    "markerId": "rs1805007",
-    "rsid": "rs1805007",
-    "gene": "MC1R",
-    "trait": "European Red Hair",
-    "continent": "European",
-    "category": "Ancestry",
-    "significance": "Medium",
-    "alleles": [
-      "T"
-    ],
-    "description": "Associated with red hair and fair skin in European populations.",
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs1805007"
   },
   {
     "markerId": "rs1805008",
@@ -13892,28 +13738,6 @@
     }
   },
   {
-    "markerId": "rs4988235",
-    "rsid": "rs4988235",
-    "gene": "MCM6",
-    "trait": "Lactase Persistence",
-    "continent": "European / African",
-    "subpop": "General",
-    "alleles": [
-      "T"
-    ],
-    "significance": "High",
-    "category": "Ancestry",
-    "description": "Associated with the ability to digest milk in adulthood, highly prevalent in European and some African populations.",
-    "frequencies": {
-      "AFR": 0.25,
-      "AMR": 0.05,
-      "EAS": 0.01,
-      "EUR": 0.8,
-      "SAS": 0.3,
-      "MENA": 0.4
-    }
-  },
-  {
     "markerId": "M17",
     "aliases": [
       "i4000028",
@@ -14212,25 +14036,6 @@
     ],
     "description": "Associated with increased risk of age-related macular degeneration.",
     "referenceUrl": "https://www.snpedia.com/index.php/Rs1049353"
-  },
-  {
-    "markerId": "rs429358",
-    "rsid": "rs429358",
-    "gene": "APOE",
-    "trait": "Alzheimer's Risk (E4)",
-    "continent": "East Asian",
-    "category": "Health",
-    "significance": "High",
-    "alleles": [
-      "C"
-    ],
-    "description": "Associated with increased risk of late-onset Alzheimers disease.",
-    "interpretations": {
-      "CC": "High risk: Carrying two copies of the APOE-ε4 allele is strongly associated with an increased risk of developing late-onset Alzheimer’s disease.",
-      "CT": "Moderate risk: Carrying one copy of the APOE-ε4 allele is associated with a moderately increased risk of developing late-onset Alzheimer’s disease.",
-      "TT": "Lowest risk: Carrying two copies of the APOE-ε3 allele (or other non-ε4 alleles) is associated with the lowest genetic risk for late-onset Alzheimer’s disease."
-    },
-    "referenceUrl": "https://www.snpedia.com/index.php/Rs429358"
   },
   {
     "markerId": "rs2476601",
@@ -14552,10 +14357,10 @@
     "alleles": [
       "A"
     ],
-    "description": "The G2019S mutation is a major genetic risk factor for Parkinson’s disease.",
+    "description": "The G2019S mutation is a major genetic risk factor for Parkinson\u2019s disease.",
     "interpretations": {
-      "AG": "Increased risk: Carrying one copy of the G2019S mutation significantly increases the risk of Parkinson’s disease.",
-      "AA": "High risk: Carrying two copies of the G2019S mutation is associated with a very high risk of Parkinson’s disease.",
+      "AG": "Increased risk: Carrying one copy of the G2019S mutation significantly increases the risk of Parkinson\u2019s disease.",
+      "AA": "High risk: Carrying two copies of the G2019S mutation is associated with a very high risk of Parkinson\u2019s disease.",
       "GG": "Typical risk: No G2019S mutation detected."
     },
     "referenceUrl": "https://www.snpedia.com/index.php/Rs34637584"
@@ -25172,23 +24977,6 @@
     }
   },
   {
-    "markerId": "rs1129038_Irish",
-    "rsid": "rs1129038",
-    "continent": "European",
-    "subPopulation": "Irish",
-    "subRegion": "Western Europe",
-    "alleles": [
-      "A"
-    ],
-    "description": "HERC2 variant common in Irish ancestry.",
-    "trait": "Ancestry",
-    "significance": "Medium",
-    "category": "Ancestry",
-    "frequencies": {
-      "EUR": 0.75
-    }
-  },
-  {
     "markerId": "rs61986422_Scottish",
     "rsid": "rs61986422",
     "continent": "European",
@@ -25756,72 +25544,6 @@
     }
   },
   {
-    "markerId": "rs9000246_Roma",
-    "rsid": "rs9000246",
-    "gene": "N/A",
-    "trait": "Roma Ancestry Marker",
-    "continent": "European",
-    "subpop": "Roma",
-    "alleles": [
-      "G"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Roma populations.",
-    "frequencies": {
-      "AFR": 0.05,
-      "AMR": 0.05,
-      "EAS": 0.05,
-      "EUR": 0.52,
-      "SAS": 0.31,
-      "MENA": 0.05
-    }
-  },
-  {
-    "markerId": "rs9000247_Roma",
-    "rsid": "rs9000247",
-    "gene": "N/A",
-    "trait": "Roma Ancestry Marker",
-    "continent": "European",
-    "subpop": "Roma",
-    "alleles": [
-      "C"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Roma populations.",
-    "frequencies": {
-      "AFR": 0.04,
-      "AMR": 0.05,
-      "EAS": 0.05,
-      "EUR": 0.55,
-      "SAS": 0.28,
-      "MENA": 0.05
-    }
-  },
-  {
-    "markerId": "rs9000248_Roma",
-    "rsid": "rs9000248",
-    "gene": "N/A",
-    "trait": "Roma Ancestry Marker",
-    "continent": "European",
-    "subpop": "Roma",
-    "alleles": [
-      "T"
-    ],
-    "significance": "Medium",
-    "category": "Ancestry",
-    "description": "Ancestry Informative Marker for Roma populations.",
-    "frequencies": {
-      "AFR": 0.05,
-      "AMR": 0.04,
-      "EAS": 0.06,
-      "EUR": 0.48,
-      "SAS": 0.32,
-      "MENA": 0.05
-    }
-  },
-  {
     "markerId": "rs145946881",
     "rsid": "rs145946881",
     "gene": "MCM6",
@@ -26107,5 +25829,1466 @@
       "MENA": 0.0001,
       "OCE": 0.45
     }
+  },
+  {
+    "markerId": "rs776746",
+    "rsid": "rs776746",
+    "gene": "CYP3A5",
+    "trait": "Drug Metabolism (Tacrolimus) & Salt Sensitivity",
+    "continent": "African",
+    "category": "Pharmacogenomics",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "The ancestral A (*1) allele confers active CYP3A5 enzyme expression, common in Sub-Saharan Africa (~85%) and African Americans (~70%), associated with adaptive renal sodium retention and tacrolimus dose requirements.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs776746"
+  },
+  {
+    "markerId": "rs112332856",
+    "rsid": "rs112332856",
+    "gene": "MFSD12",
+    "trait": "Skin Pigmentation & Khoe-San Convergence",
+    "continent": "African",
+    "category": "Appearance",
+    "significance": "High",
+    "alleles": [
+      "C",
+      "G"
+    ],
+    "description": "Major regulator of eumelanin and melanosomal pH. Ancestral C is widespread in Sub-Saharan Africa; derived G allele represents independent convergent evolution for lighter skin in Southern African Khoe-San populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs112332856"
+  },
+  {
+    "markerId": "rs28362286",
+    "rsid": "rs28362286",
+    "gene": "PCSK9",
+    "trait": "Lipid Metabolism (Low LDL) & Cardioprotection",
+    "continent": "African",
+    "category": "Cardiometabolic",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "PCSK9 C679X nonsense mutation found almost exclusively in populations of African descent (~2% in African Americans). Heterozygotes have ~40% lower LDL-C and ~88% reduction in coronary heart disease risk.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs28362286"
+  },
+  {
+    "markerId": "rs676210",
+    "rsid": "rs676210",
+    "gene": "PCSK9",
+    "trait": "Lipid Metabolism (Low LDL) & Cardioprotection",
+    "continent": "African",
+    "category": "Cardiometabolic",
+    "significance": "High",
+    "alleles": [
+      "T"
+    ],
+    "description": "PCSK9 Y142X nonsense loss-of-function mutation in African descent populations. Confers substantial lifelong reduction in LDL cholesterol and coronary artery disease.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs676210"
+  },
+  {
+    "markerId": "rs2960306",
+    "rsid": "rs2960306",
+    "gene": "GRK4",
+    "trait": "Salt-Sensitive Hypertension",
+    "continent": "African",
+    "category": "Cardiovascular",
+    "significance": "High",
+    "alleles": [
+      "T"
+    ],
+    "description": "G protein-coupled receptor kinase 4 (GRK4 485V) variant associated with impaired dopamine-1 receptor regulation in renal proximal tubules, predisposing to sodium retention and salt-sensitive hypertension.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2960306"
+  },
+  {
+    "markerId": "rs17237821",
+    "rsid": "rs17237821",
+    "gene": "TAS2R38",
+    "trait": "Bitter Taste Sensitivity Diversity",
+    "continent": "African",
+    "category": "Sensory",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Taste receptor 2 member 38 variant representing deep ancestral African haplotypes that contribute to broader dietary bitter perception and thyroid health.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs17237821"
+  },
+  {
+    "markerId": "rs2274567",
+    "rsid": "rs2274567",
+    "gene": "CR1",
+    "trait": "Malaria protection",
+    "continent": "African",
+    "category": "Health",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Knops blood group polymorphism provides malaria protection; allele A is common across diverse African populations reflecting strong historical selection pressure from Plasmodium falciparum.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2274567",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs11118131",
+    "rsid": "rs11118131",
+    "gene": "CR1",
+    "trait": "Malaria protection",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "CR1 McCoy antigen variant with elevated frequency across African coastal and interior populations indicating adaptive immunity against cerebral malaria.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs11118131",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs545971",
+    "rsid": "rs545971",
+    "gene": "SLC4A1",
+    "trait": "Malaria resistance",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Band 3 variant associated with ovalocytosis and malaria resistance; distinctive African allele found at highest frequency in equatorial rainforest and savannah populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs545971",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs149523832",
+    "rsid": "rs149523832",
+    "gene": "SLC4A1",
+    "trait": "Malaria resistance",
+    "continent": "African",
+    "category": "Health",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Banded 3 deletion variant restricted to African populations; highest frequencies among Pygmy groups in Cameroon/Congo basin, nearly absent outside Africa.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs149523832",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1800896",
+    "rsid": "rs1800896",
+    "gene": "IL10",
+    "trait": "Immune regulation",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "IL-10 -1082 promoter variant regulates cytokine production; African-specific haplotype frequencies differ significantly between highland East African pastoralists and other populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1800896",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs3024496",
+    "rsid": "rs3024496",
+    "gene": "IL10",
+    "trait": "Inflammation modulation",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "IL-10 gene variant showing a clear frequency cline from West Africa to East Africa with elevated rates in equatorial populations reflecting regional immune adaptation.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3024496",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs676858",
+    "rsid": "rs676858",
+    "gene": "SLC12A3",
+    "trait": "Sodium retention",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "Thiazide-sensitive sodium-chloride cotransporter variant linked to salt retention adaptations; distinguished frequencies in Kalahari San groups indicates thermal and hydration environment-specific selection.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs676858",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs11085825",
+    "rsid": "rs11085825",
+    "gene": "SLC12A3",
+    "trait": "Low-altitude adaptation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Sodium transporter missense variant with inverse frequency pattern: lower than continental average in East African highland populations, suggesting altitude-dependent renal physiology adaptation.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs11085825",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs28364997",
+    "rsid": "rs28364997",
+    "gene": "AQP3",
+    "trait": "Skin hydration",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Aquaporin 3 gene variant for transepidermal water loss adapted to humid Niger Delta environment; highest frequencies in Southern Nigerian populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs28364997",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs28364955",
+    "rsid": "rs28364955",
+    "gene": "AQP3",
+    "trait": "Sweat regulation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Water-channel variant facilitating sweat efficiency; elevated across tropical rainforest basin Africans, differentiating Congo Basin groups from Southeast Asian and European populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs28364955",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs10458345",
+    "rsid": "rs10458345",
+    "gene": "CDAN1",
+    "trait": "Anemia adaptation",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Congenital dyserythropoietic anemia type I gene variant with protective role against malaria; highly elevated in Voltaic region from Ghana to Togo.\n",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs10458345",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs5069",
+    "rsid": "rs5069",
+    "gene": "G6PD",
+    "trait": "Malaria protection",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Glucose-6-phosphate dehydrogenase deficiency variant widely distributed in malaria-endemic Cameroon regions; allele frequency discriminates between forest agriculturists from highland Bantu.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs5069",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs33950507",
+    "rsid": "rs33950507",
+    "gene": "CR1",
+    "trait": "CR1 expression",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Knops-related variant with high African frequency in the Angola-Congo region; subset distribution in West Africa is marked by a SW-to-NE cline differing from other populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs33950507",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs35878731",
+    "rsid": "rs35878731",
+    "gene": "CD36",
+    "trait": "Metabolic health",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Scavenger receptor variant for fat metabolism and malaria rosetting; distinct East African highland frequencies separating Nilotic and Bantu groups of Kenya.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs35878731",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2841027",
+    "rsid": "rs2841027",
+    "gene": "LRP2",
+    "trait": "Renal regulation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Megalin receptor variant linked to vitamin D binding and tubular reabsorption; allele frequencies high among pastoralist East Africans suggest environmental adaptation to alkalinity and heat.\n",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2841027",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs5443",
+    "rsid": "rs5443",
+    "gene": "GNB3",
+    "trait": "Hypertension salt sensitivity",
+    "continent": "African",
+    "category": "Health",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "G-protein \u03b23 subunit splice variant associated with sodium sensitivity; highest rate among East African pastoralist populations aligns with subsistence patterns heavy in animal fat and salt cycling.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs5443",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1834619",
+    "rsid": "rs1834619",
+    "gene": "MUC7",
+    "trait": "Oral microbiome",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Mucin 7 salivary protein variant highly expressed in arid-adapted African pastoralists; genetic trace distinguished Cushitic-speaking Horn of Africa groups.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1834619",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs121434568",
+    "rsid": "rs121434568",
+    "gene": "SLC24A5",
+    "trait": "Skin pigmentation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "Near-fixed non-synonymous variant in East Asian and European populations found at only low frequency in sub-Saharan Africans; variation within Africa distinguishes mainland from coastal populations.\n",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs121434568",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs10458597",
+    "rsid": "rs10458597",
+    "gene": "KITLG",
+    "trait": "Skin pigmentation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "KIT ligand variant under positive selection outside Africa; very low frequency in sub-Saharan click-speakers indicates retention of ancestral dark pigmentation, high frequency in the Horn and Sahel from admixture.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs10458597",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs3814134",
+    "rsid": "rs3814134",
+    "gene": "DDB1",
+    "trait": "DNA repair - pigmentation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Damage-specific DNA binding protein variant co-related with skin pigmentation and UV defense\u2014differential distribution among African linguistic groups separates Niger-Kordofanian from San populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3814134",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs26722",
+    "rsid": "rs26722",
+    "gene": "SLC45A2",
+    "trait": "Skin pigmentation",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "SLC45A2 missense variant with prevalence along east-west axis of the Horn of Africa; minimal frequency at equatorial Congo vs high presence in Afar markedly distinguishes population structure.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs26722",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs11086846",
+    "rsid": "rs11086846",
+    "gene": "SLC24A5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "African allele for skin pigmentation in SLC24A5, highly differentiated across continents.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs11086846",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs5743305",
+    "rsid": "rs5743305",
+    "gene": "TLR5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Innate immunity gene; African-specific allele of high prevalence.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs5743305",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs5743312",
+    "rsid": "rs5743312",
+    "gene": "TLR5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Fortified intracellular response; variant frequency differences across African regions.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs5743312",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1205",
+    "rsid": "rs1205",
+    "gene": "CRP",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Moderate Fst; included for African sub-structure detection.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1205",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs41303970",
+    "rsid": "rs41303970",
+    "gene": "G6PD",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Glucose-6-phosphate dehydrogenase deficiency variant; African-specific pathogen selection.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs41303970",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2856729",
+    "rsid": "rs2856729",
+    "gene": "HLA-DQA1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "HLA variant with extreme Fst due to immune response to local pathogens.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2856729",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs9272346",
+    "rsid": "rs9272346",
+    "gene": "HLA-DQB1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "HLA class II variant, some differentiation within African groups.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs9272346",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs17645776",
+    "rsid": "rs17645776",
+    "gene": "TGM3",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Strongly derived allele confined to Sub-Saharan Africa, notably prominent in Lake Chad Basin (Hausa/Kanuri) populations. Near absence in all non-African continental groups confirms it as a robust African diagnostic AIM.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs17645776",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4512702",
+    "rsid": "rs4512702",
+    "gene": "TGM3",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "The derived C allele shows high frequency in Sahelian pastoralists like Fulani and Songhai, differentiating them from Eurasian populations due to substantial selective pressure or drift. Excellent complement to rs17645776 on same gene region.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4512702",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2946788",
+    "rsid": "rs2946788",
+    "gene": "SLC24A5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "The G allele is common in Senegambian and Upper Guinea Coast populations (Wolof/Serer), contrasting sharply with the lighter pigmentation allele in Eurasian populations, highlighting a regional pigmentation adaptation signature.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2946788",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs387907271",
+    "rsid": "rs387907271",
+    "gene": "PKD1L3",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "T"
+    ],
+    "description": "A private African variant reaching near-fixation among Nilotic populations including Dinka and Nuer. Its extreme differentiation from all global reference groups marks an excellent marker for Nilo-Saharan ancestry.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs387907271",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs202188646",
+    "rsid": "rs202188646",
+    "gene": "CIDEC",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Absent from non-Africans and high in Central African rainforest hunter-gatherers, signaling deep lineage differentiation and potential local adaptation in lipid metabolism among Mbuti and Biaka.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs202188646",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs76047600",
+    "rsid": "rs76047600",
+    "gene": "TTC28",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "High frequency in Khoisan populations relative to Bantu-speaking groups, supporting its use in distinguishing Southern African Khoisan heritage from later Bantu expansion.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs76047600",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs8102375",
+    "rsid": "rs8102375",
+    "gene": "GHR",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Nearly fixed in Ju/'hoansi and Nama, and also enriched in neighboring Herero. The protein-altering consequence is linked to growth hormone signaling, and its population profile makes it an excellent genetic proxy for Khoisan ancestry.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs8102375",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs150944506",
+    "rsid": "rs150944506",
+    "gene": "MUC4",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "This variant is essentially present only in the Central Sahara and Sahel, with high carrier rates among the Toubou and Zarma, suggesting adaptation to arid environments or pathogen-driven selection.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs150944506",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs7895676",
+    "rsid": "rs7895676",
+    "gene": "CYP3A5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "The functional CYP3A5*1 allele causing high enzyme expression is common across Africa including Nilo-Saharan and Cushitic groups, demonstrating an adaptive advantage in dietary or environmental processing.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs7895676",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs864309",
+    "rsid": "rs864309",
+    "gene": "CD36",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "This CD36 variant is present at higher frequencies in malaria-endemic East and Southern Africa, where it influences erythrocyte invasion by Plasmodium, highlighting potential adaptation.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs864309",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs713028",
+    "rsid": "rs713028",
+    "gene": "MFSD12",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Identified as a strong pigmentation locus in East Asia; but the T allele is a uniquely African variant associated with dark skin, and its frequency is higher in Bantu-speaking groups than others.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs713028",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1048629",
+    "rsid": "rs1048629",
+    "gene": "MFSD12",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "The A allele is in very high frequency in East African populations near the Horn of Africa, supporting strong selection for lighter skin in a region with lower UV radiation compared to equatorial Africa.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1048629",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs77224492",
+    "rsid": "rs77224492",
+    "gene": "TAS2R19",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "Found exclusively in Sub-Saharan Africa, high prevalence in Nilotic groups may represent a genetic adaptation to specific dietary toxins or pathogens encountered in their environment.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs77224492",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs62059832",
+    "rsid": "rs62059832",
+    "gene": "AGT",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "The A allele, which impacts blood pressure regulation, is present in high frequency in pastoral and semi-nomadic peoples of the Sahel, suggesting a possible link to salt handling in arid climates.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs62059832",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs41312067",
+    "rsid": "rs41312067",
+    "gene": "PRDM9",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "Variant found at high frequency in Western and Eastern Pygmies and absent in all other continental populations, pointing to deep ancestry and potential hybridization events between modern humans and archaic hominins.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs41312067",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1454111",
+    "rsid": "rs1454111",
+    "gene": "SLC24A5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Independent pigmentation-associated variant highly prevalent in West African coastal communities. Derived T allele contrasts with lighter skin alleles elsewhere, distinguishing populations from the Gambia region.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1454111",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs12494313",
+    "rsid": "rs12494313",
+    "gene": "CR1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "Heightened in Horn of Africa populations, this variant is linked to reduced expression of complement receptor 1, which mitigates malaria severity, supporting evidence of selection in malaria-endemic regions.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs12494313",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1851530",
+    "rsid": "rs1851530",
+    "gene": "SCNN1G",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "High in Bantu-speaking populations, this variant in the epithelial sodium channel gene could affect salt retention and blood pressure, offering a selective advantage during trans-continental migrations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1851530",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2272356",
+    "rsid": "rs2272356",
+    "gene": "AGT",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Common in southern African Bantu groups but rare elsewhere, this AGT variant may have been beneficial during the Bantu expansion into malaria-free areas or for dietary adaptation.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2272356",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs60643255",
+    "rsid": "rs60643255",
+    "gene": "HLA-DQA1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "This allele is predominantly seen in populations from the highlands of Cameroon and Equatorial Guinea, with distinct linkage patterns that are useful for regional lineage resolution within Central Africa.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs60643255",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1131399",
+    "rsid": "rs1131399",
+    "gene": "G6PD",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "A non-coding polymorphism; its derived allele is linked to G6PD deficiency and is spatially distributed in West Africa resembling malaria prevalence, useful for distinguishing adaptations to malaria pressure.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1131399",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2071640",
+    "rsid": "rs2071640",
+    "gene": "THBD",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Globally common, but the high frequency in rainforest populations versus other regions supports strong local adaptation for reduced thrombomodulin function, potentially conferring protection against severe malaria.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2071640",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4481239",
+    "rsid": "rs4481239",
+    "gene": "SLC45A2",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Encodes a transporter involved in melanin synthesis; a variant is highly common in Eurasians but rare in most black Africans, except outlier groups like Mbuti and Biaka where admixture or drift has increased its frequency.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4481239",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1249583",
+    "rsid": "rs1249583",
+    "gene": "RYR1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "Exclusive to Sub-Saharan Africa, the frequency patterns suggest recent positive selection in southern African populations, potentially linked to muscle fiber composition and physical performance.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1249583",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1147611",
+    "rsid": "rs1147611",
+    "gene": "APOB",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "A globally polymorphic variant, but it can differentiate agricultural populations that underwent dietary shifts post-Neolithic, such as central African Bantu who show high allele frequency.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1147611",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1697421",
+    "rsid": "rs1697421",
+    "gene": "DARC",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "This variant is linked to the Duffy null phenotype, conferring resistance to P. vivax malaria. Its high prevalence in West African populations is a textbook example of adaptation to malaria and an excellent regional marker.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1697421",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs760755",
+    "rsid": "rs760755",
+    "gene": "APOL1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Part of the APOL1 haplotypes conferring trypanosome resistance. The G allele is common in East African pastoralists, where sleeping sickness is prevalent, highlighting adaptive introgression.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs760755",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs11752956",
+    "rsid": "rs11752956",
+    "gene": "OPCML",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Strong allele frequency gradient between Horn of Africa/Nilotic populations and Eurasian groups; supports separation of Nilo-Saharan speakers.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs11752956",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs13239060",
+    "rsid": "rs13239060",
+    "gene": "PCDH15",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "High frequency in Horn of Africa; diagnostic for Cushitic-speaking groups versus other African and non-African populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs13239060",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs11978601",
+    "rsid": "rs11978601",
+    "gene": "DYRK1A",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "High frequency in Upper Guinea populations (Mende, Susu); distinguishes Atlantic West African ancestry from Central Africa.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs11978601",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs12521868",
+    "rsid": "rs12521868",
+    "gene": "TMPRSS11E",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "C"
+    ],
+    "description": "Near-fixed in Nilotic groups; altitude adaptation marker for East African highlands.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs12521868",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs13037651",
+    "rsid": "rs13037651",
+    "gene": "EDAR",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Frequency difference between Bantu-speaking southern Africans and Khoe-San hunter-gatherers.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs13037651",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs13313088",
+    "rsid": "rs13313088",
+    "gene": "ARMC9",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Distinguishes Central African rainforest hunter-gatherer versus Bantu agriculturalist ancestry.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs13313088",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1379138",
+    "rsid": "rs1379138",
+    "gene": "FUT2",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Found in Central African populations; moderate frequency contrast with non-Africans.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1379138",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1428400",
+    "rsid": "rs1428400",
+    "gene": "MUC19",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "T"
+    ],
+    "description": "High frequency across Horn of Africa; specific to Cushitic/Omotic speakers.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1428400",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1474713",
+    "rsid": "rs1474713",
+    "gene": "DPYD",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Enriched in Nilotic populations of South Sudan and Uganda; marker for eastern Nilotic expansion.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1474713",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1505277",
+    "rsid": "rs1505277",
+    "gene": "CYP3A5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "High frequency in East African pastoralists; reflects adaptation to diet and altitude.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1505277",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs17306426",
+    "rsid": "rs17306426",
+    "gene": "SLC24A5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Pigmentation gene; frequency in Horn of Africa indicates possible admixture with non-Africans, differs from West African groups.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs17306426",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs17637616",
+    "rsid": "rs17637616",
+    "gene": "RYR1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "Common in central African rainforest hunter-gatherers (Mbuti, Biaka); very rare worldwide.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs17637616",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs1787886",
+    "rsid": "rs1787886",
+    "gene": "DOCK8",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Differentiates Central Africa (Bantu) from West African coastal groups.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs1787886",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs178863",
+    "rsid": "rs178863",
+    "gene": "SPAG17",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Atlantic West African marker; relatively uniform among Upper Guinea populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs178863",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2002330",
+    "rsid": "rs2002330",
+    "gene": "SLC14A1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Renal salt/urea transporter; alleles in Central Africans likely adapted to high humidity and low salt environment.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2002330",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2020461",
+    "rsid": "rs2020461",
+    "gene": "HSPA1A",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Heat shock protein variant; elevated in East African pastoralists for thermotolerance.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2020461",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2050158",
+    "rsid": "rs2050158",
+    "gene": "IL12A",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Moderate frequency differences in Great Lakes populations; selection for infectious disease.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2050158",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2267103",
+    "rsid": "rs2267103",
+    "gene": "FADS2",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Khoi-San high fatty acid variant; contrasts with other African, likely adaptation to marine/lacto diet.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2267103",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs2305948",
+    "rsid": "rs2305948",
+    "gene": "VEGFR2",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "Very rare in West Africa, higher in Central African hunter-gatherers.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs2305948",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs279011",
+    "rsid": "rs279011",
+    "gene": "MTOR",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Distinguishes Khoe-San from Bantu populations likely due to metabolic adaptation.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs279011",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs3133369",
+    "rsid": "rs3133369",
+    "gene": "HLA-C",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "HLA-C lineage common in Great Lakes/Nilotic populations, selected for response to endemic RNA viruses.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3133369",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs3756150",
+    "rsid": "rs3756150",
+    "gene": "HIF1A",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "T"
+    ],
+    "description": "Hypoxia pathway allele; differentiated in high-altitude vs rainforest-residing African groups.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3756150",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs3803304",
+    "rsid": "rs3803304",
+    "gene": "PKD1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Low Cushitic vs Nilotic spread; related to renal adaptation to aridity.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3803304",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs3851772",
+    "rsid": "rs3851772",
+    "gene": "TRIM5",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Restriction factor shaping lentiviral resistance; signatures in Bantu populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs3851772",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4149056",
+    "rsid": "rs4149056",
+    "gene": "SLCO1B1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "High Cushitic Oromo/Somali allele for lipid metabolism; contrast with all other major populations.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4149056",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4236525",
+    "rsid": "rs4236525",
+    "gene": "CD209",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "A"
+    ],
+    "description": "Dendritic cell receptor; variant nearly African-exclusive, strongest in rainforest hunter-gatherers.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4236525",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4670",
+    "rsid": "rs4670",
+    "gene": "HSPB1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "High in southern Bantu; low in non-African, linked to heat tolerance.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4670",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4775",
+    "rsid": "rs4775",
+    "gene": "TLR4",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "C"
+    ],
+    "description": "TLR4 variant associated with malaria resistance in Senegal/Gambia area but low in Guinea-Bissau.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4775",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs4986790",
+    "rsid": "rs4986790",
+    "gene": "TLR4",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "High",
+    "alleles": [
+      "G"
+    ],
+    "description": "Major Gambian/Mende allele conferring sepsis resistance; rare outside Africa.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs4986790",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs5030719",
+    "rsid": "rs5030719",
+    "gene": "OAS1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "G"
+    ],
+    "description": "Interferon-induced antiviral enzyme variant; at higher frequency in pygmies.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs5030719",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
+  },
+  {
+    "markerId": "rs647478",
+    "rsid": "rs647478",
+    "gene": "AQP1",
+    "trait": "Ancestry",
+    "continent": "African",
+    "category": "Ancestry",
+    "significance": "Moderate",
+    "alleles": [
+      "A"
+    ],
+    "description": "Water channel variant in Cushitic groups; role in renal water conservation.",
+    "referenceUrl": "https://www.snpedia.com/index.php/Rs647478",
+    "subPopulation": "Sub-Saharan",
+    "subRegion": "African Continent"
   }
 ]

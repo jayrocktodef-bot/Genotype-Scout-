@@ -735,9 +735,8 @@ const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack }) => (
       >
         {mod.name}
       </h2>
-      <p className="text-[9px] font-bold text-slate-600 uppercase tracking-[0.18em] mt-0.5 dark:text-slate-400">
-        {mod.description.slice(0, 55)}
-        {mod.description.length > 55 ? '…' : ''}
+      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.18em] mt-0.5 dark:text-slate-400 max-w-xl truncate">
+        {mod.description}
       </p>
     </div>
   </div>

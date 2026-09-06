@@ -159,6 +159,18 @@ interface ParsedFields {
   genotype: string;  // already normalized uppercase
 }
 
+export interface ParsedDnaData {
+  format: string;
+  build: 'GRCh37' | 'GRCh38' | 'UNKNOWN';
+  totalSnps: number;
+  yDnaSnps: number;
+  yDnaCalledSnps: number;
+  mtDnaSnps: number;
+  inferredBiologicalSex: 'MALE' | 'FEMALE' | 'UNKNOWN';
+  snpByRsid: Record<string, string>; // rsid (lowercase) -> genotype
+  snpByPosition: Record<string, string>; // "chr:pos" -> genotype
+}
+
 export interface ColumnMapping {
   rsidIdx: number;
   chromIdx: number;
@@ -812,11 +824,12 @@ export function parseRawDNA(
     }
   }
 
-  // Refine chip detection based on SNP count if still unknown
+  // Refine chip detection based on total raw SNP count if still unknown
   if (chip === "Unknown Chip") {
-    if (snpCount > 900000) chip = "High-Density Chip (Omni2.5 or similar)";
-    else if (snpCount > 600000) chip = "Standard GSA/OmniExpress Chip";
-    else if (snpCount > 300000) chip = "Low-Density Chip";
+    const effectiveSnpCount = matchCount || snpCount;
+    if (effectiveSnpCount > 900000) chip = "High-Density Chip (Omni2.5 or similar)";
+    else if (effectiveSnpCount > 600000) chip = "Standard GSA/OmniExpress Chip";
+    else if (effectiveSnpCount > 300000) chip = "Low-Density Chip";
     else chip = `${format} Raw Data`;
   }
 
@@ -841,7 +854,7 @@ export function parseRawDNA(
     onProgress(totalLength, totalLength, snpCount);
   }
 
-  return { snpMap, snpMetaMap, xMap, yMap, mtMap, format, chip, snpCount };
+  return { snpMap, snpMetaMap, xMap, yMap, mtMap, format, chip, snpCount, rawSnpsCount: matchCount };
 }
 
 export async function parseRawDNAStream(

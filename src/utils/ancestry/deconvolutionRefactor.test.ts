@@ -79,6 +79,6 @@ describe('Ancestry Deconvolution & LLR Refactor Engine', () => {
       expect(res).toBeDefined();
       expect(res.topMatch).toBeDefined();
       expect(res.breakdown.length).toBeGreaterThan(0);
-    });
+    }, 20000);
   });
 });

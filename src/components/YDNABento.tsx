@@ -6,6 +6,11 @@ interface PredictedYDNA {
   path: string[];
   testedMarkers: any[];
   isoggMatches: any[];
+  tmrca?: {
+    formattedTmrcaAge?: string;
+    calibratedEraBceCe?: string;
+    activeHistoricalEra?: { name: string };
+  };
   phase2?: {
     haplogroup: string;
     confidence: number;
@@ -15,6 +20,11 @@ interface PredictedYDNA {
     rejectedBranches: string[];
     region?: string;
     description?: string;
+    tmrca?: {
+      formattedTmrcaAge?: string;
+      calibratedEraBceCe?: string;
+      activeHistoricalEra?: { name: string };
+    };
   };
 }
 
@@ -82,12 +92,20 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
           <div className="absolute -inset-4 bg-[#14B8A6]/20 blur-2xl -z-10 rounded-full" />
         </div>
         
-        {displayRegion && (
-          <div className="flex items-center gap-1.5 text-xs font-bold text-[#14B8A6] uppercase tracking-widest mb-4 bg-[#14B8A6]/10 px-3 py-1 rounded-full border border-[#14B8A6]/20">
-            <MapPin className="w-3 h-3" />
-            {displayRegion}
-          </div>
-        )}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+          {displayRegion && (
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#14B8A6] uppercase tracking-widest bg-[#14B8A6]/10 px-3 py-1 rounded-full border border-[#14B8A6]/20">
+              <MapPin className="w-3 h-3" />
+              {displayRegion}
+            </div>
+          )}
+          {(yData.phase2?.tmrca || yData.tmrca) && (
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+              <Sparkles className="w-3 h-3" />
+              {(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} ({(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})
+            </div>
+          )}
+        </div>
 
         <p className="text-sm text-slate-300 leading-relaxed px-2 sm:px-6 mb-6 whitespace-normal break-words">
           {displayDescription}

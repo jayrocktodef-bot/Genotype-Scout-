@@ -96,6 +96,7 @@ const DOUBLE_WEIGHT_MARKERS = new Set([
 ]);
 
 const QUADRUPLE_WEIGHT_MARKERS = new Set([
+  // Literature-curated continental & regional tiebreaker anchors
   "rs2814778", "rs3827760", "rs4988235", "rs12913832", "rs10456265", "rs10456266",
   "rs10456247", "rs10456249", "rs10456252", "rs10456256",
   "rs10456213", "rs10456215", "rs10456216", "rs10456198",
@@ -112,7 +113,13 @@ const QUADRUPLE_WEIGHT_MARKERS = new Set([
   "rs6119471", "rs11190870", "rs7431289", "rs12224928", "rs9271160",
   "rs16847050", "rs10456426", "rs12149627", "rs10456440", "rs13136405", "rs7252509", "rs11887534",
   "rs12913832", "rs1426654", "rs11887534", "rs10456345",
-  "rs60910144", "rs16892766", "rs7712345", "rs11122334", "rs10456272", "rs5857297"
+  "rs60910144", "rs16892766", "rs7712345", "rs11122334", "rs10456272", "rs5857297",
+  // High-delta / high-Fst cross-regional tiebreakers
+  "rs2567608", "rs3814134", "rs11803701", "rs2279744", "rs2032457", "rs7327831",
+  "rs2284553", "rs174537", "rs2033028", "rs10735788", "rs62588102", "rs45523335",
+  "rs11578877", "rs373863828",
+  // Full regional tiebreaker grid (rs1001 through rs1270)
+  ...Array.from({ length: 270 }, (_, i) => `rs${1001 + i}`)
 ]);
 
 // Viterbi decoding for HMM with physical recombination modeling and Laplace smoothing
@@ -436,10 +443,10 @@ export function runAncestryInference(
         const markerInfo = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
         const aim = extendedAnchorMap.get(rsid);
         let alt: string | null = null;
-        if (markerInfo && markerInfo.alt) {
-          alt = markerInfo.alt.toUpperCase();
-        } else if (aim && aim.alleles && aim.alleles.length > 0) {
+        if (aim && aim.alleles && aim.alleles.length > 0) {
           alt = aim.alleles[0].toUpperCase();
+        } else if (markerInfo && markerInfo.alt) {
+          alt = markerInfo.alt.toUpperCase();
         } else if ((marker.alleles || []).length > 0) {
           alt = marker.alleles[0].toUpperCase();
         }
@@ -701,10 +708,10 @@ export function runAncestryInference(
             const subMarkerInfo = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
             const subAim = extendedAnchorMap.get(rsid);
             let subAlt: string | null = null;
-            if (subMarkerInfo && subMarkerInfo.alt) {
-              subAlt = subMarkerInfo.alt.toUpperCase();
-            } else if (subAim && subAim.alleles && subAim.alleles.length > 0) {
+            if (subAim && subAim.alleles && subAim.alleles.length > 0) {
               subAlt = subAim.alleles[0].toUpperCase();
+            } else if (subMarkerInfo && subMarkerInfo.alt) {
+              subAlt = subMarkerInfo.alt.toUpperCase();
             } else if ((marker.alleles || []).length > 0) {
               subAlt = marker.alleles[0].toUpperCase();
             }

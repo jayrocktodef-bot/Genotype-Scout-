@@ -686,13 +686,23 @@ export async function processSubpopulations(
 
   // Diagnostic log for custom tiebreaker markers
   let matchedNewTiebreakersCount = 0;
-  for (let idx = 1001; idx <= 1175; idx++) {
+  for (let idx = 1001; idx <= 1270; idx++) {
     const baseRsid = `rs${idx}`;
     if (genotypeMap.has(baseRsid)) {
       matchedNewTiebreakersCount++;
     }
   }
-  console.log(`[Ancestry Oracle V2] Matched new global tiebreaker AIMs (rs1001-rs1175): ${matchedNewTiebreakersCount} / 175`);
+  const bioTiebreakers = [
+    "rs2567608", "rs3814134", "rs2814778", "rs4988235", "rs11803701", "rs12913832",
+    "rs16891982", "rs2279744", "rs3827760", "rs671", "rs17822931", "rs1229984",
+    "rs174537", "rs2033028", "rs2032457", "rs7327831", "rs2284553", "rs10735788",
+    "rs62588102", "rs45523335", "rs11578877", "rs373863828", "rs7388531"
+  ];
+  let matchedBioCount = 0;
+  for (const rsid of bioTiebreakers) {
+    if (genotypeMap.has(rsid)) matchedBioCount++;
+  }
+  console.log(`[Ancestry Oracle V2] Matched regional tiebreaker AIMs: ${matchedNewTiebreakersCount}/270 grid, ${matchedBioCount}/${bioTiebreakers.length} high-Fst biological`);
 
   let breakdown: SubpopBreakdown[] = [];
   const unmappedAims: AIM[] = [];
@@ -899,8 +909,16 @@ export async function processSubpopulations(
     for (let i = 0; i < activeRefSnps.length; i++) {
       const activeSnp = activeRefSnps[i];
       const baseRsid = activeSnp.rsid.split('_')[0].toLowerCase();
-      const refFreq = frequencies[activeSnp.rsid] ?? frequencies[activeSnp.rsidLower] ?? frequencies[baseRsid];
+      let refFreq = frequencies[activeSnp.rsid] ?? frequencies[activeSnp.rsidLower] ?? frequencies[baseRsid];
       if (refFreq === undefined || refFreq === -1.0) continue;
+
+      const aim = normalizedDatabase[activeSnp.rsidLower] || normalizedDatabase[activeSnp.rsid.toUpperCase()];
+      if (macroCode && aim?.frequencies?.[macroCode] !== undefined) {
+        const macroFreq = aim.frequencies[macroCode];
+        if (Math.abs(refFreq - (1.0 - macroFreq)) < Math.abs(refFreq - macroFreq) - 0.20) {
+          refFreq = 1.0 - refFreq;
+        }
+      }
 
       const userDosageDiscrete = activeSnp.userDosage;
       const rsidLower = activeSnp.rsidLower;
@@ -1213,12 +1231,36 @@ export async function processSubpopulations(
       let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()] || popData.frequencies[rsid.toLowerCase()] || popData.frequencies[baseKey];
       
       const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
-      const macroFreq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
+      let macroFreq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
 
       if (freq === undefined) {
         // Soft Bayesian Prior Imputation fallback:
-        // Use the macro-group continental frequency from the AIM database.
-        freq = macroFreq;
+        // Use subpopulation frequency if available, else macro continental frequency.
+        let subFreq: number | undefined;
+        if (aim?.subFrequencies) {
+          const popName = POPULATION_NAMES_MAP[popCode] || humanizePopName(popCode);
+          const bKey = getBasePopKey(popCode, popName);
+          subFreq = aim.subFrequencies[popCode] ?? aim.subFrequencies[popName] ?? aim.subFrequencies[bKey];
+          if (subFreq === undefined) {
+            const popCodeLower = popCode.toLowerCase();
+            const popNameLower = popName.toLowerCase();
+            for (const [subKey, val] of Object.entries(aim.subFrequencies)) {
+              const subKeyLower = subKey.toLowerCase();
+              if (popCodeLower.includes(subKeyLower) || popNameLower.includes(subKeyLower)) {
+                subFreq = val as number;
+                break;
+              }
+            }
+          }
+        }
+        freq = subFreq !== undefined ? subFreq : macroFreq;
+      } else if (macroFreq !== undefined) {
+        // Polarity calibration check:
+        // If the population frequency was recorded for the opposite allele in the reference kernel,
+        // align it to the test allele polarity!
+        if (Math.abs(freq - (1.0 - macroFreq)) < Math.abs(freq - macroFreq) - 0.20) {
+          freq = 1.0 - freq;
+        }
       }
       
       // 2. F-Model Genetic Drift Correction (F_k = 0.04)
@@ -1232,22 +1274,64 @@ export async function processSubpopulations(
   // Calculate the Multi-source Admixture profile with Hierarchical (Two-Pass) Admixture Routing
   let admixtureMix: AdmixtureComponent[] = [];
   if (activeM >= 5) {
-    // Pass 1: Run initial NNLS across all reference subpopulations
-    const firstPassProportions = solveAdmixtureProportions(nnlsUserDosages, nnlsPopExpectedDosages, nnlsWeights);
-    
-    // Aggregate continental ancestry percentages based on MACRO_GROUPS
-    const continentalAncestry: Record<string, number> = {
-      'EUR': 0, 'AFR': 0, 'AFRAM': 0, 'EAS': 0, 'SAS': 0, 'AMR': 0, 'AMER': 0, 'MENA': 0, 'OCE': 0, 'CAS': 0
-    };
-    Object.entries(firstPassProportions).forEach(([popCode, pct]) => {
-      const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'UNKNOWN';
-      continentalAncestry[macroCode] = (continentalAncestry[macroCode] || 0) + pct;
+    // Pass 1: Canonical Orthogonal Continental Clade NNLS Decomposition
+    // Deconvolve across the orthogonal continental reference centroids
+    // using exact, ground-truth continental frequency vectors from the AIM database.
+    const CANONICAL_CONTINENTAL_CLADES = ['AFR', 'EUR', 'EAS', 'SAS', 'AMR', 'MENA'];
+    const continentalCentroidDosages: Record<string, Float32Array> = {};
+
+    CANONICAL_CONTINENTAL_CLADES.forEach(macro => {
+      const centroid = new Float32Array(activeM);
+      for (let i = 0; i < activeM; i++) {
+        const rsid = activeSnpKeys[i];
+        const rsidLower = rsid.toLowerCase();
+        const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
+        let f = aim?.frequencies?.[macro];
+        if (f === undefined) {
+          if (macro === 'MENA') f = aim?.frequencies?.['EUR'] ?? 0.5;
+          else {
+            if ((aim?.frequencies?.['AFR'] ?? 0) >= 0.50) f = aim?.frequencies?.['EUR'] ?? 0.02;
+            else f = 0.50;
+          }
+        }
+        centroid[i] = f * 2.0;
+      }
+      continentalCentroidDosages[macro] = centroid;
     });
 
-    // Sub-select populations: include continental groups with >= 0.05% ancestry to preserve minor signals
+    const continentalProportions = solveAdmixtureProportions(nnlsUserDosages, continentalCentroidDosages, nnlsWeights);
+    
+    // Map canonical proportions into macro groups
+    const continentalAncestry: Record<string, number> = {
+      'EUR': continentalProportions['EUR'] ?? 0,
+      'AFR': continentalProportions['AFR'] ?? 0,
+      'AFRAM': 0,
+      'EAS': continentalProportions['EAS'] ?? 0,
+      'SAS': continentalProportions['SAS'] ?? 0,
+      'AMR': continentalProportions['AMR'] ?? 0,
+      'AMER': 0,
+      'MENA': continentalProportions['MENA'] ?? 0,
+      'OCE': 0,
+      'CAS': 0
+    };
+
+    // Sub-select populations: include continental groups with >= 1.0% ancestry
     const activeMacroGroups = Object.entries(continentalAncestry)
-      .filter(([_, pct]) => pct >= 0.05)
+      .filter(([_, pct]) => pct >= 1.0)
       .map(([macro, _]) => macro);
+
+    // If AFR is active, also admit African American / Caribbean reference clades
+    if (continentalAncestry['AFR'] >= 1.0) {
+      activeMacroGroups.push('AFRAM');
+    }
+    // If AMR is active, also admit Admixed American reference clades
+    if (continentalAncestry['AMR'] >= 1.0) {
+      activeMacroGroups.push('AMER');
+    }
+    // Only admit CAS (Central Asian) if BOTH East Asian and European ancestral clades are present (>= 5.0%)
+    if ((continentalAncestry['EAS'] ?? 0) >= 5.0 && (continentalAncestry['EUR'] ?? 0) >= 5.0) {
+      activeMacroGroups.push('CAS');
+    }
 
     // Fallback if no group meets the threshold: select the single macro group with the highest percentage
     if (activeMacroGroups.length === 0) {
@@ -1277,15 +1361,10 @@ export async function processSubpopulations(
     activeSnpKeys.forEach((rsid, idx) => {
       let sumActiveFreq = 0;
       const activeFreqs: number[] = [];
-      const aim = normalizedDatabase[rsid] || normalizedDatabase[rsid.toUpperCase()];
 
       finalPopCodes.forEach(popCode => {
-        const popData = referenceDatabase[popCode];
-        let freq = popData.frequencies[rsid] || popData.frequencies[rsid.toUpperCase()];
-        if (freq === undefined) {
-          const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) ?? null;
-          freq = macroCode ? (aim?.frequencies?.[macroCode] ?? 0.5) : 0.5;
-        }
+        const expectedDosage = filteredPopExpectedDosages[popCode][idx];
+        const freq = expectedDosage / 2.0;
         if (freq !== undefined && !isNaN(freq)) {
           activeFreqs.push(freq);
           sumActiveFreq += freq;
@@ -1334,6 +1413,14 @@ export async function processSubpopulations(
       ...m,
       percentage: refinedMap.get(m.popCode) ?? m.percentage
     })).sort((a, b) => b.percentage - a.percentage);
+
+    const totalPct = admixtureMix.reduce((acc, cur) => acc + cur.percentage, 0);
+    if (totalPct > 0) {
+      admixtureMix = admixtureMix.map(m => ({
+        ...m,
+        percentage: (m.percentage / totalPct) * 100.0
+      }));
+    }
   }
 
   if (admixtureMix.length === 0) {

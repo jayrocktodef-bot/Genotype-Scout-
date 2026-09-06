@@ -10,6 +10,15 @@ interface PredictedMtDNA {
   userMutations: string[];
   score: number;
   deepMatches: any[];
+  tmrca?: {
+    formattedTmrcaAge?: string;
+    calibratedEraBceCe?: string;
+    activeHistoricalEra?: { name: string };
+  };
+  empopQc?: {
+    overallStatus: string;
+    forensicCoherenceScorePct: number;
+  };
 }
 
 interface HaplogroupBentoProps {
@@ -66,12 +75,26 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
           <div className="absolute -inset-4 bg-[#4599FF]/20 blur-2xl -z-10 rounded-full" />
         </div>
         
-        {predictedMt.region && (
-          <div className="flex items-center gap-1.5 text-xs font-bold text-[#4599FF] uppercase tracking-widest mb-4 bg-[#4599FF]/10 px-3 py-1 rounded-full border border-[#4599FF]/20">
-            <MapPin className="w-3 h-3" />
-            {predictedMt.region}
-          </div>
-        )}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+          {predictedMt.region && (
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#4599FF] uppercase tracking-widest bg-[#4599FF]/10 px-3 py-1 rounded-full border border-[#4599FF]/20">
+              <MapPin className="w-3 h-3" />
+              {predictedMt.region}
+            </div>
+          )}
+          {predictedMt.tmrca && (
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+              <Sparkles className="w-3 h-3" />
+              {predictedMt.tmrca.formattedTmrcaAge} ({predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})
+            </div>
+          )}
+          {predictedMt.empopQc && (
+            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              EMPOP: {predictedMt.empopQc.forensicCoherenceScorePct}% Coherent
+            </div>
+          )}
+        </div>
 
         <p className="text-sm text-slate-300 leading-relaxed px-2 sm:px-6 mb-6 whitespace-normal break-words">
           {predictedMt.description || "An ancient maternal founder branch identified by your mitochondrial DNA mutations."}
