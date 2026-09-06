@@ -66,16 +66,35 @@ Genotype Scout leverages modern web technologies to handle computationally inten
 
 ---
 
-## 🧬 Forensic & High-Resolution Analysis
+## 🧬 Ancestry Informative Markers (AIMs) & Forensic Architecture
 
-We utilize specialized, industry-recognized forensic panels to maximize the accuracy of our reports.
+Genotype Scout leverages an extensive, curated database of **Ancestry Informative Markers (AIMs)** and specialized forensic panels to deliver high-resolution biogeographical ancestry estimation and subpopulation deconvolution.
 
-| Forensic Panel | Purpose |
-| :--- | :--- |
-| **10k GRAF** | High-resolution genomic ancestry refinement. |
-| **VISAGE** | Phenotypic and appearance-related marker identification. |
-| **EUROFORGEN NAME** | High-sensitivity forensic biogeographical ancestry markers. |
-| **EMPOP / YHRD** | Mitochondrial & Y-STR forensic population reference databases. |
+### 📊 AIMs Database Breakdown
+
+| Marker Database / Panel | Marker Count | Purpose / Scope |
+| :--- | :---: | :--- |
+| **Regional & Global AIMs** (`src/data/aims/`) | **21,105** | Curated multi-population marker library spanning 11 biogeographical regions. |
+| **Normalized Master AIMs** (`master_aims_normalized.json`) | **17,886** | Standardized, Ensembl-validated markers with LLR probability weights and reference allele frequencies. |
+| **Cosmopolitan AIMs** | **10,076** | Core high-divergence markers for continental macro-group separation. |
+| **GRAF-10k Panel** | **8,821** | High-resolution genomic ancestry refinement and subcontinental clustering. |
+| **Forensic Microhaplotypes** | **3,053** | High-density multi-SNP forensic microhaplotype loci for mixture deconvolution. |
+| **VISAGE Phenotypic Panel** | Comprehensive | Complex appearance, pigmentation (eye, hair, skin), and phenotypic trait estimation. |
+| **EUROFORGEN NAME Panel** | Validated | High-sensitivity forensic biogeographical ancestry markers. |
+| **EMPOP & YHRD** | Full Databases | Comprehensive mitochondrial DNA (Phylotree 17) and Y-STR population databases. |
+
+#### 🌍 Regional AIMs Distribution (21,105 Markers)
+* **Global Core Anchors:** 15,560 markers
+* **European Substructure:** 3,180 markers
+* **African Lineages:** 1,101 markers
+* **North African:** 995 markers
+* **South Asian:** 986 markers
+* **Middle Eastern:** 978 markers
+* **Oceanian:** 974 markers
+* **Native American (Indigenous Americas):** 968 markers
+* **East Asian:** 966 markers
+* **African American Specific:** 929 markers
+* **Central Asian:** 914 markers
 
 ---
 
