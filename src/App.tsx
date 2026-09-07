@@ -2261,14 +2261,21 @@ export default function App() {
   }, [searchTerm]);
 
   const [explorerSearch, setExplorerSearch] = useState<string>('');
-  const [processing, setProcessing] = useState(false);
+  const isDemoParser = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('demo_parser');
+  const [processing, setProcessing] = useState(isDemoParser);
   const [streamProgress, setStreamProgress] = useState<{
     processed: number;
     total: number;
     snps: number;
     step: string;
     percent?: number;
-  }>({ processed: 0, total: 0, snps: 0, step: "Ready", percent: 0 });
+  }>(isDemoParser ? {
+    processed: 16.78 * 1024 * 1024,
+    total: 16.78 * 1024 * 1024,
+    snps: 13449,
+    step: "Finalizing EuroForGen & Microhaplotypes...",
+    percent: 99
+  } : { processed: 0, total: 0, snps: 0, step: "Ready", percent: 0 });
   const [dragging, setDragging] = useState(false);
   const [pendingFiles, setPendingFiles] = useState<File[]>([]);
   const [error, setError] = useState<any | null>(null);
