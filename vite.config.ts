@@ -13,7 +13,7 @@ export default defineConfig(({mode}) => {
       react(),
       tailwindcss(),
       VitePWA({
-        registerType: 'prompt',
+        registerType: 'autoUpdate',
         includeAssets: ['icon-192.png', 'icon-512.png'],
         manifest: {
           name: 'Genotype Scout — Privacy-First DNA Analysis',
@@ -46,6 +46,8 @@ export default defineConfig(({mode}) => {
           ],
         },
         workbox: {
+          skipWaiting: true,
+          clientsClaim: true,
           // Cache all built assets (JS, CSS, HTML, fonts, images)
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,woff,ttf}'],
           // Exclude oversized chunks from precache — they load on-demand
