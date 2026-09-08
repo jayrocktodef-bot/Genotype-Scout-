@@ -605,6 +605,10 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
 
         for (const aim of matchedAims) {
             if (!aim || !aim.frequencies) continue;
+            // Reject any synthetic placeholder markers
+            if (aim.position === 1000000) continue;
+            if (aim.frequencies.GLOBAL !== undefined) continue;
+
             const effectAlleles = aim.alleles || [];
             if (effectAlleles.length === 0) continue;
             const effectAllele = effectAlleles[0].toUpperCase();
@@ -631,8 +635,10 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
                 if (ch === effectAllele) k++;
             }
 
-            const markerWeight = typeof aim.weight === 'number' && aim.weight > 0 ? aim.weight : 
-                                 typeof aim.fst === 'number' && aim.fst > 0 ? Math.max(1.0, aim.fst * 5) : 1.0;
+            // Cap marker weight to prevent synthetic or single-locus outliers from dominating
+            const markerWeight = typeof aim.fst === 'number' && aim.fst > 0
+                ? Math.min(3.0, Math.max(1.0, aim.fst * 5))
+                : (typeof aim.weight === 'number' && aim.weight > 0 ? Math.min(3.0, aim.weight) : 1.0);
 
             const genotypeProbability = (rawP: number): number => {
                 const pSmooth = Math.max(0.0005, Math.min(0.9995, (rawP * 1000 + SMOOTH_ALPHA) / (1000 + 2 * SMOOTH_ALPHA)));
@@ -654,6 +660,9 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
                 if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
                 macroFreqs[macroGroup].push(freq as number);
             }
+
+            // Require at least 3 macro continental groups represented for fair cross-population evaluation
+            if (Object.keys(macroFreqs).length < 3) continue;
 
             for (const [macroPop, freqs] of Object.entries(macroFreqs)) {
                 const avgFreq = freqs.reduce((a, b) => a + b, 0) / freqs.length;
@@ -679,7 +688,7 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
     }
 
     // Stable Softmax Temperature Scale for Macro-Continental Proportions
-    const TEMP_SCALE = 12.0;
+    const TEMP_SCALE = 15.0;
 
     const scores: Record<string, number> = {};
     let sumScores = 0;

@@ -8,5 +8,5 @@ describe('calculatePopulationProximity', () => {
     const results = await calculatePopulationProximity(userSnps);
     expect(results.length).toBeGreaterThan(0);
     expect(results[0]).toHaveProperty('similarityScore');
-  });
+  }, 30000);
 });

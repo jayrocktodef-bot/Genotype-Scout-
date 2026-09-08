@@ -694,9 +694,12 @@ export const NaiveAncestryOracle = memo(({
         {isChartReady ? (
           <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={260} debounce={1}>
             <BarChart data={chartData} layout="vertical" margin={{ left: 0, right: 10, top: 5, bottom: 5 }}>
-              <XAxis type="number" hide />
+              <XAxis type="number" hide domain={[0, 100]} />
               <YAxis dataKey="name" type="category" width={130} tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 600 }} />
-              <Tooltip contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '0.75rem', fontSize: '0.75rem' }} />
+              <Tooltip 
+                formatter={(val: any) => [`${Number(val).toFixed(1)}%`, 'Ancestry Estimate']}
+                contentStyle={{ backgroundColor: '#111213', borderColor: '#4ECDC4', color: '#fff', borderRadius: '0.75rem', fontSize: '0.75rem' }} 
+              />
               <Bar dataKey="value" fill="#4ECDC4" radius={[0, 6, 6, 0]}>
                 {chartData.map((entry, index) => {
                   const color = REGION_COLORS[entry.code] || '#4ECDC4';
