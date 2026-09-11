@@ -88,7 +88,6 @@ import masterMtdna from "./data/master_mtdna.json";
 const mitoTraits = masterMtdna.traits;
 import { MethodologyPage } from "./components/MethodologyPage";
 import Dashboard from "./components/Dashboard";
-import { ScoutBoyPlaceholder } from "./components/ScoutBoyPlaceholder";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
 import AdBanner from "./components/AdBanner";
@@ -447,27 +446,27 @@ const ProfileSummary = memo(
     const continentalTotals = useMemo(() => {
       const totals: Record<string, number> = {};
 
+      const mix = allOracle?.admixtureMix;
+      if (mix && Array.isArray(mix) && mix.length > 0) {
+        mix.forEach((item: any) => {
+          const c = assignContinent(item.name || item.subpop || item.popCode, item.popCode);
+          totals[c] = (totals[c] || 0) + (Number(item.percentage) || 0);
+        });
+        if (Object.keys(totals).length > 0) return totals;
+      }
+
       let scores = allOracle?.continentalScores;
       if (!scores || Object.keys(scores).length === 0 || Object.values(scores).every((v: any) => Number(v) === 0)) {
         scores = currentOracle?.continentalScores || {};
       }
 
-      if (scores && Object.keys(scores).length > 0 && Object.values(scores).some((v: any) => Number(v) > 0)) {
+      if (scores && Object.keys(scores).length > 0) {
         Object.entries(scores).forEach(([name, val]) => {
           const num = Number(val) || 0;
           if (num > 0) {
             const c = assignContinent(name);
             totals[c] = (totals[c] || 0) + num;
           }
-        });
-        if (Object.keys(totals).length > 0) return totals;
-      }
-
-      const mix = allOracle?.admixtureMix;
-      if (mix && Array.isArray(mix) && mix.length > 0) {
-        mix.forEach((item: any) => {
-          const c = assignContinent(item.name || item.subpop || item.popCode, item.popCode);
-          totals[c] = (totals[c] || 0) + (Number(item.percentage) || 0);
         });
         if (Object.keys(totals).length > 0) return totals;
       }
@@ -623,15 +622,262 @@ const ProfileSummary = memo(
                     </p>
                   </div>
 
-                  {/* Visual mode switcher (Temporarily Hidden) */}
-                  <div className="flex items-center gap-1 p-1 rounded-xl bg-black/40 border border-white/10 self-start sm:self-auto hidden">
-                    <button className="hidden">Donut</button>
+                  {/* Visual mode switcher */}
+                  <div className="flex items-center gap-1 p-1 rounded-xl bg-black/40 border border-white/10 self-start sm:self-auto">
+                    <button
+                      onClick={() => setChartMode('donut')}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                        chartMode === 'donut'
+                          ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <Orbit className="w-3.5 h-3.5" />
+                      <span>Donut Ring</span>
+                    </button>
+                    <button
+                      onClick={() => setChartMode('radar')}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold transition-all ${
+                        chartMode === 'radar'
+                          ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                          : 'text-slate-400 hover:text-white'
+                      }`}
+                    >
+                      <Radio className="w-3.5 h-3.5" />
+                      <span>Radar</span>
+                    </button>
                   </div>
                 </div>
 
-                {/* Placeholder for Oracle Results */}
-                <div className="flex-1 flex flex-col items-center justify-center min-h-[400px]">
-                  <ScoutBoyPlaceholder />
+                {/* Continental Genome Horizon Ribbon */}
+                {continentalData.length > 0 && (
+                  <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 space-y-2.5">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="text-[10px] uppercase font-black tracking-widest text-slate-400 flex items-center gap-1.5">
+                        <Layers className="w-3.5 h-3.5 text-cyan-400" /> Continental Genome Horizon
+                      </span>
+                      <span className="text-[10px] font-mono text-slate-500 font-bold">100.0% Normalized Partition</span>
+                    </div>
+
+                    {/* Proportional ribbon bar */}
+                    <div className="w-full h-3.5 bg-slate-900 rounded-full overflow-hidden flex border border-white/10 shadow-inner">
+                      {continentalData.map((c) => (
+                        <div
+                          key={c.name}
+                          style={{ width: `${c.value}%`, backgroundColor: c.color }}
+                          className="h-full transition-all duration-300 hover:opacity-90 cursor-pointer"
+                          onMouseEnter={() => setHoveredSlice({ name: c.name, value: c.value, color: c.color, icon: c.icon })}
+                          onMouseLeave={() => setHoveredSlice(null)}
+                          title={`${c.name}: ${c.value.toFixed(1)}%`}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Horizon Legend Pills */}
+                    <div className="flex flex-wrap gap-2 pt-0.5">
+                      {continentalData.map((c) => (
+                        <button
+                          key={c.name}
+                          onClick={() => setHoveredSlice(hoveredSlice?.name === c.name ? null : { name: c.name, value: c.value, color: c.color, icon: c.icon })}
+                          className={`flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-lg border transition-all ${
+                            hoveredSlice?.name === c.name
+                              ? `${c.bg} ${c.border} ${c.text} ring-1 ring-white/20`
+                              : 'bg-white/[0.03] border-white/5 text-slate-300 hover:bg-white/[0.08]'
+                          }`}
+                        >
+                          <span>{c.icon}</span>
+                          <span className="font-semibold">{c.name}:</span>
+                          <span className="font-mono font-black text-white">{c.value.toFixed(1)}%</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Sub-grid: Chart (Left) + Top Subpopulations (Right) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 items-stretch">
+                  {/* Left Column: Visual Chart Display */}
+                  <div className="lg:col-span-5 flex flex-col items-center justify-center border-r border-white/10 pr-0 lg:pr-4">
+                    <div className="relative w-full h-[260px] flex items-center justify-center">
+                      {isChartReady ? (
+                        chartMode === 'donut' ? (
+                          <>
+                            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={250}>
+                              <PieChart>
+                                <Pie
+                                  data={continentalData}
+                                  dataKey="value"
+                                  nameKey="name"
+                                  cx="50%"
+                                  cy="50%"
+                                  innerRadius="60%"
+                                  outerRadius="88%"
+                                  paddingAngle={3}
+                                  stroke="#0f172a"
+                                  strokeWidth={2}
+                                  onMouseEnter={(_, index) => {
+                                    const item = continentalData[index];
+                                    if (item) setHoveredSlice({ name: item.name, value: item.value, color: item.color, icon: item.icon });
+                                  }}
+                                  onMouseLeave={() => setHoveredSlice(null)}
+                                >
+                                  {continentalData.map((entry, index) => (
+                                    <Cell key={`donut-${index}`} fill={entry.color} />
+                                  ))}
+                                </Pie>
+                              </PieChart>
+                            </ResponsiveContainer>
+
+                            {/* Interactive Center Hub */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center p-3">
+                              <AnimatePresence mode="wait">
+                                <motion.div
+                                  key={hoveredSlice ? hoveredSlice.name : dominantContinent.name}
+                                  initial={{ opacity: 0, scale: 0.94 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  exit={{ opacity: 0, scale: 0.94 }}
+                                  transition={{ duration: 0.15 }}
+                                  className="flex flex-col items-center justify-center space-y-0.5"
+                                >
+                                  <span className="text-2xl filter drop-shadow-md">
+                                    {hoveredSlice ? hoveredSlice.icon : dominantContinent.icon}
+                                  </span>
+                                  <span className="text-2xl sm:text-3xl font-black text-white font-mono tracking-tight leading-none pt-1">
+                                    {(hoveredSlice ? hoveredSlice.value : dominantContinent.value).toFixed(1)}%
+                                  </span>
+                                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-300 truncate max-w-[130px]">
+                                    {hoveredSlice ? hoveredSlice.name : dominantContinent.name}
+                                  </span>
+                                  <span className="text-[8px] font-bold uppercase tracking-widest text-cyan-400 font-mono">
+                                    {hoveredSlice ? 'Inspected Clade' : 'Dominant Clade'}
+                                  </span>
+                                </motion.div>
+                              </AnimatePresence>
+                            </div>
+                          </>
+                        ) : (
+                          <ResponsiveContainer
+                            width="100%"
+                            height="100%"
+                            minWidth={0}
+                            minHeight={250}
+                            debounce={1}
+                          >
+                            <RadarChart
+                              data={ancestryRadarData}
+                              margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
+                            >
+                              <PolarGrid
+                                stroke="rgba(148,163,184,0.2)"
+                                strokeOpacity={1}
+                              />
+                              <PolarAngleAxis
+                                dataKey="name"
+                                tick={{
+                                  fill: '#94a3b8',
+                                  fontSize: 9,
+                                  fontWeight: 800,
+                                }}
+                              />
+                              <Radar
+                                name="Origins"
+                                dataKey="value"
+                                stroke="#06b6d4"
+                                fill="#06b6d4"
+                                fillOpacity={0.25}
+                              />
+                            </RadarChart>
+                          </ResponsiveContainer>
+                        )
+                      ) : (
+                        <div className="w-full h-full bg-slate-800/50 rounded-2xl animate-pulse" />
+                      )}
+                    </div>
+
+                    <div className="flex justify-center gap-2 mt-2 flex-wrap text-[9px] font-mono">
+                      {continentalData.slice(0, 3).map((anc: any, i: number) => (
+                        <span
+                          key={i}
+                          className="text-slate-300 bg-slate-800/50 px-2.5 py-1 rounded-xl border border-white/10 flex items-center gap-1.5"
+                        >
+                          <span>{anc.icon}</span>
+                          <strong>{anc.name}:</strong> {anc.value.toFixed(0)}%
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Column: Top Subpopulations List with Ranks & Badges */}
+                  <div className="lg:col-span-7 space-y-2.5 flex flex-col justify-center">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
+                        Top Subpopulation Contributions
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-500 font-bold">
+                        Stage 2 NNLS
+                      </span>
+                    </div>
+
+                    {sortedEngineResults.length > 0 ? (
+                      sortedEngineResults.slice(0, 5).map((pop, idx) => {
+                        const ci = calculateAdmixtureCI(pop.percentage || 0, dataset?.snpCount || dataset?.snpsCount || 1000);
+                        const continent = assignContinent(pop.name, pop.rawPopCode);
+                        const theme = CONTINENT_PALETTES[continent] || CONTINENT_PALETTES['Other'];
+                        const rankStyle = RANK_BADGE_STYLES[idx] || RANK_BADGE_STYLES[4];
+
+                        return (
+                          <div
+                            key={idx}
+                            className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition-all hover:border-white/20 hover:bg-white/[0.08]"
+                          >
+                            <div className="flex items-center justify-between text-xs min-w-0 gap-2 mb-1.5">
+                              <div className="flex items-center gap-2 min-w-0 flex-1">
+                                {/* Rank Medal Badge */}
+                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-md border shrink-0 ${rankStyle.badge}`}>
+                                  {rankStyle.label}
+                                </span>
+                                <span className="font-bold text-slate-100 truncate min-w-0">
+                                  {pop.name}
+                                </span>
+                              </div>
+
+                              <div className="flex items-center gap-1.5 shrink-0">
+                                {/* Regional Chip */}
+                                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border hidden sm:inline-flex items-center gap-1 ${theme.bg} ${theme.border} ${theme.text}`}>
+                                  <span>{theme.icon}</span>
+                                  <span>{continent}</span>
+                                </span>
+
+                                {/* 95% CI */}
+                                <span className="font-mono text-[9px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
+                                  CI: [{ci.low}%–{ci.high}%]
+                                </span>
+
+                                {/* Percentage */}
+                                <span className="font-mono font-black text-white bg-white/10 px-2 py-0.5 rounded-full text-[11px] min-w-[44px] text-right">
+                                  {(pop.percentage || 0).toFixed(1)}%
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Animated progress bar using continent gradient */}
+                            <div className="w-full bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
+                              <div
+                                className={`h-full bg-gradient-to-r ${theme.gradient} rounded-full transition-all duration-300`}
+                                style={{
+                                  width: `${Math.max(pop.percentage || 0, 2)}%`,
+                                }}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <div className="py-8 text-center text-xs text-slate-500">
+                        No advanced subpopulation data present.
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 

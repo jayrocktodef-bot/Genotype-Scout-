@@ -30,7 +30,6 @@ export const ModernAncestryOracle = memo(({
   onOpenMethodology?: () => void;
   mode?: 'explorer' | 'analyst';
 }) => {
-  return null; // Temporarily hiding V3 Oracle results
   const [isChartReady, setIsChartReady] = useState(false);
   const [visualMode, setVisualMode] = useState<'sunburst' | 'bento' | 'radar'>('sunburst');
   const [hoveredSlice, setHoveredSlice] = useState<{
@@ -343,7 +342,7 @@ export const ModernAncestryOracle = memo(({
                             {hoveredSlice.continent || 'Continent'}
                           </span>
                           <span className="text-2xl sm:text-3xl font-black text-white font-mono block">
-                            {hoveredSlice.value.toFixed(1)}%
+                            {hoveredSlice.value?.toFixed(1) || '0.0'}%
                           </span>
                           <span className="text-[11px] font-bold text-cyan-400 block truncate" title={hoveredSlice.name}>
                             {hoveredSlice.name}
@@ -539,42 +538,45 @@ export const ModernAncestryOracle = memo(({
       </div>
 
       {/* Historical Haplotype Tracking for Sickle Cell / HBB */}
-      {hbbMigration && (
-        <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-red-500/5 border border-red-500/10 overflow-hidden relative group">
-          <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <MapPin size={120} />
-          </div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="p-1.5 rounded-lg bg-red-500/20">
-              <MapPin className="w-4 h-4 text-red-500" />
+      {hbbMigration && (() => {
+        const migration = hbbMigration;
+        return (
+          <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-red-500/5 border border-red-500/10 overflow-hidden relative group">
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <MapPin size={120} />
             </div>
-            <h4 className="text-xs font-black text-red-500 uppercase tracking-widest">Historical Haplotype Tracker</h4>
-          </div>
-          <div className="flex flex-col md:flex-row gap-6 relative z-10">
-            <div className="flex-grow">
-              <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] mb-1">Variant Lineage Detected</div>
-              <h5 className="text-lg sm:text-xl font-black text-white mb-2">{hbbMigration.type} Pattern (HBB)</h5>
-              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xl">
-                {hbbMigration.narrative}
-              </p>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="p-1.5 rounded-lg bg-red-500/20">
+                <MapPin className="w-4 h-4 text-red-500" />
+              </div>
+              <h4 className="text-xs font-black text-red-500 uppercase tracking-widest">Historical Haplotype Tracker</h4>
             </div>
-            <div className="w-full md:min-w-[280px] md:w-auto p-5 rounded-2xl bg-black/40 border border-white/5">
-              <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-3 dark:text-slate-400">Migration Path</div>
-              <div className="space-y-3">
-                {hbbMigration.path.split('→').map((node: string, i: number, arr: any[]) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="flex flex-col items-center">
-                      <div className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-red-500' : 'bg-slate-700'}`}></div>
-                      {i < arr.length - 1 && <div className="w-[1px] h-3 bg-slate-800"></div>}
+            <div className="flex flex-col md:flex-row gap-6 relative z-10">
+              <div className="flex-grow">
+                <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.2em] mb-1">Variant Lineage Detected</div>
+                <h5 className="text-lg sm:text-xl font-black text-white mb-2">{migration.type} Pattern (HBB)</h5>
+                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xl">
+                  {migration.narrative}
+                </p>
+              </div>
+              <div className="w-full md:min-w-[280px] md:w-auto p-5 rounded-2xl bg-black/40 border border-white/5">
+                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-3 dark:text-slate-400">Migration Path</div>
+                <div className="space-y-3">
+                  {migration.path.split('→').map((node: string, i: number, arr: any[]) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="flex flex-col items-center">
+                        <div className={`w-2 h-2 rounded-full ${i === 0 ? 'bg-red-500' : 'bg-slate-700'}`}></div>
+                        {i < arr.length - 1 && <div className="w-[1px] h-3 bg-slate-800"></div>}
+                      </div>
+                      <span className={`text-xs ${i === 0 ? 'font-bold text-slate-200' : 'text-slate-500'}`}>{node.trim()}</span>
                     </div>
-                    <span className={`text-xs ${i === 0 ? 'font-bold text-slate-200' : 'text-slate-500'}`}>{node.trim()}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </motion.div>
   );
 });
