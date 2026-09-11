@@ -177,34 +177,36 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </motion.div>
 
-        {/* Top Genetic Match (Oracle) */}
-        <motion.div
-          onClick={() => onNavigateToTab('ancestry', 'oracle')}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="tactile-3d-card p-6 cursor-pointer group flex flex-col justify-between"
-        >
-          <div>
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4 avatar-icon">
-              <Map className="w-5 h-5" />
+        {/* Top Genetic Match (Oracle) - Temporarily Hidden */}
+        {false && (
+          <motion.div
+            onClick={() => onNavigateToTab('ancestry', 'oracle')}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="tactile-3d-card p-6 cursor-pointer group flex flex-col justify-between"
+          >
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4 avatar-icon">
+                <Map className="w-5 h-5" />
+              </div>
+              <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Closest Population</h3>
+              {topOracleMatch ? (
+                <>
+                  <h2 className="text-xl font-black text-slate-800 leading-tight mb-2 whitespace-normal break-words dark:text-slate-200">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
+                  <div className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/25 border border-indigo-100 dark:border-indigo-900/35 text-indigo-700 dark:text-indigo-400 text-xs font-mono font-bold">
+                    Dist: {Number(topOracleMatch.distance || 0).toFixed(4)}
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm font-bold text-slate-500 dark:text-slate-400">Oracle Not Run</p>
+              )}
             </div>
-            <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1">Closest Population</h3>
-            {topOracleMatch ? (
-              <>
-                <h2 className="text-xl font-black text-slate-800 leading-tight mb-2 whitespace-normal break-words dark:text-slate-200">{topOracleMatch.name || topOracleMatch.subpop || topOracleMatch.population}</h2>
-                <div className="inline-flex items-center px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/25 border border-indigo-100 dark:border-indigo-900/35 text-indigo-700 dark:text-indigo-400 text-xs font-mono font-bold">
-                  Dist: {Number(topOracleMatch.distance || 0).toFixed(4)}
-                </div>
-              </>
-            ) : (
-              <p className="text-sm font-bold text-slate-500 dark:text-slate-400">Oracle Not Run</p>
-            )}
-          </div>
-          <div className="mt-4 flex items-center text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-widest gap-2">
-            View Oracle <ArrowRight className="w-3 h-3" />
-          </div>
-        </motion.div>
+            <div className="mt-4 flex items-center text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-widest gap-2">
+              View Oracle <ArrowRight className="w-3 h-3" />
+            </div>
+          </motion.div>
+        )}
 
         {/* Haplogroups */}
         <motion.div
