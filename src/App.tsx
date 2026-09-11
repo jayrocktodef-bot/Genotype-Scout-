@@ -88,6 +88,7 @@ import masterMtdna from "./data/master_mtdna.json";
 const mitoTraits = masterMtdna.traits;
 import { MethodologyPage } from "./components/MethodologyPage";
 import Dashboard from "./components/Dashboard";
+import { ScoutBoyPlaceholder } from "./components/ScoutBoyPlaceholder";
 import Navigation from "./components/Navigation";
 import HeroUpload from "./components/HeroUpload";
 import AdBanner from "./components/AdBanner";
@@ -629,9 +630,8 @@ const ProfileSummary = memo(
                 </div>
 
                 {/* Placeholder for Oracle Results */}
-                <div className="flex-1 flex flex-col items-center justify-center min-h-[300px] text-slate-500">
-                  <div className="text-8xl font-black opacity-20 mb-4">?</div>
-                  <p className="text-sm font-bold uppercase tracking-widest text-slate-400">Oracle Results Temporarily Hidden</p>
+                <div className="flex-1 flex flex-col items-center justify-center min-h-[400px]">
+                  <ScoutBoyPlaceholder />
                 </div>
               </div>
 
