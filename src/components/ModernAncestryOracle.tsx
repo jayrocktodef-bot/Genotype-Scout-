@@ -30,6 +30,7 @@ export const ModernAncestryOracle = memo(({
   onOpenMethodology?: () => void;
   mode?: 'explorer' | 'analyst';
 }) => {
+  return null; // Temporarily hiding V3 Oracle results
   const [isChartReady, setIsChartReady] = useState(false);
   const [visualMode, setVisualMode] = useState<'sunburst' | 'bento' | 'radar'>('sunburst');
   const [hoveredSlice, setHoveredSlice] = useState<{
@@ -157,13 +158,13 @@ export const ModernAncestryOracle = memo(({
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-3 border-b border-white/5 pb-4">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-black text-[#F5F6F7] tracking-tight">Ancestry Oracle V2</h2>
+              <h2 className="text-xl sm:text-2xl font-black text-[#F5F6F7] tracking-tight">Ancestry Oracle V3</h2>
               <span className="text-[10px] font-mono uppercase bg-cyan-500/10 text-cyan-400 px-2.5 py-0.5 rounded-full border border-cyan-500/20 font-bold">
-                Two-Stage NNLS
+                Bayesian Fisher Deconv
               </span>
             </div>
             <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest mt-0.5">
-              High-Precision Admixture Analysis
+              Continuous Gating & Fisher Deconvolution
             </p>
           </div>
 
