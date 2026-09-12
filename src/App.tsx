@@ -12,8 +12,8 @@ import { useState, useCallback, useRef, useEffect, useMemo, memo, Suspense, lazy
 import JSZip from 'jszip';
 import { motion, AnimatePresence } from "motion/react";
 import { useRegisterSW } from 'virtual:pwa-register/react';
-// ...
 const HealthWellnessTab = lazy(() => import("./components/HealthWellnessTab").then(m => ({ default: m.HealthWellnessTab })));
+import { GeneticMarkersBrowser } from "./components/GeneticMarkersBrowser";
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -65,6 +65,7 @@ const SubpopulationBento = lazy(() => import("./components/SubpopulationBento"))
 const SubpopulationGlossaryTab = lazy(() => import("./components/SubpopulationGlossaryTab").then(m => ({ default: m.SubpopulationGlossaryTab })));
 import { processSubpopulations, humanizePopName } from "./components/ancestryOracleLogic";
 import { CONTINENT_PALETTES, assignContinent } from "./constants/ancestryThemes";
+import { computePaintedAncestry, runDatasetLAI, PaintedAncestryItem, PaintedAncestryCompositionResult } from "./utils/ancestry/paintedAncestry";
 import { GenotypeParser } from "./components/GenotypeParser";
 import { loadMasterAims } from './data';
 const masterAims = loadMasterAims();
@@ -442,83 +443,64 @@ const ProfileSummary = memo(
         .slice(0, 5);
     }, [allOracle, dataset, oracleResults]);
 
-    // Continental Clade Totals
-    const continentalTotals = useMemo(() => {
-      const totals: Record<string, number> = {};
-
+    const fallbackScores = useMemo(() => {
+      const scores: Record<string, number> = {};
       const mix = allOracle?.admixtureMix;
       if (mix && Array.isArray(mix) && mix.length > 0) {
         mix.forEach((item: any) => {
           const c = assignContinent(item.name || item.subpop || item.popCode, item.popCode);
-          totals[c] = (totals[c] || 0) + (Number(item.percentage) || 0);
+          scores[c] = (scores[c] || 0) + (Number(item.percentage) || 0);
         });
-        if (Object.keys(totals).length > 0) return totals;
       }
-
-      let scores = allOracle?.continentalScores;
-      if (!scores || Object.keys(scores).length === 0 || Object.values(scores).every((v: any) => Number(v) === 0)) {
-        scores = currentOracle?.continentalScores || {};
+      if (Object.keys(scores).length === 0) {
+        const rawScores = allOracle?.continentalScores || currentOracle?.continentalScores || {};
+        Object.entries(rawScores).forEach(([k, v]) => {
+          scores[k] = Number(v) || 0;
+        });
       }
+      return scores;
+    }, [allOracle, currentOracle]);
 
-      if (scores && Object.keys(scores).length > 0) {
-        Object.entries(scores).forEach(([name, val]) => {
-          const num = Number(val) || 0;
-          if (num > 0) {
-            const c = assignContinent(name);
-            totals[c] = (totals[c] || 0) + num;
+    const [laiSegments, setLaiSegments] = useState<any>(dataset?.analysis?.segments || null);
+
+    useEffect(() => {
+      if (dataset?.analysis?.segments) {
+        setLaiSegments(dataset.analysis.segments);
+        return;
+      }
+      let active = true;
+      runDatasetLAI(dataset, fallbackScores).then(segs => {
+        if (active && segs) {
+          if (dataset.analysis) {
+            dataset.analysis.segments = segs;
           }
-        });
-        if (Object.keys(totals).length > 0) return totals;
-      }
-
-      sortedEngineResults.forEach((item: any) => {
-        const c = assignContinent(item.name, item.rawPopCode);
-        totals[c] = (totals[c] || 0) + (item.percentage || 0);
+          setLaiSegments(segs);
+        }
       });
+      return () => { active = false; };
+    }, [dataset, fallbackScores]);
 
-      return totals;
-    }, [allOracle, currentOracle, sortedEngineResults]);
+    const paintedAncestry: PaintedAncestryCompositionResult = useMemo(() => {
+      if (dataset?.analysis?.paintedAncestry && (laiSegments || dataset?.analysis?.segments)) {
+        return dataset.analysis.paintedAncestry;
+      }
+      return computePaintedAncestry(laiSegments || dataset?.analysis?.segments, fallbackScores);
+    }, [laiSegments, dataset, fallbackScores]);
 
     const continentalData = useMemo(() => {
-      const entries = Object.entries(continentalTotals).filter(([_, v]) => v > 0.05);
-      const sum = entries.reduce((acc, [_, v]) => acc + v, 0);
-      if (sum === 0) return [];
+      return paintedAncestry.items;
+    }, [paintedAncestry]);
 
-      return entries
-        .map(([name, value]) => {
-          const pct = sum > 0 ? (value / sum) * 100 : value;
-          const theme = CONTINENT_PALETTES[name] || CONTINENT_PALETTES['Other'];
-          return {
-            name,
-            value: Number(pct.toFixed(1)),
-            color: theme.base,
-            gradient: theme.gradient,
-            icon: theme.icon,
-            border: theme.border,
-            bg: theme.bg,
-            text: theme.text,
-          };
-        })
-        .sort((a, b) => b.value - a.value);
-    }, [continentalTotals]);
-
-    const dominantContinent = continentalData[0] || {
-      name: 'Global',
-      value: 100,
-      color: '#06b6d4',
-      gradient: 'from-cyan-500 to-teal-400',
-      icon: '🌐',
-      border: 'border-cyan-500/30',
-      bg: 'bg-cyan-500/10',
-      text: 'text-cyan-400',
-    };
+    const dominantContinent = useMemo(() => {
+      return paintedAncestry.dominant;
+    }, [paintedAncestry]);
 
     // Data for legacy radar view
     const ancestryRadarData = useMemo(() => {
       if (continentalData.length > 0) {
         return continentalData.map(c => ({
           name: c.name,
-          value: c.value,
+          value: c.percentage,
         }));
       }
       return [];
@@ -795,34 +777,40 @@ const ProfileSummary = memo(
                     </div>
 
                     <div className="flex justify-center gap-2 mt-2 flex-wrap text-[9px] font-mono">
-                      {continentalData.slice(0, 3).map((anc: any, i: number) => (
+                      {continentalData.map((anc: any, i: number) => (
                         <span
                           key={i}
                           className="text-slate-300 bg-slate-800/50 px-2.5 py-1 rounded-xl border border-white/10 flex items-center gap-1.5"
                         >
                           <span>{anc.icon}</span>
-                          <strong>{anc.name}:</strong> {anc.value.toFixed(0)}%
+                          <strong>{anc.name}:</strong> {(anc.percentage || anc.value || 0).toFixed(1)}%
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  {/* Right Column: Top Subpopulations List with Ranks & Badges */}
+                  {/* Right Column: Painted Ancestry Composition List */}
                   <div className="lg:col-span-7 space-y-2.5 flex flex-col justify-center">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
-                        Top Subpopulation Contributions
-                      </span>
-                      <span className="text-[9px] font-mono text-slate-500 font-bold">
-                        Stage 2 NNLS
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
+                          Painted Ancestry Composition
+                        </span>
+                      </div>
+                      <span className="text-[9px] font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20 font-bold">
+                        Total Length: {paintedAncestry.totalMb.toLocaleString()} Mb
                       </span>
                     </div>
 
-                    {sortedEngineResults.length > 0 ? (
-                      sortedEngineResults.slice(0, 5).map((pop, idx) => {
-                        const ci = calculateAdmixtureCI(pop.percentage || 0, dataset?.snpCount || dataset?.snpsCount || 1000);
-                        const continent = assignContinent(pop.name, pop.rawPopCode);
-                        const theme = CONTINENT_PALETTES[continent] || CONTINENT_PALETTES['Other'];
+                    {(dataset?.snpCount || 0) > 0 && (dataset?.snpCount || 0) < 1000 ? (
+                      <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 text-[11px] flex items-center gap-2">
+                        <span>⚠️</span>
+                        <span>Low marker coverage ({(dataset?.snpCount || 0).toLocaleString()} SNPs). Local ancestry painting requires a full microarray kit (100,000+ SNPs) for maximum segment resolution.</span>
+                      </div>
+                    ) : null}
+
+                    {paintedAncestry.items.length > 0 ? (
+                      paintedAncestry.items.map((pop, idx) => {
                         const rankStyle = RANK_BADGE_STYLES[idx] || RANK_BADGE_STYLES[4];
 
                         return (
@@ -836,26 +824,21 @@ const ProfileSummary = memo(
                                 <span className={`text-[10px] font-black px-2 py-0.5 rounded-md border shrink-0 ${rankStyle.badge}`}>
                                   {rankStyle.label}
                                 </span>
-                                <span className="font-bold text-slate-100 truncate min-w-0">
-                                  {pop.name}
+                                <span className="font-bold text-slate-100 truncate min-w-0 flex items-center gap-1.5">
+                                  <span>{pop.icon}</span>
+                                  <span>{pop.name}</span>
                                 </span>
                               </div>
 
                               <div className="flex items-center gap-1.5 shrink-0">
-                                {/* Regional Chip */}
-                                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border hidden sm:inline-flex items-center gap-1 ${theme.bg} ${theme.border} ${theme.text}`}>
-                                  <span>{theme.icon}</span>
-                                  <span>{continent}</span>
-                                </span>
-
-                                {/* 95% CI */}
-                                <span className="font-mono text-[9px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
-                                  CI: [{ci.low}%–{ci.high}%]
+                                {/* Mb & Tracts Badge */}
+                                <span className="font-mono text-[9px] text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
+                                  {pop.mb.toFixed(1)} Mb ({pop.tracts} {pop.tracts === 1 ? 'tract' : 'tracts'})
                                 </span>
 
                                 {/* Percentage */}
                                 <span className="font-mono font-black text-white bg-white/10 px-2 py-0.5 rounded-full text-[11px] min-w-[44px] text-right">
-                                  {(pop.percentage || 0).toFixed(1)}%
+                                  {pop.percentage.toFixed(1)}%
                                 </span>
                               </div>
                             </div>
@@ -863,9 +846,9 @@ const ProfileSummary = memo(
                             {/* Animated progress bar using continent gradient */}
                             <div className="w-full bg-slate-800/80 rounded-full h-1.5 overflow-hidden">
                               <div
-                                className={`h-full bg-gradient-to-r ${theme.gradient} rounded-full transition-all duration-300`}
+                                className={`h-full bg-gradient-to-r ${pop.gradient} rounded-full transition-all duration-500`}
                                 style={{
-                                  width: `${Math.max(pop.percentage || 0, 2)}%`,
+                                  width: `${Math.max(pop.percentage, 1.5)}%`,
                                 }}
                               />
                             </div>
@@ -874,7 +857,7 @@ const ProfileSummary = memo(
                       })
                     ) : (
                       <div className="py-8 text-center text-xs text-slate-500">
-                        No advanced subpopulation data present.
+                        No local ancestry painting data present.
                       </div>
                     )}
                   </div>
@@ -2340,7 +2323,7 @@ export default function App() {
   useEffect(() => {
     const checkForceReset = async () => {
       try {
-        const CURRENT_BUILD = 'v5.16.1_force_cache_clear';
+        const CURRENT_BUILD = 'v5.17.0_force_cache_clear';
         const lastBuild = localStorage.getItem('genotype_scout_build');
         if (lastBuild !== CURRENT_BUILD) {
           console.log(`[App] Build version update registered: ${lastBuild} -> ${CURRENT_BUILD}`);
@@ -2915,12 +2898,14 @@ export default function App() {
   }
 
   return (
-    <div className={`bg-background text-foreground font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh' : ''}`}>
-      {/* Dynamic Premium Mesh Background (Light Mode) */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-teal-400/10 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse-soft"></div>
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-sky-400/10 rounded-full blur-[150px] mix-blend-multiply opacity-50"></div>
-      </div>
+    <div className={`bg-background text-foreground font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh bg-[#05070a]' : ''}`}>
+      {/* Dynamic Premium Mesh Background (Active results mode only) */}
+      {results && (
+        <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-teal-400/10 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse-soft"></div>
+          <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-sky-400/10 rounded-full blur-[150px] mix-blend-multiply opacity-50"></div>
+        </div>
+      )}
       <div className="relative z-10">
       <Navigation 
         activeTab={activeTab} 
@@ -3372,35 +3357,9 @@ export default function App() {
             )}
 
             {currentApp === 'markers' && (
-              <div className="space-y-8 animate-fade-in">
-                <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl sm:rounded-3xl shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 text-white">
-                  <div>
-                    <h2 className="text-2xl sm:text-3xl font-black text-slate-100 tracking-tight">Genetic Markers Browser</h2>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mt-1">Filtered view of your autosomal variants, allele dosages, and phenotypic annotations.</p>
-                  </div>
-                  <div className="flex items-center gap-2 bg-black/40 p-1.5 rounded-2xl border border-white/10 shadow-inner">
-                    {(['matched', 'unmatched'] as const).map(status => (
-                      <button 
-                        key={status}
-                        onClick={() => setStatusFilter(status)}
-                        className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all ${statusFilter === status ? 'bg-teal-500/20 text-teal-300 border border-teal-500/40 shadow-lg' : 'text-slate-400 hover:text-slate-200'}`}
-                      >
-                        {status}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                
-                <AutosomalView 
-                  filteredResults={filteredResults}
-                  groupedCategories={groupByCategory(filteredResults || [])}
-                  availableCategories={Object.keys(groupByCategory(filteredResults || []))}
-                  expandedCategories={expandedCategories}
-                  toggleCategory={toggleCategory}
-                  expandedSnps={expandedSnps}
-                  toggleExpand={toggleExpand}
-                  datasets={datasets}
-                  activeDatasetIndex={activeDatasetIndex}
+              <div className="animate-fade-in">
+                <GeneticMarkersBrowser 
+                  dataset={datasets[activeDatasetIndex]}
                 />
               </div>
             )}

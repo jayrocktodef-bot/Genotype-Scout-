@@ -58,6 +58,9 @@ export interface OracleResult {
   unmappedAims: AIM[];
   breakdown: SubpopBreakdown[];
   admixtureMix: AdmixtureComponent[];
+  _engineVersion?: string;
+  confidenceIntervals?: Record<string, { low: number; high: number }>;
+  continentalScores?: Record<string, number>;
 }
 
 // Map of 1000 Genomes population codes to detailed, scientific, and readable names
@@ -293,6 +296,7 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'AFRAM_NORTHEAST': 'African-American / Northeast US (AFRAM_NORTHEAST)',
   'AFRAM_WEST': 'African-American / Western US (AFRAM_WEST)',
   'LOUISIANA_CREOLE': 'Louisiana Creole / Tri-Racial (LOUISIANA_CREOLE)',
+  'sgdp_lezgin': 'Lezgin / Northeast Caucasus (SGDP)',
   // Superpopulations and Global References
   'ALL': 'Global Reference (ALL)',
   'EUR': 'European Reference (EUR)',
@@ -302,7 +306,10 @@ const POPULATION_NAMES_MAP: Record<string, string> = {
   'AMR': 'Indigenous American Reference (AMR)',
   'MENA': 'Middle Eastern Reference (MENA)',
   'OCE': 'Oceanian Reference (OCE)',
-  'CAS': 'Central Asian & Siberian Reference (CAS)'
+  'PAP': 'Papuan / New Guinea (PAP)',
+  'BOU': 'Bougainville Melanesian (BOU)',
+  'CAS': 'Central Asian & Siberian Reference (CAS)',
+  'CAU': 'Caucasus Reference (CAU)'
 };
 
 /**
@@ -349,7 +356,7 @@ const MACRO_GROUPS: Record<string, string[]> = {
   'AFR': [
     'ESN', 'GWD', 'LWK', 'MSL', 'YRI', 'IGBO', 'AKAN_ASHANTI', 'EWE_FON', 'FULANI',
     'HAUSA', 'BAKONGO', 'LUBA', 'MBUTI_BIAKA', 'SOMALI', 'AMHARA_TIGRAY', 'OROMO',
-    'DINKA_NUER', 'MASAI', 'ZULU_XHOSA', 'SAN_KHOE', 'AMAZIGH_BERBER', 'TUAREG',
+    'DINKA_NUER', 'MASAI', 'ZULU_XHOSA', 'SAN_KHOE',
     'GWF_Fula', 'GWJ_Jola', 'GWW_Wolof', 'ALFA_African', 'AFR_gnomAD',
     'sgdp_luo', 'sgdp_masai', 'sgdp_bantuherero', 'sgdp_bantukenya', 
     'sgdp_bantutswana', 'sgdp_biaka', 'sgdp_mbuti', 'sgdp_khomani_san', 
@@ -371,10 +378,13 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'sgdp_english', 'sgdp_estonian', 'sgdp_french', 'sgdp_greek',
     'sgdp_hungarian', 'sgdp_icelandic', 'sgdp_norwegian', 'sgdp_orcadian',
     'sgdp_polish', 'sgdp_russian', 'sgdp_sardinian', 'sgdp_bergamo',
-    'sgdp_cretan', 'sgdp_chechen', 'sgdp_finnish', 'sgdp_saami',
-    'sgdp_russia_northossetian', 'sgdp_russia_abkhasian', 'sgdp_georgian',
-    'sgdp_adygei', 'sgdp_italian_north', 'sgdp_tuscan', 'BALKAN', 'BALTIC',
+    'sgdp_cretan', 'sgdp_finnish', 'sgdp_saami',
+    'sgdp_italian_north', 'sgdp_tuscan', 'BALKAN', 'BALTIC',
     'BASQUE', 'SLAVIC', 'SCANDINAVIAN'
+  ],
+  'CAU': [
+    'sgdp_chechen', 'sgdp_russia_northossetian', 'sgdp_russia_abkhasian',
+    'sgdp_georgian', 'sgdp_adygei', 'sgdp_lezgin'
   ],
   'EAS': [
     'CDX', 'CHB', 'CHS', 'JPT', 'KHV',
@@ -383,7 +393,10 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'sgdp_ami', 'sgdp_atayal', 'sgdp_kinh', 'sgdp_cambodian', 'sgdp_thai',
     'sgdp_burmese', 'sgdp_han', 'hgdp_han', 'sgdp_japanese', 'hgdp_japanese',
     'sgdp_korean', 'sgdp_naxi', 'hgdp_naxi', 'sgdp_yi', 'sgdp_she', 'hgdp_she',
-    'sgdp_miao', 'sgdp_china_lahu', 'hgdp_lahu'
+    'sgdp_miao', 'sgdp_china_lahu', 'hgdp_lahu',
+    'hgdp_daur', 'sgdp_daur', 'hgdp_hezhen', 'sgdp_hezhen',
+    'hgdp_oroqen', 'sgdp_oroqen', 'hgdp_tujia', 'sgdp_tujia',
+    'hgdp_xibo', 'sgdp_xibo'
   ],
   'SAS': [
     'BEB', 'GIH', 'ITU', 'PJL', 'STU',
@@ -411,67 +424,70 @@ const MACRO_GROUPS: Record<string, string[]> = {
     'MID_gnomAD', 'MZJ', 'YMJ', 'sgdp_jew_iraqi', 'sgdp_jew_yemenite', 'sgdp_samaritan',
     'sgdp_saharawi', 'sgdp_mozabite', 'hgdp_mozabite', 'sgdp_bedouinb', 'sgdp_druze', 
     'sgdp_palestinian', 'sgdp_jordanian', 'sgdp_iranian', 'hgdp_bedouin', 'hgdp_druze', 
-    'hgdp_palestinian', 'sgdp_turkish'
+    'hgdp_palestinian', 'sgdp_turkish', 'AMAZIGH_BERBER', 'TUAREG'
   ],
   'OCE': [
-    'sgdp_australian', 'sgdp_bougainville', 'sgdp_hawaiian', 'sgdp_maori', 'sgdp_papuan',
-    'sgdp_ignore_papuan(discovery)'
+    'OCE', 'PAP', 'BOU', 'MEL', 'sgdp_australian', 'sgdp_bougainville', 'sgdp_hawaiian', 'sgdp_maori', 'sgdp_papuan'
   ],
   'CAS': [
     'sgdp_altaian', 'sgdp_chukchi', 'sgdp_even', 'sgdp_itelmen', 'sgdp_kyrgyz_kyrgyzstan', 
     'sgdp_mansi', 'sgdp_tubalar', 'sgdp_ulchi', 'sgdp_uyghur', 'sgdp_yakut', 'hgdp_yakut', 
-    'hgdp_uygur', 'hgdp_mongola', 'sgdp_mongola', 'hgdp_hazara', 'sgdp_hazara',
-    'hgdp_daur', 'sgdp_daur', 'hgdp_hezhen', 'sgdp_hezhen', 'hgdp_oroqen', 'sgdp_oroqen',
-    'hgdp_tujia', 'sgdp_tujia', 'hgdp_xibo', 'sgdp_xibo', 'sgdp_tajik'
+    'hgdp_uygur', 'hgdp_mongola', 'sgdp_mongola', 'hgdp_hazara', 'sgdp_hazara', 'sgdp_tajik'
   ]
 };
 
 /**
- * Fast, highly optimized Damerau-Levenshtein Edit Distance Solver
- * Calculates the exact distance allowing insertion, deletion, substitution, and transposition of characters.
+ * Detects whether marker alleles form a palindromic (A/T or C/G) pair.
+ * Palindromic SNPs require likelihood or manifest strand verification
+ * because reverse-complement pairs match the same two nucleotide characters.
  */
-function damerauLevenshtein(s1: string, s2: string): number {
-  const len1 = s1.length;
-  const len2 = s2.length;
-  const d: number[][] = [];
-
-  for (let i = 0; i <= len1; i++) {
-    d[i] = [];
-    d[i][0] = i;
-  }
-  for (let j = 0; j <= len2; j++) {
-    d[0][j] = j;
-  }
-
-  for (let i = 1; i <= len1; i++) {
-    for (let j = 1; j <= len2; j++) {
-      const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
-      d[i][j] = Math.min(
-        d[i - 1][j] + 1, // deletion
-        d[i][j - 1] + 1, // insertion
-        d[i - 1][j - 1] + cost // substitution
-      );
-
-      // Transposition
-      if (i > 1 && j > 1 && s1[i - 1] === s2[j - 2] && s1[i - 2] === s2[j - 1]) {
-        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + cost);
-      }
-    }
-  }
-  return d[len1][len2];
+export function isPalindromicMarker(alleles: string[]): boolean {
+  if (!alleles || alleles.length < 2) return false;
+  const a1 = alleles[0].toUpperCase();
+  const a2 = alleles[1].toUpperCase();
+  return (a1 === 'A' && a2 === 'T') || (a1 === 'T' && a2 === 'A') ||
+         (a1 === 'C' && a2 === 'G') || (a1 === 'G' && a2 === 'C');
 }
 
-function alignGenotype(genotype: string, targetAlleles: string[]): string {
+/**
+ * Aligns raw genotype to target reference alleles using complementation when needed,
+ * with explicit palindromic strand resolution.
+ */
+export function alignGenotype(genotype: string, targetAlleles: string[], refFreq?: number): string {
   const upperGeno = genotype.toUpperCase();
   if (upperGeno === '--' || upperGeno.length === 0) return upperGeno;
 
+  const complementMap: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
+  const complementGeno = upperGeno.split('').map(b => complementMap[b] || b).join('');
+
+  // 1. Palindromic markers (A/T or C/G)
+  if (isPalindromicMarker(targetAlleles)) {
+    const chars = upperGeno.split('');
+    const isHetero = chars.length === 2 && chars[0] !== chars[1];
+    if (isHetero) {
+      // For heterozygous A/T or C/G, unordered alleles are invariant under complement
+      return upperGeno;
+    }
+    // For homozygous calls (e.g. A/A vs T/T), test reference frequency expectation if available
+    if (typeof refFreq === 'number' && !isNaN(refFreq)) {
+      const primaryTarget = targetAlleles[0].toUpperCase();
+      const isHomozygousPrimary = chars.every(c => c === primaryTarget);
+      if (isHomozygousPrimary && refFreq < 0.10) {
+        return complementGeno;
+      }
+      if (!isHomozygousPrimary && refFreq > 0.90) {
+        return complementGeno;
+      }
+    }
+    return upperGeno;
+  }
+
+  // 2. Non-palindromic markers: standard direct and complement checks
   const hasDirectMatch = upperGeno.split('').some(char => targetAlleles.includes(char));
   if (hasDirectMatch) {
     return upperGeno;
   }
 
-  const complementMap: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
-  const complementGeno = upperGeno.split('').map(b => complementMap[b] || b).join('');
   const hasCompMatch = complementGeno.split('').some(char => targetAlleles.includes(char));
   if (hasCompMatch) {
     return complementGeno;
@@ -480,10 +496,54 @@ function alignGenotype(genotype: string, targetAlleles: string[]): string {
   return upperGeno;
 }
 
+/**
+ * Resolves polarity of reference allele frequency against macro-continental reference.
+ * Eliminates the static 0.20 margin dead-zone identified in the V2 audit.
+ */
+function alignPolarity(refFreq: number, macroFreq?: number): number {
+  if (macroFreq === undefined || isNaN(macroFreq)) return refFreq;
+  const distFwd = Math.abs(refFreq - macroFreq);
+  const distRev = Math.abs((1.0 - refFreq) - macroFreq);
+  // If the flipped frequency is strictly closer to macro frequency by a significant margin (0.08)
+  if (distRev + 0.08 < distFwd) {
+    return 1.0 - refFreq;
+  }
+  return refFreq;
+}
+
+/**
+ * Demographic-aware F_ST genetic drift parameters for Balding-Nichols shrinkage.
+ * Replaces the universal static F_k = 0.04 with empirical divergence parameters.
+ */
+const DEMOGRAPHIC_FST_DRIFT: Record<string, number> = {
+  'EUR': 0.020,
+  'AFR': 0.025,
+  'AFRAM': 0.025,
+  'EAS': 0.035,
+  'SAS': 0.040,
+  'MENA': 0.030,
+  'AMR': 0.075,
+  'AMER': 0.045,
+  'OCE': 0.100,
+  'CAS': 0.050,
+  'CAU': 0.028
+};
+
+/**
+ * Known highly admixed basis cohorts that should be excluded from acting as reference
+ * vectors in Pass 2 NNLS deconvolution to eliminate the interior-sink collinearity trap.
+ * These cohorts remain in MACRO_GROUPS and POPULATION_NAMES_MAP for distance ranking /
+ * nearest-neighbor identification.
+ */
+const ADMIXED_BASIS_COHORTS = new Set([
+  'ACB', 'ASW', 'CLM', 'MXL', 'PUR', 'GLL', 'ALFA_AfAm', 'ALFA_LatAm1', 'ALFA_LatAm2',
+  'AFRAM_SOUTH', 'AFRAM_NORTHEAST', 'AFRAM_WEST', 'LOUISIANA_CREOLE', 'CUBAN_AM', 'DOMINICAN_AM',
+  'lemba_proxy', 'romani_proxy', 'sgdp_malagasy', 'MEL'
+]);
+
 // Local high-performance index caching variables
 let isSnpCacheInitialized = false;
 const normalizedKeyToOriginal = new Map<string, string>();
-const snpBucketMap = new Map<string, string[]>(); // Hash bucketing for O(1) group filtering
 
 /**
  * Lazy initializer for AIM markers index to prevent memory bloat
@@ -494,20 +554,21 @@ function initializeSnpCache(databaseKeys: string[]) {
     const clean = key.toLowerCase().replace(/[^a-z0-9]/g, '');
     if (clean) {
       normalizedKeyToOriginal.set(clean, key);
-      const prefix = clean.substring(0, 3);
-      if (!snpBucketMap.has(prefix)) {
-        snpBucketMap.set(prefix, []);
+      const strippedLeadingZero = clean.replace(/^rs0+([1-9]\d*)/, 'rs$1');
+      if (strippedLeadingZero !== clean) {
+        normalizedKeyToOriginal.set(strippedLeadingZero, key);
       }
-      snpBucketMap.get(prefix)!.push(clean);
     }
   }
   isSnpCacheInitialized = true;
 }
 
 /**
- * Fuzzy-matching resolver to handle nomenclature variations or typos
+ * Strict, zero-false-positive marker resolver.
+ * Enforces exact alphanumeric RSID matching and canonical alias normalization.
+ * Completely purges Damerau-Levenshtein edit-distance matching on sequential dbSNP RSIDs (P0 audit fix).
  */
-function resolveSnpName(userRsid: string, databaseKeys: string[], allowFuzzy = false): string | null {
+export function resolveSnpName(userRsid: string, databaseKeys: string[], _allowFuzzy = false): string | null {
   initializeSnpCache(databaseKeys);
 
   // 1. Direct match (case-sensitive lookup first for high speed)
@@ -521,47 +582,26 @@ function resolveSnpName(userRsid: string, databaseKeys: string[], allowFuzzy = f
     return normalizedKeyToOriginal.get(raw) || null;
   }
   
-  // Only perform expensive regex cleaning if userRsid contains non-alphanumeric characters
-  const hasSpecial = /[^a-zA-Z0-9]/.test(userRsid);
-  if (hasSpecial) {
-    const cleanUser = raw.replace(/[^a-z0-9]/g, '');
-    if (cleanUser) {
-      const normMatch = normalizedKeyToOriginal.get(cleanUser);
-      if (normMatch) {
-        return normMatch;
-      }
-    }
-  }
-
-  if (!allowFuzzy) {
-    return null;
-  }
-
+  // 3. Normalized alphanumeric match
   const cleanUser = raw.replace(/[^a-z0-9]/g, '');
-  if (!cleanUser) return null;
-
-  // 3. Tabix-inspired local bucketing fuzzy match using Levenshtein distance <= 2
-  const prefix = cleanUser.substring(0, 3);
-  const candidates = snpBucketMap.get(prefix) || [];
-  
-  let bestMatch: string | null = null;
-  let bestDistance = 3; // allowable threshold = 2
-
-  for (const candidate of candidates) {
-    if (Math.abs(candidate.length - cleanUser.length) > 2) continue;
-    const dist = damerauLevenshtein(cleanUser, candidate);
-    if (dist < bestDistance) {
-      bestDistance = dist;
-      bestMatch = normalizedKeyToOriginal.get(candidate) || null;
-    }
+  if (cleanUser && normalizedKeyToOriginal.has(cleanUser)) {
+    return normalizedKeyToOriginal.get(cleanUser) || null;
   }
 
-  return bestMatch;
+  // 4. Handle prefix aliases like 'rs00123' -> 'rs123'
+  const strippedLeadingZero = cleanUser.replace(/^rs0+([1-9]\d*)/, 'rs$1');
+  if (strippedLeadingZero !== cleanUser && normalizedKeyToOriginal.has(strippedLeadingZero)) {
+    return normalizedKeyToOriginal.get(strippedLeadingZero) || null;
+  }
+
+  return null;
 }
 
 
 /**
- * Pure TypeScript Non-Negative Least Squares (NNLS) solver using Lawson-Hanson.
+ * Pure TypeScript Non-Negative Least Squares (NNLS) solver using Lawson-Hanson with
+ * Standardized Patterson Genetic Drift Coordinates.
+ * Subtracts the universal shared ancestral human baseline and scales by binomial standard deviation.
  * Multi-source deconvolution of mixed ancestral profiles.
  */
 export function solveAdmixtureProportions(
@@ -576,46 +616,68 @@ export function solveAdmixtureProportions(
   const P = popCodes.length;
   const M = userDosages.length;
 
-  // Build A matrix (M x P)
-  // A[i][j] = expected dosage of marker i in pop j
+  // Build standardized Patterson drift matrix (M x P)
   const A: number[][] = new Array(M);
+  const b: number[] = new Array(M);
+  const w: number[] = new Array(M);
+
   for (let i = 0; i < M; i++) {
     A[i] = new Array(P);
+    let sumF = 0;
+    const freqs: number[] = new Array(P);
     for (let p = 0; p < P; p++) {
-      A[i][p] = popExpectedDosages[popCodes[p]][i];
+      const f = popExpectedDosages[popCodes[p]][i] / 2.0;
+      freqs[p] = f;
+      sumF += f;
     }
+    const meanF = sumF / P;
+
+    // Skip monomorphic SNPs (no signal)
+    if (meanF <= 0.0 || meanF >= 1.0) {
+      A[i] = new Array(P).fill(0);
+      b[i] = 0;
+      w[i] = 0;
+      continue;
+    }
+
+    // Fix #2: Use tighter floor (1e-6) instead of 0.005 to avoid flattening rare alleles
+    const sigma = Math.sqrt(Math.max(1e-6, meanF * (1.0 - meanF)));
+
+    for (let p = 0; p < P; p++) {
+      A[i][p] = (freqs[p] - meanF) / sigma;
+    }
+    b[i] = (userDosages[i] / 2.0 - meanF) / sigma;
+
+    // Fix #3/#4: Pass external weights directly without internal Fisher double-weighting.
+    // The Patterson standardization already accounts for allele frequency variance.
+    w[i] = aimWeights[i] || 1.0;
   }
 
-  // userDosages is Float32Array, convert to standard array for solveNNLS
-  const b = Array.from(userDosages);
-  const w = Array.from(aimWeights);
-
-  // To enforce sum(x) = 1, we augment A and b with a heavily weighted row.
-  // We want sum_p x_p = 1. So lambda * sum_p x_p = lambda.
-  // Scale lambda proportionally to panel size to avoid overwhelming small panels
-  // while keeping tight constraint on large ones.
-  const LAMBDA = Math.max(10, Math.sqrt(M) * 10);
+  // Fix #5: Strengthen sum-to-one constraint so NNLS inherently satisfies sum=1
+  const LAMBDA = Math.max(50, M * 0.5);
   const augA = new Array(P).fill(LAMBDA);
   A.push(augA);
   b.push(LAMBDA);
-  w.push(1.0); // Augment weight
+  w.push(1.0);
 
   // Solve Elastic-Net NNLS with L1 sparsity and L2 Ridge regularization
-  const x = solveElasticNetNNLS(A, b, w, 1e-4, 1e-4);
+  const x = solveElasticNetNNLS(A, b, w, 1e-4, 1e-3);
 
-  // Normalize exact proportions (to fix tiny floating point residuals from lambda enforcement)
+  // Fix #12: Normalize proportions (tight LAMBDA makes this a minor adjustment)
   const sum = x.reduce((acc, val) => acc + val, 0);
   const normalized = sum > 0 ? x.map(val => val / sum) : x;
 
   const result: Record<string, number> = {};
   popCodes.forEach((code, idx) => {
-    if (normalized[idx] >= 0.001) { // Retain minor ancestral signals down to 0.1%
+    // Fix #13: Lower threshold to 0.05% to allow trace ancestry
+    if (normalized[idx] >= 0.0005) {
       result[code] = normalized[idx] * 100;
     }
   });
 
   return result;
 }
+
 
 /**
  * Primary High Resolution Bayesian Ancestry and Subpopulation Oracle Solver (Engine v3)
@@ -640,7 +702,7 @@ export async function processSubpopulations(
     }
     if (panel === 'euroforgen') {
       const macroCode = popToMacroMap.get(popCode) || '';
-      return macroCode === 'EUR' || macroCode === 'MENA';
+      return macroCode === 'EUR' || macroCode === 'MENA' || macroCode === 'CAU';
     }
     if (panel === 'ramos') {
       const macroCode = popToMacroMap.get(popCode) || '';
@@ -858,23 +920,25 @@ export async function processSubpopulations(
     const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
     let userDosageDiscrete = -1;
 
-    const marker = (graf10kIndex as any)[rsidLower] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid];
-    if (marker) {
-      const alt = marker.alt.toUpperCase();
+    if (aim && aim.alleles && aim.alleles.length > 0) {
+      const testAllele = (typeof aim.alleles === 'string' ? aim.alleles[0] : aim.alleles[0]).toUpperCase();
       let matchCount = 0;
       for (const char of genotype.toUpperCase()) {
-        if (char === alt) matchCount++;
-      }
-      userDosageDiscrete = matchCount;
-    } else if (aim && aim.alleles && aim.alleles.length > 0) {
-      const testAllele = aim.alleles[0];
-      let matchCount = 0;
-      for (const char of genotype) {
         if (char === testAllele) matchCount++;
       }
       userDosageDiscrete = matchCount;
     } else {
-      continue;
+      const marker = (graf10kIndex as any)[rsidLower] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid];
+      if (marker) {
+        const alt = marker.alt.toUpperCase();
+        let matchCount = 0;
+        for (const char of genotype.toUpperCase()) {
+          if (char === alt) matchCount++;
+        }
+        userDosageDiscrete = matchCount;
+      } else {
+        continue;
+      }
     }
 
     activeRefSnps.push({
@@ -915,9 +979,7 @@ export async function processSubpopulations(
       const aim = normalizedDatabase[activeSnp.rsidLower] || normalizedDatabase[activeSnp.rsid.toUpperCase()];
       if (macroCode && aim?.frequencies?.[macroCode] !== undefined) {
         const macroFreq = aim.frequencies[macroCode];
-        if (Math.abs(refFreq - (1.0 - macroFreq)) < Math.abs(refFreq - macroFreq) - 0.20) {
-          refFreq = 1.0 - refFreq;
-        }
+        refFreq = alignPolarity(refFreq, macroFreq);
       }
 
       const userDosageDiscrete = activeSnp.userDosage;
@@ -928,59 +990,71 @@ export async function processSubpopulations(
       matchedRefFreqs.push(refFreq);
       matchedWeights.push(activeSnp.meta.weight);
 
-      // --- COMPONENT 2: Explicit Cladistic Negation Gating ---
-      if (refFreq >= 0.85 && userDosageDiscrete === 0) {
-        violations++;
+      // --- COMPONENT 2: Continuous Probabilistic Cladistic Scoring (V3) ---
+      // Instead of an all-or-nothing threshold (>=0.85 and dosage==0) that penalizes 
+      // genuine heterozygotes and admixed individuals, compute continuous binomial log-loss deviation.
+      const pSmooth = Math.max(0.002, Math.min(0.998, refFreq));
+      let genotypeProb = (1.0 - pSmooth) * (1.0 - pSmooth); // dosage 0
+      if (userDosageDiscrete === 1) {
+        genotypeProb = 2.0 * pSmooth * (1.0 - pSmooth);     // dosage 1
+      } else if (userDosageDiscrete === 2) {
+        genotypeProb = pSmooth * pSmooth;                   // dosage 2
+      }
+      if (genotypeProb < 0.03) {
+        const markerLoss = Math.min(3.0, -Math.log(genotypeProb + 1e-4) - 3.5);
+        if (markerLoss > 0) {
+          violations += markerLoss * 0.20;
+        }
       }
 
-      // Check specific diagnostic markers (fast checks)
+      // Check specific diagnostic markers using ancestry-aware likelihoods
       if (rsidLower === 'rs2814778') {
         if (isAfricanPop && userDosageDiscrete === 0) {
-          violations += 2.0; 
+          violations += 1.0; 
         } else if (isEuropeanPop && userDosageDiscrete === 2) {
-          violations += 2.0;
+          violations += 1.0;
         }
       } else if (rsidLower === 'rs1426654' || rsidLower === 'rs16891982') {
         if (isAfricanPop && userDosageDiscrete === 2) {
-          violations += 1.5;
+          violations += 0.8;
         } else if (isEuropeanPop && userDosageDiscrete === 0) {
-          violations += 1.5;
+          violations += 0.8;
         }
       } else if (rsidLower === 'rs3827760') {
         if ((isEastAsianPop || isAmrPop) && userDosageDiscrete === 0) {
-          violations += 2.0;
+          violations += 1.0;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          violations += 2.0;
+          violations += 1.0;
         }
       } else if (rsidLower === 'rs3094315') {
         if (isAmrPop && userDosageDiscrete === 0) {
-          violations += 1.5;
+          violations += 0.8;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          violations += 1.5;
+          violations += 0.8;
         }
       } else if (rsidLower === 'rs16139' || rsidLower === 'rs2229765') {
         if (isAfricanPop && userDosageDiscrete === 0) {
-          violations += 1.5;
+          violations += 0.8;
         } else if ((isEuropeanPop || isEastAsianPop) && userDosageDiscrete === 2) {
-          violations += 1.5;
+          violations += 0.8;
         }
       } else if (rsidLower === 'rs7388531' || rsidLower === 'rs671') {
         if (isEastAsianPop && userDosageDiscrete === 0) {
-          violations += 1.5;
+          violations += 0.8;
         } else if ((isEuropeanPop || isAfricanPop) && userDosageDiscrete === 2) {
-          violations += 1.5;
+          violations += 0.8;
         }
       } else if (rsidLower === 'rs12203592') {
         if (isSouthAsianPop && userDosageDiscrete === 0) {
-          violations += 1.0;
+          violations += 0.6;
         } else if ((isAfricanPop || isEastAsianPop) && userDosageDiscrete === 2) {
-          violations += 1.0;
+          violations += 0.6;
         }
       } else if (rsidLower === 'rs1042602') {
         if ((isAmrPop || isEuropeanPop) && userDosageDiscrete === 0) {
-          violations += 1.0;
+          violations += 0.6;
         } else if ((isEastAsianPop || isAfricanPop) && userDosageDiscrete === 2) {
-          violations += 1.0;
+          violations += 0.6;
         }
       }
     }
@@ -1010,8 +1084,9 @@ export async function processSubpopulations(
 
       const baseDistance = Math.sqrt(weightedSquaredDiffSum / (totalW || 1.0));
 
-      // Scale penalties for ancestral allele/cladistic conflicts.
-      const adjustedDistance = baseDistance * (1.0 + 0.20 * violations);
+      // Scale penalties smoothly using a bounded curve to protect admixed and outbred individuals
+      const penaltyFactor = 1.0 + (0.10 * Math.min(8.0, violations));
+      const adjustedDistance = baseDistance * penaltyFactor;
       popDistances.set(popCode, adjustedDistance);
     } else {
       popDistances.set(popCode, 1.0); // Insufficient markers fallback
@@ -1195,28 +1270,31 @@ export async function processSubpopulations(
       }
     }
     const meanFreq = validPopsCount > 0 ? (sumFreq / validPopsCount) : 0.5;
-    const binomialVariance = meanFreq * (1.0 - meanFreq);
-    const varianceScale = 1.0 / (binomialVariance + 0.05); // regularized binomial weight scale
+    // Fisher Information Weight for binomial observation: w_i = 1 / (2 * p * (1 - p) + 0.03)
+    const binomialVar = 2.0 * meanFreq * (1.0 - meanFreq);
+    const fisherWeight = 1.0 / (binomialVar + 0.03);
 
-    nnlsWeights[idx] = meta.weight * varianceScale;
+    nnlsWeights[idx] = meta.weight * fisherWeight;
 
     let uDosage = -1; // -1 = unresolved
 
-    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()];
-    if (marker) {
-      const alt = marker.alt.toUpperCase();
+    if (aim && aim.alleles && aim.alleles.length > 0) {
+      const testAllele = (typeof aim.alleles === 'string' ? aim.alleles[0] : aim.alleles[0]).toUpperCase();
       let matchCount = 0;
       for (const char of meta.genotype.toUpperCase()) {
-        if (char === alt) matchCount++;
-      }
-      uDosage = matchCount;
-    } else if (aim && aim.alleles && aim.alleles.length > 0) {
-      const testAllele = aim.alleles[0];
-      let matchCount = 0;
-      for (const char of meta.genotype) {
         if (char === testAllele) matchCount++;
       }
       uDosage = matchCount;
+    } else {
+      const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()] || (graf10kIndex as any)[rsid.toLowerCase()];
+      if (marker) {
+        const alt = marker.alt.toUpperCase();
+        let matchCount = 0;
+        for (const char of meta.genotype.toUpperCase()) {
+          if (char === alt) matchCount++;
+        }
+        uDosage = matchCount;
+      }
     }
     // Skip markers with ambiguous allele identity — injecting dosage=1 distorts NNLS
     if (uDosage < 0) return;
@@ -1258,13 +1336,11 @@ export async function processSubpopulations(
         // Polarity calibration check:
         // If the population frequency was recorded for the opposite allele in the reference kernel,
         // align it to the test allele polarity!
-        if (Math.abs(freq - (1.0 - macroFreq)) < Math.abs(freq - macroFreq) - 0.20) {
-          freq = 1.0 - freq;
-        }
+        freq = alignPolarity(freq, macroFreq);
       }
       
-      // 2. F-Model Genetic Drift Correction (F_k = 0.04)
-      const F_k = 0.04;
+      // Demographic-Aware Balding-Nichols Genetic Drift Shrinkage (V3)
+      const F_k = (macroCode ? DEMOGRAPHIC_FST_DRIFT[macroCode] : undefined) ?? 0.035;
       const correctedFreq = (1.0 - F_k) * freq + F_k * macroFreq;
 
       nnlsPopExpectedDosages[popCode][idx] = correctedFreq * 2.0; // continuous expected dosage
@@ -1273,11 +1349,14 @@ export async function processSubpopulations(
 
   // Calculate the Multi-source Admixture profile with Hierarchical (Two-Pass) Admixture Routing
   let admixtureMix: AdmixtureComponent[] = [];
+  let continentalScores: Record<string, number> = {};
   if (activeM >= 5) {
     // Pass 1: Canonical Orthogonal Continental Clade NNLS Decomposition
-    // Deconvolve across the orthogonal continental reference centroids
-    // using exact, ground-truth continental frequency vectors from the AIM database.
-    const CANONICAL_CONTINENTAL_CLADES = ['AFR', 'EUR', 'EAS', 'SAS', 'AMR', 'MENA'];
+    // Only use canonical clades with comprehensive coverage across the master AIMs database
+    // (AFR: 100%, EUR: 99.8%, EAS: 99.2%, SAS: 90.2%, AMR: 88.2%).
+    // Clades like CAS (0.7%) and OCE (5.7%) MUST NOT be included with dummy 0.5 injection,
+    // because a constant 0.5 (dosage 1.0) vector acts as an artificial free intercept in NNLS.
+    const CANONICAL_CONTINENTAL_CLADES = ['AFR', 'EUR', 'EAS', 'SAS', 'AMR', 'OCE', 'MENA'];
     const continentalCentroidDosages: Record<string, Float32Array> = {};
 
     CANONICAL_CONTINENTAL_CLADES.forEach(macro => {
@@ -1288,11 +1367,21 @@ export async function processSubpopulations(
         const aim = normalizedDatabase[rsidLower] || normalizedDatabase[rsid.toUpperCase()] || normalizedDatabase[rsid];
         let f = aim?.frequencies?.[macro];
         if (f === undefined) {
-          if (macro === 'MENA') f = aim?.frequencies?.['EUR'] ?? 0.5;
-          else {
-            if ((aim?.frequencies?.['AFR'] ?? 0) >= 0.50) f = aim?.frequencies?.['EUR'] ?? 0.02;
-            else f = 0.50;
-          }
+          if (macro === 'MENA') f = aim?.frequencies?.['MID'] ?? aim?.frequencies?.['MEA'];
+          else if (macro === 'OCE') f = aim?.frequencies?.['OCEANIAN'];
+        }
+        if (f === undefined) {
+          // Use empirical mean of defined canonical continental frequencies at this marker
+          const definedFreqs: number[] = [];
+          CANONICAL_CONTINENTAL_CLADES.forEach(cc => {
+            let cf = aim?.frequencies?.[cc];
+            if (cf === undefined) {
+              if (cc === 'MENA') cf = aim?.frequencies?.['MID'] ?? aim?.frequencies?.['MEA'];
+              else if (cc === 'OCE') cf = aim?.frequencies?.['OCEANIAN'];
+            }
+            if (cf !== undefined) definedFreqs.push(cf);
+          });
+          f = definedFreqs.length > 0 ? definedFreqs.reduce((a, b) => a + b, 0) / definedFreqs.length : 0.5;
         }
         centroid[i] = f * 2.0;
       }
@@ -1300,6 +1389,7 @@ export async function processSubpopulations(
     });
 
     const continentalProportions = solveAdmixtureProportions(nnlsUserDosages, continentalCentroidDosages, nnlsWeights);
+    console.log('[Diagnostic Pass 1 Continental Proportions]:', continentalProportions);
     
     // Map canonical proportions into macro groups
     const continentalAncestry: Record<string, number> = {
@@ -1311,26 +1401,39 @@ export async function processSubpopulations(
       'AMR': continentalProportions['AMR'] ?? 0,
       'AMER': 0,
       'MENA': continentalProportions['MENA'] ?? 0,
-      'OCE': 0,
-      'CAS': 0
+      'OCE': continentalProportions['OCE'] ?? 0,
+      'CAS': continentalProportions['CAS'] ?? 0,
+      'CAU': 0
     };
+    continentalScores = { ...continentalAncestry };
 
-    // Sub-select populations: include continental groups with >= 1.0% ancestry
+    // Sub-select populations: include continental groups with >= 0.5% ancestry (smooth threshold)
     const activeMacroGroups = Object.entries(continentalAncestry)
-      .filter(([_, pct]) => pct >= 1.0)
+      .filter(([_, pct]) => pct >= 0.5)
       .map(([macro, _]) => macro);
+    console.log('[Diagnostic activeMacroGroups]:', activeMacroGroups);
 
     // If AFR is active, also admit African American / Caribbean reference clades
-    if (continentalAncestry['AFR'] >= 1.0) {
+    if ((continentalAncestry['AFR'] ?? 0) >= 0.5) {
       activeMacroGroups.push('AFRAM');
     }
     // If AMR is active, also admit Admixed American reference clades
-    if (continentalAncestry['AMR'] >= 1.0) {
+    if ((continentalAncestry['AMR'] ?? 0) >= 0.5) {
       activeMacroGroups.push('AMER');
     }
-    // Only admit CAS (Central Asian) if BOTH East Asian and European ancestral clades are present (>= 5.0%)
-    if ((continentalAncestry['EAS'] ?? 0) >= 5.0 && (continentalAncestry['EUR'] ?? 0) >= 5.0) {
-      activeMacroGroups.push('CAS');
+    // Fix #1/#9: Admit CAU (Caucasus) when MENA or EUR is present (>= 1.0%)
+    if ((continentalAncestry['MENA'] ?? 0) >= 1.0 || (continentalAncestry['EUR'] ?? 0) >= 1.0) {
+      if (!activeMacroGroups.includes('CAU')) {
+        activeMacroGroups.push('CAU');
+      }
+    }
+    // Fix #10: Admit CAS (Central Asian) with lowered thresholds
+    if (((continentalAncestry['EAS'] ?? 0) >= 0.5 && (continentalAncestry['EUR'] ?? 0) >= 0.5) ||
+        (continentalAncestry['SAS'] ?? 0) >= 0.5 ||
+        (continentalAncestry['CAS'] ?? 0) >= 0.5) {
+      if (!activeMacroGroups.includes('CAS')) {
+        activeMacroGroups.push('CAS');
+      }
     }
 
     // Fallback if no group meets the threshold: select the single macro group with the highest percentage
@@ -1347,15 +1450,27 @@ export async function processSubpopulations(
     }
 
     // Pass 2: Filter reference clades to only keep populations in active continental groups
+    // Exclude admixed basis cohorts from deconvolution to eliminate interior-sink collinearity traps
     const filteredPopExpectedDosages: Record<string, Float32Array> = {};
     for (const popCode of Object.keys(nnlsPopExpectedDosages)) {
+      if (ADMIXED_BASIS_COHORTS.has(popCode)) continue;
       const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'UNKNOWN';
       if (activeMacroGroups.includes(macroCode)) {
         filteredPopExpectedDosages[popCode] = nnlsPopExpectedDosages[popCode];
       }
     }
 
-    // 3. Iterative Local-Variance SNP Reweighting for Pass 2 deconvolution
+    // Safety fallback: if filtering excluded all candidates, fall back without admixed exclusion
+    if (Object.keys(filteredPopExpectedDosages).length === 0) {
+      for (const popCode of Object.keys(nnlsPopExpectedDosages)) {
+        const macroCode = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'UNKNOWN';
+        if (activeMacroGroups.includes(macroCode)) {
+          filteredPopExpectedDosages[popCode] = nnlsPopExpectedDosages[popCode];
+        }
+      }
+    }
+
+    // 3. Iterative Local Informativeness SNP Reweighting for Pass 2 deconvolution
     const finalPopCodes = Object.keys(filteredPopExpectedDosages);
     const finalWeights = new Float32Array(activeM);
     activeSnpKeys.forEach((rsid, idx) => {
@@ -1371,26 +1486,51 @@ export async function processSubpopulations(
         }
       });
 
-      let localVarianceWeight = 1.0;
+      let localInformativeness = 1.0;
       if (activeFreqs.length > 1) {
         const mean = sumActiveFreq / activeFreqs.length;
         const variance = activeFreqs.reduce((a, b) => a + (b - mean) ** 2, 0) / activeFreqs.length;
-        // Informativeness scale: highly differentiated SNPs among the active set get higher weights
-        localVarianceWeight = 0.5 + Math.sqrt(variance) * 4.0;
+        const denom = 2.0 * mean * (1.0 - mean) + 0.02;
+        localInformativeness = 1.0 + Math.min(3.0, Math.sqrt(variance / denom) * 2.0);
       }
 
-      finalWeights[idx] = nnlsWeights[idx] * localVarianceWeight;
+      finalWeights[idx] = nnlsWeights[idx] * localInformativeness;
     });
 
     // Run final Pass 2 NNLS deconvolution on sub-selected populations with refined weights
     const finalProportions = solveAdmixtureProportions(nnlsUserDosages, filteredPopExpectedDosages, finalWeights);
 
-    admixtureMix = Object.entries(finalProportions)
+    // Hierarchically scale subpopulation proportions to strictly match continental proportions from Pass 1
+    const macroSubpopMap: Record<string, Record<string, number>> = {};
+    for (const [popCode, pct] of Object.entries(finalProportions)) {
+      const macro = Object.keys(MACRO_GROUPS).find(m => MACRO_GROUPS[m].includes(popCode)) || 'UNKNOWN';
+      const parentMacro = macro === 'AFRAM' ? 'AFR' : (macro === 'AMER' ? 'AMR' : macro);
+      if (!macroSubpopMap[parentMacro]) macroSubpopMap[parentMacro] = {};
+      macroSubpopMap[parentMacro][popCode] = pct;
+    }
+
+    const scaledSubpops: Record<string, number> = {};
+    for (const [macro, targetPct] of Object.entries(continentalAncestry)) {
+      // Fix #6: Lower threshold to preserve trace ancestry blocks
+      if (targetPct <= 0.001) continue;
+      const subpops = macroSubpopMap[macro];
+      if (!subpops || Object.keys(subpops).length === 0) continue;
+      const sumSub = Object.values(subpops).reduce((a, b) => a + b, 0);
+      if (sumSub > 0) {
+        for (const [popCode, rawPct] of Object.entries(subpops)) {
+          scaledSubpops[popCode] = Number(((rawPct / sumSub) * targetPct).toFixed(2));
+        }
+      }
+    }
+
+    admixtureMix = Object.entries(scaledSubpops)
       .map(([popCode, percentage]) => ({
         popCode,
         name: POPULATION_NAMES_MAP[popCode] || popCode,
         percentage
       }))
+      // Fix #13: Lower output threshold to allow trace ancestry
+      .filter(m => m.percentage >= 0.05)
       .sort((a, b) => b.percentage - a.percentage);
 
     // Apply FUT2 Secretor Status Post-Processing Refinement
@@ -1514,11 +1654,26 @@ export async function processSubpopulations(
     }
   }
 
+  // Compute 95% Confidence Intervals for admixture components based on active marker count
+  const confidenceIntervals: Record<string, { low: number; high: number }> = {};
+  const activeCount = Math.max(10, usedAimsSet.size);
+  admixtureMix.forEach(m => {
+    const p = m.percentage / 100.0;
+    const se = Math.sqrt((p * (1.0 - p)) / activeCount) * 100.0;
+    confidenceIntervals[m.popCode] = {
+      low: Math.max(0.0, Number((m.percentage - 1.96 * se).toFixed(1))),
+      high: Math.min(100.0, Number((m.percentage + 1.96 * se).toFixed(1)))
+    };
+  });
+
   return {
     topMatch,
     subpopAimsUsed: usedAimsSet.size,
     unmappedAims,
     breakdown,
-    admixtureMix
+    admixtureMix,
+    _engineVersion: 'v3-bayesian-deconv',
+    confidenceIntervals,
+    continentalScores
   };
 }

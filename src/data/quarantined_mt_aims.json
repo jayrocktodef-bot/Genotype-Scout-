@@ -1,0 +1,135 @@
+{
+  "rs28358280": {
+    "rsid": "rs28358280",
+    "chromosome": "MT",
+    "position": 10550,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L0",
+    "description": "Defining marker for mtDNA Haplogroup L0, the oldest maternal lineage, found primarily in Southern African Khoe-San populations."
+  },
+  "rs28358281": {
+    "rsid": "rs28358281",
+    "chromosome": "MT",
+    "position": 10586,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L1",
+    "description": "Defining marker for mtDNA Haplogroup L1, common in Central and West Africa."
+  },
+  "rs28358282": {
+    "rsid": "rs28358282",
+    "chromosome": "MT",
+    "position": 10810,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L2",
+    "description": "Defining marker for mtDNA Haplogroup L2, the most common and diverse African maternal lineage."
+  },
+  "rs28358283": {
+    "rsid": "rs28358283",
+    "chromosome": "MT",
+    "position": 10819,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "T"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L3",
+    "description": "Defining marker for mtDNA Haplogroup L3, the lineage from which all non-African maternal haplogroups descended."
+  },
+  "rs28358284": {
+    "rsid": "rs28358284",
+    "chromosome": "MT",
+    "position": 11177,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "A"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L4",
+    "description": "Defining marker for mtDNA Haplogroup L4, common in East Africa."
+  },
+  "rs28358285": {
+    "rsid": "rs28358285",
+    "chromosome": "MT",
+    "position": 11299,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "C"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L5",
+    "description": "Defining marker for mtDNA Haplogroup L5, a rare basal lineage found in East Africa."
+  },
+  "rs28358286": {
+    "rsid": "rs28358286",
+    "chromosome": "MT",
+    "position": 11674,
+    "region": "African",
+    "color": "#2ECC71",
+    "alleles": [
+      "G"
+    ],
+    "frequencies": {
+      "AFR": 0.8
+    },
+    "subFrequencies": {},
+    "deepFrequencies": {},
+    "weight": 1,
+    "gene": "mtDNA",
+    "trait": "Haplogroup L6",
+    "description": "Defining marker for mtDNA Haplogroup L6, found primarily in Ethiopia and Yemen."
+  }
+}

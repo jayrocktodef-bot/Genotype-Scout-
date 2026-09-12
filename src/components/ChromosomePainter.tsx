@@ -4,7 +4,7 @@ const CHROMOSOME_LENGTHS: Record<string, number> = {
   "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259, "6": 170805979, 
   "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422, "11": 135086622, "12": 133851895, 
   "13": 115169878, "14": 107349540, "15": 102520552, "16": 90354753, "17": 83257441, "18": 80373285, 
-  "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895
+  "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895, "Y": 57227415
 };
 
 const POP_COLORS: Record<string, string> = {
@@ -55,7 +55,13 @@ const KEY_GENES: GeneAnnotation[] = [
   { symbol: 'OPN1LW', name: 'OPN1LW / OPN1MW', chrom: 'X', pos: 154189205, icon: '👁️', trait: 'Red-Green Color Vision Opsin' },
   { symbol: 'G6PD', name: 'G6PD A-/Med', chrom: 'X', pos: 154536002, icon: '🦠', trait: 'G6PD Favism & Malaria Resistance' },
   { symbol: 'F8', name: 'Factor VIII', chrom: 'X', pos: 154835788, icon: '🩸', trait: 'Factor VIII Blood Coagulation' },
+  { symbol: 'SRY', name: 'SRY Testis-Determining', chrom: 'Y', pos: 2780000, icon: '🚹', trait: 'Male Sex Determination' },
+  { symbol: 'AMELY', name: 'AMELY Amelogenin', chrom: 'Y', pos: 6860000, icon: '🦷', trait: 'Enamel Development & Forensic Sex ID' },
+  { symbol: 'RPS4Y1', name: 'RPS4Y1 Ribosomal', chrom: 'Y', pos: 2840000, icon: '🧬', trait: 'Y-Linked Protein Translation' },
+  { symbol: 'DAZ1', name: 'DAZ1 Spermatogenesis', chrom: 'Y', pos: 19900000, icon: '🔬', trait: 'Spermatogenesis Cluster (AZFc)' },
 ];
+
+import type { ParentalDifferentiationResult } from '../utils/ancestry/parentalLineageDifferentiator';
 
 interface Segment {
   continent: string;
@@ -69,14 +75,27 @@ interface ChromosomePainterProps {
   width?: number;
   height?: number;
   onSegmentClick?: (chrom: string, strand: 'A' | 'B' | 'Both', segment: Segment, bp: number) => void;
+  parentalDifferentiation?: ParentalDifferentiationResult;
+  isMale?: boolean;
+  selectedChromFilter?: string;
+  onChromFilterChange?: (chrom: string) => void;
 }
 
 export const ChromosomePainter = ({ 
   segments = {}, 
-  onSegmentClick 
+  onSegmentClick,
+  parentalDifferentiation,
+  isMale = false,
+  selectedChromFilter: propsChromFilter,
+  onChromFilterChange
 }: ChromosomePainterProps) => {
   const [activeContinentFilter, setActiveContinentFilter] = useState<string | null>(null);
-  const [selectedChromFilter, setSelectedChromFilter] = useState<string>('ALL');
+  const [internalChromFilter, setInternalChromFilter] = useState<string>('ALL');
+  const selectedChromFilter = propsChromFilter !== undefined ? propsChromFilter : internalChromFilter;
+  const handleChromFilterChange = (val: string) => {
+    setInternalChromFilter(val);
+    onChromFilterChange?.(val);
+  };
   const [showGenePins, setShowGenePins] = useState<boolean>(true);
   const [hoveredSegment, setHoveredSegment] = useState<{
     chrom: string;
@@ -108,8 +127,10 @@ export const ChromosomePainter = ({
 
   const sortedChroms = useMemo(() => {
     const list = Object.keys(CHROMOSOME_LENGTHS).sort((a, b) => {
-      if (a === 'X') return 1;
-      if (b === 'X') return -1;
+      if (a === 'X') return b === 'Y' ? -1 : 1;
+      if (b === 'X') return a === 'Y' ? 1 : -1;
+      if (a === 'Y') return 1;
+      if (b === 'Y') return -1;
       return parseInt(a, 10) - parseInt(b, 10);
     });
     if (selectedChromFilter !== 'ALL') {
@@ -124,13 +145,13 @@ export const ChromosomePainter = ({
     );
   }, [segments]);
 
-  // Total Mb painted per continent across all chromosomes
+  // Total Mb painted per continent across all chromosomes (excluding Y haploid patrilineal strand)
   const continentStats = useMemo(() => {
     const totals: Record<string, number> = {};
     let grandTotalMb = 0;
 
     Object.entries(segments).forEach(([chrom, chromData]) => {
-      if (!chromData) return;
+      if (!chromData || chrom === 'Y') return;
       const strandA: Segment[] = Array.isArray(chromData) ? chromData : (chromData.strandA || []);
       const strandB: Segment[] = Array.isArray(chromData) ? [] : (chromData.strandB || []);
 
@@ -157,6 +178,35 @@ export const ChromosomePainter = ({
   return (
     <div className="w-full bg-[#0d0e10]/90 border border-white/5 rounded-3xl p-4 sm:p-6 shadow-2xl relative space-y-5">
       
+      {/* Parental Lineage Differentiation Banner */}
+      {parentalDifferentiation && (
+        <div className="p-3.5 sm:p-4 bg-teal-950/30 rounded-2xl border border-teal-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-teal-500/20 text-teal-300 border border-teal-500/30">
+                {parentalDifferentiation.method === 'MALE_CHR_X_ANCHOR' 
+                  ? 'Male Chr X Anchor (Ground Truth)' 
+                  : parentalDifferentiation.method === 'UNIPARENTAL_HAPLOGROUP_ALIGNMENT'
+                  ? 'mtDNA / Y-DNA Admixture Anchor'
+                  : parentalDifferentiation.method === 'VCF_EXPLICIT_PHASING'
+                  ? 'VCF Phased Haplotypes'
+                  : 'Statistical Micro-Phasing'}
+              </span>
+              <span className="text-slate-400 font-bold text-[11px]">
+                Confidence: <span className="text-teal-400 font-mono font-black">{Math.round(parentalDifferentiation.confidence * 100)}%</span>
+              </span>
+            </div>
+            <p className="text-slate-300 text-[11px] leading-relaxed">
+              {parentalDifferentiation.summary}
+            </p>
+          </div>
+          <div className="flex sm:flex-col items-end gap-1 shrink-0 text-[10px] font-mono text-slate-400">
+            <span className="text-teal-300 font-bold">Top Track: Strand A (Maternal)</span>
+            <span className="text-indigo-300 font-bold">Bottom Track: Strand B (Paternal)</span>
+          </div>
+        </div>
+      )}
+
       {/* Ancestry Percentage Summary Header */}
       {continentStats.length > 0 && (
         <div className="p-4 bg-slate-900/60 rounded-2xl border border-white/5 space-y-3">
@@ -196,7 +246,7 @@ export const ChromosomePainter = ({
           <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Chromosome Focus:</span>
           <select
             value={selectedChromFilter}
-            onChange={(e) => setSelectedChromFilter(e.target.value)}
+            onChange={(e) => handleChromFilterChange(e.target.value)}
             className="bg-slate-950 text-teal-300 font-bold text-xs px-3 py-1.5 rounded-lg border border-teal-500/30 focus:outline-none cursor-pointer"
           >
             <option value="ALL">All Chromosomes (1–X)</option>
@@ -301,80 +351,102 @@ export const ChromosomePainter = ({
                   </div>
                 )}
 
-                {/* Strand A (Maternal) */}
-                <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
-                  {strandA.length === 0 ? (
-                    <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
-                      {chromData ? 'No Coverage' : 'No Data'}
-                    </div>
-                  ) : (
-                    strandA.map((seg, i) => {
-                      const startPos = i === 0 ? 0 : seg.start;
-                      const endPos = i === strandA.length - 1 ? length : seg.end;
-                      const pctLeft = (startPos / length) * 100;
-                      const pctWidth = ((endPos - startPos) / length) * 100;
-                      const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
-                      return (
-                        <div
-                          key={i}
-                          className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
-                          style={{
-                            left: `${pctLeft}%`,
-                            width: `${Math.max(0.2, pctWidth)}%`,
-                            backgroundColor: POP_COLORS[seg.continent] || '#475569',
-                            opacity: isMuted ? 0.15 : 1,
-                            zIndex: isMuted ? 1 : 2
-                          }}
-                          onMouseMove={(e) => handleMouseMove(e, chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos })}
-                          onMouseLeave={handleMouseLeave}
-                          onClick={() => onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
-                        />
-                      );
-                    })
-                  )}
-                  {hasStrands && (
-                    <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
-                      Strand A (Maternal)
-                    </div>
-                  )}
-                </div>
-
-                {/* Strand B (Paternal) */}
-                {hasStrands && (
-                  <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
-                    {strandB.length === 0 ? (
-                      <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
-                        {chromData ? 'No Coverage' : 'No Data'}
-                      </div>
-                    ) : (
-                      strandB.map((seg, i) => {
-                        const startPos = i === 0 ? 0 : seg.start;
-                        const endPos = i === strandB.length - 1 ? length : seg.end;
-                        const pctLeft = (startPos / length) * 100;
-                        const pctWidth = ((endPos - startPos) / length) * 100;
-                        const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
-                        return (
-                          <div
-                            key={i}
-                            className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
-                            style={{
-                              left: `${pctLeft}%`,
-                              width: `${Math.max(0.2, pctWidth)}%`,
-                              backgroundColor: POP_COLORS[seg.continent] || '#475569',
-                              opacity: isMuted ? 0.15 : 1,
-                              zIndex: isMuted ? 1 : 2
-                            }}
-                            onMouseMove={(e) => handleMouseMove(e, chrom, 'B', { ...seg, start: startPos, end: endPos })}
-                            onMouseLeave={handleMouseLeave}
-                            onClick={() => onSegmentClick?.(chrom, 'B', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
-                          />
-                        );
-                      })
-                    )}
-                    <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
-                      Strand B (Paternal)
+                {/* Female XX Not Applicable State for Chromosome Y */}
+                {chrom === 'Y' && (!isMale || (chromData as any)?.isApplicable === false) ? (
+                  <div className="relative w-full h-9 bg-slate-950/60 rounded-md overflow-hidden border border-dashed border-white/10 flex items-center justify-center">
+                    <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                      <span className="text-xs">♀️</span>
+                      <span>Not Applicable (Female XX — No Chromosome Y)</span>
                     </div>
                   </div>
+                ) : (
+                  <>
+                    {/* Strand A (Maternal) */}
+                    <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                      {strandA.length === 0 ? (
+                        <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
+                          {chrom === 'Y' ? 'Hemizygous (No Maternal Y — Male XY)' : chromData ? 'No Coverage' : 'No Data'}
+                        </div>
+                      ) : (
+                        strandA.map((seg, i) => {
+                          const startPos = i === 0 ? 0 : seg.start;
+                          const endPos = i === strandA.length - 1 ? length : seg.end;
+                          const pctLeft = (startPos / length) * 100;
+                          const pctWidth = ((endPos - startPos) / length) * 100;
+                          const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                          return (
+                            <div
+                              key={i}
+                              className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
+                              style={{
+                                left: `${pctLeft}%`,
+                                width: `${Math.max(0.2, pctWidth)}%`,
+                                backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                                opacity: isMuted ? 0.15 : 1,
+                                zIndex: isMuted ? 1 : 2
+                              }}
+                              onMouseMove={(e) => handleMouseMove(e, chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos })}
+                              onMouseLeave={handleMouseLeave}
+                              onClick={() => onSegmentClick?.(chrom, hasStrands ? 'A' : 'Both', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
+                            />
+                          );
+                        })
+                      )}
+                      {hasStrands && (
+                        <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest">
+                          {chrom === 'Y' 
+                            ? 'Hemizygous (No Maternal Y)' 
+                            : (chrom === 'X' || chrom === '23') && isMale 
+                              ? 'Strand A (Maternal X — 100% Maternal Inheritance)' 
+                              : 'Strand A (Maternal)'}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Strand B (Paternal) */}
+                    {hasStrands && (
+                      <div className="relative w-full h-4 bg-slate-950 rounded-md overflow-hidden border border-white/5">
+                        {strandB.length === 0 ? (
+                          <div className="absolute inset-0 bg-slate-800/20 flex items-center justify-center text-[7px] font-black text-slate-500 uppercase tracking-widest pointer-events-none dark:text-slate-400">
+                            {(chrom === 'X' || chrom === '23') && isMale ? 'Hemizygous (No Paternal X — Male XY)' : chrom === 'Y' ? 'No Y Coverage' : chromData ? 'No Coverage' : 'No Data'}
+                          </div>
+                        ) : (
+                          strandB.map((seg, i) => {
+                            const startPos = i === 0 ? 0 : seg.start;
+                            const endPos = i === strandB.length - 1 ? length : seg.end;
+                            const pctLeft = (startPos / length) * 100;
+                            const pctWidth = ((endPos - startPos) / length) * 100;
+                            const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                            return (
+                              <div
+                                key={i}
+                                className="absolute top-0 bottom-0 cursor-pointer transition-all duration-300 hover:brightness-125"
+                                style={{
+                                  left: `${pctLeft}%`,
+                                  width: `${Math.max(0.2, pctWidth)}%`,
+                                  backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                                  opacity: isMuted ? 0.15 : 1,
+                                  zIndex: isMuted ? 1 : 2
+                                }}
+                                onMouseMove={(e) => handleMouseMove(e, chrom, 'B', { ...seg, start: startPos, end: endPos })}
+                                onMouseLeave={handleMouseLeave}
+                                onClick={() => onSegmentClick?.(chrom, 'B', { ...seg, start: startPos, end: endPos }, (startPos + endPos) / 2)}
+                              />
+                            );
+                          })
+                        )}
+                        <div className="absolute left-2 top-0.5 text-[8px] font-black uppercase text-white/40 pointer-events-none tracking-widest flex items-center gap-1.5">
+                          <span>
+                            {chrom === 'Y' 
+                              ? `Strand B (Paternal Y Lineage — MSY${(chromData as any)?.haplogroup ? `: ${(chromData as any).haplogroup}` : ''})`
+                              : (chrom === 'X' || chrom === '23') && isMale 
+                                ? 'Hemizygous (No Paternal X)' 
+                                : 'Strand B (Paternal)'}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </div>

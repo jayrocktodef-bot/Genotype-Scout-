@@ -54,7 +54,8 @@ const POP_CODE_TO_REGION: Record<string, string> = {
   'YRI': 'AFR', 'LWK': 'AFR', 'GWD': 'AFR', 'MSL': 'AFR', 'ESN': 'AFR', 'ASW': 'AFR', 'ACB': 'AFR',
   'CHB': 'EAS', 'CHS': 'EAS', 'CDX': 'EAS', 'KHV': 'EAS', 'JPT': 'EAS',
   'GIH': 'SAS', 'PJL': 'SAS', 'BEB': 'SAS', 'STU': 'SAS', 'ITU': 'SAS',
-  'PUR': 'AMR', 'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR'
+  'PUR': 'AMR', 'CLM': 'AMR', 'MXL': 'AMR', 'PEL': 'AMR',
+  'OCE': 'OCE', 'PAP': 'OCE', 'BOU': 'OCE', 'sgdp_papuan': 'OCE', 'sgdp_bougainville': 'OCE', 'sgdp_australian': 'OCE', 'sgdp_hawaiian': 'OCE', 'sgdp_maori': 'OCE'
 };
 import { CONTINENT_TO_CODE } from '../constants/genotypeConstants';
 import { isSubpopMatch } from '../utils/genotypeUtils';
@@ -118,6 +119,9 @@ const QUADRUPLE_WEIGHT_MARKERS = new Set([
   "rs2567608", "rs3814134", "rs11803701", "rs2279744", "rs2032457", "rs7327831",
   "rs2284553", "rs174537", "rs2033028", "rs10735788", "rs62588102", "rs45523335",
   "rs11578877", "rs373863828",
+  // Siberian vs. East Asian vs. Native American high-Fst diagnostic anchors
+  "rs80356779", "rs2298080", "rs1800414", "rs174546", "rs738409", "rs75493593",
+  "rs7328514", "rs11868035", "rs10166942", "rs13175330",
   // Full regional tiebreaker grid (rs1001 through rs1270)
   ...Array.from({ length: 270 }, (_, i) => `rs${1001 + i}`)
 ]);
@@ -258,7 +262,10 @@ export function runAncestryInference(
       'AFR': 'African',
       'EAS': 'East Asian',
       'SAS': 'South Asian',
-      'AMR': 'Native American'
+      'AMR': 'Native American',
+      'OCE': 'Oceanian',
+      'MID': 'Middle Eastern',
+      'MENA': 'Middle Eastern'
     };
     const matchedContinent = SUPER_POP_TO_CONTINENT[info.super_population_code] || 'European';
     
@@ -479,6 +486,10 @@ export function runAncestryInference(
           if (aim && aim.frequencies) {
             if (code && aim.frequencies[code] !== undefined) {
               freq = aim.frequencies[code];
+            } else if (continent === 'Oceanian' && aim.frequencies['OCEANIAN'] !== undefined) {
+              freq = aim.frequencies['OCEANIAN'];
+            } else if (continent === 'Middle Eastern' && (aim.frequencies['MID'] !== undefined || aim.frequencies['MENA'] !== undefined)) {
+              freq = aim.frequencies['MID'] ?? aim.frequencies['MENA'];
             } else if (continent === 'North African' && aim.frequencies['MENA'] !== undefined) {
               freq = aim.frequencies['MENA'];
             } else if (continent === 'Middle Eastern' && aim.frequencies['NAFR'] !== undefined) {
@@ -487,6 +498,10 @@ export function runAncestryInference(
           } else if (marker.frequencies) {
             if (code && marker.frequencies[code] !== undefined) {
               freq = marker.frequencies[code];
+            } else if (continent === 'Oceanian' && marker.frequencies['OCEANIAN'] !== undefined) {
+              freq = marker.frequencies['OCEANIAN'];
+            } else if (continent === 'Middle Eastern' && (marker.frequencies['MID'] !== undefined || marker.frequencies['MENA'] !== undefined)) {
+              freq = marker.frequencies['MID'] ?? marker.frequencies['MENA'];
             } else if (continent === 'Native American' && marker.frequencies['Native_American_unadmixed'] !== undefined) {
               freq = marker.frequencies['Native_American_unadmixed'];
             } else if (continent === 'Native American' && marker.frequencies['AMR_admixed'] !== undefined) {
@@ -1038,7 +1053,8 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
 
   let onnxResult: OnnxInferenceOutput | null = null;
   try {
-    const onnxFeatures = extractOnnxFeatureMatrix(imputedGenotype);
+    const metadata = await getClassifierMetadata();
+    const onnxFeatures = extractOnnxFeatureMatrix(imputedGenotype, metadata.features, metadata.altAlleles);
     onnxResult = await runOnnxClassifier(onnxFeatures);
   } catch (e) {
     console.warn('Could not run ONNX classifier inside calculateAncestryOracle:', e);
@@ -1050,42 +1066,110 @@ export async function calculateAncestryOracle(results: any[], yHaploRegion?: str
   };
 }
 
+export interface ClassifierMetadata {
+  version: string;
+  modelType: string;
+  inputName: string;
+  outputNames: string[];
+  n_features: number;
+  n_classes: number;
+  classes: string[];
+  features: string[];
+  altAlleles: string[];
+  validationAccuracy?: number;
+  validationLogLoss?: number;
+}
+
+let classifierMetadataCache: ClassifierMetadata | null = null;
+let classifierMetadataPromise: Promise<ClassifierMetadata> | null = null;
+
+export async function getClassifierMetadata(): Promise<ClassifierMetadata> {
+  if (classifierMetadataCache) return classifierMetadataCache;
+  if (classifierMetadataPromise) return classifierMetadataPromise;
+
+  classifierMetadataPromise = (async () => {
+    try {
+      if (typeof window === 'undefined') {
+        // Node test environment: load directly from public/ folder in workspace
+        const fsLib = 'fs';
+        const pathLib = 'path';
+        const fs = await import(/* @vite-ignore */ fsLib);
+        const path = await import(/* @vite-ignore */ pathLib);
+        const filePath = path.resolve(process.cwd(), 'public/models/genotype_scout_classifier.classes.json');
+        const raw = fs.readFileSync(filePath, 'utf-8');
+        classifierMetadataCache = JSON.parse(raw);
+      } else {
+        // Web browser environment: fetch from static assets
+        const res = await fetch('/models/genotype_scout_classifier.classes.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        classifierMetadataCache = await res.json();
+      }
+      return classifierMetadataCache!;
+    } catch (e) {
+      console.warn('Could not load classifier metadata sidecar, falling back to defaults:', e);
+      return {
+        version: '2.0.0',
+        modelType: 'Multinomial Logistic Regression Softmax',
+        inputName: 'float_input',
+        outputNames: ['output_label', 'probabilities', 'class_labels'],
+        n_features: 1197,
+        n_classes: 7,
+        classes: ['African', 'East_Asian', 'European', 'Indigenous_American', 'Middle_Eastern', 'Oceanian', 'South_Asian'],
+        features: ANCHOR_AIMS.map(a => a.rsid.toLowerCase()).sort().slice(0, 1197),
+        altAlleles: []
+      };
+    }
+  })();
+
+  return classifierMetadataPromise;
+}
+
 // Deterministically get the 1197 feature rsIDs from our candidate aims list
 export function getClassifierFeatureList(): string[] {
+  if (classifierMetadataCache?.features && classifierMetadataCache.features.length === 1197) {
+    return classifierMetadataCache.features;
+  }
   const rsids = ANCHOR_AIMS.map(a => a.rsid.toLowerCase());
   const sorted = Array.from(new Set(rsids)).sort();
   return sorted.slice(0, 1197);
 }
 
 // Convert parsed user genome into standard Float32 array of shape [1, 1197]
-export function extractOnnxFeatureMatrix(userGenotype: Record<string, string>): Float32Array {
-  const featureList = getClassifierFeatureList();
+export function extractOnnxFeatureMatrix(
+  userGenotype: Record<string, string>,
+  customFeatureList?: string[],
+  customAltList?: string[]
+): Float32Array {
+  const featureList = customFeatureList || getClassifierFeatureList();
   const vector = new Float32Array(1197);
   
-  featureList.forEach((rsid, index) => {
-    const rawGeno = userGenotype[rsid];
+  for (let index = 0; index < 1197; index++) {
+    const rsid = featureList[index];
+    if (!rsid) continue;
+    const lowerRsid = rsid.toLowerCase();
+    const rawGeno = userGenotype[rsid] || userGenotype[lowerRsid] || userGenotype[rsid.toUpperCase()];
     if (!rawGeno || rawGeno === '--') {
-      vector[index] = 0.0; // Missing genotype alternative allele count
-      return;
+      vector[index] = 0.0;
+      continue;
     }
     
-    const cleanRsid = rsid.toLowerCase();
-    const aim = extendedAnchorMap.get(cleanRsid);
-    if (aim && aim.alleles && aim.alleles.length > 0) {
-      const alt = aim.alleles[0];
+    const expectedAlt = customAltList?.[index];
+    const aim = extendedAnchorMap.get(lowerRsid);
+    const alt = (expectedAlt || aim?.alleles?.[0])?.toUpperCase();
+    if (alt) {
       let count = 0;
       for (const char of rawGeno) {
-        if (char === alt) count++;
+        if (char.toUpperCase() === alt) count++;
       }
-      vector[index] = count; // range: 0.0, 1.0, or 2.0
+      vector[index] = count;
     } else {
       if (rawGeno[0] !== rawGeno[1]) {
-        vector[index] = 1.0; // Heterozygous
+        vector[index] = 1.0;
       } else {
-        vector[index] = 0.0; // Homozygous reference fallback
+        vector[index] = 0.0;
       }
     }
-  });
+  }
   
   return vector;
 }
@@ -1144,6 +1228,10 @@ export async function runOnnxClassifier(
   snpFeatures: OnnxInferenceInput
 ): Promise<OnnxInferenceOutput> {
   const session = await initializeOnnxModel();
+  const metadata = await getClassifierMetadata();
+  const classNames = metadata?.classes || [
+    'African', 'East_Asian', 'European', 'Indigenous_American', 'Middle_Eastern', 'Oceanian', 'South_Asian'
+  ];
   
   const featuresArray = snpFeatures instanceof Float32Array
     ? snpFeatures
@@ -1156,15 +1244,42 @@ export async function runOnnxClassifier(
   const inputTensor = new ort.Tensor('float32', featuresArray, [1, 1197]);
   
   console.log('🧠 ONNX: Running classification inference...');
-  // Request only output_label to avoid unsupported Web/Node ZipMap conversion failures for scikit-learn classifiers
-  const outputs = await session.run({ float_input: inputTensor }, ['output_label']);
+  const outputs = await session.run({ float_input: inputTensor }, ['output_label', 'probabilities']);
   const predictedLabel = String(outputs.output_label.data[0]);
   
-  console.log(`📡 ONNX Inference complete! Predicted Pop Class: "${predictedLabel}"`);
+  const probData = outputs.probabilities.data as Float32Array;
+  const probabilities: Record<string, number> = {};
+  const topK: { population: string; probability: number }[] = [];
+  
+  for (let i = 0; i < classNames.length; i++) {
+    const pop = classNames[i];
+    const p = probData[i] !== undefined ? Number(probData[i]) : 0;
+    probabilities[pop] = p;
+    topK.push({ population: pop, probability: p });
+  }
+  
+  topK.sort((a, b) => b.probability - a.probability);
+  
+  // Calculate Shannon entropy (in bits)
+  let entropy = 0;
+  for (const item of topK) {
+    if (item.probability > 1e-6) {
+      entropy -= item.probability * Math.log2(item.probability);
+    }
+  }
+  
+  const top1 = topK[0]?.probability ?? 1.0;
+  const top2 = topK[1]?.probability ?? 0.0;
+  const ambiguous = entropy > 1.8 || (top1 - top2 < 0.15);
+  
+  console.log(`📡 ONNX Inference complete! Predicted Pop Class: "${predictedLabel}" (Confidence: ${(top1 * 100).toFixed(1)}%)`);
   
   return {
     population: predictedLabel,
-    confidence: 1.0,
-    probabilities: { [predictedLabel]: 1.0 }
+    confidence: top1,
+    probabilities,
+    topK,
+    entropy,
+    ambiguous
   };
 }

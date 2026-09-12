@@ -17,6 +17,7 @@ import { trackSickleCellHaplotype } from '../utils/ancestry/haplotypeTracker';
 import { calculateAdmixtureCI } from '../utils/statistics/confidenceEngine';
 
 import { CONTINENT_PALETTES, assignContinent } from '../constants/ancestryThemes';
+import { computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
 export { CONTINENT_PALETTES, assignContinent };
 
 export const ModernAncestryOracle = memo(({ 
@@ -44,7 +45,25 @@ export const ModernAncestryOracle = memo(({
     return () => clearTimeout(timer);
   }, []);
 
+  const paintedComposition = useMemo(() => {
+    return computePaintedAncestry(
+      dataset?.analysis?.segments,
+      dataset?.analysis?.subpopulationOracle?.all?.continentalScores || dataset?.analysis?.continentalScores
+    );
+  }, [dataset]);
+
   const rawSubpopulationEntries = useMemo(() => {
+    if (paintedComposition && paintedComposition.items.length > 0) {
+      return paintedComposition.items.map(item => ({
+        popCode: item.code,
+        name: item.name,
+        percentage: item.percentage,
+        mb: item.mb,
+        tracts: item.tracts,
+        color: item.color
+      }));
+    }
+
     const subOracle = dataset?.analysis?.subpopulationOracle || results?.subpopulationOracle;
     const mix = subOracle?.all?.admixtureMix || subOracle?.admixtureMix;
 
@@ -157,13 +176,13 @@ export const ModernAncestryOracle = memo(({
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-3 border-b border-white/5 pb-4">
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-xl sm:text-2xl font-black text-[#F5F6F7] tracking-tight">Ancestry Oracle V3</h2>
+              <h2 className="text-xl sm:text-2xl font-black text-[#F5F6F7] tracking-tight">Painted Ancestry Composition</h2>
               <span className="text-[10px] font-mono uppercase bg-cyan-500/10 text-cyan-400 px-2.5 py-0.5 rounded-full border border-cyan-500/20 font-bold">
-                Bayesian Fisher Deconv
+                Local Ancestry HMM
               </span>
             </div>
             <p className="text-[10px] sm:text-xs font-bold text-[#4599FF] uppercase tracking-widest mt-0.5">
-              Continuous Gating & Fisher Deconvolution
+              Chromosome Painted Regional Tract Composition
             </p>
           </div>
 
@@ -210,9 +229,9 @@ export const ModernAncestryOracle = memo(({
             <div className="flex gap-3 items-center text-[#F5F6F7]">
               <Dna className="w-5 h-5 text-teal-400 shrink-0" />
               <div>
-                <h4 className="font-extrabold text-xs tracking-tight text-white">Hierarchical Admixture Decomposition</h4>
+                <h4 className="font-extrabold text-xs tracking-tight text-white">Chromosomal Local Ancestry Painting</h4>
                 <p className="text-xs text-slate-400 leading-normal max-w-xl">
-                  First solves for orthogonal continental clades, then resolves within-clade subpopulation frequencies with Non-Negative Least Squares to eliminate cross-continental distortion.
+                  Calculates exact ancestral segments and Megabase tract lengths across both maternal and paternal strands of your 22 autosomes using Hidden Markov Model local ancestry smoothing.
                 </p>
               </div>
             </div>
@@ -377,13 +396,14 @@ export const ModernAncestryOracle = memo(({
             {/* Right: Subpopulations Ranked List */}
             <div className="lg:col-span-5 space-y-2.5 max-h-[460px] overflow-y-auto pr-1">
               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">
-                Deconvolved Subpopulations
+                Painted Ancestry Contributions
               </span>
               {rawSubpopulationEntries.map((item, idx) => {
                 const continent = assignContinent(item.name, item.popCode);
                 const theme = CONTINENT_PALETTES[continent] || CONTINENT_PALETTES['Other'];
                 const ci = calculateAdmixtureCI(item.percentage, totalSnps);
                 const isHovered = hoveredSlice?.name === item.name;
+                const mbInfo = (item as any).mb != null ? `${(item as any).mb.toFixed(1)} Mb (${(item as any).tracts} ${(item as any).tracts === 1 ? 'tract' : 'tracts'})` : `[${ci.low}%–${ci.high}%]`;
 
                 return (
                   <div 
@@ -418,7 +438,7 @@ export const ModernAncestryOracle = memo(({
                           {item.percentage.toFixed(1)}%
                         </span>
                         <span className="font-mono text-[9px] text-slate-400 block">
-                          [{ci.low}%–{ci.high}%]
+                          {mbInfo}
                         </span>
                       </div>
                     </div>

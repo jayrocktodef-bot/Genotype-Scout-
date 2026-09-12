@@ -21,7 +21,7 @@ let popRegions: string[] = [];
 let popFrequencies: Float32Array[] = []; // Array of binary arrays
 let rsidToIndexMap: Map<string, number> = new Map();
 
-const CACHE_KEY = 'genotype_scout_matrix_cache_v5_51pop';
+const CACHE_KEY = 'genotype_scout_matrix_cache_v6_oceanian';
 
 export function compileReferenceKernel(): Promise<void> {
   if (isCompiled) return Promise.resolve();

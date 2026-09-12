@@ -10,6 +10,8 @@ export const CONTINENT_META: Record<string, {color: string, icon: string}> = {
   "North African":  {color:"#c084fc", icon:"🏜️"},
   "African-American":{color:"#059669", icon:"🇺🇸"},
   "Admixed American": {color:"#db2777", icon:"🇺🇸"},
+  "Cosmopolitan":   {color:"#95A5A6", icon:"🌐"},
+  "Multi-Way Informative": {color:"#9B59B6", icon:"🔀"},
   "Global":         {color:"#10b981", icon:"🌐"}
 };
 

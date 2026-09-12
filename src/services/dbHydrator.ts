@@ -1,7 +1,7 @@
 // src/services/dbHydrator.ts
 
 const DB_NAME = 'genotype-scout-db';
-const DB_VERSION = 4;
+const DB_VERSION = 5;
 const STORE_NAME = 'aims';
 
 let dbInstance: IDBDatabase | null = null;

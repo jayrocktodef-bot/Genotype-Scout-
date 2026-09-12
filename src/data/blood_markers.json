@@ -201,6 +201,78 @@
         "I": { "prediction": "Positive", "confidence": 0.90, "traitPhenotype": "Likely Rh+" },
         "D": { "prediction": "Negative", "confidence": 0.90, "traitPhenotype": "Likely Rh-" }
       }
+    },
+    "rs28366003": {
+      "gene": "RHD",
+      "reference": "G",
+      "alleles": {
+        "AA": { "prediction": "Negative", "confidence": 0.95, "traitPhenotype": "RHDpsi African Pseudogene (Inactive RHD - Serologically Rh-)" },
+        "GA": { "prediction": "Positive", "confidence": 0.85, "traitPhenotype": "RHDpsi Carrier (One active RHD, one pseudogene)" },
+        "AG": { "prediction": "Positive", "confidence": 0.85, "traitPhenotype": "RHDpsi Carrier (One active RHD, one pseudogene)" },
+        "GG": { "prediction": "Positive", "confidence": 0.92, "traitPhenotype": "Standard RHD (Wildtype / Active)" }
+      }
+    },
+    "rs2298652": {
+      "gene": "RHCE",
+      "reference": "C",
+      "alleles": {
+        "CC": { "prediction": "Positive", "confidence": 0.88, "traitPhenotype": "Likely Rh+" },
+        "CT": { "prediction": "Positive", "confidence": 0.82, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "TC": { "prediction": "Positive", "confidence": 0.82, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "TT": { "prediction": "Negative", "confidence": 0.85, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs3759078": {
+      "gene": "RHD",
+      "reference": "A",
+      "alleles": {
+        "AA": { "prediction": "Positive", "confidence": 0.89, "traitPhenotype": "Likely Rh+" },
+        "AG": { "prediction": "Positive", "confidence": 0.83, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "GA": { "prediction": "Positive", "confidence": 0.83, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "GG": { "prediction": "Negative", "confidence": 0.86, "traitPhenotype": "Likely Rh-" }
+      }
+    },
+    "rs3118454": {
+      "gene": "RHCE",
+      "reference": "T",
+      "alleles": {
+        "TT": { "prediction": "Positive", "confidence": 0.87, "traitPhenotype": "Likely Rh+" },
+        "TC": { "prediction": "Positive", "confidence": 0.80, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "CT": { "prediction": "Positive", "confidence": 0.80, "traitPhenotype": "Likely Rh+ (Carrier)" },
+        "CC": { "prediction": "Negative", "confidence": 0.83, "traitPhenotype": "Likely Rh-" }
+      }
+    }
+  },
+  "extendedSystems": {
+    "Duffy": {
+      "gene": "ACKR1 (DARC)",
+      "primaryMarkers": ["rs12075", "rs2814778"],
+      "description": "Duffy blood group glycoprotein (ACKR1) receptor for chemokine binding and Plasmodium vivax malaria receptor."
+    },
+    "Kell": {
+      "gene": "KEL",
+      "primaryMarkers": ["rs8176058"],
+      "description": "Kell blood group system endopeptidase; KEL1 (K) is highly immunogenic in blood transfusions and pregnancy."
+    },
+    "Kidd": {
+      "gene": "SLC14A1 (JK)",
+      "primaryMarkers": ["rs1058396"],
+      "description": "Urea transporter (UT-B); Kidd antibodies (anti-Jka, anti-Jkb) are notorious for causing delayed hemolytic transfusion reactions."
+    },
+    "Secretor": {
+      "gene": "FUT2",
+      "primaryMarkers": ["rs601338", "rs1047781"],
+      "description": "Alpha-(1,2)-fucosyltransferase responsible for expression of ABH blood group antigens in body fluids and Norovirus susceptibility."
+    },
+    "Diego": {
+      "gene": "SLC4A1 (AE1/Band 3)",
+      "primaryMarkers": ["rs2285644"],
+      "description": "Anion exchanger 1; Dia is an informative anthropological marker prevalent in Indigenous American and East Asian populations."
+    },
+    "MNS": {
+      "gene": "GYPA / GYPB",
+      "primaryMarkers": ["rs7683365", "rs11273308"],
+      "description": "Glycophorin A (M/N) and Glycophorin B (S/s) sialoglycoproteins mediating erythrocyte membrane charge and receptor interactions."
     }
   }
 }

@@ -282,7 +282,13 @@ export class WorkerPoolEngine {
         
         for (let p = 0; p < nPopulations; p++) {
           const popCode = populations[p];
-          const freq = Math.max(0.001, Math.min(0.999, markerData.frequencies[popCode] || 0.01));
+          let rawF = markerData.frequencies[popCode];
+          if (rawF === undefined) {
+            if (popCode === 'MID') rawF = markerData.frequencies['MENA'] ?? markerData.frequencies['MEA'];
+            else if (popCode === 'OCE') rawF = markerData.frequencies['OCEANIAN'] ?? markerData.frequencies['OCE'];
+            else if (popCode === 'AMR') rawF = markerData.frequencies['NAT'] ?? markerData.frequencies['AME'];
+          }
+          const freq = Math.max(0.001, Math.min(0.999, typeof rawF === 'number' ? rawF : 0.01));
           const prob = (allele === targetAllele) ? freq : (1 - freq);
           logProbs[p] += Math.log(prob);
         }

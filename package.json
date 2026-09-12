@@ -1,7 +1,7 @@
 {
   "name": "genotype-scout",
   "private": true,
-  "version": "5.16.1",
+  "version": "5.17.0",
   "type": "module",
   "engines": {
     "node": ">=20.0.0"
@@ -26,7 +26,7 @@
     "test": "vitest run --testTimeout=15000",
     "validate:data": "tsx src/utils/dataValidator.ts",
     "validate:json": "node scripts/validate-data-json.mjs",
-    "prebuild": "node scripts/validate-data-json.mjs",
+    "prebuild": "node scripts/validate-data-json.mjs && npm run validate:data",
     "build:yphylo": "tsx scripts/build-y-phylotree.ts"
   },
   "dependencies": {

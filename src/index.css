@@ -407,4 +407,113 @@ html:not(.dark) .tactile-3d-card:active {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
+/* ==========================================================================
+   8-Bit / 16-Bit Retro Arcade & Cyber-Lab Utilities
+   ========================================================================== */
+
+.font-arcade {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-terminal {
+  font-family: 'VT323', monospace;
+}
+
+.font-pixel {
+  font-family: 'Silkscreen', monospace;
+}
+
+/* Authentic double-offset pixel drop shadow */
+.pixel-shadow-sm {
+  box-shadow: 2px 2px 0 0 #05070a, 2px 2px 0 1px #1e2a3a;
+}
+
+.pixel-shadow {
+  box-shadow: 4px 4px 0 0 #05070a, 4px 4px 0 1px #1e2a3a;
+}
+
+.pixel-shadow-cyan {
+  box-shadow: 4px 4px 0 0 #05070a, 4px 4px 0 1px #4fe3ff, 0 0 16px rgba(79, 227, 255, 0.2);
+}
+
+.pixel-shadow-green {
+  box-shadow: 4px 4px 0 0 #05070a, 4px 4px 0 1px #6bff9e, 0 0 16px rgba(107, 255, 158, 0.2);
+}
+
+.pixel-shadow-amber {
+  box-shadow: 4px 4px 0 0 #05070a, 4px 4px 0 1px #ffd23f, 0 0 16px rgba(255, 210, 63, 0.25);
+}
+
+/* Dither overlay patterns */
+.dither-grid {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(107, 255, 158, 0.05) 0px,
+    rgba(107, 255, 158, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.dither-dots {
+  background-image: radial-gradient(rgba(79, 227, 255, 0.12) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* Phosphor and Neon Glows */
+.glow-phosphor-text {
+  text-shadow: 0 0 6px rgba(107, 255, 158, 0.6), 0 0 12px rgba(107, 255, 158, 0.3);
+}
+
+.glow-cyan-text {
+  text-shadow: 0 0 6px rgba(79, 227, 255, 0.6), 0 0 12px rgba(79, 227, 255, 0.3);
+}
+
+.glow-magenta-text {
+  text-shadow: 0 0 6px rgba(255, 79, 216, 0.6), 0 0 12px rgba(255, 79, 216, 0.3);
+}
+
+.glow-amber-text {
+  text-shadow: 0 0 6px rgba(255, 182, 72, 0.6), 0 0 12px rgba(255, 182, 72, 0.3);
+}
+
+/* CRT Scanline Striping */
+.crt-scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.35)
+  );
+  background-size: 100% 4px;
+}
+
+/* Marquee Scrolling Animation */
+@keyframes arcade-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: arcade-marquee 25s linear infinite;
+}
+
+/* CRT Screen Subtle Flicker */
+@keyframes crt-flicker {
+  0% { opacity: 0.98; }
+  50% { opacity: 1; }
+  52% { opacity: 0.97; }
+  54% { opacity: 1; }
+  80% { opacity: 0.99; }
+  100% { opacity: 0.98; }
+}
+
+.animate-crt-flicker {
+  animation: crt-flicker 0.15s infinite;
+}
+
+
 

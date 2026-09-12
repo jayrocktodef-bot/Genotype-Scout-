@@ -1,27 +1,80 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Upload, Shield, Zap, Lock, Database, Dna, ArrowRight, Info, FileText, Smartphone, Globe, CheckCircle } from 'lucide-react';
+import { 
+  Upload, Shield, Database, Lock, ArrowRight, Dna, 
+  Terminal, Sparkles, Volume2, VolumeX, Monitor, 
+  Disc, Check, AlertCircle, RefreshCw, Layers
+} from 'lucide-react';
+import { SFX } from '../utils/audio/retroSynth';
+import { CRTOverlay } from './retro/CRTOverlay';
+import { RetroDNAHelix } from './retro/RetroDNAHelix';
 
 interface HeroUploadProps {
-  onFiles: (files: FileList) => void;
+  onFiles: (files: FileList | File[]) => void;
   processing: boolean;
   onReset: () => void;
 }
 
-type TabType = 'privacy' | 'scope' | 'install';
+type TabType = 'privacy' | 'database' | 'offline';
 
-const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset }) => {
+const TERMINAL_BOOT_LINES = [
+  '> SYSTEM KERNEL INITIALIZED ...... [0x7F4A] OK',
+  '> LOADING 17,042 PHASED AIMS ...... [KIDD/1000G] OK',
+  '> POPULATION DECONVOLUTION ENGINE .. [MATRIX-K] READY',
+  '> CHROMOSOME Y PHYLOTREE INDEX .... [MSY-TREE] MOUNTED',
+  '> NETWORK EGRESS FIREWALL ......... [AIR-GAPPED: 0 BYTES]',
+  '> CLIENT INDEXEDDB SANDBOX ........ [ISOLATED] OK',
+  '> READY FOR SPECIMEN CARTRIDGE INSERTION ...'
+];
+
+export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragActive, setIsDragActive] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabType>('privacy');
+  const [isMuted, setIsMuted] = useState<boolean>(() => SFX.isMuted());
+  const [crtEnabled, setCrtEnabled] = useState<boolean>(() => {
+    try {
+      const stored = localStorage.getItem('scout_crt_effect');
+      return stored === 'true';
+    } catch {
+      return false;
+    }
+  });
+  const [isLoadingDemo, setIsLoadingDemo] = useState(false);
+  const [bootLineIdx, setBootLineIdx] = useState(0);
+
+  // Cycle simulated terminal lines
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBootLineIdx((prev) => (prev + 1) % TERMINAL_BOOT_LINES.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
+
+  const toggleSound = () => {
+    const nowMuted = SFX.toggleMute();
+    setIsMuted(nowMuted);
+  };
+
+  const toggleCrt = () => {
+    const next = !crtEnabled;
+    setCrtEnabled(next);
+    try {
+      localStorage.setItem('scout_crt_effect', String(next));
+    } catch {}
+    SFX.select();
+  };
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (e.type === "dragenter" || e.type === "dragover") {
-      setIsDragActive(true);
-    } else if (e.type === "dragleave") {
+    if (e.type === 'dragenter' || e.type === 'dragover') {
+      if (!isDragActive) {
+        setIsDragActive(true);
+        SFX.hover();
+      }
+    } else if (e.type === 'dragleave') {
       setIsDragActive(false);
     }
   };
@@ -30,19 +83,21 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
     e.preventDefault();
     e.stopPropagation();
     setIsDragActive(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
       setSelectedFileName(file.name);
+      SFX.cartridgeInsert();
       onFiles(e.dataTransfer.files);
     }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const files = e.target.files;
-      setSelectedFileName(files[0].name);
-      onFiles(files);
+      const file = e.target.files[0];
+      setSelectedFileName(file.name);
+      SFX.cartridgeInsert();
+      onFiles(e.target.files);
       e.target.value = '';
     }
   };
@@ -50,14 +105,39 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
   const handleZoneClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    SFX.select();
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
       fileInputRef.current.click();
     }
   };
 
+  const handleLoadDemoCartridge = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (isLoadingDemo) return;
+
+    try {
+      setIsLoadingDemo(true);
+      SFX.coin();
+      const response = await fetch('/samples/Iberian_Portuguese_hu33FC53.txt');
+      if (!response.ok) throw new Error('Demo sample file not found');
+      const blob = await response.blob();
+      const file = new File([blob], 'Iberian_Portuguese_hu33FC53.txt', { type: 'text/plain' });
+      setSelectedFileName(file.name);
+      SFX.cartridgeInsert();
+      onFiles([file]);
+    } catch (err) {
+      console.error('Could not load demo specimen:', err);
+      SFX.error();
+    } finally {
+      setIsLoadingDemo(false);
+    }
+  };
+
   const handleClearCache = () => {
-    if (window.confirm("This will clear all saved genomic data and force a reload. Continue?")) {
+    SFX.select();
+    if (window.confirm("PURGE LOCAL ROM MEMORY & CACHE?\n\nThis resets all IndexedDB genomes and unregisters client service workers.")) {
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
           for(let registration of registrations) { registration.unregister(); }
@@ -75,11 +155,11 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
   };
 
   return (
-    <div className="min-h-[85vh] flex flex-col items-center justify-center py-12 px-6 text-center animate-fade-up relative overflow-hidden">
-      {/* Background ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-teal-500/10 to-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="min-h-[90vh] flex flex-col items-center justify-start py-8 px-4 sm:px-6 relative overflow-hidden bg-[#05070a] text-slate-200 select-none">
+      {/* CRT Scanline & Phosphor Overlay */}
+      <CRTOverlay enabled={crtEnabled} />
 
-      {/* Hidden File Input placed outside dropzone container to avoid nested click bubbling */}
+      {/* Hidden File Input */}
       <input 
         type="file" 
         ref={fileInputRef} 
@@ -89,258 +169,409 @@ const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset })
         multiple
       />
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl w-full relative z-10"
-      >
-        {/* Curated Reference Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 text-teal-600 dark:text-teal-300 rounded-full text-[11px] font-black uppercase tracking-[0.2em] mb-8 ring-1 ring-teal-500/20 shadow-sm animate-pulse-soft">
-          <Database className="w-3.5 h-3.5" /> 17,000+ Phased Genomic Markers Active
-        </div>
+      <div className="max-w-5xl w-full relative z-10 space-y-6">
         
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-slate-800 dark:text-slate-100 mb-6 leading-[1.1] text-gradient">
-          Decrypt Your DNA <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-400">100% Privately.</span>
-        </h1>
-        
-        <p className="text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Upload raw autosomal data. Genotype Scout decodes your genetic composition <span className="text-slate-800 dark:text-slate-200 font-bold underline decoration-teal-400 decoration-2 underline-offset-4">entirely inside your browser</span>.
-        </p>
-
-        {/* Drag & Drop Zone */}
-        <motion.div
-          onDragEnter={handleDrag}
-          onDragOver={handleDrag}
-          onDragLeave={handleDrag}
-          onDrop={handleDrop}
-          onClick={handleZoneClick}
-          whileHover={{ scale: 1.01 }}
-          whileTap={{ scale: 0.99 }}
-          className={`relative max-w-2xl mx-auto mb-12 p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border-2 border-dashed cursor-pointer transition-all duration-300 overflow-hidden ${
-            isDragActive 
-              ? 'border-teal-500 bg-teal-500/5 dark:bg-teal-950/20 shadow-[0_0_30px_rgba(20,184,166,0.15)] scale-[1.02]' 
-              : 'border-slate-200 dark:border-slate-850 bg-white/40 dark:bg-slate-900/30 backdrop-blur-md hover:border-teal-400 hover:shadow-lg dark:hover:bg-slate-900/50 shadow-sm'
-          }`}
-        >
-          {/* Animated corner decorations */}
-          <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-slate-300 dark:border-slate-700 rounded-tl-sm pointer-events-none" />
-          <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-slate-300 dark:border-slate-700 rounded-tr-sm pointer-events-none" />
-          <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-slate-300 dark:border-slate-700 rounded-bl-sm pointer-events-none" />
-          <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-slate-300 dark:border-slate-700 rounded-br-sm pointer-events-none" />
-
-          <div className="flex flex-col items-center justify-center py-6">
-            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
-              isDragActive ? 'bg-teal-500 text-white rotate-12 scale-110 shadow-lg shadow-teal-500/30' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
-            }`}>
-              <Upload className="w-8 h-8" />
+        {/* =========================================================================
+            1. TOP ARCADE MARQUEE & SYSTEM TOGGLES
+            ========================================================================= */}
+        <header className="bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow rounded-none p-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          {/* Marquee Title with Blinking Coin LED */}
+          <div className="flex items-center gap-2.5 overflow-hidden w-full sm:w-auto">
+            <span className="w-3 h-3 bg-[#6bff9e] shadow-[0_0_8px_#6bff9e] animate-pulse shrink-0 inline-block" />
+            <div className="font-arcade text-[10px] sm:text-xs text-[#6bff9e] glow-phosphor-text tracking-wider truncate">
+              GENOTYPE SCOUT ▸ CYBER-LAB TERMINAL v5.17
             </div>
-            
-            <h3 className="text-xl font-extrabold text-slate-800 dark:text-slate-200 mb-2">
-              Drag and drop your DNA file here
-            </h3>
-            
-            <p className="text-sm text-slate-400 dark:text-slate-500 mb-6 max-w-sm">
-              Supports <strong className="text-slate-600 dark:text-slate-300 font-semibold">.txt, .csv, or .zip</strong> raw datasets
-            </p>
-            
-            <span className="px-6 py-3 bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 font-black rounded-full text-xs uppercase tracking-widest transition-all shadow-md">
-              Select File Manually
-            </span>
-          </div>
-        </motion.div>
-
-        {/* Decluttered Interactive Info Panel */}
-        <div className="max-w-3xl mx-auto mt-16 bg-white/40 dark:bg-slate-900/20 border border-slate-200/50 dark:border-slate-800/80 backdrop-blur-md rounded-[2.5rem] p-6 sm:p-8 shadow-xl text-left">
-          {/* Tab Navigation */}
-          <div className="flex border-b border-slate-200/50 dark:border-slate-850 pb-4 mb-6 overflow-x-auto gap-2">
-            <button
-              onClick={() => setActiveTab('privacy')}
-              className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all whitespace-nowrap ${
-                activeTab === 'privacy' 
-                  ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-sm' 
-                  : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
-              }`}
-            >
-              🛡️ Privacy Sandbox
-            </button>
-            <button
-              onClick={() => setActiveTab('scope')}
-              className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all whitespace-nowrap ${
-                activeTab === 'scope' 
-                  ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-sm' 
-                  : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
-              }`}
-            >
-              🌍 Reference Scope
-            </button>
-            <button
-              onClick={() => setActiveTab('install')}
-              className={`px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all whitespace-nowrap ${
-                activeTab === 'install' 
-                  ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-sm' 
-                  : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
-              }`}
-            >
-              📱 PWA Offline Setup
-            </button>
           </div>
 
-          {/* Tab Content Panels */}
-          <div className="min-h-[220px]">
-            <AnimatePresence mode="wait">
-              {activeTab === 'privacy' && (
-                <motion.div
-                  key="privacy"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="space-y-6"
-                >
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div>
-                      <h4 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 mb-1 flex items-center gap-1.5 text-teal-500">
-                        <Shield className="w-4 h-4" /> Local Compute
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">
-                        Uses browser-native FileReader API to parse files directly inside sandboxed RAM. Processing runs in an isolated thread worker.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 mb-1 flex items-center gap-1.5 text-emerald-500">
-                        <Database className="w-4 h-4" /> Client Database
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">
-                        Optional saving of results uses standard browser IndexedDB storage, protected by local origin sandboxing on your drive.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 mb-1 flex items-center gap-1.5 text-indigo-500">
-                        <Lock className="w-4 h-4" /> Open Verification
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">
-                        Open developer console (F12) Network Tab prior to drop. Verifiable zero byte server calls confirm absolute offline design.
-                      </p>
-                    </div>
-                  </div>
+          {/* Scrolling Telemetry Marquee Ticker */}
+          <div className="hidden lg:flex flex-1 mx-4 overflow-hidden bg-[#05070a] border border-[#1e2a3a] py-1 px-3">
+            <div className="animate-marquee font-terminal text-[#4fe3ff] text-sm tracking-widest uppercase">
+              ★ 100% AIR-GAPPED DNA SEQUENCE DECODER ★ ZERO SERVER EGRESS ★ 17,000+ PHASED AIM MARKERS ACTIVE ★ 8/16-BIT RETRO ARCHITECTURE ★ INSERT SPECIMEN CARTRIDGE TO BEGIN ★&nbsp;
+            </div>
+          </div>
 
-                  {/* Flow pipeline */}
-                  <div className="p-4 bg-slate-100/40 dark:bg-slate-900/40 border border-slate-200/40 dark:border-slate-800/40 rounded-2xl flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-                    <div className="flex items-center gap-2">
-                      <FileText className="w-4 h-4 text-slate-400" /> <span className="font-mono text-slate-650 dark:text-slate-300">RAW_DNA.txt</span>
-                    </div>
-                    <ArrowRight size={14} className="text-slate-350 dark:text-slate-650 rotate-90 sm:rotate-0" />
-                    <div className="flex items-center gap-2 text-teal-600 dark:text-teal-400 font-bold">
-                      <Dna className="w-4 h-4 animate-pulse-soft" /> Web Worker Sandbox
-                    </div>
-                    <ArrowRight size={14} className="text-slate-350 dark:text-slate-650 rotate-90 sm:rotate-0" />
-                    <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold">
-                      <Database className="w-4 h-4" /> Local IndexedDB Storage
-                    </div>
-                  </div>
-                </motion.div>
+          {/* Quick Retro Toggles: Sound & CRT */}
+          <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
+            <button
+              onClick={toggleSound}
+              onMouseEnter={() => SFX.hover()}
+              className={`px-2.5 py-1 text-[10px] font-pixel uppercase border transition-all flex items-center gap-1.5 ${
+                !isMuted 
+                  ? 'bg-[#141b26] text-[#6bff9e] border-[#6bff9e]/60 shadow-[0_0_8px_rgba(107,255,158,0.2)]' 
+                  : 'bg-[#05070a] text-slate-500 border-[#1e2a3a]'
+              }`}
+              title="Toggle Retro 8-Bit Audio Effects"
+            >
+              {!isMuted ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5 text-rose-400" />}
+              <span>{isMuted ? 'SFX: OFF' : 'SFX: ON'}</span>
+            </button>
+
+            <button
+              onClick={toggleCrt}
+              onMouseEnter={() => SFX.hover()}
+              className={`px-2.5 py-1 text-[10px] font-pixel uppercase border transition-all flex items-center gap-1.5 ${
+                crtEnabled 
+                  ? 'bg-[#141b26] text-[#4fe3ff] border-[#4fe3ff]/60 shadow-[0_0_8px_rgba(79,227,255,0.2)]' 
+                  : 'bg-[#05070a] text-slate-500 border-[#1e2a3a]'
+              }`}
+              title="Toggle CRT Scanline Simulation"
+            >
+              <Monitor className="w-3.5 h-3.5" />
+              <span>{crtEnabled ? 'CRT: ON' : 'CRT: OFF'}</span>
+            </button>
+          </div>
+        </header>
+
+        {/* =========================================================================
+            2. HERO TITLE SECTION WITH TWIN PIXEL DNA HELICES
+            ========================================================================= */}
+        <div className="text-center py-4 relative">
+          {/* Flanking DNA Pixel Animations for Desktop */}
+          <div className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 opacity-80">
+            <RetroDNAHelix width={56} height={120} speed={0.04} />
+          </div>
+          <div className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 opacity-80 scale-x-[-1]">
+            <RetroDNAHelix width={56} height={120} speed={0.04} />
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0b1016] border border-[#6bff9e]/40 text-[#6bff9e] text-[10px] font-pixel tracking-widest uppercase mb-4 pixel-shadow-sm">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>PLAYER 1 · ZERO NETWORK STORAGE · AIR-GAPPED</span>
+          </div>
+
+          <h1 className="font-arcade text-2xl sm:text-3xl md:text-5xl text-white tracking-tight leading-snug mb-3">
+            DECRYPT YOUR DNA <br />
+            <span className="text-[#4fe3ff] glow-cyan-text">100% PRIVATELY.</span>
+          </h1>
+
+          <p className="font-terminal text-lg sm:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Mount your raw autosomal file into local RAM. Genotype Scout executes local population genetics <span className="text-[#6bff9e] underline decoration-[#6bff9e] underline-offset-4 font-bold">strictly inside your browser</span>.
+          </p>
+        </div>
+
+        {/* =========================================================================
+            3. MAIN TERMINAL CONSOLE: CARTRIDGE DROPZONE + DIAGNOSTICS HUD
+            ========================================================================= */}
+        <div className="grid lg:grid-cols-12 gap-6">
+          
+          {/* LEFT: BIO-CARTRIDGE INSERTION SLOT (7 cols) */}
+          <div className="lg:col-span-7 bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 sm:p-7 relative flex flex-col justify-between">
+            {/* Corner pixel brackets */}
+            <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#4fe3ff]" />
+            <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#4fe3ff]" />
+            <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#4fe3ff]" />
+            <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#4fe3ff]" />
+
+            {/* Cartridge Slot Header */}
+            <div className="flex items-center justify-between border-b-2 border-[#1e2a3a] pb-3 mb-5">
+              <div className="flex items-center gap-2 font-arcade text-xs text-[#4fe3ff]">
+                <Disc className="w-4 h-4 animate-spin-slow text-[#ff4fd8]" />
+                <span>CARTRIDGE SLOT A</span>
+              </div>
+              <span className="font-pixel text-[9px] uppercase px-2 py-0.5 bg-[#141b26] text-[#6bff9e] border border-[#6bff9e]/30">
+                READY FOR INSERTION
+              </span>
+            </div>
+
+            {/* Physical-Style Cartridge Bevel Dropzone */}
+            <div
+              onDragEnter={handleDrag}
+              onDragOver={handleDrag}
+              onDragLeave={handleDrag}
+              onDrop={handleDrop}
+              onClick={handleZoneClick}
+              onMouseEnter={() => SFX.hover()}
+              className={`relative p-6 sm:p-8 border-2 border-dashed cursor-pointer transition-all duration-200 text-center flex flex-col items-center justify-center ${
+                isDragActive
+                  ? 'border-[#6bff9e] bg-[#6bff9e]/10 shadow-[0_0_30px_rgba(107,255,158,0.3)] scale-[1.01]'
+                  : 'border-[#1e2a3a] bg-[#05070a]/80 hover:border-[#4fe3ff] hover:bg-[#141b26]/50 shadow-inner'
+              }`}
+            >
+              {/* Animated Cartridge Reader Graphic */}
+              <div className={`w-16 h-16 mb-4 flex items-center justify-center border-2 transition-transform duration-200 ${
+                isDragActive
+                  ? 'border-[#6bff9e] bg-[#6bff9e]/20 text-[#6bff9e] scale-110 shadow-[0_0_15px_#6bff9e]'
+                  : 'border-[#1e2a3a] bg-[#141b26] text-[#4fe3ff]'
+              }`}>
+                <Upload className="w-8 h-8 animate-bounce-slow" />
+              </div>
+
+              <h3 className="font-arcade text-sm sm:text-base text-white mb-2 leading-relaxed">
+                DROP RAW DNA SPECIMEN HERE
+              </h3>
+
+              <p className="font-terminal text-base sm:text-xl text-slate-400 mb-6 max-w-sm">
+                Supports <strong className="text-[#6bff9e]">.TXT, .CSV, .ZIP, .GZ, .VCF</strong> raw chip files
+              </p>
+
+              {/* Chunky Arcade Button: Select File Manually */}
+              <button
+                type="button"
+                onClick={handleZoneClick}
+                onMouseEnter={() => SFX.hover()}
+                className="font-arcade text-xs px-6 py-3 bg-[#4fe3ff] hover:bg-[#6bff9e] text-[#05070a] uppercase tracking-wider font-black pixel-shadow transition-transform active:translate-y-1 active:shadow-none"
+              >
+                SELECT FILE MANUALLY
+              </button>
+
+              {selectedFileName && (
+                <div className="mt-4 font-terminal text-sm text-[#6bff9e] bg-[#05070a] border border-[#6bff9e]/40 px-3 py-1.5 flex items-center gap-2">
+                  <Check className="w-4 h-4 text-[#6bff9e]" />
+                  <span>LOADED: {selectedFileName}</span>
+                </div>
               )}
+            </div>
 
-              {activeTab === 'scope' && (
-                <motion.div
-                  key="scope"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="space-y-6"
-                >
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 mb-1 flex items-center gap-1.5 text-teal-500">
-                        🌍 Global Reference Panels
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">
-                        Matches your raw genetics against reference panels optimized to isolate distinct Native American subclades and broad global components.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-extrabold text-sm text-slate-800 dark:text-slate-200 mb-1 flex items-center gap-1.5 text-indigo-500">
-                        ⚡ Admixture Deconvolution
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">
-                        Implements mathematical deconvolution matrices to distinguish sub-regional African, European, Asian, and indigenous populations.
-                      </p>
-                    </div>
-                  </div>
+            {/* Instant Demo Specimen CTA */}
+            <div className="mt-5 pt-4 border-t border-[#1e2a3a] flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="flex items-center gap-2 text-slate-400 font-terminal text-base">
+                <span className="w-2 h-2 rounded-full bg-[#ffd23f] animate-ping shrink-0" />
+                <span>No file on hand? Try the bundled Portuguese specimen:</span>
+              </div>
 
-                  {/* Provider List */}
-                  <div className="p-4 bg-slate-50/50 dark:bg-slate-900/20 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl text-center">
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 block mb-2">
-                      Optimized for industry standard exports
-                    </span>
-                    <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 dark:text-slate-400 font-bold">
-                      <span className="font-mono">23andMe</span>
-                      <span>AncestryDNA</span>
-                      <span>MyHeritage</span>
-                      <span className="font-mono">FamilyTreeDNA</span>
-                    </div>
-                  </div>
+              <button
+                type="button"
+                onClick={handleLoadDemoCartridge}
+                onMouseEnter={() => SFX.hover()}
+                disabled={isLoadingDemo}
+                className="w-full sm:w-auto font-arcade text-[10px] px-4 py-2.5 bg-[#ffd23f] hover:bg-amber-300 text-[#05070a] uppercase font-black pixel-shadow-amber transition-transform active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-2"
+              >
+                {isLoadingDemo ? (
+                  <>
+                    <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                    <span>READING ROM...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>🪙 INSERT COIN: LOAD DEMO</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
 
-                  {/* Research Disclosure */}
-                  <div className="rounded-2xl border border-amber-200/60 dark:border-amber-900/30 bg-amber-50/40 dark:bg-amber-950/10 backdrop-blur-sm p-4 flex items-start gap-3">
-                    <Info className="w-4 h-4 text-amber-600 dark:text-amber-500 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="text-[10px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-1">
-                        Research &amp; Educational Tool Disclosure
-                      </h4>
-                      <p className="text-xs text-slate-650 dark:text-slate-405 leading-relaxed">
-                        Genotype Scout is a browser-based analysis sandbox. It is not a commercial consumer ethnicity calculator, and its statistical alignments represent likelihood models for educational study. No data ever leaves your device.
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
+          {/* RIGHT: SYSTEM DIAGNOSTICS & TELEMETRY HUD (5 cols) */}
+          <div className="lg:col-span-5 bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 flex flex-col justify-between space-y-4">
+            <div>
+              {/* HUD Header */}
+              <div className="flex items-center justify-between border-b-2 border-[#1e2a3a] pb-2 mb-4">
+                <div className="flex items-center gap-2 font-arcade text-xs text-[#6bff9e]">
+                  <Terminal className="w-4 h-4" />
+                  <span>SYSTEM DIAGNOSTICS</span>
+                </div>
+                <span className="font-pixel text-[9px] text-[#ffd23f] uppercase">
+                  ROM V5.17
+                </span>
+              </div>
 
-              {activeTab === 'install' && (
-                <motion.div
-                  key="install"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="space-y-6"
-                >
-                  <div className="grid md:grid-cols-2 gap-4 text-left">
-                    <div className="p-5 rounded-2xl bg-white/40 dark:bg-slate-900/30 border border-slate-200/50 dark:border-slate-800/80 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
-                      <h4 className="font-bold text-sm text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-                        <span className="text-base">🍏</span> iOS Safari Setup
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">
-                        Open in <strong>Safari</strong>, tap the <strong>Share</strong> button at the bottom, and select <strong>"Add to Home Screen"</strong> to install as an offline-ready application.
-                      </p>
-                    </div>
-                    <div className="p-5 rounded-2xl bg-white/40 dark:bg-slate-900/30 border border-slate-200/50 dark:border-slate-800/80 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
-                      <h4 className="font-bold text-sm text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-                        <span className="text-base">🤖</span> Android Chrome Setup
-                      </h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-455 leading-relaxed">
-                        Open in <strong>Chrome</strong>, tap the <strong>Menu (⋮)</strong> icon at the top right, and select <strong>"Add to Home screen"</strong> to install as an offline-ready application.
-                      </p>
-                    </div>
+              {/* Status List in Classic RPG / Terminal Style */}
+              <div className="space-y-3 font-terminal text-base sm:text-lg">
+                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
+                  <span className="text-slate-400">▸ ROM INTEGRITY:</span>
+                  <span className="text-[#6bff9e] font-bold">████████ PASS</span>
+                </div>
+
+                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
+                  <span className="text-slate-400">▸ PHASED AIMS:</span>
+                  <span className="text-[#4fe3ff] font-bold">17,042 PRELOADED</span>
+                </div>
+
+                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
+                  <span className="text-slate-400">▸ NETWORK SOCKETS:</span>
+                  <div className="flex items-center gap-1.5 text-[#6bff9e]">
+                    <Lock className="w-3.5 h-3.5" />
+                    <span className="font-bold">░░ 0 ░░ (AIR-GAPPED)</span>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                </div>
+
+                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
+                  <span className="text-slate-400">▸ COMPUTE THREAD:</span>
+                  <span className="text-[#ff4fd8] font-bold">WEB WORKER RAM</span>
+                </div>
+
+                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
+                  <span className="text-slate-400">▸ Y-CHROMOSOME MSY:</span>
+                  <span className="text-[#ffd23f] font-bold">UNIPARENTAL ACTIVE</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Zero-Egress Privacy Badge */}
+            <div className="p-3 bg-[#141b26]/70 border border-[#6bff9e]/30 text-xs">
+              <div className="flex items-center gap-2 text-[#6bff9e] font-arcade text-[10px] mb-1">
+                <Shield className="w-3.5 h-3.5" />
+                <span>100% NON-CUSTODIAL</span>
+              </div>
+              <p className="font-terminal text-slate-300 text-sm leading-tight">
+                No telemetry. No accounts. Open DevTools (F12) Network Tab to verify zero HTTP packet transfers during processing.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Subtle Cache Clear Button */}
-        <div className="mt-16 text-center">
+        {/* =========================================================================
+            4. RETRO RPG QUEST LOG / KNOWLEDGE DECK (TABS)
+            ========================================================================= */}
+        <div className="bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 sm:p-6 text-left">
+          {/* Tab Selector Buttons */}
+          <div className="flex flex-wrap gap-2 border-b-2 border-[#1e2a3a] pb-3 mb-5">
+            <button
+              onClick={() => { setActiveTab('privacy'); SFX.select(); }}
+              onMouseEnter={() => SFX.hover()}
+              className={`font-arcade text-[10px] px-3.5 py-2 uppercase border transition-all ${
+                activeTab === 'privacy'
+                  ? 'bg-[#4fe3ff] text-[#05070a] border-[#4fe3ff] font-black pixel-shadow-sm'
+                  : 'bg-[#05070a] text-slate-400 border-[#1e2a3a] hover:text-white'
+              }`}
+            >
+              [1] PRIVACY SANDBOX
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('database'); SFX.select(); }}
+              onMouseEnter={() => SFX.hover()}
+              className={`font-arcade text-[10px] px-3.5 py-2 uppercase border transition-all ${
+                activeTab === 'database'
+                  ? 'bg-[#6bff9e] text-[#05070a] border-[#6bff9e] font-black pixel-shadow-sm'
+                  : 'bg-[#05070a] text-slate-400 border-[#1e2a3a] hover:text-white'
+              }`}
+            >
+              [2] COMPATIBLE KITS
+            </button>
+
+            <button
+              onClick={() => { setActiveTab('offline'); SFX.select(); }}
+              onMouseEnter={() => SFX.hover()}
+              className={`font-arcade text-[10px] px-3.5 py-2 uppercase border transition-all ${
+                activeTab === 'offline'
+                  ? 'bg-[#ffd23f] text-[#05070a] border-[#ffd23f] font-black pixel-shadow-sm'
+                  : 'bg-[#05070a] text-slate-400 border-[#1e2a3a] hover:text-white'
+              }`}
+            >
+              [3] OFFLINE PWA SETUP
+            </button>
+          </div>
+
+          {/* Tab Contents */}
+          <AnimatePresence mode="wait">
+            {activeTab === 'privacy' && (
+              <motion.div
+                key="privacy"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.15 }}
+                className="grid md:grid-cols-3 gap-4 font-terminal text-base sm:text-lg"
+              >
+                <div className="p-3 bg-[#05070a] border border-[#1e2a3a]">
+                  <h4 className="font-arcade text-xs text-[#6bff9e] mb-1.5 flex items-center gap-1.5">
+                    <Shield className="w-3.5 h-3.5" /> RAM WORKER
+                  </h4>
+                  <p className="text-slate-400 leading-snug">
+                    Files are decoded in isolated browser memory. Zero byte chunks are uploaded to any server.
+                  </p>
+                </div>
+                <div className="p-3 bg-[#05070a] border border-[#1e2a3a]">
+                  <h4 className="font-arcade text-xs text-[#4fe3ff] mb-1.5 flex items-center gap-1.5">
+                    <Database className="w-3.5 h-3.5" /> LOCAL STORAGE
+                  </h4>
+                  <p className="text-slate-400 leading-snug">
+                    Results are saved to browser IndexedDB, bounded by local device origin security.
+                  </p>
+                </div>
+                <div className="p-3 bg-[#05070a] border border-[#1e2a3a]">
+                  <h4 className="font-arcade text-xs text-[#ffd23f] mb-1.5 flex items-center gap-1.5">
+                    <Lock className="w-3.5 h-3.5" /> F12 VERIFIED
+                  </h4>
+                  <p className="text-slate-400 leading-snug">
+                    Verifiable air-gap. Disconnect your internet connection after loading the page and it works 100%.
+                  </p>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'database' && (
+              <motion.div
+                key="database"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.15 }}
+                className="space-y-4"
+              >
+                <p className="font-terminal text-slate-300 text-lg">
+                  Genotype Scout automatically detects file headers, builds (GRCh37/hg19 and GRCh38/hg38), and delimiter structures for:
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-arcade text-[10px] text-center">
+                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#4fe3ff]">
+                    <span className="block text-base mb-1">🧬</span>
+                    23ANDME
+                  </div>
+                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#6bff9e]">
+                    <span className="block text-base mb-1">🌲</span>
+                    ANCESTRY DNA
+                  </div>
+                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#ffd23f]">
+                    <span className="block text-base mb-1">📜</span>
+                    MYHERITAGE
+                  </div>
+                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#ff4fd8]">
+                    <span className="block text-base mb-1">🔬</span>
+                    WGS / VCF 4.2+
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'offline' && (
+              <motion.div
+                key="offline"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.15 }}
+                className="grid md:grid-cols-2 gap-4 font-terminal text-lg"
+              >
+                <div className="p-4 bg-[#05070a] border border-[#1e2a3a]">
+                  <h4 className="font-arcade text-xs text-[#4fe3ff] mb-2">
+                    🍏 IOS SAFARI PWA
+                  </h4>
+                  <p className="text-slate-400 leading-snug">
+                    Tap the <strong>Share</strong> button at bottom, then tap <strong>"Add to Home Screen"</strong> for full-screen offline execution.
+                  </p>
+                </div>
+                <div className="p-4 bg-[#05070a] border border-[#1e2a3a]">
+                  <h4 className="font-arcade text-xs text-[#6bff9e] mb-2">
+                    🤖 ANDROID / CHROME PWA
+                  </h4>
+                  <p className="text-slate-400 leading-snug">
+                    Tap the <strong>(⋮) Menu</strong> at top-right, then select <strong>"Install App"</strong> or <strong>"Add to Home Screen"</strong>.
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* =========================================================================
+            5. RETRO TERMINAL BOOT STREAM & CACHE PURGE
+            ========================================================================= */}
+        <div className="bg-[#05070a] border border-[#1e2a3a] p-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 font-terminal text-sm sm:text-base text-[#6bff9e] truncate w-full sm:w-auto">
+            <span className="animate-pulse">▶</span>
+            <span className="tracking-wider">{TERMINAL_BOOT_LINES[bootLineIdx]}</span>
+          </div>
+
           <button
             onClick={handleClearCache}
-            className="px-4 py-2 text-[10px] text-slate-400 dark:text-slate-500 hover:text-rose-500 hover:bg-rose-500/5 transition-all rounded-full font-bold uppercase tracking-wider border border-transparent hover:border-rose-500/20"
+            onMouseEnter={() => SFX.hover()}
+            className="font-arcade text-[9px] text-slate-500 hover:text-rose-400 uppercase tracking-widest transition-colors shrink-0"
           >
-            Clear Local Cache &amp; Reset System
+            [ PURGE ROM BUFFER & CACHE ]
           </button>
         </div>
-      </motion.div>
+
+      </div>
     </div>
   );
 };

@@ -22,7 +22,11 @@ const Navigation: React.FC<NavigationProps> = ({
   isInstallable = false,
 }) => (
   <nav 
-    className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-6 bg-white/90 dark:bg-[#030712]/90 backdrop-blur-xl border-b border-slate-200 dark:border-white/[0.06]" 
+    className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-6 backdrop-blur-xl border-b transition-colors duration-200 ${
+      !hasResults 
+        ? 'bg-[#05070a]/95 text-white border-[#1e2a3a]' 
+        : 'bg-white/90 dark:bg-[#030712]/90 border-slate-200 dark:border-white/[0.06]'
+    }`} 
     style={{ paddingTop: 'env(safe-area-inset-top)' }}
   >
     {/* Logo */}
@@ -33,7 +37,7 @@ const Navigation: React.FC<NavigationProps> = ({
         className="w-6 h-6 rounded-md ring-1 ring-slate-200 dark:ring-white/10"
       />
       <div className="hidden sm:block">
-        <span className="text-sm font-black tracking-tight text-slate-900 dark:text-white leading-none">Genotype Scout</span>
+        <span className={`text-sm font-black tracking-tight leading-none ${!hasResults ? 'text-white' : 'text-slate-900 dark:text-white'}`}>Genotype Scout</span>
       </div>
     </div>
 

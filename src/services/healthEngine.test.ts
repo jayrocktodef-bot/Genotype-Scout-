@@ -197,7 +197,7 @@ describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
       expect(result.details.abo).toBe('A');
     });
 
-    it('correctly predicts O for homozygous deletion', () => {
+    it('correctly predicts O for homozygous deletion and diplotype O1/O1', () => {
       const genotypes = {
         'rs8176719': 'DD',
         'rs8176747': 'GG'
@@ -205,6 +205,65 @@ describe('Pharmacogenomics (PGx) Engines Core Logic', () => {
 
       const result = calculateBloodType(genotypes);
       expect(result.details.abo).toBe('O');
+      expect(result.aboDetails?.diplotype).toBe('O1/O1');
+    });
+
+    it('correctly phases A1/O1 and B/O1 heterozygous carriers', () => {
+      const aCarrier = calculateBloodType({
+        'rs8176719': 'DI',
+        'rs8176746': 'GG',
+        'rs8176747': 'GG'
+      });
+      expect(aCarrier.details.abo).toBe('A');
+      expect(aCarrier.aboDetails?.diplotype).toBe('A1/O1');
+
+      const bCarrier = calculateBloodType({
+        'rs8176719': 'DI',
+        'rs8176747': 'CC'
+      });
+      expect(bCarrier.details.abo).toBe('B');
+      expect(bCarrier.aboDetails?.diplotype).toBe('B/O1');
+    });
+
+    it('correctly detects Bombay (Oh) phenotype when FUT1 is homozygous null', () => {
+      const bombayGenotypes = {
+        'rs8176719': 'II', // non-O
+        'rs8176746': 'GG', // A antigen present
+        'rs1048570': 'AA'  // FUT1 nonsense stop codon Trp242Ter (null)
+      };
+
+      const result = calculateBloodType(bombayGenotypes);
+      expect(result.details.abo).toBe('Bombay (Oh)');
+      expect(result.aboDetails?.isBombay).toBe(true);
+    });
+
+    it('correctly calculates RHCE C/c, E/e, and Fisher-Race string', () => {
+      const rhGenotypes = {
+        'i4001527': 'II',   // D+
+        'rs676785': 'GA',   // C+ c+
+        'rs28362459': 'TT'  // E- e+
+      };
+
+      const result = calculateBloodType(rhGenotypes);
+      expect(result.details.rhPhenotype).toBe('Positive');
+      expect(result.details.fisherRace).toBe('D+ C+ c+ E- e+');
+    });
+
+    it('correctly calculates extended blood systems (Duffy, Kell, Kidd, Secretor, Diego)', () => {
+      const extendedGenotypes = {
+        'rs2814778': 'CC', // Duffy null (Vivax malaria resistant)
+        'rs8176058': 'TT', // Kell K-k+
+        'rs1058396': 'AA', // Kidd Jk(a+b-)
+        'rs601338': 'AA',  // Secretor non-secretor (se/se)
+        'rs2285644': 'TT'  // Diego Di(a+b-)
+      };
+
+      const result = calculateBloodType(extendedGenotypes);
+      expect(result.extendedSystems?.['Duffy']?.phenotype).toContain('Duffy Null');
+      expect(result.extendedSystems?.['Kell']?.phenotype).toBe('K-k+');
+      expect(result.extendedSystems?.['Kidd']?.phenotype).toBe('Jk(a+b-)');
+      expect(result.extendedSystems?.['Secretor']?.phenotype).toContain('Non-secretor');
+      expect(result.extendedSystems?.['Diego']?.phenotype).toBe('Di(a+b-)');
     });
   });
 });

@@ -77,6 +77,24 @@ export const CONTINENT_PALETTES: Record<string, ContinentPalette> = {
     text: 'text-pink-400',
     icon: '🌊'
   },
+  'Central Asian & Siberian': {
+    base: '#d97706',
+    tints: ['#b45309', '#d97706', '#f59e0b', '#fbbf24', '#fde047'],
+    gradient: 'from-amber-600 to-yellow-500',
+    border: 'border-amber-500/30',
+    bg: 'bg-amber-500/10',
+    text: 'text-amber-400',
+    icon: '🏔️'
+  },
+  'Caucasus': {
+    base: '#8b5cf6',
+    tints: ['#7c3aed', '#8b5cf6', '#a78bfa', '#c4b5fd', '#ddd6fe'],
+    gradient: 'from-violet-600 to-indigo-400',
+    border: 'border-violet-500/30',
+    bg: 'bg-violet-500/10',
+    text: 'text-violet-400',
+    icon: '⛰️'
+  },
   'Other': {
     base: '#c084fc',
     tints: [
@@ -186,13 +204,47 @@ const EXACT_POPULATION_CONTINENT_MAP: Record<string, string> = {
   'mzj': 'Middle Eastern',
   'ymj': 'Middle Eastern',
 
-  // Central Asian, Caucasus, & East Asian references
-  'sgdp_tajik': 'South Asian',
-  'sgdp_hazara': 'South Asian',
-  'hgdp_hazara': 'South Asian',
-  'sgdp_russia_abkhasian': 'Middle Eastern',
-  'sgdp_russia_northossetian': 'Middle Eastern',
-  'sgdp_lezgin': 'Middle Eastern',
+  // Oceanian
+  'oce': 'Oceanian',
+
+  // Central Asian & Siberian
+  'cas': 'Central Asian & Siberian',
+  'sgdp_tajik': 'Central Asian & Siberian',
+  'sgdp_hazara': 'Central Asian & Siberian',
+  'hgdp_hazara': 'Central Asian & Siberian',
+  'sgdp_altaian': 'Central Asian & Siberian',
+  'sgdp_chukchi': 'Central Asian & Siberian',
+  'sgdp_even': 'Central Asian & Siberian',
+  'sgdp_itelmen': 'Central Asian & Siberian',
+  'sgdp_kyrgyz_kyrgyzstan': 'Central Asian & Siberian',
+  'sgdp_mansi': 'Central Asian & Siberian',
+  'sgdp_tubalar': 'Central Asian & Siberian',
+  'sgdp_ulchi': 'Central Asian & Siberian',
+  'sgdp_uyghur': 'Central Asian & Siberian',
+  'sgdp_yakut': 'Central Asian & Siberian',
+  'hgdp_yakut': 'Central Asian & Siberian',
+  'hgdp_uygur': 'Central Asian & Siberian',
+
+  // Caucasus
+  'cau': 'Caucasus',
+  'sgdp_chechen': 'Caucasus',
+  'sgdp_georgian': 'Caucasus',
+  'sgdp_adygei': 'Caucasus',
+  'sgdp_russia_abkhasian': 'Caucasus',
+  'sgdp_russia_northossetian': 'Caucasus',
+  'sgdp_lezgin': 'Caucasus',
+
+  // East Asian
+  'hgdp_daur': 'East Asian',
+  'sgdp_daur': 'East Asian',
+  'hgdp_hezhen': 'East Asian',
+  'sgdp_hezhen': 'East Asian',
+  'hgdp_oroqen': 'East Asian',
+  'sgdp_oroqen': 'East Asian',
+  'hgdp_tujia': 'East Asian',
+  'sgdp_tujia': 'East Asian',
+  'hgdp_xibo': 'East Asian',
+  'sgdp_xibo': 'East Asian',
   'sgdp_tu': 'East Asian',
   'hgdp_tu': 'East Asian',
   'sgdp_china_lahu': 'East Asian',
@@ -278,27 +330,39 @@ export const assignContinent = (name: string, popCode?: string, regionHint?: str
     return 'European';
   }
 
-  // 5. Middle Eastern & Caucasus prefixes & keywords
+  // 5. Middle Eastern prefixes & keywords
   if (
     code.startsWith('sgdp_jew') || code.startsWith('sgdp_samaritan') || code.startsWith('sgdp_druze') ||
     code.startsWith('sgdp_bedouin') || code.startsWith('sgdp_palestinian') || code.startsWith('sgdp_jordanian') ||
     code.startsWith('sgdp_iranian') || code.startsWith('sgdp_turkish') || code.startsWith('sgdp_saharawi') ||
-    code.startsWith('sgdp_mozabite') || code.startsWith('sgdp_armenian') || code.startsWith('sgdp_georgian') ||
-    code.startsWith('sgdp_adygei') || code.startsWith('sgdp_chechen') ||
+    code.startsWith('sgdp_mozabite') || code.startsWith('sgdp_armenian') ||
     code.startsWith('hgdp_bedouin') || code.startsWith('hgdp_druze') ||
-    code.startsWith('hgdp_palestinian') || code.startsWith('hgdp_mozabite') || code.startsWith('hgdp_adygei') ||
+    code.startsWith('hgdp_palestinian') || code.startsWith('hgdp_mozabite') ||
     text.includes('jewish') || text.includes('samaritan') || text.includes('middle eastern') ||
     text.includes('druze') || text.includes('bedouin') || text.includes('palestinian') ||
-    text.includes('arabian') || text.includes('turkish') || text.includes('caucasian') ||
-    text.includes('adygei') || text.includes('armenian') || text.includes('levant') ||
+    text.includes('arabian') || text.includes('turkish') ||
+    text.includes('armenian') || text.includes('levant') ||
     text.includes('mozabite') || text.includes('saharawi') || text.includes('berber') ||
-    text.includes('iranian') || text.includes('iraqi') || text.includes('jordanian') ||
-    text.includes('chechen') || text.includes('georgian')
+    text.includes('tuareg') || text.includes('iranian') || text.includes('iraqi') || text.includes('jordanian')
   ) {
     return 'Middle Eastern';
   }
 
-  // 6. East Asian & Siberian prefixes & keywords
+  // 5b. Caucasus prefixes & keywords
+  if (
+    code.startsWith('sgdp_chechen') || code.startsWith('sgdp_georgian') ||
+    code.startsWith('sgdp_adygei') || code.startsWith('sgdp_russia_abkhasian') ||
+    code.startsWith('sgdp_russia_northossetian') || code.startsWith('sgdp_lezgin') ||
+    code.startsWith('hgdp_adygei') ||
+    code === 'cau' ||
+    text.includes('caucasus') || text.includes('caucasian') || text.includes('chechen') ||
+    text.includes('georgian') || text.includes('adygei') || text.includes('lezgin') ||
+    text.includes('abkhasian') || text.includes('northossetian') || text.includes('ossetian')
+  ) {
+    return 'Caucasus';
+  }
+
+  // 6. East Asian prefixes & keywords
   if (
     code.startsWith('sgdp_han') || code.startsWith('sgdp_japanese') || code.startsWith('sgdp_dai') ||
     code.startsWith('sgdp_korean') || code.startsWith('sgdp_naxi') || code.startsWith('sgdp_yi') ||
@@ -307,20 +371,32 @@ export const assignContinent = (name: string, popCode?: string, regionHint?: str
     code.startsWith('sgdp_ami') || code.startsWith('sgdp_atayal') || code.startsWith('sgdp_dusun') ||
     code.startsWith('sgdp_igorot') || code.startsWith('sgdp_mongola') || code.startsWith('sgdp_daur') ||
     code.startsWith('sgdp_hezhen') || code.startsWith('sgdp_tujia') || code.startsWith('sgdp_xibo') ||
-    code.startsWith('sgdp_yakut') || code.startsWith('sgdp_even') || code.startsWith('sgdp_itelmen') ||
-    code.startsWith('sgdp_oroqen') || code.startsWith('sgdp_mansi') || code.startsWith('sgdp_altaian') ||
-    code.startsWith('sgdp_chukchi') || code.startsWith('sgdp_tubalar') || code.startsWith('sgdp_ulchi') ||
-    code.startsWith('sgdp_uyghur') || code.startsWith('sgdp_kyrgyz') ||
+    code.startsWith('sgdp_oroqen') ||
     code.startsWith('hgdp_han') || code.startsWith('hgdp_japanese') || code.startsWith('hgdp_mongola') ||
     code.startsWith('hgdp_daur') || code.startsWith('hgdp_hezhen') || code.startsWith('hgdp_oroqen') ||
-    code.startsWith('hgdp_tujia') || code.startsWith('hgdp_xibo') || code.startsWith('hgdp_yakut') ||
-    code.startsWith('hgdp_uygur') ||
+    code.startsWith('hgdp_tujia') || code.startsWith('hgdp_xibo') ||
     text.includes('east asian') || text.includes('han') || text.includes('japanese') ||
     text.includes('chinese') || text.includes('korean') || text.includes('dai') || text.includes('tu ') ||
-    text.includes('mongolian') || text.includes('siberian') || text.includes('yakut') ||
-    text.includes('tibetan') || text.includes('uyghur') || text.includes('vietnamese')
+    text.includes('mongolian') || text.includes('tibetan') || text.includes('vietnamese') ||
+    text.includes('daur') || text.includes('hezhen') || text.includes('tujia') || text.includes('xibo') ||
+    text.includes('oroqen')
   ) {
     return 'East Asian';
+  }
+
+  // 6b. Central Asian & Siberian prefixes & keywords
+  if (
+    code.startsWith('sgdp_altaian') || code.startsWith('sgdp_chukchi') || code.startsWith('sgdp_even') ||
+    code.startsWith('sgdp_itelmen') || code.startsWith('sgdp_kyrgyz') || code.startsWith('sgdp_mansi') ||
+    code.startsWith('sgdp_tubalar') || code.startsWith('sgdp_ulchi') || code.startsWith('sgdp_uyghur') ||
+    code.startsWith('sgdp_yakut') || code.startsWith('hgdp_yakut') || code.startsWith('hgdp_uygur') ||
+    code.startsWith('sgdp_hazara') || code.startsWith('hgdp_hazara') || code.startsWith('sgdp_tajik') ||
+    code === 'cas' ||
+    text.includes('central asian') || text.includes('siberian') || text.includes('uyghur') ||
+    text.includes('yakut') || text.includes('hazara') || text.includes('kyrgyz') ||
+    text.includes('altaian') || text.includes('chukchi') || text.includes('tajik')
+  ) {
+    return 'Central Asian & Siberian';
   }
 
   // 7. South Asian prefixes & keywords
@@ -358,6 +434,8 @@ export const assignContinent = (name: string, popCode?: string, regionHint?: str
   if (region) {
     if (region.includes('africa')) return 'African';
     if (region.includes('europe')) return 'European';
+    if (region.includes('caucasus')) return 'Caucasus';
+    if (region.includes('central asia') || region.includes('siberia')) return 'Central Asian & Siberian';
     if (region.includes('east asia') || region === 'asia') return 'East Asian';
     if (region.includes('south asia')) return 'South Asian';
     if (region.includes('america')) return 'Indigenous American';

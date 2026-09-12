@@ -2,17 +2,19 @@ import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import rhData from '../data/blood_markers.json';
 import { calculateBloodType } from '../engines/bloodTypeCalculator';
+import { ExtendedBloodSystemResult } from '../types/blood';
 
 const BLOOD_TYPE_SYSTEMS: Record<string, string[]> = {
   ABO: [
     "rs8176719", "rs8176746", "rs8176747", "rs8176750", "rs8176745", "rs8176741", "rs505922", "rs507666",
-    "rs8176743", "rs8176742", "rs8176744", "rs8176751", "rs1051268", "rs512768", "rs2519093", "rs635634", "rs651007"
+    "rs8176743", "rs8176742", "rs8176744", "rs8176751", "rs1053878", "rs1048570", "rs1048571", "rs1051268", "rs512768", "rs2519093", "rs635634", "rs651007"
   ],
   Rh: [
     "rs590787", "rs676785", "rs28362459", "rs609320", "rs6762788", "rs118204008", "rs606429", 
     "rs11124803", "rs118204007", "rs676185", "rs6784865", "rs17525388", "rs28362463", "rs1053313", 
-    "rs1053315", "rs606428", "rs676839", "rs667500", "rs10456285", "i4001527", "rs121912707",
-    "rs139410370", "rs61750042", "rs121912708", "rs586178", "rs1053348"
+    "rs1053315", "rs606428", "rs676839", "rs667500", "rs10456285", "i4001527", "rs28366003",
+    "rs2298652", "rs3759078", "rs3118454", "rs121912707", "rs139410370", "rs61750042", "rs121912708", 
+    "rs586178", "rs1053348"
   ],
   Duffy: ["rs2814778", "rs12075", "rs34599049"],
   Kidd: ["rs1058396", "rs10755968"],
@@ -55,12 +57,15 @@ const MARKER_METADATA: Record<string, any> = {
   "rs8176750": { effect: "p.Pro234Ser (A/B glycosyltransferase variation)", antigen: "A/B" },
   "rs8176745": { effect: "p.Arg176Gly", antigen: "A/B" },
   "rs8176741": { effect: "p.Met266Leu", antigen: "A" },
-  "rs505922": { effect: "Associated with ABO group plasma levels", antigen: "ABO" },
-  "rs507666": { effect: "Regulatory variant for ABO antigen expression", antigen: "ABO" },
-  "rs8176743": { effect: "Cis-AB glycosyltransferase mutation", antigen: "Cis-AB" },
+  "rs505922": { effect: "Associated with ABO group plasma levels (O tag)", antigen: "ABO" },
+  "rs507666": { effect: "Regulatory variant for ABO antigen expression (O tag)", antigen: "ABO" },
+  "rs8176743": { effect: "Cis-AB dual-specificity glycosyltransferase mutation", antigen: "Cis-AB" },
   "rs8176742": { effect: "A3 subgroup weak expression variant", antigen: "A3" },
   "rs8176744": { effect: "Ax subgroup weak expression variant", antigen: "Ax" },
   "rs8176751": { effect: "B3 subgroup glycosyltransferase variant", antigen: "B3" },
+  "rs1053878": { effect: "p.Pro156Leu (c.467C>T O2 non-deletion allele tag)", antigen: "O2" },
+  "rs1048570": { effect: "FUT1 p.Trp242Ter Bombay (Oh) null stop mutation", antigen: "Bombay (Oh)" },
+  "rs1048571": { effect: "FUT1 p.Gln140Ter Bombay (Oh) null stop mutation", antigen: "Bombay (Oh)" },
   "rs1051268": { effect: "ABO 3' UTR expression modifier", antigen: "ABO" },
   "rs512768": { effect: "ABO promoter region variant", antigen: "ABO" },
   "rs2519093": { effect: "ABO intron regulatory SNP", antigen: "ABO" },
@@ -86,6 +91,10 @@ const MARKER_METADATA: Record<string, any> = {
   "rs667500": { effect: "RHCE 3' region tag", antigen: "Rh" },
   "rs10456285": { effect: "RHD structural deletion tag", antigen: "D" },
   "i4001527": { effect: "RHD gene structural deletion (major determinant of RhD negative status)", antigen: "D" },
+  "rs28366003": { effect: "RHDpsi African pseudogene stop codon (p.Trp203Ter)", antigen: "RHDpsi" },
+  "rs2298652": { effect: "RHCE intron tag", antigen: "Rh" },
+  "rs3759078": { effect: "RHD deletion ensemble tag", antigen: "D" },
+  "rs3118454": { effect: "RHCE structural tag", antigen: "Rh" },
   "rs121912707": { effect: "RHD DIIIa partial D phenotype", antigen: "Partial D" },
   "rs139410370": { effect: "RHD DVa partial D phenotype", antigen: "Partial D" },
   "rs61750042": { effect: "RHD DAU partial D phenotype", antigen: "Partial D" },
@@ -206,15 +215,15 @@ function getIsbtPhenotype(rsid: string, genotype: string, getGenotype: (rsid: st
   switch (rsid) {
     case 'rs12075': {
       const promoter = getGenotype('rs2814778').toUpperCase().replace(/[\s\/_]/g, '');
-      if (promoter === 'CC') return "Fy(a-b-) [Duffy Null - Vivax Malaria Resistant]";
+      if (promoter === 'CC' || promoter === 'GG') return "Fy(a-b-) [Duffy Null - Vivax Malaria Resistant]";
       if (g === 'AA' || g === 'TT') return "Fy(a+b-) [Fya Antigen Only]";
       if (g === 'GG' || g === 'CC') return "Fy(a-b+) [Fyb Antigen Only]";
       if (['AG', 'GA', 'AT', 'TA', 'CG', 'GC', 'CT', 'TC'].includes(g)) return "Fy(a+b+) [Fya & Fyb Antigens Present]";
       return "Fy (Variable)";
     }
     case 'rs2814778': {
-      if (g === 'CC') return "Fy(a-b-) [Erythroid Duffy Silent / Vivax Resistant]";
-      if (g === 'TT') return "Fy(a/b)+ [Normal Duffy Expression]";
+      if (g === 'CC' || g === 'GG') return "Fy(a-b-) [Erythroid Duffy Silent / Vivax Resistant]";
+      if (g === 'TT' || g === 'AA') return "Fy(a/b)+ [Normal Duffy Expression]";
       return "Fy(a/b)+ [Heterozygous Duffy Null Carrier]";
     }
     case 'rs1058396': {
@@ -254,6 +263,11 @@ function getIsbtPhenotype(rsid: string, genotype: string, getGenotype: (rsid: st
       if (g === 'AA' || g === 'TT') return "Non-secretor [se/se / Norovirus Resistant]";
       return "Secretor [Se/Se or Se/se]";
     }
+    case 'rs28366003': {
+      if (g === 'AA' || g === 'TT') return "RHDpsi (Inactive Pseudogene - Rh-)";
+      if (['GA', 'AG', 'CT', 'TC'].includes(g)) return "RHDpsi Carrier";
+      return "Active RHD (Wildtype)";
+    }
     case 'rs76975238': {
       if (g.includes('DEL') || g === 'DD') return "Vel-negative [Vel Null / Rare Transfusion Recipient]";
       return "Vel-positive [Normal Vel Expression]";
@@ -276,7 +290,22 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
   const [activeSystemFilter, setActiveSystemFilter] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const { predictedABO, predictedRh, rhPhenotype, rhConfidence, rawBloodTypeStr, markerResults, coverage } = useMemo(() => {
+  const { 
+    bloodResult,
+    predictedABO, 
+    predictedRh, 
+    rhPhenotype, 
+    rhConfidence, 
+    fisherRace,
+    cAntigen,
+    eAntigen,
+    isRhdPsi,
+    aboDiplotype,
+    extendedSystems,
+    rawBloodTypeStr, 
+    markerResults, 
+    coverage 
+  } = useMemo(() => {
     const rawResults = dataset?.results || [];
     const getGenotype = (rsid: string): string => {
       const val = overrides[rsid] || rawResults.find((r: any) => r.rsid === rsid)?.genotype;
@@ -318,35 +347,7 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
     }
 
     const rawTypeKey = `${bloodCalc.details.abo}${rawRhSymbol}`;
-
-    const r676 = getGenotype("rs676785") || "--";
-    const r6761 = getGenotype("rs676185") || "--";
-    const r283 = getGenotype("rs28362459") || "--";
-    const r606 = getGenotype("rs606429") || "--";
-
-    let ccType = "";
-    if (r676 !== "--") {
-      if (r676 === "GG") ccType = "CC";
-      else if (r676 === "GA" || r676 === "AG") ccType = "Cc";
-      else if (r676 === "AA") ccType = "cc";
-    } else if (r6761 !== "--") {
-      if (r6761 === "CC") ccType = "CC";
-      else if (r6761 === "CT" || r6761 === "TC") ccType = "Cc";
-      else if (r6761 === "TT") ccType = "cc";
-    }
-
-    let eeType = "";
-    if (r283 !== "--") {
-      if (r283 === "CC") eeType = "EE";
-      else if (r283 === "CT" || r283 === "TC") eeType = "Ee";
-      else if (r283 === "TT") eeType = "ee";
-    } else if (r606 !== "--") {
-      if (r606 === "CC") eeType = "EE";
-      else if (r606 === "CT" || r606 === "TC") eeType = "Ee";
-      else if (r606 === "TT") eeType = "ee";
-    }
-
-    const rh = `${dType}${ccType || eeType ? ' (' + ccType + eeType + ')' : ''}`;
+    const rh = `${dType} [${bloodCalc.details.fisherRace || 'D? C? c? E? e?'}]`;
 
     const allMarkers = Object.entries(BLOOD_TYPE_SYSTEMS).flatMap(([system, rsids]) => 
       rsids.map(rsid => {
@@ -381,10 +382,17 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
     const identifiedCount = allMarkers.filter(m => m.genotype !== "--").length;
 
     return { 
+      bloodResult: bloodCalc,
       predictedABO: predicted, 
       predictedRh: rh,
       rhPhenotype: bloodCalc.details.rhPhenotype,
       rhConfidence: bloodCalc.details.rhConfidence || 0,
+      fisherRace: bloodCalc.details.fisherRace || "D? C? c? E? e?",
+      cAntigen: bloodCalc.details.cAntigen || "Unknown",
+      eAntigen: bloodCalc.details.eAntigen || "Unknown",
+      isRhdPsi: bloodCalc.details.isRhdPsi || false,
+      aboDiplotype: bloodCalc.aboDetails,
+      extendedSystems: bloodCalc.extendedSystems || {},
       rawBloodTypeStr: rawTypeKey,
       markerResults: allMarkers, 
       coverage: { identified: identifiedCount, total: allMarkers.length } 
@@ -425,26 +433,46 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-black uppercase tracking-widest">
-              <span>🩸</span> High-Precision Molecular Blood Predictor
+              <span>🩸</span> High-Precision Molecular Blood Profiler & Diplotyper
             </div>
             <div>
               <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">
                 {predictedABO} <span className="text-rose-400">{rawBloodTypeStr.includes('+') ? '+' : rawBloodTypeStr.includes('-') ? '-' : ''}</span>
               </h2>
+              <div className="flex flex-wrap items-center gap-2.5 mt-3">
+                <span className="px-3 py-1 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-200 text-xs font-mono font-black">
+                  Diplotype: {aboDiplotype?.diplotype || "O1/O1"}
+                </span>
+                {aboDiplotype?.subgroup && (
+                  <span className="px-2.5 py-1 rounded-lg bg-slate-900/80 border border-white/10 text-slate-300 text-xs font-bold">
+                    Subgroup: {aboDiplotype.subgroup}
+                  </span>
+                )}
+                {aboDiplotype?.isBombay && (
+                  <span className="px-2.5 py-1 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-black animate-pulse">
+                    ⚠️ Bombay (Oh) Phenotype Masked
+                  </span>
+                )}
+                {isRhdPsi && (
+                  <span className="px-2.5 py-1 rounded-lg bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-black">
+                    🧬 RHDψ Pseudogene Tagged
+                  </span>
+                )}
+              </div>
               <p className="text-sm sm:text-base text-rose-100/80 font-medium mt-3 max-w-xl leading-relaxed">
-                Inferred from multi-locus ISBT antigen surrogates across <span className="text-white font-bold">ABO</span>, <span className="text-white font-bold">RHD</span>, and <span className="text-white font-bold">RHCE</span> gene clusters.
+                Phased across <span className="text-white font-bold">ABO</span> (261delG, A1/A2, O2, FUT1), <span className="text-white font-bold">RHD/RHCE</span> multi-tag ensemble, and 6 clinical blood systems.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-200 text-xs font-bold">
-                Rhesus Status: <span className={rhPhenotype === 'Positive' ? 'text-emerald-400' : 'text-rose-400'}>{predictedRh}</span>
+                Fisher-Race: <span className="font-mono text-emerald-400 font-black">{fisherRace}</span>
               </span>
               <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-200 text-xs font-bold">
-                Rh Confidence: <span className="text-amber-300">{(rhConfidence * 100).toFixed(0)}%</span>
+                Confidence: <span className="text-amber-300">{(rhConfidence * 100).toFixed(0)}%</span>
               </span>
               <span className="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-200 text-xs font-bold">
-                Tested Variants: <span className="text-sky-300">{coverage.identified} Hydrated Markers</span>
+                Panel Coverage: <span className="text-sky-300">{coverage.identified} Hydrated Markers</span>
               </span>
             </div>
           </div>
@@ -487,19 +515,63 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
         </div>
       </div>
 
+      {/* Extended Blood Group Systems Panel */}
+      <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div>
+            <h3 className="text-lg font-black text-white flex items-center gap-2">
+              <span>🧬</span> Extended Blood Group Systems (ISBT Clinical Panel)
+            </h3>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Molecular typing for Duffy, Kell, Kidd, Secretor, Diego, and MNS red cell surface antigens.
+            </p>
+          </div>
+          <span className="px-3 py-1 rounded-lg bg-slate-950 border border-slate-700 text-xs font-mono font-bold text-sky-400">
+            6 Systems Analyzed
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+          {(Object.entries(extendedSystems) as [string, ExtendedBloodSystemResult][]).map(([sysKey, sysData]) => (
+            <div key={sysKey} className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-between space-y-3 hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="font-black text-white text-sm">{sysData.system}</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400">{sysData.gene}</span>
+                </div>
+                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full ${sysData.confidence === 'High' ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'}`}>
+                  {sysData.confidence}
+                </span>
+              </div>
+
+              <div>
+                <div className="text-base font-black text-emerald-400">{sysData.phenotype}</div>
+                <div className="text-xs font-mono text-slate-400 mt-0.5">Genotype: {sysData.genotype}</div>
+              </div>
+
+              {sysData.clinicalSignificance && (
+                <p className="text-[11px] text-slate-300 leading-relaxed border-t border-slate-800/80 pt-2 font-medium">
+                  {sysData.clinicalSignificance}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Rhesus Factor Hydrated Markers Overview */}
       <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
           <div>
             <h3 className="text-lg font-black text-white flex items-center gap-2">
-              <span>🧬</span> Hydrated Rhesus System Panel (26 Markers)
+              <span>🩸</span> Rhesus Factor Ensemble & Antigens (Fisher-Race: {fisherRace})
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
-              Comprehensive RHD deletion tags, RHCE intron proxies, Weak D, Partial D, and C/c / E/e antigen polymorphisms.
+              Comprehensive RHD deletion tags, RHCE intron proxies, RHDψ pseudogene, Weak D, and C/c / E/e antigen polymorphisms.
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400">Confidence Score:</span>
+            <span className="text-xs text-slate-400">Ensemble Confidence:</span>
             <div className="w-32 h-2.5 rounded-full bg-slate-800 overflow-hidden border border-slate-700">
               <div 
                 className="h-full bg-gradient-to-r from-amber-500 to-emerald-400 transition-all duration-500" 

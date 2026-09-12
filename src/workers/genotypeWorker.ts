@@ -25,6 +25,7 @@ import { calculatePharmacogenomics } from '../services/pgxEngine';
 import { computeAncientMatches } from '../services/ancientMatchEngine';
 import { calculateArchaicAffinity } from '../services/archaicEngine';
 import { Y_DNA_HAPLOGROUPS, MT_DNA_HAPLOGROUPS } from '../data/haplogroupTree';
+import { computeDatasetLAI, computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
 
 compileReferenceKernel();
 
@@ -364,6 +365,10 @@ self.onmessage = async (e: MessageEvent) => {
     let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
     let mergedYMap: Record<string, string> = {};
     let mergedMtMap: Record<string, string> = {};
+    let mergedHaplotype1Map: Record<string, string> = {};
+    let mergedHaplotype2Map: Record<string, string> = {};
+    let isAnyPhased = false;
+    let inferredSex: 'MALE' | 'FEMALE' | 'UNKNOWN' = 'UNKNOWN';
     let chips: string[] = [];
     let names: string[] = [];
     let totalSnps = 0;
@@ -427,6 +432,12 @@ self.onmessage = async (e: MessageEvent) => {
         for (const pf of parsedFiles) {
           names.push(pf.name); chips.push(pf.chip); totalSnps += pf.snpCount;
           Object.assign(mergedSnpMetaMap, pf.snpMetaMap); Object.assign(mergedYMap, pf.yMap); Object.assign(mergedMtMap, pf.mtMap);
+          if (pf.haplotype1Map) Object.assign(mergedHaplotype1Map, pf.haplotype1Map);
+          if (pf.haplotype2Map) Object.assign(mergedHaplotype2Map, pf.haplotype2Map);
+          if (pf.isPhased) isAnyPhased = true;
+          if (pf.inferredBiologicalSex && pf.inferredBiologicalSex !== 'UNKNOWN') {
+            inferredSex = pf.inferredBiologicalSex;
+          }
           for (const rsid in pf.snpMap) {
             if (!mergedSnpMap[rsid] || pf.snpMap[rsid].length > mergedSnpMap[rsid].length) mergedSnpMap[rsid] = pf.snpMap[rsid];
           }
@@ -508,6 +519,34 @@ self.onmessage = async (e: MessageEvent) => {
     }
     const rareAndNovelVariants = identifyRareAndNovelVariants(imputedSnpMap, knownDbKeys, aims);
 
+    // ── Precalculate Local Ancestry Inference (Chromosome Painting) ──
+    let segments: any = null;
+    let paintedAncestry: any = null;
+    let aimsUsed: any[] = [];
+    let parentalDifferentiation: any = null;
+    try {
+      const fallbackProportions = (oracleResults?.primary as any)?.continentalScores || naiveEstimates || {};
+      const laiResult = computeDatasetLAI({
+        mergedSnpMap: imputedSnpMap,
+        mergedSnpMetaMap,
+        haplotype1Map: Object.keys(mergedHaplotype1Map).length > 0 ? mergedHaplotype1Map : undefined,
+        haplotype2Map: Object.keys(mergedHaplotype2Map).length > 0 ? mergedHaplotype2Map : undefined,
+        isPhased: isAnyPhased,
+        inferredBiologicalSex: inferredSex,
+        predictedYDNA: (predictedYDNA as any)?.predictedHaplogroup || (predictedYDNA as any)?.haplogroup || (predictedYDNA as any)?.code,
+        predictedMtDNA: (predictedMtDNA as any)?.predictedHaplogroup || (predictedMtDNA as any)?.haplogroup || (predictedMtDNA as any)?.code
+      }, fallbackProportions);
+
+      if (laiResult) {
+        segments = laiResult.segments;
+        aimsUsed = laiResult.aimsUsed;
+        paintedAncestry = computePaintedAncestry(segments, fallbackProportions);
+        parentalDifferentiation = laiResult.parentalDifferentiation;
+      }
+    } catch (laiErr) {
+      console.warn("Precomputed LAI skipped in worker:", laiErr);
+    }
+
     // Targeted sanitization — replaces the expensive JSON.parse(JSON.stringify()) round-trip.
     // Only strips non-structured-cloneable types (Maps, Sets, Promises, functions).
     const rawPayload = { 
@@ -515,6 +554,10 @@ self.onmessage = async (e: MessageEvent) => {
       results: ancestryResult, 
       chip: chips[0] || "Unknown Chip",
       snpCount: totalSnps,
+      inferredBiologicalSex: inferredSex,
+      isPhased: isAnyPhased,
+      haplotype1Map: Object.keys(mergedHaplotype1Map).length > 0 ? mergedHaplotype1Map : undefined,
+      haplotype2Map: Object.keys(mergedHaplotype2Map).length > 0 ? mergedHaplotype2Map : undefined,
       predictedYDNA, predictedMtDNA, mergedMtMap,
       ancientLineageMatches,
       archaicAffinity,
@@ -528,7 +571,12 @@ self.onmessage = async (e: MessageEvent) => {
         ...bloodResult,
         oracleResults, 
         naiveEstimates,
-        subpopulationOracle
+        subpopulationOracle,
+        segments,
+        paintedAncestry,
+        aimsUsed,
+        parentalDifferentiation,
+        inferredBiologicalSex: inferredSex
       } 
     };
     const safePayload = sanitizePayload(rawPayload);
@@ -559,11 +607,13 @@ function getMacroContinentalGroup(popKey: string): string | null {
 
     if (['AFR', 'YORUBA', 'ESN', 'ESAN', 'GWD', 'GAMBIAN', 'MSL', 'MENDE', 'LWK', 'LUHYA', 'IGBO', 'AKAN', 'AKAN_ASHANTI', 'EWE', 'EWE_FON', 'FULANI', 'HAUSA', 'BAKONGO', 'LUBA', 'MBUTI', 'BIAKA', 'MBUTI_BIAKA', 'PYGMY', 'DINKA', 'DINKA_NUER', 'SAN', 'KHOE', 'SAN_KHOE', 'KHOISAN', 'ZULU', 'XHOSA', 'ZULU_XHOSA', 'MASAI', 'HERERO', 'TSWANA', 'MANDENKA', 'GWF_FULA', 'GWJ_JOLA', 'GWW_WOLOF', 'ALFA_AFRICAN', 'AFR_GNOMAD'].includes(clean)) return 'AFR';
     if (['EUR', 'CEU', 'GBR', 'FIN', 'TSI', 'IBS', 'GERMAN', 'SWEDISH', 'DUTCH', 'IRISH', 'FRENCH', 'SPANISH', 'POLISH', 'GREEK', 'BALKAN', 'BALTIC', 'BASQUE', 'SLAVIC', 'SCANDINAVIAN', 'ORCADIAN', 'CRETAN', 'SARDINIAN', 'NFE_GNOMAD', 'FIN_GNOMAD', 'ALFA_EUR', 'AMI_GNOMAD'].includes(clean)) return 'EUR';
-    if (['EAS', 'CHB', 'CHS', 'JPT', 'KHV', 'CDX', 'HAN', 'JAPANESE', 'DAI', 'KINH', 'TIBETAN', 'MONGOLIAN', 'EAS_GNOMAD', 'ALFA_EAS'].includes(clean)) return 'EAS';
-    if (['SAS', 'BEB', 'GIH', 'PJL', 'ITU', 'STU', 'PUNJABI', 'TAMIL', 'TELUGU', 'GUJARATI', 'BENGALI', 'BRAHMIN', 'SINDHI', 'PATHAN', 'SAS_GNOMAD', 'ALFA_SAS'].includes(clean)) return 'SAS';
+    if (['CAU', 'CHECHEN', 'GEORGIAN', 'ADYGEI', 'NORTHOSSETIAN', 'RUSSIA_NORTHOSSETIAN', 'ABKHASIAN', 'RUSSIA_ABKHASIAN', 'LEZGIN'].includes(clean)) return 'CAU';
+    if (['EAS', 'CHB', 'CHS', 'JPT', 'KHV', 'CDX', 'HAN', 'JAPANESE', 'DAI', 'KINH', 'TIBETAN', 'MONGOLIAN', 'EAS_GNOMAD', 'ALFA_EAS', 'DAUR', 'HEZHEN', 'OROQEN', 'TUJIA', 'XIBO', 'NAXI', 'YI', 'SHE', 'MIAO', 'LAHU'].includes(clean)) return 'EAS';
+    if (['CAS', 'ALTAIAN', 'CHUKCHI', 'EVEN', 'ITELMEN', 'KYRGYZ', 'KYRGYZ_KYRGYZSTAN', 'MANSI', 'TUBALAR', 'ULCHI', 'UYGHUR', 'UYGUR', 'YAKUT', 'HAZARA', 'TAJIK'].includes(clean)) return 'CAS';
+    if (['SAS', 'BEB', 'GIH', 'PJL', 'ITU', 'STU', 'PUNJABI', 'TAMIL', 'TELUGU', 'GUJARATI', 'BENGALI', 'BRAHMIN', 'SINDHI', 'PATHAN', 'SAS_GNOMAD', 'ALFA_SAS', 'KALASH', 'BALOCHI', 'BRAHUI', 'MAKRANI', 'BURUSHO', 'KUSUNDA'].includes(clean)) return 'SAS';
     if (['AMR', 'PEL', 'MXL', 'CLM', 'PUR', 'KARITIANA', 'SURUI', 'PIMA', 'MAYA', 'MIXTEC', 'ZAPOTEC', 'QUECHUA', 'PIAPOCO', 'TLINGIT', 'AYMARA', 'GUARANI', 'INUIT', 'ESKIMO', 'AMR_GNOMAD', 'ALFA_LATAM1', 'ALFA_LATAM2'].includes(clean)) return 'AMR';
     if (['OCE', 'PAPUAN', 'AUSTRALIAN', 'BOUGAINVILLE', 'HAWAIIAN', 'MAORI', 'POLYNESIAN'].includes(clean)) return 'OCE';
-    if (['MENA', 'MID', 'MID_GNOMAD', 'MOZABITE', 'BERBER', 'AMAZIGH', 'AMAZIGH_BERBER', 'BEDOUIN', 'DRUZE', 'PALESTINIAN', 'JORDANIAN', 'IRANIAN', 'IRAQI', 'SAMARITAN', 'YEMENITE', 'SAHARAWI', 'TUAREG'].includes(clean)) return 'MENA';
+    if (['MENA', 'MID', 'MID_GNOMAD', 'MOZABITE', 'BERBER', 'AMAZIGH', 'AMAZIGH_BERBER', 'BEDOUIN', 'DRUZE', 'PALESTINIAN', 'JORDANIAN', 'IRANIAN', 'IRAQI', 'SAMARITAN', 'YEMENITE', 'SAHARAWI', 'TUAREG', 'TURKISH'].includes(clean)) return 'MENA';
 
     return null;
 }

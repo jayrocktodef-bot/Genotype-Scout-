@@ -64,5 +64,8 @@ export interface OnnxInferenceOutput {
   population: string;
   confidence: number;
   probabilities?: Record<string, number>;
+  topK?: { population: string; probability: number }[];
+  entropy?: number;
+  ambiguous?: boolean;
 }
 
