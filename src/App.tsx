@@ -2323,7 +2323,7 @@ export default function App() {
   useEffect(() => {
     const checkForceReset = async () => {
       try {
-        const CURRENT_BUILD = 'v5.17.0_force_cache_clear';
+        const CURRENT_BUILD = 'v5.18.0_parser_compat';
         const lastBuild = localStorage.getItem('genotype_scout_build');
         if (lastBuild !== CURRENT_BUILD) {
           console.log(`[App] Build version update registered: ${lastBuild} -> ${CURRENT_BUILD}`);

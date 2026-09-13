@@ -165,7 +165,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
         ref={fileInputRef} 
         onChange={handleFileChange}
         className="hidden" 
-        accept=".txt,.csv,.zip,.tsv,.gz,.vcf,.dat,text/plain,text/csv,application/zip,application/x-zip-compressed,*"
+        accept="*"
         multiple
       />
 

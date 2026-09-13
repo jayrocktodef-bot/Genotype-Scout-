@@ -5,6 +5,11 @@ const VALID_BASE_CODES = new Set([
   65/*A*/, 67/*C*/, 71/*G*/, 84/*T*/, 68/*D*/, 73/*I*/, 78/*N*/, 45/*-*/
 ]);
 
+// Byte-level valid allele set (mirrors VALID_BASE_CODES above, used in parseLineBytes hot path)
+const isValidAlleleByte = (b: number): boolean =>
+  b === 0x41/*A*/ || b === 0x43/*C*/ || b === 0x47/*G*/ || b === 0x54/*T*/ ||
+  b === 0x49/*I*/ || b === 0x44/*D*/ || b === 0x4E/*N*/ || b === 0x2D/*-*/;
+
 const TAB = 0x09;
 const LF = 0x0A;
 const CR = 0x0D;
@@ -421,7 +426,7 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
   if (allele1Len === 1 || allele1Len === 2) {
     const b = upper(allele1Byte);
     if (b !== 0x30) {
-      if (!(b === 0x41 || b === 0x43 || b === 0x47 || b === 0x54 || b === 0x49 || b === 0x44 || b === 0x2D)) {
+      if (!isValidAlleleByte(b)) {
         valid = false;
       } else {
         genotype = String.fromCharCode(b);
@@ -432,7 +437,7 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
   if (valid && hasSecondAllele) {
     const b2 = upper(allele2Byte);
     if (b2 !== 0x30) {
-      if (!(b2 === 0x41 || b2 === 0x43 || b2 === 0x47 || b2 === 0x54 || b2 === 0x49 || b2 === 0x44 || b2 === 0x2D)) {
+      if (!isValidAlleleByte(b2)) {
         valid = false;
       } else {
         genotype += String.fromCharCode(b2);
@@ -853,7 +858,10 @@ export function parseRawDNA(
         onProgress(lineStart, totalLength, snpCount);
       }
       const cols = line.split('\t');
-      if (cols.length >= 10) {
+      // Require at minimum CHROM POS ID REF ALT QUAL FILTER INFO (8 cols);
+      // FORMAT (col 8) + SAMPLE (col 9) needed for GT extraction — fall back
+      // gracefully for stripped VCFs that embed GT in INFO or have <8 cols.
+      if (cols.length >= 8) {
         const rawChrom = cols[0];
         const chrom = normalizeChromosome(rawChrom);
         const posStr = cols[1];
@@ -861,9 +869,11 @@ export function parseRawDNA(
         const id = cols[2];
         const ref = cols[3].toUpperCase();
         const alt = cols[4].toUpperCase();
-        const formatCol = cols[8];
-        const sampleCol = cols[9];
+        // FORMAT (col 8) and SAMPLE (col 9) are optional in stripped VCFs
+        const formatCol = cols.length >= 9 ? cols[8] : '';
+        const sampleCol = cols.length >= 10 ? cols[9] : '';
 
+        if (formatCol && sampleCol) {
         const formatFields = formatCol.split(':');
         const gtIdx = formatFields.indexOf('GT');
         const psIdx = formatFields.indexOf('PS');
@@ -912,6 +922,7 @@ export function parseRawDNA(
               }
             }
           }
+        }
         }
       } else {
         linesMalformed++;
@@ -1184,7 +1195,7 @@ export async function parseRawDNAStream(
         if (actualLineEnd > lineStart && combined[actualLineEnd - 1] === CR) actualLineEnd--;
         const line = DECODER.decode(combined.subarray(lineStart, actualLineEnd));
         const cols = line.split('\t');
-        if (cols.length >= 10) {
+        if (cols.length >= 8) {
           const rawChrom = cols[0];
           const chrom = normalizeChromosome(rawChrom);
           const posStr = cols[1];
@@ -1192,54 +1203,57 @@ export async function parseRawDNAStream(
           const id = cols[2];
           const ref = cols[3].toUpperCase();
           const alt = cols[4].toUpperCase();
-          const formatCol = cols[8];
-          const sampleCol = cols[9];
+          // FORMAT (col 8) and SAMPLE (col 9) are optional in stripped VCFs
+          const formatCol = cols.length >= 9 ? cols[8] : '';
+          const sampleCol = cols.length >= 10 ? cols[9] : '';
 
-          const formatFields = formatCol.split(':');
-          const gtIdx = formatFields.indexOf('GT');
-          const psIdx = formatFields.indexOf('PS');
-          if (gtIdx !== -1) {
-            const sampleFields = sampleCol.split(':');
-            const gtVal = sampleFields[gtIdx];
-            const psVal = psIdx !== -1 ? sampleFields[psIdx] : undefined;
-            const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
+          if (formatCol && sampleCol) {
+            const formatFields = formatCol.split(':');
+            const gtIdx = formatFields.indexOf('GT');
+            const psIdx = formatFields.indexOf('PS');
+            if (gtIdx !== -1) {
+              const sampleFields = sampleCol.split(':');
+              const gtVal = sampleFields[gtIdx];
+              const psVal = psIdx !== -1 ? sampleFields[psIdx] : undefined;
+              const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
 
-            if (decoded) {
-              const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
-              const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${colPos}`.toLowerCase();
-              const isYorMT = chrom === 'Y' || chrom === 'MT';
-              if (!allowlist || isYorMT || allowlist.has(markerId)) {
-                snpCount++;
-                snpMap[markerId] = genotype;
-                if (variantPhased) {
-                  phasedCount++;
-                  haplotype1Map[markerId] = allele1;
-                  haplotype2Map[markerId] = allele2;
-                  if (phaseSet) phaseSets[markerId] = phaseSet;
-                }
-                if (!isNaN(colPos)) {
-                  snpMetaMap[markerId] = { chrom, pos: colPos };
-                  const coordId = `chr${chrom}_${colPos}`.toLowerCase();
-                  snpMap[coordId] = genotype;
+              if (decoded) {
+                const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
+                const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${colPos}`.toLowerCase();
+                const isYorMT = chrom === 'Y' || chrom === 'MT';
+                if (!allowlist || isYorMT || allowlist.has(markerId)) {
+                  snpCount++;
+                  snpMap[markerId] = genotype;
                   if (variantPhased) {
-                    haplotype1Map[coordId] = allele1;
-                    haplotype2Map[coordId] = allele2;
+                    phasedCount++;
+                    haplotype1Map[markerId] = allele1;
+                    haplotype2Map[markerId] = allele2;
+                    if (phaseSet) phaseSets[markerId] = phaseSet;
                   }
-                }
-                if (chrom === 'X') {
-                  xMap[markerId] = genotype;
-                  xTotalCount++;
-                  if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', colPos)) {
-                    xHetCount++;
+                  if (!isNaN(colPos)) {
+                    snpMetaMap[markerId] = { chrom, pos: colPos };
+                    const coordId = `chr${chrom}_${colPos}`.toLowerCase();
+                    snpMap[coordId] = genotype;
+                    if (variantPhased) {
+                      haplotype1Map[coordId] = allele1;
+                      haplotype2Map[coordId] = allele2;
+                    }
                   }
-                }
-                if (chrom === 'Y') {
-                  yMap[markerId] = genotype;
-                  yDnaCalledSnps++;
-                }
-                if (chrom === 'MT') {
-                  const allele = genotype[0];
-                  if (allele !== '-') mtMap[posStr] = allele;
+                  if (chrom === 'X') {
+                    xMap[markerId] = genotype;
+                    xTotalCount++;
+                    if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', colPos)) {
+                      xHetCount++;
+                    }
+                  }
+                  if (chrom === 'Y') {
+                    yMap[markerId] = genotype;
+                    yDnaCalledSnps++;
+                  }
+                  if (chrom === 'MT') {
+                    const allele = genotype[0];
+                    if (allele !== '-') mtMap[posStr] = allele;
+                  }
                 }
               }
             }
