@@ -25,6 +25,9 @@ const DECODER = new TextDecoder('utf-8');
  * Selects the primary genetic data file (.txt, .csv, .vcf, .tsv, .dat) case-insensitively.
  * Strips UTF-8 BOM (\xef\xbb\xbf) if present.
  */
+// Security threshold limits to prevent decompression bomb Denial-of-Service (DoS) and tab OOM crashes
+const MAX_DECOMPRESSED_BYTES = 500 * 1024 * 1024; // 500 MB ceiling
+
 export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
   if (!buf || buf.length < 4) return buf;
 
@@ -34,6 +37,9 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
   if (buf[0] === 0x1f && buf[1] === 0x8b) {
     try {
       result = gunzipSync(buf);
+      if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
+        throw new Error(`Decompressed file exceeds safety threshold (500 MB).`);
+      }
     } catch (e) {
       console.warn("fflate gunzipSync warning:", e);
       result = buf;
@@ -44,10 +50,19 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
   else if (buf[0] === 0x50 && buf[1] === 0x4b && (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07)) {
     try {
       const unzipped = unzipSync(buf);
+      let totalExtractedSize = 0;
+      for (const k of Object.keys(unzipped)) {
+        totalExtractedSize += unzipped[k]?.byteLength || 0;
+      }
+      if (totalExtractedSize > MAX_DECOMPRESSED_BYTES) {
+        throw new Error(`ZIP archive extracted payload exceeds safety threshold (500 MB).`);
+      }
+
       const fileKeys = Object.keys(unzipped).filter(k => {
         const lower = k.toLowerCase();
         return !lower.startsWith('__macosx/') &&
                !lower.includes('.ds_store') &&
+               !lower.includes('..') &&
                !lower.endsWith('/') &&
                !lower.endsWith('.pdf') &&
                !lower.endsWith('.html') &&
@@ -74,6 +89,9 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
         let innerBuffer = unzipped[fileKeys[0]];
         if (innerBuffer.length >= 2 && innerBuffer[0] === 0x1f && innerBuffer[1] === 0x8b) {
           innerBuffer = gunzipSync(innerBuffer);
+          if (innerBuffer.byteLength > MAX_DECOMPRESSED_BYTES) {
+            throw new Error(`Decompressed inner archive exceeds safety threshold (500 MB).`);
+          }
         }
         result = innerBuffer;
       }
@@ -102,8 +120,10 @@ export function normalizeChromosome(chromRaw: string): string {
   if (chrom.startsWith('CHR')) chrom = chrom.slice(3);
   if (chrom === '23' || chrom === 'X' || chrom === 'XY') return 'X';
   if (chrom === '24' || chrom === 'Y') return 'Y';
-  // AncestryDNA uses '25' for the Pseudoautosomal Region (PAR) on X; also handle 'PAR', 'PAR1', 'PAR2', 'XY'
-  if (chrom === '25' || chrom.startsWith('PAR') || chrom.includes('PAR')) return 'X';
+  // AncestryDNA uses '25' for the Pseudoautosomal Region (PAR) on X; map to X
+  // Note: 'PAR1' is safe to map to X. 'PAR2' technically exists on both X and Y,
+  // but commercial kits always report PAR2 variants under the X coordinate system.
+  if (chrom === '25' || chrom === 'PAR' || chrom === 'PAR1') return 'X';
   if (chrom === '26' || chrom === 'M' || chrom === 'MT' || chrom === 'MITO' || chrom === 'MITOCHONDRIAL') return 'MT';
   if (chrom === '0' || chrom === 'UN' || chrom === 'UNKNOWN') return 'UN';
   return chrom;
@@ -630,8 +650,10 @@ export function checkFileFormatHealth(text: string): { healthy: boolean; reason?
 
 export function isPARRegion(chrom: string, pos: number): boolean {
   if (chrom !== 'X' && chrom !== '23' && chrom !== '25' && chrom !== 'PAR') return false;
-  if (pos >= 10001 && pos <= 2781479) return true; // PAR1 (GRCh37/38)
-  if (pos >= 154931044 && pos <= 156030895) return true; // PAR2 (GRCh37/38)
+  // PAR1: GRCh38 10,001-2,781,479 | GRCh37 60,001-2,699,520
+  if (pos >= 10001 && pos <= 2781479) return true;
+  // PAR2: GRCh38 155,701,383-156,030,895 | GRCh37 154,931,044-155,260,560
+  if (pos >= 154931044 && pos <= 156030895) return true;
   return false;
 }
 
@@ -709,7 +731,9 @@ export function inferBiologicalSex(
   if (yCount >= 15) return 'MALE';
   if (xTotalCount >= 50) {
     const xHetRate = xHetCount / xTotalCount;
-    if (xHetRate > 0.12 && yCount <= 5) return 'FEMALE';
+    // Female X heterozygosity is typically 20-30% on non-PAR X.
+    // Use 0.08 as conservative lower bound to handle low-density chips (fewer X AIMs).
+    if (xHetRate > 0.08 && yCount <= 5) return 'FEMALE';
     if (xHetRate < 0.03 && yCount >= 10) return 'MALE';
   }
   if (yCount >= 10) return 'MALE';
@@ -732,12 +756,16 @@ function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal?: stri
   const altAlleles = alt.split(',');
   const getAllele = (idxStr: string) => {
     if (idxStr === '0') return ref;
+    if (idxStr === '.') return null; // Missing allele in multi-sample VCF — skip
     const idx = parseInt(idxStr, 10);
-    return (idx >= 1 && idx <= altAlleles.length) ? altAlleles[idx - 1] : '-';
+    return (idx >= 1 && idx <= altAlleles.length) ? altAlleles[idx - 1] : null;
   };
   const isHemizygous = gtParts.length === 1;
   const a1 = getAllele(gtParts[0]);
-  const a2 = isHemizygous ? '' : getAllele(gtParts[1] || gtParts[0]);
+  const a2 = isHemizygous ? null : getAllele(gtParts[1] || gtParts[0]);
+
+  // If either allele is missing (null), skip this variant
+  if (a1 === null) return null;
 
   const normalizeAllele = (a: string) => {
     if (!a || a === '-') return '-';
@@ -750,7 +778,7 @@ function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal?: stri
   };
 
   const normA1 = normalizeAllele(a1);
-  const normA2 = isHemizygous ? '' : normalizeAllele(a2);
+  const normA2 = (isHemizygous || a2 === null) ? '' : normalizeAllele(a2);
   const cleanedGt = cleanGenotypeString(normA1 + normA2);
   if (!cleanedGt) return null;
 
@@ -758,10 +786,11 @@ function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal?: stri
     genotype: cleanedGt,
     isPhased,
     allele1: normA1,
-    allele2: normA2,
+    allele2: normA2 ?? '',
     phaseSet: psVal
   };
 }
+
 
 export function parseRawDNA(
   rawText: string, 
@@ -917,8 +946,8 @@ export function parseRawDNA(
                 yDnaCalledSnps++;
               }
               if (chrom === 'MT') {
-                const allele = genotype[0];
-                if (allele !== '-') mtMap[posStr] = allele;
+                const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+                if (allele && allele[0] !== '-') mtMap[posStr] = allele;
               }
             }
           }
@@ -988,8 +1017,8 @@ export function parseRawDNA(
           yDnaCalledSnps++;
         }
         if (chrom === 'MT') {
-          const allele = genotype[0];
-          if (allele !== '-') mtMap[posStr] = allele;
+          const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+          if (allele && allele[0] !== '-') mtMap[posStr] = allele;
         }
       } else {
         linesMalformed++;
@@ -1251,8 +1280,8 @@ export async function parseRawDNAStream(
                     yDnaCalledSnps++;
                   }
                   if (chrom === 'MT') {
-                    const allele = genotype[0];
-                    if (allele !== '-') mtMap[posStr] = allele;
+                    const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+                    if (allele && allele[0] !== '-') mtMap[posStr] = allele;
                   }
                 }
               }
@@ -1325,8 +1354,8 @@ export async function parseRawDNAStream(
               yDnaCalledSnps++;
             }
             if (chrom === 'MT') {
-              const allele = genotype[0];
-              if (allele !== '-') mtMap[posStr] = allele;
+              const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+              if (allele && allele[0] !== '-') mtMap[posStr] = allele;
             }
           }
         } else {
@@ -1383,8 +1412,8 @@ export async function parseRawDNAStream(
             yDnaCalledSnps++;
           }
           if (chrom === 'MT') {
-            const allele = genotype[0];
-            if (allele !== '-') mtMap[posStr] = allele;
+            const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+            if (allele && allele[0] !== '-') mtMap[posStr] = allele;
           }
         }
       }

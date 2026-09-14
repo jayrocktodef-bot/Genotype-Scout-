@@ -84,25 +84,25 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4">
-        <div className="relative mb-2">
-          <div className="text-6xl sm:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter">
+      <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4 min-w-0 w-full overflow-hidden">
+        <div className="relative mb-2 max-w-full">
+          <div className="text-4xl sm:text-6xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter truncate max-w-full px-2" title={displayHaplogroup}>
             {displayHaplogroup}
           </div>
-          <div className="absolute -inset-4 bg-[#14B8A6]/20 blur-2xl -z-10 rounded-full" />
+          <div className="absolute -inset-4 bg-[#14B8A6]/20 blur-2xl -z-10 rounded-full pointer-events-none" />
         </div>
         
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-4 max-w-full min-w-0 px-2">
           {displayRegion && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-[#14B8A6] uppercase tracking-widest bg-[#14B8A6]/10 px-3 py-1 rounded-full border border-[#14B8A6]/20">
-              <MapPin className="w-3 h-3" />
-              {displayRegion}
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#14B8A6] uppercase tracking-wider bg-[#14B8A6]/10 px-3 py-1 rounded-full border border-[#14B8A6]/20 max-w-full min-w-0 truncate" title={displayRegion}>
+              <MapPin className="w-3 h-3 shrink-0" />
+              <span className="truncate">{displayRegion}</span>
             </div>
           )}
           {(yData.phase2?.tmrca || yData.tmrca) && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-              <Sparkles className="w-3 h-3" />
-              {(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} ({(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 max-w-full min-w-0 truncate" title={`${(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} (${(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})`}>
+              <Sparkles className="w-3 h-3 shrink-0" />
+              <span className="truncate">{(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} ({(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})</span>
             </div>
           )}
         </div>
@@ -111,24 +111,26 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
           {displayDescription}
         </p>
 
-        <div className="w-full mt-auto flex items-center justify-between border-t border-slate-200/50 pt-4 px-2">
+        <div className={`w-full mt-auto grid ${yData.phase2 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'} gap-2 border-t border-slate-200/50 dark:border-white/10 pt-4 px-1 min-w-0`}>
           {yData.phase2 && (
-            <div className="flex flex-col text-left">
-              <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Confidence</span>
-              <span className="text-sm font-black text-[#14B8A6]">{confidence.toFixed(1)}%</span>
+            <div className="flex flex-col text-left sm:text-center min-w-0 overflow-hidden">
+              <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Confidence">Confidence</span>
+              <span className="text-sm font-black text-[#14B8A6] tabular-nums truncate">{confidence.toFixed(1)}%</span>
             </div>
           )}
-          <div className="flex flex-col text-center">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Path Depth</span>
-            <span className="text-sm font-black text-indigo-400">{yData.path.length} Steps</span>
+          <div className="flex flex-col text-center min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Path Depth">Path Depth</span>
+            <span className="text-sm font-black text-indigo-400 tabular-nums truncate">{yData.path.length} Steps</span>
           </div>
-          <div className="flex flex-col text-center">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Coverage</span>
-            <span className="text-sm font-black text-emerald-400">{coverage.toFixed(1)}%</span>
+          <div className="flex flex-col text-center min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Coverage">Coverage</span>
+            <span className="text-sm font-black text-emerald-400 tabular-nums truncate">{coverage.toFixed(1)}%</span>
           </div>
-          <div className="flex flex-col text-right">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end dark:text-slate-400"><Dna className="w-3 h-3"/> Processed</span>
-            <span className="text-sm font-black text-blue-400">{totalTested.toLocaleString()}</span>
+          <div className="flex flex-col text-right sm:text-center min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold flex items-center gap-1 justify-end sm:justify-center dark:text-slate-400 truncate" title="Processed">
+              <Dna className="w-3 h-3 shrink-0"/> <span className="truncate">Processed</span>
+            </span>
+            <span className="text-sm font-black text-blue-400 tabular-nums truncate">{totalTested.toLocaleString()}</span>
           </div>
         </div>
       </div>

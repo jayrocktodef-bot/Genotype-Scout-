@@ -41,7 +41,7 @@ export const REGION_NAMES: Record<string, string> = {
  * Maps a paternal Y-DNA haplogroup designation to its primary continental geographic origin.
  */
 export function mapYHaplogroupToContinent(haplo?: string | null): { code: string; name: string } {
-  if (!haplo) return { code: 'EUR', name: 'European' };
+  if (!haplo) return { code: 'UNKNOWN', name: 'Unknown' };
   const h = haplo.toUpperCase().trim();
 
   if (h.startsWith('R1B') || h.startsWith('R1A') || h.startsWith('I1') || h.startsWith('I2') || h.startsWith('N1') || h.startsWith('R-') || h.startsWith('I-')) {
@@ -73,7 +73,8 @@ export function mapYHaplogroupToContinent(haplo?: string | null): { code: string
   if (h.startsWith('H') || h.startsWith('L')) return { code: 'SAS', name: 'South Asian' };
   if (h.startsWith('Q')) return { code: 'AMR', name: 'Indigenous American' };
 
-  return { code: 'EUR', name: 'European' };
+  // Unknown haplogroup — do not default to EUR to avoid bias
+  return { code: 'UNKNOWN', name: 'Unknown' };
 }
 
 export const POP_GRADIENTS: Record<string, string> = {
@@ -337,14 +338,15 @@ function decodeStrand(
 
   for (let i = 1; i < N; i++) {
     const distMb = Math.max(0, (chrAims[i].pos - chrAims[i - 1].pos) / 1000000);
-    const switchProb = distMb > 3.0 ? 0.05 : Math.min(0.01, distMb * 0.002 + 0.0001);
+    // Haldane map function: P(recombination) = 0.5 * (1 - exp(-2 * r)) where r = distMb/100
+    // Clamped to [0.0001, 0.10] to avoid numerical extremes
+    const r = distMb / 100;
+    const switchProb = Math.min(0.10, Math.max(0.0001, 0.5 * (1 - Math.exp(-2 * r))));
     let s = 0;
     for (let k = 0; k < K; k++) {
-      let sumPrev = 0;
-      for (let j = 0; j < K; j++) {
-        const trans = j === k ? (1 - switchProb) : (switchProb / (K - 1));
-        sumPrev += alpha[(i - 1) * K + j] * trans;
-      }
+      // Standard Admixture HMM transition: P(k at i | j at i-1) = (1 - switchProb)*delta(j,k) + switchProb*priorP[k]
+      // With sum_j alpha_{i-1}[j] = 1, sum_j alpha_{i-1}[j]*P(k|j) = (1 - switchProb)*alpha_{i-1}[k] + switchProb*priorP[k]
+      const sumPrev = (1 - switchProb) * alpha[(i - 1) * K + k] + switchProb * priorP[k];
       const val = sumPrev * emission[i * K + k];
       alpha[i * K + k] = val;
       s += val;
@@ -357,14 +359,20 @@ function decodeStrand(
   for (let k = 0; k < K; k++) beta[(N - 1) * K + k] = 1.0;
   for (let i = N - 2; i >= 0; i--) {
     const distMb = Math.max(0, (chrAims[i + 1].pos - chrAims[i].pos) / 1000000);
-    const switchProb = distMb > 3.0 ? 0.05 : Math.min(0.01, distMb * 0.002 + 0.0001);
+    const r = distMb / 100;
+    const switchProb = Math.min(0.10, Math.max(0.0001, 0.5 * (1 - Math.exp(-2 * r))));
+
+    // Precompute prior-weighted sum for backward pass
+    let priorWeightedNext = 0;
+    for (let k = 0; k < K; k++) {
+      priorWeightedNext += priorP[k] * emission[(i + 1) * K + k] * beta[(i + 1) * K + k];
+    }
+
+    const scaleNext = scale[i + 1] || 1;
     for (let j = 0; j < K; j++) {
-      let sumNext = 0;
-      for (let k = 0; k < K; k++) {
-        const trans = j === k ? (1 - switchProb) : (switchProb / (K - 1));
-        sumNext += trans * emission[(i + 1) * K + k] * beta[(i + 1) * K + k];
-      }
-      beta[i * K + j] = sumNext / (scale[i + 1] || 1);
+      const directNext = emission[(i + 1) * K + j] * beta[(i + 1) * K + j];
+      const sumNext = (1 - switchProb) * directNext + switchProb * priorWeightedNext;
+      beta[i * K + j] = sumNext / scaleNext;
     }
   }
 
@@ -429,9 +437,15 @@ function decodeStrand(
     const isProtectedTract = seg.continent === 'AMR' || (seg.confidence && seg.confidence >= 0.70);
     if (!isProtectedTract && (seg.snpsCount || 1) < 3 && lenMb < 1.5 && rawSegments.length > 1) {
       if (cleanSegments.length > 0) {
+        // Merge into previous segment
         const prev = cleanSegments[cleanSegments.length - 1];
         prev.end = seg.end;
         prev.snpsCount = (prev.snpsCount || 0) + (seg.snpsCount || 0);
+        continue;
+      } else if (sIdx + 1 < rawSegments.length) {
+        // First segment is noise: merge into next segment by advancing its start
+        rawSegments[sIdx + 1].start = seg.start;
+        rawSegments[sIdx + 1].snpsCount = (rawSegments[sIdx + 1].snpsCount || 0) + (seg.snpsCount || 0);
         continue;
       }
     }
@@ -439,6 +453,94 @@ function decodeStrand(
   }
 
   return cleanSegments.length > 0 ? cleanSegments : rawSegments;
+}
+
+/**
+ * Derives the genome-wide continental prior vector for Local Ancestry Inference.
+ * Resolves regional aliases, percentage vs fraction scaling, and sets absent populations
+ * to an informative trace floor (0.001) to suppress spurious ghost tracts.
+ */
+export function extractContinentalPrior(
+  dataset: any,
+  fallbackScores?: Record<string, number> | null
+): Float32Array {
+  const K = LAI_POPULATIONS.length;
+  const priorP = new Float32Array(K);
+
+  const candidateScores: Record<string, number>[] = [];
+  if (fallbackScores && Object.keys(fallbackScores).length > 0) {
+    candidateScores.push(fallbackScores);
+  }
+  if (dataset?.analysis?.oracleResults?.primary?.continentalScores) {
+    candidateScores.push(dataset.analysis.oracleResults.primary.continentalScores);
+  }
+  if (dataset?.analysis?.oracleResults?.continentalScores) {
+    candidateScores.push(dataset.analysis.oracleResults.continentalScores);
+  }
+  if (dataset?.analysis?.subpopulationOracle?.all?.continentalScores) {
+    candidateScores.push(dataset.analysis.subpopulationOracle.all.continentalScores);
+  }
+  if (dataset?.analysis?.naiveEstimates) {
+    candidateScores.push(dataset.analysis.naiveEstimates);
+  }
+
+  const aliases: Record<string, string[]> = {
+    EUR: ['EUR', 'EUROPEAN', 'EUROPE'],
+    AFR: ['AFR', 'AFRICAN', 'SUB-SAHARAN AFRICAN', 'AFRICA', 'AFRAM', 'AFRICAN-AMERICAN', 'AFRICAN AMERICAN'],
+    EAS: ['EAS', 'EAST ASIAN', 'EAST_ASIAN', 'ASIA'],
+    SAS: ['SAS', 'SOUTH ASIAN', 'SOUTH_ASIAN'],
+    AMR: ['AMR', 'INDIGENOUS AMERICAN', 'NATIVE AMERICAN', 'INDIGENOUS_AMERICAN', 'AMER', 'ADMIXED AMERICAN'],
+    OCE: ['OCE', 'OCEANIAN', 'OCEANIA'],
+    MID: ['MID', 'MENA', 'MIDDLE EASTERN', 'MIDDLE_EASTERN', 'NORTH AFRICAN', 'NAFR']
+  };
+
+  let foundScores: Record<string, number> | null = null;
+  for (const cand of candidateScores) {
+    const sum = Object.values(cand).reduce((a, b) => a + (Number(b) || 0), 0);
+    if (sum > 0) {
+      foundScores = cand;
+      break;
+    }
+  }
+
+  if (foundScores) {
+    const rawSum = Object.values(foundScores).reduce((a, b) => a + (Number(b) || 0), 0);
+    const isPercentage = rawSum > 2.0;
+
+    let totalWeight = 0;
+    for (let k = 0; k < K; k++) {
+      const code = LAI_POPULATIONS[k];
+      const validNames = aliases[code] || [code];
+      let val = 0;
+
+      for (const [name, score] of Object.entries(foundScores)) {
+        const cleanName = name.toUpperCase().replace(/[-_]/g, ' ').trim();
+        if (validNames.some(a => a.replace(/[-_]/g, ' ') === cleanName || a === name.toUpperCase())) {
+          val += Number(score) || 0;
+        }
+      }
+
+      if (isPercentage) {
+        val = val / 100.0;
+      }
+
+      // If genome-wide ancestry is absent (0%), assign small trace prior (0.001)
+      // to suppress spurious ghost recombination jumps while allowing overwhelming evidence
+      priorP[k] = Math.max(0.001, val);
+      totalWeight += priorP[k];
+    }
+
+    for (let k = 0; k < K; k++) {
+      priorP[k] /= totalWeight;
+    }
+    return priorP;
+  }
+
+  // Equal fallback if no oracle results exist
+  for (let k = 0; k < K; k++) {
+    priorP[k] = 1.0 / K;
+  }
+  return priorP;
 }
 
 /**
@@ -519,7 +621,23 @@ export function computeDatasetLAI(
         if (isNaN(n) || n < 1 || n > 22) continue;
       }
 
-      const effectiveRegion = aim.region || aim.continent || ((aim.frequencies?.AMR && aim.frequencies.AMR > 0.4) ? 'Native American' : 'Global');
+      let effectiveRegion = aim.region || aim.continent;
+      if (!effectiveRegion) {
+        if (aim.frequencies) {
+          const amrF = aim.frequencies.AMR ?? 0;
+          const eurF = aim.frequencies.EUR ?? 0;
+          const afrF = aim.frequencies.AFR ?? 0;
+          const easF = aim.frequencies.EAS ?? 0;
+          const maxBg = Math.max(eurF, afrF, easF);
+          if (amrF >= 0.50 && amrF - maxBg >= 0.25) {
+            effectiveRegion = 'Native American';
+          } else {
+            effectiveRegion = 'Global';
+          }
+        } else {
+          effectiveRegion = 'Global';
+        }
+      }
 
       matchedAims.push({
         rsid,
@@ -548,23 +666,8 @@ export function computeDatasetLAI(
 
     const K = LAI_POPULATIONS.length;
 
-    // Calculate prior distribution from fallbackScores or oracle
-    const priorP = new Float32Array(K);
-    let priorSum = 0;
-    for (let k = 0; k < K; k++) {
-      const code = LAI_POPULATIONS[k];
-      let val = 0.05;
-      if (fallbackScores) {
-        val = fallbackScores[code] || 0;
-        if (val === 0) {
-          const fullName = REGION_NAMES[code];
-          if (fullName && fallbackScores[fullName]) val = fallbackScores[fullName];
-        }
-      }
-      priorP[k] = Math.max(0.01, val);
-      priorSum += priorP[k];
-    }
-    for (let k = 0; k < K; k++) priorP[k] /= priorSum;
+    // Calculate prior distribution using robust multi-source continental extraction
+    const priorP = extractContinentalPrior(dataset, fallbackScores);
 
     const isMale = dataset.inferredBiologicalSex === 'MALE' || (dataset as any).inferredSex === 'MALE';
     const hap1Map = dataset.haplotype1Map || {};
@@ -682,11 +785,21 @@ export function computeDatasetLAI(
     }
 
     // 2. Differentiate Maternal vs Paternal lineages across diploid tracks
+    const rawY = dataset.predictedYDNA || dataset.analysis?.predictedYDNA;
+    const yHaploString = typeof rawY === 'string'
+      ? rawY
+      : (rawY?.phase2?.haplogroup || rawY?.predicted?.name || rawY?.terminalHaplogroup || rawY?.haplogroup || null);
+
+    const rawMt = dataset.predictedMtDNA || dataset.analysis?.predictedMtDNA;
+    const mtHaploString = typeof rawMt === 'string'
+      ? rawMt
+      : (rawMt?.predicted || rawMt?.haplogroup || null);
+
     const parentalDiff = differentiateParentalHaplotypes({
       chromSegments: segmentsMap,
       inferredBiologicalSex: dataset.inferredBiologicalSex || (isMale ? 'MALE' : 'UNKNOWN'),
-      predictedYDNA: dataset.predictedYDNA || dataset.analysis?.predictedYDNA,
-      predictedMtDNA: dataset.predictedMtDNA || dataset.analysis?.predictedMtDNA,
+      predictedYDNA: yHaploString,
+      predictedMtDNA: mtHaploString,
       isVcfPhased: Boolean(dataset.isPhased || hasExplicitPhase)
     });
 
@@ -716,12 +829,17 @@ export function computeDatasetLAI(
     if (effectivelyMale) {
       // Resolve Y-DNA haplogroup
       const yHaploRaw =
-        dataset.predictedYDNA?.terminalHaplogroup ||
+        (typeof dataset.predictedYDNA === 'string' ? dataset.predictedYDNA : null) ||
+        dataset.predictedYDNA?.phase2?.haplogroup ||
         dataset.predictedYDNA?.predicted?.name ||
+        dataset.predictedYDNA?.terminalHaplogroup ||
+        dataset.predictedYDNA?.haplogroup ||
         dataset.yHaplogroup ||
+        (typeof dataset.analysis?.predictedYDNA === 'string' ? dataset.analysis.predictedYDNA : null) ||
+        dataset.analysis?.predictedYDNA?.phase2?.haplogroup ||
         dataset.analysis?.predictedYDNA?.predicted?.name ||
         dataset.analysis?.predictedYDNA?.terminalHaplogroup ||
-        dataset.analysis?.predictedYDNA?.phase2?.haplogroup;
+        dataset.analysis?.predictedYDNA?.haplogroup;
 
       const yContinentMeta = mapYHaplogroupToContinent(yHaploRaw);
 
@@ -786,16 +904,37 @@ export function computeDatasetLAI(
 
       const ySnpsCount = seenYRsids.size;
 
+      // Resolve Y continent — if haplogroup is unknown, fall back to dominant autosomal ancestry
+      let yCode = yContinentMeta.code;
+      if (yCode === 'UNKNOWN') {
+        const autosomalCodes = Object.values(LAI_POPULATIONS);
+        let bestCode = 'EUR';
+        let bestMb = 0;
+        for (const chr of Object.keys(segmentsMap)) {
+          if (chr === 'Y') continue;
+          const chrData = segmentsMap[chr];
+          const segs = [...(chrData.strandA || []), ...(chrData.strandB || [])];
+          for (const seg of segs) {
+            const mb = (seg.end - seg.start) / 1000000;
+            if (mb > bestMb && autosomalCodes.includes(seg.continent as any)) {
+              bestMb = mb;
+              bestCode = seg.continent;
+            }
+          }
+        }
+        yCode = bestCode;
+      }
+
       // Construct non-recombining MSY paternal block on Strand B
       // GRCh38 chrY: 57,227,415 bp. MSY spans 2,781,479 to 56,887,902 bp
       segmentsMap['Y'] = {
         strandA: [], // Hemizygous (No Maternal Y)
         strandB: [
           {
-            continent: yContinentMeta.code,
+            continent: yCode,
             start: 2781479,
             end: 56887902,
-            confidence: 0.99,
+            confidence: yHaploRaw ? 0.99 : 0.50,
             snpsCount: ySnpsCount,
             haplogroup: yHaploRaw || 'Patrilineal MSY'
           } as any
@@ -805,6 +944,7 @@ export function computeDatasetLAI(
       (segmentsMap['Y'] as any).isMale = true;
       (segmentsMap['Y'] as any).haplogroup = yHaploRaw || 'Patrilineal MSY';
       (segmentsMap['Y'] as any).ySnpsCount = ySnpsCount;
+
     } else {
       // Female XX
       segmentsMap['Y'] = {

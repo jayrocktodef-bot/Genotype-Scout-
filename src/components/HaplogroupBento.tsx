@@ -26,7 +26,11 @@ interface HaplogroupBentoProps {
 }
 
 export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
-  if (!predictedMt || !predictedMt.predicted) {
+  const haploCode = typeof predictedMt?.predicted === 'string'
+    ? predictedMt.predicted
+    : ((predictedMt as any)?.predicted?.name || (predictedMt as any)?.haplogroup || null);
+
+  if (!predictedMt || !haploCode) {
     return (
       <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative overflow-hidden group flex flex-col h-full min-h-[300px]">
         <div className="flex-1 flex flex-col items-center justify-center text-center opacity-70">
@@ -40,7 +44,7 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
     );
   }
 
-  const isDeep = predictedMt.path.length > 3;
+  const isDeep = (predictedMt.path || []).length > 3;
 
   return (
     <div className="bg-slate-900/60 backdrop-blur-3xl border border-white/5 rounded-3xl p-6 relative overflow-hidden group shadow-2xl transition-all duration-700 hover:shadow-[0_0_50px_rgba(14,165,233,0.2)] hover:border-[#4599FF]/20 hover:-translate-y-1 flex flex-col h-full min-h-[300px]">
@@ -67,31 +71,31 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4">
-        <div className="relative mb-2">
-          <div className="text-6xl sm:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter">
-            {predictedMt.predicted}
+      <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4 min-w-0 w-full overflow-hidden">
+        <div className="relative mb-2 max-w-full">
+          <div className="text-4xl sm:text-6xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter truncate max-w-full px-2" title={haploCode}>
+            {haploCode}
           </div>
-          <div className="absolute -inset-4 bg-[#4599FF]/20 blur-2xl -z-10 rounded-full" />
+          <div className="absolute -inset-4 bg-[#4599FF]/20 blur-2xl -z-10 rounded-full pointer-events-none" />
         </div>
         
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-4 max-w-full min-w-0 px-2">
           {predictedMt.region && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-[#4599FF] uppercase tracking-widest bg-[#4599FF]/10 px-3 py-1 rounded-full border border-[#4599FF]/20">
-              <MapPin className="w-3 h-3" />
-              {predictedMt.region}
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#4599FF] uppercase tracking-wider bg-[#4599FF]/10 px-3 py-1 rounded-full border border-[#4599FF]/20 max-w-full min-w-0 truncate" title={predictedMt.region}>
+              <MapPin className="w-3 h-3 shrink-0" />
+              <span className="truncate">{predictedMt.region}</span>
             </div>
           )}
           {predictedMt.tmrca && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-              <Sparkles className="w-3 h-3" />
-              {predictedMt.tmrca.formattedTmrcaAge} ({predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 max-w-full min-w-0 truncate" title={`${predictedMt.tmrca.formattedTmrcaAge} (${predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})`}>
+              <Sparkles className="w-3 h-3 shrink-0" />
+              <span className="truncate">{predictedMt.tmrca.formattedTmrcaAge} ({predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})</span>
             </div>
           )}
           {predictedMt.empopQc && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              EMPOP: {predictedMt.empopQc.forensicCoherenceScorePct}% Coherent
+            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20 max-w-full min-w-0 truncate" title={`EMPOP: ${predictedMt.empopQc.forensicCoherenceScorePct}% Coherent`}>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              <span className="truncate">EMPOP: {predictedMt.empopQc.forensicCoherenceScorePct}% Coherent</span>
             </div>
           )}
         </div>
@@ -100,18 +104,20 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
           {predictedMt.description || "An ancient maternal founder branch identified by your mitochondrial DNA mutations."}
         </p>
 
-        <div className="w-full mt-auto flex items-center justify-between border-t border-slate-200/50 pt-4 px-2">
-          <div className="flex flex-col text-left">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Phylo Score</span>
-            <span className="text-sm font-black text-[#4599FF]">{predictedMt.score.toLocaleString()}</span>
+        <div className="w-full mt-auto grid grid-cols-3 gap-2 border-t border-slate-200/50 dark:border-white/10 pt-4 px-1 min-w-0">
+          <div className="flex flex-col text-left min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Phylo Score">Phylo Score</span>
+            <span className="text-sm font-black text-[#4599FF] tabular-nums truncate">{(predictedMt.score ?? 0).toLocaleString()}</span>
           </div>
-          <div className="flex flex-col text-center">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-0.5 dark:text-slate-400">Path Depth</span>
-            <span className="text-sm font-black text-indigo-400">{predictedMt.path.length} Steps</span>
+          <div className="flex flex-col text-center min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Path Depth">Path Depth</span>
+            <span className="text-sm font-black text-indigo-400 tabular-nums truncate">{(predictedMt.path || []).length} Steps</span>
           </div>
-          <div className="flex flex-col text-right">
-            <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold flex items-center gap-1 justify-end dark:text-slate-400"><Dna className="w-3 h-3"/> Processed</span>
-            <span className="text-sm font-black text-emerald-500">
+          <div className="flex flex-col text-right min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold flex items-center gap-1 justify-end dark:text-slate-400 truncate" title="Processed">
+              <Dna className="w-3 h-3 shrink-0"/> <span className="truncate">Processed</span>
+            </span>
+            <span className="text-sm font-black text-emerald-500 tabular-nums truncate">
               {(Array.isArray(predictedMt.testedMarkers) ? predictedMt.testedMarkers.length : 0).toLocaleString()}
             </span>
           </div>

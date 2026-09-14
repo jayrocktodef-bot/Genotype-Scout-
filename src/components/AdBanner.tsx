@@ -31,19 +31,19 @@ export default function AdBanner({
   const pushed = useRef(false);
 
   useEffect(() => {
-    // Only push once per mount
-    if (pushed.current) return;
-
+    if (pushed.current || typeof window === 'undefined' || !window.adsbygoogle) return;
     try {
-      if (typeof window !== 'undefined' && window.adsbygoogle) {
-        window.adsbygoogle.push({});
-        pushed.current = true;
-      }
+      window.adsbygoogle.push({});
+      pushed.current = true;
     } catch (e) {
-      // Ad blocker or script not loaded — fail silently
       console.debug('[AdBanner] Ad init skipped:', e);
     }
   }, []);
+
+  // If Google AdSense script is not loaded (air-gapped / privacy mode), render nothing
+  if (typeof window === 'undefined' || !window.adsbygoogle) {
+    return null;
+  }
 
   // Map format to AdSense data attributes
   const formatStyle: Record<string, React.CSSProperties> = {

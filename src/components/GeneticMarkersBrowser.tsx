@@ -20,7 +20,8 @@ import {
   ArrowUpDown,
   FileSpreadsheet,
   FileJson,
-  FileText
+  FileText,
+  Globe
 } from 'lucide-react';
 import masterAims from '../data/master_aims_normalized.json';
 import { CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, SNP_LOOKUP } from '../genotypeData';
@@ -31,6 +32,7 @@ export interface MarkerRecord {
   gene?: string;
   trait?: string;
   continent?: string;
+  region?: string;
   subpop?: string | null;
   description?: string;
   alleles?: string[];
@@ -44,6 +46,43 @@ export interface MarkerRecord {
   chromosome?: string | number;
   position?: number;
   userGenotype?: string;
+}
+
+export function resolveMarkerRegion(m: any, dbEntry: any): string {
+  // 1. Direct explicit region or continent property
+  const explicit = m.region || m.continent || dbEntry?.region || dbEntry?.continent;
+  if (explicit && explicit !== 'Global' && explicit !== 'Cosmopolitan' && explicit !== 'Multi-Way Informative') {
+    return explicit === 'African American' ? 'African-American' : explicit;
+  }
+
+  // 2. Subpopulation tag
+  const sub = m.subpop || m.subPopulation || dbEntry?.subpop || dbEntry?.subPopulation;
+  if (sub) {
+    const mapped = mapToRegion(sub);
+    if (mapped !== 'Global') return mapped;
+  }
+
+  // 3. Infer from trait or description
+  const text = `${m.trait || ''} ${m.description || ''} ${dbEntry?.trait || ''} ${dbEntry?.description || ''}`.toLowerCase();
+  if (text.includes('african-american') || text.includes('african american')) return 'African-American';
+  if (text.includes('north african')) return 'North African';
+  if (text.includes('central asian')) return 'Central Asian';
+  if (text.includes('south asian')) return 'South Asian';
+  if (text.includes('east asian')) return 'East Asian';
+  if (text.includes('native american') || text.includes('indigenous american') || text.includes('amerindian')) return 'Native American';
+  if (text.includes('oceanian') || text.includes('melanesian') || text.includes('polynesian')) return 'Oceanian';
+  if (text.includes('middle east') || text.includes('near east') || text.includes('levant') || text.includes('arabian')) return 'Middle Eastern';
+  if (text.includes('sub-saharan') || text.includes('african')) return 'African';
+  if (text.includes('european') || text.includes('caucasian') || text.includes('jewish') || text.includes('slavic') || text.includes('celtic') || text.includes('italic') || text.includes('germanic')) return 'European';
+
+  if (explicit) return explicit === 'African American' ? 'African-American' : explicit;
+  return 'Global';
+}
+
+export function getRegionMeta(region?: string) {
+  if (!region) return { color: '#10b981', icon: '🌐' };
+  const norm = region === 'African American' ? 'African-American' : region;
+  return (CONTINENT_META as any)[norm] || (CONTINENT_META as any)[mapToRegion(region)] || { color: '#10b981', icon: '🌐' };
 }
 
 interface GeneticMarkersBrowserProps {
@@ -61,6 +100,7 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
   // --- State ---
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedRegion, setSelectedRegion] = useState<string>('All');
   const [selectedChr, setSelectedChr] = useState<string>('All');
   const [selectedSignificance, setSelectedSignificance] = useState<string>('All');
   const [statusFilter, setStatusFilter] = useState<'all' | 'matched' | 'partial' | 'unmatched'>('all');
@@ -77,6 +117,13 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
   const [activeMarker, setActiveMarker] = useState<MarkerRecord | null>(null);
   const [copiedRsid, setCopiedRsid] = useState<string | null>(null);
   const [showExportMenu, setShowExportMenu] = useState(false);
+
+  // Category switch helper that resets region filter
+  const handleCategoryChange = (cat: string) => {
+    setSelectedCategory(cat);
+    setSelectedRegion('All');
+    setCurrentPage(1);
+  };
 
   // --- Source Data Extraction ---
   const rawResults: MarkerRecord[] = useMemo(() => {
@@ -95,16 +142,17 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
       const chr = rawChr ? String(rawChr).replace(/^chr/i, '') : 'Auto';
       const pos = m.position || m.pos || dbEntry?.position || dbEntry?.pos || 0;
       const alleles = m.alleles || dbEntry?.alleles || [];
-      const resolvedContinent = m.continent || dbEntry?.continent || (dbEntry?.region && dbEntry.region !== 'Global' ? dbEntry.region : undefined);
-      const gene = m.gene || dbEntry?.gene || (m.category === 'Ancestry' || resolvedContinent ? 'AIM Locus' : 'Intergenic');
-      const trait = m.trait || dbEntry?.trait || (resolvedContinent ? `${resolvedContinent} Ancestry Tag` : 'Genomic Variant');
+      const resolvedRegion = resolveMarkerRegion(m, dbEntry);
+      const gene = m.gene || dbEntry?.gene || (m.category === 'Ancestry' || (resolvedRegion && resolvedRegion !== 'Global') ? 'AIM Locus' : 'Intergenic');
+      const trait = m.trait || dbEntry?.trait || (resolvedRegion && resolvedRegion !== 'Global' ? `${resolvedRegion} Ancestry Tag` : 'Genomic Variant');
       const significance = m.significance || dbEntry?.significance || 'Low';
-      const category = m.category || dbEntry?.category || (resolvedContinent ? 'Ancestry' : 'Other');
-      const description = m.description || dbEntry?.description || (resolvedContinent ? `Ancestry Informative Marker for ${resolvedContinent} genetic lineage.` : '');
+      const category = m.category || dbEntry?.category || ((resolvedRegion && resolvedRegion !== 'Global') ? 'Ancestry' : 'Other');
+      const description = m.description || dbEntry?.description || ((resolvedRegion && resolvedRegion !== 'Global') ? `Ancestry Informative Marker for ${resolvedRegion} genetic lineage.` : '');
 
       return {
         ...m,
-        continent: resolvedContinent || m.continent,
+        continent: resolvedRegion,
+        region: resolvedRegion,
         rsid: rsid || 'Unknown',
         chromosome: chr,
         position: Number(pos) || 0,
@@ -127,6 +175,51 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
     return ['All', ...Array.from(set).sort()];
   }, [enrichedResults]);
 
+  // --- Available Regions & Counts for Ancestry Filtering ---
+  const regionCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    enrichedResults.forEach(r => {
+      // In Ancestry category, or when All is selected, count regions for markers
+      if (selectedCategory === 'All' || r.category === selectedCategory || (selectedCategory === 'Ancestry' && (r.category === 'Ancestry' || (r.region && r.region !== 'Global')))) {
+        const rawReg = r.region || r.continent || 'Global';
+        const reg = rawReg === 'African American' ? 'African-American' : rawReg;
+        counts[reg] = (counts[reg] || 0) + 1;
+      }
+    });
+    return counts;
+  }, [enrichedResults, selectedCategory]);
+
+  const regionsList = useMemo(() => {
+    const priorityOrder = [
+      'African',
+      'European',
+      'East Asian',
+      'Native American',
+      'South Asian',
+      'Middle Eastern',
+      'Central Asian',
+      'North African',
+      'Oceanian',
+      'African-American',
+      'Admixed American',
+      'Cosmopolitan',
+      'Multi-Way Informative',
+      'Global'
+    ];
+
+    const present = Object.keys(regionCounts).filter(r => (regionCounts[r] || 0) > 0);
+    present.sort((a, b) => {
+      const idxA = priorityOrder.indexOf(a);
+      const idxB = priorityOrder.indexOf(b);
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      if (idxA !== -1) return -1;
+      if (idxB !== -1) return 1;
+      return (regionCounts[b] || 0) - (regionCounts[a] || 0);
+    });
+
+    return ['All', ...present];
+  }, [regionCounts]);
+
   // --- Chromosome Marker Counts ---
   const chrCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -148,8 +241,9 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
         const matchesTrait = (r.trait || '').toLowerCase().includes(q);
         const matchesDesc = (r.description || '').toLowerCase().includes(q);
         const matchesContinent = (r.continent || '').toLowerCase().includes(q);
+        const matchesRegion = (r.region || '').toLowerCase().includes(q);
         const matchesChr = String(r.chromosome || '').toLowerCase() === q || `chr${r.chromosome}`.toLowerCase() === q;
-        if (!matchesRsid && !matchesGene && !matchesTrait && !matchesDesc && !matchesContinent && !matchesChr) {
+        if (!matchesRsid && !matchesGene && !matchesTrait && !matchesDesc && !matchesContinent && !matchesRegion && !matchesChr) {
           return false;
         }
       }
@@ -157,6 +251,35 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
       // 2. Category filter
       if (selectedCategory !== 'All' && r.category !== selectedCategory) {
         return false;
+      }
+
+      // 2b. Region filter (especially for Ancestry)
+      if (selectedRegion !== 'All') {
+        const markerReg = (r.region || r.continent || '').toLowerCase();
+        const selReg = selectedRegion.toLowerCase();
+        
+        const mappedMarkerReg = mapToRegion(r.region || r.continent || '').toLowerCase();
+        const mappedSelReg = mapToRegion(selectedRegion).toLowerCase();
+
+        const matchesExact = markerReg === selReg || (selReg === 'african-american' && markerReg === 'african american');
+        const matchesMapped = mappedMarkerReg === selReg || (mappedMarkerReg !== 'global' && mappedMarkerReg === mappedSelReg);
+        
+        // Fallback only if marker has no specific continent/region (e.g. 'global' or intergenic)
+        const matchesTrait = (markerReg === 'global' || !markerReg) && (
+          (selReg === 'african' && (r.trait || '').toLowerCase().includes('african')) ||
+          (selReg === 'european' && (r.trait || '').toLowerCase().includes('european')) ||
+          (selReg === 'east asian' && (r.trait || '').toLowerCase().includes('east asian')) ||
+          (selReg === 'native american' && (r.trait || '').toLowerCase().includes('native american')) ||
+          (selReg === 'south asian' && (r.trait || '').toLowerCase().includes('south asian')) ||
+          (selReg === 'middle eastern' && (r.trait || '').toLowerCase().includes('middle east')) ||
+          (selReg === 'oceanian' && (r.trait || '').toLowerCase().includes('oceanian')) ||
+          (selReg === 'central asian' && (r.trait || '').toLowerCase().includes('central asian')) ||
+          (selReg === 'north african' && (r.trait || '').toLowerCase().includes('north african'))
+        );
+
+        if (!matchesExact && !matchesMapped && !matchesTrait) {
+          return false;
+        }
       }
 
       // 3. Chromosome filter
@@ -214,7 +337,7 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
       }
       return sortOrder === 'asc' ? cmp : -cmp;
     });
-  }, [enrichedResults, searchTerm, selectedCategory, selectedChr, selectedSignificance, statusFilter, zygosityFilter, sortBy, sortOrder]);
+  }, [enrichedResults, searchTerm, selectedCategory, selectedRegion, selectedChr, selectedSignificance, statusFilter, zygosityFilter, sortBy, sortOrder]);
 
   // Reset pagination on filter change
   const totalPages = Math.max(1, Math.ceil(filteredMarkers.length / pageSize));
@@ -300,11 +423,19 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
     URL.revokeObjectURL(url);
   };
 
-  const hasActiveFilters = searchTerm !== '' || selectedCategory !== 'All' || selectedChr !== 'All' || selectedSignificance !== 'All' || statusFilter !== 'all' || zygosityFilter !== 'all';
+  const hasActiveFilters = 
+    searchTerm !== '' || 
+    selectedCategory !== 'All' || 
+    selectedRegion !== 'All' ||
+    selectedChr !== 'All' || 
+    selectedSignificance !== 'All' || 
+    statusFilter !== 'all' || 
+    zygosityFilter !== 'all';
 
   const resetFilters = () => {
     setSearchTerm('');
     setSelectedCategory('All');
+    setSelectedRegion('All');
     setSelectedChr('All');
     setSelectedSignificance('All');
     setStatusFilter('all');
@@ -333,29 +464,37 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
           </div>
 
           {/* Metric Tiles */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
-              <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Total SNPs</div>
-              <div className="text-xl sm:text-2xl font-black text-white font-mono">{dataset?.snpCount?.toLocaleString() || stats.total.toLocaleString()}</div>
-              <div className="text-[10px] text-teal-400 font-medium mt-0.5">{stats.matchPct}% Array Match</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-2.5 sm:gap-3 shrink-0 min-w-0 w-full lg:w-auto">
+            <div className="p-3 sm:p-3.5 xl:p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md min-w-0 flex flex-col justify-between overflow-hidden shadow-sm">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1 truncate leading-tight" title="Total SNPs">Total SNPs</div>
+              <div className="text-lg sm:text-xl xl:text-2xl font-black text-white font-mono tabular-nums tracking-tight leading-tight truncate">
+                {dataset?.snpCount?.toLocaleString() || stats.total.toLocaleString()}
+              </div>
+              <div className="text-[10px] text-teal-400 font-medium mt-0.5 truncate leading-tight">{stats.matchPct}% Array Match</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
-              <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Matched Markers</div>
-              <div className="text-xl sm:text-2xl font-black text-emerald-400 font-mono">{stats.matched.toLocaleString()}</div>
-              <div className="text-[10px] text-slate-400 font-medium mt-0.5">Identified Calls</div>
+            <div className="p-3 sm:p-3.5 xl:p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md min-w-0 flex flex-col justify-between overflow-hidden shadow-sm">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1 truncate leading-tight" title="Matched Markers">Matched Markers</div>
+              <div className="text-lg sm:text-xl xl:text-2xl font-black text-emerald-400 font-mono tabular-nums tracking-tight leading-tight truncate">
+                {stats.matched.toLocaleString()}
+              </div>
+              <div className="text-[10px] text-slate-400 font-medium mt-0.5 truncate leading-tight">Identified Calls</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
-              <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">High Significance</div>
-              <div className="text-xl sm:text-2xl font-black text-rose-400 font-mono">{stats.highSig}</div>
-              <div className="text-[10px] text-slate-400 font-medium mt-0.5">Clinical / Phenotype</div>
+            <div className="p-3 sm:p-3.5 xl:p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md min-w-0 flex flex-col justify-between overflow-hidden shadow-sm">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1 truncate leading-tight" title="High Significance">High Significance</div>
+              <div className="text-lg sm:text-xl xl:text-2xl font-black text-rose-400 font-mono tabular-nums tracking-tight leading-tight truncate">
+                {stats.highSig.toLocaleString()}
+              </div>
+              <div className="text-[10px] text-slate-400 font-medium mt-0.5 truncate leading-tight">Clinical / Phenotype</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
-              <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Filtered Matches</div>
-              <div className="text-xl sm:text-2xl font-black text-sky-400 font-mono">{filteredMarkers.length.toLocaleString()}</div>
-              <div className="text-[10px] text-slate-400 font-medium mt-0.5">In Current View</div>
+            <div className="p-3 sm:p-3.5 xl:p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md min-w-0 flex flex-col justify-between overflow-hidden shadow-sm">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1 truncate leading-tight" title="Filtered Matches">Filtered Matches</div>
+              <div className="text-lg sm:text-xl xl:text-2xl font-black text-sky-400 font-mono tabular-nums tracking-tight leading-tight truncate">
+                {filteredMarkers.length.toLocaleString()}
+              </div>
+              <div className="text-[10px] text-slate-400 font-medium mt-0.5 truncate leading-tight">In Current View</div>
             </div>
           </div>
         </div>
@@ -456,6 +595,28 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
               <option value="High">Significance: High</option>
               <option value="Medium">Significance: Medium</option>
               <option value="Low">Significance: Low</option>
+            </select>
+
+            {/* Region Filter (Continental / Biogeographical Provenance) */}
+            <select
+              id="region-filter-select"
+              value={selectedRegion}
+              onChange={(e) => {
+                setSelectedRegion(e.target.value);
+                setCurrentPage(1);
+              }}
+              className={`px-3 py-2 rounded-xl bg-slate-950 border text-xs font-bold outline-none transition-all ${
+                selectedRegion !== 'All'
+                  ? 'border-teal-400 text-teal-300 ring-1 ring-teal-400/30'
+                  : 'border-slate-800 text-slate-200 focus:border-teal-500'
+              }`}
+            >
+              <option value="All">Region: All</option>
+              {regionsList.filter(r => r !== 'All').map(reg => (
+                <option key={reg} value={reg}>
+                  {getRegionMeta(reg).icon} {reg} ({regionCounts[reg] || 0})
+                </option>
+              ))}
             </select>
 
             {/* Zygosity Filter */}
@@ -565,10 +726,7 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
               return (
                 <button
                   key={cat}
-                  onClick={() => {
-                    setSelectedCategory(cat);
-                    setCurrentPage(1);
-                  }}
+                  onClick={() => handleCategoryChange(cat)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                     isSelected
                       ? 'bg-teal-600 text-white shadow-lg shadow-teal-900/30'
@@ -595,6 +753,72 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
             </button>
           )}
         </div>
+
+        {/* Interactive Biogeographical Region Filter Strip (Featured on Ancestry Tab) */}
+        {(selectedCategory === 'Ancestry' || selectedRegion !== 'All') && (
+          <motion.div 
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="p-3.5 rounded-2xl bg-gradient-to-r from-slate-900/95 via-slate-900/90 to-slate-950/95 border border-slate-800/90 shadow-xl space-y-2.5"
+          >
+            <div className="flex items-center justify-between px-1 text-xs">
+              <div className="flex items-center gap-2">
+                <span className="font-black uppercase tracking-wider text-slate-300 flex items-center gap-1.5 text-[11px]">
+                  <span>🌎</span> Ancestral Biogeographic Regions
+                </span>
+                {selectedRegion !== 'All' && (
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 font-bold">
+                    Filtered: {selectedRegion}
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">
+                Filter Ancestry Informative Markers (AIMs) by world population
+              </span>
+            </div>
+
+            <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-thin scrollbar-thumb-slate-700 pb-1 pt-0.5">
+              {regionsList.map(reg => {
+                const isSelected = selectedRegion === reg;
+                const meta = reg === 'All' ? { color: '#0d9488', icon: '🌐' } : getRegionMeta(reg);
+                const count = reg === 'All' 
+                  ? (selectedCategory === 'Ancestry' ? enrichedResults.filter(r => r.category === 'Ancestry').length : enrichedResults.length)
+                  : (regionCounts[reg] || 0);
+
+                return (
+                  <button
+                    key={reg}
+                    id={`region-pill-${reg.toLowerCase().replace(/[\s\/_]/g, '-')}`}
+                    onClick={() => {
+                      setSelectedRegion(reg);
+                      setCurrentPage(1);
+                    }}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1.5 ${
+                      isSelected
+                        ? 'text-white shadow-lg'
+                        : 'bg-slate-950/80 text-slate-400 hover:text-white hover:bg-slate-800/80 border border-slate-800/80'
+                    }`}
+                    style={{
+                      backgroundColor: isSelected ? meta.color : undefined,
+                      borderColor: isSelected ? meta.color : undefined,
+                      boxShadow: isSelected ? `0 4px 14px 0 ${meta.color}40` : undefined
+                    }}
+                  >
+                    <span>{meta.icon}</span>
+                    <span>{reg === 'All' ? 'All Regions' : reg}</span>
+                    <span 
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-black ${
+                        isSelected ? 'bg-black/30 text-white' : 'bg-slate-800 text-slate-400'
+                      }`}
+                    >
+                      {count.toLocaleString()}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {/* 4. Main Content: Grid View or Table View */}
@@ -629,7 +853,7 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 onClick={() => setActiveMarker(marker)}
-                className="group relative p-5 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 shadow-xl transition-all cursor-pointer flex flex-col justify-between space-y-4"
+                className="group relative p-5 rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-slate-800 hover:border-teal-500/40 shadow-xl transition-all cursor-pointer flex flex-col justify-between space-y-4 min-w-0 overflow-hidden"
               >
                 {/* Top Accent Strip */}
                 <div 
@@ -637,11 +861,11 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                   style={{ backgroundColor: meta.color }}
                 />
 
-                <div className="space-y-2.5">
+                <div className="space-y-2.5 min-w-0">
                   {/* Header: RSID, Copy, Category, Significance */}
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-sm font-black text-sky-400 tracking-tight">
+                  <div className="flex items-center justify-between gap-2 min-w-0">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="font-mono text-sm font-black text-sky-400 tracking-tight truncate">
                         {marker.rsid}
                       </span>
                       <button
@@ -669,15 +893,28 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                     </div>
                   </div>
 
-                  {/* Gene & Trait */}
+                  {/* Gene & Trait & Region */}
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex flex-wrap items-center gap-1.5 mb-1">
                       <span className="px-2 py-0.5 rounded-md bg-teal-500/10 border border-teal-500/20 text-teal-300 text-[10px] font-mono font-black">
                         {marker.gene || 'Intergenic'}
                       </span>
                       <span className="text-xs text-slate-400 font-medium">
                         {marker.category}
                       </span>
+                      {marker.region && marker.region !== 'Global' && (
+                        <span 
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold border"
+                          style={{
+                            backgroundColor: `${getRegionMeta(marker.region).color}15`,
+                            borderColor: `${getRegionMeta(marker.region).color}30`,
+                            color: getRegionMeta(marker.region).color
+                          }}
+                        >
+                          <span>{getRegionMeta(marker.region).icon}</span>
+                          <span>{marker.region}</span>
+                        </span>
+                      )}
                     </div>
                     <h4 className="text-sm font-bold text-white group-hover:text-teal-300 transition-colors line-clamp-1">
                       {marker.trait || 'Genomic Variant'}
@@ -725,6 +962,7 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                   <th className="px-4 py-3.5">Gene</th>
                   <th className="px-4 py-3.5">Chr : Pos</th>
                   <th className="px-4 py-3.5 text-center">Genotype</th>
+                  <th className="px-4 py-3.5">Region</th>
                   <th className="px-4 py-3.5">Significance</th>
                   <th className="px-4 py-3.5">Trait / Biological Effect</th>
                   <th className="px-4 py-3.5 text-right">Inspect</th>
@@ -773,6 +1011,23 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                         }`}>
                           {marker.genotype || '--'}
                         </span>
+                      </td>
+                      <td className="px-4 py-3.5">
+                        {marker.region && marker.region !== 'Global' ? (
+                          <span 
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold border whitespace-nowrap"
+                            style={{
+                              backgroundColor: `${getRegionMeta(marker.region).color}15`,
+                              borderColor: `${getRegionMeta(marker.region).color}30`,
+                              color: getRegionMeta(marker.region).color
+                            }}
+                          >
+                            <span>{getRegionMeta(marker.region).icon}</span>
+                            <span>{marker.region}</span>
+                          </span>
+                        ) : (
+                          <span className="text-slate-600 font-mono text-[11px]">—</span>
+                        )}
                       </td>
                       <td className="px-4 py-3.5">
                         <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-tight ${
@@ -908,19 +1163,30 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                   )}
                 </div>
 
-                {/* Genotype & Status Cards */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800">
-                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1">Your Call</div>
-                    <div className="text-xl font-mono font-black text-emerald-400">{activeMarker.genotype || '--'}</div>
-                    <div className="text-[10px] text-slate-400 mt-0.5">Status: {activeMarker.status || 'Not tested'}</div>
+                {/* Genotype, Significance & Ancestral Region Cards */}
+                <div className={`grid gap-3 ${activeMarker.region && activeMarker.region !== 'Global' ? 'grid-cols-1 sm:grid-cols-3' : 'grid-cols-2'}`}>
+                  <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 min-w-0 overflow-hidden">
+                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1 truncate">Your Call</div>
+                    <div className="text-xl font-mono font-black text-emerald-400 tabular-nums truncate">{activeMarker.genotype || '--'}</div>
+                    <div className="text-[10px] text-slate-400 mt-0.5 truncate">Status: {activeMarker.status || 'Not tested'}</div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800">
-                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1">Significance</div>
-                    <div className="text-lg font-black text-rose-400">{activeMarker.significance || 'Low'}</div>
-                    <div className="text-[10px] text-slate-400 mt-0.5">Category: {activeMarker.category || 'Ancestry'}</div>
+                  <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 min-w-0 overflow-hidden">
+                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1 truncate">Significance</div>
+                    <div className="text-lg font-black text-rose-400 truncate">{activeMarker.significance || 'Low'}</div>
+                    <div className="text-[10px] text-slate-400 mt-0.5 truncate">Category: {activeMarker.category || 'Ancestry'}</div>
                   </div>
+
+                  {activeMarker.region && activeMarker.region !== 'Global' && (
+                    <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 min-w-0 overflow-hidden">
+                      <div className="text-[10px] font-black uppercase text-slate-400 tracking-wider mb-1 truncate">Ancestral Region</div>
+                      <div className="text-base font-black flex items-center gap-1.5 truncate" style={{ color: getRegionMeta(activeMarker.region).color }}>
+                        <span className="shrink-0">{getRegionMeta(activeMarker.region).icon}</span>
+                        <span className="truncate">{activeMarker.region}</span>
+                      </div>
+                      <div className="text-[10px] text-slate-400 mt-0.5 truncate">Lineage AIM</div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Biological Effect & Trait Description */}

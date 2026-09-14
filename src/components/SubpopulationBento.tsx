@@ -183,15 +183,15 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
               const visualWidth = Math.max(5, 100 - (comp.distance * 200));
               
               return (
-                <div key={(comp?.name || comp?.subpop || 'comp') + idx} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px]">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="font-mono text-slate-400 text-[9px] bg-black/40 px-1.5 py-0.5 rounded border border-white/5">#{idx + 1}</span>
-                    <span className="text-emerald-400 text-xs font-bold font-mono">
+                <div key={(comp?.name || comp?.subpop || 'comp') + idx} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px] min-w-0">
+                  <div className="flex items-center justify-between mb-1 min-w-0 gap-1">
+                    <span className="font-mono text-slate-400 text-[9px] bg-black/40 px-1.5 py-0.5 rounded border border-white/5 shrink-0">#{idx + 1}</span>
+                    <span className="text-emerald-400 text-xs font-bold font-mono tabular-nums shrink-0">
                       {Number(comp.distance).toFixed(3)}
                     </span>
                   </div>
 
-                  <h4 className="text-xs font-bold text-slate-200 whitespace-normal break-words leading-snug group-hover:text-emerald-300 transition-colors" title={comp?.name || comp?.subpop}>
+                  <h4 className="text-xs font-bold text-slate-200 truncate leading-snug group-hover:text-emerald-300 transition-colors min-w-0 block" title={comp?.name || comp?.subpop}>
                     {comp?.name || comp?.subpop || 'Unknown'}
                   </h4>
 

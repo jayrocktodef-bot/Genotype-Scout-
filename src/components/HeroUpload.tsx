@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Upload, Shield, Database, Lock, ArrowRight, Dna, 
-  Terminal, Sparkles, Volume2, VolumeX, Monitor, 
+  Sparkles, Volume2, VolumeX, Monitor, 
   Disc, Check, AlertCircle, RefreshCw, Layers
 } from 'lucide-react';
 import { SFX } from '../utils/audio/retroSynth';
@@ -250,162 +250,100 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
         </div>
 
         {/* =========================================================================
-            3. MAIN TERMINAL CONSOLE: CARTRIDGE DROPZONE + DIAGNOSTICS HUD
+            3. MAIN TERMINAL CONSOLE: CARTRIDGE DROPZONE
             ========================================================================= */}
-        <div className="grid lg:grid-cols-12 gap-6">
-          
-          {/* LEFT: BIO-CARTRIDGE INSERTION SLOT (7 cols) */}
-          <div className="lg:col-span-7 bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 sm:p-7 relative flex flex-col justify-between">
-            {/* Corner pixel brackets */}
-            <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#4fe3ff]" />
-            <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#4fe3ff]" />
-            <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#4fe3ff]" />
-            <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#4fe3ff]" />
+        <div className="bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 sm:p-7 relative flex flex-col justify-between">
+          {/* Corner pixel brackets */}
+          <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#4fe3ff]" />
+          <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#4fe3ff]" />
+          <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#4fe3ff]" />
+          <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#4fe3ff]" />
 
-            {/* Cartridge Slot Header */}
-            <div className="flex items-center justify-between border-b-2 border-[#1e2a3a] pb-3 mb-5">
-              <div className="flex items-center gap-2 font-arcade text-xs text-[#4fe3ff]">
-                <Disc className="w-4 h-4 animate-spin-slow text-[#ff4fd8]" />
-                <span>CARTRIDGE SLOT A</span>
-              </div>
-              <span className="font-pixel text-[9px] uppercase px-2 py-0.5 bg-[#141b26] text-[#6bff9e] border border-[#6bff9e]/30">
-                READY FOR INSERTION
-              </span>
+          {/* Cartridge Slot Header */}
+          <div className="flex items-center justify-between border-b-2 border-[#1e2a3a] pb-3 mb-5">
+            <div className="flex items-center gap-2 font-arcade text-xs text-[#4fe3ff]">
+              <Disc className="w-4 h-4 animate-spin-slow text-[#ff4fd8]" />
+              <span>CARTRIDGE SLOT A</span>
             </div>
-
-            {/* Physical-Style Cartridge Bevel Dropzone */}
-            <div
-              onDragEnter={handleDrag}
-              onDragOver={handleDrag}
-              onDragLeave={handleDrag}
-              onDrop={handleDrop}
-              onClick={handleZoneClick}
-              onMouseEnter={() => SFX.hover()}
-              className={`relative p-6 sm:p-8 border-2 border-dashed cursor-pointer transition-all duration-200 text-center flex flex-col items-center justify-center ${
-                isDragActive
-                  ? 'border-[#6bff9e] bg-[#6bff9e]/10 shadow-[0_0_30px_rgba(107,255,158,0.3)] scale-[1.01]'
-                  : 'border-[#1e2a3a] bg-[#05070a]/80 hover:border-[#4fe3ff] hover:bg-[#141b26]/50 shadow-inner'
-              }`}
-            >
-              {/* Animated Cartridge Reader Graphic */}
-              <div className={`w-16 h-16 mb-4 flex items-center justify-center border-2 transition-transform duration-200 ${
-                isDragActive
-                  ? 'border-[#6bff9e] bg-[#6bff9e]/20 text-[#6bff9e] scale-110 shadow-[0_0_15px_#6bff9e]'
-                  : 'border-[#1e2a3a] bg-[#141b26] text-[#4fe3ff]'
-              }`}>
-                <Upload className="w-8 h-8 animate-bounce-slow" />
-              </div>
-
-              <h3 className="font-arcade text-sm sm:text-base text-white mb-2 leading-relaxed">
-                DROP RAW DNA SPECIMEN HERE
-              </h3>
-
-              <p className="font-terminal text-base sm:text-xl text-slate-400 mb-6 max-w-sm">
-                Supports <strong className="text-[#6bff9e]">.TXT, .CSV, .ZIP, .GZ, .VCF</strong> raw chip files
-              </p>
-
-              {/* Chunky Arcade Button: Select File Manually */}
-              <button
-                type="button"
-                onClick={handleZoneClick}
-                onMouseEnter={() => SFX.hover()}
-                className="font-arcade text-xs px-6 py-3 bg-[#4fe3ff] hover:bg-[#6bff9e] text-[#05070a] uppercase tracking-wider font-black pixel-shadow transition-transform active:translate-y-1 active:shadow-none"
-              >
-                SELECT FILE MANUALLY
-              </button>
-
-              {selectedFileName && (
-                <div className="mt-4 font-terminal text-sm text-[#6bff9e] bg-[#05070a] border border-[#6bff9e]/40 px-3 py-1.5 flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#6bff9e]" />
-                  <span>LOADED: {selectedFileName}</span>
-                </div>
-              )}
-            </div>
-
-            {/* Instant Demo Specimen CTA */}
-            <div className="mt-5 pt-4 border-t border-[#1e2a3a] flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="flex items-center gap-2 text-slate-400 font-terminal text-base">
-                <span className="w-2 h-2 rounded-full bg-[#ffd23f] animate-ping shrink-0" />
-                <span>No file on hand? Try the bundled Portuguese specimen:</span>
-              </div>
-
-              <button
-                type="button"
-                onClick={handleLoadDemoCartridge}
-                onMouseEnter={() => SFX.hover()}
-                disabled={isLoadingDemo}
-                className="w-full sm:w-auto font-arcade text-[10px] px-4 py-2.5 bg-[#ffd23f] hover:bg-amber-300 text-[#05070a] uppercase font-black pixel-shadow-amber transition-transform active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-2"
-              >
-                {isLoadingDemo ? (
-                  <>
-                    <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                    <span>READING ROM...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>🪙 INSERT COIN: LOAD DEMO</span>
-                  </>
-                )}
-              </button>
-            </div>
+            <span className="font-pixel text-[9px] uppercase px-2 py-0.5 bg-[#141b26] text-[#6bff9e] border border-[#6bff9e]/30">
+              READY FOR INSERTION
+            </span>
           </div>
 
-          {/* RIGHT: SYSTEM DIAGNOSTICS & TELEMETRY HUD (5 cols) */}
-          <div className="lg:col-span-5 bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 flex flex-col justify-between space-y-4">
-            <div>
-              {/* HUD Header */}
-              <div className="flex items-center justify-between border-b-2 border-[#1e2a3a] pb-2 mb-4">
-                <div className="flex items-center gap-2 font-arcade text-xs text-[#6bff9e]">
-                  <Terminal className="w-4 h-4" />
-                  <span>SYSTEM DIAGNOSTICS</span>
-                </div>
-                <span className="font-pixel text-[9px] text-[#ffd23f] uppercase">
-                  ROM V5.17
-                </span>
-              </div>
-
-              {/* Status List in Classic RPG / Terminal Style */}
-              <div className="space-y-3 font-terminal text-base sm:text-lg">
-                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
-                  <span className="text-slate-400">▸ ROM INTEGRITY:</span>
-                  <span className="text-[#6bff9e] font-bold">████████ PASS</span>
-                </div>
-
-                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
-                  <span className="text-slate-400">▸ PHASED AIMS:</span>
-                  <span className="text-[#4fe3ff] font-bold">17,042 PRELOADED</span>
-                </div>
-
-                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
-                  <span className="text-slate-400">▸ NETWORK SOCKETS:</span>
-                  <div className="flex items-center gap-1.5 text-[#6bff9e]">
-                    <Lock className="w-3.5 h-3.5" />
-                    <span className="font-bold">░░ 0 ░░ (AIR-GAPPED)</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
-                  <span className="text-slate-400">▸ COMPUTE THREAD:</span>
-                  <span className="text-[#ff4fd8] font-bold">WEB WORKER RAM</span>
-                </div>
-
-                <div className="flex items-center justify-between p-2 bg-[#05070a] border border-[#1e2a3a]">
-                  <span className="text-slate-400">▸ Y-CHROMOSOME MSY:</span>
-                  <span className="text-[#ffd23f] font-bold">UNIPARENTAL ACTIVE</span>
-                </div>
-              </div>
+          {/* Physical-Style Cartridge Bevel Dropzone */}
+          <div
+            onDragEnter={handleDrag}
+            onDragOver={handleDrag}
+            onDragLeave={handleDrag}
+            onDrop={handleDrop}
+            onClick={handleZoneClick}
+            onMouseEnter={() => SFX.hover()}
+            className={`relative p-6 sm:p-8 border-2 border-dashed cursor-pointer transition-all duration-200 text-center flex flex-col items-center justify-center ${
+              isDragActive
+                ? 'border-[#6bff9e] bg-[#6bff9e]/10 shadow-[0_0_30px_rgba(107,255,158,0.3)] scale-[1.01]'
+                : 'border-[#1e2a3a] bg-[#05070a]/80 hover:border-[#4fe3ff] hover:bg-[#141b26]/50 shadow-inner'
+            }`}
+          >
+            {/* Animated Cartridge Reader Graphic */}
+            <div className={`w-16 h-16 mb-4 flex items-center justify-center border-2 transition-transform duration-200 ${
+              isDragActive
+                ? 'border-[#6bff9e] bg-[#6bff9e]/20 text-[#6bff9e] scale-110 shadow-[0_0_15px_#6bff9e]'
+                : 'border-[#1e2a3a] bg-[#141b26] text-[#4fe3ff]'
+            }`}>
+              <Upload className="w-8 h-8 animate-bounce-slow" />
             </div>
 
-            {/* Zero-Egress Privacy Badge */}
-            <div className="p-3 bg-[#141b26]/70 border border-[#6bff9e]/30 text-xs">
-              <div className="flex items-center gap-2 text-[#6bff9e] font-arcade text-[10px] mb-1">
-                <Shield className="w-3.5 h-3.5" />
-                <span>100% NON-CUSTODIAL</span>
+            <h3 className="font-arcade text-sm sm:text-base text-white mb-2 leading-relaxed">
+              DROP RAW DNA SPECIMEN HERE
+            </h3>
+
+            <p className="font-terminal text-base sm:text-xl text-slate-400 mb-6 max-w-sm">
+              Supports <strong className="text-[#6bff9e]">.TXT, .CSV, .ZIP, .GZ, .VCF</strong> raw chip files
+            </p>
+
+            {/* Chunky Arcade Button: Select File Manually */}
+            <button
+              type="button"
+              onClick={handleZoneClick}
+              onMouseEnter={() => SFX.hover()}
+              className="font-arcade text-xs px-6 py-3 bg-[#4fe3ff] hover:bg-[#6bff9e] text-[#05070a] uppercase tracking-wider font-black pixel-shadow transition-transform active:translate-y-1 active:shadow-none"
+            >
+              SELECT FILE MANUALLY
+            </button>
+
+            {selectedFileName && (
+              <div className="mt-4 font-terminal text-sm text-[#6bff9e] bg-[#05070a] border border-[#6bff9e]/40 px-3 py-1.5 flex items-center gap-2">
+                <Check className="w-4 h-4 text-[#6bff9e]" />
+                <span>LOADED: {selectedFileName}</span>
               </div>
-              <p className="font-terminal text-slate-300 text-sm leading-tight">
-                No telemetry. No accounts. Open DevTools (F12) Network Tab to verify zero HTTP packet transfers during processing.
-              </p>
+            )}
+          </div>
+
+          {/* Instant Demo Specimen CTA */}
+          <div className="mt-5 pt-4 border-t border-[#1e2a3a] flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-slate-400 font-terminal text-base">
+              <span className="w-2 h-2 rounded-full bg-[#ffd23f] animate-ping shrink-0" />
+              <span>No file on hand? Try the bundled Portuguese specimen:</span>
             </div>
+
+            <button
+              type="button"
+              onClick={handleLoadDemoCartridge}
+              onMouseEnter={() => SFX.hover()}
+              disabled={isLoadingDemo}
+              className="w-full sm:w-auto font-arcade text-[10px] px-4 py-2.5 bg-[#ffd23f] hover:bg-amber-300 text-[#05070a] uppercase font-black pixel-shadow-amber transition-transform active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-2"
+            >
+              {isLoadingDemo ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                  <span>READING ROM...</span>
+                </>
+              ) : (
+                <>
+                  <span>🪙 INSERT COIN: LOAD DEMO</span>
+                </>
+              )}
+            </button>
           </div>
         </div>
 

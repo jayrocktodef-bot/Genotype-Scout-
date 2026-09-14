@@ -63,8 +63,8 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
   const yDnaPayload: UniparentalLineageData | null = useMemo(() => {
     if (data?.yDna) return data.yDna;
 
-    if (predictedY && (predictedY.phase2 || predictedY.predicted)) {
-      const primaryName = predictedY.phase2?.haplogroup || predictedY.predicted?.name || 'Y-DNA Lineage';
+    if (predictedY && (predictedY.phase2 || predictedY.predicted || predictedY.haplogroup)) {
+      const primaryName = predictedY.phase2?.haplogroup || predictedY.predicted?.name || (typeof predictedY.predicted === 'string' ? predictedY.predicted : '') || predictedY.haplogroup || 'Y-DNA Lineage';
       const path: string[] = predictedY.path || [];
       const tested: any[] = predictedY.testedMarkers || [];
       const totalTestedSNPs = tested.length || 150;
@@ -153,8 +153,11 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
   const mtDnaPayload: UniparentalLineageData | null = useMemo(() => {
     if (data?.mtDna) return data.mtDna;
 
-    if (predictedMt && predictedMt.predicted) {
-      const primaryName = predictedMt.predicted;
+    const primaryName = typeof predictedMt?.predicted === 'string'
+      ? predictedMt.predicted
+      : (predictedMt?.predicted?.name || predictedMt?.haplogroup || predictedMt?.primaryLineage || '');
+
+    if (predictedMt && primaryName) {
       const path: string[] = predictedMt.path || [];
       const tested: any[] = predictedMt.testedMarkers || [];
       const totalTestedSNPs = tested.length || 80;

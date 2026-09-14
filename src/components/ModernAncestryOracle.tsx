@@ -471,29 +471,29 @@ export const ModernAncestryOracle = memo(({
                   return (
                     <div
                       key={continent}
-                      className={`p-4 rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-md border ${theme.border} space-y-3 shadow-lg flex flex-col justify-between`}
+                      className={`p-4 rounded-2xl bg-[#1a1b1d]/70 backdrop-blur-md border ${theme.border} space-y-3 shadow-lg flex flex-col justify-between min-w-0 overflow-hidden`}
                     >
-                      <div>
-                        <div className="flex items-center justify-between pb-2 border-b border-white/5">
-                          <div className="flex items-center gap-2">
-                            <span className="text-lg">{theme.icon}</span>
-                            <h3 className="font-black text-sm text-white">{continent}</h3>
+                      <div className="min-w-0">
+                        <div className="flex items-center justify-between pb-2 border-b border-white/5 min-w-0 gap-2">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <span className="text-lg shrink-0">{theme.icon}</span>
+                            <h3 className="font-black text-sm text-white truncate">{continent}</h3>
                           </div>
-                          <span className={`font-mono font-black text-sm px-2.5 py-0.5 rounded-full ${theme.bg} ${theme.text}`}>
+                          <span className={`font-mono font-black text-sm px-2.5 py-0.5 rounded-full tabular-nums shrink-0 ${theme.bg} ${theme.text}`}>
                             {total.toFixed(1)}%
                           </span>
                         </div>
 
-                        <div className="space-y-2.5 mt-3">
+                        <div className="space-y-2.5 mt-3 min-w-0">
                           {subpops.map((sp, sIdx) => {
                             const ci = calculateAdmixtureCI(sp.percentage, totalSnps);
                             return (
-                              <div key={sIdx} className="space-y-1">
-                                <div className="flex justify-between items-center text-xs">
-                                  <span className="font-semibold text-slate-300 truncate max-w-[180px]" title={sp.name}>
+                              <div key={sIdx} className="space-y-1 min-w-0">
+                                <div className="flex justify-between items-center text-xs min-w-0 gap-2">
+                                  <span className="font-semibold text-slate-300 truncate flex-1 min-w-0" title={sp.name}>
                                     {sp.name}
                                   </span>
-                                  <div className="flex items-center gap-1.5 font-mono">
+                                  <div className="flex items-center gap-1.5 font-mono shrink-0 tabular-nums">
                                     <span className="text-[9px] text-slate-500">[{ci.low}%–{ci.high}%]</span>
                                     <span className="font-bold text-slate-200 text-xs">{sp.percentage.toFixed(1)}%</span>
                                   </div>

@@ -533,8 +533,10 @@ self.onmessage = async (e: MessageEvent) => {
         haplotype2Map: Object.keys(mergedHaplotype2Map).length > 0 ? mergedHaplotype2Map : undefined,
         isPhased: isAnyPhased,
         inferredBiologicalSex: inferredSex,
-        predictedYDNA: (predictedYDNA as any)?.predictedHaplogroup || (predictedYDNA as any)?.haplogroup || (predictedYDNA as any)?.code,
-        predictedMtDNA: (predictedMtDNA as any)?.predictedHaplogroup || (predictedMtDNA as any)?.haplogroup || (predictedMtDNA as any)?.code
+        yMap: mergedYMap,
+        mtMap: mergedMtMap,
+        predictedYDNA: yCode || predictedYDNA?.phase2?.haplogroup || predictedYDNA?.predicted?.name,
+        predictedMtDNA: mtCode || predictedMtDNA?.predicted
       }, fallbackProportions);
 
       if (laiResult) {
@@ -558,7 +560,7 @@ self.onmessage = async (e: MessageEvent) => {
       isPhased: isAnyPhased,
       haplotype1Map: Object.keys(mergedHaplotype1Map).length > 0 ? mergedHaplotype1Map : undefined,
       haplotype2Map: Object.keys(mergedHaplotype2Map).length > 0 ? mergedHaplotype2Map : undefined,
-      predictedYDNA, predictedMtDNA, mergedMtMap,
+      predictedYDNA, predictedMtDNA, mergedMtMap, mergedYMap,
       ancientLineageMatches,
       archaicAffinity,
 

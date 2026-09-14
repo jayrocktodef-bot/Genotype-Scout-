@@ -74,6 +74,7 @@ import ScoutWorkspace from "./components/ScoutWorkspace";
 const BloodTypeView = lazy(() => import("./components/BloodTypeView").then(m => ({ default: m.BloodTypeView })));
 const HealthTraitsTab = lazy(() => import("./components/HealthTraitsTab").then(m => ({ default: m.HealthTraitsTab })));
 import { calculateBloodType } from "./engines/bloodTypeCalculator";
+import { analyzeMtDNA, predictYDNAHaplogroup } from "./services/haplogroupPredictor";
 
 const ModernAncestryOracle = lazy(() => import("./components/ModernAncestryOracle").then(m => ({ default: m.ModernAncestryOracle })));
 const NaiveAncestryOracle = lazy(() => import("./components/NaiveAncestryOracle").then(m => ({ default: m.NaiveAncestryOracle })));
@@ -106,7 +107,7 @@ const ArchaicIntrogressionView = lazy(() => import("./components/ArchaicIntrogre
 
 
 const LOGO_URI = "https://writteninthegenome.blog/wp-content/uploads/2026/05/17794114671357483599285632974525.png";
-const VERSION = "5.13.0";
+const VERSION = "5.19.0";
 
 const normalizeBranchName = (name: string) => (name || "").toLowerCase().replace("haplogroup ", "").trim();
 
@@ -590,9 +591,9 @@ const ProfileSummary = memo(
             </div>
 
             {/* ===== Main Bento Grid ===== */}
-            <div className="grid grid-cols-1 xl:grid-cols-12 gap-5">
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-5 min-w-0">
               {/* ===== CELL A : Admixture & Subpopulations (span 8) ===== */}
-              <div className="xl:col-span-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 shadow-xl flex flex-col space-y-5">
+              <div className="xl:col-span-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 shadow-xl flex flex-col space-y-5 min-w-0 overflow-hidden">
                 {/* Header & View Switcher */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-3">
                   <div>
@@ -816,7 +817,7 @@ const ProfileSummary = memo(
                         return (
                           <div
                             key={idx}
-                            className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition-all hover:border-white/20 hover:bg-white/[0.08]"
+                            className="p-3 rounded-xl bg-white/5 backdrop-blur border border-white/10 transition-all hover:border-white/20 hover:bg-white/[0.08] min-w-0 overflow-hidden"
                           >
                             <div className="flex items-center justify-between text-xs min-w-0 gap-2 mb-1.5">
                               <div className="flex items-center gap-2 min-w-0 flex-1">
@@ -826,18 +827,18 @@ const ProfileSummary = memo(
                                 </span>
                                 <span className="font-bold text-slate-100 truncate min-w-0 flex items-center gap-1.5">
                                   <span>{pop.icon}</span>
-                                  <span>{pop.name}</span>
+                                  <span className="truncate">{pop.name}</span>
                                 </span>
                               </div>
 
                               <div className="flex items-center gap-1.5 shrink-0">
                                 {/* Mb & Tracts Badge */}
-                                <span className="font-mono text-[9px] text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5">
+                                <span className="font-mono text-[9px] text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded-full border border-white/5 tabular-nums">
                                   {pop.mb.toFixed(1)} Mb ({pop.tracts} {pop.tracts === 1 ? 'tract' : 'tracts'})
                                 </span>
 
                                 {/* Percentage */}
-                                <span className="font-mono font-black text-white bg-white/10 px-2 py-0.5 rounded-full text-[11px] min-w-[44px] text-right">
+                                <span className="font-mono font-black text-white bg-white/10 px-2 py-0.5 rounded-full text-[11px] min-w-[44px] text-right tabular-nums">
                                   {pop.percentage.toFixed(1)}%
                                 </span>
                               </div>
@@ -865,7 +866,7 @@ const ProfileSummary = memo(
               </div>
 
               {/* ===== CELL B : Lineages & Blood (span 4) ===== */}
-              <div className="xl:col-span-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 flex flex-col justify-between shadow-xl space-y-4">
+              <div className="xl:col-span-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-5 flex flex-col justify-between shadow-xl space-y-4 min-w-0 overflow-hidden">
                 <div className="border-b border-white/10 pb-3">
                   <h3 className="text-xs font-black text-slate-300 uppercase tracking-[0.15em]">
                     Uniparental Lineages &amp; Serology
@@ -875,18 +876,18 @@ const ProfileSummary = memo(
                   </p>
                 </div>
 
-                <div className="space-y-3.5 my-auto">
+                <div className="space-y-3.5 my-auto min-w-0">
                   {/* Paternal Y-DNA */}
-                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-teal-500/20 hover:border-teal-400/40 transition flex gap-3.5 items-center group">
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-teal-500/20 hover:border-teal-400/40 transition flex gap-3.5 items-center group min-w-0 overflow-hidden">
                     <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-600/30 to-emerald-500/20 border border-teal-500/30 flex items-center justify-center shrink-0 shadow-lg shadow-teal-500/10 group-hover:scale-105 transition-transform">
                       <Compass className="w-5 h-5 text-teal-300" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1 mb-0.5">
-                        <span className="text-[9px] font-black text-teal-400 uppercase tracking-widest block leading-none">
+                        <span className="text-[9px] font-black text-teal-400 uppercase tracking-widest block leading-none truncate">
                           Paternal (Y‑DNA)
                         </span>
-                        <span className="text-[8px] font-mono text-teal-400/80 bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/20 font-bold">
+                        <span className="text-[8px] font-mono text-teal-400/80 bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/20 font-bold shrink-0">
                           Clade
                         </span>
                       </div>
@@ -906,16 +907,16 @@ const ProfileSummary = memo(
                   </div>
 
                   {/* Maternal mtDNA */}
-                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-rose-500/20 hover:border-rose-400/40 transition flex gap-3.5 items-center group">
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-rose-500/20 hover:border-rose-400/40 transition flex gap-3.5 items-center group min-w-0 overflow-hidden">
                     <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-rose-600/30 to-pink-500/20 border border-rose-500/30 flex items-center justify-center shrink-0 shadow-lg shadow-rose-500/10 group-hover:scale-105 transition-transform">
                       <History className="w-5 h-5 text-rose-300" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1 mb-0.5">
-                        <span className="text-[9px] font-black text-rose-400 uppercase tracking-widest block leading-none">
+                        <span className="text-[9px] font-black text-rose-400 uppercase tracking-widest block leading-none truncate">
                           Maternal (mtDNA)
                         </span>
-                        <span className="text-[8px] font-mono text-rose-400/80 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20 font-bold">
+                        <span className="text-[8px] font-mono text-rose-400/80 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20 font-bold shrink-0">
                           Mitochondrial
                         </span>
                       </div>
@@ -929,7 +930,7 @@ const ProfileSummary = memo(
                   </div>
 
                   {/* Blood Type & Rh Factor */}
-                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-red-500/20 hover:border-red-400/40 transition flex gap-3.5 items-center group">
+                  <div className="p-3.5 rounded-2xl bg-white/[0.03] backdrop-blur border border-red-500/20 hover:border-red-400/40 transition flex gap-3.5 items-center group min-w-0 overflow-hidden">
                     <div
                       className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 shadow-lg backdrop-blur ${rhDisplay.pillColor} group-hover:scale-105 transition-transform`}
                     >
@@ -937,10 +938,10 @@ const ProfileSummary = memo(
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1 mb-0.5">
-                        <span className="text-[9px] font-black text-red-400 uppercase tracking-widest block leading-none">
+                        <span className="text-[9px] font-black text-red-400 uppercase tracking-widest block leading-none truncate">
                           {rhDisplay.label || 'Predicted Blood Type'}
                         </span>
-                        <span className="text-[8px] font-mono text-red-400/90 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 font-bold">
+                        <span className="text-[8px] font-mono text-red-400/90 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 font-bold shrink-0">
                           ABO / Rh
                         </span>
                       </div>
@@ -1904,7 +1905,19 @@ const MTDNAView = memo(({ mtData, treeSearchTerm, setTreeSearchTerm, matchedTrai
     });
   }, [mtData, findNode]);
 
-  if (!mtData) return null;
+  if (!mtData) {
+    return (
+      <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-10 text-center space-y-4 max-w-xl mx-auto my-8">
+        <div className="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mx-auto text-rose-400">
+          <History className="w-6 h-6" />
+        </div>
+        <h3 className="text-lg font-bold text-slate-200">No Maternal Lineage (mtDNA) Markers Detected</h3>
+        <p className="text-xs text-slate-400 leading-relaxed">
+          The active genotype dataset does not contain readable mitochondrial markers (chromosome MT or 26). Commercial microarray chips vary in mitochondrial coverage. If your file was expected to include mtDNA markers, try re-uploading the original raw archive.
+        </p>
+      </div>
+    );
+  }
 
   const derivedMarkers = mtData.testedMarkers ? mtData.testedMarkers.filter((m: any) => m.status === 'derived') : [];
   const markerPieData = derivedMarkers.map((m: any) => {
@@ -2219,6 +2232,7 @@ export default function App() {
     snpCount?: number, 
     predictedYDNA?: any, 
     predictedMtDNA?: any,
+    mergedYMap?: Record<string, string>,
     mergedMtMap?: Record<string, string>,
     prsResults?: any,
     pgxResults?: any,
@@ -2323,7 +2337,7 @@ export default function App() {
   useEffect(() => {
     const checkForceReset = async () => {
       try {
-        const CURRENT_BUILD = 'v5.18.0_parser_compat';
+        const CURRENT_BUILD = 'v5.19.0_cache_reset';
         const lastBuild = localStorage.getItem('genotype_scout_build');
         if (lastBuild !== CURRENT_BUILD) {
           console.log(`[App] Build version update registered: ${lastBuild} -> ${CURRENT_BUILD}`);
@@ -2386,6 +2400,86 @@ export default function App() {
               hasChanges = true;
             }
           }
+          // Auto-heal missing or unresolved predictedMtDNA
+          const hasResolvedMt = typeof ds.predictedMtDNA?.predicted === 'string' && ds.predictedMtDNA.predicted.length > 0;
+          if (!hasResolvedMt && (ds.mergedMtMap || ds.mergedSnpMap)) {
+            let mtMap = ds.mergedMtMap;
+            if (!mtMap || Object.keys(mtMap).length === 0) {
+              mtMap = {};
+              if (ds.mergedSnpMetaMap) {
+                for (const [rsid, meta] of Object.entries(ds.mergedSnpMetaMap as Record<string, { chrom: string; pos: number }>)) {
+                  if (meta && (meta.chrom === 'MT' || meta.chrom === '26' || meta.chrom === 'M')) {
+                    const geno = ds.mergedSnpMap?.[rsid];
+                    if (geno && geno !== '--' && geno !== '00') {
+                      const allele = (geno.length === 2 && geno[0] === geno[1]) ? geno[0] : geno[0];
+                      if (allele && allele !== '-') mtMap[String(meta.pos)] = allele;
+                    }
+                  }
+                }
+              }
+              if (ds.mergedSnpMap) {
+                for (const [key, geno] of Object.entries(ds.mergedSnpMap as Record<string, string>)) {
+                  const match = key.match(/^chr(?:mt|m|26)_(\d+)$/i);
+                  if (match && geno && geno !== '--' && geno !== '00') {
+                    const posStr = match[1];
+                    const allele = (geno.length === 2 && geno[0] === geno[1]) ? geno[0] : geno[0];
+                    if (allele && allele !== '-') mtMap[posStr] = allele;
+                  }
+                }
+              }
+              if (Object.keys(mtMap).length > 0) {
+                ds.mergedMtMap = mtMap;
+                hasChanges = true;
+              }
+            }
+            if (mtMap && Object.keys(mtMap).length > 0) {
+              try {
+                console.log("Auto-healing predictedMtDNA for cached dataset:", ds.name);
+                ds.predictedMtDNA = analyzeMtDNA(mtMap);
+                hasChanges = true;
+              } catch (mtErr) {
+                console.warn("Failed to auto-heal predictedMtDNA:", mtErr);
+              }
+            }
+          }
+
+          // Auto-heal missing or unresolved predictedYDNA
+          const hasResolvedY = typeof (ds.predictedYDNA?.phase2?.haplogroup || ds.predictedYDNA?.predicted?.name || (typeof ds.predictedYDNA?.predicted === 'string' ? ds.predictedYDNA.predicted : undefined)) === 'string';
+          if (!hasResolvedY && (ds.mergedYMap || ds.mergedSnpMap)) {
+            let yMap = ds.mergedYMap;
+            if (!yMap || Object.keys(yMap).length === 0) {
+              yMap = {};
+              if (ds.mergedSnpMetaMap) {
+                for (const [rsid, meta] of Object.entries(ds.mergedSnpMetaMap as Record<string, { chrom: string; pos: number }>)) {
+                  if (meta && (meta.chrom === 'Y' || meta.chrom === '24')) {
+                    const geno = ds.mergedSnpMap?.[rsid];
+                    if (geno && geno !== '--') yMap[rsid] = geno;
+                  }
+                }
+              }
+              if (ds.mergedSnpMap) {
+                for (const [key, geno] of Object.entries(ds.mergedSnpMap as Record<string, string>)) {
+                  if ((key.startsWith('chry_') || key.startsWith('chr24_')) && geno && geno !== '--') {
+                    yMap[key] = geno;
+                  }
+                }
+              }
+              if (Object.keys(yMap).length > 0) {
+                ds.mergedYMap = yMap;
+                hasChanges = true;
+              }
+            }
+            if (yMap && Object.keys(yMap).length > 0) {
+              try {
+                console.log("Auto-healing predictedYDNA for cached dataset:", ds.name);
+                ds.predictedYDNA = predictYDNAHaplogroup(yMap, Y_DNA_TREE);
+                hasChanges = true;
+              } catch (yErr) {
+                console.warn("Failed to auto-heal predictedYDNA:", yErr);
+              }
+            }
+          }
+
           return ds;
         }));
         setDatasets(updated);
@@ -2404,6 +2498,7 @@ export default function App() {
     snpCount?: number, 
     predictedYDNA?: any, 
     predictedMtDNA?: any,
+    mergedYMap?: Record<string, string>,
     mergedMtMap?: Record<string, string>,
     analysis?: any,
     mergedSnpMap?: Record<string, string>,
@@ -2682,6 +2777,7 @@ export default function App() {
             snpCount: payload.snpCount,
             predictedYDNA: payload.predictedYDNA,
             predictedMtDNA: payload.predictedMtDNA,
+            mergedYMap: payload.mergedYMap,
             mergedMtMap: payload.mergedMtMap,
             analysis: payload.analysis,
             mergedSnpMap: payload.mergedSnpMap,
@@ -2809,6 +2905,38 @@ export default function App() {
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
     return calculateFamousMatches(snpMap);
+  }, [datasets, activeDatasetIndex]);
+
+  const activeMtData = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (!dataset) return null;
+    if (dataset.predictedMtDNA && (dataset.predictedMtDNA.predicted || dataset.predictedMtDNA.haplogroup)) {
+      return dataset.predictedMtDNA;
+    }
+    if (dataset.mergedMtMap && Object.keys(dataset.mergedMtMap).length > 0) {
+      try {
+        return analyzeMtDNA(dataset.mergedMtMap);
+      } catch {
+        return dataset.predictedMtDNA || null;
+      }
+    }
+    return dataset.predictedMtDNA || null;
+  }, [datasets, activeDatasetIndex]);
+
+  const activeYData = useMemo(() => {
+    const dataset = datasets[activeDatasetIndex];
+    if (!dataset) return null;
+    if (dataset.predictedYDNA && (dataset.predictedYDNA.phase2 || dataset.predictedYDNA.predicted)) {
+      return dataset.predictedYDNA;
+    }
+    if (dataset.mergedYMap && Object.keys(dataset.mergedYMap).length > 0) {
+      try {
+        return predictYDNAHaplogroup(dataset.mergedYMap, Y_DNA_TREE);
+      } catch {
+        return dataset.predictedYDNA || null;
+      }
+    }
+    return dataset.predictedYDNA || null;
   }, [datasets, activeDatasetIndex]);
 
   const healthWellnessMatches = useMemo(() => {
@@ -3239,13 +3367,13 @@ export default function App() {
 
                 {activeHaploType === 'paternal' ? (
                   <YDNAView 
-                    yData={datasets[activeDatasetIndex].predictedYDNA} 
+                    yData={activeYData} 
                     treeSearchTerm={treeSearchTerm}
                     setTreeSearchTerm={setTreeSearchTerm}
                   />
                 ) : (
                   <MTDNAView 
-                    mtData={datasets[activeDatasetIndex].predictedMtDNA} 
+                    mtData={activeMtData} 
                     treeSearchTerm={treeSearchTerm}
                     setTreeSearchTerm={setTreeSearchTerm}
                     matchedTraits={userMatchedMitoTraits}

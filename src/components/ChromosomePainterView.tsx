@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Dna, Loader2, X, HelpCircle, Search } from 'lucide-react';
-import { ChromosomePainter } from './ChromosomePainter';
+import { ChromosomePainter, CHROMOSOME_LENGTHS } from './ChromosomePainter';
 import { computeDatasetLAI, computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
 
 const POP_COLORS: Record<string, string> = {
@@ -23,6 +23,22 @@ const REGION_NAMES: Record<string, string> = {
   OCE: 'Oceanian',
   MID: 'Middle Eastern'
 };
+
+function isNativeAmericanAIM(m: any): boolean {
+  if (!m) return false;
+  const reg = (m.region || m.continent || '').toLowerCase();
+  if (reg.includes('native') || reg.includes('indigenous') || reg === 'amr') return true;
+  if (m.frequencies) {
+    const amrF = m.frequencies.AMR ?? m.frequencies.NAT ?? 0;
+    const eurF = m.frequencies.EUR ?? 0;
+    const afrF = m.frequencies.AFR ?? 0;
+    const maxBackground = Math.max(eurF, afrF);
+    if (amrF >= 0.50 && (amrF - maxBackground) >= 0.25) {
+      return true;
+    }
+  }
+  return false;
+}
 
 interface Segment {
   continent: string;
@@ -57,11 +73,7 @@ export const ChromosomePainterView = ({
   }, [snpsUsedForLAI, dataset]);
 
   const totalNativeCount = useMemo(() => {
-    return allMatchedAIMs.filter((m: any) => {
-      const reg = (m.region || m.continent || '').toLowerCase();
-      const isAmrFreq = m.frequencies && ((m.frequencies.AMR && m.frequencies.AMR >= 0.35) || (m.frequencies.NAT && m.frequencies.NAT >= 0.35));
-      return reg.includes('native') || reg.includes('indigenous') || reg.includes('amr') || isAmrFreq;
-    }).length;
+    return allMatchedAIMs.filter(isNativeAmericanAIM).length;
   }, [allMatchedAIMs]);
 
   const displayedMarkers = useMemo(() => {
@@ -91,15 +103,11 @@ export const ChromosomePainterView = ({
     // 2. Region / Native American filter
     if (activeRegionFilter !== 'ALL') {
       if (activeRegionFilter === 'AMR') {
-        list = list.filter((r: any) => {
-          const reg = (r.region || r.continent || '').toLowerCase();
-          const isAmrFreq = r.frequencies && ((r.frequencies.AMR && r.frequencies.AMR >= 0.35) || (r.frequencies.NAT && r.frequencies.NAT >= 0.35));
-          return reg.includes('native') || reg.includes('indigenous') || reg.includes('amr') || isAmrFreq;
-        });
+        list = list.filter(isNativeAmericanAIM);
       } else {
         list = list.filter((r: any) => {
           const reg = (r.region || r.continent || '').toLowerCase();
-          return reg.includes(activeRegionFilter);
+          return reg.includes(activeRegionFilter.toLowerCase());
         });
       }
     }
@@ -143,7 +151,12 @@ export const ChromosomePainterView = ({
 
     const timer = setTimeout(() => {
       try {
-        const fallbackProportions = dataset.analysis?.oracleResults?.continentalScores || dataset.analysis?.naiveEstimates || {};
+        const fallbackProportions = 
+          dataset.analysis?.oracleResults?.primary?.continentalScores || 
+          dataset.analysis?.oracleResults?.continentalScores || 
+          dataset.analysis?.subpopulationOracle?.all?.continentalScores || 
+          dataset.analysis?.naiveEstimates || 
+          {};
         const result = computeDatasetLAI(dataset, fallbackProportions);
 
         if (result) {
@@ -248,7 +261,12 @@ export const ChromosomePainterView = ({
               selectedChromFilter={activeChromFocus}
               onChromFilterChange={(c) => {
                 setActiveChromFocus(c);
-                if (c !== 'ALL') setMarkerScope('chromosome');
+                setSelectedSegment(null);
+                if (c !== 'ALL') {
+                  setMarkerScope('chromosome');
+                } else {
+                  setMarkerScope('all');
+                }
               }}
               onSegmentClick={(chrom, strand, segment, bp) => {
                 setSelectedSegment({ chrom, strand, segment, bp });
@@ -293,7 +311,7 @@ export const ChromosomePainterView = ({
                     </div>
 
                     {/* Segment Specific Summary if a segment is clicked */}
-                    {selectedSegment && (
+                    {selectedSegment ? (
                       <div className="grid grid-cols-2 gap-2 text-[10px]">
                         <div className="p-2 bg-slate-800/60 rounded-xl border border-slate-700/50">
                           <span className="text-slate-400 font-bold block uppercase text-[9px]">Ancestry Origin</span>
@@ -312,10 +330,25 @@ export const ChromosomePainterView = ({
                           </span>
                         </div>
                       </div>
-                    )}
+                    ) : activeChromFocus !== 'ALL' ? (
+                      <div className="grid grid-cols-2 gap-2 text-[10px]">
+                        <div className="p-2 bg-slate-800/60 rounded-xl border border-slate-700/50">
+                          <span className="text-slate-400 font-bold block uppercase text-[9px]">Chromosome</span>
+                          <span className="text-xs font-black text-white mt-0.5 flex items-center gap-1.5 font-bold">
+                            Chr {activeChromFocus}
+                          </span>
+                        </div>
+                        <div className="p-2 bg-slate-800/60 rounded-xl border border-slate-700/50">
+                          <span className="text-slate-400 font-bold block uppercase text-[9px]">Span / Length</span>
+                          <span className="text-xs font-bold text-slate-200 mt-0.5 block font-mono">
+                            {((CHROMOSOME_LENGTHS[activeChromFocus] || 0) / 1000000).toFixed(1)} Mb
+                          </span>
+                        </div>
+                      </div>
+                    ) : null}
 
                     {/* Y Chromosome Patrilineal Notice */}
-                    {(selectedSegment?.chrom === 'Y' || activeChromFocus === 'Y') && (
+                    {((selectedSegment?.chrom === 'Y') || (activeChromFocus === 'Y' && !selectedSegment)) && (
                       <div className="p-2.5 bg-amber-950/30 border border-amber-500/30 rounded-xl text-[11px] space-y-1">
                         <div className="flex items-center gap-1.5 text-amber-400 font-bold text-[11px]">
                           <Dna className="w-3.5 h-3.5 shrink-0" />

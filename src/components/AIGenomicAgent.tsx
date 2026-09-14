@@ -50,11 +50,19 @@ export const AIGenomicAgent: React.FC<AIGenomicAgentProps> = ({
   const [showSummaryView, setShowSummaryView] = useState(false);
   
   const chatEndRef = useRef<HTMLDivElement>(null);
-  const localStorageKey = 'witg_gemini_api_key';
+  const sessionStorageKey = 'witg_gemini_session_key';
 
-  // Load API key from local storage on mount
+  // Load API key from session storage on mount (clears legacy localStorage keys for security)
   useEffect(() => {
-    const savedKey = localStorage.getItem(localStorageKey);
+    try {
+      localStorage.removeItem('witg_gemini_api_key');
+    } catch {}
+
+    let savedKey = '';
+    try {
+      savedKey = sessionStorage.getItem(sessionStorageKey) || '';
+    } catch {}
+
     if (savedKey) {
       setApiKey(savedKey);
       setIsSaved(true);
@@ -74,14 +82,14 @@ export const AIGenomicAgent: React.FC<AIGenomicAgentProps> = ({
       {
         id: 'welcome',
         role: 'model',
-        text: `Hello! I am your **AI Genomic Guide**. I have analyzed your ancestry deconvolution, haplogroups, Euclidean distances, and ancient matches. 
+        text: `Hello! I am your **AI Genomic Guide**. I can interpret your ancestry deconvolution, haplogroups, Euclidean distances, and ancient matches. 
 
 You can ask me questions like:
 - *What does my maternal haplogroup reveal about my ancestors?*
 - *Can you explain my subpopulation percentages?*
 - *Which ancient individuals am I closest to genetically?*
 
-*Please note: I run 100% client-side. None of your raw DNA genotypes or wellness findings are sent to the AI.*`
+*Transparency & Privacy Notice: When you send a question, high-level summary metrics (ancestry percentages, haplogroup labels) are transmitted via encrypted HTTPS directly to Google's Gemini API. Your raw genotype files and health risk markers are NEVER transmitted.*`
       }
     ]);
   }, []);
@@ -91,20 +99,26 @@ You can ask me questions like:
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isGenerating]);
 
-  // Save key helper
+  // Save key helper (session-only memory storage)
   const handleSaveKey = () => {
     if (apiKey.trim()) {
-      localStorage.setItem(localStorageKey, apiKey.trim());
+      try {
+        sessionStorage.setItem(sessionStorageKey, apiKey.trim());
+      } catch {}
       setIsSaved(true);
       setShowKeyConfig(false);
     } else {
-      localStorage.removeItem(localStorageKey);
+      try {
+        sessionStorage.removeItem(sessionStorageKey);
+      } catch {}
       setIsSaved(false);
     }
   };
 
   const handleClearKey = () => {
-    localStorage.removeItem(localStorageKey);
+    try {
+      sessionStorage.removeItem(sessionStorageKey);
+    } catch {}
     setApiKey('');
     setIsSaved(false);
     setShowKeyConfig(true);
@@ -275,7 +289,8 @@ You can ask me questions like:
 
     try {
       // API request streaming setup using SSE alt=sse
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse&key=${apiKey.trim()}`;
+      // Authenticate via x-goog-api-key header to eliminate credential exposure in URLs/logs/referrers
+      const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse';
       
       // Compile message history in Gemini API format
       const history = messages
@@ -305,7 +320,8 @@ You can ask me questions like:
       const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey.trim()
         },
         body: JSON.stringify(payload)
       });
@@ -553,7 +569,7 @@ You can ask me questions like:
                   <div>
                     <h4 className="text-xs font-black uppercase tracking-wider text-slate-800 dark:text-slate-200">Gemini Developer API Key</h4>
                     <p className="text-[10px] text-slate-500 mt-1 dark:text-slate-400">
-                      To run explanations, input a Gemini API key. You can generate a free key in <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline font-bold">Google AI Studio</a>. Keys are stored locally in your browser.
+                      To run explanations, input a Gemini API key. You can generate a free key in <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline font-bold">Google AI Studio</a>. Keys are held in session memory only (never written to disk) and authenticated via direct TLS headers.
                     </p>
                   </div>
                 </div>

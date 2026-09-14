@@ -107,7 +107,10 @@ export default defineConfig(({mode}) => {
     },
     optimizeDeps: {
       entries: ['index.html'],
-      exclude: ['@xenova/transformers']
+      exclude: ['@xenova/transformers'],
+      esbuildOptions: {
+        target: 'es2022',
+      },
     },
     resolve: {
       alias: {
@@ -118,6 +121,7 @@ export default defineConfig(({mode}) => {
       drop: ['console', 'debugger'],
     },
     build: {
+      target: 'es2022',
       // Pull the large, standalone, lazily-used assets out of the main entry
       // chunk so the app shell loads fast. Kept conservative: only split leaf
       // modules (genomic data JSON + ONNX runtime) to avoid React init/order bugs.
@@ -149,9 +153,23 @@ export default defineConfig(({mode}) => {
     },
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
+      headers: {
+        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://writteninthegenome.blog; connect-src 'self' ws: wss: https://generativelanguage.googleapis.com blob: data:; worker-src 'self' blob:; object-src 'none';",
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      },
       watch: {
         ignored: ['**/venv/**', '**/results_ner_genetics/**', '**/onnx_unquantized/**', '**/onnx_quantized/**']
       }
+    },
+    preview: {
+      headers: {
+        'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://writteninthegenome.blog; connect-src 'self' https://generativelanguage.googleapis.com blob: data:; worker-src 'self' blob:; object-src 'none';",
+        'X-Content-Type-Options': 'nosniff',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+        'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      },
     },
   };
 });

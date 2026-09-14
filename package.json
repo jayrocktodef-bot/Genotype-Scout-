@@ -1,7 +1,7 @@
 {
   "name": "genotype-scout",
   "private": true,
-  "version": "5.17.0",
+  "version": "5.19.0",
   "type": "module",
   "engines": {
     "node": ">=20.0.0"
@@ -76,6 +76,9 @@
     "vitest": "^4.1.4"
   },
   "overrides": {
-    "fast-uri": "^3.1.7"
+    "fast-uri": "^3.1.7",
+    "protobufjs": "^7.6.6",
+    "esbuild": "^0.28.2",
+    "sharp": "^0.35.4"
   }
 }
