@@ -48,6 +48,7 @@ export default defineConfig(({mode}) => {
         workbox: {
           skipWaiting: true,
           clientsClaim: true,
+          cleanupOutdatedCaches: true,
           // Cache all built assets (JS, CSS, HTML, fonts, images, workers, and data chunks)
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,woff,ttf}'],
           // Allow large data chunks and worker bundles to be precached for offline support

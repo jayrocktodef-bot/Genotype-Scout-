@@ -54,8 +54,8 @@ import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
 import { jsPDF } from "jspdf";
 import { groupByCategory, CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
-import { ANCHOR_AIMS } from "./anchorAims";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
+import { forceResetAndClearCache } from "./utils/cacheManager";
 import { REGION_METADATA } from "./constants/regionInfo";
 import { calculateFamousMatches } from "./utils/individualMatching";
 import { matchHealthAndWellness } from "./utils/healthMatching";
@@ -2583,33 +2583,8 @@ export default function App() {
     setDatasets([]);
     setActiveDatasetIndex(0);
     
-    // Clear local storage and IndexedDB results
-    await clearResults();
-
-    // Clear all service worker registrations to force a fresh download
-    if ('serviceWorker' in navigator) {
-      try {
-        const registrations = await navigator.serviceWorker.getRegistrations();
-        for (const registration of registrations) {
-          await registration.unregister();
-        }
-      } catch (err) {
-        console.error('Failed to unregister service worker:', err);
-      }
-    }
-
-    // Clear all browser caches (CacheStorage) to free up memory and storage
-    if ('caches' in window) {
-      try {
-        const keys = await caches.keys();
-        await Promise.all(keys.map(key => caches.delete(key)));
-      } catch (err) {
-        console.error('Failed to clear cache storage:', err);
-      }
-    }
-
-    // Perform a clean reload from the server, bypassing cache
-    window.location.reload();
+    // Execute comprehensive forced reset: unregister SW, purge CacheStorage & IndexedDB, reload
+    await forceResetAndClearCache(true);
   };
 
 

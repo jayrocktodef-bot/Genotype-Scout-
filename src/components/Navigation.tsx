@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, Download } from 'lucide-react';
+import { Sun, Moon, Download, RotateCcw } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -20,6 +20,7 @@ const Navigation: React.FC<NavigationProps> = ({
   onThemeToggle,
   onInstallApp,
   isInstallable = false,
+  onReset,
 }) => (
   <nav 
     className={`fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-6 backdrop-blur-xl border-b transition-colors duration-200 ${
@@ -63,6 +64,18 @@ const Navigation: React.FC<NavigationProps> = ({
           style={{ transitionProperty: 'color, background-color, transform' }}
         >
           {theme === 'dark' ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}
+        </button>
+      ) : null}
+
+      {onReset ? (
+        <button
+          onClick={onReset}
+          aria-label="Force reset and clear cache"
+          title="Force reset application and clear all caches"
+          className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 border border-slate-700/50 hover:border-rose-500/30 text-[10px] font-black uppercase tracking-wider transition-all active:scale-[0.96]"
+        >
+          <RotateCcw className="w-3.5 h-3.5" aria-hidden="true" />
+          <span className="hidden sm:inline">Clear Cache</span>
         </button>
       ) : null}
 
