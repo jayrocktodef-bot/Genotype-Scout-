@@ -111,26 +111,31 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
           {displayDescription}
         </p>
 
-        <div className={`w-full mt-auto grid ${yData.phase2 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'} gap-2 border-t border-slate-200/50 dark:border-white/10 pt-4 px-1 min-w-0`}>
-          {yData.phase2 && (
-            <div className="flex flex-col text-left sm:text-center min-w-0 overflow-hidden">
-              <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Confidence">Confidence</span>
-              <span className="text-sm font-black text-[#14B8A6] tabular-nums truncate">{confidence.toFixed(1)}%</span>
-            </div>
-          )}
-          <div className="flex flex-col text-center min-w-0 overflow-hidden">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Path Depth">Path Depth</span>
-            <span className="text-sm font-black text-indigo-400 tabular-nums truncate">{yData.path.length} Steps</span>
-          </div>
-          <div className="flex flex-col text-center min-w-0 overflow-hidden">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Coverage">Coverage</span>
-            <span className="text-sm font-black text-emerald-400 tabular-nums truncate">{coverage.toFixed(1)}%</span>
-          </div>
-          <div className="flex flex-col text-right sm:text-center min-w-0 overflow-hidden">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold flex items-center gap-1 justify-end sm:justify-center dark:text-slate-400 truncate" title="Processed">
-              <Dna className="w-3 h-3 shrink-0"/> <span className="truncate">Processed</span>
+        <div className="w-full mt-auto space-y-3 border-t border-slate-200/50 dark:border-white/10 pt-4 px-1 min-w-0">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-950/60 border border-teal-500/20 text-xs font-mono">
+            <span className="text-slate-400 text-[11px] font-bold">
+              Observed Marker Concordance:
             </span>
-            <span className="text-sm font-black text-blue-400 tabular-nums truncate">{totalTested.toLocaleString()}</span>
+            <span className="font-bold text-emerald-400 text-[11px] tabular-nums">
+              Concordance on Observed Markers: {derived}/{derived} SNPs ({coverage.toFixed(1)}% Panel Coverage)
+            </span>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2 min-w-0">
+            <div className="flex flex-col text-center min-w-0 overflow-hidden">
+              <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Phylogenetic Depth">Tree Depth</span>
+              <span className="text-sm font-black text-indigo-400 tabular-nums truncate">{yData.path.length} Steps</span>
+            </div>
+            <div className="flex flex-col text-center min-w-0 overflow-hidden">
+              <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Panel Coverage">Panel Coverage</span>
+              <span className="text-sm font-black text-emerald-400 tabular-nums truncate">{coverage.toFixed(1)}%</span>
+            </div>
+            <div className="flex flex-col text-center min-w-0 overflow-hidden">
+              <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold flex items-center gap-1 justify-center dark:text-slate-400 truncate" title="Audited Loci">
+                <Dna className="w-3 h-3 shrink-0"/> <span className="truncate">Y-Loci Tested</span>
+              </span>
+              <span className="text-sm font-black text-blue-400 tabular-nums truncate">{totalTested.toLocaleString()}</span>
+            </div>
           </div>
         </div>
       </div>

@@ -3,7 +3,8 @@ import { YPhylotreeDataset, YPhylotreeBranch, YSnpRecord } from '../utils/yPhylo
 import {
   isPalindromicMutation,
   matchGenotypeAllele,
-  isYAmpliconicRegion
+  isYAmpliconicRegion,
+  isYPARRegion
 } from '../utils/genomicMasks';
 import { isRecurrentSnp } from '../utils/homoplasyDatabase';
 import { isPlatformNoisyLocus } from '../utils/chipNoiseDatabase';
@@ -212,6 +213,9 @@ export class YDnaPredictorV2 {
         if (!rawAllele) continue;
 
         localCovered++;
+        const isPAR = isYPARRegion(snp.posHg19, snp.posHg38);
+        if (isPAR) continue; // Exclude Pseudoautosomal Region (PAR1/PAR2) SNPs
+
         const isPalindromic = isPalindromicMutation(snp.ancestral, snp.derived);
         const isAmpliconic = isYAmpliconicRegion(snp.posHg19, snp.posHg38);
         const isRecurrent = isRecurrentSnp(snp.name, snp.rsid);
@@ -385,7 +389,9 @@ export class YDnaPredictorV2 {
       traverse('A', 1, [], new Set<string>(), new Set<string>());
     }
 
-    const finalTerminal = bestDerived > 0 ? bestTerminal : 'N/A';
+    const isFemaleOrNoCall = bestDerived === 0;
+    const finalTerminal = !isFemaleOrNoCall ? bestTerminal : 'No Call (Female XX or Insufficient Y Coverage)';
+    const inferredBiologicalSex = isFemaleOrNoCall ? 'FEMALE' : 'MALE';
 
     let palindromicCount = 0;
     let nonPalindromicCount = 0;
@@ -399,20 +405,21 @@ export class YDnaPredictorV2 {
 
     return {
       terminalHaplogroup: finalTerminal,
-      confidence: bestDerived > 0 ? Math.round(bestConfidence * 100) / 100 : 0,
-      coverage: bestDerived > 0 ? Math.round(bestCoverage * 100) / 100 : 0,
-      derivedSnpCount: bestDerived,
-      ancestralSnpCount: bestAncestral,
+      confidence: !isFemaleOrNoCall ? Math.round(bestConfidence * 100) / 100 : 0,
+      coverage: !isFemaleOrNoCall ? Math.round(bestCoverage * 100) / 100 : 0,
+      derivedSnpCount: isFemaleOrNoCall ? 0 : bestDerived,
+      ancestralSnpCount: isFemaleOrNoCall ? 0 : bestAncestral,
       nonPalindromicDerivedCount: nonPalindromicCount,
       palindromicDerivedCount: palindromicCount,
       recurrentDerivedCount: recurrentCount,
       isPalindromicAmbiguous: bestIsPalindromicAmbiguous,
       isProvisionalTerminal: bestIsProvisional,
       apexAnchorClade: bestApexAnchor,
-      path: bestDerived > 0 ? bestPath : [],
+      inferredBiologicalSex: inferredBiologicalSex,
+      path: !isFemaleOrNoCall ? bestPath : [],
       rejectedBranches,
-      derivedMarkers: matchedDerivedList,
-      ancestralMarkers: matchedAncestralList
+      derivedMarkers: isFemaleOrNoCall ? [] : matchedDerivedList,
+      ancestralMarkers: isFemaleOrNoCall ? [] : matchedAncestralList
     };
   }
 }

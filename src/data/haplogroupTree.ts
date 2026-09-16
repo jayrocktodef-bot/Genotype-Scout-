@@ -66,11 +66,27 @@ export const Y_DNA_HAPLOGROUPS: HaplogroupDefinition[] = [
     ]
   },
   {
+    code: "DE",
+    shortName: "DE Macroclade (YAP)",
+    cladeName: "DE-M145",
+    lineageType: "PATERNAL_YDNA",
+    parentClade: "CT",
+    definingSnps: ["M145", "M203", "YAP", "P144"],
+    ageYearsBp: "~68,000 BP",
+    originRegion: "Northeast Africa / Near East",
+    historicalDescription: "Ancient ancestral macro-haplogroup uniting Asian D lineages and pan-African/Mediterranean E lineages. Defined by the famous YAP retrotransposon insertion.",
+    ancientCultures: ["Upper Paleolithic Pioneers", "Early Out-of-Africa Explorers"],
+    highFrequencyModern: ["Ancestral root to haplogroups D (Tibetan, Andamanese, Jomon Ainu) and E (African, Mediterranean)"],
+    migrationPath: [
+      { order: 1, region: "Horn of Africa / Levant", timePeriod: "68,000 BP", description: "Divergence into Asian D and African/Mediterranean E branches." }
+    ]
+  },
+  {
     code: "E",
     shortName: "Haplogroup E",
     cladeName: "E-M96",
     lineageType: "PATERNAL_YDNA",
-    parentClade: "CT",
+    parentClade: "DE",
     definingSnps: ["M96", "P29", "P150", "rs9786481"],
     ageYearsBp: "~65,000 BP",
     originRegion: "Northeast Africa / Levant",

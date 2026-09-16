@@ -5,11 +5,15 @@ import {
   normalizeChromosome, 
   cleanGenotypeString, 
   detectHeaderColumns,
+  sniffDelimiter,
+  sniffAndBuildParsePlan,
+  decompressGenomicBuffer,
   microPhaseDataset 
 } from './dnaParser';
 import { parseDNAFile } from '../utils/dnaParser';
 import { microPhase } from '../engines/ancestry/microPhaser';
 import { correctPhasingErrors } from '../engines/ancestry/phasingCorrector';
+import { zipSync, strToU8 } from 'fflate';
 
 describe('dnaParser - Commercial Vendors & Edge Cases', () => {
   it('should parse 23andMe v1-v5 format correctly', () => {
@@ -343,13 +347,79 @@ rs456\t2\t200\tCT
     expect(map['rs456']).toBe('CT');
   });
 
+  it('should parse reordered AncestryDNA columns (chromosome, rsid, position, allele1, allele2)', () => {
+    const rawData = `
+# AncestryDNA New Format
+chromosome\trsid\tposition\tallele1\tallele2
+1\trs1001\t15000\tA\tG
+2\trs1002\t25000\tC\tT
+X\trs1003\t35000\tA\tA
+`;
+    const result = parseRawDNA(rawData);
+    expect(result.snpMap['rs1001']).toBe('AG');
+    expect(result.snpMap['rs1002']).toBe('CT');
+    expect(result.xMap['rs1003']).toBe('AA');
+    expect(result.snpMetaMap['rs1001'].chrom).toBe('1');
+    expect(result.snpMetaMap['rs1001'].pos).toBe(15000);
+    expect(result.snpCount).toBe(3);
+  });
+
+  it('should parse headerless raw data rows correctly using statistical content voting', () => {
+    const rawData = `
+rs101\t1\t100000\tAA
+rs102\t1\t200000\tAG
+rs103\t2\t300000\tGG
+rs104\t3\t400000\tCT
+rs105\tX\t500000\tCC
+`;
+    const result = parseRawDNA(rawData);
+    expect(result.snpMap['rs101']).toBe('AA');
+    expect(result.snpMap['rs102']).toBe('AG');
+    expect(result.snpMap['rs103']).toBe('GG');
+    expect(result.snpMap['rs104']).toBe('CT');
+    expect(result.xMap['rs105']).toBe('CC');
+    expect(result.snpCount).toBe(5);
+  });
+
+  it('should parse headerless inverted columns (chr, pos, gt, rsid) via content voting', () => {
+    const rawData = `
+1\t100000\tAA\trs201
+1\t200000\tAG\trs202
+2\t300000\tGG\trs203
+3\t400000\tCT\trs204
+X\t500000\tCC\trs205
+`;
+    const result = parseRawDNA(rawData);
+    expect(result.snpMap['rs201']).toBe('AA');
+    expect(result.snpMap['rs202']).toBe('AG');
+    expect(result.snpMetaMap['rs201'].chrom).toBe('1');
+    expect(result.snpMetaMap['rs201'].pos).toBe(100000);
+    expect(result.snpCount).toBe(5);
+  });
+
+  it('should tolerate metadata and disclaimer lines without comment prefixes', () => {
+    const rawData = `AncestryDNA raw data file version 3.0
+Export Date: 2026-03-15
+Terms of Service and Disclaimer: This genetic data is provided for informational purposes only.
+rsid\tchromosome\tposition\tallele1\tallele2
+rs901\t1\t50000\tA\tA
+rs902\t2\t60000\tC\tG
+rs903\tY\t70000\tT\t0
+`;
+    const result = parseRawDNA(rawData);
+    expect(result.snpMap['rs901']).toBe('AA');
+    expect(result.snpMap['rs902']).toBe('CG');
+    expect(result.yMap['rs903']).toBe('T');
+    expect(result.snpCount).toBe(3);
+  });
+
   it('should throw error for empty file', () => {
     expect(() => parseRawDNA('')).toThrow('This file is completely empty.');
   });
 
-  it('should throw error for invalid data', () => {
+  it('should throw error with ERR-4025FGD1 for invalid data', () => {
     const rawData = 'invalid data without columns';
-    expect(() => parseRawDNA(rawData)).toThrow('The file contains no parseable genetic markers (SNPs).');
+    expect(() => parseRawDNA(rawData)).toThrow(/ERR-4025FGD1/);
   });
 });
 
@@ -461,4 +531,65 @@ describe('Phasing & MicroPhaser Engine', () => {
     expect(corrected.strandA[1]).toBe('A');
     expect(corrected.strandB[1]).toBe('G');
   });
+
+  it('should accurately sniff tab delimiter without confounding with spaces', () => {
+    const lines = [
+      '# This is a sample preamble',
+      'rs123\t1\t1000\tAA',
+      'rs456\t1\t2000\tGG',
+      'rs789\t2\t3000\tCC'
+    ];
+    const { delim, delimStr } = sniffDelimiter(lines);
+    expect(delimStr).toBe('\t');
+    expect(delim).toBe(9);
+  });
+
+  it('should detect headers located past 64 preamble lines', () => {
+    const preamble: string[] = [];
+    for (let i = 0; i < 80; i++) {
+      preamble.push(`# Disclaimer line ${i}: This genetic report is for informational purposes only.`);
+    }
+    const sampleLines = [
+      ...preamble,
+      '# rsid\tchromosome\tposition\tgenotype',
+      'rs1001\t1\t123456\tAA',
+      'rs1002\t1\t123457\tGG'
+    ];
+    const plan = sniffAndBuildParsePlan(sampleLines);
+    expect(plan.mapping).toBeDefined();
+    expect(plan.mapping.chromIdx).toBe(1);
+    expect(plan.mapping.posIdx).toBe(2);
+    expect(plan.mapping.gtIdx).toBe(3);
+  });
+
+  it('should extract the genomic file and discard README.txt from a ZIP archive', () => {
+    const zipData = zipSync({
+      'README.txt': strToU8('Company Disclaimers and Terms of Service. Do not parse this file.'),
+      'genome_User_Full_2026.txt': strToU8('# rsid\tchromosome\tposition\tgenotype\nrs123\t1\t100\tAA\nrs456\t2\t200\tGG\n')
+    });
+    const extracted = decompressGenomicBuffer(zipData);
+    const text = new TextDecoder().decode(extracted);
+    expect(text).toContain('rs123');
+    expect(text).not.toContain('Company Disclaimers');
+  });
+
+  it('should parse AncestryDNA split-allele format in streaming mode', async () => {
+    const ancestryData = `# AncestryDNA raw data
+# rsid\tchromosome\tposition\tallele1\tallele2
+rs100\t1\t1000\tA\tA
+rs200\t1\t2000\tA\tG
+rs300\t2\t3000\tC\tT
+rs400\tY\t4000\tG\t0
+`;
+    const blob = new Blob([ancestryData]);
+    const parsed = await parseRawDNAStream(blob);
+    expect(parsed.format).toBe('AncestryDNA');
+    expect(parsed.snpCount).toBe(4);
+    expect(parsed.snpMap['rs100']).toBe('AA');
+    expect(parsed.snpMap['rs200']).toBe('AG');
+    expect(parsed.snpMap['rs300']).toBe('CT');
+    expect(parsed.snpMap['rs400']).toBe('G');
+    expect(parsed.yMap['rs400']).toBe('G');
+  });
 });
+

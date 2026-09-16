@@ -18,6 +18,14 @@ export interface HistoricalEraMarker {
 
 export const HISTORICAL_ERA_HORIZONS: HistoricalEraMarker[] = [
   {
+    id: 'middle_paleolithic',
+    name: 'Middle Paleolithic / Middle Stone Age',
+    startYearsBp: 350000,
+    endYearsBp: 50000,
+    description: 'Anatomically modern human divergence in Africa and the earliest Out-of-Africa expansions.',
+    culturalPhenomenon: 'Middle Stone Age Africa & Early Modern Human Out-of-Africa Pioneers'
+  },
+  {
     id: 'upper_paleolithic',
     name: 'Upper Paleolithic (Ice Age Hunters)',
     startYearsBp: 50000,
@@ -78,6 +86,8 @@ export interface TmrcaEstimate {
   estimatedGenerations: number;
   activeHistoricalEra: HistoricalEraMarker;
   mutationClockRateNotice: string;
+  datingMethod: string;
+  archaeologicalContextNote: string;
 }
 
 export function calculateTmrcaEstimate(
@@ -88,18 +98,20 @@ export function calculateTmrcaEstimate(
   let baseFormedBp = 4500;
   let baseTmrcaBp = 3800;
 
-  // Extract years from string descriptor if available (e.g. "~4,500 BP")
+  // Extract years from string descriptor if available (e.g. "~68,000 BP")
   const numMatch = clade.ageYearsBp.match(/([\d,]+)/);
   if (numMatch) {
     const rawVal = parseInt(numMatch[1].replace(/,/g, ''), 10);
     if (!isNaN(rawVal) && rawVal > 100) {
       baseFormedBp = rawVal;
-      baseTmrcaBp = Math.round(rawVal * 0.82);
+      // Coalescent TMRCA crown age is typically 80-90% of stem formation age
+      baseTmrcaBp = Math.round(rawVal * 0.85);
     }
   }
 
-  // Refine using lineage-specific branch mutational depth if available
-  if (derivedCount > 0) {
+  // Refine using lineage-specific branch mutational depth only for young/subclade branches (<15,000 BP)
+  // Deep macroclades (e.g. DE, CT, E, R) retain their coalescent molecular dates
+  if (derivedCount > 0 && baseFormedBp < 15000) {
     if (lineageType === 'PATERNAL_YDNA') {
       // Non-Recombining Y: ~144 years per SNP
       const mutYears = derivedCount * 144;
@@ -129,7 +141,7 @@ export function calculateTmrcaEstimate(
     calibratedEraBceCe = `~${calYear.toLocaleString()} CE`;
   }
 
-  // Determine Historical Horizon
+  // Determine Historical Horizon by searching from oldest to youngest
   let activeHistoricalEra = HISTORICAL_ERA_HORIZONS[HISTORICAL_ERA_HORIZONS.length - 1];
   for (const era of HISTORICAL_ERA_HORIZONS) {
     if (baseTmrcaBp >= era.endYearsBp && baseTmrcaBp <= era.startYearsBp) {
@@ -138,9 +150,17 @@ export function calculateTmrcaEstimate(
     }
   }
 
+  // If even older than oldest horizon (>350k BP, e.g. deep Y-Adam), clamp to earliest horizon
+  if (baseTmrcaBp > HISTORICAL_ERA_HORIZONS[0].startYearsBp) {
+    activeHistoricalEra = HISTORICAL_ERA_HORIZONS[0];
+  }
+
   const mutationClockRateNotice = lineageType === 'PATERNAL_YDNA'
     ? 'Y-SNP molecular clock calibrated at ~8.71 × 10⁻¹⁰ mutations/bp/yr (1 SNP ≈ 144 yrs)'
     : 'mtDNA clock calibrated to PhyloTree 17 coding & control mutations (1 mut ≈ 2,700 yrs)';
+
+  const datingMethod = 'Coalescent Mutation Origin TMRCA (ISOGG/YFull Molecular Clock)';
+  const archaeologicalContextNote = 'Mutation origin date reflects the statistical coalescent formation of the genetic branch, distinct from specific ancient archaeological specimen radiocarbon dates.';
 
   return {
     formedYearsBp: baseFormedBp,
@@ -152,7 +172,9 @@ export function calculateTmrcaEstimate(
     ci95MaxYearsBp,
     estimatedGenerations,
     activeHistoricalEra,
-    mutationClockRateNotice
+    mutationClockRateNotice,
+    datingMethod,
+    archaeologicalContextNote
   };
 }
 

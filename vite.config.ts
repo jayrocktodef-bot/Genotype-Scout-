@@ -48,12 +48,10 @@ export default defineConfig(({mode}) => {
         workbox: {
           skipWaiting: true,
           clientsClaim: true,
-          // Cache all built assets (JS, CSS, HTML, fonts, images)
+          // Cache all built assets (JS, CSS, HTML, fonts, images, workers, and data chunks)
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,woff,ttf}'],
-          // Exclude oversized chunks from precache — they load on-demand
-          globIgnores: ['**/genomic-data-*.js', '**/genotypeWorker-*.js', '**/markerProcessingWorker-*.js', '**/analysisWorker-*.js'],
-          // Allow remaining large chunks (vendor-onnx ~400KB etc.)
-          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
+          // Allow large data chunks and worker bundles to be precached for offline support
+          maximumFileSizeToCacheInBytes: 50 * 1024 * 1024, // 50 MB
           // Runtime caching for external resources (Google Fonts, blog images)
           runtimeCaching: [
             {

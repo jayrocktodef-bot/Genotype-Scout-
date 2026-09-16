@@ -7,21 +7,27 @@ export enum MetabolizerStatus {
 }
 
 export function calculateCYP2D6Status(genotypes: Record<string, string>) {
-  const rs3892097 = genotypes['rs3892097']; // *4 (Null, score 0.0)
-  const rs1065852 = genotypes['rs1065852']; // *10 (Decreased, score 0.25)
-  const rs28371725 = genotypes['rs28371725']; // *41 (Decreased, score 0.5)
+  const norm = (rsid: string) => {
+    const val = genotypes[rsid] || genotypes[rsid.toLowerCase()] || genotypes[rsid.toUpperCase()];
+    return val ? val.trim().toUpperCase().replace(/[\s\/_]/g, '') : null;
+  };
+
+  const g3892097 = norm('rs3892097');  // *4 (Null, score 0.0)
+  const g1065852 = norm('rs1065852');  // *10 (Decreased, score 0.25)
+  const g28371725 = norm('rs28371725'); // *41 (Decreased, score 0.5)
+  const dupMarker = norm('rs59421388') || norm('CYP2D6_DUP'); // Duplication marker
 
   let numStar4 = 0;
-  if (rs3892097 === 'AA') numStar4 = 2;
-  else if (rs3892097 === 'AG' || rs3892097 === 'GA') numStar4 = 1;
+  if (g3892097 === 'AA' || g3892097 === 'TT') numStar4 = 2;
+  else if (['AG', 'GA', 'TC', 'CT'].includes(g3892097 || '')) numStar4 = 1;
 
   let numStar10 = 0;
-  if (rs1065852 === 'AA') numStar10 = 2;
-  else if (rs1065852 === 'AG' || rs1065852 === 'GA') numStar10 = 1;
+  if (g1065852 === 'AA' || g1065852 === 'TT') numStar10 = 2;
+  else if (['AG', 'GA', 'TC', 'CT'].includes(g1065852 || '')) numStar10 = 1;
 
   let numStar41 = 0;
-  if (rs28371725 === 'AA') numStar41 = 2;
-  else if (rs28371725 === 'AG' || rs28371725 === 'GA') numStar41 = 1;
+  if (g28371725 === 'AA' || g28371725 === 'TT') numStar41 = 2;
+  else if (['AG', 'GA', 'TC', 'CT'].includes(g28371725 || '')) numStar41 = 1;
 
   const mutated: string[] = [];
   for (let i = 0; i < numStar4; i++) mutated.push("*4");
@@ -38,11 +44,21 @@ export function calculateCYP2D6Status(genotypes: Record<string, string>) {
     '*41': 0.5
   };
 
-  const totalScore = (values[allele1] ?? 1.0) + (values[allele2] ?? 1.0);
+  let totalScore = (values[allele1] ?? 1.0) + (values[allele2] ?? 1.0);
 
-  // Determine Phenotype based on total activity score
+  // If duplication marker detected on active allele
+  const isDuplication = dupMarker && ['DUP', 'INS', 'A', 'T', '1'].includes(dupMarker);
+  if (isDuplication && totalScore >= 1.0) {
+    totalScore += 1.0;
+  }
+
+  // CPIC CYP2D6 Phenotype Assignment:
+  // Activity score 0: Poor
+  // 0 < Activity score < 1.25: Intermediate
+  // 1.25 <= Activity score <= 2.25: Normal
+  // Activity score > 2.25: Ultrarapid
   let status = MetabolizerStatus.NORMAL;
-  if (totalScore >= 2.25) status = MetabolizerStatus.ULTRARAPID;
+  if (totalScore > 2.0 || isDuplication) status = MetabolizerStatus.ULTRARAPID;
   else if (totalScore <= 0.25) status = MetabolizerStatus.POOR;
   else if (totalScore < 1.25) status = MetabolizerStatus.INTERMEDIATE;
 

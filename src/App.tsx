@@ -43,6 +43,12 @@ import {
 } from 'lucide-react';
 import { MethodologyModal } from "./components/MethodologyModal";
 import { calculateAdmixtureCI, calculateHaplogroupConfidence } from "./utils/statistics/confidenceEngine";
+import { 
+  serializeGenomicsError, 
+  formatDiagnosticTelemetry, 
+  GenomicsErrorCode, 
+  type SerializedGenomicsError 
+} from "./services/errorCaller";
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
@@ -2622,15 +2628,45 @@ export default function App() {
           const zip = await JSZip.loadAsync(file);
           const validKeys = Object.keys(zip.files).filter(k => {
             const lower = k.toLowerCase();
-            return !zip.files[k].dir &&
-                   !lower.startsWith('__macosx/') &&
-                   !lower.includes('.ds_store') &&
-                   !lower.endsWith('.pdf') &&
-                   !lower.endsWith('.html') &&
-                   !lower.endsWith('.png') &&
-                   !lower.endsWith('.jpg');
+            if (zip.files[k].dir || lower.startsWith('__macosx/') || lower.includes('.ds_store') || lower.includes('..')) return false;
+            if (lower.endsWith('.pdf') || lower.endsWith('.html') || lower.endsWith('.htm') ||
+                lower.endsWith('.png') || lower.endsWith('.jpg') || lower.endsWith('.jpeg') ||
+                lower.endsWith('.gif') || lower.endsWith('.svg') || lower.endsWith('.doc') ||
+                lower.endsWith('.docx') || lower.endsWith('.xml') || lower.endsWith('.json') ||
+                lower.endsWith('.md') || lower.endsWith('.rtf')) return false;
+            const baseName = lower.split('/').pop() || '';
+            if (baseName.startsWith('readme') || baseName.startsWith('disclaimer') ||
+                baseName.startsWith('terms') || baseName.startsWith('license') ||
+                baseName.startsWith('manifest') || baseName.startsWith('metadata') ||
+                baseName.startsWith('instructions')) return false;
+            return true;
           });
-          for (const relativePath of validKeys) {
+
+          if (validKeys.length > 1) {
+            // Sort by likelihood of being the primary genomic payload
+            validKeys.sort((a, b) => {
+              const score = (key: string) => {
+                const l = key.toLowerCase();
+                let s = 0;
+                if (l.endsWith('.vcf') || l.endsWith('.vcf.gz')) s += 100;
+                if (l.endsWith('.txt') || l.endsWith('.txt.gz')) s += 90;
+                if (l.endsWith('.csv') || l.endsWith('.csv.gz')) s += 80;
+                if (l.endsWith('.tsv') || l.endsWith('.tsv.gz')) s += 70;
+                if (l.endsWith('.dat')) s += 60;
+                if (l.includes('genome') || l.includes('dna') || l.includes('ancestry') || l.includes('23andme') || l.includes('myheritage') || l.includes('ftdna') || l.includes('livingdna')) s += 30;
+                return s;
+              };
+              return score(b) - score(a);
+            });
+          }
+
+          // If valid genomic files found, extract the primary one (or all valid ones if multi-kit)
+          const keysToExtract = validKeys.length > 0 ? (validKeys.length === 1 ? validKeys : [validKeys[0]]) : [];
+          if (keysToExtract.length === 0) {
+            throw new Error(`The ZIP file "${file.name}" does not contain recognized raw genomic data (.txt, .csv, .vcf, .tsv).`);
+          }
+
+          for (const relativePath of keysToExtract) {
             const content = await zip.files[relativePath].async('blob');
             expandedFiles.push(new File([content], relativePath, { type: 'text/plain' }));
           }
@@ -2640,7 +2676,7 @@ export default function App() {
       }
       fileArray = expandedFiles;
     } catch (e) {
-      setError(e instanceof Error ? e.message : `Failed to process zip file: ${String(e)}`);
+      setError(serializeGenomicsError(e, 'FILE_INGESTION'));
       setProcessing(false);
       return;
     }
@@ -2668,10 +2704,13 @@ export default function App() {
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
       watchdogId = setInterval(() => {
-        if (Date.now() - lastProgressTime > 60000) {
+        if (Date.now() - lastProgressTime > 120000) {
           if (intervalId) clearInterval(intervalId);
           clearInterval(watchdogId);
-          setError("ERR_WORKER_TIMEOUT_03: The genetic analysis worker stopped responding. Your dataset may be exceptionally large or heavily compressed. Please refresh and try extracting the ZIP first.");
+          setError(serializeGenomicsError(
+            new Error("ERR_WORKER_WATCHDOG_TIMEOUT: The genetic analysis worker stopped responding. Your dataset may be exceptionally large or heavily compressed. Please refresh and try extracting the ZIP first."),
+            'GENOTYPE_WORKER'
+          ));
           setProcessing(false);
           worker.terminate();
         }
@@ -2700,10 +2739,14 @@ export default function App() {
               const snps = Atomics.load(progressArray, 2);
               const statusVal = Atomics.load(progressArray, 3);
 
-              if (processed > lastProcessed || statusVal !== lastStatusVal || snps > lastSnps) {
+              if (statusVal !== lastStatusVal) {
+                lastProgressTime = Date.now();
+                lastStatusVal = statusVal;
+                lastProcessed = -1;
+                lastSnps = snps;
+              } else if (processed !== lastProcessed || snps !== lastSnps) {
                 lastProgressTime = Date.now();
                 lastProcessed = processed;
-                lastStatusVal = statusVal;
                 lastSnps = snps;
               }
 
@@ -2722,7 +2765,7 @@ export default function App() {
               } else if (statusVal === 4) {
                 step = "Ingestion failed.";
                 clearInterval(intervalId);
-                setError("Processing failed in background worker.");
+                setError(serializeGenomicsError("Processing failed in background worker.", 'GENOTYPE_WORKER', { fileName: fileArray.map(f => f.name).join(', ') }));
                 setProcessing(false);
                 worker.terminate();
                 return;
@@ -2790,7 +2833,8 @@ export default function App() {
         } else if (type === 'ERROR') {
           if (intervalId) clearInterval(intervalId);
           if (watchdogId) clearInterval(watchdogId);
-          setError(workerError?.message || workerError || "Processing failed in background worker.");
+          const structured = serializeGenomicsError(workerError, 'GENOTYPE_WORKER');
+          setError(structured);
           setProcessing(false);
           worker.terminate();
         }
@@ -2799,7 +2843,8 @@ export default function App() {
       worker.onerror = (err) => {
         if (intervalId) clearInterval(intervalId);
         if (watchdogId) clearInterval(watchdogId);
-        setError(`Worker error: ${err.message}`);
+        const structured = serializeGenomicsError(err, 'GENOTYPE_WORKER');
+        setError(structured);
         setProcessing(false);
         worker.terminate();
       };
@@ -2814,7 +2859,7 @@ export default function App() {
       if (intervalId) clearInterval(intervalId);
       if (watchdogId) clearInterval(watchdogId);
       console.error("Processing error:", err);
-      setError(err instanceof Error ? err.message : "An unexpected error occurred during processing.");
+      setError(serializeGenomicsError(err, 'FILE_INGESTION'));
       setProcessing(false);
     }
   }, [datasets]);
@@ -2896,7 +2941,7 @@ export default function App() {
     if (dataset?.analysis?.individualMatches) return dataset.analysis.individualMatches;
     const snpMap = snpMaps.current[activeDatasetIndex];
     if (!snpMap) return [];
-    return calculateIndividualMatches(snpMap);
+    return calculateIndividualMatches(snpMap, dataset?.analysis?.ancientAdmixture);
   }, [datasets, activeDatasetIndex]);
 
   const famousMatches = useMemo(() => {
@@ -3059,7 +3104,7 @@ export default function App() {
         ref={fileRef} 
         type="file" 
         className="hidden" 
-        accept=".txt,.csv,.zip,.tsv,.gz,.vcf,.dat,text/plain,text/csv,application/zip,application/x-zip-compressed,*" 
+        accept="*" 
         multiple 
         onChange={(e) => {
           if (e.target.files && e.target.files.length > 0) {
@@ -3080,18 +3125,11 @@ export default function App() {
             const isDetailed = typeof error === 'object' && error !== null;
             const errMsg = isDetailed ? (error.message || "An unexpected error occurred during processing.") : error;
             const details = isDetailed ? error.details : null;
-            const category = isDetailed ? (details?.errorCategory || error.name || "Analytical Mismatch") : "Process Aborted";
-
-            // Generate a simple deterministic error code based on the string value
-            const generateErrorCode = (str: string) => {
-              let hash = 0;
-              for (let i = 0; i < str.length; i++) {
-                hash = ((hash << 5) - hash) + str.charCodeAt(i);
-                hash |= 0;
-              }
-              return 'ERR-' + Math.abs(hash).toString(16).toUpperCase();
-            };
-            const errorCode = generateErrorCode(String(errMsg));
+            const category = isDetailed ? (details?.errorCategory || error.category || error.name || "Genomic Analysis Blocked") : "Process Aborted";
+            const subsystem = isDetailed ? (error.subsystem || details?.subsystem) : undefined;
+            const errorCode = (isDetailed && (error.code || details?.errorCode))
+              ? (error.code || details?.errorCode)
+              : 'ERR_UNKNOWN';
 
             return (
               <div className="mb-12 p-8 rounded-[2.5rem] bg-white border border-rose-100 shadow-xl shadow-rose-100/40 animate-fade-in relative overflow-hidden z-50 dark:bg-slate-900">
@@ -3105,11 +3143,23 @@ export default function App() {
                   </div>
 
                   <div className="flex-1">
-                    <span className="px-3 py-1 bg-rose-50 text-rose-600 text-[9px] font-black uppercase tracking-widest rounded-full border border-rose-100">
-                      {category}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span className="px-3 py-1 bg-rose-50 text-rose-600 text-[9px] font-black uppercase tracking-widest rounded-full border border-rose-100 dark:bg-rose-950/40 dark:text-rose-400 dark:border-rose-900">
+                        {category}
+                      </span>
+                      {subsystem && (
+                        <span className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono text-[9px] font-bold uppercase tracking-wider rounded-full border border-slate-200 dark:border-slate-700">
+                          SUBSYSTEM: {subsystem}
+                        </span>
+                      )}
+                      {details?.failedEngine && (
+                        <span className="px-2.5 py-1 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 font-mono text-[9px] font-bold uppercase tracking-wider rounded-full border border-amber-200 dark:border-amber-800">
+                          ENGINE: {details.failedEngine}
+                        </span>
+                      )}
+                    </div>
                     
-                    <h3 className="text-xl font-extrabold text-slate-800 mt-3 mb-2 dark:text-slate-200">
+                    <h3 className="text-xl font-extrabold text-slate-800 mb-2 dark:text-slate-200">
                       Genomic Analysis Blocked
                     </h3>
                     
@@ -3117,23 +3167,32 @@ export default function App() {
                       {errMsg}
                     </p>
 
-                    <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between dark:bg-slate-800">
+                    <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 dark:bg-slate-800">
                       <div>
-                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wide dark:text-slate-400">Support Reference Code</div>
-                        <div className="text-sm font-mono font-bold text-slate-700 dark:text-slate-300">{errorCode}</div>
+                        <div className="text-xs font-bold text-slate-500 uppercase tracking-wide dark:text-slate-400">Diagnostic Reference Code</div>
+                        <div className="text-sm font-mono font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                          <span>{errorCode}</span>
+                          {details?.legacyCode && details.legacyCode !== errorCode && (
+                            <span className="text-xs text-slate-400 font-normal">({details.legacyCode})</span>
+                          )}
+                        </div>
                       </div>
                       <button 
-                        onClick={() => navigator.clipboard.writeText(`Error: ${errMsg}\nCode: ${errorCode}`)}
-                        className="text-xs px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-bold text-slate-600 hover:text-slate-900 hover:border-slate-300 active:bg-slate-100 transition-colors dark:text-slate-400 dark:bg-slate-900"
+                        onClick={() => {
+                          const telemetry = formatDiagnosticTelemetry(error);
+                          navigator.clipboard.writeText(telemetry);
+                          alert("Diagnostic telemetry report copied to clipboard!");
+                        }}
+                        className="text-xs px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-bold text-slate-700 hover:text-slate-900 hover:border-slate-300 active:bg-slate-100 transition-colors dark:text-slate-200 dark:bg-slate-900 dark:border-slate-700 flex items-center justify-center gap-1.5 cursor-pointer"
                       >
-                        Copy Error
+                        📋 Copy Diagnostic Telemetry
                       </button>
                     </div>
 
                     {details?.suggestedSolution && (
-                      <div className="mb-6 p-5 bg-teal-50/50 rounded-2xl border border-teal-100/60">
-                        <h4 className="text-teal-800 font-extrabold text-xs uppercase tracking-widest mb-1.5">
-                          🟢 Recommended Peer Action:
+                      <div className="mb-6 p-5 bg-teal-50/50 rounded-2xl border border-teal-100/60 dark:bg-teal-950/20 dark:border-teal-900/40">
+                        <h4 className="text-teal-800 dark:text-teal-300 font-extrabold text-xs uppercase tracking-widest mb-1.5">
+                          🟢 Recommended Action:
                         </h4>
                         <p className="text-slate-700 text-xs font-semibold leading-relaxed dark:text-slate-300">
                           {details.suggestedSolution}
@@ -3149,22 +3208,22 @@ export default function App() {
                       <ul className="space-y-3 text-xs font-semibold text-slate-600 dark:text-slate-400">
                         <li className="flex items-start gap-2.5">
                           <span className="text-teal-500 shrink-0">📎</span>
-                          <span><strong>Format:</strong> Tab-delimited (.txt) or comma-separated (.csv) raw genome file.</span>
+                          <span><strong>Format:</strong> Tab-delimited (.txt), comma-separated (.csv), or standard VCF (.vcf) raw genome file.</span>
                         </li>
                         <li className="flex items-start gap-2.5">
                           <span className="text-teal-500 shrink-0">📎</span>
-                          <span><strong>Encoding:</strong> ASCII or UTF-8 text representation (not zipped with passwords, and not PDF/raw image).</span>
+                          <span><strong>Encoding:</strong> ASCII or UTF-8 plain text (unencrypted, without passwords).</span>
                         </li>
                         <li className="flex items-start gap-2.5">
                           <span className="text-teal-500 shrink-0">📎</span>
-                          <span><strong>Content:</strong> Must align with standard SNP templates including rsIDs (e.g. <code>rs3094315</code>) and allele combinations.</span>
+                          <span><strong>Content:</strong> Must contain standard SNP calls with valid rsIDs (e.g. <code>rs3094315</code>) and allele pairs.</span>
                         </li>
                       </ul>
                     </div>
 
                     {/* Collapsible Technical Diagnostics */}
                     {isDetailed && (
-                      <details className="group border-t border-slate-100 pt-6">
+                      <details className="group border-t border-slate-100 pt-6 dark:border-slate-800">
                         <summary className="list-none flex items-center justify-between text-xs font-bold text-slate-400 hover:text-slate-600 cursor-pointer select-none">
                           <span className="flex items-center gap-1.5">
                             ⚙️ Technical Telemetry Diagnostics Log
@@ -3174,8 +3233,16 @@ export default function App() {
                           </span>
                         </summary>
                         
-                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-200/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto dark:text-slate-400 dark:bg-slate-800">
+                        <div className="mt-4 p-5 bg-slate-50 rounded-2xl border border-slate-200/60 font-mono text-[11px] leading-relaxed text-slate-600 space-y-2 overflow-auto dark:text-slate-400 dark:bg-slate-800 dark:border-slate-700">
+                          <div><strong className="text-slate-700 dark:text-slate-300">Error Code:</strong> {errorCode}</div>
+                          <div><strong className="text-slate-700 dark:text-slate-300">Subsystem:</strong> {subsystem || 'UNKNOWN'}</div>
                           <div><strong className="text-slate-700 dark:text-slate-300">Error Category:</strong> {details?.errorCategory || category}</div>
+                          {details?.fileName && (
+                            <div><strong className="text-slate-700 dark:text-slate-300">File Name:</strong> {details.fileName}</div>
+                          )}
+                          {details?.failedEngine && (
+                            <div><strong className="text-slate-700 dark:text-slate-300">Failed Engine:</strong> <span className="text-rose-600 dark:text-rose-400">{details.failedEngine}</span></div>
+                          )}
                           {details?.bytesTotal !== undefined && (
                             <div><strong className="text-slate-700 dark:text-slate-300">File Ingestion Size:</strong> {(details.bytesTotal / (1024 * 1024)).toFixed(2)} MB ({details.bytesTotal.toLocaleString()} bytes)</div>
                           )}
@@ -3188,11 +3255,22 @@ export default function App() {
                           {details?.linesMalformed !== undefined && (
                             <div><strong className="text-slate-700 dark:text-slate-300">Malformed/Unrecognized Rows:</strong> {details.linesMalformed.toLocaleString()}</div>
                           )}
+                          {details?.snpsParsed !== undefined && (
+                            <div><strong className="text-slate-700 dark:text-slate-300">SNPs Matched:</strong> {details.snpsParsed.toLocaleString()}</div>
+                          )}
                           {details?.headerPreview && (
-                            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 mt-3">
+                            <div className="pt-3 border-t border-slate-200 dark:border-slate-700 mt-3">
                               <strong className="text-slate-700 dark:text-slate-300 block mb-1.5">Raw File Header Preview:</strong>
                               <pre className="p-3 bg-slate-900 border border-slate-800 text-slate-300 rounded-xl overflow-x-auto select-all max-h-32 text-[10px] leading-normal font-mono">
                                 {details.headerPreview}
+                              </pre>
+                            </div>
+                          )}
+                          {details?.stackTrace && (
+                            <div className="pt-3 border-t border-slate-200 dark:border-slate-700 mt-3">
+                              <strong className="text-slate-700 dark:text-slate-300 block mb-1.5">Diagnostic Stack Trace:</strong>
+                              <pre className="p-3 bg-slate-900 border border-slate-800 text-rose-300 rounded-xl overflow-x-auto select-all max-h-32 text-[10px] leading-normal font-mono">
+                                {details.stackTrace}
                               </pre>
                             </div>
                           )}
@@ -3203,7 +3281,7 @@ export default function App() {
 
                   <button 
                     onClick={() => setError(null)} 
-                    className="p-2 hover:bg-slate-100 active:bg-slate-200 rounded-full transition-all text-slate-400 hover:text-slate-600 self-end md:self-start md:mt-2 cursor-pointer"
+                    className="p-2 hover:bg-slate-100 active:bg-slate-200 rounded-full transition-all text-slate-400 hover:text-slate-600 self-end md:self-start md:mt-2 cursor-pointer dark:hover:bg-slate-800"
                     title="Close"
                   >
                     <X className="w-5 h-5" />
@@ -3238,10 +3316,36 @@ export default function App() {
             (() => {
               const isDetailed = typeof error === 'object' && error !== null;
               const errMsg = isDetailed ? (error.message || "An unexpected error occurred.") : error;
+              const errCode = isDetailed ? (error.code || error.details?.errorCode || 'ERR_GENOMICS_FAILED') : 'ERR_GENOMICS_FAILED';
+              const errSubsystem = isDetailed ? (error.subsystem || error.details?.subsystem) : undefined;
               return (
-                <div className="fixed top-10 left-0 right-0 z-50 px-4 py-3 bg-rose-900/90 border-b border-rose-500/30 text-rose-200 text-xs font-bold flex items-center justify-between gap-3">
-                  <span>⚠️ {errMsg}</span>
-                  <button onClick={() => setError(null)} className="text-rose-300 hover:text-white px-2 py-1 rounded" aria-label="Dismiss error">✕</button>
+                <div className="fixed top-12 left-0 right-0 z-50 px-4 py-2.5 bg-rose-950/95 border-b border-rose-500/40 text-rose-200 text-xs font-semibold flex flex-wrap items-center justify-between gap-3 backdrop-blur-md shadow-lg">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-amber-400 font-bold">⚠️</span>
+                    <span>{errMsg}</span>
+                    <span className="px-2 py-0.5 rounded bg-rose-900 border border-rose-700 font-mono text-[10px] text-rose-300">
+                      {errCode}
+                    </span>
+                    {errSubsystem && (
+                      <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">
+                        {errSubsystem}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => {
+                        const telemetry = formatDiagnosticTelemetry(error);
+                        navigator.clipboard.writeText(telemetry);
+                        alert("Diagnostic telemetry report copied to clipboard!");
+                      }}
+                      className="px-2.5 py-1 bg-rose-900/80 hover:bg-rose-800 text-rose-100 rounded text-[11px] font-bold border border-rose-600/50 transition-colors cursor-pointer"
+                      title="Copy full telemetry report to clipboard"
+                    >
+                      📋 Copy Telemetry
+                    </button>
+                    <button onClick={() => setError(null)} className="text-rose-300 hover:text-white px-2 py-1 rounded cursor-pointer" aria-label="Dismiss error">✕</button>
+                  </div>
                 </div>
               );
             })()

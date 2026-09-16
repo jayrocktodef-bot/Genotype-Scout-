@@ -558,7 +558,7 @@ export function computeDatasetLAI(
     const userSnpMap: Record<string, string> = dataset.mergedSnpMap || {};
     const userMetaMap: Record<string, { chrom: string; pos: number }> = dataset.mergedSnpMetaMap || {};
 
-    // Build fast lookup map supporting direct rsID and genomic coordinate keys (chr_pos)
+    // Build fast lookup map supporting direct rsID and genomic coordinate keys (chr_pos, chr:pos)
     let getGenotype: (rsid: string, chrom?: string, pos?: number) => string | undefined;
     if (Object.keys(userSnpMap).length > 0) {
       getGenotype = (rsid: string, chrom?: string, pos?: number) => {
@@ -566,7 +566,14 @@ export function computeDatasetLAI(
         if (direct) return direct;
         if (chrom && pos !== undefined) {
           const cleanChr = String(chrom).replace(/^chr/i, '');
-          return userSnpMap[`chr${cleanChr}_${pos}`] || userSnpMap[`${cleanChr}_${pos}`];
+          return userSnpMap[`chr${cleanChr}_${pos}`] ||
+                 userSnpMap[`${cleanChr}_${pos}`] ||
+                 userSnpMap[`chr${cleanChr}:${pos}`] ||
+                 userSnpMap[`${cleanChr}:${pos}`] ||
+                 userSnpMap[`chr${cleanChr.toLowerCase()}_${pos}`] ||
+                 userSnpMap[`${cleanChr.toLowerCase()}_${pos}`] ||
+                 userSnpMap[`chr${cleanChr.toLowerCase()}:${pos}`] ||
+                 userSnpMap[`${cleanChr.toLowerCase()}:${pos}`];
         }
         return undefined;
       };
@@ -579,6 +586,8 @@ export function computeDatasetLAI(
           const c = String(r.chrom).replace(/^chr/i, '').toLowerCase();
           lookup.set(`chr${c}_${r.pos}`, r.genotype);
           lookup.set(`${c}_${r.pos}`, r.genotype);
+          lookup.set(`chr${c}:${r.pos}`, r.genotype);
+          lookup.set(`${c}:${r.pos}`, r.genotype);
         }
       }
       getGenotype = (rsid: string, chrom?: string, pos?: number) => {
@@ -586,7 +595,10 @@ export function computeDatasetLAI(
         if (direct) return direct;
         if (chrom && pos !== undefined) {
           const c = String(chrom).replace(/^chr/i, '').toLowerCase();
-          return lookup.get(`chr${c}_${pos}`) || lookup.get(`${c}_${pos}`);
+          return lookup.get(`chr${c}_${pos}`) ||
+                 lookup.get(`${c}_${pos}`) ||
+                 lookup.get(`chr${c}:${pos}`) ||
+                 lookup.get(`${c}:${pos}`);
         }
         return undefined;
       };
@@ -691,14 +703,19 @@ export function computeDatasetLAI(
         const aim = chrAims[i];
         const baseRsid = aim.rsid.split('_')[0];
         const effAllele = (aim.alleles && aim.alleles[0]) ? aim.alleles[0].toUpperCase() : '';
-        const g = aim.genotype;
+        const refAllele = (aim.alleles && aim.alleles[1]) ? aim.alleles[1].toUpperCase() : '';
+        const isPalindromic = (effAllele === 'A' && refAllele === 'T') || (effAllele === 'T' && refAllele === 'A') ||
+                              (effAllele === 'C' && refAllele === 'G') || (effAllele === 'G' && refAllele === 'C');
+        const comp = (b: string) => b === 'A' ? 'T' : b === 'T' ? 'A' : b === 'C' ? 'G' : b === 'G' ? 'C' : b;
+
+        const g = (aim.genotype || '').replace(/[^ATCGatcg]/g, '').toUpperCase();
 
         let strandAAllele = '';
         let strandBAllele = '';
 
         if (hasExplicitPhase && (hap1Map[aim.rsid] || hap1Map[baseRsid])) {
-          strandAAllele = (hap1Map[aim.rsid] || hap1Map[baseRsid] || '').toUpperCase();
-          strandBAllele = (hap2Map[aim.rsid] || hap2Map[baseRsid] || '').toUpperCase();
+          strandAAllele = (hap1Map[aim.rsid] || hap1Map[baseRsid] || '').replace(/[^ATCGatcg]/g, '').toUpperCase();
+          strandBAllele = (hap2Map[aim.rsid] || hap2Map[baseRsid] || '').replace(/[^ATCGatcg]/g, '').toUpperCase();
         } else {
           // Micro-phase heterozygous loci based on effect allele & reference frequency priors
           if (g.length === 1) {
@@ -715,7 +732,10 @@ export function computeDatasetLAI(
               const vals = Object.values(freqsObj).filter((v): v is number => typeof v === 'number');
               const avgF = vals.length > 0 ? vals.reduce((a, b) => a + b, 0) / vals.length : 0.5;
 
-              if (effAllele && a1 === effAllele) {
+              let match1 = (a1 === effAllele) || (!isPalindromic && comp(a1) === effAllele);
+              let match2 = (a2 === effAllele) || (!isPalindromic && comp(a2) === effAllele);
+
+              if (match1 && !match2) {
                 if (avgF >= 0.5) {
                   strandAAllele = a1;
                   strandBAllele = a2;
@@ -723,7 +743,7 @@ export function computeDatasetLAI(
                   strandAAllele = a2;
                   strandBAllele = a1;
                 }
-              } else if (effAllele && a2 === effAllele) {
+              } else if (match2 && !match1) {
                 if (avgF >= 0.5) {
                   strandAAllele = a2;
                   strandBAllele = a1;
@@ -758,7 +778,8 @@ export function computeDatasetLAI(
           // Haploid emission for Strand A
           let probA = 1.0;
           if (strandAAllele) {
-            probA = (strandAAllele === effAllele) ? p : (1 - p);
+            const matchesA = (strandAAllele === effAllele) || (!isPalindromic && comp(strandAAllele) === effAllele);
+            probA = matchesA ? p : (1 - p);
           }
           probA = 0.99 * probA + 0.01 / 2;
           probA = Math.pow(probA, 0.85);
@@ -767,7 +788,8 @@ export function computeDatasetLAI(
           // Haploid emission for Strand B
           let probB = 1.0;
           if (strandBAllele) {
-            probB = (strandBAllele === effAllele) ? p : (1 - p);
+            const matchesB = (strandBAllele === effAllele) || (!isPalindromic && comp(strandBAllele) === effAllele);
+            probB = matchesB ? p : (1 - p);
           }
           probB = 0.99 * probB + 0.01 / 2;
           probB = Math.pow(probB, 0.85);

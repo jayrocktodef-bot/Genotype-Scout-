@@ -11,17 +11,27 @@ export function calculateSecretorStatus(userSnps: Record<string, string> | undef
   let status = "Unknown";
   let traits: string[] = [];
 
-  // Logic for rs601338
-  if (fut2 === 'AA') {
-    status = "Non-Secretor";
-  } else if (fut2 === 'GG' || fut2 === 'GA' || fut2 === 'AG') {
-    status = "Secretor";
+  // Helper to normalize genotype string
+  const norm = (val?: string) => val ? val.trim().toUpperCase().replace(/[\s\/_]/g, '') : null;
+
+  const f1 = norm(fut2);
+  const f2 = norm(fut2_asian);
+
+  // Logic for rs601338 (Ref G = Secretor, Alt A = Non-Secretor; Minus strand C/T)
+  if (f1) {
+    if (f1 === 'AA' || f1 === 'TT') {
+      status = "Non-Secretor";
+    } else if (['GG', 'GA', 'AG', 'CC', 'CT', 'TC'].includes(f1)) {
+      status = "Secretor";
+    }
   } 
-  // Fallback/Secondary check for East Asian lineages
-  else if (fut2_asian === 'TT') {
-    status = "Non-Secretor";
-  } else if (fut2_asian === 'AA' || fut2_asian === 'AT' || fut2_asian === 'TA') {
-    status = "Secretor";
+  // Fallback/Secondary check for East Asian lineages (rs1047781: Ref C = Secretor, Alt T = Non-Secretor; Minus strand G/A)
+  if (status === "Unknown" && f2) {
+    if (f2 === 'TT' || f2 === 'AA') {
+      status = "Non-Secretor";
+    } else if (['CC', 'CT', 'TC', 'GG', 'GA', 'AG'].includes(f2)) {
+      status = "Secretor";
+    }
   }
 
   // Actionable Insights for the "Pro" report

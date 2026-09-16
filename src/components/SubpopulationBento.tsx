@@ -15,6 +15,8 @@ type PanelType = 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'microhap';
 const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated }) => {
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
+  const [showAllSubpops, setShowAllSubpops] = useState(false);
+  const [showAllUnmapped, setShowAllUnmapped] = useState(false);
   const [selectedPanel, setSelectedPanel] = useState<PanelType>('all');
   const [results, setResults] = useState<any>(null);
   const [loading, setLoading] = useState(false);
@@ -89,7 +91,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
     seenSubpopNames.add(cleanName);
     return true;
   });
-  const breakdownList = deduplicatedBreakdown.slice(0, 12);
+  const breakdownList = showAllSubpops ? deduplicatedBreakdown : deduplicatedBreakdown.slice(0, 12);
   
   return (
     <div className="bg-slate-900/60 backdrop-blur-3xl border border-white/5 rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-xl text-white space-y-4 transition-all duration-700 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] hover:border-emerald-500/20">
@@ -172,41 +174,58 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
           <h4 className="text-[11px] font-bold uppercase text-slate-400 tracking-wider flex items-center gap-1.5">
             <Layers className="w-3.5 h-3.5 text-emerald-400" /> Population Distances
           </h4>
-          <span className="text-[10px] text-slate-500 font-mono">Top {breakdownList.length} Matches</span>
+          <span className="text-[10px] text-slate-500 font-mono">
+            {showAllSubpops 
+              ? `All ${breakdownList.length} Matches` 
+              : `Top ${breakdownList.length} of ${deduplicatedBreakdown.length} Matches`}
+          </span>
         </div>
         
         {breakdownList.length === 0 ? (
           <p className="text-xs text-slate-400 italic py-2">No populations mapped for this panel.</p>
         ) : (
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
-            {breakdownList.map((comp: any, idx: number) => {
-              const visualWidth = Math.max(5, 100 - (comp.distance * 200));
-              
-              return (
-                <div key={(comp?.name || comp?.subpop || 'comp') + idx} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px] min-w-0">
-                  <div className="flex items-center justify-between mb-1 min-w-0 gap-1">
-                    <span className="font-mono text-slate-400 text-[9px] bg-black/40 px-1.5 py-0.5 rounded border border-white/5 shrink-0">#{idx + 1}</span>
-                    <span className="text-emerald-400 text-xs font-bold font-mono tabular-nums shrink-0">
-                      {Number(comp.distance).toFixed(3)}
-                    </span>
-                  </div>
+          <>
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+              {breakdownList.map((comp: any, idx: number) => {
+                const visualWidth = Math.max(5, 100 - (comp.distance * 200));
+                
+                return (
+                  <div key={(comp?.name || comp?.subpop || 'comp') + idx} className="flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/5 transition-all group relative overflow-hidden min-h-[44px] min-w-0">
+                    <div className="flex items-center justify-between mb-1 min-w-0 gap-1">
+                      <span className="font-mono text-slate-400 text-[9px] bg-black/40 px-1.5 py-0.5 rounded border border-white/5 shrink-0">#{idx + 1}</span>
+                      <span className="text-emerald-400 text-xs font-bold font-mono tabular-nums shrink-0">
+                        {Number(comp.distance).toFixed(3)}
+                      </span>
+                    </div>
 
-                  <h4 className="text-xs font-bold text-slate-200 truncate leading-snug group-hover:text-emerald-300 transition-colors min-w-0 block" title={comp?.name || comp?.subpop}>
-                    {comp?.name || comp?.subpop || 'Unknown'}
-                  </h4>
+                    <h4 className="text-xs font-bold text-slate-200 truncate leading-snug group-hover:text-emerald-300 transition-colors min-w-0 block" title={comp?.name || comp?.subpop}>
+                      {comp?.name || comp?.subpop || 'Unknown'}
+                    </h4>
 
-                  <div className="mt-2 w-full bg-black/40 h-1.5 rounded-full overflow-hidden border border-white/5 p-px">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: `${visualWidth}%` }}
-                      transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.03 }}
-                      className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
-                    />
+                    <div className="mt-2 w-full bg-black/40 h-1.5 rounded-full overflow-hidden border border-white/5 p-px">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: `${visualWidth}%` }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.03 }}
+                        className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
+                      />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+
+            {deduplicatedBreakdown.length > 12 && (
+              <button
+                type="button"
+                onClick={() => setShowAllSubpops(!showAllSubpops)}
+                className="w-full py-2 bg-white/[0.04] hover:bg-white/[0.08] text-teal-300 text-xs font-bold rounded-xl border border-teal-500/20 transition-all flex items-center justify-center gap-1.5 shadow-sm mt-1"
+              >
+                <span>{showAllSubpops ? 'Show Top 12 Matches' : `Show All (${deduplicatedBreakdown.length}) Reference Populations`}</span>
+                <span className="font-mono">{showAllSubpops ? '▲' : '▼'}</span>
+              </button>
+            )}
+          </>
         )}
       </div>
 
@@ -223,20 +242,28 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
         </button>
 
         {showUnmapped && (
-          <div className="mt-4 max-h-40 overflow-y-auto bg-black/20 border border-white/5 rounded-xl p-4">
+          <div className="mt-4 max-h-48 overflow-y-auto bg-black/20 border border-white/5 rounded-xl p-4">
             <p className="text-xs text-slate-400 mb-3 leading-relaxed">
               These reference markers map to general macro-continental lineages (e.g., Broadly European, Genomically Cosmopolitan) rather than specific regional subpopulations. They are computed in global frequency vectors but excluded from regional Euclidean metrics to maintain specificity:
             </p>
             <ul className="text-xs space-y-1 font-mono text-slate-350 grid grid-cols-2 gap-x-4">
-              {(results.unmappedAims || []).slice(0, 50).map((aim: any) => (
+              {(showAllUnmapped ? (results.unmappedAims || []) : (results.unmappedAims || []).slice(0, 50)).map((aim: any) => (
                 <li key={aim.rsid} className="whitespace-normal break-words">
                   ● <span className="text-teal-400">{aim.rsid}</span> <span className="text-slate-500 dark:text-slate-400">(chr {aim.chromosome})</span>
                 </li>
               ))}
-              {(results.unmappedAims || []).length > 50 && (
-                <li className="text-teal-400/80 italic col-span-2">...and {results.unmappedAims.length - 50} more.</li>
-              )}
             </ul>
+            {(results.unmappedAims || []).length > 50 && (
+              <div className="pt-3 mt-2 border-t border-white/5 text-center">
+                <button
+                  type="button"
+                  onClick={() => setShowAllUnmapped(!showAllUnmapped)}
+                  className="text-xs text-teal-400 hover:text-teal-300 font-bold underline cursor-pointer"
+                >
+                  {showAllUnmapped ? 'Collapse to 50 Markers' : `Show All ${(results.unmappedAims || []).length} Unmapped Markers`}
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

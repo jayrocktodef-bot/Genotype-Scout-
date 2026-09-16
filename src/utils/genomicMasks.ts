@@ -71,10 +71,47 @@ export function isPalindromicMutation(ancestral: string, derived: string): boole
   return false;
 }
 
+export interface YParInterval {
+  name: string;
+  startHg19: number;
+  endHg19: number;
+  startHg38: number;
+  endHg38: number;
+}
+
+export const Y_PAR_REGIONS: YParInterval[] = [
+  {
+    name: 'PAR1',
+    startHg19: 10001,
+    endHg19: 2781479,
+    startHg38: 10001,
+    endHg38: 2781479
+  },
+  {
+    name: 'PAR2',
+    startHg19: 56887903,
+    endHg19: 57217415,
+    startHg38: 56887903,
+    endHg38: 57217415
+  }
+];
+
+/**
+ * Checks if a coordinate on chromosome Y falls within Pseudoautosomal Regions (PAR1 or PAR2).
+ * Variants in PAR recombine with X and must be excluded from non-recombining Y (NRY) haplogroup trees.
+ */
+export function isYPARRegion(posHg19?: number, posHg38?: number): boolean {
+  for (const par of Y_PAR_REGIONS) {
+    if (posHg19 && posHg19 >= par.startHg19 && posHg19 <= par.endHg19) return true;
+    if (posHg38 && posHg38 >= par.startHg38 && posHg38 <= par.endHg38) return true;
+  }
+  return false;
+}
+
 /**
  * Flexible genotype matching supporting standard single-base nucleotides,
- * haploid homozygous representations, and multi-vendor indel notations
- * (e.g. 23andMe D/I, VCF <DEL>/<INS>, +/-, *).
+ * haploid hemizygous representations (single 'A' or pseudo-homozygous 'AA'),
+ * IUPAC ambiguity codes, and multi-vendor indel notations.
  */
 export function matchGenotypeAllele(userGenotype: string, targetAllele: string): boolean {
   if (!userGenotype || !targetAllele) return false;
@@ -85,10 +122,22 @@ export function matchGenotypeAllele(userGenotype: string, targetAllele: string):
   // 1. Direct equality
   if (u === t) return true;
 
-  // 2. Haploid single-letter match (e.g. user 'A' or 'AA' matches target 'A')
-  if (u.length > 0 && u[0] === t) return true;
+  // 2. IUPAC ambiguity codes mapping
+  const IUPAC_EXPANSION: Record<string, string> = {
+    'R': 'AG', 'Y': 'CT', 'S': 'GC', 'W': 'AT', 'K': 'GT', 'M': 'AC',
+    'B': 'CGT', 'D': 'AGT', 'H': 'ACT', 'V': 'ACG', 'N': 'ACGT'
+  };
 
-  // 3. Deletion normalization
+  if (u.length === 1 && IUPAC_EXPANSION[u]) {
+    return IUPAC_EXPANSION[u].includes(t);
+  }
+
+  // 3. Haploid single-letter / pseudo-homozygous match ('A' or 'AA' matches target 'A')
+  // Note: Heterozygous calls on non-PAR Y chromosome ('AG') are probe artifacts/noise and are excluded.
+  if (u.length === 2 && u[0] === u[1] && u[0] === t) return true;
+  if (u.length === 1 && u === t) return true;
+
+  // 4. Deletion normalization
   const isUserDel = (
     u === 'D' ||
     u === 'DD' ||
@@ -108,7 +157,7 @@ export function matchGenotypeAllele(userGenotype: string, targetAllele: string):
   );
   if (isUserDel && isTargetDel) return true;
 
-  // 4. Insertion normalization
+  // 5. Insertion normalization
   const isUserIns = (
     u === 'I' ||
     u === 'II' ||

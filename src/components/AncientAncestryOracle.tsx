@@ -228,10 +228,26 @@ export const AncientAncestryOracle = memo(({
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-2 mb-1">
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
                             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${cfg.badgeColor}`}>
                               {cfg.icon} {cfg.label}
                             </span>
+                            {pop.confidence && (
+                              <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded-md border ${
+                                pop.confidence === 'High' 
+                                  ? 'bg-emerald-950/80 text-emerald-400 border-emerald-500/40' 
+                                  : pop.confidence === 'Moderate'
+                                  ? 'bg-amber-950/80 text-amber-300 border-amber-500/40'
+                                  : 'bg-slate-800/80 text-slate-400 border-slate-700'
+                              }`}>
+                                {pop.confidence} Coverage
+                              </span>
+                            )}
+                            {pop.cladeAffinity && (
+                              <span className="text-[9px] font-bold text-slate-400 bg-white/5 px-2 py-0.5 rounded-md border border-white/5">
+                                Clade: {pop.cladeAffinity}
+                              </span>
+                            )}
                           </div>
 
                           <h3 className="text-xl font-black text-white mb-2 whitespace-normal break-words leading-snug" title={pop.popName}>{pop.popName}</h3>
@@ -264,8 +280,8 @@ export const AncientAncestryOracle = memo(({
                              {pop.culture || (type === 'matches' ? 'Archaeological Sample' : 'Reference Clade')}
                           </div>
                           <div className="flex items-center gap-1.5">
-                            <span className="text-xs font-mono font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
-                              {pop.matchingMarkers} Markers
+                            <span className="text-xs font-mono font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20" title={`Shared ${pop.matchingMarkers} of ${pop.markersCompared || pop.matchingMarkers} compared loci`}>
+                              {pop.markersCompared !== undefined ? `${pop.matchingMarkers}/${pop.markersCompared} AIMs` : `${pop.matchingMarkers} Markers`}
                             </span>
                             <button className="text-amber-400 opacity-80 group-hover:opacity-100 transition-opacity">
                               <Info size={16} />

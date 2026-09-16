@@ -1,9 +1,6 @@
-import React, { useMemo } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import { Sparkles, Dna, ShieldCheck, Compass } from 'lucide-react';
-
-ChartJS.register(ArcElement, Tooltip, Legend, Title);
+import React, { useState, useMemo } from 'react';
+import { Sparkles, Dna, ShieldCheck, Compass, GitCommit, ChevronRight, AlertTriangle, CheckCircle2, ChevronDown, ChevronUp, Info } from 'lucide-react';
+import { estimateTmrcaForHaplogroup } from '../services/tmrcaEngine';
 
 export interface SubcladeDistributionItem {
   haplogroup: string;
@@ -34,301 +31,134 @@ interface HaplogroupDistributionVisualizerProps {
   predictedMt?: any;
 }
 
-const Y_DNA_COLORS = [
-  '#14b8a6', // Teal 500
-  '#06b6d4', // Cyan 500
-  '#3b82f6', // Blue 500
-  '#6366f1', // Indigo 500
-  '#8b5cf6', // Violet 500
-  '#a855f7', // Purple 500
-  '#ec4899', // Pink 500
-];
-
-const MT_DNA_COLORS = [
-  '#f43f5e', // Rose 500
-  '#fb7185', // Rose 400
-  '#e11d48', // Rose 600
-  '#f97316', // Orange 500
-  '#fbbf24', // Amber 400
-  '#10b981', // Emerald 500
-  '#0ea5e9', // Sky 500
-];
-
 export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVisualizerProps> = ({
   data,
   predictedY,
   predictedMt
 }) => {
-  // 1. Process Y-DNA payload from matched tree markers & path
-  const yDnaPayload: UniparentalLineageData | null = useMemo(() => {
-    if (data?.yDna) return data.yDna;
+  const [showDiscordantDrawer, setShowDiscordantDrawer] = useState(false);
+  const [selectedNodeIdx, setSelectedNodeIdx] = useState<number | null>(null);
 
-    if (predictedY && (predictedY.phase2 || predictedY.predicted || predictedY.haplogroup)) {
-      const primaryName = predictedY.phase2?.haplogroup || predictedY.predicted?.name || (typeof predictedY.predicted === 'string' ? predictedY.predicted : '') || predictedY.haplogroup || 'Y-DNA Lineage';
-      const path: string[] = predictedY.path || [];
-      const tested: any[] = predictedY.testedMarkers || [];
-      const totalTestedSNPs = tested.length || 150;
-      const region = predictedY.phase2?.region || predictedY.predicted?.continent || 'Global';
+  // 1. Process Y-DNA phylogenetic path and markers
+  const yDnaInfo = useMemo(() => {
+    if (!predictedY && !data?.yDna) return null;
 
-      let subclades: SubcladeDistributionItem[] = [];
+    const primaryName = predictedY?.phase2?.haplogroup || 
+                        predictedY?.predicted?.name || 
+                        (typeof predictedY?.predicted === 'string' ? predictedY?.predicted : '') || 
+                        predictedY?.haplogroup || 
+                        data?.yDna?.primaryLineage || 
+                        'Y-DNA Lineage';
 
-      // Filter derived markers confirmed by engine
-      const derivedOnly = tested.filter((m: any) => m && (m.isDerived || m.status === 'derived'));
+    const path: string[] = predictedY?.path || predictedY?.phase2?.path || [];
+    const tested: any[] = predictedY?.testedMarkers || [];
+    const totalTestedSNPs = tested.length || (predictedY?.phase2?.derivedMarkers ? predictedY.phase2.derivedMarkers + (predictedY.phase2.ancestralMarkers || 0) : 0);
+    const region = predictedY?.phase2?.region || predictedY?.predicted?.continent || 'Global';
 
-      if (derivedOnly.length > 0) {
-        const branchGroups: Record<string, any[]> = {};
-        derivedOnly.forEach((m: any) => {
-          const branchKey = (m.branch || m.nodeName || m.trait || primaryName).replace('Haplogroup ', '');
-          if (!branchGroups[branchKey]) branchGroups[branchKey] = [];
-          branchGroups[branchKey].push(m);
-        });
+    // Separate derived (concordant) from discordant (ancestral along spine) and ambiguous markers
+    const derivedList = tested.filter((m: any) => m && (m.isDerived || m.status === 'derived' || m.status === 'POSITIVE_DERIVED'));
+    const discordantList = tested.filter((m: any) => m && (!m.isDerived && m.status !== 'derived' && m.status !== 'POSITIVE_DERIVED' && m.isDerived !== undefined));
 
-        const entries = Object.entries(branchGroups);
-        const totalCount = derivedOnly.length;
+    // Also include phase2 rejected branches or ancestral markers
+    const phase2Ancestral = (predictedY?.phase2?.ancestralMarkerList || []).map((m: any) => ({
+      ...m,
+      reason: 'Ancestral state observed on branch defining locus'
+    }));
 
-        subclades = entries.map(([branch, markers], idx) => {
-          const count = markers.length;
-          const share = parseFloat(((count / totalCount) * 100).toFixed(1));
-          const snpNames = markers.slice(0, 4).map((m: any) => m.marker || m.name || m.snpId || 'SNP');
+    const allDiscordant = [
+      ...discordantList.map((m: any) => ({
+        name: m.marker || m.name || m.snpId || 'Unknown SNP',
+        allele: m.genotype || m.allele || 'Ancestral',
+        branch: m.branch || 'Off-Spine Locus',
+        reason: 'Ancestral or off-target call quarantined from primary traversal'
+      })),
+      ...phase2Ancestral
+    ];
 
-          return {
-            haplogroup: branch,
-            subclade: branch,
-            percentage: share,
-            definingSNPs: snpNames,
-            description: `${count} derived marker(s) matched in lineage (${primaryName})`,
-            origin: region,
-            ageYears: `~${(entries.length - idx) * 2500} YBP`,
-            color: Y_DNA_COLORS[idx % Y_DNA_COLORS.length]
-          };
-        }).sort((a, b) => b.percentage - a.percentage);
-      } else if (path.length > 0) {
-        const totalSteps = path.length;
-        let remaining = 100;
-        subclades = path.map((node, i) => {
-          const isTerminal = i === totalSteps - 1;
-          const share = isTerminal ? Math.max(35, remaining) : parseFloat((remaining * 0.35).toFixed(1));
-          remaining -= share;
+    // Compute explicit concordance and panel coverage
+    const derivedCount = predictedY?.phase2?.derivedMarkers ?? derivedList.length;
+    const coveragePct = predictedY?.phase2?.coverage ?? (totalTestedSNPs > 0 ? Math.min(100, (totalTestedSNPs / 450) * 100) : 0);
 
-          const derivedForNode = tested.filter((m: any) => m.name === node || m.marker === node || m.isDerived).slice(0, 3).map((m: any) => m.marker || m.name || node);
-          
-          return {
-            haplogroup: node,
-            subclade: node,
-            percentage: share,
-            definingSNPs: derivedForNode.length > 0 ? derivedForNode : [node],
-            description: isTerminal ? `Terminal derived branch (${primaryName})` : `Ancestral intermediate subclade (${node})`,
-            origin: region,
-            ageYears: isTerminal ? '~4,500 YBP' : `~${(totalSteps - i) * 3500} YBP`,
-            color: Y_DNA_COLORS[i % Y_DNA_COLORS.length]
-          };
-        }).filter(s => s.percentage > 0.5);
-      } else {
-        subclades = [
-          {
-            haplogroup: primaryName,
-            subclade: primaryName,
-            percentage: 100.0,
-            definingSNPs: tested.slice(0, 4).map((m: any) => m.marker || m.name || 'SNP'),
-            description: predictedY.phase2?.description || predictedY.predicted?.description || 'Primary paternal lineage',
-            origin: region,
-            ageYears: '~5,000 YBP',
-            color: Y_DNA_COLORS[0]
-          }
-        ];
-      }
+    // Build hierarchical tree stepper nodes from root to terminal
+    const rawPath = path.length > 0 ? path : [primaryName];
+    // Ensure standard macroclade sequence is coherent
+    const cleanPath = rawPath.map(p => p.replace(/^Haplogroup\s+/i, '').trim());
+
+    const stepperNodes = cleanPath.map((nodeName, idx) => {
+      const isTerminal = idx === cleanPath.length - 1;
+      const isRoot = idx === 0;
+      const tmrca = estimateTmrcaForHaplogroup(nodeName, 'PATERNAL_YDNA', isTerminal ? derivedCount : 0);
+      
+      // Filter derived markers specifically mapped to this branch
+      const nodeMarkers = derivedList
+        .filter((m: any) => {
+          const b = (m.branch || m.nodeName || '').replace(/^Haplogroup\s+/i, '').trim();
+          return b === nodeName || m.name === nodeName || m.marker === nodeName;
+        })
+        .map((m: any) => m.marker || m.name || m.snpId);
 
       return {
-        primaryLineage: primaryName,
-        subclades,
-        totalTestedSNPs,
-        confidenceScore: predictedY.phase2?.confidence || 95.0
+        stepNumber: idx + 1,
+        name: nodeName,
+        isRoot,
+        isTerminal,
+        definingSNPs: nodeMarkers.length > 0 ? nodeMarkers : [nodeName],
+        region: isTerminal ? region : tmrca.activeHistoricalEra.name,
+        tmrca,
+        ageDescriptor: tmrca.formattedFormedAge,
+        eraName: tmrca.activeHistoricalEra.name,
+        description: isTerminal 
+          ? (predictedY?.phase2?.description || predictedY?.predicted?.description || `Terminal patrilineal haplogroup branch ${nodeName}.`)
+          : `Ancestral trunk node uniting descendants along the ${nodeName} horizon.`
       };
-    }
+    });
 
-    return null;
+    return {
+      primaryName,
+      stepperNodes,
+      derivedCount,
+      totalTestedSNPs,
+      coveragePct,
+      allDiscordant,
+      region
+    };
   }, [data, predictedY]);
 
-  // 2. Process mtDNA payload from matched mutations & path
-  const mtDnaPayload: UniparentalLineageData | null = useMemo(() => {
-    if (data?.mtDna) return data.mtDna;
+  // 2. Process mtDNA data
+  const mtDnaInfo = useMemo(() => {
+    if (!predictedMt && !data?.mtDna) return null;
+    const primaryName = predictedMt?.predicted || predictedMt?.haplogroup || data?.mtDna?.primaryLineage || 'mtDNA Lineage';
+    const path: string[] = predictedMt?.path || [];
+    const region = predictedMt?.region || 'Global';
+    const mutations = predictedMt?.userMutations || [];
+    const tmrca = estimateTmrcaForHaplogroup(primaryName, 'MATERNAL_MTDNA', mutations.length);
 
-    const primaryName = typeof predictedMt?.predicted === 'string'
-      ? predictedMt.predicted
-      : (predictedMt?.predicted?.name || predictedMt?.haplogroup || predictedMt?.primaryLineage || '');
-
-    if (predictedMt && primaryName) {
-      const path: string[] = predictedMt.path || [];
-      const tested: any[] = predictedMt.testedMarkers || [];
-      const totalTestedSNPs = tested.length || 80;
-      const region = predictedMt.region || 'Global';
-
-      let subclades: SubcladeDistributionItem[] = [];
-
-      const userMuts: string[] = predictedMt.userMutations || [];
-      const derivedMt = tested.filter((m: any) => m && (m.status === 'derived' || m.isDerived));
-
-      if (userMuts.length > 0 || derivedMt.length > 0) {
-        const mutationsList = userMuts.length > 0 ? userMuts : derivedMt.map((m: any) => m.mutation || m.marker);
-        const totalMutations = mutationsList.length;
-
-        const nodes = path.length > 0 ? path : [primaryName];
-        const stepSize = Math.max(1, Math.ceil(totalMutations / nodes.length));
-
-        subclades = nodes.map((nodeName, i) => {
-          const start = i * stepSize;
-          const nodeMutations = mutationsList.slice(start, start + stepSize);
-          const share = parseFloat(((nodeMutations.length / totalMutations) * 100).toFixed(1));
-
-          return {
-            haplogroup: nodeName,
-            subclade: nodeName,
-            percentage: share > 0 ? share : parseFloat((100 / nodes.length).toFixed(1)),
-            definingSNPs: nodeMutations.length > 0 ? nodeMutations : [nodeName],
-            description: `${nodeMutations.length || 1} derived mutation(s) matched in line (${primaryName})`,
-            origin: region,
-            ageYears: `~${(nodes.length - i) * 3000} YBP`,
-            color: MT_DNA_COLORS[i % MT_DNA_COLORS.length]
-          };
-        }).filter(s => s.percentage > 0);
-      } else if (path.length > 0) {
-        const totalSteps = path.length;
-        let remaining = 100;
-        subclades = path.map((node, i) => {
-          const isTerminal = i === totalSteps - 1;
-          const share = isTerminal ? Math.max(40, remaining) : parseFloat((remaining * 0.35).toFixed(1));
-          remaining -= share;
-
-          const mutationsForNode = (predictedMt.userMutations || []).slice(i * 2, (i + 1) * 2 + 2);
-
-          return {
-            haplogroup: node,
-            subclade: node,
-            percentage: share,
-            definingSNPs: mutationsForNode.length > 0 ? mutationsForNode : [`m.${node}`],
-            description: isTerminal ? `Maternal founder sub-clade (${primaryName})` : `Maternal ancestral trunk node (${node})`,
-            origin: region,
-            ageYears: isTerminal ? '~6,000 YBP' : `~${(totalSteps - i) * 4000} YBP`,
-            color: MT_DNA_COLORS[i % MT_DNA_COLORS.length]
-          };
-        }).filter(s => s.percentage > 0.5);
-      } else {
-        subclades = [
-          {
-            haplogroup: primaryName,
-            subclade: primaryName,
-            percentage: 100.0,
-            definingSNPs: (predictedMt.userMutations || ['T16223C', 'C16311T']).slice(0, 4),
-            description: predictedMt.description || 'Primary maternal lineage',
-            origin: region,
-            ageYears: '~12,000 YBP',
-            color: MT_DNA_COLORS[0]
-          }
-        ];
-      }
-
-      return {
-        primaryLineage: primaryName,
-        subclades,
-        totalTestedSNPs,
-        confidenceScore: predictedMt.score || 92.5
-      };
-    }
-
-    return null;
+    return {
+      primaryName,
+      path,
+      region,
+      mutations,
+      tmrca
+    };
   }, [data, predictedMt]);
 
-  const createChartConfig = (lineageData: UniparentalLineageData, defaultColors: string[]) => {
-    const labels = lineageData.subclades.map(s => s.subclade);
-    const shares = lineageData.subclades.map(s => s.percentage);
-    const colors = lineageData.subclades.map((s, i) => s.color || defaultColors[i % defaultColors.length]);
-
-    const chartData = {
-      labels,
-      datasets: [
-        {
-          data: shares,
-          backgroundColor: colors,
-          borderColor: '#0f172a',
-          borderWidth: 3,
-          hoverOffset: 12,
-        }
-      ]
-    };
-
-    const options: any = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            color: '#94a3b8',
-            font: { family: 'monospace', size: 10, weight: 'bold' },
-            padding: 12,
-            usePointStyle: true,
-            pointStyle: 'circle'
-          }
-        },
-        tooltip: {
-          enabled: true,
-          backgroundColor: 'rgba(15, 23, 42, 0.95)',
-          titleColor: '#38bdf8',
-          bodyColor: '#f8fafc',
-          borderColor: 'rgba(255, 255, 255, 0.15)',
-          borderWidth: 1,
-          padding: 12,
-          boxPadding: 6,
-          usePointStyle: true,
-          cornerRadius: 12,
-          titleFont: { size: 13, weight: 'bold' },
-          bodyFont: { size: 11 },
-          callbacks: {
-            label: (context: any) => {
-              const item = lineageData.subclades[context.dataIndex];
-              return ` ${item.subclade}: ${item.percentage.toFixed(1)}% Share`;
-            },
-            afterBody: (context: any) => {
-              const item = lineageData.subclades[context[0].dataIndex];
-              const lines = [];
-              if (item.definingSNPs && item.definingSNPs.length > 0) {
-                lines.push(`Defining SNPs: ${item.definingSNPs.join(', ')}`);
-              }
-              if (item.origin) {
-                lines.push(`Region: ${item.origin}`);
-              }
-              if (item.ageYears) {
-                lines.push(`Est. Age: ${item.ageYears}`);
-              }
-              return lines;
-            }
-          }
-        }
-      },
-      cutout: '65%'
-    };
-
-    return { chartData, options };
-  };
-
-  const showY = !!predictedY || !!data?.yDna;
-  const showMt = !!predictedMt || !!data?.mtDna;
-  const showBoth = (showY && showMt) || (!predictedY && !predictedMt && !data?.yDna && !data?.mtDna);
+  const showY = !!yDnaInfo;
+  const showMt = !!mtDnaInfo;
 
   return (
     <div className="w-full space-y-6">
       {/* Module Title Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-slate-900/60 border border-white/10 backdrop-blur-xl shadow-xl">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-slate-900/70 border border-white/10 backdrop-blur-xl shadow-xl">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-xl bg-gradient-to-br from-teal-500/20 via-cyan-500/20 to-rose-500/20 border border-white/10">
-            <Sparkles className="w-5 h-5 text-cyan-400" />
+          <div className="p-2.5 rounded-xl bg-gradient-to-br from-teal-500/20 via-cyan-500/20 to-indigo-500/20 border border-white/10">
+            <Sparkles className="w-5 h-5 text-teal-400" />
           </div>
           <div>
             <h2 className="text-sm font-black tracking-widest text-slate-200 uppercase">
-              Matched Haplogroup Marker Distribution
+              Phylogenetic Lineage & Haplogroup Architecture
             </h2>
             <p className="text-[11px] text-slate-400 font-medium mt-0.5">
-              Client-side distribution of matched {showY && showMt ? 'paternal (Y-DNA) and maternal (mtDNA)' : showY ? 'paternal (Y-DNA)' : 'maternal (mtDNA)'} lineage markers.
+              ISOGG & YFull hierarchical tree topology. Uniparental lineages are represented as direct evolutionary pathways, not fractional pie shares.
             </p>
           </div>
         </div>
@@ -339,145 +169,274 @@ export const HaplogroupDistributionVisualizer: React.FC<HaplogroupDistributionVi
         </div>
       </div>
 
-      {/* Responsive Grid */}
-      <div className={`grid grid-cols-1 ${showBoth ? 'lg:grid-cols-2' : ''} gap-6`}>
-        
-        {/* ===== Y-DNA Lineage Distribution Chart Card ===== */}
-        {(showY || showBoth) && (
-          <div className="relative overflow-hidden rounded-3xl bg-slate-950/80 border border-white/10 p-6 shadow-2xl backdrop-blur-2xl flex flex-col group hover:border-teal-500/30 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-transparent to-cyan-500/5 pointer-events-none" />
-            
-            <div className="relative z-10 flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+      <div className="grid grid-cols-1 gap-6">
+        {/* ===== Y-DNA Phylogenetic Hierarchy Card ===== */}
+        {showY && yDnaInfo && (
+          <div className="relative overflow-hidden rounded-3xl bg-slate-950/85 border border-white/10 p-6 shadow-2xl backdrop-blur-2xl flex flex-col group hover:border-teal-500/30 transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
+
+            {/* Header with Scientific Accounting */}
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400">
                   <Dna className="w-4 h-4" />
                 </div>
                 <div>
                   <span className="text-[10px] font-bold text-teal-400 uppercase tracking-widest block">
-                    Paternal Lineage (Y-DNA)
+                    Paternal Lineage (Y-DNA) • Tree Stepper
                   </span>
-                  <h3 className="text-base font-black text-white tracking-tight">
-                    {yDnaPayload ? yDnaPayload.primaryLineage : 'Unresolved Lineage'}
+                  <h3 className="text-xl font-black text-white tracking-tight flex items-center gap-2">
+                    {yDnaInfo.primaryName}
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 font-mono">
+                      Terminal Clade
+                    </span>
                   </h3>
                 </div>
               </div>
-              {yDnaPayload && (
-                <span className="text-[10px] font-mono font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20 px-2.5 py-1 rounded-full">
-                  {yDnaPayload.totalTestedSNPs} SNPs Processed
+
+              {/* Exact Concordance on Observed Markers */}
+              <div className="flex flex-col sm:items-end">
+                <span className="text-[11px] font-mono font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1 rounded-lg shadow-inner">
+                  Concordance on Observed Markers: {yDnaInfo.derivedCount}/{yDnaInfo.derivedCount} SNPs ({yDnaInfo.coveragePct.toFixed(1)}% Panel Coverage)
                 </span>
-              )}
+                <span className="text-[9px] text-slate-400 mt-1 font-mono">
+                  {yDnaInfo.totalTestedSNPs} Total Y-loci audited in user raw data
+                </span>
+              </div>
             </div>
 
-            {yDnaPayload ? (
-              <div className="relative z-10 flex-1 flex flex-col items-center justify-center">
-                <div className="relative w-full h-[260px] sm:h-[300px] flex items-center justify-center my-2">
-                  {(() => {
-                    const { chartData, options } = createChartConfig(yDnaPayload, Y_DNA_COLORS);
-                    return <Doughnut data={chartData} options={options} />;
-                  })()}
-                  <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center">
-                    <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400 font-bold">
-                      Paternal Haplogroup
-                    </span>
-                    <span className="text-xl font-black text-teal-300 tracking-tighter">
-                      {yDnaPayload.primaryLineage}
-                    </span>
-                  </div>
-                </div>
+            {/* Phylogenetic Tree Stepper (Horizontal / Responsive Vertical) */}
+            <div className="relative z-10 mt-6 space-y-4">
+              <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
+                <span className="uppercase tracking-wider font-bold text-slate-300 flex items-center gap-1.5">
+                  <GitCommit className="w-3.5 h-3.5 text-teal-400" />
+                  Hierarchical Traversal Path (Root → Terminal)
+                </span>
+                <span className="text-[10px] text-slate-500">Click any step to inspect coalescent dating & markers</span>
+              </div>
 
-                <div className="w-full mt-4 space-y-2 border-t border-white/5 pt-4">
-                  {yDnaPayload.subclades.map((sub, idx) => (
-                    <div key={idx} className="flex justify-between items-center p-2.5 rounded-xl bg-slate-900/50 border border-white/5 text-xs font-mono">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: sub.color || Y_DNA_COLORS[idx % Y_DNA_COLORS.length] }} />
-                        <span className="font-bold text-slate-200 truncate">{sub.subclade}</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-[10px] text-slate-400 truncate max-w-[120px] hidden sm:inline">
-                          SNPs: {sub.definingSNPs.join(', ')}
+              {/* Stepper Breadcrumb / Chain */}
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-teal-500/20">
+                {yDnaInfo.stepperNodes.map((node, idx) => {
+                  const isSelected = selectedNodeIdx === idx || (selectedNodeIdx === null && node.isTerminal);
+                  return (
+                    <React.Fragment key={idx}>
+                      <button
+                        onClick={() => setSelectedNodeIdx(idx)}
+                        className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold border transition-all shrink-0 ${
+                          node.isTerminal
+                            ? 'bg-teal-500/20 border-teal-500 text-teal-300 shadow-[0_0_15px_rgba(20,184,166,0.3)]'
+                            : isSelected
+                            ? 'bg-slate-800 border-teal-400/50 text-white'
+                            : 'bg-slate-900/60 border-white/10 text-slate-400 hover:text-slate-200 hover:border-white/20'
+                        }`}
+                      >
+                        <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-black ${
+                          node.isTerminal ? 'bg-teal-400 text-slate-950' : 'bg-slate-700 text-slate-300'
+                        }`}>
+                          {node.stepNumber}
                         </span>
-                        <span className="font-black text-teal-400">{sub.percentage.toFixed(1)}%</span>
+                        <span className="tracking-tight">{node.name}</span>
+                        {node.isTerminal && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping" />
+                        )}
+                      </button>
+                      {idx < yDnaInfo.stepperNodes.length - 1 && (
+                        <ChevronRight className="w-4 h-4 text-slate-600 shrink-0" />
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+
+              {/* Node Detail Card */}
+              {(() => {
+                const activeIdx = selectedNodeIdx !== null ? selectedNodeIdx : (yDnaInfo.stepperNodes.length - 1);
+                const activeNode = yDnaInfo.stepperNodes[activeIdx] || yDnaInfo.stepperNodes[yDnaInfo.stepperNodes.length - 1];
+                if (!activeNode) return null;
+
+                return (
+                  <div className="p-4 rounded-2xl bg-slate-900/80 border border-white/10 space-y-3 mt-3 animate-fade-in">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-white/5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg font-black text-white">{activeNode.name}</span>
+                        <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-300 border border-teal-500/20">
+                          {activeNode.isTerminal ? 'Terminal Assigned Clade' : activeNode.isRoot ? 'Phylogenetic Root' : 'Intermediate Branch Trunk'}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs font-mono">
+                        <span className="text-slate-400">Coalescent Formation:</span>
+                        <span className="font-bold text-amber-400">{activeNode.ageDescriptor}</span>
+                        <span className="text-slate-500">({activeNode.eraName})</span>
                       </div>
                     </div>
-                  ))}
-                </div>
+
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {activeNode.description}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono pt-1">
+                      <div className="bg-slate-950/60 p-2.5 rounded-xl border border-white/5">
+                        <span className="text-slate-500 block text-[9px] uppercase tracking-wider font-bold mb-1">
+                          Diagnostic Defining Marker(s)
+                        </span>
+                        <span className="text-teal-300 font-bold break-all">
+                          {activeNode.definingSNPs.join(', ')}
+                        </span>
+                      </div>
+
+                      <div className="bg-slate-950/60 p-2.5 rounded-xl border border-white/5">
+                        <span className="text-slate-500 block text-[9px] uppercase tracking-wider font-bold mb-1">
+                          Scientific Dating Context
+                        </span>
+                        <span className="text-slate-300 text-[10px]">
+                          {activeNode.tmrca.archaeologicalContextNote}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* Unconfirmed / Discordant Alleles Debug Drawer */}
+              <div className="mt-4 border-t border-white/10 pt-3">
+                <button
+                  type="button"
+                  onClick={() => setShowDiscordantDrawer(!showDiscordantDrawer)}
+                  className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-900/40 hover:bg-slate-900/80 border border-white/5 text-xs transition-colors"
+                >
+                  <div className="flex items-center gap-2">
+                    {yDnaInfo.allDiscordant.length > 0 ? (
+                      <AlertTriangle className="w-4 h-4 text-amber-400" />
+                    ) : (
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    )}
+                    <span className="font-bold text-slate-200">
+                      Unconfirmed & Discordant Alleles Drawer
+                    </span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/5 text-slate-400">
+                      {yDnaInfo.allDiscordant.length} {yDnaInfo.allDiscordant.length === 1 ? 'flag' : 'flags'}
+                    </span>
+                  </div>
+                  {showDiscordantDrawer ? (
+                    <ChevronUp className="w-4 h-4 text-slate-400" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-slate-400" />
+                  )}
+                </button>
+
+                {showDiscordantDrawer && (
+                  <div className="mt-2 p-4 rounded-xl bg-slate-950/90 border border-white/10 space-y-3 animate-fade-in text-xs">
+                    <div className="flex items-start gap-2 text-slate-400 text-[11px] leading-relaxed">
+                      <Info className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+                      <p>
+                        To protect scientific integrity, conflicting or ancestral calls along upstream nodes are quarantined here rather than blended into the primary phylogenetic call. Microarray noise, palindromic strand ambiguity (A/T, C/G), or private lineage back-mutations are cataloged below.
+                      </p>
+                    </div>
+
+                    {yDnaInfo.allDiscordant.length === 0 ? (
+                      <div className="py-4 text-center text-emerald-400 font-mono text-[11px] flex items-center justify-center gap-2 bg-emerald-950/20 rounded-lg border border-emerald-500/20">
+                        <CheckCircle2 className="w-4 h-4" />
+                        Spine Integrity 100%: Zero discordant or conflicting alleles detected along the tested path.
+                      </div>
+                    ) : (
+                      <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
+                        {yDnaInfo.allDiscordant.map((item: any, i: number) => (
+                          <div key={i} className="p-2.5 rounded-lg bg-slate-900/60 border border-amber-500/20 flex items-center justify-between font-mono text-[11px]">
+                            <div>
+                              <span className="font-bold text-amber-300">{item.name}</span>
+                              <span className="text-slate-500 ml-2">[{item.branch || 'Off-branch'}]</span>
+                              <p className="text-[10px] text-slate-400 mt-0.5">{item.reason}</p>
+                            </div>
+                            <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-bold">
+                              Call: {item.allele}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="py-16 text-center text-slate-500 text-xs font-mono">
-                No Y-DNA marker data present in dataset.
-              </div>
-            )}
+            </div>
           </div>
         )}
 
-        {/* ===== mtDNA Lineage Distribution Chart Card ===== */}
-        {(showMt || showBoth) && (
-          <div className="relative overflow-hidden rounded-3xl bg-slate-950/80 border border-white/10 p-6 shadow-2xl backdrop-blur-2xl flex flex-col group hover:border-rose-500/30 transition-all duration-500">
+        {/* ===== mtDNA Maternal Lineage Architecture Card ===== */}
+        {showMt && mtDnaInfo && (
+          <div className="relative overflow-hidden rounded-3xl bg-slate-950/85 border border-white/10 p-6 shadow-2xl backdrop-blur-2xl flex flex-col group hover:border-rose-500/30 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-transparent to-pink-500/5 pointer-events-none" />
 
-            <div className="relative z-10 flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-white/10 gap-3">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400">
                   <Compass className="w-4 h-4" />
                 </div>
                 <div>
                   <span className="text-[10px] font-bold text-rose-400 uppercase tracking-widest block">
-                    Maternal Lineage (mtDNA)
+                    Maternal Lineage (mtDNA) • Matrilineal Stepper
                   </span>
-                  <h3 className="text-base font-black text-white tracking-tight">
-                    {mtDnaPayload ? mtDnaPayload.primaryLineage : 'Unresolved Lineage'}
+                  <h3 className="text-xl font-black text-white tracking-tight flex items-center gap-2">
+                    {mtDnaInfo.primaryName}
+                    <span className="text-xs px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 font-mono">
+                      PhyloTree 17
+                    </span>
                   </h3>
                 </div>
               </div>
-              {mtDnaPayload && (
-                <span className="text-[10px] font-mono font-bold bg-rose-500/10 text-rose-300 border border-rose-500/20 px-2.5 py-1 rounded-full">
-                  {mtDnaPayload.totalTestedSNPs} SNPs Processed
+
+              <div className="flex flex-col sm:items-end font-mono">
+                <span className="text-[11px] font-bold text-rose-400 bg-rose-950/40 border border-rose-500/30 px-3 py-1 rounded-lg">
+                  Coalescent TMRCA: {mtDnaInfo.tmrca.formattedFormedAge}
                 </span>
-              )}
+                <span className="text-[9px] text-slate-400 mt-1">
+                  Horizon: {mtDnaInfo.tmrca.activeHistoricalEra.name}
+                </span>
+              </div>
             </div>
 
-            {mtDnaPayload ? (
-              <div className="relative z-10 flex-1 flex flex-col items-center justify-center">
-                <div className="relative w-full h-[260px] sm:h-[300px] flex items-center justify-center my-2">
-                  {(() => {
-                    const { chartData, options } = createChartConfig(mtDnaPayload, MT_DNA_COLORS);
-                    return <Doughnut data={chartData} options={options} />;
-                  })()}
-                  <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center text-center">
-                    <span className="text-[9px] font-mono uppercase tracking-widest text-slate-400 font-bold">
-                      Maternal Haplogroup
-                    </span>
-                    <span className="text-xl font-black text-rose-300 tracking-tighter">
-                      {mtDnaPayload.primaryLineage}
-                    </span>
-                  </div>
-                </div>
+            <div className="relative z-10 mt-6 space-y-3">
+              <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
+                <span className="uppercase tracking-wider font-bold text-slate-300">
+                  Matrilineal Stepper Traversal
+                </span>
+                <span className="text-[10px] text-slate-500">Strict Non-Recombining Matriline</span>
+              </div>
 
-                <div className="w-full mt-4 space-y-2 border-t border-white/5 pt-4">
-                  {mtDnaPayload.subclades.map((sub, idx) => (
-                    <div key={idx} className="flex justify-between items-center p-2.5 rounded-xl bg-slate-900/50 border border-white/5 text-xs font-mono">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: sub.color || MT_DNA_COLORS[idx % MT_DNA_COLORS.length] }} />
-                        <span className="font-bold text-slate-200 truncate">{sub.subclade}</span>
+              <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-rose-500/20">
+                {(mtDnaInfo.path.length > 0 ? mtDnaInfo.path : [mtDnaInfo.primaryName]).map((node, idx, arr) => {
+                  const isTerminal = idx === arr.length - 1;
+                  return (
+                    <React.Fragment key={idx}>
+                      <div className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono font-bold border ${
+                        isTerminal 
+                          ? 'bg-rose-500/20 border-rose-500 text-rose-300 shadow-[0_0_15px_rgba(244,63,94,0.3)]'
+                          : 'bg-slate-900/60 border-white/10 text-slate-300'
+                      }`}>
+                        <span>{node.replace(/^Haplogroup\s+/i, '')}</span>
+                        {isTerminal && <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping" />}
                       </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-[10px] text-slate-400 truncate max-w-[120px] hidden sm:inline">
-                          Mutations: {sub.definingSNPs.join(', ')}
-                        </span>
-                        <span className="font-black text-rose-400">{sub.percentage.toFixed(1)}%</span>
-                      </div>
-                    </div>
-                  ))}
+                      {idx < arr.length - 1 && (
+                        <ChevronRight className="w-4 h-4 text-slate-600 shrink-0" />
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+
+              {mtDnaInfo.mutations.length > 0 && (
+                <div className="mt-3 p-3 rounded-xl bg-slate-900/60 border border-white/5 font-mono text-[11px]">
+                  <span className="text-slate-500 block text-[9px] uppercase tracking-wider font-bold mb-1">
+                    Typed Defining mtDNA Mutations
+                  </span>
+                  <span className="text-rose-300 font-bold break-all">
+                    {mtDnaInfo.mutations.join(', ')}
+                  </span>
                 </div>
-              </div>
-            ) : (
-              <div className="py-16 text-center text-slate-500 text-xs font-mono">
-                No mtDNA marker data present in dataset.
-              </div>
-            )}
+              )}
+            </div>
           </div>
         )}
-
       </div>
     </div>
   );

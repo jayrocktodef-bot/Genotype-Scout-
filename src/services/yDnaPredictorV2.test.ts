@@ -170,9 +170,10 @@ describe('YDnaPredictorV2', () => {
         { name: 'M168', rsid: 'rs1234', allele: 'C' },
       ]);
 
-      // CT should be rejected; best should be N/A
+      // CT should be rejected; best should be No Call due to 0 derived SNPs
       expect(result.rejectedBranches).toContain('CT');
-      expect(result.terminalHaplogroup).toBe('N/A');
+      expect(result.terminalHaplogroup).toBe('No Call (Female XX or Insufficient Y Coverage)');
+      expect(result.inferredBiologicalSex).toBe('FEMALE');
     });
 
     it('still traverses other branches after rejecting one', () => {
@@ -287,7 +288,8 @@ describe('YDnaPredictorV2', () => {
       const predictor = new YDnaPredictorV2(dataset);
 
       const result = predictor.predict([]);
-      expect(result.terminalHaplogroup).toBe('N/A');
+      expect(result.terminalHaplogroup).toBe('No Call (Female XX or Insufficient Y Coverage)');
+      expect(result.inferredBiologicalSex).toBe('FEMALE');
       expect(result.confidence).toBe(0);
     });
 
@@ -317,6 +319,62 @@ describe('YDnaPredictorV2', () => {
       ]);
 
       expect(result1.terminalHaplogroup).toBe(result2.terminalHaplogroup);
+    });
+
+    it('rejects female XX sample with no Y calls or probe noise', () => {
+      const dataset = buildTestDataset();
+      const predictor = new YDnaPredictorV2(dataset);
+
+      // Female XX sample: missing/no calls on all Y markers
+      const femaleResult = predictor.predict([
+        { name: 'M168', rsid: 'rs1', allele: '--' },
+        { name: 'M96', rsid: 'rs3', allele: '00' }
+      ]);
+
+      expect(femaleResult.inferredBiologicalSex).toBe('FEMALE');
+      expect(femaleResult.terminalHaplogroup).toBe('No Call (Female XX or Insufficient Y Coverage)');
+      expect(femaleResult.derivedSnpCount).toBe(0);
+    });
+
+    it('excludes Pseudoautosomal Region (PAR1/PAR2) SNPs from Y-DNA haplogroup calls', () => {
+      const dataset = buildTestDataset();
+      // Add a PAR1 SNP at posHg38 = 100000 (PAR1 is 10001-2781479)
+      dataset.branches[1].definingSNPs.push({
+        name: 'PAR1_SNP',
+        ancestral: 'A',
+        derived: 'G',
+        posHg38: 100000,
+        isoggHaplogroup: 'CT'
+      });
+      const predictor = new YDnaPredictorV2(dataset);
+
+      // User has derived allele for PAR1_SNP, but no non-PAR derived SNPs
+      const result = predictor.predict([
+        { name: 'PAR1_SNP', rsid: 'rsPAR', allele: 'G', posHg38: 100000 }
+      ]);
+
+      // PAR SNP should be ignored; result should be female/insufficient
+      expect(result.terminalHaplogroup).toBe('No Call (Female XX or Insufficient Y Coverage)');
+    });
+
+    it('handles single-letter A versus pseudo-homozygous AA hemizygous formats', () => {
+      const dataset = buildTestDataset();
+      const predictor = new YDnaPredictorV2(dataset);
+
+      // 23andMe format ('T') vs Ancestry format ('TT')
+      const resSingle = predictor.predict([
+        { name: 'M168', rsid: 'rs1', allele: 'T' },
+        { name: 'M96', rsid: 'rs3', allele: 'G' }
+      ]);
+
+      const resDouble = predictor.predict([
+        { name: 'M168', rsid: 'rs1', allele: 'TT' },
+        { name: 'M96', rsid: 'rs3', allele: 'GG' }
+      ]);
+
+      expect(resSingle.terminalHaplogroup).toBe('E');
+      expect(resDouble.terminalHaplogroup).toBe('E');
+      expect(resSingle.terminalHaplogroup).toBe(resDouble.terminalHaplogroup);
     });
   });
 });

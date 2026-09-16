@@ -505,14 +505,32 @@ export const ChromosomePainterView = ({
                         </div>
                       )}
 
-                      {displayedMarkers.length > displayLimit && (
-                        <button
-                          onClick={() => setDisplayLimit(prev => prev + 100)}
-                          className="w-full py-2.5 bg-slate-800/90 hover:bg-slate-700 text-teal-300 text-xs font-bold rounded-xl border border-teal-500/30 transition-all mt-2 shadow-sm"
-                        >
-                          Load More (+100) — Showing {displayLimit} of {displayedMarkers.length}
-                        </button>
-                      )}
+                      {displayedMarkers.length > displayLimit ? (
+                        <div className="flex gap-2 mt-2">
+                          <button
+                            onClick={() => setDisplayLimit(prev => prev + 100)}
+                            className="flex-1 py-2.5 bg-slate-800/90 hover:bg-slate-700 text-teal-300 text-xs font-bold rounded-xl border border-teal-500/30 transition-all shadow-sm"
+                          >
+                            Load More (+100) — Showing {displayLimit} of {displayedMarkers.length}
+                          </button>
+                          <button
+                            onClick={() => setDisplayLimit(displayedMarkers.length)}
+                            className="px-4 py-2.5 bg-teal-950/80 hover:bg-teal-900/90 text-teal-200 text-xs font-black rounded-xl border border-teal-500/40 transition-all shadow-sm whitespace-nowrap"
+                          >
+                            Show All ({displayedMarkers.length})
+                          </button>
+                        </div>
+                      ) : displayedMarkers.length > 60 ? (
+                        <div className="flex justify-between items-center py-2 px-1 text-[11px] text-slate-400">
+                          <span>Showing all {displayedMarkers.length} mapped markers</span>
+                          <button
+                            onClick={() => setDisplayLimit(60)}
+                            className="text-teal-400 hover:text-teal-300 font-bold underline"
+                          >
+                            Collapse to 60
+                          </button>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
 

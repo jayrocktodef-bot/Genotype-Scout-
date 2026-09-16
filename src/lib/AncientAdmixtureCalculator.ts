@@ -11,13 +11,17 @@ export interface AncientSampleMatch {
   popCode: string;
   popName: string;
   score: number;
+  distance?: number;
   description: string;
   period: string;
   region: string;
   continent?: string;
   matchingMarkers: number;
+  markersCompared?: number;
   culture?: string;
   age_bp?: number;
+  confidence?: 'High' | 'Moderate' | 'Low';
+  cladeAffinity?: string;
 }
 
 export interface ArchaicVariantDetail {
@@ -406,48 +410,162 @@ export const calculateArchaicIntrogression = (userGenotypes: Record<string, stri
   };
 };
 
-export const calculateIndividualMatches = (userGenotypes: Record<string, string>) => {
+const ANCIENT_MARKER_COORDS: Record<string, { chr: string; pos: number; ref?: string; alt?: string }> = {
+  rs1426654: { chr: '15', pos: 48426484, ref: 'G', alt: 'A' },
+  rs16891982: { chr: '5', pos: 33951693, ref: 'C', alt: 'G' },
+  rs12913832: { chr: '15', pos: 28365618, ref: 'A', alt: 'G' },
+  rs4988235: { chr: '2', pos: 136608646, ref: 'G', alt: 'A' },
+  rs3827760: { chr: '2', pos: 109513601, ref: 'A', alt: 'G' },
+  rs2814778: { chr: '1', pos: 159174683, ref: 'T', alt: 'C' },
+  rs1800414: { chr: '15', pos: 28230318, ref: 'C', alt: 'T' },
+  rs1042602: { chr: '11', pos: 89178528, ref: 'C', alt: 'A' },
+  rs334: { chr: '11', pos: 5248232, ref: 'T', alt: 'A' },
+  rs601338: { chr: '19', pos: 49206674, ref: 'G', alt: 'A' },
+  rs1805007: { chr: '16', pos: 89986117, ref: 'C', alt: 'T' },
+  rs12203592: { chr: '6', pos: 396321, ref: 'C', alt: 'T' },
+  rs12821256: { chr: '12', pos: 88544949, ref: 'T', alt: 'C' },
+  rs174546: { chr: '11', pos: 61570783, ref: 'C', alt: 'T' },
+  rs1229984: { chr: '4', pos: 100239319, ref: 'G', alt: 'A' },
+  rs671: { chr: '12', pos: 112241766, ref: 'G', alt: 'A' },
+  rs2675348: { chr: '7', pos: 141972804, ref: 'T', alt: 'C' },
+  rs694341: { chr: '6', pos: 26042456, ref: 'A', alt: 'G' },
+  rs1815739: { chr: '11', pos: 66560624, ref: 'C', alt: 'T' },
+  rs72921001: { chr: '12', pos: 56488349, ref: 'A', alt: 'G' },
+  rs10774671: { chr: '12', pos: 113357193, ref: 'G', alt: 'A' },
+  rs35744605: { chr: '22', pos: 42526613, ref: 'T', alt: 'C' },
+  rs16139: { chr: '1', pos: 159174683, ref: 'A', alt: 'G' },
+  rs1065852: { chr: '19', pos: 49206132, ref: 'C', alt: 'T' },
+  rs11568828: { chr: '17', pos: 63918913, ref: 'T', alt: 'C' },
+  rs13097409: { chr: '3', pos: 20126338, ref: 'T', alt: 'G' },
+  rs885479: { chr: '16', pos: 89919746, ref: 'T', alt: 'C' },
+  rs1393350: { chr: '11', pos: 89277878, ref: 'G', alt: 'A' }
+};
+
+const SPECIMEN_CLADE_MAP: Record<string, string[]> = {
+  loschbour: ['WHG'],
+  cheddar: ['WHG'],
+  villabruna: ['WHG'],
+  bichon: ['WHG'],
+  westernhuntergatherer: ['WHG'],
+  stuttgart: ['EEF', 'ANF'],
+  boncuklu: ['ANF', 'EEF'],
+  earlyeuropeanfarmer: ['EEF', 'ANF'],
+  oetzi: ['EEF', 'ANF'],
+  otzi: ['EEF', 'ANF'],
+  yamnaya: ['Yamnaya'],
+  yamnayasamara: ['Yamnaya'],
+  yamnayasteppe: ['Yamnaya'],
+  anzick: ['Ancient_Beringian'],
+  kennewick: ['Ancient_Beringian'],
+  usr1: ['Ancient_Beringian'],
+  upwardsunriver: ['Ancient_Beringian'],
+  spiritcave: ['Ancient_Beringian'],
+  lovelock: ['Ancient_Beringian'],
+  luzia: ['Ancient_Beringian'],
+  lauricocha: ['Ancient_Beringian'],
+  machupicchu: ['Ancient_Beringian'],
+  fuegian: ['Ancient_Beringian'],
+  mota: ['Ancient_African'],
+  shumlaka: ['Ancient_African'],
+  catoctin: ['Ancient_African', 'EEF'],
+  kulubnarti: ['Ancient_African', 'NAT'],
+  ghk: ['Ancient_African', 'NAT'],
+  deepsan: ['Ancient_African'],
+  namasan: ['Ancient_African'],
+  ballito: ['Ancient_African'],
+  asselar: ['Ancient_African'],
+  gyamfi: ['Ancient_African'],
+  taforalt: ['TAF'],
+  guanche: ['TAF', 'EEF'],
+  tianyuan: ['Ancient_East_Asian'],
+  jomon: ['Ancient_East_Asian'],
+  rakhigarhi: ['AASI', 'CHG'],
+  satsurblia: ['CHG'],
+  kotias: ['CHG'],
+  australian: ['Oceanian'],
+  willandra: ['Oceanian'],
+  malta: ['EHG'],
+  kostenki: ['WHG', 'EHG'],
+  sunghir: ['WHG', 'EHG'],
+  oase: ['WHG'],
+  denisova: ['Oceanian'],
+  chagyrskaya: ['WHG', 'EEF'],
+  viking: ['EEF', 'WHG', 'Yamnaya']
+};
+
+export const calculateIndividualMatches = (
+  userGenotypes: Record<string, string>,
+  ancientAdmixture?: AncientSampleMatch[]
+) => {
   const rawSamples = [
     ...Object.values(masterAncient.samples || {}),
     ...((masterAncient as any).matches || []),
     ...(Array.isArray(ancientSamplesRaw) ? ancientSamplesRaw : Object.values(ancientSamplesRaw || {})),
     ...(Array.isArray(ancientMatchesRaw) ? ancientMatchesRaw : Object.values(ancientMatchesRaw || {}))
   ];
-  
-  const seenIds = new Set<string>();
-  const seenNames = new Set<string>();
-  const samples: any[] = [];
+
+  const cleanKey = (name: string) => {
+    return (name || '')
+      .toLowerCase()
+      .replace(/\(.*?\)/g, '')
+      .replace(/\b(man|boy|ancestor|individual|warrior|farmer|herder|mummy|child|lbk|iron workers|one)\b/g, '')
+      .replace(/[^a-z0-9]/g, '');
+  };
+
+  const sampleMap = new Map<string, any>();
   for (const s of rawSamples) {
-    const id = s.id || s.sampleId;
-    const rawName = (s.name || '').toLowerCase();
-    // Normalize name to deduplicate e.g. "Mota" vs "Mota Man", "Anzick-1" vs "Anzick-1 (Clovis Boy)"
-    const nameKey = rawName.replace(/\(.*?\)/g, '').replace(/[^a-z]/g, '');
-    if (id && !seenIds.has(id) && !seenNames.has(nameKey)) {
-      seenIds.add(id);
-      seenNames.add(nameKey);
-      samples.push(s);
+    if (!s) continue;
+    const nameKey = cleanKey(s.name || s.popName || s.id);
+    if (!nameKey) continue;
+
+    const existing = sampleMap.get(nameKey);
+    const snps = { ...(s.snps || {}), ...(s.genotypes || {}) };
+
+    if (!existing) {
+      sampleMap.set(nameKey, {
+        ...s,
+        snps,
+        genotypes: snps,
+        nameKey
+      });
+    } else {
+      const mergedSnps = {
+        ...(existing.snps || existing.genotypes || {}),
+        ...snps
+      };
+      existing.snps = mergedSnps;
+      existing.genotypes = mergedSnps;
+      if (!existing.description && s.description) existing.description = s.description;
+      if (!existing.period && s.period) existing.period = s.period;
+      if (!existing.culture && (s.culture || s.culture_name)) existing.culture = s.culture || s.culture_name;
+      if (!existing.region && s.region) existing.region = s.region;
+      if (!existing.continent && s.continent) existing.continent = s.continent;
+      if (!existing.ancestry_group && s.ancestry_group) existing.ancestry_group = s.ancestry_group;
+      if (!existing.age_bp && s.age_bp) existing.age_bp = s.age_bp;
     }
   }
-  
+
+  const samples = Array.from(sampleMap.values());
+
   const markerImportance: Record<string, number> = {
-    "rs1426654": 20.0,
-    "rs16891982": 18.0,
-    "rs12913832": 15.0,
-    "rs3827760": 20.0,
-    "rs16139": 18.0,
-    "rs2814778": 20.0,
+    "rs1426654": 15.0,
+    "rs16891982": 15.0,
+    "rs12913832": 12.0,
+    "rs3827760": 18.0,
+    "rs16139": 15.0,
+    "rs2814778": 18.0,
     "rs1042531": 10.0,
     "rs1042602": 10.0,
-    "rs1800414": 12.0,
-    "rs4988235": 15.0,
-    "rs334": 25.0,
-    "rs601338": 12.0,
-    "rs1805007": 10.0,
+    "rs1800414": 10.0,
+    "rs4988235": 12.0,
+    "rs334": 20.0,
+    "rs601338": 10.0,
+    "rs1805007": 12.0,
     "rs12203592": 10.0,
     "rs12821256": 10.0,
     "rs174546": 12.0,
-    "rs1229984": 15.0,
-    "rs671": 20.0,
+    "rs1229984": 12.0,
+    "rs671": 18.0,
     "rs2675348": 10.0,
     "rs694341": 10.0,
     "rs1815739": 10.0,
@@ -458,86 +576,174 @@ export const calculateIndividualMatches = (userGenotypes: Record<string, string>
     "rs6058017": 10.0
   };
 
+  const comp = (b: string) => b === 'A' ? 'T' : b === 'T' ? 'A' : b === 'C' ? 'G' : b === 'G' ? 'C' : b;
+
+  const getUserCall = (rsid: string): string | null => {
+    const direct = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
+    if (direct) {
+      const clean = direct.replace(/[^ATCGatcg]/g, '').toUpperCase();
+      if (clean.length === 1) return clean + clean;
+      if (clean.length >= 2) return clean.slice(0, 2);
+    }
+    const coord = ANCIENT_MARKER_COORDS[rsid] || (grafIndex as any)[rsid];
+    if (coord && coord.chr && coord.pos) {
+      const c = String(coord.chr).replace(/^chr/i, '').toLowerCase();
+      const p = coord.pos;
+      const byCoord = userGenotypes[`chr${c}_${p}`] ||
+                      userGenotypes[`${c}_${p}`] ||
+                      userGenotypes[`chr${c}:${p}`] ||
+                      userGenotypes[`${c}:${p}`] ||
+                      userGenotypes[`chr${c.toUpperCase()}_${p}`] ||
+                      userGenotypes[`${c.toUpperCase()}_${p}`] ||
+                      userGenotypes[`chr${c.toUpperCase()}:${p}`] ||
+                      userGenotypes[`${c.toUpperCase()}:${p}`];
+      if (byCoord) {
+        const clean = byCoord.replace(/[^ATCGatcg]/g, '').toUpperCase();
+        if (clean.length === 1) return clean + clean;
+        if (clean.length >= 2) return clean.slice(0, 2);
+      }
+    }
+    return null;
+  };
+
+  const getContinent = (s: any) => {
+    if (s.continent) return s.continent;
+    const text = `${s.region || ''} ${s.country || ''} ${s.site || ''} ${s.name || ''}`.toLowerCase();
+    if (text.includes('africa') || text.includes('ethiopia') || text.includes('cameroon') || text.includes('sudan') || text.includes('morocco') || text.includes('namibia') || text.includes('botswana') || text.includes('ghana') || text.includes('egypt') || text.includes('mali')) return 'Africa';
+    if (text.includes('america') || text.includes('usa') || text.includes('brazil') || text.includes('peru') || text.includes('chile') || text.includes('montana') || text.includes('washington') || text.includes('nevada') || text.includes('maryland')) return 'Americas';
+    if (text.includes('oceania') || text.includes('australia') || text.includes('willandra') || text.includes('sahul')) return 'Oceania';
+    if (text.includes('asia') || text.includes('china') || text.includes('japan') || text.includes('india') || text.includes('turkey') || text.includes('anatolian') || text.includes('eurasia') || text.includes('steppe')) return 'Asia';
+    if (text.includes('europe') || text.includes('luxembourg') || text.includes('uk') || text.includes('england') || text.includes('germany') || text.includes('russia')) return 'Europe';
+    return 'Other';
+  };
+
   const results = samples.map((sample: any) => {
-    let totalDistance = 0;
     let markersCompared = 0;
+    let matchingMarkers = 0;
     let weightedDistance = 0;
     let maxPossibleWeightedDistance = 0;
-    
-    const sampleSnps = sample.snps || sample.genotypes || {};
-    
-    Object.entries(sampleSnps).forEach(([rsid, sampleGenotype]) => {
-      const userGenotype = userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()];
-      if (userGenotype && sampleGenotype) {
-        const normUser = (userGenotype as string).toUpperCase();
-        const normSample = (sampleGenotype as string).toUpperCase();
-        if (normUser.length !== 2 || normSample.length !== 2) return;
 
-        markersCompared++;
-        const weight = markerImportance[rsid] || 1.0;
-        
-        let distance = 0;
-        if (normUser === normSample) {
-          distance = 0;
-        } else {
-          let shared = 0;
-          const sampleCounts: Record<string, number> = {};
-          for (let i = 0; i < normSample.length; i++) {
-            const a = normSample[i];
-            sampleCounts[a] = (sampleCounts[a] || 0) + 1;
+    const sampleSnps = sample.snps || sample.genotypes || {};
+
+    Object.entries(sampleSnps).forEach(([rsid, rawSampleGenotype]) => {
+      const userCall = getUserCall(rsid);
+      if (!userCall || userCall.length !== 2) return;
+
+      const sampleCall = (rawSampleGenotype as string).replace(/[^ATCGatcg]/g, '').toUpperCase();
+      if (sampleCall.length !== 2) return;
+
+      markersCompared++;
+      const weight = markerImportance[rsid] || 1.0;
+      const coord = ANCIENT_MARKER_COORDS[rsid];
+      const isPalindromic = coord?.ref && coord?.alt && (
+        (coord.ref === 'A' && coord.alt === 'T') || (coord.ref === 'T' && coord.alt === 'A') ||
+        (coord.ref === 'C' && coord.alt === 'G') || (coord.ref === 'G' && coord.alt === 'C')
+      );
+
+      let distance = 0;
+      if (userCall === sampleCall) {
+        distance = 0;
+        matchingMarkers++;
+      } else {
+        let sharedDirect = 0;
+        const sCounts: Record<string, number> = {};
+        for (let i = 0; i < sampleCall.length; i++) {
+          const a = sampleCall[i];
+          sCounts[a] = (sCounts[a] || 0) + 1;
+        }
+        for (let i = 0; i < userCall.length; i++) {
+          const a = userCall[i];
+          if (sCounts[a] && sCounts[a] > 0) {
+            sharedDirect++;
+            sCounts[a]--;
           }
-          for (let i = 0; i < normUser.length; i++) {
-            const a = normUser[i];
-            if (sampleCounts[a] && sampleCounts[a] > 0) {
-              shared++;
-              sampleCounts[a]--;
+        }
+
+        // Reverse-strand complement check for non-palindromic SNPs
+        if (sharedDirect === 0 && !isPalindromic) {
+          const compUser = comp(userCall[0]) + comp(userCall[1]);
+          const sCountsComp: Record<string, number> = {};
+          for (let i = 0; i < sampleCall.length; i++) {
+            const a = sampleCall[i];
+            sCountsComp[a] = (sCountsComp[a] || 0) + 1;
+          }
+          let sharedComp = 0;
+          for (let i = 0; i < compUser.length; i++) {
+            const a = compUser[i];
+            if (sCountsComp[a] && sCountsComp[a] > 0) {
+              sharedComp++;
+              sCountsComp[a]--;
             }
           }
-          distance = 2 - shared;
+          if (sharedComp > 0) {
+            distance = 2 - sharedComp;
+            if (distance === 0) matchingMarkers++;
+          } else {
+            distance = 2;
+          }
+        } else {
+          distance = 2 - sharedDirect;
         }
-        
-        weightedDistance += distance * weight;
-        maxPossibleWeightedDistance += 2 * weight;
-        totalDistance += distance;
       }
+
+      weightedDistance += distance * weight;
+      maxPossibleWeightedDistance += 2 * weight;
     });
-    
-    const affinity = maxPossibleWeightedDistance > 0 
-      ? Math.max(0, 100 * (1 - (weightedDistance / maxPossibleWeightedDistance))) 
-      : 0;
-    
-    const getContinent = (s: any) => {
-      if (s.continent) return s.continent;
-      const text = `${s.region || ''} ${s.country || ''} ${s.site || ''} ${s.name || ''}`.toLowerCase();
-      if (text.includes('africa') || text.includes('ethiopia') || text.includes('cameroon') || text.includes('sudan') || text.includes('morocco') || text.includes('namibia') || text.includes('botswana') || text.includes('ghana') || text.includes('egypt') || text.includes('mali')) return 'Africa';
-      if (text.includes('america') || text.includes('usa') || text.includes('brazil') || text.includes('peru') || text.includes('chile') || text.includes('montana') || text.includes('washington') || text.includes('nevada') || text.includes('maryland')) return 'Americas';
-      if (text.includes('oceania') || text.includes('australia') || text.includes('willandra') || text.includes('sahul')) return 'Oceania';
-      if (text.includes('asia') || text.includes('china') || text.includes('japan') || text.includes('india') || text.includes('turkey') || text.includes('anatolian') || text.includes('eurasia') || text.includes('steppe')) return 'Asia';
-      if (text.includes('europe') || text.includes('luxembourg') || text.includes('uk') || text.includes('england') || text.includes('germany') || text.includes('russia')) return 'Europe';
-      return 'Other';
-    };
+
+    const rawAffinity = maxPossibleWeightedDistance > 0
+      ? Math.max(0, 100 * (1 - (weightedDistance / maxPossibleWeightedDistance)))
+      : 50.0;
+
+    // Empirical Bayes Shrinkage toward neutral prior 50.0 to eliminate small-N noise
+    const KAPPA = 8.0;
+    const PRIOR = 50.0;
+    const shrunkenAffinity = (markersCompared / (markersCompared + KAPPA)) * rawAffinity +
+                             (KAPPA / (markersCompared + KAPPA)) * PRIOR;
+
+    // Clade-informed Composite Affinity
+    let finalScore = shrunkenAffinity;
+    let matchedCladeName: string | undefined;
+    if (ancientAdmixture && ancientAdmixture.length > 0) {
+      const clades = SPECIMEN_CLADE_MAP[sample.nameKey] || [];
+      if (clades.length > 0) {
+        let maxCladePct = 0;
+        for (const c of clades) {
+          const m = ancientAdmixture.find(a => a.popCode === c);
+          if (m && m.score > maxCladePct) {
+            maxCladePct = m.score;
+            matchedCladeName = m.popName || m.popCode;
+          }
+        }
+        if (maxCladePct > 0) {
+          const cladeScore = Math.min(100, maxCladePct * 2.5);
+          finalScore = 0.70 * shrunkenAffinity + 0.30 * cladeScore;
+        }
+      }
+    }
+
+    const confidence: 'High' | 'Moderate' | 'Low' =
+      markersCompared >= 10 ? 'High' :
+      markersCompared >= 5 ? 'Moderate' : 'Low';
 
     return {
       popCode: sample.id || sample.sampleId,
       popName: sample.name,
-      score: affinity,
-      distance: weightedDistance,
+      score: Number(finalScore.toFixed(1)),
+      distance: Number(weightedDistance.toFixed(2)),
       description: sample.description,
       period: sample.period,
       region: sample.region,
       continent: getContinent(sample),
-      matchingMarkers: Object.keys(sampleSnps).filter(rsid => {
-        const uG = (userGenotypes[rsid] || userGenotypes[rsid.toLowerCase()] || userGenotypes[rsid.toUpperCase()])?.toUpperCase();
-        const sG = (sampleSnps[rsid] as string)?.toUpperCase();
-        return uG && sG && uG === sG;
-      }).length,
-      markersCompared: markersCompared,
+      matchingMarkers,
+      markersCompared,
       culture: sample.culture_name || sample.culture,
-      age_bp: sample.age_bp
-    } as AncientSampleMatch & { distance: number; markersCompared: number };
+      age_bp: sample.age_bp,
+      confidence,
+      cladeAffinity: matchedCladeName
+    } as AncientSampleMatch;
   });
-  
+
   return results
-    .filter(r => r.markersCompared > 0)
-    .sort((a, b) => b.score - a.score || a.distance - b.distance);
+    .filter(r => (r.markersCompared ?? 0) >= 2)
+    .sort((a, b) => b.score - a.score || (b.markersCompared ?? 0) - (a.markersCompared ?? 0));
 };

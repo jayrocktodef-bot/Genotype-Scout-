@@ -959,7 +959,15 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "The only known human burial associated with the Clovis culture. Closely related to modern Native Americans.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs3827760": "GG",
+        "rs1800414": "AA",
+        "rs1042602": "CA"
+      }
     },
     "luzia": {
       "id": "luzia",
@@ -1224,7 +1232,12 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "The first ancient African genome sequenced. Predates the Eurasian backflow into Africa.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      }
     },
     "yamnaya_samara": {
       "id": "yamnaya_samara",
@@ -1255,7 +1268,12 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "A hunter-gatherer from the Mota Cave. His genome predates the massive migration of Eurasian farmers into East Africa.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG"
+      }
     },
     "shum_laka_cameroon": {
       "id": "shum_laka_cameroon",
@@ -1268,7 +1286,11 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Key for understanding the origins of Bantu-speaking populations and West African hunter-gatherers.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "CC",
+        "rs2814778": "CC"
+      }
     },
     "i8088_catoctin": {
       "id": "i8088_catoctin",
@@ -1281,7 +1303,11 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Part of an enslaved community at a Maryland iron furnace. Shows mixed Wolof, Kongo, and British Isles ancestry. A direct link to African American ancestral history.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "AG",
+        "rs12913832": "AG",
+        "rs16891982": "CG"
+      }
     },
     "ghk_sudan": {
       "id": "ghk_sudan",
@@ -1294,7 +1320,11 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Nubian samples that show the complex mix of Nilotic and Near Eastern lineages in the Nile Valley.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "AG",
+        "rs16139": "GG",
+        "rs1065852": "AA"
+      }
     },
     "taforalt_morocco": {
       "id": "taforalt_morocco",
@@ -1307,7 +1337,11 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "The oldest Iberomaurusian genome. Shows a link between Near Eastern and Sub-Saharan African lineages.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs12913832": "AA",
+        "rs16891982": "CC"
+      }
     },
     "nama_san_deep": {
       "id": "nama_san_deep",
@@ -1320,7 +1354,11 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Represents the world's oldest genetic lineages. This individual shows continuity with modern Nama and San groups, with signatures that have remained stable for over 10,000 years.",
-      "genotypes": {}
+      "genotypes": {
+        "rs11568828": "AA",
+        "rs13097409": "GG",
+        "rs885479": "AA"
+      }
     },
     "anzick_1": {
       "id": "anzick_1",
@@ -1919,7 +1957,14 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Natural mummy preserved in ice. Neolithic farmer with brown eyes and light skin.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CC"
+      }
     },
     "viking_denmark": {
       "id": "viking_denmark",
@@ -1932,7 +1977,14 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Viking Age warrior showing typical Scandinavian profile and lactase persistence.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "AA",
+        "rs16891982": "GG",
+        "rs12913832": "GG",
+        "rs4988235": "AA",
+        "rs1800414": "AA",
+        "rs1042602": "CA"
+      }
     },
     "catoctin_iron_workers": {
       "id": "catoctin_iron_workers",
@@ -1945,7 +1997,14 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Genetic markers associated with enslaved individuals from Catoctin Furnace, Maryland.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "AA",
+        "rs16891982": "GG",
+        "rs12913832": "AA",
+        "rs4988235": "GG",
+        "rs1800414": "GG",
+        "rs1042602": "CC"
+      }
     },
     "western_hunter_gatherer": {
       "id": "western_hunter_gatherer",
@@ -1958,7 +2017,14 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Representative markers for West European Hunter-Gatherer ancestry.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "GG",
+        "rs16891982": "AA",
+        "rs12913832": "AA",
+        "rs4988235": "AA",
+        "rs1800414": "AA",
+        "rs1042602": "CC"
+      }
     },
     "early_european_farmer": {
       "id": "early_european_farmer",
@@ -1971,7 +2037,14 @@
       "haplogroup_y": "Unknown",
       "haplogroup_mt": "Unknown",
       "description": "Representative markers for Early European Farmer ancestry.",
-      "genotypes": {}
+      "genotypes": {
+        "rs1426654": "AA",
+        "rs16891982": "CC",
+        "rs12913832": "GG",
+        "rs4988235": "GG",
+        "rs1800414": "AG",
+        "rs1042602": "TT"
+      }
     },
     "mota-ethiopia": {
       "id": "mota-ethiopia",

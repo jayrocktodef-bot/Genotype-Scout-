@@ -18,6 +18,7 @@ import { calculateAdmixtureCI } from '../utils/statistics/confidenceEngine';
 
 import { CONTINENT_PALETTES, assignContinent } from '../constants/ancestryThemes';
 import { computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
+import { AncestryDrilldownModal, AncestryDrilldownData } from './AncestryDrilldownModal';
 export { CONTINENT_PALETTES, assignContinent };
 
 export const ModernAncestryOracle = memo(({ 
@@ -33,6 +34,7 @@ export const ModernAncestryOracle = memo(({
 }) => {
   const [isChartReady, setIsChartReady] = useState(false);
   const [visualMode, setVisualMode] = useState<'sunburst' | 'bento' | 'radar'>('sunburst');
+  const [drilldownData, setDrilldownData] = useState<AncestryDrilldownData | null>(null);
   const [hoveredSlice, setHoveredSlice] = useState<{
     name: string;
     value: number;
@@ -415,6 +417,12 @@ export const ModernAncestryOracle = memo(({
                       color: theme.base
                     })}
                     onMouseLeave={() => setHoveredSlice(null)}
+                    onClick={() => setDrilldownData({
+                      componentName: item.name,
+                      percentage: item.percentage,
+                      color: theme.base
+                    })}
+                    title="Click to inspect contributing markers & statistical context"
                     className={`p-3 rounded-xl backdrop-blur-sm border transition-all cursor-pointer ${
                       isHovered 
                         ? 'bg-white/10 border-cyan-400/60 shadow-lg shadow-cyan-500/10' 
@@ -488,9 +496,20 @@ export const ModernAncestryOracle = memo(({
                           {subpops.map((sp, sIdx) => {
                             const ci = calculateAdmixtureCI(sp.percentage, totalSnps);
                             return (
-                              <div key={sIdx} className="space-y-1 min-w-0">
+                              <div 
+                                key={sIdx} 
+                                onClick={() => setDrilldownData({
+                                  componentName: sp.name,
+                                  percentage: sp.percentage,
+                                  ciLow: ci.low,
+                                  ciHigh: ci.high,
+                                  color: theme.base
+                                })}
+                                className="space-y-1 min-w-0 p-1.5 rounded-lg hover:bg-white/5 cursor-pointer transition-colors group"
+                                title="Click to inspect contributing markers & statistical context"
+                              >
                                 <div className="flex justify-between items-center text-xs min-w-0 gap-2">
-                                  <span className="font-semibold text-slate-300 truncate flex-1 min-w-0" title={sp.name}>
+                                  <span className="font-semibold text-slate-300 group-hover:text-cyan-300 truncate flex-1 min-w-0 transition-colors" title={sp.name}>
                                     {sp.name}
                                   </span>
                                   <div className="flex items-center gap-1.5 font-mono shrink-0 tabular-nums">

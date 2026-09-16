@@ -24,7 +24,7 @@ function getGenotype(userSnps: Record<string, string> | undefined, rsid: string)
 function isODeletionHom(genotype: string | null): boolean {
   if (!genotype) return false;
   const g = genotype.toUpperCase();
-  return ['DD', 'O/O', '-/-', 'D/D', 'DEL/DEL', '--'].includes(g) || 
+  return ['DD', 'O/O', '-/-', 'D/D', 'DEL/DEL', 'DEL-DEL'].includes(g) || 
          (g.length >= 2 && g.split('').every(c => c === '-' || c === 'D' || c === 'O'));
 }
 
@@ -32,7 +32,7 @@ function isODeletionHet(genotype: string | null): boolean {
   if (!genotype) return false;
   const g = genotype.toUpperCase();
   if (isODeletionHom(g)) return false;
-  return g.includes('D') || g.includes('-') || g.includes('DEL') || g === 'DI' || g === 'ID' || g === 'GD' || g === 'DG';
+  return g.includes('D') || g.includes('-') || g.includes('DEL') || ['DI', 'ID', 'GD', 'DG', 'I/-', '-/I', 'D/I', 'I/D'].includes(g);
 }
 
 /**

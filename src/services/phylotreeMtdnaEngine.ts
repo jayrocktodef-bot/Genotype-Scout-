@@ -1,5 +1,5 @@
 import { LineageAnalysis } from '../types/haplogroup';
-import { isPotentialNumtLocus } from '../utils/genomicMasks';
+import { isPotentialNumtLocus, matchGenotypeAllele } from '../utils/genomicMasks';
 
 export interface PhylotreeMutation {
   position: number;
@@ -23,19 +23,27 @@ export const MTDNA_MUTATION_HOTSPOTS = new Set<number>([
 ]);
 
 /**
- * Parses mutation string like "G263A", "C1048T", "A263G!", "315.1C", "524-525d"
+ * Calculates circular distance on rCRS mtDNA genome (1 to 16569 bp)
+ */
+export function getMtdnaCircularDistance(pos1: number, pos2: number): number {
+  const direct = Math.abs(pos1 - pos2);
+  const circular = 16569 - direct;
+  return Math.min(direct, circular);
+}
+
+/**
+ * Parses mutation string like "G263A", "C1048T", "A263G!", "315.1C", "309.1C", "16519C", "524-525d"
  */
 export function parseMtMutation(raw: string): PhylotreeMutation | null {
   const clean = raw.trim().replace('!', '');
   
-  // Format: RefPosAlt (e.g. G263A or C16188G)
-  const match = clean.match(/^([ACGT])(\d+)([ACGT])$/i);
-  if (match) {
-    const ancestral = match[1].toUpperCase();
-    const pos = parseInt(match[2], 10);
-    const derived = match[3].toUpperCase();
+  // 1. Format: RefPosAlt (e.g. G263A or C16188G)
+  const matchFull = clean.match(/^([ACGT])(\d+)([ACGT])$/i);
+  if (matchFull) {
+    const ancestral = matchFull[1].toUpperCase();
+    const pos = parseInt(matchFull[2], 10);
+    const derived = matchFull[3].toUpperCase();
 
-    // Check transition vs transversion
     const isTransition = (ancestral === 'A' && derived === 'G') || (ancestral === 'G' && derived === 'A') ||
                          (ancestral === 'C' && derived === 'T') || (ancestral === 'T' && derived === 'C');
 
@@ -43,12 +51,8 @@ export function parseMtMutation(raw: string): PhylotreeMutation | null {
     const isNumtProne = isPotentialNumtLocus(pos);
 
     let weight = isTransition ? 1.0 : 4.5;
-    if (isHotspot) {
-      weight *= 0.35; // Dampen hypervariable mutational hotspots
-    }
-    if (isNumtProne) {
-      weight *= 0.65; // Protect against autosomal NUMT pseudogene cross-hybridization
-    }
+    if (isHotspot) weight *= 0.35;
+    if (isNumtProne) weight *= 0.65;
 
     return {
       position: pos,
@@ -62,7 +66,31 @@ export function parseMtMutation(raw: string): PhylotreeMutation | null {
     };
   }
 
-  // Fallback for indels / deletions (e.g. 524d)
+  // 2. Format: Pos.ExtAlt (e.g. 309.1C, 315.1C) or PosAlt (e.g. 16519C)
+  const matchShort = clean.match(/^(\d+)(?:\.(\d+))?([ACGT])$/i);
+  if (matchShort) {
+    const pos = parseInt(matchShort[1], 10);
+    const derived = matchShort[3].toUpperCase();
+    const isHotspot = MTDNA_MUTATION_HOTSPOTS.has(pos);
+    const isNumtProne = isPotentialNumtLocus(pos);
+
+    let weight = 1.0;
+    if (isHotspot) weight *= 0.35;
+    if (isNumtProne) weight *= 0.65;
+
+    return {
+      position: pos,
+      ancestral: 'N',
+      derived,
+      rawString: raw,
+      isTransversion: false,
+      isHotspot,
+      isNumtProne,
+      weight
+    };
+  }
+
+  // 3. Fallback for indels / deletions (e.g. 524d, 524-525d)
   const indelMatch = clean.match(/^(\d+)/);
   if (indelMatch) {
     const pos = parseInt(indelMatch[1], 10);
@@ -122,7 +150,10 @@ export function matchPhyloTreeBuild17(
       }
 
       const u = userAllele.toUpperCase();
-      if (u.includes(parsed.derived)) {
+      const isDerivedMatch = matchGenotypeAllele(u, parsed.derived);
+      const isAncestralMatch = matchGenotypeAllele(u, parsed.ancestral);
+
+      if (isDerivedMatch) {
         matchedCount++;
         if (!parsed.isNumtProne) {
           nonNumtMatchedCount++;
@@ -132,7 +163,7 @@ export function matchPhyloTreeBuild17(
         if (parsed.isTransversion) {
           transversionsMatched++;
         }
-      } else if (u.includes(parsed.ancestral)) {
+      } else if (isAncestralMatch) {
         ancestralClashCount++;
         // Ancestral observation: slight negative pressure for deeply nested branches
         score -= parsed.isHotspot ? 0.2 : 0.6;

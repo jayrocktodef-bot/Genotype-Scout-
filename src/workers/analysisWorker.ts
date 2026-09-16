@@ -14,14 +14,13 @@ import { calculateMarkerBenchmarks } from '../utils/markerBenchmarks';
 import { calculateAncientAdmixture, calculateIndividualMatches } from '../lib/AncientAdmixtureCalculator';
 import { calculateFamousMatches } from '../utils/individualMatching';
 import { matchHealthAndWellness } from '../utils/healthMatching';
-import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../engines/ancestry/fastMatrixEngine';
+import { calculatePopulationProximityOptimized } from '../engines/ancestry/fastMatrixEngine';
 import { calculateHumanOriginsScores } from '../engines/ancestry/humanOriginsEngine';
 import { calculateRegionalScores } from '../engines/ancestry/grafAncEngine';
 import { identifyMicroHapSignatures } from '../engines/ancestry/microHapEngine';
 import { calculateComprehensiveScores } from '../engines/ancestry/comprehensiveEngine';
 
-// Pre-compile the reference kernel on worker init so it's ready when tasks arrive
-compileReferenceKernel();
+import { serializeGenomicsError } from '../services/errorCaller';
 
 type EngineName =
   | 'matchSNPs'
@@ -36,17 +35,33 @@ type EngineName =
   | 'identifyMicroHapSignatures'
   | 'calculateComprehensiveScores';
 
+// ── Global Worker Error & Unhandled Rejection Listeners ─────────────
+self.addEventListener('error', (event: ErrorEvent) => {
+  console.error("analysisWorker unhandled error:", event.error || event.message);
+  self.postMessage({
+    type: 'ERROR',
+    error: serializeGenomicsError(event.error || event.message, 'ANALYSIS_WORKER')
+  });
+});
+
+self.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
+  console.error("analysisWorker unhandled promise rejection:", event.reason);
+  self.postMessage({
+    type: 'ERROR',
+    error: serializeGenomicsError(event.reason, 'ANALYSIS_WORKER')
+  });
+});
+
 self.onmessage = async (e: MessageEvent) => {
-  const { taskId, engine, snpMap, snpMetaMap } = e.data as {
+  const { taskId, engine, snpMap, snpMetaMap, ancientAdmixture } = e.data as {
     taskId: string;
     engine: EngineName;
     snpMap: Record<string, string>;
     snpMetaMap?: Record<string, { chrom: string; pos: number }>;
+    ancientAdmixture?: any;
   };
 
   try {
-    await compileReferenceKernel();
-
     let result: any;
 
     switch (engine) {
@@ -57,7 +72,7 @@ self.onmessage = async (e: MessageEvent) => {
         result = await calculateAncientAdmixture(snpMap);
         break;
       case 'calculateIndividualMatches':
-        result = await calculateIndividualMatches(snpMap);
+        result = await calculateIndividualMatches(snpMap, ancientAdmixture);
         break;
       case 'calculateFamousMatches':
         result = await calculateFamousMatches(snpMap);
@@ -92,7 +107,7 @@ self.onmessage = async (e: MessageEvent) => {
     self.postMessage({
       taskId,
       type: 'ERROR',
-      error: err instanceof Error ? err.message : String(err)
+      error: serializeGenomicsError(err, 'ENGINE_EXECUTION', { failedEngine: engine })
     });
   }
 };

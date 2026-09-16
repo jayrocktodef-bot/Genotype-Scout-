@@ -2,6 +2,10 @@ export interface RawSnp {
   rsid?: string; // dbSNP id or rsid alias
   name?: string; // SNP name (e.g., 'M269', 'M2')
   allele: string; // The observed genotype (e.g., 'A', 'T')
+  pos?: number;
+  posHg19?: number;
+  posHg38?: number;
+  chrom?: string;
 }
 
 export interface YTreeSnp {

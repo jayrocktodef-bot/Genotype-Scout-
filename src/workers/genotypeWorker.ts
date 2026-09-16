@@ -1,4 +1,5 @@
 import { parseRawDNA, parseRawDNAStream, GenomicsParseError, decompressGenomicBuffer } from '../services/dnaParser';
+import { GenomicsError, GenomicsErrorCode, callGenomicsError, serializeGenomicsError } from '../services/errorCaller';
 import { unzipSync } from 'fflate';
 import { applyLightImputation } from '../utils/ancestry/lightImputation';
 import { matchSNPs, getAllSources } from '../services/snpMatcher';
@@ -12,7 +13,7 @@ import { calculateMarkerBenchmarks } from "../utils/markerBenchmarks";
 import { calculateAncientAdmixture, calculateIndividualMatches } from "../lib/AncientAdmixtureCalculator";
 import { calculateFamousMatches } from "../utils/individualMatching";
 import { matchHealthAndWellness } from "../utils/healthMatching";
-import { calculatePopulationProximityOptimized, compileReferenceKernel } from '../engines/ancestry/fastMatrixEngine';
+import { calculatePopulationProximityOptimized } from '../engines/ancestry/fastMatrixEngine';
 import { extractPlinkGenotype } from '../utils/plinkUtils';
 import { processSubpopulations } from '../components/ancestryOracleLogic';
 import { loadMasterAims } from '../data/index';
@@ -26,8 +27,6 @@ import { computeAncientMatches } from '../services/ancientMatchEngine';
 import { calculateArchaicAffinity } from '../services/archaicEngine';
 import { Y_DNA_HAPLOGROUPS, MT_DNA_HAPLOGROUPS } from '../data/haplogroupTree';
 import { computeDatasetLAI, computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
-
-compileReferenceKernel();
 
 // ── Sanitize payload without the expensive JSON round-trip ───────────
 // Recursively strips non-structured-cloneable values (Promises, functions,
@@ -139,10 +138,9 @@ async function runEnginesParallel(
   autosomalMetaMap: Record<string, { chrom: string; pos: number }>,
   onEngineProgress: (completed: number, total: number, label: string) => void
 ): Promise<Record<string, any>> {
-  const engines = [
+  const independentEngines = [
     'matchSNPs',
     'calculateAncientAdmixture',
-    'calculateIndividualMatches',
     'calculateFamousMatches',
     'matchHealthAndWellness',
     'calculatePopulationProximityOptimized',
@@ -153,14 +151,14 @@ async function runEnginesParallel(
     'calculateComprehensiveScores',
   ];
 
-  const totalEngines = engines.length;
+  const totalEngines = independentEngines.length + 1; // 11 total engines (includes calculateIndividualMatches)
   let completedCount = 0;
 
   // ── Try parallel dispatch via nested workers ───────────────────
   if (canSpawnNestedWorkers()) {
     try {
       // Allow up to the hardware concurrency (capped at 8 for sanity) to maximize parallel dispatch for heavy calculations
-      const poolSize = Math.min(Math.min(navigator.hardwareConcurrency || 4, 8), engines.length);
+      const poolSize = Math.min(Math.min(navigator.hardwareConcurrency || 4, 8), totalEngines);
       const workers: Worker[] = [];
 
       for (let i = 0; i < poolSize; i++) {
@@ -170,16 +168,28 @@ async function runEnginesParallel(
       }
 
       const results: Record<string, any> = {};
-      const queue = [...engines];
-      let nextWorkerIdx = 0;
+      const queue = [...independentEngines];
+      const idleWorkers: Worker[] = [];
+      let individualMatchesQueued = false;
 
       await new Promise<void>((resolve, reject) => {
         let settled = false;
 
-        const dispatchNext = (worker: Worker) => {
-          const engine = queue.shift();
-          if (!engine) return;
+        const cleanup = () => {
+          settled = true;
+          workers.forEach(w => w.terminate());
+        };
 
+        const tryDispatch = () => {
+          if (settled) return;
+          while (queue.length > 0 && idleWorkers.length > 0) {
+            const worker = idleWorkers.pop()!;
+            const engine = queue.shift()!;
+            dispatchTask(worker, engine);
+          }
+        };
+
+        const dispatchTask = (worker: Worker, engine: string) => {
           const taskId = engine;
           const onMsg = (e: MessageEvent) => {
             if (e.data.taskId !== taskId) return;
@@ -191,20 +201,21 @@ async function runEnginesParallel(
               completedCount++;
               onEngineProgress(completedCount, totalEngines, ENGINE_LABELS[engine] || engine);
 
-              // Dispatch next task to this free worker
-              if (queue.length > 0) {
-                dispatchNext(worker);
+              if (engine === 'calculateAncientAdmixture' && !individualMatchesQueued) {
+                individualMatchesQueued = true;
+                queue.push('calculateIndividualMatches');
               }
 
               if (completedCount === totalEngines && !settled) {
-                settled = true;
-                // Terminate all workers
-                workers.forEach(w => w.terminate());
+                cleanup();
                 resolve();
+                return;
               }
+
+              idleWorkers.push(worker);
+              tryDispatch();
             } else if (e.data.type === 'ERROR' && !settled) {
-              settled = true;
-              workers.forEach(w => w.terminate());
+              cleanup();
               reject(new Error(`Engine ${engine} failed: ${e.data.error}`));
             }
           };
@@ -213,8 +224,7 @@ async function runEnginesParallel(
             worker.removeEventListener('message', onMsg);
             worker.removeEventListener('error', onErr);
             if (!settled) {
-              settled = true;
-              workers.forEach(w => w.terminate());
+              cleanup();
               reject(err);
             }
           };
@@ -231,15 +241,15 @@ async function runEnginesParallel(
             engine,
             snpMap: targetSnpMap,
             snpMetaMap: engine === 'matchSNPs' ? targetMetaMap : undefined,
+            ancientAdmixture: engine === 'calculateIndividualMatches' ? results['calculateAncientAdmixture'] : undefined,
           });
         };
 
-        // Launch initial batch — one task per worker
+        // Populate idle workers and kick off
         for (const worker of workers) {
-          if (queue.length > 0) {
-            dispatchNext(worker);
-          }
+          idleWorkers.push(worker);
         }
+        tryDispatch();
       });
 
       return results;
@@ -264,19 +274,30 @@ async function runEnginesSequential(
   const results: Record<string, any> = {};
   const autosomalSnpMapForEngine = new Map(Object.entries(autosomalSnpMap));
   let completed = 0;
-  const total = 10;
+  const total = 11;
 
   const run = async (name: string, fn: () => any) => {
     onEngineProgress(completed, total, ENGINE_LABELS[name] || name);
     // Yield to the event loop to let progress updates transmit and reset watchdog
     await new Promise(resolve => setTimeout(resolve, 0));
-    results[name] = await fn();
-    completed++;
+    try {
+      results[name] = await fn();
+      completed++;
+    } catch (err: any) {
+      console.error(`Calculation engine ${name} failed:`, err);
+      throw new GenomicsError(`Engine ${name} execution failed: ${err?.message || String(err)}`, {
+        errorCode: GenomicsErrorCode.ERR_ENGINE_FAILED,
+        subsystem: 'ENGINE_EXECUTION',
+        failedEngine: name,
+        technicalMessage: err?.stack || String(err),
+        suggestedSolution: `The ${name} population analysis module failed on this specimen. Your dataset may have sparse markers in this specific genomic region.`
+      });
+    }
   };
 
   await run('matchSNPs', () => matchSNPs(imputedSnpMap, mergedSnpMetaMap));
   await run('calculateAncientAdmixture', () => calculateAncientAdmixture(autosomalSnpMap));
-  await run('calculateIndividualMatches', () => calculateIndividualMatches(autosomalSnpMap));
+  await run('calculateIndividualMatches', () => calculateIndividualMatches(autosomalSnpMap, results['calculateAncientAdmixture']));
   await run('calculateFamousMatches', () => calculateFamousMatches(autosomalSnpMap));
   await run('matchHealthAndWellness', () => matchHealthAndWellness(imputedSnpMap));
   await run('calculatePopulationProximityOptimized', () => calculatePopulationProximityOptimized(autosomalSnpMapForEngine));
@@ -311,17 +332,17 @@ async function runGenotypeScout(
           Atomics.store(progressArray, 0, completed);
           Atomics.store(progressArray, 1, total);
           Atomics.store(progressArray, 3, 2); // still in "analyzing" phase
-        } else {
-          self.postMessage({
-            type: 'PROGRESS',
-            payload: { 
-              step: `${label}... (${completed}/${total})`,
-              completed,
-              totalEngines: total,
-              statusVal: 2
-            }
-          });
         }
+        self.postMessage({
+          type: 'PROGRESS',
+          payload: { 
+            step: `${label}... (${completed}/${total})`,
+            completed,
+            totalEngines: total,
+            statusVal: 2,
+            percent: 50 + Math.round((completed / total) * 40)
+          }
+        });
       }
     );
 
@@ -353,13 +374,29 @@ async function runGenotypeScout(
     return { ancestryResult, bloodResult, oracleResults };
 }
 
+// ── Global Worker Error & Unhandled Rejection Listeners ─────────────
+self.addEventListener('error', (event: ErrorEvent) => {
+  console.error("genotypeWorker unhandled error:", event.error || event.message);
+  self.postMessage({
+    type: 'ERROR',
+    error: serializeGenomicsError(event.error || event.message, 'GENOTYPE_WORKER')
+  });
+});
+
+self.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
+  console.error("genotypeWorker unhandled promise rejection:", event.reason);
+  self.postMessage({
+    type: 'ERROR',
+    error: serializeGenomicsError(event.reason, 'GENOTYPE_WORKER')
+  });
+});
+
 self.onmessage = async (e: MessageEvent) => {
   const { type, files, payload, sab } = e.data;
   if (type !== 'PROCESS_GENOME' && type !== 'PLINK_PROCESS_GENOME' && !files) return;
   if (sab) { new Int32Array(sab)[3] = 1; }
 
   try {
-    await compileReferenceKernel();
     const allowlist = getMarkerAllowlist();
     let imputedSnpMap: Record<string, string> = {};
     let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
@@ -384,8 +421,8 @@ self.onmessage = async (e: MessageEvent) => {
         names = ['PLINK Data']; chips = ['PLINK Dataset']; totalSnps = bimEntries.length;
     } else {
         const filesToProcess = files || (payload ? [{ buffer: payload, name: 'Uploaded Kit' }] : []);
-        const decoder = new TextDecoder();
-        let parsedFiles = [];
+        let parsedFiles: any[] = [];
+        let lastParsingError: any = null;
         
         for (const fileObj of filesToProcess) {
           const fileName = fileObj.name || 'Uploaded Kit';
@@ -398,10 +435,11 @@ self.onmessage = async (e: MessageEvent) => {
               parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
                 if (sab) {
                   const progressArray = new Int32Array(sab);
-                  Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
-                } else {
-                  self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+                  Atomics.store(progressArray, 0, processed);
+                  Atomics.store(progressArray, 1, total);
+                  Atomics.store(progressArray, 2, snps);
                 }
+                self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
               });
             } else {
               const actualFile = fileObj.stream ? fileObj : (fileObj.file ? fileObj.file : null);
@@ -412,20 +450,38 @@ self.onmessage = async (e: MessageEvent) => {
                 parsed = await parseRawDNAStream(decompressedBlob, allowlist, (processed, total, snps) => {
                   if (sab) {
                     const progressArray = new Int32Array(sab);
-                    Atomics.store(progressArray, 0, processed); Atomics.store(progressArray, 1, total); Atomics.store(progressArray, 2, snps);
-                  } else {
-                    self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+                    Atomics.store(progressArray, 0, processed);
+                    Atomics.store(progressArray, 1, total);
+                    Atomics.store(progressArray, 2, snps);
                   }
+                  self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
                 });
               } else {
                 throw new Error("Invalid file object structure passed to worker");
               }
             }
+            if (parsed && parsed.snpCount > 0) {
+              parsedFiles.push({ ...parsed, name: fileName });
+            }
           } catch (error: any) {
-             console.error("Worker parsing error:", error);
-             throw error; // Re-throw so the main try-catch catches it and posts ERR
+             console.warn(`Worker parsing warning for file ${fileName}:`, error);
+             lastParsingError = error;
+             if (filesToProcess.length === 1) {
+               throw error;
+             }
           }
-          parsedFiles.push({ ...parsed, name: fileName });
+        }
+
+        if (parsedFiles.length === 0) {
+          if (lastParsingError) throw lastParsingError;
+          throw new GenomicsParseError(
+            "ERR-4025FGD1: No valid genetic marker files could be parsed from the upload batch.",
+            {
+              errorCode: 'ERR-4025FGD1',
+              errorCategory: 'Empty Batch Spectrum',
+              suggestedSolution: 'Ensure your raw data file contains autosomal genotype data (.txt, .csv, .tsv, .vcf) from a supported provider.'
+            }
+          );
         }
         
         let mergedSnpMap: Record<string, string> = {};
@@ -484,12 +540,18 @@ self.onmessage = async (e: MessageEvent) => {
     
     const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
-    if (!sab) self.postMessage({ type: 'PROGRESS', payload: { step: "Analyzing Subpopulation Oracles (Global)...", percent: 95 } });
+    
+    self.postMessage({ type: 'PROGRESS', payload: { step: "Analyzing Subpopulation Oracles (Global)...", percent: 92 } });
+    await new Promise(resolve => setTimeout(resolve, 0));
     const allResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'all');
-    if (!sab) self.postMessage({ type: 'PROGRESS', payload: { step: "Calculating Kidd55 & Seldin128 Oracles...", percent: 97 } });
+    
+    self.postMessage({ type: 'PROGRESS', payload: { step: "Calculating Kidd55 & Seldin128 Oracles...", percent: 94 } });
+    await new Promise(resolve => setTimeout(resolve, 0));
     const kidd55Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'kidd55');
     const seldin128Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'seldin128');
-    if (!sab) self.postMessage({ type: 'PROGRESS', payload: { step: "Finalizing EuroForGen & Microhaplotypes...", percent: 99 } });
+    
+    self.postMessage({ type: 'PROGRESS', payload: { step: "Finalizing EuroForGen & Microhaplotypes...", percent: 96 } });
+    await new Promise(resolve => setTimeout(resolve, 0));
     const euroforgenResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'euroforgen');
     const ramosResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'ramos');
     const microhapResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'microhap');
@@ -505,11 +567,8 @@ self.onmessage = async (e: MessageEvent) => {
     };
     const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
     
-    if (sab) { 
-      Atomics.store(new Int32Array(sab), 3, 3); 
-    } else {
-      self.postMessage({ type: 'PROGRESS', payload: { step: "Completing Profiler..." } });
-    }
+    self.postMessage({ type: 'PROGRESS', payload: { step: "Computing Chromosome Painting (LAI)...", percent: 98 } });
+    await new Promise(resolve => setTimeout(resolve, 0));
 
     // ── Rare & Novel Variants Identification ──
     const knownDbKeys = new Set<string>();
@@ -583,6 +642,10 @@ self.onmessage = async (e: MessageEvent) => {
     };
     const safePayload = sanitizePayload(rawPayload);
 
+    if (sab) {
+      Atomics.store(new Int32Array(sab), 3, 3);
+    }
+
     self.postMessage({ 
       type: 'SUCCESS', 
       payload: safePayload 
@@ -593,7 +656,11 @@ self.onmessage = async (e: MessageEvent) => {
     } else {
       self.postMessage({ type: 'PROGRESS', payload: { step: "Ingestion failed." } });
     }
-    self.postMessage({ type: 'ERROR', error: { message: err instanceof Error ? err.message : String(err) } });
+    const serialized = serializeGenomicsError(err, 'GENOTYPE_WORKER');
+    self.postMessage({
+      type: 'ERROR',
+      error: serialized
+    });
   }
 };
 
