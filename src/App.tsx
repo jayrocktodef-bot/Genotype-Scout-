@@ -52,7 +52,6 @@ import {
 // @ts-ignore
 import { FixedSizeList as List } from 'react-window';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, PieChart, Pie, Cell } from 'recharts';
-import { jsPDF } from "jspdf";
 import { groupByCategory, CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, Y_DNA_TREE, MT_DNA_TREE, SNP_DB, SNP, identifyEndogamy, getPrivateSNPs } from "./genotypeData";
 import { saveResults, loadResults, clearResults } from "./services/storageService";
 import { forceResetAndClearCache } from "./utils/cacheManager";
@@ -101,10 +100,7 @@ import HeroUpload from "./components/HeroUpload";
 import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
-import { AIGenomicAgent } from "./components/AIGenomicAgent";
 import { KitComparisonModule } from './components/KitComparisonModule';
-import { ExportModule, ExportConfig } from './components/ExportModule';
-import { PrintableView } from './components/PrintableView';
 const RareVariantsView = lazy(() => import("./components/RareVariantsView"));
 import { HaplogroupBento } from "./components/HaplogroupBento";
 import { YDNABento } from "./components/YDNABento";
@@ -2286,11 +2282,8 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'ai_agent' | 'kit_comparison' | 'export'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'kit_comparison'>('dashboard');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
-
-  const [isPrinting, setIsPrinting] = useState(false);
-  const [printConfig, setPrintConfig] = useState<ExportConfig | null>(null);
 
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
   const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'traits' | 'blood' | 'prs'>('wellness');
@@ -2540,43 +2533,6 @@ export default function App() {
       setMicroHapResults(datasets[activeDatasetIndex].analysis.microHapResults);
     }
   }, [activeDatasetIndex, datasets]);
-
-  const exportJSON = () => {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(datasets[activeDatasetIndex].results));
-    const downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", "genotype_results.json");
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-  };
-
-  const exportPDF = () => {
-    // Legacy jsPDF export, now deprecated by ExportModule
-    const doc = new jsPDF();
-    doc.text("Genotype Scout Results", 10, 10);
-    let y = 20;
-    datasets[activeDatasetIndex].results?.forEach((snp: any, index: number) => {
-      if (y > 280) { doc.addPage(); y = 10; }
-      doc.text(`${index + 1}. ${snp.trait} (${snp.rsid}): ${snp.status}`, 10, y);
-      y += 10;
-    });
-    doc.save("genotype_results.pdf");
-  };
-
-  const handleGenerateReport = (config: ExportConfig) => {
-    setPrintConfig(config);
-    setIsPrinting(true);
-    setTimeout(() => {
-      window.print();
-    }, 500);
-  };
-
-  useEffect(() => {
-    const handleAfterPrint = () => setIsPrinting(false);
-    window.addEventListener('afterprint', handleAfterPrint);
-    return () => window.removeEventListener('afterprint', handleAfterPrint);
-  }, []);
 
   const resetApp = async () => {
     // Clear dataset state
@@ -3033,17 +2989,6 @@ export default function App() {
         return userAllele.toUpperCase() === alleleStr.trim().toUpperCase();
     });
   }, [datasets, activeDatasetIndex]);
-
-  if (isPrinting && printConfig) {
-    return (
-      <PrintableView 
-        config={printConfig}
-        dataset={datasets[activeDatasetIndex]}
-        healthImpacts={healthWellnessMatches}
-        oracleResults={oracleResults}
-      />
-    );
-  }
 
   return (
     <div className={`bg-background text-foreground font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh bg-[#05070a]' : ''}`}>
@@ -3571,32 +3516,10 @@ export default function App() {
               </div>
             )}
 
-            {currentApp === 'ai_agent' && (
-              <div className="space-y-8 animate-fade-in">
-                <AIGenomicAgent
-                  dataset={datasets[activeDatasetIndex]}
-                  oracleResults={oracleResults}
-                  populationProximity={populationProximity}
-                  famousMatches={famousMatches}
-                  autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
-                  userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                />
-              </div>
-            )}
-
             {currentApp === 'kit_comparison' && (
               <div className="space-y-8 animate-fade-in">
                 <KitComparisonModule 
                   datasets={datasets} 
-                />
-              </div>
-            )}
-
-            {currentApp === 'export' && (
-              <div className="space-y-8 animate-fade-in">
-                <ExportModule 
-                  onGenerateReport={handleGenerateReport}
-                  datasetName={datasets[activeDatasetIndex]?.name || 'Dataset'}
                 />
               </div>
             )}

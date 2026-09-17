@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   User, Globe, History, HeartPulse, Database, BookOpen,
-  Zap, Droplet, Dna, Sparkles, Trash2, Users, Printer,
+  Zap, Droplet, Dna, Sparkles, Trash2, Users,
   ChevronLeft, ChevronRight, WifiOff, Home, MoreHorizontal,
   Play, ArrowLeft, Search, X
 } from 'lucide-react';
@@ -15,7 +15,7 @@ export interface AppConfig {
   icon: React.ComponentType<any>;
   gradient: string;
   glowColor: string;
-  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'ai_agent' | 'kit_comparison' | 'export' | 'clear_cache';
+  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'kit_comparison' | 'clear_cache';
   targetSubTab?: string;
   description: string;
   imageUrl?: string;
@@ -190,28 +190,6 @@ const MODULES: AppConfig[] = [
     targetTab: 'kit_comparison',
     description: 'Side-by-side comparison of multiple kits, traits, and ancestry.',
     imageUrl: '/assets/kit_comparison_icon.png',
-    navGroup: 'secondary',
-  },
-  {
-    id: 'export',
-    name: 'Export & Reports',
-    icon: Printer,
-    gradient: 'from-rose-400 to-red-600',
-    glowColor: 'rgba(244,63,94,0.45)',
-    targetTab: 'export',
-    description: 'Generate high-quality PDF reports with customizable health filters.',
-    imageUrl: '/assets/export_icon.png',
-    navGroup: 'secondary',
-  },
-  {
-    id: 'ai_agent',
-    name: 'AI Explainer',
-    icon: Sparkles,
-    gradient: 'from-purple-500 to-indigo-600',
-    glowColor: 'rgba(139,92,246,0.45)',
-    targetTab: 'ai_agent',
-    description: 'Your personal AI genomic guide. Ask questions and interpret your ancestry.',
-    imageUrl: '/assets/ai_agent_icon.png',
     navGroup: 'secondary',
   },
   {
