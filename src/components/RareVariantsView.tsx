@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Zap, Search, ShieldAlert, Fingerprint, Info, AlertTriangle } from 'lucide-react';
+import { Zap, Search, ShieldAlert, Fingerprint, Info, AlertTriangle, BookOpen } from 'lucide-react';
 
 interface RareVariant {
   rsid: string;
@@ -13,9 +13,10 @@ interface RareVariant {
 
 interface RareVariantsViewProps {
   variants: RareVariant[];
+  onOpenMethodology?: () => void;
 }
 
-const RareVariantsView: React.FC<RareVariantsViewProps> = ({ variants }) => {
+const RareVariantsView: React.FC<RareVariantsViewProps> = ({ variants, onOpenMethodology }) => {
   const [activeTab, setActiveTab] = useState<'internal' | 'unmapped' | 'rare_allele'>('rare_allele');
 
   const internalVariants = variants.filter(v => v.type === 'internal');
@@ -63,6 +64,17 @@ const RareVariantsView: React.FC<RareVariantsViewProps> = ({ variants }) => {
             <Search className="w-3.5 h-3.5" />
             Unmapped ({unmappedVariants.length})
           </button>
+          {onOpenMethodology && (
+            <button
+              type="button"
+              onClick={onOpenMethodology}
+              className="px-3.5 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-1.5 bg-fuchsia-500/15 hover:bg-fuchsia-500/30 text-fuchsia-300 border border-fuchsia-500/30 shadow-sm active:scale-95 cursor-pointer"
+              title="View Rare Variants Methodology & Frequency Thresholds"
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Methodology & Info</span>
+            </button>
+          )}
         </div>
       </div>
 

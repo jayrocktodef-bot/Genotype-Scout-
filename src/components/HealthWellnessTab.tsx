@@ -3,12 +3,13 @@ import { motion } from 'motion/react';
 import { HealthImpact } from '../utils/healthMatching';
 import { PGxCard } from './PGxCard';
 import { SafetyDisclaimer } from './SafetyDisclaimer';
-import { Loader2, Sparkles, TrendingUp, Search, Printer } from 'lucide-react';
+import { Loader2, Sparkles, TrendingUp, Search, Printer, BookOpen } from 'lucide-react';
 
 interface HealthWellnessTabProps {
   impacts: HealthImpact[];
   userSnps: Record<string, string>;
   mode?: 'explorer' | 'analyst';
+  onOpenMethodology?: () => void;
 }
 
 const getZScoreFromPercentile = (p: number) => {
@@ -22,7 +23,7 @@ const getZScoreFromPercentile = (p: number) => {
   return erfInv * Math.sqrt(2);
 };
 
-export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = [], userSnps, mode = 'explorer' }) => {
+export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = [], userSnps, mode = 'explorer', onOpenMethodology }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
   const [healthResults, setHealthResults] = useState<any>(null);
@@ -174,7 +175,20 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       <SafetyDisclaimer />
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-black text-slate-900 mb-1 dark:text-slate-100">Health, Wellness & Traits</h2>
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="text-3xl font-black text-slate-900 mb-1 dark:text-slate-100">Health, Wellness & Traits</h2>
+            {onOpenMethodology && (
+              <button
+                type="button"
+                onClick={onOpenMethodology}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/20 text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer"
+                title="View Health & Wellness Clinical Guidelines and Methodology"
+              >
+                <BookOpen className="w-3.5 h-3.5 text-blue-500" />
+                <span>Methodology & Info</span>
+              </button>
+            )}
+          </div>
           <p className="text-slate-600 text-sm dark:text-slate-400">Automated matching of clinical and appearance markers.</p>
         </div>
         <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-none max-w-full snap-x shrink-0">
@@ -456,6 +470,17 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                 <option value="Moderate">Moderate Priority</option>
                 <option value="Low">Low Priority</option>
               </select>
+              {onOpenMethodology && (
+                <button
+                  type="button"
+                  onClick={onOpenMethodology}
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-xl text-[11px] font-black uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
+                  title="View PGx CPIC & PharmGKB Methodology"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-indigo-500" />
+                  <span>Methodology</span>
+                </button>
+              )}
               <button
                 onClick={() => window.print()}
                 className="flex items-center gap-1.5 px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-[11px] font-black uppercase tracking-wider transition-colors shadow-sm"

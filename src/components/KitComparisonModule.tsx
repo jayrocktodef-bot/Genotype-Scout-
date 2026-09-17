@@ -1,10 +1,15 @@
 import React, { useState, useMemo } from 'react';
-import { Users, ShieldAlert, ArrowRightLeft, Dna, HeartPulse, Pill, Sparkles, Activity, Scale, Layers } from 'lucide-react';
+import { Users, ShieldAlert, ArrowRightLeft, Dna, HeartPulse, Pill, Sparkles, Activity, Scale, Layers, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 import { calculateBloodType } from '../engines/bloodTypeCalculator';
 import { calculatePharmacogenomics } from '../services/pgxEngine';
 
-export const KitComparisonModule = ({ datasets }: { datasets: any[] }) => {
+interface KitComparisonModuleProps {
+  datasets: any[];
+  onOpenMethodology?: () => void;
+}
+
+export const KitComparisonModule: React.FC<KitComparisonModuleProps> = ({ datasets, onOpenMethodology }) => {
   const [kitAIndex, setKitAIndex] = useState(0);
   const [kitBIndex, setKitBIndex] = useState(datasets.length > 1 ? 1 : 0);
   const [activeTab, setActiveTab] = useState<'overview' | 'ancestry' | 'blood_traits' | 'pgx' | 'ancient'>('overview');
@@ -268,6 +273,17 @@ export const KitComparisonModule = ({ datasets }: { datasets: any[] }) => {
             </button>
           );
         })}
+        {onOpenMethodology && (
+          <button
+            type="button"
+            onClick={onOpenMethodology}
+            className="ml-auto px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 border bg-indigo-500/15 hover:bg-indigo-500/30 border-indigo-500/30 text-indigo-300 shadow-sm active:scale-95 cursor-pointer"
+            title="View Kit Comparison & Kinship Estimation Methodology"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-indigo-300" />
+            <span>Methodology & Info</span>
+          </button>
+        )}
       </div>
 
       {/* Tab 1: Overview & Lineages */}

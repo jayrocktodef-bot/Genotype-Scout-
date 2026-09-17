@@ -317,6 +317,7 @@ const ProfileSummary = memo(
     userSnps,
     famousMatches = [],
     healthImpacts = [],
+    onOpenMethodology,
   }: {
     datasets: any[];
     activeDatasetIndex: number;
@@ -325,6 +326,7 @@ const ProfileSummary = memo(
     userSnps: Record<string, string>;
     famousMatches?: any[];
     healthImpacts?: any[];
+    onOpenMethodology?: () => void;
   }) => {
     const [isChartReady, setIsChartReady] = useState(false);
     const [chartMode, setChartMode] = useState<'donut' | 'radar'>('donut');
@@ -589,6 +591,17 @@ const ProfileSummary = memo(
                     LOCAL INTEGRITY OK
                   </span>
                 </div>
+                {onOpenMethodology && (
+                  <button
+                    type="button"
+                    onClick={onOpenMethodology}
+                    className="bg-teal-500/15 hover:bg-teal-500/30 border border-teal-500/40 rounded-xl px-3 py-1.5 flex items-center gap-1.5 backdrop-blur text-teal-300 font-black tracking-wider text-[9px] uppercase transition-all active:scale-95 cursor-pointer shadow-sm"
+                    title="View Genomic Passport & Profile Methodology"
+                  >
+                    <BookOpen className="w-3.5 h-3.5 text-teal-400" />
+                    <span>Methodology & Info</span>
+                  </button>
+                )}
               </div>
             </div>
 
@@ -2288,8 +2301,13 @@ export default function App() {
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
   const [activeHealthSubTab, setActiveHealthSubTab] = useState<'wellness' | 'traits' | 'blood' | 'prs'>('wellness');
   const [activeHistorySubTab, setActiveHistorySubTab] = useState<'modern' | 'ancient'>('modern');
-
   const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
+  const [selectedMethodologyModule, setSelectedMethodologyModule] = useState<string | null>(null);
+
+  const handleOpenMethodology = (moduleId?: string) => {
+    setSelectedMethodologyModule(moduleId || currentApp);
+    setIsMethodologyOpen(true);
+  };
   const [activeCategory, setActiveCategory] = useState<string>('Health');
   const [activeHaploType, setActiveHaploType] = useState<'paternal' | 'maternal'>('paternal');
   const [activeAncientSubTab, setActiveAncientSubTab] = useState<'admixture' | 'matches' | 'archaic'>('admixture');
@@ -3307,6 +3325,7 @@ export default function App() {
             onReset={resetApp}
             currentApp={currentApp}
             onOpenApp={setCurrentApp}
+            onOpenMethodology={handleOpenMethodology}
           >
             <Suspense fallback={
                   <div className="flex flex-col items-center justify-center py-24 text-slate-500 animate-pulse dark:text-slate-400">
@@ -3324,13 +3343,16 @@ export default function App() {
                   userSnps={snpMaps.current[activeDatasetIndex] || {}}
                   famousMatches={famousMatches}
                   healthImpacts={healthWellnessMatches}
+                  onOpenMethodology={() => handleOpenMethodology('profile')}
                 />
               </div>
             )}
 
             {currentApp === 'glossary' && (
               <div className="space-y-8 animate-fade-in">
-                <SubpopulationGlossaryTab />
+                <SubpopulationGlossaryTab 
+                  onOpenMethodology={() => handleOpenMethodology('glossary')}
+                />
               </div>
             )}
 
@@ -3346,8 +3368,9 @@ export default function App() {
                     continent: aim.region || 'Unknown',
                     alleles: Array.isArray(aim.alleles) ? aim.alleles.join(',') : (aim.alleles || '')
                   }))}
+                  onOpenMethodology={() => handleOpenMethodology('ancestry_oracle')}
                 />
-                <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => setIsMethodologyOpen(true)} mode="analyst" />
+                <ModernAncestryOracle results={oracleResults} dataset={datasets[activeDatasetIndex]} onOpenMethodology={() => handleOpenMethodology('ancestry_oracle')} mode="analyst" />
               </div>
             )}
 
@@ -3355,7 +3378,7 @@ export default function App() {
               <div className="animate-fade-in">
                 <ChromosomePainterView 
                   dataset={datasets[activeDatasetIndex]}
-                  onOpenMethodology={() => setIsMethodologyOpen(true)}
+                  onOpenMethodology={() => handleOpenMethodology('chromosome_painter')}
                 />
               </div>
             )}
@@ -3365,14 +3388,14 @@ export default function App() {
                 <NaiveAncestryOracle 
                   results={datasets[activeDatasetIndex]?.analysis || {}} 
                   userSnps={snpMaps.current[activeDatasetIndex] || {}}
-                  onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                  onOpenMethodology={() => handleOpenMethodology('ancestry_scout')} 
                 />
               </div>
             )}
 
             {currentApp === 'haplogroups' && (
               <div className="space-y-8 animate-fade-in">
-                <div className="flex justify-center mb-8">
+                <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
                   <div className="inline-flex bg-white dark:bg-slate-800 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                     <button 
                       onClick={() => setActiveHaploType('paternal')}
@@ -3387,6 +3410,16 @@ export default function App() {
                       ♀️ Maternal
                     </button>
                   </div>
+
+                  <button
+                    type="button"
+                    onClick={() => handleOpenMethodology('haplogroups')}
+                    className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/30 text-teal-300 text-xs font-black tracking-wide transition-all shadow-sm active:scale-95 cursor-pointer"
+                    title="View Haplogroup Determination & Phylogeny Methodology"
+                  >
+                    <BookOpen className="w-3.5 h-3.5 text-teal-400" />
+                    <span>Methodology & Info</span>
+                  </button>
                 </div>
 
                 {activeHaploType === 'paternal' ? (
@@ -3450,7 +3483,7 @@ export default function App() {
                       title="Deep Time Oracle" 
                       subtitle="Ancient Admixture & Paleolithic Affinity"
                       type="admixture"
-                      onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                      onOpenMethodology={() => handleOpenMethodology('ancient_dna')} 
                     />
                     <ArchaicIntrogressionView results={archaicIntrogression} />
                   </div>
@@ -3464,7 +3497,7 @@ export default function App() {
                     title="Fossil Specimen Matches" 
                     subtitle="Direct Genetic Affinity to Ancient Individuals"
                     type="matches"
-                    onOpenMethodology={() => setIsMethodologyOpen(true)} 
+                    onOpenMethodology={() => handleOpenMethodology('ancient_dna')} 
                   />
                 )}
               </div>
@@ -3477,6 +3510,7 @@ export default function App() {
                     impacts={healthWellnessMatches} 
                     userSnps={snpMaps.current[activeDatasetIndex]} 
                     mode="analyst"
+                    onOpenMethodology={() => handleOpenMethodology('health')}
                   />
                 </Suspense>
               </div>
@@ -3488,6 +3522,7 @@ export default function App() {
                   matchedTraits={userMatchedMitoTraits}
                   autosomalMarkers={datasets[activeDatasetIndex]?.results || []}
                   userSnps={snpMaps.current[activeDatasetIndex]}
+                  onOpenMethodology={() => handleOpenMethodology('traits')}
                 />
               </div>
             )}
@@ -3496,15 +3531,17 @@ export default function App() {
               <div className="animate-fade-in">
                 <BloodTypeView 
                   dataset={datasets[activeDatasetIndex]} 
+                  onOpenMethodology={() => handleOpenMethodology('blood')}
                 />
               </div>
             )}
 
-
-
             {currentApp === 'rare_variants' && (
               <div className="animate-fade-in">
-                <RareVariantsView variants={datasets[activeDatasetIndex]?.rareAndNovelVariants || []} />
+                <RareVariantsView 
+                  variants={datasets[activeDatasetIndex]?.rareAndNovelVariants || []} 
+                  onOpenMethodology={() => handleOpenMethodology('rare_variants')}
+                />
               </div>
             )}
 
@@ -3512,6 +3549,7 @@ export default function App() {
               <div className="animate-fade-in">
                 <GeneticMarkersBrowser 
                   dataset={datasets[activeDatasetIndex]}
+                  onOpenMethodology={() => handleOpenMethodology('markers')}
                 />
               </div>
             )}
@@ -3520,13 +3558,17 @@ export default function App() {
               <div className="space-y-8 animate-fade-in">
                 <KitComparisonModule 
                   datasets={datasets} 
+                  onOpenMethodology={() => handleOpenMethodology('kit_comparison')}
                 />
               </div>
             )}
 
             {currentApp === 'methodology' && (
               <>
-                <MethodologyPage activeTab={activeTab} />
+                <MethodologyPage 
+                  activeTab={activeTab} 
+                  initialModuleId={selectedMethodologyModule || currentApp || undefined} 
+                />
                 <div className="mt-8">
                   <AdBanner format="auto" className="rounded-2xl" />
                 </div>
@@ -3540,8 +3582,11 @@ export default function App() {
 
       <MethodologyModal
         isOpen={isMethodologyOpen}
-        onClose={() => setIsMethodologyOpen(false)}
-        activeModule={currentApp}
+        onClose={() => {
+          setIsMethodologyOpen(false);
+          setSelectedMethodologyModule(null);
+        }}
+        activeModule={selectedMethodologyModule || currentApp}
         activeTab={activeTab}
       />
 

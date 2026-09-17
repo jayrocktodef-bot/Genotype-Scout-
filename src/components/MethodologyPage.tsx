@@ -1,279 +1,576 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BookOpen, Info, Code, Award, Landmark, Database, ChevronDown, ChevronUp, MessageCircle, Beaker, Shield } from 'lucide-react';
-import { getMethodologyData } from './MethodologyModal';
+import { 
+  BookOpen, Info, Code, Award, Landmark, Database, ChevronDown, ChevronUp, 
+  MessageCircle, Beaker, Shield, Search, Sparkles, CheckCircle2, User, 
+  HelpCircle, ExternalLink, Dna, Filter
+} from 'lucide-react';
+import { 
+  MODULE_DOCUMENTATION, 
+  ModuleDocumentation, 
+  getDocumentationForModule 
+} from '../data/moduleExplanations';
 
-const allSections = [
-  { tabId: 'dashboard', emoji: '📊' },
-  { tabId: 'summary', emoji: '🧬' },
-  { tabId: 'autosomal', emoji: '🧩' },
-  { tabId: 'oracle', emoji: '🎯' },
-  { tabId: 'painter', emoji: '🎨' },
-  { tabId: 'naive_oracle', emoji: '⚡' },
-  { tabId: 'haplogroups', emoji: '🌳' },
-  { tabId: 'ancient', emoji: '💀' },
-  { tabId: 'health', emoji: '🩺' },
-  { tabId: 'traits', emoji: '✨' },
-  { tabId: 'compare', emoji: '🗺️' },
-  { tabId: 'blood', emoji: '🩸' },
-  { tabId: 'markers', emoji: '🔬' },
-];
+// Ordered canonical list of all 14 analysis modules
+const MODULE_ORDER = [
+  'profile',
+  'ancestry_oracle',
+  'glossary',
+  'chromosome_painter',
+  'ancestry_scout',
+  'haplogroups',
+  'ancient_dna',
+  'health',
+  'traits',
+  'blood',
+  'markers',
+  'rare_variants',
+  'kit_comparison',
+  'methodology'
+] as const;
 
-/**
- * Returns a plain-English, jargon-free explanation of each engine
- * that any non-scientist can understand.
- */
-const getPlainEnglish = (tabId: string): string => {
-  switch (tabId) {
-    case 'dashboard':
-      return 'When you upload your DNA file, we first check how much of your data overlaps with our reference database — kind of like checking how many puzzle pieces from your box match the picture on the lid. A higher overlap means we can give you more accurate results. We count exactly how many of your genetic markers we recognize out of the thousands we track.';
-
-    case 'summary':
-      return 'Think of this as your "report card" that pulls together all the separate analyses into one clean page. It gathers your ancestry percentages, your deep family line results, health-related markers, and other findings, then lays them out side-by-side so you can see the full picture without jumping between tabs.';
-
-    case 'autosomal':
-      return 'Your DNA is made of pairs of letters (A, T, C, G). At each specific location in your genome, you got one letter from your mom and one from your dad. We look at those letter pairs and compare them to known variants that scientists have already studied. If both your letters match a known variant, you\'re "homozygous" for it. If only one matches, you\'re "heterozygous." This tells us which traits or health markers are relevant to you.';
-
-    case 'oracle':
-      return 'Imagine you have a smoothie and you\'re trying to figure out exactly what fruits went into it. That\'s what Elastic-Net NNLS does with your DNA — it looks at thousands of genetic markers and mathematically figures out the best combination of reference populations that, when mixed together, would produce a genetic profile like yours. Our Log-Likelihood Ratio (LLR) scoring weights rare diagnostic markers while preventing shared ancient variants (like EDAR) from causing false Native American hits, and Ridge regularization prevents admixed profiles from collapsing into single intermediate proxies (like Burusho).';
-
-    case 'painter':
-      return 'Chromosome Painting looks at your 22 autosomes (the chromosomes you inherited from both parents) and colors each section based on which continental population it most closely matches. We use a math model called a Hidden Markov Model (HMM) that reads along your DNA strands and estimates the most likely transition points between different ancestries. This lets us paint a visual map showing maternal vs. paternal ancestry for each of your chromosomes.';
-
-    case 'naive_oracle':
-      return 'This is a faster, simpler version of the ancestry calculation. Instead of trying to figure out the whole "smoothie recipe" at once, it looks at each genetic marker one at a time and asks: "Which population is this single marker most common in?" Then it averages all those answers together. It\'s quicker but less precise than the full NNLS approach — think of it as a quick sketch vs. a detailed painting.';
-
-    case 'haplogroups':
-      return 'Your Y-chromosome (if male) is passed nearly unchanged from father to son, and your mitochondrial DNA is passed from mother to child. Over thousands of years, these lineages pick up unique mutations — like stamps in a passport showing where your ancestors traveled. We walk down a giant "family tree" of known mutations, checking which ones you carry, to find exactly where your paternal and maternal lines sit on humanity\'s deep ancestral map.';
-
-    case 'ancient':
-      return 'Scientists have extracted DNA from 54 ancient fossil skeletons found at archaeological sites — Denisova, Neanderthals, Oase-1, Ust-Ishim, Ice Age hunters (Loschbour, Cheddar Man), Anatolian farmers, Yamnaya steppe pastoralists, and Anzick-1 Clovis. We compare your DNA to these 54 individual fossil genomes across 12 deep paleogenomic lineages to calculate your genetic affinity to ancient humanity.';
-
-    case 'health':
-      return 'We calculate your relative risk for various health and wellness conditions by summing up the weights of multiple risk markers in your DNA (your Polygenic Risk Score). Additionally, we screen your genetic file against standard guidelines to predict how your body metabolizes common medications, alerting you to potential medication sensitivities.';
-
-    case 'traits':
-      return 'Our Traits page decodes physical attributes like eye and hair color, lactose tolerance, diet behaviors, and environmental responses. We match your letter variants to SNPedia databases to show what traits you are genetically predisposed to.';
-
-    case 'compare':
-      return 'Your DNA contains hundreds of thousands of data points — way too many to visualize at once. We use a technique that compresses all that information down into just a few coordinates, like squishing a 3D globe onto a flat map. This lets us plot you alongside global populations to show visually which groups you cluster closest to. Think of it as a "you are here" dot on a map of world genetics.';
-
-    case 'blood':
-      return 'Your blood type (A, B, AB, or O, plus Rh positive or negative) is determined by just a handful of specific genetic markers. We read those exact markers from your DNA file and apply straightforward biological rules — the same ones taught in biology class — to predict your blood type. It\'s one of the most reliable genetic predictions we can make, with accuracy above 99% in well-tested populations.';
-
-    case 'markers':
-      return 'Before we run any analysis, we check the quality of your DNA file itself — similar to how a mechanic inspects a car before a road trip. We look at what percentage of markers were successfully read by your testing company (the "call rate"), whether there are signs of data corruption, and what type of DNA chip was used. A higher call rate means your raw data is cleaner and your results will be more reliable.';
-
-    default:
-      return 'This section provides details on the analytical methods used by Genotype Scout.';
-  }
+const MODULE_EMOJIS: Record<string, string> = {
+  profile: '👤',
+  ancestry_oracle: '🌐',
+  glossary: '📖',
+  chromosome_painter: '🎨',
+  ancestry_scout: '⚡',
+  haplogroups: '🌳',
+  ancient_dna: '💀',
+  health: '🩺',
+  traits: '✨',
+  blood: '🩸',
+  markers: '🔬',
+  rare_variants: '🔍',
+  kit_comparison: '👥',
+  methodology: '🛡️'
 };
 
-export const MethodologyPage: React.FC<{ activeTab: string }> = ({ activeTab }) => {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['dashboard']));
+interface MethodologyPageProps {
+  activeTab?: string;
+  initialModuleId?: string;
+}
 
-  const toggleSection = (tabId: string) => {
-    setExpandedSections(prev => {
+export const MethodologyPage: React.FC<MethodologyPageProps> = ({ 
+  activeTab, 
+  initialModuleId 
+}) => {
+  // Map activeTab to canonical module id
+  const targetInitial = useMemo(() => {
+    if (initialModuleId && MODULE_DOCUMENTATION[initialModuleId]) return initialModuleId;
+    if (activeTab) {
+      const doc = getDocumentationForModule(activeTab);
+      return doc.id;
+    }
+    return 'profile';
+  }, [activeTab, initialModuleId]);
+
+  const [expandedModules, setExpandedModules] = useState<Set<string>>(
+    () => new Set([targetInitial, 'ancestry_oracle'])
+  );
+  
+  // Independent mode ('explainer' vs 'technical') per module card
+  const [moduleModes, setModuleModes] = useState<Record<string, 'explainer' | 'technical'>>({});
+  const [searchQuery, setSearchQuery] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState<'ALL' | 'PRIMARY' | 'TOOLS'>('ALL');
+
+  const toggleModule = (id: string) => {
+    setExpandedModules(prev => {
       const next = new Set(prev);
-      if (next.has(tabId)) {
-        next.delete(tabId);
+      if (next.has(id)) {
+        next.delete(id);
       } else {
-        next.add(tabId);
+        next.add(id);
       }
       return next;
     });
   };
 
-  const expandAll = () => setExpandedSections(new Set(allSections.map(s => s.tabId)));
-  const collapseAll = () => setExpandedSections(new Set());
+  const setCardMode = (id: string, mode: 'explainer' | 'technical') => {
+    setModuleModes(prev => ({ ...prev, [id]: mode }));
+  };
+
+  const expandAll = () => setExpandedModules(new Set(MODULE_ORDER));
+  const collapseAll = () => setExpandedModules(new Set());
+
+  // Filtered module list
+  const filteredModules = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    return MODULE_ORDER.filter(id => {
+      const doc = MODULE_DOCUMENTATION[id];
+      if (!doc) return false;
+
+      if (categoryFilter !== 'ALL' && doc.category !== categoryFilter) {
+        return false;
+      }
+
+      if (!q) return true;
+
+      const inTitle = doc.title.toLowerCase().includes(q);
+      const inId = doc.id.toLowerCase().includes(q);
+      const inEngine = doc.technical.solverEngine.toLowerCase().includes(q);
+      const inDescription = doc.technical.description.toLowerCase().includes(q);
+      const inCustodian = doc.custodian.name.toLowerCase().includes(q);
+      const inHeadline = doc.explainer.headline.toLowerCase().includes(q);
+      const inReferences = doc.technical.references.some(r => r.toLowerCase().includes(q));
+
+      return inTitle || inId || inEngine || inDescription || inCustodian || inHeadline || inReferences;
+    });
+  }, [searchQuery, categoryFilter]);
 
   return (
-    <div className="space-y-10 pb-20 animate-fade-up">
-      {/* Header */}
-      <section className="pt-8">
+    <div className="space-y-10 pb-24 animate-fade-up max-w-6xl mx-auto">
+      {/* Hero Header */}
+      <section className="pt-4 sm:pt-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-3xl bg-indigo-50 dark:bg-indigo-950/40 flex items-center justify-center text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800/50">
-              <BookOpen className="w-8 h-8" />
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-slate-200 dark:border-white/10">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-500 dark:text-cyan-400 shrink-0 shadow-sm shadow-cyan-500/10">
+                <BookOpen className="w-7 h-7" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-400">
+                    CUSTODIAL REFERENCE HUB
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest hidden sm:inline">
+                    14 ACTIVE MODULES
+                  </span>
+                </div>
+                <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white">
+                  Scientific Methodology & Explanations
+                </h1>
+              </div>
             </div>
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-800 dark:text-slate-100">
-                How It All Works
-              </h1>
-              <p className="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mt-1">
-                Methodology & Calculation Explainers
-              </p>
+
+            <div className="flex items-center gap-2 self-start sm:self-center px-3.5 py-2 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-300 text-xs font-mono font-bold uppercase tracking-wider shrink-0">
+              <Shield className="w-4 h-4 text-teal-500" />
+              <span>100% Client-Side • Zero Telemetry</span>
             </div>
           </div>
-          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed">
-            Every result in Genotype Scout is powered by transparent, peer-reviewed algorithms running 
-            <span className="text-teal-600 dark:text-teal-400 font-bold"> entirely on your device</span>. 
-            Below is a plain-English breakdown of each calculation, along with the technical details for those who want to dig deeper.
+
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed mt-4">
+            Every analysis inside Genotype Scout adheres to peer-reviewed academic literature and open mathematical frameworks. 
+            Select any module below to inspect its <span className="font-bold text-teal-600 dark:text-teal-400">Plain English Explainer</span> (for intuitive human takeaways) or its <span className="font-bold text-cyan-600 dark:text-cyan-400">Technical Methodology</span> (for exact equations, solver models, and academic citations).
           </p>
         </motion.div>
       </section>
 
-      {/* Controls */}
-      <div className="flex gap-3">
-        <button
-          onClick={expandAll}
-          className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-black uppercase tracking-widest hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
-        >
-          Expand All
-        </button>
-        <button
-          onClick={collapseAll}
-          className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-black uppercase tracking-widest hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
-        >
-          Collapse All
-        </button>
-      </div>
+      {/* Controls & Quick Filter Bar */}
+      <section className="space-y-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          {/* Search bar */}
+          <div className="relative flex-1 max-w-md">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              placeholder="Search equations, algorithms, citations, or topics…"
+              className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 rounded-2xl text-xs sm:text-sm text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all font-mono"
+            />
+          </div>
 
-      {/* Engine Cards */}
-      <div className="space-y-4">
-        {allSections.map((section, idx) => {
-          const data = getMethodologyData(section.tabId);
-          const isExpanded = expandedSections.has(section.tabId);
-          const plainEnglish = getPlainEnglish(section.tabId);
-
-          return (
-            <motion.div
-              key={section.tabId}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.05, duration: 0.4 }}
-              className="premium-card overflow-hidden"
-            >
-              {/* Clickable Header */}
+          {/* Category tabs & Expand/Collapse */}
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-1 p-1 rounded-2xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10">
               <button
-                onClick={() => toggleSection(section.tabId)}
-                className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors !transform-none"
+                onClick={() => setCategoryFilter('ALL')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                  categoryFilter === 'ALL'
+                    ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm'
+                    : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
               >
-                <div className="flex items-center gap-4 min-w-0">
-                  <span className="text-2xl shrink-0">{section.emoji}</span>
-                  <div className="min-w-0">
-                    <h2 className="text-base sm:text-lg font-black text-slate-800 dark:text-slate-100 tracking-tight whitespace-normal break-words">
-                      {data.title}
-                    </h2>
-                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500 font-mono mt-0.5 whitespace-normal break-words">
-                      {data.algName}
-                    </p>
+                All (14)
+              </button>
+              <button
+                onClick={() => setCategoryFilter('PRIMARY')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                  categoryFilter === 'PRIMARY'
+                    ? 'bg-white dark:bg-slate-800 text-teal-700 dark:text-teal-400 shadow-sm'
+                    : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
+              >
+                Primary (5)
+              </button>
+              <button
+                onClick={() => setCategoryFilter('TOOLS')}
+                className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                  categoryFilter === 'TOOLS'
+                    ? 'bg-white dark:bg-slate-800 text-cyan-700 dark:text-cyan-400 shadow-sm'
+                    : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
+              >
+                Tools (9)
+              </button>
+            </div>
+
+            <div className="flex items-center gap-1 ml-auto">
+              <button
+                onClick={expandAll}
+                className="px-3 py-2 rounded-xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-mono font-bold uppercase tracking-wider hover:bg-slate-200 dark:hover:bg-white/10 transition-all active:scale-[0.96]"
+              >
+                Expand All
+              </button>
+              <button
+                onClick={collapseAll}
+                className="px-3 py-2 rounded-xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-mono font-bold uppercase tracking-wider hover:bg-slate-200 dark:hover:bg-white/10 transition-all active:scale-[0.96]"
+              >
+                Collapse All
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick jump pills */}
+        <div className="flex flex-wrap gap-1.5 pt-2">
+          {MODULE_ORDER.map(id => {
+            const doc = MODULE_DOCUMENTATION[id];
+            if (!doc) return null;
+            const isExpanded = expandedModules.has(id);
+            return (
+              <button
+                key={id}
+                onClick={() => {
+                  setExpandedModules(prev => new Set(prev).add(id));
+                  const el = document.getElementById(`methodology-card-${id}`);
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
+                className={`px-2.5 py-1 rounded-xl text-[11px] font-mono font-semibold transition-all border flex items-center gap-1.5 ${
+                  isExpanded
+                    ? 'bg-teal-500/10 border-teal-500/30 text-teal-700 dark:text-teal-300'
+                    : 'bg-white/60 dark:bg-white/[0.03] border-slate-200 dark:border-white/[0.06] text-slate-600 dark:text-slate-400 hover:border-slate-400 dark:hover:border-white/20'
+                }`}
+              >
+                <span>{MODULE_EMOJIS[id] || '🔹'}</span>
+                <span>{doc.title.split(' ')[0]}</span>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Module Methodology Cards */}
+      <section className="space-y-6">
+        {filteredModules.length > 0 ? (
+          filteredModules.map((id, index) => {
+            const doc = MODULE_DOCUMENTATION[id];
+            if (!doc) return null;
+
+            const isExpanded = expandedModules.has(id);
+            const mode = moduleModes[id] || 'explainer';
+
+            return (
+              <motion.div
+                id={`methodology-card-${id}`}
+                key={id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.03, duration: 0.3 }}
+                className="bg-white dark:bg-[#0c0d10] border border-slate-200 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all tactile-3d-card"
+              >
+                {/* Header Bar */}
+                <div className="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 dark:border-white/[0.06]">
+                  {/* Left: Module Title & Solver Title */}
+                  <button
+                    onClick={() => toggleModule(id)}
+                    className="flex items-start sm:items-center gap-4 text-left group flex-1 min-w-0 !transform-none"
+                    aria-label={`Toggle documentation for ${doc.title}`}
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/25 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                      {MODULE_EMOJIS[id] || '🧬'}
+                    </div>
+
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[9px] font-mono font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-slate-100 dark:bg-white/[0.06] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300">
+                          {doc.category}
+                        </span>
+                        <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">
+                          ID: {doc.id}
+                        </span>
+                      </div>
+                      <h2 className="text-base sm:text-xl font-black text-slate-900 dark:text-white tracking-tight mt-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                        {doc.title}
+                      </h2>
+                      <p className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400 mt-0.5 truncate">
+                        {doc.technical.solverEngine}
+                      </p>
+                    </div>
+                  </button>
+
+                  {/* Right: Dual-Mode Switcher & Expand Chevron */}
+                  <div className="flex items-center gap-3 shrink-0 self-end md:self-center">
+                    {/* Dual Mode Tab Switcher */}
+                    <div className="flex items-center gap-1 p-1 rounded-2xl bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-white/10">
+                      <button
+                        onClick={() => {
+                          setCardMode(id, 'explainer');
+                          if (!isExpanded) toggleModule(id);
+                        }}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                          mode === 'explainer'
+                            ? 'bg-teal-500 text-slate-950 shadow-md shadow-teal-500/20 font-black'
+                            : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                        }`}
+                      >
+                        Plain English
+                      </button>
+                      <button
+                        onClick={() => {
+                          setCardMode(id, 'technical');
+                          if (!isExpanded) toggleModule(id);
+                        }}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                          mode === 'technical'
+                            ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 font-black'
+                            : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                        }`}
+                      >
+                        Technical
+                      </button>
+                    </div>
+
+                    {/* Expand/Collapse Toggle Button */}
+                    <button
+                      onClick={() => toggleModule(id)}
+                      aria-label="Expand or collapse section"
+                      className="p-2.5 rounded-2xl bg-slate-100 dark:bg-white/[0.06] text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 transition-all"
+                    >
+                      {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </button>
                   </div>
                 </div>
-                <div className="ml-4 shrink-0 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
-                  {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </div>
-              </button>
 
-              {/* Expanded Content */}
-              <AnimatePresence>
-                {isExpanded && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-5 sm:px-6 pb-6 space-y-6 border-t border-slate-100 dark:border-slate-800 pt-6">
-
-                      {/* Plain English Explainer — the star of the show */}
-                      <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-950/30 dark:to-emerald-950/20 border border-teal-100 dark:border-teal-800/40">
-                        <div className="flex items-center gap-2 mb-3">
-                          <MessageCircle className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                          <h3 className="text-xs font-black uppercase tracking-widest text-teal-700 dark:text-teal-400">
-                            In Plain English
-                          </h3>
-                        </div>
-                        <p className="text-sm sm:text-base text-teal-900 dark:text-teal-100 leading-relaxed font-medium">
-                          {plainEnglish}
-                        </p>
-                      </div>
-
-                      {/* Technical Description */}
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <Beaker className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
-                          <h3 className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">
-                            Technical Description
-                          </h3>
-                        </div>
-                        <p className="text-sm text-slate-700 dark:text-slate-450 leading-relaxed font-medium">
-                          {data.description}
-                        </p>
-                      </div>
-
-                      {/* Formulas */}
-                      {data.formulas && data.formulas.length > 0 && (
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-2">
-                            <Code className="w-4 h-4 text-violet-500 dark:text-violet-400" />
-                            <h3 className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">
-                              Algebraic Modeling
-                            </h3>
-                          </div>
-                          {data.formulas.map((f, i) => (
-                            <div key={i} className="p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
-                              <div className="text-[10px] font-black text-violet-750 dark:text-violet-400 uppercase tracking-widest">{f.label}</div>
-                              <div className="font-mono text-center text-sm py-4 px-4 bg-white dark:bg-slate-955 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 font-black overflow-x-auto select-all">
-                                {f.equation}
+                {/* Card Body Content */}
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-5 sm:p-8 space-y-8 bg-slate-50/50 dark:bg-black/20">
+                        {mode === 'explainer' ? (
+                          /* ─── PLAIN ENGLISH EXPLAINER ─── */
+                          <div className="space-y-6">
+                            {/* Custodian Dispatch */}
+                            <div className="p-5 rounded-2xl bg-teal-500/[0.06] border border-teal-500/20 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                              <div className="w-12 h-12 rounded-2xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shrink-0 text-teal-400 font-bold">
+                                <User className="w-6 h-6 text-teal-600 dark:text-teal-400" />
                               </div>
-                              <p className="text-xs text-slate-700 dark:text-slate-450 italic leading-relaxed font-medium">{f.explanation}</p>
+                              <div className="min-w-0">
+                                <div className="flex items-center gap-2 mb-0.5">
+                                  <span className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">
+                                    {doc.custodian.name}
+                                  </span>
+                                  <span className="text-[10px] font-mono text-teal-700 dark:text-teal-300 font-bold uppercase">
+                                    • {doc.custodian.role}
+                                  </span>
+                                </div>
+                                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+                                  "{doc.custodian.dispatch}"
+                                </p>
+                              </div>
                             </div>
-                          ))}
-                        </div>
-                      )}
 
-                      {/* Metrics */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {data.metrics.map((m, i) => (
-                          <div key={i} className="p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800">
-                            <div className="text-[10px] text-slate-500 dark:text-slate-500 uppercase tracking-wider font-extrabold">{m.label}</div>
-                            <div className="text-sm font-black text-slate-800 dark:text-slate-350 mt-1 font-mono">{m.value}</div>
+                            {/* Headline */}
+                            <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10">
+                              <div className="flex items-center gap-2 mb-2 text-teal-700 dark:text-teal-400">
+                                <Sparkles className="w-4 h-4" />
+                                <h3 className="text-xs font-mono font-bold uppercase tracking-widest">
+                                  Core Principle
+                                </h3>
+                              </div>
+                              <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                                {doc.explainer.headline}
+                              </p>
+                            </div>
+
+                            {/* The Real-World Analogy */}
+                            <div className="p-5 rounded-2xl bg-amber-500/[0.06] border border-amber-500/20">
+                              <div className="flex items-center gap-2 mb-2 text-amber-700 dark:text-amber-400">
+                                <HelpCircle className="w-4 h-4" />
+                                <h3 className="text-xs font-mono font-bold uppercase tracking-widest">
+                                  The Real-World Analogy
+                                </h3>
+                              </div>
+                              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
+                                {doc.explainer.analogy}
+                              </p>
+                            </div>
+
+                            {/* How We Calculated Your Results */}
+                            <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 space-y-3">
+                              <div className="flex items-center gap-2 text-slate-800 dark:text-slate-200">
+                                <Beaker className="w-4 h-4 text-teal-500" />
+                                <h3 className="text-xs font-mono font-bold uppercase tracking-widest">
+                                  Step-by-Step: How We Derived Your Results
+                                </h3>
+                              </div>
+                              <ul className="space-y-2.5">
+                                {doc.explainer.howWeGotYourResults.map((step, sIdx) => (
+                                  <li key={sIdx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                                    <CheckCircle2 className="w-4 h-4 text-teal-500 shrink-0 mt-0.5" />
+                                    <span>{step}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Two Column Takeaways & Nuance */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="p-5 rounded-2xl bg-teal-500/[0.05] border border-teal-500/15">
+                                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400 mb-2">
+                                  What It Means For You
+                                </h3>
+                                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                                  {doc.explainer.whatItMeansForYou}
+                                </p>
+                              </div>
+
+                              <div className="p-5 rounded-2xl bg-rose-500/[0.05] border border-rose-500/15">
+                                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-rose-700 dark:text-rose-400 mb-2">
+                                  Scientific Limits & Nuance
+                                </h3>
+                                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                                  {doc.explainer.caveatsAndNuance}
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                        ))}
-                      </div>
+                        ) : (
+                          /* ─── TECHNICAL METHODOLOGY ─── */
+                          <div className="space-y-6">
+                            {/* Computational Description */}
+                            <div className="p-5 rounded-2xl bg-cyan-500/[0.05] border border-cyan-500/20 space-y-2">
+                              <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-400">
+                                <Beaker className="w-4 h-4" />
+                                <h3 className="text-xs font-mono font-bold uppercase tracking-widest">
+                                  Solver Engine Specification
+                                </h3>
+                              </div>
+                              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-mono">
+                                {doc.technical.description}
+                              </p>
+                            </div>
 
-                      {/* References */}
-                      <div className="pt-4 border-t border-slate-250 dark:border-slate-800 space-y-3">
-                        <div className="flex items-center gap-2">
-                          <Landmark className="w-4 h-4 text-amber-500 dark:text-amber-400" />
-                          <h3 className="text-xs font-black uppercase tracking-widest text-slate-800 dark:text-slate-400">
-                            Academic References
-                          </h3>
-                        </div>
-                        <ul className="space-y-2">
-                          {data.references.map((r, i) => (
-                            <li key={i} className="flex gap-2 text-xs text-slate-650 dark:text-slate-400 items-start font-medium">
-                              <Award className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0 mt-0.5" />
-                              <span>{r}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          );
-        })}
-      </div>
+                            {/* Mathematical Equations */}
+                            {doc.technical.formulas && doc.technical.formulas.length > 0 && (
+                              <div className="space-y-3">
+                                <div className="flex items-center gap-2 text-slate-800 dark:text-slate-200">
+                                  <Code className="w-4 h-4 text-cyan-500" />
+                                  <h3 className="text-xs font-mono font-bold uppercase tracking-widest">
+                                    Algebraic Modeling & Equations
+                                  </h3>
+                                </div>
+                                <div className="grid grid-cols-1 gap-3">
+                                  {doc.technical.formulas.map((formula, fIdx) => (
+                                    <div 
+                                      key={fIdx}
+                                      className="p-4 rounded-2xl bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-white/10 space-y-2"
+                                    >
+                                      <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-400">
+                                        {formula.label}
+                                      </div>
+                                      <div className="font-mono text-center text-xs sm:text-sm py-3 px-4 bg-white dark:bg-slate-955 border border-slate-200 dark:border-white/10 rounded-xl text-slate-900 dark:text-slate-100 font-bold overflow-x-auto select-all">
+                                        {formula.equation}
+                                      </div>
+                                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-mono">
+                                        {formula.explanation}
+                                      </p>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
 
-      {/* Privacy Footer */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="flex items-center justify-center gap-2 pt-8 text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest"
-      >
-        <Shield className="w-4 h-4 text-teal-500" />
-        All calculations run locally in your browser — your DNA never leaves your device
-      </motion.div>
+                            {/* Metrics Grid */}
+                            {doc.technical.metrics && doc.technical.metrics.length > 0 && (
+                              <div className="space-y-2">
+                                <div className="text-xs font-mono font-bold uppercase tracking-widest text-slate-800 dark:text-slate-300">
+                                  Diagnostic Metrics & Constants
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                  {doc.technical.metrics.map((metric, mIdx) => (
+                                    <div
+                                      key={mIdx}
+                                      className="p-3.5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10"
+                                    >
+                                      <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+                                        {metric.label}
+                                      </div>
+                                      <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-white font-mono mt-0.5 truncate">
+                                        {metric.value}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Academic References */}
+                            {doc.technical.references && doc.technical.references.length > 0 && (
+                              <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 space-y-3">
+                                <div className="flex items-center gap-2 text-slate-800 dark:text-slate-200">
+                                  <Landmark className="w-4 h-4 text-amber-500" />
+                                  <h3 className="text-xs font-mono font-bold uppercase tracking-widest">
+                                    Academic & Peer-Reviewed Literature Citations
+                                  </h3>
+                                </div>
+                                <ul className="space-y-2">
+                                  {doc.technical.references.map((ref, rIdx) => (
+                                    <li key={rIdx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300 font-mono">
+                                      <Award className="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
+                                      <span>{ref}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })
+        ) : (
+          <div className="p-12 text-center rounded-3xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 space-y-3">
+            <p className="text-base font-bold text-slate-700 dark:text-slate-300">
+              No methodology modules matched "{searchQuery}"
+            </p>
+            <button
+              onClick={() => { setSearchQuery(''); setCategoryFilter('ALL'); }}
+              className="px-4 py-2 rounded-xl bg-teal-500 text-slate-950 text-xs font-mono font-bold uppercase tracking-widest"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
+      </section>
+
+      {/* Footer Sovereignty Seal */}
+      <section className="pt-8 border-t border-slate-200 dark:border-white/10 text-center space-y-2">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-400 text-xs font-mono font-bold uppercase tracking-wider">
+          <Shield className="w-4 h-4 text-teal-500" />
+          <span>Zero-Knowledge Genomic Privacy Standard</span>
+        </div>
+        <p className="text-xs font-mono text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+          All algorithms execute on local Web Workers in browser memory. No genomic sequences or coordinates are ever transferred over the internet.
+        </p>
+      </section>
     </div>
   );
 };
+
+export default MethodologyPage;

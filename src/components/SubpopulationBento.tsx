@@ -2,17 +2,18 @@ import React, { useState, useMemo } from 'react';
 import { processSubpopulations, AIM, UserGenotype } from './ancestryOracleLogic';
 import { deconvolveMicrohaplotypes } from '../utils/ancestry/microhapAdmixture';
 import { motion } from 'motion/react';
-import { Target, Layers, Info, Activity } from 'lucide-react';
+import { Target, Layers, Info, Activity, BookOpen } from 'lucide-react';
 
 interface BentoProps {
   userGenotypes: UserGenotype[];
   aimsDatabase: AIM[];
   precalculated?: any;
+  onOpenMethodology?: () => void;
 }
 
 type PanelType = 'all' | 'kidd55' | 'seldin128' | 'euroforgen' | 'microhap';
 
-const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated }) => {
+const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated, onOpenMethodology }) => {
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
   const [showAllSubpops, setShowAllSubpops] = useState(false);
@@ -141,6 +142,18 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             <Info className="w-3.5 h-3.5 text-teal-400" />
             <span className="hidden sm:inline">Info</span>
           </button>
+
+          {onOpenMethodology && (
+            <button
+              type="button"
+              onClick={onOpenMethodology}
+              className="p-1.5 sm:px-2.5 sm:py-1 rounded-lg border border-teal-500/30 bg-teal-500/15 hover:bg-teal-500/25 text-xs font-bold text-teal-300 flex items-center gap-1 transition-all cursor-pointer"
+              title="View Subpopulation Oracle Scientific Methodology"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-teal-400" />
+              <span className="hidden sm:inline">Methodology</span>
+            </button>
+          )}
         </div>
       </div>
 

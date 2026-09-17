@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { BookOpen } from 'lucide-react';
 import rhData from '../data/blood_markers.json';
 import { calculateBloodType } from '../engines/bloodTypeCalculator';
 import { ExtendedBloodSystemResult } from '../types/blood';
@@ -285,7 +286,12 @@ function getIsbtPhenotype(rsid: string, genotype: string, getGenotype: (rsid: st
   }
 }
 
-export const BloodTypeView = ({ dataset }: { dataset: any }) => {
+interface BloodTypeViewProps {
+  dataset: any;
+  onOpenMethodology?: () => void;
+}
+
+export const BloodTypeView = ({ dataset, onOpenMethodology }: BloodTypeViewProps) => {
   const [overrides, setOverrides] = useState<Record<string, string>>({});
   const [activeSystemFilter, setActiveSystemFilter] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -432,8 +438,21 @@ export const BloodTypeView = ({ dataset }: { dataset: any }) => {
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-black uppercase tracking-widest">
-              <span>🩸</span> High-Precision Molecular Blood Profiler & Diplotyper
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-black uppercase tracking-widest">
+                <span>🩸</span> High-Precision Molecular Blood Profiler & Diplotyper
+              </div>
+              {onOpenMethodology && (
+                <button
+                  type="button"
+                  onClick={onOpenMethodology}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-rose-500/20 hover:bg-rose-500/35 border border-rose-400/40 text-rose-100 text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer"
+                  title="View Blood Type Methodology & Marker Documentation"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-rose-300" />
+                  <span>Methodology & Info</span>
+                </button>
+              )}
             </div>
             <div>
               <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">

@@ -26,7 +26,15 @@ const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string
   'Central Asia & Siberia': { bg: 'bg-cyan-500/10', text: 'text-cyan-400', border: 'border-cyan-500/30' },
 };
 
-export const SubpopulationGlossaryTab: React.FC<{ initialSearch?: string }> = ({ initialSearch = '' }) => {
+interface SubpopulationGlossaryTabProps {
+  initialSearch?: string;
+  onOpenMethodology?: () => void;
+}
+
+export const SubpopulationGlossaryTab: React.FC<SubpopulationGlossaryTabProps> = ({ 
+  initialSearch = '', 
+  onOpenMethodology 
+}) => {
   const [searchTerm, setSearchTerm] = useState(initialSearch);
   const [selectedCategory, setSelectedCategory] = useState<'All' | PopulationGlossaryItem['category']>('All');
   const [selectedPop, setSelectedPop] = useState<PopulationGlossaryItem | null>(null);
@@ -59,13 +67,24 @@ export const SubpopulationGlossaryTab: React.FC<{ initialSearch?: string }> = ({
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
               <span className="px-3 py-1 rounded-full bg-[#4ECDC4]/10 border border-[#4ECDC4]/30 text-[#4ECDC4] text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
                 <BookOpen size={13} /> Subpopulation Atlas & Glossary
               </span>
               <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300 text-[11px] font-mono font-bold">
                 {SUBPOPULATION_GLOSSARY_DATA.length} Reference Populations
               </span>
+              {onOpenMethodology && (
+                <button
+                  type="button"
+                  onClick={onOpenMethodology}
+                  className="px-3 py-1 rounded-full bg-[#4ECDC4]/15 hover:bg-[#4ECDC4]/30 border border-[#4ECDC4]/40 text-[#4ECDC4] text-xs font-bold transition-all shadow-sm active:scale-95 flex items-center gap-1.5 cursor-pointer ml-auto sm:ml-2"
+                  title="View Glossary Curation & Population Reference Methodology"
+                >
+                  <BookOpen size={12} />
+                  <span>Methodology & Info</span>
+                </button>
+              )}
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#4ECDC4] tracking-tight">
               Human Population Origins & Migration Routes

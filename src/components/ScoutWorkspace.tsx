@@ -34,6 +34,7 @@ interface ScoutWorkspaceProps {
   datasets: any[];
   activeDatasetIndex: number;
   setActiveDatasetIndex: (i: number) => void;
+  onOpenMethodology?: (moduleId?: string) => void;
   children?: React.ReactNode;
 }
 
@@ -224,6 +225,7 @@ interface BannerHeaderProps {
   searchQuery: string;
   onSearchChange: (q: string) => void;
   showSearch: boolean;
+  onOpenMethodology?: (moduleId?: string) => void;
 }
 
 const BannerHeader: React.FC<BannerHeaderProps> = ({
@@ -235,6 +237,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
   searchQuery,
   onSearchChange,
   showSearch,
+  onOpenMethodology,
 }) => {
   const filename = dataset?.name ?? null;
   const snpCount: number = dataset?.snpCount ?? 0;
@@ -363,6 +366,19 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
               ))}
             </div>
           ) : null}
+
+          {/* Methodology Shortcut */}
+          {onOpenMethodology && (
+            <button
+              onClick={() => onOpenMethodology('methodology')}
+              aria-label="Scientific Methodology Hub"
+              title="Open Scientific Methodology Hub"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40 text-indigo-400 hover:text-indigo-300 transition-all text-[9px] font-mono font-black uppercase tracking-[0.15em] active:scale-[0.96]"
+            >
+              <BookOpen className="w-3 h-3 text-indigo-400" />
+              <span className="hidden md:inline">Methodology</span>
+            </button>
+          )}
 
           {/* Reset */}
           <button
@@ -680,38 +696,54 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
 interface ModuleViewHeaderProps {
   mod: AppConfig;
   onBack: () => void;
+  onOpenMethodology?: (moduleId?: string) => void;
 }
 
-const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack }) => (
-  <div className="flex items-center gap-3 px-4 sm:px-6 py-3 border-b border-white/[0.06] bg-[#09090b]/60 shrink-0">
-    <button
-      onClick={onBack}
-      aria-label="Back to module launcher"
-      className="p-1.5 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
-      style={{ transitionProperty: 'color, background-color, transform' }}
-    >
-      <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-    </button>
-
-    <div
-      className={`w-6 h-6 rounded-lg bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0`}
-      style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
-      aria-hidden="true"
-    >
-      <mod.icon className="w-3.5 h-3.5 text-white" />
-    </div>
-
-    <div>
-      <h2
-        className="text-sm font-black text-slate-200 leading-none"
-        style={{ textWrap: 'balance' } as React.CSSProperties}
+const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack, onOpenMethodology }) => (
+  <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b border-white/[0.06] bg-[#09090b]/60 shrink-0">
+    <div className="flex items-center gap-3 min-w-0">
+      <button
+        onClick={onBack}
+        aria-label="Back to module launcher"
+        className="p-1.5 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400 shrink-0"
+        style={{ transitionProperty: 'color, background-color, transform' }}
       >
-        {mod.name}
-      </h2>
-      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.18em] mt-0.5 dark:text-slate-400 max-w-xl truncate">
-        {mod.description}
-      </p>
+        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+      </button>
+
+      <div
+        className={`w-6 h-6 rounded-lg bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0`}
+        style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
+        aria-hidden="true"
+      >
+        <mod.icon className="w-3.5 h-3.5 text-white" />
+      </div>
+
+      <div className="min-w-0">
+        <h2
+          className="text-sm font-black text-slate-200 leading-none truncate"
+          style={{ textWrap: 'balance' } as React.CSSProperties}
+        >
+          {mod.name}
+        </h2>
+        <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.18em] mt-0.5 dark:text-slate-400 max-w-xl truncate">
+          {mod.description}
+        </p>
+      </div>
     </div>
+
+    {onOpenMethodology && (
+      <button
+        onClick={() => onOpenMethodology(mod.id)}
+        aria-label={`View methodology and documentation for ${mod.name}`}
+        title="Open Methodology & Scientific Documentation"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-500/50 text-cyan-400 hover:text-cyan-300 transition-all text-xs font-mono font-bold uppercase tracking-wider shrink-0 active:scale-[0.96] shadow-sm shadow-cyan-500/10"
+      >
+        <BookOpen className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+        <span className="hidden sm:inline">Methodology & Info</span>
+        <span className="sm:hidden">Info</span>
+      </button>
+    )}
   </div>
 );
 
@@ -766,6 +798,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
   onReset,
   currentApp,
   onOpenApp,
+  onOpenMethodology,
   children,
 }) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -816,6 +849,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         showSearch={currentApp === null}
+        onOpenMethodology={onOpenMethodology}
       />
 
       {/* Body */}
@@ -842,7 +876,11 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
               >
                 {/* Module view back-header */}
                 {activeModule !== null ? (
-                  <ModuleViewHeader mod={activeModule} onBack={() => onOpenApp(null)} />
+                  <ModuleViewHeader 
+                    mod={activeModule} 
+                    onBack={() => onOpenApp(null)} 
+                    onOpenMethodology={onOpenMethodology}
+                  />
                 ) : null}
 
                 {/* Module content */}

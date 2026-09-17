@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, BookOpen } from 'lucide-react';
 
 interface HealthTraitsTabProps {
   matchedTraits: Array<{
@@ -11,9 +11,10 @@ interface HealthTraitsTabProps {
   }>;
   autosomalMarkers: any[];
   userSnps: Record<string, string>;
+  onOpenMethodology?: () => void;
 }
 
-export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits, autosomalMarkers, userSnps }) => {
+export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits, autosomalMarkers, userSnps, onOpenMethodology }) => {
   const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
   const [activeCategory, setActiveCategory] = useState<'Maternal' | 'Health' | 'Nutrition' | 'Lifestyle' | 'Appearance' | 'Methylation' | 'Identity'>('Health');
   const [healthResults, setHealthResults] = useState<any>(null);
@@ -101,23 +102,37 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
           <div className="text-red-600 dark:text-red-400 text-xs tracking-[0.4em] uppercase font-black mb-3 text-center md:text-left">Genomic Wellness Profile</div>
           <h2 className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter text-center md:text-left">Health & Trait Insights</h2>
         </div>
-        <div className="flex flex-wrap gap-2 justify-center bg-slate-100 dark:bg-slate-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <button 
-            onClick={() => setActiveCategory('Maternal')}
-            className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeCategory === 'Maternal' ? 'bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-slate-500'}`}
-          >
-            Maternal
-          </button>
-          
-          {categories.map(cat => (
+        <div className="flex flex-wrap items-center gap-2.5 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center bg-slate-100 dark:bg-slate-900 p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800">
             <button 
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id as any)}
-              className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeCategory === cat.id ? 'bg-white dark:bg-slate-800 text-red-600 dark:text-red-400 shadow-sm' : 'text-slate-500'}`}
+              onClick={() => setActiveCategory('Maternal')}
+              className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeCategory === 'Maternal' ? 'bg-white dark:bg-slate-800 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-slate-500'}`}
             >
-              {cat.label}
+              Maternal
             </button>
-          ))}
+            
+            {categories.map(cat => (
+              <button 
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id as any)}
+                className={`px-6 py-2.5 rounded-xl text-xs font-black transition-all ${activeCategory === cat.id ? 'bg-white dark:bg-slate-800 text-red-600 dark:text-red-400 shadow-sm' : 'text-slate-500'}`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
+
+          {onOpenMethodology && (
+            <button
+              type="button"
+              onClick={onOpenMethodology}
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-2xl text-xs font-black bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800 hover:border-red-500/50 hover:text-red-500 dark:hover:text-red-400 transition-all shadow-sm active:scale-95 cursor-pointer"
+              title="View Health Traits Methodology & Database Sources"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-red-500" />
+              <span>Methodology & Info</span>
+            </button>
+          )}
         </div>
       </div>
 

@@ -21,7 +21,8 @@ import {
   FileSpreadsheet,
   FileJson,
   FileText,
-  Globe
+  Globe,
+  BookOpen
 } from 'lucide-react';
 import masterAims from '../data/master_aims_normalized.json';
 import { CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, SNP_LOOKUP } from '../genotypeData';
@@ -87,6 +88,7 @@ export function getRegionMeta(region?: string) {
 
 interface GeneticMarkersBrowserProps {
   dataset: any;
+  onOpenMethodology?: () => void;
 }
 
 const CHROMOSOME_LIST = [
@@ -96,7 +98,7 @@ const CHROMOSOME_LIST = [
   '21', '22', 'X', 'Y', 'MT'
 ];
 
-export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ dataset }) => {
+export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ dataset, onOpenMethodology }) => {
   // --- State ---
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -452,8 +454,21 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-black uppercase tracking-widest">
-              <span>🧬</span> High-Density Genomic Markers Browser
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-black uppercase tracking-widest">
+                <span>🧬</span> High-Density Genomic Markers Browser
+              </div>
+              {onOpenMethodology && (
+                <button
+                  type="button"
+                  onClick={onOpenMethodology}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 hover:bg-teal-500/35 border border-teal-400/40 text-teal-200 text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer"
+                  title="View Marker Browser Methodology & Curation Criteria"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-teal-300" />
+                  <span>Methodology & Info</span>
+                </button>
+              )}
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
               Explore Your <span className="text-teal-400">Variant Profile</span>
