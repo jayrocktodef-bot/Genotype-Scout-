@@ -214,6 +214,44 @@ const BOTTOM_NAV_MODULES = [
   MODULES.find(m => m.id === 'health')!,
 ];
 
+// ─── GoldIcon (Tactile 3D Gold-Trimmed Icon Component) ─────────────────────────
+
+interface GoldIconProps {
+  icon: React.ComponentType<any>;
+  size?: 'sm' | 'md' | 'lg';
+  showLed?: boolean;
+  className?: string;
+}
+
+const GoldIcon: React.FC<GoldIconProps> = ({ icon: Icon, size = 'md', showLed = false, className = '' }) => {
+  const sizeClasses = {
+    sm: 'w-8 h-8 rounded-lg',
+    md: 'w-13 h-13 sm:w-14 sm:h-14 rounded-2xl',
+    lg: 'w-16 h-16 rounded-2xl',
+  }[size];
+
+  const iconSizes = {
+    sm: 'w-4 h-4',
+    md: 'w-6 h-6 sm:w-7 sm:h-7',
+    lg: 'w-8 h-8',
+  }[size];
+
+  return (
+    <div className={`gs-icon ${sizeClasses} ${className}`} aria-hidden="true">
+      {/* Specular top light reflex */}
+      <div className="absolute inset-[1px] rounded-[inherit] pointer-events-none bg-gradient-to-b from-white/[0.16] via-transparent to-black/[0.4]" />
+      
+      {/* Gold-embossed vector glyph with ambient shadow */}
+      <Icon
+        className={`${iconSizes} text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)] transition-all duration-200 group-hover:text-amber-200 group-hover:scale-105`}
+      />
+
+      {/* Machined precision status LED indicator */}
+      {showLed && <span className="gs-icon__led animate-pulse" />}
+    </div>
+  );
+};
+
 // ─── BannerHeader ─────────────────────────────────────────────────────────────
 
 interface BannerHeaderProps {
@@ -245,16 +283,16 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
   return (
     <header
-      className="relative z-30 border-b border-slate-200 dark:border-white/[0.06] bg-slate-50/98 dark:bg-[#030712]/98 backdrop-blur-xl shrink-0"
+      className="relative z-30 border-b border-amber-500/20 bg-[#09090b]/95 backdrop-blur-xl shrink-0"
       role="banner"
     >
-      {/* Sequence-alignment texture — pure CSS, no extra elements */}
+      {/* Subtle genomic grid texture */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(90deg,rgba(255,255,255,0.6) 0px,rgba(255,255,255,0.6) 1px,transparent 1px,transparent 20px)',
+            'repeating-linear-gradient(90deg,rgba(245,158,11,0.5) 0px,rgba(245,158,11,0.5) 1px,transparent 1px,transparent 24px)',
         }}
       />
 
@@ -262,20 +300,20 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
         {/* Status dot + dataset info */}
         <div className="flex items-center gap-2.5 flex-1 min-w-0">
           <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500 shadow-[0_0_8px_#f59e0b]" />
           </span>
 
           {filename !== null ? (
             <div className="min-w-0">
               <p
-                className="text-[9px] font-mono font-bold uppercase tracking-[0.22em] text-teal-400/70 leading-none mb-0.5"
+                className="text-[9px] font-mono font-bold uppercase tracking-[0.22em] text-amber-400 leading-none mb-0.5"
                 style={{ fontVariantNumeric: 'tabular-nums' }}
               >
                 ANALYZING DATASET
               </p>
               <p
-                className="text-sm font-black text-white truncate tracking-tight leading-none"
+                className="text-sm font-black text-zinc-100 truncate tracking-tight leading-none"
                 style={{ fontFamily: 'var(--font-mono)', fontVariantNumeric: 'tabular-nums' }}
               >
                 {filename}
@@ -283,10 +321,10 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
             </div>
           ) : (
             <div>
-              <p className="text-[9px] font-mono font-bold uppercase tracking-[0.22em] text-slate-600 leading-none mb-0.5 dark:text-slate-400">
+              <p className="text-[9px] font-mono font-bold uppercase tracking-[0.22em] text-zinc-500 leading-none mb-0.5">
                 READY TO ANALYZE
               </p>
-              <p className="text-xs font-bold text-slate-500 leading-none dark:text-slate-400">
+              <p className="text-xs font-bold text-zinc-400 leading-none">
                 No dataset loaded
               </p>
             </div>
@@ -298,19 +336,19 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
           <div className="hidden lg:flex items-center gap-6 shrink-0">
             <div className="text-center">
               <p
-                className="text-xs font-black text-white tabular-nums leading-none"
+                className="text-xs font-black text-amber-300 tabular-nums leading-none"
                 style={{ fontVariantNumeric: 'tabular-nums' }}
               >
                 {snpCount.toLocaleString()}
               </p>
-              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mt-0.5 dark:text-slate-400">
+              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-zinc-500 mt-0.5">
                 SNPs
               </p>
             </div>
             {chip !== '' ? (
               <div className="text-center">
-                <p className="text-[10px] font-black text-slate-300 leading-none">{chip}</p>
-                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500 mt-0.5 dark:text-slate-400">
+                <p className="text-[10px] font-black text-zinc-300 leading-none">{chip}</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-zinc-500 mt-0.5">
                   Array
                 </p>
               </div>
@@ -323,13 +361,13 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
           {/* Search (only when showing launcher grid) */}
           {showSearch ? (
             <div className="relative">
-              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-500 pointer-events-none dark:text-slate-400" />
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3 h-3 text-zinc-500 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={e => onSearchChange(e.target.value)}
                 placeholder="Search modules…"
-                className="w-36 sm:w-44 pl-7 pr-3 py-1.5 bg-white/[0.05] border border-white/[0.08] rounded-lg text-xs text-slate-300 placeholder:text-slate-600 focus:outline-none focus:border-teal-500/40 focus:ring-1 focus:ring-teal-500/20 transition-[border-color,box-shadow]"
+                className="w-36 sm:w-44 pl-7 pr-3 py-1.5 bg-black/40 border border-amber-500/20 rounded-lg text-xs text-zinc-200 placeholder:text-zinc-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-[border-color,box-shadow]"
                 style={{ fontVariantNumeric: 'tabular-nums' }}
               />
             </div>
@@ -337,18 +375,18 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
 
           {/* Offline badge */}
           <div
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.07]"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/25"
             title="100% Offline-Only Genomic Analysis"
           >
-            <WifiOff className="w-3 h-3 text-teal-400" aria-hidden="true" />
-            <span className="hidden sm:inline text-[9px] font-black uppercase tracking-[0.18em] text-teal-400">
+            <WifiOff className="w-3 h-3 text-amber-400" aria-hidden="true" />
+            <span className="hidden sm:inline text-[9px] font-black uppercase tracking-[0.18em] text-amber-300">
               READY OFFLINE
             </span>
           </div>
 
           {/* Multi-dataset tabs */}
           {datasets.length > 1 ? (
-            <div className="flex items-center gap-0.5 bg-slate-200/50 dark:bg-white/[0.04] rounded-lg p-0.5 border border-slate-350 dark:border-white/[0.06]">
+            <div className="flex items-center gap-0.5 bg-black/40 rounded-lg p-0.5 border border-amber-500/20">
               {datasets.slice(0, 4).map((d: any, i: number) => (
                 <button
                   key={i}
@@ -356,8 +394,8 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
                   aria-label={`Switch to dataset ${d.name ?? `Kit ${i + 1}`}`}
                   className={`px-2.5 py-1 rounded-md text-[9px] font-black uppercase tracking-wider transition-[background-color,color] duration-150 active:scale-[0.96] ${
                     activeDatasetIndex === i
-                      ? 'bg-teal-500/20 text-teal-700 dark:text-teal-300'
-                      : 'text-slate-550 dark:text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'
+                      ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                      : 'text-zinc-400 hover:text-zinc-200'
                   }`}
                   style={{ fontVariantNumeric: 'tabular-nums' }}
                 >
@@ -373,9 +411,9 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
               onClick={() => onOpenMethodology('methodology')}
               aria-label="Scientific Methodology Hub"
               title="Open Scientific Methodology Hub"
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/20 hover:border-indigo-500/40 text-indigo-400 hover:text-indigo-300 transition-all text-[9px] font-mono font-black uppercase tracking-[0.15em] active:scale-[0.96]"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-500/50 text-amber-300 hover:text-amber-200 transition-all text-[9px] font-mono font-black uppercase tracking-[0.15em] active:scale-[0.96]"
             >
-              <BookOpen className="w-3 h-3 text-indigo-400" />
+              <BookOpen className="w-3 h-3 text-amber-400" />
               <span className="hidden md:inline">Methodology</span>
             </button>
           )}
@@ -385,7 +423,7 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
             onClick={onReset}
             aria-label="Clear all data and reset"
             title="Clear session"
-            className="p-2 rounded-lg border border-slate-300 dark:border-white/[0.06] text-slate-500 hover:text-rose-600 hover:border-rose-500/30 transition-[color,border-color] duration-150 active:scale-[0.96] dark:text-slate-400"
+            className="p-2 rounded-lg border border-white/[0.08] text-zinc-400 hover:text-rose-400 hover:border-rose-500/30 transition-[color,border-color] duration-150 active:scale-[0.96]"
           >
             <Trash2 className="w-3.5 h-3.5" />
           </button>
@@ -393,15 +431,15 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
       </div>
 
       {/* Bottom tagline stripe */}
-      <div className="relative px-4 sm:px-6 pb-2 flex items-center justify-between">
-        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-700 dark:text-slate-300">
+      <div className="relative px-4 sm:px-6 pb-2 flex items-center justify-between border-t border-white/[0.04]">
+        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-400">
           GENOTYPE SCOUT • 100% CLIENT-SIDE GENOMIC ANALYSIS • ZERO SERVER UPLOAD
         </p>
         <p
-          className="text-[8px] font-mono text-slate-700 tracking-[0.1em] dark:text-slate-300"
+          className="text-[8px] font-mono text-amber-400/80 tracking-[0.1em]"
           style={{ fontVariantNumeric: 'tabular-nums' }}
         >
-          V5.13.0
+          V5.19.0
         </p>
       </div>
     </header>
@@ -424,22 +462,17 @@ const SidebarNavItem: React.FC<SidebarNavItemProps> = ({ mod, isActive, collapse
     title={mod.name}
     className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-[background-color,color] duration-150 active:scale-[0.96] group ${
       isActive
-        ? 'bg-teal-500/10 text-teal-300'
-        : 'text-slate-500 dark:text-slate-200 hover:bg-slate-150 dark:hover:bg-white/[0.04] hover:text-slate-800 dark:hover:text-slate-100'
+        ? 'bg-amber-500/10 text-amber-300 border-l-2 border-amber-500'
+        : 'text-zinc-400 hover:bg-white/[0.04] hover:text-zinc-100'
     }`}
     style={{ transitionProperty: 'background-color, color, transform' }}
   >
-    <div
-      className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-gradient-to-tr ${mod.gradient} shadow-sm`}
-      style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
-    >
-      <mod.icon className="w-4 h-4 text-white" aria-hidden="true" />
-    </div>
+    <GoldIcon icon={mod.icon} size="sm" />
     {collapsed ? null : (
       <span className="text-sm font-bold truncate text-left flex-1">{mod.name}</span>
     )}
     {isActive && !collapsed ? (
-      <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" aria-hidden="true" />
+      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_#f59e0b] shrink-0" aria-hidden="true" />
     ) : null}
   </button>
 );
@@ -455,25 +488,25 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onToggle }) => (
   <aside
-    className={`hidden lg:flex flex-col shrink-0 border-r border-slate-200 dark:border-white/[0.06] bg-slate-50 dark:bg-[#09090b] overflow-hidden transition-[width] duration-200 ${
+    className={`hidden lg:flex flex-col shrink-0 border-r border-amber-500/15 bg-[#09090b] overflow-hidden transition-[width] duration-200 ${
       collapsed ? 'w-[64px]' : 'w-[240px]'
     }`}
     aria-label="Module navigation"
   >
     {/* Home button */}
-    <div className="p-2 border-b border-slate-200 dark:border-white/[0.06]">
+    <div className="p-2 border-b border-white/[0.06]">
       <button
         onClick={() => onSelect('__home__')}
         aria-label="Back to module launcher"
         title="Module Launcher"
         className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-[background-color,color] duration-150 active:scale-[0.96] ${
           activeId === null
-            ? 'bg-slate-200/60 dark:bg-white/[0.06] text-slate-800 dark:text-slate-250'
-            : 'text-slate-500 dark:text-slate-200 hover:bg-slate-150 dark:hover:bg-white/[0.04] hover:text-slate-800 dark:hover:text-slate-100'
+            ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30'
+            : 'text-zinc-400 hover:bg-white/[0.04] hover:text-zinc-100'
         }`}
         style={{ transitionProperty: 'background-color, color, transform' }}
       >
-        <Home className="w-4 h-4 shrink-0" aria-hidden="true" />
+        <Home className="w-4 h-4 shrink-0 text-amber-400" aria-hidden="true" />
         {collapsed ? null : (
           <span className="text-sm font-bold">All Modules</span>
         )}
@@ -483,8 +516,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
     {/* Primary nav */}
     <div className="flex-1 overflow-y-auto p-2 space-y-0.5 scrollbar-none">
       {collapsed ? null : (
-        <p className="px-2.5 pt-1 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-500 dark:text-slate-300">
-          Primary
+        <p className="px-2.5 pt-1 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-amber-400/70">
+          Core Workflows
         </p>
       )}
       {PRIMARY_NAV.map(mod => (
@@ -498,8 +531,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
       ))}
 
       {collapsed ? null : (
-        <p className="px-2.5 pt-3 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-slate-700 dark:text-slate-300">
-          Tools
+        <p className="px-2.5 pt-3 pb-1.5 text-[8px] font-black uppercase tracking-[0.25em] text-zinc-500">
+          Genomic Tools
         </p>
       )}
       {MODULES.filter(m => m.navGroup === 'secondary').map(mod => (
@@ -514,11 +547,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeId, collapsed, onSelect, onTogg
     </div>
 
     {/* Collapse toggle */}
-    <div className="p-2 border-t border-slate-200 dark:border-white/[0.06]">
+    <div className="p-2 border-t border-white/[0.06]">
       <button
         onClick={onToggle}
         aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        className="w-full flex items-center justify-center p-2 rounded-xl text-slate-550 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-slate-150 dark:hover:bg-white/[0.04] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400"
+        className="w-full flex items-center justify-center p-2 rounded-xl text-zinc-400 hover:text-zinc-200 hover:bg-white/[0.04] transition-[color,background-color] duration-150 active:scale-[0.96]"
         style={{ transitionProperty: 'color, background-color, transform' }}
       >
         {collapsed ? (
@@ -544,7 +577,7 @@ const BottomNavItem: React.FC<BottomNavItemProps> = ({ mod, isActive, onSelect }
     onClick={onSelect}
     aria-label={mod.name}
     className={`flex flex-col items-center justify-center gap-1 flex-1 min-w-[44px] min-h-[44px] transition-[color] duration-150 active:scale-[0.96] ${
-      isActive ? 'text-teal-400' : 'text-slate-600 hover:text-slate-400'
+      isActive ? 'text-amber-400' : 'text-zinc-500 hover:text-zinc-300'
     }`}
     style={{ transitionProperty: 'color, transform' }}
   >
@@ -564,7 +597,7 @@ interface BottomNavProps {
 
 const BottomNav: React.FC<BottomNavProps> = ({ activeId, onSelect }) => (
   <nav
-    className="lg:hidden fixed bottom-0 left-0 right-0 z-40 flex items-stretch bg-[#09090b]/95 backdrop-blur-xl border-t border-white/[0.06]"
+    className="lg:hidden fixed bottom-0 left-0 right-0 z-40 flex items-stretch bg-[#09090b]/95 backdrop-blur-xl border-t border-amber-500/20"
     style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     aria-label="Primary navigation"
   >
@@ -573,7 +606,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeId, onSelect }) => (
       onClick={() => onSelect('__home__')}
       aria-label="All Modules"
       className={`flex flex-col items-center justify-center gap-1 flex-1 min-w-[44px] min-h-[44px] transition-[color] duration-150 active:scale-[0.96] ${
-        activeId === null ? 'text-teal-400' : 'text-slate-600 hover:text-slate-400'
+        activeId === null ? 'text-amber-400' : 'text-zinc-500 hover:text-zinc-300'
       }`}
       style={{ transitionProperty: 'color, transform' }}
     >
@@ -594,7 +627,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeId, onSelect }) => (
     <button
       onClick={() => onSelect('__more__')}
       aria-label="More modules"
-      className="flex flex-col items-center justify-center gap-1 flex-1 min-w-[44px] min-h-[44px] text-slate-600 hover:text-slate-400 transition-[color] duration-150 active:scale-[0.96] dark:text-slate-400"
+      className="flex flex-col items-center justify-center gap-1 flex-1 min-w-[44px] min-h-[44px] text-zinc-500 hover:text-zinc-300 transition-[color] duration-150 active:scale-[0.96]"
       style={{ transitionProperty: 'color, transform' }}
     >
       <MoreHorizontal className="w-5 h-5" aria-hidden="true" />
@@ -618,34 +651,29 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ mod, index, onSelect }) => (
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{
-      delay: index * 0.03,
+      delay: index * 0.025,
       duration: 0.22,
       ease: [0.2, 0, 0, 1],
     }}
-    className="group tactile-3d-card flex flex-col items-center justify-between p-4 sm:p-5 cursor-pointer text-left w-full h-full min-h-[175px] border border-white/10 hover:border-teal-500/40"
+    className="group gs-tile flex flex-col items-center justify-between p-4 sm:p-5 cursor-pointer text-left w-full h-full min-h-[185px]"
   >
     <div className="flex flex-col items-center text-center w-full">
-      <div
-        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0 shadow-lg`}
-        style={{
-          boxShadow: `0 8px 20px -4px ${mod.glowColor}, 0 0 0 1px rgba(255,255,255,0.15)`,
-        }}
-      >
-        <mod.icon className="w-6 h-6 text-white drop-shadow-md" aria-hidden="true" />
-      </div>
+      <GoldIcon icon={mod.icon} size="md" showLed={mod.navGroup === 'primary'} />
       <h3
-        className="font-display text-sm font-black text-slate-200 group-hover:text-white transition-colors text-center mt-2 leading-tight"
+        className="font-display text-sm font-black text-zinc-100 group-hover:text-amber-200 transition-colors text-center mt-3 leading-tight"
         style={{ textWrap: 'balance' } as React.CSSProperties}
       >
         {mod.name}
       </h3>
-      <p className="text-[11px] text-slate-400 group-hover:text-slate-300 line-clamp-2 text-center mt-1 font-medium leading-snug">
+      <p className="text-[11px] text-zinc-400 group-hover:text-zinc-300 line-clamp-2 text-center mt-1.5 font-medium leading-snug">
         {mod.description}
       </p>
     </div>
-    <span className="text-[8px] font-mono font-bold uppercase tracking-widest text-teal-400/80 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded-full mt-2">
-      [LOCAL KERNEL]
-    </span>
+    <div className="mt-3 flex items-center gap-1.5">
+      <span className="gs-gold-badge">
+        [LOCAL ENGINE]
+      </span>
+    </div>
   </motion.button>
 );
 
@@ -656,20 +684,58 @@ interface AppLauncherGridProps {
   onSelectModule: (id: string) => void;
 }
 
+const CATEGORIES = [
+  { id: 'all', label: 'All Modules' },
+  { id: 'ancestry', label: 'Ancestry & Oracle' },
+  { id: 'lineage', label: 'Lineage & Ancient' },
+  { id: 'health', label: 'Health & Traits' },
+  { id: 'tools', label: 'Genomic Tools' },
+];
+
 const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelectModule }) => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
   const filtered = useMemo(() => {
+    let list = MODULES;
+    if (selectedCategory === 'ancestry') {
+      list = list.filter(m => ['ancestry_oracle', 'glossary', 'chromosome_painter', 'ancestry_scout'].includes(m.id));
+    } else if (selectedCategory === 'lineage') {
+      list = list.filter(m => ['haplogroups', 'ancient_dna'].includes(m.id));
+    } else if (selectedCategory === 'health') {
+      list = list.filter(m => ['health', 'traits', 'blood'].includes(m.id));
+    } else if (selectedCategory === 'tools') {
+      list = list.filter(m => ['markers', 'rare_variants', 'kit_comparison', 'methodology', 'profile'].includes(m.id));
+    }
+
     const q = searchQuery.toLowerCase();
     return q
-      ? MODULES.filter(
+      ? list.filter(
           m =>
             m.name.toLowerCase().includes(q) ||
             m.description.toLowerCase().includes(q)
         )
-      : MODULES;
-  }, [searchQuery]);
+      : list;
+  }, [searchQuery, selectedCategory]);
 
   return (
-    <div style={{ contentVisibility: 'auto' }}>
+    <div style={{ contentVisibility: 'auto' }} className="space-y-5">
+      {/* Category Pills */}
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+        {CATEGORIES.map(cat => (
+          <button
+            key={cat.id}
+            onClick={() => setSelectedCategory(cat.id)}
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 active:scale-[0.96] ${
+              selectedCategory === cat.id
+                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm shadow-amber-500/10'
+                : 'bg-black/30 hover:bg-white/[0.05] text-zinc-400 hover:text-zinc-200 border border-white/[0.06]'
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
       {filtered.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-4">
           {filtered.map((mod, i) => (
@@ -683,8 +749,8 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-20 gap-3">
-          <p className="text-slate-500 font-bold text-sm dark:text-slate-400">No modules match</p>
-          <p className="text-xs font-mono text-slate-700 dark:text-slate-300">"{searchQuery}"</p>
+          <p className="text-zinc-400 font-bold text-sm">No modules match</p>
+          <p className="text-xs font-mono text-amber-400">"{searchQuery}"</p>
         </div>
       )}
     </div>
@@ -700,33 +766,27 @@ interface ModuleViewHeaderProps {
 }
 
 const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack, onOpenMethodology }) => (
-  <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b border-white/[0.06] bg-[#09090b]/60 shrink-0">
+  <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b border-amber-500/15 bg-[#09090b]/80 shrink-0">
     <div className="flex items-center gap-3 min-w-0">
       <button
         onClick={onBack}
         aria-label="Back to module launcher"
-        className="p-1.5 rounded-lg text-slate-500 hover:text-slate-200 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] dark:text-slate-400 shrink-0"
+        className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] shrink-0"
         style={{ transitionProperty: 'color, background-color, transform' }}
       >
         <ArrowLeft className="w-4 h-4" aria-hidden="true" />
       </button>
 
-      <div
-        className={`w-6 h-6 rounded-lg bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0`}
-        style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
-        aria-hidden="true"
-      >
-        <mod.icon className="w-3.5 h-3.5 text-white" />
-      </div>
+      <GoldIcon icon={mod.icon} size="sm" />
 
       <div className="min-w-0">
         <h2
-          className="text-sm font-black text-slate-200 leading-none truncate"
+          className="text-sm font-black text-zinc-100 leading-none truncate"
           style={{ textWrap: 'balance' } as React.CSSProperties}
         >
           {mod.name}
         </h2>
-        <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.18em] mt-0.5 dark:text-slate-400 max-w-xl truncate">
+        <p className="text-[9px] font-bold text-zinc-400 uppercase tracking-[0.18em] mt-0.5 max-w-xl truncate">
           {mod.description}
         </p>
       </div>
@@ -737,9 +797,9 @@ const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack, onOpen
         onClick={() => onOpenMethodology(mod.id)}
         aria-label={`View methodology and documentation for ${mod.name}`}
         title="Open Methodology & Scientific Documentation"
-        className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-500/50 text-cyan-400 hover:text-cyan-300 transition-all text-xs font-mono font-bold uppercase tracking-wider shrink-0 active:scale-[0.96] shadow-sm shadow-cyan-500/10"
+        className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-500/50 text-amber-300 hover:text-amber-200 transition-all text-xs font-mono font-bold uppercase tracking-wider shrink-0 active:scale-[0.96] shadow-sm shadow-amber-500/10"
       >
-        <BookOpen className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+        <BookOpen className="w-3.5 h-3.5 text-amber-400 shrink-0" />
         <span className="hidden sm:inline">Methodology & Info</span>
         <span className="sm:hidden">Info</span>
       </button>
@@ -760,18 +820,18 @@ const EmptyState: React.FC<EmptyStateProps> = ({ onUploadNew }) => (
     transition={{ duration: 0.3, ease: [0.2, 0, 0, 1] }}
     className="flex flex-col items-center justify-center h-full gap-6 py-20"
   >
-    <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-teal-500/20 to-teal-400/10 flex items-center justify-center border border-teal-500/20">
-      <Dna className="w-10 h-10 text-teal-500/60" aria-hidden="true" />
+    <div className="w-20 h-20 rounded-3xl bg-gradient-to-tr from-amber-500/20 to-amber-400/10 flex items-center justify-center border border-amber-500/30 shadow-lg shadow-amber-500/10">
+      <Dna className="w-10 h-10 text-amber-400" aria-hidden="true" />
     </div>
     <div className="text-center space-y-2">
       <h2
-        className="text-xl font-black text-slate-300"
+        className="text-xl font-black text-zinc-100"
         style={{ textWrap: 'balance' } as React.CSSProperties}
       >
         No Dataset Loaded
       </h2>
       <p
-        className="text-sm text-slate-500 max-w-xs dark:text-slate-400"
+        className="text-sm text-zinc-400 max-w-xs"
         style={{ textWrap: 'pretty' } as React.CSSProperties}
       >
         Load a raw DNA file to unlock all genomic analysis modules.
@@ -779,7 +839,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ onUploadNew }) => (
     </div>
     <button
       onClick={onUploadNew}
-      className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white text-sm font-black uppercase tracking-widest rounded-xl shadow-lg shadow-teal-900/30 transition-[background-color] duration-150 active:scale-[0.96]"
+      className="px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black text-sm font-black uppercase tracking-widest rounded-xl shadow-lg shadow-amber-950/40 transition-[background-color] duration-150 active:scale-[0.96]"
       style={{ transitionProperty: 'background-color, transform' }}
     >
       Load New Dataset

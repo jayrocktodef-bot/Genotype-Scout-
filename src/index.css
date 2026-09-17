@@ -105,22 +105,39 @@
   --bg-card: #ffffff;        
   --text-primary: #0f172a;   
   --text-secondary: #475569; 
-  --accent: #1e40af;         
+  --accent: #d97706;         
   --accent-foreground: #ffffff; 
-  --accent-soft: #eff6ff;    
+  --accent-soft: #fffbeb;    
   --border-soft: #e2e8f0;    
+
+  /* Written In The Genome Design System Tokens */
+  --gs-obsidian: #09090b;
+  --gs-surface: #101014;
+  --gs-surface-elevated: #16161c;
+  --gs-surface-card: #121217;
+  --gs-border-subtle: rgba(255, 255, 255, 0.07);
+  --gs-gold: #f59e0b;
+  --gs-gold-bright: #fbbf24;
+  --gs-gold-pale: #fde68a;
+  --gs-gold-champagne: #fef08a;
+  --gs-gold-deep: #78350f;
+  --gs-gold-hairline: rgba(244, 215, 136, 0.16);
+  --gs-gold-hairline-bright: rgba(251, 191, 36, 0.4);
+  --gs-gold-glow: rgba(245, 158, 11, 0.2);
+  --gs-teal: #2dd4bf;
+  --gs-teal-glow: rgba(45, 212, 191, 0.25);
 }
 
-/* Dark mode palette */
+/* Dark mode palette — Written In The Genome Obsidian & Gold */
 html.dark {
-  --bg-main: #030712;
-  --bg-card: #0f172a;       /* slightly lighter card for subtle separation */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent: #14b8a6;
-  --accent-foreground: #030712;
-  --accent-soft: #042f2e;
-  --border-soft: #1e293b;
+  --bg-main: #09090b;
+  --bg-card: #121217;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --accent: #f59e0b;
+  --accent-foreground: #09090b;
+  --accent-soft: #271a0c;
+  --border-soft: rgba(255, 255, 255, 0.08);
 }
 
 /* Base reset – removes all previous !important hacks */
@@ -394,6 +411,144 @@ html:not(.dark) .tactile-3d-card:active {
     inset 2px 2px 4px 0px rgba(0, 0, 0, 0.12),
     inset -1px -1px 1px 0px rgba(255, 255, 255, 0.6),
     0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* --------------------------------------------------------
+   SLEEK TACTILE 3D GOLD-TRIMMED ICONS & TILES
+   Written In The Genome Aesthetic
+   -------------------------------------------------------- */
+
+.gs-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.125rem;
+  border: 1.5px solid transparent;
+  background-image: 
+    radial-gradient(circle at 35% 25%, #24211a 0%, #15130f 45%, #0b0a08 100%),
+    linear-gradient(135deg, #fbbf24 0%, #d97706 35%, #78350f 70%, #fde68a 100%);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 
+    inset 0 1.5px 0 rgba(254, 243, 199, 0.4),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.8),
+    0 4px 14px -2px rgba(0, 0, 0, 0.75),
+    0 0 14px rgba(245, 158, 11, 0.16);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1),
+              filter 0.2s ease;
+  transform: translate3d(0, 0, 0);
+}
+
+.gs-icon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.22), transparent 70%);
+  z-index: -1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.group:hover .gs-icon,
+.gs-icon:hover {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 
+    inset 0 1.5px 0 rgba(254, 243, 199, 0.6),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.8),
+    0 8px 20px -3px rgba(0, 0, 0, 0.85),
+    0 0 22px rgba(251, 191, 36, 0.32);
+}
+
+.group:hover .gs-icon::after,
+.gs-icon:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.gs-icon:active,
+.group:active .gs-icon {
+  transform: translate3d(0, 1px, 0) scale(0.98);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.9),
+    0 2px 6px rgba(0, 0, 0, 0.6),
+    0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+/* Machined precision LED indicator */
+.gs-icon__led {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #2dd4bf;
+  border: 1.5px solid #09090b;
+  box-shadow: 0 0 8px #2dd4bf, 0 0 2px #5eead4;
+  z-index: 10;
+}
+
+/* Tactile 3D Launcher Tile (Written In The Genome Blog Spec) */
+.gs-tile {
+  position: relative;
+  background: linear-gradient(180deg, #131318 0%, #0d0d11 100%);
+  border: 1px solid rgba(244, 215, 136, 0.12);
+  border-radius: 1.25rem;
+  box-shadow: 
+    inset 0 1px 0 rgba(244, 215, 136, 0.18),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.6),
+    0 6px 18px -4px rgba(0, 0, 0, 0.65),
+    0 2px 6px -2px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1),
+              border-color 0.2s ease,
+              background 0.2s ease;
+  transform: translate3d(0, 0, 0);
+}
+
+.gs-tile:hover {
+  transform: translate3d(0, -3px, 0);
+  border-color: rgba(251, 191, 36, 0.38);
+  background: linear-gradient(180deg, #171720 0%, #101015 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(254, 243, 199, 0.3),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.5),
+    0 16px 32px -8px rgba(0, 0, 0, 0.75),
+    0 0 20px rgba(245, 158, 11, 0.12);
+}
+
+.gs-tile:active {
+  transform: translate3d(0, 1px, 0) scale(0.99);
+  box-shadow: 
+    inset 0 2px 5px rgba(0, 0, 0, 0.7),
+    0 3px 8px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Sleek gold text and accents */
+.gs-gold-gradient-text {
+  background: linear-gradient(135deg, #fde68a 0%, #fbbf24 45%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gs-gold-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  background: rgba(245, 158, 11, 0.08);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.22);
 }
 
 /* Text Luminous Boost in dark mode */

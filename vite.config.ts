@@ -14,13 +14,13 @@ export default defineConfig(({mode}) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['icon-192.png', 'icon-512.png'],
+        includeAssets: ['icon-192.png', 'icon-512.png', 'icon-gold.svg'],
         manifest: {
           name: 'Genotype Scout — Privacy-First DNA Analysis',
           short_name: 'Genotype Scout',
           description: 'Privacy-first genomic analysis — ancestry, health, and haplogroups computed 100% in your browser. No uploads, no servers.',
-          theme_color: '#0d9488',
-          background_color: '#f8fafc',
+          theme_color: '#09090b',
+          background_color: '#09090b',
           display: 'standalone',
           orientation: 'portrait',
           scope: '/',

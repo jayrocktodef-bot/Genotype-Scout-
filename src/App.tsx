@@ -3009,12 +3009,13 @@ export default function App() {
   }, [datasets, activeDatasetIndex]);
 
   return (
-    <div className={`bg-background text-foreground font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh bg-[#05070a]' : ''}`}>
-      {/* Dynamic Premium Mesh Background (Active results mode only) */}
+    <div className={`bg-background text-foreground font-sans relative overflow-x-hidden ${!results ? 'min-h-dvh bg-[#09090b]' : 'bg-[#09090b]'}`}>
+      {/* Dynamic Obsidian & Genomic Gold Ambient Mesh (Written In The Genome Theme) */}
       {results && (
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-teal-400/10 rounded-full blur-[120px] mix-blend-multiply opacity-50 animate-pulse-soft"></div>
-          <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-sky-400/10 rounded-full blur-[150px] mix-blend-multiply opacity-50"></div>
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-amber-500/5 rounded-full blur-[140px] opacity-60 animate-pulse-soft"></div>
+          <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-amber-600/5 rounded-full blur-[160px] opacity-40"></div>
+          <div className="absolute top-[40%] right-[15%] w-[30%] h-[30%] bg-teal-500/[0.03] rounded-full blur-[120px] opacity-50"></div>
         </div>
       )}
       <div className="relative z-10">
