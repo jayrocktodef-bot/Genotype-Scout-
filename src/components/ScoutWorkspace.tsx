@@ -4,7 +4,7 @@ import {
   User, Globe, History, HeartPulse, Database, BookOpen,
   Zap, Droplet, Dna, Sparkles, Trash2, Users,
   ChevronLeft, ChevronRight, WifiOff, Home, MoreHorizontal,
-  Play, ArrowLeft, Search, X
+  Play, ArrowLeft, Search, X, ShieldCheck
 } from 'lucide-react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -15,7 +15,7 @@ export interface AppConfig {
   icon: React.ComponentType<any>;
   gradient: string;
   glowColor: string;
-  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'kit_comparison' | 'clear_cache';
+  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'kit_comparison' | 'clear_cache' | 'integrity';
   targetSubTab?: string;
   description: string;
   imageUrl?: string;
@@ -191,6 +191,17 @@ const MODULES: AppConfig[] = [
     targetTab: 'kit_comparison',
     description: 'Side-by-side comparison of multiple kits, traits, and ancestry.',
     imageUrl: '/assets/kit_comparison_icon.png',
+    navGroup: 'secondary',
+  },
+  {
+    id: 'integrity',
+    name: 'File & QC Integrity',
+    icon: ShieldCheck,
+    gradient: 'from-amber-500 to-amber-700',
+    glowColor: 'rgba(245,158,11,0.45)',
+    targetTab: 'integrity',
+    description: 'Diagnostic audit of genotyping call rate, marker coverage, and file integrity.',
+    imageUrl: '/assets/markers_icon.png',
     navGroup: 'secondary',
   },
   {
@@ -704,7 +715,7 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
     } else if (selectedCategory === 'health') {
       list = list.filter(m => ['health', 'traits', 'blood'].includes(m.id));
     } else if (selectedCategory === 'tools') {
-      list = list.filter(m => ['markers', 'rare_variants', 'kit_comparison', 'methodology', 'profile'].includes(m.id));
+      list = list.filter(m => ['markers', 'rare_variants', 'kit_comparison', 'integrity', 'methodology', 'profile'].includes(m.id));
     }
 
     const q = searchQuery.toLowerCase();

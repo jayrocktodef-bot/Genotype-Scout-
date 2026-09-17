@@ -582,6 +582,56 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     }
   },
 
+  integrity: {
+    id: 'integrity',
+    title: 'File & QC Integrity Engine',
+    category: 'TOOLS',
+    custodian: {
+      name: 'Dr. Eric Lander',
+      role: 'Genomic Quality Control & Pipeline Verification Lead',
+      avatarUrl: '/assets/markers_icon.png',
+      dispatch: 'Genomic data integrity is the foundational bedrock of all downstream biological inference. Before interpreting ancestry or polygenic risk, we audit variant call rates, missingness, and karyotypic coverage to ensure analytical fidelity.'
+    },
+    explainer: {
+      headline: 'Verifies the quality, completeness, and platform authenticity of your raw DNA file.',
+      analogy: 'Like a master mechanic inspecting an engine before a race: checking that all cylinders are firing, no parts are missing, and the fuel mixture is pure.',
+      howWeGotYourResults: [
+        'Audited all variant loci to calculate the exact genotyping call rate (percentage of non-missing calls).',
+        'Analyzed diploid heterozygosity to verify sample purity and rule out cross-contamination.',
+        'Mapped variant distribution across all 22 autosomes, sex chromosomes (X, Y), and mitochondrial DNA.',
+        'Fingerprinted the microarray chip architecture and reference genome build (GRCh37 vs GRCh38).'
+      ],
+      whatItMeansForYou: 'Assures you that your DNA file was scanned successfully by the sequencing laboratory with research-grade fidelity (≥ 98% call rate).',
+      caveatsAndNuance: 'Different testing companies utilize different array chips (e.g., Illumina OmniExpress vs GSA-24). Variations in total marker count reflect chip design rather than data loss.'
+    },
+    technical: {
+      solverEngine: 'Bioinformatic Quality Control & Karyotype Diagnostic Kernel',
+      description: 'Executes comprehensive sample-level quality control conforming to standard international consortium guidelines (Broad Institute / 1000 Genomes QC protocols), auditing call rates, inbreeding coefficients, and chromosomal distributions.',
+      formulas: [
+        {
+          label: 'Genotyping Call Rate (CR)',
+          equation: 'CR = (N_valid / N_total) × 100%',
+          explanation: 'Percentage of targeted loci with unambiguous allele calls. Standard academic threshold is ≥ 98.0%.'
+        },
+        {
+          label: 'Observed Heterozygosity (H_obs)',
+          equation: 'H_obs = N_het / N_valid',
+          explanation: 'Proportion of heterozygous positions. Normal human outbred band is 28.0% – 36.0%; values > 38% suggest contamination.'
+        }
+      ],
+      metrics: [
+        { label: 'Quality Standard', value: '≥ 98% Call Rate Benchmark' },
+        { label: 'Purity Check', value: 'Heterozygosity & Inbreeding Verification' },
+        { label: 'Karyotype Coverage', value: 'Autosomes 1-22 + X/Y/MT' }
+      ],
+      references: [
+        'Anderson et al. (Nature Protocols, 2010) - Data quality control in genetic association studies',
+        'Laurie et al. (Genet Epidemiol, 2010) - Quality control and quality assurance in GWAS consortia',
+        'Purcell et al. (Am J Hum Genet, 2007) - PLINK whole genome association analysis toolset'
+      ]
+    }
+  },
+
   methodology: {
     id: 'methodology',
     title: 'Methodology, Privacy & Mathematical Foundations',

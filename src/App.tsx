@@ -101,6 +101,7 @@ import AdBanner from "./components/AdBanner";
 import { Phase2Badge } from "./components/Phase2Badge";
 import { Phase2Panel } from "./components/Phase2Panel";
 import { KitComparisonModule } from './components/KitComparisonModule';
+const IntegrityModule = lazy(() => import("./components/IntegrityModule"));
 const RareVariantsView = lazy(() => import("./components/RareVariantsView"));
 import { HaplogroupBento } from "./components/HaplogroupBento";
 import { YDNABento } from "./components/YDNABento";
@@ -2295,7 +2296,7 @@ export default function App() {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [expandedSnps, setExpandedSnps] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'kit_comparison'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'desktop' | 'kit_comparison' | 'integrity'>('dashboard');
   const [currentApp, setCurrentApp] = useState<string | null>(null);
 
   const [activeAncestrySubTab, setActiveAncestrySubTab] = useState<'oracle' | 'painter' | 'scout'>('oracle');
@@ -3562,6 +3563,18 @@ export default function App() {
                 <KitComparisonModule 
                   datasets={datasets} 
                   onOpenMethodology={() => handleOpenMethodology('kit_comparison')}
+                />
+              </div>
+            )}
+
+            {currentApp === 'integrity' && (
+              <div className="space-y-8 animate-fade-in">
+                <IntegrityModule 
+                  dataset={datasets[activeDatasetIndex]}
+                  datasets={datasets}
+                  activeDatasetIndex={activeDatasetIndex}
+                  setActiveDatasetIndex={setActiveDatasetIndex}
+                  onOpenMethodology={() => handleOpenMethodology('integrity')}
                 />
               </div>
             )}
