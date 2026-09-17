@@ -1,13 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Upload, Shield, Database, Lock, ArrowRight, Dna, 
-  Sparkles, Volume2, VolumeX, Monitor, 
-  Disc, Check, AlertCircle, RefreshCw, Layers
+  Upload, ShieldCheck, Database, Lock, Dna, 
+  Check, RefreshCw, Layers, Cpu, WifiOff, 
+  FlaskConical, ExternalLink, FileSpreadsheet,
+  CheckCircle2, ArrowRight, ShieldAlert, Sparkles
 } from 'lucide-react';
-import { SFX } from '../utils/audio/retroSynth';
-import { CRTOverlay } from './retro/CRTOverlay';
-import { RetroDNAHelix } from './retro/RetroDNAHelix';
 
 interface HeroUploadProps {
   onFiles: (files: FileList | File[]) => void;
@@ -15,65 +13,20 @@ interface HeroUploadProps {
   onReset: () => void;
 }
 
-type TabType = 'privacy' | 'database' | 'offline';
-
-const TERMINAL_BOOT_LINES = [
-  '> SYSTEM KERNEL INITIALIZED ...... [0x7F4A] OK',
-  '> LOADING 17,042 PHASED AIMS ...... [KIDD/1000G] OK',
-  '> POPULATION DECONVOLUTION ENGINE .. [MATRIX-K] READY',
-  '> CHROMOSOME Y PHYLOTREE INDEX .... [MSY-TREE] MOUNTED',
-  '> NETWORK EGRESS FIREWALL ......... [AIR-GAPPED: 0 BYTES]',
-  '> CLIENT INDEXEDDB SANDBOX ........ [ISOLATED] OK',
-  '> READY FOR SPECIMEN CARTRIDGE INSERTION ...'
-];
+type TabType = 'privacy' | 'compatibility' | 'offline';
 
 export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isDragActive, setIsDragActive] = useState(false);
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabType>('privacy');
-  const [isMuted, setIsMuted] = useState<boolean>(() => SFX.isMuted());
-  const [crtEnabled, setCrtEnabled] = useState<boolean>(() => {
-    try {
-      const stored = localStorage.getItem('scout_crt_effect');
-      return stored === 'true';
-    } catch {
-      return false;
-    }
-  });
   const [isLoadingDemo, setIsLoadingDemo] = useState(false);
-  const [bootLineIdx, setBootLineIdx] = useState(0);
-
-  // Cycle simulated terminal lines
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setBootLineIdx((prev) => (prev + 1) % TERMINAL_BOOT_LINES.length);
-    }, 2800);
-    return () => clearInterval(timer);
-  }, []);
-
-  const toggleSound = () => {
-    const nowMuted = SFX.toggleMute();
-    setIsMuted(nowMuted);
-  };
-
-  const toggleCrt = () => {
-    const next = !crtEnabled;
-    setCrtEnabled(next);
-    try {
-      localStorage.setItem('scout_crt_effect', String(next));
-    } catch {}
-    SFX.select();
-  };
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (e.type === 'dragenter' || e.type === 'dragover') {
-      if (!isDragActive) {
-        setIsDragActive(true);
-        SFX.hover();
-      }
+      if (!isDragActive) setIsDragActive(true);
     } else if (e.type === 'dragleave') {
       setIsDragActive(false);
     }
@@ -87,7 +40,6 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
       setSelectedFileName(file.name);
-      SFX.cartridgeInsert();
       onFiles(e.dataTransfer.files);
     }
   };
@@ -96,7 +48,6 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
       setSelectedFileName(file.name);
-      SFX.cartridgeInsert();
       onFiles(e.target.files);
       e.target.value = '';
     }
@@ -105,42 +56,49 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   const handleZoneClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    SFX.select();
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
       fileInputRef.current.click();
     }
   };
 
-  const handleLoadDemoCartridge = async (e: React.MouseEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+        fileInputRef.current.click();
+      }
+    }
+  };
+
+  const handleLoadDemoSpecimen = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (isLoadingDemo) return;
 
     try {
       setIsLoadingDemo(true);
-      SFX.coin();
       const response = await fetch('/samples/Iberian_Portuguese_hu33FC53.txt');
-      if (!response.ok) throw new Error('Demo sample file not found');
+      if (!response.ok) throw new Error('Benchmark specimen file not found');
       const blob = await response.blob();
       const file = new File([blob], 'Iberian_Portuguese_hu33FC53.txt', { type: 'text/plain' });
       setSelectedFileName(file.name);
-      SFX.cartridgeInsert();
       onFiles([file]);
     } catch (err) {
-      console.error('Could not load demo specimen:', err);
-      SFX.error();
+      console.error('Could not load benchmark specimen:', err);
     } finally {
       setIsLoadingDemo(false);
     }
   };
 
   const handleClearCache = () => {
-    SFX.select();
-    if (window.confirm("PURGE LOCAL ROM MEMORY & CACHE?\n\nThis resets all IndexedDB genomes and unregisters client service workers.")) {
+    if (window.confirm("PURGE CLIENT WORKSPACE & CACHE?\n\nThis permanently clears all indexed genomes in client IndexedDB and unregisters service workers. Your raw files remain safe on your device.")) {
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for(let registration of registrations) { registration.unregister(); }
+          for (const registration of registrations) { 
+            registration.unregister(); 
+          }
         });
       }
       if ('caches' in window) {
@@ -155,9 +113,9 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   };
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-start py-8 px-4 sm:px-6 relative overflow-hidden bg-[#05070a] text-slate-200 select-none">
-      {/* CRT Scanline & Phosphor Overlay */}
-      <CRTOverlay enabled={crtEnabled} />
+    <div className="min-h-[85vh] flex flex-col items-center justify-start py-6 sm:py-10 px-4 sm:px-6 relative overflow-hidden bg-[#09090b] text-zinc-100">
+      {/* Subtle Background Radial Gradient */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-teal-500/10 via-amber-500/5 to-transparent blur-3xl pointer-events-none" />
 
       {/* Hidden File Input */}
       <input 
@@ -169,178 +127,161 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
         multiple
       />
 
-      <div className="max-w-5xl w-full relative z-10 space-y-6">
+      <div className="max-w-5xl w-full relative z-10 space-y-8">
         
         {/* =========================================================================
-            1. TOP ARCADE MARQUEE & SYSTEM TOGGLES
+            1. INSTITUTIONAL BRAND HEADER & CREDENTIALS
             ========================================================================= */}
-        <header className="bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow rounded-none p-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          {/* Marquee Title with Blinking Coin LED */}
-          <div className="flex items-center gap-2.5 overflow-hidden w-full sm:w-auto">
-            <span className="w-3 h-3 bg-[#6bff9e] shadow-[0_0_8px_#6bff9e] animate-pulse shrink-0 inline-block" />
-            <div className="font-arcade text-[10px] sm:text-xs text-[#6bff9e] glow-phosphor-text tracking-wider truncate">
-              GENOTYPE SCOUT ▸ CYBER-LAB TERMINAL v5.17
-            </div>
+        <div className="text-center space-y-4 pt-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-mono tracking-wider shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+            <span className="font-semibold text-zinc-200">WRITTEN IN THE GENOME</span>
+            <span className="text-zinc-500">•</span>
+            <span className="text-amber-400 font-bold">GENOTYPE SCOUT</span>
           </div>
 
-          {/* Scrolling Telemetry Marquee Ticker */}
-          <div className="hidden lg:flex flex-1 mx-4 overflow-hidden bg-[#05070a] border border-[#1e2a3a] py-1 px-3">
-            <div className="animate-marquee font-terminal text-[#4fe3ff] text-sm tracking-widest uppercase">
-              ★ 100% AIR-GAPPED DNA SEQUENCE DECODER ★ ZERO SERVER EGRESS ★ 17,000+ PHASED AIM MARKERS ACTIVE ★ 8/16-BIT RETRO ARCHITECTURE ★ INSERT SPECIMEN CARTRIDGE TO BEGIN ★&nbsp;
-            </div>
-          </div>
-
-          {/* Quick Retro Toggles: Sound & CRT */}
-          <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
-            <button
-              onClick={toggleSound}
-              onMouseEnter={() => SFX.hover()}
-              className={`px-2.5 py-1 text-[10px] font-pixel uppercase border transition-all flex items-center gap-1.5 ${
-                !isMuted 
-                  ? 'bg-[#141b26] text-[#6bff9e] border-[#6bff9e]/60 shadow-[0_0_8px_rgba(107,255,158,0.2)]' 
-                  : 'bg-[#05070a] text-slate-500 border-[#1e2a3a]'
-              }`}
-              title="Toggle Retro 8-Bit Audio Effects"
-            >
-              {!isMuted ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5 text-rose-400" />}
-              <span>{isMuted ? 'SFX: OFF' : 'SFX: ON'}</span>
-            </button>
-
-            <button
-              onClick={toggleCrt}
-              onMouseEnter={() => SFX.hover()}
-              className={`px-2.5 py-1 text-[10px] font-pixel uppercase border transition-all flex items-center gap-1.5 ${
-                crtEnabled 
-                  ? 'bg-[#141b26] text-[#4fe3ff] border-[#4fe3ff]/60 shadow-[0_0_8px_rgba(79,227,255,0.2)]' 
-                  : 'bg-[#05070a] text-slate-500 border-[#1e2a3a]'
-              }`}
-              title="Toggle CRT Scanline Simulation"
-            >
-              <Monitor className="w-3.5 h-3.5" />
-              <span>{crtEnabled ? 'CRT: ON' : 'CRT: OFF'}</span>
-            </button>
-          </div>
-        </header>
-
-        {/* =========================================================================
-            2. HERO TITLE SECTION WITH TWIN PIXEL DNA HELICES
-            ========================================================================= */}
-        <div className="text-center py-4 relative">
-          {/* Flanking DNA Pixel Animations for Desktop */}
-          <div className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 opacity-80">
-            <RetroDNAHelix width={56} height={120} speed={0.04} />
-          </div>
-          <div className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 opacity-80 scale-x-[-1]">
-            <RetroDNAHelix width={56} height={120} speed={0.04} />
-          </div>
-
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0b1016] border border-[#6bff9e]/40 text-[#6bff9e] text-[10px] font-pixel tracking-widest uppercase mb-4 pixel-shadow-sm">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>PLAYER 1 · ZERO NETWORK STORAGE · AIR-GAPPED</span>
-          </div>
-
-          <h1 className="font-arcade text-2xl sm:text-3xl md:text-5xl text-white tracking-tight leading-snug mb-3">
-            DECRYPT YOUR DNA <br />
-            <span className="text-[#4fe3ff] glow-cyan-text">100% PRIVATELY.</span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+            Evidence-Led Computational Genomics <br />
+            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-teal-300 bg-clip-text text-transparent">
+              100% In-Browser & Air-Gapped.
+            </span>
           </h1>
 
-          <p className="font-terminal text-lg sm:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Mount your raw autosomal file into local RAM. Genotype Scout executes local population genetics <span className="text-[#6bff9e] underline decoration-[#6bff9e] underline-offset-4 font-bold">strictly inside your browser</span>.
+          <p className="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+            Mount your raw DNA file directly into your device's memory. Genotype Scout processes population admixture, ancestral haplogroups, and clinical variants locally with <strong className="text-zinc-200">zero server uploads</strong> and <strong className="text-zinc-200">zero remote telemetry</strong>.
           </p>
+
+          {/* Privacy & Standard Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
+              <span>Zero-Footprint Privacy</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono">
+              <Cpu className="w-3.5 h-3.5 text-zinc-400" />
+              <span>Isolated RAM Worker</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono">
+              <WifiOff className="w-3.5 h-3.5 text-zinc-400" />
+              <span>Network Air-Gapped</span>
+            </div>
+          </div>
         </div>
 
         {/* =========================================================================
-            3. MAIN TERMINAL CONSOLE: CARTRIDGE DROPZONE
+            2. PRIMARY CLINICAL INTAKE TRAY (DROPZONE)
             ========================================================================= */}
-        <div className="bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 sm:p-7 relative flex flex-col justify-between">
-          {/* Corner pixel brackets */}
-          <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#4fe3ff]" />
-          <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#4fe3ff]" />
-          <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#4fe3ff]" />
-          <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#4fe3ff]" />
-
-          {/* Cartridge Slot Header */}
-          <div className="flex items-center justify-between border-b-2 border-[#1e2a3a] pb-3 mb-5">
-            <div className="flex items-center gap-2 font-arcade text-xs text-[#4fe3ff]">
-              <Disc className="w-4 h-4 animate-spin-slow text-[#ff4fd8]" />
-              <span>CARTRIDGE SLOT A</span>
+        <div className="bg-zinc-900/70 backdrop-blur-xl border border-zinc-800/90 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative">
+          
+          {/* Intake Tray Status Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
+                <Dna className="w-4 h-4" />
+              </div>
+              <div>
+                <h2 className="text-sm font-bold text-zinc-100 tracking-tight">Genomic Specimen Intake Tray</h2>
+                <p className="text-xs text-zinc-400">Ready for raw microarray or sequencing ingestion</p>
+              </div>
             </div>
-            <span className="font-pixel text-[9px] uppercase px-2 py-0.5 bg-[#141b26] text-[#6bff9e] border border-[#6bff9e]/30">
-              READY FOR INSERTION
-            </span>
+
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                SANDBOX READY
+              </span>
+              <span className="text-xs font-mono text-zinc-500 hidden sm:inline">v5.20</span>
+            </div>
           </div>
 
-          {/* Physical-Style Cartridge Bevel Dropzone */}
+          {/* Interactive Drop Surface */}
           <div
+            role="button"
+            tabIndex={0}
             onDragEnter={handleDrag}
             onDragOver={handleDrag}
             onDragLeave={handleDrag}
             onDrop={handleDrop}
             onClick={handleZoneClick}
-            onMouseEnter={() => SFX.hover()}
-            className={`relative p-6 sm:p-8 border-2 border-dashed cursor-pointer transition-all duration-200 text-center flex flex-col items-center justify-center ${
+            onKeyDown={handleKeyDown}
+            className={`relative p-8 sm:p-12 rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-200 text-center flex flex-col items-center justify-center focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 focus:ring-offset-zinc-950 ${
               isDragActive
-                ? 'border-[#6bff9e] bg-[#6bff9e]/10 shadow-[0_0_30px_rgba(107,255,158,0.3)] scale-[1.01]'
-                : 'border-[#1e2a3a] bg-[#05070a]/80 hover:border-[#4fe3ff] hover:bg-[#141b26]/50 shadow-inner'
+                ? 'border-teal-400 bg-teal-500/10 shadow-lg shadow-teal-500/10 scale-[1.005]'
+                : 'border-zinc-700/80 bg-zinc-950/60 hover:border-teal-500/50 hover:bg-zinc-950/90 shadow-inner'
             }`}
           >
-            {/* Animated Cartridge Reader Graphic */}
-            <div className={`w-16 h-16 mb-4 flex items-center justify-center border-2 transition-transform duration-200 ${
+            {/* Intake Icon */}
+            <div className={`w-16 h-16 mb-4 rounded-2xl flex items-center justify-center border transition-all duration-200 ${
               isDragActive
-                ? 'border-[#6bff9e] bg-[#6bff9e]/20 text-[#6bff9e] scale-110 shadow-[0_0_15px_#6bff9e]'
-                : 'border-[#1e2a3a] bg-[#141b26] text-[#4fe3ff]'
+                ? 'border-teal-400 bg-teal-500/20 text-teal-300 scale-110 shadow-md shadow-teal-500/20'
+                : 'border-zinc-700/80 bg-zinc-800/60 text-zinc-300 group-hover:text-white'
             }`}>
-              <Upload className="w-8 h-8 animate-bounce-slow" />
+              <Upload className="w-7 h-7" />
             </div>
 
-            <h3 className="font-arcade text-sm sm:text-base text-white mb-2 leading-relaxed">
-              DROP RAW DNA SPECIMEN HERE
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-tight">
+              Drag & drop raw DNA file here, or browse
             </h3>
 
-            <p className="font-terminal text-base sm:text-xl text-slate-400 mb-6 max-w-sm">
-              Supports <strong className="text-[#6bff9e]">.TXT, .CSV, .ZIP, .GZ, .VCF</strong> raw chip files
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-md mb-6 leading-relaxed">
+              Standard autosomal microarray and WGS formats accepted: <span className="font-mono text-zinc-300">.txt</span>, <span className="font-mono text-zinc-300">.csv</span>, <span className="font-mono text-zinc-300">.zip</span>, <span className="font-mono text-zinc-300">.gz</span>, <span className="font-mono text-zinc-300">.vcf</span>
             </p>
 
-            {/* Chunky Arcade Button: Select File Manually */}
+            {/* Clean Primary File Select Button */}
             <button
               type="button"
               onClick={handleZoneClick}
-              onMouseEnter={() => SFX.hover()}
-              className="font-arcade text-xs px-6 py-3 bg-[#4fe3ff] hover:bg-[#6bff9e] text-[#05070a] uppercase tracking-wider font-black pixel-shadow transition-transform active:translate-y-1 active:shadow-none"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-bold text-sm transition-all shadow-md shadow-amber-500/10 active:scale-95 flex items-center gap-2 cursor-pointer"
             >
-              SELECT FILE MANUALLY
+              <FileSpreadsheet className="w-4 h-4" />
+              <span>Select Raw DNA File</span>
             </button>
 
             {selectedFileName && (
-              <div className="mt-4 font-terminal text-sm text-[#6bff9e] bg-[#05070a] border border-[#6bff9e]/40 px-3 py-1.5 flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#6bff9e]" />
-                <span>LOADED: {selectedFileName}</span>
+              <div className="mt-5 px-4 py-2 rounded-xl bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono flex items-center gap-2">
+                <Check className="w-4 h-4 text-teal-400" />
+                <span>Selected: <strong>{selectedFileName}</strong></span>
               </div>
             )}
           </div>
 
-          {/* Instant Demo Specimen CTA */}
-          <div className="mt-5 pt-4 border-t border-[#1e2a3a] flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-2 text-slate-400 font-terminal text-base">
-              <span className="w-2 h-2 rounded-full bg-[#ffd23f] animate-ping shrink-0" />
-              <span>No file on hand? Try the bundled Portuguese specimen:</span>
+          {/* Supported Vendors Ribbon */}
+          <div className="pt-2">
+            <div className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-2.5 text-center sm:text-left">
+              Compatible Microarray & Sequencing Providers:
+            </div>
+            <div className="flex flex-wrap gap-2 justify-center sm:justify-start text-xs font-medium">
+              {['23andMe (v2–v5)', 'AncestryDNA (v1–v2)', 'MyHeritage', 'FamilyTreeDNA', 'LivingDNA', 'WGS (VCF 4.2+)', 'Dante / Nebula'].map((vendor) => (
+                <span key={vendor} className="px-3 py-1 rounded-lg bg-zinc-800/60 border border-zinc-700/60 text-zinc-300 text-xs">
+                  {vendor}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Benchmark Demo Specimen Action */}
+          <div className="pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 text-zinc-400 text-xs">
+              <FlaskConical className="w-4 h-4 text-amber-400 shrink-0" />
+              <span>Don't have your raw data handy? Explore with a verified public benchmark:</span>
             </div>
 
             <button
               type="button"
-              onClick={handleLoadDemoCartridge}
-              onMouseEnter={() => SFX.hover()}
+              onClick={handleLoadDemoSpecimen}
               disabled={isLoadingDemo}
-              className="w-full sm:w-auto font-arcade text-[10px] px-4 py-2.5 bg-[#ffd23f] hover:bg-amber-300 text-[#05070a] uppercase font-black pixel-shadow-amber transition-transform active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-750 text-zinc-200 hover:text-white border border-zinc-700 text-xs font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
+              title="Loads Portuguese reference sample hu33FC53 from the Personal Genome Project"
             >
               {isLoadingDemo ? (
                 <>
-                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                  <span>READING ROM...</span>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin text-amber-400" />
+                  <span>Loading Specimen...</span>
                 </>
               ) : (
                 <>
-                  <span>🪙 INSERT COIN: LOAD DEMO</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <span>Load Benchmark Specimen (hu33FC53)</span>
                 </>
               )}
             </button>
@@ -348,49 +289,52 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
         </div>
 
         {/* =========================================================================
-            4. RETRO RPG QUEST LOG / KNOWLEDGE DECK (TABS)
+            3. EVIDENTIARY STANDARDS & TECHNICAL SPECIFICATIONS (TABS)
             ========================================================================= */}
-        <div className="bg-[#0b1016] border-2 border-[#1e2a3a] pixel-shadow p-5 sm:p-6 text-left">
-          {/* Tab Selector Buttons */}
-          <div className="flex flex-wrap gap-2 border-b-2 border-[#1e2a3a] pb-3 mb-5">
+        <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 space-y-6">
+          {/* Tab Selection Header */}
+          <div className="flex flex-wrap gap-2 border-b border-zinc-800 pb-4">
             <button
-              onClick={() => { setActiveTab('privacy'); SFX.select(); }}
-              onMouseEnter={() => SFX.hover()}
-              className={`font-arcade text-[10px] px-3.5 py-2 uppercase border transition-all ${
+              type="button"
+              onClick={() => setActiveTab('privacy')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === 'privacy'
-                  ? 'bg-[#4fe3ff] text-[#05070a] border-[#4fe3ff] font-black pixel-shadow-sm'
-                  : 'bg-[#05070a] text-slate-400 border-[#1e2a3a] hover:text-white'
+                  ? 'bg-teal-500/15 border border-teal-500/40 text-teal-300 shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50'
               }`}
             >
-              [1] PRIVACY SANDBOX
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Privacy Guarantees</span>
             </button>
 
             <button
-              onClick={() => { setActiveTab('database'); SFX.select(); }}
-              onMouseEnter={() => SFX.hover()}
-              className={`font-arcade text-[10px] px-3.5 py-2 uppercase border transition-all ${
-                activeTab === 'database'
-                  ? 'bg-[#6bff9e] text-[#05070a] border-[#6bff9e] font-black pixel-shadow-sm'
-                  : 'bg-[#05070a] text-slate-400 border-[#1e2a3a] hover:text-white'
+              type="button"
+              onClick={() => setActiveTab('compatibility')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                activeTab === 'compatibility'
+                  ? 'bg-amber-500/15 border border-amber-500/40 text-amber-300 shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50'
               }`}
             >
-              [2] COMPATIBLE KITS
+              <Database className="w-3.5 h-3.5" />
+              <span>Reference Frameworks</span>
             </button>
 
             <button
-              onClick={() => { setActiveTab('offline'); SFX.select(); }}
-              onMouseEnter={() => SFX.hover()}
-              className={`font-arcade text-[10px] px-3.5 py-2 uppercase border transition-all ${
+              type="button"
+              onClick={() => setActiveTab('offline')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                 activeTab === 'offline'
-                  ? 'bg-[#ffd23f] text-[#05070a] border-[#ffd23f] font-black pixel-shadow-sm'
-                  : 'bg-[#05070a] text-slate-400 border-[#1e2a3a] hover:text-white'
+                  ? 'bg-zinc-800 border border-zinc-700 text-zinc-100 shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50'
               }`}
             >
-              [3] OFFLINE PWA SETUP
+              <WifiOff className="w-3.5 h-3.5" />
+              <span>Offline PWA Execution</span>
             </button>
           </div>
 
-          {/* Tab Contents */}
+          {/* Tab Content Panels */}
           <AnimatePresence mode="wait">
             {activeTab === 'privacy' && (
               <motion.div
@@ -399,63 +343,76 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.15 }}
-                className="grid md:grid-cols-3 gap-4 font-terminal text-base sm:text-lg"
+                className="grid md:grid-cols-3 gap-4 text-xs"
               >
-                <div className="p-3 bg-[#05070a] border border-[#1e2a3a]">
-                  <h4 className="font-arcade text-xs text-[#6bff9e] mb-1.5 flex items-center gap-1.5">
-                    <Shield className="w-3.5 h-3.5" /> RAM WORKER
-                  </h4>
-                  <p className="text-slate-400 leading-snug">
-                    Files are decoded in isolated browser memory. Zero byte chunks are uploaded to any server.
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <div className="flex items-center gap-2 text-teal-400 font-bold">
+                    <Cpu className="w-4 h-4" />
+                    <h4>Web Worker RAM Sandbox</h4>
+                  </div>
+                  <p className="text-zinc-400 leading-relaxed">
+                    Raw genotype bytes are parsed exclusively inside a dedicated Web Worker memory heap. Zero chunks are ever dispatched across the network.
                   </p>
                 </div>
-                <div className="p-3 bg-[#05070a] border border-[#1e2a3a]">
-                  <h4 className="font-arcade text-xs text-[#4fe3ff] mb-1.5 flex items-center gap-1.5">
-                    <Database className="w-3.5 h-3.5" /> LOCAL STORAGE
-                  </h4>
-                  <p className="text-slate-400 leading-snug">
-                    Results are saved to browser IndexedDB, bounded by local device origin security.
+
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <div className="flex items-center gap-2 text-teal-400 font-bold">
+                    <Database className="w-4 h-4" />
+                    <h4>Origin-Bounded IndexedDB</h4>
+                  </div>
+                  <p className="text-zinc-400 leading-relaxed">
+                    Calculated profiles are persisted only to local browser IndexedDB storage, protected by standard same-origin security boundaries.
                   </p>
                 </div>
-                <div className="p-3 bg-[#05070a] border border-[#1e2a3a]">
-                  <h4 className="font-arcade text-xs text-[#ffd23f] mb-1.5 flex items-center gap-1.5">
-                    <Lock className="w-3.5 h-3.5" /> F12 VERIFIED
-                  </h4>
-                  <p className="text-slate-400 leading-snug">
-                    Verifiable air-gap. Disconnect your internet connection after loading the page and it works 100%.
+
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <div className="flex items-center gap-2 text-teal-400 font-bold">
+                    <Lock className="w-4 h-4" />
+                    <h4>Auditable Air-Gap</h4>
+                  </div>
+                  <p className="text-zinc-400 leading-relaxed">
+                    You can inspect network traffic via Browser DevTools (F12) or disconnect your WiFi entirely before dropping your DNA file; processing proceeds unaffected.
                   </p>
                 </div>
               </motion.div>
             )}
 
-            {activeTab === 'database' && (
+            {activeTab === 'compatibility' && (
               <motion.div
-                key="database"
+                key="compatibility"
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.15 }}
-                className="space-y-4"
+                className="space-y-4 text-xs"
               >
-                <p className="font-terminal text-slate-300 text-lg">
-                  Genotype Scout automatically detects file headers, builds (GRCh37/hg19 and GRCh38/hg38), and delimiter structures for:
+                <p className="text-zinc-300 leading-relaxed">
+                  Genotype Scout incorporates curated academic reference standards across 17,042 validated Ancestry Informative Markers (AIMs):
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-arcade text-[10px] text-center">
-                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#4fe3ff]">
-                    <span className="block text-base mb-1">🧬</span>
-                    23ANDME
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono">
+                  <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800">
+                    <span className="text-amber-400 font-bold block mb-1">K61 GLOBAL AIMs</span>
+                    <span className="text-zinc-400 text-[11px] leading-tight block">
+                      Phased across 1000G, HGDP & SGDP reference populations.
+                    </span>
                   </div>
-                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#6bff9e]">
-                    <span className="block text-base mb-1">🌲</span>
-                    ANCESTRY DNA
+                  <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800">
+                    <span className="text-teal-400 font-bold block mb-1">ISOGG & YFULL</span>
+                    <span className="text-zinc-400 text-[11px] leading-tight block">
+                      Hierarchical paternal phylogenetic branch determination.
+                    </span>
                   </div>
-                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#ffd23f]">
-                    <span className="block text-base mb-1">📜</span>
-                    MYHERITAGE
+                  <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800">
+                    <span className="text-sky-400 font-bold block mb-1">PHYLOTREE MT</span>
+                    <span className="text-zinc-400 text-[11px] leading-tight block">
+                      Maternal mitochondrial haplogroup classification tree.
+                    </span>
                   </div>
-                  <div className="p-3 bg-[#05070a] border border-[#1e2a3a] text-[#ff4fd8]">
-                    <span className="block text-base mb-1">🔬</span>
-                    WGS / VCF 4.2+
+                  <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800">
+                    <span className="text-purple-400 font-bold block mb-1">CPIC & PHARMGKB</span>
+                    <span className="text-zinc-400 text-[11px] leading-tight block">
+                      Clinical guideline annotations for pharmacogenomics (PGx).
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -468,22 +425,23 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.15 }}
-                className="grid md:grid-cols-2 gap-4 font-terminal text-lg"
+                className="grid md:grid-cols-2 gap-4 text-xs"
               >
-                <div className="p-4 bg-[#05070a] border border-[#1e2a3a]">
-                  <h4 className="font-arcade text-xs text-[#4fe3ff] mb-2">
-                    🍏 IOS SAFARI PWA
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <h4 className="font-bold text-zinc-100 flex items-center gap-2">
+                    <span>📱</span> iOS / Safari Setup
                   </h4>
-                  <p className="text-slate-400 leading-snug">
-                    Tap the <strong>Share</strong> button at bottom, then tap <strong>"Add to Home Screen"</strong> for full-screen offline execution.
+                  <p className="text-zinc-400 leading-relaxed">
+                    Tap the <strong>Share</strong> button in Safari, then select <strong>"Add to Home Screen"</strong> for full-screen air-gapped execution without an internet connection.
                   </p>
                 </div>
-                <div className="p-4 bg-[#05070a] border border-[#1e2a3a]">
-                  <h4 className="font-arcade text-xs text-[#6bff9e] mb-2">
-                    🤖 ANDROID / CHROME PWA
+
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <h4 className="font-bold text-zinc-100 flex items-center gap-2">
+                    <span>💻</span> Chrome / Desktop Setup
                   </h4>
-                  <p className="text-slate-400 leading-snug">
-                    Tap the <strong>(⋮) Menu</strong> at top-right, then select <strong>"Install App"</strong> or <strong>"Add to Home Screen"</strong>.
+                  <p className="text-zinc-400 leading-relaxed">
+                    Click the <strong>Install</strong> icon in your address bar or browser menu to install Genotype Scout as a standalone desktop scientific workstation.
                   </p>
                 </div>
               </motion.div>
@@ -492,21 +450,41 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
         </div>
 
         {/* =========================================================================
-            5. RETRO TERMINAL BOOT STREAM & CACHE PURGE
+            4. CLIENT ENVIRONMENT TELEMETRY & STORAGE MANAGEMENT
             ========================================================================= */}
-        <div className="bg-[#05070a] border border-[#1e2a3a] p-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 font-terminal text-sm sm:text-base text-[#6bff9e] truncate w-full sm:w-auto">
-            <span className="animate-pulse">▶</span>
-            <span className="tracking-wider">{TERMINAL_BOOT_LINES[bootLineIdx]}</span>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 text-xs font-mono">
+          <div className="flex flex-wrap items-center gap-3 text-zinc-400">
+            <span className="flex items-center gap-1.5 text-teal-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+              <span>Workers: Multithreaded</span>
+            </span>
+            <span className="text-zinc-600 hidden sm:inline">|</span>
+            <span className="text-zinc-400">IndexedDB: Active</span>
+            <span className="text-zinc-600 hidden sm:inline">|</span>
+            <span className="text-zinc-400">Network Egress: 0 B</span>
           </div>
 
           <button
+            type="button"
             onClick={handleClearCache}
-            onMouseEnter={() => SFX.hover()}
-            className="font-arcade text-[9px] text-slate-500 hover:text-rose-400 uppercase tracking-widest transition-colors shrink-0"
+            className="text-[11px] text-zinc-500 hover:text-rose-400 transition-colors cursor-pointer"
+            title="Clears all client-stored profiles and caches"
           >
-            [ PURGE ROM BUFFER & CACHE ]
+            [ Purge Client Cache & Storage ]
           </button>
+        </div>
+
+        {/* Footer Reference Link */}
+        <div className="text-center pt-2 pb-6">
+          <a
+            href="https://writteninthegenome.blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+          >
+            <span>An open-source initiative of Written In The Genome</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
         </div>
 
       </div>

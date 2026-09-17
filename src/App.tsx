@@ -3231,7 +3231,7 @@ export default function App() {
         )}
 
         {processing && (
-          <GenotypeParser streamProgress={streamProgress} />
+          <GenotypeParser streamProgress={streamProgress} onCancel={resetApp} />
         )}
 
         {!results && !processing && (
@@ -3290,7 +3290,9 @@ export default function App() {
           ) : null}
 
           {processing ? (
-            <div className="fixed top-10 left-0 right-0 z-50"><GenotypeParser streamProgress={streamProgress} /></div>
+            <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+              <GenotypeParser streamProgress={streamProgress} onCancel={resetApp} />
+            </div>
           ) : null}
 
           {pendingFiles.length > 0 ? (
