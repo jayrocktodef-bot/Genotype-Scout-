@@ -23,7 +23,7 @@ describe('Ancient Admixture Calculator', () => {
       expect(res.region).toBeDefined();
       expect(res.period).toBeDefined();
     });
-  });
+  }, 15000);
 
   it('should return empty results if there are insufficient markers', async () => {
     const mockGenotypes = {

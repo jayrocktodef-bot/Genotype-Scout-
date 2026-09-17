@@ -3618,6 +3618,7 @@ export default function App() {
       <MethodologyModal
         isOpen={isMethodologyOpen}
         onClose={() => setIsMethodologyOpen(false)}
+        activeModule={currentApp}
         activeTab={activeTab}
       />
 

@@ -439,11 +439,7 @@ const SidebarNavItem: React.FC<SidebarNavItemProps> = ({ mod, isActive, collapse
       className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 bg-gradient-to-tr ${mod.gradient} shadow-sm`}
       style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
     >
-      {mod.imageUrl ? (
-        <img src={mod.imageUrl} alt="" className="w-full h-full object-cover rounded-lg opacity-90" />
-      ) : (
-        <mod.icon className="w-4 h-4 text-white" aria-hidden="true" />
-      )}
+      <mod.icon className="w-4 h-4 text-white" aria-hidden="true" />
     </div>
     {collapsed ? null : (
       <span className="text-sm font-bold truncate text-left flex-1">{mod.name}</span>
@@ -628,31 +624,34 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ mod, index, onSelect }) => (
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{
-      delay: index * 0.04,
+      delay: index * 0.03,
       duration: 0.22,
       ease: [0.2, 0, 0, 1],
     }}
-    className="group flex flex-col items-center gap-3 p-4 rounded-2xl active:scale-[0.96] transition-[background-color,border-color,transform] duration-150 border border-transparent hover:bg-white/[0.04] hover:border-white/[0.06] cursor-pointer text-left w-full"
-    style={{ transitionProperty: 'background-color, border-color, transform' }}
+    className="group tactile-3d-card flex flex-col items-center justify-between p-4 sm:p-5 cursor-pointer text-left w-full h-full min-h-[175px] border border-white/10 hover:border-teal-500/40"
   >
-    <div
-      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center flex-shrink-0`}
-      style={{
-        boxShadow: `0 12px 24px -8px ${mod.glowColor}, 0 0 0 1px rgba(255,255,255,0.1)`,
-      }}
-    >
-      {mod.imageUrl ? (
-        <img src={mod.imageUrl} alt="" className="w-full h-full object-cover rounded-2xl" />
-      ) : (
-        <mod.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white drop-shadow-md" aria-hidden="true" />
-      )}
+    <div className="flex flex-col items-center text-center w-full">
+      <div
+        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-tr ${mod.gradient} flex items-center justify-center shrink-0 shadow-lg`}
+        style={{
+          boxShadow: `0 8px 20px -4px ${mod.glowColor}, 0 0 0 1px rgba(255,255,255,0.15)`,
+        }}
+      >
+        <mod.icon className="w-6 h-6 text-white drop-shadow-md" aria-hidden="true" />
+      </div>
+      <h3
+        className="font-display text-sm font-black text-slate-200 group-hover:text-white transition-colors text-center mt-2 leading-tight"
+        style={{ textWrap: 'balance' } as React.CSSProperties}
+      >
+        {mod.name}
+      </h3>
+      <p className="text-[11px] text-slate-400 group-hover:text-slate-300 line-clamp-2 text-center mt-1 font-medium leading-snug">
+        {mod.description}
+      </p>
     </div>
-    <h3
-      className="text-sm font-black text-slate-400 group-hover:text-white text-center leading-tight transition-[color] duration-150"
-      style={{ textWrap: 'balance' } as React.CSSProperties}
-    >
-      {mod.name}
-    </h3>
+    <span className="text-[8px] font-mono font-bold uppercase tracking-widest text-teal-400/80 bg-teal-500/10 border border-teal-500/20 px-2 py-0.5 rounded-full mt-2">
+      [LOCAL KERNEL]
+    </span>
   </motion.button>
 );
 
@@ -678,7 +677,7 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
   return (
     <div style={{ contentVisibility: 'auto' }}>
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6 gap-1 sm:gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-4">
           {filtered.map((mod, i) => (
             <ModuleCard
               key={mod.id}
@@ -721,11 +720,7 @@ const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack }) => (
       style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.1)` }}
       aria-hidden="true"
     >
-      {mod.imageUrl ? (
-        <img src={mod.imageUrl} alt="" className="w-full h-full object-cover rounded-lg" />
-      ) : (
-        <mod.icon className="w-3.5 h-3.5 text-white" />
-      )}
+      <mod.icon className="w-3.5 h-3.5 text-white" />
     </div>
 
     <div>
