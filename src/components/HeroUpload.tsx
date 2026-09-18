@@ -7,6 +7,7 @@ import {
   CheckCircle2, ArrowRight, ShieldAlert, Sparkles,
   Scale, AlertTriangle, Landmark
 } from 'lucide-react';
+import { forceResetAndClearCache } from '../utils/cacheManager';
 
 interface HeroUploadProps {
   onFiles: (files: FileList | File[]) => void;
@@ -93,23 +94,9 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
     }
   };
 
-  const handleClearCache = () => {
+  const handleClearCache = async () => {
     if (window.confirm("PURGE CLIENT WORKSPACE & CACHE?\n\nThis permanently clears all indexed genomes in client IndexedDB and unregisters service workers. Your raw files remain safe on your device.")) {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-          for (const registration of registrations) { 
-            registration.unregister(); 
-          }
-        });
-      }
-      if ('caches' in window) {
-        caches.keys().then((names) => {
-          names.forEach(name => caches.delete(name));
-        });
-      }
-      localStorage.clear();
-      sessionStorage.clear();
-      window.location.reload();
+      await forceResetAndClearCache(true);
     }
   };
 

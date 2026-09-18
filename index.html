@@ -39,10 +39,10 @@
     <script>
       (function() {
         try {
-          var APP_VERSION = "5.19.0-cache-reset";
+          var APP_VERSION = "v5.21.0_force_clean_20260918";
           var currentLock = localStorage.getItem("scout_version_lock");
           if (currentLock !== APP_VERSION) {
-            console.log("Version update detected (" + currentLock + " -> " + APP_VERSION + "). Cleaning legacy service workers...");
+            console.log("Version update detected (" + currentLock + " -> " + APP_VERSION + "). Cleaning legacy service workers and client cache stores...");
             if ('serviceWorker' in navigator) {
               navigator.serviceWorker.getRegistrations().then(function(registrations) {
                 for (var i = 0; i < registrations.length; i++) {
@@ -57,7 +57,22 @@
                 }
               }).catch(function(e) { console.warn("Cache delete notice:", e); });
             }
+            if ('indexedDB' in window) {
+              try {
+                indexedDB.deleteDatabase('genotype-scout-db');
+                indexedDB.deleteDatabase('keyval-store');
+              } catch (idbErr) {
+                console.warn("IDB delete notice:", idbErr);
+              }
+            }
+            try {
+              sessionStorage.clear();
+              localStorage.clear();
+            } catch (storageErr) {
+              console.warn("Storage clear notice:", storageErr);
+            }
             localStorage.setItem("scout_version_lock", APP_VERSION);
+            localStorage.setItem("genotype_scout_cache_epoch", APP_VERSION);
           }
         } catch (e) {
           console.warn("Storage access restricted or unavailable:", e);

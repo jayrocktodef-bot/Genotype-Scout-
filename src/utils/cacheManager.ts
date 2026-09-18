@@ -4,7 +4,7 @@ import { clearResults } from '../services/storageService';
  * Unique cache epoch identifier. Bumping this string forces all connecting clients
  * to automatically invalidate stale Service Workers, CacheStorage, and IndexedDB caches.
  */
-export const APP_CACHE_EPOCH = 'v5.20.0_force_clean_20260916';
+export const APP_CACHE_EPOCH = 'v5.21.0_force_clean_20260918';
 
 /**
  * Forcefully clears all Service Workers, CacheStorage, IndexedDB data,
@@ -57,11 +57,12 @@ export async function forceResetAndClearCache(reload: boolean = true): Promise<v
     }
   }
 
-  // 4. Clear Web Storage while maintaining the latest epoch token
+  // 4. Clear Web Storage while maintaining the latest epoch and version tokens
   try {
     sessionStorage.clear();
     localStorage.clear();
     localStorage.setItem('genotype_scout_cache_epoch', APP_CACHE_EPOCH);
+    localStorage.setItem('scout_version_lock', APP_CACHE_EPOCH);
   } catch (err) {
     console.warn('[CacheManager] Error clearing local storage:', err);
   }
@@ -80,7 +81,7 @@ export async function forceResetAndClearCache(reload: boolean = true): Promise<v
 export async function enforceCacheEpoch(): Promise<boolean> {
   if (typeof window === 'undefined') return false;
 
-  // Manual URL override: e.g. ?reset=1, ?clear=1, ?cache_clear=1
+  // Manual URL override: e.g. ?reset=1, ?clear=1, ?cache_clear=1, ?force_reset=1
   const searchParams = new URLSearchParams(window.location.search);
   if (
     searchParams.has('reset') || 
@@ -100,7 +101,7 @@ export async function enforceCacheEpoch(): Promise<boolean> {
       console.warn(
         `[CacheManager] Stale cache epoch detected (${currentEpoch ?? 'none'} vs ${APP_CACHE_EPOCH}). Performing one-time cache flush.`
       );
-      await forceResetAndClearCache(false);
+      await forceResetAndClearCache(true);
       return true;
     }
   } catch (err) {
