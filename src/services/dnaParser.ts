@@ -95,6 +95,18 @@ export function checkUnsupportedArchive(buf: Uint8Array): void {
       }
     );
   }
+
+  // TAR: 75 73 74 61 72 ("ustar" at offset 257)
+  if (buf.length >= 262 && buf[257] === 0x75 && buf[258] === 0x73 && buf[259] === 0x74 && buf[260] === 0x61 && buf[261] === 0x72) {
+    throw new GenomicsError(
+      "Unsupported TAR (.tar) archive format. Please decompress the file on your device and upload the uncompressed .txt, .csv, or .vcf file.",
+      {
+        errorCode: GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED,
+        subsystem: 'ZIP_DECOMPRESSION',
+        suggestedSolution: 'Extract the .tar archive on your computer, then upload the extracted DNA data file directly.'
+      }
+    );
+  }
 }
 
 /**
