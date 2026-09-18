@@ -2572,8 +2572,8 @@ export default function App() {
       const expandedFiles: File[] = [];
       for (const file of fileArray) {
         if (file.name.toLowerCase().endsWith('.zip')) {
-          if (file.size > 80 * 1024 * 1024) {
-            throw new Error(`The ZIP file "${file.name}" is too large to safely extract in the browser. Please extract it on your computer and upload the enclosed raw text or VCF file directly.`);
+          if (file.size > 2000 * 1024 * 1024) {
+            throw new Error(`The ZIP file "${file.name}" (${(file.size / (1024 * 1024)).toFixed(0)}MB) exceeds the 2GB browser zip extraction limit. Please extract it on your device and upload the enclosed .vcf, .txt, or .vcf.gz file directly for high-speed streaming ingestion.`);
           }
           const zip = await JSZip.loadAsync(file);
           const validKeys = Object.keys(zip.files).filter(k => {

@@ -136,7 +136,7 @@ export function decodeTextBuffer(buf: Uint8Array): string {
  * Strips UTF-8 BOM (\xef\xbb\xbf) if present.
  */
 // Security threshold limits to prevent decompression bomb Denial-of-Service (DoS) and tab OOM crashes
-const MAX_DECOMPRESSED_BYTES = 500 * 1024 * 1024; // 500 MB ceiling
+const MAX_DECOMPRESSED_BYTES = 2500 * 1024 * 1024; // 2.5 GB ceiling
 const MAX_DECOMPRESSION_DEPTH = 3;
 
 function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
@@ -156,10 +156,10 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
         chunks.push(decomp);
         totalSize += decomp.length;
         if (totalSize > MAX_DECOMPRESSED_BYTES) {
-          throw new GenomicsError(`Decompressed BGZF dataset exceeds safety threshold (500 MB).`, {
+          throw new GenomicsError(`Decompressed BGZF dataset exceeds safety threshold (2.5 GB).`, {
             errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
             subsystem: 'ZIP_DECOMPRESSION',
-            suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
+            suggestedSolution: 'Your uncompressed dataset is larger than 2.5 GB. Please upload an uncompressed .vcf or streaming .vcf.gz dataset directly.'
           });
         }
       }
@@ -176,10 +176,10 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
     try {
       const result = gunzipSync(buf);
       if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
-        throw new GenomicsError(`Decompressed file exceeds safety threshold (500 MB).`, {
+        throw new GenomicsError(`Decompressed file exceeds safety threshold (2.5 GB).`, {
           errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
           subsystem: 'ZIP_DECOMPRESSION',
-          suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
+          suggestedSolution: 'Your uncompressed dataset is larger than 2.5 GB. Please upload an uncompressed .vcf or streaming .vcf.gz dataset directly.'
         });
       }
       return result;

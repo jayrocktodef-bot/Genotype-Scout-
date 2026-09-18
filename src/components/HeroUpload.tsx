@@ -216,7 +216,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
             </h3>
 
             <p className="text-xs sm:text-sm text-zinc-400 max-w-md mb-6 leading-relaxed">
-              Standard autosomal microarray and WGS formats accepted: <span className="font-mono text-zinc-300">.txt</span>, <span className="font-mono text-zinc-300">.csv</span>, <span className="font-mono text-zinc-300">.zip</span>, <span className="font-mono text-zinc-300">.gz</span>, <span className="font-mono text-zinc-300">.vcf</span>
+              Standard consumer microarrays &amp; Whole Genome Sequencing (up to 2GB+ files supported via streaming): <span className="font-mono text-zinc-300">.txt</span>, <span className="font-mono text-zinc-300">.csv</span>, <span className="font-mono text-zinc-300">.vcf</span>, <span className="font-mono text-zinc-300">.vcf.gz</span>, <span className="font-mono text-zinc-300">.zip</span>
             </p>
 
             {/* Clean Primary File Select Button */}
