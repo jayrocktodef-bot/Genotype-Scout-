@@ -145,7 +145,7 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
         totalSize += decomp.length;
         if (totalSize > MAX_DECOMPRESSED_BYTES) {
           throw new GenomicsError(`Decompressed BGZF dataset exceeds safety threshold (500 MB).`, {
-            errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
+            errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
             subsystem: 'ZIP_DECOMPRESSION',
             suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
           });
@@ -164,7 +164,7 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
     const result = gunzipSync(buf);
     if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
       throw new GenomicsError(`Decompressed file exceeds safety threshold (500 MB).`, {
-        errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
+        errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
         subsystem: 'ZIP_DECOMPRESSION',
         suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
       });
@@ -181,7 +181,7 @@ function extractBestFileFromZip(buf: Uint8Array): Uint8Array {
   }
   if (totalExtractedSize > MAX_DECOMPRESSED_BYTES) {
     throw new GenomicsError(`ZIP archive extracted payload exceeds safety threshold (500 MB).`, {
-      errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
+      errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
       subsystem: 'ZIP_DECOMPRESSION',
       suggestedSolution: 'Your ZIP bundle extracted payload exceeds 500MB. Extract the ZIP on your device and upload only the primary raw text file.'
     });
@@ -1667,54 +1667,58 @@ export function parseRawDNA(
             const sampleFields = sampleCol.split(':');
             const gtVal = sampleFields[gtIdx] ?? '';
             const psVal = psIdx !== -1 ? sampleFields[psIdx] : undefined;
-            // Track no-call genotypes for diagnostics
+            // Track no-call and gVCF reference-block genotypes for diagnostics
+            const isGvcfAlt = (a: string) => a === '<NON_REF>' || a === '<*>' || a === '<M>' || /^<NON_REF(:\w+)?>$/i.test(a);
             if (!gtVal || gtVal === '.' || gtVal === './.' || gtVal === '.|.') {
               vcfSkippedNoCall++;
-            } else if (gtVal === '0/0' || gtVal === '0|0' || gtVal === '0') {
-              vcfSkippedHomRef++;
             } else {
-              const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
-              // Track gVCF reference-block rows (NON_REF/placeholder ALTs) separately from malformed rows
-              const isGvcfAlt = (a: string) => a === '<NON_REF>' || a === '<*>' || a === '<M>' || /^<NON_REF(:\w+)?>$/i.test(a);
-              if (!decoded && alt.split(',').every(a => isGvcfAlt(a))) {
+              if (alt.split(',').every(a => isGvcfAlt(a))) {
                 vcfSkippedSymbolicAlt++;
-              } else if (decoded) {
-                const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
-                const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase();
-                const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
-                const isYorMT = chrom === 'Y' || chrom === 'MT';
-                if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
-                  snpCount++;
-                  snpMap[markerId] = genotype;
-                  if (variantPhased) {
-                    phasedCount++;
-                    haplotype1Map[markerId] = allele1;
-                    haplotype2Map[markerId] = allele2;
-                    if (phaseSet) phaseSets[markerId] = phaseSet;
-                  }
-                  if (!isNaN(pos)) {
-                    snpMetaMap[markerId] = { chrom, pos };
-                    const coordId = `chr${chrom}_${pos}`.toLowerCase();
-                    snpMap[coordId] = genotype;
+              }
+              if (gtVal === '0/0' || gtVal === '0|0' || gtVal === '0') {
+                vcfSkippedHomRef++;
+              } else {
+                const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
+                if (!decoded && alt.split(',').every(a => isGvcfAlt(a))) {
+                  vcfSkippedSymbolicAlt++;
+                } else if (decoded) {
+                  const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
+                  const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase();
+                  const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
+                  const isYorMT = chrom === 'Y' || chrom === 'MT';
+                  if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
+                    snpCount++;
+                    snpMap[markerId] = genotype;
                     if (variantPhased) {
-                      haplotype1Map[coordId] = allele1;
-                      haplotype2Map[coordId] = allele2;
+                      phasedCount++;
+                      haplotype1Map[markerId] = allele1;
+                      haplotype2Map[markerId] = allele2;
+                      if (phaseSet) phaseSets[markerId] = phaseSet;
                     }
-                  }
-                  if (chrom === 'X') {
-                    xMap[markerId] = genotype;
-                    xTotalCount++;
-                    if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', pos)) {
-                      xHetCount++;
+                    if (!isNaN(pos)) {
+                      snpMetaMap[markerId] = { chrom, pos };
+                      const coordId = `chr${chrom}_${pos}`.toLowerCase();
+                      snpMap[coordId] = genotype;
+                      if (variantPhased) {
+                        haplotype1Map[coordId] = allele1;
+                        haplotype2Map[coordId] = allele2;
+                      }
                     }
-                  }
-                  if (chrom === 'Y') {
-                    yMap[markerId] = genotype;
-                    yDnaCalledSnps++;
-                  }
-                  if (chrom === 'MT') {
-                    const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
-                    if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+                    if (chrom === 'X') {
+                      xMap[markerId] = genotype;
+                      xTotalCount++;
+                      if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', pos)) {
+                        xHetCount++;
+                      }
+                    }
+                    if (chrom === 'Y') {
+                      yMap[markerId] = genotype;
+                      yDnaCalledSnps++;
+                    }
+                    if (chrom === 'MT') {
+                      const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+                      if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+                    }
                   }
                 }
               }
@@ -1783,26 +1787,32 @@ export function parseRawDNA(
   }
 
   if (snpCount === 0) {
-    // Compose a structured reason string for diagnostic purposes
+    // Compose a structured reason string and specific error code for diagnostic purposes
     let zeroSnpReason = 'unknown';
     let zeroSnpSuggestion = 'Make sure that the file lists SNPs with standard columns (rsID, chromosome, physical position, and allele genotype letters).';
+    let specificCode: GenomicsErrorCode = GenomicsErrorCode.ERR_PARSE_ZERO_SNPS;
+
     if (isVcf && vcfSkippedSymbolicAlt > 0 && vcfSkippedHomRef > 0) {
       zeroSnpReason = `gvcf_nonref (${vcfSkippedSymbolicAlt.toLocaleString()} symbolic ALT rows, ${vcfSkippedHomRef.toLocaleString()} hom-ref rows)`;
       zeroSnpSuggestion = 'This appears to be a gVCF (genomic VCF) file with reference-block records. GenomicScout processes variant-only VCFs. Please export a variant-filtered VCF from your provider, or contact support.';
+      specificCode = GenomicsErrorCode.ERR_VCF_GVCF_NONREF_ONLY;
     } else if (isVcf && vcfSkippedSymbolicAlt > 0) {
       zeroSnpReason = `symbolic_alt_only (${vcfSkippedSymbolicAlt.toLocaleString()} rows skipped)`;
       zeroSnpSuggestion = 'The VCF file contains only symbolic ALT alleles (<NON_REF>, <*>, etc.) typical of gVCF files. Please re-export your data as a variant-only VCF.';
+      specificCode = GenomicsErrorCode.ERR_VCF_SYMBOLIC_ALT_ONLY;
     } else if (isVcf && vcfSkippedNoCall > 50) {
       zeroSnpReason = `all_no_call (${vcfSkippedNoCall.toLocaleString()} ./. records)`;
       zeroSnpSuggestion = 'All genotype records are no-call (./.). This VCF may be malformed or empty. Please re-export your data from your provider.';
+      specificCode = GenomicsErrorCode.ERR_VCF_ALL_NO_CALL;
     } else if (linesMalformed > linesTotal * 0.5 && linesTotal > 10) {
       zeroSnpReason = 'column_mismatch';
       zeroSnpSuggestion = 'More than 50% of lines could not be parsed. The delimiter or column order may be non-standard. If you are using a UK or EU locale, try opening the file in a text editor and verifying it is tab-separated.';
+      specificCode = GenomicsErrorCode.ERR_PARSE_COLUMN_MISMATCH;
     }
     throw new GenomicsParseError(
-      `ERR-4025FGD1 (ERR_PARSE_ZERO_SNPS): The file contains no parseable genetic markers. Reason: ${zeroSnpReason}.`,
+      `ERR-4025FGD1 (${specificCode}): The file contains no parseable genetic markers. Reason: ${zeroSnpReason}.`,
       {
-        errorCode: GenomicsErrorCode.ERR_PARSE_ZERO_SNPS,
+        errorCode: specificCode,
         legacyCode: 'ERR-4025FGD1',
         format,
         chip,
@@ -2262,23 +2272,29 @@ export async function parseRawDNAStream(
   if (snpCount === 0) {
     let zeroSnpReason = 'unknown';
     let zeroSnpSuggestion = 'Make sure you downloaded \'all SNPs\' or \'raw data text\' rather than mitochondrial-only sequences or visual screenshots. The file should contain rsIDs and genotypes.';
+    let specificCode: GenomicsErrorCode = GenomicsErrorCode.ERR_PARSE_ZERO_SNPS;
+
     if (isVcf && vcfSkippedSymbolicAlt > 0 && vcfSkippedHomRef > 0) {
       zeroSnpReason = `gvcf_nonref (${vcfSkippedSymbolicAlt.toLocaleString()} symbolic ALT rows, ${vcfSkippedHomRef.toLocaleString()} hom-ref rows)`;
       zeroSnpSuggestion = 'This appears to be a gVCF (genomic VCF) file with reference-block records. GenomicScout processes variant-only VCFs. Please export a variant-filtered VCF from your provider, or contact support.';
+      specificCode = GenomicsErrorCode.ERR_VCF_GVCF_NONREF_ONLY;
     } else if (isVcf && vcfSkippedSymbolicAlt > 0) {
       zeroSnpReason = `symbolic_alt_only (${vcfSkippedSymbolicAlt.toLocaleString()} rows skipped)`;
       zeroSnpSuggestion = 'The VCF file contains only symbolic ALT alleles (<NON_REF>, <*>, etc.) typical of gVCF files. Please re-export your data as a variant-only VCF.';
+      specificCode = GenomicsErrorCode.ERR_VCF_SYMBOLIC_ALT_ONLY;
     } else if (isVcf && vcfSkippedNoCall > 50) {
       zeroSnpReason = `all_no_call (${vcfSkippedNoCall.toLocaleString()} ./. records)`;
       zeroSnpSuggestion = 'All genotype records are no-call (./.). This VCF may be malformed or empty. Please re-export your data from your provider.';
+      specificCode = GenomicsErrorCode.ERR_VCF_ALL_NO_CALL;
     } else if (linesMalformed > linesTotal * 0.5 && linesTotal > 10) {
       zeroSnpReason = 'column_mismatch';
       zeroSnpSuggestion = 'More than 50% of lines could not be parsed. The delimiter or column order may be non-standard. If you are using a UK or EU locale, try opening the file in a text editor and verifying it is tab-separated.';
+      specificCode = GenomicsErrorCode.ERR_PARSE_COLUMN_MISMATCH;
     }
     throw new GenomicsParseError(
-      `ERR-4025FGD1 (ERR_PARSE_ZERO_SNPS): The file contains no parseable genetic markers. Reason: ${zeroSnpReason}.`,
+      `ERR-4025FGD1 (${specificCode}): The file contains no parseable genetic markers. Reason: ${zeroSnpReason}.`,
       {
-        errorCode: GenomicsErrorCode.ERR_PARSE_ZERO_SNPS,
+        errorCode: specificCode,
         legacyCode: 'ERR-4025FGD1',
         format, chip, bytesTotal: file.size, linesTotal, linesCommented, linesMalformed,
         errorCategory: "Empty Ingestion Spectrum (ERR-4025FGD1)",

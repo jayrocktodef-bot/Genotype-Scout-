@@ -887,4 +887,48 @@ rs3003\tY\t300300\tT\t0
     expect(detectVendorAndChip('# Sano Genetics export').format).toBe('Sano Genetics');
     expect(detectVendorAndChip('# Veritas Genetics myGenome').format).toBe('Veritas Genetics');
   });
+
+  it('should throw specific GenomicsErrorCode for gVCF, symbolic ALT, no-call, and column mismatch failures', () => {
+    // 1. gVCF non-ref
+    const gvcfData = `##fileformat=VCFv4.2\n##ALT=<ID=NON_REF,Description="Non-ref">\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE\nchr1\t100\trs100\tA\t<NON_REF>\t.\tPASS\t.\tGT\t0/0\n`;
+    try {
+      parseRawDNA(gvcfData);
+      expect.unreachable('Should throw error for gVCF nonref');
+    } catch (err: any) {
+      expect(err.code).toBe(GenomicsErrorCode.ERR_VCF_GVCF_NONREF_ONLY);
+    }
+
+    // 2. Symbolic ALT only
+    const symbolicData = `##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE\nchr1\t100\trs100\tA\t<NON_REF>\t.\tPASS\t.\tGT\t0/1\n`;
+    try {
+      parseRawDNA(symbolicData);
+      expect.unreachable('Should throw error for symbolic ALT');
+    } catch (err: any) {
+      expect(err.code).toBe(GenomicsErrorCode.ERR_VCF_SYMBOLIC_ALT_ONLY);
+    }
+
+    // 3. All No-Call VCF
+    let noCallLines = `##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE\n`;
+    for (let i = 0; i < 60; i++) {
+      noCallLines += `chr1\t${1000 + i}\trs${i}\tA\tG\t.\tPASS\t.\tGT\t./.\n`;
+    }
+    try {
+      parseRawDNA(noCallLines);
+      expect.unreachable('Should throw error for all no-call VCF');
+    } catch (err: any) {
+      expect(err.code).toBe(GenomicsErrorCode.ERR_VCF_ALL_NO_CALL);
+    }
+
+    // 4. Column Mismatch
+    let malformedData = `rsid\tchromosome\tposition\tgenotype\n`;
+    for (let i = 0; i < 20; i++) {
+      malformedData += `invalid_row_without_enough_tokens\n`;
+    }
+    try {
+      parseRawDNA(malformedData);
+      expect.unreachable('Should throw error for column mismatch');
+    } catch (err: any) {
+      expect(err.code).toBe(GenomicsErrorCode.ERR_PARSE_COLUMN_MISMATCH);
+    }
+  });
 });
