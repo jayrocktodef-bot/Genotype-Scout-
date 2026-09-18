@@ -931,4 +931,18 @@ rs3003\tY\t300300\tT\t0
       expect(err.code).toBe(GenomicsErrorCode.ERR_PARSE_COLUMN_MISMATCH);
     }
   });
+
+  it('should parse VCF files with literal nucleotide GT calls (A/G, C|T, AA) and mixed-case #Chrom headers', () => {
+    const literalVcf = `##fileformat=VCFv4.2
+#Chrom\tPos\tId\tRef\tAlt\tQual\tFilter\tInfo\tFormat\tSample
+chr1\t100050\trs5001\tA\tG\t.\tPASS\t.\tGT\tA/G
+chr1\t100060\trs5002\tC\tT\t.\tPASS\t.\tGT\tC|T
+chr1\t100070\trs5003\tT\tA\t.\tPASS\t.\tGT\tTT
+`;
+    const parsed = parseRawDNA(literalVcf);
+    expect(parsed.snpCount).toBe(3);
+    expect(parsed.snpMap['rs5001']).toBe('AG');
+    expect(parsed.snpMap['rs5002']).toBe('CT');
+    expect(parsed.snpMap['rs5003']).toBe('TT');
+  });
 });

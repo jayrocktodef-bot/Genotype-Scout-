@@ -161,15 +161,54 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
     }
     return merged;
   } else {
-    const result = gunzipSync(buf);
-    if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
-      throw new GenomicsError(`Decompressed file exceeds safety threshold (500 MB).`, {
-        errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
-        subsystem: 'ZIP_DECOMPRESSION',
-        suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
-      });
+    try {
+      const result = gunzipSync(buf);
+      if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
+        throw new GenomicsError(`Decompressed file exceeds safety threshold (500 MB).`, {
+          errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
+          subsystem: 'ZIP_DECOMPRESSION',
+          suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
+        });
+      }
+      return result;
+    } catch (err) {
+      if (err instanceof GenomicsError) throw err;
+      let offset = 0;
+      const chunks: Uint8Array[] = [];
+      let totalSize = 0;
+      while (offset < buf.length) {
+        if (buf[offset] !== 0x1f || buf[offset + 1] !== 0x8b) break;
+        let nextHeader = -1;
+        for (let i = offset + 2; i < buf.length - 1; i++) {
+          if (buf[i] === 0x1f && buf[i + 1] === 0x8b) {
+            nextHeader = i;
+            break;
+          }
+        }
+        const slice = nextHeader !== -1 ? buf.subarray(offset, nextHeader) : buf.subarray(offset);
+        try {
+          const decomp = gunzipSync(slice);
+          if (decomp.length > 0) {
+            chunks.push(decomp);
+            totalSize += decomp.length;
+          }
+        } catch {
+          // ignore invalid chunk
+        }
+        if (nextHeader === -1) break;
+        offset = nextHeader;
+      }
+      if (chunks.length > 0) {
+        const merged = new Uint8Array(totalSize);
+        let cur = 0;
+        for (const c of chunks) {
+          merged.set(c, cur);
+          cur += c.length;
+        }
+        return merged;
+      }
+      throw err;
     }
-    return result;
   }
 }
 
@@ -189,7 +228,9 @@ function extractBestFileFromZip(buf: Uint8Array): Uint8Array {
 
   const fileKeys = Object.keys(unzipped).filter(k => {
     const lower = k.toLowerCase();
+    const baseName = lower.split('/').pop() || '';
     return !lower.startsWith('__macosx/') &&
+           !baseName.startsWith('._') &&
            !lower.includes('.ds_store') &&
            !lower.includes('..') &&
            !lower.endsWith('/') &&
@@ -805,7 +846,7 @@ export function parseVcfColumnLayout(
       isGvcf = true;
     }
     // Parse column header dynamically
-    if (trimmed.startsWith('#CHROM') || trimmed.startsWith('#chrom')) {
+    if (trimmed.toUpperCase().startsWith('#CHROM')) {
       const rawCols = trimmed.replace(/^#/, '').split('\t');
       const cols = rawCols.map(c => c.trim().toUpperCase());
       const findIdx = (name: string) => { const i = cols.indexOf(name); return i === -1 ? -1 : i; };
@@ -1495,7 +1536,10 @@ export interface VcfDecodedResult {
 export function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal?: string): VcfDecodedResult | null {
   if (!gtVal || gtVal === '.' || gtVal === './.' || gtVal === '.|.') return null;
   const isPhased = gtVal.includes('|');
-  const gtParts = gtVal.split(/[\/|]/);
+  let gtParts = gtVal.split(/[\/|]/);
+  if (gtParts.length === 1 && gtVal.length === 2 && /^[ACGT]{2}$/i.test(gtVal)) {
+    gtParts = [gtVal[0], gtVal[1]];
+  }
   const altAlleles = alt.split(',');
 
   // gVCF guard: skip rows whose ALT is a gVCF reference-block placeholder.
@@ -1515,7 +1559,14 @@ export function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal
     if (idxStr === '0') return ref;
     if (idxStr === '.') return null; // Missing allele in multi-sample VCF — skip
     const idx = parseInt(idxStr, 10);
-    if (isNaN(idx) || idx < 1 || idx > altAlleles.length) return null;
+    if (isNaN(idx)) {
+      const cleanUpper = idxStr.trim().toUpperCase();
+      if (/^[ACGTDI\-]+$/i.test(cleanUpper)) {
+        return cleanUpper;
+      }
+      return null;
+    }
+    if (idx < 1 || idx > altAlleles.length) return null;
     const a = altAlleles[idx - 1];
     // gVCF placeholder mixed with real ALTs: skip only this specific allele slot
     if (isGvcfPlaceholder(a)) return null;
