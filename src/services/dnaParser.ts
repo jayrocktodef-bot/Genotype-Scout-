@@ -48,131 +48,149 @@ const DECODER = new TextDecoder('utf-8');
  */
 // Security threshold limits to prevent decompression bomb Denial-of-Service (DoS) and tab OOM crashes
 const MAX_DECOMPRESSED_BYTES = 500 * 1024 * 1024; // 500 MB ceiling
+const MAX_DECOMPRESSION_DEPTH = 3;
 
-export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
-  if (!buf || buf.length < 4) return buf;
-
-  let result = buf;
-
-  // 1. Check for GZIP magic bytes (\x1f\x8b)
-  if (buf[0] === 0x1f && buf[1] === 0x8b) {
-    try {
-      // Check if BGZF (Block GZIP Format, used by all standard .vcf.gz)
-      const isBgzf = buf.length >= 18 && (buf[3] & 4) !== 0 && buf[12] === 0x42 && buf[13] === 0x43;
-      if (isBgzf) {
-        let offset = 0;
-        const chunks: Uint8Array[] = [];
-        let totalSize = 0;
-        while (offset < buf.length) {
-          if (buf[offset] !== 0x1f || buf[offset + 1] !== 0x8b) break;
-          const bsize = (buf[offset + 16] | (buf[offset + 17] << 8)) + 1;
-          if (bsize <= 0 || offset + bsize > buf.length) break;
-          const block = buf.subarray(offset, offset + bsize);
-          const decomp = gunzipSync(block);
-          if (decomp.length > 0) {
-            chunks.push(decomp);
-            totalSize += decomp.length;
-            if (totalSize > MAX_DECOMPRESSED_BYTES) {
-              throw new GenomicsError(`Decompressed BGZF dataset exceeds safety threshold (500 MB).`, {
-                errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
-                subsystem: 'ZIP_DECOMPRESSION',
-                suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
-              });
-            }
-          }
-          offset += bsize;
-        }
-        const merged = new Uint8Array(totalSize);
-        let cur = 0;
-        for (const c of chunks) {
-          merged.set(c, cur);
-          cur += c.length;
-        }
-        result = merged;
-      } else {
-        result = gunzipSync(buf);
-        if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
-          throw new GenomicsError(`Decompressed file exceeds safety threshold (500 MB).`, {
+function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
+  // Check if BGZF (Block GZIP Format, used by all standard .vcf.gz)
+  const isBgzf = buf.length >= 18 && (buf[3] & 4) !== 0 && buf[12] === 0x42 && buf[13] === 0x43;
+  if (isBgzf) {
+    let offset = 0;
+    const chunks: Uint8Array[] = [];
+    let totalSize = 0;
+    while (offset < buf.length) {
+      if (buf[offset] !== 0x1f || buf[offset + 1] !== 0x8b) break;
+      const bsize = (buf[offset + 16] | (buf[offset + 17] << 8)) + 1;
+      if (bsize <= 0 || offset + bsize > buf.length) break;
+      const block = buf.subarray(offset, offset + bsize);
+      const decomp = gunzipSync(block);
+      if (decomp.length > 0) {
+        chunks.push(decomp);
+        totalSize += decomp.length;
+        if (totalSize > MAX_DECOMPRESSED_BYTES) {
+          throw new GenomicsError(`Decompressed BGZF dataset exceeds safety threshold (500 MB).`, {
             errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
             subsystem: 'ZIP_DECOMPRESSION',
             suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
           });
         }
       }
-    } catch (e) {
-      if (e instanceof GenomicsError) throw e;
-      console.warn("fflate gunzipSync warning:", e);
-      result = buf;
+      offset += bsize;
     }
+    const merged = new Uint8Array(totalSize);
+    let cur = 0;
+    for (const c of chunks) {
+      merged.set(c, cur);
+      cur += c.length;
+    }
+    return merged;
+  } else {
+    const result = gunzipSync(buf);
+    if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
+      throw new GenomicsError(`Decompressed file exceeds safety threshold (500 MB).`, {
+        errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
+        subsystem: 'ZIP_DECOMPRESSION',
+        suggestedSolution: 'Your uncompressed dataset is larger than 500MB. Please upload an individual chromosome or standard consumer genotype export.'
+      });
+    }
+    return result;
+  }
+}
+
+function extractBestFileFromZip(buf: Uint8Array): Uint8Array {
+  const unzipped = unzipSync(buf);
+  let totalExtractedSize = 0;
+  for (const k of Object.keys(unzipped)) {
+    totalExtractedSize += unzipped[k]?.byteLength || 0;
+  }
+  if (totalExtractedSize > MAX_DECOMPRESSED_BYTES) {
+    throw new GenomicsError(`ZIP archive extracted payload exceeds safety threshold (500 MB).`, {
+      errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
+      subsystem: 'ZIP_DECOMPRESSION',
+      suggestedSolution: 'Your ZIP bundle extracted payload exceeds 500MB. Extract the ZIP on your device and upload only the primary raw text file.'
+    });
   }
 
-  // 2. Check for ZIP magic bytes (PK\x03\x04, PK\x05\x06, PK\x07\x08)
-  else if (buf[0] === 0x50 && buf[1] === 0x4b && (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07)) {
-    try {
-      const unzipped = unzipSync(buf);
-      let totalExtractedSize = 0;
-      for (const k of Object.keys(unzipped)) {
-        totalExtractedSize += unzipped[k]?.byteLength || 0;
-      }
-      if (totalExtractedSize > MAX_DECOMPRESSED_BYTES) {
-        throw new GenomicsError(`ZIP archive extracted payload exceeds safety threshold (500 MB).`, {
-          errorCode: GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB,
-          subsystem: 'ZIP_DECOMPRESSION',
-          suggestedSolution: 'Your ZIP bundle extracted payload exceeds 500MB. Extract the ZIP on your device and upload only the primary raw text file.'
-        });
-      }
+  const fileKeys = Object.keys(unzipped).filter(k => {
+    const lower = k.toLowerCase();
+    return !lower.startsWith('__macosx/') &&
+           !lower.includes('.ds_store') &&
+           !lower.includes('..') &&
+           !lower.endsWith('/') &&
+           !lower.endsWith('.pdf') &&
+           !lower.endsWith('.html') &&
+           !lower.endsWith('.png') &&
+           !lower.endsWith('.jpg') &&
+           !lower.endsWith('.jpeg') &&
+           !lower.endsWith('.gif') &&
+           !lower.endsWith('.xml') &&
+           !lower.endsWith('.json') &&
+           !lower.endsWith('.md');
+  });
 
-      const fileKeys = Object.keys(unzipped).filter(k => {
-        const lower = k.toLowerCase();
-        return !lower.startsWith('__macosx/') &&
-               !lower.includes('.ds_store') &&
-               !lower.includes('..') &&
-               !lower.endsWith('/') &&
-               !lower.endsWith('.pdf') &&
-               !lower.endsWith('.html') &&
-               !lower.endsWith('.png') &&
-               !lower.endsWith('.jpg') &&
-               !lower.endsWith('.jpeg') &&
-               !lower.endsWith('.gif') &&
-               !lower.endsWith('.xml') &&
-               !lower.endsWith('.json') &&
-               !lower.endsWith('.md');
-      });
+  if (fileKeys.length === 0) {
+    return buf;
+  }
 
-      if (fileKeys.length > 0) {
-        fileKeys.sort((a, b) => {
-          const score = (key: string) => {
-            const l = key.toLowerCase();
-            let s = 0;
-            if (l.includes('readme') || l.includes('disclaimer') || l.includes('license') || l.includes('notice') || l.includes('terms') || l.includes('release_notes')) {
-              s -= 500;
-            }
-            if (l.endsWith('.vcf') || l.endsWith('.vcf.gz')) s += 100;
-            if (l.endsWith('.txt') || l.endsWith('.txt.gz')) s += 90;
-            if (l.endsWith('.csv') || l.endsWith('.csv.gz')) s += 80;
-            if (l.endsWith('.tsv') || l.endsWith('.tsv.gz')) s += 70;
-            if (l.endsWith('.dat')) s += 60;
-            if (l.includes('genome') || l.includes('dna') || l.includes('ancestry') || l.includes('23andme') || l.includes('myheritage') || l.includes('ftdna') || l.includes('livingdna')) s += 30;
-            const sz = unzipped[key]?.byteLength || 0;
-            if (sz > 100000) s += 50;
-            if (sz > 1000000) s += 50;
-            return s;
-          };
-          return score(b) - score(a);
-        });
-
-        let innerBuffer = unzipped[fileKeys[0]];
-        if (innerBuffer.length >= 2 && innerBuffer[0] === 0x1f && innerBuffer[1] === 0x8b) {
-          innerBuffer = gunzipSync(innerBuffer);
-          if (innerBuffer.byteLength > MAX_DECOMPRESSED_BYTES) {
-            throw new Error(`Decompressed inner archive exceeds safety threshold (500 MB).`);
-          }
-        }
-        result = innerBuffer;
+  fileKeys.sort((a, b) => {
+    const score = (key: string) => {
+      const l = key.toLowerCase();
+      let s = 0;
+      if (l.includes('readme') || l.includes('disclaimer') || l.includes('license') || l.includes('notice') || l.includes('terms') || l.includes('release_notes')) {
+        s -= 500;
       }
-    } catch (e) {
-      console.warn("fflate unzipSync warning:", e);
-      result = buf;
+      if (l.endsWith('.vcf') || l.endsWith('.vcf.gz') || l.endsWith('.vcf.zip')) s += 100;
+      if (l.endsWith('.txt') || l.endsWith('.txt.gz') || l.endsWith('.txt.zip')) s += 90;
+      if (l.endsWith('.csv') || l.endsWith('.csv.gz') || l.endsWith('.csv.zip')) s += 80;
+      if (l.endsWith('.tsv') || l.endsWith('.tsv.gz') || l.endsWith('.tsv.zip')) s += 70;
+      if (l.endsWith('.dat')) s += 60;
+      if (l.endsWith('.gz') || l.endsWith('.zip')) s += 40;
+      if (l.includes('genome') || l.includes('dna') || l.includes('ancestry') || l.includes('23andme') || l.includes('myheritage') || l.includes('ftdna') || l.includes('livingdna')) s += 30;
+      const sz = unzipped[key]?.byteLength || 0;
+      if (sz > 100000) s += 50;
+      if (sz > 1000000) s += 50;
+      return s;
+    };
+    return score(b) - score(a);
+  });
+
+  return unzipped[fileKeys[0]];
+}
+
+export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
+  if (!buf || buf.length < 4) return buf;
+
+  let result = buf;
+  let depth = 0;
+
+  // Recursively decompress up to MAX_DECOMPRESSION_DEPTH passes to handle double compression
+  // e.g. .vcf.gz inside .zip (MyHeritage WGS), .gz inside .gz, .zip inside .zip, .zip inside .gz
+  while (depth < MAX_DECOMPRESSION_DEPTH && result && result.length >= 4) {
+    // 1. Check for GZIP magic bytes (\x1f\x8b)
+    if (result[0] === 0x1f && result[1] === 0x8b) {
+      try {
+        const decompressed = decompressGzipBuffer(result);
+        result = decompressed;
+        depth++;
+      } catch (e) {
+        if (e instanceof GenomicsError) throw e;
+        console.warn("fflate gunzipSync warning:", e);
+        break;
+      }
+    }
+    // 2. Check for ZIP magic bytes (PK\x03\x04, PK\x05\x06, PK\x07\x08)
+    else if (result[0] === 0x50 && result[1] === 0x4b && (result[2] === 0x03 || result[2] === 0x05 || result[2] === 0x07)) {
+      try {
+        const extracted = extractBestFileFromZip(result);
+        if (extracted === result) break;
+        result = extracted;
+        depth++;
+      } catch (e) {
+        if (e instanceof GenomicsError) throw e;
+        console.warn("fflate unzipSync warning:", e);
+        break;
+      }
+    } else {
+      break;
     }
   }
 
@@ -1702,6 +1720,30 @@ export async function parseRawDNAStream(
       combined.set(value, initialBuffer.length);
       initialBuffer = combined;
       firstChunkText = DECODER.decode(initialBuffer, { stream: true });
+    }
+
+    // Detect double compression (e.g. .vcf.gz.gz or .zip.gz) where inner bytes are still compressed
+    const isInnerCompressed = initialBuffer.length >= 2 && (
+      (initialBuffer[0] === 0x1f && initialBuffer[1] === 0x8b) ||
+      (initialBuffer.length >= 4 && initialBuffer[0] === 0x50 && initialBuffer[1] === 0x4b)
+    );
+    if (isInnerCompressed) {
+      const chunks: Uint8Array[] = [initialBuffer];
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        if (value && value.length > 0) chunks.push(value);
+      }
+      const totalLen = chunks.reduce((acc, c) => acc + c.length, 0);
+      const fullDecomp = new Uint8Array(totalLen);
+      let offset = 0;
+      for (const c of chunks) {
+        fullDecomp.set(c, offset);
+        offset += c.length;
+      }
+      const finalDecomp = decompressGenomicBuffer(fullDecomp);
+      const text = DECODER.decode(finalDecomp);
+      return parseRawDNA(text, allowlist, onProgress);
     }
   } else {
     const firstSlice = file.slice(0, Math.min(65536, file.size));
