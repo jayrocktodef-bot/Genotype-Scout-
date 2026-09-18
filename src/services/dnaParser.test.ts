@@ -5,11 +5,17 @@ import {
   normalizeChromosome, 
   cleanGenotypeString, 
   detectHeaderColumns,
+  detectVendorAndChip,
   sniffDelimiter,
   sniffAndBuildParsePlan,
   decompressGenomicBuffer,
-  microPhaseDataset 
+  checkUnsupportedArchive,
+  decodeTextBuffer,
+  IUPAC_DEGENERATE_MAP,
+  microPhaseDataset,
+  parseVcfColumnLayout
 } from './dnaParser';
+import { GenomicsErrorCode } from './errorCaller';
 import { parseDNAFile } from '../utils/dnaParser';
 import { microPhase } from '../engines/ancestry/microPhaser';
 import { correctPhasingErrors } from '../engines/ancestry/phasingCorrector';
@@ -657,5 +663,228 @@ chr3\t60000\trsSvIns\tC\t<INS>\t99\tPASS\t.\tGT\t1/1
     const result = parseRawDNA(svVcf);
     expect(result.snpMap['rsSvDel'.toLowerCase()]).toBeDefined(); // Should be 'AD'
     expect(result.snpMap['rsSvIns'.toLowerCase()]).toBeDefined(); // Should be 'II'
+  });
+});
+
+// ── Multi-Sample VCF, IUPAC, Unsupported Archives, and DTC/Clinical Adaptations ──
+describe('DNA Parser Adaptations - Multi-Sample, IUPAC, Archives, UTF-16, Clinical Formats', () => {
+  it('should detect multi-sample VCF columns and allow selecting specific sample by name or index', () => {
+    const multiVcf = `##fileformat=VCFv4.2
+##source=FamilyTrioPipeline
+#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tFATHER\tMOTHER\tCHILD
+chr1\t1001\trs1001\tA\tG\t99\tPASS\t.\tGT\t0/1\t1/1\t0/1
+chr1\t1002\trs1002\tC\tT\t99\tPASS\t.\tGT\t1/1\t0/0\t0/1
+chrY\t2001\trs2001\tA\tC\t99\tPASS\t.\tGT\t1\t.\t1
+`;
+    // 1. Default selection should pick FATHER (index 0)
+    const defaultResult = parseRawDNA(multiVcf);
+    expect(defaultResult.sampleNames).toEqual(['FATHER', 'MOTHER', 'CHILD']);
+    expect(defaultResult.selectedSample).toBe('FATHER');
+    expect(defaultResult.snpMap['rs1001']).toBe('AG');
+    expect(defaultResult.snpMap['rs1002']).toBe('TT');
+    expect(defaultResult.yMap['rs2001']).toBe('C');
+
+    // 2. Explicit selection of MOTHER
+    const motherResult = parseRawDNA(multiVcf, undefined, undefined, 'MOTHER');
+    expect(motherResult.selectedSample).toBe('MOTHER');
+    expect(motherResult.snpMap['rs1001']).toBe('GG');
+    // MOTHER has hom-ref (0/0) on rs1002
+    expect(motherResult.snpMap['rs1002']).toBeUndefined();
+    // MOTHER has no call (.) on chrY
+    expect(motherResult.yMap['rs2001']).toBeUndefined();
+
+    // 3. Explicit selection of CHILD (by index 2)
+    const childResult = parseRawDNA(multiVcf, undefined, undefined, 2);
+    expect(childResult.selectedSample).toBe('CHILD');
+    expect(childResult.snpMap['rs1001']).toBe('AG');
+    expect(childResult.snpMap['rs1002']).toBe('CT');
+    expect(childResult.yMap['rs2001']).toBe('C');
+  });
+
+  it('should stream parse multi-sample VCF with target sample selection', async () => {
+    const multiVcf = `##fileformat=VCFv4.2
+#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tPATIENT_A\tPATIENT_B
+chr1\t5001\trs5001\tA\tT\t.\tPASS\t.\tGT\t0/0\t1/1
+chr2\t5002\trs5002\tG\tC\t.\tPASS\t.\tGT\t0/1\t1/1
+`;
+    const blob = new Blob([multiVcf]);
+    const parsed = await parseRawDNAStream(blob, undefined, undefined, 'PATIENT_B');
+    expect(parsed.sampleNames).toEqual(['PATIENT_A', 'PATIENT_B']);
+    expect(parsed.selectedSample).toBe('PATIENT_B');
+    expect(parsed.snpMap['rs5001']).toBe('TT');
+    expect(parsed.snpMap['rs5002']).toBe('CC');
+  });
+
+  it('should normalize IUPAC single-letter degenerate/ambiguity codes to 2-base genotypes without dropping', () => {
+    // R=AG, Y=CT, S=CG, W=AT, K=GT, M=AC
+    expect(cleanGenotypeString('R')).toBe('AG');
+    expect(cleanGenotypeString('Y')).toBe('CT');
+    expect(cleanGenotypeString('S')).toBe('CG');
+    expect(cleanGenotypeString('W')).toBe('AT');
+    expect(cleanGenotypeString('K')).toBe('GT');
+    expect(cleanGenotypeString('M')).toBe('AC');
+
+    const rawData = `# 23andMe with IUPAC calls
+# rsid\tchromosome\tposition\tgenotype
+rs101\t1\t101\tR
+rs102\t1\t102\tY
+rs103\t1\t103\tS
+rs104\t1\t104\tW
+rs105\t1\t105\tK
+rs106\t1\t106\tM
+rs107\t1\t107\t?
+rs108\t1\t108\t00
+rs109\t1\t109\tNA/NA
+`;
+    const result = parseRawDNA(rawData);
+    expect(result.snpCount).toBe(6);
+    expect(result.snpMap['rs101']).toBe('AG');
+    expect(result.snpMap['rs102']).toBe('CT');
+    expect(result.snpMap['rs103']).toBe('CG');
+    expect(result.snpMap['rs104']).toBe('AT');
+    expect(result.snpMap['rs105']).toBe('GT');
+    expect(result.snpMap['rs106']).toBe('AC');
+    // Uncalled rows should not be in snpMap
+    expect(result.snpMap['rs107']).toBeUndefined();
+    expect(result.snpMap['rs108']).toBeUndefined();
+    expect(result.snpMap['rs109']).toBeUndefined();
+  });
+
+  it('should reject unsupported archive formats (.7z, .rar, .bz2, .xz) with actionable error code ERR_ARCHIVE_UNSUPPORTED', async () => {
+    // 7-Zip magic bytes: 37 7A BC AF 27 1C
+    const sevenZipBytes = new Uint8Array([0x37, 0x7a, 0xbc, 0xaf, 0x27, 0x1c, 0x00, 0x01]);
+    // RAR magic bytes: 52 61 72 21
+    const rarBytes = new Uint8Array([0x52, 0x61, 0x72, 0x21, 0x1a, 0x07]);
+    // Bzip2 magic bytes: 42 5A 68
+    const bz2Bytes = new Uint8Array([0x42, 0x5a, 0x68, 0x39, 0x31]);
+    // XZ magic bytes: FD 37 7A 58 5A 00
+    const xzBytes = new Uint8Array([0xfd, 0x37, 0x7a, 0x58, 0x5a, 0x00]);
+
+    // Check helper directly
+    expect(() => checkUnsupportedArchive(sevenZipBytes)).toThrowError();
+    expect(() => checkUnsupportedArchive(rarBytes)).toThrowError();
+    expect(() => checkUnsupportedArchive(bz2Bytes)).toThrowError();
+    expect(() => checkUnsupportedArchive(xzBytes)).toThrowError();
+
+    // Check decompressGenomicBuffer
+    try {
+      decompressGenomicBuffer(sevenZipBytes);
+      expect.unreachable('Should have thrown GenomicsError');
+    } catch (err: any) {
+      expect(err.code).toBe(GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED);
+      expect(err.message).toContain('.7z');
+    }
+
+    try {
+      decompressGenomicBuffer(rarBytes);
+      expect.unreachable('Should have thrown GenomicsError');
+    } catch (err: any) {
+      expect(err.code).toBe(GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED);
+      expect(err.message).toContain('.rar');
+    }
+
+    // Check streaming early detection
+    const blob7z = new Blob([sevenZipBytes]);
+    await expect(parseRawDNAStream(blob7z)).rejects.toThrowError();
+  });
+
+  it('should parse quoted CSV fields and tolerate trailing ## comment footers (Helix)', () => {
+    const helixData = `##fileformat=Helix_v1.0
+##source=Helix
+"rsid","chromosome","position","genotype"
+"rs2001","1","200100","AA"
+"rs2002","1","200200","AG"
+"rs2003","2","200300","TT"
+## Export completed successfully
+## Checksum: abc12345
+`;
+    const result = parseRawDNA(helixData);
+    expect(result.format).toBe('Helix');
+    expect(result.snpCount).toBe(3);
+    expect(result.snpMap['rs2001']).toBe('AA');
+    expect(result.snpMap['rs2002']).toBe('AG');
+    expect(result.snpMap['rs2003']).toBe('TT');
+  });
+
+  it('should parse AncestryDNA 2.0 with ref/alt split column headers', () => {
+    const ancestry2 = `# AncestryDNA 2.0 export
+rsid\tchromosome\tposition\tref\talt
+rs3001\t1\t300100\tA\tC
+rs3002\t2\t300200\tG\tG
+rs3003\tY\t300300\tT\t0
+`;
+    const result = parseRawDNA(ancestry2);
+    expect(result.snpCount).toBe(3);
+    expect(result.snpMap['rs3001']).toBe('AC');
+    expect(result.snpMap['rs3002']).toBe('GG');
+    expect(result.yMap['rs3003']).toBe('T');
+  });
+
+  it('should parse Color Genomics clinical variants with variant_id format', () => {
+    const colorData = `# Color Genomics export
+"variant_id","chromosome","position","allele1","allele2"
+"chr1-400100-A-G","1","400100","A","G"
+"chr1-400200-C-C","1","400200","C","C"
+"1-400300-T-A","1","400300","T","A"
+`;
+    const result = parseRawDNA(colorData);
+    expect(result.format).toBe('Color Genomics');
+    expect(result.snpCount).toBe(3);
+    expect(result.snpMap['chr1-400100-a-g']).toBe('AG');
+    expect(result.snpMap['chr1-400200-c-c']).toBe('CC');
+    expect(result.snpMap['1-400300-t-a']).toBe('AT');
+  });
+
+  it('should decode UTF-16 LE and UTF-16 BE text files automatically', async () => {
+    const content = '# rsid\tchromosome\tposition\tgenotype\nrs9901\t1\t990100\tAA\nrs9902\t1\t990200\tGG\n';
+    
+    // Encode UTF-16 LE with BOM (0xFF, 0xFE)
+    const leBytes = new Uint8Array(2 + content.length * 2);
+    leBytes[0] = 0xff;
+    leBytes[1] = 0xfe;
+    for (let i = 0; i < content.length; i++) {
+      const code = content.charCodeAt(i);
+      leBytes[2 + i * 2] = code & 0xff;
+      leBytes[2 + i * 2 + 1] = (code >> 8) & 0xff;
+    }
+
+    const decodedLe = decodeTextBuffer(leBytes);
+    expect(decodedLe).toContain('rs9901');
+
+    // Parse UTF-16 LE via streaming
+    const leBlob = new Blob([leBytes]);
+    const parsedLe = await parseRawDNAStream(leBlob);
+    expect(parsedLe.snpCount).toBe(2);
+    expect(parsedLe.snpMap['rs9901']).toBe('AA');
+    expect(parsedLe.snpMap['rs9902']).toBe('GG');
+
+    // Encode UTF-16 BE with BOM (0xFE, 0xFF)
+    const beBytes = new Uint8Array(2 + content.length * 2);
+    beBytes[0] = 0xfe;
+    beBytes[1] = 0xff;
+    for (let i = 0; i < content.length; i++) {
+      const code = content.charCodeAt(i);
+      beBytes[2 + i * 2] = (code >> 8) & 0xff;
+      beBytes[2 + i * 2 + 1] = code & 0xff;
+    }
+
+    const decodedBe = decodeTextBuffer(beBytes);
+    expect(decodedBe).toContain('rs9902');
+  });
+
+  it('should detect T2T-CHM13 and hg18 builds alongside commercial vendors', () => {
+    expect(detectVendorAndChip('# Reference: T2T-CHM13v2.0').build).toBe('T2T-CHM13');
+    expect(detectVendorAndChip('# Reference: chm13').build).toBe('T2T-CHM13');
+    expect(detectVendorAndChip('# Build: hg18 (NCBI36)').build).toBe('hg18');
+    expect(detectVendorAndChip('# Build: NCBI36').build).toBe('hg18');
+    expect(detectVendorAndChip('# Reference: GRCh38.p13').build).toBe('GRCh38');
+    expect(detectVendorAndChip('# Reference: GRCh37 (hg19)').build).toBe('GRCh37');
+
+    // Vendors
+    expect(detectVendorAndChip('# Helix raw genotype export').format).toBe('Helix');
+    expect(detectVendorAndChip('# Color Genomics clinical sequencing').format).toBe('Color Genomics');
+    expect(detectVendorAndChip('# Sequencing.com WGS vcf').format).toBe('Sequencing.com');
+    expect(detectVendorAndChip('# Sano Genetics export').format).toBe('Sano Genetics');
+    expect(detectVendorAndChip('# Veritas Genetics myGenome').format).toBe('Veritas Genetics');
   });
 });

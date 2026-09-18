@@ -42,6 +42,83 @@ const SEMICOLON = 0x3B;
 const DECODER = new TextDecoder('utf-8');
 
 /**
+ * Checks for unsupported archive formats (.7z, .rar, .bz2, .xz) via magic bytes
+ * and throws an actionable GenomicsError with ERR_ARCHIVE_UNSUPPORTED.
+ */
+export function checkUnsupportedArchive(buf: Uint8Array): void {
+  if (!buf || buf.length < 3) return;
+
+  // 7-Zip: 37 7A BC AF 27 1C
+  if (buf.length >= 6 && buf[0] === 0x37 && buf[1] === 0x7a && buf[2] === 0xbc && buf[3] === 0xaf && buf[4] === 0x27 && buf[5] === 0x1c) {
+    throw new GenomicsError(
+      "Unsupported 7-Zip (.7z) archive format. Please decompress the file on your device and upload the uncompressed .txt, .csv, or .vcf file.",
+      {
+        errorCode: GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED,
+        subsystem: 'ZIP_DECOMPRESSION',
+        suggestedSolution: 'Decompress the .7z archive using 7-Zip or an archive utility on your computer, then upload the extracted DNA data file directly.'
+      }
+    );
+  }
+
+  // RAR: 52 61 72 21 (Rar!)
+  if (buf.length >= 4 && buf[0] === 0x52 && buf[1] === 0x61 && buf[2] === 0x72 && buf[3] === 0x21) {
+    throw new GenomicsError(
+      "Unsupported RAR (.rar) archive format. Please decompress the file on your device and upload the uncompressed .txt, .csv, or .vcf file.",
+      {
+        errorCode: GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED,
+        subsystem: 'ZIP_DECOMPRESSION',
+        suggestedSolution: 'Decompress the .rar archive using WinRAR, Unrar, or 7-Zip, then upload the extracted DNA data file directly.'
+      }
+    );
+  }
+
+  // Bzip2: 42 5A 68 (BZh)
+  if (buf.length >= 3 && buf[0] === 0x42 && buf[1] === 0x5a && buf[2] === 0x68) {
+    throw new GenomicsError(
+      "Unsupported Bzip2 (.bz2) archive format. Please decompress the file on your device and upload the uncompressed .txt, .csv, or .vcf file.",
+      {
+        errorCode: GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED,
+        subsystem: 'ZIP_DECOMPRESSION',
+        suggestedSolution: 'Decompress the .bz2 archive using bunzip2 or an archive utility, then upload the extracted file.'
+      }
+    );
+  }
+
+  // XZ: FD 37 7A 58 5A 00 (\xFD7zXZ\x00)
+  if (buf.length >= 6 && buf[0] === 0xfd && buf[1] === 0x37 && buf[2] === 0x7a && buf[3] === 0x58 && buf[4] === 0x5a && buf[5] === 0x00) {
+    throw new GenomicsError(
+      "Unsupported XZ (.xz) archive format. Please decompress the file on your device and upload the uncompressed .txt, .csv, or .vcf file.",
+      {
+        errorCode: GenomicsErrorCode.ERR_ARCHIVE_UNSUPPORTED,
+        subsystem: 'ZIP_DECOMPRESSION',
+        suggestedSolution: 'Decompress the .xz archive using unxz or an archive utility, then upload the extracted file.'
+      }
+    );
+  }
+}
+
+/**
+ * Decodes a byte buffer into text, automatically detecting and handling:
+ * - UTF-16 Little Endian (BOM: \xFF\xFE)
+ * - UTF-16 Big Endian (BOM: \xFE\xFF)
+ * - UTF-8 BOM (\xEF\xBB\xBF)
+ * - Standard UTF-8
+ */
+export function decodeTextBuffer(buf: Uint8Array): string {
+  if (!buf || buf.length === 0) return '';
+  if (buf.length >= 2 && buf[0] === 0xff && buf[1] === 0xfe) {
+    return new TextDecoder('utf-16le').decode(buf.subarray(2));
+  }
+  if (buf.length >= 2 && buf[0] === 0xfe && buf[1] === 0xff) {
+    return new TextDecoder('utf-16be').decode(buf.subarray(2));
+  }
+  if (buf.length >= 3 && buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf) {
+    return new TextDecoder('utf-8').decode(buf.subarray(3));
+  }
+  return new TextDecoder('utf-8').decode(buf);
+}
+
+/**
  * Automatically inspects magic bytes and decompresses GZIP (\x1f\x8b) or ZIP (PK\x03\x04) buffers.
  * Selects the primary genetic data file (.txt, .csv, .vcf, .tsv, .dat) case-insensitively.
  * Strips UTF-8 BOM (\xef\xbb\xbf) if present.
@@ -157,7 +234,10 @@ function extractBestFileFromZip(buf: Uint8Array): Uint8Array {
 }
 
 export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
-  if (!buf || buf.length < 4) return buf;
+  if (!buf || buf.length < 3) return buf;
+
+  // 0. Check for unsupported archive formats (.7z, .rar, .bz2, .xz)
+  checkUnsupportedArchive(buf);
 
   let result = buf;
   let depth = 0;
@@ -165,6 +245,7 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
   // Recursively decompress up to MAX_DECOMPRESSION_DEPTH passes to handle double compression
   // e.g. .vcf.gz inside .zip (MyHeritage WGS), .gz inside .gz, .zip inside .zip, .zip inside .gz
   while (depth < MAX_DECOMPRESSION_DEPTH && result && result.length >= 4) {
+    checkUnsupportedArchive(result);
     // 1. Check for GZIP magic bytes (\x1f\x8b)
     if (result[0] === 0x1f && result[1] === 0x8b) {
       try {
@@ -194,6 +275,8 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
     }
   }
 
+  checkUnsupportedArchive(result);
+
   // 3. Strip UTF-8 BOM (\xef\xbb\xbf)
   if (result.length >= 3 && result[0] === 0xef && result[1] === 0xbb && result[2] === 0xbf) {
     result = result.subarray(3);
@@ -202,7 +285,6 @@ export function decompressGenomicBuffer(buf: Uint8Array): Uint8Array {
   return result;
 }
 
-/**
 /**
  * Standardize chromosome identifier across all commercial formats.
  * Maps AncestryDNA chr23->X, chr24->Y, chr25->X (PAR), chr26->MT.
@@ -223,14 +305,35 @@ export function normalizeChromosome(chromRaw: string): string {
 }
 
 /**
+ * IUPAC Degenerate single-letter nucleotide ambiguity codes mapped to 2-base genotypes.
+ * Commercial DTC and SNP arrays frequently export heterozygous calls using these single letters.
+ */
+export const IUPAC_DEGENERATE_MAP: Record<string, string> = {
+  R: 'AG', // Purine (A or G)
+  Y: 'CT', // Pyrimidine (C or T)
+  S: 'CG', // Strong (C or G)
+  W: 'AT', // Weak (A or T)
+  K: 'GT', // Keto (G or T)
+  M: 'AC', // Amino (A or C)
+};
+
+const UNCALLED_GENOTYPES = new Set([
+  '--', '__', '00', '??', './.', '.|.', '-', '.', '0', '?',
+  'NA', 'NN', 'NULL', 'NC', 'NOT_CALLED', 'N', 'N/N', 'NA/NA', 'NONE', 'UNCONFIRMED'
+]);
+
+/**
  * Validate and clean genotype string.
- * Handles split alleles, slashes, indels (I/D, +/-, <INS>/<DEL>), and alphabetical sorting.
+ * Handles split alleles, slashes, IUPAC degeneracy, indels (I/D, +/-, <INS>/<DEL>), and alphabetical sorting.
  */
 export function isValidGenotype(genotype: string): boolean {
   if (!genotype) return false;
   const g = genotype.trim().toUpperCase().replace(/["'\s\/|_]/g, '');
-  if (g === '--' || g === '__' || g === '00' || g === '??' || g === './.' || g === '.|.' || g === '-' || g === '.' || g === '0' || g === 'NA' || g === 'NN' || g === 'NULL' || g === 'NC' || g === 'NOT_CALLED') {
+  if (UNCALLED_GENOTYPES.has(g)) {
     return false;
+  }
+  if (g.length === 1 && IUPAC_DEGENERATE_MAP[g]) {
+    return true;
   }
   const len = g.length;
   if (len === 0 || len > 2) return false;
@@ -242,7 +345,7 @@ export function isValidGenotype(genotype: string): boolean {
 export function cleanGenotypeString(rawGenotype: string): string | null {
   if (!rawGenotype) return null;
   let g = rawGenotype.trim().toUpperCase().replace(/["'\s\/|_]/g, '');
-  if (g === '--' || g === '__' || g === '00' || g === '??' || g === './.' || g === '.|.' || g === '-' || g === '.' || g === '0' || g === 'NA' || g === 'NN' || g === 'NULL' || g === 'NC' || g === 'NOT_CALLED') {
+  if (UNCALLED_GENOTYPES.has(g)) {
     return null;
   }
   // Convert '+' and '-' indel notations or symbolic indels to I / D
@@ -262,6 +365,11 @@ export function cleanGenotypeString(rawGenotype: string): string | null {
     } else if (g[1] === '-' && (g[0] === 'A' || g[0] === 'C' || g[0] === 'G' || g[0] === 'T' || g[0] === 'I' || g[0] === 'D')) {
       g = g[0];
     }
+  }
+
+  // IUPAC Degenerate single-letter code conversion
+  if (g.length === 1 && IUPAC_DEGENERATE_MAP[g]) {
+    g = IUPAC_DEGENERATE_MAP[g];
   }
 
   const len = g.length;
@@ -290,7 +398,9 @@ interface ParsedFields {
 export interface ParsedDnaData {
   format: string;
   chip: string;
-  build: 'GRCh37' | 'GRCh38' | 'UNKNOWN';
+  build: 'GRCh37' | 'GRCh38' | 'T2T-CHM13' | 'hg18' | 'UNKNOWN';
+  sampleNames?: string[];
+  selectedSample?: string;
   totalSnps: number;
   yDnaSnps: number;
   yDnaCalledSnps: number;
@@ -462,6 +572,7 @@ export function detectHeaderColumns(headerLine: string, delim: string): ColumnMa
     // Allele 1 (split) aliases
     else if (
       t === 'allele1' || t === 'allele1top' || t === 'a1' || t === 'alelo1' || t === 'allelea' ||
+      t === 'ref' || t === 'reference' || t === 'refallele' ||
       rawT === 'allele 1' || rawT === 'allele1 - top' || rawT === 'allele 1 - top' ||
       rawT === 'alelo 1' || rawT === 'allele a' || rawT === 'allele_1' || rawT === 'alelo_1'
     ) {
@@ -470,6 +581,7 @@ export function detectHeaderColumns(headerLine: string, delim: string): ColumnMa
     // Allele 2 (split) aliases
     else if (
       t === 'allele2' || t === 'allele2top' || t === 'a2' || t === 'alelo2' || t === 'alleleb' ||
+      t === 'alt' || t === 'alternate' || t === 'altallele' ||
       rawT === 'allele 2' || rawT === 'allele2 - top' || rawT === 'allele 2 - top' ||
       rawT === 'alelo 2' || rawT === 'allele b' || rawT === 'allele_2' || rawT === 'alelo_2'
     ) {
@@ -669,15 +781,22 @@ export interface VcfColumnLayout {
   altIdx: number;
   filterIdx: number;
   formatIdx: number;
-  sampleIdx: number; // index of first SAMPLE column (FORMAT + 1)
+  sampleIdx: number; // index of target SAMPLE column
+  sampleNames: string[];
+  selectedSampleName: string;
   isGvcf: boolean;   // gVCF signals detected in meta-info lines
 }
 
-/** Parse the VCF #CHROM line to get dynamic column positions. */
-export function parseVcfColumnLayout(sampleLines: string[]): VcfColumnLayout {
+/** Parse the VCF #CHROM line to get dynamic column positions and multi-sample names. */
+export function parseVcfColumnLayout(
+  sampleLines: string[],
+  targetSample?: string | number
+): VcfColumnLayout {
   // Default safe positions matching VCF 4.x spec
   let chromIdx = 0, posIdx = 1, idIdx = 2, refIdx = 3, altIdx = 4, filterIdx = 6, formatIdx = 8, sampleIdx = 9;
   let isGvcf = false;
+  let sampleNames: string[] = [];
+  let selectedSampleName = '';
 
   for (const line of sampleLines) {
     const trimmed = line.trim();
@@ -687,7 +806,8 @@ export function parseVcfColumnLayout(sampleLines: string[]): VcfColumnLayout {
     }
     // Parse column header dynamically
     if (trimmed.startsWith('#CHROM') || trimmed.startsWith('#chrom')) {
-      const cols = trimmed.replace(/^#/, '').toUpperCase().split('\t');
+      const rawCols = trimmed.replace(/^#/, '').split('\t');
+      const cols = rawCols.map(c => c.trim().toUpperCase());
       const findIdx = (name: string) => { const i = cols.indexOf(name); return i === -1 ? -1 : i; };
       const ci = findIdx('CHROM');   if (ci !== -1) chromIdx = ci;
       const pi = findIdx('POS');     if (pi !== -1) posIdx = pi;
@@ -696,11 +816,42 @@ export function parseVcfColumnLayout(sampleLines: string[]): VcfColumnLayout {
       const ai = findIdx('ALT');     if (ai !== -1) altIdx = ai;
       const fi = findIdx('FILTER');  if (fi !== -1) filterIdx = fi;
       const fmi = findIdx('FORMAT'); if (fmi !== -1) { formatIdx = fmi; sampleIdx = fmi + 1; }
+
+      // Columns after FORMAT are individual sample columns
+      if (formatIdx !== -1 && rawCols.length > formatIdx + 1) {
+        sampleNames = rawCols.slice(formatIdx + 1).map(s => s.trim());
+      } else if (rawCols.length > 9) {
+        sampleNames = rawCols.slice(9).map(s => s.trim());
+      }
       break;
     }
   }
 
-  return { chromIdx, posIdx, idIdx, refIdx, altIdx, filterIdx, formatIdx, sampleIdx, isGvcf };
+  // Resolve target sample index and name
+  if (sampleNames.length > 0) {
+    if (typeof targetSample === 'string') {
+      const matchIdx = sampleNames.findIndex(s => s.toLowerCase() === targetSample.toLowerCase());
+      if (matchIdx !== -1) {
+        sampleIdx = (formatIdx !== -1 ? formatIdx + 1 : 9) + matchIdx;
+        selectedSampleName = sampleNames[matchIdx];
+      } else {
+        sampleIdx = formatIdx !== -1 ? formatIdx + 1 : 9;
+        selectedSampleName = sampleNames[0];
+      }
+    } else if (typeof targetSample === 'number') {
+      const clampedIdx = Math.max(0, Math.min(targetSample, sampleNames.length - 1));
+      sampleIdx = (formatIdx !== -1 ? formatIdx + 1 : 9) + clampedIdx;
+      selectedSampleName = sampleNames[clampedIdx];
+    } else {
+      sampleIdx = formatIdx !== -1 ? formatIdx + 1 : 9;
+      selectedSampleName = sampleNames[0];
+    }
+  } else {
+    selectedSampleName = 'SAMPLE';
+    sampleNames = ['SAMPLE'];
+  }
+
+  return { chromIdx, posIdx, idIdx, refIdx, altIdx, filterIdx, formatIdx, sampleIdx, sampleNames, selectedSampleName, isGvcf };
 }
 
 export interface ParsePlan {
@@ -714,7 +865,7 @@ export interface ParsePlan {
   vcfLayout?: VcfColumnLayout;
 }
 
-export function sniffAndBuildParsePlan(sampleLines: string[]): ParsePlan {
+export function sniffAndBuildParsePlan(sampleLines: string[], targetSample?: string | number): ParsePlan {
   // 1. Check if VCF
   const isVcf = sampleLines.some(l => {
     const low = l.toLowerCase();
@@ -722,7 +873,7 @@ export function sniffAndBuildParsePlan(sampleLines: string[]): ParsePlan {
   });
 
   if (isVcf) {
-    const vcfLayout = parseVcfColumnLayout(sampleLines);
+    const vcfLayout = parseVcfColumnLayout(sampleLines, targetSample);
     return {
       delim: TAB,
       delimStr: '\t',
@@ -833,13 +984,28 @@ function parseAdaptiveLine(line: string, delimStr: string, mapping: ColumnMappin
 
   const stripQ = (s: string) => {
     let res = s.trim();
-    if (res.charCodeAt(0) === QUOTE) res = res.substring(1);
-    if (res.length > 0 && res.charCodeAt(res.length - 1) === QUOTE) res = res.substring(0, res.length - 1);
+    while (res.length > 0 && (res.charCodeAt(0) === QUOTE || res.charCodeAt(0) === 0x27 /* ' */)) {
+      res = res.substring(1);
+    }
+    while (res.length > 0 && (res.charCodeAt(res.length - 1) === QUOTE || res.charCodeAt(res.length - 1) === 0x27)) {
+      res = res.substring(0, res.length - 1);
+    }
     return res.trim();
   };
 
-  const rawChrom = mapping.chromIdx < parts.length ? stripQ(parts[mapping.chromIdx]) : '';
-  const rawPos = mapping.posIdx < parts.length ? stripQ(parts[mapping.posIdx]) : '';
+  let rawChrom = mapping.chromIdx >= 0 && mapping.chromIdx < parts.length ? stripQ(parts[mapping.chromIdx]) : '';
+  let rawPos = mapping.posIdx >= 0 && mapping.posIdx < parts.length ? stripQ(parts[mapping.posIdx]) : '';
+  let rawMarker = (mapping.rsidIdx >= 0 && mapping.rsidIdx < parts.length) ? stripQ(parts[mapping.rsidIdx]).toLowerCase() : '';
+
+  // Clinical / Color Genomics: if variant_id is e.g. "chr1-12345-A-G" or "1-12345-A-G"
+  if ((!rawChrom || !rawPos || isNaN(parseInt(rawPos, 10))) && rawMarker) {
+    const m = rawMarker.match(/^(?:chr)?([0-9xyxymt]+)[-_:]([0-9]+)/i);
+    if (m) {
+      if (!rawChrom) rawChrom = m[1];
+      if (!rawPos || isNaN(parseInt(rawPos, 10))) rawPos = m[2];
+    }
+  }
+
   if (!rawChrom || !rawPos) return null;
 
   const pos = parseInt(rawPos, 10);
@@ -864,7 +1030,6 @@ function parseAdaptiveLine(line: string, delimStr: string, mapping: ColumnMappin
   if (!genotype) return null;
 
   const chrom = normalizeChromosome(rawChrom);
-  let rawMarker = (mapping.rsidIdx >= 0 && mapping.rsidIdx < parts.length) ? stripQ(parts[mapping.rsidIdx]).toLowerCase() : '';
   if (!rawMarker || rawMarker === '.' || rawMarker === '-') {
     rawMarker = `chr${chrom}_${pos}`.toLowerCase();
   }
@@ -988,7 +1153,14 @@ function parseLineBytes(buf: Uint8Array, start: number, end: number, delimByte: 
   if (allele1Len === 1 || allele1Len === 2) {
     const b = upper(allele1Byte);
     if (b !== 0x30) {
-      if (!isValidAlleleByte(b)) {
+      if (!hasSecondAllele && allele1Len === 1 && (b === 0x52 || b === 0x59 || b === 0x53 || b === 0x57 || b === 0x4B || b === 0x4D)) {
+        if (b === 0x52 /*R*/) genotype = 'AG';
+        else if (b === 0x59 /*Y*/) genotype = 'CT';
+        else if (b === 0x53 /*S*/) genotype = 'CG';
+        else if (b === 0x57 /*W*/) genotype = 'AT';
+        else if (b === 0x4B /*K*/) genotype = 'GT';
+        else if (b === 0x4D /*M*/) genotype = 'AC';
+      } else if (!isValidAlleleByte(b)) {
         valid = false;
       } else {
         genotype = String.fromCharCode(b);
@@ -1204,15 +1376,19 @@ export function isPARRegion(chrom: string, pos: number): boolean {
   return false;
 }
 
-export function detectVendorAndChip(headerText: string): { format: string; chip: string; build: 'GRCh37' | 'GRCh38' | 'UNKNOWN' } {
+export function detectVendorAndChip(headerText: string): { format: string; chip: string; build: 'GRCh37' | 'GRCh38' | 'T2T-CHM13' | 'hg18' | 'UNKNOWN' } {
   const h = headerText.toLowerCase();
   let format = "Unknown";
   let chip = "Unknown Chip";
-  let build: 'GRCh37' | 'GRCh38' | 'UNKNOWN' = 'GRCh37';
+  let build: 'GRCh37' | 'GRCh38' | 'T2T-CHM13' | 'hg18' | 'UNKNOWN' = 'GRCh37';
 
-  if (h.includes("grch38") || h.includes("hg38") || h.includes("build 38")) {
+  if (h.includes("chm13") || h.includes("t2t") || h.includes("t2t-chm13") || h.includes("hs1")) {
+    build = 'T2T-CHM13';
+  } else if (h.includes("grch38") || h.includes("hg38") || h.includes("build 38")) {
     build = 'GRCh38';
-  } else if (h.includes("grch37") || h.includes("hg19") || h.includes("build 37") || h.includes("ncbi36") || h.includes("hg18")) {
+  } else if (h.includes("ncbi36") || h.includes("hg18") || h.includes("build 36")) {
+    build = 'hg18';
+  } else if (h.includes("grch37") || h.includes("hg19") || h.includes("build 37")) {
     build = 'GRCh37';
   }
 
@@ -1243,6 +1419,21 @@ export function detectVendorAndChip(headerText: string): { format: string; chip:
   } else if (h.includes("living dna") || h.includes("livingdna")) {
     format = "Living DNA";
     chip = "Living DNA (GSA)";
+  } else if (h.includes("helix")) {
+    format = "Helix";
+    chip = "Helix Exome+ / Microarray";
+  } else if (h.includes("color genomics") || h.includes("color.com") || (h.includes("variant_id") && h.includes("color"))) {
+    format = "Color Genomics";
+    chip = "Color Genomics Clinical Panel/WGS";
+  } else if (h.includes("sequencing.com") || (h.includes("sequencing") && !h.includes("23andme"))) {
+    format = "Sequencing.com";
+    chip = "Sequencing.com WGS";
+  } else if (h.includes("sano genetics") || h.includes("sano")) {
+    format = "Sano Genetics";
+    chip = "Sano Genetics DNA";
+  } else if (h.includes("veritas") || h.includes("mygenome")) {
+    format = "Veritas Genetics";
+    chip = "Veritas Genetics myGenome (WGS)";
   } else if (h.includes("tellmegen")) {
     format = "TellmeGen";
     chip = "TellmeGen Raw Data";
@@ -1365,10 +1556,11 @@ export function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal
 export function parseRawDNA(
   rawText: string, 
   allowlist?: Set<string>,
-  onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void
+  onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void,
+  targetSample?: string | number
 ): ParsedDnaData {
   let text = rawText;
-  if (text.charCodeAt(0) === 0xFEFF) {
+  if (text.charCodeAt(0) === 0xFEFF || text.charCodeAt(0) === 0xFFFE) {
     text = text.slice(1);
   }
 
@@ -1413,11 +1605,11 @@ export function parseRawDNA(
 
   // Sniff delimiter, header columns and build execution plan
   const sampleLines = text.slice(0, 50000).split(/\r?\n/);
-  const plan = sniffAndBuildParsePlan(sampleLines);
+  const plan = sniffAndBuildParsePlan(sampleLines, targetSample);
 
   const isVcf = plan.isVcf || format === "VCF" || format === "Dante Labs" || format === "Nebula Genomics" || header.toLowerCase().includes("##fileformat=vcf") || header.includes("#CHROM");
   // Resolve VCF column layout — use plan's parsed layout or re-derive
-  const vcfLayout: VcfColumnLayout = plan.vcfLayout ?? parseVcfColumnLayout(sampleLines);
+  const vcfLayout: VcfColumnLayout = plan.vcfLayout ?? parseVcfColumnLayout(sampleLines, targetSample);
   const totalLength = text.length;
   let lineStart = 0;
   // gVCF-specific skip counters for structured zero-SNP diagnostics
@@ -1643,6 +1835,8 @@ export function parseRawDNA(
     format,
     chip,
     build,
+    sampleNames: isVcf && vcfLayout.sampleNames && vcfLayout.sampleNames.length > 0 ? vcfLayout.sampleNames : undefined,
+    selectedSample: isVcf && vcfLayout.selectedSampleName ? vcfLayout.selectedSampleName : undefined,
     snpCount,
     rawSnpsCount: matchCount,
     totalSnps: matchCount || snpCount,
@@ -1671,20 +1865,35 @@ export function parseRawDNA(
 export async function parseRawDNAStream(
   file: File | Blob,
   allowlist?: Set<string>,
-  onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void
+  onProgress?: (bytesProcessed: number, totalBytes: number, snpsFound: number) => void,
+  targetSample?: string | number
 ) {
-  // Check for GZIP (\x1f\x8b) or ZIP (PK\x03\x04) signatures on sample slice
+  // Check for unsupported archives (.7z, .rar, .bz2, .xz) on sample slice
   const sampleSlice = file.slice(0, Math.min(65536, file.size));
   const sampleBuf = new Uint8Array(await sampleSlice.arrayBuffer());
+  checkUnsupportedArchive(sampleBuf);
+
+  // Auto-detect UTF-16 LE/BE encoding via BOM bytes
+  const isUtf16 = sampleBuf.length >= 2 && (
+    (sampleBuf[0] === 0xff && sampleBuf[1] === 0xfe) ||
+    (sampleBuf[0] === 0xfe && sampleBuf[1] === 0xff)
+  );
+  if (isUtf16) {
+    const fullBuf = new Uint8Array(await file.arrayBuffer());
+    const text = decodeTextBuffer(fullBuf);
+    return parseRawDNA(text, allowlist, onProgress, targetSample);
+  }
 
   const isGzip = sampleBuf.length >= 2 && sampleBuf[0] === 0x1f && sampleBuf[1] === 0x8b;
   const isZip = sampleBuf.length >= 4 && sampleBuf[0] === 0x50 && sampleBuf[1] === 0x4b;
 
   if (isZip || (isGzip && typeof DecompressionStream === 'undefined')) {
     const fullBuf = new Uint8Array(await file.arrayBuffer());
+    checkUnsupportedArchive(fullBuf);
     const decompressed = decompressGenomicBuffer(fullBuf);
-    const text = DECODER.decode(decompressed);
-    return parseRawDNA(text, allowlist, onProgress);
+    checkUnsupportedArchive(decompressed);
+    const text = decodeTextBuffer(decompressed);
+    return parseRawDNA(text, allowlist, onProgress, targetSample);
   }
 
   const snpMap: Record<string, string> = {};
@@ -1742,8 +1951,9 @@ export async function parseRawDNAStream(
         offset += c.length;
       }
       const finalDecomp = decompressGenomicBuffer(fullDecomp);
-      const text = DECODER.decode(finalDecomp);
-      return parseRawDNA(text, allowlist, onProgress);
+      checkUnsupportedArchive(finalDecomp);
+      const text = decodeTextBuffer(finalDecomp);
+      return parseRawDNA(text, allowlist, onProgress, targetSample);
     }
   } else {
     const firstSlice = file.slice(0, Math.min(65536, file.size));
@@ -1771,10 +1981,10 @@ export async function parseRawDNAStream(
   let build = detectedInfo.build;
 
   const sampleLines = firstChunkText.split(/\r?\n/);
-  const plan = sniffAndBuildParsePlan(sampleLines);
+  const plan = sniffAndBuildParsePlan(sampleLines, targetSample);
   const isVcf = plan.isVcf || format === "VCF" || format === "Dante Labs" || format === "Nebula Genomics" || header.toLowerCase().includes("##fileformat=vcf") || header.includes("#CHROM");
   // Resolve dynamic VCF column layout
-  const vcfLayout: VcfColumnLayout = plan.vcfLayout ?? parseVcfColumnLayout(sampleLines);
+  const vcfLayout: VcfColumnLayout = plan.vcfLayout ?? parseVcfColumnLayout(sampleLines, targetSample);
 
   let remainder = new Uint8Array(0);
 
@@ -2092,6 +2302,8 @@ export async function parseRawDNAStream(
     format,
     chip,
     build,
+    sampleNames: isVcf && vcfLayout.sampleNames && vcfLayout.sampleNames.length > 0 ? vcfLayout.sampleNames : undefined,
+    selectedSample: isVcf && vcfLayout.selectedSampleName ? vcfLayout.selectedSampleName : undefined,
     snpCount,
     rawSnpsCount: snpCount,
     totalSnps: snpCount,
