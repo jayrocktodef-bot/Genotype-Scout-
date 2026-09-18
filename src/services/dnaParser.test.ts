@@ -593,3 +593,69 @@ rs400\tY\t4000\tG\t0
   });
 });
 
+// ── ERR-4025FGD1 Regression Suite: Ancestry UK + MyHeritage WGS ──────────────
+describe('ERR-4025FGD1 regression: Ancestry UK BOM + MyHeritage WGS gVCF', () => {
+  it('should parse AncestryDNA UK export with UTF-8 BOM on the column header row', () => {
+    // UK exports (Windows/Excel) prepend \uFEFF to the header row,
+    // making the first token '\uFEFFrsid' instead of 'rsid'.
+    const bom = '\uFEFF';
+    const rawData = `# AncestryDNA
+# Ancestry.co.uk raw data export
+${bom}rsid\tchromosome\tposition\tallele1\tallele2
+rs1234\t1\t100\tA\tG
+rs5678\tX\t200\tC\tT
+rs9012\tY\t300\tG\t0
+`;
+    const result = parseRawDNA(rawData);
+    expect(result.format).toBe('AncestryDNA');
+    expect(result.snpCount).toBeGreaterThanOrEqual(3);
+    expect(result.snpMap['rs1234']).toBe('AG');
+    expect(result.snpMap['rs5678']).toBe('CT');
+    expect(result.yMap['rs9012']).toBe('G');
+  });
+
+  it('should throw a gvcf_nonref structured error for a pure gVCF <NON_REF> file', () => {
+    const gvcfData = `##fileformat=VCFv4.2
+##ALT=<ID=NON_REF,Description="Represents any possible alternative allele">
+##INFO=<ID=END,Number=1,Type=Integer,Description="Stop position">
+#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE
+chr1\t100\t.\tA\t<NON_REF>\t.\tPASS\t.\tGT\t0/0
+chr1\t200\t.\tC\t<NON_REF>\t.\tPASS\t.\tGT\t0/0
+chr1\t300\t.\tG\t<NON_REF>\t.\tPASS\t.\tGT\t0/0
+`;
+    expect(() => parseRawDNA(gvcfData)).toThrow(/gvcf_nonref|symbolic_alt_only|ERR-4025FGD1/);
+  });
+
+  it('should parse MyHeritage WGS VCF with mixed gVCF and real variant rows', () => {
+    const mixedVcf = `##fileformat=VCFv4.2
+##source=MyHeritage
+##reference=GRCh38
+#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE
+chr1\t100\trs111\tA\tG\t.\tPASS\t.\tGT\t0/1
+chr1\t200\t.\tC\t<NON_REF>\t.\tPASS\tEND=500\tGT\t0/0
+chr2\t300\trs222\tT\tC\t.\tPASS\t.\tGT\t1/1
+chrY\t400\trs333\tG\tA\t.\tPASS\t.\tGT\t1
+`;
+    const result = parseRawDNA(mixedVcf);
+    expect(result.format).toBe('MyHeritage');
+    expect(result.chip).toBe('MyHeritage WGS (VCF)');
+    expect(result.snpCount).toBeGreaterThanOrEqual(2);
+    expect(result.snpMap['rs111']).toBeDefined();
+    expect(result.snpMap['rs222']).toBe('CC'); // REF=T, ALT=C, GT=1/1 → homozygous ALT → CC
+    expect(result.yMap['rs333']).toBeDefined();
+  });
+
+  it('should still parse <DEL>/<INS> structural variant ALTs (not gVCF placeholders)', () => {
+    // <DEL> and <INS> are structural variants with real biological meaning.
+    // They must NOT be caught by the gVCF placeholder guard.
+    const svVcf = `##fileformat=VCFv4.2
+##source=Dante Labs
+#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE1
+chr2\t50000\trsSvDel\tA\t<DEL>\t99\tPASS\t.\tGT\t0/1
+chr3\t60000\trsSvIns\tC\t<INS>\t99\tPASS\t.\tGT\t1/1
+`;
+    const result = parseRawDNA(svVcf);
+    expect(result.snpMap['rsSvDel'.toLowerCase()]).toBeDefined(); // Should be 'AD'
+    expect(result.snpMap['rsSvIns'.toLowerCase()]).toBeDefined(); // Should be 'II'
+  });
+});

@@ -386,7 +386,14 @@ export function sniffDelimiter(sampleLines: string[]): { delim: number; delimStr
  */
 export function detectHeaderColumns(headerLine: string, delim: string): ColumnMapping | null {
   const stripped = headerLine.replace(/^#+/, '').replace(/"/g, '').trim();
-  const rawTokens = (delim === ' ' ? stripped.split(/\s+/) : stripped.split(delim)).map(t => t.trim().toLowerCase());
+  const rawTokens = (delim === ' ' ? stripped.split(/\s+/) : stripped.split(delim)).map((t, i) => {
+    let tok = t.trim().toLowerCase();
+    // Strip UTF-8 BOM (\xEF\xBB\xBF) that UK/EU locales sometimes prepend to the first column name.
+    // This fixes AncestryDNA UK exports where '\xEF\xBB\xBFrsid' fails all alias checks.
+    if (i === 0 && tok.charCodeAt(0) === 0xFEFF) tok = tok.slice(1);
+    if (i === 0 && tok.startsWith('\xef\xbb\xbf')) tok = tok.slice(3);
+    return tok;
+  });
   if (rawTokens.length < 3) return null;
 
   let rsidIdx = -1;
@@ -632,6 +639,52 @@ export function inferColumnMappingFromContent(sampleLines: string[], delim: stri
   };
 }
 
+/**
+ * VCF column layout resolved from the #CHROM header line.
+ * Stored once per parse and reused for every data row.
+ */
+export interface VcfColumnLayout {
+  chromIdx: number;
+  posIdx: number;
+  idIdx: number;
+  refIdx: number;
+  altIdx: number;
+  filterIdx: number;
+  formatIdx: number;
+  sampleIdx: number; // index of first SAMPLE column (FORMAT + 1)
+  isGvcf: boolean;   // gVCF signals detected in meta-info lines
+}
+
+/** Parse the VCF #CHROM line to get dynamic column positions. */
+export function parseVcfColumnLayout(sampleLines: string[]): VcfColumnLayout {
+  // Default safe positions matching VCF 4.x spec
+  let chromIdx = 0, posIdx = 1, idIdx = 2, refIdx = 3, altIdx = 4, filterIdx = 6, formatIdx = 8, sampleIdx = 9;
+  let isGvcf = false;
+
+  for (const line of sampleLines) {
+    const trimmed = line.trim();
+    // Detect gVCF signals in meta-info
+    if (trimmed.startsWith('##ALT=<ID=NON_REF') || trimmed.startsWith('##INFO=<ID=END,') || trimmed.startsWith('##ALT=<ID=*')) {
+      isGvcf = true;
+    }
+    // Parse column header dynamically
+    if (trimmed.startsWith('#CHROM') || trimmed.startsWith('#chrom')) {
+      const cols = trimmed.replace(/^#/, '').toUpperCase().split('\t');
+      const findIdx = (name: string) => { const i = cols.indexOf(name); return i === -1 ? -1 : i; };
+      const ci = findIdx('CHROM');   if (ci !== -1) chromIdx = ci;
+      const pi = findIdx('POS');     if (pi !== -1) posIdx = pi;
+      const ii = findIdx('ID');      if (ii !== -1) idIdx = ii;
+      const ri = findIdx('REF');     if (ri !== -1) refIdx = ri;
+      const ai = findIdx('ALT');     if (ai !== -1) altIdx = ai;
+      const fi = findIdx('FILTER');  if (fi !== -1) filterIdx = fi;
+      const fmi = findIdx('FORMAT'); if (fmi !== -1) { formatIdx = fmi; sampleIdx = fmi + 1; }
+      break;
+    }
+  }
+
+  return { chromIdx, posIdx, idIdx, refIdx, altIdx, filterIdx, formatIdx, sampleIdx, isGvcf };
+}
+
 export interface ParsePlan {
   delim: number;
   delimStr: string;
@@ -640,6 +693,7 @@ export interface ParsePlan {
   headerLineIndex: number;
   isStandard23andMe: boolean;
   isStandardAncestry: boolean;
+  vcfLayout?: VcfColumnLayout;
 }
 
 export function sniffAndBuildParsePlan(sampleLines: string[]): ParsePlan {
@@ -650,14 +704,15 @@ export function sniffAndBuildParsePlan(sampleLines: string[]): ParsePlan {
   });
 
   if (isVcf) {
+    const vcfLayout = parseVcfColumnLayout(sampleLines);
     return {
       delim: TAB,
       delimStr: '\t',
       mapping: {
-        rsidIdx: 2,
-        chromIdx: 0,
-        posIdx: 1,
-        gtIdx: 9,
+        rsidIdx: vcfLayout.idIdx,
+        chromIdx: vcfLayout.chromIdx,
+        posIdx: vcfLayout.posIdx,
+        gtIdx: vcfLayout.sampleIdx,
         allele1Idx: -1,
         allele2Idx: -1,
         hasSplitAlleles: false,
@@ -666,7 +721,8 @@ export function sniffAndBuildParsePlan(sampleLines: string[]): ParsePlan {
       isVcf: true,
       headerLineIndex: -1,
       isStandard23andMe: false,
-      isStandardAncestry: false
+      isStandardAncestry: false,
+      vcfLayout
     };
   }
 
@@ -1157,7 +1213,12 @@ export function detectVendorAndChip(headerText: string): { format: string; chip:
     else chip = "AncestryDNA";
   } else if (h.includes("myheritage")) {
     format = "MyHeritage";
-    chip = "MyHeritage DNA (GSA)";
+    // MyHeritage offers both microarray (GSA) and WGS (VCF). Distinguish by VCF signals.
+    if (h.includes("##fileformat=vcf") || h.includes("#chrom") || h.includes("##source=myheritage")) {
+      chip = "MyHeritage WGS (VCF)";
+    } else {
+      chip = "MyHeritage DNA (GSA)";
+    }
   } else if (h.includes("family tree dna") || h.includes("ftdna") || (h.includes("rsid") && h.includes("result") && !h.includes("myheritage"))) {
     format = "FTDNA";
     chip = "FTDNA Family Finder";
@@ -1227,17 +1288,35 @@ export function decodeVcfGenotype(ref: string, alt: string, gtVal: string, psVal
   const isPhased = gtVal.includes('|');
   const gtParts = gtVal.split(/[\/|]/);
   const altAlleles = alt.split(',');
+
+  // gVCF guard: skip rows whose ALT is a gVCF reference-block placeholder.
+  // <NON_REF>, <*>, and <M> are gVCF-only signals with no variant call.
+  // Structural variant ALTs like <DEL>, <INS>, <DUP>, <INV> carry real biological
+  // meaning and must be passed through to normalizeAllele, so they are NOT skipped here.
+  const isGvcfPlaceholder = (a: string) =>
+    a === '<NON_REF>' || a === '<*>' || a === '<M>' ||
+    /^<NON_REF(:\w+)?>$/i.test(a);
+  const allGvcfPlaceholder = altAlleles.every(a => isGvcfPlaceholder(a));
+  if (allGvcfPlaceholder) return null;
+
+  // Classify any angle-bracket ALT as symbolic for per-allele routing
+  const isSymbolicAlt = (a: string) => a.startsWith('<') && a.endsWith('>');
+
   const getAllele = (idxStr: string) => {
     if (idxStr === '0') return ref;
     if (idxStr === '.') return null; // Missing allele in multi-sample VCF — skip
     const idx = parseInt(idxStr, 10);
-    return (idx >= 1 && idx <= altAlleles.length) ? altAlleles[idx - 1] : null;
+    if (isNaN(idx) || idx < 1 || idx > altAlleles.length) return null;
+    const a = altAlleles[idx - 1];
+    // gVCF placeholder mixed with real ALTs: skip only this specific allele slot
+    if (isGvcfPlaceholder(a)) return null;
+    return a;
   };
   const isHemizygous = gtParts.length === 1;
   const a1 = getAllele(gtParts[0]);
   const a2 = isHemizygous ? null : getAllele(gtParts[1] || gtParts[0]);
 
-  // If either allele is missing (null), skip this variant
+  // If either allele is missing/symbolic (null), skip this variant
   if (a1 === null) return null;
 
   const normalizeAllele = (a: string) => {
@@ -1319,8 +1398,14 @@ export function parseRawDNA(
   const plan = sniffAndBuildParsePlan(sampleLines);
 
   const isVcf = plan.isVcf || format === "VCF" || format === "Dante Labs" || format === "Nebula Genomics" || header.toLowerCase().includes("##fileformat=vcf") || header.includes("#CHROM");
+  // Resolve VCF column layout — use plan's parsed layout or re-derive
+  const vcfLayout: VcfColumnLayout = plan.vcfLayout ?? parseVcfColumnLayout(sampleLines);
   const totalLength = text.length;
   let lineStart = 0;
+  // gVCF-specific skip counters for structured zero-SNP diagnostics
+  let vcfSkippedSymbolicAlt = 0;
+  let vcfSkippedNoCall = 0;
+  let vcfSkippedHomRef = 0;
 
   while (lineStart < totalLength) {
     let lineEnd = text.indexOf('\n', lineStart);
@@ -1352,16 +1437,17 @@ export function parseRawDNA(
         onProgress(lineStart, totalLength, snpCount);
       }
       const cols = line.split('\t');
-      if (cols.length >= 8) {
-        const rawChrom = cols[0];
+      const minCols = Math.max(vcfLayout.sampleIdx + 1, 8);
+      if (cols.length >= minCols) {
+        const rawChrom = cols[vcfLayout.chromIdx] ?? '';
         const chrom = normalizeChromosome(rawChrom);
-        const posStr = cols[1];
+        const posStr = cols[vcfLayout.posIdx] ?? '';
         const pos = parseInt(posStr, 10);
-        const id = cols[2];
-        const ref = cols[3].toUpperCase();
-        const alt = cols[4].toUpperCase();
-        const formatCol = cols.length >= 9 ? cols[8] : '';
-        const sampleCol = cols.length >= 10 ? cols[9] : '';
+        const id = cols[vcfLayout.idIdx] ?? '.';
+        const ref = (cols[vcfLayout.refIdx] ?? '').toUpperCase();
+        const alt = (cols[vcfLayout.altIdx] ?? '').toUpperCase();
+        const formatCol = cols[vcfLayout.formatIdx] ?? '';
+        const sampleCol = cols[vcfLayout.sampleIdx] ?? '';
 
         if (formatCol && sampleCol) {
           const formatFields = formatCol.split(':');
@@ -1369,47 +1455,57 @@ export function parseRawDNA(
           const psIdx = formatFields.indexOf('PS');
           if (gtIdx !== -1) {
             const sampleFields = sampleCol.split(':');
-            const gtVal = sampleFields[gtIdx];
+            const gtVal = sampleFields[gtIdx] ?? '';
             const psVal = psIdx !== -1 ? sampleFields[psIdx] : undefined;
-            const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
-
-            if (decoded) {
-              const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
-              const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase();
-              const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
-              const isYorMT = chrom === 'Y' || chrom === 'MT';
-              if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
-                snpCount++;
-                snpMap[markerId] = genotype;
-                if (variantPhased) {
-                  phasedCount++;
-                  haplotype1Map[markerId] = allele1;
-                  haplotype2Map[markerId] = allele2;
-                  if (phaseSet) phaseSets[markerId] = phaseSet;
-                }
-                if (!isNaN(pos)) {
-                  snpMetaMap[markerId] = { chrom, pos };
-                  const coordId = `chr${chrom}_${pos}`.toLowerCase();
-                  snpMap[coordId] = genotype;
+            // Track no-call genotypes for diagnostics
+            if (!gtVal || gtVal === '.' || gtVal === './.' || gtVal === '.|.') {
+              vcfSkippedNoCall++;
+            } else if (gtVal === '0/0' || gtVal === '0|0' || gtVal === '0') {
+              vcfSkippedHomRef++;
+            } else {
+              const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
+              // Track gVCF reference-block rows (NON_REF/placeholder ALTs) separately from malformed rows
+              const isGvcfAlt = (a: string) => a === '<NON_REF>' || a === '<*>' || a === '<M>' || /^<NON_REF(:\w+)?>$/i.test(a);
+              if (!decoded && alt.split(',').every(a => isGvcfAlt(a))) {
+                vcfSkippedSymbolicAlt++;
+              } else if (decoded) {
+                const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
+                const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase();
+                const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
+                const isYorMT = chrom === 'Y' || chrom === 'MT';
+                if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
+                  snpCount++;
+                  snpMap[markerId] = genotype;
                   if (variantPhased) {
-                    haplotype1Map[coordId] = allele1;
-                    haplotype2Map[coordId] = allele2;
+                    phasedCount++;
+                    haplotype1Map[markerId] = allele1;
+                    haplotype2Map[markerId] = allele2;
+                    if (phaseSet) phaseSets[markerId] = phaseSet;
                   }
-                }
-                if (chrom === 'X') {
-                  xMap[markerId] = genotype;
-                  xTotalCount++;
-                  if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', pos)) {
-                    xHetCount++;
+                  if (!isNaN(pos)) {
+                    snpMetaMap[markerId] = { chrom, pos };
+                    const coordId = `chr${chrom}_${pos}`.toLowerCase();
+                    snpMap[coordId] = genotype;
+                    if (variantPhased) {
+                      haplotype1Map[coordId] = allele1;
+                      haplotype2Map[coordId] = allele2;
+                    }
                   }
-                }
-                if (chrom === 'Y') {
-                  yMap[markerId] = genotype;
-                  yDnaCalledSnps++;
-                }
-                if (chrom === 'MT') {
-                  const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
-                  if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+                  if (chrom === 'X') {
+                    xMap[markerId] = genotype;
+                    xTotalCount++;
+                    if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', pos)) {
+                      xHetCount++;
+                    }
+                  }
+                  if (chrom === 'Y') {
+                    yMap[markerId] = genotype;
+                    yDnaCalledSnps++;
+                  }
+                  if (chrom === 'MT') {
+                    const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+                    if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+                  }
                 }
               }
             }
@@ -1477,8 +1573,24 @@ export function parseRawDNA(
   }
 
   if (snpCount === 0) {
+    // Compose a structured reason string for diagnostic purposes
+    let zeroSnpReason = 'unknown';
+    let zeroSnpSuggestion = 'Make sure that the file lists SNPs with standard columns (rsID, chromosome, physical position, and allele genotype letters).';
+    if (isVcf && vcfSkippedSymbolicAlt > 0 && vcfSkippedHomRef > 0) {
+      zeroSnpReason = `gvcf_nonref (${vcfSkippedSymbolicAlt.toLocaleString()} symbolic ALT rows, ${vcfSkippedHomRef.toLocaleString()} hom-ref rows)`;
+      zeroSnpSuggestion = 'This appears to be a gVCF (genomic VCF) file with reference-block records. GenomicScout processes variant-only VCFs. Please export a variant-filtered VCF from your provider, or contact support.';
+    } else if (isVcf && vcfSkippedSymbolicAlt > 0) {
+      zeroSnpReason = `symbolic_alt_only (${vcfSkippedSymbolicAlt.toLocaleString()} rows skipped)`;
+      zeroSnpSuggestion = 'The VCF file contains only symbolic ALT alleles (<NON_REF>, <*>, etc.) typical of gVCF files. Please re-export your data as a variant-only VCF.';
+    } else if (isVcf && vcfSkippedNoCall > 50) {
+      zeroSnpReason = `all_no_call (${vcfSkippedNoCall.toLocaleString()} ./. records)`;
+      zeroSnpSuggestion = 'All genotype records are no-call (./.). This VCF may be malformed or empty. Please re-export your data from your provider.';
+    } else if (linesMalformed > linesTotal * 0.5 && linesTotal > 10) {
+      zeroSnpReason = 'column_mismatch';
+      zeroSnpSuggestion = 'More than 50% of lines could not be parsed. The delimiter or column order may be non-standard. If you are using a UK or EU locale, try opening the file in a text editor and verifying it is tab-separated.';
+    }
     throw new GenomicsParseError(
-      "ERR-4025FGD1 (ERR_PARSE_ZERO_SNPS): The file contains no parseable genetic markers (SNPs). Please verify that the column layout matches our requirements.",
+      `ERR-4025FGD1 (ERR_PARSE_ZERO_SNPS): The file contains no parseable genetic markers. Reason: ${zeroSnpReason}.`,
       {
         errorCode: GenomicsErrorCode.ERR_PARSE_ZERO_SNPS,
         legacyCode: 'ERR-4025FGD1',
@@ -1489,7 +1601,13 @@ export function parseRawDNA(
         linesCommented,
         linesMalformed,
         errorCategory: "No Valid Genetic Markers Found (ERR-4025FGD1)",
-        suggestedSolution: "Make sure that the file lists SNPs with standard columns (rsID, chromosome, physical position, and allele genotype letters)."
+        suggestedSolution: zeroSnpSuggestion,
+        context: isVcf ? {
+          vcfSkippedSymbolicAlt,
+          vcfSkippedNoCall,
+          vcfSkippedHomRef,
+          vcfLayout: { ...vcfLayout }
+        } : undefined
       }
     );
   }
@@ -1613,12 +1731,18 @@ export async function parseRawDNAStream(
   const sampleLines = firstChunkText.split(/\r?\n/);
   const plan = sniffAndBuildParsePlan(sampleLines);
   const isVcf = plan.isVcf || format === "VCF" || format === "Dante Labs" || format === "Nebula Genomics" || header.toLowerCase().includes("##fileformat=vcf") || header.includes("#CHROM");
+  // Resolve dynamic VCF column layout
+  const vcfLayout: VcfColumnLayout = plan.vcfLayout ?? parseVcfColumnLayout(sampleLines);
 
   let remainder = new Uint8Array(0);
 
   let linesTotal = 0;
   let linesCommented = 0;
   let linesMalformed = 0;
+  // gVCF-specific skip counters for structured zero-SNP diagnostics
+  let vcfSkippedSymbolicAlt = 0;
+  let vcfSkippedNoCall = 0;
+  let vcfSkippedHomRef = 0;
 
   let lastYield = performance.now();
   const YIELD_INTERVAL = 150; // ms
@@ -1687,16 +1811,17 @@ export async function parseRawDNAStream(
         if (actualLineEnd > lineStart && combined[actualLineEnd - 1] === CR) actualLineEnd--;
         const line = DECODER.decode(combined.subarray(lineStart, actualLineEnd));
         const cols = line.split('\t');
-        if (cols.length >= 8) {
-          const rawChrom = cols[0];
+        const minCols = Math.max(vcfLayout.sampleIdx + 1, 8);
+        if (cols.length >= minCols) {
+          const rawChrom = cols[vcfLayout.chromIdx] ?? '';
           const chrom = normalizeChromosome(rawChrom);
-          const posStr = cols[1];
+          const posStr = cols[vcfLayout.posIdx] ?? '';
           const colPos = parseInt(posStr, 10);
-          const id = cols[2];
-          const ref = cols[3].toUpperCase();
-          const alt = cols[4].toUpperCase();
-          const formatCol = cols.length >= 9 ? cols[8] : '';
-          const sampleCol = cols.length >= 10 ? cols[9] : '';
+          const id = cols[vcfLayout.idIdx] ?? '.';
+          const ref = (cols[vcfLayout.refIdx] ?? '').toUpperCase();
+          const alt = (cols[vcfLayout.altIdx] ?? '').toUpperCase();
+          const formatCol = cols[vcfLayout.formatIdx] ?? '';
+          const sampleCol = cols[vcfLayout.sampleIdx] ?? '';
 
           if (formatCol && sampleCol) {
             const formatFields = formatCol.split(':');
@@ -1704,47 +1829,56 @@ export async function parseRawDNAStream(
             const psIdx = formatFields.indexOf('PS');
             if (gtIdx !== -1) {
               const sampleFields = sampleCol.split(':');
-              const gtVal = sampleFields[gtIdx];
+              const gtVal = sampleFields[gtIdx] ?? '';
               const psVal = psIdx !== -1 ? sampleFields[psIdx] : undefined;
-              const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
-
-              if (decoded) {
-                const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
-                const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${colPos}`.toLowerCase();
-                const coordId = !isNaN(colPos) ? `chr${chrom}_${colPos}`.toLowerCase() : '';
-                const isYorMT = chrom === 'Y' || chrom === 'MT';
-                if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
-                  snpCount++;
-                  snpMap[markerId] = genotype;
-                  if (variantPhased) {
-                    phasedCount++;
-                    haplotype1Map[markerId] = allele1;
-                    haplotype2Map[markerId] = allele2;
-                    if (phaseSet) phaseSets[markerId] = phaseSet;
-                  }
-                  if (!isNaN(colPos)) {
-                    snpMetaMap[markerId] = { chrom, pos: colPos };
-                    const coordId = `chr${chrom}_${colPos}`.toLowerCase();
-                    snpMap[coordId] = genotype;
+              // Track no-call genotypes for diagnostics
+              if (!gtVal || gtVal === '.' || gtVal === './.' || gtVal === '.|.') {
+                vcfSkippedNoCall++;
+              } else if (gtVal === '0/0' || gtVal === '0|0' || gtVal === '0') {
+                vcfSkippedHomRef++;
+              } else {
+                const decoded = decodeVcfGenotype(ref, alt, gtVal, psVal);
+                const isGvcfAlt = (a: string) => a === '<NON_REF>' || a === '<*>' || a === '<M>' || /^<NON_REF(:\w+)?>$/i.test(a);
+                if (!decoded && alt.split(',').every(a => isGvcfAlt(a))) {
+                  vcfSkippedSymbolicAlt++;
+                } else if (decoded) {
+                  const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
+                  const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${colPos}`.toLowerCase();
+                  const coordId = !isNaN(colPos) ? `chr${chrom}_${colPos}`.toLowerCase() : '';
+                  const isYorMT = chrom === 'Y' || chrom === 'MT';
+                  if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
+                    snpCount++;
+                    snpMap[markerId] = genotype;
                     if (variantPhased) {
-                      haplotype1Map[coordId] = allele1;
-                      haplotype2Map[coordId] = allele2;
+                      phasedCount++;
+                      haplotype1Map[markerId] = allele1;
+                      haplotype2Map[markerId] = allele2;
+                      if (phaseSet) phaseSets[markerId] = phaseSet;
                     }
-                  }
-                  if (chrom === 'X') {
-                    xMap[markerId] = genotype;
-                    xTotalCount++;
-                    if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', colPos)) {
-                      xHetCount++;
+                    if (!isNaN(colPos)) {
+                      snpMetaMap[markerId] = { chrom, pos: colPos };
+                      const coordId = `chr${chrom}_${colPos}`.toLowerCase();
+                      snpMap[coordId] = genotype;
+                      if (variantPhased) {
+                        haplotype1Map[coordId] = allele1;
+                        haplotype2Map[coordId] = allele2;
+                      }
                     }
-                  }
-                  if (chrom === 'Y') {
-                    yMap[markerId] = genotype;
-                    yDnaCalledSnps++;
-                  }
-                  if (chrom === 'MT') {
-                    const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
-                    if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+                    if (chrom === 'X') {
+                      xMap[markerId] = genotype;
+                      xTotalCount++;
+                      if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', colPos)) {
+                        xHetCount++;
+                      }
+                    }
+                    if (chrom === 'Y') {
+                      yMap[markerId] = genotype;
+                      yDnaCalledSnps++;
+                    }
+                    if (chrom === 'MT') {
+                      const allele = (genotype.length === 2 && genotype[0] === genotype[1]) ? genotype[0] : genotype;
+                      if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+                    }
                   }
                 }
               }
@@ -1874,15 +2008,31 @@ export async function parseRawDNAStream(
   }
 
   if (snpCount === 0) {
+    let zeroSnpReason = 'unknown';
+    let zeroSnpSuggestion = 'Make sure you downloaded \'all SNPs\' or \'raw data text\' rather than mitochondrial-only sequences or visual screenshots. The file should contain rsIDs and genotypes.';
+    if (isVcf && vcfSkippedSymbolicAlt > 0 && vcfSkippedHomRef > 0) {
+      zeroSnpReason = `gvcf_nonref (${vcfSkippedSymbolicAlt.toLocaleString()} symbolic ALT rows, ${vcfSkippedHomRef.toLocaleString()} hom-ref rows)`;
+      zeroSnpSuggestion = 'This appears to be a gVCF (genomic VCF) file with reference-block records. GenomicScout processes variant-only VCFs. Please export a variant-filtered VCF from your provider, or contact support.';
+    } else if (isVcf && vcfSkippedSymbolicAlt > 0) {
+      zeroSnpReason = `symbolic_alt_only (${vcfSkippedSymbolicAlt.toLocaleString()} rows skipped)`;
+      zeroSnpSuggestion = 'The VCF file contains only symbolic ALT alleles (<NON_REF>, <*>, etc.) typical of gVCF files. Please re-export your data as a variant-only VCF.';
+    } else if (isVcf && vcfSkippedNoCall > 50) {
+      zeroSnpReason = `all_no_call (${vcfSkippedNoCall.toLocaleString()} ./. records)`;
+      zeroSnpSuggestion = 'All genotype records are no-call (./.). This VCF may be malformed or empty. Please re-export your data from your provider.';
+    } else if (linesMalformed > linesTotal * 0.5 && linesTotal > 10) {
+      zeroSnpReason = 'column_mismatch';
+      zeroSnpSuggestion = 'More than 50% of lines could not be parsed. The delimiter or column order may be non-standard. If you are using a UK or EU locale, try opening the file in a text editor and verifying it is tab-separated.';
+    }
     throw new GenomicsParseError(
-      "ERR-4025FGD1 (ERR_PARSE_ZERO_SNPS): The file contains no parseable genetic markers (SNPs). Please verify that the file represents local genome SNPs.",
+      `ERR-4025FGD1 (ERR_PARSE_ZERO_SNPS): The file contains no parseable genetic markers. Reason: ${zeroSnpReason}.`,
       {
         errorCode: GenomicsErrorCode.ERR_PARSE_ZERO_SNPS,
         legacyCode: 'ERR-4025FGD1',
         format, chip, bytesTotal: file.size, linesTotal, linesCommented, linesMalformed,
         errorCategory: "Empty Ingestion Spectrum (ERR-4025FGD1)",
         subsystem: 'STREAM_PARSER',
-        suggestedSolution: "Make sure you downloaded 'all SNPs' or 'raw data text' rather than mitochondrial-only sequences or visual screenshots. The file should contain rsIDs and genotypes."
+        suggestedSolution: zeroSnpSuggestion,
+        context: isVcf ? { vcfSkippedSymbolicAlt, vcfSkippedNoCall, vcfSkippedHomRef, vcfLayout: { ...vcfLayout } } : undefined
       }
     );
   }
