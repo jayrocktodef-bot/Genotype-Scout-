@@ -4,7 +4,8 @@ import {
   Upload, ShieldCheck, Database, Lock, Dna, 
   Check, RefreshCw, Layers, Cpu, WifiOff, 
   FlaskConical, ExternalLink, FileSpreadsheet,
-  CheckCircle2, ArrowRight, ShieldAlert, Sparkles
+  CheckCircle2, ArrowRight, ShieldAlert, Sparkles,
+  Scale, AlertTriangle, Landmark
 } from 'lucide-react';
 
 interface HeroUploadProps {
@@ -13,7 +14,7 @@ interface HeroUploadProps {
   onReset: () => void;
 }
 
-type TabType = 'privacy' | 'compatibility' | 'offline';
+type TabType = 'privacy' | 'compatibility' | 'offline' | 'advisory';
 
 export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onReset }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -165,6 +166,10 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
               <WifiOff className="w-3.5 h-3.5 text-zinc-400" />
               <span>Network Air-Gapped</span>
             </div>
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-mono">
+              <Scale className="w-3.5 h-3.5 text-amber-400" />
+              <span>Research & Entertainment Use</span>
+            </div>
           </div>
         </div>
 
@@ -289,6 +294,57 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
         </div>
 
         {/* =========================================================================
+            RESEARCH, ENTERTAINMENT & TRIBAL AFFILIATION ADVISORY
+            ========================================================================= */}
+        <div className="bg-gradient-to-br from-amber-950/25 via-zinc-900/90 to-zinc-950/90 border border-amber-500/30 rounded-3xl p-6 sm:p-7 shadow-xl space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-3.5">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-sm shadow-amber-500/10">
+                <AlertTriangle className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-sm sm:text-base font-bold text-amber-200 tracking-tight flex items-center gap-2">
+                  <span>Advisory: Research & Entertainment Scope</span>
+                </h3>
+                <p className="text-xs text-zinc-400">Important limitations on ancestry estimates, geographic locations, and tribal affiliation</p>
+              </div>
+            </div>
+            <span className="text-[11px] font-mono font-semibold px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/25 text-amber-300/90 self-start sm:self-auto shrink-0">
+              NON-CLINICAL & NON-LEGAL
+            </span>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 text-xs text-zinc-300 leading-relaxed">
+            <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+              <div className="font-bold text-amber-300 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <h4>Research & Educational Exploration Only</h4>
+              </div>
+              <p className="text-zinc-400 leading-relaxed">
+                Genotype Scout is engineered exclusively for academic study, educational exploration, and personal recreational inquiry. It is not a clinical diagnostics suite, paternity test, medical device, or legally certified record of lineage.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+              <div className="font-bold text-amber-300 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <h4>No Direct Tribal or Locational Affiliation</h4>
+              </div>
+              <p className="text-zinc-400 leading-relaxed">
+                This application <strong className="text-zinc-100 font-semibold">cannot connect you directly to any Indigenous tribe, clan, band, or discrete geographic municipality</strong>. Commercial genetic markers measure statistical affinity with contemporary and archaeological reference panels, not citizenship, cultural identity, or specific town residency.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-2xl bg-amber-500/5 border border-amber-500/15 flex items-start gap-3 text-xs text-zinc-400 leading-relaxed">
+            <Landmark className="w-4 h-4 text-amber-400/90 shrink-0 mt-0.5" />
+            <p className="text-[11px] sm:text-xs">
+              <strong className="text-amber-200/90">Indigenous Sovereignty & Enrollment Notice:</strong> Tribal enrollment, citizenship, and political status are governed exclusively by sovereign Indigenous nations through documented lineal descent, family registries, and tribal law. Commercial autosomal DNA tests cannot serve as proof of tribal affiliation or establish legal indigenous heritage.
+            </p>
+          </div>
+        </div>
+
+        {/* =========================================================================
             3. EVIDENTIARY STANDARDS & TECHNICAL SPECIFICATIONS (TABS)
             ========================================================================= */}
         <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 space-y-6">
@@ -331,6 +387,19 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
             >
               <WifiOff className="w-3.5 h-3.5" />
               <span>Offline PWA Execution</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveTab('advisory')}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                activeTab === 'advisory'
+                  ? 'bg-amber-500/15 border border-amber-500/40 text-amber-300 shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50'
+              }`}
+            >
+              <Scale className="w-3.5 h-3.5" />
+              <span>Tribal & Research Scope</span>
             </button>
           </div>
 
@@ -442,6 +511,37 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                   </h4>
                   <p className="text-zinc-400 leading-relaxed">
                     Click the <strong>Install</strong> icon in your address bar or browser menu to install Genotype Scout as a standalone desktop scientific workstation.
+                  </p>
+                </div>
+              </motion.div>
+            )}
+
+            {activeTab === 'advisory' && (
+              <motion.div
+                key="advisory"
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.15 }}
+                className="grid md:grid-cols-2 gap-4 text-xs"
+              >
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <h4 className="font-bold text-amber-300 flex items-center gap-2">
+                    <Scale className="w-4 h-4" />
+                    <span>Biological Markers vs. Political Status</span>
+                  </h4>
+                  <p className="text-zinc-400 leading-relaxed">
+                    Genetic markers reflect ancient population movements and statistical allele frequencies across continental clines. In contrast, tribal membership is a political and legal relationship between an individual and a sovereign tribal nation. DNA test results cannot establish citizenship, inheritance, or legal claims to tribal lands.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-zinc-950/60 border border-zinc-800/80 space-y-2">
+                  <h4 className="font-bold text-amber-300 flex items-center gap-2">
+                    <Database className="w-4 h-4" />
+                    <span>Reference Datasets as Statistical Proxies</span>
+                  </h4>
+                  <p className="text-zinc-400 leading-relaxed">
+                    Subpopulation oracle labels represent mathematical proxies based on publicly accessible academic cohorts (e.g., 1000 Genomes, HGDP, SGDP). High similarity scores indicate shared deep ancestry with the reference sample, never verified personal origin in a specific modern village, reservation, or municipality.
                   </p>
                 </div>
               </motion.div>
