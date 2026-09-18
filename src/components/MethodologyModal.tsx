@@ -58,100 +58,123 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
           transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-          className="relative w-full max-w-5xl max-h-[90vh] bg-[#0d0e10] border border-white/10 rounded-[2.5rem] shadow-2xl p-6 sm:p-8 text-white flex flex-col justify-between overflow-hidden tactile-3d-card"
+          className="relative w-full max-w-5xl max-h-[92vh] sm:max-h-[90vh] bg-[#0d0e10] border border-white/10 rounded-2xl sm:rounded-[2.5rem] shadow-2xl p-4 sm:p-6 md:p-8 text-white flex flex-col justify-between overflow-hidden tactile-3d-card"
         >
           {/* Header */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-5 border-b border-white/10 shrink-0">
-            {/* Left: Title & Category */}
-            <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 text-cyan-400">
-                <BookOpen className="w-5 h-5" />
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-[9px] font-mono font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/10 text-cyan-300">
-                    {doc.category} MODULE
-                  </span>
-                  <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">
-                    ID: {doc.id}
-                  </span>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3.5 pb-4 sm:pb-5 border-b border-white/10 shrink-0">
+            {/* Top row on mobile: Title + Close Button */}
+            <div className="flex items-center justify-between w-full md:w-auto gap-3 min-w-0">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 text-cyan-400">
+                  <BookOpen className="w-5 h-5" />
                 </div>
-                <h2 className="text-lg sm:text-xl font-display font-black text-white tracking-tight truncate mt-0.5">
-                  {doc.title}
-                </h2>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[9px] font-mono font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/10 text-cyan-300">
+                      {doc.category} MODULE
+                    </span>
+                    <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">
+                      ID: {doc.id}
+                    </span>
+                  </div>
+                  <h2 className="text-base sm:text-lg md:text-xl font-display font-black text-white tracking-tight truncate mt-0.5">
+                    {doc.title}
+                  </h2>
+                </div>
               </div>
-            </div>
 
-            {/* Center: Tactile Dual-Mode Tab Switcher */}
-            <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-black/60 border border-white/10 shrink-0">
+              {/* Close Button on Mobile */}
               <button
-                onClick={() => setModalMode('explainer')}
-                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-mono font-black uppercase tracking-wider transition-all ${
-                  modalMode === 'explainer'
-                    ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                    : 'text-slate-400 hover:text-white'
-                }`}
+                onClick={onClose}
+                aria-label="Close dialog"
+                className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/10 shrink-0 md:hidden"
               >
-                Plain English Explainer
-              </button>
-              <button
-                onClick={() => setModalMode('technical')}
-                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-mono font-black uppercase tracking-wider transition-all ${
-                  modalMode === 'technical'
-                    ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-              >
-                Technical Methodology
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Right: Close Button */}
-            <button
-              onClick={onClose}
-              aria-label="Close dialog"
-              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/10 shrink-0"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            {/* Desktop Actions / Mobile Row: Tactile Dual-Mode Tab Switcher + Desktop Close */}
+            <div className="flex items-center justify-between w-full md:w-auto gap-2.5 shrink-0">
+              <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-2xl bg-black/60 border border-white/10 w-full sm:w-auto">
+                <button
+                  onClick={() => setModalMode('explainer')}
+                  className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-mono font-black uppercase tracking-wider transition-all text-center ${
+                    modalMode === 'explainer'
+                      ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  Plain English Explainer
+                </button>
+                <button
+                  onClick={() => setModalMode('technical')}
+                  className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-mono font-black uppercase tracking-wider transition-all text-center ${
+                    modalMode === 'technical'
+                      ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  Technical Methodology
+                </button>
+              </div>
+
+              {/* Close Button on Desktop */}
+              <button
+                onClick={onClose}
+                aria-label="Close dialog"
+                className="hidden md:flex p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors border border-transparent hover:border-white/10 shrink-0"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
-          {/* Modal Body: Two-Column Responsive Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 py-6 overflow-y-auto pr-1 flex-1 custom-scrollbar">
+          {/* Modal Body: Responsive Layout (flex-col on mobile, grid on desktop) */}
+          <div className="flex flex-col lg:grid lg:grid-cols-12 auto-rows-max items-start gap-4 sm:gap-6 py-4 sm:py-6 overflow-y-auto pr-1 flex-1 min-h-0 custom-scrollbar">
             
             {/* Left Column (lg:col-span-5): Custodian Dossier */}
-            <div className="lg:col-span-5 tactile-3d-card p-5 bg-black/40 border border-white/10 rounded-2xl flex flex-col items-center text-center relative overflow-hidden h-fit">
-              {/* Scholar Image in Cyber Frame */}
-              <div className="w-44 h-44 rounded-2xl overflow-hidden border-2 border-cyan-400/30 shadow-[0_0_20px_rgba(6,182,212,0.2)] mb-4 bg-slate-900 shrink-0 relative group">
-                <img 
-                  src={doc.custodian.avatarUrl} 
-                  alt={doc.custodian.name} 
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="w-full lg:col-span-5 tactile-3d-card p-4 sm:p-5 bg-black/40 border border-white/10 rounded-2xl flex flex-col relative overflow-hidden shrink-0">
+              {/* Scholar Header: Compact row on mobile, stacked column on desktop */}
+              <div className="flex flex-row lg:flex-col items-center lg:items-center text-left lg:text-center gap-3.5 sm:gap-4 w-full">
+                {/* Scholar Image in Cyber Frame */}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-44 lg:h-44 rounded-2xl overflow-hidden border-2 border-cyan-400/30 shadow-[0_0_20px_rgba(6,182,212,0.2)] bg-slate-900 shrink-0 relative group">
+                  <img 
+                    src={doc.custodian.avatarUrl} 
+                    alt={doc.custodian.name} 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Scholar Information */}
+                <div className="min-w-0 flex-1 lg:flex-initial">
+                  <div className="flex items-center gap-1.5 mb-1 lg:hidden">
+                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">
+                      Custodial Scholar
+                    </span>
+                  </div>
+                  <h3 className="font-display text-sm sm:text-base font-black text-white leading-tight">
+                    {doc.custodian.name}
+                  </h3>
+                  <p className="font-mono text-[11px] sm:text-xs font-bold text-cyan-400 mt-0.5 uppercase tracking-wider leading-snug">
+                    {doc.custodian.role}
+                  </p>
+                </div>
               </div>
 
-              {/* Scholar Information */}
-              <h3 className="font-display text-base font-black text-white">
-                {doc.custodian.name}
-              </h3>
-              <p className="font-mono text-xs font-bold text-cyan-400 mt-0.5 uppercase tracking-wider">
-                {doc.custodian.role}
-              </p>
-
               {/* Scholar Dispatch */}
-              <div className="p-3.5 rounded-xl bg-white/[0.03] border-l-2 border-cyan-400 text-left text-xs text-slate-300 italic mt-4 leading-relaxed w-full">
+              <div className="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border-l-2 border-cyan-400 text-left text-xs text-slate-300 italic mt-3 lg:mt-4 leading-relaxed w-full">
                 "{doc.custodian.dispatch}"
               </div>
 
               {/* Security Pill */}
-              <div className="mt-4 flex items-center gap-1.5 text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
+              <div className="mt-3 lg:mt-4 flex items-center justify-center lg:justify-center gap-1.5 text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full w-fit self-start lg:self-center">
                 <Shield className="w-3.5 h-3.5" /> 100% Client-Side In-Memory
               </div>
             </div>
 
             {/* Right Column (lg:col-span-7): Dynamic Content Area */}
-            <div className="lg:col-span-7 space-y-5">
+            <div className="w-full lg:col-span-7 space-y-4 sm:space-y-5">
               {modalMode === 'explainer' ? (
                 /* Plain English Explainer Tab Content */
                 <div className="space-y-5 animate-fade-in">

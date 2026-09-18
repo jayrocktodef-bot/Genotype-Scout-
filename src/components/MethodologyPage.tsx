@@ -275,14 +275,14 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                 className="bg-white dark:bg-[#0c0d10] border border-slate-200 dark:border-white/10 rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all tactile-3d-card"
               >
                 {/* Header Bar */}
-                <div className="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 dark:border-white/[0.06]">
+                <div className="p-4 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-3.5 sm:gap-4 border-b border-slate-100 dark:border-white/[0.06]">
                   {/* Left: Module Title & Solver Title */}
                   <button
                     onClick={() => toggleModule(id)}
-                    className="flex items-start sm:items-center gap-4 text-left group flex-1 min-w-0 !transform-none"
+                    className="flex items-start sm:items-center gap-3 sm:gap-4 text-left group flex-1 min-w-0 !transform-none"
                     aria-label={`Toggle documentation for ${doc.title}`}
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-teal-500/10 border border-teal-500/25 flex items-center justify-center text-xl shrink-0 group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-teal-500/10 border border-teal-500/25 flex items-center justify-center text-lg sm:text-xl shrink-0 group-hover:scale-105 transition-transform">
                       {MODULE_EMOJIS[id] || '🧬'}
                     </div>
 
@@ -305,15 +305,15 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                   </button>
 
                   {/* Right: Dual-Mode Switcher & Expand Chevron */}
-                  <div className="flex items-center gap-3 shrink-0 self-end md:self-center">
+                  <div className="flex items-center justify-between md:justify-end gap-2 sm:gap-3 shrink-0 w-full md:w-auto">
                     {/* Dual Mode Tab Switcher */}
-                    <div className="flex items-center gap-1 p-1 rounded-2xl bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-white/10">
+                    <div className="flex items-center gap-1 p-1 rounded-2xl bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-white/10 flex-1 sm:flex-initial justify-center">
                       <button
                         onClick={() => {
                           setCardMode(id, 'explainer');
                           if (!isExpanded) toggleModule(id);
                         }}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                        className={`flex-1 sm:flex-initial px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all text-center ${
                           mode === 'explainer'
                             ? 'bg-teal-500 text-slate-950 shadow-md shadow-teal-500/20 font-black'
                             : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
@@ -326,7 +326,7 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                           setCardMode(id, 'technical');
                           if (!isExpanded) toggleModule(id);
                         }}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all ${
+                        className={`flex-1 sm:flex-initial px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all text-center ${
                           mode === 'technical'
                             ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 font-black'
                             : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
@@ -340,7 +340,7 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                     <button
                       onClick={() => toggleModule(id)}
                       aria-label="Expand or collapse section"
-                      className="p-2.5 rounded-2xl bg-slate-100 dark:bg-white/[0.06] text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 transition-all"
+                      className="p-2 sm:p-2.5 rounded-2xl bg-slate-100 dark:bg-white/[0.06] text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-white/10 transition-all shrink-0"
                     >
                       {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                     </button>
@@ -357,12 +357,12 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                       transition={{ duration: 0.28, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <div className="p-5 sm:p-8 space-y-8 bg-slate-50/50 dark:bg-black/20">
+                      <div className="p-4 sm:p-8 space-y-6 sm:space-y-8 bg-slate-50/50 dark:bg-black/20">
                         {mode === 'explainer' ? (
                           /* ─── PLAIN ENGLISH EXPLAINER ─── */
-                          <div className="space-y-6">
+                          <div className="space-y-4 sm:space-y-6">
                             {/* Custodian Dispatch */}
-                            <div className="p-5 rounded-2xl bg-teal-500/[0.06] border border-teal-500/20 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                            <div className="p-4 sm:p-5 rounded-2xl bg-teal-500/[0.06] border border-teal-500/20 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                               <div className="w-12 h-12 rounded-2xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shrink-0 text-teal-400 font-bold">
                                 <User className="w-6 h-6 text-teal-600 dark:text-teal-400" />
                               </div>
