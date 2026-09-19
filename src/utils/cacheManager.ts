@@ -4,7 +4,7 @@ import { clearResults } from '../services/storageService';
  * Unique cache epoch identifier. Bumping this string forces all connecting clients
  * to automatically invalidate stale Service Workers, CacheStorage, and IndexedDB caches.
  */
-export const APP_CACHE_EPOCH = 'v5.21.0_force_clean_20260918';
+export const APP_CACHE_EPOCH = 'v5.22.0_force_clean_20260919';
 
 /**
  * Forcefully clears all Service Workers, CacheStorage, IndexedDB data,
