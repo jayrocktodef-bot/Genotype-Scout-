@@ -22,11 +22,25 @@ export function getMarkerAllowlist(): Set<string> {
   // 1. Master Normalized Aims (includes GRAF, Forensic, Deep, Euroforgen, etc.)
   Object.values(getMasterAims()).forEach((m: any) => {
     if (m.rsid) allowlist.add(m.rsid.toLowerCase());
+    const rawChrom = m.chromosome || m.chrom;
+    const rawPos = m.position || m.pos;
+    if (rawChrom && rawPos) {
+      const chrom = String(rawChrom).trim().replace(/^chr/i, '').toUpperCase();
+      allowlist.add(`chr${chrom}_${rawPos}`.toLowerCase());
+      allowlist.add(`${chrom}_${rawPos}`.toLowerCase());
+    }
   });
 
   // 1.1 Health, Wellness & PGx (v5MarkersMaster)
   v5MarkersMaster.forEach((m: any) => {
     if (m.rsid) allowlist.add(m.rsid.toLowerCase());
+    const rawChrom = m.chromosome || m.chrom;
+    const rawPos = m.position || m.pos;
+    if (rawChrom && rawPos) {
+      const chrom = String(rawChrom).trim().replace(/^chr/i, '').toUpperCase();
+      allowlist.add(`chr${chrom}_${rawPos}`.toLowerCase());
+      allowlist.add(`${chrom}_${rawPos}`.toLowerCase());
+    }
   });
 
   // 1.2 Master Health PGx Table

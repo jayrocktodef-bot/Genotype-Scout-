@@ -396,6 +396,11 @@ self.onmessage = async (e: MessageEvent) => {
   if (type !== 'PROCESS_GENOME' && type !== 'PLINK_PROCESS_GENOME' && !files) return;
   if (sab) { new Int32Array(sab)[3] = 1; }
 
+  // Heartbeat interval to continually notify the main thread that the worker is actively computing
+  const heartbeatTimer = setInterval(() => {
+    self.postMessage({ type: 'HEARTBEAT', payload: { timestamp: Date.now() } });
+  }, 1500);
+
   try {
     const allowlist = getMarkerAllowlist();
     let imputedSnpMap: Record<string, string> = {};
@@ -429,37 +434,22 @@ self.onmessage = async (e: MessageEvent) => {
           
           let parsed;
           try {
-            if (fileObj.buffer) {
-              const decompressed = decompressGenomicBuffer(new Uint8Array(fileObj.buffer));
-              const actualFile = new Blob([decompressed]);
-              parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
-                if (sab) {
-                  const progressArray = new Int32Array(sab);
-                  Atomics.store(progressArray, 0, processed);
-                  Atomics.store(progressArray, 1, total);
-                  Atomics.store(progressArray, 2, snps);
-                }
-                self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
-              });
-            } else {
-              const actualFile = fileObj.stream ? fileObj : (fileObj.file ? fileObj.file : null);
-              if (actualFile) {
-                const arrayBuffer = await actualFile.arrayBuffer();
-                const decompressed = decompressGenomicBuffer(new Uint8Array(arrayBuffer));
-                const decompressedBlob = new Blob([decompressed]);
-                parsed = await parseRawDNAStream(decompressedBlob, allowlist, (processed, total, snps) => {
-                  if (sab) {
-                    const progressArray = new Int32Array(sab);
-                    Atomics.store(progressArray, 0, processed);
-                    Atomics.store(progressArray, 1, total);
-                    Atomics.store(progressArray, 2, snps);
-                  }
-                  self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
-                });
-              } else {
-                throw new Error("Invalid file object structure passed to worker");
-              }
+            // Directly pass the File or Blob to parseRawDNAStream to utilize non-blocking Web Streams
+            const actualFile: Blob = fileObj.file || (fileObj.buffer ? new Blob([fileObj.buffer]) : (fileObj.stream ? fileObj : null));
+            if (!actualFile) {
+              throw new Error("Invalid file object structure passed to worker");
             }
+
+            parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
+              if (sab) {
+                const progressArray = new Int32Array(sab);
+                Atomics.store(progressArray, 0, processed);
+                Atomics.store(progressArray, 1, total);
+                Atomics.store(progressArray, 2, snps);
+              }
+              self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+            });
+
             if (parsed && parsed.snpCount > 0) {
               parsedFiles.push({ ...parsed, name: fileName });
             }
@@ -475,11 +465,11 @@ self.onmessage = async (e: MessageEvent) => {
         if (parsedFiles.length === 0) {
           if (lastParsingError) throw lastParsingError;
           throw new GenomicsParseError(
-            "ERR-4025FGD1: No valid genetic marker files could be parsed from the upload batch.",
+            `ERR-4025FGD1: No valid genetic marker files could be parsed from the upload batch (${filesToProcess.length} file(s) checked).`,
             {
               errorCode: 'ERR-4025FGD1',
               errorCategory: 'Empty Batch Spectrum',
-              suggestedSolution: 'Ensure your raw data file contains autosomal genotype data (.txt, .csv, .tsv, .vcf) from a supported provider.'
+              suggestedSolution: 'Ensure your raw data file contains autosomal genotype data (.txt, .csv, .tsv, .vcf) with valid rsIDs or coordinates from a supported provider.'
             }
           );
         }
@@ -661,6 +651,8 @@ self.onmessage = async (e: MessageEvent) => {
       type: 'ERROR',
       error: serialized
     });
+  } finally {
+    clearInterval(heartbeatTimer);
   }
 };
 

@@ -2654,7 +2654,7 @@ export default function App() {
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
       
       watchdogId = setInterval(() => {
-        if (Date.now() - lastProgressTime > 120000) {
+        if (Date.now() - lastProgressTime > 300000) {
           if (intervalId) clearInterval(intervalId);
           clearInterval(watchdogId);
           setError(serializeGenomicsError(
@@ -2732,6 +2732,9 @@ export default function App() {
       worker.onmessage = (e) => {
         lastProgressTime = Date.now();
         const { type, payload, error: workerError } = e.data;
+        if (type === 'HEARTBEAT') {
+          return;
+        }
         if (type === 'PROGRESS') {
           const { processed, total, snps, step, completed, totalEngines, statusVal, percent: explicitPercent } = payload;
           setStreamProgress(prev => {

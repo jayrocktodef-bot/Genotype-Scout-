@@ -945,4 +945,32 @@ chr1\t100070\trs5003\tT\tA\t.\tPASS\t.\tGT\tTT
     expect(parsed.snpMap['rs5002']).toBe('CT');
     expect(parsed.snpMap['rs5003']).toBe('TT');
   });
+
+  it('should match coordinate-only VCF variants with dot (.) IDs against coordinate allowlist', async () => {
+    const dotVcf = `##fileformat=VCFv4.2
+#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE1
+1\t100050\t.\tA\tG\t.\tPASS\t.\tGT\t0/1
+1\t100060\t.\tC\tT\t.\tPASS\t.\tGT\t1/1
+`;
+    const allowlist = new Set<string>(['chr1_100050', '1_100060']);
+    const blob = new Blob([dotVcf]);
+    const parsed = await parseRawDNAStream(blob, allowlist);
+    expect(parsed.snpCount).toBe(2);
+    expect(parsed.snpMap['chr1_100050']).toBe('AG');
+    expect(parsed.snpMap['chr1_100060']).toBe('TT');
+  });
+
+  it('should match non-VCF lines with Illumina probe IDs via coordinate allowlist', async () => {
+    const probeData = `# rsid\tchromosome\tposition\tgenotype
+AFFX-SNP-001\t1\t500000\tAG
+seq-probe-002\t1\t600000\tCC
+`;
+    const allowlist = new Set<string>(['chr1_500000', '1_600000']);
+    const blob = new Blob([probeData]);
+    const parsed = await parseRawDNAStream(blob, allowlist);
+    expect(parsed.snpCount).toBe(2);
+    expect(parsed.snpMap['affx-snp-001']).toBe('AG');
+    expect(parsed.snpMap['chr1_500000']).toBe('AG');
+    expect(parsed.snpMap['chr1_600000']).toBe('CC');
+  });
 });

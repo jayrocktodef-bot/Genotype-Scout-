@@ -1748,8 +1748,9 @@ export function parseRawDNA(
                   const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
                   const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase();
                   const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
+                  const coordIdNoChr = !isNaN(pos) ? `${chrom}_${pos}`.toLowerCase() : '';
                   const isYorMT = chrom === 'Y' || chrom === 'MT';
-                  if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
+                  if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))) {
                     snpCount++;
                     snpMap[markerId] = genotype;
                     if (variantPhased) {
@@ -1809,8 +1810,11 @@ export function parseRawDNA(
         }
         const { markerId, chrom, posStr, pos, genotype } = parsed;
         const isYorMT = chrom === 'Y' || chrom === 'MT';
+        const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
+        const coordIdNoChr = !isNaN(pos) ? `${chrom}_${pos}`.toLowerCase() : '';
+        const markerLower = markerId.toLowerCase();
 
-        if (allowlist && !isYorMT && !allowlist.has(markerId)) continue;
+        if (allowlist && !isYorMT && !allowlist.has(markerLower) && (!coordId || (!allowlist.has(coordId) && !allowlist.has(coordIdNoChr)))) continue;
 
         snpCount++;
         snpMap[markerId] = genotype;
@@ -2170,8 +2174,9 @@ export async function parseRawDNAStream(
                   const { genotype, isPhased: variantPhased, allele1, allele2, phaseSet } = decoded;
                   const markerId = id !== '.' ? id.toLowerCase() : `chr${chrom}_${colPos}`.toLowerCase();
                   const coordId = !isNaN(colPos) ? `chr${chrom}_${colPos}`.toLowerCase() : '';
+                  const coordIdNoChr = !isNaN(colPos) ? `${chrom}_${colPos}`.toLowerCase() : '';
                   const isYorMT = chrom === 'Y' || chrom === 'MT';
-                  if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && allowlist.has(coordId))) {
+                  if (!allowlist || isYorMT || allowlist.has(markerId) || (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))) {
                     snpCount++;
                     snpMap[markerId] = genotype;
                     if (variantPhased) {
@@ -2236,12 +2241,14 @@ export async function parseRawDNAStream(
         if (parsed) {
           const { markerId, chrom, posStr, pos: colPos, genotype } = parsed;
           const isYorMT = chrom === 'Y' || chrom === 'MT';
-          if (!allowlist || isYorMT || allowlist.has(markerId)) {
+          const coordId = !isNaN(colPos) ? `chr${chrom}_${colPos}`.toLowerCase() : '';
+          const coordIdNoChr = !isNaN(colPos) ? `${chrom}_${colPos}`.toLowerCase() : '';
+          const markerLower = markerId.toLowerCase();
+          if (!allowlist || isYorMT || allowlist.has(markerLower) || (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))) {
             snpCount++;
             snpMap[markerId] = genotype;
             if (!isNaN(colPos)) {
               snpMetaMap[markerId] = { chrom, pos: colPos };
-              const coordId = `chr${chrom}_${colPos}`.toLowerCase();
               if (!snpMap[coordId]) snpMap[coordId] = genotype;
             }
             if (chrom === 'X') {
@@ -2297,12 +2304,14 @@ export async function parseRawDNAStream(
       if (parsed) {
         const { markerId, chrom, posStr, pos: colPos, genotype } = parsed;
         const isYorMT = chrom === 'Y' || chrom === 'MT';
-        if (!allowlist || isYorMT || allowlist.has(markerId)) {
+        const coordId = !isNaN(colPos) ? `chr${chrom}_${colPos}`.toLowerCase() : '';
+        const coordIdNoChr = !isNaN(colPos) ? `${chrom}_${colPos}`.toLowerCase() : '';
+        const markerLower = markerId.toLowerCase();
+        if (!allowlist || isYorMT || allowlist.has(markerLower) || (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))) {
           snpCount++;
           snpMap[markerId] = genotype;
           if (!isNaN(colPos)) {
             snpMetaMap[markerId] = { chrom, pos: colPos };
-            const coordId = `chr${chrom}_${colPos}`.toLowerCase();
             if (!snpMap[coordId]) snpMap[coordId] = genotype;
           }
           if (chrom === 'X') {
