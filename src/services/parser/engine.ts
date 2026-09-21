@@ -143,11 +143,16 @@ export async function parseRawDNAStream(
     checkUnsupportedArchive(fullBuf);
     const decompressed = decompressGenomicBuffer(fullBuf);
     checkUnsupportedArchive(decompressed);
-    const text = decodeTextBuffer(decompressed);
-    return parseRawDNA(text, allowlist, onProgress, targetSample);
+    return parseRawDNAStream(
+      new Blob([decompressed]),
+      allowlist,
+      onProgress,
+      targetSample
+    );
   }
 
   const snpMap: Record<string, string> = {};
+  const snpByPosition: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string; pos: number }> = {};
   const xMap: Record<string, string> = {};
   const yMap: Record<string, string> = {};
@@ -201,8 +206,12 @@ export async function parseRawDNAStream(
       }
       const finalDecomp = decompressGenomicBuffer(fullDecomp);
       checkUnsupportedArchive(finalDecomp);
-      const text = decodeTextBuffer(finalDecomp);
-      return parseRawDNA(text, allowlist, onProgress, targetSample);
+      return parseRawDNAStream(
+        new Blob([finalDecomp]),
+        allowlist,
+        onProgress,
+        targetSample
+      );
     }
   } else {
     const firstSlice = file.slice(0, Math.min(65536, file.size));
@@ -238,9 +247,9 @@ export async function parseRawDNAStream(
   let vcfSkippedHomRef = 0;
 
   let recordsSinceYield = 0;
-  const RECORDS_PER_YIELD = 8192;
+  const RECORDS_PER_YIELD = 5000;
   let lastYieldTime = performance.now();
-  const YIELD_MS_INTERVAL = 150;
+  const YIELD_MS_INTERVAL = 50;
 
   const processLine = (lineBytes: Uint8Array) => {
     linesTotal++;
@@ -294,6 +303,7 @@ export async function parseRawDNAStream(
 
         if (!isNaN(pos)) {
           snpMetaMap[markerId] = { chrom, pos };
+          snpByPosition[`${chrom}:${pos}`] = genotype;
           if (coordId && !snpMap[coordId]) snpMap[coordId] = genotype;
         }
 
@@ -444,9 +454,7 @@ export async function parseRawDNAStream(
     yMap,
     mtMap,
     snpByRsid: snpMap,
-    snpByPosition: Object.fromEntries(
-      Object.entries(snpMetaMap).map(([rs, m]) => [`${m.chrom}:${m.pos}`, snpMap[rs]])
-    ),
+    snpByPosition,
     isPhased,
     phasedCount,
     phasingMethod,
@@ -486,6 +494,7 @@ export function parseRawDNA(
   const vcfLayout = plan.vcfLayout;
 
   const snpMap: Record<string, string> = {};
+  const snpByPosition: Record<string, string> = {};
   const snpMetaMap: Record<string, { chrom: string; pos: number }> = {};
   const xMap: Record<string, string> = {};
   const yMap: Record<string, string> = {};
@@ -506,11 +515,20 @@ export function parseRawDNA(
   let vcfSkippedNoCall = 0;
   let vcfSkippedHomRef = 0;
 
-  const lines = text.split(/\r?\n/);
   const totalLength = text.length;
+  let lineStart = 0;
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
+  while (lineStart < totalLength) {
+    let lineEnd = text.indexOf('\n', lineStart);
+    if (lineEnd === -1) lineEnd = totalLength;
+
+    let effectiveEnd = lineEnd;
+    if (effectiveEnd > lineStart && text.charCodeAt(effectiveEnd - 1) === 0x0d) {
+      effectiveEnd--;
+    }
+
+    const line = text.slice(lineStart, effectiveEnd).trim();
+    lineStart = lineEnd + 1;
     linesTotal++;
     if (!line) continue;
 
@@ -553,6 +571,7 @@ export function parseRawDNA(
 
         if (!isNaN(pos)) {
           snpMetaMap[markerId] = { chrom, pos };
+          snpByPosition[`${chrom}:${pos}`] = genotype;
           if (coordId && !snpMap[coordId]) snpMap[coordId] = genotype;
         }
 
@@ -666,9 +685,7 @@ export function parseRawDNA(
     yMap,
     mtMap,
     snpByRsid: snpMap,
-    snpByPosition: Object.fromEntries(
-      Object.entries(snpMetaMap).map(([rs, m]) => [`${m.chrom}:${m.pos}`, snpMap[rs]])
-    ),
+    snpByPosition,
     isPhased,
     phasedCount,
     phasingMethod,

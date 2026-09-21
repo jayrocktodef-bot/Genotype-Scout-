@@ -93,7 +93,28 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
 }
 
 function extractBestFileFromZip(buf: Uint8Array): Uint8Array {
-  const unzipped = unzipSync(buf);
+  const unzipped = unzipSync(buf, {
+    filter(file) {
+      const lower = file.name.toLowerCase();
+      const baseName = lower.split('/').pop() || '';
+      return (
+        !lower.startsWith('__macosx/') &&
+        !baseName.startsWith('._') &&
+        !lower.includes('.ds_store') &&
+        !lower.includes('..') &&
+        !lower.endsWith('/') &&
+        !lower.endsWith('.pdf') &&
+        !lower.endsWith('.html') &&
+        !lower.endsWith('.png') &&
+        !lower.endsWith('.jpg') &&
+        !lower.endsWith('.jpeg') &&
+        !lower.endsWith('.gif') &&
+        !lower.endsWith('.xml') &&
+        !lower.endsWith('.json') &&
+        !lower.endsWith('.md')
+      );
+    }
+  });
   let totalExtractedSize = 0;
   for (const k of Object.keys(unzipped)) {
     totalExtractedSize += unzipped[k]?.byteLength || 0;
