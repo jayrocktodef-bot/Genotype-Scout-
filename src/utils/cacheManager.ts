@@ -25,7 +25,7 @@ const KNOWN_INDEXEDDB_NAMES = [
  * Forcefully clears all Service Workers, active background worker threads, CacheStorage,
  * IndexedDB data, web storage, and cookies, then optionally reloads the application cleanly.
  */
-export async function forceResetAndClearCache(reload: boolean = true): Promise<void> {
+export async function forceResetAndClearCache(reload: boolean = false): Promise<void> {
   console.warn('[CacheManager] Executing nuclear reset and complete client cache purge...');
 
   // 1. Broadcast nuclear reset event to all other concurrent tabs/windows
@@ -157,45 +157,54 @@ export async function forceResetAndClearCache(reload: boolean = true): Promise<v
     }
   }
 
-  // 7. Hard reload the page with a cache-busting timestamp parameter
+  // 7. Clean reload ONLY if explicitly requested by interactive user action
   if (reload && typeof window !== 'undefined' && window.location) {
-    const freshUrl = `${window.location.origin}${window.location.pathname}?__fresh=${Date.now()}`;
-    window.location.replace(freshUrl);
+    const cleanUrl = window.location.origin + window.location.pathname;
+    window.location.replace(cleanUrl);
   }
 }
 
 /**
- * Enforces cache epoch integrity on startup.
- * Automatically flushes stale caches if a new build or explicit URL reset param is detected.
+ * Passive cache epoch check.
+ * NEVER forces an automatic page reload or refresh loop.
  */
 export async function enforceCacheEpoch(): Promise<boolean> {
   if (typeof window === 'undefined') return false;
 
-  // Manual URL override: e.g. ?reset=1, ?clear=1, ?cache_clear=1, ?force_reset=1, ?__fresh=...
-  const searchParams = new URLSearchParams(window.location.search);
-  if (
-    searchParams.has('reset') || 
-    searchParams.has('clear') || 
-    searchParams.has('cache_clear') ||
-    searchParams.has('force_reset')
-  ) {
-    console.warn('[CacheManager] Manual reset query parameter detected. Purging all caches.');
-    await forceResetAndClearCache(true);
-    return true;
-  }
-
-  // Epoch mismatch check
+  // Manual URL override: e.g. ?reset=1, ?clear=1, ?cache_clear=1, ?force_reset=1
   try {
-    const currentEpoch = localStorage.getItem('genotype_scout_cache_epoch');
-    if (currentEpoch !== APP_CACHE_EPOCH) {
-      console.warn(
-        `[CacheManager] Stale cache epoch detected (${currentEpoch ?? 'none'} vs ${APP_CACHE_EPOCH}). Performing one-time cache flush.`
-      );
-      await forceResetAndClearCache(true);
+    const searchParams = new URLSearchParams(window.location.search);
+    if (
+      searchParams.has('reset') || 
+      searchParams.has('clear') || 
+      searchParams.has('cache_clear') || 
+      searchParams.has('force_reset')
+    ) {
+      console.warn('[CacheManager] Manual reset query parameter detected. Purging caches without reload.');
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+      await forceResetAndClearCache(false);
       return true;
     }
   } catch (err) {
-    console.warn('[CacheManager] Could not read cache epoch from localStorage:', err);
+    // Ignore URL parsing errors
+  }
+
+  // Epoch mismatch check: perform silent background update, NEVER reload
+  try {
+    const currentEpoch = localStorage.getItem('genotype_scout_cache_epoch');
+    if (currentEpoch !== APP_CACHE_EPOCH) {
+      console.log(
+        `[CacheManager] Updating cache epoch token (${currentEpoch ?? 'none'} -> ${APP_CACHE_EPOCH})`
+      );
+      localStorage.setItem('genotype_scout_cache_epoch', APP_CACHE_EPOCH);
+      localStorage.setItem('scout_version_lock', APP_CACHE_EPOCH);
+      await forceResetAndClearCache(false);
+      return true;
+    }
+  } catch (err) {
+    console.warn('[CacheManager] Could not access localStorage cache epoch:', err);
   }
 
   return false;

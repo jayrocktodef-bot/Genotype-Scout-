@@ -4,10 +4,7 @@ import App from './App.tsx';
 import './index.css';
 import { ErrorBoundary } from './components/ErrorBoundary.tsx';
 import { hydrateReferenceDatabase } from './services/dbHydrator';
-import { enforceCacheEpoch } from './utils/cacheManager';
 
-// Enforce cache epoch and clear stale service workers / caches if needed
-enforceCacheEpoch().catch(err => console.warn('[App] Cache epoch enforcement check failed:', err));
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
