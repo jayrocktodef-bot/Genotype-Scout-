@@ -9,8 +9,15 @@ import { OnnxInferenceInput, OnnxInferenceOutput } from '../types/genotype';
 
 // Setup WebAssembly paths for onnxruntime-web client environment
 try {
-  if (typeof window !== 'undefined') {
+  const isBrowserEnv = typeof window !== 'undefined' || typeof self !== 'undefined';
+  if (isBrowserEnv) {
     ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
+    // On mobile devices or when crossOriginIsolated is false, force single-threaded WASM to prevent memory and thread deadlocks
+    const isMobile = typeof navigator !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isIsolated = typeof crossOriginIsolated !== 'undefined' && crossOriginIsolated;
+    if (isMobile || !isIsolated) {
+      ort.env.wasm.numThreads = 1;
+    }
   }
 } catch (e) {
   console.warn('WASM paths configuration bypassed:', e);
@@ -1191,8 +1198,9 @@ export async function initializeOnnxModel(): Promise<ort.InferenceSession> {
         executionProviders: ['wasm'],
       };
       
+      const isNode = typeof process !== 'undefined' && Boolean(process.versions?.node) && typeof window === 'undefined' && typeof (globalThis as any).WorkerGlobalScope === 'undefined';
       let arrayBuffer: ArrayBuffer;
-      if (typeof window === 'undefined') {
+      if (isNode) {
         // Node / local test environment: load directly from public/ folder in workspace
         const fsLib = 'fs';
         const pathLib = 'path';
@@ -1202,7 +1210,7 @@ export async function initializeOnnxModel(): Promise<ort.InferenceSession> {
         const buffer = fs.readFileSync(filePath);
         arrayBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
       } else {
-        // Web context: fetch over network
+        // Web / Web Worker context: fetch over network
         const response = await fetch(modelUrl);
         if (!response.ok) {
           throw new Error(`Failed to fetch ONNX model from ${modelUrl} (status: ${response.status})`);

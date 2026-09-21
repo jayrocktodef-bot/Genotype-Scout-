@@ -66,9 +66,16 @@ export function getHaplogroupDetails(name: string, isMaternal: boolean): { regio
   let resolvedDesc: string | null = direct?.description || null;
   let resolvedHist: string | null = direct?.historicalContext || null;
   
-  while (current && (!resolvedRegion || !resolvedDesc)) {
+  const visited = new Set<string>();
+  let depth = 0;
+  const maxDepth = 100;
+
+  while (current && (!resolvedRegion || !resolvedDesc) && depth++ < maxDepth) {
+    if (visited.has(current)) break;
+    visited.add(current);
+
     const parent = parentHaplogroup(current);
-    if (!parent) break;
+    if (!parent || parent === current) break;
     const parentMeta = map.get(parent);
     if (parentMeta) {
       if (!resolvedRegion && parentMeta.region) {

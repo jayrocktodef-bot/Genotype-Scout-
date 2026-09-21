@@ -52,6 +52,27 @@ export function parentHaplogroup(name: string): string | null {
   return tokens.slice(0, -1).join('');
 }
 
+/**
+ * Trace full haplogroup lineage up to root with cycle detection and maximum depth limits.
+ */
+export function getHaplogroupLineagePath(name: string, maxDepth = 100): string[] {
+  const path: string[] = [];
+  const visited = new Set<string>();
+  let current: string | null = name;
+
+  while (current && path.length < maxDepth) {
+    if (visited.has(current)) break;
+    visited.add(current);
+    path.push(current);
+
+    const parent = parentHaplogroup(current);
+    if (!parent || parent === current) break;
+    current = parent;
+  }
+
+  return path;
+}
+
 /** Parse one ybrowse CSV record (array of fields) into a YSnpRecord, or null if invalid. */
 export function ybrowseRowToRecord(fields: string[]): YSnpRecord | null {
   // Columns: seqid,source,type,start,end,score,strand,phase,Name,ID,allele_anc,allele_der,YCC_haplogroup,ISOGG_haplogroup,mutation,...

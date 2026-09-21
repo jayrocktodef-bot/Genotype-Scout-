@@ -145,7 +145,7 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
     }
   }
 
-  return x;
+  return x.map(val => Number.isFinite(val) && val >= 0 ? val : 0);
 }
 
 /**
@@ -287,7 +287,7 @@ export function solveElasticNetNNLS(
     if (x[j] < 0.0005) x[j] = 0;
   }
 
-  return x;
+  return x.map(val => Number.isFinite(val) && val >= 0 ? val : 0);
 }
 
 // Gaussian elimination with partial pivoting
@@ -321,5 +321,5 @@ function solveLinearSystem(A: number[][], b: number[]): number[] {
       }
     }
   }
-  return M.map(row => row[n] || 0);
+  return M.map(row => Number.isFinite(row[n]) ? row[n] : 0);
 }

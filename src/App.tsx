@@ -2640,7 +2640,27 @@ export default function App() {
 
     let intervalId: any = null;
     let watchdogId: any = null;
+    let progressRafId: number = 0;
     let lastProgressTime = Date.now();
+    let hiddenStartTime = 0;
+
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        hiddenStartTime = Date.now();
+      } else if (hiddenStartTime > 0) {
+        const hiddenDuration = Date.now() - hiddenStartTime;
+        lastProgressTime += hiddenDuration; // Offset watchdog for background mobile tab suspension
+        hiddenStartTime = 0;
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    const cleanupProcessing = () => {
+      if (intervalId) clearInterval(intervalId);
+      if (watchdogId) clearInterval(watchdogId);
+      if (progressRafId) cancelAnimationFrame(progressRafId);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+    };
 
     try {
       // Pass the raw File objects so the worker can use the asynchronous streaming parser to avoid blocking the event loop
@@ -2655,8 +2675,7 @@ export default function App() {
       
       watchdogId = setInterval(() => {
         if (Date.now() - lastProgressTime > 300000) {
-          if (intervalId) clearInterval(intervalId);
-          clearInterval(watchdogId);
+          cleanupProcessing();
           setError(serializeGenomicsError(
             new Error("ERR_WORKER_WATCHDOG_TIMEOUT: The genetic analysis worker stopped responding. Your dataset may be exceptionally large or heavily compressed. Please refresh and try extracting the ZIP first."),
             'GENOTYPE_WORKER'
@@ -2714,7 +2733,7 @@ export default function App() {
                 percent = 100;
               } else if (statusVal === 4) {
                 step = "Ingestion failed.";
-                clearInterval(intervalId);
+                cleanupProcessing();
                 setError(serializeGenomicsError("Processing failed in background worker.", 'GENOTYPE_WORKER', { fileName: fileArray.map(f => f.name).join(', ') }));
                 setProcessing(false);
                 worker.terminate();
@@ -2729,6 +2748,39 @@ export default function App() {
         }
       }
 
+      let pendingProgressPayload: any = null;
+      const applyProgressUpdate = () => {
+        if (!pendingProgressPayload) return;
+        const payload = pendingProgressPayload;
+        pendingProgressPayload = null;
+
+        const { processed, total, snps, step, completed, totalEngines, statusVal, percent: explicitPercent } = payload;
+        setStreamProgress(prev => {
+          const newProcessed = processed !== undefined ? processed : prev.processed;
+          const newTotal = total !== undefined ? total : prev.total;
+          const newSnps = snps !== undefined ? snps : prev.snps;
+          
+          let percent = prev.percent || 0;
+          if (explicitPercent !== undefined) {
+            percent = explicitPercent;
+          } else if (statusVal === 2 || (completed !== undefined && totalEngines !== undefined)) {
+            percent = 50 + Math.round((completed / totalEngines) * 45);
+          } else if (statusVal === 3) {
+            percent = 100;
+          } else {
+            percent = newTotal > 0 ? Math.round((newProcessed / newTotal) * 50) : 0;
+          }
+
+          return {
+            processed: newProcessed,
+            total: newTotal,
+            snps: newSnps,
+            step: step || prev.step || "Ingesting DNA stream...",
+            percent
+          };
+        });
+      };
+
       worker.onmessage = (e) => {
         lastProgressTime = Date.now();
         const { type, payload, error: workerError } = e.data;
@@ -2736,34 +2788,15 @@ export default function App() {
           return;
         }
         if (type === 'PROGRESS') {
-          const { processed, total, snps, step, completed, totalEngines, statusVal, percent: explicitPercent } = payload;
-          setStreamProgress(prev => {
-            const newProcessed = processed !== undefined ? processed : prev.processed;
-            const newTotal = total !== undefined ? total : prev.total;
-            const newSnps = snps !== undefined ? snps : prev.snps;
-            
-            let percent = prev.percent || 0;
-            if (explicitPercent !== undefined) {
-              percent = explicitPercent;
-            } else if (statusVal === 2 || (completed !== undefined && totalEngines !== undefined)) {
-              percent = 50 + Math.round((completed / totalEngines) * 45);
-            } else if (statusVal === 3) {
-              percent = 100;
-            } else {
-              percent = newTotal > 0 ? Math.round((newProcessed / newTotal) * 50) : 0;
-            }
-
-            return {
-              processed: newProcessed,
-              total: newTotal,
-              snps: newSnps,
-              step: step || prev.step || "Ingesting DNA stream...",
-              percent
-            };
-          });
+          pendingProgressPayload = payload;
+          if (!progressRafId) {
+            progressRafId = requestAnimationFrame(() => {
+              progressRafId = 0;
+              applyProgressUpdate();
+            });
+          }
         } else if (type === 'SUCCESS') {
-          if (intervalId) clearInterval(intervalId);
-          if (watchdogId) clearInterval(watchdogId);
+          cleanupProcessing();
           const newIndex = datasets.length;
           snpMaps.current[newIndex] = payload.mergedSnpMap;
           updateDatasets({ 
@@ -2784,8 +2817,7 @@ export default function App() {
           setProcessing(false);
           worker.terminate();
         } else if (type === 'ERROR') {
-          if (intervalId) clearInterval(intervalId);
-          if (watchdogId) clearInterval(watchdogId);
+          cleanupProcessing();
           const structured = serializeGenomicsError(workerError, 'GENOTYPE_WORKER');
           setError(structured);
           setProcessing(false);
@@ -2794,8 +2826,7 @@ export default function App() {
       };
 
       worker.onerror = (err) => {
-        if (intervalId) clearInterval(intervalId);
-        if (watchdogId) clearInterval(watchdogId);
+        cleanupProcessing();
         const structured = serializeGenomicsError(err, 'GENOTYPE_WORKER');
         setError(structured);
         setProcessing(false);
@@ -2809,8 +2840,7 @@ export default function App() {
         sab
       });
     } catch (err) {
-      if (intervalId) clearInterval(intervalId);
-      if (watchdogId) clearInterval(watchdogId);
+      cleanupProcessing();
       console.error("Processing error:", err);
       setError(serializeGenomicsError(err, 'FILE_INGESTION'));
       setProcessing(false);

@@ -2,13 +2,36 @@ import { get, set, del } from 'idb-keyval';
 
 const STORAGE_KEY = "genotype_scout_results";
 
+/**
+ * Request persistent browser storage so Safari iOS (ITP 7-day rule) and Chrome
+ * do not unexpectedly evict user genotype profiles under memory pressure.
+ */
+export async function requestPersistentStorage(): Promise<boolean> {
+  try {
+    if (typeof navigator !== 'undefined' && navigator.storage && navigator.storage.persist) {
+      const isPersisted = await navigator.storage.persisted();
+      if (!isPersisted) {
+        return await navigator.storage.persist();
+      }
+      return true;
+    }
+  } catch (err) {
+    console.warn('Storage persistence request not supported or denied:', err);
+  }
+  return false;
+}
+
 export const saveResults = async (results: any[]) => {
   try {
-    // We save the raw results to IndexedDB. 
-    // Encryption not needed for local-only binary store, but keeping it simple.
+    // Request persistent storage in the background
+    requestPersistentStorage().catch(() => {});
     await set(STORAGE_KEY, results);
-  } catch (e) {
-    console.error("Failed to save results to IndexedDB", e);
+  } catch (e: any) {
+    if (e?.name === 'QuotaExceededError' || e?.code === 22) {
+      console.error("IndexedDB QuotaExceededError: Local browser storage is full. Please clear old datasets.", e);
+    } else {
+      console.error("Failed to save results to IndexedDB", e);
+    }
   }
 };
 

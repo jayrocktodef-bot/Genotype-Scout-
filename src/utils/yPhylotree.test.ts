@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parentHaplogroup, ybrowseRowToRecord, buildSnpIndex } from './yPhylotree';
+import { parentHaplogroup, getHaplogroupLineagePath, ybrowseRowToRecord, buildSnpIndex } from './yPhylotree';
 
 describe('parentHaplogroup', () => {
   it('strips the last alternating letter/number token', () => {
@@ -13,6 +13,10 @@ describe('parentHaplogroup', () => {
   });
   it('ignores trailing ~ / *', () => {
     expect(parentHaplogroup('E1b1a1~')).toBe('E1b1a');
+  });
+  it('traces complete lineage path to root with getHaplogroupLineagePath', () => {
+    const path = getHaplogroupLineagePath('R1b1a1a2');
+    expect(path).toEqual(['R1b1a1a2', 'R1b1a1a', 'R1b1a1', 'R1b1a', 'R1b1', 'R1b', 'R1', 'R']);
   });
 });
 
