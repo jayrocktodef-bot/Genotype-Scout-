@@ -5,7 +5,7 @@ import {
   Check, RefreshCw, Layers, Cpu, WifiOff, 
   FlaskConical, ExternalLink, FileSpreadsheet,
   CheckCircle2, ArrowRight, ShieldAlert, Sparkles,
-  Scale, AlertTriangle, Landmark
+  Scale, AlertTriangle, Landmark, RotateCcw, Trash2
 } from 'lucide-react';
 import { forceResetAndClearCache } from '../utils/cacheManager';
 
@@ -23,6 +23,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<TabType>('privacy');
   const [isLoadingDemo, setIsLoadingDemo] = useState(false);
+  const [isClearingCache, setIsClearingCache] = useState(false);
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
@@ -95,8 +96,27 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   };
 
   const handleClearCache = async () => {
-    if (window.confirm("PURGE CLIENT WORKSPACE & CACHE?\n\nThis permanently clears all indexed genomes in client IndexedDB and unregisters service workers. Your raw files remain safe on your device.")) {
-      await forceResetAndClearCache(true);
+    if (isClearingCache) return;
+    const confirmed = window.confirm(
+      "NUCLEAR CACHE RESET & FRESH INSTALL\n\n" +
+      "This action will completely reset your client workspace:\n" +
+      "• Terminate active workers and unregister all Service Workers\n" +
+      "• Delete all IndexedDB genome databases and caches\n" +
+      "• Purge all CacheStorage assets and offline bundles\n" +
+      "• Flush localStorage, sessionStorage, and cookies\n" +
+      "• Cache-bust and reload the application into a 100% clean state\n\n" +
+      "Your original DNA files on your computer/device remain completely safe and untouched.\n\n" +
+      "Proceed with fresh install reset?"
+    );
+
+    if (confirmed) {
+      try {
+        setIsClearingCache(true);
+        await forceResetAndClearCache(true);
+      } catch (err) {
+        console.error('Failed to perform fresh install reset:', err);
+        setIsClearingCache(false);
+      }
     }
   };
 
@@ -261,7 +281,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
             <button
               type="button"
               onClick={handleLoadDemoSpecimen}
-              disabled={isLoadingDemo}
+              disabled={isLoadingDemo || isClearingCache}
               className="w-full sm:w-auto px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-750 text-zinc-200 hover:text-white border border-zinc-700 text-xs font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
               title="Loads Portuguese reference sample hu33FC53 from the Personal Genome Project"
             >
@@ -274,6 +294,48 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                 <>
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
                   <span>Load Benchmark Specimen (hu33FC53)</span>
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Prominent Nuclear Cache Reset & Fresh Install Action */}
+          <div className="pt-4 border-t border-rose-950/40 bg-gradient-to-r from-rose-950/30 via-zinc-950/60 to-zinc-950/40 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-4 sm:p-5 rounded-b-3xl border-b border-rose-900/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0 shadow-sm shadow-rose-950/50">
+                <RotateCcw className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="text-xs sm:text-sm font-bold text-zinc-100 tracking-tight">
+                    Reset Workspace &amp; Fresh Install
+                  </h4>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-rose-500/15 text-rose-300 border border-rose-500/30 uppercase tracking-wider">
+                    Nuclear Purge
+                  </span>
+                </div>
+                <p className="text-[11px] text-zinc-400 mt-0.5 leading-relaxed">
+                  Experiencing worker timeouts or stale caching? Purges all IndexedDB genomes, stops workers, wipes CacheStorage, and forces a pristine clean reload.
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleClearCache}
+              disabled={isClearingCache}
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-zinc-950 font-bold text-xs tracking-wide transition-all shadow-lg shadow-rose-950/50 active:scale-95 flex items-center justify-center gap-2 cursor-pointer shrink-0 whitespace-nowrap"
+              title="Clears all client-stored profiles, workers, and caches as if it was a fresh install"
+            >
+              {isClearingCache ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin text-zinc-950" />
+                  <span>Purging Caches &amp; Workers...</span>
+                </>
+              ) : (
+                <>
+                  <Trash2 className="w-3.5 h-3.5 text-zinc-950" />
+                  <span>Clear All Caches &amp; Fresh Install</span>
                 </>
               )}
             </button>
@@ -554,10 +616,12 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
           <button
             type="button"
             onClick={handleClearCache}
-            className="text-[11px] text-zinc-500 hover:text-rose-400 transition-colors cursor-pointer"
-            title="Clears all client-stored profiles and caches"
+            disabled={isClearingCache}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-rose-200 border border-rose-500/30 text-[11px] font-semibold transition-all cursor-pointer"
+            title="Clears all client-stored profiles, workers, and caches as a fresh install"
           >
-            [ Purge Client Cache & Storage ]
+            <RotateCcw className={`w-3.5 h-3.5 ${isClearingCache ? 'animate-spin' : ''}`} />
+            <span>{isClearingCache ? 'Purging All Storage...' : 'Fresh Install / Nuclear Cache Reset'}</span>
           </button>
         </div>
 
