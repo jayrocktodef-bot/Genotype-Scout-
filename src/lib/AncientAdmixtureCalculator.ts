@@ -1,6 +1,6 @@
 import { getAncientMarkers } from '../data/GenomicDataService';
 import masterAncient from '../data/master_ancient_profiles.json';
-import { solveNNLS } from '../utils/nnls';
+import { solveNNLS, solveProjectedGradientSimplex } from '../utils/nnls';
 import ancientCladesFrequencies from '../data/raw_ancient/ancient_clades_frequencies.json';
 import grafIndex from '../data/raw_aims/graf_10k_index.json';
 import { fetchJsonAsset } from '../utils/fetchHelper';
@@ -269,19 +269,36 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
   }
 
   const P = clades.length;
-  const LAMBDA = 1000 * markersCompared;
-  const A_aug = [...A];
-  const b_aug = [...b];
-  const w_aug = [...weights];
+  const m = A.length;
 
-  const augRow = new Array(P).fill(LAMBDA);
-  A_aug.push(augRow);
-  b_aug.push(LAMBDA);
-  w_aug.push(1.0);
+  // Form normal equations M = A^T A (P x P) and v = A^T b (P) once in O(m * P^2)
+  const M_mat = new Float64Array(P * P);
+  const v_vec = new Float64Array(P);
 
-  const x = solveNNLS(A_aug, b_aug, w_aug);
-  const sum = x.reduce((acc, val) => acc + val, 0);
-  const normalized = sum > 0 ? x.map(val => val / sum) : x;
+  for (let i = 0; i < m; i++) {
+    const row = A[i];
+    const bi = b[i];
+    for (let j = 0; j < P; j++) {
+      v_vec[j] += row[j] * bi;
+      const rj = row[j];
+      for (let k = j; k < P; k++) {
+        M_mat[j * P + k] += rj * row[k];
+      }
+    }
+  }
+  for (let j = 0; j < P; j++) {
+    for (let k = 0; k < j; k++) {
+      M_mat[j * P + k] = M_mat[k * P + j];
+    }
+  }
+
+  // Mild Tikhonov regularization for numerical stability
+  for (let j = 0; j < P; j++) M_mat[j * P + j] += 1e-6;
+
+  // Projected gradient descent directly on the probability simplex (sum(x) = 1, x >= 0)
+  // Guarantees O(1) convergence without the ill-conditioning of large penalty rows.
+  const simplexSol = solveProjectedGradientSimplex(M_mat, v_vec, P, 300);
+  const normalized = Array.from(simplexSol);
 
   const finalMatches: AncientSampleMatch[] = clades.map((clade, idx) => {
     const info = CLADE_INFO[clade];

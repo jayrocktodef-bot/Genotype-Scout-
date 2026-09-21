@@ -9,11 +9,38 @@
  */
 export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[] {
   const m = A.length;
+  if (m === 0) return [];
   const n = A[0].length;
+  if (n === 0) return [];
   
   // Weights adjustment: A_i = w_i * A_i, b_i = w_i * b_i
   const A_w = A.map((row, i) => row.map(val => val * (w[i] || 1)));
   const b_w = b.map((val, i) => val * (w[i] || 1));
+
+  // Precompute normal equations: A_w^T * A_w (n x n) and A_w^T * b_w (n)
+  // This avoids re-accumulating over all m rows in every inner loop iteration.
+  const AtA_full = Array.from({ length: n }, () => new Float64Array(n));
+  const Atb_full = new Float64Array(n);
+  for (let k = 0; k < m; k++) {
+    const row = A_w[k];
+    const bk = b_w[k];
+    for (let i = 0; i < n; i++) {
+      const ri = row[i];
+      if (ri === 0) continue;
+      Atb_full[i] += ri * bk;
+      for (let j = 0; j <= i; j++) {
+        const rj = row[j];
+        if (rj !== 0) {
+          AtA_full[i][j] += ri * rj;
+        }
+      }
+    }
+  }
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < i; j++) {
+      AtA_full[j][i] = AtA_full[i][j];
+    }
+  }
 
   let x = new Array(n).fill(0);
   let P: Set<number> = new Set();
@@ -22,22 +49,17 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
   const tolerance = 1e-12; // Numerical tolerance
 
   // Outer loop: add elements to passive set (P)
-  while (Z.size > 0) {
-    // 1. Calculate gradient: w_grad = A^T * (b - Ax)
+  // Guarded by maxOuter to prevent infinite cycling in degenerate floating-point systems
+  let maxOuter = 3 * n + 50;
+  while (Z.size > 0 && maxOuter-- > 0) {
+    // 1. Calculate gradient: w_grad = A^T * (b - Ax) = Atb - AtA * x
     let w_grad = new Array(n).fill(0);
-    let Ax = new Array(m).fill(0);
-    for (let i = 0; i < m; i++) {
-      for (let j = 0; j < n; j++) {
-        Ax[i] += A_w[i][j] * x[j];
-      }
-    }
-    
     for (let j = 0; j < n; j++) {
-      let grad = 0;
-      for (let i = 0; i < m; i++) {
-        grad += A_w[i][j] * (b_w[i] - Ax[i]);
+      let atax = 0;
+      for (let k = 0; k < n; k++) {
+        atax += AtA_full[j][k] * x[k];
       }
-      w_grad[j] = grad;
+      w_grad[j] = Atb_full[j] - atax;
     }
 
     // Find max gradient in active set (Z)
@@ -65,6 +87,7 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
       const pArray = Array.from(P);
       
       // Solve least squares for P: A_P^T * A_P * s_P = A_P^T * b
+      // Directly extracted from precomputed normal equations in O(|P|^2)
       let At_A = new Array(pArray.length).fill(0).map(() => new Array(pArray.length).fill(0));
       let At_b = new Array(pArray.length).fill(0);
 
@@ -72,18 +95,10 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
         const idx_i = pArray[i];
         for (let j = 0; j <= i; j++) {
           const idx_j = pArray[j];
-          let sum = 0;
-          for (let k = 0; k < m; k++) {
-            sum += A_w[k][idx_i] * A_w[k][idx_j];
-          }
-          At_A[i][j] = sum;
-          At_A[j][i] = sum;
+          At_A[i][j] = AtA_full[idx_i][idx_j];
+          At_A[j][i] = AtA_full[idx_i][idx_j];
         }
-        let sum_b = 0;
-        for (let k = 0; k < m; k++) {
-          sum_b += A_w[k][idx_i] * b_w[k];
-        }
-        At_b[i] = sum_b;
+        At_b[i] = Atb_full[idx_i];
       }
 
       // Ridge regularization: add 1e-8 to diagonal to stabilize
@@ -146,6 +161,102 @@ export function solveNNLS(A: number[][], b: number[], w: number[] = []): number[
   }
 
   return x.map(val => Number.isFinite(val) && val >= 0 ? val : 0);
+}
+
+/**
+ * Projects a vector y onto the probability simplex: sum(x) = 1, x >= 0.
+ * Algorithm: Wang & Carreira-Perpinan (2013) / Duchi et al. (2008).
+ * O(n log n) complexity.
+ */
+export function projectSimplex(y: ArrayLike<number>, n: number): Float64Array {
+  const u = Array.from(y).sort((a, b) => b - a);
+  let cum = 0;
+  let theta = 0;
+  for (let j = 0; j < n; j++) {
+    cum += u[j];
+    if (u[j] - (cum - 1) / (j + 1) > 0) {
+      theta = (cum - 1) / (j + 1);
+    }
+  }
+  const x = new Float64Array(n);
+  for (let j = 0; j < n; j++) {
+    x[j] = Math.max(y[j] - theta, 0);
+  }
+  return x;
+}
+
+/**
+ * Solves convex quadratic program on the unit simplex:
+ *   min (1/2) x^T M x - v^T x  subject to  x >= 0, sum(x) = 1
+ * where M = A^T A (n x n) and v = A^T b (n).
+ * Uses projected gradient descent with power-iteration step sizing.
+ * Monotonically converges and cannot cycle.
+ */
+export function solveProjectedGradientSimplex(
+  M: Float64Array | number[][],
+  v: Float64Array | number[],
+  n: number,
+  iters = 300
+): Float64Array {
+  let x = new Float64Array(n).fill(1 / n);
+
+  // Flatten M if 2D array
+  const M_flat = M instanceof Float64Array ? M : new Float64Array(n * n);
+  if (!(M instanceof Float64Array)) {
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        M_flat[i * n + j] = (M as number[][])[i][j];
+      }
+    }
+  }
+  const v_arr = v instanceof Float64Array ? v : new Float64Array(v);
+
+  // Power iteration for spectral radius (Lipschitz constant)
+  let bk = new Float64Array(n).fill(1 / Math.sqrt(n));
+  for (let step = 0; step < 20; step++) {
+    const nextBk = new Float64Array(n);
+    for (let j = 0; j < n; j++) {
+      let s = 0;
+      for (let k = 0; k < n; k++) s += M_flat[j * n + k] * bk[k];
+      nextBk[j] = s;
+    }
+    let norm = 0;
+    for (let j = 0; j < n; j++) norm += nextBk[j] * nextBk[j];
+    norm = Math.sqrt(norm);
+    if (norm > 1e-12) {
+      for (let j = 0; j < n; j++) bk[j] = nextBk[j] / norm;
+    }
+  }
+  let L = 0;
+  for (let j = 0; j < n; j++) {
+    let s = 0;
+    for (let k = 0; k < n; k++) s += M_flat[j * n + k] * bk[k];
+    L += bk[j] * s;
+  }
+  if (L <= 0 || !Number.isFinite(L)) L = 1.0;
+  const step = 1.0 / (L * 1.05);
+
+  const g = new Float64Array(n);
+  const y = new Float64Array(n);
+
+  for (let it = 0; it < iters; it++) {
+    for (let j = 0; j < n; j++) {
+      let s = 0;
+      for (let k = 0; k < n; k++) s += M_flat[j * n + k] * x[k];
+      g[j] = s - v_arr[j];
+      y[j] = x[j] - step * g[j];
+    }
+    const newX = projectSimplex(y, n);
+
+    let diff = 0;
+    for (let j = 0; j < n; j++) {
+      const d = newX[j] - x[j];
+      diff += d * d;
+      x[j] = newX[j];
+    }
+    if (diff < 1e-16) break;
+  }
+  return x;
 }
 
 /**
