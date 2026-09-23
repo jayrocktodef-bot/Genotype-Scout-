@@ -137,9 +137,16 @@ export function evaluateXLinkedTraits(
   let hasCarrier = false;
 
   for (const marker of X_LINKED_MARKERS) {
-    const rawGeno = snpMap[marker.rsid.toLowerCase()] || snpMap[`chrX_${marker.position}`.toLowerCase()] || '';
+    const rawGeno = snpMap[marker.rsid] ||
+                    snpMap[marker.rsid.toLowerCase()] || 
+                    snpMap[marker.rsid.toUpperCase()] || 
+                    snpMap[`chrX_${marker.position}`.toLowerCase()] || 
+                    snpMap[`chrX_${marker.position}`.toUpperCase()] || 
+                    snpMap[`chrx:${marker.position}`] ||
+                    '';
 
-    if (!rawGeno) {
+    const cleanRaw = rawGeno.trim().toUpperCase().replace(/[\s\/_]/g, '');
+    if (!cleanRaw || cleanRaw === '--' || cleanRaw === '00' || cleanRaw === 'NN' || cleanRaw === '??' || cleanRaw === 'NOCALL') {
       evaluatedTraits.push({
         id: marker.id,
         traitName: marker.traitName,
@@ -157,7 +164,7 @@ export function evaluateXLinkedTraits(
       continue;
     }
 
-    const cleanGeno = rawGeno.toUpperCase();
+    const cleanGeno = cleanRaw;
     const isSingleAllele = cleanGeno.length === 1;
     const isMale = sex === 'male' || isSingleAllele;
 

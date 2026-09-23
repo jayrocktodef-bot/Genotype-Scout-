@@ -118,8 +118,8 @@ const buildCleanAimDatabase = (): Record<string, any> => {
                 const panelEntry = v as any;
                 if (panelEntry.frequencies) {
                     target.frequencies = {
-                        ...(target.frequencies || {}),
-                        ...panelEntry.frequencies
+                        ...panelEntry.frequencies,
+                        ...(target.frequencies || {})
                     };
                 }
                 if (panelEntry.subFrequencies && Object.keys(panelEntry.subFrequencies).length > 0) {

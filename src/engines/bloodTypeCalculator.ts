@@ -73,7 +73,7 @@ export function inferABODiplotype(userSnps: Record<string, string> | undefined):
   const oSurrogate2 = getGenotype(userSnps, 'rs507666'); // T = O allele, C = Non-O
   const bMarker1 = getGenotype(userSnps, 'rs8176747');   // c.803G>C: C = B allele, G = Non-B
   const bMarker2 = getGenotype(userSnps, 'rs8176745');   // c.526C>G/T: A/T = B allele, G/C = Non-B
-  const bMarker3 = getGenotype(userSnps, 'rs8176750');   // c.703G>A: G/C = B allele
+  const bMarker3 = getGenotype(userSnps, 'rs8176750');   // c.703G>A: A/T = B allele, G/C = A1/O consensus
   const aMarker1 = getGenotype(userSnps, 'rs8176746');  // c.796C>A: G/C = A1/O, A/T = A2
   const aMarker2 = getGenotype(userSnps, 'rs8176741');  // G/C = A allele
   const cisAbMarker = getGenotype(userSnps, 'rs8176743'); // Cis-AB hybrid mutation
@@ -95,7 +95,7 @@ export function inferABODiplotype(userSnps: Record<string, string> | undefined):
     if (bMarker2.includes('A') || bMarker2.includes('T')) bCopies = Math.max(bCopies, 1);
   }
   if (bCopies === 0 && bMarker3) {
-    if (bMarker3.includes('G') || bMarker3.includes('C')) bCopies = Math.max(bCopies, 1);
+    if (bMarker3.includes('A') || bMarker3.includes('T')) bCopies = Math.max(bCopies, 1);
   }
 
   // Evaluate Cis-AB

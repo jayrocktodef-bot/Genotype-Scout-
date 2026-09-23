@@ -106,13 +106,23 @@ export class YDnaPredictorV2 {
 
     // 3. By hg38 position
     if (snp.posHg38) {
-      const byPos38 = input.snpByPosition[`y:${snp.posHg38}`];
+      const p38 = snp.posHg38;
+      const byPos38 = input.snpByPosition[`y:${p38}`] ||
+        input.snpByPosition[`Y:${p38}`] ||
+        input.snpByPosition[`chry:${p38}`] ||
+        input.snpByPosition[`chrY:${p38}`] ||
+        input.snpByPosition[`${p38}`];
       if (byPos38 && byPos38 !== '--' && byPos38 !== '00' && byPos38 !== '??' && byPos38 !== 'II') return byPos38;
     }
 
     // 4. By hg19 position
     if (snp.posHg19) {
-      const byPos19 = input.snpByPosition[`y:${snp.posHg19}`];
+      const p19 = snp.posHg19;
+      const byPos19 = input.snpByPosition[`y:${p19}`] ||
+        input.snpByPosition[`Y:${p19}`] ||
+        input.snpByPosition[`chry:${p19}`] ||
+        input.snpByPosition[`chrY:${p19}`] ||
+        input.snpByPosition[`${p19}`];
       if (byPos19 && byPos19 !== '--' && byPos19 !== '00' && byPos19 !== '??' && byPos19 !== 'II') return byPos19;
     }
 

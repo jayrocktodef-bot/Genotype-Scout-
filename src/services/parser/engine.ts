@@ -298,38 +298,66 @@ export async function parseRawDNAStream(
         allowlist.has(markerLower) ||
         (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))
       ) {
+        const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
+        const primaryId = hasValidMarkerId ? markerId : (coordId || `${chrom}:${posStr}`);
+
         snpCount++;
-        snpMap[markerId] = genotype;
+        snpMap[primaryId] = genotype;
 
         if (!isNaN(pos)) {
-          snpMetaMap[markerId] = { chrom, pos };
+          snpMetaMap[primaryId] = { chrom, pos };
           snpByPosition[`${chrom}:${pos}`] = genotype;
+          snpByPosition[`${chrom.toLowerCase()}:${pos}`] = genotype;
+          if (chrom === 'Y') {
+            snpByPosition[`y:${pos}`] = genotype;
+            snpByPosition[`Y:${pos}`] = genotype;
+            snpByPosition[`chry:${pos}`] = genotype;
+            snpByPosition[`chrY:${pos}`] = genotype;
+          } else if (chrom === 'MT' || chrom === 'M') {
+            snpByPosition[`mt:${pos}`] = genotype;
+            snpByPosition[`MT:${pos}`] = genotype;
+            snpByPosition[`chrm:${pos}`] = genotype;
+            snpByPosition[`chrM:${pos}`] = genotype;
+            snpByPosition[`${pos}`] = genotype;
+          }
           if (coordId && !snpMap[coordId]) snpMap[coordId] = genotype;
         }
 
         if (isPhased && allele1 && allele2) {
           phasedCount++;
-          haplotype1Map[markerId] = allele1;
-          haplotype2Map[markerId] = allele2;
+          haplotype1Map[primaryId] = allele1;
+          haplotype2Map[primaryId] = allele2;
           if (coordId) {
             haplotype1Map[coordId] = allele1;
             haplotype2Map[coordId] = allele2;
           }
-          if (phaseSet) phaseSets[markerId] = phaseSet;
+          if (phaseSet) phaseSets[primaryId] = phaseSet;
         }
 
         if (chrom === 'X') {
-          xMap[markerId] = genotype;
+          const xKey = hasValidMarkerId ? markerId : (coordId || `chrX_${posStr}`);
+          xMap[xKey] = genotype;
           xTotalCount++;
           if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', pos)) {
             xHetCount++;
           }
         } else if (chrom === 'Y') {
-          yMap[markerId] = genotype;
+          const yKey = hasValidMarkerId ? markerId : `y:${posStr}`;
+          yMap[yKey] = genotype;
+          if (!isNaN(pos)) {
+            yMap[`y:${pos}`] = genotype;
+            yMap[`Y:${pos}`] = genotype;
+          }
           yDnaCalledSnps++;
-        } else if (chrom === 'MT') {
+        } else if (chrom === 'MT' || chrom === 'M') {
           const allele = genotype.length === 2 && genotype[0] === genotype[1] ? genotype[0] : genotype;
-          if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+          if (allele && allele[0] !== '-') {
+            mtMap[posStr] = allele;
+            if (hasValidMarkerId) {
+              mtMap[markerId] = allele;
+              mtMap[markerId.toLowerCase()] = allele;
+            }
+          }
         }
       }
     } else {
@@ -566,38 +594,66 @@ export function parseRawDNA(
         allowlist.has(markerLower) ||
         (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))
       ) {
+        const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
+        const primaryId = hasValidMarkerId ? markerId : (coordId || `${chrom}:${posStr}`);
+
         snpCount++;
-        snpMap[markerId] = genotype;
+        snpMap[primaryId] = genotype;
 
         if (!isNaN(pos)) {
-          snpMetaMap[markerId] = { chrom, pos };
+          snpMetaMap[primaryId] = { chrom, pos };
           snpByPosition[`${chrom}:${pos}`] = genotype;
+          snpByPosition[`${chrom.toLowerCase()}:${pos}`] = genotype;
+          if (chrom === 'Y') {
+            snpByPosition[`y:${pos}`] = genotype;
+            snpByPosition[`Y:${pos}`] = genotype;
+            snpByPosition[`chry:${pos}`] = genotype;
+            snpByPosition[`chrY:${pos}`] = genotype;
+          } else if (chrom === 'MT' || chrom === 'M') {
+            snpByPosition[`mt:${pos}`] = genotype;
+            snpByPosition[`MT:${pos}`] = genotype;
+            snpByPosition[`chrm:${pos}`] = genotype;
+            snpByPosition[`chrM:${pos}`] = genotype;
+            snpByPosition[`${pos}`] = genotype;
+          }
           if (coordId && !snpMap[coordId]) snpMap[coordId] = genotype;
         }
 
         if (isPhased && allele1 && allele2) {
           phasedCount++;
-          haplotype1Map[markerId] = allele1;
-          haplotype2Map[markerId] = allele2;
+          haplotype1Map[primaryId] = allele1;
+          haplotype2Map[primaryId] = allele2;
           if (coordId) {
             haplotype1Map[coordId] = allele1;
             haplotype2Map[coordId] = allele2;
           }
-          if (phaseSet) phaseSets[markerId] = phaseSet;
+          if (phaseSet) phaseSets[primaryId] = phaseSet;
         }
 
         if (chrom === 'X') {
-          xMap[markerId] = genotype;
+          const xKey = hasValidMarkerId ? markerId : (coordId || `chrX_${posStr}`);
+          xMap[xKey] = genotype;
           xTotalCount++;
           if (genotype.length === 2 && genotype[0] !== genotype[1] && !isPARRegion('X', pos)) {
             xHetCount++;
           }
         } else if (chrom === 'Y') {
-          yMap[markerId] = genotype;
+          const yKey = hasValidMarkerId ? markerId : `y:${posStr}`;
+          yMap[yKey] = genotype;
+          if (!isNaN(pos)) {
+            yMap[`y:${pos}`] = genotype;
+            yMap[`Y:${pos}`] = genotype;
+          }
           yDnaCalledSnps++;
-        } else if (chrom === 'MT') {
+        } else if (chrom === 'MT' || chrom === 'M') {
           const allele = genotype.length === 2 && genotype[0] === genotype[1] ? genotype[0] : genotype;
-          if (allele && allele[0] !== '-') mtMap[posStr] = allele;
+          if (allele && allele[0] !== '-') {
+            mtMap[posStr] = allele;
+            if (hasValidMarkerId) {
+              mtMap[markerId] = allele;
+              mtMap[markerId.toLowerCase()] = allele;
+            }
+          }
         }
       }
     } else {

@@ -44,11 +44,22 @@ export function classifyYGenotype(genotype: string | undefined, snpInfo: any): '
   return derived.includes(allele) ? 'derived' : 'ancestral';
 }
 
-function resolve(userSnpMap: Record<string, string>, key: string): { geno?: string; snpInfo?: any } {
+function resolve(userSnpMap: Record<string, string>, key: string, snpByPosition?: Record<string, string>): { geno?: string; snpInfo?: any } {
   const lower = key.toLowerCase();
   const base = lower.split('_')[0];
-  const geno = userSnpMap[lower] ?? userSnpMap[base];
+  let geno = userSnpMap[lower] ?? userSnpMap[base];
   const snpInfo = SNP_LOOKUP.get(lower) ?? SNP_LOOKUP.get(base);
+  if (!geno && snpInfo) {
+    const positions = [snpInfo.pos, snpInfo.posHg38, snpInfo.posHg19].filter(Boolean);
+    for (const p of positions) {
+      const pStr = String(p);
+      geno = userSnpMap[`y:${pStr}`] || userSnpMap[`chry:${pStr}`] || userSnpMap[pStr];
+      if (!geno && snpByPosition) {
+        geno = snpByPosition[`y:${pStr}`] || snpByPosition[`Y:${pStr}`] || snpByPosition[`chry:${pStr}`] || snpByPosition[pStr];
+      }
+      if (geno) break;
+    }
+  }
   return { geno, snpInfo };
 }
 
@@ -57,7 +68,7 @@ function resolve(userSnpMap: Record<string, string>, key: string): { geno?: stri
  * user actually carries the mutation (derived allele) at a defining SNP -- not merely
  * because the position was present on the chip.
  */
-export function findMatchesInHaplogroups(userSnpMap: Record<string, string>): IsoggMatch[] {
+export function findMatchesInHaplogroups(userSnpMap: Record<string, string>, snpByPosition?: Record<string, string>): IsoggMatch[] {
   const matches: IsoggMatch[] = [];
 
   for (const branch of HAPLOGROUP_DB) {
@@ -67,7 +78,7 @@ export function findMatchesInHaplogroups(userSnpMap: Record<string, string>): Is
 
     for (const key of [...(branch.rsids || []), ...(branch.definingSNPs || [])]) {
       if (!key) continue;
-      const { geno, snpInfo } = resolve(userSnpMap, key);
+      const { geno, snpInfo } = resolve(userSnpMap, key, snpByPosition);
       if (!geno) continue;
       const state = classifyYGenotype(geno, snpInfo);
       if (state === 'unknown') continue; // present but allele state unverifiable -> not counted

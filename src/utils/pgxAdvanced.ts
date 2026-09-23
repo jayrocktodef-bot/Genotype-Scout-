@@ -58,7 +58,7 @@ export function calculateCYP2D6Status(genotypes: Record<string, string>) {
   // 1.25 <= Activity score <= 2.25: Normal
   // Activity score > 2.25: Ultrarapid
   let status = MetabolizerStatus.NORMAL;
-  if (totalScore > 2.0 || isDuplication) status = MetabolizerStatus.ULTRARAPID;
+  if (totalScore > 2.0) status = MetabolizerStatus.ULTRARAPID;
   else if (totalScore <= 0.25) status = MetabolizerStatus.POOR;
   else if (totalScore < 1.25) status = MetabolizerStatus.INTERMEDIATE;
 

@@ -54,19 +54,59 @@ function snpMapToRawSnpArray(yMap: Record<string, string>): RawSnp[] {
 
 /**
  * Phase 2 Analysis: runs YDnaPredictorV2 against the enriched y_phylotree dataset.
+ * Supports dual-channel matching across both rsid/name and physical coordinates (hg19/hg38).
  *
  * @param yMap User's Y-DNA SNP map (rsid/name -> allele)
+ * @param snpByPosition Optional map of coordinate -> allele (e.g. "y:14095400" -> "G")
+ * @param platform Optional sequencing platform tag
  * @returns Phase 2 analysis result with allele validation + coverage, or null if Phase 2 unavailable
  */
-export function analyzePhase2YDna(yMap: Record<string, string>): YDnaPredictionDetails | null {
+export function analyzePhase2YDna(
+  yMap: Record<string, string>,
+  snpByPosition?: Record<string, string>,
+  platform?: string
+): YDnaPredictionDetails | null {
   const predictor = initializePredictor();
   if (!predictor) return null;
 
-  const rawSnps = snpMapToRawSnpArray(yMap);
-  if (rawSnps.length === 0) return null;
+  const snpByRsid: Record<string, string> = {};
+  const combinedPositions: Record<string, string> = { ...(snpByPosition || {}) };
+
+  for (const [key, allele] of Object.entries(yMap)) {
+    if (!allele || allele === '--' || allele === '00' || allele === '?' || allele === '.') {
+      continue;
+    }
+    const cleanKey = key.trim();
+    snpByRsid[cleanKey.toLowerCase()] = allele;
+    snpByRsid[cleanKey.toUpperCase()] = allele;
+
+    // If key has coordinate format (e.g. "y:12345", "Y:12345", "chrY:12345", or "12345")
+    const posMatch = cleanKey.match(/^(?:chr)?y:?(\d+)$/i) || cleanKey.match(/^(\d+)$/);
+    if (posMatch) {
+      const pos = posMatch[1];
+      combinedPositions[`y:${pos}`] = allele;
+      combinedPositions[`Y:${pos}`] = allele;
+    }
+  }
+
+  if (snpByPosition) {
+    for (const [posKey, allele] of Object.entries(snpByPosition)) {
+      if (!allele || allele === '--' || allele === '00' || allele === '?' || allele === '.') continue;
+      combinedPositions[posKey.toLowerCase()] = allele;
+      combinedPositions[posKey.toUpperCase()] = allele;
+    }
+  }
+
+  if (Object.keys(snpByRsid).length === 0 && Object.keys(combinedPositions).length === 0) {
+    return null;
+  }
 
   try {
-    return predictor.predict(rawSnps);
+    return predictor.predict({
+      snpByRsid,
+      snpByPosition: combinedPositions,
+      platform
+    });
   } catch (e) {
     console.error('[Phase2] Prediction failed:', e);
     return null;

@@ -135,6 +135,49 @@ describe('errorCaller framework', () => {
       expect(s.legacyCode).toBe('ERR-4025FGD1');
       expect(s.subsystem).toBe('GENOTYPE_WORKER');
     });
+
+    it('gracefully handles DOM ErrorEvents and prevents {"isTrusted":true} leaks', () => {
+      // Simulates browser ErrorEvent where only isTrusted is an own enumerable property
+      const domErrorEvent = Object.create(
+        { message: '', filename: 'https://scout.blog/assets/genotypeWorker.js', lineno: 10, colno: 5 },
+        { isTrusted: { value: true, enumerable: true }, type: { value: 'error', enumerable: true } }
+      );
+
+      const s1 = serializeGenomicsError(domErrorEvent, 'GENOTYPE_WORKER');
+      expect(s1.message).not.toContain('{"isTrusted":true}');
+      expect(s1.message).toContain('Worker thread script initialization or network download failed');
+      expect(s1.code).toBe(GenomicsErrorCode.ERR_WORKER_INITIALIZATION_FAILED);
+      expect(s1.subsystem).toBe('GENOTYPE_WORKER');
+      expect(s1.details.context?.filename).toBe('https://scout.blog/assets/genotypeWorker.js');
+      expect(s1.details.context?.lineno).toBe(10);
+      expect(s1.details.suggestedSolution).toContain('Clear Cache');
+
+      // Simulates naked Event object that serializes to {"isTrusted":true}
+      const nakedEvent = { isTrusted: true, type: 'error' };
+      const s2 = serializeGenomicsError(nakedEvent, 'GENOTYPE_WORKER');
+      expect(s2.message).not.toBe('{"isTrusted":true}');
+      expect(s2.code).toBe(GenomicsErrorCode.ERR_WORKER_INITIALIZATION_FAILED);
+
+      // Simulates ErrorEvent with explicit error message
+      const scriptError = {
+        isTrusted: true,
+        type: 'error',
+        message: 'Failed to fetch dynamically imported module /assets/genotypeWorker-abc.js'
+      };
+      const s3 = serializeGenomicsError(scriptError, 'GENOTYPE_WORKER');
+      expect(s3.message).toContain('Failed to fetch dynamically imported module');
+      expect(s3.code).toBe(GenomicsErrorCode.ERR_WORKER_INITIALIZATION_FAILED);
+
+      // Simulates ErrorEvent with an inner Error object
+      const innerErrorEvent = {
+        isTrusted: true,
+        type: 'error',
+        error: new Error('Script execution aborted due to heap limit')
+      };
+      const s4 = serializeGenomicsError(innerErrorEvent, 'GENOTYPE_WORKER');
+      expect(s4.message).toContain('heap limit');
+      expect(s4.code).toBe(GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB);
+    });
   });
 
   describe('formatDiagnosticTelemetry report generation', () => {

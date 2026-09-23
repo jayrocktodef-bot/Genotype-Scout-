@@ -40,7 +40,7 @@ self.addEventListener('error', (event: ErrorEvent) => {
   console.error("analysisWorker unhandled error:", event.error || event.message);
   self.postMessage({
     type: 'ERROR',
-    error: serializeGenomicsError(event.error || event.message, 'ANALYSIS_WORKER')
+    error: serializeGenomicsError(event.error || event.message || event, 'ANALYSIS_WORKER')
   });
 });
 
@@ -48,7 +48,7 @@ self.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
   console.error("analysisWorker unhandled promise rejection:", event.reason);
   self.postMessage({
     type: 'ERROR',
-    error: serializeGenomicsError(event.reason, 'ANALYSIS_WORKER')
+    error: serializeGenomicsError(event.reason || 'Unhandled promise rejection in analysis worker', 'ANALYSIS_WORKER')
   });
 });
 

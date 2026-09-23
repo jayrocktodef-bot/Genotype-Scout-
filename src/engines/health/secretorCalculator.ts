@@ -5,17 +5,18 @@ export function calculateSecretorStatus(userSnps: Record<string, string> | undef
       traits: []
     };
   }
-  const fut2 = userSnps['rs601338']; // The primary European/African marker
-  const fut2_asian = userSnps['rs1047781']; // The primary East Asian marker
+  // Helper to safely get and normalize genotype string
+  const getSnp = (rsid: string) => {
+    const val = userSnps[rsid] || userSnps[rsid.toLowerCase()] || userSnps[rsid.toUpperCase()];
+    if (!val || val === '--' || val === '00' || val === 'NN' || val === '??') return null;
+    return val.trim().toUpperCase().replace(/[\s\/_]/g, '');
+  };
+
+  const f1 = getSnp('rs601338'); // The primary European/African marker
+  const f2 = getSnp('rs1047781'); // The primary East Asian marker
 
   let status = "Unknown";
   let traits: string[] = [];
-
-  // Helper to normalize genotype string
-  const norm = (val?: string) => val ? val.trim().toUpperCase().replace(/[\s\/_]/g, '') : null;
-
-  const f1 = norm(fut2);
-  const f2 = norm(fut2_asian);
 
   // Logic for rs601338 (Ref G = Secretor, Alt A = Non-Secretor; Minus strand C/T)
   if (f1) {

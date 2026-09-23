@@ -2010,13 +2010,13 @@
       "A"
     ],
     "frequencies": {
-      "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.05,
-      "EUR": 0.05,
+      "AFR": 0.01,
+      "AMR": 0.05,
+      "EAS": 0.001,
+      "EUR": 0.78,
       "SAS": 0.05,
-      "MENA": 0.05,
-      "OCE": 0.05
+      "MENA": 0.3,
+      "OCE": 0.01
     },
     "subFrequencies": {
       "Luo": 0.5,
@@ -2348,12 +2348,12 @@
     ],
     "frequencies": {
       "AFR": 0.02,
-      "AMR": 0.02,
-      "EAS": 0.05,
-      "EUR": 0.05,
-      "SAS": 0.05,
-      "MENA": 0.05,
-      "OCE": 0.05
+      "AMR": 0.05,
+      "EAS": 0.01,
+      "EUR": 0.94,
+      "SAS": 0.75,
+      "MENA": 0.5,
+      "OCE": 0.02
     },
     "subFrequencies": {
       "Oromo": 0.4,
@@ -2400,12 +2400,12 @@
       "A"
     ],
     "frequencies": {
-      "AFR": 0.02,
-      "AMR": 0.02,
-      "EUR": 0.05,
-      "SAS": 0.05,
-      "EAS": 0.05,
-      "MENA": 0.05,
+      "AFR": 0.05,
+      "AMR": 0.05,
+      "EUR": 0.72,
+      "SAS": 0.2,
+      "EAS": 0.01,
+      "MENA": 0.35,
       "OCE": 0.05
     },
     "subFrequencies": {
@@ -2433,13 +2433,13 @@
       "C"
     ],
     "frequencies": {
-      "AFR": 0.02,
+      "AFR": 0.99,
       "AMR": 0.02,
-      "EUR": 0.05,
-      "EAS": 0.05,
-      "SAS": 0.05,
+      "EUR": 0.005,
+      "EAS": 0.001,
+      "SAS": 0.01,
       "MENA": 0.05,
-      "OCE": 0.05
+      "OCE": 0.01
     },
     "subFrequencies": {
       "Mandinka": 0.97,

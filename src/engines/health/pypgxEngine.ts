@@ -7,6 +7,17 @@ export interface StarAlleleResult {
   phenotype: string;
 }
 
+function getSnp(userSnps: Record<string, string> | undefined, ...rsids: string[]): string | null {
+  if (!userSnps) return null;
+  for (const rsid of rsids) {
+    const val = userSnps[rsid] || userSnps[rsid.toLowerCase()] || userSnps[rsid.toUpperCase()];
+    if (val && val !== '--' && val !== '00' && val !== 'NN' && val !== '??') {
+      return val.trim().toUpperCase().replace(/[\s\/_]/g, '');
+    }
+  }
+  return null;
+}
+
 /**
  * Star Allele Caller inspired by PyPGx 
  * Uses activity scores and haplotype pattern matching for clinical pharmacogenomics.
@@ -19,21 +30,21 @@ export function callStarAlleles(gene: string, userSnps: Record<string, string>):
 
   // Simplified logic for core genes
   if (gene === 'CYP2D6') {
-      const rs3892097 = userSnps['rs3892097']; // *4 (Null, score 0.0)
-      const rs1065852 = userSnps['rs1065852']; // *10 (Decreased, score 0.25)
-      const rs28371725 = userSnps['rs28371725']; // *41 (Decreased, score 0.5)
+      const rs3892097 = getSnp(userSnps, 'rs3892097'); // *4 (Null, score 0.0)
+      const rs1065852 = getSnp(userSnps, 'rs1065852'); // *10 (Decreased, score 0.25)
+      const rs28371725 = getSnp(userSnps, 'rs28371725'); // *41 (Decreased, score 0.5)
 
       let numStar4 = 0;
-      if (rs3892097 === 'AA') numStar4 = 2;
-      else if (rs3892097 === 'AG' || rs3892097 === 'GA') numStar4 = 1;
+      if (rs3892097 === 'AA' || rs3892097 === 'TT') numStar4 = 2;
+      else if (['AG', 'GA', 'TC', 'CT'].includes(rs3892097 || '')) numStar4 = 1;
 
       let numStar10 = 0;
-      if (rs1065852 === 'AA') numStar10 = 2;
-      else if (rs1065852 === 'AG' || rs1065852 === 'GA') numStar10 = 1;
+      if (rs1065852 === 'AA' || rs1065852 === 'TT') numStar10 = 2;
+      else if (['AG', 'GA', 'TC', 'CT'].includes(rs1065852 || '')) numStar10 = 1;
 
       let numStar41 = 0;
-      if (rs28371725 === 'AA') numStar41 = 2;
-      else if (rs28371725 === 'AG' || rs28371725 === 'GA') numStar41 = 1;
+      if (rs28371725 === 'AA' || rs28371725 === 'TT') numStar41 = 2;
+      else if (['AG', 'GA', 'TC', 'CT'].includes(rs28371725 || '')) numStar41 = 1;
 
       const mutated: string[] = [];
       for (let i = 0; i < numStar4; i++) mutated.push("*4");
@@ -43,16 +54,16 @@ export function callStarAlleles(gene: string, userSnps: Record<string, string>):
       allele1 = mutated[0] || "*1";
       allele2 = mutated[1] || "*1";
   } else if (gene === 'CYP2C19') {
-      const rs12248560 = userSnps['rs12248560']; // *17 (Increased, score 1.0)
-      const rs28399504 = userSnps['rs28399504']; // *2 (Null, score 0.0)
+      const rs12248560 = getSnp(userSnps, 'rs12248560'); // *17 (Increased, score 1.0)
+      const rs2 = getSnp(userSnps, 'rs4244285', 'rs28399504'); // *2 (Null, score 0.0)
 
       let numStar17 = 0;
-      if (rs12248560 === 'TT') numStar17 = 2;
-      else if (rs12248560 === 'TC' || rs12248560 === 'CT' || rs12248560 === 'TG' || rs12248560 === 'GT' || rs12248560 === 'AT' || rs12248560 === 'TA') numStar17 = 1;
+      if (rs12248560 === 'TT' || rs12248560 === 'AA') numStar17 = 2;
+      else if (rs12248560 && (rs12248560.includes('T') || rs12248560.includes('A'))) numStar17 = 1;
 
       let numStar2 = 0;
-      if (rs28399504 === 'AA') numStar2 = 2;
-      else if (rs28399504 === 'AG' || rs28399504 === 'GA' || rs28399504 === 'AC' || rs28399504 === 'CA' || rs28399504 === 'AT' || rs28399504 === 'TA') numStar2 = 1;
+      if (rs2 === 'AA' || rs2 === 'TT') numStar2 = 2;
+      else if (rs2 && (rs2.includes('A') || rs2.includes('T'))) numStar2 = 1;
 
       const mutated: string[] = [];
       for (let i = 0; i < numStar2; i++) mutated.push("*2");
@@ -61,16 +72,16 @@ export function callStarAlleles(gene: string, userSnps: Record<string, string>):
       allele1 = mutated[0] || "*1";
       allele2 = mutated[1] || "*1";
   } else if (gene === 'DPYD') {
-      const rs3918290 = userSnps['rs3918290']; // *2A (Null, score 0.0)
-      const rs55886062 = userSnps['rs55886062']; // *13 (Null, score 0.0)
+      const rs3918290 = getSnp(userSnps, 'rs3918290'); // *2A (Null, score 0.0)
+      const rs55886062 = getSnp(userSnps, 'rs55886062'); // *13 (Null, score 0.0)
 
       let numStar2A = 0;
-      if (rs3918290 === 'AA') numStar2A = 2;
-      else if (rs3918290 === 'AG' || rs3918290 === 'GA' || rs3918290 === 'AC' || rs3918290 === 'CA' || rs3918290 === 'AT' || rs3918290 === 'TA') numStar2A = 1;
+      if (rs3918290 === 'AA' || rs3918290 === 'TT') numStar2A = 2;
+      else if (rs3918290 && (rs3918290.includes('A') || rs3918290.includes('T'))) numStar2A = 1;
 
       let numStar13 = 0;
-      if (rs55886062 === 'AA') numStar13 = 2;
-      else if (rs55886062 === 'AG' || rs55886062 === 'GA' || rs55886062 === 'AC' || rs55886062 === 'CA' || rs55886062 === 'AT' || rs55886062 === 'TA') numStar13 = 1;
+      if (rs55886062 === 'AA' || rs55886062 === 'TT') numStar13 = 2;
+      else if (rs55886062 && (rs55886062.includes('A') || rs55886062.includes('T'))) numStar13 = 1;
 
       const mutated: string[] = [];
       for (let i = 0; i < numStar2A; i++) mutated.push("*2A");
@@ -98,7 +109,7 @@ export function callStarAlleles(gene: string, userSnps: Record<string, string>):
 
 export const PGX_MARKERS_MAP: Record<string, string[]> = {
     'CYP2D6': ['rs3892097', 'rs1065852', 'rs28371725'],
-    'CYP2C19': ['rs12248560', 'rs28399504'],
+    'CYP2C19': ['rs12248560', 'rs4244285', 'rs28399504'],
     'DPYD': ['rs3918290', 'rs55886062']
 };
 

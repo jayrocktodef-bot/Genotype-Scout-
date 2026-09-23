@@ -375,23 +375,24 @@ async function runGenotypeScout(
 }
 
 // ── Global Worker Error & Unhandled Rejection Listeners ─────────────
-self.addEventListener('error', (event: ErrorEvent) => {
-  console.error("genotypeWorker unhandled error:", event.error || event.message);
-  self.postMessage({
-    type: 'ERROR',
-    error: serializeGenomicsError(event.error || event.message, 'GENOTYPE_WORKER')
+if (typeof self !== 'undefined') {
+  self.addEventListener('error', (event: ErrorEvent) => {
+    console.error("genotypeWorker unhandled error:", event.error || event.message);
+    self.postMessage({
+      type: 'ERROR',
+      error: serializeGenomicsError(event.error || event.message || event, 'GENOTYPE_WORKER')
+    });
   });
-});
 
-self.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
-  console.error("genotypeWorker unhandled promise rejection:", event.reason);
-  self.postMessage({
-    type: 'ERROR',
-    error: serializeGenomicsError(event.reason, 'GENOTYPE_WORKER')
+  self.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
+    console.error("genotypeWorker unhandled promise rejection:", event.reason);
+    self.postMessage({
+      type: 'ERROR',
+      error: serializeGenomicsError(event.reason || 'Unhandled promise rejection in genotype worker', 'GENOTYPE_WORKER')
+    });
   });
-});
 
-self.onmessage = async (e: MessageEvent) => {
+  self.onmessage = async (e: MessageEvent) => {
   const { type, files, payload, sab } = e.data;
   if (type !== 'PROCESS_GENOME' && type !== 'PLINK_PROCESS_GENOME' && !files) return;
   if (sab) { new Int32Array(sab)[3] = 1; }
@@ -407,6 +408,7 @@ self.onmessage = async (e: MessageEvent) => {
     let mergedSnpMetaMap: Record<string, { chrom: string, pos: number }> = {};
     let mergedYMap: Record<string, string> = {};
     let mergedMtMap: Record<string, string> = {};
+    let mergedSnpByPosition: Record<string, string> = {};
     let mergedHaplotype1Map: Record<string, string> = {};
     let mergedHaplotype2Map: Record<string, string> = {};
     let isAnyPhased = false;
@@ -475,9 +477,11 @@ self.onmessage = async (e: MessageEvent) => {
         }
         
         let mergedSnpMap: Record<string, string> = {};
+        mergedSnpByPosition = {};
         for (const pf of parsedFiles) {
           names.push(pf.name); chips.push(pf.chip); totalSnps += pf.snpCount;
           Object.assign(mergedSnpMetaMap, pf.snpMetaMap); Object.assign(mergedYMap, pf.yMap); Object.assign(mergedMtMap, pf.mtMap);
+          if (pf.snpByPosition) Object.assign(mergedSnpByPosition, pf.snpByPosition);
           if (pf.haplotype1Map) Object.assign(mergedHaplotype1Map, pf.haplotype1Map);
           if (pf.haplotype2Map) Object.assign(mergedHaplotype2Map, pf.haplotype2Map);
           if (pf.isPhased) isAnyPhased = true;
@@ -502,8 +506,8 @@ self.onmessage = async (e: MessageEvent) => {
     // Orchestration — now fans out across multiple workers
     const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, autosomalSnpMap, autosomalMetaMap, names, sab);
     
-    const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE);
-    const predictedMtDNA = analyzeMtDNA(mergedMtMap);
+    const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE, mergedSnpByPosition);
+    const predictedMtDNA = analyzeMtDNA(mergedMtMap, mergedSnpByPosition);
 
     // ── Haplotype-Scout: Ancient Archaeological Match & Archaic Hominin Affinity ──
     const yCode = predictedYDNA?.phase2?.haplogroup || predictedYDNA?.predicted?.name;
@@ -519,7 +523,7 @@ self.onmessage = async (e: MessageEvent) => {
     const ancientLineageMatches = computeAncientMatches(userYDef, userMtDef);
 
     // Build coordinate position lookup for archaic introgression engine
-    const snpByPosition: Record<string, string> = {};
+    const snpByPosition: Record<string, string> = { ...mergedSnpByPosition };
     for (const [rsid, genotype] of Object.entries(imputedSnpMap)) {
       const meta = mergedSnpMetaMap[rsid];
       if (meta && meta.chrom && meta.pos) {
@@ -610,6 +614,7 @@ self.onmessage = async (e: MessageEvent) => {
       haplotype1Map: Object.keys(mergedHaplotype1Map).length > 0 ? mergedHaplotype1Map : undefined,
       haplotype2Map: Object.keys(mergedHaplotype2Map).length > 0 ? mergedHaplotype2Map : undefined,
       predictedYDNA, predictedMtDNA, mergedMtMap, mergedYMap,
+      mergedSnpByPosition,
       ancientLineageMatches,
       archaicAffinity,
 
@@ -655,6 +660,7 @@ self.onmessage = async (e: MessageEvent) => {
     clearInterval(heartbeatTimer);
   }
 };
+}
 
 let masterAimsCache: any = null;
 const getMasterAims = () => {
@@ -679,11 +685,10 @@ function getMacroContinentalGroup(popKey: string): string | null {
     return null;
 }
 
-function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
+export function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string, number> {
     const MIN_MARKERS = 5;
-    const SMOOTH_ALPHA = 0.5;
 
-    const totalLogProb: Record<string, number> = {};
+    const totalProximity: Record<string, number> = {};
     const totalWeight: Record<string, number> = {};
     const markerCounts: Record<string, number> = {};
 
@@ -715,61 +720,44 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
         if (ploidy === 0) continue;
 
         for (const aim of matchedAims) {
-            if (!aim || !aim.frequencies) continue;
+            if (!aim || (!aim.frequencies && !aim.subFrequencies)) continue;
             // Reject any synthetic placeholder markers
             if (aim.position === 1000000) continue;
-            if (aim.frequencies.GLOBAL !== undefined) continue;
+            if (aim.frequencies?.GLOBAL !== undefined) continue;
 
             const effectAlleles = aim.alleles || [];
             if (effectAlleles.length === 0) continue;
             const effectAllele = effectAlleles[0].toUpperCase();
 
-            const COMPLEMENTS: Record<string, string> = { 'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C' };
-            const complementAllele = COMPLEMENTS[effectAllele] || effectAllele;
-
-            const isPalindromic = (effectAllele === 'A' && complementAllele === 'T') ||
-                                  (effectAllele === 'T' && complementAllele === 'A') ||
-                                  (effectAllele === 'C' && complementAllele === 'G') ||
-                                  (effectAllele === 'G' && complementAllele === 'C');
-
-            // Strand orientation check: if user alleles are on reverse strand, flip them first
-            let workingAlleles = validAlleles;
-            if (!isPalindromic && !workingAlleles.includes(effectAllele)) {
-                const flipped = workingAlleles.split('').map(b => COMPLEMENTS[b] || b).join('');
-                if (flipped.includes(effectAllele)) {
-                    workingAlleles = flipped;
-                }
-            }
-
+            // Direct effect allele matching: compute user dosage in [0.0, 1.0]
             let k = 0;
-            for (const ch of workingAlleles) {
+            for (const ch of validAlleles) {
                 if (ch === effectAllele) k++;
             }
+            const userDosage = k / ploidy;
 
-            // Cap marker weight to prevent synthetic or single-locus outliers from dominating
+            // Informativeness / Fst marker weighting
             const markerWeight = typeof aim.fst === 'number' && aim.fst > 0
-                ? Math.min(3.0, Math.max(1.0, aim.fst * 5))
-                : (typeof aim.weight === 'number' && aim.weight > 0 ? Math.min(3.0, aim.weight) : 1.0);
-
-            const genotypeProbability = (rawP: number): number => {
-                const pSmooth = Math.max(0.0005, Math.min(0.9995, (rawP * 1000 + SMOOTH_ALPHA) / (1000 + 2 * SMOOTH_ALPHA)));
-                if (ploidy === 1) {
-                    return k >= 1 ? pSmooth : (1 - pSmooth);
-                } else {
-                    if (k === 0) return (1 - pSmooth) ** 2;
-                    if (k === 1) return 2 * pSmooth * (1 - pSmooth);
-                    if (k >= 2) return pSmooth ** 2;
-                    return 0;
-                }
-            };
+                ? Math.min(3.5, Math.max(0.5, aim.fst * 6.0))
+                : (typeof aim.weight === 'number' && aim.weight > 0 ? Math.min(3.5, Math.max(0.5, aim.weight)) : 1.0);
 
             // Aggregate population frequencies into standard continental macro-groups
             const macroFreqs: Record<string, number[]> = {};
-            for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
-                const macroGroup = getMacroContinentalGroup(pop);
-                if (!macroGroup) continue;
-                if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
-                macroFreqs[macroGroup].push(freq as number);
+            if (aim.frequencies) {
+                for (const [pop, freq] of Object.entries(aim.frequencies as Record<string, number>)) {
+                    const macroGroup = getMacroContinentalGroup(pop);
+                    if (!macroGroup || typeof freq !== 'number' || isNaN(freq)) continue;
+                    if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
+                    macroFreqs[macroGroup].push(freq);
+                }
+            }
+            if (aim.subFrequencies) {
+                for (const [pop, freq] of Object.entries(aim.subFrequencies as Record<string, number>)) {
+                    const macroGroup = getMacroContinentalGroup(pop);
+                    if (!macroGroup || typeof freq !== 'number' || isNaN(freq)) continue;
+                    if (!macroFreqs[macroGroup]) macroFreqs[macroGroup] = [];
+                    macroFreqs[macroGroup].push(freq);
+                }
             }
 
             // Require at least 3 macro continental groups represented for fair cross-population evaluation
@@ -777,45 +765,59 @@ function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<string,
 
             for (const [macroPop, freqs] of Object.entries(macroFreqs)) {
                 const avgFreq = freqs.reduce((a, b) => a + b, 0) / freqs.length;
-                const prob = genotypeProbability(avgFreq);
-                if (prob <= 0) continue;
+                // Single-Locus Raw Allele Sharing Proximity: P_locus = 1.0 - |user_dosage - f_ref|
+                const locusProximity = Math.max(0.0, Math.min(1.0, 1.0 - Math.abs(userDosage - avgFreq)));
 
-                totalLogProb[macroPop] = (totalLogProb[macroPop] || 0) + (markerWeight * Math.log(prob));
+                totalProximity[macroPop] = (totalProximity[macroPop] || 0) + (markerWeight * locusProximity);
                 totalWeight[macroPop] = (totalWeight[macroPop] || 0) + markerWeight;
                 markerCounts[macroPop] = (markerCounts[macroPop] || 0) + 1;
             }
         }
     }
 
-    const avgLogProbs: Record<string, number> = {};
-    let maxAvgLogProb = -Infinity;
+    const avgProximities: Record<string, number> = {};
+    let minAvgProx = Infinity;
+    let maxAvgProx = -Infinity;
 
-    for (const pop in totalLogProb) {
+    for (const pop in totalProximity) {
         if (markerCounts[pop] >= MIN_MARKERS && totalWeight[pop] > 0) {
-            const avg = totalLogProb[pop] / totalWeight[pop];
-            avgLogProbs[pop] = avg;
-            if (avg > maxAvgLogProb) maxAvgLogProb = avg;
+            const avg = totalProximity[pop] / totalWeight[pop];
+            avgProximities[pop] = avg;
+            if (avg < minAvgProx) minAvgProx = avg;
+            if (avg > maxAvgProx) maxAvgProx = avg;
         }
     }
 
-    // Stable Softmax Temperature Scale for Macro-Continental Proportions
-    const TEMP_SCALE = 15.0;
+    const pops = Object.keys(avgProximities);
+    if (pops.length === 0) return {};
 
-    const scores: Record<string, number> = {};
-    let sumScores = 0;
-
-    for (const pop in avgLogProbs) {
-        const scaledDiff = (avgLogProbs[pop] - maxAvgLogProb) * TEMP_SCALE;
-        const score = Math.exp(scaledDiff);
-        scores[pop] = score;
-        sumScores += score;
-    }
-
+    const spread = maxAvgProx - minAvgProx;
     const finalScores: Record<string, number> = {};
-    if (sumScores > 0) {
-        for (const pop in scores) {
-            finalScores[pop] = (scores[pop] / sumScores) * 100;
+
+    if (spread <= 1e-6) {
+        const uniform = 100 / pops.length;
+        for (const pop of pops) finalScores[pop] = uniform;
+        return finalScores;
+    }
+
+    // Baseline contrast normalization: calculate excess proximity above baseline
+    // Contrast exponent p = 1.5 sharpens distinct signals while preserving additive linear admixture
+    const CONTRAST_POWER = 1.5;
+    const excessScores: Record<string, number> = {};
+    let sumExcess = 0;
+
+    for (const pop of pops) {
+        const excess = Math.max(0, avgProximities[pop] - minAvgProx);
+        const powered = Math.pow(excess, CONTRAST_POWER);
+        excessScores[pop] = powered;
+        sumExcess += powered;
+    }
+
+    if (sumExcess > 0) {
+        for (const pop of pops) {
+            finalScores[pop] = Math.round((excessScores[pop] / sumExcess) * 1000) / 10;
         }
     }
+
     return finalScores;
 }

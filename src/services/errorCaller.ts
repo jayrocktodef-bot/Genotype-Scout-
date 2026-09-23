@@ -60,6 +60,7 @@ export enum GenomicsErrorCode {
   ERR_WORKER_UNHANDLED_EXCEPTION = 'ERR_WORKER_UNHANDLED_EXCEPTION',
   ERR_WORKER_UNHANDLED_REJECTION = 'ERR_WORKER_UNHANDLED_REJECTION',
   ERR_WORKER_COMMUNICATION = 'ERR_WORKER_COMMUNICATION',
+  ERR_WORKER_INITIALIZATION_FAILED = 'ERR_WORKER_INITIALIZATION_FAILED',
 
   // Analysis Engines
   ERR_ENGINE_FAILED = 'ERR_ENGINE_FAILED',
@@ -221,9 +222,55 @@ export function serializeGenomicsError(
     };
   }
 
-  const rawMessage = err instanceof Error ? err.message : (typeof err === 'string' ? err : JSON.stringify(err));
-  const stack = err instanceof Error ? err.stack : undefined;
-  
+  let rawMessage: string;
+  let stack = err instanceof Error ? err.stack : undefined;
+  let errorName = err instanceof Error ? err.name : 'Error';
+  const extractedContext: Record<string, any> = {};
+
+  if (err instanceof Error) {
+    rawMessage = err.message || err.name;
+  } else if (typeof err === 'string') {
+    rawMessage = err;
+  } else if (err && typeof err === 'object') {
+    // Check for nested Error or ErrorEvent/Event properties
+    const innerError = err.error;
+    const isErrorEventOrEvent = err.type === 'error' || 'isTrusted' in err || 'filename' in err;
+
+    if (innerError instanceof Error) {
+      rawMessage = innerError.message || innerError.name;
+      stack = innerError.stack || stack;
+      errorName = innerError.name || errorName;
+    } else if (typeof innerError === 'string' && innerError.trim().length > 0) {
+      rawMessage = innerError;
+    } else if (typeof err.message === 'string' && err.message.trim().length > 0 && err.message !== '{"isTrusted":true}') {
+      rawMessage = err.message;
+    } else if (isErrorEventOrEvent) {
+      const loc = err.filename ? ` (${err.filename}${err.lineno ? `:${err.lineno}` : ''})` : '';
+      rawMessage = `Worker thread script initialization or network download failed${loc}.`;
+      if (err.filename) extractedContext.filename = err.filename;
+      if (err.lineno) extractedContext.lineno = err.lineno;
+      if (err.colno) extractedContext.colno = err.colno;
+    } else {
+      try {
+        const jsonStr = JSON.stringify(err);
+        if (jsonStr && jsonStr !== '{}' && jsonStr !== '{"isTrusted":true}') {
+          rawMessage = jsonStr;
+        } else {
+          rawMessage = 'Background worker communication or initialization failure.';
+        }
+      } catch {
+        rawMessage = String(err);
+      }
+    }
+  } else {
+    rawMessage = err ? String(err) : 'Unknown genomic processing failure.';
+  }
+
+  // Ensure rawMessage is never the cryptic JSON {"isTrusted":true}
+  if (rawMessage === '{"isTrusted":true}' || rawMessage === '{"isTrusted": true}') {
+    rawMessage = 'Worker thread initialization or module script execution failed.';
+  }
+
   // Intelligent classification based on message patterns
   let code = GenomicsErrorCode.ERR_UNKNOWN;
   let category = 'Genomic Processing Error';
@@ -234,6 +281,11 @@ export function serializeGenomicsError(
     code = GenomicsErrorCode.ERR_WORKER_WATCHDOG_TIMEOUT;
     category = 'Worker Watchdog Timeout';
     solution = 'The genetic analysis worker stopped responding. If your file is a large ZIP bundle, try extracting the text file and uploading it directly.';
+    subsystem = 'GENOTYPE_WORKER';
+  } else if (/worker.*(init|load|script|module|fetch|download|crash)|(init|load|script|module|fetch|download|crash).*worker|fetch.*module|module.*script|script.*error|isTrusted/i.test(rawMessage)) {
+    code = GenomicsErrorCode.ERR_WORKER_INITIALIZATION_FAILED;
+    category = 'Worker Script Load Failure';
+    solution = 'The background analysis worker could not be loaded or initialized by your browser. Please click "Clear Cache" in the top bar or reload the page.';
     subsystem = 'GENOTYPE_WORKER';
   } else if (/zip|gunzip|decompress/i.test(rawMessage)) {
     code = GenomicsErrorCode.ERR_ZIP_CORRUPTED;
@@ -257,8 +309,13 @@ export function serializeGenomicsError(
     subsystem = 'ENGINE_EXECUTION';
   }
 
+  const mergedContext = {
+    ...extractedContext,
+    ...(fallbackContext || {})
+  };
+
   return {
-    name: err instanceof Error ? err.name : 'Error',
+    name: errorName,
     message: rawMessage,
     code,
     legacyCode: 'ERR-4025FGD1',
@@ -273,7 +330,7 @@ export function serializeGenomicsError(
       technicalMessage: rawMessage,
       stackTrace: stack,
       timestamp: new Date().toISOString(),
-      context: fallbackContext
+      context: mergedContext
     }
   };
 }

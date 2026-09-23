@@ -234,6 +234,11 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
           label: 'Single-Locus Proximity',
           equation: 'P_locus = 1.0 - |user_dosage - f_ref|',
           explanation: 'Measures how close your allele frequency dosage is to the average frequency of a reference population at that single point.'
+        },
+        {
+          label: 'Fst-Weighted Continental Affinity',
+          equation: 'Affinity_pop = (Σ w_m · P_locus) / (Σ w_m)',
+          explanation: 'Aggregates locus proximities across all matched informative markers, weighted by locus informativeness (Fst).'
         }
       ],
       metrics: [

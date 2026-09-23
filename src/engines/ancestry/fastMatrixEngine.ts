@@ -143,10 +143,10 @@ export async function calculatePopulationProximityOptimized(userSnps: Map<string
   };
 
   for (const [rsid, call] of userSnps.entries()) {
-    const index = rsidToIndexMap.get(rsid);
+    const index = rsidToIndexMap.get(rsid) ?? rsidToIndexMap.get(rsid.toLowerCase()) ?? rsidToIndexMap.get(rsid.toUpperCase());
     if (index === undefined || call.length !== 2) continue;
     
-    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toUpperCase()];
+    const marker = (graf10kIndex as any)[rsid] || (graf10kIndex as any)[rsid.toLowerCase()] || (graf10kIndex as any)[rsid.toUpperCase()];
     if (!marker) continue;
 
     // Determine exact user dosage of the alternative allele

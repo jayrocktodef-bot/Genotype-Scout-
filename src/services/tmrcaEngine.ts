@@ -123,8 +123,17 @@ export function calculateTmrcaEstimate(
     }
   }
 
-  // 95% Confidence Interval (Poisson standard error approx ±18%)
-  const ciMargin = Math.round(baseTmrcaBp * 0.18);
+  // 95% Confidence Interval (Poisson standard error calibrated to mutation count k)
+  // For Poisson mutation counting, relative SE = sqrt(1/k + sigma_mu^2), where sigma_mu = 0.10 rate uncertainty.
+  let relativeError = 0.20; // Default coalescent prior variance (~20%) when derivedCount = 0
+  if (derivedCount > 0) {
+    const poissonRelVar = 1 / derivedCount;
+    const rateRelVar = 0.01; // 10% mutation rate calibration uncertainty squared
+    const seRel = Math.sqrt(poissonRelVar + rateRelVar);
+    // 95% Wald CI half-width factor = 1.96 * seRel, capped at 75% to prevent negative ages
+    relativeError = Math.min(0.75, Math.max(0.12, 1.96 * seRel));
+  }
+  const ciMargin = Math.round(baseTmrcaBp * relativeError);
   const ci95MinYearsBp = Math.max(200, baseTmrcaBp - ciMargin);
   const ci95MaxYearsBp = baseTmrcaBp + ciMargin;
 

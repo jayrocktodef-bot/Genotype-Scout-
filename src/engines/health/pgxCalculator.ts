@@ -10,6 +10,13 @@ export interface MedicationReport {
   severity?: 'High' | 'Moderate' | 'Low';
 }
 
+function getSnp(userSnps: Record<string, string> | undefined, rsid: string): string | null {
+  if (!userSnps) return null;
+  const val = userSnps[rsid] || userSnps[rsid.toLowerCase()] || userSnps[rsid.toUpperCase()];
+  if (!val || val === '--' || val === '00' || val === 'NN' || val === '??') return null;
+  return val.trim().toUpperCase().replace(/[\s\/_]/g, '');
+}
+
 export function calculateMedicationSafety(userSnps: Record<string, string>): MedicationReport[] {
   const reports: MedicationReport[] = [];
 
@@ -36,7 +43,7 @@ export function calculateMedicationSafety(userSnps: Record<string, string>): Med
   }
 
   // Example: Warfarin (Coumadin) Sensitivity
-  const vkorc1 = userSnps['rs9923231'];
+  const vkorc1 = getSnp(userSnps, 'rs9923231');
   if (vkorc1 === 'AA' || vkorc1 === 'TT') { 
     reports.push({
       drug: 'Warfarin',
@@ -48,17 +55,30 @@ export function calculateMedicationSafety(userSnps: Record<string, string>): Med
     });
   }
 
-  // Example: Statins (Muscle Pain Risk)
-  const slco1b1 = userSnps['rs4149056'];
-  if (slco1b1 === 'CC') {
-    reports.push({
-      drug: 'Simvastatin',
-      category: 'Cholesterol',
-      status: 'Caution',
-      severity: 'Moderate',
-      gene: 'SLCO1B1',
-      insight: 'Increased risk of statin-induced myopathy (muscle pain). Consider alternative statins or lower doses.'
-    });
+  // Example: Statins (Muscle Pain Risk) - SLCO1B1*5 c.526T>C (rs4149056)
+  const slco1b1 = getSnp(userSnps, 'rs4149056');
+  if (slco1b1) {
+    const isHomRisk = slco1b1 === 'CC' || slco1b1 === 'GG';
+    const isHetRisk = ['CT', 'TC', 'GA', 'AG'].includes(slco1b1);
+    if (isHomRisk) {
+      reports.push({
+        drug: 'Simvastatin',
+        category: 'Cholesterol',
+        status: 'Action Required',
+        severity: 'High',
+        gene: 'SLCO1B1',
+        insight: 'Markedly increased risk of statin-induced myopathy (muscle pain/rhabdomyolysis) due to poor SLCO1B1 transporter function. Consider alternative statin (e.g. pravastatin, rosuvastatin) or reduced starting dose.'
+      });
+    } else if (isHetRisk) {
+      reports.push({
+        drug: 'Simvastatin',
+        category: 'Cholesterol',
+        status: 'Caution',
+        severity: 'Moderate',
+        gene: 'SLCO1B1',
+        insight: 'Increased risk of statin-induced myopathy (muscle pain) due to intermediate SLCO1B1 transporter function. Consider lower starting dose.'
+      });
+    }
   }
 
   return reports;

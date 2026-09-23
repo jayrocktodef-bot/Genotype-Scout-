@@ -37,14 +37,18 @@ export interface YDnaAnalysisResult {
   };
 }
 
-export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: HaplogroupNode = Y_DNA_TREE): YDnaAnalysisResult {
+export function predictYDNAHaplogroup(
+  yMap: Record<string, string>,
+  rootNode: HaplogroupNode = Y_DNA_TREE,
+  snpByPosition?: Record<string, string>
+): YDnaAnalysisResult {
   const testedMarkers: any[] = [];
   let bestNode: any = null;
   let bestPath: string[] = [];
   let maxDerivedCount = -1;
 
   // Deep ISOGG matches
-  const isoggMatches = findMatchesInHaplogroups(yMap);
+  const isoggMatches = findMatchesInHaplogroups(yMap, snpByPosition);
   
   // Sort ISOGG matches by specificity (branch name length as proxy for depth)
   // and match count, prioritizing deeper subclades
@@ -95,6 +99,26 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
               genotype = val;
               break;
             }
+          }
+        }
+
+        // Check coordinate fallbacks (pos, posHg19, posHg38) if not resolved by ID
+        if (!genotype && snpInfo) {
+          const positions = [snpInfo.pos, snpInfo.posHg38, snpInfo.posHg19].filter(Boolean);
+          for (const p of positions) {
+            const pStr = String(p);
+            genotype = yMap[`y:${pStr}`] || yMap[`chry:${pStr}`] || yMap[pStr];
+            if (!genotype && snpByPosition) {
+              genotype = snpByPosition[`y:${pStr}`] || snpByPosition[`Y:${pStr}`] || snpByPosition[`chry:${pStr}`] || snpByPosition[pStr];
+            }
+            if (genotype) break;
+          }
+        }
+
+        // Direct coordinate check if snpId itself is formatted as coordinate
+        if (!genotype && (snpIdLower.startsWith('y:') || snpIdLower.startsWith('chry:'))) {
+          if (snpByPosition) {
+            genotype = snpByPosition[snpIdLower] || snpByPosition[snpIdLower.toUpperCase()];
           }
         }
 
@@ -225,7 +249,7 @@ export function predictYDNAHaplogroup(yMap: Record<string, string>, rootNode: Ha
   // === PHASE 2: Run enriched Y-phylotree analysis ===
   let phase2Result: any = null;
   try {
-    const phase2Analysis = analyzePhase2YDna(yMap);
+    const phase2Analysis = analyzePhase2YDna(yMap, snpByPosition);
     if (phase2Analysis) {
       phase2Result = formatPhase2Result(phase2Analysis);
       if (phase2Result.derivedMarkers === 0) {
@@ -259,7 +283,8 @@ export function predictMtHaplogroup(
   currentPath: string[] = [], 
   currentScore: number = 0,
   cumulativeMatches: number = 0,
-  cumulativeMismatches: number = 0
+  cumulativeMismatches: number = 0,
+  snpByPosition?: Record<string, string>
 ): any[] {
   const nodeMutations = currentNode.mutations || [];
   let matches = 0;
@@ -271,7 +296,10 @@ export function predictMtHaplogroup(
     } else {
       const ancestral = m[0];
       const pos = m.slice(1, -1);
-      if (mtMap[pos] === ancestral) {
+      const clean = pos.replace(/^(m\.|mt:|chrM:)/i, '');
+      const userAllele = mtMap[pos] || mtMap[clean] || mtMap[`m.${clean}`] || mtMap[`mt:${clean}`] ||
+        (snpByPosition ? (snpByPosition[`mt:${clean}`] || snpByPosition[`m:${clean}`] || snpByPosition[`chrM:${clean}`] || snpByPosition[clean]) : undefined);
+      if (userAllele === ancestral) {
         mismatches++;
       }
     }
@@ -301,7 +329,8 @@ export function predictMtHaplogroup(
         newPath, 
         newScore, 
         newCumulativeMatches, 
-        newCumulativeMismatches
+        newCumulativeMismatches,
+        snpByPosition
       ));
     }
   }
@@ -309,7 +338,7 @@ export function predictMtHaplogroup(
   return results;
 }
 
-export function analyzeMtDNA(mtMap: Record<string, string>) {
+export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Record<string, string>) {
   const allMutations = new Set<string>();
   function extractMutations(node: any) {
     if (node.mutations) {
@@ -320,6 +349,30 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     }
   }
   extractMutations(MT_DNA_TREE);
+
+  const getMtAllele = (posKey: string): string | undefined => {
+    const direct = mtMap[posKey] || mtMap[posKey.toLowerCase()];
+    if (direct) return direct;
+    
+    const clean = posKey.replace(/^(m\.|mt:|chrM:)/i, '');
+    const variants = [
+      clean,
+      `m.${clean}`,
+      `mt:${clean}`,
+      `mt:${clean.toLowerCase()}`,
+      `chrM:${clean}`,
+      `chrm:${clean}`
+    ];
+    for (const v of variants) {
+      if (mtMap[v]) return mtMap[v];
+    }
+    if (snpByPosition) {
+      for (const v of variants) {
+        if (snpByPosition[v]) return snpByPosition[v];
+      }
+    }
+    return undefined;
+  };
 
   const userMutations: string[] = [];
   const testedMarkers: any[] = [];
@@ -335,7 +388,7 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
       const ancestral = subMatch[1] || '';
       const pos = subMatch[2];
       const derived = subMatch[3];
-      const userAllele = mtMap[pos];
+      const userAllele = getMtAllele(pos);
 
       if (derived.toLowerCase() === 'd') {
         // Single deletion represented as [Base][Pos]d
@@ -378,7 +431,7 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
       let hasExplicitDeletion = false;
 
       for (let p = startPos; p <= endPos; p++) {
-        const allele = mtMap[p.toString()];
+        const allele = getMtAllele(p.toString());
         if (allele && allele !== '-' && allele !== 'D' && allele !== 'd') {
           hasAncestralBase = true;
           break;
@@ -403,8 +456,8 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
       const subPos = insMatch[2];
       const insertedVal = insMatch[3];
       
-      const userAllele1 = mtMap[pos];
-      const userAllele2 = mtMap[`${pos}.${subPos}`];
+      const userAllele1 = getMtAllele(pos);
+      const userAllele2 = getMtAllele(`${pos}.${subPos}`);
       const userAllele = userAllele2 || userAllele1;
 
       if (insertedVal.toLowerCase() === 'd') {
@@ -430,11 +483,10 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     }
 
     // Case D: XC / Custom Insertions (e.g., 573.XC, 5899.XC)
-    const xcMatch = cleanMutation.match(/^(\d+)\.XC([A-Za-z]*)$/);
-    const genericXcMatch = xcMatch || cleanMutation.match(/^(\d+)\.XC$/);
+    const genericXcMatch = cleanMutation.match(/^(\d+)\.XC([A-Za-z]*)$/) || cleanMutation.match(/^(\d+)\.XC$/);
     if (genericXcMatch) {
       const pos = genericXcMatch[1];
-      const userAllele = mtMap[pos] || mtMap[`${pos}.1`] || mtMap[`${pos}.XC`];
+      const userAllele = getMtAllele(pos) || getMtAllele(`${pos}.1`) || getMtAllele(`${pos}.XC`);
 
       if (userAllele && (
         userAllele.toUpperCase() === 'C' ||
@@ -450,7 +502,7 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
     }
   });
 
-  const allResults = predictMtHaplogroup(userMutations, mtMap, MT_DNA_TREE);
+  const allResults = predictMtHaplogroup(userMutations, mtMap, MT_DNA_TREE, [], 0, 0, 0, snpByPosition);
   
   allResults.sort((a, b) => {
     // 1. Prioritize cumulative derived mutation matches to prevent untested sibling branches (L0/L1/L2) from winning over true paths
@@ -499,9 +551,21 @@ export function analyzeMtDNA(mtMap: Record<string, string>) {
 
   const mtPosMap: Record<number, string> = {};
   for (const [posStr, allele] of Object.entries(mtMap)) {
-    const p = parseInt(posStr, 10);
+    const cleanPos = posStr.replace(/^(m\.|mt:|chrM:)/i, '');
+    const p = parseInt(cleanPos, 10);
     if (!isNaN(p)) {
       mtPosMap[p] = allele;
+    }
+  }
+  if (snpByPosition) {
+    for (const [posKey, allele] of Object.entries(snpByPosition)) {
+      if (posKey.toLowerCase().startsWith('mt:') || posKey.toLowerCase().startsWith('m:') || posKey.toLowerCase().startsWith('chrm:')) {
+        const cleanPos = posKey.replace(/^(mt:|m:|chrM:)/i, '');
+        const p = parseInt(cleanPos, 10);
+        if (!isNaN(p) && !mtPosMap[p]) {
+          mtPosMap[p] = allele;
+        }
+      }
     }
   }
   const empopQc = runEmpopForensicQc(mtPosMap);

@@ -2250,6 +2250,8 @@ export default function App() {
     predictedMtDNA?: any,
     mergedYMap?: Record<string, string>,
     mergedMtMap?: Record<string, string>,
+    mergedSnpByPosition?: Record<string, string>,
+    snpByPosition?: Record<string, string>,
     prsResults?: any,
     pgxResults?: any,
     rareAndNovelVariants?: any[],
@@ -2453,7 +2455,7 @@ export default function App() {
             if (mtMap && Object.keys(mtMap).length > 0) {
               try {
                 console.log("Auto-healing predictedMtDNA for cached dataset:", ds.name);
-                ds.predictedMtDNA = analyzeMtDNA(mtMap);
+                ds.predictedMtDNA = analyzeMtDNA(mtMap, ds.mergedSnpByPosition || ds.snpByPosition);
                 hasChanges = true;
               } catch (mtErr) {
                 console.warn("Failed to auto-heal predictedMtDNA:", mtErr);
@@ -2490,7 +2492,7 @@ export default function App() {
             if (yMap && Object.keys(yMap).length > 0) {
               try {
                 console.log("Auto-healing predictedYDNA for cached dataset:", ds.name);
-                ds.predictedYDNA = predictYDNAHaplogroup(yMap, Y_DNA_TREE);
+                ds.predictedYDNA = predictYDNAHaplogroup(yMap, Y_DNA_TREE, ds.mergedSnpByPosition || ds.snpByPosition);
                 hasChanges = true;
               } catch (yErr) {
                 console.warn("Failed to auto-heal predictedYDNA:", yErr);
@@ -2827,7 +2829,15 @@ export default function App() {
 
       worker.onerror = (err) => {
         cleanupProcessing();
-        const structured = serializeGenomicsError(err, 'GENOTYPE_WORKER');
+        console.error("Worker error encountered:", err);
+        const structured = serializeGenomicsError(err, 'GENOTYPE_WORKER', {
+          fileName: fileArray.map(f => f.name).join(', '),
+          fileSize: fileArray.reduce((acc, f) => acc + f.size, 0),
+          errorType: (err as any)?.type || 'error',
+          filename: (err as any)?.filename,
+          lineno: (err as any)?.lineno,
+          colno: (err as any)?.colno,
+        });
         setError(structured);
         setProcessing(false);
         worker.terminate();
@@ -2943,7 +2953,7 @@ export default function App() {
     }
     if (dataset.mergedMtMap && Object.keys(dataset.mergedMtMap).length > 0) {
       try {
-        return analyzeMtDNA(dataset.mergedMtMap);
+        return analyzeMtDNA(dataset.mergedMtMap, dataset.mergedSnpByPosition || dataset.snpByPosition);
       } catch {
         return dataset.predictedMtDNA || null;
       }
@@ -2959,7 +2969,7 @@ export default function App() {
     }
     if (dataset.mergedYMap && Object.keys(dataset.mergedYMap).length > 0) {
       try {
-        return predictYDNAHaplogroup(dataset.mergedYMap, Y_DNA_TREE);
+        return predictYDNAHaplogroup(dataset.mergedYMap, Y_DNA_TREE, dataset.mergedSnpByPosition || dataset.snpByPosition);
       } catch {
         return dataset.predictedYDNA || null;
       }
