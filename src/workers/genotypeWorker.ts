@@ -801,8 +801,8 @@ export function calculateNaiveEthnicity(snpMap: Record<string, string>): Record<
     }
 
     // Baseline contrast normalization: calculate excess proximity above baseline
-    // Contrast exponent p = 1.5 sharpens distinct signals while preserving additive linear admixture
-    const CONTRAST_POWER = 1.5;
+    // Contrast exponent p = 1.8 sharpens distinct signals while preserving additive linear admixture
+    const CONTRAST_POWER = 1.8;
     const excessScores: Record<string, number> = {};
     let sumExcess = 0;
 

@@ -263,7 +263,7 @@ export const AncientAncestryOracle = memo(({
                               <>
                                 <span className="text-slate-500">•</span>
                                 <div className="text-xs font-bold text-amber-400 uppercase whitespace-normal break-words">
-                                  {pop.age_bp.toLocaleString()} BP
+                                  {pop.age_bp.toLocaleString()} years ago
                                 </div>
                               </>
                             )}

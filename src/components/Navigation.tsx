@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, Download, RotateCcw } from 'lucide-react';
+import { Sun, Moon, Download, RotateCcw, Dna, ExternalLink } from 'lucide-react';
 
 interface NavigationProps {
   activeTab: string;
@@ -48,6 +48,20 @@ const Navigation: React.FC<NavigationProps> = ({
 
     {/* Right controls */}
     <div className="flex items-center gap-2">
+      {/* Superkit Maker Link Icon */}
+      <a
+        href="https://merge.writteninthegenome.blog"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Superkit Maker (Merge Kits)"
+        title="Superkit Maker: Merge multiple raw DNA kits (merge.writteninthegenome.blog)"
+        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-teal-500/15 to-amber-500/15 hover:from-teal-500/25 hover:to-amber-500/25 text-teal-300 hover:text-teal-200 border border-teal-500/30 hover:border-teal-400/50 text-[10px] font-black uppercase tracking-wider transition-all duration-150 active:scale-[0.96] shadow-sm hover:shadow-[0_0_12px_rgba(20,184,166,0.25)]"
+      >
+        <Dna className="w-3.5 h-3.5 text-teal-400" aria-hidden="true" />
+        <span className="hidden sm:inline">Superkit Maker</span>
+        <ExternalLink className="w-2.5 h-2.5 text-teal-400/80" aria-hidden="true" />
+      </a>
+
       {isInstallable && onInstallApp ? (
         <button
           onClick={onInstallApp}

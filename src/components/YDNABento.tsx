@@ -86,7 +86,7 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4 min-w-0 w-full overflow-hidden">
         <div className="relative mb-2 max-w-full">
-          <div className="text-4xl sm:text-6xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter truncate max-w-full px-2" title={displayHaplogroup}>
+          <div className="text-3xl sm:text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter break-words max-w-full px-2" title={displayHaplogroup}>
             {displayHaplogroup}
           </div>
           <div className="absolute -inset-4 bg-[#14B8A6]/20 blur-2xl -z-10 rounded-full pointer-events-none" />
@@ -94,15 +94,15 @@ export const YDNABento = memo(({ yData }: YDNABentoProps) => {
         
         <div className="flex flex-wrap items-center justify-center gap-2 mb-4 max-w-full min-w-0 px-2">
           {displayRegion && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-[#14B8A6] uppercase tracking-wider bg-[#14B8A6]/10 px-3 py-1 rounded-full border border-[#14B8A6]/20 max-w-full min-w-0 truncate" title={displayRegion}>
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#14B8A6] uppercase tracking-wider bg-[#14B8A6]/10 px-3 py-1 rounded-full border border-[#14B8A6]/20 max-w-full min-w-0 break-words" title={displayRegion}>
               <MapPin className="w-3 h-3 shrink-0" />
-              <span className="truncate">{displayRegion}</span>
+              <span className="break-words">{displayRegion}</span>
             </div>
           )}
           {(yData.phase2?.tmrca || yData.tmrca) && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 max-w-full min-w-0 truncate" title={`${(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} (${(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})`}>
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 max-w-full min-w-0 break-words" title={`${(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} (${(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})`}>
               <Sparkles className="w-3 h-3 shrink-0" />
-              <span className="truncate">{(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} ({(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})</span>
+              <span className="break-words">{(yData.phase2?.tmrca || yData.tmrca)?.formattedTmrcaAge} ({(yData.phase2?.tmrca || yData.tmrca)?.activeHistoricalEra?.name?.split('(')[0]?.trim()})</span>
             </div>
           )}
         </div>

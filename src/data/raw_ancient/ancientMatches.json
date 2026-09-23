@@ -3,7 +3,7 @@
     "id": "Mota-Ethiopia",
     "name": "Mota Man",
     "region": "Ethiopia (Gamo Highlands)",
-    "period": "Stone Age (4,500 BP)",
+    "period": "Stone Age (4,500 years ago)",
     "description": "A hunter-gatherer from the Mota Cave. His genome predates the massive migration of Eurasian farmers into East Africa.",
     "ancestry_group": "East African / Nilotic",
     "diagnostic_markers": [
@@ -24,7 +24,7 @@
     "id": "Shum-Laka-Cameroon",
     "name": "Shum Laka Boy",
     "region": "Cameroon (Grassfields)",
-    "period": "Holocene (8,000 BP)",
+    "period": "Holocene (8,000 years ago)",
     "description": "Key for understanding the origins of Bantu-speaking populations and West African hunter-gatherers.",
     "ancestry_group": "West/Central African",
     "diagnostic_markers": [
@@ -64,7 +64,7 @@
     "id": "GHK-Sudan",
     "name": "Kulubnarti Nubian",
     "region": "Sudan (Nile Valley)",
-    "period": "Christian Era (1,500 BP)",
+    "period": "Christian Era (1,500 years ago)",
     "description": "Nubian samples that show the complex mix of Nilotic and Near Eastern lineages in the Nile Valley.",
     "ancestry_group": "Nilo-Saharan / Nilotic",
     "diagnostic_markers": [
@@ -84,7 +84,7 @@
     "id": "Taforalt-Morocco",
     "name": "Taforalt Individual",
     "region": "Morocco (Rif)",
-    "period": "Epipaleolithic (15,000 BP)",
+    "period": "Epipaleolithic (15,000 years ago)",
     "description": "The oldest Iberomaurusian genome. Shows a link between Near Eastern and Sub-Saharan African lineages.",
     "ancestry_group": "North African / Iberomaurusian",
     "diagnostic_markers": [
@@ -104,7 +104,7 @@
     "id": "Nama-San-Deep",
     "name": "Deep San Ancestor",
     "region": "Southern Africa (Namibia/Botswana)",
-    "period": "Late Pleistocene (10,200 BP)",
+    "period": "Late Pleistocene (10,200 years ago)",
     "description": "Represents the world's oldest genetic lineages. This individual shows continuity with modern Nama and San groups, with signatures that have remained stable for over 10,000 years.",
     "ancestry_group": "Khoe-San / Southern Hunter-Gatherer",
     "diagnostic_markers": [
@@ -124,7 +124,7 @@
     "id": "anzick_1",
     "name": "Anzick-1 (Clovis Boy)",
     "region": "Wilsall, Montana, USA",
-    "period": "Late Pleistocene (12,600 BP)",
+    "period": "Late Pleistocene (12,600 years ago)",
     "description": "Skeletal remains of an infant boy buried with Clovis stone tools in Montana. His genome confirms the Siberian migration origin of Native Americans and shows direct lineage continuity with modern Indigenous Central and South Americans.",
     "ancestry_group": "Indigenous American / Paleo-Indian",
     "diagnostic_markers": [
@@ -149,7 +149,7 @@
     "id": "kennewick_man",
     "name": "Kennewick Man (Ancient One)",
     "region": "Columbia River, Washington, USA",
-    "period": "Early Holocene (8,900 BP)",
+    "period": "Early Holocene (8,900 years ago)",
     "description": "Found along the Columbia River. A landmark legal and genetic case that proved close genetic continuity to the modern Colville and other Pacific Northwest Native American tribes.",
     "ancestry_group": "Indigenous American",
     "diagnostic_markers": [
@@ -174,7 +174,7 @@
     "id": "luzia",
     "name": "Luzia (Lagoa Santa)",
     "region": "Minas Gerais, Brazil",
-    "period": "Late Pleistocene (12,700 BP)",
+    "period": "Late Pleistocene (12,700 years ago)",
     "description": "One of the oldest human skeletons discovered in South America. Her genome establishes direct ancestral descent shared with ancient North American migrations and modern Indigenous South Americans.",
     "ancestry_group": "Indigenous American / Paleo-Indian",
     "diagnostic_markers": [
@@ -199,7 +199,7 @@
     "id": "usr1",
     "name": "Upward Sun River 1 (USR1)",
     "region": "Tanana River Valley, Alaska",
-    "period": "Late Pleistocene (11,500 BP)",
+    "period": "Late Pleistocene (11,500 years ago)",
     "description": "An infant genome from interior Alaska representing Ancient Beringians\u2014the earliest diverged lineage of ancient Americans prior to Northern/Southern Native American splits.",
     "ancestry_group": "Ancient Beringian",
     "diagnostic_markers": [
@@ -224,7 +224,7 @@
     "id": "lovelock_cave",
     "name": "Lovelock Cave Ancestor",
     "region": "Humboldt Sink, Nevada",
-    "period": "Late Holocene (1,500 BP)",
+    "period": "Late Holocene (1,500 years ago)",
     "description": "Ancient Great Basin inhabitant demonstrating direct genetic lineage continuity with modern Numic-speaking populations (Paiute and Shoshone).",
     "ancestry_group": "Indigenous American / Great Basin",
     "diagnostic_markers": [
@@ -249,7 +249,7 @@
     "id": "lauricocha",
     "name": "Lauricocha Highland Ancestor",
     "region": "Lauricocha Cave, Huanuco, Peru",
-    "period": "Early Holocene (8,600 BP)",
+    "period": "Early Holocene (8,600 years ago)",
     "description": "One of the earliest high-altitude Andean genomes, showing early adaptation to high-altitude hypoxia and genetic continuity with modern Quechua populations.",
     "ancestry_group": "Indigenous American / Andean",
     "diagnostic_markers": [
@@ -274,7 +274,7 @@
     "id": "machu_picchu",
     "name": "Machu Picchu Inca Royal Ancestor",
     "region": "Machu Picchu, Cusco, Peru",
-    "period": "Imperial Inca Era (500 BP)",
+    "period": "Imperial Inca Era (500 years ago)",
     "description": "Late pre-Columbian imperial Inca genome from the Royal Estate of Machu Picchu, exhibiting highland Quechua and coastal Peruvian genetic components.",
     "ancestry_group": "Indigenous American / Inca Empire",
     "diagnostic_markers": [
@@ -299,7 +299,7 @@
     "id": "fuegian_yamana",
     "name": "Fuegian Y\u00e1mana Ancestor",
     "region": "Tierra del Fuego, Chile/Argentina",
-    "period": "Late Holocene (1,500 BP)",
+    "period": "Late Holocene (1,500 years ago)",
     "description": "Ancient southern maritime hunter-gatherer from Tierra del Fuego representing the extreme southern terminus of ancient human expansion into South America.",
     "ancestry_group": "Indigenous American / Patagonian",
     "diagnostic_markers": [
@@ -324,7 +324,7 @@
     "id": "tianyuan",
     "name": "Tianyuan Man",
     "region": "Tianyuan Cave, Beijing, China",
-    "period": "Early Upper Paleolithic (40,000 BP)",
+    "period": "Early Upper Paleolithic (40,000 years ago)",
     "description": "Landmark 40,000-year-old human from Tianyuan Cave near Beijing. Demonstrates early divergence of East Asian lineages from Western Eurasian populations.",
     "ancestry_group": "Paleolithic East Asian",
     "diagnostic_markers": [
@@ -349,7 +349,7 @@
     "id": "jomon",
     "name": "J\u014dmon Hunter-Gatherer",
     "region": "Funadomari, Hokkaido, Japan",
-    "period": "J\u014dmon Period (3,800 BP)",
+    "period": "J\u014dmon Period (3,800 years ago)",
     "description": "Indigenous hunter-gatherer of the Japanese archipelago prior to Yayoi agricultural expansion. Characterized by wet earwax, dark skin, and unique island adaptation.",
     "ancestry_group": "J\u014dmon / East Asian Island Hunter-Gatherer",
     "diagnostic_markers": [
@@ -374,7 +374,7 @@
     "id": "rakhigarhi",
     "name": "Rakhigarhi Indus Valley Ancestor",
     "region": "Rakhigarhi, Haryana, India",
-    "period": "Bronze Age Indus Valley (4,500 BP)",
+    "period": "Bronze Age Indus Valley (4,500 years ago)",
     "description": "High-coverage genome from the Harappan civilization. Predates Steppe pastoralist migration into South Asia, representing ancient Ancestral South Indian (ASI) baseline.",
     "ancestry_group": "Indus Valley Civilization / South Asian",
     "diagnostic_markers": [
@@ -399,7 +399,7 @@
     "id": "kostenki14",
     "name": "Kostenki-14 (Markina Gora)",
     "region": "Kostenki, Voronezh, Russia",
-    "period": "Upper Paleolithic (37,000 BP)",
+    "period": "Upper Paleolithic (37,000 years ago)",
     "description": "Early European hunter-gatherer genome. Shows deep shared ancestry between Western Hunter-Gatherers and Ancient North Eurasians.",
     "ancestry_group": "Upper Paleolithic European",
     "diagnostic_markers": [
@@ -424,7 +424,7 @@
     "id": "boncuklu",
     "name": "Boncuklu Anatolian Farmer",
     "region": "Boncuklu H\u00f6y\u00fck, Konya, Turkey",
-    "period": "Pre-Pottery Neolithic (10,300 BP)",
+    "period": "Pre-Pottery Neolithic (10,300 years ago)",
     "description": "Pre-Pottery Neolithic inhabitant of central Anatolia, ancestral to the Early European Farmers who brought agriculture to Europe.",
     "ancestry_group": "Neolithic Anatolian Farmer",
     "diagnostic_markers": [
@@ -449,7 +449,7 @@
     "id": "australian_ancient",
     "name": "Ancient Australian (Willandra Lakes)",
     "region": "Willandra Lakes, NSW, Australia",
-    "period": "Late Holocene (2,000 BP)",
+    "period": "Late Holocene (2,000 years ago)",
     "description": "Ancient Aboriginal Australian genome demonstrating 50,000+ years of genetic isolation and deep lineage continuity in Sahul.",
     "ancestry_group": "Aboriginal Australian / Sahul",
     "diagnostic_markers": [
@@ -474,7 +474,7 @@
     "id": "gyamfi_single",
     "name": "Gyamfi Single",
     "region": "Gyamfi-Sade, Ghana",
-    "period": "Iron Age (2,500 BP)",
+    "period": "Iron Age (2,500 years ago)",
     "description": "An ancient West African genome from Ghana predating the major Bantu migration events, providing a key baseline of historic West African genetic variation.",
     "ancestry_group": "West African",
     "diagnostic_markers": [
@@ -498,7 +498,7 @@
     "id": "luxor_ancestor",
     "name": "Luxor Ancient Egyptian",
     "region": "Abusir el-Meleq, Egypt",
-    "period": "Ptolemaic Period (2,200 BP)",
+    "period": "Ptolemaic Period (2,200 years ago)",
     "description": "Ancient Egyptian from a mummified community. Shows high genetic affinity to historical Near Eastern and Anatolian populations with smaller Sub-Saharan African components.",
     "ancestry_group": "North African / Near Eastern",
     "diagnostic_markers": [
@@ -521,7 +521,7 @@
     "id": "rameses_iii",
     "name": "Rameses III",
     "region": "Thebes, Egypt",
-    "period": "New Kingdom (3,150 BP)",
+    "period": "New Kingdom (3,150 years ago)",
     "description": "Famous pharaoh of the 20th Dynasty, known for repelling the Sea Peoples during the Late Bronze Age collapse.",
     "ancestry_group": "North African Pharaoh",
     "diagnostic_markers": [
@@ -543,7 +543,7 @@
     "id": "richard_iii",
     "name": "King Richard III",
     "region": "Leicester, England",
-    "period": "Late Medieval (540 BP)",
+    "period": "Late Medieval (540 years ago)",
     "description": "The last English monarch of South-Western Europe descent to die in battle, found buried under a car park in Leicester.",
     "ancestry_group": "Late Medieval English",
     "diagnostic_markers": [
@@ -565,7 +565,7 @@
     "id": "malta_boy_ma1",
     "name": "Mal'ta Boy (MA-1)",
     "region": "Mal'ta, Lake Baikal, Siberia",
-    "period": "Upper Paleolithic (24,000 BP)",
+    "period": "Upper Paleolithic (24,000 years ago)",
     "description": "Landmark 24,000-year-old genome defining Ancient North Eurasian (ANE) ancestry. MA-1 contributed ~30-40% ancestry to all Indigenous Americans and ~40-50% to Bronze Age Steppe herders.",
     "ancestry_group": "Ancient North Eurasian (ANE)",
     "diagnostic_markers": [
@@ -588,7 +588,7 @@
     "id": "villabruna_whg",
     "name": "Villabruna WHG",
     "region": "Cismon valley, Veneto, Italy",
-    "period": "Epipaleolithic (14,000 BP)",
+    "period": "Epipaleolithic (14,000 years ago)",
     "description": "Cornerstone reference genome for Western Hunter-Gatherers (WHG). Represented post-glacial blue-eyed, dark-skinned European foragers who expanded across Mesolithic Europe.",
     "ancestry_group": "Western Hunter-Gatherer (WHG)",
     "diagnostic_markers": [
@@ -610,7 +610,7 @@
     "id": "yamnaya_samara",
     "name": "Yamnaya Samara Herder",
     "region": "Samara River Basin, Russia",
-    "period": "Early Bronze Age (5,000 BP)",
+    "period": "Early Bronze Age (5,000 years ago)",
     "description": "Cornerstone reference genome for Western Steppe Herders (WSH). Nomadic pastoralists of the Pontic-Caspian steppe whose Corded Ware and Bell Beaker expansions transformed Bronze Age European DNA and spread Indo-European languages.",
     "ancestry_group": "Western Steppe Herder (WSH / Yamnaya)",
     "diagnostic_markers": [
@@ -632,7 +632,7 @@
     "id": "satsurblia_chg",
     "name": "Satsurblia CHG",
     "region": "Satsurblia Cave, Imereti, Georgia",
-    "period": "Late Upper Paleolithic (13,300 BP)",
+    "period": "Late Upper Paleolithic (13,300 years ago)",
     "description": "Reference genome for Caucasus Hunter-Gatherers (CHG). Provided the critical second ancestral lineage (alongside EHG) that coalesced into Yamnaya Steppe herders.",
     "ancestry_group": "Caucasus Hunter-Gatherer (CHG)",
     "diagnostic_markers": [
@@ -653,7 +653,7 @@
     "id": "oetzi_iceman",
     "name": "\u00d6tzi the Iceman",
     "region": "\u00d6tztal Alps, South Tyrol, Italy",
-    "period": "Copper Age (5,300 BP)",
+    "period": "Copper Age (5,300 years ago)",
     "description": "Europe's oldest known natural human mummy. Carried Y-haplogroup G2a and high Anatolian Farmer ancestry, suffering from lactose intolerance and atherosclerosis.",
     "ancestry_group": "Neolithic European / Anatolian Farmer",
     "diagnostic_markers": [
@@ -677,7 +677,7 @@
     "id": "cheddar_man",
     "name": "Cheddar Man",
     "region": "Gough's Cave, Somerset, England",
-    "period": "Mesolithic (9,100 BP)",
+    "period": "Mesolithic (9,100 years ago)",
     "description": "Britain's oldest complete human skeleton. Demonstrates classic Western Hunter-Gatherer (WHG) phenotype of dark skin pigmentation combined with blue eyes.",
     "ancestry_group": "Western Hunter-Gatherer (WHG)",
     "diagnostic_markers": [
@@ -701,7 +701,7 @@
     "id": "loschbour",
     "name": "Loschbour Man",
     "region": "Mullerthal, Luxembourg",
-    "period": "Mesolithic (8,000 BP)",
+    "period": "Mesolithic (8,000 years ago)",
     "description": "Cornerstone reference genome for Western Hunter-Gatherers. Provided early genomic evidence of blue eyes and lactose intolerance in pre-farming European foragers.",
     "ancestry_group": "Western Hunter-Gatherer (WHG)",
     "diagnostic_markers": [
@@ -725,7 +725,7 @@
     "id": "stuttgart",
     "name": "Stuttgart LBK Farmer",
     "region": "Baden-W\u00fcrttemberg, Germany",
-    "period": "Early Neolithic (7,000 BP)",
+    "period": "Early Neolithic (7,000 years ago)",
     "description": "Landmark Early European Farmer (EEF) genome of the Linear Pottery (LBK) culture. Directly derived from Anatolian Neolithic migrants who introduced agriculture to Europe.",
     "ancestry_group": "Early European Farmer (EEF / ANF)",
     "diagnostic_markers": [
@@ -749,7 +749,7 @@
     "id": "sunghir_paleolithic",
     "name": "Sunghir Upper Paleolithic Ancestor",
     "region": "Vladimir, Russia",
-    "period": "Upper Paleolithic (34,000 BP)",
+    "period": "Upper Paleolithic (34,000 years ago)",
     "description": "Famous Gravettian-era burial site near Moscow. Represents early European Upper Paleolithic foragers with complex burial rituals and thousands of mammoth ivory beads.",
     "ancestry_group": "Upper Paleolithic Eurasian",
     "diagnostic_markers": [
@@ -772,7 +772,7 @@
     "id": "oase_1",
     "name": "Oase 1 (Pe\u0219tera cu Oase)",
     "region": "Cara\u0219-Severin, Romania",
-    "period": "Early Upper Paleolithic (40,000 BP)",
+    "period": "Early Upper Paleolithic (40,000 years ago)",
     "description": "One of the oldest modern human fossils found in Europe. Possesses ~6\u20139% recent Neanderthal ancestry from interbreeding just 4 to 6 generations back in his family tree.",
     "ancestry_group": "Early Modern Human / Neanderthal Admixed",
     "diagnostic_markers": [
@@ -795,7 +795,7 @@
     "id": "denisova_3",
     "name": "Denisova 3 (Denisovan Hominin)",
     "region": "Denisova Cave, Altai Mountains, Siberia",
-    "period": "Middle Paleolithic (50,000 BP)",
+    "period": "Middle Paleolithic (50,000 years ago)",
     "description": "High-coverage finger bone genome defining Denisovans\u2014an archaic human lineage whose DNA persists in Oceanian, Southeast Asian, and East Asian populations.",
     "ancestry_group": "Archaic Hominin / Denisovan",
     "diagnostic_markers": [
@@ -816,7 +816,7 @@
     "id": "chagyrskaya_neanderthal",
     "name": "Chagyrskaya Neanderthal",
     "region": "Chagyrskaya Cave, Altai, Russia",
-    "period": "Middle Paleolithic (80,000 BP)",
+    "period": "Middle Paleolithic (80,000 years ago)",
     "description": "High-coverage Neanderthal genome representing Micoquian toolmakers closely related to Neanderthals who interbred with the ancestors of non-Africans.",
     "ancestry_group": "Archaic Hominin / Neanderthal",
     "diagnostic_markers": [
@@ -838,7 +838,7 @@
     "id": "guanche_canary",
     "name": "Guanche Ancestor",
     "region": "Tenerife, Canary Islands, Spain",
-    "period": "Pre-Hispanic (1,000 BP)",
+    "period": "Pre-Hispanic (1,000 years ago)",
     "description": "Indigenous inhabitant of the Canary Islands before European colonization. Displays genetic affinity to ancient North African Berbers.",
     "ancestry_group": "North African / Berber",
     "diagnostic_markers": [
@@ -859,7 +859,7 @@
     "id": "bichon_man",
     "name": "Bichon Man",
     "region": "Grotte du Bichon, La Chaux-de-Fonds, Switzerland",
-    "period": "Upper Paleolithic (13,700 BP)",
+    "period": "Upper Paleolithic (13,700 years ago)",
     "description": "Azilian hunter-gatherer found alongside a brown bear. Represents late Epipaleolithic Western Hunter-Gatherers prior to farming.",
     "ancestry_group": "Western Hunter-Gatherer (WHG)",
     "diagnostic_markers": [

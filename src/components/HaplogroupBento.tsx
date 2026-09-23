@@ -73,7 +73,7 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4 min-w-0 w-full overflow-hidden">
         <div className="relative mb-2 max-w-full">
-          <div className="text-4xl sm:text-6xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter truncate max-w-full px-2" title={haploCode}>
+          <div className="text-3xl sm:text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter break-words max-w-full px-2" title={haploCode}>
             {haploCode}
           </div>
           <div className="absolute -inset-4 bg-[#4599FF]/20 blur-2xl -z-10 rounded-full pointer-events-none" />
@@ -81,21 +81,21 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
         
         <div className="flex flex-wrap items-center justify-center gap-2 mb-4 max-w-full min-w-0 px-2">
           {predictedMt.region && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-[#4599FF] uppercase tracking-wider bg-[#4599FF]/10 px-3 py-1 rounded-full border border-[#4599FF]/20 max-w-full min-w-0 truncate" title={predictedMt.region}>
+            <div className="flex items-center gap-1.5 text-xs font-bold text-[#4599FF] uppercase tracking-wider bg-[#4599FF]/10 px-3 py-1 rounded-full border border-[#4599FF]/20 max-w-full min-w-0 break-words" title={predictedMt.region}>
               <MapPin className="w-3 h-3 shrink-0" />
-              <span className="truncate">{predictedMt.region}</span>
+              <span className="break-words">{predictedMt.region}</span>
             </div>
           )}
           {predictedMt.tmrca && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 max-w-full min-w-0 truncate" title={`${predictedMt.tmrca.formattedTmrcaAge} (${predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})`}>
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400 uppercase tracking-wider bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20 max-w-full min-w-0 break-words" title={`${predictedMt.tmrca.formattedTmrcaAge} (${predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})`}>
               <Sparkles className="w-3 h-3 shrink-0" />
-              <span className="truncate">{predictedMt.tmrca.formattedTmrcaAge} ({predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})</span>
+              <span className="break-words">{predictedMt.tmrca.formattedTmrcaAge} ({predictedMt.tmrca.activeHistoricalEra?.name?.split('(')[0]?.trim()})</span>
             </div>
           )}
           {predictedMt.empopQc && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20 max-w-full min-w-0 truncate" title={`EMPOP: ${predictedMt.empopQc.forensicCoherenceScorePct}% Coherent`}>
+            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full border border-emerald-400/20 max-w-full min-w-0 break-words" title={`EMPOP: ${predictedMt.empopQc.forensicCoherenceScorePct}% Coherent`}>
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-              <span className="truncate">EMPOP: {predictedMt.empopQc.forensicCoherenceScorePct}% Coherent</span>
+              <span className="break-words">EMPOP: {predictedMt.empopQc.forensicCoherenceScorePct}% Coherent</span>
             </div>
           )}
         </div>

@@ -87,7 +87,7 @@ const YHRD_HAPLOGROUP_PROFILES: Record<string, YhrdHaplogroupProfile> = {
     clade: 'R1b',
     cladeName: 'R-M269 / R-M343',
     modalMinimalHaplotype: { 'DYS393': 13, 'DYS390': 24, 'DYS19': 14, 'DYS391': 11, 'DYS385': '11,14', 'DYS392': 13, 'DYS439': 12 },
-    genealogicalTimeDepth: 'Western European Atlantic Modal Haplotype (AMH); lineage expanded massively in Bronze Age (~4,500 BP).',
+    genealogicalTimeDepth: 'Western European Atlantic Modal Haplotype (AMH); lineage expanded massively in Bronze Age (~4,500 years ago).',
     surnameProjectStrategy: 'Test 37 to 111 STR markers on FamilyTreeDNA or YHRD to identify exact 17th–19th century British, Irish, French, or German surname clusters.',
     yhrdDistributionSummary: 'Dominates Western European YHRD metapopulations (up to 80% in Ireland, Wales, and Highland Scotland).'
   },
@@ -95,7 +95,7 @@ const YHRD_HAPLOGROUP_PROFILES: Record<string, YhrdHaplogroupProfile> = {
     clade: 'R1a',
     cladeName: 'R-M417 / R-M512',
     modalMinimalHaplotype: { 'DYS393': 13, 'DYS390': 25, 'DYS19': 16, 'DYS391': 10, 'DYS385': '11,14', 'DYS392': 11, 'DYS439': 10 },
-    genealogicalTimeDepth: 'Corded Ware / Indo-European Steppe expansion (~5,000 BP) to Slavic and Scandinavian medieval horizons.',
+    genealogicalTimeDepth: 'Corded Ware / Indo-European Steppe expansion (~5,000 years ago) to Slavic and Scandinavian medieval horizons.',
     surnameProjectStrategy: 'Compare against Polish, Ukrainian, Scandinavian, and British Isles Norse surname projects.',
     yhrdDistributionSummary: 'High prevalence in Eastern Europe (50-60%), Scandinavia (20%), and Northern India / Pakistan.'
   },
@@ -103,7 +103,7 @@ const YHRD_HAPLOGROUP_PROFILES: Record<string, YhrdHaplogroupProfile> = {
     clade: 'E1b1a',
     cladeName: 'E-M2 / E-V38',
     modalMinimalHaplotype: { 'DYS393': 13, 'DYS390': 21, 'DYS19': 15, 'DYS391': 10, 'DYS385': '15,18', 'DYS392': 11, 'DYS439': 12 },
-    genealogicalTimeDepth: 'Major Niger-Congo and Bantu agricultural expansion (~4,000 BP); primary African American patrilineal ancestor (~60%).',
+    genealogicalTimeDepth: 'Major Niger-Congo and Bantu agricultural expansion (~4,000 years ago); primary African American patrilineal ancestor (~60%).',
     surnameProjectStrategy: 'Use 37+ Y-STR matching to locate enslaved ancestors and reconstruct patrilineal surnames across 18th-century Tidewater VA, MD, NC, and SC plantation records.',
     yhrdDistributionSummary: 'Dominates Sub-Saharan West and Central African YHRD population samples (Nigeria, Ghana, Cameroon, Benin).'
   },
@@ -111,7 +111,7 @@ const YHRD_HAPLOGROUP_PROFILES: Record<string, YhrdHaplogroupProfile> = {
     clade: 'E1b1b',
     cladeName: 'E-M35 / E-M78 / E-V13',
     modalMinimalHaplotype: { 'DYS393': 13, 'DYS390': 24, 'DYS19': 13, 'DYS391': 10, 'DYS385': '11,14', 'DYS392': 11, 'DYS439': 12 },
-    genealogicalTimeDepth: 'Afroasiatic and Mediterranean Neolithic expansion (~10,000 – 6,000 BP).',
+    genealogicalTimeDepth: 'Afroasiatic and Mediterranean Neolithic expansion (~10,000 – 6,000 years ago).',
     surnameProjectStrategy: 'Search Balkan, Greek, Italian, Iberian, and Jewish surname projects on FTDNA and YHRD.',
     yhrdDistributionSummary: 'Frequent in North Africa, Horn of Africa, Balkans (up to 40% in Kosovo/Greece), and Mediterranean basin.'
   },
@@ -119,7 +119,7 @@ const YHRD_HAPLOGROUP_PROFILES: Record<string, YhrdHaplogroupProfile> = {
     clade: 'I1',
     cladeName: 'I-M253',
     modalMinimalHaplotype: { 'DYS393': 13, 'DYS390': 22, 'DYS19': 14, 'DYS391': 10, 'DYS385': '14,14', 'DYS392': 11, 'DYS439': 11 },
-    genealogicalTimeDepth: 'Pre-Viking Scandinavian founder bottleneck (~4,500 BP); dispersed across Europe during the Viking Age.',
+    genealogicalTimeDepth: 'Pre-Viking Scandinavian founder bottleneck (~4,500 years ago); dispersed across Europe during the Viking Age.',
     surnameProjectStrategy: 'Trace Scandinavian, Anglo-Saxon, and Norman patrilineal surname trees.',
     yhrdDistributionSummary: 'Dominates Nordic YHRD collections (Sweden 35%, Norway 32%, Denmark 30%).'
   },
@@ -143,7 +143,7 @@ const YHRD_HAPLOGROUP_PROFILES: Record<string, YhrdHaplogroupProfile> = {
     clade: 'Q',
     cladeName: 'Q-M242 / Q-M3 / Q-L54',
     modalMinimalHaplotype: { 'DYS393': 13, 'DYS390': 24, 'DYS19': 13, 'DYS391': 10, 'DYS385': '11,13', 'DYS392': 14, 'DYS439': 12 },
-    genealogicalTimeDepth: 'Indigenous American founder lineage (>15,000 BP) across Beringia and ancient Siberian populations.',
+    genealogicalTimeDepth: 'Indigenous American founder lineage (>15,000 years ago) across Beringia and ancient Siberian populations.',
     surnameProjectStrategy: 'Cross-reference Indigenous American tribal rolls, Dawes Commission genealogies, and Siberian/Arctic surname projects.',
     yhrdDistributionSummary: 'Dominates Indigenous North, Central, and South American YHRD cohorts (>85% in Native Mesoamerican/Andean populations).'
   }

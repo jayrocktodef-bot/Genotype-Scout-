@@ -98,7 +98,7 @@ export function calculateTmrcaEstimate(
   let baseFormedBp = 4500;
   let baseTmrcaBp = 3800;
 
-  // Extract years from string descriptor if available (e.g. "~68,000 BP")
+  // Extract years from string descriptor if available (e.g. "~68,000 years ago")
   const numMatch = clade.ageYearsBp.match(/([\d,]+)/);
   if (numMatch) {
     const rawVal = parseInt(numMatch[1].replace(/,/g, ''), 10);
@@ -109,7 +109,7 @@ export function calculateTmrcaEstimate(
     }
   }
 
-  // Refine using lineage-specific branch mutational depth only for young/subclade branches (<15,000 BP)
+  // Refine using lineage-specific branch mutational depth only for young/subclade branches (<15,000 years ago)
   // Deep macroclades (e.g. DE, CT, E, R) retain their coalescent molecular dates
   if (derivedCount > 0 && baseFormedBp < 15000) {
     if (lineageType === 'PATERNAL_YDNA') {
@@ -174,8 +174,8 @@ export function calculateTmrcaEstimate(
   return {
     formedYearsBp: baseFormedBp,
     tmrcaYearsBp: baseTmrcaBp,
-    formattedFormedAge: `~${baseFormedBp.toLocaleString()} BP`,
-    formattedTmrcaAge: `~${baseTmrcaBp.toLocaleString()} BP`,
+    formattedFormedAge: `~${baseFormedBp.toLocaleString()} years ago`,
+    formattedTmrcaAge: `~${baseTmrcaBp.toLocaleString()} years ago`,
     calibratedEraBceCe,
     ci95MinYearsBp,
     ci95MaxYearsBp,
@@ -210,7 +210,7 @@ export function estimateTmrcaForHaplogroup(
     lineageType,
     parentClade: null,
     definingSnps: [],
-    ageYearsBp: '~4,500 BP',
+    ageYearsBp: '~4,500 years ago',
     originRegion: 'Global',
     historicalDescription: '',
     ancientCultures: [],

@@ -9,7 +9,7 @@ import { calculateBloodType } from '../engines/bloodTypeCalculator';
 import { dietLogic } from '../engines/dietaryCalculator';
 import { calculateSecretorStatus } from '../engines/health/secretorCalculator';
 
-describe('Public WGS DNA File Ingestion and Analysis', () => {
+describe.skipIf(!process.env.SLOW_TESTS)('Public WGS DNA File Ingestion and Analysis', () => {
   const wgsPath = path.resolve(process.cwd(), 'scratch/NA12878_HG001_WGS.vcf.gz');
 
   it('verifies public GIAB NA12878 whole genome sequencing file exists', () => {

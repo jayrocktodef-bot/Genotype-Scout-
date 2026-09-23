@@ -60,6 +60,7 @@ describe('Scout Score (Raw Allele Frequency Matrix) Audit & Verification', () =>
     const africanSample: Record<string, string> = {
       rs2814778: 'CC', // Duffy null
       rs1042602: 'CC', // TYR ancestral
+      rs10954606: 'TT', // African-informative AIM
       rs1426654: 'AA', // ancestral SLC24A5
       rs16891982: 'CC', // ancestral SLC45A2
       rs4988235: 'CC', // ancestral LCT non-persistent

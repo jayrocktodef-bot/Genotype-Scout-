@@ -182,7 +182,7 @@ describe('Calculator Audit Verification Test Suite', () => {
         lineageType: 'PATERNAL_YDNA' as const,
         parentClade: null,
         definingSnps: [],
-        ageYearsBp: '~4,500 BP',
+        ageYearsBp: '~4,500 years ago',
         originRegion: 'Europe',
         historicalDescription: '',
         ancientCultures: [],

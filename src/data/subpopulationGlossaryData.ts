@@ -35,10 +35,10 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Utah Residents (CEPH) / Western & Central Europe (France, Germany, Netherlands, Rhine Basin)',
     historicalTimeline: 'Tri-partite ancestral fusion: Mesolithic Western Hunter-Gatherers (WHG, ~8000 BCE) + Anatolian Early European Farmers (EEF, ~6000 BCE) + Bronze Age Yamnaya Western Steppe Pastoralists (WSH, ~2800 BCE).',
     migrationPath: [
-      'Out-of-Africa migration via Levant corridor (~60,000–50,000 BP)',
-      'Paleolithic & Mesolithic Hunter-Gatherer colonization of European glacial refugia (~40,000–10,000 BP)',
-      'Neolithic Anatolian Farmer expansion along Danube and Mediterranean routes (~8,000–6,000 BP)',
-      'Bronze Age Corded Ware & Bell Beaker Steppe herder migration from Pontic-Caspian Steppe (~4,800–4,000 BP)'
+      'Out-of-Africa migration via Levant corridor (~60,000–50,000 years ago)',
+      'Paleolithic & Mesolithic Hunter-Gatherer colonization of European glacial refugia (~40,000–10,000 years ago)',
+      'Neolithic Anatolian Farmer expansion along Danube and Mediterranean routes (~8,000–6,000 years ago)',
+      'Bronze Age Corded Ware & Bell Beaker Steppe herder migration from Pontic-Caspian Steppe (~4,800–4,000 years ago)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Lactase Persistence', gene: 'MCM6 / LCT', rsid: 'rs4988235', impact: 'Strong positive selection for adult milk digestion during pastoralist cattle farming.' },
@@ -58,9 +58,9 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Great Britain, Ireland, Orkney & Hebrides',
     historicalTimeline: 'Insular Atlantic European lineage shaped by Bell Beaker turnover (~2400 BCE, >90% population replacement), Insular Celtic, Anglo-Saxon (Germanic), and Scandinavian Viking migrations.',
     migrationPath: [
-      'Mesolithic Hunter-Gatherer settlement (e.g. Cheddar Man, ~10,000 BP)',
-      'Neolithic Megalithic Farmer expansion into Britain (~6,000 BP)',
-      'Massive Bell Beaker Steppe migration replacing ~90% of Neolithic British gene pool (~4,400 BP)',
+      'Mesolithic Hunter-Gatherer settlement (e.g. Cheddar Man, ~10,000 years ago)',
+      'Neolithic Megalithic Farmer expansion into Britain (~6,000 years ago)',
+      'Massive Bell Beaker Steppe migration replacing ~90% of Neolithic British gene pool (~4,400 years ago)',
       'Anglo-Saxon Germanic migration from North Sea coasts (5th–7th Century CE)',
       'Norse & Danish Viking settlements (8th–11th Century CE)'
     ],
@@ -81,9 +81,9 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Finland, Karelia, Bothnian Basin, Estonia',
     historicalTimeline: 'Distinct northern bottlenecked population formed by Eastern Hunter-Gatherers (EHG), Western Hunter-Gatherers (WHG), and Siberian-related Nganasan-like intake via Uralic language expansion (~1500 BCE).',
     migrationPath: [
-      'Post-glacial North-Eastern European settlement (~9,000 BP)',
-      'Comb Ceramic culture hunter-gatherer interactions (~6,000 BP)',
-      'Uralic migration carrying Siberian Nganasan-like ancestry & Haplogroup N-M231 from Trans-Urals (~3,500 BP)',
+      'Post-glacial North-Eastern European settlement (~9,000 years ago)',
+      'Comb Ceramic culture hunter-gatherer interactions (~6,000 years ago)',
+      'Uralic migration carrying Siberian Nganasan-like ancestry & Haplogroup N-M231 from Trans-Urals (~3,500 years ago)',
       'Internal founder bottlenecks during late medieval inland settlement (Late Settlement Finland)'
     ],
     evolutionaryAdaptations: [
@@ -103,8 +103,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     historicalTimeline: 'Central-Eastern European Slavic lineage characterized by high Steppe pastoralist ancestry (R1a-M417), Early European Farmer components, and Baltic/Slavic early medieval expansions (5th–7th Century CE).',
     migrationPath: [
       'Mesolithic EHG / WHG hunter-gatherer foraging in North European Plain',
-      'Neolithic Funnelbeaker and Globular Amphora agricultural settlements (~5,500 BP)',
-      'Corded Ware Culture Steppe expansion into Eastern Europe (~4,800 BP)',
+      'Neolithic Funnelbeaker and Globular Amphora agricultural settlements (~5,500 years ago)',
+      'Corded Ware Culture Steppe expansion into Eastern Europe (~4,800 years ago)',
       'Early Slavic demographic expansion from Pripyat-Dnieper basin across Central & Eastern Europe (500–800 CE)'
     ],
     evolutionaryAdaptations: [
@@ -225,8 +225,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     historicalTimeline: 'West African agricultural lineage associated with Yam & Oil Palm domestication (~5000 BCE), Nok culture iron metallurgy (~1000 BCE), and Oyo/Ife urban kingdoms.',
     migrationPath: [
       'West African Holocene hunter-gatherer foraging in West African forest belt',
-      'Sudanic / Guinean agricultural development (~6,000 BP)',
-      'Nok Culture iron technology expansion across Niger-Benue confluence (~3,000 BP)',
+      'Sudanic / Guinean agricultural development (~6,000 years ago)',
+      'Nok Culture iron technology expansion across Niger-Benue confluence (~3,000 years ago)',
       'Urbanization of Ife & Oyo city-states (11th–19th Century CE)'
     ],
     evolutionaryAdaptations: [
@@ -287,7 +287,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     category: 'Africa',
     geographicCenter: 'Southern & Eastern Sierra Leone (Mande belt)',
     historicalTimeline: 'Mande-speaking West African lineage originating from the upper Niger River basin, settling the forested Windward Coast.',
-    migrationPath: ['Upper Niger agricultural expansion → Windward Coast forest settlement (~1,500 BP)'],
+    migrationPath: ['Upper Niger agricultural expansion → Windward Coast forest settlement (~1,500 years ago)'],
     evolutionaryAdaptations: [
       { trait: 'Duffy Null Malaria Resistance', gene: 'ACKR1', rsid: 'rs2814778', impact: 'Fixation (100%) conferring resistance to P. vivax.' },
       { trait: 'Sickle Cell Trait', gene: 'HBB', rsid: 'rs334', impact: 'Heterozygote advantage against falciparum malaria.' }
@@ -422,8 +422,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     name: 'Mbuti & Biaka / Rainforest Hunter-Gatherers (PYGMY)',
     category: 'Africa',
     geographicCenter: 'Ituri Rainforest (DRC) & Central African Republic / Republic of Congo',
-    historicalTimeline: 'Indigenous Central African Rainforest Hunter-Gatherers representing one of the earliest modern human population splits (~60,000–100,000 BP).',
-    migrationPath: ['Ancient Paleolithic Congo Basin rainforest foraging (~100,000 BP isolation)'],
+    historicalTimeline: 'Indigenous Central African Rainforest Hunter-Gatherers representing one of the earliest modern human population splits (~60,000–100,000 years ago).',
+    migrationPath: ['Ancient Paleolithic Congo Basin rainforest foraging (~100,000 years ago isolation)'],
     evolutionaryAdaptations: [
       { trait: 'Rainforest Stature Phenotype (Pygmy Stature)', gene: 'GHSR / IGF1', impact: 'Genetic selection altering growth hormone pathways for rainforest canopy navigation and heat regulation.' },
       { trait: 'Deep Rainforest Immune Selection', gene: 'HLA / KIR', impact: 'Unique MHC immunity against rainforest tropical parasites.' }
@@ -484,8 +484,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     name: 'San & Khoe / Kalahari Bushmen (KHOISAN)',
     category: 'Africa',
     geographicCenter: 'Kalahari Desert, Namibia, Botswana, Northern Cape (South Africa)',
-    historicalTimeline: 'Indigenous Southern African Hunter-Gatherers representing the oldest ancestral lineage branch in modern human genetics (~150,000–200,000 BP).',
-    migrationPath: ['Deep Paleolithic Southern African isolation in Kalahari refugia (~160,000 BP)'],
+    historicalTimeline: 'Indigenous Southern African Hunter-Gatherers representing the oldest ancestral lineage branch in modern human genetics (~150,000–200,000 years ago).',
+    migrationPath: ['Deep Paleolithic Southern African isolation in Kalahari refugia (~160,000 years ago)'],
     evolutionaryAdaptations: [
       { trait: 'Arid Desert Water & Fat Regulation', gene: 'APOB / SLC24A5', impact: 'Adaptations for extreme desert survival and steatopygia.' },
       { trait: 'UV & Cold Night Adaptation', gene: 'TRPM8 / TYRP1', impact: 'Kalahari desert temperature swings adaptation.' }
@@ -586,9 +586,9 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Rondônia, Southwestern Amazon Basin, Brazil',
     historicalTimeline: 'Indigenous Tupi-speaking Amazonian population isolated deep within the southwestern Amazon rainforest for millennia prior to modern contact.',
     migrationPath: [
-      'Paleo-Indian migration past Laurentide Ice Sheet (~15,000 BP)',
+      'Paleo-Indian migration past Laurentide Ice Sheet (~15,000 years ago)',
       'Southward Pacific Rim dispersal',
-      'Early Amazon Basin settlement (~12,000 BP)',
+      'Early Amazon Basin settlement (~12,000 years ago)',
       'Rainforest isolation producing unadmixed Amazonian genetic profile'
     ],
     evolutionaryAdaptations: [
@@ -607,8 +607,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Rondônia / Mato Grosso border, Amazon Basin, Brazil',
     historicalTimeline: 'Tupi-Mondé speaking indigenous Amazonian population displaying deep Amazonian isolation and carrying trace Population Y (Australasian-related) genomic signals.',
     migrationPath: [
-      'Ancient Paleo-American entry into South America (~15,000 BP)',
-      'Rainforest settlement (~12,000 BP)',
+      'Ancient Paleo-American entry into South America (~15,000 years ago)',
+      'Rainforest settlement (~12,000 years ago)',
       'Deep interior Amazonian genetic drift'
     ],
     evolutionaryAdaptations: [
@@ -626,8 +626,8 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Meta & Vichada Rivers, Orinoco Basin, Colombia & Venezuela',
     historicalTimeline: 'Arawakan-speaking indigenous people of the Orinoco riverine savannas (Llanos Orientales).',
     migrationPath: [
-      'Paleo-Indian entry into Northern South America (~14,000 BP)',
-      'Settlement along Orinoco-Amazon river networks (~9,000 BP)'
+      'Paleo-Indian entry into Northern South America (~14,000 years ago)',
+      'Settlement along Orinoco-Amazon river networks (~9,000 years ago)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Riverine Disease Resistance', gene: 'ACKR1', impact: 'Specialized tropical riverine pathogen immune profile.' }
@@ -644,7 +644,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Tres Fronteras region (Brazil, Peru, Colombia), Upper Amazon River',
     historicalTimeline: 'Isolated language-isolate indigenous population of the Upper Amazon riverine forests.',
     migrationPath: [
-      'Paleo-Indian migration → Upper Amazon river valley colonization (~10,000 BP)'
+      'Paleo-Indian migration → Upper Amazon river valley colonization (~10,000 years ago)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Humid Tropical Forest Metabolism', gene: 'PNPLA3', rsid: 'rs738409', impact: 'Protective hepatic fat regulation.' }
@@ -678,7 +678,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Yucatán Peninsula, Chiapas (Mexico), Highland & Lowland Guatemala',
     historicalTimeline: 'Mayan-speaking civilization builders (Preclassic 2000 BCE – Postclassic 1500 CE) responsible for monumental architecture, mathematics, and writing.',
     migrationPath: [
-      'Paleo-Indian Mesoamerican settlement → Early maize domestication in Balsas River Valley (~9,000 BP) → Maya Lowland & Highland urban civilization.'
+      'Paleo-Indian Mesoamerican settlement → Early maize domestication in Balsas River Valley (~9,000 years ago) → Maya Lowland & Highland urban civilization.'
     ],
     evolutionaryAdaptations: [
       { trait: 'Maize Agricultural Metabolism', gene: 'FADS1 / PNPLA3', impact: 'Adapted to cereal maize/bean agriculture.' }
@@ -695,7 +695,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'La Mixteca region, Oaxaca & Puebla, Mexico',
     historicalTimeline: 'Oto-Manguean speaking Mesoamerican civilization (Tilantongo, Tututepec) renowned for codices, gold metallurgy, and terrace farming.',
     migrationPath: [
-      'Early Oto-Manguean diversification in Southern Mexico (~6,000 BP) → Montane terrace agriculture.'
+      'Early Oto-Manguean diversification in Southern Mexico (~6,000 years ago) → Montane terrace agriculture.'
     ],
     evolutionaryAdaptations: [
       { trait: 'Montane Agricultural Metabolism', gene: 'PNPLA3', impact: 'Adapted to high-altitude Mesoamerican maize farming.' }
@@ -746,7 +746,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Cusco, Puno, Ayacucho, Peruvian & Bolivian Andes',
     historicalTimeline: 'Indigenous Andean civilization lineage associated with Chavín, Tiwanaku, Wari, and the Inca Empire (Tawantinsuyu).',
     migrationPath: [
-      'Paleo-Indian Pacific coastal dispersal → Highland Andean colonization (~9,000 BP) → High-altitude hypoxia natural selection.'
+      'Paleo-Indian Pacific coastal dispersal → Highland Andean colonization (~9,000 years ago) → High-altitude hypoxia natural selection.'
     ],
     evolutionaryAdaptations: [
       { trait: 'High-Altitude Hypoxia Tolerance', gene: 'EGLN1 / PRKAA1', impact: 'Selection for lower hemoglobin concentration to prevent polycythemia at 3,500+ meters.' }
@@ -763,7 +763,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Lake Titicaca Basin & Altiplano, Bolivia & Peru',
     historicalTimeline: 'Aymaran-speaking high-altitude civilization builders of Tiwanaku (300–1000 CE).',
     migrationPath: [
-      'Altiplano high-altitude settlement (~9,000 BP) → Potato & quinoa domestication.'
+      'Altiplano high-altitude settlement (~9,000 years ago) → Potato & quinoa domestication.'
     ],
     evolutionaryAdaptations: [
       { trait: 'High-Altitude Chest Expansion & Hypoxemia Resistance', gene: 'EGLN1', impact: 'Specialized physiological adaptation to 4,000m altitude.' }
@@ -780,7 +780,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Paraguay, Paraná-Uruguay River Basins, Argentina, Brazil',
     historicalTimeline: 'Tupi-Guarani agriculturalists and forest navigators of South-Central South America.',
     migrationPath: [
-      'Amazonian Tupi expansion southward into Gran Chaco and Paraná basin (~3,000 BP).'
+      'Amazonian Tupi expansion southward into Gran Chaco and Paraná basin (~3,000 years ago).'
     ],
     evolutionaryAdaptations: [
       { trait: 'Subtropical Forest Adaptation', gene: 'PNPLA3', impact: 'Subtropical riverine metabolism.' }
@@ -797,7 +797,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Southeast Alaska Panhandle & Coastal British Columbia',
     historicalTimeline: 'Na-Dene speaking maritime fishing civilization famed for totem poles, potlatches, and cedar plank houses.',
     migrationPath: [
-      'Na-Dene migration from interior Alaska/Canada to Pacific Northwest fjords (~6,000 BP).'
+      'Na-Dene migration from interior Alaska/Canada to Pacific Northwest fjords (~6,000 years ago).'
     ],
     evolutionaryAdaptations: [
       { trait: 'Marine Salmon/Seal High-Omega-3 Diet Adaptation', gene: 'FADS1 / FADS2', impact: 'Tailored fatty acid synthesis.' }
@@ -812,9 +812,9 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     name: 'Inuit & Siberian Eskimo (Chaplin / Saqqaq)',
     category: 'Americas',
     geographicCenter: 'Chukotka, Arctic Alaska, Northern Canada, Greenland',
-    historicalTimeline: 'Neo-Eskimo (Thule) and Paleo-Eskimo (Saqqaq, Dorsett) Arctic maritime hunters (~4,500–1,000 BP).',
+    historicalTimeline: 'Neo-Eskimo (Thule) and Paleo-Eskimo (Saqqaq, Dorsett) Arctic maritime hunters (~4,500–1,000 years ago).',
     migrationPath: [
-      'Late Beringian sea-crossing (~4,500 BP) → Rapid Arctic expansion across North America to Greenland.'
+      'Late Beringian sea-crossing (~4,500 years ago) → Rapid Arctic expansion across North America to Greenland.'
     ],
     evolutionaryAdaptations: [
       { trait: 'FADS Fatty Acid Adaptation', gene: 'FADS1 / FADS2', rsid: 'rs174546', impact: 'Adapted to high-fat marine mammal diet.' },
@@ -832,7 +832,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Mid-Atlantic, Great Lakes, Boreal Forest, Eastern US & Canada',
     historicalTimeline: 'Algonquian-speaking birchbark canoe builders, coastal fishers, wild rice harvesters, and hunters of the Eastern Woodlands (Delaware Valley, Chesapeake, Great Lakes).',
     migrationPath: [
-      'Glacial retreat entry into Eastern Woodlands and Great Lakes (~10,000 BP).'
+      'Glacial retreat entry into Eastern Woodlands and Great Lakes (~10,000 years ago).'
     ],
     evolutionaryAdaptations: [
       { trait: 'Woodland & Coastal Riverine Adaptation', gene: 'PNPLA3', impact: 'Adapted to wild rice, fish, and game diets.' }
@@ -847,11 +847,11 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     name: 'Ancient Paleo-American Reference Genomes (USR1 / Anzick-1 / Luzia)',
     category: 'Americas',
     geographicCenter: 'Interior Alaska, Montana (Clovis), Lagoa Santa (Brazil)',
-    historicalTimeline: 'Cornerstone ancient genomes establishing Paleo-Indian migrations: USR1 (Ancient Beringian, 11,500 BP), Anzick-1 (Clovis Boy, 12,600 BP), and Luzia (Lagoa Santa Paleoamerican, 12,700 BP).',
+    historicalTimeline: 'Cornerstone ancient genomes establishing Paleo-Indian migrations: USR1 (Ancient Beringian, 11,500 years ago), Anzick-1 (Clovis Boy, 12,600 years ago), and Luzia (Lagoa Santa Paleoamerican, 12,700 years ago).',
     migrationPath: [
-      'Beringian Standstill divergence in Alaska (~24,000–16,000 BP)',
-      'Southward migration past Laurentide Ice Sheet (Anzick-1 Clovis lineage, ~13,000 BP)',
-      'Rapid South American colonization (Lagoa Santa Luzia lineage, ~12,700 BP)'
+      'Beringian Standstill divergence in Alaska (~24,000–16,000 years ago)',
+      'Southward migration past Laurentide Ice Sheet (Anzick-1 Clovis lineage, ~13,000 years ago)',
+      'Rapid South American colonization (Lagoa Santa Luzia lineage, ~12,700 years ago)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Sub-Arctic & High-Fat Adaptation', gene: 'FADS1 / TRPM8', impact: 'Fatty acid metabolism tailored to megafauna hunting.' }
@@ -870,12 +870,12 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     name: 'Papuan & Sahul Oceanian (Papuan / Australian / Polynesian)',
     category: 'Oceania & Sahul',
     geographicCenter: 'Papua New Guinea, Australia (Willandra Lakes), Bougainville, Hawaii, Aotearoa',
-    historicalTimeline: 'Deep Paleolithic Sahul lineage (~50,000 BP) representing early modern human settlement of Australasia, retaining the world highest level of Denisovan archaic introgression (~4-6%), alongside Lapita maritime expansion into Polynesia.',
+    historicalTimeline: 'Deep Paleolithic Sahul lineage (~50,000 years ago) representing early modern human settlement of Australasia, retaining the world highest level of Denisovan archaic introgression (~4-6%), alongside Lapita maritime expansion into Polynesia.',
     migrationPath: [
-      'Southern Express Route Out-of-Africa migration along Indian Ocean coast (~65,000–55,000 BP)',
-      'Sea crossing across Wallace Line into Pleistocene Sahul (Australia + New Guinea landmass, ~50,000 BP)',
-      'Admixture with archaic Denisovans in Southeast Asia (~45,000 BP)',
-      'Lapita pottery maritime voyager expansion across Remote Oceania (~3,500–1,000 BP)'
+      'Southern Express Route Out-of-Africa migration along Indian Ocean coast (~65,000–55,000 years ago)',
+      'Sea crossing across Wallace Line into Pleistocene Sahul (Australia + New Guinea landmass, ~50,000 years ago)',
+      'Admixture with archaic Denisovans in Southeast Asia (~45,000 years ago)',
+      'Lapita pottery maritime voyager expansion across Remote Oceania (~3,500–1,000 years ago)'
     ],
     evolutionaryAdaptations: [
       { trait: 'Denisovan Archaic Immunity Introgression', gene: 'OAS1 / STAT2', impact: 'Introgressed Denisovan immune genes providing enhanced protection against tropical RNA viruses.' },
@@ -897,7 +897,7 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     geographicCenter: 'Tian Shan Mountains, Altai-Sayan, Kamchatka, Chukotka, Ural Mountains',
     historicalTimeline: 'Central Asian Turkic and North Siberian populations combining Ancient North Eurasian (ANE), East Asian (Mongolic/Siberian), and Western Eurasian (Steppe/Indo-Iranian) lineages along the Silk Road.',
     migrationPath: [
-      'Bronze Age Indo-Iranian Andronovo & Afanasievo herder expansion into Central Asia (~4,000 BP)',
+      'Bronze Age Indo-Iranian Andronovo & Afanasievo herder expansion into Central Asia (~4,000 years ago)',
       'Turkic nomadic expansion out of Altai-Sayan mountains (~6th Century CE)',
       'Mongol Empire unification (13th Century CE) producing ~60% East Asian and ~40% West Eurasian autosomal blend'
     ],

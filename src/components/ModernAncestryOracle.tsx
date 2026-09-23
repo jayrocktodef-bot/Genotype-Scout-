@@ -483,9 +483,9 @@ export const ModernAncestryOracle = memo(({
                     >
                       <div className="min-w-0">
                         <div className="flex items-center justify-between pb-2 border-b border-white/5 min-w-0 gap-2">
-                          <div className="flex items-center gap-2 min-w-0">
+                          <div className="flex items-center gap-2 min-w-0 flex-1">
                             <span className="text-lg shrink-0">{theme.icon}</span>
-                            <h3 className="font-black text-sm text-white truncate">{continent}</h3>
+                            <h3 className="font-black text-sm text-white break-words">{continent}</h3>
                           </div>
                           <span className={`font-mono font-black text-sm px-2.5 py-0.5 rounded-full tabular-nums shrink-0 ${theme.bg} ${theme.text}`}>
                             {total.toFixed(1)}%
@@ -508,11 +508,11 @@ export const ModernAncestryOracle = memo(({
                                 className="space-y-1 min-w-0 p-1.5 rounded-lg hover:bg-white/5 cursor-pointer transition-colors group"
                                 title="Click to inspect contributing markers & statistical context"
                               >
-                                <div className="flex justify-between items-center text-xs min-w-0 gap-2">
-                                  <span className="font-semibold text-slate-300 group-hover:text-cyan-300 truncate flex-1 min-w-0 transition-colors" title={sp.name}>
+                                <div className="flex justify-between items-start text-xs min-w-0 gap-2">
+                                  <span className="font-semibold text-slate-300 group-hover:text-cyan-300 break-words leading-tight flex-1 min-w-0 transition-colors" title={sp.name}>
                                     {sp.name}
                                   </span>
-                                  <div className="flex items-center gap-1.5 font-mono shrink-0 tabular-nums">
+                                  <div className="flex items-center gap-1.5 font-mono shrink-0 tabular-nums pt-0.5">
                                     <span className="text-[9px] text-slate-500">[{ci.low}%–{ci.high}%]</span>
                                     <span className="font-bold text-slate-200 text-xs">{sp.percentage.toFixed(1)}%</span>
                                   </div>

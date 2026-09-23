@@ -43,9 +43,8 @@ To be fully transparent about what stays on your device and what (optionally) le
 
 - **Core analysis is 100% local.** Raw DNA parsing, ancestry, haplogroups, and health/trait analysis run client-side. No raw data is transmitted anywhere.
 - **Results are saved on your device.** Computed results are stored locally in your browser's IndexedDB so your session persists between visits. They remain on this device until you use the in-app **Clear** action (or clear your browser storage), and are not encrypted at rest — avoid running the tool on a shared/public computer, or clear your data when finished.
-- **Optional, opt-in features that involve third parties:**
-  - *Anonymous usage analytics* (Vercel Analytics & Speed Insights) collect aggregate page/performance metrics. No genetic data is included.
-  - *Export to Google Slides* requires you to sign in with Google and sends an ancestry summary (health markers excluded) to **your own** Google account. It runs only when you explicitly trigger an export.
+- **Zero Third-Party Telemetry:** Genotype Scout contains no third-party tracking scripts, advertising trackers, or external analytics SDKs. No telemetry or usage data is transmitted.
+- **Export to Google Slides:** (optional) requires you to sign in with Google and sends an ancestry summary (health markers excluded) directly to **your own** Google account. It runs only when you explicitly trigger an export.
 
 ---
 

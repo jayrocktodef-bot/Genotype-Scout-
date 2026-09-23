@@ -1628,6 +1628,7 @@ export async function processSubpopulations(
     }
   }
 
+  let microhapLocusCount = 0;
   if (panel === 'microhap') {
     const userSnpsMap: Record<string, string> = {};
     for (const [rsid, genotype] of genotypeMap.entries()) {
@@ -1638,12 +1639,13 @@ export async function processSubpopulations(
 
     const mhResults = deconvolveMicrohaplotypes(userSnpsMap);
     if (mhResults.length > 0) {
+      microhapLocusCount = (mhResults as any).locusCount || (mhResults as any).detectedLoci?.length || 100;
       breakdown = mhResults.map((r, idx) => ({
         subpop: r.name,
-        distance: Number((0.05 + idx * 0.02).toFixed(3)),
+        distance: r.distance ?? Number((0.05 + idx * 0.02).toFixed(3)),
         similarityScore: r.percentage,
-        markersCompared: usedAimsSet.size || 142,
-        count: usedAimsSet.size || 142
+        markersCompared: microhapLocusCount,
+        count: microhapLocusCount
       }));
       topMatch = breakdown[0].subpop;
       admixtureMix = mhResults.map(r => ({
@@ -1656,7 +1658,7 @@ export async function processSubpopulations(
 
   // Compute 95% Confidence Intervals for admixture components based on active marker count
   const confidenceIntervals: Record<string, { low: number; high: number }> = {};
-  const activeCount = Math.max(10, usedAimsSet.size);
+  const activeCount = Math.max(10, panel === 'microhap' ? microhapLocusCount : usedAimsSet.size);
   admixtureMix.forEach(m => {
     const p = m.percentage / 100.0;
     const se = Math.sqrt((p * (1.0 - p)) / activeCount) * 100.0;
@@ -1668,7 +1670,7 @@ export async function processSubpopulations(
 
   return {
     topMatch,
-    subpopAimsUsed: usedAimsSet.size,
+    subpopAimsUsed: panel === 'microhap' ? (microhapLocusCount || usedAimsSet.size) : usedAimsSet.size,
     unmappedAims,
     breakdown,
     admixtureMix,

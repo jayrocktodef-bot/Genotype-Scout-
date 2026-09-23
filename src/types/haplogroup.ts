@@ -102,7 +102,7 @@ export interface HaplogroupDefinition {
   lineageType: LineageType;
   parentClade: string | null;
   definingSnps: string[];
-  ageYearsBp: string;       // e.g. "~4,500 BP (Early Bronze Age)"
+  ageYearsBp: string;       // e.g. "~4,500 years ago (Early Bronze Age)"
   originRegion: string;     // e.g. "Alps / Central Europe"
   historicalDescription: string;
   ancientCultures: string[];

@@ -4,7 +4,7 @@ import {
   User, Globe, History, HeartPulse, Database, BookOpen,
   Zap, Droplet, Dna, Sparkles, Trash2, Users,
   ChevronLeft, ChevronRight, WifiOff, Home, MoreHorizontal,
-  Play, ArrowLeft, Search, X, ShieldCheck
+  Play, ArrowLeft, Search, X, ShieldCheck, ExternalLink
 } from 'lucide-react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -15,11 +15,12 @@ export interface AppConfig {
   icon: React.ComponentType<any>;
   gradient: string;
   glowColor: string;
-  targetTab: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'kit_comparison' | 'clear_cache' | 'integrity';
+  targetTab?: 'dashboard' | 'summary' | 'autosomal' | 'ancestry' | 'history' | 'health_traits' | 'markers' | 'rare_variants' | 'debug' | 'methodology' | 'kit_comparison' | 'clear_cache' | 'integrity';
   targetSubTab?: string;
   description: string;
   imageUrl?: string;
   navGroup?: 'primary' | 'secondary';
+  externalUrl?: string;
 }
 
 interface ScoutWorkspaceProps {
@@ -214,6 +215,17 @@ const MODULES: AppConfig[] = [
     description: 'Learn the underlying math, science, and calculation engines.',
     imageUrl: '/assets/methodology_icon.png',
     navGroup: 'secondary',
+  },
+  {
+    id: 'superkit_maker',
+    name: 'Superkit Maker',
+    icon: Dna,
+    gradient: 'from-teal-400 to-amber-500',
+    glowColor: 'rgba(20,184,166,0.45)',
+    description: 'Merge multiple raw DNA kits (AncestryDNA, 23andMe, WGS) into an enriched master superkit.',
+    imageUrl: '/assets/superkit_icon.png',
+    navGroup: 'secondary',
+    externalUrl: 'https://merge.writteninthegenome.blog',
   },
 ];
 
@@ -415,6 +427,20 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
               ))}
             </div>
           ) : null}
+
+          {/* Superkit Maker Direct Link */}
+          <a
+            href="https://merge.writteninthegenome.blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Superkit Maker (Merge Kits)"
+            title="Superkit Maker: Merge multiple raw DNA kits (merge.writteninthegenome.blog)"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 hover:border-teal-500/50 text-teal-300 hover:text-teal-200 transition-all text-[9px] font-mono font-black uppercase tracking-[0.15em] active:scale-[0.96]"
+          >
+            <Dna className="w-3 h-3 text-teal-400" />
+            <span className="hidden md:inline">Superkit Maker</span>
+            <ExternalLink className="w-2.5 h-2.5 text-teal-400/80" />
+          </a>
 
           {/* Methodology Shortcut */}
           {onOpenMethodology && (
@@ -666,9 +692,17 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ mod, index, onSelect }) => (
       duration: 0.22,
       ease: [0.2, 0, 0, 1],
     }}
-    className="group gs-tile flex flex-col items-center justify-between p-4 sm:p-5 cursor-pointer text-left w-full h-full min-h-[185px]"
+    className="group gs-tile flex flex-col items-center justify-between p-4 sm:p-5 cursor-pointer text-left w-full h-full min-h-[160px] relative"
   >
-    <div className="flex flex-col items-center text-center w-full">
+    {mod.externalUrl && (
+      <div 
+        className="absolute top-2.5 right-2.5 p-1 rounded-md bg-teal-500/10 border border-teal-500/30 text-teal-400 group-hover:bg-teal-500/20 transition-colors"
+        title="Opens external tool in new tab"
+      >
+        <ExternalLink className="w-3 h-3" />
+      </div>
+    )}
+    <div className="flex flex-col items-center text-center w-full my-auto">
       <GoldIcon icon={mod.icon} size="md" showLed={mod.navGroup === 'primary'} />
       <h3
         className="font-display text-sm font-black text-zinc-100 group-hover:text-amber-200 transition-colors text-center mt-3 leading-tight"
@@ -679,11 +713,6 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ mod, index, onSelect }) => (
       <p className="text-[11px] text-zinc-400 group-hover:text-zinc-300 line-clamp-2 text-center mt-1.5 font-medium leading-snug">
         {mod.description}
       </p>
-    </div>
-    <div className="mt-3 flex items-center gap-1.5">
-      <span className="gs-gold-badge">
-        [LOCAL ENGINE]
-      </span>
     </div>
   </motion.button>
 );
@@ -715,7 +744,7 @@ const AppLauncherGrid: React.FC<AppLauncherGridProps> = ({ searchQuery, onSelect
     } else if (selectedCategory === 'health') {
       list = list.filter(m => ['health', 'traits', 'blood'].includes(m.id));
     } else if (selectedCategory === 'tools') {
-      list = list.filter(m => ['markers', 'rare_variants', 'kit_comparison', 'integrity', 'methodology', 'profile'].includes(m.id));
+      list = list.filter(m => ['markers', 'rare_variants', 'kit_comparison', 'integrity', 'methodology', 'profile', 'superkit_maker'].includes(m.id));
     }
 
     const q = searchQuery.toLowerCase();
@@ -900,7 +929,13 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
     }
     const mod = MODULES.find(m => m.id === id);
     if (mod) {
-      onNavigateToTab(mod.targetTab, mod.targetSubTab);
+      if (mod.externalUrl) {
+        window.open(mod.externalUrl, '_blank', 'noopener,noreferrer');
+        return;
+      }
+      if (mod.targetTab) {
+        onNavigateToTab(mod.targetTab, mod.targetSubTab);
+      }
       onOpenApp(id);
     }
   };

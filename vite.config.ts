@@ -137,6 +137,12 @@ export default defineConfig(({mode}) => {
             if (id.includes('node_modules/@xenova')) {
               return 'vendor-xenova';
             }
+            if (id.includes('node_modules/@react-three') || id.includes('node_modules/three')) {
+              return 'vendor-three';
+            }
+            if (id.includes('node_modules/chart.js') || id.includes('node_modules/react-chartjs-2')) {
+              return 'vendor-charts';
+            }
             if (id.includes('node_modules/recharts')) {
               return 'vendor-recharts';
             }

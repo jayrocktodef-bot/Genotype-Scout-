@@ -271,6 +271,40 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
             </div>
           </div>
 
+          {/* Superkit Maker Direct Callout for Multiple Kits */}
+          <div className="pt-4 border-t border-teal-900/30 bg-gradient-to-r from-teal-950/30 via-zinc-900/60 to-teal-950/20 -mx-6 sm:-mx-8 px-6 sm:px-8 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center text-teal-400 shrink-0 shadow-sm shadow-teal-950/40">
+                <Dna className="w-4 h-4 text-teal-300" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h4 className="text-xs font-bold text-zinc-100 tracking-tight">
+                    Have multiple raw DNA files? (AncestryDNA + 23andMe + WGS)
+                  </h4>
+                  <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30 uppercase tracking-wider">
+                    Superkit Maker
+                  </span>
+                </div>
+                <p className="text-[11px] text-zinc-400 mt-0.5">
+                  Merge multiple kits into an enriched master superkit at <span className="text-teal-300 font-mono">merge.writteninthegenome.blog</span>.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://merge.writteninthegenome.blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-3.5 py-2 rounded-xl bg-teal-500/15 hover:bg-teal-500/25 text-teal-300 hover:text-teal-200 border border-teal-500/30 hover:border-teal-400/50 text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer shrink-0 whitespace-nowrap active:scale-95"
+              title="Open Superkit Maker: Merge multiple raw DNA kits into one superkit"
+            >
+              <Dna className="w-3.5 h-3.5 text-teal-400" />
+              <span>Launch Superkit Maker</span>
+              <ExternalLink className="w-3 h-3 text-teal-400/80" />
+            </a>
+          </div>
+
           {/* Benchmark Demo Specimen Action */}
           <div className="pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-zinc-400 text-xs">
