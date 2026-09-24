@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   BookOpen, Info, Code, Award, Landmark, Database, ChevronDown, ChevronUp, 
-  MessageCircle, Beaker, Shield, Search, Sparkles, CheckCircle2, User, 
+  MessageCircle, Beaker, Shield, Search, Sparkles, CheckCircle2, 
   HelpCircle, ExternalLink, Dna, Filter
 } from 'lucide-react';
 import { 
@@ -110,11 +110,10 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
       const inId = doc.id.toLowerCase().includes(q);
       const inEngine = doc.technical.solverEngine.toLowerCase().includes(q);
       const inDescription = doc.technical.description.toLowerCase().includes(q);
-      const inCustodian = doc.custodian.name.toLowerCase().includes(q);
       const inHeadline = doc.explainer.headline.toLowerCase().includes(q);
       const inReferences = doc.technical.references.some(r => r.toLowerCase().includes(q));
 
-      return inTitle || inId || inEngine || inDescription || inCustodian || inHeadline || inReferences;
+      return inTitle || inId || inEngine || inDescription || inHeadline || inReferences;
     });
   }, [searchQuery, categoryFilter]);
 
@@ -361,26 +360,6 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                         {mode === 'explainer' ? (
                           /* ─── PLAIN ENGLISH EXPLAINER ─── */
                           <div className="space-y-4 sm:space-y-6">
-                            {/* Custodian Dispatch */}
-                            <div className="p-4 sm:p-5 rounded-2xl bg-teal-500/[0.06] border border-teal-500/20 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-                              <div className="w-12 h-12 rounded-2xl bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shrink-0 text-teal-400 font-bold">
-                                <User className="w-6 h-6 text-teal-600 dark:text-teal-400" />
-                              </div>
-                              <div className="min-w-0">
-                                <div className="flex items-center gap-2 mb-0.5">
-                                  <span className="text-xs font-black text-slate-900 dark:text-white uppercase tracking-wider">
-                                    {doc.custodian.name}
-                                  </span>
-                                  <span className="text-[10px] font-mono text-teal-700 dark:text-teal-300 font-bold uppercase">
-                                    • {doc.custodian.role}
-                                  </span>
-                                </div>
-                                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
-                                  "{doc.custodian.dispatch}"
-                                </p>
-                              </div>
-                            </div>
-
                             {/* Headline */}
                             <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/10">
                               <div className="flex items-center gap-2 mb-2 text-teal-700 dark:text-teal-400">

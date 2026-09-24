@@ -76,6 +76,9 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({
                     <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">
                       ID: {doc.id}
                     </span>
+                    <span className="hidden sm:flex items-center gap-1.5 text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                      <Shield className="w-3 h-3" /> 100% Client-Side In-Memory
+                    </span>
                   </div>
                   <h2 className="text-base sm:text-lg md:text-xl font-display font-black text-white tracking-tight truncate mt-0.5">
                     {doc.title}
@@ -129,52 +132,9 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({
             </div>
           </div>
 
-          {/* Modal Body: Responsive Layout (flex-col on mobile, grid on desktop) */}
-          <div className="flex flex-col lg:grid lg:grid-cols-12 auto-rows-max items-start gap-4 sm:gap-6 py-4 sm:py-6 overflow-y-auto pr-1 flex-1 min-h-0 custom-scrollbar">
-            
-            {/* Left Column (lg:col-span-5): Custodian Dossier */}
-            <div className="w-full lg:col-span-5 tactile-3d-card p-4 sm:p-5 bg-black/40 border border-white/10 rounded-2xl flex flex-col relative overflow-hidden shrink-0">
-              {/* Scholar Header: Compact row on mobile, stacked column on desktop */}
-              <div className="flex flex-row lg:flex-col items-center lg:items-center text-left lg:text-center gap-3.5 sm:gap-4 w-full">
-                {/* Scholar Image in Cyber Frame */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-44 lg:h-44 rounded-2xl overflow-hidden border-2 border-cyan-400/30 shadow-[0_0_20px_rgba(6,182,212,0.2)] bg-slate-900 shrink-0 relative group">
-                  <img 
-                    src={doc.custodian.avatarUrl} 
-                    alt={doc.custodian.name} 
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                </div>
-
-                {/* Scholar Information */}
-                <div className="min-w-0 flex-1 lg:flex-initial">
-                  <div className="flex items-center gap-1.5 mb-1 lg:hidden">
-                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">
-                      Custodial Scholar
-                    </span>
-                  </div>
-                  <h3 className="font-display text-sm sm:text-base font-black text-white leading-tight">
-                    {doc.custodian.name}
-                  </h3>
-                  <p className="font-mono text-[11px] sm:text-xs font-bold text-cyan-400 mt-0.5 uppercase tracking-wider leading-snug">
-                    {doc.custodian.role}
-                  </p>
-                </div>
-              </div>
-
-              {/* Scholar Dispatch */}
-              <div className="p-3 sm:p-3.5 rounded-xl bg-white/[0.03] border-l-2 border-cyan-400 text-left text-xs text-slate-300 italic mt-3 lg:mt-4 leading-relaxed w-full">
-                "{doc.custodian.dispatch}"
-              </div>
-
-              {/* Security Pill */}
-              <div className="mt-3 lg:mt-4 flex items-center justify-center lg:justify-center gap-1.5 text-[9px] font-mono text-emerald-400 font-bold uppercase tracking-wider bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full w-fit self-start lg:self-center">
-                <Shield className="w-3.5 h-3.5" /> 100% Client-Side In-Memory
-              </div>
-            </div>
-
-            {/* Right Column (lg:col-span-7): Dynamic Content Area */}
-            <div className="w-full lg:col-span-7 space-y-4 sm:space-y-5">
+          {/* Modal Body: Full-Width Explainer & Technical Content */}
+          <div className="flex flex-col gap-4 sm:gap-6 py-4 sm:py-6 overflow-y-auto pr-1 flex-1 min-h-0 custom-scrollbar w-full">
+            <div className="w-full space-y-4 sm:space-y-5">
               {modalMode === 'explainer' ? (
                 /* Plain English Explainer Tab Content */
                 <div className="space-y-5 animate-fade-in">

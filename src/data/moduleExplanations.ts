@@ -25,7 +25,7 @@ export interface ModuleDocumentation {
   id: string;
   title: string;
   category: 'PRIMARY' | 'TOOLS';
-  custodian: ModuleCustodian;
+  custodian?: ModuleCustodian;
   explainer: PlainEnglishExplainer;
   technical: TechnicalMethodology;
 }
@@ -35,12 +35,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'profile',
     title: 'Scout Profile Summary',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Keolu Fox',
-      role: 'Indigenous Genomics & Data Sovereignty Fellow',
-      avatarUrl: '/assets/profile_icon.png',
-      dispatch: 'Genomic profiles must empower individuals with transparent self-knowledge rather than commercial commodification. We synthesize your ancestral tapestry with zero cloud telemetry, ensuring your biological inheritance remains sovereign.'
-    },
     explainer: {
       headline: 'A comprehensive, high-altitude view of your complete genetic signature.',
       analogy: 'Think of your genome like an ancestral library: the profile serves as the catalog index, summarizing which historical regional shelves contributed to your personal volume.',
@@ -78,12 +72,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'ancestry_oracle',
     title: 'Ancestry Oracle (High-Resolution Admixture)',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Fatimah Jackson',
-      role: 'Bioanthropologist & African Diaspora Lineage Lead',
-      avatarUrl: '/assets/oracle_icon.png',
-      dispatch: 'Human variation is a continuous gradient shaped by migration, trade, and resilience. We reject arbitrary racial typologies, using multi-locus statistical geometry to honor the depth of human migration histories.'
-    },
     explainer: {
       headline: 'Precise regional breakdown estimating your ancestral ties to modern populations worldwide.',
       analogy: 'Imagine your DNA as a watercolor painting: instead of guessing broad colors, the Oracle analyzes the individual pigments to identify which regional palettes blended together over centuries.',
@@ -126,12 +114,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'glossary',
     title: 'Population Reference Glossary',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Cheikh Anta Diop',
-      role: 'Historical Anthropologist & Paleontologist',
-      avatarUrl: '/assets/glossary_icon.png',
-      dispatch: 'To interpret genetic data accurately, we must understand the archaeological, linguistic, and ecological contexts that forged each population. Genetics without historical rigor yields meaningless abstractions.'
-    },
     explainer: {
       headline: 'An encyclopedic guide to every reference population, clan, and region analyzed by the engine.',
       analogy: 'Like an atlas accompanying an ancient travelogue, this glossary gives historical context to the names and labels that appear on your genetic reports.',
@@ -162,12 +144,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'chromosome_painter',
     title: 'Chromosome Painting Map',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Barbara McClintock',
-      role: 'Cytogeneticist & Chromosomal Dynamics Pioneer',
-      avatarUrl: '/assets/painter_icon.png',
-      dispatch: 'Chromosomes are dynamic mosaics of ancestral recombination. By examining physical chromatid blocks, we bear witness to the exact crossing-over events that wove multiple family lines into a single individual.'
-    },
     explainer: {
       headline: 'A chromosome-by-chromosome visual map revealing which ancestor passed down each section of your DNA.',
       analogy: 'Imagine each of your 22 chromosomes as a patchwork quilt: each colored block shows where your maternal and paternal lineages contributed distinct regional fabrics.',
@@ -209,12 +185,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'ancestry_scout',
     title: 'Scout Score (Raw Allele Frequency Matrix)',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Luigi Luca Cavalli-Sforza',
-      role: 'Population Geneticist & Gene Frequency Pioneer',
-      avatarUrl: '/assets/score_icon.png',
-      dispatch: 'Before complex statistical machine learning models were invented, allele frequencies directly tracked the grand migrations of humanity. Direct frequency comparison offers unvarnished, transparent ground truth.'
-    },
     explainer: {
       headline: 'A rapid, transparent calculation of raw allele sharing against global continental baselines.',
       analogy: 'Like checking the weather with a simple mercury thermometer instead of a supercomputer forecast: it gives you immediate, unadulterated readouts directly from the markers.',
@@ -256,12 +226,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'haplogroups',
     title: 'Lineage Phylogeographic Attribution',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Rick Kittles',
-      role: 'African Diaspora Geneticist & Lineage Archival Director',
-      avatarUrl: '/assets/haplogroups_icon.png',
-      dispatch: 'Uniparental DNA carries unbroken matrilineal and patrilineal lineages across tens of thousands of years. For descendants of enslaved or displaced peoples, these markers restore names and ancient geographies history attempted to erase.'
-    },
     explainer: {
       headline: 'Traces your direct maternal line (mtDNA) and paternal line (Y-DNA) back to our earliest ancestors.',
       analogy: 'Imagine a relay race spanning 3,000 generations: your mitochondrial DNA was handed directly mother-to-child, and Y-DNA father-to-son, like an unblemished family signet ring.',
@@ -299,12 +263,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'ancient_dna',
     title: 'Archaeological Coordinate Projection',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Svante Pääbo',
-      role: 'Nobel Laureate & Evolutionary Paleogenomicist',
-      avatarUrl: '/assets/ancient_icon.png',
-      dispatch: 'Ancient genomes are time capsules from deep human prehistory. By directly comparing your DNA with radiocarbon-dated fossils, we discover how hunter-gatherers, early pastoralists, and archaic hominins live on within our living biology.'
-    },
     explainer: {
       headline: 'Compares your DNA directly to ancient fossil skeletons unearthed by archaeologists.',
       analogy: 'Visiting a museum and finding that an ancient Bronze Age traveler or Ice Age hunter from 10,000 years ago carried the exact same genetic alleles as you.',
@@ -342,12 +300,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'health',
     title: 'Health & Clinical Risk Screening',
     category: 'PRIMARY',
-    custodian: {
-      name: 'Dr. Mary-Claire King',
-      role: 'Genomic Epidemiologist & BRCA Discovery Pioneer',
-      avatarUrl: '/assets/health_icon.png',
-      dispatch: 'Genomic health screening is a tool for agency, prevention, and lifestyle optimization. We provide clinical-grade pharmacogenomic context while safeguarding user privacy by ensuring all health calculations occur strictly in browser memory.'
-    },
     explainer: {
       headline: 'Screens your DNA for medication metabolism rates and polygenic wellness indicators.',
       analogy: 'Like an owner’s manual for your body’s enzymatic machinery: it tells you which medicines your liver clears quickly, and which may linger longer.',
@@ -385,12 +337,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'traits',
     title: 'Physical & Personal Traits Profile',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Rosalind Franklin',
-      role: 'Crystallographer & Structural Molecular Biologist',
-      avatarUrl: '/assets/traits_icon.png',
-      dispatch: 'Physical traits reflect the fascinating, intricate chemistry of cellular biology. Understanding how single nucleotide polymorphisms shape hair, taste, and endurance connects molecular science to our daily human experiences.'
-    },
     explainer: {
       headline: 'Explores how your genes influence observable physical features, nutrition, and daily habits.',
       analogy: 'Like finding the original blueprints for subtle features: why cilantro tastes like soap, why espresso hits you hard, or why your eye color turned out hazel.',
@@ -428,12 +374,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'blood',
     title: 'ABO & Rh Antigen Predictor Phenotyping',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Karl Landsteiner',
-      role: 'Nobel Laureate & Blood Group Discoverer',
-      avatarUrl: '/assets/blood_icon.png',
-      dispatch: 'Blood group antigens were the very first human genetic markers discovered. Decoding ABO and Rh types from genomic nucleotides demonstrates the profound elegance of Mendelian codominance.'
-    },
     explainer: {
       headline: 'Predicts your ABO blood type (A, B, AB, or O) and Rhesus factor (+ or -) from your raw DNA.',
       analogy: 'Like reading the molecular ID badge that your red blood cells wear on their surfaces, determining which types of transfusions they accept.',
@@ -471,12 +411,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'markers',
     title: 'Genomic Markers & Quality Control',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Nettie Stevens',
-      role: 'Cytogeneticist & Chromosomal Sex Determination Pioneer',
-      avatarUrl: '/assets/markers_icon.png',
-      dispatch: 'Data integrity is the bedrock of scientific truth. Before interpreting ancestral stories or health risks, we must rigorously audit raw microarray quality, call rates, and chromosomal coordinates.'
-    },
     explainer: {
       headline: 'Search, filter, and inspect every single genetic marker parsed from your file.',
       analogy: 'Like opening the hood of your car: while other screens show the dashboard dials, this screen lets you inspect the engine bolts, spark plugs, and individual raw parts.',
@@ -514,12 +448,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'rare_variants',
     title: 'Rare Variants & Unmapped Discoveries',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. David Reich',
-      role: 'Population Geneticist & Ancient Biomarker Investigator',
-      avatarUrl: '/assets/rare_variants_icon.png',
-      dispatch: 'Rare variants hold the key to unique ancestral adaptations and private family lineages. Identifying unusual genomic coordinates reveals the exceptional richness of individual genetic diversity.'
-    },
     explainer: {
       headline: 'Surfaces unusual, private, or rare alleles that are uncommon in standard population panels.',
       analogy: 'Like finding an antique misprinted coin in your pocket change: a rare marker that stands out from common currency.',
@@ -549,12 +477,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'kit_comparison',
     title: 'Multi-Kit Comparison Engine',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Sewall Wright',
-      role: 'Theoretical Population Geneticist & Inbreeding Metric Creator',
-      avatarUrl: '/assets/kit_comparison_icon.png',
-      dispatch: 'Genetic comparison across individuals illuminates shared parentage, cousinship, and historical kinship. We compute direct identity-by-state without uploading your loved ones’ data to commercial servers.'
-    },
     explainer: {
       headline: 'Compares two or more DNA kits side-by-side to determine kinship and shared traits.',
       analogy: 'Like overlaying two photographic transparencies on a light table to instantly spot where the lines match and where they diverge.',
@@ -591,12 +513,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'integrity',
     title: 'File & QC Integrity Engine',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Eric Lander',
-      role: 'Genomic Quality Control & Pipeline Verification Lead',
-      avatarUrl: '/assets/markers_icon.png',
-      dispatch: 'Genomic data integrity is the foundational bedrock of all downstream biological inference. Before interpreting ancestry or polygenic risk, we audit variant call rates, missingness, and karyotypic coverage to ensure analytical fidelity.'
-    },
     explainer: {
       headline: 'Verifies the quality, completeness, and platform authenticity of your raw DNA file.',
       analogy: 'Like a master mechanic inspecting an engine before a race: checking that all cylinders are firing, no parts are missing, and the fuel mixture is pure.',
@@ -641,12 +557,6 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
     id: 'methodology',
     title: 'Methodology, Privacy & Mathematical Foundations',
     category: 'TOOLS',
-    custodian: {
-      name: 'Dr. Rosalind Franklin',
-      role: 'Custodial Stewardship & Data Sovereignty Director',
-      avatarUrl: '/assets/oracle_icon.png',
-      dispatch: 'Genomic analysis must remain a personal human right, not a surveillance mechanism. Every equation, reference panel, and worker process inside Genotype Scout runs locally in your browser memory to guarantee military-grade genetic sovereignty.'
-    },
     explainer: {
       headline: 'Transparent documentation of our scientific formulas, privacy guarantees, and open-source models.',
       analogy: 'Like an open laboratory notebook: full recipe cards and ingredient lists, showing you exactly how every number on your screen was calculated.',
