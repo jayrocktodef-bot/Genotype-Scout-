@@ -908,6 +908,259 @@ export const SUBPOPULATION_GLOSSARY_DATA: PopulationGlossaryItem[] = [
     description: 'Kyrgyz, Uyghur, Altaian, and Siberian populations represent Silk Road and sub-Arctic Eurasian steppe nomads, exhibiting an ancient ~60/40 blend of East Asian and West Eurasian ancestries.',
     keyMarkers: ['Y-DNA R1a-Z93', 'C-M217', 'O-M122', 'N-M231'],
     haplogroupNotes: 'Y-DNA R1a-Z93, C-M217, N-M231; mtDNA D4, C4, G2, H, U.'
+  },
+
+  // ==========================================
+  // SOUTH ASIAN LINEAGES (SAS)
+  // ==========================================
+  {
+    code: 'GIH',
+    aliases: ['sgdp_gujarati', 'GUJARATI', 'Western_India_GIH', 'alfa_sas_gih'],
+    name: 'Gujarati Indian (GIH)',
+    category: 'South Asia',
+    geographicCenter: 'Gujarat, Western India (Kathiawar Peninsula, Gulf of Khambhat, Indus Valley Civilization perimeter: Lothal & Dholavira)',
+    historicalTimeline: 'Formed at the crossroads of the Mature Indus Valley Civilization (Harappan IVC, ~2600–1900 BCE), maritime Arabian Sea trade networks, and subsequent post-Harappan migrations. Carries Ancestral North Indian (ANI, ~60–65%) and Ancestral South Indian (ASI, ~35–40%) admixture with prominent Zagros-related Neolithic farmer and Steppe Bronze Age pastoralist components.',
+    migrationPath: [
+      'Southern Coastal Out-of-Africa migration across Arabian Sea coastline (~60,000–50,000 years ago)',
+      'Indigenous Ancient Ancestral South Indian (AASI) hunter-gatherer colonization of the subcontinent',
+      'Zagros-related pastoralist & farmer expansion into Indus Valley & Gujarat (~7000–4000 BCE)',
+      'Indo-Aryan Steppe MLBA pastoralist gene flow into Northern & Western India (~2000–1500 BCE)'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Plant-Based Polyunsaturated Fatty Acid Metabolism', gene: 'FADS1 / FADS2', rsid: 'rs174546', impact: 'Strong positive selection for FADS insertion alleles enabling efficient synthesis of omega-3 and omega-6 LCPUFAs from plant-derived precursors under strict vegetarian diets.' },
+      { trait: 'Light Skin Depigmentation', gene: 'SLC24A5', rsid: 'rs1426654', impact: 'Near-fixation of the derived A111T allele introduced via West Eurasian/Zagros-related farmer gene flow.' },
+      { trait: 'Lactase Persistence (Pastoralist)', gene: 'MCM6 / LCT', rsid: 'rs4988235', impact: 'Intermediate frequency of European Steppe -13910*T allele and camel-milk -13915*G variant in pastoral communities (Rabari, Bharwad).' }
+    ],
+    description: 'Gujarati Indian (GIH) represents Western Indo-Aryan populations of Gujarat. Exhibits high Zagros-related farmer ancestry from the Indus Valley Civilization substrate, coupled with substantial Steppe pastoralist ancestry (ANI) and indigenous South Asian hunter-gatherer (AASI) roots. Culturally distinguished by extensive historical maritime trade across the Indian Ocean.',
+    keyMarkers: ['rs174546-C', 'rs1426654-A', 'rs4988235-T', 'Y-DNA J2a-M410', 'Y-DNA R1a-Z93', 'Y-DNA L-M20'],
+    haplogroupNotes: 'Y-DNA: High frequencies of J2a-M410, R1a-Z93, L-M20, and H-M69; mtDNA: M-clades (M3, M4, M5), U7, U2, W.',
+    empiricalSource: { dataset: '1000 Genomes High-Coverage 30x', accession: 'IGSR Phase 3 / PRJEB31736', sampleSize: 103, admixtureBreakdown: '62% ANI (38% Indus/Zagros + 24% Steppe MLBA), 38% ASI (AASI)' }
+  },
+  {
+    code: 'PJL',
+    aliases: ['sgdp_punjabi', 'PUNJABI', 'Indus_Basin_PJL', 'hgdp_punjabi'],
+    name: 'Punjabi (PJL)',
+    category: 'South Asia',
+    geographicCenter: 'Punjab Region, Indus River & Five Tributaries (Lahore, Rawalpindi, Amritsar, Doaba, Potohar)',
+    historicalTimeline: 'Epitomizes the primary northwestern gateway and heartland of Vedic civilization, the Harappan Indus Valley Civilization (Harappa core site), and Indo-Aryan Steppe expansions (~1900–1200 BCE). Features among the highest Steppe MLBA pastoralist (~25–35%) and Indus/Zagros farmer (~45–55%) ancestry proportions in South Asia.',
+    migrationPath: [
+      'Early Eurasian Out-of-Africa migration across southern Asian arc (~60,000 years ago)',
+      'Indus Valley Neolithic & Bronze Age agricultural civilization (~7000–1900 BCE)',
+      'Bronze Age Central Asian Steppe pastoralist expansion (Indo-Iranian / Sintashta-Andronovo, ~1900–1200 BCE)',
+      'Post-Iron Age historical influxes from Greco-Bactrian, Saka (Scythian), Kushan, and Turkic-Iranian empires'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Lactase Persistence (Dairy Diet)', gene: 'MCM6 / LCT', rsid: 'rs4988235', impact: 'High frequency (~25-35%) of European-derived -13910*T allele driven by thousands of years of intensive cattle pastoralism and dairy consumption.' },
+      { trait: 'Depigmentation', gene: 'SLC24A5', rsid: 'rs1426654', impact: 'Fixation (>95%) of the light pigmentation A111T allele.' },
+      { trait: 'Metabolic Adaptation', gene: 'TCF7L2', rsid: 'rs7903146', impact: 'Genetic risk locus under complex metabolic selection reflecting ancestral boom-and-bust famine cycles.' }
+    ],
+    description: 'Punjabi in Lahore (PJL) represents the northwestern Indo-Aryan population of the fertile Indus river system. Autosomal structure is characterized by elevated Ancestral North Indian (ANI) ancestry, with robust Steppe pastoralist (R1a-Z93) and Neolithic Iranian/BMAC components, reflecting millennia as South Asia’s primary cultural and genetic transit corridor.',
+    keyMarkers: ['rs4988235-T', 'rs1426654-A', 'Y-DNA R1a-Z93', 'Y-DNA J2-M172', 'Y-DNA L1a-M27'],
+    haplogroupNotes: 'Y-DNA: Dominant R1a-Z93 (R1a1a), J2a-M410, L-M20, R2a-M124; mtDNA: U7, W, R0, M30, HV.',
+    empiricalSource: { dataset: '1000 Genomes High-Coverage 30x', accession: 'IGSR Phase 3 / PRJEB31736', sampleSize: 96, admixtureBreakdown: '72% ANI (42% Indus/Zagros + 30% Steppe MLBA), 28% ASI (AASI)' }
+  },
+  {
+    code: 'BEB',
+    aliases: ['sgdp_bengali', 'BENGALI', 'Bengal_Delta_BEB'],
+    name: 'Bengali (BEB)',
+    category: 'South Asia',
+    geographicCenter: 'Bengal Delta, Lower Ganges-Brahmaputra Basin (Bangladesh & West Bengal, Sundarbans)',
+    historicalTimeline: 'Formed through the synthesis of Gangetic Indo-Aryan agrarian migrations with indigenous Austroasiatic (Munda-related) and Tibeto-Burman populations (~300 BCE–1200 CE). Unique among major South Asian cohorts for exhibiting significant East Asian/Southeast Asian admixture (~12–18%) alongside core South Asian ANI/ASI ancestry.',
+    migrationPath: [
+      'Indigenous South Asian hunter-gatherer lineage (AASI) colonization of eastern subcontinent',
+      'Austroasiatic (Munda) rice agriculturalist migration from Southeast Asia (~2500–1500 BCE)',
+      'Indo-Aryan Gangetic expansion eastward along the Ganges basin (~500 BCE–500 CE)',
+      'Tibeto-Burman gene flow across Himalayan and Arakan mountain corridors'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Arsenic Metabolism Adaptation', gene: 'AS3MT', rsid: 'rs750373', impact: 'Strong positive selection for protective arsenic-methylating haplotypes in the Bengal Delta, adapted to geogenic arsenic in groundwater aquifers.' },
+      { trait: 'Malaria Resistance (Thalassemia)', gene: 'HBB', rsid: 'rs334', impact: 'High endemic carriage of beta-thalassemia and HbE mutations conferring protection against Plasmodium falciparum malaria in deltaic wetlands.' },
+      { trait: 'Vegetarian/Fish Polyunsaturated Fatty Acid Processing', gene: 'FADS1 / FADS2', rsid: 'rs174546', impact: 'Allelic balance adapted to riverine and floodplain subsistence.' }
+    ],
+    description: 'Bengali in Bangladesh (BEB) represents the easternmost Indo-Aryan population of South Asia in the massive Ganges-Brahmaputra delta. Distinguishable by ~15% East/Southeast Asian admixture derived from Austroasiatic and Tibeto-Burman contacts, unique environmental adaptations to deltaic arsenic, and balanced ANI/ASI ancestry.',
+    keyMarkers: ['rs750373-G', 'rs1426654-A', 'Y-DNA R1a-Z93', 'Y-DNA O2-M122', 'Y-DNA H1a-M82'],
+    haplogroupNotes: 'Y-DNA: Diverse blend of R1a-Z93, H-M69, O2a-M95 (Austroasiatic), O-M122 (East Asian), and J2a; mtDNA: M-subclades (M31, M35, M49), U2, R7.',
+    empiricalSource: { dataset: '1000 Genomes High-Coverage 30x', accession: 'IGSR Phase 3 / PRJEB31736', sampleSize: 86, admixtureBreakdown: '52% ANI/ASI South Asian, 33% AASI, 15% Austroasiatic/East Asian' }
+  },
+  {
+    code: 'ITU',
+    aliases: ['TELUGU', 'Deccan_Dravidian_ITU', 'sgdp_kapu', 'sgdp_madiga', 'sgdp_mala', 'sgdp_relli', 'sgdp_yadava'],
+    name: 'Indian Telugu (ITU)',
+    category: 'South Asia',
+    geographicCenter: 'Deccan Plateau, Andhra Pradesh & Telangana (Godavari and Krishna River Basins)',
+    historicalTimeline: 'Ancient Dravidian-speaking lineage of the Deccan Plateau shaped by the expansion of megalithic culture, early iron working (~1200 BCE), and historic dynasties (Satavahana, Kakatiya). Carries a canonical South Asian baseline with balanced Ancestral South Indian (ASI, ~50–60%) and Ancestral North Indian (ANI, ~40–50%) proportions.',
+    migrationPath: [
+      'Pleistocene Southern Coastal migration and deep AASI hunter-gatherer presence in the Deccan',
+      'Neolithic-Chalcolithic agricultural settlements in Krishna-Tungabhadra basins',
+      'Deccan Dravidian megalithic expansion (~1200–300 BCE)',
+      'Moderate northern ANI gene flow along historical trans-peninsular trade routes'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Skin Pigmentation Regulation', gene: 'SLC24A5', rsid: 'rs1426654', impact: 'Intermediate allele frequencies balancing photoprotection against intense tropical Deccan UV radiation with northern West Eurasian alleles.' },
+      { trait: 'G6PD Deficiency (Malaria Defense)', gene: 'G6PD', rsid: 'rs1050828', impact: 'G6PD Mediterranean and Mahidol variants under natural selection against endemic vivax and falciparum malaria.' },
+      { trait: 'Lipid & Glucose Homeostasis', gene: 'FADS1', rsid: 'rs174546', impact: 'High frequency of derived vegetarian haplotype accommodating pulse- and millet-dominated traditional diets.' }
+    ],
+    description: 'Indian Telugu (ITU) represents the central Dravidian linguistic core of the Deccan Plateau. Serves as a vital reference for mainland peninsular South Asia, balancing substantial indigenous South Asian (AASI) hunter-gatherer heritage with Indus Valley-related agricultural ancestry.',
+    keyMarkers: ['rs1426654-A', 'rs174546-C', 'Y-DNA H1a-M82', 'Y-DNA L1a-M27', 'Y-DNA R1a-Z93'],
+    haplogroupNotes: 'Y-DNA: Highly enriched in indigenous South Asian H-M69 (H1a-M82) and L-M20 (L1a), alongside R1a-Z93 and J2; mtDNA: M-lineages (M3, M5, M30, M33) >70%, U2, R6.',
+    empiricalSource: { dataset: '1000 Genomes High-Coverage 30x', accession: 'IGSR Phase 3 / PRJEB31736', sampleSize: 102, admixtureBreakdown: '45% ANI (28% Indus + 17% Steppe), 55% ASI (AASI)' }
+  },
+  {
+    code: 'STU',
+    aliases: ['TAMIL', 'Sri_Lankan_Tamil_STU', 'Insular_Dravidian'],
+    name: 'Sri Lankan Tamil (STU)',
+    category: 'South Asia',
+    geographicCenter: 'Northern & Eastern Sri Lanka (Jaffna Peninsula, Vanni, Batticaloa) & Coromandel Coast of Tamil Nadu',
+    historicalTimeline: 'Ancient Southern Dravidian insular population connected across the Palk Strait to Tamilakam maritime culture. Preserves one of the highest proportions of Ancestral South Indian (ASI, ~65–75%) and indigenous Ancient Ancestral South Indian (AASI) hunter-gatherer ancestry among 1000 Genomes cohorts.',
+    migrationPath: [
+      'Pleistocene coastal foraging across former land bridges linking Tamil Nadu and Sri Lanka',
+      'Microlithic hunter-gatherer cultures (Balangoda and South Indian Mesolithic)',
+      'Iron Age Dravidian Megalithic culture expansion across Palk Strait (~1000–300 BCE)',
+      'Maritime commercial interactions with Southeast Asia, Rome, and the Indian Ocean rim'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'High UV Melanin Photoprotection', gene: 'SLC24A5 / TYR', rsid: 'rs1426654', impact: 'Retention of ancestral melanin-protective alleles under high UV tropical insular solar radiation.' },
+      { trait: 'Hemoglobinopathy (Malaria Selection)', gene: 'HBB', rsid: 'rs334', impact: 'Hemoglobin E and beta-thalassemia protective selection in tropical lowland and lagoon environments.' },
+      { trait: 'Arsenic/Heavy Metal Cleansing', gene: 'AS3MT', rsid: 'rs750373', impact: 'Aquifer and tropical soil mineral clearance adaptations.' }
+    ],
+    description: 'Sri Lankan Tamil (STU) represents southern Dravidian populations of northern Sri Lanka and adjacent coastal Tamil Nadu. Characterized by elevated Ancestral South Indian (ASI) and AASI hunter-gatherer heritage, minimal Steppe pastoralist admixture, and enduring genetic links to the earliest South Asian paleolithic settlers.',
+    keyMarkers: ['rs1426654-G', 'rs174546-C', 'Y-DNA H1a-M82', 'Y-DNA L1a-M27', 'mtDNA M'],
+    haplogroupNotes: 'Y-DNA: Heavily dominated by indigenous Indian H-M69 (H1a), L-M20, and C1b-M356; mtDNA: Overwhelmingly macro-haplogroup M (M3, M4, M5, M38), U2, R30.',
+    empiricalSource: { dataset: '1000 Genomes High-Coverage 30x', accession: 'IGSR Phase 3 / PRJEB31736', sampleSize: 102, admixtureBreakdown: '32% ANI (22% Indus + 10% Steppe), 68% ASI (AASI)' }
+  },
+  {
+    code: 'sgdp_kalash',
+    aliases: ['hgdp_kalash', 'KALASH', 'Chitral_Kalash', 'Hindu_Kush_Isolate'],
+    name: 'Kalash of Chitral (Hindu Kush)',
+    category: 'South Asia',
+    geographicCenter: 'Chitral District, Khyber Pakhtunkhwa, Pakistan (Bumburet, Rumbur, Birir valleys in the Hindu Kush)',
+    historicalTimeline: 'The most genetically isolated population in South Asia. Linguistic and cultural isolate practicing ancient Indo-Aryan polytheistic traditions. Population genetics demonstrates extreme isolation and genetic drift with zero external gene flow over the past ~2,000–3,000 years, preserving an unadmixed ancient West Eurasian/Indo-Iranian branch.',
+    migrationPath: [
+      'Bronze Age Indo-Iranian pastoralist migrations through the Pamir-Karakoram and Hindu Kush valleys (~2000–1500 BCE)',
+      'Geographic confinement within deep glacial mountain valleys of Chitral',
+      'Extreme endogamy and genetic isolation preventing post-Iron Age gene flow from external Islamic, Hellenistic, or Turkic sources'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'High-Altitude Hypoxia Resilience', gene: 'EPAS1 / EGLN1', impact: 'Physiological adaptations to high-altitude mountain life in the steep Hindu Kush gorges (2,000–4,000m).' },
+      { trait: 'Depigmentation', gene: 'SLC24A5 / HERC2', rsid: 'rs1426654', impact: 'High rates of light pigmentation, blue/green eyes, and light hair resulting from West Eurasian Steppe legacy and localized genetic drift.' }
+    ],
+    description: 'The Kalash are an extraordinary paleogenomic isolate inhabiting the remote Hindu Kush valleys of Chitral, Pakistan. Celebrated in population genetics as an outgroup that split from general Eurasian populations thousands of years ago, maintaining extreme homozygosity, high endogamy, and preserving ancient Indo-European cultural and linguistic rites.',
+    keyMarkers: ['rs1426654-A', 'rs12913832-G', 'Y-DNA L3a-PK3', 'Y-DNA R1a-Z93', 'Y-DNA G2a-P15'],
+    haplogroupNotes: 'Y-DNA: Unique Kalash-specific clade L1c-PK3 (L3a), R1a-Z93, G2a-P15, J2; mtDNA: Ancient pre-HV, U4, U2e, H.',
+    empiricalSource: { dataset: 'Simons Genome Diversity Project & HGDP', accession: 'SGDP Mallick et al. 2016 / HGDP-CEPH', sampleSize: 25, admixtureBreakdown: 'Deep isolate: ~65% West Eurasian Steppe/Zagros isolate + 35% ancient local substrate, drift-shifted' }
+  },
+  {
+    code: 'sgdp_paniya',
+    aliases: ['sgdp_irula', 'PANIYA', 'IRULA', 'Western_Ghats_AASI', 'AASI_Reference_Proxy'],
+    name: 'Paniya & Irula (Western Ghats - AASI Proxy)',
+    category: 'South Asia',
+    geographicCenter: 'Wayanad, Nilgiri Hills & Western Ghats (Kerala & Tamil Nadu border rainforests)',
+    historicalTimeline: 'Regarded in human population genetics (Narasimhan et al. Science 2019, Reich et al. 2009) as the cleanest modern proxy for Ancient Ancestral South Indian (AASI) ancestry (~70–75% AASI). Forest-dwelling hunter-gatherer tribal community that retained deep endogamy with minimal West Eurasian or Steppe pastoralist admixture.',
+    migrationPath: [
+      'Primary Out-of-Africa Pleistocene coastal migration into the Indian subcontinent (~60,000–50,000 years ago)',
+      'Deep Paleolithic indigenous hunter-gatherer adaptation to Western Ghats rainforest biodiversity',
+      'Persistence in forested highland refugia avoiding agrarian assimilation by Neolithic and Bronze Age expansions'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Dense Melanin Photoprotection', gene: 'SLC24A5 (Ancestral)', rsid: 'rs1426654', impact: 'Near-100% preservation of ancestral G allele maintaining high eumelanin density for maximum UV protection under dense tropical canopy.' },
+      { trait: 'Tropical Parasite & Pathogen Clearance', gene: 'HLA-A / HLA-B', impact: 'Specialized MHC class I and II allele repertoires optimized for endemic tropical jungle arboviruses and parasites.' },
+      { trait: 'Arboreal & Forest Locomotor Biometrics', gene: 'ACTN3', rsid: 'rs1815739', impact: 'Musculoskeletal adaptations to endurance foraging in rugged montane rainforest terrain.' }
+    ],
+    description: 'The Paniya and Irula of the Nilgiri Hills and Western Ghats represent the primary scientific benchmark for Ancient Ancestral South Indian (AASI) paleogenomics. Possessing over 70% indigenous South Asian hunter-gatherer ancestry, they provide the essential baseline for modeling the population architecture of all South Asians.',
+    keyMarkers: ['rs1426654-G', 'Y-DNA H1a-M82', 'Y-DNA C1b-M356', 'mtDNA M2', 'mtDNA M3'],
+    haplogroupNotes: 'Y-DNA: Overwhelmingly indigenous South Asian H1a-M82 (H-M69) and C1b-M356; mtDNA: Almost exclusively basal South Asian macro-haplogroup M (M2, M3, M6, M33).',
+    empiricalSource: { dataset: 'Simons Genome Diversity Project', accession: 'SGDP Mallick et al. Nature 2016', sampleSize: 14, admixtureBreakdown: '74% AASI (Indigenous South Asian Hunter-Gatherer), 26% Indus/Zagros farmer' }
+  },
+  {
+    code: 'sgdp_pathan',
+    aliases: ['hgdp_pathan', 'PATHAN', 'PASHTUN', 'Northwest_Frontier_Pathan'],
+    name: 'Pashtun / Pathan (Northwest Frontier)',
+    category: 'South Asia',
+    geographicCenter: 'Khyber Pakhtunkhwa & FATA (Peshawar, Khyber Pass, Hindu Kush foothills, Swat Valley)',
+    historicalTimeline: 'Eastern Iranian-speaking population inhabiting the historic gateway between Central Asia and the Indian subcontinent. Deeply shaped by Bronze Age Steppe MLBA pastoralist migrations (Andronovo/Sintashta), the Bactria-Margiana Archaeological Complex (BMAC), and historical Silk Road empires (Gandhara, Kushan).',
+    migrationPath: [
+      'Out-of-Africa migration through Iranian plateau into Central/South Asia',
+      'BMAC (Bactria-Margiana) agricultural interactions (~2200–1700 BCE)',
+      'Indo-Iranian pastoralist migrations across Hindu Kush passes (~1800–1200 BCE)',
+      'Formation of Eastern Iranian ethnolinguistic lineages across the historic Durand Line'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Lactase Persistence', gene: 'MCM6 / LCT', rsid: 'rs4988235', impact: 'Moderate-to-high carriage of -13910*T and Middle Eastern -13915*G lactase persistence alleles suited to pastoral nomadism.' },
+      { trait: 'Depigmentation', gene: 'SLC24A5 / SLC45A2', rsid: 'rs1426654', impact: 'High frequency of derived West Eurasian depigmentation alleles.' },
+      { trait: 'Cold & Montane Adaptation', gene: 'TRPM8', impact: 'Adaptive thermoregulatory variants for severe winter temperatures in rugged highland terrain.' }
+    ],
+    description: 'Pashtuns (Pathan) inhabit the rugged frontier between South and Central Asia. Genetically characterized by prominent West Eurasian Steppe pastoralist ancestry (~30–35%), Neolithic Iranian/BMAC components, and moderate South Asian substrate, reflecting their status as guardians of the historic Khyber Pass.',
+    keyMarkers: ['rs1426654-A', 'rs4988235-T', 'Y-DNA R1a-Z93', 'Y-DNA G2a-P15', 'Y-DNA Q1b-M346'],
+    haplogroupNotes: 'Y-DNA: Dominated by R1a-Z93 (R1a-M198), G2a, Q-M242, and J2a; mtDNA: West Eurasian U7, W, HV, H, alongside indigenous M clades.',
+    empiricalSource: { dataset: 'Simons Genome Diversity Project & HGDP', accession: 'SGDP Mallick et al. 2016 / HGDP-CEPH', sampleSize: 26, admixtureBreakdown: '82% West Eurasian/Central Asian (35% Steppe MLBA + 47% Iran/BMAC), 18% AASI/ASI' }
+  },
+  {
+    code: 'sgdp_brahmin',
+    aliases: ['BRAHMIN', 'Gangetic_Brahmin', 'Indo_Aryan_Priestly_Lineage'],
+    name: 'North Indian Brahmin (Gangetic Plain)',
+    category: 'South Asia',
+    geographicCenter: 'Northern India, Gangetic Plain (Uttar Pradesh, Bihar, Uttarakhand, Haryana)',
+    historicalTimeline: 'Priestly and scholastic lineage of northern Indo-Aryan society whose genetic profile was extensively analyzed in Reich et al. Nature 2009 and Narasimhan et al. Science 2019. Demonstrates the highest proportion of Central Asian Bronze Age Steppe pastoralist ancestry (Steppe MLBA, ~30–40%) and Y-DNA R1a-Z93 (subclade R1a-L657) among northern South Asians.',
+    migrationPath: [
+      'Out-of-Africa expansion into northern Eurasian Steppe corridor',
+      'Sintashta-Andronovo Bronze Age pastoralist expansion (~2000–1600 BCE)',
+      'Indo-Aryan migration into the Saptasindhu and upper Gangetic plain (~1500–1000 BCE)',
+      'Rigvedic cultural codification and strict jati/varna endogamy establishing sharp genetic boundaries'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Lactase Persistence (Dairy Diet)', gene: 'MCM6 / LCT', rsid: 'rs4988235', impact: 'Enriched for lactase persistence mutations linked to dairy-rich ritual and dietary practices (ghee, milk, curd).' },
+      { trait: 'Plant-Based Lipid Desaturation', gene: 'FADS1', rsid: 'rs174546', impact: 'Fixation of vegetarian-adapted FADS1 haplotype for omega-3 synthesis.' },
+      { trait: 'Light Pigmentation', gene: 'SLC24A5', rsid: 'rs1426654', impact: 'Fixation (>95%) of derived light skin allele.' }
+    ],
+    description: 'North Indian Brahmins exhibit the highest Steppe pastoralist genetic component (Ancestral North Indian / ANI) in mainland India, coupled with strong strict endogamy instituted during the Vedic period. Features prominent R1a-L657 patrilineages and classic Indo-European cultural and linguistic transmission.',
+    keyMarkers: ['rs4988235-T', 'rs1426654-A', 'rs174546-C', 'Y-DNA R1a-L657', 'Y-DNA J2a'],
+    haplogroupNotes: 'Y-DNA: Extremely enriched in R1a-Z93 (specifically Indo-Aryan branch R1a-L657 >60%), J2a-M410, R2; mtDNA: U7, W, M3, M30, R8.',
+    empiricalSource: { dataset: 'Simons Genome Diversity Project & Reich Lab', accession: 'SGDP Mallick et al. 2016 / Narasimhan et al. 2019', sampleSize: 22, admixtureBreakdown: '78% ANI (36% Steppe MLBA + 42% Indus/Zagros), 22% ASI (AASI)' }
+  },
+  {
+    code: 'sgdp_brahui',
+    aliases: ['sgdp_balochi', 'hgdp_brahui', 'hgdp_balochi', 'BRAHUI', 'BALOCHI', 'Balochistan_Plateau'],
+    name: 'Brahui & Balochi (Balochistan Plateau)',
+    category: 'South Asia',
+    geographicCenter: 'Balochistan Plateau (Quetta, Kalat, Makran Coast, Chagai Hills, Pakistan & Southeastern Iran)',
+    historicalTimeline: 'The Brahui speak a Dravidian language in the midst of Iranian and Indo-Aryan tongues, representing either an archaic relic of the pre-Indo-Aryan Indus/Zagros farmer network or an early medieval migration. Genetically, both Brahui and Balochi harbor the highest proportion of Zagros Neolithic-related Iranian farmer ancestry (~60–70%) of any population in South Asia, coupled with low Steppe and moderate AASI admixture.',
+    migrationPath: [
+      'Pleistocene expansion across Zagros mountain corridor into Balochistan',
+      'Early Neolithic pastoralist colonization of Mehrgarh (~7000–5500 BCE)',
+      'Development of Indus-Balochistan agricultural communities (Kulli and Mehrgarh cultures)',
+      'Centuries of arid highland pastoralism and tribal endogamy maintaining ancestral Zagros-related genetic core'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'Arid Desert & Heat Endurance', gene: 'AGTR1 / ACE', impact: 'Renin-angiotensin system variations optimized for fluid retention and heat tolerance in hyper-arid desert basins.' },
+      { trait: 'Lactase Persistence', gene: 'MCM6 / LCT', rsid: 'rs145946845', impact: 'Presence of both -13910*T and Afro-Asiatic/Arabian -13915*G lactase mutations reflecting sheep, goat, and camel herding.' },
+      { trait: 'Depigmentation', gene: 'SLC24A5', rsid: 'rs1426654', impact: 'Near-fixation of the derived West Eurasian A111T allele.' }
+    ],
+    description: 'Brahui and Balochi of the arid Balochistan plateau are critical for understanding the peopling of South Asia. They harbor the closest modern autosomal affinity to the Neolithic farmers of Iran and the ancient inhabitants of Mehrgarh, representing the dominant ancestral component of the Indus Valley Civilization.',
+    keyMarkers: ['rs1426654-A', 'rs145946845-G', 'Y-DNA J2a-M410', 'Y-DNA L1a-M27', 'Y-DNA R1a-Z93'],
+    haplogroupNotes: 'Y-DNA: J2a-M410, L1a-M27, R1a-Z93, G2a; mtDNA: U7, W, HV, J1, M30.',
+    empiricalSource: { dataset: 'Simons Genome Diversity Project & HGDP', accession: 'SGDP Mallick et al. 2016 / HGDP-CEPH', sampleSize: 45, admixtureBreakdown: '66% Zagros Neolithic Iranian farmer, 18% Steppe MLBA, 16% AASI' }
+  },
+  {
+    code: 'sgdp_burusho',
+    aliases: ['hgdp_burusho', 'BURUSHO', 'Hunza_Isolate', 'Karakoram_Burushaski'],
+    name: 'Burusho of Hunza (Karakoram)',
+    category: 'South Asia',
+    geographicCenter: 'Hunza, Nagar, and Yasin Valleys, Gilgit-Baltistan, Pakistan (Karakoram Mountain Range)',
+    historicalTimeline: 'Famed linguistic isolate speaking Burushaski, a language unrelated to Indo-European, Sino-Tibetan, or Dravidian families. Situated in high Karakoram glacial valleys beneath Rakaposhi and Ultar peaks. Demonstrates unique paleogenomic structure with elevated ancient northern Eurasian and Central Asian affinity, preserved through rigorous geographic isolation and terraced alpine agriculture.',
+    migrationPath: [
+      'Upper Paleolithic colonization of the inner Karakoram mountain valleys',
+      'Persistence of an unclassified pre-Indo-European linguistic substrate in northern Pakistan',
+      'Contact with ancient Silk Road mountain bypass routes connecting Gandhara with the Tarim Basin'
+    ],
+    evolutionaryAdaptations: [
+      { trait: 'High-Altitude Hypoxia Resistance', gene: 'EPAS1 / EGLN1', impact: 'Cardiovascular and hematocrit regulation for permanent habitation at elevations exceeding 2,500 meters.' },
+      { trait: 'Cold Climate Metabolism', gene: 'UCP1 / PPARGC1A', impact: 'Brown adipose tissue thermogenesis adaptations for sub-zero alpine Karakoram winters.' },
+      { trait: 'Longevity & Oxidative Stress Defense', gene: 'FOXO3', rsid: 'rs2802292', impact: 'Genetic variants promoting cellular autophagy and cardiovascular longevity in traditional alpine agriculturalists.' }
+    ],
+    description: 'The Burusho of the Hunza Valley speak the extraordinary Burushaski language isolate in the Karakoram mountains. Renowned for longevity and mountain endurance, their autosomal profile reflects a preserved pre-Indo-European substrate with balanced West and Central Asian paleogenomic roots.',
+    keyMarkers: ['rs1426654-A', 'rs2802292-G', 'Y-DNA R2a-M124', 'Y-DNA R1a-Z93', 'Y-DNA C2-M217'],
+    haplogroupNotes: 'Y-DNA: High frequency of R2a-M124, R1a-Z93, J2, and C2-M217; mtDNA: U7, W, HV, A, D4 (showing minor Central/East Asian mountain contact).',
+    empiricalSource: { dataset: 'Simons Genome Diversity Project & HGDP', accession: 'SGDP Mallick et al. 2016 / HGDP-CEPH', sampleSize: 24, admixtureBreakdown: '60% West Eurasian (Zagros + Steppe), 25% Ancient North Eurasian / Central Asian, 15% AASI' }
   }
 ];
 

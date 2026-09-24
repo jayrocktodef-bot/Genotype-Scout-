@@ -169,7 +169,7 @@ const EXACT_POPULATION_CONTINENT_MAP: Record<string, string> = {
   'filipino_am': 'East Asian',
   'vietnamese_am': 'East Asian',
 
-  // 1000 Genomes South Asian
+  // 1000 Genomes, SGDP, HGDP South Asian
   'beb': 'South Asian',
   'gih': 'South Asian',
   'itu': 'South Asian',
@@ -178,6 +178,50 @@ const EXACT_POPULATION_CONTINENT_MAP: Record<string, string> = {
   'sas': 'South Asian',
   'sas_gnomad': 'South Asian',
   'alfa_sas': 'South Asian',
+  'sgdp_brahui': 'South Asian',
+  'sgdp_balochi': 'South Asian',
+  'sgdp_sindhi': 'South Asian',
+  'sgdp_punjabi': 'South Asian',
+  'sgdp_bengali': 'South Asian',
+  'sgdp_brahmin': 'South Asian',
+  'sgdp_kapu': 'South Asian',
+  'sgdp_madiga': 'South Asian',
+  'sgdp_mala': 'South Asian',
+  'sgdp_relli': 'South Asian',
+  'sgdp_yadava': 'South Asian',
+  'sgdp_irula': 'South Asian',
+  'sgdp_paniya': 'South Asian',
+  'sgdp_kalash': 'South Asian',
+  'sgdp_khonda': 'South Asian',
+  'sgdp_khonda_dora': 'South Asian',
+  'sgdp_makrani': 'South Asian',
+  'sgdp_burusho': 'South Asian',
+  'sgdp_kusunda': 'South Asian',
+  'sgdp_pathan': 'South Asian',
+  'hgdp_kalash': 'South Asian',
+  'hgdp_sindhi': 'South Asian',
+  'hgdp_pathan': 'South Asian',
+  'hgdp_balochi': 'South Asian',
+  'hgdp_brahui': 'South Asian',
+  'hgdp_makrani': 'South Asian',
+  'hgdp_burusho': 'South Asian',
+  'bengali': 'South Asian',
+  'punjabi': 'South Asian',
+  'gujarati': 'South Asian',
+  'tamil': 'South Asian',
+  'telugu': 'South Asian',
+  'brahmin': 'South Asian',
+  'sindhi': 'South Asian',
+  'pathan': 'South Asian',
+  'pashtun': 'South Asian',
+  'kalash': 'South Asian',
+  'balochi': 'South Asian',
+  'brahui': 'South Asian',
+  'makrani': 'South Asian',
+  'burusho': 'South Asian',
+  'paniya': 'South Asian',
+  'irula': 'South Asian',
+  'kusunda': 'South Asian',
 
   // 1000 Genomes / Admixed & Indigenous American
   'pel': 'Indigenous American',
@@ -405,15 +449,18 @@ export const assignContinent = (name: string, popCode?: string, regionHint?: str
     code.startsWith('sgdp_punjabi') || code.startsWith('sgdp_bengali') || code.startsWith('sgdp_brahmin') ||
     code.startsWith('sgdp_kapu') || code.startsWith('sgdp_madiga') || code.startsWith('sgdp_mala') ||
     code.startsWith('sgdp_relli') || code.startsWith('sgdp_yadava') || code.startsWith('sgdp_irula') ||
-    code.startsWith('sgdp_kalash') || code.startsWith('sgdp_khonda') || code.startsWith('sgdp_makrani') ||
-    code.startsWith('sgdp_burusho') || code.startsWith('sgdp_kusunda') || code.startsWith('sgdp_pathan') ||
+    code.startsWith('sgdp_paniya') || code.startsWith('sgdp_kalash') || code.startsWith('sgdp_khonda') ||
+    code.startsWith('sgdp_makrani') || code.startsWith('sgdp_burusho') || code.startsWith('sgdp_kusunda') ||
+    code.startsWith('sgdp_pathan') ||
     code.startsWith('hgdp_kalash') || code.startsWith('hgdp_sindhi') || code.startsWith('hgdp_pathan') ||
     code.startsWith('hgdp_balochi') || code.startsWith('hgdp_brahui') || code.startsWith('hgdp_makrani') ||
     code.startsWith('hgdp_burusho') ||
     text.includes('south asian') || text.includes('indian') || text.includes('brahui') ||
     text.includes('balochi') || text.includes('sindhi') || text.includes('pathan') ||
-    text.includes('punjabi') || text.includes('bengali') || text.includes('tamil') ||
-    text.includes('telugu') || text.includes('gujarati') || text.includes('brahmin')
+    text.includes('pashtun') || text.includes('punjabi') || text.includes('bengali') ||
+    text.includes('tamil') || text.includes('telugu') || text.includes('gujarati') ||
+    text.includes('brahmin') || text.includes('paniya') || text.includes('irula') ||
+    text.includes('kalash') || text.includes('burusho') || text.includes('kusunda')
   ) {
     return 'South Asian';
   }
