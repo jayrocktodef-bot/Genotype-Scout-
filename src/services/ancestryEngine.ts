@@ -11,7 +11,8 @@ import { OnnxInferenceInput, OnnxInferenceOutput } from '../types/genotype';
 try {
   const isBrowserEnv = typeof window !== 'undefined' || typeof self !== 'undefined';
   if (isBrowserEnv) {
-    ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.0/dist/';
+    // Prefer local self-hosted assets to guarantee 100% offline, zero-telemetry execution
+    ort.env.wasm.wasmPaths = '/assets/';
     // On mobile devices or when crossOriginIsolated is false, force single-threaded WASM to prevent memory and thread deadlocks
     const isMobile = typeof navigator !== 'undefined' && /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const isIsolated = typeof crossOriginIsolated !== 'undefined' && crossOriginIsolated;
@@ -881,14 +882,20 @@ export function runAncestryInference(
   for (const continent of Object.keys(subPopDistances)) {
     const subProbs = Object.entries(subPopDistances[continent])
       .map(([name, d]) => {
-        const w = subPopWeights[continent][name] || 1;
-        const normalizedDist = Math.sqrt(d / w) * 10.0;
-        return { name, dist: normalizedDist };
+        const w = subPopWeights[continent]?.[name] || 0;
+        const normalizedDist = w > 0 ? Math.sqrt(Math.max(0, d) / w) * 10.0 : 999.0;
+        return { name, dist: Number.isFinite(normalizedDist) ? normalizedDist : 999.0 };
       });
     
     let minDist = Infinity;
     for (const p of subProbs) if (p.dist < minDist) minDist = p.dist;
-    const probs = subProbs.map(p => ({ name: p.name, prob: Math.exp(-(p.dist - minDist)) }));
+    if (!Number.isFinite(minDist)) minDist = 0;
+
+    const probs = subProbs.map(p => {
+      const diff = Number.isFinite(p.dist) ? -(p.dist - minDist) : -100;
+      const prob = Math.exp(Math.max(-100, Math.min(0, diff)));
+      return { name: p.name, prob: Number.isFinite(prob) ? prob : 0 };
+    });
     const totalProb = probs.reduce((s, p) => s + p.prob, 0);
 
     if (totalProb > 0) {

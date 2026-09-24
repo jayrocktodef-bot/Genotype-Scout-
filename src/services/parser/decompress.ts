@@ -2,8 +2,35 @@ import { gunzipSync, unzipSync } from 'fflate';
 import { GenomicsError, GenomicsErrorCode } from '../errorCaller';
 import { checkUnsupportedArchive } from './byteStream';
 
-const MAX_DECOMPRESSED_BYTES = 2500 * 1024 * 1024; // 2.5 GB ceiling
+const MAX_DECOMPRESSED_BYTES = 512 * 1024 * 1024; // 512 MB in-memory safety ceiling
+const MAX_EXPANSION_RATIO = 1000; // 1000:1 ratio ceiling to prevent compression bombs
+const RATIO_CHECK_MIN_BYTES = 32 * 1024 * 1024; // Apply ratio check once output exceeds 32 MB
 const MAX_DECOMPRESSION_DEPTH = 3;
+
+function checkDecompressionSafety(decompressedBytes: number, compressedBytes: number): void {
+  if (decompressedBytes > MAX_DECOMPRESSED_BYTES) {
+    throw new GenomicsError(`Decompressed dataset exceeds safety threshold (512 MB in memory).`, {
+      errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
+      subsystem: 'ZIP_DECOMPRESSION',
+      suggestedSolution:
+        'Your uncompressed dataset is larger than 512 MB. Please upload an uncompressed .vcf or streaming .vcf.gz dataset directly.'
+    });
+  }
+  if (compressedBytes > 0 && decompressedBytes > RATIO_CHECK_MIN_BYTES) {
+    const ratio = decompressedBytes / compressedBytes;
+    if (ratio > MAX_EXPANSION_RATIO) {
+      throw new GenomicsError(
+        `Decompression aborted: Unusually high expansion ratio detected (${Math.round(ratio)}:1).`,
+        {
+          errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
+          subsystem: 'ZIP_DECOMPRESSION',
+          suggestedSolution:
+            'The uploaded archive exhibited properties of an amplification bomb. Please verify archive integrity or extract before uploading.'
+        }
+      );
+    }
+  }
+}
 
 function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
   // Check if BGZF (Block GZIP Format, used by all standard .vcf.gz)
@@ -21,14 +48,7 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
       if (decomp.length > 0) {
         chunks.push(decomp);
         totalSize += decomp.length;
-        if (totalSize > MAX_DECOMPRESSED_BYTES) {
-          throw new GenomicsError(`Decompressed BGZF dataset exceeds safety threshold (2.5 GB).`, {
-            errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
-            subsystem: 'ZIP_DECOMPRESSION',
-            suggestedSolution:
-              'Your uncompressed dataset is larger than 2.5 GB. Please upload an uncompressed .vcf or streaming .vcf.gz dataset directly.'
-          });
-        }
+        checkDecompressionSafety(totalSize, buf.length);
       }
       offset += bsize;
     }
@@ -42,14 +62,7 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
   } else {
     try {
       const result = gunzipSync(buf);
-      if (result.byteLength > MAX_DECOMPRESSED_BYTES) {
-        throw new GenomicsError(`Decompressed file exceeds safety threshold (2.5 GB).`, {
-          errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
-          subsystem: 'ZIP_DECOMPRESSION',
-          suggestedSolution:
-            'Your uncompressed dataset is larger than 2.5 GB. Please upload an uncompressed .vcf or streaming .vcf.gz dataset directly.'
-        });
-      }
+      checkDecompressionSafety(result.byteLength, buf.length);
       return result;
     } catch (err) {
       if (err instanceof GenomicsError) throw err;
@@ -71,8 +84,10 @@ function decompressGzipBuffer(buf: Uint8Array): Uint8Array {
           if (decomp.length > 0) {
             chunks.push(decomp);
             totalSize += decomp.length;
+            checkDecompressionSafety(totalSize, buf.length);
           }
-        } catch {
+        } catch (subErr) {
+          if (subErr instanceof GenomicsError) throw subErr;
           // ignore invalid chunk
         }
         if (nextHeader === -1) break;
@@ -119,14 +134,7 @@ function extractBestFileFromZip(buf: Uint8Array): Uint8Array {
   for (const k of Object.keys(unzipped)) {
     totalExtractedSize += unzipped[k]?.byteLength || 0;
   }
-  if (totalExtractedSize > MAX_DECOMPRESSED_BYTES) {
-    throw new GenomicsError(`ZIP archive extracted payload exceeds safety threshold (500 MB).`, {
-      errorCode: GenomicsErrorCode.ERR_PARSE_DECOMPRESSION_THRESHOLD,
-      subsystem: 'ZIP_DECOMPRESSION',
-      suggestedSolution:
-        'Your ZIP bundle extracted payload exceeds 500MB. Extract the ZIP on your device and upload only the primary raw text file.'
-    });
-  }
+  checkDecompressionSafety(totalExtractedSize, buf.length);
 
   const fileKeys = Object.keys(unzipped).filter(k => {
     const lower = k.toLowerCase();

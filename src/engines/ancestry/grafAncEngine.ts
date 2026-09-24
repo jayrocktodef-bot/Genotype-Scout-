@@ -226,16 +226,21 @@ export async function calculateRegionalScores(userGenotypes: Record<string, stri
     // Format for EngineAncestryOracle: { population, distance, percentage }
     // Since we only have log-likelihoods (score), we convert them to a visual 'percentage'
     // and 'distance' for the UI.
-    const topScore = results[0].score;
+    const topScore = results[0]?.score;
+    if (topScore === undefined || !Number.isFinite(topScore)) return [];
     
     return results.map(r => {
-        // Convert log-likelihood difference to a raw relative weight
-        const relProb = Math.exp(r.score - topScore);
+        // Clamp difference to [-100, 0] to eliminate underflow/overflow and NaN propagation
+        const scoreDiff = Number.isFinite(r.score) ? Math.max(-100, Math.min(0, r.score - topScore)) : -100;
+        const relProb = Math.exp(scoreDiff);
+        const validRelProb = Number.isFinite(relProb) ? relProb : 0;
+        const validScore = Number.isFinite(r.score) ? r.score : 0;
+
         return {
             population: POP_NAME_MAP[r.name] || r.name,
-            score: r.score,
-            percentage: relProb * 100, // This is relative resonance
-            distance: Math.abs(r.score) // Inverse log-likelihood as a distance metric
+            score: validScore,
+            percentage: validRelProb * 100, // This is relative resonance
+            distance: Math.abs(validScore) // Inverse log-likelihood as a distance metric
         };
     });
   } catch (error) {

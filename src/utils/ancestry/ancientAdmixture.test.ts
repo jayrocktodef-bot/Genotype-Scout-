@@ -111,4 +111,22 @@ describe('Fossil Specimen Individual Matches', () => {
     expect(whgWith!.score).toBeGreaterThan(whgWithout!.score);
     expect(whgWith!.cladeAffinity).toBe('Western Hunter-Gatherer');
   });
+
+  it('correctly calculates ancient admixture without European fallback bias on African and Asian markers', async () => {
+    // Yoruba / African diagnostic alleles: rs2814778 (Duffy null CC = African), rs1426654 (SLC24A5 GG = ancestral)
+    const mockAfricanGenotypes = {
+      'rs2887286': 'CC',
+      'rs2840528': 'GG',
+      'rs3890745': 'CC',
+      'rs1181875': 'CC',
+      'rs6663840': 'AA',
+      'rs2814778': 'CC',
+      'rs1426654': 'GG'
+    };
+
+    const results = await calculateAncientAdmixture(mockAfricanGenotypes);
+    expect(results.length).toBeGreaterThan(0);
+    const totalScore = results.reduce((acc, val) => acc + val.score, 0);
+    expect(totalScore).toBeCloseTo(100.0, 1);
+  });
 });

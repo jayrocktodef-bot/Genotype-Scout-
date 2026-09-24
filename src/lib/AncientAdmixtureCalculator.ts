@@ -248,9 +248,48 @@ export const calculateAncientAdmixture = async (userGenotypes: Record<string, st
         }
       }
 
+      if (freq === undefined && w) {
+        const continent = CLADE_INFO[clade]?.continent;
+        let continentProxies: (number | undefined)[] = [];
+        if (continent === 'Africa') {
+          continentProxies = [w.YRI, w.LWK, w.ESN, w.GWD, w.MSL, w.sgdp_yoruba, w.sgdp_mbuti, w.sgdp_ju_hoan_north, w.sgdp_mandenka];
+        } else if (continent === 'Americas') {
+          continentProxies = [w.PEL, w.MXL, w.CLM, w.sgdp_karitiana, w.sgdp_surui, w.sgdp_pima, w.sgdp_mixe];
+        } else if (continent === 'Oceania') {
+          continentProxies = [w.sgdp_papuan, w["sgdp_papuan.dg"], w.sgdp_bougainville, w["sgdp_bougainville.dg"], w.sgdp_australian];
+        } else if (continent === 'Europe') {
+          continentProxies = [w.CEU, w.GBR, w.IBS, w.TSI, w.FIN, w.sgdp_french, w.sgdp_sardinian, w.sgdp_russian, w.sgdp_estonian];
+        } else if (continent === 'Asia') {
+          if (clade === 'AASI') {
+            continentProxies = [w.GIH, w.PJL, w.BEB, w.STU, w.ITU, w.sgdp_paniya, w.sgdp_irula, w.sgdp_onge];
+          } else if (clade === 'Ancient_East_Asian') {
+            continentProxies = [w.CHB, w.CHS, w.CDX, w.KHV, w.JPT, w.sgdp_han, w.sgdp_dai, w.sgdp_japanese];
+          } else {
+            continentProxies = [w.sgdp_palestinian, w.sgdp_bedouin, w.sgdp_bedouinb, w.sgdp_georgian, w.sgdp_armenian, w.sgdp_jew_iraqi];
+          }
+        }
+        const validProxies = continentProxies.filter((v): v is number => typeof v === 'number');
+        if (validProxies.length > 0) {
+          freq = validProxies.reduce((a, b) => a + b, 0) / validProxies.length;
+        }
+      }
+
+      if (freq === undefined && cladeFreqs) {
+        const allCladeVals = Object.values(cladeFreqs).filter((v): v is number => typeof v === 'number');
+        if (allCladeVals.length > 0) {
+          freq = allCladeVals.reduce((a, b) => a + b, 0) / allCladeVals.length;
+        }
+      }
+
+      if (freq === undefined && w) {
+        const allPopVals = Object.values(w).filter((v): v is number => typeof v === 'number');
+        if (allPopVals.length > 0) {
+          freq = allPopVals.reduce((a, b) => a + b, 0) / allPopVals.length;
+        }
+      }
+
       if (freq === undefined) {
-        const avail = [cladeFreqs?.["WHG"], cladeFreqs?.["EEF"], cladeFreqs?.["Yamnaya"]].filter((v): v is number => v !== undefined);
-        freq = avail.length > 0 ? avail.reduce((a, b) => a + b, 0) / avail.length : 0.5;
+        freq = 0.5;
       }
 
       popExpectations.push(freq * 2.0);

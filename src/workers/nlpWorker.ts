@@ -6,8 +6,8 @@ env.allowLocalModels = true;
 env.useBrowserCache = false; // Disable cache for debugging
 env.allowRemoteModels = false;
 env.backends.onnx.wasm.numThreads = 1;
-// Explicitly specify CDN for wasm binaries to prevent 404s
-env.backends.onnx.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/dist/';
+// Point to self-hosted wasm assets to enforce 100% offline privacy and comply with CSP
+env.backends.onnx.wasm.wasmPaths = '/assets/';
 
 let classifier: Pipeline | null = null;
 

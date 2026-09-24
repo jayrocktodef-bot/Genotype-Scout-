@@ -2263,6 +2263,15 @@ export default function App() {
   const [ancientAdmixture, setAncientAdmixture] = useState<any[]>([]);
   const [populationProximity, setPopulationProximity] = useState<any[]>([]);
   const snpMaps = useRef<Record<number, Record<string, string>>>({});
+  const activeWorkerRef = useRef<Worker | null>(null);
+
+  useEffect(() => {
+    return () => {
+      activeWorkerRef.current?.terminate();
+      activeWorkerRef.current = null;
+    };
+  }, []);
+
   const [statusFilter, setStatusFilter] = useState<'matched' | 'unmatched' | 'not_tested'>('matched');
   const [significanceFilter, setSignificanceFilter] = useState<string>('all');
   const [continentFilter, setContinentFilter] = useState<string>('all');
@@ -2662,6 +2671,10 @@ export default function App() {
       if (watchdogId) clearInterval(watchdogId);
       if (progressRafId) cancelAnimationFrame(progressRafId);
       document.removeEventListener('visibilitychange', onVisibilityChange);
+      if (activeWorkerRef.current) {
+        activeWorkerRef.current.terminate();
+        activeWorkerRef.current = null;
+      }
     };
 
     try {
@@ -2673,7 +2686,11 @@ export default function App() {
         };
       });
 
+      if (activeWorkerRef.current) {
+        activeWorkerRef.current.terminate();
+      }
       const worker = new Worker(new URL('./workers/genotypeWorker.ts', import.meta.url), { type: 'module' });
+      activeWorkerRef.current = worker;
       
       watchdogId = setInterval(() => {
         if (Date.now() - lastProgressTime > 300000) {
@@ -2683,7 +2700,6 @@ export default function App() {
             'GENOTYPE_WORKER'
           ));
           setProcessing(false);
-          worker.terminate();
         }
       }, 5000);
 
@@ -2817,13 +2833,12 @@ export default function App() {
           });
           setPendingFiles([]);
           setProcessing(false);
-          worker.terminate();
+          cleanupProcessing();
         } else if (type === 'ERROR') {
           cleanupProcessing();
           const structured = serializeGenomicsError(workerError, 'GENOTYPE_WORKER');
           setError(structured);
           setProcessing(false);
-          worker.terminate();
         }
       };
 
@@ -2840,7 +2855,6 @@ export default function App() {
         });
         setError(structured);
         setProcessing(false);
-        worker.terminate();
       };
 
       // Ship the processing request to the worker, passing the File objects directly

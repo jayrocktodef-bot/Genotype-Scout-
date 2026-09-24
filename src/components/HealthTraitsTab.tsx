@@ -21,26 +21,33 @@ export const HealthTraitsTab: React.FC<HealthTraitsTabProps> = ({ matchedTraits,
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    let worker: Worker | null = null;
     if (userSnps && Object.keys(userSnps).length > 0) {
       setLoading(true);
-      const worker = new Worker(new URL('../workers/healthWorker.ts', import.meta.url), { type: 'module' });
+      worker = new Worker(new URL('../workers/healthWorker.ts', import.meta.url), { type: 'module' });
       
       worker.onmessage = (e) => {
         const { type, payload } = e.data;
         if (type === 'HEALTH_RESULTS') {
           setHealthResults(payload);
           setLoading(false);
-          worker.terminate();
+          worker?.terminate();
         }
       };
 
       worker.onerror = () => {
         setLoading(false);
-        worker.terminate();
+        worker?.terminate();
       };
 
       worker.postMessage({ type: 'ANALYZE_HEALTH', payload: { userSnps } });
     }
+
+    return () => {
+      if (worker) {
+        worker.terminate();
+      }
+    };
   }, [userSnps]);
   
   const healthMarkers = autosomalMarkers.filter(m => 

@@ -209,3 +209,34 @@ export async function enforceCacheEpoch(): Promise<boolean> {
 
   return false;
 }
+
+export interface StorageQuotaInfo {
+  usage: number; // in bytes
+  quota: number; // in bytes
+  percentUsed: number;
+  isNearQuota: boolean; // >= 80%
+}
+
+/**
+ * Checks storage quota via navigator.storage.estimate() if supported.
+ * Returns null if the browser does not support the Storage API.
+ */
+export async function checkStorageQuota(): Promise<StorageQuotaInfo | null> {
+  if (typeof navigator !== 'undefined' && navigator.storage && typeof navigator.storage.estimate === 'function') {
+    try {
+      const estimate = await navigator.storage.estimate();
+      const usage = estimate.usage || 0;
+      const quota = estimate.quota || 0;
+      const percentUsed = quota > 0 ? (usage / quota) * 100 : 0;
+      return {
+        usage,
+        quota,
+        percentUsed,
+        isNearQuota: percentUsed >= 80
+      };
+    } catch (err) {
+      console.warn('[CacheManager] Error checking storage quota:', err);
+    }
+  }
+  return null;
+}

@@ -7,6 +7,7 @@ import { predictYDNAHaplogroup, analyzeMtDNA } from '../services/haplogroupPredi
 
 import { Y_DNA_TREE } from '../constants/haplogroups';
 import { getMarkerAllowlist } from '../utils/markerAllowlist';
+import { sliceSnpsForEngine } from '../utils/engineMarkerSlicer';
 import { calculateAncestryOracle } from '../services/ancestryEngine';
 import { extractSampleId } from '../services/populationMapper';
 import { calculateMarkerBenchmarks } from "../utils/markerBenchmarks";
@@ -236,11 +237,17 @@ async function runEnginesParallel(
           const targetSnpMap = isDeconvolutionEngine ? autosomalSnpMap : imputedSnpMap;
           const targetMetaMap = isDeconvolutionEngine ? autosomalMetaMap : mergedSnpMetaMap;
 
+          const { slicedSnpMap, slicedMetaMap } = sliceSnpsForEngine(
+            engine,
+            targetSnpMap,
+            engine === 'matchSNPs' ? targetMetaMap : undefined
+          );
+
           worker.postMessage({
             taskId,
             engine,
-            snpMap: targetSnpMap,
-            snpMetaMap: engine === 'matchSNPs' ? targetMetaMap : undefined,
+            snpMap: slicedSnpMap,
+            snpMetaMap: slicedMetaMap,
             ancientAdmixture: engine === 'calculateIndividualMatches' ? results['calculateAncientAdmixture'] : undefined,
           });
         };

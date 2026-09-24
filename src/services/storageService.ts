@@ -21,14 +21,29 @@ export async function requestPersistentStorage(): Promise<boolean> {
   return false;
 }
 
+export const MAX_STORED_PROFILES = 3;
+
 export const saveResults = async (results: any[]) => {
   try {
     // Request persistent storage in the background
     requestPersistentStorage().catch(() => {});
-    await set(STORAGE_KEY, results);
+
+    // LRU eviction: Cap stored analysis history to the most recent 3 profiles to prevent mobile quota crashes
+    const toStore = Array.isArray(results) && results.length > MAX_STORED_PROFILES
+      ? results.slice(-MAX_STORED_PROFILES)
+      : results;
+
+    await set(STORAGE_KEY, toStore);
   } catch (e: any) {
     if (e?.name === 'QuotaExceededError' || e?.code === 22) {
-      console.error("IndexedDB QuotaExceededError: Local browser storage is full. Please clear old datasets.", e);
+      console.warn("IndexedDB QuotaExceededError: Local browser storage is full. Evicting older datasets to save current kit...", e);
+      try {
+        // Emergency single-dataset fallback: retain only the latest uploaded specimen
+        const emergencyToStore = Array.isArray(results) ? results.slice(-1) : results;
+        await set(STORAGE_KEY, emergencyToStore);
+      } catch (fallbackErr) {
+        console.error("IndexedDB Emergency Fallback Failed: Browser storage strictly exhausted.", fallbackErr);
+      }
     } else {
       console.error("Failed to save results to IndexedDB", e);
     }

@@ -37,31 +37,38 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
   };
 
   useEffect(() => {
+    let worker: Worker | null = null;
     if (userSnps && Object.keys(userSnps).length > 0) {
       setLoading(true);
-      const worker = new Worker(new URL('../workers/healthWorker.ts', import.meta.url), { type: 'module' });
+      worker = new Worker(new URL('../workers/healthWorker.ts', import.meta.url), { type: 'module' });
       
       worker.onmessage = (e) => {
         const { type, payload } = e.data;
         if (type === 'HEALTH_RESULTS') {
           setHealthResults(payload);
           setLoading(false);
-          worker.terminate();
+          worker?.terminate();
         } else if (type === 'ERROR') {
           console.error("Health Worker Error:", payload);
           setLoading(false);
-          worker.terminate();
+          worker?.terminate();
         }
       };
 
       worker.onerror = (err) => {
         console.error("Health Worker Fatal Error:", err);
         setLoading(false);
-        worker.terminate();
+        worker?.terminate();
       };
 
       worker.postMessage({ type: 'ANALYZE_HEALTH', payload: { userSnps } });
     }
+
+    return () => {
+      if (worker) {
+        worker.terminate();
+      }
+    };
   }, [userSnps]);
 
   const medicationReports = useMemo(() => healthResults?.clinicalRisks || [], [healthResults]);
