@@ -27739,38 +27739,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs3916092": {
-    "rsid": "rs3916092",
-    "chromosome": "3",
-    "position": 19904565,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.7524,
-      "MENA": 0.6009,
-      "OCE": 0.6262
-    },
-    "subFrequencies": {
-      "Gujarati": 0.9369,
-      "Punjabi": 0.0833,
-      "Bengali": 0.8837,
-      "Tamil": 0.951,
-      "Telugu": 0.9069,
-      "Brahmin": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6774197": {
     "rsid": "rs6774197",
     "chromosome": "3",
@@ -29531,38 +29499,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1369093": {
-    "rsid": "rs1369093",
-    "chromosome": "4",
-    "position": 72379474,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.8543,
-      "MENA": 0.6417,
-      "OCE": 0.6772
-    },
-    "subFrequencies": {
-      "Gujarati": 0.8981,
-      "Punjabi": 0.8958,
-      "Bengali": 0.7965,
-      "Tamil": 0.8333,
-      "Telugu": 0.848,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4859571": {
     "rsid": "rs4859571",
     "chromosome": "4",
@@ -29851,38 +29787,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10018031": {
-    "rsid": "rs10018031",
-    "chromosome": "4",
-    "position": 132080372,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.1776,
-      "MENA": 0.3711,
-      "OCE": 0.3388
-    },
-    "subFrequencies": {
-      "Gujarati": 0.2621,
-      "Punjabi": 0.1875,
-      "Bengali": 0.1395,
-      "Tamil": 0.1471,
-      "Telugu": 0.152,
-      "Brahmin": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6850624": {
     "rsid": "rs6850624",
     "chromosome": "4",
@@ -30132,38 +30036,6 @@
       "Tamil": 0.1225,
       "Telugu": 0.9216,
       "Brahmin": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10520478": {
-    "rsid": "rs10520478",
-    "chromosome": "4",
-    "position": 181374523,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.2963,
-      "MENA": 0.4185,
-      "OCE": 0.3981
-    },
-    "subFrequencies": {
-      "Gujarati": 0.7864,
-      "Punjabi": 0.1771,
-      "Bengali": 0.1453,
-      "Tamil": 0.1961,
-      "Telugu": 0.1765,
-      "Brahmin": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -31803,38 +31675,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1321204": {
-    "rsid": "rs1321204",
-    "chromosome": "6",
-    "position": 101020715,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.7137,
-      "MENA": 0.5855,
-      "OCE": 0.6068
-    },
-    "subFrequencies": {
-      "Gujarati": 0.2136,
-      "Punjabi": 0.8594,
-      "Bengali": 0.814,
-      "Tamil": 0.8382,
-      "Telugu": 0.8431,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs742109": {
     "rsid": "rs742109",
     "chromosome": "6",
@@ -32916,38 +32756,6 @@
       "Tamil": 0.8627,
       "Telugu": 0.8922,
       "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10487888": {
-    "rsid": "rs10487888",
-    "chromosome": "7",
-    "position": 140799307,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.8462,
-      "MENA": 0.6385,
-      "OCE": 0.6731
-    },
-    "subFrequencies": {
-      "Gujarati": 0.8204,
-      "Punjabi": 0.8177,
-      "Bengali": 0.843,
-      "Tamil": 0.8775,
-      "Telugu": 0.8725,
-      "Brahmin": 0.25
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -35771,38 +35579,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10994675": {
-    "rsid": "rs10994675",
-    "chromosome": "10",
-    "position": 46031829,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.2977,
-      "MENA": 0.4191,
-      "OCE": 0.3989
-    },
-    "subFrequencies": {
-      "Gujarati": 0.319,
-      "Punjabi": 0.3562,
-      "Bengali": 0.2698,
-      "Tamil": 0.2597,
-      "Telugu": 0.2839,
-      "Brahmin": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs2211440": {
     "rsid": "rs2211440",
     "chromosome": "10",
@@ -36244,38 +36020,6 @@
       "Tamil": 0.2255,
       "Telugu": 0.1373,
       "Brahmin": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2862954": {
-    "rsid": "rs2862954",
-    "chromosome": "10",
-    "position": 100152307,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.7071,
-      "MENA": 0.5828,
-      "OCE": 0.6035
-    },
-    "subFrequencies": {
-      "Gujarati": 0.8544,
-      "Punjabi": 0.1302,
-      "Bengali": 0.8547,
-      "Tamil": 0.8186,
-      "Telugu": 0.8775,
-      "Brahmin": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -37043,38 +36787,6 @@
       "Bengali": 0.2791,
       "Tamil": 0.1961,
       "Telugu": 0.2598,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs174570": {
-    "rsid": "rs174570",
-    "chromosome": "11",
-    "position": 61829740,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.2383,
-      "MENA": 0.3953,
-      "OCE": 0.3691
-    },
-    "subFrequencies": {
-      "Gujarati": 0.0194,
-      "Punjabi": 0.099,
-      "Bengali": 0.1221,
-      "Tamil": 0.9069,
-      "Telugu": 0.0441,
       "Brahmin": 0
     },
     "deepFrequencies": {},
@@ -38232,38 +37944,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs893280": {
-    "rsid": "rs893280",
-    "chromosome": "12",
-    "position": 67161546,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.2841,
-      "MENA": 0.4136,
-      "OCE": 0.392
-    },
-    "subFrequencies": {
-      "Gujarati": 0.1553,
-      "Punjabi": 0.8333,
-      "Bengali": 0.1279,
-      "Tamil": 0.1225,
-      "Telugu": 0.1814,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
@@ -40891,38 +40571,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1345407": {
-    "rsid": "rs1345407",
-    "chromosome": "16",
-    "position": 49089607,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.7682,
-      "MENA": 0.6073,
-      "OCE": 0.6341
-    },
-    "subFrequencies": {
-      "Gujarati": 0.9223,
-      "Punjabi": 0.0469,
-      "Bengali": 0.9651,
-      "Tamil": 0.9608,
-      "Telugu": 0.9461,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10521032": {
     "rsid": "rs10521032",
     "chromosome": "16",
@@ -41659,38 +41307,6 @@
     "trait": "Ancestry",
     "description": "South Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs918077": {
-    "rsid": "rs918077",
-    "chromosome": "17",
-    "position": 72169237,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.7925,
-      "MENA": 0.617,
-      "OCE": 0.6462
-    },
-    "subFrequencies": {
-      "Gujarati": 0.767,
-      "Punjabi": 0.7969,
-      "Bengali": 0.7907,
-      "Tamil": 0.7941,
-      "Telugu": 0.8137,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7210406": {
     "rsid": "rs7210406",
     "chromosome": "17",
@@ -41939,38 +41555,6 @@
       "Bengali": 0.186,
       "Tamil": 0.2451,
       "Telugu": 0.25,
-      "Brahmin": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "South Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs11877111": {
-    "rsid": "rs11877111",
-    "chromosome": "18",
-    "position": 41266740,
-    "region": "South Asian",
-    "color": "#9B59B6",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.5,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.1369,
-      "MENA": 0.3547,
-      "OCE": 0.3184
-    },
-    "subFrequencies": {
-      "Gujarati": 0.1893,
-      "Punjabi": 0.0938,
-      "Bengali": 0.1512,
-      "Tamil": 0.1127,
-      "Telugu": 0.1373,
       "Brahmin": 0
     },
     "deepFrequencies": {},

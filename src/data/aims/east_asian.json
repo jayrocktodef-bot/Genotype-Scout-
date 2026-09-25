@@ -38,7 +38,7 @@
     "weight": 2,
     "gene": "EDAR",
     "trait": "Ancestry",
-    "description": "Near-absent in African and European populations. Pre-contact Native American frequency likely near 100%; modern AMR figures reflect European admixture. Strong positive selection signal — one of the highest FST values genome-wide."
+    "description": "Near-absent in African and European populations. Pre-contact Native American frequency likely near 100%; modern AMR figures reflect European admixture. Strong positive selection signal \u2014 one of the highest FST values genome-wide."
   },
   "rs17822931": {
     "rsid": "rs17822931",
@@ -771,7 +771,7 @@
     "weight": 2,
     "gene": "SLC24A5",
     "trait": "Skin pigmentation, Ancestry",
-    "description": "The derived allele (A) is nearly fixed in Europeans and common in Middle East/South Asia. Low frequency in West Africans (except Fulani/Sahelian groups who have Eurasian admixture). This ancient variant correlates with lighter skin. Its frequency in Africa is a robust proxy for Western Eurasian (Neolithic + recent) admixture, differentiating many African regions."
+    "description": "The derived allele (A) is nearly fixed in Europeans and common in Middle East/South Asia. Low frequency in West Africans (except Fulani/Sahelian groups who have Eurasian admixture). This ancient variant correlates with lighter skin. Its frequency in Africa is a robust proxy for Western Eurasian (Neolithic\u202f+\u202frecent) admixture, differentiating many African regions."
   },
   "rs10876236": {
     "rsid": "rs10876236",
@@ -27204,38 +27204,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs925910": {
-    "rsid": "rs925910",
-    "chromosome": "2",
-    "position": 35683934,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.9366,
-      "EAS": 0.9366,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.8056
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9515,
-      "Southern_Han": 0.9619,
-      "Japanese": 0.899,
-      "Korean": 0,
-      "Dai": 0.9462,
-      "Vietnamese": 0.9242
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6741107": {
     "rsid": "rs6741107",
     "chromosome": "2",
@@ -28321,38 +28289,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10497191": {
-    "rsid": "rs10497191",
-    "chromosome": "2",
-    "position": 157810705,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2617,
-      "EAS": 0.2617,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3332
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.0874,
-      "Southern_Han": 0.0905,
-      "Japanese": 0.1154,
-      "Korean": 0,
-      "Dai": 0.914,
-      "Vietnamese": 0.101
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
@@ -29508,38 +29444,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs4955238": {
-    "rsid": "rs4955238",
-    "chromosome": "3",
-    "position": 32083990,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2812,
-      "EAS": 0.2812,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3469
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.1456,
-      "Southern_Han": 0.9048,
-      "Japanese": 0.1683,
-      "Korean": 0,
-      "Dai": 0.0914,
-      "Vietnamese": 0.096
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6550509": {
     "rsid": "rs6550509",
     "chromosome": "3",
@@ -29796,38 +29700,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs783511": {
-    "rsid": "rs783511",
-    "chromosome": "3",
-    "position": 66425444,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7145,
-      "EAS": 0.7145,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6501
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8641,
-      "Southern_Han": 0.8524,
-      "Japanese": 0.7788,
-      "Korean": 0.5,
-      "Dai": 0.8548,
-      "Vietnamese": 0.2222
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7628382": {
     "rsid": "rs7628382",
     "chromosome": "3",
@@ -30081,38 +29953,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs7630522": {
-    "rsid": "rs7630522",
-    "chromosome": "3",
-    "position": 107434241,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.743,
-      "EAS": 0.743,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6701
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9223,
-      "Southern_Han": 0.0524,
-      "Japanese": 0.875,
-      "Korean": 0,
-      "Dai": 0.9462,
-      "Vietnamese": 0.9192
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
@@ -31133,38 +30973,6 @@
       "Korean": 0,
       "Dai": 0.1183,
       "Vietnamese": 0.1869
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs9999241": {
-    "rsid": "rs9999241",
-    "chromosome": "4",
-    "position": 7173266,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.742,
-      "EAS": 0.742,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6694
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8738,
-      "Southern_Han": 0.8619,
-      "Japanese": 0.1827,
-      "Korean": 0.5,
-      "Dai": 0.8978,
-      "Vietnamese": 0.8939
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -32260,38 +32068,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10018031": {
-    "rsid": "rs10018031",
-    "chromosome": "4",
-    "position": 132080372,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.988,
-      "EAS": 0.988,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.8416
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9951,
-      "Southern_Han": 0.9952,
-      "Japanese": 0.976,
-      "Korean": 0,
-      "Dai": 0.9839,
-      "Vietnamese": 0.9899
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6839208": {
     "rsid": "rs6839208",
     "chromosome": "4",
@@ -33060,38 +32836,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1470023": {
-    "rsid": "rs1470023",
-    "chromosome": "5",
-    "position": 10800038,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.8456,
-      "EAS": 0.8456,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7419
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8495,
-      "Southern_Han": 0.8952,
-      "Japanese": 0.8221,
-      "Korean": 0.5,
-      "Dai": 0.8226,
-      "Vietnamese": 0.8384
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1870329": {
     "rsid": "rs1870329",
     "chromosome": "5",
@@ -33181,38 +32925,6 @@
       "Korean": 0.8942,
       "Dai": 0.9086,
       "Vietnamese": 0.8889
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs25943": {
-    "rsid": "rs25943",
-    "chromosome": "5",
-    "position": 14648580,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7795,
-      "EAS": 0.7795,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6956
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9563,
-      "Southern_Han": 0.0286,
-      "Japanese": 0.9904,
-      "Korean": 0,
-      "Dai": 0.9677,
-      "Vietnamese": 0.9545
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -34020,38 +33732,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs6594987": {
-    "rsid": "rs6594987",
-    "chromosome": "5",
-    "position": 116892616,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7066,
-      "EAS": 0.7066,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6446
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8592,
-      "Southern_Han": 0.8381,
-      "Japanese": 0.8462,
-      "Korean": 0,
-      "Dai": 0.8226,
-      "Vietnamese": 0.1667
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6894997": {
     "rsid": "rs6894997",
     "chromosome": "5",
@@ -34365,38 +34045,6 @@
       "Korean": 0,
       "Dai": 0.0753,
       "Vietnamese": 0.1616
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2400228": {
-    "rsid": "rs2400228",
-    "chromosome": "5",
-    "position": 146690035,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2692,
-      "EAS": 0.2692,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3385
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9175,
-      "Southern_Han": 0.0857,
-      "Japanese": 0.1442,
-      "Korean": 0,
-      "Dai": 0.1129,
-      "Vietnamese": 0.0859
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -34852,38 +34500,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs11755724": {
-    "rsid": "rs11755724",
-    "chromosome": "6",
-    "position": 7118757,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.8021,
-      "EAS": 0.8021,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7115
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9951,
-      "Southern_Han": 0.9952,
-      "Japanese": 1,
-      "Korean": 0,
-      "Dai": 1,
-      "Vietnamese": 0.0202
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs3812162": {
     "rsid": "rs3812162",
     "chromosome": "6",
@@ -35165,38 +34781,6 @@
       "Korean": 0.1683,
       "Dai": 0.7742,
       "Vietnamese": 0.1414
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs12660883": {
-    "rsid": "rs12660883",
-    "chromosome": "6",
-    "position": 30796643,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7245,
-      "EAS": 0.7245,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6571
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.6796,
-      "Southern_Han": 0.6667,
-      "Japanese": 0.5673,
-      "Korean": 0.25,
-      "Dai": 0.8602,
-      "Vietnamese": 0.8485
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -38084,38 +37668,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10487888": {
-    "rsid": "rs10487888",
-    "chromosome": "7",
-    "position": 140799307,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2915,
-      "EAS": 0.2915,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.354
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.1845,
-      "Southern_Han": 0.1524,
-      "Japanese": 0.1154,
-      "Korean": 0,
-      "Dai": 0.8333,
-      "Vietnamese": 0.1717
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4632970": {
     "rsid": "rs4632970",
     "chromosome": "7",
@@ -38144,38 +37696,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1994497": {
-    "rsid": "rs1994497",
-    "chromosome": "7",
-    "position": 143119834,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2351,
-      "EAS": 0.2351,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3146
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.0631,
-      "Southern_Han": 0.0381,
-      "Japanese": 0.0288,
-      "Korean": 0,
-      "Dai": 1,
-      "Vietnamese": 0.0455
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
@@ -38596,38 +38116,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs4260896": {
-    "rsid": "rs4260896",
-    "chromosome": "8",
-    "position": 10349954,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2818,
-      "EAS": 0.2818,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3472
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.1214,
-      "Southern_Han": 0.1429,
-      "Japanese": 0.125,
-      "Korean": 0.25,
-      "Dai": 0.1559,
-      "Vietnamese": 0.8636
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4841458": {
     "rsid": "rs4841458",
     "chromosome": "8",
@@ -38973,38 +38461,6 @@
       "Korean": 0.25,
       "Dai": 0.086,
       "Vietnamese": 0.0808
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2915495": {
-    "rsid": "rs2915495",
-    "chromosome": "8",
-    "position": 51367179,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7616,
-      "EAS": 0.7616,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6831
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.034,
-      "Southern_Han": 0.9238,
-      "Japanese": 0.9231,
-      "Korean": 0,
-      "Dai": 0.9624,
-      "Vietnamese": 0.9646
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -39453,38 +38909,6 @@
       "Korean": 0,
       "Dai": 1,
       "Vietnamese": 0.9949
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs11776115": {
-    "rsid": "rs11776115",
-    "chromosome": "8",
-    "position": 116398247,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.8697,
-      "EAS": 0.8697,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7588
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8883,
-      "Southern_Han": 0.9095,
-      "Japanese": 0.851,
-      "Korean": 0.25,
-      "Dai": 0.8817,
-      "Vietnamese": 0.8182
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -40228,38 +39652,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs3737150": {
-    "rsid": "rs3737150",
-    "chromosome": "9",
-    "position": 13508283,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.8874,
-      "EAS": 0.8874,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7712
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8738,
-      "Southern_Han": 0.9,
-      "Japanese": 0.8606,
-      "Korean": 0.25,
-      "Dai": 0.9086,
-      "Vietnamese": 0.8939
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1571906": {
     "rsid": "rs1571906",
     "chromosome": "9",
@@ -40477,38 +39869,6 @@
       "Korean": 0,
       "Dai": 0.0161,
       "Vietnamese": 0.0657
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1369052": {
-    "rsid": "rs1369052",
-    "chromosome": "9",
-    "position": 26642035,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2926,
-      "EAS": 0.2926,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3548
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8883,
-      "Southern_Han": 0.119,
-      "Japanese": 0.1202,
-      "Korean": 0,
-      "Dai": 0.1989,
-      "Vietnamese": 0.1364
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -41057,38 +40417,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs590086": {
-    "rsid": "rs590086",
-    "chromosome": "9",
-    "position": 130468272,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.804,
-      "EAS": 0.804,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7128
-    },
-    "subFrequencies": {
-      "Northern_Han": 1,
-      "Southern_Han": 1,
-      "Japanese": 1,
-      "Korean": 1,
-      "Dai": 0.9946,
-      "Vietnamese": 0.0253
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AGBL4",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
@@ -42308,38 +41636,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2862954": {
-    "rsid": "rs2862954",
-    "chromosome": "10",
-    "position": 100152307,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2259,
-      "EAS": 0.2259,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3081
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.0971,
-      "Southern_Han": 0.0619,
-      "Japanese": 0.0337,
-      "Korean": 0,
-      "Dai": 0.0376,
-      "Vietnamese": 0.899
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7006": {
     "rsid": "rs7006",
     "chromosome": "10",
@@ -42589,38 +41885,6 @@
       "Korean": 0,
       "Dai": 0.1613,
       "Vietnamese": 0.1818
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10509963": {
-    "rsid": "rs10509963",
-    "chromosome": "10",
-    "position": 112477106,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2227,
-      "EAS": 0.2227,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3059
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.2039,
-      "Southern_Han": 0.2,
-      "Japanese": 0.2644,
-      "Korean": 0.5,
-      "Dai": 0.1828,
-      "Vietnamese": 0.2626
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -43172,38 +42436,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs7479005": {
-    "rsid": "rs7479005",
-    "chromosome": "11",
-    "position": 40810148,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2839,
-      "EAS": 0.2839,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3488
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.1845,
-      "Southern_Han": 0.8905,
-      "Japanese": 0.125,
-      "Korean": 0.25,
-      "Dai": 0.1237,
-      "Vietnamese": 0.096
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4939148": {
     "rsid": "rs4939148",
     "chromosome": "11",
@@ -43425,38 +42657,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1042602": {
-    "rsid": "rs1042602",
-    "chromosome": "11",
-    "position": 89178528,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.801,
-      "EAS": 0.801,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7107
-    },
-    "subFrequencies": {
-      "Northern_Han": 1,
-      "Southern_Han": 0.0048,
-      "Japanese": 1,
-      "Korean": 0,
-      "Dai": 1,
-      "Vietnamese": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "TYR",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
@@ -46308,38 +45508,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs11157247": {
-    "rsid": "rs11157247",
-    "chromosome": "14",
-    "position": 41699690,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.9566,
-      "EAS": 0.9566,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.8196
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9223,
-      "Southern_Han": 0.9714,
-      "Japanese": 0.9471,
-      "Korean": 0,
-      "Dai": 0.9677,
-      "Vietnamese": 0.9747
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4304945": {
     "rsid": "rs4304945",
     "chromosome": "14",
@@ -46720,38 +45888,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1187763": {
-    "rsid": "rs1187763",
-    "chromosome": "14",
-    "position": 95421574,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.1681,
-      "EAS": 0.1681,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.2677
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.2184,
-      "Southern_Han": 0.1286,
-      "Japanese": 0.2115,
-      "Korean": 0.2115,
-      "Dai": 0.1559,
-      "Vietnamese": 0.1263
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
@@ -47428,38 +46564,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1427282": {
-    "rsid": "rs1427282",
-    "chromosome": "15",
-    "position": 58622127,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.065,
-      "EAS": 0.065,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.1955
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.0631,
-      "Southern_Han": 0.0667,
-      "Japanese": 0.0337,
-      "Korean": 0.0337,
-      "Dai": 0.0806,
-      "Vietnamese": 0.0808
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs339972": {
     "rsid": "rs339972",
     "chromosome": "15",
@@ -47776,38 +46880,6 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs7601": {
-    "rsid": "rs7601",
-    "chromosome": "15",
-    "position": 90966362,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.993,
-      "EAS": 0.993,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.8451
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.9903,
-      "Southern_Han": 1,
-      "Japanese": 1,
-      "Korean": 0,
-      "Dai": 1,
-      "Vietnamese": 0.9747
-    },
-    "deepFrequencies": {},
-    "weight": 8,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
@@ -49316,38 +48388,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs854462": {
-    "rsid": "rs854462",
-    "chromosome": "17",
-    "position": 36058726,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2517,
-      "EAS": 0.2517,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.3262
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.0728,
-      "Southern_Han": 0.081,
-      "Japanese": 0.101,
-      "Korean": 0.25,
-      "Dai": 0.8925,
-      "Vietnamese": 0.1111
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs8065346": {
     "rsid": "rs8065346",
     "chromosome": "17",
@@ -49437,38 +48477,6 @@
       "Korean": 0,
       "Dai": 0.172,
       "Vietnamese": 0.8737
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2083797": {
-    "rsid": "rs2083797",
-    "chromosome": "17",
-    "position": 46844563,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.8832,
-      "EAS": 0.8832,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.7682
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8689,
-      "Southern_Han": 0.8952,
-      "Japanese": 0.8846,
-      "Korean": 0,
-      "Dai": 0.9086,
-      "Vietnamese": 0.8586
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -51108,38 +50116,6 @@
     "trait": "Ancestry",
     "description": "East Asian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1541065": {
-    "rsid": "rs1541065",
-    "chromosome": "20",
-    "position": 16243277,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7493,
-      "EAS": 0.7493,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6745
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8738,
-      "Southern_Han": 0.1476,
-      "Japanese": 0.9423,
-      "Korean": 0,
-      "Dai": 0.914,
-      "Vietnamese": 0.8687
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10485587": {
     "rsid": "rs10485587",
     "chromosome": "20",
@@ -51453,38 +50429,6 @@
       "Korean": 0,
       "Dai": 0.7581,
       "Vietnamese": 0.7323
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "East Asian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2041317": {
-    "rsid": "rs2041317",
-    "chromosome": "20",
-    "position": 53747068,
-    "region": "East Asian",
-    "color": "#F1C40F",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.7111,
-      "EAS": 0.7111,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.5,
-      "OCE": 0.6478
-    },
-    "subFrequencies": {
-      "Northern_Han": 0.8883,
-      "Southern_Han": 0.1238,
-      "Japanese": 0.8413,
-      "Korean": 0.25,
-      "Dai": 0.8387,
-      "Vietnamese": 0.8636
     },
     "deepFrequencies": {},
     "weight": 6,

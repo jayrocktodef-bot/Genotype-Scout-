@@ -128,12 +128,39 @@ const buildCleanAimDatabase = (): Record<string, any> => {
                         ...panelEntry.subFrequencies
                     };
                 }
-                if (panelEntry.region && panelEntry.region !== 'Global') {
-                    target.region = panelEntry.region;
+                if (panelEntry.deepFrequencies && Object.keys(panelEntry.deepFrequencies).length > 0) {
+                    target.deepFrequencies = {
+                        ...(target.deepFrequencies || {}),
+                        ...panelEntry.deepFrequencies
+                    };
                 }
-                if (panelEntry.color && panelEntry.color !== '#95A5A6') {
-                    target.color = panelEntry.color;
+
+                // Provenance Protection: Determine whether the incoming panel entry is a generic stub
+                const hasSubFreqs = panelEntry.subFrequencies && Object.keys(panelEntry.subFrequencies).length > 0;
+                const hasDeepFreqs = panelEntry.deepFrequencies && Object.keys(panelEntry.deepFrequencies).length > 0;
+                const desc = (panelEntry.description || '').toLowerCase();
+                const isGenericDesc = desc.includes('informative marker with verified regional') && 
+                                      !desc.includes('woodlands') && !desc.includes('indigenous') && 
+                                      !desc.includes('sahelian') && !desc.includes('senegambian');
+                const isPanelStub = !hasSubFreqs && !hasDeepFreqs && isGenericDesc && (panelEntry.trait === 'Ancestry' || !panelEntry.trait);
+                const isTargetDiagnostic = target.tier === 'diagnostic_single_region';
+
+                // Region Resolution: Never allow a generic stub or secondary panel to clobber an empirical diagnostic region
+                if (panelEntry.region && panelEntry.region !== 'Global' && !isPanelStub) {
+                    if (panelEntry.region === 'Native American' && !isTargetDiagnostic) {
+                        // Curated Native American panel markers take precedence unless target is an empirical single-region diagnostic for another continent
+                        target.region = panelEntry.region;
+                        if (panelEntry.color) target.color = panelEntry.color;
+                    } else if (!target.region || target.region === 'Global' || target.region === 'Cosmopolitan' || 
+                        target.region === 'weakly_informative' || target.region === 'Multi-Way Informative') {
+                        target.region = panelEntry.region;
+                        if (panelEntry.color) target.color = panelEntry.color;
+                    } else if (!isTargetDiagnostic && (panelEntry.weight || 0) > (target.weight || 0)) {
+                        target.region = panelEntry.region;
+                        if (panelEntry.color) target.color = panelEntry.color;
+                    }
                 }
+
                 if (panelEntry.weight && (!target.weight || panelEntry.weight > target.weight)) {
                     target.weight = panelEntry.weight;
                 }
@@ -143,9 +170,33 @@ const buildCleanAimDatabase = (): Record<string, any> => {
                 if (panelEntry.trait && (!target.trait || target.trait === 'Ancestry')) {
                     target.trait = panelEntry.trait;
                 }
-                if (panelEntry.description && !target.description) {
+                if (panelEntry.description && (!target.description || target.description.includes('informative marker with verified regional'))) {
                     target.description = panelEntry.description;
                 }
+            }
+        }
+    }
+
+    // 3. Final Lineage Semantic Consistency Audit
+    // Ensures no marker description directly contradicts its assigned ancestral region
+    for (const entry of Object.values(combined)) {
+        const text = `${entry.trait || ''} ${entry.description || ''}`.toLowerCase();
+        if (text.includes('sahelian') || text.includes('senegambian') || text.includes('mandinka') || 
+            text.includes('wolof') || text.includes('fula') || text.includes('bantu') || 
+            text.includes('yoruba') || text.includes('khoe-san') || text.includes('nilotic') || text.includes('pygmy')) {
+            if (entry.region !== 'African') {
+                entry.region = 'African';
+                entry.color = '#2ECC71';
+            }
+        } else if (text.includes('ashkenazi') || text.includes('sephardic') || text.includes('levantine') || text.includes('arabian')) {
+            if (entry.region === 'Global' || entry.region === 'European') {
+                entry.region = 'Middle Eastern';
+                entry.color = '#E67E22';
+            }
+        } else if (text.includes('melanesian') || text.includes('papuan') || text.includes('polynesian')) {
+            if (entry.region !== 'Oceanian') {
+                entry.region = 'Oceanian';
+                entry.color = '#1ABC9C';
             }
         }
     }

@@ -9377,36 +9377,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs141014": {
-    "rsid": "rs141014",
-    "chromosome": "1",
-    "position": 54833466,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs2317951": {
     "rsid": "rs2317951",
     "chromosome": "1",
@@ -9788,36 +9758,6 @@
     "subFrequencies": {
       "Yakut": 0,
       "Mongol": 0.25,
-      "Uyghur": 0.5,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs659406": {
-    "rsid": "rs659406",
-    "chromosome": "1",
-    "position": 63790347,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
       "Uyghur": 0.5,
       "Tajik": 0
     },
@@ -11777,36 +11717,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs716217": {
-    "rsid": "rs716217",
-    "chromosome": "1",
-    "position": 118996082,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs2885226": {
     "rsid": "rs2885226",
     "chromosome": "1",
@@ -12767,36 +12677,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1358713": {
-    "rsid": "rs1358713",
-    "chromosome": "1",
-    "position": 169061640,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1983546": {
     "rsid": "rs1983546",
     "chromosome": "1",
@@ -13277,36 +13157,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs6678480": {
-    "rsid": "rs6678480",
-    "chromosome": "1",
-    "position": 177085635,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs556482": {
     "rsid": "rs556482",
     "chromosome": "1",
@@ -13570,36 +13420,6 @@
       "Mongol": 0.25,
       "Uyghur": 0,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2331992": {
-    "rsid": "rs2331992",
-    "chromosome": "1",
-    "position": 181006955,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.75,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -14140,36 +13960,6 @@
       "Mongol": 0.5,
       "Uyghur": 0.25,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs606149": {
-    "rsid": "rs606149",
-    "chromosome": "1",
-    "position": 193952418,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -18317,36 +18107,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs925910": {
-    "rsid": "rs925910",
-    "chromosome": "2",
-    "position": 35683934,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs2949065": {
     "rsid": "rs2949065",
     "chromosome": "2",
@@ -18670,36 +18430,6 @@
       "Mongol": 0.25,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10490208": {
-    "rsid": "rs10490208",
-    "chromosome": "2",
-    "position": 40226654,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -19213,36 +18943,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs3792246": {
-    "rsid": "rs3792246",
-    "chromosome": "2",
-    "position": 48672011,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.75,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -20297,36 +19997,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1032807": {
-    "rsid": "rs1032807",
-    "chromosome": "2",
-    "position": 67938948,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6714171": {
     "rsid": "rs6714171",
     "chromosome": "2",
@@ -20383,36 +20053,6 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs6720799": {
-    "rsid": "rs6720799",
-    "chromosome": "2",
-    "position": 70144897,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.25,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.35,
-      "CAS": 0
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -20650,36 +20290,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1063588": {
-    "rsid": "rs1063588",
-    "chromosome": "2",
-    "position": 74463251,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -22667,36 +22277,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10497191": {
-    "rsid": "rs10497191",
-    "chromosome": "2",
-    "position": 157810705,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.25,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.35,
-      "CAS": 0
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "AMR-AIM",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs3771604": {
     "rsid": "rs3771604",
     "chromosome": "2",
@@ -23619,36 +23199,6 @@
       "Yakut": 0,
       "Mongol": 0,
       "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs12693170": {
-    "rsid": "rs12693170",
-    "chromosome": "2",
-    "position": 178872417,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
       "Tajik": 0.25
     },
     "deepFrequencies": {},
@@ -26927,36 +26477,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs3916092": {
-    "rsid": "rs3916092",
-    "chromosome": "3",
-    "position": 19904565,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.5,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4103004": {
     "rsid": "rs4103004",
     "chromosome": "3",
@@ -27429,36 +26949,6 @@
       "Yakut": 0.25,
       "Mongol": 0.25,
       "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs285317": {
-    "rsid": "rs285317",
-    "chromosome": "3",
-    "position": 36210223,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.5,
-      "Uyghur": 0.25,
       "Tajik": 0.25
     },
     "deepFrequencies": {},
@@ -30017,36 +29507,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs7630522": {
-    "rsid": "rs7630522",
-    "chromosome": "3",
-    "position": 107434241,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7634587": {
     "rsid": "rs7634587",
     "chromosome": "3",
@@ -30190,36 +29650,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs9288952": {
-    "rsid": "rs9288952",
-    "chromosome": "3",
-    "position": 112466178,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -30550,36 +29980,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs4687889": {
-    "rsid": "rs4687889",
-    "chromosome": "3",
-    "position": 117818592,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -33467,36 +32867,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs9999241": {
-    "rsid": "rs9999241",
-    "chromosome": "4",
-    "position": 7173266,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs905010": {
     "rsid": "rs905010",
     "chromosome": "4",
@@ -35627,36 +34997,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1369093": {
-    "rsid": "rs1369093",
-    "chromosome": "4",
-    "position": 72379474,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Unknown",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs12507775": {
     "rsid": "rs12507775",
     "chromosome": "4",
@@ -36277,36 +35617,6 @@
     },
     "subFrequencies": {
       "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1230190": {
-    "rsid": "rs1230190",
-    "chromosome": "4",
-    "position": 98971045,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
       "Mongol": 0.25,
       "Uyghur": 0.25,
       "Tajik": 0
@@ -37307,36 +36617,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10018031": {
-    "rsid": "rs10018031",
-    "chromosome": "4",
-    "position": 132080372,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.25,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.35,
-      "CAS": 0
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6839208": {
     "rsid": "rs6839208",
     "chromosome": "4",
@@ -38053,36 +37333,6 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs4696443": {
-    "rsid": "rs4696443",
-    "chromosome": "4",
-    "position": 153230836,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.25,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.35,
-      "CAS": 0
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -38950,36 +38200,6 @@
       "Mongol": 0,
       "Uyghur": 0,
       "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10520478": {
-    "rsid": "rs10520478",
-    "chromosome": "4",
-    "position": 181374523,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -40180,36 +39400,6 @@
       "Mongol": 0.25,
       "Uyghur": 0.75,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs25943": {
-    "rsid": "rs25943",
-    "chromosome": "5",
-    "position": 14648580,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -43277,66 +42467,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs6594987": {
-    "rsid": "rs6594987",
-    "chromosome": "5",
-    "position": 116892616,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1429739": {
-    "rsid": "rs1429739",
-    "chromosome": "5",
-    "position": 118615845,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0.5,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6894997": {
     "rsid": "rs6894997",
     "chromosome": "5",
@@ -44140,36 +43270,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs261532": {
-    "rsid": "rs261532",
-    "chromosome": "5",
-    "position": 139569777,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -46547,36 +45647,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs6926774": {
-    "rsid": "rs6926774",
-    "chromosome": "6",
-    "position": 5732587,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2813,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3688,
-      "CAS": 0.0625
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1407793": {
     "rsid": "rs1407793",
     "chromosome": "6",
@@ -47773,36 +46843,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs12660883": {
-    "rsid": "rs12660883",
-    "chromosome": "6",
-    "position": 30796643,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -49637,36 +48677,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1321204": {
-    "rsid": "rs1321204",
-    "chromosome": "6",
-    "position": 101020715,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs9390754": {
     "rsid": "rs9390754",
     "chromosome": "6",
@@ -50593,36 +49603,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs9321263": {
-    "rsid": "rs9321263",
-    "chromosome": "6",
-    "position": 130977773,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -52937,36 +51917,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs731257": {
-    "rsid": "rs731257",
-    "chromosome": "7",
-    "position": 12629626,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10259703": {
     "rsid": "rs10259703",
     "chromosome": "7",
@@ -53140,36 +52090,6 @@
       "Mongol": 0.5,
       "Uyghur": 0.25,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs3095006": {
-    "rsid": "rs3095006",
-    "chromosome": "7",
-    "position": 20217202,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.25
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -54437,36 +53357,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1015573": {
-    "rsid": "rs1015573",
-    "chromosome": "7",
-    "position": 50814098,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4947627": {
     "rsid": "rs4947627",
     "chromosome": "7",
@@ -55180,66 +54070,6 @@
       "Mongol": 0,
       "Uyghur": 0.5,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs705316": {
-    "rsid": "rs705316",
-    "chromosome": "7",
-    "position": 98627773,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs4236541": {
-    "rsid": "rs4236541",
-    "chromosome": "7",
-    "position": 99232816,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -56537,36 +55367,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10487888": {
-    "rsid": "rs10487888",
-    "chromosome": "7",
-    "position": 140799307,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1110074": {
     "rsid": "rs1110074",
     "chromosome": "7",
@@ -56683,36 +55483,6 @@
     },
     "deepFrequencies": {},
     "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1994497": {
-    "rsid": "rs1994497",
-    "chromosome": "7",
-    "position": 143119834,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.25,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.35,
-      "CAS": 0
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -57760,36 +56530,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1057187": {
-    "rsid": "rs1057187",
-    "chromosome": "8",
-    "position": 6405562,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -59413,36 +58153,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2915495": {
-    "rsid": "rs2915495",
-    "chromosome": "8",
-    "position": 51367179,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.5,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -61337,36 +60047,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2247105": {
-    "rsid": "rs2247105",
-    "chromosome": "8",
-    "position": 97348567,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.625,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.575,
-      "CAS": 0.75
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 1,
-      "Uyghur": 0.75,
-      "Tajik": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1351205": {
     "rsid": "rs1351205",
     "chromosome": "8",
@@ -62140,36 +60820,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1904217": {
-    "rsid": "rs1904217",
-    "chromosome": "8",
-    "position": 113309600,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -63977,36 +62627,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs7043322": {
-    "rsid": "rs7043322",
-    "chromosome": "9",
-    "position": 8241845,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.5,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs2281747": {
     "rsid": "rs2281747",
     "chromosome": "9",
@@ -64870,36 +63490,6 @@
       "Mongol": 0,
       "Uyghur": 0.5,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10812520": {
-    "rsid": "rs10812520",
-    "chromosome": "9",
-    "position": 27047248,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -66467,36 +65057,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10760858": {
-    "rsid": "rs10760858",
-    "chromosome": "9",
-    "position": 102256798,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 1
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs303543": {
     "rsid": "rs303543",
     "chromosome": "9",
@@ -67637,36 +66197,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10819490": {
-    "rsid": "rs10819490",
-    "chromosome": "9",
-    "position": 129294039,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10116248": {
     "rsid": "rs10116248",
     "chromosome": "9",
@@ -67718,36 +66248,6 @@
     "subFrequencies": {
       "Yakut": 0,
       "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs4740366": {
-    "rsid": "rs4740366",
-    "chromosome": "9",
-    "position": 130755235,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.75,
-      "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0
     },
@@ -68440,36 +66940,6 @@
       "Mongol": 0.25,
       "Uyghur": 0,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs582052": {
-    "rsid": "rs582052",
-    "chromosome": "10",
-    "position": 6427193,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -71387,36 +69857,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs4746969": {
-    "rsid": "rs4746969",
-    "chromosome": "10",
-    "position": 70140433,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2813,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3688,
-      "CAS": 0.0625
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs871870": {
     "rsid": "rs871870",
     "chromosome": "10",
@@ -72317,36 +70757,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1936614": {
-    "rsid": "rs1936614",
-    "chromosome": "10",
-    "position": 90675200,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2813,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3688,
-      "CAS": 0.0625
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs9787573": {
     "rsid": "rs9787573",
     "chromosome": "10",
@@ -72887,36 +71297,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2862954": {
-    "rsid": "rs2862954",
-    "chromosome": "10",
-    "position": 100152307,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1502593": {
     "rsid": "rs1502593",
     "chromosome": "10",
@@ -73337,36 +71717,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2501574": {
-    "rsid": "rs2501574",
-    "chromosome": "10",
-    "position": 110090745,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10884938": {
     "rsid": "rs10884938",
     "chromosome": "10",
@@ -73540,36 +71890,6 @@
       "Mongol": 0.25,
       "Uyghur": 0,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10509963": {
-    "rsid": "rs10509963",
-    "chromosome": "10",
-    "position": 112477106,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.75
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -73753,36 +72073,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs11819305": {
-    "rsid": "rs11819305",
-    "chromosome": "10",
-    "position": 117148539,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.625,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.575,
-      "CAS": 0.75
-    },
-    "subFrequencies": {
-      "Yakut": 1,
-      "Mongol": 1,
-      "Uyghur": 0.5,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -75077,36 +73367,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs4500466": {
-    "rsid": "rs4500466",
-    "chromosome": "11",
-    "position": 12019949,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7101833": {
     "rsid": "rs7101833",
     "chromosome": "11",
@@ -76187,36 +74447,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs7479005": {
-    "rsid": "rs7479005",
-    "chromosome": "11",
-    "position": 40810148,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.5,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7106357": {
     "rsid": "rs7106357",
     "chromosome": "11",
@@ -76364,36 +74594,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10437653": {
-    "rsid": "rs10437653",
-    "chromosome": "11",
-    "position": 46276080,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
@@ -76960,36 +75160,6 @@
       "Mongol": 0.5,
       "Uyghur": 0.25,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2027765": {
-    "rsid": "rs2027765",
-    "chromosome": "11",
-    "position": 73272985,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -77714,36 +75884,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1042602": {
-    "rsid": "rs1042602",
-    "chromosome": "11",
-    "position": 89178528,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "TYR",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
@@ -79607,36 +77747,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1793562": {
-    "rsid": "rs1793562",
-    "chromosome": "11",
-    "position": 131207544,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs633040": {
     "rsid": "rs633040",
     "chromosome": "11",
@@ -79907,36 +78017,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs4980895": {
-    "rsid": "rs4980895",
-    "chromosome": "12",
-    "position": 411781,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.5,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6489769": {
     "rsid": "rs6489769",
     "chromosome": "12",
@@ -79960,36 +78040,6 @@
       "Mongol": 0.75,
       "Uyghur": 0,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs10848438": {
-    "rsid": "rs10848438",
-    "chromosome": "12",
-    "position": 1102410,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -81647,36 +79697,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1807757": {
-    "rsid": "rs1807757",
-    "chromosome": "12",
-    "position": 48560257,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10783289": {
     "rsid": "rs10783289",
     "chromosome": "12",
@@ -81880,36 +79900,6 @@
       "Mongol": 0,
       "Uyghur": 0.5,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs3825192": {
-    "rsid": "rs3825192",
-    "chromosome": "12",
-    "position": 54385039,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -82214,36 +80204,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs893280": {
-    "rsid": "rs893280",
-    "chromosome": "12",
-    "position": 67161546,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.25,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.35,
-      "CAS": 0
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "AMR-AIM",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
@@ -83293,36 +81253,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2373455": {
-    "rsid": "rs2373455",
-    "chromosome": "12",
-    "position": 101499143,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -85329,36 +83259,6 @@
       "Yakut": 0.25,
       "Mongol": 0,
       "Uyghur": 0,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs2312972": {
-    "rsid": "rs2312972",
-    "chromosome": "13",
-    "position": 31030980,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
       "Tajik": 0.5
     },
     "deepFrequencies": {},
@@ -87707,36 +85607,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2793783": {
-    "rsid": "rs2793783",
-    "chromosome": "13",
-    "position": 99600962,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs1289556": {
     "rsid": "rs1289556",
     "chromosome": "13",
@@ -89173,36 +87043,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs11157247": {
-    "rsid": "rs11157247",
-    "chromosome": "14",
-    "position": 41699690,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
@@ -90789,36 +88629,6 @@
       "Yakut": 0.75,
       "Mongol": 0.25,
       "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs760287": {
-    "rsid": "rs760287",
-    "chromosome": "14",
-    "position": 79972317,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.5,
-      "Uyghur": 0.25,
       "Tajik": 0
     },
     "deepFrequencies": {},
@@ -95237,36 +93047,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1561409": {
-    "rsid": "rs1561409",
-    "chromosome": "16",
-    "position": 13148098,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.5,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs222133": {
     "rsid": "rs222133",
     "chromosome": "16",
@@ -96017,36 +93797,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1345407": {
-    "rsid": "rs1345407",
-    "chromosome": "16",
-    "position": 49089607,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2813,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3688,
-      "CAS": 0.0625
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs8057939": {
     "rsid": "rs8057939",
     "chromosome": "16",
@@ -96407,36 +94157,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs7194392": {
-    "rsid": "rs7194392",
-    "chromosome": "16",
-    "position": 58969107,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2813,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3688,
-      "CAS": 0.0625
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs9939720": {
     "rsid": "rs9939720",
     "chromosome": "16",
@@ -96790,36 +94510,6 @@
       "Mongol": 0.75,
       "Uyghur": 0,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs7200919": {
-    "rsid": "rs7200919",
-    "chromosome": "16",
-    "position": 67282697,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0.25
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -97757,36 +95447,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs918727": {
-    "rsid": "rs918727",
-    "chromosome": "16",
-    "position": 86556474,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.5,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs11649260": {
     "rsid": "rs11649260",
     "chromosome": "16",
@@ -98110,36 +95770,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs333117": {
-    "rsid": "rs333117",
-    "chromosome": "17",
-    "position": 4491875,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.75
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -98837,36 +96467,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs3785499": {
-    "rsid": "rs3785499",
-    "chromosome": "17",
-    "position": 17511903,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs4925094": {
     "rsid": "rs4925094",
     "chromosome": "17",
@@ -99107,36 +96707,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2346689": {
-    "rsid": "rs2346689",
-    "chromosome": "17",
-    "position": 33299837,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs12941510": {
     "rsid": "rs12941510",
     "chromosome": "17",
@@ -99279,36 +96849,6 @@
       "Yakut": 0,
       "Mongol": 0.5,
       "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs854462": {
-    "rsid": "rs854462",
-    "chromosome": "17",
-    "position": 36058726,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0.5,
       "Tajik": 0.25
     },
     "deepFrequencies": {},
@@ -100727,36 +98267,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs820259": {
-    "rsid": "rs820259",
-    "chromosome": "17",
-    "position": 75597493,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs2278826": {
     "rsid": "rs2278826",
     "chromosome": "17",
@@ -100810,36 +98320,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1025934": {
-    "rsid": "rs1025934",
-    "chromosome": "17",
-    "position": 76909513,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -102107,36 +99587,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs10502493": {
-    "rsid": "rs10502493",
-    "chromosome": "18",
-    "position": 27447966,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs10502503": {
     "rsid": "rs10502503",
     "chromosome": "18",
@@ -102340,36 +99790,6 @@
       "Mongol": 0.25,
       "Uyghur": 0.25,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1383290": {
-    "rsid": "rs1383290",
-    "chromosome": "18",
-    "position": 34793772,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.75
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -102587,36 +100007,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs11877111": {
-    "rsid": "rs11877111",
-    "chromosome": "18",
-    "position": 41266740,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.2813,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3688,
-      "CAS": 0.0625
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7239883": {
     "rsid": "rs7239883",
     "chromosome": "18",
@@ -102670,36 +100060,6 @@
       "Mongol": 0,
       "Uyghur": 0.25,
       "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs627966": {
-    "rsid": "rs627966",
-    "chromosome": "18",
-    "position": 43342856,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.75
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -105497,36 +102857,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs7252868": {
-    "rsid": "rs7252868",
-    "chromosome": "19",
-    "position": 39860089,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "T"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs7259265": {
     "rsid": "rs7259265",
     "chromosome": "19",
@@ -106487,36 +103817,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs2295545": {
-    "rsid": "rs2295545",
-    "chromosome": "20",
-    "position": 3184040,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.625,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.575,
-      "CAS": 0.75
-    },
-    "subFrequencies": {
-      "Yakut": 1,
-      "Mongol": 1,
-      "Uyghur": 0.25,
-      "Tajik": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs979332": {
     "rsid": "rs979332",
     "chromosome": "20",
@@ -107117,36 +104417,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs1541065": {
-    "rsid": "rs1541065",
-    "chromosome": "20",
-    "position": 16243277,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.25,
-      "Tajik": 0.75
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6044565": {
     "rsid": "rs6044565",
     "chromosome": "20",
@@ -107444,36 +104714,6 @@
     "deepFrequencies": {},
     "weight": 6,
     "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs6088466": {
-    "rsid": "rs6088466",
-    "chromosome": "20",
-    "position": 34325728,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "G"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0.5,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.25
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "AMR-AIM",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
@@ -107830,36 +105070,6 @@
       "Mongol": 0.25,
       "Uyghur": 0,
       "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs4812833": {
-    "rsid": "rs4812833",
-    "chromosome": "20",
-    "position": 44440356,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "A"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.375,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.425,
-      "CAS": 0.25
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0.5
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -108940,36 +106150,6 @@
       "Mongol": 0.25,
       "Uyghur": 0.25,
       "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs1735961": {
-    "rsid": "rs1735961",
-    "chromosome": "21",
-    "position": 21743943,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0.25,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0
     },
     "deepFrequencies": {},
     "weight": 6,
@@ -110657,36 +107837,6 @@
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
   },
-  "rs11704546": {
-    "rsid": "rs11704546",
-    "chromosome": "22",
-    "position": 27808809,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3125,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.3875,
-      "CAS": 0.125
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0,
-      "Uyghur": 0.5,
-      "Tajik": 0
-    },
-    "deepFrequencies": {},
-    "weight": 6,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
   "rs6005907": {
     "rsid": "rs6005907",
     "chromosome": "22",
@@ -110713,36 +107863,6 @@
     },
     "deepFrequencies": {},
     "weight": 8,
-    "gene": "Intergenic",
-    "trait": "Ancestry",
-    "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."
-  },
-  "rs132549": {
-    "rsid": "rs132549",
-    "chromosome": "22",
-    "position": 28922736,
-    "region": "Central Asian",
-    "color": "#F59E0B",
-    "alleles": [
-      "C"
-    ],
-    "frequencies": {
-      "AFR": 0.5,
-      "AMR": 0.3438,
-      "EAS": 0.5,
-      "EUR": 0.5,
-      "SAS": 0.5,
-      "MENA": 0.4063,
-      "CAS": 0.1875
-    },
-    "subFrequencies": {
-      "Yakut": 0,
-      "Mongol": 0.25,
-      "Uyghur": 0,
-      "Tajik": 0.5
-    },
-    "deepFrequencies": {},
-    "weight": 6,
     "gene": "Intergenic",
     "trait": "Ancestry",
     "description": "Central Asian / Siberian informative marker with verified regional and subpopulation frequencies."

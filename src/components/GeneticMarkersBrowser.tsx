@@ -50,31 +50,38 @@ export interface MarkerRecord {
 }
 
 export function resolveMarkerRegion(m: any, dbEntry: any): string {
-  // 1. Direct explicit region or continent property
+  // 1. Text inference check FIRST for strong, unambiguous diagnostic regional terms
+  const text = `${m.trait || ''} ${m.description || ''} ${dbEntry?.trait || ''} ${dbEntry?.description || ''}`.toLowerCase();
+
+  // Strong specific lineage keywords take precedence over potentially mismatched container tags
+  if (text.includes('sahelian') || text.includes('senegambian') || text.includes('mandinka') || 
+      text.includes('wolof') || text.includes('fula') || text.includes('bantu') || 
+      text.includes('yoruba') || text.includes('khoe-san') || text.includes('nilotic') || text.includes('pygmy')) {
+    return 'African';
+  }
+  if (text.includes('african-american') || text.includes('african american')) return 'African-American';
+  if (text.includes('north african')) return 'North African';
+  if (text.includes('central asian') || text.includes('siberian') || text.includes('altaian') || text.includes('yakut')) return 'Central Asian';
+  if (text.includes('south asian') || text.includes('dravidian') || text.includes('indo-aryan') || text.includes('bengali') || text.includes('punjabi') || text.includes('gujarati') || text.includes('brahmin')) return 'South Asian';
+  if (text.includes('east asian') || text.includes('han chinese') || text.includes('japanese') || text.includes('korean')) return 'East Asian';
+  if (text.includes('native american') || text.includes('indigenous american') || text.includes('amerindian') || text.includes('mayan') || text.includes('pima') || text.includes('quechua')) return 'Native American';
+  if (text.includes('oceanian') || text.includes('melanesian') || text.includes('polynesian') || text.includes('papuan')) return 'Oceanian';
+  if (text.includes('middle east') || text.includes('near east') || text.includes('levant') || text.includes('arabian') || text.includes('ashkenazi') || text.includes('sephardic')) return 'Middle Eastern';
+  if (text.includes('sub-saharan') || text.includes('african')) return 'African';
+  if (text.includes('european') || text.includes('caucasian') || text.includes('celtic') || text.includes('slavic') || text.includes('germanic') || text.includes('scandinavian') || text.includes('iberian')) return 'European';
+
+  // 2. Direct explicit region or continent property
   const explicit = m.region || m.continent || dbEntry?.region || dbEntry?.continent;
   if (explicit && explicit !== 'Global' && explicit !== 'Cosmopolitan' && explicit !== 'Multi-Way Informative') {
     return explicit === 'African American' ? 'African-American' : explicit;
   }
 
-  // 2. Subpopulation tag
+  // 3. Subpopulation tag
   const sub = m.subpop || m.subPopulation || dbEntry?.subpop || dbEntry?.subPopulation;
   if (sub) {
     const mapped = mapToRegion(sub);
     if (mapped !== 'Global') return mapped;
   }
-
-  // 3. Infer from trait or description
-  const text = `${m.trait || ''} ${m.description || ''} ${dbEntry?.trait || ''} ${dbEntry?.description || ''}`.toLowerCase();
-  if (text.includes('african-american') || text.includes('african american')) return 'African-American';
-  if (text.includes('north african')) return 'North African';
-  if (text.includes('central asian')) return 'Central Asian';
-  if (text.includes('south asian')) return 'South Asian';
-  if (text.includes('east asian')) return 'East Asian';
-  if (text.includes('native american') || text.includes('indigenous american') || text.includes('amerindian')) return 'Native American';
-  if (text.includes('oceanian') || text.includes('melanesian') || text.includes('polynesian')) return 'Oceanian';
-  if (text.includes('middle east') || text.includes('near east') || text.includes('levant') || text.includes('arabian')) return 'Middle Eastern';
-  if (text.includes('sub-saharan') || text.includes('african')) return 'African';
-  if (text.includes('european') || text.includes('caucasian') || text.includes('jewish') || text.includes('slavic') || text.includes('celtic') || text.includes('italic') || text.includes('germanic')) return 'European';
 
   if (explicit) return explicit === 'African American' ? 'African-American' : explicit;
   return 'Global';
@@ -146,10 +153,34 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
       const alleles = m.alleles || dbEntry?.alleles || [];
       const resolvedRegion = resolveMarkerRegion(m, dbEntry);
       const gene = m.gene || dbEntry?.gene || (m.category === 'Ancestry' || (resolvedRegion && resolvedRegion !== 'Global') ? 'AIM Locus' : 'Intergenic');
-      const trait = m.trait || dbEntry?.trait || (resolvedRegion && resolvedRegion !== 'Global' ? `${resolvedRegion} Ancestry Tag` : 'Genomic Variant');
+      
+      const rawTrait = m.trait || dbEntry?.trait || '';
+      const rawDesc = m.description || dbEntry?.description || '';
+
+      let trait = rawTrait;
+      let description = rawDesc;
+
+      const normTrait = (rawTrait || '').trim().toLowerCase();
+      const normDesc = (rawDesc || '').trim().toLowerCase();
+
+      // Deduplicate trait and description to avoid repeating identical sentences
+      if (!trait && !description) {
+        trait = resolvedRegion && resolvedRegion !== 'Global' ? `${resolvedRegion} Ancestry Tag` : 'Genomic Variant';
+        description = resolvedRegion && resolvedRegion !== 'Global' ? `Ancestry Informative Marker for ${resolvedRegion} genetic lineage.` : '';
+      } else if (normTrait && normDesc && (normTrait === normDesc || normDesc.startsWith(normTrait))) {
+        // If trait is a full multi-word sentence (> 40 chars or starts with 'Empirical marker'), extract a concise tag
+        if (rawTrait.length > 40 || rawTrait.startsWith('Empirical marker') || rawTrait.startsWith('Ancestry Informative')) {
+          trait = dbEntry?.trait && dbEntry.trait !== rawTrait && dbEntry.trait.length <= 40
+            ? dbEntry.trait
+            : (resolvedRegion && resolvedRegion !== 'Global' ? `${resolvedRegion} Lineage AIM` : 'Ancestry Informative Marker');
+        }
+        description = rawDesc;
+      } else if (!trait && description) {
+        trait = resolvedRegion && resolvedRegion !== 'Global' ? `${resolvedRegion} Lineage AIM` : 'Ancestry Informative Marker';
+      }
+
       const significance = m.significance || dbEntry?.significance || 'Low';
       const category = m.category || dbEntry?.category || ((resolvedRegion && resolvedRegion !== 'Global') ? 'Ancestry' : 'Other');
-      const description = m.description || dbEntry?.description || ((resolvedRegion && resolvedRegion !== 'Global') ? `Ancestry Informative Marker for ${resolvedRegion} genetic lineage.` : '');
 
       return {
         ...m,
@@ -1208,7 +1239,8 @@ export const GeneticMarkersBrowser: React.FC<GeneticMarkersBrowserProps> = ({ da
                 <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
                   <h4 className="text-xs font-black uppercase tracking-wider text-teal-400">Phenotypic Impact & Trait</h4>
                   <p className="text-sm font-bold text-white">{activeMarker.trait || 'Genomic Variant'}</p>
-                  {activeMarker.description && (
+                  {activeMarker.description && 
+                   activeMarker.description.trim().toLowerCase() !== (activeMarker.trait || '').trim().toLowerCase() && (
                     <p className="text-xs text-slate-300 leading-relaxed pt-1">
                       {activeMarker.description}
                     </p>
