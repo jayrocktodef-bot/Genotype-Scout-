@@ -28,6 +28,8 @@ export interface AnchorAim {
   subFrequencies?: Record<string, number>;
   subpop?: string;
   description: string;
+  gene?: string;
+  trait?: string;
 }
 
 export interface HaplogroupNode {

@@ -103,7 +103,7 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({
                   onClick={() => setModalMode('explainer')}
                   className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-mono font-black uppercase tracking-wider transition-all text-center ${
                     modalMode === 'explainer'
-                      ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                      ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -113,7 +113,7 @@ export const MethodologyModal: React.FC<MethodologyModalProps> = ({
                   onClick={() => setModalMode('technical')}
                   className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-mono font-black uppercase tracking-wider transition-all text-center ${
                     modalMode === 'technical'
-                      ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                      ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >

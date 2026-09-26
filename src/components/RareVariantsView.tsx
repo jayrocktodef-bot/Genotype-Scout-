@@ -45,21 +45,27 @@ const RareVariantsView: React.FC<RareVariantsViewProps> = ({ variants, onOpenMet
         <div className="flex flex-wrap items-center gap-2 bg-black/40 p-1.5 rounded-2xl border border-white/10 shadow-inner">
           <button 
             onClick={() => setActiveTab('rare_allele')}
-            className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 ${activeTab === 'rare_allele' ? 'bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/40 shadow-lg' : 'text-slate-400 hover:text-slate-200'}`}
+            className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 border ${
+              activeTab === 'rare_allele' ? 'bg-fuchsia-500/25 text-fuchsia-200 border-fuchsia-500/40 shadow-lg' : 'text-fuchsia-200/70 hover:text-white border-transparent'
+            }`}
           >
             <AlertTriangle className="w-3.5 h-3.5" />
             Globally Rare ({rareAlleles.length})
           </button>
           <button 
             onClick={() => setActiveTab('internal')}
-            className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 ${activeTab === 'internal' ? 'bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/40 shadow-lg' : 'text-slate-400 hover:text-slate-200'}`}
+            className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 border ${
+              activeTab === 'internal' ? 'bg-fuchsia-500/25 text-fuchsia-200 border-fuchsia-500/40 shadow-lg' : 'text-fuchsia-200/70 hover:text-white border-transparent'
+            }`}
           >
             <ShieldAlert className="w-3.5 h-3.5" />
             Internal ({internalVariants.length})
           </button>
           <button 
             onClick={() => setActiveTab('unmapped')}
-            className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 ${activeTab === 'unmapped' ? 'bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/40 shadow-lg' : 'text-slate-400 hover:text-slate-200'}`}
+            className={`px-4 py-2 rounded-xl text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all flex items-center gap-2 border ${
+              activeTab === 'unmapped' ? 'bg-fuchsia-500/25 text-fuchsia-200 border-fuchsia-500/40 shadow-lg' : 'text-fuchsia-200/70 hover:text-white border-transparent'
+            }`}
           >
             <Search className="w-3.5 h-3.5" />
             Unmapped ({unmappedVariants.length})

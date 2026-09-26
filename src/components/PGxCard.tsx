@@ -9,13 +9,13 @@ interface PGxReport {
 
 export const PGxCard: React.FC<{ report: PGxReport }> = ({ report }) => {
   const severityColors = {
-    High: 'border-red-600 bg-red-950/20 text-red-500',
-    Moderate: 'border-amber-600 bg-amber-950/20 text-amber-500',
-    Low: 'border-blue-600 bg-blue-950/20 text-blue-500',
+    High: 'border-red-500/40 bg-red-950/20 text-red-400',
+    Moderate: 'border-amber-500/40 bg-amber-950/20 text-amber-400',
+    Low: 'border-blue-500/40 bg-blue-950/20 text-blue-400',
   };
 
   return (
-    <div className={`border-l-4 p-5 rounded-r-2xl bg-slate-900 border-slate-800 shadow-xl transition-all hover:scale-[1.02] ${severityColors[report.severity] || 'border-slate-600'}`}>
+    <div className={`p-5 rounded-2xl bg-slate-900 border shadow-xl transition-all hover:scale-[1.01] ${severityColors[report.severity] || 'border-slate-800 text-slate-400'}`}>
       <div className="flex justify-between items-center mb-3">
         <span className="font-black text-[10px] uppercase tracking-[0.2em]">
           {report.severity} Priority Alert

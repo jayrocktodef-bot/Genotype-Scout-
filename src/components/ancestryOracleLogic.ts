@@ -1640,19 +1640,21 @@ export async function processSubpopulations(
     const mhResults = deconvolveMicrohaplotypes(userSnpsMap);
     if (mhResults.length > 0) {
       microhapLocusCount = (mhResults as any).locusCount || (mhResults as any).detectedLoci?.length || 100;
-      breakdown = mhResults.map((r, idx) => ({
+      const distanceSorted = (mhResults.distanceRanked || [...mhResults]).sort((a, b) => a.distance - b.distance);
+      breakdown = distanceSorted.map((r, idx) => ({
         subpop: r.name,
         distance: r.distance ?? Number((0.05 + idx * 0.02).toFixed(3)),
         similarityScore: r.percentage,
         markersCompared: microhapLocusCount,
-        count: microhapLocusCount
+        count: microhapLocusCount,
       }));
       topMatch = breakdown[0].subpop;
-      admixtureMix = mhResults.map(r => ({
+      admixtureMix = mhResults.map((r) => ({
         popCode: r.popCode,
         name: r.name,
-        percentage: r.percentage
+        percentage: r.percentage,
       }));
+      unmappedAims.length = 0; // Clear global AIM unmapped count for microhap panel
     }
   }
 

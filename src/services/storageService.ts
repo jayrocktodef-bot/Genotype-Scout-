@@ -66,3 +66,12 @@ export const clearResults = async () => {
     console.error("Failed to clear IndexedDB", e);
   }
 };
+
+export {
+  isOPFSSupported,
+  saveSnpMapToOPFS,
+  loadSnpMapFromOPFS,
+  deleteSnpMapFromOPFS,
+  saveBinaryBufferToOPFS,
+  loadBinaryBufferFromOPFS
+} from './opfsStorageService';

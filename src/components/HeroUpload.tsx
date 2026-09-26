@@ -8,6 +8,7 @@ import {
   Scale, AlertTriangle, Landmark, RotateCcw, Trash2
 } from 'lucide-react';
 import { forceResetAndClearCache } from '../utils/cacheManager';
+import { useLegalConsentStore } from '../stores/useLegalConsentStore';
 
 interface HeroUploadProps {
   onFiles: (files: FileList | File[]) => void;
@@ -24,6 +25,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   const [activeTab, setActiveTab] = useState<TabType>('privacy');
   const [isLoadingDemo, setIsLoadingDemo] = useState(false);
   const [isClearingCache, setIsClearingCache] = useState(false);
+  const { hasAcceptedTerms, openLegalModal } = useLegalConsentStore();
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
@@ -39,6 +41,11 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
     e.preventDefault();
     e.stopPropagation();
     setIsDragActive(false);
+
+    if (!hasAcceptedTerms) {
+      openLegalModal();
+      return;
+    }
 
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
@@ -59,6 +66,10 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   const handleZoneClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!hasAcceptedTerms) {
+      openLegalModal();
+      return;
+    }
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
       fileInputRef.current.click();
@@ -68,6 +79,10 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
+      if (!hasAcceptedTerms) {
+        openLegalModal();
+        return;
+      }
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
         fileInputRef.current.click();
@@ -78,6 +93,10 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
   const handleLoadDemoSpecimen = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!hasAcceptedTerms) {
+      openLegalModal();
+      return;
+    }
     if (isLoadingDemo) return;
 
     try {
@@ -561,7 +580,7 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                     </span>
                   </div>
                   <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800">
-                    <span className="text-purple-400 font-bold block mb-1">CPIC & PHARMGKB</span>
+                    <span className="text-purple-400 font-bold block mb-1">CPIC & CLINVAR</span>
                     <span className="text-zinc-400 text-[11px] leading-tight block">
                       Clinical guideline annotations for pharmacogenomics (PGx).
                     </span>
@@ -627,6 +646,26 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
                     Subpopulation oracle labels represent mathematical proxies based on publicly accessible academic cohorts (e.g., 1000 Genomes, HGDP, SGDP). High similarity scores indicate shared deep ancestry with the reference sample, never verified personal origin in a specific modern village, reservation, or municipality.
                   </p>
                 </div>
+
+                <div className="p-4 rounded-2xl bg-rose-950/20 border border-rose-500/40 space-y-2 md:col-span-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h4 className="font-bold text-rose-300 flex items-center gap-2">
+                      <ShieldAlert className="w-4 h-4 text-rose-400 shrink-0" />
+                      <span>Microarray False-Positive Hazard & Medical Disclaimer</span>
+                    </h4>
+                    <button
+                      type="button"
+                      onClick={openLegalModal}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-lg text-[10px] font-black uppercase tracking-wider transition-colors cursor-pointer w-fit"
+                    >
+                      <Scale className="w-3 h-3" />
+                      <span>View Clickwrap Agreement</span>
+                    </button>
+                  </div>
+                  <p className="text-zinc-400 leading-relaxed text-xs">
+                    Direct-to-consumer microarrays (23andMe, AncestryDNA, MyHeritage) carry documented false-positive rates of <strong>40% to 50%+</strong> on rare clinical alleles due to hybridization probe artifacts. Raw data is strictly Research Use Only (RUO) and requires clinical confirmation (CLIA/CAP) prior to any medical intervention.
+                  </p>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -647,16 +686,28 @@ export const HeroUpload: React.FC<HeroUploadProps> = ({ onFiles, processing, onR
             <span className="text-zinc-400">Network Egress: 0 B</span>
           </div>
 
-          <button
-            type="button"
-            onClick={handleClearCache}
-            disabled={isClearingCache}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-rose-200 border border-rose-500/30 text-[11px] font-semibold transition-all cursor-pointer"
-            title="Clears all client-stored profiles, workers, and caches as a fresh install"
-          >
-            <RotateCcw className={`w-3.5 h-3.5 ${isClearingCache ? 'animate-spin' : ''}`} />
-            <span>{isClearingCache ? 'Purging All Storage...' : 'Fresh Install / Nuclear Cache Reset'}</span>
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={openLegalModal}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 hover:text-amber-200 border border-amber-500/30 text-[11px] font-semibold transition-all cursor-pointer"
+              title="View full Legal Terms of Service & Microarray Error Advisory"
+            >
+              <Scale className="w-3.5 h-3.5 text-amber-400" />
+              <span>Legal & Error Advisory</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleClearCache}
+              disabled={isClearingCache}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-rose-200 border border-rose-500/30 text-[11px] font-semibold transition-all cursor-pointer"
+              title="Clears all client-stored profiles, workers, and caches as a fresh install"
+            >
+              <RotateCcw className={`w-3.5 h-3.5 ${isClearingCache ? 'animate-spin' : ''}`} />
+              <span>{isClearingCache ? 'Purging All Storage...' : 'Fresh Install / Nuclear Reset'}</span>
+            </button>
+          </div>
         </div>
 
         {/* Footer Reference Link */}

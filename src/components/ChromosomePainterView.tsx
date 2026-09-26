@@ -3,16 +3,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Dna, Loader2, X, HelpCircle, Search } from 'lucide-react';
 import { ChromosomePainter, CHROMOSOME_LENGTHS } from './ChromosomePainter';
 import { computeDatasetLAI, computePaintedAncestry } from '../utils/ancestry/paintedAncestry';
-
-const POP_COLORS: Record<string, string> = {
-  EUR: '#3b82f6',
-  AFR: '#10b981',
-  EAS: '#ef4444',
-  SAS: '#f59e0b',
-  AMR: '#a855f7',
-  OCE: '#06b6d4',
-  MID: '#f97316'
-};
+import {
+  ColorblindMode,
+  COLORBLIND_PALETTES,
+  getSegmentColor,
+  getSegmentPattern
+} from '../constants/ancestryThemes';
 
 const REGION_NAMES: Record<string, string> = {
   EUR: 'European',
@@ -67,6 +63,8 @@ export const ChromosomePainterView = ({
   const [snpsUsedForLAI, setSnpsUsedForLAI] = useState<any[]>([]);
   const [snpSearchQuery, setSnpSearchQuery] = useState<string>('');
   const [displayLimit, setDisplayLimit] = useState<number>(60);
+  const [colorblindMode, setColorblindMode] = useState<ColorblindMode>('default');
+  const [showPatterns, setShowPatterns] = useState<boolean>(false);
 
   const allMatchedAIMs = useMemo(() => {
     return snpsUsedForLAI.length > 0 ? snpsUsedForLAI : (dataset?.analysis?.aimsUsed || []);
@@ -268,6 +266,10 @@ export const ChromosomePainterView = ({
                   setMarkerScope('all');
                 }
               }}
+              colorblindMode={colorblindMode}
+              onColorblindModeChange={setColorblindMode}
+              showPatterns={showPatterns}
+              onTogglePatterns={setShowPatterns}
               onSegmentClick={(chrom, strand, segment, bp) => {
                 setSelectedSegment({ chrom, strand, segment, bp });
                 setActiveChromFocus(chrom);
@@ -317,8 +319,14 @@ export const ChromosomePainterView = ({
                           <span className="text-slate-400 font-bold block uppercase text-[9px]">Ancestry Origin</span>
                           <span className="text-xs font-black text-white mt-0.5 flex items-center gap-1.5">
                             <span 
-                              className="w-2.5 h-2.5 rounded-full inline-block shrink-0" 
-                              style={{ backgroundColor: POP_COLORS[selectedSegment.segment.continent] }}
+                              className="w-2.5 h-2.5 rounded-full inline-block shrink-0 border border-white/10" 
+                              style={{ 
+                                backgroundColor: getSegmentColor(selectedSegment.segment.continent, colorblindMode),
+                                backgroundImage: showPatterns && getSegmentPattern(selectedSegment.segment.continent).cssPattern !== 'none'
+                                  ? getSegmentPattern(selectedSegment.segment.continent).cssPattern
+                                  : undefined,
+                                backgroundSize: getSegmentPattern(selectedSegment.segment.continent).backgroundSize
+                              }}
                             />
                             {REGION_NAMES[selectedSegment.segment.continent] ?? selectedSegment.segment.continent}
                           </span>

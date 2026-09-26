@@ -172,7 +172,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
       <div className="hidden print:block mb-8 border-b-2 border-slate-800 pb-4">
         <h1 className="text-2xl font-black uppercase tracking-tight text-slate-900 dark:text-slate-100">Genotype Scout - Clinical PGx & Health Report</h1>
         <p className="text-xs font-mono text-slate-500 mt-1 dark:text-slate-400">
-          Generated: {new Date().toLocaleDateString()} | Reference Guidelines: CPIC / PharmGKB
+          Generated: {new Date().toLocaleDateString()} | Reference Guidelines: CPIC / ClinVar Open Consensus
         </p>
         <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 text-[10px] leading-relaxed text-slate-700 dark:text-slate-300 dark:bg-slate-800">
           <strong>Important Clinical Notice:</strong> This report is for professional reference and genotyping validation. All annotations correspond to PGx database versions. Clinical verification is recommended prior to any therapeutic dosage adjustments.
@@ -482,7 +482,7 @@ export const HealthWellnessTab: React.FC<HealthWellnessTabProps> = ({ impacts = 
                   type="button"
                   onClick={onOpenMethodology}
                   className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-xl text-[11px] font-black uppercase tracking-wider transition-colors shadow-sm cursor-pointer"
-                  title="View PGx CPIC & PharmGKB Methodology"
+                  title="View PGx CPIC & ClinVar Methodology"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-indigo-500" />
                   <span>Methodology</span>

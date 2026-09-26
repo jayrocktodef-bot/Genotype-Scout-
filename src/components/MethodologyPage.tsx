@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   BookOpen, Info, Code, Award, Landmark, Database, ChevronDown, ChevronUp, 
   MessageCircle, Beaker, Shield, Search, Sparkles, CheckCircle2, 
-  HelpCircle, ExternalLink, Dna, Filter
+  HelpCircle, ExternalLink, Dna, Filter, ArrowLeft, Home
 } from 'lucide-react';
 import { 
   MODULE_DOCUMENTATION, 
@@ -49,11 +49,13 @@ const MODULE_EMOJIS: Record<string, string> = {
 interface MethodologyPageProps {
   activeTab?: string;
   initialModuleId?: string;
+  onBack?: () => void;
 }
 
 export const MethodologyPage: React.FC<MethodologyPageProps> = ({ 
   activeTab, 
-  initialModuleId 
+  initialModuleId,
+  onBack
 }) => {
   // Map activeTab to canonical module id
   const targetInitial = useMemo(() => {
@@ -119,8 +121,30 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
 
   return (
     <div className="space-y-10 pb-24 animate-fade-up max-w-6xl mx-auto">
+      {/* Back to Workspace Navigation */}
+      {onBack && (
+        <div className="pt-4 sm:pt-6 flex items-center gap-2">
+          <button
+            onClick={onBack}
+            aria-label="Back to Workspace"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 hover:text-amber-200 text-xs font-black uppercase tracking-wider transition-all duration-150 active:scale-[0.96] shadow-sm cursor-pointer"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Workspace</span>
+          </button>
+          <button
+            onClick={onBack}
+            aria-label="Home Dashboard"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-zinc-300 hover:text-white text-xs font-black uppercase tracking-wider transition-all duration-150 active:scale-[0.96] shadow-sm cursor-pointer"
+          >
+            <Home className="w-4 h-4 text-amber-400" />
+            <span>Home</span>
+          </button>
+        </div>
+      )}
+
       {/* Hero Header */}
-      <section className="pt-4 sm:pt-8">
+      <section className={onBack ? "pt-2" : "pt-4 sm:pt-8"}>
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -314,7 +338,7 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                         }}
                         className={`flex-1 sm:flex-initial px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all text-center ${
                           mode === 'explainer'
-                            ? 'bg-teal-500 text-slate-950 shadow-md shadow-teal-500/20 font-black'
+                            ? 'bg-teal-500 text-teal-950 shadow-md shadow-teal-500/20 font-black'
                             : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                         }`}
                       >
@@ -327,7 +351,7 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
                         }}
                         className={`flex-1 sm:flex-initial px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all text-center ${
                           mode === 'technical'
-                            ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 font-black'
+                            ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20 font-black'
                             : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
                         }`}
                       >
@@ -530,7 +554,7 @@ export const MethodologyPage: React.FC<MethodologyPageProps> = ({
             </p>
             <button
               onClick={() => { setSearchQuery(''); setCategoryFilter('ALL'); }}
-              className="px-4 py-2 rounded-xl bg-teal-500 text-slate-950 text-xs font-mono font-bold uppercase tracking-widest"
+              className="px-4 py-2 rounded-xl bg-teal-500 text-black text-xs font-mono font-black uppercase tracking-widest"
             >
               Reset Filters
             </button>

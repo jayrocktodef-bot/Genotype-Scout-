@@ -39,17 +39,19 @@ function main() {
           _source: file 
         };
       });
-    } else {
-      // Nested objects (clinical_health.json: category/rsid, pharmacogenomics.json: drug/rsid)
+    } else if (file === 'clinical_health.json') {
+      // Nested objects (clinical_health.json: category/rsid)
       Object.entries(content).forEach(([group, markers]: [string, any]) => {
         if (typeof markers === 'object' && markers !== null) {
           Object.entries(markers).forEach(([rsid, data]: [string, any]) => {
-            master[rsid] = { 
-              ...(master[rsid] || {}), 
-              ...(data as any), 
-              _group: group,
-              _source: file 
-            };
+            if (rsid.startsWith('rs')) {
+              master[rsid] = { 
+                ...(master[rsid] || {}), 
+                ...(data as any), 
+                _group: group,
+                _source: file 
+              };
+            }
           });
         }
       });

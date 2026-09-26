@@ -24,8 +24,10 @@ import {
   Globe,
   BookOpen
 } from 'lucide-react';
-import masterAims from '../data/master_aims_normalized.json';
+import { loadMasterAims } from '../data/index';
 import { CATEGORY_META, SIG_COLOR, CONTINENT_META, mapToRegion, SNP_LOOKUP } from '../genotypeData';
+
+const masterAims = loadMasterAims();
 
 export interface MarkerRecord {
   markerId: string;

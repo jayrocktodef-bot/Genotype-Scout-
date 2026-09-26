@@ -194,7 +194,7 @@ export const ModernAncestryOracle = memo(({
               onClick={() => setVisualMode('sunburst')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 visualMode === 'sunburst'
-                  ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                  ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -205,7 +205,7 @@ export const ModernAncestryOracle = memo(({
               onClick={() => setVisualMode('bento')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 visualMode === 'bento'
-                  ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                  ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -216,7 +216,7 @@ export const ModernAncestryOracle = memo(({
               onClick={() => setVisualMode('radar')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 visualMode === 'radar'
-                  ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20'
+                  ? 'bg-cyan-500 text-cyan-950 shadow-md shadow-cyan-500/20'
                   : 'text-slate-400 hover:text-white'
               }`}
             >

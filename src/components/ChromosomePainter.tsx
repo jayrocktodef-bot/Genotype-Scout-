@@ -1,20 +1,17 @@
 import React, { useMemo, useState } from 'react';
+import {
+  ColorblindMode,
+  COLORBLIND_PALETTES,
+  getSegmentColor,
+  getSegmentPattern,
+  ANCESTRY_TEXTURE_PATTERNS
+} from '../constants/ancestryThemes';
 
 export const CHROMOSOME_LENGTHS: Record<string, number> = {
   "1": 248956422, "2": 242193529, "3": 198295559, "4": 190214555, "5": 181538259, "6": 170805979, 
   "7": 159345973, "8": 145138636, "9": 138394717, "10": 133797422, "11": 135086622, "12": 133851895, 
   "13": 115169878, "14": 107349540, "15": 102520552, "16": 90354753, "17": 83257441, "18": 80373285, 
   "19": 59128983, "20": 63025520, "21": 48129895, "22": 51304566, "X": 156040895, "Y": 57227415
-};
-
-const POP_COLORS: Record<string, string> = {
-  EUR: '#3b82f6',
-  AFR: '#10b981',
-  EAS: '#ef4444',
-  SAS: '#f59e0b',
-  AMR: '#a855f7',
-  OCE: '#06b6d4',
-  MID: '#f97316'
 };
 
 const REGION_NAMES: Record<string, string> = {
@@ -79,6 +76,10 @@ interface ChromosomePainterProps {
   isMale?: boolean;
   selectedChromFilter?: string;
   onChromFilterChange?: (chrom: string) => void;
+  colorblindMode?: ColorblindMode;
+  onColorblindModeChange?: (mode: ColorblindMode) => void;
+  showPatterns?: boolean;
+  onTogglePatterns?: (show: boolean) => void;
 }
 
 export const ChromosomePainter = ({ 
@@ -87,7 +88,11 @@ export const ChromosomePainter = ({
   parentalDifferentiation,
   isMale = false,
   selectedChromFilter: propsChromFilter,
-  onChromFilterChange
+  onChromFilterChange,
+  colorblindMode: propsColorblindMode,
+  onColorblindModeChange,
+  showPatterns: propsShowPatterns,
+  onTogglePatterns
 }: ChromosomePainterProps) => {
   const [activeContinentFilter, setActiveContinentFilter] = useState<string | null>(null);
   const [internalChromFilter, setInternalChromFilter] = useState<string>('ALL');
@@ -96,7 +101,71 @@ export const ChromosomePainter = ({
     setInternalChromFilter(val);
     onChromFilterChange?.(val);
   };
+
+  const [internalColorblindMode, setInternalColorblindMode] = useState<ColorblindMode>('default');
+  const activeColorblindMode = propsColorblindMode !== undefined ? propsColorblindMode : internalColorblindMode;
+  const handleColorblindModeChange = (val: ColorblindMode) => {
+    setInternalColorblindMode(val);
+    onColorblindModeChange?.(val);
+  };
+
+  const [internalShowPatterns, setInternalShowPatterns] = useState<boolean>(false);
+  const activeShowPatterns = propsShowPatterns !== undefined ? propsShowPatterns : internalShowPatterns;
+  const handleTogglePatterns = () => {
+    const next = !activeShowPatterns;
+    setInternalShowPatterns(next);
+    onTogglePatterns?.(next);
+  };
+
+  const activePalette = COLORBLIND_PALETTES[activeColorblindMode] || COLORBLIND_PALETTES.default;
+  const popColors = activePalette.colors;
+
   const [showGenePins, setShowGenePins] = useState<boolean>(true);
+  const [showAccessibleTable, setShowAccessibleTable] = useState<boolean>(false);
+
+  const accessibleSegments = useMemo(() => {
+    const rows: Array<{
+      chrom: string;
+      strand: string;
+      range: string;
+      continent: string;
+      confidence: number;
+    }> = [];
+
+    Object.entries(CHROMOSOME_LENGTHS).forEach(([chrom, length]) => {
+      const chromData = segments[chrom];
+      if (!chromData) return;
+      const strandA: Segment[] = Array.isArray(chromData) ? chromData : (chromData as any).strandA || [];
+      const strandB: Segment[] = Array.isArray(chromData) ? [] : (chromData as any).strandB || [];
+
+      strandA.forEach((seg, i) => {
+        const startPos = i === 0 ? 0 : seg.start;
+        const endPos = i === strandA.length - 1 ? length : seg.end;
+        rows.push({
+          chrom,
+          strand: chrom === 'Y' ? 'MSY Lineage' : 'Strand A (Maternal)',
+          range: `${(startPos / 1000000).toFixed(1)}Mb – ${(endPos / 1000000).toFixed(1)}Mb`,
+          continent: REGION_NAMES[seg.continent] || seg.continent,
+          confidence: Math.round(seg.confidence * 100)
+        });
+      });
+
+      strandB.forEach((seg, i) => {
+        const startPos = i === 0 ? 0 : seg.start;
+        const endPos = i === strandB.length - 1 ? length : seg.end;
+        rows.push({
+          chrom,
+          strand: 'Strand B (Paternal)',
+          range: `${(startPos / 1000000).toFixed(1)}Mb – ${(endPos / 1000000).toFixed(1)}Mb`,
+          continent: REGION_NAMES[seg.continent] || seg.continent,
+          confidence: Math.round(seg.confidence * 100)
+        });
+      });
+    });
+
+    return rows;
+  }, [segments]);
+
   const [hoveredSegment, setHoveredSegment] = useState<{
     chrom: string;
     strand: 'A' | 'B' | 'Both';
@@ -168,12 +237,12 @@ export const ChromosomePainter = ({
       .map(([code, mb]) => ({
         code,
         name: REGION_NAMES[code] || code,
-        color: POP_COLORS[code] || '#94a3b8',
+        color: popColors[code] || '#94a3b8',
         mb,
         pct: (mb / grandTotalMb) * 100
       }))
       .sort((a, b) => b.pct - a.pct);
-  }, [segments]);
+  }, [segments, popColors]);
 
   return (
     <div className="w-full bg-[#0d0e10]/90 border border-white/5 rounded-3xl p-4 sm:p-6 shadow-2xl relative space-y-5">
@@ -240,23 +309,54 @@ export const ChromosomePainter = ({
         </div>
       )}
 
-      {/* Control Bar: Chromosome Filter & Trait Gene Pins */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-slate-900/50 p-4 rounded-2xl border border-white/5">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Chromosome Focus:</span>
-          <select
-            value={selectedChromFilter}
-            onChange={(e) => handleChromFilterChange(e.target.value)}
-            className="bg-slate-950 text-teal-300 font-bold text-xs px-3 py-1.5 rounded-lg border border-teal-500/30 focus:outline-none cursor-pointer"
-          >
-            <option value="ALL">All Chromosomes (1–X)</option>
-            {Object.keys(CHROMOSOME_LENGTHS).map(c => (
-              <option key={c} value={c}>Chr {c}</option>
-            ))}
-          </select>
+      {/* Control Bar: Chromosome Filter, Palette Selector, Texture Patterns & Trait Gene Pins */}
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3 bg-slate-900/50 p-4 rounded-2xl border border-white/5">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Chr Focus:</span>
+            <select
+              value={selectedChromFilter}
+              onChange={(e) => handleChromFilterChange(e.target.value)}
+              aria-label="Chromosome focus selection"
+              className="bg-slate-950 text-teal-300 font-bold text-xs px-2.5 py-1.5 rounded-lg border border-teal-500/30 focus:outline-none cursor-pointer"
+            >
+              <option value="ALL">All Chromosomes (1–X)</option>
+              {Object.keys(CHROMOSOME_LENGTHS).map(c => (
+                <option key={c} value={c}>Chr {c}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Palette:</span>
+            <select
+              value={activeColorblindMode}
+              onChange={(e) => handleColorblindModeChange(e.target.value as ColorblindMode)}
+              aria-label="Colorblind accessible palette selection"
+              className="bg-slate-950 text-cyan-300 font-bold text-xs px-2.5 py-1.5 rounded-lg border border-cyan-500/30 focus:outline-none cursor-pointer"
+              title="Accessible & colorblind-safe color schemes"
+            >
+              {Object.entries(COLORBLIND_PALETTES).map(([key, pal]) => (
+                <option key={key} value={key}>{pal.name}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={handleTogglePatterns}
+            className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center gap-1.5 ${
+              activeShowPatterns 
+                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40 shadow-sm' 
+                : 'bg-slate-800/40 text-slate-400 border-transparent hover:text-slate-200'
+            }`}
+            title="Toggle hatch & texture patterns for color-independent segment distinction (WCAG 2.1 AA)"
+          >
+            <span>🏁 Texture Patterns</span>
+            <span className="text-[10px] opacity-75">({activeShowPatterns ? 'ON' : 'OFF'})</span>
+          </button>
+
           <button
             onClick={() => setShowGenePins(!showGenePins)}
             className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center gap-1.5 ${
@@ -267,6 +367,20 @@ export const ChromosomePainter = ({
           >
             <span>🧬 Gene Badges</span>
             <span className="text-[10px] opacity-75">({showGenePins ? 'ON' : 'OFF'})</span>
+          </button>
+
+          <button
+            onClick={() => setShowAccessibleTable(!showAccessibleTable)}
+            aria-expanded={showAccessibleTable}
+            title="Toggle accessible tabular data alternative for screen readers and keyboard users (WCAG 1.1.1)"
+            className={`px-3 py-1.5 text-xs font-bold rounded-lg border transition-all flex items-center gap-1.5 cursor-pointer ${
+              showAccessibleTable 
+                ? 'bg-teal-500/20 text-teal-300 border-teal-500/40 shadow-sm' 
+                : 'bg-slate-800/40 text-slate-400 border-transparent hover:text-slate-200'
+            }`}
+          >
+            <span>♿ Accessible Table</span>
+            <span className="text-[10px] opacity-75">({showAccessibleTable ? 'ON' : 'OFF'})</span>
           </button>
         </div>
       </div>
@@ -285,20 +399,30 @@ export const ChromosomePainter = ({
           >
             Show All
           </button>
-          {Object.entries(POP_COLORS).map(([pop, color]) => (
-            <button
-              key={pop}
-              onClick={() => setActiveContinentFilter(activeContinentFilter === pop ? null : pop)}
-              className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
-                activeContinentFilter === pop 
-                  ? 'bg-teal-500/20 text-teal-300 border-teal-500/35 shadow-sm'
-                  : 'bg-slate-800/40 text-slate-400 border-transparent hover:bg-slate-800/85'
-              }`}
-            >
-              <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: color }} />
-              {REGION_NAMES[pop] ?? pop}
-            </button>
-          ))}
+          {Object.entries(popColors).filter(([k]) => k !== 'Other').map(([pop, color]) => {
+            const patternDef = getSegmentPattern(pop);
+            return (
+              <button
+                key={pop}
+                onClick={() => setActiveContinentFilter(activeContinentFilter === pop ? null : pop)}
+                className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                  activeContinentFilter === pop 
+                    ? 'bg-teal-500/20 text-teal-300 border-teal-500/35 shadow-sm'
+                    : 'bg-slate-800/40 text-slate-400 border-transparent hover:bg-slate-800/85'
+                }`}
+              >
+                <span 
+                  className="w-2.5 h-2.5 rounded-full inline-block border border-white/10" 
+                  style={{ 
+                    backgroundColor: color,
+                    backgroundImage: activeShowPatterns && patternDef.cssPattern !== 'none' ? patternDef.cssPattern : undefined,
+                    backgroundSize: patternDef.backgroundSize
+                  }} 
+                />
+                {REGION_NAMES[pop] ?? pop}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -374,6 +498,8 @@ export const ChromosomePainter = ({
                           const pctLeft = (startPos / length) * 100;
                           const pctWidth = ((endPos - startPos) / length) * 100;
                           const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                          const segColor = getSegmentColor(seg.continent, activeColorblindMode);
+                          const patternDef = getSegmentPattern(seg.continent);
                           return (
                             <div
                               key={i}
@@ -381,7 +507,9 @@ export const ChromosomePainter = ({
                               style={{
                                 left: `${pctLeft}%`,
                                 width: `${Math.max(0.2, pctWidth)}%`,
-                                backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                                backgroundColor: segColor,
+                                backgroundImage: activeShowPatterns && patternDef.cssPattern !== 'none' ? patternDef.cssPattern : undefined,
+                                backgroundSize: patternDef.backgroundSize,
                                 opacity: isMuted ? 0.15 : 1,
                                 zIndex: isMuted ? 1 : 2
                               }}
@@ -417,6 +545,8 @@ export const ChromosomePainter = ({
                             const pctLeft = (startPos / length) * 100;
                             const pctWidth = ((endPos - startPos) / length) * 100;
                             const isMuted = activeContinentFilter && activeContinentFilter !== seg.continent;
+                            const segColor = getSegmentColor(seg.continent, activeColorblindMode);
+                            const patternDef = getSegmentPattern(seg.continent);
                             return (
                               <div
                                 key={i}
@@ -424,7 +554,9 @@ export const ChromosomePainter = ({
                                 style={{
                                   left: `${pctLeft}%`,
                                   width: `${Math.max(0.2, pctWidth)}%`,
-                                  backgroundColor: POP_COLORS[seg.continent] || '#475569',
+                                  backgroundColor: segColor,
+                                  backgroundImage: activeShowPatterns && patternDef.cssPattern !== 'none' ? patternDef.cssPattern : undefined,
+                                  backgroundSize: patternDef.backgroundSize,
                                   opacity: isMuted ? 0.15 : 1,
                                   zIndex: isMuted ? 1 : 2
                                 }}
@@ -468,7 +600,7 @@ export const ChromosomePainter = ({
           </div>
           <div>
             <strong className="text-slate-400">Ancestry:</strong>{' '}
-            <span className="font-extrabold" style={{ color: POP_COLORS[hoveredSegment.segment.continent] }}>
+            <span className="font-extrabold" style={{ color: popColors[hoveredSegment.segment.continent] || '#94a3b8' }}>
               {REGION_NAMES[hoveredSegment.segment.continent] ?? hoveredSegment.segment.continent}
             </span>
           </div>
@@ -511,6 +643,58 @@ export const ChromosomePainter = ({
           </div>
         </div>
       )}
+
+      {/* ─── Accessible Screen-Reader & High-Contrast Data Table (WCAG 1.1.1 & 2.1 AA) ─── */}
+      <div 
+        className={showAccessibleTable 
+          ? "mt-4 p-4 rounded-xl bg-black/80 border border-teal-500/40 shadow-xl overflow-x-auto max-h-96 overflow-y-auto" 
+          : "sr-only focus-within:not-sr-only focus-within:fixed focus-within:bottom-4 focus-within:left-4 focus-within:right-4 focus-within:z-50 focus-within:p-4 focus-within:bg-black/95 focus-within:border-2 focus-within:border-teal-400 focus-within:rounded-xl focus-within:max-h-80 focus-within:overflow-y-auto"
+        }
+        role="region"
+        aria-label="Accessible Chromosome Segment Data Table"
+      >
+        <div className="flex items-center justify-between mb-3 sticky top-0 bg-black/90 pb-2 border-b border-white/10 z-10">
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-teal-300 font-mono">
+              Accessible Chromosomal Segment & Ancestry Matrix
+            </h3>
+            <p className="text-[11px] text-zinc-400 mt-0.5">
+              Structured tabular representation of phased haplotype tracts across all chromosomes.
+            </p>
+          </div>
+          <span className="text-[10px] font-mono text-zinc-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
+            {accessibleSegments.length} Segments
+          </span>
+        </div>
+
+        {accessibleSegments.length === 0 ? (
+          <p className="text-xs text-zinc-400 py-4 italic">No phased ancestry segments mapped for this dataset.</p>
+        ) : (
+          <table className="w-full text-left text-xs font-mono border-collapse">
+            <caption className="sr-only">Detailed breakdown of painted chromosome segments, physical genomic coordinates, and inferred ancestral components.</caption>
+            <thead>
+              <tr className="border-b border-white/10 text-zinc-400 text-[10px] uppercase tracking-wider">
+                <th scope="col" className="py-2 px-2.5">Chr</th>
+                <th scope="col" className="py-2 px-2.5">Haplotype Strand</th>
+                <th scope="col" className="py-2 px-2.5">Physical Coordinates</th>
+                <th scope="col" className="py-2 px-2.5">Ancestral Component</th>
+                <th scope="col" className="py-2 px-2.5 text-right">Confidence</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/[0.04]">
+              {accessibleSegments.map((row, idx) => (
+                <tr key={idx} className="hover:bg-white/[0.03] transition-colors">
+                  <td className="py-1.5 px-2.5 font-bold text-zinc-200">Chr {row.chrom}</td>
+                  <td className="py-1.5 px-2.5 text-zinc-400">{row.strand}</td>
+                  <td className="py-1.5 px-2.5 text-amber-300/90">{row.range}</td>
+                  <td className="py-1.5 px-2.5 font-bold text-teal-300">{row.continent}</td>
+                  <td className="py-1.5 px-2.5 text-right text-zinc-300">{row.confidence}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
 
       {/* Bottom Info Bar */}
       <div className="mt-4 text-[10px] text-slate-500 flex justify-between items-center uppercase tracking-widest border-t border-white/5 pt-4 dark:text-slate-400">

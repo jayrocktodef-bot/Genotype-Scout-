@@ -493,3 +493,162 @@ export const assignContinent = (name: string, popCode?: string, regionHint?: str
   return 'Other';
 };
 
+export type ColorblindMode = 'default' | 'okabe_ito' | 'deuteranopia' | 'protanopia' | 'tritanopia' | 'high_contrast';
+
+export interface AccessibleAncestryPalette {
+  name: string;
+  description: string;
+  colors: Record<string, string>;
+}
+
+export interface TexturePatternDef {
+  name: string;
+  cssPattern: string;
+  backgroundSize?: string;
+  svgPatternId: string;
+}
+
+export const ANCESTRY_TEXTURE_PATTERNS: Record<string, TexturePatternDef> = {
+  EUR: {
+    name: 'Diagonal Right',
+    cssPattern: 'repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255,255,255,0.4) 5px, rgba(255,255,255,0.4) 10px)',
+    svgPatternId: 'pattern-diagonal-right'
+  },
+  AFR: {
+    name: 'Solid Clean',
+    cssPattern: 'none',
+    svgPatternId: 'pattern-solid'
+  },
+  EAS: {
+    name: 'Stippled Dots',
+    cssPattern: 'radial-gradient(circle, rgba(255,255,255,0.55) 1.5px, transparent 1.5px)',
+    backgroundSize: '7px 7px',
+    svgPatternId: 'pattern-dots'
+  },
+  SAS: {
+    name: 'Diagonal Left',
+    cssPattern: 'repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(255,255,255,0.4) 5px, rgba(255,255,255,0.4) 10px)',
+    svgPatternId: 'pattern-diagonal-left'
+  },
+  AMR: {
+    name: 'Orthogonal Crosshatch',
+    cssPattern: 'repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(255,255,255,0.4) 5px, rgba(255,255,255,0.4) 10px), repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(255,255,255,0.4) 5px, rgba(255,255,255,0.4) 10px)',
+    svgPatternId: 'pattern-crosshatch'
+  },
+  OCE: {
+    name: 'Vertical Pinstripes',
+    cssPattern: 'repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.45) 3px, rgba(255,255,255,0.45) 6px)',
+    svgPatternId: 'pattern-vertical'
+  },
+  MID: {
+    name: 'Horizontal Pinstripes',
+    cssPattern: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.45) 3px, rgba(255,255,255,0.45) 6px)',
+    svgPatternId: 'pattern-horizontal'
+  },
+  Other: {
+    name: 'Diamond Mesh',
+    cssPattern: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.3) 2px, transparent 0, transparent 6px)',
+    svgPatternId: 'pattern-mesh'
+  }
+};
+
+export const COLORBLIND_PALETTES: Record<ColorblindMode, AccessibleAncestryPalette> = {
+  default: {
+    name: 'Default Vibrant',
+    description: 'Spectral high-chroma palette',
+    colors: {
+      EUR: '#3b82f6',
+      AFR: '#10b981',
+      EAS: '#ef4444',
+      SAS: '#f59e0b',
+      AMR: '#a855f7',
+      OCE: '#06b6d4',
+      MID: '#f97316',
+      Other: '#64748b'
+    }
+  },
+  okabe_ito: {
+    name: 'Okabe-Ito (Universal Accessible)',
+    description: 'Scientific universal colorblind palette compliant with WCAG guidelines',
+    colors: {
+      EUR: '#0072B2', // Blue
+      AFR: '#009E73', // Bluish Green
+      EAS: '#D55E00', // Vermilion
+      SAS: '#F0E442', // Yellow
+      AMR: '#CC79A7', // Reddish Purple
+      OCE: '#56B4E9', // Sky Blue
+      MID: '#E69F00', // Orange
+      Other: '#999999' // Neutral Grey
+    }
+  },
+  deuteranopia: {
+    name: 'Deuteranopia (Green-Deficient)',
+    description: 'Distinct blue/amber/vermilion separation for deuteranomaly/deuteranopia',
+    colors: {
+      EUR: '#0072B2',
+      AFR: '#E69F00',
+      EAS: '#CC79A7',
+      SAS: '#56B4E9',
+      AMR: '#F0E442',
+      OCE: '#000000',
+      MID: '#D55E00',
+      Other: '#7F7F7F'
+    }
+  },
+  protanopia: {
+    name: 'Protanopia (Red-Deficient)',
+    description: 'High-luminance yellow/cyan/blue separation avoiding dark reds',
+    colors: {
+      EUR: '#0072B2',
+      AFR: '#E69F00',
+      EAS: '#56B4E9',
+      SAS: '#F0E442',
+      AMR: '#009E73',
+      OCE: '#332288',
+      MID: '#AA4499',
+      Other: '#888888'
+    }
+  },
+  tritanopia: {
+    name: 'Tritanopia (Blue-Deficient)',
+    description: 'High red/mint/magenta separation avoiding confusable blues and yellows',
+    colors: {
+      EUR: '#D55E00',
+      AFR: '#009E73',
+      EAS: '#E69F00',
+      SAS: '#CC79A7',
+      AMR: '#332288',
+      OCE: '#117733',
+      MID: '#882255',
+      Other: '#44AA99'
+    }
+  },
+  high_contrast: {
+    name: 'High Contrast (WCAG AAA)',
+    description: 'Maximized relative luminance contrast for low-vision monitors',
+    colors: {
+      EUR: '#1D4ED8',
+      AFR: '#047857',
+      EAS: '#B91C1C',
+      SAS: '#B45309',
+      AMR: '#6D28D9',
+      OCE: '#0369A1',
+      MID: '#C2410C',
+      Other: '#334155'
+    }
+  }
+};
+
+export function getColorblindPalette(mode: ColorblindMode = 'default'): AccessibleAncestryPalette {
+  return COLORBLIND_PALETTES[mode] || COLORBLIND_PALETTES.default;
+}
+
+export function getSegmentColor(continent: string, mode: ColorblindMode = 'default'): string {
+  const palette = getColorblindPalette(mode);
+  return palette.colors[continent] || palette.colors.Other || '#475569';
+}
+
+export function getSegmentPattern(continent: string): TexturePatternDef {
+  return ANCESTRY_TEXTURE_PATTERNS[continent] || ANCESTRY_TEXTURE_PATTERNS.Other;
+}
+

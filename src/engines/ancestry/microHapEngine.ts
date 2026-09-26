@@ -1,5 +1,5 @@
-// src/utils/ancestry/microHapEngine.ts
 import microHapKernel from '../../data/raw_aims/microhap_top100_kernel.json';
+import { getDetectedMicrohaplotypes } from '../../utils/ancestry/microhapAdmixture';
 
 export interface MicroHapSignature {
   id: string;
@@ -8,49 +8,72 @@ export interface MicroHapSignature {
   confidence: number;
 }
 
+const SUPER_POPS = ['AFR', 'EUR', 'EAS', 'SAS', 'AMR'] as const;
+
 /**
  * Identifies high-confidence MicroHaplotype signatures in user data.
  * MicroHaps are clusters of SNPs that are inherited together.
  */
 export function identifyMicroHapSignatures(userSnps: Record<string, string>): MicroHapSignature[] {
+  const detectedLoci = getDetectedMicrohaplotypes(userSnps);
   const detectedSignatures: MicroHapSignature[] = [];
+  const kernelMap = new Map<string, any>();
+  if (Array.isArray(microHapKernel)) {
+    microHapKernel.forEach((k: any) => kernelMap.set(k.id, k));
+  }
 
-  microHapKernel.forEach((hap: any) => {
-    // 1. Extract the user's alleles for this specific SNP cluster
-    // MicroHaps in raw data are often homozygous in the context of forensic signatures
-    const userAlleles = hap.snps.map((rsid: string) => {
-      const g = userSnps[rsid.toLowerCase()];
-      // For unphased data, we check if it's homozygous to be sure of the haplotype
-      if (g && g.length === 2 && g[0] === g[1]) return g[0];
-      return null;
+  for (const locus of detectedLoci) {
+    if (locus.typedSnps.length < 2) continue; // Require at least 2 typed SNPs in cluster for high confidence
+    const k = kernelMap.get(locus.id);
+    if (!k) continue;
+
+    // Determine typed indices in original kernel SNP list
+    const typedIndices: number[] = [];
+    k.snps.forEach((rs: string, idx: number) => {
+      if (locus.typedSnps.some((ts) => ts.toLowerCase() === rs.toLowerCase())) {
+        typedIndices.push(idx);
+      }
+    });
+    if (typedIndices.length < 2) continue;
+
+    // Marginalize reference population frequencies for typed indices
+    const marginalFreqs: Record<string, Record<string, number>> = {};
+    SUPER_POPS.forEach((sp) => {
+      marginalFreqs[sp] = {};
+      const popWeights = (k.weights as Record<string, Record<string, number>>)?.[sp] || {};
+      for (const [fullHap, freq] of Object.entries(popWeights)) {
+        let subHap = '';
+        for (const idx of typedIndices) {
+          subHap += fullHap[idx] || '';
+        }
+        if (subHap.length === typedIndices.length) {
+          marginalFreqs[sp][subHap] = (marginalFreqs[sp][subHap] || 0) + freq;
+        }
+      }
     });
 
-    // 2. Check if we have data for all SNPs in the cluster (No-calls invalidate the hap)
-    if (userAlleles.every((allele: string | null) => !!allele)) {
-      const haplotypeString = userAlleles.join(''); // e.g., "AGC"
-
-      // 3. Find the population where this specific string is a "Diagnostic Signature"
-      const popEntries = Object.entries(hap.weights);
-      if (popEntries.length === 0) return;
-
-      const topPopEntry = popEntries.reduce((prev: [string, any], curr: [string, any]) => {
-        const prevFreq = prev[1][haplotypeString] || 0;
-        const currFreq = curr[1][haplotypeString] || 0;
-        return currFreq > prevFreq ? curr : prev;
+    const uniqueCalledHaps = Array.from(new Set(locus.calledHaplotypes));
+    for (const h of uniqueCalledHaps) {
+      const popScores: Array<{ pop: string; freq: number }> = [];
+      SUPER_POPS.forEach((sp) => {
+        popScores.push({ pop: sp, freq: marginalFreqs[sp][h] || 0 });
       });
+      popScores.sort((a, b) => b.freq - a.freq);
 
-      const topFreq = (topPopEntry[1] as any)[haplotypeString] || 0;
+      const top = popScores[0];
+      const second = popScores[1] || { freq: 0 };
+      const delta = top.freq - second.freq;
 
-      if (topFreq > 0.4) { // 40% frequency threshold
+      if (top.freq >= 0.35 && (delta >= 0.15 || top.freq >= 0.60)) {
         detectedSignatures.push({
-          id: hap.id,
-          population: topPopEntry[0],
-          signature: haplotypeString,
-          confidence: hap.global_ae
+          id: locus.id,
+          population: top.pop,
+          signature: h,
+          confidence: Number(top.freq.toFixed(3)),
         });
       }
     }
-  });
+  }
 
   return detectedSignatures.sort((a, b) => b.confidence - a.confidence);
 }

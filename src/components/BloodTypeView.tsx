@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Download } from 'lucide-react';
 import rhData from '../data/blood_markers.json';
 import { calculateBloodType } from '../engines/bloodTypeCalculator';
 import { ExtendedBloodSystemResult } from '../types/blood';
@@ -427,6 +427,24 @@ export const BloodTypeView = ({ dataset, onOpenMethodology }: BloodTypeViewProps
     notes: "Full Rh and ABO typing required for crossmatching."
   };
 
+  const handleExportCSV = () => {
+    let csv = 'Blood_System,Genomic_RSID,User_Genotype,ISBT_Antigen_Expression,Biochemical_Variant_Impact\n';
+    for (const m of filteredMarkers) {
+      const cleanEffect = `"${(m.effect || '').replace(/"/g, '""')}"`;
+      const cleanSystem = `"${(m.system || '').replace(/"/g, '""')}"`;
+      csv += `${cleanSystem},${m.rsid},${m.genotype},"${m.isbtPhenotype}",${cleanEffect}\n`;
+    }
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `blood_type_markers_breakdown_${dataset?.fileName || 'kit'}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   const systemList = ["All", ...Object.keys(BLOOD_TYPE_SYSTEMS)];
 
   return (
@@ -656,23 +674,34 @@ export const BloodTypeView = ({ dataset, onOpenMethodology }: BloodTypeViewProps
 
         {/* Molecular Breakdown Table */}
         <div className="rounded-2xl bg-slate-900/90 border border-slate-800 overflow-hidden shadow-xl">
-          <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+          <div className="p-4 border-b border-slate-800 flex items-center justify-between flex-wrap gap-2">
             <h4 className="text-xs font-black text-white uppercase tracking-wider">
               Molecular Blood Group Sequence Breakdown ({filteredMarkers.length} Markers Displayed)
             </h4>
-            <span className="text-[10px] font-mono text-slate-400 uppercase">ISBT Standard</span>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-mono text-slate-400 uppercase">ISBT Standard</span>
+              <button
+                onClick={handleExportCSV}
+                className="px-2.5 py-1 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-300 hover:text-rose-200 text-[11px] font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                title="Export filtered blood group markers to CSV"
+              >
+                <Download className="w-3 h-3" />
+                <span>Export CSV</span>
+              </button>
+            </div>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left min-w-[700px]">
+              <caption className="sr-only">Molecular blood group sequence breakdown and observed phenotypes</caption>
               <thead>
                 <tr className="bg-slate-950/80 text-slate-400 text-[10px] font-black uppercase tracking-widest border-b border-slate-800">
-                  <th className="px-5 py-3.5">Blood System</th>
-                  <th className="px-5 py-3.5">Genomic RSID</th>
-                  <th className="px-5 py-3.5 text-center">User Genotype</th>
-                  <th className="px-5 py-3.5">Simulation Override</th>
-                  <th className="px-5 py-3.5">ISBT Antigen Expression</th>
-                  <th className="px-5 py-3.5">Biochemical Variant & Phenotype Impact</th>
+                  <th scope="col" className="px-5 py-3.5">Blood System</th>
+                  <th scope="col" className="px-5 py-3.5">Genomic RSID</th>
+                  <th scope="col" className="px-5 py-3.5 text-center">User Genotype</th>
+                  <th scope="col" className="px-5 py-3.5">Simulation Override</th>
+                  <th scope="col" className="px-5 py-3.5">ISBT Antigen Expression</th>
+                  <th scope="col" className="px-5 py-3.5">Biochemical Variant & Phenotype Impact</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/60 text-[11px] font-medium text-slate-300">

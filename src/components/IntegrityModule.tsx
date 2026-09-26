@@ -3,7 +3,8 @@ import { motion } from 'motion/react';
 import {
   ShieldCheck, AlertTriangle, CheckCircle2,
   Dna, Cpu, FileText, Database, Activity,
-  Layers, Info, BookOpen, ArrowUpDown
+  Layers, Info, BookOpen, ArrowUpDown,
+  Copy, Check, Fingerprint, Scale
 } from 'lucide-react';
 import {
   assessDatasetIntegrity,
@@ -28,11 +29,20 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'karyotype' | 'table' | 'thresholds'>('karyotype');
   const [sortKey, setSortKey] = useState<'physical' | 'count' | 'callRate'>('physical');
+  const [copiedFingerprint, setCopiedFingerprint] = useState(false);
 
   // Compute detailed integrity report
   const report: DetailedIntegrityReport = useMemo(() => {
     return assessDatasetIntegrity(dataset);
   }, [dataset]);
+
+  const handleCopyFingerprint = () => {
+    if (report.fingerprint) {
+      navigator.clipboard.writeText(report.fingerprint);
+      setCopiedFingerprint(true);
+      setTimeout(() => setCopiedFingerprint(false), 2000);
+    }
+  };
 
   // Sort chromosomes according to selection
   const sortedChromosomes = useMemo(() => {
@@ -110,6 +120,50 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
         </div>
       </div>
 
+      {/* ─── Zero-Knowledge Cryptographic Fingerprint Banner ─── */}
+      <div 
+        role="region" 
+        aria-label="Cryptographic Dataset Fingerprint"
+        className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl bg-gradient-to-r from-black/60 to-zinc-950/80 border border-teal-500/25 shadow-lg backdrop-blur-sm"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center shrink-0">
+            <Fingerprint className="w-5 h-5 text-teal-400" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-teal-400 font-bold">
+                CRYPTOGRAPHIC DATASET FINGERPRINT
+              </span>
+              <span className="text-[9px] font-mono text-zinc-400 bg-white/5 px-1.5 py-0.5 rounded border border-white/10">
+                SHA-256
+              </span>
+            </div>
+            <div className="font-mono text-xs sm:text-sm text-zinc-200 truncate max-w-xs sm:max-w-xl md:max-w-2xl mt-0.5 select-all font-semibold">
+              {report.fingerprint}
+            </div>
+          </div>
+        </div>
+
+        <button
+          onClick={handleCopyFingerprint}
+          aria-label={copiedFingerprint ? "Copied SHA-256 fingerprint" : "Copy cryptographic SHA-256 fingerprint to clipboard"}
+          className="flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-teal-500/15 hover:bg-teal-500/25 border border-teal-500/40 text-teal-300 text-xs font-mono font-bold transition-all active:scale-95 shrink-0 cursor-pointer"
+        >
+          {copiedFingerprint ? (
+            <>
+              <Check className="w-3.5 h-3.5 text-teal-400" />
+              <span>COPIED</span>
+            </>
+          ) : (
+            <>
+              <Copy className="w-3.5 h-3.5 text-teal-400" />
+              <span>COPY HASH</span>
+            </>
+          )}
+        </button>
+      </div>
+
       {/* ─── Hero Score & Primary Telemetry ─── */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         {/* Composite Integrity Score Card (4 cols) */}
@@ -144,15 +198,15 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
         </div>
 
         {/* Diagnostic Telemetry Badges (8 cols) */}
-        <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
           {/* Call Rate */}
           <div className="gs-tile p-4 flex flex-col justify-between">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">GENOTYPE CALL RATE</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">CALL RATE</span>
               <Activity className="w-3.5 h-3.5 text-amber-400" />
             </div>
             <div className="my-2">
-              <div className="text-2xl font-black text-amber-300 tabular-nums">
+              <div className="text-xl font-black text-amber-300 tabular-nums">
                 {report.callRateFormatted}
               </div>
               <div className="w-full bg-black/50 h-1.5 rounded-full mt-2 overflow-hidden border border-white/[0.05]">
@@ -162,8 +216,8 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
                 />
               </div>
             </div>
-            <span className="text-[10px] text-zinc-400">
-              Benchmark ≥ 98.0% ({report.noCalls.toLocaleString()} missing)
+            <span className="text-[10px] text-zinc-400 truncate">
+              {report.noCalls.toLocaleString()} missing
             </span>
           </div>
 
@@ -174,15 +228,55 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
               <Dna className="w-3.5 h-3.5 text-teal-400" />
             </div>
             <div className="my-2">
-              <div className="text-2xl font-black text-teal-300 tabular-nums">
+              <div className="text-xl font-black text-teal-300 tabular-nums">
                 {report.heterozygosityFormatted}
               </div>
               <span className="text-[10px] font-bold text-teal-400 uppercase tracking-wider">
                 {report.purityVerdict} • NOMINAL
               </span>
             </div>
-            <span className="text-[10px] text-zinc-400">
-              Expected diploid band: 28% – 36%
+            <span className="text-[10px] text-zinc-400 truncate">
+              Band: 28% – 36%
+            </span>
+          </div>
+
+          {/* Ti/Tv Transition / Transversion Ratio */}
+          <div className="gs-tile p-4 flex flex-col justify-between">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">TI / TV RATIO</span>
+              <Scale className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="my-2">
+              <div className="text-xl font-black text-amber-300 tabular-nums">
+                {report.tiTvRatio > 0 ? report.tiTvRatio : 'N/A'}
+              </div>
+              <span className={`text-[9px] font-bold uppercase tracking-wider ${
+                report.tiTvStatus.includes('Optimal') ? 'text-teal-400' : report.tiTvStatus.includes('Acceptable') ? 'text-amber-400' : 'text-zinc-400'
+              }`}>
+                {report.tiTvStatus.split(' ')[0]}
+              </span>
+            </div>
+            <span className="text-[10px] text-zinc-400 truncate">
+              Ti: {report.transitionsCount.toLocaleString()} / Tv: {report.transversionsCount.toLocaleString()}
+            </span>
+          </div>
+
+          {/* Inbreeding / Contamination Index (F_IS) */}
+          <div className="gs-tile p-4 flex flex-col justify-between">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">INBREEDING (F_IS)</span>
+              <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
+            </div>
+            <div className="my-2">
+              <div className="text-xl font-black text-zinc-100 tabular-nums">
+                {report.fisEstimate >= 0 ? `+${report.fisEstimate}` : report.fisEstimate}
+              </div>
+              <span className="text-[9px] font-bold text-teal-400 uppercase tracking-wider">
+                {Math.abs(report.fisEstimate) < 0.15 ? 'NOMINAL PURITY' : 'DEVIATION'}
+              </span>
+            </div>
+            <span className="text-[10px] text-zinc-400 truncate">
+              Autosomal baseline 31%
             </span>
           </div>
 
@@ -193,14 +287,14 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
               <Cpu className="w-3.5 h-3.5 text-amber-400" />
             </div>
             <div className="my-2">
-              <div className="text-base font-black text-zinc-100 line-clamp-1">
+              <div className="text-sm font-black text-zinc-100 line-clamp-1">
                 {report.detectedChip}
               </div>
               <span className="text-[10px] font-mono text-zinc-400">
                 {report.totalMarkers.toLocaleString()} total markers
               </span>
             </div>
-            <span className="text-[10px] text-amber-400/90 font-mono">
+            <span className="text-[10px] text-amber-400/90 font-mono truncate">
               {report.expectedDensity}
             </span>
           </div>
@@ -212,15 +306,15 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
               <Database className="w-3.5 h-3.5 text-zinc-400" />
             </div>
             <div className="my-2">
-              <div className="text-lg font-black text-zinc-100">
+              <div className="text-sm font-black text-zinc-100">
                 {report.build}
               </div>
-              <span className="text-[10px] text-zinc-400">
-                Standard NCBI coordinate frame
+              <span className="text-[10px] text-zinc-400 truncate">
+                NCBI coordinate frame
               </span>
             </div>
             <span className="text-[10px] font-mono text-zinc-400">
-              Human Reference Genome
+              Human Reference
             </span>
           </div>
 
@@ -231,11 +325,11 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
               <Layers className="w-3.5 h-3.5 text-amber-400" />
             </div>
             <div className="my-2">
-              <div className="text-lg font-black text-zinc-100">
+              <div className="text-sm font-black text-zinc-100">
                 {report.inferredSex}
               </div>
-              <span className="text-[10px] text-zinc-400">
-                {report.yMarkerCount > 0 ? `${report.yMarkerCount.toLocaleString()} Y SNPs` : '0 Y SNPs (Female)'}
+              <span className="text-[10px] text-zinc-400 truncate">
+                {report.yMarkerCount > 0 ? `${report.yMarkerCount.toLocaleString()} Y SNPs` : '0 Y SNPs'}
               </span>
             </div>
             <span className="text-[10px] text-zinc-400">
@@ -250,17 +344,48 @@ export const IntegrityModule: React.FC<IntegrityModuleProps> = ({
               <FileText className="w-3.5 h-3.5 text-zinc-400" />
             </div>
             <div className="my-2">
-              <div className="text-lg font-black text-zinc-100">
+              <div className="text-sm font-black text-zinc-100">
                 {report.phasingStatus}
               </div>
-              <span className="text-[10px] text-zinc-400">
-                {report.phasingStatus === 'Phased' ? 'Parental haplotypes resolved' : 'Standard unphased genotypes'}
+              <span className="text-[10px] text-zinc-400 truncate">
+                {report.phasingStatus === 'Phased' ? 'Resolved' : 'Unphased'}
               </span>
             </div>
-            <span className="text-[10px] text-zinc-400">
-              {dataset?.name ? dataset.name.slice(0, 16) : 'Local dataset'}
+            <span className="text-[10px] text-zinc-400 truncate">
+              {dataset?.name ? dataset.name.slice(0, 14) : 'Local dataset'}
             </span>
           </div>
+        </div>
+      </div>
+
+      {/* ─── Diagnostic QC Protocol & Clinical Flags ─── */}
+      <div 
+        role="region" 
+        aria-label="Quality Control Diagnostic Protocol"
+        className="gs-tile p-4 sm:p-5 border-l-4 border-l-amber-400 space-y-3"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-amber-400" />
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-200">
+              DIAGNOSTIC QC PROTOCOL & CLINICAL BENCHMARKS
+            </h2>
+          </div>
+          <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
+            {report.qualityFlags.length} Audit Check{report.qualityFlags.length === 1 ? '' : 's'}
+          </span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          {report.qualityFlags.map((flag, idx) => (
+            <div key={idx} className="flex items-start gap-2 p-2.5 rounded-lg bg-black/40 border border-white/[0.04]">
+              {flag.includes('Suboptimal') || flag.includes('Excess') || flag.includes('Abnormal') ? (
+                <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              ) : (
+                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
+              )}
+              <span className="text-zinc-300 leading-relaxed font-sans">{flag}</span>
+            </div>
+          ))}
         </div>
       </div>
 

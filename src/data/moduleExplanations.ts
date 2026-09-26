@@ -327,7 +327,7 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
       ],
       references: [
         'CPIC (Clinical Pharmacogenetics Implementation Consortium) Guidelines',
-        'PharmGKB (Pharmacogenomics Knowledgebase) Standards',
+        'ClinVar & CPIC Pharmacogenomic Reference Consensuses',
         'Caudle et al. (Genetics in Medicine) on Clinical Implementation of Pharmacogenomics'
       ]
     }
@@ -343,13 +343,13 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
       howWeGotYourResults: [
         'Checked target loci associated with observable phenotypes in peer-reviewed GWAS literature.',
         'Determined your genotype dosage (e.g. AA, AG, GG) at defining trait positions.',
-        'Mapped your alleles to statistical likelihoods documented in the SNPedia and OMIM databases.'
+        'Mapped your alleles to statistical likelihoods documented in the ClinVar, dbSNP, and peer-reviewed GWAS consensus databases.'
       ],
       whatItMeansForYou: 'A fun, informative way to connect complex genetic data to your everyday physical traits, sleep rhythms, and nutritional preferences.',
       caveatsAndNuance: 'Most physical traits are complex and polygenic, influenced heavily by diet, sunlight, environment, and epigenetics alongside raw DNA sequences.'
     },
     technical: {
-      solverEngine: 'SNPedia Phenotype Association Mapping',
+      solverEngine: 'ClinVar & dbSNP Phenotype Association Mapping',
       description: 'Maps observed user genotypes at target variants to determine phenotypic likelihoods (e.g. eye color, skin pigmentation, caffeine sensitivity, muscle traits) based on association studies in public genomic research databases.',
       formulas: [
         {
@@ -363,7 +363,7 @@ export const MODULE_DOCUMENTATION: Record<string, ModuleDocumentation> = {
         { label: 'Lineage Markers', value: 'Maternal Haplotype Traits' }
       ],
       references: [
-        'SNPedia Encyclopedia of Genomic Variants',
+        'ClinVar & dbSNP Public Genomic Databases',
         'MITOMAP Database for Mitochondrial Traits',
         'Sturm & Frudakis (Trends in Genetics) on Polygenic Eye Color'
       ]

@@ -73,7 +73,7 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-4 mb-4 min-w-0 w-full overflow-hidden">
         <div className="relative mb-2 max-w-full">
-          <div className="text-3xl sm:text-5xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400 tracking-tighter break-words max-w-full px-2" title={haploCode}>
+          <div className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter break-words max-w-full px-2" title={haploCode}>
             {haploCode}
           </div>
           <div className="absolute -inset-4 bg-[#4599FF]/20 blur-2xl -z-10 rounded-full pointer-events-none" />

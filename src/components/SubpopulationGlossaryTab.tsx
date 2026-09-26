@@ -86,7 +86,7 @@ export const SubpopulationGlossaryTab: React.FC<SubpopulationGlossaryTabProps> =
                 </button>
               )}
             </div>
-            <h2 className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#4ECDC4] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
               Human Population Origins & Migration Routes
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">

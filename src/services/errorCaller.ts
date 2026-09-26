@@ -292,6 +292,11 @@ export function serializeGenomicsError(
     category = 'Decompression Error';
     solution = 'The archive file could not be unpacked. Try unzipping on your device and uploading the plain .txt or .csv file.';
     subsystem = 'ZIP_DECOMPRESSION';
+  } else if (/invalid.*file|file.*object.*structure|payload.*received/i.test(rawMessage)) {
+    code = GenomicsErrorCode.ERR_PARSE_FILE_MALFORMED;
+    category = 'File Ingestion Error';
+    solution = 'The file data structure could not be processed. Please re-select and upload your raw genotype file.';
+    subsystem = 'FILE_INGESTION';
   } else if (/out of memory|oom|heap/i.test(rawMessage)) {
     code = GenomicsErrorCode.ERR_ZIP_DECOMPRESS_BOMB;
     category = 'Memory Allocation Ceiling';

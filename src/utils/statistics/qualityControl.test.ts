@@ -121,6 +121,21 @@ describe('Quality Control & File Integrity Engine', () => {
 
       expect(report.integrityScore).toBeGreaterThan(0);
       expect(report.grade).toBeDefined();
+
+      // Cryptographic Kit Fingerprint
+      expect(report.fingerprint).toMatch(/^GS-SHA256:[a-f0-9]{64}$/);
+
+      // Ti/Tv ratio and counts:
+      // Transitions: rs2 (AG), rs3 (CT) = 2
+      // Transversions: rs10 (AC) = 1
+      expect(report.transitionsCount).toBe(2);
+      expect(report.transversionsCount).toBe(1);
+      expect(report.tiTvRatio).toBe(2);
+      expect(report.tiTvStatus).toBe('Indeterminate'); // Correctly marks small (<4) toy marker sets as Indeterminate
+
+      // Fis estimate & quality flags
+      expect(typeof report.fisEstimate).toBe('number');
+      expect(report.qualityFlags.length).toBeGreaterThan(0);
     });
 
     it('flags high heterozygosity as potential contamination', () => {
@@ -138,6 +153,7 @@ describe('Quality Control & File Integrity Engine', () => {
       expect(report.heterozygosityRate).toBe(100);
       expect(report.purityVerdict).toBe('CAUTION');
       expect(report.purityStatus).toContain('Excess Heterozygosity');
+      expect(report.qualityFlags.some(f => f.includes('Excess Heterozygosity'))).toBe(true);
     });
   });
 });

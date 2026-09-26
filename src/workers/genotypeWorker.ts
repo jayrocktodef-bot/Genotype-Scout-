@@ -11,7 +11,7 @@ import { sliceSnpsForEngine } from '../utils/engineMarkerSlicer';
 import { calculateAncestryOracle } from '../services/ancestryEngine';
 import { extractSampleId } from '../services/populationMapper';
 import { calculateMarkerBenchmarks } from "../utils/markerBenchmarks";
-import { calculateAncientAdmixture, calculateIndividualMatches } from "../lib/AncientAdmixtureCalculator";
+import { calculateAncientAdmixture, calculateIndividualMatches, calculateArchaicIntrogression } from "../lib/AncientAdmixtureCalculator";
 import { calculateFamousMatches } from "../utils/individualMatching";
 import { matchHealthAndWellness } from "../utils/healthMatching";
 import { calculatePopulationProximityOptimized } from '../engines/ancestry/fastMatrixEngine';
@@ -319,6 +319,15 @@ async function runEnginesSequential(
 }
 
 // ── Main orchestration ───────────────────────────────────────────────
+let activeRequestId: string | undefined;
+
+function postWorkerMessage(message: any) {
+  self.postMessage({
+    ...message,
+    ...(activeRequestId ? { requestId: activeRequestId } : {})
+  });
+}
+
 async function runGenotypeScout(
     imputedSnpMap: Record<string, string>,
     mergedSnpMetaMap: Record<string, { chrom: string, pos: number }>,
@@ -340,7 +349,7 @@ async function runGenotypeScout(
           Atomics.store(progressArray, 1, total);
           Atomics.store(progressArray, 3, 2); // still in "analyzing" phase
         }
-        self.postMessage({
+        postWorkerMessage({
           type: 'PROGRESS',
           payload: { 
             step: `${label}... (${completed}/${total})`,
@@ -400,13 +409,14 @@ if (typeof self !== 'undefined') {
   });
 
   self.onmessage = async (e: MessageEvent) => {
-  const { type, files, payload, sab } = e.data;
+  const { type, files, payload, sab, requestId } = e.data;
+  activeRequestId = requestId;
   if (type !== 'PROCESS_GENOME' && type !== 'PLINK_PROCESS_GENOME' && !files) return;
   if (sab) { new Int32Array(sab)[3] = 1; }
 
   // Heartbeat interval to continually notify the main thread that the worker is actively computing
   const heartbeatTimer = setInterval(() => {
-    self.postMessage({ type: 'HEARTBEAT', payload: { timestamp: Date.now() } });
+    postWorkerMessage({ type: 'HEARTBEAT', payload: { timestamp: Date.now() } });
   }, 1500);
 
   try {
@@ -444,9 +454,23 @@ if (typeof self !== 'undefined') {
           let parsed;
           try {
             // Directly pass the File or Blob to parseRawDNAStream to utilize non-blocking Web Streams
-            const actualFile: Blob = fileObj.file || (fileObj.buffer ? new Blob([fileObj.buffer]) : (fileObj.stream ? fileObj : null));
+            const actualFile: Blob | null = 
+              fileObj.file || 
+              (fileObj instanceof Blob ? fileObj : null) || 
+              (fileObj.buffer ? new Blob([fileObj.buffer]) : null) || 
+              (typeof fileObj.content === 'string' && fileObj.content.length > 0 ? new Blob([fileObj.content]) : null) || 
+              (fileObj.stream ? fileObj : null);
+
             if (!actualFile) {
-              throw new Error("Invalid file object structure passed to worker");
+              throw new GenomicsParseError(
+                `Invalid file payload received for "${fileName}". Expected File, Blob, or Buffer stream.`,
+                {
+                  errorCode: GenomicsErrorCode.ERR_PARSE_FILE_MALFORMED,
+                  errorCategory: 'File Ingestion Error',
+                  subsystem: 'FILE_INGESTION',
+                  suggestedSolution: 'Please re-select and upload your raw genotype file (.txt, .csv, .vcf, or .zip).'
+                }
+              );
             }
 
             parsed = await parseRawDNAStream(actualFile, allowlist, (processed, total, snps) => {
@@ -456,7 +480,7 @@ if (typeof self !== 'undefined') {
                 Atomics.store(progressArray, 1, total);
                 Atomics.store(progressArray, 2, snps);
               }
-              self.postMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
+              postWorkerMessage({ type: 'PROGRESS', payload: { processed, total, snps } });
             });
 
             if (parsed && parsed.snpCount > 0) {
@@ -505,7 +529,7 @@ if (typeof self !== 'undefined') {
     if (sab) { 
       Atomics.store(new Int32Array(sab), 3, 2); 
     } else {
-      self.postMessage({ type: 'PROGRESS', payload: { step: "Engaging Bayesian Ancestry Engine..." } });
+      postWorkerMessage({ type: 'PROGRESS', payload: { step: "Engaging Bayesian Ancestry Engine..." } });
     }
     
     const { filteredSnpMap: autosomalSnpMap, filteredMetaMap: autosomalMetaMap } = filterAutosomalSNPs(imputedSnpMap, mergedSnpMetaMap);
@@ -542,16 +566,16 @@ if (typeof self !== 'undefined') {
     const autosomalUserGenotypes = Object.entries(autosomalSnpMap).map(([rsid, genotype]) => ({ rsid, genotype }));
     const sampleId = names[0] ? (extractSampleId(names[0]) ?? undefined) : undefined;
     
-    self.postMessage({ type: 'PROGRESS', payload: { step: "Analyzing Subpopulation Oracles (Global)...", percent: 92 } });
+    postWorkerMessage({ type: 'PROGRESS', payload: { step: "Analyzing Subpopulation Oracles (Global)...", percent: 92 } });
     await new Promise(resolve => setTimeout(resolve, 0));
     const allResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'all');
     
-    self.postMessage({ type: 'PROGRESS', payload: { step: "Calculating Kidd55 & Seldin128 Oracles...", percent: 94 } });
+    postWorkerMessage({ type: 'PROGRESS', payload: { step: "Calculating Kidd55 & Seldin128 Oracles...", percent: 94 } });
     await new Promise(resolve => setTimeout(resolve, 0));
     const kidd55Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'kidd55');
     const seldin128Result = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'seldin128');
     
-    self.postMessage({ type: 'PROGRESS', payload: { step: "Finalizing EuroForGen & Microhaplotypes...", percent: 96 } });
+    postWorkerMessage({ type: 'PROGRESS', payload: { step: "Finalizing EuroForGen & Microhaplotypes...", percent: 96 } });
     await new Promise(resolve => setTimeout(resolve, 0));
     const euroforgenResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'euroforgen');
     const ramosResult = await processSubpopulations(autosomalUserGenotypes, [], sampleId, autosomalMetaMap, 'ramos');
@@ -568,7 +592,7 @@ if (typeof self !== 'undefined') {
     };
     const naiveEstimates = calculateNaiveEthnicity(autosomalSnpMap); 
     
-    self.postMessage({ type: 'PROGRESS', payload: { step: "Computing Chromosome Painting (LAI)...", percent: 98 } });
+    postWorkerMessage({ type: 'PROGRESS', payload: { step: "Computing Chromosome Painting (LAI)...", percent: 98 } });
     await new Promise(resolve => setTimeout(resolve, 0));
 
     // ── Rare & Novel Variants Identification ──
@@ -632,6 +656,7 @@ if (typeof self !== 'undefined') {
       rareAndNovelVariants,
       analysis: { 
         ...bloodResult,
+        archaicIntrogression: calculateArchaicIntrogression(imputedSnpMap),
         oracleResults, 
         naiveEstimates,
         subpopulationOracle,
@@ -648,7 +673,7 @@ if (typeof self !== 'undefined') {
       Atomics.store(new Int32Array(sab), 3, 3);
     }
 
-    self.postMessage({ 
+    postWorkerMessage({ 
       type: 'SUCCESS', 
       payload: safePayload 
     });
@@ -656,10 +681,10 @@ if (typeof self !== 'undefined') {
     if (sab) { 
       Atomics.store(new Int32Array(sab), 3, 4); 
     } else {
-      self.postMessage({ type: 'PROGRESS', payload: { step: "Ingestion failed." } });
+      postWorkerMessage({ type: 'PROGRESS', payload: { step: "Ingestion failed." } });
     }
     const serialized = serializeGenomicsError(err, 'GENOTYPE_WORKER');
-    self.postMessage({
+    postWorkerMessage({
       type: 'ERROR',
       error: serialized
     });

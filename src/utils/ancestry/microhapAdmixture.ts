@@ -24,6 +24,7 @@ export interface MicroHapAdmixtureOutput extends Array<MicroHapResult> {
   locusCount: number;
   totalSnpsTyped: number;
   proportions: Record<string, number>;
+  distanceRanked?: MicroHapResult[];
 }
 
 const POP_LABEL_MAP: Record<string, string> = {
@@ -269,39 +270,30 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
 
       const locusWeight = typedIndices.length >= 2 ? 1.5 : 1.0;
 
-      if (!isHet) {
-        const hap = calledHaps[0];
+      // Extract all candidate subhaplotypes present in reference populations or called in user
+      const allSubHaps = new Set<string>();
+      SUPER_POPS.forEach((sp) => {
+        Object.keys(marginalFreqs[sp] || {}).forEach((h) => allSubHaps.add(h));
+      });
+      calledHaps.forEach((h) => allSubHaps.add(h));
+
+      // Build multi-allelic features including zero-dosage uncarried alleles for negative evidence
+      allSubHaps.forEach((hap) => {
+        let dosage = 0;
+        if (calledHaps[0] === hap) dosage += 1.0;
+        if (calledHaps[1] === hap) dosage += 1.0;
+
         const freqs: Record<string, number> = {};
-        SUPER_POPS.forEach(sp => {
+        SUPER_POPS.forEach((sp) => {
           freqs[sp] = (marginalFreqs[sp][hap] || 0) * 2.0;
         });
-        rawFeatures.push({
-          dosage: 2.0,
-          weight: locusWeight,
-          popFreqs: freqs
-        });
-      } else {
-        const h1 = calledHaps[0];
-        const h2 = calledHaps[1];
-
-        const freqs1: Record<string, number> = {};
-        const freqs2: Record<string, number> = {};
-        SUPER_POPS.forEach(sp => {
-          freqs1[sp] = (marginalFreqs[sp][h1] || 0) * 2.0;
-          freqs2[sp] = (marginalFreqs[sp][h2] || 0) * 2.0;
-        });
 
         rawFeatures.push({
-          dosage: 1.0,
+          dosage,
           weight: locusWeight,
-          popFreqs: freqs1
+          popFreqs: freqs,
         });
-        rawFeatures.push({
-          dosage: 1.0,
-          weight: locusWeight,
-          popFreqs: freqs2
-        });
-      }
+      });
     }
   }
 
@@ -311,13 +303,14 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
     emptyOutput.locusCount = 0;
     emptyOutput.totalSnpsTyped = 0;
     emptyOutput.proportions = {};
+    emptyOutput.distanceRanked = [];
     return emptyOutput;
   }
 
   const M = rawFeatures.length;
   const userDosages = new Float32Array(M);
   const popExpectedDosages: Record<string, Float32Array> = {};
-  SUPER_POPS.forEach(sp => {
+  SUPER_POPS.forEach((sp) => {
     popExpectedDosages[sp] = new Float32Array(M);
   });
   const aimWeights = new Float32Array(M);
@@ -325,30 +318,32 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
   rawFeatures.forEach((feat, idx) => {
     userDosages[idx] = feat.dosage;
     aimWeights[idx] = feat.weight;
-    SUPER_POPS.forEach(sp => {
+    SUPER_POPS.forEach((sp) => {
       popExpectedDosages[sp][idx] = feat.popFreqs[sp] ?? 0;
     });
   });
 
   const proportions = solveAdmixtureProportions(userDosages, popExpectedDosages, aimWeights);
 
-  // Compute standardized vector distance to each superpopulation
+  // Compute root-mean-squared Euclidean vector distance to each superpopulation
   const distances: Record<string, number> = {};
-  SUPER_POPS.forEach(sp => {
-    let sumDiff = 0;
+  SUPER_POPS.forEach((sp) => {
+    let sumSqDiff = 0;
     for (let i = 0; i < M; i++) {
       const userF = userDosages[i] / 2.0;
-      const popF = popExpectedDosages[sp][i] / 2.0;
-      sumDiff += Math.abs(userF - popF);
+      const popF = (popExpectedDosages[sp][i] ?? 0) / 2.0;
+      const diff = userF - popF;
+      sumSqDiff += diff * diff;
     }
-    distances[sp] = Number((sumDiff / Math.max(1, M)).toFixed(4));
+    distances[sp] = Number(Math.sqrt(sumSqDiff / Math.max(1, M)).toFixed(4));
   });
 
-  const results: MicroHapResult[] = SUPER_POPS.map(popCode => ({
+  // Results sorted by NNLS admixture percentage descending (for admixture models)
+  const results: MicroHapResult[] = SUPER_POPS.map((popCode) => ({
     popCode,
     name: POP_LABEL_MAP[popCode] || popCode,
     percentage: proportions[popCode] ?? 0,
-    distance: distances[popCode] ?? 0.1
+    distance: distances[popCode] ?? 0.1,
   })).sort((a, b) => {
     if (b.percentage !== a.percentage) {
       return b.percentage - a.percentage;
@@ -361,6 +356,8 @@ export function deconvolveMicrohaplotypes(userSnps: Record<string, string>): Mic
   output.locusCount = detectedLoci.length;
   output.totalSnpsTyped = totalSnpsTyped;
   output.proportions = proportions;
+  // Dedicated distance-ranked array sorted by ascending genetic distance
+  output.distanceRanked = [...results].sort((a, b) => a.distance - b.distance);
 
   return output;
 }

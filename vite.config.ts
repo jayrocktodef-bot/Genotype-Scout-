@@ -128,6 +128,12 @@ export default defineConfig(({mode}) => {
       rollupOptions: {
         output: {
           manualChunks(id) {
+            if (id.includes('y_phylotree.json')) {
+              return 'data-y-phylotree';
+            }
+            if (id.includes('master_aims_normalized.json')) {
+              return 'data-master-aims';
+            }
             if (id.endsWith('.json') && id.includes('/src/data/')) {
               return 'genomic-data';
             }

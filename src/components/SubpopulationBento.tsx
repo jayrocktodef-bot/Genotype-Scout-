@@ -21,7 +21,7 @@ import {
 
 interface BentoProps {
   userGenotypes: UserGenotype[];
-  aimsDatabase: AIM[];
+  aimsDatabase?: AIM[];
   precalculated?: any;
   onOpenMethodology?: () => void;
 }
@@ -130,7 +130,7 @@ const PANEL_METADATA: Record<PanelType, PanelMeta> = {
   }
 };
 
-const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase, precalculated, onOpenMethodology }) => {
+const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase = [], precalculated, onOpenMethodology }) => {
   const [showUnmapped, setShowUnmapped] = useState(false);
   const [showExplain, setShowExplain] = useState(false);
   const [showAllSubpops, setShowAllSubpops] = useState(false);
@@ -159,23 +159,24 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
     }
 
     if (selectedPanel === 'microhap') {
-      const userSnps = Object.fromEntries(userGenotypes.map(g => [g.rsid, g.genotype]));
+      const userSnps = Object.fromEntries(userGenotypes.map((g) => [g.rsid, g.genotype]));
       const mix = deconvolveMicrohaplotypes(userSnps);
       if (mix && mix.length > 0) {
         const locusCount = mix.locusCount || (mix as any).detectedLoci?.length || 100;
+        const distanceSorted = (mix.distanceRanked || [...mix]).sort((a, b) => a.distance - b.distance);
         setResults({
-          topMatch: mix[0]?.name || 'Unknown',
+          topMatch: distanceSorted[0]?.name || 'Unknown',
           subpopAimsUsed: locusCount,
           unmappedAims: [],
-          breakdown: mix.map(m => ({
+          breakdown: distanceSorted.map((m) => ({
             subpop: m.name,
             distance: m.distance,
             similarityScore: m.percentage,
             markersCompared: locusCount,
-            count: locusCount
+            count: locusCount,
           })),
           admixtureMix: mix,
-          detectedMicrohaps: mix.detectedLoci || []
+          detectedMicrohaps: mix.detectedLoci || [],
         });
         setLoading(false);
         return;
@@ -362,7 +363,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
                 </div>
 
                 <span className={`text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full font-bold transition-colors w-full break-words whitespace-normal block text-center leading-tight ${
-                  isSelected ? 'bg-emerald-500/30 text-emerald-200 border border-emerald-500/40' : 'bg-black/50 text-slate-400 group-hover:text-slate-300 border border-white/5'
+                  isSelected ? 'bg-emerald-500/25 text-emerald-100 border border-emerald-500/40' : 'bg-black/50 text-emerald-200/50 group-hover:text-emerald-200/80 border border-white/5'
                 }`}>
                   {meta.badge}
                 </span>
@@ -501,18 +502,18 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="p-4 rounded-xl bg-teal-500/10 border border-teal-500/20 text-xs text-slate-300 space-y-3 leading-relaxed overflow-hidden w-full"
+            className="p-4 rounded-xl bg-teal-950/40 border border-teal-500/25 text-xs text-teal-100/90 space-y-3 leading-relaxed overflow-hidden w-full"
           >
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-teal-500/20 pb-2">
-              <span className="font-bold text-teal-300 flex items-center gap-2 text-sm break-words">
+              <span className="font-bold text-teal-200 flex items-center gap-2 text-sm break-words">
                 🧬 Active Panel: {activePanelMeta.label}
               </span>
-              <span className="text-[10px] font-mono text-teal-400 bg-teal-500/20 px-2 py-0.5 rounded border border-teal-500/30 self-start sm:self-auto max-w-full break-words whitespace-normal text-left">
+              <span className="text-[10px] font-mono text-teal-300 bg-teal-500/20 px-2 py-0.5 rounded border border-teal-500/30 self-start sm:self-auto max-w-full break-words whitespace-normal text-left">
                 {activePanelMeta.citation}
               </span>
             </div>
 
-            <p className="text-slate-300 leading-relaxed break-words">
+            <p className="text-teal-100/90 leading-relaxed break-words">
               {activePanelMeta.description}
             </p>
 
@@ -640,7 +641,7 @@ const SubpopulationBento: React.FC<BentoProps> = ({ userGenotypes, aimsDatabase,
           <button
             type="button"
             onClick={() => setShowMicrohaps(!showMicrohaps)}
-            className="text-xs font-bold text-slate-300 hover:text-purple-300 flex items-center justify-between w-full transition-colors py-2 px-3 bg-purple-950/20 hover:bg-purple-900/30 border border-purple-500/20 rounded-xl cursor-pointer select-none"
+            className="text-xs font-bold text-purple-200 hover:text-white flex items-center justify-between w-full transition-colors py-2 px-3 bg-purple-950/30 hover:bg-purple-900/40 border border-purple-500/25 rounded-xl cursor-pointer select-none"
           >
             <span className="flex items-center gap-2 uppercase tracking-wider text-[11px] font-mono">
               <Dna className="w-4 h-4 text-purple-400 shrink-0" />

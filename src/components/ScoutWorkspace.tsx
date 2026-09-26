@@ -36,6 +36,7 @@ interface ScoutWorkspaceProps {
   activeDatasetIndex: number;
   setActiveDatasetIndex: (i: number) => void;
   onOpenMethodology?: (moduleId?: string) => void;
+  onUploadNew?: () => void;
   children?: React.ReactNode;
 }
 
@@ -209,8 +210,8 @@ const MODULES: AppConfig[] = [
     id: 'methodology',
     name: 'Methodology',
     icon: BookOpen,
-    gradient: 'from-violet-500 to-purple-600',
-    glowColor: 'rgba(139,92,246,0.45)',
+    gradient: 'from-teal-500 to-emerald-600',
+    glowColor: 'rgba(20,184,166,0.45)',
     targetTab: 'methodology',
     description: 'Learn the underlying math, science, and calculation engines.',
     imageUrl: '/assets/methodology_icon.png',
@@ -390,9 +391,12 @@ const BannerHeader: React.FC<BannerHeaderProps> = ({
                 value={searchQuery}
                 onChange={e => onSearchChange(e.target.value)}
                 placeholder="Search modules…"
-                className="w-36 sm:w-44 pl-7 pr-3 py-1.5 bg-black/40 border border-amber-500/20 rounded-lg text-xs text-zinc-200 placeholder:text-zinc-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-[border-color,box-shadow]"
+                className="w-36 sm:w-48 pl-7 pr-8 py-1.5 bg-black/40 border border-amber-500/20 rounded-lg text-xs text-zinc-200 placeholder:text-zinc-500 focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/30 transition-[border-color,box-shadow]"
                 style={{ fontVariantNumeric: 'tabular-nums' }}
               />
+              <span className="hidden sm:inline-block absolute right-2 top-1/2 -translate-y-1/2 text-[9px] font-mono text-zinc-500 bg-white/5 px-1 py-0.2 rounded border border-white/10 pointer-events-none">
+                ⌘K
+              </span>
             </div>
           ) : null}
 
@@ -808,14 +812,26 @@ interface ModuleViewHeaderProps {
 const ModuleViewHeader: React.FC<ModuleViewHeaderProps> = ({ mod, onBack, onOpenMethodology }) => (
   <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b border-amber-500/15 bg-[#09090b]/80 shrink-0">
     <div className="flex items-center gap-3 min-w-0">
-      <button
-        onClick={onBack}
-        aria-label="Back to module launcher"
-        className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-white/[0.05] transition-[color,background-color] duration-150 active:scale-[0.96] shrink-0"
-        style={{ transitionProperty: 'color, background-color, transform' }}
-      >
-        <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-      </button>
+      <div className="flex items-center gap-1.5 shrink-0">
+        <button
+          onClick={onBack}
+          aria-label="Back to module launcher"
+          title="Back to All Modules"
+          className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] text-zinc-300 hover:text-white border border-white/10 text-xs font-bold transition-all duration-150 active:scale-[0.96] shrink-0 cursor-pointer shadow-sm"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
+          <span>Back</span>
+        </button>
+        <button
+          onClick={onBack}
+          aria-label="Return to Home launcher"
+          title="Return to Home Launcher"
+          className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 hover:text-amber-200 border border-amber-500/30 text-xs font-bold transition-all duration-150 active:scale-[0.96] shrink-0 cursor-pointer shadow-sm"
+        >
+          <Home className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+          <span className="hidden sm:inline">Home</span>
+        </button>
+      </div>
 
       <GoldIcon icon={mod.icon} size="sm" />
 
@@ -899,6 +915,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
   currentApp,
   onOpenApp,
   onOpenMethodology,
+  onUploadNew,
   children,
 }) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -981,20 +998,25 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
                 className="flex flex-col flex-1 overflow-hidden"
               >
                 {/* Module view back-header */}
-                {activeModule !== null ? (
-                  <ModuleViewHeader 
-                    mod={activeModule} 
-                    onBack={() => onOpenApp(null)} 
-                    onOpenMethodology={onOpenMethodology}
-                  />
-                ) : null}
+                <ModuleViewHeader 
+                  mod={activeModule ?? {
+                    id: currentApp,
+                    name: currentApp.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()),
+                    icon: Dna,
+                    gradient: 'from-amber-400 to-amber-600',
+                    glowColor: 'rgba(245,158,11,0.45)',
+                    description: 'Genomic analysis module',
+                  }} 
+                  onBack={() => onOpenApp(null)} 
+                  onOpenMethodology={onOpenMethodology}
+                />
 
                 {/* Module content */}
                 <div
                   className="flex-1 overflow-y-auto px-4 sm:px-6 py-6"
                   style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 4rem)' }}
                 >
-                  {hasDataset ? children : <EmptyState onUploadNew={() => onOpenApp(null)} />}
+                  {hasDataset ? children : <EmptyState onUploadNew={() => (onUploadNew ? onUploadNew() : onOpenApp(null))} />}
                 </div>
               </motion.div>
             ) : (
@@ -1013,7 +1035,7 @@ const ScoutWorkspace: React.FC<ScoutWorkspaceProps> = ({
                     onSelectModule={handleSelectModule}
                   />
                 ) : (
-                  <EmptyState onUploadNew={() => {}} />
+                  <EmptyState onUploadNew={() => (onUploadNew ? onUploadNew() : onOpenApp(null))} />
                 )}
               </motion.div>
             )}

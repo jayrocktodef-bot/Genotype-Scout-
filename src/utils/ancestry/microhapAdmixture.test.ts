@@ -95,5 +95,30 @@ describe('Microhaplotype Deconvolution Engine', () => {
     expect(afrResult).toBeDefined();
     expect(afrResult?.percentage).toBeGreaterThan(60);
     expect(res[0].popCode).toBe('AFR');
+
+    // Verify distanceRanked is strictly sorted by ascending distance
+    expect(res.distanceRanked).toBeDefined();
+    expect(res.distanceRanked!.length).toBe(5);
+    for (let i = 0; i < res.distanceRanked!.length - 1; i++) {
+      expect(res.distanceRanked![i].distance).toBeLessThanOrEqual(res.distanceRanked![i + 1].distance);
+    }
+  });
+
+  it('provides distanceRanked sorted strictly by ascending vector distance', () => {
+    // Mixed genotype dataset
+    const mockSnps: Record<string, string> = {
+      'rs333113': 'AG',
+      'rs8074965': 'CC',
+      'rs11657785': 'CT',
+      'rs2278007': 'AA',
+      'rs16891982': 'CG'
+    };
+
+    const res = deconvolveMicrohaplotypes(mockSnps);
+    expect(res.distanceRanked).toBeDefined();
+    const distances = res.distanceRanked!.map(r => r.distance);
+    for (let i = 0; i < distances.length - 1; i++) {
+      expect(distances[i]).toBeLessThanOrEqual(distances[i + 1]);
+    }
   });
 });

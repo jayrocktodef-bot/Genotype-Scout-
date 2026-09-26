@@ -290,13 +290,22 @@ export async function parseRawDNAStream(
       const isYorMT = chrom === 'Y' || chrom === 'MT';
       const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
       const coordIdNoChr = !isNaN(pos) ? `${chrom}_${pos}`.toLowerCase() : '';
-      const markerLower = markerId.toLowerCase();
+      const coordColon = !isNaN(pos) ? `${chrom}:${pos}`.toLowerCase() : '';
+      const coordColonChr = !isNaN(pos) ? `chr${chrom}:${pos}`.toLowerCase() : '';
+      const cleanMarker = markerId.toLowerCase().replace(/["']/g, '').trim();
+      const baseRsid = cleanMarker.startsWith('rs') ? cleanMarker.split(/[:_]/)[0] : cleanMarker;
 
       if (
         !allowlist ||
         isYorMT ||
-        allowlist.has(markerLower) ||
-        (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))
+        allowlist.has(cleanMarker) ||
+        (baseRsid && allowlist.has(baseRsid)) ||
+        (coordId && (
+          allowlist.has(coordId) ||
+          allowlist.has(coordIdNoChr) ||
+          allowlist.has(coordColon) ||
+          allowlist.has(coordColonChr)
+        ))
       ) {
         const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
         const primaryId = hasValidMarkerId ? markerId : (coordId || `${chrom}:${posStr}`);
@@ -586,13 +595,22 @@ export function parseRawDNA(
       const isYorMT = chrom === 'Y' || chrom === 'MT';
       const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
       const coordIdNoChr = !isNaN(pos) ? `${chrom}_${pos}`.toLowerCase() : '';
-      const markerLower = markerId.toLowerCase();
+      const coordColon = !isNaN(pos) ? `${chrom}:${pos}`.toLowerCase() : '';
+      const coordColonChr = !isNaN(pos) ? `chr${chrom}:${pos}`.toLowerCase() : '';
+      const cleanMarker = markerId.toLowerCase().replace(/["']/g, '').trim();
+      const baseRsid = cleanMarker.startsWith('rs') ? cleanMarker.split(/[:_]/)[0] : cleanMarker;
 
       if (
         !allowlist ||
         isYorMT ||
-        allowlist.has(markerLower) ||
-        (coordId && (allowlist.has(coordId) || allowlist.has(coordIdNoChr)))
+        allowlist.has(cleanMarker) ||
+        (baseRsid && allowlist.has(baseRsid)) ||
+        (coordId && (
+          allowlist.has(coordId) ||
+          allowlist.has(coordIdNoChr) ||
+          allowlist.has(coordColon) ||
+          allowlist.has(coordColonChr)
+        ))
       ) {
         const hasValidMarkerId = Boolean(markerId && markerId !== '.' && markerId !== '?' && markerId !== '0');
         const primaryId = hasValidMarkerId ? markerId : (coordId || `${chrom}:${posStr}`);

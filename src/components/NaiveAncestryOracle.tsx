@@ -675,7 +675,7 @@ export const NaiveAncestryOracle = memo(({
             />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#FFE66D]">Scout Score</h2>
+            <h2 className="text-xl sm:text-2xl font-black text-white">Scout Score</h2>
             <p className="text-[10px] font-bold text-[#4ECDC4] uppercase tracking-widest">Marker Frequency Est.</p>
           </div>
         </div>
