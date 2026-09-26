@@ -1,123 +1,93 @@
 <div align="center"><img width="1200" height="475" alt="Genotype Scout banner" src="https://writteninthegenome.blog/wp-content/uploads/2026/04/17762177921467E26841384755661462607.webp" /></div>
 
-# Genotype Scout — V5.16.0
+# Genotype Scout — V5.22.0
 
-> ⚠️ **Beta — research & educational tool.** Genotype Scout is in active beta and is **not an ethnicity calculator**. Its results are exploratory, are **not directly comparable** to the ethnicity estimates from commercial tests (23andMe, AncestryDNA), and are **not medical or diagnostic advice**.
+> ⚠️ **Research & Educational Bioinformatics Tool.** Genotype Scout is an exploratory platform and is **not an ethnicity calculator**. Results are probabilistic, are **not directly comparable** to commercial black-box ethnicity estimates, and do **not constitute medical or diagnostic advice**.
 
-**Genotype Scout** is a privacy-first genomic analysis suite created by Jequan Davis. It lets you process your raw DNA files **entirely in your browser**, so sensitive genetic data never leaves your device for standard analysis. Installable as a **Progressive Web App (PWA)** for offline access on any device.
+**Genotype Scout** is a high-performance, privacy-first genomic analysis suite created by Jequan Davis. It processes raw DNA files **entirely inside the browser** via dedicated Web Workers — sensitive genetic data never leaves your device. Installable as a **Progressive Web App (PWA)** for instant offline genomic analysis on any desktop or mobile device.
 
-[🚀 Launch the app](https://witg-genotype-scout.vercel.app/) · [📖 Blog](https://WrittenInTheGenome.blog) · [💬 Facebook Group](https://www.facebook.com/share/g/1EFyWD35tB/)
-
----
-
-## ✨ What's New in V5.16.0
-
-- **Archaic Hominin Introgression Engine** — Direct calculation of Neanderthal and Denisovan introgression affinity across diagnostic genomic loci, quantifying deep hominin inheritance.
-- **Ancient Archaeological Match Engine** — Deep lineage matching connecting user Y-DNA and mtDNA haplogroups against radiocarbon-dated ancient fossil genomes across paleogenomic eras.
-- **Forensic & Mitochondrial Database Suite**:
-  - *EMPOP Forensic Engine*: Mitochondrial DNA forensic database matching for high-confidence lineage verification.
-  - *Phylotree Build 17 & gnomAD mtDNA*: Integrated full Phylotree mtDNA tree navigation and gnomAD mitochondrial allele frequencies.
-  - *MITOMAP & hMitoGeo Engines*: Pathogenic mitochondrial mutation tracking and geographical haplogroup distribution mapping.
-  - *TMRCA Coalescent Estimator*: Time to Most Recent Common Ancestor timeline estimator for paternal and maternal clades.
-  - *YHRD Y-STR Engine*: Y-chromosome Haplotype Reference Database forensic matching.
-- **Optimized Multi-Threaded Worker Pipeline** — Direct `sanitizePayload` payload sanitization removes JSON serialization overhead when transferring results from `genotypeWorker.ts` to the UI.
-- **Autosomal Masking in Deconvolution** — Isolated sex chromosomes (`X`, `Y`, `MT`) during subpopulation oracle calculations to eliminate haplogroup marker interference in autosomal admixture.
+[🚀 Launch Genotype Scout](https://genotype.writteninthegenome.blog) · [📖 Research Blog](https://writteninthegenome.blog) · [💬 Community](https://www.facebook.com/share/g/1EFyWD35tB/) · [🧬 Chromosome Phaser Studio](https://phaser.writteninthegenome.blog) · [🛠️ Superkit Maker](https://merge.writteninthegenome.blog)
 
 ---
 
-## ✨ Highlights from V5.15
+## ✨ What's New in V5.22.0
 
-- **Log-Likelihood Ratio (LLR) Specificity Weighting** — Replaced unweighted binary marker matching with LLR probability scoring ($\text{LLR}_k = \ln[P(G \mid p_k)/P(G \mid p_{\text{bg}})]$) and diagnostic private SNP gating.
-- **Elastic-Net Regularized NNLS Solver ($\lambda_1 / \lambda_2$)** — L1 soft-thresholding ($\lambda_1 = 10^{-4}$) and L2 Ridge regularization ($\lambda_2 = 10^{-4}$) to prevent admixed profiles from collapsing into intermediate centroid proxies.
-- **Enriched Macro-Groups & Minor Signal Retention** — Expanded `MACRO_GROUPS` to map 150+ HGDP/SGDP/1000G reference populations and lowered Pass 2 continental selection thresholds to `0.05%`.
-- **True Multi-Worker Parallelism** — Parallelized CPU-bound analysis engines using a dynamically dispatched Web Worker pool (`navigator.hardwareConcurrency`, up to 8 threads).
-- **Desktop UI Overhaul** — Sleek, native OS-style desktop environment with floating app modules and optimized accessibility.
+- **1-Click Legal Terms & Scientific Advisory Assent** — Streamlined, enforceable clickwrap agreement with single-click affirmative assent and master "Select All" toggle covering microarray false-positive warning rates (40–50%+ on rare variants), Research Use Only (RUO) boundaries, and CLIA/CAP clinical confirmation requirements.
+- **Universal Module Index & Command Palette (`⌘K` / `Ctrl+K`)** — Rapid searchable navigation directory indexing all 14 application modules, analytical algorithms, genomic sub-tools, and cross-suite utilities with keyboard navigation (`↑`/`↓`/`Enter`/`Esc`).
+- **Client-Side WebCrypto Session Vault (AES-GCM-256)** — Client-side cryptographic session encryption using PBKDF2 (100,000 iterations, SHA-256) and authenticated AES-GCM-256 to seal sensitive genomic files and cached analysis results locally at rest.
+- **Data Table Interactivity & Direct Exports** — One-click CSV and TSV table downloads across serological blood systems (`BloodTypeView`), genomic marker matrix (`GeneticMarkersBrowser`), and recombination crossovers with WCAG 2.1 AA accessibility attributes (`caption`, `scope="col"`, `aria-sort`).
+- **Cross-Suite Phasing Integration (Chromosome Phaser ↔ Genotype Scout)** — Direct ingestion support for parent-phased dual haplotypes (`Maternal Haplotype` vs `Paternal Haplotype`), enabling true lineage-specific chromosome painting rather than statistical estimation.
+- **Strict Open-Source & Third-Party License Compliance** — Comprehensive data audit replacing proprietary non-commercial databases with open public-domain sources (CPIC clinical guidelines, OpenPGx, public PharmGKB annotations) with zero synthetic SNPs or restrictive license entanglements.
+
+---
+
+## ✨ Core Analytical Features
+
+### 🌍 High-Precision Biogeographical Ancestry
+Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) with Human Origins (K61) reference populations. Your genotype is evaluated against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation, including 95% confidence intervals per population.
+
+### 🏛️ Ancient Archaeological Match & Archaic Introgression
+Deep lineage matching connecting user Y-DNA and mtDNA haplogroups against 54 radiocarbon-dated ancient fossil genomes across paleogenomic eras. Direct calculation of Neanderthal and Denisovan introgression affinity across diagnostic genomic loci.
+
+### 🧬 Forensic & Mitochondrial Database Suite
+- **EMPOP Forensic Engine**: Mitochondrial DNA forensic database matching for high-confidence lineage verification.
+- **Phylotree Build 17 & gnomAD mtDNA**: Integrated full Phylotree mtDNA tree navigation and gnomAD mitochondrial allele frequencies.
+- **MITOMAP & hMitoGeo Engines**: Pathogenic mitochondrial mutation tracking and geographical haplogroup distribution mapping.
+- **TMRCA Coalescent Estimator**: Time to Most Recent Common Ancestor timeline estimator for paternal and maternal clades.
+- **YHRD Y-STR Engine**: Y-chromosome Haplotype Reference Database forensic matching.
+
+### 🩸 Comprehensive Serological & Blood Group Phenotyping
+Predicts major and extended blood systems using ISBT-standardized molecular markers:
+- ABO diplotypes and subgroup variations (A1, A2, B, O1, O2, Bombay $O_h$, Cis-AB).
+- Rh(D) deletion status, Fisher-Race antigens ($C/c$, $E/e$), and weak Rh variants.
+- Extended antigen groups: Duffy ($Fy^a/Fy^b/Fy^{null}$), Kidd, MNS, Kell, Secretor ($FUT2$), Lewis, Diego, Colton, and Dombrock.
+- Direct CSV table export of all observed serological markers and biochemical effects.
+
+### 🎨 Chromosome Painter & Segmental Painting
+Interactive ideogram visualizer displaying ancestral segment assignments across all 22 autosomes and Chr X. Supports dual phased maternal and paternal tracks when paired with Chromosome Phaser.
 
 ---
 
 ## 🔒 Commitment to Privacy & Security
 
-The core philosophy of Genotype Scout is binary-level privacy. Your raw DNA file is parsed, analyzed, and visualized **entirely in your browser** using high-performance Web Workers. Your raw genetic data is never uploaded to or processed by any server.
-
-To be fully transparent about what stays on your device and what (optionally) leaves it:
-
-- **Core analysis is 100% local.** Raw DNA parsing, ancestry, haplogroups, and health/trait analysis run client-side. No raw data is transmitted anywhere.
-- **Results are saved on your device.** Computed results are stored locally in your browser's IndexedDB so your session persists between visits. They remain on this device until you use the in-app **Clear** action (or clear your browser storage), and are not encrypted at rest — avoid running the tool on a shared/public computer, or clear your data when finished.
-- **Zero Third-Party Telemetry:** Genotype Scout contains no third-party tracking scripts, advertising trackers, or external analytics SDKs. No telemetry or usage data is transmitted.
-- **Export to Google Slides:** (optional) requires you to sign in with Google and sends an ancestry summary (health markers excluded) directly to **your own** Google account. It runs only when you explicitly trigger an export.
+The core philosophy of Genotype Scout is binary-level privacy:
+- **100% In-Browser Computation:** Raw DNA parsing, ancestry calculation, haplogroup classification, and health/trait analysis run locally in client-side Web Workers.
+- **Zero Server Uploads & Zero Telemetry:** No genetic files, variant calls, or usage analytics are transmitted to any remote server.
+- **WebCrypto Session Encryption:** Users can encrypt locally cached sessions using AES-GCM-256 with a custom passphrase via the native WebCrypto API.
+- **Optional Export:** Google Slides export sends an ancestry summary directly to your own authenticated Google account only upon explicit user request.
 
 ---
 
 ## ⚙️ Technical Architecture
 
-Genotype Scout leverages modern web technologies to handle computationally intensive genomic processing without compromising the user experience.
-
 | Component | Technology |
 | :--- | :--- |
 | **Runtime** | React 19 + Vite |
 | **Language** | TypeScript (`strict` mode) |
-| **Styling** | Tailwind CSS v4 with custom design tokens |
-| **Performance** | Multi-worker parallel thread pool for concurrent analysis engines; streaming parser; code-split chunks for fast app-shell load |
-| **On-device ML** | ONNX model via `onnxruntime-web` — no cloud calls, no API key |
+| **Styling** | Tailwind CSS v4 with custom dark-mode design tokens |
+| **Concurrency** | Multi-threaded Web Worker pool (`navigator.hardwareConcurrency`) |
+| **On-device ML** | ONNX Runtime Web (`onnxruntime-web`) with WebAssembly SIMD |
 | **Admixture Engine** | Human Origins (K61) with Lawson-Hanson NNLS solver |
-| **PWA** | `vite-plugin-pwa` with Workbox service worker, offline precaching, runtime font/asset caching |
-| **Theme** | Light (default) / Dark mode toggle with CSS custom properties |
+| **Cryptography** | WebCrypto API (PBKDF2-HMAC-SHA256, AES-GCM-256) |
+| **PWA** | `vite-plugin-pwa` with Workbox offline precaching and background sync |
+| **Navigation** | Universal Keyboard Command Palette (`⌘K` / `Ctrl+K`) |
 
 ---
 
-## 🧬 Ancestry Informative Markers (AIMs) & Forensic Architecture
-
-Genotype Scout leverages an extensive, curated database of **Ancestry Informative Markers (AIMs)** and specialized forensic panels to deliver high-resolution biogeographical ancestry estimation and subpopulation deconvolution.
-
-### 📊 AIMs Database Breakdown
+## 🧬 AIMs Database & Reference Architecture
 
 | Marker Database / Panel | Marker Count | Purpose / Scope |
 | :--- | :---: | :--- |
 | **Regional & Global AIMs** (`src/data/aims/`) | **21,105** | Curated multi-population marker library spanning 11 biogeographical regions. |
-| **Normalized Master AIMs** (`master_aims_normalized.json`) | **17,886** | Standardized, Ensembl-validated markers with LLR probability weights and reference allele frequencies. |
+| **Normalized Master AIMs** (`master_aims_normalized.json`) | **17,886** | Standardized, Ensembl-validated markers with LLR probability weights. |
 | **Cosmopolitan AIMs** | **10,076** | Core high-divergence markers for continental macro-group separation. |
 | **GRAF-10k Panel** | **8,821** | High-resolution genomic ancestry refinement and subcontinental clustering. |
 | **Forensic Microhaplotypes** | **3,053** | High-density multi-SNP forensic microhaplotype loci for mixture deconvolution. |
 | **VISAGE Phenotypic Panel** | Comprehensive | Complex appearance, pigmentation (eye, hair, skin), and phenotypic trait estimation. |
-| **EUROFORGEN NAME Panel** | Validated | High-sensitivity forensic biogeographical ancestry markers. |
 | **EMPOP & YHRD** | Full Databases | Comprehensive mitochondrial DNA (Phylotree 17) and Y-STR population databases. |
-
-#### 🌍 Regional AIMs Distribution (21,105 Markers)
-* **Global Core Anchors:** 15,560 markers
-* **European Substructure:** 3,180 markers
-* **African Lineages:** 1,101 markers
-* **North African:** 995 markers
-* **South Asian:** 986 markers
-* **Middle Eastern:** 978 markers
-* **Oceanian:** 974 markers
-* **Native American (Indigenous Americas):** 968 markers
-* **East Asian:** 966 markers
-* **African American Specific:** 929 markers
-* **Central Asian:** 914 markers
-
----
-
-## 📋 Feature Breakdown
-
-### 🌍 High-Precision Ancestry
-Calculate complex admixture percentages using advanced Non-Negative Least Squares (NNLS) methods with Human Origins (K61) reference populations. Your genotype is compared against dense population frequency datasets with LD-pruned, strand-aligned markers for high-dimensional ancestral origin estimation. 95% confidence intervals are computed per population.
-
-### 🏛️ Ancient DNA & Archaic Hominin Oracle
-Weighted Ancient DNA matching and archaic introgression scoring. Quantifies Neanderthal and Denisovan affinity while connecting user lineages against 54 radiocarbon-dated ancient fossil genomes.
-
-### 🧠 Haplogroup Classification
-Hierarchical matching identifies your terminal SNP. Navigate paternal (Y-DNA) and maternal (mtDNA) lineages with classification logic that prioritizes the highest hierarchical rank for maximum specificity. Flanking branch consensus validation improves accuracy for deep subclades.
-
-### 🩺 Health & Wellness Reports
-Educational, genotype-based insights (not medical advice):
-*   **ABO & Rh Blood Type:** inferred from genotype markers.
-*   **Secretor Status:** FUT2 and related marker analysis.
-*   **APOE & other risk markers:** genetic marker analysis for health-related context.
-
-### 📱 Progressive Web App
-Install Genotype Scout directly to your home screen on Android, iOS, or desktop. After the first visit, the app shell and core assets are cached for offline access — your DNA analysis works even without an internet connection.
 
 ---
 
 ## 🏗️ License
-This project is proprietary software created by Jequan Davis. Unauthorized distribution or commercial use is prohibited without express written permission.
+Copyright © 2026 Jequan Davis / Written In The Genome. All rights reserved.
+Exploratory bioinformatics software for research and educational purposes.
