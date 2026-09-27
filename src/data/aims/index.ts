@@ -145,19 +145,20 @@ const buildCleanAimDatabase = (): Record<string, any> => {
                 const isPanelStub = !hasSubFreqs && !hasDeepFreqs && isGenericDesc && (panelEntry.trait === 'Ancestry' || !panelEntry.trait);
                 const isTargetDiagnostic = target.tier === 'diagnostic_single_region';
 
-                // Region Resolution: Never allow a generic stub or secondary panel to clobber an empirical diagnostic region
+                // Region Resolution: Ensure equal representation across all panels; never allow a generic stub or zero-frequency marker to clobber an empirical diagnostic region
                 if (panelEntry.region && panelEntry.region !== 'Global' && !isPanelStub) {
-                    if (panelEntry.region === 'Native American' && !isTargetDiagnostic) {
-                        // Curated Native American panel markers take precedence unless target is an empirical single-region diagnostic for another continent
-                        target.region = panelEntry.region;
-                        if (panelEntry.color) target.color = panelEntry.color;
-                    } else if (!target.region || target.region === 'Global' || target.region === 'Cosmopolitan' || 
-                        target.region === 'weakly_informative' || target.region === 'Multi-Way Informative') {
-                        target.region = panelEntry.region;
-                        if (panelEntry.color) target.color = panelEntry.color;
-                    } else if (!isTargetDiagnostic && (panelEntry.weight || 0) > (target.weight || 0)) {
-                        target.region = panelEntry.region;
-                        if (panelEntry.color) target.color = panelEntry.color;
+                    const amrFreq = panelEntry.frequencies?.AMR ?? panelEntry.frequencies?.NAT ?? null;
+                    const isValidNative = panelEntry.region !== 'Native American' || (amrFreq !== 0 && (amrFreq === null || amrFreq >= 0.15));
+
+                    if (isValidNative) {
+                        if (!target.region || target.region === 'Global' || target.region === 'Cosmopolitan' || 
+                            target.region === 'weakly_informative' || target.region === 'Multi-Way Informative') {
+                            target.region = panelEntry.region;
+                            if (panelEntry.color) target.color = panelEntry.color;
+                        } else if (!isTargetDiagnostic && (panelEntry.weight || 0) > (target.weight || 0)) {
+                            target.region = panelEntry.region;
+                            if (panelEntry.color) target.color = panelEntry.color;
+                        }
                     }
                 }
 

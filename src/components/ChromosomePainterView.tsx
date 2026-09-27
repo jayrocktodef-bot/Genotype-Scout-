@@ -20,20 +20,93 @@ const REGION_NAMES: Record<string, string> = {
   MID: 'Middle Eastern'
 };
 
-function isNativeAmericanAIM(m: any): boolean {
-  if (!m) return false;
-  const reg = (m.region || m.continent || '').toLowerCase();
-  if (reg.includes('native') || reg.includes('indigenous') || reg === 'amr') return true;
-  if (m.frequencies) {
-    const amrF = m.frequencies.AMR ?? m.frequencies.NAT ?? 0;
-    const eurF = m.frequencies.EUR ?? 0;
-    const afrF = m.frequencies.AFR ?? 0;
-    const maxBackground = Math.max(eurF, afrF);
-    if (amrF >= 0.50 && (amrF - maxBackground) >= 0.25) {
-      return true;
+export interface MarkerAncestryInfo {
+  code: string;
+  label: string;
+  short: string;
+  color: string;
+}
+
+export const CONTINENTAL_FILTER_POPS = [
+  { code: 'ALL', label: 'All Markers', short: 'All', color: '#14B8A6' },
+  { code: 'AFR', label: 'African', short: 'AFR', color: '#2ECC71' },
+  { code: 'EUR', label: 'European', short: 'EUR', color: '#3498DB' },
+  { code: 'EAS', label: 'East Asian', short: 'EAS', color: '#E84B4B' },
+  { code: 'AMR', label: 'Indigenous American', short: 'AMR', color: '#C25C1A' },
+  { code: 'SAS', label: 'South Asian', short: 'SAS', color: '#F1C40F' },
+  { code: 'MID', label: 'Middle Eastern', short: 'MID', color: '#E67E22' },
+  { code: 'OCE', label: 'Oceanian', short: 'OCE', color: '#1ABC9C' },
+  { code: 'GLOBAL', label: 'Cosmopolitan', short: 'Global', color: '#94A3B8' }
+];
+
+export function getMarkerAncestry(m: any): MarkerAncestryInfo {
+  if (!m) return { code: 'GLOBAL', label: 'Cosmopolitan', short: 'Global', color: '#94A3B8' };
+
+  const freqs = m.frequencies || {};
+  const validPops: Record<string, number> = {};
+
+  if (typeof freqs.AFR === 'number') validPops.AFR = freqs.AFR;
+  if (typeof freqs.EUR === 'number') validPops.EUR = freqs.EUR;
+  if (typeof freqs.EAS === 'number') validPops.EAS = freqs.EAS;
+  const amrVal = typeof freqs.AMR === 'number' ? freqs.AMR : (typeof freqs.NAT === 'number' ? freqs.NAT : undefined);
+  if (typeof amrVal === 'number') validPops.AMR = amrVal;
+  if (typeof freqs.SAS === 'number') validPops.SAS = freqs.SAS;
+  const midVal = typeof freqs.MID === 'number' ? freqs.MID : (typeof freqs.MENA === 'number' ? freqs.MENA : (typeof freqs.MDE === 'number' ? freqs.MDE : undefined));
+  if (typeof midVal === 'number') validPops.MID = midVal;
+  if (typeof freqs.OCE === 'number') validPops.OCE = freqs.OCE;
+
+  const entries = Object.entries(validPops);
+  if (entries.length >= 2) {
+    const vals = entries.map(e => e[1]);
+    const maxVal = Math.max(...vals);
+    const minVal = Math.min(...vals);
+    const spread = maxVal - minVal;
+
+    entries.sort((a, b) => b[1] - a[1]);
+    const [topPop, topFreq] = entries[0];
+    const secondFreq = entries[1] ? entries[1][1] : 0;
+    const others = entries.slice(1).map(e => e[1]);
+    const otherMean = others.reduce((a, b) => a + b, 0) / others.length;
+    const delta = topFreq - otherMean;
+
+    if (spread < 0.15 || delta < 0.10) {
+      return { code: 'GLOBAL', label: 'Cosmopolitan', short: 'Global', color: '#94A3B8' };
+    }
+
+    if (delta >= 0.12 && topFreq >= 0.20 && (topFreq - secondFreq >= 0.05 || delta >= 0.18)) {
+      switch (topPop) {
+        case 'AFR': return { code: 'AFR', label: 'African', short: 'AFR', color: '#2ECC71' };
+        case 'EUR': return { code: 'EUR', label: 'European', short: 'EUR', color: '#3498DB' };
+        case 'EAS': return { code: 'EAS', label: 'East Asian', short: 'EAS', color: '#E84B4B' };
+        case 'AMR': return { code: 'AMR', label: 'Indigenous American', short: 'AMR', color: '#C25C1A' };
+        case 'SAS': return { code: 'SAS', label: 'South Asian', short: 'SAS', color: '#F1C40F' };
+        case 'MID': return { code: 'MID', label: 'Middle Eastern', short: 'MID', color: '#E67E22' };
+        case 'OCE': return { code: 'OCE', label: 'Oceanian', short: 'OCE', color: '#1ABC9C' };
+      }
     }
   }
-  return false;
+
+  // Fallback to text metadata with strict validation
+  const reg = (m.region || m.continent || '').toLowerCase();
+  if (reg.includes('native') || reg.includes('indigenous') || reg === 'amr') {
+    if (validPops.AMR !== undefined && validPops.AMR === 0) {
+      return { code: 'GLOBAL', label: 'Cosmopolitan', short: 'Global', color: '#94A3B8' };
+    }
+    return { code: 'AMR', label: 'Indigenous American', short: 'AMR', color: '#C25C1A' };
+  }
+  if (reg.includes('afri') || reg === 'afr') return { code: 'AFR', label: 'African', short: 'AFR', color: '#2ECC71' };
+  if (reg.includes('euro') || reg === 'eur') return { code: 'EUR', label: 'European', short: 'EUR', color: '#3498DB' };
+  if (reg.includes('east asian') || reg === 'eas') return { code: 'EAS', label: 'East Asian', short: 'EAS', color: '#E84B4B' };
+  if (reg.includes('south asian') || reg === 'sas') return { code: 'SAS', label: 'South Asian', short: 'SAS', color: '#F1C40F' };
+  if (reg.includes('middle east') || reg.includes('mena') || reg === 'mid') return { code: 'MID', label: 'Middle Eastern', short: 'MID', color: '#E67E22' };
+  if (reg.includes('ocean') || reg === 'oce') return { code: 'OCE', label: 'Oceanian', short: 'OCE', color: '#1ABC9C' };
+
+  return { 
+    code: 'GLOBAL', 
+    label: m.region && m.region !== 'Global' ? m.region : 'Cosmopolitan', 
+    short: 'Global', 
+    color: '#94A3B8' 
+  };
 }
 
 interface Segment {
@@ -70,8 +143,27 @@ export const ChromosomePainterView = ({
     return snpsUsedForLAI.length > 0 ? snpsUsedForLAI : (dataset?.analysis?.aimsUsed || []);
   }, [snpsUsedForLAI, dataset]);
 
-  const totalNativeCount = useMemo(() => {
-    return allMatchedAIMs.filter(isNativeAmericanAIM).length;
+  const populationCounts = useMemo(() => {
+    const counts: Record<string, number> = {
+      ALL: allMatchedAIMs.length,
+      AFR: 0,
+      EUR: 0,
+      EAS: 0,
+      AMR: 0,
+      SAS: 0,
+      MID: 0,
+      OCE: 0,
+      GLOBAL: 0
+    };
+    for (const aim of allMatchedAIMs) {
+      const info = getMarkerAncestry(aim);
+      if (counts[info.code] !== undefined) {
+        counts[info.code]++;
+      } else {
+        counts.GLOBAL++;
+      }
+    }
+    return counts;
   }, [allMatchedAIMs]);
 
   const displayedMarkers = useMemo(() => {
@@ -98,16 +190,12 @@ export const ChromosomePainterView = ({
       }
     }
 
-    // 2. Region / Native American filter
+    // 2. Continental ancestry filter
     if (activeRegionFilter !== 'ALL') {
-      if (activeRegionFilter === 'AMR') {
-        list = list.filter(isNativeAmericanAIM);
-      } else {
-        list = list.filter((r: any) => {
-          const reg = (r.region || r.continent || '').toLowerCase();
-          return reg.includes(activeRegionFilter.toLowerCase());
-        });
-      }
+      list = list.filter((r: any) => {
+        const info = getMarkerAncestry(r);
+        return info.code === activeRegionFilter;
+      });
     }
 
     // 3. Search query filter (rsID, gene, trait, region, genotype, chrom, position)
@@ -207,12 +295,9 @@ export const ChromosomePainterView = ({
           
           <div className="flex flex-wrap items-center gap-3">
             {allMatchedAIMs.length > 0 && (
-              <div className="flex items-center gap-2.5 bg-slate-900/80 border border-slate-700/60 px-3.5 py-2 rounded-xl text-xs shadow-inner">
+              <div className="flex items-center gap-2 bg-slate-900/80 border border-slate-700/60 px-3.5 py-2 rounded-xl text-xs shadow-inner">
                 <span className="text-slate-400 font-bold uppercase tracking-wider text-[10px]">Matched AIMs:</span>
-                <span className="font-mono font-black text-white">{allMatchedAIMs.length}</span>
-                <span className="text-slate-600">|</span>
-                <span className="text-amber-400 font-bold uppercase tracking-wider text-[10px]">🪶 Native American:</span>
-                <span className="font-mono font-black text-amber-300">{totalNativeCount}</span>
+                <span className="font-mono font-black text-white">{allMatchedAIMs.length.toLocaleString()}</span>
               </div>
             )}
 
@@ -392,44 +477,39 @@ export const ChromosomePainterView = ({
                       </button>
                     </div>
 
-                    {/* Ancestry Quick Filters including Native American Focus */}
+                    {/* Ancestry Quick Filters — Equal Representation Across All Continental Lineages */}
                     <div className="flex flex-wrap gap-1.5 pt-1">
-                      <button
-                        onClick={() => setActiveRegionFilter('ALL')}
-                        className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all ${
-                          activeRegionFilter === 'ALL'
-                            ? 'bg-teal-500/20 text-teal-300 border-teal-500/40 shadow-sm'
-                            : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-slate-200'
-                        }`}
-                      >
-                        All ({allMatchedAIMs.length})
-                      </button>
+                      {CONTINENTAL_FILTER_POPS.map((pop) => {
+                        const count = populationCounts[pop.code] ?? 0;
+                        const isActive = activeRegionFilter === pop.code;
 
-                      <button
-                        onClick={() => setActiveRegionFilter(activeRegionFilter === 'AMR' ? 'ALL' : 'AMR')}
-                        className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1 ${
-                          activeRegionFilter === 'AMR'
-                            ? 'bg-amber-900/50 text-amber-300 border-amber-500 shadow-md scale-105'
-                            : 'bg-amber-950/40 text-amber-400 border-amber-800/40 hover:bg-amber-950/70'
-                        }`}
-                      >
-                        <span>🪶 Native American</span>
-                        <span className="font-mono font-bold text-[9px] bg-amber-950 px-1 py-0.2 rounded border border-amber-700/60">{totalNativeCount}</span>
-                      </button>
-
-                      {['AFR', 'EUR', 'EAS'].map((pop) => (
-                        <button
-                          key={pop}
-                          onClick={() => setActiveRegionFilter(activeRegionFilter === pop ? 'ALL' : pop)}
-                          className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all ${
-                            activeRegionFilter === pop
-                              ? 'bg-teal-500/20 text-teal-300 border-teal-500/40'
-                              : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-slate-200'
-                          }`}
-                        >
-                          {pop}
-                        </button>
-                      ))}
+                        return (
+                          <button
+                            key={pop.code}
+                            onClick={() => setActiveRegionFilter(isActive ? 'ALL' : pop.code)}
+                            title={pop.label}
+                            className={`px-2 py-1 text-[10px] font-black uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                              isActive
+                                ? 'shadow-sm font-bold scale-[1.02]'
+                                : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-slate-200 hover:border-slate-700'
+                            }`}
+                            style={isActive ? {
+                              backgroundColor: `${pop.color}25`,
+                              color: pop.color,
+                              borderColor: `${pop.color}60`
+                            } : undefined}
+                          >
+                            <span>{pop.short}</span>
+                            <span 
+                              className={`font-mono text-[9px] px-1 py-0.2 rounded border ${
+                                isActive ? 'bg-black/30 border-current' : 'bg-slate-900 border-slate-800 text-slate-400'
+                              }`}
+                            >
+                              {count}
+                            </span>
+                          </button>
+                        );
+                      })}
                     </div>
 
                     {/* Search Query Input */}
@@ -455,14 +535,21 @@ export const ChromosomePainterView = ({
                     {/* Results Counter */}
                     <div className="flex justify-between items-center text-[10px] text-slate-400 border-b border-slate-800/80 pb-1.5 font-bold uppercase tracking-wider">
                       <span>Showing {Math.min(displayLimit, displayedMarkers.length)} of {displayedMarkers.length} Markers</span>
-                      {activeRegionFilter === 'AMR' && <span className="text-amber-400">Native American Filter Active</span>}
+                      {activeRegionFilter !== 'ALL' && (
+                        <span 
+                          style={{
+                            color: CONTINENTAL_FILTER_POPS.find(p => p.code === activeRegionFilter)?.color || '#14B8A6'
+                          }}
+                        >
+                          {CONTINENTAL_FILTER_POPS.find(p => p.code === activeRegionFilter)?.label} Filter Active
+                        </span>
+                      )}
                     </div>
 
                     {/* Matched Markers List */}
                     <div className="space-y-2 max-h-[50vh] overflow-y-auto pr-1 scrollbar-thin">
                       {displayedMarkers.slice(0, displayLimit).map((snp: any, i: number) => {
-                        const reg = (snp.region || snp.continent || '').toLowerCase();
-                        const isNative = reg.includes('native') || reg.includes('indigenous') || reg.includes('amr') || (snp.frequencies && (snp.frequencies.AMR >= 0.35 || snp.frequencies.NAT >= 0.35));
+                        const ancestry = getMarkerAncestry(snp);
 
                         return (
                           <div 
@@ -472,16 +559,16 @@ export const ChromosomePainterView = ({
                             <div className="flex justify-between items-center">
                               <div className="flex flex-wrap items-center gap-1.5">
                                 <span className="font-mono text-sky-400 font-black text-xs">{snp.rsid || snp.markerId}</span>
-                                {isNative && (
-                                  <span className="text-[9px] font-black uppercase tracking-wider bg-amber-950/80 text-amber-300 border border-amber-600/50 px-1.5 py-0.5 rounded-md">
-                                    🪶 Native American
-                                  </span>
-                                )}
-                                {!isNative && snp.region && snp.region !== 'Global' && (
-                                  <span className="text-[9px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-1.5 py-0.5 rounded-md">
-                                    {snp.region}
-                                  </span>
-                                )}
+                                <span 
+                                  className="text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded-md border"
+                                  style={{
+                                    backgroundColor: `${ancestry.color}20`,
+                                    color: ancestry.color,
+                                    borderColor: `${ancestry.color}50`
+                                  }}
+                                >
+                                  {ancestry.label}
+                                </span>
                               </div>
                               <span className="font-mono font-black text-teal-300 bg-teal-950/90 px-2 py-0.5 rounded-md border border-teal-700/60 text-xs">
                                 {snp.genotype || '--'}

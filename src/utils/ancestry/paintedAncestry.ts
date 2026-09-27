@@ -634,20 +634,44 @@ export function computeDatasetLAI(
       }
 
       let effectiveRegion = aim.region || aim.continent;
-      if (!effectiveRegion) {
+      
+      // Guard against mislabeled Native American markers with 0 or negligible AMR frequency
+      const amrCheck = aim.frequencies?.AMR ?? aim.frequencies?.NAT ?? null;
+      const isMislabeledNative = (effectiveRegion === 'Native American' || effectiveRegion === 'Indigenous American') && 
+        (amrCheck === 0 || (amrCheck !== null && amrCheck < 0.15));
+
+      if (!effectiveRegion || effectiveRegion === 'Global' || isMislabeledNative) {
         if (aim.frequencies) {
-          const amrF = aim.frequencies.AMR ?? 0;
-          const eurF = aim.frequencies.EUR ?? 0;
-          const afrF = aim.frequencies.AFR ?? 0;
-          const easF = aim.frequencies.EAS ?? 0;
-          const maxBg = Math.max(eurF, afrF, easF);
-          if (amrF >= 0.50 && amrF - maxBg >= 0.25) {
-            effectiveRegion = 'Native American';
+          const freqs = aim.frequencies;
+          const popEntries: [string, number][] = [
+            ['African', freqs.AFR ?? 0],
+            ['European', freqs.EUR ?? 0],
+            ['East Asian', freqs.EAS ?? 0],
+            ['Indigenous American', amrCheck ?? 0],
+            ['South Asian', freqs.SAS ?? 0],
+            ['Middle Eastern', freqs.MID ?? freqs.MENA ?? 0],
+            ['Oceanian', freqs.OCE ?? 0]
+          ];
+
+          popEntries.sort((a, b) => b[1] - a[1]);
+          const [topPop, topVal] = popEntries[0];
+          const allVals = popEntries.map(p => p[1]);
+          const spread = Math.max(...allVals) - Math.min(...allVals);
+          const others = popEntries.slice(1).map(p => p[1]);
+          const otherMean = others.reduce((a, b) => a + b, 0) / others.length;
+          const delta = topVal - otherMean;
+
+          if (spread < 0.15 || delta < 0.10) {
+            effectiveRegion = 'Cosmopolitan';
+          } else if (delta >= 0.15 && topVal >= 0.25) {
+            effectiveRegion = topPop;
+          } else if (spread >= 0.25) {
+            effectiveRegion = 'Multi-Way Informative';
           } else {
-            effectiveRegion = 'Global';
+            effectiveRegion = 'Cosmopolitan';
           }
         } else {
-          effectiveRegion = 'Global';
+          effectiveRegion = 'Cosmopolitan';
         }
       }
 

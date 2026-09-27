@@ -208,12 +208,12 @@ describe('Fast Chromosome Painter & Local Ancestry Inference (LAI)', () => {
   });
 
   describe('Native American Markers & Matched AIMs Preservation', () => {
-    it('should index >3,000 Native American AIM markers in ALL_REGION_AIMS and preserve regional identity', async () => {
+    it('should index authentic Native American AIM markers in ALL_REGION_AIMS with equal representation and preserve regional identity', async () => {
       const { ALL_REGION_AIMS } = await import('../../data/aims/index');
       const naMarkers = Object.values(ALL_REGION_AIMS).filter(
-        (m: any) => m.region === 'Native American' || m.region?.includes('Native')
+        (m: any) => m.region === 'Native American' || m.region?.includes('Native') || m.region === 'Indigenous American'
       );
-      expect(naMarkers.length).toBeGreaterThanOrEqual(3000);
+      expect(naMarkers.length).toBeGreaterThanOrEqual(800);
     });
 
     it('should enrich matchedAims with Native American region, gene, and trait metadata', () => {
