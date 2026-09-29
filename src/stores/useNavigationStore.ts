@@ -77,6 +77,7 @@ export function tabToDefaultApp(
     case 'health_traits':
       return healthSub === 'wellness' ? 'health' : healthSub === 'blood' ? 'blood' : 'traits';
     case 'markers':
+    case 'autosomal':
       return 'markers';
     case 'rare_variants':
       return 'rare_variants';
@@ -86,8 +87,6 @@ export function tabToDefaultApp(
       return 'integrity';
     case 'methodology':
       return 'methodology';
-    case 'autosomal':
-      return 'ancestry_oracle';
     case 'dashboard':
     case 'desktop':
     default:

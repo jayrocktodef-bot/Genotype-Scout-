@@ -168,7 +168,7 @@ const MODULES: AppConfig[] = [
     icon: Database,
     gradient: 'from-cyan-400 to-blue-600',
     glowColor: 'rgba(6,182,212,0.45)',
-    targetTab: 'autosomal',
+    targetTab: 'markers',
     description: 'Search, filter, and inspect your parsed autosomal variants.',
     imageUrl: '/assets/markers_icon.png',
     navGroup: 'secondary',

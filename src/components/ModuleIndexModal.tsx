@@ -103,7 +103,7 @@ export const MODULE_DIRECTORY: IndexItem[] = [
     description: 'Search, filter, and inspect your full autosomal genotype catalog with rsID and position lookups.',
     keywords: ['markers', 'snps', 'rsid', 'variants', 'autosomal', 'browser', 'catalog', 'search', 'genotypes'],
     icon: Database,
-    targetTab: 'autosomal',
+    targetTab: 'markers',
   },
   {
     id: 'rare_variants',
