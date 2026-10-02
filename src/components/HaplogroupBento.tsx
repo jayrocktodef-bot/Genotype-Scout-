@@ -19,6 +19,15 @@ interface PredictedMtDNA {
     overallStatus: string;
     forensicCoherenceScorePct: number;
   };
+  coverage?: {
+    informativeTested: number;
+    derivedObserved: number;
+    winningDepth: number;
+    winningMatches: number;
+    isSparse: boolean;
+    guardTriggered: boolean;
+  };
+  undeterminedReason?: string;
 }
 
 interface HaplogroupBentoProps {
@@ -26,6 +35,64 @@ interface HaplogroupBentoProps {
 }
 
 export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
+  if (predictedMt?.undeterminedReason === 'SPARSE_DATA') {
+    const informativeTested = predictedMt.coverage?.informativeTested ?? (Array.isArray(predictedMt.testedMarkers) ? predictedMt.testedMarkers.length : 0);
+    const derivedObserved = predictedMt.coverage?.derivedObserved ?? (Array.isArray(predictedMt.userMutations) ? predictedMt.userMutations.length : 0);
+
+    return (
+      <div className="bg-slate-900/60 backdrop-blur-3xl border border-white/5 rounded-3xl p-6 relative overflow-hidden group shadow-2xl flex flex-col h-full min-h-[300px]">
+        {/* Dynamic Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#4599FF]/5 via-transparent to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#4599FF]/10 rounded-full blur-[80px] pointer-events-none transition-transform duration-1000 group-hover:scale-110" />
+
+        {/* Header */}
+        <div className="flex items-center justify-between mb-4 relative z-10">
+          <div className="flex items-center gap-2">
+            <div className="bg-gradient-to-r from-[#4599FF]/20 to-sky-400/20 p-2 rounded-xl border border-[#4599FF]/10">
+              <Dna className="w-5 h-5 text-[#4599FF]" />
+            </div>
+            <h3 className="text-sm font-bold text-slate-200 uppercase tracking-widest">
+              Maternal Haplogroup Oracle
+            </h3>
+          </div>
+          <div className="px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[10px] font-bold text-amber-400 uppercase tracking-widest">
+            Sparse Data
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 flex flex-col items-center justify-center text-center relative z-10 mt-2 mb-4 px-2">
+          <div className="text-xl sm:text-2xl font-black text-white tracking-tight mb-3">
+            Maternal haplogroup undetermined
+          </div>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md px-2 mb-4">
+            Your file tested only {informativeTested} phylogenetically informative mtDNA positions, with {derivedObserved} derived markers observed. That's too sparse to place a haplogroup reliably, so Scout isn't guessing — a previous version would have reported a deep ancestral lineage off this thin data. A full mitochondrial sequence (for example FTDNA's mtFull Sequence) would resolve it.
+          </p>
+        </div>
+
+        {/* Footer Metrics */}
+        <div className="w-full mt-auto grid grid-cols-2 gap-2 border-t border-slate-200/50 dark:border-white/10 pt-4 px-1 min-w-0">
+          <div className="flex flex-col text-left min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Informative Positions">
+              Informative Positions
+            </span>
+            <span className="text-sm font-black text-slate-200 tabular-nums truncate">
+              {informativeTested.toLocaleString()}
+            </span>
+          </div>
+          <div className="flex flex-col text-right min-w-0 overflow-hidden">
+            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-0.5 dark:text-slate-400 truncate" title="Derived Markers">
+              Derived Markers
+            </span>
+            <span className="text-sm font-black text-amber-400 tabular-nums truncate">
+              {derivedObserved.toLocaleString()}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const haploCode = typeof predictedMt?.predicted === 'string'
     ? predictedMt.predicted
     : ((predictedMt as any)?.predicted?.name || (predictedMt as any)?.haplogroup || null);
@@ -122,6 +189,12 @@ export const HaplogroupBento = memo(({ predictedMt }: HaplogroupBentoProps) => {
             </span>
           </div>
         </div>
+
+        {predictedMt.coverage && (
+          <div className="mt-3 text-[10px] text-slate-400 text-center tracking-wide">
+            {predictedMt.coverage.informativeTested} informative positions · {predictedMt.coverage.derivedObserved} derived markers
+          </div>
+        )}
       </div>
       
     </div>

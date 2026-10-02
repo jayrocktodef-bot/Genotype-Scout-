@@ -9,6 +9,65 @@ import { getHaplogroupDetails } from '../utils/haplogroupDetails';
 import { estimateTmrcaForHaplogroup } from './tmrcaEngine';
 import { runEmpopForensicQc } from './empopForensicEngine';
 
+export interface MtCoverageReport {
+  informativeTested: number;
+  derivedObserved: number;
+  winningDepth: number;
+  winningMatches: number;
+  isSparse: boolean;
+  guardTriggered: boolean;
+}
+
+export const MT_SPARSE_MIN_INFORMATIVE = 1;
+export const MT_SPARSE_MIN_DERIVED = 1;
+export const MT_BASAL_MAX_DEPTH = 2;
+
+export function evaluateMtCoverage(
+  testedMarkers: Array<{ status: string }>,
+  userMutations: string[],
+  finalPath: string[],
+  winningMatches: number,
+  options?: {
+    minInformative?: number;
+    minDerived?: number;
+    maxBasalDepth?: number;
+  }
+): MtCoverageReport {
+  const minInformative = options?.minInformative ?? MT_SPARSE_MIN_INFORMATIVE;
+  const minDerived = options?.minDerived ?? MT_SPARSE_MIN_DERIVED;
+  const maxBasalDepth = options?.maxBasalDepth ?? MT_BASAL_MAX_DEPTH;
+
+  const informativeTested = testedMarkers.length;
+  const derivedObserved = userMutations.length;
+  const winningDepth = finalPath.length > 0 ? finalPath.length - 1 : 0;
+
+  const isSparse = informativeTested < minInformative || derivedObserved < minDerived;
+  const guardTriggered = isSparse && winningDepth <= maxBasalDepth;
+
+  return {
+    informativeTested,
+    derivedObserved,
+    winningDepth,
+    winningMatches,
+    isSparse,
+    guardTriggered
+  };
+}
+
+export interface MtDnaAnalysisResult {
+  predicted: string | null;
+  path: string[];
+  region?: string;
+  description?: string;
+  testedMarkers: any[];
+  userMutations: string[];
+  score: number;
+  deepMatches: any[];
+  empopQc?: any;
+  tmrca?: any;
+  coverage: MtCoverageReport;
+  undeterminedReason?: 'SPARSE_DATA' | string;
+}
 export interface YDnaAnalysisResult {
   predicted: { name: string; marker: string; continent: string; description: string } | null;
   isoggMatches: any[];
@@ -572,10 +631,30 @@ export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Reco
   const tmrca = predictedHaplogroup && predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)"
     ? estimateTmrcaForHaplogroup(predictedHaplogroup, 'MATERNAL_MTDNA', userMutations.length)
     : null;
-  
+
+  const coverage = evaluateMtCoverage(testedMarkers, userMutations, finalPath, bestMatch.matchCount);
+  const isRoot = predictedHaplogroup === "mtDNA Root (Mitochondrial Eve)" || predictedHaplogroup === "mtDNA Root (Eve)";
+
+  if (coverage.guardTriggered) {
+    return {
+      predicted: null,
+      path: [],
+      undeterminedReason: 'SPARSE_DATA',
+      region,
+      description,
+      testedMarkers,
+      userMutations,
+      score: bestMatch.score,
+      deepMatches: sortedDeep.slice(0, 50),
+      empopQc,
+      tmrca,
+      coverage
+    };
+  }
+
   return {
-    predicted: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? predictedHaplogroup : null,
-    path: predictedHaplogroup !== "mtDNA Root (Mitochondrial Eve)" && predictedHaplogroup !== "mtDNA Root (Eve)" ? finalPath : [],
+    predicted: !isRoot ? predictedHaplogroup : null,
+    path: !isRoot ? finalPath : [],
     region,
     description,
     testedMarkers,
@@ -583,7 +662,8 @@ export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Reco
     score: bestMatch.score,
     deepMatches: sortedDeep.slice(0, 50),
     empopQc,
-    tmrca
+    tmrca,
+    coverage
   };
 }
 
