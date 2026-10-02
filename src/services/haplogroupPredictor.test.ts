@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { predictYDNAHaplogroup, analyzeMtDNA, evaluateMtCoverage } from './haplogroupPredictor';
+import { predictYDNAHaplogroup, analyzeMtDNA, evaluateMtCoverage, isDeepRefinementOfTreeCall } from './haplogroupPredictor';
+import { findMatchesInMtHaplogroups } from './mtHaplogroupService';
 
 // Mock dependencies
 vi.mock('../data/snpDatabase', () => ({
@@ -254,6 +255,31 @@ describe('analyzeMtDNA', () => {
     expect(result.coverage.winningDepth).toBeLessThanOrEqual(2);
     expect(result.testedMarkers.length).toBeGreaterThan(0);
   });
+
+  it('iterates sortedDeep and selects first valid refinement when top candidate is lateral', () => {
+    // Mock findMatchesInMtHaplogroups to construct a controlled test where a lateral candidate
+    // has more matches than a genuine refinement, verifying candidate iteration skips the lateral
+    // candidate and selects the refinement.
+    vi.mocked(findMatchesInMtHaplogroups).mockReturnValueOnce([
+      {
+        branch: { branchName: 'U5a', mutations: ['m1', 'm2', 'm3'] },
+        matches: ['m1', 'm2', 'm3'],
+        similarity: 0.9
+      },
+      {
+        branch: { branchName: 'H1a1', mutations: ['m1', 'm2'] },
+        matches: ['m1', 'm2'],
+        similarity: 0.7
+      }
+    ]);
+
+    const result = analyzeMtDNA({ '769': 'G', '16129': 'A' });
+    // Tree call is Haplogroup H1 (matchCount: 2).
+    // Candidate 1 (U5a): 3 matches, but fails isDeepRefinementOfTreeCall('U5a', 'Haplogroup H1').
+    // Candidate 2 (H1a1): 2 matches (>= 2 and >= bestMatch.matchCount of 2), passes refinement gate.
+    expect(result.predicted).toBe('H1a1');
+    expect(result.path).toContain('H1a1');
+  });
 });
 
 describe('evaluateMtCoverage', () => {
@@ -321,3 +347,52 @@ describe('evaluateMtCoverage', () => {
     expect(boundaryReport.guardTriggered).toBe(false);
   });
 });
+
+describe('analyzeMtDNA - heteroplasmy handling', () => {
+  it('counts single-letter IUPAC at a derived position as derived and heteroplasmic', () => {
+    const result = analyzeMtDNA({ '769': 'R' });
+    expect(result.userMutations).toContain('A769G');
+    const marker = result.testedMarkers.find(m => m.pos === '769');
+    expect(marker).toBeDefined();
+    expect(marker?.status).toBe('derived');
+    expect(marker?.heteroplasmic).toBe(true);
+  });
+
+  it('counts two-letter expanded form at a derived position as derived and heteroplasmic', () => {
+    const result = analyzeMtDNA({ '769': 'AG' });
+    expect(result.userMutations).toContain('A769G');
+    const marker = result.testedMarkers.find(m => m.pos === '769');
+    expect(marker).toBeDefined();
+    expect(marker?.status).toBe('derived');
+    expect(marker?.heteroplasmic).toBe(true);
+  });
+
+  it('does not count mixture not containing the derived base as derived', () => {
+    // 'Y' expands to 'CT', which does not contain derived 'G'
+    const result = analyzeMtDNA({ '769': 'Y' });
+    expect(result.userMutations).not.toContain('A769G');
+    const marker = result.testedMarkers.find(m => m.pos === '769');
+    expect(marker?.status).not.toBe('derived');
+  });
+
+  it('treats N at a derived position with known ancestral base as no-call (no testedMarkers entry)', () => {
+    const result = analyzeMtDNA({ '769': 'N' });
+    expect(result.userMutations).not.toContain('A769G');
+    const marker = result.testedMarkers.find(m => m.pos === '769');
+    expect(marker).toBeUndefined();
+  });
+});
+
+describe('isDeepRefinementOfTreeCall', () => {
+  it('correctly evaluates candidate refinements per phylogenetic rules', () => {
+    expect(isDeepRefinementOfTreeCall('H1a1', 'Haplogroup H1a')).toBe(true);
+    expect(isDeepRefinementOfTreeCall('H1a', 'Haplogroup H1a')).toBe(true);
+    expect(isDeepRefinementOfTreeCall('HV', 'Haplogroup H')).toBe(false); // sibling
+    expect(isDeepRefinementOfTreeCall('JT', 'Haplogroup J')).toBe(false); // sibling
+    expect(isDeepRefinementOfTreeCall('U5a', 'Haplogroup H')).toBe(false); // lateral
+    expect(isDeepRefinementOfTreeCall('T2b4a', 'Haplogroup T2b4')).toBe(true);
+    expect(isDeepRefinementOfTreeCall('L0a', 'Haplogroup L0')).toBe(true);
+    expect(isDeepRefinementOfTreeCall('', 'Haplogroup H')).toBe(false);
+  });
+});
+

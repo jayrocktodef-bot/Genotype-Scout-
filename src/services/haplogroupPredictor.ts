@@ -402,6 +402,39 @@ export function predictMtHaplogroup(
   return results;
 }
 
+/**
+ * IUPAC heteroplasmy codes for mtDNA mixtures seen in full-sequence files
+ * (e.g. FTDNA). Excludes 'D' — the deletion call in this pipeline — and 'N',
+ * which is a no-call, not a mixture.
+ */
+const MT_IUPAC_HETEROZYGOTES: Record<string, string> = {
+  R: 'AG', Y: 'CT', S: 'GC', W: 'AT', K: 'GT', M: 'AC',
+  B: 'CGT', H: 'ACT', V: 'ACG',
+};
+
+/**
+ * A deep-database branch may only override the curated-tree call when it is a
+ * genuine refinement of that call: same lineage, deeper. Without this gate, a
+ * phylogenetically distant branch that happens to share a couple of recurrent
+ * or hypervariable mutations (e.g. 16189, 16311) with the user can laterally
+ * hijack the call and disagree with FTDNA.
+ *
+ * The sibling guard handles macro-level collisions: a single-letter stem
+ * extended by another letter denotes a sibling clade (H->HV, J->JT), not a
+ * descendant. Multi-character stems extend freely (H1->H1a, L3e->L3e1).
+ */
+export function isDeepRefinementOfTreeCall(deepBranchName: string, treeBranchName: string): boolean {
+  const treeStem = treeBranchName.replace(/^Haplogroup\s+/, '').trim();
+  const deepName = (deepBranchName || '').trim();
+  if (!treeStem || !deepName) return false;
+  if (deepName === treeStem) return true;
+  if (!deepName.startsWith(treeStem)) return false;
+  const rest = deepName.slice(treeStem.length);
+  if (rest.length === 0) return true;
+  if (treeStem.length === 1 && /^[A-Za-z]/.test(rest)) return false;
+  return true;
+}
+
 export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Record<string, string>) {
   const allMutations = new Set<string>();
   function extractMutations(node: any) {
@@ -469,9 +502,35 @@ export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Reco
           }
         }
       } else {
-        if (userAllele && userAllele.toUpperCase() === derived.toUpperCase()) {
+        const alleleUpper = userAllele ? userAllele.toUpperCase() : '';
+        const derivedUpper = derived.toUpperCase();
+        // Heteroplasmy: full-sequence files (e.g. FTDNA) report mixed positions with
+        // IUPAC codes. cleanGenotypeString expands single-letter codes to 2 letters
+        // (R -> AG), so handle both forms here. Count the position as derived when
+        // the derived base is present in the mixture. '-' and 'D' stay deletion calls
+        // and 'N' stays a no-call — none are expanded as IUPAC.
+        let mixtureBases: string | null = null;
+        const iupacSingle = MT_IUPAC_HETEROZYGOTES[alleleUpper];
+        if (iupacSingle !== undefined) {
+          mixtureBases = iupacSingle;
+        } else if (/^[ACGT]{2}$/.test(alleleUpper)) {
+          mixtureBases = alleleUpper;
+        }
+        const isDerivedCall = !!userAllele && (
+          alleleUpper === derivedUpper ||
+          (mixtureBases !== null && mixtureBases.includes(derivedUpper))
+        );
+        if (isDerivedCall) {
           userMutations.push(mutation);
-          testedMarkers.push({ mutation, pos, derived, ancestral, status: 'derived', description: getMarkerDescription(mutation) });
+          testedMarkers.push({
+            mutation,
+            pos,
+            derived,
+            ancestral,
+            status: 'derived',
+            heteroplasmic: mixtureBases !== null,
+            description: getMarkerDescription(mutation),
+          });
         } else if (userAllele) {
           const isAncestral = ancestral 
             ? userAllele.toUpperCase() === ancestral.toUpperCase()
@@ -593,17 +652,24 @@ export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Reco
   let predictedHaplogroup = bestMatch.name;
   let finalPath = bestMatch.path;
 
-  // If we found a more specific deep match with significant overlap
   if (sortedDeep.length > 0) {
-    const topDeep = sortedDeep[0];
     // Require at least 2 shared mutations before a PhyloTree deep-match can override the
     // curated tree call (a single shared mutation is too weak / noise-prone).
-    if (topDeep.matches.length >= 2 && topDeep.matches.length >= bestMatch.matchCount) {
-      predictedHaplogroup = topDeep.branch.branchName;
-      
-      // Ensure the deep match is at the end of the path if it's not already there
-      if (!finalPath.includes(predictedHaplogroup) && !finalPath.includes("Haplogroup " + predictedHaplogroup)) {
-        finalPath = [...finalPath, predictedHaplogroup];
+    // The deep branch must also be a genuine refinement of the tree-called haplogroup:
+    // without that gate, a distant branch sharing recurrent mutations can hijack the call.
+    // Evaluate every ranked candidate, not just the top one: the highest-ranked
+    // candidate may be lateral while a lower-ranked one is a valid refinement.
+    for (const candidate of sortedDeep) {
+      if (
+        candidate.matches.length >= 2 &&
+        candidate.matches.length >= bestMatch.matchCount &&
+        isDeepRefinementOfTreeCall(candidate.branch.branchName, bestMatch.name)
+      ) {
+        predictedHaplogroup = candidate.branch.branchName;
+        if (!finalPath.includes(predictedHaplogroup) && !finalPath.includes("Haplogroup " + predictedHaplogroup)) {
+          finalPath = [...finalPath, predictedHaplogroup];
+        }
+        break;
       }
     }
   }
