@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { predictYDNAHaplogroup, analyzeMtDNA, evaluateMtCoverage, isDeepRefinementOfTreeCall } from './haplogroupPredictor';
 import { findMatchesInMtHaplogroups } from './mtHaplogroupService';
+import { parseRawDNA } from './dnaParser';
 
 // Mock dependencies
 vi.mock('../data/snpDatabase', () => ({
@@ -380,6 +381,90 @@ describe('analyzeMtDNA - heteroplasmy handling', () => {
     expect(result.userMutations).not.toContain('A769G');
     const marker = result.testedMarkers.find(m => m.pos === '769');
     expect(marker).toBeUndefined();
+  });
+
+  it('parses B/H/V heteroplasmy codes through real parse path: derived positions flag derived and isHeteroplasmic, ancestral positions produce no false positives, invalid chars dropped', () => {
+    // 1. Invalid characters dropped through real parse path
+    const fileWithMixed = `# 23andMe raw data
+# rsid\tchromosome\tposition\tgenotype
+rsValid\t1\t100\tAA
+m1\tMT\t1000\tX
+m2\tMT\t2000\tZ
+m3\tMT\t3000\t1
+m4\tMT\t4000\t!
+`;
+    const parsedMixed = parseRawDNA(fileWithMixed);
+    expect(parsedMixed.snpMap['rsvalid']).toBe('AA');
+    expect(parsedMixed.mtMap['1000']).toBeUndefined();
+    expect(parsedMixed.mtMap['2000']).toBeUndefined();
+    expect(parsedMixed.mtMap['3000']).toBeUndefined();
+    expect(parsedMixed.mtMap['4000']).toBeUndefined();
+
+    // 2. B (CGT) at derived position 769 (A769G: derived is G) -> derived positive + isHeteroplasmic: true
+    //    B (CGT) at ancestral position 16129 (G16129A!: ancestral is G, derived is A) -> no false positive (ancestral)
+    const fileWithB = `# 23andMe raw data
+# rsid\tchromosome\tposition\tgenotype
+m1\tMT\t769\tB
+m2\tMT\t16129\tB
+`;
+    const parsedB = parseRawDNA(fileWithB);
+    expect(parsedB.mtMap['769']).toBe('B');
+    expect(parsedB.mtMap['16129']).toBe('B');
+
+    const resultB = analyzeMtDNA(parsedB.mtMap);
+    expect(resultB.userMutations).toContain('A769G');
+    expect(resultB.userMutations).not.toContain('G16129A!');
+    const markerB769 = resultB.testedMarkers.find(m => m.pos === '769');
+    expect(markerB769?.status).toBe('derived');
+    expect(markerB769?.heteroplasmic).toBe(true);
+    expect(markerB769?.isHeteroplasmic).toBe(true);
+    const markerB16129 = resultB.testedMarkers.find(m => m.pos === '16129');
+    expect(markerB16129?.status).toBe('ancestral');
+
+    // 3. H (ACT) at derived position 16129 (G16129A!: derived is A) -> derived positive + isHeteroplasmic: true
+    //    H (ACT) at ancestral position 769 (A769G: ancestral is A, derived is G) -> no false positive (ancestral)
+    const fileWithH = `# 23andMe raw data
+# rsid\tchromosome\tposition\tgenotype
+m1\tMT\t769\tH
+m2\tMT\t16129\tH
+`;
+    const parsedH = parseRawDNA(fileWithH);
+    expect(parsedH.mtMap['769']).toBe('H');
+    expect(parsedH.mtMap['16129']).toBe('H');
+
+    const resultH = analyzeMtDNA(parsedH.mtMap);
+    expect(resultH.userMutations).toContain('G16129A!');
+    expect(resultH.userMutations).not.toContain('A769G');
+    const markerH16129 = resultH.testedMarkers.find(m => m.pos === '16129');
+    expect(markerH16129?.status).toBe('derived');
+    expect(markerH16129?.heteroplasmic).toBe(true);
+    expect(markerH16129?.isHeteroplasmic).toBe(true);
+    const markerH769 = resultH.testedMarkers.find(m => m.pos === '769');
+    expect(markerH769?.status).toBe('ancestral');
+
+    // 4. V (ACG) contains A, C, G (not T):
+    //    At position 769 (derived G) -> derived positive + isHeteroplasmic: true
+    //    At position 16129 (derived A) -> derived positive + isHeteroplasmic: true
+    const fileWithV = `# 23andMe raw data
+# rsid\tchromosome\tposition\tgenotype
+m1\tMT\t769\tV
+m2\tMT\t16129\tV
+`;
+    const parsedV = parseRawDNA(fileWithV);
+    expect(parsedV.mtMap['769']).toBe('V');
+    expect(parsedV.mtMap['16129']).toBe('V');
+
+    const resultV = analyzeMtDNA(parsedV.mtMap);
+    expect(resultV.userMutations).toContain('A769G');
+    expect(resultV.userMutations).toContain('G16129A!');
+    const markerV769 = resultV.testedMarkers.find(m => m.pos === '769');
+    expect(markerV769?.status).toBe('derived');
+    expect(markerV769?.heteroplasmic).toBe(true);
+    expect(markerV769?.isHeteroplasmic).toBe(true);
+    const markerV16129 = resultV.testedMarkers.find(m => m.pos === '16129');
+    expect(markerV16129?.status).toBe('derived');
+    expect(markerV16129?.heteroplasmic).toBe(true);
+    expect(markerV16129?.isHeteroplasmic).toBe(true);
   });
 });
 

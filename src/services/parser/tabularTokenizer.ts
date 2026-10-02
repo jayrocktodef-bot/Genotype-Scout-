@@ -61,6 +61,12 @@ export function cleanGenotypeString(rawGenotype: string): string | null {
     g = IUPAC_DEGENERATE_MAP[g];
   }
 
+  // 3-base IUPAC heteroplasmy codes (B, H, V) pass through as single-letter codes
+  // into downstream heteroplasmy evaluation (e.g., MT_IUPAC_HETEROZYGOTES)
+  if (g.length === 1 && (g === 'B' || g === 'H' || g === 'V')) {
+    return g;
+  }
+
   const len = g.length;
   if (len === 0 || len > 2) return null;
   if (!VALID_BASE_CODES.has(g.charCodeAt(0))) return null;

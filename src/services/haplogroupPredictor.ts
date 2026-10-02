@@ -529,11 +529,13 @@ export function analyzeMtDNA(mtMap: Record<string, string>, snpByPosition?: Reco
             ancestral,
             status: 'derived',
             heteroplasmic: mixtureBases !== null,
+            isHeteroplasmic: mixtureBases !== null,
             description: getMarkerDescription(mutation),
           });
         } else if (userAllele) {
+          const ancestralUpper = ancestral.toUpperCase();
           const isAncestral = ancestral 
-            ? userAllele.toUpperCase() === ancestral.toUpperCase()
+            ? (alleleUpper === ancestralUpper || (mixtureBases !== null && mixtureBases.includes(ancestralUpper)))
             : userAllele.toUpperCase() !== derived.toUpperCase();
           
           if (isAncestral) {

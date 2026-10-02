@@ -723,6 +723,14 @@ chr2\t5002\trs5002\tG\tC\t.\tPASS\t.\tGT\t0/1\t1/1
     expect(cleanGenotypeString('W')).toBe('AT');
     expect(cleanGenotypeString('K')).toBe('GT');
     expect(cleanGenotypeString('M')).toBe('AC');
+    // 3-base IUPAC heteroplasmy codes pass through as single-letter codes
+    expect(cleanGenotypeString('B')).toBe('B');
+    expect(cleanGenotypeString('H')).toBe('H');
+    expect(cleanGenotypeString('V')).toBe('V');
+    // Genuinely invalid codes are still rejected
+    expect(cleanGenotypeString('X')).toBeNull();
+    expect(cleanGenotypeString('Z')).toBeNull();
+    expect(cleanGenotypeString('1')).toBeNull();
 
     const rawData = `# 23andMe with IUPAC calls
 # rsid\tchromosome\tposition\tgenotype
@@ -732,19 +740,29 @@ rs103\t1\t103\tS
 rs104\t1\t104\tW
 rs105\t1\t105\tK
 rs106\t1\t106\tM
+rs110\t1\t110\tB
+rs111\t1\t111\tH
+rs112\t1\t112\tV
+rs113\t1\t113\tX
+rs114\t1\t114\tZ
 rs107\t1\t107\t?
 rs108\t1\t108\t00
 rs109\t1\t109\tNA/NA
 `;
     const result = parseRawDNA(rawData);
-    expect(result.snpCount).toBe(6);
+    expect(result.snpCount).toBe(9);
     expect(result.snpMap['rs101']).toBe('AG');
     expect(result.snpMap['rs102']).toBe('CT');
     expect(result.snpMap['rs103']).toBe('CG');
     expect(result.snpMap['rs104']).toBe('AT');
     expect(result.snpMap['rs105']).toBe('GT');
     expect(result.snpMap['rs106']).toBe('AC');
-    // Uncalled rows should not be in snpMap
+    expect(result.snpMap['rs110']).toBe('B');
+    expect(result.snpMap['rs111']).toBe('H');
+    expect(result.snpMap['rs112']).toBe('V');
+    // Invalid codes and uncalled rows should not be in snpMap
+    expect(result.snpMap['rs113']).toBeUndefined();
+    expect(result.snpMap['rs114']).toBeUndefined();
     expect(result.snpMap['rs107']).toBeUndefined();
     expect(result.snpMap['rs108']).toBeUndefined();
     expect(result.snpMap['rs109']).toBeUndefined();
