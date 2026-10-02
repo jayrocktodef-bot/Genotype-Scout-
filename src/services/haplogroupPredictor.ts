@@ -21,6 +21,7 @@ export interface MtCoverageReport {
 export const MT_SPARSE_MIN_INFORMATIVE = 1;
 export const MT_SPARSE_MIN_DERIVED = 1;
 export const MT_BASAL_MAX_DEPTH = 2;
+export const MT_MIN_BASAL_PATH_MATCHES = 1;
 
 export function evaluateMtCoverage(
   testedMarkers: Array<{ status: string }>,
@@ -31,18 +32,22 @@ export function evaluateMtCoverage(
     minInformative?: number;
     minDerived?: number;
     maxBasalDepth?: number;
+    minBasalPathMatches?: number;
   }
 ): MtCoverageReport {
   const minInformative = options?.minInformative ?? MT_SPARSE_MIN_INFORMATIVE;
   const minDerived = options?.minDerived ?? MT_SPARSE_MIN_DERIVED;
   const maxBasalDepth = options?.maxBasalDepth ?? MT_BASAL_MAX_DEPTH;
+  const minBasalPathMatches = options?.minBasalPathMatches ?? MT_MIN_BASAL_PATH_MATCHES;
 
   const informativeTested = testedMarkers.length;
   const derivedObserved = userMutations.length;
   const winningDepth = finalPath.length > 0 ? finalPath.length - 1 : 0;
 
   const isSparse = informativeTested < minInformative || derivedObserved < minDerived;
-  const guardTriggered = isSparse && winningDepth <= maxBasalDepth;
+  const isBasal = winningDepth <= maxBasalDepth;
+  const hasNoPathSupport = winningMatches < minBasalPathMatches;
+  const guardTriggered = isBasal && hasNoPathSupport;
 
   return {
     informativeTested,
