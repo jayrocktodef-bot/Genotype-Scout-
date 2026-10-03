@@ -52,6 +52,118 @@ if (fs.existsSync(ENSEMBL_CACHE_PATH)) {
   }
 }
 
+export function validateAimRecord(
+  entry: AimEntry,
+  key?: string,
+  sourceName: string = 'record'
+): { valid: boolean; errors: string[] } {
+  const errors: string[] = [];
+  const k = key || entry.rsid || 'unknown';
+  const rsid = (entry.rsid || k).toLowerCase();
+  const cleanKey = k.toLowerCase();
+
+  // 0. Hard Rule: Reject merged / deprecated dbSNP accessions unless current ID is used
+  const currentTarget = dbsnpMergedMap[rsid] || dbsnpMergedMap[cleanKey];
+  if (currentTarget && rsid !== currentTarget.toLowerCase() && cleanKey !== currentTarget.toLowerCase()) {
+    errors.push(
+      `Deprecated merged dbSNP accession detected: '${k}' in ${sourceName}. Record must use current accession '${currentTarget}'.`
+    );
+  }
+
+  // 1. Hard Rule: Reject mock or fabricated RSIDs
+  if (
+    rsid.includes('mock') ||
+    rsid.includes('dummy') ||
+    rsid.includes('synthetic') ||
+    rsid.startsWith('test_')
+  ) {
+    errors.push(`Synthetic RSID detected: '${k}' in ${sourceName}`);
+  }
+
+  // RSID must be valid format: dbSNP (rs...), coordinate ID (chr..._...), or Kidd/ALFRED microhaplotype (mh...)
+  const isValidRsid =
+    /^rs\d+$/i.test(rsid) ||
+    /^chr([1-9]|1\d|2[0-2]|x|y|mt)_\d+$/i.test(rsid) ||
+    /^mh\d+[a-z0-9_\-\.]+$/i.test(rsid);
+  if (!isValidRsid) {
+    errors.push(`Invalid / non-standard accession format: '${k}' in ${sourceName}`);
+  }
+
+  // 2. Hard Rule: Reject synthetic/placeholder positions
+  const pos = Number(entry.position);
+  if (pos === 1000000) {
+    errors.push(`Synthetic placeholder position 1,000,000 detected: '${k}' in ${sourceName}`);
+  } else if (!pos || isNaN(pos) || pos <= 0) {
+    errors.push(`Invalid physical coordinate '${entry.position}': '${k}' in ${sourceName}`);
+  }
+
+  // 3. Hard Rule: Reject patch scaffolds or malformed chromosomes
+  const chrStr = String(entry.chromosome || '').trim().toUpperCase().replace(/^CHR/, '');
+  if (!VALID_CHROMOSOMES.has(chrStr)) {
+    errors.push(`Unmapped or malformed chromosome '${entry.chromosome}': '${k}' in ${sourceName}`);
+  }
+
+  // 4. Hard Rule: Reject empty or dummy frequency profiles
+  if (!entry.frequencies || typeof entry.frequencies !== 'object' || Array.isArray(entry.frequencies)) {
+    errors.push(`Missing frequencies object: '${k}' in ${sourceName}`);
+  } else {
+    const freqKeys = Object.keys(entry.frequencies);
+    if (freqKeys.length === 0) {
+      errors.push(`Empty frequencies object: '${k}' in ${sourceName}`);
+    } else if (freqKeys.length === 1 && freqKeys[0].toUpperCase() === 'GLOBAL') {
+      errors.push(`Synthetic single GLOBAL frequency: '${k}' in ${sourceName}`);
+    }
+
+    // Validate frequency values are numbers in [0, 1] and keys are not raw RSIDs
+    for (const [pCode, pFreq] of Object.entries(entry.frequencies)) {
+      if (pCode.toLowerCase().startsWith('rs') || pCode.length > 25) {
+        errors.push(`Corrupted frequency key '${pCode}': '${k}' in ${sourceName}`);
+      }
+      if (typeof pFreq !== 'number' || isNaN(pFreq) || pFreq < 0 || pFreq > 1) {
+        errors.push(`Invalid frequency value '${pFreq}' for pop '${pCode}': '${k}' in ${sourceName}`);
+      }
+    }
+  }
+
+  // 5. Weight must be positive number
+  if (typeof entry.weight !== 'number' || isNaN(entry.weight) || entry.weight < 0) {
+    errors.push(`Invalid weight '${entry.weight}': '${k}' in ${sourceName}`);
+  }
+
+  // 6. Ensembl GRCh38 Spot-Check: if marker declares GRCh38 and is cached, verify chromosome/position/alleles
+  const cached = ensemblCache[rsid] || ensemblCache[cleanKey];
+  if (cached && entry.build === 'GRCh38') {
+    const cachedChr = String(cached.chromosome || '').trim().toUpperCase().replace(/^CHR/, '');
+    if (chrStr !== cachedChr) {
+      errors.push(
+        `Ensembl GRCh38 chromosome mismatch for '${k}' in ${sourceName}: panel chr${chrStr} vs Ensembl chr${cachedChr}`
+      );
+    }
+    if (pos !== Number(cached.position)) {
+      errors.push(
+        `Ensembl GRCh38 position mismatch for '${k}' in ${sourceName}: panel ${pos} vs Ensembl ${cached.position}`
+      );
+    }
+    if (entry.alleles && cached.alleles) {
+      const allowed = cached.alleles.toUpperCase().split(/[\/,|]/);
+      const comp = (b: string) => ({ A: 'T', T: 'A', C: 'G', G: 'C' }[b] || b);
+      for (const a of entry.alleles) {
+        const upperA = a.toUpperCase();
+        if (!allowed.includes(upperA) && !allowed.includes(comp(upperA))) {
+          errors.push(
+            `Ensembl GRCh38 allele mismatch for '${k}' in ${sourceName}: allele '${a}' not in Ensembl alleles '${cached.alleles}'`
+          );
+        }
+      }
+    }
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors,
+  };
+}
+
 export function validateAIMsData(filePath: string): boolean {
   if (!fs.existsSync(filePath)) {
     console.warn(`[validate:data] Skipping nonexistent file: ${filePath}`);
@@ -69,103 +181,9 @@ export function validateAIMsData(filePath: string): boolean {
   const entries = Object.entries(data);
 
   for (const [key, entry] of entries) {
-    const rsid = (entry.rsid || key).toLowerCase();
-    const cleanKey = key.toLowerCase();
-
-    // 0. Hard Rule: Reject merged / deprecated dbSNP accessions unless current ID is used
-    const currentTarget = dbsnpMergedMap[rsid] || dbsnpMergedMap[cleanKey];
-    if (currentTarget && rsid !== currentTarget.toLowerCase() && cleanKey !== currentTarget.toLowerCase()) {
-      errors.push(
-        `Deprecated merged dbSNP accession detected: '${key}' in ${path.basename(filePath)}. Record must use current accession '${currentTarget}'.`
-      );
-    }
-
-    // 1. Hard Rule: Reject mock or fabricated RSIDs
-    if (
-      rsid.includes('mock') ||
-      rsid.includes('dummy') ||
-      rsid.includes('synthetic') ||
-      rsid.startsWith('test_')
-    ) {
-      errors.push(`Synthetic RSID detected: '${key}' in ${path.basename(filePath)}`);
-    }
-
-    // RSID must be valid format: dbSNP (rs...), coordinate ID (chr..._...), or Kidd/ALFRED microhaplotype (mh...)
-    const isValidRsid =
-      /^rs\d+$/i.test(rsid) ||
-      /^chr([1-9]|1\d|2[0-2]|x|y|mt)_\d+$/i.test(rsid) ||
-      /^mh\d+[a-z0-9_\-\.]+$/i.test(rsid);
-    if (!isValidRsid) {
-      errors.push(`Invalid / non-standard accession format: '${key}' in ${path.basename(filePath)}`);
-    }
-
-    // 2. Hard Rule: Reject synthetic/placeholder positions
-    const pos = Number(entry.position);
-    if (pos === 1000000) {
-      errors.push(`Synthetic placeholder position 1,000,000 detected: '${key}' in ${path.basename(filePath)}`);
-    } else if (!pos || isNaN(pos) || pos <= 0) {
-      errors.push(`Invalid physical coordinate '${entry.position}': '${key}' in ${path.basename(filePath)}`);
-    }
-
-    // 3. Hard Rule: Reject patch scaffolds or malformed chromosomes
-    const chrStr = String(entry.chromosome || '').trim().toUpperCase().replace(/^CHR/, '');
-    if (!VALID_CHROMOSOMES.has(chrStr)) {
-      errors.push(`Unmapped or malformed chromosome '${entry.chromosome}': '${key}' in ${path.basename(filePath)}`);
-    }
-
-    // 4. Hard Rule: Reject empty or dummy frequency profiles
-    if (!entry.frequencies || typeof entry.frequencies !== 'object' || Array.isArray(entry.frequencies)) {
-      errors.push(`Missing frequencies object: '${key}' in ${path.basename(filePath)}`);
-    } else {
-      const freqKeys = Object.keys(entry.frequencies);
-      if (freqKeys.length === 0) {
-        errors.push(`Empty frequencies object: '${key}' in ${path.basename(filePath)}`);
-      } else if (freqKeys.length === 1 && freqKeys[0].toUpperCase() === 'GLOBAL') {
-        errors.push(`Synthetic single GLOBAL frequency: '${key}' in ${path.basename(filePath)}`);
-      }
-
-      // Validate frequency values are numbers in [0, 1] and keys are not raw RSIDs
-      for (const [pCode, pFreq] of Object.entries(entry.frequencies)) {
-        if (pCode.toLowerCase().startsWith('rs') || pCode.length > 25) {
-          errors.push(`Corrupted frequency key '${pCode}': '${key}' in ${path.basename(filePath)}`);
-        }
-        if (typeof pFreq !== 'number' || isNaN(pFreq) || pFreq < 0 || pFreq > 1) {
-          errors.push(`Invalid frequency value '${pFreq}' for pop '${pCode}': '${key}' in ${path.basename(filePath)}`);
-        }
-      }
-    }
-
-    // 5. Weight must be positive number
-    if (typeof entry.weight !== 'number' || isNaN(entry.weight) || entry.weight < 0) {
-      errors.push(`Invalid weight '${entry.weight}': '${key}' in ${path.basename(filePath)}`);
-    }
-
-    // 6. Ensembl GRCh38 Spot-Check: if marker declares GRCh38 and is cached, verify chromosome/position/alleles
-    const cached = ensemblCache[rsid] || ensemblCache[cleanKey];
-    if (cached && entry.build === 'GRCh38') {
-      const cachedChr = String(cached.chromosome || '').trim().toUpperCase().replace(/^CHR/, '');
-      if (chrStr !== cachedChr) {
-        errors.push(
-          `Ensembl GRCh38 chromosome mismatch for '${key}' in ${path.basename(filePath)}: panel chr${chrStr} vs Ensembl chr${cachedChr}`
-        );
-      }
-      if (pos !== Number(cached.position)) {
-        errors.push(
-          `Ensembl GRCh38 position mismatch for '${key}' in ${path.basename(filePath)}: panel ${pos} vs Ensembl ${cached.position}`
-        );
-      }
-      if (entry.alleles && cached.alleles) {
-        const allowed = cached.alleles.toUpperCase().split(/[\/,|]/);
-        const comp = (b: string) => ({ A: 'T', T: 'A', C: 'G', G: 'C' }[b] || b);
-        for (const a of entry.alleles) {
-          const upperA = a.toUpperCase();
-          if (!allowed.includes(upperA) && !allowed.includes(comp(upperA))) {
-            errors.push(
-              `Ensembl GRCh38 allele mismatch for '${key}' in ${path.basename(filePath)}: allele '${a}' not in Ensembl alleles '${cached.alleles}'`
-            );
-          }
-        }
-      }
+    const res = validateAimRecord(entry, key, path.basename(filePath));
+    if (!res.valid) {
+      errors.push(...res.errors);
     }
   }
 
