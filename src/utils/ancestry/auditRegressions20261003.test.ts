@@ -97,6 +97,57 @@ describe('2026-10-03 AIM Database Audit Regression Suite', () => {
       expect(result.valid).toBe(true);
       expect(result.errors).toEqual([]);
     });
+
+    it('fails validation when a deliberately introduced bad record has a wrong chromosome', () => {
+      const badChrRecord = {
+        rsid: 'rs686140', // Ensembl chr6
+        chromosome: '1', // Deliberately wrong chromosome
+        position: 18925121,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { EUR: 0.1, AFR: 0.9 },
+        weight: 10,
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(badChrRecord);
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('chromosome mismatch'))).toBe(true);
+    });
+
+    it('fails closed when a checked weight>=5 marker has an Ensembl cache miss', () => {
+      const cacheMissRecord = {
+        rsid: 'rs99999999999', // Authentic rsID format but not in hermetic cache
+        chromosome: '1',
+        position: 1234567,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { EUR: 0.1, AFR: 0.9 },
+        weight: 10, // weight >= 5 triggers mandatory cache verification
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(cacheMissRecord);
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('cache miss'))).toBe(true);
+    });
+
+    it('fails validation when a marker is recorded as UNRESOLVED in the Ensembl cache', () => {
+      const unresolvedRecord = {
+        rsid: 'rs123456', // recorded as UNRESOLVED in ensembl_cache.json
+        chromosome: '1',
+        position: 123456,
+        region: 'African',
+        alleles: ['A', 'G'],
+        frequencies: { EUR: 0.1, AFR: 0.9 },
+        weight: 10,
+        build: 'GRCh38',
+      };
+
+      const result = validateAimRecord(unresolvedRecord);
+      expect(result.valid).toBe(false);
+      expect(result.errors.some(e => e.includes('unresolved'))).toBe(true);
+    });
   });
 
   describe('(c) High H-1: Build-aware coordinate matching and collision-free allowlist', () => {
