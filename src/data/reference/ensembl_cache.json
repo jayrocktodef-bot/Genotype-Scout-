@@ -1,0 +1,777 @@
+{
+  "rs10456200": {
+    "chromosome": "6",
+    "position": 15540793,
+    "alleles": "T/C"
+  },
+  "rs10456201": {
+    "chromosome": "6",
+    "position": 15557405,
+    "alleles": "G/A"
+  },
+  "rs10456202": {
+    "chromosome": "6",
+    "position": 16004321,
+    "alleles": "G/A"
+  },
+  "rs10456203": {
+    "chromosome": "6",
+    "position": 16434835,
+    "alleles": "A/T"
+  },
+  "rs10456204": {
+    "chromosome": "6",
+    "position": 9924318,
+    "alleles": "C/A"
+  },
+  "rs10456205": {
+    "chromosome": "6",
+    "position": 17035644,
+    "alleles": "G/A"
+  },
+  "rs10456206": {
+    "chromosome": "6",
+    "position": 17556477,
+    "alleles": "C/G"
+  },
+  "rs10456207": {
+    "chromosome": "6",
+    "position": 17563583,
+    "alleles": "C/T"
+  },
+  "rs10456209": {
+    "chromosome": "6",
+    "position": 17744342,
+    "alleles": "A/G"
+  },
+  "rs10456210": {
+    "chromosome": "6",
+    "position": 17751870,
+    "alleles": "A/G"
+  },
+  "rs10456212": {
+    "chromosome": "6",
+    "position": 17951438,
+    "alleles": "T/A"
+  },
+  "rs10456213": {
+    "chromosome": "6",
+    "position": 18118881,
+    "alleles": "G/A"
+  },
+  "rs10456215": {
+    "chromosome": "6",
+    "position": 18452423,
+    "alleles": "G/A"
+  },
+  "rs10456216": {
+    "chromosome": "6",
+    "position": 18684212,
+    "alleles": "G/A"
+  },
+  "rs10456217": {
+    "chromosome": "6",
+    "position": 18767248,
+    "alleles": "T/A"
+  },
+  "rs10456218": {
+    "chromosome": "6",
+    "position": 18780528,
+    "alleles": "G/A"
+  },
+  "rs10456219": {
+    "chromosome": "6",
+    "position": 18780539,
+    "alleles": "G/A"
+  },
+  "rs10456221": {
+    "chromosome": "6",
+    "position": 10130944,
+    "alleles": "C/A"
+  },
+  "rs10456222": {
+    "chromosome": "6",
+    "position": 19136927,
+    "alleles": "A/C"
+  },
+  "rs10456223": {
+    "chromosome": "6",
+    "position": 19522543,
+    "alleles": "T/G"
+  },
+  "rs10456224": {
+    "chromosome": "6",
+    "position": 19666612,
+    "alleles": "T/A"
+  },
+  "rs10456225": {
+    "chromosome": "6",
+    "position": 10204953,
+    "alleles": "A/G"
+  },
+  "rs10456226": {
+    "chromosome": "6",
+    "position": 19850588,
+    "alleles": "A/G"
+  },
+  "rs10456227": {
+    "chromosome": "6",
+    "position": 19921350,
+    "alleles": "C/T"
+  },
+  "rs10456228": {
+    "chromosome": "6",
+    "position": 10227887,
+    "alleles": "T/C"
+  },
+  "rs10456229": {
+    "chromosome": "6",
+    "position": 10227896,
+    "alleles": "A/C"
+  },
+  "rs10456231": {
+    "chromosome": "6",
+    "position": 10230301,
+    "alleles": "A/T"
+  },
+  "rs10456232": {
+    "chromosome": "6",
+    "position": 20578892,
+    "alleles": "G/A"
+  },
+  "rs10456233": {
+    "chromosome": "6",
+    "position": 20581562,
+    "alleles": "C/T"
+  },
+  "rs10456234": {
+    "chromosome": "6",
+    "position": 20598543,
+    "alleles": "A/G"
+  },
+  "rs10456235": {
+    "chromosome": "6",
+    "position": 10301346,
+    "alleles": "C/T"
+  },
+  "rs10456236": {
+    "chromosome": "6",
+    "position": 20797988,
+    "alleles": "G/A"
+  },
+  "rs10456237": {
+    "chromosome": "6",
+    "position": 21081675,
+    "alleles": "G/A"
+  },
+  "rs10456238": {
+    "chromosome": "6",
+    "position": 21112096,
+    "alleles": "G/A"
+  },
+  "rs10456239": {
+    "chromosome": "6",
+    "position": 10344331,
+    "alleles": "C/A"
+  },
+  "rs10456240": {
+    "chromosome": "6",
+    "position": 21204990,
+    "alleles": "T/C"
+  },
+  "rs10456241": {
+    "chromosome": "6",
+    "position": 21205119,
+    "alleles": "T/C"
+  },
+  "rs10456242": {
+    "chromosome": "6",
+    "position": 21205157,
+    "alleles": "T/C"
+  },
+  "rs10456243": {
+    "chromosome": "6",
+    "position": 21205248,
+    "alleles": "G/A"
+  },
+  "rs10456244": {
+    "chromosome": "6",
+    "position": 10360449,
+    "alleles": "G/A"
+  },
+  "rs10456245": {
+    "chromosome": "6",
+    "position": 10360468,
+    "alleles": "A/G"
+  },
+  "rs10456247": {
+    "chromosome": "6",
+    "position": 21537287,
+    "alleles": "G/A"
+  },
+  "rs10456248": {
+    "chromosome": "6",
+    "position": 21850029,
+    "alleles": "A/T"
+  },
+  "rs10456249": {
+    "chromosome": "6",
+    "position": 21967059,
+    "alleles": "G/C"
+  },
+  "rs10456252": {
+    "chromosome": "6",
+    "position": 22106750,
+    "alleles": "A/C"
+  },
+  "rs10456254": {
+    "chromosome": "6",
+    "position": 22236716,
+    "alleles": "C/G"
+  },
+  "rs10456256": {
+    "chromosome": "6",
+    "position": 22446056,
+    "alleles": "C/A"
+  },
+  "rs10456257": {
+    "chromosome": "6",
+    "position": 22478682,
+    "alleles": "G/A"
+  },
+  "rs10456258": {
+    "chromosome": "6",
+    "position": 22481332,
+    "alleles": "C/T"
+  },
+  "rs10456259": {
+    "chromosome": "6",
+    "position": 22558770,
+    "alleles": "G/T"
+  },
+  "rs10456260": {
+    "chromosome": "6",
+    "position": 22558807,
+    "alleles": "G/A"
+  },
+  "rs10456261": {
+    "chromosome": "6",
+    "position": 22623242,
+    "alleles": "T/C"
+  },
+  "rs10456262": {
+    "chromosome": "6",
+    "position": 22626969,
+    "alleles": "G/C"
+  },
+  "rs10456263": {
+    "chromosome": "6",
+    "position": 22685622,
+    "alleles": "A/G"
+  },
+  "rs10456265": {
+    "chromosome": "6",
+    "position": 22783099,
+    "alleles": "A/G"
+  },
+  "rs10456266": {
+    "chromosome": "6",
+    "position": 22785187,
+    "alleles": "G/A"
+  },
+  "rs10456267": {
+    "chromosome": "6",
+    "position": 22961030,
+    "alleles": "G/A"
+  },
+  "rs10456268": {
+    "chromosome": "6",
+    "position": 23033300,
+    "alleles": "G/C"
+  },
+  "rs10456269": {
+    "chromosome": "6",
+    "position": 23097958,
+    "alleles": "A/G"
+  },
+  "rs10456271": {
+    "chromosome": "6",
+    "position": 23108189,
+    "alleles": "C/A"
+  },
+  "rs10456291": {
+    "chromosome": "6",
+    "position": 23799312,
+    "alleles": "A/G"
+  },
+  "rs10456293": {
+    "chromosome": "6",
+    "position": 23860396,
+    "alleles": "A/C"
+  },
+  "rs10456294": {
+    "chromosome": "6",
+    "position": 23862176,
+    "alleles": "C/T"
+  },
+  "rs10456295": {
+    "chromosome": "6",
+    "position": 23910124,
+    "alleles": "G/A"
+  },
+  "rs10456296": {
+    "chromosome": "6",
+    "position": 23936407,
+    "alleles": "T/C"
+  },
+  "rs10456297": {
+    "chromosome": "6",
+    "position": 23995628,
+    "alleles": "G/A"
+  },
+  "rs10456298": {
+    "chromosome": "6",
+    "position": 23995629,
+    "alleles": "C/A"
+  },
+  "rs10456299": {
+    "chromosome": "6",
+    "position": 24059551,
+    "alleles": "G/A"
+  },
+  "rs10456300": {
+    "chromosome": "6",
+    "position": 24127528,
+    "alleles": "T/G"
+  },
+  "rs10456301": {
+    "chromosome": "6",
+    "position": 24308127,
+    "alleles": "A/G"
+  },
+  "rs10456302": {
+    "chromosome": "6",
+    "position": 24308216,
+    "alleles": "T/C"
+  },
+  "rs10456303": {
+    "chromosome": "6",
+    "position": 24317171,
+    "alleles": "T/C"
+  },
+  "rs10456304": {
+    "chromosome": "6",
+    "position": 24319250,
+    "alleles": "A/C"
+  },
+  "rs10456305": {
+    "chromosome": "6",
+    "position": 24491113,
+    "alleles": "C/T"
+  },
+  "rs10456306": {
+    "chromosome": "6",
+    "position": 24549813,
+    "alleles": "T/A"
+  },
+  "rs10456308": {
+    "chromosome": "6",
+    "position": 24580180,
+    "alleles": "G/A"
+  },
+  "rs10456309": {
+    "chromosome": "6",
+    "position": 24589334,
+    "alleles": "G/T"
+  },
+  "rs10456310": {
+    "chromosome": "6",
+    "position": 24624226,
+    "alleles": "G/A"
+  },
+  "rs10456311": {
+    "chromosome": "6",
+    "position": 24624228,
+    "alleles": "G/A"
+  },
+  "rs10456312": {
+    "chromosome": "6",
+    "position": 24631214,
+    "alleles": "C/T"
+  },
+  "rs10456313": {
+    "chromosome": "6",
+    "position": 24642658,
+    "alleles": "A/G"
+  },
+  "rs10456314": {
+    "chromosome": "6",
+    "position": 24675948,
+    "alleles": "G/A"
+  },
+  "rs10456316": {
+    "chromosome": "6",
+    "position": 24710801,
+    "alleles": "C/A"
+  },
+  "rs10456317": {
+    "chromosome": "6",
+    "position": 10728219,
+    "alleles": "T/A"
+  },
+  "rs10456318": {
+    "chromosome": "6",
+    "position": 10728362,
+    "alleles": "C/T"
+  },
+  "rs10456319": {
+    "chromosome": "6",
+    "position": 25260206,
+    "alleles": "G/A"
+  },
+  "rs10456320": {
+    "chromosome": "6",
+    "position": 25292173,
+    "alleles": "T/C"
+  },
+  "rs10456321": {
+    "chromosome": "6",
+    "position": 25333810,
+    "alleles": "T/C"
+  },
+  "rs10456322": {
+    "chromosome": "6",
+    "position": 25550276,
+    "alleles": "G/A"
+  },
+  "rs10456323": {
+    "chromosome": "6",
+    "position": 25550490,
+    "alleles": "T/C"
+  },
+  "rs10456324": {
+    "chromosome": "6",
+    "position": 25600740,
+    "alleles": "A/G"
+  },
+  "rs10456325": {
+    "chromosome": "6",
+    "position": 25653208,
+    "alleles": "T/G"
+  },
+  "rs10456326": {
+    "chromosome": "6",
+    "position": 25919434,
+    "alleles": "G/A"
+  },
+  "rs10456327": {
+    "chromosome": "6",
+    "position": 26327741,
+    "alleles": "G/A"
+  },
+  "rs10456328": {
+    "chromosome": "6",
+    "position": 26347769,
+    "alleles": "C/T"
+  },
+  "rs10456329": {
+    "chromosome": "6",
+    "position": 26436171,
+    "alleles": "G/A"
+  },
+  "rs10456330": {
+    "chromosome": "6",
+    "position": 26436464,
+    "alleles": "C/G"
+  },
+  "rs10456331": {
+    "chromosome": "6",
+    "position": 26537681,
+    "alleles": "T/C"
+  },
+  "rs10456332": {
+    "chromosome": "6",
+    "position": 26685903,
+    "alleles": "A/C"
+  },
+  "rs10456333": {
+    "chromosome": "6",
+    "position": 26687313,
+    "alleles": "G/A"
+  },
+  "rs10456334": {
+    "chromosome": "6",
+    "position": 26691375,
+    "alleles": "G/C"
+  },
+  "rs10456335": {
+    "chromosome": "6",
+    "position": 26692272,
+    "alleles": "A/G"
+  },
+  "rs10456336": {
+    "chromosome": "6",
+    "position": 26695732,
+    "alleles": "C/T"
+  },
+  "rs10456337": {
+    "chromosome": "6",
+    "position": 26759136,
+    "alleles": "T/A"
+  },
+  "rs10456338": {
+    "chromosome": "6",
+    "position": 26758681,
+    "alleles": "T/A"
+  },
+  "rs10456339": {
+    "chromosome": "6",
+    "position": 26756677,
+    "alleles": "C/A"
+  },
+  "rs10456340": {
+    "chromosome": "6",
+    "position": 26756550,
+    "alleles": "G/A"
+  },
+  "rs10456341": {
+    "chromosome": "6",
+    "position": 26837597,
+    "alleles": "C/T"
+  },
+  "rs10456342": {
+    "chromosome": "6",
+    "position": 26860652,
+    "alleles": "C/G"
+  },
+  "rs10456343": {
+    "chromosome": "6",
+    "position": 26928120,
+    "alleles": "T/A"
+  },
+  "rs10456344": {
+    "chromosome": "6",
+    "position": 26968018,
+    "alleles": "A/C"
+  },
+  "rs10456346": {
+    "chromosome": "6",
+    "position": 26999067,
+    "alleles": "A/G"
+  },
+  "rs10456347": {
+    "chromosome": "6",
+    "position": 26999074,
+    "alleles": "A/G"
+  },
+  "rs10456348": {
+    "chromosome": "6",
+    "position": 27001254,
+    "alleles": "T/A"
+  },
+  "rs10456349": {
+    "chromosome": "6",
+    "position": 27007680,
+    "alleles": "G/A"
+  },
+  "rs10456350": {
+    "chromosome": "6",
+    "position": 27007802,
+    "alleles": "A/C"
+  },
+  "rs10456351": {
+    "chromosome": "6",
+    "position": 27019013,
+    "alleles": "C/G"
+  },
+  "rs10456352": {
+    "chromosome": "6",
+    "position": 27022579,
+    "alleles": "A/C"
+  },
+  "rs10456354": {
+    "chromosome": "6",
+    "position": 27199876,
+    "alleles": "G/A"
+  },
+  "rs10456355": {
+    "chromosome": "6",
+    "position": 27340904,
+    "alleles": "C/T"
+  },
+  "rs10456356": {
+    "chromosome": "6",
+    "position": 27568016,
+    "alleles": "G/C"
+  },
+  "rs10456357": {
+    "chromosome": "6",
+    "position": 27935689,
+    "alleles": "G/A"
+  },
+  "rs10456358": {
+    "chromosome": "6",
+    "position": 11027719,
+    "alleles": "G/A"
+  },
+  "rs10456359": {
+    "chromosome": "6",
+    "position": 11030547,
+    "alleles": "A/C"
+  },
+  "rs10456360": {
+    "chromosome": "6",
+    "position": 28080568,
+    "alleles": "T/G"
+  },
+  "rs10456361": {
+    "chromosome": "6",
+    "position": 28080570,
+    "alleles": "T/A"
+  },
+  "rs10456362": {
+    "chromosome": "6",
+    "position": 28254038,
+    "alleles": "G/A"
+  },
+  "rs10456363": {
+    "chromosome": "6",
+    "position": 28297845,
+    "alleles": "T/A"
+  },
+  "rs10456364": {
+    "chromosome": "6",
+    "position": 28713667,
+    "alleles": "T/C"
+  },
+  "rs10456365": {
+    "chromosome": "6",
+    "position": 28714027,
+    "alleles": "A/G"
+  },
+  "rs10456366": {
+    "chromosome": "6",
+    "position": 28715994,
+    "alleles": "G/C"
+  },
+  "rs10456367": {
+    "chromosome": "6",
+    "position": 28716027,
+    "alleles": "C/A"
+  },
+  "rs10456368": {
+    "chromosome": "6",
+    "position": 28725119,
+    "alleles": "G/A"
+  },
+  "rs10456369": {
+    "chromosome": "6",
+    "position": 29233338,
+    "alleles": "C/T"
+  },
+  "rs10456370": {
+    "chromosome": "6",
+    "position": 29312959,
+    "alleles": "A/C"
+  },
+  "rs10456371": {
+    "chromosome": "6",
+    "position": 29368148,
+    "alleles": "A/G"
+  },
+  "rs10456388": {
+    "chromosome": "6",
+    "position": 9357674,
+    "alleles": "A/G"
+  },
+  "rs10456389": {
+    "chromosome": "6",
+    "position": 31044403,
+    "alleles": "C/T"
+  },
+  "rs10456391": {
+    "chromosome": "6",
+    "position": 31134600,
+    "alleles": "C/T"
+  },
+  "rs10456396": {
+    "chromosome": "6",
+    "position": 31536769,
+    "alleles": "C/A"
+  },
+  "rs10456399": {
+    "chromosome": "6",
+    "position": 32010012,
+    "alleles": "A/G"
+  },
+  "rs10456401": {
+    "chromosome": "6",
+    "position": 32232333,
+    "alleles": "T/C"
+  },
+  "rs10456402": {
+    "chromosome": "6",
+    "position": 32232335,
+    "alleles": "T/G"
+  },
+  "rs10456404": {
+    "chromosome": "6",
+    "position": 32245080,
+    "alleles": "T/A"
+  },
+  "rs10456405": {
+    "chromosome": "6",
+    "position": 32245090,
+    "alleles": "T/G"
+  },
+  "rs10456408": {
+    "chromosome": "6",
+    "position": 11478503,
+    "alleles": "A/G"
+  },
+  "rs10456409": {
+    "chromosome": "6",
+    "position": 11478581,
+    "alleles": "A/G"
+  },
+  "rs10456410": {
+    "chromosome": "6",
+    "position": 32648088,
+    "alleles": "G/T"
+  },
+  "rs10456419": {
+    "chromosome": "6",
+    "position": 33247080,
+    "alleles": "G/C"
+  },
+  "rs10456421": {
+    "chromosome": "6",
+    "position": 33803371,
+    "alleles": "G/A"
+  },
+  "rs10456422": {
+    "chromosome": "6",
+    "position": 33806755,
+    "alleles": "T/C"
+  },
+  "rs10456423": {
+    "chromosome": "6",
+    "position": 11601330,
+    "alleles": "C/A"
+  },
+  "rs10456425": {
+    "chromosome": "6",
+    "position": 33959534,
+    "alleles": "G/A"
+  },
+  "rs10456426": {
+    "chromosome": "6",
+    "position": 34196691,
+    "alleles": "C/A"
+  },
+  "rs10456444": {
+    "chromosome": "6",
+    "position": 36755065,
+    "alleles": "T/C"
+  }
+}
