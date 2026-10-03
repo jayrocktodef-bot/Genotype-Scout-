@@ -406,7 +406,7 @@ export function detectVendorAndChip(headerText: string): {
   const h = headerText.toLowerCase();
   let format = 'Unknown';
   let chip = 'Unknown Chip';
-  let build: 'GRCh37' | 'GRCh38' | 'T2T-CHM13' | 'hg18' | 'UNKNOWN' = 'GRCh37';
+  let build: 'GRCh37' | 'GRCh38' | 'T2T-CHM13' | 'hg18' | 'UNKNOWN' = 'UNKNOWN';
 
   if (h.includes('chm13') || h.includes('t2t') || h.includes('t2t-chm13') || h.includes('hs1')) {
     build = 'T2T-CHM13';
@@ -420,6 +420,7 @@ export function detectVendorAndChip(headerText: string): {
 
   if (h.includes('23andme')) {
     format = '23andMe';
+    if (build === 'UNKNOWN') build = 'GRCh37';
     if (h.includes('v5')) chip = '23andMe v5 (GSA)';
     else if (h.includes('v4')) chip = '23andMe v4 (OmniExpress)';
     else if (h.includes('v3')) chip = '23andMe v3 (OmniExpress)';
@@ -427,6 +428,7 @@ export function detectVendorAndChip(headerText: string): {
     else chip = '23andMe (Legacy)';
   } else if (h.includes('ancestrydna') || h.includes('ancestry')) {
     format = 'AncestryDNA';
+    if (build === 'UNKNOWN') build = 'GRCh37';
     if (h.includes('v3') || h.includes('version: v3') || h.includes('version: 3')) chip = 'AncestryDNA v3 (GSA)';
     else if (h.includes('v2') || h.includes('version: v2') || h.includes('version: 2')) chip = 'AncestryDNA v2 (GSA)';
     else if (h.includes('v1') || h.includes('version: v1') || h.includes('version: 1')) chip = 'AncestryDNA v1 (OmniExpress)';

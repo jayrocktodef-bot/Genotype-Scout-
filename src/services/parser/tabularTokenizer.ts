@@ -233,7 +233,7 @@ export function parseAdaptiveLine(
 
   let cleanMarker = rawMarker.trim().toLowerCase();
   if (!cleanMarker || cleanMarker === '.' || cleanMarker === '-') {
-    cleanMarker = `chr${chrom}_${pos}`.toLowerCase();
+    cleanMarker = '.';
   }
 
   return {

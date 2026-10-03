@@ -25,7 +25,10 @@ const CONTINENT_MAP: Record<string, string> = {
  * Uses the full master_aims_normalized.json database for high-resolution 
  * Bayesian inference across all available informative markers.
  */
-export function calculateComprehensiveScores(userGenotypes: Record<string, string>, userBuild?: string) {
+export function calculateComprehensiveScores(
+  userGenotypes: Record<string, string>,
+  options?: { userBuild?: string } | string
+) {
   const continentalLogLikelihoods: Record<string, number> = {};
   const populations = Object.keys(CONTINENT_MAP);
   
@@ -45,7 +48,11 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
 
   let markersUsed = 0;
   const aims = getMasterAims() as Record<string, any>;
-  const declaredUserBuild = (userBuild || (userGenotypes as any)?.__build || (userGenotypes as any)?.build || '').toUpperCase();
+  const declaredUserBuild = (
+    typeof options === 'string'
+      ? options
+      : options?.userBuild || (userGenotypes as any)?.__build || (userGenotypes as any)?.build || ''
+  ).trim().toUpperCase();
 
   for (const key in aims) {
     const marker = aims[key];
@@ -61,19 +68,17 @@ export function calculateComprehensiveScores(userGenotypes: Record<string, strin
       }
     }
     
-    // Coordinate fallback: only compare coordinates when both sides declare the same build
+    // Coordinate fallback: only compare coordinates when user build is known and matches marker build
     if (!genotype && marker.chromosome && marker.position) {
       const markerBuild = (marker.build || 'GRCh38').toUpperCase();
-      const coordId = 'chr' + marker.chromosome + '_' + marker.position;
-      const namespacedCoordId = `${markerBuild.toLowerCase()}:${coordId}`;
-
-      if (declaredUserBuild) {
+      // unknown userBuild → rsID matching only, no coordinate fallback; build disagreement → skip (fail closed)
+      if (declaredUserBuild && declaredUserBuild !== 'UNKNOWN') {
         if (declaredUserBuild === markerBuild) {
-          genotype = lowerUserGenotypes.get(namespacedCoordId) || lowerUserGenotypes.get(coordId);
+          const c = String(marker.chromosome).replace(/^chr/i, '').toLowerCase();
+          const p = marker.position;
+          const b = markerBuild.toLowerCase();
+          genotype = lowerUserGenotypes.get(`${b}:chr${c}_${p}`) || lowerUserGenotypes.get(`${b}:${c}_${p}`);
         }
-      } else {
-        // If user build is not declared, only match explicit build-namespaced coordinate
-        genotype = lowerUserGenotypes.get(namespacedCoordId);
       }
     }
 

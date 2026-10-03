@@ -137,7 +137,8 @@ async function runEnginesParallel(
   mergedSnpMetaMap: Record<string, { chrom: string; pos: number }>,
   autosomalSnpMap: Record<string, string>,
   autosomalMetaMap: Record<string, { chrom: string; pos: number }>,
-  onEngineProgress: (completed: number, total: number, label: string) => void
+  onEngineProgress: (completed: number, total: number, label: string) => void,
+  userBuild?: string
 ): Promise<Record<string, any>> {
   const independentEngines = [
     'matchSNPs',
@@ -249,6 +250,7 @@ async function runEnginesParallel(
             snpMap: slicedSnpMap,
             snpMetaMap: slicedMetaMap,
             ancientAdmixture: engine === 'calculateIndividualMatches' ? results['calculateAncientAdmixture'] : undefined,
+            userBuild,
           });
         };
 
@@ -267,7 +269,7 @@ async function runEnginesParallel(
   }
 
   // ── Sequential fallback (Safari, or nested worker failure) ─────
-  return runEnginesSequential(imputedSnpMap, mergedSnpMetaMap, autosomalSnpMap, autosomalMetaMap, onEngineProgress);
+  return runEnginesSequential(imputedSnpMap, mergedSnpMetaMap, autosomalSnpMap, autosomalMetaMap, onEngineProgress, userBuild);
 }
 
 // ── Sequential fallback ──────────────────────────────────────────────
@@ -276,7 +278,8 @@ async function runEnginesSequential(
   mergedSnpMetaMap: Record<string, { chrom: string; pos: number }>,
   autosomalSnpMap: Record<string, string>,
   autosomalMetaMap: Record<string, { chrom: string; pos: number }>,
-  onEngineProgress: (completed: number, total: number, label: string) => void
+  onEngineProgress: (completed: number, total: number, label: string) => void,
+  userBuild?: string
 ): Promise<Record<string, any>> {
   const results: Record<string, any> = {};
   const autosomalSnpMapForEngine = new Map(Object.entries(autosomalSnpMap));
@@ -309,10 +312,10 @@ async function runEnginesSequential(
   await run('matchHealthAndWellness', () => matchHealthAndWellness(imputedSnpMap));
   await run('calculatePopulationProximityOptimized', () => calculatePopulationProximityOptimized(autosomalSnpMapForEngine));
   await run('calculateMarkerBenchmarks', () => calculateMarkerBenchmarks(imputedSnpMap));
-  await run('calculateHumanOriginsScores', () => calculateHumanOriginsScores(autosomalSnpMap));
+  await run('calculateHumanOriginsScores', () => calculateHumanOriginsScores(autosomalSnpMap, { userBuild }));
   await run('calculateRegionalScores', () => calculateRegionalScores(autosomalSnpMap));
   await run('identifyMicroHapSignatures', () => identifyMicroHapSignatures(autosomalSnpMap));
-  await run('calculateComprehensiveScores', () => calculateComprehensiveScores(autosomalSnpMap));
+  await run('calculateComprehensiveScores', () => calculateComprehensiveScores(autosomalSnpMap, { userBuild }));
 
   onEngineProgress(total, total, 'All engines complete');
   return results;
@@ -334,7 +337,8 @@ async function runGenotypeScout(
     autosomalSnpMap: Record<string, string>,
     autosomalMetaMap: Record<string, { chrom: string, pos: number }>,
     names: string[],
-    sab: any
+    sab: any,
+    userBuild?: string
 ) {
     // Fan out all CPU-bound engines across real worker threads
     const engineResults = await runEnginesParallel(
@@ -359,7 +363,8 @@ async function runGenotypeScout(
             percent: 50 + Math.round((completed / total) * 40)
           }
         });
-      }
+      },
+      userBuild
     );
 
     const ancestryResult = engineResults.matchSNPs;
@@ -509,8 +514,12 @@ if (typeof self !== 'undefined') {
         
         let mergedSnpMap: Record<string, string> = {};
         mergedSnpByPosition = {};
+        let sniffedBuild: string = 'UNKNOWN';
         for (const pf of parsedFiles) {
           names.push(pf.name); chips.push(pf.chip); totalSnps += pf.snpCount;
+          if (pf.build && pf.build !== 'UNKNOWN' && sniffedBuild === 'UNKNOWN') {
+            sniffedBuild = pf.build;
+          }
           Object.assign(mergedSnpMetaMap, pf.snpMetaMap); Object.assign(mergedYMap, pf.yMap); Object.assign(mergedMtMap, pf.mtMap);
           if (pf.snpByPosition) Object.assign(mergedSnpByPosition, pf.snpByPosition);
           if (pf.haplotype1Map) Object.assign(mergedHaplotype1Map, pf.haplotype1Map);
@@ -524,6 +533,9 @@ if (typeof self !== 'undefined') {
           }
         }
         imputedSnpMap = applyLightImputation(mergedSnpMap);
+        if (sniffedBuild !== 'UNKNOWN') {
+          (imputedSnpMap as any).__build = sniffedBuild;
+        }
     }
 
     if (sab) { 
@@ -533,9 +545,21 @@ if (typeof self !== 'undefined') {
     }
     
     const { filteredSnpMap: autosomalSnpMap, filteredMetaMap: autosomalMetaMap } = filterAutosomalSNPs(imputedSnpMap, mergedSnpMetaMap);
+    const datasetBuild = (imputedSnpMap as any)?.__build || 'UNKNOWN';
+    if (datasetBuild !== 'UNKNOWN') {
+      (autosomalSnpMap as any).__build = datasetBuild;
+    }
 
     // Orchestration — now fans out across multiple workers
-    const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(imputedSnpMap, mergedSnpMetaMap, autosomalSnpMap, autosomalMetaMap, names, sab);
+    const { ancestryResult, bloodResult, oracleResults } = await runGenotypeScout(
+      imputedSnpMap,
+      mergedSnpMetaMap,
+      autosomalSnpMap,
+      autosomalMetaMap,
+      names,
+      sab,
+      datasetBuild
+    );
     
     const predictedYDNA = predictYDNAHaplogroup(mergedYMap, Y_DNA_TREE, mergedSnpByPosition);
     const predictedMtDNA = analyzeMtDNA(mergedMtMap, mergedSnpByPosition);

@@ -288,10 +288,19 @@ export async function parseRawDNAStream(
     if (record) {
       const { markerId, chrom, pos, posStr, genotype, isPhased, allele1, allele2, phaseSet } = record;
       const isYorMT = chrom === 'Y' || chrom === 'MT';
-      const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
-      const coordIdNoChr = !isNaN(pos) ? `${chrom}_${pos}`.toLowerCase() : '';
-      const coordColon = !isNaN(pos) ? `${chrom}:${pos}`.toLowerCase() : '';
-      const coordColonChr = !isNaN(pos) ? `chr${chrom}:${pos}`.toLowerCase() : '';
+      const buildPrefix = plan.build && plan.build !== 'UNKNOWN' ? plan.build.toLowerCase() : '';
+      const coordId = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:chr${chrom}_${pos}`.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase())
+        : '';
+      const coordIdNoChr = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:${chrom}_${pos}`.toLowerCase() : `${chrom}_${pos}`.toLowerCase())
+        : '';
+      const coordColon = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:${chrom}:${pos}`.toLowerCase() : `${chrom}:${pos}`.toLowerCase())
+        : '';
+      const coordColonChr = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:chr${chrom}:${pos}`.toLowerCase() : `chr${chrom}:${pos}`.toLowerCase())
+        : '';
       const cleanMarker = markerId.toLowerCase().replace(/["']/g, '').trim();
       const baseRsid = cleanMarker.startsWith('rs') ? cleanMarker.split(/[:_]/)[0] : cleanMarker;
 
@@ -593,10 +602,19 @@ export function parseRawDNA(
     if (record) {
       const { markerId, chrom, pos, posStr, genotype, isPhased, allele1, allele2, phaseSet } = record;
       const isYorMT = chrom === 'Y' || chrom === 'MT';
-      const coordId = !isNaN(pos) ? `chr${chrom}_${pos}`.toLowerCase() : '';
-      const coordIdNoChr = !isNaN(pos) ? `${chrom}_${pos}`.toLowerCase() : '';
-      const coordColon = !isNaN(pos) ? `${chrom}:${pos}`.toLowerCase() : '';
-      const coordColonChr = !isNaN(pos) ? `chr${chrom}:${pos}`.toLowerCase() : '';
+      const buildPrefix = plan.build && plan.build !== 'UNKNOWN' ? plan.build.toLowerCase() : '';
+      const coordId = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:chr${chrom}_${pos}`.toLowerCase() : `chr${chrom}_${pos}`.toLowerCase())
+        : '';
+      const coordIdNoChr = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:${chrom}_${pos}`.toLowerCase() : `${chrom}_${pos}`.toLowerCase())
+        : '';
+      const coordColon = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:${chrom}:${pos}`.toLowerCase() : `${chrom}:${pos}`.toLowerCase())
+        : '';
+      const coordColonChr = !isNaN(pos)
+        ? (buildPrefix ? `${buildPrefix}:chr${chrom}:${pos}`.toLowerCase() : `chr${chrom}:${pos}`.toLowerCase())
+        : '';
       const cleanMarker = markerId.toLowerCase().replace(/["']/g, '').trim();
       const baseRsid = cleanMarker.startsWith('rs') ? cleanMarker.split(/[:_]/)[0] : cleanMarker;
 

@@ -38,10 +38,6 @@ export function getMarkerAllowlist(): Set<string> {
         allowlist.add(`${b}:chr${chrom}:${posStr}`.toLowerCase());
         allowlist.add(`${b}:${chrom}:${posStr}`.toLowerCase());
       }
-      allowlist.add(`chr${chrom}_${posStr}`.toLowerCase());
-      allowlist.add(`${chrom}_${posStr}`.toLowerCase());
-      allowlist.add(`chr${chrom}:${posStr}`.toLowerCase());
-      allowlist.add(`${chrom}:${posStr}`.toLowerCase());
     }
   };
 
@@ -54,7 +50,7 @@ export function getMarkerAllowlist(): Set<string> {
   // 1.1 Health, Wellness & PGx (v5MarkersMaster)
   v5MarkersMaster.forEach((m: any) => {
     if (m.rsid) allowlist.add(m.rsid.toLowerCase());
-    addCoordinates(m.chromosome || m.chrom, m.position || m.pos);
+    addCoordinates(m.chromosome || m.chrom, m.position || m.pos, m.build || 'GRCh37');
   });
 
   // 1.2 Master Health PGx Table
@@ -107,14 +103,14 @@ export function getMarkerAllowlist(): Set<string> {
   // 1.9 Archaic Informative SNPs (Neanderthal & Denisovan)
   ARCHAIC_INFORMATIVE_SNPS.forEach((snp) => {
     if (snp.rsid) allowlist.add(snp.rsid.toLowerCase());
-    addCoordinates(snp.chromosome, snp.position);
+    addCoordinates(snp.chromosome, snp.position, 'GRCh37');
   });
 
   // 1.10 Haplogroup Defining SNPs (Y-DNA & mtDNA)
   ALL_DEFINING_SNPS.forEach((snp) => {
     if (snp.rsid) allowlist.add(snp.rsid.toLowerCase());
     if (snp.name) allowlist.add(snp.name.toLowerCase());
-    addCoordinates(snp.chromosome, snp.position);
+    addCoordinates(snp.chromosome, snp.position, 'GRCh37');
   });
 
   // 1.11 SNP Alias Catalog & Alternate Probes
@@ -131,7 +127,7 @@ export function getMarkerAllowlist(): Set<string> {
     allowlist.add(targetRsid.toLowerCase());
     proxies.forEach((proxy) => {
       if (proxy.proxyRsid) allowlist.add(proxy.proxyRsid.toLowerCase());
-      addCoordinates(proxy.proxyChr, proxy.proxyPos);
+      addCoordinates(proxy.proxyChr, proxy.proxyPos, 'GRCh37');
     });
   });
 

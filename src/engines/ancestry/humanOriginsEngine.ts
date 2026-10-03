@@ -28,7 +28,7 @@ async function getHoModernKernel(): Promise<any> {
  */
 export async function calculateHumanOriginsScores(
   userSnps: Record<string, string>,
-  userBuild?: string
+  options?: { userBuild?: string } | string
 ): Promise<AdmixtureComponent[]> {
   const hoModernKernel = await getHoModernKernel();
 
@@ -45,39 +45,34 @@ export async function calculateHumanOriginsScores(
     }
   }
 
-  const declaredUserBuild = (userBuild || (userSnps as any)?.__build || (userSnps as any)?.build || '').toUpperCase();
+  const declaredUserBuild = (
+    typeof options === 'string'
+      ? options
+      : options?.userBuild || (userSnps as any)?.__build || (userSnps as any)?.build || ''
+  ).trim().toUpperCase();
 
   // Helper to resolve genotype by RSID or chromosomal coordinate
-  // rsID matching is primary; coordinate fallback only when both sides declare the same build
+  // rsID matching is primary; coordinate fallback only when user build is known and matches marker build
   const getUserGenotype = (rsid: string, marker: any): string | null => {
     const rLower = rsid.toLowerCase();
     if (normalizedUserSnps[rLower]) return normalizedUserSnps[rLower];
     if (marker && marker.chr && marker.pos) {
-      const markerBuild = (marker.build || 'GRCh37').toUpperCase(); // GRAF-10k index is GRCh37
-      const c = String(marker.chr).replace(/^chr/i, '').toLowerCase();
-      const p = marker.pos;
-      const namespacedCoord = `${markerBuild.toLowerCase()}:chr${c}_${p}`;
-
-      if (declaredUserBuild) {
+      // GRAF-10k index coordinates verified against Ensembl GRCh38 (e.g. rs2887286 chr1:1220751, rs2840528 chr1:2352457, rs3890745 chr1:2622185)
+      const markerBuild = (marker.build || 'GRCh38').toUpperCase();
+      if (declaredUserBuild && declaredUserBuild !== 'UNKNOWN') {
         if (declaredUserBuild === markerBuild) {
+          const c = String(marker.chr).replace(/^chr/i, '').toLowerCase();
+          const p = marker.pos;
+          const b = markerBuild.toLowerCase();
           return (
-            normalizedUserSnps[namespacedCoord] ||
-            normalizedUserSnps[`${markerBuild.toLowerCase()}:${c}_${p}`] ||
-            normalizedUserSnps[`chr${c}_${p}`] ||
-            normalizedUserSnps[`${c}_${p}`] ||
-            normalizedUserSnps[`chr${c}:${p}`] ||
-            normalizedUserSnps[`${c}:${p}`] ||
+            normalizedUserSnps[`${b}:chr${c}_${p}`] ||
+            normalizedUserSnps[`${b}:${c}_${p}`] ||
             null
           );
         }
-      } else {
-        // If user build is not declared, only accept explicit build-namespaced coordinate
-        return (
-          normalizedUserSnps[namespacedCoord] ||
-          normalizedUserSnps[`${markerBuild.toLowerCase()}:${c}_${p}`] ||
-          null
-        );
+        // Build disagreement -> skip (fail closed)
       }
+      // Unknown user build -> rsID matching only, no coordinate fallback (fail closed)
     }
     return null;
   };

@@ -53,12 +53,13 @@ self.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
 });
 
 self.onmessage = async (e: MessageEvent) => {
-  const { taskId, engine, snpMap, snpMetaMap, ancientAdmixture } = e.data as {
+  const { taskId, engine, snpMap, snpMetaMap, ancientAdmixture, userBuild } = e.data as {
     taskId: string;
     engine: EngineName;
     snpMap: Record<string, string>;
     snpMetaMap?: Record<string, { chrom: string; pos: number }>;
     ancientAdmixture?: any;
+    userBuild?: string;
   };
 
   try {
@@ -87,7 +88,7 @@ self.onmessage = async (e: MessageEvent) => {
         result = await calculateMarkerBenchmarks(snpMap);
         break;
       case 'calculateHumanOriginsScores':
-        result = await calculateHumanOriginsScores(snpMap);
+        result = await calculateHumanOriginsScores(snpMap, { userBuild });
         break;
       case 'calculateRegionalScores':
         result = await calculateRegionalScores(snpMap);
@@ -96,7 +97,7 @@ self.onmessage = async (e: MessageEvent) => {
         result = await identifyMicroHapSignatures(snpMap);
         break;
       case 'calculateComprehensiveScores':
-        result = await calculateComprehensiveScores(snpMap);
+        result = await calculateComprehensiveScores(snpMap, { userBuild });
         break;
       default:
         throw new Error(`Unknown engine: ${engine}`);

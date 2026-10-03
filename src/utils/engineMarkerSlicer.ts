@@ -51,6 +51,14 @@ function addMarkerKey(set: Set<string>, rsid?: string, chrom?: string | number, 
     const c = String(chrom).trim().replace(/^chr/i, '').toLowerCase();
     const p = String(pos).trim();
     if (c && p) {
+      set.add(`grch38:chr${c}_${p}`);
+      set.add(`grch38:${c}_${p}`);
+      set.add(`grch38:chr${c}:${p}`);
+      set.add(`grch38:${c}:${p}`);
+      set.add(`grch37:chr${c}_${p}`);
+      set.add(`grch37:${c}_${p}`);
+      set.add(`grch37:chr${c}:${p}`);
+      set.add(`grch37:${c}:${p}`);
       set.add(`chr${c}_${p}`);
       set.add(`${c}_${p}`);
       set.add(`chr${c}:${p}`);
@@ -304,6 +312,10 @@ export function sliceSnpsForEngine(
         slicedMetaMap[key] = snpMetaMap[key];
       }
     }
+  }
+
+  if ((snpMap as any)?.__build) {
+    (slicedSnpMap as any).__build = (snpMap as any).__build;
   }
 
   return { slicedSnpMap, slicedMetaMap };
